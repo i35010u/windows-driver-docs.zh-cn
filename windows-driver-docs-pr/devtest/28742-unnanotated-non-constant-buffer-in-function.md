@@ -1,0 +1,47 @@
+---
+title: C28742
+description: 警告 C28742 未批注缓冲区，该函数。
+ms.assetid: 04B2D637-360F-4347-8533-FEDC81FCE40D
+ms.date: 04/20/2017
+ms.localizationpriority: medium
+f1_keywords:
+- C28742
+ms.openlocfilehash: bf950cb61996e763f36b4551cdf439ff9b4a9f6b
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56519810"
+---
+# <a name="c28742"></a>C28742
+
+
+警告 C28742:在函数中的一个未批注的缓冲区
+
+此警告指示作为函数参数传递或由函数返回的缓冲区应使用 Microsoft 源代码批注语言 (SAL) 进行批注。 静态分析工具可以使用此类批注检测缓冲区溢出。
+
+目前，仅非常量缓冲区诊断并发出以下警告。
+
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+
+
+下面的代码示例将生成此警告。
+
+```
+       int foo( LPTSTR buffer, size_t cch );
+```
+
+下面的代码示例使用 SAL 批注，因此可避免此警告**\_出\_写入\_** 指定所调用的函数将写入缓冲区和缓冲区不能为 NULL。 该批注指示缓冲区是否属于*cch*元素。
+
+```
+       int foo(_Out_writes_(cch) LPTSTR buffer, size_t cch );
+```
+
+ 
+
+ 
+
+
+
+
+
