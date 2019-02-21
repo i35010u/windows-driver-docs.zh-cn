@@ -1,17 +1,17 @@
-## Microsoft Open Source Code of Conduct
+## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源代码行为准则
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+此项目已采用[Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。
+有关详细信息请参阅[代码的行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)或联系[ opencode@microsoft.com ](mailto:opencode@microsoft.com)与任何其他问题或意见。
 
-# Windows Driver Documentation
+# <a name="windows-driver-documentation"></a>Windows 驱动程序文档
 
-Welcome to the Windows driver docs repository, housing the source for the official Windows Driver Kit documentation available on [Docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers). 
+欢迎使用 Windows 驱动程序的 docs 存储库，其中包含官方 Windows 驱动程序工具包文档上可用的源[Docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers)。 
 
-If you're looking for the driver reference (API/DDI) documentation, that's in a different repo.
-See https://github.com/MicrosoftDocs/windows-driver-docs-ddi.
+如果您正在寻找的驱动程序参考 (API/DDI) 文档，则在不同的存储库中。
+请参阅 https://github.com/MicrosoftDocs/windows-driver-docs-ddi。
 
-## Contributing
+## <a name="contributing"></a>参与
 
-We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch (for the public repo) or the *master* branch (for the private repo). 
+我们积极将贡献文档并入通过此存储库[拉取请求](https://help.github.com/articles/using-pull-requests/)成*暂存*分支 （适用于公共存储库） 或*主*（适用于专用存储库） 的分支。 
 
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
+贡献的详细信息，请阅读我们[贡献文档指南](CONTRIBUTING.md)。
