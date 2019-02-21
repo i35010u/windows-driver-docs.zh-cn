@@ -1,0 +1,110 @@
+---
+title: WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2)
+description: WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS 是包含参数的 IPv4 Rx 校验和卸载 TLV。
+ms.assetid: A06E0534-CD5E-4D81-AEC8-CFC6106AAD85
+ms.date: 07/18/2017
+keywords:
+- 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_V4_RX_PARAMETERS (0xD2) 网络驱动程序
+ms.localizationpriority: medium
+ms.openlocfilehash: 5b4b965a0bb49874db4c5c73d5e35c56a38a8d81
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56554503"
+---
+# <a name="wditlvchecksumoffloadv4rxparameters-0xd2"></a>WDI\_TLV\_CHECKSUM\_OFFLOAD\_V4\_RX\_PARAMETERS (0xD2)
+
+
+WDI\_TLV\_CHECKSUM\_卸载\_V4\_RX\_参数是包含参数的 IPv4 Rx 校验和卸载 TLV。
+
+将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff567878)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://msdn.microsoft.com/library/windows/hardware/dn925838)。
+
+## <a name="tlv-type"></a>TLV 类型
+
+
+0xD2
+
+## <a name="length"></a>长度
+
+
+所有包含的元素的大小的总和 （以字节为单位）。
+
+## <a name="values"></a>值
+
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>在任务栏的搜索框中键入</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UINT32</td>
+<td>封装的设置。 有效值包括：
+<ul>
+<li>WDI_ENCAPSULATION_IEEE_802_11</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>UINT32</td>
+<td>指定是否支持使用 IP 选项的校验和卸载。</td>
+</tr>
+<tr class="odd">
+<td>UINT32</td>
+<td>指定是否支持使用 TCP 选项的校验和卸载。</td>
+</tr>
+<tr class="even">
+<td>UINT32</td>
+<td>指定是否启用了 TCP 校验和卸载。</td>
+</tr>
+<tr class="odd">
+<td>UINT32</td>
+<td>指定是否启用 UDP 卸载。</td>
+</tr>
+<tr class="even">
+<td>UINT32</td>
+<td>指定是否启用了 IP 校验和。</td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+<a name="requirements"></a>要求
+------------
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>最低受支持的客户端</p></td>
+<td><p>Windows 10</p></td>
+</tr>
+<tr class="even">
+<td><p>最低受支持的服务器</p></td>
+<td><p>Windows Server 2016</p></td>
+</tr>
+<tr class="odd">
+<td><p>标头</p></td>
+<td>Wditypes.hpp</td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+ 
+
+
+
+

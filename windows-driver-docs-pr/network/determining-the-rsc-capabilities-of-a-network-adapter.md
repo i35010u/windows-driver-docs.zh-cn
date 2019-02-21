@@ -1,0 +1,47 @@
+---
+title: 确定网络适配器的 RSC 功能
+description: 接收段合并 (RSC)-支持的微型端口驱动程序通过将其传递到 NdisMSetMiniportAttributes NDIS_OFFLOAD 结构报告其 RSC 功能。
+ms.assetid: 043A09F9-7D5D-4401-9645-19FDBD614659
+ms.date: 04/20/2017
+ms.localizationpriority: medium
+ms.openlocfilehash: f6e0fa03b1618b98e20b94ec5e6d74043434f696
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56555125"
+---
+# <a name="determining-the-rsc-capabilities-of-a-network-adapter"></a>确定网络适配器的 RSC 功能
+
+
+接收段合并 (RSC)-支持的微型端口驱动程序报告通过其 RSC 功能[ **NDIS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566599)结构，它将传递给[ **NdisMSetMiniportAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff563672)。
+
+## <a name="reporting-rsc-capability"></a>报告 RSC 功能
+
+
+在中[ **NDIS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566599)结构**标头**成员必须按如下所示设置：
+
+-   **修订**成员必须设置为**NDIS\_卸载\_修订\_3**。
+-   **大小**成员必须设置为**NDIS\_SIZEOF\_NDIS\_卸载\_修订\_3**。
+
+若要报告其支持适用于 RSC，微型端口驱动程序可以设置以下成员[ **NDIS\_TCP\_收到\_SEG\_COALESCE\_卸载**](https://msdn.microsoft.com/library/windows/hardware/hh439827)结构，它存储在**Rsc**的成员[ **NDIS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566599)结构：
+
+-   设置**IPv4.Enabled**成员添加到**TRUE**以指示对 IPv4 的 RSC 的支持。
+
+-   设置**IPv6.Enabled**成员添加到**TRUE**以指示对 IPv6 的 RSC 的支持。
+
+微型端口驱动程序必须至少支持 RSC 的 IEEE 802.3 封装。 此外，它可以支持任何其他封装 RSC。 如果不支持一些封装，RSC 并接收该封装的数据包，驱动程序必须在通常指示在堆栈中向上的数据包。
+
+## <a name="querying-rsc-capability"></a>查询 RSC 功能
+
+
+若要确定微型端口驱动程序是否支持 RSC，协议驱动程序和其他驱动程序可以发出[OID\_TCP\_卸载\_硬件\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569806)OID 请求，它将返回[ **NDIS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566599)结构。
+
+ 
+
+ 
+
+
+
+
+
