@@ -1,0 +1,54 @@
+---
+title: 从转储文件中提取信息
+description: 从转储文件中提取信息
+ms.assetid: abde266e-e3ab-4e5e-ac6d-a27933f3d1a9
+keywords:
+- 从转储文件中提取信息
+- 解压缩的各种信息的转储文件
+- （确定从转储文件） 的计算机名称
+- （确定从转储文件） 的计算机名称
+- （确定从转储文件） 的 IP 地址
+ms.date: 05/23/2017
+ms.localizationpriority: medium
+ms.openlocfilehash: 5ac63398b42b99a6cedad91bf4ff51041d0f0ba5
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56526465"
+---
+# <a name="extracting-information-from-a-dump-file"></a>从转储文件中提取信息
+
+
+## <span id="ddk_extracting_information_from_a_dump_file_dbg"></span><span id="DDK_EXTRACTING_INFORMATION_FROM_A_DUMP_FILE_DBG"></span>
+
+
+在实时调试期间，某些种类的信息，如目标计算机的名称就能轻松访问。 调试转储文件时需要一些额外工作来确定此信息。
+
+### <a name="span-idfindingthecomputernameinakernelmodedumpfilespanspan-idfindingthecomputernameinakernelmodedumpfilespanfinding-the-computer-name-in-a-kernel-mode-dump-file"></a><span id="finding_the_computer_name_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_COMPUTER_NAME_IN_A_KERNEL_MODE_DUMP_FILE"></span>内核模式转储文件中查找计算机名称
+
+如果您需要确定在其进行了故障转储的计算机的名称，则可以使用[ **！ peb** ](-peb.md)扩展和查找的值的 COMPUTERNAME 它其输出。
+
+或者，可以使用以下命令：
+
+```dbgcmd
+0: kd> x srv!SrvComputerName
+be8ce2e8  srv!SrvComputerName  = _UNICODE_STRING "AIGM-MYCOMP-PUB01"
+```
+
+### <a name="span-idfindingtheipaddressinakernelmodedumpfilespanspan-idfindingtheipaddressinakernelmodedumpfilespanfinding-the-ip-address-in-a-kernel-mode-dump-file"></a><span id="finding_the_ip_address_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_IP_ADDRESS_IN_A_KERNEL_MODE_DUMP_FILE"></span>内核模式转储文件中查找的 IP 地址
+
+若要确定其进行了故障转储的计算机的 IP 地址，请找到显示某些发送/接收网络活动的线程堆栈。 打开一个发送数据包或接收数据包。 IP 地址将是该数据包中可见。
+
+### <a name="span-idfindingtheprocessidinausermodedumpfilespanspan-idfindingtheprocessidinausermodedumpfilespanfinding-the-process-id-in-a-user-mode-dump-file"></a><span id="finding_the_process_id_in_a_user_mode_dump_file"></span><span id="FINDING_THE_PROCESS_ID_IN_A_USER_MODE_DUMP_FILE"></span>在用户模式转储文件中查找的进程 ID
+
+若要确定用户模式转储文件的目标应用程序的进程 ID，请使用[ **|（进程状态）** ](---process-status-.md)命令。 这将显示在写入转储时正在调试的所有进程。 该过程标记为以句点 (**。**) 是当前进程。 以十六进制后给出其进程 ID **id:** 表示法。
+
+ 
+
+ 
+
+
+
+
+
