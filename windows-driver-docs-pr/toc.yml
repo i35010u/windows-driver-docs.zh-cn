@@ -1,0 +1,123 @@
+items:
+- name: Windows 驱动程序工具包入门
+  href: index.md
+- name: 驱动程序开发中的新增功能
+  href: what-s-new-in-driver-development.md
+- name: 下载 Windows 驱动程序工具包 (WDK)
+  href: download-the-wdk.md
+  items:
+  - name: 安装预览版 WDK
+    href: installing-preview-versions-wdk.md
+  - name: 其他 WDK 下载
+    href: other-wdk-downloads.md
+- name: “引入”指南
+  href: bringup/index.md
+- name: 开发、测试以及部署驱动程序
+  href: develop/index.md
+- name: Windows 硬件开发人员中心仪表板
+  href: dashboard/index.md
+- name: 设备和驱动程序安装
+  href: install/index.md
+- name: 内核模式驱动程序体系结构设计指南
+  href: kernel/index.md
+- name: Windows 驱动程序框架
+  href: wdf/index.md
+- name: Windows 驱动程序安全性
+  href: driversecurity/index.md
+- name: Windows 调试工具
+  href: debugger/index.md
+- name: Windows 应用商店设备应用
+  href: devapps/index.md
+- name: 设备和驱动程序技术
+  href: device-and-driver-technologies.md
+  items:
+  - name: 3D 打印设备
+    href: 3dprint/index.md
+  - name: ACPI
+    href: acpi/index.md
+  - name: Audio
+    href: audio/index.md
+  - name: 电池驱动程序
+    href: battery/index.md
+  - name: 生物识别驱动程序
+    href: biometric/index.md
+  - name: 蓝牙驱动程序
+    href: bluetooth/index.md
+  - name: 显示驱动程序
+    href: display/index.md
+  - name: 驱动程序开发工具
+    href: devtest/index.md
+  - name: Windows 驱动程序入门
+    href: gettingstarted/index.md
+  - name: GNSS 驱动程序
+    href: gnss/index.md
+  - name: GPIO 驱动程序
+    href: gpio/index.md
+  - name: 硬件通知
+    href: gpiobtn/index.md
+  - name: HID 驱动程序
+    href: hid/index.md
+  - name: IEEE 驱动程序
+    href: ieee/index.md
+  - name: 图像处理设备驱动程序
+    href: image/index.md
+  - name: 可安装的文件系统驱动程序
+    href: ifs/index.md
+  - name: 内核模式驱动程序技术
+    href: kernel/index.md
+  - name: 移动宽带
+    href: mobilebroadband/index.md
+  - name: 多功能设备驱动程序
+    href: multifunction/index.md
+  - name: NetAdapterCx
+    href: netcx/index.md
+  - name: 网络驱动程序
+    href: network/index.md
+  - name: NFC 设备驱动程序
+    href: nfc/index.md
+  - name: 并行端口驱动程序
+    href: parports/index.md
+  - name: 合作伙伴应用程序开发
+    href: partnerapps/index.md
+  - name: PCI 驱动程序
+    href: pci/index.md
+  - name: PCMCIA 驱动程序
+    href: pcmcia/index.md
+  - name: 服务点驱动程序
+    href: pos/index.md
+  - name: 电源管理技术
+    href: powermeter/index.md
+  - name: 打印设备驱动程序
+    href: print/index.md
+  - name: SD 卡总线驱动程序
+    href: sd/index.md
+  - name: 传感器驱动程序
+    href: sensors/index.md
+  - name: 串行端口驱动程序
+    href: serports/index.md
+  - name: 智能卡设备驱动程序
+    href: smartcard/index.md
+  - name: SPB 驱动程序
+    href: spb/index.md
+  - name: 存储设备驱动程序
+    href: storage/index.md
+  - name: 流媒体设备驱动程序
+    href: stream/index.md
+  - name: 测试创作和执行框架 (TAEF)
+    href: taef/index.md
+  - name: 通用串行总线 (USB)
+    href: usbcon/index.md
+  - name: Windows 设备测试框架 (WDTF)
+    href: wdtf/index.md
+  - name: Windows 硬件错误体系结构 (WHEA)
+    href: whea/index.md
+  - name: Windows 便携设备驱动程序
+    href: portable/index.md
+- name: Windows 驱动程序示例
+  href: samples/index.md
+ms.openlocfilehash: 1cabcff6583ae3fef48237c76be75d6fedd0905c
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465588"

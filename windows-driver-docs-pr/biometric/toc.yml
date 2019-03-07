@@ -1,0 +1,42 @@
+items:
+- name: 生物识别设计指南
+  href: index.md
+  items:
+  - name: 生物识别驱动程序入门
+    href: getting-started-with-biometric-drivers.md
+  - name: 开发生物识别驱动程序的路线图
+    href: roadmap-for-developing-biometric-drivers.md
+  - name: 示例生物识别驱动程序
+    href: sample-biometric-driver.md
+  - name: 支持生物识别 IOCTL 调用序列
+    href: supporting-biometric-ioctl-calling-sequence.md
+  - name: 在 WBDI 驱动程序中使用 WinUSB
+    href: using-winusb-in-a-wbdi-driver.md
+  - name: 安装生物识别驱动程序
+    href: installing-a-biometric-driver.md
+  - name: 在 WBDI 驱动程序中管理队列
+    href: managing-queues-in-a-wbdi-driver.md
+  - name: 为 WBDI 驱动程序创建设备接口
+    href: creating-a-device-interface-for-a-wbdi-driver.md
+  - name: 在 WBDI 驱动程序中支持安全通道
+    href: supporting-secure-channels-in-wbdi-drivers.md
+  - name: 将 WBDI 用于非 PnP 设备或专有堆栈
+    href: using-wbdi-with-non-pnp-devices-or-proprietary-stacks.md
+  - name: 生物识别驱动程序的硬件注意事项
+    href: hardware-considerations-for-biometric-drivers.md
+  - name: 在 Windows 更新上为生物识别驱动程序排名
+    href: ranking-a-biometric-driver-on-windows-update.md
+  - name: 测试生物识别驱动程序
+    href: testing-biometric-drivers.md
+  - name: 为 WBDI 驱动程序签名
+    href: signing-wbdi-drivers.md
+  - name: Windows Hello：提交指纹驱动程序的步骤
+    href: windows-hello-driver-signing.md
+  - name: 自定义控制代码
+    href: custom-control-codes.md
+ms.openlocfilehash: 4c2c73a33503ee05b468df45a1efaf10077fe9f8
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465478"

@@ -1,0 +1,73 @@
+items:
+- name: 设计指南
+  href: index.md
+  items:
+  - name: 智能卡驱动程序环境
+    href: smart-card-driver-environment.md
+  - name: 智能卡读卡器驱动程序中的 IOCTL 请求管理
+    href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
+    items:
+    - name: 智能卡驱动程序库
+      href: smart-card-driver-library.md
+    - name: 与智能卡驱动程序库的交互
+      href: interaction-with-the-smart-card-driver-library.md
+    - name: 智能卡驱动程序库回调例程
+      href: smart-card-driver-library-callback-routines.md
+    - name: 智能卡回调参数
+      href: smart-card-callback-parameters.md
+  - name: WDM 读卡器驱动程序
+    href: wdm-reader-driver.md
+  - name: 智能卡微型驱动器
+    href: smart-card-minidrivers.md
+    items:
+    - name: 智能卡微型驱动器概述
+      href: smart-card-minidriver-overview.md
+    - name: 智能卡微型驱动器版本
+      href: smart-card-minidriver-versions.md
+      items:
+      - name: 微型驱动程序版本 7.07 功能
+        href: minidriver-version-7-07-features.md
+      - name: 微型驱动程序版本 7.06 功能
+        href: minidriver-version-7-06-features.md
+      - name: 微型驱动程序版本 6.02 功能
+        href: minidriver-version-6-02-features.md
+      - name: 微型驱动程序版本 5.07 功能
+        href: minidriver-version-5-07-features.md
+    - name: 开发人员指南
+      href: developer-guidelines.md
+    - name: 卡要求
+      href: card-requirements.md
+    - name: 文件系统要求
+      href: file-system-requirements.md
+    - name: 卡 PIN 操作
+      href: card-pin-operations.md
+    - name: 智能卡即插即用
+      href: smart-card-plug-and-play.md
+    - name: 发现过程
+      href: discovery-process.md
+    - name: 安全密钥注入
+      href: secure-key-injection.md
+    - name: Windows 收件箱智能卡微型驱动程序
+      href: windows-inbox-smart-card-minidriver.md
+    - name: 微型驱动程序注册
+      href: minidriver-registration.md
+  - name: 智能卡读卡器状态
+    href: smart-card-reader-states.md
+  - name: 安装智能卡读卡器驱动程序
+    href: installing-smart-card-reader-drivers.md
+  - name: 注册 WDM 智能卡读卡器驱动程序
+    href: registering-a-wdm-smart-card-reader-driver.md
+  - name: 在注册表中启用智能卡事件日志记录
+    href: enabling-smart-card-event-logging-in-the-registry.md
+  - name: 智能卡读卡器的 WDM 设备名称
+    href: wdm-device-names-for-smart-card-readers.md
+  - name: 智能卡驱动程序调试
+    href: smart-card-driver-debugging.md
+  - name: 规范和资源
+    href: specifications-and-resources.md
+ms.openlocfilehash: 7af99c0574eebd287f3070a3abc6b6dd4f67e2dc
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465435"

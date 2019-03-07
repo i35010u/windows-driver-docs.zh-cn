@@ -1,0 +1,77 @@
+items:
+- name: UWP 设备应用
+  href: index.md
+  items:
+  - name: 新增功能
+    href: what-s-new.md
+  - name: 即刻体验
+    href: getting-started.md
+    items:
+    - name: 初识 UWP 设备应用
+      href: meet-UWP-device-apps.md
+    - name: 构建 UWP 设备应用
+      href: the-workflow.md
+  - name: 分步构建 UWP 设备应用
+    href: build-a-UWP-device-app-step-by-step.md
+    items:
+    - name: 第 1 步：创建 UWP 设备应用
+      href: step-1--create-a-UWP-device-app.md
+    - name: 步骤 2：创建设备元数据
+      href: step-2--create-device-metadata.md
+    - name: 步骤 3:向应用添加体验 ID
+      href: step-3--add-an-experience-id-to-the-app.md
+    - name: 步骤 4：测试设备元数据
+      href: step-4--test-device-metadata.md
+    - name: 步骤 5：提交应用
+      href: step-5--submit-the-app.md
+    - name: 步骤 6：提交设备元数据
+      href: step-6--submit-device-metadata.md
+  - name: UWP 设备应用的自动播放
+    href: autoplay-for-UWP-device-apps.md
+  - name: UWP 设备应用的设备同步和更新
+    href: device-sync-and-update-for-UWP-device-apps.md
+    items:
+    - name: 创建设备后台任务
+      href: how-to-create-a-device-background-task.md
+  - name: 适用于打印机的 UWP 设备应用
+    href: UWP-device-apps-for-printers.md
+    items:
+    - name: 如何显示打印机状态
+      href: how-to-display-printer-status.md
+    - name: 如何自定义打印设置
+      href: how-to-customize-print-settings.md
+    - name: 处理打印通知
+      href: working-with-print-notifications.md
+    - name: 如何管理打印作业
+      href: how-to-manage-print-jobs.md
+    - name: 如何执行打印机维护
+      href: how-to-do-printer-maintenance.md
+    - name: 打印机扩展库概述
+      href: printer-extension-library-overview.md
+  - name: 适用于相机的 UWP 设备应用
+    href: UWP-device-apps-for-webcams.md
+    items:
+    - name: 如何自定义相机选项
+      href: how-to-customize-camera-options.md
+    - name: 创建相机驱动程序 MFT
+      href: creating-a-camera-driver-mft.md
+    - name: 多针相机上的驱动程序 MFT 的注意事项
+      href: driver-mfts-on-multi-pin-cameras.md
+    - name: 识别内部相机的位置
+      href: identifying-the-location-of-internal-cameras.md
+  - name: 适用于内部设备的 UWP 设备应用
+    href: UWP-device-apps-for-specialized-devices.md
+  - name: UWP 设备应用的自动安装
+    href: auto-install-for-UWP-device-apps.md
+  - name: 硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤
+    href: hardware-support-app--hsa--steps-for-driver-developers.md
+  - name: 硬件支持应用 (HSA)：适用于应用开发人员的步骤
+    href: hardware-support-app--hsa--steps-for-app-developers.md
+  - name: 有关自定义功能的常见问题解答
+    href: FAQ-on-custom-capabilities.md
+ms.openlocfilehash: 988f1d62422fda06591c0119ad6687a2ef917729
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465576"

@@ -1,0 +1,73 @@
+items:
+- name: 简单外设总线 (SPB) 驱动程序设计指南
+  href: index.md
+  items:
+  - name: SPB 控制器驱动程序
+    href: spb-controller-drivers.md
+    items:
+    - name: SPB 框架扩展 (SpbCx)
+      href: spb-framework-extension.md
+    - name: SpbCx 接口
+      href: spbcx-interfaces.md
+    - name: SPB I/O 请求
+      href: spb-ioctls.md
+    - name: I/O 传输序列
+      href: i-o-transfer-sequences.md
+    - name: 处理客户端实现的序列
+      href: handling-client-implemented-sequences.md
+    - name: 将 SPB_TRANSFER_LIST 结构用于自定义 IOCTL
+      href: using-the-spb-transfer-list-structure.md
+    - name: 处理 IOCTL_SPB_FULL_DUPLEX 请求
+      href: handling-ioctl-spb-full-duplex-requests.md
+    - name: 如何获取设备的连接设置
+      href: how-to-get-the-connection-settings-for-a-device.md
+    - name: SpbCx 对象句柄
+      href: spbcx-object-handles.md
+  - name: SPB 外围设备驱动程序
+    href: spb-peripheral-device-drivers.md
+    items:
+    - name: 使用 SPB I/O 请求接口
+      href: using-the-spb-i-o-request-interface.md
+    - name: SPB 连接的外围设备的连接 ID
+      href: connection-ids-for-spb-connected-peripheral-devices.md
+    - name: SPB 设备堆栈
+      href: spb-device-stacks.md
+    - name: 来自 SPB 连接的外围设备的中断
+      href: interrupts-from-spb-connected-peripheral-devices.md
+    - name: 内核模式 SPB 外设驱动程序的硬件资源
+      href: hardware-resources-for-kernel-mode-spb-peripheral-drivers.md
+    - name: 用户模式 SPB 外设驱动程序的硬件资源
+      href: hardware-resources-for-user-mode-spb-peripheral-drivers.md
+    - name: 全双工 I/O 请求
+      href: full-duplex-i-o-requests.md
+    - name: 原子总线操作
+      href: atomic-bus-operations.md
+    - name: SPB 连接锁
+      href: spb-connection-locks.md
+  - name: 使用多接口测试工具 (MITT) 进行测试
+    href: testing-with-multi-interface-test-tool--mitt-.md
+    items:
+    - name: 使用 MITT 购买硬件
+      href: multi-interface-test-tool--mitt--.md
+    - name: MITT 入门
+      href: get-started-with-mitt---.md
+    - name: MITT 中的音频播放保真度测试
+      href: audio-playback-fidelity-tests-in-mitt.md
+    - name: MITT 中的电容式触控测试
+      href: capacitive-touch-tests-in-mitt.md
+    - name: MITT 中的 GPIO 测试
+      href: gpio-tests-in-mitt.md
+    - name: MITT 中的 I2C 控制器测试
+      href: run-mitt-tests-for-an-i2c-controller-.md
+    - name: MITT 中的 SPI 测试
+      href: spi-tests-in-mitt.md
+    - name: MITT 中的 UART 测试
+      href: uart-tests-in-mitt.md
+- name: SoC 上 PWM 模块的 PWM 驱动程序
+  href: pulse-width-controller driver.md
+ms.openlocfilehash: 44e104aa59aa52f0f766ed6e44968e3be5697dba
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465470"

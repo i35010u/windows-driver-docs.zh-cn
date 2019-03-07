@@ -1,0 +1,78 @@
+items:
+- name: 硬件通知设计指南
+  href: index.md
+  items:
+  - name: GPIO 按钮和指示器实现指南
+    href: gpio-buttons-and-indicators-implementation-guide-for-windows-8-1.md
+    items:
+    - name: 状态指示器
+      href: state-indicators.md
+      items:
+      - name: 行为和指南
+        href: behavior-and-guidance.md
+      - name: 扩展连接与笔记本电脑平板电脑转换
+        href: docking-versus-laptop-slate-conversion.md
+      - name: 各种外形规格的实现需求
+        href: implementation-requirements-for-various-form-factors.md
+      - name: 有关变形的注意事项
+        href: considerations-for-convertibles.md
+    - name: 物理按钮
+      href: physical-buttons.md
+      items:
+      - name: 按钮行为
+        href: button-behavior.md
+      - name: 按钮报告
+        href: button-reporting.md
+    - name: 接口实现指南
+      href: interface-implementation-guidance.md
+      items:
+      - name: 可用接口和相关 API
+        href: available-interfaces-and-related-apis.md
+      - name: 指示器实现
+        href: indicator-implementation.md
+      - name: 按钮实现
+        href: button-implementation.md
+    - name: 代码示例
+      href: code-samples.md
+      items:
+      - name: 在各种状态之间切换的笔记本电脑/平板电脑模式
+        href: laptop-slate-mode-toggling-between-states.md
+      - name: Windows 按钮示例代码
+        href: windows-button-sample-code.md
+      - name: ACPI 描述符示例
+        href: acpi-descriptor-samples.md
+      - name: HID 按钮报告描述符
+        href: hid-button-report-descriptors.md
+    - name: 实现无人参与 Windows 安装程序设置
+      href: implement-the-unattended-windows-setup-setting.md
+    - name: 日志记录和调查
+      href: logging-and-investigations.md
+    - name: 运行测试通过
+      href: running-test-passes.md
+  - name: GPIO 按钮和指示器实现测试
+    href: gpio-buttons-and-indicators-supplemental-certification-testing-for-windows-8-1.md
+    items:
+    - name: 测试自动化工具
+      href: test-automation-tools.md
+    - name: 集成测试
+      href: integration-testing.md
+      items:
+      - name: 指示器测试
+        href: indicator-testing.md
+      - name: 变形测试
+        href: convertible-testing.md
+      - name: 触摸屏笔记本电脑系统测试
+        href: touchscreen-laptop-system-testing.md
+    - name: GPIO 日志记录和调查
+      href: gpio-logging-and-investigations.md
+  - name: 硬件通知支持
+    href: hardware-notifications-support.md
+    items:
+    - name: 创建硬件通知客户端驱动程序
+      href: create-a-hardware-notification-client-driver.md
+ms.openlocfilehash: 06140bb6cddfe19104f4b809df2265e866c3fbde
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465408"

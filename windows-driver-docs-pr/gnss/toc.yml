@@ -1,0 +1,59 @@
+items:
+- name: GNSS 驱动程序设计指南
+  href: index.md
+  items:
+  - name: 适用于 Windows 8.1 的 GNSS 驱动程序设计指南
+    href: gnss-driver-design-guide-for-windows-8-1.md
+    items:
+    - name: 为 Windows 8.1 编写位置传感器驱动程序
+      href: writing-a-location-sensor-driver.md
+      items:
+      - name: 位置驱动程序功率和性能指南
+        href: location-driver-guidelines-for-power-and-performance.md
+      - name: 位置模拟器指南
+        href: guidelines-for-location-simulators.md
+      - name: 传感器和位置平台中的隐私和安全
+        href: privacy-and-security-in-the-sensor-and-location-platform.md
+    - name: Windows 8.1 的地理位置驱动程序示例
+      href: sensors-geolocation-driver-sample.md
+      items:
+      - name: 定义地理位置对象
+        href: defining-the-geolocation-object.md
+        items:
+        - name: 初始化地理位置对象
+          href: initializing-the-geolocation-object.md
+        - name: 设置和检索地理位置属性
+          href: setting-and-retrieving-the-geolocation-properties.md
+      - name: 使用传感器类扩展来处理事件
+        href: using-the-sensor-class-extension-to-handle-events.md
+      - name: 支持地理位置属性
+        href: supporting-the-geolocation-properties.md
+      - name: 添加对实际硬件的支持
+        href: adding-support-for-actual-hardware.md
+      - name: 支持无线电管理
+        href: supporting-radio-management.md
+      - name: 安装地理位置驱动程序示例
+        href: installing-the-sample-driver.md
+      - name: 安装无线电管理器 DLL
+        href: installing-the-radio-manager-dll.md
+      - name: 示例驱动程序文件列表
+        href: the-sample-driver-file-list.md
+      - name: 无线电管理器文件列表
+        href: the-radio-manager-file-list.md
+  - name: 适用于 Windows 10 的 GNSS 驱动程序设计指南
+    href: gnss-driver-design-guide-for-windows-10.md
+    items:
+    - name: GNSS 驱动程序概述
+      href: gnss-driver-overview.md
+    - name: GNSS 驱动程序要求
+      href: gnss-driver-requirements.md
+    - name: GNSS 驱动程序体系结构
+      href: gnss-driver-architecture.md
+    - name: GNSS 驱动程序设计
+      href: gnss-driver-design.md
+ms.openlocfilehash: 2c26842e7d1bdf05b4695ed969f85c0b1726047d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465481"

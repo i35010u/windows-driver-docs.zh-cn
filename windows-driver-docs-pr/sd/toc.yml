@@ -1,0 +1,18 @@
+items:
+- name: SD 总线驱动程序设计指南
+  href: index.md
+  items:
+  - name: SD 卡驱动程序堆栈
+    href: sd-card-driver-stack.md
+  - name: 打开、初始化和关闭 SD 卡总线接口
+    href: opening--initializing-and-closing-an-sd-card-bus-interface.md
+  - name: 处理 SD 卡中断
+    href: handling-sd-card-interrupts.md
+  - name: SD 卡请求
+    href: sd-card-requests.md
+ms.openlocfilehash: 0a19444cf81aac0ec62d2c4fbd0cfdc1bf021d5f
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465580"

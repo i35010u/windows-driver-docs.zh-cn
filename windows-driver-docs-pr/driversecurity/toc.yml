@@ -1,0 +1,18 @@
+items:
+- name: 驱动程序安全指南
+  href: index.md
+  items:
+  - name: 驱动程序安全清单
+    href: driver-security-checklist.md
+  - name: 驱动程序的威胁建模
+    href: threat-modeling-for-drivers.md
+  - name: 适用于驱动程序开发人员的 Windows 安全模型
+    href: windows-security-model.md
+  - name: 使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
+    href: use-device-guard-readiness-tool.md
+ms.openlocfilehash: d143ad4e21580545b4e03b34ee688cc5f314b658
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465393"

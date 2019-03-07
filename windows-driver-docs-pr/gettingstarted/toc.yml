@@ -1,0 +1,55 @@
+items:
+- name: Windows 驱动程序入门
+  href: index.md
+  items:
+  - name: 什么是驱动程序？
+    href: what-is-a-driver-.md
+  - name: 是否需要编写驱动程序？
+    href: do-you-need-to-write-a-driver-.md
+  - name: 选择驱动程序模型
+    href: choosing-a-driver-model.md
+  - name: 编写你的第一个驱动程序
+    href: writing-your-first-driver.md
+    items:
+    - name: 基于模板编写通用 Windows 驱动程序 (UMDF 2)
+      href: writing-a-umdf-driver-based-on-a-template.md
+    - name: 编写通用 Hello World 驱动程序 (KMDF)
+      href: writing-a-very-small-kmdf--driver.md
+    - name: 基于模板编写通用 Windows 驱动程序 (KMDF)
+      href: writing-a-kmdf-driver-based-on-a-template.md
+  - name: Windows 兼容硬件开发板
+    href: windows-compatible-hardware-development-boards.md
+  - name: Sharks Cove 硬件开发板
+    href: sharks-cove-hardware-development-board.md
+  - name: 预配计算机以便进行驱动程序部署和测试 (WDK 10)
+    href: provision-a-target-computer-wdk-8-1.md
+  - name: 适用于所有驱动程序开发人员的概念
+    items:
+    - name: 用户模式和内核模式
+      href: user-mode-and-kernel-mode.md
+    - name: 虚拟地址空间
+      href: virtual-address-spaces.md
+    - name: 设备节点和设备堆栈
+      href: device-nodes-and-device-stacks.md
+    - name: I/O 请求数据包
+      href: i-o-request-packets.md
+    - name: 驱动程序堆栈
+      href: driver-stacks.md
+    - name: 微型驱动程序、微型端口驱动程序和驱动程序对
+      href: minidrivers-and-driver-pairs.md
+    - name: 作为通用驱动程序对模型的 KMDF
+      href: kmdf-as-a-generic-pair-model.md
+    - name: KMDF 扩展和三重驱动程序
+      href: extensions-and-driver-triples.md
+    - name: 驱动程序的上沿和下沿
+      href: upper-and-lower-edges-of-drivers.md
+    - name: Windows 驱动程序工具包中的头文件
+      href: header-files-in-the-windows-driver-kit.md
+    - name: 为不同版本的 Windows 编写驱动程序
+      href: platforms-and-driver-versions.md
+ms.openlocfilehash: 3db795c5d15f91abbf161b3b37a4b622c7eb50cf
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465619"

@@ -1,0 +1,27 @@
+items:
+- name: 功率计量和预算设计指南
+  href: index.md
+  items:
+  - name: 功率计量和预算基础结构概述
+    href: overview-of-the-power-metering-and-budgeting-infrastructure.md
+  - name: 用户模式功率服务
+    href: user-mode-power-service.md
+  - name: 功率表接口
+    href: power-meter-interface.md
+  - name: 电能表接口
+    href: energy-meter-interface.md
+  - name: 软件定义的电池
+    href: software-defined-batteries.md
+  - name: ACPI 功率表接口
+    href: acpi-power-meter-interface.md
+    items:
+    - name: ACPI 4.0 功率计量对象概述
+      href: overview-of-the-acpi-4-0-power-metering-objects.md
+    - name: ACPI IPMI 操作区域
+      href: acpi-ipmi-operation-region.md
+ms.openlocfilehash: c4e777956d89f1d6922e1b7c6f679c8cb3f33479
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465596"
