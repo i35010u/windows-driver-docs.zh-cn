@@ -1,0 +1,1736 @@
+items:
+- name: 内核模式驱动程序体系结构设计指南
+  href: index.md
+  items:
+  - name: Windows 驱动程序简介
+    href: introduction-to-windows-drivers.md
+    items:
+    - name: Windows 组件概述
+      href: overview-of-windows-components.md
+    - name: Windows 驱动程序的类型
+      href: types-of-windows-drivers.md
+    - name: 内核模式驱动程序的设计目标
+      href: design-goals-for-kernel-mode-drivers.md
+      items:
+      - name: 可移植
+        href: portable.md
+      - name: 可配置
+        href: configurable.md
+      - name: 始终可抢占且始终可中断
+        href: always-preemptible-and-always-interruptible.md
+      - name: 多处理器防护
+        href: multiprocessor-safe.md
+      - name: 基于对象
+        href: object-based.md
+      - name: 数据包驱动的 I/O 与可重用 IRP
+        href: packet-driven-i-o-with-reusable-irps.md
+      - name: 支持异步 I/O
+        href: supporting-asynchronous-i-o.md
+    - name: 示例内核模式驱动程序
+      href: sample-kernel-mode-drivers.md
+  - name: 内核模式管理器和库
+    href: kernel-mode-managers-and-libraries.md
+    items:
+    - name: Windows 内核模式对象管理器
+      href: windows-kernel-mode-object-manager.md
+    - name: Windows 内核模式内存管理器
+      href: windows-kernel-mode-memory-manager.md
+    - name: Windows 内核模式进程和线程管理器
+      href: windows-kernel-mode-process-and-thread-manager.md
+    - name: Windows 内核模式 I/O 管理器
+      href: windows-kernel-mode-i-o-manager.md
+    - name: Windows 内核模式即插即用管理器
+      href: windows-kernel-mode-plug-and-play-manager.md
+    - name: Windows 内核模式电源管理器
+      href: windows-kernel-mode-power-manager.md
+    - name: Windows 内核模式配置管理器
+      href: windows-kernel-mode-configuration-manager.md
+    - name: Windows 内核模式内核事务管理器
+      href: windows-kernel-mode-kernel-transaction-manager.md
+    - name: Windows 内核模式安全引用监视器
+      href: windows-kernel-mode-security-reference-monitor.md
+    - name: Windows 内核模式内核库
+      href: windows-kernel-mode-kernel-library.md
+    - name: Windows 内核模式执行支持库
+      href: windows-kernel-mode-executive-support-library.md
+    - name: Windows 内核模式运行时库
+      href: windows-kernel-mode-run-time-library.md
+    - name: Windows 内核模式安全字符串库
+      href: windows-kernel-mode-safe-string-library.md
+    - name: Windows 内核模式 DMA 库
+      href: windows-kernel-mode-dma-library.md
+    - name: Windows 内核模式 HAL 库
+      href: windows-kernel-mode-hal-library.md
+    - name: Windows 内核模式 CLFS 库
+      href: windows-kernel-mode-clfs-library.md
+    - name: Windows 内核模式 WMI 库
+      href: windows-kernel-mode-wmi-library.md
+  - name: 编写 WDM 驱动程序
+    href: writing-wdm-drivers.md
+    items:
+    - name: Windows 驱动程序模型 (WDM)
+      href: windows-driver-model.md
+      items:
+      - name: WDM 简介
+        href: introduction-to-wdm.md
+      - name: WDM 驱动程序的类型
+        href: types-of-wdm-drivers.md
+        items:
+        - name: 总线驱动程序
+          href: bus-drivers.md
+        - name: 函数驱动程序
+          href: function-drivers.md
+        - name: 筛选器驱动程序
+          href: filter-drivers.md
+        - name: WDM 驱动程序层：示例
+          href: wdm-driver-layers---an-example.md
+      - name: 设备配置和分层驱动程序
+        href: device-configurations-and-layered-drivers.md
+        items:
+        - name: 示例设备和驱动程序配置
+          href: sample-device-and-driver-configuration.md
+        - name: 添加驱动程序时要考虑的要点
+          href: points-to-consider-when-adding-drivers.md
+      - name: WDM 版本
+        href: wdm-versions.md
+        items:
+        - name: 确定 WDM 版本
+          href: determining-the-wdm-version.md
+        - name: WDM 版本的差异
+          href: differences-in-wdm-versions.md
+    - name: 内核模式驱动程序组件
+      href: kernel-mode-driver-components.md
+      items:
+      - name: 标准驱动程序例程简介
+        href: introduction-to-standard-driver-routines.md
+      - name: 标准驱动程序例程要求
+        href: standard-driver-routine-requirements.md
+      - name: 驱动程序对象简介
+        href: introduction-to-driver-objects.md
+        items:
+        - name: 驱动程序对象中的驱动程序入口点
+          href: driver-entry-points-in-driver-objects.md
+        - name: 其他标准驱动程序例程
+          href: other-standard-driver-routines.md
+      - name: 编写 DriverEntry 例程
+        href: writing-a-driverentry-routine.md
+        items:
+        - name: DriverEntry 的必要责任
+          href: driverentry-s-required-responsibilities.md
+        - name: DriverEntry 的可选责任
+          href: driverentry-s-optional-responsibilities.md
+        - name: DriverEntry 返回值
+          href: driverentry-return-values.md
+      - name: 编写 Reinitialize 例程
+        href: writing-a-reinitialize-routine.md
+      - name: 编写 AddDevice 例程
+        href: writing-an-adddevice-routine.md
+        items:
+        - name: 函数或筛选器驱动程序中的 AddDevice 例程
+          href: adddevice-routines-in-function-or-filter-drivers.md
+        - name: 总线驱动程序中的 AddDevice 例程
+          href: adddevice-routines-in-bus-drivers.md
+        - name: 有关编写 AddDevice 例程的指导原则
+          href: guidelines-for-writing-adddevice-routines.md
+      - name: 编写 Dispatch 例程
+        href: writing-dispatch-routines.md
+        items:
+        - name: Dispatch 例程的功能
+          href: dispatch-routine-functionality.md
+        - name: 必需的 Dispatch 例程
+          href: required-dispatch-routines.md
+        - name: 可选的 Dispatch 例程
+          href: optional-dispatch-routines.md
+        - name: Dispatch 例程和于 IRQL
+          href: dispatch-routines-and-irqls.md
+        - name: 何时检查驱动程序的 I/O 堆栈位置
+          href: when-to-check-the-driver-s-i-o-stack-location.md
+        - name: DispatchCreate、DispatchClose 和 DispatchCreateClose 例程
+          href: dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md
+          items:
+          - name: 独立的 DispatchCreate 和 DispatchClose 例程
+            href: separate-dispatchcreate-and-dispatchclose-routines.md
+          - name: 单个 DispatchCreateClose 例程
+            href: a-single-dispatchcreateclose-routine.md
+          - name: 有关实现 DispatchCreate、DispatchClose 和 DispatchCreateClose 例程的规则
+            href: rules-for-implementing-dispatchcreate--dispatchclose--and-dispatchcrea.md
+        - name: DispatchCleanup 例程
+          href: dispatchcleanup-routines.md
+        - name: DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
+          href: dispatchread--dispatchwrite--and-dispatchreadwrite-routines.md
+          items:
+          - name: 以异步方式处理传输
+            href: handling-transfers-asynchronously.md
+          - name: 使用缓冲 I/O 执行 DispatchReadWrite
+            href: dispatchreadwrite-using-buffered-i-o.md
+          - name: 使用直接 I/O 执行 DispatchReadWrite
+            href: dispatchreadwrite-using-direct-i-o.md
+          - name: 较高级驱动程序中的 DispatchReadWrite
+            href: dispatchreadwrite-in-higher-level-drivers.md
+          - name: 读/写 Dispatch 例程摘要
+            href: summary-of-read-write-dispatch-routines.md
+        - name: DispatchDeviceControl 和 DispatchInternalDeviceControl 例程
+          href: dispatchdevicecontrol-and-dispatchinternaldevicecontrol-routines.md
+          items:
+          - name: 最低级驱动程序中的 DispatchDeviceControl
+            href: dispatchdevicecontrol-in-lowest-level-drivers.md
+          - name: 较高级驱动程序中的 DispatchDeviceControl
+            href: dispatchdevicecontrol-in-higher-level-drivers.md
+          - name: 类/端口驱动程序中的 Dispatch(Internal)DeviceControl
+            href: dispatch-internal-devicecontrol-in-class-port-drivers.md
+          - name: 有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
+            href: guidelines-for-writing-dispatch-internal-devicecontrol-routines.md
+        - name: DispatchPnP 例程
+          href: dispatchpnp-routines.md
+        - name: DispatchPower 例程
+          href: dispatchpower-routines.md
+        - name: DispatchQueryInformation 例程
+          href: dispatchqueryinformation-routines.md
+        - name: DispatchSetInformation 例程
+          href: dispatchsetinformation-routines.md
+        - name: DispatchFlushBuffers 例程
+          href: dispatchflushbuffers-routines.md
+        - name: DispatchShutdown 例程
+          href: dispatchshutdown-routines.md
+        - name: DispatchSystemControl 例程
+          href: dispatchsystemcontrol-routines.md
+      - name: 编写 Unload 例程
+        href: writing-an-unload-routine.md
+        items:
+        - name: Unload 例程环境
+          href: unload-routine-environment.md
+        - name: Unload 例程的功能
+          href: unload-routine-functionality.md
+          items:
+          - name: PnP 驱动程序的 Unload 例程
+            href: pnp-driver-s-unload-routine.md
+          - name: 非 PnP 驱动程序的 Unload 例程
+            href: non-pnp-driver-s-unload-routine.md
+          - name: 释放驱动程序分配的资源
+            href: releasing-driver-allocated-resources.md
+          - name: 释放设备和控制器对象
+            href: releasing-device-and-controller-objects.md
+    - name: 设备对象和设备堆栈
+      href: device-objects-and-device-stacks.md
+      items:
+      - name: 设备对象简介
+        href: introduction-to-device-objects.md
+      - name: WDM 设备对象和设备堆栈
+        href: wdm-device-objects-and-device-stacks.md
+        items:
+        - name: WDM 设备对象的类型
+          href: types-of-wdm-device-objects.md
+        - name: 示例 WDM 设备对象
+          href: example-wdm-device-objects.md
+        - name: 何时创建 WDM 设备对象？
+          href: when-are-wdm-device-objects-created-.md
+        - name: 示例 WDM 设备堆栈
+          href: example-wdm-device-stack.md
+      - name: 创建设备对象
+        href: creating-a-device-object.md
+      - name: 初始化设备对象
+        href: initializing-a-device-object.md
+      - name: 命名的设备对象
+        href: named-device-objects.md
+        items:
+        - name: NT 设备名称
+          href: nt-device-names.md
+        - name: MS-DOS 设备名称
+          href: ms-dos-device-names.md
+          items:
+          - name: MS-DOS 设备名称简介
+            href: introduction-to-ms-dos-device-names.md
+          - name: 本地和全局 MS-DOS 设备名称
+            href: local-and-global-ms-dos-device-names.md
+      - name: 设备扩展
+        href: device-extensions.md
+      - name: 设备对象的属性
+        href: properties-of-device-objects.md
+        items:
+        - name: 指定设备类型
+          href: specifying-device-types.md
+        - name: 指定设备特征
+          href: specifying-device-characteristics.md
+        - name: 指定对设备对象的独占访问权限
+          href: specifying-exclusive-access-to-device-objects.md
+        - name: 在注册表中设置设备对象属性
+          href: setting-device-object-properties-in-the-registry.md
+          items:
+          - name: 在安装期间设置设备对象注册表属性
+            href: setting-device-object-registry-properties-during-installation.md
+          - name: 安装后设置设备对象注册表属性
+            href: setting-device-object-registry-properties-after-installation.md
+      - name: 保护设备对象
+        href: securing-device-objects.md
+        items:
+        - name: 控制设备访问权限
+          href: controlling-device-access.md
+        - name: 控制设备命名空间访问权限
+          href: controlling-device-namespace-access.md
+        - name: 设备对象的 SDDL
+          href: sddl-for-device-objects.md
+      - name: 有关设备对象的要点
+        href: points-to-consider-about-device-objects.md
+    - name: 管理内核对象
+      href: managing-kernel-objects.md
+      items:
+      - name: 对象名称
+        href: object-names.md
+      - name: 对象目录
+        href: object-directories.md
+      - name: 对象的生命周期
+        href: life-cycle-of-an-object.md
+      - name: 对象句柄
+        href: object-handles.md
+      - name: 对象安全性
+        href: object-security.md
+        items:
+        - name: 访问权限
+          href: access-rights.md
+        - name: 安全描述符
+          href: security-descriptors.md
+        - name: 权限
+          href: privileges.md
+    - name: Windows 驱动程序的内存管理
+      href: managing-memory-for-drivers.md
+      items:
+      - name: Windows 内存空间概述
+        href: overview-of-windows-memory-space.md
+      - name: 分配系统空间内存
+        href: allocating-system-space-memory.md
+      - name: 映射寄存器
+        href: map-registers.md
+      - name: 将总线相对地址映射到虚拟地址
+        href: mapping-bus-relative-addresses-to-virtual-addresses.md
+      - name: 使用内核堆栈
+        href: using-the-kernel-stack.md
+      - name: 使用后备列表
+        href: using-lookaside-lists.md
+      - name: 使驱动程序可分页
+        href: making-drivers-pageable.md
+        items:
+        - name: 代码和数据何时应可分页？
+          href: when-should-code-and-data-be-pageable-.md
+        - name: 使驱动程序代码或数据可分页
+          href: making-driver-code-or-data-pageable.md
+          items:
+          - name: 检测可分页的代码
+            href: detecting-code-that-can-be-pageable.md
+          - name: 隔离可分页代码
+            href: isolating-pageable-code.md
+          - name: 锁定可分页代码或数据
+            href: locking-pageable-code-or-data.md
+          - name: 将整个驱动程序分页
+            href: paging-an-entire-driver.md
+      - name: 访问只读的系统内存
+        href: accessing-read-only-system-memory.md
+      - name: 访问用户空间内存
+        href: accessing-user-space-memory.md
+      - name: 非执行 (NX) 非分页缓冲池
+        href: no-execute-nonpaged-pool.md
+        items:
+        - name: NX 和执行池类型
+          href: nx-and-execute-pool-types.md
+        - name: NX 池兼容性问题
+          href: nx-pool-compatibility-issues.md
+        - name: NX 池启用机制
+          href: nx-pool-opt-in-mechanisms.md
+          items:
+          - name: 启用单个二进制文件：POOL_NX_OPTIN
+            href: single-binary-opt-in-pool-nx-optin.md
+          - name: 启用多个二进制文件：POOL_NX_OPTIN_AUTO
+            href: multiple-binary-opt-in-pool-nx-optin-auto.md
+          - name: 选择性禁用：POOL_NX_OPTOUT
+            href: selective-opt-out-pool-nx-optout.md
+      - name: 节对象和视图
+        href: section-objects-and-views.md
+        items:
+        - name: 基于文件和基于页文件的节
+          href: file-backed-and-page-file-backed-sections.md
+        - name: 管理内存节
+          href: managing-memory-sections.md
+        - name: 节对象和视图的安全问题
+          href: security-issues-for-section-objects-and-views.md
+      - name: 使用 MDL
+        href: using-mdls.md
+    - name: 管理驱动程序的输入/输出
+      href: managing-input-output-for-drivers.md
+      items:
+      - name: 处理 IRP
+        href: handling-irps.md
+        items:
+        - name: Windows I/O 模型概述
+          href: overview-of-the-windows-i-o-model.md
+        - name: 最终用户输入/输出请求和文件对象
+          href: end-user-i-o-requests-and-file-objects.md
+        - name: I/O 请求的生命周期
+          href: the-life-of-an-i-o-request.md
+          items:
+          - name: 示例 I/O 请求 - 概述
+            href: example-i-o-request---an-overview.md
+          - name: 示例 I/O 请求 - 详细信息
+            href: example-i-o-request---the-details.md
+          - name: 驱动程序线程上下文
+            href: driver-thread-context.md
+          - name: 有关用户 I/O 请求的要点
+            href: points-to-consider-about-user-i-o-requests.md
+        - name: IRP 主要函数代码
+          href: irp-major-function-codes.md
+          items:
+          - name: IRP_MJ_CLEANUP
+            href: irp-mj-cleanup.md
+          - name: IRP_MJ_CLOSE
+            href: irp-mj-close.md
+          - name: IRP_MJ_CREATE
+            href: irp-mj-create.md
+          - name: IRP_MJ_DEVICE_CONTROL
+            href: irp-mj-device-control.md
+          - name: IRP_MJ_FILE_SYSTEM_CONTROL
+            href: irp-mj-file-system-control.md
+          - name: IRP_MJ_FLUSH_BUFFERS
+            href: irp-mj-flush-buffers.md
+          - name: IRP_MJ_INTERNAL_DEVICE_CONTROL
+            href: irp-mj-internal-device-control.md
+          - name: IRP_MJ_PNP
+            href: irp-mj-pnp.md
+          - name: IRP_MJ_POWER
+            href: irp-mj-power.md
+          - name: IRP_MJ_QUERY_INFORMATION
+            href: irp-mj-query-information.md
+          - name: IRP_MJ_READ
+            href: irp-mj-read.md
+          - name: IRP_MJ_SET_INFORMATION
+            href: irp-mj-set-information.md
+          - name: IRP_MJ_SHUTDOWN
+            href: irp-mj-shutdown.md
+          - name: IRP_MJ_SYSTEM_CONTROL
+            href: irp-mj-system-control.md
+          - name: IRP_MJ_WRITE
+            href: irp-mj-write.md
+        - name: I/O 堆栈位置
+          href: i-o-stack-locations.md
+        - name: I/O 状态块
+          href: i-o-status-blocks.md
+        - name: 向驱动程序堆栈的下层传递 IRP
+          href: passing-irps-down-the-driver-stack.md
+        - name: 为较低级驱动程序创建 IRP
+          href: creating-irps-for-lower-level-drivers.md
+        - name: 排队和取消排队 IRP
+          href: queuing-and-dequeuing-irps.md
+        - name: 编写 StartIo 例程
+          href: writing-a-startio-routine.md
+          items:
+          - name: 最低级驱动程序中的 StartIo 例程
+            href: startio-routines-in-lowest-level-drivers.md
+          - name: 较高级驱动程序中的 StartIo 例程
+            href: startio-routines-in-higher-level-drivers.md
+          - name: 有关 StartIo 例程的要点
+            href: points-to-consider-for-startio-routines.md
+        - name: 驱动程序管理的 IRP 队列
+          href: driver-managed-irp-queues.md
+          items:
+          - name: 设置和使用设备队列
+            href: setting-up-and-using-device-queues.md
+          - name: 管理设备队列
+            href: managing-device-queues.md
+          - name: 设置和使用联锁队列
+            href: setting-up-and-using-interlocked-queues.md
+          - name: 使用驱动程序创建的线程管理联锁队列
+            href: managing-interlocked-queues-with-a-driver-created-thread.md
+          - name: 可安全取消的 IRP 队列
+            href: cancel-safe-irp-queues.md
+        - name: 完成 IRP
+          href: completing-irps.md
+        - name: 何时完成 IRP
+          href: when-to-complete-an-irp.md
+        - name: 在 Dispatch 例程中完成 IRP
+          href: completing-irps-in-dispatch-routines.md
+          items:
+          - name: 如何在 Dispatch 例程中完成 IRP
+            href: how-to-complete-an-irp-in-a-dispatch-routine.md
+          - name: 何时在 Dispatch 例程中完成 IRP
+            href: when-to-complete-an-irp-in-a-dispatch-routine.md
+        - name: 使用 IoCompletion 例程
+          href: using-iocompletion-routines.md
+          items:
+          - name: 注册 IoCompletion 例程
+            href: registering-an-iocompletion-routine.md
+          - name: 实现 IoCompletion 例程
+            href: implementing-an-iocompletion-routine.md
+        - name: 取消 IRP
+          href: canceling-irps.md
+          items:
+          - name: Cancel 例程简介
+            href: introduction-to-cancel-routines.md
+          - name: 注册 Cancel 例程
+            href: registering-a-cancel-routine.md
+          - name: 取消 IRP 时要考虑的要点
+            href: points-to-consider-when-canceling-irps.md
+        - name: 同步 IRP 取消
+          href: synchronizing-irp-cancellation.md
+          items:
+          - name: 使用系统的取消自旋锁
+            href: using-the-system-s-cancel-spin-lock.md
+          - name: 在处理 IRP 的驱动程序例程中同步取消
+            href: synchronizing-cancellation-in-driver-routines-that-process-irps.md
+          - name: 在不包含 Cancel 例程的较高级驱动程序中同步取消
+            href: synchronizing-cancellation-in-higher-level-drivers-without-cancel-rout.md
+          - name: 使用驱动程序提供的自旋锁
+            href: using-a-driver-supplied-spin-lock.md
+        - name: 实现 Cancel 例程
+          href: implementing-a-cancel-routine.md
+          items:
+          - name: 包含 StartIo 例程的驱动程序中的 Cancel 例程
+            href: cancel-routines-in-drivers-with-startio-routines.md
+          - name: 不包含 StartIo 例程的驱动程序中的 Cancel 例程
+            href: cancel-routines-in-drivers-without-startio-routines.md
+        - name: 重复使用 IRP
+          href: reusing-irps.md
+        - name: 特定于设备类型的 I/O 请求
+          href: device-type-specific-i-o-requests.md
+        - name: 使用 I/O 控制代码
+          href: using-i-o-control-codes.md
+          items:
+          - name: I/O 控制代码简介
+            href: introduction-to-i-o-control-codes.md
+          - name: 在驱动程序中创建 IOCTL 请求
+            href: creating-ioctl-requests-in-drivers.md
+          - name: 定义 I/O 控制代码
+            href: defining-i-o-control-codes.md
+          - name: I/O 控制代码的缓冲区说明
+            href: buffer-descriptions-for-i-o-control-codes.md
+          - name: I/O 控制代码的安全问题
+            href: security-issues-for-i-o-control-codes.md
+        - name: 使用 IRP 优先级提示
+          href: using-irp-priority-hints.md
+        - name: IRP 处理示例
+          href: irp-processing-examples.md
+          items:
+          - name: 在最低级驱动程序中处理 IRP
+            href: processing-irps-in-a-lowest-level-driver.md
+          - name: 在中间级驱动程序中处理 IRP
+            href: processing-irps-in-an-intermediate-level-driver.md
+          - name: 不同的 IRP 处理方法 - 速查表
+            href: different-ways-of-handling-irps-cheat-sheet.md
+      - name: I/O 编程技术
+        href: i-o-programming-techniques.md
+      - name: 常规 I/O 编程技术
+        href: general-i-o-programming-techniques.md
+        items:
+        - name: 同步 I/O 编程
+          href: synchronous-i-o-programming.md
+        - name: 异步 I/O 编程
+          href: asynchronous-i-o-programming.md
+        - name: 在 Vista 中限制等待
+          href: restricting-waits-in-vista.md
+        - name: 避免轮询设备
+          href: avoid-polling-devices.md
+        - name: 保持缓存一致性
+          href: maintaining-cache-coherency.md
+      - name: 访问数据缓冲区的方法
+        href: methods-for-accessing-data-buffers.md
+        items:
+        - name: 使用缓冲 I/O
+          href: using-buffered-i-o.md
+        - name: 使用直接 I/O
+          href: using-direct-i-o.md
+        - name: 将直接 I/O 与 DMA 配合使用
+          href: using-direct-i-o-with-dma.md
+        - name: 将直接 I/O 与 PIO 配合使用
+          href: using-direct-i-o-with-pio.md
+        - name: 既不使用缓冲 I/O，也不使用直接 I/O
+          href: using-neither-buffered-nor-direct-i-o.md
+      - name: DMA 编程技术
+        href: dma-programming-techniques.md
+        items:
+        - name: 执行 DMA 操作期间刷新缓存数据
+          href: flushing-cached-data-during-dma-operations.md
+        - name: 拆分 DMA 传输请求
+          href: splitting-dma-transfer-requests.md
+      - name: 适配器对象和 DMA
+        href: adapter-objects-and-dma.md
+        items:
+        - name: 适配器对象简介
+          href: introduction-to-adapter-objects.md
+        - name: 获取适配器对象
+          href: getting-an-adapter-object.md
+        - name: 使用分散/聚合 DMA
+          href: using-scatter-gather-dma.md
+        - name: 编写 AdapterControl 例程
+          href: writing-adaptercontrol-routines.md
+          items:
+          - name: AdapterControl 例程的存储要求
+            href: storage-requirements-for-adaptercontrol-routines.md
+          - name: 设置 AdapterControl 例程
+            href: setting-up-adaptercontrol-routines.md
+          - name: AdapterControl 例程要求
+            href: adaptercontrol-routine-requirements.md
+      - name: 使用系统 DMA
+        href: using-system-dma.md
+        items:
+        - name: 使用基于数据包的系统 DMA
+          href: using-packet-based-system-dma.md
+          items:
+          - name: 为基于数据包的 DMA 分配适配器通道
+            href: allocating-an-adapter-channel-for-packet-based-dma.md
+          - name: 为基于数据包的 DMA 设置系统 DMA 控制器
+            href: setting-up-the-system-dma-controller-for-packet-based-dma.md
+        - name: 使用公用缓冲区系统 DMA
+          href: using-common-buffer-system-dma.md
+          items:
+          - name: 为公用缓冲区系统 DMA 分配适配器通道
+            href: allocating-an-adapter-channel-for-common-buffer-system-dma.md
+          - name: 为公用缓冲区 DMA 设置系统 DMA 控制器
+            href: setting-up-the-system-dma-controller-for-common-buffer-dma.md
+      - name: 使用总线主控 DMA
+        href: using-bus-master-dma.md
+        items:
+        - name: 使用基于数据包的总线主控 DMA
+          href: using-packet-based-bus-master-dma.md
+          items:
+          - name: 分配总线主控适配器对象
+            href: allocating-the-bus-master-adapter-object.md
+          - name: 设置传输操作
+            href: setting-up-a-transfer-operation.md
+        - name: 使用公用缓冲区总线主控 DMA
+          href: using-common-buffer-bus-master-dma.md
+      - name: DMA 操作接口版本 3
+        href: version-3-of-the-dma-operations-interface.md
+        items:
+        - name: DMA 例程版本 3 的基本调用模式
+          href: basic-calling-pattern-for-version-3-dma-routines.md
+        - name: 使用 MapTransferEx 例程
+          href: using-the-maptransferex-routine.md
+      - name: PIO 技术
+        href: pio-techniques.md
+        items:
+        - name: 执行 PIO 操作期间刷新缓存数据
+          href: flushing-cached-data-during-pio-operations.md
+      - name: 传统 I/O 编程
+        href: legacy-i-o-programming.md
+        items:
+        - name: 访问设备配置空间
+          href: accessing-device-configuration-space.md
+          items:
+          - name: 获取 IRQL = PASSIVE_LEVEL 处的设备配置信息
+            href: obtaining-device-configuration-information-at-irql---passive-level.md
+          - name: 获取 IRQL = DISPATCH_LEVEL 处的设备配置信息
+            href: obtaining-device-configuration-information-at-irql---dispatch-level.md
+          - name: 从其他驱动程序堆栈获取配置信息
+            href: obtaining-configuration-information-from-other-driver-stacks.md
+        - name: 使用控制器对象
+          href: using-controller-objects.md
+          items:
+          - name: 控制器对象简介
+            href: introduction-to-controller-objects.md
+          - name: 创建控制器对象和控制器扩展
+            href: creating-controller-objects-and-controller-extensions.md
+          - name: 为 I/O 操作分配控制器对象
+            href: allocating-controller-objects-for-i-o-operations.md
+        - name: 编写 ControllerControl 例程
+          href: writing-controllercontrolroutines.md
+          items:
+          - name: ControllerControl 例程的存储要求
+            href: storage-requirements-for-controllercontrol-routines.md
+          - name: 设置 ControllerControl 例程
+            href: setting-up-controllercontrolroutines.md
+          - name: ControllerControl 例程要求
+            href: controllercontrol-routine-requirements.md
+      - name: 服务中断
+        href: servicing-interrupts.md
+        items:
+        - name: 中断服务例程
+          href: interrupt-service-routines.md
+          items:
+          - name: 中断服务例程简介
+            href: introduction-to-interrupt-service-routines.md
+          - name: 删除 ISR
+            href: removing-an-isr.md
+          - name: 使 ISR 处于活动或非活动状态
+            href: making-an-isr-active-or-inactive.md
+          - name: 中断相关性
+            href: interrupt-affinity-and-priority.md
+          - name: 提供 ISR 上下文信息
+            href: providing-isr-context-information.md
+          - name: 编写 ISR
+            href: writing-an-isr.md
+          - name: 同步对设备数据的访问
+            href: synchronizing-access-to-device-data.md
+        - name: 使用消息信号中断
+          href: using-message-signaled-interrupts.md
+          items:
+          - name: 消息信号中断简介
+            href: introduction-to-message-signaled-interrupts.md
+          - name: 在注册表中启用消息信号中断
+            href: enabling-message-signaled-interrupts-in-the-registry.md
+          - name: 使用中断资源描述符
+            href: using-interrupt-resource-descriptors.md
+          - name: 动态配置 MSI-X
+            href: dynamically-configuring-msi-x.md
+        - name: 注册 ISR
+          href: registering-an-isr.md
+          items:
+          - name: 使用 IoConnectInterruptEx 的 CONNECT_LINE_BASED 版本
+            href: using-the-connect-line-based-version-of-ioconnectinterruptex.md
+          - name: 使用 IoConnectInterruptEx 的 CONNECT_MESSAGE_BASED 版本
+            href: using-the-connect-message-based-version-of-ioconnectinterruptex.md
+          - name: 使用 IoConnectInterruptEx 的 CONNECT_FULLY_SPECIFIED 版本
+            href: using-the-connect-fully-specified-version-of-ioconnectinterruptex.md
+          - name: 使用被动级别中断服务例程
+            href: using-passive-level-interrupt-handling-routines.md
+          - name: 使用 Windows Vista 以前的 IoConnectInterruptEx
+            href: using-ioconnectinterruptex-prior-to-windows-vista.md
+        - name: DPC 对象和 DPC
+          href: dpc-objects-and-dpcs.md
+          items:
+          - name: DPC 对象简介
+            href: introduction-to-dpc-objects.md
+          - name: DPC 简介
+            href: introduction-to-dpcs.md
+          - name: 应使用哪种类型的 DPC？
+            href: which-type-of-dpc-should-you-use-.md
+          - name: DpcForIsr 例程注册和排队
+            href: registering-and-queuing-a-dpcforisr-routine.md
+          - name: CustomDpc 例程注册和排队
+            href: registering-and-queuing-a-customdpc-routine.md
+          - name: 处理重叠的 I/O 操作
+            href: handling-overlapped-i-o-operations.md
+          - name: 编写 DPC 例程
+            href: writing-dpc-routines.md
+          - name: 有关编写 DPC 例程的指导原则
+            href: guidelines-for-writing-dpc-routines.md
+          - name: DPC 队列的组织
+            href: organization-of-dpc-queues.md
+        - name: 线程 DPC
+          href: threaded-dpcs.md
+          items:
+          - name: 线程 DPC 简介
+            href: introduction-to-threaded-dpcs.md
+          - name: 同步和线程 DPC
+            href: synchronization-and-threaded-dpcs.md
+          - name: 将普通 DPC 转换为线程 DPC
+            href: converting-an-ordinary-dpc-to-a-threaded-dpc.md
+        - name: 使用关键节
+          href: using-critical-sections.md
+          items:
+          - name: SynchCritSection 例程简介
+            href: introduction-to-synchcritsection-routines.md
+          - name: 编写 SynchCritSection 例程
+            href: writing-synchcritsection-routines.md
+          - name: 为 I/O 操作设备编程
+            href: programming-a-device-for-an-i-o-operation.md
+          - name: 访问共享状态信息
+            href: accessing-shared-state-information.md
+        - name: 管理硬件优先级
+          href: managing-hardware-priorities.md
+    - name: 实现即插即用
+      href: implementing-plug-and-play.md
+      items:
+      - name: 即插即用简介
+        href: introduction-to-plug-and-play.md
+        items:
+        - name: PnP 组件
+          href: pnp-components.md
+        - name: PnP 的支持级别
+          href: levels-of-support-for-pnp.md
+        - name: PnP 驱动程序设计指导原则
+          href: pnp-driver-design-guidelines.md
+        - name: 设备树
+          href: device-tree.md
+        - name: 硬件资源
+          href: hardware-resources.md
+        - name: PnP 设备的状态转换
+          href: state-transitions-for-pnp-devices.md
+      - name: 将 PnP 设备添加到正在运行的系统
+        href: adding-a-pnp-device-to-a-running-system.md
+      - name: 即插即用次要 IRP
+        href: plug-and-play-minor-irps.md
+        items:
+        - name: IRP_MN_CANCEL_REMOVE_DEVICE
+          href: irp-mn-cancel-remove-device.md
+        - name: IRP_MN_CANCEL_STOP_DEVICE
+          href: irp-mn-cancel-stop-device.md
+        - name: IRP_MN_DEVICE_ENUMERATED
+          href: irp-mn-device-enumerated.md
+        - name: IRP_MN_DEVICE_USAGE_NOTIFICATION
+          href: irp-mn-device-usage-notification.md
+        - name: IRP_MN_EJECT
+          href: irp-mn-eject.md
+        - name: IRP_MN_FILTER_RESOURCE_REQUIREMENTS
+          href: irp-mn-filter-resource-requirements.md
+        - name: IRP_MN_QUERY_BUS_INFORMATION
+          href: irp-mn-query-bus-information.md
+        - name: IRP_MN_QUERY_CAPABILITIES
+          href: irp-mn-query-capabilities.md
+        - name: IRP_MN_QUERY_DEVICE_RELATIONS
+          href: irp-mn-query-device-relations.md
+        - name: IRP_MN_QUERY_DEVICE_TEXT
+          href: irp-mn-query-device-text.md
+        - name: IRP_MN_QUERY_ID
+          href: irp-mn-query-id.md
+        - name: IRP_MN_QUERY_INTERFACE
+          href: irp-mn-query-interface.md
+        - name: IRP_MN_QUERY_LEGACY_BUS_INFORMATION
+          href: irp-mn-query-legacy-bus-information.md
+        - name: IRP_MN_QUERY_PNP_DEVICE_STATE
+          href: irp-mn-query-pnp-device-state.md
+        - name: IRP_MN_QUERY_REMOVE_DEVICE
+          href: irp-mn-query-remove-device.md
+        - name: IRP_MN_QUERY_RESOURCE_REQUIREMENTS
+          href: irp-mn-query-resource-requirements.md
+        - name: IRP_MN_QUERY_RESOURCES
+          href: irp-mn-query-resources.md
+        - name: IRP_MN_QUERY_STOP_DEVICE
+          href: irp-mn-query-stop-device.md
+        - name: IRP_MN_READ_CONFIG
+          href: irp-mn-read-config.md
+        - name: IRP_MN_REMOVE_DEVICE
+          href: irp-mn-remove-device.md
+        - name: IRP_MN_SET_LOCK
+          href: irp-mn-set-lock.md
+        - name: IRP_MN_START_DEVICE
+          href: irp-mn-start-device.md
+        - name: IRP_MN_STOP_DEVICE
+          href: irp-mn-stop-device.md
+        - name: IRP_MN_SURPRISE_REMOVAL
+          href: irp-mn-surprise-removal.md
+        - name: IRP_MN_WRITE_CONFIG
+          href: irp-mn-write-config.md
+      - name: 向设备堆栈的下层传递 PnP IRP
+        href: passing-pnp-irps-down-the-device-stack.md
+      - name: 将 PnP IRP 处理推迟到较低级驱动程序完成为止
+        href: postponing-pnp-irp-processing-until-lower-drivers-finish.md
+      - name: 启动设备
+        href: starting-a-device.md
+        items:
+        - name: 在函数驱动程序中启动设备
+          href: starting-a-device-in-a-function-driver.md
+        - name: 在筛选器驱动程序中启动设备
+          href: starting-a-device-in-a-filter-driver.md
+        - name: 在总线驱动程序中启动设备
+          href: starting-a-device-in-a-bus-driver.md
+        - name: 启动设备的设计指导原则
+          href: design-guidelines-for-starting-devices.md
+      - name: 停止设备
+        href: stopping-a-device.md
+        items:
+        - name: 停止设备以重新平衡资源
+          href: stopping-a-device-to-rebalance-resources.md
+        - name: 停止设备以将其禁用 (Windows 98/Me)
+          href: stopping-a-device-to-disable-it--windows-98-me-.md
+        - name: 启动失败后停止设备 (Windows 98/Me)
+          href: stopping-a-device-after-a-failed-start--windows-98-me-.md
+        - name: 处理停止 IRP（Windows 2000 和更高版本）
+          href: handling-stop-irps--windows-2000-and-later-.md
+          items:
+          - name: 处理 IPR_MN_QUERY_STOP_DEVICE 请求（Windows 2000 和更高版本）
+            href: handling-an-irp-mn-query-stop-device-request--windows-2000-and-later-.md
+          - name: 处理 IRP_MN_STOP_DEVICE 请求（Windows 2000 和更高版本）
+            href: handling-an-irp-mn-stop-device-request--windows-2000-and-later-.md
+          - name: 处理 IRP_MN_CANCEL_STOP_DEVICE 请求（Windows 2000 和更高版本）
+            href: handling-an-irp-mn-cancel-stop-device-request--windows-2000-and-later-.md
+          - name: 设备暂停时保持传入的 IRP
+            href: holding-incoming-irps-when-a-device-is-paused.md
+        - name: 处理停止 IRP (Windows 98/Me)
+          href: handling-stop-irps--windows-98-me-.md
+          items:
+          - name: 处理 IRP_MN_QUERY_STOP_DEVICE 请求 (Windows 98/Me)
+            href: handling-an-irp-mn-query-stop-device-request--windows-98-me-.md
+          - name: 处理 IRP_MN_STOP_DEVICE 请求 (Windows 98/Me)
+            href: handling-an-irp-mn-stop-device-request--windows-98-me-.md
+          - name: 处理 IRP_MN_CANCEL_STOP_DEVICE 请求 (Windows 98/Me)
+            href: handling-an-irp-mn-cancel-stop-device-request--windows-98-me-.md
+      - name: 重置和恢复设备
+        href: resetting-and-recovering-a-device.md
+      - name: 删除设备
+        href: removing-a-device.md
+        items:
+        - name: 了解删除 IRP 的命令是何时发出的
+          href: understanding-when-remove-irps-are-issued.md
+        - name: 处理 IRP_MN_QUERY_REMOVE_DEVICE 请求
+          href: handling-an-irp-mn-query-remove-device-request.md
+        - name: 处理 IRP_MN_REMOVE_DEVICE 请求
+          href: handling-an-irp-mn-remove-device-request.md
+          items:
+          - name: 在函数驱动程序中删除设备
+            href: removing-a-device-in-a-function-driver.md
+          - name: 在筛选器驱动程序中删除设备
+            href: removing-a-device-in-a-filter-driver.md
+          - name: 在总线驱动程序中删除设备
+            href: removing-a-device-in-a-bus-driver.md
+        - name: 处理 IRP_MN_CANCEL_REMOVE_DEVICE 请求
+          href: handling-an-irp-mn-cancel-remove-device-request.md
+        - name: 处理 IRP_MN_SURPRISE_REMOVAL 请求
+          href: handling-an-irp-mn-surprise-removal-request.md
+        - name: 使用删除锁
+          href: using-remove-locks.md
+      - name: 使用 PnP 通知
+        href: using-pnp-notification.md
+        items:
+        - name: PnP 通知概述
+          href: pnp-notification-overview.md
+        - name: 有关编写 PnP 通知回调例程的指导原则
+          href: guidelines-for-writing-pnp-notification-callback-routines.md
+        - name: 使用 PnP 设备接口更改通知
+          href: using-pnp-device-interface-change-notification.md
+          items:
+          - name: 注册设备接口更改通知
+            href: registering-for-device-interface-change-notification.md
+          - name: 处理设备接口更改事件
+            href: handling-device-interface-change-events.md
+        - name: 使用 PnP 目标设备更改通知
+          href: using-pnp-target-device-change-notification.md
+          items:
+          - name: 注册目标设备更改通知
+            href: registering-for-target-device-change-notification.md
+          - name: 处理 GUID_TARGET_DEVICE_QUERY_REMOVE 事件
+            href: handling-a-guid-target-device-query-remove-event.md
+          - name: 处理 GUID_TARGET_DEVICE_REMOVE_COMPLETE 事件
+            href: handling-a-guid-target-device-remove-complete-event.md
+          - name: 处理 GUID_TARGET_DEVICE_REMOVE_CANCELLED 事件
+            href: handling-a-guid-target-device-remove-cancelled-event.md
+        - name: 使用 PnP 硬件配置文件更改通知
+          href: using-pnp-hardware-profile-change-notification.md
+          items:
+          - name: 注册硬件配置文件更改通知
+            href: registering-for-hardware-profile-change-notification.md
+          - name: 处理硬件配置文件更改事件
+            href: handling-hardware-profile-change-events.md
+        - name: 使用 PnP 自定义通知
+          href: using-pnp-custom-notification.md
+    - name: Windows 驱动程序的电源管理
+      href: implementing-power-management.md
+      items:
+      - name: 电源管理简介
+        href: introduction-to-power-management.md
+        items:
+        - name: 电源管理的行业举措
+          href: industry-initiatives-for-power-management.md
+        - name: 电源管理支持
+          href: support-for-power-management.md
+        - name: 电源管理的全系统概述
+          href: system-wide-overview-of-power-management.md
+        - name: 电源状态
+          href: power-states.md
+      - name: 内核模式电源管理组件
+        href: kernel-mode-power-management-components.md
+        items:
+        - name: ACPI BIOS
+          href: acpi-bios.md
+        - name: Acpi.sysWindows ACPI 驱动程序
+          href: acpi-driver.md
+        - name: 电源管理器
+          href: power-manager.md
+        - name: 电源管理中的驱动程序角色
+          href: driver-role-in-power-management.md
+        - name: ACPI 通知
+          href: acpi-notifications.md
+        - name: 设备电源管理 (DPM) 通知
+          href: dpm-notifications.md
+        - name: 处理器电源管理 (PPM) 通知
+          href: ppm-notifications.md
+        - name: PPM 电源控制代码
+          href: ppm-power-control-codes.md
+      - name: 驱动程序的电源管理责任
+        href: power-management-responsibilities-for-drivers.md
+        items:
+        - name: 报告设备电源功能
+          href: reporting-device-power-capabilities.md
+          items:
+          - name: DeviceD1 和 DeviceD2
+            href: deviced1-and-deviced2.md
+          - name: WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3
+            href: wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md
+          - name: DeviceState
+            href: devicestate.md
+          - name: SystemWake
+            href: systemwake.md
+          - name: DeviceWake
+            href: devicewake.md
+          - name: D1Latency、D2Latency 和 D3Latency
+            href: d1latency--d2latency--and-d3latency.md
+        - name: 为电源管理设置设备对象标志
+          href: setting-device-object-flags-for-power-management.md
+        - name: 处理电源 IRP
+          href: handling-power-irps.md
+          items:
+          - name: 系统的电源 IRP
+            href: power-irps-for-the-system.md
+          - name: 单个设备的电源 IRP
+            href: power-irps-for-individual-devices.md
+        - name: 电源管理次要 IRP
+          href: power-management-minor-irps.md
+          items:
+          - name: IRP_MN_POWER_SEQUENCE
+            href: irp-mn-power-sequence.md
+          - name: IRP_MN_QUERY_POWER
+            href: irp-mn-query-power.md
+          - name: IRP_MN_SET_POWER
+            href: irp-mn-set-power.md
+          - name: IRP_MN_WAIT_WAKE
+            href: irp-mn-wait-wake.md
+        - name: 打开设备的电源
+          href: powering-up-a-device.md
+        - name: 关闭设备的电源
+          href: powering-down-a-device.md
+        - name: 启用设备唤醒
+          href: enabling-device-wake-up.md
+        - name: 管理设备性能状态
+          href: managing-device-performance-states.md
+        - name: 快速启动与休眠唤醒的区分
+          href: distinguishing-fast-startup-from-wake-from-hibernation.md
+      - name: 电源 IRP 的处理规则
+        href: rules-for-handling-power-irps.md
+        items:
+        - name: 调用 IoCallDriver 与调用 PoCallDriver
+          href: calling-iocalldriver-versus-calling-pocalldriver.md
+        - name: 调用 PoStartNextPowerIrp
+          href: calling-postartnextpowerirp.md
+          items:
+          - name: 从筛选器驱动程序调用 PoStartNextPowerIrp
+            href: calling-postartnextpowerirp-from-a-filter-driver.md
+          - name: 从设备电源策略所有者调用 PoStartNextPowerIrp
+            href: calling-postartnextpowerirp-from-a-device-power-policy-owner.md
+          - name: 从总线驱动程序调用 PoStartNextPowerIrp
+            href: calling-postartnextpowerirp-from-a-bus-driver.md
+        - name: 传递电源 IRP
+          href: passing-power-irps.md
+        - name: 设备睡眠时将 I/O 请求排队
+          href: queuing-i-o-requests-while-a-device-is-sleeping.md
+        - name: 处理不受支持的或无法识别的电源 IRP
+          href: handling-unsupported-or-unrecognized-power-irps.md
+        - name: 处理电源 IRP 时调用 ExSetTimerResolution
+          href: calling-exsettimerresolution-while-processing-a-power-irp.md
+      - name: 管理单个设备的电源
+        href: managing-power-for-individual-devices.md
+        items:
+        - name: 设备电源状态
+          href: device-power-states.md
+          items:
+          - name: 设备工作状态 D0
+            href: device-working-state-d0.md
+          - name: 设备低功耗状态
+            href: device-sleeping-states.md
+          - name: 设备电源状态所需的支持
+            href: required-support-for-device-power-states.md
+        - name: 管理设备电源策略
+          href: managing-device-power-policy.md
+        - name: 处理设备电源状态的 IRP_MN_SET_POWER
+          href: handling-irp-mn-set-power-for-device-power-states.md
+          items:
+          - name: 处理设备断电 IRP
+            href: handling-device-power-down-irps.md
+          - name: 处理设备通电 IRP
+            href: handling-device-power-up-irps.md
+          - name: 设备电源 IRP 的 IoCompletion 例程
+            href: iocompletion-routines-for-device-power-irps.md
+        - name: 处理设备电源状态的 IRP_MN_QUERY_POWER
+          href: handling-irp-mn-query-power-for-device-power-states.md
+        - name: 发送设备电源状态的 IRP_MN_QUERY_POWER 或 IRP_MN_SET_POWER
+          href: sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md
+        - name: 检测空闲设备
+          href: detecting-an-idle-device.md
+          items:
+          - name: 使用电源管理器例程进行空闲检测
+            href: using-power-manager-routines-for-idle-detection.md
+          - name: 执行特定于设备的空闲检测
+            href: performing-device-specific-idle-detection.md
+        - name: 在驱动程序中支持 D3cold
+          href: supporting-d3cold-in-a-driver.md
+          items:
+          - name: 启用到 D3cold 的转换
+            href: enabling-transitions-to-d3cold.md
+          - name: 设备的 D3cold 功能
+            href: d3cold-capabilities-of-a-device.md
+          - name: 使用 GUID_D3COLD_SUPPORT_INTERFACE 驱动程序接口
+            href: using-guid-d3cold-support-interface.md
+          - name: 意外唤醒
+            href: surprise-wake-up.md
+      - name: 处理系统电源状态请求
+        href: handling-system-power-state-requests.md
+        items:
+        - name: 系统电源状态
+          href: system-power-states.md
+          items:
+          - name: 系统工作状态 S0
+            href: system-working-state-s0.md
+          - name: 系统睡眠状态
+            href: system-sleeping-states.md
+          - name: 系统关闭状态 S5
+            href: system-shutdown-state-s5.md
+          - name: 系统电源操作
+            href: system-power-actions.md
+        - name: 系统电源策略
+          href: system-power-policy.md
+        - name: 阻止系统电源状态更改
+          href: preventing-system-power-state-changes.md
+        - name: 处理系统电源状态的 IRP_MN_QUERY_POWER
+          href: handling-irp-mn-query-power-for-system-power-states.md
+          items:
+          - name: 处理设备电源策略所有者中的系统 Query-Power IRP
+            href: handling-a-system-query-power-irp-in-a-device-power-policy-owner.md
+          - name: 处理筛选器或函数驱动程序中的系统 Query-Power IRP
+            href: handling-a-system-query-power-irp-in-a-filter-or-function-driver.md
+          - name: 使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
+            href: failing-a-system-query-power-irp-in-a-filter-or-function-driver.md
+          - name: 处理总线驱动程序中的系统 Query-Power IRP
+            href: handling-a-system-query-power-irp-in-a-bus-driver.md
+        - name: 处理系统电源状态的 IRP_MN_SET_POWER
+          href: handling-irp-mn-set-power-for-system-power-states.md
+          items:
+          - name: 处理设备电源策略所有者中的系统 Set-Power IRP
+            href: handling-a-system-set-power-irp-in-a-device-power-policy-owner.md
+          - name: 确定正确的设备电源状态
+            href: determining-the-correct-device-power-state.md
+          - name: 在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
+            href: sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp.md
+          - name: 处理总线驱动程序中的系统 Set-Power IRP
+            href: handling-a-system-set-power-irp-in-a-bus-driver.md
+          - name: 处理筛选器驱动程序中的系统 Set-Power IRP
+            href: handling-a-system-set-power-irp-in-a-filter-driver.md
+      - name: 电源管理框架概述
+        href: overview-of-the-power-management-framework.md
+        items:
+        - name: 设备电源管理参考
+          href: device-power-management-reference.md
+        - name: 组件级电源管理
+          href: component-level-power-management.md
+        - name: 组件级性能状态管理
+          href: component-level-performance-management.md
+      - name: 平台扩展插件 (PEP)
+        href: platform-extension-plug-ins--peps-.md
+        items:
+        - name: 对 ACPI 服务使用 PEP
+          href: using-peps-for-acpi-services.md
+        - name: 平台性能阈值
+          href: platform-performance-thresholds.md
+      - name: 支持具有唤醒功能的设备
+        href: supporting-devices-that-have-wake-up-capabilities.md
+        items:
+        - name: 等待/唤醒操作概述
+          href: overview-of-wait-wake-operation.md
+          items:
+          - name: 确定设备是否可以唤醒系统
+            href: determining-whether-a-device-can-wake-the-system.md
+          - name: 通过设备树了解等待/唤醒 IRP 的路径
+            href: understanding-the-path-of-wait-wake-irps-through-a-device-tree.md
+          - name: 等待/唤醒 IRP 完成概述
+            href: overview-of-wait-wake-irp-completion.md
+        - name: 接收等待/唤醒 IRP
+          href: receiving-a-wait-wake-irp.md
+          items:
+          - name: 处理函数 (FDO) 或筛选器驱动程序（筛选器 DO）中的等待/唤醒 IRP
+            href: handling-a-wait-wake-irp-in-a-function--fdo--or-filter-driver--filter-.md
+          - name: 处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
+            href: handling-a-wait-wake-irp-in-a-bus-driver--pdo-.md
+          - name: 等待/唤醒 IRP 的 IoCompletion 例程
+            href: iocompletion-routines-for-wait-wake-irps.md
+        - name: 发送等待/唤醒 IRP
+          href: sending-a-wait-wake-irp.md
+          items:
+          - name: 确定何时发送等待/唤醒 IRP
+            href: determining-when-to-send-a-wait-wake-irp.md
+          - name: 等待/唤醒 IRP 请求
+            href: wait-wake-irp-requests.md
+          - name: 等待/唤醒回调例程
+            href: wait-wake-callback-routines.md
+        - name: 取消等待/唤醒 IRP
+          href: canceling-a-wait-wake-irp.md
+      - name: 改进系统启动性能
+        href: improving-system-startup-performance.md
+        items:
+        - name: 在从低功耗状态启动期间共享处理器资源
+          href: sharing-processor-resources-during-startup-from-a-low-power-state.md
+        - name: 从低功耗状态快速启动
+          href: fast-startup-from-a-low-power-state.md
+      - name: 设备级热量管理
+        href: device-level-thermal-management.md
+        items:
+        - name: 被动和主动散热模式
+          href: passive-and-active-cooling-modes.md
+        - name: 全局热量管理
+          href: global-thermal-mgmt.md
+    - name: 实现 WMI
+      href: implementing-wmi.md
+      items:
+      - name: WMI 简介
+        href: introduction-to-wmi.md
+      - name: WMI 体系结构
+        href: wmi-architecture.md
+      - name: WDM 驱动程序的 WMI 要求
+        href: wmi-requirements-for-wdm-drivers.md
+      - name: WMI 数据和事件块的 MOF 语法
+        href: mof-syntax-for-wmi-data-and-event-blocks.md
+        items:
+        - name: WMI 类限定符
+          href: wmi-class-qualifiers.md
+        - name: WMI 类名和基类
+          href: wmi-class-names-and-base-classes.md
+        - name: WMI 类中的必需项
+          href: required-items-in-wmi-classes.md
+        - name: WMI 属性限定符
+          href: wmi-property-qualifiers.md
+        - name: 驱动程序定义的 WMI 数据项
+          href: driver-defined-wmi-data-items.md
+        - name: WMI 类示例
+          href: wmi-class-examples.md
+      - name: 设计 WMI 数据和事件块
+        href: designing-wmi-data-and-event-blocks.md
+        items:
+        - name: 支持标准 WMI 块
+          href: supporting-standard-wmi-blocks.md
+        - name: 实现自定义 WMI 块
+          href: implementing-custom-wmi-blocks.md
+        - name: 定义 WMI 实例名称
+          href: defining-wmi-instance-names.md
+      - name: 发布 WMI 架构
+        href: publishing-a-wmi-schema.md
+        items:
+        - name: 编译驱动程序的 MOF 文件
+          href: compiling-a-driver-s-mof-file.md
+        - name: 设置 MofImagePath 注册表值
+          href: setting-the-mofimagepath-registry-value.md
+        - name: 实现动态 MOF 数据
+          href: implementing-dynamic-mof-data.md
+        - name: 本地化 MOF 文件
+          href: localizing-mof-files.md
+          items:
+          - name: 创建本地化 MOF 文件
+            href: creating-the-localized-mof-file.md
+          - name: 生成和部署已本地化的 MOF 文件
+            href: building-and-deploying-the-localized-mof-file.md
+      - name: 注册为 WMI 数据提供程序
+        href: registering-as-a-wmi-data-provider.md
+        items:
+        - name: 使用 WMI 库注册块
+          href: using-the-wmi-library-to-register-blocks.md
+        - name: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
+          href: handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md
+        - name: WMI 注册标志
+          href: wmi-registration-flags.md
+        - name: 更新 WMI 注册信息
+          href: updating-wmi-registration-information.md
+      - name: 处理 WMI 请求
+        href: handling-wmi-requests.md
+        items:
+        - name: WMI 次要 IRP
+          href: wmi-minor-irps.md
+          items:
+          - name: IRP_MN_CHANGE_SINGLE_INSTANCE
+            href: irp-mn-change-single-instance.md
+          - name: IRP_MN_CHANGE_SINGLE_ITEM
+            href: irp-mn-change-single-item.md
+          - name: IRP_MN_DISABLE_COLLECTION
+            href: irp-mn-disable-collection.md
+          - name: IRP_MN_DISABLE_EVENTS
+            href: irp-mn-disable-events.md
+          - name: IRP_MN_ENABLE_COLLECTION
+            href: irp-mn-enable-collection.md
+          - name: IRP_MN_ENABLE_EVENTS
+            href: irp-mn-enable-events.md
+          - name: IRP_MN_EXECUTE_METHOD
+            href: irp-mn-execute-method.md
+          - name: IRP_MN_QUERY_ALL_DATA
+            href: irp-mn-query-all-data.md
+          - name: IRP_MN_QUERY_SINGLE_INSTANCE
+            href: irp-mn-query-single-instance.md
+          - name: IRP_MN_REGINFO
+            href: irp-mn-reginfo.md
+          - name: IRP_MN_REGINFO_EX
+            href: irp-mn-reginfo-ex.md
+        - name: 调用 WmiSystemControl 以处理 WMI IRP
+          href: calling-wmisystemcontrol-to-handle-wmi-irps.md
+        - name: 处理 DispatchSystemControl 例程中的 WMI IRP
+          href: processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md
+        - name: WMI WNODE_XXX 结构
+          href: wmi-wnode-xxx-structures.md
+      - name: 发送 WMI 事件
+        href: sending-wmi-events.md
+        items:
+        - name: 使用 WmiFireEvent 发送事件
+          href: sending-an-event-with-wmifireevent.md
+        - name: 使用 IoWMIWriteEvent 发送事件
+          href: sending-an-event-with-iowmiwriteevent.md
+        - name: 使用自定义 WMI 事件
+          href: using-custom-wmi-events.md
+      - name: WMI 属性表
+        href: wmi-property-sheets.md
+        items:
+        - name: WMI 通用属性页提供程序
+          href: wmi-generic-property-page-provider.md
+        - name: WMI 和电源管理选项卡
+          href: wmi-and-the-power-management-tab.md
+      - name: 使用 Wmimofck.exe
+        href: using-wmimofck-exe.md
+      - name: WMI 事件跟踪
+        href: wmi-event-tracing.md
+      - name: 测试 WMI 驱动程序支持及排查其问题
+        href: testing-and-troubleshooting-wmi-driver-support.md
+        items:
+        - name: 用于测试 WMI 驱动程序支持的常规方法
+          href: general-techniques-for-testing-wmi-driver-support.md
+        - name: 排查具体的 WMI 问题
+          href: troubleshooting-specific-wmi-problems.md
+  - name: 驱动程序编程技术
+    href: driver-programming-techniques.md
+    items:
+    - name: 使用本机系统服务例程的 Nt 和 Zw 版本
+      href: using-nt-and-zw-versions-of-the-native-system-services-routines.md
+      items:
+      - name: PreviousMode
+        href: previousmode.md
+      - name: 库和标头
+        href: libraries-and-headers.md
+      - name: Zw 前缀是什么？
+        href: what-does-the-zw-prefix-mean-.md
+      - name: 指定访问权限
+        href: access-mask.md
+      - name: NtXxx 例程
+        href: ntxxx-routines.md
+    - name: 同步技术
+      href: synchronization-techniques.md
+      items:
+      - name: 内核调度程序对象
+        href: kernel-dispatcher-objects.md
+        items:
+        - name: 内核调度程序对象简介
+          href: introduction-to-kernel-dispatcher-objects.md
+        - name: 计时器对象
+          href: timer-objects.md
+        - name: KeXxxTimer 例程、KTIMER 对象和 DPC
+          href: timer-objects-and-dpcs.md
+          items:
+          - name: 使用计时器对象
+            href: using-timer-objects.md
+          - name: 计时器准确性
+            href: timer-accuracy.md
+          - name: CustomTimerDpc 例程注册和排队
+            href: registering-and-queuing-a-customtimerdpc-routine.md
+          - name: 提供 CustomTimerDpc 上下文信息
+            href: providing-customtimerdpc-context-information.md
+          - name: 使用 CustomTimerDpc 例程
+            href: using-a-customtimerdpc-routine.md
+        - name: ExXxxTimer 例程和 EX_TIMER 对象
+          href: exxxxtimer-routines-and-ex-timer-objects.md
+          items:
+          - name: 高解析度计时器
+            href: high-resolution-timers.md
+          - name: 无唤醒功能的计时器
+            href: no-wake-timers.md
+          - name: 删除系统分配的计时器对象
+            href: deleting-a-system-allocated-timer-object.md
+        - name: 事件对象
+          href: event-objects.md
+          items:
+          - name: 定义和使用事件对象
+            href: defining-and-using-an-event-object.md
+          - name: 标准事件对象
+            href: standard-event-objects.md
+        - name: 信号灯对象
+          href: semaphore-objects.md
+        - name: 互斥对象
+          href: mutex-objects.md
+          items:
+          - name: 互斥对象简介
+            href: introduction-to-mutex-objects.md
+          - name: 互斥对象的替代方案
+            href: alternatives-to-mutex-objects.md
+        - name: 线程对象
+          href: thread-objects.md
+          items:
+          - name: 线程对象简介
+            href: introduction-to-thread-objects.md
+          - name: 线程优先级
+            href: thread-priorities.md
+          - name: 设备专用的线程
+            href: device-dedicated-threads.md
+          - name: 系统工作线程
+            href: system-worker-threads.md
+        - name: 等待和 APC
+          href: waits-and-apcs.md
+      - name: 回调对象
+        href: callback-objects.md
+        items:
+        - name: 定义回调对象
+          href: defining-a-callback-object.md
+        - name: 使用驱动程序定义的回调对象
+          href: using-a-driver-defined-callback-object.md
+        - name: 使用系统定义的回调对象
+          href: using-a-system-defined-callback-object.md
+      - name: 自旋锁
+        href: spin-locks.md
+        items:
+        - name: 自旋锁简介
+          href: introduction-to-spin-locks.md
+        - name: 为自旋锁和受保护数据提供存储
+          href: providing-storage-for-spin-locks-and-protected-data.md
+        - name: 初始化自旋锁
+          href: initializing-spin-locks.md
+        - name: 调用使用自旋锁的支持例程
+          href: calling-support-routines-that-use-spin-locks.md
+        - name: 使用自旋锁：示例
+          href: using-spin-locks--an-example.md
+        - name: 使用自旋锁时防止错误和死锁
+          href: preventing-errors-and-deadlocks-while-using-spin-locks.md
+        - name: 排队的自旋锁
+          href: queued-spin-locks.md
+        - name: 读取器/写入器自旋锁
+          href: reader-writer-spin-locks.md
+      - name: 快速互斥锁和受保护互斥锁
+        href: fast-mutexes-and-guarded-mutexes.md
+      - name: ERESOURCE 结构
+        href: eresource-structures.md
+        items:
+        - name: ERESOURCE 例程简介
+          href: introduction-to-eresource-routines.md
+      - name: 其他计时器和计数器
+        href: additional-timers-and-counters.md
+        items:
+        - name: IoTimer 例程
+          href: iotimer-routines.md
+          items:
+          - name: 注册和启用 IoTimer 例程
+            href: registering-and-enabling-an-iotimer-routine.md
+          - name: 提供 IoTimer 上下文信息
+            href: providing-iotimer-context-information.md
+          - name: 使用 IoTimer 例程
+            href: using-an-iotimer-routine.md
+        - name: 计数器
+          href: counters.md
+      - name: 异步过程调用
+        href: asynchronous-procedure-calls.md
+        items:
+        - name: APC 的类型
+          href: types-of-apcs.md
+        - name: 禁用 APC
+          href: disabling-apcs.md
+        - name: 关键区域和受保护区域
+          href: critical-regions-and-guarded-regions.md
+      - name: 获取和释放语义
+        href: acquire-and-release-semantics.md
+      - name: 停止运行保护
+        href: run-down-protection.md
+    - name: 使用通用日志文件系统
+      href: using-common-log-file-system.md
+      items:
+      - name: 通用日志文件系统简介
+        href: introduction-to-the-common-log-file-system.md
+      - name: CLFS 术语
+        href: clfs-terminology.md
+      - name: CLFS 日志序列号
+        href: clfs-log-sequence-numbers.md
+      - name: CLFS 封送区域
+        href: clfs-marshalling-areas.md
+      - name: 将数据记录写入 CLFS 流
+        href: writing-data-records-to-a-clfs-stream.md
+      - name: 将重启记录写入 CLFS 流
+        href: writing-restart-records-to-a-clfs-stream.md
+      - name: 从 CLFS 流读取数据记录
+        href: reading-data-records-from-a-clfs-stream.md
+      - name: 从 CLFS 流读取重启记录
+        href: reading-restart-records-from-a-clfs-stream.md
+      - name: CLFS 稳定存储
+        href: clfs-stable-storage.md
+      - name: 专用 CLFS 日志
+        href: dedicated-clfs-logs.md
+      - name: 多路复用 CLFS 日志
+        href: multiplexed-clfs-logs.md
+      - name: 存档的 CLFS 支持
+        href: clfs-support-for-archiving.md
+    - name: 使用内核事务管理器
+      href: using-kernel-transaction-manager.md
+      items:
+      - name: KTM 简介
+        href: introduction-to-ktm.md
+        items:
+        - name: 何时使用内核模式 KTM
+          href: when-to-use-kernel-mode-ktm.md
+        - name: 事务处理的术语
+          href: transaction-processing-terms.md
+        - name: 了解 TPS 组件
+          href: understanding-tps-components.md
+        - name: 其他事务接口
+          href: additional-transactional-interfaces.md
+      - name: KTM 对象
+        href: ktm-objects.md
+        items:
+        - name: 事务管理器对象
+          href: transaction-manager-objects.md
+        - name: 资源管理器对象
+          href: resource-manager-objects.md
+        - name: 事务对象
+          href: transaction-objects.md
+        - name: 登记对象
+          href: enlistment-objects.md
+      - name: 使用 KTM
+        href: using-ktm.md
+        items:
+        - name: 创建资源管理器
+          href: creating-a-resource-manager.md
+        - name: 创建事务客户端
+          href: creating-a-transactional-client.md
+        - name: 创建高级事务管理器
+          href: creating-a-superior-transaction-manager.md
+        - name: 处理事务操作
+          href: handling-transaction-operations.md
+          items:
+          - name: 处理提交操作
+            href: handling-commit-operations.md
+          - name: 处理回滚操作
+            href: handling-rollback-operations.md
+          - name: 处理恢复操作
+            href: handling-recovery-operations.md
+        - name: 事务通知
+          href: transaction-notifications.md
+        - name: 将日志流与 KTM 配合使用
+          href: using-log-streams-with-ktm.md
+        - name: 使用虚拟时钟值
+          href: using-virtual-clock-values.md
+        - name: 使用 TmXxx 例程
+          href: using-tmxxx-routines.md
+    - name: 动态硬件分区技术
+      href: dynamic-hardware-partitioning-techniques.md
+      items:
+      - name: 动态硬件分区简介
+        href: introduction-to-dynamic-hardware-partitioning.md
+      - name: 动态硬件分区体系结构
+        href: dynamic-hardware-partitioning-architecture.md
+      - name: 设备驱动程序的关键问题
+        href: critical-issues-for-device-drivers.md
+        items:
+        - name: 处理器数量的更改
+          href: changes-to-the-number-of-processors.md
+        - name: 物理内存量的更改
+          href: changes-to-the-amount-of-physical-memory.md
+        - name: 分区单元的热更换
+          href: hot-replace-of-partition-units.md
+      - name: 驱动程序通知
+        href: driver-notification.md
+        items:
+        - name: 驱动程序通知简介
+          href: introduction-to-driver-notification.md
+        - name: 同步驱动程序通知
+          href: synchronous-driver-notification.md
+          items:
+          - name: 注册同步驱动程序通知
+            href: registering-for-synchronous-driver-notification.md
+          - name: 处理同步驱动程序通知
+            href: processing-a-synchronous-driver-notification.md
+        - name: 异步驱动程序通知
+          href: asynchronous-driver-notification.md
+          items:
+          - name: 注册异步驱动程序通知
+            href: registering-for-asynchronous-driver-notification.md
+          - name: 处理异步驱动程序通知
+            href: processing-an-asynchronous-driver-notification.md
+      - name: 应用程序通知
+        href: application-notification.md
+        items:
+        - name: 应用程序通知简介
+          href: introduction-to-application-notification.md
+        - name: 注册应用程序通知
+          href: registering-for-application-notification.md
+        - name: 处理应用程序通知
+          href: processing-an-application-notification.md
+    - name: 其他驱动程序编程技术
+      href: miscellaneous-driver-programming-techniques.md
+      items:
+      - name: NTSTATUS 值
+        href: ntstatus-values.md
+        items:
+        - name: 使用 NTSTATUS 值
+          href: using-ntstatus-values.md
+        - name: 定义新的 NTSTATUS 值
+          href: defining-new-ntstatus-values.md
+      - name: 单向和双向链接列表
+        href: singly-and-doubly-linked-lists.md
+      - name: 处理异常
+        href: handling-exceptions.md
+      - name: 记录错误
+        href: logging-errors.md
+        items:
+        - name: 写入到系统事件日志
+          href: writing-to-the-system-event-log.md
+        - name: 定义自定义错误类型
+          href: defining-custom-error-types.md
+        - name: 注册为错误消息的源
+          href: registering-as-a-source-of-error-messages.md
+      - name: 编写 Bug 检查回调例程
+        href: writing-a-bug-check-callback-routine.md
+      - name: 使用安全字符串函数
+        href: using-safe-string-functions.md
+        items:
+        - name: 内核模式安全字符串函数摘要
+          href: summary-of-kernel-mode-safe-string-functions.md
+        - name: 导入内核模式安全字符串函数
+          href: importing-kernel-mode-safe-string-functions.md
+      - name: 使用安全整数函数
+        href: ntintsafe-design-guide.md
+        items:
+        - name: 内核模式安全整数函数摘要
+          href: summary-of-safe-integer-functions.md
+        - name: 导入内核模式安全整数函数
+          href: importing-safe-integer-functions.md
+      - name: 确定操作系统是否在安全模式下运行
+        href: determining-whether-the-operating-system-is-running-in-safe-mode.md
+      - name: 在驱动程序中使用 GUID
+        href: using-guids-in-drivers.md
+        items:
+        - name: 定义和导出新 GUID
+          href: defining-and-exporting-new-guids.md
+        - name: 在驱动程序代码中包含 GUID
+          href: including-guids-in-driver-code.md
+      - name: 在 WDM 驱动程序中使用浮点数
+        href: using-floating-point-or-mmx-in-a-wdm-driver.md
+      - name: 在驱动程序中使用文件
+        href: using-files-in-a-driver.md
+        items:
+        - name: 打开文件的句柄
+          href: opening-a-handle-to-a-file.md
+        - name: 使用文件句柄
+          href: using-a-file-handle.md
+        - name: 使用当前文件位置
+          href: using-the-current-file-position.md
+      - name: 在驱动程序中使用注册表
+        href: using-the-registry-in-a-driver.md
+        items:
+        - name: 注册表项对象例程
+          href: registry-key-object-routines.md
+          items:
+          - name: 打开注册表项对象的句柄
+            href: opening-a-handle-to-a-registry-key-object.md
+          - name: 使用注册表项对象的句柄
+            href: using-a-handle-to-a-registry-key-object.md
+        - name: 注册表运行时库例程
+          href: registry-run-time-library-routines.md
+        - name: 即插即用注册表例程
+          href: plug-and-play-registry-routines.md
+      - name: 支持可移动媒体
+        href: supporting-removable-media.md
+        items:
+        - name: 响应来自文件系统的 Check-Verify 请求
+          href: responding-to-check-verify-requests-from-the-file-system.md
+        - name: 向文件系统通知可能发生了媒体更改
+          href: notifying-the-file-system-of-possible-media-changes.md
+        - name: 检查设备对象中的标志
+          href: checking-flags-in-the-device-object.md
+        - name: 在中间驱动程序中设置 IRP
+          href: setting-up-irps-in-intermediate-drivers.md
+      - name: 创建导出驱动程序
+        href: creating-export-drivers.md
+      - name: 创建可靠的内核模式驱动程序
+        href: creating-reliable-kernel-mode-drivers.md
+        items:
+        - name: 无法验证设备对象
+          href: failure-to-validate-device-objects.md
+        - name: 无法验证对象句柄
+          href: failure-to-validate-object-handles.md
+        - name: 多处理器环境出错
+          href: errors-in-a-multiprocessor-environment.md
+        - name: 无法检查驱动程序的状态
+          href: failure-to-check-a-driver-s-state.md
+        - name: 缓冲 I/O 出错
+          href: errors-in-buffered-i-o.md
+          items:
+          - name: 无法检查缓冲区大小
+            href: failure-to-check-the-size-of-buffers.md
+          - name: 无法初始化输出缓冲区
+            href: failure-to-initialize-output-buffers.md
+          - name: 无法验证长度可变的缓冲区
+            href: failure-to-validate-variable-length-buffers.md
+        - name: 直接 I/O 出错
+          href: errors-in-direct-i-o.md
+        - name: 引用用户空间地址时出错
+          href: errors-in-referencing-user-space-addresses.md
+        - name: 处理清理和关闭操作时出错
+          href: errors-in-handling-cleanup-and-close-operations.md
+        - name: 处理 IRP 时出现其他错误
+          href: additional-errors-in-handling-irps.md
+      - name: 在设备管理器中隐藏设备
+        href: hiding-devices-from-device-manager.md
+      - name: 筛选注册表调用
+        href: filtering-registry-calls.md
+        items:
+        - name: 注册通知
+          href: registering-for-notifications.md
+        - name: 处理通知
+          href: handling-notifications.md
+        - name: 支持分层注册表筛选驱动程序
+          href: supporting-layered-registry-filtering-drivers.md
+        - name: 指定上下文信息
+          href: specifying-context-information.md
+        - name: 获取其他注册表信息
+          href: obtaining-additional-registry-information.md
+        - name: 注册表通知中的项对象指针无效
+          href: invalid-key-object-pointers-in-registry-notifications.md
+        - name: 筛选针对应用程序配置单元执行的注册表操作
+          href: filtering-registry-operations-on-application-hives.md
+      - name: 使用标记进行对象引用跟踪
+        href: object-reference-tracing-with-tags.md
+      - name: 64 位驱动程序的编程问题
+        href: programming-issues-for-64-bit-drivers.md
+        items:
+        - name: 将驱动程序移植到 64 位 Windows
+          href: porting-your-driver-to-64-bit-windows.md
+          items:
+          - name: 更改的功能
+            href: what-s-changed.md
+          - name: 新数据类型
+            href: the-new-data-types.md
+          - name: 64 位编译器
+            href: 64-bit-compiler.md
+          - name: 在 64 位 Windows 中执行 DMA
+            href: performing-dma-in-64-bit-windows.md
+          - name: 使用 Windows 驱动程序中扩展的处理器功能
+            href: floating-point-support-for-64-bit-drivers.md
+          - name: 移植问题清单
+            href: porting-issues-checklist.md
+        - name: 在 64 位驱动程序中支持 32 位 I/O
+          href: supporting-32-bit-i-o-in-your-64-bit-driver.md
+          items:
+          - name: 为何需要进行形实转换
+            href: why-thunking-is-necessary.md
+          - name: 哪些数据类型需要形实转换
+            href: which-data-types-need-thunking.md
+          - name: 驱动程序如何识别 32 位调用方
+            href: how-drivers-identify-32-bit-callers.md
+          - name: 方法 1：定义 64 位字段
+            href: technique-1--defining-a--64bit--field.md
+          - name: 方法 2：使用 IoIs32bitProcess
+            href: technique-2--using-iois32bitprocess.md
+          - name: 扩展示例：定义 64 位字段
+            href: extended-example--defining-a--64bit--field.md
+          - name: 扩展示例：使用 IoIs32bitProcess
+            href: extended-example--using-iois32bitprocess.md
+          - name: 避免固定精度数据类型不对齐
+            href: avoiding-misalignment-of-fixed-precision-data-types.md
+        - name: x64 驱动程序的限制
+          href: driver-x64-restrictions.md
+      - name: 已过时的和保留的内核编程接口
+        href: obsolete-and-reserved-kernel-programming-interfaces.md
+        items:
+        - name: Windows 内核的已过时宏
+          href: compute-pages-spanned.md
+        - name: Windows 内核的已过时例程
+          href: mmcreatemdl.md
+        - name: 保留供系统使用的 Windows 内核例程
+          href: ioacquireremovelockex.md
+        - name: Windows 内核运行时库的已过时例程
+          href: rtlenlargedintegermultiply.md
+      - name: 内核宏、全局变量和不透明结构
+        href: kernel-macros--global-variables--and-opaque-structures.md
+        items:
+        - name: Windows 内核全局变量
+          href: mm64bitphysicaladdress.md
+        - name: Windows 内核宏
+          href: mm-bad-pointer.md
+        - name: Windows 内核不透明结构
+          href: eprocess.md
+      - name: 使用 GUID_DEVICE_RESET_INTERFACE_STANDARD
+        href: working-with-guid-device-reset-interface-standard.md
+ms.openlocfilehash: 6d3e5ef8a953cdc3fdffb675ff27b59a91dbd7d2
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465582"
