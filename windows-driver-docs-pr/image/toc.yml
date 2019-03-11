@@ -1,0 +1,1798 @@
+items:
+- name: 图像处理设备驱动程序设计指南
+  href: index.md
+- name: 图像处理设备的设备接口类
+  href: device-interface-classes-for-imaging-devices.md
+  items:
+  - name: GUID_DEVINTERFACE_IMAGE 设备接口类
+    href: guid-devinterface-image-device-interface-class.md
+- name: Windows 图像采集驱动程序
+  href: windows-image-acquisition-drivers.md
+  items:
+  - name: WIA 简介
+    href: introduction-to-wia.md
+    items:
+    - name: WIA 体系结构概述
+      href: wia-architecture-overview.md
+    - name: WIA 核心组件
+      href: wia-core-components.md
+  - name: WIA 驱动程序基础知识
+    href: wia-driver-fundamentals.md
+    items:
+    - name: WIA 驱动程序组件
+      href: wia-driver-components.md
+      items:
+      - name: WIA 微型驱动程序接口
+        href: wia-minidriver-interfaces.md
+      - name: 通过总线驱动程序进行的设备通信
+        href: device-communication-through-the-bus-driver.md
+      - name: WIA 组件
+        href: wia-components.md
+    - name: 驱动程序功能
+      href: driver-capabilities.md
+    - name: 属性和数据管理
+      href: properties-and-data-management.md
+      items:
+      - name: 设备属性
+        href: device-properties.md
+      - name: 驱动程序项
+        href: driver-items.md
+    - name: 数据传输
+      href: data-transfers.md
+      items:
+      - name: 内存中传输
+        href: in-memory-transfers.md
+      - name: 文件传输
+        href: file-transfers.md
+      - name: IStream 数据传输
+        href: istream-data-transfers.md
+        items:
+        - name: WIA 传输体系结构
+          href: wia-transfer-architecture.md
+          items:
+          - name: IStream 数据传输驱动程序更改
+            href: istream-data-transfer-driver-changes.md
+          - name: IStream 传输驱动程序示例
+            href: istream-transfer-driver-example.md
+        - name: 多页 IStream 传输
+          href: multipage-istream-transfers.md
+          items:
+          - name: 在多页传输过程中的驱动程序行为
+            href: driver-behavior-during-multipage-transfers.md
+        - name: 取消 IStream 数据传输
+          href: cancellation-of-istream-data-transfers.md
+          items:
+          - name: 取消 Windows XP 中的数据传输
+            href: cancellation-of-data-transfers-in-windows-xp.md
+          - name: 取消 Windows Vista 中的数据传输
+            href: cancellation-of-data-transfers-in-windows-vista.md
+        - name: 与图像处理筛选器集成
+          href: integration-with-the-image-processing-filter.md
+        - name: 将数据上传到设备
+          href: uploading-data-to-a-device.md
+          items:
+          - name: 上传时的驱动程序行为
+            href: driver-behavior-on-upload.md
+        - name: 实现与 IStream 传输的兼容
+          href: achieving-compatibility-with-istream-transfers.md
+          items:
+          - name: 内部兼容性层
+            href: internal-compatibility-layer.md
+          - name: 用于 Windows Vista 和 Windows XP 的单一驱动程序
+            href: single-driver-for-windows-vista-and-windows-xp.md
+          - name: WIA 驱动程序版本控制
+            href: wia-driver-versioning.md
+        - name: WIA 传输常量
+          href: wia-transfer-constants.md
+    - name: 图像处理
+      href: image-processing.md
+    - name: 命令处理和事件报告
+      href: command-processing-and-event-reporting.md
+      items:
+      - name: 命令处理
+        href: command-handling.md
+      - name: 事件报告
+        href: event-reporting.md
+    - name: 关于上下文
+      href: about-contexts.md
+      items:
+      - name: 应用程序项上下文
+        href: application-item-contexts.md
+      - name: 属性上下文
+        href: property-contexts.md
+      - name: 传输上下文
+        href: transfer-contexts.md
+      - name: 特定于设备的上下文
+        href: device-specific-contexts.md
+    - name: WIA DDI 接口
+      href: wia-ddi-interfaces.md
+      items:
+      - name: IWiaMiniDrv COM 接口
+        href: iwiaminidrv-com-interface.md
+        items:
+        - name: 错误报告
+          href: error-reporting.md
+      - name: WIA 驱动程序服务库
+        href: wia-driver-services-library.md
+      - name: WIA 实用程序库
+        href: wia-utility-library.md
+        items:
+        - name: 用于调试的 WIA 函数
+          href: wia-functions-for-debugging.md
+        - name: 常规 WIA 实用程序函数
+          href: general-wia-utility-functions.md
+        - name: WIA 实用程序类
+          href: wia-utility-classes.md
+      - name: IWiaMiniDrvCallBack COM 接口
+        href: iwiaminidrvcallback-com-interface.md
+      - name: IWiaDrvItem COM 接口
+        href: iwiadrvitem-com-interface.md
+      - name: IWiaLog COM 接口
+        href: iwialog-com-interface.md
+      - name: WIA 诊断日志宏
+        href: wia-diagnostic-log-macros.md
+- name: WIA 属性
+  href: about-wia-properties.md
+  items:
+  - name: 所有 WIA 微型驱动程序的属性
+    href: properties-for-all-wia-minidrivers.md
+  - name: WIA 扫描程序微型驱动程序的属性
+    href: properties-for-wia-scanner-minidrivers.md
+  - name: WIA 相机微型驱动程序的属性
+    href: properties-for-wia-camera-minidrivers.md
+  - name: WIA 视频微型驱动程序的属性
+    href: properties-for-wia-video-minidrivers.md
+  - name: WIA 文件系统微型驱动程序的属性
+    href: properties-for-wia-file-system-minidrivers.md
+- name: 64 位和 WIA
+  href: 64-bit-and-wia.md
+  items:
+  - name: 64 位 WIA 驱动程序组件
+    href: 64-bit-wia-driver-components.md
+  - name: 32 位和 64 位 WIA 互操作性
+    href: 32-bit-and-64-bit-wia-interoperability.md
+- name: WIA 兼容性层
+  href: wia-compatibility-layer.md
+  items:
+  - name: WIA 属性映射
+    href: wia-property-mapping.md
+    items:
+    - name: 不需要映射的 WIA 属性
+      href: wia-properties-that-do-not-require-mapping.md
+    - name: 映射具有不同 ID 和名称的 WIA 属性
+      href: mapping-wia-properties-with-different-ids-and-names.md
+    - name: 映射 ID 相同但名称不同的 WIA 属性
+      href: mapping-wia-properties-with-the-same-ids-but-different-names.md
+    - name: 映射具有相同 ID 和名称的 WIA 属性
+      href: mapping-wia-properties-with-the-same-ids-and-names.md
+    - name: 映射不需更改的 WIA 属性
+      href: mapping-wia-properties-that-need-no-changes.md
+    - name: 映射不需更改的 WIA 属性 - 特殊案例
+      href: mapping-wia-properties-that-need-no-changes---special-cases.md
+  - name: WIA 兼容性层数据传输
+    href: wia-compatibility-layer-data-transfers.md
+    items:
+    - name: WIA 兼容性层数据传输概述
+      href: wia-compatibility-layer-data-transfers-overview.md
+    - name: WIA 兼容性层数据传输设计
+      href: wia-compatibility-layer-data-transfer-design.md
+      items:
+      - name: 在旧版应用程序和 Windows Vista 驱动程序之间进行的数据传输
+        href: data-transfer-between-legacy-application-and-windows-vista-driver.md
+      - name: 在 Windows Vista 应用程序和旧版驱动程序之间进行的数据传输
+        href: data-transfer-between-windows-vista-application-and-legacy-driver.md
+    - name: WIA 兼容性层消息映射
+      href: wia-compatibility-layer-message-mapping.md
+      items:
+      - name: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
+        href: mapping-for-a-legacy-application-and-windows-vista-driver.md
+      - name: 适用于 Vista 应用程序和旧版驱动程序的映射
+        href: mapping-for-a-vista-application-and-legacy-driver.md
+- name: WIA 驱动程序筛选器
+  href: wia-driver-filters.md
+  items:
+  - name: WIA 图像处理筛选器
+    href: wia-image-processing-filter.md
+    items:
+    - name: 图像处理筛选器简介
+      href: introduction-to-image-processing-filters.md
+    - name: 安装图像处理筛选器
+      href: installing-an-image-processing-filter.md
+    - name: 图像处理代码示例
+      href: image-processing-code-example.md
+  - name: WIA 分段筛选器
+    href: wia-segmentation-filter.md
+    items:
+    - name: 分段筛选器简介
+      href: introduction-to-segmentation-filters.md
+    - name: 分段筛选器的接口
+      href: interfaces-for-segmentation-filters.md
+    - name: 分段筛选器的实现说明
+      href: implementation-notes-for-segmentation-filters.md
+    - name: 安装分段筛选器
+      href: installing-a-segmentation-filter.md
+    - name: 分段筛选器的 WIA 属性
+      href: wia-properties-for-segmentation-filters.md
+      items:
+      - name: WIA_IPS_DESKEW_X 和 WIA_IPS_DESKEW_Y 属性
+        href: wia-ips-deskew-x-and-wia-ips-deskew-y-properties.md
+    - name: 分段筛选器示例
+      href: segmentation-filter-examples.md
+      items:
+      - name: 示例：默认分段筛选器
+        href: example--default-segmentation-filter.md
+      - name: 示例：简单的分段筛选器
+        href: example--simple-segmentation-filter.md
+      - name: 示例：使用分段筛选器的应用程序
+        href: example--application-using-a-segmentation-filter.md
+      - name: 示例：DetectSubregions
+        href: example--detectsubregions.md
+      - name: 示例：DownloadPreviewImage
+        href: example--downloadpreviewimage.md
+- name: WIA 项树
+  href: wia-item-trees.md
+  items:
+  - name: WIA 项树体系结构
+    href: wia-item-tree-architecture.md
+    items:
+    - name: 应用程序项和驱动程序项
+      href: application-items-and-driver-items.md
+      items:
+      - name: 关于项属性
+        href: about-item-properties.md
+      - name: WIA 驱动程序项树
+        href: wia-driver-item-tree.md
+      - name: WIA 相机树
+        href: wia-camera-tree.md
+      - name: WIA 扫描仪树
+        href: wia-scanner-tree.md
+      - name: 常用属性、相机属性和扫描仪属性
+        href: common--camera--and-scanner-properties.md
+    - name: 使用 WIA 项描述 WIA 设备
+      href: describing-a-wia-device-using-wia-items.md
+      items:
+      - name: WIA 项标志
+        href: wia-item-flags.md
+      - name: WIA 项类别
+        href: wia-item-categories.md
+      - name: WIA 项标志和类别的示例用法
+        href: example-usage-of-wia-item-flags-and-categories.md
+      - name: WIA 根项
+        href: wia-root-item.md
+      - name: WIA 数据项
+        href: wia-data-item.md
+  - name: 更改 WIA 项树状结构
+    href: changing-the-wia-item-tree-structure.md
+  - name: Windows Me 和 Windows XP 的 WIA 扫描仪项树
+    href: wia-scanner-item-tree-for-windows-me-and-windows-xp.md
+    items:
+    - name: Windows Me 和 Windows XP 的 WIA 扫描仪项树布局
+      href: wia-scanner-item-tree-layout-for-windows-me-and-windows-xp.md
+    - name: 为 Windows Me 和 Windows XP 添加文档送纸器支持
+      href: adding-document-feeder-support-for-windows-me-and-windows-xp.md
+  - name: Windows Vista 的 WIA 扫描仪项树
+    href: wia-scanner-item-tree-for-windows-vista.md
+    items:
+    - name: WIA 平板扫描仪
+      href: wia-flatbed-scanners.md
+      items:
+      - name: 平板扫描仪体系结构
+        href: flatbed-scanner-architecture.md
+      - name: 实现平板扫描仪项树
+        href: implementing-flatbed-scanner-item-trees.md
+        items:
+        - name: 平板扫描仪的 WIA 项标志
+          href: wia-item-flags-for-flatbed-scanners.md
+        - name: 平板扫描仪的 WIA 项属性
+          href: wia-item-properties-for-flatbed-scanners.md
+          items:
+          - name: WIA 扫描仪的必需根项属性
+            href: required-root-item-properties-for-wia-scanners.md
+          - name: WIA 扫描仪的可选根项属性
+            href: optional-root-item-properties-for-wia-scanners.md
+          - name: 必需平板项属性
+            href: required-flatbed-item-properties.md
+          - name: 可选平板项属性
+            href: optional-flatbed-item-properties.md
+          - name: 平板子项属性
+            href: flatbed-child-item-properties.md
+        - name: 平板扫描仪的基本扫描
+          href: basic-scanning-for-flatbed-scanners.md
+      - name: Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
+        href: wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me.md
+        items:
+        - name: WIA 项属性和位置更改
+          href: wia-item-property-and-location-changes.md
+    - name: WIA 送纸器扫描仪
+      href: wia-feeder-scanners.md
+      items:
+      - name: 送纸器扫描仪体系结构
+        href: feeder-scanner-architecture.md
+        items:
+        - name: 支持非双工的文档送纸器
+          href: non-duplex-capable-document-feeder.md
+        - name: 支持简单双工的文档送纸器
+          href: simple-duplex-capable-document-feeder.md
+        - name: 支持高级双工的文档送纸器
+          href: advanced-duplex-capable-document-feeder.md
+      - name: 实现送纸器扫描仪项树
+        href: implementing-feeder-scanner-item-trees.md
+        items:
+        - name: 送纸器扫描仪的 WIA 项标志
+          href: wia-item-flags-for-feeder-scanners.md
+        - name: 送纸器扫描仪的 WIA 项属性
+          href: wia-item-properties-for-feeder-scanners.md
+          items:
+          - name: 送纸器扫描仪的必需根项属性
+            href: required-root-item-properties-for-feeder-scanners.md
+          - name: 送纸器扫描仪的必需 WIA 项属性
+            href: required-wia-item-properties-for-feeder-scanners.md
+          - name: 送纸器扫描仪的可选 WIA 项属性
+            href: optional-wia-item-properties-for-feeder-scanners.md
+          - name: 送纸器扫描仪子项的要求
+            href: requirements-for-feeder-scanners-child-items.md
+        - name: 使用送纸器扫描仪进行的基本扫描
+          href: basic-scanning-with-a-feeder-scanner.md
+      - name: Windows XP 和 Windows Me 的 WIA 送纸器扫描仪兼容性
+        href: wia-feeder-scanner-compatibility-for-windows-xp-and-windows-me.md
+    - name: WIA 底片扫描仪
+      href: wia-film-scanners.md
+      items:
+      - name: 底片扫描仪体系结构
+        href: film-scanner-architecture.md
+        items:
+        - name: 支持底片扫描的平板扫描仪
+          href: flatbed-scanners-that-support-film-scanning.md
+        - name: 专用底片扫描仪
+          href: dedicated-film-scanners.md
+      - name: 实现底片扫描仪项树
+        href: implementing-film-scanner-item-trees.md
+        items:
+        - name: 底片扫描仪的 WIA 项标志
+          href: wia-item-flags-for-film-scanners.md
+        - name: 底片扫描仪的 WIA 项属性
+          href: wia-item-properties-for-film-scanners.md
+          items:
+          - name: 底片扫描仪的必需根项属性
+            href: required-root-item-properties-for-film-scanners.md
+          - name: 底片扫描仪的必需 WIA 项属性
+            href: required-wia-item-properties-for-film-scanners.md
+          - name: 底片扫描仪的可选 WIA 项属性
+            href: optional-wia-item-properties-for-film-scanners.md
+          - name: 底片扫描仪的必需 WIA 子项属性
+            href: required-wia-child-item-properties-for-film-scanners.md
+          - name: 底片扫描仪的可选 WIA 子项属性
+            href: optional-wia-child-item-properties-for-film-scanners.md
+        - name: 使用 IWiaItem::CreateChildItem 创建选择区域
+          href: using-iwiaitem-createchilditem-to-create-selection-areas.md
+        - name: 底片扫描仪的基本扫描
+          href: basic-scanning-for-film-scanners.md
+      - name: Windows XP 和 Windows Me 的 WIA 底片扫描仪兼容性
+        href: wia-film-scanner-compatibility-for-windows-xp-and-windows-me.md
+    - name: WIA 扫描仪存储
+      href: wia-scanner-storage.md
+      items:
+      - name: 扫描仪存储体系结构
+        href: scanner-storage-architecture.md
+      - name: 实现扫描仪存储项树
+        href: implementing-scanner-storage-item-trees.md
+        items:
+        - name: 扫描仪存储的 WIA 项标志
+          href: wia-item-flags-for-scanner-storage.md
+        - name: 扫描仪存储的 WIA 项属性
+          href: wia-item-properties-for-scanner-storage.md
+          items:
+          - name: 扫描仪存储的必需根项属性
+            href: required-root-item-properties-for-scanner-storage.md
+          - name: 扫描仪存储的必需 WIA 项属性
+            href: required-wia-item-properties-for-scanner-storage.md
+          - name: 扫描仪存储的可选 WIA 项属性
+            href: optional-wia-item-properties-for-scanner-storage.md
+          - name: 扫描仪存储的必需 WIA 子项属性
+            href: required-wia-child-item-properties-for-scanner-storage.md
+          - name: 扫描仪存储的可选 WIA 子项属性
+            href: optional-wia-child-item-properties-for-scanner-storage.md
+        - name: 从扫描仪存储传输数据
+          href: transferring-data-from-scanner-storage.md
+      - name: Windows XP 和 Windows Me 的 WIA 扫描仪存储兼容性
+        href: wia-scanner-storage-compatibility-for-windows-xp-and-windows-me.md
+  - name: Windows 7 的 WIA 扫描仪项树
+    href: wia-scanner-item-tree-for-windows-7.md
+    items:
+    - name: 自动配置的扫描
+      href: auto-configured-scanning.md
+      items:
+      - name: 自动项
+        href: auto-item.md
+      - name: 自动项支持的 WIA 属性
+        href: wia-properties-supported-by-an-auto-item.md
+    - name: 标识扫描事件的输入源
+      href: identifying-the-input-source-for-a-scan-event.md
+- name: 包含设备 Web 服务的 WIA
+  href: wia-with-web-services-for-devices.md
+  items:
+  - name: 使用 WSD 安装 WIA 扫描仪驱动程序
+    href: installing-a-wia-scanner-driver-with-wsd.md
+    items:
+    - name: Web 服务扫描仪的示例 INF 文件
+      href: sample-inf-file-for-a-web-services-scanner.md
+  - name: WIA 扫描仪的 SOAP 通信
+    href: soap-communications-for-wia-scanners.md
+    items:
+    - name: 获取函数实例对象
+      href: obtaining-a-function-instance-object.md
+      items:
+      - name: 用于获取函数实例对象的代码示例
+        href: code-example-for-obtaining-a-function-instance-object.md
+    - name: 读取设备元数据
+      href: reading-device-metadata.md
+      items:
+      - name: 演示如何打开属性存储的代码示例
+        href: code-example-for-opening-a-property-store.md
+      - name: 演示如何读取设备属性的代码示例
+        href: code-example-for-reading-device-properties.md
+      - name: 演示如何初始化设备属性的代码示例
+        href: code-example-for-initializing-device-properties.md
+  - name: 使用 WSD 质询器质询断开连接的扫描仪
+    href: challenging-a-disconnected-scanner-with-the-wsd-challenger.md
+    items:
+    - name: 在示例中使用的定义和变量
+      href: definitions-and-variables-used-in-the-examples.md
+    - name: 用于筛选错误代码的宏示例
+      href: macro-example-to-filter-error-codes.md
+    - name: 演示如何质询可能已断开连接的设备的代码示例
+      href: code-example-for-challenging-a-potentially-disconnected-device.md
+    - name: 演示如何实现帮助程序方法的代码示例
+      href: code-example-for-implementing-helper-methods.md
+- name: 开发 WIA 驱动程序
+  href: developing-a-wia-driver.md
+  items:
+  - name: 开发 WIA 驱动程序：基本概念
+    href: developing-a-wia-driver--basic-concepts.md
+    items:
+    - name: 创建 WIA 微型驱动程序
+      href: creating-a-wia-minidriver.md
+      items:
+      - name: 提供 COM 接口
+        href: providing-a-com-interface.md
+      - name: 提供了 IStiUSD 界面
+        href: providing-an-istiusd-interface.md
+      - name: 初始化 WIA 微型驱动程序
+        href: initializing-the-wia-minidriver.md
+        items:
+        - name: 微型驱动程序函数的调用顺序
+          href: calling-order-for-minidriver-functions.md
+        - name: 加载和卸载 WIA 微型驱动程序
+          href: loading-and-unloading-a-wia-minidriver.md
+        - name: 连接和断开 WIA 应用程序
+          href: connecting-and-disconnecting-a-wia-application.md
+          items:
+          - name: 应用程序如何创建 WIA 设备
+            href: how-the-application-creates-the-wia-device.md
+          - name: 应用程序如何释放 WIA 设备
+            href: how-the-application-releases-the-wia-device.md
+          - name: WIA 微型驱动程序如何从 WIA 服务接收断开连接事件
+            href: how-the-wia-minidriver-receives-a-disconnect-event-from-the-wia-servic.md
+        - name: 报告 WIA 微型驱动程序状态
+          href: reporting-wia-minidriver-status.md
+          items:
+          - name: 报告设备联机状态
+            href: reporting-device-online-status.md
+          - name: 在 WIA 设备上进行诊断
+            href: performing-diagnostics-on-a-wia-device.md
+      - name: 创建 WIA 驱动程序项树
+        href: creating-the-wia-driver-item-tree.md
+      - name: 将项树更改通知给应用程序
+        href: informing-an-application-of-item-tree-changes.md
+      - name: 使用 WIA 属性
+        href: using-wia-properties.md
+        items:
+        - name: 将 WIA 属性添加到 WIA 项
+          href: adding-wia-properties-to-a-wia-item.md
+        - name: 定义自定义属性
+          href: defining-custom-properties.md
+        - name: 使用自定义属性
+          href: using-custom-properties.md
+          items:
+          - name: 用于创建自定义属性的示例代码
+            href: sample-code-to-create-custom-properties.md
+          - name: 用于设置自定义属性的示例代码
+            href: sample-code-to-set-custom-properties.md
+        - name: 通过应用程序读取 WIA 项属性
+          href: reading-wia-item-properties-by-an-application.md
+        - name: 通过驱动程序读取 WIA 项属性
+          href: reading-wia-item-properties-by-a-driver.md
+        - name: 通过应用程序写入 WIA 项属性
+          href: writing-wia-item-properties-by-an-application.md
+        - name: 通过驱动程序写入 WIA 属性
+          href: writing-wia-properties-by-a-driver.md
+        - name: 将 WIA 属性设置应用到硬件
+          href: applying-wia-property-settings-to-the-hardware.md
+        - name: 添加图像格式支持
+          href: adding-image-format-support.md
+        - name: 从驱动程序树中删除项
+          href: deleting-an-item-from-the-driver-tree.md
+      - name: 访问适用于静态图像设备的内核模式驱动程序
+        href: accessing-kernel-mode-drivers-for-still-image-devices.md
+        items:
+        - name: SCSI 驱动程序
+          href: scsi-driver.md
+        - name: USB 驱动程序
+          href: usb-driver.md
+      - name: 实现图像颜色管理
+        href: implementing-image-color-management.md
+    - name: 创建 WIA 微驱动程序
+      href: creating-a-wia-microdriver.md
+      items:
+      - name: 微驱动程序函数
+        href: microdriver-functions.md
+      - name: WIA 平板驱动程序
+        href: wia-flatbed-driver.md
+      - name: INF 文件条目
+        href: inf-file-entries.md
+    - name: 创建 Hello World WIA 微型驱动程序
+      href: creating-a---hello-world---wia-minidriver.md
+      items:
+      - name: Hello World 定义文件
+        href: --hello-world---definition-file.md
+      - name: Hello World 安装文件
+        href: --hello-world---installation-file.md
+      - name: Hello World 实现文件
+        href: --hello-world---implementation-file.md
+    - name: 将数据传输到 WIA 应用程序
+      href: transferring-data-to-a-wia-application.md
+      items:
+      - name: 了解 TYMED
+        href: understanding-tymed.md
+      - name: 为数据分配内存
+        href: allocating-memory-for-data.md
+      - name: 取消数据传输
+        href: canceling-a-data-transfer.md
+      - name: 取消挂起的 I/O 操作
+        href: canceling-pending-i-o-operations.md
+      - name: 原始格式数据传输
+        href: raw-format-data-transfer.md
+        items:
+        - name: WIA 原始数据标头
+          href: wia-raw-data-header.md
+        - name: 进行原始格式传输所需的属性验证
+          href: property-validation-for-raw-format-transfers.md
+    - name: WIA 驱动程序事件支持
+      href: wia-driver-event-support.md
+      items:
+      - name: 添加中断事件支持
+        href: adding-interrupt-event-support.md
+      - name: 添加轮询事件支持
+        href: adding-polling-event-support.md
+      - name: 提供事件通知
+        href: providing-event-notification.md
+    - name: WIA 驱动程序命令支持
+      href: wia-driver-command-support.md
+    - name: WIA 驱动程序错误处理和恢复
+      href: wia-driver-error-handling-and-recovery.md
+      items:
+      - name: Windows Me 和 Windows XP 的 WIA 驱动程序错误报告
+        href: wia-driver-error-reporting-for-windows-me-and-windows-xp.md
+      - name: Windows Vista 的 WIA 驱动程序错误恢复
+        href: wia-driver-error-recovery-for-windows-vista.md
+        items:
+        - name: WIA 错误处理体系结构
+          href: wia-error-handling-architecture.md
+        - name: WIA 错误处理程序取消无模式对话框
+          href: wia-error-handler-cancellation-of-modeless-dialogs.md
+        - name: WIA 错误处理程序返回值
+          href: wia-error-handler-return-values.md
+        - name: WIA 设备消息
+          href: wia-device-messages.md
+        - name: 安装 WIA 错误处理驱动程序扩展
+          href: installing-a-wia-error-handling-driver-extension.md
+        - name: WIA 错误处理示例
+          href: wia-error-handling-example.md
+- name: 开发 WIA 相机驱动程序
+  href: developing-a-wia-camera-driver.md
+  items:
+  - name: PTP 驱动程序
+    href: ptp-driver.md
+    items:
+    - name: 安装 PTP 相机
+      href: installing-a-ptp-camera.md
+    - name: 将 PTP 对象映射到 WIA 项
+      href: mapping-ptp-objects-to-wia-items.md
+      items:
+      - name: 将 PTP 格式代码映射到 WIA 格式 GUID
+        href: mapping-ptp-format-codes-to-wia-format-guids.md
+      - name: 将 PTP 关联映射到 WIA 文件夹
+        href: mapping-ptp-associations-to-wia-folders.md
+    - name: PTP 事件
+      href: ptp-events.md
+    - name: PTP 错误恢复
+      href: ptp-error-recovery.md
+    - name: PTP 错误代码
+      href: ptp-error-codes.md
+    - name: PTP 所需命令
+      href: ptp-required-commands.md
+    - name: 取消设备的数据传输
+      href: canceling-a-data-transfer-by-a-device.md
+    - name: 创建表现良好的 PTP 相机
+      href: creating-a-well-behaved-ptp-camera.md
+      items:
+      - name: 对象句柄和事件顺序
+        href: object-handle-and-event-order.md
+      - name: 自动生成的对象名称
+        href: automatically-generated-object-names.md
+        items:
+        - name: PTP 中的对象大小
+          href: object-size-in-ptp.md
+        - name: 图像几何属性
+          href: image-geometry-properties.md
+      - name: 供应商扩展的功能
+        href: vendor-extended-features.md
+        items:
+        - name: 公开 PTP 相机的供应商扩展
+          href: exposing-the-vendor-extensions-of-your-ptp-camera.md
+        - name: 供应商扩展的属性
+          href: vendor-extended-properties.md
+        - name: 供应商扩展的事件
+          href: vendor-extended-events.md
+        - name: 供应商扩展的命令
+          href: vendor-extended-commands.md
+      - name: PTP 参考
+        href: ptp-references.md
+    - name: 大容量存储驱动程序
+      href: mass-storage-driver.md
+    - name: WIA 相机微型驱动程序
+      href: wia-camera-minidriver.md
+      items:
+      - name: 创建 WIA 相机项树布局
+        href: creating--a-wia-camera-item-tree-layout.md
+      - name: 将附件添加到图像
+        href: adding-attachments-to-images.md
+      - name: 存储和传输缩略图数据
+        href: storing-and-transferring-thumbnail-data.md
+      - name: 存储和传输音频数据
+        href: storing-and-transferring-audio-data.md
+  - name: 开发 WIA 扫描仪驱动程序
+    href: developing-a-wia-scanner-driver.md
+    items:
+    - name: WIA 扫描仪项树布局
+      href: wia-scanner-item-tree-layout.md
+    - name: 添加文档送纸器支持
+      href: adding-document-feeder-support.md
+    - name: 页面大小和方向
+      href: page-size-and-orientation.md
+      items:
+      - name: 支持的扫描仪纸张大小
+        href: supported-scanner-paper-sizes.md
+      - name: 自定义的和自动设置的页面大小
+        href: custom-and-auto-page-sizes.md
+      - name: 页面方向
+        href: page-orientation.md
+      - name: 页面大小和方向代码示例
+        href: page-size-and-orientation-code-examples.md
+    - name: TWAIN 兼容性
+      href: twain-compatibility.md
+      items:
+      - name: WIA-TWAIN 驱动程序设计注意事项
+        href: wia-twain-driver-design-considerations.md
+        items:
+        - name: WIA-TWAIN 兼容性
+          href: wia-twain-compatibility.md
+        - name: WIA-TWAIN 锁定
+          href: wia-twain-locking.md
+        - name: 多页扫描和 TWAIN
+          href: multipage-scanning-and-twain.md
+        - name: TWAIN 和原始 RGB 格式
+          href: twain-and-raw-rgb-format.md
+        - name: WIA-TWAIN 风险
+          href: wia-twain-risks.md
+      - name: 支持兼容 TWAIN 的应用程序
+        href: support-for-twain-compatible-applications.md
+        items:
+        - name: 在 WIA 驱动程序中启用 TWAIN 功能传递
+          href: enabling-twain-capability-pass-through-in-a-wia-driver.md
+        - name: 使用 IStiUSD 转义方法
+          href: using-the-istiusd-escape-method.md
+          items:
+          - name: ESC_TWAIN_CAPABILITY 转义码
+            href: esc-twain-capability-escape-code.md
+          - name: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS 转义码
+            href: esc-twain-private-supported-caps-escape-code.md
+  - name: 开发 WIA 视频驱动程序
+    href: developing-a-wia-video-driver.md
+  - name: 自定义 WIA 驱动程序
+    href: customizing-a-wia-driver.md
+    items:
+    - name: 用户界面扩展
+      href: user-interface-extensions.md
+      items:
+      - name: 上下文菜单扩展
+        href: context-menu-extensions.md
+      - name: 控件面板向导替换
+        href: control-panel-wizard-replacement.md
+      - name: 图像应用程序对话框扩展
+        href: image-application-dialog-extensions.md
+        items:
+        - name: IWiaUIExtension COM 接口
+          href: iwiauiextension-com-interface.md
+      - name: 属性表扩展
+        href: property-sheet-extensions.md
+      - name: 用户界面扩展注册表项
+        href: user-interface-extension-registry-entries.md
+    - name: 将 UI 添加到 WIA 微型驱动程序
+      href: adding-ui-to-a-wia-minidriver.md
+      items:
+      - name: 创建 Hello World WIA 微型驱动程序 UI 扩展
+        href: creating-a--hello-world--wia-minidriver-ui-extension.md
+- name: WIA 微型驱动程序最佳做法
+  href: wia-minidriver-best-practices.md
+  items:
+  - name: 锁定和解锁最佳做法
+    href: locking-and-unlocking-best-practices.md
+  - name: WIA 驱动程序的安全问题
+    href: security-issues-for-wia-drivers.md
+    items:
+    - name: 常见的 WIA 安全问题
+      href: common-wia-security-problems.md
+      items:
+      - name: WIA 安全和安全描述符
+        href: wia-security-and-security-descriptors.md
+    - name: WIA 安全最佳做法
+      href: wia-security-best-practices.md
+      items:
+      - name: WIA 驱动程序的文件系统访问权限
+        href: file-system-access-for-wia-drivers.md
+      - name: WIA 驱动程序的注册表访问权限
+        href: registry-access-for-wia-drivers.md
+      - name: WIA 驱动程序的已命名内核对象
+        href: named-kernel-objects-for-wia-drivers.md
+        items:
+        - name: WIA 驱动程序的命名空间
+          href: namespaces-for-wia-drivers.md
+        - name: WIA 驱动程序的访问权限
+          href: access-permissions-for-wia-drivers.md
+      - name: WIA 驱动程序的进程外 COM 对象
+        href: out-of-process-com-objects-for-wia-drivers.md
+      - name: 通过 WIA 驱动程序创建和打开进程
+        href: creating-and-opening-processes-by-wia-drivers.md
+- name: WIA 微驱动程序命令
+  href: wia-microdriver-commands.md
+  items:
+  - name: 自动文档送纸器命令
+    href: automatic-document-feeder-commands.md
+  - name: 事件命令
+    href: event-commands.md
+  - name: 必需命令
+    href: required-commands.md
+  - name: 可选命令
+    href: optional-commands.md
+- name: 生成、排查和调试 WIA 微型驱动程序
+  href: building--troubleshooting-and-debugging-wia-minidrivers.md
+  items:
+  - name: 设置 WIA 生成环境
+    href: setting-up-the-wia-build-environment.md
+    items:
+    - name: 构建 WIA 微型驱动程序
+      href: building-a-wia-minidriver.md
+    - name: 构建 WIA 微驱动程序
+      href: building-a-wia-microdriver.md
+  - name: 排查 WIA 微型驱动程序问题
+    href: wia-minidriver-troubleshooting.md
+  - name: WIA 微型驱动程序调试
+    href: wia-minidriver-debugging.md
+- name: WIA 示例和工具
+  href: wia-samples-and-tools.md
+  items:
+  - name: 示例 WIA 驱动程序
+    href: sample-wia-drivers.md
+    items:
+    - name: 平板扫描仪微型驱动程序示例
+      href: flatbed-scanner-minidriver-sample.md
+    - name: 扫描仪微驱动程序示例
+      href: scanner-microdriver-sample.md
+    - name: 相机微型驱动程序示例
+      href: camera-minidriver-sample.md
+    - name: 相机微驱动程序示例
+      href: camera-microdriver-sample.md
+    - name: '相机驱动程序 UI 扩展示例 '
+      href: camera-driver-ui-extension-sample.md
+    - name: USBSCN9X 内核模式示例驱动程序
+      href: usbscn9x-kernel-mode-sample-driver.md
+  - name: WIA 工具
+    href: wia-tools.md
+  - name: 安装 WIA 微型驱动程序
+    href: installing-a-wia-minidriver.md
+    items:
+    - name: WIA 驱动程序的注册表项
+      href: registry-entries-for-wia-drivers.md
+    - name: WIA 设备的 INF 文件
+      href: inf-files-for-wia-devices.md
+    - name: 在使用单个 PDO 的 MFP 中安装扫描功能
+      href: installing-scanning-functionality-in-an-mfp-with-a-single-pdo.md
+  - name: WIA 属性
+    href: wia-properties.md
+    items:
+    - name: WIA_DIP_BAUDRATE
+      href: wia-dip-baudrate.md
+    - name: WIA_DIP_DEV_DESC
+      href: wia-dip-dev-desc.md
+    - name: WIA_DIP_DEV_ID
+      href: wia-dip-dev-id.md
+    - name: WIA_DIP_DEV_NAME
+      href: wia-dip-dev-name.md
+    - name: WIA_DIP_DEV_TYPE
+      href: wia-dip-dev-type.md
+    - name: WIA_DIP_DRIVER_VERSION
+      href: wia-dip-driver-version.md
+    - name: WIA_DIP_HW_CONFIG
+      href: wia-dip-hw-config.md
+    - name: WIA_DIP_PORT_NAME
+      href: wia-dip-port-name.md
+    - name: WIA_DIP_REMOTE_DEV_ID
+      href: wia-dip-remote-dev-id.md
+    - name: WIA_DIP_SERVER_NAME
+      href: wia-dip-server-name.md
+    - name: WIA_DIP_STI_GEN_CAPABILITIES
+      href: wia-dip-sti-gen-capabilities.md
+    - name: WIA_DIP_UI_CLSID
+      href: wia-dip-ui-clsid.md
+    - name: WIA_DIP_VEND_DESC
+      href: wia-dip-vend-desc.md
+    - name: WIA_DIP_WIA_VERSION
+      href: wia-dip-wia-version.md
+    - name: WIA_DPA_CONNECT_STATUS
+      href: wia-dpa-connect-status.md
+    - name: WIA_DPA_DEVICE_TIME
+      href: wia-dpa-device-time.md
+    - name: WIA_DPA_FIRMWARE_VERSION
+      href: wia-dpa-firmware-version.md
+    - name: WIA_DPC_ARTIST
+      href: wia-dpc-artist.md
+    - name: WIA_DPC_BATTERY_STATUS
+      href: wia-dpc-battery-status.md
+    - name: WIA_DPC_BURST_INTERVAL
+      href: wia-dpc-burst-interval.md
+    - name: WIA_DPC_BURST_NUMBER
+      href: wia-dpc-burst-number.md
+    - name: WIA_DPC_CAPTURE_DELAY
+      href: wia-dpc-capture-delay.md
+    - name: WIA_DPC_CAPTURE_MODE
+      href: wia-dpc-capture-mode.md
+    - name: WIA_DPC_COMPRESSION_SETTING
+      href: wia-dpc-compression-setting.md
+    - name: WIA_DPC_CONTRAST
+      href: wia-dpc-contrast.md
+    - name: WIA_DPC_COPYRIGHT_INFO
+      href: wia-dpc-copyright-info.md
+    - name: WIA_DPC_DIGITAL_ZOOM
+      href: wia-dpc-digital-zoom.md
+    - name: WIA_DPC_DIMENSION
+      href: wia-dpc-dimension.md
+    - name: WIA_DPC_EFFECT_MODE
+      href: wia-dpc-effect-mode.md
+    - name: WIA_DPC_EXPOSURE_COMP
+      href: wia-dpc-exposure-comp.md
+    - name: WIA_DPC_EXPOSURE_INDEX
+      href: wia-dpc-exposure-index.md
+    - name: WIA_DPC_EXPOSURE_METERING_MODE
+      href: wia-dpc-exposure-metering-mode.md
+    - name: WIA_DPC_EXPOSURE_MODE
+      href: wia-dpc-exposure-mode.md
+    - name: WIA_DPC_EXPOSURE_TIME
+      href: wia-dpc-exposure-time.md
+    - name: WIA_DPC_FLASH_MODE
+      href: wia-dpc-flash-mode.md
+    - name: WIA_DPC_FNUMBER
+      href: wia-dpc-fnumber.md
+    - name: WIA_DPC_FOCAL_LENGTH
+      href: wia-dpc-focal-length.md
+    - name: WIA_DPC_FOCUS_DISTANCE
+      href: wia-dpc-focus-distance.md
+    - name: WIA_DPC_FOCUS_MANUAL_DIST
+      href: wia-dpc-focus-manual-dist.md
+    - name: WIA_DPC_FOCUS_METERING
+      href: wia-dpc-focus-metering.md
+    - name: WIA_DPC_FOCUS_METERING_MODE
+      href: wia-dpc-focus-metering-mode.md
+    - name: WIA_DPC_FOCUS_MODE
+      href: wia-dpc-focus-mode.md
+    - name: WIA_DPC_PAN_POSITION
+      href: wia-dpc-pan-position.md
+    - name: WIA_DPC_PICT_HEIGHT
+      href: wia-dpc-pict-height.md
+    - name: WIA_DPC_PICT_WIDTH
+      href: wia-dpc-pict-width.md
+    - name: WIA_DPC_PICTURES_REMAINING
+      href: wia-dpc-pictures-remaining.md
+    - name: WIA_DPC_PICTURES_TAKEN
+      href: wia-dpc-pictures-taken.md
+    - name: WIA_DPC_POWER_MODE
+      href: wia-dpc-power-mode.md
+    - name: WIA_DPC_RGB_GAIN
+      href: wia-dpc-rgb-gain.md
+    - name: WIA_DPC_SHARPNESS
+      href: wia-dpc-sharpness.md
+    - name: WIA_DPC_THUMB_HEIGHT
+      href: wia-dpc-thumb-height.md
+    - name: WIA_DPC_THUMB_WIDTH
+      href: wia-dpc-thumb-width.md
+    - name: WIA_DPC_TILT_POSITION
+      href: wia-dpc-tilt-position.md
+    - name: WIA_DPC_TIMELAPSE_INTERVAL
+      href: wia-dpc-timelapse-interval.md
+    - name: WIA_DPC_TIMELAPSE_NUMBER
+      href: wia-dpc-timelapse-number.md
+    - name: WIA_DPC_TIMER_MODE
+      href: wia-dpc-timer-mode.md
+    - name: WIA_DPC_TIMER_VALUE
+      href: wia-dpc-timer-value.md
+    - name: WIA_DPC_UPLOAD_URL
+      href: wia-dpc-upload-url.md
+    - name: WIA_DPC_WHITE_BALANCE
+      href: wia-dpc-white-balance.md
+    - name: WIA_DPC_ZOOM_POSITION
+      href: wia-dpc-zoom-position.md
+    - name: WIA_DPF_MOUNT_POINT
+      href: wia-dpf-mount-point.md
+    - name: WIA_DPS_DEVICE_ID
+      href: wia-dps-device-id.md
+    - name: WIA_DPS_DITHER_PATTERN_DATA
+      href: wia-dps-dither-pattern-data.md
+    - name: WIA_DPS_DITHER_SELECT
+      href: wia-dps-dither-select.md
+    - name: WIA_DPS_DOCUMENT_HANDLING_CAPABILITIES
+      href: wia-dps-document-handling-capabilities.md
+    - name: WIA_DPS_DOCUMENT_HANDLING_CAPACITY
+      href: wia-dps-document-handling-capacity.md
+    - name: WIA_DPS_DOCUMENT_HANDLING_SELECT
+      href: wia-dps-document-handling-select.md
+    - name: WIA_DPS_DOCUMENT_HANDLING_STATUS
+      href: wia-dps-document-handling-status.md
+    - name: WIA_DPS_ENDORSER_CHARACTERS
+      href: wia-dps-endorser-characters.md
+    - name: WIA_DPS_ENDORSER_STRING
+      href: wia-dps-endorser-string.md
+    - name: WIA_DPS_FILTER_SELECT
+      href: wia-dps-filter-select.md
+    - name: WIA_DPS_GLOBAL_IDENTITY
+      href: wia-dps-global-identity.md
+    - name: WIA_DPS_HORIZONTAL_BED_REGISTRATION
+      href: wia-dps-horizontal-bed-registration.md
+    - name: WIA_DPS_HORIZONTAL_BED_SIZE
+      href: wia-dps-horizontal-bed-size.md
+    - name: WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE
+      href: wia-dps-horizontal-sheet-feed-size.md
+    - name: WIA_DPS_MAX_SCAN_TIME
+      href: wia-dps-max-scan-time.md
+    - name: WIA_DPS_MIN_HORIZONTAL_SHEET_FEED_SIZE
+      href: wia-dps-min-horizontal-sheet-feed-size.md
+    - name: WIA_DPS_MIN_VERTICAL_SHEET_FEED_SIZE
+      href: wia-dps-min-vertical-sheet-feed-size.md
+    - name: WIA_DPS_OPTICAL_XRES
+      href: wia-dps-optical-xres.md
+    - name: WIA_DPS_OPTICAL_YRES
+      href: wia-dps-optical-yres.md
+    - name: WIA_DPS_PAD_COLOR
+      href: wia-dps-pad-color.md
+    - name: WIA_DPS_PAGE_HEIGHT
+      href: wia-dps-page-height.md
+    - name: WIA_DPS_PAGE_SIZE
+      href: wia-dps-page-size.md
+    - name: WIA_DPS_PAGE_WIDTH
+      href: wia-dps-page-width.md
+    - name: WIA_DPS_PAGES
+      href: wia-dps-pages.md
+    - name: WIA_DPS_PLATEN_COLOR
+      href: wia-dps-platen-color.md
+    - name: WIA_DPS_PREVIEW
+      href: wia-dps-preview.md
+    - name: WIA_DPS_SCAN_AHEAD_PAGES
+      href: wia-dps-scan-ahead-pages.md
+    - name: WIA_DPS_SCAN_AVAILABLE_ITEM
+      href: wia-dps-scan-available-item.md
+    - name: WIA_DPS_SERVICE_ID
+      href: wia-dps-service-id.md
+    - name: WIA_DPS_SHEET_FEEDER_REGISTRATION
+      href: wia-dps-sheet-feeder-registration.md
+    - name: WIA_DPS_SHOW_PREVIEW_CONTROL
+      href: wia-dps-show-preview-control.md
+    - name: WIA_DPS_TRANSPARENCY
+      href: wia-dps-transparency.md
+    - name: WIA_DPS_TRANSPARENCY_CAPABILITIES
+      href: wia-dps-transparency-capabilities.md
+    - name: WIA_DPS_TRANSPARENCY_SELECT
+      href: wia-dps-transparency-select.md
+    - name: WIA_DPS_TRANSPARENCY_STATUS
+      href: wia-dps-transparency-status.md
+    - name: WIA_DPS_USER_NAME
+      href: wia-dps-user-name.md
+    - name: WIA_DPS_VERTICAL_BED_REGISTRATION
+      href: wia-dps-vertical-bed-registration.md
+    - name: WIA_DPS_VERTICAL_BED_SIZE
+      href: wia-dps-vertical-bed-size.md
+    - name: WIA_DPS_VERTICAL_SHEET_FEED_SIZE
+      href: wia-dps-vertical-sheet-feed-size.md
+    - name: WIA_DPV_DSHOW_DEVICE_PATH
+      href: wia-dpv-dshow-device-path.md
+    - name: WIA_DPV_IMAGES_DIRECTORY
+      href: wia-dpv-images-directory.md
+    - name: WIA_DPV_LAST_PICTURE_TAKEN
+      href: wia-dpv-last-picture-taken.md
+    - name: WIA_IPA_ACCESS_RIGHTS
+      href: wia-ipa-access-rights.md
+    - name: WIA_IPA_APP_COLOR_MAPPING
+      href: wia-ipa-app-color-mapping.md
+    - name: WIA_IPA_BITS_PER_CHANNEL
+      href: wia-ipa-bits-per-channel.md
+    - name: WIA_IPA_BUFFER_SIZE
+      href: wia-ipa-buffer-size.md
+    - name: WIA_IPA_BYTES_PER_LINE
+      href: wia-ipa-bytes-per-line.md
+    - name: WIA_IPA_CHANNELS_PER_PIXEL
+      href: wia-ipa-channels-per-pixel.md
+    - name: WIA_IPA_COLOR_PROFILE
+      href: wia-ipa-color-profile.md
+    - name: WIA_IPA_COMPRESSION
+      href: wia-ipa-compression.md
+    - name: WIA_IPA_DATATYPE
+      href: wia-ipa-datatype.md
+    - name: WIA_IPA_DEPTH
+      href: wia-ipa-depth.md
+    - name: WIA_IPA_FILENAME_EXTENSION
+      href: wia-ipa-filename-extension.md
+    - name: WIA_IPA_FORMAT
+      href: wia-ipa-format.md
+    - name: WIA_IPA_FULL_ITEM_NAME
+      href: wia-ipa-full-item-name.md
+    - name: WIA_IPA_GAMMA_CURVES
+      href: wia-ipa-gamma-curves.md
+    - name: WIA_IPA_ICM_PROFILE_NAME
+      href: wia-ipa-icm-profile-name.md
+    - name: WIA_IPA_ITEM_CATEGORY
+      href: wia-ipa-item-category.md
+    - name: WIA_IPA_ITEM_FLAGS
+      href: wia-ipa-item-flags.md
+    - name: WIA_IPA_ITEM_NAME
+      href: wia-ipa-item-name.md
+    - name: WIA_IPA_ITEM_SIZE
+      href: wia-ipa-item-size.md
+    - name: WIA_IPA_ITEM_TIME
+      href: wia-ipa-item-time.md
+    - name: WIA_IPA_ITEMS_STORED
+      href: wia-ipa-items-stored.md
+    - name: WIA_IPA_MIN_BUFFER_SIZE
+      href: wia-ipa-min-buffer-size.md
+    - name: WIA_IPA_NUMBER_OF_LINES
+      href: wia-ipa-number-of-lines.md
+    - name: WIA_IPA_PIXELS_PER_LINE
+      href: wia-ipa-pixels-per-line.md
+    - name: WIA_IPA_PLANAR
+      href: wia-ipa-planar.md
+    - name: WIA_IPA_PREFERRED_FORMAT
+      href: wia-ipa-preferred-format.md
+    - name: WIA_IPA_PROP_STREAM_COMPAT_ID
+      href: wia-ipa-prop-stream-compat-id.md
+    - name: WIA_IPA_RAW_BITS_PER_CHANNEL
+      href: wia-ipa-raw-bits-per-channel.md
+    - name: WIA_IPA_REGION_TYPE
+      href: wia-ipa-region-type.md
+    - name: WIA_IPA_SUPPRESS_PROPERTY_PAGE
+      href: wia-ipa-suppress-property-page.md
+    - name: WIA_IPA_TYMED
+      href: wia-ipa-tymed.md
+    - name: WIA_IPA_UPLOAD_ITEM_SIZE
+      href: wia-ipa-upload-item-size.md
+    - name: WIA_IPC_AUDIO_AVAILABLE
+      href: wia-ipc-audio-available.md
+    - name: WIA_IPC_AUDIO_DATA
+      href: wia-ipc-audio-data.md
+    - name: WIA_IPC_AUDIO_DATA_FORMAT
+      href: wia-ipc-audio-data-format.md
+    - name: WIA_IPC_NUM_PICT_PER_ROW
+      href: wia-ipc-num-pict-per-row.md
+    - name: WIA_IPC_SEQUENCE
+      href: wia-ipc-sequence.md
+    - name: WIA_IPC_THUMBNAIL
+      href: wia-ipc-thumbnail.md
+    - name: WIA_IPC_THUMBNAIL_HEIGHT
+      href: wia-ipc-thumbnail-height.md
+    - name: WIA_IPC_THUMBNAIL_WIDTH
+      href: wia-ipc-thumbnail-width.md
+    - name: WIA_IPC_TIMEDELAY
+      href: wia-ipc-timedelay.md
+    - name: WIA_IPS_ALARM
+      href: wia-ips-alarm.md
+    - name: WIA_IPS_AUTO_CROP
+      href: wia-ips-auto-crop.md
+    - name: WIA_IPS_PATCH_CODE_SEARCH_TIMEOUT
+      href: wia-ips-patch-code-search-timeout.md
+    - name: WIA_IPS_SUPPORTED_PATCH_CODE_TYPES
+      href: wia-ips-supported-patch-code-types.md
+    - name: WIA_IPS_ENABLED_PATCH_CODE_TYPES
+      href: wia-ips-enabled-patch-code-types.md
+    - name: WIA_IPS_AUTO_DESKEW
+      href: wia-ips-auto-deskew.md
+    - name: WIA_IPS_BARCODE_READER
+      href: wia-ips-barcode-reader.md
+    - name: WIA_IPS_BARCODE_SEARCH_DIRECTION
+      href: wia-ips-barcode-search-direction.md
+    - name: WIA_IPS_BARCODE_SEARCH_TIMEOUT
+      href: wia-ips-barcode-search-timeout.md
+    - name: WIA_IPS_BLANK_PAGES
+      href: wia-ips-blank-pages.md
+    - name: WIA_IPS_BRIGHTNESS
+      href: wia-ips-brightness.md
+    - name: WIA_IPS_COLOR_DROP
+      href: wia-ips-color-drop.md
+    - name: WIA_IPS_COLOR_DROP_BLUE
+      href: wia-ips-color-drop-blue.md
+    - name: WIA_IPS_COLOR_DROP_GREEN
+      href: wia-ips-color-drop-green.md
+    - name: WIA_IPS_COLOR_DROP_RED
+      href: wia-ips-color-drop-red.md
+    - name: WIA_IPS_CONTRAST
+      href: wia-ips-contrast.md
+    - name: WIA_IPS_CUR_INTENT
+      href: wia-ips-cur-intent.md
+    - name: WIA_IPS_DESKEW_X
+      href: wia-ips-deskew-x.md
+    - name: WIA_IPS_DESKEW_Y
+      href: wia-ips-deskew-y.md
+    - name: WIA_IPS_DITHER_SELECT
+      href: wia-ips-dither-select.md
+    - name: WIA_IPS_DOCUMENT_HANDLING_SELECT
+      href: wia-ips-document-handling-select.md
+    - name: WIA_IPS_ENABLED_BARCODE_TYPES
+      href: wia-ips-enabled-barcode-types.md
+    - name: WIA_IPS_FEEDER_CONTROL
+      href: wia-ips-feeder-control.md
+    - name: WIA_IPS_FILM_SCAN_MODE
+      href: wia-ips-film-scan-mode.md
+    - name: WIA_IPS_INVERT
+      href: wia-ips-invert.md
+    - name: WIA_IPS_JOB_SEPARATORS
+      href: wia-ips-job-separators.md
+    - name: WIA_IPS_LAMP
+      href: wia-ips-lamp.md
+    - name: WIA_IPS_LAMP_AUTO_OFF
+      href: wia-ips-lamp-auto-off.md
+    - name: WIA_IPS_LONG_DOCUMENT
+      href: wia-ips-long-document.md
+    - name: WIA_IPS_MAX_HORIZONTAL_SIZE
+      href: wia-ips-max-horizontal-size.md
+    - name: WIA_IPS_MAX_VERTICAL_SIZE
+      href: wia-ips-max-vertical-size.md
+    - name: WIA_IPS_MAXIMUM_BARCODE_SEARCH_RETRIES
+      href: wia-ips-maximum-barcode-search-retries.md
+    - name: WIA_IPS_MAXIMUM_BARCODES_PER_PAGE
+      href: wia-ips-maximum-barcodes-per-page.md
+    - name: WIA_IPS_MAXIMUM_PATCH_CODE_SEARCH_RETRIES
+      href: wia-ips-maximum-patch-code-search-retries.md
+    - name: WIA_IPS_MAXIMUM_PATCH_CODES_PER_PAGE
+      href: wia-ips-maximum-patch-codes-per-page.md
+    - name: WIA_IPS_MICR_READER
+      href: wia-ips-micr-reader.md
+    - name: WIA_IPS_MIN_HORIZONTAL_SIZE
+      href: wia-ips-min-horizontal-size.md
+    - name: WIA_IPS_MIN_VERTICAL_SIZE
+      href: wia-ips-min-vertical-size.md
+    - name: WIA_IPS_MIRROR
+      href: wia-ips-mirror.md
+    - name: WIA_IPS_MULTI_FEED
+      href: wia-ips-multi-feed.md
+    - name: WIA_IPS_MULTI_FEED_SENSITIVITY
+      href: wia-ips-multi-feed-sensitivity.md
+    - name: WIA_IPS_OPTICAL_XRES
+      href: wia-ips-optical-xres.md
+    - name: WIA_IPS_OPTICAL_YRES
+      href: wia-ips-optical-yres.md
+    - name: WIA_IPS_ORIENTATION
+      href: wia-ips-orientation.md
+    - name: WIA_IPS_OVER_SCAN
+      href: wia-ips-over-scan.md
+    - name: WIA_IPS_OVER_SCAN_BOTTOM
+      href: wia-ips-over-scan-bottom.md
+    - name: WIA_IPS_OVER_SCAN_LEFT
+      href: wia-ips-over-scan-left.md
+    - name: WIA_IPS_OVER_SCAN_RIGHT
+      href: wia-ips-over-scan-right.md
+    - name: WIA_IPS_OVER_SCAN_TOP
+      href: wia-ips-over-scan-top.md
+    - name: WIA_IPS_PAGE_HEIGHT
+      href: wia-ips-page-height.md
+    - name: WIA_IPS_PAGE_SIZE
+      href: wia-ips-page-size.md
+    - name: WIA_IPS_PAGE_WIDTH
+      href: wia-ips-page-width.md
+    - name: WIA_IPS_PAGES
+      href: wia-ips-pages.md
+    - name: WIA_IPS_PATCH_CODE_READER
+      href: wia-ips-patch-code-reader.md
+    - name: WIA_IPS_PATCH_CODE_SEARCH_DIRECTION
+      href: wia-ips-patch-code-search-direction.md
+    - name: WIA_IPS_PHOTOMETRIC_INTERP
+      href: wia-ips-photometric-interp.md
+    - name: WIA_IPS_PREVIEW
+      href: wia-ips-preview.md
+    - name: WIA_IPS_PREVIEW_TYPE
+      href: wia-ips-preview-type.md
+    - name: WIA_IPS_PRINTER_ENDORSER
+      href: wia-ips-printer-endorser.md
+    - name: WIA_IPS_PRINTER_ENDORSER_CHARACTER_ROTATION
+      href: wia-ips-printer-endorser-character-rotation.md
+    - name: WIA_IPS_PRINTER_ENDORSER_COUNTER
+      href: wia-ips-printer-endorser-counter.md
+    - name: WIA_IPS_PRINTER_ENDORSER_FONT_TYPE
+      href: wia-ips-printer-endorser-font-type.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS
+      href: wia-ips-printer-endorser-graphics.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_DOWNLOAD
+      href: wia-ips-printer-endorser-graphics-download.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_HEIGHT
+      href: wia-ips-printer-endorser-graphics-max-height.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MAX_WIDTH
+      href: wia-ips-printer-endorser-graphics-max-width.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_HEIGHT
+      href: wia-ips-printer-endorser-graphics-min-height.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_MIN_WIDTH
+      href: wia-ips-printer-endorser-graphics-min-width.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_POSITION
+      href: wia-ips-printer-endorser-graphics-position.md
+    - name: WIA_IPS_PRINTER_ENDORSER_GRAPHICS_UPLOAD
+      href: wia-ips-printer-endorser-graphics-upload.md
+    - name: WIA_IPS_PRINTER_ENDORSER_INK
+      href: wia-ips-printer-endorser-ink.md
+    - name: WIA_IPS_PRINTER_ENDORSER_MAX_CHARACTERS
+      href: wia-ips-printer-endorser-max-characters.md
+    - name: WIA_IPS_PRINTER_ENDORSER_MAX_GRAPHICS
+      href: wia-ips-printer-endorser-max-graphics.md
+    - name: WIA_IPS_PRINTER_ENDORSER_NUM_LINES
+      href: wia-ips-printer-endorser-num-lines.md
+    - name: WIA_IPS_PRINTER_ENDORSER_ORDER
+      href: wia-ips-printer-endorser-order.md
+    - name: WIA_IPS_PRINTER_ENDORSER_PADDING
+      href: wia-ips-printer-endorser-padding.md
+    - name: WIA_IPS_PRINTER_ENDORSER_STEP
+      href: wia-ips-printer-endorser-step.md
+    - name: WIA_IPS_PRINTER_ENDORSER_STRING
+      href: wia-ips-printer-endorser-string.md
+    - name: WIA_IPS_PRINTER_ENDORSER_TEXT_DOWNLOAD
+      href: wia-ips-printer-endorser-text-download.md
+    - name: WIA_IPS_PRINTER_ENDORSER_TEXT_UPLOAD
+      href: wia-ips-printer-endorser-text-upload.md
+    - name: WIA_IPS_PRINTER_ENDORSER_VALID_CHARACTERS
+      href: wia-ips-printer-endorser-valid-characters.md
+    - name: WIA_IPS_PRINTER_ENDORSER_VALID_FORMAT_SPECIFIERS
+      href: wia-ips-printer-endorser-valid-format-specifiers.md
+    - name: WIA_IPS_PRINTER_ENDORSER_XOFFSET
+      href: wia-ips-printer-endorser-xoffset.md
+    - name: WIA_IPS_PRINTER_ENDORSER_YOFFSET
+      href: wia-ips-printer-endorser-yoffset.md
+    - name: WIA_IPS_ROTATION
+      href: wia-ips-rotation.md
+    - name: WIA_IPS_SCAN_AHEAD
+      href: wia-ips-scan-ahead.md
+    - name: WIA_IPS_SCAN_AHEAD_CAPACITY
+      href: wia-ips-scan-ahead-capacity.md
+    - name: WIA_IPS_SEGMENTATION
+      href: wia-ips-segmentation.md
+    - name: WIA_IPS_SHEET_FEEDER_REGISTRATION
+      href: wia-ips-sheet-feeder-registration.md
+    - name: WIA_IPS_SHOW_PREVIEW_CONTROL
+      href: wia-ips-show-preview-control.md
+    - name: WIA_IPS_SUPPORTED_BARCODE_TYPES
+      href: wia-ips-supported-barcode-types.md
+    - name: WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION
+      href: wia-ips-supports-child-item-creation.md
+    - name: WIA_IPS_THRESHOLD
+      href: wia-ips-threshold.md
+    - name: WIA_IPS_TRANSFER_CAPABILITIES
+      href: wia-ips-transfer-capabilities.md
+    - name: WIA_IPS_WARM_UP_TIME
+      href: wia-ips-warm-up-time.md
+    - name: WIA_IPS_XEXTENT
+      href: wia-ips-xextent.md
+    - name: WIA_IPS_XPOS
+      href: wia-ips-xpos.md
+    - name: WIA_IPS_XRES
+      href: wia-ips-xres.md
+    - name: WIA_IPS_XSCALING
+      href: wia-ips-xscaling.md
+    - name: WIA_IPS_YEXTENT
+      href: wia-ips-yextent.md
+    - name: WIA_IPS_YPOS
+      href: wia-ips-ypos.md
+    - name: WIA_IPS_YRES
+      href: wia-ips-yres.md
+    - name: WIA_IPS_YSCALING
+      href: wia-ips-yscaling.md
+- name: 静态图像驱动程序
+  href: still-image-drivers.md
+  items:
+  - name: Microsoft STI 和 Microsoft WIA 概述
+    href: overview-of-microsoft-sti-and-microsoft-wia.md
+  - name: Microsoft STI 简介
+    href: introduction-to-microsoft-sti.md
+  - name: Microsoft STI 组件
+    href: microsoft-sti-components.md
+    items:
+    - name: STI 组件概述
+      href: overview-of-sti-components.md
+    - name: Windows 98 核心组件
+      href: windows-98-core-components.md
+    - name: Windows 2000 核心组件
+      href: windows-2000-core-components.md
+  - name: 静态图像 COM 接口
+    href: still-image-com-interfaces.md
+    items:
+    - name: IStillImage COM 接口
+      href: istillimage-com-interface.md
+    - name: IStiDevice COM 接口
+      href: istidevice-com-interface.md
+    - name: IStiUSD COM 接口
+      href: istiusd-com-interface.md
+    - name: IStiDeviceControl COM 接口
+      href: istidevicecontrol-com-interface.md
+  - name: 静态图像 I/O
+    href: still-image-i-o.md
+    items:
+    - name: 静态图像 SCSI I/O
+      href: still-image-scsi-i-o.md
+      items:
+      - name: 静态图像 SCSI I/O 控制代码
+        href: still-image-scsi-i-o-control-codes.md
+      - name: 静态图像 SCSI I/O 结构
+        href: still-image-scsi-i-o-structures.md
+    - name: 静态图像 USB I/O
+      href: still-image-usb-i-o.md
+      items:
+      - name: 静态图像 USB I/O 控制代码
+        href: still-image-usb-i-o-control-codes.md
+      - name: 静态图像 USB I/O 结构
+        href: still-image-usb-i-o-structures.md
+  - name: 创建推送模型感知应用程序
+    href: creating-push-model-aware-applications.md
+  - name: 为图像采集 API 创建特定于设备的组件
+    href: creating-device-specific-components-for-image-acquisition-apis.md
+  - name: 创建用户模式静态图像微型驱动程序
+    href: creating-a-user-mode-still-image-minidriver.md
+    items:
+    - name: 静态图像设备事件
+      href: still-image-device-events.md
+    - name: 传输模式
+      href: transfer-modes.md
+    - name: 静态图像驱动程序的安全问题
+      href: security-issues-for-still-image-drivers.md
+  - name: 安装和配置静态图像组件
+    href: installing-and-configuring-still-image-components.md
+    items:
+    - name: 静态图像设备的属性表页面
+      href: property-sheet-pages-for-still-image-devices.md
+    - name: 静态图像设备的注册表项
+      href: registry-entries-for-still-image-devices.md
+    - name: 静态图像设备的 INF 文件
+      href: inf-files-for-still-image-devices.md
+    - name: 静态图像设备安装程序
+      href: still-image-device-installers.md
+    - name: 静态图像设备的颜色管理
+      href: color-management-for-still-image-devices.md
+  - name: 启动和停止静态图像服务
+    href: starting-and-stopping-the-still-image-service.md
+  - name: 调试静态图像组件
+    href: debugging-still-image-components.md
+- name: 基于设备的 Web 服务
+  href: web-services-on-devices.md
+  items:
+  - name: 扫描服务（WS-扫描）
+    href: scan-service--ws-scan.md
+- name: 基于设备的 Web 服务参考
+  href: web-services-on-devices-reference.md
+  items:
+  - name: 扫描服务（WS-扫描）架构
+    href: scan-service--ws-scan--schema.md
+    items:
+    - name: WSD 扫描服务扫描仪元素
+      href: wsd-scan-service-scanner-elements.md
+      items:
+      - name: 扫描仪描述元素
+        href: scanner-description-elements.md
+        items:
+        - name: ScannerDescription
+          href: scannerdescription.md
+        - name: ScannerInfo
+          href: scannerinfo.md
+        - name: ScannerLocation
+          href: scannerlocation.md
+        - name: ScannerName
+          href: scannername.md
+      - name: 扫描仪配置元素
+        href: scanner-configuration-elements.md
+        items:
+        - name: ScannerConfiguration
+          href: scannerconfiguration.md
+        - name: 设备设置配置元素
+          href: device-settings-configuration-elements.md
+          items:
+          - name: AutoExposureSupported
+            href: autoexposuresupported.md
+          - name: BrightnessSupported
+            href: brightnesssupported.md
+          - name: CompressionQualityFactorSupported
+            href: compressionqualityfactorsupported.md
+          - name: ContentTypesSupported
+            href: contenttypessupported.md
+          - name: ContentTypeValue
+            href: contenttypevalue.md
+          - name: ContrastSupported
+            href: contrastsupported.md
+          - name: DeviceSettings
+            href: devicesettings.md
+          - name: DocumentSizeAutoDetectSupported
+            href: documentsizeautodetectsupported.md
+          - name: FormatsSupported
+            href: formatssupported.md
+          - name: FormatValue
+            href: formatvalue.md
+          - name: MaxValue
+            href: maxvalue.md
+          - name: MinValue
+            href: minvalue.md
+          - name: RotationsSupported
+            href: rotationssupported.md
+          - name: RotationValue
+            href: rotationvalue.md
+          - name: ScalingHeight
+            href: scalingheight2.md
+          - name: ScalingRangeSupported
+            href: scalingrangesupported.md
+          - name: ScalingWidth
+            href: scalingwidth2.md
+    - name: 辊配置元素
+      href: platen-configuration-elements.md
+      items:
+      - name: ColorEntry
+        href: colorentry.md
+      - name: Height
+        href: height.md
+      - name: Heights
+        href: heights.md
+      - name: Platen
+        href: platen.md
+      - name: PlatenColor
+        href: platencolor.md
+      - name: PlatenMaximumSize
+        href: platenmaximumsize.md
+      - name: PlatenMinimumSize
+        href: platenminimumsize.md
+      - name: PlatenOpticalResolution
+        href: platenopticalresolution.md
+      - name: PlatenResolutions
+        href: platenresolutions.md
+      - name: 宽度
+        href: width.md
+      - name: Widths
+        href: widths.md
+    - name: ADF 配置元素
+      href: adf-configuration-elements.md
+      items:
+      - name: ADF
+        href: adf.md
+      - name: ADFBack
+        href: adfback.md
+      - name: ADFColor
+        href: adfcolor.md
+      - name: ADFFront
+        href: adffront.md
+      - name: ADFMaximumSize
+        href: adfmaximumsize.md
+      - name: ADFMinimumSize
+        href: adfminimumsize.md
+      - name: ADFOpticalResolution
+        href: adfopticalresolution.md
+      - name: ADFResolutions
+        href: adfresolutions.md
+      - name: ADFSupportsDuplex
+        href: adfsupportsduplex.md
+    - name: 底片配置元素
+      href: film-configuration-elements.md
+      items:
+      - name: Film
+        href: film.md
+      - name: FilmColor
+        href: filmcolor.md
+      - name: FilmMaximumSize
+        href: filmmaximumsize.md
+      - name: FilmMinimumSize
+        href: filmminimumsize.md
+      - name: FilmOpticalResolution
+        href: filmopticalresolution.md
+      - name: FilmResolutions
+        href: filmresolutions.md
+      - name: FilmScanModesSupported
+        href: filmscanmodessupported.md
+      - name: FilmScanModeValue
+        href: filmscanmodevalue.md
+      - name: 扫描仪状态元素
+        href: scanner-status-elements.md
+        items:
+        - name: ActiveConditions
+          href: activeconditions.md
+        - name: ClearTime
+          href: cleartime.md
+        - name: Component
+          href: component.md
+        - name: ConditionHistory
+          href: conditionhistory.md
+        - name: ConditionHistoryEntry
+          href: conditionhistoryentry.md
+        - name: DeviceCondition
+          href: devicecondition.md
+        - name: DeviceCondition 和 ConditionHistoryEntry 的名称元素
+          href: name-element-for-devicecondition-and-conditionhistoryentry.md
+        - name: ScannerCurrentTime
+          href: scannercurrenttime.md
+        - name: ScannerState
+          href: scannerstate.md
+        - name: ScannerStateReason
+          href: scannerstatereason.md
+        - name: ScannerStateReasons
+          href: scannerstatereasons.md
+        - name: ScannerStatus
+          href: scannerstatus.md
+        - name: 严重性
+          href: severity.md
+        - name: 时间
+          href: time.md
+      - name: 扫描票证
+        href: scan-tickets.md
+        items:
+        - name: DefaultScanTicket
+          href: defaultscanticket.md
+        - name: ScanTicket
+          href: scanticket.md
+    - name: WSD 扫描服务作业和文档元素
+      href: wsd-scan-service-job-and-document-elements.md
+      items:
+      - name: WSD 扫描服务作业和作业表元素
+        href: wsd-scan-service-job-and-job-table-elements.md
+        items:
+        - name: ActiveJobs
+          href: activejobs.md
+        - name: 作业
+          href: job.md
+        - name: JobCompletedTime
+          href: jobcompletedtime.md
+        - name: JobCreatedTime
+          href: jobcreatedtime.md
+        - name: JobDescription
+          href: jobdescription.md
+        - name: JobHistory
+          href: jobhistory2.md
+        - name: JobId
+          href: jobid.md
+        - name: JobInformation
+          href: jobinformation.md
+        - name: JobName
+          href: jobname.md
+        - name: JobOriginatingUserName
+          href: joboriginatingusername.md
+        - name: JobState
+          href: jobstate.md
+        - name: JobStateReason
+          href: jobstatereason.md
+        - name: JobStateReasons
+          href: jobstatereasons.md
+        - name: JobStatus
+          href: jobstatus.md
+        - name: JobTable
+          href: jobtable.md
+        - name: ScansCompleted
+          href: scanscompleted.md
+      - name: WSD 扫描服务文档元素
+        href: wsd-scan-service-document-elements.md
+        items:
+        - name: AutoExposure
+          href: autoexposure.md
+        - name: 亮度
+          href: brightness.md
+        - name: ColorProcessing
+          href: colorprocessing.md
+        - name: CompressionQualityFactor
+          href: compressionqualityfactor.md
+        - name: ContentType
+          href: contenttype.md
+        - name: 与此示例
+          href: contrast.md
+        - name: 文档
+          href: document.md
+        - name: DocumentDescription
+          href: documentdescription.md
+        - name: DocumentFinalParameters
+          href: documentfinalparameters.md
+        - name: DocumentName
+          href: documentname.md
+        - name: DocumentParameters
+          href: documentparameters.md
+        - name: 文档
+          href: documents.md
+        - name: DocumentSizeAutoDetect
+          href: documentsizeautodetect.md
+        - name: Exposure
+          href: exposure.md
+        - name: ExposureSettings
+          href: exposuresettings.md
+        - name: FilmScanMode
+          href: filmscanmode.md
+        - name: 格式
+          href: format.md
+        - name: ImagesToTransfer
+          href: imagestotransfer.md
+        - name: InputMediaSize
+          href: inputmediasize.md
+        - name: InputSize
+          href: inputsize.md
+        - name: InputSource
+          href: inputsource.md
+        - name: MediaBack
+          href: mediaback.md
+        - name: MediaFront
+          href: mediafront.md
+        - name: MediaSides
+          href: mediasides.md
+        - name: 分辨率
+          href: resolution.md
+        - name: 旋转
+          href: rotation.md
+        - name: Scaling
+          href: scaling.md
+        - name: ScalingHeight
+          href: scalingheight.md
+        - name: ScalingWidth
+          href: scalingwidth.md
+        - name: ScanRegion
+          href: scanregion.md
+        - name: ScanRegionHeight
+          href: scanregionheight.md
+        - name: ScanRegionWidth
+          href: scanregionwidth.md
+        - name: ScanRegionXOffset
+          href: scanregionxoffset.md
+        - name: ScanRegionYOffset
+          href: scanregionyoffset.md
+        - name: Sharpness
+          href: sharpness.md
+    - name: WSD 扫描服务事件元素
+      href: wsd-scan-service-event-elements.md
+      items:
+      - name: ClientContext
+        href: clientcontext.md
+      - name: ClientDisplayName
+        href: clientdisplayname.md
+      - name: ConditionClearTime
+        href: conditioncleartime.md
+      - name: ConditionId
+        href: conditionid.md
+      - name: DestinationResponse
+        href: destinationresponse.md
+      - name: DestinationResponses
+        href: destinationresponses.md
+      - name: DestinationToken
+        href: destinationtoken.md
+      - name: DeviceConditionCleared
+        href: deviceconditioncleared.md
+      - name: ElementChanges
+        href: elementchanges.md
+      - name: JobCompletedState
+        href: jobcompletedstate.md
+      - name: JobCompletedStateReasons
+        href: jobcompletedstatereasons.md
+      - name: JobEndState
+        href: jobendstate.md
+      - name: JobEndStateEvent
+        href: jobendstateevent.md
+      - name: JobStatusEvent
+        href: jobstatusevent.md
+      - name: ScanAvailableEvent
+        href: scanavailableevent.md
+      - name: ScanDestination
+        href: scandestination.md
+      - name: ScanDestinations
+        href: scandestinations.md
+      - name: ScanIdentifier
+        href: scanidentifier.md
+      - name: ScannerElementsChangeEvent
+        href: scannerelementschangeevent.md
+      - name: ScannerStatusConditionClearedEvent
+        href: scannerstatusconditionclearedevent.md
+      - name: ScannerStatusConditionEvent
+        href: scannerstatusconditionevent.md
+      - name: ScannerStatusSummaryEvent
+        href: scannerstatussummaryevent.md
+      - name: StatusSummary
+        href: statussummary.md
+    - name: WSD 扫描服务操作元素和错误代码
+      href: wsd-scan-service-operation-elements-and-error-codes.md
+      items:
+      - name: WSD 扫描服务操作元素
+        href: wsd-scan-service-operation-elements.md
+        items:
+        - name: BytesPerLine
+          href: bytesperline.md
+        - name: CancelJobRequest
+          href: canceljobrequest.md
+        - name: CancelJobResponse
+          href: canceljobresponse.md
+        - name: CreateScanJobRequest
+          href: createscanjobrequest.md
+        - name: CreateScanJobResponse
+          href: createscanjobresponse.md
+        - name: JobElements 元素的 ElementData
+          href: elementdata-for-jobelements-element.md
+        - name: ScannerElements 元素的 ElementData
+          href: elementdata-for-scannerelements-element.md
+        - name: GetActiveJobsRequest
+          href: getactivejobsrequest.md
+        - name: GetActiveJobsResponse
+          href: getactivejobsresponse.md
+        - name: GetJobElementsRequest
+          href: getjobelementsrequest.md
+        - name: GetJobElementsResponse
+          href: getjobelementsresponse.md
+        - name: GetJobHistoryRequest
+          href: getjobhistoryrequest.md
+        - name: GetJobHistoryResponse
+          href: getjobhistoryresponse.md
+        - name: GetScannerElementsRequest
+          href: getscannerelementsrequest.md
+        - name: GetScannerElementsResponse
+          href: getscannerelementsresponse.md
+        - name: ImageInformation
+          href: imageinformation.md
+        - name: JobElements
+          href: jobelements.md
+        - name: JobHistory
+          href: jobhistory.md
+        - name: JobSummary
+          href: jobsummary.md
+        - name: JobToken
+          href: jobtoken.md
+        - name: MediaBackImageInfo
+          href: mediabackimageinfo.md
+        - name: MediaFrontImageInfo
+          href: mediafrontimageinfo.md
+        - name: RequestedElements 元素的名称
+          href: name-for-requestedelements-element.md
+        - name: NumberOfLines
+          href: numberoflines.md
+        - name: PixelsPerLine
+          href: pixelsperline.md
+        - name: RequestedElements
+          href: requestedelements.md
+        - name: RetrieveImageRequest
+          href: retrieveimagerequest.md
+        - name: RetrieveImageResponse
+          href: retrieveimageresponse.md
+        - name: ScanData
+          href: scandata.md
+        - name: ScannerElements
+          href: scannerelements.md
+        - name: ValidateScanTicketRequest
+          href: validatescanticketrequest.md
+        - name: ValidateScanTicketResponse
+          href: validatescanticketresponse.md
+        - name: ValidationInfo
+          href: validationinfo.md
+        - name: ValidScanTicket
+          href: validscanticket.md
+        - name: ValidTicket
+          href: validticket.md
+      - name: WSD 扫描服务操作错误报告
+        href: wsd-scan-service-operation-error-reporting.md
+        items:
+        - name: 常见 WSD 扫描服务操作错误代码
+          href: common-wsd-scan-service-operation-error-codes.md
+ms.openlocfilehash: c2fe23c4afaa3891e769f1e9f7f3da84f9eaf0c7
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465480"

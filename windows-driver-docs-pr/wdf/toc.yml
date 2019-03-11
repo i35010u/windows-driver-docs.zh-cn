@@ -1,0 +1,814 @@
+items:
+- name: WDF 驱动程序新增功能
+  href: index.md
+- name: UMDF 入门
+  href: getting-started-with-umdf-version-2.md
+  items:
+  - name: 用户模式驱动程序框架常见问题解答
+    href: user-mode-driver-framework-frequently-asked-questions.md
+  - name: 编写 UMDF 驱动程序的优点
+    href: advantages-of-writing-umdf-drivers.md
+  - name: UMDF 概述
+    href: overview-of-the-umdf.md
+  - name: UMDF 驱动程序主机进程
+    href: umdf-driver-host-process.md
+  - name: UMDF 的体系结构
+    href: detailed-view-of-the-umdf-architecture.md
+  - name: 比较 UMDF 2.0 与 KMDF 的功能
+    href: comparing-umdf-2-0-functionality-to-kmdf.md
+  - name: 如何将 KMDF 驱动程序转换为 UMDF 2.0（以及如何进行相反的转换）
+    href: how-to-generate-a-umdf-driver-from-a-kmdf-driver.md
+  - name: 将驱动程序从 UMDF 1 移植到 UMDF 2
+    href: porting-a-driver-from-umdf-1-to-umdf-2.md
+- name: 使用 WDF 开发驱动程序
+  href: using-the-framework-to-develop-a-driver.md
+  items:
+  - name: WDF 体系结构
+    href: kernel-mode-driver-framework-architecture.md
+  - name: 编写简单的 WDF 驱动程序
+    href: writing-a-simple-kmdf-driver.md
+  - name: WDF 驱动程序例程的 DriverEntry
+    href: driverentry-for-kmdf-drivers.md
+  - name: WDFDEVICE_INIT
+    href: wdfdevice_init.md
+  - name: 示例 KMDF 驱动程序
+    href: sample-kmdf-drivers.md
+  - name: 示例 UMDF 驱动程序
+    href: sample-umdf-drivers.md
+  - name: 示例 Toaster 驱动程序编程指南
+    href: sample-toaster-driver-programming-tour.md
+  - name: 使用 Windows Driver Foundation 开发驱动程序：参考手册
+    href: developing-drivers-with-wdf.md
+- name: 框架库版本控制
+  href: framework-library-versioning.md
+  items:
+  - name: KMDF 版本历史记录
+    href: kmdf-version-history.md
+  - name: UMDF 版本历史记录
+    href: umdf-version-history.md
+- name: WDF 对象
+  href: wdf-objects.md
+  items:
+  - name: 框架对象简介
+    href: introduction-to-framework-objects.md
+  - name: 框架对象方法
+    href: framework-object-methods.md
+  - name: 框架对象事件
+    href: framework-object-events.md
+  - name: 框架对象属性
+    href: framework-object-properties.md
+  - name: 框架对象生命周期
+    href: framework-object-life-cycle.md
+  - name: 框架对象上下文空间
+    href: framework-object-context-space.md
+  - name: 框架对象自定义类型
+    href: framework-object-custom-types.md
+  - name: 使用常规框架对象
+    href: using-general-framework-objects.md
+  - name: 框架对象集合
+    href: framework-object-collections.md
+  - name: 框架对象摘要
+    href: summary-of-framework-objects.md
+  - name: WDF 常规对象宏
+    href: wdf-general-object-macros.md
+    items:
+    - name: WDF_DECLARE_CONTEXT_TYPE
+      href: wdf-declare-context-type.md
+    - name: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME
+      href: wdf-declare-context-type-with-name.md
+    - name: WDF_DECLARE_CUSTOM_TYPE
+      href: wdf-declare-custom-type.md
+    - name: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE
+      href: wdf-object-attributes-init-context-type.md
+    - name: WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE
+      href: wdf-object-attributes-set-context-type.md
+    - name: WDF_PTR_ADD_OFFSET
+      href: wdf-ptr-add-offset.md
+    - name: WDF_PTR_ADD_OFFSET_TYPE
+      href: wdf-ptr-add-offset-type.md
+    - name: WDF_PTR_GET_OFFSET
+      href: wdf-ptr-get-offset.md
+    - name: WdfObjectAddCustomType
+      href: wdfobjectaddcustomtype.md
+    - name: WdfObjectAddCustomTypeWithData
+      href: wdfobjectaddcustomtypewithdata.md
+    - name: WdfObjectDereference
+      href: wdfobjectdereference.md
+    - name: WdfObjectDereferenceWithTag
+      href: wdfobjectdereferencewithtag.md
+    - name: WdfObjectGetCustomTypeData
+      href: wdfobjectgetcustomtypedata.md
+    - name: WdfObjectGetTypedContext
+      href: wdfobjectgettypedcontext.md
+    - name: WdfObjectIsCustomType
+      href: wdfobjectiscustomtype.md
+    - name: WdfObjectReference
+      href: wdfobjectreference.md
+    - name: WdfObjectReferenceWithTag
+      href: wdfobjectreferencewithtag.md
+  - name: 框架对象创建错误
+    href: framework-object-creation-errors.md
+- name: 支持在驱动程序中进行 PnP 和电源管理
+  href: supporting-pnp-and-power-management-in-your-driver.md
+  items:
+  - name: 支持在仅限软件的驱动程序中进行 PnP 和电源管理
+    href: supporting-pnp-and-power-management-in-software-only-drivers.md
+  - name: 支持在功能驱动程序中进行 PnP 和电源管理
+    href: supporting-pnp-and-power-management-in-function-drivers.md
+- name: 创建框架设备对象
+  href: creating-a-framework-device-object.md
+  items:
+  - name: 在功能驱动程序中创建设备对象
+    href: creating-device-objects-in-a-function-driver.md
+  - name: 在筛选器驱动程序中创建设备对象
+    href: creating-device-objects-in-a-filter-driver.md
+  - name: 在总线驱动程序中创建设备对象
+    href: creating-device-objects-in-a-bus-driver.md
+  - name: WDF 设备对象宏
+    href: wdf-device-object-macros.md
+    items:
+    - name: WdfDeviceResumeIdleWithTag 方法
+      href: wdfdeviceresumeidlewithtag.md
+    - name: WdfDeviceStopIdleWithTag 方法
+      href: wdfdevicestopidlewithtag.md
+- name: 电源策略所有权
+  href: power-policy-ownership.md
+  items:
+  - name: 支持空闲时关闭电源
+    href: supporting-idle-power-down.md
+  - name: 支持系统唤醒
+    href: supporting-system-wake-up.md
+  - name: 设备空闲和唤醒行为的用户控件
+    href: user-control-of-device-idle-and-wake-behavior.md
+  - name: 支持功能性电源状态
+    href: supporting-functional-power-states.md
+    items:
+    - name: 支持单组件设备呈现单个或多个功能性电源状态
+      href: supporting-multiple-functional-power-states-for-single-component-devices.md
+    - name: 支持多组件设备呈现单个或多个功能性电源状态
+      href: supporting-multiple-functional-power-states-for-multiple-component-devices.md
+      items:
+      - name: 对 I/O 请求与组件电源状态进行协调
+        href: coordinating-i-o-requests-with-component-power-state.md
+      - name: 报告当系统回到 S0 状态时设备开机
+        href: reporting-device-powered-on.md
+      - name: 支持多组件设备空闲时关闭电源
+        href: supporting-idle-power-down-on-multiple-component-devices.md
+- name: I/O 队列的电源管理
+  href: power-management-for-i-o-queues.md
+- name: 使用自我管理的 I/O
+  href: using-self-managed-i-o.md
+- name: 处理停止设备的请求
+  href: handling-requests-to-stop-a-device.md
+- name: PnP 和电源管理方案
+  href: pnp-and-power-management-scenarios.md
+  items:
+  - name: 用户插入设备
+    href: a-user-plugs-in-a-device.md
+  - name: 用户拔出设备
+    href: a-user-unplugs-a-device.md
+  - name: 设备进入低功耗状态
+    href: a-device-enters-a-low-power-state.md
+  - name: 设备回到工作状态
+    href: a-device-returns-to-its-working-state.md
+  - name: PnP 管理器重新分发系统资源
+    href: the-pnp-manager-redistributes-system-resources.md
+- name: PnP 和电源管理回调序列
+  href: pnp-and-power-management-callback-sequences.md
+  items:
+  - name: 函数或筛选器驱动程序的启动顺序
+    href: power-up-sequence-for-a-function-or-filter-driver.md
+  - name: 总线驱动程序的启动顺序
+    href: power-up-sequence-for-a-bus-driver.md
+  - name: 函数或筛选器驱动程序的电源关闭和删除顺序
+    href: power-down-and-removal-sequence-for-a-function-or-filter-driver.md
+  - name: 总线驱动程序的电源关闭和删除顺序
+    href: power-down-and-removal-sequence-for-a-bus-driver.md
+  - name: 意外删除顺序
+    href: surprise-removal-sequence.md
+- name: 驱动程序对硬件的访问
+  href: driver-access-to-hardware.md
+- name: 报告设备故障
+  href: reporting-device-failures.md
+- name: 创建 WDF HID 微型驱动程序
+  href: creating-umdf-hid-minidrivers.md
+- name: 框架文件对象
+  href: framework-file-objects.md
+- name: 框架队列对象
+  href: framework-queue-objects.md
+  items:
+  - name: 创建 I/O 队列
+    href: creating-i-o-queues.md
+    items:
+    - name: I/O 请求的调度方法
+      href: dispatching-methods-for-i-o-requests.md
+    - name: 请求处理程序
+      href: request-handlers.md
+  - name: 删除 I/O 队列
+    href: deleting-i-o-queues.md
+  - name: 管理 I/O 队列
+    href: managing-i-o-queues.md
+  - name: 使用通过电源管理的 I/O 队列
+    href: using-power-managed-i-o-queues.md
+  - name: I/O 队列状态
+    href: i-o-queue-states.md
+  - name: I/O 队列的示例使用
+    href: example-uses-of-i-o-queues.md
+- name: 框架请求对象
+  href: framework-request-objects.md
+  items:
+  - name: 创建框架请求对象
+    href: creating-framework-request-objects.md
+  - name: 使用请求对象上下文
+    href: using-request-object-context.md
+  - name: 请求所有权
+    href: request-ownership.md
+  - name: 处理 I/O 请求
+    href: processing-i-o-requests.md
+    items:
+    - name: 接收 I/O 请求
+      href: receiving-i-o-requests.md
+    - name: 将 I/O 请求重新排队
+      href: requeuing-i-o-requests.md
+    - name: 完成 I/O 请求
+      href: completing-i-o-requests.md
+    - name: 取消 I/O 请求
+      href: canceling-i-o-requests.md
+      items:
+      - name: 同步取消和完成代码
+        href: synchronizing-cancel-and-completion-code.md
+      - name: 将取消已发送请求的操作同步
+        href: synchronizing-cancellation-of-sent-requests.md
+    - name: 转发 I/O 请求
+      href: forwarding-i-o-requests.md
+  - name: 获取有关 I/O 请求的信息
+    href: obtaining-information-about-an-i-o-request.md
+  - name: 在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
+    href: accessing-data-buffers-in-wdf-drivers.md
+  - name: 管理 UMDF 驱动程序中的缓冲区访问方法
+    href: managing-buffer-access-methods-in-umdf-drivers.md
+  - name: 重复使用框架请求对象
+    href: reusing-framework-request-objects.md
+- name: 处理 UMDF 驱动程序中的客户端模拟
+  href: handling-client-impersonation-in-umdf-drivers.md
+- name: UMDF 中的主机进程超时
+  href: how-umdf-enforces-time-outs.md
+- name: 支持 UMDF 驱动程序中的内核模式客户端
+  href: supporting-kernel-mode-clients-in-umdf-drivers.md
+- name: 使用活动标识符
+  href: using-activity-identifiers.md
+- name: 使用 I/O 目标
+  href: using-i-o-targets.md
+  items:
+  - name: I/O 目标简介
+    href: introduction-to-i-o-targets.md
+  - name: 常规 I/O 目标
+    href: general-i-o-targets.md
+    items:
+    - name: 初始化常规 I/O 目标
+      href: initializing-a-general-i-o-target.md
+    - name: 将 I/O 请求发送到常规 I/O 目标
+      href: sending-i-o-requests-to-general-i-o-targets.md
+      items:
+      - name: 同步发送 I/O 请求
+        href: sending-i-o-requests-synchronously.md
+      - name: 异步发送 I/O 请求
+        href: sending-i-o-requests-asynchronously.md
+    - name: 控制常规 I/O 目标的状态
+      href: controlling-a-general-i-o-target-s-state.md
+    - name: 获取有关常规 I/O 目标的信息
+      href: obtaining-information-about-a-general-i-o-target.md
+  - name: USB I/O 目标
+    href: usb-i-o-targets.md
+    items:
+    - name: 使用 USB 设备
+      href: working-with-usb-devices.md
+    - name: 使用 USB 接口
+      href: working-with-usb-interfaces.md
+    - name: 使用 USB 管道
+      href: working-with-usb-pipes.md
+- name: 同步技术
+  href: synchronization-techniques-for-wdf-drivers.md
+  items:
+  - name: 使用自动同步
+    href: using-automatic-synchronization.md
+  - name: 使用框架锁
+    href: using-framework-locks.md
+- name: WDF 支持对象
+  href: wdf-support-objects.md
+  items:
+  - name: 使用内存缓冲区
+    href: using-memory-buffers.md
+  - name: 内存缓冲区生命周期
+    href: memory-buffer-life-cycle.md
+  - name: 使用计时器
+    href: using-timers.md
+  - name: 使用字符串对象
+    href: using-string-objects.md
+  - name: 使用框架工作项
+    href: using-framework-work-items.md
+  - name: 使用设备接口
+    href: using-device-interfaces.md
+  - name: 在 WDF 驱动程序中使用注册表
+    href: using-the-registry-in-wdf-drivers.md
+    items:
+    - name: 驱动程序的注册表项简介
+      href: introduction-to-registry-keys-for-drivers.md
+    - name: 使用框架注册表项对象
+      href: using-framework-registry-key-objects.md
+    - name: 访问统一的设备属性模型
+      href: accessing-the-unified-device-property-model.md
+  - name: KMDF 驱动程序的安全问题
+    href: security-issues-for-kmdf-drivers.md
+    items:
+    - name: 在 KMDF 驱动程序中控制设备访问权限
+      href: controlling-device-access-in-kmdf-drivers.md
+- name: 处理硬件中断
+  href: handling-hardware-interrupts.md
+  items:
+  - name: 创建中断对象
+    href: creating-an-interrupt-object.md
+  - name: 启用和禁用中断
+    href: enabling-and-disabling-interrupts.md
+  - name: 为中断提供服务
+    href: servicing-an-interrupt.md
+  - name: 同步中断代码
+    href: synchronizing-interrupt-code.md
+  - name: 支持被动级别中断
+    href: supporting-passive-level-interrupts.md
+  - name: 使用中断来唤醒设备
+    href: using-an-interrupt-to-wake-a-device.md
+  - name: 处理同时处于活动状态的中断
+    href: handling-active-both-interrupts.md
+- name: 在 KMDF 驱动程序中处理 DMA 操作
+  href: handling-dma-operations-in-kmdf-drivers.md
+  items:
+  - name: Windows 驱动程序框架中的 DMA 简介
+    href: introduction-to-dma-in-windows-driver-framework.md
+  - name: 框架 DMA 对象
+    href: framework-dma-objects.md
+  - name: DMA 事务和 DMA 传输
+    href: dma-transactions-and-dma-transfers.md
+  - name: 使用框架 DMA 的示例驱动程序
+    href: sample-drivers-that-use-framework-dma.md
+  - name: 在适用于总线主控 DMA 设备的 KMDF 驱动程序中处理 I/O 请求
+    href: handling-i-o-requests-in-a-kmdf-driver-for-a-bus-master-dma-device.md
+    items:
+    - name: 启用 DMA 事务
+      href: enabling-dma-transactions.md
+    - name: 创建并初始化 DMA 事务
+      href: creating-and-initializing-a-dma-transaction.md
+    - name: 启动 DMA 事务
+      href: starting-a-dma-transaction.md
+    - name: 对 DMA 硬件编程
+      href: programming-dma-hardware.md
+    - name: 完成 DMA 传输
+      href: completing-a-dma-transfer.md
+    - name: 完成 DMA 事务
+      href: completing-a-dma-transaction.md
+    - name: 重复使用 DMA 事务对象
+      href: reusing-dma-transaction-objects.md
+    - name: 支持适用于 DMA 设备的电源管理
+      href: supporting-power-management-for-dma-devices.md
+    - name: 使用常用缓冲区
+      href: using-common-buffers.md
+  - name: 支持系统模式 DMA
+    href: supporting-system-mode-dma.md
+  - name: 取消 DMA 事务
+    href: canceling-dma-transactions.md
+  - name: 使用单一传输 DMA
+    href: using-single-transfer-dma.md
+  - name: 保留 DMA 资源
+    href: reserving-dma-resources.md
+  - name: 在 KMDF 驱动程序中测试 DMA
+    href: testing-dma-in-kmdf-drivers.md
+- name: 在 KMDF 驱动程序中支持 WMI
+  href: supporting-wmi-in-kmdf-drivers.md
+  items:
+  - name: 用于 KMDF 驱动程序的 WMI 简介
+    href: introduction-to-wmi-for-kmdf-drivers.md
+  - name: 在驱动程序中初始化 WMI 支持
+    href: initializing-wmi-support-in-your-driver.md
+  - name: 在驱动程序中支持 WMI 数据块和事件
+    href: supporting-wmi-data-blocks-and-events-in-your-driver.md
+- name: 在 KMDF 驱动程序中访问 WDM 接口
+  href: accessing-wdm-interfaces-in-kmdf-drivers.md
+  items:
+  - name: 获取 WDM 信息
+    href: obtaining-wdm-information.md
+  - name: 在框架外部处理 WDM IRP
+    href: handling-wdm-irps-outside-of-the-framework.md
+    items:
+    - name: 处理框架不支持的 IRP
+      href: handling-an-irp-that-the-framework-does-not-support.md
+    - name: 对 IRP 进行预处理和后处理
+      href: preprocessing-and-postprocessing-irps.md
+    - name: 将 IRP 调度到 I/O 队列
+      href: dispatching-irps-to-i-o-queues.md
+  - name: WDM 接口限制
+    href: wdm-interface-restrictions.md
+- name: 处理硬件资源
+  href: hardware-resources-for-kmdf-drivers.md
+  items:
+  - name: 硬件资源简介
+    href: introduction-to-hardware-resources.md
+  - name: 硬件资源的框架对象
+    href: framework-objects-for-hardware-resources.md
+  - name: 创建资源要求列表
+    href: creating-a-resource-requirements-list.md
+  - name: 修改资源要求列表
+    href: modifying-a-resource-requirements-list.md
+  - name: 为启动配置创建资源列表
+    href: creating-a-resource-list-for-a-boot-configuration.md
+  - name: 修改资源列表
+    href: modifying-a-resource-list.md
+  - name: 原始资源和已转换的资源
+    href: raw-and-translated-resources.md
+  - name: 查找和映射硬件资源
+    href: finding-and-mapping-hardware-resources.md
+  - name: 读取设备注册表和写入到设备注册表
+    href: reading-and-writing-to-device-registers.md
+- name: 构建、安装和测试
+  href: building--installing--and-testing-a-wdf-driver.md
+  items:
+  - name: 生成和加载 WDF 驱动程序
+    href: building-and-loading-a-kmdf-driver.md
+  - name: 针对多个 Windows 版本生成 WDF 驱动程序
+    href: building-a-wdf-driver-for-multiple-versions-of-windows.md
+  - name: 可再发行框架组件
+    href: installation-components-for-kmdf-drivers.md
+  - name: 在 INF 文件中指定 KMDF 辅助安装程序
+    href: installing-the-framework-s-co-installer.md
+  - name: 使用 UMDF 辅助安装程序
+    href: using-the-umdf-co-installer.md
+  - name: 使用 INX 文件创建 INF 文件
+    href: using-inx-files-to-create-inf-files.md
+  - name: 测试 WDF 驱动程序（KMDF 或 UMDF）
+    href: testing-a-kmdf-driver.md
+  - name: 排查 KMDF 和 UMDF 驱动程序安装问题
+    href: debugging-driver-installation.md
+  - name: 安装 UMDF 筛选器驱动程序
+    href: installing-a-umdf-filter-driver.md
+  - name: 在 INF 文件中指定反射器
+    href: adding-the-reflector.md
+  - name: 在 INF 文件中指定 WDF 指令
+    href: specifying-wdf-directives-in-inf-files.md
+  - name: 在 UMDF 驱动程序中使用设备池
+    href: using-device-pooling-in-umdf-drivers.md
+  - name: UMDF 驱动程序的初级指南
+    href: session-zero-guidelines-for-umdf-drivers.md
+  - name: 限制 UMDF 驱动程序的加载位置
+    href: restricting-the-loading-location-of-umdf-drivers.md
+  - name: 控制设备访问权限
+    href: controlling-device-access.md
+  - name: 使用框架的事件记录器
+    href: using-the-framework-s-event-logger.md
+  - name: 使用 KMDF 验证程序
+    href: using-kmdf-verifier.md
+  - name: 使用 UMDF 验证程序
+    href: using-umdf-verifier.md
+  - name: UMDF 如何处理驱动程序故障
+    href: how-umdf-handles-driver-failures.md
+  - name: UMDF 如何处理应用程序故障
+    href: how-umdf-handles-application-failures.md
+  - name: UMDF 如何报告错误
+    href: how-umdf-reports-errors.md
+- name: 调试 WDF 驱动程序
+  href: debugging-a-wdf-driver.md
+  items:
+  - name: 访问 WER 报表中的 UMDF 元数据
+    href: accessing-umdf-metadata-in-wer-reports.md
+  - name: 附加用户模式调试程序
+    href: attaching-a-user-mode-debugger.md
+  - name: 更新 UMDF 驱动程序时避免重启
+    href: avoiding-reboot-when-updating-a-umdf-driver.md
+  - name: 从 KMDF 驱动程序突入调试程序
+    href: breaking-into-a-debugger-from-kmdf-drivers.md
+    items:
+    - name: VERIFY_IS_IRQL_PASSIVE_LEVEL
+      href: verify-is-irql-passive-level.md
+    - name: WDFVERIFY
+      href: wdfverify.md
+  - name: 从 KMDF 驱动程序进行 Bug 检查
+    href: bug-checks-from-kmdf-drivers.md
+  - name: 在 WDF 中调试电源参考漏孔
+    href: debugging-power-reference-leaks-in-wdf.md
+  - name: 确定驱动程序是否泄漏框架对象
+    href: determining-if-a-driver-leaks-framework-objects.md
+  - name: 确定 UMDF 设备的状态
+    href: determining-the-state-of-a-umdf-device.md
+  - name: 确定应用程序请求无法完成的原因
+    href: determining-why-an-application-request-does-not-complete.md
+  - name: 确定反射器终止主机进程的原因
+    href: determining-why-the-reflector-terminated-the-host-process.md
+  - name: 确定 UMDF 驱动程序无法加载或 UMDF 设备无法启动的原因
+    href: determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails.md
+  - name: 确定 UMDF 在删除设备时指示文件未完成的原因
+    href: determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md
+  - name: 如何启用对 UMDF 驱动程序的调试
+    href: enabling-a-debugger.md
+  - name: 用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
+    href: registry-values-for-debugging-kmdf-drivers.md
+  - name: Wdfkd.dll 中的调试程序扩展摘要
+    href: debugger-extensions-for-kmdf-drivers.md
+  - name: 排查 UMDF 2.0 驱动程序崩溃问题
+    href: debugging-umdf-2-0-drivers.md
+  - name: 在 KMDF 和 UMDF 2 驱动程序中使用即时跟踪记录器 (IFR)
+    href: using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md
+  - name: 将 Windows 性能工具包 (WPT) 与 WDF 配合使用
+    href: using-the-windows-performance-toolkit--wpt--with-wdf.md
+  - name: 在 KMDF 驱动程序中使用 WPP 软件跟踪
+    href: using-wpp-software-tracing-in-kmdf-drivers.md
+  - name: 在 UMDF 驱动程序中使用 WPP 软件跟踪
+    href: using-wpp-software-tracing-in-umdf-drivers.md
+  - name: 视频：使用 WDF 源代码调试驱动程序
+    href: video--debugging-your-driver-with-wdf-source-code.md
+  - name: 视频：在没有调试程序的情况下访问驱动程序 IFR 日志
+    href: video--accessing-driver-ifr-logs-without-a-debugger.md
+  - name: 视频：调试 KMDF 驱动程序
+    href: debugging-kernel-mode-driver-framework-drivers.md
+  - name: 视频：调试 UMDF 驱动程序
+    href: videos--debugging-umdf-drivers.md
+- name: 将驱动程序从 WDM 移植到 WDF
+  href: wdf-porting-guide.md
+  items:
+  - name: 可以移植的具体驱动程序以及移植位置
+    href: which-drivers-can-be-ported.md
+  - name: 适用于 WDF 驱动程序的 WDM 概念
+    href: wdm-concepts-for-kmdf-drivers.md
+  - name: WDM 和 WDF 之间的差异
+    href: differences-between-wdm-and-kmdf.md
+  - name: 准备移植
+    href: general-guidelines-for-porting.md
+  - name: 移植步骤
+    href: how-to-port.md
+    items:
+    - name: 移植 DriverEntry
+      href: porting-driver-entry.md
+    - name: 将 AddDevice 移植到 EvtDriverDeviceAdd
+      href: porting-adddevice-to-evtdriverdeviceadd.md
+    - name: 移植中断
+      href: porting-interrupt-functionality.md
+    - name: 移植 PnP 和电源管理
+      href: porting-pnp-and-power-management-functionality.md
+    - name: 移植 I/O
+      href: porting-i-o-handling.md
+      items:
+      - name: 移植 I/O 队列
+        href: porting-i-o-queues.md
+      - name: 将 I/O 调度例程移植到 I/O 事件回调函数
+        href: porting-i-o-dispatch-routines-to-i-o-event-callback-functions.md
+      - name: 修改可处理已完成请求的代码
+        href: revise-completed-request-logic.md
+      - name: 修改已取消的请求逻辑
+        href: revise-canceled-request-logic.md
+      - name: 修改转发请求逻辑
+        href: revise-forward-request-logic.md
+      - name: 修改可发出 I/O 请求的代码
+        href: revise-code-that-issues-i-o-requests.md
+    - name: 移植 DMA
+      href: porting-dma.md
+    - name: 移植 WMI
+      href: porting-wmi-code.md
+    - name: KMDF 不支持的请求
+      href: requests-that-kmdf-does-not-support.md
+    - name: 安装过程
+      href: installation-procedure.md
+  - name: KMDF 和 WDM 等效项的摘要
+    href: summary-of-kmdf-and-wdm-equivalents.md
+    items:
+    - name: WDF 缓冲区指针的 WDM 等效项
+      href: wdm-equivalents-for-kmdf-buffer-pointers.md
+    - name: WDM IRP 和 WDF 事件回调函数
+      href: wdm-irps-and-kmdf-event-callback-functions.md
+- name: 针对 KMDF 驱动程序的其他主题
+  href: kmdf-only-functionality.md
+  items:
+  - name: 将内核模式驱动程序框架和非 PnP 驱动程序配合使用
+    href: using-kernel-mode-driver-framework-with-non-pnp-drivers.md
+  - name: 安装非 PnP 驱动程序
+    href: installing-a-non-pnp-driver.md
+  - name: 保证向前推进 I/O 操作
+    href: guaranteeing-forward-progress-of-i-o-operations.md
+  - name: 完成 I/O 请求时指定优先级提升
+    href: specifying-priority-boosts-when-completing-i-o-requests.md
+  - name: 支持在总线驱动程序中进行 PnP 和电源管理
+    href: supporting-pnp-and-power-management-in-bus-drivers.md
+  - name: 枚举总线上的设备
+    href: enumerating-the-devices-on-a-bus.md
+    items:
+    - name: 静态枚举
+      href: static-enumeration.md
+    - name: 动态枚举
+      href: dynamic-enumeration.md
+    - name: 处理枚举请求
+      href: handling-enumeration-requests.md
+  - name: 支持可弹出设备
+    href: supporting-ejectable-devices.md
+  - name: 框架中的状态计算机
+    href: state-machines-in-the-framework.md
+  - name: 使用驱动程序定义的接口
+    href: using-driver-defined-interfaces.md
+  - name: 支持特殊文件
+    href: supporting-special-files.md
+  - name: 使用控制设备对象
+    href: using-control-device-objects.md
+  - name: 创建 KMDF 微型端口驱动程序
+    href: creating-kmdf-miniport-drivers.md
+  - name: 在 KMDF 驱动程序中创建可分页的代码
+    href: creating-pageable-code-in-a-kmdf-driver.md
+- name: UMDF 1.x 设计指南
+  href: user-mode-driver-framework-design-guide.md
+  items:
+  - name: UMDF 对象和接口
+    href: umdf-objects-and-interfaces.md
+    items:
+    - name: 框架对象
+      href: framework-objects.md
+      items:
+      - name: 框架基对象
+        href: framework-base-object.md
+      - name: 框架驱动程序对象
+        href: framework-driver-object.md
+      - name: 框架设备对象
+        href: framework-device-object.md
+      - name: 框架文件对象
+        href: framework-file-object.md
+      - name: 框架 I/O 队列对象
+        href: framework-i-o-queue-object.md
+      - name: 框架 I/O 请求对象
+        href: framework-i-o-request-object.md
+      - name: 框架 I/O 目标对象
+        href: framework-i-o-target-object.md
+      - name: 框架中断对象
+        href: framework-interrupt-object.md
+      - name: 框架内存对象
+        href: framework-memory-object.md
+    - name: 框架对象层次结构
+      href: framework-object-hierarchy.md
+    - name: 基于 COM 子集的 UMDF
+      href: umdf-based-on-com-subset.md
+    - name: UMDF DDI 编程模型
+      href: umdf-ddi-programming-model.md
+    - name: 管理对象的生存期
+      href: managing-the-lifetime-of-objects.md
+  - name: 初始化 UMDF 驱动程序
+    href: initializing-umdf-drivers.md
+    items:
+    - name: 添加设备概述
+      href: adding-a-device-overview.md
+    - name: 添加设备
+      href: adding-a-device.md
+  - name: 在 UMDF 驱动程序中进行 PnP 和电源管理
+    href: pnp-and-power-management-in-umdf-drivers.md
+    items:
+    - name: PnP 和电源管理界面
+      href: pnp-and-power-management-interfaces.md
+    - name: UMDF 中的电源策略所有权
+      href: power-policy-ownership-in-umdf.md
+      items:
+      - name: 在 UMDF 驱动程序中支持空闲时关闭电源
+        href: supporting-idle-power-down-in-umdf-drivers.md
+      - name: 在 UMDF 驱动程序中支持系统唤醒
+        href: supporting-system-wake-up-in-umdf-drivers.md
+      - name: UMDF 中设备空闲和唤醒行为的用户控件
+        href: user-control-of-device-idle-and-wake-behavior-in-umdf.md
+    - name: UMDF 中的 PnP 和电源管理方案
+      href: pnp-and-power-management-scenarios-in-umdf.md
+      items:
+      - name: 用户插入设备
+        href: a-user-plugs-in-a-device-umdf.md
+      - name: 用户拔出设备
+        href: a-user-unplugs-a-device-umdf.md
+      - name: 设备进入低功耗状态
+        href: a-device-enters-a-low-power-state-umdf.md
+      - name: 设备回到工作状态
+        href: a-device-returns-to-its-working-state-umdf.md
+      - name: PnP 管理器重新分发系统资源
+        href: the-pnp-manager-redistributes-system-resources-umdf.md
+  - name: 处理 I/O 请求
+    href: processing-i-o-requests-umdf.md
+    items:
+    - name: I/O 请求处理操作流
+      href: i-o-request-processing-operation-flow.md
+      items:
+      - name: 使用单设备堆栈的操作流
+        href: operation-flow-with-single-device-stack.md
+      - name: 使用双设备堆栈的操作流
+        href: operation-flow-with-double-device-stack.md
+    - name: 将 I/O 请求发送到较低的驱动程序
+      href: sending-i-o-requests-to-lower-drivers.md
+    - name: 获取 I/O 请求的参数
+      href: obtaining-parameters-for-i-o-requests.md
+    - name: 取消 I/O 请求
+      href: canceling-i-o-requests-umdf.md
+    - name: 完成 I/O 请求
+      href: completing-i-o-requests-umdf.md
+    - name: 在 UMDF 驱动程序中访问数据缓冲区
+      href: accessing-data-buffers-in-umdf-1-x-drivers.md
+    - name: 重复使用框架请求对象
+      href: reusing-framework-request-objects-umdf.md
+    - name: 处理 UMDF 1.x 驱动程序中的客户端模拟
+      href: handling-client-impersonation-in-umdf-1-x-drivers.md
+    - name: 防止创建和关闭通知对驱动程序造成的不平衡
+      href: preventing-an-imbalance-of-create-and-close-notifications-to-a-driver.md
+  - name: 在 UMDF 中使用 I/O 目标
+    href: using-i-o-targets-in-umdf.md
+    items:
+    - name: UMDF 中的常规 I/O 目标
+      href: general-i-o-targets-in-umdf.md
+      items:
+      - name: 初始化 UMDF 中的常规 I/O 目标
+        href: initializing-a-general-i-o-target-in-umdf.md
+      - name: 在 UMDF 中将 I/O 请求发送到常规 I/O 目标
+        href: sending-i-o-requests-to-a-general-i-o-target-in-umdf.md
+      - name: 在 UMDF 中控制常规 I/O 目标的状态
+        href: controlling-a-general-i-o-target-s-state-in-umdf.md
+      - name: 在 UMDF 中获取有关常规 I/O 目标的信息
+        href: obtaining-information-about-a-general-i-o-target-in-umdf.md
+    - name: UMDF 中的 USB I/O 目标
+      href: usb-i-o-targets-in-umdf.md
+      items:
+      - name: 为 USB 设备选择驱动程序模型
+        href: choosing-a-driver-model-for-a-usb-device.md
+      - name: 特定于 USB 的 UMDF 1.x 接口
+        href: usb-specific-umdf-1-x-interfaces.md
+      - name: 在 UMDF 1.x 驱动程序中使用 USB 设备
+        href: working-with-usb-devices-in-umdf-1-x-drivers.md
+      - name: 在 UMDF 1.x 驱动程序中使用 USB 接口
+        href: working-with-usb-interfaces-in-umdf-1-x-drivers.md
+      - name: 在 UMDF 1.x 驱动程序中使用 USB 管道
+        href: working-with-usb-pipes-in-umdf-1-x-drivers.md
+      - name: 通过 USB I/O 目标创建文件
+        href: file-creation-by-a-usb-i-o-target.md
+      - name: 从 UMDF 调用 WinUSB
+        href: escaping-to-winusb.md
+  - name: 访问硬件和处理中断
+    href: accessing-hardware-and-handling-interrupts.md
+    items:
+    - name: 启用硬件访问
+      href: enabling-hardware-access.md
+    - name: 在 UMDF 1.x 驱动程序中查找和映射硬件资源
+      href: finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md
+    - name: 在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备注册表
+      href: reading-and-writing-to-device-registers-in-umdf-1-x-drivers.md
+    - name: 处理中断
+      href: handling-interrupts.md
+      items:
+      - name: 创建中断对象
+        href: creating-an-interrupt-object-umdf.md
+      - name: 启用和禁用中断
+        href: enabling-and-disabling-interrupts-umdf.md
+      - name: 为中断提供服务
+        href: servicing-an-interrupt-umdf.md
+      - name: 使用工作项
+        href: using-workitems.md
+      - name: 同步中断代码
+        href: synchronizing-interrupt-code-umdf.md
+      - name: 删除中断对象
+        href: deleting-an-interrupt-object.md
+  - name: UMDF 驱动程序任务
+    href: umdf-driver-tasks.md
+    items:
+    - name: 在 UMDF 驱动程序中使用设备接口
+      href: using-device-interfaces-in-umdf-drivers.md
+    - name: 创建回调对象
+      href: creating-callback-objects.md
+      items:
+      - name: 创建回调对象示例
+        href: creating-callback-objects-example.md
+      - name: 定义回调对象示例
+        href: defining-callback-objects-example.md
+      - name: 关联回调接口示例
+        href: associating-callback-interfaces-example.md
+    - name: 指定回调同步模式
+      href: specifying-a-callback-synchronization-mode.md
+    - name: I/O 队列事件回调函数
+      href: i-o-queue-event-callback-functions.md
+    - name: 为 I/O 队列配置调度模式
+      href: configuring-dispatch-mode-for-an-i-o-queue.md
+    - name: 将调度和同步模式相结合
+      href: combining-dispatch-and-synchronization-modes.md
+    - name: 创建文件对象来处理 I/O
+      href: creating-a-file-object-to-handle-i-o.md
+      items:
+      - name: 驱动程序创建的文件对象与应用程序创建的文件对象
+        href: driver-created-versus-application-created-file-objects.md
+      - name: 创建和使用驱动程序创建的文件对象
+        href: creating-and-using-driver-created-file-objects.md
+    - name: 在 UMDF 1.x 驱动程序中使用注册表
+      href: using-the-registry-in-umdf-1-x-drivers.md
+    - name: 支持 UMDF 1.x 驱动程序中的内核模式客户端
+      href: supporting-kernel-mode-clients-in-umdf-1-x-drivers.md
+    - name: 查看 UMDF 对象
+      href: viewing-umdf-objects.md
+    - name: 确定 UMDF 驱动程序使用过多内存的原因
+      href: determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory.md
+    - name: Wudfext.dll 中的调试程序扩展摘要
+      href: using-umdf-debugger-extensions.md
+ms.openlocfilehash: d5dfef77b1c2f6eeeb3ca46253b6da9121f49932
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465625"

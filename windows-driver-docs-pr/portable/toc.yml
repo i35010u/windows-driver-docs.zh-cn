@@ -1,0 +1,229 @@
+items:
+- name: Windows 便携设备
+  href: index.md
+  items:
+  - name: WPD 中的新增功能
+    href: what-s-new-in-wpd.md
+  - name: WPD 设计指南
+    href: wpd-design-guide.md
+    items:
+    - name: WPD 驱动程序
+      href: wpd-drivers.md
+      items:
+      - name: 要求
+        href: requirements.md
+    - name: WPD 驱动程序概述
+      href: wpd-drivers-overview.md
+      items:
+      - name: 支持的方案
+        href: supported-scenarios.md
+      - name: WPD 和早期技术
+        href: wpd-and-earlier-technologies.md
+      - name: 硬件供应商指南
+        href: guidance-for-the-hardware-vendor.md
+      - name: 体系结构概述
+        href: architecture-overview.md
+      - name: 访问控制
+        href: access-control.md
+      - name: 概念模型
+        href: the-conceptual-model.md
+      - name: 设备表示法
+        href: device-representation.md
+      - name: 表示功能
+        href: representing-functionality.md
+      - name: 表示内容
+        href: representing-contents.md
+      - name: 设备安装
+        href: device-installation.md
+      - name: Windows 便携设备中的 PROPERTYKEY 和 GUID
+        href: propertykeys-and-guids-in-windows-portable-devices.md
+      - name: 对于对象的要求
+        href: requirements-for-objects.md
+  - name: WPD 编程指南
+    href: wpd-programming-guide.md
+    items:
+    - name: WPD 驱动程序开发工具
+      href: familiarizing-yourself-with-the-sample-driver.md
+      items:
+      - name: 使用 WpdInfo 工具
+        href: using-the-wpdinfo-tool.md
+      - name: 使用 WpdDeviceInspector 工具
+        href: using-the-wpddeviceinspector-tool.md
+      - name: 使用网络监视器工具
+        href: using-the-netmon-tool.md
+    - name: WPD 驱动程序示例
+      href: the-wpd-driver-samples.md
+      items:
+      - name: WpdHelloWorldDriver 示例
+        href: the-sample-driver-architecture.md
+        items:
+        - name: 安装 WpdHelloWorldDriver 示例
+          href: the-wpdhelloworlddriver-installation.md
+        - name: 示例驱动程序安装程序信息 (.inf) 文件
+          href: the-sample-driver-setup-information---inf--file.md
+          items:
+          - name: 支持自动播放
+            href: supporting-autoplay.md
+        - name: MTP 安装程序信息 (.inf) 文件
+          href: the-mtp-setup-information---inf--file.md
+        - name: 验证安装程序信息文件的结构和语法
+          href: verifying-structure-and-syntax-for-setup-information-files.md
+        - name: COM 组件文件
+          href: the-com-component-files.md
+        - name: Windows 驱动程序框架文件
+          href: the-windows-driver-foundation-files.md
+          items:
+          - name: 处理即插即用和电源管理事件
+            href: handling-plug-and-play-and-power-management-events.md
+          - name: 处理入口和出口点
+            href: handling-the-entry-and-exit-points.md
+          - name: 处理设备控制和文件创建
+            href: handling-device-control-and-file-creation.md
+            items:
+            - name: 处理访问控制
+              href: handling-access-control.md
+        - name: Windows 便携设备文件
+          href: the-windows-portable-device-files.md
+          items:
+          - name: 基础驱动程序
+            href: the-base-driver.md
+            items:
+            - name: 初始化驱动程序
+              href: initializing-the-driver.md
+            - name: 消息传送功能
+              href: messaging-functionality.md
+            - name: 映射对象标识符
+              href: mapping-object-identifiers.md
+          - name: 驱动程序功能
+            href: driver-capabilities.md
+            items:
+            - name: 命令-选项检索
+              href: command-option-retrieval.md
+            - name: 固定的属性-特性检索
+              href: fixed-property-attribute-retrieval.md
+            - name: 功能-类别检索
+              href: functional-category-retrieval.md
+            - name: 功能-对象检索
+              href: functional-object-retrieval.md
+            - name: 支持的命令检索
+              href: supported-command-retrieval.md
+            - name: 支持的内容-类型检索
+              href: supported-content-type-retrieval.md
+            - name: 支持的格式-属性检索
+              href: supported-format-property-retrieval.md
+            - name: 支持的格式检索
+              href: supported-format-retrieval.md
+          - name: 对象枚举
+            href: object-enumeration.md
+          - name: 属性支持
+            href: property-support.md
+            items:
+            - name: 属性删除
+              href: property-deletion.md
+            - name: 属性-特性检索
+              href: property-attribute-retrieval.md
+            - name: 支持的属性检索
+              href: supported-property-retrieval.md
+            - name: 属性-值检索
+              href: property-value-retrieval.md
+            - name: 设置属性值
+              href: setting-property-values.md
+          - name: 资源
+            href: resources.md
+            items:
+            - name: 检索支持的资源的列表
+              href: retrieving-a-list-of-supported-resources.md
+            - name: 检索资源特性
+              href: retrieving-resource-attributes.md
+            - name: 打开资源并检索 IStream 对象
+              href: opening-a-resource-and-retrieving-an-istream-object.md
+            - name: 读取资源数据
+              href: reading-resource-data.md
+            - name: 关闭资源
+              href: closing-a-resource.md
+      - name: WpdBasicHardwareDriver 示例
+        href: the-wpdbasichardwaredriver-sample.md
+        items:
+        - name: 安装示例驱动程序
+          href: the-wpdbasichardwaredriver-installation.md
+        - name: WpdBasicHardwareDriver 协议
+          href: the-wpdbasichardwaredriver-protocol.md
+        - name: 创建传感器设备
+          href: the-wpdbasichardwaredriver-device-creation.md
+        - name: 定义传感器对象
+          href: the-wpdbasichardwaredriver-defining-the-sensor-objects.md
+        - name: 定义传感器属性
+          href: the-wpdbasichardwaredriver-property-definitions.md
+        - name: 支持 I/O
+          href: the-wpdbasichardwaredriver-supporting-io.md
+        - name: 支持 WPD 基础结构
+          href: the-wpdbasichardwaredriver-supporting-wpd-infrastructure.md
+          items:
+          - name: 支持属性命令
+            href: the-wpdbasichardwaredriver-supporting-wpd-property-commands.md
+          - name: 支持属性范围特性
+            href: the-wpdbasichardwaredriver-supporting-property-range-attributes.md
+          - name: 支持枚举命令
+            href: the-wpdbasichardwaredriver-supporting-wpd-enumeration-commands.md
+          - name: 支持功能命令
+            href: the-wpdbasichardwaredriver-supporting-wpd-capability-commands.md
+          - name: 支持基础驱动程序命令
+            href: the-wpdbasichardwaredriver-supporting-base-driver-commands.md
+          - name: 支持设备事件
+            href: the-wpdbasichardwaredriver-supporting-device-events.md
+        - name: 测试和调试示例驱动程序
+          href: the-wpdbasichardwaredriver-testing-and-debugging.md
+      - name: WpdServiceSampleDriver 示例
+        href: the-wpdservicesampledriver-sample.md
+        items:
+        - name: 安装 WpdServiceSampleDriver 示例
+          href: the-wpdservicesampledriver-installation.md
+        - name: 定义服务对象
+          href: the-wpdservicesampledriver-object-definitions.md
+        - name: 定义服务属性
+          href: the-wpdservicesampledriver-property-definitions.md
+        - name: 支持 WPD 基础结构
+          href: the-wpdservicesampledriver-supporting-wpd-infrastructure.md
+          items:
+          - name: 支持服务命令
+            href: the-wpdservicesampledriver-supporting-service-commands.md
+          - name: 支持属性命令
+            href: the-wpdservicesampledriver-supporting-wpd-property-commands.md
+          - name: 支持枚举命令
+            href: the-wpdservicesampledriver-supporting-wpd-enumeration-commands.md
+          - name: 支持功能命令
+            href: the-wpdservicesampledriver-supporting-wpd-capability-commands.md
+          - name: 支持基础驱动程序命令
+            href: the-wpdservicesampledriver-supporting-base-driver-commands.md
+        - name: 限定服务事件的范围
+          href: the-wpdservicesampledriver-scoping-service-events.md
+      - name: WpdMultiTransportDriver 示例
+        href: the-wpdmultitransportdriver-sample.md
+        items:
+        - name: 安装 WpdMultiTransportDriver 示例
+          href: the-wpdmultitransportdriver-installation.md
+        - name: MultiTransport 设备支持
+          href: the-wpdmultitransportdriver-sample-device-arrival.md
+    - name: 高级任务
+      href: advanced-tasks.md
+      items:
+      - name: WpdWudfSampleDriver 示例
+        href: the-wpdwudfsampledriver-sample.md
+      - name: 安装 WpdWudfSampleDriver 示例
+        href: the-wpdwudfsampledriver-installation.md
+      - name: 支持插即用 (PnP) 和电源管理
+        href: supporting-plug-and-play--pnp-.md
+      - name: 支持呈现配置文件
+        href: supporting-rendering-profiles.md
+      - name: 支持客户端上下文
+        href: supporting-client-contexts.md
+      - name: 支持事件 Cookie
+        href: supporting-event-cookie.md
+      - name: 支持 WPP 跟踪
+        href: supporting-wpp-tracing-info.md
+ms.openlocfilehash: 0f814f1461755f9e7b36d0d89a8767cf929e9116
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465484"
