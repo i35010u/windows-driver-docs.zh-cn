@@ -50,7 +50,7 @@ ms.locfileid: "56518521"
 
 1.  在目标计算机上的“控制面板”中，转到“网络和 Internet”&gt;“网络共享中心”。 请注意活动网络。 这将是**公用网络**、**专用网络**或**域**。
 2.  在目标计算机上的“控制面板”中，转到“系统和安全”&gt;“Windows 防火墙”&gt;“高级设置”&gt;“入站规则”。
-3.  在入站规则列表中，查找用于活动网络的所有网络发现规则。 （例如，查找具有**专用****配置文件**的所有网络发现规则。）双击每个规则，并打开“作用域”选项卡。在“远程 IP 地址”下，选择“任何 IP 地址”。
+3.  在入站规则列表中，查找用于活动网络的所有网络发现规则。 （例如，查找具有**专用** **配置文件**的所有网络发现规则。）双击每个规则，并打开“作用域”选项卡。在“远程 IP 地址”下，选择“任何 IP 地址”。
 4.  在入站规则列表中，查找用于活动网络的所有“文件和打印机共享”规则。 对于其中每个规则，双击该规则，并打开“作用域”选项卡。在“远程 IP 地址”下，选择“任何 IP 地址”。
 
 ## <a name="span-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanspan-idprovisionthetargetcomputerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>预配目标计算机
