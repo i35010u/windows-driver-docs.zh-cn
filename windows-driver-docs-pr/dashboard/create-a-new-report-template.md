@@ -195,7 +195,7 @@ ms.locfileid: "56518261"
 
 下表包含响应中的参数说明。
 
-|参数|说明| |----|----|templateId|这是创建的报告模板的模板 ID。 用作计划报告 API 的输入。 有关详细信息，请参阅[计划新报告](schedule-a-new-report.md)。
+|参数|说明| |----|----| templateId|这是创建的报告模板的模板 ID。 用作计划报告 API 的输入。 有关详细信息，请参阅[计划新报告](schedule-a-new-report.md)。
 
 可以使用[管理报告模板和计划的报告](manage-report-templates-and-scheduled-reports.md)中所示的方法管理现有的报告。 可以在[示例报告模板](sample-report-templates.md)中找到示例报告模板的列表。
 
