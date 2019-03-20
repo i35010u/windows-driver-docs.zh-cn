@@ -82,7 +82,7 @@ FDO 设备、 framework 设备对象初始化方法和 framework FDO 初始化�
 [ **WdfDeviceInitSetRequestAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff546786)
 [**WdfFdoInitAllocAndQueryProperty**](https://msdn.microsoft.com/library/windows/hardware/ff547239) 
  [ **WdfFdoInitOpenRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff547249)
-[{**](https://msdn.microsoft.com/library/windows/hardware/ff547281)
+[**](https://msdn.microsoft.com/library/windows/hardware/ff547281)
  
 
  

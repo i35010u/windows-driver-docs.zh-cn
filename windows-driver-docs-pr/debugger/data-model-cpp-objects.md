@@ -586,7 +586,7 @@ CreateDataModelObject 方法是简单的帮助程序包装创建对象的数据�
 
 [CreateIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createintrinsicobject)
 
-CreateIntrinsicObject 方法是到 IModelObject 框内部值的方法。 调用方将该值放在 COM 变体，并调用此方法。 数据模型管理器将返回该对象表示 IModelObject。 请注意此方法也使用基本的基于 IUnknown 类型进行装箱： 属性访问器、 方法、 上下文、 等等...在这种情况下，objectKind 方法指示哪种基于 IUnknown 构造该对象表示和所传递变量 punkVal 字段是 IUnknown 派生类型。 类型必须是静态强制转换为适当的模型接口 (例如：IModelPropertyAccessor、 IModelMethod、 IDebugHostContext，等等。...)在过程。 此方法支持的变体类型是 VT_UI1、 VT_I1、 VT_UI2、 VT_I2、 VT_UI4、 VT_I4、 VT_UI8、 为 VT_I8、 VT_R4、 VT_R8、 VT_BOOL、 VT_BSTR、 和 VT_UNKNOWN （适用于 IUnknown 派生类型由枚举 ModelObjectKind 专用的一组。 
+CreateIntrinsicObject 方法是到 IModelObject 框内部值的方法。 调用方将该值放在 COM 变体，并调用此方法。 数据模型管理器将返回该对象表示 IModelObject。 请注意此方法也使用基本的基于 IUnknown 类型进行装箱： 属性访问器、 方法、 上下文、 等等...在这种情况下，objectKind 方法指示哪种基于 IUnknown 构造该对象表示和所传递变量 punkVal 字段是 IUnknown 派生类型。 类型必须是静态强制转换为适当的模型接口 (例如：IModelPropertyAccessor、 IModelMethod、 IDebugHostContext，等等...)在过程。 此方法支持的变体类型是 VT_UI1、 VT_I1、 VT_UI2、 VT_I2、 VT_UI4、 VT_I4、 VT_UI8、 为 VT_I8、 VT_R4、 VT_R8、 VT_BOOL、 VT_BSTR、 和 VT_UNKNOWN （适用于 IUnknown 派生类型由枚举 ModelObjectKind 专用的一组。 
 
 [CreateTypedIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedintrinsicobject)
 
