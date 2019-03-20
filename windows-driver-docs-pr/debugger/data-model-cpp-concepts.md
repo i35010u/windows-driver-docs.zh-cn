@@ -92,7 +92,7 @@ DECLARE_INTERFACE_(IStringDisplayableConcept, IUnknown)
 
 [ToDisplayString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-istringdisplayableconcept-todisplaystring)
 
-每当客户端想要将对象转换为字符串，用于显示调用 ToDisplayString 方法 (若要在 UI 中，控制台等。...)。此类字符串转换不应该用于其他编程操作的基础。 字符串转换本身可能深度受传递给调用的元数据。 字符串转换应使每次尝试遵循的 PreferredRadix 和 PreferredFormat 键。 
+每当客户端想要将对象转换为字符串，用于显示调用 ToDisplayString 方法 (若要在 UI 中，控制台等...)。此类字符串转换不应该用于其他编程操作的基础。 字符串转换本身可能深度受传递给调用的元数据。 字符串转换应使每次尝试遵循的 PreferredRadix 和 PreferredFormat 键。 
 
 
 **可迭代的概念：IIterableConcept 和 IModelIterator**
