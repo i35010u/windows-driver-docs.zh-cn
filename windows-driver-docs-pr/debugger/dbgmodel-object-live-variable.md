@@ -16,7 +16,7 @@ ms.locfileid: "56524591"
 ## <a name="object-properties"></a>对象属性
 |名称|描述|
 |--- |--- |
-|LocationKind|描述变量存储中的位置的种类的字符串 (例如："注册"，"RegisterRelative"，等等。...)|
+|LocationKind|描述变量存储中的位置的种类的字符串 (例如："注册"，"RegisterRelative"，等等...)|
 |偏移量|从存储在变量的位置的偏移量。 在 [rbp + 8]，例如存储的变量，偏移量将是 8。|
 |注册|一个[注册](dbgmodel-object-register.md)介绍寄存器变量的存储位置或相对于的对象。|
 |VariableName|要描述变量的名称。|
