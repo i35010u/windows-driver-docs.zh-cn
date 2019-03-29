@@ -4,12 +4,12 @@ title: 为不同版本的 Windows 生成驱动程序
 description: 如果你在为不同版本的 Windows 编写驱动程序，以下部分提供了一些有关如何使用 Windows 驱动程序工具包 (WDK) 8.1 或 WDK 8、Visual Studio 和 MSBuild 生成这些驱动程序的指南。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8e1c4fc7abc7ab876c27e8900d4c46b203ae5d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b485699ff9a7e602ebe2e8d59c49ac7362174b8b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463938"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 生成驱动程序
 
@@ -76,7 +76,7 @@ ms.locfileid: "56518480"
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left"><pre><code>  &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8.1 Debug|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+    <td align="left"><pre><code>  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;WindowsV6.3&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -84,7 +84,7 @@ ms.locfileid: "56518480"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8.1 Release|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;WindowsV6.3&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -92,7 +92,7 @@ ms.locfileid: "56518480"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8 Debug|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;Windows8&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;
@@ -100,7 +100,7 @@ ms.locfileid: "56518480"
         &lt;ConfigurationType&gt;Driver&lt;/ConfigurationType&gt;
         &lt;DriverType&gt;KMDF&lt;/DriverType&gt;
       &lt;/PropertyGroup&gt;
-      &lt;PropertyGroup Condition=&quot;&#39;$(Configuration)|$(Platform)&#39;==&#39;Win8 Release|Win32&#39;&quot; Label=&quot;Configuration&quot;&gt;
+      &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'" Label="Configuration"&gt;
         &lt;TargetVersion&gt;Windows8&lt;/TargetVersion&gt;
         &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
         &lt;KernelBufferOverflowLib&gt;$(DDK_LIB_PATH)\BufferOverflowK.lib&lt;/KernelBufferOverflowLib&gt;

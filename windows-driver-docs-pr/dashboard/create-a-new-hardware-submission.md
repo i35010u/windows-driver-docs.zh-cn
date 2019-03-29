@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a31cae38cb919d243d6af8120940a7100d1080
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 577e467d1248a0b8e734136e63c65b6645792e2c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518429"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463819"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -66,7 +66,7 @@ ms.locfileid: "56518429"
    </tr>
    <tr class="odd">
    <td><p>设备元数据类别</p></td>
-   <td><p>基于设备类别从默认图标列表中为你的设备选择图标。 这确定哪个图标显示在“设备和打印机”中。 如果你的设备不应出现，请选择&quot;内部设备&quot;。</p>
+   <td><p>基于设备类别从默认图标列表中为你的设备选择图标。 这确定哪个图标显示在“设备和打印机”中。 如果你的设备不应出现，请选择“内部设备”。</p>
    <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/br230800.aspx" data-raw-source="[Device Metadata](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)">设备元数据</a>。</p></td>
    </tr>
    <tr class="even">

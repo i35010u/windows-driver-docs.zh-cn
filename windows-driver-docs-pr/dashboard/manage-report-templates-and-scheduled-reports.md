@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e009b5ec0b4404172346cc9fdb64454a309c38f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fe1a9e9acd4d39e4940872d8bbf425e848e54a59
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518274"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463945"
 ---
 # <a name="manage-report-templates-and-scheduled-reports"></a>管理报告模板和计划报告
 
@@ -20,7 +20,7 @@ ms.locfileid: "56518274"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>|
+|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌|
 |内容类型|字符串|Application/JSON|
 
 ## <a name="view-a-definition-of-a-report-template"></a>查看报告模板的定义
@@ -117,13 +117,13 @@ ms.locfileid: "56518274"
     </tr>
     <tr>
       <td>示例有效负载</td>
-      <td><pre>{<br/>   &quot;view&quot;:&quot;IHVDriver&quot;,
-   &quot;projection&quot;:[<br/>      &quot;EventType&quot;,
-      &quot;DriverName&quot;
+      <td><pre>{<br/>   "view":"IHVDriver",
+   "projection":[<br/>      "EventType",
+      "DriverName"
    ],
-   &quot;dateRange&quot;:{<br/>      &quot;reportPeriod&quot;:&quot;Yesterday&quot;
+   "dateRange":{<br/>      "reportPeriod":"Yesterday"
    },
-   &quot;condition&quot;:{  
+   "condition":{  
 
    },
    "aggregation":{  
@@ -176,14 +176,14 @@ ms.locfileid: "56518274"
     <tr>
       <td>示例响应有效负载</td>
       <td><pre>{
-    &quot;data&quot;: [
+    "data": [
         {
-            &quot;reportId&quot;: 2,
-            &quot;templateId&quot;: 7,
-            &quot;schedule&quot;: &quot;{report details}&quot;,
-            &quot;isActive&quot;: true,
-            &quot;createdDatetime&quot;: &quot;2018-06-24T17:04:18.487&quot;,
-            &quot;modifiedDatetime&quot;: &quot;2018-06-25T08:28:42.063&quot;
+            "reportId": 2,
+            "templateId": 7,
+            "schedule": "{report details}",
+            "isActive": true,
+            "createdDatetime": "2018-06-24T17:04:18.487",
+            "modifiedDatetime": "2018-06-25T08:28:42.063"
         },
 
                   {

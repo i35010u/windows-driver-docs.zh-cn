@@ -6,12 +6,12 @@ keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2836f36dfe5e8bebce61f08ffb0ec7c06af80238
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e5a2e2c000b21f1752a09a0df92a26c480689ab
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518117"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419579"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
@@ -58,9 +58,7 @@ ms.locfileid: "56518117"
 
 通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”，运行驱动程序的计算机称为“目标计算机”。 目标计算机也称为“测试计算机”。 有关调试驱动程序的详细信息，请参阅 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
 
-到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，你需要配置目标计算机。 
-
-到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，你需要配置目标计算机。 
+到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，需要配置目标计算机。 
 
 1. 按照[预配计算机以便进行驱动程序部署和测试 (WDK 10)](provision-a-target-computer-wdk-8-1.md) 中的说明进行操作。
 
@@ -87,7 +85,7 @@ ms.locfileid: "56518117"
     ```
 8. 在“生成”菜单上，选择“部署解决方案”。 Visual Studio 会自动将安装和运行驱动程序所需的文件复制到目标计算机。 此操作可能会需要一两分钟的时间。
 
-    部署驱动程序时，驱动程序文件将复制到测试计算机上的 %Systemdrive%\drivertest\drivers 文件夹。 如果部署期间发生错误，你可以查看这些文件是否已复制到测试计算机。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\drivertest\drivers 文件夹中。
+    部署驱动程序时，驱动程序文件将复制到测试计算机上的 %Systemdrive%\drivertest\drivers 文件夹。 如果部署期间发生错误，可以查看这些文件是否已复制到测试计算机。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\drivertest\drivers 文件夹中。
 
     有关部署驱动程序的详细信息，请参阅[将驱动程序部署到测试计算机](../develop/deploying-a-driver-to-a-test-computer.md)。
 
@@ -127,7 +125,7 @@ ms.locfileid: "56518117"
 
     *C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64*
 
-2. 使用以下命令启动 WinDbg 以连接到目标计算机上的内核调试会话。 端口和密钥的值应该与你预配目标计算机所使用的值相同。 我们将使用 **50000** 作为端口，使用 **1.2.3.4** 作为密钥，我们在部署步骤中使用过这些值。 *K* 标志指示这是内核调试会话。
+2. 使用以下命令启动 WinDbg 以连接到目标计算机上的内核调试会话。 端口和密钥的值应该与你预配目标计算机所使用的值相同。 我们将使用 **50000** 作为端口，使用 **1.2.3.4** 作为密钥。我们在部署步骤中使用过这些值。 *K* 标志指示这是内核调试会话。
 
     **WinDbg -k net:port=50000,key=1.2.3.4**
 

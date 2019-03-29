@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f47aead0b78fd9f3e712975c908b3ed147442269
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ce4cd26934d8e9a77cec307504b66f986b460794
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518260"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464315"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -149,7 +149,7 @@ ms.locfileid: "56518260"
    </colgroup>
    <tbody>
    <tr class="odd">
-   <td align="left"><pre><code>C:\Echo&gt; MakeCab /f &quot;C:\Echo\Echo.ddf</code></pre></td>
+   <td align="left"><pre><code>C:\Echo&gt; MakeCab /f "C:\Echo\Echo.ddf</code></pre></td>
    </tr>
    </tbody>
    </table>
@@ -191,7 +191,7 @@ ms.locfileid: "56518260"
    </colgroup>
    <tbody>
    <tr class="odd">
-   <td align="left"><pre><code>C:\Echo&gt; SignTool sign /v /s MY /n &quot;Subject Name of the Signing Certificate&quot; /t http://timestamp.verisign.com/scripts/timstamp.dll &quot;C:\Echo\Disk1\Echo.cab&quot;</code></pre></td>
+   <td align="left"><pre><code>C:\Echo&gt; SignTool sign /v /s MY /n "Subject Name of the Signing Certificate" /t http://timestamp.verisign.com/scripts/timstamp.dll "C:\Echo\Disk1\Echo.cab"</code></pre></td>
    </tr>
    </tbody>
    </table>
