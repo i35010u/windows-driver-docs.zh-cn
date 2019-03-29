@@ -1,0 +1,152 @@
+---
+title: Width 元素
+description: 所需的宽度元素指定扫描设备支持需要宽度的扫描程序配置元素的宽度值。
+ms.assetid: 2e9b6c4a-8180-4c09-8d60-64f8ede7bdfc
+keywords:
+- Width 元素成像设备
+topic_type:
+- apiref
+api_name:
+- wscn Width wscn Override "" wscn UsedDefault ""
+api_type:
+- Schema
+ms.date: 11/28/2017
+ms.localizationpriority: medium
+ms.openlocfilehash: 2b1c04f8881864db0ccd034761340bb68f278859
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56563485"
+---
+# <a name="width-element"></a>Width 元素
+
+
+所需**宽度**元素指定扫描设备支持需要的扫描程序配置元素的宽度值**宽度**。
+
+<a name="usage"></a>用法
+-----
+
+```xml
+<wscn:Width wscn:Override="" wscn:UsedDefault=""
+  Override = "xs:string"
+  UsedDefault = "xs:string">
+  text
+</wscn:Width wscn:Override="" wscn:UsedDefault="">
+```
+
+<a name="attributes"></a>特性
+----------
+
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>特性</th>
+<th>在任务栏的搜索框中键入</th>
+<th>必需</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p>xs:string</p></td>
+<td><p>否</p></td>
+<td><p></p>
+<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+</tr>
+<tr class="even">
+<td><p><strong><strong>UsedDefault</strong></strong></p></td>
+<td><p>xs:string</p></td>
+<td><p>否</p></td>
+<td><p></p>
+<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+</tr>
+</tbody>
+</table>
+
+<a name="text-value"></a>文本值
+----------
+
+必需。 有关可能的值，请参阅特定父元素。
+
+## <a name="child-elements"></a>子元素
+
+
+没有子元素。
+
+## <a name="parent-elements"></a>父元素
+
+
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>元素</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><a href="adfopticalresolution.md" data-raw-source="[&lt;strong&gt;ADFOpticalResolution&lt;/strong&gt;](adfopticalresolution.md)"><strong>ADFOpticalResolution</strong></a></p></td>
+</tr>
+<tr class="even">
+<td><p><a href="inputmediasize.md" data-raw-source="[&lt;strong&gt;InputMediaSize&lt;/strong&gt;](inputmediasize.md)"><strong>InputMediaSize</strong></a></p></td>
+</tr>
+<tr class="odd">
+<td><p><a href="platenmaximumsize.md" data-raw-source="[&lt;strong&gt;PlatenMaximumSize&lt;/strong&gt;](platenmaximumsize.md)"><strong>PlatenMaximumSize</strong></a></p></td>
+</tr>
+<tr class="even">
+<td><p><a href="platenminimumsize.md" data-raw-source="[&lt;strong&gt;PlatenMinimumSize&lt;/strong&gt;](platenminimumsize.md)"><strong>PlatenMinimumSize</strong></a></p></td>
+</tr>
+<tr class="odd">
+<td><p><a href="platenopticalresolution.md" data-raw-source="[&lt;strong&gt;PlatenOpticalResolution&lt;/strong&gt;](platenopticalresolution.md)"><strong>PlatenOpticalResolution</strong></a></p></td>
+</tr>
+<tr class="even">
+<td><p><a href="widths.md" data-raw-source="[&lt;strong&gt;Widths&lt;/strong&gt;](widths.md)"><strong>Widths</strong></a></p></td>
+</tr>
+</tbody>
+</table>
+
+<a name="remarks"></a>备注
+-------
+
+**宽度**元素是其父元素的所有必需的子元素。 值**宽度**取决于其父元素。 有关可能的值，请参阅合适的父元素。
+
+WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**宽度**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**以及有关其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+
+## <a name="see-also"></a>请参阅
+
+
+[**ADFOpticalResolution**](adfopticalresolution.md)
+
+[**DocumentFinalParameters**](documentfinalparameters.md)
+
+[**Height**](height.md)
+
+[**InputMediaSize**](inputmediasize.md)
+
+[**PlatenMaximumSize**](platenmaximumsize.md)
+
+[**PlatenMinimumSize**](platenminimumsize.md)
+
+[**PlatenOpticalResolution**](platenopticalresolution.md)
+
+[**Widths**](widths.md)
+
+ 
+
+ 
+
+
+
+
+
+
