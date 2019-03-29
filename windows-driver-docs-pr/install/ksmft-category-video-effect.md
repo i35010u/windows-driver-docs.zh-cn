@@ -1,0 +1,86 @@
+---
+title: KSMFT_CATEGORY_VIDEO_EFFECT
+description: KSMFT_CATEGORY_VIDEO_EFFECT
+ms.assetid: 81286240-d6eb-4872-a06c-34046767a2cc
+keywords:
+- KSMFT_CATEGORY_VIDEO_EFFECT 设备和驱动程序安装
+topic_type:
+- apiref
+api_name:
+- KSMFT_CATEGORY_VIDEO_EFFECT
+api_location:
+- Ks.h
+api_type:
+- HeaderDef
+ms.localizationpriority: medium
+ms.date: 10/17/2018
+ms.openlocfilehash: 3b9769bd9cc867cec18eec43aa022a8fe5ca2874
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56565400"
+---
+# <a name="ksmftcategoryvideoeffect"></a>KSMFT_CATEGORY_VIDEO_EFFECT
+
+
+KSMFT_CATEGORY_VIDEO_EFFECT[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff560842)视频设备 (KS) 功能类别。
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">特性</th>
+<th align="left">设置</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>标识符</p></td>
+<td align="left"><p>KSMFT_CATEGORY_VIDEO_EFFECT</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>类 GUID</p></td>
+<td align="left"><p>{12e17c21-532c-4a6e-8a1c-40825a736397}</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+<a name="remarks"></a>备注
+-------
+
+AVStream 驱动程序 MFT 编解码器支持注册此设备接口类，以向操作系统指示设备支持 KSMFT_CATEGORY_VIDEO_EFFECT 功能分类的实例。
+
+有关 AVStream 编解码器支持硬件设备的设备接口类的详细信息，请参阅[开始使用硬件 AVStream 中支持的编解码器](https://msdn.microsoft.com/library/windows/hardware/gg299325)。
+
+有关如何在一个 INF 文件中注册此功能的类别的详细信息，请参阅*Hiddigi.inf*文件，它是随*src\\输入\\hiddigi*示例WDK 中的驱动程序。
+
+<a name="requirements"></a>要求
+------------
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><p>Header</p></td>
+<td align="left">Ks.h （包括 Ks.h）</td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+ 
+
+
+
+
+
