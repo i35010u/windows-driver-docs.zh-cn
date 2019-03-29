@@ -1,17 +1,17 @@
 ---
-title: 中 JavaScript 扩展本机调试器对象
+title: JavaScript 扩展中的本机调试器对象
 description: 本机调试器对象表示各种构造和调试器环境的行为。 对象可以是传递到 （或中获取） JavaScript 扩展。
 ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE8
 ms.date: 12/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d88712e1cf2fbe462320547b7d1af11cd06352f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fddf5a08df7845bf1eecfdd24596a608a9d5cd2f
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520069"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464385"
 ---
-# <a name="native-debugger-objects-in-javascript-extensions"></a>中 JavaScript 扩展本机调试器对象
+# <a name="native-debugger-objects-in-javascript-extensions"></a>JavaScript 扩展中的本机调试器对象
 
 
 本机调试器对象表示各种构造和调试器环境的行为。 对象可以是传递到 （或中获取） JavaScript 扩展操作调试器的状态。
@@ -26,7 +26,7 @@ ms.locfileid: "56520069"
 -   模块 / 模块
 -   实用程序
 -   状态
--   “设置”
+-   设置
 
 例如 host.namespace.Debugger.Utility.Control.ExecuteCommand 对象可用于 u 命令发送到以下两行 JavaScript 代码的调试器。
 
@@ -116,7 +116,7 @@ function initializeScript()
 |                                |                                                                                              |
 |--------------------------------|----------------------------------------------------------------------------------------------|
 | Debugger.Models.Sessions       | 将调试器附加到的会话 （目标） 的列表                              |
-| Debugger.Models.Session        | 将调试器附加到的单个会话 （目标） (实时用户模式下，KD，等等。...) |
+| Debugger.Models.Session        | 将调试器附加到的单个会话 （目标） (实时用户模式下，KD，等等...) |
 | Debugger.Models.Processes      | 某个会话中的进程的列表                                                       |
 | Debugger.Models.Threads        | 在进程中线程的列表                                                         |
 | Debugger.Models.Thread         | 进程内的单个线程 (无论用户或内核模式)            |
@@ -135,7 +135,7 @@ function initializeScript()
 
 |                                             |                                                               |
 |---------------------------------------------|---------------------------------------------------------------|
-| DataModel.Models.Intrinsic                  | 一个内部值 (序号、 浮点数，等等。...)                 |
+| DataModel.Models.Intrinsic                  | 一个内部值 (序号、 浮点数，等等...)                 |
 | DataModel.Models.String                     | 一个字符串，                                                      |
 | DataModel.Models.Array                      | 本机数组                                                |
 | DataModel.Models.Guid                       | 一个 GUID                                                        |
@@ -494,8 +494,8 @@ Debugger.Sessions.First().Processes.First().Threads.Duplicate(2),d              
 
 | 方法             | 签名                  | 描述                                                                                                                                |
 |--------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| hostContext        | 属性                   | 返回一个对象，它表示对象中的上下文 (地址空间、 调试目标，等等。...)                              |
-| targetLocation     | 属性                   | 返回一个对象是一个抽象概念的其中对象是在地址空间内 (虚拟地址、 注册、 子寄存器，等等。...) |
+| hostContext        | 属性                   | 返回一个对象，它表示对象中的上下文 (地址空间、 调试目标，等等...)                              |
+| targetLocation     | 属性                   | 返回一个对象是一个抽象概念的其中对象是在地址空间内 (虚拟地址、 注册、 子寄存器，等等...) |
 | targetSize         | 属性                   | 返回对象的大小 (有效地： sizeof (&lt;类型的对象&gt;)                                                                |
 | addParentModel     | .addParentModel(object)    | 向对象添加新的父模型 （类似于 JavaScript 原型，但数据 mdoel 端）                                          |
 | removeParentModel  | .removeParentModel(object) | 从对象中移除给定的父模型                                                                                               |
@@ -505,7 +505,7 @@ Debugger.Sessions.First().Processes.First().Threads.Duplicate(2),d              
 
 如果对象是一个指针，以下属性 （和方法） 被投影到输入 JavaScript 的指针：
 
-| 属性名称 | 签名      | 描述                                                                    |
+| 属性名 | 签名      | 描述                                                                    |
 |---------------|----------------|--------------------------------------------------------------------------------|
 | 添加           | .add(value)    | 执行指针的指针和指定的值之间的数学加法运算     |
 | 地址       | 属性       | 返回指针的地址作为 64 位序号对象 （库类型） |
@@ -520,7 +520,7 @@ Debugger.Sessions.First().Processes.First().Threads.Duplicate(2),d              
 
 从本机对象的 targetLocation 属性返回的位置对象包含以下属性 （和方法）。
 
-| 属性名称 | 签名        | 描述                                          |
+| 属性名 | 签名        | 描述                                          |
 |---------------|------------------|------------------------------------------------------|
 | 添加           | .add(value)      | 将绝对的字节偏移量添加到的位置。        |
 | 相减      | .subtract(value) | 减去一个绝对的字节偏移量位置。 |
@@ -594,20 +594,20 @@ function stringifyNative(nativeObject)
 <td align="left"><p>getModuleSymbol(moduleName, symbolName, [contextInheritor])</p>
 <p>getModuleSymbol(moduleName, symbolName, [typeName], [contextInheritor])</p></td>
 <td align="left"><p>返回一个对象，用于为特定模块内的全局符号。 模块名称和符号名称的字符串。</p>
-<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器中&#39;s 当前上下文。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p>
+<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器的当前上下文中。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p>
 <p>如果可选<em>typeName</em>提供参数，该符号将假定为传递的类型的将忽略了符号中指示的类型。 注意： 任何调用方需要对公共符号的模块进行操作，应始终提供显式类型名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>host.createPointerObject</p></td>
 <td align="left"><p>createPointerObject(address, moduleName, typeName, [contextInheritor])</p></td>
 <td align="left"><p>创建在指定的地址或位置的指针对象。 模块名称和类型名称是字符串。</p>
-<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器中&#39;s 当前上下文。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p></td>
+<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器的当前上下文中。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>host.createTypedObject</p></td>
 <td align="left"><p>createTypedObject(location, moduleName, typeName, [contextInheritor])</p></td>
 <td align="left"><p>创建一个对象表示的调试目标中的指定位置的地址空间中的本机类型化的对象。 模块名称和类型名称是字符串。</p>
-<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器中&#39;s 当前上下文。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p></td>
+<p>如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器的当前上下文中。 这不是一次性的测试脚本的 JavaScript 扩展应始终提供显式的上下文。</p></td>
 </tr>
 </tbody>
 </table>
@@ -647,7 +647,7 @@ JavaScript 提供程序插入到此操作将它加载每个脚本的全局命名
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">名称</th>
+<th align="left">“属性”</th>
 <th align="left">签名</th>
 <th align="left">阶段存在</th>
 <th align="left">描述</th>
@@ -700,7 +700,7 @@ JavaScript 提供程序插入到此操作将它加载每个脚本的全局命名
 <td align="left">getModuleSymbol</td>
 <td align="left"><p>getModuleSymbol(moduleName, symbolName, [contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">返回一个对象，用于为特定模块内的全局符号。 模块名称和符号名称的字符串。 如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器中&#39;s 当前上下文。 这不是一次性脚本了 JavaScript 扩展应始终提供显式上下文</td>
+<td align="left">返回一个对象，用于为特定模块内的全局符号。 模块名称和符号名称的字符串。 如果可选<em>contextInheritor</em>提供自变量、 模块和符号将查找中传递的对象在同一上下文 （调试目标中的地址空间）。 如果未提供参数，模块和符号将查找在调试器的当前上下文中。 这不是一次性脚本了 JavaScript 扩展应始终提供显式上下文</td>
 </tr>
 <tr class="odd">
 <td align="left">getNamedModel</td>
@@ -766,13 +766,13 @@ JavaScript 提供程序插入到此操作将它加载每个脚本的全局命名
 <td align="left">typeSignatureExtension</td>
 <td align="left"><p>新 typeSignatureExtension （对象，typeSignature，[moduleName] [minVersion] [maxVersion]）</p></td>
 <td align="left">1</td>
-<td align="left">对象的构造函数用于从返回的数组中放置<strong>initializeScript</strong>，这表示通过 JavaScript 原型或 ES6 类通过类型签名中所述的本机类型的扩展。 此类注册&quot;将字段添加&quot;调试器到&#39;的任何类型相匹配的签名，而不是完全接管 s 可视化效果。 可选的模块名称和版本可以限制注册。 版本指定为&quot;1.2.3.4&quot;设置样式字符串。</td>
+<td align="left">对象的构造函数用于从返回的数组中放置<strong>initializeScript</strong>，这表示通过 JavaScript 原型或 ES6 类通过类型签名中所述的本机类型的扩展。 此类注册"将字段添加"到调试器的可视化效果的任何类型相匹配的签名，而不是完全接管。 可选的模块名称和版本可以限制注册。 版本指定为"1.2.3.4"设置样式字符串。</td>
 </tr>
 <tr class="even">
 <td align="left">typeSignatureRegistration</td>
 <td align="left"><p>新 typeSignatureRegistration （对象，typeSignature，[moduleName] [minVersion] [maxVersion]）</p></td>
 <td align="left">1</td>
-<td align="left">对象的构造函数用于从返回的数组中放置<strong>initializeScript</strong>，这表示 JavaScript 原型或针对本机类型签名的 ES6 类的一个规范注册。 此类注册&quot;接管&quot;调试器&#39;s 可视化效果的任何类型的签名匹配，而不是只是比其进行扩展。 可选的模块名称和版本可以限制注册。 版本指定为&quot;1.2.3.4&quot;设置样式字符串。</td>
+<td align="left">对象的构造函数用于从返回的数组中放置<strong>initializeScript</strong>，这表示 JavaScript 原型或针对本机类型签名的 ES6 类的一个规范注册。 此类注册"高于"调试器的可视化效果的任何类型的签名匹配，而不是只是比其进行扩展。 可选的模块名称和版本可以限制注册。 版本指定为"1.2.3.4"设置样式字符串。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterNamedModel</td>
@@ -784,13 +784,13 @@ JavaScript 提供程序插入到此操作将它加载每个脚本的全局命名
 <td align="left">unregisterExtensionForTypeSignature</td>
 <td align="left"><p>unregisterExtensionForTypeSignature(object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
 <td align="left">2</td>
-<td align="left">此取消注册 JavaScript 原型或 ES6 类成为用于为给定提供的类型签名的本机类型的扩展数据模型。 RegisterExtensionForTypeSignature 逻辑撤消它。 请注意，脚本应优先使用，以返回<strong>typeSignatureExtension</strong>对象从其<strong>initializeScript</strong>方法，而无需执行此操作以强制方式。 以命令方式进行更改的任何脚本需要具有<strong>initializeScript</strong>方法，以清理。 可选的模块名称和版本可以限制注册。 版本指定为&quot;1.2.3.4&quot;设置样式字符串。</td>
+<td align="left">此取消注册 JavaScript 原型或 ES6 类成为用于为给定提供的类型签名的本机类型的扩展数据模型。 RegisterExtensionForTypeSignature 逻辑撤消它。 请注意，脚本应优先使用，以返回<strong>typeSignatureExtension</strong>对象从其<strong>initializeScript</strong>方法，而无需执行此操作以强制方式。 以命令方式进行更改的任何脚本需要具有<strong>initializeScript</strong>方法，以清理。 可选的模块名称和版本可以限制注册。 版本指定为"1.2.3.4"设置样式字符串。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterPrototypeForTypeSignature</td>
 <td align="left"><p>unregisterPrototypeForTypeSignature(object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
 <td align="left">2</td>
-<td align="left">此注销 JavaScript 原型或 ES6 类成为规范化数据模型 (例如： 可视化工具) 的本机类型的指定提供的类型签名。 RegisterPrototypeForTypeSignature 逻辑撤消它。 请注意，脚本应优先使用，以返回<strong>typeSignatureRegistration</strong>对象从其<strong>initializeScript</strong>方法，而无需执行此操作以强制方式。 以命令方式进行更改的任何脚本需要具有<strong>uninitializeScript</strong>方法，以清理。 可选的模块名称和版本可以限制注册。 版本指定为&quot;1.2.3.4&quot;设置样式字符串。</td>
+<td align="left">此注销 JavaScript 原型或 ES6 类成为规范化数据模型 (例如： 可视化工具) 的本机类型的指定提供的类型签名。 RegisterPrototypeForTypeSignature 逻辑撤消它。 请注意，脚本应优先使用，以返回<strong>typeSignatureRegistration</strong>对象从其<strong>initializeScript</strong>方法，而无需执行此操作以强制方式。 以命令方式进行更改的任何脚本需要具有<strong>uninitializeScript</strong>方法，以清理。 可选的模块名称和版本可以限制注册。 版本指定为"1.2.3.4"设置样式字符串。</td>
 </tr>
 </tbody>
 </table>
@@ -831,21 +831,21 @@ JavaScript 提供程序插入到此操作将它加载每个脚本的全局命名
 <td align="left">readMemoryValues</td>
 <td align="left"><p>readMemoryValues(location, numElements, [elementSize], [isSigned], [contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">它会从调试目标的地址空间读取值的原始数组并将基于此内存的视图的类型化的数组。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机指针。 数组的大小将由<em>numElements</em>参数。 数组的每个元素的大小 （和类型） 提供的可选<em>elementSize</em>并<em>isSigned</em>参数。 如果未不提供任何此类参数，默认值是字节 (无符号 / 1 个字节)。 如果可选<em>contextInheritor</em>提供了参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器&#39;s 当前上下文。 请注意，上 8、 16 和 32 位值相对于放置在读取内存的快速类型化视图使用此方法。 64 位值上使用此方法会导致正在构造的 64 位库类型的数组是贵很多 ！</td>
+<td align="left">它会从调试目标的地址空间读取值的原始数组并将基于此内存的视图的类型化的数组。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机指针。 数组的大小将由<em>numElements</em>参数。 数组的每个元素的大小 （和类型） 提供的可选<em>elementSize</em>并<em>isSigned</em>参数。 如果未不提供任何此类参数，默认值是字节 (无符号 / 1 个字节)。 如果可选<em>contextInheritor</em>提供参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器的当前上下文。 请注意，上 8、 16 和 32 位值相对于放置在读取内存的快速类型化视图使用此方法。 64 位值上使用此方法会导致正在构造的 64 位库类型的数组是贵很多 ！</td>
 </tr>
 <tr class="even">
 <td align="left">readString</td>
 <td align="left"><p>readString(location, [contextInheritor])</p>
 <p>readString(location, [length], [contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">它会从调试目标，地址空间读取窄 （当前代码页） 字符串将其转换为 utf-16，并返回 JavaScript 字符串形式的结果。 如果无法读取内存，它可能会引发异常。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机 char<em>。 如果可选<em>contextInheritor</em>提供了参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器&#39;s 当前上下文。 如果可选<em>长度</em>提供自变量，读取的字符串将为指定长度。</td>
+<td align="left">它会从调试目标，地址空间读取窄 （当前代码页） 字符串将其转换为 utf-16，并返回 JavaScript 字符串形式的结果。 如果无法读取内存，它可能会引发异常。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机 char<em>。 如果可选<em>contextInheritor</em>提供参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器的当前上下文。 如果可选<em>长度</em>提供自变量，读取的字符串将为指定长度。</td>
 </tr>
 <tr class="odd">
 <td align="left">readWideString</td>
 <td align="left"><p>readWideString(location, [contextInheritor])</p>
 <p>readWideString(location, [length], [contextInheritor])</p></td>
 <td align="left">2</td>
-<td align="left">它会从调试目标的地址空间读取 wide(UTF-16) 字符串并返回 JavaScript 字符串形式的结果。 如果无法读取内存，它可能会引发异常。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机 wchar_t</em>。 如果可选<em>contextInheritor</em>提供了参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器&#39;s 当前上下文。 如果可选<em>长度</em>提供自变量，读取的字符串将为指定长度。</td>
+<td align="left">它会从调试目标的地址空间读取 wide(UTF-16) 字符串并返回 JavaScript 字符串形式的结果。 如果无法读取内存，它可能会引发异常。 提供的位置可以是一个地址 （64 位值）、 位置对象或本机 wchar_t</em>。 如果可选<em>contextInheritor</em>提供参数，将在上下文中读取内存 (例如： 地址空间和调试目标) 指示参数; 否则为它将读取从调试器的当前上下文。 如果可选<em>长度</em>提供自变量，读取的字符串将为指定长度。</td>
 </tr>
 </tbody>
 </table>
@@ -1010,7 +1010,7 @@ class myNativeModel
 -   不设计您的项目结构到单个平面"厨房接收器"。 组织的层次结构，用户可以浏览它们正在寻找无需事先了解它们正在寻找的内容和支持可发现性的信息。
 -   不只是仍将输出的原始文本的屏幕时将其移至该模型会转换经典 dbgeng 扩展。 这不是可组合与其他扩展，不能使用 LINQ 表达式查询。 而是将数据拆分为单独的、 可查询字段。
 
-**命名准则**
+**命名规则**
 
 -   字段的大小写应为 PascalCase。 异常可能被视为在另一个大小写，例如 jQuery 中广为人知的名称。
 -   避免使用不通常使用 c + + 标识符中的特殊字符。 例如，避免使用"总长度"（其中包含一个空格），如名称或"\[大小\]"（包含方括号）。 此约定允许更便于使用的脚本语言，其中这些字符不允许作为标识符的一部分，并且还允许从命令窗口更便于使用。
@@ -1070,10 +1070,10 @@ class myNativeModel
 
 调试器的新版本的发布，请调查可以验证你的扩展功能的测试自动化的使用。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[脚本编写的 JavaScript 调试器](javascript-debugger-scripting.md)
+[JavaScript 调试器脚本](javascript-debugger-scripting.md)
 
 [JavaScript 调试器的示例脚本](javascript-debugger-example-scripts.md)
 
