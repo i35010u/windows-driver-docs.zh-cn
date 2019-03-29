@@ -9,12 +9,12 @@ keywords:
 - WMI WDK 内核类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b460d8661b94ab226fd1c8789ea8687e49666c85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6ff351f5606a65786c69fb4b635229e30dd5c581
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541576"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349104"
 ---
 # <a name="wmi-class-names-and-base-classes"></a>WMI 类名和基类
 
@@ -31,7 +31,7 @@ WMI 类名称必须是唯一的 WMI 命名空间中。 因此驱动程序的 WMI
 若要防止名称冲突，驱动程序编写器可以定义特定于驱动程序的基类，并从该基类派生的所有驱动程序的 WMI 类。 类名和基类名称一起构成了更有可能产生的唯一名称。 例如，下面显示了串行驱动程序的数据块的抽象基类：
 
 ```cpp
-// Serial driver&#39;s base class for data blocks
+// Serial driver's base class for data blocks
 [abstract]
 class MSSerial {
 }
@@ -65,7 +65,7 @@ class Adaptec1542_Speed : Adaptec1542 {
 WMI 允许给定的类层次结构中只有一个抽象基类。 定义事件块的类必须派生自**WmiEvent**，这是一个抽象基类，因此**抽象**限定符不能在中使用的驱动程序定义的基类的事件块。 相反，派生从非抽象基类**WmiEvent**，然后从该基类派生单个事件的类。 例如：
 
 ```cpp
-//Serial driver&#39;s base class for event blocks
+//Serial driver's base class for event blocks
 class MSSerialEvent : WmiEvent 
 {
 }

@@ -1,16 +1,16 @@
 ---
-Description: If you are building a new system, the tests in this topic are recommended.
-title: 推荐的系统开发的 USB 测试
+Description: 如果要生成一个新系统，建议使用本主题中的测试。
+title: 建议用于系统开发的 USB 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b234a7c1d38095a8eccc24a13c78da4085d5bfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22770ad4938e8c30b30e4595fdd9b8d97504d93d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525498"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464253"
 ---
-# <a name="recommended-usb-tests-for-system-development"></a>推荐的系统开发的 USB 测试
+# <a name="recommended-usb-tests-for-system-development"></a>建议用于系统开发的 USB 测试
 
 
 如果要生成一个新系统，建议使用本主题中的测试。
@@ -27,7 +27,7 @@ ms.locfileid: "56525498"
 
 
 -   [DF-IO （基本） 前后的睡眠](https://msdn.microsoft.com/library/windows/hardware/dn247481.aspx)
--   [DF-IO 前后的和之后 （基本） PNP （禁用和启用）](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
+-   [DF - PNP（禁用和启用），带 IO 之前和之后（基本）](https://msdn.microsoft.com/library/windows/hardware/dn260411.aspx)
 -   [USB 公开端口测试控制器](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
 -   [USB xHCI 传输速度测试](https://msdn.microsoft.com/library/windows/hardware/hh997864.aspx)
 -   [USB3 终止](https://msdn.microsoft.com/library/windows/hardware/jj124672.aspx)
@@ -63,7 +63,7 @@ ms.locfileid: "56525498"
 <li>在 Windows HCK Studio 中，在<strong>选定内容</strong>选项卡上，单击<strong>设备管理器</strong>。</li>
 <li>选择 xHCI 控制器和其根集线器。
 <div class="alert">
-<strong>请注意</strong>  若要快速查找控制器，键入&quot;xhci&quot;搜索中。
+<strong>请注意</strong>  要快速查找控制器，请在搜索中键入"xhci"。
 </div>
 <div>
  
@@ -119,7 +119,7 @@ ms.locfileid: "56525498"
 <li>上<strong>选定内容</strong>选项卡上，单击<strong>设备管理器</strong>。</li>
 <li>选择 xHCI 控制器和其根集线器。
 <div class="alert">
-<strong>请注意</strong>  若要快速查找控制器，键入&quot;xhci&quot;搜索中。
+<strong>请注意</strong>  要快速查找控制器，请在搜索中键入"xhci"。
 </div>
 <div>
  
@@ -185,7 +185,7 @@ ms.locfileid: "56525498"
 <li>上<strong>选定内容</strong>选项卡上，单击<strong>设备管理器</strong>。</li>
 <li>选择 xHCI 控制器和其根集线器。
 <div class="alert">
-<strong>请注意</strong>  若要快速查找控制器，键入&quot;xhci&quot;搜索中。
+<strong>请注意</strong>  要快速查找控制器，请在搜索中键入"xhci"。
 </div>
 <div>
  
@@ -198,7 +198,7 @@ ms.locfileid: "56525498"
 <li>上<strong>选定内容</strong>选项卡上，单击<strong>设备管理器</strong>。</li>
 <li>在拓扑中，显示在列表中选择所有 MUTT 设备。
 <div class="alert">
-<strong>请注意</strong>  若要快速查找控制器，键入&quot;MUTT&quot;搜索中。
+<strong>请注意</strong>  要快速查找控制器，请在搜索中键入"MUTT"。
 </div>
 <div>
  

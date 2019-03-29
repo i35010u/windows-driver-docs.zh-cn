@@ -19,12 +19,12 @@ api_type:
 - COM
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a72d3ed639e8130c8aac72fc6eb3e1990a2e80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72c20fb8ab212c301cebc5263e8f962fc746601a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522755"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350186"
 ---
 # <a name="idebugadvanced2request-method"></a>IDebugAdvanced2::Request 方法
 
@@ -45,7 +45,7 @@ HRESULT Request(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *请求*\[中\]  
@@ -101,15 +101,15 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-set-local-implicit-command-line.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE&lt;/strong&gt;](debug-request-set-local-implicit-command-line.md)"><strong>DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE</strong></a></p></td>
-<td align="left"><p>设置<a href="https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine" data-raw-source="[debugger engine](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)">调试器引擎</a>&#39;s 隐式命令行。</p></td>
+<td align="left"><p>设置<a href="https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine" data-raw-source="[debugger engine](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)">调试器引擎</a>的隐式命令行。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-get-captured-event-code-offset.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET&lt;/strong&gt;](debug-request-get-captured-event-code-offset.md)"><strong>DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET</strong></a></p></td>
-<td align="left"><p>返回当前事件&#39;s 指令指针。</p></td>
+<td align="left"><p>返回当前事件的指令指针。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-read-captured-event-code-stream.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM&lt;/strong&gt;](debug-request-read-captured-event-code-stream.md)"><strong>DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM</strong></a></p></td>
-<td align="left"><p>返回最多 64 个字节的内存在当前事件&#39;s 指令指针。</p></td>
+<td align="left"><p>返回最多 64 个字节的内存在当前事件的指令指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-ext-typed-data-ansi.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_EXT_TYPED_DATA_ANSI&lt;/strong&gt;](debug-request-ext-typed-data-ansi.md)"><strong>DEBUG_REQUEST_EXT_TYPED_DATA_ANSI</strong></a></p></td>
@@ -185,7 +185,7 @@ HRESULT Request(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Dbgeng.h （包括 Dbgeng.h）</td>
 </tr>
 </tbody>

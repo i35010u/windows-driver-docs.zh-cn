@@ -12,12 +12,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0a7a18b204465ea6669006d6a433b256f2d2cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 820b1985308399f83af8cb2b23b594e5763aebe2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541321"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464260"
 ---
 # <a name="parameter-element"></a>parameter 元素
 
@@ -36,7 +36,7 @@ ms.locfileid: "56541321"
   type = "xs:string"/>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 <table>
@@ -48,7 +48,7 @@ ms.locfileid: "56541321"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -74,7 +74,7 @@ ms.locfileid: "56541321"
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>一个可选属性，指定文档的打印机的名称。 此特性可以采用正在打印的文档的以下值： DocumentThe 名称之一。PrinterNameThe 名称的打印机，如下所示的打印机和传真文件夹控制面板中，例如， &quot;Fabrikam 5000 上 \printserver&quot;或&quot;楼上的卧室中的打印机。&quot;</p></td>
+<p>一个可选属性，指定文档的打印机的名称。 此特性可以采用正在打印的文档的以下值： DocumentThe 名称之一。PrinterNameThe 名称如下所示的打印机和传真打印机的控制面板中，例如，"Fabrikam 5000 上 \printserver"中的文件夹或"楼上的卧室中的打印机"。</p></td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +148,7 @@ ms.locfileid: "56541321"
 
 使用前面的 XML 代码，以下正文文本 (字符串 Id ="100") 将显示在事件通知消息："打印机是黄色墨水; 用完请打开门 B 端访问并更换墨盒。"
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [body](body.md)
 

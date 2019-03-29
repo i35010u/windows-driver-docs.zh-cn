@@ -10,12 +10,12 @@ keywords:
 - 每像素 8 位 CMY 掩码模式 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9500b22bbb52cc6530a8f618cc56d6aa53d7d6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 32dad429bf1ce8b92fa66ffeeb4eca5bb1e95c0f
+ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543885"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349268"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -40,10 +40,10 @@ ms.locfileid: "56543885"
 2.  设置*pPaletteEntry*\[0\] ，如下所示之前调用**HT\_Get8BPPMaskPalette**:
 
     ```cpp
-    pPaletteEntry[0].peRed   = &#39;R&#39;;
-    pPaletteEntry[0].peGreen = &#39;G&#39;;
-    pPaletteEntry[0].peBlue  = &#39;B&#39;;
-    pPaletteEntry[0].peFlags = &#39;0&#39;;
+    pPaletteEntry[0].peRed   = 'R';
+    pPaletteEntry[0].peGreen = 'G';
+    pPaletteEntry[0].peBlue  = 'B';
+    pPaletteEntry[0].peFlags = '0';
     ```
 
     若要执行此操作，调用方应使用**HT\_设置\_BITMASKPAL2RGB**宏 (在中定义*winddi.h*)。 下面是一个示例，演示使用此宏：
@@ -83,12 +83,12 @@ ms.locfileid: "56543885"
 <div>
  
 </div>
-(pPaletteEntry[0] != &#39;RGB0&#39;)</th>
+(pPaletteEntry[0] != 'RGB0')</th>
 <th align="left">CMY_INVERTED 模式下索引
 <div>
  
 </div>
-(pPaletteEntry[0] == &#39;RGB0&#39;)</th>
+(pPaletteEntry[0] == 'RGB0')</th>
 </tr>
 </thead>
 <tbody>
@@ -259,10 +259,7 @@ CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处�
     <tbody>
     <tr class="odd">
     <td align="left"><p>0 到 113</p>
-    <div>
-     
-    </div>
-黑色</td>
+    <p>黑色</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>

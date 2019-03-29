@@ -7,12 +7,12 @@ keywords:
 - 填充矩形区域 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec00a61184bf4255ae64f1747ca673faf01321e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 398503590d0714be0b7f9f80f480efa02d3406b3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540776"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349186"
 ---
 # <a name="rectangle-area-fill-attributes"></a>矩形区域填充属性
 
@@ -38,12 +38,12 @@ ms.locfileid: "56540776"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>CursorXAfterRectFill</strong></p></td>
-<td><p>AT_RECT_X_ORIGIN 或 AT_RECT_X_END，指示位置光标&#39;填充的矩形区域，如打印机后 s x 坐标。</p></td>
+<td><p>AT_RECT_X_ORIGIN 或 AT_RECT_X_END，指示光标的 x 坐标的位置是后打印机填充矩形区域。</p></td>
 <td><p>可选。 如果未指定，默认值将为 AT_RECT_X_ORIGIN。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>CursorYAfterRectFill</strong></p></td>
-<td><p>AT_RECT_Y_ORIGIN 或 AT_RECT_Y_END，指示位置光标&#39;填充的矩形区域，如打印机后 s y 坐标。</p></td>
+<td><p>AT_RECT_Y_ORIGIN 或 AT_RECT_Y_END，指示光标的 y 坐标的位置是后打印机填充矩形区域。</p></td>
 <td><p>可选。 如果未指定，默认值将为 AT_RECT_Y_ORIGIN。</p></td>
 </tr>
 <tr class="odd">

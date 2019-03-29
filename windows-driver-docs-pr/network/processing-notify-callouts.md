@@ -11,12 +11,12 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，筛选器添加和删除操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 737a7245630fbd3ab14591805029c0e4069dadc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6c8c1c6ef8155b032951d64458926aa991894737
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520705"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350360"
 ---
 # <a name="processing-notify-callouts"></a>处理通知标注
 
@@ -52,7 +52,7 @@ typedef struct FILTER_CONTEXT_ {
 } FILTER_CONTEXT, *PFILTER_CONTEXT;
 
 // Memory pool tag for filter context structures
-#define FILTER_CONTEXT_POOL_TAG &#39;fcpt&#39;
+#define FILTER_CONTEXT_POOL_TAG 'fcpt'
 
 // notifyFn callout function
 NTSTATUS NTAPI

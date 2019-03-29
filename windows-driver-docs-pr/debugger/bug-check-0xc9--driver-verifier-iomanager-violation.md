@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5945f90e52da2b23b91a274567ff60d95b71f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fec71d67eabeb87eb9c13f860be93e28ec95a6c8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545286"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350426"
 ---
-# <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>Bug 检查 0xC9:驱动程序\_VERIFIER\_IOMANAGER\_冲突
+# <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>Bug 检查 0xC9：驱动程序\_VERIFIER\_IOMANAGER\_冲突
 
 
 该驱动程序\_VERIFIER\_IOMANAGER\_冲突错误检查的值为 0x000000C9。 这是所有驱动程序验证程序的 bug 检查代码**I/O 验证**冲突。
@@ -272,7 +272,7 @@ ms.locfileid: "56545286"
 <tr class="even">
 <td align="left"><p>0x207</p></td>
 <td align="left"><p>致命错误</p></td>
-<td align="left"><p>调用方已手动复制到堆栈，并会无意中复制较高层&#39;s 完成例程。 该驱动程序应使用<strong>IoCopyCurrentIrpStackLocationToNext</strong>。 (指定的 IRP。)</p></td>
+<td align="left"><p>调用方已手动复制到堆栈，并会无意中复制较高层完成例程。 该驱动程序应使用<strong>IoCopyCurrentIrpStackLocationToNext</strong>。 (指定的 IRP。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x208</p></td>
@@ -327,7 +327,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x212</p></td>
 <td align="left"><p>非致命错误</p></td>
-<td align="left"><p>调用方已放入回收站或不正确复制 IRP&#39;s 堆栈。 (指定的 IRP。)</p></td>
+<td align="left"><p>调用方已放入回收站或不正确复制 IRP 的堆栈。 (指定的 IRP。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x213</p></td>
@@ -407,7 +407,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x222</p></td>
 <td align="left"><p>致命错误</p></td>
-<td align="left"><p>总线筛选器&#39;s IRP 调度处理程序已收到删除 IRP PDO 时仍处于活动状态后分离。 总线筛选器必须中清理<strong>FastIoDetach</strong>回调。 （设备对象、 调度例程和指定的 IRP。）</p></td>
+<td align="left"><p>收到删除 IRP PDO 时仍处于活动状态后已分离总线筛选器的 IRP 调度处理程序。 总线筛选器必须中清理<strong>FastIoDetach</strong>回调。 （设备对象、 调度例程和指定的 IRP。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x223</p></td>
@@ -417,7 +417,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x224</p></td>
 <td align="left"><p>致命错误</p></td>
-<td align="left"><p>IRP 调度处理程序返回与 IRP 不一致状态&#39;s <strong>IoStatus.Status</strong>字段。 (调度处理程序例程，IRP，IRP&#39;s IoStatus.Status，并返回指定的状态。)</p></td>
+<td align="left"><p>IRP 调度处理程序返回与 IRP 的不一致状态<strong>IoStatus.Status</strong>字段。 （调度处理程序例程，IRP，IRP 的 IoStatus.Status，并返回指定的状态。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x225</p></td>
@@ -437,7 +437,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x228</p></td>
 <td align="left"><p>非致命错误</p></td>
-<td align="left"><p>驱动程序&#39;s 完成例程未标记为挂起的 if IRP <strong>PendingReturned</strong> IRP 传递给它中设置了字段。 这可能导致 Windows 挂起，尤其是当堆栈返回错误。 (例程和指定的 IRP。)</p></td>
+<td align="left"><p>驱动程序的完成例程未标记为挂起的 if IRP <strong>PendingReturned</strong> IRP 传递给它中设置了字段。 这可能导致 Windows 挂起，尤其是当堆栈返回错误。 (例程和指定的 IRP。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x229</p></td>
@@ -462,7 +462,7 @@ ms.locfileid: "56545286"
 <tr class="even">
 <td align="left"><p>0x22D</p></td>
 <td align="left"><p>非致命错误</p></td>
-<td align="left"><p>调用方已完成 IRP_MJ_PNP 它无效&#39;t 了解而不是向下传递。 (指定的 IRP。)</p></td>
+<td align="left"><p>调用方已完成 IRP_MJ_PNP 它并不理解而不是向下传递。 (指定的 IRP。)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x22E</p></td>
@@ -477,7 +477,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x230</p></td>
 <td align="left"><p>非致命错误</p></td>
-<td align="left"><p>调用方已完成 IRP_MJ_POWER 它无效&#39;t 了解而不是向下传递。 (指定的 IRP。)</p></td>
+<td align="left"><p>调用方已完成 IRP_MJ_POWER 它并不理解而不是向下传递。 (指定的 IRP。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x231</p></td>
@@ -568,7 +568,7 @@ ms.locfileid: "56545286"
 <tr class="odd">
 <td align="left"><p>0x23E</p></td>
 <td align="left"><p>非致命错误</p></td>
-<td align="left"><p>驱动程序已标记但没有挂起的 IRP&#39;t 返回 STATUS_PENDING。 (指定的 IRP。)</p></td>
+<td align="left"><p>驱动程序已标记为挂起的 IRP，但未返回 STATUS_PENDING。 (指定的 IRP。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x23F</p></td>

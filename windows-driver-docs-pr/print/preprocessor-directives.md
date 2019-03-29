@@ -9,12 +9,12 @@ keywords:
 - 预处理器符号 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62dc9af28d17601861da465784a9362076d30ece
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d4d8a855c0cfc79cfd2ce46480ce8ff6c2fcaf01
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547718"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464099"
 ---
 # <a name="preprocessor-directives"></a>预处理器指令
 
@@ -62,7 +62,7 @@ GPD 文件可以包含预处理器指令，可用于控制 GPD 文件中节的�
 <td><p>指示 GPD 文件条目的块的末尾。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em><strong>包括</strong>:&quot;<em>FileName</em>&quot;</p></td>
+<td><p><em><strong>包括</strong>:"<em>FileName</em>"</p></td>
 <td><p>指定其他 GPD 文件的名称。 请参阅<a href="using-multiple-gpd-files-in-a-minidriver.md" data-raw-source="[Using Multiple GPD Files in a Minidriver](using-multiple-gpd-files-in-a-minidriver.md)">微型驱动程序中使用多个 GPD 文件</a>。</p></td>
 </tr>
 <tr class="even">

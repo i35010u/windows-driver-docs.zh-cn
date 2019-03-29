@@ -1,17 +1,17 @@
 ---
-title: 为 Windows 7 的显示器驱动程序设置功能分数
-description: 为 Windows 7 的显示器驱动程序设置功能分数
+title: 设置 Windows 7 显示驱动程序的功能评分
+description: 设置 Windows 7 显示驱动程序的功能评分
 ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7552c94a24a6eb710fbca980de296c137080d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9148246fd84492b9a12f0ffe2e2d4e47f93ca185
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543455"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350200"
 ---
-# <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>为 Windows 7 的显示器驱动程序设置功能分数
+# <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>设置 Windows 7 显示驱动程序的功能评分
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
@@ -29,22 +29,22 @@ ms.locfileid: "56543455"
 <div>
  
 </div>
-分数</th>
+score</th>
 <th align="left">驱动程序模型和分发方法</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>E6</p></td>
-<td align="left"><p>针对该模型进行了优化供应商提供的驱动程序写入到 Windows 显示器驱动程序模型 (WDDM) 的&#39;Windows 的功能打包受限定的 Windows 硬件质量实验室 (WHQL)，将 Windows 7 驱动程序包中还包括在 Windows 中<a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">兼容性中心</a>经过测试的产品列表</p></td>
+<td align="left"><p>供应商提供的驱动程序写入到 Windows 显示器驱动程序模型 (WDDM) 的针对模型的 Windows 7 功能进行了优化，受限定的 Windows 硬件质量实验室 (WHQL)，将 Windows 7 驱动程序包中打包，并且包含在Windows<a href="https://go.microsoft.com/fwlink/p/?linkid=138031" data-raw-source="[Compatibility Center](https://go.microsoft.com/fwlink/p/?linkid=138031)">兼容性中心</a>经过测试的产品列表</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>E6</p></td>
-<td align="left"><p>针对该模型进行了优化供应商提供的驱动程序写入到 WDDM 的&#39;s Windows 7 功能，并附带统一 Windows 7 和 Windows Vista 驱动程序包，通过使用 Windows 硬件认证工具包认证</p></td>
+<td align="left"><p>供应商提供的驱动程序写入到 WDDM 针对模型的 Windows 7 功能进行了优化，并打包了统一的 Windows 7 和 Windows Vista 驱动程序包，通过使用 Windows 硬件认证工具包认证</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>EC</p></td>
-<td align="left"><p>写入到 WDDM 的现成驱动程序进行了优化模型&#39;s Windows 7 功能，并与 Windows 7 驱动程序包一起打包</p></td>
+<td align="left"><p>写入到 WDDM 的现成驱动程序模型的 Windows 7 功能进行了优化，与 Windows 7 驱动程序包打包在一起</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>F4</p></td>

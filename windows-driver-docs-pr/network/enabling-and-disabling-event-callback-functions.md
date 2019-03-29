@@ -11,12 +11,12 @@ keywords:
 - WSK_SET_STATIC_EVENT_CALLBACKS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e6172b873e1c36cdee44e880834923b88cf3cb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 093182ac87234a111f9268a78e33053c5e4beb14
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526780"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349618"
 ---
 # <a name="enabling-and-disabling-event-callback-functions"></a>启用和禁用事件回调函数
 
@@ -39,7 +39,7 @@ NTSTATUS
   WSK_EVENT_CALLBACK_CONTROL EventCallbackControl;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 
@@ -94,7 +94,7 @@ NTSTATUS
   WSK_EVENT_CALLBACK_CONTROL EventCallbackControl;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 

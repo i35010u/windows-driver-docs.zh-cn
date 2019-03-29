@@ -8,12 +8,12 @@ keywords:
 - 设备 INF 文件 WDK 联网
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eee0267881153bb7b24c0369da9c179dab7c0f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5d26d99d7228e4fe7acd045eac97671eb22d97cc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545732"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349338"
 ---
 # <a name="installation-requirements-for-network-filter-intermediate-drivers"></a>网络筛选器中间驱动程序的安装要求
 
@@ -172,7 +172,7 @@ ms.locfileid: "56545732"
 <tr class="even">
 <td align="left"><p><a href="ddinstall-services-section-in-a-network-inf-file.md" data-raw-source="[DDInstall.Services Section](ddinstall-services-section-in-a-network-inf-file.md)">DDInstall.Services 部分</a></p></td>
 <td align="left"><p>必需</p></td>
-<td align="left"><p><em>ServiceName</em>的值<strong>AddService</strong>指令必须与匹配的筛选器组件&#39;下的 s 服务值<strong>Ndi</strong>密钥。</p></td>
+<td align="left"><p><em>ServiceName</em>的值<strong>AddService</strong>指令必须匹配下的筛选器组件的服务值<strong>Ndi</strong>密钥。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">Add-registry-sections</a></p></td>

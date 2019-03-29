@@ -1,17 +1,17 @@
 ---
-title: 连接到串行端口 KMDF 外围设备驱动程序
+title: 将 KMDF 外设驱动程序连接到串行端口
 description: 外围设备 SerCx2 托管的串行端口上的 KMDF 驱动程序需要特定硬件资源操作设备。 这些资源中包含的是该驱动程序必须打开的逻辑连接到串行端口的信息。
 ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a17827df5491e0f9f93e32d5c70a62fc10996e58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f57862d4c09e57d3c92c30ce9640b2a7b1dcfddc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542514"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349710"
 ---
-# <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>连接到串行端口 KMDF 外围设备驱动程序
+# <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>将 KMDF 外设驱动程序连接到串行端口
 
 
 外围设备 SerCx2 托管的串行端口上的 KMDF 驱动程序需要特定硬件资源操作设备。 这些资源中包含的是该驱动程序必须打开的逻辑连接到串行端口的信息。 其他资源可能包括中断，以及一个或多个 GPIO 输入或输出插针。
@@ -85,7 +85,7 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
         break;
 
     default:
-        // Don&#39;t care about other resource descriptors.
+        // Don't care about other resource descriptors.
         break;
     }
 }

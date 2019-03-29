@@ -9,12 +9,12 @@ keywords:
 - 安全描述符 WDK 文件系统，新的文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23125b7cc86b9253d0004b091883fc8d3e965191
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c9d9b60374ee4c7f214f8bfc887b7e1c5f316c74
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519031"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350270"
 ---
 # <a name="assigning-security-to-a-new-file-on-irpmjcreate"></a>将安全分配给新文件在 IRP\_MJ\_创建
 
@@ -36,12 +36,12 @@ NTSTATUS FsdAssignInitialSecurity( PIRP_CONTEXT IrpContext,
     PSECURITY_DESCRIPTOR SecurityDescriptor = NULL;
 
     //
-    // Make sure the parent directory&#39;s security descriptor is loaded.
+    // Make sure the parent directory's security descriptor is loaded.
     //
     (void) FsdLoadSecurityDescriptor(IrpContext, Directory);
 
     //
-    // don&#39;t care about the return code here, as it is handled later
+    // don't care about the return code here, as it is handled later
     //
     if (Directory->SecurityDescriptor == NULL) {
 
@@ -84,7 +84,7 @@ NTSTATUS FsdAssignInitialSecurity( PIRP_CONTEXT IrpContext,
         RtlLengthSecurityDescriptor( SecurityDescriptor );
  
     Fcb->SecurityDescriptor = ExAllocatePoolWithTag(PagedPool, 
-        Fcb->SecurityDescriptorLength, &#39;DSyM&#39;);
+        Fcb->SecurityDescriptorLength, 'DSyM');
 
     if (!Fcb->SecurityDescriptor) {
         //

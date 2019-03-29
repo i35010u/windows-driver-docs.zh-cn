@@ -11,12 +11,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a0a85012f66c444b1850f207d93a265cb32eee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 223c6ae8277ad5a31984ecdf1c3ada1851b941b3
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521785"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464345"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 
@@ -226,7 +226,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tr class="odd">
 <td><p>IU</p></td>
 <td><p>交互用户</p>
-<p>最初登录到计算机的用户&quot;以交互方式&quot;，如本地登录和远程桌面登录。</p></td>
+<p>最初登录到计算机"以交互方式"，如本地登录和远程桌面登录的用户。</p></td>
 </tr>
 <tr class="even">
 <td><p>NU</p></td>
@@ -238,7 +238,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <td><p>World</p>
 <p>在 Windows XP 之前此 SID 涵盖每个会话是否经过身份验证的用户、 匿名用户或内置来宾帐户。</p>
 <p>从 Windows XP 开始，此 SID 不涉及匿名登录会话;它介绍了只有经过身份验证的用户和内置来宾帐户。</p>
-<p>请注意，不受信任的或&quot;受限&quot;世界 SID 也未涵盖的代码。 有关详细信息，请参阅下表中的说明的受限代码 (RC) 的 SID。</p></td>
+<p>请注意不受信任或"受限"代码也不涵盖了世界 SID。 有关详细信息，请参阅下表中的说明的受限代码 (RC) 的 SID。</p></td>
 </tr>
 </tbody>
 </table>
@@ -262,7 +262,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <tr class="odd">
 <td><p>RC</p></td>
 <td><p>受限制的代码</p>
-<p>此 SID 用于受信任的代码控制访问权限。 对 rc 的令牌进行 ACL 验证包括两个检查，一个针对该令牌&#39;s 正常的列表 （例如包含 WD） 的 Sid，和一个根据第二个列表 （通常包含 RC 和原始令牌 Sid 的子集）。 如果一个令牌将传递两个测试仅授予访问权限。 在这种情况下，RC 实际上结合使用其他的 Sid。</p>
+<p>此 SID 用于受信任的代码控制访问权限。 对 rc 的令牌进行 ACL 验证由两个检查，一个针对 Sid （例如包含 WD），该令牌的正常列表，一个根据第二个列表 （通常包含 RC 和原始令牌 Sid 的子集） 组成。 如果一个令牌将传递两个测试仅授予访问权限。 在这种情况下，RC 实际上结合使用其他的 Sid。</p>
 <p>指定 RC 任何 ACL 还必须指定 WD。 时与 ACL 中 WD 配对 RC，描述了每个人都包括不受信任的代码的超集。</p>
 <p>不受信任的代码可能是在资源管理器中使用运行方式选项启动的代码。 默认情况下，世界不涉及不受信任的代码。</p></td>
 </tr>
@@ -270,7 +270,7 @@ SDDL 字符串的设备对象的窗体"D:P"后面跟有一个或多个表达式�
 <td><p>UD</p></td>
 <td><p>用户模式驱动程序</p>
 <p>此 SID 授予访问权限的用户模式驱动程序。 目前，此 SID 包含仅专为用户模式驱动程序框架 (UMDF) 的驱动程序。 此 SID 是从 Windows 8 开始提供。</p>
-<p>在早期版本的 Windows，这不能识别&quot;UD&quot;缩写，必须指定完全限定的窗体的此 SID (S-1-5-84-0-0-0-0-0) 授予对 UMDF 驱动程序访问权限。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">控制的设备访问</a>用户模式驱动程序框架文档中。</p></td>
+<p>在早期版本的 Windows，不能识别"UD"缩写，必须指定完全限定的窗体的此 SID (S-1-5-84-0-0-0-0-0) 授予对 UMDF 驱动程序访问权限。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/hh439567" data-raw-source="[Controlling Device Access](https://msdn.microsoft.com/library/windows/hardware/hh439567)">控制的设备访问</a>用户模式驱动程序框架文档中。</p></td>
 </tr>
 </tbody>
 </table>

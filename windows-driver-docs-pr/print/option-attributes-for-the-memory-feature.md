@@ -6,12 +6,12 @@ keywords:
 - 内存功能 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec417ceb94d9b4dcdb01d0850994eb5930f184cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 420532a2f91190afcc0d70bf7dcfdf2e43f42f30
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523206"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464341"
 ---
 # <a name="option-attributes-for-the-memory-feature"></a>内存功能的选项属性
 
@@ -37,12 +37,12 @@ ms.locfileid: "56523206"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>MemConfigKB</strong></p></td>
-<td><p>对数字值，该值指示总计和可用驻留在打印机中的内存，以千字节。 例如，配对 (1024，450) 指示 1024 千字节总数，可用，它包含的 GPD 生成选项名称 450 千字节为单位&quot;1024 KB&quot;。</p></td>
+<td><p>对数字值，该值指示总计和可用驻留在打印机中的内存，以千字节。 例如，配对 (1024，450) 指示的总 1024 千字节为单位，可用，它包含"1024 KB"GPD 生成选项名称 450 千字节为单位。</p></td>
 <td><p>可选。 请参阅<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">描述打印机内存配置</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>MemConfigMB</strong></p></td>
-<td><p>对数字值，该值指示总计和可用驻留在打印机中的内存，用兆字节表示。 例如，（2，1） 对表示 2 兆字节总计，可用，它包含的 GPD 生成选项名称 1 兆字节&quot;2MB&quot;。</p></td>
+<td><p>对数字值，该值指示总计和可用驻留在打印机中的内存，用兆字节表示。 例如，对 （2，1） 指示 2 兆字节总计，可用，它包含"2 MB"GPD 生成选项名称 1 兆字节。</p></td>
 <td><p>可选。 请参阅<a href="describing-printer-memory-configurations.md" data-raw-source="[Describing Printer Memory Configurations](describing-printer-memory-configurations.md)">描述打印机内存配置</a>。</p></td>
 </tr>
 <tr class="odd">

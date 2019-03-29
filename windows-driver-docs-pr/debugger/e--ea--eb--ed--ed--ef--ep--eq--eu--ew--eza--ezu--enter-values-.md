@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4a9ca1d637c68a62b1c9430829c4ab2312564e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f6d3ea07a9370798d35c9099ac3837a7b917b23
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524747"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349533"
 ---
 # <a name="e-ea-eb-ed-ed-ef-ep-eq-eu-ew-eza-enter-values"></a>电子、 ea、 eb、 ed、 eD、 ef、 ep、 eq、 欧盟、 的新增功能，eza （输入值）
 
@@ -87,7 +87,7 @@ e Address [Values]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">Enter</th>
 </tr>
 </thead>
@@ -118,7 +118,7 @@ e Address [Values]
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ep</strong></p></td>
-<td align="left"><p>指针大小值。 此命令是等效于<strong>ed</strong>或<strong>eq</strong>，具体取决于目标计算机&#39;s 处理器体系结构分别是 32 位或 64 位。</p></td>
+<td align="left"><p>指针大小值。 此命令是等效于<strong>ed</strong>或<strong>eq</strong>，具体取决于目标计算机的处理器体系结构是否 32 位或 64 位分别。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>eq</strong></p></td>

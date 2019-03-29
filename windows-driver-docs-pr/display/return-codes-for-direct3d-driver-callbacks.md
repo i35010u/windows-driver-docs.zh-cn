@@ -9,12 +9,12 @@ keywords:
 - 回调函数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 648b0b275ce799514cc34c7fd39d2bc7842f1e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecbec2faa083aefec43c830027915d2a5ddcbbdd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522220"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349538"
 ---
 # <a name="return-codes-for-direct3d-driver-callbacks"></a>Direct3D 驱动程序回调的返回代码
 
@@ -35,7 +35,7 @@ Direct3D 驱动程序中的函数必须返回两个返回代码之一：DDHAL\_�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -50,11 +50,11 @@ Direct3D 驱动程序中的函数必须返回两个返回代码之一：DDHAL\_�
 </tr>
 <tr class="odd">
 <td align="left"><p>DDHAL_DRIVER_HANDLED</p></td>
-<td align="left"><p>驱动程序已执行操作并返回在该操作的有效返回代码<strong>ddrval</strong>结构中的成员传递给驱动程序&#39;s 回调。 如果此代码，D3D_OK Direct3D 继续执行该函数。 否则为 Direct3D 返回驱动程序提供的错误代码，并中止该函数。</p></td>
+<td align="left"><p>驱动程序已执行操作并返回在该操作的有效返回代码<strong>ddrval</strong>结构中的成员传递给驱动程序的回调。 如果此代码，D3D_OK Direct3D 继续执行该函数。 否则为 Direct3D 返回驱动程序提供的错误代码，并中止该函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DDHAL_DRIVER_NOTHANDLED</p></td>
-<td align="left"><p>该驱动程序上请求的操作有任何注释。 如果该驱动程序需要实现了特定的回调，Direct3D 报告的错误条件。 否则，Direct3D 处理操作，因为如果不通过执行 Direct3D 独立于设备的实现定义的驱动程序回调。 Direct3D 通常会忽略中返回任何值<strong>ddrval</strong>该回叫的成员&#39;s 参数结构。</p></td>
+<td align="left"><p>该驱动程序上请求的操作有任何注释。 如果该驱动程序需要实现了特定的回调，Direct3D 报告的错误条件。 否则，Direct3D 处理操作，因为如果不通过执行 Direct3D 独立于设备的实现定义的驱动程序回调。 Direct3D 通常会忽略中返回任何值<strong>ddrval</strong>该回调的参数结构的成员。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DHAL_OUTOFCONTEXTS</p></td>

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8743d47bf6442d8c5a47e8f6383f69cd8aa5f288
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3b8521ecccdda90791ae2660a3f45c3f1ae1947
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524377"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463799"
 ---
 # <a name="devpkeydeviceclassclassinstaller"></a>DEVPKEY_DeviceClass_ClassInstaller
 
@@ -42,7 +42,7 @@ DEVPKEY_DeviceClass_ClassInstaller 设备属性表示的类安装程序[设备�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>数据格式</strong></p></td>
-<td align="left"><p>&quot;<em>class-installer</em>.dll,<em>class-entry-point</em>&quot;</p></td>
+<td align="left"><p>"<em>class-installer</em>.dll,<em>class-entry-point</em>"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>属性访问</strong></p></td>
@@ -86,13 +86,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)

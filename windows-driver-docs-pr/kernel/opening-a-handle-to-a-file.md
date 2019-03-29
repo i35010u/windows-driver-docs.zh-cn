@@ -11,12 +11,12 @@ keywords:
 - 打开文件句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f8c3d475e4bb5e282794b3b9ed3deb426abc768
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8a802bf10a78f6935d9cdb6196a2655ab2ccbaa2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522843"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348676"
 ---
 # <a name="opening-a-handle-to-a-file"></a>打开文件的句柄
 
@@ -63,11 +63,11 @@ ms.locfileid: "56522843"
 <td><p>FILE_APPEND_DATA</p></td>
 </tr>
 <tr class="even">
-<td><p>读取文件&#39;的元数据，如文件&#39;s 创建时间。</p></td>
+<td><p>读取文件的元数据，例如文件的创建时间。</p></td>
 <td><p>FILE_READ_ATTRIBUTES 或 GENERIC_READ</p></td>
 </tr>
 <tr class="odd">
-<td><p>将该文件写&#39;的元数据，如文件&#39;s 创建时间。</p></td>
+<td><p>写入文件的元数据，例如文件的创建时间。</p></td>
 <td><p>FILE_WRITE_ATTRIBUTES 或 GENERIC_WRITE</p></td>
 </tr>
 </tbody>

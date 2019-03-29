@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: def2328270192eb63d59efa73d98ad58dc9b364a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0a36cdab836d208cf90c5cd6aa458f066d4441f0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534198"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350422"
 ---
 # <a name="iprintoemui-com-interface"></a>IPrintOemUI COM 接口
 
@@ -45,11 +45,11 @@ ms.locfileid: "56534198"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554165" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevicePropertySheets&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554165)"><strong>IPrintOemUI::DevicePropertySheets</strong></a></p></td>
-<td><p>允许插件的 UI 来将新页面添加到打印机设备&#39;s 打印机属性表。</p></td>
+<td><p>允许 UI 插件以向打印机设备的打印机属性表添加新页面。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554167" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevMode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554167)"><strong>IPrintOemUI::DevMode</strong></a></p></td>
-<td><p>对插件的 UI 执行操作&#39;s 私有<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>成员。</p></td>
+<td><p>执行操作 UI 插件的私有<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>成员。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554172" data-raw-source="[&lt;strong&gt;IPrintOemUI::DevQueryPrintEx&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554172)"><strong>IPrintOemUI::DevQueryPrintEx</strong></a></p></td>
@@ -57,7 +57,7 @@ ms.locfileid: "56534198"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554173" data-raw-source="[&lt;strong&gt;IPrintOemUI::DocumentPropertySheets&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554173)"><strong>IPrintOemUI::DocumentPropertySheets</strong></a></p></td>
-<td><p>允许插件的 UI 来将新页面添加到打印机设备&#39;s 文档属性表。</p></td>
+<td><p>允许 UI 插件以向打印机设备的文档属性表添加新页面。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554175" data-raw-source="[&lt;strong&gt;IPrintOemUI::DriverEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554175)"><strong>IPrintOemUI::DriverEvent</strong></a></p></td>
@@ -65,11 +65,11 @@ ms.locfileid: "56534198"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554176" data-raw-source="[&lt;strong&gt;IPrintOemUI::FontInstallerDlgProc&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554176)"><strong>IPrintOemUI::FontInstallerDlgProc</strong></a></p></td>
-<td><p>替换 Unidrv 字体安装程序&#39;s 用户界面。</p></td>
+<td><p>将替换 Unidrv 字体安装程序的用户界面。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554178" data-raw-source="[&lt;strong&gt;IPrintOemUI::GetInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554178)"><strong>IPrintOemUI::GetInfo</strong></a></p></td>
-<td><p>（所需的实现。）返回 UI 插件&#39;s 标识信息。</p></td>
+<td><p>（所需的实现。）返回 UI 插件的标识信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554182" data-raw-source="[&lt;strong&gt;IPrintOemUI::PrinterEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554182)"><strong>IPrintOemUI::PrinterEvent</strong></a></p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "56534198"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554184" data-raw-source="[&lt;strong&gt;IPrintOemUI::PublishDriverInterface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554184)"><strong>IPrintOemUI::PublishDriverInterface</strong></a></p></td>
-<td><p>（所需的实现。）提供指向 Unidrv 或 Pscript5 驱动程序的&#39;s <a href="iprintoemdriverui-com-interface.md" data-raw-source="[IPrintOemDriverUI COM interface](iprintoemdriverui-com-interface.md)">IPrintOemDriverUI COM 接口</a>， <a href="iprintcoreui2-com-interface.md" data-raw-source="[IPrintCoreUI2 COM interface](iprintcoreui2-com-interface.md)">IPrintCoreUI2 COM 接口</a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff552906" data-raw-source="[IPrintCoreHelperPS interface](https://msdn.microsoft.com/library/windows/hardware/ff552906)">IPrintCoreHelperPS 接口</a>，或<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni 接口</a>。</p></td>
+<td><p>（所需的实现。）提供一个指向 Unidrv 或 Pscript5 驱动程序<a href="iprintoemdriverui-com-interface.md" data-raw-source="[IPrintOemDriverUI COM interface](iprintoemdriverui-com-interface.md)">IPrintOemDriverUI COM 接口</a>， <a href="iprintcoreui2-com-interface.md" data-raw-source="[IPrintCoreUI2 COM interface](iprintcoreui2-com-interface.md)">IPrintCoreUI2 COM 接口</a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff552906" data-raw-source="[IPrintCoreHelperPS interface](https://msdn.microsoft.com/library/windows/hardware/ff552906)">IPrintCoreHelperPS 接口</a>，或者<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni 接口</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554186" data-raw-source="[&lt;strong&gt;IPrintOemUI::QueryColorProfile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554186)"><strong>IPrintOemUI::QueryColorProfile</strong></a></p></td>
@@ -85,7 +85,7 @@ ms.locfileid: "56534198"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554188" data-raw-source="[&lt;strong&gt;IPrintOemUI::UpdateExternalFonts&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554188)"><strong>IPrintOemUI::UpdateExternalFonts</strong></a></p></td>
-<td><p>使打印机接口 DLL 更新打印机&#39;s <a href="customized-font-management.md#ddk-unidrv-font-format-files-gg" data-raw-source="[Unidrv font format files](customized-font-management.md#ddk-unidrv-font-format-files-gg)">Unidrv 字体格式文件</a>。</p></td>
+<td><p>启用 DLL 要更新的打印机的打印机接口<a href="customized-font-management.md#ddk-unidrv-font-format-files-gg" data-raw-source="[Unidrv font format files](customized-font-management.md#ddk-unidrv-font-format-files-gg)">Unidrv 字体格式文件</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554189" data-raw-source="[&lt;strong&gt;IPrintOemUI::UpgradePrinter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554189)"><strong>IPrintOemUI::UpgradePrinter</strong></a></p></td>

@@ -4,12 +4,12 @@ description: WDI 中两个 Tx 模式端口队列和 PeerTID 队列之一进行�
 ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13dae8aca3530a35c8e6d099a05786686cc5e205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520641"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349541"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 传输操作和卸载
 
@@ -37,7 +37,7 @@ WDI 在两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <th align="left">处理步骤</th>
 <th align="left">描述</th>
 <th align="left">适用于所有者/卸载</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ WDI 在两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <td align="left"><p>加密</p></td>
 <td align="left"><p>框架内容使用的安全类型和接收方 （或发件人，多播帧） 为指定的安全密钥进行加密。 添加安全封装在适用的情况。</p></td>
 <td align="left"><p>目标</p></td>
-<td align="left"><p>对于支持 FIPS 的系统，该主机软件中完成加密。 目标&#39;s 加密，则跳过。</p></td>
+<td align="left"><p>对于支持 FIPS 的系统，该主机软件中完成加密。 目标的加密，则跳过。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>一个 MPDU 聚合</p></td>

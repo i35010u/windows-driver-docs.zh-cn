@@ -4,12 +4,12 @@ description: V4 打印驱动程序清单包含特定于打印机的安装程序�
 ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 504e211114e04fa62989b8272d1805aeacad6948
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545756"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464027"
 ---
 # <a name="v4-driver-manifest"></a>V4 驱动程序清单
 
@@ -48,7 +48,7 @@ V4 打印驱动程序清单是包含所有特定于打印机的安装程序指�
 <td><p><strong>RequiredFiles</strong></p>
 <p>包括 ntprint.inf 或 ntprint4.inf 中的文件。</p>
 <p>Windows 10 中的下，RequiredFiles 指令将支持以下值：</p>
-<p>PWGRRenderFilter.dll:将 Microsoft PWG 光栅呈现筛选器添加到驱动程序&#39;s 依赖文件列表。</p>
+<p>PWGRRenderFilter.dll:将 Microsoft PWG 光栅呈现筛选器添加到驱动程序的依赖文件列表。</p>
 <p>PWG 光栅呈现筛选器呈现筛选器要求驱动程序配置为使用 PrintDeviceCapabilities 文件。</p></td>
 <td><p>此列表中，应省略 Unidrv.dll、 pscript5.dll 和 mxdwdrv.dll。 它们将被自动解决。</p></td>
 <td><p>示例：</p>
@@ -59,11 +59,11 @@ V4 打印驱动程序清单是包含所有特定于打印机的安装程序指�
 <tr class="even">
 <td><p><strong>RequiredClass</strong></p>
 <p>导致此驱动程序，包括从已定义的类驱动程序使用的设备和其 GUID 的驱动程序/友好名称作为键的所有文件。 这是用于将 printclass 驱动程序链接到模型特定驱动程序的机制。</p></td>
-<td><p>RequiredClass 指令不能使用由类驱动程序。 当使用 RequiredClass 时，应避免文件名称冲突之间的打印机驱动程序和打印类驱动程序到在&#39;重新链接。</p>
-<p>尽管具有类似的文件名称不&#39;t 会相互覆盖，则可能是很难在疑难解答期间，若要区分类驱动程序包文件和 v4 打印机驱动程序中的文件。</p></td>
-<td><p>示例：</p>
+<td><p>RequiredClass 指令不能使用由类驱动程序。 当使用 RequiredClass 时，应避免文件之间的打印机驱动程序和打印类驱动程序所链接的名称冲突。</p>
+<p>尽管具有类似名称的文件不会相互覆盖，但它可能很难在疑难解答期间，若要区分类驱动程序包文件和 v4 打印机驱动程序中的文件。</p></td>
+<td><p>例如：</p>
 <p>RequiredClass =</p>
-<p>&quot;Fabrikam PCL5e 类驱动程序&quot;，{9343720D-B67E-4451-B93F-6F721C439771}</p></td>
+<p>"Fabrikam PCL5e Class Driver",{9343720D-B67E-4451-B93F-6F721C439771}</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DriverFile</strong></p>
@@ -85,9 +85,9 @@ V4 打印驱动程序清单是包含所有特定于打印机的安装程序指�
 <td><p><strong>DataFileType</strong></p>
 <p>此外为数据文件，并且可能描述 PrintDeviceCapabilities 文件与 GPD 或基于 PPD 的数据文件也一起使用时，必须使用 DataFileType。</p></td>
 <td><p>PrintDeviceCapabilities 文件所需。</p></td>
-<td><p>示例：</p>
+<td><p>例如：</p>
 <p>DataFileType=</p>
-<p>&quot;application/vnd.ms-PrintDeviceCapabilities+xml&quot;</p></td>
+<p>"application/vnd.ms-PrintDeviceCapabilities+xml"</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>标志</strong></p>
@@ -120,7 +120,7 @@ ArchiveEnabled v4 驱动程序使用此标志请求作为后台打印文件存�
 </tr>
 <tr class="odd">
 <td><p><strong>ResourceFile</strong></p>
-<p>定义的驱动程序名称&#39;s 字符串资源 DLL。</p>
+<p>定义驱动程序的字符串资源 DLL 的名称。</p>
 <p>在 Windows 10 中，驱动程序可以指定使用.resx 格式 ResourceFile。</p></td>
 <td><p>无。</p></td>
 <td><p>示例：</p>
@@ -129,7 +129,7 @@ ArchiveEnabled v4 驱动程序使用此标志请求作为后台打印文件存�
 </tr>
 <tr class="even">
 <td><p><strong>ConstraintScript</strong></p>
-<p>定义的驱动程序名称&#39;s JavaScript 约束文件。</p></td>
+<p>定义在驱动程序的 JavaScript 约束文件的名称。</p></td>
 <td><p>无。</p></td>
 <td><p>ConstraintScript=</p>
 <p>FAConst.js</p></td>
@@ -148,7 +148,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>指定用户要获得一份打印机扩展应用程序的 URL。 在打印机共享中使用。</p></td>
 <td><p>无。</p></td>
 <td><p>PrinterExtensionUrl=</p>
-<p>&quot;<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
+<p>"<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DevModeMap</strong></p>
@@ -191,13 +191,13 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 </tr>
 <tr class="even">
 <td><p><strong>RetrievePrintDeviceCapabilitiesFromDevice</strong></p>
-<p>v4 驱动程序可以指定它们必须从 WS 打印 v2.0 打印机检索 PrintDeviceCapabilities 文件，只要它们作为驱动程序设置 PrintDeviceCapabilities 文件&#39;数据文件和 DataFileType 还指示数据文件为 MIME 类型&quot;应用程序/vnd.ms-PrintDeviceCapabilities + xml&quot;。 有效选项：</p>
+<p>v4 驱动程序可能会指定，它们必须从 WS 打印 v2.0 打印机中检索 PrintDeviceCapabilities 文件，只要他们将 PrintDeviceCapabilities 文件设置为驱动程序的数据文件和 DataFileType 还指示数据文件的 MIME 类型"应用程序/vnd.ms-PrintDeviceCapabilities + xml"。 有效选项：</p>
 <p>有效选项：</p>
-<p>True:使驱动程序&#39;s 本地数据文件使用来自设备的 PrintDeviceCapabilities 文件替换。</p>
-<p>False:该驱动程序&#39;本地数据文件将不替换 PrintDeviceCapabilities 文件从设备的 s。</p>
+<p>True:允许驱动程序的本地数据文件使用来自设备的 PrintDeviceCapabilities 文件替换。</p>
+<p>False:驱动程序的本地数据文件不会替换与 PrintDeviceCapabilities 文件从设备中。</p>
 <p>如果未指定，此指令的默认值为 false。</p></td>
 <td><p>无。</p></td>
-<td><p>示例：</p>
+<td><p>例如：</p>
 <p>RetrievePrintDeviceCapabilitiesFromDevice=</p>
 <p>true</p></td>
 </tr>
@@ -288,7 +288,7 @@ BidiFiles 部分用于定义 Bidi 扩展名为的文件。 它等同于 TCP 和 
 </tr>
 <tr class="even">
 <td><p><strong>XpsFormat</strong></p>
-<p>更改打印此驱动程序的系统生成的 XPS 格式。 可以指定多个值和顺序表示驱动程序&#39;s 首选项。</p></td>
+<p>更改打印此驱动程序的系统生成的 XPS 格式。 可以指定多个值，顺序表示驱动程序的首选项。</p></td>
 <td><p>在使用 Unidrv/PScript 呈现的类驱动程序中使用不可用。</p></td>
 <td><p>XpsFormat=XPS</p>
 <p>XpsFormat=OpenXPS</p>
@@ -302,13 +302,13 @@ BidiFiles 部分用于定义 Bidi 扩展名为的文件。 它等同于 TCP 和 
 <td><p>无。</p></td>
 <td><p>有效的用法类型包括：</p>
 <p>OutputFormat=</p>
-<p>&quot;application/oxps&quot;</p>
+<p>"应用程序/oxps"</p>
 <p>OutputFormat=</p>
-<p>&quot;application/vnd.ms-xpsdocument&quot;</p>
+<p>"application/vnd.ms-xpsdocument"</p>
 <p>OutputFormat=</p>
-<p>&quot;image/pwg-raster&quot;</p>
+<p>"image/pwg-raster"</p>
 <p>OutputFormat=</p>
-<p>&quot;application/vnd.ms-3mfdocument&quot;</p>
+<p>"application/vnd.ms-3mfdocument"</p>
 <p>此外在此处指定任何其他有效定义的 MIME 类型。</p></td>
 </tr>
 </tbody>
@@ -370,7 +370,7 @@ PageOutputQuality 指令 MxdcImageType 关键字具有以下允许的值：
 <tbody>
 <tr class="odd">
 <td><p><strong>&lt;FileExtensionName&gt;</strong></p>
-<p>此指令介绍使用 PORTPROMPT 端口此驱动程序中保存文件时要使用文件扩展名。 值是从驱动程序 resourceID&#39;s ResourceFile。 有关 XPS 和仅 OXPS，可以指定 0 的 resourceID 和打印后台处理程序将使用其内部资源，这些。</p></td>
+<p>此指令介绍使用 PORTPROMPT 端口此驱动程序中保存文件时要使用文件扩展名。 值是从驱动程序的 ResourceFile resourceID。 有关 XPS 和仅 OXPS，可以指定 0 的 resourceID 和打印后台处理程序将使用其内部资源，这些。</p></td>
 <td><p>无。</p></td>
 <td><p>&lt;FileExtensionName&gt;=</p>
 <p>&lt;resourceID&gt;</p>
@@ -378,7 +378,7 @@ PageOutputQuality 指令 MxdcImageType 关键字具有以下允许的值：
 </tr>
 <tr class="even">
 <td><p><strong>SaveAsTitle</strong></p>
-<p>此指令介绍用于在保存文件对话框的标题。 值是从驱动程序 resourceID&#39;s ResourceFile。</p></td>
+<p>此指令介绍用于在保存文件对话框的标题。 值是从驱动程序的 ResourceFile resourceID。</p></td>
 <td><p>无。</p></td>
 <td><p>SaveAsTitle=</p>
 <p>&lt;resourceID&gt;</p>

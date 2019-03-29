@@ -4,12 +4,12 @@ description: MPIO\_路径\_信息 WMI 类
 ms.assetid: fd6311c5-2d98-4a3a-beb9-54f3a84be8eb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 74908b3bd56cdd4516584a02e726136fffd4322e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22acc36bca41dcb6173b5551c6ae7dffc5fb267c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525490"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349608"
 ---
 # <a name="mpiopathinformation-wmi-class"></a>MPIO\_路径\_信息 WMI 类
 
@@ -41,7 +41,7 @@ class MPIO_PATH_INFORMATION
     ] uint32 Pad;
 
     //
-    // Array containing each path&#39;s information.
+    // Array containing each path's information.
     // Note that each of these are ULONGLONG aligned.
     //
     [WmiDataId(3),

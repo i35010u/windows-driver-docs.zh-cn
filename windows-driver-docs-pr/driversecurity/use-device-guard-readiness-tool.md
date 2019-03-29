@@ -1,17 +1,17 @@
 ---
-title: 使用设备防护准备工具来评估 HVCI 驱动程序兼容性
+title: 使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
 description: 请按照下列步骤以使用设备防护准备工具来评估 HVCI 驱动程序兼容性的驱动程序代码。
 ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eac9403029b3e021d65f7f29f16c5fc5f4cc549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 89ff1d974c319a79a210a4652f2c8b533be8ee90
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556041"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464185"
 ---
-# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用设备防护准备工具来评估 HVCI 驱动程序兼容性
+# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
 
 ## <a name="overview"></a>概述
 
@@ -234,44 +234,44 @@ ms.locfileid: "56556041"
 </tr>
 
 <tr class="even">
-<td align="left"><p>执行池类型</p></td>
-<td align="left"><p>调用方指定的可执行池类型。 调用的内存分配请求可执行文件的内存的函数。</p>
-<p>请确保所有池类型都包含一个非可执行的 NX 标志。</p>
+<td align="left"><p>Execute Pool Type（执行池类型）</p></td>
+<td align="left"><p>调用者指定了可执行池类型。 调用请求可执行内存的内存分配函数。</p>
+<p>确保所有池类型都包含不可执行的 NX 标志。</p>
 </td>
 </tr>
 
 <tr class="odd">
-<td align="left"><p>执行页保护</p></td>
-<td align="left"><p>调用方指定的一种可执行文件的页上的保护。</p>
-<p>指定&quot;不执行&quot;页保护掩码。</p>
+<td align="left"><p>Execute Page Protection（执行页保护）</p></td>
+<td align="left"><p>调用者指定了可执行页面保护。</p>
+<p>指定"无执行"页面保护掩码。</p>
 </td>
 </tr>
 
 <tr class="even">
-<td align="left"><p>执行页映射</p></td>
-<td align="left"><p>调用方指定的可执行文件的内存描述符列表 (MDL) 映射。</p>
-<p> 请确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff554559.aspx" data-raw-source="[MmGetSystemAddressForMdlSafe](https://msdn.microsoft.com/library/windows/hardware/ff554559.aspx)">MmGetSystemAddressForMdlSafe</a></p>
+<td align="left"><p>Execute Page Mapping（执行页映射）</p></td>
+<td align="left"><p>调用者指定了可执行的内存描述符列表 (MDL) 映射。</p>
+<p> 确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff554559.aspx" data-raw-source="[MmGetSystemAddressForMdlSafe](https://msdn.microsoft.com/library/windows/hardware/ff554559.aspx)">MmGetSystemAddressForMdlSafe</a></p>
 </td>
 </tr>
 
 <tr class="odd">
-<td align="left"><p>执行写部分</p></td>
-<td align="left"><p>映像包含一个可执行文件和可写部分。</p>
+<td align="left"><p>Execute-Write Section（执行-写入部分）</p></td>
+<td align="left"><p>该图像包含可执行和可写部分。</p>
 </td>
 </tr>
 
 <tr class="even">
-<td align="left"><p>节对齐方式失败</p>
+<td align="left"><p>Section Alignment Failures（节对齐方式失败）</p>
 </td>
-<td align="left"><p>映像包含一个部分，其中不对齐的页。</p>
-<p>节对齐必须是 0x1000 (PAGE_SIZE) 的倍数。 例如 DRIVER_ALIGNMENT=0x1000</p></td>
+<td align="left"><p>图像包含不是页面对齐的部分。</p>
+<p>Section Alignment 必须是 0x1000（PAGE_SIZE）的倍数。 例如 DRIVER_ALIGNMENT=0x1000</p></td>
 </tr>
 
 
 <tr class="even">
-<td align="left"><p>可执行文件的部分中的 IAT</p></td>
-<td align="left"><p>导入地址表 (IAT) 不应为可执行段的内存。</p>
-<p>当 IAT，位于在读取和执行 (RX) 仅部分中的内存时，将出现此问题。 这意味着操作系统将无法再写入 IAT 有关在何处设置正确的地址引用的 DLL。 </p>
+<td align="left"><p>IAT 在可执行部分</p></td>
+<td align="left"><p>导入地址表 (IAT) 不应该是内存的可执行部分。</p>
+<p>当 IAT 位于内存中仅允许读取和执行 (RX) 的部分时，会发生此问题。 这意味着操作系统将无法写入 IAT 来为引用的 DLL 设置正确的地址。 </p>
 <p> 发生这种情况的一种方法是使用时<a href="https://docs.microsoft.com/cpp/build/reference/merge-combine-sections" data-raw-source="[/MERGE (Combine Sections)](https://docs.microsoft.com/cpp/build/reference/merge-combine-sections)">/MERGE （合并节）</a>代码链接中的选项。 例如如果.rdata （只读的已初始化的数据） 合并与.text 的数据 （可执行代码），则可以在可执行部分中的内存可能最终会 IAT。  </p>
 </td>
 </tr>
@@ -284,9 +284,9 @@ ms.locfileid: "56556041"
 
 不支持重定位
 
-<p>在 Windows 10 版本 1507年到 Windows 10 版本 1607 中，由于使用地址空间布局随机化 (ASLR) 出现问题的地址的对齐方式和内存重定位可能出现。  需要将地址其中链接器设置其默认基址为 ASLR 分配的实际位置从重新定位的操作系统。 此重新分配不能跨页边界。  例如，考虑 0x3FFC 在页面中的偏移量处开始的 64 位地址值。 到偏移量 0x0003 下一步页，通过重叠地址值。 在 Windows 10，版本 1703年之前不支持这种重叠重定位。</p>
+<p>在 Windows 10 版本 1507年到 Windows 10 版本 1607 中，由于使用地址空间布局随机化 (ASLR) 出现问题的地址的对齐方式和内存重定位可能出现。  操作系统需要将地址从链接器设置的默认基址位置重定位到 ASLR 分配的实际位置。 此重定位不能跨越页面边界。  例如，考虑从某个页面上偏移量为 0x3FFC 的位置处开始的 64 位地址值。 其地址值重叠到了下一页上偏移量为 0x0003 的位置。 在 Windows 10，版本 1703年之前不支持这种重叠重定位。</p>
 
-<p>全局结构类型变量初始值设定项具有指向另一个全局的未对齐指针的方式链接器不能移动变量，以避免 straddling 重定位的布局时，会发生这种情况。 链接器将尝试移动的变量，但在有些情况下，它可能无法执行此操作 （例如使用大型未对齐的结构或未对齐结构的大型数组）。 根据需要，应使用组合模块<a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/Gy (COMDAT)</a>选项以允许链接器模块代码尽可能多地保持一致。</p>
+<p>当全局结构类型变量初始值设定项具有指向另一个全局变量的未对齐指针（其布局方式使链接器无法移动变量以避免跨越重定位）时，可能会发生这种情况。 链接器将尝试移动的变量，但在有些情况下，它可能无法执行此操作 （例如使用大型未对齐的结构或未对齐结构的大型数组）。 在适当的情况下，应使用 <a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/ Gy（COMDAT)</a> 选项组装模块以允许链接器尽可能地对齐模块代码。</p>
 
 
 
@@ -346,7 +346,7 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 };
 ```
 
-在涉及使用组装器代码，其他情况下也会发生此问题。
+还有其他涉及使用汇编程序代码的情况，也可能发生此问题。
 
 ---------
 
@@ -358,8 +358,8 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 若要 HVCI 和 CG 无 UEFI 锁启用：
 
 ```reg
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 1 /f&#39; 
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformSecurityFeatures" /t REG_DWORD /d 1 /f&#39; 
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 1 /f' 
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformSecurityFeatures" /t REG_DWORD /d 1 /f' 
 ```
 
 ## <a name="driver-verifier-code-integrity"></a>驱动程序验证程序代码完整性

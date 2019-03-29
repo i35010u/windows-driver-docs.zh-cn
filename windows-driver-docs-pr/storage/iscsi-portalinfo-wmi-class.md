@@ -4,12 +4,12 @@ description: ISCSI\_PortalInfo WMI 类
 ms.assetid: b38aa87c-00a5-483e-aa44-23f359783829
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ccc6685d8e6229319bcb3fe44ab22bf544161f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d8bb4958295d5afb89b2119f8db4a490df28f679
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555630"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349960"
 ---
 # <a name="iscsiportalinfo-wmi-class"></a>ISCSI\_PortalInfo WMI 类
 
@@ -36,8 +36,8 @@ class ISCSI_PortalInfo
     [read,
      WmiDataId(3),
      ISCSI_CONNECTION_PROTOCOL_TYPE_QUALIFIERS,
-     //Description("The portal&#39;s transport protocol"): amended,
-     description("The portal&#39;s transport protocol"),
+     //Description("The portal's transport protocol"): amended,
+     description("The portal's transport protocol"),
      WmiVersion(1)] ISCSI_CONNECTION_PROTOCOL_TYPE Protocol;
 
     [read,
@@ -50,17 +50,17 @@ class ISCSI_PortalInfo
  
     [read,
      WmiDataId(6),
-     description("The portal&#39;s network address"),
+     description("The portal's network address"),
      WmiVersion(1)] ISCSI_IP_Address IPAddr;
 
     [read,
      WmiDataId(7),
-     description("The portal&#39;s socket number"),
+     description("The portal's socket number"),
      WmiVersion(1)] uint32 Port;
 
     [read,
      WmiDataId(8),
-     description("The portal&#39;s aggregation tag"),
+     description("The portal's aggregation tag"),
      WmiVersion(1)] uint16 PortalTag;
 };
 ```

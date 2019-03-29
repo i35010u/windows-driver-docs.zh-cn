@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8dff91de6527a79daf8f40c2481507cfd451a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b64fb39b576b67b81776ee55f7052e0c60f74172
+ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526362"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319233"
 ---
 # <a name="developer-content-bug-check-0x19-badpoolheader"></a>（开发人员内容）Bug 检查 0x19:错误\_池\_标头
 
@@ -78,7 +78,7 @@ ms.locfileid: "56526362"
 <td align="left"><p>错误地计算的一个条目</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>错误导致错误的计算的入口</p></td>
-<td align="left"><p>池块标头&#39;s 以前大小来说太大。</p></td>
+<td align="left"><p>池块标头的以前的大小来说太大。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x7</p></td>
@@ -159,7 +159,7 @@ ms.locfileid: "56526362"
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 如果它看到错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifer*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
+驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 如果它看到错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifier*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
 
 **Windows 内存诊断**
 

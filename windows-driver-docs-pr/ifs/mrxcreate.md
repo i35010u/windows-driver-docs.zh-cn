@@ -15,12 +15,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81eb4bece52af43e70c8249cfb1829c464db694a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddbd534db0b801ba91190115e3bf010af23f8962
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546886"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349464"
 ---
 # <a name="mrxcreate-routine"></a>MRxCreate 例程
 
@@ -39,7 +39,7 @@ NTSTATUS MRxCreate(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *RxContext* \[in、 out\]  
@@ -84,7 +84,7 @@ NTSTATUS MRxCreate(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象名称。 如果打开文件这并不要求网络微型重定向，可能会返回此错误&#39;存在。</p></td>
+<td align="left"><p>找不到对象名称。 如果网络微型重定向需要打开的文件不存在，则可以返回此错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
@@ -136,13 +136,13 @@ NTSTATUS MRxCreate(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Mrx.h （包括 Mrx.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxAreFilesAliased**](https://msdn.microsoft.com/library/windows/hardware/ff549838)

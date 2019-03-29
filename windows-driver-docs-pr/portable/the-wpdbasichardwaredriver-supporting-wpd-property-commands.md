@@ -1,14 +1,14 @@
 ---
-Description: Support for property commands (WpdBasicHardwareDriverSample)
+Description: 对属性命令 (WpdBasicHardwareDriverSample) 的支持
 title: 对属性命令 (WpdBasicHardwareDriverSample) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a315c469505b22171807de43c11a69f63a84b873
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f274fbb67066cc9a3e5937f13079b3d77c255d41
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520174"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349954"
 ---
 # <a name="supporting-wpd-property-commands-wpdbasichardwaredriversample"></a>支持 WPD 属性命令 (WpdBasicHardwareDriverSample)
 
@@ -17,7 +17,7 @@ ms.locfileid: "56520174"
 
 下表中的信息描述了每个受支持的属性的命令，以及处理程序的名称， **WpdObjectProperties::DispatchMessage**处理给定的命令时调用。
 
-| 命令                                           | 处理程序                  | 描述                                                                                          |
+| Command                                           | 处理程序                  | 描述                                                                                          |
 |---------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------|
 | WPD\_命令\_对象\_属性\_获取\_支持  | OnGetSupportedProperties | 返回给定对象的属性键的数组。                                              |
 | WPD\_命令\_对象\_属性\_获取             | OnGetPropertyValues      | 返回提供给该驱动程序的属性键相对应的属性值的集合。 |
@@ -50,7 +50,7 @@ HRESULT AddSupportedPropertyKeys(
 
     if (strObjectID.CompareNoCase(WPD_DEVICE_OBJECT_ID) == 0)
     {
-        // Add the PROPERTYKEYs for the &#39;DEVICE&#39; object
+        // Add the PROPERTYKEYs for the 'DEVICE' object
         AddDevicePropertyKeys(pKeys);
     }
 
@@ -141,7 +141,7 @@ HRESULT AddSupportedPropertyKeys(
 
                 if (hr == S_OK)
                 {
-                    // Preset the property value to &#39;error not supported&#39;.  The actual value
+                    // Preset the property value to 'error not supported'.  The actual value
                     // will replace this value, if read from the device.
                     pValues->SetErrorValue(Key, HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED));
                     if (IsEqualPropertyKey(Key, WPD_OBJECT_ID))
@@ -234,7 +234,7 @@ CHECK_HR(hr, "Failed to set WPD_OBJECT_CONTENT_TYPE");
 ```cpp
 LONGLONG WpdObjectProperties::GetSensorReading()
 {    
-    // Ensure that this value isn&#39;t currently being accessed by another thread
+    // Ensure that this value isn't currently being accessed by another thread
     CComCritSecLock<CComAutoCriticalSection> Lock(m_SensorReadingCriticalSection);
 
     return m_llSensorReading;
@@ -336,7 +336,7 @@ HRESULT WpdObjectProperties::SendUpdateIntervalToDevice(DWORD dwNewInterval)
 
 在原始 WpdHelloWorldSample 驱动程序，每个属性的属性完全相同，所有属性都是只读的。 但是，在更新的驱动程序，传感器\_更新\_间隔是读/写，而这两个传感器\_更新\_间隔和传感器\_读取具有窗体 WPD\_属性\_特性\_窗体\_范围。 因此，此帮助器函数中要求细微的更改。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

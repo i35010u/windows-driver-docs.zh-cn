@@ -13,12 +13,12 @@ keywords:
 - 文本输出 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f058562bb7ec4eaef5f5ec1ebc237d947853ee5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 795bd946590741eef79f6007e88cf4b4a8ea92df
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526473"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350082"
 ---
 # <a name="gdi-font-and-text-services"></a>GDI 字体和文本服务
 
@@ -58,7 +58,7 @@ GDI 字体管理和文本输出提供支持。 [ **FONTOBJ** ](https://msdn.micr
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564917" data-raw-source="[&lt;strong&gt;EngGetCurrentCodePage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564917)"><strong>EngGetCurrentCodePage</strong></a></p></td>
-<td align="left"><p>返回系统&#39;s 默认 OEM 和 ANSI 代码页。</p></td>
+<td align="left"><p>返回系统的默认 OEM 和 ANSI 代码页。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564956" data-raw-source="[&lt;strong&gt;EngGetType1FontList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564956)"><strong>EngGetType1FontList</strong></a></p></td>
@@ -90,7 +90,7 @@ GDI 字体管理和文本输出提供支持。 [ **FONTOBJ** ](https://msdn.micr
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565996" data-raw-source="[&lt;strong&gt;FONTOBJ_pQueryGlyphAttrs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565996)"><strong>FONTOBJ_pQueryGlyphAttrs</strong></a></p></td>
-<td align="left"><p>返回有关字体的信息&#39;s 标志符号。</p></td>
+<td align="left"><p>返回有关字体的标志符号的信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566001" data-raw-source="[&lt;strong&gt;FONTOBJ_pvTrueTypeFontFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566001)"><strong>FONTOBJ_pvTrueTypeFontFile</strong></a></p></td>

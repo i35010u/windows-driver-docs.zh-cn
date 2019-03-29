@@ -4,12 +4,12 @@ description: HBA\_状态
 ms.assetid: 2fabfa86-7f8a-4c90-8aa0-53e42bd5c075
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 47421b11a79fdd3433cca28230e55831b7911376
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2a7fcd25e206cc64fdfaa9ecfc9c89bd47d43c63
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521026"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349156"
 ---
 # <a name="hbastatus"></a>HBA\_状态
 
@@ -55,7 +55,7 @@ HBA\_状态 WMI 类限定符表示 WMI 请求对 WMI 提供程序 HBA 所做的�
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_ILLEGAL_WWN</p></td>
-<td align="left"><p>无法识别的全球通用名称。 有关与全球通用名称有关的信息，请参阅 T11 委员会&#39;s<em>光纤通道 HBA API</em>规范。</p></td>
+<td align="left"><p>无法识别的全球通用名称。 有关与全球通用名称有关的信息，请参阅 T11 委员会<em>光纤通道 HBA API</em>规范。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_ILLEGAL_INDEX</p></td>
@@ -99,7 +99,7 @@ HBA\_状态 WMI 类限定符表示 WMI 请求对 WMI 提供程序 HBA 所做的�
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_AMBIGUOUS_WWN</p></td>
-<td align="left"><p>多个适配器具有匹配的全球通用名称 (WWN)。 如果多个适配器 NodeWWN 是完全相同，这可能发生。 有关一般情况下的信息与全球范围内有关名称和 NodeWWN 特别是，请参阅 T11 委员会&#39;s<em>光纤通道 HBA API</em>规范。</p></td>
+<td align="left"><p>多个适配器具有匹配的全球通用名称 (WWN)。 如果多个适配器 NodeWWN 是完全相同，这可能发生。 有关一般情况下的信息与全球范围内有关名称和 NodeWWN 特别是，请参阅 T11 委员会<em>光纤通道 HBA API</em>规范。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_LOCAL_BUS</p></td>
@@ -119,7 +119,7 @@ HBA\_状态 WMI 类限定符表示 WMI 请求对 WMI 提供程序 HBA 所做的�
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_TARGET_FCID</p></td>
-<td align="left"><p>永久绑定请求包含无效 FCP 目标 FCID。 FCID FCP 目标的定义，请参阅 T11 委员会&#39;s<em>光纤通道 HBA API</em>规范。</p></td>
+<td align="left"><p>永久绑定请求包含无效 FCP 目标 FCID。 FCID FCP 目标的定义，请参阅 T11 委员会<em>光纤通道 HBA API</em>规范。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_TARGET_NODE_WWN</p></td>
@@ -143,11 +143,11 @@ HBA\_状态 WMI 类限定符表示 WMI 请求对 WMI 提供程序 HBA 所做的�
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_NOT_A_TARGET</p></td>
-<td align="left"><p>SCSI 命令发送到不是 SCSI 目标端口 Nx_Port。 Nx_Port 的定义，请参阅 T11 委员会&#39;s<em>光纤通道 HBA API</em>规范。</p></td>
+<td align="left"><p>SCSI 命令发送到不是 SCSI 目标端口 Nx_Port。 Nx_Port 的定义，请参阅 T11 委员会<em>光纤通道 HBA API</em>规范。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_STATUS_ERROR_UNSUPPORTED_FC4</p></td>
-<td align="left"><p>发出了有关不受支持的 FC 4 协议的请求。 FC 4 协议的说明，请参阅 T11 委员会&#39;s<em>光纤通道 HBA API</em>规范。</p></td>
+<td align="left"><p>发出了有关不受支持的 FC 4 协议的请求。 FC 4 协议的说明，请参阅 T11 委员会<em>光纤通道 HBA API</em>规范。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_STATUS_ERROR_INCAPABLE</p></td>

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f93dbd99a069d73efbbfbc61796c8185f65468d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 63a86a03ac822220009c5feda6587d7ed225bfa8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520732"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349362"
 ---
-# <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>Bug 检查 0xF1:SCSI\_VERIFIER\_检测到\_冲突
+# <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>Bug 检查 0xF1：SCSI\_VERIFIER\_检测到\_冲突
 
 
 SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所有驱动程序验证程序的 bug 检查代码**SCSI 验证**冲突。
@@ -67,14 +67,14 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <tr class="odd">
 <td align="left"><p>0x1002</p></td>
 <td align="left"><p>花费了太长时间的例程的地址</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>例程，以微秒为单位的持续时间</p></td>
 <td align="left"><p>由端口驱动程序调用的微型端口例程花的时间超过 0.5 秒的时间来执行。</p>
 <p>（0.5 秒是大部分例程的限制。 但是， <strong>HwInitialize</strong>例程允许 5 秒，并且<strong>FindAdapter</strong>例程不受限制。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1003</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>SRB 的地址</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>微型端口驱动程序不止一次完成一个请求。</p></td>
@@ -82,29 +82,29 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <tr class="odd">
 <td align="left"><p>0x1004</p></td>
 <td align="left"><p>SRB 的地址</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>微型端口驱动程序完成无效的 SRB 状态的请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1005</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>LOGICAL_UNIT_EXTENSION 的地址</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>微型端口驱动程序调用<strong>ScsiPortNotification</strong>寻求<strong>NextLuRequest</strong>，但未标记的请求仍处于活动状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1006</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>虚拟地址无效</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>微型端口驱动程序传递到的虚拟地址无效<strong>ScsiPortGetPhysicalAddress</strong>。</p>
-<p>(这通常意味着提供的地址不是&#39;t 映射到常见的缓冲区区域。)</p></td>
+<p>（这通常意味着提供的地址不会映射到常见的缓冲区区域。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1007</p></td>
 <td align="left"><p>ADAPTER_EXTENSION 的地址</p></td>
-<td align="left"><p>微型端口地址&#39;s HW_DEVICE_EXTENSION</p></td>
+<td align="left"><p>微型端口的 HW_DEVICE_EXTENSION 地址</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>重置保存期结束，总线但微型端口驱动程序仍有未完成的请求。</p></td>
 </tr>
@@ -120,7 +120,7 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> 从微型端口驱动程序未调用&#39;s <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>例程。 <strong>StorPortGetUncachedExtension</strong>例程只能从微型端口驱动程序调用&#39;s <strong>HwStorFindAdapter</strong>例程和仅为主机总线适配器。 Storport 微型端口驱动程序必须设置<strong>SrbExtensionSize</strong>的<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong> (Storport) 结构，然后才能调用<strong>StorPortGetUncachedExtension</strong>。</p></td>
+<td align="left"><p><strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567103" data-raw-source="[StorPortGetUncachedExtension](https://msdn.microsoft.com/library/windows/hardware/ff567103)">StorPortGetUncachedExtension</a></strong> 从微型端口驱动程序未调用<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[HwStorFindAdapter](https://msdn.microsoft.com/library/windows/hardware/ff557390)">HwStorFindAdapter</a></strong>例程。 <strong>StorPortGetUncachedExtension</strong>仅从微型端口驱动程序调用例程<strong>HwStorFindAdapter</strong>例程和仅为主机总线适配器。 Storport 微型端口驱动程序必须设置<strong>SrbExtensionSize</strong>的<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff557459" data-raw-source="[HW_INITIALIZATION_DATA](https://msdn.microsoft.com/library/windows/hardware/ff557459)">HW_INITIALIZATION_DATA</a></strong> (Storport) 结构，然后才能调用<strong>StorPortGetUncachedExtension</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2003</p></td>
@@ -141,7 +141,7 @@ SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所�
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>Storport 微型端口驱动程序的其中一个传递了无效的虚拟地址<strong>StorPortRead</strong><em>xxx</em>或<strong>StorPortWrite</strong><em>xxx</em>例程。 这通常意味着提供的地址不是&#39;t 映射到常见的缓冲区区域。 指定<em>注册</em>或<em>端口</em>必须在映射的内存空间范围内返回<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>例程。</p></td>
+<td align="left"><p>Storport 微型端口驱动程序的其中一个传递了无效的虚拟地址<strong>StorPortRead</strong><em>xxx</em>或<strong>StorPortWrite</strong><em>xxx</em>例程。 这通常意味着提供的地址不会映射到常见的缓冲区区域。 指定<em>注册</em>或<em>端口</em>必须在映射的内存空间范围内返回<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff567080" data-raw-source="[StorPortGetDeviceBase](https://msdn.microsoft.com/library/windows/hardware/ff567080)">StorPortGetDeviceBase</a></strong>例程。</p></td>
 </tr>
 </tbody>
 </table>

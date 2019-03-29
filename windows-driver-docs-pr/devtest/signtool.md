@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa3d4475c640b0ff2ed6086c6d1a68bfa40d5b8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f5a5f655d962d532da1c51025c15848cfa49a887
+ms.sourcegitcommit: 5bfb01d5aa52632b54182f3db87454df2d61cbe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555121"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56905510"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -277,7 +277,7 @@ SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertif
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.verisign.com/scripts/timstamp.dll AbcDriverFile.sys
 ```
 
-以下是如何进行签名的示例[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)文件中使用目录[商业版本发布证书](https://msdn.microsoft.com/library/windows/hardware/ff539935)或[商业测试证书](https://msdn.microsoft.com/library/windows/hardware/ff539940)。 此示例是有效签署驱动程序包的 32 位版本的 Windows Vistaand 更高版本的 Windows，不会强制使用内核模式代码签名策略。 该示例对驱动程序包的目录文件 CatalogFileName.cat 进行签名。 该示例使用 AbcTestCertificate 测试证书，位于 TestCertificateStore 证书存储区中，目录文件进行签名。
+以下是如何进行签名的示例[驱动程序包](https://msdn.microsoft.com/library/windows/hardware/ff544840)文件中使用目录[商业版本发布证书](https://msdn.microsoft.com/library/windows/hardware/ff539935)或[商业测试证书](https://msdn.microsoft.com/library/windows/hardware/ff539940)。 此示例中是有效的 32 位版本的 Windows Vista 和更高版本的 Windows，不会强制使用内核模式代码签名策略驱动程序程序包进行签名。 该示例对驱动程序包的目录文件 CatalogFileName.cat 进行签名。 该示例使用 AbcTestCertificate 测试证书，位于 TestCertificateStore 证书存储区中，目录文件进行签名。
 
 此示例还使用公开可用的时间戳服务器对目录文件进行签名。 时间戳服务器提供的 VeriSign 和其 URL 是 http://timestamp.verisign.com/scripts/timstamp.dll。
 

@@ -1,16 +1,16 @@
 ---
-Description: Retrieving a list of Supported Resources
-title: 检索支持资源的列表
+Description: 检索支持的资源的列表
+title: 检索支持的资源的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab63133e01dd7f92e0dfacde51973b336966e8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 98ff05f45b7dfb4c46fe67a5f9c761453c43e0ae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541433"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350136"
 ---
-# <a name="retrieving-a-list-of-supported-resources"></a>检索支持资源的列表
+# <a name="retrieving-a-list-of-supported-resources"></a>检索支持的资源的列表
 
 
 当应用程序需要检索给定对象支持的资源的列表时，它将调用**IPortableDeviceResources::GetSupportedResources**方法并传入一个字符串，指定对象的标识符中的问题。 此 API 调用，进而触发**WpdObjectResources::OnGetSupportedResources**命令处理程序中的示例驱动程序。 此方法创建**IPortableDeviceKeyCollection**对象支持的每个资源的 PROPERTYKEY 值复制到该命令。
@@ -48,7 +48,7 @@ HRESULT WpdObjectResources::OnGetSupportedResources(
     if (hr == S_OK)
     {
         hr = GetSupportedResourcesForObject(wszObjectID, pKeys);
-        CHECK_HR(hr, "Failed to get supported resources for object &#39;%ws&#39;", wszObjectID);
+        CHECK_HR(hr, "Failed to get supported resources for object '%ws'", wszObjectID);
     }
 
     if (hr == S_OK)

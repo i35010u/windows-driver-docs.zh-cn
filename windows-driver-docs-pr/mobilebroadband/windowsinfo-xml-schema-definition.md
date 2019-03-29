@@ -4,12 +4,12 @@ description: WindowsInfo XML 架构定义
 ms.assetid: d14e0537-0b95-4986-a11c-67645bd88b26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ef58afcfcfdad1bc21196fe35150b354d971cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 51d7b1edc174e7ba5c664033929679df38204740
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525826"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464024"
 ---
 # <a name="windowsinfo-xml-schema-definition"></a>WindowsInfo XML 架构定义
 
@@ -107,7 +107,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/WindowsInfov2
 
   <xs:simpleType name="DistinguishedNameType">
     <xs:restriction base="tns:NonEmptyStringType">
-      <xs:pattern value="(CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+=&quot;&lt;&gt;#;])+|&quot;.*&quot;)(, ((CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+=&quot;&lt;&gt;#;])+|&quot;.*&quot;)))*"/>
+      <xs:pattern value="(CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+="&lt;&gt;#;])+|".*")(, ((CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+="&lt;&gt;#;])+|".*")))*"/>
     </xs:restriction>
   </xs:simpleType>
   

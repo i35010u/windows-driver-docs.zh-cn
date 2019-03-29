@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc1650deea5e79729cb315aa02f15719cbffec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4fe30fd94ac11480f6912fd0d91c6c3f3a704494
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542491"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349784"
 ---
-# <a name="bug-check-0x197-win32ksecurityfailure"></a>Bug 检查 0x197:WIN32K\_安全\_失败
+# <a name="bug-check-0x197-win32ksecurityfailure"></a>Bug 检查 0x197：WIN32K\_安全\_失败
 
 
 WIN32K\_安全\_故障错误检查的值为 0x00000197。 这表示 win32k 中检测到此安全故障。
@@ -45,7 +45,7 @@ WIN32K\_安全\_故障错误检查的值为 0x00000197。 这表示 win32k 中�
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>失败类型</p>
-<p>0x1:对象句柄条目无效&#39;t 点回到对象。</p>
+<p>0x1:对象句柄条目未返回指向对象。</p>
 2-指向的对象类型 3 的指针的对象句柄项 4-预期对象</td>
 </tr>
 <tr class="even">

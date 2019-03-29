@@ -1,14 +1,14 @@
 ---
-Description: This section introduces you to USB driver development.
+Description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发入门
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f55df5b190d698be6ddd7e53d533e45af3bbbdc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464249"
 ---
 # <a name="getting-started-with-usb-client-driver-development"></a>USB 客户端驱动程序开发入门
 
@@ -34,13 +34,13 @@ ms.locfileid: "56555830"
 <tbody>
 <tr class="odd">
 <td><p><strong>步骤 1</strong>— 阅读<a href="https://go.microsoft.com/fwlink/p/?linkid=617552" data-raw-source="[Official USB specification version 2.0 and 3.0](https://go.microsoft.com/fwlink/p/?linkid=617552)">官方 USB 2.0 和 3.0 规范版本</a>。</p></td>
-<td>了解行业规范和体系结构的不同组件 （设备、 主控制器和中心）。 它&#39;s 务必了解数据流模型，与每个其他和的设备需要请求格式的通信的主机和设备的方式。</td>
+<td>了解行业规范和体系结构的不同组件 （设备、 主控制器和中心）。 务必了解数据流模型，与每个其他和的设备需要请求格式的通信的主机和设备的方式。</td>
 </tr>
 <tr class="even">
 <td><p><strong>步骤 2</strong>— 获取测试 USB 设备。</p></td>
 <td><ul>
 <li>具有 USB 设备和其硬件规范。 此规范描述设备功能和受支持的供应商命令。 使用规范来确定设备驱动程序和相关的设计决策的功能。</li>
-<li>如果您不熟悉 USB 驱动程序开发，具有 OSR USB FX2 学习工具包。 该工具包是最适合研究 USB 示例包含在此文档集。 就可以从学习工具包<a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR 联机</a>。</li>
+<li>如果您不熟悉 USB 驱动程序开发，具有 OSR USB FX2 学习工具包。 此工具包最适合学习本文档集中包括的 USB 示例。 就可以从学习工具包<a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR 联机</a>。</li>
 <li>拥有 Microsoft USB 测试工具 (MUTT) 设备。 可以从购买 MUTT 硬件<a href="https://go.microsoft.com/fwlink/p/?linkid=617554" data-raw-source="[JJG Technologies](https://go.microsoft.com/fwlink/p/?linkid=617554)">JJG 技术</a>。 设备没有安装的已安装的固件。 若要安装固件<a href="https://go.microsoft.com/fwlink/p/?linkid=617555" data-raw-source="[download the MUTT software package](https://go.microsoft.com/fwlink/p/?linkid=617555)">下载 MUTT 软件包</a>，并运行 MUTTUtil.exe。 有关详细信息，请参阅随程序包提供的文档。</li>
 </ul></td>
 </tr>
@@ -95,7 +95,7 @@ ms.locfileid: "56555830"
 </tr>
 <tr class="odd">
 <td><p><strong>步骤 9</strong>-扩展您的驱动程序可以使用 WDF USB I/O 目标对象执行 USB 数据传输。 <a href="usb-device-i-o.md" data-raw-source="[USB data transfers](usb-device-i-o.md)">USB 数据传输</a>。</p></td>
-<td><p>扩展您的驱动程序以执行常见任务。 本主题列出了&quot;如何&quot;中此文档集的主题，提供了有关这些任务的分步指导。</p>
+<td><p>扩展您的驱动程序以执行常见任务。 本主题列出了"如何"中此文档集的主题，提供了有关这些任务的分步指导。</p>
 <ul>
 <li><a href="wdk-resources-for-usb-driver-development.md" data-raw-source="[Common tasks for USB client drivers](wdk-resources-for-usb-driver-development.md)">USB 客户端驱动程序的常见任务</a></li>
 </ul></td>
@@ -109,13 +109,13 @@ ms.locfileid: "56555830"
 
 
 <a href="" id="microsoft-windows-usb-core-team-blog"></a>[Microsoft Windows USB 核心团队博客](https://go.microsoft.com/fwlink/p/?linkid=617581)  
-请查看 Microsoft USB 团队编写的文章。 博客重点介绍适用于各种 USB 主控制器和 Windows PC 中找到的 USB 集线器的 Windows USB 驱动程序堆栈。 USB 客户端驱动程序开发人员和 USB 硬件设计人员的有用资源了解驱动程序堆栈实现，解决常见的问题，并说明了如何使用工具，以便收集跟踪和日志文件。
+查看 Microsoft USB 团队撰写的博文。 此博客重点介绍 Windows USB 驱动程序堆栈，该堆栈适用于 Windows 电脑中的各种 USB 主控制器和 USB 集线器。 适用于 USB 客户端驱动程序开发人员和 USB 硬件设计人员的资源，方便他们了解驱动程序堆栈实现、解决常见问题以及如何使用工具来收集跟踪和日志文件。
 
 <a href="" id="osr-online-lists---ntdev"></a>[OSR Online 列表-ntdev](https://go.microsoft.com/fwlink/p/?linkid=617582)  
-由管理的讨论列表[OSR 联机](https://go.microsoft.com/fwlink/p/?linkid=617590)内核模式驱动程序开发人员。
+由 [OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617590) 管理的讨论列表，适用于内核模式驱动程序开发人员。
 
 <a href="" id="usb-technologies"></a>[USB 技术](https://go.microsoft.com/fwlink/p/?linkid=617583)  
-频繁地基于其他资源的常见问题从开发人员熟悉开发 USB 设备和使用 Windows 操作系统的驱动程序。
+各种基于常见问题的资源，这些问题由不熟悉 Windows 操作系统的 USB 设备和驱动程序开发的开发人员提出。
 
 <a href="" id="windows-dev-center-for-hardware-development"></a>[Windows 开发人员中心硬件开发](https://go.microsoft.com/fwlink/p/?linkid=617584)  
 [下载最新驱动程序的开发工具](https://go.microsoft.com/fwlink/p/?linkid=617585)，确保您的产品可靠且与通过 Windows 兼容[Windows 认证计划](https://go.microsoft.com/fwlink/p/?linkid=617591)，了解[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507).

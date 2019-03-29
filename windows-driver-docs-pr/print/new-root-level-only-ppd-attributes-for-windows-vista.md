@@ -1,6 +1,6 @@
 ---
-title: 适用于 Windows Vista 的新根级别仅 PPD 属性
-description: 适用于 Windows Vista 的新根级别仅 PPD 属性
+title: 适用于 Windows Vista 的仅限根级别的新 PPD 属性
+description: 适用于 Windows Vista 的仅限根级别的新 PPD 属性
 ms.assetid: 49cdfb2f-e119-4960-9e79-67e1025b753f
 keywords:
 - 仅限根级别属性 WDK Unidrv
@@ -8,14 +8,14 @@ keywords:
 - PPD 属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b12e7f2254e46e752767e04491650ae00af96712
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30235aae4772d555ad99a7109b534c2f6bb67721
+ms.sourcegitcommit: 5bfb01d5aa52632b54182f3db87454df2d61cbe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540715"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56905506"
 ---
-# <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>适用于 Windows Vista 的新根级别仅 PPD 属性
+# <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 PPD 属性
 
 
 以下列表介绍开始使用 Windows Vista 新增的 PPD 特性。 为了保持向后兼容性与早于 Windows Vista 版本的 Windows，应当在以下代码使用这些属性。
@@ -156,9 +156,9 @@ PPD 功能关键字前缀 (这是一个星号\[ \* \]) 在这两种格式是必�
 
 -   格式 2:(3,4),(1,2)
 
-在 Windows Vista 之前的打印处理器可能会打印格式 2 中的页面\[(3,4),(1,2)\]。 但更高版本，在 Windows Vistaand 默认格式是格式 1 \[(4,3),(2,1)\]。 此更改发生，因为许多打印机有使用 2; 格式不正确的输出也就是说，打印的页未按正确的顺序排序。
+在 Windows Vista 之前的打印处理器可能会打印格式 2 中的页面\[(3,4),(1,2)\]。 但在 Windows Vista 及更高版本，默认格式是格式 1 \[(4,3),(2,1)\]。 此更改发生，因为许多打印机有使用 2; 格式不正确的输出也就是说，打印的页未按正确的顺序排序。
 
-如果您的打印机与格式 1 一起正常运行，不需要更高版本的 Windows Vistaand 更改任何内容。 但是，如果在打印机使用不正确格式 1 和你想要恢复为格式 2，添加**MSPrintProcDuplexOptions**属性值为 1。
+如果您的打印机与格式 1 一起正常运行，不需要更改任何内容适用于 Windows Vista 及更高版本。 但是，如果在打印机使用不正确格式 1 和你想要恢复为格式 2，添加**MSPrintProcDuplexOptions**属性值为 1。
 
 ```cpp
 *MSPrintProcDuplexOptions: "1"

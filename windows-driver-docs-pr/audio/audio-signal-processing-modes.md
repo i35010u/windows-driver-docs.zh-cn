@@ -4,12 +4,12 @@ description: 驱动程序声明支持的音频信号处理模式下为每个设�
 ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 518ef604f7655ead35d810cdd065275e71f573e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: da363a5b00d061bd18f97d11cf7b37c66c25f985
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464381"
 ---
 # <a name="audio-signal-processing-modes"></a>音频信号处理模式
 
@@ -31,7 +31,7 @@ ms.locfileid: "56520282"
 <tr class="odd">
 <td align="left"><strong>模式</strong></td>
 <td align="left"><strong>呈现/捕获</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">原始</td>
@@ -94,7 +94,7 @@ ms.locfileid: "56520282"
 
 |                |                                                                                                       |
 |----------------|-------------------------------------------------------------------------------------------------------|
-| **类别**   | **描述**                                                                                       |
+| **类别**   | **说明**                                                                                       |
 | 电影          | 电影、 视频中，对话框 (替换 ForegroundOnlyMedia)                                              |
 | Media          | 媒体的播放 (替换 BackgroundCapableMedia) 的默认类别                                 |
 | 游戏聊天      | 中的游戏用户之间的沟通 （Windows 10 中的新类别）                                      |
@@ -241,22 +241,22 @@ KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_的模式识别驱动程序与使用模式
 <td align="left"><p>在系统中具有有效的低音功能扬声器的便携式计算机例如，则有时可以通过提升受说话人的频率范围中的低音响应提高感知到的音频质量。 低音增强通过增加中间低音范围中的提升改进了使用非常小的发言人的移动设备上的声音。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">虚拟外侧代码</td>
+<td align="left">虚拟环绕</td>
 <td align="left"><p>虚拟环绕使用简单的数字方法来合并两个通道的多渠道的信号。 这是允许要还原到原始多渠道信号，同时使用大多数现代音频接收器中可用的 Pro 逻辑解码器的转换后的信号的方式。 虚拟外侧代码非常适用于有两个通道声音硬件和接收方，具有环绕声音增强机制的系统。</p></td>
 </tr>
 <tr class="even">
 <td align="left">虚拟耳机</td>
-<td align="left"><p>虚拟化的环绕声允许用户将戴耳机来区分从前到后也按从左到右的声音。 这是通过传输空间帮助大脑本地化声音并将它们集成到声音字段的提示。 此操作将使声音感觉像超越耳机，创建&quot;外部头&quot;侦听体验。 使用先进的技术称为头相关传输函数 (HRTF) 可实现此效果。 HRTF 生成基于人机头的形状的声学提示。 这些提示不仅可帮助查找方向的侦听器和源的声音，但它还增强了围绕侦听器的声学环境的类型。</p></td>
+<td align="left"><p>虚拟化的环绕声允许用户将戴耳机来区分从前到后也按从左到右的声音。 这是通过传输空间帮助大脑本地化声音并将它们集成到声音字段的提示。 发出的声音感觉像超越耳机，创建"外部 head"侦听体验效果。 使用先进的技术称为头相关传输函数 (HRTF) 可实现此效果。 HRTF 生成基于人机头的形状的声学提示。 这些提示不仅可帮助查找方向的侦听器和源的声音，但它还增强了围绕侦听器的声学环境的类型。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">演讲者填充</td>
+<td align="left">扬声器填充</td>
 <td align="left"><p>大多数音乐生成只有两个频道和，因此，没有为优化多声道的音频设备的典型音频或视频酷爱钻研技术。 因此使用，从仅 front 左侧和 front 右侧 loudspeakers 音乐是不太理想的音频体验。 演讲者填充模拟多渠道扬声器安装程序。 这样，否则将只有两个扬声器播放上所有的协助，增强空间成名 loudspeakers 播放的音乐。</p></td>
 </tr>
 <tr class="even">
-<td align="left">聊天室更正</td>
+<td align="left">房间修正</td>
 <td align="left"><p>聊天室更正通过自动计算延迟，频率响应的最佳组合优化空间，例如，在躺椅 center 缓冲中的特定位置的侦听体验，并获得调整。</p>
 <p>聊天室更正功能更好地匹配到视频的屏幕上的图像的声音并也是在桌面的演讲者在使用了非标准位置中的放置位置的情况下很有用。 因为它更好地解释人耳在其中处理声音的方式，房间更正处理是对高端接收器中的类似功能的改进。</p>
-<p>使用的麦克风，帮助执行校准和过程可以用于立体声和多通道系统。 用户将麦克风用户想要位于的位置，然后激活向导，用于测量空间响应。 该向导反过来，播放一组专门设计发出每个扬声器的声音并测量距离、 频率响应和整体获得的每个从麦克风扬声器提升&#39;的位置。</p></td>
+<p>使用的麦克风，帮助执行校准和过程可以用于立体声和多通道系统。 用户将麦克风用户想要位于的位置，然后激活向导，用于测量空间响应。 该向导反过来，播放一组专门设计发出每个扬声器的声音并测量距离、 频率响应和整体提高麦克风的位置从每个扬声器。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">低音管理</td>
@@ -266,11 +266,11 @@ KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_的模式识别驱动程序与使用模式
 </tr>
 <tr class="even">
 <td align="left">环境影响</td>
-<td align="left"><p>环境影响工作，以增加更多的准确地模拟实际音频环境的音频播放的实际情况。 有多种不同的环境，你可以选择，例如&quot;体育场&quot;模拟的体育体育场噪声。</p></td>
+<td align="left"><p>环境影响工作，以增加更多的准确地模拟实际音频环境的音频播放的实际情况。 有多种不同的环境，可进行选择，例如"stadium"模拟的体育体育场噪声。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">演讲者保护</td>
-<td align="left"><p>说话人保护的目的是取消将导致演讲者可以向任何 Pc 物理损害的 resonant 频率&#39;系统组件。 例如，某些物理硬盘可以通过在正确的频率播放大声声音已损坏。 其次，说话人保护致力于通过衰减信号，当超过特定值时到扬声器的损害降到最低。</p></td>
+<td align="left"><p>说话人保护的目的是禁止 resonant 频率会导致执行物理到电脑的系统组件的任何损害和扬声器。 例如，某些物理硬盘可以通过在正确的频率播放大声声音已损坏。 其次，说话人保护致力于通过衰减信号，当超过特定值时到扬声器的损害降到最低。</p></td>
 </tr>
 <tr class="even">
 <td align="left">演讲者补偿</td>
@@ -278,7 +278,7 @@ KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_的模式识别驱动程序与使用模式
 </tr>
 <tr class="odd">
 <td align="left">动态范围压缩</td>
-<td align="left"><p>动态范围压缩而安静声音放大通过收缩或&quot;压缩&quot;音频信号&#39;s 动态范围。 音频压缩会加大静默声音的下方特定阈值时不会影响很大的声音。</p></td>
+<td align="left"><p>动态范围压缩而安静声音放大通过收缩或"压缩"音频信号的动态范围。 音频压缩会加大静默声音的下方特定阈值时不会影响很大的声音。</p></td>
 </tr>
 </tbody>
 </table>

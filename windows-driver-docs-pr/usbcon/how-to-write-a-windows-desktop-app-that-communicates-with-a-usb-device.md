@@ -1,14 +1,14 @@
 ---
-Description: The easiest way to write a Windows desktop app that communicates with a USB device, is by using the C/C++ WinUSB template.
+Description: 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C/c + + WinUSB 模板。
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5614379f76ade13fd4d09131edf15d04a034511c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa5bbc2185d1e38b494f6e55315339480b7159af
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543952"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349048"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -20,7 +20,7 @@ ms.locfileid: "56543952"
 
 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C/c + + WinUSB 模板。 对于此模板中，您需要使用 Windows Driver Kit (WDK) （包含有关 Windows 调试工具) 和 Microsoft Visual Studio （专业版或旗舰版） 的集成的环境。 该模板可以用作起始点。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>必备组件
 
 
 -   若要设置集成的开发环境，首先安装 Microsoft Visual Studio Ultimate 2012 或 Microsoft Visual Studio Professional 2012，然后安装 WDK。 有关如何获取 Visual Studio 和 WDK 的信息，你可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到。
@@ -36,11 +36,11 @@ ms.locfileid: "56543952"
 3.  在中间窗格中，选择**WinUSB 应用程序。**
 4.  在中**名称**字段中，如果你想要更改项目名称。 在本主题中，我们将使用默认名称。
 5.  在**位置**字段中，输入要在其中创建新项目的目录。
-6.  选中**创建解决方案的目录**。 单击“确定” 。
+6.  选中“创建解决方案的目录”。 单击 **“确定”**。
 
     ![visual studio 中的 winusb 模板](images/winusb-template.png)
 
-    Visual Studio 将创建两个项目和解决方案。 您可以看到解决方案、 两个项目，以及属于每个项目中的文件**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 (如果**解决方案资源管理器**窗口不可见，请选择**解决方案资源管理器**从**视图**菜单。)该解决方案包含一个名为 USB Application1 和一个名为 USB Application1 包的驱动程序包项目的 c + + 应用程序项目。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。
+    Visual Studio 将创建两个项目和解决方案。 您可以看到解决方案、 两个项目，以及属于每个项目中的文件**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 （如果未显示“解决方案资源管理器”窗口，请从“视图”菜单中选择“解决方案资源管理器”。）该解决方案包含一个名为 USB Application1 和一个名为 USB Application1 包的驱动程序包项目的 c + + 应用程序项目。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。
 
     ![winusb 模板解决方案资源管理器](images/winusb-template1.png)
 
@@ -92,7 +92,7 @@ ms.locfileid: "56543952"
     6.  在中**USB Application1 包属性页**窗口中的，在左窗格中，导航到**配置属性&gt;驱动程序安装&gt;部署**，如中所示下面的屏幕截图。
     7.  检查**启用部署**，并检查**删除以前的驱动程序版本部署前**。
     8.  对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们使用名为 dbg 目标的计算机。
-    9.  选择**安装并验证**。 单击“确定” 。
+    9.  选择**安装并验证**。 单击 **“确定”**。
 
         ![winusb 模板](images/winusb-template4.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "56543952"
 
     11. 选择**生成解决方案**从**生成**菜单。 Visual Studio 显示生成进度**输出**窗口。 （如果**输出**窗口不可见，则从**视图**菜单中选择**输出**。）在此练习中，我们已构建运行 Windows 8.1 的 x-64 系统的项目。
 
-在目标计算机上，你将看到运行驱动程序安装脚本。 驱动程序文件复制到 %systemdrive%\\drivertest\\目标计算机上的驱动程序文件夹。 验证.inf、.cat、 测试证书和.sys 文件和任何其他必要的文件，是否存在 %systemdrive%\\drivertest\\驱动程序文件夹。 设备必须出现在设备管理器中未出现错误。
+在目标计算机上，你将看到运行驱动程序安装脚本。 驱动程序文件复制到 %systemdrive%\\drivertest\\目标计算机上的驱动程序文件夹。 请确认 .inf、.cat、测试证书和 .sys 文件以及其他任何必要的文件均位于 %systemdrive%\\drivertest\\drivers 文件夹下。 设备必须出现在设备管理器中未出现错误。
 
 在主计算机中，你会看到此消息中的**输出**窗口。
 
@@ -195,7 +195,7 @@ Arguments:
 
     DevicePath - On successful return, the path of the device (use with CreateFile).
 
-    BufLen - The size of DevicePath&#39;s buffer, in bytes
+    BufLen - The size of DevicePath's buffer, in bytes
 
     FailureDeviceNotFound - TRUE when failure is returned due to no devices
         found with the correct device interface (device not connected, driver
@@ -297,7 +297,7 @@ Return value:
     length = requiredLength;
 
     //
-    // Get the interface&#39;s path string
+    // Get the interface's path string
     //
     bResult = SetupDiGetDeviceInterfaceDetail(deviceInfo,
                                               &interfaceData,

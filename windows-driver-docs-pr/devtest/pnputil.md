@@ -4,12 +4,12 @@ description: PnPUtil
 ms.assetid: 3678fd41-c3ee-4538-b783-6f099ac104a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10cbef0f8613fab0e2e0960e08705fb0b812051a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 13428eadb2d861070adde21738780789a86a4744
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543984"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349468"
 ---
 # <a name="pnputil"></a>PnPUtil
 
@@ -35,7 +35,7 @@ PnPUtil (PnPUtil.exe) 是一个命令行工具，使管理员可以执行以下�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>PnPUtil (PnPUtil.exe) 包含在每个版本的 Windows，从 Windows Vista 开始 （在 %windir%\system32 目录中）。 没有&#39;t 单独的 PnPUtil 下载包。</p>
+<td align="left"><p>PnPUtil (PnPUtil.exe) 包含在每个版本的 Windows，从 Windows Vista 开始 （在 %windir%\system32 目录中）。 没有单独的 PnPUtil 下载包。</p>
 <ul>
 <li>打开<strong>命令提示符</strong>窗口 (<strong>以管理员身份运行</strong>)。</li>
 <li>类型<strong>pnputil /？</strong> 若要查看命令选项。 请参阅<a href="pnputil-command-syntax.md" data-raw-source="[&lt;strong&gt;PnPUtil Command Syntax&lt;/strong&gt;](pnputil-command-syntax.md)"> <strong>PnPUtil 命令语法</strong></a>有关详细信息。</li>

@@ -1,6 +1,6 @@
 ---
-title: 创建文件系统驱动程序 INF 文件
-description: 创建文件系统驱动程序 INF 文件
+title: 为文件系统驱动程序创建 INF 文件
+description: 为文件系统驱动程序创建 INF 文件
 ms.assetid: 4b67159f-a5a5-46da-9500-a9c6b6995da4
 keywords:
 - INF 文件 WDK 文件系统中，创建
@@ -15,14 +15,14 @@ keywords:
 - 创建 WDK 文件系统的 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2bfdb63c8482e885f28db46f0a71acb659ee77e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9c102c631960d0c73dcb48b37b4be679c890fcb
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527087"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464064"
 ---
-# <a name="creating-an-inf-file-for-a-file-system-driver"></a>创建文件系统驱动程序 INF 文件
+# <a name="creating-an-inf-file-for-a-file-system-driver"></a>为文件系统驱动程序创建 INF 文件
 
 
 ## <span id="ddk_creating_an_inf_file_for_a_file_system_filter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
@@ -106,7 +106,7 @@ CatalogFile =
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>签名</strong></p></td>
-<td align="left"><p>&quot;$WINDOWS NT$&quot;</p></td>
+<td align="left"><p>"$WINDOWS NT $"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>提供程序</strong></p></td>
@@ -261,7 +261,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -306,7 +306,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">操作</th>
 </tr>
 </thead>
@@ -321,11 +321,11 @@ AddReg         = ExampleFileSystem.AddRegistry
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000002</p></td>
-<td align="left"><p>SERVICE_ERROR_SEVERE (切换到注册表&#39;s LastKnownGood 控件集和继续系统启动。)</p></td>
+<td align="left"><p>SERVICE_ERROR_SEVERE (切换到注册表的 LastKnownGood 控件集和继续系统启动。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000003</p></td>
-<td align="left"><p>SERVICE_ERROR_CRITICAL (如果系统启动时不使用注册表&#39;s LastKnownGood 控件设置，请切换到 LastKnownGood 并重试。 如果启动仍失败，运行错误检查例程。 启动系统所需的驱动程序应指定此值在其 INF 文件中。）</p></td>
+<td align="left"><p>SERVICE_ERROR_CRITICAL （如果系统启动时未使用注册表的 LastKnownGood 控件集，切换到 LastKnownGood，然后重试。 如果启动仍失败，运行错误检查例程。 启动系统所需的驱动程序应指定此值在其 INF 文件中。）</p></td>
 </tr>
 </tbody>
 </table>

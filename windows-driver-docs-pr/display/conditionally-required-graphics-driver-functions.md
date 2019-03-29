@@ -1,6 +1,6 @@
 ---
-title: 有条件地需要图形驱动程序函数
-description: 有条件地需要图形驱动程序函数
+title: 在不同的条件下需要的图形驱动程序函数
+description: 在不同的条件下需要的图形驱动程序函数
 ms.assetid: db5816e2-83a1-491d-99f5-d693fefcf1fd
 keywords:
 - GDI WDK Windows 2000 显示、 有条件地所需的功能
@@ -12,14 +12,14 @@ keywords:
 - DDI WDK 图形，有条件地所需的功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 480fdf8bd0481c05200dc676f1a42ebb28b11c6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1cca1fcf72c7d18e8658557ea9bd498de08f35d9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541020"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349188"
 ---
-# <a name="conditionally-required-graphics-driver-functions"></a>有条件地需要图形驱动程序函数
+# <a name="conditionally-required-graphics-driver-functions"></a>在不同的条件下需要的图形驱动程序函数
 
 
 ## <span id="ddk_conditionally_required_graphics_driver_functions_gg"></span><span id="DDK_CONDITIONALLY_REQUIRED_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>
@@ -51,7 +51,7 @@ ms.locfileid: "56541020"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556190" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556190)"><strong>DrvDescribePixelFormat</strong></a></p></td>
 <td align="left"><p>支持具有不同的像素格式的 windows 的单个图面的显示</p></td>
-<td align="left"><p>介绍 PDEV&#39;s 像素格式。</p></td>
+<td align="left"><p>介绍 PDEV 的像素格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556235" data-raw-source="[&lt;strong&gt;DrvGetTrueTypeFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556235)"><strong>DrvGetTrueTypeFile</strong></a></p></td>
@@ -111,7 +111,7 @@ ms.locfileid: "56541020"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556285" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556285)"><strong>DrvSetPixelFormat</strong></a></p></td>
 <td align="left"><p>支持具有不同的像素格式的 windows 的单个图面的显示</p></td>
-<td align="left"><p>设置窗口&#39;s 像素格式。</p></td>
+<td align="left"><p>设置窗口的像素格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556316" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556316)"><strong>DrvStrokePath</strong></a></p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "56541020"
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556322" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556322)"><strong>DrvSwapBuffers</strong></a></p></td>
 <td align="left"><p>支持使用双缓冲的像素格式的驱动程序</p></td>
-<td align="left"><p>显示内容的表面&#39;s 隐藏的缓冲区。</p></td>
+<td align="left"><p>显示面上的隐藏缓冲区的内容。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557277" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557277)"><strong>DrvTextOut</strong></a></p></td>

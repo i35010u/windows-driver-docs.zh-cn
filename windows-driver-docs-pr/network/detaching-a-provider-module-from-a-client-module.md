@@ -1,6 +1,6 @@
 ---
-title: 分离客户端模块提供提供程序的模块
-description: 分离客户端模块提供提供程序的模块
+title: 从客户端模块分离提供程序模块
+description: 从客户端模块分离提供程序模块
 ms.assetid: 011d0770-6942-480e-95ee-88a2903822b2
 keywords:
 - 提供程序模块 WDK 网络模块注册机构，分离
@@ -11,14 +11,14 @@ keywords:
 - NmrDeregisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d885a13b9cf2182574809b695cb58315cf71fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6852d48f426a1c09c124eb1d510dc694e9ef3a51
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533455"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350424"
 ---
-# <a name="detaching-a-provider-module-from-a-client-module"></a>分离客户端模块提供提供程序的模块
+# <a name="detaching-a-provider-module-from-a-client-module"></a>从客户端模块分离提供程序模块
 
 
 当提供程序模块注销与网络模块注册机构 (NMR) 通过调用[ **NmrDeregisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568778)函数，NMR 调用提供程序模块[ *ProviderDetachClient* ](https://msdn.microsoft.com/library/windows/hardware/ff570397)回调函数，一次它附加到，以便提供程序模块可以从所有客户端模块本身分离，如提供程序模块的一部分的取消注册过程的每个客户端模块.
@@ -49,7 +49,7 @@ NTSTATUS
 
   // Set a flag indicating that the provider module is detaching
   // from the client module so that no more calls are made to
-  // the client module&#39;s NPI callback functions.
+  // the client module's NPI callback functions.
   ...
 
   // Check if there are no in-progress NPI callback function calls
@@ -68,7 +68,7 @@ NTSTATUS
     // completion of the in-progress NPI callback function calls
     return STATUS_PENDING;
 
-    // When the last in-progress call to the client module&#39;s
+    // When the last in-progress call to the client module's
     // NPI callback functions completes, the provider module
     // must call NmrProviderDetachClientComplete() with the
     // binding handle for the attachment to the client module.
@@ -89,7 +89,7 @@ VOID
   // Clean up the provider binding context structure
   ...
 
-  // Free the memory for provider&#39;s binding context structure
+  // Free the memory for provider's binding context structure
   ExFreePoolWithTag(
     BindingContext,
     BINDING_CONTEXT_POOL_TAG

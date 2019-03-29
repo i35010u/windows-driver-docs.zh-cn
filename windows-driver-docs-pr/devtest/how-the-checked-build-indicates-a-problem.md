@@ -1,6 +1,6 @@
 ---
-title: 已检验的版本如何表示存在问题
-description: 已检验的版本如何表示存在问题
+title: 已检验版本如何指出问题
+description: 已检验版本如何指出问题
 ms.assetid: 373519e0-bca9-434e-8cc3-e11c2d4b42a4
 keywords:
 - 检查内部版本号 WDK，问题通知
@@ -12,14 +12,14 @@ keywords:
 - 错误 WDK 检查生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c4585eaa4fb9556d323f1e7091b77dda60c999f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 81478c63008e35f60b35159a6e51537d5200b373
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543866"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349546"
 ---
-# <a name="how-the-checked-build-indicates-a-problem"></a>已检验的版本如何表示存在问题
+# <a name="how-the-checked-build-indicates-a-problem"></a>已检验版本如何指出问题
 
 
 ## <span id="ddk_how_the_checked_build_indicates_a_problem_tools"></span><span id="DDK_HOW_THE_CHECKED_BUILD_INDICATES_A_PROBLEM_TOOLS"></span>
@@ -44,7 +44,7 @@ ms.locfileid: "56543866"
 ***   Source File: D:\nt\private\ntos\io\iosubs.c, line 3305
 
 0:Break, Ignore, Terminate Process or Terminate Thread (bipt)? b
-0:Execute &#39;!cxr BD94B918&#39; to dump context
+0:Execute '!cxr BD94B918' to dump context
 Break instruction exception - code 80000003 (first chance)
 ntkrnlmp!DbgBreakPoint:
 804a3ce4 cc               int     3

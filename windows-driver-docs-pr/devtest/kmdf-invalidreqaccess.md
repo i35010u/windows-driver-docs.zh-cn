@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd9b2cb95ed06280dacaab00c9b0d5986497a7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9dbdfcad92d21b604f2ff0e2f252965c679f241c
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525527"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419573"
 ---
 # <a name="invalidreqaccess-rule-kmdf"></a>InvalidReqAccess 规则 (kmdf)
 
@@ -58,33 +58,44 @@ ms.locfileid: "56525527"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
-[**WdfRequestAllocateTimer**](https://msdn.microsoft.com/library/windows/hardware/ff549938)
-[**WdfRequestCancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff549941) 
- [ **WdfRequestChangeTarget**](https://msdn.microsoft.com/library/windows/hardware/ff549943)
-[**WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945) 
- [ **WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549948)
-[**WdfRequestCompleteWithPriorityBoost** ](https://msdn.microsoft.com/library/windows/hardware/ff549949) 
- [**WdfRequestFormatRequestUsingCurrentType**](https://msdn.microsoft.com/library/windows/hardware/ff549955)
-[**WdfRequestForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff549958) 
- [**WdfRequestGetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff549961)
-[**WdfRequestGetFileObject** ](https://msdn.microsoft.com/library/windows/hardware/ff549963) 
- [**WdfRequestGetInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549965)
-[**WdfRequestGetIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff549968) 
-[ **WdfRequestGetParameters**](https://msdn.microsoft.com/library/windows/hardware/ff549969)
-[**WdfRequestGetRequestorMode** ](https://msdn.microsoft.com/library/windows/hardware/ff549971) 
- [ **WdfRequestIsFrom32BitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549978)
-[**WdfRequestMarkCancelable**](https://msdn.microsoft.com/library/windows/hardware/ff549983) 
- [ **WdfRequestMarkCancelableEx** ](https://msdn.microsoft.com/library/windows/hardware/ff549984) 
- [ **WdfRequestProbeAndLockUserBufferForRead**](https://msdn.microsoft.com/library/windows/hardware/ff549987)
-[**WdfRequestProbeAndLockUserBufferForWrite** ](https://msdn.microsoft.com/library/windows/hardware/ff549989) 
-[ **WdfRequestRequeue**](https://msdn.microsoft.com/library/windows/hardware/ff550012)
-[**WdfRequestRetrieveInputBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff550014) 
- [ **WdfRequestRetrieveInputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550015)
-[**WdfRequestRetrieveInputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550016) 
- [ **WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018)**](https://msdn.microsoft.com/library/windows/hardware/ff550037)
+[**WdfRequestAllocateTimer**](https://msdn.microsoft.com/library/windows/hardware/ff549938)  
+[**WdfRequestCancelSentRequest**](https://msdn.microsoft.com/library/windows/hardware/ff549941)  
+[**WdfRequestChangeTarget**](https://msdn.microsoft.com/library/windows/hardware/ff549943)  
+[**WdfRequestComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549945)  
+[**WdfRequestCompleteWithInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549948)  
+[**WdfRequestCompleteWithPriorityBoost**](https://msdn.microsoft.com/library/windows/hardware/ff549949)  
+[**WdfRequestFormatRequestUsingCurrentType**](https://msdn.microsoft.com/library/windows/hardware/ff549955)  
+[**WdfRequestForwardToIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff549958)  
+[**WdfRequestGetCompletionParams**](https://msdn.microsoft.com/library/windows/hardware/ff549961)  
+[**WdfRequestGetFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff549963)  
+[**WdfRequestGetInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549965)  
+[**WdfRequestGetIoQueue**](https://msdn.microsoft.com/library/windows/hardware/ff549968)  
+[**WdfRequestGetParameters**](https://msdn.microsoft.com/library/windows/hardware/ff549969)  
+[**WdfRequestGetRequestorMode**](https://msdn.microsoft.com/library/windows/hardware/ff549971)  
+[**WdfRequestIsFrom32BitProcess**](https://msdn.microsoft.com/library/windows/hardware/ff549978)  
+[**WdfRequestMarkCancelable**](https://msdn.microsoft.com/library/windows/hardware/ff549983)  
+[**WdfRequestMarkCancelableEx**](https://msdn.microsoft.com/library/windows/hardware/ff549984)  
+[**WdfRequestProbeAndLockUserBufferForRead**](https://msdn.microsoft.com/library/windows/hardware/ff549987)  
+[**WdfRequestProbeAndLockUserBufferForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff549989)  
+[**WdfRequestRequeue**](https://msdn.microsoft.com/library/windows/hardware/ff550012)  
+[**WdfRequestRetrieveInputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550014)  
+[**WdfRequestRetrieveInputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550015)  
+[**WdfRequestRetrieveInputWdmMdl**](https://msdn.microsoft.com/library/windows/hardware/ff550016)  
+[**WdfRequestRetrieveOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550018)  
+[**WdfRequestRetrieveOutputMemory**](https://msdn.microsoft.com/library/windows/hardware/ff550019)  
+[**WdfRequestRetrieveOutputWdmMdl**](https://msdn.microsoft.com/library/windows/hardware/ff550021)  
+[**WdfRequestRetrieveUnsafeUserInputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550022)  
+[**WdfRequestRetrieveUnsafeUserOutputBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff550024)  
+[**WdfRequestReuse**](https://msdn.microsoft.com/library/windows/hardware/ff550026)  
+[**WdfRequestSend**](https://msdn.microsoft.com/library/windows/hardware/ff550027)  
+[**WdfRequestSetCompletionRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff550030)  
+[**WdfRequestSetInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550032)  
+[**WdfRequestUnmarkCancelable**](https://msdn.microsoft.com/library/windows/hardware/ff550035)  
+[**WdfRequestWdmFormatUsingStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff550036)  
+[**WdfRequestWdmGetIrp**](https://msdn.microsoft.com/library/windows/hardware/ff550037)  
  
 
  

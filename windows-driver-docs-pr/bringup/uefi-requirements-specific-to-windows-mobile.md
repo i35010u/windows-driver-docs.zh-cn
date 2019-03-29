@@ -4,12 +4,12 @@ description: 除了适用于所有 Windows 版本的 UEFI 要求，Windows 10 �
 ms.assetid: 12a03f5b-1717-4daf-90ef-5e530f72b19e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5bac94d5be12ec499ca5638f6885de5cd55f7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e144aa50e4d664cc5766d9297410afcd8db7f22
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464259"
 ---
 # <a name="uefi-requirements-for-windows-10-mobile"></a>Windows 10 移动版的 UEFI 要求
 
@@ -53,7 +53,7 @@ ms.locfileid: "56546070"
 </tr>
 <tr class="even">
 <td>内存服务</td>
-<td>GetMemoryMap() 函数必须返回完整的物理内存的平台，由 6.2 节指定的范围&quot;内存服务&quot;UEFI 规范。</td>
+<td>GetMemoryMap() 函数必须返回完整的物理内存的平台，即指定的 UEFI 规范的 6.2 节"内存服务"的范围。</td>
 </tr>
 <tr class="odd">
 <td>EFI 块 I/O 协议</td>
@@ -138,7 +138,7 @@ ms.locfileid: "56546070"
 <li><p>UEFI 应用程序必须通过以下方式之一中的行为：</p>
 <ul>
 <li><p>它们必须<em>永远不会</em>主要 OS 在启动期间运行或更新操作系统。</p>
-<p>-或-</p></li>
+<p>— 或 —</p></li>
 <li><p>它们必须<em>始终</em>主要 OS 在启动期间运行或更新操作系统。</p></li>
 </ul></li>
 </ul>

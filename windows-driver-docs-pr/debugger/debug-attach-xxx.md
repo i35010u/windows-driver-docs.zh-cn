@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af76c54acb0e4d55b1ade9ed5849f26706b33f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a7823934b3ea377d9a5a45d44748713d3ffa4683
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542629"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350382"
 ---
 # <a name="debugattachxxx"></a>DEBUG\_ATTACH\_XXX
 
@@ -55,7 +55,7 @@ ms.locfileid: "56542629"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>不挂起目标&#39;s 线程附加 noninvasively 时。</p>
+<p>附加 noninvasively 时不挂起目标线程。</p>
 <p>如果设置此标志，然后将标志 DEBUG_ATTACH_NONINVASIVE 还必须进行设置。</p>
 </td>
 </tr>
@@ -75,7 +75,7 @@ ms.locfileid: "56542629"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>恢复目标的所有&#39;s 线程附加 invasively 时。</p>
+<p>附加 invasively 时恢复所有目标的线程。</p>
 <p>如果设置此标志，必须不设置 DEBUG_ATTACH_NONINVASIVE 和 DEBUG_ATTACH_EXISTING 的标志。</p>
 </td>
 </tr>
@@ -92,7 +92,7 @@ ms.locfileid: "56542629"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">DbgEng.h （包括 DbgEng.h）</td>
 </tr>
 </tbody>

@@ -7,12 +7,12 @@ keywords:
 - WskReceive
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bca3dbc90a94471ba9e6c6018ae11e6292b5823f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 50d984c939ed015fb5e1638385257e3f07c7b9de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519789"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349522"
 ---
 # <a name="receiving-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字接收数据
 
@@ -129,7 +129,7 @@ NTSTATUS
 下面的代码示例显示如何 WSK 应用程序可以接收数据，调用面向连接的套接字的 WSK 子系统*WskReceiveEvent*事件回调函数。
 
 ```C++
-// A connection-oriented socket&#39;s WskReceiveEvent
+// A connection-oriented socket's WskReceiveEvent
 // event callback function
 NTSTATUS WSKAPI
   WskReceiveEvent(

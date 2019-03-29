@@ -1,6 +1,6 @@
 ---
-title: GDI 颜色空间转换
-description: GDI 颜色空间转换
+title: GDI 色彩空间转换
+description: GDI 色彩空间转换
 ms.assetid: f1840d58-9f93-4aa3-8344-d5e61c176254
 keywords:
 - 图面协商 WDK GDI，颜色空间转换
@@ -8,14 +8,14 @@ keywords:
 - 颜色空间转换 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e48825a3262057b0ee189ea52f08fe451d0478a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 21e5d5d99cc5e8cc0c0f11bfe51b46a0d916d20f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554903"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349972"
 ---
-# <a name="gdi-color-space-conversions"></a>GDI 颜色空间转换
+# <a name="gdi-color-space-conversions"></a>GDI 色彩空间转换
 
 
 ## <span id="ddk_gdi_color_space_conversions_gg"></span><span id="DDK_GDI_COLOR_SPACE_CONVERSIONS_GG"></span>
@@ -54,7 +54,7 @@ GDI 识别以下的 RGB 颜色空间：
 <tr class="odd">
 <td align="left"><p>5:5:5</p></td>
 <td align="left"><p>5:6:5</p></td>
-<td align="left"><p>源的最高有效位 (MSB)&#39;s 绿色通道追加到目标的低序位末尾&#39;s 绿色通道。</p></td>
+<td align="left"><p>源的绿色通道的最高有效位 (MSB) 追加到目标的绿色通道低顺序结束。</p></td>
 <td align="left"><p>(0x15， <strong>0x19</strong>、 0x1D) 将变为</p>
 <div>
  
@@ -82,7 +82,7 @@ GDI 识别以下的 RGB 颜色空间：
 <tr class="odd">
 <td align="left"><p>5:6:5</p></td>
 <td align="left"><p>5:5:5</p></td>
-<td align="left"><p>放弃在源的最高有效位 (LSB)&#39;s 绿色通道。</p></td>
+<td align="left"><p>放弃源的绿色通道的最低有效的位 (LSB)。</p></td>
 <td align="left"><p>(0x15， <strong>0x33</strong>、 0x1D) 将变为</p>
 <div>
  

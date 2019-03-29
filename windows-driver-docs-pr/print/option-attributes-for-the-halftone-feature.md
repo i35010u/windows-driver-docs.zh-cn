@@ -6,12 +6,12 @@ keywords:
 - 半色调功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c24b5a8f7c99bee149e0bf90be555553b568eb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ee48e901314796fb817a03ef93fd88b4155bbeae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542983"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348662"
 ---
 # <a name="option-attributes-for-the-halftone-feature"></a>半色调功能的选项属性
 
@@ -37,7 +37,7 @@ ms.locfileid: "56542983"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>HTCallbackID</strong></p></td>
-<td><p>正的数字值传递给呈现插件&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554258" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554258)"> <strong>IPrintOemUni::HalftonePattern</strong> </a>方法作为其<em>dwCallbackID</em>参数。</p></td>
+<td><p>正的数字值传递给呈现插件的<a href="https://msdn.microsoft.com/library/windows/hardware/ff554258" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554258)"> <strong>IPrintOemUni::HalftonePattern</strong> </a>方法作为其<em>dwCallbackID</em>参数。</p></td>
 <td><p>需要<strong>IPrintOemUni::HalftonePattern</strong>提供方法。 请参阅<a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv 与半色调</a>。</p></td>
 </tr>
 <tr class="even">

@@ -12,12 +12,12 @@ keywords:
 - Srb WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e363ad5e03a9330bbf6497bb740deb75eeaca2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 61a1165316976e6a91e49f2ea2c23dc23773a42a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544623"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349384"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 微型驱动程序操作
 
@@ -55,7 +55,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -74,7 +74,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557605" data-raw-source="[&lt;em&gt;CamConfigureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557605)"> <em>CamConfigureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557605" data-raw-source="[&lt;em&gt;CamConfigureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557605)"> <em>CamConfigureEx</em> </a>回调函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>照相机微型驱动程序</p></td>
@@ -86,7 +86,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557614" data-raw-source="[&lt;em&gt;CamInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557614)"> <em>CamInitialize</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557614" data-raw-source="[&lt;em&gt;CamInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557614)"> <em>CamInitialize</em> </a>回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -108,7 +108,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -119,7 +119,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
-<td><p>指向设备中的属性集的数组中填写<em>stream.sys</em>类驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559690" data-raw-source="[&lt;strong&gt;HW_STREAM_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559690)"> <strong>HW_STREAM_HEADER</strong> </a>结构。</p></td>
+<td><p>指向设备中的属性集的数组中填写<em>stream.sys</em>类驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff559690" data-raw-source="[&lt;strong&gt;HW_STREAM_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559690)"> <strong>HW_STREAM_HEADER</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p>照相机微型驱动程序</p></td>
@@ -153,7 +153,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -174,7 +174,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -195,7 +195,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -216,7 +216,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -241,7 +241,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -260,11 +260,11 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557600" data-raw-source="[&lt;em&gt;CamAllocateBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557600)"> <em>CamAllocateBandwidthEx</em> </a>根据视频格式的数据分配带宽和视频格式获取的最大缓冲区大小的回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557600" data-raw-source="[&lt;em&gt;CamAllocateBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557600)"> <em>CamAllocateBandwidthEx</em> </a>根据视频格式的数据分配带宽和视频格式获取的最大缓冲区大小的回调函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>照相机微型驱动程序</p></td>
-<td><p>计算等时通道&#39;s 满足请求的帧速率和输出窗口大小的最大数据包大小。</p></td>
+<td><p>计算满足请求的帧速率和输出窗口大小等时通道的最大数据包大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -280,7 +280,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -302,7 +302,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -317,7 +317,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -325,7 +325,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>回调函数来释放同步总线带宽，可能的话。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>回调函数来释放同步总线带宽，可能的话。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -347,7 +347,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -358,11 +358,11 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>如果任何流都仍然打开时，关闭它们通过调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>每个流的回调函数。</p></td>
+<td><p>如果任何流都仍然打开时，关闭它们通过调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>回调对每个流的功能。</p></td>
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557646" data-raw-source="[&lt;em&gt;CamUnInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557646)"> <em>CamUnInitialize</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557646" data-raw-source="[&lt;em&gt;CamUnInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557646)"> <em>CamUnInitialize</em> </a>回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -380,7 +380,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -395,7 +395,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>上所有打开的流的回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>上所有打开的流的回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
@@ -413,7 +413,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -442,7 +442,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -457,7 +457,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
 </tr>
 <tr class="even">
 <td><p>照相机微型驱动程序</p></td>
@@ -475,7 +475,7 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -494,11 +494,11 @@ USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 </tr>
 <tr class="even">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
+<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
 </tr>
 </tbody>
 </table>

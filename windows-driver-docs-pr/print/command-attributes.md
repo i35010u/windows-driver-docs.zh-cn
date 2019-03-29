@@ -13,12 +13,12 @@ keywords:
 - 参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b33202afc8d3163859c1f17c9043aec70dfe377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bff0efceae5936f6a41ba19ffd2c233be0795fcc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534679"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350337"
 ---
 # <a name="command-attributes"></a>命令属性
 
@@ -52,7 +52,7 @@ ms.locfileid: "56534679"
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CallbackID</strong></p></td>
-<td><p>传递给呈现插件的正数值的值&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554216" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554216)"> <strong>IPrintOemUni::CommandCallback</strong> </a>方法作为其<em>dCmdCbID</em>参数。</p></td>
+<td><p>传递给呈现插件的正数值的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff554216" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554216)"> <strong>IPrintOemUni::CommandCallback</strong> </a>方法作为其<em>dCmdCbID</em>参数。</p></td>
 <td><p>所需<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">动态生成的打印机命令</a>。 如果不是有效 <strong></em>Cmd</strong>指定。</p></td>
 </tr>
 <tr class="even">
@@ -74,7 +74,7 @@ ms.locfileid: "56534679"
 </tr>
 <tr class="odd">
 <td><p><strong><em>params</strong></p></td>
-<td><p><a href="lists.md" data-raw-source="[List](lists.md)">列表</a>的<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>传递插件呈现到&#39;s IPrintOemUni::CommandCallback 方法作为传递 EXTRAPARAM 结构中其<em>pdwParams</em>自变量.</p></td>
+<td><p><a href="lists.md" data-raw-source="[List](lists.md)">列表</a>的<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>传递到呈现插件的 IPrintOemUni::CommandCallback 方法作为传递 EXTRAPARAM 结构中其<em>pdwParams</em>参数。</p></td>
 <td><p>有效才 <strong></em>CallbackID</strong>还指定了。</p></td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
-title: 模拟
-description: 模拟
+title: Impersonation
+description: Impersonation
 ms.assetid: 368c6741-b51a-4629-8ae6-a7848c07c0fc
 keywords:
 - 安全 WDK 文件系统，添加安全检查
@@ -8,14 +8,14 @@ keywords:
 - 模拟 WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb46eb45aa8c3e5ed52a70f2f78c97fa97a5ba5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d079c4fc907a57e2c8825edc1c0cca9cd0386187
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540928"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350188"
 ---
-# <a name="impersonation"></a>模拟
+# <a name="impersonation"></a>Impersonation
 
 
 ## <span id="ddk_impersonation_if"></span><span id="DDK_IMPERSONATION_IF"></span>
@@ -99,7 +99,7 @@ NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
 
     if (!NT_SUCCESS(Status)) {
       //
-      // This is bad - we can&#39;t restore, we can&#39;t leave it this way 
+      // This is bad - we can't restore, we can't leave it this way 
       //
       PsRevertToSelf();
     }

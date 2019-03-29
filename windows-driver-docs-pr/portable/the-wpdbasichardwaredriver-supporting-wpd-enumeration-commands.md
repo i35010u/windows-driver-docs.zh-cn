@@ -1,14 +1,14 @@
 ---
-Description: Support for enumeration commands (WpdBasicHardwareDriverSample)
+Description: 对枚举命令 (WpdBasicHardwareDriverSample) 的支持
 title: 对枚举命令 (WpdBasicHardwareDriverSample) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 655b946704ff169cc07113ad307f9de6e3b6d51d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5074671e507c94df29c2009e1f0fea38b13fd81
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520088"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348818"
 ---
 # <a name="support-for-enumeration-commands-wpdbasichardwaredriversample"></a>对枚举命令 (WpdBasicHardwareDriverSample) 的支持
 
@@ -17,7 +17,7 @@ ms.locfileid: "56520088"
 
 下表中的信息显示每个受支持的属性的命令，以及处理程序的名称， **DispatchMessage**处理给定的命令时调用。 当应用程序调用中的几种方法之一发布这些命令后**IPortableDeviceContent**或**IEnumPortableDeviceObjectIDs**接口。
 
-| 命令                                        | 处理程序     | 描述                                                                |
+| Command                                        | 处理程序     | 描述                                                                |
 |------------------------------------------------|-------------|----------------------------------------------------------------------------|
 | WPD\_命令\_对象\_枚举\_启动\_查找 | OnStartFind | 创建新的枚举上下文并将其存储在客户端上下文映射。 |
 | WPD\_命令\_对象\_枚举\_查找\_下一步  | OnFindNext  | 返回所请求的对象的对象标识符。                     |
@@ -52,8 +52,8 @@ VOID WpdObjectEnumerator::InitializeEnumerationContext(
     // The eumeration context is initialized below with this information.
     if (strParentObjectID.CompareNoCase(L"") == 0)
     {
-        // Clients passing an &#39;empty&#39; string for the parent are asking for the
-        // &#39;DEVICE&#39; object.  We should return 1 child in this case.
+        // Clients passing an 'empty' string for the parent are asking for the
+        // 'DEVICE' object.  We should return 1 child in this case.
         pEnumeratorContext->m_TotalChildren = 1;
     }
     else if (strParentObjectID.CompareNoCase(WPD_DEVICE_OBJECT_ID) == 0)
@@ -70,7 +70,7 @@ VOID WpdObjectEnumerator::InitializeEnumerationContext(
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

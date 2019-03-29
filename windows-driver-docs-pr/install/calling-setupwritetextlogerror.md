@@ -1,17 +1,17 @@
 ---
-title: Calling SetupWriteTextLogError
-description: Calling SetupWriteTextLogError
+title: 调用 SetupWriteTextLogError
+description: 调用 SetupWriteTextLogError
 ms.assetid: 55edc72a-2d53-4084-a1e4-e7e6515a4990
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56db982e2686a67c36dd3ac9b038256ef0de8183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e1c43885ad71347e009312daa1088bd9d6e71d87
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524006"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350258"
 ---
-# <a name="calling-setupwritetextlogerror"></a>Calling SetupWriteTextLogError
+# <a name="calling-setupwritetextlogerror"></a>调用 SetupWriteTextLogError
 
 
 [**SetupWriteTextLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff552232)会将信息写入特定于安装程序 Api 的错误或 Win32 错误到有关[SetupAPI 文本日志](setupapi-text-logs.md)。 **SetupWriteTextLogError**将两个连续的条目写入到文本日志： 第一个条目包含相同的信息与写入的相同的格式[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)和第二个条目记录对应的错误代码和错误的用户友好说明。
@@ -59,13 +59,13 @@ DWORD Category = TXTLOG_VENDOR;
 DWORD Flags = TXTLOG_ERROR ;
 DWORD ErrorCode = 1056; // The corresponding Win32 error code
 
-SetupWriteTextLog(LogToken, Category, Flags, ErrorCode, TEXT("Start Service: Failed to start service &#39;SomeService&#39;"),);
+SetupWriteTextLog(LogToken, Category, Flags, ErrorCode, TEXT("Start Service: Failed to start service 'SomeService'"),);
 ```
 
 如果 TXTLOG_VENDOR 事件类别，并为文本日志设置 TXTLOG_ERROR 事件级别，此代码会在将按如下所示设置格式的文本日志中创建一个条目：
 
 ```cpp
-!!!     :  Start Service: Failed to start service &#39;SomeService&#39; 
+!!!     :  Start Service: Failed to start service 'SomeService' 
 !!!   :  Error 1056: An instance of the service is already running.
 ```
 

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28141
-ms.openlocfilehash: 32b2d9bffb684f05583705f454d6c2fc6ae9942b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b66bc9b71a740a3bf096790db9c6ebf35a44e988
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542611"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464305"
 ---
 # <a name="c28141"></a>C28141
 
@@ -29,7 +29,7 @@ ms.locfileid: "56542611"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>上次设 IRQL &lt; <em>IRQL</em> &gt;行&lt;<em>行号</em>&gt;&quot;</p></td>
+<td align="left"><p>上次设 IRQL &lt; <em>IRQL</em> &gt;行&lt;<em>行号</em>&gt;"</p></td>
 </tr>
 </tbody>
 </table>

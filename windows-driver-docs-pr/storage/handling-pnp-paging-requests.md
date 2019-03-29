@@ -1,6 +1,6 @@
 ---
-title: 处理分页请求即插即用
-description: 处理分页请求即插即用
+title: 处理 PnP 分页请求
+description: 处理 PnP 分页请求
 ms.assetid: c30c70d9-69c6-42d7-ae69-9c2421ba1d53
 keywords:
 - 存储筛选器驱动程序 WDK，即插即用
@@ -9,14 +9,14 @@ keywords:
 - 即插即用 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15721b5b747f14fbc7a606863f24f5294d811774
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7d622518f5cc3b080db2efdfc2428f08f2adf0a2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519311"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349824"
 ---
-# <a name="handling-pnp-paging-requests"></a>处理分页请求即插即用
+# <a name="handling-pnp-paging-requests"></a>处理 PnP 分页请求
 
 
 ## <span id="ddk_handling_pnp_paging_requests_kg"></span><span id="DDK_HANDLING_PNP_PAGING_REQUESTS_KG"></span>
@@ -110,7 +110,7 @@ case DeviceUsageTypePaging: {
             // succeeded the addition of the paging 
             // file, it is illegal to fail the 
             // request. It is also the time to 
-            // clear the Filter DO&#39;s 
+            // clear the Filter DO's 
             //DO_POWER_PAGABLE flag.
  
             DeviceObject->Flags &= ~DO_POWER_PAGABLE; 

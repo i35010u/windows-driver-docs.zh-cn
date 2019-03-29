@@ -7,12 +7,12 @@ keywords:
 - NMR WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0866b59318fad1745a4bdd4955084f70e6c685d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0df3b4cbc19b082553bec52093ba7f201c77329
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542605"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350151"
 ---
 # <a name="unregistering-and-unloading-the-wsk-client"></a>取消注册和卸载 WSK 客户端
 
@@ -86,7 +86,7 @@ VOID
   // Clean up the binding context structure
   ...
 
-  // Free the memory for client&#39;s binding context structure
+  // Free the memory for client's binding context structure
   ExFreePoolWithTag(
     BindingContext,
     BINDING_CONTEXT_POOL_TAG

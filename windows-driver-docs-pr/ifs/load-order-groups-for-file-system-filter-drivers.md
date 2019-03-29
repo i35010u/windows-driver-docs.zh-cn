@@ -1,6 +1,6 @@
 ---
-title: 文件系统筛选器驱动程序的的加载顺序组
-description: 文件系统筛选器驱动程序的的加载顺序组
+title: 文件系统筛选器驱动程序的加载顺序组
+description: 文件系统筛选器驱动程序的加载顺序组
 ms.assetid: 57c9e4c6-186c-464f-ac83-c0669d46b189
 keywords:
 - 筛选器驱动程序 WDK 文件系统，加载的驱动程序
@@ -10,14 +10,14 @@ keywords:
 - 加载顺序组 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04587a348fbfdc066f57da2dda7227fd1c91d8e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a4ff7a0852955c73cb1df4018a744f853b7fa700
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544961"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464263"
 ---
-# <a name="load-order-groups-for-file-system-filter-drivers"></a>文件系统筛选器驱动程序的的加载顺序组
+# <a name="load-order-groups-for-file-system-filter-drivers"></a>文件系统筛选器驱动程序的加载顺序组
 
 
 ## <span id="ddk_file_system_filter_driver_load_order_groups_if"></span><span id="DDK_FILE_SYSTEM_FILTER_DRIVER_LOAD_ORDER_GROUPS_IF"></span>
@@ -53,7 +53,7 @@ Microsoft Windows XP 和更高版本操作系统提供一组专用的加载顺�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Filter</p></td>
-<td align="left"><p>此组是与相同&quot;筛选器&quot;是 Windows 2000 上提供及更早版本的加载顺序组。 此组上一次加载，并因此附加最远的地方文件系统。</p></td>
+<td align="left"><p>此组是与"筛选器"的加载顺序组的 Windows 2000 上提供及更早版本相同。 此组上一次加载，并因此附加最远的地方文件系统。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>FSFilter 顶部</p></td>

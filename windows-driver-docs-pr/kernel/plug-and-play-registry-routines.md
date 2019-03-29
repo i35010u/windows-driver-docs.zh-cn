@@ -1,6 +1,6 @@
 ---
-title: Plug and Play 注册表例程
-description: Plug and Play 注册表例程
+title: 即插即用注册表例程
+description: 即插即用注册表例程
 ms.assetid: d526af4e-8b33-46fb-9af9-b0d9b9f1913a
 keywords:
 - 注册表 WDK 内核插
@@ -13,14 +13,14 @@ keywords:
 - 即插即用 WDK 内核，注册表例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 522dff75517d99234bc6443a8817fb210b4d5cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ffa464523400ac527775ae1a350c74a45749e4cb
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525545"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350388"
 ---
-# <a name="plug-and-play-registry-routines"></a>Plug and Play 注册表例程
+# <a name="plug-and-play-registry-routines"></a>即插即用注册表例程
 
 
 插管理器将某些注册表项与驱动程序、 其设备和其设备接口实例相关联。 驱动程序可以使用这些密钥来存储与该驱动程序，或特定的设备或设备接口实例关联的持久性属性。
@@ -51,7 +51,7 @@ PnP 管理器将分配一个密钥用于驱动程序，称为驱动程序的软�
 PDEVICE_OBJECT pDeviceObject; // A pointer to the PDO for the device.
 HANDLE handle;
 UNICODE_STRING ValueName;
-ULONG Value = 109; // This is the value we&#39;re setting the key to.
+ULONG Value = 109; // This is the value we're setting the key to.
 NTSTATUS status;
 
 RtlInitUnicodeString(&ValueName, L"Value");

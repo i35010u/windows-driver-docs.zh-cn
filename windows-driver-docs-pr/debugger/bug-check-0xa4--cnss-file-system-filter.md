@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34edd603db40d03a9f6a31ce7e8e85b827796010
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2a70e2dddcc436f43097f360b2b9831bf93c879a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464125"
 ---
-# <a name="bug-check-0xa4-cnssfilesystemfilter"></a>Bug 检查 0xA4:CNSS\_FILE\_SYSTEM\_FILTER
+# <a name="bug-check-0xa4-cnssfilesystemfilter"></a>Bug 检查 0xA4：CNSS\_FILE\_SYSTEM\_FILTER
 
 
 CNSS\_文件\_系统\_筛选器错误检查的值为 0x000000A4。 此 bug 检查指示 CNSS 文件系统筛选器中出现问题。
@@ -44,7 +44,7 @@ CNSS\_文件\_系统\_筛选器错误检查的值为 0x000000A4。 此 bug 检�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>指定源代码文件和行号信息。 高 16 位 (后的前四个十六进制数&quot;0x&quot;) 标识由其标识符编号的源文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
+<td align="left"><p>指定源代码文件和行号信息。 高 16 位 （"0x"后的前四个十六进制数字） 标识由其标识符编号的源代码文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

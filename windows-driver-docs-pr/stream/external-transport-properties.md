@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_EXT_TRANSPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb48052c694e8e742f8d27133b450946e9e96b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 44f083be8b3c6cb471780f897fd235981c0145ae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542919"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349077"
 ---
 # <a name="external-transport-properties"></a>外部传输属性
 
@@ -34,7 +34,7 @@ ms.locfileid: "56542919"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565160" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565160)"><strong>KSPROPERTY_EXTXPORT_CAPABILITIES</strong></a></p></td>
-<td><p>返回的信息的功能的外部数据传输，如是否在设备&#39;可以弹出 s 媒体，或该设备可以向后播放。</p></td>
+<td><p>返回信息的功能的外部数据传输，如是否可以弹出设备的介质，或该设备可以向后播放。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565161" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565161)"><strong>KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE</strong></a></p></td>
@@ -50,15 +50,15 @@ ms.locfileid: "56542919"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565163" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_MEDIUM_INFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565163)"><strong>KSPROPERTY_EXTXPORT_MEDIUM_INFO</strong></a></p></td>
-<td><p>返回外部设备有关的信息&#39;s 介质，例如是否盒式磁带或磁盘，以及是否启用了写保护。</p></td>
+<td><p>返回有关外部设备的介质，例如是否盒式磁带或磁盘，以及是否启用了写保护的信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565168" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565168)"><strong>KSPROPERTY_EXTXPORT_STATE</strong></a></p></td>
-<td><p>控制外部设备&#39;s 传输模式和状态。</p></td>
+<td><p>控制外部设备的传输模式和状态。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565169" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE_NOTIFY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565169)"><strong>KSPROPERTY_EXTXPORT_STATE_NOTIFY</strong></a></p></td>
-<td><p>控制外部设备的通知&#39;s 传输模式下更改或其状态的更改。</p></td>
+<td><p>控制的外部设备的传输模式下更改或其状态更改的通知。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565170" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_TIMECODE_SEARCH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565170)"><strong>KSPROPERTY_EXTXPORT_TIMECODE_SEARCH</strong></a></p></td>

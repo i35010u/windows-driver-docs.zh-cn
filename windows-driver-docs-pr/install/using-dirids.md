@@ -9,12 +9,12 @@ keywords:
 - 目录 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4d3c69602c79a2ef01005a5128e6355b43ad5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554617"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463853"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -101,14 +101,14 @@ ms.locfileid: "56554617"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>13</strong></p></td>
-<td align="left"><p>驱动程序包&#39;s<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">驱动程序存储区</a>目录。</p>
+<td align="left"><p>驱动程序包<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">驱动程序存储区</a>目录。</p>
 <p>对于 Windows 8.1 和更高版本的 Windows，指定驱动程序包已导入其中的驱动程序存储区目录的路径。
 
-Don&#39;t 使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>上的文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
+不要使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>上的文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
 
 中的可选子目录<strong>SourceDiskFiles</strong>部分的文件必须与匹配的子目录中<strong>DestinationDirs</strong>部分，了解适用于此文件的条目。
 
-Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a>若要为其重命名文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
+不要使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a>若要为其重命名文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
 </p></td>
 </tr>
 <tr class="even">
@@ -134,7 +134,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 <tr class="odd">
 <td align="left"><p><strong>24</strong></p></td>
 <td align="left"><p>系统磁盘的根目录。</p>
-<p>这是磁盘的在其安装 Windows 文件的根目录。 例如，如果<em>dirid</em> 10 是&quot; <em>C:\winnt</em>&quot;，然后<em>dirid</em> 24 是&quot; <em>C:\</em> &quot;.</p></td>
+<p>这是磁盘的在其安装 Windows 文件的根目录。 例如，如果<em>dirid</em> 10 是"<em>C:\winnt</em>"，然后<em>dirid</em> 24 是"<em>C:\</em>"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>25</strong></p></td>
@@ -142,7 +142,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>30</strong></p></td>
-<td align="left"><p>也称为根目录引导盘&quot;弧线系统分区&quot;。 (这可能会也可能不是由表示一个与相同的目录<em>dirid</em> 24。)</p></td>
+<td align="left"><p>启动磁盘，也称为"弧线系统分区"的根目录。 (这可能会也可能不是由表示一个与相同的目录<em>dirid</em> 24。)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>50</strong></p></td>
@@ -187,7 +187,7 @@ Don&#39;t 使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Shell 特殊文件夹</th>
 </tr>
 </thead>

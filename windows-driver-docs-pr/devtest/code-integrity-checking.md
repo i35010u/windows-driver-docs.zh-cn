@@ -6,12 +6,12 @@ keywords:
 - 驱动程序验证程序的代码完整性检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a1d3584df9d82f19f22716d405658c2340b011
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6a596e6e1e9e7adc71efa3e66ac582b7bedcd1de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526380"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349310"
 ---
 # <a name="code-integrity-checking"></a>代码完整性检查
 
@@ -25,23 +25,23 @@ ms.locfileid: "56526380"
   <tr>
     <td>0x2000:
         <ul>
-            <li>2-驱动程序中的地址&#39;s 代码检测到错误。</li>
+            <li>2-检测到错误的驱动程序的代码中地址。</li>
             <li>3-池类型。</li>
             <li>4-池标记 （如果有的话）。</li>
         </ul><br/>    </td>
-    <td>调用方指定的可执行池类型。 (预期：NonPagedPoolNx)</td>
+    <td>调用者指定了可执行池类型。 (预期：NonPagedPoolNx)</td>
   </tr>
   <tr>
     <td>0x2001:
-        <ul><li>2-驱动程序中的地址&#39;s 代码检测到错误。</li>
+        <ul><li>2-检测到错误的驱动程序的代码中地址。</li>
         <li>3-页保护 (WIN32_PROTECTION_MASK)。
     </td>
-    <td>调用方指定的一种可执行文件的页上的保护。 (预期： 清除 PAGE_EXECUTE * 位)</td>
+    <td>调用者指定了可执行页面保护。 (预期： 清除 PAGE_EXECUTE * 位)</td>
   </tr>
   <tr>
     <td>0x2002:
-        <ul><li>2-驱动程序中的地址&#39;s 代码检测到错误。</li>
-            <li>3-页面优先级 (MM_PAGE_PRIORITY 逻辑上或者&#39;d MdlMapping *)。</li></ul>
+        <ul><li>2-检测到错误的驱动程序的代码中地址。</li>
+            <li>3-页面优先级 (MM_PAGE_PRIORITY 逻辑上或已经有了使用 MdlMapping *)。</li></ul>
     </td>
     <td>调用方指定的可执行文件的 MDL 映射。 (预期：MdlMappingNoExecute)。</td>
   </tr>
@@ -51,7 +51,7 @@ ms.locfileid: "56526380"
             <li>3-部分标头的地址。</li>
             <li>4-部分名称 （utf-8 编码字符串）。</li></ul>
     </td>
-    <td>映像包含一个可执行文件和可写部分。</td>
+    <td>该图像包含可执行和可写部分。</td>
   </tr>
   <tr>
     <td>0x2004:
@@ -59,7 +59,7 @@ ms.locfileid: "56526380"
             <li>3-部分标头的地址。</li>
             <li>4-部分名称 （utf-8 编码字符串）。</li></ul>
     </td>
-    <td>映像包含一个部分，其中不对齐的页。</td>
+    <td>图像包含不是页面对齐的部分。</td>
   </tr>
   <tr>
     <td>0x2005:

@@ -1,6 +1,6 @@
 ---
-title: 使用驱动程序所提供的旋转锁
-description: 使用驱动程序所提供的旋转锁
+title: 使用驱动程序提供的自旋锁
+description: 使用驱动程序提供的自旋锁
 ms.assetid: e81d5c93-47d6-407c-80a2-b2d55f9eb717
 keywords:
 - 数值调节钮锁 WDK 内核
@@ -8,14 +8,14 @@ keywords:
 - 全局取消自旋锁 WDK 内核
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e50c3cd59e785402dab067d3b648c8ad72d40f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 04faab726c2c712184737fbc602030a3405d41ed
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555127"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349320"
 ---
-# <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序所提供的旋转锁
+# <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序提供的自旋锁
 
 
 
@@ -131,7 +131,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
       // Get the next IRP off the queue.
       nextIrp = CONTAINING_RECORD(listEntry, IRP, Tail.Overlay.ListEntry);
 
-      // Clear the IRP&#39;s cancel routine.
+      // Clear the IRP's cancel routine.
       oldCancelRoutine = IoSetCancelRoutine(nextIrp, NULL);
 
       // IoCancelIrp() could have just been called on this IRP. What interests us
@@ -146,7 +146,7 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
          // called. The Cancel routine will complete this IRP as soon as we
          // drop the spin lock, so do not do anything with the IRP.
          // Also, the Cancel routine will try to dequeue the IRP, so make 
-         // the IRP&#39;s ListEntry point to itself.
+         // the IRP's ListEntry point to itself.
          ASSERT(nextIrp->Cancel);
          InitializeListHead(&nextIrp->Tail.Overlay.ListEntry);
          nextIrp = NULL;

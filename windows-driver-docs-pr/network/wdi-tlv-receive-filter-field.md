@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_FILTER_FIELD (0x65) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f49ff68eb1b443af8793f826e96b24fc39892d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 490317aa0447f931556460cdfa31347be2360250
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545490"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349626"
 ---
 # <a name="wditlvreceivefilterfield-0x65"></a>WDI\_TLV\_RECEIVE\_FILTER\_FIELD (0x65)
 
@@ -47,7 +47,7 @@ WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接
 <td>UINT32</td>
 <td>指定标志的按位 OR。 可能的标志值为 WDI_RECEIVE_FILTER_FIELD_MAC_HEADER_VLAN_UNTAGGED_OR_ZERO。 如果设置此标志，网络适配器必须仅指示满足以下条件的接受的数据包：
 <ul>
-<li>数据包&#39;的 MAC 地址与指定的 MAC 标头字段测试相匹配。</li>
+<li>数据包的 MAC 地址匹配指定的 MAC 标头字段测试。</li>
 <li>数据包不包含的 VLAN 标记，或一个 VLAN 标记具有 ID 为 0。</li>
 </ul></td>
 </tr>
@@ -94,7 +94,7 @@ WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

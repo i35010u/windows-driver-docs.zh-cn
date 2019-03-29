@@ -8,12 +8,12 @@ keywords:
 - 功能属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23b5b5a43f7ef00ddb1b7f57f33e2bcd379344f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3eefb56f0fc8d4f93c6b7d370972197e986141c6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547722"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349028"
 ---
 # <a name="printer-capability-attributes"></a>打印机功能属性
 
@@ -89,7 +89,7 @@ AFTER_FF-CmdFF 的命令。</td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>TextCaps</strong></p></td>
-<td><p>常数来指示打印机的列表&#39;s 文本功能。 可以包含一个或多个 TC_<em>xxx</em>获得有关 Microosft Windows SDK 文档中所述的标志&#39;的 s 说明<strong>GetDeviceCaps</strong>。</p></td>
+<td><p>常数来指示打印机的文本功能的列表。 可以包含一个或多个 TC_<em>xxx</em>获得有关 Microosft Windows SDK 文档的说明中所述的标志<strong>GetDeviceCaps</strong>。</p></td>
 <td><p>可选。 如果未指定，Unidrv 假定没有文本功能支持。</p></td>
 </tr>
 </tbody>

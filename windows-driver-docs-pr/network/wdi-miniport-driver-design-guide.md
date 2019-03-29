@@ -6,19 +6,19 @@ keywords:
 - wi-fi 驱动程序、 wi-fi 驱动程序 Windows 10、 无线驱动程序、 无线驱动程序 windows 10，wlan 驱动程序、 wlan 驱动程序 windows 10，wlan 驱动程序接口、 WDI 驱动程序、 WDI 网络驱动程序，WDI Windows 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 180e3d7b9e561d058b2dc8b952f01ebdafa66ae2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23aff4fa1d8ac998f021aa9d284deffbc36365f7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523393"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464197"
 ---
 # <a name="wdi-miniport-driver-design-guide"></a>WDI 微型端口驱动程序设计指南
 
 
-WLAN 设备驱动程序接口 (WDI) 是 Wi-fi 驱动程序、 桌面版本中 （主页、 专业版、 企业版和教育） 这两个 Windows 10 和 Windows 10 移动版的新通用 Windows 驱动程序模型。 WLAN 设备制造商将写入 WDI 微型端口驱动程序，以使用 Windows 10 操作系统实现。 WDI 能够进行设备制造商可以编写更少的代码比以前的本机 WLAN 驱动程序模型。 在 Windows 10 中引入的所有新 WLAN 功能需要基于 WDI 的驱动程序。
+WLAN 设备驱动程序接口 (WDI) 是 Wi-fi 驱动程序、 桌面版本中 （主页、 专业版、 企业版和教育） 这两个 Windows 10 和 Windows 10 移动版的新通用 Windows 驱动程序模型。 WLAN 设备制造商将写入 WDI 微型端口驱动程序，以使用 Windows 10 操作系统实现。 WDI 能够进行设备制造商可以编写更少的代码比以前的本机 WLAN 驱动程序模型。 Windows 10 中引入的所有新 WLAN 功能均需要基于 WDI 的驱动程序。
 
-供应商提供本机 WLAN 驱动程序继续在 Windows 10 中，但功能会受到限制到其已开发的 Windows 版本。
+供应商提供的本机 WLAN 驱动程序继续在 Windows 10 中运行，但功能仅限于开发它们时所针对的 Windows 版本。
 
 WDI 要求和接口规范记录在此设计指南。 新模型的主要目标是：
 
@@ -113,7 +113,7 @@ WDI 要求和接口规范记录在此设计指南。 新模型的主要目标是
 </tr>
 <tr class="even">
 <td align="left"><p>MAC 地址随机化</p></td>
-<td align="left"><p>为了改进 Windows 10 用户，配置的隐私的 Wi-fi MAC 地址用于在某些情况下，如连接到特定的 Wi-fi 网络或在特定条件启动的扫描之前。 这仅适用于站端口。 系统可确保相应地，使用该随机化因此重要连接方案不是乱码。 系统管理地址发生更改，通过发出<a href="https://msdn.microsoft.com/library/windows/hardware/dn925952" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://msdn.microsoft.com/library/windows/hardware/dn925952)">OID_WDI_TASK_DOT11_RESET</a>命令之前发出一次扫描，或连接命令。 重置命令参数包括一个可选参数，MAC 地址。 如果存在参数，则 MAC 地址重置为指定的值。 如果它不存在，MAC 地址将保持为当前值。 在配置时随机的 MAC 地址，使用的操作系统&quot;本地管理&quot;定义 IEEE802 地址格式。</p></td>
+<td align="left"><p>为了改进 Windows 10 用户，配置的隐私的 Wi-fi MAC 地址用于在某些情况下，如连接到特定的 Wi-fi 网络或在特定条件启动的扫描之前。 这仅适用于站端口。 系统可确保相应地，使用该随机化因此重要连接方案不是乱码。 系统管理地址发生更改，通过发出<a href="https://msdn.microsoft.com/library/windows/hardware/dn925952" data-raw-source="[OID_WDI_TASK_DOT11_RESET](https://msdn.microsoft.com/library/windows/hardware/dn925952)">OID_WDI_TASK_DOT11_RESET</a>命令之前发出一次扫描，或连接命令。 重置命令参数包括一个可选参数，MAC 地址。 如果存在参数，则 MAC 地址重置为指定的值。 如果它不存在，MAC 地址将保持为当前值。 在配置随机的 MAC 地址时，操作系统使用 IEEE802 地址定义的"本地管理的"格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ECSA</p></td>

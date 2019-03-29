@@ -4,12 +4,12 @@ description: 本主题演示如何开发板上安装传感器驱动程序。
 ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e877c36c2e88319970a05ed560af88e7a992e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cda94f5dc8955bce05a900764d818c967f15779c
+ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521763"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58349264"
 ---
 # <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 
@@ -191,7 +191,7 @@ ms.locfileid: "56521763"
 
 2. 附加到供电的 USB 集线器连接到 Shark Cove 传感器驱动程序的闪存驱动器。 例如，这可以是保存生成的执行中的步骤的驱动程序的闪存驱动器[生成传感器驱动程序](build-the-sensor-driver.md)。
 
-3. 打开**设备管理器**，并为"未知设备"查找**其他设备**节点具有一个黄色感叹号符号对其 （请参阅下面的屏幕截图）。<br/>![设备管理器显示的屏幕截图，显示黄色感叹号的未知的设备。 ](images/dev-manager.png)
+3. 打开**设备管理器**，并为"未知设备"查找**其他设备**节点具有一个黄色感叹号符号对其 （请参阅下面的屏幕截图）。<br/>![设备管理器显示的屏幕截图，显示黄色感叹号的未知的设备。](images/dev-manager.png)
 
 4. 使用黄色惊叹号 （作为未知设备列出），右键单击该设备，然后选择**更新驱动程序软件**，然后单击**浏览计算机以查找驱动程序软件**。
 

@@ -1,6 +1,6 @@
 ---
-title: 注册一个扩展接口
-description: 注册一个扩展接口
+title: 注册扩展接口
+description: 注册扩展接口
 ms.assetid: 33dc32da-9bc1-40b4-8737-ec132ec36708
 keywords:
 - 网络、 Winsock 内核 WDK 扩展插件接口
@@ -10,14 +10,14 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 286d3f3719dc6046442a703c92f5c34680b6320a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6c8c178bb02314640a9b9db5d0922ee27289c4a9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523827"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348634"
 ---
-# <a name="registering-an-extension-interface"></a>注册一个扩展接口
+# <a name="registering-an-extension-interface"></a>注册扩展接口
 
 
 Winsock Kernel (WSK) 应用程序已成功创建套接字后，它可以为一个或多个注册的套接字[扩展插件接口](winsock-kernel-extension-interfaces.md)受 WSK 子系统。 WSK 应用程序确定 WSK 子系统支持的扩展插件接口的一组，应检查**版本**的成员[ **WSK\_提供程序\_调度** ](https://msdn.microsoft.com/library/windows/hardware/ff571175) WSK 子系统返回到应用程序在附件的结构。
@@ -54,7 +54,7 @@ typedef struct _EXAMPLE_EXTIF_CLIENT_DISPATCH {
 // Client dispatch structure for the extension interface
 const EXAMPLE_EXTIF_CLIENT_DISPATCH ExtIfClientDispatch = {
   .
-  . // The WSK application&#39;s callback functions
+  . // The WSK application's callback functions
   . // for the extension interface
   .
 };
@@ -81,7 +81,7 @@ NTSTATUS
   WSK_EXTENSION_CONTROL_OUT ExtensionControlOut;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 

@@ -12,12 +12,12 @@ keywords:
 - WMI WDK 内核类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 085e106ae366c2fe28be970fddd3feceed580687
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527162"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464209"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI 类限定符
 
@@ -49,10 +49,10 @@ ms.locfileid: "56527162"
 </tr>
 <tr class="even">
 <td><p><strong>Static</strong></p></td>
-<td><p>指示数据提供程序提供了在 MOF 文件中，而不是在运行时提供的数据块的实例的静态数据的实例。 驱动程序不使用 WMI，注册静态数据块，因为静态数据驻留在 WMI 数据库。 类标记为<strong>静态</strong>在 MOF 文件不应注册驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>处理程序。</p></td>
+<td><p>指示数据提供程序提供了在 MOF 文件中，而不是在运行时提供的数据块的实例的静态数据的实例。 驱动程序不使用 WMI，注册静态数据块，因为静态数据驻留在 WMI 数据库。 类标记为<strong>静态</strong>在 MOF 文件不应注册由驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff551731" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551731)"> <strong>IRP_MN_REGINFO</strong> </a>或者<a href="https://msdn.microsoft.com/library/windows/hardware/ff551734" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551734)"> <strong>IRP_MN_REGINFO_EX</strong> </a>处理程序。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Provider(&quot;WMIProv&quot;)</strong></p></td>
+<td><p><strong>Provider("WMIProv")</strong></p></td>
 <td><p>（必需）指示提供程序类的 WMI 提供程序。</p></td>
 </tr>
 <tr class="even">
@@ -60,20 +60,20 @@ ms.locfileid: "56527162"
 <td><p>（必需）指示该类是一个 WMI 类。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Description(&quot;</strong><em>description-string</em><strong>&quot;)</strong></p></td>
+<td><p><strong>Description("</strong><em>description-string</em><strong>")</strong></p></td>
 <td><p>（可选）指定用于通过指定的区域设置的块的说明<strong>区域设置</strong>限定符。 如果定义，WMI 客户端可以向用户显示的描述字符串。 驱动程序编写器可以使用<strong>说明</strong>记录类。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Guid(&quot;</strong><em>guid-string</em><strong>&quot;)</strong></p></td>
-<td><p>（必需）指定 GUID 字符串格式，用于唯一标识与 WMI 的块。 驱动程序编写器应生成驱动程序中的每个数据块的 GUID&#39;s MOF 文件，使用 guidgen.exe 或 uuidgen.exe （这包括在 Windows SDK 中）。 当驱动程序注册其块时，驱动程序将此值采用 GUID 格式传递到 WMI。 WMI 然后使用 GUID 来查找块&#39;驱动程序中的 s 定义&#39;s MOF 资源。</p></td>
+<td><p><strong>Guid("</strong><em>guid-string</em><strong>")</strong></p></td>
+<td><p>（必需）指定 GUID 字符串格式，用于唯一标识与 WMI 的块。 驱动程序编写器应生成每个数据块的 GUID 在驱动程序的 MOF 文件中，使用 guidgen.exe 或 uuidgen.exe （这包括在 Windows SDK 中）。 当驱动程序注册其块时，驱动程序将此值采用 GUID 格式传递到 WMI。 然后，WMI 使用 GUID 来查找驱动程序的 MOF 资源中的块的定义。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Locale(&quot;MS&lt;/strong&gt;<em>locale-identifier</em><strong>&quot;)</strong></p></td>
+<td><p><strong>Locale("MS&lt;/strong&gt;<em>locale-identifier</em><strong>")</strong></p></td>
 <td><p>（可选）指定的语言标识符和指定的字符串的区域设置<strong>说明</strong>。 例如，<em>区域设置标识符</em>的 0x409 指定美国英语。 单个的 MOF 文件可以包含不同的区域设置的块，但通常所有 MOF 文件中的块具有相同的区域设置。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>WmiExpense(</strong><em>expense-value</em><strong>)</strong></p></td>
-<td><p>（可选）指定收集的数据块数据所需的 CPU 周期的平均数。 例如，WMI 客户端可能会检查数据块&#39;s <strong>WmiExpense</strong>值，以确定经常查询其数据的方式。 如果<strong>WmiExpense</strong>省略，则<em>费用值</em>被假定为 0。 <strong>WmiExpense</strong>无关注册为成本高昂，若要收集的数据块。</p></td>
+<td><p>（可选）指定收集的数据块数据所需的 CPU 周期的平均数。 例如，WMI 客户端检查的数据块<strong>WmiExpense</strong>值，以确定经常查询其数据的方式。 如果<strong>WmiExpense</strong>省略，则<em>费用值</em>被假定为 0。 <strong>WmiExpense</strong>无关注册为成本高昂，若要收集的数据块。</p></td>
 </tr>
 </tbody>
 </table>

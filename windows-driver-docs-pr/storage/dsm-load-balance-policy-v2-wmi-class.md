@@ -4,12 +4,12 @@ description: DSM\_负载\_平衡\_策略\_V2 WMI 类
 ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 859d6f27a9cec8eddd36358aadb5b289447e3fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d010206ab8be17f4dd1f33ade327aa83fb99f188
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525940"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349396"
 ---
 # <a name="dsmloadbalancepolicyv2-wmi-class"></a>DSM\_负载\_平衡\_策略\_V2 WMI 类
 
@@ -73,7 +73,7 @@ class DSM_Load_Balance_Policy_V2
     uint32 Reserved;
 
     //
-    // Paths&#39; array.
+    // Paths' array.
     //
     [WmiDataId(5),
      WmiSizeIs("DSMPathCount"),

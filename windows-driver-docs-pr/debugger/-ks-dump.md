@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f0d492cb70353f52d4a0112b442d021d1c9446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 81b6db8685a6b6841febcbec68379362a2eab817
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547600"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349744"
 ---
 # <a name="ksdump"></a>!ks.dump
 
@@ -134,7 +134,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
 </tr>
 <tr class="odd">
 <td align="left"><p>状态</p></td>
-<td align="left"><p>Pin 的内部状态&#39;s 传输到非 AVStream 筛选器。</p></td>
+<td align="left"><p>Pin 的传输到非 AVStream 筛选器的内部状态。</p></td>
 </tr>
 </tbody>
 </table>

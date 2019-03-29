@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 利用 MSBuild 平台工具集功能提供
 ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf72527e93fedd2f1865ea4dc246b34952e99e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db5d836e8cadfa735432e6073f08e90c0792a72d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541620"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349912"
 ---
 # <a name="platform-toolset"></a>平台工具集
 
@@ -53,7 +53,7 @@ Windows Driver Kit (WDK) 8 为驱动程序开发提供以下平台工具集。 �
 下面的示例演示如何**PlatformToolset**在项目文件中设置属性。
 
 ```XML
-<PropertyGroup Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Debug|Win32&#39;"
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"
       Label="Configuration">
   <ConfigurationType>Driver</ConfigurationType>
   <DriverType>KMDF</DriverType>

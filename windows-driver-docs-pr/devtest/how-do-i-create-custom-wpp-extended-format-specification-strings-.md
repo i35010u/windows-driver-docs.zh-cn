@@ -4,14 +4,14 @@ description: 如何创建自定义 WPP 扩展的格式规范字符串
 ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32aaff1fe625896a74f7e48c0baeb9f4a7e07cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dc4778aab27945662eca2422ae55cb594c516632
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547135"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464265"
 ---
-# <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义 WPP 扩展的格式规范字符串？
+# <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义的 WPP 扩展格式规范字符串？
 
 
 通过使用定义创建自定义 WPP 扩展的格式规范字符串\_CPLX\_类型宏。 有关如何使用此宏的详细信息，请参阅[什么是复杂的语法类型定义？](what-is-the-syntax-of-the-complex-types-definition-.md)。
@@ -39,7 +39,7 @@ ms.locfileid: "56547135"
     </colgroup>
     <tbody>
     <tr class="odd">
-    <td align="left"><pre><code>DEFINE_CPLX_TYPE(IPV6ADDR, WPP_LOGIPV6, in6_addr *, ItemIPV6Addr, &quot;s&quot;, _IPV6_, 0, 1);</code></pre></td>
+    <td align="left"><pre><code>DEFINE_CPLX_TYPE(IPV6ADDR, WPP_LOGIPV6, in6_addr *, ItemIPV6Addr, "s", _IPV6_, 0, 1);</code></pre></td>
     </tr>
     </tbody>
     </table>
@@ -90,7 +90,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </colgroup>
     <tbody>
     <tr class="odd">
-    <td align="left"><pre><code>DEFINE_CPLX_TYPE(HEXDUMP, WPP_LOGHEXDUMP, const xstr_t&, ItemHEXDump,&quot;s&quot;, _HEX_, 0, 2);</code></pre></td>
+    <td align="left"><pre><code>DEFINE_CPLX_TYPE(HEXDUMP, WPP_LOGHEXDUMP, const xstr_t&, ItemHEXDump,"s", _HEX_, 0, 2);</code></pre></td>
     </tr>
     </tbody>
     </table>

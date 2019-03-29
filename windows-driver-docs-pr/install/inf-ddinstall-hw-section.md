@@ -1,5 +1,5 @@
 ---
-title: INF DDInstall.HW 部分
+title: INF DDInstall.HW 节
 description: DDInstall.HW 部分通常用于安装多功能设备的、 用于安装即插即用的筛选器驱动程序，以及用于设置在注册表中，任何用户访问的特定于设备的但独立于驱动程序的信息是否显式 AddReg指令或使用 Include 和需求条目。
 ms.assetid: 417a4ab0-9723-4b3b-aa8c-342598874d61
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d15549dcd9f14123dd20a224da9bd793eff50d96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23052d536b36ab488c793e9b70ee9fecc019d951
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543345"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350172"
 ---
-# <a name="inf-ddinstallhw-section"></a>INF DDInstall.HW 部分
+# <a name="inf-ddinstallhw-section"></a>INF DDInstall.HW 节
 
 
 <em>DDInstall</em>**。HW**部分通常用于安装多功能设备的、 用于安装即插即用的筛选器驱动程序，以及用于设置在注册表中，任何用户访问的特定于设备的但独立于驱动程序的信息是否显式[**AddReg** ](inf-addreg-directive.md)指令或使用**Include**并**需要**条目。
@@ -109,7 +109,7 @@ CopyFiles=changer_copyfiles,cdrom_copyfiles
 [changer_install.HW]
 AddReg=changer_addreg
 
-; ... changer_install.Services section similar to cdaudio&#39;s
+; ... changer_install.Services section similar to cdaudio's
 
 ; ... some similar cdrom_install(.HW)/addreg sections omitted 
 
@@ -145,10 +145,10 @@ StartType      = 1
 ErrorControl   = 1
 ServiceBinary  = %12%\cdaudio.sys
 
-; ... changer_ServiceInstallSection similar to cdaudio&#39;s
+; ... changer_ServiceInstallSection similar to cdaudio's
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddReg**](inf-addreg-directive.md)

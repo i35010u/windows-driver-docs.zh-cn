@@ -6,12 +6,12 @@ keywords:
 - HDAUDIO_BUS_INTERFACE 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c31a65e20ef0e9c12a0be5d4b993447d1b5e26f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 38283a28dc2b033cac7026158f7a458353f5de5d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525416"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349704"
 ---
 # <a name="obtaining-an-hdaudiobusinterface-ddi-object"></a>获取 HDAUDIO\_总线\_接口 DDI 对象
 
@@ -26,7 +26,7 @@ ms.locfileid: "56525416"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -85,11 +85,11 @@ ms.locfileid: "56525416"
 </tr>
 <tr class="even">
 <td align="left"><p>PINTERFACE_REFERENCE <strong>InterfaceReference</strong></p></td>
-<td align="left"><p>指向递增上下文对象的例程&#39;s 引用计数</p></td>
+<td align="left"><p>指向上下文对象的引用计数会递增的例程</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PINTERFACE_DEREFERENCE <strong>InterfaceDereference</strong></p></td>
-<td align="left"><p>指向的例程，减少上下文对象&#39;s 引用计数</p></td>
+<td align="left"><p>指向例程递减上下文对象的引用计数</p></td>
 </tr>
 </tbody>
 </table>

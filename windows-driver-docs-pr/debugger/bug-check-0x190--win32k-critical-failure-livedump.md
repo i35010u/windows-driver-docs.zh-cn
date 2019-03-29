@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e66f2d92a05595e019492374315a9b5eb8d4a62c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9e3e653fbc3b1ec7ba73081813d3888869e8fe7c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464301"
 ---
-# <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>Bug 检查 0x190:WIN32K\_严重\_失败\_LIVEDUMP
+# <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>Bug 检查 0x190：WIN32K\_严重\_失败\_LIVEDUMP
 
 
 WIN32K\_严重\_失败\_LIVEDUMP bug 检查的值为 0x00000190。 这指示 Win32k 遇到严重故障。 捕获实时转储收集调试信息。
@@ -47,7 +47,7 @@ WIN32K\_严重\_失败\_LIVEDUMP bug 检查的值为 0x00000190。 这指示 Win
 <td align="left"><p>失败的类型</p>
 <p>0x1:REGION_VALIDATION_FAILURE 的区域是超出图面上的界限。</p>
 2-指向 DC 3 的指针到区域的图面 4 指针
-<p>0x2:OPERATOR_NEW_USED-运算符&quot;新&quot;用于分配内存。</p>
+<p>0x2:OPERATOR_NEW_USED-"new"运算符用于分配内存。</p>
 2-保留 3-保留 4-保留</td>
 </tr>
 <tr class="even">

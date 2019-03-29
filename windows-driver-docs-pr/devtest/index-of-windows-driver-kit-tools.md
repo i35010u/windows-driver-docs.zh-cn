@@ -1,6 +1,6 @@
 ---
-title: Windows 驱动程序工具包的索引
-description: Windows 驱动程序工具包的索引
+title: Windows 驱动程序工具包工具的索引
+description: Windows 驱动程序工具包工具的索引
 ms.assetid: 26db88c4-8fb8-4308-ab8a-1a1eef5e19d8
 keywords:
 - 禁用程序工具
@@ -20,14 +20,14 @@ keywords:
 - GUIDGen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0461007a078a32f14bc2bac7b0b23ce9382ade
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cac00eb60b57dee3eb425bfa6ec86f8c25abd7c3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522957"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349558"
 ---
-# <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包的索引
+# <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
 
 本主题提供有关包含 Windows Driver Kit (WDK) 中的工具的基本信息。 本主题还包括对其他工具，可用于驱动程序开发的引用。 这些其他工具都是可用的操作系统或作为单独的下载可用的一部分。 有关每个工具的详细信息，请参阅本主题，其中介绍的工具中的文档。
@@ -100,7 +100,7 @@ ms.locfileid: "56522957"
 <div>
  
 </div></td>
-<td align="left"><p>此工具可以构造的图形表示形式显示筛选器和筛选器之间的 pin pin 连接的筛选器关系图&#39;内部节点。</p>
+<td align="left"><p>此工具可以构造的图形表示形式显示筛选器和筛选器的内部节点之间的 pin pin 连接的筛选器关系图。</p>
 <p>%WindowsSdkDir%\tools\x86\KsStudio.chm</p>
 <p>%WindowsSdkDir%\tools\x64\KsStudio.chm</p>
 <p>请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff554257" data-raw-source="[AVStream Testing and Debugging](https://msdn.microsoft.com/library/windows/hardware/ff554257)">AVStream 测试和调试</a>有关详细信息。</p></td>
@@ -139,7 +139,7 @@ ms.locfileid: "56522957"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\x86\Sdpverifiy.exe</p>
 <p>%WindowsSdkDir%\tools\x64\Sdpverifiy.exe</p></td>
-<td align="left"><p>显示 Bluetooth 的设备&#39;s 查询记录作为 Windows 将其解释。</p>
+<td align="left"><p>显示 Windows 将其解释蓝牙设备的查询记录。</p>
 <p>WDK 文档：</p>
 <p><a href="bluetooth-inquiry-record-verifier.md" data-raw-source="[Bluetooth Inquiry Record Verifier](bluetooth-inquiry-record-verifier.md)">蓝牙查询记录验证工具</a></p></td>
 </tr>
@@ -193,7 +193,7 @@ ms.locfileid: "56522957"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\x64\wiapreview.exe</p>
 <p>%WindowsSdkDir%\tools\x86\wiapreview.exe</p></td>
-<td align="left"><p>演示如何使用 WIA 预览组件和驱动程序&#39;s 分段的筛选器。</p>
+<td align="left"><p>演示如何使用 WIA 预览组件和驱动程序的分段的筛选器。</p>
 <p>%WindowsSdkDir%\tools\x64\wiapreview.htm</p>
 <p>%WindowsSdkDir%\tools\x86\wiapreview.htm</p></td>
 </tr>
@@ -431,7 +431,7 @@ ms.locfileid: "56522957"
  
 </div>
 <p>WDK 文档：</p>
-<p><a href="code-analysis-for-drivers.md" data-raw-source="[Code Analysis for Drivers](code-analysis-for-drivers.md)">Code Analysis for Drivers</a></p></td>
+<p><a href="code-analysis-for-drivers.md" data-raw-source="[Code Analysis for Drivers](code-analysis-for-drivers.md)">驱动程序的代码分析</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CertMgr (CertMgr.exe)</p>
@@ -544,7 +544,7 @@ ms.locfileid: "56522957"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\bin\x64\inf2cat.exe</p>
 <p>%WindowsSdkDir%\bin\x86\inf2cat.exe</p></td>
-<td align="left"><p>确定是否<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package&#39;s](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包&#39;s</a> INF 文件可以是指定的 Windows 版本中，列表进行数字签名，并且如果是这样，将生成无符号<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog files](https://msdn.microsoft.com/library/windows/hardware/ff537872)">编录文件</a>适用于指定Windows 版本。</p>
+<td align="left"><p>确定是否<a href="https://msdn.microsoft.com/library/windows/hardware/ff544840" data-raw-source="[driver package's](https://msdn.microsoft.com/library/windows/hardware/ff544840)">驱动程序包</a>INF 文件可以是指定的 Windows 版本中，列表进行数字签名，并且如果是这样，将生成无符号<a href="https://msdn.microsoft.com/library/windows/hardware/ff537872" data-raw-source="[catalog files](https://msdn.microsoft.com/library/windows/hardware/ff537872)">编录文件</a>的可以应用到指定的 Windows版本。</p>
 <p>WDK 文档：</p>
 <p><a href="inf2cat.md" data-raw-source="[&lt;strong&gt;Inf2Cat&lt;/strong&gt;](inf2cat.md)"><strong>Inf2Cat</strong></a></p></td>
 </tr>
@@ -609,7 +609,7 @@ ms.locfileid: "56522957"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\x64\poolmon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\poolmon.exe</p></td>
-<td align="left"><p>显示操作系统从系统收集有关内存分配的数据&#39;s 分页和非分页的内核池和用于终端服务会话使用的内存池。 按池分配标记分组数据。</p>
+<td align="left"><p>显示操作系统收集从系统的分页和非分页内核池和用于终端服务会话使用的内存池的内存分配数据。 按池分配标记分组数据。</p>
 <p>WDK 文档：</p>
 <p><a href="poolmon.md" data-raw-source="[PoolMon](poolmon.md)">PoolMon</a></p></td>
 </tr>
@@ -674,7 +674,7 @@ ms.locfileid: "56522957"
 </div></td>
 <td align="left"><p>一个静态验证工具驱动程序，可以系统地分析 Windows 驱动程序的源代码并确定该驱动程序是否正确交互与 Windows 操作系统内核。</p>
 <p>WDK 文档：</p>
-<p><a href="static-driver-verifier.md" data-raw-source="[Static Driver Verifier](static-driver-verifier.md)">Static Driver Verifier</a></p></td>
+<p><a href="static-driver-verifier.md" data-raw-source="[Static Driver Verifier](static-driver-verifier.md)">静态驱动程序验证程序</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Tracefmt (Tracefmt.exe)</p>
@@ -741,7 +741,7 @@ ms.locfileid: "56522957"
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\x64\wdfverifier.exe</p>
 <p>%WindowsSdkDir%\tools\x86\wdfverifier.exe</p></td>
-<td align="left"><p>提供在 framework 的易于使用接口&#39;s KMDF 和 UMDF 驱动程序的验证程序。</p>
+<td align="left"><p>对于 KMDF 和 UMDF 驱动程序到框架的验证程序提供一个易于使用的界面。</p>
 <p>WDK 文档：</p>
 <p><a href="wdf-verifier-control-application.md" data-raw-source="[WDF Verifier Control Application](wdf-verifier-control-application.md)">WDF 验证程序控件应用程序</a></p></td>
 </tr>
@@ -843,7 +843,7 @@ ms.locfileid: "56522957"
 
 -   WWAN 驱动程序测试应用 (wwandrivertestapp.exe)
 
-### <a name="supported-platforms"></a>支持的平台
+### <a name="supported-platforms"></a>受支持的平台
 
 WDK 8.1 支持这些版本的 Windows 运行的驱动程序开发：
 

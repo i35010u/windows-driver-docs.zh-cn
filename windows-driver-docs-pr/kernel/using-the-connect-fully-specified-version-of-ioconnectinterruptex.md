@@ -1,6 +1,6 @@
 ---
-title: 使用 IoConnectInterruptEx CONNECT_FULLY_SPECIFIED 版本
-description: 使用 IoConnectInterruptEx CONNECT_FULLY_SPECIFIED 版本
+title: 使用 IoConnectInterruptEx 的 CONNECT_FULLY_SPECIFIED 版本
+description: 使用 IoConnectInterruptEx 的 CONNECT_FULLY_SPECIFIED 版本
 ms.assetid: 5b75c32e-77e5-4761-b709-fedb8e33b57a
 keywords:
 - IoConnectInterruptEx
@@ -11,12 +11,12 @@ keywords:
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab1a83d9ee669831fb4a841d08d9aac0be8fb6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 32aa0c467d8df280816e7a8fbeb08eec8f71c3de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523536"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349252"
 ---
 # <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
 
@@ -90,11 +90,11 @@ ms.locfileid: "56523536"
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;
 
-// deviceExtension is a pointer to the driver&#39;s device extension. 
+// deviceExtension is a pointer to the driver's device extension. 
 //     deviceExtension->IntObj is a PKINTERRUPT.
-// deviceInterruptService is a pointer to the driver&#39;s InterruptService routine.
+// deviceInterruptService is a pointer to the driver's InterruptService routine.
 // IntResource is a CM_PARTIAL_RESOURCE_DESCRIPTOR structure of either type CmResourceTypeInterrupt or CmResourceTypeMessageInterrupt.
-// PhysicalDeviceObject is a pointer to the device&#39;s PDO. 
+// PhysicalDeviceObject is a pointer to the device's PDO. 
 // ServiceContext is a pointer to driver-specified context for the ISR.
 
 RtlZeroMemory( &params, sizeof(IO_CONNECT_INTERRUPT_PARAMETERS) );

@@ -1,6 +1,6 @@
 ---
-title: GDI 信号量服务
-description: GDI 信号量服务
+title: GDI 信号灯服务
+description: GDI 信号灯服务
 ms.assetid: b91211a7-19c3-4974-9222-f8eb64c29cc8
 keywords:
 - GDI WDK Windows 2000 显示，信号量服务
@@ -9,14 +9,14 @@ keywords:
 - 信号量服务 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a399913fed70ed620a0fc18d6af0661b68621b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22bfacdab96dcf621e2bce474be77a41a4deb4b8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519259"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349098"
 ---
-# <a name="gdi-semaphore-services"></a>GDI 信号量服务
+# <a name="gdi-semaphore-services"></a>GDI 信号灯服务
 
 
 ## <span id="ddk_gdi_semaphore_services_gg"></span><span id="DDK_GDI_SEMAPHORE_SERVICES_GG"></span>
@@ -50,7 +50,7 @@ GDI 提供一系列与信号量和安全的信号量相关的服务。 驱动程
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564819" data-raw-source="[&lt;strong&gt;EngDeleteSemaphore&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564819)"><strong>EngDeleteSemaphore</strong></a></p></td>
-<td align="left"><p>从系统中删除信号量对象&#39;s 资源列表。</p></td>
+<td align="left"><p>从系统的资源列表中删除信号量对象。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564959" data-raw-source="[&lt;strong&gt;EngInitializeSafeSemaphore&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564959)"><strong>EngInitializeSafeSemaphore</strong></a></p></td>

@@ -8,12 +8,12 @@ keywords:
 - PSHED 插件 WDK WHEA，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85bc147fdf0f860f164480c9c9ba21f6ebc566f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5a3fa067f6a6a6b381aaa4a5e4fa06f474d5bc7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542440"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348668"
 ---
 # <a name="registering-a-pshed-plug-in"></a>注册 PSHED 插件
 
@@ -108,7 +108,7 @@ WHEA_PSHED_PLUGIN_REGISTRATION_PACKET RegPacket =
 }
 
 //
-// The PSHED plug-in&#39;s DriverEntry function
+// The PSHED plug-in's DriverEntry function
 //
 NTSTATUS
   DriverEntry(

@@ -1,15 +1,15 @@
 ---
-title: 获取 NVDIMM N 标识 （函数索引 1）
+title: 获取 NVDIMM-N 标识（功能索引 1）
 description: 此函数返回特定于设备的信息。
 ms.assetid: 350E764D-634C-4C60-9C74-E26B01636C02
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb55269009335e2f505b6bf735a5d87efe70f236
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3398aa1e52831e03496f7f850715362bba5a2ec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555003"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349648"
 ---
 # <a name="span-idstoragegetnvdimm-nidentificationfunctionindex1spanget-nvdimm-n-identification-function-index-1"></a><span id="storage.get_nvdimm-n_identification__function_index_1_"></span>获取 NVDIMM N 标识 （函数索引 1）
 
@@ -122,7 +122,7 @@ ms.locfileid: "56555003"
 <td align="left"><strong>支持备份触发器</strong></td>
 <td align="left">1</td>
 <td align="left">17</td>
-<td align="left"><p>该模块&#39;支持保存触发器。</p>
+<td align="left"><p>保存触发器，该模块的受支持。</p>
 <p></em>字节 0 – <em>CSAVE_TRIGGER_SUPPORT</em> （0，0x16）</p></td>
 </tr>
 <tr class="even">
@@ -225,7 +225,7 @@ ms.locfileid: "56555003"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

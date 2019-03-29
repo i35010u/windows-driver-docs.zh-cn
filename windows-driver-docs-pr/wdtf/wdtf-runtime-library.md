@@ -9,12 +9,12 @@ keywords:
 - 驱动程序测试
 ms.date: 08/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9590bf8f303fc55d1c229fbc6f18d3ab6ad5e64b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e0d3456068a930d2ab8f3859709d1e45e0884c86
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524566"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136114"
 ---
 # <a name="the-wdtf-runtime-library"></a>WDTF 运行时库
 
@@ -44,11 +44,9 @@ WDTF 运行时库包括可帮助会审和运行测试工具。
 
 ## <a name="how-to-install-the-wdtf-runtime-library"></a>如何安装 WDTF 运行时库
 
-如果设置了测试计算机以进行部署时，测试计算机上安装 WDTF 运行时库。 按照正确版本的 WDK 的说明：
+如果设置了测试计算机以进行部署时，测试计算机上安装 WDTF 运行时库。 按照中的说明[预配计算机，以使驱动程序部署和测试 （WDK 10 和 WDK 8.1）](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)
 
-- [预配的计算机的驱动程序部署和测试 （WDK 10 和 WDK 8.1）](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)
-
-- [预配的计算机的驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8)
+<!-- [Provision a computer for driver deployment and testing (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8) -->
 
 您可以手动安装 WDTF 运行时库。
 

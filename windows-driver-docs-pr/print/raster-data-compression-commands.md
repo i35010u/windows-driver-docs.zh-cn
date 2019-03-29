@@ -7,12 +7,12 @@ keywords:
 - 压缩光栅打印命令 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c61d0cbd6e83971a660d1371d89295be0d11ae66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ec81fd9a1bb413cbc642c59b0464c4e9ec358c7f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522941"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349952"
 ---
 # <a name="raster-data-compression-commands"></a>光栅数据压缩命令
 
@@ -32,7 +32,7 @@ ms.locfileid: "56522941"
 </colgroup>
 <thead>
 <tr class="header">
-<th>命令</th>
+<th>Command</th>
 <th>描述</th>
 <th>备注</th>
 </tr>
@@ -40,27 +40,27 @@ ms.locfileid: "56522941"
 <tbody>
 <tr class="odd">
 <td><p>CmdDisableCompression</p></td>
-<td><p>命令，以禁用打印机&#39;s 接受所有压缩的数据类型。</p></td>
+<td><p>若要禁用所有压缩的数据类型的打印机的接受的命令。</p></td>
 <td><p>可选。</p></td>
 </tr>
 <tr class="even">
 <td><p>CmdEnableDRC</p></td>
-<td><p>若要启用打印机的命令&#39;s 接受金压缩的数据。</p></td>
+<td><p>若要启用打印机的接受金压缩的数据的命令。</p></td>
 <td><p>可选。 如果未指定，Unidrv 不使用增量行压缩。</p></td>
 </tr>
 <tr class="odd">
 <td><p>CmdEnableFE_RLE</p></td>
-<td><p>若要启用打印机的命令&#39;s 接受 FE RLE 压缩的数据。</p></td>
+<td><p>若要启用打印机的接受 FE RLE 压缩的数据的命令。</p></td>
 <td><p>可选。 如果未指定，Unidrv 不使用 FE RLE 压缩。</p></td>
 </tr>
 <tr class="even">
 <td><p>CmdEnableOEMComp</p></td>
-<td><p>若要启用打印机的命令&#39;s 接受自定义压缩的数据类型。</p></td>
+<td><p>若要启用自定义压缩的数据类型的打印机的接受的命令。</p></td>
 <td><p>可选。 如果未指定，Unidrv 不使用自定义的数据压缩。</p></td>
 </tr>
 <tr class="odd">
 <td><p>CmdEnableTIFF4</p></td>
-<td><p>若要启用打印机的命令&#39;s 接受 TIFF 4.0 压缩的数据。</p></td>
+<td><p>若要启用打印机的接受 TIFF 4.0 压缩的数据的命令。</p></td>
 <td><p>可选。 如果未指定，Unidrv 不使用 TIFF4.0 压缩。</p></td>
 </tr>
 </tbody>

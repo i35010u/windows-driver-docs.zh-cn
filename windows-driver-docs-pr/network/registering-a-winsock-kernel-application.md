@@ -1,6 +1,6 @@
 ---
-title: Winsock 内核应用程序注册
-description: Winsock 内核应用程序注册
+title: 注册 Winsock 内核应用程序
+description: 注册 Winsock 内核应用程序
 ms.assetid: aaba39b8-8609-46e6-906d-3f050d91af7f
 keywords:
 - Winsock 内核 WDK 连接网络、 注册
@@ -12,14 +12,14 @@ keywords:
 - WskRegister
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d58728f106dcfea269315c8a05f3c4834cca66b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d67b641949397063071d8f4e49faeb28f67abc04
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523831"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348670"
 ---
-# <a name="registering-a-winsock-kernel-application"></a>Winsock 内核应用程序注册
+# <a name="registering-a-winsock-kernel-application"></a>注册 Winsock 内核应用程序
 
 
 ### <a name="wsk-client-object-registration"></a>WSK 客户端对象注册
@@ -124,7 +124,7 @@ NTSTATUS
   {
     // The WSK Provider NPI could not be captured.
     if( Status == STATUS_NOINTERFACE ) {
-      // WSK application&#39;s requested version is not supported
+      // WSK application's requested version is not supported
     }
     else if( status == STATUS_DEVICE_NOT_READY ) {
       // WskDeregister was invoked in another thread thereby causing

@@ -4,12 +4,12 @@ description: WMI 数据源
 ms.assetid: 1C9D0EEC-6542-4249-B7E0-CA3ED63FB120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e72d3a653f0b4235e954b00a607c9d05d7b789
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c76feb1074d623095c624082919d562056c2a496
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543945"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349720"
 ---
 # <a name="wmi-data-source"></a>WMI 数据源
 
@@ -102,7 +102,7 @@ TAEF 不支持检索系统属性。
 11    public class CSharpWmiDataSourceExample
 12    {
 13        [TestMethod]
-14        [DataSource("WMI:SELECT Description, DesktopInteract, ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+14        [DataSource("WMI:SELECT Description, DesktopInteract, ProcessId FROM Win32_Service WHERE Name='Themes'")]
 15        public void ThemesTest()
 16        {
 17            String description = (String)m_testContext.DataRow["Description"];
@@ -164,7 +164,7 @@ TAEF 不支持检索系统属性。
 
 需要注意的部分是 WMI 查询可能会始终返回非 null 属性。 可能有的时间时返回的 WMI 属性值为"null"。 如果您认为您正在寻找的属性可能是"null"，在某些情况下，则验证或尝试使用它之前检查它。
 
-在托管测试代码，如 TestContext 将为 DBNull 类型的对象存储 null 值。 必须检查 DBNull 类型的对象是否尝试强制转换为类型结果值之前在预期进行。 让我们来看：
+在托管测试代码，如 TestContext 将为 DBNull 类型的对象存储 null 值。 必须检查 DBNull 类型的对象是否尝试强制转换为类型结果值之前在预期进行。 让我们来实际操作一下：
 
 ```cpp
 1 namespace WEX.Examples
@@ -189,7 +189,7 @@ TAEF 不支持检索系统属性。
 19            Log.Comment("DriveType is " + driveType.ToString());
 20
 21            object nullCheckCompressed = m_testContext.DataRow["Compressed"];
-22            Log.Comment("Compressed&#39;s type is: " + nullCheckCompressed.GetType().ToString());
+22            Log.Comment("Compressed's type is: " + nullCheckCompressed.GetType().ToString());
 23            if (nullCheckCompressed.GetType() == typeof(DBNull))
 24            {
 25                Log.Comment("Compressed is NULL");

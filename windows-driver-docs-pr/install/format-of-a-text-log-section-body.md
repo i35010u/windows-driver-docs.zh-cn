@@ -8,12 +8,12 @@ keywords:
 - 文本日志 WDK SetupAPI，部分正文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4c7c443019a11f101b411df8c67f037c2e1711
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 17264b2db9d8bd40913b3a6b02e58eca16097874
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554948"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464122"
 ---
 # <a name="format-of-a-text-log-section-body"></a>文本日志部分正文的格式
 
@@ -40,15 +40,15 @@ ms.locfileid: "56554948"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;!!!  &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"!!!  "</code></pre></td>
 <td align="left"><p>一条错误消息</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;!    &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"!    "</code></pre></td>
 <td align="left"><p>一条警告消息</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;     &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"     "</code></pre></td>
 <td align="left"><p>一条错误消息或警告消息以外的信息消息</p></td>
 </tr>
 </tbody>
@@ -75,63 +75,63 @@ ms.locfileid: "56554948"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;...: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"...: "</code></pre></td>
 <td align="left"><p>供应商提供的操作</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;bak: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"bak: "</code></pre></td>
 <td align="left"><p>备份数据</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;cci: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"cci: "</code></pre></td>
 <td align="left"><p>类安装程序或辅助安装程序操作</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;cpy: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"cpy: "</code></pre></td>
 <td align="left"><p>将文件复制</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;dvi: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"dvi: "</code></pre></td>
 <td align="left"><p>设备安装</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;flq: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"flq: "</code></pre></td>
 <td align="left"><p>管理文件的队列</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;inf: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"inf: "</code></pre></td>
 <td align="left"><p>管理 INF 文件</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;ndv: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"ndv: "</code></pre></td>
 <td align="left"><p>新设备向导</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;prp: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"prp: "</code></pre></td>
 <td align="left"><p>管理设备和驱动程序属性</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;reg: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"reg: "</code></pre></td>
 <td align="left"><p>管理注册表设置</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;set: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"set: "</code></pre></td>
 <td align="left"><p>常规设置</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;sig: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"sig: "</code></pre></td>
 <td align="left"><p>验证数字签名</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;sto: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"sto: "</code></pre></td>
 <td align="left"><p>管理驱动程序存储区</p></td>
 </tr>
 <tr class="even">
-<td align="left"><pre space="preserve"><code>&quot;ui : &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"ui : "</code></pre></td>
 <td align="left"><p>管理用户界面对话框</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><pre space="preserve"><code>&quot;ump: &quot;</code></pre></td>
+<td align="left"><pre space="preserve"><code>"ump: "</code></pre></td>
 <td align="left"><p>用户模式即插即用管理器</p></td>
 </tr>
 </tbody>

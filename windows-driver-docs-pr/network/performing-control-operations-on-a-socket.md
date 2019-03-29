@@ -1,6 +1,6 @@
 ---
-title: 套接字上执行管理操作
-description: 套接字上执行管理操作
+title: 针对套接字执行控制操作
+description: 针对套接字执行控制操作
 ms.assetid: 5d6ff02a-dc50-4818-9d0d-ba741fe7dfd8
 keywords:
 - 网络、 Winsock 内核 WDK 控制操作
@@ -8,14 +8,14 @@ keywords:
 - 控制操作 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4929b1084d4c1c3d388aec5a3f9c5dd7ed6e1d79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58433daf71a339c3bca4176d65a3c3a5d67371ae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545121"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349998"
 ---
-# <a name="performing-control-operations-on-a-socket"></a>套接字上执行管理操作
+# <a name="performing-control-operations-on-a-socket"></a>针对套接字执行控制操作
 
 
 Winsock Kernel (WSK) 应用程序已成功创建套接字后，它可以执行的套接字上的控制操作。 可以在套接字执行管理操作包括设置和检索套接字选项和执行套接字 IOCTL 操作。
@@ -45,7 +45,7 @@ NTSTATUS
   ULONG SocketOptionState;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_DATAGRAM_DISPATCH)(Socket->Dispatch);
 
@@ -158,7 +158,7 @@ NTSTATUS
   PIRP Irp;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_DATAGRAM_DISPATCH)(Socket->Dispatch);
 

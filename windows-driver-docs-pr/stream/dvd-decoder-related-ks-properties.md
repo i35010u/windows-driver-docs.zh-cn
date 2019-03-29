@@ -1,6 +1,6 @@
 ---
-title: DVD 解码器相关 KS 属性
-description: DVD 解码器相关 KS 属性
+title: 与 DVD 解码器相关的 KS 属性
+description: 与 DVD 解码器相关的 KS 属性
 ms.assetid: 97ce831e-429b-4097-a9f4-625315fe1247
 keywords:
 - DVD 解码器微型驱动程序 WDK，KS 属性
@@ -9,14 +9,14 @@ keywords:
 - 属性设置的 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 223c6ce2c4121a5a6bf233df369f80f9f0ec5f50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecf271ac61821383bef130c1284271980e88f1e3
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533029"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464135"
 ---
-# <a name="dvd-decoder-related-ks-properties"></a>DVD 解码器相关 KS 属性
+# <a name="dvd-decoder-related-ks-properties"></a>与 DVD 解码器相关的 KS 属性
 
 
 
@@ -122,7 +122,7 @@ ms.locfileid: "56533029"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565147" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565147)"><strong>KSPROPERTY_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
-<td><p>指定硬件 DVD 解码器的复制状态&#39;s 流。</p></td>
+<td><p>指定硬件 DVD 解码器的流的副本状态。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565144" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_DISC_KEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565144)"><strong>KSPROPERTY_DVDCOPY_DISC_KEY</strong></a></p></td>
@@ -153,7 +153,7 @@ ms.locfileid: "56533029"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567280" data-raw-source="[&lt;strong&gt;KS_AM_RATE_ExactRateChange&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567280)"><strong>KS_AM_RATE_ExactRateChange</strong></a></p></td>
-<td><p>指定&quot;输入&quot;时间戳，以开始新的时间戳率。 此属性尚未实现。</p></td>
+<td><p>指定"输入"时间戳，以开始新的时间戳率。 此属性尚未实现。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567284" data-raw-source="[&lt;strong&gt;KS_AM_RATE_MaxFullDataRate&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567284)"><strong>KS_AM_RATE_MaxFullDataRate</strong></a></p></td>
@@ -263,7 +263,7 @@ ms.locfileid: "56533029"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566516" data-raw-source="[&lt;strong&gt;KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566516)"><strong>KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES</strong></a></p></td>
-<td><p>指定设备&#39;s 批兼容的功能，例如设备是否接受输入并生成输出。</p></td>
+<td><p>指定设备的批兼容的功能，例如设备是否接受输入并生成输出。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566521" data-raw-source="[&lt;strong&gt;KSPROPERTY_WAVE_INPUT_CAPABILITIES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566521)"><strong>KSPROPERTY_WAVE_INPUT_CAPABILITIES</strong></a></p></td>

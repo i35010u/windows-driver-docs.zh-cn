@@ -1,6 +1,6 @@
 ---
-title: 版权保护实现
-description: 版权保护实现
+title: 实施版权保护
+description: 实施版权保护
 ms.assetid: 42d91ad3-615a-461a-846b-4876ac8decea
 keywords:
 - DVD 解码器微型驱动程序 WDK，版权保护
@@ -16,14 +16,14 @@ keywords:
 - 身份验证的 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 596b6f7fc46f4300e78602b8b55b292e62890088
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d352d4a10be9167c1216316029f285ee4936841c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534356"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349026"
 ---
-# <a name="copyright-protection-implementation"></a>版权保护实现
+# <a name="copyright-protection-implementation"></a>实施版权保护
 
 
 
@@ -59,7 +59,7 @@ Microsoft 提供了简化了身份验证过程的软件所需的系统在混合�
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565142" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_DEC_KEY2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565142)"><strong>KSPROPERTY_DVDCOPY_DEC_KEY2</strong></a></p></td>
-<td><p>只读属性。 此属性将请求解码器&#39;s 总线密钥 2 将转移到其中的 DVD 驱动器。 传递的数据是类型的结构<a href="https://msdn.microsoft.com/library/windows/hardware/ff567635" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567635)"> <strong>KS_DVDCOPY_BUSKEY</strong></a>。</p></td>
+<td><p>只读属性。 此属性请求解码器的总线密钥 2 将转移到其中的 DVD 驱动器。 传递的数据是类型的结构<a href="https://msdn.microsoft.com/library/windows/hardware/ff567635" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567635)"> <strong>KS_DVDCOPY_BUSKEY</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565148" data-raw-source="[&lt;strong&gt;KSPROPERTY_DVDCOPY_TITLE_KEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565148)"><strong>KSPROPERTY_DVDCOPY_TITLE_KEY</strong></a></p></td>

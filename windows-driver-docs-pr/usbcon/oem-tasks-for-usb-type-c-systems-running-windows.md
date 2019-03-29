@@ -1,16 +1,16 @@
 ---
-Description: This table describes the use cases is supported by Windows 10, and the additional tasks OEMs must perform for those use case to work.
-title: USB C 类型系统的 OEM 任务
+Description: 此表描述了使用情况下支持的 Windows 10 中，并为这些用例工作，必须执行其他任务 Oem。
+title: USB 类型 C 系统的 OEM 任务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8e437053df692aa79aea3a95bd56a70204f2bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c82a8d7a88289e19d547fa006ea07accabd08ee7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542661"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463896"
 ---
-# <a name="oem-tasks-for-usb-type-c-systems"></a>USB C 类型系统的 OEM 任务
+# <a name="oem-tasks-for-usb-type-c-systems"></a>USB 类型 C 系统的 OEM 任务
 
 
 \[有些信息与预发布产品的商业发布之前可能有大幅度修改。 Microsoft 不做任何明示或暗示的担保，此处提供的信息。\]
@@ -121,7 +121,7 @@ ms.locfileid: "56542661"
 </div></td>
 <td><p>双角色端口必须与操作系统以确保在正确的时间加载适当的软件堆栈 （主机或函数） 合作。</p>
 <p>可以设计系统，以便双角色 USB 端口需要 Windows 配置为主机或函数的模式。 这些设计将需要使用 USB 角色切换堆栈。 如果系统不使用 Synopsys 或 ChipIdea 双角色控制器，你需要为系统的双角色控制器编写 USB 角色切换客户端驱动程序。</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">编程参考的 USB 双角色控制器驱动程序</a></p>
+<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">USB dual-role controller driver programming reference</a>（USB 双角色控制器驱动程序编程参考）</p>
 <p>系统还可以设计，以便在固件或客户提供的驱动程序为主机或函数的端口，具体取决于连接到端口的设备配置的端口。 这些设计将需要为实现此逻辑在固件中或将需要在 USB 连接器管理器客户端驱动程序中实现它。 在这些系统中，Windows 将自动加载正确的软件堆栈。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">编写 USB 类型 C 连接器驱动程序</a></p></td>
 </tr>
@@ -129,8 +129,8 @@ ms.locfileid: "56542661"
 <td><strong>音频附件</strong>
 <p>USB C 型连接器可以用作的音频插孔。</p></td>
 <td>如果硬件支持的功能，Windows 10 是作为 3.5mm 音频插孔，检测 USB 类型 C 模拟输入的支持。
-<p>USB 类型 C 规范连接器允许 USB 类型 C 连接器，以使用类似于 3.5&quot;模拟使用音频附件模式的音频插孔。 Windows 10 支持通过检测与正则 3.5 访问器实现对音频附件的 USB C 类型支持的系统&quot;模拟音频设备。</p></td>
-<td>若要使用此功能，你的硬件或固件必须检测如果音频附件已连接并切换到该模式下，根据音频类型 C 规范。 这是通过映射在 3.5 上的针&quot;USB 类型 C 连接器上的模拟音频连接器插针。</td>
+<p>USB 类型 C 规范连接器允许 USB 类型 C 连接器，以使用通过使用音频附件模式类似于一个 3.5 英寸模拟音频插孔。 Windows 10 支持通过检测为正则 3.5"模拟音频设备附件实现音频 accessories USB C 类型支持的系统。</p></td>
+<td>若要使用此功能，你的硬件或固件必须检测如果音频附件已连接并切换到该模式下，根据音频类型 C 规范。 这是通过将 3.5 英寸模拟音频连接器上的针映射到 USB 类型 C 连接器上的 pin。</td>
 </tr>
 </tbody>
 </table>

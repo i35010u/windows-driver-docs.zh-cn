@@ -1,6 +1,6 @@
 ---
-title: 获取已安装的 INF 文件的原始源路径
-description: 获取已安装的 INF 文件的原始源路径
+title: 获取已安装 INF 文件的原始源路径
+description: 获取已安装 INF 文件的原始源路径
 ms.assetid: 7e086248-b11d-43ee-9afa-fad6f2136dc8
 keywords:
 - 安装程序 Api 函数 WDK、 INF 文件
@@ -11,14 +11,14 @@ keywords:
 - 检索 INF 文件路径信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80dfb06f68c302192eac513f6d71153767738a2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9091d8630a507d9f92ac3f759adc08570397a5e1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524939"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349730"
 ---
-# <a name="obtaining-the-original-source-path-of-an-installed-inf-file"></a>获取已安装的 INF 文件的原始源路径
+# <a name="obtaining-the-original-source-path-of-an-installed-inf-file"></a>获取已安装 INF 文件的原始源路径
 
 
 本主题介绍如何检索系统 INF 目录中安装的 INF 文件的原始源路径。 尽管没有任何[SetupAPI](setupapi.md)函数直接执行此检索中，您可以通过在 INF 文件中包含的条目，以便访问 INF 文件条目的安装程序 Api 函数可以用于检索间接执行检索已安装的 INF 文件中的原始源路径信息。
@@ -46,7 +46,7 @@ OriginalInfSourcePath = %1%
 
 ```cpp
 // Since the INF is already in %SystemRoot%\Inf, we need to find out where it
-// originally came from.  There is no direct way to ascertain an INF&#39;s
+// originally came from.  There is no direct way to ascertain an INF's
 // path of origin, but we can indirectly determine it by retrieving a field
 // from our INF that uses a string substitution of %1% (DIRID_SRCPATH).
 //
@@ -65,7 +65,7 @@ hInf = SetupOpenInfFile(DriverInfoDetailData->InfFileName,
 //
 //     OriginalInfSourcePath = %1%
 //
-// If we retrieve the value (i.e., field 1) of this line, we&#39;ll get the
+// If we retrieve the value (i.e., field 1) of this line, we'll get the
 // full path where the INF originally came from.
 //
 if(!SetupFindFirstLine(hInf, L"ToastCoInfo", L"OriginalInfSourcePath", &InfContext)) {

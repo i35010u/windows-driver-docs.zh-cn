@@ -1,14 +1,14 @@
 ---
-Description: This topic explains the structure of a control transfer and how a client driver should send a control request to the device.
+Description: 本主题介绍控制传输和如何客户端驱动程序应将控制请求发送到设备的结构。
 title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ea3a901585e58750041da39a13b375727a32e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7c5c7310e1e6ddac12e13049916d1dac618098a4
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543346"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349142"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
@@ -109,7 +109,7 @@ ms.locfileid: "56543346"
     <thead>
     <tr class="header">
     <th>字段</th>
-    <th>尺寸</th>
+    <th>大小</th>
     <th>值</th>
     <th>描述</th>
     </tr>
@@ -193,7 +193,7 @@ ms.locfileid: "56543346"
 
     通过将合并的数据包映射到的设备描述符 (请参阅表 9-8) 结构，我们可以看到这些字段和值：
 
-    | 字段                  | 尺寸 | 值  | 描述                                                                       |
+    | 字段                  | 大小 | ReplTest1  | 描述                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | 设备描述符，它是 18 个字节的长度。                               |
     | **bDescriptorType**    | 1    | 0x01   | 描述符类型是设备。                                                    |
@@ -231,7 +231,7 @@ ms.locfileid: "56543346"
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [WinUSB](winusb.md)
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 客户端驱动程序可以枚举管道之前，请确保满足这些要求：
@@ -494,7 +494,7 @@ Microsoft 提供的 USB 堆栈与设备中处理所有协议通信，如前面�
 <p>URB_FUNCTION_SELECT_INTERFACE</p></td>
 </tr>
 <tr class="odd">
-<td>SYNC_FRAME:设置和获取与终结点&#39;s 同步的帧号码。 请参阅部分 9.4.10 USB 规范中。</td>
+<td>SYNC_FRAME:设置和获取与终结点的同步的帧数。 请参阅部分 9.4.10 USB 规范中。</td>
 <td>通过 USB 驱动程序堆栈; 处理此请求客户端驱动程序无法执行此操作。</td>
 <td>通过 USB 驱动程序堆栈; 处理此请求客户端驱动程序无法执行此操作。</td>
 <td>通过 USB 驱动程序堆栈; 处理此请求客户端驱动程序无法执行此操作。</td>

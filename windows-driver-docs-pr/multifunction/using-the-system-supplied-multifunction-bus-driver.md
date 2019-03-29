@@ -1,6 +1,6 @@
 ---
-title: 使用系统提供多功能总线驱动程序
-description: 使用系统提供多功能总线驱动程序
+title: 使用系统提供的多功能总线驱动程序
+description: 使用系统提供的多功能总线驱动程序
 ms.assetid: 75fe659d-5311-4bc6-adfb-fd608e10c718
 keywords:
 - 多功能设备 WDK，系统提供的总线驱动程序
@@ -12,14 +12,14 @@ keywords:
 - PDOs WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 536ff8162ef844eb4fe427309e883b1d36890937
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 94f9cbdb5f0fd1e6eed1785b5149344b804f0793
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525469"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349734"
 ---
-# <a name="using-the-system-supplied-multifunction-bus-driver"></a>使用系统提供多功能总线驱动程序
+# <a name="using-the-system-supplied-multifunction-bus-driver"></a>使用系统提供的多功能总线驱动程序
 
 
 
@@ -54,7 +54,7 @@ ClassGUID  = {4d36e971-e325-11ce-bfc1-08002be10318} ; GUID for MF
 ; ...
 ; ...
 [ControlFlags]
-ExcludeFromSelect = *   ; don&#39;t include PnP devices in a displayed list of 
+ExcludeFromSelect = *   ; don't include PnP devices in a displayed list of 
                         ; devices available for manual installation
 [Manufacturer]
 ; ...

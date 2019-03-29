@@ -10,12 +10,12 @@ keywords:
 - IRP_MJ_CREATE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f5ed7a4bbf9de3ef852e25487b7bb6725ba2e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5dbd45a5fbb4860c61116ee37519f085f7cf634f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546389"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349944"
 ---
 # <a name="create-processing"></a>创建处理
 
@@ -46,7 +46,7 @@ ms.locfileid: "56546389"
 
         //
         //  Check the desired access for a read-only Dirent
-        // Don&#39;t allow 
+        // Don't allow 
         //  WRITE, FILE_APPEND_DATA, FILE_ADD_FILE,
         //  FILE_ADD_SUBDIRECTORY, and FILE_DELETE_CHILD
         //

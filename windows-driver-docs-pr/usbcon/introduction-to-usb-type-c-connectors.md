@@ -1,14 +1,14 @@
 ---
-Description: Possible causes and resolutions to troubleshooting messages in Windows 10 that users might get on USB Type-C systems running Windows.
+Description: 可能的原因以及故障排除的用户可能会在运行 Windows 的 USB 类型 C 系统的 Windows 10 中的消息的解决方法。
 title: 对 USB 类型 C Windows 系统的消息进行故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2581654f6d6c5c11d6f7dcac2657d9dfab08b3d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 060ecddcb41ae474d0845afc0b9f11216525c407
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525981"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350330"
 ---
 # <a name="troubleshoot-messages-for-a-usb-type-c-windows-system"></a>对 USB 类型 C Windows 系统的消息进行故障排除
 
@@ -50,7 +50,7 @@ ms.locfileid: "56525981"
 <td><ol>
 <li>请注意错误代码。
 <ul>
-<li>在 Windows 10 桌面版系统中，打开设备管理器，并查找设备。 它&#39;s 标有一个黄色感叹号。 右键单击节点并打开设备属性。 错误代码是下<strong>设备状态</strong>。</li>
+<li>在 Windows 10 桌面版系统中，打开设备管理器，并查找设备。 它将标有一个黄色感叹号。 右键单击节点并打开设备属性。 错误代码是下<strong>设备状态</strong>。</li>
 <li>在 Windows 10 移动版系统中，通知会显示错误代码。</li>
 </ul></li>
 <li>请按照中所述的故障排除步骤<a href="https://go.microsoft.com/fwlink/p/?LinkId=526896" data-raw-source="[this article](https://go.microsoft.com/fwlink/p/?LinkId=526896)">这篇文章</a>。</li>
@@ -106,7 +106,7 @@ ms.locfileid: "56525981"
 </div></td>
 <td><ul>
 <li>使用充电器和随设备附带的电缆。</li>
-<li>请确保你&#39;重新连接到你的系统上充电 USB 类型 C 端口在充电器。</li>
+<li>请确保，要连接你充电器充电 USB 类型 C 端口到你的系统上。</li>
 </ul></td>
 </tr>
 </tbody>

@@ -4,12 +4,12 @@ description: 驱动程序安装错误和警告可以显示作为 Microsoft Visua
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da761902b7f1db079da95490d1888077fb5be04b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef7f22db5efb0c1af011841ca274b9e8ee9e69a2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545985"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464213"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -160,7 +160,7 @@ AddReg = AddRegB
 <p>当你使用<strong>HKR</strong>，注册表值将不会显示之前安装该设备。</p></td>
 </tr>
 <tr>
-<td><strong>1230:缺少的文件&#39;xxxx&#39; [SourceDisksFiles] 部分下。</strong></td>
+<td><strong>1230:缺少文件 [SourceDisksFiles] 部分下的 xxxx。</strong></td>
 <td>这表示为驱动程序包的一部分指定了文件，但在 [SourceDisksFiles] 部分中未指定相对于 INF 文件的源位置。
 <pre>
 [SourceDisksFiles]
@@ -184,7 +184,7 @@ CatalogFile=wudf.cat
 [MyAddReg]
 HKR,,DllPath,%SystemRoot%\System32\myDll.sys
 </pre>
-此行会导致 INF 分析器尝试找到该令牌&quot;SystemRoot&quot;从 [Strings] 部分中，而不是存储文本的预期的行为&quot;%systemroot%&quot;注册表中。  若要使用的文本值 %systemroot%而不是执行字符串替换，请使用转义序列 %%。
+此行会导致 INF 分析器尝试找到令牌"SystemRoot"从 [Strings] 部分中，而不是在注册表中存储文本"%systemroot%"的预期的行为。  若要使用的文本值 %systemroot%而不是执行字符串替换，请使用转义序列 %%。
 <pre>
 [MyAddReg]
 HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys

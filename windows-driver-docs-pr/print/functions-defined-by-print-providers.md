@@ -1,20 +1,20 @@
 ---
-title: 通过打印提供商定义的函数
-description: 通过打印提供商定义的函数
+title: 打印提供程序定义的函数
+description: 打印提供程序定义的函数
 ms.assetid: 4fae4b69-ed4b-47b6-b6e8-41733aed51a5
 keywords:
 - 打印提供程序 WDK，函数
 - 函数 WDK 打印提供商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b71b87bb3154aed5218375b4e62b0c3a47619e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8ec343fd5db0345044216287d0d559aa4c32d43f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526730"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349738"
 ---
-# <a name="functions-defined-by-print-providers"></a>通过打印提供商定义的函数
+# <a name="functions-defined-by-print-providers"></a>打印提供程序定义的函数
 
 
 
@@ -139,7 +139,7 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>
-<td><p>修改打印队列&#39;s 数据类型或<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。</p></td>
+<td><p>修改打印队列的数据类型或<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinter</strong> （必需）</p></td>
@@ -170,7 +170,7 @@ ms.locfileid: "56526730"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPrinterDriver</strong></p></td>
-<td><p>添加指定的打印机&#39;s 驱动程序文件到指定的服务器。</p></td>
+<td><p>将指定的打印机驱动程序文件添加到指定的服务器。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPrinterDriverEx</strong></p></td>
@@ -178,7 +178,7 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="odd">
 <td><p><strong>DeletePrinterDriver</strong></p></td>
-<td><p>删除对指定打印机的访问&#39;s 驱动程序文件，指定服务器上的。</p></td>
+<td><p>对指定的打印机驱动程序文件，指定服务器上删除访问。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeletePrinterDriverEx</strong></p></td>
@@ -198,7 +198,7 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="even">
 <td><p><strong>GetPrinterDriverDirectory</strong></p></td>
-<td><p>返回的服务器的名称&#39;s 打印机驱动程序目录。</p></td>
+<td><p>返回的名称服务器的打印机驱动程序目录。</p></td>
 </tr>
 </tbody>
 </table>
@@ -259,7 +259,7 @@ ms.locfileid: "56526730"
 <tr class="odd">
 <td><p></p>
 <strong>WritePrinter</strong> （必需）</td>
-<td><p>接收打印作业的一部分&#39;s 数据流。</p></td>
+<td><p>接收打印作业的数据的流的一部分。</p></td>
 </tr>
 </tbody>
 </table>
@@ -414,7 +414,7 @@ ms.locfileid: "56526730"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPort</strong></p></td>
-<td><p>打印机端口向列表中添加可用，通常通过调用指定的端口监视器&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff545026" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545026)"> <strong>AddPortUI</strong> </a>函数。</p></td>
+<td><p>将添加到列表的可用，打印机端口，通常通过调用指定的端口监视器<a href="https://msdn.microsoft.com/library/windows/hardware/ff545026" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545026)"> <strong>AddPortUI</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPortEx</strong></p></td>
@@ -423,12 +423,12 @@ ms.locfileid: "56526730"
 <tr class="odd">
 <td><p></p>
 <strong>ConfigurePort</strong> （必需）</td>
-<td><p>配置打印机端口，通常通过调用指定的端口监视器&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff546290" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546290)"> <strong>ConfigurePortUI</strong> </a>函数。</p></td>
+<td><p>配置打印机端口，通常通过调用指定的端口监视器<a href="https://msdn.microsoft.com/library/windows/hardware/ff546290" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546290)"> <strong>ConfigurePortUI</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
 <strong>DeletePort</strong> （必需）</td>
-<td><p>打印机端口从列表中删除可用，通常通过调用指定的端口监视器&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff547432" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547432)"> <strong>DeletePortUI</strong> </a>函数。</p></td>
+<td><p>删除打印机端口从列表中的可用，通常通过调用指定的端口监视器<a href="https://msdn.microsoft.com/library/windows/hardware/ff547432" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547432)"> <strong>DeletePortUI</strong> </a>函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -460,7 +460,7 @@ ms.locfileid: "56526730"
 <tbody>
 <tr class="odd">
 <td><p><strong>DeletePrinterData</strong></p></td>
-<td><p>删除当前分配给指定的值名称，在指定的打印机下的值&#39;s <strong>PrinterDriverData</strong>键。</p></td>
+<td><p>删除当前分配给指定的值名称，在指定的打印机下的值<strong>PrinterDriverData</strong>密钥。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeletePrinterDataEx</strong></p></td>
@@ -468,11 +468,11 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="odd">
 <td><p><strong>DeletePrinterKey</strong></p></td>
-<td><p>删除指定的项及其子项，如果它们当前存储在注册表中指定的打印机下&#39;s <strong>PrinterDriverData</strong>键。</p></td>
+<td><p>删除指定的项及其子项，如果它们当前存储在注册表中指定的打印机下<strong>PrinterDriverData</strong>密钥。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>EnumPrinterData</strong></p></td>
-<td><p>返回每个值名称的目前分配值存储在注册表项下指定的打印机中的&#39;s <strong>PrinterDriverData</strong>键。</p></td>
+<td><p>返回每个值名称的目前分配值存储在注册表项下指定的打印机<strong>PrinterDriverData</strong>密钥。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>EnumPrinterDataEx</strong></p></td>
@@ -484,7 +484,7 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="odd">
 <td><p><strong>GetPrinterData</strong></p></td>
-<td><p>返回当前分配给指定的值名称，它存储在注册表项下指定的打印机的值&#39;s <strong>PrinterDriverData</strong>键。</p></td>
+<td><p>返回当前分配给指定的值名称，它存储在注册表项下指定的打印机的值<strong>PrinterDriverData</strong>密钥。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GetPrinterDataEx</strong></p></td>
@@ -492,7 +492,7 @@ ms.locfileid: "56526730"
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinterData</strong></p></td>
-<td><p>将指定的值名称和值存储在注册表中，在指定的打印机下&#39;s <strong>PrinterDriverData</strong>键。</p></td>
+<td><p>将指定的值名称和值存储在注册表中，在指定的打印机<strong>PrinterDriverData</strong>密钥。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SetPrinterDataEx</strong></p></td>

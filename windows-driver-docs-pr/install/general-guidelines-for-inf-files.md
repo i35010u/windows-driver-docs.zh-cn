@@ -1,20 +1,19 @@
 ---
-title: 一般性的指导原则的 INF 文件
-description: 一般性的指导原则的 INF 文件
+title: INF 文件常规指南
+description: INF 文件常规指南
 ms.assetid: a0394708-46ed-47f8-a629-0c7d3088df3b
 keywords:
 - INF 文件 WDK 设备安装，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 415f8bf9c0e61553a36ddf2095893b84896fc9a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 788d55c9f1a0c810da0d0952cdf56d9f6fe40f51
+ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548283"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57693058"
 ---
-# <a name="general-guidelines-for-inf-files"></a>一般性的指导原则的 INF 文件
-
+# <a name="general-guidelines-for-inf-files"></a>INF 文件常规指南
 
 
 
@@ -43,8 +42,11 @@ INF 文件附带 Windows 7 和更早的操作系统必须具有的文件名称<e
 
 不要随意修改你的 INF 文件的时间戳作为版本控制机制。 版本控制的 INF 文件应基于中指定的日期和版本号[ **INF 版本部分**](inf-version-section.md)。
 
- 
+## <a name="best-practices-for-naming-and-versioning-your-inf-file"></a>命名的最佳实践和版本控制您的 INF 文件
 
+- 可使用 Inf 冲突的可能性减少来自其他供应商的方式，应命名为 INF 名称。  例如，INF 名称可以在其中，作为前缀或后缀，包括你的公司名称的缩写词。
+- 如果您有两个不同变量的不同方面，如品牌字符串、 设置等的相同驱动程序包，两个驱动程序包，应具有唯一的名称。
+- 每次更新 INF 或任何 INF 文件的引用，应更新的日期和 INF 中的版本。
  
 
 

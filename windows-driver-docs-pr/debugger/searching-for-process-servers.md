@@ -1,5 +1,5 @@
 ---
-title: 搜索的进程服务器
+title: 搜索进程服务器
 description: 可以使用 KD 或 CDB-QR 命令行选项来获取网络服务器计算机运行的可用进程服务器的列表。
 ms.assetid: 2f0cd4df-f18a-4222-ab90-7aba0f177eff
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a96a8929c45ccfeeca5a490aba238d9d2f771e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 652878d1ba1423eca72285f7f4651fc56e557b35
+ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534478"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203932"
 ---
-# <a name="searching-for-process-servers"></a>搜索的进程服务器
+# <a name="searching-for-process-servers"></a>搜索进程服务器
 
 
 可以使用 KD 或与 CDB **-QR**命令行选项来获取网络服务器计算机运行的可用进程服务器的列表。
@@ -53,11 +53,5 @@ Debugger -QR \\Server
 
  
 
- 
 
  
-
-
-
-
-

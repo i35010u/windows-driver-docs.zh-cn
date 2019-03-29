@@ -4,12 +4,12 @@ description: MPIO\_DSM\_路径\_V2 WMI 类
 ms.assetid: ec7d75a0-cb40-46e8-ab1d-137a9331193e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4f5dbd8c2b8cb3d0155401a88b6ea83a995777e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 35ff00381b023d8e1627de14a7aa5be1f6b43a1f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555632"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349774"
 ---
 # <a name="mpiodsmpathv2-wmi-class"></a>MPIO\_DSM\_路径\_V2 WMI 类
 
@@ -57,7 +57,7 @@ class MPIO_DSM_Path_V2
     //
     // Flag to indicate if this is an optimized path.
     // ActiveOptimized and StandBy paths must set this to TRUE.
-    // Even though a StandBy path doesn&#39;t actually provide optimal access to the
+    // Even though a StandBy path doesn't actually provide optimal access to the
     // device, it must set this flag to TRUE. This is due to the fact that this
     // flag is used in conjunction with the PrimaryPath flag to form a two bit
     // boolean representation of the access states (AO, AU, SB, UA).
@@ -87,10 +87,10 @@ class MPIO_DSM_Path_V2
     uint32 FailedPath;
 
     //
-    // TargetPortGroup&#39;s asymmetric access state
+    // TargetPortGroup's asymmetric access state
     //
     [WmiDataId(8),
-     Description("Target Port Group&#39;s Asymmetric Access State") : amended,
+     Description("Target Port Group's Asymmetric Access State") : amended,
      Values{"Active/Optimized",
             "Active/Unoptimized",
             "Standby",
@@ -107,10 +107,10 @@ class MPIO_DSM_Path_V2
     uint32 TargetPortGroup_State;
 
     //
-    // Indicates the device&#39;s ALUA transition support
+    // Indicates the device's ALUA transition support
     //
     [WmiDataId(9),
-     Description("Device&#39;s Asymmetric Logical Unit Access state transition support") : amended,
+     Description("Device's Asymmetric Logical Unit Access state transition support") : amended,
      Values{"ALUA Not Supported",
             "ALUA Implicit Only",
             "ALUA Explicit Only",

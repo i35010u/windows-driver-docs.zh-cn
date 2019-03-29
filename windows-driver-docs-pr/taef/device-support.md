@@ -4,12 +4,12 @@ description: 设备支持
 ms.assetid: 41316BB1-0AE0-4100-AE7B-0014FE9FD0E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f146f043db73e59b46fa57a701c8ebffaf6e025
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fef842911670299c4df585aed6a799023bcabcd6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519107"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350324"
 ---
 # <a name="device-support"></a>设备支持
 
@@ -79,13 +79,13 @@ END_MODULE()
         END_TEST_METHOD()
 
         BEGIN_TEST_METHOD(OneHDAudioTest)
-            TEST_METHOD_PROPERTY(L"ResourceSelection", L"@Id=&#39;HD*&#39;")
+            TEST_METHOD_PROPERTY(L"ResourceSelection", L"@Id='HD*'")
         END_TEST_METHOD()
 
         ...
 
         BEGIN_TEST_METHOD(HDorPCITest)
-            TEST_METHOD_PROPERTY(L"ResourceSelection", L"@Id=&#39;PCI*&#39; OR @Id=&#39;HD*&#39;")
+            TEST_METHOD_PROPERTY(L"ResourceSelection", L"@Id='PCI*' OR @Id='HD*'")
         END_TEST_METHOD()
         ...
     };

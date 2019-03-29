@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: 719e76544d05b7e82178d3293f7e64646b1bce3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5542a3de5f333824c20d9f2588b5668b3861d66
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545282"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348660"
 ---
 # <a name="c30030"></a>C30030
 
@@ -108,13 +108,13 @@ pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExec
 下面的代码生成警告：
 
 ```
-ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, &#39;xppn&#39;);
+ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, 'xppn');
 ```
 
 下面的代码可避免此警告：
 
 ```
-ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, &#39;xppn&#39;);
+ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 ```
 
 **其他特殊情况：**
@@ -255,7 +255,7 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
                                       ); 
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)

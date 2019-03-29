@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7dec2274fa8c14cd711161daafbed28d59f12f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 36ec2aa2eef0f29371e670ef7f06c7a40dd49478
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543059"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349216"
 ---
 # <a name="tvotpushbutton"></a>TVOT\_PUSHBUTTON
 
@@ -129,7 +129,7 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>对话框资源或句柄 DLGTEMPLATE 结构的资源标识符 （请参阅 Windows SDK 文档）。 取决于 OPTPARAM 结构中的 DPF_USE_HDLGTEMPLATE 标志&#39;s<strong>标志</strong>成员。</p></td>
+<td><p>对话框资源或句柄 DLGTEMPLATE 结构的资源标识符 （请参阅 Windows SDK 文档）。 取决于 OPTPARAM 结构中的 DPF_USE_HDLGTEMPLATE 标志<strong>标志</strong>成员。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
@@ -158,15 +158,15 @@ TVOT\_按键选项类型包含分组框内的推送按钮。
 <tbody>
 <tr class="odd">
 <td><p><span id="___________Style__________"></span><span id="___________style__________"></span><span id="___________STYLE__________"></span> Style</p></td>
-<td><p>指定要 CPSUI 当用户单击推送按钮时执行的操作。 可以是下列值之一：</p></td>
+<td><p>指定要 CPSUI 当用户单击推送按钮时执行的操作。 可以是以下值之一：</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_CALLBACK"></span><span id="pushbutton_type_callback"></span>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>CPSUI 调用应用程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>的类型化回调函数来处理与按钮事件<a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>结构&#39;s<strong>原因</strong>成员设置为 CPSUICB_REASON_PUSHBUTTON。 (CPSUI 将忽略回调函数&#39;s 返回值。)</p></td>
+<td><p>CPSUI 调用应用程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff564313" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564313)"> <strong>_CPSUICALLBACK</strong></a>的类型化回调函数来处理与按钮事件<a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>结构的<strong>原因</strong>成员设置为 CPSUICB_REASON_PUSHBUTTON。 （CPSUI 忽略回调函数的返回值。）</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="PUSHBUTTON_TYPE_DLGPROC"></span><span id="pushbutton_type_dlgproc"></span>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>应用程序&#39;s 对话框过程处理按钮的事件。 (有关详细信息，请参阅<strong>备注</strong>部分，了解<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)</p>
+<td><p>应用程序的对话框过程处理按钮的事件。 (有关详细信息，请参阅<strong>备注</strong>部分，了解<a href="https://msdn.microsoft.com/library/windows/hardware/ff547607" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547607)"> <strong>DLGPAGE</strong></a>。)</p>
 <p>当函数收到 WM_INITDIALOG 消息，其<em>lParam</em>自变量指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff547088" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547088)"> <strong>CPSUICBPARAM</strong> </a>结构<strong>原因</strong>成员设置为 CPSUICB_REASON_DLGPROC。</p></td>
 </tr>
 <tr class="even">
@@ -264,7 +264,7 @@ TVOT\_PUSHBUTTON
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Compstui.h （包括 Compstui.h）</td>
 </tr>
 </tbody>

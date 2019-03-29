@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b00cc13896c99386df68b02fe76748f38e3f4c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 42817f2cfc7c0973970dc8d2bf42bab2a5862993
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544996"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464189"
 ---
-# <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A:内存\_管理
+# <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A：内存\_管理
 
 
 内存\_管理 bug 检查的值为 0x0000001A。 这表明发生了严重的内存管理错误。
@@ -79,7 +79,7 @@ ms.locfileid: "56544996"
 </tr>
 <tr class="even">
 <td align="left"><p>0x1000</p></td>
-<td align="left"><p>调用方<strong>MmGetSystemAddressForMdl *</strong>尝试映射完全缓存物理页的非缓存。 此操作将导致冲突的硬件转换缓冲区条目，并因此由操作系统被拒绝。 因为调用方指定的&quot;bug 检查失败&quot;在请求 MDL，系统必须无选择只好颁发此实例中的 bug 检查。</p></td>
+<td align="left"><p>调用方<strong>MmGetSystemAddressForMdl *</strong>尝试映射完全缓存物理页的非缓存。 此操作将导致冲突的硬件转换缓冲区条目，并因此由操作系统被拒绝。 由于调用方请求 MDL 中指定"失败的 bug 检查"，系统必须以颁发在此实例中的 bug 检查，别无选择。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1010</p></td>

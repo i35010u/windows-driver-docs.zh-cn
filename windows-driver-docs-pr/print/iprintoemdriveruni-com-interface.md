@@ -6,12 +6,12 @@ keywords:
 - IPrintOemDriverUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95e04b3ac99b8e3dc00017b64f1e60f1edb327ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5bd00f455a74a3a42702be5366cabcaf3aca5e4a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521213"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349128"
 ---
 # <a name="iprintoemdriveruni-com-interface"></a>IPrintOemDriverUni COM 接口
 
@@ -41,11 +41,11 @@ ms.locfileid: "56521213"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553128" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetGPDData&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553128)"><strong>IPrintOemDriverUni::DrvGetGPDData</strong></a></p></td>
-<td><p>使呈现插件来获取在打印机中定义的数据&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556283#wdkgloss-generic-printer-description--gpd-" data-raw-source="&lt;em&gt;generic printer description (GPD)&lt;/em&gt;"><em>通用打印机说明 (GPD)</em> </a>文件。</p></td>
+<td><p>使呈现插件来获取在打印机中定义的数据<a href="https://msdn.microsoft.com/library/windows/hardware/ff556283#wdkgloss-generic-printer-description--gpd-" data-raw-source="&lt;em&gt;generic printer description (GPD)&lt;/em&gt;"><em>通用打印机说明 (GPD)</em> </a>文件。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553129" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvGetStandardVariable&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553129)"><strong>IPrintOemDriverUni::DrvGetStandardVariable</strong></a></p></td>
-<td><p>使呈现插件获取 Unidrv 的当前值&#39;s<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>。</p></td>
+<td><p>使呈现插件获取 Unidrv 的当前值<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553132" data-raw-source="[&lt;strong&gt;IPrintOemDriverUni::DrvUniTextOut&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553132)"><strong>IPrintOemDriverUni::DrvUniTextOut</strong></a></p></td>

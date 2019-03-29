@@ -1,19 +1,19 @@
 ---
-title: 解析功能的选项属性
-description: 解析功能的选项属性
+title: 分辨率功能的选项属性
+description: 分辨率功能的选项属性
 ms.assetid: f04cd119-38c7-465c-b4fd-d657aa5bfacd
 keywords:
 - 解析功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 529829b089f2708a8d924d76b1c65dd44ab3b434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bebafb031a2958c7e09c5baf3396d4d175f051a2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541081"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349922"
 ---
-# <a name="option-attributes-for-the-resolution-feature"></a>解析功能的选项属性
+# <a name="option-attributes-for-the-resolution-feature"></a>分辨率功能的选项属性
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56541081"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>DPI</strong></p></td>
-<td><p>对数字值表示的 x 和 y 值的打印机&#39;s 分辨率，以每英寸点数。</p></td>
+<td><p>对数字值表示 x 和 y 值的打印机的分辨率，以每英寸点数。</p></td>
 <td><p>必需。 X 和 y 值必须等于 *<strong>TextDPI</strong> x 和 y 值，或它们必须等于 *<strong>TextDPI</strong> x 和 y 值除以 2 的幂。 例如，如果 *<strong>TextDPI</strong>然后是对 （300、 300） *<strong>DPI</strong>值可能会对 （300、 300）、 对 （150，150），或对 （75，75），但未对 （100，100）。</p></td>
 </tr>
 <tr class="even">
@@ -72,7 +72,7 @@ ms.locfileid: "56541081"
 </tr>
 <tr class="odd">
 <td><p></em><strong>TextDPI</strong></p></td>
-<td><p>对或数字值表示 x 和 y 值的打印机&#39;s 文本分辨率，以每英寸点数。</p></td>
+<td><p>对或数字值表示 x 和 y 值的打印机的文本解析，以每英寸点数。</p></td>
 <td><p>必需。 请参阅 *<strong>DPI</strong>注释。 此解决方法用于绘制字体和矢量图形。</p></td>
 </tr>
 </tbody>

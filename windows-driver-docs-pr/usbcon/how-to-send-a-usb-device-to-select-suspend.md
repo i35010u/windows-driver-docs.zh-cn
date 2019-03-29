@@ -1,16 +1,16 @@
 ---
-Description: This topic describes the USB client driver verifier feature of the USB 3.0 driver stack that enables the client driver to test certain failure cases.
-title: USB 客户端驱动程序验证工具
+Description: 本主题介绍 USB 客户端驱动程序验证工具功能，客户端驱动程序来测试某些失败的情况下的 USB 3.0 驱动程序堆栈。
+title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da7649e1b6a7698b8b3e94f8fb4cb67ea0a4dbc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dbf1c830c2595c38976d1347dd4b7757a5107ef8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519388"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349066"
 ---
-# <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证工具
+# <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
 
 本主题介绍 USB 客户端驱动程序验证工具功能，客户端驱动程序来测试某些失败的情况下的 USB 3.0 驱动程序堆栈。
@@ -93,7 +93,7 @@ HKEY_LOCAL_MACHINE
 <tbody>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailRegistration</strong></p>
-<p>失败的客户端驱动程序&#39;s 调用这些例程：</p>
+<p>对这些例程的客户端驱动程序的调用将失败：</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439428" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439428)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"><strong>USBD_CreateHandle</strong></a></li>
@@ -105,7 +105,7 @@ HKEY_LOCAL_MACHINE
 </ul></td>
 <td><p><strong>客户端驱动程序注册失败。</strong></p>
 <p>客户端驱动程序的初始化任务之一是能够将自身注册基础驱动程序堆栈。 在多个后续调用中必须进行注册。</p>
-<p>例如，客户端驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"> <strong>USBD_CreateHandle</strong> </a>进行注册。 让&#39;s 说驱动程序假定该例程始终返回 STATUS_SUCCESS，且不实现代码来处理失败。 如果例程将返回错误 NTSTATUS 代码，该驱动程序无意中可以忽略错误并继续进行后续调用使用 USBD 句柄无效。</p>
+<p>例如，客户端驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh406241" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406241)"> <strong>USBD_CreateHandle</strong> </a>进行注册。 让我们假设驱动程序假定该例程始终返回 STATUS_SUCCESS，且不实现代码来处理失败。 如果例程将返回错误 NTSTATUS 代码，该驱动程序无意中可以忽略错误并继续进行后续调用使用 USBD 句柄无效。</p>
 <p>设置，以便可以测试失败可代码路径失败的调用。</p>
 <p>注册失败时预期的客户端驱动程序行为：</p>
 <ul>
@@ -115,7 +115,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
-<p>失败的客户端驱动程序&#39;s 调用这些例程在调用方传递中的 GUID_USB_CAPABILITY_CHAINED_MDLS <em>CapabilityType</em>参数。</p>
+<p>失败对这些例程的客户端驱动程序的调用时调用方传递中的 GUID_USB_CAPABILITY_CHAINED_MDLS <em>CapabilityType</em>参数。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406230" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406230)"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439434" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439434)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -137,7 +137,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
-<p>失败的客户端驱动程序&#39;s 调用这些例程在调用方传递中的 GUID_USB_CAPABILITY_STATIC_STREAMS <em>CapabilityType</em>参数。</p>
+<p>失败对这些例程的客户端驱动程序的调用时调用方传递中的 GUID_USB_CAPABILITY_STATIC_STREAMS <em>CapabilityType</em>参数。</p>
 <ul>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh406230" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406230)"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/hardware/hh439434" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh439434)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -172,7 +172,7 @@ HKEY_LOCAL_MACHINE
 <p>如果<em>N</em>大于最大数量的流，设置将被忽略。</p></li>
 </ul></td>
 <td><p><strong>与不同的主机控制器的通信，每个都支持不同的值的流的最大数量。</strong></p>
-<p>通过使用此设置，您可以确保该驱动程序&#39;s 流式处理逻辑的工作方式，而不考虑流支持的不同主机控制器的数量。</p>
+<p>通过使用此设置，可以确保该驱动程序的流处理逻辑的工作方式，而不考虑流支持的不同主机控制器的数量。</p>
 <p>将通过主机控制器支持的流的数量限制可用于 I/O 传输的流的数量。</p>
 <p>有关如何在客户端驱动程序中支持静态流的信息，请参阅<a href="how-to-open-streams-in-a-usb-endpoint.md" data-raw-source="[How to Open and Close Static Streams in a USB Bulk Endpoint](how-to-open-streams-in-a-usb-endpoint.md)">如何打开和关闭 USB 大容量终结点中的静态流</a>。</p>
 <p>当主机控制器支持终结点比少流时预期的客户端驱动程序行为：</p>
@@ -183,7 +183,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailEnableStaticStreams</strong></p>
-<p>失败的客户端驱动程序&#39;s 打开静态流请求 (URB_FUNCTION_OPEN_STATIC_STREAMS)。</p></td>
+<p>客户端驱动程序的打开的静态流请求 (URB_FUNCTION_OPEN_STATIC_STREAMS) 失败。</p></td>
 <td><ul>
 <li>0:设置处于禁用状态。</li>
 <li>1：请求始终会失败。</li>

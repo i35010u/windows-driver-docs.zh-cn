@@ -1,16 +1,16 @@
 ---
-Description: Supported Format Retrieval
-title: 受支持的格式检索
+Description: 支持的格式检索
+title: 支持的格式检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe13842d484d0731683bd66972bcbdb7f8194ef7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8d66ee2d63beb61e30e36fa0c3a8b0c86ff91b76
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524906"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349152"
 ---
-# <a name="supported-format-retrieval"></a>受支持的格式检索
+# <a name="supported-format-retrieval"></a>支持的格式检索
 
 
 当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedFormats**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedFormats**中的方法示例驱动程序。 后一种方法创建**IPortableDevicePropVariantCollection**驱动程序将为给定的内容类型支持的格式存储到其中的对象。
@@ -50,7 +50,7 @@ HRESULT WpdCapabilities::OnGetSupportedFormats(
     {
         PROPVARIANT pv = {0};
         PropVariantInit(&pv);
-        // Don&#39;t call PropVariantClear, since we did not allocate the memory for these GUIDs
+        // Don't call PropVariantClear, since we did not allocate the memory for these GUIDs
 
         if ((guidContentType   == WPD_CONTENT_TYPE_DOCUMENT) ||
             ((guidContentType  == WPD_CONTENT_TYPE_ALL)))

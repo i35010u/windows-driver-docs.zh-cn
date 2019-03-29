@@ -1,20 +1,20 @@
 ---
-title: 游标属性
-description: 游标属性
+title: 光标属性
+description: 光标属性
 ms.assetid: 43646e2a-bc40-430e-ac7e-6fe4cb353309
 keywords:
 - 游标属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv、 光标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d51d7b333563b82f5bbe341a7a47b4c4a5896a64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1c4604e051d424401475de3eaee82de64014e087
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519997"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349600"
 ---
-# <a name="cursor-attributes"></a>游标属性
+# <a name="cursor-attributes"></a>光标属性
 
 
 
@@ -53,7 +53,7 @@ ms.locfileid: "56519997"
 <td><p><strong><em>CursorXAfterCR</strong></p></td>
 <td><p></p>
 其中一种：AT_PRINTABLE_X_ORIGIN AT_CURSOR_X_ORIGIN
-<p>指示光标&#39;后返回一个回车符 s x 位置。</p></td>
+<p>返回一个回车符后指示光标的 x 位置。</p></td>
 <td><p>可选。 如果未指定，默认值是 AT_CURSOR_X_ORIGIN，这是物理零的位置。</p></td>
 </tr>
 <tr class="even">

@@ -1,17 +1,17 @@
 ---
-title: Multipacket 消息
-description: Multipacket 消息
+title: 多数据包消息
+description: 多数据包消息
 ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a301713e217006da4955015bb7345474b44dd00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72ab94c9d61fdb211e6591d16d083bb6e3a41a4b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522369"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349674"
 ---
-# <a name="multipacket-messages"></a>Multipacket 消息
+# <a name="multipacket-messages"></a>多数据包消息
 
 
 
@@ -35,9 +35,9 @@ ms.locfileid: "56522369"
 <thead>
 <tr class="header">
 <th align="left">偏移量</th>
-<th align="left">尺寸</th>
+<th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -117,7 +117,7 @@ ms.locfileid: "56522369"
 <td align="left"><p>70</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>填充</p></td>
-<td align="left"><p>此&#39;t 问题-未使用</p></td>
+<td align="left"><p>并不重要-未使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>72</p></td>

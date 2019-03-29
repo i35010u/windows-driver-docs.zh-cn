@@ -4,12 +4,12 @@ description: PackageIdentity
 ms.assetid: b5533962-ea42-416e-bbd8-ce9dce1a9a40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b80ae051a28483f6513bdd2c6b9ca49c8877fac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bb842736555a1b824dcefd98ee0bd1590179cba5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534026"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349446"
 ---
 # <a name="packageidentity"></a>PackageIdentity
 
@@ -36,7 +36,7 @@ PackageIdentity 元素指定当用户插入设备时应显示为建议的自动�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -44,16 +44,16 @@ PackageIdentity 元素指定当用户插入设备时应显示为建议的自动�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>名称</p></td>
+<td><p>“属性”</p></td>
 <td><p>tns:PackageNameType</p></td>
 <td><p>是</p></td>
-<td><p>复制此元素的 Name 属性的应用程序清单中&#39;s 标识元素，在备注中所述。</p></td>
+<td><p>从备注中描述的应用程序清单的标识元素的 Name 属性中复制此元素。</p></td>
 </tr>
 <tr class="even">
 <td><p>发布者</p></td>
 <td><p>tns:PublisherType</p></td>
 <td><p>是</p></td>
-<td><p>将此元素复制应用程序清单的发布服务器属性&#39;s 标识元素，在备注中所述。</p></td>
+<td><p>从应用程序清单的标识元素，在备注中所述的发布服务器属性中复制此元素。</p></td>
 </tr>
 </tbody>
 </table>

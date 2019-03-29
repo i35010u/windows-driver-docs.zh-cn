@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SO_WSK_SECURITY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0306f14f84393c54ba1e25de502be8df2d9dac46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 49658a55beabad6539913604a6ccdc5a2f425d8f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547855"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349848"
 ---
 # <a name="sowsksecurity"></a>因此\_WSK\_安全
 
@@ -32,7 +32,7 @@ SO\_WSK\_安全套接字选项允许 WSK 的应用程序安全描述符应用到
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -91,7 +91,7 @@ WSK 应用程序还可以应用的安全描述符到套接字时通过指定指�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +121,7 @@ WSK 应用程序还可以应用的安全描述符到套接字时通过指定指�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>指向 PSECURITY_DESCRIPTOR 类型的变量的指针。 此变量接收指向套接字的缓存副本的&#39;s 安全描述符。</p></td>
+<td><p>指向 PSECURITY_DESCRIPTOR 类型的变量的指针。 此变量接收指向套接字的安全描述符的缓存副本。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -150,7 +150,7 @@ WSK 应用程序必须调用[ **WskControlClient** ](https://msdn.microsoft.com/
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

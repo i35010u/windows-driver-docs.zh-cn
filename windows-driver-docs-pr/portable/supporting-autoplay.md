@@ -1,14 +1,14 @@
 ---
-Description: Supporting AutoPlay
+Description: 支持自动播放
 title: 支持自动播放
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f30161af7b576fbe9ef2b9b630a915f9fa215b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ae2236bccd98008dadffbb349c988caac1e65c42
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464090"
 ---
 # <a name="supporting-autoplay"></a>支持自动播放
 
@@ -24,7 +24,7 @@ ms.locfileid: "56555494"
 
 | 类别 | 描述                                                                                                         |
 |----------|---------------------------------------------------------------------------------------------------------------------|
-| 来源   | WPD 设备可将其视为内容的源，即，从设备传输内容。        |
+| 源   | WPD 设备可将其视为内容的源，即，从设备传输内容。        |
 | 接收器     | WPD 设备可将其视为内容的目标，也就是说，内容可以传输到设备。    |
 | 函数 | WPD 设备支持可编程或可控制功能，例如，它可以发送和接收 SMS 消息。 |
 
@@ -51,26 +51,26 @@ ms.locfileid: "56555494"
 <td align="left">AutoPlaySourceOnly</td>
 <td align="left">此指令时要求仅充当自动播放源设备。
 <ul>
-<li>Reg 根必须是&quot;HKR&quot;。</li>
+<li>Reg 根必须是"HKR"。</li>
 <li>类型必须为 0x10001。</li>
 <li>必须设置的值为 1。</li>
 </ul>
-<p>示例：</p>
+<p>例如：</p>
 <p><code>[Device_AddReg]</code></p>
-<p><code>HKR,,&quot;AutoPlaySourceOnly&quot;,0x10001,1</code></p></td>
+<p><code>HKR,,"AutoPlaySourceOnly",0x10001,1</code></p></td>
 </tr>
 <tr class="even">
 <td align="left">Device_AddReg</td>
 <td align="left">EnableDefaultAutoPlaySupport directive</td>
 <td align="left">此指令是必需的。
 <ul>
-<li>Reg 根必须是&quot;HKR&quot;。</li>
+<li>Reg 根必须是"HKR"。</li>
 <li>类型必须为 0x10001。</li>
 <li>必须设置有效的值 （0 或 1）。</li>
 </ul>
-<p>示例：</p>
+<p>例如：</p>
 <p><code>[Device_AddReg]</code></p>
-<p><code>HKR,,&quot;EnableDefaultAutoPlaySupport&quot;,0x10001,1</code></p></td>
+<p><code>HKR,,"EnableDefaultAutoPlaySupport",0x10001,1</code></p></td>
 </tr>
 </tbody>
 </table>

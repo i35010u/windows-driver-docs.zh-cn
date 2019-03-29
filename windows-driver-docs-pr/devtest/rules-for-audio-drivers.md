@@ -4,19 +4,19 @@ description: 音频 (PortCls) 微型端口驱动程序的 DDI 符合性规则验
 ms.assetid: 65078F78-B7F2-41A7-BD3B-A90A4A77750F
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f553a2646aa231db3ed31543b1a36197cdbcde5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d5fb5de9d6182bba07eb1bec0287714049c6728f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542409"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350111"
 ---
 # <a name="rules-for-audio-drivers"></a>音频驱动程序的规则
 
 
 音频 (PortCls) 微型端口驱动程序的 DDI 符合性规则验证 PortCls.sys 和其微型端口驱动程序之间的 DDI 接口。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -80,7 +80,7 @@ ms.locfileid: "56542409"
 <td align="left"><p><a href="audio-pcunmapallocatedpages.md" data-raw-source="[&lt;strong&gt;PcUnmapAllocatedPages&lt;/strong&gt;](audio-pcunmapallocatedpages.md)"><strong>PcUnmapAllocatedPages</strong></a></p></td>
 <td align="left"><p>PcUnmapAllocatedPages 规则指定：</p>
 <ul>
-<li>PortCls 微型端口驱动程序不&#39;t 映射当前映射而无需第一个取消映射 MDL。</li>
+<li>PortCls 微型端口驱动程序不会映射当前映射而无需第一个取消映射 MDL。</li>
 <li>PortCls 微型端口驱动程序取消映射之前释放其使用的内存<a href="https://msdn.microsoft.com/library/windows/hardware/ff536738" data-raw-source="[IMiniportWaveRTStream](https://msdn.microsoft.com/library/windows/hardware/ff536738)">IMiniportWaveRTStream</a>接口。</li>
 </ul></td>
 </tr>

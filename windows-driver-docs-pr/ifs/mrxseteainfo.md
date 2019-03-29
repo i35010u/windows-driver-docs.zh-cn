@@ -15,12 +15,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53955c73ab96fd37c1d41998e11fcaca831fd2c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cbadee5acb93cf4e00be28b4ef2ddcc1626bf3c8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523877"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348620"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo routine
 
@@ -39,7 +39,7 @@ NTSTATUS MRxSetEaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *RxContext* \[in、 out\]  
@@ -96,7 +96,7 @@ NTSTATUS MRxSetEaInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象名称。 如果网络微型重定向要求对一个文件，但文件不会设置扩展的属性，可能会返回此错误&#39;存在。</p></td>
+<td align="left"><p>找不到对象名称。 如果要求网络微型重定向文件，设置扩展的属性，但该文件不存在，则可以返回此错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
@@ -140,13 +140,13 @@ RDBSS 发出调用*MRxSetEaInfo*接收响应[ **IRP\_MJ\_设置\_EA** ](irp-mj-s
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Mrx.h （包括 Mrx.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)

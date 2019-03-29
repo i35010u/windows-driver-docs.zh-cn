@@ -1,6 +1,6 @@
 ---
-title: 在打印处理器中使用 GDI 函数
-description: 在打印处理器中使用 GDI 函数
+title: 使用打印处理器中的 GDI 函数
+description: 使用打印处理器中的 GDI 函数
 ms.assetid: 2ad62308-ab42-4475-ac42-f753d5091251
 keywords:
 - EMF 记录播放 WDK 打印处理器
@@ -8,14 +8,14 @@ keywords:
 - NT EMF WDK 打印处理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f147aa77f12922470cda1518bed95cf8762f24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d9d512cd7f12f6e3929f1994f00bb5a945c551b5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546842"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349418"
 ---
-# <a name="using-gdi-functions-in-print-processors"></a>在打印处理器中使用 GDI 函数
+# <a name="using-gdi-functions-in-print-processors"></a>使用打印处理器中的 GDI 函数
 
 
 
@@ -49,11 +49,11 @@ ms.locfileid: "56546842"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549470" data-raw-source="[&lt;strong&gt;GdiGetDC&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549470)"><strong>GdiGetDC</strong></a></p></td>
-<td><p>返回的句柄打印机&#39;s 设备上下文。</p></td>
+<td><p>返回的句柄的打印机设备上下文。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549478" data-raw-source="[&lt;strong&gt;GdiGetDevmodeForPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549478)"><strong>GdiGetDevmodeForPage</strong></a></p></td>
-<td><p>返回的文档页&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。</p></td>
+<td><p>返回的文档页面<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549492" data-raw-source="[&lt;strong&gt;GdiGetPageCount&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549492)"><strong>GdiGetPageCount</strong></a></p></td>
@@ -73,7 +73,7 @@ ms.locfileid: "56546842"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549529" data-raw-source="[&lt;strong&gt;GdiResetDCEMF&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549529)"><strong>GdiResetDCEMF</strong></a></p></td>
-<td><p>将打印机重置&#39;s 设备上下文。</p></td>
+<td><p>重置打印机设备上下文。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff549534" data-raw-source="[&lt;strong&gt;GdiStartDocEMF&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549534)"><strong>GdiStartDocEMF</strong></a></p></td>

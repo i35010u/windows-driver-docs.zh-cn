@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8f972968b7a8f3b1049085781502f3c704ea788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 259d7a3e59f4d73d36ba8893dabe1b2510b07380
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533499"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464297"
 ---
 # <a name="devpkeydevicehardwareids"></a>DEVPKEY_Device_HardwareIds
 
@@ -42,7 +42,7 @@ DEVPKEY_DEVICE_HardwareIds 设备属性表示设备实例的硬件标识符的�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>数据格式</strong></p></td>
-<td align="left">&quot;<em>hw-id1</em>\0<em>hw-id</em>2\0...<em>hw-idn</em>\0\0&quot;</td>
+<td align="left">"<em>hw id1</em>\0<em>hw id</em>2...\ 0<em>hw idn</em>\0\0"</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>属性访问</strong></p></td>
@@ -84,13 +84,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)

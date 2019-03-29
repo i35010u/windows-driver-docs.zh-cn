@@ -1,6 +1,6 @@
 ---
-title: 命令字符串自变量类型
-description: 命令字符串自变量类型
+title: 命令字符串参数类型
+description: 命令字符串参数类型
 ms.assetid: c7540c3f-265a-4fee-aca9-b8cc10b6be8f
 keywords:
 - 打印机命令 WDK Unidrv，字符串
@@ -8,14 +8,14 @@ keywords:
 - 字符串 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1823c4ded01c59c03bbd92e3223b1756350b0da9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3601e71eb0892cbbd2314ed0fcbe533763e98261
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526654"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464321"
 ---
-# <a name="command-string-argument-types"></a>命令字符串自变量类型
+# <a name="command-string-argument-types"></a>命令字符串参数类型
 
 
 
@@ -51,15 +51,15 @@ ms.locfileid: "56526654"
 </tr>
 <tr class="even">
 <td><p>%C</p></td>
-<td><p>添加到 ASCII 的二进制字节&quot;0&quot;。</p></td>
+<td><p>添加到 ASCII"0"的二进制字节。</p></td>
 </tr>
 <tr class="odd">
 <td><p>%f</p></td>
-<td><p>无符号的 ASCII 字符串，表示带插入为从右、 从第三个字符作为中的小数点的十进制值， &quot;12.25&quot;。</p></td>
+<td><p>无符号的 ASCII 字符串，表示带小数点右侧，如"12.25"中所示的第三个字符作为插入的一个十进制值。</p></td>
 </tr>
 <tr class="even">
 <td><p>%g</p></td>
-<td><p>2 * ABS (<em>参数</em>) + IS_NEGATIVE (<em>参数</em>) 到最高有效位 base-64 number，最低有效位数字。 由字节到 254 191 表示最高有效位 （0 到 63 个）。 所有其他数字表示由字节 63 到 126。 &quot;IS_NEGATIVE (<em>参数</em>)&quot;为 1，如果<em>参数</em>是负数，否则不进行任何。</p></td>
+<td><p>2 * ABS (<em>参数</em>) + IS_NEGATIVE (<em>参数</em>) 到最高有效位 base-64 number，最低有效位数字。 由字节到 254 191 表示最高有效位 （0 到 63 个）。 所有其他数字表示由字节 63 到 126。 "IS_NEGATIVE (<em>参数</em>)"为 1，如果<em>参数</em>是负数，否则不进行任何。</p></td>
 </tr>
 <tr class="odd">
 <td><p>%l</p></td>
@@ -79,7 +79,7 @@ ms.locfileid: "56526654"
 </tr>
 <tr class="odd">
 <td><p>%v</p></td>
-<td><p>NEC VFU （垂直格式单元） 编码。 指定的变量&#39;s 值除以 1/6 英寸。 结果是 VFU 数据发送到打印机的次数。</p></td>
+<td><p>NEC VFU （垂直格式单元） 编码。 指定的变量的值除以 1/6 英寸。 结果是 VFU 数据发送到打印机的次数。</p></td>
 </tr>
 </tbody>
 </table>

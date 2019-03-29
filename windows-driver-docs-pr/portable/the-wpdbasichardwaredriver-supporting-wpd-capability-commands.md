@@ -1,14 +1,14 @@
 ---
-Description: Support for capability commands (WpdBasicHardwareDriver sample)
+Description: 对功能命令 （WpdBasicHardwareDriver 示例） 的支持
 title: 对功能命令 （WpdBasicHardwareDriver 示例） 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c886310c10d638075dbe8c0ee01cf79e5be517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 33c40f06cebbc17e6d45918cb502b4e4fc6b2930
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526432"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349814"
 ---
 # <a name="support-for-capability-commands-wpdbasichardwaredriver-sample"></a>对功能命令 （WpdBasicHardwareDriver 示例） 的支持
 
@@ -17,7 +17,7 @@ ms.locfileid: "56526432"
 
 下表中的信息描述了每个受支持的属性命令处理程序的名称以及该**DispatchMessage**处理给定的命令时调用。
 
-| 命令                                                            | 处理程序                        | 描述                                                                                                                                     |
+| Command                                                            | 处理程序                        | 描述                                                                                                                                     |
 |--------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | WPD\_命令\_功能\_获取\_支持\_命令               | OnGetSupportedCommands         | 应用程序尝试检索的设备支持的命令集时，发出。                                           |
 | WPD\_命令\_功能\_获取\_命令\_选项                  | OnGetCommandOptions            | 应用程序尝试检索受给定命令的选项时，发出。                                              |
@@ -93,7 +93,7 @@ const PROPERTYKEY g_SupportedCommands[] =
 const GUID g_SupportedFunctionalCategories[] =
 {
     WPD_FUNCTIONAL_CATEGORY_DEVICE,
-    FUNCTIONAL_CATEGORY_SENSOR_SAMPLE, // Our sensor&#39;s functional category  
+    FUNCTIONAL_CATEGORY_SENSOR_SAMPLE, // Our sensor's functional category  
 };
 ```
 
@@ -142,7 +142,7 @@ HRESULT WpdCapabilities::OnGetFunctionalObjects(
     {
         PROPVARIANT pv = {0};
         PropVariantInit(&pv);
-        // Don&#39;t call PropVariantClear, since we did not allocate the memory for these object identifiers
+        // Don't call PropVariantClear, since we did not allocate the memory for these object identifiers
 
         // Add WPD_DEVICE_OBJECT_ID to the functional object identifiers collection
         if (hr == S_OK)
@@ -335,7 +335,7 @@ HRESULT WpdCapabilities::OnGetSupportedEvents(
         {
             PROPVARIANT pv = {0};
             PropVariantInit(&pv);
-            // Don&#39;t call PropVariantClear, 
+            // Don't call PropVariantClear, 
             // since we did not allocate the memory for these GUIDs
 
             pv.vt    = VT_CLSID;
@@ -424,7 +424,7 @@ HRESULT WpdCapabilities::OnGetEventOptions(
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

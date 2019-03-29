@@ -4,12 +4,12 @@ description: IStiDevice COM 接口
 ms.assetid: b026fb74-9ce6-4d4e-8a5b-402731904064
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 702ed90d5cc5efa4935ee084454cce47461469d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 47ad78260900a330768d124e6e39850a31190098
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521778"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350278"
 ---
 # <a name="istidevice-com-interface"></a>IStiDevice COM 接口
 
@@ -54,7 +54,7 @@ ms.locfileid: "56521778"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543745" data-raw-source="[&lt;strong&gt;IStiDevice::GetCapabilities&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543745)"><strong>IStiDevice::GetCapabilities</strong></a></p></td>
-<td><p>返回静态图像设备&#39;s 功能。</p></td>
+<td><p>返回一个静态的图像设备的功能。</p></td>
 <td><p>静止图像事件监视器</p></td>
 </tr>
 <tr class="odd">
@@ -74,7 +74,7 @@ ms.locfileid: "56521778"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff543752" data-raw-source="[&lt;strong&gt;IStiDevice::GetStatus&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff543752)"><strong>IStiDevice::GetStatus</strong></a></p></td>
-<td><p>返回静态图像设备&#39;s 的状态信息。</p></td>
+<td><p>返回静态图像设备状态信息。</p></td>
 <td><p>图像获取 Api 和仍映像事件监视器</p></td>
 </tr>
 <tr class="odd">

@@ -1,6 +1,6 @@
 ---
-title: 建立与目标的连接
-description: 建立与目标的连接
+title: 与目标建立连接
+description: 与目标建立连接
 ms.assetid: 1258ee32-3914-4832-b98b-361dace0abaf
 keywords:
 - 网络、 Winsock 内核 WDK 远程传输地址
@@ -12,14 +12,14 @@ keywords:
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d61147286db26077c1a76b2c30471a4b068c6f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 389ed729c4c6d8376fca6b0a52cd37f159a17258
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525136"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349016"
 ---
-# <a name="establishing-a-connection-with-a-destination"></a>建立与目标的连接
+# <a name="establishing-a-connection-with-a-destination"></a>与目标建立连接
 
 
 Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的面向连接的套接字后，它可以连接套接字到远程传输地址来建立与远程系统的连接。 WSK 应用程序必须连接到远程传输地址的面向连接的套接字，然后它可以发送或通过套接字接收数据。
@@ -48,7 +48,7 @@ NTSTATUS
   PIRP Irp;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_CONNECTION_DISPATCH)(Socket->Dispatch);
 

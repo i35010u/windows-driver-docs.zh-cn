@@ -4,12 +4,12 @@ description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (*.vc
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 721587fdeadc05d616f68b66aadb381ab87ea207
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cc2c4d12bd3c55ba6ec0a1f531e781415e8eff06
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526227"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348765"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
@@ -142,15 +142,15 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     在每个\*.props 文件中，找到表达式其中`('$(VisualStudioVersion)' != '11.0')`。 例如，第一个实例将如以下所示：
 
     ```XML
-            <When  Condition="&#39;$(VisualStudioVersion)&#39; != &#39;11.0&#39;">
+            <When  Condition="'$(VisualStudioVersion)' != '11.0'">
           <PropertyGroup>
-            <CLToolPath Condition="&#39;$(CLToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86\x64</CLToolPath>
+            <CLToolPath Condition="'$(CLToolPath)' == ''">$(WDKContentRoot)bin\x86\x64</CLToolPath>
             <CLToolArchitecture>Native32Bit</CLToolArchitecture>
-            <LinkToolPath Condition="&#39;$(LinkToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86\x64</LinkToolPath>
+            <LinkToolPath Condition="'$(LinkToolPath)' == ''">$(WDKContentRoot)bin\x86\x64</LinkToolPath>
             <LinkToolArchitecture>Native32Bit</LinkToolArchitecture>
-            <MIDLToolPath Condition="&#39;$(MIDLToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86</MIDLToolPath>
+            <MIDLToolPath Condition="'$(MIDLToolPath)' == ''">$(WDKContentRoot)bin\x86</MIDLToolPath>
             <MIDLToolArchitecture>Native32Bit</MIDLToolArchitecture>
-            <LibToolPath Condition="&#39;$(LibToolPath)&#39; == &#39;&#39;">$(WDKContentRoot)bin\x86</LibToolPath>
+            <LibToolPath Condition="'$(LibToolPath)' == ''">$(WDKContentRoot)bin\x86</LibToolPath>
             <LibToolArchitecture>Native32Bit</LibToolArchitecture>
             <ExecutablePath>$(WDKContentRoot)bin\x86\x64;$(WDKContentRoot)bin\x86;$(WDKContentRoot)tools\pfd\bin\bin\AMD64;$(WDKContentRoot)tools\tracing\x64;$(ExecutablePath)</ExecutablePath>      
         </PropertyGroup>
@@ -160,19 +160,19 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     更改不等于 (！ =) 到小于 ("&lt;")。
 
     ```XML
-        <When  Condition="&#39;$(VisualStudioVersion)&#39; &lt;&#39;11.0&#39;">
+        <When  Condition="'$(VisualStudioVersion)' &lt;'11.0'">
     ```
 
     查找下一个实例，该表达式的位置 `('$(VisualStudioVersion)' != '11.0')`
 
     ```XML
-        <When Condition="(&#39;$(PlatformToolset)&#39; == &#39;WindowsApplicationForDrivers8.0&#39;) and (&#39;$(VisualStudioVersion)&#39; != &#39;11.0&#39;)">
+        <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' != '11.0')">
     ```
 
     和更改不等于 (！ =) 到小于 ("&lt;")。
 
     ```XML
-        <When Condition="(&#39;$(PlatformToolset)&#39; == &#39;WindowsApplicationForDrivers8.0&#39;) and (&#39;$(VisualStudioVersion)&#39; &lt;&#39;11.0&#39;)">
+        <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' &lt;'11.0')">
     ```
 
     进行更改后，将同时保存\*.props 文件中。
@@ -184,7 +184,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     在项目文件 （发行版和调试） 中找到 Vista 目标配置。 例如：
 
     ```XML
-       <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Debug|Win32&#39;">
+       <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <UseDebugLibraries>True</UseDebugLibraries>
         <PlatformToolset>WindowsKernelModeDriver8.0</PlatformToolset>
@@ -194,7 +194,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     添加**PackageDir**与 Windows Vista 配置设置的属性。 在大多数情况下，应使用默认值： `<PackageDir>$(OutDir)\$(Intdir)</PackageDir>`。
 
     ```XML
-       <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Debug|Win32&#39;">
+       <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <PackageDir>$(OutDir)\$(Intdir)</PackageDir>
         <UseDebugLibraries>True</UseDebugLibraries>
@@ -205,7 +205,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
     进行其他配置的相同的更改。
 
     ```XML
-        <PropertyGroup Label="Configuration" Condition="&#39;$(Configuration)|$(Platform)&#39;==&#39;Vista Release|Win32&#39;">
+        <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'">
         <TargetVersion>Vista</TargetVersion>
         <PackageDir>$(OutDir)\$(Intdir)</PackageDir>
         <UseDebugLibraries>False</UseDebugLibraries>
@@ -215,10 +215,10 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 
     进行这些更改并保存该文件后可以打开并生成 Visual Studio 2013 中的项目。 项目应继续使用 Visual Studio 2012。 请注意，即使这些更改后仍需要 WDK 8 的计算机上安装 Visual Studio 2012。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
+[生成驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
 
 [WDK 和 Visual Studio 生成环境](wdk-and-visual-studio-build-environment.md)
 

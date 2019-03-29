@@ -1,6 +1,6 @@
 ---
-title: 使用 IoConnectInterruptEx CONNECT_MESSAGE_BASED 版本
-description: 使用 IoConnectInterruptEx CONNECT_MESSAGE_BASED 版本
+title: 使用 IoConnectInterruptEx 的 CONNECT_MESSAGE_BASED 版本
+description: 使用 IoConnectInterruptEx 的 CONNECT_MESSAGE_BASED 版本
 ms.assetid: 8e06c6aa-85de-4ed2-ac0d-0179201d1272
 keywords:
 - IoConnectInterruptEx
@@ -9,12 +9,12 @@ keywords:
 - 自动中断检测 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0284c83bd60a376ec2a154d8526e72aa511c2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 67280ae4fc84079d3889e9ab5353564a797d781b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521791"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350120"
 ---
 # <a name="using-the-connectmessagebased-version-of-ioconnectinterruptex"></a>使用 CONNECT\_消息\_IoConnectInterruptEx 基于版本
 
@@ -36,12 +36,12 @@ ms.locfileid: "56521791"
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;
 
-// deviceExtension is a pointer to the driver&#39;s device extension. 
+// deviceExtension is a pointer to the driver's device extension. 
 //     deviceExtension->IntInfo is a PVOID.
 //     deviceExtension->IntType is a ULONG.
-// deviceInterruptService is a pointer to the driver&#39;s InterruptService routine.
-// deviceInterruptMessageService is a pointer to the driver&#39;s InterruptMessageService routine.
-// PhysicalDeviceObject is a pointer to the device&#39;s PDO. 
+// deviceInterruptService is a pointer to the driver's InterruptService routine.
+// deviceInterruptMessageService is a pointer to the driver's InterruptMessageService routine.
+// PhysicalDeviceObject is a pointer to the device's PDO. 
 // ServiceContext is a pointer to driver-specified context for the ISR.
 
 RtlZeroMemory( &params, sizeof(IO_CONNECT_INTERRUPT_PARAMETERS) );

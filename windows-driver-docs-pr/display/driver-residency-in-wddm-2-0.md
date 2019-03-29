@@ -1,22 +1,22 @@
 ---
-title: 驱动程序驻留在 WDDM 2.0
+title: WDDM 2.0 中的驱动程序驻留
 description: 本部分提供有关驱动程序的详细信息驻留更改为 Windows 显示器驱动程序模型 (WDDM) 2.0。 可从 Windows 10 开始所述的功能。
 ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23a20fdee48387ef9f04e3615a7b3221bdf08bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 86f179b00a5a0300b8354ccebaa25bc4013fbe5f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547012"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348628"
 ---
-# <a name="driver-residency-in-wddm-20"></a>驱动程序驻留在 WDDM 2.0
+# <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 中的驱动程序驻留
 
 
 本部分提供有关驱动程序的详细信息驻留更改为 Windows 显示器驱动程序模型 (WDDM) 2.0。 可从 Windows 10 开始所述的功能。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -48,8 +48,8 @@ ms.locfileid: "56547012"
 <td align="left"><p>图形处理单元 (GPU) 访问不是常驻分配是非法的并会导致生成错误的应用程序中删除的设备。</p>
 <p>有两个不同的模型的处理取决于是否出错的引擎支持 GPU 虚拟寻址或不访问此类无效：</p>
 <ul>
-<li>有关引擎失效的&#39;的无效访问 t 支持 GPU 虚拟寻址和使用的分配和修补程序位置到修补程序内存引用列表，当用户模式驱动程序提交引用分配，这不是分配列表时发生驻留在设备上 (即用户模式驱动程序功能，那么&#39;调用的 t <a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>上的分配)。 此操作时，图形内核将有故障的上下文/设备放入错误。</li>
-<li>对于支持 GPU 引擎虚拟寻址但访问是无效的或者因为没有任何分配的虚拟地址后面的 GPU 虚拟地址或没有有效的分配，但其功能，那么&#39;t 已进行常驻，GPU 应引发形式的中断发生了不可恢复的页面错误。 当发生页面故障中断时，内核模式驱动程序需要转发到图形内核通过新的页错误通知错误。 收到此通知时，图形内核启动引擎重置上出错的引擎，并将有故障的上下文/设备放入错误。 如果引擎重置失败，图形内核将升级到完整适配器宽超时检测和恢复 (TDR) 错误。</li>
+<li>对于不支持 GPU 虚拟寻址，并使用的分配和修补程序修补程序内存引用到的位置列表的引擎，无效的访问发生在用户模式驱动程序提交的分配列表引用分配，这不是驻留在设备 (即称为用户模式驱动程序尚未<a href="https://msdn.microsoft.com/library/windows/hardware/dn906357" data-raw-source="[&lt;em&gt;MakeResidentCb&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/dn906357)"> <em>MakeResidentCb</em> </a>在该分配)。 此操作时，图形内核将有故障的上下文/设备放入错误。</li>
+<li>对于执行支持 GPU 虚拟寻址，但访问 GPU 虚拟地址是无效的引擎，或者因为后面的虚拟地址未分配或没有有效分配但尚未进行其常驻，GPU 应引发形式的中断发生了不可恢复的页面错误。 当发生页面故障中断时，内核模式驱动程序需要转发到图形内核通过新的页错误通知错误。 收到此通知时，图形内核启动引擎重置上出错的引擎，并将有故障的上下文/设备放入错误。 如果引擎重置失败，图形内核将升级到完整适配器宽超时检测和恢复 (TDR) 错误。</li>
 </ul></td>
 </tr>
 <tr class="odd">

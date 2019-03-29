@@ -7,12 +7,12 @@ keywords:
 - 标准功能，WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd594419c0b56da317510885aa600983e84469c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f6dc952e6c94fca9f27d1e61da6ceab81368e060
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546820"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348916"
 ---
 # <a name="standard-features"></a>标准功能
 
@@ -91,7 +91,7 @@ ms.locfileid: "56546820"
 <td><p>类型的打印介质</p></td>
 <td><p>请参阅<a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">标准选项</a>。</p>
 <p>允许自定义的选项。</p></td>
-<td><p>可选。 如果未指定，打印机&#39;始终使用 s 默认介质。</p></td>
+<td><p>可选。 如果未指定，则始终使用打印机的默认值。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>内存</strong></p></td>

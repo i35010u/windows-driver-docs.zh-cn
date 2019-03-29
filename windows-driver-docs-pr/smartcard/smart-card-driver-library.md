@@ -7,12 +7,12 @@ keywords:
 - 库 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df49d8529c63e6a43236f2f444b431834f7283d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 682f9bbd6f6bcacd2c2722b4315b03a1730fcae9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543390"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349158"
 ---
 # <a name="smart-card-driver-library"></a>智能卡驱动程序库
 
@@ -68,7 +68,7 @@ Microsoft 提供了一个包含一组标准化的智能卡读卡器驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p><em>Smclib.sys</em></p></td>
-<td align="left"><p>库&#39;s 用于 WDM 驱动程序的二进制文件。</p></td>
+<td align="left"><p>用于 WDM 驱动程序库的二进制文件。</p></td>
 </tr>
 </tbody>
 </table>

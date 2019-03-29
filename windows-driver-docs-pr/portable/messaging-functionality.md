@@ -1,14 +1,14 @@
 ---
-Description: Messaging Functionality
+Description: 消息传送功能
 title: 消息传送功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1d8d1c8f854bec2a99d6af4a2347f720c53990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3e26f3940b5f9a6d9de90344635be8ef2d9faca0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519788"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348770"
 ---
 # <a name="messaging-functionality"></a>消息传送功能
 
@@ -89,7 +89,7 @@ HRESULT WpdBaseDriver::DispatchWpdMessage(IPortableDeviceValues* pParams,
     CHECK_HR(hrTemp, ("Failed to set WPD_PROPERTY_COMMON_HRESULT"));
 
     // Set to a success code, to indicate that the message was received.
-    // the return code for the actual command&#39;s results is stored in the
+    // the return code for the actual command's results is stored in the
     // WPD_PROPERTY_COMMON_HRESULT property.
     hr = S_OK;
 

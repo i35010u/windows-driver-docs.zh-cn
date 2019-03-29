@@ -4,12 +4,12 @@ description: 表数据源
 ms.assetid: D0CC0536-5569-47ed-8DE8-B64FF3042C51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9323103c3c01e5ea5c6070c6a8616094b7e71ad2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 90c098dafbaf6c14d04b30e4db95f2d99cd5b413
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527026"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349052"
 ---
 # <a name="table-data-source"></a>表数据源
 
@@ -295,7 +295,7 @@ TAEF 可以有一个更有意义的 Name 属性，而不是索引来标识数据
 6                  <ParameterType Name="Color">String</ParameterType>
 7                  <ParameterType Name="Transparency">Boolean</ParameterType>
 8          </ParameterTypes>
-9          <Row Name=&#39;BlueTransparent&#39; Priority="1" Owner="C2">
+9          <Row Name='BlueTransparent' Priority="1" Owner="C2">
 10                 <Parameter Name="Size">12</Parameter>
 11                 <Parameter Name="Color">Blue</Parameter>
 12                 <Parameter Name="Transparency">True</Parameter>
@@ -305,7 +305,7 @@ TAEF 可以有一个更有意义的 Name 属性，而不是索引来标识数据
 16                 <Parameter Name="Color">White</Parameter>
 17                 <Parameter Name="Transparency">False</Parameter>
 18         </Row>
-19         <Row Name=&#39;BlackTransparent&#39; Owner="C2">
+19         <Row Name='BlackTransparent' Owner="C2">
 20                 <Parameter Name="Size">9</Parameter>
 21                 <Parameter Name="Color">Black</Parameter>
 22                 <Parameter Name="Transparency">True</Parameter>

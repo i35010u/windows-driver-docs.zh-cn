@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 提供 Ctrpp 任务，以便在生成您�
 ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac80cf63d6de82e25ee9dee34df56082f4808eea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519202"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464343"
 ---
 # <a name="ctrpp-task"></a>Ctrpp 任务
 
@@ -54,7 +54,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">来源</td>
+<td align="left">源</td>
 <td align="left">@(Ctrpp)</td>
 <td align="left"></td>
 <td align="left">所需的 ITaskItem 参数。 指定要处理的计数器清单。</td>
@@ -117,7 +117,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 <td align="left">GenerateNotificationCallback</td>
 <td align="left">%(Ctrpp.GenerateNotificationCallback)</td>
 <td align="left"><strong>-NotificationCallback</strong></td>
-<td align="left">可选布尔参数。 生成自定义的通知回调模板。 类似于&quot;回调&quot;属性中&lt;提供程序&gt;元素。</td>
+<td align="left">可选布尔参数。 生成自定义的通知回调模板。 类似于中的"callback"属性&lt;提供程序&gt;元素。</td>
 </tr>
 <tr class="even">
 <td align="left">GenerateResourceSourceFile</td>
@@ -142,7 +142,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)

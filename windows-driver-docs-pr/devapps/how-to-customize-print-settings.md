@@ -4,12 +4,12 @@ description: 本主题介绍在高级打印设置浮出控件，并演示如何�
 ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecbfadf7f86741283051304699fcab2352668c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 653724ee75540e1bcff7b23853696cd43d53edd1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526971"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349246"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义打印设置 （UWP 设备应用）
 
@@ -46,7 +46,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
 ![默认和自定义浮出控件的高级打印设置的示例。](images/373072-printer-settings-launch.png)
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 开始之前：
@@ -61,7 +61,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
      
 
-## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>步骤 1:注册扩展
+## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>步骤 1：注册扩展
 
 
 为了使 Windows 能够识别应用程序可以提供高级打印设置的自定义浮出控件，它必须注册打印任务设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.printTaskSettings`。 在C#和 c + + 示例`Executable`属性设置为`$targetnametoken$.exe`并`EntryPoint`属性设置为`DeviceAppForPrinters.App`。
@@ -105,7 +105,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 </Package>
 ```
 
-## <a name="span-idstep2buildtheuispanspan-idstep2buildtheuispanspan-idstep2buildtheuispanstep-2-build-the-ui"></a><span id="Step_2__Build_the_UI"></span><span id="step_2__build_the_ui"></span><span id="STEP_2__BUILD_THE_UI"></span>步骤 2:生成 UI
+## <a name="span-idstep2buildtheuispanspan-idstep2buildtheuispanspan-idstep2buildtheuispanstep-2-build-the-ui"></a><span id="Step_2__Build_the_UI"></span><span id="step_2__build_the_ui"></span><span id="STEP_2__BUILD_THE_UI"></span>步骤 2：生成 UI
 
 
 生成你的应用之前, 应适用于您的设计人员和营销团队设计用户体验。 用户体验应项目贵公司的品牌方面，并帮助您构建与你的用户的连接。
@@ -191,7 +191,7 @@ partial class App : Application
 }
 ```
 
-## <a name="span-idstep4displaysettingsspanspan-idstep4displaysettingsspanspan-idstep4displaysettingsspanstep-4-display-settings"></a><span id="Step_4__Display_settings"></span><span id="step_4__display_settings"></span><span id="STEP_4__DISPLAY_SETTINGS"></span>步骤 4:“显示设置”
+## <a name="span-idstep4displaysettingsspanspan-idstep4displaysettingsspanspan-idstep4displaysettingsspanstep-4-display-settings"></a><span id="Step_4__Display_settings"></span><span id="step_4__display_settings"></span><span id="STEP_4__DISPLAY_SETTINGS"></span>步骤 4：“显示设置”
 
 
 当`LoadAdvancedPrintSettingsContext`方法调用时，打印任务配置上下文分配给 MainPage 类的变量。 这将允许在启动时访问的打印设置的自定义的浮出控件。
@@ -232,7 +232,7 @@ public sealed partial class Preferences : SDKTemplate.Common.LayoutAwarePage
     Object printerExtensionContext;
     PrintHelperClass printHelper;
 
-    // The features in this sample were chosen because they&#39;re available on a wide range of printer drivers.
+    // The features in this sample were chosen because they're available on a wide range of printer drivers.
     private string[] features = { "PageOrientation", "PageOutputColor", "PageMediaSize", "PageMediaType" };
     private string[] selections = { null, null, null, null };
 
@@ -282,7 +282,7 @@ private void DisplaySettings(bool constraints=false)
 
         string feature = features[i];
 
-        // Check whether the currently selected printer&#39;s capabilities include this feature.
+        // Check whether the currently selected printer's capabilities include this feature.
         if (!printHelper.FeatureExists(feature))
         {
             continue;
@@ -351,7 +351,7 @@ private void OnFeatureOptionsChanged(object sender, SelectionChangedEventArgs ar
 }
 ```
 
-## <a name="span-idstep5savesettingsspanspan-idstep5savesettingsspanspan-idstep5savesettingsspanstep-5-save-settings"></a><span id="Step_5__Save_settings"></span><span id="step_5__save_settings"></span><span id="STEP_5__SAVE_SETTINGS"></span>步骤 5:保存设置
+## <a name="span-idstep5savesettingsspanspan-idstep5savesettingsspanspan-idstep5savesettingsspanstep-5-save-settings"></a><span id="Step_5__Save_settings"></span><span id="step_5__save_settings"></span><span id="STEP_5__SAVE_SETTINGS"></span>步骤 5：保存设置
 
 
 当用户完成设置高级打印设置时，Microsoft Store 设备应用程序需要以保存所做的更改，用户将恢复为之前**打印**窗口。 为此，应用程序需要在用户点击时侦听**回**（从自定义浮出控件页） 按钮。 在这种情况，`SaveRequested`打印任务扩展上下文的事件 (`configuration`对象) 触发。
@@ -421,7 +421,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     // for each feature
     for (var i = 0; i < features.Length; i++)
     {
-        // Set the feature&#39;s selected option in the context&#39;s print ticket.
+        // Set the feature's selected option in the context's print ticket.
         // The printerExtensionContext object is updated with each iteration of this loop
         printHelper.SetFeatureOption(features[i], selections[i]);
     }
@@ -456,7 +456,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
         }
     }
 
-    // If ticket isn&#39;t saved, refresh UI and notify user
+    // If ticket isn't saved, refresh UI and notify user
     if (!ticketSaved)
     {
         await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -659,7 +659,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 -   **可能的原因：** 在 Windows 8 中，是一个已知的问题，在浮出控件，UWP 应用将关闭在调试器下。 关闭调试一旦知道激活有效运行。 如果需要调试正在保存的打印票证，请在激活后附加调试器。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)

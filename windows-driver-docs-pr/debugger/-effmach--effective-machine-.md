@@ -1,5 +1,5 @@
 ---
-title: .effmach （有效的机器）
+title: .effmach（有效计算机）
 description: .Effmach 命令显示或更改调试器使用的处理器模式。
 ms.assetid: bf4dfdc0-2f0b-416a-8bf2-0e7d81339905
 keywords:
@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cb1ae85066d6faad396dee85812751dc52ec10fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 65bf2b32e2b783f49eb841f9068a1a58ff48236b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555884"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349828"
 ---
-# <a name="effmach-effective-machine"></a>.effmach （有效的机器）
+# <a name="effmach-effective-machine"></a>.effmach（有效计算机）
 
 
 **.Effmach**命令显示或更改调试器使用的处理器模式。
@@ -45,11 +45,11 @@ ms.locfileid: "56555884"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>计算机类型</strong></p></td>
-<td align="left"><p><strong>描述</strong></p></td>
+<td align="left"><p><strong>说明</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>.</strong></p></td>
-<td align="left"><p>使用目标计算机的处理器模式&#39;s 本机处理器模式。</p></td>
+<td align="left"><p>使用目标计算机的本机处理器模式下的处理器模式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>#</strong></p></td>

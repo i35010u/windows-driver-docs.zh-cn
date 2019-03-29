@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 829cbca4f2db3534eafcb6466e1c945a1d3760ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ccde555cee1569001d053652d654a43284fd12e5
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554758"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464371"
 ---
-# <a name="bug-check-0x164-win32kcriticalfailure"></a>Bug 检查 0x164:WIN32K\_严重\_失败
+# <a name="bug-check-0x164-win32kcriticalfailure"></a>Bug 检查 0x164：WIN32K\_严重\_失败
 
 
 WIN32K\_严重\_故障错误检查的值为 0x00000164。 这指示 Win32k 遇到严重故障。
@@ -49,7 +49,7 @@ WIN32K\_严重\_故障错误检查的值为 0x00000164。 这指示 Win32k 遇�
 <p>2-指向 DC</p>
 <p>3-到图面指针</p>
 <p>4-指向区域</p>
-0x2:OPERATOR_NEW_USED-运算符&quot;新&quot;用于分配内存。
+0x2:OPERATOR_NEW_USED-"new"运算符用于分配内存。
 <p>2-保留</p>
 <p>3-保留</p>
 <p>4-保留</p>
@@ -58,7 +58,7 @@ WIN32K\_严重\_故障错误检查的值为 0x00000164。 这指示 Win32k 遇�
 <p>2-wchar_t * 到缺失函数的名称</p>
 <p>3-保留</p>
 <p>4-保留</p>
-0x4:GDI_SPRITE_SURFACE_INVALID_DELETE-GDI 子画面&#39;s 形状正在删除而不删除子画面。
+0x4:GDI_SPRITE_SURFACE_INVALID_DELETE-正在删除而不删除子画面 GDI sprite 的形状。
 <p>2-句柄在图面</p>
 <p>3-引用计数到图面</p>
 <p>4-PID 的图面上的所有者</p>

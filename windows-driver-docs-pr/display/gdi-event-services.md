@@ -9,12 +9,12 @@ keywords:
 - 事件 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25336d59aa1afab1f6f109346d2d897878621b40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ba788af90887e402d6692c612c6ec3d1f89427c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523125"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349609"
 ---
 # <a name="gdi-event-services"></a>GDI 事件服务
 
@@ -58,7 +58,7 @@ GDI 提供与事件相关的多个服务。 使用这些服务的驱动程序可
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565013" data-raw-source="[&lt;strong&gt;EngSetEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565013)"><strong>EngSetEvent</strong></a></p></td>
-<td align="left"><p>将指定的事件对象设置为终止状态，并返回事件对象&#39;s 以前的状态。</p></td>
+<td align="left"><p>将指定的事件对象设置为终止状态，并返回事件对象的以前的状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565434" data-raw-source="[&lt;strong&gt;EngUnmapEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565434)"><strong>EngUnmapEvent</strong></a></p></td>

@@ -1,6 +1,6 @@
 ---
-title: 添加事件跟踪到内核模式驱动程序
-description: 添加事件跟踪到内核模式驱动程序
+title: 将事件跟踪添加到内核模式驱动程序
+description: 将事件跟踪添加到内核模式驱动程序
 ms.assetid: 74fdb4b2-aad1-4d8a-b146-40a92e1fdbb5
 keywords:
 - 事件跟踪的 Windows WDK，内核模式
@@ -8,14 +8,14 @@ keywords:
 - 内核模式 ETW WDK 软件跟踪
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ececc26d2f69b0e8cc260657ef29ddf3bcc728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519242"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350404"
 ---
-# <a name="adding-event-tracing-to-kernel-mode-drivers"></a>添加事件跟踪到内核模式驱动程序
+# <a name="adding-event-tracing-to-kernel-mode-drivers"></a>将事件跟踪添加到内核模式驱动程序
 
 本部分介绍如何使用 Windows 事件跟踪 (ETW) 内核模式 API 将事件跟踪添加到内核模式驱动程序。 ETW 内核模式 API 中引入了 Windows Vista 和更早的操作系统中不支持。 使用[WPP 软件跟踪](wpp-software-tracing.md)或[WMI 事件跟踪](https://msdn.microsoft.com/library/windows/hardware/ff566350)如果您的驱动程序需要支持跟踪功能在 Windows 2000 及更高版本。
 
@@ -68,7 +68,7 @@ ms.locfileid: "56519242"
 当创建的事件负载 （事件消息和数据） 的模板时，必须指定输入和输出类型。 支持的类型的备注部分所述[ **InputType 复杂类型 (Windows)**](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)。
 
 ```XML
-<?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39;?>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <instrumentationManifest
     xmlns="http://schemas.microsoft.com/win/2004/08/events"
     xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events"
@@ -423,7 +423,7 @@ ms.locfileid: "56519242"
                   DeviceName.Buffer,
                   LengthToCopy);
 
-    DeviceNameString[LengthToCopy/sizeof(WCHAR)] = L&#39;\0&#39;;
+    DeviceNameString[LengthToCopy/sizeof(WCHAR)] = L'\0';
 
     EventWriteStartEvent(NULL, DeviceName.Length, DeviceNameString, Status);
 

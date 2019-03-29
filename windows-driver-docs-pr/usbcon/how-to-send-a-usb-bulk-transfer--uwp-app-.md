@@ -1,16 +1,16 @@
 ---
-Description: Learn about a USB bulk transfer and how to initiate a transfer request from your UWP app that communicates with a USB device.
-title: 如何将发送的 USB 大容量传输请求 （UWP 应用）
+Description: 了解有关 USB 大容量传输以及如何启动 UWP 应用中所使用的 USB 设备进行通信的传输请求。
+title: 如何将发送 USB 大容量传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1d006450d4e4390e17c34e4e3edec8f844225
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1912e02c55ab98b462982c929600b9e8a1203595
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541986"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348918"
 ---
-# <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>如何将发送的 USB 大容量传输请求 （UWP 应用）
+# <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>如何将发送 USB 大容量传输请求（UWP 应用）
 
 
 **摘要**
@@ -89,7 +89,7 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 <p>数据请求可以分为一个或多个传输，其中每次传输都包含一定数量的调用的字节数<em>最大传输大小</em>。 对于多个传输模式，由于驱动程序执行错误检查队列的两个传输中可能会有延迟。 此标志会跳过该错误检查。 若要获得最大传输大小，请使用<a href="https://msdn.microsoft.com/library/windows/apps/dn297606" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.MaxTransferSizeBytes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297606)"> <strong>UsbBulkInPipe.MaxTransferSizeBytes</strong> </a>属性。 如果你请求的大小<strong>UsbBulkInPipe.MaxTransferSizeBytes</strong>，必须设置此标志。 注意：</p>
 <p></p>
 <div class="alert">
-<strong>重要须知</strong><br/><p>如果设置此标志，则必须请求管道的序列图中的数据&#39;s 最大数据包大小。 该信息存储在终结点描述符。 大小取决于设备的总线速度。 有关完整的速度、 高速度、 和 SuperSpeed;最大数据包大小分别为 64，512 和 1024 个字节。 若要获取该值，请使用<a href="https://msdn.microsoft.com/library/windows/apps/dn297563" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297563)"> <strong>UsbBulkInPipe.EndpointDescriptor.MaxPacketSize</strong> </a>属性。</p>
+<strong>重要须知</strong><br/><p>如果设置此标志，则必须请求中的管道的最大数据包大小倍数的数据。 该信息存储在终结点描述符。 大小取决于设备的总线速度。 有关完整的速度、 高速度、 和 SuperSpeed;最大数据包大小分别为 64，512 和 1024 个字节。 若要获取该值，请使用<a href="https://msdn.microsoft.com/library/windows/apps/dn297563" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn297563)"> <strong>UsbBulkInPipe.EndpointDescriptor.MaxPacketSize</strong> </a>属性。</p>
 </div>
 <div>
 

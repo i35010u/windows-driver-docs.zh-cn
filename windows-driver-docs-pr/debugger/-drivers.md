@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcdfc522437186cebe987efc26a8b44ee9c103d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 10b925d99cd29487ed4d3d1ce72a43861bf97213
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520563"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349212"
 ---
-# <a name="drivers"></a>！ 驱动程序
+# <a name="drivers"></a>!drivers
 
 在 Windows XP 和更高版本的 Windows， **！ 驱动程序**扩展已过时。 若要显示有关已加载的驱动程序和其他模块的信息，请使用[ **lm** ](lm--list-loaded-modules-.md)命令。 命令 lm t n 格式显示的信息非常类似于旧 **！ 驱动程序**扩展。 但是，此命令将不显示作为驱动程序的内存使用量 **！ 驱动程序**扩展未。 它将仅显示驱动程序的开始和结束地址、 映像名称和时间戳。 [ **！ Vm** ](-vm.md)并[ **！ memusage** ](-memusage.md)扩展可用于显示内存使用情况统计信息。
 
@@ -102,11 +102,11 @@ ms.locfileid: "56520563"
 </tr>
 <tr class="odd">
 <td align="left"><p>驻留在</p></td>
-<td align="left"><p>（仅当标志 0x1 或 0x2 使用）该驱动程序的&#39;s 实际驻留在物理内存中的内存。</p></td>
+<td align="left"><p>（仅当标志 0x1 或 0x2 使用）实际驻留在物理内存中的驱动程序的内存量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>备用服务器</p></td>
-<td align="left"><p>（仅当标志 0x1 或 0x2 使用）该驱动程序的&#39;处于备用状态的 s 内存。</p></td>
+<td align="left"><p>（仅当标志 0x1 或 0x2 使用）处于备用状态的驱动程序的内存量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>加载程序项</p></td>

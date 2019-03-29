@@ -1,17 +1,17 @@
 ---
-title: 条件的元数据
-description: 条件的元数据
+title: 条件元数据
+description: 条件元数据
 ms.assetid: A1C223AB-E9BB-480e-B9ED-75989FD34479
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5960a7daf2028f9cf3a906b725f0e6f2da9815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2f484fc7dcc6bb42489311c1f305b52c88d8455b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543611"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349436"
 ---
-# <a name="conditional-metadata"></a>条件的元数据
+# <a name="conditional-metadata"></a>条件元数据
 
 
 有时很有用具有元数据值发生更改，具体取决于运行时的值。 条件的元数据允许模块、 类或方法的元数据，仅应用于基于特定条件[运行时参数](runtime-parameters.md)。
@@ -33,8 +33,8 @@ TEST_METHOD_PROPERTY(L"Ignore[@NoElevation=true]", L"true")
 如果多个条件的元数据显示在一个测试，每个是单独计算相同的方式。 这很有用，如果您希望通过测试来识别运行时参数的多个可能的值。
 
 ```cpp
-TEST_METHOD_PROPERTY(L"Data:MyTestData[@TestCaseLevel=&#39;Low&#39;]", L"{ Datum1, Datum2, Datum3 }")
-TEST_METHOD_PROPERTY(L"DataSource[@TestCaseLevel=&#39;High&#39;]", L"Pict:FullDataSet.model?Order=3")
+TEST_METHOD_PROPERTY(L"Data:MyTestData[@TestCaseLevel='Low']", L"{ Datum1, Datum2, Datum3 }")
+TEST_METHOD_PROPERTY(L"DataSource[@TestCaseLevel='High']", L"Pict:FullDataSet.model?Order=3")
 ```
 
 如果测试具有上面所示的元数据和用户设置为低 TestCaseLevel，测试将只调用三次由于[轻型的数据源](light-weight-data-driven-testing.md)。 如果用户设置为高 TestCaseLevel [PICT 数据源](pict-data-source.md)将用于生成测试的多个参数。 如果 TestCaseLevel 未设置为高或低，则会不添加任何元数据。
@@ -46,9 +46,9 @@ TEST_METHOD_PROPERTY(L"DataSource[@TestCaseLevel=&#39;High&#39;]", L"Pict:FullDa
 
 ```cpp
 TEST_METHOD_PROPERTY(L"DataSource", L"Pict:MyTest.model")
-TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel=&#39;Low&#39;]", L"1")
+TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel='Low']", L"1")
 TEST_METHOD_PROPERTY(L"Pict:Order[default]", L"2")
-TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel=&#39;High&#39;]", L"3")
+TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel='High']", L"3")
 ```
 
 如果某个测试具有更高版本的元数据，用户不会设置 TestCaseLevel 为 Low 或高 Pict： 顺序将设置为 2。 如果用户设置 TestCaseLevel 为 Low 或高，Pict： 顺序将设置为 1 或 3，分别。 因为至少一个 Pict： 顺序计算结果为 true 的测试条件，不会应用的值为 2。
@@ -57,9 +57,9 @@ TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel=&#39;High&#39;]", L"3")
 
 ```cpp
 TEST_METHOD_PROPERTY(L"DataSource", L"Pict:MyTest.model")
-TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel=&#39;Low&#39;]", L"1")
+TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel='Low']", L"1")
 TEST_METHOD_PROPERTY(L"Pict:Order", L"2") // This should have [default]
-TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel=&#39;High&#39;]", L"3")
+TEST_METHOD_PROPERTY(L"Pict:Order[@TestCaseLevel='High']", L"3")
 ```
 
 如果 TestCaseLevel 设置为低，设置上述元数据的等效于以下组的元数据：

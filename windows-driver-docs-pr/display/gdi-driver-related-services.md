@@ -1,6 +1,6 @@
 ---
-title: GDI 与驱动程序相关的服务
-description: GDI 与驱动程序相关的服务
+title: GDI 驱动程序相关服务
+description: GDI 驱动程序相关服务
 ms.assetid: bb46ae7a-9ade-4e23-b9fe-489f83445ff3
 keywords:
 - GDI WDK Windows 2000 显示，与驱动程序相关的服务
@@ -8,14 +8,14 @@ keywords:
 - 绘制 WDK GDI，与驱动程序相关的服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec6d3db4a151525592548529e32c4f365fe71bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df50d246e0ca1113de98078dd87d264874363671
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545837"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350326"
 ---
-# <a name="gdi-driver-related-services"></a>GDI 与驱动程序相关的服务
+# <a name="gdi-driver-related-services"></a>GDI 驱动程序相关服务
 
 
 ## <span id="ddk_gdi_driver_related_services_gg"></span><span id="DDK_GDI_DRIVER_RELATED_SERVICES_GG"></span>
@@ -45,7 +45,7 @@ ms.locfileid: "56545837"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564927" data-raw-source="[&lt;strong&gt;EngGetDriverName&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564927)"><strong>EngGetDriverName</strong></a></p></td>
-<td align="left"><p>返回的驱动程序名称&#39;s DLL。</p></td>
+<td align="left"><p>返回驱动程序的 DLL 的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564967" data-raw-source="[&lt;strong&gt;EngLockDriverObj&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564967)"><strong>EngLockDriverObj</strong></a></p></td>

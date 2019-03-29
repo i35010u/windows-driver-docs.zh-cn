@@ -7,12 +7,12 @@ keywords:
 - WDM WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85cd0bf8e273d015fec7c3002e140ced8df8fc31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0a5ed983d3e32e4491d965624726e9cadf070512
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540588"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350286"
 ---
 # <a name="wdm-reader-driver"></a>WDM 读卡器驱动程序
 
@@ -85,7 +85,7 @@ DriverDeviceControl(
         Irp
         );
 }</code></pre>
-<p>如果无法处理在调用中，指示特定 IOCTL <strong>SmartcardDeviceControl</strong>将调用该驱动程序&#39;的未知 IOCTL 请求的回调。</p></td>
+<p>如果无法处理在调用中，指示特定 IOCTL <strong>SmartcardDeviceControl</strong>将未知 IOCTL 请求调用驱动程序的回调。</p></td>
 </tr>
 </tbody>
 </table>

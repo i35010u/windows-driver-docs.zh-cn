@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b57675de4fd62e266f46652cf5315b188c7958ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bbe537353171befec3b1cd60a8f081f4ebf91131
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464241"
 ---
-# <a name="bug-check-0x59-pinballfilesystem"></a>Bug 检查 0x59:弹球\_文件\_系统
+# <a name="bug-check-0x59-pinballfilesystem"></a>Bug 检查 0x59：弹球\_文件\_系统
 
 
 弹球\_文件\_检查系统错误的值为 0x00000059。 这表示弹球文件系统中出现问题。
@@ -44,7 +44,7 @@ ms.locfileid: "56547264"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>指定源代码文件和行号信息。 高 16 位 (后的前四个十六进制数&quot;0x&quot;) 标识由其标识符编号的源文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
+<td align="left"><p>指定源代码文件和行号信息。 高 16 位 （"0x"后的前四个十六进制数字） 标识由其标识符编号的源代码文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

@@ -1,17 +1,17 @@
 ---
-title: 向供应商提供的系统定义的设备安装程序类
-description: 向供应商提供的系统定义的设备安装程序类
+title: 为供应商提供的系统定义的设备安装程序类
+description: 为供应商提供的系统定义的设备安装程序类
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5debac8428ea3bb252f02a2ab0178ff96fea6b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 913deb31788028721c29f7d1ccf0551adcba74d6
+ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521330"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57693054"
 ---
-# <a name="system-defined-device-setup-classes-available-to-vendors"></a>向供应商提供的系统定义的设备安装程序类  
+# <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
   
   
 由操作系统定义的以下类和 Guid。 除非另有说明，这些类和 Guid 可用于安装的设备 （或驱动程序） 在 Windows 2000 和更高版本的 Windows 上：  
@@ -166,7 +166,7 @@ ClassGuid = {50906cb8-ba12-11d1-bf5d-0000f805f530}
 <a href="" id="network-adapter-"></a>**网络适配器**  
 类 = Net  
 ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}  
-此类包括 NDIS 微型端口驱动程序不包括快速 IR 微型端口驱动程序、 NDIS 中间驱动程序 （的虚拟适配器） 和的 CoNDIS MCM 微型端口驱动程序。  
+此类包含网络适配器驱动程序。  这些驱动程序必须调用[ **NdisMRegisterMiniportDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)或[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。  不要使用 NDIS 或 NetAdapter 的驱动程序应使用不同的安装程序类。
   
 <a href="" id="network-client-"></a>**网络客户端**  
 类 = NetClient  

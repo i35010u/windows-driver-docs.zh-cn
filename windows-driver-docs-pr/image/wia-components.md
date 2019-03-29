@@ -4,12 +4,12 @@ description: WIA 组件
 ms.assetid: e75b8929-c16a-4c7a-9064-4fcb104bfa41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5e9f023bf8475feeac380b5a018ca0a5b30340a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 44b07e5da2591790aefa18a8665e5c1766a9da75
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546234"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349624"
 ---
 # <a name="wia-components"></a>WIA 组件
 
@@ -79,7 +79,7 @@ WIA 服务是与图像处理应用程序和 WIA 微型驱动程序进行通信�
 </tr>
 <tr class="even">
 <td><p><strong>IWiaPropertyStorage</strong></p></td>
-<td><p>提供对信息的访问有关<strong>IWiaItem</strong>对象&#39;的属性。</p></td>
+<td><p>提供对信息的访问有关<strong>IWiaItem</strong>对象的属性。</p></td>
 </tr>
 </tbody>
 </table>

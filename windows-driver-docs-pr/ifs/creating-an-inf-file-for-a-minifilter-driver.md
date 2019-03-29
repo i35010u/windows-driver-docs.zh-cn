@@ -13,12 +13,12 @@ keywords:
 - AddRegistry 部分 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ddc50d68efcab408f1f0e54ba47fddcd3f0ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 90713fedfef6f76bb2c6eeaa2910bf9447fb9756
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464309"
 ---
 # <a name="creating-an-inf-file-for-a-minifilter-driver"></a>创建用于微筛选器驱动程序的 INF 文件
 
@@ -93,7 +93,7 @@ CatalogFile =
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>签名</strong></p></td>
-<td align="left"><p>&quot;$WINDOWS NT$&quot;</p></td>
+<td align="left"><p>"$WINDOWS NT $"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>类</strong></p></td>
@@ -188,7 +188,7 @@ Dependencies   = FltMgr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

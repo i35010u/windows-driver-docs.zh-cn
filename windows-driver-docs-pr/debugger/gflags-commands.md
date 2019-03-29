@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd08b461351859bc453700247addd6a77b9f32c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e5d1ea9041b1d4d5fee011516c1f2a1e5a61ea9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463880"
 ---
 # <a name="gflags-command-overview"></a>GFlags 命令概述
 
@@ -182,7 +182,7 @@ glags /?
 <tr class="even">
 <td align="left"><p><strong>/i</strong> <em>ImageFile</em></p></td>
 <td align="left"><p>限制跟踪到与指定的图像文件创建的进程对象。 可以指定只有一个图像文件<strong>/i</strong>参数。</p>
-<p>输入图像文件名称，如 notepad.exe，最多 64 个字符。 &quot;系统&quot;并&quot;空闲&quot;不是有效的图像名称。</p>
+<p>输入图像文件名称，如 notepad.exe，最多 64 个字符。 "系统"和"空闲"不是有效的图像名称。</p>
 <p>如果不指定图像文件，Windows 将跟踪与指定的池标记的所有对象。 如果指定这两个图像文件 (<strong>/i</strong>) 和一个或多个池标记 (<strong>/t</strong>)，Windows 跟踪与任何指定的映像创建的指定的池标记的对象。</p></td>
 </tr>
 <tr class="odd">

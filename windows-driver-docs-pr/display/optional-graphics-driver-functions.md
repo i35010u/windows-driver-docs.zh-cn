@@ -12,12 +12,12 @@ keywords:
 - DDI WDK 图形，可选函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c2b1cc3c5bfd35dd9b1882f117470a02f13dbf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 410e473c099320d35ac371e7e5fa9f564bba6ac1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522100"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349410"
 ---
 # <a name="optional-graphics-driver-functions"></a>可选的图形驱动程序函数
 
@@ -220,7 +220,7 @@ ms.locfileid: "56522100"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556250" data-raw-source="[&lt;strong&gt;DrvNextBand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556250)"><strong>DrvNextBand</strong></a></p></td>
-<td align="left"><p>认识到图面中的内容&#39;s 只是绘制外。</p></td>
+<td align="left"><p>认识到表面的只是绘制外的内容。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556268" data-raw-source="[&lt;em&gt;DrvQueryPerBandInfo&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556268)"><em>DrvQueryPerBandInfo</em></a></p></td>

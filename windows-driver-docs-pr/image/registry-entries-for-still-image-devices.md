@@ -1,17 +1,17 @@
 ---
-title: 静止图像设备的注册表项
-description: 静止图像设备的注册表项
+title: 静态图像设备的注册表项
+description: 静态图像设备的注册表项
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a7722bb95a39d2011d4ae1e5ec5c7893c7cbfb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ac2f74a3c2b78b90ebc585964b8cb93cdbd290e8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464243"
 ---
-# <a name="registry-entries-for-still-image-devices"></a>静止图像设备的注册表项
+# <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 
 
 
@@ -39,23 +39,23 @@ Microsoft STI 使用多个注册表条目，其中一些可以修改由供应商
 <tbody>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_ICM_PROFILE</p></td>
-<td><p>&quot;ICMProfile&quot;</p></td>
+<td><p>"ICMProfile"</p></td>
 <td><p>REG_MULTI_SZ 类型包含两个设备的 ICM 配置文件的名称。</p></td>
 </tr>
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_ISIS_NAME</p></td>
-<td><p>&quot;ISISDriverName&quot;</p></td>
-<td><p>包含设备的 REG_SZ 类型&#39;s ISIS 驱动程序名称，例如&quot;epson.pxn&quot;。</p></td>
+<td><p>"ISISDriverName"</p></td>
+<td><p>包含设备的 ISIS 驱动程序名称，例如"epson.pxn"的 REG_SZ 类型。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_TIMEOUT</p></td>
-<td><p>&quot;PollTimeout&quot;</p></td>
+<td><p>"PollTimeout"</p></td>
 <td><p>表示超时值，以毫秒为单位，轮询设备时应使用的 REG_DWORD 类型。 默认值为 1000 （1 秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_TWAIN_NAME</p></td>
-<td><p>&quot;TwainDS&quot;</p></td>
-<td><p>REG_SZ 类型包含的设备的可显示的名称&#39;s TWAIN 数据源，如&quot;HP PictureScan 3.0&quot;。</p></td>
+<td><p>"TwainDS"</p></td>
+<td><p>REG_SZ 类型包含的设备的 TWAIN 数据源，例如"HP PictureScan 3.0"可显示的名称。</p></td>
 </tr>
 </tbody>
 </table>

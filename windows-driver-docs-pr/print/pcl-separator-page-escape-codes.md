@@ -8,12 +8,12 @@ keywords:
 - 转义码 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd72c46f30b22995d72d867863b8de8a7af6336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3ef63ceb12b1f08b9367797206a9581d27463917
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526574"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464199"
 ---
 # <a name="pcl-separator-page-escape-codes"></a>PCL 分隔符页转义代码
 
@@ -73,7 +73,7 @@ ms.locfileid: "56526574"
 </tr>
 <tr class="even">
 <td><p>\L<em>xxx</em></p></td>
-<td><p>打印 \L 转义代码后显示的文本的字符串。 如果输入 \LTest，文本&quot;测试&quot;分隔符页上将显示。</p></td>
+<td><p>打印 \L 转义代码后显示的文本的字符串。 如果输入 \LTest，在分隔符页将显示文本"Test"。</p></td>
 </tr>
 <tr class="odd">
 <td><p>\N</p></td>

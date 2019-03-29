@@ -10,12 +10,12 @@ keywords:
 - DEBUG_BREAK_IO
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183619dc34aefd78aa00e8d91ca8170956332b0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b6484dbad9d33ee3f66a0f219c9d66276b094737
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520719"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350190"
 ---
 # <a name="controlling-breakpoint-flags-and-parameters"></a>控制断点标志和参数
 
@@ -99,20 +99,20 @@ ms.locfileid: "56520719"
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_BREAK_READ</p></td>
-<td align="left"><p>在 CPU 中读取在断点处的内存时，将触发断点&#39;s 内存块。</p></td>
+<td align="left"><p>当 CPU 读取断点的内存块中的内存时，将触发断点。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_BREAK_WRITE</p></td>
-<td align="left"><p>CPU 在断点处写入内存时，将触发断点&#39;s 内存块。</p></td>
+<td align="left"><p>CPU 断点的内存块中写入内存时，将触发断点。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 DEBUG_BREAK_READ | DEBUG_BREAK_WRITE</td>
-<td align="left"><p>CPU 读取或写入在断点处的内存时，将触发断点&#39;s 内存块。</p></td>
+<td align="left"><p>CPU 读取或写入内存中的断点的内存块时，将触发断点。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_BREAK_EXECUTE</p></td>
-<td align="left"><p>CPU 会提取在断点处的指令时，将触发断点&#39;s 内存块。</p></td>
+<td align="left"><p>CPU 提取断点的内存块中的说明，将触发断点。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_BREAK_IO</p></td>

@@ -1,20 +1,20 @@
 ---
-title: 处理颜色值的像素格式
-description: 处理颜色值的像素格式
+title: 处理像素格式的颜色值
+description: 处理像素格式的颜色值
 ms.assetid: 53ce6be1-14e1-4ee8-ba29-f198dcdacdaa
 keywords:
 - 像素格式 WDK DirectX 9.0 的颜色值
 - 像素格式颜色值 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 137627b1007417821c4b600917f4bd8af5d3eef2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddd4a844e8a7edcdd159d0425b5ae0e5300ebda3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545118"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349635"
 ---
-# <a name="handling-color-values-for-pixel-formats"></a>处理颜色值的像素格式
+# <a name="handling-color-values-for-pixel-formats"></a>处理像素格式的颜色值
 
 
 ## <span id="ddk_handling_color_values_for_pixel_formats_gg"></span><span id="DDK_HANDLING_COLOR_VALUES_FOR_PIXEL_FORMATS_GG"></span>
@@ -146,13 +146,13 @@ DWORD CPixel::ConvertFromARGB(D3DCOLOR  InputColor,
                     (Red);
         break;
 
-    case MAKEFOURCC(&#39;A&#39;, &#39;Y&#39;, &#39;U&#39;, &#39;V&#39;):
-    case MAKEFOURCC(&#39;N&#39;, &#39;V&#39;, &#39;1&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;Y&#39;, &#39;V&#39;, &#39;1&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;1&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;2&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;3&#39;):
-    case MAKEFOURCC(&#39;I&#39;, &#39;C&#39;, &#39;M&#39;, &#39;4&#39;):
+    case MAKEFOURCC('A', 'Y', 'U', 'V'):
+    case MAKEFOURCC('N', 'V', '1', '2'):
+    case MAKEFOURCC('Y', 'V', '1', '2'):
+    case MAKEFOURCC('I', 'C', 'M', '1'):
+    case MAKEFOURCC('I', 'C', 'M', '2'):
+    case MAKEFOURCC('I', 'C', 'M', '3'):
+    case MAKEFOURCC('I', 'C', 'M', '4'):
         Output = InputColor;
         break;
     }

@@ -4,12 +4,12 @@ description: LocationPath 注册表子项
 ms.assetid: 3b6f3501-5969-453c-a04b-5559761c3222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb81115900f3f99571552a9c7b9fa57e4aad86f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6f76da6c69a25caf6c202ac76cbc0a0a55d71973
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554465"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463941"
 ---
 # <a name="locationpath-registry-subkey"></a>LocationPath 注册表子项
 
@@ -41,7 +41,7 @@ ms.locfileid: "56554465"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>有效&quot; <em>LocationPath</em> &quot;值</p></td>
+<td align="left"><p>有效"<em>LocationPath</em>"值</p></td>
 <td align="left"><p>可选 (* 或有效的位置路径必须存在以指示可移动设备功能的作用域重写)</p></td>
 <td align="left"><p>无</p></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>或<a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>

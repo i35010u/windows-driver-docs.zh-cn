@@ -4,24 +4,22 @@ description: 下面是 Get 请求架构和相应的响应架构定义和各自�
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 402649b40d3ff825fd9697c142b3aa544ee243a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ff1d2e9ab650b9ea94eff9ec5c17f7fbe459e0e3
+ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554683"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58441923"
 ---
 # <a name="get-request-and-response-schemas"></a>获取请求和响应架构
-
 
 下面是 Get 请求架构和相应的响应架构定义和各自的示例。
 
 ## <a name="the-get-request-schema"></a>Get 请求架构
 
-
 Get 请求和响应用于查询打印机的一个或多个其当前值。
 
-在此示例中，有三个查询。 第一个查询是指向特定的双向通信架构值和第二个定义的子树的双向通信架构属性。 第三个是故意的错误： 没有任何&lt;Foo&gt;双向通信架构中的属性。 (下一节中对此请求的响应是[获取响应架构](#get-response-schema)。)
+在此示例中，有三个查询。 第一个查询是指向特定的双向通信架构值和第二个定义的子树的双向通信架构属性。 第三个是故意的错误： 没有任何&lt;Foo&gt;双向通信架构中的属性。 (下一节中对此请求的响应是[获取响应架构](#the-get-response-schema)。)
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -60,7 +58,6 @@ Get 请求架构中的正式定义
 ```
 
 ## <a name="the-get-response-schema"></a>获取响应架构
-
 
 此示例是对上面的 Get 请求的响应。 对于查询该成功，结果是值的特定架构。 第三个查询失败，因此结果是一个错误代码。 请注意第二个查询请求具有子级的属性，因为响应提供的名称和值的所有子级。
 

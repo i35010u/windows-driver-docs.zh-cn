@@ -4,12 +4,12 @@ description: 本部分介绍如何实现 IPv6 邻居招标 (NS) 卸载
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3df9909bbadcbcf47bcbced468d8f81463e2cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 685fecb635c435e52ecd5a3f7adde5d6075fbab8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464119"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>实现 IPv6 NS 卸载
 
@@ -54,7 +54,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">匹配值</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +84,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <td align="left"><p>微型端口必须匹配此字段的这两个选项：<strong>OID。TargetIPv6Addresses [x]</strong>和<strong>OID。SolicitedNodeIPv6Address</strong>。</p>
 <p>如果此字段为<strong>OID。TargetIPv6Addresses [x]</strong>，NS 消息是单播消息。</p>
 <p>如果此字段为<strong>OID。SolicitedNodeIPv6Address</strong>，NS 消息是多路广播的消息。</p>
-<p><strong>OID。TargetIPv6Addresses</strong>是一个数组，其中可以包含 1 或 2 个地址。 如果它包含 2 个地址，微型端口必须与匹配这两个值。 第二个地址是否&quot;0::0&quot;、 必须忽略它，并且必须创建第二个匹配模式。</p></td>
+<p><strong>OID。TargetIPv6Addresses</strong>是一个数组，其中可以包含 1 或 2 个地址。 如果它包含 2 个地址，微型端口必须与匹配这两个值。 如果第二个地址，"0::0"必须忽略它，并且必须创建第二个匹配模式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
@@ -104,7 +104,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <tr class="odd">
 <td align="left"><strong>IPv6.Source</strong></td>
 <td align="left"><p><strong>OID.RemoteIPv6Address</strong></p></td>
-<td align="left"><p>如果<strong>OID。RemoteIPv6Address</strong>是&quot;0::0&quot;，应忽略此字段。</p></td>
+<td align="left"><p>如果<strong>OID。RemoteIPv6Address</strong>是"0::0"，应忽略此字段。</p></td>
 </tr>
 </tbody>
 </table>
@@ -125,8 +125,8 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <thead>
 <tr class="header">
 <th align="left">字段</th>
-<th align="left">值</th>
-<th align="left">注释</th>
+<th align="left">ReplTest1</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -153,7 +153,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <tr class="odd">
 <td align="left"><strong>IPv6.Destination</strong></td>
 <td align="left"><strong>IPv6.Source</strong></td>
-<td align="left"><p>除非从 NS 帧中，复制此值的值<strong>IPv6.Source</strong>已&quot;0::0&quot;。 如果的值<strong>IPv6.Source</strong>已&quot;0::0&quot;将此字段设置为&quot;ff02:: 1&quot;。</p></td>
+<td align="left"><p>除非从 NS 帧中，复制此值的值<strong>IPv6.Source</strong>已"0::0"。 如果的值<strong>IPv6.Source</strong>已"0::0"设置此字段为"ff02:: 1"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
@@ -173,7 +173,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <tr class="odd">
 <td align="left"><strong>IPv6.ICMPv6.SolicitedFlag</strong></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>如果的值<strong>IPv6.Source</strong> NS 中帧已&quot;0::0&quot;，将此字段设置为 1。</p></td>
+<td align="left"><p>如果的值<strong>IPv6.Source</strong> NS 在帧是"0::0"，将此字段设置为 1。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>IPv6.ICMPv6.OverrideFlag</strong></td>

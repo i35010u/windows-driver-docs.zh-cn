@@ -1,5 +1,5 @@
 ---
-title: / Export 开关
+title: /Export 开关
 description: 增强型存储证书管理工具的 /Export 开关将身份验证接收器证书 (ASC) 存储中指定的证书导出到文件
 ms.assetid: 00612a63-057a-4ff9-baef-d44de0280cb5
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1b5a0338982d28d00d277053dff1ba0aa3bbae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 47737642b2140960f35982b761febda96d9da59a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524821"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463809"
 ---
-# <a name="export-switch"></a>/ Export 开关
+# <a name="export-switch"></a>/Export 开关
 
 
 **/Export**增强存储证书管理工具的开关将 IEEE 1667 合规的 USB 存储设备中的身份验证接收器证书 (ASC) 存储中指定的证书导出到文件。 此开关也支持证书签名请求 (CSR) 文件的导出。
@@ -83,32 +83,32 @@ ms.locfileid: "56524821"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>&quot;ASCm&quot;</p></td>
+<td align="left"><p>"ASCm"</p></td>
 <td align="left"><p>身份验证接收器证书 (ASC) 制造商。</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;ASCh&quot;</p></td>
+<td align="left"><p>"ASCh"</p></td>
 <td align="left"><p>用于进行身份验证到主机的证书身份验证接收器 ASC 主机证书。</p></td>
 <td align="left"><p>任何大于 1 的索引。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>&quot;HCh&quot;</p></td>
+<td align="left"><p>"HCh"</p></td>
 <td align="left"><p>用于进行身份验证的证书身份验证接收器到主机的主机证书。</p></td>
 <td align="left"><p>任何大于 1 的索引。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;PCp&quot;</p></td>
+<td align="left"><p>"PCp"</p></td>
 <td align="left"><p>管理命令中使用的设置证书序列预配和管理证书身份验证接收器。</p></td>
 <td align="left"><p>1</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>&quot;SCh&quot;</p></td>
+<td align="left"><p>"SCh"</p></td>
 <td align="left"><p>用于定义主机的受信任的证书签名者证书。 此受信任的证书是 ASCh 证书和零个或多个 SCh 证书的链。</p></td>
 <td align="left"><p>任何大于 1 的索引。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&quot;无效&quot;</p></td>
+<td align="left"><p>"无效"</p></td>
 <td align="left"><p>未知的证书类型是位于指定索引处。</p></td>
 <td align="left"><p>不适用</p></td>
 </tr>

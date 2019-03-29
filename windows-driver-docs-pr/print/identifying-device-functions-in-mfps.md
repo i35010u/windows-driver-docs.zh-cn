@@ -1,18 +1,17 @@
 ---
-title: 标识 Mfp 中的设备函数
-description: 标识 Mfp 中的设备函数
+title: 识别 MFP 中的设备函数
+description: 识别 MFP 中的设备函数
 ms.assetid: 14016c43-b93a-4009-848b-1bcf3f1d94b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 349e1eab7a73300db014a096e54e0b676108a717
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c040bfae10bdc7c27884a91e62902ea730b3e665
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525093"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419555"
 ---
-# <a name="identifying-device-functions-in-mfps"></a>标识 Mfp 中的设备函数
-
+# <a name="identifying-device-functions-in-mfps"></a>识别 MFP 中的设备函数
 
 设备和打印机用户界面使用的设备容器标识符 (ContainerID) 来标识属于 MFP 打印机和扫描仪功能。 ContainerID 是一个 GUID，中的所有功能的设备实例 (devnodes) MFP 或其他多功能设备可用于标识其自身作为同一个多功能设备的一部分。 例如，打印机功能的设备实例和 MFP 中的扫描程序功能的设备实例应具有相同的 ContainerID 值。
 
@@ -20,12 +19,4 @@ ms.locfileid: "56525093"
 
 可能通过多个传输连接的设备 （即设备连接时通过 USB 和 WSD），建议设备报告 ContainerID 以使不同的设备实例显示为一台设备。
 
-有关 ContainerIDs 详细信息，请参阅[Windows 设备体验](https://go.microsoft.com/fwlink/p/?linkid=145535)。
-
- 
-
- 
-
-
-
-
+有关 ContainerIDs 详细信息，请参阅[容器 ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)。

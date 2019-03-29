@@ -4,19 +4,19 @@ description: 使用这些规则来验证您的驱动程序正确处理 I/O 请�
 ms.assetid: C11F1FD7-DA41-4A72-A0EB-97C1D79ECC21
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b467f793c9cf608c0b1ea4c797d8b5488594512f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c5c8474d0a48fdf5f5982507dade65b0dcc24f67
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526207"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349550"
 ---
 # <a name="irpprocessing-rule-set-wdm"></a>IrpProcessing 规则集 (WDM)
 
 
 使用这些规则来验证您的驱动程序正确处理 I/O 请求数据包 (IRP)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -101,7 +101,7 @@ ms.locfileid: "56526207"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="wdm-startiorecursion.md" data-raw-source="[&lt;strong&gt;StartIoRecursion&lt;/strong&gt;](wdm-startiorecursion.md)"><strong>StartIoRecursion</strong></a></p></td>
-<td align="left"><p><a href="wdm-startiorecursion.md" data-raw-source="[&lt;strong&gt;StartIoRecursion&lt;/strong&gt;](wdm-startiorecursion.md)"> <strong>StartIoRecursion</strong> </a>规则指定的驱动程序，如果&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff563858" data-raw-source="[&lt;strong&gt;StartIo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563858)"> <strong>StartIo</strong> </a>例程包含对的调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff550358" data-raw-source="[&lt;strong&gt;IoStartNextPacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550358)"><strong>IoStartNextPacket</strong></a>，该驱动程序必须首先调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff550330" data-raw-source="[&lt;strong&gt;IoSetStartIoAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550330)"> <strong>IoSetStartIoAttributes</strong> </a>与<em>DeferredStartIo</em>属性设置为<strong>TRUE</strong>。 否则，可能会导致无限递归。</p></td>
+<td align="left"><p><a href="wdm-startiorecursion.md" data-raw-source="[&lt;strong&gt;StartIoRecursion&lt;/strong&gt;](wdm-startiorecursion.md)"> <strong>StartIoRecursion</strong> </a>规则指定的驱动程序，如果<a href="https://msdn.microsoft.com/library/windows/hardware/ff563858" data-raw-source="[&lt;strong&gt;StartIo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563858)"> <strong>StartIo</strong> </a>例程包含对的调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff550358" data-raw-source="[&lt;strong&gt;IoStartNextPacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550358)"> <strong>IoStartNextPacket</strong></a>，该驱动程序必须先调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff550330" data-raw-source="[&lt;strong&gt;IoSetStartIoAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550330)"> <strong>IoSetStartIoAttributes</strong> </a>与<em>DeferredStartIo</em>属性设置为<strong>，则返回 TRUE</strong>。 否则，可能会导致无限递归。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="wdm-pnpremove.md" data-raw-source="[&lt;strong&gt;PnpRemove&lt;/strong&gt;](wdm-pnpremove.md)"><strong>PnpRemove</strong></a></p></td>

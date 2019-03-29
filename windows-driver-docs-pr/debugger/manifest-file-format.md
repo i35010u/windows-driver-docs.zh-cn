@@ -6,12 +6,12 @@ keywords:
 - 日志查看器，清单，文件格式
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b289e0d526d5906528b4112ddb56836ae1eca60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8676e65a2a0a57fb185a8915d820a7cff71d32f6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464001"
 ---
 # <a name="manifest-file-format"></a>清单文件格式
 
@@ -75,7 +75,7 @@ value DWORD HANDLE
 
 COM 接口基本上是 COM 对象的客户端可以调用的函数的向量。 清单格式很大程度利用从接口定义语言 (IDL) 在 COM 中用于定义接口。
 
-请考虑下面的示例：
+请看下面的示例：
 
 ```cpp
 interface IDispatch : IUnknown
@@ -165,12 +165,12 @@ interface IDispatch : IUnknown
 <tr class="odd">
 <td align="left"><p>LPSTR</p></td>
 <td align="left"><p>长度的字节以及任意数量的字符</p></td>
-<td align="left"><p>&quot;快速 brown fox&quot;</p></td>
+<td align="left"><p>"快速 brown fox"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LPWSTR</p></td>
 <td align="left"><p>长度的字节以及任意数量的 Unicode 字符</p></td>
-<td align="left"><p>&quot;跳过那只懒狗&quot;</p></td>
+<td align="left"><p>"跳过那只懒狗"</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID</p></td>
@@ -183,7 +183,7 @@ interface IDispatch : IUnknown
 <td align="left"><p>0x0203404A</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>value</p></td>
+<td align="left"><p>值</p></td>
 <td align="left"><p>相关的基类型</p></td>
 <td align="left"><p>ERROR_TOO_MANY_OPEN_FILES</p></td>
 </tr>
@@ -255,7 +255,7 @@ Guid 是 16 字节 com。 在广泛使用的全局唯一标识符 两种方式�
 struct __declspec(uuid("00020400-0000-0000-C000-000000000046")) IDispatch;
 ```
 
-或者
+或
 
 ```cpp
 class __declspec(uuid("11219420-1768-11D1-95BE-00609797EA4F")) ShellLinkObject;

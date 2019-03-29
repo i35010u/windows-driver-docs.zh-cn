@@ -1,24 +1,24 @@
 ---
-title: 内核模式存储外围设备驱动程序的硬件资源
+title: 内核模式 SPB 外设驱动程序的硬件资源
 description: 代码示例外围设备上存储的 KMDF 驱动程序，并获取的硬件资源。
 ms.assetid: ABFFCBEC-16AB-44AF-BEF6-34AEE612EAF7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4dd3c73b8434a7d5adcf589d677b00a2145067e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53c5a28556e1d7e0682a8fc2305157c7c8c950a0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546993"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349936"
 ---
-# <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>内核模式存储外围设备驱动程序的硬件资源
+# <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>内核模式 SPB 外设驱动程序的硬件资源
 
 
 此主题演示中的代码示例如何[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff544296)外围设备上的 (KMDF) 驱动程序[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储） 获取到它需要的硬件资源操作设备。 这些资源中包含的是驱动程序使用建立的逻辑连接到设备的信息。 其他资源可能包括中断和一个或多个 GPIO 输入或输出插针。 (GPIO 引脚是已配置为输入或输出; 有关详细信息的通用 I/O 控制器设备上的 pin，请参阅[常规用途 I/O (GPIO) 驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh439508)。)与不同的是内存映射的设备，与存储连接的外围设备不需要的系统内存地址将映射到其寄存器的块。
 
 此驱动程序实现了一组插和电源管理事件回调函数。 若要注册这些函数与 KMDF，驱动程序的[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)事件回调函数调用[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff546135)方法。 框架在调用电源管理事件回调函数来通知中的外围设备电源状态更改的驱动程序。 包含在这些函数是[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)函数，用于执行使该设备驱动程序可以访问所需的任何操作。
 
-电源恢复到外围设备，驱动程序框架将调用*EvtDevicePrepareHardware*函数，以通知此设备必须准备用于存储外围设备驱动程序。 在此调用，驱动程序将收到硬件资源的两个的列表作为输入参数。 *ResourcesRaw*参数是 WDFCMRESLIST 对象句柄的列表[*原始资源*](https://msdn.microsoft.com/library/windows/hardware/ff544561)，以及*ResourcesTranslated*参数是 WDFCMRESLIST 对象句柄的列表[*资源转换*](https://msdn.microsoft.com/library/windows/hardware/ff544561)。 翻译后的资源包括*连接 ID*驱动程序需要以建立与外围设备的逻辑连接。 有关详细信息，请参阅[SPB-Connected 外围设备的连接 Id](https://msdn.microsoft.com/library/windows/hardware/hh698216)。
+电源恢复到外围设备，驱动程序框架将调用*EvtDevicePrepareHardware*函数，以通知此设备必须准备用于存储外围设备驱动程序。 在此调用，驱动程序将收到硬件资源的两个的列表作为输入参数。 *ResourcesRaw*参数是 WDFCMRESLIST 对象句柄的列表[*原始资源*](https://msdn.microsoft.com/library/windows/hardware/ff544561)，以及*ResourcesTranslated*参数是 WDFCMRESLIST 对象句柄的列表[*资源转换*](https://msdn.microsoft.com/library/windows/hardware/ff544561)。 翻译后的资源包括*连接 ID*驱动程序需要以建立与外围设备的逻辑连接。 有关详细信息，请参阅 [Connection IDs for SPB-Connected Peripheral Devices](https://msdn.microsoft.com/library/windows/hardware/hh698216)（SPB 连接的外围设备的连接 ID）。
 
 下面的代码示例演示如何*EvtDevicePrepareHardware*函数可获取的连接 ID *ResourcesTranslated*参数。
 
@@ -85,7 +85,7 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
         break;
 
     default:
-        // Don&#39;t care about other resource descriptors.
+        // Don't care about other resource descriptors.
         break;
     }
 }

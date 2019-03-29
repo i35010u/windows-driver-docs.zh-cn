@@ -4,12 +4,12 @@ description: 本主题介绍如何实现音频处理对象 (APO)。 有关 a p o
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93789860ff98d2b4064b91eaba980641f4460465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa596eeaa6d6962226863023402da5f75de61397
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545268"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349544"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -56,7 +56,7 @@ ms.locfileid: "56545268"
 
     • [IAudioSystemEffects](https://msdn.microsoft.com/library/windows/hardware/ff536514)。 使音频引擎的接口将 DLL 识别为系统效果 APO。
 
--   所有未必须都具有实时系统的兼容性。 这意味着：
+-   所有未必须都具有实时系统的兼容性。 这表示：
 
     • 必须作为非阻止性成员实现实时的接口的成员的所有方法。 它们必须不能阻止、 使用分页的内存，或调用任何阻止系统例程。
 
@@ -109,7 +109,7 @@ SYSVAD 示例，主 APO 开发人员感兴趣的是其中之一中有五个项�
 
 |                    |                                       |
 |--------------------|---------------------------------------|
-| **Project**        | **描述**                       |
+| **Project**        | **说明**                       |
 | SwapAPO            | 有关示例 APO 的示例代码。       |
 
  
@@ -118,7 +118,7 @@ SYSVAD 示例，主 APO 开发人员感兴趣的是其中之一中有五个项�
 
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| **Project**            | **描述**                            |
+| **Project**            | **说明**                            |
 | PhoneAudioSample       | 移动的音频驱动程序的示例代码。     |
 | TabletAudioSample      | 另一个音频驱动程序的示例代码。 |
 | KeywordDetectorAdapter | 关键字检测程序适配器的示例代码 |
@@ -130,7 +130,7 @@ SwapAPO 示例的主头文件是 swapapo.h。 下面总结了其他主代码元�
 
 |                      |                                                                   |
 |----------------------|-------------------------------------------------------------------|
-| **文件**             | **描述**                                                   |
+| **文件**             | **说明**                                                   |
 | Swap.cpp             | 包含的交换 APO 实现的 c + + 代码。        |
 | SwapAPOMFX.cpp       | CSwapAPOMFX 的实现                                     |
 | SwapAPOSFX.cpp       | CSwapAPOSFX 的实现                                     |
@@ -479,7 +479,7 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 ```inf
 ; wdmaudio.inf – this is where WmaLfxGfxDsp.dll is registered
 ...
-;; MsApoFxProxy.Registration section can be called by OEM&#39;s to install the discover-effects APO
+;; MsApoFxProxy.Registration section can be called by OEM's to install the discover-effects APO
 [MsApoFxProxy.Registration]
 AddReg = MsApoFxProxy.AddReg
 CopyFiles = MsApoFxProxy.CopyList
@@ -602,7 +602,7 @@ APO 的音频系统监视器返回代码以确定是否不已成功加入到关�
 
 此外，如果失败计数值为 SFX，MFX 或 EFX APO 达到系统指定的限制，SFX、 MFX 和 EFX 未禁用通过设置主键\_终结点\_禁用\_SysFx 注册表项为"1"。 系统指定限制当前为值为 10。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [实现 UI 用于配置 APO 效果](implementing-a-ui-for-configuring-apo-effects.md)  
 

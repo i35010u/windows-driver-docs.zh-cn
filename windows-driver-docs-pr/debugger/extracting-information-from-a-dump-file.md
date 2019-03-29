@@ -8,14 +8,14 @@ keywords:
 - （确定从转储文件） 的计算机名称
 - （确定从转储文件） 的计算机名称
 - （确定从转储文件） 的 IP 地址
-ms.date: 05/23/2017
+ms.date: 03/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ac63398b42b99a6cedad91bf4ff51041d0f0ba5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 534c208507ed2c07e233984b3a159fac8fc82854
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526465"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909200"
 ---
 # <a name="extracting-information-from-a-dump-file"></a>从转储文件中提取信息
 
@@ -28,13 +28,6 @@ ms.locfileid: "56526465"
 ### <a name="span-idfindingthecomputernameinakernelmodedumpfilespanspan-idfindingthecomputernameinakernelmodedumpfilespanfinding-the-computer-name-in-a-kernel-mode-dump-file"></a><span id="finding_the_computer_name_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_COMPUTER_NAME_IN_A_KERNEL_MODE_DUMP_FILE"></span>内核模式转储文件中查找计算机名称
 
 如果您需要确定在其进行了故障转储的计算机的名称，则可以使用[ **！ peb** ](-peb.md)扩展和查找的值的 COMPUTERNAME 它其输出。
-
-或者，可以使用以下命令：
-
-```dbgcmd
-0: kd> x srv!SrvComputerName
-be8ce2e8  srv!SrvComputerName  = _UNICODE_STRING "AIGM-MYCOMP-PUB01"
-```
 
 ### <a name="span-idfindingtheipaddressinakernelmodedumpfilespanspan-idfindingtheipaddressinakernelmodedumpfilespanfinding-the-ip-address-in-a-kernel-mode-dump-file"></a><span id="finding_the_ip_address_in_a_kernel_mode_dump_file"></span><span id="FINDING_THE_IP_ADDRESS_IN_A_KERNEL_MODE_DUMP_FILE"></span>内核模式转储文件中查找的 IP 地址
 

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5239a0e57948bd4784faeab652907bc7cfdd5eb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9adc9a7e6c65122f55b409deb4dcc267929cf15c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541681"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464295"
 ---
-# <a name="bug-check-0x26-cdfsfilesystem"></a>Bug 检查 0x26:CDFS\_FILE\_SYSTEM
+# <a name="bug-check-0x26-cdfsfilesystem"></a>Bug 检查 0x26：CDFS\_FILE\_SYSTEM
 
 
 CDFS\_文件\_检查系统错误的值为 0x00000026。 这表示 CD 文件系统中出现问题。
@@ -44,7 +44,7 @@ CDFS\_文件\_检查系统错误的值为 0x00000026。 这表示 CD 文件系�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>指定源代码文件和行号信息。 高 16 位 (后的前四个十六进制数&quot;0x&quot;) 标识由其标识符编号的源文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
+<td align="left"><p>指定源代码文件和行号信息。 高 16 位 （"0x"后的前四个十六进制数字） 标识由其标识符编号的源代码文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

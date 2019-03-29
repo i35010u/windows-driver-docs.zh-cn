@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 提供 MessageCompiler 任务，以便在�
 ms.assetid: 77B2DBF4-64EB-4396-BAA5-80F23C9899CC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca4c943a088ab36052a4f414137e5d585e683e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9ff8bbe41ff03e3392bf439c989ec07b00782cc
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464020"
 ---
 # <a name="message-compiler-task"></a>消息编译器任务
 
@@ -156,7 +156,7 @@ mc.exe –s "c:\test\" a.mc
 </tr>
 <tr class="even">
 <td align="left"><strong>GenerateMOFFile</strong>
-<p>生成所有函数和宏生成的低级别技术支持。 从清单生成 MOF 文件。 MOF 文件放置在指定的位置&quot;-h&quot;切换。</p></td>
+<p>生成所有函数和宏生成的低级别技术支持。 从清单生成 MOF 文件。 MOF 文件放置在指定的位置"-h"切换。</p></td>
 <td align="left">%(MessageCompile.GenerateMOFFile)</td>
 <td align="left"><strong>-mof</strong></td>
 </tr>
@@ -186,7 +186,7 @@ mc.exe –s "c:\test\" a.mc
 </tr>
 <tr class="odd">
 <td align="left"><strong>PrefixMacroName</strong>
-<p>定义应用于每个生成的日志记录宏的宏名称前缀。 默认值是&quot;EventWrite&quot;。</p></td>
+<p>定义应用于每个生成的日志记录宏的宏名称前缀。 默认值为"EventWrite"。</p></td>
 <td align="left">%(MessageCompile PrefixMacroName)</td>
 <td align="left"><strong>-p</strong><em>&lt;prefix&gt;</em></td>
 </tr>
@@ -261,7 +261,7 @@ mc.exe –s "c:\test\" a.mc
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**消息编译器 (MC.exe)**](https://msdn.microsoft.com/library/windows/desktop/aa385638)

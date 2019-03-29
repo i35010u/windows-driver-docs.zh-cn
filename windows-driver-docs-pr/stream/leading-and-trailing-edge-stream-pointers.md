@@ -1,6 +1,6 @@
 ---
-title: 前导空格和尾随边缘 Stream 指针
-description: 前导空格和尾随边缘 Stream 指针
+title: 前导和尾随边缘流指针
+description: 前导和尾随边缘流指针
 ms.assetid: 73ab974f-8034-421f-980a-2393d84ec54c
 keywords:
 - 流指针 WDK AVStream 前导和尾随边缘
@@ -8,14 +8,14 @@ keywords:
 - 尾随边缘流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a0a7d763cee846ff8f005236d8af6447d84d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cba66bb34a726076a97d47d52022cd0427f50ff7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520644"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348842"
 ---
-# <a name="leading-and-trailing-edge-stream-pointers"></a>前导空格和尾随边缘 Stream 指针
+# <a name="leading-and-trailing-edge-stream-pointers"></a>前导和尾随边缘流指针
 
 
 
@@ -37,7 +37,7 @@ ms.locfileid: "56520644"
 <thead>
 <tr class="header">
 <th>情形</th>
-<th>AVStream&#39;的行为</th>
+<th>AVStream 的行为</th>
 </tr>
 </thead>
 <tbody>

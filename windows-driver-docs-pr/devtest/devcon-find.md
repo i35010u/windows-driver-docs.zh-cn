@@ -1,5 +1,5 @@
 ---
-title: DevCon 查找
+title: DevCon Find
 description: 查找当前连接到计算机的所有设备。 显示设备实例 ID 和设备说明。 在本地和远程计算机上有效。
 ms.assetid: ecd72b34-4117-4360-95d2-e87702f025a1
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fadc15cd43584f7e471560a4abc7f2194b055e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 57439bce9647b5d4a26f256c80e2ab994f7ee54e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519209"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350176"
 ---
-# <a name="devcon-find"></a>DevCon 查找
+# <a name="devcon-find"></a>DevCon Find
 
 
 查找当前连接到计算机的所有设备。 显示设备实例 ID 和设备说明。 在本地和远程计算机上有效。
@@ -67,9 +67,9 @@ ms.locfileid: "56519209"
 <td align="left"><p>例如，指示设备实例 ID <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>&#39;</strong></p>
+<td align="left"><p><strong>'</strong></p>
 <p>（单引号）</p></td>
-<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上 <strong>&#39;* PNP0600</strong>，其中 * PNP0600 （包括星号） 是硬件 id。</p></td>
+<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上<strong>' * PNP0600</strong>，其中 * PNP0600 （包括星号） 是硬件 id。</p></td>
 </tr>
 </tbody>
 </table>

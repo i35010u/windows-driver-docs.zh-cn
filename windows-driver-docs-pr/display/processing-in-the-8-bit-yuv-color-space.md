@@ -1,6 +1,6 @@
 ---
-title: 8 位 YUV 颜色空间中的处理
-description: 8 位 YUV 颜色空间中的处理
+title: 在 8 位 YUV 色彩空间中进行处理
+description: 在 8 位 YUV 色彩空间中进行处理
 ms.assetid: fbf62dc6-b5bf-43f6-baa8-c6d1cee80f9b
 keywords:
 - ProcAmp WDK DirectX VA , YUV color space
@@ -10,14 +10,14 @@ keywords:
 - 颜色空间转换 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b6b1094784003e6541d6569759c32f9c05ff419
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62e095a1afc1b2a1f4cd567c74d52f317dd430e3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554549"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348642"
 ---
-# <a name="processing-in-the-8-bit-yuv-color-space"></a>8 位 YUV 颜色空间中的处理
+# <a name="processing-in-the-8-bit-yuv-color-space"></a>在 8 位 YUV 色彩空间中进行处理
 
 
 ## <span id="ddk_processing_in_the_8_bit_yuv_color_space_gg"></span><span id="DDK_PROCESSING_IN_THE_8_BIT_YUV_COLOR_SPACE_GG"></span>
@@ -32,7 +32,7 @@ YUV 颜色空间中工作，简化了 ProcAmp 调整控件的视频流涉及到�
 下面的公式总结了上一段中所述的步骤。 C 是对比度值，而 B 是亮度值。
 
 ```cpp
-Y&#39; = ((Y - 16) x C) + B + 16
+Y' = ((Y - 16) x C) + B + 16
 ```
 
 ### <a name="span-iduvprocessingspanspan-iduvprocessingspanspan-iduvprocessingspanuv-processing"></a><span id="UV_Processing"></span><span id="uv_processing"></span><span id="UV_PROCESSING"></span>UV 处理
@@ -40,15 +40,15 @@ Y&#39; = ((Y - 16) x C) + B + 16
 若要为你执行 ProcAmp 调整和 V 组件减去从你和 V 的值来定位范围大约零 128。 混合您实现 hue 属性和 V 值一起以下等式中所示。 H 是所需的 hue 角度：
 
 ```cpp
-U&#39; = (U-128) x Cos(H) + (V-128) x Sin(H)
-V&#39; = (V-128) x Cos(H) - (U-128) x Sin(H)
+U' = (U-128) x Cos(H) + (V-128) x Sin(H)
+V' = (V-128) x Cos(H) - (U-128) x Sin(H)
 ```
 
 饱和度调整乘以 U 和 V 由一对常量，然后通过添加到每个 128。 组合的色调和饱和度 UV 数据处理所示的以下等式。 H 是所需的 hue 角度，C 是对比度值，S 是饱和度值：
 
 ```cpp
-U&#39;&#39; = (((U-128) x Cos(H) + (V-128) x Sin(H)) x C x S) + 128
-V&#39;&#39; = (((V-128) x Cos(H) - (U-128) x Sin(H)) x C x S) + 128
+U'' = (((U-128) x Cos(H) + (V-128) x Sin(H)) x C x S) + 128
+V'' = (((V-128) x Cos(H) - (U-128) x Sin(H)) x C x S) + 128
 ```
 
  

@@ -4,12 +4,12 @@ description: CompatibleID 注册表子项
 ms.assetid: 0111b013-d559-47bb-9cc8-d3930661a0a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a51cc5acaac5682ed2ba4f75b247fc23678fe0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cfb020c44d30f13303b8df5c7206c688ae519ec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544391"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349102"
 ---
 # <a name="compatibleid-registry-subkey"></a>CompatibleID 注册表子项
 
@@ -41,7 +41,7 @@ ms.locfileid: "56544391"
 <tr class="odd">
 <td align="left"><p>有效<a href="compatible-ids.md" data-raw-source="[compatible ID](compatible-ids.md)">兼容 ID</a>值</p></td>
 <td align="left"><p>必需</p></td>
-<td align="left"><p>必须包括兼容 ID&#39;s 总线前缀。</p>
+<td align="left"><p>必须包括与兼容 ID 总线前缀。</p>
 <p>兼容 ID 中的所有反斜杠 （） 路径分隔符字符必须替换为数字 （#） 字符。</p></td>
 <td align="left"><a href="deviceoverrides-registry-key.md" data-raw-source="[DeviceOverrides](deviceoverrides-registry-key.md)">DeviceOverrides</a></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>和/或<a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>

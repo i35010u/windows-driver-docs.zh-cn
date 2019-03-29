@@ -6,12 +6,12 @@ keywords:
 - 日志记录级别 WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 433da0c30fb3efca4564b5d2f128e2b456039b87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 10bfa0dec357cf349f4f1a4ccefb1e319664e722
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522303"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348944"
 ---
 # <a name="setting-setupapi-logging-levels"></a>设置 SetupAPI 日志记录级别
 
@@ -175,7 +175,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels
 </tr>
 <tr class="even">
 <td align="left"><p>0x20000000</p></td>
-<td align="left"><p>(<em>Windows XP 及更高版本</em>) Don&#39;t 写入每个条目后刷新到磁盘的日志记录信息。 （日志记录速度更快，但如果发生故障，系统可能会丢失信息。）</p></td>
+<td align="left"><p>(<em>Windows XP 及更高版本</em>) 的每个条目写入后不刷新到磁盘的日志记录信息。 （日志记录速度更快，但如果发生故障，系统可能会丢失信息。）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x40000000</p></td>

@@ -4,19 +4,19 @@ description: 使用这些规则来验证您的驱动程序正确管理共享的�
 ms.assetid: 1123A246-7833-4EAB-B1B8-0C71413CE86B
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d779c83a934bd5037ad5c7e82663b621902564
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a56edc22dffd1e93b5e1b3aa4653cf0f72280069
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463947"
 ---
 # <a name="locking-rule-set-ndis"></a>锁定规则集 (NDIS)
 
 
 使用这些规则来验证您的驱动程序正确管理共享的资源。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -46,7 +46,7 @@ ms.locfileid: "56519076"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"><strong>SpinLockDprRelease</strong></a></p></td>
-<td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"> <strong>SpinLockDprRelease</strong> </a>规则验证的调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff560699" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560699)"> <strong>NdisAcquireSpinLock</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff561749" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561749)"> <strong>NdisDprAcquireSpinLock</strong> </a>旋转锁时仅调用&quot;解锁&quot;状态。 此规则还检查之前退出微型端口处理程序例程旋转锁都已被发布。</p></td>
+<td align="left"><p><a href="ndis-spinlockdprrelease.md" data-raw-source="[&lt;strong&gt;SpinLockDprRelease&lt;/strong&gt;](ndis-spinlockdprrelease.md)"> <strong>SpinLockDprRelease</strong> </a>规则验证的调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff560699" data-raw-source="[&lt;strong&gt;NdisAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560699)"> <strong>NdisAcquireSpinLock</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff561749" data-raw-source="[&lt;strong&gt;NdisDprAcquireSpinLock&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561749)"> <strong>NdisDprAcquireSpinLock</strong> </a>仅当释放调节锁"解除锁定"状态时调用。 此规则还检查之前退出微型端口处理程序例程旋转锁都已被发布。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-spinlockrelease.md" data-raw-source="[&lt;strong&gt;SpinLockRelease&lt;/strong&gt;](ndis-spinlockrelease.md)"><strong>SpinLockRelease</strong></a></p></td>

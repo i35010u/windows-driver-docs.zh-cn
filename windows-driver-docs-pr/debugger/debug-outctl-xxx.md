@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0886488bbb8b812a0507e6b83dc54204a23fbd82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 071d675430ac36829a6f7121d24ac02dcff836e9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532946"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349812"
 ---
 # <a name="debugoutctlxxx"></a>DEBUG\_OUTCTL\_XXX
 
@@ -38,14 +38,14 @@ ms.locfileid: "56532946"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>通过此客户端调用的方法由生成输出将只发送到此客户端&#39;s<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">输出回调</a>。</p></td>
+<td align="left"><p>通过此客户端调用的方法由生成输出将只发送到此客户端<a href="https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks" data-raw-source="[output callbacks](https://msdn.microsoft.com/library/windows/hardware/ff560116#output-callbacks)">输出回调</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -77,7 +77,7 @@ ms.locfileid: "56532946"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -88,7 +88,7 @@ ms.locfileid: "56532946"
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_OVERRIDE_MASK</p></td>
-<td align="left"><p>将输出发送到客户端，而不管是否在客户端&#39;s 输出掩码允许它。</p></td>
+<td align="left"><p>将输出发送到客户端而不考虑客户端的输出掩码是否允许它。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_DML</p></td>
@@ -144,7 +144,7 @@ ms.locfileid: "56532946"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">DbgEng.h （包括 DbgEng.h）</td>
 </tr>
 </tbody>

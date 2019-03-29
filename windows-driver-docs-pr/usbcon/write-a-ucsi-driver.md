@@ -1,14 +1,14 @@
 ---
-Description: Describes the behavior of the UCSI class extension that implements the UCSI specification in a transport agnostic way.
+Description: 描述的行为在传输过程中实现 UCSI 规范 UCSI 类扩展无关的方式。
 title: 编写 UCSI 客户端驱动程序
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54359ccbc01a8953cf3406533aeae00cddbfa50d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 625212799bed9e6bec50495c7556736d8a6f20ad
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523646"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136128"
 ---
 # <a name="write-a-ucsi-client-driver"></a>编写 UCSI 客户端驱动程序
 
@@ -22,7 +22,7 @@ USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序可用作具有嵌�
 
 > 如果您的 USB 类型 C 硬件不具有处理 power 传递 (PD) 状态机的功能，应考虑编写 USB 类型 C 端口控制器驱动程序。 有关详细信息，请参阅[写入 USB 类型 C 端口控制器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
 
-从 Windows 10，版本 1809，开始 UCSI (UcmUcsiCx.sys) 的新类扩展已添加，它在传输过程中实现 UCSI 规范无关的方式。 使用极少量的代码，您的驱动程序，这是到 UcmUcsiCx 的客户端，都可与 USB 类型 C 硬件通过非 ACPI 传输通信。 本主题介绍提供 UCSI 类扩展和客户端驱动程序的预期的行为的服务。
+从 Windows 10，版本 1809，开始 UCSI (UcmUcsiCx.sys) 的新类扩展已添加，它在传输过程中实现 UCSI 规范无关的方式。 只需编写极少量的代码，驱动程序（即 UcmUcsiCx 的客户端）即可通过非 ACPI 传输来与 USB 类型 C 硬件通信。 本主题介绍 UCSI 类扩展提供的服务，以及客户端驱动程序的预期行为。
 
 **正式规范**
 -   [UCSI Intel BIOS 实现](https://go.microsoft.com/fwlink/p/?LinkId=760658)
@@ -40,9 +40,9 @@ USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序可用作具有嵌�
 
 **重要的 Api**
 
-[UcmUcsiCx 类扩展引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[UcmUcsiCx 类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
-**Sample**
+**示例**
 
 [UcmUcsiCx 客户端驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmUcsiAcpiSample)
 
@@ -144,7 +144,7 @@ UcmUcsiCx 抽象化为 PPM 固件从 OPM 发送 UCSI 命令和 PPM 固件从接�
 2. 决定是否想要启用设备控制器。
 
 3. 配置和创建 PPM 对象。
-   1. 初始化[ **UCMUCSI_PPM_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/ns-ucmucsippm-ucmucsi-ppm-config)通过提供在步骤 1 中创建的连接器句柄的结构。
+   1. 初始化[ **UCMUCSI_PPM_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/ns-ucmucsippm-_ucmucsi_ppm_config)通过提供在步骤 1 中创建的连接器句柄的结构。
    2. 设置**UsbDeviceControllerEnabled**成员添加到在步骤 2 中确定一个布尔值。
    3. WDF_OBJECT_ATTRIBUTES 中设置事件回叫。
    4. 调用[ **UcmUcsiPpmCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmcreate)通过将传递所有已配置的结构。
@@ -211,7 +211,7 @@ UcmUcsiPpmSetUcsiCommandRequestQueue(ppmObject, UcsiCommandRequestQueue);
 1. PPM 固件确定附加事件，并将通知发送到客户端驱动程序。
 2. 客户端驱动程序调用[ **UcmUcsiPpmNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmnotification) UcmUcsiCx 向发送该通知。
 3. UcmUcsiCx notfies OPM 状态机，它将获取连接器状态命令发送到 UcmUcsiCx。
-4. UcmUcsiCx 创建一个请求，并将发送[IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippmrequestsni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)到客户端驱动程序。
+4. UcmUcsiCx 创建一个请求，并将发送[IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)到客户端驱动程序。
 5. 客户端驱动程序处理该请求，并将命令发送到 PPM 固件。 该驱动程序以异步方式完成此请求，并将另一条通知发送到 UcmUcsiCx。
 6. 成功的命令完成通知 OPM 状态机读取 （包含连接器的状态信息） 的有效负载，并通知 UCM 类型 C 的附加事件。
 

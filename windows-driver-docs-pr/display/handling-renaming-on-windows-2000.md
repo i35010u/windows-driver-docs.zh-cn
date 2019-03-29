@@ -1,20 +1,20 @@
 ---
-title: 处理在 Windows 2000 上重命名
-description: 处理在 Windows 2000 上重命名
+title: 在 Windows 2000 上处理重命名
+description: 在 Windows 2000 上处理重命名
 ms.assetid: d8f533f8-3037-47c0-986b-bd283bb3804d
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，请在 Windows 2000 上重命名的顶点缓冲区
 - 顶点缓冲区 WDK DirectX 8.0，Windows 2000 上重命名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a856a2f526a4c66c667b50d56ebeb9f245b16ea5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f6395e2ecd2df7d8f82efc80e4562d6c536062f0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524004"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348664"
 ---
-# <a name="handling-renaming-on-windows-2000"></a>处理在 Windows 2000 上重命名
+# <a name="handling-renaming-on-windows-2000"></a>在 Windows 2000 上处理重命名
 
 
 ## <span id="ddk_handling_renaming_on_windows_2000_gg"></span><span id="DDK_HANDLING_RENAMING_ON_WINDOWS_2000_GG"></span>
@@ -42,7 +42,7 @@ fpVidMem = pMap->pvVirtAddr +
 下面的代码段演示如何计算的新**fpVidMem** AGP 面的锁调用中。
 
 ```cpp
-// Get the vertex buffer&#39;s surface local and global from the
+// Get the vertex buffer's surface local and global from the
 // lock data
 LPDDRAWI_DDRAWSURFACE_LCL*pLcl = pLockData->lpDDSurface;
 LPDDRAWI_DDRAWSURFACE_GBL*pGbl = pLcl->lpGbl;

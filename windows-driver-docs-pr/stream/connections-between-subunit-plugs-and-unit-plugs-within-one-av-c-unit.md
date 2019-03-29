@@ -8,12 +8,12 @@ keywords:
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63bd1a5309063d7c144c34cbd66b79bae51f4939
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 33da5a4d4cdc15be31aae2c7eb21593a941e8003
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546757"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348962"
 ---
 # <a name="connections-between-subunit-plugs-and-unit-plugs-within-one-avc-unit"></a>子单元插入和一个 AV/C 单位内的单元插入之间的连接
 
@@ -49,10 +49,10 @@ ms.locfileid: "56546757"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>不使用，因为源单元&#39;s 设备标识符是包含子单元的单元</p></td>
+<td><p>不使用，因为源设备的设备标识符是单元，其中包含子单元</p></td>
 <td><p>0xFF （包含的单元的子单元）</p></td>
 <td><p>iPlug （0x0 到 0x1E 或 0x7F）</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ ms.locfileid: "56546757"
 <td><p>不使用，因为这种情况下不涉及另一个单元</p></td>
 <td><p>子单元地址</p></td>
 <td><p>目标即插即用 (0x0 0x1E)</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 </tbody>
 </table>
@@ -115,10 +115,10 @@ ms.locfileid: "56546757"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>不使用，因为源单元&#39;s 设备标识符是包含子单元的单元</p></td>
+<td><p>不使用，因为源设备的设备标识符是单元，其中包含子单元</p></td>
 <td><p>子单元地址</p></td>
 <td><p>源即插即用 (0x0 0x1E)</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 </tbody>
 </table>
@@ -147,7 +147,7 @@ ms.locfileid: "56546757"
 <td><p>不使用，因为这种情况下不涉及另一个单元</p></td>
 <td><p>0xFF （包含子单元的单元）</p></td>
 <td><p>oPCR （0x0 到 0x1E 或 0x7F）</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 </tbody>
 </table>

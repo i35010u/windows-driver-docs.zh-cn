@@ -1,6 +1,6 @@
 ---
-title: Stream 指针和 IRP 取消
-description: Stream 指针和 IRP 取消
+title: 流指针和 IRP 取消
+description: 流指针和 IRP 取消
 ms.assetid: ce392496-ca07-497d-af8a-709239a7bd5e
 keywords:
 - 流指针 WDK AVStream，IRP 取消
@@ -9,14 +9,14 @@ keywords:
 - 锁定的流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 543f5592862d6da78d91307ca43143a8c1c4a4f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 97ca672a62a0ddaeb798ea3237881f4fe3d9244f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542464"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349706"
 ---
-# <a name="stream-pointers-and-irp-cancellation"></a>Stream 指针和 IRP 取消
+# <a name="stream-pointers-and-irp-cancellation"></a>流指针和 IRP 取消
 
 
 
@@ -47,7 +47,7 @@ ms.locfileid: "56542464"
 </tr>
 <tr class="even">
 <td><p>无限期时间长度的访问权限，但可以放弃取消回调的上下文中的声明</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff567129" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567129)"> <strong>KsStreamPointerClone</strong> </a>若要克隆的锁定的流指针 （通常前导边缘），解锁，并响应<em>CancelCallback</em>。 回调发生与队列&#39;s 数值调节钮持有锁，因此在 DISPATCH_LEVEL。 相应地，供应商提供<em>CancelCallback</em>例程无法执行获取互斥体的队列操作或调用函数。 相反，在回调例程中，微型驱动程序验证关联的数据将更高版本，访问，然后调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff567130" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567130)"> <strong>KsStreamPointerDelete</strong></a>。</p></td>
+<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff567129" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567129)"> <strong>KsStreamPointerClone</strong> </a>若要克隆的锁定的流指针 （通常前导边缘），解锁，并响应<em>CancelCallback</em>。 使用队列的数值调节钮持有锁，因此在 DISPATCH_LEVEL 时出现回调。 相应地，供应商提供<em>CancelCallback</em>例程无法执行获取互斥体的队列操作或调用函数。 相反，在回调例程中，微型驱动程序验证关联的数据将更高版本，访问，然后调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff567130" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567130)"> <strong>KsStreamPointerDelete</strong></a>。</p></td>
 <td><p>可以会更难实现，但通常会提供高效的访问和快速响应取消操作之间的最佳平衡。</p></td>
 </tr>
 <tr class="odd">

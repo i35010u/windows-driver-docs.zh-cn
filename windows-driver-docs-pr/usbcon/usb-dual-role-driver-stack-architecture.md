@@ -1,14 +1,14 @@
 ---
-Description: USB Dual Role controllers are now supported in Windows, starting with Windows 10.
+Description: 在 Windows 中，从 Windows 10 开始中现在支持 USB 双角色控制器。
 title: USB 双角色驱动程序堆栈体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c90f96a756d3003711c08f3320a1e076990939
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 505f71a6bf3b1ad66aeb377cae63a9ab4ecd9adc
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545925"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348940"
 ---
 # <a name="usb-dual-role-driver-stack-architecture"></a>USB 双角色驱动程序堆栈体系结构
 
@@ -71,7 +71,7 @@ USB 双角色功能可以系统不是 USB*设备*或 USB*主机*。 可以位于
 
 
 
-| USB 函数类驱动程序                 | Windows 10 移动版 | Windows 10 桌面版 | 注释                                                                                                                                  |
+| USB 函数类驱动程序                 | Windows 10 移动版 | Windows 10 桌面版 | 说明                                                                                                                                  |
 |--------------------------------------------|-------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | 媒体传输协议 （MTP 响应方）    | 是               | 否                              | 没有在桌面上 MTP 响应程序方案。 P2P 桌面系统之间的情况下已启用通过 Easy MigCable WinUSB 转移。 |
 | Out (vidstream) 的视频显示              | 是               | 否                              |                                                                                                                                        |
@@ -141,7 +141,7 @@ URS 驱动程序旨在为使用可以在主机和外围角色在单个端口上�
 
 ```Text
 //
-// You may name the device whatever you want; we don&#39;t depend on it being called &#39;URS0&#39;.
+// You may name the device whatever you want; we don't depend on it being called 'URS0'.
 //
 Device(URS0)
 {
@@ -179,12 +179,12 @@ Device(URS0)
     //
     // This child device represents the USB host controller. This device node is in effect
     // when the controller is in host mode.
-    // You may name the device whatever you want; we don&#39;t depend on it being called &#39;USB0&#39;.
+    // You may name the device whatever you want; we don't depend on it being called 'USB0'.
     //
     Device(USB0)
     {
         //
-        // The host controller device node needs to have an address of &#39;0&#39;
+        // The host controller device node needs to have an address of '0'
         //
         Name(_ADR, 0)
         Name(_CRS, ResourceTemplate() {
@@ -199,12 +199,12 @@ Device(URS0)
     //
     // This child device represents the USB function controller. This device node is in effect
     // when the controller is in device/function/peripheral mode.
-    // You may name the device whatever you want; we don&#39;t depend on it being called &#39;UFN0&#39;.
+    // You may name the device whatever you want; we don't depend on it being called 'UFN0'.
     //
     Device(UFN0)
     {
         //
-        // The function controller device node needs to have an address of &#39;1&#39;
+        // The function controller device node needs to have an address of '1'
         //
         Name(_ADR, 1)
         Name(_CRS, ResourceTemplate() {
@@ -261,7 +261,7 @@ URS 驱动程序将硬件 Id 分配给主机和函数堆栈。 这些硬件 Id �
   IHV/OEM 提供的驱动程序包需要 / 包括收件箱*Ufxsynopsys.inf*和外围设备硬件 ID 是必需的匹配项。 硬件 ID 匹配项将基于在上一部分中所述的方案。
 
   IHV/OEM 还可以在驱动程序包中包含的筛选器驱动程序。
-  ## <a name="see-also"></a>另请参阅
+  ## <a name="see-also"></a>请参阅
 
 [双角色控制器驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#dual-role-controller-driver-reference)
 

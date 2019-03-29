@@ -9,12 +9,12 @@ keywords:
 - 错误 WDK 后台处理程序通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a399cfaab9c784039d247ce98b1135d1ca9e195
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 01e19431dbecdea7e366840bbaa8e7951b19c487
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523023"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348772"
 ---
 # <a name="notification-errors"></a>通知错误
 
@@ -35,9 +35,9 @@ ms.locfileid: "56523023"
 <thead>
 <tr class="header">
 <th>错误代码</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>通信类型</th>
-<th>适用于</th>
+<th>适用对象</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -181,7 +181,7 @@ ms.locfileid: "56523023"
 <td><p>0x14</p></td>
 <td><p>双向和单向</p></td>
 <td><p>发件人</p></td>
-<td><p><strong>SendNotification</strong>则返回此值时通知&#39;s 类型是不同于通道&#39;的类型。</p></td>
+<td><p><strong>SendNotification</strong>通知的类型不同于通道的类型时返回此值。</p></td>
 </tr>
 <tr class="odd">
 <td><p>MAX_REGISTRATION_COUNT_EXCEEDED</p></td>

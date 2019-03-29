@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c07709466762f40a080875bdd371f16f4136f432
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 25ae30272396b1a31b699e730dfcb0e3017adc85
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525728"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464103"
 ---
 # <a name="devpkeydeviceclassclasscoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
@@ -42,7 +42,7 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>数据格式</strong></p></td>
-<td align="left"><p>&quot;<em>coinstaller1.dll</em>,<em>coinstaller1-entry-point</em>\0…<em>coinstallerN.dll</em>,<em>coinstallerN-entry-point</em>\0\0&quot;</p></td>
+<td align="left"><p>"<em>coinstaller1.dll</em>,<em>coinstaller1-entry-point</em>\0…<em>coinstallerN.dll</em>,<em>coinstallerN-entry-point</em>\0\0"</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>属性访问</strong></p></td>
@@ -86,13 +86,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)

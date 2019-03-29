@@ -4,12 +4,12 @@ description: 所有功能的选项属性
 ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3571a8e8eba34f9231a5538a1d86ce535effd9bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ca8ce8bb8392726042b2727072d6e8d7ab2e9526
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534159"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349204"
 ---
 # <a name="option-attributes-for-all-features"></a>所有功能的选项属性
 
@@ -65,12 +65,12 @@ ms.locfileid: "56534159"
 </tr>
 <tr class="even">
 <td><p></em><strong>名称</strong></p></td>
-<td><p>文本字符串作为选项使用&#39;s 打印机上的显示名称&#39;s 属性表。</p></td>
+<td><p>用作在打印机的属性表上的选项的显示名称的文本字符串。</p></td>
 <td><p>可选。 如果未指定，则<em> <strong>rcNameID</strong>必须指定。 (还<a href="feature-attributes.md" data-raw-source="[feature attribute](feature-attributes.md)">功能特性</a>。)</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>OptionID</strong></p></td>
-<td><p>数字值，该值表示 Unidrv 将存储在打印机中的唯一选项标识符&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。 仅与 PaperSize、 InputSlot、 半色调和媒体类型功能一起使用。 DEVMODE 结构中存储值&#39;s <strong>dmPaperSize</strong>， <strong>dmDefaultSource</strong>， <strong>dmDitherType</strong>，或<strong>dmMediaType</strong>成员，分别。</p></td>
+<td><p>数字值，该值表示 Unidrv 将存储在打印机的独特选项标识符<a href="https://msdn.microsoft.com/library/windows/hardware/ff552837" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff552837)"> <strong>DEVMODEW</strong> </a>结构。 仅与 PaperSize、 InputSlot、 半色调和媒体类型功能一起使用。 DEVMODE 结构中存储值<strong>dmPaperSize</strong>， <strong>dmDefaultSource</strong>， <strong>dmDitherType</strong>，或者<strong>dmMediaType</strong>成员，分别。</p></td>
 <td><p>可选。 如果未指定，Unidrv 分配一个标识符的值 (&gt;256)。 若要避免冲突 Unidrv 分配标识符，指定的值必须大于 512。</p></td>
 </tr>
 <tr class="even">

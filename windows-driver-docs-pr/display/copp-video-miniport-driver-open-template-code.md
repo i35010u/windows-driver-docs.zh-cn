@@ -1,19 +1,19 @@
 ---
-title: COPP 视频微型端口驱动程序打开模板代码
-description: COPP 视频微型端口驱动程序打开模板代码
+title: COPP 视频微型端口驱动程序开放模板代码
+description: COPP 视频微型端口驱动程序开放模板代码
 ms.assetid: 41facdef-c5f7-42f1-a251-07e4685649de
 keywords:
 - 打开 COPP DirectX VA 设备对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b69898c84de240a53df5d241a90baacb4d25564
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0b2dc452c4c889dd13c0e48f7e7aaa0ebed0abfa
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523590"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350366"
 ---
-# <a name="copp-video-miniport-driver-open-template-code"></a>COPP 视频微型端口驱动程序打开模板代码
+# <a name="copp-video-miniport-driver-open-template-code"></a>COPP 视频微型端口驱动程序开放模板代码
 
 
 ## <span id="ddk_copp_video_miniport_driver_open_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_OPEN_TEMPLATE_CODE_GG"></span>
@@ -35,7 +35,7 @@ IoctlCOPPOpenDevice(
     COPP_DeviceData* pThis = VideoPortAllocatePool(pHwDeviceExtension,
                                               VpPagedPool,
                                               sizeof(COPP_DeviceData),
-                                              &#39;PPOC&#39;);
+                                              'PPOC');
     *pInBuff->ppThis = NULL;
     if (pThis == NULL) {
         *pInBuff->phr = ERROR_NOT_ENOUGH_MEMORY;

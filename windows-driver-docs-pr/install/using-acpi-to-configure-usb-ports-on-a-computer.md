@@ -1,17 +1,17 @@
 ---
-title: 使用 ACPI 的计算机上配置 USB 端口
-description: 使用 ACPI 的计算机上配置 USB 端口
+title: 使用 ACPI 配置计算机上的 USB 端口
+description: 使用 ACPI 配置计算机上的 USB 端口
 ms.assetid: 999f9fef-512c-415a-abc6-d64560c5c2f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 871efd4509c3e207e4099292131175e419c27537
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a1eaaee115eb76b3652dd335ecff7d56145bdbeb
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545799"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349302"
 ---
-# <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>使用 ACPI 的计算机上配置 USB 端口
+# <a name="using-acpi-to-configure-usb-ports-on-a-computer"></a>使用 ACPI 配置计算机上的 USB 端口
 
 
 如果系统需要 ACPI BIOS 更改，以准确地反映 USB 端口配置，则应考虑用户的功能配置端口时，将设备连接到的端口。
@@ -93,7 +93,7 @@ ms.locfileid: "56545799"
     ```cpp
     Name(_UPC, Package(){
         0xFF,         // Port is connectable
-        0x00,         // Connector type, Type &#39;A&#39; in this case
+        0x00,         // Connector type, Type 'A' in this case
         0x00000000,   // Reserved 0, must be zero
         0x00000000})  // Reserved 1, must be zero
 

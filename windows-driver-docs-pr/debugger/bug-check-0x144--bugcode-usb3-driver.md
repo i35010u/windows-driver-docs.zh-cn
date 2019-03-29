@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6f7fd5c66c5a0b02bea1e8b1b3355e544f6c5f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e6a112fc1e2f55a8c2b051be97cfcec53e06e859
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533717"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348954"
 ---
-# <a name="bug-check-0x144-bugcodeusb3driver"></a>Bug 检查 0x144:BUGCODE\_USB3\_DRIVER
+# <a name="bug-check-0x144-bugcodeusb3driver"></a>Bug 检查 0x144：BUGCODE\_USB3\_DRIVER
 
 
 **BUGCODE\_USB3\_驱动程序**bug 检查的值为 0x00000144。 这是所使用的所有 USB 3 bug 检查代码。 参数 1 指定 USB 3 检查错误，类型和其他参数的含义都依赖于参数 1。
@@ -52,7 +52,7 @@ ms.locfileid: "56533717"
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>可选。 指向用于重新发送 URB IRP</p></td>
 <td align="left"><p>指向 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序使用它以前发送到 core 堆栈 URB。</p></td>
 </tr>
 <tr class="even">
@@ -66,35 +66,35 @@ ms.locfileid: "56533717"
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>可选。 指向用于发送 URB IRP</p></td>
 <td align="left"><p>指向已损坏 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序发送到 core 堆栈损坏的 URB。 因为客户端驱动程序没有分配 URB 使用发生这种情况<strong>USBD_<em>xxx</em>UrbAllocate</strong>或因为客户端驱动程序缓冲区不足 URB。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x800</p></td>
 <td align="left"><p>打开的静态流请求已发送的 IRQL</p></td>
 <td align="left"><p>指向打开的静态流 IRP</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>打开的静态流请求已发送在 IRQL&gt;被动级别。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x801</p></td>
 <td align="left"><p>指向打开的静态流 IRP</p></td>
 <td align="left"><p>指向打开的静态流 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序尝试打开的流功能在查询之前静态流。 客户端驱动程序不能打开直到静态流后它已成功查询流功能。 有关详细信息，请参阅备注。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x802</p></td>
 <td align="left"><p>静态客户端驱动程序尝试打开的流数</p></td>
 <td align="left"><p>已向客户端驱动程序授予的静态流数</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序尝试打开的静态流数无效。 流的数量不能为 0，不能大于为 USB 功能调用的查询中的客户端驱动程序返回的值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x803</p></td>
 <td align="left"><p>指向打开的静态流 IRP</p></td>
 <td align="left"><p>指向打开的静态流 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序尝试打开已打开的静态流的终结点的静态流。 在打开之前静态流，客户端驱动程序必须关闭以前打开的静态流。</p></td>
 </tr>
 <tr class="even">
@@ -108,21 +108,21 @@ ms.locfileid: "56533717"
 <td align="left"><p>0x805</p></td>
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff542962" data-raw-source="[WDFREQUEST](https://msdn.microsoft.com/library/windows/hardware/ff542962)">WDFREQUEST</a>句柄关闭静态流 URB</p></td>
 <td align="left"><p>指向关闭静态流 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序 （例如，在处理之后 D0 退出） 关闭的静态流 URB 发送处于无效状态。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x806</p></td>
 <td align="left"><p>指向 IRP</p></td>
 <td align="left"><p>指向 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象</p></td>
+<td align="left"><p>客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序试图发送连锁<strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>查询链接在一起的之前<strong>MDL</strong>功能。 客户端驱动程序无法发送其链式<strong>MDL</strong>直到之后它已成功查询的连锁<strong>MDL</strong>功能。 有关详细信息，请参阅备注。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x807</p></td>
 <td align="left"><p>指向连锁 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong></p></td>
 <td align="left"><p>指向 URB</p></td>
-<td align="left"><p>指向客户端驱动程序&#39;s 设备对象，如果可用</p></td>
+<td align="left"><p>如果可用的客户端驱动程序的设备对象指针</p></td>
 <td align="left"><p>客户端驱动程序发送 URB core 堆栈使用传输到缓冲区长度超过字节数 (由 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554530" data-raw-source="[MmGetMdlByteCount](https://msdn.microsoft.com/library/windows/hardware/ff554530)">MmGetMdlByteCount</a></strong>) 的 <strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff554414" data-raw-source="[MDL](https://msdn.microsoft.com/library/windows/hardware/ff554414)">MDL</a></strong>中传递。 有关详细信息，请参阅备注。</p></td>
 </tr>
 <tr class="even">
@@ -333,7 +333,7 @@ ms.locfileid: "56533717"
 <td align="left"><p>XHCI_LIVEDUMP_CONTEXT</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>在控制器指示未挂起的传输完成在控制器上。 EventData = = 1 (取消引用传输事件 TRB&#39;s 指针可能会造成错误检查)</p></td>
+<td align="left"><p>在控制器指示未挂起的传输完成在控制器上。 EventData = = 1 （取消引用传输事件 TRB 的指针将导致错误检查）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x101F</p></td>

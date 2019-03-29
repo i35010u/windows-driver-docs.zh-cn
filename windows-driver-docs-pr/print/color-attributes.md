@@ -7,12 +7,12 @@ keywords:
 - 常规打印机属性 WDK Unidrv，颜色
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0087b12739e1b328981eb05bb45b411a4b227155
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a684f9b77abcac72a79a5c326f7cd6250abe15c7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524418"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350420"
 ---
 # <a name="color-attributes"></a>颜色属性
 
@@ -40,7 +40,7 @@ ms.locfileid: "56524418"
 <tbody>
 <tr class="odd">
 <td><p><strong><em>ChangeColorModeOnDoc?</strong></p></td>
-<td><p><strong>TRUE</strong>或<strong>FALSE</strong>。 指示打印机是否&#39;s 颜色模式可以更改之间不会产生副作用文档中的页。</p></td>
+<td><p><strong>TRUE</strong>或<strong>FALSE</strong>。 指示是否可以不会产生副作用的文档的各个页面间更改打印机的颜色模式。</p></td>
 <td><p>可选。 如果未指定，默认值是<strong>，则返回 TRUE</strong>。 Unidrv 使用此值来优化打印速度。 其他信息，请参阅此表后面的说明。</p></td>
 </tr>
 <tr class="even">

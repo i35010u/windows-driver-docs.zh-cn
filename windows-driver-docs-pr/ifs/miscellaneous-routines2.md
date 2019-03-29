@@ -7,12 +7,12 @@ keywords:
 - 重定向驱动器缓冲子系统 WDK 的文件系统，其他例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab8c00e8d7fb3fe4791121959d6a764277abece
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1fd2eb0d92e75bcd6259ae0a9b979204b3518a2b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520851"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464289"
 ---
 # <a name="miscellaneous-routines"></a>杂项例程
 
@@ -55,7 +55,7 @@ RDBSS 杂项例程包括：
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554532" data-raw-source="[&lt;strong&gt;RxMakeLateDeviceAvailable&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554532)"><strong>RxMakeLateDeviceAvailable</strong></a></p></td>
-<td align="left"><p>此例程修改设备对象，从而使&quot;后期设备&quot;可用。 后期设备是指不在驱动程序中创建&#39;s 负载例程。</p></td>
+<td align="left"><p>此例程修改设备对象，从而使"后期设备"可用。 后期设备是指不在驱动程序的负载例程中创建。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554649" data-raw-source="[&lt;strong&gt;RxPrepareToReparseSymbolicLink&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554649)"><strong>RxPrepareToReparseSymbolicLink</strong></a></p></td>

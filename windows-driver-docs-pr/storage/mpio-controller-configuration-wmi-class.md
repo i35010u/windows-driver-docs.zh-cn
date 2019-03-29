@@ -4,12 +4,12 @@ description: MPIO\_控制器\_配置 WMI 类
 ms.assetid: c11429d6-b016-464e-a7b4-03b6cdc8ddb7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c34a61ecffd473e43ad02ddd98a048054e5c75f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7bdec1e2404d168c8bce660c4808e271ed744d19
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534366"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350290"
 ---
 # <a name="mpiocontrollerconfiguration-wmi-class"></a>MPIO\_控制器\_配置 WMI 类
 
@@ -33,7 +33,7 @@ class MPIO_CONTROLLER_CONFIGURATION
     ] uint32 NumberControllers;
 
     //
-    // Array of each controller&#39;s information.
+    // Array of each controller's information.
     // Note that these are ULONGLONG aligned.
     //
     [WmiDataId(2),

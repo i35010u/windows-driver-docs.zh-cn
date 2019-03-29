@@ -4,19 +4,19 @@ description: 使用这些规则来验证您的驱动程序正确处理 SRB 请�
 ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1057403634f3b5b1cb25dcce7b62a53db87de6eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f9c895ca011b7c42cacaa232aa74867a1af618c5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523431"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349110"
 ---
 # <a name="srbprocessing-rule-set-storport"></a>SrbProcessing 规则集 (Storport)
 
 
 使用这些规则来验证您的驱动程序正确处理 SRB 请求。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -41,7 +41,7 @@ ms.locfileid: "56523431"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-spreturnvalue.md" data-raw-source="[&lt;strong&gt;SpReturnValue&lt;/strong&gt;](storport-spreturnvalue.md)"><strong>SpReturnValue</strong></a></p></td>
-<td align="left"><p>此规则验证该驱动程序&#39;的 s 实现<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff568008" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568008)"> <strong>VirtualHwStorFindAdapter</strong> </a>返回有效状态。 有效状态是以下值之一：<strong>SP_RETURN_FOUND</strong>， <strong>SP_RETURN_ERROR</strong>， <strong>SP_RETURN_BAD_CONFIG</strong>，或<strong>SP_RETURN_NOT_FOUND</strong>。</p></td>
+<td align="left"><p>此规则验证的驱动程序的实现<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff568008" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568008)"> <strong>VirtualHwStorFindAdapter</strong> </a>返回有效状态。 有效状态是以下值之一：<strong>SP_RETURN_FOUND</strong>， <strong>SP_RETURN_ERROR</strong>， <strong>SP_RETURN_BAD_CONFIG</strong>，或<strong>SP_RETURN_NOT_FOUND</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storportallocatepool.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](storportallocatepool.md)"><strong>StorPortAllocatePool</strong></a></p></td>
@@ -53,7 +53,7 @@ ms.locfileid: "56523431"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a></p></td>
-<td align="left"><p>此规则验证，如果 StorPort 微型端口&#39;s <a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"> <strong>StorPortBuildIo</strong> </a>例程返回<strong>FALSE</strong>，相关 SRB 未传递给<strong>StartIo</strong>。 (在这种情况下，微型端口驱动程序必须通过调用完成 SRB <a href="https://msdn.microsoft.com/library/windows/hardware/ff567433" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567433)"> <strong>StorPortNotification</strong> </a>通知类型为<strong>RequestComplete</strong>从<strong>StorPortBuildIo</strong>或其他某个)。</p></td>
+<td align="left"><p>此规则验证，如果 StorPort 微型端口<a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"> <strong>StorPortBuildIo</strong> </a>例程返回<strong>FALSE</strong>，相关 SRB 未传递给<strong>StartIo</strong>. (在这种情况下，微型端口驱动程序必须通过调用完成 SRB <a href="https://msdn.microsoft.com/library/windows/hardware/ff567433" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567433)"> <strong>StorPortNotification</strong> </a>通知类型为<strong>RequestComplete</strong>从<strong>StorPortBuildIo</strong>或其他某个)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportcompleterequest.md" data-raw-source="[&lt;strong&gt;StorPortCompleteRequest&lt;/strong&gt;](storport-storportcompleterequest.md)"><strong>StorPortCompleteRequest</strong></a></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "56523431"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportstartio.md" data-raw-source="[&lt;strong&gt;StorPortStartIo&lt;/strong&gt;](storport-storportstartio.md)"><strong>StorPortStartIo</strong></a></p></td>
-<td align="left"><p>等待或数据分配必须永远不会执行中的微型端口&#39;s <strong>StartIo</strong>例程。 该驱动程序失败规则，如果它调用<strong>StorPortStallExecution</strong>或涉及耗时的操作的另一个函数。 由于<strong>StartIo</strong>是同步的这些调用通常应该以<strong>BuildIo</strong>。</p></td>
+<td align="left"><p>中的微型端口必须永远不会执行等待或数据分配<strong>StartIo</strong>例程。 该驱动程序失败规则，如果它调用<strong>StorPortStallExecution</strong>或涉及耗时的操作的另一个函数。 由于<strong>StartIo</strong>是同步的这些调用通常应该以<strong>BuildIo</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storporttimer.md" data-raw-source="[&lt;strong&gt;StorPortTimer&lt;/strong&gt;](storport-storporttimer.md)"><strong>StorPortTimer</strong></a></p></td>

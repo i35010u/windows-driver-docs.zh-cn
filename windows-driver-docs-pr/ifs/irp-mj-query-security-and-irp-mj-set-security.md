@@ -14,12 +14,12 @@ keywords:
 - 查询的安全描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7280f1d5c61f25f5088759481f5f48536f21b086
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f97cf8905c6699ceaaad773ee83d78f28c934b88
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520378"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350392"
 ---
 # <a name="irpmjquerysecurity-and-irpmjsetsecurity"></a>IRP\_MJ\_查询\_安全性和 IRP\_MJ\_设置\_安全
 
@@ -134,7 +134,7 @@ NTSTATUS FsdCommonSetSecurity(PIRP_CONTEXT IrpContext)
     // SeSetSecurityDescriptorInfo so we can track our memory usage
     //
     newSD = ExAllocatePoolWithTag(PagedPool, 
-        Fcb->SecurityDescriptorLength, &#39;DSyM&#39;);
+        Fcb->SecurityDescriptorLength, 'DSyM');
 
     if (!newSD) {
  
@@ -163,7 +163,7 @@ NTSTATUS FsdCommonSetSecurity(PIRP_CONTEXT IrpContext)
 
     if (!NT_SUCCESS(status)) {
       //
-      // great- modified the in-core SD but couldn&#39;t get it out
+      // great- modified the in-core SD but couldn't get it out
       // to disk. undo everything. 
       //
       ExFreePool(newSD);

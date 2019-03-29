@@ -1,16 +1,16 @@
 ---
-Description: Use the Windows Runtime APIs, introduced in Windows 8.1, to write UWP apps that gives users access to their peripheral USB device.
-title: 与 USB 设备通信，启动以完成 （UWP 应用）
+Description: 在 Windows 8.1 中引入的 Windows 运行时 Api 用于编写允许用户访问其外围的 USB 设备的 UWP 应用。
+title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fb258a310851002a0b4c72e8d3455aa533383a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524741"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464351"
 ---
-# <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，启动以完成 （UWP 应用）
+# <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
 
 **摘要**
@@ -30,7 +30,7 @@ ms.locfileid: "56524741"
 
 按照本部分中的步骤，或直接跳到[自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)。 随附示例实现所有此处的步骤，但若要保持我们不会向通过代码。 某些步骤会随之**在此示例中找到该**部分来帮助你快速找到的代码。 示例的源代码文件的结构是简单和平面，因此您可以轻松地找到代码，而无需向下钻取的源代码文件的多个层。 但您可能更倾向于进行分解和组织您自己的项目，以不同的方式。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [**步骤 1**— 功能为你的设备驱动程序，安装由 Microsoft 提供 WinUSB 驱动程序。](#step1)
@@ -87,7 +87,7 @@ ms.locfileid: "56524741"
 <td><p>您可以从设备制造商获取该信息。</p>
 <ul>
 <li><p><strong>供应商和产品标识符</strong></p>
-<p>在设备管理器中，查看设备属性。 上<strong>详细信息</strong>选项卡上，查看<strong>硬件 Id</strong>属性值。 该值是这些两个标识符的组合。 例如，对于 SuperMUTT 设备<strong>硬件 Id</strong>是&quot;USB\VID_045E&amp;PID_F001&quot;; 供应商 ID 是&quot;0x045E&quot;和产品 ID 是&quot;0xF001&quot;。</p></li>
+<p>在设备管理器中，查看设备属性。 上<strong>详细信息</strong>选项卡上，查看<strong>硬件 Id</strong>属性值。 该值是这些两个标识符的组合。 例如，对于 SuperMUTT 设备<strong>硬件 Id</strong>是"USB\VID_045E&amp;PID_F001"; 供应商 ID 为"0x045E"，产品 ID 为"0xF001"。</p></li>
 <li><strong>设备类、 子类和协议代码</strong></li>
 <li><strong>设备接口的 GUID</strong></li>
 </ul>
@@ -118,7 +118,7 @@ ms.locfileid: "56524741"
 <td><a href="" id="step5"></a>
 <p><strong>步骤 5</strong>— 添加 USB 设备功能到应用程序清单。</p></td>
 <td><p><strong>快速入门：</strong><a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">如何将 USB 设备功能添加到应用程序清单</a></p>
-<p>在文本编辑器中打开 Package.appxmanifest 文件并添加<a href="https://msdn.microsoft.com/library/windows/apps/br211430" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br211430)"> <strong>DeviceCapability</strong> </a>具有元素<strong>名称</strong>属性设置为&quot;usb&quot;作为此示例中所示。</p>
+<p>在文本编辑器中打开 Package.appxmanifest 文件并添加<a href="https://msdn.microsoft.com/library/windows/apps/br211430" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/br211430)"> <strong>DeviceCapability</strong> </a>具有元素<strong>名称</strong>属性设置为"usb"中，在此示例中所示。</p>
 <div class="alert">
 <strong>请注意</strong>  不能修改 Visual Studio 2013 中的 USB 设备功能。 您必须右键单击 Package.appxmanifest 文件中的<strong>解决方案资源管理器</strong>，然后选择<strong>打开方式...</strong>，然后<strong>XML （文本） 编辑器</strong>。 在纯 XML 中打开该文件。
 </div>
@@ -126,14 +126,14 @@ ms.locfileid: "56524741"
  
 </div>
 <pre class="syntax" space="preserve"><code>&lt;Capabilities&gt;
-      &lt;!--When the device&#39;s classId is FF * *, there is a predefined name for the class. 
+      &lt;!--When the device's classId is FF * *, there is a predefined name for the class. 
           You can use the name instead of the class id. 
           There are also other predefined names that correspond to a classId.--&gt;
-      &lt;m2:DeviceCapability Name=&quot;usb&quot;&gt;
+      &lt;m2:DeviceCapability Name="usb"&gt;
           &lt;!--SuperMutt Device--&gt;
-          &lt;m2:Device Id=&quot;vidpid:045E 0611&quot;&gt;
-              &lt;!--&lt;wb:Function Type=&quot;classId:ff * *&quot;/&gt;--&gt;
-              &lt;m2:Function Type=&quot;name:vendorSpecific&quot;/&gt;
+          &lt;m2:Device Id="vidpid:045E 0611"&gt;
+              &lt;!--&lt;wb:Function Type="classId:ff * *"/&gt;--&gt;
+              &lt;m2:Function Type="name:vendorSpecific"/&gt;
           &lt;/m2:Device&gt;
       &lt;/m2:DeviceCapability&gt;
   &lt;/Capabilities&gt;</code></pre>
@@ -281,7 +281,7 @@ ms.locfileid: "56524741"
 <div>
  
 </div></li>
-<li>打开<strong>完成</strong>选项卡。选择<strong>将包复制到您的系统&#39;s 本地元数据存储区</strong>复选框。</li>
+<li>打开<strong>完成</strong>选项卡。选择<strong>将包复制到您的系统的本地元数据存储</strong>复选框。</li>
 <li>连接设备，在控件面板中，打开<strong>查看设备和打印机</strong>并验证设备的图标是否正确。</li>
 </ol>
 <p><strong>在此示例中找到它：</strong>请参阅 DeviceMetadata 文件夹。</p></td>
@@ -372,7 +372,7 @@ ms.locfileid: "56524741"
 <td><a href="" id="step17"></a>
 <p><strong>步骤 17</strong>— 运行 Windows 应用认证工具包。</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/apps/hh694081" data-raw-source="[Using the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/hh694081)">使用 Windows 应用认证工具包</a></p>
-<p>推荐。 运行 Windows 应用认证工具包可帮助你确保您的应用程序可满足 Microsoft Store 的要求，因此应时采用此操作，&#39;已添加到您的应用程序的主要功能。</p></td>
+<p>推荐。 运行 Windows 应用认证工具包，可帮助确保您的应用程序可满足 Microsoft Store 的要求，因此主要功能添加到您的应用程序时应执行此操作。</p></td>
 </tr>
 </tbody>
 </table>
@@ -397,7 +397,7 @@ ms.locfileid: "56524741"
 
 详细了解如何创建 UWP 应用使用 c + +， C#，或在常规中的 Visual Basic。
 
-[异步编程 （UWP 应用）](https://msdn.microsoft.com/library/windows/apps/hh464924)
+[异步编程（UWP 应用）](https://msdn.microsoft.com/library/windows/apps/hh464924)
 
 了解有关如何使的应用保持响应时在起作用，可能需要一段较的长的时间。
 

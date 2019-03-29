@@ -1,17 +1,17 @@
 ---
-title: 卸载功能的 Wi-fi 热点
-description: 卸载功能的 Wi-fi 热点
+title: Wi-Fi 热点卸载函数
+description: Wi-Fi 热点卸载函数
 ms.assetid: 114e1604-0d9a-418c-aee1-a9b615d13d21
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f82e7e8df683a33db6f0862a7e373482efeb1d45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7aed1acdaae9c12ad6e7f7138df44f8b30dbcdf
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524432"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464337"
 ---
-# <a name="wi-fi-hotspot-offloading-functions"></a>卸载功能的 Wi-fi 热点
+# <a name="wi-fi-hotspot-offloading-functions"></a>Wi-Fi 热点卸载函数
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
@@ -27,7 +27,7 @@ ms.locfileid: "56524432"
 </colgroup>
 <thead>
 <tr class="header">
-<th>名称</th>
+<th>“属性”</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -130,11 +130,11 @@ ms.locfileid: "56524432"
 </tr>
 <tr class="even">
 <td><p><a href="hs-host-send-keep-alive-completion.md" data-raw-source="[HS_HOST_SEND_KEEP_ALIVE_COMPLETION](hs-host-send-keep-alive-completion.md)">HS_HOST_SEND_KEEP_ALIVE_COMPLETION</a></p></td>
-<td><p>此函数指示成功或失败&quot;发送保持活动状态&quot;请求。</p></td>
+<td><p>此函数指示成功或失败的"发送保持活动状态"请求。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="hs-host-update-configuration-completion.md" data-raw-source="[HS_HOST_UPDATE_CONFIGURATION_COMPLETION](hs-host-update-configuration-completion.md)">HS_HOST_UPDATE_CONFIGURATION_COMPLETION</a></p></td>
-<td><p>此函数指示成功或失败&quot;检查是否有更新&quot;请求。</p></td>
+<td><p>此函数指示成功或失败的"检查更新"请求。</p></td>
 </tr>
 </tbody>
 </table>

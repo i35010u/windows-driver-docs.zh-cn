@@ -4,12 +4,12 @@ description: SoftwareInfo XML 架构定义
 ms.assetid: 7b09ffc6-0f69-4710-988b-4952823da72e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29959980ce2acf45bcb38450c3a904238b6c885a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fe68a2d10fd1fc68fb79a7c4e819471540cb028d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463894"
 ---
 # <a name="softwareinfo-xml-schema-definition"></a>SoftwareInfo XML 架构定义
 
@@ -90,7 +90,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/SoftwareInfo
 
   <xs:simpleType name="DistinguishedNameType">
     <xs:restriction base="tns:NonEmptyStringType">
-      <xs:pattern value="(CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+=&quot;&lt;&gt;#;])+|&quot;.*&quot;)(, ((CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+=&quot;&lt;&gt;#;])+|&quot;.*&quot;)))*"/>
+      <xs:pattern value="(CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+="&lt;&gt;#;])+|".*")(, ((CN|L|O|OU|E|C|S|STREET|T|G|I|SN|DC|SERIALNUMBER|(OID\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))+))=(([^,+="&lt;&gt;#;])+|".*")))*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -186,7 +186,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/SoftwareInfo
 
   <xs:simpleType name="AllowedUnicodeCharSetType">
     <xs:restriction base="tns:UnicodeNoPrivateUseOrNonCharacterCodePointsType">
-      <xs:pattern value="[^&quot;&&lt;&gt;\u0000-\u0020\u007F\u0080-\u009F\u00A0\u00AD\u0340-\u0341\u034F\u06DD\u070F\u1680\u1806\u180B-\u180E\u2000-\u200F\u2028-\u202F\u205F\u2060-\u2063\u206A-\u206F\u2FF0-\u2FFB\u3000\uD800-\uDFFF\uFEFF\p{IsVariationSelectors}]+"/>
+      <xs:pattern value="[^"&&lt;&gt;\u0000-\u0020\u007F\u0080-\u009F\u00A0\u00AD\u0340-\u0341\u034F\u06DD\u070F\u1680\u1806\u180B-\u180E\u2000-\u200F\u2028-\u202F\u205F\u2060-\u2063\u206A-\u206F\u2FF0-\u2FFB\u3000\uD800-\uDFFF\uFEFF\p{IsVariationSelectors}]+"/>
     </xs:restriction>
   </xs:simpleType>
 

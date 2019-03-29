@@ -1,29 +1,29 @@
 ---
-title: 添加 WPP 软件跟踪对 Windows 驱动程序
+title: 将 WPP 软件跟踪添加到 Windows 驱动程序
 description: 若要使用 WPP 软件跟踪在跟踪提供程序，如内核模式驱动程序或用户模式应用程序中，您需要添加代码 （或检测） 驱动程序源文件和修改驱动程序项目。 本部分将介绍这些步骤。
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 683bbe2b001494fd8c101d54337d2a061b089f0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0755dd805032549faaca00bfb4185fac858ffc5a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519601"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350128"
 ---
-# <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>添加 WPP 软件跟踪对 Windows 驱动程序
+# <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
 若要使用 WPP 软件跟踪在跟踪提供程序，如内核模式驱动程序或用户模式应用程序中，您需要添加代码 (或*检测*) 驱动程序源文件，并修改驱动程序项目。 本部分将介绍这些步骤。
 
 **提示**将 WPP 跟踪添加到您的驱动程序的最简单方法是在 Visual Studio 中使用 KMDF 或 UMDF 驱动程序模板之一。 如果使用的模板，是已为您完成大部分所需添加的代码。 在 Visual Studio 中，单击**文件&gt;新建&gt;项目**，然后选择 Windows 驱动程序 （用户模式或内核模式） WDF 项目。 包含项目的 Trace.h 标头文件中定义的 WPP 宏。 如果您使用的模板之一，可以跳到[步骤 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。 
 
 -   [步骤 1：定义控件的 GUID 和跟踪标志](#step-1-define-the-control-guid-and-trace-flags)
--   [步骤 2:选择你想要使用并定义这些函数的 WPP 宏的跟踪消息函数](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
--   [步骤 3:在 C 或 c + + 源文件中包含关联的跟踪头文件 （.h 和.tmh）](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
--   [步骤 4:将宏添加到要初始化和清理 WPP 的相应回调函数](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
+-   [步骤 2：选择你想要使用并定义这些函数的 WPP 宏的跟踪消息函数](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
+-   [步骤 3：在 C 或 c + + 源文件中包含关联的跟踪头文件 （.h 和.tmh）](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
+-   [步骤 4：将宏添加到要初始化和清理 WPP 的相应回调函数](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
 -   [步骤 5：检测驱动程序代码以生成在适当的位置的跟踪消息](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)
--   [步骤 6:修改 Visual Studio 项目，以运行预处理器 WPP 并生成解决方案](#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)
--   [步骤 7:启动跟踪会话，以便捕获并验证跟踪消息](#step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages)
+-   [步骤 6：修改 Visual Studio 项目，以运行预处理器 WPP 并生成解决方案](#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)
+-   [步骤 7：启动跟踪会话，以便捕获并验证跟踪消息](#step-7-start-a-trace-session-to-capture-and-verify-your-trace-messages)
 
 ## <a name="step-1-define-the-control-guid-and-trace-flags"></a>第 1 步：定义控件的 GUID 和跟踪标志
 
@@ -277,7 +277,7 @@ DriverEntry(
         // Cleanup tracing here because DriverContextCleanup will not be called
         // as we have failed to create WDFDRIVER object itself.
         // Please note that if you return failure from DriverEntry after the
-        // WDFDRIVER object is created successfully, you don&#39;t have to
+        // WDFDRIVER object is created successfully, you don't have to
         // call WPP cleanup because in those cases DriverContextCleanup
         // will be executed when the framework deletes the DriverObject.
         //

@@ -12,12 +12,12 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fe5ec63407ee9a780f4428896c4be0ce633e1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 55743724efa39befa3e190ff105f74ddb7915dee
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544504"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348960"
 ---
 # <a name="participating-in-error-source-discovery"></a>参与错误源发现
 
@@ -28,7 +28,7 @@ ms.locfileid: "56544504"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s GetAllErrorSources callback function
+// The PSHED plug-in's GetAllErrorSources callback function
 //
 NTSTATUS
   GetAllErrorSources(
@@ -77,7 +77,7 @@ NTSTATUS
 }
 
 //
-// The PSHED plug-in&#39;s GetErrorSourceInfo callback function
+// The PSHED plug-in's GetErrorSourceInfo callback function
 //
 NTSTATUS
   GetErrorSourceInfo(

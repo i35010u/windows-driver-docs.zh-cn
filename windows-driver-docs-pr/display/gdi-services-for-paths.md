@@ -10,12 +10,12 @@ keywords:
 - 填充路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da0f3232f2c3401676b6c401afd961f46a62942
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cb464f3a1b384e1aa6be90b0f7a1c45927b1f2d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520334"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349438"
 ---
 # <a name="gdi-services-for-paths"></a>路径的 GDI 服务
 
@@ -39,7 +39,7 @@ ms.locfileid: "56520334"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564755" data-raw-source="[&lt;strong&gt;EngCreatePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564755)"><strong>EngCreatePath</strong></a></p></td>
-<td align="left"><p>为驱动程序分配一个路径&#39;s 临时使用。 该驱动程序应从其当前的绘图调用返回到 GDI 之前删除此路径。</p></td>
+<td align="left"><p>驱动程序的临时用于分配一个路径。 该驱动程序应从其当前的绘图调用返回到 GDI 之前删除此路径。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564811" data-raw-source="[&lt;strong&gt;EngDeletePath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564811)"><strong>EngDeletePath</strong></a></p></td>

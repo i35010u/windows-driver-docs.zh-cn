@@ -4,14 +4,14 @@ description: 展台应用的分配访问权限的最佳做法
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 448d0031bad39aca6e6ae5e2d95bc15ee24d4502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3d6e3f27183154851e6d7d84cf78200c995f7a0a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526845"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350336"
 ---
-# <a name="kiosk-apps-for-assigned-access-best-practices"></a>展台应用的已分配的访问：最佳做法
+# <a name="kiosk-apps-for-assigned-access-best-practices"></a>涉及分配的访问权限的展台应用：最佳做法
 
 
 在 Windows 10 中，可以使用已分配的访问以展台设备，它可以使用户只需单个通用 Windows 应用程序与之交互。 本主题介绍如何实现展台应用和最佳实践。
@@ -44,7 +44,7 @@ ms.locfileid: "56526845"
 <tbody>
 <tr class="odd">
 <td><p><span id="assigned_access"></span><span id="ASSIGNED_ACCESS"></span>已分配的访问</p></td>
-<td><p>一种功能可以让系统管理员通过限制应用程序入口点公开给设备的用户来管理用户的体验。 例如，可以限制在你的业务客户对使用一个应用，因此您的 PC 的作用类似于作为网亭。 每当有人使用指定的帐户，登录时它们&#39;ll 仅能使用该应用。 他们赢得了&#39;将无法切换应用程序或关闭应用使用点触控笔势、 鼠标、 键盘或硬件按钮。 它们还结束-赢得&#39;t，请参阅任何应用内通知。</p></td>
+<td><p>一种功能可以让系统管理员通过限制应用程序入口点公开给设备的用户来管理用户的体验。 例如，可以限制在你的业务客户对使用一个应用，因此您的 PC 的作用类似于作为网亭。 每当有人使用指定的帐户登录，他们将只能使用一个应用。 他们将不能切换应用程序或关闭应用程序使用触摸手势、 鼠标、 键盘或硬件按钮。 它们还不会看到任何应用内通知。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="lock_screen_app__or_lock_app_"></span><span id="LOCK_SCREEN_APP__OR_LOCK_APP_"></span>锁定屏幕应用 （或锁定应用）</p></td>
@@ -298,15 +298,15 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 ## <a name="span-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>附录 2： 故障排除
 
 
-通常情况下，如果无法激活上面锁屏应用展台应用，你可以在锁定屏幕中找到激活错误代码。 使用错误代码来通过查找 Windows 发现问题[系统错误代码](https://msdn.microsoft.com/library/windows/desktop/ms681381)。 此外，事件查看器包含激活故障的详细信息。 执行此操作的步骤：
+通常情况下，如果无法激活上面锁屏应用展台应用，你可以在锁定屏幕中找到激活错误代码。 使用错误代码来通过查找 Windows 发现问题[系统错误代码](https://msdn.microsoft.com/library/windows/desktop/ms681381)。 此外，事件查看器包含激活故障的详细信息。 为此，请执行以下操作：
 
-1.  打开“事件查看器”。 有两个可能位置查找激活错误。
+1.  打开**事件查看器**。 有两个可能位置查找激活错误。
 2.  在中**事件查看器 （本地）** 窗格中，展开**Windows 日志**，然后单击**应用程序**。
 3.  此外，在**事件查看器 （本地）**，展开**应用程序和服务日志**，展开**Windows**，展开**应用**，然后单击**Microsoft-Windows-TWinUI/操作**。
 
 请注意，因为未在全屏幕模式下，运行已分配的访问与展台应用**ApplicationView.GetForCurrentView()。IsFullScreenMode**将返回 false。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [已分配的访问](https://msdn.microsoft.com/library/windows/hardware/mt620040)

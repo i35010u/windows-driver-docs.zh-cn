@@ -12,12 +12,12 @@ keywords:
 - 错误注入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da4bbb7d9f1317d28ca1b89fe4064bee1fb86d24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ba750aebcad32ffa450042a5189109aee3172c4a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524767"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348616"
 ---
 # <a name="participating-in-error-injection"></a>参与错误注入
 
@@ -32,7 +32,7 @@ ms.locfileid: "56524767"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s GetInjectionCapabilities callback function
+// The PSHED plug-in's GetInjectionCapabilities callback function
 //
 NTSTATUS
   GetInjectionCapabilities(
@@ -50,7 +50,7 @@ NTSTATUS
 }
 
 //
-// The PSHED plug-in&#39;s InjectError callback function
+// The PSHED plug-in's InjectError callback function
 //
 NTSTATUS
   InjectError(

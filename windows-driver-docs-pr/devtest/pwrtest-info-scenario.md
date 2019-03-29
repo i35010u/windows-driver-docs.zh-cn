@@ -4,12 +4,12 @@ description: PwrTest 信息方案捕获和记录从各种类别的当前系统�
 ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e68e02fbcd2b4e005618b98b7b893d7d05bf92cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533723"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349502"
 ---
 # <a name="pwrtest-info-scenario"></a>PwrTest 信息方案
 
@@ -248,11 +248,11 @@ pwrtest /info:all
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;DefaultAlert1&gt;</strong></td>
-<td align="left"><p>指示电池制造商&#39;s 电池电量不足警告应发生时建议的容量。</p></td>
+<td align="left"><p>指示电池制造商的建议的容量时应发生电池电量不足警告。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;DefaultAlert2&gt;</strong></td>
-<td align="left"><p>指示电池制造商&#39;s 警告电池警报应发生时建议的容量。</p></td>
+<td align="left"><p>指示电池制造商的建议的容量时应发生警告电池警报。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;PROCESSOR_POWER_INFORMATION&gt;</strong></td>
@@ -287,7 +287,7 @@ pwrtest /info:all
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

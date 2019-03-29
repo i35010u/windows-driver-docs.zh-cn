@@ -1,17 +1,17 @@
 ---
-title: WIA 设备 INF 文件
-description: WIA 设备 INF 文件
+title: WIA 设备的 INF 文件
+description: WIA 设备的 INF 文件
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 807c9a58687c6fb602f1f2eb45035c42c58b775a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463855"
 ---
-# <a name="inf-files-for-wia-devices"></a>WIA 设备 INF 文件
+# <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
 
 静止图像设备的默认类安装程序*sti\_ci.dll*，可以识别一组特殊的 INF 文件条目。 在 INF 文件中，这些项必须放置在设备的[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。 下表所述的条目。
@@ -49,7 +49,7 @@ ms.locfileid: "56521860"
 </tr>
 <tr class="even">
 <td><p><strong>连接</strong></p></td>
-<td><p>对于非即插连接到串行或并行端口设备，这可能是串行或并行，以限制用户&#39;s 选择的在安装过程中的端口。</p></td>
+<td><p>对于非即插连接到串行或并行端口设备，这可能是串行或并行在安装过程中限制用户选择的端口。</p></td>
 <td><p>可选</p>
 <p>如果未指定，则用户可以选择任何串行或并行端口。</p></td>
 </tr>
@@ -83,17 +83,17 @@ ms.locfileid: "56521860"
 <tr class="even">
 <td><p><strong>事件</strong></p></td>
 <td><p>标识某个供应商提供的数据部分列出了静止图像设备事件。 在本部分中的每个条目必须具有以下格式：</p>
-<p><em>EventName</em><strong>=&quot;</strong><em>字符串</em><strong>&quot;，{</strong><em>GUID</em> <strong>}，</strong>应用</p>
-<p><em>EventName</em>是事件&#39;s 内部名称，<em>字符串</em>是事件&#39;s 显示字符串<em>GUID</em>是事件&#39;GUID，s 和<em>应用</em>指定要在事件发生时启动映像的应用程序。 若要启动当前已注册的应用程序，请使用星号 (<strong>*</strong>) 用于<em>应用</em>。</p></td>
+<p><em>EventName</em><strong>="</strong><em>String</em><strong>",{</strong><em>GUID</em><strong>},</strong>App</p>
+<p><em>EventName</em>是事件的内部名称，<em>字符串</em>是事件的显示字符串<em>GUID</em>是事件的 GUID 和<em>应用</em>指定映像若要在事件发生时启动的应用程序。 若要启动当前已注册的应用程序，请使用星号 (<strong>*</strong>) 用于<em>应用</em>。</p></td>
 <td><p>必需</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PortSelect</strong></p></td>
-<td><p>如果设备安装不需要端口选择页上，值为&quot;没有&quot;导致跳过该页面。 此值还会导致<strong>CreateFileName</strong>条目值 (请参阅<strong>注意</strong>上<strong>CreateFileName</strong>并<strong>PortSelect</strong>参看此表) 以自动设置为自动。</p>
+<td><p>如果设备安装不需要端口选择页面，值为"否"将导致跳过该页面。 此值还会导致<strong>CreateFileName</strong>条目值 (请参阅<strong>注意</strong>上<strong>CreateFileName</strong>并<strong>PortSelect</strong>参看此表) 以自动设置为自动。</p>
 <p>要显示 Message1 会导致系统提供消息和设置的值<strong>CreateFileName</strong>条目值为自动。</p>
 <p>适用于扫描仪和照相机需要手动安装。</p></td>
 <td><p>可选</p>
-<p>请注意，对于插设备<strong>PortSelect</strong>将被忽略，但设备仍必须具有<strong>CreateFileName</strong>项值设置为自动，才能 WIA 加载设备。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg 指令</strong></a>添加到此条目<a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall 部分</strong></a>设备的&#39;s INF 文件。</p></td>
+<p>请注意，对于插设备<strong>PortSelect</strong>将被忽略，但设备仍必须具有<strong>CreateFileName</strong>项值设置为自动，才能 WIA 加载设备。 使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff546320" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546320)"> <strong>INF AddReg 指令</strong></a>添加到此条目<a href="https://msdn.microsoft.com/library/windows/hardware/ff547344" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff547344)"> <strong>INF DDInstall 部分</strong></a>的设备的 INF 文件。</p></td>
 </tr>
 </tbody>
 </table>
@@ -302,7 +302,7 @@ ms.locfileid: "56521860"
 
 仅当由供应商提供用于图像处理设备的自定义用户界面，用户界面 (UI) 项是必需的。
 
-**备注**
+**注释**
 
 当开发用于扫描程序的 INF 文件后时，可以使用[Microsoft OS 描述符](https://msdn.microsoft.com/library/windows/hardware/gg463179.aspx)启用兼容性 ID 功能。 当执行此操作时，允许一个扫描程序驱动程序与多个扫描程序模型兼容。
 

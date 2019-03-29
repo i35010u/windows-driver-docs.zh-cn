@@ -4,19 +4,19 @@ description: 在 Windows 8 的 Windows 显示器驱动程序模型 (WDDM) 驱动
 ms.assetid: BB1E35B4-8691-4B0C-9D6C-9A7D1ADFAB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c575f54d91c91d80b9e9f317db6f456f9a4a9a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 37806f8c74e01be0133a54946e5616b64dfb6462
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525998"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349166"
 ---
 # <a name="graphics-inf-requirements-in-wddm-12"></a>WDDM 1.2 中的图形 INF 要求
 
 
 在 Windows 8 的 Windows 显示器驱动程序模型 (WDDM) 驱动程序需要图形驱动程序 INF 更改。 最显著的变化是在功能得分。 WDDM 1.2 驱动程序需要较高的功能得分比早期版本的 WDDM 驱动程序。 本部分介绍 Windows 8 图形驱动程序相关的所有 INF 要求
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -33,7 +33,7 @@ ms.locfileid: "56525998"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="updated-feature-score-directive.md" data-raw-source="[Updated feature score directive in Windows 8](updated-feature-score-directive.md)">在 Windows 8 中的更新的功能分数指令</a></p></td>
-<td align="left"><p>更新的功能分数指令是常规安装设置的&#39;所需的所有 Windows 8 驱动程序，请按照 WDDM。</p></td>
+<td align="left"><p>更新的功能分数指令是具有所需的所有 Windows 8 驱动程序遵循 WDDM 的常规安装设置。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="driver-matching-criteria.md" data-raw-source="[Driver matching criteria](driver-matching-criteria.md)">驱动程序匹配条件</a></p></td>
@@ -57,7 +57,7 @@ ms.locfileid: "56525998"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="copy-flags-to-support-pnp-stop-directive.md" data-raw-source="[Copy flags to support PnP stop directive](copy-flags-to-support-pnp-stop-directive.md)">复制标志来支持即插即用的 stop 指令</a></p></td>
-<td align="left"><p>Plug and Play (PnP) 停止标志是所必需的支持完全驱动程序升级的 WDDM 的指令的文件部分&#39;t 需要重新启动。</p></td>
+<td align="left"><p>需要以支持不需要重新启动的驱动程序升级的 WDDM 插即用 (PnP) 停止指令的文件部分标志。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="driver-services-start-type-directive.md" data-raw-source="[Driver\services start type directive](driver-services-start-type-directive.md)">Driver\services 启动 type 指令</a></p></td>

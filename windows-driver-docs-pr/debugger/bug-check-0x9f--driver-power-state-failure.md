@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bc16844999aea1ea084cd9438c57edd6cab1051
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ea7402b6e1d6bab19d0a245ff095f3d6f171712f
+ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526313"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505147"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>（开发人员内容）Bug 检查 0x9F:驱动程序\_电源\_状态\_失败
 
 
-此 bug 检查具有 0x0000009F 值。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
+DRIVER_POWER_STATE_FAILURE bug 检查具有 0x0000009F 值。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
 
 **重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "56526313"
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>目标设备&#39;s 设备对象，如果可用</p></td>
+<td align="left"><p>目标设备的设备对象，如果可用</p></td>
 <td align="left"><p>设备对象</p></td>
 <td align="left"><p>驱动程序对象，如果可用</p></td>
 <td align="left"><p>设备对象为系统电源状态请求，完成 I/O 请求数据包 (IRP)，但它未调用<strong>PoStartNextPowerIrp</strong>。</p></td>
@@ -80,7 +80,7 @@ ms.locfileid: "56526313"
 <tr class="odd">
 <td align="left"><p>0x500</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>目标设备&#39;s 设备对象，如果可用</p></td>
+<td align="left"><p>目标设备的设备对象，如果可用</p></td>
 <td align="left"><p>设备对象</p></td>
 <td align="left"><p>设备对象完成系统电源状态请求，IRP，但它未调用<strong>PoStartNextPowerIrp</strong>。</p></td>
 </tr>

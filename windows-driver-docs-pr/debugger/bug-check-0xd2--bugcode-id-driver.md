@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d575ede17b41c115a383c67f325bdd56ce78d91b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4d5827981537496860abf8e254f1ef8f40c24660
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520728"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350386"
 ---
-# <a name="bug-check-0xd2-bugcodeiddriver"></a>Bug 检查 0xD2:BUGCODE\_ID\_驱动程序
+# <a name="bug-check-0xd2-bugcodeiddriver"></a>Bug 检查 0xD2：BUGCODE\_ID\_驱动程序
 
 
 BUGCODE\_ID\_驱动程序 bug 检查的值为 0x000000D2。 这表示与的 NDIS 驱动程序出现问题。
@@ -74,7 +74,7 @@ BUGCODE\_ID\_驱动程序 bug 检查的值为 0x000000D2。 这表示与的 NDIS
 <td align="left"><p>错误地包含在数据包数组中的数据包的地址</p></td>
 <td align="left"><p>数据包数组的地址</p></td>
 <td align="left"><p>数组中的数据包数</p></td>
-<td align="left"><p><strong>指示不归它的数据包。</strong> 微型端口&#39;s 数据包数组已损坏。</p></td>
+<td align="left"><p><strong>指示不归它的数据包。</strong> 微型端口的数据包数组已损坏。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MiniBlock 的地址</p></td>
@@ -85,7 +85,7 @@ BUGCODE\_ID\_驱动程序 bug 检查的值为 0x000000D2。 这表示与的 NDIS
 </tr>
 <tr class="even">
 <td align="left"><p>MiniBlock 的地址</p></td>
-<td align="left"><p>MiniBlock&#39;s 引用计数</p></td>
+<td align="left"><p>MiniBlock 的引用计数</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p><strong>NdisMUnload:MiniBlock</strong>获取卸载，但它仍然位于<strong>NdisMiniDriverList</strong>。</p></td>

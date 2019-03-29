@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b063e79ca31f950dc7f31e525f085f7403e8a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 52b2742dd63513bf618703b495eac3e96c841965
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548250"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349172"
 ---
 # <a name="iprintoemui2-com-interface"></a>IPrintOemUI2 COM 接口
 
@@ -39,7 +39,7 @@ ms.locfileid: "56548250"
 <tbody>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554141" data-raw-source="[&lt;strong&gt;IPrintOemUI2::DocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554141)"><strong>IPrintOemUI2::DocumentEvent</strong></a></p></td>
-<td><p>允许插件的 UI 来替换核心驱动程序用户界面模块&#39;s 默认实现<a href="https://msdn.microsoft.com/library/windows/hardware/ff548544" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548544)"> <strong>DrvDocumentEvent</strong> </a> DDI。</p></td>
+<td><p>允许插件的 UI 的核心驱动程序用户界面模块的默认实现替换<a href="https://msdn.microsoft.com/library/windows/hardware/ff548544" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548544)"> <strong>DrvDocumentEvent</strong> </a> DDI。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554142" data-raw-source="[&lt;strong&gt;IPrintOemUI2::HideStandardUI&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554142)"><strong>IPrintOemUI2::HideStandardUI</strong></a></p></td>
@@ -47,7 +47,7 @@ ms.locfileid: "56548250"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554146" data-raw-source="[&lt;strong&gt;IPrintOemUI2::QueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554146)"><strong>IPrintOemUI2::QueryJobAttributes</strong></a></p></td>
-<td><p>允许插件的 UI 进行后处理核心驱动程序&#39;后调用的 s 结果<a href="https://msdn.microsoft.com/library/windows/hardware/ff548581" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548581)"> <strong>DrvQueryJobAttributes</strong> </a> DDI。</p></td>
+<td><p>允许插件的 UI 进行后处理核心驱动程序的结果是在调用后<a href="https://msdn.microsoft.com/library/windows/hardware/ff548581" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548581)"> <strong>DrvQueryJobAttributes</strong> </a> DDI。</p></td>
 </tr>
 </tbody>
 </table>

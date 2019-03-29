@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 066ed6ba5e877d51fde3db7c84820e52b87a0f47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f0c3df21759278e491a429ebd510941362b4ac4c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521323"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349412"
 ---
-# <a name="bug-check-0x10d-wdfviolation"></a>Bug 检查 0x10D:WDF\_冲突
+# <a name="bug-check-0x10d-wdfviolation"></a>Bug 检查 0x10D：WDF\_冲突
 
 
 WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 基于 framework 的驱动程序中发现错误。
@@ -69,7 +69,7 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <tr class="even">
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>调用方&#39;s 地址</p></td>
+<td align="left"><p>调用方的地址</p></td>
 <td align="left"><p>一个<strong>NULL</strong>参数传递给需要非函数<strong>NULL</strong>值。</p></td>
 </tr>
 <tr class="odd">
@@ -124,7 +124,7 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <td align="left"><p>0xD</p></td>
 <td align="left"><p>WDFDEVICE 句柄</p></td>
 <td align="left"><p>指向 power IRP</p></td>
-<td align="left"><p>设备&#39;s 电源策略所有者收到 power 没有请求的 IRP。 可能有多个电源策略所有者，但只允许有一个。 KMDF 驱动程序可以通过调用更改电源策略所有权<strong>WdfDeviceInitSetPowerPolicyOwnership</strong>。</p></td>
+<td align="left"><p>设备的电源策略所有者接收到没有请求的 IRP 的幂。 可能有多个电源策略所有者，但只允许有一个。 KMDF 驱动程序可以通过调用更改电源策略所有权<strong>WdfDeviceInitSetPowerPolicyOwnership</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0xE</p></td>

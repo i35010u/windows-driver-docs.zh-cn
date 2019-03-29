@@ -10,12 +10,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5faef4206ec7b7dab9117af7ed9cc2501caf4acd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 57a77730819f0c24fd22ed745871f129594e2f15
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542574"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464319"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -138,7 +138,7 @@ DEVMODEW 结构成员划分为三个类别：
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmDisplayFrequency</strong></p></td>
-<td align="left"><p>指定显示以赫兹，&#39;s 刷新频率。</p></td>
+<td align="left"><p>以赫兹为单位，指定显示器的刷新频率。</p></td>
 </tr>
 </tbody>
 </table>
@@ -161,11 +161,11 @@ DEVMODEW 结构成员划分为三个类别：
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>dmDeviceName</strong></p></td>
-<td align="left"><p>对于显示的指定显示驱动程序&#39;s DLL。</p>
+<td align="left"><p>对于显示的指定显示驱动程序的 DLL。</p>
 <div>
  
 </div>
-对于打印机，指定&quot;友好名称&quot;的打印机。</td>
+对于打印机，指定打印机的"友好名称"。</td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmFields</strong></p></td>

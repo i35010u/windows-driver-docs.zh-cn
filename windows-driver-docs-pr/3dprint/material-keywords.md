@@ -4,12 +4,12 @@ description: 这些关键字描述原始材料中用于创建三维对象的设�
 ms.assetid: B2264CA8-64F9-4A20-AC55-46A0C48EDF3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f88783c5db8e98e14689876652c7349bc24d53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a105e855aecd5eecd238d2edafde8e9cb25ecb8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543691"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464015"
 ---
 # <a name="material-keywords"></a>材料关键字
 
@@ -99,7 +99,7 @@ Job3DMaterialCount 关键字的用法
 <td>目录</td>
 <td><p>包含一个或多个子属性元素，如下所示：</p>
 <p><strong>子项：</strong>属性列表</p>
-<p><strong>xsi: type:</strong>不适用</p>
+<p><strong>xsi: type:</strong>不可用</p>
 <p><strong>值：</strong>MaterialsList</p>
 <p><strong>描述:</strong>MaterialsList 包含一组子属性。</p></td>
 </tr>
@@ -139,15 +139,15 @@ Job3DMaterialCount 关键字的用法
 <td><p>设备可能会定义此属性指定的材料的颜色。 如果指定，值必须是符合下面的说明的 sRGB 颜色：</p>
 <div class="code">
 <code>cpp
-sRGBColorText = &quot;#&quot; hR hG hB hA
+sRGBColorText = "#" hR hG hB hA
 hR = hG = hB = hA = hexpair
 hexpair = hexdigit hexdigit
-hexdigit = &quot;0&quot; / &quot;1&quot; / &quot;2&quot; / &quot;3&quot; /
-           &quot;4&quot; / &quot;5&quot; / &quot;6&quot; / &quot;7&quot; /
-           &quot;8&quot; / &quot;9&quot; / &quot;A&quot; / &quot;B&quot; /
-           &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot; /
-           &quot;a&quot; / &quot;b&quot; / &quot;c&quot; / &quot;d&quot; /
-           &quot;e&quot; / &quot;f&quot;</code>
+hexdigit = "0" / "1" / "2" / "3" /
+           "4" / "5" / "6" / "7" /
+           "8" / "9" / "A" / "B" /
+           "C" / "D" / "E" / "F" /
+           "a" / "b" / "c" / "d" /
+           "e" / "f"</code>
 </div>
 <p>hR、 hG、 hB，和 hA 红色、 绿色、 蓝色和 alpha 组件的十六进制单字节值分别指定，范围从 00 到 FF。 设备可能会忽略 alpha (即 #hRhGhB) 中的事例的 alpha 采用 FF 的默认值 （完全不透明）。</p></td>
 </tr>
@@ -270,7 +270,7 @@ Job3DSupportsMaterial 关键字配置文件
 </tr>
 <tr class="even">
 <td>目录</td>
-<td><p>psk3d:Job3DSupportsMaterial 是 QNameParamType §2.1.3.1 中, 所述&quot; &lt;psf:ParameterDef&gt; &quot;打印架构规范中：</p>
+<td><p>psk3d:Job3DSupportsMaterial 是 QNameParamType §2.1.3.1 中, 所述"&lt;psf:ParameterDef&gt;"打印架构规范中：</p>
 <p><strong>子项：</strong>QNameParamType</p>
 <p><strong>描述:</strong></p>
 <p>Psf:MinLength 属性值必须是大于或等于 1 的整数。</p>
@@ -312,7 +312,7 @@ Job3DSupportsMaterial 初始化配置文件
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong> xsd: qname</p>
 <p><strong>值：</strong>MaterialName</p>
 <p><strong>描述:</strong>MaterialName 必须引用标识为 psk3D:Job3DMaterials 属性子材料。</p></td>
@@ -375,7 +375,7 @@ Psk3d:Job3DRaft 关键字指定是否应包含此作业*筏*设备或驱动程�
 </thead>
 <tbody>
 <tr class="odd">
-<td>名称</td>
+<td>“属性”</td>
 <td>psk3d:Job3DRaft</td>
 </tr>
 <tr class="even">
@@ -448,7 +448,7 @@ Job3DRaftMaterial 关键字配置文件
 </tr>
 <tr class="even">
 <td>目录</td>
-<td><p>psk3d:Job3DRaftMaterial 是 QNameParamType §2.1.3.1 中, 所述&quot; &lt;psf:ParameterDef&gt; &quot;打印架构规范中：</p>
+<td><p>psk3d:Job3DRaftMaterial 是 QNameParamType §2.1.3.1 中, 所述"&lt;psf:ParameterDef&gt;"打印架构规范中：</p>
 <p><strong>子项：</strong>QNameParamType</p>
 <p><strong>描述:</strong></p>
 <p>Psf:MinLength 属性值必须是大于或等于 1 的整数。</p>
@@ -490,7 +490,7 @@ Job3DRaftMaterial 初始化配置文件
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong> xsd: qname</p>
 <p><strong>值：</strong>MaterialName</p>
 <p><strong>描述:</strong>MaterialName 必须引用标识为 psk3D:Job3DMaterials 属性子材料。</p></td>
@@ -597,7 +597,7 @@ Job3DRaftMaterial 初始化配置文件
 </thead>
 <tbody>
 <tr class="odd">
-<td>名称</td>
+<td>“属性”</td>
 <td><em>指定的供应商</em></td>
 </tr>
 <tr class="even">
@@ -611,7 +611,7 @@ Job3DRaftMaterial 初始化配置文件
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong>Psk3d:MaterialMapUnitType</p>
 <p><strong>值：</strong>材料列表</p>
 <p><strong>描述:</strong>材料列表必须是以分号分隔的材料 ID:index 值列表引用 basematerials 模型有效负载中。</p></td>

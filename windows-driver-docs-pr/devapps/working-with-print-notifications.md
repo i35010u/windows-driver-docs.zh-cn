@@ -4,12 +4,12 @@ description: 本主题介绍打印通知，并演示如何将C#版本的打印�
 ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f3bd9532cb6b4b43a5bcc96a57908e4f38d6345
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 468b48b01067b8387ec7f4be7a3850c37f789156
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523905"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350132"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>使用 UWP 设备应用中的打印通知
 
@@ -43,7 +43,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
 磁贴通知或 toast 通知可以让用户方便地启动前台应用程序。 前台应用程序启动时，它可以使用`OnLaunched`中的方法**App.xaml.cs**检查如果它启动的磁贴或 toast。 如果是，前台应用程序可以访问在任何打印通知的详细信息[本地应用程序数据存储区](https://go.microsoft.com/fwlink/p/?LinkId=317216)。
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 开始之前：
@@ -58,7 +58,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
      
 
-## <a name="span-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanstep-1-register-background-task"></a><span id="Step_1__Register_background_task"></span><span id="step_1__register_background_task"></span><span id="STEP_1__REGISTER_BACKGROUND_TASK"></span>步骤 1:注册后台任务
+## <a name="span-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanspan-idstep1registerbackgroundtaskspanstep-1-register-background-task"></a><span id="Step_1__Register_background_task"></span><span id="step_1__register_background_task"></span><span id="STEP_1__REGISTER_BACKGROUND_TASK"></span>步骤 1：注册后台任务
 
 
 为了使 Windows 能够识别应用程序可以处理打印通知，它必须注册适用于打印通知的后台任务扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为`windows.backgroundTasks`和一个`EntryPoint`属性设置为`BackgroundTask.PrintBackgroundTask`。 扩展插件还包括`Task`元素以指示它支持`systemEvent`任务类型。
@@ -104,14 +104,14 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 </Package>
 ```
 
-## <a name="span-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanstep-2-configure-device-metadata"></a><span id="Step_2__Configure_device_metadata"></span><span id="step_2__configure_device_metadata"></span><span id="STEP_2__CONFIGURE_DEVICE_METADATA"></span>步骤 2:配置设备元数据
+## <a name="span-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanspan-idstep2configuredevicemetadataspanstep-2-configure-device-metadata"></a><span id="Step_2__Configure_device_metadata"></span><span id="step_2__configure_device_metadata"></span><span id="STEP_2__CONFIGURE_DEVICE_METADATA"></span>步骤 2：配置设备元数据
 
 
 当使用**设备元数据创建向导**若要将您的应用程序与你的设备相关联，为确保完整**通知处理程序**框**指定 UWP 设备应用程序信息**页。 这有助于确保打印通知期间调用您的应用程序的后台任务。
 
 有关如何编辑设备元数据的分步说明，请参阅[测试](#testing)部分。
 
-## <a name="span-idstep3buildtheuispanspan-idstep3buildtheuispanspan-idstep3buildtheuispanstep-3-build-the-ui"></a><span id="Step_3__Build_the_UI"></span><span id="step_3__build_the_ui"></span><span id="STEP_3__BUILD_THE_UI"></span>步骤 3:生成 UI
+## <a name="span-idstep3buildtheuispanspan-idstep3buildtheuispanspan-idstep3buildtheuispanstep-3-build-the-ui"></a><span id="Step_3__Build_the_UI"></span><span id="step_3__build_the_ui"></span><span id="STEP_3__BUILD_THE_UI"></span>步骤 3：生成 UI
 
 
 生成你的应用之前, 应适用于您的设计人员和营销团队设计用户体验。 用户体验应项目贵公司的品牌方面，并帮助您构建与你的用户的连接。
@@ -138,7 +138,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 
 -   **使您的应用程序的上下文中的用户。** 提供有关问题的信息，不链接至联机或其他支持材料。 用户保持在应用程序的上下文中。
 
-## <a name="span-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanstep-4-create-background-task"></a><span id="Step_4__Create_background_task"></span><span id="step_4__create_background_task"></span><span id="STEP_4__CREATE_BACKGROUND_TASK"></span>步骤 4:创建后台任务
+## <a name="span-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanspan-idstep4createbackgroundtaskspanstep-4-create-background-task"></a><span id="Step_4__Create_background_task"></span><span id="step_4__create_background_task"></span><span id="STEP_4__CREATE_BACKGROUND_TASK"></span>步骤 4：创建后台任务
 
 
 如果您的应用程序注册打印通知的后台任务，它必须提供后台任务激活的处理程序。 在中[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例中，`PrintBackgroundTask`类处理的打印通知。
@@ -261,7 +261,7 @@ void ShowToast(string title, string body)
 }
 ```
 
-## <a name="span-idstep5handleactivationspanspan-idstep5handleactivationspanspan-idstep5handleactivationspanstep-5-handle-activation"></a><span id="Step_5__Handle_activation"></span><span id="step_5__handle_activation"></span><span id="STEP_5__HANDLE_ACTIVATION"></span>步骤 5:处理激活
+## <a name="span-idstep5handleactivationspanspan-idstep5handleactivationspanspan-idstep5handleactivationspanstep-5-handle-activation"></a><span id="Step_5__Handle_activation"></span><span id="step_5__handle_activation"></span><span id="STEP_5__HANDLE_ACTIVATION"></span>步骤 5：处理激活
 
 
 打印通知触发后台任务后，可以通过点击 toast 通知或磁贴启动应用。 如果从激活您的应用程序，则参数将传递到通过应用`LaunchActivatedEventArgs.arguments`属性。 关于激活和 Microsoft Store 应用程序生命周期的详细信息，请参阅[应用程序生命周期](https://go.microsoft.com/fwlink/p/?LinkId=317387)。
@@ -303,7 +303,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
     }
     if (rootFrame.Content == null || !String.IsNullOrEmpty(args.Arguments))
     {
-        // When the navigation stack isn&#39;t restored or there are launch arguments
+        // When the navigation stack isn't restored or there are launch arguments
         // indicating an alternate launch (e.g.: via toast or secondary tile), 
         // navigate to the appropriate page, configuring the new page by passing required 
         // information as a navigation parameter
@@ -317,7 +317,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## <a name="span-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanstep-6-access-notification-details"></a><span id="Step_6__Access_notification_details"></span><span id="step_6__access_notification_details"></span><span id="STEP_6__ACCESS_NOTIFICATION_DETAILS"></span>步骤 6:访问通知的详细信息
+## <a name="span-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanspan-idstep6accessnotificationdetailsspanstep-6-access-notification-details"></a><span id="Step_6__Access_notification_details"></span><span id="step_6__access_notification_details"></span><span id="STEP_6__ACCESS_NOTIFICATION_DETAILS"></span>步骤 6：访问通知的详细信息
 
 
 由于后台任务不能直接启动前台应用程序，打印通知的详细信息需要保存对应用的设置，以便前台应用程序可以访问它们。 有关使用本地存储的详细信息，请参阅[快速入门： 本地应用程序数据](https://go.microsoft.com/fwlink/p/?LinkId=317216)。
@@ -414,7 +414,7 @@ void DisplayBackgroundTaskTriggerDetails()
     -   C#类必须实现 Windows.ApplicationModel.Background.IBackgroundTask，必须具有公共 void`Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)`方法。
     -   C + + 类必须实现 Windows::ApplicationModel::Background::IBackgroundTask，必须具有`virtual void Run(Windows::ApplicationModel::Background::IBackgroundTaskInstance^ taskInstance) `方法。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [徽章概述 （UWP 应用）](https://go.microsoft.com/fwlink/p/?LinkId=317196)

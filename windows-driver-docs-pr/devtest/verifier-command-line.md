@@ -1,5 +1,5 @@
 ---
-title: 驱动程序验证工具的命令语法
+title: 驱动程序验证程序命令语法
 description: 在命令提示符窗口中运行验证程序实用工具时，使用以下语法。您可以键入相同的单个行上的多个选项。
 ms.assetid: 7cdf5277-7187-4e90-b22a-6f828f06e2fb
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08244ff058d2bb9582a558111408455f104b03fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 463b13e77e3ed54609b1c733f9b18593c28d93c7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521244"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350370"
 ---
-# <a name="driver-verifier-command-syntax"></a>驱动程序验证工具的命令语法
+# <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
 
 在命令提示符窗口中运行验证程序实用工具时，使用以下语法。
@@ -147,7 +147,7 @@ verifier /?
 </tr>
 <tr class="even">
 <td align="left"><p><span id="resetonunusualshutdown"></span><span id="RESETONUNUSUALSHUTDOWN"></span><strong>resetonunusualshutdown</strong></p></td>
-<td align="left"><p>（在 Windows 10，版本 1709年中引入）驱动程序验证程序将一直持续到异常关闭的时间。 其缩写 <strong>&#39;rous&#39;</strong>，可以使用。
+<td align="left"><p>（在 Windows 10，版本 1709年中引入）驱动程序验证程序将一直持续到异常关闭的时间。 其缩写<strong>rous</strong>，可以使用。
 </p></td>
 </tr>
 </tbody>
@@ -458,7 +458,7 @@ verifier /?
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>0x1 （位 0）</p></td>
-<td align="left"><p>特殊的池</p></td>
+<td align="left"><p>特殊池</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>

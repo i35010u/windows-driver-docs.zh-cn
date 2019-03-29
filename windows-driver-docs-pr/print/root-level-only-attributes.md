@@ -1,20 +1,20 @@
 ---
-title: 仅在根级别的属性
-description: 仅在根级别的属性
+title: 仅限根级别的属性
+description: 仅限根级别的属性
 ms.assetid: 1b3d74b9-4cf4-4303-92ae-b93b3f9b7f7c
 keywords:
 - 仅限根级别属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv，仅限根级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdc070685c8330b63289f20725f26c12dbcde67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6550ee4d1503c1130ed287b710dfb82dbf7868a7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464035"
 ---
-# <a name="root-level-only-attributes"></a>仅在根级别的属性
+# <a name="root-level-only-attributes"></a>仅限根级别的属性
 
 
 
@@ -59,19 +59,19 @@ ms.locfileid: "56533943"
 </tr>
 <tr class="even">
 <td><p></em><strong>GPDFileVersion</strong></p></td>
-<td><p>带引号的文本字符串，表示当前 GPD 文件版本。 建议的格式是<em>MajorVersion</em>。<em>MinorVersion</em>，如&quot;1.0&quot;。</p></td>
-<td><p>可选。 如果指定，此字符串将显示在 Unidrv&#39;关于对话框的 s。</p></td>
+<td><p>带引号的文本字符串，表示当前 GPD 文件版本。 建议的格式是<em>MajorVersion</em>。<em>MinorVersion</em>，例如"1.0"。</p></td>
+<td><p>可选。 如果指定，此字符串显示在 Unidrv 的有关对话框中的信息。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em><strong>GPDSpecVersion</strong></p></td>
-<td><p>带引号的文本字符串，表示当前 GPD 规范版本。 所需格式为<em>MajorVersion</em>。<em>MinorVersion</em>，如&quot;1.0&quot;。</p></td>
+<td><p>带引号的文本字符串，表示当前 GPD 规范版本。 所需格式为<em>MajorVersion</em>。<em>MinorVersion</em>，例如"1.0"。</p></td>
 <td><p>必需。 必须在 GPD 文件中，在任何注释前的第一个条目。</p>
-<p>此值必须是&quot;1.0&quot;适用于 Windows 2000。</p></td>
+<p>此值必须为"1.0"适用于 Windows 2000。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>HelpFile</strong></p></td>
 <td><p>包含名称的自定义的帮助文件，扩展名为.hlp 带引号的字符串。</p></td>
-<td><p>可选。 如果包含，它可以添加主题或覆盖 Unidrv 中的现有主题&#39;s 帮助文件。 指定了帮助文件索引<em>HelpIndex 属性的功能和选项。</p></td>
+<td><p>可选。 如果包含，它可以添加主题或覆盖 Unidrv 的帮助文件中的现有主题。 指定了帮助文件索引<em>HelpIndex 属性的功能和选项。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>Include</strong></p></td>
@@ -80,12 +80,12 @@ ms.locfileid: "56533943"
 </tr>
 <tr class="even">
 <td><p><em><strong>InstalledOptionName</strong></p></td>
-<td><p>带引号的字符串会显示以指示安装的功能或选项安装。 通常情况下，此字符串是&quot;已安装&quot;，但可以指定任何适当的字符串。</p></td>
+<td><p>带引号的字符串会显示以指示安装的功能或选项安装。 通常情况下，此字符串为"已安装"，但可以指定任何适当的字符串。</p></td>
 <td><p>需要<em>可安装？ 是<strong>TRUE</strong>的任何功能或选项 (请参阅<a href="feature-attributes.md" data-raw-source="[Feature Attributes](feature-attributes.md)">功能属性</a>)，并且如果 *<strong>rcInstalledOptionNameID</strong>未指定。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>MasterUnits</strong></p></td>
-<td><p>对表示打印机&#39;s<a href="master-units.md" data-raw-source="[master units](master-units.md)">掌握单位</a>。</p></td>
+<td><p>对表示打印机<a href="master-units.md" data-raw-source="[master units](master-units.md)">掌握单位</a>。</p></td>
 <td><p>必需。 若要减少潜在舍入误差，使用相同的值，为指定的解析单元中字体指标数据<em> <strong>MasterUnits</strong>。 (请参阅 Unidrv 字体中的指标<a href="customized-font-management.md" data-raw-source="[Customized Font Management](customized-font-management.md)">自定义字体管理</a>。)</p></td>
 </tr>
 <tr class="even">
@@ -100,7 +100,7 @@ ms.locfileid: "56533943"
 </tr>
 <tr class="even">
 <td><p></em><strong>NotInstalledOptionName</strong></p></td>
-<td><p>带引号的字符串会显示以指示安装的功能或选项未安装。 通常情况下，此字符串是&quot;未安装&quot;，但可以指定任何适当的字符串。</p></td>
+<td><p>带引号的字符串会显示以指示安装的功能或选项未安装。 通常情况下，此字符串是"未安装"，但任何可指定适当的字符串。</p></td>
 <td><p>需要<em><strong>可安装？</strong>是<strong>TRUE</strong>为任何功能或选项 (请参阅<a href="feature-attributes.md" data-raw-source="[Feature Attributes](feature-attributes.md)">功能属性</a>)，并且如果 *<strong>rcNotInstalledOptionNameID</strong>未指定。</p></td>
 </tr>
 <tr class="odd">
@@ -131,12 +131,12 @@ PPM 页面/分为单位 CPS-字符/sec。 LPM 行/分为单位 IPM-英寸/最小
 </tr>
 <tr class="even">
 <td><p></em><strong>rcInstalledOptionNameID</strong></p></td>
-<td><p>安装显示以指示安装的功能或选项的字符串资源的资源 ID。 通常情况下，此字符串是&quot;已安装&quot;，但可以指定任何适当的字符串。</p></td>
+<td><p>安装显示以指示安装的功能或选项的字符串资源的资源 ID。 通常情况下，此字符串为"已安装"，但可以指定任何适当的字符串。</p></td>
 <td><p>需要<em>可安装？ 是<strong>TRUE</strong>的任何功能或选项 (请参阅<a href="feature-attributes.md" data-raw-source="[Feature Attributes](feature-attributes.md)">功能属性</a>)，并且如果 *<strong>InstalledOptionName</strong>未指定。</p></td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>rcNotInstalledOptionNameID</strong></p></td>
-<td><p>未安装的显示以指示安装的功能或选项的字符串资源的资源 ID。 通常情况下，此字符串是&quot;未安装&quot;，但可以指定任何适当的字符串。</p></td>
+<td><p>未安装的显示以指示安装的功能或选项的字符串资源的资源 ID。 通常情况下，此字符串是"未安装"，但任何可指定适当的字符串。</p></td>
 <td><p>需要<em><strong>可安装？</strong>是<strong>TRUE</strong>为任何功能或选项 (请参阅<a href="feature-attributes.md" data-raw-source="[Feature Attributes](feature-attributes.md)">功能属性</a>)，并且如果 *<strong>NotInstalledOptionName</strong>未指定。</p></td>
 </tr>
 <tr class="even">

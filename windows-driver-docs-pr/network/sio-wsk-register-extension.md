@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_REGISTER_EXTENSION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565e9cd247807123a8185c3241ecda24bf5b75d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 722f69616475e59f1a343f5895a9afd513b5fefd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524476"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349022"
 ---
 # <a name="siowskregisterextension"></a>SIO\_WSK\_注册\_扩展
 
@@ -50,7 +50,7 @@ SIO\_WSK\_注册\_扩展套接字 I/O 控制操作允许 WSK 的应用程序注�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571167" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571167)"> <strong>WSK_EXTENSION_CONTROL_IN</strong> </a>结构。 此结构包含一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff568373" data-raw-source="[Network Programming Interface (NPI)](https://msdn.microsoft.com/library/windows/hardware/ff568373)">网络编程接口 (NPI)</a>扩展插件接口和指针到调度表和 WSK 应用程序的上下文标识符&#39;s 实现扩展接口。</p></td>
+<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571167" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571167)"> <strong>WSK_EXTENSION_CONTROL_IN</strong> </a>结构。 此结构包含一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff568373" data-raw-source="[Network Programming Interface (NPI)](https://msdn.microsoft.com/library/windows/hardware/ff568373)">网络编程接口 (NPI)</a>标识符的扩展插件接口和调度表和 WSK 应用程序的扩展插件实现的上下文的指针接口。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -58,7 +58,7 @@ SIO\_WSK\_注册\_扩展套接字 I/O 控制操作允许 WSK 的应用程序注�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571168" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571168)"> <strong>WSK_EXTENSION_CONTROL_OUT</strong> </a>结构。 此结构接收一个指向调度表和指向 WSK 子系统的上下文的&#39;s 扩展接口实现。</p></td>
+<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff571168" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff571168)"> <strong>WSK_EXTENSION_CONTROL_OUT</strong> </a>结构。 此结构接收一个指向调度表和 WSK 子系统的扩展接口实现的上下文的指针。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -88,7 +88,7 @@ WSK 应用程序调用时未指定指向 IRP **WskControlSocket**函数以注册
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

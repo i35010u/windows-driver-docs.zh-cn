@@ -1,14 +1,14 @@
 ---
-Description: This topics in this section describe the class drivers, generic client driver, and the parent composite driver that are provided by Microsoft.
+Description: 本部分中的本主题描述的类驱动程序、 常规客户端驱动程序和由 Microsoft 提供的父复合驱动程序。
 title: Microsoft 提供的 USB 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67a7f1c8e0e647ed7f51c12bd3b5fce5c6102a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 572b867501af1658d4ef7d89c5880743bdfefaf5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522731"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350194"
 ---
 # <a name="microsoft-provided-usb-drivers"></a>Microsoft 提供的 USB 驱动程序
 
@@ -86,7 +86,7 @@ Microsoft 提供了这些组的驱动程序：
 <p>Windows 7</p>
 <p>Windows Vista</p>
 <p>Windows XP Service Pack 2 (SP2)</p></td>
-<td>Winusb.sys 可用作 USB 设备&#39;s 函数而不是实现一个驱动程序的驱动程序。 请参阅<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB</a>。</td>
+<td>Winusb.sys 可以用作 USB 设备的功能而不是实现一个驱动程序的驱动程序。 请参阅<a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[WinUSB](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">WinUSB</a>。</td>
 </tr>
 </tbody>
 </table>

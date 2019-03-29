@@ -8,12 +8,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56064c8f44bcde7744540735d399d90090ad1f6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 42a7aaadd3f2dbeaf196e000e08d88538a9f9409
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534217"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350068"
 ---
 # <a name="operation-code-handling"></a>操作代码处理
 
@@ -47,7 +47,7 @@ ms.locfileid: "56534217"
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDP2OP_CLEAR</p></td>
-<td align="left"><p><strong>始终要求。</strong> 用于清除上下文&#39;s 呈现器目标，Z 缓冲区。 将替换<em>D3dClear2</em>。 此外用于清除硬件模具缓冲区和深度填充位块传输不能正确清除的深度缓冲区。</p></td>
+<td align="left"><p><strong>始终要求。</strong> 用于清除上下文的呈现器目标，Z 缓冲区。 将替换<em>D3dClear2</em>。 此外用于清除硬件模具缓冲区和深度填充位块传输不能正确清除的深度缓冲区。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDP2OP_SETPALETTE</p></td>

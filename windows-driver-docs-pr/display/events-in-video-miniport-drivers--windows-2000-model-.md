@@ -1,20 +1,20 @@
 ---
-title: 视频微型端口驱动程序 （Windows 2000 模式） 中的事件
-description: 视频微型端口驱动程序 （Windows 2000 模式） 中的事件
+title: 视频微型端口驱动程序中的事件（Windows 2000 模型）
+description: 视频微型端口驱动程序中的事件（Windows 2000 模型）
 ms.assetid: f6b5ded8-ddb4-4242-9bd3-b12dc96d8f6b
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，事件
 - 事件 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f18edc170f752690f57f31e65c772fd9c9bb4d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 50f3c70d2f060e3c23cb8f625b8635798a63d209
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554463"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348920"
 ---
-# <a name="events-in-video-miniport-drivers-windows-2000-model"></a>视频微型端口驱动程序 （Windows 2000 模式） 中的事件
+# <a name="events-in-video-miniport-drivers-windows-2000-model"></a>视频微型端口驱动程序中的事件（Windows 2000 模型）
 
 
 ## <span id="ddk_events_in_video_miniport_drivers_windows_2000_model__gg"></span><span id="DDK_EVENTS_IN_VIDEO_MINIPORT_DRIVERS_WINDOWS_2000_MODEL__GG"></span>
@@ -58,7 +58,7 @@ ms.locfileid: "56554463"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570364" data-raw-source="[&lt;strong&gt;VideoPortSetEvent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570364)"><strong>VideoPortSetEvent</strong></a></p></td>
-<td align="left"><p>一个事件对象设置为终止状态，如果它已不处于该状态，并返回事件对象&#39;s 以前的状态。</p></td>
+<td align="left"><p>设置为终止状态的事件对象，如果它已不处于该状态，并返回事件对象的以前的状态。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570378" data-raw-source="[&lt;strong&gt;VideoPortWaitForSingleObject&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff570378)"><strong>VideoPortWaitForSingleObject</strong></a></p></td>

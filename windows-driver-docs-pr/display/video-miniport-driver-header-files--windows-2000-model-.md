@@ -1,20 +1,20 @@
 ---
-title: 视频微型端口驱动程序标头文件 （Windows 2000 模式）
-description: 视频微型端口驱动程序标头文件 （Windows 2000 模式）
+title: 视频微型端口驱动程序标头文件（Windows 2000 模型）
+description: 视频微型端口驱动程序标头文件（Windows 2000 模型）
 ms.assetid: 7ce0df41-ce1e-4d76-b7e8-6d0a3576a58d
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，标头文件
 - 标头文件 WDK 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6cb260ea3f44704852e50775172625ba2a93057
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 67c8035c69d2cd8b42e5332b68ec7ab783685c81
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542155"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350400"
 ---
-# <a name="video-miniport-driver-header-files-windows-2000-model"></a>视频微型端口驱动程序标头文件 （Windows 2000 模式）
+# <a name="video-miniport-driver-header-files-windows-2000-model"></a>视频微型端口驱动程序标头文件（Windows 2000 模型）
 
 
 ## <span id="ddk_video_miniport_driver_header_files_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_HEADER_FILES_WINDOWS_2000_MODEL__GG"></span>
@@ -36,7 +36,7 @@ ms.locfileid: "56542155"
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>dderror.h</em></p></td>
-<td align="left"><p>包含的 Win32 状态常量微型端口驱动程序返回到的视频端口驱动程序，这也会返回到微型端口驱动程序&#39;s 相应内核模式显示驱动程序。</p></td>
+<td align="left"><p>包含微型端口驱动程序返回到的视频端口驱动程序，它也会返回到微型端口驱动程序的相应内核模式显示驱动程序的 Win32 状态常量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>devioctl.h</em></p></td>

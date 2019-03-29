@@ -1,19 +1,19 @@
 ---
-title: 元数据的字段标识符
+title: 元数据字段标识符
 description: 本部分介绍 Windows 筛选平台标注驱动程序的元数据字段标识符。
 ms.assetid: 2157bace-9fae-41e8-a435-c4a412873ee1
 keywords:
 - 元数据的字段标识符网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 911c694f055009a584c929cf1451d4e8a035f8b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3b7184bf3303cc236f1d78e4cbcc265d51b978a8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524187"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349880"
 ---
-# <a name="metadata-field-identifiers"></a>元数据的字段标识符
+# <a name="metadata-field-identifiers"></a>元数据字段标识符
 
 每个由位字段的元数据字段标识符表示。 这些标识符定义，如下所示：
 
@@ -165,7 +165,7 @@ ms.locfileid: "56524187"
 <p>FWPS_METADATA_FIELD_ORIGINAL_DESTINATION</p>
 </td>
 <td>
-<p>一个<a href="https://msdn.microsoft.com/library/windows/hardware/ff570825"> <b>SOCKADDR_STORAGE</b> </a>指示数据包的结构&#39;s 原始目标。</p>
+<p>一个<a href="https://msdn.microsoft.com/library/windows/hardware/ff570825"> <b>SOCKADDR_STORAGE</b> </a>结构，它指示数据包的原始目标。</p>
 <p>
 <div class="alert"><b>请注意</b>  支持从 Windows 7 开始。</div>
 <div> </div>
@@ -197,7 +197,7 @@ ms.locfileid: "56524187"
 <p>FWPS_METADATA_FIELD_PARENT_ENDPOINT_HANDLE</p>
 </td>
 <td>
-<p>终结点的句柄&#39;s 父套接字。</p>
+<p>终结点的父套接字的句柄。</p>
 <p>
 <div class="alert"><b>请注意</b>  支持从 Windows 7 开始。</div>
 <div> </div>

@@ -1,15 +1,15 @@
 ---
-title: 确定内部相机的位置
+title: 识别内部相机的位置
 description: 本主题提供有关在 Windows 8.1 中的系统上支持内部相机的信息。
 ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350b5fabdafbc5d253e044aba98d0776289ff5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af9bc003e24c90fa776d8161af8879e8ca9d1fc6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463959"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>确定内部相机 （UWP 设备应用） 的位置
 
@@ -165,7 +165,7 @@ InternalDeviceModification 注册表项指示该至少一个照相机使用 Mode
 </tr>
 <tr class="even">
 <td align="left">格式要求</td>
-<td align="left">必须包含总线前缀的硬件 id。 所有&quot; &amp;q u o t; 字符必须替换&quot; # &quot;。</td>
+<td align="left">必须包含总线前缀的硬件 id。 所有"&amp;q u o t;字符必须替换为"#"。</td>
 </tr>
 <tr class="odd">
 <td align="left">示例</td>
@@ -203,7 +203,7 @@ InternalDeviceModification 注册表项指示该至少一个照相机使用 Mode
 
 以前\_面板中的注册表值定义为\_ACPI 规范中的以前 （物理设备的位置）。 此值，该值指示其存储模块中的照相机的物理位置，必须是以下值之一。
 
-| 值 | 描述                                                         |
+| 值 | Description                                                         |
 |-------|---------------------------------------------------------------------|
 | 0     | 顶部                                                                 |
 | 1     | 底部                                                              |
@@ -250,10 +250,10 @@ Windows Registry Editor Version 5.00
 
 在使用 OEM 预安装工具包 (OPK) 的设备上的 Microsoft Store 设备应用和设备元数据包可以是预装。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[UWP 应用的内部设备的设备应用程序](uwp-device-apps-for-specialized-devices.md)
+[适用于内部设备的 UWP 设备应用](uwp-device-apps-for-specialized-devices.md)
 
  
 

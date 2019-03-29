@@ -8,12 +8,12 @@ keywords:
 - 打印机功能 WDK Unidrv，属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1589cc3b265480a55027f52bc2b084fc24a86cfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 455f08c3fbe61188ffb91691ed4a759e94b63102
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519325"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350352"
 ---
 # <a name="feature-attributes"></a>功能属性
 
@@ -51,17 +51,17 @@ ms.locfileid: "56519325"
 <td><p><strong><em>ConcealFromUI?</strong></p></td>
 <td><p><strong>TRUE</strong>或<strong>FALSE</strong>，以指示是否应在用户界面中显示该功能。</p></td>
 <td><p>可选。 如果未指定默认值为<strong>FALSE</strong>，这意味着该功能会显示。</p>
-<p>应为<strong>，则返回 TRUE</strong>仅当一项功能只提供一个选项 （例如，一个解决方法），因此用户可修改，或如果该功能&#39;通过设置另一项功能控制 s 选项选择&#39;s 选项。</p>
+<p>应为<strong>，则返回 TRUE</strong>唯一或如果一项功能只提供一个选项 （例如，一个解决方法），因此用户可修改，如果设置另一项功能的选项来控制功能的选项选择。</p>
 <p>如果 <strong></em>ConcealFromUI</strong>属性设置为<strong>TRUE</strong>，然后 Unidrv 或 PrintConfig 将将 psk:DisplayUI 元素添加到该项目在 PrintCapabilities XML 中的功能元素。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong><em>ConflictPriority</strong></p></td>
-<td><p>数字值表示的功能&#39;s 优先级，其中 1 表示最高优先级。</p></td>
+<td><p>表示功能的优先级，其中 1 表示最高优先级的数字值。</p></td>
 <td><p>可选。 请参阅<a href="feature-conflict-priority.md" data-raw-source="[Feature Conflict Priority](feature-conflict-priority.md)">功能冲突优先级</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong></em>DefaultOption</strong></p></td>
-<td><p>其中一个功能的名称&#39;s 选项。</p></td>
+<td><p>该功能的选项之一的名称。</p></td>
 <td><p>可选。 如果未指定，第一个选项列在<em>功能条目是默认值。 PaperSize 功能 Unidrv 的默认选项是 A4 指标的区域设置和字母的其他位置。 如果的默认 PaperSize 不存在，Unidrv 使用由指定的 PaperSize 选项 *<strong>DefaultOption</strong>关键字。</p></td>
 </tr>
 <tr class="even">
@@ -71,7 +71,7 @@ ms.locfileid: "56519325"
 <p>PRINTER_PROPERTY</p>
 <p>如果 DOC_PROPERTY 或 JOB_PROPERTY，该功能将分配给文档属性表。 如果 PRINTER_PROPERTY，该功能分配给打印机属性表。</p></td>
 <td><p>所需的自定义功能。 可选的标准功能。 如果未指定，标准功能的默认值是 DOC_PROPERTY，除非另有说明。</p>
-<p>如果 PRINTER_PROPERTY，该功能&#39;s 选项值保存在注册表中。 如果 DOC_PROPERTY 或 JOB_PROPERTY，该功能&#39;与文档一起保存 s 选项值。</p></td>
+<p>如果 PRINTER_PROPERTY，该功能的选项值保存在注册表中。 如果 DOC_PROPERTY 或 JOB_PROPERTY，则该功能的选项值与文档一起保存。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>HelpIndex</strong></p></td>
@@ -82,7 +82,7 @@ ms.locfileid: "56519325"
 <td><p><strong></em>可安装？</strong></p></td>
 <td><p><strong>TRUE</strong>或<strong>FALSE</strong>，以指示是否可安装该功能。 (<strong>FALSE</strong>始终安装的方式。)</p>
 <p>有关详细信息，请参阅<a href="handling-installable-features-and-options.md" data-raw-source="[Handling Installable Features and Options](handling-installable-features-and-options.md)">处理可安装功能和选项</a>。</p></td>
-<td><p>可选。 如果未指定，默认值是<strong>FALSE</strong>。 如果<strong>，则返回 TRUE</strong>，所有的功能&#39;s 选项也是可安装，但指定的第一个除外。 如果<strong>FALSE</strong>，至少一个功能的&#39;s 选项也始终必须在安装。 (还<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">选项属性</a>。)</p></td>
+<td><p>可选。 如果未指定，默认值是<strong>FALSE</strong>。 如果<strong>，则返回 TRUE</strong>，所有功能的选项也是可安装，但指定的第一个除外。 如果<strong>FALSE</strong>，必须也始终安装在至少一个功能的选项。 (还<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">选项属性</a>。)</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>InstallableFeatureName</strong></p></td>
@@ -92,7 +92,7 @@ ms.locfileid: "56519325"
 </tr>
 <tr class="even">
 <td><p><strong></em>名称</strong></p></td>
-<td><p>作为功能的文本字符串&#39;s 打印机上的显示名称&#39;s 属性表。</p></td>
+<td><p>用作在打印机的属性表上的功能的显示名称的文本字符串。</p></td>
 <td><p>可选。 如果未指定，则<em> <strong>rcNameID</strong>必须指定。 (还<a href="option-attributes.md" data-raw-source="[option attribute](option-attributes.md)">选项属性</a>。)</p></td>
 </tr>
 <tr class="odd">

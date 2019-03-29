@@ -8,12 +8,12 @@ keywords:
 - 接口 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef3ea4735bb297c313fbe5b78af15c16a0505ad7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0231b26e38aba2af044d921ee9fb0039e07e1fec
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534249"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350306"
 ---
 # <a name="querying-for-bluetooth-interfaces"></a>查询蓝牙接口
 
@@ -79,8 +79,8 @@ ms.locfileid: "56534249"
 
 ...
 
-// Define a custom pool tag to identify your profile driver&#39;s dynamic memory allocations. You should change this tag to easily identify your driver&#39;s allocations from other drivers.
-#define PROFILE_DRIVER_POOL_TAG &#39;_htB&#39;
+// Define a custom pool tag to identify your profile driver's dynamic memory allocations. You should change this tag to easily identify your driver's allocations from other drivers.
+#define PROFILE_DRIVER_POOL_TAG '_htB'
 
 PIRP Irp;
 Irp = IoAllocateIrp( DeviceExtension->ParentDeviceObject->StackSize, FALSE );

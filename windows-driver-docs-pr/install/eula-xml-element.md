@@ -1,6 +1,6 @@
 ---
-title: 最终用户许可协议的 XML 元素
-description: 最终用户许可协议的 XML 元素
+title: eula XML 元素
+description: eula XML 元素
 ms.assetid: ab647583-b0e1-4f40-86af-9b7923f5535c
 keywords:
 - 最终用户许可协议 XML 元素设备和驱动程序安装
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09533b410f89ef9461e45f120373be7859b33cd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525727"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464147"
 ---
-# <a name="eula-xml-element"></a>最终用户许可协议的 XML 元素
+# <a name="eula-xml-element"></a>eula XML 元素
 
 
 \[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
@@ -42,7 +42,7 @@ ms.locfileid: "56525727"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Type</strong></p></td>
-<td align="left"><p>供应商提供最终用户许可协议的类型。 此属性的值必须设置为字符串&quot;txt&quot;，指示一个纯文本文件。</p></td>
+<td align="left"><p>供应商提供最终用户许可协议的类型。 此属性的值必须设置为字符串"txt"，指示一个纯文本文件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Path</strong></p></td>
@@ -98,7 +98,7 @@ ms.locfileid: "56525727"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**language**](language-xml-element.md)

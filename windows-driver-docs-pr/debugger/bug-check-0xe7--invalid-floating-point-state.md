@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d98f7133d19db7a610d49888cfbc8934ca2f23d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b0ebe7ff3b33834d222e20f2f0ee4627b787a97b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547474"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348666"
 ---
-# <a name="bug-check-0xe7-invalidfloatingpointstate"></a>Bug 检查 0xE7:无效\_浮动\_点\_状态
+# <a name="bug-check-0xe7-invalidfloatingpointstate"></a>Bug 检查 0xE7：无效\_浮动\_点\_状态
 
 
 无效\_浮动\_点\_状态 bug 检查的值为 0x000000E7。 这指示线程的已保存浮点状态无效。
@@ -58,7 +58,7 @@ ms.locfileid: "56547474"
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>已保存的 IRQL</p></td>
 <td align="left"><p>当前 IRQL</p></td>
-<td align="left"><p>当前处理器&#39;s IRQL 不是与浮点上下文已保存时相同。</p></td>
+<td align="left"><p>当前处理器的 IRQL 不是与浮点上下文已保存时相同。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>

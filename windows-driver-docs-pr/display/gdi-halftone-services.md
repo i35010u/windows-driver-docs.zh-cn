@@ -9,12 +9,12 @@ keywords:
 - 半色调 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33199f1bd27a1ae1880fd1e318fc13901664b2f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8832636c506c698e0576b0a8101915cad29f3c7f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520326"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349540"
 ---
 # <a name="gdi-halftone-services"></a>GDI 半色调服务
 
@@ -50,7 +50,7 @@ GDI 半色调支持包括下表中列出的服务。
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567308" data-raw-source="[&lt;strong&gt;HTUI_DeviceColorAdjustment&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567308)"><strong>HTUI_DeviceColorAdjustment</strong></a></p></td>
-<td align="left"><p>显示一个对话框，允许用户调整设备&#39;s 半色调属性。</p></td>
+<td align="left"><p>显示一个对话框，允许用户调整设备的半色调属性。</p></td>
 </tr>
 </tbody>
 </table>

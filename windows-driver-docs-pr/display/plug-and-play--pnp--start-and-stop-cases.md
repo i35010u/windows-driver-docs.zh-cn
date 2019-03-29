@@ -1,19 +1,19 @@
 ---
-title: 即插 (PnP) WDDM 1.2 及更高版本
+title: WDDM 1.2 和更高版本中的即插即用 (PnP)
 description: 若要启动和停止请求的响应中，所有 Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本显示微型端口驱动程序必须都支持以下行为。
 ms.assetid: A95DCFEA-BC1B-4A13-9850-13814725D53E
 keywords:
 - 即插中显示器驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3f8933433cba5b7d44bb1692b8c349826dcbd82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9f7ea04050b879a58e41dbb6a143e77dbd90756f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541650"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350116"
 ---
-# <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>即插 (PnP) WDDM 1.2 及更高版本
+# <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 和更高版本中的即插即用 (PnP)
 
 
 所有 Windows 显示驱动程序模型 (WDDM) 1.2 及更高版本显示微型端口驱动程序必须在启动和停止插即用 (PnP) 基础结构请求的响应中都支持以下行为。 具体取决于是否驱动程序将返回成功或失败的代码，或是否系统硬件基于基本输入/输出系统 (BIOS) 或统一可扩展固件接口 (UEFI)，行为可能不同。
@@ -29,7 +29,7 @@ ms.locfileid: "56541650"
 <td align="left">1.2</td>
 </tr>
 <tr class="even">
-<td align="left">最低 Windows 版本</td>
+<td align="left">最大 Windows 版本</td>
 <td align="left">8</td>
 </tr>
 <tr class="odd">
@@ -122,8 +122,8 @@ ms.locfileid: "56541650"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Success__and_driver_returns_mode_information"></span><span id="success__and_driver_returns_mode_information"></span><span id="SUCCESS__AND_DRIVER_RETURNS_MODE_INFORMATION"></span>如果成功和驱动程序返回模式的信息</p></td>
-<td align="left"><p>停止该驱动程序之前它必须设置帧缓冲区，使用的当前解析，可以使用基本显示驱动程序，并且该驱动程序必须返回此信息时操作系统将调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>函数。 保存的模式的信息不会&#39;t 必须兼容的 BIOS，并且赢得了基本显示驱动程序&#39;t 提供 BIOS 模式下重新启动系统。</p>
-<p>操作系统可保证它结束-赢得&#39;t 调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>如果<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a>将返回<strong>STATUS_SUCCESS</strong>。</p></td>
+<td align="left"><p>停止该驱动程序之前它必须设置帧缓冲区，使用的当前解析，可以使用基本显示驱动程序，并且该驱动程序必须返回此信息时操作系统将调用<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>函数。 保存的模式信息不一定要与 BIOS，兼容和基本显示驱动程序不会提供 BIOS 模式，直到重新启动系统。</p>
+<p>操作系统可保证它不会调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff560781" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560781)"> <em>DxgkDdiStopDevice</em> </a>如果<a href="https://msdn.microsoft.com/library/windows/hardware/hh451415" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/hh451415)"> <em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em> </a>将返回<strong>STATUS_SUCCESS</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>如果成功和驱动程序集<strong>宽度</strong>并<strong>高度</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/hh464017" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh464017)"> <strong>DXGK_DISPLAY_INFORMATION</strong> </a>为零的结构</p></td>

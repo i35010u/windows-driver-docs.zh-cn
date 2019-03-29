@@ -4,12 +4,12 @@ description: 多个数据源
 ms.assetid: FD0B252F-1D70-4840-986F-94FF80D42246
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c90c57183c588bd300631f5ecf5c7546119f4c44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bd2518c0b91964ed13e57d4ff3a1d7c410b27f08
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523955"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350130"
 ---
 # <a name="multiple-datasources"></a>多个数据源
 
@@ -58,7 +58,7 @@ ms.locfileid: "56523955"
 ```cpp
 [TestMethod]
 [DataSource(@"Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;
-    WMI:SELECT ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+    WMI:SELECT ProcessId FROM Win32_Service WHERE Name='Themes'")]
 
 public void First()
 {
@@ -89,7 +89,7 @@ public void First()
 
 
 ```cpp
-[DataSource("Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;WMI:SELECT ProcessId FROM Win32_Service WHERE Name=&#39;Themes&#39;")]
+[DataSource("Table:CSharpAdvancedDataDrivenTests.xml#FirstTable;WMI:SELECT ProcessId FROM Win32_Service WHERE Name='Themes'")]
 ```
 
 只是为了再次重申：**将生成的每个单独的数据源的数据集的每个 n 向组合扩展一次运行的测试方法**。 例如，对于上面的托管示例中，安全地假定只有一个主题服务运行，并且知道有 3 行中提供的表数据源，测试方法将 3 次调用 （1 个）。 在本机示例的情况下，在 SecondTable 测试方法中，有两个表指定的数据源。 第一个表包含 3 个行，第二个表包含 4 行。 因此测试方法将调用为 12 倍 (3 X 4)。

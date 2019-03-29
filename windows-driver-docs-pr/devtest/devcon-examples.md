@@ -13,12 +13,12 @@ keywords:
 - HAL 更新示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3980ffa3a4310fc48556d17c6a596b76587c950
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 23508e68c050334b1090993d5b3b00921d9b4ed7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544428"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350272"
 ---
 # <a name="device-console-devconexe-examples"></a>设备控制台 (DevCon.exe) 示例
 
@@ -205,9 +205,9 @@ devcon hwids *floppy*
 ```
 FDC\GENERIC_FLOPPY_DRIVE\5&39194F6D&0&0
     Name: Floppy disk drive
-    Hardware ID&#39;s:
+    Hardware ID's:
         FDC\GENERIC_FLOPPY_DRIVE
-    Compatible ID&#39;s:
+    Compatible ID's:
         GenFloppyDisk
 1 matching device(s) found.
 ```
@@ -227,17 +227,17 @@ devcon hwids =ports
 ```
 ACPI\PNP0401\4&B4063F4&0
     Name: ECP Printer Port (LPT1)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0401
         *PNP0401
 ACPI\PNP0501\1
     Name: Communications Port (COM1)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0501
         *PNP0501
 ACPI\PNP0501\2
     Name: Communications Port (COM2)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ACPI\PNP0501
         *PNP0501
 3 matching device(s) found.
@@ -308,12 +308,12 @@ devcon hwids =net
 ```
 PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78\4&BB7B4AE&0&60F0
     Name: 3Com 3C920 Integrated Fast Ethernet Controller (3C905C-TX Compatible)
-    Hardware ID&#39;s:
+    Hardware ID's:
         PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78
         PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028
         PCI\VEN_10B7&DEV_9200&CC_020000
         PCI\VEN_10B7&DEV_9200&CC_0200
-    Compatible ID&#39;s:
+    Compatible ID's:
         PCI\VEN_10B7&DEV_9200&REV_78
         PCI\VEN_10B7&DEV_9200
         PCI\VEN_10B7&CC_020000
@@ -323,23 +323,23 @@ PCI\VEN_10B7&DEV_9200&SUBSYS_00BE1028&REV_78\4&BB7B4AE&0&60F0
  PCI\CC_0200
 ROOT\MS_L2TPMINIPORT\0000
     Name: WAN Miniport (L2TP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_l2tpminiport
 ROOT\MS_NDISWANIP\0000
     Name: WAN Miniport (IP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_ndiswanip
 ROOT\MS_PPPOEMINIPORT\0000
     Name: WAN Miniport (PPPOE)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_pppoeminiport
 ROOT\MS_PPTPMINIPORT\0000
     Name: WAN Miniport (PPTP)
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_pptpminiport
 ROOT\MS_PTIMINIPORT\0000
     Name: Direct Parallel
-    Hardware ID&#39;s:
+    Hardware ID's:
         ms_ptiminiport
 6 matching device(s) found.
 ```
@@ -625,7 +625,7 @@ devcon hwids *lpt*
 ```
 LPTENUM\MICROSOFTRAWPORT\5&CA97D7E&0&LPT1
     Name: Printer Port Logical Interface
-    Hardware ID&#39;s:
+    Hardware ID's:
         LPTENUM\MicrosoftRawPort958A
         MicrosoftRawPort958A
 1 matching device(s) found.
@@ -1075,7 +1075,7 @@ Class filters changed. Class devices must be restarted for changes to take effec
 下面的命令使用[ **DevCon 启用**](devcon-enable.md)启用已被禁用，以解决系统问题的可编程中断控制器操作。 因为控制器硬件 ID \*PNP0000 包括星号，该命令使用单引号字符 () 若要指示 DevCon 命令中指定一样准确查找的硬件 ID。 否则，星号将解释为通配符字符。
 
 ```
-devcon enable &#39;*PNP0000
+devcon enable '*PNP0000
 ```
 
 在响应中，DevCon 显示设备的设备实例 ID，并说明必须重新启动系统以启用该设备。
@@ -1090,7 +1090,7 @@ Not all of 1 device(s) enabled, at least one requires reboot to complete the ope
 以下命令将添加 **/r**到前一命令的参数。 **/R**参数重新启动系统，仅当重新启动的完成操作所必需的。
 
 ```
-devcon /r enable &#39;*PNP0000
+devcon /r enable '*PNP0000
 ```
 
 在响应中，DevCon 启用设备，然后重新启动系统以使启用生效。
@@ -1098,7 +1098,7 @@ devcon /r enable &#39;*PNP0000
 在系统启动时，请使用 DevCon 状态命令确认设备已启用。
 
 ```
-devcon status &#39;*PNP0000
+devcon status '*PNP0000
 
 ACPI\PNP0000\4&B4063F4&0
     Name: Programmable interrupt controller
@@ -1225,7 +1225,7 @@ Drivers updated successfully.
 然后，向**\[GUIRunOnce\]** 节的无人参与的安装文件中，添加以下 DevCon 命令：
 
 ```
-a:\devcon /r install a:\Netloop.inf &#39;*MSLOOP
+a:\devcon /r install a:\Netloop.inf '*MSLOOP
 ```
 
 此命令使用其硬件 ID 来标识环回适配器\*MSLOOP。 前面的单引号字符"\*MSLOOP"告知 DevCon，它是按字面意思解释该字符串，以解释星号作为硬件 ID 的一部分，而不是通配符字符。
@@ -1299,7 +1299,7 @@ devcon /m:\\server01 rescan
 下面的命令使用[ **DevCon 重启**](devcon-restart.md)操作以重新启动本地计算机上的环回适配器。 该命令限制搜索的净安装程序类，并使该类中指定的设备实例 ID 环回适配器**根\\\*MSLOOP\\0000**。 在字符 (**@**) 标识字符串作为设备实例 id。 单引号字符 ()，该请求文本搜索，可防止 DevCon 解释为通配符字符的 ID 中的星号。
 
 ```
-devcon restart =net @&#39;ROOT\*MSLOOP\0000
+devcon restart =net @'ROOT\*MSLOOP\0000
 ```
 
 在响应中，DevCon 显示设备的设备实例 ID，并将结果报告。

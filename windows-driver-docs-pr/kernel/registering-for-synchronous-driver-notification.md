@@ -1,6 +1,6 @@
 ---
-title: 正在注册的同步的驱动程序通知
-description: 正在注册的同步的驱动程序通知
+title: 注册同步驱动程序通知
+description: 注册同步驱动程序通知
 ms.assetid: 852a2b69-c71f-4127-946e-8179954d504c
 keywords:
 - 驱动程序通知 WDK 动态硬件分区、 注册
@@ -10,14 +10,14 @@ keywords:
 - 注册的驱动程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c312eed9a3b350b020f9564c5fe476c1829d1d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f055374a1a700fcffb813076868d625a3425e1e8
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541057"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350342"
 ---
-# <a name="registering-for-synchronous-driver-notification"></a>正在注册的同步的驱动程序通知
+# <a name="registering-for-synchronous-driver-notification"></a>注册同步驱动程序通知
 
 
 若要使用同步的驱动程序通知，设备驱动程序实现动态硬件分区添加新的处理器时，操作系统将调用的回调函数。 下面的代码示例是此类回调函数的原型：
@@ -39,7 +39,7 @@ VOID
 PVOID CallbackRegistrationHandle;
 NTSTATUS CallbackStatus = STATUS_SUCCESS;
 
-// The driver&#39;s DriverEntry routine
+// The driver's DriverEntry routine
 NTSTATUS  DriverEntry(
     PDRIVER_OBJECT DriverObject,
     PUNICODE_STRING RegistryPath
@@ -83,7 +83,7 @@ NTSTATUS  DriverEntry(
 当设备驱动程序必须停止接收同步的驱动程序通知，例如当正在卸载它，它必须通过调用来注销回调函数[ **KeDeregisterProcessorChangeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff552015)函数。 设备驱动程序通常会调用**KeDeregisterProcessorChangeCallback**中的函数及其[*卸载*](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数。 下面的代码示例演示如何取消注册回调函数：
 
 ```cpp
-// The driver&#39;s Unload routine
+// The driver's Unload routine
 VOID
   Unload(
     IN PDRIVER_OBJECT DriverObject

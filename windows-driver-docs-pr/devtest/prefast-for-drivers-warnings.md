@@ -1,6 +1,6 @@
 ---
-title: 代码分析驱动程序警告
-description: 代码分析驱动程序警告
+title: 驱动程序的代码分析警告
+description: 驱动程序的代码分析警告
 ms.assetid: 61dba158-7e1b-42ee-9882-0ba9cef77b3c
 keywords:
 - PREfast 驱动程序 WDK，警告
@@ -8,14 +8,14 @@ keywords:
 - 错误 WDK PREfast for Drivers
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba77475c1343f224052fde589037e4af12bb47e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9d863b23ce42ef9854171537c4856001f7053a4c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555728"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350192"
 ---
-# <a name="code-analysis-for-drivers-warnings"></a>代码分析驱动程序警告
+# <a name="code-analysis-for-drivers-warnings"></a>驱动程序的代码分析警告
 
 
 本部分列出并描述当驱动程序代码中检测到可能的错误时，Code Analysis for Drivers 报告的警告。 请注意，一些警告，适用于内核模式代码分析用户模式驱动程序时可以忽略。
@@ -32,7 +32,7 @@ ms.locfileid: "56555728"
 
 -   **内存分配警告**(为 30029 30035):这些是分配的内存警告。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -145,7 +145,7 @@ ms.locfileid: "56555728"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28147-improper-use-of-default-pool-tag.md" data-raw-source="[C28147](28147-improper-use-of-default-pool-tag.md)">C28147</a></p></td>
-<td align="left"><p>警告 C28147:使用默认的池标记 (&#39; kdD&#39;或&#39;mdW&#39;) 调用此函数无法实现标记池的用途</p></td>
+<td align="left"><p>警告 C28147:使用默认的池标记 (kdD 或 mdW) 对此函数的调用的初衷背道而驰标记池</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28150-function-causes-irq-level-to-be-set-above-max.md" data-raw-source="[C28150](28150-function-causes-irq-level-to-be-set-above-max.md)">C28150</a></p></td>
@@ -257,7 +257,7 @@ ms.locfileid: "56555728"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28615-must-call-resetstkoflw-in-except-block.md" data-raw-source="[C28615](28615-must-call-resetstkoflw-in-except-block.md)">C28615</a></p></td>
-<td align="left"><p>警告 C28615:必须在 __except 块中调用 _resetstkoflw，__try 块中调用 _alloca 时。 Don&#39;从 catch （） 块内的 t 调用 _resetstkoflw</p></td>
+<td align="left"><p>警告 C28615:必须在 __except 块中调用 _resetstkoflw，__try 块中调用 _alloca 时。 不要调用 _resetstkoflw 从 catch （） 块内</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28616-multithreaded-av-condition.md" data-raw-source="[C28616](28616-multithreaded-av-condition.md)">C28616</a></p></td>
@@ -386,7 +386,7 @@ ms.locfileid: "56555728"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="28730-possible-null-character-assignment.md" data-raw-source="[C28730](28730-possible-null-character-assignment.md)">C28730</a></p></td>
-<td align="left"><p>警告 C28730:可能分配&#39;\0&#39;直接向指针。</p></td>
+<td align="left"><p>警告 C28730:\0 直接向指针可能分配。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="28735-banned-crimson-api-usage.md" data-raw-source="[C28735](28735-banned-crimson-api-usage.md)">C28735</a></p></td>

@@ -1,14 +1,14 @@
 ---
-Description: MultiTransport Device Support
+Description: MultiTransport 设备支持
 title: MultiTransport 设备支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e43dc9336e483b82615e3f4251bc1a9a20b98f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c3f686c03b91ec7d64486ac475372590f015725f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526906"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349394"
 ---
 # <a name="multitransport-device-support"></a>MultiTransport 设备支持
 
@@ -48,7 +48,7 @@ WpdMultiTransportDriver 示例基于 WpdHelloWorldDriver，并且原始的驱动
                 // device (upon first-connect) by
                 // using CoCreateGUID and setting that value into non-volatile storage
                 // on the device. The same GUID value is then  reported by each
-                // of your device&#39;s transports. To avoid a provisioning race condition,
+                // of your device's transports. To avoid a provisioning race condition,
                 // always read the value from the device after provisioning. Only
                 // provision the GUID one time. Thereafter, always use the value that is provided
                 // by the device.
@@ -164,7 +164,7 @@ WpdHelloWorld 驱动程序示例进程 Ioctl 到单一、 连续队列支持从 
 
 虽然**CDriver::OnDeviceAdd**方法处理的 I/O 队列创建，而这两个队列中支持的功能的代码中找到*Queue.cpp*文件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WPD 驱动程序示例](the-wpd-driver-samples.md)

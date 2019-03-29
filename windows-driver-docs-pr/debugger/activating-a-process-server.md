@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdda091634cab38db94f82ebcf2faf702898e45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5a4c23fc841cf552ae9b369b702b787db39f5186
+ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540942"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203938"
 ---
 # <a name="activating-a-process-server"></a>激活进程服务器
 
@@ -124,10 +124,3 @@ dbgsrv -t ssl:proto=Protocol,{certuser=Cert|machuser=Cert},port=Socket,clicon=Cl
 可以在一台计算机上启动任意数量的进程服务器。 但是，这是通常不必要的因为一个进程服务器可由任意数量的智能客户端 （每个参与不同的调试会话中）。
 
  
-
- 
-
-
-
-
-

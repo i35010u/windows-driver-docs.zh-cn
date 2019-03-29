@@ -6,12 +6,12 @@ keywords:
 - ProcAmp WDK DirectX VA，定义设备类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91d9a51f0746970355d8a35362f1f9e48bb91ad1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 00034db803536f6627214801e005ef0579081723
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543088"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348936"
 ---
 # <a name="defining-the-procamp-control-device-class"></a>定义 ProcAmp 控制设备类
 
@@ -26,7 +26,7 @@ ms.locfileid: "56543088"
 struct DXVA_ProcAmpControlDeviceClass : public DXVA_DeviceBaseClass
 {
     DXVA_VideoDesc  m_VideoDesc;
-    // Uses the base class&#39;s constructor.
+    // Uses the base class's constructor.
     DXVA_ProcAmpControlDeviceClass(const GUID& guid, DXVA_DeviceType Type) :
         DXVA_DeviceBaseClass(guid, Type)
     {}

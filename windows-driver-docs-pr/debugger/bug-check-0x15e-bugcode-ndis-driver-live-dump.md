@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c212bdb9d1bf878736bc0b40903b1f910892c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 94ec32f20958089c4a68410dcf49b5847a1c3d2d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463845"
 ---
-# <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>Bug 检查 0x15E:BUGCODE\_NDIS\_驱动程序\_LIVE\_转储
+# <a name="bug-check-0x15e-bugcodendisdriverlivedump"></a>Bug 检查 0x15E：BUGCODE\_NDIS\_驱动程序\_LIVE\_转储
 
 
 BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此错误代码指示 NDIS 已捕获的实时内核转储。 NDIS 不在此情况下生成的 bug 检查。
@@ -55,7 +55,7 @@ BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此
 <td align="left"><p>NDIS_BUGCHECK_MINIPORT_FATAL_ERROR</p>
 <p>微型端口驱动程序已遇到错误并且已请求重新枚举。</p></td>
 <td align="left"><p>微型端口块的地址。 运行<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">！ ndiskd.minidriver</a></strong>与此地址用于的详细信息。</p></td>
-<td align="left"><p>微型端口地址&#39;s 物理设备对象 (PDO)</p></td>
+<td align="left"><p>地址的微型端口的物理设备对象 (PDO)</p></td>
 <td align="left"><p>导致要执行此实时转储的致命错误。 可能值：</p>
 <ol>
 <li>70:引起用户模式</li>
@@ -70,7 +70,7 @@ BUGCODE\_NDIS\_驱动程序\_LIVE\_转储错误代码的值为 0x0000015E。 此
 <td align="left"><p>0x25</p></td>
 <td align="left"><p>NDIS_BUGCHECK_WATCHDOG</p>
 <p>尝试管理网络堆栈花费的时间太长。 当 NDIS 连接到其他驱动程序时，NDIS 启动监视程序计时器以确保在调用立即完成。 如果调用时间太长，NDIS 注入错误检查。</p>
-<p>原因可能是简单的死锁。 查找具有&quot;！ 堆栈 2 ndis&quot;或类似于任何线程查看可疑。 应特别注意从 NDIS_WATCHDOG_TRIAGE_BLOCK PrimaryThread。</p>
+<p>原因可能是简单的死锁。 查找具有"！ 堆栈 2 ndis"或类似于任何线程查看可疑。 应特别注意从 NDIS_WATCHDOG_TRIAGE_BLOCK PrimaryThread。</p>
 <p>这可能引起丢失功能的 Nbl，在这种情况下<strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">！ ndiskd.pendingnbls</a></strong>可能帮助。 检查使用停滞的 Oid  <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd.oid</a></strong>。</p></td>
 <td align="left"><p>该操作的时间太长。 可能值：</p>
 <ul>

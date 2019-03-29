@@ -9,12 +9,12 @@ keywords:
 - 标准 MOF 限定符 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b4d168ae82784490422b5da3199ebdbb1e75793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 86dd32e25cfe4a16e8a0c379abed235015420850
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464333"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI 属性限定符
 
@@ -67,7 +67,7 @@ ms.locfileid: "56541294"
 <td><p>指定显示的属性值的任何 WMI 客户端应该操作以十六进制格式。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>DisplayName(&quot;</strong><em>string</em><strong>&quot;)</strong></p></td>
+<td><p><strong>DisplayName("</strong><em>string</em><strong>")</strong></p></td>
 <td><p>指定 WMI 客户端可用来显示为属性名称的标题。</p></td>
 </tr>
 <tr class="odd">
@@ -84,14 +84,14 @@ ms.locfileid: "56541294"
 </tr>
 <tr class="even">
 <td><p><strong>WmiDataId(</strong><em>data-item-ID</em><strong>)</strong></p></td>
-<td><p>（必需）标识数据块中的数据项。 数据项 Id 必须分配到所需的项除外的块中的所有项<strong>InstanceName</strong>并<strong>Active</strong>。 数据项 Id 必须分配在连续系列中，从 1 开始。 项&#39;s 数据 ID 确定项的数据块，实例中的显示的顺序MOF 类定义中的项的顺序是不相关。</p></td>
+<td><p>（必需）标识数据块中的数据项。 数据项 Id 必须分配到所需的项除外的块中的所有项<strong>InstanceName</strong>并<strong>Active</strong>。 数据项 Id 必须分配在连续系列中，从 1 开始。 项的数据 ID 确定项的数据块，实例中的显示的顺序MOF 类定义中的项的顺序是不相关。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>WmiMethodId(</strong><em>method-item-ID</em><strong>)</strong></p></td>
 <td><p>标识数据块中的方法。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>WmiSizeIs(&quot;</strong><em>data-item-name</em><strong>&quot;)</strong></p></td>
+<td><p><strong>WmiSizeIs("</strong><em>data-item-name</em><strong>")</strong></p></td>
 <td><p>在此块中，该值指示在此数据项的可变长度数组中的元素数指定另一个数据项的名称。 <strong>WmiSizeIs</strong>仅对定义数组的数据项有效。</p></td>
 </tr>
 <tr class="odd">
@@ -111,12 +111,12 @@ ms.locfileid: "56541294"
 <td><p>指定时间间隔，以毫秒为单位，此数据项目的更新间隔。 例如，如果数据项更新一次每个第二个，<em>间隔</em>是 1000年。 WMI 客户端可能会检查<strong>WmiVolatility</strong>来确定经常查询的可能的新值的方式。 如果<strong>WmiVolatility</strong>省略，则<em>间隔</em>是不确定的。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>WmiEventTrigger(</strong> <strong>&quot;</strong> <em>data-item-name</em><strong>&quot;)</strong></p></td>
-<td><p>在 WMI 客户端可以设置定义该事件的触发器值的事件块中指定数据项的名称。 例如，如果使用限定事件 TooHot <strong>WmiEventTrigger</strong>(&quot;TooHotTemperature&quot;)，WMI 客户端可以设置 TooHotTemperature 以指示驱动程序发送 TooHot 事件时该设备达到 TooHotTemperature 用户指定的值。 通常一个驱动程序定义的触发器值。 通过公开<strong>WmiEventTrigger</strong>数据项，驱动程序允许客户端控制何时触发特定事件。</p></td>
+<td><p><strong>WmiEventTrigger(</strong> <strong>"</strong> <em>data-item-name</em><strong>")</strong></p></td>
+<td><p>在 WMI 客户端可以设置定义该事件的触发器值的事件块中指定数据项的名称。 例如，如果使用限定事件 TooHot <strong>WmiEventTrigger</strong>("TooHotTemperature")，WMI 客户端可以设置 TooHotTemperature 以指示驱动程序发送 TooHot 事件时设备达到用户指定的值有关 TooHotTemperature。 通常一个驱动程序定义的触发器值。 通过公开<strong>WmiEventTrigger</strong>数据项，驱动程序允许客户端控制何时触发特定事件。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>WmiEventRate(&quot;</strong><em>data-item-name</em><strong>&quot;)</strong></p></td>
-<td><p>WMI 客户端可以用来控制发送此事件的频率事件块中指定数据项的名称。 例如，如果数据项 TooHot 是用限定<strong>WmiEventRate (&quot;</strong>SendEventRate<strong>&quot;)</strong>，WMI 客户端用户可以设置 SendEventRate 以指示要发送的驱动程序在用户指定的时间间隔 TooHot。</p></td>
+<td><p><strong>WmiEventRate("</strong><em>data-item-name</em><strong>")</strong></p></td>
+<td><p>WMI 客户端可以用来控制发送此事件的频率事件块中指定数据项的名称。 例如，如果数据项 TooHot 是用限定<strong>WmiEventRate ("</strong>SendEventRate<strong>")</strong>，WMI 客户端用户可以设置 SendEventRate 以指示要在用户指定的时间间隔发送 TooHot 的驱动程序。</p></td>
 </tr>
 </tbody>
 </table>

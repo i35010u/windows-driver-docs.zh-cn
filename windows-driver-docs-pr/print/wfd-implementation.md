@@ -4,12 +4,12 @@ description: 提供有关 Wi-Fi Direct 打印实现设备要求的信息。
 ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c11f8af1dea23f2a68de08748ead4a5a1fb0e81e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9acae4bdd2577d02567bd9feb027ae9a18def63c
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548343"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464033"
 ---
 # <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 打印实现
 
@@ -141,13 +141,13 @@ Microsoft 使用供应商 ID 0x137 来表示导致浏览器由 Microsoft 拥有�
 <td><p>垂直配对标识符 （进行通信的设备内部拓扑）</p></td>
 <td><p>0x1001</p></td>
 <td><p>0x0002</p></td>
-<td><p>请参阅&quot;垂直配对标识符 TLV&quot;下面。</p></td>
+<td><p>请参阅下面的"垂直配对标识符 TLV"。</p></td>
 </tr>
 <tr class="even">
 <td><p>传输 UUID （设备的 UUID 值传输）</p></td>
 <td><p>0x1002</p></td>
 <td><p>0x0010</p></td>
-<td><p>请参阅&quot;TLV 定义容器 UUID&quot;上面。</p></td>
+<td><p>请参阅上面的"容器 UUID TLV 定义"。</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +176,7 @@ Microsoft 使用供应商 ID 0x137 来表示导致浏览器由 Microsoft 拥有�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>“传输”</th>
 </tr>
 </thead>
@@ -227,7 +227,7 @@ VPI 一来，设备使用 WPS 协议来预配设备的服务。 在这种情况�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 </thead>

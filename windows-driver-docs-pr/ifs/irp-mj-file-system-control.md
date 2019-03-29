@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a214c3f42272136e66b45e9fc48bccbc94f8e838
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 961bcb465af3150829a5e9bee1ee28b2d42ac47e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540667"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464339"
 ---
 # <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_FILE\_SYSTEM\_CONTROL
 
@@ -57,7 +57,7 @@ IRP\_MJ\_文件\_系统\_控制请求发送的 I/O 管理器和其他操作系�
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
 <td align="left"><p>指示一个 FSCTL 请求，可能是代表已调用 Microsoft Win32 DeviceIoControl 函数的用户模式应用程序或具有名为一个内核模式组件代表<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"> <strong>ZwDeviceIoControlFile</strong></a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff548318" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548318)"> <strong>IoBuildDeviceIoControlRequest</strong></a>。</p>
-<p>有关 FSCTL 请求的详细信息，请参阅&quot;设备输入和输出控制代码&quot;Microsoft Windows SDK 文档中。</p></td>
+<p>有关 FSCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的"设备输入和输出控制代码"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_VERIFY_VOLUME</p></td>
@@ -98,7 +98,7 @@ IRP\_MJ\_文件\_系统\_控制请求发送的 I/O 管理器和其他操作系�
 
 筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理文件系统控制请求的 IRP 堆栈位置中设置的信息：
@@ -166,7 +166,7 @@ IOCTL 和 FSCTL 请求有关的详细信息，请参阅[使用的 I/O 控制代�
 <a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp-&gt;Parameters.VerifyVolume.Vpb*  
 指向卷 VPB，若要进行验证。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)

@@ -12,12 +12,12 @@ keywords:
 - 错误恢复 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5f4888fde97b7c1911ed5580828637c6a20919
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 29aca46f4d488523e46fc0d387371c183c3b8389
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540789"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350160"
 ---
 # <a name="participating-in-error-recovery"></a>参与错误恢复
 
@@ -28,7 +28,7 @@ ms.locfileid: "56540789"
 
 ```cpp
 //
-// The PSHED plug-in&#39;s AttemptRecovery callback function
+// The PSHED plug-in's AttemptRecovery callback function
 //
 NTSTATUS
   AttemptRecovery(

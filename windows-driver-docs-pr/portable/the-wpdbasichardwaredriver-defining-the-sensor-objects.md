@@ -1,14 +1,14 @@
 ---
-Description: Defining the Sensor Objects
+Description: 定义传感器对象
 title: 定义传感器对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7a61abc0fa1324a82750a909d552971e675a0b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 092e2a6207fee203b9af46854db5e3031ddc852d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519760"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348781"
 ---
 # <a name="defining-the-sensor-objects"></a>定义传感器对象
 
@@ -85,7 +85,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
         {
             // We are being asked for the WPD_DEVICE_OBJECT_ID
             hr = AddStringValueToPropVariantCollection(pObjectIDCollection, WPD_DEVICE_OBJECT_ID);
-            CHECK_HR(hr, "Failed to add &#39;DEVICE&#39; object ID to enumeration collection");
+            CHECK_HR(hr, "Failed to add 'DEVICE' object ID to enumeration collection");
 
             // Update the number of children we are returning for this enumeration call
             NumObjectsEnumerated++;

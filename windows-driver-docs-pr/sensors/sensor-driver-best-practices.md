@@ -4,12 +4,12 @@ description: 传感器驱动程序的最佳做法
 ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b42d93098e1af74891a7e4a8f89bdc5545ddabe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 08bbeaf79f0cb6e91fc0ee847df4b1211c8644bc
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545903"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136110"
 ---
 # <a name="sensor-driver-best-practices"></a>传感器驱动程序的最佳做法
 
@@ -20,7 +20,7 @@ ms.locfileid: "56545903"
 
 Windows 硬件认证计划使硬件制造商以接收其设备满足所需的标准 Windows 所使用的证书。 该计划提供的要求的所有传感器和位置传感器和环境光线传感器的特定要求。 应使传感器驱动程序符合所有 Windows 硬件认证计划要求。
 
-通常情况下，此 WDK 文档中的建议匹配程序的要求。 但是，你必须创建想要提交供认证的传感器驱动程序时查看官方 Windows 硬件认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅[Windows 硬件开发人员中心](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125187)网站。
+通常情况下，此 WDK 文档中的建议匹配程序的要求。 但是，你必须创建想要提交供认证的传感器驱动程序时查看官方 Windows 硬件认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅[Windows 硬件开发人员中心](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85))网站。
 
 ## <a name="performance"></a>性能
 

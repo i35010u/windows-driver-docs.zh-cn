@@ -1,17 +1,17 @@
 ---
-title: WS 发现移动打印支持
-description: WS 发现移动打印支持
+title: WS-Discovery 移动打印支持
+description: WS-Discovery 移动打印支持
 ms.assetid: 788E2A1C-FBE9-40CD-A3EB-14A2DE266A2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70089971f168209eedfa79a3fd4507ebfe0154a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a785fcf2b460884877c39e84d93877b171bf7028
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540757"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464133"
 ---
-# <a name="ws-discovery-mobile-printing-support"></a>WS 发现移动打印支持
+# <a name="ws-discovery-mobile-printing-support"></a>WS-Discovery 移动打印支持
 
 
 支持从 Windows 10 移动版的打印设备必须将 MobilePrinter 类别添加到其 Ws-discovery ThisModel 响应，如下面的示例中所示：
@@ -91,7 +91,7 @@ ms.locfileid: "56540757"
 <tbody>
 <tr class="odd">
 <td><p>PNPX_DEVICECATEGORY_PRINTER_MOBILE</p>
-<p>L&quot;MobilePrinter&quot;</p></td>
+<p>L"MobilePrinter"</p></td>
 <td><p>MobilePrinter 类别</p>
 <p>关键字：打印机</p></td>
 </tr>

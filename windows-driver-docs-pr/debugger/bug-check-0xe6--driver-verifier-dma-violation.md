@@ -5,7 +5,7 @@ ms.assetid: badf8948-356c-4728-b34e-02f1638630a6
 keywords:
 - Bug 检查 0xE6 DRIVER_VERIFIER_DMA_VIOLATION
 - DRIVER_VERIFIER_DMA_VIOLATION
-ms.date: 05/23/2017
+ms.date: 03/14/2019
 topic_type:
 - apiref
 api_name:
@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6835e4d93d2180f6c2ba7dca5a93eb8fce257f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4e340b024b80a29c65c4e2a25ed3f75bb4c0e3ba
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524075"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58136112"
 ---
-# <a name="bug-check-0xe6-driververifierdmaviolation"></a>Bug 检查 0xE6:驱动程序\_VERIFIER\_DMA\_冲突
+# <a name="bug-check-0xe6-driververifierdmaviolation"></a>Bug 检查 0xE6：驱动程序\_VERIFIER\_DMA\_冲突
 
 
 该驱动程序\_VERIFIER\_DMA\_冲突错误检查的值为 0x000000E6。 这是所有驱动程序验证程序的 bug 检查代码**DMA 验证**冲突。
@@ -160,11 +160,40 @@ ms.locfileid: "56524075"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
-<td align="left"><p>尝试刷新映射的驱动程序注册该功能，那么&#39;t 已映射。 显示映射注册 base、 刷新地址和 MDL。</p></td>
+<td align="left"><p>尝试刷新映射寄存器的尚未映射该驱动程序。 显示映射注册 base、 刷新地址和 MDL。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x21</p></td>
 <td align="left"><p>该驱动程序尝试映射传输的长度为零的缓冲区。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x22</p></td>
+<td align="left"><p>DMA 缓冲区系统弗吉尼亚中未映射</p>
+<p>参数 2-MDL</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x23</p></td>
+<td align="left"><p>无法刷新尚未完成或取消的通道。 </p>
+<p>2-违反行为的参数。 </p>
+<p>值：0x00:非法通道刷新 </p>
+<p>   参数 3 的控制器 id。</p>
+<p>   参数 4-频道号。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x24</p></td>
+<td align="left"><p>请求的长度的缓冲区空间不足。
+<p>参数 2-未占用的长度。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x25</p></td>
+<td align="left"><p>未知的设备说明版本。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x26</p></td>
+<td align="left"><p>IOMMU 检测到 DMA 违反情况。 </p>
+<p>参数 2 的故障设备的设备对象。</p>
+<p>参数 3-在出错的信息 （通常在出错的物理地址）。</p>
+<p>参数 4-错误类型 （特定于硬件）。</p></td>
 </tr>
 </tbody>
 </table>

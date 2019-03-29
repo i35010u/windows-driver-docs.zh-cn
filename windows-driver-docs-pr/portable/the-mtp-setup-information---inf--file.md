@@ -1,14 +1,14 @@
 ---
-Description: The MTP Setup Information (.inf) File
+Description: MTP 安装程序信息 (.inf) 文件
 title: MTP 安装程序信息 (.inf) 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f2d197923bf05af4a62df9318ec5e9f1b70939b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f76f42c17479d35ea63ae846708bbf3900f3d6f6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524916"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349184"
 ---
 # <a name="the-mtp-setup-information-inf-file"></a>MTP 安装程序信息 (.inf) 文件
 
@@ -50,8 +50,8 @@ Microsoft 提供了一组类驱动程序以支持媒体传输协议 (MTP)。 如
 <ol>
 <li>注册内核模式驱动程序 (包括<em>WPDUSB.sys</em>作为低筛选器驱动程序如果要在 Windows Vista 或 Windows XP 上安装该设备)。</li>
 <li>启用默认 MTP 自动播放支持。</li>
-<li>启用旧版应用程序兼容性支持 (默认值 0xFFFFFFFF 允许 WPD 类安装程序来查询该设备&#39;s 功能)。</li>
-<li>设置传输驱动程序&#39;s 类标识符。</li>
+<li>启用旧版应用程序兼容性支持 （默认值 0xFFFFFFFF 允许 WPD 类安装程序来查询设备的功能）。</li>
+<li>设置传输驱动程序的类标识符。</li>
 </ol>
 <pre space="preserve"><code>;;[DDInstall.hw]
 ;;Include = wpdmtp.inf

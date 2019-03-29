@@ -4,12 +4,12 @@ description: 用户模式监视器
 ms.assetid: CE6CEC2C-5E8E-40aa-A5D3-0062D6F82EFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbd12a98997fda7ecc2470aed5ba61ee3d27f1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 51048cfe66858aef208bc094026869dbcadd975b
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527058"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464037"
 ---
 # <a name="user-mode-monitor"></a>用户模式监视器
 
@@ -54,7 +54,7 @@ ms.locfileid: "56527058"
 
 用户模式监视器呈现可以应用一个未列出，请更高版本的操作的事件。 下表显示了当前报告的事件，以及默认收到事件时将执行的操作的列表。
 
-| 事件                                | 默认操作 （第二次机会默认操作） |
+| Event                                | 默认操作 （第二次机会默认操作） |
 |--------------------------------------|-----------------------------------------------|
 | 创建线程                        | 忽略                                        |
 | 退出线程                          | 忽略                                        |
@@ -135,7 +135,7 @@ namespace UserModeMonitorExample
         [TestCleanup]
         public void TestCleanup()
         {
-            // Close the &#39;mspaint under test&#39; - if it&#39;s already gone, this will throw, but that&#39;s no big deal.
+            // Close the 'mspaint under test' - if it's already gone, this will throw, but that's no big deal.
             this.mspaintUnderTest.CloseMainWindow();
         }
 
@@ -144,8 +144,8 @@ namespace UserModeMonitorExample
         [TestProperty("Description", "Shows how a test can be failed if the UI is closed from underneath the test.")]
         public void SimpleInteraction()
         {
-            Log.Comment("If the &#39;user mode monitor&#39; is enabled and mspaint.exe is closed,&quot;);
-            Log.Comment(&quot;then this test will be failed.&quot;);
+            Log.Comment("If the 'user mode monitor' is enabled and mspaint.exe is closed,");
+            Log.Comment("then this test will be failed.");
             Log.Comment("Sleeping for 5 seconds");
 
             Thread.Sleep(TimeSpan.FromSeconds(5));

@@ -9,12 +9,12 @@ keywords:
 - 版本信息 WDK UMDF
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce09e41e3a19b5c6656fd49bcd865b404a2cf96f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6fe21a0fdad7986edf5857c33f488df6a9075a7c
+ms.sourcegitcommit: 5cbc8ac1db572e92abeefebb39f5e72834785bc3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555500"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56754461"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -25,18 +25,18 @@ ms.locfileid: "56555500"
 
 |UMDF 版本|Release 方法|包含在此版本的 Windows|驱动程序使用它可以在上运行|
 |--- |--- |--- |--- |
-|2.27|Windows 10，版本 1809 WDK|Windows 10，版本 1809年 (2018 年 10 月更新 Redstone 5)|Windows 10，版本 1809|
-|2.25|Windows 10，版本 1803 WDK|Windows 10，版本 1803年 (2018 年 4 月更新 Redstone 4)|Windows 10，版本 1803|
-|2.23|Windows 10 版本 1709 WDK|Windows 10 版本 1709 （Fall Creators Update，Redstone 3）|Windows 10 版本 1709|
-|2.21|Windows 10，版本 1703 WDK|Windows 10，版本 1703 （创意者更新，Redstone 2）|Windows 10，版本 1703|
+|2.27|Windows 10，版本 1809 WDK|Windows 10，版本 1809年 (2018 年 10 月更新 Redstone 5)|Windows 10，版本 1809 及更高版本|
+|2.25|Windows 10，版本 1803 WDK|Windows 10，版本 1803年 (2018 年 4 月更新 Redstone 4)|Windows 10，版本 1803 和更高版本|
+|2.23|Windows 10 版本 1709 WDK|Windows 10 版本 1709 （Fall Creators Update，Redstone 3）|Windows 10 版本 1709 及更高版本|
+|2.21|Windows 10，版本 1703 WDK|Windows 10，版本 1703 （创意者更新，Redstone 2）|Windows 10 版本 1703 及更高版本|
 |2.19|Windows 10，版本 1607 WDK|Windows 10，版本 1607 （周年更新，Redstone 1）|Windows 10，版本 1607，Windows Server 2016 及更高版本|
 |2.17|Windows 10 版本 1511 WDK|Windows 10 版本 1511 （11 月更新，阈值 2）|Windows 10，版本 1511，Windows Server 2016 及更高版本|
 |2.15|Windows 10 WDK|Windows 10 版本 1507 (阈值 1)|Windows 10，版本 1507，Windows Server 2016 及更高版本|
 |2.0|Windows 驱动程序工具包 (WDK) 8.1|Windows 8.1|Windows 8.1 及更高版本|
-|1.11|Windows 驱动程序工具包 (WDK) 8|Windows 8|Windows Vista 及更高版本|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
-|1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1)，Windows Server 2008|Windows XP 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
+|1.11|Windows 驱动程序工具包 (WDK) 8|Windows 8|Windows Vista 及更高版本|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
+|1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1)，Windows Server 2008|Windows XP 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
 
 
 可以使用 Microsoft Visual Studio 2017 中使用 Windows Driver Kit (WDK) 来构建运行 Windows 7 及更高版本的驱动程序。
@@ -45,11 +45,11 @@ ms.locfileid: "56555500"
 
 ## <a name="umdf-version-227"></a>UMDF 版本 2.27
 
-* 添加了新 API [ **WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring)
+* 添加了新 API [**WdfDriverRetrieveDriverDataDirectoryString**](/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring)
 
 ## <a name="umdf-version-225"></a>UMDF 版本 2.25
 
-* [构建用于 Windows 的多个版本的 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+* [针对多个 Windows 版本生成 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 * [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
 
 ## <a name="umdf-version-223"></a>UMDF 版本 2.23
@@ -86,7 +86,7 @@ ms.locfileid: "56555500"
 
 -   UMDF 驱动程序可以请求基础总线驱动程序重新枚举它。 请参阅[ **WdfDeviceSetFailed**](https://msdn.microsoft.com/library/windows/hardware/ff546890)。
 
--   设置**UmdfDirectHardwareAccess**指令不再始终是必需的设备的已连接资源。 请参阅[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
+-   设置**UmdfDirectHardwareAccess**指令不再始终是必需的设备的已连接资源。 请参阅[在 INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
 ## <a name="umdf-version-20"></a>UMDF 版本 2.0
 

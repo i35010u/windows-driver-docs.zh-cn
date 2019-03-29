@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: a56e05c2fb0560a71313d502f8fcf4db09bc04ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 801f794c62a429485a550f72dd53ec9c9f86caa1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523221"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349250"
 ---
 # <a name="dbgdumpfieldxxx"></a>DBG\_DUMP\_FIELD\_XXX
 
@@ -69,7 +69,7 @@ DBG\_转储\_字段\_*XXX*位标志由**fOptions**隶属[**字段\_信息** ](ht
 </tr>
 <tr class="odd">
 <td align="left"><p>DBG_DUMP_FIELD_RETURN_ADDRESS</p></td>
-<td align="left"><p>在回调过程时，或者当<strong>Ioctl</strong>返回 FIELD_INFO。<strong>地址</strong>成员包含的符号地址&#39;成员。</p>
+<td align="left"><p>在回调过程时，或者当<strong>Ioctl</strong>返回 FIELD_INFO。<strong>地址</strong>成员包含符号的成员的地址。</p>
 <p>如果为的类型，FIELD_INFO 提供任何地址。<strong>地址</strong>包含总偏移量从一开始类型的成员。</p></td>
 </tr>
 <tr class="even">
@@ -101,7 +101,7 @@ DBG\_转储\_字段\_*XXX*位标志由**fOptions**隶属[**字段\_信息** ](ht
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Wdbgexts.h （包括 Wdbgexts.h、 Wdbgexts.h 或 Dbgeng.h）</td>
 </tr>
 </tbody>

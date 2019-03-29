@@ -1,17 +1,17 @@
 ---
-title: 获取操作统计信息 （函数索引 13）
+title: 获取操作统计信息（功能索引 13）
 description: 此函数将返回跟踪 NVDIMM n。 所执行的操作的计数器
 ms.assetid: D396F42E-9B11-46D7-8D9C-FE00B4998DEC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0b10feb825a656d6323e683e802f553d5117d626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64ea77f95e832d288c8f30a60b7c3ec31f11299f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533531"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350024"
 ---
-# <a name="get-operational-statistics-function-index-13"></a>获取操作统计信息 （函数索引 13）
+# <a name="get-operational-statistics-function-index-13"></a>获取操作统计信息（功能索引 13）
 
 
 此函数将返回跟踪 NVDIMM n。 所执行的操作的计数器
@@ -86,7 +86,7 @@ ms.locfileid: "56533531"
 <td align="left"><strong>保存已完成的操作的数量</strong></td>
 <td align="left">4</td>
 <td align="left">16</td>
-<td align="left"><p>已完成保存操作的数通过 NVDIMM N 模块&#39;s 生存期。</p>
+<td align="left"><p>NVDIMM-N 模块的生存期内，保存操作完成的数。</p>
 <p><em>字节 0 – <em>NUM_SAVE_OPS_COUNT0</em> （2，0x0A）</p>
 <p></em>1 – 字节<em>NUM_SAVE_OPS_COUNT1</em> （2，0x0B）</p>
 <p>保留字节 2 –。</p>
@@ -96,7 +96,7 @@ ms.locfileid: "56533531"
 <td align="left"><strong>还原已完成的操作数</strong></td>
 <td align="left">4</td>
 <td align="left">20</td>
-<td align="left"><p>通过 NVDIMM N 模块的已完成的还原操作的数目&#39;s 生存期。</p>
+<td align="left"><p>通过 NVDIMM N 模块的生存期的已完成的还原操作的数目。</p>
 <p><em>字节 0 – <em>NUM_RESTORE_OPS_COUNT0 0</em> （2，0x0C）</p>
 <p></em>1 – 字节<em>NUM_RESTORE_OPS_COUNT1</em> （2，0x0D）</p>
 <p>保留字节 2 –。</p>
@@ -106,7 +106,7 @@ ms.locfileid: "56533531"
 <td align="left"><strong>清除已完成的操作数</strong></td>
 <td align="left">4</td>
 <td align="left">24</td>
-<td align="left"><p>通过 NVDIMM N 模块的已完成的擦除操作的数目&#39;s 生存期。</p>
+<td align="left"><p>通过 NVDIMM N 模块的生存期的已完成的擦除操作的数目。</p>
 <p><em>字节 0 – <em>NUM_ERASE_COUNTS0</em> （2，0x0E）</p>
 <p></em>1 – 字节<em>NUM_ERASE_COUNTS1</em> （2，0x0F）</p>
 <p>保留字节 2 –。</p>
@@ -116,7 +116,7 @@ ms.locfileid: "56533531"
 <td align="left"><strong>模块电源周期数</strong></td>
 <td align="left">4</td>
 <td align="left">28</td>
-<td align="left"><p>通过 NVDIMM N 模块周期 power 数&#39;s 生存期。</p>
+<td align="left"><p>NVDIMM-N 模块的生存期内周期 power 数。</p>
 <p><em>字节 0 – <em>NUM_MODULE_POWER_CYCLES0</em> （2，0x10）</p>
 <p></em>1 – 字节<em>NUM_MODULE_POWER_CYCLES1</em> （2，0x11）</p>
 <p>保留字节 2 –。</p>
@@ -127,7 +127,7 @@ ms.locfileid: "56533531"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

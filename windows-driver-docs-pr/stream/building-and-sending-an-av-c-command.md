@@ -11,12 +11,12 @@ keywords:
 - I/O WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb57f25be16697f8d6b65999e41c2d42cd4efad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4ffa2ce45d64fbc8d50b6cbb4930f0b6b2f8401b
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554893"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349348"
 ---
 # <a name="building-and-sending-an-avc-command"></a>生成和发送 AV/C 命令
 
@@ -121,7 +121,7 @@ ms.locfileid: "56554893"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>发出请求，并最终响应收到 AV/C 规范的边界内&#39;s 超时和重试参数。 子单元&#39;s 响应代码 ( <strong>ResponseCode</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>结构) 仍必须检查来确定的则返回 true 的结果操作。 STATUS_SUCCESS 指的是双向的请求和响应周期已完成中小于 100 毫秒 （假定默认超时值已改变的 100 毫秒）。</p></td>
+<td><p>发出请求，并最终响应收到的 AV/C 规范的超时和重试参数的边界内。 子单元的响应代码 ( <strong>ResponseCode</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff554140" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554140)"> <strong>AVC_COMMAND_IRB</strong> </a>结构) 仍必须检查以确定操作的结果，则返回 true。 STATUS_SUCCESS 指的是双向的请求和响应周期已完成中小于 100 毫秒 （假定默认超时值已改变的 100 毫秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -129,7 +129,7 @@ ms.locfileid: "56554893"
 </tr>
 <tr class="odd">
 <td><p>STATUS_PENDING</p></td>
-<td><p>发出请求，并收到了临时的响应。 它负责子单元驱动程序的&#39;s I/O 完成例程来处理最终响应，然后释放的 IRP 和 IRB 资源。</p></td>
+<td><p>发出请求，并收到了临时的响应。 它负责的子单元驱动程序的 I/O 完成例程来处理最终响应，然后释放的 IRP 和 IRB 资源。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
@@ -151,7 +151,7 @@ ms.locfileid: "56554893"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 </thead>

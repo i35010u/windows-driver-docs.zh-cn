@@ -8,12 +8,12 @@ keywords:
 - 网络驱动程序 WDK，IP 帮助程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db7d3f15c108b21edfe9ecd8763d4211f5709fd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ef140229d32f743fc2695d7ea6ea4716377eed9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544431"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350226"
 ---
 # <a name="ip-helper"></a>IP 帮助程序
 
@@ -177,7 +177,7 @@ IP 帮助程序文档使用术语"适配器"和"接口"广泛。 *适配器*是�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546219" data-raw-source="[&lt;strong&gt;CreateSortedAddressPairs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546219)"><strong>CreateSortedAddressPairs</strong></a></p></td>
-<td align="left"><p>对提供的主机以及目标地址列表&#39;s 本地 IP 地址，对根据通信的首选顺序对进行排序。</p></td>
+<td align="left"><p>对提供的目标地址列表以及主机的计算机的本地 IP 地址，对根据通信的首选顺序对进行排序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546227" data-raw-source="[&lt;strong&gt;CreateUnicastIpAddressEntry&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546227)"><strong>CreateUnicastIpAddressEntry</strong></a></p></td>

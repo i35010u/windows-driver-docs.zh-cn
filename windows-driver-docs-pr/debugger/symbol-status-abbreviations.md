@@ -14,12 +14,12 @@ keywords:
 - PDB （符号状态缩写）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 241e0405dd8f207749dc4e943c5ded74dbd8abab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c7aadee45618c5fddfc3641d2c049b55c719e877
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542856"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350358"
 ---
 # <a name="symbol-status-abbreviations"></a>符号状态缩写
 
@@ -67,7 +67,7 @@ ms.locfileid: "56542856"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Export</strong></p></td>
-<td align="left"><p>找到了没有实际的符号文件，因此符号信息已从二进制文件中提取&#39;s 导出表。</p></td>
+<td align="left"><p>找到了没有实际符号文件，以便从二进制文件的导出表提取符号信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>M</strong></p></td>

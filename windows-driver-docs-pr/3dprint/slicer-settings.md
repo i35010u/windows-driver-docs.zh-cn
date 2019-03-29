@@ -4,12 +4,12 @@ description: 配置文件 XML 包含大量需要特定 3D 打印机设备来控�
 ms.assetid: 9203AABB-48D9-47A6-A2B1-7A878BF82FD1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed24f5c8807b10ef5a838feb52148676af22b3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53fba2c8daaad75fe8bd354aae08588a91d39e8f
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554243"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464073"
 ---
 # <a name="slicer-settings"></a>切片器设置
 
@@ -87,7 +87,7 @@ ms.locfileid: "56554243"
 <p>psk3d:Material&lt;Material&gt;\ </p>
 <p>psk:MaterialType</p></td>
 <td><p>保留</p></td>
-<td><p>材料，3D 打印的打印架构关键字中定义的类型 (例如， &quot;psk3d:PLA&quot;)。 支持指定的名称和颜色的泛型材料已弃用此设置。</p></td>
+<td><p>材料，打印架构关键字用于 3D 打印 (例如，"psk3d:PLA") 中定义的类型。 支持指定的名称和颜色的泛型材料已弃用此设置。</p></td>
 </tr>
 
 <tr>
@@ -161,7 +161,7 @@ ms.locfileid: "56554243"
 <tr>
 <td><p>psk3dx:customStatus</p></td>
 <td><p>可选</p></td>
-<td><p>表示初始打印作业状态，通常在切片阶段的字符串。 如果缺失，作业状态将设置为&quot;打印&quot;。 通常，此值应设置为&quot;Slicing&quot;切片中发生时呈现的筛选器，例如，使用 Microsoft 切片器时。</p></td>
+<td><p>表示初始打印作业状态，通常在切片阶段的字符串。 如果缺失，作业状态将设置为"打印"。 通常此值应设置为"Slicing"时进行切片发生在呈现器的筛选器，例如，使用 Microsoft 切片器时。</p></td>
 </tr>
 
 <tr>
@@ -178,7 +178,7 @@ ms.locfileid: "56554243"
 <td><p>可选</p></td>
 <td><p>当存在时，此设置将启用驱动程序调试日志记录到文件中，允许开发人员检查 G 代码，并使用固件响应。</p>
 <p>此设置可以还启用全局通过注册表项 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print</p>
-<p>StandardGCodeDebugLog=&quot;c:\Path\To\LogFile&quot;</p></td>
+<p>StandardGCodeDebugLog="c:\Path\To\LogFile"</p></td>
 </tr>
 
 <tr>
@@ -250,7 +250,7 @@ ms.locfileid: "56554243"
 <p>psk3dx:postcommands\ </p>
 <p>psk3dx:command</p></td>
 <td><p>是</p></td>
-<td><p>组 G 代码命令发送的每个作业结束时通常以使 3D 打印机的安全状态，如下 extruder 冷却和将离开热 extruder/结束部分移到其中它&#39;可以轻松地从平台删除。 每个设备都有不同所需的后命令。</p>
+<td><p>组 G 代码命令发送的每个作业结束时通常以使 3D 打印机保持安全状态，如散热下 extruder 和将离开热 extruder/部分移到其中很容易地从平台删除结束。 每个设备都有不同所需的后命令。</p>
 <p>取消作业时，也会执行此序列。</p></td>
 </tr>
 
@@ -260,7 +260,7 @@ ms.locfileid: "56554243"
 <p>psk3dx:failsafepostcommands\ </p>
 <p>psk3dx:command</p></td>
 <td><p>可选</p></td>
-<td><p>G 代码命令为切片器出错时失败安全机制，例如，发送一组。 如果缺少，该驱动程序将执行&quot;M110 N0&quot;跟&quot;M104 S0&quot;。</p></td>
+<td><p>G 代码命令为切片器出错时失败安全机制，例如，发送一组。 如果缺少，该驱动程序将执行"M104 S0"后跟"M110 N0"。</p></td>
 </tr>
 
 <tr>
@@ -596,18 +596,18 @@ ms.locfileid: "56554243"
 <tr>
 <td><p>$rampup $</p></td>
 <td><p>这是一个变量可以是 0..255 和 Z 轴会随着和控制的&lt;psk3dx:rampuptarget&gt;中切片器质量设置。</p>
-<p>例如命令&quot;M106 S rampup$&quot;开启风扇逐渐 Z 轴增加时。 如果&lt;psk3dx:rampuptarget&gt;设置为 500 微米，变量的值是第一层上的 0 和 255 之间后的层是 500 微米或更高。</p>
+<p>例如命令"M106 S rampup$"开启风扇逐渐 Z 轴增加时。 如果&lt;psk3dx:rampuptarget&gt;设置为 500 微米，变量的值是第一层上的 0 和 255 之间后的层是 500 微米或更高。</p>
 <p>此变量用于更好地打印 adhesion 上引起热烈打印 beds 的支持，但可在任何命令。</p></td>
 </tr>
 
 <tr>
 <td><p>;?ack=&lt;pattern&gt;</p></td>
-<td><p>此设置会指示要更改默认命令确认模式 （打印机响应） 的驱动程序&#39;确定&#39;为临时的例如&quot;;？ack = 写入到文件&quot;会告知驱动程序要等待的打印机已准备好写入到的内部存储一条确认消息。</p></td>
+<td><p>此设置会指示驱动程序，若要更改命令确认模式 （打印机响应） 从默认的确定为临时的例如";？ack = 写入到文件"将告知驱动程序要等待的打印机已准备好写入到的内部存储一条确认消息。</p></td>
 </tr>
 
 <tr>
 <td><p>;?err=&lt;pattern&gt;</p></td>
-<td><p>此设置会指示要为默认值此外寻找打印机响应中的其他错误模式的驱动程序&#39;错误&#39;。 例如";？err = 打开失败"将告知驱动程序失败 （在本例中的硬件会返回此响应，如果未初始化内部的 SD 卡存储或完全） 是否收到此类响应。</p></td>
+<td><p>此设置会指示要查找有关在打印机响应中，除了默认 error 模式的其他错误的驱动程序。 例如";？err = 打开失败"将告知驱动程序失败 （在本例中的硬件会返回此响应，如果未初始化内部的 SD 卡存储或完全） 是否收到此类响应。</p></td>
 </tr>
 
 <tr>

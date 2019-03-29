@@ -1,6 +1,6 @@
 ---
-title: UVC 1.0 和 1.1 UVC 之间的差异
-description: UVC 1.0 和 1.1 UVC 之间的差异
+title: UVC 1.0 与 UVC 1.1 之间的差异
+description: UVC 1.0 与 UVC 1.1 之间的差异
 ms.assetid: 5199fc4f-7bc2-4edb-bb52-cd2028756f64
 keywords:
 - USB 视频类驱动程序 WDK AVStream，版本差异
@@ -9,14 +9,14 @@ keywords:
 - UVC 驱动程序 WDK AVStream UVC 1.0 和 UVC 1.1 之间的差异
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8113d17cc94d9464d63da905122cf10f0c03df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a9aa4b8b9235a9522a1d4e985ef7a5d5176dfda
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540970"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464186"
 ---
-# <a name="differences-between-uvc-10-and-uvc-11"></a>UVC 1.0 和 1.1 UVC 之间的差异
+# <a name="differences-between-uvc-10-and-uvc-11"></a>UVC 1.0 与 UVC 1.1 之间的差异
 
 
 在设计符合 UVC 的硬件，以使用 Windows 7 或更早版本的 Windows 时，您必须决定之间支持 UVC 1.0 和 1.1 版。
@@ -75,7 +75,7 @@ ms.locfileid: "56540970"
 <td><p>change</p></td>
 <td><p>特定于类的 VS 接口输入标头</p></td>
 <td><p><strong>bmaControls(n)</strong></p></td>
-<td><p>1.1 将使用某些以不同的方式在这些位&quot;探测并提交&quot;</p></td>
+<td><p>1.1 使用这些位的一些以不同的方式中"探测并提交"</p></td>
 </tr>
 <tr class="even">
 <td><p>change</p></td>

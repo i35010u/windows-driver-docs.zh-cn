@@ -1,17 +1,17 @@
 ---
-title: 自定义调试器使用 DML 的输出
+title: 使用 DML 自定义调试器输出
 description: 调试器标记语言 (DML) 提供了一种机制增强来自调试器和扩展的输出。
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d01459dac3dc448cc30273d9cbcc27b8b161d6a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a734a7c41b28019e0b59fe63ba4a5120e9ed1527
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521237"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464163"
 ---
-# <a name="customizing-debugger-output-using-dml"></a>自定义调试器使用 DML 的输出
+# <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 
 
 调试器标记语言 (DML) 提供了一种机制增强来自调试器和扩展的输出。 与 HTML 类似，调试器的标记支持允许将输出包括显示指令和额外非显示的标记窗体中的信息。 调试器用户界面，WinDbg 等中分析出提供在 DML 来增强所显示的信息，并提供新行为，如网格显示和排序的额外信息。 本主题介绍如何自定义使用 DML 您调试输出。 有关启用和使用中的 DML 的常规信息的调试器，请参阅[使用调试器标记语言](debugger-markup-language-commands.md)。
@@ -48,14 +48,14 @@ DML 不是可扩展的;所有标记是预定义的并验证，以跨所有现有
 
 **特殊字符**
 
-DML 内容大致遵循特殊字符的 XML/HTML 的规则。 字符 &、 &lt;，&gt;和"很特殊，不能使用以纯文本。 等效的转义字符的版本为 &、 &lt;，&gt;和&quot;。 例如此文本：
+DML 内容大致遵循特殊字符的 XML/HTML 的规则。 字符 &、 &lt;，&gt;和"很特殊，不能使用以纯文本。 等效的转义字符的版本为 &、 &lt;，&gt;和"。 例如此文本：
 
 "Alice 和 Bob 想 3 &lt; 4"
 
 将转换为以下 dml。
 
 ```text
-&quot;Alice & Bob think 3 &lt 4&quot;
+"Alice & Bob think 3 &lt 4"
 ```
 
 **C 编程语言格式设置字符**
@@ -241,49 +241,49 @@ Exec 标记类似于是链接标记中的说明性文本应显示为可单击的
 <td align="left"><p>wbg-Windows 背景</p>
 <p>wfg-Windows 前景色</p></td>
 <td align="left">默认窗口前景色和背景颜色。 默认为窗口和窗口文本的系统颜色。
-<p>&lt;col fg =&quot;wfg&quot; bg =&quot;wbg&quot; &gt;这是标准的前景 / 背景文本&lt;/col&gt;</p></td>
+<p>&lt;col fg ="wfg"bg ="wbg"&gt;这是标准的前景 / 背景文本&lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>clbg 的当前行的前景色</p>
 <p>clfg 的当前行背景</p></td>
 <td align="left">当前行背景和前景颜色。 默认为突出显示的系统颜色和突出显示文本。
-<p>&lt;col fg=&quot;clfg&quot; bg=&quot;clbg&quot;&gt; Test Text - Current Line&lt;/col&gt;</p></td>
+<p>&lt;col fg="clfg" bg="clbg"&gt; Test Text - Current Line&lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>empbg 的重要背景</p>
 <p>emphfg-重要的前景色</p></td>
 <td align="left">加粗的文本。 默认为浅蓝色。
-<p>&lt;col fg =&quot;empfg&quot; bg =&quot;empbg&quot; &gt;这是强调前景 / 背景文本&lt;/col&gt;</p></td>
+<p>&lt;col fg ="empfg"bg ="empbg"&gt;这是强调前景 / 背景文本&lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>subbg-Subdued 背景</p>
 <p>subfg Subdued 前景色</p></td>
 <td align="left">Subdued 的文本。 默认为非活动标题文本和非活动状态的隐藏式字幕的系统颜色。
-<p>&lt;col fg =&quot;subfg&quot; bg =&quot;subbg&quot; &gt;这是 subdued 的前景 / 背景文本&lt;/col&gt;</p></td>
+<p>&lt;col fg ="subfg"bg ="subbg"&gt;这是 subdued 的前景 / 背景文本&lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>normbg 的正常后台</p>
 <p>normfg-正常的前景色</p></td>
 <td align="left">正常
-<p>&lt;col fg =&quot;normfg&quot; bg =&quot;normbg&quot; &gt;测试文本-正常 (normfg / normbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg ="normfg"bg ="normbg"&gt;测试文本-正常 (normfg / normbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>warnbg-警告背景</p>
 <p>warnfg-警告前景色</p></td>
 <td align="left">警告
-<p>&lt;col fg =&quot;warnfg&quot; bg =&quot;warnbg&quot; &gt;测试文本-警告 (warnfg / warnbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg ="warnfg"bg ="warnbg"&gt;测试文本-警告 (warnfg / warnbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>errbg-错误背景</p>
 <p>errfg-错误前景色</p></td>
 <td align="left">错误
-<p>&lt;col fg =&quot;errfg&quot; bg =&quot;errbg&quot; &gt;测试文本的错误 (errfg / errbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg ="errfg"bg ="errbg"&gt;测试文本的错误 (errfg / errbg) &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>verbbg-Verbose 背景</p>
 <p>verbfg-Verbose 前景色</p></td>
 <td align="left">Verbose
-<p>&lt;col fg =&quot;verbfg&quot; bg =&quot;verbbg&quot; &gt;测试文本-Verbose (verbfg / verbbg) &lt;/col&gt;</p></td>
+<p>&lt;col fg ="verbfg"bg ="verbbg"&gt;测试文本-Verbose (verbfg / verbbg) &lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,48 +301,48 @@ Exec 标记类似于是链接标记中的说明性文本应显示为可单击的
 <tr class="odd">
 <td align="left"><p>srcnum-源数值常量</p></td>
 <td align="left">源元素的颜色。
-<p>&lt;col fg=&quot;srcnum&quot; bg=&quot;wbg&quot;&gt; Test Text - srcnum &lt;/col&gt;</p></td>
+<p>&lt;col fg="srcnum" bg="wbg"&gt; Test Text - srcnum &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcchar-源字符常量</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcchar&quot; bg=&quot;wbg&quot;&gt; Test Text - srcchar &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcchar" bg="wbg"&gt; Test Text - srcchar &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcstr-源字符串常量</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcstr&quot; bg=&quot;wbg&quot;&gt; Test Text - srcstr &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcstr" bg="wbg"&gt; Test Text - srcstr &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcid-源标识符</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcid &quot; bg=&quot;wbg&quot;&gt; Test Text - srcid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcid " bg="wbg"&gt; Test Text - srcid &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srckw 关键字</p></td>
-<td align="left"><p>&lt;col fg=&quot;srckw&quot; bg=&quot;wbg&quot;&gt; Test Text - srckw &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srckw"bg ="wbg"&gt;测试文本-srckw &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcpair-源大括号或匹配的符号对</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcpair&quot; bg=&quot;empbbg&quot;&gt; Test Text - srcpair &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcpair" bg="empbbg"&gt; Test Text - srcpair &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srccmnt-源注释</p></td>
-<td align="left"><p>&lt;col fg=&quot;srccmnt&quot; bg=&quot;wbg&quot;&gt; Test Text - srccmnt &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg ="srccmnt"bg ="wbg"&gt;测试文本-srccmnt &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcdrct-源指令</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcdrct&quot; bg=&quot;wbg&quot;&gt; Test Text - srcdrct &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcdrct" bg="wbg"&gt; Test Text - srcdrct &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcspid-源特殊标识符</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcspid&quot; bg=&quot;wbg&quot;&gt; Test Text - srcspid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcspid" bg="wbg"&gt; Test Text - srcspid &lt;/col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcannot-源批注</p></td>
-<td align="left"><p>&lt;col fg=&quot;srcannot&quot; bg=&quot;wbg&quot;&gt; Test Text - srcannot &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg="srcannot" bg="wbg"&gt; Test Text - srcannot &lt;/col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>更改-更改的数据</p></td>
 <td align="left">用于自以前的停止点，例如在 WinDbg 中已更改注册以来已更改的数据。 默认值为红色。
-<p>&lt;col fg =&quot;更改&quot;bg =&quot;wbg&quot; &gt;测试文本-更改&lt;/col&gt;</p></td>
+<p>&lt;col fg ="更改"bg ="wbg"&gt;测试文本-更改&lt;/col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -554,7 +554,7 @@ DML/NORMAL Y{T}: "Hello <World>"
 DML/NORMAL Y{s}: Hello <World>
 DML/NORMAL Y{S}: Hello <World>
 TEXT/NORMAL Y{t}: "Hello <World>"
-TEXT/NORMAL Y{T}: &quot;Hello &lt;World&gt;&quot;
+TEXT/NORMAL Y{T}: "Hello &lt;World&gt;"
 TEXT/NORMAL Y{s}: Hello <World>
 TEXT/NORMAL Y{S}: Hello &lt;World&gt;
 DML/NORMAL Y{a}: 00007ffa`7da163c0
@@ -630,7 +630,7 @@ IDebugOutputCallbacks2 允许 dbgeng 接口客户端接收完整的演示文稿�
 
 Dbgeng 自动将纯文本和 DML 之间根据需要转换。 例如，如果调用方将发送 DML 内容到引擎引擎会将其转换为纯文本的所有输出客户端仅接受纯文本。 或者，该引擎将所有输出回调仅接受 DML，将纯文本都转换为 DML。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用调试器标记语言](debugger-markup-language-commands.md)

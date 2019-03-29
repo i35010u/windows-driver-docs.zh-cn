@@ -4,12 +4,12 @@ description: MB 微型端口驱动程序类型
 ms.assetid: ec1743a1-4c5e-4960-b352-40fc5b9c016a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b04ca2b41db2a27d5af2eba8bfedbcabe43fbbff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d211d9601932917cd491dcb09c46416161997704
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544409"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463821"
 ---
 # <a name="mb-miniport-driver-types"></a>MB 微型端口驱动程序类型
 
@@ -91,11 +91,11 @@ ms.locfileid: "56544409"
 </tr>
 <tr class="even">
 <td align="left"><p>UpperRange</p></td>
-<td align="left"><p>&quot;flpp4&quot;并&quot;flpp6&quot; （如果 IPv6 支持）</p></td>
+<td align="left"><p>"flpp4"和"flpp6"（如果支持 IPv6）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>LowerRange</p></td>
-<td align="left"><p>&quot;ppip&quot;</p></td>
+<td align="left"><p>"ppip"</p></td>
 </tr>
 </tbody>
 </table>

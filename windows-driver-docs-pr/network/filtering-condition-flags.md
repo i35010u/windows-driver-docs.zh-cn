@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5116fea6a204bd53ea45a30361bdfd01f1f3161
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1ad23cac352db91acafb9a1526b3897c7e3ed591
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463955"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -310,7 +310,7 @@ ms.locfileid: "56523485"
 <p>0x00010000</p>
 </td>
 <td>
-<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有匹配的连接&quot;允许安全连接&quot;选项会将此标志设置的防火墙规则。 有关详细信息，请参阅<a href="https://technet.microsoft.com/library/cc753463">如何启用身份验证的防火墙旁路</a>。</p>
+<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有匹配的"允许连接，如果它是安全的"防火墙规则选项的连接会设置此标志。 有关详细信息，请参阅<a href="https://technet.microsoft.com/library/cc753463">如何启用身份验证的防火墙旁路</a>。</p>
 <p>此标志，还适用于 Windows Server 2008、 Windows Vista SP1 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>
@@ -353,7 +353,7 @@ ms.locfileid: "56523485"
 <p>0x00040000</p>
 </td>
 <td>
-<p>指示数据包是弱主机发送，这意味着它并不是&#39;t 离开此网络接口，并因此必须转发到另一个接口。</p>
+<p>指示数据包是弱主机发送，这意味着它不离开此网络接口，因此必须转发到另一个接口。</p>
 <p>此标志是适用于 Windows Server 2008 R2、 Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_IPFORWARD_V4</dd>
 <dd>FWPM_LAYER_IPFORWARD_V6</dd>
@@ -369,7 +369,7 @@ ms.locfileid: "56523485"
 <p>0x00080000</p>
 </td>
 <td>
-<p>指示数据包是弱主机接收，这意味着它并不是&#39;t 去往接收的网络接口，因此必须转发到另一个接口。</p>
+<p>指示数据包是弱主机接收，这意味着它不去往接收的网络接口，因此必须转发到另一个接口。</p>
 <p>此标志是适用于 Windows Server 2008 R2、 Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_IPFORWARD_V4</dd>
 <dd>FWPM_LAYER_IPFORWARD_V6</dd>

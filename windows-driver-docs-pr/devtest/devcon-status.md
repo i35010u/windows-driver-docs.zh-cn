@@ -1,5 +1,5 @@
 ---
-title: DevCon 状态
+title: DevCon Status
 description: 显示计算机上的设备驱动程序的状态 （正在运行、 已停止或已禁用）。 在本地和远程计算机上有效。
 ms.assetid: 97da6df4-ad93-440a-9136-13f2b79cbe9c
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f8ebac9d90d2632c5fe1bffea37f684151d83c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fc953b6321d7ab703d139dfb8926d213fab39866
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540398"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349682"
 ---
-# <a name="devcon-status"></a>DevCon 状态
+# <a name="devcon-status"></a>DevCon Status
 
 
 显示计算机上的设备驱动程序的状态 （正在运行、 已停止或已禁用）。 在本地和远程计算机上有效。
@@ -67,9 +67,9 @@ ms.locfileid: "56540398"
 <td align="left"><p>例如，指示设备实例 ID <strong><xref href="ROOT\FTDISK\0000" data-throw-if-not-resolved="False" data-raw-source="@ROOT\FTDISK\0000"></xref></strong>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>&#39;</strong></p>
+<td align="left"><p><strong>'</strong></p>
 <p>（单引号）</p></td>
-<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上 <strong>&#39;* PNP0600</strong>，其中 * PNP0600 （包括星号） 是硬件 id。</p></td>
+<td align="left"><p>按原义的字符串匹配 （严格按其显示）。 使用单引号以指示星号是 ID 名称的一部分，不是通配符，例如，字符串前加上<strong>' * PNP0600</strong>，其中 * PNP0600 （包括星号） 是硬件 id。</p></td>
 </tr>
 </tbody>
 </table>

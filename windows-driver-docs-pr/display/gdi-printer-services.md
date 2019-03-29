@@ -9,12 +9,12 @@ keywords:
 - 打印机服务 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 833086607f4c27b065f2ac5742613522e05ffc3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d604ec0aea2afee21c48d75005344dd68775fec7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543806"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349868"
 ---
 # <a name="gdi-printer-services"></a>GDI 打印机服务
 
@@ -54,7 +54,7 @@ GDI 提供了大量的打印机驱动程序编写人员感兴趣的服务。 下
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564951" data-raw-source="[&lt;strong&gt;EngGetPrinterDataFileName&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564951)"><strong>EngGetPrinterDataFileName</strong></a></p></td>
-<td align="left"><p>检索打印机的字符串名称&#39;s 数据文件。</p></td>
+<td align="left"><p>检索打印机的数据文件的字符串名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564954" data-raw-source="[&lt;strong&gt;EngGetPrinterDriver&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564954)"><strong>EngGetPrinterDriver</strong></a></p></td>

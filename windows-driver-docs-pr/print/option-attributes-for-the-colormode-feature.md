@@ -1,19 +1,19 @@
 ---
-title: ColorMode 功能的选项属性
-description: ColorMode 功能的选项属性
+title: 色彩模式功能的选项属性
+description: 色彩模式功能的选项属性
 ms.assetid: e6f68a50-f044-406e-b92c-8449d126bceb
 keywords:
 - ColorMode 功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bb2fff887edf7fc21eabfa111b448b16cf954dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463857"
 ---
-# <a name="option-attributes-for-the-colormode-feature"></a>ColorMode 功能的选项属性
+# <a name="option-attributes-for-the-colormode-feature"></a>色彩模式功能的选项属性
 
 
 
@@ -61,12 +61,12 @@ ms.locfileid: "56547497"
 <tr class="odd">
 <td><p></em><strong>DrvBPP</strong></p></td>
 <td><p>数字值，该值指示每个像素 Unidrv 应为其位图呈现缓冲区使用的比特数。 位图格式是 Windows <a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-device-independent-bitmap--dib-" data-raw-source="&lt;em&gt;device-independent bitmap (DIB)&lt;/em&gt;"><em>与设备无关位图 (DIB)</em></a>，和有效的值为 1、 4、 8、 16、 24、 或 32。</p></td>
-<td><p>可选。 如果未指定，默认值为 1。 (对于彩色打印机的值为 1 被称为&quot;平面模式&quot;。)</p>
+<td><p>可选。 如果未指定，默认值为 1。 （有关彩色打印机的值为 1 被称为"平面模式"。）</p>
 <p>Windows Dib 始终使用一个颜色平面。</p></td>
 </tr>
 <tr class="even">
 <td><p><em><strong>IPCallbackID</strong></p></td>
-<td><p>传递给呈现插件的正数值的值&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>方法作为其<strong>IPCallbackID</strong>参数。</p></td>
+<td><p>传递给呈现插件的正数值的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff554261" data-raw-source="[&lt;strong&gt;IPrintOemUni::ImageProcessing&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554261)"> <strong>IPrintOemUni::ImageProcessing</strong> </a>方法作为其<strong>IPCallbackID</strong>参数。</p></td>
 <td><p>需要<a href="rendering-plug-ins.md" data-raw-source="[rendering plug-in](rendering-plug-ins.md)">呈现插件</a>提供，其中包含<strong>IPrintOemUni::ImageProcessing</strong>方法。</p></td>
 </tr>
 <tr class="odd">

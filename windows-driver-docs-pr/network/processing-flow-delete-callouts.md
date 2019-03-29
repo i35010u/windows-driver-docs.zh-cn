@@ -9,12 +9,12 @@ keywords:
 - flowDeleteFn
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbc5ecb92c479723d6f39a3ae3df407c7d64becb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dc130d5246f663238fd1a65aa94811b1b190c159
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542804"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348591"
 ---
 # <a name="processing-flow-delete-callouts"></a>处理流删除标注
 
@@ -29,7 +29,7 @@ typedef struct FLOW_CONTEXT_ {
   ...
 } FLOW_CONTEXT, *PFLOW_CONTEXT;
 
-#define FLOW_CONTEXT_POOL_TAG &#39;fcpt&#39;
+#define FLOW_CONTEXT_POOL_TAG 'fcpt'
 
 // flowDeleteFn callout function
 VOID NTAPI

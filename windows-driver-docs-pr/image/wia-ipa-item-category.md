@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cde5c3045657ecffcf66131e8b5693665ff6061b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 87869a9f37bb50b1ff3688ae0b92f946c7b0fb67
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545141"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349206"
 ---
 # <a name="wiaipaitemcategory"></a>WIA\_IPA\_项\_类别
 
@@ -282,7 +282,7 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 <td><p>WIA_CATEGORY_FLATBED</p></td>
 <td><p>属性包括平板扫描仪控件。</p>
 <p>通常包含特定于图像的和特定于文档的属性。</p></td>
-<td><p>WIA 平板项，包括表示正在扫描在扫描仪的区域的子项目&#39;s 平板辊。</p></td>
+<td><p>WIA 平板项，包括表示正在扫描在扫描程序的平板辊区域的子项。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_CATEGORY_FOLDER</p></td>
@@ -297,7 +297,7 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 <tr class="odd">
 <td><p>WIA_CATEGORY_AUTO</p></td>
 <td><p>属性包括用于自动配置扫描。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff552744" data-raw-source="[WIA Properties Supported by an Auto Item](https://msdn.microsoft.com/library/windows/hardware/ff552744)">WIA 属性支持的自动项</a>。</p></td>
-<td><p>表示扫描程序的 WIA 自动项&#39;s 自动配置的扫描设置。</p></td>
+<td><p>表示的扫描程序扫描设置自动配置 WIA 自动项。</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,13 +318,13 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPA\_ITEM\_FLAGS**](wia-ipa-item-flags.md)

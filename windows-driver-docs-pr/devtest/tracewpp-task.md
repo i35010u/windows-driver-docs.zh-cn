@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 提供 TraceWPP 任务，以便在生成�
 ms.assetid: 74CE1912-8D1D-417E-8B29-36B2AB0253EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5c57fda2efcea68d68adae2e8c3f3272eae2da6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 908b3fe9a66ae0b216d6c1c4f8312d0e19f4189a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541041"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350284"
 ---
 # <a name="tracewpp-task"></a>TraceWPP 任务
 
@@ -116,7 +116,7 @@ tracewpp.exe  dll test2.c
 </tr>
 <tr class="odd">
 <td align="left"><strong>AddControlGUID</strong>
-<p>可选的字符串参数。 具有指定的控件的 GUID 和 WPP_DEFINE_BIT 条目名为定义 WPP_CONTROL_GUIDS 宏&#39;错误&#39;，&#39;异常&#39;，和&#39;干扰&#39;。</p></td>
+<p>可选的字符串参数。 定义指定控件的 GUID 的 WPP_CONTROL_GUIDS 宏和 WPP_DEFINE_BIT 条目名为 Error、 异常和噪声。</p></td>
 <td align="left">%(TraceWpp.WppAddControlGUID)</td>
 <td align="left"><strong>-ctl:</strong><em>GUID</em></td>
 </tr>
@@ -146,7 +146,7 @@ tracewpp.exe  dll test2.c
 </tr>
 <tr class="even">
 <td align="left"><strong>IgnoreExclamationmarks</strong>
-<p>可选布尔参数。 指示 WPP 忽略感叹号，也称为&#39;shrieks，&#39;中复杂的格式，如 %使用 ！ 时间戳 ！ %。</p></td>
+<p>可选布尔参数。 指示 WPP 忽略感叹号，也称为 shrieks，使用在复杂的格式，如 %！ 时间戳 ！ %。</p></td>
 <td align="left">%(TraceWpp.WppIgnoreExclamationmarks)</td>
 <td align="left"><strong>-noshrieks</strong></td>
 </tr>
@@ -215,7 +215,7 @@ tracewpp.exe  dll test2.c
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WPP 预处理器](wpp-preprocessor.md)

@@ -4,14 +4,14 @@ description: 安装 SymProxy
 ms.assetid: 63633de7-d254-415d-bf06-c0e81bd03e74
 keywords:
 - SymProxy 安装
-ms.date: 01/03/2019
+ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fab2a9a40a858b4ff1e8820f5a31acaf06960b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 378343416a1cc61c49b4353a97794154ccd58f0e
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522786"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909198"
 ---
 # <a name="installing-symproxy"></a>安装 SymProxy
 
@@ -39,6 +39,8 @@ SymProxy 文件包含在 Windows 驱动程序工具包调试器目录中。 例�
 若要在服务器上安装 SymProxy，复制 symproxy.dll、 symsrv.dll 和 symproxy.man 到 %WINDIR%\\system32\\inetsrv。
 
 为了防止访问 Microsoft 符号存储区中可能会出现的问题，创建空白文件，名为 %WINDIR%\\system32\\inetsrv\\symsrv.yes。 此文件的内容并不重要。 当存在 symsrv.yes 文件时，它会自动接受 EULA 以供 Microsoft 公共符号存储区。
+
+请注意，通常情况下随一起安装的 IIS 和 Windows server 如"Baltimore CyberTrust Root"用于对上游提供程序的 HTTPS/TLS 通信，它们必须位于受信任的根证书存储 SymProxy 的计算机上正在运行。 有关 SSL 问题疑难解答的一般信息，请参阅[故障排除 SSL 相关问题 （服务器证书）](https://docs.microsoft.com/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)。
 
  
 

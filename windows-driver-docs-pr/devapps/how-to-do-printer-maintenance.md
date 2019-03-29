@@ -4,12 +4,12 @@ description: 在 Windows 8.1 UWP 设备应用程序可以执行打印机维护�
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33357edbdf1213c5fc4e18e046d7922326c4b4aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 20471a126d170cfbc779250a4d2dc6af3bf1d765
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548026"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349650"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何执行 UWP 设备应用中的打印机维护
 
@@ -31,7 +31,7 @@ Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备�
 
  
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 开始之前：
@@ -46,7 +46,7 @@ Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备�
 
      
 
-## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>步骤 1:准备 Bidi 请求
+## <a name="span-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanspan-idstep1preparebidirequestspanstep-1-prepare-bidi-request"></a><span id="Step_1__Prepare_Bidi_request"></span><span id="step_1__prepare_bidi_request"></span><span id="STEP_1__PREPARE_BIDI_REQUEST"></span>步骤 1：准备 Bidi 请求
 
 
 设备维护接口需要 Bidi 请求是 XML 数据形式的字符串。 适当的时候应用程序中，您可以构建 Bidi 请求。 例如，无法将 Bidi 请求另存为字符串常量或动态创建它们根据用户输入。 [打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例恰好构造中的默认请求`OnNavigatedTo`方法。 Bidi 的详细信息，请参阅[的双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)。
@@ -56,13 +56,13 @@ Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备�
 ```CSharp
 string defaultBidiQuery =
     "<bidi:Set xmlns:bidi=\"http://schemas.microsoft.com/windows/2005/03/printing/bidi\">\r\n" +
-    "    <Query schema=&#39;\\Printer.Maintenance:CleanHead&#39;>\r\n" +
+    "    <Query schema='\\Printer.Maintenance:CleanHead'>\r\n" +
     "        <BIDI_BOOL>false</BIDI_BOOL>\r\n" +
     "    </Query>\r\n" +
     "</bidi:Set>";
 ```
 
-## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>步骤 2:查找打印机
+## <a name="span-idstep2findprinterspanspan-idstep2findprinterspanspan-idstep2findprinterspanstep-2-find-printer"></a><span id="Step_2__Find_printer"></span><span id="step_2__find_printer"></span><span id="STEP_2__FIND_PRINTER"></span>步骤 2：查找打印机
 
 
 您的应用程序可以将命令发送到打印机之前，它首先必须找到打印机。 若要执行此操作，[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例包含一个名为的方便类`PrinterEnumeration`(在**PrinterEnumeration.cs**文件)。 此类查找与您的应用程序通过设备元数据相关联的所有打印机并返回一系列`PrinterInfo`对象，包含为每个打印机的设备 Id 和名称。
@@ -76,7 +76,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
     {
         rootPage.NotifyUser("Enumerating printers. Please wait", NotifyType.StatusMessage);
 
-        // Retrieve the running app&#39;s package family name, and enumerate associated printers.
+        // Retrieve the running app's package family name, and enumerate associated printers.
         string currentPackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 
         // Enumerate associated printers.
@@ -106,7 +106,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 
  
 
-## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>步骤 3:发送 Bidi 请求
+## <a name="span-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanspan-idstep3sendbidirequestspanstep-3-send-bidi-request"></a><span id="Step_3__Send_Bidi_request"></span><span id="step_3__send_bidi_request"></span><span id="STEP_3__SEND_BIDI_REQUEST"></span>步骤 3：发送 Bidi 请求
 
 
 若要发送 Bidi 请求，则设备维护接口要求在 Bidi 字符串和一个回调。 在中`SendBidiRequest_Click`方法，该示例首先使用`PrinterInfo`对象来创建一个名为打印机扩展上下文对象`context`。 然后`PrinterBidiSetRequestCallback`创建对象，并添加事件处理程序以处理回调的`OnBidiResponseReceived`事件。 最后，打印机扩展上下文的`SendBidiSetRequestAsync`方法用于发送 Bidi 字符串和回调。
@@ -125,10 +125,10 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
         Object comComtext = Windows.Devices.Printers.Extensions.PrintExtensionContext.FromDeviceId(queue.DeviceId);
         PrinterExtensionContext context = new PrinterExtensionContext(comComtext);
 
-        // Create an instance of the callback object, and perform an asynchronous &#39;bidi set&#39; operation.
+        // Create an instance of the callback object, and perform an asynchronous 'bidi set' operation.
         PrinterBidiSetRequestCallback callback = new PrinterBidiSetRequestCallback();
 
-        // Add an event handler to the callback object&#39;s OnBidiResponseReceived event.
+        // Add an event handler to the callback object's OnBidiResponseReceived event.
         // The event handler will be invoked once the Bidi response is received.
         callback.OnBidiResponseReceived += OnBidiResponseReceived;
 
@@ -136,7 +136,7 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
         IPrinterExtensionAsyncOperation operationContext
             = context.Queue.SendBidiSetRequestAsync(BidiQueryInput.Text, callback);
 
-        // Note: The &#39;operationContext&#39; object can be used to cancel the operation if required.
+        // Note: The 'operationContext' object can be used to cancel the operation if required.
     }
     catch (Exception exception)
     {
@@ -145,7 +145,7 @@ private void SendBidiRequest_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>步骤 4:接收 Bidi 响应
+## <a name="span-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanspan-idstep4receivebidiresponsespanstep-4-receive-bidi-response"></a><span id="Step_4__Receive_Bidi_response"></span><span id="step_4__receive_bidi_response"></span><span id="STEP_4__RECEIVE_BIDI_RESPONSE"></span>步骤 4：接收 Bidi 响应
 
 
 完成 Bidi"set"操作时，类型的回调对象， `PrinterBidiSetRequestCallback`，调用。 此回调负责处理的错误处理从 HRESULT 响应，然后触发`OnBidiResponseReceived`事件，发送 Bidi 响应通过事件参数。
@@ -177,7 +177,7 @@ internal class PrinterBidiSetRequestCallback : IPrinterBidiSetRequestCallback
     }
 
     /// <summary>
-    /// This event will be invoked when the Bidi &#39;set&#39; response is received.
+    /// This event will be invoked when the Bidi 'set' response is received.
     /// </summary>
     public event EventHandler<string> OnBidiResponseReceived;
 }
@@ -234,7 +234,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 
 6.  重新连接您的打印机，以便在设备连接时，该 Windows 读取更新的设备元数据。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设备维护 （v4 打印机驱动程序）](https://msdn.microsoft.com/library/windows/hardware/dn265274)

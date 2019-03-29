@@ -1,17 +1,17 @@
 ---
-title: 常用、 相机和扫描程序属性
-description: 常用、 相机和扫描程序属性
+title: 常用属性、相机属性和扫描仪属性
+description: 常用属性、相机属性和扫描仪属性
 ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325b3ea9918e5e03669860fde32add1da1bc879
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 43cdf8dcc7124beb17079222e90f28fad33082f3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555485"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350212"
 ---
-# <a name="common-camera-and-scanner-properties"></a>常用、 相机和扫描程序属性
+# <a name="common-camera-and-scanner-properties"></a>常用属性、相机属性和扫描仪属性
 
 
 
@@ -46,7 +46,7 @@ WIA 属性是设备 （根） 或 （子级） 的项的属性。 设备属性�
 <tr class="odd">
 <td><p>WIA_IPA_<em>Xxx</em></p></td>
 <td><p>项属性，所有</p>
-<p>普遍适用于照相机和扫描仪的项，例如项目的信息&#39;名称和图像的类型。</p></td>
+<p>普遍适用于照相机和扫描仪的项，例如项的名称和图像的类型的信息。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_DPC_<em>Xxx</em></p></td>

@@ -1,16 +1,16 @@
 ---
-Description: Winusb.dll exposes the WinUsb_GetPipePolicy function to retrieve the pipe's default policy.
-title: 针对管道策略修改 WinUSB 函数
+Description: Winusb.dll 公开 WinUsb_GetPipePolicy 函数以检索管道的默认策略。
+title: 用于管道策略修改的 WinUSB 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 000da8a16a66a53411436f5a32b7adb1c43a2544
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522820"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349926"
 ---
-# <a name="winusb-functions-for-pipe-policy-modification"></a>针对管道策略修改 WinUSB 函数
+# <a name="winusb-functions-for-pipe-policy-modification"></a>用于管道策略修改的 WinUSB 函数
 
 
 若要启用应用程序来获取和设置管道的默认策略参数的终结点，Winusb.dll 公开[ **WinUsb\_GetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540266)函数以检索管道的默认策略。 [ **WinUsb\_SetPipePolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff540304)函数允许应用程序策略参数设置为新值。
@@ -110,7 +110,7 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <tr class="odd">
 <td>0x09</td>
 <td>RESET_PIPE_ON_RESUME</td>
-<td>重置终结点&#39;s 管道从恢复后的再接受新请求挂起。</td>
+<td>重置之前接受新请求挂起中恢复之后的终结点的管道。</td>
 <td><p>大容量 (IN)</p>
 <p>大容量 (OUT)</p>
 <p>中断 (IN)</p>
@@ -151,7 +151,7 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <li><p>如果已启用 (策略参数值是<strong>，则返回 TRUE</strong>或非零值)，自动清除停滞条件。 此策略参数不会影响控制管道。</p>
 <p>时失败，并且主机控制器返回的状态不是 STATUS_CANCELLED 或 STATUS_DEVICE_NOT_CONNECTED 的读取请求，WinUSB 将完成失败的请求之前重置管道。 重置管道而不会中断流的数据清除的停止条件。 数据将继续，只要新传输保持到达从设备中的终结点的流。 新的传输可以包括一个停止发生时已在队列中。</p>
 <p>如果启用此策略不会显著影响性能。</p></li>
-<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，到达终结点后停止传输的所有传输都失败，直到调用方手动重置终结点&#39;s 管道通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>。</li>
+<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，到达终结点后停止传输的所有传输都失败，直到调用方手动重置终结点的管道，通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff540300" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540300)"> <strong>WinUsb_ResetPipe</strong></a>。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -198,11 +198,11 @@ WinUSB，可通过将策略应用到终结点的管道来修改其默认行为�
 <td>AUTO_FLUSH</td>
 <td>启用 ALLOW_PARTIAL _READS 策略。
 <p>设备可以发送更多的数据少于请求，并在应用程序不需要任何额外数据。 这是当请求缓冲区的大小是最大的终结点的数据包大小的倍数。</p></td>
-<td><p>AUTO_FLUSH 定义 WinUSB&#39;启用 ALLOW_PARTIAL_READS 时的行为。 如果 ALLOW_PARTIAL_READS 处于禁用状态，被忽略 WinUSB AUTO_FLUSH 值。</p>
-<p>WinUSB 可以丢弃剩余的数据或将其发送与调用方&#39;下一步读取的请求。</p>
+<td><p>AUTO_FLUSH 定义时启用 ALLOW_PARTIAL_READS WinUSB 的行为。 如果 ALLOW_PARTIAL_READS 处于禁用状态，被忽略 WinUSB AUTO_FLUSH 值。</p>
+<p>WinUSB 可以丢弃剩余数据，或将其发送与调用方的下一步读取请求。</p>
 <ul>
 <li>如果已启用 (策略参数值是<strong>，则返回 TRUE</strong>或非零值)，WinUSB 丢弃而无需任何错误代码的额外字节。</li>
-<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，WinUSB 将保存的额外字节，将它们添加到调用方的开头&#39;s 接下来读取请求，并将此数据发送到在下一步读取操作中调用方。</li>
+<li>如果禁用 (策略参数值是<strong>FALSE</strong>或零)，WinUSB 将保存的额外字节、 将它们添加到调用方的下一个读取请求的开始，然后将数据发送到调用方在下一个读取操作。</li>
 </ul></td>
 </tr>
 <tr class="odd">

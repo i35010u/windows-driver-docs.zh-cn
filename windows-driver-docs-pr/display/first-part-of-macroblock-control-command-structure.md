@@ -1,19 +1,19 @@
 ---
-title: 第一部分宏块控制命令结构
-description: 第一部分宏块控制命令结构
+title: 宏块控制命令结构的第一部分
+description: 宏块控制命令结构的第一部分
 ms.assetid: b282adac-3bf3-4477-a817-371d37b174a5
 keywords:
 - 宏块 WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad4893102e2bcbc00046ee9d2c2064fe13e20d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fec81249a353368adc8e6687ae81facbbdcbc76e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544669"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349876"
 ---
-# <a name="first-part-of-macroblock-control-command-structure"></a>第一部分宏块控制命令结构
+# <a name="first-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第一部分
 
 
 ## <span id="ddk_first_part_of_macroblock_control_command_structure_gg"></span><span id="DDK_FIRST_PART_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURE_GG"></span>
@@ -233,7 +233,7 @@ ms.locfileid: "56544669"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1,0,0 （内部）</p></td>
-<td align="left"><p>&#39;00&#39; （内部）</p></td>
+<td align="left"><p>"00"（内部）</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -245,7 +245,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,0 （不移动）</p></td>
-<td align="left"><p>&#39;10&#39; （不移动）</p></td>
+<td align="left"><p>"10"（不移动）</p></td>
 <td align="left"><p>0</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -257,7 +257,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;10&#39; （帧 MC）</p></td>
+<td align="left"><p>"10"（帧 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -269,7 +269,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;10&#39; （帧 MC）</p></td>
+<td align="left"><p>"10"（帧 MC）</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -281,7 +281,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;10&#39; （帧 MC）</p></td>
+<td align="left"><p>"10"（帧 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>-</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -293,7 +293,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>-</p>
@@ -305,7 +305,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -317,7 +317,7 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -329,28 +329,28 @@ ms.locfileid: "56544669"
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;11&#39; （双质数）</p></td>
+<td align="left"><p>"11"（双质数）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <div>
  
 </div>
 <p>0 （上图）</p></td>
-<td align="left"><p>vector&#39;[2][0][0],</p>
+<td align="left"><p>向量 [2] [0] [0]</p>
 <div>
  
 </div>
-vector&#39;[2][0][1]&lt;&lt;1
+vector'[2][0][1]&lt;&lt;1
 <p>1 （下图）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <div>
  
 </div>
 <p>1</p></td>
-<td align="left"><p>vector&#39;[3][0][0],</p>
+<td align="left"><p>vector'[3][0][0],</p>
 <div>
  
 </div>
-vector&#39;[3][0][1]&lt;&lt;1
+vector'[3][0][1]&lt;&lt;1
 <p>0</p></td>
 </tr>
 </tbody>
@@ -384,7 +384,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 <tbody>
 <tr class="odd">
 <td align="left"><p>1,0,0 （内部）</p></td>
-<td align="left"><p>&#39;00&#39; （内部）</p></td>
+<td align="left"><p>"00"（内部）</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -396,7 +396,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,0 （不移动）</p></td>
-<td align="left"><p>&#39;01&#39; （不移动）</p></td>
+<td align="left"><p>"01"（不移动）</p></td>
 <td align="left"><p>0</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>-</p>
@@ -408,7 +408,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>-</p>
@@ -420,7 +420,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -432,7 +432,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;01&#39; （字段 MC）</p></td>
+<td align="left"><p>"01"（字段 MC）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -444,7 +444,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;10&#39; (16x8 MC)</p></td>
+<td align="left"><p>'10' (16x8 MC)</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>-</p>
@@ -456,7 +456,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0,0,1</p></td>
-<td align="left"><p>&#39;10&#39; (16x8 MC)</p></td>
+<td align="left"><p>'10' (16x8 MC)</p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -468,7 +468,7 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0,1,1</p></td>
-<td align="left"><p>&#39;10&#39; (16x8 MC)</p></td>
+<td align="left"><p>'10' (16x8 MC)</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p>sel[0][0]</p></td>
 <td align="left"><p>PMV[0][1]</p>
@@ -480,10 +480,10 @@ vector&#39;[3][0][1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0,1,0</p></td>
-<td align="left"><p>&#39;11&#39; （双质数）</p></td>
+<td align="left"><p>"11"（双质数）</p></td>
 <td align="left"><p>PMV[0][0]</p>
 <p><em>PicCurrentField</em></p></td>
-<td align="left"><p>vector&#39;[2][0]</p>
+<td align="left"><p>vector'[2][0]</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>

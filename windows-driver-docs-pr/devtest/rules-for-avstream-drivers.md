@@ -1,22 +1,22 @@
 ---
-title: 有关 AVStream 驱动程序的规则
+title: AVStream 驱动程序的规则
 description: 有关 AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理驱动程序 (ks.sys) 和其微型端口驱动程序之间的 DDI 接口协议。
 ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2fd294c050f07af713a665f83125a51add4261
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c0f577f152b1744aa5199d83a98a8478a3e26fb6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526272"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350034"
 ---
-# <a name="rules-for-avstream-drivers"></a>有关 AVStream 驱动程序的规则
+# <a name="rules-for-avstream-drivers"></a>AVStream 驱动程序的规则
 
 
 有关 AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理驱动程序 (ks.sys) 和其微型端口驱动程序之间的 DDI 接口协议。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -98,7 +98,7 @@ ms.locfileid: "56526272"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-kstimedpinsetdevicestate.md" data-raw-source="[&lt;strong&gt;KsTimedPinSetDeviceState&lt;/strong&gt;](ks-kstimedpinsetdevicestate.md)"><strong>KsTimedPinSetDeviceState</strong></a></p></td>
-<td align="left"><p>KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，可使用 AVStream 微型驱动程序的状态转换&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556359" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556359)"> <em>AVStrMiniPinSetDeviceState</em> </a>例程中所需的时间。</p></td>
+<td align="left"><p>KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序，可使用 AVStream 微型驱动程序的状态转换<a href="https://msdn.microsoft.com/library/windows/hardware/ff556359" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556359)"> <em>AVStrMiniPinSetDeviceState</em> </a>例程中所需的时间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-kstimedprocessingmutex.md" data-raw-source="[&lt;strong&gt;KsTimedProcessingMutex&lt;/strong&gt;](ks-kstimedprocessingmutex.md)"><strong>KsTimedProcessingMutex</strong></a></p></td>

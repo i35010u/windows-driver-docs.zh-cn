@@ -1,17 +1,17 @@
 ---
-title: HID 的扩展
+title: HID 扩展
 description: 本部分介绍人体学接口设备 (HID) 调试器扩展命令。
 ms.assetid: 796DB87B-1E04-40FA-90F9-699EE7032B3C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0094d87d9e2a18f8c90768b44232b909f615f6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 60eee0bf524d43a6c5ee68dd7bc427fe916709b7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547773"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348630"
 ---
-# <a name="hid-extensions"></a>HID 的扩展
+# <a name="hid-extensions"></a>HID 扩展
 
 
 本部分介绍人体学接口设备 (HID) 调试器扩展命令。
@@ -23,7 +23,7 @@ HID 调试器扩展命令中 Hidkd.dll 实现。 若要加载的 HID 命令，�
 
 若要开始调试 HID 问题，请输入[ **！ hidtree** ](-hidkd-hidtree.md)命令。 **！ Hidtree**命令显示的命令的列表以及可用于调查 preparsed 的设备对象的地址 HID 数据，并 HID 报告描述符。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -52,7 +52,7 @@ HID 调试器扩展命令中 Hidkd.dll 实现。 若要加载的 HID 命令，�
 </tr>
 <tr class="even">
 <td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">!hidkd.hidtree</a></strong></p></td>
-<td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">！ Hidkd.hidtree</a></strong>命令显示所有已以及及其子节点的 HID 函数驱动程序的设备节点的列表。 子节点具有已创建的父节点的物理设备对象 (PDO)&#39;s HID 功能驱动程序。</p></td>
+<td align="left"><p><strong><a href="-hidkd-hidtree.md" data-raw-source="[!hidkd.hidtree](-hidkd-hidtree.md)">！ Hidkd.hidtree</a></strong>命令显示所有已以及及其子节点的 HID 函数驱动程序的设备节点的列表。 子节点有一个物理设备对象 (PDO) 创建的父节点的 HID 功能驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><a href="-hidkd-hidppd.md" data-raw-source="[!hidkd.hidppd](-hidkd-hidppd.md)">!hidkd.hidppd</a></strong></p></td>
@@ -67,7 +67,7 @@ HID 调试器扩展命令中 Hidkd.dll 实现。 若要加载的 HID 命令，�
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [RCDRKD 扩展](rcdrkd-extensions.md)

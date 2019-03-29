@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e741a1e6f14c1b347692c68717f9566cf840868a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 95848b6dc0eded63d377144d75aa0d3d3be0f1ae
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464093"
 ---
-# <a name="gflag"></a>！ gflag
+# <a name="gflag"></a>!gflag
 
 
 **！ Gflag**扩展插件设置，或显示全局标志。
@@ -92,142 +92,142 @@ Kdextx86.dll Ntsdexts.dll</td>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x00000001</p></td>
-<td align="left"><p>&quot;soe&quot;</p></td>
+<td align="left"><p>"soe"</p></td>
 <td align="left"><p>停止的异常。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000002</p></td>
-<td align="left"><p>&quot;sls&quot;</p></td>
+<td align="left"><p>"sls"</p></td>
 <td align="left"><p>显示加载程序的快照。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000004</p></td>
-<td align="left"><p>&quot;dic&quot;</p></td>
+<td align="left"><p>"dic"</p></td>
 <td align="left"><p>调试初始命令。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000008</p></td>
-<td align="left"><p>&quot;shg&quot;</p></td>
+<td align="left"><p>"shg"</p></td>
 <td align="left"><p>停止，如果图形用户界面停止响应 （即，挂起）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000010</p></td>
-<td align="left"><p>&quot;htc&quot;</p></td>
+<td align="left"><p>"htc"</p></td>
 <td align="left"><p>启用堆结尾检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000020</p></td>
-<td align="left"><p>&quot;hfc&quot;</p></td>
+<td align="left"><p>"hfc"</p></td>
 <td align="left"><p>启用堆免费检查。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000040</p></td>
-<td align="left"><p>&quot;hpc&quot;</p></td>
+<td align="left"><p>"hpc"</p></td>
 <td align="left"><p>启用堆参数检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000080</p></td>
-<td align="left"><p>&quot;hvc&quot;</p></td>
+<td align="left"><p>"hvc"</p></td>
 <td align="left"><p>启用在调用堆验证。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000100</p></td>
-<td align="left"><p>&quot;ptc&quot;</p></td>
+<td align="left"><p>"ptc"</p></td>
 <td align="left"><p>启用池结尾检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000200</p></td>
-<td align="left"><p>&quot;pfc&quot;</p></td>
+<td align="left"><p>"pfc"</p></td>
 <td align="left"><p>启用免费检查池。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00000400</p></td>
-<td align="left"><p>&quot;ptg&quot;</p></td>
+<td align="left"><p>"ptg"</p></td>
 <td align="left"><p>启用池标记。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00000800</p></td>
-<td align="left"><p>&quot;htg&quot;</p></td>
+<td align="left"><p>"htg"</p></td>
 <td align="left"><p>启用堆标记。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00001000</p></td>
-<td align="left"><p>&quot;ust&quot;</p></td>
+<td align="left"><p>"ust"</p></td>
 <td align="left"><p>创建用户模式下的堆栈跟踪数据库。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00002000</p></td>
-<td align="left"><p>&quot;kst&quot;</p></td>
+<td align="left"><p>"kst"</p></td>
 <td align="left"><p>创建内核模式堆栈跟踪数据库。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00004000</p></td>
-<td align="left"><p>&quot;otl&quot;</p></td>
+<td align="left"><p>"otl"</p></td>
 <td align="left"><p>维护的每种类型的对象的列表。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00008000</p></td>
-<td align="left"><p>&quot;htd&quot;</p></td>
+<td align="left"><p>"htd"</p></td>
 <td align="left"><p>启用堆标记的 DLL。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00010000</p></td>
-<td align="left"><p>&quot;idp&quot;</p></td>
+<td align="left"><p>"idp"</p></td>
 <td align="left"><p>未使用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00020000</p></td>
-<td align="left"><p>&quot;d32&quot;</p></td>
+<td align="left"><p>"d32"</p></td>
 <td align="left"><p>启用调试的 Microsoft Win32 子系统。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00040000</p></td>
-<td align="left"><p>&quot;ksl&quot;</p></td>
+<td align="left"><p>"ksl"</p></td>
 <td align="left"><p>启用内核调试程序符号加载。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00080000</p></td>
-<td align="left"><p>&quot;dps&quot;</p></td>
+<td align="left"><p>"dps"</p></td>
 <td align="left"><p>禁用分页的内核堆栈。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00100000</p></td>
-<td align="left"><p>&quot;scb&quot;</p></td>
+<td align="left"><p>"scb"</p></td>
 <td align="left"><p>启用关键系统分隔线。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00200000</p></td>
-<td align="left"><p>&quot;dhc&quot;</p></td>
+<td align="left"><p>"dhc"</p></td>
 <td align="left"><p>禁用堆上免费 coalesce。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x00400000</p></td>
-<td align="left"><p>&quot;ece&quot;</p></td>
+<td align="left"><p>"ece"</p></td>
 <td align="left"><p>启用关闭异常。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x00800000</p></td>
-<td align="left"><p>&quot;eel&quot;</p></td>
+<td align="left"><p>"能"</p></td>
 <td align="left"><p>启用异常日志记录。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x01000000</p></td>
-<td align="left"><p>&quot;eot&quot;</p></td>
+<td align="left"><p>"eot"</p></td>
 <td align="left"><p>启用对象句柄类型标记。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x02000000</p></td>
-<td align="left"><p>&quot;hpa&quot;</p></td>
+<td align="left"><p>"hpa"</p></td>
 <td align="left"><p>将放在页面末尾的堆分配。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x04000000</p></td>
-<td align="left"><p>&quot;dwl&quot;</p></td>
+<td align="left"><p>"dwl"</p></td>
 <td align="left"><p>调试 WINLOGON。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x08000000</p></td>
-<td align="left"><p>&quot;ddp&quot;</p></td>
+<td align="left"><p>"ddp"</p></td>
 <td align="left"><p>禁用内核模式<strong>DbgPrint</strong>并<strong>KdPrint</strong>输出。</p></td>
 </tr>
 <tr class="odd">
@@ -237,8 +237,8 @@ Kdextx86.dll Ntsdexts.dll</td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x20000000</p></td>
-<td align="left"><p>&quot;sue&quot;</p></td>
-<td align="left"><p>停止在未经处理的用户模式异常</p></td>
+<td align="left"><p>"sue"</p></td>
+<td align="left"><p>出现未经处理的用户模式异常时停止</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x40000000</p></td>
@@ -247,7 +247,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x80000000</p></td>
-<td align="left"><p>&quot;dpd&quot;</p></td>
+<td align="left"><p>"dpd"</p></td>
 <td align="left"><p>禁用受保护的 DLL 验证。</p></td>
 </tr>
 </tbody>

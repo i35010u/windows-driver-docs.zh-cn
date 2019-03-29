@@ -1,23 +1,23 @@
 ---
-title: Wi-fi direct 配对实现
+title: Wi-Fi direct 配对实现
 description: 本部分提供了设计指导原则和外围设备参与点击和设置和点击和重新连接要求用例。
 ms.assetid: 1B729E9F-DF9F-4263-9F0B-5EDCF817D2C3
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a4387f395ec44fcc2d63e6bc8d76a9b874e596
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524702"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464194"
 ---
-# <a name="wi-fi-direct-pairing-implementation"></a>Wi-fi direct 配对实现
+# <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi direct 配对实现
 
 
 本部分提供了设计指导原则和外围设备参与点击和设置和点击和重新连接要求用例。
@@ -85,7 +85,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">属性 ID</th>
 <th align="left">必需/可选</th>
 <th align="left">注意</th>
@@ -95,7 +95,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 <tr class="odd">
 <td align="left"><p>OOB 标头</p>
 <p>请参阅 OOB 标头属性设置表格格式。</p></td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">必需</td>
 <td align="left">OOB 标头属性应会出现在 P2P OOB 数据 blob 并 OOB 类型值设置为"OOB 单向预配 Data"。</td>
 </tr>
@@ -253,7 +253,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 
 ### <a name="oob-provisioning-info-attribute-format"></a>OOB 预配信息属性格式
 
-| 字段名称                   | 大小 （八进制） | 值                   | 描述                                                                                                                                                             |
+| 字段名称                   | 大小 （八进制） | ReplTest1                   | 描述                                                                                                                                                             |
 |------------------------------|---------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                 | 1             | 1                       | 标识 P2P OOB 属性的类型。 中定义的特定值*P2P OOB 属性*表。                                                                 |
 | 长度                       | 2             | 变量                | 该属性中的以下字段的长度。                                                                                                                        |
@@ -276,7 +276,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 <tr class="header">
 <th align="left">位 (s)</th>
 <th align="left">信息</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -343,7 +343,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 </tr>
 <tr class="even">
 <td align="left">在任务栏的搜索框中键入</td>
-<td align="left">&#39;application/vnd.ms-windows.devicepairing&#39;</td>
+<td align="left">application/vnd.ms-windows.devicepairing</td>
 <td align="left">0x28 字节</td>
 <td align="left">我们为此方案中定义新类型字符串。</td>
 </tr>
@@ -471,7 +471,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 <td align="left">11</td>
 <td align="left">0x01</td>
 <td align="left">1</td>
-<td align="left">运营商的标志：CPS=1, &quot;active&quot;</td>
+<td align="left">运营商的标志：CPS = 1，"活动"</td>
 </tr>
 <tr class="odd">
 <td align="left">12</td>
@@ -528,7 +528,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 <p>0x66 0x64 0x2E 0x6F</p>
 <p>0x6F 0x62</p></td>
 <td align="left">34</td>
-<td align="left">记录类型名称： &#39;application/vnd.ms-windows.wfd.oob&#39;</td>
+<td align="left">记录类型名称: application/vnd.ms-windows.wfd.oob</td>
 </tr>
 <tr class="odd">
 <td align="left">53</td>
@@ -744,7 +744,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 <p>0x72 0x4e 0x61 0x6d</p>
 <p>0x65</p></td>
 <td align="left">25</td>
-<td align="left">打印机名称:"\printServer\printerName&quot;</td>
+<td align="left">打印机名称:"\printServer\printerName"</td>
 </tr>
 </tbody>
 </table>

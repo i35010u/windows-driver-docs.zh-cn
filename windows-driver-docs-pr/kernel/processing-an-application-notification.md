@@ -12,12 +12,12 @@ keywords:
 - 处理应用程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a780005ded4256076083aef8a343957bd80b72e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 676df98a2afb890a539e348a2b5e7b3a8c493c1c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526134"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348656"
 ---
 # <a name="processing-an-application-notification"></a>处理应用程序通知
 
@@ -39,7 +39,7 @@ OnDeviceChange(
   LPARAM lParam
   ); 
 
-// The application&#39;s message processing function
+// The application's message processing function
 // for the window that receives the WM_DEVICECHANGE
 // messages.
 LRESULT CALLBACK

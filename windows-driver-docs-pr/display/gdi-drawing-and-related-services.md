@@ -1,6 +1,6 @@
 ---
-title: GDI 绘图和相关的服务
-description: GDI 绘图和相关的服务
+title: GDI 绘图和相关服务
+description: GDI 绘图和相关服务
 ms.assetid: b5df84ae-05cf-49dc-aa49-79f912ecd029
 keywords:
 - GDI WDK Windows 2000 显示，绘制服务
@@ -8,14 +8,14 @@ keywords:
 - 绘制 WDK GDI，绘制支持的服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a99ff67b3900fa6d7f384462fe8c7262f8e9240f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 68d1918dc4e7805039d365019c2861e47222bcaf
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519665"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349708"
 ---
-# <a name="gdi-drawing-and-related-services"></a>GDI 绘图和相关的服务
+# <a name="gdi-drawing-and-related-services"></a>GDI 绘图和相关服务
 
 
 ## <span id="ddk_gdi_drawing_and_related_services_gg"></span><span id="DDK_GDI_DRAWING_AND_RELATED_SERVICES_GG"></span>
@@ -41,11 +41,11 @@ ms.locfileid: "56519665"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538263" data-raw-source="[&lt;strong&gt;BRUSHOBJ_pvAllocRbrush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538263)"><strong>BRUSHOBJ_pvAllocRbrush</strong></a></p></td>
-<td align="left"><p>为驱动程序分配内存&#39;s 实现的画笔。</p></td>
+<td align="left"><p>画笔的驱动程序的实现，为分配内存。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538264" data-raw-source="[&lt;strong&gt;BRUSHOBJ_pvGetRbrush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538264)"><strong>BRUSHOBJ_pvGetRbrush</strong></a></p></td>
-<td align="left"><p>返回一个指向该驱动程序&#39;s 实现的画笔。 如果它的未尚未实现，认识到画笔。</p></td>
+<td align="left"><p>返回一个指向的画笔的驱动程序的实现。 如果它的未尚未实现，认识到画笔。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538265" data-raw-source="[&lt;strong&gt;BRUSHOBJ_ulGetBrushColor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538265)"><strong>BRUSHOBJ_ulGetBrushColor</strong></a></p></td>
@@ -57,7 +57,7 @@ ms.locfileid: "56519665"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539421" data-raw-source="[&lt;strong&gt;CLIPOBJ_cEnumStart&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539421)"><strong>CLIPOBJ_cEnumStart</strong></a></p></td>
-<td align="left"><p>为枚举的矩形中所有或部分剪辑区域设置参数。 (而不会调用此函数中，可以一次枚举该区域，但后续枚举需要此函数&#39;使用)。</p></td>
+<td align="left"><p>为枚举的矩形中所有或部分剪辑区域设置参数。 （而不会调用此函数中，可以一次枚举该区域，但后续枚举需要此函数，请使用）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff539423" data-raw-source="[&lt;strong&gt;CLIPOBJ_ppoGetPath&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539423)"><strong>CLIPOBJ_ppoGetPath</strong></a></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "56519665"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564202" data-raw-source="[&lt;strong&gt;EngCreateClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564202)"><strong>EngCreateClip</strong></a></p></td>
-<td align="left"><p>分配<a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"> <strong>CLIPOBJ</strong> </a>驱动程序的&#39;s 临时使用。 该驱动程序应调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"> <strong>EngDeleteClip</strong> </a>函数不再需要时将其删除。</p></td>
+<td align="left"><p>分配<a href="https://msdn.microsoft.com/library/windows/hardware/ff539417" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539417)"> <strong>CLIPOBJ</strong> </a>驱动程序的临时使用。 该驱动程序应调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"> <strong>EngDeleteClip</strong> </a>函数不再需要时将其删除。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564786" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564786)"><strong>EngDeleteClip</strong></a></p></td>
@@ -121,7 +121,7 @@ ms.locfileid: "56519665"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565018" data-raw-source="[&lt;strong&gt;EngSetPointerTag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565018)"><strong>EngSetPointerTag</strong></a></p></td>
-<td align="left"><p>创建与应用程序是或运算的形状&#39;上的 s 指针形状<a href="https://msdn.microsoft.com/library/windows/hardware/ff556289" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556289)"> <strong>DrvSetPointerShape</strong> </a>调用其他镜像系统中关联的驱动程序。</p>
+<td align="left"><p>创建与应用程序的指针形状是或运算, 一个形状<a href="https://msdn.microsoft.com/library/windows/hardware/ff556289" data-raw-source="[&lt;strong&gt;DrvSetPointerShape&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556289)"> <strong>DrvSetPointerShape</strong> </a>调用其他镜像系统中关联的驱动程序。</p>
 <div>
  
 </div>

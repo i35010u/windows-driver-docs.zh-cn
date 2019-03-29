@@ -1,19 +1,19 @@
 ---
-title: 可选显示驱动程序函数
-description: 可选显示驱动程序函数
+title: 可选的显示驱动程序函数
+description: 可选的显示驱动程序函数
 ms.assetid: 7c1489c9-40de-4b44-95b7-af227c7d8205
 keywords:
 - 显示图形 DDI 函数 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a25f75f6c27dce9a30fa3ed12d76b1811586bb73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 30f841fe876dab7b0114b4ceb435625a21450c4e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542124"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348922"
 ---
-# <a name="optional-display-driver-functions"></a>可选显示驱动程序函数
+# <a name="optional-display-driver-functions"></a>可选的显示驱动程序函数
 
 
 ## <span id="ddk_optional_display_driver_functions_gg"></span><span id="DDK_OPTIONAL_DISPLAY_DRIVER_FUNCTIONS_GG"></span>
@@ -239,7 +239,7 @@ ms.locfileid: "56542124"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557273" data-raw-source="[&lt;strong&gt;DrvSynchronizeSurface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557273)"><strong>DrvSynchronizeSurface</strong></a></p></td>
-<td align="left"><p>允许绘制由设备执行的操作&#39;s 协处理器以与 GDI 进行协调。</p></td>
+<td align="left"><p>允许执行的设备的协处理器要协调用 GDI 绘制操作。</p></td>
 </tr>
 </tbody>
 </table>

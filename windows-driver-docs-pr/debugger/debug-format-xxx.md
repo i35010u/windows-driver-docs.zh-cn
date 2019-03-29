@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 712ece7781aba46488385ddcadbe043187e1c759
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 429a2f8164504b133bb7e02beb60fff5ff012413
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520529"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349694"
 ---
 # <a name="debugformatxxx"></a>调试\_格式\_XXX
 
@@ -63,7 +63,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>以下位标志也可以是包含用户模式的小型转储。</p>
 <table>
 <tr>
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 <tr>
@@ -119,7 +119,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>DEBUG_FORMAT_USER_SMALL_FILTER_PATHS</p>
 </td>
 <td>
-<p>删除模块路径，并保持仅模块名称。  这可用于通过隐藏的目录结构来保护隐私 (后者可能包含用户&#39;s 名称)。</p>
+<p>删除模块路径，并保持仅模块名称。  这可用于通过隐藏的目录结构 （其中可能包含用户的名称） 来保护隐私。</p>
 </td>
 </tr>
 <tr>
@@ -200,7 +200,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">DbgEng.h （包括 DbgEng.h）</td>
 </tr>
 </tbody>

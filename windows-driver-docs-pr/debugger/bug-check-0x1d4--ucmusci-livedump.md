@@ -4,7 +4,7 @@ description: UCMUCSI_LIVEDUMP 实时转储具有 0x000001D4 值。
 keywords:
 - Bug 检查 0x1D4 UCMUCSI_LIVEDUMP
 - UCMUCSI_LIVEDUMP
-ms.date: 05/23/2018
+ms.date: 02/22/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 787940afd8e50a3db56f642927842ff8a20c4250
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ecc29e7b0ce9dd4611981ee5fdee46aa6d88a118
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545600"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743460"
 ---
 # <a name="bug-check-bug-check-0x1d4-ucmucsilivedump"></a>Bug 检查 Bug 检查 0x1D4:UCMUCSI\_LIVEDUMP  
 
@@ -32,13 +32,16 @@ UcmUcsi.sys 驱动程序遇到错误。 UcmUcsi.sys 是一个框中 USB 连接�
 
 参数 | 描述 
 |---------|--------------|
-1 | UCSI 命令已超时。
-2 | 该命令的操作已超时。
-3 | 保留
-4 | 保留
+1 | 键入的失败-请参阅下面的值
+2 | UCSI 命令值。
+3 | 如果非零的附加信息的指针 (dt UcmUcsiCx ！UCMUCSICX_TRIAGE)。
+4 | 保留。
  
+**失败的类型**
 
- 
+0x0:UCSI 命令已超时，因为固件没有响应的命令的时间。
+
+0x1:UCSI 命令执行失败，因为客户端驱动程序返回了失败或固件返回了错误代码。
 
 
 

@@ -11,12 +11,12 @@ keywords:
 - 压力测试 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f91dca761d53253a8bcf301851ad2a5a7aa404d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5b42c6cdc01d3903c0f1bfd52174e92081ebaf9d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521607"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349768"
 ---
 # <a name="driver-verifier"></a>驱动程序验证程序
 
@@ -43,7 +43,7 @@ ms.locfileid: "56521607"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>您不&#39;无需下载驱动程序验证程序 (Verifier.exe)，因为 Windows 2000，除 Windows 10 s。 之后，每个版本的 Windows 中包含没有&#39;t 单独的驱动程序验证程序下载包，它位于 %windir%\system32 目录中。 </p>
+<td align="left"><p>无需下载驱动程序验证程序 (Verifier.exe)，因为 Windows 2000，除 Windows 10 s。 之后，每个版本的 Windows 中包含没有单独的驱动程序验证程序下载包，它位于 %windir%\system32 目录中。 </p>
 <ul>
 <li>打开<strong>命令提示符</strong>窗口 (<strong>以管理员身份运行</strong>)。</li>
 <li>类型<strong>verifier</strong>以打开驱动程序验证程序管理器，或类型<strong>verifier /？</strong> 若要查看命令行选项。 请参阅<a href="verifier-command-line.md" data-raw-source="[&lt;strong&gt;Driver Verifier Command Syntax&lt;/strong&gt;](verifier-command-line.md)"><strong>驱动程序验证工具的命令语法</strong></a>有关详细信息。</li>
@@ -60,7 +60,7 @@ ms.locfileid: "56521607"
 <div>
 
 </div>
-<p>有关 Windows 8.1 驱动程序版本和以前版本的 Windows 中的更改的信息，请参阅<a href="driver-verifier--what-s-new.md" data-raw-source="[Driver Verifier: What&#39;s New](driver-verifier--what-s-new.md)">Driver Verifier:什么&#39;新增</a>。</p></td>
+<p>有关 Windows 8.1 驱动程序版本和以前版本的 Windows 中的更改的信息，请参阅<a href="driver-verifier--what-s-new.md" data-raw-source="[Driver Verifier: What's New](driver-verifier--what-s-new.md)">Driver Verifier:什么是新</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -108,7 +108,7 @@ ms.locfileid: "56521607"
    <tbody>
    <tr class="odd">
    <td align="left"><strong>自动选择未签名驱动程序</strong></td>
-   <td align="left"><p>测试运行的 Windows 完全版本的计算机上的有用选项&#39;t 需要签名的驱动程序。</p></td>
+   <td align="left"><p>有用的选项，用于运行不需要的 Windows 版本的计算机上测试签名驱动程序。</p></td>
    </tr>
    <tr class="even">
    <td align="left"><strong>自动选择内置较旧版本的 Windows 驱动程序</strong></td>

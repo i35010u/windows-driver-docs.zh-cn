@@ -11,12 +11,12 @@ keywords:
 - 缓冲 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d65ffda8c4276598c2221cb9c5ef845ab8538ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8b76b4cd08b5bc0ae475a9637f6232fcb139effe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525564"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348762"
 ---
 # <a name="windows-display-driver-model-wddm-operation-flow"></a>Windows 显示驱动程序模型 (WDDM) 操作流
 
@@ -39,7 +39,7 @@ ms.locfileid: "56525564"
 </tr>
 <tr class="even">
 <td align="left"><p>2.</p></td>
-<td align="left"><p>如果显示微型端口驱动程序调用&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559615" data-raw-source="[&lt;strong&gt;DxgkDdiCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559615)"> <strong>DxgkDdiCreateDevice</strong> </a>成功，Microsoft Direct3D 运行时将调用用户模式显示驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540634" data-raw-source="[&lt;strong&gt;CreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540634)"> <strong>CreateDevice</strong> </a>函数。</p></td>
+<td align="left"><p>如果显示微型端口驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559615" data-raw-source="[&lt;strong&gt;DxgkDdiCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559615)"> <strong>DxgkDdiCreateDevice</strong> </a>成功，Microsoft Direct3D 运行时将调用用户模式显示驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff540634" data-raw-source="[&lt;strong&gt;CreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540634)"> <strong>CreateDevice</strong> </a>函数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3.</p></td>
@@ -60,11 +60,11 @@ ms.locfileid: "56525564"
 <tbody>
 <tr class="odd">
 <td align="left"><p>4.</p></td>
-<td align="left"><p>Direct3D 运行时应用程序请求创建设计面的呈现设备后，调用用户模式显示驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>函数。</p></td>
+<td align="left"><p>Direct3D 运行时应用程序请求创建设计面的呈现设备后，调用用户模式显示驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5.</p></td>
-<td align="left"><p>用户模式显示驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568893" data-raw-source="[&lt;strong&gt;pfnAllocateCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568893)"> <strong>pfnAllocateCb</strong> </a>运行时提供的函数。</p></td>
+<td align="left"><p>用户模式显示驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff540688" data-raw-source="[&lt;strong&gt;CreateResource&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540688)"> <strong>CreateResource</strong> </a>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568893" data-raw-source="[&lt;strong&gt;pfnAllocateCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568893)"> <strong>pfnAllocateCb</strong> </a>运行时提供的函数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>6.</p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "56525564"
 </tr>
 <tr class="even">
 <td align="left"><p>8.</p></td>
-<td align="left"><p>若要提交到内核模式的命令缓冲区，Direct3D 运行时将调用任一用户模式显示驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff569176" data-raw-source="[&lt;strong&gt;Present&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569176)"><strong>存在</strong></a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff565957" data-raw-source="[&lt;strong&gt;Flush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565957)"><strong>刷新</strong></a>函数。 此外，用户模式显示驱动程序提交的命令缓冲区时，如果命令缓冲区已满。</p></td>
+<td align="left"><p>若要提交到内核模式的命令缓冲区，Direct3D 运行时将调用任一用户模式显示驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff569176" data-raw-source="[&lt;strong&gt;Present&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569176)"><strong>存在</strong></a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff565957" data-raw-source="[&lt;strong&gt;Flush&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565957)"><strong>刷新</strong></a>函数。 此外，用户模式显示驱动程序提交的命令缓冲区时，如果命令缓冲区已满。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>9.</p></td>
@@ -97,7 +97,7 @@ ms.locfileid: "56525564"
 </tr>
 <tr class="even">
 <td align="left"><p>10.</p></td>
-<td align="left"><p>显示微型端口驱动程序接收到调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559743" data-raw-source="[&lt;strong&gt;DxgkDdiPresent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559743)"> <strong>DxgkDdiPresent</strong> </a>函数如果<a href="https://msdn.microsoft.com/library/windows/hardware/ff568916" data-raw-source="[&lt;strong&gt;pfnPresentCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568916)"> <strong>pfnPresentCb</strong> </a>调用，或<a href="https://msdn.microsoft.com/library/windows/hardware/ff559793" data-raw-source="[&lt;strong&gt;DxgkDdiRender&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559793)"> <strong>DxgkDdiRender</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff559800" data-raw-source="[&lt;strong&gt;DxgkDdiRenderKm&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559800)"> <strong>DxgkDdiRenderKm</strong> </a>函数如果<a href="https://msdn.microsoft.com/library/windows/hardware/ff568923" data-raw-source="[&lt;strong&gt;pfnRenderCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568923)"> <strong>pfnRenderCb</strong></a>调用。 显示微型端口驱动程序来验证命令缓冲区，将写入到的硬件中的 DMA 缓冲区&#39;s 格式，并生成使用描述图面分配列表。</p></td>
+<td align="left"><p>显示微型端口驱动程序接收到调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559743" data-raw-source="[&lt;strong&gt;DxgkDdiPresent&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559743)"> <strong>DxgkDdiPresent</strong> </a>函数如果<a href="https://msdn.microsoft.com/library/windows/hardware/ff568916" data-raw-source="[&lt;strong&gt;pfnPresentCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568916)"> <strong>pfnPresentCb</strong> </a>调用，或<a href="https://msdn.microsoft.com/library/windows/hardware/ff559793" data-raw-source="[&lt;strong&gt;DxgkDdiRender&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559793)"> <strong>DxgkDdiRender</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff559800" data-raw-source="[&lt;strong&gt;DxgkDdiRenderKm&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559800)"> <strong>DxgkDdiRenderKm</strong> </a>函数如果<a href="https://msdn.microsoft.com/library/windows/hardware/ff568923" data-raw-source="[&lt;strong&gt;pfnRenderCb&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568923)"> <strong>pfnRenderCb</strong></a>调用。 显示微型端口驱动程序验证命令缓冲区，将写入到 DMA 缓冲区中的硬件的格式，并生成描述使用的图面分配列表。</p></td>
 </tr>
 </tbody>
 </table>
@@ -114,9 +114,9 @@ ms.locfileid: "56525564"
 <tbody>
 <tr class="odd">
 <td align="left"><p>11.</p></td>
-<td align="left"><p>Microsoft DirectX 图形内核子系统调用显示微型端口驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"> <strong>DxgkDdiBuildPagingBuffer</strong> </a>函数来创建特殊用途的 DMA 缓冲区，称为分页缓冲区移动到和从 GPU 可访问的内存分配列表中指定的分配的。</p>
+<td align="left"><p>Microsoft DirectX 图形内核子系统调用显示微型端口驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"> <strong>DxgkDdiBuildPagingBuffer</strong> </a>函数来创建特殊用途的 DMA 缓冲区，称为分页缓冲区，移动指定在分配列表中与 GPU 可访问的内存的分配。</p>
 <div class="alert">
-<strong>请注意</strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"><strong>DxgkDdiBuildPagingBuffer</strong> </a>不会为每个帧调用。  
+<strong>请注意</strong><a href="https://msdn.microsoft.com/library/windows/hardware/ff559587" data-raw-source="[&lt;strong&gt;DxgkDdiBuildPagingBuffer&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559587)"><strong>DxgkDdiBuildPagingBuffer</strong> </a>不会为每个帧调用。
 </div>
 <div>
  
@@ -124,15 +124,15 @@ ms.locfileid: "56525564"
 </tr>
 <tr class="even">
 <td align="left"><p>12.</p></td>
-<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>函数进行排队到 GPU 执行单元的分页缓冲区。</p></td>
+<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>函数进行排队到 GPU 执行单元的分页缓冲区。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>13.</p></td>
-<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff559737" data-raw-source="[&lt;strong&gt;DxgkDdiPatch&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559737)"> <strong>DxgkDdiPatch</strong> </a>函数来将物理地址分配给 DMA 缓冲区中的资源。</p></td>
+<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff559737" data-raw-source="[&lt;strong&gt;DxgkDdiPatch&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559737)"> <strong>DxgkDdiPatch</strong> </a>函数以将物理地址分配给 DMA 缓冲区中的资源。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>14.</p></td>
-<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>函数进行排队到 GPU 执行单元的 DMA 缓冲区。 每个提交至 GPU 的 DMA 缓冲区包含 fence 标识符，它是一个数字。 GPU 完成处理的 DMA 缓冲区后，GPU 会产生中断。</p></td>
+<td align="left"><p>DirectX 图形内核子系统调用显示微型端口驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff560790" data-raw-source="[&lt;strong&gt;DxgkDdiSubmitCommand&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff560790)"> <strong>DxgkDdiSubmitCommand</strong> </a>函数进行排队到 GPU 执行单元的 DMA 缓冲区。 每个提交至 GPU 的 DMA 缓冲区包含 fence 标识符，它是一个数字。 GPU 完成处理的 DMA 缓冲区后，GPU 会产生中断。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>15.</p></td>

@@ -8,12 +8,12 @@ keywords:
 - 编译器 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ecf4810502fef9236e9041bc6e5a9b417c0754
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ddf89ab2851c8681f91e88c8a57c61ff4e23aa9
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554469"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349494"
 ---
 # <a name="64-bit-compiler"></a>64 位编译器
 
@@ -26,7 +26,7 @@ ms.locfileid: "56554469"
 以下是此类警告的示例：
 
 ```cpp
-warning C4311: &#39;type cast&#39; : pointer truncation from &#39;unsigned char *&#39; to &#39;unsigned long &#39;
+warning C4311: 'type cast' : pointer truncation from 'unsigned char *' to 'unsigned long '
 ```
 
 例如，下面的代码可以生成 C4311 警告：

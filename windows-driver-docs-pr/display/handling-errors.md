@@ -4,12 +4,12 @@ description: 处理错误
 ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 954368c30181fd7101dcb29a93161a8d77477045
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b602d001d8e617b2151e4060061eb1bd427ef8e3
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522296"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348678"
 ---
 # <a name="handling-errors"></a>处理错误
 
@@ -56,7 +56,7 @@ ms.locfileid: "56522296"
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowMapErrors</p></td>
-<td align="left"><p>该驱动程序应检查资源争用。 因此，可以将驱动程序传递通过 DXGI_DDI_ERR_WASSTILLDRAWING <strong>pfnSetErrorCb</strong>如果 D3D10_DDI_MAP_FLAG_DONOTWAIT 标志传递到驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff569492" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569492)"> <strong>ResourceMap</strong></a>函数。 该驱动程序还可以传递通过 D3DDDIERR_DEVICEREMOVED <strong>pfnSetErrorCb</strong>。 在运行时将确定任何其他错误代码是关键。</p></td>
+<td align="left"><p>该驱动程序应检查资源争用。 因此，可以将驱动程序传递通过 DXGI_DDI_ERR_WASSTILLDRAWING <strong>pfnSetErrorCb</strong> D3D10_DDI_MAP_FLAG_DONOTWAIT 标志传递到驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff569492" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff569492)"> <strong>ResourceMap</strong> </a>函数。 该驱动程序还可以传递通过 D3DDDIERR_DEVICEREMOVED <strong>pfnSetErrorCb</strong>。 在运行时将确定任何其他错误代码是关键。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowGetDataErrors</p></td>
@@ -64,7 +64,7 @@ ms.locfileid: "56522296"
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowWKCheckCounterErrors</p></td>
-<td align="left"><p>该驱动程序&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff539385" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539385)"> <strong>CheckCounter</strong> </a>函数应指示它是否支持任何运行时定义的计数器。 因此，可以将驱动程序传递通过 DXGI_DDI_ERR_UNSUPPORTED <strong>pfnSetErrorCb</strong>。 在运行时将确定任何其他错误代码是关键。</p>
+<td align="left"><p>在驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff539385" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539385)"> <strong>CheckCounter</strong> </a>函数应指示它是否支持任何运行时定义的计数器。 因此，可以将驱动程序传递通过 DXGI_DDI_ERR_UNSUPPORTED <strong>pfnSetErrorCb</strong>。 在运行时将确定任何其他错误代码是关键。</p>
 <p>该驱动程序不能为任何检查类型函数返回 D3DDDIERR_DEVICEREMOVED。</p></td>
 </tr>
 <tr class="even">

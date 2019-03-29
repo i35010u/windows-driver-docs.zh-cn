@@ -1,6 +1,6 @@
 ---
-title: 版本号的 Direct3D 版本 10.1
-description: 版本号的 Direct3D 版本 10.1
+title: Direct3D 版本 10.1 的版本号
+description: Direct3D 版本 10.1 的版本号
 ms.assetid: a121900a-49e9-40f6-a3a6-d391e3bf1e37
 keywords:
 - Direct3D 版本 10.1 WDK 显示版本号
@@ -8,14 +8,14 @@ keywords:
 - 版本号 WDK 显示，Direct3D 版本 10.1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68324b399a54cbbb6cbb183932653da50931ad1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f58e30c1cda2a80c6fce69b519451a8eae862e7f
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520041"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349822"
 ---
-# <a name="version-numbers-for-direct3d-version-101"></a>版本号的 Direct3D 版本 10.1
+# <a name="version-numbers-for-direct3d-version-101"></a>Direct3D 版本 10.1 的版本号
 
 
 Direct3D 版本 10.0 和 10.1 供应\#定义用户模式显示驱动程序使用的版本控制功能。 用户模式显示驱动程序必须检查**接口**的成员[ **D3D10DDIARG\_OPENADAPTER**](https://msdn.microsoft.com/library/windows/hardware/ff541724)， [ **D3D10DDIARG\_CREATEDEVICE**](https://msdn.microsoft.com/library/windows/hardware/ff541664)，和[ **D3D10DDIARG\_CALCPRIVATEDEVICESIZE** ](https://msdn.microsoft.com/library/windows/hardware/ff541649)结构的驱动程序在调用接收[ **OpenAdapter10**](https://msdn.microsoft.com/library/windows/hardware/ff568602)， [ **CreateDevice(D3D10)**](https://msdn.microsoft.com/library/windows/hardware/ff540635)，和[ **CalcPrivateDeviceSize** ](https://msdn.microsoft.com/library/windows/hardware/ff538288)函数来确定的 Direct3D 运行时支持 Direct3D DDI 的版本。 最重要的 16 位**接口**成员是 Direct3D DDI 主要版本的版本号。 有关 Direct3D 版本 10.0 和 10.1，此数字是 10。 最重要的 16 位**接口**成员是 Direct3D DDI 次要版本。 每次引入的重大更改 Direct3D DDI 是已升级此次要版本值。 此次要版本值可以也会解除了一个人为地以表示更强大的版本更改。 以下\#发行的版号定义关联的 Direct3D DDI 次要版本 (即，D3D10\_0 = = x，D3D10\_1 = = y，其中 y &gt; x)。
@@ -35,7 +35,7 @@ Direct3D 版本 10.0 和 10.1 供应\#定义用户模式显示驱动程序使用
 #define D3D10_1_DDI_MINOR_VERSION 2
 #define D3D10_1_DDI_INTERFACE_VERSION ((D3D10_DDI_MAJOR_VERSION << 16) | D3D10_1_DDI_MINOR_VERSION)
 #define D3D10_1_DDI_BUILD_VERSION 1
-// Note: d3d10_1 doesn&#39;t currently ship on vista gold. // This definition is included for completeness in the 
+// Note: d3d10_1 doesn't currently ship on vista gold. // This definition is included for completeness in the 
 // event that it does at some point in the future:
 #define D3D10_1_DDI_VERSION_VISTA_GOLD                          ( ( 1 << 16 ) | 6000 )
 #define D3D10_1_DDI_VERSION_VISTA_SP1                           ( ( 1 << 16 ) | 6008 )

@@ -1,15 +1,15 @@
 ---
-title: 获取 NVDIMM N 运行状况信息 （函数索引 11）
+title: 获取 NVDIMM-N 运行状况信息（功能索引 11）
 description: 此函数返回 NVDIMM N 模块的运行状况的信息。
 ms.assetid: E0FCC4C6-31CB-4D46-ADCE-99EBA2BFF798
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 91daf19792d900f5413ea32b5917555019d1838a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ddadffd117fad3f731e3cd2f64f56c1ad11a397d
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533513"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348808"
 ---
 # <a name="span-idstoragegetnvdimm-nhealthinfofunctionindex11spanget-nvdimm-n-health-info-function-index-11"></a><span id="storage.get_nvdimm-n_health_info__function_index_11_"></span>获取 NVDIMM N 运行状况信息 （函数索引 11）
 
@@ -56,7 +56,7 @@ ms.locfileid: "56533513"
 <td align="left"><strong>模块运行状况</strong></td>
 <td align="left">2</td>
 <td align="left">4</td>
-<td align="left"><p>详细了解 NVDIMM N 模块&#39;s 运行状况。</p>
+<td align="left"><p>详细了解 NVDIMM N 模块的运行状况。</p>
 <p><em>字节 0 – <em>MODULE_HEALTH_STATUS0</em> （0，0xA1）</p>
 <p></em>1 – 字节<em>MODULE_HEALTH_STATUS1</em> （0，0xA2）</p></td>
 </tr>
@@ -108,7 +108,7 @@ ms.locfileid: "56533513"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [获取关键运行状况信息 （函数索引 10）](get-critical-health-info--function-index-10-.md)

@@ -1,6 +1,6 @@
 ---
-title: 版本签名驱动程序包
-description: 版本签名驱动程序包
+title: 对驱动程序包进行发布签名
+description: 对驱动程序包进行发布签名
 ms.assetid: 57125c3b-55f0-4b60-b4d9-1408e26faccb
 keywords:
 - 驱动程序签名 WDK、 驱动程序包
@@ -14,14 +14,14 @@ keywords:
 - 发布有关版本签名签名 WDK，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 783705c7896f1f4eb799e2387969bdfa206e0e34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: da5af0cfc1d32625baa6a14654a209fbde2ba8c1
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521242"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560614"
 ---
-# <a name="release-signing-driver-packages"></a>版本签名驱动程序包
+# <a name="release-signing-driver-packages"></a>对驱动程序包进行发布签名
 
 
 在本部分中，对在 Windows Vista 和更高版本的 Windows 驱动程序进行签名的计算机被称为*签名计算机*。 签名的计算机必须运行 Windows XP SP2 或更高版本的 Windows 操作系统。 例如，适用于 Windows 7 上的发布的驱动程序可以运行的 Windows Vista 的计算机上进行签名。
@@ -96,7 +96,7 @@ ms.locfileid: "56521242"
 
 即插即用设备安装签名要求不适用于非 PnP 驱动程序。
 
-**请注意**  使用嵌入式的签名是通常更为简单且更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://msdn.microsoft.com/windows-drivers/develop/signing_a_driver)。
+**请注意**  使用嵌入式的签名是通常更为简单且更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)。
 
  
 

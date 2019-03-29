@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4ac904c4a2498defac56e4fb0dd9985e3ffe3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 857b755c3a6291067096e381d16e093bbbff2b66
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541675"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350069"
 ---
 # <a name="debugengoptxxx"></a>DEBUG\_ENGOPT\_XXX
 
@@ -41,7 +41,7 @@ ms.locfileid: "56541675"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>禁用版本检查的扩展。  这会禁止调试器引擎&#39;CheckVersion 的调用。</p>
+<p>禁用版本检查的扩展。  这会禁止 CheckVersion 调试器引擎的调用。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -88,7 +88,7 @@ ms.locfileid: "56541675"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>在目标在调试器中中断&#39;s 初始事件。</p>
+<p>在目标的初始事件在调试器中中断。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -106,7 +106,7 @@ ms.locfileid: "56541675"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>在目标在调试器中中断&#39;s 最后一个事件。 在实时用户模式目标，这是在进程退出时。 在内核模式下，它具有不起作用。</p>
+<p>在目标的最后一个事件在调试器中中断。 在实时用户模式目标，这是在进程退出时。 在内核模式下，它具有不起作用。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -135,7 +135,7 @@ ms.locfileid: "56541675"
 </td>
 <td align="left" width="60%">
 <p>允许调试器引擎来操作以允许在内存的只读部分中设置软件断点在目标上的页保护。</p>
-<p>设置软件断点时，该引擎以透明方式更改目标&#39;s 的内存来插入中断指令。</p>
+<p>设置软件断点时，该引擎以透明方式更改目标的内存要插入的中断指令。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -235,7 +235,7 @@ ms.locfileid: "56541675"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">DbgEng.h （包括 DbgEng.h）</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
-title: 处理数据类型协商中 AVStream 编解码器
-description: 处理数据类型协商中 AVStream 编解码器
+title: 在 AVStream 编解码器中处理数据类型协商
+description: 在 AVStream 编解码器中处理数据类型协商
 ms.assetid: b5212429-dbc8-4e9a-b5a9-2431f8a1eb2a
 keywords:
 - 硬件编解码器支持 WDK AVStream，数据类型协商
@@ -8,15 +8,14 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，处理数据类型协商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e96a9417bf674421b4eb4c5af77fe71c13f814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bd97a63202e9d56b6d62228536be2a99a3e80da2
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525404"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419557"
 ---
-# <a name="handling-data-type-negotiation-in-avstream-codecs"></a>处理数据类型协商中 AVStream 编解码器
-
+# <a name="handling-data-type-negotiation-in-avstream-codecs"></a>在 AVStream 编解码器中处理数据类型协商
 
 初始化设备时，系统提供设备代理 (Devproxy) 模块将分析驱动程序提供的筛选器描述符。 此外，Devproxy 公开相应的 MFT （媒体基础转换） 的输入和输出插针上的驱动程序支持的数据范围。
 
@@ -71,7 +70,7 @@ ms.locfileid: "56525404"
 
 7.  如果输入的媒体类型设置，视频处理器应报告根据指定的输入的媒体类型及其输出类型。
 
-8.  该驱动程序应支持[ICodecAPI](https://go.microsoft.com/fwlink/p/?linkid=146348)接口。 用户模式组件也可以通过使用此用户模式接口获得编解码器的配置信息。
+8.  该驱动程序应支持[ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))接口。 用户模式组件也可以通过使用此用户模式接口获得编解码器的配置信息。
 
 9.  安装过程中的编码器，首先 ICodecAPI 设置的属性后, 跟输出媒体类型。 接着，编码器应仅使用当前配置中提供它可以支持的输入的类型。
 
@@ -86,11 +85,3 @@ ms.locfileid: "56525404"
 14. 插针上 AVStream 驱动程序应具有都相互独立的状态。 这意味着可以从转换输入插针**KSSTATE\_停止**达**KSSTATE\_运行**在输出插针保持**KSSTATE\_停止**状态。
 
 15. 当微型驱动程序收到的 GET 请求属性，变量的数据缓冲区大小时，微型驱动程序应如何解释**NULL**作为查询的所需的缓冲区大小的缓冲区。 在这种情况下，该驱动程序应指定所需的长度的 Irp-&gt;IoStatus.Information 字段并返回状态\_缓冲区\_溢出。 此外，微型驱动程序应设置为警告而不是错误的返回代码。 例如，请按照本指南使用数据交集处理程序。
-
- 
-
- 
-
-
-
-

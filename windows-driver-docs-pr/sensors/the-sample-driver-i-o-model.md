@@ -4,12 +4,12 @@ description: 存储驱动程序通过简单的外围总线、 系统 GPIO 插针
 ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44f21c66e456c0066fcb3bcd7c8b0ba43271928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 07e090668c678b8ad9b6f31822341acadef2b2c7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526549"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348650"
 ---
 # <a name="sample-driver-io-model"></a>示例驱动程序 I/O 模型
 
@@ -18,7 +18,7 @@ ms.locfileid: "56526549"
 
 ![驱动程序 i/o 模型](images/io.png)
 
-## <a name="simple-peripheral-bus-spb"></a>简单的外围总线 （存储）
+## <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
 Windows 8.1 支持存储组件作为类扩展插件 （在内核模式下运行），使开发和实现存储控制器驱动程序更容易。 存储组件：
@@ -57,7 +57,7 @@ Windows 8.1 支持驻留在同一级别作为内核模式存储组件的 GPIO �
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | 不适用             |
+| SpbAccelerometer.asl | 不可用             |
 
  
 
@@ -130,7 +130,7 @@ Windows 8.1 支持的资源中心，管理所有设备和总线控制器连接�
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | 不适用             |
+| SpbAccelerometer.asl | 不可用             |
 
  
 
@@ -141,7 +141,7 @@ Name(RBUF, ResourceTemplate()
 {
    //
     // Sample I2C and GPIO resources. Modify to match your
-    // platform&#39;s underlying controllers and connections.
+    // platform's underlying controllers and connections.
     // \_SB.I2C and \_SB.GPIO are paths to predefined I2C
     // and GPIO controller instances.
     //

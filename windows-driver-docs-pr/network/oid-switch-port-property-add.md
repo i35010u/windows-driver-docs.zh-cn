@@ -5,12 +5,12 @@ ms.assetid: 6F246E5A-A02A-4303-9DB0-51E2FD4DC9E7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ADD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a0ab92b0ae6c63370c4680c822e2776df70acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f600ffb9f9ef5e6fb125ce09adf9b243950cd9de
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555047"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348644"
 ---
 # <a name="oidswitchportpropertyadd"></a>OID\_SWITCH\_PORT\_PROPERTY\_ADD
 
@@ -56,7 +56,7 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区长度太小，无法处理<a href="https://msdn.microsoft.com/library/windows/hardware/hh598238" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598238)"> <strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong> </a>结构和结构中的数据&#39;s 属性缓冲区。 扩展集<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区长度太小，无法处理<a href="https://msdn.microsoft.com/library/windows/hardware/hh598238" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh598238)"> <strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong> </a>结构和结构的属性缓冲区中的数据。 扩展集<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_DATA_NOT_ACCEPTED</p></td>
@@ -112,13 +112,13 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

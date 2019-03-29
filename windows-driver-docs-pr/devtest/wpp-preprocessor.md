@@ -12,12 +12,12 @@ keywords:
 - WPP 软件跟踪 WDK，生成过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b6bd50e9fb1cb992db8ef8399d4461ba96f985
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540818"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464347"
 ---
 # <a name="wpp-preprocessor"></a>WPP 预处理器
 
@@ -152,13 +152,13 @@ ms.locfileid: "56540818"
 <tr class="odd">
 <td align="left"><p>忽略感叹号</p></td>
 <td align="left"><p><strong>-noshrieks</strong></p></td>
-<td align="left"><p>指示 WPP 忽略感叹号，也称为&quot;shrieks。&quot;</p>
+<td align="left"><p>指示 WPP 忽略感叹号，也称为"shrieks。"</p>
 <p>使用在复杂的格式，如 %！ 时间戳 ！ %。 默认情况下，感叹号所需，WPP 尝试将其解释。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>数值基本的编号的格式字符串</p></td>
 <td align="left"><p><strong>-argbase:</strong><em>数量</em></p></td>
-<td align="left"><p>将生成的编号的格式字符串，如数值基准&quot;%1 ！ d ！、 %2 2!s ！。&quot;默认值为 1。</p></td>
+<td align="left"><p>将生成数值基准的编号的格式字符串，如"%1 ！ d ！，%2 2!s ！。" 默认值为 1。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>函数以生成跟踪消息</p></td>
@@ -172,7 +172,7 @@ ms.locfileid: "56540818"
 <tr class="even">
 <td align="left"><p>指定搜索字符串</p></td>
 <td align="left"><p><strong>-lookfor:</strong><em>字符串</em></p></td>
-<td align="left"><p>指示 WPP 搜索要启动跟踪的指定字符串的源代码文件。 默认情况下，WPP 搜索字符串&quot;WPP_INIT_TRACING。&quot;</p>
+<td align="left"><p>指示 WPP 搜索要启动跟踪的指定字符串的源代码文件。 默认情况下，WPP 搜索字符串"WPP_INIT_TRACING。"</p>
 <p>这是一个高级的选项的用户正在编写他们自己的模板。</p>
 <p>例如，在 default.tpl:</p>
 <pre space="preserve"><code><code>IF FOUND WPP_INIT_TRACING</code>
@@ -227,7 +227,7 @@ ms.locfileid: "56540818"
 <td align="left"><p><strong>-ext:.</strong> <em>ext1</em> <strong>[.</strong><em>ext2</em><strong>]</strong></p></td>
 <td align="left"><p>为源文件指定 WPP 可识别的文件类型。 WPP 将忽略具有不同的文件扩展名的文件。</p>
 <p>默认情况下，WPP 识别仅.c、.c + +、.cpp 和.cxx 文件。</p>
-<p>此选项允许您为 WPP 使用默认设置，而无需删除或重命名资源文件这 WPP 并不&#39;t 使用，例如.rc 和.mc 文件。</p>
+<p>此选项允许您为 WPP 使用默认设置，而无需删除或重命名 WPP 不使用，如.rc 资源文件和.mc 文件。</p>
 <p>例如，若要将跟踪添加到 c + + 文件和标头 (.h) 文件，使用以下命令：</p>
 <p><strong>-ext:.cpp.CPP.h.H</strong></p>
 <p>此外，若要为 c + + 和标头文件不同名称的 TMH 文件，使用<strong>-preserveext</strong>选项。</p></td>

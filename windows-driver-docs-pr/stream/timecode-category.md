@@ -8,12 +8,12 @@ keywords:
 - PINNAME_VIDEO_TIMECODE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f396a781e8a1e4fe9dd11fc66c9c53c7227ffa45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 00abaa1cc92b55dffb86b151b56023303d65341e
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523796"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350124"
 ---
 # <a name="timecode-category"></a>时间码类别
 
@@ -33,8 +33,8 @@ ms.locfileid: "56523796"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "56523796"
 </tr>
 <tr class="odd">
 <td><p><strong>主要格式 GUID</strong></p></td>
-<td><p>未定义任何内容。 定义使用直接显示的 GUID&#39;s MEDIATYPE_Timecode。</p></td>
+<td><p>未定义任何内容。 定义使用直接显示的 MEDIATYPE_Timecode 的 GUID。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>子设置的 GUID 格式</strong></p></td>

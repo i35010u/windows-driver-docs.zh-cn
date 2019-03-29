@@ -9,12 +9,12 @@ keywords:
 - 电视调谐器属性 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dffec1d6fbc734bea110e89fa91c24f4256f420
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7ee3e1290f0a7bfd5ea775e47e55fd2d61c46f29
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527198"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350322"
 ---
 # <a name="tuner-properties"></a>调谐器属性
 
@@ -55,7 +55,7 @@ ms.locfileid: "56527198"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565907" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565907)"><strong>KSPROPERTY_TUNER_STANDARD</strong></a></p></td>
-<td><p>返回模拟调谐器&#39;s 标准，如 NTSC、 PAL 或 SECAM。</p></td>
+<td><p>返回模拟调谐器的标准，如 NTSC、 PAL 或 SECAM。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565921" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STATUS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565921)"><strong>KSPROPERTY_TUNER_STATUS</strong></a></p></td>
@@ -94,7 +94,7 @@ ms.locfileid: "56527198"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565909" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565909)"><strong>KSPROPERTY_TUNER_STANDARD_MODE</strong></a></p></td>
-<td><p>控制是否将电视调谐器可以自动检测该调谐器&#39;s 信号为基础的标准。</p></td>
+<td><p>控制是否将电视调谐器可以自动检测信号的调谐器的标准。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565881" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565881)"><strong>KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS</strong></a></p></td>

@@ -1,17 +1,17 @@
 ---
-title: 创作的脚本语言中的测试
-description: 创作的脚本语言中的测试
+title: 使用脚本语言创作测试
+description: 使用脚本语言创作测试
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5083b4788da27dccd2c741a9ea53ba9c26aedc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547997"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349380"
 ---
-# <a name="authoring-tests-in-scripting-languages"></a>创作的脚本语言中的测试
+# <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
 
 除了 c + + 和C#，TAEF 支持创作脚本语言中的测试。
@@ -83,7 +83,7 @@ ms.locfileid: "56547997"
 52          <reference guid="e65ef678-a232-42a7-8a36-63108d719f31" version="1.0"/>
 53
 54          <public>
-55              <!-- Test setup and cleanup methods are declared using corresponding type = &#39;&#39; attributes -->
+55              <!-- Test setup and cleanup methods are declared using corresponding type = '' attributes -->
 56              <method name="ClassSetup" type="TestClassSetup"/>
 57              <method name="ClassCleanup" type="TestClassCleanup"/>
 58              <method name="MethodSetup"  type="TestMethodSetup"/>

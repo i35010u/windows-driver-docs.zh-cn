@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型提供了大量简化从自定义 UI 应
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a0d9c5515f67b8507933fc0143c9e5e20a6d74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7b6c12ec567d99dc8d96b1fc2dbae21352e0f41d
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519931"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464149"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 
@@ -27,7 +27,7 @@ V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>组件</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -58,9 +58,9 @@ PrinterQueue.GetProperties() – 指队列属性包</td>
 </tr>
 <tr class="odd">
 <td>XPS 呈现筛选器</td>
-<td><p>XPS 筛选器可以从内部访问驱动程序属性包<a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>打印筛选器管道属性包</strong></a>使用的属性名称&quot;DriverPropertyBag&quot;，或定义的值从 XPS_FP_PROPERTY_BAG <em>filterpipeline.h</em>。 下面是有关 DriverPropertyBag 信息：</p>
+<td><p>XPS 筛选器可以从内部访问驱动程序属性包<a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>打印筛选器管道属性包</strong></a>使用属性命名为"DriverPropertyBag"或从定义的值XPS_FP_PROPERTY_BAG<em>filterpipeline.h</em>。 下面是有关 DriverPropertyBag 信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取驱动程序属性包的 IPrinterPropertyBag 接口的指针。
-<p>和 XPS 筛选器可以访问队列属性包中使用的属性名称打印筛选器管道属性包&quot;QueuePropertyBag&quot;，或定义值从 XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>. 下面是有关 QueuePropertyBag 信息：</p>
+<p>XPS 筛选器可以访问队列属性包中使用属性名称"QueuePropertyBag"，或定义打印筛选器管道属性包和值从 XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>。 下面是有关 QueuePropertyBag 信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取对队列的属性包的 IPrinterPropertyBag 接口的指针。</td>
 </tr>
 </tbody>

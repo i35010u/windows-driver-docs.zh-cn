@@ -1,17 +1,17 @@
 ---
 title: 从可移动设备功能生成的容器 Id 重写
-description: 从可移动设备功能生成的容器 Id 重写
+description: 通过可移动设备功能重写生成的容器 ID
 ms.assetid: 8b1bf9d4-1aea-4d82-b783-f6dc62b9f8f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9eb30a571422049762cc202a97c45e75d1b01a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9f76526d1a75834facd711b09636b5547b82fc5
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525088"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349222"
 ---
-# <a name="container-ids-generated-from-a-removable-device-capability-override"></a>从可移动设备功能生成的容器 Id 重写
+# <a name="container-ids-generated-from-a-removable-device-capability-override"></a>通过可移动设备功能重写生成的容器 ID
 
 
 从 Windows 7 开始，新设备应提供特定于总线的唯一 ID (如中所述[从特定于总线的唯一 ID 生成的容器 Id](container-ids-generated-from-a-bus-specific-unique-id.md))。
@@ -49,23 +49,23 @@ Windows 7 和更高版本的 Windows 还支持一种机制来重写的报告的�
 <td align="left"><p>2</p></td>
 <td align="left"><p><a href="hardwareid-registry-subkey.md" data-raw-source="[HardwareID](hardwareid-registry-subkey.md)">HardwareID</a></p></td>
 <td align="left"><p>指定<a href="hardware-ids.md" data-raw-source="[hardware ID](hardware-ids.md)">硬件 ID</a>可移动设备功能重写的设备的应用。</p>
-<p>此子项的名称是实际的硬件 ID，与所有反斜杠 (&#39;&#39;) 字符替换为的数字 (&#39;#&#39;) 字符。</p></td>
+<p>此子项的名称是实际的硬件 ID，使用所有反斜杠 （"） 字符替换为的数字 （#） 字符。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><a href="compatibleid-registry-subkey.md" data-raw-source="[CompatibleID](compatibleid-registry-subkey.md)">CompatibleID</a></p></td>
 <td align="left"><p>指定<a href="compatible-ids.md" data-raw-source="[compatible ID](compatible-ids.md)">兼容 ID</a>可移动设备功能重写的设备的应用。</p>
-<p>此子项的名称是实际的硬件 ID，与所有反斜杠 (&#39;&#39;) 字符替换为的数字 (&#39;#&#39;) 字符。</p></td>
+<p>此子项的名称是实际的硬件 ID，使用所有反斜杠 （"） 字符替换为的数字 （#） 字符。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
 <td align="left"><p><a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a></p></td>
-<td align="left"><p>指定仅在设备的位置路径&#39;s 父设备节点 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>) 将具有可移动设备功能重写应用。</p></td>
+<td align="left"><p>指定仅在设备的父设备节点的位置路径 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff556277#wdkgloss-devnode" data-raw-source="&lt;em&gt;devnode&lt;/em&gt;"><em>devnode</em></a>) 必须应用的可移动设备功能重写。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
 <td align="left"><p><a href="childlocationpaths-registry-subkey.md" data-raw-source="[ChildLocationPaths](childlocationpaths-registry-subkey.md)">ChildLocationPaths</a></p></td>
-<td align="left"><p>指定设备的位置路径&#39;s 子 devnodes 会应用该可移动设备功能重写。</p>
+<td align="left"><p>指定设备的子 devnodes 的位置路径将具有可移动设备功能重写应用。</p>
 <div class="alert">
 <strong>请注意</strong>指定的设备父 devnode 不受影响的可移动设备功能重写时，除非<a href="locationpaths-registry-subkey.md" data-raw-source="[LocationPaths](locationpaths-registry-subkey.md)">LocationPaths</a>还指定了注册表子项或<strong>ChildLocationPaths</strong>为父 devnode 指定注册表子项。
 </div>

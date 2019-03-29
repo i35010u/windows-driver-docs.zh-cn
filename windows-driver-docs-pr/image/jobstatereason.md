@@ -12,12 +12,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e311538ed80b498bcf2ab48c95e017e3e0c0972
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab2809441e4a488a115205a63a56c6f0c92b070a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542115"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348964"
 ---
 # <a name="jobstatereason-element"></a>JobStateReason 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56542115"
 </wscn:JobStateReason>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -69,7 +69,7 @@ ms.locfileid: "56542115"
 </tr>
 <tr class="even">
 <td><p><span id="JobCanceledAtDevice"></span><span id="jobcanceledatdevice"></span><span id="JOBCANCELEDATDEVICE"></span>JobCanceledAtDevice</p></td>
-<td><p>当前扫描作业已取消在扫描设备&#39;s 前面板。</p></td>
+<td><p>当前扫描作业已取消在扫描设备的前面板。</p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="JobCompletedWithErrors"></span><span id="jobcompletedwitherrors"></span><span id="JOBCOMPLETEDWITHERRORS"></span>JobCompletedWithErrors</p></td>
@@ -142,7 +142,7 @@ ms.locfileid: "56542115"
 
 您可以扩展允许的值，但扩展此列表对客户端有影响。 客户端通常本地化**JobStateReason**到用户的语言值 （与其他字符串变量的值）。 但是，客户端将无法识别的供应商扩展的值。 客户端可以显示的值，它是接收到"按原样"，但此值将以英文显示，因此某些用户可能无法理解的值。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CreateScanJobRequest**](createscanjobrequest.md)

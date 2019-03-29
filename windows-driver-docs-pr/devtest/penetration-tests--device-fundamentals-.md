@@ -4,12 +4,12 @@ description: 设备的基础知识渗透测试执行各种形式的输入攻击�
 ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 032f9387f8281a8b1a94fa856bfddcd209794763
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4326689b9b276cc1f7be8d753042b52dd15f6d64
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464089"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>渗透压力测试（设备基础功能）
 
@@ -178,8 +178,8 @@ ms.locfileid: "56533689"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="fuzz_sub-opens_test"></span>模糊子打开测试</p></td>
-<td align="left"><p>该测试可执行一系列快速调用，以在设备中打开对象的&#39;s 命名空间。 在这些调用，它将传递与设备开始且包含任意名称和不同长度和内容的无意义字符串的路径。</p>
-<p>期间<em>打开测试相对</em>，(也称为<em>子打开测试</em>) 模糊测试尝试在设备中打开对象&#39;s<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">命名空间</a>。</p>
+<td align="left"><p>该测试可执行一系列快速的调用，以打开设备的命名空间中的对象。 在这些调用，它将传递与设备开始且包含任意名称和不同长度和内容的无意义字符串的路径。</p>
+<p>期间<em>打开测试相对</em>，(也称为<em>子打开测试</em>) 模糊测试中尝试打开对象的设备<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[namespace](https://msdn.microsoft.com/library/windows/hardware/ff542068)">命名空间</a>。</p>
 <p>在此测试期间模糊测试执行一系列快速的调用，以便在使用打开的设备的命名空间中打开对象<a href="#basic-open-operations" data-raw-source="[Basic Open Operations](#basic-open-operations)">打开的基本操作</a>和其他打开的操作。 在这些调用，模糊测试传递与设备开始且包含任意名称和不同长度和内容的无意义字符串的路径。</p>
 <p>此测试确定驱动程序或文件系统中管理其命名空间中的打开请求的方式。 具体而言，如果该驱动程序不支持在其命名空间中的开放请求，它必须防止未经授权的访问，失败的请求，或使用时设置 FILE_DEVICE_SECURE_OPEN 设备特征<a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"> <strong>IoCreateDevice</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff548407" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548407)"> <strong>IoCreateDeviceSecure</strong> </a>创建设备对象。</p>
 <p>有关命名空间的设备的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff542068" data-raw-source="[Controlling Device Namespace Access](https://msdn.microsoft.com/library/windows/hardware/ff542068)">控制设备 Namespace 访问</a>。</p>
@@ -197,7 +197,7 @@ ms.locfileid: "56533689"
 <td align="left"><p><span id="Fuzz_Sub-opens_with_Streams_test"></span><span id="fuzz_sub-opens_with_streams_test"></span><span id="FUZZ_SUB-OPENS_WITH_STREAMS_TEST"></span>模糊子随即打开，并且流测试</p></td>
 <td align="left"><p>此测试尝试打开各种设备上的命名的数据流。 测试使用与内容和可能会对某些设备上的其他使用有效的字符系列的任意流名称。</p>
 <p>期间<em>流测试</em>，模糊测试尝试打开各种设备上的命名的数据流。 测试使用与内容和可能会对某些设备上的其他使用有效的字符系列的任意流名称。 此测试确定是否尤其是是否该驱动程序将导出的设备不支持或预测的数据流量，该驱动程序能够正确处理数据流请求。</p>
-<p>一个<em>名为数据流</em>是文件对象的属性。 通过编写文件、 一个冒号和数据流，例如，名称的名称指定的命名的数据流&quot;File01.txt:AccessDate&quot;其中<em>AccessDate</em>是命名的数据流，也就是说，属性File01.txt 文件中。</p>
+<p>一个<em>名为数据流</em>是文件对象的属性。 通过在其中写入文件、 一个冒号和数据流，例如，"File01.txt:AccessDate"的名称的名称指定的命名的数据流<em>AccessDate</em>是命名的数据流中，即 File01.txt 文件的属性。</p>
 <p>模糊测试记录在测试中使用流名称。</p>
 <p><strong>测试二进制文件：</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong>DoSubOpensWithStreamsTest</p>
@@ -213,7 +213,7 @@ ms.locfileid: "56533689"
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>模糊长度为零的缓冲区 FSCTL 测试 / 模糊长度为零的缓冲区 IOCTL 测试</p></td>
 <td align="left"><p>此测试发出调用一系列<a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 函数</strong></a>输入和/或输出缓冲区长度为 0。 测试通过使用不同的函数代码、 设备类型、 数据传输方法和访问要求生成不同的文件系统控制代码。</p>
 <p>测试长度为零的缓冲区，请在模糊测试发出调用一系列<a href="https://msdn.microsoft.com/library/windows/desktop/aa363216" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa363216)"> <strong>DeviceIoControl 函数</strong></a>输入和/或输出缓冲区长度为 0。 测试通过使用不同的函数代码、 设备类型、 数据传输方法和访问要求生成不同的 I/O 控制代码。 有关内容的 I/O 控制代码的信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff543023" data-raw-source="[Defining I/O Control Codes](https://msdn.microsoft.com/library/windows/hardware/ff543023)">定义的 I/O 控制代码</a>。</p>
-<p>若要测试该驱动程序&#39;的缓冲区无效指针，这些用户模式下调用中的缓冲区指针的 s 处理内核虚拟地址空间，如 0xFFFFFC00 指定地址高)。</p>
+<p>若要测试的缓冲区无效指针的驱动程序的处理，这些用户模式下调用中的缓冲区指针指定地址高内核虚拟地址空间，如 0xFFFFFC00）。</p>
 <p>模糊测试打开在基本和其他打开测试过程中的所有设备上执行的缓冲区长度为零的测试。 你可以使用自定义此测试<em>MinFunctionCode</em>并<em>MaxFunctionCode</em>参数指定的范围的 IOCTL 或 FSCTL 函数调用中使用的代码的命令和<em>MinDeviceType</em>并<em>MaxDeviceType</em>来指定在调用中使用的设备类型的范围。</p>
 <p><strong>测试二进制文件：</strong>Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong>DoZeroLengthBufferIOCTLTest DoZeroLengthBufferFSCTLTest</p>
@@ -283,17 +283,17 @@ ms.locfileid: "56533689"
 ## <a name="related-topics"></a>相关主题
 
 
-[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[设备基础测试](device-fundamentals-tests.md)
+[设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[提供 WDTF 简单 I/O 插件](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)（提供的 WDTF 简单 I/O 插件）
 
-[如何测试在运行时从命令提示符下的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[如何在运行时通过命令提示符测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
 
  
 

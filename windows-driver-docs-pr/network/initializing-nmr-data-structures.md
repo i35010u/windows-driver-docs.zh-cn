@@ -8,12 +8,12 @@ keywords:
 - 初始化 NMR 数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 122baf2c7a0fd8cc805be592a803fa9944c77478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 372d3fc86532b667967298b51da9ceee76710940
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546749"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349620"
 ---
 # <a name="initializing-nmr-data-structures"></a>初始化 NMR 数据结构
 
@@ -34,7 +34,7 @@ ms.locfileid: "56546749"
 // Include the WSK header file
 #include "wsk.h"
 
-// Structure for the WSK application&#39;s network module identification
+// Structure for the WSK application's network module identification
 const NPI_MODULEID ModuleId =
 {
   sizeof(NPI_MODULEID),
@@ -42,7 +42,7 @@ const NPI_MODULEID ModuleId =
   { ... }  // A GUID that uniquely identifies the WSK application
 };
 
-// Prototypes for the WSK application&#39;s NMR API callback functions
+// Prototypes for the WSK application's NMR API callback functions
 NTSTATUS
   ClientAttachProvider(
     IN HANDLE NmrBindingHandle,
@@ -60,7 +60,7 @@ VOID
     IN PVOID ClientBindingContext
     );
 
-// Structure for the WSK application&#39;s characteristics
+// Structure for the WSK application's characteristics
 const NPI_CLIENT_CHARACTERISTICS Characteristics =
 {
   0,

@@ -1,17 +1,17 @@
 ---
-title: 3D 生产关键字概述
+title: 3D 制造关键字概述
 description: 打印架构 3D 制造关键字标识设备的功能可能的设置或所选的设备配置设置。
 ms.assetid: D78EB9E6-584A-419C-B320-8962CDCC966E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046e87f1e2226c181e0844ca5ada4bb87a0ab60f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7ba0b83a438b54e28d34ca3a8c7b7b6ea7e5e359
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543356"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464043"
 ---
-# <a name="3d-manufacturing-keywords-overview"></a>3D 生产关键字概述
+# <a name="3d-manufacturing-keywords-overview"></a>3D 制造关键字概述
 
 
 打印架构 3D 制造关键字标识可能 3D 制造设备的功能的设置或特定设备配置的所选的设置。 每个这些关键字描述特定的概念明确定义的方式以最大限度地设置生成者和 3D 制造的打印架构文档的使用者之间的通信中清楚明了。
@@ -132,7 +132,7 @@ http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d
 <tr class="even">
 <td>属性 psf:Mandatory</td>
 <td>xsd:QName</td>
-<td>指定该参数必须初始化时。 请参阅 §2.1.3.1.1，&quot;参数 psf:Mandatory 属性&quot;有关说明和要求此属性。</td>
+<td>指定该参数必须初始化时。 有关说明和要求此属性，请参阅 §2.1.3.1.1，"参数 psf:Mandatory 属性"。</td>
 </tr>
 <tr class="odd">
 <td>属性 psf:UnitType</td>

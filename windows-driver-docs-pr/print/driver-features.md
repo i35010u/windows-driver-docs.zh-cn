@@ -4,12 +4,12 @@ description: 驱动程序功能
 ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ee76004cb4a0b39a25d6472cfafd5fd46676fb40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 95b02d3d8d8f1b51ebea6cc41ffc02e0c1b1d461
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463980"
 ---
 # <a name="driver-features"></a>驱动程序功能
 
@@ -37,25 +37,25 @@ ms.locfileid: "56521642"
 <tbody>
 <tr class="odd">
 <td><p><strong>%AddEuro</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>将欧元符号添加到设备字体。</p>
-<p>此功能仅支持级别 2 + 打印机。 级别 1 打印机<strong>SetOptions</strong>会忽略此功能，并<strong>GetOptions</strong>始终返回&quot;False&quot;。</p>
+<p>此功能仅支持级别 2 + 打印机。 级别 1 打印机<strong>SetOptions</strong>会忽略此功能，并<strong>GetOptions</strong>始终返回"False"。</p>
 <p>打印机粘滞</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%CtrlDAfter</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>每个作业之后发送 CTRL-D。</p>
 <p>打印机粘滞</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%CtrlDBefore</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>每个作业之前发送 CTRL-D。</p>
 <p>打印机粘滞</p></td>
@@ -69,8 +69,8 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="odd">
 <td><p><strong>%GraphicsTrueGray</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>将纯灰度图形转换为 PostScript 灰色。</p>
 <p>打印机粘滞</p></td>
@@ -93,8 +93,8 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="even">
 <td><p><strong>%MetafileSpooling</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>启用/禁用高级打印功能。</p>
 <p>文档粘滞</p>
@@ -110,30 +110,30 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="even">
 <td><p><strong>%Mirroring</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>镜像输出通过反转的水平坐标。</p>
 <p>文档粘滞</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%Negative</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
-<td><p>通过反转的黑色和白色值生成负数的输出。 此功能仅支持黑白打印机。 对彩色打印机<strong>SetOptions</strong>会忽略此功能，并<strong>GetOptions</strong>始终返回&quot;False&quot;。</p>
+<td><p>通过反转的黑色和白色值生成负数的输出。 此功能仅支持黑白打印机。 对彩色打印机<strong>SetOptions</strong>会忽略此功能，并<strong>GetOptions</strong>始终返回"False"。</p>
 <p>文档粘滞</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%Orientation</strong></p></td>
-<td><p>&quot;纵向&quot;，&quot;横向&quot;， &quot;RotatedLandscape&quot;</p></td>
+<td><p>"Portrait", "Landscape", "RotatedLandscape"</p></td>
 <td><p>是</p></td>
 <td><p>指定输出方向。</p>
 <p>文档粘滞</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%OutputFormat</strong></p></td>
-<td><p>&quot;速度&quot;，&quot;可移植性&quot;， &quot;EPS&quot;，&quot;存档&quot;</p></td>
+<td><p>"速度"、"可移植性"、"EPS"，"存档"</p></td>
 <td><p>是</p></td>
 <td><p>指定 PostScript 输出格式。</p>
 <p>文档粘滞</p>
@@ -141,22 +141,22 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="even">
 <td><p><strong>%OutputProtocol</strong></p></td>
-<td><p>&quot;ASCII&quot;， &quot;BCP&quot;， &quot;TBCP&quot;，&quot;二进制&quot;</p></td>
+<td><p>"ASCII", "BCP", "TBCP", "Binary"</p></td>
 <td><p>是</p></td>
-<td><p>指定打印机的打印作业将使用的协议。 假定 postScript 打印机支持&quot;ASCII&quot;并&quot;二进制&quot;，因此将始终显示这些选项。 &quot;BCP&quot;并&quot;TBCP&quot;仅当支持这些选项才可用。 (若要了解此方面，检查全局特性&quot;协议&quot;。</p>
+<td><p>指定打印机的打印作业将使用的协议。 假定 postScript 打印机都支持"ASCII"和"Binary"，因此将始终显示这些选项。 "BCP"和"TBCP"选项是支持它们时才可用。 （若要查找此输出，请检查全局属性"协议"。</p>
 <p>打印机粘滞</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%OutputPSLevel</strong></p></td>
-<td><p>&quot;1&quot;, &quot;2&quot;, &quot;3&quot;</p></td>
+<td><p>"1", "2", "3"</p></td>
 <td><p>否</p></td>
-<td><p>指定要用于打印作业的 PostScript 语言级别。 该设置将不会大于中指定的值&quot;LanguageLevel&quot;的全局属性。</p>
+<td><p>指定要用于打印作业的 PostScript 语言级别。 该设置将不会大于"LanguageLevel"全局属性中指定的值。</p>
 <p>文档粘滞</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%PageOrder</strong></p></td>
-<td><p>&quot;FrontToBack&quot;</p>
-<p>&quot;BackToFront&quot;</p></td>
+<td><p>"FrontToBack"</p>
+<p>"BackToFront"</p></td>
 <td><p>是</p></td>
 <td><p>指定打印页的顺序。</p>
 <p>文档粘滞</p>
@@ -164,17 +164,17 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="odd">
 <td><p><strong>%PagePerSheet</strong></p></td>
-<td><p>&quot;1&quot;, &quot;2&quot;, &quot;4&quot;, &quot;6&quot;,</p>
-<p>&quot;9&quot;， &quot;16&quot;，&quot;手册&quot;</p></td>
+<td><p>"1", "2", "4", "6",</p>
+<p>"9"、"16"，"手册"</p></td>
 <td><p>是</p></td>
-<td><p>指定的每个物理表的逻辑页数。 此功能是也称为&quot;每张&quot;打印。</p>
+<td><p>指定的每个物理表的逻辑页数。 此功能也称为"每张"打印。</p>
 <p>文档粘滞</p>
 <p>有关详细信息，请参阅下面的注意 4。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%PSErrorHandler</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>发送 PostScript 错误处理程序。</p>
 <p>文档粘滞</p></td>
@@ -190,17 +190,17 @@ ms.locfileid: "56521642"
 </tr>
 <tr class="even">
 <td><p><strong>%TextTrueGray</strong></p></td>
-<td><p>&quot;True&quot;</p>
-<p>&quot;False&quot;</p></td>
+<td><p>"True"</p>
+<p>"False"</p></td>
 <td><p>是</p></td>
 <td><p>灰色文本转换为 PostScript 灰色。</p>
 <p>打印机粘滞</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>%TTDownloadFormat</strong></p></td>
-<td><p>&quot;自动&quot;，&quot;大纲&quot;，&quot;位图&quot;， &quot;NativeTrueType&quot;</p></td>
+<td><p>"Automatic", "Outline", "Bitmap", "NativeTrueType"</p></td>
 <td><p>是</p></td>
-<td><p>指定 TrueType 字体下载格式。 &quot;NativeTrueType&quot;支持仅当&quot;TTRasterizer&quot;的全局属性指示支持&quot;Type42&quot;。</p>
+<td><p>指定 TrueType 字体下载格式。 仅当"TTRasterizer"全局属性指示对"Type42"的支持时，才支持"NativeTrueType"。</p>
 <p>文档粘滞</p></td>
 </tr>
 <tr class="even">
@@ -326,14 +326,14 @@ ms.locfileid: "56521642"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>&quot;%MetafileSpooling\0False\0%PagePerSheet\0Booklet\0\0&quot;</p></td>
-<td><p>&quot;Booklet&quot;</p></td>
-<td><p>&quot;True&quot;</p></td>
+<td><p>"%MetafileSpooling\0False\0%PagePerSheet\0Booklet\0\0"</p></td>
+<td><p>"手册"</p></td>
+<td><p>"True"</p></td>
 </tr>
 <tr class="even">
-<td><p>&quot;%PagePerSheet\0Booklet\0%MetafileSpooling\0False\0\0&quot;</p></td>
-<td><p>&quot;1&quot;</p></td>
-<td><p>&quot;False&quot;</p></td>
+<td><p>"%PagePerSheet\0Booklet\0%MetafileSpooling\0False\0\0"</p></td>
+<td><p>"1"</p></td>
+<td><p>"False"</p></td>
 </tr>
 </tbody>
 </table>

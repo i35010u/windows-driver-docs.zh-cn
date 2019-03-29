@@ -55,12 +55,12 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7303fc5d4b547a82e19f86aa61e8093644bf0a10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2452edd6c8cfb7bc8df788bc7083c7538e2c09f0
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520543"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349470"
 ---
 # <a name="sensorcategorylocation"></a>传感器\_类别\_位置
 
@@ -101,7 +101,7 @@ ms.locfileid: "56520543"
 <tr class="even">
 <td><span id="SENSOR_TYPE_LOCATION_LOOKUP"></span><span id="sensor_type_location_lookup"></span>
 <strong>SENSOR_TYPE_LOCATION_LOOKUP</strong> {3B2EAE4A-72CE-436D-96D2-3C5B8570E987}</td>
-<td><p>查找传感器，例如根据用户提供信息&#39;IP 地址。</p></td>
+<td><p>查找传感器，例如根据用户的 IP 地址提供信息。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_TYPE_LOCATION_OTHER"></span><span id="sensor_type_location_other"></span>

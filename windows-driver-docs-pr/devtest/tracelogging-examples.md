@@ -4,12 +4,12 @@ description: 本主题中的源代码演示了如何使用 TraceLogging。
 ms.assetid: 0FD7D517-D46A-4D76-A5E1-3267DBB09A29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5509ad1bc20c7cd2b93ae2fc0a6772dbea430c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3fd529c986e1626d3e2d5ffcae6f43a0a403abae
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541036"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349830"
 ---
 # <a name="tracelogging-examples"></a>TraceLogging 示例
 
@@ -41,7 +41,7 @@ static const GUID s_TraceLoggingSampleProviderId = {
 /*
 Invoke this macro to allocate storage for a provider and declare a
 corresponding TraceLoggingHProvider handle variable. The provider name must be a
-string literal (not a variable) and must not contain any &#39;\0&#39; characters. The
+string literal (not a variable) and must not contain any '\0' characters. The
 handle and copies of the handle are valid as long as the original handle is in
 scope.
 
@@ -155,7 +155,7 @@ void TraceLoggingSample::BasicDataTypes()
         TraceLoggingValue((BYTE)200, "UINT8"),
         TraceLoggingValue(-2000000000, "INT32"),
         TraceLoggingValue(4000000000, "UINT32"),
-        TraceLoggingValue(4000000000, "UINT32"),    // This one won&#39;t show up as hex. 
+        TraceLoggingValue(4000000000, "UINT32"),    // This one won't show up as hex. 
                                                     // TraceLoggingValue will use default out types
         TraceLoggingValue(9000000000000000000, "INT64"),
         TraceLoggingValue(3.14f, "float"),
@@ -175,8 +175,8 @@ void TraceLoggingSample::BasicDataTypes()
         "Strings and Chars",
         TraceLoggingString("She loves me ...", "String (char)"), 
         TraceLoggingWideString(L"She loves me not ...", "String (wide char)"), 
-        TraceLoggingChar(&#39;A&#39;, "Single char"),
-        TraceLoggingWchar(L&#39;z&#39;, "Single wide char")
+        TraceLoggingChar('A', "Single char"),
+        TraceLoggingWchar(L'z', "Single wide char")
         );
 
 
@@ -238,7 +238,7 @@ void TraceLoggingSample::NamingData()
 
 
     /*
-    Let&#39;s use a different symbol for the value of the event&#39;s "Cat" field.  
+    Let's use a different symbol for the value of the event's "Cat" field.  
     */
     
     UINT32 Tiger = Cat;

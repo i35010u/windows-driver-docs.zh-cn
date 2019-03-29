@@ -4,12 +4,12 @@ description: 文件系统要求
 ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c5db11f4ea2d28c94b313d8b4b92ba093e3e66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533927"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349646"
 ---
 # <a name="file-system-requirements"></a>文件系统要求
 
@@ -215,7 +215,7 @@ typedef struct _CONTAINER_MAP_RECORD
 <td align="left">文件</td>
 <td align="left">E(R) U(R) A(RW)</td>
 <td align="left"><p>按应用程序名称的目录索引。</p>
-<p>有关详细信息，请参阅&#39;应用程序目录&#39;。</p></td>
+<p>有关详细信息，请参阅应用程序目录。</p></td>
 </tr>
 <tr class="even">
 <td align="left">mscp</td>
@@ -278,7 +278,7 @@ typedef struct _CONTAINER_MAP_RECORD
 | 名称          | 描述                                                                                                                                                                                                                                                                                 | 助记键 | PIN\_ID 映射    |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------|
 | Everyone      | 任何请求者，包括未经身份验证 （或匿名） 的用户。                                                                                                                                                                                                                              | E        | 角色\_EVERYONE (0) |
-| 用户          | 用户客户端的卡，用户通过使用 PIN 到卡证明其身份。                                                                                                                                                                                                             | U        | 角色\_用户 (1)     |
+| “用户”          | 用户客户端的卡，用户通过使用 PIN 到卡证明其身份。                                                                                                                                                                                                             | U        | 角色\_用户 (1)     |
 | 管理员 | 信用卡颁发机构或另一方具有对卡或卡上的数据管理关系。 使用特殊的 PIN 或键 （即可能或可能不是唯一的卡或用户） 来执行，而无需使用此数据，如 PIN 解除阻止用户无法执行的管理任务。 | A        | 角色\_管理员 (2)    |
 
  

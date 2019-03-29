@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8541a68cace7802b7e4afe75a9532106f1c759d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b417fb9910eb53b49458d24deec310af3557d802
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521531"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348652"
 ---
-# <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>Bug 检查 0x12F:VHD\_引导\_初始化\_失败
+# <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>Bug 检查 0x12F：VHD\_引导\_初始化\_失败
 
 
 VHD\_引导\_初始化\_失败错误检查的值为 0x0000012F。 这表示初始化失败尝试从 VHD 启动时出现。
@@ -45,7 +45,7 @@ VHD\_引导\_初始化\_失败错误检查的值为 0x0000012F。 这表示初�
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>失败的操作</p>
-1 :无法&#39;t 从引导设备提取 VHD 的信息。
+1 :无法提取 VHD 信息从启动设备。
 2 :正在等待到图面的 VHD 父设备超时。
 3 :VHD 路径字符串内存分配错误。
 4 :VHD 路径构造失败。

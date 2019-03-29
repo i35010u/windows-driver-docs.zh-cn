@@ -1,5 +1,5 @@
 ---
-title: CTRL + F （中断添加到 KD）
+title: CTRL+F（中断到 KD）
 description: CTRL + F 键取消命令，或进入调试器。
 ms.assetid: 45bb7eaf-cb79-4fb4-a01d-373bfb1957c3
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55351200570cd1c5bffed2e49277073aa83cea8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d35629ef83e832fa147661431be722ed065d9195
+ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525303"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58505149"
 ---
-# <a name="ctrlf-break-to-kd"></a>CTRL + F （中断添加到 KD）
+# <a name="ctrlf-break-to-kd"></a>CTRL+F（中断到 KD）
 
 
 CTRL + F 键取消命令，或进入调试器。 （此控制密钥是特别有用使用 CDB 调试 KD 自身时。）
@@ -28,10 +28,8 @@ CTRL + F 键取消命令，或进入调试器。 （此控制密钥是特别有�
 CTRL+F  ENTER 
 ```
 
-## <span id="ddk_meta_ctrl_f_dbg"></span><span id="DDK_META_CTRL_F_DBG"></span>
 
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
+## <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
 <table>
 <colgroup>

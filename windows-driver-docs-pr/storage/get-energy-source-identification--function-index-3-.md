@@ -1,17 +1,17 @@
 ---
-title: 获取能源源识别 （函数索引 3）
+title: 获取能量源标识（功能索引 3）
 description: 此函数返回的标识信息有关能源源 (ES)，可以管理的主机或设备管理。
 ms.assetid: E1589FD0-5D03-42EF-8078-0AE53CFB1ACA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6f5824b20adc05091c170042a4a0665c37cde9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c76bff652d9cad466c66907bc26828a0395c435
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525985"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348932"
 ---
-# <a name="get-energy-source-identification-function-index-3"></a>获取能源源识别 （函数索引 3）
+# <a name="get-energy-source-identification-function-index-3"></a>获取能量源标识（功能索引 3）
 
 
 此函数返回的标识信息有关能源源 (ES)，可以管理的主机或设备管理。
@@ -121,7 +121,7 @@ ms.locfileid: "56525985"
 <td align="left"><strong>ES 运行状况检查频率</strong></td>
 <td align="left">1</td>
 <td align="left">9</td>
-<td align="left"><p>该模块的当前频率&#39;s ES 运行状况评估。</p>
+<td align="left"><p>当前模块的 ES 运行状况评估的频率。</p>
 <p></em>字节 0 – <em>AUTO_ES_HEALTH_CHECK_FREQUENCY</em> （0，0xA9）</p></td>
 </tr>
 <tr class="even">
@@ -189,7 +189,7 @@ ms.locfileid: "56525985"
 <td align="left"><strong>ES 运行状况检查频率</strong></td>
 <td align="left">1</td>
 <td align="left">16</td>
-<td align="left"><p>当前平台的频率&#39;s ES 运行状况评估。</p>
+<td align="left"><p>当前平台的 ES 运行状况评估的频率。</p>
 <p><em>字节 0 – <em>AUTO_ES_HEALTH_FREQUENCY</em> （0，0xA9）。</p></td>
 </tr>
 <tr class="even">
@@ -217,7 +217,7 @@ ms.locfileid: "56525985"
 
 
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

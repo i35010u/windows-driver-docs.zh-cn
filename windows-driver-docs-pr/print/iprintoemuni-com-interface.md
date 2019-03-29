@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccc6a8b8bb608e94552c7750b267bee74f24558
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0c0ee8a3113ca2e0360a61fe091c08f532f16932
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545715"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350242"
 ---
 # <a name="iprintoemuni-com-interface"></a>IPrintOemUni COM 接口
 
@@ -45,11 +45,11 @@ ms.locfileid: "56545715"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554230" data-raw-source="[&lt;strong&gt;IPrintOemUni::DevMode&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554230)"><strong>IPrintOemUni::DevMode</strong></a></p></td>
-<td><p>对呈现插件执行操作&#39;s 专用 DEVMODE 成员。</p></td>
+<td><p>对呈现插件的专用 DEVMODE 成员执行操作。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554232" data-raw-source="[&lt;strong&gt;IPrintOemUni::DisableDriver&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554232)"><strong>IPrintOemUni::DisableDriver</strong></a></p></td>
-<td><p>释放所分配的插件呈现的资源&#39;s <strong>IPrintOemUni::EnableDriver</strong>方法。</p></td>
+<td><p>释放所分配的呈现插件的资源<strong>IPrintOemUni::EnableDriver</strong>方法。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554238" data-raw-source="[&lt;strong&gt;IPrintOemUni::DisablePDEV&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554238)"><strong>IPrintOemUni::DisablePDEV</strong></a></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "56545715"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554242" data-raw-source="[&lt;strong&gt;IPrintOemUni::DownloadFontHeader&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554242)"><strong>IPrintOemUni::DownloadFontHeader</strong></a></p></td>
-<td><p>允许插件，以下载字体呈现&#39;s 标头信息到打印机。</p></td>
+<td><p>允许呈现插件，以下载到打印机的字体的标头信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554245" data-raw-source="[&lt;strong&gt;IPrintOemUni::DriverDMS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554245)"><strong>IPrintOemUni::DriverDMS</strong></a></p></td>
@@ -85,7 +85,7 @@ ms.locfileid: "56545715"
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554256" data-raw-source="[&lt;strong&gt;IPrintOemUni::GetInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554256)"><strong>IPrintOemUni::GetInfo</strong></a></p></td>
-<td><p>（所需的实现。）返回呈现插件&#39;s 标识信息。</p></td>
+<td><p>（所需的实现。）返回呈现插件的标识信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554258" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554258)"><strong>IPrintOemUni::HalftonePattern</strong></a></p></td>
@@ -105,7 +105,7 @@ ms.locfileid: "56545715"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554269" data-raw-source="[&lt;strong&gt;IPrintOemUni::PublishDriverInterface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554269)"><strong>IPrintOemUni::PublishDriverInterface</strong></a></p></td>
-<td><p>（所需的实现。）提供指向 Unidrv 驱动程序的&#39;s <a href="iprintoemdriveruni-com-interface.md" data-raw-source="[IPrintOemDriverUni COM interface](iprintoemdriveruni-com-interface.md)">IPrintOemDriverUni COM 接口</a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni 接口</a>。</p></td>
+<td><p>（所需的实现。）提供一个指向 Unidrv 驱动<a href="iprintoemdriveruni-com-interface.md" data-raw-source="[IPrintOemDriverUni COM interface](iprintoemdriveruni-com-interface.md)">IPrintOemDriverUni COM 接口</a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff552940" data-raw-source="[IPrintCoreHelperUni interface](https://msdn.microsoft.com/library/windows/hardware/ff552940)">IPrintCoreHelperUni 接口</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554270" data-raw-source="[&lt;strong&gt;IPrintOemUni::ResetPDEV&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554270)"><strong>IPrintOemUni::ResetPDEV</strong></a></p></td>
@@ -113,7 +113,7 @@ ms.locfileid: "56545715"
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554274" data-raw-source="[&lt;strong&gt;IPrintOemUni::SendFontCmd&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554274)"><strong>IPrintOemUni::SendFontCmd</strong></a></p></td>
-<td><p>允许呈现插件，以修改打印机&#39;s 字体选择命令，并将其发送给打印机。</p></td>
+<td><p>允许呈现插件，以修改打印机的字体选择命令，然后将其发送到打印机。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff554277" data-raw-source="[&lt;strong&gt;IPrintOemUni::TextOutAsBitmap&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff554277)"><strong>IPrintOemUni::TextOutAsBitmap</strong></a></p></td>

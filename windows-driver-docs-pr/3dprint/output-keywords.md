@@ -4,12 +4,12 @@ description: 这些关键字用于描述给定 3D 生产作业的实际输出进
 ms.assetid: FBCE5E9C-8411-46C1-899E-A6C8FE27D947
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2191cc564de1a13331d9185b9c4d161ab31b6d35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 80c190b112862a9068f9ef8e5c067f1b8f12c905
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542027"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463847"
 ---
 # <a name="output-keywords"></a>输出关键字
 
@@ -175,7 +175,7 @@ Job3DSliceHeight 关键字配置文件
 </tr>
 <tr class="even">
 <td>目录</td>
-<td><p>psk3d:Job3DSliceHeight 是 IntegerParamType §2.1.3.1 中, 所述&quot; &lt;psf:ParameterDef&gt; &quot;打印架构规范中。</p>
+<td><p>psk3d:Job3DSliceHeight 是 IntegerParamType §2.1.3.1 中, 所述"&lt;psf:ParameterDef&gt;"打印架构规范中。</p>
 <p><strong>子项：</strong>IntegerParamType</p>
 <p><strong>描述:</strong></p>
 <p>Psf:MinValue 属性值必须是大于 0。</p>
@@ -204,7 +204,7 @@ Job3DSliceHeight 初始化配置文件
 </thead>
 <tbody>
 <tr class="odd">
-<td>名称</td>
+<td>“属性”</td>
 <td>psk3d:Job3DSliceHeight</td>
 </tr>
 <tr class="even">

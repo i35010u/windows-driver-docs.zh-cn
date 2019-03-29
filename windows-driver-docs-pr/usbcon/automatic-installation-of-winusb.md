@@ -1,14 +1,14 @@
 ---
-Description: In this topic, you will learn about how a WinUSB device is recognized in Windows 8.
+Description: 在本主题中，将了解如何在 Windows 8 中识别 WinUSB 设备。
 title: WinUSB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f35a76342d480b9933b8292b9281f189b71596c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab0ae35ab57fdbea90f6b7c4a143b3c36b161cfc
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464165"
 ---
 # <a name="winusb-device"></a>WinUSB 设备
 
@@ -54,9 +54,9 @@ Microsoft 提供了 Winusb.inf 包含安装 Winusb.sys 为 USB 设备的设备�
 
 ### <a name="about-using-the-usbdevice-class"></a>有关使用 USBDevice 类：
 
-不要使用&quot;USB&quot;安装程序类的未分类的设备。 此类保留用于安装控制器、 中心和复合设备。 误用&quot;USB&quot;类可能会导致重大的可靠性和性能问题。 对于未分类的设备，使用&quot;USBDevice&quot;。
+不要为未分类的设备使用的"USB"安装程序类。 此类保留用于安装控制器、 中心和复合设备。 误用"USB"类可能会导致相当重要的可靠性和性能问题。 对于未分类的设备，使用"USBDevice"。
 
-在 Windows 8 中，使用&quot;USBDevice&quot;设备类中，只要将它添加到你 INF:
+在 Windows 8 中，若要使用"USBDevice"设备类，只需添加到你 INF:
 
 ```cpp
   …

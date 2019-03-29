@@ -1,6 +1,6 @@
 ---
-title: 故障排除 KMDF 和 UMDF 驱动程序安装
-description: 故障排除 KMDF 和 UMDF 驱动程序安装
+title: 排查 KMDF 和 UMDF 驱动程序安装问题
+description: 排查 KMDF 和 UMDF 驱动程序安装问题
 ms.assetid: b0b71adc-cb6e-4b84-a5bf-bd1269bcf315
 keywords:
 - 内核模式驱动程序框架 WDK，安装驱动程序
@@ -10,14 +10,14 @@ keywords:
 - 调试 WDK KMDF 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0912301a578b3fcc62af100dbd334aafa1c47546
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d4deee1f1341e7436154a32c2186539ed9ec9b60
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544522"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348914"
 ---
-# <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>故障排除 KMDF 和 UMDF 驱动程序安装
+# <a name="troubleshooting-kmdf-and-umdf-driver-installation"></a>排查 KMDF 和 UMDF 驱动程序安装问题
 
 
 框架的共同安装程序会创建调试消息。 如果您正在运行的 Windows 内部的版本，您可以看到这些消息在调试器中。
@@ -50,7 +50,7 @@ WdfCoInstaller: DIF_INSTALLDEVICE: Coinstaller version: 1.9.7100
 WdfCoInstaller: DIF_INSTALLDEVICE: KMDF in-memory version: 1.7.6000
 WdfCoInstaller: DIF_INSTALLDEVICE: KMDF on-disk version: 1.7.6000
 WdfCoInstaller: Service Wdf01000 is running
-WdfCoInstaller: DIF_INSTALLDEVICE: Reboot is required, because the in-memory KMDF version is older than the coinstaller&#39;s version.
+WdfCoInstaller: DIF_INSTALLDEVICE: Reboot is required, because the in-memory KMDF version is older than the coinstaller's version.
 WdfCoInstaller: DIF_INSTALLDEVICE: Update is required, because the on-disk KMDF version is older than the coinstaller
 WdfCoInstaller: VerifyMSRoot: exit: error(0) The operation completed successfully.
 WdfCoInstaller: Invoking "D:\Windows\system32\wusa.exe "D:\Windows\Temp\WdfTemp\Microsoft Kernel-Mode Driver Framework Install-v1.9-Vista.msu" /quiet /norestart".

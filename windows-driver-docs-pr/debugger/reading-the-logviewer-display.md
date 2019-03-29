@@ -1,19 +1,19 @@
 ---
-title: 读取日志查看器显示
-description: 读取日志查看器显示
+title: 阅读 LogViewer 显示内容
+description: 阅读 LogViewer 显示内容
 ms.assetid: 425aff5d-780e-4600-a43a-8012d70263f1
 keywords:
 - 日志查看器显示
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f830e62284a3ff7eca0c407561a00a9ae4a699
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7edf95aba0116d9326e96e57c388f2f26108ec5e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547772"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463811"
 ---
-# <a name="reading-the-logviewer-display"></a>读取日志查看器显示
+# <a name="reading-the-logviewer-display"></a>阅读 LogViewer 显示内容
 
 
 ## <span id="ddk_reading_the_logviewer_display_dtoolq"></span><span id="DDK_READING_THE_LOGVIEWER_DISPLAY_DTOOLQ"></span>
@@ -37,8 +37,8 @@ ms.locfileid: "56547772"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>+/-</strong></p></td>
-<td align="left"><p>如果此列包含&quot; + &quot; （加号），它指示该函数采用一个或多个参数。 若要查看参数和它们的值，请双击的行或按向右箭头键，行的边框为红色时。 若要再次隐藏，请双击试或按向左的箭头键时行的边框为红色。</p>
-<p>此外，还有&quot;d #&quot;此列中的值。 这表明&quot;深度&quot;函数的调用 （换句话说，深度调用嵌套在其他记录的函数调用中）。</p></td>
+<td align="left"><p>如果此列包含"+"（加号），它指示该函数采用一个或多个参数。 若要查看参数和它们的值，请双击的行或按向右箭头键，行的边框为红色时。 若要再次隐藏，请双击试或按向左的箭头键时行的边框为红色。</p>
+<p>在本专栏中还有一个"d #"值。 这指示的"深度"函数调用的 （换句话说，深度调用嵌套在其他记录的函数调用中）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>#</strong></p></td>

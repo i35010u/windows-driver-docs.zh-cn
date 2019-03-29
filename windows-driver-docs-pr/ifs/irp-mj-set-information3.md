@@ -11,12 +11,12 @@ keywords:
 - 名称 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b0568b293b1e0f442d60726570ab0eef4d33aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 24f39466824de162db2b0b1e47447960bccaebe7
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533340"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349168"
 ---
 # <a name="irpmjsetinformation"></a>IRP\_MJ\_SET\_INFORMATION
 
@@ -41,7 +41,7 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
 
     SeLockSubjectContext( &SubjectContext );
 
-    Granted = SeAccessCheck(targetSD,           // Target&#39;s SD.
+    Granted = SeAccessCheck(targetSD,           // Target's SD.
                             &SubjectContext,    // Captured security context.
                             TRUE,               // Tokens are locked.
                             DELETE,             // we only care about delete 

@@ -1,17 +1,17 @@
 ---
-title: ACPI 5.0 的 Windows 支持概述
+title: 针对 ACPI 5.0 的 Windows 支持概述
 description: ACPI 5.0 规范支持基于 SoC 的移动平台的运行 Windows 8 和更高版本，但继续支持早期版本 Windows 中引入了许多有用的功能。
 ms.assetid: BAFBA051-FEDA-469B-9B67-C74D252C84F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c44a09ba3320c491de3ac345a3899dd1e769283d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5a3447610232f31d1a61eb6ef5bbc8a8ceae79c6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541631"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464250"
 ---
-# <a name="overview-of-windows-support-for-acpi-50"></a>ACPI 5.0 的 Windows 支持概述
+# <a name="overview-of-windows-support-for-acpi-50"></a>针对 ACPI 5.0 的 Windows 支持概述
 
 
 [ACPI 5.0 规范](https://www.uefi.org/specifications)启用支持的基于 SoC 的移动平台的运行 Windows 8 和更高版本，并启用和支持的 Windows Server 2016 及更高版本，但仍支持许多有用的功能中引入的Windows 的早期版本。 此设计指南将定向到专门适用于 SoC 基于平台以及与面向 Windows Server 2016 的系统的组成部分 ACPI 5.0 的实施者，并且介绍了在 ACPI 上运行 Windows 中实现特定于 SoC 的功能的最佳做法这些平台。
@@ -32,7 +32,7 @@ Windows 支持基于固件修订[ACPI 5.0 规范](https://www.uefi.org/specifica
 
  
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -57,7 +57,7 @@ Windows 支持基于固件修订[ACPI 5.0 规范](https://www.uefi.org/specifica
 </tr>
 <tr class="odd">
 <td><p><a href="acpi-namespace-hierarchy.md" data-raw-source="[ACPI namespace hierarchy](acpi-namespace-hierarchy.md)">ACPI 命名空间层次结构</a></p></td>
-<td><p>ACPI 命名空间层次结构必须准确地建模平台&#39;s 硬件拓扑，从处理器&#39;s 系统总线 (&quot;_SB&quot;)。 一般情况下，连接到总线或控制器的设备显示为该总线或控制器设备命名空间中的子项。</p></td>
+<td><p>ACPI 命名空间层次结构必须准确地建模平台的硬件拓扑，从处理器的系统总线 ("_SB")。 一般情况下，连接到总线或控制器的设备显示为该总线或控制器设备命名空间中的子项。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="microsoft-asl-compiler.md" data-raw-source="[Microsoft ASL compiler](microsoft-asl-compiler.md)">Microsoft ASL 编译器</a></p></td>

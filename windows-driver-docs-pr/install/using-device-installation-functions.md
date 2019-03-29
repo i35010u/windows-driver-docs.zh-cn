@@ -7,12 +7,12 @@ keywords:
 - 设备安装函数 WDK SetupAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789460aaeccb5afbcc00495475dd51f355762446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5dbf67fa17ae99a66ea2e7241c2b1d0969daa498
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554954"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350408"
 ---
 # <a name="using-device-installation-functions"></a>使用设备安装函数
 
@@ -190,7 +190,7 @@ ms.locfileid: "56554954"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff550917" data-raw-source="[&lt;strong&gt;SetupDiBuildDriverInfoList&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550917)"><strong>SetupDiBuildDriverInfoList</strong></a></p></td>
-<td align="left"><p>生成的与指定的设备实例或设备的信息集关联的驱动程序列表&#39;s 全局类驱动程序列表。</p></td>
+<td align="left"><p>生成与指定的设备实例或设备信息设置的全局类驱动程序列表关联的驱动程序的列表。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff551018" data-raw-source="[&lt;strong&gt;SetupDiEnumDriverInfo&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551018)"><strong>SetupDiEnumDriverInfo</strong></a></p></td>

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 306b6df8574ae9baa4d5f52b5f806aa8e7d89f47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 66b8d4c4a82af3bb44a7ca11b249e0d65f4732f9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526309"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463812"
 ---
-# <a name="bug-check-0xea-threadstuckindevicedriver"></a>Bug 检查 0xEA:THREAD\_STUCK\_IN\_DEVICE\_DRIVER
+# <a name="bug-check-0xea-threadstuckindevicedriver"></a>Bug 检查 0xEA：THREAD\_STUCK\_IN\_DEVICE\_DRIVER
 
 
 在线程\_STUCK\_IN\_设备\_驱动程序 bug 检查的值为 0x000000EA。 这表示无休止地旋转的设备驱动程序中的线程。
@@ -56,7 +56,7 @@ ms.locfileid: "56526309"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p><strong>在内核调试程序：</strong>次数&quot;截获&quot;bug 检查 0xEA 已被点击</p>
+<td align="left"><p><strong>在内核调试程序：</strong>点击"被拦截"的 bug 检查 0xEA 次数</p>
 <p><strong>在蓝色屏幕：</strong>1</p></td>
 </tr>
 </tbody>

@@ -25,12 +25,12 @@ keywords:
 - 混合使用音频 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7cb34602f513c401f34e776a39d3509b37f741d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e0645a9a1bebbcb6c520ea8e0fe69d1287eccd75
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526943"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350398"
 ---
 # <a name="specifying-the-topology"></a>指定拓扑
 
@@ -63,7 +63,7 @@ PortCls 提供了六个端口驱动程序：WavePci、 WaveCyclic、 WaveRT、 M
 </tr>
 <tr class="odd">
 <td align="left"><p>拓扑筛选器</p></td>
-<td align="left"><p>表示适配器&#39;s 混音器电路。</p></td>
+<td align="left"><p>表示适配器的混音器电路。</p></td>
 </tr>
 </tbody>
 </table>

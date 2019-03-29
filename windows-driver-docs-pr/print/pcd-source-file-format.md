@@ -11,12 +11,12 @@ keywords:
 - 关键字 WDK MSPlot
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ced2e4810a82f02cd8401fd4910225b0398ee4fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555107"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463956"
 ---
 # <a name="pcd-source-file-format"></a>PCD 源文件格式
 
@@ -77,11 +77,11 @@ ColorCap {1}
 <tr class="odd">
 <td><p><strong>DeviceName</strong></p></td>
 <td><p>带引号的字符串表示可显示设备名称 （31 个字符最大）。</p></td>
-<td><p>&quot;HPGL/2 绘图仪&quot;</p></td>
+<td><p>"HPGL/2 绘图仪"</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>一个表示设备的尺寸 DWORD 值&#39;s 有效 DPI。 有关详细信息请参阅<strong>upDevicePelsDPI</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>。</p></td>
+<td><p>一个大小 DWORD 的值，表示设备的有效 DPI。 有关详细信息请参阅<strong>upDevicePelsDPI</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>。</p></td>
 <td><p>默认值为零，从而导致 GDI 来计算的值。</p></td>
 </tr>
 <tr class="odd">
@@ -103,7 +103,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>InitString</strong></p></td>
-<td><p>带引号的 C 语言字符串，表示发送到打印机驱动程序的命令&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>函数。</p></td>
+<td><p>带引号的 C 语言字符串，表示发送到打印机的驱动程序的命令<a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>函数。</p></td>
 <td><p>NULL 字符串。</p></td>
 </tr>
 <tr class="odd">
@@ -151,7 +151,7 @@ ColorCap {1}
 </tr>
 <tr class="odd">
 <td><p><strong>PlotDPI</strong></p></td>
-<td><p>表示笔绘图仪的两个尺寸 DWORD 值&#39;s <em>x</em>并<em>y</em>分辨率，以每英寸点数。</p></td>
+<td><p>两个大小 DWORD 的值表示笔绘图仪<em>x</em>并<em>y</em>分辨率，以每英寸点数。</p></td>
 <td><p></p>
 {1016, 1016}</td>
 </tr>

@@ -1,22 +1,22 @@
 ---
-title: Usb 规则集 (KMDF)
+title: USB 规则集 (KMDF)
 description: 使用这些规则来验证您的驱动程序正确地处理 USB 设备的某些专用的 KMDF 方法。
 ms.assetid: E07F4E18-CE93-43A8-AAB4-C3CF8CC790CC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fea3eafe6dfe5e6c9a87683cd7440b83af6142e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 21b69d5dbafcde769b73472699cb020674b4bffe
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540748"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349894"
 ---
-# <a name="usb-rule-set-kmdf"></a>Usb 规则集 (KMDF)
+# <a name="usb-rule-set-kmdf"></a>USB 规则集 (KMDF)
 
 
 使用这些规则来验证您的驱动程序正确地处理 USB 设备的某些专用的 KMDF 方法。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -37,7 +37,7 @@ ms.locfileid: "56540748"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"><strong>UsbContReader</strong></a></p></td>
-<td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"> <strong>UsbContReader</strong> </a>规则指定一个持续的读取器是否已正确配置驱动程序内&#39;s <a href="https://msdn.microsoft.com/library/windows/hardware/ff540880" data-raw-source="[&lt;em&gt;EvtDevicePrepareHardware&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540880)"> <em>EvtDevicePrepareHardware</em></a>事件的回调函数，其中该驱动程序会调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff551130" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeConfigContinuousReader&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551130)"> <strong>WdfUsbTargetPipeConfigContinuousReader</strong> </a>方法。</p></td>
+<td align="left"><p><a href="kmdf-usbcontreader.md" data-raw-source="[&lt;strong&gt;UsbContReader&lt;/strong&gt;](kmdf-usbcontreader.md)"> <strong>UsbContReader</strong> </a>规则指定连续读取器是否已正确配置中的驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff540880" data-raw-source="[&lt;em&gt;EvtDevicePrepareHardware&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff540880)"> <em>EvtDevicePrepareHardware</em> </a>事件的回调函数，其中该驱动程序会调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff551130" data-raw-source="[&lt;strong&gt;WdfUsbTargetPipeConfigContinuousReader&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551130)"> <strong>WdfUsbTargetPipeConfigContinuousReader</strong> </a>方法。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="kmdf-usbdevicecreate.md" data-raw-source="[&lt;strong&gt;UsbDeviceCreate&lt;/strong&gt;](kmdf-usbdevicecreate.md)"><strong>UsbDeviceCreate</strong></a></p></td>

@@ -1,14 +1,14 @@
 ---
-Description: This section provides information about choosing the correct mechanism for the selective suspend feature.
+Description: 本部分提供有关选择正确的机制的选择性挂起功能的信息。
 title: USB 选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58342f6c9d500e304c3705a212586e159a4af5bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9c29b337842ee640f962eb6e262a896bbb75c9a
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534563"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464245"
 ---
 # <a name="usb-selective-suspend"></a>USB 选择性挂起
 
@@ -130,18 +130,18 @@ USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的�
 </colgroup>
 <thead>
 <tr class="header">
-<th>方案</th>
+<th>应用场景</th>
 <th>空闲请求取消机制</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>客户端驱动程序已取消空闲 IRP，但调用 USB 驱动程序堆栈&quot;USB 空闲通知回调例程&quot;。</td>
+<td>客户端驱动程序已取消空闲的 IRP 和 USB 驱动程序堆栈不具有名为"USB 空闲通知回调例程"。</td>
 <td><p>USB 驱动程序堆栈完成空闲 IRP。 因为设备永远不会离开<strong>D0</strong>，驱动程序不会更改设备状态。</p></td>
 </tr>
 <tr class="even">
 <td>客户端驱动程序已取消空闲 IRP、 USB 驱动程序堆栈已调用 USB 空闲通知回调例程，和尚未返回。</td>
-<td><p>很可能即使客户端驱动程序调用取消 IRP，调用 USB 空闲通知回调例程。 在此情况下，客户端驱动程序&#39;s 回调例程必须仍然关闭设备电源通过以同步方式将设备发送到低功率状态。</p>
+<td><p>很可能即使客户端驱动程序调用取消 IRP，调用 USB 空闲通知回调例程。 在这种情况下，客户端驱动程序的回调例程必须仍然关闭电源设备通过以同步方式将设备发送到低功率状态。</p>
 <p>当设备处于较低的电源状态时，客户端驱动程序然后可以发送<strong>D0</strong>请求。</p>
 <p>或者，驱动程序可以等待完成空闲 IRP，然后将发送的 USB 驱动程序堆栈<strong>D0</strong> IRP。</p>
 <p>如果无法将设备置于低功耗状态由于内存不足，无法分配 power IRP 的回调例程，它应取消空闲 IRP 并立即退出。 将无法完成空闲 IRP，直到已返回回调例程;因此，回调例程不应阻止等待已取消的空闲 IRP 才能完成。</p></td>

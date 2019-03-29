@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ed2a52a5572b724783071dc6f4b14632255f30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c454e2deea3ad0f27476f75fff549f8541f59cd9
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464273"
 ---
 # <a name="wiaipssupportedbarcodetypes"></a>WIA\_IPS\_支持\_条形码\_类型
 
@@ -126,15 +126,15 @@ ms.locfileid: "56521708"
 </tr>
 <tr class="odd">
 <td><p>WIA_BARCODE_POSTNETA</p></td>
-<td><p>（邮政数字编码技术） POSTNET &quot;A&quot;代码</p></td>
+<td><p>POSTNET （邮政数字编码技术）"A"代码</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_BARCODE_POSTNETB</p></td>
-<td><p>（邮政数字编码技术） POSTNET &quot;B&quot;代码</p></td>
+<td><p>POSTNET （邮政数字编码技术）"B"代码</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_BARCODE_POSTNETC</p></td>
-<td><p>（邮政数字编码技术） POSTNET &quot;C&quot;代码</p></td>
+<td><p>POSTNET （邮政数字编码技术）"C"代码</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_BARCODE_POSTNET_DPBC</p></td>
@@ -251,7 +251,7 @@ WIA 微型驱动程序可以使用定义为 WIA 的其他自定义值来扩展�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

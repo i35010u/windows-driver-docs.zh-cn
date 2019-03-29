@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1721f8e18217cb4fd1765e391c7ed4c4ec3956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d858e5686ad0532c1b2df49a4032c32ae50a7588
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523041"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349266"
 ---
-# <a name="bug-check-0xf5-fltmgrfilesystem"></a>Bug 检查 0xF5:FLTMGR\_FILE\_SYSTEM
+# <a name="bug-check-0xf5-fltmgrfilesystem"></a>Bug 检查 0xF5：FLTMGR\_FILE\_SYSTEM
 
 
 FLTMGR\_文件\_检查系统错误的值为 0x000000F5。 这表明无法恢复的错误发生在筛选器管理器中。
@@ -94,14 +94,14 @@ FLTMGR\_文件\_检查系统错误的值为 0x000000F5。 这表明无法恢复�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6D</p></td>
-<td align="left"><p>微筛选器的地址&#39;s 上下文结构</p></td>
+<td align="left"><p>微筛选器的上下文结构的地址</p></td>
 <td align="left"><p>CONTEXT_NODE 结构的地址</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>上下文结构已取消引用次数过多。 这意味着，在筛选器管理器的引用计数&#39;s CONTEXT_NODE 结构出现了为零，尽管它仍附加到与其关联的对象。</p></td>
+<td align="left"><p>上下文结构已取消引用次数过多。 这意味着，它仍附加到与其关联的对象时，筛选器管理器的 CONTEXT_NODE 结构的引用计数出现了为零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6E</p></td>
-<td align="left"><p>微筛选器的地址&#39;s 上下文结构</p></td>
+<td align="left"><p>微筛选器的上下文结构的地址</p></td>
 <td align="left"><p>CONTEXT_NODE 结构的地址</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>上下文结构被释放后引用。</p></td>

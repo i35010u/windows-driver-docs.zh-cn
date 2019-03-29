@@ -14,12 +14,12 @@ keywords:
 - $ea
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d459b99d76a14123a6a407d69a271822451f52b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58feed7cb5c865f3589f00a8abdde67a5b4a4bf6
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464365"
 ---
 # <a name="pseudo-register-syntax"></a>伪寄存器语法
 
@@ -70,11 +70,11 @@ Evaluate expression: 143 = 0000008f
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>$ea</strong></p></td>
-<td align="left"><p>已执行的最后一个指令的有效地址。 如果此指令没有有效的地址，则调试器会显示&quot;寄存器错误&quot;。 如果此指令有两个有效的地址，调试器会显示第一个地址。</p></td>
+<td align="left"><p>已执行的最后一个指令的有效地址。 如果此指令没有有效的地址，调试器将显示"错误的寄存器错误"。 如果此指令有两个有效的地址，调试器会显示第一个地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>$ea2</strong></p></td>
-<td align="left"><p>已执行的最后一个指令的第二个的有效地址。 如果此指令不具有两个有效的地址，则调试器会显示&quot;寄存器错误&quot;。</p></td>
+<td align="left"><p>已执行的最后一个指令的第二个的有效地址。 如果此指令不具有两个有效的地址，调试器将显示"错误的寄存器错误"。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$exp</strong></p></td>
@@ -83,7 +83,7 @@ Evaluate expression: 143 = 0000008f
 <tr class="even">
 <td align="left"><p><strong>$ra</strong></p></td>
 <td align="left"><p>寄信人地址为当前位于堆栈上。</p>
-<p>此地址是在执行命令中尤其有用。 例如， <strong>g @$ ra</strong>继续，直到找到返回地址 (尽管<strong><a href="gu--go-up-.md" data-raw-source="[gu (Go Up)](gu--go-up-.md)">(Go Up) gu</a></strong>是更精确的有效方式&quot;出单步执行&quot;的当前函数)。</p></td>
+<p>此地址是在执行命令中尤其有用。 例如， <strong>g @$ ra</strong>继续，直到找到的寄信人地址 (尽管<strong><a href="gu--go-up-.md" data-raw-source="[gu (Go Up)](gu--go-up-.md)">(Go Up) gu</a></strong>是"单步执行"当前函数的更精确地有效的方法)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$ip</strong></p></td>

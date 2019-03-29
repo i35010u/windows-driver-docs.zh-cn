@@ -9,12 +9,12 @@ keywords:
 - 策略设置 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62efc525f01cadd330eae9edbf5c0a8e035bf6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dcbafed57b2ffb0e88de467d680cab4006e7b6c2
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523961"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350364"
 ---
 # <a name="whea-policy-settings"></a>WHEA 策略设置
 
@@ -80,7 +80,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WHEA\Policy
 <tr class="odd">
 <td><p></p>
 <p><strong>MemPfaDisable</strong></p></td>
-<td><p>一个布尔值，指定是否 WHEA&#39;s PFA ECC 内存页已禁用。</p>
+<td><p>一个布尔值，该值指定是否禁用 WHEA 的 PFA ECC 内存页。</p>
 <p>值为 0 启用 PFA ECC 内存页。 任何其他值禁用 PFA ECC 内存页。</p>
 <p>此设置的默认值为 0。</p></td>
 </tr>

@@ -4,12 +4,12 @@ description: 正在检查 IRP_MJ_CREATE 操作 Oplock 状态
 ms.assetid: 30684025-9da0-4f4c-a850-ab0390bef091
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a970302fe1bddae85e728615bf130994581e333
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 883d03a15f8c0f8eb2a1773d4cf955d32d406b03
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545373"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464281"
 ---
 # <a name="checking-the-oplock-state-of-an-irpmjcreate-operation"></a>正在检查 IRP_MJ_CREATE 操作 Oplock 状态
 
@@ -155,7 +155,7 @@ ms.locfileid: "56545373"
 </li>
 <li><b>和：</b><ul>
 <li>
-<p>一个&quot;可写&quot;所需的访问请求上未打开进行 FILE_SHARE_READ 访问的流。  请注意，&quot;可写&quot;访问权限定义为任何属性：</p>
+<p>在未打开进行 FILE_SHARE_READ 访问的流上请求的"可写"所需的访问权限。  请注意，任何特性而不定义"写"访问权限：</p>
 <ul>
 <li>FILE_READ_ATTRIBUTES</li>
 <li>FILE_WRITE_ATTRIBUTES</li>

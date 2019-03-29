@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c6300eb3f5526dae84f60282a9e333826426a580
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 53473c1af66f2309121b06e73ab3d276edbca3fd
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540945"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349930"
 ---
-# <a name="bug-check-0x1-apcindexmismatch"></a>Bug 检查 0x1:APC\_INDEX\_MISMATCH
+# <a name="bug-check-0x1-apcindexmismatch"></a>Bug 检查 0x1：APC\_INDEX\_MISMATCH
 
 
 APC\_索引\_不匹配错误检查的值为 0x00000001。 这指示 APC （异步过程调用） 状态索引中已存在不匹配。
@@ -48,11 +48,11 @@ APC\_索引\_不匹配错误检查的值为 0x00000001。 这指示 APC （异�
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left">当前线程的值&#39;s <strong>ApcStateIndex</strong>字段。</td>
+<td align="left">当前线程的值<strong>ApcStateIndex</strong>字段。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>当前线程的值&#39;s CombinedApcDisable 字段。 此字段包含两个单独的 16 位字段：(<em>线程</em>-&gt;<strong>SpecialApcDisable</strong> &lt; &lt; 16) |<em>线程</em>-&gt;<strong>KernelApcDisable</strong>。</p></td>
+<td align="left"><p>当前线程的 CombinedApcDisable 字段的值。 此字段包含两个单独的 16 位字段：(<em>线程</em>-&gt;<strong>SpecialApcDisable</strong> &lt; &lt; 16) |<em>线程</em>-&gt;<strong>KernelApcDisable</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>

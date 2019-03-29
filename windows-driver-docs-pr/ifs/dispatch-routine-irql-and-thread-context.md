@@ -11,12 +11,12 @@ keywords:
 - 于 Irql WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d9bcc852b2ee0921f2985c02f3778f91aeaaf21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f9489bbd8c9b792a88dba89fe164452de7fac798
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522453"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349820"
 ---
 # <a name="dispatch-routine-irql-and-thread-context"></a>调度例程 IRQL 和线程上下文
 
@@ -35,8 +35,8 @@ ms.locfileid: "56522453"
 <thead>
 <tr class="header">
 <th align="left">调度例程</th>
-<th align="left">调用方&#39;s IRQL:</th>
-<th align="left">调用方&#39;s 线程上下文：</th>
+<th align="left">调用方的 IRQL:</th>
+<th align="left">调用方的线程上下文：</th>
 </tr>
 </thead>
 <tbody>

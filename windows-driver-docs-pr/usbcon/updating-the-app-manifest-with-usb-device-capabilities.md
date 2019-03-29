@@ -1,16 +1,16 @@
 ---
-Description: This topic describes the device capabilities that are required for a Windows app that uses the Windows.Devices.Usb namespace.
-title: 如何将 USB 设备功能添加到应用程序清单
+Description: 本主题介绍所需的使用 Windows.Devices.Usb 命名空间的 Windows 应用的设备功能。
+title: 如何将 USB 设备功能添加到应用部件清单
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7fa17cb6a71b5b9c6a47687f91e9e1c69e05c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 013695e2f0990172d3a79304f96dda4a9f0db553
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543518"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464311"
 ---
-# <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>如何将 USB 设备功能添加到应用程序清单
+# <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>如何将 USB 设备功能添加到应用部件清单
 
 
 **摘要**
@@ -101,38 +101,38 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
 </thead>
 <tbody>
 <tr class="odd">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;any&quot;&gt;
-    &lt;Function Type=&quot;classId:ef 01 01&quot;/&gt;
-    &lt;Function Type=&quot;name:stillImage&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="any"&gt;
+    &lt;Function Type="classId:ef 01 01"/&gt;
+    &lt;Function Type="name:stillImage"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>允许应用程序访问在任何设备上的任何 ActiveSync 或 StillImage 接口。 应用程序不需要指定供应商/产品标识符，因为这些已知类类型。</p></td>
 </tr>
 <tr class="even">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;vidpid:045e 930a&quot;&gt;
-    &lt;Function Type=&quot;name:vendorSpecific&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="vidpid:045e 930a"&gt;
+    &lt;Function Type="name:vendorSpecific"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>允许应用程序访问 OSR USB Fx2 设备上的特定于供应商的接口。</p></td>
 </tr>
 <tr class="odd">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot;vidpid:045e 930a&quot;&gt;
-    &lt;Function Type=&quot;classId:ff * <em>&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id="vidpid:045e 930a"&gt;
+    &lt;Function Type="classId:ff * <em>"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>允许应用程序访问其他版本的 OSR USB Fx2 设备上的特定于供应商的接口。 请注意 classId 格式： &quot;ff * *&quot;。 类代码非常&quot;ff&quot;跟通配符 (</em>) 以包含任何代码，子类和协议。</p></td>
+<td><p>允许应用程序访问其他版本的 OSR USB Fx2 设备上的特定于供应商的接口。 请注意 classId 格式:"ff * *"。 类代码是"ff"后跟一个通配符 (</em>) 以包含任何代码，子类和协议。</p></td>
 </tr>
 <tr class="even">
-<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name=&quot;usb&quot;&gt;
-  &lt;Device Id=&quot; vidpid:1234 5678&quot;&gt;
-    &lt;Function Type=&quot;winUsbId:&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;/&gt;
+<td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
+  &lt;Device Id=" vidpid:1234 5678"&gt;
+    &lt;Function Type="winUsbId:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
 <td><p>允许应用程序访问 MS OS 描述符中或在设备 INF 中定义的 GUID 的设备接口的设备。</p>
-<p>在这种情况下，设备 Id 值必须等于&quot;任何&quot;。</p></td>
+<p>在这种情况下，设备 Id 值必须等于"any"。</p></td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ description: Unidrv 关键字
 ms.assetid: b76fcf53-cd75-4e85-a7a2-00a69cc82a97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c61e9b7354c9f81290f7c639dd640ec0ab7a61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d9a3993bfffed8d4437df2cff7d5e419e04abd73
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534835"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464247"
 ---
 # <a name="unidrv-keywords"></a>Unidrv 关键字
 
@@ -33,14 +33,14 @@ Unidrv 插件应使用字符串，因为它们出现在方法调用帮助程序�
 <tr class="odd">
 <td>%MetafileSpooling</td>
 <td><p></p>
-&quot;True&quot; &quot;False&quot;</td>
+"True" "False"</td>
 <td><p>启用 EMF 后台处理。</p>
 <p>文档粘性。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%PageOrder</strong></p></td>
-<td><p>&quot;FrontToBack&quot;</p>
-<p>&quot;BackToFront&quot;</p></td>
+<td><p>"FrontToBack"</p>
+<p>"BackToFront"</p></td>
 <td><p>指定打印页的顺序。</p>
 <p>此功能是打印处理器是能够执行 EMF 后台处理才可用。</p>
 <p>文档粘性。</p></td>
@@ -48,15 +48,15 @@ Unidrv 插件应使用字符串，因为它们出现在方法调用帮助程序�
 <tr class="odd">
 <td><p><strong>%PagePerSheet</strong></p></td>
 <td><p></p>
-&quot;1&quot;， &quot;2&quot;， &quot;4&quot;、 6&quot;， &quot;9&quot;， &quot;16&quot;，&quot;手册&quot;</td>
-<td><p>指定一个物理页上打印的逻辑页的数目。 &quot;手册&quot;仅当定义的双工功能选项才可用。</p>
+"1"、"2"、"4"6"，"9"、"16"，"手册"</td>
+<td><p>指定一个物理页上打印的逻辑页的数目。 "手册"选项为定义的双工功能才可用。</p>
 <p>此功能是打印处理器是能够执行 EMF 后台处理才可用。</p>
 <p>文档粘性。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>%TextAsGraphics</strong></p></td>
 <td><p></p>
-&quot;True&quot; &quot;False&quot;</td>
+"True" "False"</td>
 <td><p>按图形方式打印文本。</p>
 <p>文档粘性。</p></td>
 </tr>

@@ -4,12 +4,12 @@ description: 执行组
 ms.assetid: CC196843-A225-4193-9386-EE024B5D0B68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 828b4728513b6a977ab3f085d5ca11661dba2543
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 12a4760edfc51e39b74bba662284ae9b29274836
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555971"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349992"
 ---
 # <a name="execution-groups"></a>执行组
 
@@ -52,7 +52,7 @@ ms.locfileid: "56555971"
 17
 18        TEST_METHOD(Test3)
 19        {
-20            Log::Comment(L"Test3 is blocked; so you shouldn&#39;t see this.");
+20            Log::Comment(L"Test3 is blocked; so you shouldn't see this.");
 21        }
 22    };
 ```

@@ -1,6 +1,6 @@
 ---
-title: 绑定到的传输地址的套接字
-description: 绑定到的传输地址的套接字
+title: 将套接字绑定到传输地址
+description: 将套接字绑定到传输地址
 ms.assetid: b76bb601-536f-43de-b91c-932f4f08c274
 keywords:
 - 网络、 Winsock 内核 WDK 本地传输地址
@@ -10,14 +10,14 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a03a15118b7341c9d5584a30e84a1340d44c1a67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a6aec2889d524592f029919f5b3bcc49a5247a0a
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554956"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350012"
 ---
-# <a name="binding-a-socket-to-a-transport-address"></a>绑定到的传输地址的套接字
+# <a name="binding-a-socket-to-a-transport-address"></a>将套接字绑定到传输地址
 
 
 Winsock Kernel (WSK) 应用程序已成功创建套接字后，它可以将该套接字绑定到本地传输地址。 它可以接受传入连接之前，侦听套接字必须绑定到本地传输地址。 数据报套接字必须绑定到本地传输地址，它才能发送或接收数据报。 面向连接的套接字必须绑定到本地传输地址，才能连接到远程传输地址。
@@ -52,7 +52,7 @@ NTSTATUS
   PIRP Irp;
   NTSTATUS Status;
 
-  // Get pointer to the socket&#39;s provider dispatch structure
+  // Get pointer to the socket's provider dispatch structure
   Dispatch =
     (PWSK_PROVIDER_LISTEN_DISPATCH)(Socket->Dispatch);
 

@@ -4,12 +4,12 @@ description: 授予 Oplock
 ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9daf785f1e5f9f3e2b309afe41027895f82afb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c2e2f77d7b12be4d97f73dd0f93dccb23e001a59
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520863"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348910"
 ---
 # <a name="granting-oplocks"></a>授予 Oplock
 
@@ -116,7 +116,7 @@ NTFS 文件系统为提供了优化此过程通过文件\_保留\_OPFILTER 创�
 <li><p>没有机会锁：授予的请求。</p></li>
 <li>级别 2 和/或读取：授予的请求。 您可以有多个级别 2/读取 oplock 授予对同一个流在同一时间。 在相同的句柄，甚至可以存在多个级别 2 （但不是读取） oplock。
 <ul>
-<li>如果已向其第一个读取 oplock 已授予读取 oplock 句柄上请求读取 oplock，则&#39;s IRP 已完成与之前的第二个读取 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 授予 oplock。</li>
+<li>如果已向它授予读取 oplock 句柄上请求读取 oplock 时，完成第一个读取 oplock IRP 与之前的第二个读取 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 授予 oplock。</li>
 </ul></li>
 <li><p>级别 1，批处理，筛选器，读取句柄、 读取写入、 读写句柄：返回 STATUS_OPLOCK_NOT_GRANTED。</p></li>
 </ul></td>
@@ -212,7 +212,7 @@ NTFS 文件系统为提供了优化此过程通过文件\_保留\_OPFILTER 创�
 <p>请注意，如果当前 oplock 状态是：</p>
 <ul>
 <li><p>没有机会锁： 授予的请求。</p></li>
-<li>读取或读写和现有 oplock 具有与请求相同的 oplock 键： 现有 oplock&#39;s IRP 已完成，但 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE，授予的请求。
+<li>读取或读写和现有 oplock 具有与请求相同的 oplock 键： 现有 oplock IRP 已完成，但 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE，授予的请求。
 <ul>
 <li>返回其他 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>
@@ -243,7 +243,7 @@ NTFS 文件系统为提供了优化此过程通过文件\_保留\_OPFILTER 创�
 <p>请注意，如果当前 oplock 状态是：</p>
 <ul>
 <li><p>没有机会锁： 授予的请求。</p></li>
-<li>读取读取句柄、 读写或读写句柄和现有 oplock 具有与请求相同的 oplock 键： 现有 oplock&#39;s IRP 已完成，但 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE，授予的请求。
+<li>读取读取句柄、 读写或读写句柄和现有 oplock 具有与请求相同的 oplock 键： 现有 oplock IRP 已完成，但 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE，授予的请求。
 <ul>
 <li>返回其他 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>

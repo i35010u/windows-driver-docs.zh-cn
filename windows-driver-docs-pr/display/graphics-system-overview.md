@@ -8,12 +8,12 @@ keywords:
 - 有关图形系统绘制 WDK GDI，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55893ead753a61efcef52ac3eba4b8dd428a4596
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b924e74279ec3a8fca7fe44b78245422100caa4d
+ms.sourcegitcommit: 4a371c2e8a2aa42f2e2744df1544ea69e42f4fc3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519309"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788776"
 ---
 # <a name="graphics-system-overview"></a>图形系统概述
 
@@ -21,7 +21,7 @@ ms.locfileid: "56519309"
 ## <span id="ddk_graphics_system_overview_gg"></span><span id="DDK_GRAPHICS_SYSTEM_OVERVIEW_GG"></span>
 
 
-Microsoft Windows NTâˆ 基于的操作系统提供稳定可靠的图形体系结构中的第三方图形硬件公司可以轻松地集成其视频显示和打印设备。 以下各节提供编写有效的图形驱动程序的设计准则：
+基于 Microsoft Windows NT(TM) 操作系统提供稳定可靠的图形体系结构中的第三方图形硬件公司可以轻松地集成其视频显示和打印设备。 以下各节提供编写有效的图形驱动程序的设计准则：
 
 -   [**Graphics DDI**](using-the-graphics-ddi.md)
 

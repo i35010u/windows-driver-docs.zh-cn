@@ -1,17 +1,17 @@
 ---
 title: 安装只需检查的操作系统和 HAL
-description: 安装只需检查的操作系统和 HAL （适用于 Windows Vista 和更高版本）
+description: 只安装已检验的操作系统和 HAL（适用于 Windows Vista 和更高版本）
 ms.assetid: 1203b7cd-50b9-4174-8bec-112019444fac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df4643f4f4b151c15ea074b476635a4ecffeea7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 727cebe2bbe3f3a4f324428501c9d06f87c29ddf
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542786"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349213"
 ---
-# <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>安装只需检查的操作系统和 HAL （适用于 Windows Vista 和更高版本）
+# <a name="installing-just-the-checked-operating-system-and-hal-for-windows-vista-and-later"></a>只安装已检验的操作系统和 HAL（适用于 Windows Vista 和更高版本）
 
 
 而不是在计算机上安装完整的调试内部版本，你可以安装的系统，免费版，然后安装操作系统映像和硬件抽象层 (HAL) 的付费版本。 如果您使用此过程，您可以配置引导加载程序为你提供两个启动选项。 一个启动选项适用于免费版。 第二个启动选项启动系统使用选中的操作系统映像和 HAL，但使用免费版本的所有其他系统组件。
@@ -39,11 +39,11 @@ ms.locfileid: "56542786"
 ```
 {FILE_QUEUE_COPY}
    CopyStyle      - 0x09180000
-   SourceRootPath - &#39;C:\Windows\System32\DriverStore\FileRepository\hal.inf_0c52392f&#39;
-   SourceFilename - &#39;halmacpi.dll&#39;
-   TargetDirectory- &#39;C:\Windows\system32&#39;
-   TargetFilename - &#39;hal.dll&#39;
-   SourceDesc     - &#39;windows cd&#39;
+   SourceRootPath - 'C:\Windows\System32\DriverStore\FileRepository\hal.inf_0c52392f'
+   SourceFilename - 'halmacpi.dll'
+   TargetDirectory- 'C:\Windows\system32'
+   TargetFilename - 'hal.dll'
+   SourceDesc     - 'windows cd'
 {FILE_QUEUE_COPY exit(0x00000000)}
 ```
 
@@ -194,7 +194,7 @@ Microsoft (R) Windows (R) 6.00. 6001 Service Pack 1 Multiprocessor Checked.
 
 [设置调试 （内核模式和用户模式下）](https://msdn.microsoft.com/library/windows/hardware/hh450944)
 
-[有关 Windows 调试工具](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 调试工具](https://msdn.microsoft.com/library/windows/hardware/ff551063)
 
  
 
