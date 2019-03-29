@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6102df67f174903a7dba4b7a8f4f941278e393de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ccfca5fb8d8a3c138fb4fdc2518119225fad643c
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543230"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743442"
 ---
-# <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>Bug 检查 0x7E:系统\_线程\_异常\_不\_已处理
+# <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>Bug 检查 0x7E：系统\_线程\_异常\_不\_已处理
 
 
 系统\_线程\_异常\_不\_已处理错误检查的值为 0x0000007E。 此 bug 检查指示系统线程生成的错误处理程序未捕获异常。
@@ -97,7 +97,7 @@ ms.locfileid: "56543230"
 
 **如果你打算调试此问题，** 参数 2 （异常地址） 应识别的驱动程序或导致此问题的函数。
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。 可以执行其他分析使用[ **！ 线程**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)扩展，并将[ **dds，dps，dqs** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)命令： 这尤其适用当 WinDbg 报告"可能造成的： ntkrnlmp.exe"之后的内存转储文件的第一个快速分析和查看生成的执行的输出后[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展与"**-v**"参数。
 
 如果出现异常代码 0x80000003，硬编码断点或断言已命中，但在系统启动时采用了 **/NODEBUG**切换。 不应经常出现此问题。 如果重复发生，请确保将内核调试程序连接并启动系统，并且使用 **/debug**切换。
 

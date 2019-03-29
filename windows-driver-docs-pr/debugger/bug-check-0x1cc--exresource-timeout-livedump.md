@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f38d5678d95a936a605ba1269d30d479c8ca3bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e0ddef61a91b4965bd7e4ecf301e10cbb9c11344
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543986"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743458"
 ---
 # <a name="bug-check-bug-check-0x1cc-exresourcetimeoutlivedump"></a>Bug 检查 Bug 检查 0x1CC:EXRESOURCE\_超时\_LIVEDUMP
 
@@ -40,4 +40,8 @@ EXRESOURCE_TIMEOUT_LIVEDUMP bug 检查具有 0x000001CC 值。
 4 | 配置的超时 （秒）
 
 
+## <a name="see-also"></a>请参阅
+----------
+
+[Bug 检查代码参考](bug-check-code-reference2.md)
 

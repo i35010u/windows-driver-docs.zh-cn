@@ -6,14 +6,14 @@ keywords:
 - 调试实验室
 - step-by-step
 - SYSVAD
-ms.date: 10/12/2018
+ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f6b059266b5ab638c6defa4ca760b001e8d04e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: f080677e88433499d3a8ee3840d3810e8aa476b6
+ms.sourcegitcommit: a43a696c5b4d2f08ee77d507631b41ecfdea6742
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522903"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666735"
 ---
 # <a name="span-iddebuggerdebuguniversaldriverskernel-modespandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序的执行步骤的实验室 （Sysvad 内核模式）
 
@@ -326,13 +326,13 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     在 Visual Studio 中，单击**文件** &gt; **打开** &gt; **项目/解决方案...** 并导航到包含所提取的文件的文件夹 (例如， *c:\\WDK\_示例\\Sysvad*)。 双击*Syvad*解决方案文件。
 
-    在 Visual Studio 中找到解决方案资源管理器。 (如果尚未打开，请将此选择**解决方案资源管理器**从**视图**菜单。)在解决方案资源管理器，可以看到一个包含四 （4） 项目的解决方案。 请注意，标题为 SwapAPO 项目实际包含两个项目-APO 和 PropPageExtensions 的文件夹。
-
+    在 Visual Studio 中找到解决方案资源管理器。 (如果尚未打开，请将此选择**解决方案资源管理器**从**视图**菜单。)在解决方案资源管理器，可以看到有许多项目和中包含的内容的示例更改不时的一种解决方案。 
+        
     ![visual studio 中的使用 device.c 文件加载从 sysvad 项目](images/sysvad-lab-visual-studio-solution.png)
 
 3.  **设置示例的配置和平台**
 
-    在解决方案资源管理器中右键单击**sysvad （6 项目） 的解决方案**，然后选择**Configuration Manager**。 请确保配置和平台设置是相同的四个项目。 默认情况下的配置设置为"Win10 Debug"，并将所有项目的平台设置为"Win64"。 如果你进行任何配置和/或平台更改为一个项目，必须进行的剩余三个项目相同的更改。
+    在解决方案资源管理器中右键单击**sysvad （7 项目） 的解决方案**，然后选择**Configuration Manager**。 请确保配置和平台设置是相同的四个项目。 默认情况下的配置设置为"Win10 Debug"，并将所有项目的平台设置为"Win64"。 如果你进行任何配置和/或平台更改为一个项目，必须进行的剩余三个项目相同的更改。
 
     **请注意**  此实验室假定正在使用 64 位 Windows。 如果使用的 32 位 Windows，构建适用于 32 位驱动程序。
 
@@ -354,7 +354,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     导航到包含 TabletAudioSample 驱动程序的生成的文件的文件夹：
 
-    *C:\\WDK\_示例\\Sysvad\\TabletAudioSample\\x64\\调试*。 该文件夹将包含 TabletAudioSample。SYS 驱动程序、 符号 pdp 文件和 inf 文件。 您还需要查找 SwapAPO、 PropPageExt 和 KeywordDetectorContosoAdapter dll 和符号文件。
+    *C:\\WDK\_示例\\Sysvad\\TabletAudioSample\\x64\\调试*。 该文件夹将包含 TabletAudioSample。SYS 驱动程序、 符号 pdp 文件和 inf 文件。 您还需要找到 SwapAPO 和 KeywordDetectorContosoAdapter dll 和符号文件。
 
     若要安装该驱动程序，您将需要以下文件。
 
@@ -367,8 +367,6 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     | KeywordDetectorContosoAdapter.pdb | 示例关键字检测器符号文件。                                          |
     | lSwapAPO.dll                      | UI 来管理未一个示例驱动程序扩展。                                |
     | lSwapAPO.pdb                      | APO UI 符号文件。                                                           |
-    | PropPageExt.dll                   | 属性页上一个示例驱动程序扩展。                                    |
-    | PropPageExt.pdb                   | 属性符号文件。                                                    |
     | TabletAudioSample.cer             | TabletAudioSample 证书文件。                                           |
 
      
@@ -414,7 +412,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     导航到 WDK 安装中的工具文件夹并找到 DevCon 工具。 例如，在以下文件夹中查看：
 
-    *C:\\程序文件 (x86)\\Windows 工具包\\10\\工具\\x64\\devcon.exe*
+    *C:\\Program Files (x86)\\Windows Kits\\10\\Tools\\x64\\devcon.exe*
 
 3.  **-&gt; 在目标系统上**
 
@@ -2014,7 +2012,7 @@ fffff803`bb757020 cc              int     3
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -2120,9 +2118,9 @@ fffff803`bb757020 cc              int     3
 OSR  - <https://www.osr.com/>
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[如何开始使用 Windows 调试](getting-started-with-windows-debugging.md) 
+[Windows 调试入门](getting-started-with-windows-debugging.md) 
 
  
 

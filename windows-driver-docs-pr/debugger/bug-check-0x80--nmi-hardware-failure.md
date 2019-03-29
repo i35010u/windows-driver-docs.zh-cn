@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 079354003a8a7eedc724dbe7fdb8f855b3caae68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: a55dbebcc53e18aa328985079a034da07c358c9c
+ms.sourcegitcommit: fac288eb2cceb6a7a8248ae0f8086553d1659b23
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555213"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56588956"
 ---
-# <a name="bug-check-0x80-nmihardwarefailure"></a>Bug 检查 0x80:NMI\_硬件\_失败
+# <a name="bug-check-0x80-nmihardwarefailure"></a>Bug 检查 0x80：NMI\_硬件\_失败
 
 
 NMI\_硬件\_故障错误检查的值为 0x00000080。 此 bug 检查指示发生了硬件工作不正常。
@@ -40,7 +40,7 @@ NMI\_硬件\_故障错误检查的值为 0x00000080。 此 bug 检查指示发�
 <a name="resolution"></a>分辨率
 ----------
 
-删除任何硬件或最近安装的驱动程序。 请确保所有内存模块都都属于同一类型。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。 删除任何硬件或最近安装的驱动程序。 请确保所有内存模块都都属于同一类型。
 
  
 
