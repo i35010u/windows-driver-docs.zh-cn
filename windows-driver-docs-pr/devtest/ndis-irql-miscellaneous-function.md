@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dacb0487f58c69482817292e26dfb507f137e94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f963047f1e47dcd999725591160a097527837816
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543205"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419589"
 ---
 # <a name="irqlmiscellaneousfunction-rule-ndis"></a>Irql\_杂项\_函数规则 (ndis)
 
@@ -64,6 +64,18 @@ Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别上名为 NDIS 函
  **NdisQueryAdapterInstanceName**
 **NdisQueryDepthSList** 
  **NdisQueueIoWorkItem****
+****
+****
+****
+****
+****
+****
+****
+****
+****
+****
+****
+**
 
 |              |      |
 |--------------|------|
@@ -95,34 +107,57 @@ Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别上名为 NDIS 函
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
-[**NdisAllocateFromNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff560708)
-[**NdisAllocateGenericObject** ](https://msdn.microsoft.com/library/windows/hardware/ff561603) 
- [ **NdisAllocateIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff561604)
-[**NdisAllocateMemoryWithTagPriority** ](https://msdn.microsoft.com/library/windows/hardware/ff561606) 
- [ **NdisAnsiStringToUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561619)
-[**NdisCloseConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff561642) 
- [ **NdisCloseFile**](https://msdn.microsoft.com/library/windows/hardware/ff561645)
-[**NdisDeleteNPagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff561739) 
- [ **NdisDeregisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff561741)
-[**NdisEqualMemory**](https://msdn.microsoft.com/library/windows/hardware/ff561760)
-[**NdisEqualString** ](https://msdn.microsoft.com/library/windows/hardware/ff561771) 
- [ **NdisEqualUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff561775) 
- [ **NdisFreeGenericObject**](https://msdn.microsoft.com/library/windows/hardware/ff561850)
-[**NdisFreeIoWorkItem** ](https://msdn.microsoft.com/library/windows/hardware/ff561855) 
- [ **NdisFreeMemory**](https://msdn.microsoft.com/library/windows/hardware/ff562577)
-[**NdisFreeString** ](https://msdn.microsoft.com/library/windows/hardware/ff562604) 
- [ **NdisFreeToNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562607)
-[**NdisGeneratePartialCancelId** ](https://msdn.microsoft.com/library/windows/hardware/ff562623) 
-[ **NdisGetCurrentProcessorCounts**](https://msdn.microsoft.com/library/windows/hardware/ff562625)
-[**NdisGetRoutineAddress** ](https://msdn.microsoft.com/library/windows/hardware/ff562665) 
- [ **NdisGetSharedDataAlignment**](https://msdn.microsoft.com/library/windows/hardware/ff562671)
-[**NdisGetVersion** ](https://msdn.microsoft.com/library/windows/hardware/ff562680) 
- [ **NdisInitAnsiString** ](https://msdn.microsoft.com/library/windows/hardware/ff562730) 
- [ **NdisInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562736)
-[****](https://msdn.microsoft.com/library/windows/hardware/ff552063)
+[**NdisAllocateFromNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff560708)  
+[**NdisAllocateGenericObject**](https://msdn.microsoft.com/library/windows/hardware/ff561603)  
+[**NdisAllocateIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff561604)  
+[**NdisAllocateMemoryWithTagPriority**](https://msdn.microsoft.com/library/windows/hardware/ff561606)  
+[**NdisAnsiStringToUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561619)  
+[**NdisCloseConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff561642)  
+[**NdisCloseFile**](https://msdn.microsoft.com/library/windows/hardware/ff561645)  
+[**NdisDeleteNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff561739)  
+[**NdisDeregisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff561741)  
+[**NdisEqualMemory**](https://msdn.microsoft.com/library/windows/hardware/ff561760)  
+[**NdisEqualString**](https://msdn.microsoft.com/library/windows/hardware/ff561771)  
+[**NdisEqualUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff561775)  
+[**NdisFreeGenericObject**](https://msdn.microsoft.com/library/windows/hardware/ff561850)  
+[**NdisFreeIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff561855)  
+[**NdisFreeMemory**](https://msdn.microsoft.com/library/windows/hardware/ff562577)  
+[**NdisFreeString**](https://msdn.microsoft.com/library/windows/hardware/ff562604)  
+[**NdisFreeToNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562607)  
+[**NdisGeneratePartialCancelId**](https://msdn.microsoft.com/library/windows/hardware/ff562623)  
+[**NdisGetCurrentProcessorCounts**](https://msdn.microsoft.com/library/windows/hardware/ff562625)  
+[**NdisGetRoutineAddress**](https://msdn.microsoft.com/library/windows/hardware/ff562665)  
+[**NdisGetSharedDataAlignment**](https://msdn.microsoft.com/library/windows/hardware/ff562671)  
+[**NdisGetVersion**](https://msdn.microsoft.com/library/windows/hardware/ff562680)  
+[**NdisInitAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff562730)  
+[**NdisInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff562736)  
+[**NdisInitializeString**](https://msdn.microsoft.com/library/windows/hardware/ff562741)  
+[**NdisInitUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff562745)  
+[**NdisMapFile**](https://msdn.microsoft.com/library/windows/hardware/ff562785)  
+[**NdisOpenConfigurationEx**](https://msdn.microsoft.com/library/windows/hardware/ff563717)  
+[**NdisOpenConfigurationKeyByIndex**](https://msdn.microsoft.com/library/windows/hardware/ff563721)  
+[**NdisOpenConfigurationKeyByName**](https://msdn.microsoft.com/library/windows/hardware/ff563725)  
+[**NdisOpenFile**](https://msdn.microsoft.com/library/windows/hardware/ff563728)  
+[**NdisQueryAdapterInstanceName**](https://msdn.microsoft.com/library/windows/hardware/ff563745)  
+[**NdisQueryDepthSList**](https://msdn.microsoft.com/library/windows/hardware/ff563753)  
+[**NdisQueueIoWorkItem**](https://msdn.microsoft.com/library/windows/hardware/ff563775)  
+[**NdisReadConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564511)  
+[**NdisReadNetworkAddress**](https://msdn.microsoft.com/library/windows/hardware/ff564512)  
+[**NdisReEnumerateProtocolBindings**](https://msdn.microsoft.com/library/windows/hardware/ff564516)  
+[**NdisRegisterDeviceEx**](https://msdn.microsoft.com/library/windows/hardware/ff564518)  
+[**NdisSetOptionalHandlers**](https://msdn.microsoft.com/library/windows/hardware/ff564550)  
+[**NdisSystemProcessorCount**](https://msdn.microsoft.com/library/windows/hardware/ff564579)  
+[**NdisUnicodeStringToAnsiString**](https://msdn.microsoft.com/library/windows/hardware/ff564635)  
+[**NdisUnmapFile**](https://msdn.microsoft.com/library/windows/hardware/ff564641)  
+[**NdisUpcaseUnicodeString**](https://msdn.microsoft.com/library/windows/hardware/ff564644)  
+[**NdisWaitEvent**](https://msdn.microsoft.com/library/windows/hardware/ff564651)  
+[**NdisWriteConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564659)  
+[**NdisWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff564663)  
+[**NdisWriteEventLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff564672)  
+[**KeGetCurrentProcessorNumber**](https://msdn.microsoft.com/library/windows/hardware/ff552063)  
 
 
 
