@@ -1,19 +1,19 @@
 ---
-title: 由内核网络 Mini-redirector 实现的例程
-description: 由内核网络 Mini-redirector 实现的例程
+title: 由内核网络微型重定向程序实现的例程
+description: 由内核网络微型重定向程序实现的例程
 ms.assetid: bd1a8989-100d-4b7b-9a61-521af6433b00
 keywords:
 - 最小-重定向程序 WDK，实现的例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a39afd2e7eb8617c4e55917212de1bce1a1b98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d839ef5d02349f4a3729cfa2213d4e413d5b046e
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464095"
 ---
-# <a name="routines-implemented-by-the-kernel-network-mini-redirector"></a>由内核网络 Mini-redirector 实现的例程
+# <a name="routines-implemented-by-the-kernel-network-mini-redirector"></a>由内核网络微型重定向程序实现的例程
 
 
 下面的例程可由网络微型重定向实现：
@@ -216,7 +216,7 @@ ms.locfileid: "56525646"
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550824" data-raw-source="[&lt;strong&gt;MRxSrvCallWinnerNotify&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550824)"><strong>MRxSrvCallWinnerNotify</strong></a></td>
-<td align="left"><p>此例程最初设计用于由 RDBSS 以通知网络微型-重定向程序，它是调用&quot;入选方&quot;当多个重定向程序无法完成请求。 入选网络的微型重定向需要创建 SRV_CALL 结构并建立与服务器的连接。</p>
+<td align="left"><p>此例程最初设计用于由 RDBSS 以通知网络微型重定向，它是"赢家"调用时多个重定向程序无法完成请求。 入选网络的微型重定向需要创建 SRV_CALL 结构并建立与服务器的连接。</p>
 <p>下 RDBSS 当前实现中，每个网络微型重定向有其自己的 RDBSS，副本，因此在 RDBSS 层包含任何竞争的网络重定向程序。 此例程称为后创建 SRV_CALL 结构的每个请求。</p>
 <p>当处理相同的通用命名约定 (UNC) 命名空间为安装了多个重定向程序时，重定向程序若要为请求提供服务选择的重定向程序在注册表中指定的顺序基于多个 UNC Provider (MUP)。</p></td>
 </tr>
