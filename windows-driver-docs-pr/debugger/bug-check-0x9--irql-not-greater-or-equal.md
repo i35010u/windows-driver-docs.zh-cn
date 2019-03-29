@@ -1,0 +1,38 @@
+---
+title: Bug 检查 0x9 IRQL_NOT_GREATER_OR_EQUAL
+description: IRQL_NOT_GREATER_OR_EQUAL bug 检查具有 0x00000009 值。检查此错误极少出现。
+ms.assetid: d48f1681-df49-4cc3-a22d-84e090e7d774
+keywords:
+- Bug 检查 0x9 IRQL_NOT_GREATER_OR_EQUAL
+- IRQL_NOT_GREATER_OR_EQUAL
+ms.date: 05/23/2017
+topic_type:
+- apiref
+api_name:
+- IRQL_NOT_GREATER_OR_EQUAL
+api_type:
+- NA
+ms.localizationpriority: medium
+ms.openlocfilehash: b5c8227819c35e3b671bb2fb5df7f5f6be6f6616
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56576784"
+---
+# <a name="bug-check-0x9-irqlnotgreaterorequal"></a>Bug 检查 0x9：IRQL\_NOT\_GREATER\_OR\_EQUAL
+
+
+IRQL\_不\_GREATER\_或\_相等 bug 检查的值为 0x00000009。
+
+检查此错误极少出现。
+
+**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
+ 
+
+ 
+
+
+
+
