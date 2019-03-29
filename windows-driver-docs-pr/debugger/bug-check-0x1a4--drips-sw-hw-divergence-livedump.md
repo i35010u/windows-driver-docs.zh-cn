@@ -1,0 +1,50 @@
+---
+title: Bug 检查 0x1A4 DRIPS_SW_HW_DIVERGENCE_LIVEDUMP
+description: DRIPS_SW_HW_DIVERGENCE_LIVEDUMP 实时转储具有 0x000001A4 值。
+keywords:
+- Bug 检查 0x1A4 DRIPS_SW_HW_DIVERGENCE_LIVEDUMP
+- DRIPS_SW_HW_DIVERGENCE_LIVEDUMP
+ms.date: 05/25/2018
+topic_type:
+- apiref
+api_name:
+- DRIPS_SW_HW_DIVERGENCE_LIVEDUMP
+api_type:
+- NA
+ms.localizationpriority: medium
+ms.openlocfilehash: 889731802d65903ca87adcdad1d3d549ab8eb9fe
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56562345"
+---
+# <a name="bug-check-bug-check-0x1a4-dripsswhwdivergencelivedump"></a>Bug 检查 Bug 检查 0x1A4:DRIPS\_SW\_HW\_DIVERGENCE\_LIVEDUMP 
+
+DRIPS\_SW\_HW\_分歧\_LIVEDUMP 实时转储具有 0x000001A4 值。 
+
+软件和硬件 DRIPS 分歧超出了编程默认/阈值时间。
+
+（此代码可以永远不会用于实际的执行错误检查; 它用于标识实时转储）。
+
+**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
+## <a name="dripsswhwdivergencelivedump-parameters"></a>DRIPS\_SW\_HW\_分歧\_LIVEDUMP 参数
+
+
+在蓝色屏幕上显示以下参数。
+
+参数 | 描述 
+|---------|--------------|
+1 | 所用软件 DRIPS 以微秒为单位的时间。
+2 |  中以微秒为单位的硬件 DRIPS 所用的时间。
+3 |  保留。
+4 |  保留。
+
+ 
+
+ 
+
+
+
+
