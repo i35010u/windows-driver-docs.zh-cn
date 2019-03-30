@@ -4,12 +4,12 @@ description: 桌面 COSA/APN 数据库设置
 ms.assetid: 860B8587-1D70-466A-A6E7-836380AA4DFA
 ms.date: 01/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 01369870150c860b789dde51afc5d19a11bf7ba3
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
-ms.translationtype: HT
+ms.openlocfilehash: 35cd4a2c3c52ad09012a316ada8a1da7a35842c1
+ms.sourcegitcommit: bb4f9c8dab2f4cb7a57ebd30457f427d909c928f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58017032"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58624778"
 ---
 # <a name="desktop-cosaapn-database-settings"></a>桌面 COSA/APN 数据库设置
 
@@ -71,6 +71,7 @@ APN 数据库有关的详细信息，请参阅[APN 数据库概述](apn-database
 | SPN | 标识符字符串的服务提供程序名称 (SPN) | 可选 | 有助于识别 MO/MVNO 的网络。 如果为空，则默认为空字符串，并且不执行任何操作。 | Windows 10 版本 1703 |
 | AlwaysOn | 介绍连接是否始终上。 | 必需 | 如果留空，默认为"true。 | Windows 10 版本 1703 |
 | PurposeGroups | 指定连接的目的，由 Guid 表示目的值的以逗号分隔列表的字符串。 | 必需 | 以下用途值有： <ul><li>**Internet**</li><li>**MMS**</li><li>**IMS**</li><li>**SUPL**</li><li>**购买**</li><li>**管理**</li><li>**应用程序**</li><li>**esim 卡预配**</li></ul> <p> 如果留空，默认为"Internet。</p> | Windows 10 版本 1703 |
+| | | 可选 | 以下可选目的组值有： <ul><li>**LTE attach** </li></ul> 指定 LTE 附加通过 COSA APN 在于，通常不必要的附加信息通常直接由基础调制解调器的硬件管理。 但是，在其中调制解调器的硬件不具有附加 APN 值 LTE，网络是不能分配到下，用户设备的情况下，MO 可以选择提供 LTE 附加信息，以便 UE 可以 LTE 附加而无需用户手动输入一个值。 | Windows 10，版本 1903 |
 | IPType | 一个字符串，指定连接的网络协议。 | 可选 | 可能值： <ul><li>IPv4</li><li>IPv6</li><li>IPv4v6</li></ul> <p>如果留空，默认为"IPv4"。</p> | Windows 10 版本 1703 |
 | BrandingName | 移动宽带设备通常提供 Windows Windows 连接管理器中显示的运算符名称。 可以通过在元数据中指定自定义名称来覆盖此名称。 | 可选 | 如果为空，则默认为空字符串，并且不执行任何操作。 | Windows 10 版本 1709 |
 | BrandingIcon | 自定义徽标显示在 Windows 连接管理器网络条目旁边。 | 可选 | 图标必须具有透明背景和平滑边缘。 建议测试带有浅色和深色主题的图标。 它们还必须满足以下的格式和大小要求： <ul><li>256 x 256:32 位 + Alpha</li><li>48 x 48:32 位 + Alpha</li><li>48 x 48:8 位 256 色</li><li>48 x 48:4 位 16 种颜色</li><li>32 x 32:32 位 + Alpha</li><li>32 x 32:8 位 256 色</li><li>32 x 32:4 位 16 种颜色</li><li>24 x 24:32 位 + Alpha</li><li>24 x 24:8 位 256 色</li><li>24 x 24:4 位 16 种颜色</li><li>16 x 16:32 位 + Alpha</li><li>16 x 16:8 位 256 色</li><li>16 x 16:4 位 16 种颜色</li></ul> | Windows 10 版本 1709 |
