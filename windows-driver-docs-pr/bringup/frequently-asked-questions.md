@@ -1,17 +1,16 @@
 ---
-title: 固件 WEG 常见问题
+title: 固件 WEG 常见问题解答
 description: 固件 WEG-常见问题 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 652b96b65f680f5bdf0176c353382879564205fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b6443d251b8ba31ce4c08a77893c7255b760881d
+ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522227"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58441928"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>固件 WEG:常见问题 (FAQ)
-
 
 以下常见问题的灵感仍在使用 Windows 7 的计算机数。
 
@@ -31,7 +30,7 @@ ms.locfileid: "56522227"
 >
 > 如果引导到旧的启动模式通过安装通常需要 2 个分区 （如下所列使用 diskpart.exe"列表分区"）。 正在 active 和列出为系统分区的第一个分区，文件系统类型与隐藏正在 NTFS \\boot 文件夹。 第二个分区是 where \\Windows 安装在另一个 NTFS 分区上。
 >
-> 如果 Windows 在 UEFI 模式下安装，安装将为文件系统类型 Fat32、 为 RAW，Microsoft 保留分区 (MSR) 和 OS 创建 EFI 系统分区 (ESP) / 数据分区使用 NTFS。 如果装载并看一看 ESP，您应看到文件夹\\EFI 启动文件夹 （文件夹可能处于隐藏状态）。 另请参阅[方法以验证系统在 UEFI 模式下启动](#_Toc451181866)。
+> 如果 Windows 在 UEFI 模式下安装，安装将为文件系统类型 Fat32、 为 RAW，Microsoft 保留分区 (MSR) 和 OS 创建 EFI 系统分区 (ESP) / 数据分区使用 NTFS。 如果装载并看一看 ESP，您应看到文件夹\\EFI 启动文件夹 （文件夹可能处于隐藏状态）。
 >
 > 因为需要保留在系统固件中启用适用于 Windows 7 的 CSM，可能需要专门选择 UEFI 启动模式下，若要在 UEFI 启动模式下安装 Windows 7 安装介质 (CD/DVD/USB) 启动时。
 > 咨询有关启动选项和 BIOS 配置的详细信息的 PC 制造商。
@@ -118,6 +117,3 @@ ms.locfileid: "56522227"
 [Windows 10 规范-Microsoft](https://www.microsoft.com/windows/windows-10-specifications)
 
 [更新 Windows 7 和 Windows Server 2008 R2 中添加对 TPM 2.0 的支持](https://support.microsoft.com/kb/2920188)
-
-
-

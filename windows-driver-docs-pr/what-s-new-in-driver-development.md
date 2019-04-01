@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a5c1a46b469df46774bf69c62ab37c0ba477e32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1d6f287fbabe4e33430b376885b96972544193a3
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56589768"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58017034"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能 
 
@@ -102,7 +102,7 @@ ms.locfileid: "56589768"
 
 * **新的调试器数据模型 API** – 现已推出一个新的面向对象的调试器数据模型接口，该接口可使用 dbgmodel.h 标头支持调试器自动化。 调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 可以在调试器的 dx 表达式计算器中以及从 JavaScript 扩展或 C++ 扩展访问写入到数据模型 API 的构造。 文档位置：[调试器数据模型 C++ 接口概述](debugger/data-model-cpp-overview.md)和 [dbgmodel.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/) 标头参考主题。
 
-* **IPv6** - 我们将在 KDNET 中添加对 IPv6 的支持。 为了给 IPv6 所需的较大标头留出空间，我们减少了数据包的有效负载大小。 因此，我们将会声明 KDNET 协议的新版本，使运行最新版调试器的主机电脑可用于调试仅支持 IPv4 的目标电脑。  [https://aka.ms/windbgpreview](https://aka.ms/windbgpreview) 上提供了支持 IPv6 的 WinDbg 预览版。 请关注“Windows 调试工具”博客来了解有关 KDNET IPv6 支持的最新信息，并参阅[手动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)了解更多详细信息。 
+* **IPv6** - 我们将在 KDNET 中添加对 IPv6 的支持。 为了给 IPv6 所需的较大标头留出空间，我们减少了数据包的有效负载大小。 因此，我们将会声明 KDNET 协议的新版本，使运行最新版调试器的主机电脑可用于调试仅支持 IPv4 的目标电脑。 [https://aka.ms/windbgpreview](https://aka.ms/windbgpreview) 上提供了支持 IPv6 的 WinDbg 预览版。 请关注“Windows 调试工具”博客来了解有关 KDNET IPv6 支持的最新信息，并参阅[手动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)了解更多详细信息。 
 
 **Windows 10 版本 1803 中的调试**
 

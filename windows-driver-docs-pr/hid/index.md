@@ -18,7 +18,7 @@ ms.technology: windows-devices
 
 本部分介绍了人机接口设备（或 HID）。 有关 HID 概念的详细信息，请参阅官方 [HID 规范](http://www.usb.org/developers/hidpage/HID1_11.pdf)。 
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 
 <table>
@@ -34,7 +34,7 @@ ms.technology: windows-devices
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="what-s-new-in-hid.md" data-raw-source="[What&#39;s New in HID](what-s-new-in-hid.md)">HID 中的新增功能</a></p></td>
+<td><p><a href="what-s-new-in-hid.md" data-raw-source="[What's New in HID](what-s-new-in-hid.md)">HID 中的新增功能</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
