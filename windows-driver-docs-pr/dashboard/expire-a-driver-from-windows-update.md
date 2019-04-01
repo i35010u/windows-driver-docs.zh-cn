@@ -5,12 +5,12 @@ ms.assetid: 085DF794-A65E-4EBC-B473-0C4AF9F6F126
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90326bdd785a75fbc7ee9303f15813aadefa6b47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7e05a022b1d77fd71bc5b3506c1cdcb3b1bb5ffc
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518361"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909196"
 ---
 # <a name="expire-a-driver-from-windows-update"></a>通过 Windows 更新使驱动程序过期
 
@@ -27,11 +27,9 @@ ms.locfileid: "56518361"
 
     若要使特定硬件 ID 过期，请对每个特定硬件 ID 选择“过期”。
     
-    若要使整个发货标签过期，请在发布所有硬件 ID 后，单击“全部过期”。
+    若要使整个发货标签过期，请单击“全部过期”。
     
-    如果“全部过期”不可用，可以单击“全部发布”使其可见。 “全部过期”将随后可供选择。  单击“全部过期”。
-    
-5.  单击页面最底部的“发布”。
+5.  若要完成所做的更改，必须单击页面最底部的“发布”。
 
  
 

@@ -2386,6 +2386,9 @@ items:
         href: running-infverif-from-the-command-line.md
       - name: INF 验证错误和警告
         href: inf-validation-errors-and-warnings.md
+        items:
+        - name: InfVerif 错误 1330
+          href: inf-verif-error-1330.md
     - name: Reg2inf
       href: reg2inf.md
   - name: 用于更改驱动程序测试和调试启动选项的工具
@@ -2554,9 +2557,9 @@ items:
         href: xml-reference.md
       - name: 其他资源
         href: additional-resources.md
-ms.openlocfilehash: f82ad9a27499bece94661808f6416a890fc9a6c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 71e441da02aa869a1dcffef510e2c9beef12bc2e
+ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465441"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57693062"

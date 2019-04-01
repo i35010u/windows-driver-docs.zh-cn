@@ -5,12 +5,12 @@ ms.assetid: 793b4c92-96e8-4b3e-a7de-d00e953c983a
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b719008edbcbd7e6975cb3932631e7f2248e8b7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 83b8d0122497f7c429d922cd0f58b604e7799244
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518237"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57348958"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>提交设备元数据体验时的错误和解决方案
 
@@ -96,7 +96,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>A Hardware ID in this . cab is in use by another company and the .cab cannot be uploaded. 请验证此硬件 ID。</p></td>
-<td><p>你已经包含在包中的硬件 ID 正由另一个公司使用。 你不能提交另一个公司的硬件 ID。 确保你的硬件 ID 拼写正确。 如果你仍然收到错误消息，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持来解决问题。</p></td>
+<td><p>你已经包含在包中的硬件 ID 正由另一个公司使用。 你无法提交另一个公司的硬件 ID。 确保你的硬件 ID 拼写正确。 如果你仍然收到错误消息，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持来解决问题。</p></td>
 </tr>
 <tr class="odd">
 <td><p>A live submission already exists for this locale in this experience.</p></td>
@@ -109,7 +109,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="odd">
 <td><p>A logo submission for a MultiPurpose device does not match the submission category.</p></td>
-<td><p>列在徽标提交中的设备类别不匹配设备元数据包的主要设备类别。 要解决此问题，请执行下列步骤：</p>
+<td><p>列在徽标提交中的设备类别不匹配你的设备元数据包的主要设备类别。 要解决此问题，请执行下列步骤：</p>
 <ul>
 <li><p>更正你的徽标提交的设备类别。</p></li>
 <li><p>创建一个新体验并且仅绑定正确的徽标提交。</p></li>
@@ -122,7 +122,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="odd">
 <td><p>此 cab 中的某个型号 ID 正由另一个公司使用，cab 无法上载。 请验证此型号 ID。</p></td>
-<td><p>你已经包含在包中的型号 ID 正由另一个公司使用。 你不能提交另一个公司的型号 ID。 确保你的型号 ID 拼写正确。 如果你仍然收到错误消息，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持来解决问题。</p></td>
+<td><p>你已经包含在包中的型号 ID 正由另一个公司使用。 你无法提交另一个公司的型号 ID。 确保你的型号 ID 拼写正确。 如果你仍然收到错误消息，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持来解决问题。</p></td>
 </tr>
 <tr class="even">
 <td><p>A non-preview live package cannot be promoted to live.</p></td>
@@ -183,7 +183,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>此提交的设备元数据类别需要匹配现有的体验类别。</p></td>
-<td><p>此包中的设备类别不匹配此体验的其他包中的类别。 修改你的设备类别并重新提交此包。</p></td>
+<td><p>此包中的设备类别不匹配此体验其他包中的类别。 修改你的设备类别并重新提交此包。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Device Metadata Submission Type for this submission needs to match the existing experience category.</p></td>
@@ -249,7 +249,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="odd">
 <td><p>PackageInfo.xml 中的 &lt;PackageStructure&gt; 元素需要文件名 PackageInfo.xml。</p></td>
-<td><p>未针对你的程序包正确编写 PackageInfo.xml 文件。 必须使用 &lt;PackageStructure&gt; 节点在 PackageInfo.xml 文件中引用程序包中的每个根对象。</p>
+<td><p>未针对你的程序包正确编写你的 PackageInfo.xml 文件。 必须使用 &lt;PackageStructure&gt; 节点在 PackageInfo.xml 文件中引用程序包中的每个根对象。</p>
 <p>有关详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft 设备使用体验开发工具包</a>。</p></td>
 </tr>
 <tr class="even">
@@ -295,11 +295,11 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>[设备类] 提交不允许使用型号 ID。</p></td>
-<td><p>提交此类型的设备类的设备元数据时，不能使用型号 ID。 而应仅使用你设备的硬件 ID。 要查找计算机设备的硬件 ID，请参阅 <a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft 设备使用体验开发工具包</a>。</p></td>
+<td><p>当提交此类型的设备类的设备元数据时，不能使用型号 ID。 而应仅使用你设备的硬件 ID。 要查找计算机设备的硬件 ID，请参阅 <a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft 设备使用体验开发工具包</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>在 DeviceInfo.xml 中未找到型号名称</p></td>
-<td><p>DeviceInfo.xml 文件未正确编写。</p>
+<td><p>你的 DeviceInfo.xml 文件编写不正确。</p>
 <p>有关详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft 设备使用体验开发工具包</a>。</p></td>
 </tr>
 <tr class="even">
@@ -322,10 +322,10 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>对于任务 [TaskId]，TaskGroupGuid [TaskGroupGuid] 不应由你的设备使用</p></td>
-<td><p>正尝试使用不适用于设备的保留 GUID。</p>
+<td><p>你正尝试使用不适用于你的设备的保留 GUID。</p>
 <p>请尝试以下解决方案之一：</p>
 <ul>
-<li><p>不要对设备不支持的任务使用 GUID。</p></li>
+<li><p>不要为你的设备不支持的任务使用 GUID。</p></li>
 <li><p>如果你正尝试创建任务，请为该任务生成一个新 GUID。</p></li>
 </ul>
 <p>有关详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?LinkId=241658" data-raw-source="[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658)">Microsoft 设备使用体验开发工具包</a>。</p></td>
@@ -366,7 +366,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="odd">
 <td><p>The Device Metadata Category for this submission does not exist.</p></td>
-<td><p>所使用的设备元数据类别无效。 你必须从 Windows 硬件认证工具包 (HCK) 中概括的预定义设备元数据类别中进行选择。</p></td>
+<td><p>你使用的设备元数据类别无效。 你必须从 Windows 硬件认证工具包 (HCK) 中概括的预定义设备元数据类别中进行选择。</p></td>
 </tr>
 <tr class="even">
 <td><p>体验名称已存在于该组织中。</p></td>
@@ -393,7 +393,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="odd">
 <td><p>提交包含徽标提交未覆盖的 [硬件 ID 和/或型号 ID 的列表]。</p></td>
-<td><p>程序包包含徽标提交未涉及的硬件 ID 或型号 ID。</p>
+<td><p>你的包包含你的徽标提交未覆盖的硬件 ID 或型号 ID。</p>
 <p>请尝试以下解决方案之一：</p>
 <ul>
 <li><p>更正你的设备元数据包中的硬件 ID 或型号 ID。</p></li>
@@ -402,11 +402,11 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>The system manufacturer for this computer submission does not match the organization of the submitting user.</p></td>
-<td><p>所提交的 SMBIOSFields.xml 文件中的系统制造商不匹配我们记录中的制造商。</p>
+<td><p>你提交的 SMBIOSFields.xml 文件中的系统制造商不匹配我们记录中的制造商。</p>
 <p>请尝试以下解决方案之一：</p>
 <ul>
 <li><p>更正系统制造商的名称，然后重新提交包。</p></li>
-<li><p>如果系统制造商字段正确，但文件未通过检查，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持。</p></li>
+<li><p>如果系统制造商字段正确，但你的文件未通过，请向仪表板支持部门发送电子邮件：sysdev@microsoft.com。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -416,7 +416,7 @@ ms.locfileid: "56518237"
 </tr>
 <tr class="even">
 <td><p>此预览密钥已被拒绝。 请选择另一个值。</p></td>
-<td><p>使用仪表板设置的 PreviewKey 未被接受。 请提交新的 PreviewKey。</p></td>
+<td><p>你使用仪表板设置的 PreviewKey 未被接受。 请提交新的 PreviewKey。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Unexpected file found in [FolderName] folder- [ExtraFile]</p></td>

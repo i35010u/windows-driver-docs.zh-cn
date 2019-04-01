@@ -6,12 +6,12 @@ keywords:
 - Hello World 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f8ccde1fbab70b726421259cb66f1d40110992
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9fd8ef77dcaef8a3875441b7c6b83c3c633384d6
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518525"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350206"
 ---
 # <a name="write-your-first-driver"></a>编写第一个驱动程序
 

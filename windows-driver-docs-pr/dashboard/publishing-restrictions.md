@@ -5,19 +5,18 @@ ms.assetid: 30D23457-6BE1-4A4C-B69A-3C8C0A8E093A
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc3157fb4aed77367bde364bc5a2c15362fd630
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 83ed716cdc15cfabf29d78a815ed220fa657ba4e
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518279"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560584"
 ---
 # <a name="publishing-restrictions"></a>发布限制
 
-
 以下各项在发布期间受限制。 仍可以为它们创建发货标签，但请求需要额外的 Microsoft 审查。
 
-Windows 硬件开发人员中心仪表板强制执行这些发布限制。 发布限制确保合作伙伴无法发布会覆盖 Microsoft 类驱动程序或通用总线 HWID 字符串的驱动程序。 这些限制还确保设备不会收到因通用第三方或重复使用的 HWID 导致的不正确驱动程序。
+合作伙伴中心强制执行这些发布限制。 发布限制确保合作伙伴无法发布会覆盖 Microsoft 类驱动程序或通用总线 HWID 字符串的驱动程序。 这些限制还确保设备不会收到因通用第三方或重复使用的 HWID 导致的不正确驱动程序。
 
 这些限制的示例包括，但不限于下表中的列表。
 
@@ -111,15 +110,4 @@ Windows 硬件开发人员中心仪表板强制执行这些发布限制。 发�
 </tbody>
 </table>
 
- 
-
 有关驱动程序发布工作流的详细信息，请参阅 [Windows 10 驱动程序发布工作流](https://go.microsoft.com/fwlink/p/?LinkId=617374)。
-
- 
-
- 
-
-
-
-
-

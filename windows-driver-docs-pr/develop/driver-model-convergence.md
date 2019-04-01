@@ -4,12 +4,12 @@ title: 适用于 Windows 10 的驱动程序融合模型
 description: 若要使设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0069603ccf04499a3b86e9b6ed291e0b9df40b63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0195d6ebc13009f06de34fe78fda4606b020f65c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518377"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349658"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>适用于 Windows 10 的驱动程序融合模型
 

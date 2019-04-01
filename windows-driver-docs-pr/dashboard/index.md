@@ -1,6 +1,6 @@
 ---
-title: Windows 硬件开发人员中心仪表板
-description: Windows 硬件开发人员中心仪表板会替代传统 (Sysdev) 仪表板，以执行大多数硬件任务，包括硬件认证、协作开发驱动程序以及通过 Windows 更新来分发驱动程序。
+title: Windows 硬件合作伙伴中心
+description: 合作伙伴中心将替代传统 (Sysdev) 仪表板执行大多数硬件任务，包括硬件认证、协作开发驱动程序以及通过 Windows 更新来分发驱动程序。
 layout: LandingPage
 ms.assetid: da6fe9f5-7495-4aec-b6c2-c53402cb8ea0
 ms.date: 05/17/2018
@@ -9,12 +9,12 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ---
 
-# <a name="windows-hardware-dev-center-dashboard"></a>Windows 硬件开发人员中心仪表板
+# <a name="partner-center-for-windows-hardware"></a>Windows 硬件合作伙伴中心
 
-利用 Windows 硬件开发人员中心仪表板，你可以快速、轻松地创建和管理你的系统和驱动程序提交。 它将替代传统 (Sysdev) 仪表板执行硬件任务，包括硬件认证、协作开发驱动程序以及通过 Windows 更新来分发驱动程序。 若要开始，请观看我们的介绍性[视频系列](https://go.microsoft.com/fwlink/?LinkID=828003)，并查看[硬件计划入门](get-started-with-the-hardware-dashboard.md)以获取注册详细信息。
+利用 Windows 硬件合作伙伴中心，你可以快速、轻松地创建和管理你的系统和驱动程序提交。 它将替代传统 (Sysdev) 仪表板执行硬件任务，包括硬件认证、协作开发驱动程序以及通过 Windows 更新来分发驱动程序。 若要开始，请观看我们的介绍性[视频系列](https://go.microsoft.com/fwlink/?LinkID=828003)，并查看[硬件计划入门](get-started-with-the-hardware-dashboard.md)以获取注册详细信息。
 
 > [!NOTE]
-> 旧的 (Sysdev) 仪表板已停用。 使用 Windows 硬件开发人员中心仪表板完成硬件任务。
+> 旧的 (Sysdev) 仪表板已停用。 使用合作伙伴中心硬件仪表板完成硬件任务。
 
 <ul class="cardsFTitle panelContent">
     <li><br/>        <div class="cardSize">
@@ -22,7 +22,7 @@ ms.technology: windows-devices
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="icon for Hardware submissions: a circle, filled white over blue, with an arrow pointing up" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -43,7 +43,7 @@ ms.technology: windows-devices
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_deploy.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_deploy.svg" alt="Icon for driver distribution: a rocket, ready to blast off" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -63,7 +63,7 @@ ms.technology: windows-devices
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_dev-ops.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_dev-ops.svg" alt="Icon for Dashboard API: intermeshing gears within a wheel" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -83,7 +83,7 @@ ms.technology: windows-devices
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt="Dashboard administration icon: a line drawing of an anonymous user" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -103,7 +103,7 @@ ms.technology: windows-devices
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_portal.svg" alt="" />
+                            <img src="https://docs.microsoft.com/media/common/i_portal.svg" alt="Dashboard information icon, an abstract web page with the top nav and side TOC highlighted" />
                         </div>
                     </div>
                     <div class="cardText">

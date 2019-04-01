@@ -4,12 +4,12 @@ description: 创建驱动程序提交下限或上限以更改其分发。
 ms.topic: article
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 36e8c9a520de06afb60d2cdb7c63497652c6897c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9aefdc332cc17d2f5775a02bb5bfe49b8142ceae
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518535"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560600"
 ---
 # <a name="limiting-driver-distribution-by-windows-versions"></a>按 Windows 版本限制驱动程序分发
 
@@ -21,7 +21,7 @@ IHV、OEM 和 ODM 通常需要在 Windows 更新中将驱动程序分发更改�
 
 * 将其分发扩展到早期、当前或更高的 Windows 版本中。
 
-这些分发范围是由**下限**和**上限**定义的。 下限表示驱动程序将分发到的最低 Windows 版本，而上限则表示最新版本。 添加下限和上限可以限制驱动程序的分发。 对于以下驱动程序提交格式，下限和上限是在硬件开发人员中心仪表板的[发货标签](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)中指定的：
+这些分发范围是由**下限**和**上限**定义的。 下限表示驱动程序将分发到的最低 Windows 版本，而上限则表示最新版本。 添加下限和上限可以限制驱动程序的分发。 对于以下驱动程序提交格式，下限和上限是在合作伙伴中心的[发货标签](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)中指定的：
 
 * .HLKX
 * .HCKX
@@ -69,19 +69,19 @@ HDC 仪表板支持两种类型的下限和上限：
 
 最低 OS 级别由产品认证 OS 级别或已证明 OS 级别决定。  如果你需要更低级别，可使用驱动程序扩展，描述如下。
 
-
 ## <a name="driver-expansion"></a>驱动程序扩展
 
 > [!IMPORTANT]
 > 扩展驱动程序的分发时，请注意：
-> * 你只能扩展你提交的驱动程序。 共享提交的接收者不能扩展驱动程序。
+> * 共享提交不能扩展。 你只能扩展你提交的驱动程序。
 > * 每次提交只可执行一次扩展，且不可撤销。 仅在绝对有必要时扩展驱动程序的分发。
+> * 只能对其中的 [**INF 制造商部分**](../install/inf-manufacturer-section.md)不使用 [BuildNumber] *TargetOSVersion* 修饰的驱动程序执行扩展。
 > * 所有与扩展提交关联的发货标签将列出新的 PNP HWID，可用于定位 **Windows 10 客户端版本 1506 和 1511 (TH1)**。 
 > * 这些新建项目的认证级别将显示为“扩展”。
 > * 只有 Windows 8.1 驱动程序可以向上扩展到目标 Windows 10 系统。  
 > * 扩展不会对驱动程序进行重新签名，或更改驱动程序的认证级别。
 
-驱动程序提交中的扩展流程使该驱动程序可以将低于产品认证级别或已证明 OS 级别的操作系统作为目标。 它还使 Windows 10 系统能够接收 Windows 8.1 驱动程序。 
+驱动程序提交中的扩展流程使该驱动程序可以将低于产品认证级别或已证明 OS 级别的操作系统作为目标。 它还使 Windows 10 系统能够接收 Windows 8.1 驱动程序。  就 Windows 10 来说，如果 [**INF 制造商部分**](../install/inf-manufacturer-section.md)使用 [BuildNumber] *TargetOSVersion* 修饰（例如 NTamd64.10.0...**14393**），则**扩展**不会发生。
 
 例如，如果希望能够将 Windows 10 RS3 (1709) 驱动程序提供给 Windows 10 RS1 (1607)，请单击“展开”。 这将为你的 INF 中列出的每个 HWID 创建一个新的基线操作系统选择项。  此基线显示为“Windows 10 客户端版本 1506 和 1511 (TH1)”并且在“认证”部分中显示“已扩展”。  基线 OS 始终是 Windows 10 1506 (TH1) 并且是我们的起始 OS 目标点。
 
@@ -104,4 +104,8 @@ HDC 仪表板支持两种类型的下限和上限：
 
 **如何将早于我的驱动程序认证的 Windows 版本设为目标？**
 
-*请参阅上面的示例。*
+参阅“驱动程序扩展”部分中的上述示例。
+
+**为何我不能扩展我的整个提交？**
+
+*提交中的每个 INF 都会针对扩展单独进行评估。如果其中一个 INF 或所有 INF 的 [**INF 制造商部分**] 使用 [BuildNumber] TargetOSVersion 修饰，我们将无法处理扩展的该 INF。若需扩展提交，则必须先编辑 INF，将 [BuildNumber] 删除。不包含 [BuildNumber] 的 INF 可以成功处理。*

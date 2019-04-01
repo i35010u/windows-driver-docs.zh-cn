@@ -5,28 +5,25 @@ ms.assetid: 519384F5-986C-4109-8C91-4352DEFF46F9
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6487f663abbd15934660fc76ed9b274454d8fd24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 67d1b2c8e08ee33c672b45cb49f5fd46be7d999a
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518493"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560612"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
 
-
-## <a name="span-idhowtosubmittothedashboardspanspan-idhowtosubmittothedashboardspanspan-idhowtosubmittothedashboardspanhow-to-submit-to-the-dashboard"></a><span id="How_to_submit_to_the_dashboard"></span><span id="how_to_submit_to_the_dashboard"></span><span id="HOW_TO_SUBMIT_TO_THE_DASHBOARD"></span>如何提交到仪表板
-
+## <a name="how-to-submit-to-the-dashboard"></a>如何提交到仪表板
 
 本主题介绍如何将驱动程序等提交到仪表板，以及将它应用到多个版本的 Windows。 本主题还介绍如何在 Microsoft 对其进行签名后检索提交，以及如何验证 Microsoft 签名。
 
 有两种方法可以将仪表板提交应用到 Windows 10 和较早版本的 Windows：
 
-1.  使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK/HCK 测试结果](https://msdn.microsoft.com/library/windows/hardware/dn939938.aspx)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows 徽标工具包 (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
-2.  作为 HLK 和 HCK 测试的替代方法，可以自行[交叉签名](https://msdn.microsoft.com/library/windows/hardware/dn170454.aspx)你的驱动程序，并将它提交到仪表板以供[验证签名](attestation-signing-a-kernel-driver-for-public-release.md)，以便它还可以在 Windows 10 上运行。 这个方法更复杂，但仍是一个有效选项。 但请务必注意，通过此方法签名的提交在 Windows Server 2016 上不可用。 有关如何对驱动程序进行证明签名的详细信息，请参阅[对内核驱动程序进行证明签名以便公开发布](attestation-signing-a-kernel-driver-for-public-release.md)。
-    **重要提示**  除非可通过全新 Windows 硬件开发人员中心仪表板对驱动程序签名，否则仍必须使用[硬件开发人员中心 (Sysdev)](dashboard-services.md) 对驱动程序进行证明签名。
-
-     
+1. 使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK/HCK 测试结果](https://msdn.microsoft.com/library/windows/hardware/dn939938.aspx)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows 徽标工具包 (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
+2. 作为 HLK 和 HCK 测试的替代方法，可以自行[交叉签名](https://msdn.microsoft.com/library/windows/hardware/dn170454.aspx)你的驱动程序，并将它提交到仪表板以供[验证签名](attestation-signing-a-kernel-driver-for-public-release.md)，以便它还可以在 Windows 10 上运行。 这个方法更复杂，但仍是一个有效选项。 但请务必注意，通过此方法签名的提交在 Windows Server 2016 上不可用。 有关如何对驱动程序进行证明签名的详细信息，请参阅[对内核驱动程序进行证明签名以便公开发布](attestation-signing-a-kernel-driver-for-public-release.md)。
+    > [!IMPORTANT]
+    > 除非可通过合作伙伴中心对驱动程序签名，否则仍必须使用[硬件开发人员中心 (Sysdev)](dashboard-services.md) 对驱动程序进行证明签名。
 
 本主题会提供有关用于上下文的仪表板的一些背景信息，然后演练使用 HLK/HCK 的过程。
 
@@ -34,21 +31,20 @@ ms.locfileid: "56518493"
 
 对于背景，存在两种需要考虑的代码签名操作：
 
--   一种是将组织标识为仪表板的代码签名操作。 这是对你计划提交的程序包的签名，并且它是仪表板强加于合作伙伴的一项要求，以便仪表板可以阻止你组织以外的恶意用户使用你的凭据进行提交 - 这可能有损你的信誉！
--   另一个是 Microsoft 实际上对你提交的个别文件进行签名（例如，你的驱动程序）。
+- 一种是将组织标识为仪表板的代码签名操作。 这是对你计划提交的程序包的签名，并且它是仪表板强加于合作伙伴的一项要求，以便仪表板可以阻止你组织以外的恶意用户使用你的凭据进行提交 - 这可能有损你的信誉！
+- 另一个是 Microsoft 实际上对你提交的个别文件进行签名（例如，你的驱动程序）。
 
 必须具有绑定到公司的 EV 证书才能访问仪表板中的提交功能。
 
 若要在[硬件开发人员中心 (Sysdev)](dashboard-services.md) 中确认用于标识组织的证书，需要以组织帐户的管理员身份登录。 然后，依次选择“管理”&gt;“上传新的数字证书”。
 
-若要在新的 Windows 硬件开发人员中心仪表板内确认用于标识组织的证书，请参阅[更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/mt786467)。
+若要在合作伙伴中心确认用于标识组织的证书，请参阅[更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/mt786467)。
 
-登录到仪表板并准备好对你的提交签名后，可以使用标准代码签名证书或 EV 代码签名证书。这适用于所有操作系统版本，不只适用于 Windows 10。
+登录到合作伙伴中心并准备好对你的提交签名后，可以使用标准代码签名证书或 EV 代码签名证书。这适用于所有操作系统版本，不只适用于 Windows 10。
 
 这是[策略的最新更改](http://blogs.msdn.com/b/windows_hardware_certification/archive/2015/10/20/update-on-sysdev-ev-certificate-requirement.aspx)。 如果你有绑定到你组织帐户的 EV 证书，可以放心开始安装 - 即，当你提交你的程序包时，可以继续使用标准 SHA-2 证书。
 
-## <a name="span-idhowtosubmithlktestresultsspanspan-idhowtosubmithlktestresultsspanspan-idhowtosubmithlktestresultsspanhow-to-submit-hlk-test-results"></a><span id="How_to_submit_HLK_test_results"></span><span id="how_to_submit_hlk_test_results"></span><span id="HOW_TO_SUBMIT_HLK_TEST_RESULTS"></span>如何提交 HLK 测试结果
-
+## <a name="how-to-submit-hlk-test-results"></a>如何提交 HLK 测试结果
 
 下面介绍了如何将 HLK 测试结果提交到仪表板。 有单独的选项卡可供你查看已运行的测试和测试结果。 针对仪表板目的，HLK 项目最感兴趣的部分是“程序包”选项卡：
 
@@ -92,18 +88,17 @@ ms.locfileid: "56518493"
 
 ![signability](images/signability.png)
 
-后续步骤发生在 Windows 硬件开发人员中心仪表板中。 登录并按照[创建新硬件提交](create-a-new-hardware-submission.md)中的说明上传 HLK 程序包。
+接下来的步骤将在合作伙伴中心仪表板中进行。 登录并按照[创建新硬件提交](create-a-new-hardware-submission.md)中的说明上传 HLK 程序包。
 
-## <a name="span-idhowtoretrieveasubmissionaftermicrosoftsignsitspanspan-idhowtoretrieveasubmissionaftermicrosoftsignsitspanspan-idhowtoretrieveasubmissionaftermicrosoftsignsitspanhow-to-retrieve-a-submission-after-microsoft-signs-it"></a><span id="How_to_retrieve_a__submission_after_Microsoft_signs_it"></span><span id="how_to_retrieve_a__submission_after_microsoft_signs_it"></span><span id="HOW_TO_RETRIEVE_A__SUBMISSION_AFTER_MICROSOFT_SIGNS_IT"></span>如何检索 Microsoft 已签名的提交
+## <a name="how-to-retrieve-a-submission-after-microsoft-signs-it"></a>如何检索 Microsoft 已签名的提交
 
+对于已提交到合作伙伴中心的 HLK 或 HCK 提交，请执行以下操作：
 
-对于已提交到 Windows 硬件开发人员中心仪表板的 HLK 或 HCK 提交：
-
--   [查找硬件提交](manage-your-hardware-submissions.md)，该提交中包含要为其下载签名文件的驱动程序。 选择 ID 打开驱动程序详细信息。 在该页面上，展开包含要下载的驱动程序的程序包的“程序包”选项卡，然后单击“下载已签名文件”。
+- [查找硬件提交](manage-your-hardware-submissions.md)，该提交中包含要为其下载签名文件的驱动程序。 选择 ID 打开驱动程序详细信息。 在该页面上，展开包含要下载的驱动程序的程序包的“程序包”选项卡，然后单击“下载已签名文件”。
 
 对于已提交到硬件开发人员中心 (Sysdev) 的 WLK 提交、系统提交或证明签名的驱动程序：
 
--   依次选择“硬件兼容性”&gt;“管理提交”&gt;在“摘要和任务”选项卡上，如果状态为“已批准”，则表示可以随时检索提交。 在屏幕右下角的“下载”下，单击“已签名的驱动程序包”。 Microsoft 将流式传输内存中包含已签名提交的 zip 文件。
+- 依次选择“硬件兼容性”&gt;“管理提交”&gt;在“摘要和任务”选项卡上，如果状态为“已批准”，则表示可以随时检索提交。 在屏幕右下角的“下载”下，单击“已签名的驱动程序包”。 Microsoft 将流式传输内存中包含已签名提交的 zip 文件。
 
 提交文件夹内将是程序包文件。 这些文件都由 Microsoft 进行签名。 合作伙伴无需对返回的负载进行签名。 Microsoft 始终返回内含已批准提交的 .cat 文件。 如果合作伙伴包含自己的 .cat 文件。 Microsoft 将丢弃它，并返回自己已签名的 .cat 文件。
 
@@ -111,13 +106,12 @@ ms.locfileid: "56518493"
 
 ![由 Microsoft 签名的文件](images/filessignedbymicrosoft.png)
 
-## <a name="span-idhowtovalidatethemicrosoftsignaturespanspan-idhowtovalidatethemicrosoftsignaturespanspan-idhowtovalidatethemicrosoftsignaturespanhow-to-validate-the-microsoft-signature"></a><span id="How_to_validate_the_Microsoft_signature"></span><span id="how_to_validate_the_microsoft_signature"></span><span id="HOW_TO_VALIDATE_THE_MICROSOFT_SIGNATURE"></span>如何验证 Microsoft 签名
-
+## <a name="how-to-validate-the-microsoft-signature"></a>如何验证 Microsoft 签名
 
 在两种情况下，你可能希望验证提交的 Microsoft 签名。
 
-1.  不确定驱动程序是否已由 Microsoft 进行签名，并且你想要检查。
-2.  有两个驱动程序，并且需要确定哪一个经由证明签名，哪一个是在向仪表板提交 HLK/HCK 结果后签名的。
+1. 不确定驱动程序是否已由 Microsoft 进行签名，并且你想要检查。
+2. 有两个驱动程序，并且需要确定哪一个经由证明签名，哪一个是在向仪表板提交 HLK/HCK 结果后签名的。
 
 可以通过检查 Microsoft 签名提交所用证书的增强型密钥用法 (EKU) 来验证 Microsoft 签名。 若要检查 EKU，右键单击该 .cat 文件，然后单击“属性”。 依次单击“数字签名”选项卡、该证书的名称，然后单击“详细信息”。
 
@@ -133,11 +127,8 @@ ms.locfileid: "56518493"
 
 ## <a name="related-topics"></a>相关主题
 
-- [创建新硬件提交](create-a-new-hardware-submission.md)
+- [创建新的硬件提交](create-a-new-hardware-submission.md)
 
-- [在 Windows 硬件开发人员中心仪表板中管理硬件提交](manage-your-hardware-submissions.md)
+- [在合作伙伴中心内管理硬件提交](manage-your-hardware-submissions.md)
 
 - [驱动程序外部测试](driver-flighting.md)
-
- 
-

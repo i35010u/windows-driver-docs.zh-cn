@@ -5,12 +5,12 @@ ms.author: shganesh
 ms.topic: article
 ms.date: 09/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 853efe8c8d2282c7cec0d95f043401b2f96b9fc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a928f221eef74eaec6a869729b8b0d930cc17e18
+ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518261"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58319235"
 ---
 # <a name="create-a-new-report-template"></a>创建新的报告模板
 
@@ -180,26 +180,28 @@ ms.locfileid: "56518261"
         <td>响应代码</td>
         <td>201/500/400</td>
       </tr>
-        <tr>
+      <tr>
       <td>响应有效负载</td>
           <td><pre>{
-    &quot;data&quot;: {
-        &quot;templateId&quot;: templateId
+    "data": {
+        "templateId": templateId
   },
-  &quot;errors&quot;: null  }`</td>
+  "errors": null  }</pre></td>
       </tr>
      </tbody>
 </table>
 
-## 响应参数
+## <a name="response-parameters"></a>响应参数
 
 下表包含响应中的参数说明。
 
-|参数|说明| |----|----| templateId|这是创建的报告模板的模板 ID。 用作计划报告 API 的输入。 有关详细信息，请参阅[计划新报告](schedule-a-new-report.md)。
+|参数|描述|
+|----|----|
+|templateId|这是创建的报告模板的模板 ID。 用作计划报告 API 的输入。 有关详细信息，请参阅[计划新报告](schedule-a-new-report.md)。
 
 可以使用[管理报告模板和计划的报告](manage-report-templates-and-scheduled-reports.md)中所示的方法管理现有的报告。 可以在[示例报告模板](sample-report-templates.md)中找到示例报告模板的列表。
 
-## 可用于投影的列（IHV 和 OEM 视图）
+## <a name="columns-available-for-projection-ihv-and-oem-view"></a>可用于投影的列（IHV 和 OEM 视图）
 
 可以在适用于 IHV 或 ISV 的 Windows 10、Windows 8.x 和 Windows 7 驱动程序报告中选择以下列。
 
@@ -345,7 +347,7 @@ ms.locfileid: "56518261"
 
 可以使用[管理报告模板和计划的报告](manage-report-templates-and-scheduled-reports.md)中所示的方法管理现有的报告。 可以在[示例报告模板](sample-report-templates.md)中找到示例报告模板的列表。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [分析报告 API (Swagger)](https://apidocs.microsoft.com/services/analyticsreportingapis)
 

@@ -36,7 +36,7 @@ ms.technology: windows-devices
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="what-s-new.md" data-raw-source="[What&#39;s new](what-s-new.md)">新增功能</a></p></td>
+<td align="left"><p><a href="what-s-new.md" data-raw-source="[What's new](what-s-new.md)">新增功能</a></p></td>
 <td align="left"><p>本部分概述 UWP 设备应用的新增功能。</p></td>
 </tr>
 <tr class="even">

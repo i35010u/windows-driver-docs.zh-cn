@@ -1,5 +1,5 @@
 items:
-- name: Windows 硬件开发人员中心仪表板
+- name: Windows 硬件合作伙伴中心
   href: index.md
   items:
   - name: 硬件计划仪表板常见问题
@@ -200,9 +200,9 @@ items:
     href: windows-device-experience-list.md
   - name: Windows 认证产品列表
     href: windows-certified-products-list.md
-ms.openlocfilehash: e547ec2507749cb8fc95a71aeae4430a9798a294
-ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.openlocfilehash: 07d08bf8429e394890d1ff37e4d3d74e702ee01c
+ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56465637"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57560606"

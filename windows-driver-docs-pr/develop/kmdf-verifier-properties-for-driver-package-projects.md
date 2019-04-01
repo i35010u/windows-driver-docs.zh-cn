@@ -4,12 +4,12 @@ title: 驱动程序包项目的 KMDF 验证程序属性
 description: 设置远程计算机上的 KMDF 验证程序的属性。  使用这些设置为测试计算机生成和部署 KMDF 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9056c83c5236a294201fa0f5157a340247f63e1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0ae1c204b9819dc9039de47a8af54396894b3159
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518251"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349770"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
 
@@ -56,7 +56,7 @@ ms.locfileid: "56518251"
 <td align="left"><p><span id="Forward_Progress_Handler_Testing"></span><span id="forward_progress_handler_testing"></span><span id="FORWARD_PROGRESS_HANDLER_TESTING"></span><strong>向前进度处理程序检查</strong></p></td>
 <td align="left"><p>指定用于测试驱动程序的向前进度处理的选项。</p>
 <p><strong>无分配故障</strong>测试驱动程序的向前进度处理时，不会模拟任何故障。</p>
-<p><strong>让所有分配均失败</strong>以向前进度队列为目标的所有 I/O 请求均会显示为失败，具体依赖于驱动程序的向前进度处理。</p>
+<p><strong>让所有分配均失败</strong>以向前进度队列为目标的所有 I/O 请求均会显示为失败，具体取决于驱动程序的向前进度处理。</p>
 <p><strong>随机让分配失败</strong>随机让以向前进度队列为目标的 I/O 请求失败。</p></td>
 </tr>
 <tr class="even">

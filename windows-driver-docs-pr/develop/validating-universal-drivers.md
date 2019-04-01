@@ -4,12 +4,12 @@ title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 045d6911386f407d87c7f22910e017e91cb74216
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
+ms.sourcegitcommit: 282e17efc5ff5bc4541e277d67567d37aa2d957b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518351"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58563984"
 ---
 # <a name="validating-universal-windows-drivers"></a>验证通用 Windows 驱动程序
 
@@ -65,7 +65,8 @@ ApiValidation: NOT all binaries are Universal
 
 使用以下语法：
 
-**Apivalidator.exe** **-DriverPackagePath：***&lt;驱动程序文件夹路径&gt;* **-SupportedApiXmlFiles：***&lt;包含通用驱动程序支持的 API 的 XML 文件的路径&gt;*
+**Apivalidator.exe** **-DriverPackagePath:**_&lt;驱动程序文件夹路径&gt;_  
+ **-SupportedApiXmlFiles:**_&lt;包含通用驱动程序支持的 API 的 XML 文件的路径&gt;_
 
 例如，若要验证 WDK 中的“活动”示例调用的 API，应首先在 Visual Studio 中生成示例。 然后，打开命令提示符并导航到包含工具的目录，例如，C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x64。 输入以下命令：
 

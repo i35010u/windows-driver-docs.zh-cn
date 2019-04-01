@@ -4,12 +4,12 @@ title: 驱动程序项目的 Stampinf 属性
 description: 设置 Stampinf 工具的属性。 生成驱动程序时，你可以使用 Stampinf 来更新常用的 INF 和 INX 文件指令。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0954396fd97c54b2a856596eae678e68f05303a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d6632940446faca6eca437376214f902fad7dbf2
+ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518379"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57463899"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>驱动程序项目的 Stampinf 属性
 
@@ -38,7 +38,7 @@ ms.locfileid: "56518379"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Enable_Architecture"></span><span id="enable_architecture"></span><span id="ENABLE_ARCHITECTURE"></span><strong>启用体系结构</strong></p></td>
-<td align="left"><p>对 INX 文件中使用的 $ARCH$ 变量启用替换。 如已启用，则使用为“体系结构”指定的值。 如果指定为“否”，则将删除 $ARCH$ 变量。 例如，&quot;Standard.NT$ARCH$&quot; 将变为 &quot;Standard.NT&quot;。</p></td>
+<td align="left"><p>对 INX 文件中使用的 $ARCH$ 变量启用替换。 如已启用，则使用为“体系结构”指定的值。 如果指定为“否”，则将删除 $ARCH$ 变量。 例如，“Standard.NT$ARCH$”将变为“Standard.NT”。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span><strong>体系结构</strong></p></td>
@@ -135,7 +135,7 @@ ms.locfileid: "56518379"
 * [**INF Version 部分**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547502)
 * [WDK 和 Visual Studio 生成环境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)
 * [Stampinf 任务](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552786_task)
-* [如何：在生成时使用环境变量](https://msdn.microsoft.com/Library/Windows/Hardware/ms171459)。
+* [How to:在生成时使用环境变量](https://msdn.microsoft.com/Library/Windows/Hardware/ms171459)。
  
 
  

@@ -1,5 +1,5 @@
 ---
-Description: 'Universal Serial Bus (USB) provides an expandable, hot-pluggable Plug and Play serial interface that ensures a standard, low-cost connection for peripheral devices such as keyboards, mice, joysticks, printers, scanners, storage devices, modems, and video conferencing cameras. Migration to USB is recommended for all peripheral devices that use legacy ports such as PS/2, serial, and parallel ports. The USB-IF is a Special Interest Groups (SIGs) that maintains the Official USB Specification, test specifications and tools. Windows operating systems include native support for USB host controllers, hubs, and devices and systems that comply with the official USB specification. Windows also provides programming interfaces that you can use to develop device drivers and applications that communicate with a USB device.'
+Description: 通用串行总线 (USB) 提供了一个可扩展且可热插拔的即插即用串行接口，可确保为键盘、鼠标、游戏杆、打印机、扫描仪、存储设备、调制解调器和视频会议摄像机之类的外设提供标准的低成本连接。 对于所有使用旧端口（例如 PS/2 端口、串行端口和并行端口）的外围设备，建议迁移到 USB。 USB-IF 是一个特别兴趣组 (SIG)，负责维护官方 USB 规范、测试规范和工具。 Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规范的设备和系统提供本机支持。 Windows 还提供编程接口，用于开发可与 USB 设备通信的设备驱动程序和应用程序。
 title: 通用串行总线 (USB)
 ms.date: 04/20/2017
 ms.topic: article
@@ -27,7 +27,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <tr class="odd">
 <td><strong>Windows 中的 USB</strong>
 <p></p>
-<a href="windows-10--what-s-new-for-usb.md" data-raw-source="[Windows 10: What&#39;s new for USB](windows-10--what-s-new-for-usb.md)">Windows 10：USB 的新增功能</a>
+<a href="windows-10--what-s-new-for-usb.md" data-raw-source="[Windows 10: What's new for USB](windows-10--what-s-new-for-usb.md)">Windows 10：USB 的新增功能</a>
 <p>概述 Windows 10 中 USB 的新功能和改进。</p>
 <a href="usb-faq--introductory-level.md" data-raw-source="[USB FAQ](usb-faq--introductory-level.md)">USB 常见问题解答</a>
 <p>驱动程序开发人员提出的在 USB 中受支持的 USB 堆栈和功能的常见问题。</p>

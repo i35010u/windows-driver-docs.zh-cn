@@ -107,7 +107,7 @@ items:
       items:
       - name: 了解 USB 客户端驱动程序代码结构 (UMDF)
         href: understanding-the-umdf-template-code-for-usb.md
-    - name: 关于 USB 块请求 (URB)
+    - name: 关于 USB 请求块 (URB)
       href: communicating-with-a-usb-device.md
       items:
       - name: 分配和构建 URB
@@ -359,9 +359,9 @@ items:
         href: winusb-installation.md
       - name: WinUSB 设备
         href: automatic-installation-of-winusb.md
-ms.openlocfilehash: 6dbda1c5ffe3f720a0c777441a679df7a1d50530
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 076983fb40d7a57bbd4572adea40b78ebbb2c932
+ms.sourcegitcommit: 4e3012489d198a8bf0a3ee866bbb9d51bc2980e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465401"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58256395"

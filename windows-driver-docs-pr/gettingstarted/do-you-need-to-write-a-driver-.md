@@ -4,12 +4,12 @@ description: Microsoft Windows 包含适用于许多设备类型的内置驱动�
 ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43fb2ddef3dbbfaf9baf33a20e582a91380b587a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6adf04958f07f0ed460c07a0c9c71091f23f54b4
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518308"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349904"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>是否需要编写驱动程序？
 
@@ -126,7 +126,7 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 <td align="left"><p>打印：Microsoft XPS 打印机驱动程序</p></td>
 <td align="left"><p>XPSDrv</p></td>
 <td align="left"><p>Windows Vista 及更高版本</p></td>
-<td align="left"><p>Microsoft 通过 XPS 打印机驱动程序 (XPSDrv) 为打印 XPS 文档格式提供支持。 该驱动程序扩展了 Microsoft 基于 GDI 的第 3 版打印机驱动程序体系结构，可支持消耗 XML 纸张规范 (XPS) 文档。 通过 XPSDrv 打印机驱动程序，XPS 文档格式可用作后台打印文件格式和文档文件格式。 该 XPSDrv 打印机驱动程序可通过自身提供基本的 XPS 打印支持，无需任何修改。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564289" data-raw-source="[XPSDrv Printer Drivers](https://msdn.microsoft.com/library/windows/hardware/ff564289)">XPSDrv 打印机驱动程序</a>。</p></td>
+<td align="left"><p>Microsoft 通过 XPS 打印机驱动程序 (XPSDrv) 为打印 XPS 文档格式提供支持。 该驱动程序扩展了 Microsoft 基于 GDI 的第 3 版打印机驱动程序体系结构，支持使用 XML 纸张规范 (XPS) 文档。 通过 XPSDrv 打印机驱动程序，XPS 文档格式可用作后台打印文件格式和文档文件格式。 该 XPSDrv 打印机驱动程序可通过自身提供基本的 XPS 打印支持，无需任何修改。 有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/hardware/ff564289" data-raw-source="[XPSDrv Printer Drivers](https://msdn.microsoft.com/library/windows/hardware/ff564289)">XPSDrv 打印机驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>传感器：传感器 HID 类驱动程序</p></td>

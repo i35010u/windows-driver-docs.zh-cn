@@ -4,12 +4,12 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c518e67607917b728d486e1c88aa4523ff1ff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518358"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349144"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
@@ -72,7 +72,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <dl>
 <dt><span id="To_test_all_devices_that_were_installed_with_a_specific_INF_File_"></span><span id="to_test_all_devices_that_were_installed_with_a_specific_inf_file_"></span><span id="TO_TEST_ALL_DEVICES_THAT_WERE_INSTALLED_WITH_A_SPECIFIC_INF_FILE_"></span>若要测试安装有特定 INF 文件的所有设备：</dt>
 <dd><p><strong>INF::FileName=</strong><em>INF_File_Name</em></p>
-<p>例如，<strong>INF::OriginalInfFileName=&#39;%InfFileName%&#39;</strong></p>
+<p>例如，<strong>INF::OriginalInfFileName='%InfFileName%'</strong></p>
 <p>这是默认值。</p>
 </dd>
 <dt><span id="To_test_a_device_with_a_specific_Device_Id__"></span><span id="to_test_a_device_with_a_specific_device_id__"></span><span id="TO_TEST_A_DEVICE_WITH_A_SPECIFIC_DEVICE_ID__"></span>若要测试具有特定设备 ID 的设备：</dt>

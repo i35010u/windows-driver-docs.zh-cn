@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 305e5ac725f1ca5c11c68d528f8b8c9909fd3c48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c034286186c88f231f032c2de031c2780ff04eb3
+ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518240"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56743462"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
@@ -27,8 +27,8 @@ ms.locfileid: "56518240"
 
 ### <a name="1-install-visual-studio"></a>1.安装 Visual Studio
 
-- WDK 现在支持 Visual Studio 2017。  支持所有版本。  WDK 不再支持 Visual Studio 2015。 
-- 从 [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/) 下载。 
+- WDK 现在支持 Visual Studio 2019。  支持所有版本。  WDK 不再支持 Visual Studio 2017。 
+- 从 [https://visualstudio.microsoft.com/vs/preview/](https://visualstudio.microsoft.com/vs/preview/) 下载。 
 - 选择工作负荷：使用 C++ 开发。 
 - ARM：若要生成 ARM 驱动程序，必须另外安装组件：单个组件 -> 编译器、生成工具和运行时 -> 适用于 ARM 的 Visual C++ 编译器和库。 
 - ARM64：目前不受支持。 
@@ -56,7 +56,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 ## <a name="install-enterprise-wdk-ewdk-insider-preview"></a>安装企业版 WDK (EWDK) Insider Preview
 
-EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它包括用于 Visual Studio 2017 的生成工具、SDK、WDK 以及对 ARM64 驱动程序开发的支持。 有关详细信息，请参阅[安装企业版 WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk)。 
+EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它包括用于 Visual Studio 2019 的生成工具、SDK、WDK 以及对 ARM64 驱动程序开发的支持。 有关详细信息，请参阅[安装企业版 WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk)。 
 
 [获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 
@@ -64,9 +64,9 @@ EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它�
 
 ## <a name="run-time-requirements-for-the-wdk-and-the-ewdk"></a>WDK 和 EWDK 的运行时要求
 
-WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅[Visual Studio 2017 系统要求](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)。
+WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅[Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
 
-此外，EWDK 需要 .NET 4.6.1。 有关运行 .NET 的平台的更多信息，请参阅 [.NET Framework 系统要求](https://www.visualstudio.com/productinfo/vs2017-system-requirements-vs)。
+此外，EWDK 需要 .NET 4.7.2。 有关运行 .NET 的平台的更多信息，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。
 
 可以使用 WDK Insider Preview 和 EWDK Insider Preview 开发适用于以下操作系统的驱动程序： 
 

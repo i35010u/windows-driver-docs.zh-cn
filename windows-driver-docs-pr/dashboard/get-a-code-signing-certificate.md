@@ -5,132 +5,26 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d18cf99238bc70da613e6f83496e962eeadba6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fe34a75d166e8e03999c93c9588233e94fb9801c
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518360"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57909202"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
 在建立合作伙伴中心帐户之前，需要获取代码签名证书以保护数字信息。 此证书是用于建立你的公司对你所提交代码的所有权的接受标准。 它让你可以用数字形式签署 PE 二进制文件，例如 .exe、.cab、.dll、.ocx、.msi、.xpi 和 .xap 文件。
 
-## <a name="step-1-determine-which-type-of-code-signing-certificate-you-need"></a>第 1 步：确定所需的代码签名证书类型
+## <a name="step-1-obtain-an-ev-certificate"></a>第 1 步：获取 EV 证书
 
-- Microsoft 接受来自为内核模式代码签名注册和授权（作为 Microsoft 受信任的根证书计划的一部分）的合作伙伴的标准代码签名和扩展验证 (EV) 代码签名证书。 如果已有其中一个颁发机构颁发的已批准标准或 EV 证书，则可以使用它建立合作伙伴中心帐户。 如果没有证书，则需要购买一个新证书。
-
-- 下表提供了每个仪表板服务的证书要求的详细信息。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>仪表板服务/权限</th>
-<th>代码签名证书要求</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Bug 管理</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="even">
-<td><p>DDC – 驱动程序分发中心</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>设备元数据</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="even">
-<td><p>报告数据</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>提交</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="even">
-<td><p>WRD – Windows 远程调试</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>LSA</p></td>
-<td><p>EV</p></td>
-</tr>
-<tr class="even">
-<td><p>UEFI</p></td>
-<td><p>EV</p></td>
-</tr>
-<tr class="odd">
-<td><p>Windows 参考设计</p></td>
-<td><p>标准或 EV</p></td>
-</tr>
-<tr class="even">
-<td><p>证明驱动程序签名</p></td>
-<td><p>EV</p></td>
-</tr>
-</tbody>
-</table>
-
-> [!NOTE] 
-> 今年晚些时候，合作伙伴中心将强制使用提交必需的 EV 证书。
-
-### <a name="code-signing-certificates-for-partner-center"></a>合作伙伴中心的代码签名证书
-
-当前有两种类型的代码签名证书可用：
-
-#### <a name="standard-code-signing"></a>标准代码签名
-
-- 提供标准级别的身份验证
-
-- 需要较短的处理时间以及较低的成本
-
-- 可用于除 LSA 和 UEFI 文件签名服务之外的所有合作伙伴中心服务。
-
-- 在 Windows 10 桌面版（家庭版、专业版、企业版和教育版）中，标准代码签名无法用于内核模式驱动程序。 有关这些更改的详细信息，请参阅[代码签名常见问题](#code-signing-faq)。
-
-#### <a name="extended-validation-ev-code-signing"></a>扩展验证 (EV) 代码签名
-
-- 提供最高级别的身份验证
-
-- 由于扩展了验证过程，因此需要较长的处理时间以及较高的成本
-
-- 可用于所有合作伙伴中心服务，而且是 LSA 和 UEFI 文件签名服务所必需的
-
-- 在 Windows 10 桌面版中，所有内核模式驱动程序都必须由合作伙伴中心签名，并且合作伙伴中心需要 EV 证书。 有关这些更改的详细信息，请参阅[代码签名常见问题](#code-signing-faq)。
+- Microsoft 需要为内核模式代码签名注册和授权（作为 Microsoft 受信任的根证书计划的一部分）的合作伙伴提供的扩展验证 (EV) 代码签名证书。 如果已有其中一个颁发机构颁发的已批准 EV 证书，则可以使用它建立合作伙伴中心帐户。 如果没有证书，则需要购买一个新证书。
 
 ## <a name="step-2-buy-a-new-code-signing-certificate"></a>步骤 2：购买新的代码签名证书
 
-如果没有批准的标准或 EV 代码签名证书，可以从下列某个证书颁发机构购买证书。
+如果没有批准的 EV 代码签名证书，可以从下列某个证书颁发机构购买证书。
 
-### <a name="standard-code-signing-certificates"></a>标准代码签名证书
-
-- [购买 Symantec 标准代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393247)
-
-- [购买 Certum 标准代码签名证书](https://go.microsoft.com/fwlink/?linkid=843062)（仅在合作伙伴中心中受支持）
-
-- [购买 Entrust 标准代码签名证书](https://go.microsoft.com/fwlink/?linkid=843067)
-
-- [购买 GlobalSign 标准代码签名证书](https://go.microsoft.com/fwlink/p/?LinkId=620887)
-
-- [购买 Comodo 标准代码签名证书](https://go.microsoft.com/fwlink/?linkid=863206)
-
-- [购买 DigiCert 标准代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393249)
-
-  1. 在“Sysdevs 的 DigiCert 代码签名证书”页上，单击“开始”。
-
-  2. 在“DigiCert 订单”页（步骤 1）上的“代码签名”部分中，单击“代码签名证书”。
-
-  3. 仍在步骤 1 中，向下滚动到“平台”部分，从下拉列表中选择“Microsoft Authenticode”，然后单击“继续”。
-
-  4. 按照 DigiCert 提供的说明购买证书。
-
-### <a name="extended-validation-code-signing-certificatesrequired-for-uefi-kernel-mode-drivers-and-lsa-certifications"></a>扩展验证代码签名证书（对于 UEFI、内核模式驱动程序和 LSA 认证是必需的）
+### <a name="extended-validation-code-signing-certificates"></a>扩展验证代码签名证书。
 
 - [购买 Symantec EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393248)
 
@@ -140,7 +34,7 @@ ms.locfileid: "56518360"
 
 - [购买 GlobalSign EV 代码签名证书](https://go.microsoft.com/fwlink/p/?LinkId=620888)
 
-- [购买 Comodo EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=863208)
+- [购买 Sectigo（以前称为 Comodo）EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=863208)
 
 - [购买 DigiCert EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393249)
 
@@ -161,7 +55,7 @@ ms.locfileid: "56518360"
 
 - 如果要设置新的合作伙伴中心帐户，请按照[注册硬件计划](register-for-the-hardware-program.md)中的步骤进行操作。
 
-- 如果已设置合作伙伴中心帐户且需要续订证书，请按照[更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)中的步骤进行操作。
+- 如果已设置合作伙伴中心帐户且需要续订证书，请按照[添加或更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)中的步骤进行操作。
 
 ## <a name="code-signing-faq"></a>代码签名常见问题
 
@@ -177,11 +71,12 @@ ms.locfileid: "56518360"
 ### <a name="windows-10-desktop-attestation-signing"></a>Windows 10 桌面版证明签名
 
 - 使用证明签名的仪表板签名驱动程序仅在 Windows 桌面版和更高版本的 Windows 10 中运行。
-- 证明签名的驱动程序仅适用于 Windows 10 桌面版；它不适用于其他版本的 Windows，例如 Windows Server 2016、Windows 8.1 或 Windows 7。
-- 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。 尽管用户模式驱动程序无需由适用于 Windows 10 的 Microsoft 进行签名，但相同的证明过程可以同时用于用户和内核模式驱动程序。
+- 证明签名的驱动程序仅适用于 Windows 10 桌面版，不适用于其他版本的 Windows，例如 Windows 7、Windows 8.1 或 Windows Server 2016 及更高版本。
+- 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。
 
 ### <a name="windows-10-earlier-certificate-transition-signing"></a>Windows 10 早期证书过渡签名
 
+- 下面的内容仅适用于 Windows 10 1803 及更低版本。  从 Windows 10 1809 开始，这些将不再适用。 
 - 不推荐将使用 2015 年 7 月 29 日之后颁发的任何证书进行签名并且带有时间戳的驱动程序用于 Windows 10。
 - 使用在 2015 年 7 月 29 日之后到期的任何证书进行签名并且没有时间戳的驱动程序将在 Windows 10 上运行，直到该证书到期。
 
@@ -204,15 +99,14 @@ ms.locfileid: "56518360"
 
 ### <a name="windows-server"></a>Windows Server
 
-- 仪表板不会接受证明的设备，并且会筛选用于 Windows Server 2016 的驱动程序签名提交。
+- Windows Server 2016 及更高版本将不接受证明的设备和筛选驱动程序签名提交。
 - 仪表板仅对设备进行签名，并且筛选成功通过 HLK 测试的驱动程序。
-- Windows Server 2016 仅加载成功通过 HLK 测试的仪表板签名的驱动程序。
+- Windows Server 2016 及更高版本将只加载已成功通过 HLK 测试的仪表板签名的驱动程序。
 
 ### <a name="ev-certs"></a>EV 证书
 
-- 截止到 2015 年 10 月 31 日，你的 Sysdev 仪表板帐户必须关联至少一个 EV 证书，才能提交供证明签名的二进制文件，或提交供 HLK 认证的二进制文件。
-- 在 2016 年 5 月 1 日前，可以使用 EV 证书或现有标准证书进行签名。 在 2016 年 5 月 1 日后，需要使用 EV 证书才能对提交的 cab 文件进行签名。
-- 无需对提交的二进制文件本身进行签名。 仅需要使用 EV 证书对提交的 cab 文件进行签名。
+- 截止到 2015 年 10 月 31 日，你的硬件开发人员中心仪表板帐户必须关联至少一个 EV 证书，才能提交供证明签名的二进制文件，或提交供 HLK 认证的二进制文件。
+- 必须对提交的二进制文件本身进行签名。
 
 ### <a name="os-support-summary"></a>操作系统支持摘要
 
@@ -224,12 +118,12 @@ ms.locfileid: "56518360"
 | Windows Vista                      | 否                             | 是                                | 是                                                                            |
 | Windows 7                          | 否                             | 是                                | 是                                                                            |
 | Windows 8/8.1                    | 否                             | 是                                | 是                                                                            |
-| Windows 10                         | 是                            | 是                                | 是                                                                            |
+| Windows 10                         | 是                            | 是                                | 否（截至 Windows 10 1809）                                                                            |
 | Windows 10 - DG 已启用            | \*配置相关      | \*配置相关          | \*配置相关                                                      |
 | Windows Server 2008 R2             | 否                             | 是                                | 是                                                                            |
 | Windows Server 2012 R2             | 否                             | 是                                | 是                                                                            |
-| Windows Server 2016                | 否                             | 是                                | 是                                                                            |
-| Windows Server 2016 – DG 已启用   | \*配置相关      | \*配置相关          | \*配置相关                                                      |
+| Windows Server >= 2016             | 否                             | 是                                | 是                                                                            |
+| Windows Server >= 2016 – DG 已启用| \*配置相关      | \*配置相关          | \*配置相关                                                      |
 | Windows IoT 企业版             | 是                            | 是                                | 是                                                                            |
 | Windows IoT 企业版 - DG 已启用 | \*配置相关      | \*配置相关          | \*配置相关                                                      |
 | Windows IoT 核心版(1)                | 是（不需要）             | 是（不需要）                 | 是（交叉签名也适用于 2015 年 7 月 29 日后颁发的证书） |

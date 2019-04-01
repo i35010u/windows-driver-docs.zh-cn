@@ -7,12 +7,12 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 5f74125b140b08a9873c897c2b426ca81b90db7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af801bca7a6732555e4c3327eb8b97d0ed6742aa
+ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518102"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57830242"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静态驱动程序验证程序已知问题
 
@@ -116,7 +116,7 @@ ms.locfileid: "56518102"
 
 如果 Server GUI 安装中的体系结构和 Windows 版本与 ServerCore 安装中相同，请将 Server GUI 中的 RoMetadata.dll 文件复制到 ServerCore。  可在 System32 文件夹（例如 `C:\Windows\System32`）中找到 DLL，应将它放在 ServerCore 计算机上的相同文件夹中。  这样，应该就可以在 ServerCore 上运行测试。  如果仍然遇到问题，请参考下一种解决方法。
 
-第二种解决方法是在 Server GUI 上运行，然后将包与包含 Server Core 中的结果的包合并。 有关合并数据包的信息，请参阅[合并包](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)。
+第二种解决方法是在 Server GUI 上运行，然后将包与包含 Server Core 中的结果的包合并。 有关合并包的信息，请参阅[合并包](https://docs.microsoft.com/windows-hardware/test/hlk/user/merge-packages)。
 
 ## <a name="static-driver-verifier-fails-with-exiting-libexeiwrapexe-with-0xc0000142-error"></a>静态驱动程序验证程序失败，lib.exe/iwrap.exe 退出并出现 0xc0000142 错误
 
