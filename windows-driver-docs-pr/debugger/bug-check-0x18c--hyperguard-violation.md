@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7350bf0b98669a96b18ed13b99e01c942da91b82
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 59b8e9b1d9eedd3d1bc8d68d9ad89c011a0a12dc
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743467"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761832"
 ---
-# <a name="bug-check-0x18c-hyperguardviolation"></a>Bug 检查 0x18C:HYPERGUARD\_冲突 
+# <a name="bug-check-0x18c-hyperguardviolation"></a>Bug 检查 0x18C：HYPERGUARD\_冲突 
 
 HYPERGUARD\_冲突错误检查的值为 0x0000018C。 这表示内核已检测到关键内核代码或数据已损坏。
 
@@ -36,38 +36,57 @@ HYPERGUARD\_冲突错误检查的值为 0x0000018C。 这表示内核已检测�
 
 | 参数 | 描述 |
 |-----------|-------------|
-| 1         | 类型的损坏区域-下面列出的值。 |
-| 2         | 失败类型的相关信息。 |
-| 3         | 保留。  |
-| 4         | 保留。  |
+| 1    | 类型的损坏区域-下面列出的值。 |
+| 2    | 失败类型的相关信息。 |
+| 3    | 保留。  |
+| 4    | 保留。  |
 
 
 **类型的损坏区域**
 
-     1001 : A generic data region
-     1002 : A page hash mismatch
-     1004 : A processor IDT
-     1005 : A processor GDT
-     1007 : Debug routine modification
-     1008 : A dynamic code region
-     1009 : A generic shareable data region
-     100a : A hypervisor overlay region
-     100b : A processor mode misconfiguration
-     100c : An extended processor control register
-     100d : A secure memory region
-     100e : A loaded module
-     100f : A processor state region
-     1010 : The kernel CFG bitmap
-     1011 : The virtual address 0 page
-     1012 : The alternate inverted function table
-     1013 : An on-demand page verification failed
-     1016 : A secure image region
-     1017 : Kernel virtual address protection inconsistency
-     1101 : Internal context corruption
-     1102 : IDTR modification
-     1103 : GDTR modification
+1001 :通用数据区域
 
+1002 :页哈希不匹配
 
+1004 :处理器 IDT
+
+1005 :处理器 GDT
+
+1007 :调试例程修改
+
+1008 :动态代码区域
+
+1009 :可共享的通用数据区域
+
+100a:虚拟机监控程序覆盖区域
+
+100b:处理器模式下配置不正确
+
+100 c:扩展的处理器控制寄存器
+
+100 d:安全的内存区域
+
+100e:加载的模块
+
+100f:处理器状态区域
+
+1010 :内核 CFG 位图
+
+1011 :虚拟地址 0 页
+
+1012 :备用的倒排的函数表
+
+1013 :按需页验证失败
+
+1016 :安全映像区域
+
+1017 :内核虚拟地址保护不一致
+
+1101 :内部上下文损坏
+
+1102 :IDTR 修改
+
+1103 :GDTR 修改
 
 ## <a name="cause"></a>原因
 -----

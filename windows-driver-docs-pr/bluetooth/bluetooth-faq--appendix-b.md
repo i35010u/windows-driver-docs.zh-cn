@@ -4,27 +4,25 @@ description: 本附录包含如何实现引用 Bth.inf 的供应商提供 INF �
 ms.assetid: 37865571-D632-4A69-A2AB-D0B2570A6F9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9160982d3730df06cf0e30763eb4300dfff1e36a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e27e66ef8c3ba8ef6d16dc4b9993e18cd090014a
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541280"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761826"
 ---
-# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：在 Windows Vista 中使用的 INF 文件供应商提供的示例
-
+# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
 
 本附录包含如何实现引用 Bth.inf 的供应商提供 INF 文件的示例。 实现此特定示例是为了安装兼容使用 2.0 版和 Windows XP 或 Windows Vista 中的蓝牙规范 EDR 单选。 其他类型的蓝牙设备的 INF 文件很相似。
 
 此 INF 文件可用于以下版本的 Windows 上安装该设备：
 
--   32 位版本的 Windows XP SP2 和更高版本的 service pack 的所有 Sku。
--   64 位版本的 Windows XP 的所有 Sku
--   Windows Vista 的所有 Sku
+- 32 位版本的 Windows XP SP2 和更高版本的 service pack 的所有 Sku。
+- 64 位版本的 Windows XP 的所有 Sku
+- Windows Vista 的所有 Sku
 
-**请注意**  :此 INF 文件不能用于 Windows 2000、 Windows Server 2003 或任何版本的尚未升级到最少的 Windows XP SP2。 此外，供应商提供的 INF 文件不是必需的 Windows 7 因为具有 USB 任何 USB 设备\\类\_E0 & 子类\_01 和端口是否\_01 硬件 ID 将安装为**泛型Bluetooth 适配器**Windows 7 中。
-
- 
+> [!NOTE]
+> 此 INF 文件不能用于 Windows 2000、 Windows Server 2003 或任何版本的尚未升级到最少的 Windows XP SP2。 此外，供应商提供的 INF 文件不是必需的 Windows 7 因为具有 USB 任何 USB 设备\\类\_E0 & 子类\_01 和端口是否\_01 硬件 ID 将安装为**泛型Bluetooth 适配器**Windows 7 中。
 
 突出显示的部分和指令的说明，请在下面的示例后参阅带编号的说明：
 
@@ -94,21 +92,12 @@ SourceDisk       = "Windows Vista CD"
 
 **注意：**
 
-1.  **版本**部分中应具有**CLASSGUID**并**DriverVer**指令设置，如下所示：
-    -   **CLASSGUID**:蓝牙设备 ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})，使用 Microsoft 类 GUID 不是第三方的 GUID。
-    -   **DriverVer**:如果你想要取代默认现成驱动程序，必须设置驱动程序版本，以提供更高的排名匹配而不是在 Bth.inf。 有关配置驱动程序即可取代框驱动程序中的默认值的详细信息，请参阅[收件箱驱动程序的安装专用生成](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)。
+1. **版本**部分中应具有**CLASSGUID**并**DriverVer**指令设置，如下所示：
+    - **CLASSGUID**:蓝牙设备 ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})，使用 Microsoft 类 GUID 不是第三方的 GUID。
+    - **DriverVer**:如果你想要取代默认现成驱动程序，必须设置驱动程序版本，以提供更高的排名匹配而不是在 Bth.inf。 有关配置驱动程序即可取代框驱动程序中的默认值的详细信息，请参阅[收件箱驱动程序的安装专用生成](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)。
 
-2.  硬件 Id。 VID 和 PID 的组合必须是唯一的制造商和设备。 这可确保在相同的硬件 ID 与多个设备不对应。
-3.  **包括**并**需要**指令。 **Include**以下三个部分中的指令引用 Bth.inf。 **需要**指令指示应在设备安装过程中处理从 Bth.inf 哪些部分。
-4.  **DelReg**指令，该引用指令**DeleteRegKeys**部分中，删除注册表项或阻止 Windows 创建 PDO 或 devnode 设备的值。 例如，传真服务配置文件位于当前 Windows Vista 服务列表中不受支持，所以它的值为**UnsupportedServices**注册表项。 此示例将删除的传真服务配置文件**UnsupportedServices**密钥，可让 Windows 创建设备 devnode。
+2. 硬件 Id。 VID 和 PID 的组合必须是唯一的制造商和设备。 这可确保在相同的硬件 ID 与多个设备不对应。
+3. **包括**并**需要**指令。 **Include**以下三个部分中的指令引用 Bth.inf。 **需要**指令指示应在设备安装过程中处理从 Bth.inf 哪些部分。
+4. **DelReg**指令，该引用指令**DeleteRegKeys**部分中，删除注册表项或阻止 Windows 创建 PDO 或 devnode 设备的值。 例如，传真服务配置文件位于当前 Windows Vista 服务列表中不受支持，所以它的值为**UnsupportedServices**注册表项。 此示例将删除的传真服务配置文件**UnsupportedServices**密钥，可让 Windows 创建设备 devnode。
 
 我们强烈建议你在设备和 INF 文件上运行最新的 WHQL 测试和发布 Windows 更新上的 INF 文件包。 这可确保，客户可以自动 INF 文件从 Internet 下载新蓝牙无线连接到其计算机时。
-
- 
-
- 
-
-
-
-
-

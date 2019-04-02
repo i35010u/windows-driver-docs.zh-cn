@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bdafef3629723d70a3aef3416f824d73c71a0484
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: b5395b7d46540462c646c3952ba2a8efe6e3e5cc
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743512"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761836"
 ---
-# <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>Bug 检查 0x166:群集\_资源\_调用\_超时\_LIVEDUMP
+# <a name="bug-check-0x166-clusterresourcecalltimeoutlivedump"></a>Bug 检查 0x166：群集\_资源\_调用\_超时\_LIVEDUMP
 
 群集\_资源\_调用\_超时\_LIVEDUMP bug 检查的值为 0x00000166。 这指示群集资源调用所花时间超过配置的超时值。
 
@@ -37,20 +37,33 @@ ms.locfileid: "56743512"
 
 **资源调用类型**
 
-    1  OPEN
-    2  CLOSE
-    3  ONLINE
-    4  OFFLINE
-    5  TERMINATE
-    6  ARBITRATE
-    7  RELEASE
-    8  RESOURCE CONTROL
-    9  RESOURCE TYPE CONTROL
-    10 LOOKS ALIVE
-    11 IS ALIVE
-    12 FAILURE NOTIFICATION
-    13 SHUTDOWN PROCESS
-    14 CANCEL
+1 打开
+
+关闭 2
+
+联机 3
+
+脱机 4
+
+5 终止
+
+6 进行仲裁
+
+7 版本
+
+8 资源控制
+
+9 的资源类型的控件
+
+10 查找保持活动状态
+
+11 处于活动状态
+
+12 故障通知
+
+13 关闭进程
+
+14 取消
 
 
 ## <a name="cause"></a>原因

@@ -4,14 +4,14 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5839e1d6e57a2c47603bfb3dc9e02272910f4179
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546180"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761856"
 ---
-# <a name="bluetooth-host-radio-support"></a>蓝牙主机单选支持
+# <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
 以下列表提供了 Bluetooth 无线电支持问与答：
 
@@ -30,7 +30,7 @@ ms.locfileid: "56546180"
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>在 Windows 中受支持的蓝牙主控制器
 
-使用 Windows，蓝牙无线可打包为外部硬件保护装置或嵌入在一台计算机，但它必须连接到计算机的 USB 端口之一。 包含在 Windows 7 和 Windows Vista 的 Bluetooth 堆栈不支持蓝牙单选连接通过 PCI，I2C，串行、 安全数字 I/O (SDIO) CompactFlash，或 PC 卡接口。 在 Windows 8 和 Windows 8.1 中，可以通过第三方总线驱动程序添加备用传输方式通过连接的无线电收发器。 请参阅的可扩展的传输部分[蓝牙设备引用](https://msdn.microsoft.com/library/windows/hardware/ff536585)有关详细信息。
+使用 Windows，蓝牙无线可打包为外部硬件保护装置或嵌入在一台计算机，但它必须连接到计算机的 USB 端口之一。 包含在 Windows 7 和 Windows Vista 的 Bluetooth 堆栈不支持蓝牙单选连接通过 PCI，I2C，串行、 安全数字 I/O (SDIO) CompactFlash，或 PC 卡接口。 在 Windows 8 和 Windows 8.1 中，可以通过第三方总线驱动程序添加备用传输方式通过连接的无线电收发器。 请参阅的可扩展的传输部分[蓝牙设备引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_bltooth/)有关详细信息。
 
 ## <a name="forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista"></a>强制 Bluetooth 堆栈加载如果 Windows 不能匹配设备 ID (Windows Vista)
 
@@ -99,148 +99,38 @@ Windows 8.1、 Windows 8、 Windows 7 和 Windows Vista 支持供应商提供蓝
 
 下表列出了 Windows 支持的 Bth.inf 中的配置文件。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>服务 ID</p></td>
-<td align="left"><p>描述</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001101-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>SPP</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001103-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>DUN</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001124-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>HID</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001126-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>HCRP</p></td>
-</tr>
-</tbody>
-</table>
+|服务 ID|描述|
+|----|----|
+|{00001101-0000-1000-8000-00805f9b34fb}|SPP|
+|{00001103-0000-1000-8000-00805f9b34fb}|DUN
+|{00001124-0000-1000-8000-00805f9b34fb}|HID|
+|{00001126-0000-1000-8000-00805f9b34fb}|HCRP|
 
 ### <a name="windows-xp-bluetooth-profiles"></a>Windows XP 蓝牙配置文件
 
 下表列出了不受支持的蓝牙配置文件和协议。 请注意，在此上下文中，"不受支持"意味着 Windows 不会不会自动生成 PDO 或 devnode 或显示添加新的硬件向导。 因此，一些内置配置文件和协议处理，就好像它们是不受支持。 例如，SDP 是一种现成协议的蓝牙服务 id，但不需要 PDO。 SDP 协议因此标记为 Bth.inf 中不受支持，以避免在 PDO 创建
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>服务 ID</p></td>
-<td align="left"><p>在框</p></td>
-<td align="left"><p>描述</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000110a-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>音频源</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{0000110c-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>AV 远程目标</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001001-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>浏览组服务</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001111-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>传真服务</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000111f-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Handsfree 音频网关</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001112-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>耳机音频网关</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001104-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>红外移动通信 (IRMC) 同步服务</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001107-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>IRMC 同步命令</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001106-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Obex 文件传输</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001105-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>对象推送</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001117-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>平移组临时网络 (GN)</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001116-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>平移网络接入点 (NAP)</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001115-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>平移 U</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{0000112e-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>电话薄客户端设备 (PCE) 服务</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000112f-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>通讯簿服务器设备 (PSE) 服务</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001200-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>即插即用服务</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{00001002-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>公共浏览组服务</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>{00001000-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>SDP</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>{0000112d-0000-1000-8000-00805f9b34fb}</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>Sim 访问</p></td>
-</tr>
-</tbody>
-</table>
+|服务 ID|在框|描述|
+|----|----|----|
+|{0000110a-0000-1000-8000-00805f9b34fb}|否|音频源|
+|{0000110c-0000-1000-8000-00805f9b34fb}|否|AV 远程目标|
+|{00001001-0000-1000-8000-00805f9b34fb}|否|浏览组服务|
+|{00001111-0000-1000-8000-00805f9b34fb}|否|传真服务|
+|{0000111f-0000-1000-8000-00805f9b34fb}|否|Handsfree 音频网关|
+|{00001112-0000-1000-8000-00805f9b34fb}|否|耳机音频网关|
+|{00001104-0000-1000-8000-00805f9b34fb}|否|红外移动通信 (IRMC) 同步服务|
+|{00001107-0000-1000-8000-00805f9b34fb}|否|IRMC 同步命令|
+|{00001106-0000-1000-8000-00805f9b34fb}|是|Obex 文件传输|
+|{00001105-0000-1000-8000-00805f9b34fb}|是|对象推送|
+|{00001117-0000-1000-8000-00805f9b34fb}|否|平移组临时网络 (GN)|
+|{00001116-0000-1000-8000-00805f9b34fb}|否|平移网络接入点 (NAP)|
+|{00001115-0000-1000-8000-00805f9b34fb}|是|平移 U|
+|{0000112e-0000-1000-8000-00805f9b34fb}|否|电话薄客户端设备 (PCE) 服务|
+|{0000112f-0000-1000-8000-00805f9b34fb}|否|通讯簿服务器设备 (PSE) 服务|
+|{00001200-0000-1000-8000-00805f9b34fb}|是|即插即用服务|
+|{00001002-0000-1000-8000-00805f9b34fb}|否|公共浏览组服务|
+|{00001000-0000-1000-8000-00805f9b34fb}|是|SDP|
+|{0000112d-0000-1000-8000-00805f9b34fb}|否|Sim 访问|
 
 如果 Ihv 不希望 Windows 自动生成一个为其设备的 PDO，他们可以将服务 GUID 添加到不受支持的服务列表。 有关示例，请参阅 Bth.inf。
 
@@ -268,13 +158,15 @@ USB\\类\_（对于基于 USB 的无线电收发器） E0 MS\_BTHX\_BTHMINI （�
 <col width="25%" />
 <col width="25%" />
 </colgroup>
-<tbody>
+<thead>
 <tr class="odd">
-<td align="left"><p>ValueName</p></td>
-<td align="left"><p>在任务栏的搜索框中键入</p></td>
-<td align="left"><p>描述</p></td>
-<td align="left"><p>默认值</p></td>
+<th align="left"><p>ValueName</p></th>
+<th align="left"><p>在任务栏的搜索框中键入</p></th>
+<th align="left"><p>描述</p></th>
+<th align="left"><p>默认值</p></th>
 </tr>
+</thead>
+<tbody>
 <tr class="even">
 <td align="left"><p>DIDVendorIDSource</p></td>
 <td align="left"><p>DWORD</p></td>

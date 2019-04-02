@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19174125c5e7b9682e4e5bce8b2f29a1fb88167d
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: ad83a5117a4c0b5b9abe11f3786c044f474a66fa
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743464"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761840"
 ---
-# <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>Bug 检查 0x1C9:用户\_模式下\_运行状况\_监视器\_LIVEDUMP
+# <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>Bug 检查 0x1C9：用户\_模式下\_运行状况\_监视器\_LIVEDUMP
 
 用户\_模式下\_运行状况\_监视器\_LIVEDUMP bug 检查的值为 0x000001C9。 它表示一个或多个重要的用户模式组件无法满足的运行状况检查。
 
@@ -37,7 +37,7 @@ ms.locfileid: "56743464"
 
 **监视器源值**
 
-```
+```text
         0  : WatchdogSourceDefault
               Source was not specified
         1  : WatchdogSourceRhsCleanup

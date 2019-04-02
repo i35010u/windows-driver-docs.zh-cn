@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 135a66a5a7933e8bda6cae8c34bad6757be286a4
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: d5ee0915a8ba406b746f263238d2c16776e2558b
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743511"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761828"
 ---
-# <a name="bug-check-0x16f-clustercsvstatetransitionintervaltimeoutlivedump"></a>Bug 检查 0x16F:群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP
+# <a name="bug-check-0x16f-clustercsvstatetransitionintervaltimeoutlivedump"></a>Bug 检查 0x16F：群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP
 
 群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP bug 检查的值为 0x0000016F。 这表示群集共享卷下一个状态转换请求仍未送达。
 
@@ -39,12 +39,15 @@ ms.locfileid: "56743511"
 
 **CSV 目标状态 Id**
 
-     0  Waiting for volume to transition to the Init state. 
-     1  Waiting for volume to transition to the Paused state. 
-     2  Waiting for volume to transition to the Draining state. 
-     3  Waiting for volume to transition to the Set-Down-Level state. 
-     4  Waiting for volume to transition to the Active state.
+卷转换为 Init 状态等待 0。 
 
+1 等待卷转换为已暂停状态。 
+
+卷转换为排出状态等待 2。 
+
+3 个等待转换为组低级别状态的卷。 
+
+4 个等待卷转换为活动状态。
 
 ## <a name="cause"></a>原因
 -----
@@ -66,7 +69,3 @@ ms.locfileid: "56743511"
 [故障排除挂起使用实时转储 （博客）](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
-
-
-
-

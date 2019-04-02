@@ -6,14 +6,14 @@ keywords:
 - 调试实验室
 - step-by-step
 - ECHO
-ms.date: 10/11/2018
+ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cc8940c03d7b4c0357e689550364816de2f6fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545468"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761858"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
 
@@ -175,7 +175,7 @@ Approximate round trip times in milli-seconds:
 **注意**  
 **防火墙和调试器**
 
-如果从防火墙，看到一个弹出消息，并且你想要使用调试器，你想要使用调试器，uand 检查**所有这三个**的框。
+如果从防火墙，看到一个弹出消息，并且你想要使用调试器，检查**所有这三个**的框。
 
 ![windows 安全警报的 windows 防火墙已阻止此应用的某些功能 ](images/debuglab-image-firewall-dialog-box.png)
 
@@ -472,7 +472,7 @@ f. 重新启动目标计算机。
 
 以下说明介绍如何安装和测试的示例驱动程序。 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-*安装 devcon &lt;INF 文件&gt;&lt;硬件 ID&gt;*
+*devcon install &lt;INF file&gt; &lt;hardware ID&gt;*
 
 安装此驱动程序所需的 INF 文件*echo.inf*。 Inf 文件包含用于安装的硬件 ID *echo.sys*。 Echo 示例硬件 ID 是**根\\ECHO**。
 
@@ -917,7 +917,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -1509,14 +1509,14 @@ fffff803`bb757020 cc              int     3
 
 OSR <https://www.osr.com/>
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [标准调试技术](standard-debugging-techniques.md)
 
 [专用的调试技术](specialized-debugging-techniques.md)
 
-[如何开始使用 Windows 调试](getting-started-with-windows-debugging.md)
+[Windows 调试入门](getting-started-with-windows-debugging.md)
 
 
 

@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4764a62f733d51d01c8bce961caade61dd48fe17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4fd4707a1d3d175059f8098c8e2ce5c35ceb2a77
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554756"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761846"
 ---
-# <a name="bug-check-0x142-videotdrapplicationblocked"></a>Bug 检查 0x142:视频\_TDR\_应用程序\_已阻止
+# <a name="bug-check-0x142-videotdrapplicationblocked"></a>Bug 检查 0x142：视频\_TDR\_应用程序\_已阻止
 
 
 视频\_TDR\_应用程序\_已阻止错误检查的值为 0x00000142。 这表示应用程序已被阻止访问图形硬件。
@@ -42,6 +42,7 @@ ms.locfileid: "56554756"
 <a name="remarks"></a>备注
 -------
 
+[ **！ 分析**](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
 辅助标记 {270A33FD-3DA6-460D-BA89-3C1BAE21E39B} 的数据包含其他 TDR 相关数据。 使用[ **.enumtag （枚举辅助回调数据）** ](-enumtag--enumerate-secondary-callback-data-.md)若要查看的数据。
 
  

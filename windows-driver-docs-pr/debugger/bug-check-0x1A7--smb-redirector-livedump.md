@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7393fd284cc792fbb295bc5b2c173c7c042924a3
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 0654caec76f79f2cbc56e1d65338f8b62fed1649
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743469"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761844"
 ---
-# <a name="bug-check-0x1a7-smbredirectorlivedump"></a>Bug 检查 0x1A7:SMB\_重定向程序\_LIVEDUMP
+# <a name="bug-check-0x1a7-smbredirectorlivedump"></a>Bug 检查 0x1A7：SMB\_重定向程序\_LIVEDUMP
 
 SMB\_重定向程序\_LIVEDUMP bug 检查的值为 0x000001A7。 它指示 SMB 重定向程序已检测到问题和已捕获核心转储收集调试信息。
 
@@ -40,7 +40,7 @@ SMB 重定向程序检测到问题，并已捕获核心转储收集调试信息�
 
 **原因代码**
 
-```
+```text
 0x1 : An I/O failed to complete in a reasonable amount of time.
     2 - Pointer to the connection object.
     3 - Reserved.
@@ -62,9 +62,7 @@ HKLM\System\CurrentControlSet\Services\Lanmanworkstation\Parameters [DWORD] Live
 
 （此代码可以永远不会用于实际的执行错误检查; 它用于标识实时转储）。
 
-
 ## <a name="see-also"></a>请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
-

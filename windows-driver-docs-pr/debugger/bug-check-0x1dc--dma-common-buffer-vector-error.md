@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 297342cf42182e2f006a1b3d2a51c62368c9409d
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 218ea202c8eab17a8268bc7e29c9ded222153c91
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743584"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761820"
 ---
-# <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>Bug 检查 0x1DC:DMA\_常见\_缓冲区\_向量\_错误
+# <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>Bug 检查 0x1DC：DMA\_常见\_缓冲区\_向量\_错误
 
 DMA\_常见\_缓冲区\_向量\_错误 bug 检查的值为 0x000001DC。 它指示驱动程序已被误用 DMA 向量常见缓冲区 Api。
 
@@ -37,7 +37,7 @@ DMA\_常见\_缓冲区\_向量\_错误 bug 检查的值为 0x000001DC。 它指�
 
 **失败的类型**
 
-```
+```text
 0x01 : Wrong IRQL
     2 - Current IRQL.
 

@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afe9cab920ff14f4c37b61eb4a2f75b2f39d4853
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: cefaa99841c08b8093f66b735750d291c4d5a91b
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743514"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761830"
 ---
-# <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>Bug 检查 0x1A0:TTM\_监视器\_超时
+# <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>Bug 检查 0x1A0：TTM\_监视器\_超时
 
 TTM\_监视器\_超时错误检查的值为 0x000001A0。 这表示终端拓扑管理器检测到，已配置的超时的一些设备特定操作未完成。
 
@@ -37,12 +37,17 @@ TTM\_监视器\_超时错误检查的值为 0x000001A0。 这表示终端拓扑�
 
 **失败类型**
 
-     0x1 : A device assignment to a terminal is not making progress.
-     0x2 : Device's close callback is not making progress.
-     0x3 : Device's set-input-mode callback is not making progress.
-     0x4 : Device's set-display-state callback is not making progress.
-     0x5 : Setting device's built-in panel state is not making progress.
-     0x6 : Updating device's primary display visible state is not making progress.
+0x1:设备分配给终端未取得进展。
+
+0x2:设备的关闭回调未取得进展。
+
+0x3:设备的设置输入模式回调未取得进展。
+
+0x4:设备的设置显示状态回调未取得进展。
+
+0x5:设置设备的内置面板状态未取得进展。
+
+0x6:更新设备的主显示器的可见状态未取得进展。
 
 ## <a name="cause"></a>原因
 -----

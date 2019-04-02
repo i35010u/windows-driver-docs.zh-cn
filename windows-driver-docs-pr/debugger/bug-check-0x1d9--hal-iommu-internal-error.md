@@ -12,20 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9be0072bf8edc571ba83d1a546dd11122dda37
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 7bd87dad01b658e5b3559064762dc0addbccd5c8
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743498"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761822"
 ---
-# <a name="bug-check-0x1d9-haliommuinternalerror"></a>Bug 检查 0x1D9:HAL\_IOMMU\_INTERNAL\_ERROR
+# <a name="bug-check-0x1d9-haliommuinternalerror"></a>Bug 检查 0x1D9：HAL\_IOMMU\_INTERNAL\_ERROR
 
 HAL\_IOMMU\_内部\_错误 bug 检查的值为 0x000001D9。 它指示 HAL IOMMU 库中检测到内部错误。
 
 **重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
  
-
 ## <a name="haliommuinternalerror-parameters"></a>HAL\_IOMMU\_内部\_错误参数
 
 |参数|描述|
@@ -37,7 +36,7 @@ HAL\_IOMMU\_内部\_错误 bug 检查的值为 0x000001D9。 它指示 HAL IOMMU
 
 **失败的操作值**
 
-```
+```text
 0x00 : Failed to delete IOMMU domain
      Parameter 2 - Status
      Parameter 3 - Pointer to the IOMMU domain object
@@ -57,10 +56,7 @@ HAL\_IOMMU\_内部\_错误 bug 检查的值为 0x000001D9。 它指示 HAL IOMMU
 
 HAL IOMMU 库中检测到内部错误。
 
-
-
 ## <a name="see-also"></a>请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
-

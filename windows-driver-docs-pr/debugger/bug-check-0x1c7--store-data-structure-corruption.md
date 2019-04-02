@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 942580b0af0beef530fbc896cee2ec3663685b1f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 9fd80ca748b3293b2b4202fdf36e081966d1d140
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743517"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761824"
 ---
-# <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7:应用商店\_数据\_结构\_损坏
+# <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7：应用商店\_数据\_结构\_损坏
 
 应用商店\_数据\_结构\_损坏错误检查的值为 0x000001C7。 它指示，存储组件在其数据结构中检测到损坏。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56743517"
 
 **损坏 ID**
 
-```
+```text
  0x0 : A chunk heap buffer's hash doesn't match.
     2 - Chunk heap buffer whose hash didn't match.
     3 - Expected buffer hash.
@@ -60,7 +60,6 @@ ms.locfileid: "56743517"
     4 - Reserved.
 ```
 
-
 ## <a name="cause"></a>原因
 -----
 
@@ -74,7 +73,6 @@ ms.locfileid: "56743517"
 
 Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/en-us/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
 
-
 ## <a name="resolution"></a>分辨率
 -----
 
@@ -82,11 +80,9 @@ Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部�
 
 若要调查如果此 bug 检查由有故障 RAM 的硬件，运行 Windows 内存诊断工具。 在控件面板的搜索框中，键入内存，然后单击*诊断您的计算机的内存问题*。在测试运行后，使用事件查看器查看系统日志下的结果。 寻找*MemoryDiagnostics 结果*条目以查看结果。
 
-
 ## <a name="see-also"></a>请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
 [Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
-

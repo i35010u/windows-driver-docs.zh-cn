@@ -1,28 +1,28 @@
 ---
-title: wdfkd_wdfumtriage
-description: Wdfkd_wdfumtriage 扩展将显示在系统上，包括设备对象、 加载驱动程序和类扩展，即插即用设备堆栈 UMDF 设备调度 Irp 的信息。
+title: wdfkd.wdfumtriage
+description: Wdfkd.wdfumtriage 扩展将显示在系统上，包括设备对象、 加载驱动程序和类扩展，即插即用设备堆栈 UMDF 设备调度 Irp 的信息。
 ms.assetid: E25DAE56-E42A-4A56-B36F-8B0B1D826524
 keywords:
-- wdfkd_wdfumtriage Windows 调试
+- wdfkd.wdfumtriage Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
 api_name:
-- wdfkd_wdfumtriage
+- wdfkd.wdfumtriage
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36146a80a288aabc380f7d9afa757fa0f335d191
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1d26b1e3681eae2dcc9fb43bef66d25da03c0e13
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534891"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761842"
 ---
-# <a name="wdfkdwdfumtriage"></a>!wdfkd\_wdfumtriage
+# <a name="wdfkdwdfumtriage"></a>!wdfkd.wdfumtriage
 
 
-**！ Wdfkd\_wdfumtriage**扩展系统，其中包括相应主机进程、 加载驱动程序和类扩展，即插即用设备堆栈、 即插即用设备的设备对象上显示所有 UMDF 设备有关的信息节点已发送 Irp 和如果相关的问题状态。
+**！ Wdfkd.wdfumtriage**扩展系统，包括设备对象、 相应的主机进程、 加载驱动程序和类扩展，即插即用设备堆栈、 即插即用设备节点上显示所有 UMDF 设备有关的信息已发送 Irp 和如果相关的问题状态。
 
 ```dbgcmd
 !wdfkd.wdfumtriage
@@ -48,7 +48,7 @@ UMDF 2
 
 可以在内核模式调试会话中使用此命令。
 
-下面是输出的示例 **！ wdfkd\_wdfumtriage**。
+下面是输出的示例 **！ wdfkd.wdfumtriage**。
 
 ![从驱动程序对象列表输出 ！ wdfkd.wdfumtriage](images/wdfumtriage2.png)
 

@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06be642fd267715de8d712d81e9369d3d7f6d9e7
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 7875bf4fb6e58cce425c5f0dd4d943b26e554706
+ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743466"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761848"
 ---
-# <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>Bug 检查 0x168:群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP
+# <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>Bug 检查 0x168：群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP
 
 群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP bug 检查的值为 0x00000168。 这表示群集共享卷状态转换时间太长。
 
@@ -39,11 +39,15 @@ ms.locfileid: "56743466"
 
 **CSV 目标状态 Id**
 
-     0  Waiting for volume to transition to the Init state. 
-     1  Waiting for volume to transition to the Paused state. 
-     2  Waiting for volume to transition to the Draining state. 
-     3  Waiting for volume to transition to the Set-Down-Level state. 
-     4  Waiting for volume to transition to the Active state.
+卷转换为 Init 状态等待 0。 
+
+1 等待卷转换为已暂停状态。 
+
+卷转换为排出状态等待 2。 
+
+3 个等待转换为组低级别状态的卷。 
+
+4 个等待卷转换为活动状态。
 
 
 ## <a name="cause"></a>原因
