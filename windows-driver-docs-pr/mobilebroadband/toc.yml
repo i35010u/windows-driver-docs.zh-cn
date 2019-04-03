@@ -326,11 +326,27 @@ items:
   href: mobile-operator-scenarios-b-mb.md
   items:
   - name: 移动套餐
+    href: mobile-plans.md
     items:
-    - name: 促销内容
-      href: mobile-plans-promotional-content.md
-    - name: 异步履行
-      href: mobile-plans-asynchronous-fulfillment.md
+    - name: 移动套餐用例
+      href: mobile-plans-use-cases.md
+      items:
+      - name: 移动运营商 Web 门户
+        href: mobile-plans-web-portal.md
+      - name: 回调通知
+        href: mobile-plans-callback-notifications.md
+      - name: 服务配置
+        href: mobile-plans-service-configuration.md
+      - name: eSIM 卡下载错误处理
+        href: mobile-plans-eSIM-error-handling.md
+      - name: Windows 10 设备体验
+        href: mobile-plans-device-experience.md
+    - name: 集成
+      href: mobile-plans-integration.md
+    - name: 启动
+      href: mobile-plans-launch.md
+    - name: 附录
+      href: mobile-plans-appendix.md
   - name: 创建和配置 Internet 共享体验
     href: creating-and-configuring-internet-sharing-experiences.md
   - name: 使用多个 PDP 上下文开发应用
@@ -457,9 +473,9 @@ items:
         href: design-services-and-goods-pages-in-a-mobile-broadband-app.md
       - name: 将移动宽带应用与其他 Windows 组件集成
         href: integrate-a-mobile-broadband-app-with-other-windows-components.md
-ms.openlocfilehash: e95fa992c475b55542ae1017c0346eea19bd050b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7b5aeb4069aa1919ecfc6e01a1ad9f495400428
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465610"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845542"
