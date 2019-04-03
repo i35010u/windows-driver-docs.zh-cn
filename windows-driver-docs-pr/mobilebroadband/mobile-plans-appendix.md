@@ -4,20 +4,16 @@ description: 本主题介绍附录移动计划程序的信息。
 ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
 - Windows Mobile 计划附录，移动计划附录移动运算符
-ms.date: 09/17/2018
-ms.topic: article
-ms.prod: windows-hardware
-ms.technology: windows-devices
-ms.openlocfilehash: f6a2edbb0ed48e11383401b0e35249263a49276f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.date: 03/25/2019
+ms.localizationpriority: medium
+ms.openlocfilehash: 0451a6ad8243ed59e7209edfcdf09d8c5d042471
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522187"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845537"
 ---
 # <a name="mobile-plans-appendix"></a>移动计划附录
-
-[!include[Mobile Plans Beta Prerelease](../mobile-plans-beta-prerelease.md)]
 
 ## <a name="web-portal-flow-and-reference-design"></a>Web 门户的流和引用设计
 
@@ -106,41 +102,37 @@ ms.locfileid: "56522187"
 
 <img src="images/dynamo_appendix_mo_direct_10_error.png" alt="MO Direct walkthrough: error example" title="MO 直接演练： 错误示例" width="600" />
 
-## <a name="mobile-plans-user-journey"></a>移动计划用户旅程
+## <a name="high-level-integration-schedule"></a>高级别集成计划
 
-用户附加到参与计划移动计划移动运营商的 esim 卡支持的 Windows 已连接设备时下, 图显示了旅程。
-
-<img src="images/dynamo_appendix_user_journey.png" alt="Mobile Plans user journey" title="移动计划用户旅程" width="400" />
-
-## <a name="high-level-integration-schedule"></a>高级集成计划
-
-下表提供了移动计划项目集成计划的高级概述。
+下表提供了高级概述*移动计划*项目集成计划。
 
 | 阶段 | 活动 | 所有者 | 估计时间 |
 | --- | --- | --- | --- |
-| 配置 | 定义 ICCID 范围 | MO | 不适用 |
-| 配置 | 提交 COSA 数据库更新 <p>这是为了确保您在 Windows 上的 APN 配置会自动，并且是 Windows 版本中包含的硬截止时间。 在此之前必须配置和验证设置。</p> | MO | 约 2 个月 |
-| 配置 | 创建开发人员中心帐户和提交应用程序 | MO | 不适用 |
-| 配置 | 白名单 MO 应用和帐户 | MS | 2 天 |
-| 配置 | 提供服务配置电子邮件 | MO | 不适用 |
-| 配置 | 在开发人员中心中发布元数据包 | MO | 不适用 |
-| 实现 | 实现移动运营商的 Api | MO | 不适用 |
-| 实现 | 启用的围墙的花园 | MO | 不适用 |
-| 实现 | 生成 MO 直接 web 体验 | MO | 不适用 |
-| 验证 | MO Api 代码完成 | MO | 不适用 |
-| 验证 | 验证 MO API 实现 | MO | 不适用 |
-| 集成 | 提供 SIM/esim 卡集成阶段期间要使用的列表 | MO | 1 天 |
-| 集成 | 配置 SIM/esim 卡来验证 | MS | 最多 1 周 |
-| 集成 | DM PPE 环境中配置 MO API 过渡终结点 | MS | 最多 1 周 |
-| 集成 | MO API 测试完成的活动 SIM （检查点） | MS | 2 周 |
-| 集成 | MO API 可用于生产 （检查点） | 月 （&AMP; M) | 不适用 |
-| 启动 | 提交到数据挖掘的生产月 API 终结点 | MO | 不适用 |
-| 启动 | DM PPE 环境中配置 MO API 生产终结点 | MS | 最多 1 周 |
-| 启动 | 负载测试 | 月 （&AMP; M) | 1 周 |
-| 启动 | 在位置监视和升级路径 | MS | 1 周 |
-| 启动 | 使用数据挖掘生产环境中的月 API 生产终结点配置测试 SIM 范围更小 | MS | 最多 1 周 |
-| 启动 | 端到端验证 （检查点） | MO | 不适用 |
-| 启动 | 转到/无转 （最后一个检查点） | 月 （&AMP; M) | 不适用 |
-| 启动 | 使用数据挖掘生产环境中的月 API 生产终结点配置完整 SIM 范围 | MS | 最多 1 周 |
-| 启动 | 版本查看启动准备情况 | MS | 2 天 |
-| 启动 | 启动 | 月 （&AMP; M) | 不适用 |
+| 实现 | esim 卡配置文件可在 Windows 设备上安装。 使用 SMDP + 用于暂存环境与生产环境进行测试。 | MO |  |
+|                | 提供载入清单文档，包括过渡环境服务配置 | MO |  |
+|                | 启用移动运营商过渡环境中*移动计划*过渡环境 | MSFT | 在每个月的第一个和第三个星期五发生配置更新 |
+|                | 提交 COSA 数据库更新 | MO | 大约 3 个月 |
+|                | MO 直接门户开发入门 |  |
+|                | `GetBalance` API 开发入门 |  |
+| 集成 | 启用的围墙的花园 | MO |  |
+|             | 验证 COSA 更新 | MO |  |
+|             | MO 直接门户开发完成 | MO |  |
+|             | `GetBalance` 完整的 API 开发 | MO |  |
+|             | MO 开发完整的代码完成 （检查点） | MO |  |
+|             | 验证`GetBalance`API 功能 | MO |  |
+|             | 端到端体验是月暂存环境 （检查点） 中的功能 | MO |  |
+|             | 更新服务配置记录以反映生产环境设置 （如果未提供以前） | MO |  |
+|             | 提供 ICCIDs 用于`GetBalance`负载测试 | MO |  |
+|             | 移动运营商生产环境中的新环境中实现了*移动计划*过渡环境 | MSFT | 在每个月的第一个和第三个星期五发生配置更新 |
+|             | 端到端体验是月生产环境 （检查点） 中的功能 | MO |  |
+| 验证 | 退出条件的测试用例完成 | MO |  |
+|           | 验证测试用例结果 | MSFT |  |
+|           | 测试签字认可 （检查点） | MSFT |  |
+| 推出 | `GetBalance` 负载测试 API | MSFT 和 MO | 1 周 |
+|         | 在位置监视和升级路径 | MSFT | 1 周 |
+|         | 在位置的客户支持 | MSFT 和 MO |  |
+|         | 已完成的商业协议 | MO |  |
+|         | 在 Windows 中可用的 COSA 更新 | MSFT |  |
+|         | 转到/不可行 （最后一个检查点） | MSFT 和 MO |  |
+|         | MO 生产环境中配置环境*移动计划*生产环境 | MSFT |  |
+|         | 启动 | MSFT 和 MO | 启动日期和时间必须同意以确保执行本地验证 |

@@ -4,12 +4,12 @@ description: 对于设备的某些特定的类，有其他的 ACPI 命名空间�
 ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c713953375df3baa245161244141325ac59261c
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.openlocfilehash: c3c9c26dd4de717c6c386f427f3e5cb51a14bdc7
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441933"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845551"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 
@@ -103,11 +103,11 @@ SoC 在平台上，可由 ACPI 枚举 SD 主控制器。 Windows 使用以下 AC
   - 中的槽编号顺序在一起，列出槽资源 （槽 0 的资源是第一，在槽 1 的资源是第二个，依此类推）。
   - 为每个槽中，按以下顺序列出了资源：
 
-        -   标准 SD 的基址的槽的集进行注册。
-        -   在槽 SD 标准中断。
-        -   GPIO 中断信号性沉寂卡插入和删除 （如果标准 SD 卡检测期间所有的电源状态，不支持接口） 的槽的资源。
-        -   GPIO 输入读取的槽的资源是否卡位于当前槽中 （如果标准 SD 卡检测期间所有的电源状态，不支持接口）。 使用相同的 pin 作为插入/删除中断。
-        -   第二个 GPIO 输入读取的资源是否在槽中的卡是写保护状态 （如果标准 SD 写保护接口不支持在所有的电源状态期间）。
+    - 标准 SD 的基址的槽的集进行注册。
+    - 在槽 SD 标准中断。
+    - GPIO 中断信号性沉寂卡插入和删除 （如果标准 SD 卡检测期间所有的电源状态，不支持接口） 的槽的资源。
+    - GPIO 输入读取的槽的资源是否卡位于当前槽中 （如果标准 SD 卡检测期间所有的电源状态，不支持接口）。 使用相同的 pin 作为插入/删除中断。
+    - 第二个 GPIO 输入读取的资源是否在槽中的卡是写保护状态 （如果标准 SD 写保护接口不支持在所有的电源状态期间）。
 
 必须支持唤醒的中断 （描述为"SharedAndWake"或"ExclusiveAndWake"）。
 
@@ -296,9 +296,9 @@ Windows 包括类驱动程序的人机接口设备 (HID)。 此驱动程序，�
 
         "调低音量"按钮不能支持唤醒的 （必须使用排他）。
 
-中断对应于"旋转锁定"按钮，如果受支持
+    5. 中断对应于"旋转锁定"按钮，如果受支持
 
-        The "Rotation Lock" button must not be wake-capable (must use Exclusive).
+        "旋转锁定"按钮不能支持唤醒的 （必须使用排他）。
 
 有关详细信息，请参阅[Windows 8 平板电脑和可转换为设备的硬件按钮](https://go.microsoft.com/fwlink/p/?linkid=331284)。
 

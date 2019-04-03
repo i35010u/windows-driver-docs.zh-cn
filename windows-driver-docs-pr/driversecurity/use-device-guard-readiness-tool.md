@@ -4,12 +4,12 @@ description: 请按照下列步骤以使用设备防护准备工具来评估 HVC
 ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89ff1d974c319a79a210a4652f2c8b533be8ee90
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 3d4a31a354f05f96623fc1bfc30e32e9f9c4f203
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464185"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845550"
 ---
 # <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
 
@@ -25,7 +25,7 @@ ms.locfileid: "57464185"
 
 若要准备工具用于评估的其他要求，如安全启动，请参阅下载的准备情况工具中包含的 readme.txt 文件。
 
-有关相关的设备基础测试的详细信息，请参阅[Device.DevFund.DeviceGuard](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-devfund#devicedevfunddeviceguard)。
+有关相关的设备基础测试的详细信息，请参阅[Device.DevFund 测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)。
 
 ## <a name="implement-device-guard-compatible-code"></a>实现 Device Guard 兼容代码
 

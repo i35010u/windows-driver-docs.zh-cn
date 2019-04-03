@@ -1,20 +1,20 @@
 ---
-title: 能源计量接口
-description: 能源计量接口
+title: 电能表接口
+description: 电能表接口
 keywords:
 - 能源计量和预算 WDK 接口
 - 能源计量接口 WDK
 - PMI WDK 能源计量
 ms.date: 11/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 390e1473a11ab1350b3d31f090222b94cbc97d85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 563e23a23e6d6d61c9ce503cb856aa07376296a7
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545557"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845534"
 ---
-# <a name="energy-meter-interface"></a>能源计量接口
+# <a name="energy-meter-interface"></a>电能表接口
 
 从 Windows 10 开始，驱动程序可以实现能源计量接口 （电磁干扰） 向客户端的能源消耗数据。 此接口包含一组标准化 Ioctl 供客户端获取能耗数据以及数据的计数的硬件和正在按流量计费的硬件。 
 
@@ -38,9 +38,9 @@ ms.locfileid: "56545557"
 
 3. 分配的所需的电磁干扰元数据大小和调用缓冲区[IOCTL_EMI_GET_METADATA](https://msdn.microsoft.com/library/windows/hardware/dn957436.aspx)。 验证返回的 EMI_MEASUREMENT_UNIT EmiMeasurementUnitPicowattHours。 Windows 10 后的版本可能会定义额外的单位类型。 
 
-4. 若要测量总能源消耗，调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)。 在返回的 AbsoluteEnergy 值[EMI_MEASUREMENT_DATA](https://msdn.microsoft.com/library/windows/hardware/dn957426.aspx)是 picowatt 小时与一些任意的零点内的总累计的能量。 一般情况下，您需要在两个不同的时间比较示例，并将该间隔内的能源消耗能源值相减。 
+4. 若要测量总能源消耗，调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)。 在返回的 AbsoluteEnergy 值[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)是 picowatt 小时与一些任意的零点内的总累计的能量。 一般情况下，您需要在两个不同的时间比较示例，并将该间隔内的能源消耗能源值相减。 
 
-5. 若要测量的平均能源消耗，请调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)开头和末尾所需的间隔。 AbsoluteEnergy 和 AbsoluteTime 值中减去[EMI_MEASUREMENT_DATA](https://msdn.microsoft.com/library/windows/hardware/dn957426.aspx)从这些文章的示例返回由后者的示例。 
+5. 若要测量的平均能源消耗，请调用[IOCTL_EMI_GET_MEASUREMENT](https://msdn.microsoft.com/library/windows/hardware/dn957434.aspx)开头和末尾所需的间隔。 AbsoluteEnergy 和 AbsoluteTime 值中减去[EMI_CHANNEL_MEASUREMENT_DATA 结构](https://docs.microsoft.com/windows/desktop/api/emi/ns-emi-emi_channel_measurement_data)从这些文章的示例返回由后者的示例。
 
 有关详细信息，请参阅以下主题。
 

@@ -7,12 +7,12 @@ keywords:
 - 串行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc4a4c0ebaa7e6aaa93a611a3b143dee7d9f6772
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564847"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845547"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍以下串行 IRP 主要函数代码：
@@ -390,7 +390,6 @@ WMI 内核模式组件可以发送 IRP_MJ_SYSTEM_CONTROL 请求序列将注册�
 ### <a name="io-status-block"></a>I/O 状态块
 WMI 请求序列将状态字段设置为以下值之一：
 
-
 STATUS_SUCCESS 
 
 请求已成功完成。
@@ -432,9 +431,7 @@ STATUS_WMI_GUID_NOT_FOUND
 | SERIAL_PORT_WMI_PERF_GUID | SERIAL_WMI_PERF_DATA |
 | SERIAL_PORT_WMI_PROPERTIES_GUID | WMI_SERIAL_PORT_PROPERTIES |
 
-
 串行设备的 WMI 名称是项值的值**PortName**设备插注册表项下。
-
 
 ##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
 [IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求将数据从客户端传输到串行设备。
@@ -485,5 +482,4 @@ STATUS_TIMEOUT
 
 [处理 Power Irp 规则](https://msdn.microsoft.com/library/windows/hardware/ff563629)
 
-[串行控制器驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/serports/index.md)
-
+[串行控制器驱动程序设计指南](https://docs.microsoft.com/en-us/windows-hardware/drivers/serports/)

@@ -14,12 +14,12 @@ keywords:
 - dbgeng.h 标头文件 GetNextTagged
 ms.date: 10/25/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: abef0e9bf286e913af4f77c979e05db2bff24796
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a6803969949d640b9ac5215ce6014d9d7ea9070f
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534580"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845522"
 ---
 # <a name="reading-bug-check-callback-data"></a>读取 Bug 检查回调数据
 
@@ -29,7 +29,7 @@ ms.locfileid: "56534580"
 <span id="BugCheckCallback"></span><span id="bugcheckcallback"></span><span id="BUGCHECKCALLBACK"></span>[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)  
 此例程所写入数据变得回调数据的一部分。 数据不包括故障转储文件中。 
 
-<span id="BugCheckSecondaryDumpDataCallback"></span><span id="bugchecksecondarydumpdatacallback"></span><span id="BUGCHECKSECONDARYDUMPDATACALLBACK"></span>[BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)  
+<span id="BugCheckSecondaryDumpDataCallback"></span><span id="bugchecksecondarydumpdatacallback"></span><span id="BUGCHECKSECONDARYDUMPDATACALLBACK"></span>[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
 此例程所写入数据将成为辅助回调数据的一部分。 崩溃转储文件中包含数据。
 
 <span id="BugCheckAddPagesCallback"></span><span id="bugcheckaddpagescallback"></span><span id="BUGCHECKADDPAGESCALLBACK"></span>[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)  
@@ -39,7 +39,7 @@ ms.locfileid: "56534580"
 
 -   如果您正在执行的已崩溃系统，已通过写入的回调数据的实时调试[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)或者指定[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)将可用。 辅助回调数据将不能，因为它不存储在任何固定的内存位置。
 
--   如果你正在调试的完整内存转储或内核内存转储，通过指定回调数据[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)和写入辅助回调数据[BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)将可用。 所写入的回调数据[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)将不可用。 
+-   如果你正在调试的完整内存转储或内核内存转储，通过指定回调数据[BugCheckAddPagesCallback](https://go.microsoft.com/fwlink/p/?LinkID=254480)和写入辅助回调数据[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)将可用。 所写入的回调数据[BugCheckCallback](https://go.microsoft.com/fwlink/p/?LinkID=254479)将不可用。 
 
 -   如果你正在调试小型内存转储，回调数据将不可用。 辅助回调数据将可用。
 
@@ -61,7 +61,7 @@ ms.locfileid: "56534580"
 
 有两种方法来显示辅助回调数据。 可以使用 **.enumtag**命令也可以编写自己的调试器扩展。
 
-辅助回调数据的每个块由 GUID 标记标识。 指定此标记**Guid**字段 **(KBUGCHECK\_辅助\_转储\_数据) ReasonSpecificData**参数传递给[BugCheckSecondaryDumpDataCallback](https://go.microsoft.com/fwlink/p/?LinkID=254481)。
+辅助回调数据的每个块由 GUID 标记标识。 指定此标记**Guid**字段 **(KBUGCHECK\_辅助\_转储\_数据) ReasonSpecificData**参数传递给[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)。
 
 [ **.Enumtag （枚举辅助回调数据）** ](-enumtag--enumerate-secondary-callback-data-.md)命令不是非常精确的检测。 它将显示每个辅助数据块，显示标记，然后以十六进制和 ASCII 格式显示数据。 它是通常只可用于确定哪些标记实际上正在使用辅助数据块。
 

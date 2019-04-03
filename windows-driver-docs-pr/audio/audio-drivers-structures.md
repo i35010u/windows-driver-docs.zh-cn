@@ -4,18 +4,16 @@ description: 音频驱动程序结构
 ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4f571f489db5b64795718c78cbe6a3082deb46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 76e3734729886afe5fb2f203381ab6f9cd88949f
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577264"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845544"
 ---
 # <a name="audio-drivers-structures"></a>音频驱动程序结构
 
-
 ## <span id="ddk_audio_drivers_structures_ks"></span><span id="DDK_AUDIO_DRIVERS_STRUCTURES_KS"></span>
-
 
 本部分介绍使用 WDM 音频微型端口驱动程序的结构。 结构的列表如下所示：
 
@@ -177,17 +175,8 @@ ms.locfileid: "56577264"
 
 [**SYSAUDIO\_SELECT\_GRAPH**](https://msdn.microsoft.com/library/windows/hardware/ff538500)
 
-[**UNCOMPRESSEDAUDIOFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff538640)
+[**UNCOMPRESSEDAUDIOFORMAT**](https://docs.microsoft.com/windows/desktop/api/audiomediatype/ns-audiomediatype-uncompressedaudioformat)
 
 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799)
 
 [**WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)
-
- 
-
- 
-
-
-
-
-

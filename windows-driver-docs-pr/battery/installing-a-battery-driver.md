@@ -7,12 +7,12 @@ keywords:
 - 电池类驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfcd250b0a5ec2475cf5594673b7e52242d0f1d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0c8f35af8987f85a66fc647377dfa48ead17e5a5
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566167"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845523"
 ---
 # <a name="installing-a-battery-driver"></a>安装电池驱动程序
 
@@ -60,7 +60,7 @@ DefaultDestDir = 12
 
 ### <a name="span-idmodelsspanspan-idmodelsspanspan-idmodelsspanmodels"></a><span id="Models"></span><span id="models"></span><span id="MODELS"></span>*模型*
 
-[ **INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)指定电池的即插即用硬件 ID (显示为*pnpid*在示例中)。 如果通过 ACPI 枚举设备时，本部分还必须指定 EISA 样式 ID (此处所示*acpidevnum*)。 有关创建这些 Id 的信息，请参阅*高级配置和电源接口规范*，可通过[ACPI / 电源管理](https://go.microsoft.com/fwlink/p/?linkid=8760)网站。
+[ **INF*模型*部分**](https://msdn.microsoft.com/library/windows/hardware/ff547456)指定电池的即插即用硬件 ID (显示为*pnpid*在示例中)。 如果通过 ACPI 枚举设备时，本部分还必须指定 EISA 样式 ID (此处所示*acpidevnum*)。 有关创建这些 Id 的信息，请参阅*高级配置和电源接口规范*，可通过[ACPI / 电源管理](https://uefi.org/acpi/specs)网站。
 
 ``` syntax
 [MyCompany]
