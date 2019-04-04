@@ -3,14 +3,19 @@ title: Windows 驱动程序入门
 description: Windows 驱动程序入门
 ms.assetid: 92258ae0-5535-4f90-aa80-573ee543a0d6
 keywords:
-  - 编写驱动程序
-  - 驱动程序入门
+- 编写驱动程序
+- 驱动程序入门
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 95b4c9591a701c1a16b80590addb7eee35d2acf9
+ms.sourcegitcommit: 239b10612b3ddb6702dc16490566069cc3aa1c6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "56465633"
 ---
-
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
 

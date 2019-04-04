@@ -3,14 +3,19 @@ title: 网络驱动程序设计指南
 description: 网络驱动程序设计指南
 ms.assetid: 200517b2-d0a0-40cc-a5cb-9e2067e01028
 keywords:
-  - 网络驱动程序 WDK
-  - 联网
+- 网络驱动程序 WDK
+- 联网
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 511bbdba246cdb7f2210023a93e6e1a6b1aeec7d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465472"
 ---
-
 # <a name="network-driver-design-guide"></a>网络驱动程序设计指南
 
 

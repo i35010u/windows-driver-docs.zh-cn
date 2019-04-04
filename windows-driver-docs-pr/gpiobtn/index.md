@@ -6,8 +6,13 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 89af40e81bf59ba0f68b4e28e40071aed167daeb
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465567"
 ---
-
 # <a name="hardware-notifications-design-guide"></a>硬件通知设计指南
 
 

@@ -3,14 +3,19 @@ title: 内核模式驱动程序体系结构设计指南
 description: 内核模式驱动程序体系结构设计指南
 ms.assetid: 21c199f3-abc3-4607-a674-eb84b6c3c25a
 keywords:
-  - 内核模式驱动程序 WDK，体系结构
-  - 内核模式驱动程序 WDK
+- 内核模式驱动程序 WDK，体系结构
+- 内核模式驱动程序 WDK
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 52ace0933e55268e11cb82acccd1e4b06bcc20f1
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465612"
 ---
-
 # <a name="kernel-mode-driver-architecture-design-guide"></a>内核模式驱动程序体系结构设计指南
 
 

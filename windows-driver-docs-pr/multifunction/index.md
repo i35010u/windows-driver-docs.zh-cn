@@ -3,21 +3,26 @@ title: 多功能设备驱动程序设计指南
 description: 多功能设备驱动程序设计指南
 ms.assetid: 110c0b9b-4870-4853-8fbf-a9faf0c5f2ca
 keywords:
-  - 多功能设备 WDK
-  - '多功能设备 WDK, 关于多功能设备'
-  - 组合功能设备 WDK
-  - 多功能设备 WDK
-  - 打印机多功能 WDK
-  - DVD/CD-ROM 多功能 WDK
-  - '多功能设备 WDK, 安装'
-  - 父总线 WDK 多功能设备
-  - INF 文件 WDK 多功能设备
+- 多功能设备 WDK
+- 多功能设备 WDK, 关于多功能设备
+- 组合功能设备 WDK
+- 多功能设备 WDK
+- 打印机多功能 WDK
+- DVD/CD-ROM 多功能 WDK
+- 多功能设备 WDK, 安装
+- 父总线 WDK 多功能设备
+- INF 文件 WDK 多功能设备
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: e621c90ee1e8929f6333d60064d73ec2240b77f9
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465494"
 ---
-
 # <a name="multifunction-device-driver-design-guide"></a>多功能设备驱动程序设计指南
 
 

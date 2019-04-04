@@ -3,18 +3,23 @@ title: Windows 调试工具（WinDbg、KD、CDB、NTSD）
 description: 从这里开始大致了解 Windows 调试工具。 此工具集包括 WinDbg 和其他调试程序。
 ms.assetid: 938ef180-84de-442f-9b6c-1138c2fc8d5a
 keywords:
-  - Windows 调试工具
-  - Windows 调试
-  - Windows 调试器
-  - 内核调试
-  - 内核调试程序
-  - WinDbg
+- Windows 调试工具
+- Windows 调试
+- Windows 调试器
+- 内核调试
+- 内核调试程序
+- WinDbg
 ms.date: 02/22/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 418e8ca690b1d41046faa8cdba9f62d252725c05
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465464"
 ---
-
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Windows 调试工具（WinDbg、KD、CDB、NTSD）
 
 

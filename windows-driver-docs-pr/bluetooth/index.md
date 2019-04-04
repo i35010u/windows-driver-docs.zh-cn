@@ -3,18 +3,23 @@ title: 蓝牙配置文件驱动程序
 description: 蓝牙配置文件驱动程序
 ms.assetid: 6fdd760b-6b6c-43d4-9ce2-515718eb46d9
 keywords:
-  - 蓝牙 WDK
-  - 配置文件驱动程序 WDK 蓝牙
-  - 无线连接 WDK 蓝牙
-  - 连接 WDK 蓝牙
-  - 协议 WDK 蓝牙
-  - 自定义驱动程序 WDK 蓝牙
+- 蓝牙 WDK
+- 配置文件驱动程序 WDK 蓝牙
+- 无线连接 WDK 蓝牙
+- 连接 WDK 蓝牙
+- 协议 WDK 蓝牙
+- 自定义驱动程序 WDK 蓝牙
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 54bf09933189190772870e19657e289b30185408
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465504"
 ---
-
 # <a name="bluetooth-profile-drivers"></a>蓝牙配置文件驱动程序
 
 

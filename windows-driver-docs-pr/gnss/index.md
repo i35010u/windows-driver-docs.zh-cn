@@ -6,8 +6,13 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: e372617f261619b80fb73511818d716070007771
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465405"
 ---
-
 # <a name="gnss-driver-design-guide"></a>GNSS 驱动程序设计指南
 
 

@@ -1,21 +1,26 @@
 ---
-title: "Windows\_10 中的 WDF 驱动程序新增功能"
-description: "汇总了 Windows\_10 中的 WDF 驱动程序的新功能和改进。"
+title: Windows 10 中的 WDF 驱动程序新增功能
+description: 汇总了 Windows 10 中的 WDF 驱动程序的新功能和改进。
 ms.assetid: 61fd9916-38e7-47d0-aec7-d5a489eb21eb
 keywords:
-  - '内核模式驱动程序 WDK KMDF, 关于 KMDF'
-  - 'KMDF WDK, 关于 KMDF'
-  - '内核模式驱动程序框架 WDK, 关于 KMDF'
-  - 基于框架的驱动程序 WDK KMDF
-  - '基于框架的驱动程序 WDK KMDF, 关于基于框架的驱动程序'
-  - 对象 WDK KMDF
-  - 框架对象 WDK KMDF
+- 内核模式驱动程序 WDK KMDF, 关于 KMDF
+- KMDF WDK, 关于 KMDF
+- 内核模式驱动程序框架 WDK, 关于 KMDF
+- 基于框架的驱动程序 WDK KMDF
+- 基于框架的驱动程序 WDK KMDF, 关于基于框架的驱动程序
+- 对象 WDK KMDF
+- 框架对象 WDK KMDF
 ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: a12e5cb0e965f6a98dad3cb5c35f419522f12626
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465492"
 ---
-
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
 本主题汇总了 Windows 10 中的 Windows 驱动程序框架 (WDF) 驱动程序的新功能和改进。

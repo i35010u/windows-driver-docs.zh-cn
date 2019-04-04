@@ -1,18 +1,23 @@
 ---
 ms.assetid: 6e8be17d-6e98-441e-9a2c-e62a007786ee
 title: 开发、测试以及部署驱动程序
-description: "从 Windows 驱动程序工具包 (WDK)\_8 开始，Windows 驱动程序开发环境和调试器已集成到 Microsoft Visual Studio 中。"
+description: 从 Windows 驱动程序工具包 (WDK) 8 开始，Windows 驱动程序开发环境和调试器已集成到 Microsoft Visual Studio 中。
 keywords:
-  - 开发驱动程序
-  - 调试驱动程序
-  - 测试驱动程序
-  - 部署驱动程序
+- 开发驱动程序
+- 调试驱动程序
+- 测试驱动程序
+- 部署驱动程序
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 26b7d994d9a027bf20cdc6f322899ae03d1cf381
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465389"
 ---
-
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序
 
 Windows 驱动程序开发环境和 Windows 调试器已集成到 Microsoft Visual Studio 中。 在此集成的驱动程序开发环境中，Visual Studio 界面中提供有编码、构建、打包、部署、调试和测试驱动程序所需的大部分工具。

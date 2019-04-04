@@ -3,15 +3,20 @@ title: 流媒体设备驱动程序设计指南
 description: 流媒体设备驱动程序设计指南
 ms.assetid: 321edd72-4f6a-4eaf-85bf-3b36680a522c
 keywords:
-  - 流媒体 WDK
-  - 媒体流式处理 WDK
-  - 数据流式处理 WDK
+- 流媒体 WDK
+- 媒体流式处理 WDK
+- 数据流式处理 WDK
 ms.date: 11/15/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 55354358cd234df8ef9cf2b66ef1d432a018ac7d
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465565"
 ---
-
 # <a name="streaming-media-device-driver-design-guide"></a>流媒体设备驱动程序设计指南
 
 使用本部分中的指南为对视频和音频进行流式处理的设备（例如网络摄像头和数码摄像机）设计和实现驱动程序。

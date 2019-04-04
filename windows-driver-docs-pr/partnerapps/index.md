@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: d9b07f09279255c5e4d3f93ed20c6ea7baa08ea8
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465602"
 ---
-
 # <a name="partner-app-development"></a>合作伙伴应用开发
 
 

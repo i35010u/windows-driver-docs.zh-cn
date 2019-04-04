@@ -3,14 +3,19 @@ title: 显示设备设计指南
 description: 显示设备设计指南
 ms.assetid: 0cbd75a3-49c3-4805-8f97-ab3551d0c6ee
 keywords:
-  - 显示驱动程序 WDK
-  - 微型端口驱动程序 WDK 显示
+- 显示驱动程序 WDK
+- 微型端口驱动程序 WDK 显示
 ms.date: 10/20/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 1507d80db99bb533cd353ffacf875fca7504cca2
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465606"
 ---
-
 # <a name="display-devices-design-guide"></a>显示设备设计指南
 
 

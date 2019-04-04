@@ -3,13 +3,18 @@ title: 智能卡读卡器设备设计指南
 description: 有关为智能卡读卡器设备开发驱动程序的设计指南。
 ms.assetid: e0827569-6c76-42a1-b94f-29235646519f
 keywords:
-  - 智能卡驱动程序 WDK
+- 智能卡驱动程序 WDK
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: fb0808241c9ace43d8a6ae19b19d75013cc47154
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465608"
 ---
-
 # <a name="smart-card-reader-devices-design-guide"></a>智能卡读卡器设备设计指南
 
 

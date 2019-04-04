@@ -3,15 +3,20 @@ title: 打印机驱动程序设计指南
 description: 本部分提供了有关设计、测试和调试打印机驱动程序的信息。
 ms.assetid: ff6b9c2e-920a-4cfc-8872-38976ed872f9
 keywords:
-  - 打印设备 WDK
-  - 打印 WDK，请参阅打印机驱动程序
-  - 打印 WDK，请参阅打印
+- 打印设备 WDK
+- 打印 WDK，请参阅打印机驱动程序
+- 打印 WDK，请参阅打印
 ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 92dca283e818d323511c8c71a6465f8443ace60a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465506"
 ---
-
 # <a name="printer-driver-design-guide"></a>打印机驱动程序设计指南
 
 

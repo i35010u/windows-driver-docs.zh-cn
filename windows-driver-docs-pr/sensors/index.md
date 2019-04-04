@@ -6,8 +6,13 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 0b3335f1bf688083233b4e90e59e3ec2325341f5
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465616"
 ---
-
 # <a name="sensor-device-driver-design-guide"></a>传感器设备驱动程序设计指南
 
 

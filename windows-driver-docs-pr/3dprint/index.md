@@ -6,8 +6,13 @@ ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 0a22e90a6a9131a637d03354f5825443c02de466
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465498"
 ---
-
 # <a name="3d-printer-driver-design-guide"></a>3D 打印机驱动程序设计指南
 
 本部分提供了有关 Windows 10 中的 3D 打印机驱动程序的信息。

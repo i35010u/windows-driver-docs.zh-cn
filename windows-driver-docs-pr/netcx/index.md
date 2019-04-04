@@ -3,13 +3,18 @@ title: 网络适配器 WDF 类扩展 (NetAdapterCx)
 description: 网络适配器 WDF 类扩展 (NetAdapterCx)
 ms.assetid: 74719A80-AE66-410F-85B7-31B6F455A818
 keywords:
-  - '网络适配器类扩展, 网络适配器 WDF 类扩展, NetAdapterCx, NetCx'
+- 网络适配器类扩展, 网络适配器 WDF 类扩展, NetAdapterCx, NetCx
 ms.date: 06/05/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 01d760d2e2f24a0029347f81db20f3e1f50197de
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465488"
 ---
-
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>网络适配器 WDF 类扩展 (NetAdapterCx)
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]

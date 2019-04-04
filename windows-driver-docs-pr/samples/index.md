@@ -1,13 +1,18 @@
 ---
 title: Windows 驱动程序示例
-description: "从 Windows\_10 开始，GitHub 上提供了 Windows 驱动程序示例存储库。"
+description: 从 Windows 10 开始，GitHub 上提供了 Windows 驱动程序示例存储库。
 ms.assetid: 4c51f6c3-a84d-4790-82df-a50570af02bd
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 52200de5f240034823d2201b4f92ae6438c5d6d1
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465419"
 ---
-
 # <a name="windows-driver-samples"></a>Windows 驱动程序示例
 
 

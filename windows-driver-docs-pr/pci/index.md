@@ -3,22 +3,27 @@ title: PCI 驱动程序编程指南
 description: PCI 驱动程序编程指南
 ms.assetid: 014f6243-6166-42e1-9f0f-1a438c77fd78
 keywords:
-  - PCI WDK 总线
-  - 总线 WDK，PCI
-  - 外设组件互连 WDK 总线
-  - PCI 本地总线规范 WDK
-  - 配置空间 WDK PCI
-  - 特定于设备的配置空间 WDK PCI
-  - 请求配置空间信息 WDK PCI
-  - 电源管理 WDK PCI
-  - 查询电源管理功能数据
-  - 标题 WDK PCI
+- PCI WDK 总线
+- 总线 WDK，PCI
+- 外设组件互连 WDK 总线
+- PCI 本地总线规范 WDK
+- 配置空间 WDK PCI
+- 特定于设备的配置空间 WDK PCI
+- 请求配置空间信息 WDK PCI
+- 电源管理 WDK PCI
+- 查询电源管理功能数据
+- 标题 WDK PCI
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 180cb4ad234242d536f7124b6f84f6dcbe21c89a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465590"
 ---
-
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
 
 

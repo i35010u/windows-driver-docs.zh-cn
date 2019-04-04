@@ -6,8 +6,13 @@ ms.date: 02/23/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: eacdb18cce223d8274968fa518ff824cefeadbec
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465502"
 ---
-
 # <a name="driver-security-guidance"></a>驱动程序安全指南
 
 

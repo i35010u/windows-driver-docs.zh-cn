@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: c2d80e65b5ec396ef1da7de6313d37dd949848c2
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465468"
 ---
-
 # <a name="imaging-device-driver-design-guide"></a>图像处理设备驱动程序设计指南
 
 

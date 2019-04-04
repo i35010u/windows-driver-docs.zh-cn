@@ -3,17 +3,22 @@ title: 驱动程序开发工具
 description: 驱动程序开发工具
 ms.assetid: 1d384d73-d1d2-445f-8077-40eed1f99a8c
 keywords:
-  - 工具 WDK
-  - 驱动程序开发工具 WDK
-  - WsdCodeGen 工具 WDK
-  - '工具 WDK, 开发驱动程序'
-  - '设备的 Web 服务 WDK WIA, 工具'
+- 工具 WDK
+- 驱动程序开发工具 WDK
+- WsdCodeGen 工具 WDK
+- 工具 WDK, 开发驱动程序
+- 设备的 Web 服务 WDK WIA, 工具
 ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 07e076c9e410d035cf564d2a64ba4c253041a17a
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465486"
 ---
-
 # <a name="driver-development-tools"></a>驱动程序开发工具
 
 

@@ -1,13 +1,18 @@
 ---
 title: 初期
-description: "合作伙伴文档的此部分适用于硬件工程师和开发人员，他们需要了解在 Windows\_10 上构建硬件的入门知识。"
+description: 合作伙伴文档的此部分适用于硬件工程师和开发人员，他们需要了解在 Windows 10 上构建硬件的入门知识。
 ms.assetid: 019ABD43-601C-4C1B-A0D9-30A3A402650C
 ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 9d891f71c09c066030be98387068a706ddb49c19
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465594"
 ---
-
 # <a name="bring-up-guide"></a>“引入”指南
 
 > [!NOTE] 

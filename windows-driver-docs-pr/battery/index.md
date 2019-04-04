@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: cdc798165ed99ba241f2f9ea10d26f4c2f71c5ad
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465445"
 ---
-
 # <a name="battery-devices-design-guide"></a>电池设备设计指南
 
 

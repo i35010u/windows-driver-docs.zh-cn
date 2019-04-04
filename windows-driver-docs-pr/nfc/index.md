@@ -3,17 +3,22 @@ title: NFC 设计指南
 description: Windows 公开了使用 NFC 技术（包括以下平台）的一组丰富体验
 ms.assetid: 26BFE25A-AC46-4634-8330-990DB447E55A
 keywords:
-  - NFC
-  - 近场通信
-  - 邻近感应
-  - 近场邻近感应
-  - NFP
+- NFC
+- 近场通信
+- 邻近感应
+- 近场邻近感应
+- NFP
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 14e7dc78177d9171608ed6a91032b44b60e7b74e
+ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "56465433"
 ---
-
 # <a name="near-field-communications-nfc-design-guide"></a>近场通信 (NFC) 设计指南
 
 
