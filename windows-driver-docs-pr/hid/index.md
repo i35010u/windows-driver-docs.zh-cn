@@ -3,20 +3,25 @@ title: HID 驱动程序
 description: 本部分介绍了人机接口设备（或 HID）。 通常情况下，这些设备是人们用来直接控制计算机系统操作的设备。
 ms.assetid: 19aefe5f-d82a-411f-86ab-5d1d53191524
 keywords:
-  - 指针设备 WDK
-  - 输入设备 WDK
-  - 人机接口设备 WDK
-  - HID WDK
+- 指针设备 WDK
+- 输入设备 WDK
+- 人机接口设备 WDK
+- HID WDK
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: d6f8184fada8c5b4982a205d3f2d4541c6468061
+ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58898056"
 ---
-
 # <a name="hid-drivers"></a>HID 驱动程序
 
 
-本部分介绍了人机接口设备（或 HID）。 有关 HID 概念的详细信息，请参阅官方 [HID 规范](http://www.usb.org/developers/hidpage/HID1_11.pdf)。 
+本部分介绍了人机接口设备（或 HID）。 有关 HID 概念的详细信息，请参阅官方 [HID 规范](https://www.usb.org/hid)。 
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -58,7 +63,7 @@ ms.technology: windows-devices
 <td><p>HID 客户端是使用 HID API 进行通信的驱动程序、服务或应用程序，通常表示特定类型的设备（例如：传感器、键盘或鼠标）。 它们通过硬件 ID 或特定的 HID 集合来识别设备，并通过HID API 与 HID 集合进行通信。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="hid-transports.md" data-raw-source="[HID Transports](hid-transports.md)">HID 传输方式</a></p></td>
+<td><p><a href="hid-transports.md" data-raw-source="[HID Transports](hid-transports.md)">HID 传输</a></p></td>
 <td><p>在当前和以前版本的 Windows 中受支持的 HID 传输方式的说明。</p></td>
 </tr>
 <tr class="even">

@@ -1,5 +1,5 @@
 ---
-title: CTRL + W （显示调试器版本）
+title: CTRL+W（显示调试器版本）
 description: CTRL + W 键显示调试程序和所有已加载的扩展 Dll 的版本信息。
 ms.assetid: 9651965e-fbf5-4084-adcd-63de60998b8b
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c1d4703ecb181a0479cc9b803c21bafa72fd9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6d70f693c518b594259c9d4cb1d15ffd50091977
+ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554625"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58898058"
 ---
-# <a name="ctrlw-show-debugger-version"></a>CTRL + W （显示调试器版本）
+# <a name="ctrlw-show-debugger-version"></a>CTRL+W（显示调试器版本）
 
 
 CTRL + W 键显示调试程序和所有已加载的扩展 Dll 的版本信息。
@@ -36,10 +36,8 @@ WinDbg 语法
 CTRL+ALT+W 
 ```
 
-## <span id="ddk_meta_ctrl_w_dbg"></span><span id="DDK_META_CTRL_W_DBG"></span>
 
-
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
+## <a name="environment"></a>环境
 
 <table>
 <colgroup>
@@ -48,7 +46,7 @@ CTRL+ALT+W
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>调试器</strong></p></td>
+<td align="left"><p><strong>调试程序</strong></p></td>
 <td align="left"><p>KD、 CDB WinDbg</p></td>
 </tr>
 <tr class="even">
@@ -78,9 +76,9 @@ CTRL+ALT+W
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**版本 （显示调试器版本）**](version--show-debugger-version-.md)
+[**version（显示调试器版本）**](version--show-debugger-version-.md)
 
-[**vertarget （显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
+[**vertarget（显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
 
  
 
