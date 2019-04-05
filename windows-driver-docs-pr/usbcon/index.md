@@ -5,8 +5,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 05c1d2431db9ecc94f0b7d59da601970deab542c
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57349572"
 ---
-
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
 

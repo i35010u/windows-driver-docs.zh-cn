@@ -6,8 +6,13 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: d03be44449997123f360af63887e4d5165d6bd06
+ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350184"
 ---
-
 # <a name="uwp-device-apps"></a>UWP 设备应用
 
 

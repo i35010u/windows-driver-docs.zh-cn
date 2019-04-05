@@ -7,8 +7,13 @@ ms.date: 05/17/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
+ms.openlocfilehash: 4bb342daec85f651954135ebbc76f4c8c20e3619
+ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419547"
 ---
-
 # <a name="partner-center-for-windows-hardware"></a>Windows 硬件合作伙伴中心
 
 利用 Windows 硬件合作伙伴中心，你可以快速、轻松地创建和管理你的系统和驱动程序提交。 它将替代传统 (Sysdev) 仪表板执行硬件任务，包括硬件认证、协作开发驱动程序以及通过 Windows 更新来分发驱动程序。 若要开始，请观看我们的介绍性[视频系列](https://go.microsoft.com/fwlink/?LinkID=828003)，并查看[硬件计划入门](get-started-with-the-hardware-dashboard.md)以获取注册详细信息。
