@@ -6,12 +6,12 @@ keywords:
 - 计划 Windows 移动设备体验，移动计划移动运营商
 ms.date: 03/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bc34176a2626e104e047490877fc68bd27fc964b
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.openlocfilehash: 1f54fcbcdefaf32e22ed359c16acf1b74a571f81
+ms.sourcegitcommit: 624427449978a8a82e77a3a31b9e22e3263793ae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845556"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055722"
 ---
 # <a name="mobile-plans-windows-10-device-experience"></a>计划 Windows 10 的移动设备体验
 
@@ -109,7 +109,7 @@ ms.locfileid: "58845556"
 
 从计划移动服务到 mobile 提供程序的终结点的每个请求中，可能包含以下标头。
 
-| 标头名称 | ReplTest1 | 描述 |
+| 标头名称 | 值 | 描述 |
 | --- | --- | --- |
 | X-MS-DM-TransactionId | 字符串 | 若要唯一标识此请求/响应交互之间移动计划服务和月服务 TransactionId。 |
 | 授权 （可选） | 字符串 | 密苏里州 （可选） 提供一个基本身份验证字符串 |
@@ -257,7 +257,7 @@ MO 直接 web 门户和`GetBalance`API 终结点必须也是此 Walled Garden �
 | vassg142.crl.omniroot<span></span>.com | http |
 | mscrl.microsoft<span></span>.com | http |
 | crl.microsoft<span></span>.com | http |
-| msftconnecttest<span></span>.com | http |
+| www.msftconnecttest<span></span>.com | http |
 | crl3.digicert<span></span>.com | http |
 | Ocsp.digicert<span></span>.com | http |
 | login.live<span></span>.com | http + https |
