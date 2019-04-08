@@ -1,15 +1,15 @@
 ---
-title: 移动计划测试版和预览版警告
+title: 移动套餐 Beta 和预览版警告
 ms.date: 12/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b30f0feea990248139c4cdba0286da66129c735
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534940"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58845591"
 ---
 > [!WARNING]
-> 本主题中的一些信息与预发布产品，商业发布之前可能有大幅度修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
+> 本主题中的有些信息与预发布产品相关，该产品在商业发行之前可能发生重大更改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 >
-> 移动计划为预览版，仅在 Windows 10，版本 1809年中。
+> 移动套餐仅在 Windows 10（版本 1809）中供预览。

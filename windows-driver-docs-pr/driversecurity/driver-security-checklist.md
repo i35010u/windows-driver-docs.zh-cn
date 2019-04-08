@@ -2,22 +2,20 @@
 title: 驱动程序安全清单
 description: 本文提供驱动程序开发人员的驱动程序安全清单。
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
-ms.date: 02/06/2019
+ms.date: 04/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 516d6fce5c7e8349121b09e9639e98a8e4227d3f
-ms.sourcegitcommit: 20109e8686f33fd3d683fc1c253b17bfeac0e0c2
+ms.openlocfilehash: 18c3e78adf67644de5cdfd8c434cf36d4ba78739
+ms.sourcegitcommit: 5402ab8a5ecc5e1933d4191174a09f96c000deb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56577633"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59003638"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
-
 
 本文提供了驱动程序开发人员以帮助减少驱动程序遭到入侵的风险的驱动程序安全清单。
 
 ## <a name="span-iddriversecurityoverviewspanspan-iddriversecurityoverviewspanspan-iddriversecurityoverviewspandriver-security-overview"></a><span id="Driver_Security_Overview"></span><span id="driver_security_overview"></span><span id="DRIVER_SECURITY_OVERVIEW"></span>驱动程序安全概述
-
 
 安全漏洞是允许攻击者导致驱动程序无法正常工作的方式，它会导致系统崩溃或变得不可用任何缺陷。 此外，驱动程序代码中的漏洞可以允许攻击者有权创建可能危及整个 OS 内核。 大多数开发人员工作时在其驱动程序，其重点是获取驱动程序才能正常工作，而不是在是否尝试恶意攻击者利用其代码中的漏洞。
 
@@ -77,7 +75,6 @@ ms.locfileid: "56577633"
 有关使用后台任务的信息，请参阅[支持使用后台任务对应用程序](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 有关使用 Windows 服务的信息，请参阅[Services](https://msdn.microsoft.com/library/windows/desktop/ms685141.aspx)。
-
 
 ## <a name="span-idconfirmkernelspanuse-the-driver-frameworks"></a><span id="confirmkernel"></span>使用驱动程序框架 
 
@@ -155,9 +152,9 @@ Windows 驱动程序的主要职责之一用户模式应用程序和系统的设
 
 |IOCTL 缓冲区类型 | 总结                                    | 更多相关信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
-| METHOD_BUFFERED  |建议用于大多数通电无法            | [使用缓冲的 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
+| METHOD_BUFFERED  |建议用于大多数通电无法            | [使用缓冲 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |在某些高速度 HW I/O 中使用    |[使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
-| METHOD_NEITHER |如果可能，避免 |[使用既不缓冲，也不直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
+| METHOD_NEITHER |如果可能，避免 |[既不使用缓冲 I/O，也不使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
 
 一般情况下缓冲 I/O 建议，因为它提供了最安全的缓冲方法。 但即使使用缓冲的 I/O 有危险，如必须缓解的嵌入式指针。
 
@@ -206,7 +203,7 @@ Windows 驱动程序的主要职责之一用户模式应用程序和系统的设
 
 - 验证设备的对象。 有关详细信息，请参阅[验证设备对象与失败](https://msdn.microsoft.com/library/windows/hardware/ff545700)。
 
-**IRPs**
+**Irp**
 
 **WDF 和 Irp** 
 
@@ -218,13 +215,13 @@ Windows 驱动程序的主要职责之一用户模式应用程序和系统的设
 
 以下文章提供有关验证 IRP 输入的值的信息：
 
-[DispatchReadWrite 使用缓冲的 I/O](https://msdn.microsoft.com/library/windows/hardware/ff543388)
+[使用缓冲 I/O 执行 DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543388)
 
-[中缓冲的 I/O 错误](https://msdn.microsoft.com/library/windows/hardware/ff544293)
+[缓冲 I/O 出错](https://msdn.microsoft.com/library/windows/hardware/ff544293)
 
-[使用直接 I/O DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543393)
+[使用直接 I/O 执行 DispatchReadWrite](https://msdn.microsoft.com/library/windows/hardware/ff543393)
 
-[在直接 I/O 错误](https://msdn.microsoft.com/library/windows/hardware/ff544300)
+[直接 I/O 出错](https://msdn.microsoft.com/library/windows/hardware/ff544300)
 
 [I/O 控制代码的安全问题](https://msdn.microsoft.com/library/windows/hardware/ff563700)
 
@@ -251,11 +248,11 @@ Windows 驱动程序的主要职责之一用户模式应用程序和系统的设
 
 请务必了解之间的区别[ **IRP\_MJ\_清理**](https://msdn.microsoft.com/library/windows/hardware/ff550718)并[ **IRP\_MJ\_关闭** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详细信息，请参阅以下文章：
 
-[DispatchCreate、 DispatchClose 和 DispatchCreateClose 例程](https://msdn.microsoft.com/library/windows/hardware/ff543279)
+[DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](https://msdn.microsoft.com/library/windows/hardware/ff543279)
 
 [DispatchCleanup 例程](https://msdn.microsoft.com/library/windows/hardware/ff543242)
 
-[处理清除和关闭操作中的错误](https://msdn.microsoft.com/library/windows/hardware/ff544304)
+[处理清理和关闭操作时出错](https://msdn.microsoft.com/library/windows/hardware/ff544304)
 
 了解如何正确处理 Irp 的详细信息，请参阅[还有其他错误处理 Irp](https://msdn.microsoft.com/library/windows/hardware/ff540543)。
 
@@ -301,7 +298,7 @@ C 和 c + + 安全的编码的其他信息，请参阅[安全编码资源](#secu
 
 有关控制的访问权限的详细信息，请参阅以下文章：
 
-[控制 KMDF 驱动程序中的设备访问权限](https://msdn.microsoft.com/windows/hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
+[在 KMDF 驱动程序中控制设备访问权限](https://msdn.microsoft.com/windows/hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
 
 [名称、 安全描述符和设备类，使设备对象可访问...和安全](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)从*年 1 月 2017 年 2 月 NT 内幕新闻稿*由发布[OSR](https://www.osr.com)。
 
@@ -314,7 +311,7 @@ C 和 c + + 安全的编码的其他信息，请参阅[安全编码资源](#secu
 
 [控制设备访问权限](https://msdn.microsoft.com/library/windows/hardware/ff542063)
 
-[控制设备 Namespace 访问权限](https://msdn.microsoft.com/library/windows/hardware/ff542068)
+[控制设备命名空间访问权限](https://msdn.microsoft.com/library/windows/hardware/ff542068)
 
 [适用于驱动程序开发人员的 Windows 安全模型](windows-security-model.md)
 
@@ -389,7 +386,7 @@ AC (Application Container)
 
 [文件系统安全问题](https://msdn.microsoft.com/windows/hardware/drivers/ifs/file-system-security-issues)
 
-[对于文件系统的安全功能](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-features-for-file-systems)
+[文件系统的安全功能](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-features-for-file-systems)
 
 [文件系统筛选器驱动程序的安全注意事项](https://msdn.microsoft.com/windows/hardware/drivers/ifs/security-considerations-for-file-system-filter-drivers)
 
@@ -397,7 +394,7 @@ AC (Application Container)
 
 有关 NDIS 驱动程序的安全性的信息，请参阅[网络驱动程序的安全问题](https://msdn.microsoft.com/windows/hardware/drivers/network/security-issues-for-network-drivers)。
 
-*显示器*
+*显示*
 
 有关显示驱动程序的安全性的信息，请参阅&lt;内容挂起&gt;。
 
@@ -429,7 +426,7 @@ AC (Application Container)
 
 [创建安全的设备安装](https://msdn.microsoft.com/windows/hardware/drivers/install/creating-secure-device-installations)
 
-[使用 SetupAPI 的准则](https://msdn.microsoft.com/windows/hardware/drivers/install/guidelines-for-using-setupapi)
+[SetupAPI 使用指南](https://msdn.microsoft.com/windows/hardware/drivers/install/guidelines-for-using-setupapi)
 
 [使用设备安装函数](https://msdn.microsoft.com/windows/hardware/drivers/install/using-device-installation-functions)
 
@@ -614,15 +611,15 @@ All Scanned Items
 
 以下测试是可能会在可用于检查与代码漏洞关联一些行为的驱动程序代码的测试的示例：
 
- [DF - 模糊随机 IOCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
+ [DF-模糊随机 IOCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 
- [DF - 模糊 sub-open 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
+ [DF-模糊子打开测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
 
- [DF - 模糊零长度缓冲区 FSCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
+ [DF-模糊零长度的缓冲区 FSCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
 
- [DF - 模糊随机 FSCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
+ [DF-模糊随机 FSCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
 
- [DF - 模糊杂项 API 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
+ [DF-模糊杂项 API 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 
  此外可以使用[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)随驱动程序验证程序。
 
@@ -695,7 +692,7 @@ SAFECode - [https://www.safecode.org/](https://www.safecode.org/)
 
 [OSR](https://www.osr.com)提供培训和咨询服务的驱动程序开发。 以下文章从 OSR 时事通讯重点介绍驱动程序的安全问题。
 
-[名称、 安全描述符和设备类，使设备对象可访问...和安全](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)
+[名称、 安全描述符和设备类，使设备对象可访问... 和安全](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe)
 
 [您已经走使用保护--在驱动程序和设备安全性](https://www.osronline.com/article.cfm?article=100)
 
@@ -703,8 +700,12 @@ SAFECode - [https://www.safecode.org/](https://www.safecode.org/)
 
 [Meltdown 和 Spectre:驱动程序呢？](https://www.osr.com/blog/2018/01/23/meltdown-spectre-drivers/) 
 
+**案例研究**
 
-**丛书**
+[从驱动程序漏洞的警报：Microsoft Defender ATP 调查 unearths 权限提升漏洞](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
+
+
+**书籍**
 
 *软件安全性的 24 deadly sins： 编程缺陷以及如何解决这些问题*由 Michael Howard、 David LeBlanc 和 John Viega
 
@@ -721,7 +722,7 @@ SAFECode - [https://www.safecode.org/](https://www.safecode.org/)
 *开发驱动程序使用 Windows Driver Foundation （开发人员参考）*，Penny Orwick 和 Smith 专家 
 
 
-**培训**
+**训练**
 
 Windows 驱动程序课堂培训是可从供应商，如下所示：
 

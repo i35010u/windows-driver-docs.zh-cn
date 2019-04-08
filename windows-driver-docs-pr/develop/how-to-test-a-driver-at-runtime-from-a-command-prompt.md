@@ -4,12 +4,12 @@ title: 如何在运行时通过命令提示符测试驱动程序
 description: WDK 提供的设备测试组件使你能够在网络中的测试计算机上测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1610f945cd9d6704eb2e1f0561758c9af66227
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2f1b2c59d6a9da5abdd8e614650a6234aa03b4a3
+ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518440"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58898060"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>如何在运行时通过命令提示符测试驱动程序
 
@@ -41,7 +41,7 @@ Te.exe [/name:<Test Method>] [<Test Name>.dll | <Test Name.wsc> ]  [/rebootState
 <a name="remarks"></a>备注
 -------
 
-必须指定测试二进制文件 (.dll) 或脚本 (.wsc) 文件。 测试方法 (**/name:***&lt;test method&gt;*) 为可选。 有关测试名称和测试方法的信息，请参阅[设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)。 有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)和 [Te.exe 命令选项](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)。
+必须指定测试二进制文件 (.dll) 或脚本 (.wsc) 文件。 测试方法 (**/name:**_&lt;test method&gt;_) 为可选。 有关测试名称和测试方法的信息，请参阅[设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)。 有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)和 [Te.exe 命令选项](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)。
 
 例如，在具有特定设备 ID 的设备上运行 Devfund\_PnPDTest.dll 中的所有 PnP 测试。
 
@@ -61,7 +61,7 @@ Te.exe /name:"*PNPSurpriseRemoveAndRestartDevice" Devfund_PnPDTest.dll /P:"DQ=De
 * [设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)
 * [设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)
-* [测试创作和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725)
+* [测试授权和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725)
 * [Te.exe 命令选项](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)
  
 
