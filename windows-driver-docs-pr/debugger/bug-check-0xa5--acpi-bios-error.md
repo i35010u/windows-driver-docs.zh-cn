@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 050a654f4c9865f0ca2ea8ceb8f4f2be6c66903c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 1ad38b67e5b2ed8e8c218c32a442be33013c6a89
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464181"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239790"
 ---
 # <a name="bug-check-0xa5-acpibioserror"></a>Bug 检查 0xA5：ACPI\_BIOS\_ERROR
 
 
 ACPI\_BIOS\_错误 bug 检查的值为 0x000000A5。 此 bug 对勾指示高级配置和电源接口 (ACPI) BIOS 的计算机不是完全符合 ACPI 规范。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="acpibioserror-parameters"></a>ACPI\_BIOS\_错误参数
 

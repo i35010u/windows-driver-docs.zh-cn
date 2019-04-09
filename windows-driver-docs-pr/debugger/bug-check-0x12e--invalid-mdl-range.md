@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec00eea7781d4327480194c0ebdbba9091a7235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e20697409442c844c388f6865ca304b5a0d0855f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521297"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239270"
 ---
-# <a name="bug-check-0x12e-invalidmdlrange"></a>Bug 检查 0x12E:无效\_MDL\_范围
+# <a name="bug-check-0x12e-invalidmdlrange"></a>Bug 检查 0x12E：无效\_MDL\_范围
 
 
 无效\_MDL\_范围错误检查的值为 0x0000012E。 这表示一个驱动程序具有名为 IoBuildPartialMdl() 函数并将其传递 MDL 映射属于源 MDL，但指定的虚拟地址范围不在源 MDL 的范围。 这通常是驱动程序 bug。
@@ -35,7 +35,9 @@ IoBuildPartialMdl(
         IN ULONG Length
 ```
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="invalidmdlrange-parameters"></a>无效\_MDL\_范围参数
 

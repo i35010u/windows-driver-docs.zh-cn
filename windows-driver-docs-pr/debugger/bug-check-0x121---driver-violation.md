@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2142a6e5724ccfd48f1a94aa0f923a38b1c662b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bfd05b374a6d412196bdbc9b7ccc21558892bd48
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534537"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239736"
 ---
-# <a name="bug-check-0x121-driverviolation"></a>Bug 检查 0x121:驱动程序\_冲突
+# <a name="bug-check-0x121-driverviolation"></a>Bug 检查 0x121：驱动程序\_冲突
 
 
 该驱动程序\_冲突错误检查的值为 0x00000121。 此 bug 检查指示驱动程序导致冲突。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverviolation-parameters"></a>驱动程序\_冲突参数
 
@@ -62,7 +64,7 @@ ms.locfileid: "56534537"
 <a name="remarks"></a>备注
 -------
 
-使用内核调试程序并查看调用堆栈，以确定引起冲突的驱动程序的名称： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，可以是非常有帮助在确定根本原因，然后输入之一[ **k （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以查看调用堆栈。
+使用内核调试程序并查看调用堆栈，以确定引起冲突的驱动程序的名称： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因，然后输入之一[ **k （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以查看调用堆栈。
 
  
 

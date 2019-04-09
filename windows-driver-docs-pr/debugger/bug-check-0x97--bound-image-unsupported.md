@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b480e58aa2a214796a14e88775f59e9c6ee22a7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9ac219e4533db2e430d9403c219145b7eee71d8f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534063"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239274"
 ---
-# <a name="bug-check-0x97-boundimageunsupported"></a>Bug 检查 0x97:绑定\_图像\_不受支持
+# <a name="bug-check-0x97-boundimageunsupported"></a>Bug 检查 0x97：绑定\_图像\_不受支持
 
 
 绑定\_图像\_不受支持的 bug 检查的值为 0x00000097。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

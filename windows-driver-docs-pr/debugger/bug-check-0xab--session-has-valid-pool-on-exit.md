@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c22ff772546ebec6fd9531e6754fc9deceb2e5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7196d3521573b4b97792400e06901721d3fe9394
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566526"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239796"
 ---
 # <a name="bug-check-0xab-sessionhasvalidpoolonexit"></a>Bug 检查 0xAB：会话\_HAS\_有效\_池\_ON\_退出
 
 
 会话\_HAS\_有效\_池\_ON\_退出 bug 检查的值为 0x000000AB。 此 bug 检查指示会话卸载时发生会话驱动程序仍保留内存中。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="sessionhasvalidpoolonexit-parameters"></a>会话\_HAS\_有效\_池\_ON\_退出参数
 

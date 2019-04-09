@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ef3a7c8321c63424b4aa1ed168b9c1c93054d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2afaeb93f2fdb7ec9b83cd3c4a763743ab0a0e64
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561589"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238628"
 ---
 # <a name="bug-check-0xfa-httpdrivercorrupted"></a>Bug 检查 0xFA：HTTP\_驱动程序\_已损坏
 
 
 HTTP\_驱动程序\_损坏错误检查的值为 0x000000FA。 这表示 HTTP 内核驱动程序 (Http.sys) 已达到损坏的状态且无法恢复。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="httpdrivercorrupted-parameters"></a>HTTP\_驱动程序\_损坏参数
 

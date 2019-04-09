@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3efa8dcdcb99ecbc2e136918ff52a9294e1a98d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 93a4a9d6aa1e50ea5dd79142f1bb7162c62552e4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526735"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238495"
 ---
-# <a name="bug-check-0x77-kernelstackinpageerror"></a>Bug 检查 0x77:内核\_堆栈\_页内\_错误
+# <a name="bug-check-0x77-kernelstackinpageerror"></a>Bug 检查 0x77：内核\_堆栈\_页内\_错误
 
 
 内核\_堆栈\_页内\_错误 bug 检查的值为 0x00000077。 检查此错误指示无法到内存中读取的分页文件中的内核数据请求的页面。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelstackinpageerror-parameters"></a>内核\_堆栈\_页内\_错误参数
 
@@ -155,7 +157,7 @@ ms.locfileid: "56526735"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**Bug Check 0x7A (KERNEL\_DATA\_INPAGE\_ERROR)**](bug-check-0x7a--kernel-data-inpage-error.md)
+[**Bug 检查 0x7A (内核\_数据\_页内\_错误)**](bug-check-0x7a--kernel-data-inpage-error.md)
 
  
 

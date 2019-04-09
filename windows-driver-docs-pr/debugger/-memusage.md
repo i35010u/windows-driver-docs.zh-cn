@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b97b825af8dffed4c1d624228e4240a340be28ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ef8468f84e63c62f9ee54280adf8f755f8a4d5e7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555924"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238916"
 ---
-# <a name="memusage"></a>！ memusage
+# <a name="memusage"></a>!memusage
 
 
 **！ Memusage**扩展显示有关物理内存使用情况的摘要统计信息。
@@ -138,7 +138,7 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 <a name="remarks"></a>备注
 -------
 
-可以使用[ **！ vm** ](-vm.md)扩展命令即可分析虚拟内存的使用。 此扩展是比通常更有用 **！ memusage**。 有关内存管理的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这本书不可能在某些语言和国家/地区中可用。）
+可以使用[ **！ vm** ](-vm.md)扩展命令即可分析虚拟内存的使用。 此扩展是比通常更有用 **！ memusage**。 有关内存管理的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
 
 [ **！ Pfn** ](-pfn.md)扩展命令可用于显示 PFN 数据库中的特定页帧条目。
 

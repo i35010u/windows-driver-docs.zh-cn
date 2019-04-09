@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b9216d5506ceaf34967a6e800c43ad59ac78288
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c3e1843dbcfee98d14985f06150abde7d18f94c3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522045"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238370"
 ---
-# <a name="icpleak"></a>！ icpleak
+# <a name="icpleak"></a>!icpleak
 
 
 **！ Icpleak**扩展插件将检查所有 I/O 完成对象具有的最大排队的条目数的对象的系统中。
@@ -58,7 +58,7 @@ ms.locfileid: "56522045"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关 I/O 完成端口的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这本书不可能在某些语言和国家/地区中可用。）
+有关 I/O 完成端口的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
 
 <a name="remarks"></a>备注
 -------

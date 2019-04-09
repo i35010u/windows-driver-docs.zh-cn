@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c693ace3df2b1f1be9d9b39e4cab34fef6ca870
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5ac59f214f94532ef01f65859d4e0e0f1bb962a7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564964"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238734"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 

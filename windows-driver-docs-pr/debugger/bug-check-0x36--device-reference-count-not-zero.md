@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e0520e1310ee83946e22b2db8e8005e9a87ab8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 97206fc8e4bda2b67176005504b7a63dadf778a7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554889"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239840"
 ---
-# <a name="bug-check-0x36-devicereferencecountnotzero"></a>Bug 检查 0x36:设备\_引用\_计数\_不\_零
+# <a name="bug-check-0x36-devicereferencecountnotzero"></a>Bug 检查 0x36：设备\_引用\_计数\_不\_零
 
 
 设备\_引用\_计数\_不\_零错误检查的值为 0x00000036。 这表示一个驱动程序尝试删除仍具有积极的引用计数的设备对象。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="devicereferencecountnotzero-parameters"></a>设备\_引用\_计数\_不\_零个参数
 

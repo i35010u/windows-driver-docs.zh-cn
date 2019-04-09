@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 26ba21654e63ae35e551f7b05ff97fec612b2ef5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 5c97f51b250af9bc9bdd3368e068900777deccbb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350243"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239044"
 ---
 # <a name="bug-check-0x195-smbserverlivedump"></a>Bug 检查 0x195：SMB\_SERVER\_LIVEDUMP
 
 
 SMB\_SERVER\_LIVEDUMP bug 检查的值为 0x00000195。 这表示在 SMB 服务器检测到问题，已捕获核心转储收集调试信息。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="smbserverlivedump-parameters"></a>SMB\_SERVER\_LIVEDUMP 参数
 

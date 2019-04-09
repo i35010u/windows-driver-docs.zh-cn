@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a81b6db8b79b55daf22fdaa549aad601fdd5bb51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c53bf1a88a042900c6dcd040bb90079d0e2f50e2
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522385"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238592"
 ---
-# <a name="bug-check-0x72-assigndrivelettersfailed"></a>Bug 检查 0x72:将分配\_驱动器\_字母\_失败
+# <a name="bug-check-0x72-assigndrivelettersfailed"></a>Bug 检查 0x72：将分配\_驱动器\_字母\_失败
 
 
 分配\_驱动器\_字母\_失败错误检查的值为 0x00000072。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

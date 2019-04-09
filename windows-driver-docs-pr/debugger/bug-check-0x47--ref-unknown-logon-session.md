@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a40513b7766394494a3e6a5c600f79e3e4a981e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: be7a71e23afaf70723448600906f25e8b309b358
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575985"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238828"
 ---
 # <a name="bug-check-0x47-refunknownlogonsession"></a>Bug 检查 0x47：REF\_未知\_登录\_会话
 
@@ -27,7 +27,9 @@ REF\_未知\_登录\_会话错误检查的值为 0x00000047。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7e1aa10bb1bfff1c82848409f1600e2f57f30f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0c32859b33b781fc99d68253eea3a2de5560aaea
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521537"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239036"
 ---
-# <a name="bug-check-0x136-vhdboothostvolumenotenoughspace"></a>Bug 检查 0x136:VHD\_引导\_主机\_卷\_不\_ENOUGH\_空间
+# <a name="bug-check-0x136-vhdboothostvolumenotenoughspace"></a>Bug 检查 0x136：VHD\_引导\_主机\_卷\_不\_ENOUGH\_空间
 
 
 VHD\_引导\_主机\_卷\_不\_ENOUGH\_空间 bug 检查的值为 0x00000136。 这表示初始化失败尝试从 VHD 启动时出现。 承载 VHD 的卷没有足够的可用空间以扩展 VHD。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="vhdboothostvolumenotenoughspace-parameters"></a>VHD\_引导\_主机\_卷\_不\_ENOUGH\_空间参数
 

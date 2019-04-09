@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fd4707a1d3d175059f8098c8e2ce5c35ceb2a77
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: d4b1bdb01f38eed7bba8993c37717050757a59d7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761846"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238786"
 ---
 # <a name="bug-check-0x142-videotdrapplicationblocked"></a>Bug 检查 0x142：视频\_TDR\_应用程序\_已阻止
 
 
 视频\_TDR\_应用程序\_已阻止错误检查的值为 0x00000142。 这表示应用程序已被阻止访问图形硬件。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videotdrapplicationblocked-parameters"></a>视频\_TDR\_应用程序\_已阻止参数
 

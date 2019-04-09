@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ece2176f85b0701aefab2633b175c34d2675f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5fa0a0588b43fa5f76021412e9075978768a99ab
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523036"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238546"
 ---
-# <a name="bug-check-0x7f-unexpectedkernelmodetrap"></a>Bug 检查 0x7F:意外\_内核\_模式\_陷阱
+# <a name="bug-check-0x7f-unexpectedkernelmodetrap"></a>Bug 检查 0x7F：意外\_内核\_模式\_陷阱
 
 
 意外\_内核\_模式\_陷阱 bug 检查的值为 0x0000007F。 此 bug 检查指示生成的 Intel CPU 陷阱，内核未能捕获此陷阱。
 
 可能是此陷阱*绑定的陷阱*（陷阱内核不允许捕获） 或*双容错*（处理总是会导致系统出现故障的早期错误时出现的错误）。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="unexpectedkernelmodetrap-parameters"></a>意外\_内核\_模式\_陷阱参数
 

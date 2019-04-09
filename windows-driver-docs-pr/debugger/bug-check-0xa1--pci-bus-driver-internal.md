@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b53b711e1ca858a2bafb0710b6bfd578284c8f3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ac878160bfae80a6b806675de87e5326b10845f5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541553"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239198"
 ---
-# <a name="bug-check-0xa1-pcibusdriverinternal"></a>Bug 检查 0xA1:PCI\_BUS\_DRIVER\_INTERNAL
+# <a name="bug-check-0xa1-pcibusdriverinternal"></a>Bug 检查 0xA1：PCI\_BUS\_DRIVER\_INTERNAL
 
 
 PCI\_总线\_驱动程序\_内部 bug 检查的值为 0x000000A1。 此 bug 检查指示 PCI 总线驱动程序在其内部结构中检测到不一致问题，并且无法继续。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="pcibusdriverinternal-parameters"></a>PCI\_总线\_驱动程序\_内部参数
 

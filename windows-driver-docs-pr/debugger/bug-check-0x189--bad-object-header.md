@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d86365ecae208892b43679186eb078c7531ff00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6005dfa0260b04b7d27bbcb893afd405efe9a84a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238928"
 ---
 # <a name="bug-check-0x189-badobjectheader"></a>Bug 检查 0x189：错误\_对象\_标头
 
 
 缺点\_对象\_标头错误检查的值为 0x00000189。 这表示对象\_标头已损坏。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="badobjectheader-parameters"></a>错误\_对象\_标头参数
 

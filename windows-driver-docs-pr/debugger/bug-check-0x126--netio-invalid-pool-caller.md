@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffea7416fc30165647522f46136a8c67870ddb99
-ms.sourcegitcommit: 598259684cbfcf39b16dcc91bd8d341b43fb8876
+ms.openlocfilehash: cd7af6b126c658078e1f6c723a3854b5d0f43fa9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56582809"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239566"
 ---
 # <a name="bug-check-0x126-netioinvalidpoolcaller"></a>Bug 检查 0x126：NETIO\_无效\_池\_调用方
 
 
 NETIO\_无效\_池\_bug 检查调用方的值为 0x00000126。 这表示对 netio 托管内存池，例如，前端总线和 MDL 进行了无效的池请求。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="netioinvalidpoolcaller-parameters"></a>NETIO\_无效\_池\_调用方的参数
 

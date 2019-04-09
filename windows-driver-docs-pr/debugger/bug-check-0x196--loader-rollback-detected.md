@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0feac74d40d5dcb7522d8848209eeab81b61ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bf2b97973f45b5a5dbb317ef20ad9118050df121
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575990"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238866"
 ---
 # <a name="bug-check-0x196-loaderrollbackdetected"></a>Bug 检查 0x196：加载程序\_回滚\_检测到
 
 
 加载程序\_回滚\_检测到错误检查的值为 0x00000196。 这表示操作系统加载程序的版本与操作系统不匹配。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="loaderrollbackdetected-parameters"></a>加载程序\_回滚\_检测到参数
 

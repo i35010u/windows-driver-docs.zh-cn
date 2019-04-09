@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a3b8888a4357fce0685fa54a91424e0f7b0f09b
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e228b443f8214e878b2158db80d3239cf2d761db
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743472"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239834"
 ---
-# <a name="bug-check-0x1cb-invalidsilodetach"></a>Bug 检查 0x1CB:无效\_接收器\_分离
+# <a name="bug-check-0x1cb-invalidsilodetach"></a>Bug 检查 0x1CB：无效\_接收器\_分离
 
 无效\_接收器\_分离错误检查的值为 0x000001CB。 它指示某个线程未能在退出之前从接收器分离。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="invalidsilodetach-parameters"></a>无效\_接收器\_分离参数

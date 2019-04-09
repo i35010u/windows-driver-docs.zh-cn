@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad83a5117a4c0b5b9abe11f3786c044f474a66fa
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 890058b3e990d1a96312070fe7fe3e55f8416c08
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761840"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239708"
 ---
 # <a name="bug-check-0x1c9-usermodehealthmonitorlivedump"></a>Bug 检查 0x1C9：用户\_模式下\_运行状况\_监视器\_LIVEDUMP
 
 用户\_模式下\_运行状况\_监视器\_LIVEDUMP bug 检查的值为 0x000001C9。 它表示一个或多个重要的用户模式组件无法满足的运行状况检查。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="usermodehealthmonitorlivedump-parameters"></a>用户\_模式下\_运行状况\_监视器\_LIVEDUMP 参数

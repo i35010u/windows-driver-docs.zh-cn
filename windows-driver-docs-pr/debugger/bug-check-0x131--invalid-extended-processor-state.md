@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5b7565e3e62ce8f09b49891dc873bd6b074af63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e84f2ba30c56734a6a10743206ae52b2af469296
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238740"
 ---
 # <a name="bug-check-0x131-invalidextendedprocessorstate"></a>Bug 检查 0x131：无效\_扩展\_处理器\_状态
 
 
 无效\_扩展\_处理器\_状态 bug 检查的值为 0x00000131。 这表示保存或还原扩展的处理器状态时检测到无效的参数组合。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="invalidextendedprocessorstate-parameters"></a>无效\_扩展\_处理器\_状态参数
 

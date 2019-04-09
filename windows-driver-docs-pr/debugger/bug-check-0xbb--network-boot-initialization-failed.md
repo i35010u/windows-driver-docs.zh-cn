@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af517b85dc741092ad191c3f9554d98c8cbcae8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b7a5118b7c5c32b028a396caa9944fa6a9dcb66e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523054"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238848"
 ---
-# <a name="bug-check-0xbb-networkbootinitializationfailed"></a>Bug 检查 0xBB:网络\_引导\_初始化\_失败
+# <a name="bug-check-0xbb-networkbootinitializationfailed"></a>Bug 检查 0xBB：网络\_引导\_初始化\_失败
 
 
 网络\_引导\_初始化\_失败错误检查的值为 0x000000BB。 这表示 Windows 无法关闭网络已成功启动。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="networkbootinitializationfailed-parameters"></a>网络\_引导\_初始化\_失败参数
 

@@ -15,14 +15,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6430ba8483ba98c3d2dbaa0a8f3adfeabcdee20f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 75bf4937bdaeea4b832728338f2fa4567ce1519d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522179"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239298"
 ---
-# <a name="vad"></a>！ vad
+# <a name="vad"></a>!vad
 
 
 **！ Vad**扩展显示的虚拟地址说明符 (VAD) 的详细信息或 Vad 树。
@@ -77,7 +77,7 @@ ms.locfileid: "56522179"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关虚拟地址描述符信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这本书不可能在某些语言和国家/地区中可用。）
+有关虚拟地址描述符信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
 
 <a name="remarks"></a>备注
 -------

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 262e4dd5cb7fb99df372c6448d1424b67addbd44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b8a939289ca411adaa3e5ca6a7a06be1b669c256
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547508"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238423"
 ---
-# <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>Bug 检查 0xD5:驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池
+# <a name="bug-check-0xd5-driverpagefaultinfreedspecialpool"></a>Bug 检查 0xD5：驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池
 
 
 该驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池 bug 检查的值为 0x000000D5。 这指示一个驱动程序具有引用先前释放的内存。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverpagefaultinfreedspecialpool-parameters"></a>驱动程序\_页上\_容错\_IN\_FREED\_特殊\_池参数
 

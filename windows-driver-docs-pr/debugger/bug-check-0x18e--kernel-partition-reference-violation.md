@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a168a052d211d10ef508a36dd4f34288459097d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1ce2a35d025be512eddb58c6cf518fd4a0993638
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533694"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238964"
 ---
 # <a name="bug-check-bug-check-0x18e-kernelpartitionreferenceviolation"></a>Bug 检查 Bug 检查 0x18E:内核\_分区\_引用\_冲突
 
@@ -26,7 +26,9 @@ KERNEL_PARTITION_REFERENCE_VIOLATION bug 检查具有 0x0000018E 值。
 此错误指示分区已取消引用不正确。 这通常发生在内核模式驱动程序不会正确地取消引用分区对象。 它也会发生严重数据损坏时在内核中。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelpartitionreferenceviolation-parameters"></a>内核\_分区\_引用\_冲突参数
 

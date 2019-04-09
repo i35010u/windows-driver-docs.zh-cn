@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccde555cee1569001d053652d654a43284fd12e5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 4a52f0d0464959a6b8943d88ee38e49d154865a5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464371"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239446"
 ---
 # <a name="bug-check-0x164-win32kcriticalfailure"></a>Bug 检查 0x164：WIN32K\_严重\_失败
 
 
 WIN32K\_严重\_故障错误检查的值为 0x00000164。 这指示 Win32k 遇到严重故障。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="win32kcriticalfailure-parameters"></a>WIN32K\_严重\_失败参数
 

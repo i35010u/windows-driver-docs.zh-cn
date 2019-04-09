@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3473110e9d7f09d720c81d0f94d56063d180907b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9d560f7216de76fea185bd7e5e679d79ae128112
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239634"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>Bug 检查 0x7B：无法访问\_启动\_设备
 
 
 无法访问\_启动\_设备错误检查的值为 0x0000007B。 此 bug 检查指示 Microsoft Windows 操作系统将无法在启动期间的对系统分区的访问。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="inaccessiblebootdevice-parameters"></a>无法访问\_启动\_设备参数
 
@@ -105,7 +107,7 @@ ms.locfileid: "56567507"
 
 删除任何最近添加的硬件，尤其是硬盘驱动器或控制器，以查看错误是否得到解决。 如果有问题的硬件，硬盘驱动器上的磁盘固件版本可能与你的 Windows 操作系统版本不兼容。 更新，请与制造商联系。 如果删除另一个硬件，则在解决可能存在 IRQ 或 I/O 端口冲突。 重新配置新设备根据制造商的说明。
 
-如果你最近已更改 BIOS 设置，例如从旧的控制器模式更改为在 BIOS 中 AHCI 还原这些更改。 有关详细信息，请参阅<https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>
+如果你最近已更改 BIOS 设置，例如从旧的控制器模式更改为在 BIOS 中 AHCI 还原这些更改。 有关详细信息，请参阅 <https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface>
 
 **存储设备兼容性检查**
 
@@ -187,7 +189,7 @@ ESC DEL F2 **\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\\***
 
 **若要分析此使用内核调试程序时出错：** 运行[ **lm （列表加载模块）** ](lm--list-loaded-modules-.md)命令以查看哪些模块加载尝试隔离特定的驱动程序在调试器中。 验证已加载以下驱动程序。
 
-*disk*
+*磁盘*
 
 ```dbgcmd
            

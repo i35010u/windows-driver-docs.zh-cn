@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ea9ddbccb5853d11dfe56c01592b23e49c685b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 15f071d84fa553899823c22d463db4ad51cd984d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239490"
 ---
-# <a name="reg"></a>！ reg
+# <a name="reg"></a>!reg
 
 
 **！ Reg**扩展显示，搜索整个注册表数据。
@@ -92,7 +92,7 @@ ms.locfileid: "56547556"
 <span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span> **hashindex** **** \[*HiveAddress*\] **** *HashKey*   
 计算哈希键的哈希索引条目。 *HiveAddress*指定 hive 的地址。 *HashKey*指定的键。
 
-**请注意***HiveAddress*是必需的如果目标计算机正在运行 Windows 7 或更高版本。  
+**请注意***HiveAddress*是必需的如果目标计算机正在运行 Windows 7 或更高版本。
 
 
 
@@ -153,7 +153,7 @@ Kdexts.dll
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关注册表及如何及其组件的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这本书不可能在某些语言和国家/地区中可用。）
+有关注册表及如何及其组件的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
 
 <a name="remarks"></a>备注
 -------

@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f0b7395093413bdbf0bb7b9a635bc14dc1414d9
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 0f78142a9898ce49d6cb29b7d109c92aadfcc606
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761834"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238752"
 ---
 # <a name="bug-check-0x1a8-videodxgkrnlblackscreenlivedump"></a>Bug 检查 0x1A8：视频\_DXGKRNL\_黑色\_屏幕\_LIVEDUMP
 
 视频\_DXGKRNL\_黑色\_屏幕\_LIVEDUMP bug 检查的值为 0x000001A8。 它指示发生了黑色屏幕使用情况的用户启动 DXGKRNL 实时转储。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videodxgkrnlblackscreenlivedump-parameters"></a>视频\_DXGKRNL\_黑色\_屏幕\_LIVEDUMP 参数
 

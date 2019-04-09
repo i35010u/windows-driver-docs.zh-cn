@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 81cf44055d54f440e244be19d67f79491d3f2a6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9b3be72dbd6578673b4501880c2aa6ffa0c3a66f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544123"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239456"
 ---
-# <a name="bug-check-0x13-emptythreadreaperlist"></a>Bug 检查 0x13:空\_线程\_获取器\_列表
+# <a name="bug-check-0x13-emptythreadreaperlist"></a>Bug 检查 0x13：空\_线程\_获取器\_列表
 
 
 空\_线程\_获取器\_列表 bug 检查的值为 0x00000013。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

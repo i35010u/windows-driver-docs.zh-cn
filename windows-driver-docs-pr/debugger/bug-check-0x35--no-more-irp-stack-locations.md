@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 96de449039449fa2559afb053e625e53ccb22e05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cb17e0ddfa8d3d12f92a5045046120fbc8386729
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519642"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239068"
 ---
-# <a name="bug-check-0x35-nomoreirpstacklocations"></a>Bug 检查 0x35:否\_更多\_IRP\_堆栈\_位置
+# <a name="bug-check-0x35-nomoreirpstacklocations"></a>Bug 检查 0x35：否\_更多\_IRP\_堆栈\_位置
 
 
 否\_更多\_IRP\_堆栈\_位置错误检查的值为 0x00000035。 检查此错误发生时**IoCallDriver**数据包已没有更多剩余的堆栈位置。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="nomoreirpstacklocations-parameters"></a>否\_更多\_IRP\_堆栈\_位置参数
 

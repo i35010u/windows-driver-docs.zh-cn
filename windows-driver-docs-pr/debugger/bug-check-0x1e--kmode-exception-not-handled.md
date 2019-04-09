@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b724a24b592c27e335eb4c1d64c60d2c3912b567
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: bb5479e33d9e87f4bf6b155ab5535ec0680088a3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525092"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238618"
 ---
-# <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>Bug 检查 0x1E:KMODE\_异常\_不\_已处理
+# <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>Bug 检查 0x1E：KMODE\_异常\_不\_已处理
 
 
 KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核模式程序生成的错误处理程序未捕获了异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kmodeexceptionnothandled-parameters"></a>KMODE\_异常\_不\_HANDLED 参数
 
@@ -66,7 +68,7 @@ KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核
 <a name="cause"></a>原因
 -----
 
-这是常见 bug 检查。 若要解释它，必须标识生成的异常。
+若要解释此 bug 检查，必须标识生成的异常。
 
 常见的异常代码包括：
 
@@ -85,18 +87,10 @@ KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核
 异常代码的完整列表，请参阅[NTSTATUS 值](https://msdn.microsoft.com/library/cc704588.aspx)。 在 ntstatus.h 文件位于的 inc 目录中还列出了异常代码[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 
-<a name="resolution"></a>分辨率
+<a name="remarks"></a>备注
 ----------
 
 **如果你不是好地调试此问题**，可以使用中所述的一些基本的故障排除技巧[**蓝色屏幕数据**](blue-screen-data.md)。 如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
-
-**如果你打算调试该问题**，您可能会发现很难获取堆栈跟踪。 驱动程序或导致此问题的函数，则应找出参数 2 （异常地址）。
-
-如果异常代码 0x80000003 发生，则表明已达到硬编码断点或断言，但系统已开始使用 **/NODEBUG**切换。 此问题很少发生。 如果重复发生，请确保连接到内核调试器，并且系统开始使用 **/debug**切换。
-
-如果发生异常的代码数 0x80000002，陷阱框架将提供的其他信息。
-
-如果特定异常的原因未知，则要考虑以下事项：
 
 **硬件不兼容性**
 
@@ -111,6 +105,18 @@ KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核
 检查事件查看器中的系统日志可能会帮助找出设备或驱动程序导致 bug 检查 0x1E 的其他错误消息。 您还应运行硬件诊断，尤其是内存扫描程序，系统制造商提供。 有关这些过程的详细信息，请参阅您的计算机的所有者的手册。
 
 在 Windows 安装过程中或在安装完成后，在第一重启后可能出现此错误，将生成此消息。 错误的可能原因是系统 BIOS 不兼容性。 可以通过升级系统 BIOS 版本来解决 BIOS 问题。
+
+<a name="resolution"></a>分辨率
+----------
+
+**如果你打算调试该问题**，您可能会发现很难获取堆栈跟踪。 驱动程序或导致此问题的函数，则应找出参数 2 （异常地址）。
+
+如果异常代码 0x80000003 发生，则表明已达到硬编码断点或断言，但系统已开始使用 **/NODEBUG**切换。 此问题很少发生。 如果重复发生，请确保连接到内核调试器，并且系统开始使用 **/debug**切换。
+
+如果发生异常的代码数 0x80000002，陷阱框架将提供的其他信息。
+
+如果特定异常的原因未知，则要考虑以下事项：
+
 
 **若要获取堆栈跟踪，如果普通的堆栈跟踪过程失败**
 
@@ -189,7 +195,9 @@ fe40cf4c 80133184 ff6ce388 00000000 00000000 QIC117!_kdi_ThreadRun@4+0xa9
 fe40cf7c 8013cb8e fe43a44c ff6ce388 00000000 NT!_PspSystemThreadStartup@8+0x40
 ```
 
- 
+**时间的差旅跟踪**
+
+如果可以按要求重现 bug 检查，调查花些时间旅行跟踪使用 WinDbg 预览的可能性。 有关详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
 
  
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b21b988ada0a56956a36ecce7e18d0dfb5258f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f23a9d79ce5a8290dde2ce27ecc60229ad432d3a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540742"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239716"
 ---
-# <a name="bug-check-0xf4-criticalobjecttermination"></a>Bug 检查 0xF4:关键\_对象\_终止
+# <a name="bug-check-0xf4-criticalobjecttermination"></a>Bug 检查 0xF4：关键\_对象\_终止
 
 
 严重\_对象\_终止 bug 检查的值为 0x000000F4。 这表示，进程或线程至关重要的系统操作已意外退出或已终止。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="criticalobjecttermination-parameters"></a>关键\_对象\_终止参数
 
@@ -74,7 +76,7 @@ ms.locfileid: "56540742"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
  
 
 

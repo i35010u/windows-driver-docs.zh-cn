@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bca16a4e14563f8cd2208d98470ee731e652d16b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f89b5b5d94c5ea495737f4480766784d46b326ab
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524722"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239300"
 ---
-# <a name="bug-check-0xb1-bgidetectedviolation"></a>Bug 检查说是 0xB1:BGI\_检测到\_冲突
+# <a name="bug-check-0xb1-bgidetectedviolation"></a>Bug 检查 0xB1：BGI\_检测到\_冲突
 
 
 BGI\_检测到\_冲突错误检查的值为 0x000000B1。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bgidetectedviolation-parameters"></a>BGI\_检测到\_冲突参数
 

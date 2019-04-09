@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6adf55a813f819a7b423b87ab4a87acbadee03
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 34250b9e7efac7ed20071b28e7634417e18c4cf3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743497"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239208"
 ---
-# <a name="bug-check-0xf0-storageminiporterror"></a>Bug 检查 0xF0:存储\_微型端口\_错误
+# <a name="bug-check-0xf0-storageminiporterror"></a>Bug 检查 0xF0：存储\_微型端口\_错误
 
 存储\_微型端口\_错误 bug 检查的值为 0x00000F0。 它表示存储微型端口驱动程序无法完成 SRB 请求。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="storageminiporterror-parameters"></a>存储\_微型端口\_错误参数

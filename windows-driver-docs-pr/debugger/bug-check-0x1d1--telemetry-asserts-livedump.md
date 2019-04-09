@@ -12,16 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72bfc3261f4b4c2e2d26415b9cdfb75a5f964e9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7016d06f1c58d5eff04186d302c0101434886994
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568092"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238375"
 ---
 # <a name="bug-check-bug-check-0x1d1-telemetryassertslivedump"></a>Bug 检查 Bug 检查 0x1D1:遥测\_ASSERT 语句\_LIVEDUMP
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 TELEMETRY_ASSERTS_LIVEDUMP bug 检查具有 0x000001D1 值。 
 

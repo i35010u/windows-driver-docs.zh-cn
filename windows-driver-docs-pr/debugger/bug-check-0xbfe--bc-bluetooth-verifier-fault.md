@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a9cda6d591d6a5bb1e6c2e5ee88af1051a0f4d9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 28bd555afbcef2c0ce127066c8d4bd0c90565931
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569002"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238586"
 ---
 # <a name="bug-check-0xbfe-bcbluetoothverifierfault"></a>Bug 检查 0xBFE：业务连续性\_蓝牙\_VERIFIER\_容错
 
 
 业务连续性\_蓝牙\_VERIFIER\_故障错误检查的值为 0x00000BFE。 这表示一个驱动程序导致冲突。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bcbluetoothverifierfault-parameters"></a>业务连续性\_蓝牙\_VERIFIER\_错误参数
 

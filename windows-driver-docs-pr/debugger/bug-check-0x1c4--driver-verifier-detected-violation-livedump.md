@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba84515616e00327637d09632344d99f28006dcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a70fea3462a3777db74fd31794c574416490ef6b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534439"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239454"
 ---
-# <a name="bug-check-0x1c4-driververifierdetectedviolationlivedump"></a>Bug 检查 0x1C4:驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP
+# <a name="bug-check-0x1c4-driververifierdetectedviolationlivedump"></a>Bug 检查 0x1C4：驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP
 
 
 该驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP bug 检查的值为 0x000001C4。 这表示检测到尝试破坏系统的设备驱动程序。 这是因为正在可疑 （由管理员） 和内核已启用此驱动程序的大量检查驱动程序已在注册表中指定。 有关详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="driververifierdetectedviolationlivedump-parameters"></a>驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP 参数

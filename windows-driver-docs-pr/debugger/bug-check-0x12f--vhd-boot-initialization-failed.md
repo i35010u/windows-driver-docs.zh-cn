@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b417fb9910eb53b49458d24deec310af3557d802
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: c246608a047249419203a3e7275f2dbba41c4895
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348652"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238387"
 ---
 # <a name="bug-check-0x12f-vhdbootinitializationfailed"></a>Bug 检查 0x12F：VHD\_引导\_初始化\_失败
 
 
 VHD\_引导\_初始化\_失败错误检查的值为 0x0000012F。 这表示初始化失败尝试从 VHD 启动时出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="vhdbootinitializationfailed-parameters"></a>VHD\_引导\_初始化\_失败参数
 

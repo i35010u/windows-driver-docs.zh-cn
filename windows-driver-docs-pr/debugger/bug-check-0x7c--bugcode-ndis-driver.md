@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b0d9046aa564a00f6b33ff4b27abf1a23c6a52
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: bc18ba456481541387fad7d89252866eae24cd5a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463943"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239854"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>Bug 检查 0x7C：BUGCODE\_NDIS\_驱动程序
 
 
 BUGCODE\_NDIS\_驱动程序 bug 检查的值为 0x0000007C。 此 bug 检查表示操作系统检测到的网络驱动程序错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bugcodendisdriver-parameters"></a>BUGCODE\_NDIS\_驱动程序参数
 

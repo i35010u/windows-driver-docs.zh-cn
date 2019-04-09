@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4905e034c7c74d03270198c0a5978e300f91aa12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 893035d0996e242808cceda57c62d813257c375a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239570"
 ---
-# <a name="bug-check-0xcd-pagefaultbeyondendofallocation"></a>Bug 检查 0xcd 填充：页\_容错\_超出\_最终\_OF\_分配
+# <a name="bug-check-0xcd-pagefaultbeyondendofallocation"></a>Bug 检查 0xCD：页\_容错\_超出\_最终\_OF\_分配
 
 
 页面\_容错\_超出\_最终\_OF\_分配错误检查的值为 0x000000CD。 这表示系统访问超出末尾的某些驱动程序的池分配的内存。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="pagefaultbeyondendofallocation-parameters"></a>页\_容错\_超出\_最终\_OF\_分配参数
 

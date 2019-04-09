@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e1642b5a7b200f744f4a917cc795823b4a4fdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 840ddb0eaf20194407cd8e5613932b76f329d773
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567333"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239358"
 ---
 # <a name="bug-check-0x40-targetmdltoosmall"></a>Bug 检查 0x40：目标\_MDL\_过\_小
 
 
 目标\_MDL\_过\_小 bug 检查的值为 0x00000040。 这表示具有不正确使用驱动程序**IoBuildPartialMdl**。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="targetmdltoosmall-parameters"></a>目标\_MDL\_过\_小参数
 

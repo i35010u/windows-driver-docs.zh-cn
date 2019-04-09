@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 91fbf611e5250fc51f1c429f7a185858d0260253
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.openlocfilehash: cf9157bb026289226aa5e1ab54bb47825bc79ee7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239622"
 ---
 # <a name="developer-content-bug-check-0xef-criticalprocessdied"></a>（开发人员内容）Bug 检查 0xEF:关键\_进程\_DIED
 
@@ -29,7 +29,9 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 开发人员还可以创建一个服务和一组其恢复选项以重新启动计算机的详细信息，请参阅[设置到需要位置时服务出现故障的恢复操作](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753662(v=ws.11))。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="criticalprocessdied-parameters"></a>关键\_进程\_DIED 参数
 
@@ -92,7 +94,7 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 
 
 
-**常规疑难解答提示**
+**常规疑难解答技巧**
 
 如果您不能使用调试器，这些常规故障排除提示可能会有帮助。
 
@@ -123,9 +125,9 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

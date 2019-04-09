@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e268f7ad5864247ffc4b6e86fde72d5f6d72e6c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 486346b70f0a4dfb0115443d979151f7897830ee
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520435"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239740"
 ---
-# <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>Bug 检查 0x150:TCPIP\_AOAC\_NIC\_ACTIVE\_REFERENCE\_LEAK
+# <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>Bug 检查 0x150：TCPIP\_AOAC\_NIC\_ACTIVE\_REFERENCE\_LEAK
 
 
 TCPIP\_AOAC\_NIC\_ACTIVE\_引用\_泄漏 bug 检查的值为 0x00000150。 这指示 NIC active 引用应具有已释放时完全耗尽发送队列。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="tcpipaoacnicactivereferenceleak-parameters"></a>TCPIP\_AOAC\_NIC\_ACTIVE\_引用\_泄漏参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b25f8fee2e58fc0cb6d23c95f8bd514c5c19cbff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d6d0a0bffdc0d067be7bf742c727e159be8ab30a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519781"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239172"
 ---
-# <a name="bug-check-0x124-wheauncorrectableerror"></a>Bug 检查 0x124:WHEA\_无法纠正\_错误
+# <a name="bug-check-0x124-wheauncorrectableerror"></a>Bug 检查 0x124：WHEA\_无法纠正\_错误
 
 
 WHEA\_无法纠正\_错误 bug 检查的值为 0x00000124。 此 bug 检查指示发生致命硬件错误。 此 bug 检查使用提供的 Windows 硬件错误体系结构 (WHEA) 的错误数据。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="wheauncorrectableerror-parameters"></a>WHEA\_无法纠正\_错误参数
 
@@ -148,7 +150,7 @@ WHEA\_无法纠正\_错误 bug 检查的值为 0x00000124。 此 bug 检查指�
 <a name="remarks"></a>备注
 -------
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 参数 1 标识报告了错误的错误源的类型。 参数 2 保留的地址 WHEA\_错误\_描述错误条件的记录结构。
 
@@ -158,9 +160,9 @@ WHEA\_无法纠正\_错误 bug 检查的值为 0x00000124。 此 bug 检查指�
 
 有关详细信息，请参阅以下主题：
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
 

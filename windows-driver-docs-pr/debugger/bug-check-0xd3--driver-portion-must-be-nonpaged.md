@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c24c6fddd20265f13efc4b9b051c80ea846352c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b1062a3418c4e1790a06c7255684df6b294af4fb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545628"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238898"
 ---
-# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>Bug 检查 0xD3:驱动程序\_部分\_必须\_BE\_未分页
+# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>Bug 检查 0xD3：驱动程序\_部分\_必须\_BE\_未分页
 
 
 该驱动程序\_部分\_必须\_BE\_非分页的错误检查的值为 0x000000D3。 这表示系统尝试访问在过程 IRQL 过高的可分页内存。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverportionmustbenonpaged-parameters"></a>驱动程序\_部分\_必须\_BE\_非分页的参数
 

@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b764f08edc97637767c3480c76247d06be68440a
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 12b415fac9f7eed0990710ed01d2ebe139d3fb1f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743496"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238605"
 ---
-# <a name="bug-check-0x169-clustercsvvolumearrivallivedump"></a>Bug 检查 0x169:群集\_CSV\_卷\_到达\_LIVEDUMP
+# <a name="bug-check-0x169-clustercsvvolumearrivallivedump"></a>Bug 检查 0x169：群集\_CSV\_卷\_到达\_LIVEDUMP
 
 群集\_CSV\_卷\_到达\_LIVEDUMP bug 检查的值为 0x00000169。 这表示群集共享卷管理器要求创建一个新的卷设备对象，并且卷仍未送达的时间。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="clustercsvvolumearrivallivedump-parameters"></a>群集\_CSV\_卷\_到达\_LIVEDUMP 参数

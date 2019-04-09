@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 40c82654cf44d8a3f637acd034bdda06970a93c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64388ae3a95bb6aa67b225545637290bbf023457
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239376"
 ---
-# <a name="bug-check-0x14b-socsubsystemfailure"></a>Bug 检查 0x14B:SOC\_子系统\_失败
+# <a name="bug-check-0x14b-socsubsystemfailure"></a>Bug 检查 0x14B：SOC\_子系统\_失败
 
 
 SOC\_子系统\_故障错误检查的值为 0x0000014B。 这表示芯片 (SoC) 子系统上的系统中遇到不可恢复的错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bug-check-0x14b-socsubsystemfailure-parameters"></a>Bug 检查 0x14B SOC\_子系统\_失败参数
 
@@ -66,7 +68,7 @@ SOC\_子系统\_故障错误检查的值为 0x0000014B。 这表示芯片 (SoC) 
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 ```dbgcmd
 2: kd> !analyze -v
@@ -104,7 +106,7 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 
 有关详细信息，请参阅以下主题：
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
 如果您不准备使用 Windows 调试器处理此问题，可以使用一些基本的故障排除方法。
 

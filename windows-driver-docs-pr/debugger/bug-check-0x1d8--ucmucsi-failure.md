@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d94bb37cec00f13f4bbe728d64b4df8fe7062cc9
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 81a4036f65d8fb92ec7ea565639aac2afe18d06a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743506"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238986"
 ---
-# <a name="bug-check-0x1d8-ucmucsifailure"></a>Bug 检查 0x1D8:UCMUCSI\_失败
+# <a name="bug-check-0x1d8-ucmucsifailure"></a>Bug 检查 0x1D8：UCMUCSI\_失败
 
 UCMUCSI\_故障错误检查的值为 0x000001D8。 它指示 UCSI 类扩展遇到了错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 ## <a name="ucmucsifailure-parameters"></a>UCMUCSI\_失败参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0c3df21759278e491a429ebd510941362b4ac4c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 63aaaa7de392e827ecda0a8e1c5d5d0598560bb5
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349412"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239062"
 ---
 # <a name="bug-check-0x10d-wdfviolation"></a>Bug 检查 0x10D：WDF\_冲突
 
 
 WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 基于 framework 的驱动程序中发现错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="wdfviolation-parameters"></a>WDF\_冲突参数
 
@@ -227,7 +229,7 @@ WDF\_冲突错误检查的值为 0x0000010D。 这表示内核模式驱动程序
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，可以是非常有帮助的收集的信息，如出错的代码模块。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在收集信息，例如出错的代码模块。
 
 通常情况下，WDF 转储文件会进一步产生导致此 bug 检查驱动程序的信息。 使用此命令可查看日志文件。
 

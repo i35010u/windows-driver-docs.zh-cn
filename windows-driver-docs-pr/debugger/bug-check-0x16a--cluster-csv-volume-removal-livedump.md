@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c824cb3b41b67a8cc35af9fa3092aafc1439cb
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: f39f8917244fc2ed35e1f60a6cb9d022689e5d60
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743513"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238502"
 ---
-# <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>Bug 检查 0x16A:群集\_CSV\_卷\_删除\_LIVEDUMP
+# <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>Bug 检查 0x16A：群集\_CSV\_卷\_删除\_LIVEDUMP
 
 群集\_CSV\_卷\_删除\_LIVEDUMP bug 检查的值为 0x0000016A。 这表示群集共享卷管理器卷删除请求已超时。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="clustercsvvolumeremovallivedump-parameters"></a>群集\_CSV\_卷\_删除\_LIVEDUMP 参数

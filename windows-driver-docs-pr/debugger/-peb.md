@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 47d757fcaabd9976ba3ba9c68607b05ef1ccd9a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1b8d30605c25ad6839ab818329ef470d1b9d27de
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576252"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238522"
 ---
 # <a name="peb"></a>!peb
 
@@ -60,7 +60,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关进程环境块的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这本书不可能在某些语言和国家/地区中可用。）
+有关进程环境块的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
 
 <a name="remarks"></a>备注
 -------

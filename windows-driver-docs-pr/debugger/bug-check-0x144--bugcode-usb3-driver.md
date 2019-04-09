@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a112fc1e2f55a8c2b051be97cfcec53e06e859
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: d0584931acec5a0ad9bcaa52f3a7d80197bbe821
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239450"
 ---
 # <a name="bug-check-0x144-bugcodeusb3driver"></a>Bug 检查 0x144：BUGCODE\_USB3\_DRIVER
 
 
 **BUGCODE\_USB3\_驱动程序**bug 检查的值为 0x00000144。 这是所使用的所有 USB 3 bug 检查代码。 参数 1 指定 USB 3 检查错误，类型和其他参数的含义都依赖于参数 1。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bugcodeusb3driver-parameters"></a>BUGCODE\_USB3\_驱动程序参数
 

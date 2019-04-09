@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd80ca748b3293b2b4202fdf36e081966d1d140
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 422218ac6fb5f1441997f01ecce1f81194a94e7b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761824"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238976"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7：应用商店\_数据\_结构\_损坏
 
 应用商店\_数据\_结构\_损坏错误检查的值为 0x000001C7。 它指示，存储组件在其数据结构中检测到损坏。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="storedatastructurecorruption-parameters"></a>应用商店\_数据\_结构\_损坏参数
@@ -85,4 +87,4 @@ Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部�
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows 内核模式内存管理器](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

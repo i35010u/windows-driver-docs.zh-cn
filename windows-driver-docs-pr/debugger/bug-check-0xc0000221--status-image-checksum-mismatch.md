@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7baae75919a0e07e1deabb99a743e6b6f089c793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 102497f4aa46f83c3658e4d4c99fd530ea2a61c4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564143"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238972"
 ---
 # <a name="bug-check-0xc0000221-statusimagechecksummismatch"></a>Bug 检查 0xC0000221：状态\_图像\_校验和\_不匹配
 
 
 状态\_图像\_校验和\_不匹配错误检查的值为 0xC0000221。 这表示一个驱动程序或系统 DLL 具有已损坏。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="statusimagechecksummismatch-parameters"></a>状态\_图像\_校验和\_不匹配参数
 

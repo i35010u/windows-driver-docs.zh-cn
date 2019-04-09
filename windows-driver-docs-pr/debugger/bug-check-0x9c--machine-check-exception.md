@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d567902adcc548e04d258e7feebf9f0a1b0bfb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: abc5ee90d151b5c37dbc9d4053a4e92c105ef162
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569005"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239738"
 ---
 # <a name="bug-check-0x9c-machinecheckexception"></a>Bug 检查 0x9C：机器\_检查\_异常
 
 
 在计算机\_检查\_异常错误检查的值为 0x0000009C。 此 bug 检查指示发生致命计算机检查异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="machinecheckexception-parameters"></a>机器\_检查\_异常参数
 

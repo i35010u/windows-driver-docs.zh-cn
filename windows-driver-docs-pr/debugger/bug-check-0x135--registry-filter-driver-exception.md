@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af398289213475aafea20cda58c526865f6b81ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d9989f43fa9311f9bb695335f587075de2f8076a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564270"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238384"
 ---
 # <a name="bug-check-0x135-registryfilterdriverexception"></a>Bug 检查 0x135：注册表\_筛选器\_驱动程序\_异常
 
 
 注册表\_筛选器\_驱动程序\_异常错误检查的值为 0x00000135。 此检测错误被因注册表筛选驱动程序中未经处理的异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="registryfilterdriverexception-parameters"></a>注册表\_筛选器\_驱动程序\_异常参数
 

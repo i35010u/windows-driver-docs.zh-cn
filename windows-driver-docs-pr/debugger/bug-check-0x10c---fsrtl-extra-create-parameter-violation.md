@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e39fefda4c181628d0c005ecb9aa46cc74cbb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0b8d9b15a8c370fa69d76bacb83428d5048aa234
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565707"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238528"
 ---
 # <a name="bug-check-0x10c-fsrtlextracreateparameterviolation"></a>Bug 检查 0x10C：FSRTL\_EXTRA\_CREATE\_PARAMETER\_VIOLATION
 
 
 FSRTL\_额外\_创建\_参数\_冲突错误检查的值为 0x0000010C。 这表示在文件系统运行时库 (FsRtl) 额外创建参数 (ECP) 包中检测到冲突。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="fsrtlextracreateparameterviolation-parameters"></a>FSRTL\_额外\_创建\_参数\_冲突参数
 

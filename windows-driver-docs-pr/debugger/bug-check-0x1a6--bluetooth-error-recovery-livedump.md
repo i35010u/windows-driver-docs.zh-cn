@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 119dd2b26349b845e696fcfb848053032395022f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: d3d04aa3f3d52f6197d214b8cc5e341159f06bbf
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239586"
 ---
-# <a name="bug-check-0x1a6-bluetootherrorrecoverylivedump"></a>Bug 检查 0x1A6:蓝牙\_错误\_恢复\_LIVEDUMP
+# <a name="bug-check-0x1a6-bluetootherrorrecoverylivedump"></a>Bug 检查 0x1A6：蓝牙\_错误\_恢复\_LIVEDUMP
 
 蓝牙\_错误\_恢复\_LIVEDUMP bug 检查的值为 0x000001A6。 它指示 Bluetooth 无线电驱动程序 (bthport.sys) 已启动错误恢复以尝试恢复和重置无法挽回的内部情况从单选。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="bluetootherrorrecoverylivedump-parameters"></a>蓝牙\_错误\_恢复\_LIVEDUMP 参数

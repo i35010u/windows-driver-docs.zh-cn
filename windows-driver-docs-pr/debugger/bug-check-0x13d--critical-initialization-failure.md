@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a3dd92bd66d4885824b17eed7e541cf22c690bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8e507d4553f3a8a6bc78d71a056ac24ec24b3a10
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545906"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238918"
 ---
-# <a name="bug-check-0x13d-criticalinitializationfailure"></a>Bug 检查 0x13D:关键\_初始化\_失败
+# <a name="bug-check-0x13d-criticalinitializationfailure"></a>Bug 检查 0x13D：关键\_初始化\_失败
 
 
 严重\_初始化\_故障错误检查的值为 0x0000013D。 这表示该早期内核初始化失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="criticalinitializationfailure-parameters"></a>关键\_初始化\_失败参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 07742bae7c7407991d2ea2cc3ea8863cd16f3c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f81d0527f891851e6ecb0530e09515c7d860809b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544319"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239726"
 ---
-# <a name="bug-check-0x11c-attemptedwritetocmprotectedstorage"></a>Bug 检查 0x11C:尝试\_编写\_TO\_CM\_受保护\_存储
+# <a name="bug-check-0x11c-attemptedwritetocmprotectedstorage"></a>Bug 检查 0x11C：尝试\_编写\_TO\_CM\_受保护\_存储
 
 
 已尝试\_编写\_TO\_CM\_受保护\_存储 bug 检查的值为 0x0000011C。 检查此错误表示尝试写入只读的受保护存储的配置管理器。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="attemptedwritetocmprotectedstorage-parameters"></a>尝试\_编写\_TO\_CM\_受保护\_存储参数
 

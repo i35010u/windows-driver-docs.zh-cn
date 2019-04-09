@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce78991147e60931b3d38c0dcc55b6b0e9e9e15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3ec9a9cc82d30c73828ea7c89b185846eac2914b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541660"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239202"
 ---
 # <a name="bug-check-bug-check-0x17b-profilerconfigurationillegal"></a>Bug 检查 Bug 检查 0x17B:探查器\_配置\_非法 
 
 
 PROFILER_CONFIGURATION_ILLEGAL bug 检查具有 0x0000017B 值。 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="profilerconfigurationillegal-parameters"></a>探查器\_配置\_非法参数
 

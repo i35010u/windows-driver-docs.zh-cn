@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f9ba7484fdece53d6d01b6ab78e7f826a4c34c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df35d0351959dec63f4eb368ebae52a290ec0453
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239256"
 ---
-# <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>Bug 检查 0x162:内核\_自动\_BOOST\_无效\_锁\_版本
+# <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>Bug 检查 0x162：内核\_自动\_BOOST\_无效\_锁\_版本
 
 
 内核\_自动\_BOOST\_无效\_锁\_发布 bug 检查的值为 0x00000162。 这指示跟踪的 AutoBoost 的锁已释放未拥有的锁的线程。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelautoboostinvalidlockrelease-parameters"></a>内核\_自动\_BOOST\_无效\_锁\_发布参数
 

@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cefaa99841c08b8093f66b735750d291c4d5a91b
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 4beaf0a9caf92ce20943d837841f60b1a5873068
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761830"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239144"
 ---
 # <a name="bug-check-0x1a0-ttmwatchdogtimeout"></a>Bug 检查 0x1A0：TTM\_监视器\_超时
 
 TTM\_监视器\_超时错误检查的值为 0x000001A0。 这表示终端拓扑管理器检测到，已配置的超时的一些设备特定操作未完成。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="ttmwatchdogtimeout-parameters"></a>TTM\_监视器\_超时参数

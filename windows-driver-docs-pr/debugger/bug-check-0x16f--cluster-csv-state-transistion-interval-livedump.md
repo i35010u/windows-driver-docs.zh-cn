@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ee0915a8ba406b746f263238d2c16776e2558b
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 9ef29964b7e2bdf85c73514fffe650652194bb17
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761828"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239682"
 ---
 # <a name="bug-check-0x16f-clustercsvstatetransitionintervaltimeoutlivedump"></a>Bug 检查 0x16F：群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP
 
 群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP bug 检查的值为 0x0000016F。 这表示群集共享卷下一个状态转换请求仍未送达。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="clustercsvstatetransitionintervaltimeoutlivedump-parameters"></a>群集\_CSV\_状态\_过渡\_间隔\_超时\_LIVEDUMP 参数

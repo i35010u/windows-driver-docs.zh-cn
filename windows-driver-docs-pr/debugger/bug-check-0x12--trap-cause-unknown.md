@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d2e1392ed37c1454bde68a3f0ac3105cca56f44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 2262c46d340fc92e602618d00844eb03b43e01d4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239209"
 ---
 # <a name="bug-check-0x12-trapcauseunknown"></a>Bug 检查 0x12：陷阱\_原因\_未知
 
 
 陷阱\_原因\_未知的错误检查的值为 0x00000012。 这表示出现了未知的异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="trapcauseunknown-parameters"></a>陷阱\_原因\_未知的参数
 
@@ -45,7 +47,7 @@ ms.locfileid: "56565692"
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>TRAP_CAUSE_UNKNOWN 的类型</p>
-<p><B>VALUES</B></p>
+<p><B>值</B></p>
 <p>1-意外中断。 （参数 2 – 中断矢量）</p>
 <p>2-未知浮动点异常。 </p>
 <p>3-（请参阅处理器定义） 已启用且断言状态位。</p>
@@ -69,7 +71,7 @@ ms.locfileid: "56565692"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 若要开始，请检查堆栈跟踪使用[ **k、 kb、 kc、 kd、 kp、 kP，kv （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令。 您可以指定要检查堆栈上的所有处理器的处理器数。 
 

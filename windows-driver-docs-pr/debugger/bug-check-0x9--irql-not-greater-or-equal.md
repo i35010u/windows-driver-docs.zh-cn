@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5c8227819c35e3b671bb2fb5df7f5f6be6f6616
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fd774edc1112649047a8e722a9b867eb1ba85d12
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576784"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238591"
 ---
 # <a name="bug-check-0x9-irqlnotgreaterorequal"></a>Bug 检查 0x9：IRQL\_NOT\_GREATER\_OR\_EQUAL
 
@@ -27,7 +27,9 @@ IRQL\_不\_GREATER\_或\_相等 bug 检查的值为 0x00000009。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7402b6e1d6bab19d0a245ff095f3d6f171712f
-ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
+ms.openlocfilehash: 34ff79b43b260aea6e1e758b84d5e511c47707f0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58505147"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239030"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>（开发人员内容）Bug 检查 0x9F:驱动程序\_电源\_状态\_失败
 
 
 DRIVER_POWER_STATE_FAILURE bug 检查具有 0x0000009F 值。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverpowerstatefailure-parameters"></a>驱动程序\_电源\_状态\_失败参数
 
@@ -88,10 +90,14 @@ DRIVER_POWER_STATE_FAILURE bug 检查具有 0x0000009F 值。 此 bug 检查指�
 </table>
 
 
-<a name="cause"></a>原因
+## <a name="cause"></a>原因
 -----
 
 可能的原因的说明，请参阅每个代码的 Parameters 节中的说明。
+
+## <a name="resolution"></a>分辨率
+----------
+
 
 **调试 bug 检查当参数 1 等于 0x3 0x9F**
 
@@ -291,12 +297,15 @@ Nt ！会审\_9F\_即插即用结构提供了其他错误检查信息，可帮�
 
 -   请参阅上文所述参数 0x3 下的其他技术。
 
-## <a name="resolution"></a>分辨率
+**时间的差旅跟踪**
+
+如果可以按要求重现 bug 检查，调查花些时间旅行跟踪使用 WinDbg 预览的可能性。 有关详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
+
+
+## <a name="remarks"></a>备注
 ----------
 
 如果您未配备调试此问题，使用上面所述的技术，可以使用一些基本的故障排除方法。
-
-- 如果你最近添加到系统中，请尝试删除或替换它的硬件。 或者，请与制造商联系，以了解是否有任何修补程序。
 
 - 如果最近，添加新设备驱动程序或系统服务尝试删除或更新它们。 尝试确定导致新的错误检查代码才会显示在系统中更改的内容。
 
@@ -306,6 +315,8 @@ Nt ！会审\_9F\_即插即用结构提供了其他错误检查信息，可帮�
 
 - 若要尝试并找出原因，暂时禁用节能使用控制面板中，电源选项。 某些驱动程序问题与系统休眠和挂起和恢复的能力的各种状态相关。
 
+- 如果你最近添加到系统中，请尝试删除或替换它的硬件。 或者，请与制造商联系，以了解是否有任何修补程序。
+
 - 您可以尝试运行硬件诊断程序提供的系统制造商。
 
-- 请与制造商联系，以查看更新的系统 BIOS 或固件是否可用。
+- 请与制造商联系，以查看更新的系统 BIOS ACPI/或其他固件是否可用。

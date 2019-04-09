@@ -14,19 +14,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 33cde2e3f298313c96183ad19dbf43c8a7ee4cfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547409"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239578"
 ---
-# <a name="bug-check-0x116-videotdrfailure"></a>Bug 检查 0x116:视频\_TDR\_失败
+# <a name="bug-check-0x116-videotdrfailure"></a>Bug 检查 0x116：视频\_TDR\_失败
 
 
 视频\_TDR\_故障错误检查的值为 0x00000116。 这表示尝试重置显示器驱动程序，并从超时恢复失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videotdrfailure-parameters"></a>视频\_TDR\_失败参数
 
@@ -93,7 +95,7 @@ GPU 花费的时间超过允许向您的监视器显示图形的多。 此行为
     -   有缺陷的部件 （如内存模块、 母板等）。
 -   视觉效果或在后台运行的程序过多可能会拖慢您的 PC，以便根据需要视频卡无法响应。
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -199,7 +201,7 @@ fffff801`6470c14b cc              int     3
 
 有关详细信息，请参阅以下主题：
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
 如果您不准备使用 Windows 调试器处理此问题，可以使用一些基本的故障排除方法。
 

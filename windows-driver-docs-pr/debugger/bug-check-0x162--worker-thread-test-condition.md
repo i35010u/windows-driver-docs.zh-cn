@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 743565741272b2a4a3c925aa612adfe6b1e47bdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1ead6fd20802cab468a619286823e6f8a52c6c6a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534435"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238604"
 ---
-# <a name="bug-check-0x163-workerthreadtestcondition"></a>Bug 检查 0x163:辅助角色\_线程\_测试\_条件
+# <a name="bug-check-0x163-workerthreadtestcondition"></a>Bug 检查 0x163：辅助角色\_线程\_测试\_条件
 
 
 辅助角色\_线程\_测试\_条件 bug 检查的值为 0x00000163。 这指示对于内核工作线程测试引发失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="workerthreadtestcondition-parameters"></a>辅助角色\_线程\_测试\_条件参数
 

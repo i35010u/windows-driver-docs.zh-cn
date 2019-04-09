@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd87dad01b658e5b3559064762dc0addbccd5c8
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 24eef8b8fec9836751aee69f6ea0b9b955837ead
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761822"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238277"
 ---
 # <a name="bug-check-0x1d9-haliommuinternalerror"></a>Bug 检查 0x1D9：HAL\_IOMMU\_INTERNAL\_ERROR
 
 HAL\_IOMMU\_内部\_错误 bug 检查的值为 0x000001D9。 它指示 HAL IOMMU 库中检测到内部错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 ## <a name="haliommuinternalerror-parameters"></a>HAL\_IOMMU\_内部\_错误参数
 

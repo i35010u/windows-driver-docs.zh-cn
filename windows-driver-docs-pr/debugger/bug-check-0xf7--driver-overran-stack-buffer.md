@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 91229266d64c82e2f860a21a1e1e782bb7d448b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 62e2a1e2a83b5cd034e822cbcebcf0399cb66579
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526725"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239046"
 ---
-# <a name="bug-check-0xf7-driveroverranstackbuffer"></a>Bug 检查 0xF7:驱动程序\_OVERRAN\_堆栈\_缓冲区
+# <a name="bug-check-0xf7-driveroverranstackbuffer"></a>Bug 检查 0xF7：驱动程序\_OVERRAN\_堆栈\_缓冲区
 
 
 该驱动程序\_OVERRAN\_堆栈\_缓冲区 bug 检查的值为 0x000000F7。 这表示一个驱动程序具有溢出基于堆栈的缓冲区。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driveroverranstackbuffer-parameters"></a>驱动程序\_OVERRAN\_堆栈\_缓冲区参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe30fd94ac11480f6912fd0d91c6c3f3a704494
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 0d40d44466e9f0a357476a945e09bacfaed20840
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349784"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239060"
 ---
 # <a name="bug-check-0x197-win32ksecurityfailure"></a>Bug 检查 0x197：WIN32K\_安全\_失败
 
 
 WIN32K\_安全\_故障错误检查的值为 0x00000197。 这表示 win32k 中检测到此安全故障。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="win32ksecurityfailure-parameters"></a>WIN32K\_安全\_失败参数
 

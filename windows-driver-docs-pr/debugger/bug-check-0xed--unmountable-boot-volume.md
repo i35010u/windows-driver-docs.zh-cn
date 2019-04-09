@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1521285eeaf2b039e4a2be1a61bab474c859cd76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9dc3195969d7ce4895d3f12559fa4ffedabd18eb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566012"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239122"
 ---
 # <a name="bug-check-0xed-unmountablebootvolume"></a>Bug 检查 0xED：之后\_启动\_卷
 
 
 UNMOUNTABLE\_启动\_卷 bug 检查的值为遇到 0x000000ED。 这表明 I/O 子系统试图装入引导卷和它失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="unmountablebootvolume-parameters"></a>之后\_启动\_卷参数
 

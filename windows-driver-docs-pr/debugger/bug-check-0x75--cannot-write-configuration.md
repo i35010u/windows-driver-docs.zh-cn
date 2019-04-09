@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b251fb46dadb02cbe485ca8fd59960aade34433c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1f7c51ccf7f02182041c4fac9ad0b3b600978c42
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523061"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239750"
 ---
-# <a name="bug-check-0x75-cannotwriteconfiguration"></a>Bug 检查 0x75:不能\_编写\_配置
+# <a name="bug-check-0x75-cannotwriteconfiguration"></a>Bug 检查 0x75：不能\_编写\_配置
 
 
 无法\_编写\_配置 bug 检查的值为 0x00000075。 此 bug 检查指示系统注册表配置单元文件不能转换为映射文件。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="cannotwriteconfiguration-parameters"></a>不能\_编写\_配置参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3b1446f96bcc99febbf39ef2b06c26ade1a715
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ad6025bae6cdfe1a4a0348557d8ce08672b7b3d6
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555215"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239474"
 ---
-# <a name="bug-check-0xff-reservequeueoverflow"></a>Bug 检查 0xFF:RESERVE\_QUEUE\_OVERFLOW
+# <a name="bug-check-0xff-reservequeueoverflow"></a>Bug 检查 0xFF：RESERVE\_QUEUE\_OVERFLOW
 
 
 预留\_队列\_溢出错误检查的值为 0x000000FF。 这表示尝试保留队列，从而导致溢出的队列中插入新项。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="reservequeueoverflow-parameters"></a>预留\_队列\_溢出参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea2b4ff9450cbbecc2fbb32b86df6d3354155673
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: ecbb2142c27d4787c2f25d1cc634439ffe745851
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350362"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238770"
 ---
 # <a name="bug-check-0x20-kernelapcpendingduringexit"></a>Bug 检查 0x20：内核\_APC\_PENDING\_在\_退出
 
 
 内核\_APC\_PENDING\_在\_退出 bug 检查的值为 0x00000020。 这表明异步过程调用 (APC) 仍是挂起的线程在退出时。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelapcpendingduringexit-parameters"></a>内核\_APC\_PENDING\_在\_退出参数
 
@@ -80,7 +82,7 @@ APC 禁用计数每的次递增一个驱动程序调用**KeLeaveCriticalRegion**
 
 
 ## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
  
 
  

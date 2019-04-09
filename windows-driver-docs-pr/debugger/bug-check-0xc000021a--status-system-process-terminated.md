@@ -5,7 +5,7 @@ ms.assetid: d46e2948-ff18-49e0-a738-7b90ab54d333
 keywords:
 - Bug 检查 0xC000021A STATUS_SYSTEM_PROCESS_TERMINATED
 - STATUS_SYSTEM_PROCESS_TERMINATED
-ms.date: 05/23/2017
+ms.date: 03/15/2019
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d3aab36b1e048949db804d5ae807f18bbd414e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b19f8db5152c9fdb7a8265216ce8148c7e73330d
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521226"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239170"
 ---
-# <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>Bug 检查 0xC000021A:状态\_系统\_进程\_已终止
+# <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>Bug 检查 0xC000021A：状态\_系统\_进程\_已终止
 
 
 状态\_系统\_进程\_TERMINATED bug 检查的值为 0xC000021A。 这意味着，出现错误的用户模式的关键子系统中。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="statussystemprocessterminated-parameters"></a>状态\_系统\_进程\_TERMINATED 参数
 
@@ -73,7 +75,7 @@ ms.locfileid: "56521226"
 <a name="resolution"></a>分辨率
 ----------
 
-因为实际错误发生在用户模式进程中，运行内核调试程序不在此情况下很有用。
+运行内核调试程序可能无法在此情况下有用因为实际错误发生在用户模式进程中。
 
 **解决用户模式设备驱动程序、 系统服务或第三方应用程序中的错误：** 因为用户模式进程中发生 bug 检查 0xC000021A，最常见的原因是第三方应用程序。 如果错误发生在新的或更新设备驱动程序、 系统服务或第三方应用程序的安装后，新的软件应该删除或禁用，以找出原因。 有关可能的更新的软件制造商联系。
 
@@ -84,6 +86,9 @@ ms.locfileid: "56521226"
 -   查看最新安装的应用程序。 若要执行此操作导航到"卸载或更改程序"控制面板和排序中安装的应用程序的安装日期。
 
 -   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+
+<a name="remarks"></a>备注
+----------
 
 这些步骤可能有助于解决此问题。
 

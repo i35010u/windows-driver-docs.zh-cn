@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cce623e1949e7ca30d2f727d5f22c6ddd108e552
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ba35c541a9fe91a3dbad463b6256f266787e8d80
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239038"
 ---
 # <a name="bug-check-0x160-win32katomiccheckfailure"></a>Bug 检查 0x160：WIN32K\_原子\_检查\_失败
 
 
 WIN32K\_原子\_检查\_故障错误检查的值为 0x00000160。 这表示 Win32k 函数已违反 ATOMICCHECK。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="win32katomiccheckfailure-parameters"></a>WIN32K\_原子\_检查\_失败参数
 

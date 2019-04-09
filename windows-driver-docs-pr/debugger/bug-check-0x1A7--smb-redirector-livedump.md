@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0654caec76f79f2cbc56e1d65338f8b62fed1649
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: 9a8cff66082327b239de1d1159b405dfc4281deb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761844"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239400"
 ---
 # <a name="bug-check-0x1a7-smbredirectorlivedump"></a>Bug 检查 0x1A7：SMB\_重定向程序\_LIVEDUMP
 
 SMB\_重定向程序\_LIVEDUMP bug 检查的值为 0x000001A7。 它指示 SMB 重定向程序已检测到问题和已捕获核心转储收集调试信息。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="smbredirectorlivedump-parameters"></a>SMB\_重定向程序\_LIVEDUMP 参数

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0e6ab0034db9e7e5e302f1f5591c105ddc37de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8c427a1dbf5464acda59cfe3b93d7f666f46f197
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532957"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238626"
 ---
-# <a name="bug-check-0x158-illegaliommupagefault"></a>Bug 检查 0x158:非法\_IOMMU\_页\_容错
+# <a name="bug-check-0x158-illegaliommupagefault"></a>Bug 检查 0x158：非法\_IOMMU\_页\_容错
 
 
 非法\_IOMMU\_页\_故障错误检查的值为 0x00000158。 这表示 IOMMU 已为无效 ASID 传递页错误数据包。 这并不安全，因为 ASID 可能被重用。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="illegaliommupagefault-parameters"></a>非法\_IOMMU\_页\_错误参数
 

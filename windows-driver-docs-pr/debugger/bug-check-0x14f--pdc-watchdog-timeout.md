@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 941462301b38d26d462e5d51d320316cd50bee22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e32ac1bc7aae87850af0128e90bc025d8163ac12
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546517"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239266"
 ---
-# <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>Bug 检查 0x14F:PDC\_监视器\_超时
+# <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>Bug 检查 0x14F：PDC\_监视器\_超时
 
 
 PDC\_监视器\_超时错误检查的值为 0x0000014F。 这表示无法阻止退出系统分配的时间内响应的系统组件连接待机。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="pdcwatchdogtimeout-parameters"></a>PDC\_监视器\_超时参数
 
@@ -76,7 +78,7 @@ PDC\_监视器\_超时错误检查的值为 0x0000014F。 这表示无法阻止�
 
 ## <a name="resolution"></a>分辨率
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
  
 
  

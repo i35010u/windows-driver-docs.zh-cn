@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a51f1d883995da59f501da9f4221da1778f918f
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e37240bf8b0339b69aad892f395b007fa0a3ef58
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743471"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238596"
 ---
-# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6:快速\_ERESOURCE\_不满足前提条件\_冲突
+# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6：快速\_ERESOURCE\_不满足前提条件\_冲突
 
 快速\_ERESOURCE\_不满足前提条件\_冲突错误检查的值为 0x000001C6。 它指示当前线程正在执行对快速资源例程的无效调用。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="fasteresourcepreconditionviolation-parameters"></a>快速\_ERESOURCE\_不满足前提条件\_冲突参数

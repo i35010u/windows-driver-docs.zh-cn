@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db13c60eade91656b43a15d628693533c74a344f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d10c770bcfc8be686a6a6898b0f778b0ceb83e19
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533232"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238738"
 ---
-# <a name="bug-check-0xd7-driverunmappinginvalidview"></a>Bug 检查 0xD7:驱动程序\_UNMAPPING\_无效\_视图
+# <a name="bug-check-0xd7-driverunmappinginvalidview"></a>Bug 检查 0xD7：驱动程序\_UNMAPPING\_无效\_视图
 
 
 该驱动程序\_UNMAPPING\_无效\_视图 bug 检查的值为 0x000000D7。 这指示一个驱动程序正在尝试取消未映射的地址的映射。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverunmappinginvalidview-parameters"></a>驱动程序\_UNMAPPING\_无效\_视图参数
 

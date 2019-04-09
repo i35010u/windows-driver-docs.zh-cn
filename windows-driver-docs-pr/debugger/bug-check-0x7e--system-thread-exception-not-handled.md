@@ -5,7 +5,7 @@ ms.assetid: 2ecea74f-21d6-4436-beed-d8cf8ef6b169
 keywords:
 - Bug Check 0x7E SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
 - SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
-ms.date: 05/23/2017
+ms.date: 03/15/2019
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccfca5fb8d8a3c138fb4fdc2518119225fad643c
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: ae805605e03e4ac29c6784949351a9bb4de679f3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743442"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239471"
 ---
 # <a name="bug-check-0x7e-systemthreadexceptionnothandled"></a>Bug 检查 0x7E：系统\_线程\_异常\_不\_已处理
 
 
 系统\_线程\_异常\_不\_已处理错误检查的值为 0x0000007E。 此 bug 检查指示系统线程生成的错误处理程序未捕获异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="systemthreadexceptionnothandled-parameters"></a>系统\_线程\_异常\_不\_HANDLED 参数
 
@@ -66,7 +68,7 @@ ms.locfileid: "56743442"
 <a name="cause"></a>原因
 -----
 
-系统\_线程\_异常\_不\_HANDLED bug 检查是常见 bug 检查。 若要解释它，必须标识生成的异常。
+系统\_线程\_异常\_不\_HANDLED bug 检查指示系统线程生成的错误处理程序未捕获异常。 若要解释它，必须标识生成的异常。
 
 常见的异常代码如下所示：
 
@@ -81,39 +83,50 @@ ms.locfileid: "56743442"
 <a name="resolution"></a>分辨率
 ----------
 
+如果您计划调试此问题，应确定参数 2 （异常地址），驱动程序或导致此问题的函数。
+
+如果驱动程序列出的 bug 检查消息中的名称，请禁用或删除该驱动程序。 如果此问题缩小到单个驱动程序，设置断点和单单步在代码中工作，以定位故障，并深入了解导致故障事件。
+
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
+
+可以执行其他分析使用[ **！ 线程**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)扩展，并将[ **dds，dps，dqs** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)命令。 WinDbg 报告时，这可能是合理的方法"可能造成的： ntkrnlmp.exe" 
+
+如果出现异常代码 0x80000003，硬编码断点或断言已命中，但在系统启动时采用了 **/NODEBUG**切换。 不应经常出现此问题。 如果重复发生，请确保将内核调试程序连接并启动系统，并且使用 **/debug**切换。
+
+如果发生异常的代码数 0x80000002，陷阱框架提供的其他信息。
+
+
+有关详细信息，请参阅以下主题：
+
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+
+[使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
+
+
+**时间的差旅跟踪**
+
+如果可以按要求重现 bug 检查，调查花些时间旅行跟踪使用 WinDbg 预览的可能性。 有关详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
+
+
+<a name="remarks"></a>备注
+----------
+
 如果您不准备使用 Windows 调试器处理此问题，则应使用一些基本的故障排除方法。
 
 -   有关其他错误消息可能有助于识别设备或驱动程序导致 bug 检查 0x7E 检查事件查看器中的系统日志。
 
 -   如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
 
--   咨询任何 BIOS 更新的硬件供应商。 硬件问题，例如 BIOS 不兼容性、 内存冲突和 IRQ 冲突还可以生成此错误。
+-   请咨询硬件供应商任何 ACPI 或其他固件更新。 硬件问题，例如系统的不兼容性、 内存冲突和 IRQ 冲突还可以生成此错误。
 
--   此外可以禁用内存缓存/隐藏 BIOS 可能以尝试解决该错误。 您还应运行硬件诊断程序，系统制造商提供。
+-   此外可以禁用内存缓存/隐藏的 BIOS 来尝试解决该错误。 您还应运行硬件诊断程序，系统制造商提供。
 
 -   确认已安装任何新硬件与安装的 Windows 版本兼容。 例如，可以获取有关在所需的硬件信息[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)。
 
 -   有关其他的常规疑难解答信息，请参阅[**蓝色屏幕数据**](blue-screen-data.md)。
 
-**如果你打算调试此问题，** 参数 2 （异常地址） 应识别的驱动程序或导致此问题的函数。
-
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。 可以执行其他分析使用[ **！ 线程**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)扩展，并将[ **dds，dps，dqs** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)命令： 这尤其适用当 WinDbg 报告"可能造成的： ntkrnlmp.exe"之后的内存转储文件的第一个快速分析和查看生成的执行的输出后[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展与"**-v**"参数。
-
-如果出现异常代码 0x80000003，硬编码断点或断言已命中，但在系统启动时采用了 **/NODEBUG**切换。 不应经常出现此问题。 如果重复发生，请确保将内核调试程序连接并启动系统，并且使用 **/debug**切换。
-
-如果发生异常的代码数 0x80000002，陷阱框架提供的其他信息。
-
-如果驱动程序列出的 bug 检查消息中的名称，请禁用或删除该驱动程序。 如果此问题缩小到单个驱动程序，设置断点和单单步在代码中工作，以定位故障，并深入了解导致故障事件。
-
-有关详细信息，请参阅以下主题：
-
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
-
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
-
-[使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
-
- 
 
  
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c6a1f059f87ec4f4c64993ff2831b38d71f0b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5e12eb86820eb4ffedd60e1991882500d323c9f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238810"
 ---
 # <a name="apicerr"></a>!apicerr
 
@@ -66,7 +66,7 @@ ms.locfileid: "56564954"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-Apic 有关的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这本书不可能在某些语言和国家/地区中可用。）
+Apic 有关的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
 
  
 

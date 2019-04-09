@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bed81b6dc3cb701843d63b46dd8347b05465b145
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: f8925b77941182c7425df4fec986e6d43bc13d83
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743470"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239532"
 ---
-# <a name="bug-check-0x173-coremsgcallinternalerror"></a>Bug 检查 0x173:COREMSGCALL\_内部\_错误
+# <a name="bug-check-0x173-coremsgcallinternalerror"></a>Bug 检查 0x173：COREMSGCALL\_内部\_错误
 
 PFN\_共享\_计数错误检查的值为 0x00000173。 这表示 CoreMessageCall 检测到无法恢复的错误。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 ## <a name="coremsgcallinternalerror-parameters"></a>COREMSGCALL\_内部\_错误参数

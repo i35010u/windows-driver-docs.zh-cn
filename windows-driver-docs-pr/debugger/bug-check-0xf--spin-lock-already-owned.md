@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc6257a7dababdb0c52f720dea6abb6aab70c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af2c767441d8ed49a0bafc2551f37ca8292c8a1b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239434"
 ---
-# <a name="bug-check-0xf-spinlockalreadyowned"></a>Bug 检查 0xF:旋转\_锁\_ALREADY\_拥有的
+# <a name="bug-check-0xf-spinlockalreadyowned"></a>Bug 检查 0xF：旋转\_锁\_ALREADY\_拥有的
 
 
 数值调节钮\_锁\_ALREADY\_拥有的 bug 检查的值为 0x0000000F。 这表示旋转锁的请求已启动的已拥有自旋锁时。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="spinlockalreadyowned-parameters"></a>旋转\_锁\_ALREADY\_拥有的参数
 

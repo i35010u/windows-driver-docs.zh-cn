@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6855dd27df3caffa905281b7e732dcd5b2540469
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3d8de83a1055a9af0c0e6a8cc0efc810951365fc
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542640"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239478"
 ---
 # <a name="findthreads"></a>!findthreads
 
@@ -63,7 +63,7 @@ ms.locfileid: "56542640"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 10 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 10 和更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -73,7 +73,7 @@ ms.locfileid: "56542640"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关内核模式中的线程的信息，请参阅[更改上下文](changing-contexts.md)。 有关分析进程和线程的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 （这本书不可能在某些语言和国家/地区中可用。）
+有关内核模式中的线程的信息，请参阅[更改上下文](changing-contexts.md)。 有关分析进程和线程的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
 
 <a name="remarks"></a>备注
 -------

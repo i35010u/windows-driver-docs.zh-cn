@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef5a8421891f4444efe3be6ebe37867121981ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f780d210c5d337f02cf017c9e7c68a3d854c82fb
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547513"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239352"
 ---
 # <a name="bug-check-0x133-dpcwatchdogviolation"></a>Bug 检查 0x133 DPC\_监视器\_冲突
 
 
 DPC\_监视器\_冲突错误检查的值为 0x00000133。 此 bug 检查指示 DPC 监视程序执行，因为它检测到的单个运行时间较长延迟的过程调用 (DPC) 或系统在中断请求级别 (IRQL) 花费很长时间的时间的调度\_级别或更高版本。 参数 1 的值指示单个 DPC 是否超出了超时或系统是否累积所用的 IRQL 调度时间长\_级别或更高版本。 Dpc 不应运行时间超过 100 微秒和 Isr 不应运行时间超过 25 微秒为单位，但是将实际超时值在系统上设置高得多。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="dpcwatchdogviolation-parameters"></a>DPC\_监视器\_冲突参数
 
@@ -72,7 +74,7 @@ DPC\_监视器\_冲突错误检查的值为 0x00000133。 此 bug 检查指示 D
 <a name="cause"></a>原因
 -----
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 **参数 1 = 0**
 
@@ -126,9 +128,9 @@ dt nt!_KPRCB fffff80309974180 Dpc*
 
 有关详细信息，请参阅以下主题：
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
 

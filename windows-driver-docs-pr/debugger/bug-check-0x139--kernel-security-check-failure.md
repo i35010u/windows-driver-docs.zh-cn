@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd0cf7948966e7c8c5cf410361a6e42bdf2ab23
-ms.sourcegitcommit: 598259684cbfcf39b16dcc91bd8d341b43fb8876
+ms.openlocfilehash: a4ec4a3fcabe13dede1109d22ebffe4d1efcd801
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56582798"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239664"
 ---
 # <a name="bug-check-0x139-kernelsecuritycheckfailure"></a>Bug 检查 0x139：内核\_安全\_检查\_失败
 
 
 内核\_安全\_检查\_故障错误检查的值为 0x00000139。 检查此错误指示在内核检测到的关键数据结构损坏。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="bug-check-0x139-kernelsecuritycheckfailure-parameters"></a>Bug 检查 0x139 内核\_安全\_检查\_失败参数
 
@@ -120,9 +122,9 @@ ms.locfileid: "56582798"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

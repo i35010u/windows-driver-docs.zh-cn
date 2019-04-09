@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d850961d7b0707c94659ac36716e63958af794
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c9a69e456f00bbb393d477506c55b286847149ba
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547250"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238650"
 ---
-# <a name="bug-check-0xad-videodriverdebugreportrequest"></a>Bug 检查 0xAD:VIDEO\_DRIVER\_DEBUG\_REPORT\_REQUEST
+# <a name="bug-check-0xad-videodriverdebugreportrequest"></a>Bug 检查 0xAD：VIDEO\_DRIVER\_DEBUG\_REPORT\_REQUEST
 
 
 视频\_驱动程序\_调试\_报表\_请求错误检查的值为 0x000000AD。 此 bug 检查指示的视频端口在运行时创建视频驱动程序代表非致命性的小型转储。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videodriverdebugreportrequest-parameters"></a>视频\_驱动程序\_调试\_报表\_请求参数
 

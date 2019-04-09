@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 163ca91e915c5b80ad0dc40fcdb43b4d1dc6f739
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 329cbf608b047efc53ccf316e3d1af7a332c89a2
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543073"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238478"
 ---
-# <a name="ca"></a>！ ca
+# <a name="ca"></a>!ca
 
 
 **！ Ca**扩展显示控件区域有关的信息。
@@ -108,7 +108,7 @@ ms.locfileid: "56543073"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关控制方面的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 （这本书不可能在某些语言和国家/地区中可用。）
+有关控制方面的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
 
 <a name="remarks"></a>备注
 -------

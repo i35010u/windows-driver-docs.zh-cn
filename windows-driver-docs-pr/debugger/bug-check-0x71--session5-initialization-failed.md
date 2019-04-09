@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 806633460fd95d9638ebb8d3ddc6379af789b4a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3cab2d330d575fdc08a088c79bbe993ee013a315
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567289"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238736"
 ---
 # <a name="bug-check-0x71-session5initializationfailed"></a>Bug 检查 0x71：SESSION5\_初始化\_失败
 
 
 SESSION5\_初始化\_失败错误检查的值为 0x00000071。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="session5initializationfailed-parameters"></a>SESSION5\_初始化\_失败参数
 

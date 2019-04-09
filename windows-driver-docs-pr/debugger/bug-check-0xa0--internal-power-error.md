@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9fa7b8c565af865c0d51b1252d4c99dbafe57d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 043c2a2ab16f79247f451ecfe0340d2b8ac1bcc3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546075"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239852"
 ---
-# <a name="bug-check-0xa0-internalpowererror"></a>Bug 检查 0xA0:INTERNAL\_POWER\_ERROR
+# <a name="bug-check-0xa0-internalpowererror"></a>Bug 检查 0xA0：INTERNAL\_POWER\_ERROR
 
 
 内部\_电源\_错误 bug 检查的值为 0x000000A0。 此 bug 检查指示电源策略管理器遇到致命错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="internalpowererror-parameters"></a>内部\_电源\_错误参数
 

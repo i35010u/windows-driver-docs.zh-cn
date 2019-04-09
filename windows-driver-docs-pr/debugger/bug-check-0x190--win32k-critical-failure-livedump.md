@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e3e653fbc3b1ec7ba73081813d3888869e8fe7c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: fe6645bff32dc3ed4f02afbc2a725215b40ec19f
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464301"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238352"
 ---
 # <a name="bug-check-0x190-win32kcriticalfailurelivedump"></a>Bug 检查 0x190：WIN32K\_严重\_失败\_LIVEDUMP
 
 
 WIN32K\_严重\_失败\_LIVEDUMP bug 检查的值为 0x00000190。 这指示 Win32k 遇到严重故障。 捕获实时转储收集调试信息。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="win32kcriticalfailurelivedump-parameters"></a>WIN32K\_严重\_失败\_LIVEDUMP 参数
 

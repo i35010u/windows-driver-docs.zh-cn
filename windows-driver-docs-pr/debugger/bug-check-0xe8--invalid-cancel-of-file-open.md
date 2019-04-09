@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d1e9e09ccaea69fd3d1d9e1a7707ba52c4a0c12e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: dafe5098a2b5df92624df586c3833351e58bd2d7
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562988"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238550"
 ---
 # <a name="bug-check-0xe8-invalidcanceloffileopen"></a>Bug 检查 0xE8：无效\_取消\_OF\_文件\_打开
 
 
 无效\_取消\_OF\_文件\_打开 bug 检查的值为 0x000000E8。 这表示无效的文件对象传递给**IoCancelFileOpen**。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="invalidcanceloffileopen-parameters"></a>无效\_取消\_OF\_文件\_打开参数
 

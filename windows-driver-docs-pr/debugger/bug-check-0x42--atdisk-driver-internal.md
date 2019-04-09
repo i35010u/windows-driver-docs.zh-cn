@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a01141fe016c2cffe47f8c5f90b362e87686fba7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d1f8d4c0fa56cfcc5ed517251826ed0761f9dd79
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523035"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239502"
 ---
-# <a name="bug-check-0x42-atdiskdriverinternal"></a>Bug 检查 0x42:ATDISK\_DRIVER\_INTERNAL
+# <a name="bug-check-0x42-atdiskdriverinternal"></a>Bug 检查 0x42：ATDISK\_DRIVER\_INTERNAL
 
 
 ATDISK\_驱动程序\_内部 bug 检查的值为 0x00000042。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

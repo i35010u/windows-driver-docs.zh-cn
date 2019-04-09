@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f7e02d217269a434afed1a7804a0ee8de38f766
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c18f0ba0bdbb37f7649681218f521949eb371afd
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541983"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238798"
 ---
-# <a name="bug-check-0x7a-kerneldatainpageerror"></a>Bug 检查 0x7A:KERNEL\_DATA\_INPAGE\_ERROR
+# <a name="bug-check-0x7a-kerneldatainpageerror"></a>Bug 检查 0x7A：KERNEL\_DATA\_INPAGE\_ERROR
 
 
 内核\_数据\_页内\_错误 bug 检查的值为 0x0000007A。 检查此错误指示无法到内存中读取的分页文件中的内核数据请求的页面。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kerneldatainpageerror-parameters"></a>内核\_数据\_页内\_错误参数
 

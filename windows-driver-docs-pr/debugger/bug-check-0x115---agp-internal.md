@@ -13,21 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f48aef593e74e52dcede6b64503cb30b285758
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5d9621b66d076efc428e4935e08de83f35b9d40e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545907"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239072"
 ---
-# <a name="bug-check-0x115-agpinternal"></a>Bug 检查 0x115:AGP\_INTERNAL
+# <a name="bug-check-0x115-agpinternal"></a>Bug 检查 0x115：AGP\_INTERNAL
 
 
 AGP\_内部 bug 检查的值为 0x00000115。 这表示加速的图形端口 (AGP) 驱动程序检测到冲突。
 
 检查此错误极少出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
  
 

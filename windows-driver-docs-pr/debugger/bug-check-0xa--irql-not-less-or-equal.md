@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 862be28baf98969c2fdcc9709f909e49b1e9bce1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 690a62bee6b12046c57ef4bf430d7de4b6564758
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349970"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239460"
 ---
 # <a name="bug-check-0xa-irqlnotlessorequal"></a>Bug 检查 0xA：IRQL\_NOT\_LESS\_OR\_EQUAL
 
 
 IRQL\_不\_较少\_或\_相等 bug 检查的值为 0x0000000A。 这表示 Microsoft Windows 或访问的内核模式驱动程序都分页内存地址无效时引发的中断请求级别 (IRQL)。 这通常是错误的指针或 pageability 问题。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="irqlnotlessorequal-parameters"></a>IRQL\_不\_较少\_或\_等于参数
 
@@ -51,7 +53,7 @@ IRQL\_不\_较少\_或\_相等 bug 检查的值为 0x0000000A。 这表示 Micro
 <td align="left"><p>2</p></td>
 <td align="left"><p>IRQL 在错误的时间。</p>
 <p>值：</p>
-<p>2 :IRQL DISPATCH_LEVEL 时所处的错误。 END_VALUES</p></td>
+<p>2 :IRQL DISPATCH_LEVEL 时所处的错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -83,8 +85,6 @@ IRQL\_不\_较少\_或\_相等 bug 检查的值为 0x0000000A。 这表示 Micro
 </tbody>
 </table>
 
- 
-
 <a name="cause"></a>原因
 -----
 
@@ -92,15 +92,21 @@ Bug 检查 0xA 通常被由于内核模式设备驱动程序使用不正确的�
 
 检查此错误表示尝试访问无效的地址处引发的中断请求级别 (IRQL)。 这是错误的内存指针或设备驱动程序代码有 pageability 问题。
 
-1. 如果参数 1 为小于 0x1000 控制，这很可能为 NULL 指针取消引用。
-2. 如果 ！ 池报告参数 1 是分页的池，然后 IRQL 是过大，无法访问此数据。 在较低的 IRQL 运行，或者分配的非分页池中的数据。
-3. 如果参数 3 指示这是尝试执行可分页的代码，则 IRQL 是过大，无法调用此函数。 在较低的 IRQL 运行或未标记为可分页的代码。
-4. 否则，这可能是错误的指针，可能是因为使用后释放或位翻转。 调查使用的参数 1 的有效性[ **！ pte**](-pte.md)， [ **！ 地址**](-address.md)，并[ **ln （列表最接近符号）**](ln--list-nearest-symbols-.md)。
+以下是可以使用一些通用准则 catergorize 到类型的编码错误 tha 导致 bug 检查。
+
+- 如果参数 1 为小于 0x1000 控制，这很可能为 NULL 指针取消引用。
+
+- 如果[！ 池](-pool.md)参数 1 为分页池 （或其他类型的可分页内存），则 IRQL 是过大，无法访问此数据的报表。 在较低的 IRQL 运行，或者分配的非分页池中的数据。
+
+- 如果参数 3 指示这是尝试执行可分页的代码，则 IRQL 是过大，无法调用此函数。 在较低的 IRQL 运行或未标记为可分页的代码。
+
+- 否则，这可能是错误的指针，可能是因为使用后释放或位翻转。 调查使用的参数 1 的有效性[ **！ pte**](-pte.md)， [ **！ 地址**](-address.md)，并[ **ln （列表最接近符号）**](ln--list-nearest-symbols-.md)。
+
 
 <a name="resolution"></a>分辨率
 ----------
 
-如果可用的内核调试程序，获取堆栈跟踪： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示 bug 检查有关的信息和可以确定根本原因，很有帮助，然后输入之一[ **k （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以查看调用堆栈。
+如果可用的内核调试程序，获取堆栈跟踪： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示 bug 检查有关的信息并可有助于确定根本原因，然后输入之一[**k （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以查看调用堆栈。
 
 **收集的信息**
 
@@ -164,11 +170,3 @@ NDIS!_EthFilterIndicateReceiveComplete+0x31
 **在解决有关防病毒软件问题：** 禁用计划，并确认这会解决该错误。 如果是这样，请与联系有关可能的更新程序的制造商。
 
 有关常规的蓝色屏幕上，故障排除信息，请参阅[**蓝色屏幕数据**](blue-screen-data.md)。
-
- 
-
- 
-
-
-
-

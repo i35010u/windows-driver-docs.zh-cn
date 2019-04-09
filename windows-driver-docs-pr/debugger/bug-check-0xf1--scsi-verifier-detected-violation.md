@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a86a03ac822220009c5feda6587d7ed225bfa8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 753d8e9a91414b9df2ab136ed81b8d4487748941
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349362"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238662"
 ---
 # <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>Bug 检查 0xF1：SCSI\_VERIFIER\_检测到\_冲突
 
 
 SCSI\_VERIFIER\_检测到\_冲突错误检查的值为 0x000000F1。 这是所有驱动程序验证程序的 bug 检查代码**SCSI 验证**冲突。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="scsiverifierdetectedviolation-parameters"></a>SCSI\_VERIFIER\_检测到\_冲突参数
 

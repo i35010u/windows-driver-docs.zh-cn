@@ -13,18 +13,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f36a31a1a9cf252cf110cbe5cdc6f82e246ba79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 02cd8f6a04923fb0da6d64e7f2bb8e77fee732fd
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238614"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>Bug 检查 0x12B：发生故障\_硬件\_损坏\_页
 
 故障\_硬件\_损坏\_页 bug 检查的值为 0x0000012B。 此 bug 检查指示 Windows 内存管理器检测到损坏，并且损坏可能只是由访问内存使用物理寻址的组件。  
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="faultyhardwarecorruptedpage-parameters"></a>发生故障\_硬件\_损坏\_页参数
 
@@ -134,7 +136,7 @@ Windows 内存管理器和内存压缩的详细信息，请参阅[第 1 部分 W
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows 内核模式内存管理器](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
 
 [第 9 频道视频内存压缩](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)
 

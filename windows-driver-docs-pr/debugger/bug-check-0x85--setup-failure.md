@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44d60422d3e0288307ad02d008f63c0907414ef7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: eab60f0a67d6a3088b036248ab9004abc8800bcc
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564524"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239294"
 ---
 # <a name="bug-check-0x85-setupfailure"></a>Bug 检查 0x85：安装程序\_失败
 
 
 安装程序\_故障错误检查的值为 0x00000085。 检查此错误指示在安装过程中出现错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="setupfailure-parameters"></a>安装程序\_失败参数
 

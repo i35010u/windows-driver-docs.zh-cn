@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f5b69233b4d0298b5e43c2fd10ead4d4f230d63f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: e4dca6534a7caa59805f9f6f0c6298d00aef3417
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464387"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239620"
 ---
 # <a name="developer-content-bug-check-0xc2-badpoolcaller"></a>（开发人员内容）Bug 检查 0xC2:错误\_池\_调用方
 
 
 缺点\_池\_bug 检查调用方的值为 0x000000C2。 它指示当前线程正在发出错误的池请求。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="badpoolcaller-parameters"></a>错误\_池\_调用方的参数
 

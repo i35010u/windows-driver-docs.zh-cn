@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc8d8ef903c0bee26daa47090f36c2a783ef040
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 58c1882671aadd3a4eff171e792219067d048eab
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743473"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239427"
 ---
-# <a name="bug-check-0x1d7-efsfatalerror"></a>Bug 检查 0x1D7:EFS\_致命错误\_错误
+# <a name="bug-check-0x1d7-efsfatalerror"></a>Bug 检查 0x1D7：EFS\_致命错误\_错误
 
 EFS\_致命错误\_错误 bug 检查的值为 0x000001D7。 它指示，以便不能解决数据丢失或数据损坏而发生了 EFS 错误条件。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="efsfatalerror-parameters"></a>EFS\_致命错误\_错误参数

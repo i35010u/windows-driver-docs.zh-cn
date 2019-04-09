@@ -12,16 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ac1d86d3047757948da0fcb2f657ded86231e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8f052a2e43b9596894b5dc63cba7a24603e8d3fa
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577194"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238372"
 ---
 # <a name="bug-check-bug-check-0x1ce-invalidkernelstackaddress"></a>Bug 检查 Bug 检查 0x1CE:无效\_内核\_堆栈\_地址
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 INVALID_KERNEL_STACK_ADDRESS bug 检查具有 0x000001CE 值。 上下文切换的过程中遇到无效的初始内核堆栈地址。
 

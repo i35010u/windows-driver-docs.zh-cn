@@ -1,5 +1,5 @@
 ---
-title: 蓝色屏幕数据
+title: 蓝屏数据
 description: 当 Microsoft Windows 遇到一个条件，从而危及安全系统的状态时，系统就会停止。 这种情况称为 bug 检查或停止错误。
 ms.assetid: 8cc42643-e231-49dd-96b0-6cb528d5d7a9
 keywords:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a018491fc0491ba2d084a45baa9c523ca4bdc2ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a7886c3cbb5b66cc18c67511eb4b601ab195c850
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544388"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239176"
 ---
-# <a name="blue-screen-data"></a>蓝色屏幕数据
+# <a name="blue-screen-data"></a>蓝屏数据
 
 
 **请注意**  本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://go.microsoft.com/fwlink/p/?linkid=183646)。
@@ -96,15 +96,15 @@ ms.locfileid: "56544388"
 
 内核调试时，尤其是其他故障排除方法失败，或经常发生的问题。 请记住要捕获的错误消息错误检查信息部分中的确切文本。 若要解决复杂问题并开发一种可行的解决方法，它可用于录制会导致失败的确切操作。
 
-[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 此外可以导致此停止代码在代码中设置断点并单步前进到出错的代码尝试。
 
 有关详细信息，请参阅以下主题：
 
-[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
-[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
 

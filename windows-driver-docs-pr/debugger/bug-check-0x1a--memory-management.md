@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - Bug 检查 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 09/12/2018
+ms.date: 03/29/2019
 topic_type:
 - apiref
 api_name:
@@ -13,24 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 42817f2cfc7c0973970dc8d2bf42bab2a5862993
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 06cf3dc1e16b8549aea68bea3566f783512b6117
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464189"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238672"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A：内存\_管理
 
 
 内存\_管理 bug 检查的值为 0x0000001A。 这表明发生了严重的内存管理错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="memorymanagement-parameters"></a>内存\_管理参数
 
-
-参数 1 是感兴趣; 的唯一参数此列标识了确切的冲突。
+参数 1 标识了确切的冲突。
 
 <table>
 <colgroup>
@@ -105,6 +106,10 @@ ms.locfileid: "57464189"
 <td align="left"><p>0x3451</p></td>
 <td align="left"><p>已被换出了内核线程堆栈的 Pte 已损坏。</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>0x3453</p></td>
+<td align="left"><p>由于未完成的引用，无法删除已退出进程的所有页表页。  这通常表示进程的页表结构中的损坏。</p></td>
+</tr>
 <tr class="odd">
 <td align="left"><p>0x4477</p></td>
 <td align="left"><p>驱动程序尝试写入到系统进程的用户空间中的未分配地址。 参数 2 包含尝试的写入的地址。</p></td>
@@ -133,6 +138,14 @@ ms.locfileid: "57464189"
 <tr class="even">
 <td align="left"><p>0x888A</p></td>
 <td align="left"><p>内部内存管理结构 （可能 PTE 或 PFN） 已损坏。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x9696</p></td>
+<td align="left"><p>PFN （参数 2） 遇到带不再连接到其最高级别进程损坏链接。  这表示 PFN 结构中的损坏。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x15001</p></td>
+<td align="left"><p>以前受保护的未保护内存的过程中出错。  这可以调用方会错误地调用 MmUnsecureVirtualMemory 错误进程上下文中。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -183,10 +196,14 @@ ms.locfileid: "57464189"
 <td align="left"><p>IoPageFrameNode 为 null。 参数 2 是 PageFrameIndex。</p></td>
 </tr>
 <tr class="odd">
+<td align="left"><p>0x6194A</p></td>
+<td align="left"><p>递减引用计数在 I/O 空间物理页的正在取消映射时出错。 正在取消引用当前未引用的项。  参数 2 和 3 描述正在取消映射，调用方的 I/O 空间范围和参数 4 是 I/O 空间物理页预计将引用，但不是。 </p></td>
+</tr>
+<tr class="even">
 <td align="left"><p>0x03030303</p></td>
 <td align="left"><p>启动加载器已断开。 （此值仅适用于 Intel Itanium 计算机。）</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><p>0x03030308</p></td>
 <td align="left"><p>要删除 （或截断） 的范围正在使用由加载程序以便它不能安全地删除，因此系统必须发出停止代码。  参数 2 是 HighestPhysicalPage。</p></td>
 </tr>
@@ -197,13 +214,6 @@ ms.locfileid: "57464189"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。 运行[ **Windows 内存诊断**](https://social.technet.microsoft.com/wiki/contents/articles/29343.windows-10-technical-preview-running-windows-memory-diagnostics-tool.aspx)工具可能很有用，以排除任何类型的问题影响的物理内存模块。
- 
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
 
- 
-
- 
-
-
-
-
+运行[ **Windows 内存诊断**](https://social.technet.microsoft.com/wiki/contents/articles/29343.windows-10-technical-preview-running-windows-memory-diagnostics-tool.aspx)工具可能很有用，以排除任何类型的问题影响的物理内存模块。

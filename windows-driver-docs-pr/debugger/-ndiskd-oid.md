@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: daf6b3ee15c15b02a52b4009f74ec1be343f0fef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519816"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238590"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
@@ -52,7 +52,7 @@ Ndiskd.dll
 <a name="remarks"></a>备注
 -------
 
-**！ ndiskd.oid**显示列表的所有挂起的 Oid 在系统上一次，因此它可以是非常有帮助的调试系统挂起或[0x9F bug 检查](https://msdn.microsoft.com/library/windows/hardware/ff559329)的情况下 (驱动程序\_POWER\_状态\_失败）。 例如，假设分析的虚构 0x9F bug 检查揭示系统已挂起上 IRP，正在等待 NDIS。 在 NDIS，从操作系统的 Irp 将转换为 Oid，包括电源转换，因此，通过运行 **！ ndiskd.oid**大家可以看到，在此示例中，堆栈的底部处的设备可能已被一堆到[OID\_PNP\_设置\_电源](https://msdn.microsoft.com/library/windows/hardware/ff569780)和挂起堆栈的其余部分。 NDIS 驱动程序应该不挂起 OID 对超过一秒，以便可以然后调查为什么该设备保留太长时间挂起的 OID 来尝试解决该问题。
+**！ ndiskd.oid**显示列表的所有挂起的 Oid 在系统上一次，因此它可以帮助调试系统挂起或[0x9F bug 检查](https://msdn.microsoft.com/library/windows/hardware/ff559329)的情况下 (驱动程序\_POWER\_状态\_失败)。 例如，假设分析的虚构 0x9F bug 检查揭示系统已挂起上 IRP，正在等待 NDIS。 在 NDIS，从操作系统的 Irp 将转换为 Oid，包括电源转换，因此，通过运行 **！ ndiskd.oid**大家可以看到，在此示例中，堆栈的底部处的设备可能已被一堆到[OID\_PNP\_设置\_电源](https://msdn.microsoft.com/library/windows/hardware/ff569780)和挂起堆栈的其余部分。 NDIS 驱动程序应该不挂起 OID 对超过一秒，以便可以然后调查为什么该设备保留太长时间挂起的 OID 来尝试解决该问题。
 
 <a name="examples"></a>示例
 --------
@@ -140,9 +140,9 @@ ALL PENDING OIDs
 
 [OID\_PNP\_SET\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)
 
-[**最佳实践，bu，bm （设置断点）**](bp--bu--bm--set-breakpoint-.md)
+[**bp、bu、bm（设置断点）**](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_GEN\_STATISTICS](https://msdn.microsoft.com/library/windows/hardware/ff569640)
+[OID\_常规\_统计信息](https://msdn.microsoft.com/library/windows/hardware/ff569640)
 
 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 326c20ebac72fe3cc0af90fb007e711d7b9052ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 72b925fe2d92531a5f4886a9da3d4e3de466dd2e
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525106"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239820"
 ---
-# <a name="bug-check-0x9a-systemlicenseviolation"></a>Bug 检查 0x9A:系统\_许可证\_冲突
+# <a name="bug-check-0x9a-systemlicenseviolation"></a>Bug 检查 0x9A：系统\_许可证\_冲突
 
 
 系统\_许可证\_冲突错误检查的值为 0x0000009A。 此 bug 检查指示已违反软件许可协议。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="systemlicenseviolation-parameters"></a>系统\_许可证\_冲突参数
 

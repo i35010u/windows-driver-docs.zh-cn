@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b33dec7be14601e3fb7eb1a80b75f5ebf2168b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 275a82e582bb5cc2081b86a10690eefd026f646c
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526329"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238776"
 ---
-# <a name="bug-check-0x188-clustercsvfslivedump"></a>Bug 检查 0x188:CLUSTER\_CSVFS\_LIVEDUMP
+# <a name="bug-check-0x188-clustercsvfslivedump"></a>Bug 检查 0x188：CLUSTER\_CSVFS\_LIVEDUMP
 
 
 群集\_CSVFS\_LIVEDUMP bug 检查的值为 0x00000188。 这指示 CSVFS 启动此 livedump 来帮助调试不一致的状态。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="clustercsvfslivedump-parameters"></a>群集\_CSVFS\_LIVEDUMP 参数
 

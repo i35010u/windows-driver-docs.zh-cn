@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb2192c8a846c6d481e127f3b42a505c8b143741
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e7c3a0e5a80475c9213ba58f8a22fbaa6480b3cf
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743516"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239362"
 ---
-# <a name="bug-check-0x1d6-workerthreadreturnedwithnondefaultworkloadclass"></a>Bug 检查 0x1D6:辅助角色\_线程\_返回\_WITH\_非\_默认\_工作负荷\_类
+# <a name="bug-check-0x1d6-workerthreadreturnedwithnondefaultworkloadclass"></a>Bug 检查 0x1D6：辅助角色\_线程\_返回\_WITH\_非\_默认\_工作负荷\_类
 
 辅助角色\_线程\_返回\_WITH\_非\_默认\_工作负荷\_类 bug 检查的值为 0x000001D6。 它指示工作线程更改其工作负荷类，并且未在返回之前恢复它。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="workerthreadreturnedwithnondefaultworkloadclass-parameters"></a>辅助角色\_线程\_返回\_WITH\_非\_默认\_工作负荷\_类参数

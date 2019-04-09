@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca07c45a24f5a30267b1b09cc82ee3d57e4aeb3
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: b9f2eb385945e0ab36d552543cf005121a0c8bb4
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463991"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238438"
 ---
 # <a name="bug-check-0x9b-udfsfilesystem"></a>Bug 检查 0x9B：UDF\_文件\_系统
 
 
 UDF\_文件\_检查系统错误的值为 0x0000009B。 此 bug 检查指示 UDF 文件系统中出现问题。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="udfsfilesystem-parameters"></a>UDF\_文件\_系统参数
 

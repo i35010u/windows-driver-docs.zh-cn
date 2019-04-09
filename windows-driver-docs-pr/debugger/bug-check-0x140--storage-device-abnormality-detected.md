@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ba8325a4c777950961cb1cf2106d122ff2ffb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7f36c2ffa5f8f49f5a63ac91dfb228efbfb30b1
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562605"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239234"
 ---
 # <a name="bug-check-0x140-storagedeviceabnormalitydetected"></a>Bug 检查 0x140：存储\_设备\_到异常情况\_检测到
 
 
 存储\_设备\_到异常情况\_检测到错误检查的值为 0x00000140。 这指示存储驱动程序堆栈遇到的响应能力冲突超出阈值或其他故障响应率。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="storagedeviceabnormalitydetected-parameters"></a>存储\_设备\_到异常情况\_检测到参数
 

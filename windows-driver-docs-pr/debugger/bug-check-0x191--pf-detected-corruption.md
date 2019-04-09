@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d58dfd80b274fc7e7761c4697c4e1a95c91c6ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 89b678a84670e4c36dee6225f6bc59fecb868dde
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568876"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239658"
 ---
 # <a name="bug-check-0x191-pfdetectedcorruption"></a>Bug 检查 0x191：PF\_检测到\_损坏
 
 
 PF\_检测到\_损坏错误检查的值为 0x00000191。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="pfdetectedcorruption-parameters"></a>PF\_检测到\_损坏参数
 

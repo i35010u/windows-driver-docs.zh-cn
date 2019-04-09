@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adc9a7e6c65122f55b409deb4dcc267929cf15c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: c5ad2d41fe45aa2a504e9634dac65e54cc11a6e0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464295"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239462"
 ---
 # <a name="bug-check-0x26-cdfsfilesystem"></a>Bug 检查 0x26：CDFS\_FILE\_SYSTEM
 
 
 CDFS\_文件\_检查系统错误的值为 0x00000026。 这表示 CD 文件系统中出现问题。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="cdfsfilesystem-parameters"></a>CDFS\_文件\_系统参数
 

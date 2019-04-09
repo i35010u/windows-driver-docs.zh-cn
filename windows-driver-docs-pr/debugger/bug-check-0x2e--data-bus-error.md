@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e62c67eb8840eb2f0eea7b559c7f88845ec43ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 22b7f40eff415e705d3044fe13a13ee9182a3678
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239398"
 ---
-# <a name="bug-check-0x2e-databuserror"></a>Bug 检查 0x2E:数据\_总线\_错误
+# <a name="bug-check-0x2e-databuserror"></a>Bug 检查 0x2E：数据\_总线\_错误
 
 
 数据\_总线\_错误 bug 检查的值为 0x0000002E。 这通常指示已检测到奇偶校验错误在系统内存中。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="databuserror-parameters"></a>数据\_总线\_错误参数
 

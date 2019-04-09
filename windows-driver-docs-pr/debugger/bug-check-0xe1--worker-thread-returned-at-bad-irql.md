@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fcca415885d16b79fb31380a9fc5fcd00bedee7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 63c6a16001068a9eecb9ebd48260f728d4680f9a
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567712"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238329"
 ---
 # <a name="bug-check-0xe1-workerthreadreturnedatbadirql"></a>Bug 检查 0xE1：辅助角色\_线程\_返回\_处\_错误\_IRQL
 
 
 辅助角色\_线程\_返回\_处\_错误\_IRQL bug 检查的值为 0x000000E1。 这表示一个工作线程完成并返回与 IRQL &gt;= 调度\_级别。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="workerthreadreturnedatbadirql-parameters"></a>辅助角色\_线程\_返回\_处\_错误\_IRQL 参数
 

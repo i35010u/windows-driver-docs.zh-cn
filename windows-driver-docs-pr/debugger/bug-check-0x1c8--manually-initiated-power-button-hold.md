@@ -12,20 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f91368961b156813bc9a74b08c31f785b0f8e4e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f2fabfaff787d5d0535e398bff4565d9d1311ea0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524988"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239050"
 ---
-# <a name="bug-check-0x1c8-manuallyinitiatedpowerbuttonhold"></a>Bug 检查 0x1C8:手动\_INITIATED\_电源\_按钮\_保存
+# <a name="bug-check-0x1c8-manuallyinitiatedpowerbuttonhold"></a>Bug 检查 0x1C8：手动\_INITIATED\_电源\_按钮\_保存
 
 手动\_INITIATED\_电源\_按钮\_保持状态的值为 0x000001C8。
 
 系统已配置为当用户指定的时间长度的电源按钮时启动出现 bugcheck。  这是用来捕获转储时系统之后，将为与长时间的电源按钮保持硬重置诊断出现 bugcheck。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 请注意，而不是标准"蓝屏"显示此 bug 检查时，则有以下文本的黑色背景以及 %进度指示器显示：
 

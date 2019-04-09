@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: afa23a3cd8303b832b9b101640f0ab340fadc932
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 16ae75a5de50453400e8463990805b1c82d98118
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464097"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239244"
 ---
 # <a name="bug-check-0xda-systemptemisuse"></a>Bug 检查 0xDA：系统\_PTE\_滥用
 
 
 系统\_PTE\_滥用 bug 检查的值为 0x000000DA。 这表示一种不正确的方法中已使用的页表项 (PTE) 例程。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="systemptemisuse-parameters"></a>系统\_PTE\_误用参数
 

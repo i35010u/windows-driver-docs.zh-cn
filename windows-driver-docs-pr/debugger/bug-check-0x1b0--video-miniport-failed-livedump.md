@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0966bef520c1b939799a1e842a6f393da364ea8
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 4c1c4e47caa8d9bf393f914a15c04e707e66e189
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239048"
 ---
-# <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>Bug 检查 0x1B0:视频\_微型端口\_失败\_LIVEDUMP
+# <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>Bug 检查 0x1B0：视频\_微型端口\_失败\_LIVEDUMP
 
 视频\_微型端口\_失败\_LIVEDUMP bug 检查的值为 0x000001B0。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videominiportfailedlivedump-parameters"></a>视频\_微型端口\_失败\_LIVEDUMP 参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 519f19e05f81ea8ff213b489f66217e415127d5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f84043384db0afc7d5d9dfce40652fece677f0aa
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547464"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239836"
 ---
-# <a name="bug-check-0xf8-ramdiskbootinitializationfailed"></a>Bug 检查 0xF8:RAMDISK\_引导\_初始化\_失败
+# <a name="bug-check-0xf8-ramdiskbootinitializationfailed"></a>Bug 检查 0xF8：RAMDISK\_引导\_初始化\_失败
 
 
 RAMDISK\_引导\_初始化\_失败错误检查的值为 0x000000F8。 这表示初始化失败尝试从 RAM 磁盘启动时出现。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="ramdiskbootinitializationfailed-parameters"></a>RAMDISK\_引导\_初始化\_失败参数
 

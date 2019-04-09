@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d58424fc6b031ed3d5b61cf734769bebaec36d82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 59b75b6fdfbafeeb879651b8cceef5cc007d08f8
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519476"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239828"
 ---
-# <a name="bug-check-0x149-refsfilesystem"></a>Bug 检查 0x149:REFS\_文件\_系统
+# <a name="bug-check-0x149-refsfilesystem"></a>Bug 检查 0x149：REFS\_文件\_系统
 
 
 REFS\_文件\_检查系统错误的值为 0x00000149。 这表示发生文件系统错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="refsfilesystem-parameters"></a>REFS\_文件\_系统参数
 

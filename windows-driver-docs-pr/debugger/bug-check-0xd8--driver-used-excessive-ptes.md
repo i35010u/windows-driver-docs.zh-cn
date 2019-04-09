@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a5b4afc3a0e750a16f5955634d53ca60e6a64f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 14a782223f3bcd1842ca9cc06f6f6d103c60be49
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562367"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239696"
 ---
 # <a name="bug-check-0xd8-driverusedexcessiveptes"></a>Bug 检查 0xD8：驱动程序\_USED\_过量\_PTE
 
 
 该驱动程序\_USED\_过量\_PTE bug 检查的值为 0x000000D8。 这表示，有没有更多的系统页表项 (PTE) 剩余。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="driverusedexcessiveptes-parameters"></a>驱动程序\_USED\_过量\_PTE 参数
 

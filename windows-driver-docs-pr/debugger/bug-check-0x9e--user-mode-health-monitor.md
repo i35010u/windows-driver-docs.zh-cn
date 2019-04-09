@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd1589cc44a2a829b0b59b33678a0ba0936b007a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 18c711a3024b804c88c7375617ed3a00f2264da9
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563256"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238524"
 ---
 # <a name="bug-check-0x9e-usermodehealthmonitor"></a>Bug 检查 0x9E：用户\_模式下\_运行状况\_监视器
 
 
 用户\_模式下\_运行状况\_监视器 bug 检查的值为 0x0000009E。 此 bug 检查表示一个或多个关键的用户模式组件无法满足的运行状况检查。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="usermodehealthmonitor-parameters"></a>用户\_模式下\_运行状况\_监视器参数
 
@@ -38,7 +40,7 @@ ms.locfileid: "56563256"
 |4|保留|
  
 
-**VALUES** 
+**值** 
 
 ```text
         0  : WatchdogSourceDefault

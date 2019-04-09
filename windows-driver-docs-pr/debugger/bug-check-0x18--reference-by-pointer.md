@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aed4bfbfb4786ceb17a510581efccbd9e874fbd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a039ce590c9b522ab419adf119c60afb587b1846
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526275"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239422"
 ---
-# <a name="bug-check-0x18-referencebypointer"></a>Bug 检查从 0x18:引用\_BY\_指针
+# <a name="bug-check-0x18-referencebypointer"></a>Bug 检查 0x18：引用\_BY\_指针
 
 
 引用\_BY\_指针错误检查的值为 0x00000018。 这指示一个对象的引用计数是非法的对象的当前状态。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="referencebypointer-parameters"></a>引用\_BY\_指针参数
 
@@ -75,7 +77,7 @@ ms.locfileid: "56526275"
 
 请确保该驱动程序匹配的增加和减少的对象的引用计数的例程的调用。 请确保您的驱动程序不会进行取消引用该对象的例程的额外调用 （请参阅参数 2）。
 
-可以使用调试器来帮助分析此问题。 有关详细信息，请参阅[使用 Windows 调试器 (WinDbg) 的故障转储分析](crash-dump-files.md)。 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+可以使用调试器来帮助分析此问题。 有关详细信息，请参阅[使用 Windows 调试程序 (WinDbg) 进行故障转储分析](crash-dump-files.md)。 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 若要查找的句柄和指针计数对象上，使用 **！ 对象**调试器命令。
 

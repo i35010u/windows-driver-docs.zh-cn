@@ -12,18 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 614a3eb586765eaa3a9a7bac1db884de6a53cc12
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: 789f40140d04863132733f9f659b056747c7b177
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743510"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239546"
 ---
 # <a name="bug-check-0x17e-microcoderevisionmismatch"></a>Bug 检查 0x17E:微码\_修订\_不匹配
 
 微代码，\_修订\_不匹配错误检查的值为 0x0000017E。 它指示多处理器配置中的一个或多个处理器都有不一致的微代码加载。  
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
  
 
 ## <a name="microcoderevisionmismatch-parameters"></a>微码\_修订\_不匹配参数

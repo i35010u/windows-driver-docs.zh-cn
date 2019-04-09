@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7875bf4fb6e58cce425c5f0dd4d943b26e554706
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.openlocfilehash: dec08c58b7df26326055dc83ba0df723c41aa917
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761848"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239100"
 ---
 # <a name="bug-check-0x168-clustercsvstatetransitiontimeoutlivedump"></a>Bug 检查 0x168：群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP
 
 群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP bug 检查的值为 0x00000168。 这表示群集共享卷状态转换时间太长。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="clustercsvstatetransitiontimeoutlivedump-parameters"></a>群集\_CSV\_状态\_过渡\_超时\_LIVEDUMP 参数

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b8d4c4a82af3bb44a7ca11b249e0d65f4732f9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 402c9d102e9f80e0ed4165d4711d4ebd38d9fe83
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238774"
 ---
 # <a name="bug-check-0xea-threadstuckindevicedriver"></a>Bug 检查 0xEA：THREAD\_STUCK\_IN\_DEVICE\_DRIVER
 
 
 在线程\_STUCK\_IN\_设备\_驱动程序 bug 检查的值为 0x000000EA。 这表示无休止地旋转的设备驱动程序中的线程。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="threadstuckindevicedriver-parameters"></a>线程\_STUCK\_IN\_设备\_驱动程序参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8410148713355e40ca45e48118f00e2828880511
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c8a989bc200a5bf41571028310928a3ca2baa911
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564324"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238636"
 ---
 # <a name="bug-check-0xdb-drivercorruptedsysptes"></a>Bug 检查 0xDB：驱动程序\_损坏\_SYSPTES
 
 
 该驱动程序\_损坏\_SYSPTES bug 检查的值为 0x000000DB。 这表示尝试内存时，无效的 IRQL，很可能是由于系统 Pte 的损坏。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="drivercorruptedsysptes-parameters"></a>驱动程序\_损坏\_SYSPTES 参数
 

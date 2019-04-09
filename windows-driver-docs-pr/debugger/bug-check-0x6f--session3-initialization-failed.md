@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd6c8a03a8d95d305b78e7df868e93583e5867e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ec8f8ac45e38c10e6ec792f0ca9316cf03b5fe62
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568838"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238920"
 ---
 # <a name="bug-check-0x6f-session3initializationfailed"></a>Bug 检查 0x6F：SESSION3\_初始化\_失败
 
 
 SESSION3\_初始化\_失败错误检查的值为 0x0000006F。 此 bug 检查指示 Microsoft Windows 操作系统的初始化失败。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="session3initializationfailed-parameters"></a>SESSION3\_初始化\_失败参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3bc465157a2315bfb4a3bcf26d895ab4d93fea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 75151866611935c3dc0652d308d166e0ce2f2d8b
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522050"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238324"
 ---
-# <a name="bug-check-0x157-kernelthreadpriorityfloorviolation"></a>Bug 检查 0x157:内核\_线程\_优先级\_FLOOR\_冲突
+# <a name="bug-check-0x157-kernelthreadpriorityfloorviolation"></a>Bug 检查 0x157：内核\_线程\_优先级\_FLOOR\_冲突
 
 
 已尝试\_交换机\_FROM\_DPC bug 检查的值为 0x00000157。 这表示在特定线程的优先级下限尝试了非法操作。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelthreadpriorityfloorviolation-parameters"></a>内核\_线程\_优先级\_FLOOR\_冲突参数
 

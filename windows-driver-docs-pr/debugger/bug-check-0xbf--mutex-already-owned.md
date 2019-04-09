@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 476926f87fd187a06d543eef23b9f22b42781563
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: af1d2f1d97b3c237642c0ef6e32846432df2e3a6
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547260"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239268"
 ---
-# <a name="bug-check-0xbf-mutexalreadyowned"></a>Bug 检查 0xBF:MUTEX\_ALREADY\_拥有的
+# <a name="bug-check-0xbf-mutexalreadyowned"></a>Bug 检查 0xBF：MUTEX\_ALREADY\_拥有的
 
 
 MUTEX\_ALREADY\_拥有的 bug 检查的值为 0x000000BF。 这指示线程尝试获取 mutex 的所有权它已经拥有。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="mutexalreadyowned-parameters"></a>MUTEX\_ALREADY\_拥有的参数
 

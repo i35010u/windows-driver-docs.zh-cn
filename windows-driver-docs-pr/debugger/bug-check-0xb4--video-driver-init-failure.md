@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f045d32e3b6d06d1f407e840138b981a2aa72604
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1a662a8336764fa357e8c15bcfaa9be2ed8c01f0
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577406"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238504"
 ---
 # <a name="bug-check-0xb4-videodriverinitfailure"></a>Bug 检查 0xB4：视频\_驱动程序\_INIT\_失败
 
 
 视频\_驱动程序\_INIT\_故障错误检查的值为 0x000000B4。 这表示 Windows 无法进入图形模式。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="videodriverinitfailure-parameters"></a>视频\_驱动程序\_INIT\_失败参数
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 03054398e58903b8c19d8fbe1a9e1976d0420ee1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6fe02a3fd21dc33c192073f46a822212ed16db36
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532952"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238868"
 ---
-# <a name="bug-check-0x154-unexpectedstoreexception"></a>Bug 检查 0x154:意外\_STORE\_异常
+# <a name="bug-check-0x154-unexpectedstoreexception"></a>Bug 检查 0x154：意外\_STORE\_异常
 
 
 意外\_STORE\_异常错误检查的值为 0x00000154。 这表明存储组件捕获到意外的异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="unexpectedstoreexception-parameters"></a>意外\_STORE\_异常参数
 

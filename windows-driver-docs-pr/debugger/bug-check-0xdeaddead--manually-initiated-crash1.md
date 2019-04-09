@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b40830d9f1131bbd0e03109d33e1aa14c05f33a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c449e3bf5012837d678ba11df680190342d1dc76
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542008"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238428"
 ---
-# <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>Bug 检查 0xDEADDEAD:手动\_启动\_CRASH1
+# <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>Bug 检查 0xDEADDEAD：手动\_启动\_CRASH1
 
 
 手动\_启动\_CRASH1 bug 检查的值为 0xDEADDEAD。 这表示用户谨慎地启动内核调试程序或键盘的故障转储。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="manuallyinitiatedcrash1-parameters"></a>手动\_启动\_CRASH1 参数
 

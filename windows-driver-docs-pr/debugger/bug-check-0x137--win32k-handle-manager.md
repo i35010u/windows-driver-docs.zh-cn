@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f17e2a7b915719c20d5e80f4a34dd9d177f4d90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 40ab7a3629f4f4f44f26c02b971cfb7519c66568
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526424"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238472"
 ---
-# <a name="bug-check-0x137-win32khandlemanager"></a>Bug 检查 0x137:WIN32K\_HANDLE\_MANAGER
+# <a name="bug-check-0x137-win32khandlemanager"></a>Bug 检查 0x137：WIN32K\_HANDLE\_MANAGER
 
 
 WIN32K\_处理\_MANAGER bug 检查的值为 0x00000137。 这表示 win32k/ntuser 句柄管理器检测到一个错误。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="win32khandlemanager-parameters"></a>WIN32K\_处理\_管理器参数
 

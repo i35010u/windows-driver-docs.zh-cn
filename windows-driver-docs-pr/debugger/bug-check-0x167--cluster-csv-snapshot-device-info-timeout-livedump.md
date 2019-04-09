@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3cbf5fb372618d8ac050345ce365ea33786c85
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.openlocfilehash: e85647f73186474e5d52a5ed119f3c5b2b1a7812
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743475"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59238844"
 ---
-# <a name="bug-check-0x167-clustercsvsnapshotdeviceinfotimeoutlivedump"></a>Bug 检查 0x167:CLUSTER\_CSV\_SNAPSHOT\_DEVICE\_INFO\_TIMEOUT\_LIVEDUMP
+# <a name="bug-check-0x167-clustercsvsnapshotdeviceinfotimeoutlivedump"></a>Bug 检查 0x167：CLUSTER\_CSV\_SNAPSHOT\_DEVICE\_INFO\_TIMEOUT\_LIVEDUMP
 
 群集\_CSV\_快照\_设备\_信息\_超时\_LIVEDUMPP bug 检查的值为 0x00000167。 这表示查询快照信息 volsnap 群集服务调用时间太长。
 
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 
 ## <a name="clustercsvsnapshotdeviceinfotimeoutlivedump-parameters"></a>群集\_CSV\_快照\_设备\_信息\_超时\_LIVEDUMP 参数

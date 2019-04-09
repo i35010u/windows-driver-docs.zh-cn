@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e3f25ac6634c2b10d346622f35d196809e4ead3f
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.openlocfilehash: 504dc2d81b4247a535c576c08bf7a3590ede1343
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582833"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239190"
 ---
 # <a name="bug-check-0x76-processhaslockedpages"></a>Bug 检查 0x76：进程\_HAS\_已锁定\_页
 
 
 进程\_HAS\_已锁定\_页错误检查的值为 0x00000076。 此 bug 检查指示驱动程序无法在 I/O 操作后释放锁定的页或它试图解锁页已经解锁。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="processhaslockedpages-parameters"></a>进程\_HAS\_已锁定\_页参数
 
@@ -75,7 +77,7 @@ ms.locfileid: "56582833"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 **如果参数 1 值为 0x0**
 

@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e5194d7d4db78510c64181acbbf04119881c678a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: edfdb453ecba8934ed8bdc9e97da6886abc64b51
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565926"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239396"
 ---
 # <a name="bug-check-0xeb-dirtymappedpagescongestion"></a>Bug 检查 0xEB：脏\_映射\_页面\_拥塞
 
 
 DIRTY\_映射\_页面\_拥塞 bug 检查的值为 0x000000EB。 这表明没有可用的空闲页是可用于继续操作。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="dirtymappedpagescongestion-parameters"></a>脏\_映射\_页面\_拥塞参数
 

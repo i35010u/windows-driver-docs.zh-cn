@@ -13,19 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5459f0b6af0254f689a76d2c66b1e9c032961d2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f73493b5080a2b24fdc6b0f6e4eaf10aa6c990f3
+ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540725"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239322"
 ---
-# <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>Bug 检查 0x8e 越权：内核\_模式下\_异常\_不\_已处理
+# <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>Bug 检查 0x8E：内核\_模式下\_异常\_不\_已处理
 
 
 内核\_模式下\_异常\_不\_已处理错误检查的值为 0x0000008E。 检查此错误指示在内核模式应用程序生成的错误处理程序未捕获异常。
 
-**重要**本主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> [!IMPORTANT]
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+
 
 ## <a name="kernelmodeexceptionnothandled-parameters"></a>内核\_模式下\_异常\_不\_HANDLED 参数
 
@@ -81,7 +83,7 @@ ms.locfileid: "56540725"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 如果您未配备调试此问题，则应使用一些基本的故障排除技巧：
 
 -   确保你有足够的磁盘空间。
