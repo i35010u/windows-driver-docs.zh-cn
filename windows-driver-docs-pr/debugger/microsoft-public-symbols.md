@@ -9,15 +9,20 @@ keywords:
 - Microsoft 符号存储区
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 35e314bb8695294aae703c92e76e5b44913e387a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f53f44ee1628fddd1bdd00c05b5ca05642af32a0
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565442"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362914"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 
+
+**服务器状态：** 没有已知的问题： white_check_mark: <br> Microsoft 公共符号服务器是完全正常运行。 <br>
+请将错误报告到的任何已知的问题[ windbgfb@microsoft.com ](mailto:windbgfb@microsoft.com)。 
+
+---
 
 Microsoft 符号服务器使 Windows 调试器符号公开可用。
 

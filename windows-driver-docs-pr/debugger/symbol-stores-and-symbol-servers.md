@@ -1,6 +1,6 @@
 ---
-title: 符号存储区和符号服务器
-description: 符号存储区和符号服务器
+title: 符号存储和符号服务器
+description: 符号存储和符号服务器
 ms.assetid: de35abe7-93ad-4ca0-94d4-bed1230e057b
 keywords:
 - 符号服务器
@@ -13,14 +13,14 @@ keywords:
 - SymStore 概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa1b11ada2c7d5a00e7c43a538598fc21d760f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0943ddd04f7befbaf3ff99b3af284d0e5a2d10e8
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521373"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362904"
 ---
-# <a name="symbol-stores-and-symbol-servers"></a>符号存储区和符号服务器
+# <a name="symbol-stores-and-symbol-servers"></a>符号存储和符号服务器
 
 
 ## <span id="ddk_using_symbol_servers_and_symbol_stores_dbg"></span><span id="DDK_USING_SYMBOL_SERVERS_AND_SYMBOL_STORES_DBG"></span>
@@ -34,15 +34,13 @@ ms.locfileid: "56521373"
 
 [使用符号服务器](using-a-symbol-server.md)
 
-[HTTP 符号存储区](http-symbol-stores.md)
+[HTTP 符号存储](http-symbol-stores.md)
 
 [文件共享 (SMB) 符号服务器](file-share--smb--symbol-server.md)
 
 [SymStore](symstore.md)
 
 [SymProxy](symproxy.md)
-
-[SymStore](symstore.md)
 
 如果不设置自己符号存储区中，但只是想要使用公共 Microsoft 符号存储区，请参阅[Microsoft 公共符号](microsoft-public-symbols.md)。
 

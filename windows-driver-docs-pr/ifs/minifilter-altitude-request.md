@@ -1,20 +1,23 @@
 ---
-title: 微筛选器海拔高度请求
-description: 微筛选器海拔高度请求
+title: 微筛选器等级请求
+description: 微筛选器等级请求
 ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c99b5c69c030bf1d5796ede21386c89bc9824a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 310b6abb180422126f89f0cdb9a27d946f2fd047
+ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525629"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362913"
 ---
-# <a name="minifilter-altitude-request"></a>微筛选器海拔高度请求
+# <a name="minifilter-altitude-request"></a>微筛选器等级请求
 
+文件系统微筛选器驱动程序开发到筛选器管理器模型必须具有名为海拔高度，用于定义其位置相对于存在于文件系统堆栈中其他微筛选器的唯一标识符。
 
-微筛选器海拔高度分配的请求电子邮件的形式发送给 Microsoft。 电子邮件的正文必须包含以下字段和相应的信息。
+若要请求微筛选器海拔高度标识符，对 ASCII 文本电子邮件中发送电子邮件[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)与该主题："微筛选器海拔高度请求"。 电子邮件的正文必须包含以下字段和相应的信息。
+
+然后，此筛选器的海拔高度将通过电子邮件发送回指定联系人的电子邮件地址。
 
 <table>
 <colgroup>
@@ -34,7 +37,7 @@ ms.locfileid: "56525629"
 </tr>
 <tr class="even">
 <td align="left">联系人电子邮件：</td>
-<td align="left"></td>
+<td align="left">提供长期公司电子邮件别名，而不是个人电子邮件。</td>
 </tr>
 <tr class="odd">
 <td align="left">产品名称：</td>
@@ -75,10 +78,6 @@ ms.locfileid: "56525629"
 </tbody>
 </table>
 
- 
-
-将此信息发送到以 ASCII 文本电子邮件[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)与该主题："微筛选器海拔高度请求"。 然后，此筛选器的海拔高度将通过电子邮件发送回指定联系人的电子邮件地址。
-
 下面是一个示例，用于分配请求电子邮件的正文。
 
 ``` syntax
@@ -87,13 +86,10 @@ Hi,
 Below is the request information to assign an altitude for our Contoso DataKleen file system minifilter.
 
 Company name: Contoso Ltd.
-Contact e-mail: filterdev@contoso.com
+Contact e-mail: filterdevgroup@contoso.com
 Product name: Contoso DataKleen
 Product URL: http://fsfilters.contoso.com
-Product/Filter Description:
-    The Contoso DataKleen filter removes all occurences of any byte having a value
-    between 128 and 255 during file reads. Our minifilter removes this value since
-    it is not displayable on TTY devices.
+Product/Filter Description: The Contoso DataKleen filter removes all occurrences of any byte having a value between 128 and 255 during file reads. Our minifilter removes this value since it is not displayable on TTY devices.
 Filter filename: ContosoDK.sys
 Filter type: FileSystem
 Filter start-type: Demand
@@ -106,17 +102,8 @@ Thanks,
 FilterDev
 ```
 
-**注意**  
--   必须填写所有字段。
--   它可能需要 Microsoft 到两周，以处理并分配海拔的地区。 任何缺少的信息可能会延迟赋值。
--   已分配的海拔高度最终会反映在海拔中列出的地区[文件系统微筛选器分配海拔地区](allocated-altitudes.md)。 请注意，Microsoft 仅更新此列表每年一次。
+## <a name="note"></a>注意
 
- 
-
- 
-
- 
-
-
-
-
+* 必须填写所有字段。
+* 它可能需要 Microsoft 到两周，以处理并分配海拔的地区。 任何缺少的信息可能会延迟赋值。
+* 已分配的海拔高度最终会反映在海拔中列出的地区[文件系统微筛选器分配海拔地区](allocated-altitudes.md)。 请注意，Microsoft 仅更新此列表每年一次。
