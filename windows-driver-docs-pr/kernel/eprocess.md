@@ -4,12 +4,12 @@ description: Windows 内核不透明结构
 ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 201309fb5b81263316e783929ad066dd7938a124
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 9b22a03616aa0b43a2d46979510f19787c23d50a
+ms.sourcegitcommit: 69e7e3a70c491feb4b7cee258f710585843168c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349036"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480334"
 ---
 # <a name="windows-kernel-opaque-structures"></a>Windows 内核不透明结构
 
@@ -31,7 +31,7 @@ ms.locfileid: "57349036"
 <tr class="odd">
 <td><strong>EPROCESS</strong></td>
 <td><p><strong>EPROCESS</strong>结构是可作为进程的进程对象的不透明结构。</p>
-<p>一些例程，如<a href="https://msdn.microsoft.com/library/windows/hardware/ff559939" data-raw-source="[&lt;strong&gt;PsGetProcessCreateTimeQuadPart&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559939)"> <strong>PsGetProcessCreateTimeQuadPart</strong></a>，使用<strong>EPROCESS</strong>来识别要操作的进程。 驱动程序可以使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559933" data-raw-source="[&lt;strong&gt;PsGetCurrentProcess&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559933)"> <strong>PsGetCurrentProcess</strong> </a>例程，以获取指向过程的对象的当前进程，并可以使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff558679" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558679)"> <strong>ObReferenceObjectByHandle</strong></a>例程，以获取与指定句柄关联的进程对象的指针。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559943" data-raw-source="[&lt;strong&gt;PsInitialSystemProcess&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559943)"> <strong>PsInitialSystemProcess</strong> </a>全局变量指向系统进程的进程对象。</p>
+<p>一些例程，如<a href="https://msdn.microsoft.com/library/windows/hardware/ff559939" data-raw-source="[&lt;strong&gt;PsGetProcessCreateTimeQuadPart&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559939)"> <strong>PsGetProcessCreateTimeQuadPart</strong></a>，使用<strong>EPROCESS</strong>来识别要操作的进程。 驱动程序可以使用<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess" data-raw-source="[&lt;strong&gt;PsGetCurrentProcess&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess)"> <strong>PsGetCurrentProcess</strong> </a>例程，以获取指向过程的对象的当前进程，并可以使用<a href="https://msdn.microsoft.com/library/windows/hardware/ff558679" data-raw-source="[&lt;strong&gt;ObReferenceObjectByHandle&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558679)"> <strong>ObReferenceObjectByHandle</strong></a>例程，以获取与指定句柄关联的进程对象的指针。 <a href="https://msdn.microsoft.com/library/windows/hardware/ff559943" data-raw-source="[&lt;strong&gt;PsInitialSystemProcess&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559943)"> <strong>PsInitialSystemProcess</strong> </a>全局变量指向系统进程的进程对象。</p>
 <p>请注意，将进程对象的对象管理器对象。 驱动程序应使用对象管理器例程如下所示<a href="https://msdn.microsoft.com/library/windows/hardware/ff558678" data-raw-source="[&lt;strong&gt;ObReferenceObject&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff558678)"> <strong>ObReferenceObject</strong> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557724" data-raw-source="[&lt;strong&gt;ObDereferenceObject&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557724)"> <strong>ObDereferenceObject</strong> </a>维护的对象引用计数。</p>
 <p>标头：Wdm.h。 包括：Wdm.h 中 Ntddk.h，Ntifs.h。</p></td>
 </tr>
@@ -309,7 +309,7 @@ ms.locfileid: "57349036"
 [*LookasideListAllocateEx*](https://msdn.microsoft.com/library/windows/hardware/ff554322)  
 [*LookasideListFreeEx*](https://msdn.microsoft.com/library/windows/hardware/ff554324)  
 [**ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)  
-[**PsGetCurrentProcess**](https://msdn.microsoft.com/library/windows/hardware/ff559933)  
+[**PsGetCurrentProcess**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer#psgetcurrentprocess)  
 [**PsGetProcessCreateTimeQuadPart**](https://msdn.microsoft.com/library/windows/hardware/ff559939)  
 [**PsInitialSystemProcess**](https://msdn.microsoft.com/library/windows/hardware/ff559943)  
 [**PsIsSystemThread**](https://msdn.microsoft.com/library/windows/hardware/ff559945)  
@@ -318,7 +318,7 @@ ms.locfileid: "57349036"
 [**RtlRunOnceExecuteOnce**](https://msdn.microsoft.com/library/windows/hardware/ff562765)  
 [**RtlRunOnceInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff562767)  
 [*RunOnceInitialization*](https://msdn.microsoft.com/library/windows/hardware/ff563635)  
-[Run-Down 保护](run-down-protection.md)  
+[停止运行保护](run-down-protection.md)  
 [**SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)  
 [**SeAssignSecurity**](https://msdn.microsoft.com/library/windows/hardware/ff563676)  
 [**SeAssignSecurityEx**](https://msdn.microsoft.com/library/windows/hardware/ff563679)  

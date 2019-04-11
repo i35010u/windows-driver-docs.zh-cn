@@ -2,14 +2,14 @@
 title: 容器支持非 DX Api
 description: 非 DX Api 必须与驱动程序和内核更直接交互，因此它们公开给更多的并发数据
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
-ms.date: 04/20/2017
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: da48ae64fc99aa6511162a8c55dd754becca9ba4
-ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
+ms.openlocfilehash: eed3c747bb5ff1228d1841cfad59fad9b89b219c
+ms.sourcegitcommit: 69e7e3a70c491feb4b7cee258f710585843168c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59363175"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480372"
 ---
 # <a name="container-support-for-non-dx-apis"></a>容器支持非 DX Api
 
