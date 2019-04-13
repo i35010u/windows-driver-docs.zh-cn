@@ -7,12 +7,12 @@ keywords:
 - 设备特定于类型的 I/O 请求 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df29a43a770745e35576b771c05f6e64e2cf973d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ee2079f4a31f913d7bd688920b1a28c8875edf3f
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562133"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554053"
 ---
 # <a name="device-type-specific-io-requests"></a>特定于设备类型的 I/O 请求
 
@@ -44,7 +44,7 @@ ms.locfileid: "56562133"
 
 [HID 体系结构](https://msdn.microsoft.com/library/windows/hardware/jj126193)
 
-[USB 客户端驱动程序的 I/O 请求](https://msdn.microsoft.com/library/windows/hardware/ff540134#km-ioctl)
+[USB 客户端驱动程序的 I/O 请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)
 
 [IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)
 

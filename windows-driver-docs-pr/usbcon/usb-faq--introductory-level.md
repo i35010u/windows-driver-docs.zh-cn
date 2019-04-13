@@ -1,14 +1,14 @@
 ---
-Description: This topic presents frequently asked questions for driver developers who are new to developing and integrating USB devices and drivers with Windows operating systems.
+Description: 本主题介绍了一些常见问题的驱动程序开发人员还不熟悉开发以及将 USB 设备和驱动程序与 Windows 操作系统集成。
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e5ffd611ce4f41f4c575defff6bd3fc5531d53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db83cb21b66e83aae0c0962080cb56bb9dd83433
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576051"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554073"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -635,7 +635,7 @@ Needs = Composite.Dev
 ## <a name="how-do-i-enable-debug-tracing-for-usb-core-binaries"></a>如何启用 USB 核心二进制文件的调试跟踪？
 
 
-请参阅博客文章有关[如何包括和驱动程序的公共 PDB 文件中查看 WPP 跟踪消息](http://blogs.msdn.com/b/usbcoreblog/archive/2013/06/29/wpp-blog-post.aspx)。
+请参阅博客文章有关[如何包括和驱动程序的公共 PDB 文件中查看 WPP 跟踪消息](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)。
 
 有关 USB core 堆栈调试的其他信息，请参阅[如何启用详细调试跟踪在各种驱动程序和子系统中的](https://support.microsoft.com/kb/314743)。
 

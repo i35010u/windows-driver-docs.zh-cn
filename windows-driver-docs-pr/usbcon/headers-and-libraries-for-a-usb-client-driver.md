@@ -1,21 +1,21 @@
 ---
-Description: This topic lists the headers and libraries required for writing a Windows Driver Model (WDM) USB client driver.
-title: 标头和库所需的 USB 客户端驱动程序
+Description: 本主题列出的标头和所需的编写的 Windows 驱动程序模型 (WDM) USB 客户端驱动程序库。
+title: USB 客户端驱动程序所需的标头和库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1402d3baf62a138b9f6718488c25e6dafb0bb75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 91613d6c66488820ca24f089ffc9cdf68d108571
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555832"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554057"
 ---
-# <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>标头和库所需的 USB 客户端驱动程序
+# <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB 客户端驱动程序所需的标头和库
 
 
 本主题列出的标头和所需的编写的 Windows 驱动程序模型 (WDM) USB 客户端驱动程序库。
 
-若要查找特定设备驱动程序接口 (DDI) 的标头和库，请参阅中的引用页[USB 引用](https://msdn.microsoft.com/library/windows/hardware/ff540134)。
+若要查找特定设备驱动程序接口 (DDI) 的标头和库，请参阅中的引用页[USB 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/)。
 
 ## <a name="headers"></a>标头
 
@@ -208,7 +208,7 @@ ms.locfileid: "56555832"
 
 ## <a name="related-topics"></a>相关主题
 [通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
-[Windows 驱动程序工具包中的标头文件](https://msdn.microsoft.com/library/windows/hardware/ff554695)  
+[Windows 驱动程序工具包中的头文件](https://msdn.microsoft.com/library/windows/hardware/ff554695)  
 [USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
 
 

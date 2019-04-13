@@ -3,21 +3,21 @@ Description: 本主题介绍提交初始化的 URB USB 驱动程序堆栈处理�
 title: 如何提交 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be6a5c675e6f1ba1a56d735f010c302b76d3a53c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 4ada89a24eddfc269748427e0276e129799269a2
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349834"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554059"
 ---
 # <a name="how-to-submit-an-urb"></a>如何提交 URB
 
 
 本主题介绍提交初始化的 URB USB 驱动程序堆栈处理特定请求所需的步骤。
 
-客户端驱动程序通过使用传递给类型的 I/O 请求数据包 (Irp) 中的设备的 I/O 控制 (IOCTL) 的代码请求其设备与通信[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)。 对于特定的设备的请求，如选择配置请求，请求将介绍与 IRP USB 请求块 (URB) 中。 将 URB IRP，与相关联并将请求发送到 USB 驱动程序堆栈的过程称为提交 URB。 若要提交 URB，客户端驱动程序必须使用[ **IOCTL\_内部\_USB\_提交\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)作为设备控制代码。 IOCTL 是提供客户端驱动程序使用来管理其设备和设备连接到的端口的 I/O 接口的"内部"控制代码之一。 用户模式应用程序无权访问这些内部的 I/O 接口。 有关更多内核模式驱动程序的控制代码，请参阅[USB 客户端驱动程序的内核模式 Ioctl](https://msdn.microsoft.com/library/windows/hardware/ff540134#km-ioctl)。
+客户端驱动程序通过使用传递给类型的 I/O 请求数据包 (Irp) 中的设备的 I/O 控制 (IOCTL) 的代码请求其设备与通信[ **IRP\_MJ\_内部\_设备\_控制**](https://msdn.microsoft.com/library/windows/hardware/ff550766)。 对于特定的设备的请求，如选择配置请求，请求将介绍与 IRP USB 请求块 (URB) 中。 将 URB IRP，与相关联并将请求发送到 USB 驱动程序堆栈的过程称为提交 URB。 若要提交 URB，客户端驱动程序必须使用[ **IOCTL\_内部\_USB\_提交\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)作为设备控制代码。 IOCTL 是提供客户端驱动程序使用来管理其设备和设备连接到的端口的 I/O 接口的"内部"控制代码之一。 用户模式应用程序无权访问这些内部的 I/O 接口。 有关更多内核模式驱动程序的控制代码，请参阅[USB 客户端驱动程序的内核模式 Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#km-ioctl)。
 
-### <a name="prerequisites"></a>必备组件
+### <a name="prerequisites"></a>系统必备
 
 将请求发送到通用串行总线 (USB) 驱动程序堆栈之前, 的客户端驱动程序必须分配[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构并格式化该结构，具体取决于请求的类型。 有关详细信息，请参阅[Allocating 和构建 URBs](how-to-add-xrb-support-for-client-drivers.md)和[最佳实践：使用 URBs](usb-client-driver-contract-in-windows-8.md)。
 

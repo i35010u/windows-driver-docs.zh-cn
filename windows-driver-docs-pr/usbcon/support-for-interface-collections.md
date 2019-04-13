@@ -1,16 +1,16 @@
 ---
-Description: Interfaces on a composite USB device can be grouped in collections. The USB Generic Parent Driver (Usbccgp.sys) can enumerate interface collections in four ways.
-title: 复合的 USB 设备上的接口集合的枚举
+Description: 可以在集合中分组复合的 USB 设备上的接口。 USB 通用父驱动程序 (Usbccgp.sys) 可以枚举中四种方法的接口集合。
+title: 枚举 USB 复合设备上的接口集合
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f1e73f3ce97a0e8ab7c65268a5d066bff1350f2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 912d9a75ae21c48fc47ddf1a8c5d7a46527974b2
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546748"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554075"
 ---
-# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>复合的 USB 设备上的接口集合的枚举
+# <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合
 
 
 可以在集合中分组复合的 USB 设备上的接口。 [USB 通用父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)可以枚举中四种方法的接口集合。
@@ -55,7 +55,7 @@ ms.locfileid: "56546748"
 
 泛型父驱动程序创建每个函数描述符的物理设备对象 (PDO)。
 
-USB 设备配置接口和枚举回调例程中进行了总结[通用父驱动程序例程](https://msdn.microsoft.com/library/windows/hardware/ff540134#usbccgp)。
+USB 设备配置接口和枚举回调例程中进行了总结[通用父驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#usbccgp)。
 
 ### <a name="usb-generic-parent-driver-loading-mechanism"></a>USB 泛型父驱动程序加载机制
 

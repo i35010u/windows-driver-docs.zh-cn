@@ -1,23 +1,23 @@
 ---
-Description: This topic describes how a USB client driver can use Windows Driver Model (WDM) driver routines to allocate and format an URB before sending the request to the Microsoft-provided USB driver stack.
-title: 分配和构建 URBs
+Description: 本主题介绍 USB 客户端驱动程序如何使用 Windows 驱动程序模型 (WDM) 驱动程序例程来分配和设置 URB 格式之前将请求发送到由 Microsoft 提供的 USB 驱动程序堆栈。
+title: 分配和构建 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91fc046fb5eb3608145bc3b40a907da4763501ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0f928ac9a8d769e60d98867db4bb0dd6ccfd377e
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545014"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554071"
 ---
-# <a name="allocating-and-building-urbs"></a>分配和构建 URBs
+# <a name="allocating-and-building-urbs"></a>分配和构建 URB
 
 
 本主题介绍 USB 客户端驱动程序如何使用 Windows 驱动程序模型 (WDM) 驱动程序例程来分配和设置 URB 格式之前将请求发送到由 Microsoft 提供的 USB 驱动程序堆栈。
 
 客户端驱动程序使用 URB 包中的 USB 驱动程序堆栈的较低的驱动程序将处理请求所需的所有信息。 在 Windows 操作系统，URB 中所述[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构。
 
-Microsoft 可提供大量[USB 客户端驱动程序例程](https://msdn.microsoft.com/library/windows/hardware/ff540134#client)。 使用这些例程，USB 客户端驱动程序可以生成 URB 为特定的指定操作的请求，并将其转发下 USB 堆栈。 如果您愿意，您可以设计您的客户端驱动程序支持的操作，而无需构建自己的 URB 请求调用库例程。
+Microsoft 可提供大量[USB 客户端驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client)。 使用这些例程，USB 客户端驱动程序可以生成 URB 为特定的指定操作的请求，并将其转发下 USB 堆栈。 如果您愿意，您可以设计您的客户端驱动程序支持的操作，而无需构建自己的 URB 请求调用库例程。
 
 本主题包含以下各节：
 

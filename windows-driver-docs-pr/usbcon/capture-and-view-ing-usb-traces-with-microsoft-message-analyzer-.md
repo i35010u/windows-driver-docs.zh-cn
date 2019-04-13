@@ -1,17 +1,17 @@
 ---
-Description: You can use Microsoft Message Analyzer (MMA) to capture and view live USB traces, or view an existing trace.
+Description: 可以使用 Microsoft 消息分析器 (MMA) 来捕获和查看实时 USB 跟踪，或查看现有跟踪。
 Search.SourceType: Video
-title: 捕获和查看使用 Microsoft Message Analyzer 的 USB 跟踪
+title: 使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc3db2a968525f1e93672b68e82cc90ba054bdd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 417d26c54f265fd541272b7eb170f29d6abc4b33
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545878"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554051"
 ---
-# <a name="capture-and-view-usb-traces-with-microsoft-message-analyzer"></a>捕获和查看使用 Microsoft Message Analyzer 的 USB 跟踪
+# <a name="capture-and-view-usb-traces-with-microsoft-message-analyzer"></a>使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
 
 
 **摘要**
@@ -49,7 +49,7 @@ Microsoft Message Analyzer 动态分析信息，因为它捕获，并在用户�
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/29cb1d44-a38a-4105-9513-256e69e9f6a0]
 
 ## <a name="related-topics"></a>相关主题
-[博客：捕获 USB ETW 跟踪与 Microsoft 消息分析器 (MMA)](http://blogs.msdn.com/b/usbcoreblog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
+[博客：捕获 USB ETW 跟踪与 Microsoft 消息分析器 (MMA)](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/11/09/capturing-usb-etw-traces-with-microsoft-message-analyzer-mma.aspx)  
 [USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
 
 

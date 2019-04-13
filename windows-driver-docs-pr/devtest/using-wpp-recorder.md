@@ -4,12 +4,12 @@ description: 即时跟踪记录器 (IFR) 是一个新的跟踪功能，允许跟
 ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6821a9cf038953400c94d0d62afcd3a5d652ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f7df66cfc6e9ff645171ad8563e0caf86daaf68f
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561908"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554067"
 ---
 # <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>有关日志中记录跟踪的即时跟踪记录器 (IFR)
 
@@ -63,7 +63,7 @@ IFR 中的消息没有与之关联的时间戳。
 
 
 -   自己应熟悉[WPP 软件跟踪](wpp-software-tracing.md)如[将 WPP 软件跟踪添加到您的驱动程序](adding-wpp-software-tracing-to-a-windows-driver.md)并[声明和调用 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)。
--   阅读此博客文章[如何包括和驱动程序的公共 PDB 文件中查看 WPP 跟踪消息](http://blogs.msdn.com/b/usbcoreblog/archive/2013/06/29/wpp-blog-post.aspx)。
+-   阅读此博客文章[如何包括和驱动程序的公共 PDB 文件中查看 WPP 跟踪消息](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)。
 -   研究 toaster 示例。 已修改它来演示如何启用 IFR 并使用它。 有关详细信息，请参阅[Toaster 示例驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=617723)。
 
 ## <a name="span-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanspan-idenablewppsoftwaretracingspanenable-wpp-software-tracing"></a><span id="Enable_WPP_software_tracing"></span><span id="enable_wpp_software_tracing"></span><span id="ENABLE_WPP_SOFTWARE_TRACING"></span>启用 WPP 软件跟踪
