@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84234eeda018bf369dfcb9beb2841ae3c8d6ca51
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: e32cdf16ac87bba80168fbff07bf650530b911d0
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238442"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540510"
 ---
 # <a name="bug-check-0xfe-bugcodeusbdriver"></a>Bug 检查 0xFE：BUGCODE\_USB\_DRIVER
 
@@ -217,8 +217,10 @@ PDO 如果参数 3 不为 NULL。 如果参数 3 为 NULL 的上下文。
 </tbody>
 </table>
 
- 
+## <a name="resolution"></a>分辨率
 
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+ 
  
 
  

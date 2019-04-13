@@ -3,12 +3,12 @@ title: 使用 WinDbg 预览版进行调试
 description: 本部分介绍如何执行基本使用 WinDbg 预览调试程序的调试任务。
 ms.date: 10/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 600a5c853345753e8094481a23fb9899005d685c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 103c62d0e878c7d8d46a174ec07374192e1cec84
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562568"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534155"
 ---
 ![Windbg preview 上的小徽标](images/windbgx-preview-logo.png) 
 
@@ -79,7 +79,7 @@ WinDbg 预览版是与更现代的视觉对象、 更快的 windows、 功能齐
 ![在调试器中的脚本编写菜单的屏幕截图](images/windbgx-source-window.png)
 
 
-### <a name="highlightighting"></a>Highlightighting
+### <a name="highlighting"></a>突出显示
 
 在命令窗口具有两个新的突出显示功能。 选择任何文本将授予细微突出显示该文本的任何其他实例。 然后可以按"突出显示突出显示/取消"或 Ctrl + Alt + H 继续将突出显示。 
 

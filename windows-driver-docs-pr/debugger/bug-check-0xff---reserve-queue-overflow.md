@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad6025bae6cdfe1a4a0348557d8ce08672b7b3d6
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 369da6be516d4686dc1d3694b4d7653c2d0e566c
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239474"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540501"
 ---
 # <a name="bug-check-0xff-reservequeueoverflow"></a>Bug 检查 0xFF：RESERVE\_QUEUE\_OVERFLOW
 
@@ -63,8 +63,8 @@ ms.locfileid: "59239474"
 </tbody>
 </table>
 
- 
-
+## <a name="resolution"></a>分辨率 
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
  
 
  

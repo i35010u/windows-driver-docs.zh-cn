@@ -15,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bf4937bdaeea4b832728338f2fa4567ce1519d
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: b79e0b54bc1134b84cf3d1b9402861e668836a71
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239298"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534153"
 ---
 # <a name="vad"></a>!vad
 

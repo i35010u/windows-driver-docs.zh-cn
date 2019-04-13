@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f2fe3f647e69f03cbce14c0d0e3376d22e939d9
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 990877a9d7f1fc69e24de6ef7cf9cec115750cbf
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238386"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540503"
 ---
 # <a name="bug-check-0x51-registryerror"></a>Bug 检查 0x51：注册表\_错误
 
@@ -68,7 +68,7 @@ ms.locfileid: "59238386"
 <a name="cause"></a>原因
 -----
 
-出现了问题的注册表。 如果可用的内核调试程序，获得堆栈跟踪。
+出现了问题的注册表。 如果可用的内核调试程序，获得堆栈跟踪： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示 bug 检查有关的信息和可以确定根本原因，很有帮助，然后输入之一[ **k （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令以查看调用堆栈。
 
 此错误可能表示注册表尝试读取的一个文件时遇到 I/O 错误。 原因可能是由硬件问题或文件系统损坏。
 

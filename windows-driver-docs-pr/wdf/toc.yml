@@ -124,13 +124,6 @@ items:
     href: creating-device-objects-in-a-filter-driver.md
   - name: 在总线驱动程序中创建设备对象
     href: creating-device-objects-in-a-bus-driver.md
-  - name: WDF 设备对象宏
-    href: wdf-device-object-macros.md
-    items:
-    - name: WdfDeviceResumeIdleWithTag 方法
-      href: wdfdeviceresumeidlewithtag.md
-    - name: WdfDeviceStopIdleWithTag 方法
-      href: wdfdevicestopidlewithtag.md
 - name: 电源策略所有权
   href: power-policy-ownership.md
   items:
@@ -806,9 +799,9 @@ items:
       href: determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory.md
     - name: Wudfext.dll 中的调试程序扩展摘要
       href: using-umdf-debugger-extensions.md
-ms.openlocfilehash: d5dfef77b1c2f6eeeb3ca46253b6da9121f49932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 948571db55295b854a93eb7e1981cb29d9de5979
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465625"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534165"

@@ -6,12 +6,12 @@ keywords:
 - GFlags、 详细信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62855e3081ff115ab8abd0fdcc9b83362a62b8e5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: c7d92955f719afcd688992b290ba4788f2682799
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463987"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540516"
 ---
 # <a name="gflags-details"></a>GFlags 详细信息
 
@@ -68,37 +68,37 @@ GFlags 启用和禁用通过编辑 Windows 注册表和内部设置的系统功�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>系统级设置 （"注册表"）</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager&lt;strong&gt;GlobalFlag</strong></p></td>
+<td align="left"><p>系统级设置 (&quot;注册表&quot;)</p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\<strong>GlobalFlag</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>计算机的所有用户的特定于程序的设置 ("Image file")。</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;全身&gt;映像文件名</em>&lt;强&gt;GlobalFlag</strong></p></td>
+<td align="left"><p>特定于程序的设置 (&quot;映像文件&quot;) 的计算机的所有用户。</p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<em>映像文件名</em>\<strong>GlobalFlag</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>计算机的所有用户的特定程序 （"无提示进程退出"） 的无提示退出设置。</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit&lt;em&gt;ImageFileName</em></p></td>
+<td align="left"><p>特定程序的无提示退出设置 (&quot;进程退出，无提示&quot;) 的计算机的所有用户。</p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\<strong><em>ImageFileName</em></strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>计算机的所有用户的图像文件的页面堆选项</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;全身&gt;映像文件名</em>&lt;强&gt;PageHeapFlags</strong></p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<em>映像文件名</em>\<strong>PageHeapFlags</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>用户模式堆栈跟踪数据库大小 (<strong>tracedb</strong>)</p></td>
-<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;em&gt;ImageFileName</em>&lt;strong&gt;StackTraceDatabaseSizeInMb</strong></p></td>
+<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<em>映像文件名</em>\<strong>StackTraceDatabaseSizeInMb</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>创建用户模式堆栈跟踪数据库 (ust，0x1000) 的图像文件</p></td>
-<td align="left"><p>Windows 将图像文件名称添加到 USTEnabled 注册表项的值 (HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;强&gt;USTEnabled</strong>)。</p></td>
+<td align="left"><p>Windows 将图像文件名称添加到 USTEnabled 注册表项的值 (HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<strong>USTEnabled</strong>)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>在可能的情况下大型页加载映像</p></td>
-<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;全身&gt;映像文件名</em>&lt;强&gt;UseLargePages</strong>。</p></td>
+<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<em>映像文件名</em>\<strong>UseLargePages</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>特殊池</p>
 <p>（内核特殊池标记）</p></td>
-<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&lt;strong&gt;PoolTag</strong></p></td>
+<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\<strong>PoolTag</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>验证开始/验证结束</p></td>
@@ -106,11 +106,11 @@ GFlags 启用和禁用通过编辑 Windows 注册表和内部设置的系统功�
 </tr>
 <tr class="even">
 <td align="left"><p>图像文件的调试器</p></td>
-<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options&lt;全身&gt;映像文件名</em>&lt;强&gt;调试器</strong></p></td>
+<td align="left"><p>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image 文件执行按<em>映像文件名</em>\<strong>调试器</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>对象引用跟踪</p></td>
-<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel&lt;strong&gt;ObTraceProcessName</strong>, <strong>ObTracePermanent</strong> and <strong>ObTracePoolTags</strong></p></td>
+<td align="left"><p>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel\<strong>ObTraceProcessName</strong>, <strong>ObTracePermanent</strong> and <strong>ObTracePoolTags</strong></p></td>
 </tr>
 </tbody>
 </table>

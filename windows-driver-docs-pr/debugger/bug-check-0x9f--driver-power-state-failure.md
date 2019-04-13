@@ -13,21 +13,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 34ff79b43b260aea6e1e758b84d5e511c47707f0
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: 5ddd7c580fac6192f67b854f54427fc3877364a0
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239030"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540518"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>（开发人员内容）Bug 检查 0x9F:驱动程序\_电源\_状态\_失败
 
 
-DRIVER_POWER_STATE_FAILURE bug 检查具有 0x0000009F 值。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
+该驱动程序\_电源\_状态\_故障错误检查的值为 0x0000009F。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
-
 
 ## <a name="driverpowerstatefailure-parameters"></a>驱动程序\_电源\_状态\_失败参数
 

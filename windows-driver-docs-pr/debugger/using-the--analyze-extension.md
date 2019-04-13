@@ -6,14 +6,14 @@ keywords:
 - 分析扩展，示例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22706477aa3ab69a0ec2a93632b88578f1b82ba2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 24547e89ed4a3a7c09fb8c43e0645fddd34dac6c
+ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533775"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59534157"
 ---
-# <a name="using-the-analyze-extension"></a>使用 ！ 分析扩展
+# <a name="using-the-analyze-extension"></a>使用 !analyze 扩展
 
 
 ## <span id="ddk_using_the_analyze_extension_dbg"></span><span id="DDK_USING_THE_ANALYZE_EXTENSION_DBG"></span>
@@ -128,7 +128,7 @@ IMAGE_NAME:  MyApp.exe
 DEBUG_FLR_IMAGE_TIMESTAMP:  383490a9
 ```
 
-当[ **！ 分析**](-analyze.md)确定可能导致错误，说明其显示在后续\_IP 字段。 符号\_名称、 模块\_名称、 映像\_名称和 DBG\_FLR\_图像\_时间戳字段显示符号、 模块、 映像名称和与此相对应的映像时间戳指令。
+当[ **！ 分析**](-analyze.md)确定可能导致错误，说明其显示在后续\_IP 字段。 符号\_名称、 模块\_名称、 映像\_名称和调试\_FLR\_图像\_时间戳字段显示符号、 模块、 映像名称和与此相对应的映像时间戳指令。
 
 ```dbgcmd
 STACK_COMMAND:  .ecxr ; kb
@@ -151,7 +151,7 @@ Followup: dbg
 
 有多种可能会出现其他字段：
 
--   如果控件已转让给无效的地址，然后故障\_IP 字段将包含此无效地址。 而不是继续努力\_IP 字段中，失败\_指令\_地址字段将显示此地址中的反汇编的代码，尽管此反汇编可能是没有意义。 在此情况下，该符号\_名称、 模块\_名称、 映像\_名称和 DBG\_FLR\_图像\_时间戳字段将指向此指令的调用方。
+-   如果控件已转让给无效的地址，然后故障\_IP 字段将包含此无效地址。 而不是继续努力\_IP 字段中，失败\_指令\_地址字段将显示此地址中的反汇编的代码，尽管此反汇编可能是没有意义。 在此情况下，该符号\_名称、 模块\_名称、 映像\_名称和调试\_FLR\_图像\_时间戳字段将指向此指令的调用方。
 
 -   如果处理器 misfires，可能会看到单个\_位\_错误，两个\_位\_错误或可能\_无效\_控制\_传输字段。
 

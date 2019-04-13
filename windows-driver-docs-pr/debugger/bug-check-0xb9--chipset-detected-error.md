@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 466f0febb9f3bea1f27c794ae6644dfb06d54228
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: dbe161ef8dd7bd7bc4029d5108734db439665918
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239676"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540508"
 ---
 # <a name="bug-check-0xb9-chipsetdetectederror"></a>Bug 检查 0xB9：芯片组\_检测到\_错误
 
@@ -32,7 +32,8 @@ ms.locfileid: "59239676"
 
 
  
-
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
  
 
 

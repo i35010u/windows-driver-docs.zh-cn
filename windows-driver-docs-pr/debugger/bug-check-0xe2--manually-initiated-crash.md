@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bcbc0f0331da1d8fa0518dee77d397227bba37b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.openlocfilehash: f47e1eea59fdf6d67901747133ead9b412cbd25e
+ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238414"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59540502"
 ---
 # <a name="bug-check-0xe2-manuallyinitiatedcrash"></a>Bug 检查 0xE2：手动\_启动\_崩溃
 
@@ -37,7 +37,7 @@ ms.locfileid: "59238414"
 <a name="remarks"></a>备注
 -------
 
-有关手动启动故障转储的详细信息，请参阅强制系统崩溃。 .
+有关手动启动故障转储的详细信息，请参阅[强制系统崩溃。](https://docs.microsoft.com/windows-hardware/drivers/debugger/forcing-a-system-crash) .
 
  
 
