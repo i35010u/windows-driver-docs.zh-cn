@@ -3,12 +3,12 @@ Description: 本主题介绍 USB 客户端驱动程序验证工具功能，客�
 title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf1c830c2595c38976d1347dd4b7757a5107ef8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 116c3ff841ae540bf82faf01e6de4f0201090633
+ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349066"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59554069"
 ---
 # <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
@@ -58,7 +58,7 @@ HKEY_LOCAL_MACHINE
 ## <a name="configuration-settings-for-the-usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序的配置设置
 
 
-启用验证工具后，会跟踪 USB 驱动程序堆栈的客户端驱动程序将通过调用其分配的 URBs **USBD\_xxxUrbAllocate**例程 (请参阅[USB 例程](https://msdn.microsoft.com/library/windows/hardware/ff540134#client))。 如果客户端驱动程序泄漏任何 URB、 USB 驱动程序堆栈使用该信息会导致通过出现 bugcheck [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。 在这种情况下，使用 **！ usbanalyze v**命令，以确定泄露的原因。
+启用验证工具后，会跟踪 USB 驱动程序堆栈的客户端驱动程序将通过调用其分配的 URBs **USBD\_xxxUrbAllocate**例程 (请参阅[USB 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client))。 如果客户端驱动程序泄漏任何 URB、 USB 驱动程序堆栈使用该信息会导致通过出现 bugcheck [Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)。 在这种情况下，使用 **！ usbanalyze v**命令，以确定泄露的原因。
 
 此外，（可选） 你可以配置 USB 客户端驱动程序验证工具来修改或失败特定的例程，并指定何种频率例程时不能。 若要配置验证程序，请设置注册表项，如下所示：
 
