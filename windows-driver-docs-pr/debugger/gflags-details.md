@@ -4,40 +4,36 @@ description: GFlags 详细信息
 ms.assetid: 97faa63d-b876-4973-812f-f3bdd57c1778
 keywords:
 - GFlags、 详细信息
-ms.date: 05/23/2017
+ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d92955f719afcd688992b290ba4788f2682799
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: bfd6271b4f348b45da7899804b5338fc816449a2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540516"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745872"
 ---
 # <a name="gflags-details"></a>GFlags 详细信息
 
-
 ## <span id="ddk_gflags_details_dtools"></span><span id="DDK_GFLAGS_DETAILS_DTOOLS"></span>
-
 
 GFlags 启用和禁用通过编辑 Windows 注册表和内部设置的系统功能。 本部分介绍 GFlags 的详细信息中的操作，并包括最有效地使用 GFlags 的技巧。
 
 ### <a name="span-idgeneralinformationspanspan-idgeneralinformationspangeneral-information"></a><span id="general_information"></span><span id="GENERAL_INFORMATION"></span>常规信息
 
--   若要显示 GFlags 对话框中，在命令行处，键入**gflags** （不带任何参数）。
+- 若要显示 GFlags 对话框中，在命令行处，键入**gflags** （不带任何参数）。
 
--   在 Windows Server 2003 和早期版本的 Windows 上，若要设置标志，在注册表中或在内核模式下，必须在计算机上 Administrators 组的成员。 但是，在具有用户访问最低来宾帐户访问权限可以启动 GFlags 对话框中的程序。
+- GFlags 系统级注册表设置在注册表中会立即显示，但直到重新启动系统不会生效。
 
--   GFlags 系统级注册表设置在注册表中会立即显示，但直到重新启动系统不会生效。
+- GFlags 图像文件注册表设置在注册表中会立即显示，但直到重新启动该进程不会生效。
 
--   GFlags 图像文件注册表设置在注册表中会立即显示，但直到重新启动该进程不会生效。
-
--   GFlags 对话框中的调试器和启动功能是特定的程序。 您可以仅设置其上一个图像文件一次。
+- GFlags 对话框中的调试器和启动功能是特定的程序。 您可以仅设置其上一个图像文件一次。
 
 ### <a name="span-idflagdetailsspanspan-idflagdetailsspanflag-details"></a><span id="flag_details"></span><span id="FLAG_DETAILS"></span>标志的详细信息
 
--   若要清除所有标志，请将标志设置为-FFFFFFFF。 将标志设置为 0 将 0 添加到当前的标志值。
+- 若要清除所有标志，请将标志设置为-FFFFFFFF。 将标志设置为 0 将 0 添加到当前的标志值。
 
--   Windows 将图像文件的标志设置为 FFFFFFFF (0xFFFFFFFF)，清除所有标志的图像文件，并删除**GlobalFlag**图像文件注册表项中的条目。 保留图像文件注册表项。
+- Windows 将图像文件的标志设置为 FFFFFFFF (0xFFFFFFFF)，清除所有标志的图像文件，并删除**GlobalFlag**图像文件注册表项中的条目。 保留图像文件注册表项。
 
 ### <a name="span-iddialogboxandcommandlinespanspan-iddialogboxandcommandlinespandialog-box-and-command-line"></a><span id="dialog_box_and_command_line"></span><span id="DIALOG_BOX_AND_COMMAND_LINE"></span>对话框和命令行
 
@@ -45,17 +41,17 @@ GFlags 启用和禁用通过编辑 Windows 注册表和内部设置的系统功�
 
 **仅限对话框**
 
--   启动。 开始使用指定的标志的程序。
+- 启动。 开始使用指定的标志的程序。
 
--   在调试器中运行程序。
+- 在调试器中运行程序。
 
--   [特殊池](special-pool.md)Windows Vista 之前的系统上。 在 Windows Vista 和更高版本的 Windows 上，可以在命令行或 Gflags 对话框中配置特殊池功能。
+- [特殊池](special-pool.md)Windows Vista 之前的系统上。 在 Windows Vista 和更高版本的 Windows 上，可以在命令行或 Gflags 对话框中配置特殊池功能。
 
 **只有命令行**
 
--   设置的用户模式堆栈跟踪数据库大小 (/ tracedb)。
+- 设置的用户模式堆栈跟踪数据库大小 (/ tracedb)。
 
--   设置页面堆验证选项。
+- 设置页面堆验证选项。
 
 ### <a name="span-idregistryinformationspanspan-idregistryinformationspanregistry-information"></a><span id="registry_information"></span><span id="REGISTRY_INFORMATION"></span>注册表信息
 
@@ -114,14 +110,3 @@ GFlags 启用和禁用通过编辑 Windows 注册表和内部设置的系统功�
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-
-

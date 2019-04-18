@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b038d43c0237f15630e461eb2628885d4d77a3b
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: 113c699f4d242f102ff8a2b8fc7bc98bb79892a4
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540500"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745864"
 ---
 # <a name="bug-check-0x5a-criticalservicefailed"></a>Bug 检查 0x5A：关键\_服务\_失败
 
@@ -29,10 +29,16 @@ ms.locfileid: "59540500"
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+<<<<<<< 标头
+
+=======
+>>>>>>> Master
 
 ## <a name="resolution"></a>分辨率
+<a name="-head"></a><<<<<<< 标头
+=======
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
+>>>>>>> 主[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
 
 
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe161ef8dd7bd7bc4029d5108734db439665918
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.openlocfilehash: 0dd6634ff9170ad00462ad2825ef43cf8742b91a
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540508"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59745862"
 ---
 # <a name="bug-check-0xb9-chipsetdetectederror"></a>Bug 检查 0xB9：芯片组\_检测到\_错误
 
@@ -29,6 +29,10 @@ ms.locfileid: "59540508"
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+<<<<<<< 标头
+
+=======
+>>>>>>> Master
 
 
  

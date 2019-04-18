@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091012d1d2732cba714711dd40af56f34e203f2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a744b35346b16758aecb7754b375c4c2caa880f3
+ms.sourcegitcommit: e0953a7183f19937fefe1f62253c4b629926cd53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522477"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59671434"
 ---
 # <a name="filelock-structure"></a>文件\_锁结构
 
@@ -73,7 +73,7 @@ typedef struct _FILE_LOCK {
 <a name="remarks"></a>备注
 -------
 
-文件系统旧筛选器驱动程序和微筛选器可以使用不同的例程创建和使用文件\_锁对象，以及针对读/写访问权限的文件。
+文件系统驱动程序、 旧的文件系统筛选器驱动程序和微筛选器可以使用不同的例程创建和使用文件\_锁对象，以及针对读/写访问权限的文件。
 
 -   若要分配一个文件\_锁对象，请调用[ **FsRtlAllocateFileLock** ](https://msdn.microsoft.com/library/windows/hardware/ff545640)或[ **FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)。
 
@@ -95,17 +95,17 @@ typedef struct _FILE_LOCK {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 FltKernel.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltAllocateFileLock**](https://msdn.microsoft.com/library/windows/hardware/ff541743)
