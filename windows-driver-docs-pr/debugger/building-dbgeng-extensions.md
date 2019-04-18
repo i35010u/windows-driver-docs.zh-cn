@@ -8,10 +8,10 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9ee79cf61232803594e082f269360753a24d63
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845529"
 ---
 # <a name="building-dbgeng-extensions"></a>生成 DbgEng 扩展
@@ -20,7 +20,7 @@ ms.locfileid: "58845529"
 
 应该编译并使用 Visual Studio 生成的所有调试器扩展。 生成实用工具不能再用于调试器扩展。
 
-有关在 Visual Studio 中生成项目的文档，请参阅[Visual Studio 项目的 c + +](https://docs.microsoft.com/cpp/build/creating-and-managing-visual-cpp-projects?view=vs-2017)。
+有关在 Visual Studio 中生成项目的文档，请参阅[Visual Studio 项目的C++ ](https://docs.microsoft.com/cpp/build/creating-and-managing-visual-cpp-projects?view=vs-2017)。
 
 若要生成扩展，请使用以下过程：
 

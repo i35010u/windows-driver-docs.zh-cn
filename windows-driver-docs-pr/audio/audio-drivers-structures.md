@@ -5,10 +5,10 @@ ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e3734729886afe5fb2f203381ab6f9cd88949f
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845544"
 ---
 # <a name="audio-drivers-structures"></a>音频驱动程序结构

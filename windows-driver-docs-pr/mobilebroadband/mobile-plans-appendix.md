@@ -7,10 +7,10 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0451a6ad8243ed59e7209edfcdf09d8c5d042471
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845537"
 ---
 # <a name="mobile-plans-appendix"></a>移动计划附录

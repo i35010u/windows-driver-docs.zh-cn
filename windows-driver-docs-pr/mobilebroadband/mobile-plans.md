@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 7b8ba7e497ee9ede100e110fbfe0b76a299c4093
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845532"
 ---
 # <a name="mobile-plans"></a>移动套餐
