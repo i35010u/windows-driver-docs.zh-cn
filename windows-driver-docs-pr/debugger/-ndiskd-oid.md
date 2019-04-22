@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d13728dd646a86dd7bd32073a0886142beb6c77
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238590"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
@@ -140,9 +140,9 @@ ALL PENDING OIDs
 
 [OID\_PNP\_SET\_POWER](https://msdn.microsoft.com/library/windows/hardware/ff569780)
 
-[**bp、bu、bm（设置断点）**](bp--bu--bm--set-breakpoint-.md)
+[**最佳实践，bu，bm （设置断点）**](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_常规\_统计信息](https://msdn.microsoft.com/library/windows/hardware/ff569640)
+[OID\_GEN\_STATISTICS](https://msdn.microsoft.com/library/windows/hardware/ff569640)
 
 [NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)
 

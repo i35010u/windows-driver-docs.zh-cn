@@ -9,10 +9,10 @@ keywords:
 ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58761858"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
@@ -384,7 +384,7 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 4.  **设置运行时库**
 
-    设置运行时库-打开 echo 驱动程序的属性页，并找到**C/c + +** &gt; **代码生成**。  将运行时库 DLL 版本更改为非 DLL 版本。 如果没有此设置，您必须单独安装到目标计算机的 MSVC 运行时。
+    设置运行时库-打开 echo 驱动程序的属性页，并找到**C /C++**  &gt; **代码生成**。  将运行时库 DLL 版本更改为非 DLL 版本。 如果没有此设置，您必须单独安装到目标计算机的 MSVC 运行时。
 
     ![突出显示此运行时库设置回显属性页](images/debuglab-image-echoapp-properties.png)
 
@@ -960,7 +960,7 @@ ba r 4 0x0003f7bf0
 
 -   运行 (F5) – 运行直到遇到断点时或发生的 bug 检查之类的事件发生。
 
--   步跃 (f10) – 此命令将导致代码执行来继续执行一个语句或一次一条指令。 如果遇到调用，代码执行将通过调用而无需输入调用的例程。 (如果编程语言为 C 或 c + +，WinDbg 为源模式中，源模式可以打开或关闭使用**调试**&gt;**源模式**)。
+-   步跃 (f10) – 此命令将导致代码执行来继续执行一个语句或一次一条指令。 如果遇到调用，代码执行将通过调用而无需输入调用的例程。 (如果编程语言为 C 或C++和 WinDbg 位于源模式中，源模式可以打开或关闭使用**调试**&gt;**源模式**)。
 
 -   步骤中 (F11)-此命令是逐过程类似，只不过调用的执行将进入被调用例程。
 

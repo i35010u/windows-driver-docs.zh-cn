@@ -5,10 +5,10 @@ ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b22a03616aa0b43a2d46979510f19787c23d50a
-ms.sourcegitcommit: 69e7e3a70c491feb4b7cee258f710585843168c0
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480334"
 ---
 # <a name="windows-kernel-opaque-structures"></a>Windows 内核不透明结构
@@ -318,7 +318,7 @@ ms.locfileid: "59480334"
 [**RtlRunOnceExecuteOnce**](https://msdn.microsoft.com/library/windows/hardware/ff562765)  
 [**RtlRunOnceInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff562767)  
 [*RunOnceInitialization*](https://msdn.microsoft.com/library/windows/hardware/ff563635)  
-[停止运行保护](run-down-protection.md)  
+[Run-Down 保护](run-down-protection.md)  
 [**SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)  
 [**SeAssignSecurity**](https://msdn.microsoft.com/library/windows/hardware/ff563676)  
 [**SeAssignSecurityEx**](https://msdn.microsoft.com/library/windows/hardware/ff563679)  

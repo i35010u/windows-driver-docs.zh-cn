@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d70f693c518b594259c9d4cb1d15ffd50091977
-ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58898058"
 ---
 # <a name="ctrlw-show-debugger-version"></a>CTRL+W（显示调试器版本）
@@ -46,7 +46,7 @@ CTRL+ALT+W
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>调试程序</strong></p></td>
+<td align="left"><p><strong>调试器</strong></p></td>
 <td align="left"><p>KD、 CDB WinDbg</p></td>
 </tr>
 <tr class="even">
@@ -76,9 +76,9 @@ CTRL+ALT+W
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**version（显示调试器版本）**](version--show-debugger-version-.md)
+[**版本 （显示调试器版本）**](version--show-debugger-version-.md)
 
-[**vertarget（显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
+[**vertarget （显示目标计算机版本）**](vertarget--show-target-computer-version-.md)
 
  
 

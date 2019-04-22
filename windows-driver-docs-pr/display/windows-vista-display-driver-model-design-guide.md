@@ -15,10 +15,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03dbe538a843370d5fe33e1392f273918ff5f0c3
-ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59362910"
 ---
 # <a name="windows-display-driver-model-wddm-design-guide"></a>Windows 显示驱动程序模型 (WDDM) 设计指南
@@ -39,19 +39,19 @@ Windows 显示器驱动程序模型 (WDDM) 是从 Windows Vista 开始提供，�
 
 [What's new for Windows 8.1 显示器驱动程序 (WDDM 1.3)](what-s-new-for-windows-8-1-display-drivers--wddm-1-3-.md)
 
-[Windows 8 显示驱动程序 (WDDM 1.2) 的新增功能](what-s-new-for-windows-8-display-drivers.md)
+[什么是 Windows 8 显示器驱动程序 (WDDM 1.2) 的新增功能](what-s-new-for-windows-8-display-drivers.md)
 
-[Windows 7 显示驱动程序 (WDDM 1.1) 的新增功能](what-s-new-for-windows-7-display-drivers--wddm-1-1-.md)
+[什么是 Windows 7 的显示器驱动程序 (WDDM 1.1) 的新增功能](what-s-new-for-windows-7-display-drivers--wddm-1-1-.md)
 
 [WDDM 2.0 和 Windows 10](wddm-2-0-and-windows-10.md)
 
 [WDDM 1.2 和 Windows 8](wddm-in-windows-8.md)
 
-[Windows 显示驱动程序模型 (WDDM) 简介](introduction-to-the-windows-vista-and-later-display-driver-model.md)
+[Windows 显示器驱动程序模型 (WDDM) 简介](introduction-to-the-windows-vista-and-later-display-driver-model.md)
 
 [显示微型端口和用户模式显示驱动程序的安装要求](installing-display-miniport-and-user-mode-display-drivers.md)
 
-[针对 Windows 7 和更高版本优化的显示驱动程序的安装要求](installing-display-drivers-optimized-for-windows-7-and-later.md)
+[优化 Windows 7 及更高版本的显示器驱动程序的安装要求](installing-display-drivers-optimized-for-windows-7-and-later.md)
 
 [初始化显示微型端口和用户模式显示驱动程序](initializing-display-miniport-and-user-mode-display-drivers.md)
 
@@ -61,13 +61,13 @@ Windows 显示器驱动程序模型 (WDDM) 是从 Windows Vista 开始提供，�
 
 [用户模式显示驱动程序](user-mode-display-drivers.md)
 
-[监视驱动程序](monitor-drivers.md)
+[显示器驱动程序](monitor-drivers.md)
 
-[多个监视器和视频呈现网络](multiple-monitors-and-video-present-networks.md)
+[多个监视器和视频存在网络](multiple-monitors-and-video-present-networks.md)
 
-[Windows 显示驱动程序模型 (WDDM) 中的任务](tasks-in-the-windows-vista-display-driver-model.md)
+[Windows 显示器驱动程序模型 (WDDM) 中的任务](tasks-in-the-windows-vista-display-driver-model.md)
 
-[Windows 显示驱动程序模型 (WDDM) 的调试提示](debugging-tips-for-the-windows-vista-display-driver-model.md)
+[Windows 显示器驱动程序模型 (WDDM) 的调试提示](debugging-tips-for-the-windows-vista-display-driver-model.md)
 
 [实现技巧和 Windows 显示器驱动程序模型 (WDDM) 的要求](implementation-tips-and-requirements-for-the-windows-vista-display-dri.md)
 

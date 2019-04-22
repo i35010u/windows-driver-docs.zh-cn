@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fee075a853e068c5906e4ba652cdd7775ceb6234
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239242"
 ---
 # <a name="bug-check-0x170-cryptolibraryinternalerror"></a>Bug 检查 0x170：CRYPTO\_LIBRARY\_INTERNAL\_ERROR 

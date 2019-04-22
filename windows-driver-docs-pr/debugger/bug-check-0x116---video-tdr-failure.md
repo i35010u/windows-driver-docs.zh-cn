@@ -15,10 +15,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239578"
 ---
 # <a name="bug-check-0x116-videotdrfailure"></a>Bug 检查 0x116：视频\_TDR\_失败
@@ -201,7 +201,7 @@ fffff801`6470c14b cc              int     3
 
 有关详细信息，请参阅以下主题：
 
-[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
 
 如果您不准备使用 Windows 调试器处理此问题，可以使用一些基本的故障排除方法。
 

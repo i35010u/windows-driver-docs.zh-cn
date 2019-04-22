@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1c4e47caa8d9bf393f914a15c04e707e66e189
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239048"
 ---
 # <a name="bug-check-0x1b0-videominiportfailedlivedump"></a>Bug 检查 0x1B0：视频\_微型端口\_失败\_LIVEDUMP

@@ -5,10 +5,10 @@ description: WDK 提供的设备测试组件使你能够在网络中的测试计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f1b2c59d6a9da5abdd8e614650a6234aa03b4a3
-ms.sourcegitcommit: 672bf3fd18f6c169b5634476613ce1da9250413b
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58898060"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>如何在运行时通过命令提示符测试驱动程序
@@ -61,7 +61,7 @@ Te.exe /name:"*PNPSurpriseRemoveAndRestartDevice" Devfund_PnPDTest.dll /P:"DQ=De
 * [设备基础功能测试](https://msdn.microsoft.com/Library/Windows/Hardware/JJ673011)
 * [设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)
-* [测试授权和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725)
+* [测试创作和执行框架 (TAEF)](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439725)
 * [Te.exe 命令选项](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439743)
  
 

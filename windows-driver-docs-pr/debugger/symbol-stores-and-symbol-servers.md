@@ -14,10 +14,10 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0943ddd04f7befbaf3ff99b3af284d0e5a2d10e8
-ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59362904"
 ---
 # <a name="symbol-stores-and-symbol-servers"></a>符号存储和符号服务器
@@ -34,7 +34,7 @@ ms.locfileid: "59362904"
 
 [使用符号服务器](using-a-symbol-server.md)
 
-[HTTP 符号存储](http-symbol-stores.md)
+[HTTP 符号存储区](http-symbol-stores.md)
 
 [文件共享 (SMB) 符号服务器](file-share--smb--symbol-server.md)
 

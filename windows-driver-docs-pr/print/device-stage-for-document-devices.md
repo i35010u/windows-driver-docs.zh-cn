@@ -5,10 +5,10 @@ ms.assetid: 7188573a-d214-4f57-8b92-013c06e53d9e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d86dc37ee8dfb0b6263617a7e2ee872ad9a5d7c2
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845525"
 ---
 # <a name="device-stage-for-document-devices"></a>文档设备的设备阶段

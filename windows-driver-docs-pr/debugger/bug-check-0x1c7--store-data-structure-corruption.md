@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 422218ac6fb5f1441997f01ecce1f81194a94e7b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238976"
 ---
 # <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7：应用商店\_数据\_结构\_损坏
@@ -87,4 +87,4 @@ Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部�
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows 内核模式内存管理器](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

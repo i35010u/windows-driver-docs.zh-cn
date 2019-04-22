@@ -5,12 +5,12 @@ ms.assetid: C4C3C56F-8E92-4CB1-A57B-942E466ECD3D
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdaab461c6a1d5428a25243273b528592d65a326
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.openlocfilehash: 4c2649bac3fe5edf312fa80683ba72d674e4e51b
+ms.sourcegitcommit: 3508ab1c06671ac52e446aa2556b53f978ef6d83
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560580"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59586379"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>在合作伙伴中心内管理硬件提交
 
@@ -20,9 +20,13 @@ ms.locfileid: "57560580"
 
 请参阅[查找硬件提交](find-hardware-submission.md)。
 
-## <a name="update-an-hck-hardware-submission-using-the-driver-update-acceptable-dua-process"></a>使用驱动程序更新可接受 (DUA) 过程更新 HCK 硬件提交
+## <a name="update-an-hck-or-hlk-hardware-submission-using-the-driver-update-acceptable-dua-process"></a>使用驱动程序更新可接受 (DUA) 过程更新 HCK 或 HLK 硬件提交
 
-请参阅[创建仅驱动程序更新包](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)。
+> [!Note]
+> 只能从初始提交创建 DUA 提交。
+> - 因为不能对 DUA 提交执行 DUA，与其他公司共享的 DUA 提交不会显示“下载 DUA Shell”按钮。
+
+有关如何从 DUA Shell 创建 DUA 提交的说明，请参阅[创建仅更新驱动程序的包](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)。
 
 ## <a name="registering-an-extensionid"></a>注册 ExtensionId
 

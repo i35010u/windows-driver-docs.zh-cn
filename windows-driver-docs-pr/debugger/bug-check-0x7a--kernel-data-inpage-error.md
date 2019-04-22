@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c18f0ba0bdbb37f7649681218f521949eb371afd
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238798"
 ---
 # <a name="bug-check-0x7a-kerneldatainpageerror"></a>Bug 检查 0x7A：KERNEL\_DATA\_INPAGE\_ERROR

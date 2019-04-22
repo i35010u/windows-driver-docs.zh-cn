@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f780d210c5d337f02cf017c9e7c68a3d854c82fb
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239352"
 ---
 # <a name="bug-check-0x133-dpcwatchdogviolation"></a>Bug 检查 0x133 DPC\_监视器\_冲突
@@ -128,9 +128,9 @@ dt nt!_KPRCB fffff80309974180 Dpc*
 
 有关详细信息，请参阅以下主题：
 
-[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
 
-[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用 ！ 分析扩展](using-the--analyze-extension.md)和[！ 分析](-analyze.md)
 

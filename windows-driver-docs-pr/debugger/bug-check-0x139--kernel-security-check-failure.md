@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a4ec4a3fcabe13dede1109d22ebffe4d1efcd801
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239664"
 ---
 # <a name="bug-check-0x139-kernelsecuritycheckfailure"></a>Bug 检查 0x139：内核\_安全\_检查\_失败
@@ -46,7 +46,7 @@ ms.locfileid: "59239664"
 | 参数 1 | 描述                                                                                                                                                                                                                                                                                                       |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0 | 已基于堆栈的缓冲区溢出 （旧 /GS 冲突）。                                                                                                                                                                                                                                                     |
-| 1  |  VTGuard 检测代码检测到尝试使用非法虚函数表。 通常情况下，c + + 对象已损坏，，然后调用虚拟方法已尝试使用损坏的对象的**这**指针。                                                                                     |
+| 1  |  VTGuard 检测代码检测到尝试使用非法虚函数表。 通常情况下，C++对象已损坏，，然后调用虚拟方法已尝试使用损坏的对象**这**指针。                                                                                     |
 | 2  |  堆栈 cookie 检测代码检测到基于堆栈的缓冲区溢出 （/GS 冲突）。                                                                                                                                                                                                                          |
 | 3  |  列表\_条目已损坏 （例如，重复移除）。 有关详细信息，请参阅以下原因部分。                                                                                                                                                                                                |
 | 4  |  保留                                                                                                                                                                                                                                                                                                          |
@@ -122,9 +122,9 @@ ms.locfileid: "59239664"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
 
-[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

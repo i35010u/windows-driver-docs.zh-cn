@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 89ea2d63b26da9765da1b97305db3480a0877985
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239744"
 ---
 # <a name="bug-check-0x1a5-usbdripsblockersurpriseremovallivedump"></a>Bug 检查 0x1A5：USB\_DRIPS\_BLOCKER\_SURPRISE\_REMOVAL\_LIVEDUMP

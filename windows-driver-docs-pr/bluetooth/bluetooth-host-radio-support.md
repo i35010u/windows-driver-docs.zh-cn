@@ -5,10 +5,10 @@ description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58761856"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持

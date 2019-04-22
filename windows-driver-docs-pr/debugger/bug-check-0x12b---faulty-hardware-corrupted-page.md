@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 02cd8f6a04923fb0da6d64e7f2bb8e77fee732fd
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238614"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>Bug 检查 0x12B：发生故障\_硬件\_损坏\_页
@@ -136,7 +136,7 @@ Windows 内存管理器和内存压缩的详细信息，请参阅[第 1 部分 W
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows 内核模式内存管理器](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
 
 [第 9 频道视频内存压缩](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)
 

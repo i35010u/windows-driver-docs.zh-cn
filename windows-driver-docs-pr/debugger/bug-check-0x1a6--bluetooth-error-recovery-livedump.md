@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d3d04aa3f3d52f6197d214b8cc5e341159f06bbf
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239586"
 ---
 # <a name="bug-check-0x1a6-bluetootherrorrecoverylivedump"></a>Bug 检查 0x1A6：蓝牙\_错误\_恢复\_LIVEDUMP

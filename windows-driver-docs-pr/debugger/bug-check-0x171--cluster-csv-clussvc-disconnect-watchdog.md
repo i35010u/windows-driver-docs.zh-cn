@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f616809d818829c04a460f9d9c7dc2d384ead450
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238426"
 ---
 # <a name="bug-check-0x171-clustercsvclussvcdisconnectwatchdog"></a>Bug 检查 0x171：群集\_CSV\_CLUSSVC\_断开连接\_监视器

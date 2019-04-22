@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af822a5b3cd92ebfb9b5bdb8ccb4000ebbec66c
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239814"
 ---
 # <a name="bug-check-0x15d-socsubsystemfailurelivedump"></a>Bug 检查 0x15D：SOC\_SUBSYSTEM\_FAILURE\_LIVEDUMP
@@ -89,7 +89,7 @@ SOC\_子系统\_失败\_LIVEDUMP 错误代码的值为 0x0000015D。 这表示�
 
 有关详细信息，请参阅以下主题：
 
-[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
 
 如果您不准备使用 Windows 调试器处理此问题，可以使用一些基本的故障排除方法。
 

@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e7c3a0e5a80475c9213ba58f8a22fbaa6480b3cf
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239362"
 ---
 # <a name="bug-check-0x1d6-workerthreadreturnedwithnondefaultworkloadclass"></a>Bug 检查 0x1D6：辅助角色\_线程\_返回\_WITH\_非\_默认\_工作负荷\_类

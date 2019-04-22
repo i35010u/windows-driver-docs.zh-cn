@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a4a9d6aa1e50ea5dd79142f1bb7162c62552e4
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238495"
 ---
 # <a name="bug-check-0x77-kernelstackinpageerror"></a>Bug 检查 0x77：内核\_堆栈\_页内\_错误
@@ -157,7 +157,7 @@ ms.locfileid: "59238495"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**Bug 检查 0x7A (内核\_数据\_页内\_错误)**](bug-check-0x7a--kernel-data-inpage-error.md)
+[**Bug Check 0x7A (KERNEL\_DATA\_INPAGE\_ERROR)**](bug-check-0x7a--kernel-data-inpage-error.md)
 
  
 

@@ -5,10 +5,10 @@ ms.assetid: ''
 ms.date: 02/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4a31a354f05f96623fc1bfc30e32e9f9c4f203
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58845550"
 ---
 # <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性

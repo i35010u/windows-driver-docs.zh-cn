@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e4dca6534a7caa59805f9f6f0c6298d00aef3417
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239620"
 ---
 # <a name="developer-content-bug-check-0xc2-badpoolcaller"></a>（开发人员内容）Bug 检查 0xC2:错误\_池\_调用方

@@ -5,10 +5,10 @@ ms.assetid: 74663110-8E3C-4AC4-8BCD-63C788047F38
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa9d5546027d1509266eee098024c1af27c52ce
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58761838"
 ---
 # <a name="pnp-and-power-management-callback-sequences"></a>PnP 和电源管理回调序列

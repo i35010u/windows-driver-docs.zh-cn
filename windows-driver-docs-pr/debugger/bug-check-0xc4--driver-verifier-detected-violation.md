@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dc331c1266defef14cdbe656f0f040339c0fca6d
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59238588"
 ---
 # <a name="bug-check-0xc4-driververifierdetectedviolation"></a>Bug 检查 0xC4：驱动程序\_VERIFIER\_检测到\_冲突
@@ -264,7 +264,7 @@ ms.locfileid: "59238588"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[在启用驱动程序验证程序的情况下处理 Bug 检查](handling-a-bug-check-when-driver-verifier-is-enabled.md)
+[处理 Bug 检查时驱动程序验证程序已启用](handling-a-bug-check-when-driver-verifier-is-enabled.md)
 
  
 

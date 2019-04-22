@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cf9157bb026289226aa5e1ab54bb47825bc79ee7
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239622"
 ---
 # <a name="developer-content-bug-check-0xef-criticalprocessdied"></a>（开发人员内容）Bug 检查 0xEF:关键\_进程\_DIED
@@ -94,7 +94,7 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 
 
 
-**常规疑难解答技巧**
+**常规疑难解答提示**
 
 如果您不能使用调试器，这些常规故障排除提示可能会有帮助。
 
@@ -125,9 +125,9 @@ CRITICAL_PROCESS_DIED bug 检查具有 0x000000EF 值。 这表示关键系统�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
+[故障转储分析使用 Windows 调试器 (WinDbg)](crash-dump-files.md)
 
-[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
  
 

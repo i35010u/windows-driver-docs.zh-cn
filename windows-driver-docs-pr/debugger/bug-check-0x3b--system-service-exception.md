@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 562064e1ce3ad47671f1e7956287a049818ee1ca
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239028"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
@@ -99,9 +99,9 @@ Arg4: 0000000000000000, zero.
 
 有关详细信息，请参阅以下主题：
 
-[使用 !analyze 扩展](using-the--analyze-extension.md) 
+[使用 ！ 分析扩展](using-the--analyze-extension.md) 
 
-[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+[分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。 可以使用调试器 dx 命令来显示此- `dx KiBugCheckDriver`。
 
