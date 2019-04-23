@@ -14,18 +14,19 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: a12e5cb0e965f6a98dad3cb5c35f419522f12626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 2d3dc6a72993a7df74bae3de857cefd7709b52b8
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465492"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902411"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
 本主题汇总了 Windows 10 中的 Windows 驱动程序框架 (WDF) 驱动程序的新功能和改进。
 
-Windows 10 版本 1809（2018 年 10 月更新，Redstone 5）包括内核模式驱动程序框架 (KMDF) 版本 1.27 和用户模式驱动程序框架 (UMDF) 版本 2.27。
+Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动程序框架 (KMDF) 版本 1.29 和用户模式驱动程序框架 (UMDF) 版本 2.29。
 
 可以使用这些框架版本为以下操作系统生成驱动程序：
 
@@ -33,6 +34,10 @@ Windows 10 版本 1809（2018 年 10 月更新，Redstone 5）包括内核模�
 -   Windows Server 版本 1809
 
 有关版本历史记录，请参阅 [KMDF 版本历史记录](kmdf-version-history.md)和 [UMDF 版本历史记录](umdf-version-history.md)。 除非特别说明，否则本页中的 UMDF 参考介绍的是版本 2 的功能，该功能在 UMDF 版本 1 中不提供。
+
+## <a name="new-in-wdf-for-windows-10-version-1903"></a>适用于 Windows 10 版本 1903 的 WDF 中的新功能
+
+未添加或更改任何功能。
 
 ## <a name="new-in-wdf-for-windows-10-version-1809"></a>适用于 Windows 10 版本 1809 的 WDF 中的新功能
 

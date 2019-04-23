@@ -1,59 +1,59 @@
-items:
 - name: 网络适配器 WDF 类扩展 (NetAdapterCx)
   href: index.md
   items:
-  - name: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
-    href: porting-ndis-miniport-drivers-to-netadaptercx.md
-  - name: 生成 NetAdapterCx 客户端驱动程序
-    href: building-a-netadaptercx-client-driver.md
-  - name: NetAdapterCx 客户端驱动程序的 INF 文件
-    href: inf-files-for-netadaptercx-client-drivers.md
-  - name: 管理 NetAdapterCx 中对象的生存期
-    href: managing-the-lifetime-of-objects-in-netadaptercx.md
-    items:
-    - name: NetAdapterCx 对象的摘要
-      href: summary-of-netadaptercx-objects.md
-    - name: 设备和适配器初始化
-      href: device-and-adapter-initialization.md
-    - name: NetAdapterCx 客户端驱动程序的启动顺序
-      href: power-up-sequence-for-a-netadaptercx-client-driver.md
-    - name: NetAdapterCx 客户端驱动程序的关闭顺序
-      href: power-down-sequence-for-a-netadaptercx-client-driver.md
-  - name: 访问配置信息
-    href: accessing-configuration-information.md
-  - name: 处理控制请求
-    href: handling-control-requests.md
-  - name: 调试 NetAdapterCx 客户端驱动程序
-    href: debugging-a-netadaptercx-client-driver.md
-  - name: 传输网络数据
-    href: transferring-network-data.md
-    items:
-    - name: 数据包描述符和扩展
-      href: packet-descriptors-and-extensions.md
-    - name: NetAdapterCx 硬件卸载
-      href: netadaptercx-hardware-offloads.md
-    - name: 传输和接收队列
-      href: transmit-and-receive-queues.md
-    - name: 使用环形缓冲区
-      href: using-the-ring-buffer.md
-    - name: 网络数据缓冲区管理
-      href: network-data-buffer-management.md
-  - name: NetAdapterCx 接收方缩放 (RSS)
-    href: netadaptercx-receive-side-scaling-rss-.md
-  - name: 配置电源管理
-    href: configuring-power-management.md
-  - name: NDIS-WDF 函数等效项
-    href: ndis-wdf-function-equivalents.md
-  - name: NetAdapterCx 限制
-    href: netadaptercx-limitations.md
-  - name: 移动宽带 (MBB) WDF 类扩展 (MBBCx)
-    href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
-    items:
-    - name: 编写 MBBCx 客户端驱动程序
-      href: writing-an-MBBcx-client-driver.md
-ms.openlocfilehash: d83167c2611ecd16683748275dd8038105bccd9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465424"
+    - name: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
+      href: porting-ndis-miniport-drivers-to-netadaptercx.md
+    - name: 生成 NetAdapterCx 客户端驱动程序
+      href: building-a-netadaptercx-client-driver.md
+    - name: NetAdapterCx 客户端驱动程序的 INF 文件
+      href: inf-files-for-netadaptercx-client-drivers.md
+    - name: 管理 NetAdapterCx 中对象的生存期
+      href: managing-the-lifetime-of-objects-in-netadaptercx.md
+      items:
+        - name: NetAdapterCx 对象的摘要
+          href: summary-of-netadaptercx-objects.md
+        - name: 设备和适配器初始化
+          href: device-and-adapter-initialization.md
+        - name: NetAdapterCx 客户端驱动程序的启动顺序
+          href: power-up-sequence-for-a-netadaptercx-client-driver.md
+        - name: NetAdapterCx 客户端驱动程序的关闭顺序
+          href: power-down-sequence-for-a-netadaptercx-client-driver.md
+    - name: 访问配置信息
+      href: accessing-configuration-information.md
+    - name: 处理控制请求
+      href: handling-control-requests.md
+    - name: 调试 NetAdapterCx 客户端驱动程序
+      href: debugging-a-netadaptercx-client-driver.md
+    - name: 传输网络数据
+      href: transferring-network-data.md
+      items:
+        - name: 数据包描述符和扩展
+          href: packet-descriptors-and-extensions.md
+        - name: NetAdapterCx 硬件卸载
+          href: netadaptercx-hardware-offloads.md
+        - name: 传输和接收队列
+          href: transmit-and-receive-queues.md
+        - name: 网络数据缓冲区管理
+          href: network-data-buffer-management.md
+        - name: 网环和网环迭代器
+          href: net-rings-and-net-ring-iterators.md
+          items:
+            - name: 使用网环发送网络数据
+              href: sending-network-data-with-net-rings.md
+            - name: 使用网环接收网络数据
+              href: receiving-network-data-with-net-rings.md
+            - name: 使用网环取消网络数据
+              href: canceling-network-data-with-net-rings.md
+    - name: NetAdapterCx 接收方缩放 (RSS)
+      href: netadaptercx-receive-side-scaling-rss-.md
+    - name: 配置电源管理
+      href: configuring-power-management.md
+    - name: NDIS-WDF 函数等效项
+      href: ndis-wdf-function-equivalents.md
+    - name: NetAdapterCx 限制
+      href: netadaptercx-limitations.md
+    - name: 移动宽带 (MBB) WDF 类扩展 (MBBCx)
+      href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
+      items:
+        - name: 编写 MBBCx 客户端驱动程序
+          href: writing-an-MBBcx-client-driver.md

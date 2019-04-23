@@ -1,56 +1,60 @@
-items:
 - name: 开发、测试以及部署驱动程序
   href: index.md
 - name: 通用驱动程序入门
   href: getting-started-with-universal-drivers.md
   items:
-  - name: 生成通用 Windows 驱动程序
-    href: building-a-universal-driver.md
-  - name: 验证通用驱动程序
-    href: validating-universal-drivers.md
-  - name: 针对 OneCore 进行构建
-    href: building-for-onecore.md
-  - name: 通用驱动程序方案
-    href: universal-driver-scenarios.md
-  - name: 调试通用驱动程序
-    href: debugging-a-universal-driver.md
-  - name: 驱动程序参考页上的“目标平台”
-    href: windows-10-editions-for-universal-drivers.md
-  - name: 适用于 Windows 10 的驱动程序融合模型
-    href: driver-model-convergence.md
+    - name: 生成通用 Windows 驱动程序
+      href: building-a-universal-driver.md
+    - name: 验证通用驱动程序
+      href: validating-universal-drivers.md
+    - name: 针对 OneCore 进行构建
+      href: building-for-onecore.md
+    - name: 通用驱动程序方案
+      href: universal-driver-scenarios.md
+    - name: 调试通用驱动程序
+      href: debugging-a-universal-driver.md
+    - name: 驱动程序参考页上的“目标平台”
+      href: windows-10-editions-for-universal-drivers.md
+    - name: 适用于 Windows 10 的驱动程序融合模型
+      href: driver-model-convergence.md
 - name: 创建新设备功能驱动程序
   href: creating-a-new-driver.md
 - name: 创建新的筛选器驱动程序
   href: creating-a-new-filter-driver.md
+  items:
+    - name: 设备筛选器驱动程序排序
+      href: device-filter-driver-ordering.md
 - name: 创建新的软件驱动程序
   href: creating-a-new-software-driver.md
+- name: 创建新的基元驱动程序
+  href: creating-a-primitive-driver.md
 - name: 从现有源文件创建驱动程序
   href: creating-a-driver-from-existing-source-files.md
 - name: 使用 WDK 生成驱动程序
   href: building-a-driver.md
   items:
-  - name: 为不同版本的 Windows 生成驱动程序
-    href: building-drivers-for-different-versions-of-windows.md
-  - name: 使用 WDK 生成 ARM64 驱动程序
-    href: building-arm64-drivers.md
-  - name: 使用企业版 WDK 10
-    href: using-the-enterprise-wdk.md
-  - name: 在实验室中安装 WDK 8.1 生成环境
-    href: installing-the-wdk-build-environment-in-a-lab.md
-  - name: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
-    href: using-the-microsoft-c-runtime-with-user-mode-drivers-and-apps.md
-  - name: 避免自定义生成环境内出现浮点错误
-    href: avoiding-floating-point-errors-in-custom-build-environments.md
-  - name: 驱动程序项目的计数器清单预处理器属性
-    href: counters-manifest-preprocessor-properties-for-driver-projects.md
-  - name: 驱动程序项目的驱动程序模型设置属性
-    href: driver-model-settings-properties-for-driver-projects.md
-  - name: 驱动程序项目的消息编译器属性
-    href: message-compiler-properties-for-driver-projects.md
-  - name: 驱动程序项目的 MOF 编译器属性
-    href: mof-compiler-properties-for-driver-projects.md
-  - name: 驱动程序项目的 Stampinf 属性
-    href: stampinf-properties-for-driver-projects.md
+    - name: 为不同版本的 Windows 生成驱动程序
+      href: building-drivers-for-different-versions-of-windows.md
+    - name: 使用 WDK 生成 ARM64 驱动程序
+      href: building-arm64-drivers.md
+    - name: 使用企业版 WDK 10
+      href: using-the-enterprise-wdk.md
+    - name: 在实验室中安装 WDK 8.1 生成环境
+      href: installing-the-wdk-build-environment-in-a-lab.md
+    - name: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
+      href: using-the-microsoft-c-runtime-with-user-mode-drivers-and-apps.md
+    - name: 避免自定义生成环境内出现浮点错误
+      href: avoiding-floating-point-errors-in-custom-build-environments.md
+    - name: 驱动程序项目的计数器清单预处理器属性
+      href: counters-manifest-preprocessor-properties-for-driver-projects.md
+    - name: 驱动程序项目的驱动程序模型设置属性
+      href: driver-model-settings-properties-for-driver-projects.md
+    - name: 驱动程序项目的消息编译器属性
+      href: message-compiler-properties-for-driver-projects.md
+    - name: 驱动程序项目的 MOF 编译器属性
+      href: mof-compiler-properties-for-driver-projects.md
+    - name: 驱动程序项目的 Stampinf 属性
+      href: stampinf-properties-for-driver-projects.md
 - name: 将 WDK 8.1 项目转换为 WDK 10
   href: converting-wdk-8-1-projects-to-wdk-10.md
 - name: 使用代码分析和验证工具分析驱动程序
@@ -70,72 +74,66 @@ items:
 - name: 为驱动程序签名
   href: signing-a-driver.md
   items:
-  - name: 对内核驱动程序进行证明签名以便公开发布
-    href: attestation-signing-a-kernel-driver-for-public-release.md
-  - name: 在开发和测试期间为驱动程序签名
-    href: signing-a-driver-during-development-and-testing.md
-  - name: 为驱动程序签名以便公开发布
-    href: signing-a-driver-for-public-release.md
-  - name: 驱动程序签名属性
-    href: driver-signing-properties.md
+    - name: 对内核驱动程序进行证明签名以便公开发布
+      href: attestation-signing-a-kernel-driver-for-public-release.md
+    - name: 在开发和测试期间为驱动程序签名
+      href: signing-a-driver-during-development-and-testing.md
+    - name: 为驱动程序签名以便公开发布
+      href: signing-a-driver-for-public-release.md
+    - name: 驱动程序签名属性
+      href: driver-signing-properties.md
 - name: 将驱动程序部署到测试计算机
   href: deploying-a-driver-to-a-test-computer.md
   items:
-  - name: 驱动程序包项目的部署属性
-    href: deployment-properties-for-driver-projects.md
-  - name: 驱动程序包项目的驱动程序验证程序属性
-    href: driver-verifier-properties-for--driver-projects.md
-  - name: 驱动程序包项目的 KMDF 验证程序属性
-    href: kmdf-verifier-properties-for-driver-package-projects.md
-  - name: 驱动程序包项目的 UMDF 验证程序属性
-    href: umdf-verifier-properties-for-driver-package-projects.md
-  - name: 驱动程序包项目的 Inf2Cat 属性
-    href: inf2cat-properties-for-driver-package-projects.md
-  - name: 如何创建自定义的驱动程序安装脚本
-    href: create-a-custom-driver-installation-script.md
-  - name: 在 Windows 10 移动版上安装驱动程序
-    href: using-pkggen.md
+    - name: 驱动程序包项目的部署属性
+      href: deployment-properties-for-driver-projects.md
+    - name: 驱动程序包项目的驱动程序验证程序属性
+      href: driver-verifier-properties-for--driver-projects.md
+    - name: 驱动程序包项目的 KMDF 验证程序属性
+      href: kmdf-verifier-properties-for-driver-package-projects.md
+    - name: 驱动程序包项目的 UMDF 验证程序属性
+      href: umdf-verifier-properties-for-driver-package-projects.md
+    - name: 驱动程序包项目的 Inf2Cat 属性
+      href: inf2cat-properties-for-driver-package-projects.md
+    - name: 如何创建自定义的驱动程序安装脚本
+      href: create-a-custom-driver-installation-script.md
+    - name: 在 Windows 10 移动版上安装驱动程序
+      href: using-pkggen.md
 - name: 调试驱动程序
   href: debugging-a-driver.md
 - name: 测试驱动程序
   href: testing-a-driver.md
   items:
-  - name: 开发期间测试驱动程序的相关技巧
-    href: strategies-for-testing-drivers-during-development.md
-  - name: 如何使用 Visual Studio 在运行时测试驱动程序
-    href: testing-a-driver-at-runtime.md
-    items:
-    - name: 如何在 WDK 8.1 中运行 HCK 测试套件
-      href: run-the-hck-test-suites-in-the-wdk.md
-    - name: 如何选择和配置设备基础功能测试
-      href: how-to-select-and-configure-the-device-fundamental-tests.md
-    - name: 如何测试驱动程序包
-      href: test-a-driver-package.md
-    - name: 如何读取驱动程序测试结果日志
-      href: read-the-driver-test-results-log.md
-    - name: 如何在运行时通过命令提示符测试驱动程序
-      href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-    - name: 使用 WDK 进行设备基础功能测试的故障排除
-      href: troubleshooting-the-device-fundamental-tests.md
-  - name: 如何使用“驱动程序测试”模板编写驱动程序测试
-    href: how-to-write-a-driver-test-.md
-    items:
-    - name: 如何添加测试元数据
-      href: to-add-test-metadata.md
+    - name: 开发期间测试驱动程序的相关技巧
+      href: strategies-for-testing-drivers-during-development.md
+    - name: 如何使用 Visual Studio 在运行时测试驱动程序
+      href: testing-a-driver-at-runtime.md
+      items:
+        - name: 如何在 WDK 8.1 中运行 HCK 测试套件
+          href: run-the-hck-test-suites-in-the-wdk.md
+        - name: 如何选择和配置设备基础功能测试
+          href: how-to-select-and-configure-the-device-fundamental-tests.md
+        - name: 如何测试驱动程序包
+          href: test-a-driver-package.md
+        - name: 如何读取驱动程序测试结果日志
+          href: read-the-driver-test-results-log.md
+        - name: 如何在运行时通过命令提示符测试驱动程序
+          href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
+        - name: 使用 WDK 进行设备基础功能测试的故障排除
+          href: troubleshooting-the-device-fundamental-tests.md
+    - name: 如何使用“驱动程序测试”模板编写驱动程序测试
+      href: how-to-write-a-driver-test-.md
+      items:
+        - name: 如何添加测试元数据
+          href: to-add-test-metadata.md
 - name: 创建驱动程序验证日志
   href: creating-a-driver-verification-log.md
   items:
-  - name: 为代码分析工具创建日志文件
-    href: creating-a-log-file-for-the-code-analysis-tool.md
-  - name: 为静态驱动程序验证程序创建日志文件
-    href: creating-a-log-file-for-static-driver-verifier.md
-  - name: 静态驱动程序验证程序已知问题 - Windows 10 2018 年 10 月更新（版本 1809）
-    href: static-driver-verifier-known-issues.md
+    - name: 为代码分析工具创建日志文件
+      href: creating-a-log-file-for-the-code-analysis-tool.md
+    - name: 为静态驱动程序验证程序创建日志文件
+      href: creating-a-log-file-for-static-driver-verifier.md
+    - name: 静态驱动程序验证程序已知问题 - Windows 10 2018 年 10 月更新（版本 1809）
+      href: static-driver-verifier-known-issues.md
 - name: 分发驱动程序包
   href: distributing-a-driver-package-win8.md
-ms.openlocfilehash: e1b80e72c1dff97ba0f06b8592c8f36747cb3050
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465409"
