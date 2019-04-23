@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f89b5b5d94c5ea495737f4480766784d46b326ab
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239300"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902335"
 ---
 # <a name="bug-check-0xb1-bgidetectedviolation"></a>Bug 检查 0xB1：BGI\_检测到\_冲突
 

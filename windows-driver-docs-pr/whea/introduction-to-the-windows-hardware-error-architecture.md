@@ -1,6 +1,6 @@
 ---
-title: Windows 硬件错误体系结构简介
-description: Windows 硬件错误体系结构简介
+title: Windows 硬件错误体系结构 (WHEA) 简介
+description: Windows 硬件错误体系结构 (WHEA) 简介
 ms.assetid: 5a0bbf8c-d644-4a64-9a7e-400d5de2c8fa
 keywords:
 - Windows 硬件错误体系结构 WDK，有关 Windows 硬件错误体系结构
@@ -10,12 +10,12 @@ keywords:
 - 源信息 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acaf3b1567e8899743773a507c9d5a8c108c79d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e566a3c14b9ab758a26f09b7ef8766b47f1a30f2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545095"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903057"
 ---
 # <a name="introduction-to-the-windows-hardware-error-architecture"></a>Windows 硬件错误体系结构简介
 

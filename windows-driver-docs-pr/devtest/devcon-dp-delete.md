@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/11/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 240d2eed9fe8f4fe56f6236d586768c12cf90b08
-ms.sourcegitcommit: 094464a623e01150656620cf2490b8d4e80b707f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59516970"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903505"
 ---
 # <a name="devcon-dpdelete"></a>DevCon Dp\_删除
 

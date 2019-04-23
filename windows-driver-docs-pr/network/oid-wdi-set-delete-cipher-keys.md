@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_DELETE_CIPHER_KEYS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 98710aad93945da650010b4bb7452d3bb1aefe87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 58390ab614bca413053e178fe572dd29ce95a39c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521677"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902907"
 ---
 # <a name="oidwdisetdeletecipherkeys"></a>OID\_WDI\_SET\_DELETE\_CIPHER\_KEYS
 
@@ -37,7 +38,8 @@ OID\_WDI\_设置\_删除\_密码\_密钥删除密码设备的密码密钥表中�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -55,13 +57,13 @@ OID\_WDI\_设置\_删除\_密码\_密钥删除密码设备的密码密钥表中�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_SET\_ADD\_CIPHER\_KEYS](oid-wdi-set-add-cipher-keys.md)

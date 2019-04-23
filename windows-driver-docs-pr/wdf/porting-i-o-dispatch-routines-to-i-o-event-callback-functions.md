@@ -1,17 +1,17 @@
 ---
-title: 移植到 I/O 事件回调函数的 I/O 调度例程
-description: 移植到 I/O 事件回调函数的 I/O 调度例程
+title: 将 I/O 调度例程移植到 I/O 事件回调函数
+description: 将 I/O 调度例程移植到 I/O 事件回调函数
 ms.assetid: 0BD65185-C358-4E28-8E31-255AF8D77F93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba858e4db9d39aea035c230684cdbf35fe43280d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f16f8116bd4d8aa0afc4b8056815f585d1ca6bf9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521859"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902913"
 ---
-# <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>移植到 I/O 事件回调函数的 I/O 调度例程
+# <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>将 I/O 调度例程移植到 I/O 事件回调函数
 
 
 WDM 驱动程序的 I/O 调度例程的核心将映射到 WDF 驱动程序的 I/O 事件回调函数。 然而，I/O 事件回调函数的几个重要方面与 WDM 驱动程序的 I/O 调度例程有所不同：
@@ -42,8 +42,8 @@ WDF 驱动程序可以支持 WDM 驱动程序，如[缓冲，直接或都不 I/O
 -   [创建请求](#create-requests)
 -   [读取请求](#read-requests)
 -   [写入请求](#write-requests)
--   [设备 I/O 控制请求](#device-i-o-requests)
--   [内部设备 I/O 控制请求](#int-dev-i-o)
+-   [设备 I/O 控制请求](#device-io-control-requests)
+-   [内部设备 I/O 控制请求](#internal-device-io-control-requests)
 
 ## <a name="create-requests"></a>创建请求
 

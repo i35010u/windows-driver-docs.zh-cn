@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d075b54a054a7a5788befce178a757cea594475a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239348"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903435"
 ---
 # <a name="bug-check-0x67-configinitializationfailed"></a>Bug 检查 0x67：CONFIG\_初始化\_失败
 

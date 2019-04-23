@@ -10,12 +10,12 @@ keywords:
 - 补充 IRP 队列 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4cbc58c1cfd97b54dd9e5f98fb42d09e5fea915
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 54294a7b37a30053b879193607d3dd8923029378
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565466"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903597"
 ---
 # <a name="setting-up-and-using-device-queues"></a>设置和使用设备队列
 
@@ -25,7 +25,7 @@ ms.locfileid: "56565466"
 
 驱动程序设置的设备队列对象通过调用[ **KeInitializeDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff552126)在驱动程序或设备的初始化。 启动其设备之后, 该驱动程序将 Irp 插入此队列通过调用[ **KeInsertDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff552180)或[ **KeInsertByKeyDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff552178). 下图说明了这些调用。
 
-![关系图说明如何使用设备队列对象](images/3devqobj.png)
+![设置和使用设备队列](images/3devqobj.png)
 
 如此图所示，该驱动程序必须提供设备队列对象，它必须是驻留的存储。 通常设置的设备队列对象的驱动程序提供必要的存储中[设备扩展](device-extensions.md)驱动程序创建的设备的对象，但存储可以是在控制器扩展如果驱动程序使用[控制器对象](using-controller-objects.md)或非分页缓冲池分配驱动程序中。
 
@@ -52,7 +52,7 @@ ms.locfileid: "56565466"
 
 调用这些例程，以从为空但繁忙的设备队列中删除项的任何更改为不忙的队列状态。
 
-每个设备队列对象受内置 executive 旋转锁 (不会显示[使用设备队列对象](#ddk-setting-up-and-using-device-queues-kg)图)。 因此，驱动程序可以将 Irp 插入到队列和从正在运行在更短于或等于 IRQL 的任何驱动程序例程以包含多个处理器安全的方式删除它们 = 调度\_级别。 由于存在此 IRQL 限制，驱动程序不能调用任何**Ke*Xxx*DeviceQueue**例程从其 ISR 或[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)例程在 DIRQL 运行。
+每个设备队列对象受内置 executive 旋转锁 (不会显示[使用设备队列对象](#setting-up-and-using-device-queues)图)。 因此，驱动程序可以将 Irp 插入到队列和从正在运行在更短于或等于 IRQL 的任何驱动程序例程以包含多个处理器安全的方式删除它们 = 调度\_级别。 由于存在此 IRQL 限制，驱动程序不能调用任何**Ke*Xxx*DeviceQueue**例程从其 ISR 或[ *SynchCritSection* ](https://msdn.microsoft.com/library/windows/hardware/ff563928)例程在 DIRQL 运行。
 
 请参阅[管理硬件优先级](managing-hardware-priorities.md)并[旋转锁](spin-locks.md)有关详细信息。 为特定的支持例程的 IRQL 要求，请参阅例程的参考页。
 

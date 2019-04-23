@@ -9,12 +9,12 @@ keywords:
 - 配置文件数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9ff345d7d316dd51c071449acaaaf7d5a2b5d32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 7f5badb786fbf0e7e8197f7abc24f7ba830aaa87
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565284"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903329"
 ---
 # <a name="accessing-profile-and-context-data"></a>访问配置文件和上下文数据
 
@@ -45,7 +45,7 @@ ms.locfileid: "56565284"
 
 作为 IPropertyBag COM 接口的替代方法，可以访问本机 802.11 IHV UI 扩展 DLL **IHV\_配置文件\_数据**并**IHV\_通知\_数据**属性流过[ **GetProp** ](https://msdn.microsoft.com/library/windows/desktop/ms633564) Win32 函数。 在此情况下，DLL 必须使用父窗口的句柄，在下面的示例所示：
 
-```
+```C++
 LPWSTR lpszBuffer = (LPWSTR) GetProp(GetParent(hwndDlg), L"IHV_PROFILE_DATA");
 ```
 

@@ -2,16 +2,17 @@
 title: WDI_TLV_STATION_CAPABILITIES
 description: WDI_TLV_STATION_CAPABILITIES 是 TLV 包含工作站的功能。
 ms.assetid: 567445F1-EEDC-4302-B709-ED76D044A971
-ms.date: 07/18/2017
+ms.date: 02/08/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_STATION_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 582c1a38060f424081a50a142843a474918670f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 70b35e7549410cf9d7e1cf8dc2cc623865d23b26
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576046"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903256"
 ---
 # <a name="wditlvstationcapabilities"></a>WDI\_TLV\_工作站\_功能
 
@@ -124,6 +125,15 @@ WDI\_TLV\_工作站\_功能是 TLV 包含工作站的功能。
 <td>UINT8</td>
 <td>指定是否支持已断开连接待机状态。
 <p>有效值为 0 （不支持） 和 1 （支持）。</p></td>
+</tr>
+<tr class="odd">
+<td>UINT8</td>
+<td>指定驱动程序是否支持作为发起方的正常时间度量 (FTM) 协议。
+<p>有效值为 0 （不支持） 和 1 （支持）。</p></td>
+</tr>
+<tr class="even">
+<td>UINT8</td>
+<td>可以查询每个 FTM 请求任务的目标 Sta 最大数目。</td>
 </tr>
 </tbody>
 </table>

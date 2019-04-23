@@ -1,5 +1,5 @@
 ---
-title: 移动计划用例
+title: 移动套餐用例
 description: 本主题介绍移动运算符可以实现的基本用户用例。
 ms.assetid: 24050B13-4A1A-466F-974B-40B34EDB16DC
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 8119bb90eb86a6849307020b60cfccab973f0983
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845561"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902482"
 ---
-# <a name="mobile-plans-use-cases"></a>移动计划用例
+# <a name="mobile-plans-use-cases"></a>移动套餐用例
 
 ## <a name="overview"></a>概述
 

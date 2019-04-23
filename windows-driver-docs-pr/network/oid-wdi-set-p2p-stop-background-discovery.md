@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_STOP_BACKGROUND_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e60302447783596c127a4e5dc6e336e7b8c60cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 55fd6f5814bf1c43726ca90cfc9e5296bc4dc22e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544770"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903735"
 ---
 # <a name="oidwdisetp2pstopbackgrounddiscovery"></a>OID\_WDI\_设置\_P2P\_停止\_背景\_发现
 
@@ -32,7 +33,8 @@ OID\_WDI\_设置\_P2P\_停止\_背景\_发现指示取消后台发现并停止�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -50,7 +52,7 @@ OID\_WDI\_设置\_P2P\_停止\_背景\_发现指示取消后台发现并停止�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

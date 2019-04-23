@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_P2P_DISCOVER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8807d5952e61b438093d1a0df0c1a12cd5bbba9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1252f2fa12cd227c3c860ced7444488f4af9ee4b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542918"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902377"
 ---
 # <a name="oidwditaskp2pdiscover"></a>OID\_WDI\_TASK\_P2P\_DISCOVER
 
 
 OID\_WDI\_任务\_P2P\_发现颁发给设备执行 Wi-Fi Direct 发现。
 
-| 对象 | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
 | 端口   | 是。 端口必须保持干净状态后中止。 | 6                                     | 15                              |
 
@@ -119,7 +120,9 @@ Wi-Fi Direct 发现是从标准的 Wi-fi 扫描互相排斥。 运行此任务�
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)要求
+[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -137,7 +140,7 @@ Wi-Fi Direct 发现是从标准的 Wi-fi 扫描互相排斥。 运行此任务�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

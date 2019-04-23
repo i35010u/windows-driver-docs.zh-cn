@@ -1,6 +1,6 @@
 ---
 title: IrqlExPassive 规则 (wdm)
-description: IrqlExPassive 规则指定驱动程序只能在 IRQL 被动调用以下执行支持例程\_级别ExCreateCallbackExIsProcessorFeaturePresentExRaiseAccessViolationExRaiseDatatypeMisalignmentExRaiseStatusExUuidCreateThe IrqlExPassive 规则还指定驱动程序在 IRQL APC 调用 ExRaiseStatus\_级别。
+description: IrqlExPassive 规则指定驱动程序只能在 IRQL PASSIVE_LEVEL 调用以下执行支持例程。 IrqlExPassive 规则还指定驱动程序在 IRQL APC_LEVEL 调用 ExRaiseStatus。
 ms.assetid: 92d73bd9-ce79-4be8-9ea2-a5aef2ea6edb
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2c27b1b3529d4929491e8d9a01959149224cda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5022d4174b25d3971cc65ede9dcc605d15d5c38
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541743"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903099"
 ---
 # <a name="irqlexpassive-rule-wdm"></a>IrqlExPassive 规则 (wdm)
 
@@ -90,7 +90,7 @@ ms.locfileid: "56541743"
 
 
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExCreateCallback**](https://msdn.microsoft.com/library/windows/hardware/ff544560)

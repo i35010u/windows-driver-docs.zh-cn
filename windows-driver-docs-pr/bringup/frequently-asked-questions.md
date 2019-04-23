@@ -3,12 +3,12 @@ title: 固件 WEG 常见问题解答
 description: 固件 WEG-常见问题 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b6443d251b8ba31ce4c08a77893c7255b760881d
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.openlocfilehash: fead67ee21c49364b6effe1c03a141e1cd2f22d3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441928"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902734"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>固件 WEG:常见问题 (FAQ)
 
@@ -104,7 +104,7 @@ ms.locfileid: "58441928"
 
 **问：** 什么是依赖关系/32 位和影响。将从旧启动为 UEFI，反之亦然，64 位 UEFI 或 32 位的 UEFI 固件是否 64 位操作系统？
 
-> **答：** Windows UEFI 引导的一项限制是，可以仅启动 OS"位数"匹配项是 UEFI 安装 （请参阅问题 7）。 如果有 32 位 UEFI，则可以仅安装 32 位 Windows 上它。 64 位 Windows 需要 64 位或 UEFI CSM。 但是如果一个系统缺少 CSM，不能启动 Win7 64 位 Windows 操作系统。
+> **答：** Windows UEFI 引导的一个限制是，可以仅启动 OS"位数"匹配项是 UEFI 安装 （请参阅问题 7）。 如果有 32 位 UEFI，只能在其上安装 32 位 Windows。 64 位 Windows 需要 64 位 UEFI 或 CSM。 但是，如果一个系统缺少 CSM，不能启动 Win7 64 位 Windows 操作系统。
 
 **问：** 您将可以转换而不会影响数据动态使用 GPT 引导到旧版 MBR 启动系统引导？
 

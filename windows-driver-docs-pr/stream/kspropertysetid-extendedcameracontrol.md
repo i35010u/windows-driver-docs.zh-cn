@@ -2,14 +2,15 @@
 title: KSPROPERTYSETID\_ExtendedCameraControl
 description: KSPROPERTYSETID\_ExtendedCameraControl 属性设置控件的扩展的照相机设备设置。 它提供的其他控件允许照相机照片序列化。
 ms.assetid: 37475847-D678-4977-8524-82FA80D6A7EF
-ms.date: 11/28/2017
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0584be19c114ebc0006afcb62dca0814ffde8209
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: rs5, 19H1
+ms.openlocfilehash: 06a32edadc503e8dc11f3347017437d41371065e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544539"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902543"
 ---
 # <a name="kspropertysetidextendedcameracontrol"></a>KSPROPERTYSETID\_ExtendedCameraControl
 
@@ -105,4 +106,12 @@ KSPROPERTYSETID\_ExtendedCameraControl 属性设置控件的扩展的照相机�
 
 以下相机上的驱动程序控制是全新的 Windows 10，版本 1607年。
 
-[**KSPROPERTY\_CAMERACONTROL\_扩展\_FACEAUTH\_模式**](ksproperty-cameracontrol-extended-faceauth-mode.md)
+[**KSPROPERTY\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_MODE**](ksproperty-cameracontrol-extended-faceauth-mode.md)
+
+以下相机上的驱动程序控制是全新的 Windows 10 版本 1709年。
+
+[**KSPROPERTY\_CAMERACONTROL\_EXTENDED\_VIDEOTEMPORALDENOISING**](ksproperty-cameracontrol-extended-videotemporaldenoising.md)
+
+以下相机上的驱动程序控制是适用于 Windows 10，版本 1903年新功能。
+
+[**KSPROPERTY\_CAMERACONTROL\_扩展\_IRTORCH\_模式**](ksproperty-cameracontrol-extended-irtorchmode.md)

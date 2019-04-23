@@ -4,14 +4,15 @@ description: 设备和适配器初始化
 ms.assetid: EBBEF0FB-6CDB-4899-AAE9-71812EE20AFB
 keywords:
 - NetAdapterCx 设备初始化、 NetCx 设备初始化、 NetAdapterCx 适配器初始化、 NetCx 适配器初始化
-ms.date: 08/02/2018
+ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e3e14e6c80f6ef27fdea607b9ce70ebd988ddc59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: fbd4bfca2a0026f133e1b7b445f56a42c147e3b3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577358"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903747"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
 
@@ -40,9 +41,9 @@ NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https
     > [!TIP]
     > 如果设备支持多个 NETADAPTER，我们建议在设备上下文中存储指向每个适配器。
 
-3. 创建 NETADAPTER 对象。 若要执行此操作，客户端调用任一[ **NetDefaultAdapterInitAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netdefaultadapterinitallocate)或[ **NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)后, 跟可选**NetAdapterInitSetXxx**方法添加到 initailize 适配器的特性。 最后，客户端调用[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。 
+3. 创建 NETADAPTER 对象。 若要执行此操作，客户端调用[ **NetAdapterInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterinitallocate)后, 跟可选**NetAdapterInitSetXxx**方法添加到 initailize 适配器的特性。 最后，客户端调用[ **NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。 
 
-    下面的示例演示客户端驱动程序可能会如何初始化默认 NETADAPTER 对象。 请注意在此示例中简化了错误处理。
+    下面的示例演示客户端驱动程序可能会如何初始化 NETADAPTER 对象。 请注意在此示例中简化了错误处理。
 
     ```C++
     WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(&attribs, MY_ADAPTER_CONTEXT);
@@ -50,7 +51,7 @@ NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https
     //
     // Allocate the initialization structure
     //
-    PNETADAPTER_INIT adapterInit = NetDefaultAdapterInitAllocate(device);
+    PNETADAPTER_INIT adapterInit = NetAdapterInitAllocate(device);
     if(adapterInit == NULL)
     {
         return status;
@@ -66,7 +67,7 @@ NetAdapterCx 客户端驱动程序注册其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https
                                         MyEvtAdapterCreateTxQueue,
                                         MyEvtAdapterCreateRxQueue);
     NetAdapterInitSetDatapathCallbacks(adapterInit,
-                                        datapathCallbacks);
+                                       datapathCallbacks);
 
     // Power settings attributes
     NetAdapterInitSetNetPowerSettingsAttributes(adapterInit,
@@ -164,17 +165,15 @@ NetAdapterSetPowerCapabilities(netAdapter,
 // Receive scaling capabilities
 ...
 NetAdapterSetReceiveScalingCapabilities(netAdapter,
-                                        receiveScalingCapabilities);
+                                        &receiveScalingCapabilities);
 
 // Hardware offload capabilities
 ...
 NetAdapterOffloadSetChecksumCapabilities(netAdapter,
-                                         &checksumCapabilities,
-                                         EvtAdapterOffloadSetChecksum);
+                                         &checksumCapabilities);
 ...
 NetAdapterOffloadSetLsoCapabilities(netAdapter,
-                                    &lsoCapabilities,
-                                    EvtAdapterOffloadSetLso);
+                                    &lsoCapabilities);
 
 //
 // Required: start the adapter

@@ -4,12 +4,12 @@ description: 若要执行使用 DMA 操作接口的版本 3 中的例程的 DMA 
 ms.assetid: 5D73120F-79F5-4C9A-8AE5-25D5CF9B06F5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f3bbbb5fd327a23a95c9467bd356b5a0892096b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4388b99b25791bd7440c3e611f65d375f4de6f29
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562150"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902711"
 ---
 # <a name="basic-calling-pattern-for-version-3-dma-routines"></a>DMA 例程版本 3 的基本调用模式
 
@@ -28,7 +28,7 @@ ms.locfileid: "56562150"
 
 此调用的输入的参数描述要使用的传输和传输的方向 （读取或写入） 的内存缓冲区。
 
-此调用中获取的资源要求包括的映射寄存器的数量和描述适用于传输的数据缓冲区所需的分散/聚拢列表的大小。 在后续调用中[ **AllocateAdapterChannelEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406340)例程 (请参阅[步骤 3](#step-3))，驱动程序提供的映射注册计数作为输入参数。
+此调用中获取的资源要求包括的映射寄存器的数量和描述适用于传输的数据缓冲区所需的分散/聚拢列表的大小。 在后续调用中[ **AllocateAdapterChannelEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406340)例程 (请参阅[步骤 3](#step-3-request-the-required-dma-resources))，驱动程序提供的映射注册计数作为输入参数。
 
 ## <a name="step-3-request-the-required-dma-resources"></a>步骤 3:请求所需的 DMA 资源
 
@@ -49,7 +49,7 @@ ms.locfileid: "56562150"
 
 有关异步**AllocateAdapterChannelEx**调用， *ExecutionRoutine*必须为非 NULL，并执行例程接收作为输入参数的映射注册基址。
 
-在后续调用[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)例程 (请参阅[第 5 步](#step-5))，驱动程序提供作为输入参数的映射注册基址。
+在后续调用[ **MapTransferEx** ](https://msdn.microsoft.com/library/windows/hardware/hh406521)例程 (请参阅[第 5 步](#step-5-initialize-the-dma-resources-and-start-the-dma-transfer))，驱动程序提供作为输入参数的映射注册基址。
 
 如果*ExecutionRoutine*为非 NULL 执行例程将返回一个指示已分配的资源的处置状态值。 对于系统 DMA 传输，此返回值必须是**KeepObject**。 此值通知操作系统该适配器对象 （和所有其已分配的资源） 正在使用中，不会释放。 如果未不提供任何执行例程，则该驱动程序必须改为调用[ **FreeAdapterObject** ](https://msdn.microsoft.com/library/windows/hardware/hh451107)例程和提供**KeepObject**作为*AllocationOption*参数。
 
@@ -78,7 +78,7 @@ ms.locfileid: "56562150"
 
 **MapTransferEx**将返回状态\_成功指示 DMA 传输已成功启动。 在某些平台上驱动程序可能需要执行一些其他操作，之外**MapTransferEx**调用，以启动传输，但这种延迟的启动不是必需的所有平台。 驱动程序必须不依赖于此类延迟了有关使用和释放已分配的资源的决策。
 
-DMA 操作接口中的例程的 DMA 传输对使用这些例程的驱动程序是透明的方式维护缓存一致性。 平台上，不会强制使用硬件、 缓存协调性**MapTransferEx**可确保，将处理器数据缓存刷新之前写入 （内存设备） 传输。 读取 （设备内存） 传输的缓存失效在调用[ **FlushAdapterBuffersEx** ](https://msdn.microsoft.com/library/windows/hardware/hh451102)例程 (请参阅[步骤 8](#step-8)) 后面的每个**MapTransferEx**调用。
+DMA 操作接口中的例程的 DMA 传输对使用这些例程的驱动程序是透明的方式维护缓存一致性。 平台上，不会强制使用硬件、 缓存协调性**MapTransferEx**可确保，将处理器数据缓存刷新之前写入 （内存设备） 传输。 读取 （设备内存） 传输的缓存失效在调用[ **FlushAdapterBuffersEx** ](https://msdn.microsoft.com/library/windows/hardware/hh451102)例程 (请参阅[步骤 8](#step-8-flush-any-data-that-remains-in-the-cache)) 后面的每个**MapTransferEx**调用。
 
 ## <a name="step-7-receive-notification-when-the-dma-transfer-finishes"></a>步骤 7：DMA 传输完成后收到通知
 

@@ -5,11 +5,11 @@ ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: eed3c747bb5ff1228d1841cfad59fad9b89b219c
-ms.sourcegitcommit: 69e7e3a70c491feb4b7cee258f710585843168c0
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59480372"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902319"
 ---
 # <a name="container-support-for-non-dx-apis"></a>容器支持非 DX Api
 

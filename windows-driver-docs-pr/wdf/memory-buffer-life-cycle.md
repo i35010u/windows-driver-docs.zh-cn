@@ -4,12 +4,12 @@ description: 内存缓冲区生命周期
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df37b23d343172b02d7c009a024085074513beca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: aa982e9b3612562a0e22700df672e9ffaf6be436
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525993"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902521"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
@@ -28,19 +28,19 @@ ms.locfileid: "56525993"
 
 请考虑以下使用方案：
 
--   方案 1：[驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它](#drv-rec-complete)。
--   方案 2：[驱动程序收到来自 KMDF 的 I/O 请求并将其转发到 I/O 目标](#drv-rec-fwd)。
--   方案 3：[驱动程序将发出使用一个现有的内存对象的 I/O 请求](#drv-create-reuse)。
--   方案 4:[驱动程序将发出 I/O 请求使用新的内存对象。](#drv-create-new)
--   方案 5:[驱动程序将重新使用它创建一个请求对象。](#drv-reuse)
+-   方案 1：[驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它](#scenario-1-driver-receives-an-i-o-request-from-kmdf-handles-it-and-completes-it)。
+-   方案 2：[驱动程序收到来自 KMDF 的 I/O 请求并将其转发到 I/O 目标](#scenario-2-driver-receives-an-i-o-request-from-kmdf-and-forwards-it-to-an-i-o-target)。
+-   方案 3：[驱动程序将发出使用一个现有的内存对象的 I/O 请求](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)。
+-   方案 4:[驱动程序将发出 I/O 请求使用新的内存对象。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
+-   方案 5:[驱动程序将重新使用它创建一个请求对象。](#scenario-5-driver-reuses-a-request-object-that-it-created)
 
-### <a href="" id="drv-rec-complete"></a>方案 1:驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它。
+## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>方案 1：驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它。
 
 在最简单的方案中，KMDF 调度对驱动程序，它执行 I/O，并完成请求的请求。 在这种情况下，基础缓冲区可能已创建的用户模式应用程序，另一个驱动程序或操作系统本身。 有关如何对访问缓冲区的信息，请参阅[基于 Framework 的驱动程序中访问数据缓冲区](https://msdn.microsoft.com/library/windows/hardware/ff540701)。
 
 当驱动程序[完成请求](completing-i-o-requests.md)，框架将删除内存对象。 缓冲区指针然后是无效的。
 
-### <a href="" id="drv-rec-fwd"></a>方案 2:驱动程序收到来自 KMDF 的 I/O 请求，并将其转发到 I/O 的目标。
+## <a name="scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target"></a>方案 2：驱动程序收到来自 KMDF 的 I/O 请求，并将其转发到 I/O 的目标。
 
 在此方案中，该驱动程序[会将请求转发](forwarding-i-o-requests.md)到 I/O 的目标。 下面的示例代码显示了一个驱动程序从传入的请求对象检索到内存对象的句柄、 设置格式的请求将发送到 I/O 目标，并发送请求：
 

@@ -1,31 +1,31 @@
 ---
-title: 调试器数据模型 c + + 接口概述
-description: 本主题概述了调试器的数据模型 c + + 接口来扩展和自定义调试器的功能。
-ms.date: 10/05/2018
-ms.openlocfilehash: 5f5e6247c5237d86133c7fb1329f92d8a759749f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+title: 调试器数据模型C++接口概述
+description: 本主题提供了调试器的数据模型的概述C++接口，以便扩展和自定义调试器的功能。
+ms.date: 04/09/2019
+ms.openlocfilehash: de9859083d6ede03b0f9cd6a82e0beeca961eda4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542419"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903353"
 ---
-# <a name="debugger-data-model-c-overview"></a>调试程序数据模型 c + + 概述
+# <a name="debugger-data-model-c-overview"></a>调试器数据模型 C++ 概述
 
-本主题概述了如何使用调试器数据模型 c + + 接口来扩展和自定义调试器的功能。
+本主题概述如何使用调试器数据模型的C++接口，以便扩展和自定义调试器的功能。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -33,15 +33,18 @@ ms.locfileid: "56542419"
 
 本主题包含以下部分：
 
-[调试器数据模型 c + + 接口的概述](#overview)
+[调试器数据模型概述C++接口](#overview)
 
 [调试器数据模型接口的摘要](#summary)
 
+[使用 DbgModelClientEx 库](#dbgmodelclientex)
+
+
 ---
 
-## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> 调试器数据模型的 c + + 接口的概述
+## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> 调试器数据模型概述C++接口
 
-调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 从 JavaScript 扩展或 c + + 扩展调试器的较新 (dx) 表达式计算器还提供了构造其写入到数据模型的 Api。 
+调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 构造其写入到数据模型的 Api 是从 JavaScript 扩展调试器的较新 (dx) 表达式计算器中也可用或C++扩展。 
 
 为了说明调试器数据模型的目标，请考虑此传统的调试器命令。
 
@@ -64,6 +67,10 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 逻辑上间距内容和扩展对特定对象的名称允许调试器扩展功能的发现。  
 
+> [!TIP]
+> 因为数据模型C++对象接口可以是非常详细，以实现完整C++的数据模型，它使用完整的帮助程序库C++异常，模板编程模式建议。 有关详细信息，请参阅[使用 DbgModelClientEx 库](#dbgmodelclientex)本主题中更高版本。
+>
+
 数据模型是方法的新[WinDbg 预览](debugging-using-windbg-preview.md)调试器，显示的大多数情况。 可以查询、 扩展，或编写脚本，因为它们由数据模型驱动新的用户界面中的许多元素。 有关详细信息，请参阅[WinDbg 预览版-数据模型](windbg-data-model-preview.md)。
 
 ![数据模型浏览窗口显示进程和线程](images/windbgx-data-model-process-threads.png)
@@ -74,7 +81,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 下图总结了调试器的数据模型体系结构的主要元素。
 
 - 到左侧和右侧，显示 UI 元素，提供对象的访问权限和支持 LINQ 查询与此类功能。  
-- 在关系图的右侧是向调试器数据模型提供数据的组件。 这包括自定义 NatVis、 JavaScript 和 c + + 调试器数据模型扩展。 
+- 在关系图的右侧是向调试器数据模型提供数据的组件。 这包括自定义 NatVis，JavaScript 和C++调试器的数据模型扩展。 
 
 ![数据模型体系结构视图](images/data-model-simple-architectural-view.png)
 
@@ -122,15 +129,14 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 - 数据模型管理器充当中心的注册机构的所有对象。 
 - 在左侧它显示如何标准调试器元素，如注册会话和进程。
 - 命名空间块显示了中央注册列表。
-- 关系图的右侧显示底部的两个提供程序，一个用于在最前面，NatVis，C/c + + 扩展。
+- 关系图的右侧会显示两个提供程序，一个用于在最前面，NatVis，C /C++在底部的扩展。
 
 ![数据模型体系结构视图](images/data-model-manager.png)
 
 
-
 ## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary"> 调试器数据模型接口的摘要
 
-有多种数据模型的不同部分组成的 c + + 接口。 若要以一致、 简便的方式处理这些接口，它们会细分按常规类别。 此处主要方面： 
+有多种C++接口组成的数据模型的不同部分。 若要以一致、 简便的方式处理这些接口，它们会细分按常规类别。 此处主要方面： 
 
 **常规对象模型**
 
@@ -281,24 +287,62 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex"> 使用 DbgModelClientEx 库
+
+**概述**
+
+数据模型C++对象的接口连接到数据模型可以变得非常冗长，来实现。 虽然它们允许数据模型的完整操作，它们需要实现的多个较小接口来扩展数据模型 (例如： 为每个动态 fetchable 属性添加 IModelPropertyAccessor 实现)。 除此之外，HRESULT 基于编程模型将添加大量的模板代码，用于错误检查。
+
+为了尽量减少此工作的一部分，是一个完整的C++的数据模型，它使用完整的帮助程序库C++的异常和模板编程模式。 当使用或扩展数据模型时，可更简洁的代码，建议使用此库的使用。
+
+帮助程序库中有两个重要的命名空间：
+
+Debugger::DataModel::ClientEx-消耗的数据模型的帮助程序
+
+Debugger::DataModel::ProviderEx-数据模型的扩展的帮助程序
+
+有关使用 DbgModelClientEx 库的其他信息，请参阅此 github 站点上的自述文件：
+
+https://github.com/Microsoft/WinDbg-Libraries/tree/master/DbgModelCppLib
 
 
+**HelloWorldC++示例**
+
+若要了解可以如何使用 DbgModelClientEx 库，查看数据模型 HelloWorldC++此处的示例。
+
+https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
+
+示例包括：
+
+- HelloProvider.cpp-这是进程的添加新的示例属性"Hello"到调试器的这一概念的提供程序类的实现。
+
+- SimpleIntroExtension.cpp-这是进程的一个简单的调试器扩展，也就是进程的添加一个新的示例属性"Hello"到调试器的这一概念。 此扩展是针对的数据模型 C + + 17 帮助程序库编写的。  目前，最好编写针对此库而不是原始 COM ABI 由于粘附代码所需的卷 （和复杂性） 扩展。
 
 
+**JavaScript 和 COM 示例**
 
+为了更好地了解写入调试器扩展与数据模型的不同方法，有三个版本的数据模型 HelloWorld 扩展可用此处：
+
+https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
+
+- JavaScript-以 JavaScript 编写的版本
+
+- C + + 17-编写针对数据模型中 C + + 17 的客户端库的版本
+
+- COM-编写对原始 COM ABI （仅使用 WRL 适用于 COM 帮助程序） 的版本
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)

@@ -4,17 +4,18 @@ description: MB NDIS 状态通知
 ms.assetid: 97538f74-f602-4d38-a5a8-e52eb3194fb9
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a79913a1543fa8fe9819e40d73c5c9fed1ae35ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: a929922a6a67b2e9d618308e187514af2c1254bb
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525091"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902637"
 ---
 # <a name="mb-ndis-status-notifications"></a>MB NDIS 状态通知
 
 
-移动宽带 (MB) 微型端口驱动程序的此部分 NDIS 状态通知：
+本部分包含有关移动宽带 (MB) 微型端口驱动程序的 NDIS 状态通知：
 
 [**NDIS\_状态\_WWAN\_身份验证\_响应**](ndis-status-wwan-auth-response.md)
 
@@ -54,11 +55,15 @@ ms.locfileid: "56525091"
 
 [**NDIS_STATUS_WWAN_MODEM_CONFIG_INFO**](ndis-status-wwan-modem-config-info.md)
 
+[**NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG**](ndis-status-wwan-modem-logging-config.md)
+
 [**NDIS_STATUS_WWAN_MPDP_LIST**](ndis-status-wwan-mpdp-list.md)
 
 [**NDIS_STATUS_WWAN_MPDP_STATE**](ndis-status-wwan-mpdp-state.md)
 
 [**NDIS_STATUS_WWAN_NETWORK_BLACKLIST**](ndis-status-wwan-network-blacklist.md)
+
+[**NDIS_STATUS_WWAN_NITZ_INFO**](ndis-status-wwan-nitz-info.md)
 
 [**NDIS\_STATUS\_WWAN\_PACKET\_SERVICE**](ndis-status-wwan-packet-service.md)
 
@@ -107,6 +112,14 @@ ms.locfileid: "56525091"
 [**NDIS\_STATUS\_WWAN\_SUPPORTED\_DEVICE\_SERVICES**](ndis-status-wwan-supported-device-services.md)
 
 [**NDIS\_状态\_WWAN\_SYS\_CAP**](ndis-status-wwan-sys-caps.md)
+
+[**NDIS_STATUS_WWAN_UICC_APP_LIST**](ndis-status-wwan-uicc-app-list.md)
+
+[**NDIS_STATUS_WWAN_UICC_BINARY_RESPONSE**](ndis-status-wwan-uicc-binary-response.md)
+
+[**NDIS_STATUS_WWAN_UICC_FILE_STATUS**](ndis-status-wwan-uicc-file-status.md)
+
+[**NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE**](ndis-status-wwan-uicc-record-response.md)
 
 [**NDIS_STATUS_WWAN_UICC_RESET_INFO**](ndis-status-wwan-uicc-reset-info.md)
 

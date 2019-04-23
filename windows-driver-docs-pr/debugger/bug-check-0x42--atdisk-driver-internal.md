@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f8d4c0fa56cfcc5ed517251826ed0761f9dd79
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239502"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903705"
 ---
 # <a name="bug-check-0x42-atdiskdriverinternal"></a>Bug 检查 0x42：ATDISK\_DRIVER\_INTERNAL
 

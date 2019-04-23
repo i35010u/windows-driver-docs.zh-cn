@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 552d80d27e769a7e1fcad9fe005a0a3824486586
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238742"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902329"
 ---
 # <a name="bug-check-0x92-updriveronmpsystem"></a>Bug 检查 0x92：UP\_DRIVER\_ON\_MP\_SYSTEM
 

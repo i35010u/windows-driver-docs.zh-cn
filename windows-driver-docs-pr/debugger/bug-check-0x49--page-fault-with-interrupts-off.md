@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a6c5995fe945d372d785da0710fc256a71767666
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238936"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902204"
 ---
 # <a name="bug-check-0x49-pagefaultwithinterruptsoff"></a>Bug 检查 0x49：页\_容错\_WITH\_中断\_OFF
 

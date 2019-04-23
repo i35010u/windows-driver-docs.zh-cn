@@ -4,14 +4,15 @@ description: 数据包描述符和扩展
 ms.assetid: 7B2357AE-F446-4AE8-A873-E13DF04D8D71
 keywords:
 - WDF 网络适配器类扩展数据包描述符和扩展，NetAdapterCx 数据路径描述符多环形缓冲区、 NetAdapterCx 数据包描述符、 NetAdapterCx 数据包扩展
-ms.date: 07/31/2018
+ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b351ab2f6bc9b6787b9cd835139ea06890ae93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 250eaa4e0c5e6657a04d61f57b59f0c739d7429d
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567180"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903479"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 
@@ -23,9 +24,9 @@ ms.locfileid: "56567180"
 - 一个或多个片段描述符
 - 零个或多个数据包扩展 
 
-*核心描述符*数据包的是[NET_PACKET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet)结构。 它只包含最基本元数据适用于所有数据包，如给定的数据包和数据包的第一个片段描述符到的索引的组帧布局。   
+*核心描述符*数据包的是[ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet)结构。 它只包含最基本元数据适用于所有数据包，如给定的数据包和数据包的第一个片段描述符到的索引的组帧布局。   
 
-每个数据包还必须具有一个或多个*片段描述符*，或[NET_PACKET_FRAGMENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_fragment)结构，描述系统内存中的数据包数据所在的位置。
+每个数据包还必须具有一个或多个*片段描述符*，或[ **NET_PACKET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_fragment)结构，描述系统内存中的位置，该数据包数据驻留。
 
 *数据包扩展*是可选的包含特定于方案的功能的每个数据包元数据。 例如，扩展可以保存的校验和，大量发送卸载 (LSO) 的卸载信息并接收段合并 (RSC)，或者也可以保存特定于应用程序的详细信息。
 
@@ -38,15 +39,11 @@ ms.locfileid: "56567180"
 ![2 个片段数据包布局](images/packet_layout_2_extensions_2_fragments.png)
 
 
-## <a name="storage-of-packet-descriptors"></a>数据包描述符的存储
+## <a name="packet-descriptor-storage-and-access"></a>数据包描述符存储和访问
 
-核心描述符和片段描述符是两个单独的环形缓冲区中存储的 indepenently*数据包环*并*片段环*。 在数据包环中的每个核心描述符具有用于查找该数据包片段描述符的片段环中的索引。 另一种数据结构， [NET_DATAPATH_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netdatapathdescriptor/ns-netdatapathdescriptor-_net_datapath_descriptor)，数据包环和片段环一起为指定的数据包队列进行分组。
+数据包描述符和片段描述符都存储在**NET_RING**结构。 NIC 客户端驱动程序访问 net 环，并执行这些操作通过调入 Net 的环迭代器接口，这使驱动程序以使用 NetAdapterCx 网络将数据发送到硬件并释放回操作系统已完成的数据。 
 
-![多环布局](images/multi-ring.png) 
-
-数据包的每个队列都具有其自己[NET_DATAPATH_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netdatapathdescriptor/ns-netdatapathdescriptor-_net_datapath_descriptor)结构和其自己的数据包环，，因此，片段环，以及这些环中的描述符。 因此，网络数据传输操作中的每个数据包队列是完全独立的。 若要了解有关数据包队列的详细信息，请参阅[传输和接收队列](transmit-and-receive-queues.md)。
-
-建议客户端驱动程序将使用预定义的便利宏来访问数据包环、 片段环和它们所包含的描述符。 若要了解有关这些宏的详细信息，请参阅[使用环形缓冲区](using-the-ring-buffer.md)。
+Net 环和网络接口的环迭代器的详细信息，请参阅[Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)。
 
 ## <a name="packet-descriptor-extensibility"></a>数据包描述符可扩展性
 
@@ -93,77 +90,33 @@ NetAdapterCx 的核心数据包描述符可以轻松地在将来的版本提供�
 
 ### <a name="querying-packet-extension-offsets-for-datapath-queues"></a>查询数据包扩展的数据路径队列偏移量
 
-通过声明您的硬件的注册数据包扩展卸载支持后，将需要访问每个处理数据包的扩展偏移量。 若要减少超出您的驱动程序的调用并提高性能，可以查询的偏移量为你的扩展期间*EvtNetAdapterCreateTx (Rx) 队列*回调函数和存储队列上下文中的偏移量信息。 下面是一个示例，用于传输队列。 此示例中是类似于上示例*[EvtNetAdapterCreateTxQueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_create_txqueue)* 但只侧重于数据包扩展。
+通过声明您的硬件的注册数据包扩展卸载支持后，将需要访问每个处理数据包的扩展偏移量。 若要减少超出您的驱动程序的调用并提高性能，可以查询的偏移量为你的扩展期间*EvtNetAdapterCreateTx (Rx) 队列*回调函数和存储队列上下文中的偏移量信息。 
 
-```C++
-NTSTATUS
-MyAdapterCreateTxQueue(
-    _In_    NETADAPTER          Adapter,
-    _Inout_ PNETTXQUEUE_INIT    TxQueueInit
-)
-{
-    NTSTATUS status = STATUS_SUCCESS;
-
-    // Prepare the configuration structure
-    NET_PACKET_QUEUE_CONFIG txConfig;
-    NET_PACKET_QUEUE_CONFIG_INIT(
-        &txConfig,
-        EvtTxQueueAdvance,
-        EvtTxQueueSetNotificationEnabled,
-        EvtTxQueueCancel);
-
-    // Configure other Tx queue properties such as packet contexts
-    ...
-
-    // Create the transmit queue
-    NETPACKETQUEUE txQueue;
-    status = NetTxQueueCreate(
-        txQueueInit,
-        &txAttributes,
-        &txConfig,
-        &txQueue);
-
-    // Get the queue context for storing the queue ID and packet extension offset info
-    PMY_TX_QUEUE_CONTEXT queueContext = GetMyTxQueueContext(txQueue);
-
-    // Query checksum packet extension offset and store it in the context
-    NET_PACKET_EXTENSION_QUERY extension;
-    NET_PACKET_EXTENSION_QUERY_INIT(
-        &extension,
-        NET_PACKET_EXTENSION_CHECKSUM_NAME,
-        NET_PACKET_EXTENSION_CHECKSUM_VERSION_1);
-
-    queueContext->ChecksumExtensionOffset = NetTxQueueGetPacketExtensionOffset(txQueue, &extension);
-
-    // Query Large Send Offload packet extension offset and store it in the context
-    NET_PACKET_EXTENSION_QUERY_INIT(
-        &extension,
-        NET_PACKET_EXTENSION_LSO_NAME,
-        NET_PACKET_EXTENSION_LSO_VERSION_1);
-    
-    queueContext->LsoExtensionOffset = NetTxQueueGetPacketExtensionOffset(txQueue, &extension);
-
-    return status;
-}
-```
+有关查询扩展偏移量，并将其存储在队列上下文中的示例，请参阅[传输和接收队列](transmit-and-receive-queues.md)。
 
 ### <a name="getting-packet-extensions-at-runtime"></a>在运行时获取包扩展
 
-一旦您队列的上下文中存储扩展偏移量，你可以使用它们的每当您需要在扩展中的信息。 例如，您可以调用[NetPacketGetPacketChecksum](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/nf-netpacket-netpacketgetpacketchecksum)方法，尽管您编写到硬件的描述符：
+一旦您队列的上下文中存储扩展偏移量，你可以使用它们的每当您需要在扩展中的信息。 例如，您可以调用[ **NetExtensionGetPacketChecksum** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/nf-checksum-netextensiongetpacketchecksum)方法，尽管您编写到传输队列的硬件的描述符：
 
 ```C++
     // Get the extension offset from the device context
     PMY_TX_QUEUE_CONTEXT queueContext = GetMyTxQueueContext(txQueue);
-    size_t checksumOffset = queueContext->ChecksumExtensionOffset;
+    NET_EXTENSION checksumExtension = queueContext->ChecksumExtension;
 
     // Get the checksum info for this packet
-    NET_PACKET_CHECKSUM* checksumInfo = NetPacketGetChecksum(packet, checksumOffset);
+    NET_PACKET_CHECKSUM* checksumInfo = NetExtensionGetPacketChecksum(checksumExtension, packetIndex);
 
     // Do work with the checksum info
-    if(checksumInfo->Layer4 == NET_PACKET_TX_CHECKSUM_REQUIRED)
+    if (packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_NO_OPTIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_WITH_OPTIONS ||
+        packet->Layout.Layer3Type == NET_PACKET_LAYER3_TYPE_IPV4_UNSPECIFIED_OPTIONS)
     {
-        ...
+        if(checksumInfo->Layer4 == NET_PACKET_TX_CHECKSUM_REQUIRED)
+        {
+            ...
+        }
     }
+    ...
 ```
 
 ## <a name="predefined-packet-extension-constants-and-helper-methods"></a>预定义的数据包扩展常量和帮助器方法
@@ -177,10 +130,10 @@ NetAdapterCx 提供已知的数据包扩展常量的定义。
 | <ul><li>NET_PACKET_EXTENSION_LSO_NAME</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1_SIZE</li></ul> | 名称、 版本和大小的大型发送卸载 (LSO) 数据包扩展。 |
 | <ul><li>NET_PACKET_EXTENSION_RSC_NAME</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1_SIZE</li></ul> | 名称、 版本和接收段合并 (RSC) 数据包扩展的大小。 |
 
-此外，NetAdapterCx 提供三个帮助器方法，后者将作为包装[NetPacketGetExtension](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/nf-netpacket-netpacketgetextension)方法。 每个方法返回一个指向适当类型的结构。
+此外，NetAdapterCx 提供三个帮助器方法，后者将作为包装[ **NetExtensionGetData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extension/nf-extension-netextensiongetdata)方法。 每个方法返回一个指向适当类型的结构。
 
 | 方法 | 结构 |
 | --- | --- |
-| [NetPacketGetPacketChecksum](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/nf-netpacket-netpacketgetpacketchecksum) | [NET_PACKET_CHECKSUM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_checksum) |
-| [NetPacketGetPacketLargeSendSegmentation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/nf-netpacket-netpacketgetpacketlargesendsegmentation) | [NET_PACKET_LARGE_SEND_SEGMENTATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_large_send_segmentation)
-| [NetPacketGetPacketReceiveSegmentCoalescence](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/nf-netpacket-netpacketgetpacketreceivesegmentcoalescence) | [NET_PACKET_RECEIVE_SEGMENT_COALESCENCE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacket/ns-netpacket-_net_packet_receive_segment_coalescence) |
+| [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
+| [**NetExtensionGetLargeSendSegmentation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lso/nf-lso-netextensiongetpacketlargesendsegmentation) | [**NET_PACKET_LARGE_SEND_SEGMENTATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lsotypes/ns-lsotypes-_net_packet_large_send_segmentation)
+| [**NetExtensionGetPacketReceiveSegmentCoalescence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsc/nf-rsc-netextensiongetpacketreceivesegmentcoalescence) | [**NET_PACKET_RECEIVE_SEGMENT_COALESCENCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsctypes/ns-rsctypes-_net_packet_receive_segment_coalescence) |

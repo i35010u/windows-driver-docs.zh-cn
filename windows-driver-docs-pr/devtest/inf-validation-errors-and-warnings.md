@@ -4,12 +4,12 @@ description: 驱动程序安装错误和警告可以显示作为 Microsoft Visua
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7f22db5efb0c1af011841ca274b9e8ee9e69a2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464213"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902513"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -51,9 +51,9 @@ InfVerif 如下所示的常规规则，较低的错误号、 更严重问题。
 
 错误代码分为以下分类：
 
-- [INF 文件 (1100年 1299) 中的语法](#syntax-in-the-inf-file-(1100-1299))
-- [通用 INF (1300年 1319)](#universal-inf-(1300-1319))
-- [安装 (2000年-2999)](#installation-(2000-2999))
+- [INF 文件 (1100年 1299) 中的语法](#syntax-in-the-inf-file-1100-1299)
+- [通用 INF (1300年 1319)](#universal-inf-1300-1319)
+- [安装 (2000年-2999)](#installation-2000-2999)
 
 并非所有错误代码下面都列出了，因为不证自明的许多含义。 1000 1099年范围内的错误被视为不证自明的因为它们是基本语法错误。
 
@@ -198,7 +198,23 @@ HKR,,DllPath,%%SystemRoot%%\System32\myDll.sys
 </tr>
 <tr>
 <td><strong>1296:指定与硬件无关的服务</strong></td>
-<td>此警告将显示从 Windows 10，版本 1809，开始，指示该硬件不具有安装部分使用指定的关联的服务。
+<td>从 Windows 10，版本 1809，开始这已从警告变为错误。  。服务部分所需的每个定义的目标操作系统。  这是很好的做法，适用于所有 Inf 和不只是 1809年。  
+
+如果您以前不包括本部分中没有提供的服务，因此所依赖的收件箱驱动程序服务，然后您可能需要创建。服务引用使用需求的收件箱 INF 服务并包含语句的部分。  
+
+例如：INF 文件可以得到如下结果。服务为每个 OS 目标，若要解决此错误的部分。
+
+<pre>
+[XXXXXXXX.Install.NTx86.Services]
+Include=filename.inf
+Needs=inf-section-name.Services
+</pre>
+
+对于不需要功能驱动程序的设备，可以按如下所示指定 NULL 驱动程序：
+<pre>
+AddService = ,2.
+</pre>
+<b>仅应使用此 INF 安装的非功能性的设备，若要指定不需要的驱动程序的这种情况。</b>
 </td>
 </tr>
 </tbody>

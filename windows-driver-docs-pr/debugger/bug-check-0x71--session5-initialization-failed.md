@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cab2d330d575fdc08a088c79bbe993ee013a315
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238736"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902584"
 ---
 # <a name="bug-check-0x71-session5initializationfailed"></a>Bug 检查 0x71：SESSION5\_初始化\_失败
 

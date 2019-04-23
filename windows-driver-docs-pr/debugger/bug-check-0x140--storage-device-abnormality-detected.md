@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f7f36c2ffa5f8f49f5a63ac91dfb228efbfb30b1
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239234"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903029"
 ---
 # <a name="bug-check-0x140-storagedeviceabnormalitydetected"></a>Bug 检查 0x140：存储\_设备\_到异常情况\_检测到
 

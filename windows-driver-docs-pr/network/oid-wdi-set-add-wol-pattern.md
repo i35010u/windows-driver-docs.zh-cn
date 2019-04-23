@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_WOL_PATTERN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f1cec01cc2d6baa379f72e732375453519ba19e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 4def5ce6b4796889502ae2ab3bf5551026063578
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546859"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902971"
 ---
 # <a name="oidwdisetaddwolpattern"></a>OID\_WDI\_SET\_ADD\_WOL\_PATTERN
 
@@ -43,7 +44,8 @@ OID\_WDI\_设置\_添加\_WOL\_模式将 LAN 唤醒 (WOL) 模式添加到固件�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -61,13 +63,13 @@ OID\_WDI\_设置\_添加\_WOL\_模式将 LAN 唤醒 (WOL) 模式添加到固件�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_SET\_REMOVE\_WOL\_PATTERN](oid-wdi-set-remove-wol-pattern.md)

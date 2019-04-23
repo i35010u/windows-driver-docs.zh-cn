@@ -8,11 +8,11 @@ keywords:
 ms.date: 11/17/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 563e23a23e6d6d61c9ce503cb856aa07376296a7
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845534"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903431"
 ---
 # <a name="energy-meter-interface"></a>电能表接口
 

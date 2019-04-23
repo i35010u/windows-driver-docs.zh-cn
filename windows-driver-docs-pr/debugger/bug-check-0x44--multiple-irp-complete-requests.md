@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8092ad90ad412de72c1d72510c27358b6c421640
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239788"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902551"
 ---
 # <a name="bug-check-0x44-multipleirpcompleterequests"></a>Bug 检查 0x44：多个\_IRP\_完成\_请求
 

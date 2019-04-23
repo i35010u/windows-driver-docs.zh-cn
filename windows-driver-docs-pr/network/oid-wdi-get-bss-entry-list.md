@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 93cfcc5f960be78a815dc16d0ec6d75a34efb974
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 23f1bd2a72969df318fec2fb3df1f2550fd82cf6
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521883"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903013"
 ---
 # <a name="oidwdigetbssentrylist"></a>OID\_WDI\_GET\_BSS\_ENTRY\_LIST
 
@@ -46,7 +47,9 @@ Microsoft 组件使用的指定项的列表的操作系统报告的 BSS 列表�
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)要求
+[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -64,7 +67,7 @@ Microsoft 组件使用的指定项的列表的操作系统报告的 BSS 列表�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

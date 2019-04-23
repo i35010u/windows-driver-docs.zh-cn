@@ -5,11 +5,11 @@ ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 310b6abb180422126f89f0cdb9a27d946f2fd047
-ms.sourcegitcommit: 58d5457779071709faab68e44decc3c48a2cf975
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59362913"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902863"
 ---
 # <a name="minifilter-altitude-request"></a>微筛选器等级请求
 

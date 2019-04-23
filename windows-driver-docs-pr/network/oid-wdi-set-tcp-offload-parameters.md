@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_TCP_OFFLOAD_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e04c31eafe18f531fd86582ed041d26109a6cbf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 586ca294c072473e3fb62e85829e19893999f985
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575313"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902507"
 ---
 # <a name="oidwdisettcpoffloadparameters"></a>OID\_WDI\_SET\_TCP\_OFFLOAD\_PARAMETERS
 
@@ -41,7 +42,8 @@ OID\_WDI\_设置\_TCP\_卸载\_参数发送给该设备与操作系统设置 TCP
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

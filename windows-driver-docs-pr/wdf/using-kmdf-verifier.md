@@ -4,12 +4,12 @@ description: 使用 KMDF 验证程序
 ms.assetid: ab6a0149-9341-435b-b7e7-9c5d6520ebd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 988f631c9ecd8c89fcba22eb6594bb252cf14e29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b3e781d04e506db62b0aa2ca4e336b743f641fed
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562160"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902423"
 ---
 # <a name="using-kmdf-verifier"></a>使用 KMDF 验证程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "56562160"
 
 如果启用了 KMDF 验证工具，该框架检查锁获得和层次结构，确保对该框架的调用出现在正确的 IRQL、 验证正确的 I/O 取消和队列使用情况，并确保按照已编档的驱动程序和框架协定。 它还可以模拟内存不足条件，以便驱动程序开发人员可以测试是否驱动程序崩溃、 挂起，或无法卸载无做出正确响应。
 
-启用 KMDF 验证工具后，框架会进入调试器如果 60 秒的默认超时期限过期之前所述的事件的一些以前已完成。 此时，可以调试该问题，或重新启动的超时期限在调试器中键入"g"。 可以使用更改默认超时期限**DbgWaitForSignalTimeoutInSec**注册表值中所述[控制验证程序的行为](#verifier-reg-values)。
+启用 KMDF 验证工具后，框架会进入调试器如果 60 秒的默认超时期限过期之前所述的事件的一些以前已完成。 此时，可以调试该问题，或重新启动的超时期限在调试器中键入"g"。 可以使用更改默认超时期限**DbgWaitForSignalTimeoutInSec**注册表值中所述[控制验证程序的行为](#controlling-the-verifiers-behavior)。
 
 建议运行 Driver Verifier (Verifier.exe) 在测试和验证列表中添加你自己的驱动程序和 wdf01000.sys 过程。
 

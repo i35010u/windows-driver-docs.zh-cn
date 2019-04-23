@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2090bfd15037a1c8c06c66f0cbcd8b5fd5ab7de9
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238290"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902541"
 ---
 # <a name="bug-check-0x82-dfsfilesystem"></a>Bug 检查 0x82：DFS\_FILE\_SYSTEM
 

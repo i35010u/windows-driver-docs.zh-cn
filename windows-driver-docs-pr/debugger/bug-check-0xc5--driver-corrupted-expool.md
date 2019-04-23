@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d10e36b99287a788b2e97c383201919b40a120cd
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238506"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902635"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>Bug 检查 0xC5：驱动程序\_损坏\_EXPOOL
 

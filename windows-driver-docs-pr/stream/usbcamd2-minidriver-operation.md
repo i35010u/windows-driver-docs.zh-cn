@@ -12,493 +12,160 @@ keywords:
 - Srb WDK USBCAMD2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61a1165316976e6a91e49f2ea2c23dc23773a42a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 5f94f562f0c91c5d50fe3eb2847fa7a9717637bd
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349384"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903731"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 微型驱动程序操作
 
 USBCAMD2 照相机微型驱动程序通常运行，如下所示：
 
-- 照相机微型驱动程序调用[ **USBCAMD\_DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff568593)从其[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。 当调用微型驱动程序**USBCAMD\_DriverEntry**，将其传递到 USBCAMD2 微型驱动程序的[ *AdapterReceivePacket* ](https://msdn.microsoft.com/library/windows/hardware/ff554080)回调函数。 USBCAMD2 然后注册使用微型驱动程序*stream.sys*类驱动程序。
+- 照相机微型驱动程序调用[ **USBCAMD\_DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_driverentry)从其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。 当调用微型驱动程序**USBCAMD\_DriverEntry**，将其传递到 USBCAMD2 微型驱动程序的[ **AdapterReceivePacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-padapter_receive_packet_routine)回调函数。 USBCAMD2 然后注册使用微型驱动程序*stream.sys*类驱动程序。
 
 - 照相机微型驱动程序可以在接收各种流请求块 (Srb) 及其*AdapterReceivePacket*回调函数来处理，其中包括：
-  - [**SRB\_INITIALIZE\_DEVICE**](https://msdn.microsoft.com/library/windows/hardware/ff568185)
-  - [**SRB\_初始化\_完成**](https://msdn.microsoft.com/library/windows/hardware/ff568182)
-  - [**SRB\_GET\_STREAM\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff568173)
-  - [**SRB\_GET\_DEVICE\_PROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff568170)
-  - [**SRB\_SET\_DEVICE\_PROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff568204)
-  - [**SRB\_GET\_DATA\_INTERSECTION**](https://msdn.microsoft.com/library/windows/hardware/ff568168)
-  - [**SRB\_OPEN\_STREAM**](https://msdn.microsoft.com/library/windows/hardware/ff568191)
+  - [**SRB\_INITIALIZE\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-initialize-device)
+  - [**SRB\_初始化\_完成**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-initialization-complete)
+  - [**SRB\_GET\_STREAM\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-stream-info)
+  - [**SRB\_GET\_DEVICE\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-device-property)
+  - [**SRB\_SET\_DEVICE\_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-device-property)
+  - [**SRB\_GET\_DATA\_INTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-get-data-intersection)
+  - [**SRB\_OPEN\_STREAM**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-stream)
 - 照相机微型驱动程序确定在它必须在如何处理每个 SRB。 微型驱动程序可以调用例程，以帮助处理 Srb USBCAMD2 微型驱动程序库中。 这些例程通常以开头*USBCAMD\_* 前缀。
 
-例如，若要指定照相机微型驱动程序的使用 USBCAMD2 其他回调函数，照相机微型驱动程序指定在其入口点[ **USBCAMD\_设备\_DATA2** ](https://msdn.microsoft.com/library/windows/hardware/ff568590)结构。 然后调用微型驱动程序[ **USBCAMD\_InitializeNewInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff568599)传递初始化的 USBCAMD\_设备\_USBCAMD2 DATA2 结构。 然后，USBCAMD2 调用微型驱动程序的回调函数在必要时。
+例如，若要指定照相机微型驱动程序的使用 USBCAMD2 其他回调函数，照相机微型驱动程序指定在其入口点[ **USBCAMD\_设备\_DATA2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_usbcamd_device_data2)结构。 然后调用微型驱动程序[ **USBCAMD\_InitializeNewInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)传递初始化的 USBCAMD\_设备\_USBCAMD2 DATA2 结构。 然后，USBCAMD2 调用微型驱动程序的回调函数在必要时。
 
 > [!NOTE]
-> [ **USBCAMD\_设备\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568585)仅用于向后兼容性目的在 USBCAMD2 支持结构。
+> [ **USBCAMD\_设备\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_usbcamd_device_data)仅用于向后兼容性目的在 USBCAMD2 支持结构。
 
-微型驱动程序必须调用[ **USBCAMD\_AdapterReceivePacket** ](https://msdn.microsoft.com/library/windows/hardware/ff568574)将不处理任何 Srb 发送到 USBCAMD2 来处理。
+微型驱动程序必须调用[ **USBCAMD\_AdapterReceivePacket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)将不处理任何 Srb 发送到 USBCAMD2 来处理。
 
-[USBCAMD 库回调函数](https://msdn.microsoft.com/library/windows/hardware/ff568608)描述微型驱动程序实现的回调函数并指明它们是否可选或必需。
+[**USBCAMD 库回调函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/index#callback-functions)描述微型驱动程序实现的回调函数并指明它们是否可选或必需。
 
 以下列表的过程说明了处理 Srb 发送到摄像机微型驱动程序的常规流程：
 
 ## <a name="minidrivers-srbinitializedevice-handler"></a>微型驱动程序的 SRB\_初始化\_设备处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>通过调用初始化 USBCAMD2 <a href="https://msdn.microsoft.com/library/windows/hardware/ff568599" data-raw-source="[&lt;strong&gt;USBCAMD_InitializeNewInterface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568599)"> <strong>USBCAMD_InitializeNewInterface</strong></a>、 指示视频或仍在内核模式下，例如启用设备事件的原始数据处理要求。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>获取 USB 设备和配置描述符。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557605" data-raw-source="[&lt;em&gt;CamConfigureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557605)"> <em>CamConfigureEx</em> </a>回调函数。</p></td>
-</tr>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>完成配置。 选择备用设置和最大传输大小。 数组中填充<a href="https://msdn.microsoft.com/library/windows/hardware/ff568623" data-raw-source="[&lt;strong&gt;USBCAMD_Pipe_Config_Descriptor&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568623)"> <strong>USBCAMD_Pipe_Config_Descriptor</strong> </a>结构。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>分析的数组<strong>USBCAMD_Pipe_Config_Descriptor</strong>结构。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557614" data-raw-source="[&lt;em&gt;CamInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557614)"> <em>CamInitialize</em> </a>回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>完成初始化。 设置设备电源并激活相机上的默认设置。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>提供的流和流到描述符大小号<em>stream.sys</em>类驱动程序。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 通过调用初始化 USBCAMD2 [ **USBCAMD_InitializeNewInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_initializenewinterface)、 指示视频或仍在内核模式下，例如启用设备事件的原始数据处理要求。 |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 获取 USB 设备和配置描述符。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamConfigureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_configure_routine_ex)回调函数。 |
+| 照相机微型驱动程序 | 完成配置。 选择备用设置和最大传输大小。 数组中填充[ **USBCAMD_Pipe_Config_Descriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/ns-usbcamdi-_pipe_config_descriptor)结构。 |
+| USBCAMD2 | 分析的数组**USBCAMD_Pipe_Config_Descriptor**结构。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_initialize_routine)回调函数。 |
+| 照相机微型驱动程序 | 完成初始化。 设置设备电源并激活相机上的默认设置。 |
+| USBCAMD2 | 提供的流和流到描述符大小号**stream.sys**类驱动程序。 |
 
 ## <a name="minidrivers-srbgetstreaminfo-handler"></a>微型驱动程序的 SRB\_获取\_流\_信息处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>提供<a href="https://msdn.microsoft.com/library/windows/hardware/ff559692" data-raw-source="[&lt;strong&gt;HW_STREAM_INFORMATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559692)"> <strong>HW_STREAM_INFORMATION</strong> </a>流式传输到的信息结构<em>stream.sys</em>类驱动程序。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>指向设备中的属性集的数组中填写<em>stream.sys</em>类驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff559690" data-raw-source="[&lt;strong&gt;HW_STREAM_HEADER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559690)"> <strong>HW_STREAM_HEADER</strong> </a>结构。</p></td>
-</tr>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>填写的流标头中的 pin 的数量。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>如果任何，公开设备事件表。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>修复流信息表中条目的值。 集类别名称 （捕获或仍在）。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>填写到流的属性数组的指针。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 提供[ **HW_STREAM_INFORMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_information)流式传输到的信息结构**stream.sys**类驱动程序。 |
+| 照相机微型驱动程序 | 指向设备中的属性集的数组中填写**stream.sys**类驱动程序[ **HW_STREAM_HEADER** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_header)结构。 |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 填写的流标头中的 pin 的数量。 |
+| USBCAMD2 | 如果任何，公开设备事件表。 |
+| USBCAMD2 | 修复流信息表中条目的值。 集类别名称 （捕获或仍在）。 |
+| USBCAMD2 | 填写到流的属性数组的指针。 |
 
 ## <a name="minidrivers-srbinitializationcomplete-handler"></a>微型驱动程序的 SRB\_初始化\_完成处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>获取有关 USBCAMD2 GUID_USBCAMD_INTERFACE 使用 IRP_MJ_PNP 和 IRP_MN_QUERY_INTERFACE。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 获取有关 USBCAMD2 GUID_USBCAMD_INTERFACE 使用 IRP_MJ_PNP 和 IRP_MN_QUERY_INTERFACE。 |
 
 ## <a name="minidrivers-srbgetdeviceproperty-handler"></a>微型驱动程序的 SRB\_获取\_设备\_属性处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>获取属性的照相机微型驱动程序处理，如<a href="https://msdn.microsoft.com/library/windows/hardware/ff568122" data-raw-source="[PROPSETID_VIDCAP_VIDEOPROCAMP](https://msdn.microsoft.com/library/windows/hardware/ff568122)">PROPSETID_VIDCAP_VIDEOPROCAMP</a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff567802" data-raw-source="[PROPSETID_VIDCAP_CAMERACONTROL](https://msdn.microsoft.com/library/windows/hardware/ff567802)">PROPSETID_VIDCAP_CAMERACONTROL</a>和<a href="https://msdn.microsoft.com/library/windows/hardware/ff568120" data-raw-source="[PROPSETID_VIDCAP_VIDEOCONTROL](https://msdn.microsoft.com/library/windows/hardware/ff568120)">PROPSETID_VIDCAP_VIDEOCONTROL</a>，如以及任何其他自定义属性设置。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 获取属性的照相机微型驱动程序处理，如[ **PROPSETID_VIDCAP_VIDEOPROCAMP**](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)， [ **PROPSETID_VIDCAP_CAMERACONTROL** ](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)，并[ **PROPSETID_VIDCAP_VIDEOCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videocontrol)，如以及任何其他自定义属性设置。 |
 
 ## <a name="minidrivers-srbsetdeviceproperty-handler"></a>微型驱动程序的 SRB\_设置\_设备\_属性处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>设置的属性来获取的参数处理相机微型驱动程序<a href="https://msdn.microsoft.com/library/windows/hardware/ff568122" data-raw-source="[PROPSETID_VIDCAP_VIDEOPROCAMP](https://msdn.microsoft.com/library/windows/hardware/ff568122)">PROPSETID_VIDCAP_VIDEOPROCAMP</a>， <a href="https://msdn.microsoft.com/library/windows/hardware/ff567802" data-raw-source="[PROPSETID_VIDCAP_CAMERACONTROL](https://msdn.microsoft.com/library/windows/hardware/ff567802)">PROPSETID_VIDCAP_CAMERACONTROL</a>和<a href="https://msdn.microsoft.com/library/windows/hardware/ff568120" data-raw-source="[PROPSETID_VIDCAP_VIDEOCONTROL](https://msdn.microsoft.com/library/windows/hardware/ff568120)">PROPSETID_VIDCAP_VIDEOCONTROL</a>，和任何其他自定义属性集。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 设置的属性来获取的参数处理相机微型驱动程序[ **PROPSETID_VIDCAP_VIDEOPROCAMP**](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)， [ **PROPSETID_VIDCAP_CAMERACONTROL**](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)，并[ **PROPSETID_VIDCAP_VIDEOCONTROL**](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videocontrol)，和任何其他自定义属性集。 |
 
 ## <a name="minidrivers-srbgetdataintersection-handler"></a>微型驱动程序的 SRB\_获取\_数据\_交集处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>返回<a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"> <strong>KSDATAFORMAT</strong> </a>结构<a href="https://msdn.microsoft.com/library/windows/hardware/ff561658" data-raw-source="[&lt;strong&gt;KSDATARANGE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561658)"> <strong>KSDATARANGE</strong> </a>结构。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>检查请求的帧速率 (<strong>VideoInfoHeader.AvgTimePerFrame</strong>) 是所请求的视频格式的上限和下限的限制范围内。 如果超出限制，微型驱动程序应该更正 pSrb-中的以下值&gt;CommandData.IntersectInfo-&gt;Datarange:VideoInfoHeader.AvgTimePerFrame，VideoInfoHeader.dwBitRate。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 返回[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions//ff561658(v=vs.85))结构。 |
+| 照相机微型驱动程序 | 检查请求的帧速率 (**VideoInfoHeader.AvgTimePerFrame**) 是所请求的视频格式的上限和下限的限制范围内。 如果超出限制，微型驱动程序应正确 pSrb 中的以下值-> CommandData.IntersectInfo-> Datarange:VideoInfoHeader.AvgTimePerFrame，VideoInfoHeader.dwBitRate。 |
 
 ## <a name="minidrivers-srbopenstream-handler"></a>微型驱动程序的 SRB\_打开\_流处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>验证的视频格式。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>保存照相机微型驱动程序接受的视频格式。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557600" data-raw-source="[&lt;em&gt;CamAllocateBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557600)"> <em>CamAllocateBandwidthEx</em> </a>根据视频格式的数据分配带宽和视频格式获取的最大缓冲区大小的回调函数。</p></td>
-</tr>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>计算满足请求的帧速率和输出窗口大小等时通道的最大数据包大小。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>选择最接近的替代设置通过调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568625" data-raw-source="[&lt;strong&gt;USBCAMD_SelectAlternateInterface&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568625)"> <strong>USBCAMD_SelectAlternateInterface</strong></a>。 微型驱动程序应为 USBCAMD2 提供可以由照相机的最大可能的帧大小。</p></td>
-</tr>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>设置缩放摄像机上的硬件。 将照相机控件设置为在注册表中存储的值或默认设置上，如果第一次。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>确保处于限制范围内的帧速率 (VideoInfoHeader.AvgTimePerFrame) 有关的视频格式，并更正它，如果不是。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>设置用于捕获模式下的硬件。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>初始化等时或大容量传输。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 验证的视频格式。 |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 保存照相机微型驱动程序接受的视频格式。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamAllocateBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_allocate_bw_routine_ex)根据视频格式的数据分配带宽和视频格式获取的最大缓冲区大小的回调函数。 |
+| 照相机微型驱动程序 | 计算满足请求的帧速率和输出窗口大小等时通道的最大数据包大小。 |
+| 照相机微型驱动程序 | 选择最接近的替代设置通过调用[ **USBCAMD_SelectAlternateInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_selectalternateinterface)。 微型驱动程序应为 USBCAMD2 提供可以由照相机的最大可能的帧大小。 |
+| 照相机微型驱动程序 | 设置缩放摄像机上的硬件。 将照相机控件设置为在注册表中存储的值或默认设置上，如果第一次。 |
+| 照相机微型驱动程序 | 确保处于限制范围内的帧速率 (VideoInfoHeader.AvgTimePerFrame) 有关的视频格式，并更正它，如果不是。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStartCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_start_capture_routine_ex)回调函数。 |
+| 照相机微型驱动程序 | 设置用于捕获模式下的硬件。 |
+| USBCAMD2 | 初始化等时或大容量传输。 |
 
 ## <a name="minidrivers-srbclosestream-handler"></a>微型驱动程序的 SRB\_关闭\_流处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>取消挂起的提交到 USBCAMD2 Irp。 返回所有挂起的到数据 Srb <em>stream.sys</em>类驱动程序。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>将停止捕获命令发送到摄像机。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>回调函数来释放同步总线带宽，可能的话。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>选择空闲替代设置。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>释放与 USB 管道相关联的资源。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 取消挂起的提交到 USBCAMD2 Irp。 返回所有挂起的到数据 Srb **stream.sys**类驱动程序。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)回调函数。 |
+| 照相机微型驱动程序 | 将停止捕获命令发送到摄像机。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamFreeBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_free_bw_routine_ex)回调函数来释放同步总线带宽，可能的话。 |
+| 照相机微型驱动程序 | 选择空闲替代设置。 |
+| USBCAMD2 | 释放与 USB 管道相关联的资源。 |
 
 ## <a name="minidrivers-srbuninitializedevice-handler"></a>微型驱动程序的 SRB\_UNINITIALIZE\_设备处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>如果任何流都仍然打开时，关闭它们通过调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>回调对每个流的功能。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557646" data-raw-source="[&lt;em&gt;CamUnInitialize&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557646)"> <em>CamUnInitialize</em> </a>回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>清除并释放资源。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 如果任何流都仍然打开时，关闭它们通过调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)并[ **CamFreeBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_free_bw_routine_ex)回调对每个流的功能。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamUnInitialize** ](https://docs.microsoft.com/previous-versions//ff557646(v=vs.85))回调函数。 |
+| 照相机微型驱动程序 | 清除并释放资源。 |
 
 ## <a name="minidrivers-srbsurpriseremoval-handler"></a>微型驱动程序的 SRB\_惊讶\_删除处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>取消挂起的数据 Srb 并返回具有 STATUS_CANCELLED Srb。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>并<a href="https://msdn.microsoft.com/library/windows/hardware/ff557613" data-raw-source="[&lt;em&gt;CamFreeBandwidthEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557613)"> <em>CamFreeBandwidthEx</em> </a>上所有打开的流的回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>返回有关任何读/写晚 SRB_SURPRISE_REMOVAL Srb STATUS_CANCELLED。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 取消挂起的数据 Srb 并返回具有 STATUS_CANCELLED Srb。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)并[ **CamFreeBandwidthEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_free_bw_routine_ex)上所有打开的流的回调函数。 |
+| USBCAMD2 | 返回有关任何读/写晚 SRB_SURPRISE_REMOVAL Srb STATUS_CANCELLED。 |
 
 ## <a name="minidrivers-srbsetdataformat-handler"></a>微型驱动程序的 SRB\_设置\_数据\_格式处理程序
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>验证新的视频格式。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568634" data-raw-source="[&lt;em&gt;USBCAMD_SetVideoFormat&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568634)"> <em>USBCAMD_SetVideoFormat</em></a>。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>关联的流扩展名保存新的格式。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 验证新的视频格式。 |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_SetVideoFormat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pfnusbcamd_setvideoformat)。 |
+| USBCAMD2 | 关联的流扩展名保存新的格式。 |
 
 ## <a name="minidrivers-srbchangepowerstate-from-power-on-to-power-off-handler"></a>微型驱动程序的 SRB\_更改\_电源\_从启动到关闭电源处理程序状态
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>停止对等时管道如果适用，流式处理或取消仍在进行大容量或中断传输。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
-</tr>
-<tr class="even">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>将停止捕获命令发送到硬件。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 停止对等时管道如果适用，流式处理或取消仍在进行大容量或中断传输。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)回调函数。 |
+| 照相机微型驱动程序 | 将停止捕获命令发送到硬件。 |
 
 ## <a name="minidrivers-srbchangepowerstate-from-power-off-to-power-on-handler"></a>微型驱动程序的 SRB\_更改\_电源\_Power ON 处理程序从关闭电源状态
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>组件</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff568574" data-raw-source="[&lt;strong&gt;USBCAMD_AdapterReceivePacket&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff568574)"> <strong>USBCAMD_AdapterReceivePacket</strong></a>。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>重新启动同步管道如果适用上, 流式处理或重新提交大容量或中断传输到 USB 类。</p></td>
-</tr>
-<tr class="odd">
-<td><p>照相机微型驱动程序</p></td>
-<td><p>还原到正常水平的相机设置和照相机功率消耗。</p></td>
-</tr>
-<tr class="even">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557643" data-raw-source="[&lt;em&gt;CamStopCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557643)"> <em>CamStopCaptureEx</em> </a>回调函数。</p></td>
-</tr>
-<tr class="odd">
-<td><p>USBCAMD2</p></td>
-<td><p>调用微型驱动程序的<a href="https://msdn.microsoft.com/library/windows/hardware/ff557640" data-raw-source="[&lt;em&gt;CamStartCaptureEx&lt;/em&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557640)"> <em>CamStartCaptureEx</em> </a>回调函数。</p></td>
-</tr>
-</tbody>
-</table>
+| 组件 | 操作 |
+| --- | --- |
+| 照相机微型驱动程序 | 调用[ **USBCAMD_AdapterReceivePacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nf-usbcamdi-usbcamd_adapterreceivepacket)。 |
+| USBCAMD2 | 重新启动同步管道如果适用上, 流式处理或重新提交大容量或中断传输到 USB 类。 |
+| 照相机微型驱动程序 | 还原到正常水平的相机设置和照相机功率消耗。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStopCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_stop_capture_routine_ex)回调函数。 |
+| USBCAMD2 | 调用微型驱动程序的[ **CamStartCaptureEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbcamdi/nc-usbcamdi-pcam_start_capture_routine_ex)回调函数。 |

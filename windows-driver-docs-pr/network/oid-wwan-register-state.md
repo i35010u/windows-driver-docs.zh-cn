@@ -5,12 +5,13 @@ ms.assetid: 564de5bf-10d9-47fe-a4c1-3409d9b2aee8
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_REGISTER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d453e4956a330ee08ded409b1263c71d8c25f75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541084"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903491"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_REGISTER\_STATE
 
@@ -44,6 +45,16 @@ RegisterAction 值的语义定义，如下所示：
 
 -   *手动*并*自动*注册模式只会影响网络选择模式。 MB 设备应尝试注册到所选网络，只要启用单选。
 
+### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+
+在 Windows 10，版本 1903年开始支持此 OID 的新修订版本 3。 此扩展使宿主能够查询首选的无线访问技术 (Rat) 从微型端口驱动程序。 
+
+若要控制首选的 RAT，主机设置了位掩码，表示在 WWAN_DATA_CLASS 值**WwanDataClass**的成员[ **WWAN_SET_REGISTER_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_set_register_state)结构. 此成员表示首选分发点的连接的数据访问技术。 如果此字段设置为**WWAN_DATA_CLASS_NONE**，则调制解调器应不采取任何操作，此参数。
+
+主机还可以查询中的微型端口驱动程序的当前首选的数据类。 微型端口驱动程序将使用**PreferredDataClasses**字段[ **WWAN_REGISTRATION_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_registration_state)结构报告是首选的数据访问技术调制解调器中当前设置。
+
+5 G 数据类支持的详细信息，请参阅[MB 5g 数据类支持](mb-5g-data-class-support.md)。
+
 <a name="requirements"></a>要求
 ------------
 
@@ -54,17 +65,17 @@ RegisterAction 值的语义定义，如下所示：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_WWAN\_SET\_REGISTER\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567926)

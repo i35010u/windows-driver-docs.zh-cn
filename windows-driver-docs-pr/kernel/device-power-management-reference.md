@@ -5,12 +5,13 @@ keywords:
 - AcceptDeviceNotification
 ms.date: 12/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb3c8d1120d997529d8874b110e302dd71c8b20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: f57e13ce1653e1dadf3b7e8901db869adf47410c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565263"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902883"
 ---
 # <a name="device-power-management-reference"></a>设备电源管理参考
 
@@ -68,7 +69,7 @@ ms.locfileid: "56565263"
 |[PO_FX_COMPONENT_IDLE_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_idle_state)|**PO_FX_COMPONENT_IDLE_STATE**结构设备中指定属性的组件的 Fx 电源状态。|
 |[PO_FX_COMPONENT_PERF_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_info)|**PO_FX_COMPONENT_PERF_INFO**结构描述的设备中的单个组件的性能状态的所有集。|
 |[PO_FX_COMPONENT_PERF_SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_component_perf_set)|**PO_FX_COMPONENT_PERF_SET**结构表示一组设备中的单个组件的性能状态。|
-|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)|**PO_FX_DEVICE**结构描述的电源管理框架 (PoFx) 的设备的 power 属性。|
+|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_device_v3)|**PO_FX_DEVICE**结构描述的电源管理框架 (PoFx) 的设备的 power 属性。|
 |[PO_FX_PERF_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state)|**PO_FX_PERF_STATE**结构表示设备内的单个组件的性能状态。|
 |[PO_FX_PERF_STATE_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_po_fx_perf_state_change)|**PO_FX_PERF_STATE_CHANGE**结构包含有关请求的调用的性能状态更改的信息[PoFxIssueComponentPerfStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechange)或[PoFxIssueComponentPerfStateChangeMultiple](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)例程。
 
@@ -112,7 +113,7 @@ ms.locfileid: "56565263"
 
 #### <a name="pofxflagxxx-requirements"></a>PO_FX_FLAG_XXX 要求
 
-|版本|Header|
+|Version|Header|
 |----|----|
 |支持从 Windows 8 开始。|Wdm.h|
 
@@ -126,7 +127,7 @@ ms.locfileid: "56565263"
 #define PO_FX_FLAG_PERF_QUERY_ON_ALL_IDLE_STATES 0x4
 ```
 
-|Constant|ReplTest1|描述|
+|Constant|值|描述|
 |----|----|----|
 |**PO_FX_FLAG_PERF_PEP_OPTIONAL**|1 (0x1)|指示该驱动程序可以从平台扩展插件 (PEP) 更改而无需协助的性能状态或，驱动程序注册到性能状态 PoFx 仅用于日志记录。 如果设置此标志， [PoFxRegisterComponentPerfStates](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)调用将仍成功 PEP 不支持组件的性能状态。|
 |**PO_FX_FLAG_PERF_QUERY_ON_F0**|2 (0x2)|对于某些设备，PEP 可能需要为性能状态设置为组件为某些性能状态的地方 (称为*名义上的性能状态*) 时，其空闲组件。 如果组件包含名义上的性能状态，用例 PoFx 查询以确定当前的性能状态时该组件将转换为 F0 PEP，驱动程序设置此标志。|
@@ -138,6 +139,6 @@ Flags 参数到[PoFxRegisterComponentPerfStates](https://docs.microsoft.com/wind
 
 #### <a name="pofxflagperfxxx-requirements"></a>PO_FX_FLAG_PERF_XXX 要求
 
-|要求|版本|
+|要求|Version|
 |----|----|
 |支持从 Windows 10 开始。|Wdm.h|

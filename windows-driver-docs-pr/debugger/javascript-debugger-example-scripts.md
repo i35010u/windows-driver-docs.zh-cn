@@ -2,24 +2,32 @@
 title: JavaScript 调试器示例脚本
 description: 本主题介绍用户和内核模式 JavaScript 代码示例，如数据筛选即插即用和播放设备树示例。
 ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
-ms.date: 11/27/2018
+ms.date: 04/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f3f4dcc0adc3957c74abda3138f8c026afd2b593
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5e27226292aefcf50508285021f5adaa5bdbf4e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564896"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903789"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript 调试器示例脚本
 
-
 本主题提供了以下用户和内核模式 JavaScript 代码示例。
 
--   [筛选的数据：Plug and Play 设备树中 KD （内核模式）](#filter)
--   [将设备特定于扩展到多媒体 （内核模式）](#multimedia)
--   [添加到总线信息\_设备\_对象 （内核模式）](#bus)
--   [查找应用程序标题 （用户模式）](#title)
+- [确定进程体系结构](#processarchitecture)
+- [筛选的数据：Plug and Play 设备树中 KD （内核模式）](#filter)
+- [将设备特定于扩展到多媒体 （内核模式）](#multimedia)
+- [添加到总线信息\_设备\_对象 （内核模式）](#bus)
+- [查找应用程序标题 （用户模式）](#title)
+
+## <a name="microsoft-github-repo-example-scripts"></a>Microsoft GitHub 存储库的示例脚本
+
+调试器团队承载包含的示例 JavaScript 脚本和扩展的 GitHub 存储库。
+
+你可以找到它在- https://github.com/Microsoft/WinDbg-Samples
+
+自述文件介绍了当前可用的示例代码。
 
 ## <a name="span-idworkingwithsamplesspanspan-idworkingwithsamplesspanspan-idworkingwithsamplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>使用示例
 
@@ -68,8 +76,71 @@ Debugger.State.Scripts.HelloWorld.Contents.sayHi()
 
 请参阅[JavaScript 调试器脚本](javascript-debugger-scripting.md)有关使用 JavaScript 的其他信息。
 
-## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>筛选的数据：Plug and Play 设备树中 KD （内核模式）
+## <a name="span-idprocessarchitecturespanspan-idprocessarchitecturespanspan-idprocessarhcitecturespandetermining-process-architecture"></a><span id="Processarchitecture"></span><span id="processarchitecture"></span><span id="PROCESSARHCITECTURE"></span>确定进程体系结构
 
+此 JavaScript 代码添加到调试器对象模型进程对象来指示进程是否为 x86 或 x64 名为 ProcessArchitecture 的属性。
+
+此脚本旨在支持内核模式调试。
+
+```JavaScript
+"use strict";
+ 
+class __CheckArchitecture
+{
+//
+// Add a property called 'ProcessArchitecture' on process.
+//
+    get ProcessArchitecture()
+    {
+    var guestStates = this.Threads.Any(t=> (!(t.GuestState === undefined) && t.GuestState.Architecture =="x86"));
+ 
+        if(guestStates)
+            return "x86";
+        else
+            return "x64";
+    }
+};
+ 
+function initializeScript()
+{
+//
+// Extends our notion of a process to place architecture information on it.
+//
+return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process")];
+}
+```
+
+加载内核转储文件，或建立与目标系统的内核模式连接。 然后加载的 JavaScript 提供程序和示例脚本。
+
+```dbgcmd
+0: kd> !load jsprovider.dll
+```
+
+```dbgcmd
+0: kd> .scriptload c:\WinDbg\Scripts\processarchitecture.js
+JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitecture.js'
+```
+
+使用[dx](dx--display-visualizer-variables-.md)命令以显示当前进程的进程架构。
+
+```dbgcmd
+2: kd> dx @$curprocess
+@$curprocess                 : System [Switch To]
+    KernelObject     [Type: _EPROCESS]
+    Name             : System
+    Id               : 0x4
+    Handle           : 0xf0f0f0f0
+    Threads         
+    Modules         
+    Environment     
+    Devices         
+    Io              
+    ProcessArchitecture : x64
+```
+
+请注意，此示例代码可能始终无法确定正确的体系结构。 例如在某些情况下，使用 32 位调试器时，可使用转储文件。
+
+## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>筛选的数据：Plug and Play 设备树中 KD （内核模式）
 
 此示例代码筛选要显示只是包含 PCI 的路径的启动设备的设备节点树。
 

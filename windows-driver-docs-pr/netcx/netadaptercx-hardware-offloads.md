@@ -4,13 +4,14 @@ description: NetAdapterCx 卸载
 ms.assetid: 85A819E2-6352-4DE9-9689-3DCEB9B0AAD8
 keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载功能，将卸载 NetAdapterCx，NetAdapter 将卸载
-ms.date: 07/31/2018
-ms.openlocfilehash: 75e01c0c7639b7c5ea5e81aa29ec9f45782649f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.date: 01/18/2019
+ms.custom: 19H1
+ms.openlocfilehash: ea184c78e2baba23be7dd780446edd535adbdc83
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564186"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903385"
 ---
 # <a name="netadaptercx-hardware-offloads"></a>NetAdapterCx 硬件卸载
 
@@ -41,9 +42,9 @@ NetAdapterCx 和 Windows TCP/IP 堆栈支持以下卸载：
 | 校验和 | 卸载的计算和 nic 的 IP 和 TCP 校验和验证 |
 | 大量发送卸载 (LSO) | 卸载对 IPv4 和 IPv6 的大型 TCP 数据包分段。 |
 
-## <a name="example"></a>示例
+## <a name="configuring-hardware-offloads"></a>配置硬件卸载
 
-客户端驱动程序在网络适配器初始化期间首次播发其硬件校验和卸载功能。 这可能会发生的上下文中[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)启动时的网络适配器。 若要开始，客户端驱动程序分配功能结构以进行每个受支持的卸载、 初始化它们，并调用适当**NetAdapterOffloadSetXxxCapabilities**注册 NetAdapterCx 的方法。 在调用**NetAdapterOffloadSetXxxCapabilities**，驱动程序提供了指向系统如果 active 硬件卸载功能更改会更高版本调用的回调函数的指针。
+客户端驱动程序在网络适配器初始化期间首次播发其硬件校验和卸载功能。 这可能会发生的上下文中[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)启动时的网络适配器。 若要开始，客户端驱动程序分配功能结构以进行每个受支持的卸载、 初始化它们，并调用适当**NetAdapterOffloadSetXxxCapabilities**注册 NetAdapterCx 的方法。 在调用**NET_ADAPTER_OFFLOAD_XxX_CAPABILITIES_INIT**，驱动程序提供了指向系统如果 active 硬件卸载功能更改会更高版本调用的回调函数的指针。
 
 此示例演示客户端驱动程序可能会如何设置其硬件卸载功能。
 
@@ -58,12 +59,12 @@ MyAdapterSetOffloadCapabilities(
     NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES_INIT(&checksumOffloadCapabilities,
                                                    TRUE,    // IPv4
                                                    TRUE,    // TCP
-                                                   TRUE);   // UDP
+                                                   TRUE,    // UDP
+                                                   MyEvtAdapterOffloadSetChecksum);
 
     // Set the current checksum offload capabilities and register the callback for future changes in active capabilities
     NetAdapterOffloadSetChecksumCapabilities(NetAdapter,
-                                             &checksumOffloadCapabilities,
-                                             MyEvtAdapterOffloadSetChecksum);
+                                             &checksumOffloadCapabilities);
 
     // Configure the hardware's LSO offload capabilities
     NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES lsoOffloadCapabilities;
@@ -71,15 +72,78 @@ MyAdapterSetOffloadCapabilities(
                                               TRUE,         // IPv4
                                               TRUE,         // IPv6
                                               MY_LSO_OFFLOAD_SIZE_MAX,
-                                              MY_LSO_OFFLOAD_MIN_SEGMENT_COUNT);
+                                              MY_LSO_OFFLOAD_MIN_SEGMENT_COUNT,
+                                              MyEvtAdapterOffloadSetLso);
 
     // Set the current LSO offload capabilities and register the callback for future changes in active capabilities
     NetAdapterOffloadSetLsoCapabilities(NetAdapter,
-                                        &lsoOffloadCapabilities,
-                                        MyEvtAdapterOffloadSetLso);   
+                                        &lsoOffloadCapabilities);   
+}
+```
+
+## <a name="updating-hardware-offloads"></a>更新硬件卸载
+
+如果 TCP/IP 堆栈或过量的协议驱动程序请求中的网络适配器活动功能的更改，NetAdapterCx 调用客户端驱动程序*EVT_NET_ADAPTER_OFFLOAD_SET_XxX*回调函数以前注册适配器初始化过程。 在此函数中，则系统将提供在 NETOFFLOAD obbject，客户端驱动程序可以查询和用于更新其卸载功能的更新的功能。
+
+下面的示例演示如何客户端驱动程序可能会更新其校验和卸载功能：
+
+```C++
+VOID
+MyEvtAdapterOffloadSetChecksum(
+    NETADAPTER  NetAdapter,
+    NETOFFLOAD  Offload
+)
+{
+    PMY_NET_ADAPTER_CONTEXT adapterContext = MyGetNetAdapterContext(NetAdapter);
+
+    // Store the updated information in the context
+    adapterContext->HardwareIpChecksum = NetOffloadIsChecksumIPv4Enabled(Offload);
+    adapterContext->HardwareTcpChecksum = NetOffloadIsChecksumTcpEnabled(Offload);
+    adapterContext->HardwareUdpChecksum = NetOffloadIsChecksumUdpEnabled(Offload);
+
+    // Update the new hardware checksum offload capabilities
+    MyUpdateHardwareChecksum(adapterContext);
+}
+```
+
+下一步类似的示例显示了客户端驱动程序可能会如何更新其 LSO 卸载功能：
+
+```C++
+VOID
+MyEvtAdapterOffloadSetLso(
+    NETADAPTER NetAdapter,
+    NETOFFLOAD Offload
+)
+{
+    PMY_NET_ADAPTER_CONTEXT adapterContext = MyGetNetAdapterContext(NetAdapter);
+
+    // Store the updated information in the context
+    adapterContext->LSOv4 = NetOffloadIsLsoIPv4Enabled(Offload) ? 
+        LsoOffloadEnabled : LsoOffloadDisabled;
+    adapterContext->LSOv6 = NetOffloadIsLsoIPv6Enabled(Offload) ?
+        LsoOffloadEnabled : LsoOffloadDisabled;
+
+    // Enable hardware checksum if LSO is enabled
+    MyUpdateHardwareChecksum(adapterContext);
 }
 ```
 
 ## <a name="related-links"></a>相关链接
 
 [数据包描述符和扩展](packet-descriptors-and-extensions.md)
+
+[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/ns-netadapter-_net_adapter_offload_checksum_capabilities)
+
+[**NET_ADAPTER_OFFLOAD_CHECKSUM_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-net_adapter_offload_checksum_capabilities_init)
+
+[**NetAdapterOffloadSetChecksumCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapteroffloadsetchecksumcapabilities)
+
+[*EvtNetAdapterOffloadSetChecksum*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nc-netadapter-evt_net_adapter_offload_set_checksum)
+
+[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_lso_capabilities)
+
+[**NET_ADAPTER_OFFLOAD_LSO_CAPABILITIES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nf-netadapteroffload-net_adapter_offload_lso_capabilities_init)
+
+[**NetAdapterOffloadSetLsoCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nf-netadapteroffload-netadapteroffloadsetlsocapabilities)
+
+[*EvtNetAdapterOffloadSetLso*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_lso)

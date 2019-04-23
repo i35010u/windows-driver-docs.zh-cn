@@ -4,12 +4,12 @@ description: UWP 设备应用程序还允许设备制造商上与相机驱动程
 ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6329630154171a6465b569b82d7585665db7be90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 842c15524c0e3517c15a666666719fcfb67f8954
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563433"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902764"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>创建 UWP 设备应用的照相机驱动程序 MFT
 
@@ -48,7 +48,7 @@ UWP 设备应用程序还允许设备制造商上与相机驱动程序 MFT （�
 
 驱动程序 MFT 已注册 Windows 为 COM 接口，以便实现转换可以应用于来自特定设备，如摄像头的媒体流。
 
-**请注意**驱动程序不应使用注册 MFT`MFTRegister`函数，因为它是特定的设备并不是通用 MFT。 注册表项的信息，请参阅[安装和注册的驱动程序 MFT](#installing)本主题后面的部分。
+**请注意**驱动程序不应使用注册 MFT`MFTRegister`函数，因为它是特定的设备并不是通用 MFT。 注册表项的信息，请参阅[安装和注册的驱动程序 MFT](#installing-and-registering-the-driver-mft)本主题后面的部分。
 
 当应用启动时视频捕获时，Media Foundation 源读取器实例化提供视频流。 此媒体源设备注册表项中读取的注册表值。 如果注册表值中找到驱动程序 MFT 的 COM 类的 CLSID，则源读取器实例化驱动程序 MFT，并将其插入到媒体管道。
 
@@ -286,7 +286,7 @@ KSCATEGORY_CAPTURE:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}"
 ```
 
-**请注意**`KSCATEGORY_VIDEO_CAMERA`建议针对相机。   通常情况下将只需要一个注册表项，具体取决于如何注册设备。
+**请注意**`KSCATEGORY_VIDEO_CAMERA`建议针对相机。 通常情况下将只需要一个注册表项，具体取决于如何注册设备。
 
 
 ## <a name="associate-your-app-with-the-camera"></a>将您的应用程序与相机关联

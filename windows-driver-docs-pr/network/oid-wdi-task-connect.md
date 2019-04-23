@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d077a2641f023a8d6fa33e82e5b7a188b2f98a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8526e4ea1afb6b5db683ff0dc669d55116cb4a82
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534644"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902435"
 ---
 # <a name="oidwditaskconnect"></a>OID\_WDI\_TASK\_CONNECT
 
 
 OID\_WDI\_任务\_IHV 组件连接到一个访问点或 Wi-Fi Direct 转的 CONNECT 请求。
 
-| 对象 | 中止支持                                     | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object | 中止支持                                     | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------|---------------------------------------|---------------------------------|
 | 端口   | 是。 中止后面必须跟 dot11 重置。 | 4                                     | 10                              |
 
@@ -65,10 +66,14 @@ IHV 组件不需要执行扫描以查找 BSS 条目的候选者。 它可以使�
 
 
 [NDIS\_状态\_WDI\_指示\_CONNECT\_完成](ndis-status-wdi-indication-connect-complete.md)
+
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
+[NDIS\_状态\_WDI\_指示\_关联\_结果](ndis-status-wdi-indication-association-result.md)
 
-[NDIS\_状态\_WDI\_指示\_关联\_结果](ndis-status-wdi-indication-association-result.md)要求
+[NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -86,7 +91,7 @@ IHV 组件不需要执行扫描以查找 BSS 条目的候选者。 它可以使�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: abc5ee90d151b5c37dbc9d4053a4e92c105ef162
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239738"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903323"
 ---
 # <a name="bug-check-0x9c-machinecheckexception"></a>Bug 检查 0x9C：机器\_检查\_异常
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d9989f43fa9311f9bb695335f587075de2f8076a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238384"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902517"
 ---
 # <a name="bug-check-0x135-registryfilterdriverexception"></a>Bug 检查 0x135：注册表\_筛选器\_驱动程序\_异常
 

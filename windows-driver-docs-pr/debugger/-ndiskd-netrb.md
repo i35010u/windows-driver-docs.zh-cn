@@ -1,6 +1,6 @@
 ---
 title: ndiskd.netrb
-description: Ndiskd.netrb 扩展显示 NET_RING_BUFFER 结构有关的信息。
+description: Ndiskd.netrb 扩展显示 NET_RING 结构有关的信息。
 ms.assetid: 2D749E7E-00A5-422B-B785-B8DB3393A74F
 keywords:
 - ndiskd.netrb Windows 调试
@@ -12,12 +12,13 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1089b6a3fa623d23b83fe40910935cace07d7c32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: f8b9a6c2d7c62430a987c420df1ad026c8509b84
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543094"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903603"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
@@ -86,7 +87,7 @@ Ndiskd.dll
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
 
-    NET_RING_BUFFER    ffffd1022d000000
+    NET_RING    ffffd1022d000000
 
     Number of elements 0x080
     Owned by OS        0x080

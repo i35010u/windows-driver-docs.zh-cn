@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fa0a0588b43fa5f76021412e9075978768a99ab
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238546"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903777"
 ---
 # <a name="bug-check-0x7f-unexpectedkernelmodetrap"></a>Bug 检查 0x7F：意外\_内核\_模式\_陷阱
 

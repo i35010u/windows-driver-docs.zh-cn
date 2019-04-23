@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 72434e0bc790a9009b3869c2788766da2902a7bb
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239846"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902805"
 ---
 # <a name="bug-check-0x59-pinballfilesystem"></a>Bug 检查 0x59：弹球\_文件\_系统
 

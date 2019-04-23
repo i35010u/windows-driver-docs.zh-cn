@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_ROAM 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e8872e2f2c2b1b7dd59eefb62c2286a61d4279
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 9fd8df71f13c7a02327bb54339b74b8af466553c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526292"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903047"
 ---
 # <a name="oidwditaskroam"></a>OID\_WDI\_TASK\_ROAM
 
 
 OID\_WDI\_任务\_漫游适配器尝试从当前连接的 AP 漫游到一个新的请求。
 
-| 对象 | 中止支持                                                               | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object | 中止支持                                                               | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|-----------------------------------------------------------------------------|---------------------------------------|---------------------------------|
 | 端口   | 是。 如果中止在解除关联后，它必须后接 dot11 重置。 | 4                                     | 10                              |
 
@@ -35,23 +36,26 @@ Microsoft 组件提供适配器应考虑为漫游的首选 BSS 项的列表。
 ## <a name="task-parameters"></a>任务参数
 
 
-| TLV                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                                                                                                                                                                         |
-|--------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |                                |          | 连接参数。                                                                                                                                                                                                                                                                                                                                                                                              |
-| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | X                              |          | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到这些 BSS 条目，直到耗尽列表或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要它遵循的允许/不允许列表要求 BSS。 |
-
- 
+| TLV  | 允许多个 TLV 实例 | 可选 | 描述 |
+| --- | --- | --- | --- |
+| [**WDI\_TLV\_CONNECT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926266) |   |   | 连接参数。 |  
+| [**WDI\_TLV\_CONNECT\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926264)  | X  |   | 首选的候选项列表连接 BSS 条目。 端口应尝试连接到这些 BSS 条目，直到耗尽列表或已成功完成的连接。 如果需要该端口可以重新调整条目。 如果适配器设置连接 BSS 选择重写位，它可以选择不在此列表中，只要它遵循的允许/不允许列表要求 BSS。 | 
 
 ## <a name="task-completion-indication"></a>指示任务完成
 
-
 [NDIS\_状态\_WDI\_指示\_漫游\_完成](ndis-status-wdi-indication-roam-complete.md)
+
 ## <a name="unsolicited-indications"></a>未经请求的迹象
 
-
 [NDIS\_状态\_WDI\_指示\_关联\_结果](ndis-status-wdi-indication-association-result.md)
+
 [NDIS\_状态\_WDI\_指示\_解除关联](ndis-status-wdi-indication-disassociation.md)
-[NDIS\_状态\_WDI\_指示\_FT\_ASSOC\_PARAMS\_需执行](ndis-status-wdi-indication-ft-assoc-params-needed.md)要求
+
+[NDIS\_状态\_WDI\_指示\_FT\_ASSOC\_PARAMS\_需执行](ndis-status-wdi-indication-ft-assoc-params-needed.md)
+
+[NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -69,7 +73,7 @@ Microsoft 组件提供适配器应考虑为漫游的首选 BSS 项的列表。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

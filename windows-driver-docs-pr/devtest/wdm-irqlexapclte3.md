@@ -1,6 +1,6 @@
 ---
 title: IrqlExApcLte3 规则 (wdm)
-description: IrqlExApcLte3 规则指定驱动程序调用以下执行支持例程只能在 IRQL APC\_级别。
+description: IrqlExApcLte3 规则指定驱动程序只能在 IRQL APC_LEVEL 调用以下执行支持例程。
 ms.assetid: 80668699-dfca-4fb9-8ffe-d20be00542dc
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c717d7e696360e1e23cf4188aa10390919bd09eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5a2c35ee3b44319fbbc6e9447d1f9949c90e5a2c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545259"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903163"
 ---
 # <a name="irqlexapclte3-rule-wdm"></a>IrqlExApcLte3 规则 (wdm)
 
@@ -154,7 +154,7 @@ ProcessRequest (
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)

@@ -1,6 +1,6 @@
 ---
 title: IrqlZwPassive 规则 (wdm)
-description: IrqlZwPassive 规则指定仅当在 IRQL 被动执行时，该驱动程序，调用 ZwClose\_级别。
+description: IrqlZwPassive 规则指定驱动程序调用 ZwClose，仅当执行在 IRQL passive_level 调用时。
 ms.assetid: d31612ad-e869-4fc7-bc09-e5b4d5362585
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1457423517dbc3d715c3e8d6079e8b727ddbf0e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 37ebad03c0eafac5537d2c42652b54dcad512db2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554821"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903205"
 ---
 # <a name="irqlzwpassive-rule-wdm"></a>IrqlZwPassive 规则 (wdm)
 
@@ -122,7 +122,7 @@ DriverCloseResources (
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 840ddb0eaf20194407cd8e5613932b76f329d773
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239358"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902911"
 ---
 # <a name="bug-check-0x40-targetmdltoosmall"></a>Bug 检查 0x40：目标\_MDL\_过\_小
 

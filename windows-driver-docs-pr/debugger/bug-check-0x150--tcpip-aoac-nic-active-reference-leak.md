@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 486346b70f0a4dfb0115443d979151f7897830ee
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239740"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903093"
 ---
 # <a name="bug-check-0x150-tcpipaoacnicactivereferenceleak"></a>Bug 检查 0x150：TCPIP\_AOAC\_NIC\_ACTIVE\_REFERENCE\_LEAK
 

@@ -2,14 +2,14 @@
 title: JavaScript 调试器脚本
 description: 本主题介绍如何使用 JavaScript 创建脚本，了解调试器对象和扩展和自定义调试器的功能。
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
-ms.date: 11/27/2018
+ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f557de91ca08a205b131d7dd9037382d759612d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ab8a09abb89ace35b8d44b6f1356432d73d860b4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565452"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902473"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -41,6 +41,8 @@ ms.locfileid: "56565452"
 
 [JavaScript 调试](#debugging)
 
+[VSCode-添加 IntelliSense 中的 JavaScript](#vscode)
+
 [JavaScript 资源](#resources)
 
 这两个主题提供有关如何使用 JavaScript 在调试器中的其他信息。
@@ -49,8 +51,13 @@ ms.locfileid: "56565452"
 
 [JavaScript 扩展中的本机对象](native-objects-in-javascript-extensions.md)
 
-## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>调试器 JavaScript 提供程序
 
+## <a name="javascript-scripting-video"></a>JavaScript 脚本视频
+
+[碎片整理工具 #170](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-170-Debugger-JavaScript-Scripting) -Andy 和帐单演示 JavaScript 可扩展性和脚本编写在调试器中的功能。
+
+
+## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>调试器 JavaScript 提供程序
 
 附带调试器的 JavaScript 提供程序可以完全利用的最新 ECMAScript6 对象和类增强功能。 有关详细信息，请参阅[ECMAScript 6-新功能：概述和比较](https://es6-features.org/)。
 
@@ -475,7 +482,7 @@ function main()
 
 **示例类-Simple1DArray**
 
-请考虑 c + + 类，该类表示一维数组的示例。 此类具有两个成员，m\_大小的数组和 m 的总体大小\_pValues 这是指向的内存中的整数数目等于 m\_大小字段。
+考虑的一个示例C++类表示一维数组。 此类具有两个成员，m\_大小的数组和 m 的总体大小\_pValues 这是指向的内存中的整数数目等于 m\_大小字段。
 
 ```cpp
 class Simple1DArray
@@ -1195,6 +1202,21 @@ Caught and returned!
 Test
 ```
 
+## <a name="span-idvscodespanspan-idvscodespanspan-idvscodespanjavascript-in-vscode---adding-intellisense"></a><span id="Vscode"></span><span id="vscode"></span><span id="VSCODE"></span>VSCode-添加 IntelliSense 中的 JavaScript
+
+如果你想要使用调试器数据模型对象在 VSCode 中，可以使用 Windows 开发工具包中提供的定义文件。 IntelliSense 定义文件提供了所有 host.* 调试器对象 Api 的支持。 如果在 64 位电脑上的默认目录中安装该工具包，该文件夹位于：
+
+`C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\winext\JsProvider.d.ts`
+
+若要使用在 VSCode 中的 IntelliSense 定义文件：
+
+1. 查找定义文件-JSProvider.d.ts
+
+2. 将定义文件复制到您的脚本所在的文件夹。
+
+3. 添加`/// <reference path="JSProvider.d.ts" />`到你的 JavaScript 脚本文件的顶部。
+
+与你的 JavaScript 文件中该引用，VS Code 将自动为您提供 IntelliSense 主机除了在脚本中的结构提供的 JSProvider Api。 例如，键入"托管"。 你将看到所有可用的调试程序模型 Api 的 IntelliSense。
 
 
 ## <a name="span-idresourcesspanspan-idresourcesspanspan-idresourcesspanjavascript-resources"></a><span id="Resources"></span><span id="resources"></span><span id="RESOURCES"></span>JavaScript 资源

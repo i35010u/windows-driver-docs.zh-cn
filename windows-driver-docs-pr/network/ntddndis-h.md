@@ -6,12 +6,13 @@ keywords:
 - Ntddndis.h 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eddfd7580854e9b4d35cb230f0e4c16fb3d53c93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: bdf469406016b48e8bffbf123e717015e7cf314b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545770"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903249"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
@@ -25,7 +26,7 @@ Ntddndis.h 标头包含常量的定义，以及与网络驱动程序进行连接
 >
 > 此标头的 DDI 参考，请参阅[ntddndis.h 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 * [GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES](guid-ndis-gen-pci-device-custom-properties.md)
 * [OID_802_3_ADD_MULTICAST_ADDRESS](oid-802-3-add-multicast-address.md)
@@ -328,13 +329,17 @@ Ntddndis.h 标头包含常量的定义，以及与网络驱动程序进行连接
 * [OID_WWAN_LTE_ATTACH_CONFIG](oid-wwan-lte-attach-config.md)
 * [OID_WWAN_LTE_ATTACH_STATUS](oid-wwan-lte-attach-status.md)
 * [OID_WWAN_HOME_PROVIDER](oid-wwan-home-provider.md)
+* [OID_WWAN_MODEM_CONFIG_INFO](oid-wwan-modem-config-info.md)
+* [OID_WWAN_MODEM_LOGGING_CONFIG](oid-wwan-modem-logging-config.md)
 * [OID_WWAN_MPDP](oid-wwan-mpdp.md)
 * [OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)
 * [OID_WWAN_NETWORK_IDLE_HINT](oid-wwan-network-idle-hint.md)
+* [OID_WWAN_NITZ](oid-wwan-nitz.md)
 * [OID_WWAN_PACKET_SERVICE](oid-wwan-packet-service.md)
 * [OID_WWAN_PCO](oid-wwan-pco.md)
 * [OID_WWAN_PIN](oid-wwan-pin.md)
 * [OID_WWAN_PIN_EX](oid-wwan-pin-ex.md)
+* [OID_WWAN_PIN_EX2](oid-wwan-pin-ex2.md)
 * [OID_WWAN_PIN_LIST](oid-wwan-pin-list.md)
 * [OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS](oid-wwan-preferred-multicarrier-providers.md)
 * [OID_WWAN_PREFERRED_PROVIDERS](oid-wwan-preferred-providers.md)
@@ -355,6 +360,10 @@ Ntddndis.h 标头包含常量的定义，以及与网络驱动程序进行连接
 * [OID_WWAN_SMS_STATUS](oid-wwan-sms-status.md)
 * [OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS](oid-wwan-subscribe-device-service-events.md)
 * [OID_WWAN_SYS_CAPS_INFO](oid-wwan-sys-caps.md)
+* [OID_WWAN_UICC_ACCESS_BINARY](oid-wwan-uicc-access-binary.md)
+* [OID_WWAN_UICC_ACCESS_RECORD](oid-wwan-uicc-access-record.md)
+* [OID_WWAN_UICC_APP_LIST](oid-wwan-uicc-app-list.md)
+* [OID_WWAN_UICC_FILE_STATUS](oid-wwan-uicc-file-status.md)
 * [OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)
 * [OID_WWAN_USSD](oid-wwan-ussd.md)
 * [OID_WWAN_VENDOR_SPECIFIC](oid-wwan-vendor-specific.md)

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b1062a3418c4e1790a06c7255684df6b294af4fb
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238898"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903487"
 ---
 # <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>Bug 检查 0xD3：驱动程序\_部分\_必须\_BE\_未分页
 

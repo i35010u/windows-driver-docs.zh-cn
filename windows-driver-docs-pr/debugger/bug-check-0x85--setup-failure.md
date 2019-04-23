@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eab60f0a67d6a3088b036248ab9004abc8800bcc
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239294"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902447"
 ---
 # <a name="bug-check-0x85-setupfailure"></a>Bug 检查 0x85：安装程序\_失败
 

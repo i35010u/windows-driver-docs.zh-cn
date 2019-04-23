@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 140d688d7759e865e1c499167a662dab5eae3c76
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238856"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903667"
 ---
 # <a name="bug-check-0xba-sessionhasvalidviewsonexit"></a>Bug 检查 0xBA：会话\_HAS\_有效\_视图\_ON\_退出
 

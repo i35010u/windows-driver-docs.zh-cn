@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 893035d0996e242808cceda57c62d813257c375a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239570"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903897"
 ---
 # <a name="bug-check-0xcd-pagefaultbeyondendofallocation"></a>Bug 检查 0xCD：页\_容错\_超出\_最终\_OF\_分配
 

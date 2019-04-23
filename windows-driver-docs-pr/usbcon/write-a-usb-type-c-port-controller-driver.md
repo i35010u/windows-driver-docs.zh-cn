@@ -1,16 +1,17 @@
 ---
-Description: Describes the behavior of the USB Type-C Port Controller Interface Class Extension, known as UcmTcpciCx and tasks that a client driver must perform for a USB Type-C port controller.
-title: 写入 USB 类型 C 端口控制器驱动程序
+Description: 描述 USB 类型 C 端口控制器接口类扩展，称为 UcmTcpciCx 和客户端驱动程序必须为 USB 类型 C 端口控制器执行的任务的行为。
+title: 编写 USB 类型 C 端口控制器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a409408e9ed40560de8fd3157fec853784c5351
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: b0a35e31f3640f788b69e7bee08d8a9137b96e37
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526116"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902431"
 ---
-# <a name="write-a-usb-type-c-port-controller-driver"></a>写入 USB 类型 C 端口控制器驱动程序
+# <a name="write-a-usb-type-c-port-controller-driver"></a>编写 USB 类型 C 端口控制器驱动程序
 
 您需要编写 USB 类型 C 端口控制器驱动程序，如果您的 USB 类型 C 硬件实现 USB 类型-C 或 Power 传递 (PD) 物理层，但不实现所需的功率输出的状态机。 
 
@@ -203,11 +204,11 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关 power 
 
 UcmTcpciCx 将命令发送 I/O 的控制代码作为描述从客户端驱动程序所需的 get/set 操作。 在客户端驱动程序的队列设置中，该驱动程序注册 UcmTcpciCx 其队列。  UcmTcpciCx 开始在队列中放置 framework 请求对象，它需要从驱动程序的操作。 步骤 4 中的表中列出了 I/O 控制代码。
 
-负责在客户端驱动程序来完成及时的请求。TBD，
+负责在客户端驱动程序来完成及时的请求。
 
 完成请求的操作时，客户端驱动程序对其完成状态的 framework 请求对象调用 WdfRequestComplete。 
 
 客户端驱动程序可能需要将 I/O 请求发送到另一个驱动程序来执行硬件操作。 例如，在示例中，该驱动程序存储将请求发送到我<sup>2</sup>C 连接端口控制器。 在这种情况下，该驱动程序不能转发它来自 UcmTcpciCx 因为请求对象可能没有正确数目的堆栈位置中 WDM IRP 的 framework 请求对象。 客户端驱动程序必须创建另一个框架请求对象并将其转发到另一个驱动程序。 客户端驱动程序可以预分配其在初始化期间，而不是创建一个每次从 UcmTcpciCx 收到请求时所需的请求对象。 这可能是因为 UcmTcpciCx 有可确保只有一个请求未完成任何给定时间。 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 [USB 类型 C 端口控制器界面驱动程序类扩展参考](https://msdn.microsoft.com/library/windows/hardware/mt805826)

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a244cd2eb084e78e780ed26556f55f00188e969
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239126"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902617"
 ---
 # <a name="bug-check-0x8-irqlnotdispatchlevel"></a>Bug 检查 0x8：IRQL\_不\_调度\_级别
 

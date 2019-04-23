@@ -2,15 +2,16 @@
 title: OID_WWAN_SIGNAL_STATE
 description: OID_WWAN_SIGNAL_STATE 返回或设置当前的信号状态。
 ms.assetid: 6f5d8fd6-b4cf-4058-a27e-d4f7cea19f47
-ms.date: 08/08/2017
+ms.date: 04/05/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_SIGNAL_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0669db51a498d02b31d57d58eab82b552c8e0e21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8f766507dc6b298a831d80e4d9244c647c80290f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567665"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902789"
 ---
 # <a name="oidwwansignalstate"></a>OID\_WWAN\_SIGNAL\_STATE
 
@@ -73,6 +74,12 @@ NDIS\_状态\_不\_支持
 
         RssiThreshold = &lt; WWAN\_RSSI\_禁用、 WWAN\_RSSI\_默认值或上次设置的值&gt;
 
+### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+
+从 Windows 10，版本 1903，开始 OID_WWAN_SIGNAL_STATE 已升级到版本 3。 此修订版本使宿主能够查询新引用接收到信号 power (RSRP) 和-到干扰信号 (SNR) 值从微型端口驱动程序。 如果该驱动程序支持 5g 微型端口驱动程序必须使用修订版 3 的此 OID 和其数据结构。
+
+5 G 数据类支持的详细信息，请参阅[MB 5g 数据类支持](mb-5g-data-class-support.md)。
+
 <a name="requirements"></a>要求
 ------------
 
@@ -83,7 +90,7 @@ NDIS\_状态\_不\_支持
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

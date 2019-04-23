@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c48e1ee18d12101a77f9d04d49c792435e12f7ff
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238730"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903561"
 ---
 # <a name="bug-check-0x13b-passiveinterrupterror"></a>Bug 检查 0x13B：被动\_中断\_错误
 

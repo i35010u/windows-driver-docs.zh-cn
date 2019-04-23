@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 03d46d38dde02f4a3900c468ce6b258f6ac49169
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239006"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902243"
 ---
 # <a name="bug-check-0x29-securitysystem"></a>Bug 检查 0x29：安全\_系统
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 36511007d2df892e2430a8fea5d809e0022eae3b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238870"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903191"
 ---
 # <a name="bug-check-0x12a-muinovalidsystemlanguage"></a>Bug 检查 0x12A：MUI\_否\_有效\_系统\_语言
 

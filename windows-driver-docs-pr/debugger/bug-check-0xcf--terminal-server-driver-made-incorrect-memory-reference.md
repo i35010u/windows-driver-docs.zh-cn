@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0905251263f54bc33f1a80ca05ec60026b566576
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238500"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903497"
 ---
 # <a name="bug-check-0xcf-terminalserverdrivermadeincorrectmemoryreference"></a>Bug 检查 0xCF：终端\_服务器\_驱动程序\_所做\_不正确\_内存\_引用
 

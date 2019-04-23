@@ -1,6 +1,6 @@
 ---
 title: IrqlDispatch 规则 (wdm)
-description: IrqlDispatch 规则指定仅当执行在 IRQL 调度时，该驱动程序，调用以下 DDIs\_级别。
+description: IrqlDispatch 规则指定驱动程序调用以下 DDIs，仅当执行在 IRQL DISPATCH_LEVEL 时。
 ms.assetid: f72d4f27-b488-4d0a-97b7-9cb40f00e346
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 853eb3fa48047e6694954849cd386bcb804f8d4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a6105b18917e1077944e6d1249ca52a9f8ec2e38
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533406"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902405"
 ---
 # <a name="irqldispatch-rule-wdm"></a>IrqlDispatch 规则 (wdm)
 
@@ -104,7 +104,7 @@ ms.locfileid: "56533406"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**AllocateAdapterChannel**](https://msdn.microsoft.com/library/windows/hardware/ff540573)

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f052a2e43b9596894b5dc63cba7a24603e8d3fa
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238372"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903119"
 ---
 # <a name="bug-check-bug-check-0x1ce-invalidkernelstackaddress"></a>Bug 检查 Bug 检查 0x1CE:无效\_内核\_堆栈\_地址
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 75151866611935c3dc0652d308d166e0ce2f2d8b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238324"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903027"
 ---
 # <a name="bug-check-0x157-kernelthreadpriorityfloorviolation"></a>Bug 检查 0x157：内核\_线程\_优先级\_FLOOR\_冲突
 

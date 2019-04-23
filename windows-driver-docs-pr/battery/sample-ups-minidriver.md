@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/01/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 405eadcf1d71f616a1a5740c577ab354742c8d35
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845528"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903567"
 ---
 # <a name="sample-ups-minidriver"></a>示例 UPS 微型驱动程序
 

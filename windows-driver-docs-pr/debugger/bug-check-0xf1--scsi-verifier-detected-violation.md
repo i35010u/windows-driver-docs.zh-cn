@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 753d8e9a91414b9df2ab136ed81b8d4487748941
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238662"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902865"
 ---
 # <a name="bug-check-0xf1-scsiverifierdetectedviolation"></a>Bug 检查 0xF1：SCSI\_VERIFIER\_检测到\_冲突
 

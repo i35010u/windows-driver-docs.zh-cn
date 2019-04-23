@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_FAST_BSS_TRANSITION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7e9b59861ff75d0d11bdb844e77ede20d5e155
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: a0a4099a4aec594c70bebeaca39582a1cfb8e9a7
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542091"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903609"
 ---
 # <a name="oidwdisetfastbsstransitionparameters"></a>OID\_WDI\_SET\_FAST\_BSS\_TRANSITION\_PARAMETERS
 
@@ -40,7 +41,8 @@ OID\_WDI\_设置\_快速\_BSS\_转换\_参数发送到响应中[NDIS\_状态\_WD
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -58,7 +60,7 @@ OID\_WDI\_设置\_快速\_BSS\_转换\_参数发送到响应中[NDIS\_状态\_WD
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

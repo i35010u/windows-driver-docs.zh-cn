@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d02185d3e70ccbf8e582f5767cc1ca8cba83c8
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238354"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903457"
 ---
 # <a name="bug-check-0x11-threadnotmutexowner"></a>Bug 检查 0x11：线程\_不\_互斥体\_所有者
 

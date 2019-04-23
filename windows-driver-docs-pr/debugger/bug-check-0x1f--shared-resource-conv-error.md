@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 128926b3edcb69fa6f144d00220eaa3bed711156
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238378"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903019"
 ---
 # <a name="bug-check-0x1f-sharedresourceconverror"></a>Bug 检查 0x1F：共享\_资源\_CONV\_错误
 

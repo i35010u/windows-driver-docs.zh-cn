@@ -1,6 +1,6 @@
 ---
 title: IrqlApcLte 规则 (wdm)
-description: IrqlApcLte 规则指定仅当执行在 IRQL APC 时驱动程序可调用 ObGetObjectSecurity 和 ObReleaseObjectSecurity\_级别。
+description: IrqlApcLte 规则指定仅当执行在 IRQL APC_LEVEL 时驱动程序可调用 ObGetObjectSecurity 和 ObReleaseObjectSecurity。
 ms.assetid: 83f18eb3-aee1-403e-90a2-c03b81109ebb
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dc12e5ef1623d425fd16ea9043dd6da57cace7b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 700de268c656a936d6446a327f5228ee56a6cb7b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545618"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903723"
 ---
 # <a name="irqlapclte-rule-wdm"></a>IrqlApcLte 规则 (wdm)
 
@@ -76,7 +76,7 @@ ms.locfileid: "56545618"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ObGetObjectSecurity**](https://msdn.microsoft.com/library/windows/hardware/ff557738)

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 59b75b6fdfbafeeb879651b8cceef5cc007d08f8
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239828"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902277"
 ---
 # <a name="bug-check-0x149-refsfilesystem"></a>Bug 检查 0x149：REFS\_文件\_系统
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bc18ba456481541387fad7d89252866eae24cd5a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239854"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902631"
 ---
 # <a name="bug-check-0x7c-bugcodendisdriver"></a>Bug 检查 0x7C：BUGCODE\_NDIS\_驱动程序
 

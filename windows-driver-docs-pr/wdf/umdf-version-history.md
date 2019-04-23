@@ -9,12 +9,13 @@ keywords:
 - 版本信息 WDK UMDF
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe21a0fdad7986edf5857c33f488df6a9075a7c
-ms.sourcegitcommit: 5cbc8ac1db572e92abeefebb39f5e72834785bc3
+ms.custom: 19H1
+ms.openlocfilehash: aaca04abe62b2fe578eebd4e307cbce31ecec1d4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56754461"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903847"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -25,6 +26,7 @@ ms.locfileid: "56754461"
 
 |UMDF 版本|Release 方法|包含在此版本的 Windows|驱动程序使用它可以在上运行|
 |--- |--- |--- |--- |
+|2.29|不在 WDK 中发布|Windows 10，版本 1903年 （2019 更新，19 H 1 年 3 月）|Windows 10，版本 1903 及更高版本|
 |2.27|Windows 10，版本 1809 WDK|Windows 10，版本 1809年 (2018 年 10 月更新 Redstone 5)|Windows 10，版本 1809 及更高版本|
 |2.25|Windows 10，版本 1803 WDK|Windows 10，版本 1803年 (2018 年 4 月更新 Redstone 4)|Windows 10，版本 1803 和更高版本|
 |2.23|Windows 10 版本 1709 WDK|Windows 10 版本 1709 （Fall Creators Update，Redstone 3）|Windows 10 版本 1709 及更高版本|
@@ -42,6 +44,10 @@ ms.locfileid: "56754461"
 可以使用 Microsoft Visual Studio 2017 中使用 Windows Driver Kit (WDK) 来构建运行 Windows 7 及更高版本的驱动程序。
 
 用于 Windows 10 中的 UMDF 驱动程序的新功能的信息，请参阅[What's New for WDF 驱动程序](index.md)。
+
+## <a name="umdf-version-229"></a>UMDF 版本 2.29
+
+从版本 2.27 不变。
 
 ## <a name="umdf-version-227"></a>UMDF 版本 2.27
 

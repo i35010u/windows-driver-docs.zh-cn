@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d18f248d3e3899e8be9a5beab3885464d621ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: cc192d0be64f2e9f4dcff799acd9f500b78d38c5
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567427"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902409"
 ---
 # <a name="oidwditasksendresponseactionframe"></a>OID\_WDI\_TASK\_SEND\_RESPONSE\_ACTION\_FRAME
 
 
 OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操作帧。
 
-| 对象 | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
 | 端口   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
 
@@ -45,7 +46,9 @@ OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操
 ## <a name="task-completion-indication"></a>指示任务完成
 
 
-[NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成](ndis-status-wdi-indication-send-response-action-frame-complete.md)要求
+[NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成](ndis-status-wdi-indication-send-response-action-frame-complete.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

@@ -4,21 +4,104 @@ description: 描述了显示器驱动程序的 Windows 10 中新功能
 ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 12/06/2018
 ms.localizationpriority: medium
-ms.custom: seodec18
-ms.openlocfilehash: b4482bf4ba125771a38f8d66efe9c81ec394718d
-ms.sourcegitcommit: 68bfa1f69229b7ac29d0e98f049734f5bc566a30
+ms.custom: seodec18, 19H1
+ms.openlocfilehash: 0fe540b7ecd20887032f968ac2efa4f234f30f59
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58187466"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903075"
 ---
 # <a name="whats-new-for-windows-10-display-drivers-wddm-20-and-later"></a>What's new for Windows 10 显示器驱动程序 (WDDM 2.0 及更高版本)
+
+## <a name="wddm-26"></a>WDDM 2.6
+
+### <a name="super-wet-ink"></a>Super 湿的墨迹
+
+*超湿的墨迹*是一项功能，围绕*front 缓冲区呈现*。 IHV 驱动程序可以支持的格式或硬件不支持的模式下的"可显示"纹理的创建。 通过将分配给应用程序请求的纹理，以及具有格式/布局可显示"影子"纹理，然后将复制在存在时两者之间，它们可以执行此操作。 此"影子"不一定是纹理以正常方式我们认为它，但可能只是压缩数据。 此外，它可能不需要存在，但可能是一种优化方式相反。
+
+在运行时将会发生变化，若要了解这些方面的可显示的图面：
+
+* 阴影必须存在针对特定 VidPnSource/平面上的显示。
+
+* 是否为阴影存在更优。
+
+* 当应用程序图面中的内容传输到卷影图面。
+
+    * 在运行时将是显式的有关此操作，而不是它已超出存在隐式的。
+
+* 如何请求设置一种模式或动态翻转之间的原始和阴影的图面。
+
+Scanout 很快 VBlank，扫描垂直方向从上到下图中，可能会开始和完成下一步 VBlank 之前短暂。 这并不总是的情况下，具体取决于像素时钟的时间和纹理; 中的数据的布局尤其是如果没有可用的实际压缩。 
+
+添加了新 DDIs 分隔并了解转换发生之前 scanout，以便为 （如果可能） 启用前端缓冲区呈现。 请参阅[D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags)并[PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
+
+### <a name="variable-rate-shading"></a>明暗度变量速率
+
+明暗度变量速率或粗略像素明暗度是一种机制来启用的呈现性能/电源以不同速率呈现的映像间分配。
+
+在先前的模型，以便使用 MSAA （多重采样抗锯齿） 以减少几何别名：
+
+* 可减少几何锯齿量需要知道预先分配目标时。
+* 分配目标后，不能更改可减少几何锯齿量。
+
+WDDM 2.6 中的新模型 MSAA 扩展到相反*粗略像素*方向，通过添加了新的概念*粗略的明暗度*。 这是其中明暗度可以执行的频率比一个像素更粗。 可以作为单个单元着色的像素为单位的组和结果然后广播到组中的所有示例。
+
+粗略的明暗度 API 允许应用程序指定的归属于一个着色的像素数。 粗像素大小可各不相同后该呈现器目标分配。 因此，不同的屏幕或不同的绘图传递部分可以有不同的课程明暗度速率。
+
+可具有两个用户可查询顶端的多层实现。 层 1 和 2，粗略的明暗度是适用于单采样和 MSAA 资源。 MSAA 资源的明暗度可以执行每个粗糙的像素或每个样本像往常一样。 但是，在层 1 和 2，MSAA 资源的粗采样不能使用为每像素和每个样本之间的频率的底纹。
+
+第 1 层：
+
+* 只能基于每个-绘图-; 指定明暗度速率比这更精细的执行任何操作
+
+* 明暗度速率统一适用于独立于其位于该呈现器目标的绘制内容  
+
+第 2 层：
+
+* 可以在每个-绘图的模式中，如第 1 层中所示指定明暗度的速率。 它还可以通过组合的每个绘图的基础，以及指定：
+
+    * 每个人深受启发的顶点，从语义和
+    * Screenspace 图像
+
+* 从三个来源的明暗度费率组合使用一系列的合并器
+* 屏幕空间图像平铺大小是 16 x 16 或更小。 保证的明暗度速率请求的应用程序是完全 （对于临时和其他重新构造筛选器的精度） 交付 
+
+* 支持 SV_ShadingRate PS 输入。 如果使用一个视区，并且 SV_ViewportIndex 不会写入到的每个启发顶点速率，以每个基元速率，此处也称为才有效。
+
+* 每个启发顶点速率，也称为每个基元费率，可用于多个视区，如果 SupportsPerVertexShadingRateWithMultipleViewports cap 标记，则返回 true。 此外，在这种情况下，它可用时 SV_ViewportIndex 写入。
+
+请参阅[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062)并[D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
+
+### <a name="collect-diagnostic-info"></a>收集诊断信息
+
+*收集诊断信息*，操作系统就可以从包含这两个呈现和显示功能的图形适配器驱动程序中收集专用数据。 这一新功能是在 WDDM 2.6 中的要求。 
+
+新 DDI 应允许 OS 在收集信息随时加载驱动程序。 操作系统将当前使用 DxgkDdiCollectDebugInfo 函数为 TDR （超时检测和恢复） 由查询驱动程序的专用数据微型端口实现的相关案例。 新 DDI 将用于收集数据的原因多种多样。 诊断需要提供所请求的信息类型时，操作系统将调用此 DDI。 该驱动程序应该收集重要调查该问题并将其提交到 OS 的所有私有信息。 将最终弃用，替换为 DxgkDdiCollectDiagnosticInfo DxgkDdiCollectDebugInfo。
+
+请参阅[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
+
+### <a name="background-processing"></a>后台处理
+
+后台处理允许用户模式驱动程序来表达所需的行为，并在运行时线程处理来控制/监视器它。 用户模式驱动程序将启动后台线程和分配为低的线程优先级作为可能的并且依赖于 NT 计划程序，以确保这些线程不会中断通常带成功的关键路径线程。
+
+Api 允许应用将调整后台处理量是适用于其工作负荷，以及何时执行该工作。
+
+请参阅[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
+
+### <a name="driver-hot-update"></a>驱动程序热更新
+
+操作系统组件需要更新时，驱动程序热更新可减少服务器停机时间最大程度地。
+
+驱动程序热修补程序用于将安全修补程序应用到内核模式驱动程序。 在这种情况下，驱动程序要求以保存适配器内存、 停止适配器时、 驱动程序已卸载、 加载新的驱动程序和重新启动该适配器。
+
+请参阅[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)并[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
 
 ## <a name="wddm-25"></a>WDDM 2.5
 
 ### <a name="content-changes"></a>内容更改
 
-| 主题 | 日期 | 描述 |
+| 主题 | date | 描述 |
 | --- | --- | --- |
 | [EDID HMDs 和专用的显示扩展插件 (VSDB)](specialized-monitors-edid-extension.md) | 12/03/2018 | 显示设备制造商的规范 |
 | [DirectX 图形内核子系统 (Dxgkrnl.sys)](directx-graphics-kernel-subsystem.md) | 12/04/2018 | 通过 Microsoft DirectX 图形内核子系统 (Dxgkrnl.sys) 实现的 Windows 操作系统的内核模式接口。 |

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f73493b5080a2b24fdc6b0f6e4eaf10aa6c990f3
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239322"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903493"
 ---
 # <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>Bug 检查 0x8E：内核\_模式下\_异常\_不\_已处理
 

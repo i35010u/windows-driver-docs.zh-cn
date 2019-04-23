@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6061b19fe1cfdcdc4b627145c85827dd1b3612b4
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239374"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902548"
 ---
 # <a name="bug-check-0x1b-pfnsharecount"></a>Bug 检查 0x1B：PFN\_共享\_计数
 

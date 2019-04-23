@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 333f42fa8e6f6e4f25c336bc00fa424bb900299b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238444"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903709"
 ---
 # <a name="bug-check-0x62-object1initializationfailed"></a>Bug 检查 0x62：对象 1\_初始化\_失败
 

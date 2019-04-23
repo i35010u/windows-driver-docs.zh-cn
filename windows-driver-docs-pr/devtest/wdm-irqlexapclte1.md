@@ -1,6 +1,6 @@
 ---
 title: IrqlExApcLte1 规则 (wdm)
-description: IrqlExApcLte1 规则指定驱动程序只能在 IRQL APC 调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex\_级别。
+description: IrqlExApcLte1 规则指定驱动程序只能在 IRQL APC_LEVEL 调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex。
 ms.assetid: c86aa593-03b5-4a65-9cef-3b64fcc3d5fd
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bd92f333d98cddcaaf90612276f2ad798cc68d5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: fa141cb35fec1e658949080e3d7fb560bbde561f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544441"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903105"
 ---
 # <a name="irqlexapclte1-rule-wdm"></a>IrqlExApcLte1 规则 (wdm)
 
@@ -76,7 +76,7 @@ ms.locfileid: "56544441"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff544337)

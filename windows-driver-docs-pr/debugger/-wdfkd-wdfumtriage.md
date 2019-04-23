@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d26b1e3681eae2dcc9fb43bef66d25da03c0e13
-ms.sourcegitcommit: 1a5d7884cec9dd8d2b85242bee78b56a1cf8e4c9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761842"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902565"
 ---
 # <a name="wdfkdwdfumtriage"></a>!wdfkd.wdfumtriage
 

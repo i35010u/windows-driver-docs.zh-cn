@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 22b7f40eff415e705d3044fe13a13ee9182a3678
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239398"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902260"
 ---
 # <a name="bug-check-0x2e-databuserror"></a>Bug 检查 0x2E：数据\_总线\_错误
 

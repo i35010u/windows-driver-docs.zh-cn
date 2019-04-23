@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d3d5e7c6ce2792f36683281425346f54e38edbd5
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239554"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903743"
 ---
 # <a name="bug-check-0xe4-workerinvalid"></a>Bug 检查 0xE4：辅助角色\_无效
 

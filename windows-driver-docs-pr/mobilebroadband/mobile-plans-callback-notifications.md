@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e59e43bb970484ef4d1a344ec941847e052346b6
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845563"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903465"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回调通知
 
@@ -41,7 +41,7 @@ MO 门户支持的事务包括但不限于以下：
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | 对象 | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
 | activationCode | 字符串 | 正在下载 esim 卡配置文件激活代码。 配置文件的 ICCID 推断从配置文件元数据。 |
 
 以下 Javascript 函数显示要通知的内联配置文件下载的应用程序的 API 的示例应开始。
@@ -172,7 +172,7 @@ function onActivationComplete(activationArgs) {
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | 对象 | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
 | activationCode | 字符串 | 正在下载 esim 卡配置文件激活代码。 配置文件的 ICCID 推断从配置文件元数据。 |
 | networkRegistrationInterval | 无符号的整数 | 移动运营商向用户预配连接到所需的时间。 计划移动应用程序尝试在网络内注册指定的时间间隔，以分钟为单位。 **请注意**这一次舍入为最接近的 15 分钟间隔。 例如，如果此值设置为 5 分钟，则应用程序尝试重新注册到该网络在大约 15 分钟后 （但可能需要花费更长）。 如果设置为"0"，设备将尝试立即注册。 |
 
@@ -200,7 +200,7 @@ function finishPurchaseWithDownload() {
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | 对象 | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
 | iccid | 字符串 | 向其分配数据 ICCID。 如果此 ICCID 未处于活动状态，计划移动应用激活相应的配置文件。|
 
 下面的 Javascript 函数显示示例的 API 来通知用户已完成使用配置文件的购买的应用程序已可用，但不是一定是活动，esim 卡上。
@@ -227,7 +227,7 @@ function finishPurchaseWithBalanceAddition() {
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
-| purchaseMetadata | 对象 | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
 
 以下 Javascript 函数显示 API 来通知用户已取消购买的应用程序的示例。
 

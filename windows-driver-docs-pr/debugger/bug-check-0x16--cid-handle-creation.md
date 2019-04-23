@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e61a2cb6a80037d8f6022d610b557e5c40dcf8a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238984"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903240"
 ---
 # <a name="bug-check-0x16-cidhandlecreation"></a>Bug 检查 0x16：CID\_处理\_创建
 

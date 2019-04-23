@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f23a9d79ce5a8290dde2ce27ecc60229ad432d3a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239716"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903275"
 ---
 # <a name="bug-check-0xf4-criticalobjecttermination"></a>Bug 检查 0xF4：关键\_对象\_终止
 

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a45acd6dbbb623ca64a8d3524200cccc7ed5f2fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d6f0549dbe26b7cf65eaa2ae7447f306c858a194
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533061"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902375"
 ---
 # <a name="oidwdisetp2pstartbackgrounddiscovery"></a>OID\_WDI\_设置\_P2P\_启动\_背景\_发现
 
@@ -57,7 +58,9 @@ D2 NIC 时，它将挂起后台发现，直到它回到 D0。
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)要求
+[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -75,7 +78,7 @@ D2 NIC 时，它将挂起后台发现，直到它回到 D0。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

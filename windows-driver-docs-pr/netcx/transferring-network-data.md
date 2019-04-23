@@ -6,12 +6,13 @@ keywords:
 - 传输网络数据、 网络数据传输的 NetCx NetAdapterCx
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 544b00d8e0e12184748bc3cb60617aad0a08a798
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1dab2b55fa2da0917c440d1c3a073b2c88793f9b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577410"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902487"
 ---
 # <a name="transferring-network-data"></a>传输网络数据
 
@@ -25,5 +26,5 @@ ms.locfileid: "56577410"
 
 - [数据包描述符和扩展](packet-descriptors-and-extensions.md)
 - [传输和接收队列](transmit-and-receive-queues.md)
-- [使用环形缓冲区](using-the-ring-buffer.md)
+- [Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)
 - [网络数据缓冲区管理](network-data-buffer-management.md)

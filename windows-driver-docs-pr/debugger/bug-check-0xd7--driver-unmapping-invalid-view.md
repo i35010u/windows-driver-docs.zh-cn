@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d10c770bcfc8be686a6a6898b0f778b0ceb83e19
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238738"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902256"
 ---
 # <a name="bug-check-0xd7-driverunmappinginvalidview"></a>Bug 检查 0xD7：驱动程序\_UNMAPPING\_无效\_视图
 

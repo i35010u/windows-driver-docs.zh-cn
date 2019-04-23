@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 05/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fec627e75d1645f0bdb00a24b95a5c3284e208c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ceb3f629202e768ca1c013d853494c38120ca183
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548086"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902739"
 ---
 # <a name="kspropertyaudiomicsensitivity2"></a>KSPROPERTY\_AUDIO\_MIC\_SENSITIVITY2
 
@@ -63,7 +63,7 @@ KSPROPERTY\_音频\_MIC\_SENSITIVITY2 属性请求返回状态\_请求的成功�
 
 音频驱动程序可以获取每个麦克风的麦克风敏感度。 此属性允许从驱动程序检索此信息。
 
-Windows 10 等 Cortana 可以准确地检测并使用不同麦克风分析各种设备上的用户的语音的语音识别体验，操作系统需要知道输入信号的某些特征。 根据该信息，操作系统可以计算有效敏感度并应用相应的提升来增强输入的信号。 有关详细信息，请参阅[语音激活](https://msdn.microsoft.com/library/windows/hardware/mt593238)。
+Windows 10 的语音识别体验，例如 Cortana，可以准确地检测并使用不同的麦克风，分析各种设备上的用户的语音操作系统需要知道输入信号的某些特征。 根据该信息，操作系统可以计算有效敏感度并应用相应的提升来增强输入的信号。 有关详细信息，请参阅[语音激活](https://msdn.microsoft.com/library/windows/hardware/mt593238)。
 
 KSPROPERTY\_音频\_MIC\_SENSITIVITY2 开始支持 Windows 10 版本 1803年和取代[KSPROPERTY\_音频\_MIC\_敏感度](ksproperty-audio-mic-sensitivity.md).
 
@@ -78,13 +78,13 @@ KSPROPERTY\_音频\_MIC\_SENSITIVITY2 开始支持 Windows 10 版本 1803年和�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-另请参阅
+<a name="see-also"></a>请参阅
 ---------
 
 [KSPROPERTY_AUDIO_MIC_SENSITIVITY](ksproperty-audio-mic-sensitivity.md)

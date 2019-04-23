@@ -11,12 +11,12 @@ keywords:
 - 系统睡眠状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcf563c40650162a94c2e931825ce4d97c13f3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58a2a162d08f84e318ae460135b3974bede18671
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564590"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902877"
 ---
 # <a name="supporting-idle-power-down"></a>支持空闲时关闭电源
 
@@ -46,7 +46,7 @@ ms.locfileid: "56564590"
     -   [*EvtDeviceWakeFromS0Triggered*](https://msdn.microsoft.com/library/windows/hardware/ff540919)，它告诉总线检测到唤醒信号驱动程序。
 
 
-
+## <a name="idle-conditions"></a>空闲条件
 
 框架认为设备不处于空闲状态，并开始计数空闲时间，当满足所有以下条件：
 

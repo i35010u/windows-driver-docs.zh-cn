@@ -4,12 +4,12 @@ description: WDM 模型与操作系统密切相关。
 ms.assetid: 4D35F0AB-44CE-49CA-8AB7-3922871567B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42fc990509fb639e9d53a3709fe410c33dd7050d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b1448822e25ac18af5b120e9de28bd72fd8626d9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577203"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902395"
 ---
 # <a name="differences-between-wdm-and-wdf"></a>WDM 和 WDF 之间的差异
 
@@ -22,15 +22,15 @@ WDM 模型与操作系统密切相关。 驱动程序通过调用系统服务例
 
 本部分介绍 WDM 和 WDF 之间的以下区域中的重要区别：
 
--   [驱动程序结构](#drv-struct)
--   [设备对象和驱动程序角色](#roles)
--   [对象模型](#obj-model)
--   [对象创建](#creation)
--   [对象上下文区域](#context)
--   [受支持的 IRP 类型](#irp)
--   [I/O 队列](#queue)
--   [同步和并发](#sync)
--   [驱动程序安装](#install)
+-   [驱动程序结构](#driver-structure)
+-   [设备对象和驱动程序角色](#device-objects-and-driver-roles)
+-   [对象模型](#object-model)
+-   [对象创建](#object-creation)
+-   [对象上下文区域](#object-context-area)
+-   [受支持的 IRP 类型](#supported-irp-types)
+-   [I/O 队列](#io-queues)
+-   [同步和并发](#synchronization-and-concurrency)
+-   [驱动程序安装](#driver-installation)
 
 ## <a name="driver-structure"></a>驱动程序结构
 

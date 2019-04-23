@@ -11,12 +11,12 @@ keywords:
 - 交叉证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 958e6034fcf23c6c0027dfcc541905bf62758666
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.openlocfilehash: b506b5c3b44183dc0f203435f7b485905517163f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560608"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903845"
 ---
 # <a name="software-publisher-certificate"></a>软件发行者证书
 
@@ -27,7 +27,7 @@ ms.locfileid: "57560608"
 
  
 
-### <a name="cross-certificates"></a>Cross-Certificates
+## <a name="cross-certificates"></a>Cross-Certificates
 
 除了获取一个 SPC，必须获取由 Microsoft 颁发交叉证书。 交叉证书用于验证颁发一个 SPC 的 CA 受信任的根颁发机构。 交叉证书是由另一个 CA 的根证书的公钥进行签名的 CA 颁发的 X.509 证书。 交叉证书允许系统在具有单个受信任的 Microsoft 的根颁发机构，但也提供灵活地扩展到商业 Ca 颁发 SPCs 的信任链。
 
@@ -35,11 +35,11 @@ ms.locfileid: "57560608"
 
 提供 SPCs 的证书颁发机构的列表以及有关交叉证书的详细信息，请参阅[内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 有关如何获取并将登录驱动程序的计算机上安装的 SPC 和相应的交叉证书的证书颁发机构的网站上按照的说明。 此外，您必须将 SPC 信息添加到对进行签名的驱动程序在本地计算机的个人证书存储。 有关此要求的信息，请参阅[个人证书存储中安装 SPC 信息](#installing-spc-information-in-the-personal-certificate-store)。
 
-### <a name="installing-spc-information-in-the-personal-certificate-store"></a>在个人证书存储中安装 SPC 信息
+## <a name="installing-spc-information-in-the-personal-certificate-store"></a>在个人证书存储中安装 SPC 信息
 
 若要使用一个 SPC 进行签名的驱动程序符合的方式[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)，必须首先中个人信息交换中包含的证书信息 (*.pfx*)文件。 中包含的信息 *.pfx*然后必须将文件添加到驱动程序进行签名的本地计算机的个人证书存储。
 
-CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此，你可以添加。*pfx*中所述的说明的个人证书存储的文件[在个人证书存储中安装.pfx 文件](#installing-a--pfx-file-in-the-personal-certificate-store)。
+CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此，你可以添加。*pfx*中所述的说明的个人证书存储的文件[在个人证书存储中安装.pfx 文件](#installing-a-pfx-file-in-the-personal-certificate-store)。
 
 但是，CA 可能会发出对以下文件：
 
@@ -77,7 +77,7 @@ CA 可以颁发 *.pfx*文件，其中包含所需的证书信息。 如果因此
 
 -   **-F**选项配置 Pvk2Pfx 替换现有 *.pfx*文件如果存在。
 
-### <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>在个人证书存储中安装一个.pfx 文件
+## <a name="installing-a-pfx-file-in-the-personal-certificate-store"></a>在个人证书存储中安装一个.pfx 文件
 
 获取后 *.pfx* CA，从文件或创建 *.pfx*从文件 *.pvk*并且。*spc*或 *.cer*文件中，添加中的信息 *.pfx*对进行签名的驱动程序在本地计算机的个人证书存储的文件。 您可以使用证书导入向导导入中的信息 *.pfx*文件到个人证书存储中，按如下所示：
 

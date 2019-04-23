@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bccab64d3a52c6ad3220b183aa5c3012f90b0
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239461"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902903"
 ---
 # <a name="bug-check-0xcc-pagefaultinfreedspecialpool"></a>Bug 检查 0xCC：页\_容错\_IN\_FREED\_特殊\_池
 

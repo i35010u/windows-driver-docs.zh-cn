@@ -4,12 +4,13 @@ description: 从命令提示符窗口运行 PwrTest。 可以选择并配置 Pwr
 ms.assetid: bcae1bb6-ce5b-4ece-a5ba-bae6fefd6408
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11fcadb173c449473e7827d536b8cc7c82e60ca2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d82450c3d99e99cf73cc33c452ad46bf0c5db20f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525534"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902701"
 ---
 # <a name="pwrtest-syntax"></a>PwrTest 语法
 
@@ -41,7 +42,8 @@ pwrtest /scenario [/scenario_options] [/common_options]
 | processidle | 强制后台维护任务执行 （现在而非在其计划的时间），将监视其进度。 (Windows 7 及更高版本)                        |
 | cs          | 如果系统支持，周期经过连接备用转换的计算机。 (Windows 8 及更高版本)                                               |
 | platidle    | 监视并尝试登录平台空闲转换计数，如果系统支持。 (Windows 8 及更高版本)                                            |
- 
+| directedfx  | 监视与相关的低能耗空闲状态开关[定向电源管理框架 (DFx)](../kernel/introduction-to-the-directed-power-management-framework.md)。 (Windows 10，版本 1903 及更高版本)|
+
 
  
 
@@ -90,7 +92,7 @@ PwrTest 在.log （明文） 中自动生成每次执行多个日志.xml （格�
 
 若要能够使用所有 PwrTest 方案，必须先设置测试计算机以用于使用 Visual Studio 和 WDK 测试。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)。 某些情况下需要是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。 WDTF 有关的信息，请参阅[ **Windows 设备测试框架 (WDTF) （Windows 驱动程序）**](https://msdn.microsoft.com/library/windows/hardware/ff539547)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 方案](pwrtest-scenarios.md)

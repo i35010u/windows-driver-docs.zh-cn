@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADD_PM_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3771eef8e16738f3e2684cdf1093290e8fd1e674
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 1fd1db45482274a5c30993f4e4dd7900e42770d3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569344"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903681"
 ---
 # <a name="oidwdisetaddpmprotocoloffload"></a>OID\_WDI\_SET\_ADD\_PM\_PROTOCOL\_OFFLOAD
 
@@ -41,7 +42,8 @@ OID\_WDI\_设置\_添加\_PM\_协议\_卸载将添加一个或多个协议的列
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

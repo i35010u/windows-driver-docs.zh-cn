@@ -4,12 +4,13 @@ description: 本部分包含 WDI 属性 Oid。
 ms.assetid: 1B1B54B8-6CE4-4C17-AAF8-7394210B09E8
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f9fe7d6af0232a60f10cd79e9314215d5d8039f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 4165572608ab4c6ca2b722b9d3f17017b22b35a8
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563924"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903797"
 ---
 # <a name="wdi-property-oids"></a>WDI 属性 OID
 
@@ -26,7 +27,7 @@ Wi-fi 驱动程序接口 (WDI) 对象标识符 (Oid) 仅适用于实现 WDI 的�
 <a href="" id="o"></a>**O**  
 指示该功能的支持，该对象是可选的。 或微型端口驱动程序可以支持的查询或设置请求的对象，该驱动程序可以使该请求失败通过返回 NDIS\_状态\_不\_支持从其[ *MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数。
 
-| “属性”                                                                                                | Q   | S   | M   |
+| 名称                                                                                                | Q   | S   | M   |
 |-----------------------------------------------------------------------------------------------------|-----|-----|-----|
 | [OID\_WDI\_ABORT\_TASK](oid-wdi-abort-task.md)                                                     |     |     | R   |
 | [OID\_WDI\_获取\_适配器\_功能](oid-wdi-get-adapter-capabilities.md)                        |     |     | R   |
@@ -61,6 +62,7 @@ Wi-fi 驱动程序接口 (WDI) 对象标识符 (Oid) 仅适用于实现 WDI 的�
 | [OID\_WDI\_SET\_RECEIVE\_PACKET\_FILTER](oid-wdi-set-receive-packet-filter.md)                     |     |     | R   |
 | [OID\_WDI\_SET\_REMOVE\_PM\_PROTOCOL\_OFFLOAD](oid-wdi-set-remove-pm-protocol-offload.md)          |     |     | O   |
 | [OID\_WDI\_SET\_REMOVE\_WOL\_PATTERN](oid-wdi-set-remove-wol-pattern.md)                           |     |     | O   |
+| [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)                                      |     |     | O   |
 | [OID\_WDI\_SET\_TCP\_OFFLOAD\_PARAMETERS](oid-wdi-set-tcp-offload-parameters.md)                   |     |     | O   |
 | [OID\_WDI\_TCP\_RSC\_STATISTICS](oid-wdi-tcp-rsc-statistics.md)                                    |     |     | O   |
 

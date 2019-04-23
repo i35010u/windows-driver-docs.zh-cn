@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4c91d7799b1bd5c7d8358f46327b3cacac58c3
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239610"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902833"
 ---
 # <a name="bug-check-0x45-insufficientsystemmapregs"></a>Bug 检查 0x45：不足\_系统\_映射\_REGS
 

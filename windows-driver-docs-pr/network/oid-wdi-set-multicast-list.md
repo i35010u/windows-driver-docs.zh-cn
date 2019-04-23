@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f82501e01636fc6ec5f6be436dbd6abd15a59003
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8a1a08abebf1983eb97b74bba2f3da119d6e9b4e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533804"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903841"
 ---
 # <a name="oidwdisetmulticastlist"></a>OID\_WDI\_SET\_MULTICAST\_LIST
 
@@ -41,7 +42,8 @@ OID\_WDI\_设置\_多播\_列表指定给定的端口的多播的地址列表。
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -59,7 +61,7 @@ OID\_WDI\_设置\_多播\_列表指定给定的端口的多播的地址列表。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

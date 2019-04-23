@@ -1,6 +1,6 @@
 ---
 title: IrqlIoApcLte 规则 (wdm)
-description: IrqlIoApcLte 规则指定驱动程序调用以下 I/O 管理器例程，仅当执行在 IRQL APC\_级别 IoDeleteDeviceIoGetInitialStackIoRaiseHardErrorIoRaiseInformationalHardError。
+description: IrqlIoApcLte 规则指定驱动程序调用以下 I/O 管理器例程，仅当执行在 IRQL APC_LEVEL 时。
 ms.assetid: 1f0b2b9c-f67c-4e34-b079-6a2769f62879
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b20874de85b9da332c67bef9032272ef3472f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8590ef02ee78e22a580449bfb0f2172d829008e5
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522582"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902871"
 ---
 # <a name="irqlioapclte-rule-wdm"></a>IrqlIoApcLte 规则 (wdm)
 
@@ -66,7 +66,7 @@ ms.locfileid: "56522582"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoDeleteDevice**](https://msdn.microsoft.com/library/windows/hardware/ff549083)

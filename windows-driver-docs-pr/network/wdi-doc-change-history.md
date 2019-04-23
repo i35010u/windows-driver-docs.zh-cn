@@ -2,16 +2,61 @@
 title: WDI 文档更改历史记录
 description: 本部分列出了 WDI 文档页面的文档更改历史记录
 ms.assetid: 29268059-9C33-4768-8F80-195CB28B4663
-ms.date: 04/20/2017
+ms.date: 02/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ea98288a032e0ae7d40e6bc25065854696ea53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 39293fe0e3930651b08c2296a530f11a4cd6a3f3
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544910"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903315"
 ---
 # <a name="wdi-doc-change-history"></a>WDI 文档更改历史记录
+
+## <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+
+更新到 WDI 版本 1.1.8 的文档。
+
+| 主题 | 描述 |
+| --- | --- |
+| [WDI_TLV_STATION_CAPABILITIES](wdi-tlv-station-capabilities.md) | 添加了的对驱动程序来指示支持正常计时度量 (FTM)。 |
+| [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md) | 新添加的任务使 WDI 中以请求，适配器启动 FTM 过程，才能获取往返时间 (RTT) 和位置配置信息 (LCI) 报表从 BSS 目标的 OID。 |
+| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | 新添加的 TLV FTM 请求。 |
+| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | 新添加的 TLV FTM 请求。 |
+| [WDI_TLV_REQUEST_LCI_REPORT](wdi-tlv-request-lci-report.md) | 新添加的 TLV FTM 请求。 |
+| [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md) | 新添加的主机发送的任务完成指示为 OID_WDI_TASK_REQUEST_FTM 状态指示。 包含从 BSS 目标 FTM 响应的列表。 |
+| [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_FTM_RESPONSE_STATUS](wdi-tlv-ftm-response-status.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_RETRY_AFTER](wdi-tlv-retry-after.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS](wdi-tlv-ftm-number-of-measurements.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_RTT](wdi-tlv-rtt.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_RTT_ACCURACY](wdi-tlv-rtt-accuracy.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_RTT_VARIANCE](wdi-tlv-rtt-variance.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_LCI_REPORT_STATUS](wdi-tlv-lci-report-status.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_LCI_REPORT_BODY](wdi-tlv-lci-report-body.md) | 新添加的 TLV FTM 响应。 |
+| [WDI_TLV_INTERFACE_CAPABILITIES](wdi-tlv-interface-capabilities.md) | 指示支持 Multiband 操作 (MBO) 和信号报表卸载驱动程序添加了新的功能。 |
+| [**WDI_ASSOC_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_assoc_status) | 添加**WDI_ASSOC_STATUS_ASSOCIATION_DISALLOWED**状态。 |
+| [WPA3 SAE 身份验证](wpa3-sae-authentication.md) | 新 WPA3 SAE （安全身份验证的等于） 身份验证概述。 |
+| [WDI_TLV_INTERFACE_CAPABILITIES](wdi-tlv-interface-capabilities.md) | 指示支持 SAE 身份验证的驱动程序添加了新功能。 |
+| [**WDI_AUTH_ALGORITHM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) | 添加定义**WDI_AUTH_ALGO_WPA3_SAE**。 |
+| [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md) | 新添加的驱动程序发送到请求 SAE 身份验证参数从 WDI 状态指示。 |
+| [WDI_TLV_SAE_INDICATION_TYPE](wdi-tlv-sae-indication-type.md) | 新添加的 SAE 身份验证参数请求的 TLV。 |
+| [WDI_TLV_SAE_COMMIT_RESPONSE](wdi-tlv-sae-commit-response.md) | 新添加的 SAE 身份验证参数请求的 TLV。 |
+| [WDI_TLV_SAE_CONFIRM_RESPONSE](wdi-tlv-sae-confirm-response.md) | 新添加的 SAE 身份验证参数请求的 TLV。 |
+| [WDI_TLV_SAE_STATUS](wdi-tlv-sae-status.md) | 新添加的 TLV SAE 身份验证参数请求，以及如何设置 SAE 身份验证参数。 |
+| [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md) | 新添加的属性包含发送 SAE 提交或确认请求或错误消息指示无法执行与 BSSID SAE 所必需的参数的 OID。 |
+| [WDI_TLV_SAE_REQUEST_TYPE](wdi-tlv-sae-request-type.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_FINITE_CYCLIC_GROUP](wdi-tlv-sae-finite-cyclic-group.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_SCALAR](wdi-tlv-sae-scalar.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_ELEMENT](wdi-tlv-sae-element.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_ANTI_CLOGGING_TOKEN](wdi-tlv-sae-anti-clogging-token.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_SEND_CONFIRM](wdi-tlv-sae-send-confirm.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [WDI_TLV_SAE_CONFIRM](wdi-tlv-sae-confirm.md) | 新添加的设置 SAE 身份验证参数的 TLV。 |
+| [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](oid-wdi-task-p2p-send-request-action-frame.md) | 添加了额外的验证 P2P 导致浏览器上传出操作帧。 |
+| [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-p2p-send-response-action-frame.md) | 添加了额外的验证 P2P 导致浏览器上传出操作帧。 || 
 
 ## <a name="windows-10-version-1809"></a>Windows 10 版本 1809
 

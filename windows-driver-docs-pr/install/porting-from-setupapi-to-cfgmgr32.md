@@ -4,12 +4,12 @@ description: 本主题提供代码示例演示如何移植代码，使用 Setupa
 ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d377ab0f71fe61e331a8a2b1afd1edc64b9e4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0f7b63e9fccf0ae0c00c01f1c2fe5cecdfbe429f
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520026"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902969"
 ---
 # <a name="porting-code-from-setupapi-to-cfgmgr32"></a>将代码从 SetupApi 移植到 CfgMgr32
 
@@ -21,7 +21,7 @@ ms.locfileid: "56520026"
 以下部分包含应用程序通常将使用的代码示例。
 
 -   [获取显示设备的列表，并检索每个设备的属性](#get-a-list-of-present-devices-and-retrieve-a-property-for-each-device)
--   [获取接口的列表，获取设备公开每个接口，并从设备获取的属性](#get-a-list-of-interfaces--get-the-device-exposing-each-interface---and-get-a-property-from-the-device)
+-   [获取接口的列表，获取设备公开每个接口，并从设备获取的属性](#get-a-list-of-interfaces-get-the-device-exposing-each-interface-and-get-a-property-from-the-device)
 -   [获取从特定设备的属性](#get-a-property-from-a-specific-device)
 -   [禁用设备](#disable-device)
 -   [启用设备](#enable-device)

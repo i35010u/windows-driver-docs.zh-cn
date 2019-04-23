@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d6233fba5fdd7928aacda21b6ba0fd19e082fca4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 6d0cd33ea71914854021d1f815f6cd58cd44f239
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577023"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903127"
 ---
 # <a name="ndisstatuswdiindicationdisassociation"></a>NDIS\_状态\_WDI\_指示\_解除关联
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_解除关联以指示与网络断开连接的端口。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -31,10 +32,11 @@ ms.locfileid: "56577023"
 ## <a name="payload-data"></a>有效负载数据
 
 
-说明 （可选） 允许类型多个 TLV 实例[ **WDI\_TLV\_解除关联\_指示\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926292)解除关联指示参数。
-[**WDI\_TLV\_断开连接\_DEAUTH\_帧**](https://msdn.microsoft.com/library/windows/hardware/dn926296) X 收到 deauthentication 帧。 这不包括 802.11 MAC 报头。
-[**WDI\_TLV\_断开连接\_解除关联\_帧**](https://msdn.microsoft.com/library/windows/hardware/dn926298) X 收到解除关联框架。 这不包括 802.11 MAC 报头。
- 
+| 在任务栏的搜索框中键入 | 允许多个 TLV 实例 | 可选 | 描述 |
+| --- | --- | --- | --- |
+| [**WDI\_TLV\_解除关联\_指示\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926292) |   |   | 解除关联指示参数。 |
+| [**WDI\_TLV\_DISCONNECT\_DEAUTH\_FRAME**](https://msdn.microsoft.com/library/windows/hardware/dn926296) |   | X | 已接收到 deauthentication 帧。 这不包括 802.11 MAC 报头。 |
+| [**WDI\_TLV\_DISCONNECT\_DISASSOCIATION\_FRAME**](https://msdn.microsoft.com/library/windows/hardware/dn926298) |   | X | 已接收到解除关联框架。 这不包括 802.11 MAC 报头。 | 
 
 <a name="requirements"></a>要求
 ------------

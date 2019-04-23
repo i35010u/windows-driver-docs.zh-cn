@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 62fec6bacc2e4df5a66413ddfcca513d1bb868b1
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239032"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903055"
 ---
 # <a name="bug-check-0x5b-setenvvarfailed"></a>Bug 检查 0x5B：设置\_ENV\_VAR\_失败
 

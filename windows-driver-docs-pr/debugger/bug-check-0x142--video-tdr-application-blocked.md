@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b1bdb01f38eed7bba8993c37717050757a59d7
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238786"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902285"
 ---
 # <a name="bug-check-0x142-videotdrapplicationblocked"></a>Bug 检查 0x142：视频\_TDR\_应用程序\_已阻止
 

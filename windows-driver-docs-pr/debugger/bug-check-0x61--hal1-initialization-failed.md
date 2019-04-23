@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 267b02a618620c235ce8e30ae6bd13e5d92a1967
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239436"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903623"
 ---
 # <a name="bug-check-0x61-hal1initializationfailed"></a>Bug 检查 0x61：HAL1\_初始化\_失败
 

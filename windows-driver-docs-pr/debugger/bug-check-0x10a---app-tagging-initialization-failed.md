@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a6b804ed05d235e97353ec2691eb8555688862d3
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239588"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902397"
 ---
 # <a name="bug-check-0x10a-apptagginginitializationfailed"></a>Bug 检查 0x10A：应用程序\_标记\_初始化\_失败
 

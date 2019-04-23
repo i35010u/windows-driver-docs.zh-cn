@@ -15,12 +15,12 @@ keywords:
 - 内存管理 WDK 内核，地址映射
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 913dfa0e70e1e20c8cb4a819263edcbab15378a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3a1495e62568731b0ea889775431531942ba1fc0
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521696"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903441"
 ---
 # <a name="map-registers"></a>映射寄存器
 
@@ -30,7 +30,7 @@ ms.locfileid: "56521696"
 
 执行 DMA 的驱动程序使用三个不同的地址空间，如下图中所示。
 
-![说明逻辑、 物理和虚拟地址的映射的关系图](images/3addrspc.png)
+![物理、 逻辑和虚拟地址映射](images/3addrspc.png)
 
 在任何 Windows 平台上，驱动程序有权访问处理器支持的完整虚拟地址空间。 一个 32 位处理器上的虚拟地址空间表示四个千兆字节为单位。 CPU 使用的页表转换到系统的物理地址空间中的地址的虚拟地址空间中的地址。 每个页表项 (PTE) 映射到的物理内存，从而导致在必要时在分页操作页的虚拟内存的一页。 MDL （内存描述符列表） 提供了驱动程序 DMA 操作相关联的缓冲区的类似映射。
 

@@ -1,14 +1,14 @@
 ---
 title: 使用 WinDbg 预览版进行调试
 description: 本部分介绍如何执行基本使用 WinDbg 预览调试程序的调试任务。
-ms.date: 10/18/2018
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 103c62d0e878c7d8d46a174ec07374192e1cec84
-ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
+ms.openlocfilehash: 7d3b32cfca7fee3ed39154012fc25e29f2782d8c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59534155"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903471"
 ---
 ![Windbg preview 上的小徽标](images/windbgx-preview-logo.png) 
 
@@ -156,7 +156,14 @@ WinDbg 预览版是与更现代的视觉对象、 更快的 windows、 功能齐
 
 ![反馈中心显示反馈选项包括添加新的反馈按钮的屏幕截图](images/windbgx-feedback.png)
 
+## <a name="videos"></a>视频
 
+观看的这些剧集[碎片整理工具](https://channel9.msdn.com/Shows/Defrag-Tools)显示若要了解 Windbg 预览操作。  
+- [碎片整理工具 #182](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-182-WinDbg-Preview-Part-1) -Tim，乍得和 Andy WinDbg 预览版的基础知识以及的一些功能。
+- [碎片整理工具 #183](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-183-WinDbg-Preview-Part-2) -Nick、 Tim 和 Chad 使用 WinDbg 预览和会超过一个简短的演示。
+- [碎片整理工具 #184](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-184-JavaScript-in-WinDbg-Preview) -帐单和 Andrew 逐步完成在 WinDbg 预览版中的脚本撰写功能。
+- [碎片整理工具 #185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) -James 和 Ivette 提供和时间的行程调试的介绍。
+- [碎片整理工具 #186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) -James 和 JCAB 包括高级的调试时间旅行。
 
 ## <a name="next-steps"></a>后续步骤
 

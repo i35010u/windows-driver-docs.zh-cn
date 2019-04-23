@@ -8,12 +8,13 @@ keywords:
 - 内核模式驱动程序框架 WDK，修订版本历史记录
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 297fa37b477f2ef82ff53b7d6b6849add6cfcddb
-ms.sourcegitcommit: 5cbc8ac1db572e92abeefebb39f5e72834785bc3
+ms.custom: 19H1
+ms.openlocfilehash: 358d5eb53fc4005f17577f79c2644b2074423ae4
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56754460"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903067"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -24,6 +25,7 @@ ms.locfileid: "56754460"
 
 |KMDF 版本|Release 方法|包含在此版本的 Windows|使用它的驱动程序上运行|
 |--- |--- |--- |--- |
+|1.29|不在 WDK 中发布|Windows 10，版本 1903年 （2019 更新，19 H 1 年 3 月）|Windows 10，版本 1903 及更高版本|
 |1.27|Windows 10，版本 1809 WDK|Windows 10，版本 1809年 (2018 年 10 月更新 Redstone 5)|Windows 10，版本 1809 及更高版本|
 |1.25|Windows 10，版本 1803 WDK|Windows 10，版本 1803年 (2018 年 4 月更新 Redstone 4)|Windows 10，版本 1803 和更高版本|
 |1.23|Windows 10 版本 1709 WDK|Windows 10 版本 1709 （Fall Creators Update，Redstone 3）|Windows 10 版本 1709 及更高版本|
@@ -44,6 +46,10 @@ ms.locfileid: "56754460"
 回调的完整列表和方法，以及哪个框架和它们适用于版本，请参阅[WDF 回调摘要和方法](https://msdn.microsoft.com/library/windows/hardware/dn265591)。
 
 用于 KMDF 驱动程序在 Windows 10 中的新功能的信息，请参阅[What's New for WDF 驱动程序](index.md)。
+
+## <a name="kmdf-version-129"></a>KMDF 1.29 版
+
+从版本 1.25 不变。
 
 ## <a name="kmdf-version-127"></a>KMDF 版本 1.27 版
 

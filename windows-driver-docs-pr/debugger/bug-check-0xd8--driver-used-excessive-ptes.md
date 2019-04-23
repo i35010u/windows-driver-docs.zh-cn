@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14a782223f3bcd1842ca9cc06f6f6d103c60be49
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239696"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903849"
 ---
 # <a name="bug-check-0xd8-driverusedexcessiveptes"></a>Bug 检查 0xD8：驱动程序\_USED\_过量\_PTE
 

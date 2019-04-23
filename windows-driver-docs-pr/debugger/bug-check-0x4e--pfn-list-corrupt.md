@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ebf74d7c9f495ebe035da08e01476c4c833f8e
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239015"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903459"
 ---
 # <a name="bug-check-0x4e-pfnlistcorrupt"></a>Bug 检查 0x4E：PFN\_列表\_损坏
 

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADAPTER_CONFIGURATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d32bc793e046baeda3e12c1b8b3faa05f7a1998
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: e7fe2a1cb746e720cffdafbd51c09c5f766ec5d9
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526279"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902347"
 ---
 # <a name="oidwdisetadapterconfiguration"></a>OID\_WDI\_SET\_ADAPTER\_CONFIGURATION
 
@@ -95,7 +96,8 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -113,7 +115,7 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

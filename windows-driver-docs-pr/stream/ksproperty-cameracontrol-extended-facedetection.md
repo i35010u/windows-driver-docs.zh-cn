@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 12ec1ae5972e0290528bbea782e8cadc8f1699fe
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845546"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902835"
 ---
 # <a name="kspropertycameracontrolextendedfacedetection"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FACEDETECTION
 

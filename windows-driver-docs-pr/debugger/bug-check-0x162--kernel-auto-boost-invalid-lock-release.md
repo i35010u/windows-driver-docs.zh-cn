@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: df35d0351959dec63f4eb368ebae52a290ec0453
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239256"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902275"
 ---
 # <a name="bug-check-0x162-kernelautoboostinvalidlockrelease"></a>Bug 检查 0x162：内核\_自动\_BOOST\_无效\_锁\_版本
 

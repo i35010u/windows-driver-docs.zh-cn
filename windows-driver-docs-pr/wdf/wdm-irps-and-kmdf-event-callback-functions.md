@@ -1,17 +1,17 @@
 ---
-title: WDM Irp 和 WDF 事件回调函数
-description: WDM Irp 和 WDF 事件回调函数
+title: WDM IRP 和 WDF 事件回调函数
+description: WDM IRP 和 WDF 事件回调函数
 ms.assetid: 9B9A01FD-AA15-4C30-B19D-2F6451014EAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72c2c9791ce9dfca31067ef36b915905468ef89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 553532e917a0132afde5ef726696dc0d88af0076
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545508"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902494"
 ---
-# <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM Irp 和 WDF 事件回调函数
+# <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM IRP 和 WDF 事件回调函数
 
 
 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 支持 Windows Irp 的子集。 下表列出了主要的 WDM IRP 类型和相应的 framework 事件回调函数。 除非另行指定，回调将适用于 KMDF 和 UMDF。
@@ -74,11 +74,11 @@ ms.locfileid: "56545508"
 </tr>
 <tr class="even">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550772" data-raw-source="[&lt;strong&gt;IRP_MJ_PNP&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550772)"><strong>IRP_MJ_PNP</strong></a></td>
-<td align="left">很多;请参阅<a href="#pnp" data-raw-source="[KMDF Callbacks for IRP_MJ_PNP](#pnp)">IRP_MJ_PNP KMDF 回调</a>。</td>
+<td align="left">很多;请参阅<a href="#kmdf-callbacks-for-irp_mj_pnp" data-raw-source="[KMDF Callbacks for IRP_MJ_PNP](#kmdf-callbacks-for-irp_mj_pnp)">IRP_MJ_PNP KMDF 回调</a>。</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff550784" data-raw-source="[&lt;strong&gt;IRP_MJ_POWER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff550784)"><strong>IRP_MJ_POWER</strong></a></td>
-<td align="left">很多;请参阅<a href="#power" data-raw-source="[KMDF Callbacks for IRP_MJ_POWER](#power)">IRP_MJ_POWER KMDF 回调</a>。</td>
+<td align="left">很多;请参阅<a href="#kmdf-callbacks-for-irp_mj_power" data-raw-source="[KMDF Callbacks for IRP_MJ_POWER](#kmdf-callbacks-for-irp_mj_power)">IRP_MJ_POWER KMDF 回调</a>。</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff549279" data-raw-source="[&lt;strong&gt;IRP_MJ_QUERY_EA&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff549279)"><strong>IRP_MJ_QUERY_EA</strong></a></td>

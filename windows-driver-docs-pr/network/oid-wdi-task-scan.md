@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SCAN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c630983a6aea5299d4ac507107974da2095bd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d7bf84cda2adbec918206cee5dfb3511cac1d75a
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519709"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902664"
 ---
 # <a name="oidwditaskscan"></a>OID\_WDI\_TASK\_SCAN
 
@@ -27,7 +28,7 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 </colgroup>
 <thead>
 <tr class="header">
-<th>对象</th>
+<th>Object</th>
 <th>中止支持</th>
 <th>默认优先级 （主机驱动程序策略）</th>
 <th>正常执行时间 （秒）</th>
@@ -80,10 +81,12 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 
 
 [NDIS\_状态\_WDI\_指示\_扫描\_完成](ndis-status-wdi-indication-scan-complete.md)
+
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
+[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)设备使用此通知需要了解的有关 BSS 条目更新主机。 可以在任何时候发送它。
+此通知由设备使用，需要了解的有关 BSS 条目更新主机。 可以在任何时候发送它。
 
 <a name="requirements"></a>要求
 ------------
@@ -103,7 +106,7 @@ OID\_WDI\_任务\_扫描请求的 BSS 网络调查。 该端口执行扫描根�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

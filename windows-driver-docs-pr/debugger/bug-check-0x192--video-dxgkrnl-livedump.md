@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 35ee5957f2cdb600ad1e240b417cca473748069b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239052"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902333"
 ---
 # <a name="bug-check-0x193-videodxgkrnllivedump"></a>Bug 检查 0x193：VIDEO\_DXGKRNL\_LIVEDUMP
 

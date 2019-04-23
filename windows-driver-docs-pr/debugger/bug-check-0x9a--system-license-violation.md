@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b925fe2d92531a5f4886a9da3d4e3de466dd2e
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239820"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902681"
 ---
 # <a name="bug-check-0x9a-systemlicenseviolation"></a>Bug 检查 0x9A：系统\_许可证\_冲突
 

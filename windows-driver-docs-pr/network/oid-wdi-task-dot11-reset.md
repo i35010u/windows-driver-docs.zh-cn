@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_DOT11_RESET 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bc26d6c0100afb5836cf1f8b1e0cd61231abcfd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: c051f1df5631ebbca54ba0e63705c38d94de7723
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523926"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903595"
 ---
 # <a name="oidwditaskdot11reset"></a>OID\_WDI\_TASK\_DOT11\_RESET
 
 
 OID\_WDI\_任务\_DOT11\_IHV 组件重置指定端口上的 MAC 和物理状态重置请求。
 
-| 对象 | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |--------|---------------|---------------------------------------|---------------------------------|
 | 端口   | 否            | 1                                     | 1                               |
 
@@ -50,7 +51,9 @@ Dot11 重置组合 802.11 MLME 和 PLME 重置基元的语义。 当 IHV 组件�
 ## <a name="task-completion-indication"></a>指示任务完成
 
 
-[NDIS\_状态\_WDI\_指示\_DOT11\_重置\_完成](ndis-status-wdi-indication-dot11-reset-complete.md)要求
+[NDIS\_状态\_WDI\_指示\_DOT11\_重置\_完成](ndis-status-wdi-indication-dot11-reset-complete.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -68,7 +71,7 @@ Dot11 重置组合 802.11 MLME 和 PLME 重置基元的语义。 当 IHV 组件�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

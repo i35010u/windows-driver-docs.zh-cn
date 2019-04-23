@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bc85cbf68b893ebac3a18fa501b6c81515d40b1a
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239576"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903485"
 ---
 # <a name="bug-check-0x3a-systemunwindprevioususer"></a>Bug 检查 0x3A：系统\_展开\_上一步\_用户
 

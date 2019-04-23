@@ -4,19 +4,20 @@ description: OID_WWAN_DEVICE_CAPS_EX 是从 OID_WWAN_DEVICE_CAPS 一个相似但
 ms.assetid: BE664B41-3FE7-4E93-8739-12BD2F0AE5B8
 keywords:
 - OID_WWAN_DEVICE_CAPS_EX，每个执行器，例如设备功能的 OID
-ms.date: 08/08/2017
+ms.date: 04/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 89347328408ea03295a7c1ddc2b9d35bb4d56abe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566391"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903224"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_DEVICE\_CAPS\_EX
 
 
-OID\_WWAN\_设备\_CAP\_EX 是从一个相似但不同的 OID [OID\_WWAN\_设备\_CAPS](oid-wwan-device-caps.md)。 OID\_WWAN\_设备\_CAPS\_EX 是每个执行程序 OID。 此 OID 用于表示硬件的设备/执行程序功能，如 LTE 连接 APN 配置包括扩展的可选功能的功能。
+OID\_WWAN\_设备\_CAP\_EX 是类似于[OID\_WWAN\_设备\_CAPS](oid-wwan-device-caps.md)但是每个执行程序 OID，与 OID_WWAN_ 不同这是每个设备 OID DEVICE_CAPS。 此 OID 用于表示硬件的设备/执行程序功能，如 LTE 连接 APN 配置包括扩展的可选功能的功能。
 
 微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782396)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782401)结构，其中又包含[ **WWAN\_设备\_CAPS\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt799889)结构，以提供有关设备的功能的信息。
 
@@ -41,6 +42,16 @@ OID\_WWAN\_设备\_CAPS\_EX 也用于检索每个执行器的功能。 此 OID �
 
 在 Windows 10 版本 1703年之前的 Windows 版本仍可以使用现有[OID\_WWAN\_设备\_CAPS](oid-wwan-device-caps.md); 它们与多执行器能够调制解调器的行为不受支持的方案。 Ihv 必须定义此行为。
 
+### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+
+从 Windows 10，版本 1903，开始 OID_WWAN_DEVICE_CAPS_EX 已升级到版本 2。 微型端口驱动程序必须使用版本 2 的此 OID 和它包含如果微型端口驱动程序支持 5 个 G 的数据结构。
+
+当使用此 OID 的主机查询功能，微型端口驱动程序必须检查是否基础硬件支持 5g 移动电话功能。 如果是这样，微型端口驱动程序设置的位掩码**WwanDataClass**字段[ **WWAN_DEVICE_CAPS_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)根据硬件功能的结构。
+
+此外，在**WwanOptionalServiceCaps**字段**WWAN_DEVICE_CAPS_EX**结构，新的可选服务位定义涵盖所有新 5g 相关扩展的支持。
+
+5 G 数据类支持的详细信息，请参阅[MB 5g 数据类支持](mb-5g-data-class-support.md)。
+
 <a name="requirements"></a>要求
 ------------
 
@@ -51,7 +62,7 @@ OID\_WWAN\_设备\_CAPS\_EX 也用于检索每个执行器的功能。 此 OID �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10，版本 1703</p></td>
 </tr>
 <tr class="even">

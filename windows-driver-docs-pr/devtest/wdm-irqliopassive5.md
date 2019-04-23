@@ -1,6 +1,6 @@
 ---
 title: IrqlIoPassive5 规则 (wdm)
-description: IrqlIoPassive5 规则指定仅当在 IRQL 被动执行时，驱动程序，调用特定的 I/O 管理器例程\_级别。
+description: IrqlIoPassive5 规则指定仅当执行在 IRQL passive_level 调用时，驱动程序，调用特定的 I/O 管理器例程。
 ms.assetid: 07037cf2-37eb-4045-9588-ac10e79b9c5c
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe2f152f467b186398895aabb1d41be3788d81a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5bdcf631116fbb898c6a5c32d236ca05f046f1ff
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544446"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902919"
 ---
 # <a name="irqliopassive5-rule-wdm"></a>IrqlIoPassive5 规则 (wdm)
 
@@ -76,7 +76,7 @@ ms.locfileid: "56544446"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoGetConfigurationInformation**](https://msdn.microsoft.com/library/windows/hardware/ff549157)

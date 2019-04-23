@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c9e0cacae756da13cf48898ddb8f2ed74b59c15
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239533"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902687"
 ---
 # <a name="bug-check-0x1c-pfnreferencecount"></a>Bug 检查 0x1C：PFN\_引用\_计数
 

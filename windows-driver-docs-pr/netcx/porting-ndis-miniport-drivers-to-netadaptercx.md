@@ -1,19 +1,20 @@
 ---
-title: 移植到 NetAdapterCx NDIS 微型端口驱动程序
-description: 移植到 NetAdapterCx NDIS 微型端口驱动程序
+title: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
+description: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 ms.assetid: F5C798C6-B746-43CB-BF63-DBA7DD0975ED
 keywords:
 - 将网络适配器类扩展，移植到网络适配器 WDF 类扩展，NDIS 移植到微型端口驱动程序移植到 NetAdapterCx 6.x
-ms.date: 06/05/2017
+ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d404e1dcdf1d4b26b01873c00c1d997fcec7a701
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: b911cd1a888166419f113e34b09a7dd2da988c13
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544073"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902595"
 ---
-# <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>移植到 NetAdapterCx NDIS 微型端口驱动程序
+# <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
@@ -165,17 +166,11 @@ WDF 客户端不需要删除 NetAdapter 或任何其创建的 OID 和数据路�
 
 可以删除*MiniportShutdownEx*， *MiniportResetEx*并*MiniportCheckForHangEx*。 不再支持这些回调。
 
-## <a name="ndis-wdf-function-equivalents"></a>NDIS WDF 函数等效项
+## <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 函数等效项
 
 大多数`NdisXxx`函数可以被替换为 WDF 等效项。 一般情况下，您应发现您需要将从导入的很少功能`NDIS.SYS`。
 
 函数等效项的列表，请参阅[NDIS WDF 函数等效项](ndis-wdf-function-equivalents.md)。
-
-对于与没有 WDF 等效项的函数，客户端可以调用[ **NetAdapterWdmGetNdisHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterwdmgetndishandle)检索 NDIS_HANDLE 与 NDIS 函数一起使用。 例如：
-
-```C++
-NdisGetRssProcessorInformation(NetAdapterWdmGetNdisHandle(NetAdapter), . . .);
-```
 
 ## <a name="debugging"></a>调试
 
@@ -183,6 +178,6 @@ NdisGetRssProcessorInformation(NetAdapterWdmGetNdisHandle(NetAdapter), . . .);
 
 [！ Ndiskd.netadapter](../debugger/-ndiskd-netadapter.md)调试器扩展会显示类似的结果到什么 **！ ndiskd.miniport** NDIS 6 驱动程序的显示。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 使用本主题中的步骤，应具有有效的驱动程序的启动和停止你的设备。

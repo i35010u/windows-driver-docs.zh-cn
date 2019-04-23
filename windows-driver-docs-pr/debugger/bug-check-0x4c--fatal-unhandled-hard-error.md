@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7326b84cca01fd24fcb7dccd2ef09a43f48eb8fa
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238600"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903819"
 ---
 # <a name="bug-check-0x4c-fatalunhandledharderror"></a>Bug 检查 0x4C：致命\_未处理\_硬盘\_错误
 

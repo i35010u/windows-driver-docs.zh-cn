@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b3be72dbd6578673b4501880c2aa6ffa0c3a66f
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239456"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902305"
 ---
 # <a name="bug-check-0x13-emptythreadreaperlist"></a>Bug 检查 0x13：空\_线程\_获取器\_列表
 

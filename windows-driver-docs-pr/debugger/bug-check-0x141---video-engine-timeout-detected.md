@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9696710c1c4274e89895ddc7a8b08023e3c9b32
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239257"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903069"
 ---
 # <a name="bug-check-0x141-videoenginetimeoutdetected"></a>Bug 检查 0x141：视频\_引擎\_超时\_检测到
 

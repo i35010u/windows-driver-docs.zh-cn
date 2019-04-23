@@ -7,11 +7,11 @@ keywords:
 ms.date: 02/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 771d2674cff145f064aa960b7d18417c08aacfdf
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845559"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903659"
 ---
 # <a name="mobile-plans-service-configuration"></a>计划移动服务配置
 

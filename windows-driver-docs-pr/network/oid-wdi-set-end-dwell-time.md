@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_END_DWELL_TIME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a8769db6f39033d33e9d04d209ca782cc03809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: e1b3eef35841dd69c645649235edaf76516825d0
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568140"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903553"
 ---
 # <a name="oidwdisetenddwelltime"></a>OID\_WDI\_SET\_END\_DWELL\_TIME
 
@@ -34,7 +35,8 @@ OID\_WDI\_设置\_最终\_会仔细斟酌\_时间期间操作帧交换，通常�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

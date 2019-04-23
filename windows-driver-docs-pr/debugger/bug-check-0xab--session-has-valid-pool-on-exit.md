@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7196d3521573b4b97792400e06901721d3fe9394
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239796"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903239"
 ---
 # <a name="bug-check-0xab-sessionhasvalidpoolonexit"></a>Bug 检查 0xAB：会话\_HAS\_有效\_池\_ON\_退出
 

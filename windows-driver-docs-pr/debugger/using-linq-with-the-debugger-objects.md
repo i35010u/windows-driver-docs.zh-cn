@@ -1,76 +1,183 @@
 ---
-title: 使用 LINQ 与调试器对象
+title: 将 LINQ 与调试器对象配合使用
 description: 使用 LINQ 与调试器对象。 可以使用调试器对象使用 LINQ 语法，用于搜索和操作数据。
 keywords:
-- 使用 LINQ 与调试器对象
-ms.date: 08/10/2017
+- 将 LINQ 与调试器对象配合使用
+ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ac8dabc17e446eac28706c309d099663184d09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e3cbc22e4063fc75bd6358e6363d1f346243e78d
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519634"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902967"
 ---
-# <a name="using-linq-with-the-debugger-objects"></a>使用 LINQ 与调试器对象
+# <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
-可以使用调试器对象使用 LINQ 语法，用于搜索和操作数据。 LINQ 是从概念上讲类似到结构化查询语言 (SQL)，用于查询数据库。 许多 LINQ 方法可用于搜索、 筛选和分析调试数据。 LINQC#使用方法语法。 LINQ 和 LINQ 的详细信息的C#语法，请参阅以下主题：
+可以使用调试器对象使用 LINQ 语法，用于搜索和操作数据。 使用 LINQ 语法使用 dx 命令可以使用调试器命令相比更一致的体验。 无论你正在查看哪个调试器对象一致的输出和选项。 LINQ 查询允许您提出问题如"什么是正在运行的大多数线程前 5 个进程？"。
 
-[LINQ （语言集成查询）](https://msdn.microsoft.com/library/bb397926.aspx)
+调试器对象被投影到一个命名空间根节点的"调试器"。 进程、 模块、 线程、 堆栈、 堆栈帧和本地变量都可用于 LINQ 查询。
 
-[在 C# 中的 LINQ 入门](https://msdn.microsoft.com/library/bb397933.aspx)
+LINQ 是从概念上讲类似到结构化查询语言 (SQL)，用于查询数据库。 许多 LINQ 方法可用于搜索、 筛选和分析调试数据。 LINQC#使用方法语法。 LINQ 和 LINQ 的详细信息的C#语法，请参阅[中的 LINQ 入门C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
+
+使用中的调试器支持的 LINQ 使用 LINQ 的"方法语法"，并不是"查询语法"。 您可以找到有关之间的区别的更多详细信息[LINQ （语言集成查询）](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq)。
+
+如下所示的 LINQ 命令可以在调试器对象。 所有。任何。计数。首先。平展。GroupBy。最后。OrderBy。OrderByDescending。选择、 和。在何处。 这些方法便遵循 （尽可能） C# LINQ 方法窗体。
 
 ## <a name="native-debugger-objects"></a>本机调试器对象
 
 本机调试器对象表示各种构造和调试器环境的行为。 如调试器对象包括以下内容。
 
--   会议
--   线程 / 线程
--   进程数 / 处理
--   堆栈帧 / 堆栈帧
--   本地变量
--   模块 / 模块
--   实用程序
--   状态
--   “设置”
+- 会议
+- 线程 / 线程
+- 进程数 / 处理
+- 堆栈帧 / 堆栈帧
+- 本地变量
+- 模块 / 模块
+- 实用程序
+- 状态
+- 设置
 
-您可以使用与 NatVis 调试器对象。 有关详细信息请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。 与 JavaScript 一起使用调试器对象的信息，请参阅[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)
+此外可以使用与 NatVis 调试器对象。 有关详细信息请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。 与 JavaScript 一起使用调试器对象的信息，请参阅[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。 有关使用C++和驱动程序对象，请参阅[调试器数据模型C++概述](data-model-cpp-overview.md)。
 
 ## <a name="dx-command"></a>Dx 命令
 
 示例如下所示使用 dx 命令，使用 dx 命令中，有关详细信息，请参阅[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)。
 
+## <a name="developing-a-linq-query"></a>开发 LINQ 查询
 
-## <a name="function-objects-lambda-expressions"></a>函数对象 （Lambda 表达式）
+开发 LINQ 调试器对象查询的一种方法是使用将显示，以浏览数据模型，以首先找到将使用的调试器对象在查询中的 DML 链接。
 
-许多用于查询数据的方法都基于重复运行用户提供跨集合中的对象的函数的概念。 若要支持查询和操作调试器中的数据的能力，dx 命令支持使用等效的 lambda 表达式C#语法。 Lambda 表达式定义的使用情况 =&gt;运算符，如下所示：
+对于此示例中，我们想要显示的进程的列表中的内核调试会话和线程数为每个这些进程。
 
-（参数） =&gt; （结果）
-
-若要查看如何将 LINQ 用于 dx，请尝试此简单示例 5 和 7 一起添加。
+若要开始我们的探索我们可以使用 dx 命令显示顶部级别调试器对象。
 
 ```dbgcmd
-kd> dx ((x, y) => (x + y))(5, 7) 
+0: kd> dx Debugger
+Debugger
+    Sessions
+    Settings
+    State
+    Utility
 ```
 
-Dx 命令回显返回 lambda 表达式，并显示结果 12。
+单击后的最高级别主题，我们确定，因此我们单击以显示它包含的 DML 链接的外观最有趣的是，会话*进程*。 
 
 ```dbgcmd
-((x, y) => (x + y))(5, 7)  : 12
+0: kd> dx -r1 Debugger.Sessions[0]
+Debugger.Sessions[0]                 : Remote KD: KdSrv:Server=@{<Local>},Trans=@{NET:Port=50005,Key=MyKey}
+    Processes
+    Id               : 0
+    Attributes
 ```
 
-此示例中 lambda 表达式将字符串"Hello"和"World"。
+然后我们单击进一步向下查看特定进程和我们看到*线程*与关联进程都可用。 当我们单击*线程*进程之一，我们查看与该进程关联的线程的所有可用。
+
 
 ```dbgcmd
-kd> dx ((x, y) => (x + y))("Hello", "World")
-((x, y) => (x + y))("Hello", "World") : HelloWorld
+0: kd> dx -r1 Debugger.Sessions[0].Processes[1428].Threads
+Debugger.Sessions[0].Processes[1428].Threads
+    [0x598]          : <Unable to get stack trace> [Switch To]
+    [0x1220]         : <Unable to get stack trace> [Switch To]
+    [0x6f8]          : nt!KiSwapContext+0x76 (fffff806`4466a186)  [Switch To]
+    [0x128c]         : <Unable to get stack trace> [Switch To]
+    [0x27e4]         : nt!KiSwapContext+0x76 (fffff806`4466a186)  [Switch To] 
+```
+
+现在，我们知道，我们需要显示与进程关联的线程数的数据是在调试器对象模型中可用。
+
+若要使 LINQ 查询稍有较短，我们可以使用[系统定义的变量](#system-defined-variables)以显示与当前会话相关联的过程本主题后面所述。
+
+```dbgcmd
+0: kd> dx @$cursession.Processes
+@$cursession.Processes                
+    [0x0]            : Idle [Switch To]
+    [0x4]            : System [Switch To]
+    [0x90]           : Registry [Switch To]
+...
+```
+
+接下来添加 select 语句。 开始时，我们可以指定名称字段。
+
+```dbgcmd
+0: kd> dx @$cursession.Processes.Select(p => p.Name)
+@$cursession.Processes.Select(p => p.Name)                
+    [0x0]            : Idle
+    [0x4]            : System
+    [0x90]           : Registry
+...
+```
+
+对于我们的方案，我们还需要线程的数。 由于有两个字段，创建匿名类型使用*新*，类似于C#的匿名类型语法如下所述中[用户定义的变量](#user-defined-variables)。
+
+```dbgcmd
+dx @$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})
+```
+
+使用该命令时，dx 不实际打印出的名称不再，因此添加-r2 （recurse 两个级别），以显示名称和线程。
+
+```dbgcmd
+dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})
+@$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})                
+    [0x0]           
+        Name             : Idle
+        Threads         
+    [0x4]           
+        Name             : System
+        Threads         
+    [0x90]          
+        Name             : Registry
+        Threads       
+```
+
+现在我们要显示的进程名称和主题的列表。 若要显示 ThreadCount，请使用 *。Count （)* 方法。
+
+
+```dbgcmd
+0: kd> dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()})
+@$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()})                
+    [0x0]           
+        Name             : Idle
+        ThreadCount      : 0x4
+    [0x4]           
+        Name             : System
+        ThreadCount      : 0xe7
+    [0x90]          
+        Name             : Registry
+        ThreadCount      : 0x4
+...
+```
+
+若要查看哪些进程拥有大量的线程，对列表排序时使用线程计数*OrderByDescending*。
+
+```dbgcmd
+0: kd> dx -r2 @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount)
+@$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount)                
+    [0x4]           
+        Name             : System
+        ThreadCount      : 0xe7
+    [0xa38]         
+        Name             : svchost.exe
+        ThreadCount      : 0x45
+    [0x884]         
+        Name             : MemCompression
+        ThreadCount      : 0x3e
+```
+
+ 若要格式化的网格更改中呈现-r2 是-g。 不需级别的递归不指定，因为网格选项会相应地显示的列。 最后，添加，d 格式说明符，以输出十进制值。
+
+```dbgcmd
+0: kd> dx -g @$cursession.Processes.Select(p => new {Name = p.Name, ThreadCount = p.Threads.Count()}).OrderByDescending(p => p.ThreadCount),d
+===========================================================================================
+=            = Name                                                         = ThreadCount =
+===========================================================================================
+= [4]        - System                                                       - 231         =
+= [2616]     - svchost.exe                                                  - 69          =
+= [2180]     - MemCompression                                               - 62          =
+= [968]      - explorer.exe                                                 - 61          =
 ```
 
 ## <a name="debugger-objects-examples"></a>调试器对象示例
-
-调试器对象被投影到一个命名空间根节点的"调试器"。 进程、 模块、 线程、 堆栈、 堆栈帧和本地变量都可用于 LINQ 查询。
-
-可以使用 LINQ 命令，如下所示。所有。任何。计数。首先。平展。GroupBy。最后。OrderBy。OrderByDescending。选择、 和。在何处。 这些方法便遵循 （尽可能） C# LINQ 方法窗体。
 
 此示例显示了正在运行的大多数线程前 5 个进程：
 
@@ -201,18 +308,6 @@ kd> dx -r2 @$mySessionVar
         Processes        : 
         Devices     
 ```
-
-**用户定义的变量的匿名类型**
-
-完成此创建动态对象使用C#匿名类型语法 （新 {...}）。 有关更多信息，请参见有关匿名类型，请参阅[匿名类型 (C#编程指南)](https://msdn.microsoft.com/library/bb397696.aspx)。 本示例创建一个匿名类型包含整数和字符串值。
-
-```dbgcmd
-kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
-new { MyInt = 42, MyString = "Hello World" } : 
-    MyInt            : 42
-    MyString         : Hello World
-```
-
 ## <a name="system-defined-variables"></a>系统定义的变量
 
 可以在任何 LINQ dx 查询中使用以下系统定义变量。
@@ -239,6 +334,44 @@ kd> dx -r1 @$curprocess.Threads
     [0x62d8]         : 
      ...
 ```
+
+## <a name="user-defined-variables---anonymous-types"></a>用户定义的变量的匿名类型
+
+完成此创建动态对象使用C#匿名类型语法 （新 {...}）。 有关更多信息，请参见有关匿名类型，请参阅[匿名类型 (C#编程指南)](https://msdn.microsoft.com/library/bb397696.aspx)。 本示例创建一个匿名类型包含整数和字符串值。
+
+```dbgcmd
+kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
+new { MyInt = 42, MyString = "Hello World" } : 
+    MyInt            : 42
+    MyString         : Hello World
+```
+
+
+## <a name="function-objects-lambda-expressions"></a>函数对象 （Lambda 表达式）
+
+许多用于查询数据的方法都基于重复运行用户提供跨集合中的对象的函数的概念。 若要支持查询和操作调试器中的数据的能力，dx 命令支持使用等效的 lambda 表达式C#语法。 Lambda 表达式定义的使用情况 =&gt;运算符，如下所示：
+
+（参数） =&gt; （结果）
+
+若要查看如何将 LINQ 用于 dx，请尝试此简单示例 5 和 7 一起添加。
+
+```dbgcmd
+kd> dx ((x, y) => (x + y))(5, 7) 
+```
+
+Dx 命令回显返回 lambda 表达式，并显示结果 12。
+
+```dbgcmd
+((x, y) => (x + y))(5, 7)  : 12
+```
+
+此示例中 lambda 表达式将字符串"Hello"和"World"。
+
+```dbgcmd
+kd> dx ((x, y) => (x + y))("Hello", "World")
+((x, y) => (x + y))("Hello", "World") : HelloWorld
+```
+
 
 ## <a name="supported-linq-syntax---query-methods"></a>支持 LINQ 语法的查询方法
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 58b4afa6f412871af2b6f84dc0a9af9003d42a91
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238410"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903339"
 ---
 # <a name="bug-check-0x28-corruptaccesstoken"></a>Bug 检查 0x28：损坏\_访问\_令牌
 

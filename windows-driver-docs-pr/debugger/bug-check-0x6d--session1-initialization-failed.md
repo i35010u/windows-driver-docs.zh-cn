@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 623f69c399af907dea23286c3c80248877f01b9b
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239830"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903159"
 ---
 # <a name="bug-check-0x6d-session1initializationfailed"></a>Bug 检查 0x6D：SESSION1\_初始化\_失败
 

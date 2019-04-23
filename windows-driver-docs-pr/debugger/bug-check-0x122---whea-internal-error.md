@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8df990b5334833c4911dcc8c3a459ff565d4a892
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238880"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902341"
 ---
 # <a name="bug-check-0x122-wheainternalerror"></a>Bug 检查 0x122：WHEA\_INTERNAL\_ERROR
 
@@ -120,7 +120,7 @@ WHEA\_内部\_错误 bug 检查的值为 0x00000122。 此 bug 检查指示已�
 
 如果参数 1 为 0x6、 0x9、 0xA 或 0xB，其他参数之一包含错误源类型。 下表给出的错误源类型的可能的值。
 
-| ReplTest1 | 描述                          |
+| 值 | 描述                          |
 |-------|--------------------------------------|
 | 0x00  | 计算机检查异常              |
 | 0x01  | 更正计算机检查              |

@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_RECEIVE_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c3689ef12a32c38a5ae424b28a1d3b0357778eed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 33ab217bbd200c6e7236e245438967c3921044b5
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576720"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59902847"
 ---
 # <a name="oidwdisetreceivepacketfilter"></a>OID\_WDI\_SET\_RECEIVE\_PACKET\_FILTER
 
@@ -39,7 +40,8 @@ OID\_WDI\_设置\_接收\_数据包\_筛选器定义来指示给定的虚拟化�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

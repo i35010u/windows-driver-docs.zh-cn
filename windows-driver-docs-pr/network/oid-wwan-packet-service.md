@@ -2,15 +2,16 @@
 title: OID_WWAN_PACKET_SERVICE
 description: OID_WWAN_PACKET_SERVICE 用于指示微型端口驱动程序为基于 GSM 的和基于 CDMA 的 MB 设备的当前已注册提供程序的网络上执行数据包服务附加/分离操作。
 ms.assetid: 97bb9324-8052-437c-baa5-fb9a8176c779
-ms.date: 08/08/2017
+ms.date: 04/04/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_PACKET_SERVICE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c83ca3648779e5bef04503c4f30f5b73c34a6c81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8150c4c70c7669b19256212929081eb95eb90a7b
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564094"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903499"
 ---
 # <a name="oidwwanpacketservice"></a>OID\_WWAN\_PACKET\_SERVICE
 
@@ -36,6 +37,16 @@ OID\_WWAN\_数据包\_服务用来指示微型端口驱动程序为基于 GSM �
 
 之前已达到数据包服务状态，MB 服务应继续上下文激活*WwanPacketServiceStateAttached*。
 
+### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+
+在 Windows 10，版本 1903年开始支持此 OID 的新修订版本 2。 该扩展使宿主能够查询中的调制解调器当前操作系统 5g 中的频率范围。
+
+主机可以查询在任何时间的扩展的数据包服务状态信息。 响应是修订版 1，与相同，只不过修订版本 2 有两个新字段。
+
+如果调制解调器在 5g 域中注册，则返回的承运人的 5g 频率范围。 如果存在多个 5g 运营商，则返回所有的有效范围。
+
+5 G 数据类支持的详细信息，请参阅[MB 5g 数据类支持](mb-5g-data-class-support.md)。
+
 <a name="requirements"></a>要求
 ------------
 
@@ -46,7 +57,7 @@ OID\_WWAN\_数据包\_服务用来指示微型端口驱动程序为基于 GSM �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

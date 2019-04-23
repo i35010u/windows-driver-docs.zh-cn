@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a10692220e22a2605faedcf4f92b440142106510
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238404"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903223"
 ---
 # <a name="bug-check-0xb8-attemptedswitchfromdpc"></a>Bug 检查 0xB8：尝试\_交换机\_FROM\_DPC
 
