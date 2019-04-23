@@ -4,12 +4,13 @@ description: 本部分包含 WDI 任务 Oid。
 ms.assetid: CAA92CA5-5CD6-4705-AA4C-54C1AA83ACA3
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d85ce06ea85c3517dac7248cf650a46e5aef39f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: b99c3dbfda943f467f7b26b7e20b7b529323b08c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564483"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903923"
 ---
 # <a name="wdi-task-oids"></a>WDI 任务 OID
 
@@ -35,7 +36,7 @@ Wi-fi 驱动程序接口 (WDI) 对象标识符 (Oid) 仅适用于实现 WDI 的�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“属性”</th>
+<th>名称</th>
 <th>Q</th>
 <th>S</th>
 <th>M</th>
@@ -115,48 +116,54 @@ Wi-fi 驱动程序接口 (WDI) 对象标识符 (Oid) 仅适用于实现 WDI 的�
 <td><p>O</p></td>
 </tr>
 <tr class="odd">
+<td><p><a href="oid-wdi-task-request-ftm.md" data-raw-source="[OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)">OID_WDI_TASK_REQUEST_FTM</a></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="even">
 <td><p><a href="oid-wdi-task-roam.md" data-raw-source="[OID_WDI_TASK_ROAM](oid-wdi-task-roam.md)">OID_WDI_TASK_ROAM</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>R</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><a href="oid-wdi-task-scan.md" data-raw-source="[OID_WDI_TASK_SCAN](oid-wdi-task-scan.md)">OID_WDI_TASK_SCAN</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>R</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p><a href="oid-wdi-task-send-ap-association-response.md" data-raw-source="[OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE](oid-wdi-task-send-ap-association-response.md)">OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>O</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><a href="oid-wdi-task-send-request-action-frame.md" data-raw-source="[OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME](oid-wdi-task-send-request-action-frame.md)">OID_WDI_TASK_SEND_REQUEST_ACTION_FRAME</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>O</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p><a href="oid-wdi-task-send-response-action-frame.md" data-raw-source="[OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME](oid-wdi-task-send-response-action-frame.md)">OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>O</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><a href="oid-wdi-task-set-radio-state.md" data-raw-source="[OID_WDI_TASK_SET_RADIO_STATE](oid-wdi-task-set-radio-state.md)">OID_WDI_TASK_SET_RADIO_STATE</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>R</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p><a href="oid-wdi-task-start-ap.md" data-raw-source="[OID_WDI_TASK_START_AP](oid-wdi-task-start-ap.md)">OID_WDI_TASK_START_AP</a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p>O</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><a href="oid-wdi-task-stop-ap.md" data-raw-source="[OID_WDI_TASK_STOP_AP](oid-wdi-task-stop-ap.md)">OID_WDI_TASK_STOP_AP</a></p></td>
 <td><p></p></td>
 <td><p></p></td>

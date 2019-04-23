@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_CLEAR_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bd0172db3f03d96a1897d671e85c986559aba64d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 8112b2bd06cb569387d0d34a9a09cdae600ab8ce
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521471"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904015"
 ---
 # <a name="oidwdisetclearreceivecoalescing"></a>OID\_WDI\_SET\_CLEAR\_RECEIVE\_COALESCING
 
@@ -37,7 +38,8 @@ OID\_WDI\_设置\_清除\_接收\_主机使用 COALESCING 若要删除数据包�
 
 
 没有其他数据。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -55,13 +57,13 @@ OID\_WDI\_设置\_清除\_接收\_主机使用 COALESCING 若要删除数据包�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_SET\_RECEIVE\_COALESCING](oid-wdi-set-receive-coalescing.md)

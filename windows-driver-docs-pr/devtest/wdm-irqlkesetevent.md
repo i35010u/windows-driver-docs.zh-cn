@@ -1,6 +1,6 @@
 ---
 title: IrqlKeSetEvent 规则 (wdm)
-description: IrqlKeSetEvent 规则指定在 IRQL 调度仅调用 KeSetEvent 例程\_级别等待设置为 FALSE，或在 IRQL APC 时\_级别时等待设置为 TRUE。
+description: IrqlKeSetEvent 规则指定当等待时，设置为 FALSE，而在 IRQL APC_LEVEL 等待设置为 TRUE 时，KeSetEvent 例程仅调用在 IRQL DISPATCH_LEVEL。
 ms.assetid: 6274c70c-f61c-4e48-8ee9-a68107158cce
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d06c99ab53e1de62a53e8d8857dfcafe0b07d41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4cc60a67b1b24e1c548b6784977ccc670a6807a6
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523438"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903919"
 ---
 # <a name="irqlkesetevent-rule-wdm"></a>IrqlKeSetEvent 规则 (wdm)
 
@@ -76,7 +76,7 @@ ms.locfileid: "56523438"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**KeSetEvent**](https://msdn.microsoft.com/library/windows/hardware/ff553253)

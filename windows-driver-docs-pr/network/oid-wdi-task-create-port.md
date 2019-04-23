@@ -6,19 +6,20 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CREATE_PORT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a2b1188ddcbe273b9148d56f7ebb3d1b69f867b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: c218861294d13130d5529d9c60c55e122102ab84
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544773"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904001"
 ---
 # <a name="oidwditaskcreateport"></a>OID\_WDI\_TASK\_CREATE\_PORT
 
 
 OID\_WDI\_任务\_创建\_端口请求，IHV 组件，创建新的 802.11 实体。
 
-| 对象  | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object  | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |---------|---------------|---------------------------------------|---------------------------------|
 | 适配器 | 否            | 6                                     | 1                               |
 
@@ -68,7 +69,9 @@ OID\_WDI\_任务\_创建\_端口请求，IHV 组件，创建新的 802.11 实体
 ## <a name="task-completion-indication"></a>指示任务完成
 
 
-[NDIS\_状态\_WDI\_指示\_创建\_端口\_完成](ndis-status-wdi-indication-create-port-complete.md)要求
+[NDIS\_状态\_WDI\_指示\_创建\_端口\_完成](ndis-status-wdi-indication-create-port-complete.md)
+
+<a name="requirements"></a>要求
 ------------
 
 <table>
@@ -86,7 +89,7 @@ OID\_WDI\_任务\_创建\_端口请求，IHV 组件，创建新的 802.11 实体
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

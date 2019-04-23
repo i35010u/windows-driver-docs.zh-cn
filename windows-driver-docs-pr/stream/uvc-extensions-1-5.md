@@ -1,14 +1,15 @@
 ---
 title: USB 视频类 1.5 规范的 Microsoft 扩展
 description: 介绍新控件，以及执行标准的格式定义完善的框架元数据的功能使 USB 视频类 1.5 规范的 Microsoft 扩展。
-ms.date: 01/30/2018
+ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb7158b1c37ee59e0a00755f96ef56e8c9052385
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.custom: rs5, 19H1
+ms.openlocfilehash: 8a88e66f7f7d8fe90bd55bfdbc783b17c659a693
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419575"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904021"
 ---
 # <a name="microsoft-extensions-to-usb-video-class-15-specification"></a>USB 视频类 1.5 规范的 Microsoft 扩展
 
@@ -150,9 +151,9 @@ GET_DEF 要求：默认值为**bmControlFlags**应 D0 设置为 1 并**qwValue**
 
 对于 GET_CUR/SET_CUR 请求，以下限制适用于字段**bmControlFlags**:
 
--   在 D0、 D1 和 D2 位之间应设置至少一位。
+- 在 D0、 D1 和 D2 位之间应设置至少一位。
 
--   D1 是与 D0 和 D2 不兼容。
+- D1 是与 D0 和 D2 不兼容。
 
 ##### <a name="2224-ev-compensation-control"></a>2.2.2.4 EV 补偿控件
 
@@ -232,13 +233,54 @@ GET_RES、 GET_MIN、 GET_MAX，GET_CUR 请求应报告字段**bNumEntries**设�
 
 GET_DEF 请求应列出具有可用的内部函数信息的所有终结点。
 
+##### <a name="22210-metadata-control"></a>2.2.2.10 元数据控件
+
+此控件允许主机软件来查询和控制元数据生成的照相机。 这是影响所有视频流式处理与视频控件接口关联的接口上的所有终结点的全局控件。 此控件获取映射到[ **KSPROPERTY_CAMERACONTROL_EXTENDED_METADATA** ](ksproperty-cameracontrol-extended-metadata.md)照相机驱动程序。
+
+![元数据控件](images/uvc-1-15-metadata-control.png)
+
+如果固件支持 SET_CUR 请求，则执行以下操作：
+
+- GET_MIN，GET_DEF 请求应报告字段 dwValue 设置为 0。
+- GET_RES 请求应报告字段 dwValue GET_MAX 请求报告是相同的值。
+- 收到 SET_CUR 请求时使用 dwValue 设置为 0，照相机应不会产生任何元数据。 DwValue 设置为相同的值，报告的 GET_MAX 请求与收到 SET_CUR 请求时，照相机可以生成元数据，且此类元数据的大小不能超过任何帧 dwValue。
+
+如果固件不支持 SET_CUR 请求，执行以下操作：
+
+- GET_MIN，GET_DEF 请求应报告字段 dwValue GET_MAX 请求报告是相同的值。
+- GET_RES 请求应报告字段 dwValue 设置为 0。
+- 照相机可以生成元数据，此类元数据的总大小不能超过任何帧的 dwValue-所报告的 GET_MAX 请求 – 时间 UsbVideoHeader 元数据负载的大小小于 1024 字节。  
+- UsbVideoHeader 元数据有效负载是 sizeof(KSCAMERA_METADATA_ITEMHEADER) + sizeof(KSTREAM_UVC_METADATA) 或 24 个字节。
+生成的元数据应符合 Microsoft 标准格式元数据部分 2.2.3 中所述。
+
+##### <a name="22211-ir-torch-control"></a>2.2.2.11 IR Torch 控件
+
+此控件提供了灵活的方式来报告到的它可以控制并提供能够对其进行控制的范围内的红外线 （ir) LED 硬件。  这是影响所有视频流式处理通过调整连接到摄像机 IR lamp 强大功能与视频控件接口关联的接口上的所有终结点的全局控件。 此控件获取映射到[ **KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE** ](ksproperty-cameracontrol-extended-irtorchmode.md)照相机驱动程序。
+
+![IR Torch 控件](images/uvc-1-15-irtorch-control.png)
+
+执行以下操作：
+
+- GET_LEN 请求应报告值为 8。
+- GET_INFO 请求应报告 3。  此值指示支持 GET_CUR 和 SET_CUR 的同步控件。
+- GET_MIN 请求应报告字段 dwMode 设置为 0，dwValue 设置为一个值，该值最小电能。  功率级别为 0，则可能 OFF，但最小可操作的电源级别不需要是 0。
+- GET_RES 请求应报告设置为 0 dwValue 组字段 dwMode 到的数字小于或等于 GET_MAX(dwValue) – GET_MIN(dwValue) 等该 GET_MAX(dwValue) – GET_MIN(dwValue) 是整除的值。  dwValue 可能不是零 (0)。
+- GET_MAX 请求应报告字段 dwMode 与 D [0-2] 设置了位集能够识别此控件的功能。  dwMode 必须具有 D0 设置位，指示支持 OFF，则它必须具有至少一个其他位设置、 支持活动状态。  dwValue 必须设置为一个值，指示正常启动。
+- GET_DEF 请求应报告字段 dwMode 设置为流式处理开始之前，系统应采用的默认模式。  dwMode 必须设置为 2 (ON) 或 4 （交替）。  dwValue 应设置为 FaceAuth 控件通常使用的电源级别。  dwValue 由制造商定义。
+- GET_CUR 请求应报告字段 dwMode 设置为当前操作模式和 dwValue 设置为当前照明。
+- 当收到 SET_CUR 请求时，IR Torch 将设置为使用请求的操作模式为 prorate 强度的照明。
+
+必须发出 IR Torch [ **MF_CAPTURE_METADATA_FRAME_ILLUMINATION** ](standardized-extended-controls-.md)每个帧的属性。  它可以通过设备 MFT 或包括提供这**MetadataId_FrameIllumination**照相机中的元数据有效负载中的属性。  请参阅部分 2.2.3.4.4。  
+
+此元数据的唯一用途是指示框架或不点亮。  这是不同的元数据所需[ **KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE** ](ksproperty-cameracontrol-extended-faceauth-mode.md) DDI 而**MSXU_FACE_AUTHENTICATION_CONTROL**部分中定义2.2.2.7。  
+
 #### <a name="223-metadata"></a>2.2.3 元数据
 
-对于标准格式的帧的元数据设计基于从 Windows 10 的 UVC 自定义元数据设计。 在 Windows 10 中，自定义元数据支持 UVC 的照相机的驱动程序使用自定义 INF (注意： 照相机驱动程序可以基于 Windows USBVIDEO。SYS，但自定义 INF 是必需的元数据通过给定的硬件）。 如果 MetadataBufferSizeInKB<PinIndex>注册表项是否存在并且非零，然后输入该 pin 支持自定义元数据值指示用于元数据的缓冲区大小。 <PinIndex>字段指示视频 pin 索引 0 开始的索引。
+对于标准格式的帧的元数据设计基于从 Windows 10 的 UVC 自定义元数据设计。 在 Windows 10 中，自定义元数据支持 UVC 的照相机的驱动程序使用自定义 INF (注意： 照相机驱动程序可以基于 Windows USBVIDEO。SYS，但自定义 INF 是必需的元数据通过给定的硬件）。 如果`MetadataBufferSizeInKB<PinIndex>`注册表项是否存在并且非零，然后输入该 pin 支持自定义元数据值指示用于元数据的缓冲区大小。 `<PinIndex>`字段指示视频 pin 索引 0 开始的索引。
 
 在 Windows 10，版本 1703，照相机驱动程序，可以通过包括以下 AddReg 条目发出对 Microsoft 标准格式的元数据的支持：
 
-**StandardFormatMetadata<PinIndex>**:REG_DWORD:0x0 (NotSupported) 为 0x1 （支持）
+`StandardFormatMetadata<PinIndex>`：REG_DWORD:0x0 (NotSupported) 为 0x1 （支持）
 
 此注册表项将由 DevProxy 读取，并告知元数据的标准格式通过 KSSTREAM_METADATA_INFO 结构标志字段中设置标志 KSSTREAM_METADATA_INFO_FLAG_STANDARDFORMAT UVC 驱动程序。
 
@@ -329,7 +371,7 @@ typedef enum {
 
 - 当 SCR 位设置 BFH [0] 字段中存在 SCR 字段。 请参阅部分 2.4.3.3*视频和仍映像有效负载标头*中*视频设备的 USB 设备类定义*规范。
 
-现有 UVC 驱动程序中的 HLE 字段被固定到 2 个字节 (没有 PTS/SCR 存在) 或最多 12 个字节 (PTS/SCR 存在)。 但是，HLE 字段中，在的字节大小字段中，可能可以指定最多 255 个字节的标头数据。 如果这两个 PTS/SCR 存在，且大于 12 个字节 HLE isgreater，的下列负载标头的前 12 个字节作为标准元数据的特定于视频选取任何额外的数据帧时 INF 条目*StandardFormatMetadata<PinIndex>* 设置。
+现有 UVC 驱动程序中的 HLE 字段被固定到 2 个字节 (没有 PTS/SCR 存在) 或最多 12 个字节 (PTS/SCR 存在)。 但是，HLE 字段中，在的字节大小字段中，可能可以指定最多 255 个字节的标头数据。 如果这两个 PTS/SCR 存在，且大于 12 个字节 HLE isgreater，的下列负载标头的前 12 个字节作为标准元数据的特定于视频选取任何额外的数据帧时 INF 条目`StandardFormatMetadata<PinIndex>`设置。
 
 标准格式生成的元数据 （固件） 帧被通过串联的视频帧数据包，表示该范围中找到的部分 blob。
 
@@ -428,6 +470,7 @@ typedef struct tagKSCAMERA_METADATA_FRAMEILLUMINATION {
     ULONG Reserved;
 } KSCAMERA_METADATA_FRAMEILLUMINATION, *PKSCAMERA_METADATA_FRAMEILLUMINATION;
 ```
+
 **标志**字段指示有关捕获的帧的信息。 目前，定义以下标志：
 
 ```cpp
@@ -437,6 +480,3 @@ typedef struct tagKSCAMERA_METADATA_FRAMEILLUMINATION {
 如果在捕获帧时当照明上时，该标志 KSCAMERA_METADATA_FRAMEILLUMINATION_FLAG_ON 应设置。 否则，不应设置此标志。
 
 **保留**字段是保留供将来使用，应设置为 0。
-
-
-

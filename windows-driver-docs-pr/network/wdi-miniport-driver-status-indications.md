@@ -4,19 +4,20 @@ description: 本部分包含 WDI 状态通知。
 ms.assetid: CD873C33-72ED-4F99-A584-5C307F4FB65E
 ms.date: 07/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ddbec0ca3e046b0c68d7c068930e1dd409c14f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 98b98138951000335e1447f230688a4a772ab531
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525100"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903969"
 ---
 # <a name="wdi-miniport-driver-status-indications"></a>WDI 微型端口驱动程序状态指示
 
 
 本部分包含 WDI 状态通知。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [NDIS\_STATUS\_WDI\_INDICATION\_ACTION\_FRAME\_RECEIVED](ndis-status-wdi-indication-action-frame-received.md)
@@ -50,8 +51,10 @@ ms.locfileid: "56525100"
 -   [NDIS\_STATUS\_WDI\_INDICATION\_P2P\_SEND\_REQUEST\_ACTION\_FRAME\_COMPLETE](ndis-status-wdi-indication-p2p-send-request-action-frame-complete.md)
 -   [NDIS\_STATUS\_WDI\_INDICATION\_P2P\_SEND\_RESPONSE\_ACTION\_FRAME\_COMPLETE](ndis-status-wdi-indication-p2p-send-response-action-frame-complete.md)
 -   [NDIS\_状态\_WDI\_指示\_单选\_状态](ndis-status-wdi-indication-radio-status.md)
+-   [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)
 -   [NDIS\_状态\_WDI\_指示\_漫游\_完成](ndis-status-wdi-indication-roam-complete.md)
 -   [NDIS\_状态\_WDI\_指示\_漫游\_需执行](ndis-status-wdi-indication-roaming-needed.md)
+-   [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)
 -   [NDIS\_状态\_WDI\_指示\_扫描\_完成](ndis-status-wdi-indication-scan-complete.md)
 -   [NDIS\_状态\_WDI\_指示\_发送\_AP\_关联\_响应\_完成](ndis-status-wdi-indication-send-ap-association-response-complete.md)
 -   [NDIS\_STATUS\_WDI\_INDICATION\_SEND\_REQUEST\_ACTION\_FRAME\_COMPLETE](ndis-status-wdi-indication-send-request-action-frame-complete.md)

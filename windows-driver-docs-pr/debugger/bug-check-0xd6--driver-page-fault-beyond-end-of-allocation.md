@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 38deede965ff4eca12381d2b3f36f8c5a9c61ad4
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239538"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903911"
 ---
 # <a name="bug-check-0xd6-driverpagefaultbeyondendofallocation"></a>Bug 检查 0xD6：驱动程序\_页上\_容错\_超出\_最终\_OF\_分配
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e8373d377191fc7c735244a64f777a672c9395
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239196"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59904027"
 ---
 # <a name="bug-check-0x178-elamdriverdetectedfatalerror"></a>Bug 检查 0x178：ELAM\_DRIVER\_DETECTED\_FATAL\_ERROR
 

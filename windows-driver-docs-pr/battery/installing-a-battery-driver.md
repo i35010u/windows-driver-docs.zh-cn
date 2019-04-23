@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c8f35af8987f85a66fc647377dfa48ead17e5a5
-ms.sourcegitcommit: 1a1a78575e89bf8cd713bf1dac8a698db3cddfe2
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58845523"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903975"
 ---
 # <a name="installing-a-battery-driver"></a>安装电池驱动程序
 

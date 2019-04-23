@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/15/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f54fcbcdefaf32e22ed359c16acf1b74a571f81
-ms.sourcegitcommit: 624427449978a8a82e77a3a31b9e22e3263793ae
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055722"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903973"
 ---
 # <a name="mobile-plans-windows-10-device-experience"></a>计划 Windows 10 的移动设备体验
 
@@ -109,7 +109,7 @@ ms.locfileid: "59055722"
 
 从计划移动服务到 mobile 提供程序的终结点的每个请求中，可能包含以下标头。
 
-| 标头名称 | 值 | 描述 |
+| 标头名称 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | X-MS-DM-TransactionId | 字符串 | 若要唯一标识此请求/响应交互之间移动计划服务和月服务 TransactionId。 |
 | 授权 （可选） | 字符串 | 密苏里州 （可选） 提供一个基本身份验证字符串 |
@@ -142,7 +142,7 @@ GET https://{moBaseUrl}/sims/{sim id}/balances?fieldsTemplate=basic&limit=1&loca
 
 查询参数：
 
-| 查询参数名称 | ReplTest1 | 描述 |
+| 查询参数名称 | 值 | 描述 |
 | --- | --- | --- |
 | 位置 | 字符串 | 可选。 用户余额正在查询的位置。 如果未指定，应所有活动的余额。 **请注意**位置参数是区分大小写。 |
 | limit | 整型 |可选。 要返回的余额的最大计数。 如果未指定，则应返回所有余额。 |

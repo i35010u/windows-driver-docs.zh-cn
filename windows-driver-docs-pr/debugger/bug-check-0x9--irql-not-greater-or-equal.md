@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fd774edc1112649047a8e722a9b867eb1ba85d12
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59238591"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903917"
 ---
 # <a name="bug-check-0x9-irqlnotgreaterorequal"></a>Bug 检查 0x9：IRQL\_NOT\_GREATER\_OR\_EQUAL
 

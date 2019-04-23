@@ -6,12 +6,13 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_REMOVE_PM_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e9460fcc63c3928d7dea6cf6cb0ee32c59d65162
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: cd9b833495e236c3a542f98495f9eb840504a06c
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576461"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903971"
 ---
 # <a name="oidwdisetremovepmprotocoloffload"></a>OID\_WDI\_SET\_REMOVE\_PM\_PROTOCOL\_OFFLOAD
 
@@ -37,7 +38,8 @@ OID\_WDI\_设置\_删除\_PM\_协议\_卸载中删除协议卸载由协议指定
 
 
 任何其他参数。 标头中的数据就足够了。
-要求
+
+<a name="requirements"></a>要求
 ------------
 
 <table>

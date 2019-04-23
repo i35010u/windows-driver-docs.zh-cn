@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 26d4ec2f80b48166957f6fa7c4892f82dc54d21e
-ms.sourcegitcommit: 55d7f63bb9e7668d65aa0999e65d18fabd44758e
+ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59239150"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59903921"
 ---
 # <a name="bug-check-0x10-spinlocknotowned"></a>Bug 检查 0x10：旋转\_锁\_不\_拥有的
 
