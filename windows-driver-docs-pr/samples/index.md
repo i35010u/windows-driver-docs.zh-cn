@@ -7,11 +7,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 52200de5f240034823d2201b4f92ae6438c5d6d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391918"
 ---
 # <a name="windows-driver-samples"></a>Windows 驱动程序示例
 
@@ -20,7 +20,7 @@ ms.locfileid: "56465419"
 
 可以从 [Windows 硬件开发人员中心](https://go.microsoft.com/fwlink/p/?LinkId=616506)下载 [Windows 8 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616509)和 [Windows 8.1 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)。 对于 Windows 7 及更早版本，示例和文档包括在 Windows 驱动程序工具包 (WDK) 或驱动程序开发工具包 (DDK) 中。
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 
 -   [音频驱动程序示例](audio-driver-samples.md)

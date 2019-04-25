@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 95b4c9591a701c1a16b80590addb7eee35d2acf9
-ms.sourcegitcommit: 239b10612b3ddb6702dc16490566069cc3aa1c6c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "56465633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371261"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 

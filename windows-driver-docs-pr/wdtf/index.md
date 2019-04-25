@@ -7,18 +7,18 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 9c20abe50214fffb98f1c5709d3a16cbe408680a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338976"
 ---
 # <a name="windows-device-testing-framework-wdtf-design-guide"></a>Windows 设备测试框架 (WDTF) 设计指南
 
 
 使用 Microsoft Windows 设备测试框架 (WDTF)，你可以创建、管理、重用和扩展以设备为中心、基于方案的自动化测试。
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 
 <table>

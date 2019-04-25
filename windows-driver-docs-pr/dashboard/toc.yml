@@ -1,208 +1,201 @@
-items:
 - name: Windows 硬件合作伙伴中心
   href: index.md
   items:
-  - name: 硬件计划仪表板常见问题
-    href: hardware-dashboard-faq.md
-  - name: 硬件提交
-    href: hardware-certification-submissions.md
-    items:
-    - name: 创建新硬件提交
-      href: create-a-new-hardware-submission.md
-    - name: 管理硬件提交
-      href: manage-your-hardware-submissions.md
-    - name: 查找硬件提交
-      href: find-hardware-submission.md
-    - name: 创建新的 WLK 设备认证提交
-      href: create-a-new-hardware-logo-submission.md
+    - name: 硬件计划仪表板常见问题
+      href: hardware-dashboard-faq.md
+    - name: 硬件提交
+      href: hardware-certification-submissions.md
       items:
-      - name: Winqual 提交工具 (winqual.exe)
-        href: winqual-submission-tool--winqualexe-.md
-    - name: 'ID 定义 '
-      href: id-definitions.md
-    - name: 对内核驱动程序进行证明签名以便公开发布
-      href: attestation-signing-a-kernel-driver-for-public-release.md
-    - name: 如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序
-      href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
-    - name: 驱动程序外部测试
-      href: driver-flighting.md
-    - name: 使用扩展 INF 文件
-      href: submit-dashboard-extension-inf-files.md
-    - name: Bug 管理
-      href: bug-management.md
-  - name: 使用发货标签管理驱动程序分发
-    href: manage-driver-distribution-by-submission.md
-    items:
-    - name: 发布限制
-      href: publishing-restrictions.md
-    - name: 将驱动程序发布到 Windows 更新
-      href: publish-a-driver-to-windows-update.md
-    - name: 了解适用于驱动程序分发的 Windows 更新自动和可选规则
-      href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
-    - name: 与合作伙伴共享驱动程序
-      href: sharing-drivers-with-your-partners.md
-    - name: 通过 Windows 更新使驱动程序过期
-      href: expire-a-driver-from-windows-update.md
-    - name: 查看共享驱动程序的合作伙伴发货标签
-      href: viewing-shipping-labels-for-your-shared-driver.md
-    - name: 使用计算机硬件 ID (CHID)
-      href: using-chids.md
-    - name: 使用扩展 INF 文件
-      href: submit-dashboard-extension-inf-files.md
-    - name: 按 Windows 版本限制驱动程序分发
-      href: limit-driver-distribution.md
-    - name: 发布测试分发
-      href: publishing-for-test-distribution.md
-  - name: 硬件仪表板 API
-    href: dashboard-api.md
-    items:
-    - name: 获取产品数据
-      href: get-product-data.md
+        - name: 创建新硬件提交
+          href: create-a-new-hardware-submission.md
+        - name: 管理硬件提交
+          href: manage-your-hardware-submissions.md
+        - name: 查找硬件提交
+          href: find-hardware-submission.md
+        - name: 创建新的 WLK 设备认证提交
+          href: create-a-new-hardware-logo-submission.md
+          items:
+            - name: Winqual 提交工具 (winqual.exe)
+              href: winqual-submission-tool--winqualexe-.md
+        - name: 'ID 定义 '
+          href: id-definitions.md
+        - name: 对内核驱动程序进行证明签名以便公开发布
+          href: attestation-signing-a-kernel-driver-for-public-release.md
+        - name: 如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序
+          href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
+        - name: 驱动程序外部测试
+          href: driver-flighting.md
+        - name: 使用扩展 INF 文件
+          href: submit-dashboard-extension-inf-files.md
+        - name: Bug 管理
+          href: bug-management.md
+    - name: 使用发货标签管理驱动程序分发
+      href: manage-driver-distribution-by-submission.md
       items:
-      - name: 获取所有产品
-        href: get-all-products.md
-      - name: 获取一个产品
-        href: get-a-product.md
-      - name: 获取所有提交
-        href: get-all-submissions.md
-      - name: 获取一个提交
-        href: get-a-submission.md
-    - name: 管理产品提交
-      href: manage-product-submissions.md
+        - name: 发布限制
+          href: publishing-restrictions.md
+        - name: 将驱动程序发布到 Windows 更新
+          href: publish-a-driver-to-windows-update.md
+        - name: 了解适用于驱动程序分发的 Windows 更新自动和可选规则
+          href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
+        - name: 与合作伙伴共享驱动程序
+          href: sharing-drivers-with-your-partners.md
+        - name: 通过 Windows 更新使驱动程序过期
+          href: expire-a-driver-from-windows-update.md
+        - name: 查看共享驱动程序的合作伙伴发货标签
+          href: viewing-shipping-labels-for-your-shared-driver.md
+        - name: 使用计算机硬件 ID (CHID)
+          href: using-chids.md
+        - name: 使用扩展 INF 文件
+          href: submit-dashboard-extension-inf-files.md
+        - name: 按 Windows 版本限制驱动程序分发
+          href: limit-driver-distribution.md
+        - name: 发布测试分发
+          href: publishing-for-test-distribution.md
+    - name: 硬件仪表板 API
+      href: dashboard-api.md
       items:
-      - name: 创建新产品
-        href: create-a-new-product.md
-      - name: 为产品创建新的提交
-        href: create-a-new-submission-for-a-product.md
-      - name: 确认产品提交
-        href: commit-a-product-submission.md
-      - name: 更新提交数据
-        href: update-submission-data.md
-      - name: 更新产品数据
-        href: update-product-data.md
-    - name: 获取发货标签数据
-      href: get-shipping-labels.md
+        - name: 获取产品数据
+          href: get-product-data.md
+          items:
+            - name: 获取所有产品
+              href: get-all-products.md
+            - name: 获取一个产品
+              href: get-a-product.md
+            - name: 获取所有提交
+              href: get-all-submissions.md
+            - name: 获取一个提交
+              href: get-a-submission.md
+        - name: 管理产品提交
+          href: manage-product-submissions.md
+          items:
+            - name: 创建新产品
+              href: create-a-new-product.md
+            - name: 为产品创建新的提交
+              href: create-a-new-submission-for-a-product.md
+            - name: 确认产品提交
+              href: commit-a-product-submission.md
+            - name: 更新提交数据
+              href: update-submission-data.md
+            - name: 更新产品数据
+              href: update-product-data.md
+        - name: 获取发货标签数据
+          href: get-shipping-labels.md
+          items:
+            - name: 获取所有发货标签
+              href: get-all-shipping-labels.md
+            - name: 获取发货标签
+              href: get-a-shipping-label.md
+        - name: 管理发货标签
+          href: manage-shipping-labels.md
+          items:
+            - name: 创建新的发货标签
+              href: create-a-new-shipping-label.md
+            - name: 更新发货标签
+              href: update-a-shipping-label.md
+        - name: 获取受众数据
+          href: get-audience-data.md
+        - name: 驱动程序包元数据
+          href: driver-package-metadata.md
+        - name: 计划自定义报告来提供驱动程序失败详细信息
+          href: schedule-custom-reports-for-driver-failure-details.md
+          items:
+            - name: 启用安全数据共享
+              href: enable-secure-data-sharing.md
+            - name: 创建新的报告模板
+              href: create-a-new-report-template.md
+            - name: 计划新报告
+              href: schedule-a-new-report.md
+            - name: 获取报告数据
+              href: get-report-data.md
+            - name: 下载失败的 Cab
+              href: download-failure-cabs.md
+        - name: 管理报告模板和计划报告
+          href: manage-report-templates-and-scheduled-reports.md
+        - name: 示例报告模板
+          href: sample-report-templates.md
+        - name: 旧的错误报告数据过程
+          href: legacy-error-reporting-data-process.md
+          items:
+            - name: 获取 Windows 10 驱动程序的错误报告数据
+              href: get-error-reporting-data-for-windows-10-drivers.md
+              items:
+                - name: 获取 Windows 10 驱动程序错误的详细信息
+                  href: get-details-for-a-windows-10-driver-error.md
+                - name: 下载 Windows 10 驱动程序错误的 CAB 文件
+                  href: download-the-cab-file-for-a-windows-10-driver-error.md
+            - name: 获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据
+              href: get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md
+              items:
+                - name: 获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
+                  href: get-details-for-a-windows-7-or-windows-8.x-driver-error.md
+                - name: 下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件
+                  href: download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md
+            - name: 获取 OEM 硬件错误报告数据
+              href: get-oem-hardware-error-reporting-data.md
+              items:
+                - name: 获取 OEM 硬件错误的详细信息
+                  href: get-details-for-an-oem-hardware-error.md
+                - name: 下载 OEM 硬件错误的 CAB 文件
+                  href: download-the-cab-file-for-an-oem-hardware-error.md
+    - name: 文件签名 LSA 插件和 UEFI 固件
+      href: lsa-and-uefi-file-signing.md
+    - name: 仪表板管理
+      href: dashboard-administration.md
       items:
-      - name: 获取所有发货标签
-        href: get-all-shipping-labels.md
-      - name: 获取发货标签
-        href: get-a-shipping-label.md
-    - name: 管理发货标签
-      href: manage-shipping-labels.md
+        - name: 硬件计划入门
+          href: get-started-with-the-hardware-dashboard.md
+        - name: 注册硬件计划
+          href: register-for-the-hardware-program.md
+        - name: 驱动程序故障报告
+          href: driver-failure-reporting.md
+        - name: 添加或删除用户
+          href: adding-or-removing-users.md
+        - name: 管理用户角色
+          href: managing-user-roles.md
+        - name: 获取代码签名证书
+          href: get-a-code-signing-certificate.md
+        - name: 添加或更新代码签名证书
+          href: update-a-code-signing-certificate.md
+    - name: 设备元数据
+      href: device-metadata.md
       items:
-      - name: 创建新的发货标签
-        href: create-a-new-shipping-label.md
-      - name: 更新发货标签
-        href: update-a-shipping-label.md
-    - name: 获取受众数据
-      href: get-audience-data.md
-    - name: 驱动程序包元数据
-      href: driver-package-metadata.md
-    - name: 计划自定义报告来提供驱动程序失败详细信息
-      href: schedule-custom-reports-for-driver-failure-details.md
-      items:
-      - name: 启用安全数据共享
-        href: enable-secure-data-sharing.md
-      - name: 创建新的报告模板
-        href: create-a-new-report-template.md
-      - name: 计划新报告
-        href: schedule-a-new-report.md
-      - name: 获取报告数据
-        href: get-report-data.md
-      - name: 下载失败的 Cab
-        href: download-failure-cabs.md
-    - name: 管理报告模板和计划报告
-      href: manage-report-templates-and-scheduled-reports.md
-    - name: 示例报告模板
-      href: sample-report-templates.md
-    - name: 旧的错误报告数据过程
-      href: legacy-error-reporting-data-process.md
-      items:
-      - name: 获取 Windows 10 驱动程序的错误报告数据
-        href: get-error-reporting-data-for-windows-10-drivers.md
-        items:
-        - name: 获取 Windows 10 驱动程序错误的详细信息
-          href: get-details-for-a-windows-10-driver-error.md
-        - name: 下载 Windows 10 驱动程序错误的 CAB 文件
-          href: download-the-cab-file-for-a-windows-10-driver-error.md
-      - name: 获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据
-        href: get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md
-        items:
-        - name: 获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
-          href: get-details-for-a-windows-7-or-windows-8.x-driver-error.md
-        - name: 下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件
-          href: download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md
-      - name: 获取 OEM 硬件错误报告数据
-        href: get-oem-hardware-error-reporting-data.md
-        items:
-        - name: 获取 OEM 硬件错误的详细信息
-          href: get-details-for-an-oem-hardware-error.md
-        - name: 下载 OEM 硬件错误的 CAB 文件
-          href: download-the-cab-file-for-an-oem-hardware-error.md
-  - name: 文件签名 LSA 插件和 UEFI 固件
-    href: lsa-and-uefi-file-signing.md
-  - name: 仪表板管理
-    href: dashboard-administration.md
-    items:
-    - name: 硬件计划入门
-      href: get-started-with-the-hardware-dashboard.md
-    - name: 注册硬件计划
-      href: register-for-the-hardware-program.md
-    - name: 驱动程序故障报告
-      href: driver-failure-reporting.md
-    - name: 添加或删除用户
-      href: adding-or-removing-users.md
-    - name: 管理用户角色
-      href: managing-user-roles.md
-    - name: 获取代码签名证书
-      href: get-a-code-signing-certificate.md
-    - name: 添加或更新代码签名证书
-      href: update-a-code-signing-certificate.md
-  - name: 设备元数据
-    href: device-metadata.md
-    items:
-    - name: 创建设备元数据体验
-      href: create-a-device-metadata-experience.md
-      items:
-      - name: 创建预览程序包
-        href: creating-a-preview-package.md
-    - name: 管理设备元数据体验
-      href: manage-device-metadata-experiences.md
-    - name: 提交设备元数据包（仪表板帮助）
-      href: submit-a-device-metadata-package--dashboard-help-.md
-      items:
-      - name: 创建 LocaleInfo.xml 提交文件
-        href: create-the-localeinfoxml-submission-file.md
-      - name: 提交电脑设备清单包
-        href: submit-a-pc-device-manifest-package.md
-      - name: 提交移动宽带设备清单包
-        href: submit-a-mobile-broadband-device-manifest-package.md
-      - name: 提交多区域设置设备清单包
-        href: submit-a-multiple-locale-device-manifest-package.md
-      - name: 提交批量元数据包
-        href: submit-a-bulk-metadata-package.md
-      - name: 提交设备元数据体验时的错误和解决方案
-        href: errors-and-solutions-when-submitting-device-metadata-experiences.md
-    - name: 设备元数据业务规则
-      href: device-metadata-business-rules.md
-    - name: 创建移动宽带体验
-      href: create-a-mobile-broadband-experience.md
-      items:
-      - name: 开发人员模式和预览模式
-        href: developer-and-preview-mode.md
-      - name: 服务图标要求
-        href: service-icon-requirements.md
-      - name: 服务编号
-        href: service-number.md
-      - name: 受信任的证书
-        href: trusted-certificates.md
-  - name: Windows 设备体验列表
-    href: windows-device-experience-list.md
-  - name: Windows 认证产品列表
-    href: windows-certified-products-list.md
-ms.openlocfilehash: 07d08bf8429e394890d1ff37e4d3d74e702ee01c
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560606"
+        - name: 创建设备元数据体验
+          href: create-a-device-metadata-experience.md
+          items:
+            - name: 创建预览程序包
+              href: creating-a-preview-package.md
+        - name: 管理设备元数据体验
+          href: manage-device-metadata-experiences.md
+        - name: 提交设备元数据包（仪表板帮助）
+          href: submit-a-device-metadata-package--dashboard-help-.md
+          items:
+            - name: 创建 LocaleInfo.xml 提交文件
+              href: create-the-localeinfoxml-submission-file.md
+            - name: 提交电脑设备清单包
+              href: submit-a-pc-device-manifest-package.md
+            - name: 提交移动宽带设备清单包
+              href: submit-a-mobile-broadband-device-manifest-package.md
+            - name: 提交多区域设置设备清单包
+              href: submit-a-multiple-locale-device-manifest-package.md
+            - name: 提交批量元数据包
+              href: submit-a-bulk-metadata-package.md
+            - name: 提交设备元数据体验时的错误和解决方案
+              href: errors-and-solutions-when-submitting-device-metadata-experiences.md
+        - name: 设备元数据业务规则
+          href: device-metadata-business-rules.md
+        - name: 创建移动宽带体验
+          href: create-a-mobile-broadband-experience.md
+          items:
+            - name: 开发人员模式和预览模式
+              href: developer-and-preview-mode.md
+            - name: 服务图标要求
+              href: service-icon-requirements.md
+            - name: 服务编号
+              href: service-number.md
+            - name: 受信任的证书
+              href: trusted-certificates.md
+    - name: Windows 设备体验列表
+      href: windows-device-experience-list.md
+    - name: Windows 认证产品列表
+      href: windows-certified-products-list.md

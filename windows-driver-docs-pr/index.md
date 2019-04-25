@@ -9,11 +9,11 @@ ms.topic: landing-page
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 18925bb8f93296690f3d8a05ccdb0b52058e3b42
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375771"
 ---
 # <a name="windows-driver-kit-documentation"></a>Windows 驱动程序工具包文档
 

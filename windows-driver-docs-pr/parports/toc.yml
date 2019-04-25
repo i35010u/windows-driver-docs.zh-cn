@@ -1,75 +1,68 @@
-items:
 - name: 并行设备设计指南
   href: index.md
   items:
-  - name: 并行端口和设备简介
-    href: introduction-to-parallel-ports-and-devices.md
-    items:
-    - name: 并行端口的物理配置
-      href: physical-configuration-of-parallel-ports.md
-    - name: 连接到并行端口的设备的物理配置
-      href: physical-configuration-of-devices-attached-to-a-parallel-port.md
-  - name: 系统提供的并行驱动程序
-    href: system-supplied-parallel-drivers.md
-    items:
-    - name: 系统提供的并行驱动程序的功能
-      href: features-of-system-supplied-parallel-drivers.md
-    - name: 并行端口和设备的设备堆栈
-      href: device-stacks-for-parallel-ports-and-devices.md
-    - name: 并行设备接口、内部名称和符号链接
-      href: parallel-device-interfaces--internal-names--and-symbolic-links.md
-    - name: 对并行端口和设备的 IOCTL 和回调支持
-      href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
-  - name: 供应商提供的并行驱动程序
-    href: vendor-supplied-parallel-drivers.md
-    items:
-    - name: 对供应商提供的并行驱动程序的要求
-      href: requirements-for-vendor-supplied-parallel-drivers.md
-    - name: 打开并行端口
-      href: operating-a-parallel-port.md
+    - name: 并行端口和设备简介
+      href: introduction-to-parallel-ports-and-devices.md
       items:
-      - name: 创建和启动并行端口
-        href: creating-and-starting-a-parallel-port.md
-      - name: 打开和关闭并行端口
-        href: opening-and-closing-a-parallel-port.md
-      - name: 获取有关并行端口的信息
-        href: obtaining-information-about-a-parallel-port.md
-      - name: 同步并行端口的使用
-        href: synchronizing-the-use-of-a-parallel-port.md
-      - name: 选择和取消选择连接到并行端口的 IEEE 1284 设备
-        href: selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md
-      - name: 设置和清除并行端口上的通信模式
-        href: setting-and-clearing-the-communication-mode-on-a-parallel-port.md
-      - name: 连接到 IEEE 1284.3 数据链路设备
-        href: connecting-to-an-ieee-1284-3-data-link-device.md
-      - name: 将中断服务例程连接到并行端口
-        href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
-    - name: 打开连接到并行端口的并行设备
-      href: operating-a-parallel-device-attached-to-a-parallel-port.md
+        - name: 并行端口的物理配置
+          href: physical-configuration-of-parallel-ports.md
+        - name: 连接到并行端口的设备的物理配置
+          href: physical-configuration-of-devices-attached-to-a-parallel-port.md
+    - name: 系统提供的并行驱动程序
+      href: system-supplied-parallel-drivers.md
       items:
-      - name: 打开和使用并行设备
-        href: opening-and-using-a-parallel-device.md
-      - name: 连接到并行设备
-        href: connecting-to-a-parallel-device.md
-      - name: 获取有关并行设备的信息
-        href: obtaining-information-about-a-parallel-device.md
-      - name: 锁定和解锁供并行设备使用的并行端口
-        href: locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md
-      - name: 设置和清除并行设备的通信模式
-        href: setting-and-clearing-a-communication-mode-for-a-parallel-device.md
-      - name: 在并行设备上设置属性
-        href: setting-attributes-on-a-parallel-device.md
-      - name: 向并行设备进行读取和写入
-        href: reading-and-writing-a-parallel-device.md
-      - name: 针对并行设备的 I/O 请求的特定于设备的操作
-        href: device-specific-operations-io-requests-parallel-devices.md
-      - name: 针对并行端口的 I/O 请求的特定于设备的操作
-        href: device-specific-operations-io-requests-parallel-ports.md
-    - name: 安装并行端口和设备
-      href: installing-parallel-ports-and-devices.md
-ms.openlocfilehash: 6ed156d6f36999c23bbb94b7df0d0de351a816cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465448"
+        - name: 系统提供的并行驱动程序的功能
+          href: features-of-system-supplied-parallel-drivers.md
+        - name: 并行端口和设备的设备堆栈
+          href: device-stacks-for-parallel-ports-and-devices.md
+        - name: 并行设备接口、内部名称和符号链接
+          href: parallel-device-interfaces--internal-names--and-symbolic-links.md
+        - name: 对并行端口和设备的 IOCTL 和回调支持
+          href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
+    - name: 供应商提供的并行驱动程序
+      href: vendor-supplied-parallel-drivers.md
+      items:
+        - name: 对供应商提供的并行驱动程序的要求
+          href: requirements-for-vendor-supplied-parallel-drivers.md
+        - name: 打开并行端口
+          href: operating-a-parallel-port.md
+          items:
+            - name: 创建和启动并行端口
+              href: creating-and-starting-a-parallel-port.md
+            - name: 打开和关闭并行端口
+              href: opening-and-closing-a-parallel-port.md
+            - name: 获取有关并行端口的信息
+              href: obtaining-information-about-a-parallel-port.md
+            - name: 同步并行端口的使用
+              href: synchronizing-the-use-of-a-parallel-port.md
+            - name: 选择和取消选择连接到并行端口的 IEEE 1284 设备
+              href: selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md
+            - name: 设置和清除并行端口上的通信模式
+              href: setting-and-clearing-the-communication-mode-on-a-parallel-port.md
+            - name: 连接到 IEEE 1284.3 数据链路设备
+              href: connecting-to-an-ieee-1284-3-data-link-device.md
+            - name: 将中断服务例程连接到并行端口
+              href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
+        - name: 打开连接到并行端口的并行设备
+          href: operating-a-parallel-device-attached-to-a-parallel-port.md
+          items:
+            - name: 打开和使用并行设备
+              href: opening-and-using-a-parallel-device.md
+            - name: 连接到并行设备
+              href: connecting-to-a-parallel-device.md
+            - name: 获取有关并行设备的信息
+              href: obtaining-information-about-a-parallel-device.md
+            - name: 锁定和解锁供并行设备使用的并行端口
+              href: locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md
+            - name: 设置和清除并行设备的通信模式
+              href: setting-and-clearing-a-communication-mode-for-a-parallel-device.md
+            - name: 在并行设备上设置属性
+              href: setting-attributes-on-a-parallel-device.md
+            - name: 向并行设备进行读取和写入
+              href: reading-and-writing-a-parallel-device.md
+            - name: 针对并行设备的 I/O 请求的特定于设备的操作
+              href: device-specific-operations-io-requests-parallel-devices.md
+            - name: 针对并行端口的 I/O 请求的特定于设备的操作
+              href: device-specific-operations-io-requests-parallel-ports.md
+        - name: 安装并行端口和设备
+          href: installing-parallel-ports-and-devices.md

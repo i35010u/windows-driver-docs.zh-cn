@@ -1,4 +1,3 @@
-items:
 - name: 传感器设备驱动程序设计指南
   href: index.md
 - name: 传感器中的新增功能
@@ -8,327 +7,321 @@ items:
 - name: Windows 传感器驱动程序功能
   href: windows-sensor-driver-features.md
   items:
-  - name: 传感器 ACPI 条目
-    href: sensors-acpi-entries.md
-  - name: 通用传感器驱动程序参考
-    href: sensor-universal-driver-reference.md
-    items:
-    - name: 传感器阈值
-      href: sensor-thresholds-v2.md
+    - name: 传感器 ACPI 条目
+      href: sensors-acpi-entries.md
+    - name: 通用传感器驱动程序参考
+      href: sensor-universal-driver-reference.md
       items:
-      - name: 加速计阈值
-        href: accelerometer-thresholds.md
-      - name: 磁力计阈值
-        href: magnetometer-thresholds.md
-      - name: 陀螺仪阈值
-        href: gyroscope-thresholds.md
-      - name: 方向传感器阈值
-        href: orientation-sensor-thresholds.md
-      - name: 光传感器阈值
-        href: light-sensor-thresholds.md
-      - name: 邻近感应传感器阈值
-        href: proximity-sensor-thresholds.md
-    - name: 帮助程序函数的封送处理
-      href: marshalling-helper-functions.md
-      items:
-      - name: 时间戳帮助程序
-        href: timestamp-helper.md
-      - name: PropVariant 帮助程序
-        href: propvariant-helpers.md
-      - name: 集合列表帮助程序
-        href: collection-list-helpers.md
-      - name: 集合列表序列化帮助程序
-        href: collection-list-serialization-helpers.md
-      - name: 集合列表旧版帮助程序
-        href: collection-list-legacy-helpers.md
-    - name: 传感器类型
-      href: sensor-types.md
-    - name: 传感器类别
-      href: sensor-categories.md
-    - name: 传感器数据字段
-      href: sensor-data-fields.md
-      items:
-      - name: 常见数据字段
-        href: common-data-fields.md
-      - name: 加速计数据字段
-        href: accelerometer-data-fields.md
-      - name: 线性加速计数据字段
-        href: linear-accelerometer-data-fields.md
-      - name: 磁力计数据字段
-        href: magnetometer-data-fields.md
-      - name: 地磁方向
-        href: geomagnetic-orientation.md
-      - name: 重力矢量数据字段
-        href: gravity-vector-data-fields.md
-      - name: 陀螺仪数据字段
-        href: gyroscope-data-fields.md
-      - name: 光传感器数据字段
-        href: light-sensor-data-fields.md
-      - name: 方向传感器数据字段
-        href: device-orientation-sensor-data-fields.md
-      - name: 邻近感应传感器数据字段
-        href: proximity-sensor-data-fields.md
-      - name: 气压计数据字段
-        href: barometer-sensor-data-fields.md
-      - name: 简单设备方向传感器数据字段
-        href: simple-device-orientation-sensor-data-fields.md
-      - name: 活动检测传感器数据字段
-        href: activity-detection-sensor-data-fields.md
-      - name: 计步器数据字段
-        href: pedometer-data-fields.md
-      - name: 相对方向传感器数据字段
-        href: relative-orientation-data-fields.md
-      - name: 自定义传感器数据字段
-        href: custom-sensor-data-fields.md
-    - name: 传感器属性
-      href: sensor-properties2.md
-      items:
-      - name: 通用传感器属性
-        href: common-sensor-properties.md
-      - name: 枚举属性
-        href: enumeration-properties.md
-      - name: 其他传感器属性
-        href: other-sensor-properties.md
-        items:
-        - name: 邻近感应传感器属性
-          href: proximity-sensor-property.md
-        - name: 光传感器属性
-          href: light-sensor-property.md
-        - name: 方向传感器属性
-          href: orientation-sensor-property.md
-        - name: 活动传感器属性
-          href: activity-sensor-properties.md
-        - name: 计步器传感器属性
-          href: pedometer-sensor-property.md
-      - name: 数据字段属性
-        href: data-field-properties.md
-        items:
-        - name: 必需数据字段属性
-          href: required-data-field-properties.md
+        - name: 传感器阈值
+          href: sensor-thresholds-v2.md
+          items:
+            - name: 加速计阈值
+              href: accelerometer-thresholds.md
+            - name: 磁力计阈值
+              href: magnetometer-thresholds.md
+            - name: 陀螺仪阈值
+              href: gyroscope-thresholds.md
+            - name: 方向传感器阈值
+              href: orientation-sensor-thresholds.md
+            - name: 光传感器阈值
+              href: light-sensor-thresholds.md
+            - name: 邻近感应传感器阈值
+              href: proximity-sensor-thresholds.md
+        - name: 帮助程序函数的封送处理
+          href: marshalling-helper-functions.md
+          items:
+            - name: 时间戳帮助程序
+              href: timestamp-helper.md
+            - name: PropVariant 帮助程序
+              href: propvariant-helpers.md
+            - name: 集合列表帮助程序
+              href: collection-list-helpers.md
+            - name: 集合列表序列化帮助程序
+              href: collection-list-serialization-helpers.md
+            - name: 集合列表旧版帮助程序
+              href: collection-list-legacy-helpers.md
+        - name: 传感器类型
+          href: sensor-types.md
+        - name: 传感器类别
+          href: sensor-categories.md
+        - name: 传感器数据字段
+          href: sensor-data-fields.md
+          items:
+            - name: 常见数据字段
+              href: common-data-fields.md
+            - name: 加速计数据字段
+              href: accelerometer-data-fields.md
+            - name: 线性加速计数据字段
+              href: linear-accelerometer-data-fields.md
+            - name: 磁力计数据字段
+              href: magnetometer-data-fields.md
+            - name: 地磁方向
+              href: geomagnetic-orientation.md
+            - name: 重力矢量数据字段
+              href: gravity-vector-data-fields.md
+            - name: 陀螺仪数据字段
+              href: gyroscope-data-fields.md
+            - name: 光传感器数据字段
+              href: light-sensor-data-fields.md
+            - name: 方向传感器数据字段
+              href: device-orientation-sensor-data-fields.md
+            - name: 邻近感应传感器数据字段
+              href: proximity-sensor-data-fields.md
+            - name: 气压计数据字段
+              href: barometer-sensor-data-fields.md
+            - name: 简单设备方向传感器数据字段
+              href: simple-device-orientation-sensor-data-fields.md
+            - name: 活动检测传感器数据字段
+              href: activity-detection-sensor-data-fields.md
+            - name: 计步器数据字段
+              href: pedometer-data-fields.md
+            - name: 相对方向传感器数据字段
+              href: relative-orientation-data-fields.md
+            - name: 自定义传感器数据字段
+              href: custom-sensor-data-fields.md
+        - name: 传感器属性
+          href: sensor-properties2.md
+          items:
+            - name: 通用传感器属性
+              href: common-sensor-properties.md
+            - name: 枚举属性
+              href: enumeration-properties.md
+            - name: 其他传感器属性
+              href: other-sensor-properties.md
+              items:
+                - name: 邻近感应传感器属性
+                  href: proximity-sensor-property.md
+                - name: 光传感器属性
+                  href: light-sensor-property.md
+                - name: 方向传感器属性
+                  href: orientation-sensor-property.md
+                - name: 活动传感器属性
+                  href: activity-sensor-properties.md
+                - name: 计步器传感器属性
+                  href: pedometer-sensor-property.md
+            - name: 数据字段属性
+              href: data-field-properties.md
+              items:
+                - name: 必需数据字段属性
+                  href: required-data-field-properties.md
 - name: 编程指南
   href: programming-guide-v2.md
   items:
-  - name: 如何生成通用传感器驱动程序
-    href: how-to-build-a-universal-sensor-driver.md
-    items:
-    - name: 设置开发环境
-      href: set-up-your-development-environment.md
-    - name: 准备传感器测试板
-      href: prepare-your-sensor-test-board.md
-    - name: 将传感器连接到 Sharks Cove 板
-      href: connect-your-sensor-to-the-sharks-cove-board.md
-    - name: 编写和部署通用传感器驱动程序
-      href: write-and-deploy-your-universal-sensor-driver.md
+    - name: 如何生成通用传感器驱动程序
+      href: how-to-build-a-universal-sensor-driver.md
       items:
-      - name: 使驱动程序可加载
-        href: make-the-driver-loadable.md
-      - name: 连接到硬件
-        href: connect-to-hardware.md
-      - name: 从硬件中读取数据
-        href: read-data-from-hardware.md
-      - name: 查看 INX 文件
-        href: review-and-revise-the-inf-file.md
-        items:
-        - name: 创建移动包
-          href: creating-a-mobile-package.md
-      - name: 生成传感器驱动程序
-        href: build-the-sensor-driver.md
-      - name: 安装传感器驱动程序
-        href: install-the-sensor-driver.md
-      - name: 创建适用于传感器的永久唯一标识符
-        href: creating-a-persistent-unique-identifier-v2.md
-    - name: 测试通用传感器驱动程序
-      href: test-your-universal-sensor-driver.md
-    - name: 收集和解码 WPP 日志
-      href: collecting-and-decoding-wpp-logs.md
-  - name: 为了节能而对传感器数据进行批处理
-    href: sensor-batching-for-power-saving-.md
-  - name: 筛选数据
-    href: filtering-data-v2.md
-  - name: 定义传感器常量的自定义值
-    href: defining-custom-values-for-constants-v2.md
-  - name: 融合传感器实现详细信息
-    href: fusion-sensor-implementation-details.md
+        - name: 设置开发环境
+          href: set-up-your-development-environment.md
+        - name: 准备传感器测试板
+          href: prepare-your-sensor-test-board.md
+        - name: 将传感器连接到 Sharks Cove 板
+          href: connect-your-sensor-to-the-sharks-cove-board.md
+        - name: 编写和部署通用传感器驱动程序
+          href: write-and-deploy-your-universal-sensor-driver.md
+          items:
+            - name: 使驱动程序可加载
+              href: make-the-driver-loadable.md
+            - name: 连接到硬件
+              href: connect-to-hardware.md
+            - name: 从硬件中读取数据
+              href: read-data-from-hardware.md
+            - name: 查看 INX 文件
+              href: review-and-revise-the-inf-file.md
+              items:
+                - name: 创建移动包
+                  href: creating-a-mobile-package.md
+            - name: 生成传感器驱动程序
+              href: build-the-sensor-driver.md
+            - name: 安装传感器驱动程序
+              href: install-the-sensor-driver.md
+            - name: 创建适用于传感器的永久唯一标识符
+              href: creating-a-persistent-unique-identifier-v2.md
+        - name: 测试通用传感器驱动程序
+          href: test-your-universal-sensor-driver.md
+        - name: 收集和解码 WPP 日志
+          href: collecting-and-decoding-wpp-logs.md
+    - name: 为了节能而对传感器数据进行批处理
+      href: sensor-batching-for-power-saving-.md
+    - name: 筛选数据
+      href: filtering-data-v2.md
+    - name: 定义传感器常量的自定义值
+      href: defining-custom-values-for-constants-v2.md
+    - name: 融合传感器实现详细信息
+      href: fusion-sensor-implementation-details.md
 - name: 在 Windows 中测试传感器硬件、驱动程序和应用程序
   href: testing-sensor-landing.md
   items:
-  - name: 生成光测试工具
-    href: testing-MALT-building-a-light-testing-tool.md
-    items:
-    - name: 测试系统亮度响应
-      href: testing-MALT-system-brightness-response.md
-    - name: 测试自动亮度
-      href: testing-MALT-auto-brightness.md
-    - name: 测试手动亮度
-      href: testing-MALT-manual-brightness.md
-    - name: 测试系统方案
-      href: testing-MALT-system-scenarios.md
-    - name: 微型控制器命令
-      href: testing-MALT-microcontroller-commands.md
+    - name: 生成光测试工具
+      href: testing-MALT-building-a-light-testing-tool.md
+      items:
+        - name: 测试系统亮度响应
+          href: testing-MALT-system-brightness-response.md
+        - name: 测试自动亮度
+          href: testing-MALT-auto-brightness.md
+        - name: 测试手动亮度
+          href: testing-MALT-manual-brightness.md
+        - name: 测试系统方案
+          href: testing-MALT-system-scenarios.md
+        - name: 微型控制器命令
+          href: testing-MALT-microcontroller-commands.md
 - name: Windows 8.1 的传感器驱动程序模型
   href: sensor-driver-model-for-windows-8-1.md
   items:
-  - name: Windows 8.1 的全新传感器功能和改进
-    href: new-sensor-features-and-improvements-for-windows-8-1.md
-  - name: 设计指南
-    href: sensor-driver-design-guide.md
-    items:
-    - name: 入门
-      href: getting-started.md
+    - name: Windows 8.1 的全新传感器功能和改进
+      href: new-sensor-features-and-improvements-for-windows-8-1.md
+    - name: 设计指南
+      href: sensor-driver-design-guide.md
       items:
-      - name: Windows 中的传感器和位置平台简介
-        href: introduction-to-the-sensor-and-location-platform-in-windows.md
-    - name: 传感器驱动程序概述
-      href: sensor-driver-overview.md
-      items:
-      - name: 体系结构概述
-        href: architecture-overview-for-sensor-drivers.md
-      - name: 关于传感器类扩展
-        href: about-the-sensor-class-extension.md
-      - name: 关于接口
-        href: about-the-interfaces.md
-        items:
-        - name: 关于 ISensorClassExtension
-          href: about-isensorclassextension.md
-        - name: 关于 ISensorDriver
-          href: about-isensordriver.md
-        - name: 关于参数类型
-          href: about-the-parameter-types.md
-      - name: 关于传感器驱动程序事件
-        href: about-sensor-driver-events.md
-      - name: 关于传感器常量
-        href: about-sensor-constants.md
-        items:
-        - name: 事件常量
-          href: event-constants.md
-        - name: 传感器属性
-          href: sensor-properties.md
-        - name: 传感器图标常量
-          href: sensor-icon-constants.md
-        - name: 传感器类别、类型和数据字段
-          href: sensor-categories--types--and-data-fields.md
+        - name: 入门
+          href: getting-started.md
           items:
-          - name: SENSOR_CATEGORY_ALL
-            href: sensor-category-all.md
-          - name: SENSOR_CATEGORY_BIOMETRIC
-            href: sensor-category-biometric.md
-          - name: SENSOR_CATEGORY_ELECTRICAL
-            href: sensor-category-electrical.md
-          - name: SENSOR_CATEGORY_ENVIRONMENTAL
-            href: sensor-category-environmental.md
-          - name: SENSOR_CATEGORY_LIGHT
-            href: sensor-category-light.md
-          - name: SENSOR_CATEGORY_LOCATION
-            href: sensor-category-loc.md
-          - name: SENSOR_CATEGORY_MECHANICAL
-            href: sensor-category-mechanical.md
-          - name: SENSOR_CATEGORY_MOTION
-            href: sensor-category-motion.md
-          - name: SENSOR_CATEGORY_ORIENTATION
-            href: sensor-category-orientation.md
-          - name: SENSOR_CATEGORY_SCANNER
-            href: sensor-category-scanner.md
-  - name: 编程指南
-    href: programming-guide.md
-    items:
-    - name: 传感器驱动程序开发基础知识
-      href: sensor-driver-development-basics.md
+            - name: Windows 中的传感器和位置平台简介
+              href: introduction-to-the-sensor-and-location-platform-in-windows.md
+        - name: 传感器驱动程序概述
+          href: sensor-driver-overview.md
+          items:
+            - name: 体系结构概述
+              href: architecture-overview-for-sensor-drivers.md
+            - name: 关于传感器类扩展
+              href: about-the-sensor-class-extension.md
+            - name: 关于接口
+              href: about-the-interfaces.md
+              items:
+                - name: 关于 ISensorClassExtension
+                  href: about-isensorclassextension.md
+                - name: 关于 ISensorDriver
+                  href: about-isensordriver.md
+                - name: 关于参数类型
+                  href: about-the-parameter-types.md
+            - name: 关于传感器驱动程序事件
+              href: about-sensor-driver-events.md
+            - name: 关于传感器常量
+              href: about-sensor-constants.md
+              items:
+                - name: 事件常量
+                  href: event-constants.md
+                - name: 传感器属性
+                  href: sensor-properties.md
+                - name: 传感器图标常量
+                  href: sensor-icon-constants.md
+                - name: 传感器类别、类型和数据字段
+                  href: sensor-categories--types--and-data-fields.md
+                  items:
+                    - name: SENSOR_CATEGORY_ALL
+                      href: sensor-category-all.md
+                    - name: SENSOR_CATEGORY_BIOMETRIC
+                      href: sensor-category-biometric.md
+                    - name: SENSOR_CATEGORY_ELECTRICAL
+                      href: sensor-category-electrical.md
+                    - name: SENSOR_CATEGORY_ENVIRONMENTAL
+                      href: sensor-category-environmental.md
+                    - name: SENSOR_CATEGORY_LIGHT
+                      href: sensor-category-light.md
+                    - name: SENSOR_CATEGORY_LOCATION
+                      href: sensor-category-loc.md
+                    - name: SENSOR_CATEGORY_MECHANICAL
+                      href: sensor-category-mechanical.md
+                    - name: SENSOR_CATEGORY_MOTION
+                      href: sensor-category-motion.md
+                    - name: SENSOR_CATEGORY_ORIENTATION
+                      href: sensor-category-orientation.md
+                    - name: SENSOR_CATEGORY_SCANNER
+                      href: sensor-category-scanner.md
+    - name: 编程指南
+      href: programming-guide.md
       items:
-      - name: 编写传感器设备驱动程序
-        href: writing-a-sensor-device-driver.md
-        items:
-        - name: 编写传感器驱动程序的注意事项
-          href: considerations-for-writing-a-sensor-driver.md
-        - name: 创建传感器驱动程序
-          href: creating-the-driver.md
-        - name: 创建适用于传感器的永久唯一标识符
-          href: creating-a-persistent-unique-identifier.md
-        - name: 引发传感器事件
-          href: raising-events.md
-        - name: 筛选数据
-          href: filtering-data.md
-        - name: 将矢量类型与传感器配合使用
-          href: using-vector-types.md
-        - name: 定义传感器常量的自定义值
-          href: defining-custom-values-for-constants.md
-        - name: 指定传感器图标
-          href: specifying-an-icon.md
-        - name: 传感器驱动程序最佳做法
-          href: sensor-driver-best-practices.md
-      - name: 支持氛围光传感器
-        href: supporting-ambient-light-sensors.md
-    - name: 传感器驱动程序逻辑
-      href: driver-logic--pseudo-code-.md
+        - name: 传感器驱动程序开发基础知识
+          href: sensor-driver-development-basics.md
+          items:
+            - name: 编写传感器设备驱动程序
+              href: writing-a-sensor-device-driver.md
+              items:
+                - name: 编写传感器驱动程序的注意事项
+                  href: considerations-for-writing-a-sensor-driver.md
+                - name: 创建传感器驱动程序
+                  href: creating-the-driver.md
+                - name: 创建适用于传感器的永久唯一标识符
+                  href: creating-a-persistent-unique-identifier.md
+                - name: 引发传感器事件
+                  href: raising-events.md
+                - name: 筛选数据
+                  href: filtering-data.md
+                - name: 将矢量类型与传感器配合使用
+                  href: using-vector-types.md
+                - name: 定义传感器常量的自定义值
+                  href: defining-custom-values-for-constants.md
+                - name: 指定传感器图标
+                  href: specifying-an-icon.md
+                - name: 传感器驱动程序最佳做法
+                  href: sensor-driver-best-practices.md
+            - name: 支持氛围光传感器
+              href: supporting-ambient-light-sensors.md
+        - name: 传感器驱动程序逻辑
+          href: driver-logic--pseudo-code-.md
+          items:
+            - name: 驱动程序初始化方法
+              href: driver-initialization-methods.md
+            - name: 驱动程序接口方法
+              href: driver-interface-methods.md
+            - name: 驱动程序更新方法
+              href: internal-helper-methods.md
+            - name: 设备更新方法
+              href: device-update-methods.md
+            - name: 内部驱动程序方法
+              href: internal-driver-methods.md
+            - name: 设备方法
+              href: device-methods.md
+        - name: 使用传感器诊断工具测试传感器功能
+          href: the-sensor-diagnostic-tool.md
+          items:
+            - name: 测试传感器功能
+              href: testing-sensor-functionality.md
+              items:
+                - name: 测试传感器事件
+                  href: testing-sensor-events.md
+                - name: 测试传感器数据检索
+                  href: testing-sensor-properties.md
+                - name: 测试传感器属性支持
+                  href: testing-and-logging-sensor-data.md
+            - name: 测试定位功能
+              href: testing-location-functionality.md
+            - name: 已知问题
+              href: known-issues.md
+        - name: SpbAccelerometer 驱动程序示例
+          href: spbaccelerometer-driver-sample.md
+          items:
+            - name: 支持多个传感器
+              href: supporting-multiple-sensors.md
+            - name: 驱动程序 I/O 模型
+              href: the-driver-i-o-model.md
+            - name: 定义加速计对象
+              href: defining-the-accelerometer-object.md
+            - name: 使用传感器类扩展
+              href: using-the-sensor-class-extension.md
+            - name: 支持加速计属性
+              href: supporting-the-accelerometer-properties.md
+            - name: 驱动程序示例文件列表
+              href: the-driver-sample-file-list.md
+    - name: SpbAccelerometer 驱动程序指南
+      href: spbaccelerometer-driver-cookbook.md
       items:
-      - name: 驱动程序初始化方法
-        href: driver-initialization-methods.md
-      - name: 驱动程序接口方法
-        href: driver-interface-methods.md
-      - name: 驱动程序更新方法
-        href: internal-helper-methods.md
-      - name: 设备更新方法
-        href: device-update-methods.md
-      - name: 内部驱动程序方法
-        href: internal-driver-methods.md
-      - name: 设备方法
-        href: device-methods.md
-    - name: 使用传感器诊断工具测试传感器功能
-      href: the-sensor-diagnostic-tool.md
-      items:
-      - name: 测试传感器功能
-        href: testing-sensor-functionality.md
-        items:
-        - name: 测试传感器事件
-          href: testing-sensor-events.md
-        - name: 测试传感器数据检索
-          href: testing-sensor-properties.md
-        - name: 测试传感器属性支持
-          href: testing-and-logging-sensor-data.md
-      - name: 测试定位功能
-        href: testing-location-functionality.md
-      - name: 已知问题
-        href: known-issues.md
-    - name: SpbAccelerometer 驱动程序示例
-      href: spbaccelerometer-driver-sample.md
-      items:
-      - name: 支持多个传感器
-        href: supporting-multiple-sensors.md
-      - name: 驱动程序 I/O 模型
-        href: the-driver-i-o-model.md
-      - name: 定义加速计对象
-        href: defining-the-accelerometer-object.md
-      - name: 使用传感器类扩展
-        href: using-the-sensor-class-extension.md
-      - name: 支持加速计属性
-        href: supporting-the-accelerometer-properties.md
-      - name: 驱动程序示例文件列表
-        href: the-driver-sample-file-list.md
-  - name: SpbAccelerometer 驱动程序指南
-    href: spbaccelerometer-driver-cookbook.md
-    items:
-    - name: 在 Sharks Cove 板上安装示例设备和驱动程序
-      href: installing-the-sample-device-and-driver-on-your-sharks-cove-board.md
-    - name: SpbAccelerometer 驱动程序概述
-      href: spbaccelerometer-driver-overview.md
-    - name: 示例驱动程序 I/O 模型
-      href: the-sample-driver-i-o-model.md
-    - name: I2C 传输
-      href: the-i2c-transport.md
-    - name: 加速计对象
-      href: the-accelerometer-object.md
-    - name: 访问传感器类扩展
-      href: accessing-the-sensor-class-extension.md
-    - name: 支持设备属性
-      href: supporting-the-device--properties.md
-    - name: 驱动程序初始化
-      href: driver-initialization.md
-    - name: 修改示例，使之支持另一传感器
-      href: modifying-the-sample-to-support-another-sensor.md
-    - name: 使用传感器诊断工具来测试驱动程序和设备
-      href: using-the-sensors-diagnostic-tool-to-test-your-driver-and-device.md
-ms.openlocfilehash: 1addbc8493de83e0f9d2c0f87001ef119845685c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465466"
+        - name: 在 Sharks Cove 板上安装示例设备和驱动程序
+          href: installing-the-sample-device-and-driver-on-your-sharks-cove-board.md
+        - name: SpbAccelerometer 驱动程序概述
+          href: spbaccelerometer-driver-overview.md
+        - name: 示例驱动程序 I/O 模型
+          href: the-sample-driver-i-o-model.md
+        - name: I2C 传输
+          href: the-i2c-transport.md
+        - name: 加速计对象
+          href: the-accelerometer-object.md
+        - name: 访问传感器类扩展
+          href: accessing-the-sensor-class-extension.md
+        - name: 支持设备属性
+          href: supporting-the-device--properties.md
+        - name: 驱动程序初始化
+          href: driver-initialization.md
+        - name: 修改示例，使之支持另一传感器
+          href: modifying-the-sample-to-support-another-sensor.md
+        - name: 使用传感器诊断工具来测试驱动程序和设备
+          href: using-the-sensors-diagnostic-tool-to-test-your-driver-and-device.md

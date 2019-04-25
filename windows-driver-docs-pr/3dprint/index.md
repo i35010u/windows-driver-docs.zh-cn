@@ -7,11 +7,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 0a22e90a6a9131a637d03354f5825443c02de466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325944"
 ---
 # <a name="3d-printer-driver-design-guide"></a>3D 打印机驱动程序设计指南
 
@@ -39,7 +39,7 @@ Windows 10 中的 3D 打印提供了以下功能：
 
 下载 [Windows 3D 打印 SDK](https://go.microsoft.com/fwlink/p/?LinkId=394375)，开始开发 3D 打印机的打印驱动程序。
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 -   [3D 打印合作伙伴加入指南](3d-partner-onboarding-guide.md)
 -   [3D 打印机的 Microsoft 标准驱动程序](microsoft-standard-driver-for-3d-printers-.md)

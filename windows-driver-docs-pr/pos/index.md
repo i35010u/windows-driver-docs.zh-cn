@@ -8,17 +8,17 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: 10201f72f1a3da6b415b79da6b020584e3a3558a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392882"
 ---
 # <a name="pos-device-driver-design-guide"></a>POS 设备驱动程序设计指南
 
 本部分提供了服务点 (POS) 设备的驱动程序设计指南。
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 | 主题 | 描述 |
 | --- | --- |

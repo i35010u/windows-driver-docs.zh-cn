@@ -1,1134 +1,1127 @@
-items:
 - name: 存储驱动程序设计指南
   href: index.md
   items:
-  - name: 开发 Windows 存储驱动程序的路线图
-    href: roadmap-for-developing-storage-drivers.md
-  - name: Storport 微型端口驱动程序开发路线图
-    href: roadmap-for-developing-storport-miniport-drivers.md
-  - name: 存储驱动程序
-    href: storage-drivers.md
-    items:
-    - name: Windows 存储驱动程序体系结构
-      href: storage-driver-architecture.md
-    - name: 存储驱动程序和设备对象
-      href: storage-drivers-and-device-objects.md
+    - name: 开发 Windows 存储驱动程序的路线图
+      href: roadmap-for-developing-storage-drivers.md
+    - name: Storport 微型端口驱动程序开发路线图
+      href: roadmap-for-developing-storport-miniport-drivers.md
+    - name: 存储驱动程序
+      href: storage-drivers.md
       items:
-      - name: SCSI HBA 的设备对象示例
-        href: device-object-example-for-a-scsi-hba.md
-      - name: IEEE 1394 控制器的设备对象示例
-        href: device-object-example-for-an-ieee-1394-controller.md
-      - name: PCI IDE 控制器的设备对象示例
-        href: device-object-example-for-a-pci-ide-controller.md
-      - name: USB 大容量存储设备的设备对象示例
-        href: device-object-example-for-a-usb-mass-storage-device.md
-    - name: 存储驱动程序的系统标头文件
-      href: system-header-files-for-storage-drivers.md
-    - name: 对存储驱动程序中的可分页代码的限制
-      href: restrictions-on-pageable-code-in-storage-drivers.md
-    - name: 查询写缓存属性
-      href: querying-for-the-write-cache-property.md
-    - name: 存储设备的设备唯一标识符 (DUID)
-      href: device-unique-identifiers--duids--for-storage-devices.md
-    - name: 常规存储 I/O 控制代码
-      href: general-storage-io-control-codes.md
-    - name: LSI_U3 设备的示例 Storport 微型端口驱动程序
-      href: sample-storport-miniport-driver-for-an-lsi-u3-device.md
-      items:
-      - name: 初始化
-        href: initialization.md
-      - name: 主要 I/O 路径
-        href: main-i-o-path.md
-      - name: 即插即用和电源管理
-        href: plug-and-play-and-power-management.md
-      - name: 从 ScsiPort 移植到 StorPort
-        href: porting-from-scsiport-to-storport.md
-  - name: 存储类驱动程序
-    href: storage-class-drivers.md
-    items:
-    - name: 存储类驱动程序简介
-      href: introduction-to-storage-class-drivers.md
-    - name: 存储类驱动程序的常规功能
-      href: storage-class-driver-s-general-functionality.md
-    - name: 存储类驱动程序的 I/O 请求支持
-      href: storage-class-driver-s-support-of-i-o-requests.md
-    - name: 处理存储类驱动程序中的 PnP 初始化
-      href: handling-pnp-initialization-in-a-storage-class-driver.md
-    - name: 处理存储类驱动程序中的 PnP 启动
-      href: handling-pnp-start-in-a-storage-class-driver.md
-    - name: 设置存储类驱动程序的设备扩展
-      href: setting-up-a-storage-class-driver-s-device-extension.md
-    - name: 存储类驱动程序的标准驱动程序例程
-      href: storage-class-driver-s-standard-driver-routines.md
-      items:
-      - name: 存储类驱动程序的 DriverEntry 例程
-        href: storage-class-driver-s-driverentry-routine.md
-      - name: 存储类驱动程序的 AddDevice 例程
-        href: storage-class-driver-s-adddevice-routine.md
-      - name: 存储类驱动程序的调度例程
-        href: storage-class-driver-s-dispatch-routines.md
-      - name: 存储类驱动程序的 IoCompletion 例程
-        href: storage-class-driver-s-iocompletion-routines.md
-    - name: 处理对存储外设的请求
-      href: handling-requests-to-storage-peripherals.md
-      items:
-      - name: 处理 SCSI 传递请求
-        href: handling-scsi-pass-through-requests.md
-      - name: 处理对存储外设的 PnP 请求
-        href: handling-pnp-requests-to-storage-peripherals.md
-      - name: 处理对存储外设的电源请求
-        href: handling-power-requests-to-storage-peripherals.md
-      - name: 将存储请求排队
-        href: queuing-storage-requests.md
-    - name: 存储类驱动程序的内部例程
-      href: storage-class-driver-s-internal-routines.md
-      items:
-      - name: 存储类驱动程序的 ClaimDevice 例程
-        href: storage-class-driver-s-claimdevice-routine.md
-      - name: 存储类驱动程序的 GetDescriptor 例程
-        href: storage-class-driver-s-getdescriptor-routine.md
-      - name: 存储类驱动程序的 BuildRequest 例程
-        href: storage-class-driver-s-buildrequest-routine.md
-      - name: 存储类驱动程序的 SplitTransferRequest 例程
-        href: storage-class-driver-s-splittransferrequest-routine.md
-      - name: 存储类驱动程序的 ReleaseQueue 例程
-        href: storage-class-driver-s-releasequeue-routine.md
-      - name: 存储类驱动程序的 InterpretRequestSense 例程
-        href: storage-class-driver-s-interpretrequestsense-routine.md
-      - name: 存储类驱动程序的 RetryRequest 例程
-        href: storage-class-driver-s-retryrequest-routine.md
-      - name: 存储类驱动程序的 RemoveDevice 例程
-        href: storage-class-driver-s-removedevice-routine.md
-    - name: 转换现有的即插即用型 SCSI 类驱动程序
-      href: converting-an-existing-scsi-class-driver-for-plug-and-play.md
-    - name: 支持存储类驱动程序中的装入管理器请求
-      href: supporting-mount-manager-requests-in-a-storage-class-driver.md
-  - name: 存储端口驱动程序
-    href: storage-port-drivers.md
-    items:
-    - name: SCSI 端口驱动程序
-      href: scsi-port-driver.md
-      items:
-      - name: SCSI 端口提供的功能
-        href: capabilities-provided-by-scsi-port.md
-      - name: SCSI 端口的可以与存储类驱动程序交互的接口
-        href: scsi-port-s-interface-with-the-storage-class-driver.md
-        items:
-        - name: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
-          href: scsi-port-s-srb-interface-with-the-storage-class-driver.md
-        - name: 通过 SCSI 端口协商声明和释放设备请求
-          href: negotiating-claim-and-release-device-requests-with-scsi-port.md
-        - name: 查询 SCSI 端口以获取硬件信息
-          href: querying-scsi-port-for-hardware-information.md
-        - name: SCSI 端口在传输 SCSI 检测数据过程中的角色
-          href: scsi-port-s-role-in-transmitting-scsi-sense-data.md
-        - name: 通过 SCSI 传递请求绕过类驱动程序
-          href: bypassing-the-class-driver-with-scsi-pass-through-requests.md
-      - name: SCSI 端口的可以与 SCSI 端口微型端口驱动程序交互的接口
-        href: scsi-port-s-interface-with-scsi-port-miniport-drivers.md
-      - name: SCSI 端口 I/O 模型
-        href: scsi-port-i-o-model.md
-      - name: SCSI 端口驱动程序的队列管理
-        href: scsi-port-driver-s-queue-management.md
-        items:
-        - name: 冻结 SCSI 端口驱动程序的内部队列
-          href: freezing-scsi-port-driver-s-internal-queue.md
-        - name: 锁定 SCSI 端口驱动程序的内部队列
-          href: locking-scsi-port-driver-s-internal-queue.md
-        - name: 刷新端口驱动程序的内部队列
-          href: flushing-port-driver-s-internal-queue.md
-    - name: Storport 驱动程序
-      href: storport-driver.md
-      items:
-      - name: Storport 驱动程序的生命周期
-        href: life-cycle-of-a-storport-driver.md
-      - name: Storport 的历史记录
-        href: history-of-storport.md
-      - name: Storport 提供的功能
-        href: capabilities-provided-by-storport.md
-        items:
-        - name: Storport 驱动程序支持例程
-          href: storport-driver-support-routines.md
-        - name: Storport 驱动程序微型端口例程
-          href: storport-driver-miniport-routines.md
-      - name: Storport 的可以与存储类驱动程序交互的接口
-        href: storport-s-interface-with-the-storage-class-driver.md
-        items:
-        - name: Storport 的可以与存储类驱动程序交互的 SRB 接口
-          href: storport-s-srb-interface-with-the-storage-class-driver.md
-        - name: 通过 Storport 协商声明和释放设备请求
-          href: negotiating-claim-and-release-device-requests-with-storport.md
-        - name: 查询 Storport 以获取硬件信息
-          href: querying-storport-for-hardware-information.md
-        - name: Storport 在传输 SCSI 检测数据过程中的角色
-          href: storport-s-role-in-transmitting-scsi-sense-data.md
-        - name: 通过对 Storport 的 SCSI 传递请求绕过类驱动程序
-          href: bypassing-the-class-driver-with-scsi-pass-through-requests-to-storport.md
-      - name: Storport 的可以与 Storport 微型端口驱动程序交互的接口
-        href: storport-s-interface-with-storport-miniport-drivers.md
-      - name: Storport I/O 模型
-        href: storport-i-o-model.md
-        items:
-        - name: 全双工模式
-          href: full-duplex-mode.md
-        - name: 半双工模式：不适合寄送的产品
-          href: half-duplex-mode--not-appropriate-for-shipped-products.md
-        - name: 未同步的 HwStorBuildIo 例程
-          href: unsynchronized-hwstorbuildio-routine.md
-        - name: 未同步的微型端口驱动程序例程中的同步的访问
-          href: synchronized-access-within-unsynchronized-miniport-driver-routines.md
-        - name: 访问 Storport I/O 模型中的分散/聚合列表
-          href: access-to-scatter-gather-lists-in-the-storport-i-o-model.md
-        - name: 在 Storport I/O 模型中使用映射缓冲区
-          href: use-of-mapping-buffers-in-the-storport-i-o-model.md
-        - name: 性能提示：在 HwStartIo 期间完成请求
-          href: performance-tip--completing-requests-during-hwstartio.md
-        - name: 对 CDB 和探测代码进行预处理和后处理
-          href: pre--and-post-processing-of-cdbs-and-sense-codes.md
-      - name: Storport 队列管理
-        href: storport-queue-management.md
-      - name: Storport 事件日志扩展
-        href: storport-event-log-extensions.md
-      - name: Storport 错误管理
-        href: storport-error-management.md
-        items:
-        - name: Storport 中的多层重置
-          href: multi-tier-reset-in-storport.md
-        - name: 高性能总线和适配器的设备状态
-          href: device-status-for-high-performance-buses-and-adapters.md
-      - name: Storport 空闲电源管理
-        href: storport-idle-power-management.md
-        items:
-        - name: IPM 作用域
-          href: ipm-scope.md
-        - name: IPM 假设
-          href: ipm-assumptions.md
-        - name: IPM 配置和使用情况
-          href: ipm-configuration-and-usage.md
-        - name: IPM 硬盘驱动器空闲超时
-          href: ipm-hard-disk-drive-idle-timeout.md
-      - name: ATA 命令支持
-        href: ata-command-support.md
-        items:
-        - name: 安全组命令
-          href: security-group-commands.md
-      - name: 使 SCSI 端口微型端口驱动程序适用于 Storport
-        href: making-scsi-port-miniport-drivers-work-with-storport.md
-        items:
-        - name: 将 Storport 与适配器配合使用的要求
-          href: requirements-for-using-storport-with-an-adapter.md
-        - name: 使用 Storport 进行硬件初始化
-          href: hardware-initialization-with-storport.md
-        - name: 使用 Storport 设置端口配置信息
-          href: setting-port-configuration-information-with-storport.md
-      - name: DEVICE_DATA_MANAGEMENT_SET_ACTION
-        href: device-data-management-set-action.md
-    - name: ATA 端口驱动程序
-      href: ata-port-driver.md
-      items:
-      - name: ATA 端口的可以与存储类驱动程序交互的接口
-        href: ata-port-s-interface-with-the-storage-class-driver.md
-      - name: ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
-        href: ata-port-s-interface-with-ata-miniport-drivers.md
-      - name: ATA 端口 I/O 模型
-        href: ata-port-i-o-model.md
-        items:
-        - name: ATA 端口 I/O 模型中的同步
-          href: synchronization-in-the-ata-port-i-o-model.md
-        - name: 未同步的 IdeHwBuildIo 例程
-          href: unsynchronized-idehwbuildio-routine.md
-        - name: 未同步的 ATA 微型端口驱动程序例程中的同步的访问
-          href: synchronized-access-within-unsynchronized-ata-miniport-driver-routines.md
-        - name: 访问 ATA 端口 I/O 模型中的分散/聚合列表
-          href: access-to-scatter-gather-lists-in-the-ata-port-i-o-model.md
-      - name: ATA 端口驱动程序的队列管理
-        href: ata-port-driver-s-queue-management.md
-      - name: ATA 端口驱动程序的重置机制
-        href: ata-port-driver-s-reset-mechanism.md
-      - name: ATA 端口驱动程序的电源管理
-        href: ata-port-driver-s-power-management.md
-      - name: IDE 端口驱动程序
-        href: ide-port-driver.md
-  - name: 存储器微型端口驱动程序
-    href: storage-miniport-drivers.md
-    items:
-    - name: SCSI 微型端口驱动程序
-      href: scsi-miniport-drivers.md
-      items:
-      - name: 支持 SCSI 微型端口驱动程序中的即插即用
-        href: supporting-plug-and-play-in-a-scsi-miniport-driver.md
-        items:
-        - name: 即插即用 SCSI 微型端口驱动程序的注册表项
-          href: registry-entries-for-plug-and-play-scsi-miniport-drivers.md
-        - name: 在即插即用下进行的 SCSI 微型端口初始化
-          href: scsi-miniport-initialization-under-plug-and-play.md
-        - name: 转换 Windows NT 4.0 SCSI 微型端口以实现即插即用
-          href: converting-a-windows-nt-4-0-scsi-miniport-for-plug-and-play.md
+        - name: Windows 存储驱动程序体系结构
+          href: storage-driver-architecture.md
+        - name: 存储驱动程序和设备对象
+          href: storage-drivers-and-device-objects.md
           items:
-          - name: 正确使用指向 HwScsiFindAdapter 的 HwContext 指针
-            href: use-the-hwcontext-pointer-to-hwscsifindadapter-correctly.md
-          - name: 请勿依赖 SCSI 微型端口初始化顺序
-            href: do-not-depend-on-order-of-scsi-miniport-initialization.md
-          - name: 在即插即用 SCSI 微型端口中只使用供应的资源
-            href: use-only-supplied-resources-in-a-plug-and-play-scsi-miniport.md
-          - name: 在检测期间验证 HwScsiFindAdapter 中的资源范围
-            href: verify-resource-ranges-in-hwscsifindadapter-during-detection.md
-      - name: SCSI 微型端口驱动程序的注册表项
-        href: registry-entries-for-scsi-miniport-drivers.md
-      - name: 对管理启动驱动器的 SCSI 微型端口驱动程序的限制
-        href: restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md
-      - name: SCSI 微型端口驱动程序中的错误处理
-        href: error-handling-in-scsi-miniport-drivers.md
-      - name: 必需的和可选的 SCSI 微型端口驱动程序例程
-        href: required-and-optional-scsi-miniport-driver-routines.md
-        items:
-        - name: SCSI 微型端口驱动程序的 DriverEntry 例程
-          href: scsi-miniport-driver-s-driverentry-routine.md
-        - name: SCSI 微型端口驱动程序的 DriverEntry
-          href: driverentry-of-scsi-miniport-driver.md
-        - name: 调用 ScsiPortInitialize
-          href: calling-scsiportinitialize.md
-        - name: 存储驱动程序从 DriverEntry 返回的内容
-          href: storage-driver-s-return-from-driverentry.md
-        - name: SCSI 微型端口驱动程序的 HwScsiFindAdapter 例程
-          href: scsi-miniport-driver-s-hwscsifindadapter-routine.md
+            - name: SCSI HBA 的设备对象示例
+              href: device-object-example-for-a-scsi-hba.md
+            - name: IEEE 1394 控制器的设备对象示例
+              href: device-object-example-for-an-ieee-1394-controller.md
+            - name: PCI IDE 控制器的设备对象示例
+              href: device-object-example-for-a-pci-ide-controller.md
+            - name: USB 大容量存储设备的设备对象示例
+              href: device-object-example-for-a-usb-mass-storage-device.md
+        - name: 存储驱动程序的系统标头文件
+          href: system-header-files-for-storage-drivers.md
+        - name: 对存储驱动程序中的可分页代码的限制
+          href: restrictions-on-pageable-code-in-storage-drivers.md
+        - name: 查询写缓存属性
+          href: querying-for-the-write-cache-property.md
+        - name: 存储设备的设备唯一标识符 (DUID)
+          href: device-unique-identifiers--duids--for-storage-devices.md
+        - name: 常规存储 I/O 控制代码
+          href: general-storage-io-control-codes.md
+        - name: LSI_U3 设备的示例 Storport 微型端口驱动程序
+          href: sample-storport-miniport-driver-for-an-lsi-u3-device.md
           items:
-          - name: 从 HwScsiFindAdapter 调用 ScsiPortXxx
-            href: calling-scsiportxxx--from-hwscsifindadapter.md
-          - name: 端口驱动程序提供的适用于 HwScsiFindAdapter 的 ConfigInfo
-            href: port-driver-supplied-configinfo-for-hwscsifindadapter.md
-          - name: 在 HwScsiFindAdapter 中设置 ConfigInfo
-            href: setting-up-configinfo-in-hwscsifindadapter.md
-          - name: 再次设置并从 HwScsiFindAdapter 返回
-            href: setting-again-and-returning-from-hwscsifindadapter.md
-          - name: 从 HwScsiFindAdapter 返回控制权
-            href: returning-control-from-hwscsifindadapter.md
-        - name: SCSI 微型端口驱动程序的 HwScsiInitialize 例程
-          href: scsi-miniport-driver-s-hwscsiinitialize-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiStartIo 例程
-          href: scsi-miniport-driver-s-hwscsistartio-routine.md
+            - name: 初始化
+              href: initialization.md
+            - name: 主要 I/O 路径
+              href: main-i-o-path.md
+            - name: 即插即用和电源管理
+              href: plug-and-play-and-power-management.md
+            - name: 从 ScsiPort 移植到 StorPort
+              href: porting-from-scsiport-to-storport.md
+    - name: 存储类驱动程序
+      href: storage-class-drivers.md
+      items:
+        - name: 存储类驱动程序简介
+          href: introduction-to-storage-class-drivers.md
+        - name: 存储类驱动程序的常规功能
+          href: storage-class-driver-s-general-functionality.md
+        - name: 存储类驱动程序的 I/O 请求支持
+          href: storage-class-driver-s-support-of-i-o-requests.md
+        - name: 处理存储类驱动程序中的 PnP 初始化
+          href: handling-pnp-initialization-in-a-storage-class-driver.md
+        - name: 处理存储类驱动程序中的 PnP 启动
+          href: handling-pnp-start-in-a-storage-class-driver.md
+        - name: 设置存储类驱动程序的设备扩展
+          href: setting-up-a-storage-class-driver-s-device-extension.md
+        - name: 存储类驱动程序的标准驱动程序例程
+          href: storage-class-driver-s-standard-driver-routines.md
           items:
-          - name: 修改 SRB
-            href: modifying-srbs.md
-          - name: 处理 SRB_FUNCTION_EXECUTE_SCSI
-            href: handling-srb-function-execute-scsi.md
-          - name: 处理 SRB_FUNCTION_ABORT_COMMAND
-            href: handling-srb-function-abort-command.md
-          - name: 处理 SRB_FUNCTION_RESET_BUS
-            href: handling-srb-function-reset-bus.md
-          - name: 处理 SRB_FUNCTION_RESET_DEVICE
-            href: handling-srb-function-reset-device.md
-          - name: 处理 SRB_FUNCTION_FLUSH 和 SRB_FUNCTION_SHUTDOWN
-            href: handling-srb-function-flush-and-srb-function-shutdown.md
-          - name: 处理 SRB_FUNCTION_IO_CONTROL
-            href: handling-srb-function-io-control.md
-          - name: 处理 SRB_FUNCTION_PNP
-            href: handling-srb-function-pnp.md
-          - name: 处理 SRB_FUNCTION_WMI
-            href: handling-srb-function-wmi.md
-          - name: 处理不受支持的 SRB_FUNCTION_XXX
-            href: handling-unsupported-srb-function-xxx.md
-          - name: 从 HwScsiStartIo 返回
-            href: return-from-hwscsistartio.md
-          - name: 其他 SRB_FUNCTION_XXX 请求
-            href: other-srb-function-xxx--requests.md
-        - name: SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程
-          href: scsi-miniport-driver-s-hwscsidmastarted-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiResetBus 例程
-          href: scsi-miniport-driver-s-hwscsiresetbus-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
-          href: scsi-miniport-driver-s-hwscsiinterrupt-routine.md
+            - name: 存储类驱动程序的 DriverEntry 例程
+              href: storage-class-driver-s-driverentry-routine.md
+            - name: 存储类驱动程序的 AddDevice 例程
+              href: storage-class-driver-s-adddevice-routine.md
+            - name: 存储类驱动程序的调度例程
+              href: storage-class-driver-s-dispatch-routines.md
+            - name: 存储类驱动程序的 IoCompletion 例程
+              href: storage-class-driver-s-iocompletion-routines.md
+        - name: 处理对存储外设的请求
+          href: handling-requests-to-storage-peripherals.md
           items:
-          - name: 延迟 HwScsiInterrupt 中的中断驱动型 I/O
-            href: deferring-interrupt-driven-i-o-from-hwscsiinterrupt.md
-        - name: SCSI 微型端口驱动程序的 HwScsiEnableInterruptsCallback 例程
-          href: scsi-miniport-driver-s-hwscsienableinterruptscallback-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
-          href: scsi-miniport-driver-s-hwscsidisableinterruptscallback-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiTimer 例程
-          href: scsi-miniport-driver-s-hwscsitimer-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiAdapterState 例程
-          href: scsi-miniport-driver-s-hwscsiadapterstate-routine.md
-        - name: SCSI 微型端口驱动程序的 HwScsiAdapterControl 例程
-          href: scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md
-    - name: Storport 微型端口驱动程序
-      href: storport-miniport-drivers.md
-      items:
-      - name: Storport 微型端口驱动程序中的错误处理
-        href: error-handling-in-storport-miniport-drivers.md
-      - name: Storport 微型端口驱动程序中的互锁的操作
-        href: interlocked-operations-in-storport-miniport-drivers.md
-      - name: 升级为 NVMe 设备的固件
-        href: upgrading-firmware-for-an-nvme-device.md
-      - name: StorPort 微型端口驱动程序的注册表项
-        href: registry-entries-for-storport-miniport-drivers.md
-    - name: IDE 控制器微型驱动程序
-      href: ide-controller-minidrivers.md
-      items:
-      - name: 对供应商提供的 IDE 控制器微型驱动程序的要求
-        href: requirements-for-vendor-supplied-ide-controller-minidrivers.md
-      - name: 初始化和调用 IDE 微型驱动程序例程
-        href: initializing-and-calling-ide-minidriver-routines.md
-      - name: IDE 控制器微型驱动程序的 DriverEntry
-        href: driverentry-of-ide-controller-minidriver.md
-      - name: 安装 IDE 控制器微型驱动程序
-        href: installing-ide-controller-minidrivers.md
-      - name: 示例 IDE 控制器微型驱动程序
-        href: sample-ide-controller-minidrivers.md
-    - name: ATA 微型端口驱动程序
-      href: ata-miniport-drivers.md
-    - name: 对管理启动驱动器的微型端口驱动程序的限制
-      href: restrictions-on-miniport-drivers-that-manage-the-boot-drive.md
-    - name: 处理存储器微型端口驱动程序中的 WMI SRB
-      href: handling-wmi-srbs-in-storage-miniport-drivers.md
-      items:
-      - name: 端口驱动程序如何处理 WMI 请求
-        href: how-the-port-driver-processes-wmi-requests.md
-      - name: 使用 SCSI 端口 WMI 库
-        href: using-the-scsi-port-wmi-library.md
-      - name: 设计 WMI 微型端口驱动程序回调例程
-        href: designing-wmi-miniport-driver-callback-routines.md
-        items:
-        - name: 设计可以通过方法处理 WMI 类的微型端口驱动程序回调例程
-          href: designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-2.md
-        - name: 设计可以通过数据字段处理 WMI 类的微型端口驱动程序回调例程
-          href: designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-.md
-      - name: 修改存储器微型端口驱动程序例程，使之支持 WMI SRB
-        href: modifying-storage-miniport-driver-routines-to-support-wmi-srbs.md
-  - name: 存储器虚拟微型端口驱动程序
-    href: storage-virtual-miniport-drivers.md
-    items:
-    - name: 存储器虚拟微型端口驱动程序概述
-      href: overview-of-storage-virtual-miniport-drivers.md
-    - name: 存储器虚拟微型端口驱动程序：何时适合使用它们？
-      href: storage-virtual-miniport-drivers--when-are-they-appropriate-.md
-    - name: 存储器虚拟微型端口驱动程序的初始化
-      href: initialization-of-storage-virtual-miniport-drivers.md
-    - name: 故障转储和休眠支持
-      href: crash-dump-and-hibernation-support.md
-  - name: 存储筛选器驱动程序
-    href: storage-filter-drivers.md
-    items:
-    - name: 存储筛选器驱动程序的 I/O 请求支持
-      href: storage-filter-driver-s-support-of-i-o-requests.md
-    - name: 存储筛选器驱动程序的特定于设备类型的功能
-      href: storage-filter-driver-s-device-type-specific-functionality.md
-    - name: 存储筛选器驱动程序的 DriverEntry 例程
-      href: storage-filter-driver-s-driverentry-routine.md
-    - name: 存储筛选器驱动程序的 AddDevice 例程
-      href: storage-filter-driver-s-adddevice-routine.md
-    - name: 处理存储筛选器驱动程序中的 PnP 启动
-      href: handling-pnp-start-in-a-storage-filter-driver.md
-    - name: 存储筛选器驱动程序的调度例程
-      href: storage-filter-driver-s-dispatch-routines.md
-    - name: 存储筛选器驱动程序的 IoCompletion 例程
-      href: storage-filter-driver-s-iocompletion-routines.md
-    - name: 处理 PnP 分页请求
-      href: handling-pnp-paging-requests.md
-  - name: 故障转储筛选器驱动程序
-    href: crash-dump-filter-drivers.md
-    items:
-    - name: 问题说明
-      href: problem-description.md
-    - name: 功能说明
-      href: feature-description.md
-    - name: 接口说明
-      href: interface-description.md
-    - name: 筛选器回调例程
-      href: filter-callback-routines.md
-    - name: 筛选器安装
-      href: filter-installation.md
-    - name: 筛选器初始化
-      href: filter-initialization.md
-  - name: 存储接收器驱动程序
-    href: storage-silo-drivers.md
-    items:
-    - name: 概述
-      href: overview.md
-    - name: 定义
-      href: definitions.md
-    - name: 要求
-      href: requirements.md
-    - name: 体系结构
-      href: architecture.md
-  - name: CD-ROM 驱动程序
-    href: cd-rom-drivers.md
-    items:
-    - name: CD-ROM 独占访问模式
-      href: cd-rom-exclusive-access-mode.md
-    - name: CD-ROM 设置速度
-      href: cd-rom-set-speed.md
-    - name: CD-ROM 实时流式处理
-      href: cd-rom-real-time-streaming-.md
-    - name: ACL 和设备堆栈
-      href: acls-and-the-device-stack.md
-    - name: CD-ROM I/O 控制代码
-      href: cd-rom-io-control-codes.md
-  - name: 磁带驱动程序
-    href: tape-drivers.md
-    items:
-    - name: 使用磁带类驱动程序
-      href: using-the-tape-class-driver.md
-    - name: 必需的和可选的磁带微型类例程
-      href: required-and-optional-tape-miniclass-routines.md
-    - name: 磁带微型类驱动程序的 DriverEntry
-      href: driverentry-of-tape-miniclass-driver.md
-    - name: 将磁带微型类上下文存储在可选扩展中
-      href: storing-tape-miniclass-context-in-optional-extensions.md
-    - name: 处理磁带设备控制请求
-      href: processing-tape-device-control-requests.md
-  - name: 更换器驱动程序
-    href: changer-drivers.md
-    items:
-    - name: 系统提供的更换器驱动程序
-      href: system-supplied-changer-drivers.md
-      items:
-      - name: 更换器驱动程序模型
-        href: the-changer-driver-model.md
-      - name: 更换器类驱动程序
-        href: the-changer-class-driver.md
-      - name: 更换器类驱动程序版本中的差异
-        href: differences-in-changer-class-driver-versions.md
-    - name: 供应商提供的更换器驱动程序
-      href: vendor-supplied-changer-drivers.md
-      items:
-      - name: 规划器微型类驱动程序简介
-        href: introduction-to-changer-miniclass-drivers.md
-      - name: 必需的更换器微型类例程
-        href: required-changer-miniclass-routines.md
-      - name: 更换器微型类驱动程序的 DriverEntry
-        href: driverentry-of-changer-miniclass-drivers.md
-      - name: 安装更换器微型类驱动程序
-        href: installing-changer-miniclass-drivers.md
-    - name: 将特定于设备的信息存储在更换器的设备扩展中
-      href: storing-device-specific-information-in-the-changer-s-device-extension.md
-    - name: 处理更换器设备控制请求
-      href: processing-changer-device-control-requests.md
-  - name: 存储方案
-    href: storage-scenarios.md
-    items:
-    - name: 卸载了数据传输
-      href: offloaded-data-transfer.md
-    - name: 精简预配
-      href: thin-provisioning.md
-  - name: 存储管理和 WMI 类
-    href: storage-wmi-classes.md
-    items:
-    - name: HBA WMI 类
-      href: hba-wmi-classes.md
-      items:
-      - name: Hbaapi.mof 中的 WMI 类限定符定义
-        href: wmi-class-qualifier-definitions-in-hbaapi-mof.md
-        items:
-        - name: EVENT_TYPES_QUALIFIERS
-          href: event-types-qualifiers.md
-        - name: HBA_BIND_TYPE
-          href: hba-bind-type.md
-        - name: HBA_STATUS
-          href: hba-status.md
-      - name: HBAFC3MgmtInfo WMI 类
-        href: hbafc3mgmtinfo-wmi-class.md
-      - name: HBAFCPBindingEntry WMI 类
-        href: hbafcpbindingentry-wmi-class.md
-      - name: HBAFCPBindingEntry2 WMI 类
-        href: hbafcpbindingentry2-wmi-class.md
-      - name: HBAFCPID WMI 类
-        href: hbafcpid-wmi-class.md
-      - name: HBAFCPScsiEntry WMI 类
-        href: hbafcpscsientry-wmi-class.md
-      - name: HBAScsiID WMI 类
-        href: hbascsiid-wmi-class.md
-      - name: MS_SM_AdapterInformationQuery WMI 类
-        href: ms-sm-adapterinformationquery-wmi-class.md
-      - name: MS_SM_EventControl WMI 类
-        href: ms-sm-eventcontrol-wmi-class.md
-        items:
-        - name: SM_AddTarget
-          href: sm-addtarget.md
-        - name: SM_RemoveTarget
-          href: sm-removetarget.md
-        - name: SM_AddPort
-          href: sm-addport.md
-        - name: SM_RemovePort
-          href: sm-removeport.md
-        - name: SM_AddLink
-          href: sm-addlink.md
-        - name: SM_RemoveLink
-          href: sm-removelink.md
-      - name: MS_SM_FabricAndDomainManagementMethods WMI 类
-        href: ms-sm-fabricanddomainmanagementmethods-wmi-class.md
-        items:
-        - name: SM_SendCTPassThru
-          href: sm-sendctpassthru.md
-        - name: SM_GetRNIDMgmtInfo
-          href: sm-getrnidmgmtinfo.md
-        - name: SM_SetRNIDMgmtInfo
-          href: sm-setrnidmgmtinfo.md
-        - name: SM_SendRNID
-          href: sm-sendrnid.md
-        - name: SM_SendRPL
-          href: sm-sendrpl.md
-        - name: SM_SendRPS
-          href: sm-sendrps.md
-        - name: SM_SendSRL
-          href: sm-sendsrl.md
-        - name: SM_SendLIRR
-          href: sm-sendlirr.md
-        - name: SM_SendRLS
-          href: sm-sendrls.md
-      - name: MS_SM_HbaApiVersion WMI 类
-        href: ms-sm-hbaapiversion-wmi-class.md
-      - name: MS_SM_PortInformationMethods WMI 类
-        href: ms-sm-portinformationmethods-wmi-class.md
-      - name: MS_SM_ScsiInformationMethods WMI 类
-        href: ms-sm-scsiinformationmethods-wmi-class.md
-        items:
-        - name: SM_ScsiInquiry
-          href: sm-scsiinquiry.md
-        - name: SM_ScsiReportLuns
-          href: sm-scsireportluns.md
-        - name: SM_ScsiReadCapacity
-          href: sm-scsireadcapacity.md
-      - name: MS_SM_TargetInformationMethods WMI 类
-        href: ms-sm-targetinformationmethods-wmi-class.md
-        items:
-        - name: SM_GetTargetMapping
-          href: sm-gettargetmapping.md
-        - name: SM_GetBindingCapability
-          href: sm-getbindingcapability.md
-        - name: SM_GetBindingSupport
-          href: sm-getbindingsupport.md
-        - name: SM_SetBindingSupport
-          href: sm-setbindingsupport.md
-        - name: SM_GetPersistentBinding
-          href: sm-getpersistentbinding.md
-        - name: SM_SetPersistentBinding
-          href: sm-setpersistentbinding.md
-        - name: SM_RemovePersistentBinding
-          href: sm-removepersistentbinding.md
-        - name: SM_GetLUNStatistics
-          href: sm-getlunstatistics.md
-      - name: MS_SMHBA_BINDINGENTRY WMI 类
-        href: ms-smhba-bindingentry-wmi-class.md
-      - name: MS_SMHBA_FC_PHY WMI 类
-        href: ms-smhba-fc-phy-wmi-class.md
-      - name: MS_SMHBA_FC_Port WMI 类
-        href: ms-smhba-fc-port-wmi-class.md
-      - name: MS_SMHBA_PORTATTRIBUTES WMI 类
-        href: ms-smhba-portattributes-wmi-class.md
-      - name: MS_SMHBA_PORTLUN WMI 类
-        href: ms-smhba-portlun-wmi-class.md
-      - name: MS_SMHBA_PROTOCOLSTATISTICS WMI 类
-        href: ms-smhba-protocolstatistics-wmi-class.md
-      - name: MS_SMHBA_SAS_PHY WMI 类
-        href: ms-smhba-sas-phy-wmi-class.md
-      - name: MS_SMHBA_SAS_Port WMI 类
-        href: ms-smhba-sas-port-wmi-class.md
-      - name: MS_SMHBA_SASPHYSTATISTICS WMI 类
-        href: ms-smhba-sasphystatistics-wmi-class.md
-      - name: MS_SMHBA_SCSIENTRY WMI 类
-        href: ms-smhba-scsientry-wmi-class.md
-      - name: MSFC_AdapterEvent WMI 类
-        href: msfc-adapterevent-wmi-class.md
-      - name: MSFC_EventBuffer WMI 类
-        href: msfc-eventbuffer-wmi-class.md
-      - name: MSFC_EventControl WMI 类
-        href: msfc-eventcontrol-wmi-class.md
-        items:
-        - name: AddLink
-          href: addlink.md
-        - name: AddPort
-          href: addport.md
-        - name: AddTarget
-          href: addtarget.md
-        - name: RemoveLink
-          href: removelink.md
-        - name: RemovePort
-          href: removeport.md
-        - name: RemoveTarget
-          href: removetarget.md
-      - name: MSFC_FC4STATISTICS WMI 类
-        href: msfc-fc4statistics-wmi-class.md
-      - name: MSFC_FCAdapterHBAAttributes WMI 类
-        href: msfc-fcadapterhbaattributes-wmi-class.md
-      - name: MSFC_FibrePortHBAAttributes WMI 类
-        href: msfc-fibreporthbaattributes-wmi-class.md
-      - name: MSFC_FibrePortHBAMethods WMI 类
-        href: msfc-fibreporthbamethods-wmi-class.md
-      - name: MSFC_FibrePortHBAStatistics WMI 类
-        href: msfc-fibreporthbastatistics-wmi-class.md
-      - name: MSFC_HbaApiVersion WMI 类
-        href: msfc-hbaapiversion-wmi-class.md
-      - name: MSFC_HBAAdapterMethods WMI 类
-        href: msfc-hbaadaptermethods-wmi-class.md
-        items:
-        - name: GetDiscoveredPortAttributes
-          href: getdiscoveredportattributes.md
-        - name: GetEventBuffer
-          href: geteventbuffer.md
-        - name: GetFC3MgmtInfo
-          href: getfc3mgmtinfo.md
-        - name: GetFC4Statistics
-          href: getfc4statistics.md
-        - name: GetFCPStatistics
-          href: getfcpstatistics.md
-        - name: GetPortAttributesByWWN
-          href: getportattributesbywwn.md
-        - name: RefreshInformation
-          href: refreshinformation.md
-        - name: ScsiInquiry
-          href: scsiinquiry6.md
-        - name: ScsiReadCapacity
-          href: scsireadcapacity.md
-        - name: ScsiReportLuns
-          href: scsireportluns.md
-        - name: SendCTPassThru
-          href: sendctpassthru.md
-        - name: SendLIRR
-          href: sendlirr.md
-        - name: SendRLS
-          href: sendrls.md
-        - name: SendRNID
-          href: sendrnid.md
-        - name: SendRNIDV2
-          href: sendrnidv2.md
-        - name: SendRPL
-          href: sendrpl.md
-        - name: SendRPS
-          href: sendrps.md
-        - name: SendSRL
-          href: sendsrl.md
-        - name: SetFC3MgmtInfo
-          href: setfc3mgmtinfo.md
-      - name: MSFC_HBAFCPInfo WMI 类
-        href: msfc-hbafcpinfo-wmi-class.md
-        items:
-        - name: GetBindingCapability
-          href: getbindingcapability.md
-        - name: GetBindingSupport
-          href: getbindingsupport.md
-        - name: GetFcpPersistentBinding
-          href: getfcppersistentbinding.md
-        - name: GetFcpTargetMapping
-          href: getfcptargetmapping.md
-        - name: GetPersistentBinding2
-          href: getpersistentbinding2.md
-        - name: RemovePersistentEntry
-          href: removepersistententry.md
-        - name: SetBindingSupport
-          href: setbindingsupport.md
-        - name: SetPersistentEntry
-          href: setpersistententry.md
-      - name: MSFC_HBAPortAttributesResults WMI 类
-        href: msfc-hbaportattributesresults-wmi-class.md
-      - name: MSFC_HBAPortStatistics WMI 类
-        href: msfc-hbaportstatistics-wmi-class.md
-      - name: MSFC_LinkEvent WMI 类
-        href: msfc-linkevent-wmi-class.md
-      - name: MSFC_PortEvent WMI 类
-        href: msfc-portevent-wmi-class.md
-      - name: MSFC_TargetEvent WMI 类
-        href: msfc-targetevent-wmi-class.md
-      - name: MSFC_TM WMI 类
-        href: msfc-tm-wmi-class.md
-    - name: iSCSI WMI 类
-      href: iscsi-wmi-classes.md
-      items:
-      - name: iSCSI WMI 通用类
-        href: iscsi-wmi-common-classes.md
-        items:
-        - name: Common.mof 中的 WMI 属性限定符定义
-          href: wmi-property-qualifier-definitions-in-common-mof.md
+            - name: 处理 SCSI 传递请求
+              href: handling-scsi-pass-through-requests.md
+            - name: 处理对存储外设的 PnP 请求
+              href: handling-pnp-requests-to-storage-peripherals.md
+            - name: 处理对存储外设的电源请求
+              href: handling-power-requests-to-storage-peripherals.md
+            - name: 将存储请求排队
+              href: queuing-storage-requests.md
+        - name: 存储类驱动程序的内部例程
+          href: storage-class-driver-s-internal-routines.md
           items:
-          - name: ISCSI_AUTH_TYPES_QUALIFIERS
-            href: iscsi-auth-types-qualifiers.md
-          - name: ISCSI_STATUS_QUALIFIERS
-            href: iscsi-status-qualifiers.md
-          - name: SECURITY_FLAG_QUALIFIERS
-            href: security-flag-qualifiers.md
-        - name: ISCSI_IP_Address WMI 类
-          href: iscsi-ip-address-wmi-class.md
-        - name: ISCSI_LoginOptions WMI 类
-          href: iscsi-loginoptions-wmi-class.md
-        - name: ISCSI_LUNList WMI 类
-          href: iscsi-lunlist-wmi-class.md
-        - name: ISCSI_TargetMapping WMI 类
-          href: iscsi-targetmapping-wmi-class.md
-        - name: ISCSI_TargetPortal WMI 类
-          href: iscsi-targetportal-wmi-class.md
-        - name: ISCSI_TargetPortalGroup WMI 类
-          href: iscsi-targetportalgroup-wmi-class.md
-      - name: 用于管理发起程序、端口、会话和连接的 iSCSI WMI 类
-        href: iscsi-wmi-classes-that-manage-initiators--ports--sessions-and-connecti.md
-        items:
-        - name: Mgmt.mof 中的 WMI 属性限定符定义
-          href: wmi-property-qualifier-definitions-in-mgmt-mof.md
-          items:
-          - name: ISCSI_CONNECTION_STATE_TYPE_QUALIFIERS
-            href: iscsi-connection-state-type-qualifiers.md
-          - name: ISCSI_CONNECTION_PROTOCOL_TYPE_QUALIFIERS
-            href: iscsi-connection-protocol-type-qualifiers.md
-          - name: ISCSI_SESSION_TYPE_QUALIFIERS
-            href: iscsi-session-type-qualifiers.md
-          - name: ISCSI_HEADER_INTEGRITY_TYPE_QUALIFIERS
-            href: iscsi-header-integrity-type-qualifiers.md
-          - name: ISCSI_DATA_INTEGRITY_TYPE_QUALIFIERS
-            href: iscsi-data-integrity-type-qualifiers.md
-          - name: ISCSI_PORTAL_TYPE_QUALIFIERS
-            href: iscsi-portal-type-qualifiers.md
-          - name: ISCSI_INITIATOR_NODE_FAILURE_TYPE_QUALIFIERS
-            href: iscsi-initiator-node-failure-type-qualifiers.md
-          - name: ISCSI_INITIATOR_FAILURE_TYPE_QUALIFIERS
-            href: iscsi-initiator-failure-type-qualifiers.md
-        - name: ISCSI_ConnectionStaticInfo WMI 类
-          href: iscsi-connectionstaticinfo-wmi-class.md
-        - name: ISCSI_Path WMI 类
-          href: iscsi-path-wmi-class.md
-        - name: ISCSI_PortalInfo WMI 类
-          href: iscsi-portalinfo-wmi-class.md
-        - name: ISCSI_RedirectPortalInfo WMI 类
-          href: iscsi-redirectportalinfo-wmi-class.md
-        - name: ISCSI_RedirectSessionInfo WMI 类
-          href: iscsi-redirectsessioninfo-wmi-class.md
-        - name: ISCSI_SessionStaticInfo WMI 类
-          href: iscsi-sessionstaticinfo-wmi-class.md
-        - name: ISCSI_Supported_LB_Policies WMI 类
-          href: iscsi-supported-lb-policies-wmi-class.md
-        - name: MSiSCSI_EventLog WMI 类
-          href: msiscsi-eventlog-wmi-class.md
-        - name: MSiSCSI_HBAInformation WMI 类
-          href: msiscsi-hbainformation-wmi-class.md
-        - name: MSiSCSI_HBASessionConfig WMI 类
-          href: msiscsi-hbasessionconfig-wmi-class.md
-        - name: MSiSCSI_InitiatorInstanceFailureEvent WMI 类
-          href: msiscsi-initiatorinstancefailureevent-wmi-class.md
-        - name: MSiSCSI_InitiatorNodeFailureEvent WMI 类
-          href: msiscsi-initiatornodefailureevent-wmi-class.md
-        - name: MSiSCSI_InitiatorSessionInfo WMI 类
-          href: msiscsi-initiatorsessioninfo-wmi-class.md
-        - name: MSiSCSI_LB_Operations WMI 类
-          href: msiscsi-lb-operations-wmi-class.md
-        - name: MSiSCSI_ManagementOperations WMI 类
-          href: msiscsi-managementoperations-wmi-class.md
-        - name: MSiSCSI_PortalInfoClass WMI 类
-          href: msiscsi-portalinfoclass-wmi-class.md
-        - name: MSiSCSI_QueryLBPolicy WMI 类
-          href: msiscsi-querylbpolicy-wmi-class.md
-        - name: MSiSCSI_RedirectPortalInfoClass WMI 类
-          href: msiscsi-redirectportalinfoclass-wmi-class.md
-      - name: 可报告性能统计信息的 iSCSI WMI 类
-        href: iscsi-wmi-classes-that-report-performance-statistics.md
-        items:
-        - name: MSiSCSI_ConnectionStatistics WMI 类
-          href: msiscsi-connectionstatistics-wmi-class.md
-        - name: MSiSCSI_InitiatorInstanceStatistics WMI 类
-          href: msiscsi-initiatorinstancestatistics-wmi-class.md
-        - name: MSiSCSI_InitiatorLoginStatistics WMI 类
-          href: msiscsi-initiatorloginstatistics-wmi-class.md
-        - name: MSiSCSI_MMIPSECStats WMI 类
-          href: msiscsi-mmipsecstats-wmi-class.md
-        - name: MSiSCSI_NICPerformance WMI 类
-          href: msiscsi-nicperformance-wmi-class.md
-        - name: MSiSCSI_QMIPSECStats WMI 类
-          href: msiscsi-qmipsecstats-wmi-class.md
-        - name: MSiSCSI_RequestTimeStatistics WMI 类
-          href: msiscsi-requesttimestatistics-wmi-class.md
-        - name: MSiSCSI_SessionStatistics WMI 类
-          href: msiscsi-sessionstatistics-wmi-class.md
-      - name: iSCSI WMI 操作类
-        href: iscsi-wmi-operations-classes.md
-        items:
-        - name: ISCSI_Persistent_Login WMI 类
-          href: iscsi-persistent-login-wmi-class.md
-        - name: MSiSCSI_AdapterEvent WMI 类
-          href: msiscsi-adapterevent-wmi-class.md
-        - name: MSiSCSI_BootInformation WMI 类
-          href: msiscsi-bootinformation-wmi-class.md
-        - name: MSiSCSI_LUNMappingInformation WMI 类
-          href: msiscsi-lunmappinginformation-wmi-class.md
-        - name: MSiSCSI_Operations WMI 类
-          href: msiscsi-operations-wmi-class.md
-          items:
-          - name: AddConnectionToSession
-            href: addconnectiontosession.md
-          - name: AddiSNSServer
-            href: addisnsserver.md
-          - name: AddRADIUSServer
-            href: addradiusserver.md
-          - name: DeleteInitiatorNodeName
-            href: deleteinitiatornodename.md
-          - name: LoginToTarget
-            href: logintotarget.md
-          - name: LogoutFromTarget
-            href: logoutfromtarget.md
-          - name: RemoveConnectionFromSession
-            href: removeconnectionfromsession.md
-          - name: RemoveiSNSServer
-            href: removeisnsserver.md
-          - name: RemovePersistentLogin
-            href: removepersistentlogin.md
-          - name: RemoveRADIUSServer
-            href: removeradiusserver.md
-          - name: ScsiInquiry
-            href: scsiinquiry.md
-          - name: ScsiReadCapacity
-            href: scsireadcapacity6.md
-          - name: ScsiReportLuns
-            href: scsireportluns6.md
-          - name: SendTargets
-            href: sendtargets.md
-          - name: SetCHAPSharedSecret
-            href: setchapsharedsecret.md
-          - name: SetInitiatorNodeName
-            href: setinitiatornodename.md
-          - name: SetRADIUSSharedSecret
-            href: setradiussharedsecret.md
-        - name: MSiSCSI_PersistentLogins WMI 类
-          href: msiscsi-persistentlogins-wmi-class.md
-        - name: MSiSCSI_SecurityConfigOperations WMI 类
-          href: msiscsi-securityconfigoperations-wmi-class.md
-          items:
-          - name: ClearCache
-            href: clearcache.md
-          - name: GetPresharedKeyForId
-            href: getpresharedkeyforid.md
-          - name: SetGenerationalGuid
-            href: setgenerationalguid.md
-          - name: SetGroupPresharedKey
-            href: setgrouppresharedkey.md
-          - name: SetPresharedKeyForId
-            href: setpresharedkeyforid.md
-          - name: SetTunnelModeOuterAddress
-            href: settunnelmodeouteraddress.md
-        - name: MSiSCSI_TargetMappings WMI 类
-          href: msiscsi-targetmappings-wmi-class.md
-      - name: iSCSI WMI 发现类
-        href: iscsi-wmi-discovery-classes.md
-        items:
-        - name: ISCSI_DiscoveredTarget WMI 类
-          href: iscsi-discoveredtarget-wmi-class.md
-        - name: ISCSI_DiscoveredTarget2 WMI 类
-          href: iscsi-discoveredtarget2-wmi-class.md
-        - name: ISCSI_DiscoveredTargetPortal WMI 类
-          href: iscsi-discoveredtargetportal-wmi-class.md
-        - name: ISCSI_DiscoveredTargetPortal2 WMI 类
-          href: iscsi-discoveredtargetportal2-wmi-class.md
-        - name: ISCSI_DiscoveredTargetPortalGroup WMI 类
-          href: iscsi-discoveredtargetportalgroup-wmi-class.md
-        - name: ISCSI_DiscoveredTargetPortalGroup2 WMI 类
-          href: iscsi-discoveredtargetportalgroup2-wmi-class.md
-        - name: MSiSCSI_DiscoveryOperations WMI 类
-          href: msiscsi-discoveryoperations-wmi-class.md
-          items:
-          - name: ReportDiscoveredTargets
-            href: reportdiscoveredtargets.md
-          - name: ReportDiscoveredTargets2
-            href: reportdiscoveredtargets2.md
-      - name: iSCSI WMI 网络类
-        href: iscsi-wmi-network-classes.md
-        items:
-        - name: Config.mof 中的 WMI 属性限定符定义
-          href: wmi-property-qualifier-definitions-in-config-mof.md
-          items:
-          - name: ENCRYPTION_TYPES_QUALIFIERS
-            href: encryption-types-qualifiers.md
-        - name: MSiSCSI_BootConfiguration WMI 类
-          href: msiscsi-bootconfiguration-wmi-class.md
-        - name: MSiSCSI_DiscoveryConfig WMI 类
-          href: msiscsi-discoveryconfig-wmi-class.md
-        - name: MSiSCSI_NICConfig WMI 类
-          href: msiscsi-nicconfig-wmi-class.md
-        - name: MSiSCSI_RADIUSConfig WMI 类
-          href: msiscsi-radiusconfig-wmi-class.md
-        - name: MSiSCSI_SecurityCapabilities WMI 类
-          href: msiscsi-securitycapabilities-wmi-class.md
-        - name: MSiSCSI_TCPIPConfig WMI 类
-          href: msiscsi-tcpipconfig-wmi-class.md
-    - name: MPIO WMI 类
-      href: mpio-wmi-classes.md
+            - name: 存储类驱动程序的 ClaimDevice 例程
+              href: storage-class-driver-s-claimdevice-routine.md
+            - name: 存储类驱动程序的 GetDescriptor 例程
+              href: storage-class-driver-s-getdescriptor-routine.md
+            - name: 存储类驱动程序的 BuildRequest 例程
+              href: storage-class-driver-s-buildrequest-routine.md
+            - name: 存储类驱动程序的 SplitTransferRequest 例程
+              href: storage-class-driver-s-splittransferrequest-routine.md
+            - name: 存储类驱动程序的 ReleaseQueue 例程
+              href: storage-class-driver-s-releasequeue-routine.md
+            - name: 存储类驱动程序的 InterpretRequestSense 例程
+              href: storage-class-driver-s-interpretrequestsense-routine.md
+            - name: 存储类驱动程序的 RetryRequest 例程
+              href: storage-class-driver-s-retryrequest-routine.md
+            - name: 存储类驱动程序的 RemoveDevice 例程
+              href: storage-class-driver-s-removedevice-routine.md
+        - name: 转换现有的即插即用型 SCSI 类驱动程序
+          href: converting-an-existing-scsi-class-driver-for-plug-and-play.md
+        - name: 支持存储类驱动程序中的装入管理器请求
+          href: supporting-mount-manager-requests-in-a-storage-class-driver.md
+    - name: 存储端口驱动程序
+      href: storage-port-drivers.md
       items:
-      - name: MPIO_PATH_HEALTH_CLASS WMI 类
-        href: mpio-path-health-class-wmi-class.md
-      - name: MPIO_PATH_HEALTH_INFO WMI 类
-        href: mpio-path-health-info-wmi-class.md
-      - name: MPIO_DISK_HEALTH_CLASS WMI 类
-        href: mpio-disk-health-class-wmi-class.md
-      - name: MPIO_DISK_HEALTH_INFO WMI 类
-        href: mpio-disk-health-info-wmi-class.md
-      - name: SCSI_ADDR WMI 类
-        href: scsi-addr-wmi-class.md
-      - name: MPIO_DRIVE_INFO WMI 类
-        href: mpio-drive-info-wmi-class.md
-      - name: MPIO_DISK_INFO WMI 类
-        href: mpio-disk-info-wmi-class.md
-      - name: DSM_VERSION WMI 类
-        href: dsm-version-wmi-class.md
-      - name: DSM_COUNTERS WMI 类
-        href: dsm-counters-wmi-class.md
-      - name: DSM_PARAMETERS WMI 类
-        href: dsm-parameters-wmi-class.md
-      - name: MPIO_REGISTERED_DSM WMI 类
-        href: mpio-registered-dsm-wmi-class.md
-      - name: MPIO_ADAPTER_INFORMATION WMI 类
-        href: mpio-adapter-information-wmi-class.md
-      - name: MPIO_PATH_INFORMATION WMI 类
-        href: mpio-path-information-wmi-class.md
-      - name: MPIO_CONTROLLER_INFO WMI 类
-        href: mpio-controller-info-wmi-class.md
-      - name: MPIO_CONTROLLER_CONFIGURATION WMI 类
-        href: mpio-controller-configuration-wmi-class.md
-      - name: MPIO_TIMERS_COUNTERS WMI 类
-        href: mpio-timers-counters-wmi-class.md
-      - name: MPIO_WMI_METHODS WMI 类
-        href: mpio-wmi-methods-wmi-class.md
-        items:
-        - name: MPIOMoveDevice
-          href: mpiomovedevice.md
-        - name: GetPathConfiguration
-          href: getpathconfiguration.md
-        - name: SetDSMCounters
-          href: setdsmcounters.md
-        - name: ClearPathHealthCounters
-          href: clearpathhealthcounters.md
-        - name: ClearMpioDiskHealthCounters
-          href: clearmpiodiskhealthcounters.md
-        - name: ClearAllPathHealthCounters
-          href: clearallpathhealthcounters.md
-        - name: ClearAllMpioDiskHealthCounters
-          href: clearallmpiodiskhealthcounters.md
-      - name: MPIO_EventEntry WMI 类
-        href: mpio-evententry-wmi-class.md
-      - name: PDOSCSI_ADDR WMI 类
-        href: pdoscsi-addr-wmi-class.md
-      - name: PDO_INFORMATION WMI 类
-        href: pdo-information-wmi-class.md
-      - name: MPIO_GET_DESCRIPTOR WMI 类
-        href: mpio-get-descriptor-wmi-class.md
-      - name: MPIO_DEVINSTANCE_HEALTH_CLASS WMI 类
-        href: mpio-devinstance-health-class-wmi-class.md
-      - name: MPIO_DEVINSTANCE_HEALTH_INFO WMI 类
-        href: mpio-devinstance-health-info-wmi-class.md
-      - name: MPIO_DSM_Path_V2 WMI 类
-        href: mpio-dsm-path-v2-wmi-class.md
-      - name: DSM_Load_Balance_Policy_V2 WMI 类
-        href: dsm-load-balance-policy-v2-wmi-class.md
-      - name: DSM_QueryLBPolicy_V2 WMI 类
-        href: dsm-querylbpolicy-v2-wmi-class.md
-      - name: DSM_QuerySupportedLBPolicies_V2 WMI 类
-        href: dsm-querysupportedlbpolicies-v2-wmi-class.md
-      - name: MPIO_DSM_Path WMI 类
-        href: mpio-dsm-path-wmi-class.md
-      - name: DSM_Load_Balance_Policy WMI 类
-        href: dsm-load-balance-policy-wmi-class.md
-      - name: DSM_QueryLBPolicy WMI 类
-        href: dsm-querylbpolicy-wmi-class.md
-      - name: DSM_QuerySupportedLBPolicies WMI 类
-        href: dsm-querysupportedlbpolicies-wmi-class.md
-      - name: DSM_LB_Operations WMI 类
-        href: dsm-lb-operations-wmi-class.md
-        items:
-        - name: DsmSetLoadBalancePolicy
-          href: dsmsetloadbalancepolicy.md
-        - name: DsmSetLoadBalancePolicyALUA
-          href: dsmsetloadbalancepolicyalua.md
-      - name: DSM_QueryUniqueId WMI 类
-        href: dsm-queryuniqueid-wmi-class.md
-    - name: NPIV WMI 类
-      href: npiv-wmi-classes.md
+        - name: SCSI 端口驱动程序
+          href: scsi-port-driver.md
+          items:
+            - name: SCSI 端口提供的功能
+              href: capabilities-provided-by-scsi-port.md
+            - name: SCSI 端口的可以与存储类驱动程序交互的接口
+              href: scsi-port-s-interface-with-the-storage-class-driver.md
+              items:
+                - name: SCSI 端口的可以与存储类驱动程序交互的 SRB 接口
+                  href: scsi-port-s-srb-interface-with-the-storage-class-driver.md
+                - name: 通过 SCSI 端口协商声明和释放设备请求
+                  href: negotiating-claim-and-release-device-requests-with-scsi-port.md
+                - name: 查询 SCSI 端口以获取硬件信息
+                  href: querying-scsi-port-for-hardware-information.md
+                - name: SCSI 端口在传输 SCSI 检测数据过程中的角色
+                  href: scsi-port-s-role-in-transmitting-scsi-sense-data.md
+                - name: 通过 SCSI 传递请求绕过类驱动程序
+                  href: bypassing-the-class-driver-with-scsi-pass-through-requests.md
+            - name: SCSI 端口的可以与 SCSI 端口微型端口驱动程序交互的接口
+              href: scsi-port-s-interface-with-scsi-port-miniport-drivers.md
+            - name: SCSI 端口 I/O 模型
+              href: scsi-port-i-o-model.md
+            - name: SCSI 端口驱动程序的队列管理
+              href: scsi-port-driver-s-queue-management.md
+              items:
+                - name: 冻结 SCSI 端口驱动程序的内部队列
+                  href: freezing-scsi-port-driver-s-internal-queue.md
+                - name: 锁定 SCSI 端口驱动程序的内部队列
+                  href: locking-scsi-port-driver-s-internal-queue.md
+                - name: 刷新端口驱动程序的内部队列
+                  href: flushing-port-driver-s-internal-queue.md
+        - name: Storport 驱动程序
+          href: storport-driver.md
+          items:
+            - name: Storport 驱动程序的生命周期
+              href: life-cycle-of-a-storport-driver.md
+            - name: Storport 的历史记录
+              href: history-of-storport.md
+            - name: Storport 提供的功能
+              href: capabilities-provided-by-storport.md
+              items:
+                - name: Storport 驱动程序支持例程
+                  href: storport-driver-support-routines.md
+                - name: Storport 驱动程序微型端口例程
+                  href: storport-driver-miniport-routines.md
+            - name: Storport 的可以与存储类驱动程序交互的接口
+              href: storport-s-interface-with-the-storage-class-driver.md
+              items:
+                - name: Storport 的可以与存储类驱动程序交互的 SRB 接口
+                  href: storport-s-srb-interface-with-the-storage-class-driver.md
+                - name: 通过 Storport 协商声明和释放设备请求
+                  href: negotiating-claim-and-release-device-requests-with-storport.md
+                - name: 查询 Storport 以获取硬件信息
+                  href: querying-storport-for-hardware-information.md
+                - name: Storport 在传输 SCSI 检测数据过程中的角色
+                  href: storport-s-role-in-transmitting-scsi-sense-data.md
+                - name: 通过对 Storport 的 SCSI 传递请求绕过类驱动程序
+                  href: bypassing-the-class-driver-with-scsi-pass-through-requests-to-storport.md
+            - name: Storport 的可以与 Storport 微型端口驱动程序交互的接口
+              href: storport-s-interface-with-storport-miniport-drivers.md
+            - name: Storport I/O 模型
+              href: storport-i-o-model.md
+              items:
+                - name: 全双工模式
+                  href: full-duplex-mode.md
+                - name: 半双工模式：不适合寄送的产品
+                  href: half-duplex-mode--not-appropriate-for-shipped-products.md
+                - name: 未同步的 HwStorBuildIo 例程
+                  href: unsynchronized-hwstorbuildio-routine.md
+                - name: 未同步的微型端口驱动程序例程中的同步的访问
+                  href: synchronized-access-within-unsynchronized-miniport-driver-routines.md
+                - name: 访问 Storport I/O 模型中的分散/聚合列表
+                  href: access-to-scatter-gather-lists-in-the-storport-i-o-model.md
+                - name: 在 Storport I/O 模型中使用映射缓冲区
+                  href: use-of-mapping-buffers-in-the-storport-i-o-model.md
+                - name: 性能提示：在 HwStartIo 期间完成请求
+                  href: performance-tip--completing-requests-during-hwstartio.md
+                - name: 对 CDB 和探测代码进行预处理和后处理
+                  href: pre--and-post-processing-of-cdbs-and-sense-codes.md
+            - name: Storport 队列管理
+              href: storport-queue-management.md
+            - name: Storport 事件日志扩展
+              href: storport-event-log-extensions.md
+            - name: Storport 错误管理
+              href: storport-error-management.md
+              items:
+                - name: Storport 中的多层重置
+                  href: multi-tier-reset-in-storport.md
+                - name: 高性能总线和适配器的设备状态
+                  href: device-status-for-high-performance-buses-and-adapters.md
+            - name: Storport 空闲电源管理
+              href: storport-idle-power-management.md
+              items:
+                - name: IPM 作用域
+                  href: ipm-scope.md
+                - name: IPM 假设
+                  href: ipm-assumptions.md
+                - name: IPM 配置和使用情况
+                  href: ipm-configuration-and-usage.md
+                - name: IPM 硬盘驱动器空闲超时
+                  href: ipm-hard-disk-drive-idle-timeout.md
+            - name: ATA 命令支持
+              href: ata-command-support.md
+              items:
+                - name: 安全组命令
+                  href: security-group-commands.md
+            - name: 使 SCSI 端口微型端口驱动程序适用于 Storport
+              href: making-scsi-port-miniport-drivers-work-with-storport.md
+              items:
+                - name: 将 Storport 与适配器配合使用的要求
+                  href: requirements-for-using-storport-with-an-adapter.md
+                - name: 使用 Storport 进行硬件初始化
+                  href: hardware-initialization-with-storport.md
+                - name: 使用 Storport 设置端口配置信息
+                  href: setting-port-configuration-information-with-storport.md
+            - name: DEVICE_DATA_MANAGEMENT_SET_ACTION
+              href: device-data-management-set-action.md
+        - name: ATA 端口驱动程序
+          href: ata-port-driver.md
+          items:
+            - name: ATA 端口的可以与存储类驱动程序交互的接口
+              href: ata-port-s-interface-with-the-storage-class-driver.md
+            - name: ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
+              href: ata-port-s-interface-with-ata-miniport-drivers.md
+            - name: ATA 端口 I/O 模型
+              href: ata-port-i-o-model.md
+              items:
+                - name: ATA 端口 I/O 模型中的同步
+                  href: synchronization-in-the-ata-port-i-o-model.md
+                - name: 未同步的 IdeHwBuildIo 例程
+                  href: unsynchronized-idehwbuildio-routine.md
+                - name: 未同步的 ATA 微型端口驱动程序例程中的同步的访问
+                  href: synchronized-access-within-unsynchronized-ata-miniport-driver-routines.md
+                - name: 访问 ATA 端口 I/O 模型中的分散/聚合列表
+                  href: access-to-scatter-gather-lists-in-the-ata-port-i-o-model.md
+            - name: ATA 端口驱动程序的队列管理
+              href: ata-port-driver-s-queue-management.md
+            - name: ATA 端口驱动程序的重置机制
+              href: ata-port-driver-s-reset-mechanism.md
+            - name: ATA 端口驱动程序的电源管理
+              href: ata-port-driver-s-power-management.md
+            - name: IDE 端口驱动程序
+              href: ide-port-driver.md
+    - name: 存储器微型端口驱动程序
+      href: storage-miniport-drivers.md
       items:
-      - name: MSFC_DH_Chap_Parameters WMI 类
-        href: msfc-dh-chap-parameters-wmi-class.md
-      - name: MSFC_FibrePortNPIVAttributes WMI 类
-        href: msfc-fibreportnpivattributes-wmi-class.md
-      - name: MSFC_FibrePortNPIVMethods WMI 类
-        href: msfc-fibreportnpivmethods-wmi-class.md
-        items:
-        - name: CreateVirtualPort
-          href: createvirtualport.md
-        - name: RemoveVirtualPort
-          href: removevirtualport.md
-      - name: MSFC_NPIVLUNMappingInformation WMI 类
-        href: msfc-npivlunmappinginformation-wmi-class.md
-      - name: MSFC_VirtualFibrePortAttributes WMI 类
-        href: msfc-virtualfibreportattributes-wmi-class.md
-  - name: 存储类内存
-    href: storage-class-memory-portal.md
-    items:
-    - name: JEDEC 可按字节寻址且以能源为支持的接口 NVDIMM 特定于设备的方法 (_DSM)
-      href: jedec-byte-addressable-energy-backed-interface-nvdimms-device-specific-method---dsm-.md
+        - name: SCSI 微型端口驱动程序
+          href: scsi-miniport-drivers.md
+          items:
+            - name: 支持 SCSI 微型端口驱动程序中的即插即用
+              href: supporting-plug-and-play-in-a-scsi-miniport-driver.md
+              items:
+                - name: 即插即用 SCSI 微型端口驱动程序的注册表项
+                  href: registry-entries-for-plug-and-play-scsi-miniport-drivers.md
+                - name: 在即插即用下进行的 SCSI 微型端口初始化
+                  href: scsi-miniport-initialization-under-plug-and-play.md
+                - name: 转换 Windows NT 4.0 SCSI 微型端口以实现即插即用
+                  href: converting-a-windows-nt-4-0-scsi-miniport-for-plug-and-play.md
+                  items:
+                    - name: 正确使用指向 HwScsiFindAdapter 的 HwContext 指针
+                      href: use-the-hwcontext-pointer-to-hwscsifindadapter-correctly.md
+                    - name: 请勿依赖 SCSI 微型端口初始化顺序
+                      href: do-not-depend-on-order-of-scsi-miniport-initialization.md
+                    - name: 在即插即用 SCSI 微型端口中只使用供应的资源
+                      href: use-only-supplied-resources-in-a-plug-and-play-scsi-miniport.md
+                    - name: 在检测期间验证 HwScsiFindAdapter 中的资源范围
+                      href: verify-resource-ranges-in-hwscsifindadapter-during-detection.md
+            - name: SCSI 微型端口驱动程序的注册表项
+              href: registry-entries-for-scsi-miniport-drivers.md
+            - name: 对管理启动驱动器的 SCSI 微型端口驱动程序的限制
+              href: restrictions-on-scsi-miniport-drivers-that-manage-the-boot-drive.md
+            - name: SCSI 微型端口驱动程序中的错误处理
+              href: error-handling-in-scsi-miniport-drivers.md
+            - name: 必需的和可选的 SCSI 微型端口驱动程序例程
+              href: required-and-optional-scsi-miniport-driver-routines.md
+              items:
+                - name: SCSI 微型端口驱动程序的 DriverEntry 例程
+                  href: scsi-miniport-driver-s-driverentry-routine.md
+                - name: SCSI 微型端口驱动程序的 DriverEntry
+                  href: driverentry-of-scsi-miniport-driver.md
+                - name: 调用 ScsiPortInitialize
+                  href: calling-scsiportinitialize.md
+                - name: 存储驱动程序从 DriverEntry 返回的内容
+                  href: storage-driver-s-return-from-driverentry.md
+                - name: SCSI 微型端口驱动程序的 HwScsiFindAdapter 例程
+                  href: scsi-miniport-driver-s-hwscsifindadapter-routine.md
+                  items:
+                    - name: 从 HwScsiFindAdapter 调用 ScsiPortXxx
+                      href: calling-scsiportxxx--from-hwscsifindadapter.md
+                    - name: 端口驱动程序提供的适用于 HwScsiFindAdapter 的 ConfigInfo
+                      href: port-driver-supplied-configinfo-for-hwscsifindadapter.md
+                    - name: 在 HwScsiFindAdapter 中设置 ConfigInfo
+                      href: setting-up-configinfo-in-hwscsifindadapter.md
+                    - name: 再次设置并从 HwScsiFindAdapter 返回
+                      href: setting-again-and-returning-from-hwscsifindadapter.md
+                    - name: 从 HwScsiFindAdapter 返回控制权
+                      href: returning-control-from-hwscsifindadapter.md
+                - name: SCSI 微型端口驱动程序的 HwScsiInitialize 例程
+                  href: scsi-miniport-driver-s-hwscsiinitialize-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiStartIo 例程
+                  href: scsi-miniport-driver-s-hwscsistartio-routine.md
+                  items:
+                    - name: 修改 SRB
+                      href: modifying-srbs.md
+                    - name: 处理 SRB_FUNCTION_EXECUTE_SCSI
+                      href: handling-srb-function-execute-scsi.md
+                    - name: 处理 SRB_FUNCTION_ABORT_COMMAND
+                      href: handling-srb-function-abort-command.md
+                    - name: 处理 SRB_FUNCTION_RESET_BUS
+                      href: handling-srb-function-reset-bus.md
+                    - name: 处理 SRB_FUNCTION_RESET_DEVICE
+                      href: handling-srb-function-reset-device.md
+                    - name: 处理 SRB_FUNCTION_FLUSH 和 SRB_FUNCTION_SHUTDOWN
+                      href: handling-srb-function-flush-and-srb-function-shutdown.md
+                    - name: 处理 SRB_FUNCTION_IO_CONTROL
+                      href: handling-srb-function-io-control.md
+                    - name: 处理 SRB_FUNCTION_PNP
+                      href: handling-srb-function-pnp.md
+                    - name: 处理 SRB_FUNCTION_WMI
+                      href: handling-srb-function-wmi.md
+                    - name: 处理不受支持的 SRB_FUNCTION_XXX
+                      href: handling-unsupported-srb-function-xxx.md
+                    - name: 从 HwScsiStartIo 返回
+                      href: return-from-hwscsistartio.md
+                    - name: 其他 SRB_FUNCTION_XXX 请求
+                      href: other-srb-function-xxx--requests.md
+                - name: SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程
+                  href: scsi-miniport-driver-s-hwscsidmastarted-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiResetBus 例程
+                  href: scsi-miniport-driver-s-hwscsiresetbus-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
+                  href: scsi-miniport-driver-s-hwscsiinterrupt-routine.md
+                  items:
+                    - name: 延迟 HwScsiInterrupt 中的中断驱动型 I/O
+                      href: deferring-interrupt-driven-i-o-from-hwscsiinterrupt.md
+                - name: SCSI 微型端口驱动程序的 HwScsiEnableInterruptsCallback 例程
+                  href: scsi-miniport-driver-s-hwscsienableinterruptscallback-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
+                  href: scsi-miniport-driver-s-hwscsidisableinterruptscallback-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiTimer 例程
+                  href: scsi-miniport-driver-s-hwscsitimer-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiAdapterState 例程
+                  href: scsi-miniport-driver-s-hwscsiadapterstate-routine.md
+                - name: SCSI 微型端口驱动程序的 HwScsiAdapterControl 例程
+                  href: scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md
+        - name: Storport 微型端口驱动程序
+          href: storport-miniport-drivers.md
+          items:
+            - name: Storport 微型端口驱动程序中的错误处理
+              href: error-handling-in-storport-miniport-drivers.md
+            - name: Storport 微型端口驱动程序中的互锁的操作
+              href: interlocked-operations-in-storport-miniport-drivers.md
+            - name: 升级为 NVMe 设备的固件
+              href: upgrading-firmware-for-an-nvme-device.md
+            - name: StorPort 微型端口驱动程序的注册表项
+              href: registry-entries-for-storport-miniport-drivers.md
+        - name: IDE 控制器微型驱动程序
+          href: ide-controller-minidrivers.md
+          items:
+            - name: 对供应商提供的 IDE 控制器微型驱动程序的要求
+              href: requirements-for-vendor-supplied-ide-controller-minidrivers.md
+            - name: 初始化和调用 IDE 微型驱动程序例程
+              href: initializing-and-calling-ide-minidriver-routines.md
+            - name: IDE 控制器微型驱动程序的 DriverEntry
+              href: driverentry-of-ide-controller-minidriver.md
+            - name: 安装 IDE 控制器微型驱动程序
+              href: installing-ide-controller-minidrivers.md
+            - name: 示例 IDE 控制器微型驱动程序
+              href: sample-ide-controller-minidrivers.md
+        - name: ATA 微型端口驱动程序
+          href: ata-miniport-drivers.md
+        - name: 对管理启动驱动器的微型端口驱动程序的限制
+          href: restrictions-on-miniport-drivers-that-manage-the-boot-drive.md
+        - name: 处理存储器微型端口驱动程序中的 WMI SRB
+          href: handling-wmi-srbs-in-storage-miniport-drivers.md
+          items:
+            - name: 端口驱动程序如何处理 WMI 请求
+              href: how-the-port-driver-processes-wmi-requests.md
+            - name: 使用 SCSI 端口 WMI 库
+              href: using-the-scsi-port-wmi-library.md
+            - name: 设计 WMI 微型端口驱动程序回调例程
+              href: designing-wmi-miniport-driver-callback-routines.md
+              items:
+                - name: 设计可以通过方法处理 WMI 类的微型端口驱动程序回调例程
+                  href: designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-2.md
+                - name: 设计可以通过数据字段处理 WMI 类的微型端口驱动程序回调例程
+                  href: designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-.md
+            - name: 修改存储器微型端口驱动程序例程，使之支持 WMI SRB
+              href: modifying-storage-miniport-driver-routines-to-support-wmi-srbs.md
+    - name: 存储器虚拟微型端口驱动程序
+      href: storage-virtual-miniport-drivers.md
       items:
-      - name: 存储类内存术语表
-        href: glossary.md
-      - name: 可按字节寻址且以能源为支持的功能类的 _DSM 接口（功能接口 1）
-        href: -dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md
-        items:
-        - name: 查询实现的功能（功能索引 0）
-          href: query-implemented-functions--function-index-0-.md
-        - name: 获取 NVDIMM-N 标识（功能索引 1）
-          href: get-nvdimm-n-identification--function-index-1-.md
-        - name: 获取保存操作要求（功能索引 2）
-          href: get-save-operation-requirements--function-index-2-.md
-        - name: 获取能量源标识（功能索引 3）
-          href: get-energy-source-identification--function-index-3-.md
-        - name: 获取上次备份信息（功能索引 4）
-          href: get-last-backup-information--function-index-4-.md
-        - name: 获取 NVM 阈值（功能索引 5）
-          href: get-nvm-thresholds--function-index-5-.md
-        - name: 设置 NVM 生存期百分比警告阈值（功能索引 6）
-          href: set-nvm-lifetime-percentage-warning-threshold--function-index-6-.md
-        - name: 获取能量源阈值（功能索引 7）
-          href: get-energy-source-thresholds--function-index-7-.md
-        - name: 设置能量源生存期警告阈值（功能索引 8）
-          href: set-energy-source-lifetime-warning-threshold--function-index-8-.md
-        - name: 设置能量源温度警告阈值（功能索引 9）
-          href: set-energy-source-temperature-warning-threshold--function-index-9-.md
-        - name: 获取关键的运行状况信息（功能索引 10）
-          href: get-critical-health-info--function-index-10-.md
-        - name: 获取 NVDIMM-N 运行状况信息（功能索引 11）
-          href: get-nvdimm-n-health-info--function-index-11-.md
-        - name: 获取能量源运行状况信息（功能索引 12）
-          href: get-energy-source-health-info--function-index-12-.md
-        - name: 获取操作统计信息（功能索引 13）
-          href: get-operational-statistics--function-index-13-.md
-        - name: 获取供应商日志页大小（功能索引 14）
-          href: get-vendor-log-page-size--function-index-14-.md
-        - name: 获取供应商日志页（功能索引 15）
-          href: get-vendor-log-page--function-index-15-.md
-        - name: 查询错误注入状态（功能索引 16）
-          href: query-error-injection-status--function-index-16-.md
-        - name: 注入错误（功能索引 17）
-          href: inject-error--function-index-17-.md
-        - name: 获取注入的错误（功能索引 18）
-          href: get-injected-errors--function-index-18-.md
-        - name: 擦除 NVM 图像（功能索引 19）
-          href: erase-nvm-image--function-index-19-.md
-        - name: Arm NVDIMM-N（功能索引 20）
-          href: arm-nvdimm-n--function-index-20-.md
-        - name: 重置为出厂默认设置（功能索引 21）
-          href: reset-to-factory-defaults--function-index-21-.md
-        - name: 启动固件更新（功能索引 22）
-          href: start-firmware-update--function-index-22-.md
-        - name: 发送固件更新数据（功能索引 23）
-          href: send-firmware-update-data--function-index-23-.md
-        - name: 完成固件更新（功能索引 24）
-          href: finish-firmware-update--function-index-24-.md
-        - name: 选择固件映像槽（功能索引 25）
-          href: select-firmware-image-slot--function-index-25-.md
-        - name: 获取固件信息（功能索引 26）
-          href: get-firmware-info--function-index-26-.md
-        - name: I2C 读取（功能索引 27）
-          href: i2c-read--function-index-27-.md
-        - name: I2C 写入（功能索引 28）
-          href: i2c-write--function-index-28-.md
-        - name: 读取类型化数据（功能索引 29）
-          href: read-typed-data--function-index-29-.md
-        - name: 写入类型化数据（功能索引 30）
-          href: write-typed-data--function-index-30-.md
-        - name: 设置内存错误计数器（功能索引 31）
-          href: set-memory-error-counters--function-index-31-.md
-ms.openlocfilehash: f2b1c0bfd767bcad7642840a7a7ab29b54ca86e0
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560620"
+        - name: 存储器虚拟微型端口驱动程序概述
+          href: overview-of-storage-virtual-miniport-drivers.md
+        - name: 存储器虚拟微型端口驱动程序：何时适合使用它们？
+          href: storage-virtual-miniport-drivers--when-are-they-appropriate-.md
+        - name: 存储器虚拟微型端口驱动程序的初始化
+          href: initialization-of-storage-virtual-miniport-drivers.md
+        - name: 故障转储和休眠支持
+          href: crash-dump-and-hibernation-support.md
+    - name: 存储筛选器驱动程序
+      href: storage-filter-drivers.md
+      items:
+        - name: 存储筛选器驱动程序的 I/O 请求支持
+          href: storage-filter-driver-s-support-of-i-o-requests.md
+        - name: 存储筛选器驱动程序的特定于设备类型的功能
+          href: storage-filter-driver-s-device-type-specific-functionality.md
+        - name: 存储筛选器驱动程序的 DriverEntry 例程
+          href: storage-filter-driver-s-driverentry-routine.md
+        - name: 存储筛选器驱动程序的 AddDevice 例程
+          href: storage-filter-driver-s-adddevice-routine.md
+        - name: 处理存储筛选器驱动程序中的 PnP 启动
+          href: handling-pnp-start-in-a-storage-filter-driver.md
+        - name: 存储筛选器驱动程序的调度例程
+          href: storage-filter-driver-s-dispatch-routines.md
+        - name: 存储筛选器驱动程序的 IoCompletion 例程
+          href: storage-filter-driver-s-iocompletion-routines.md
+        - name: 处理 PnP 分页请求
+          href: handling-pnp-paging-requests.md
+    - name: 故障转储筛选器驱动程序
+      href: crash-dump-filter-drivers.md
+      items:
+        - name: 问题说明
+          href: problem-description.md
+        - name: 功能说明
+          href: feature-description.md
+        - name: 接口说明
+          href: interface-description.md
+        - name: 筛选器回调例程
+          href: filter-callback-routines.md
+        - name: 筛选器安装
+          href: filter-installation.md
+        - name: 筛选器初始化
+          href: filter-initialization.md
+    - name: 存储接收器驱动程序
+      href: storage-silo-drivers.md
+      items:
+        - name: 概述
+          href: overview.md
+        - name: 定义
+          href: definitions.md
+        - name: 要求
+          href: requirements.md
+        - name: 体系结构
+          href: architecture.md
+    - name: CD-ROM 驱动程序
+      href: cd-rom-drivers.md
+      items:
+        - name: CD-ROM 独占访问模式
+          href: cd-rom-exclusive-access-mode.md
+        - name: CD-ROM 设置速度
+          href: cd-rom-set-speed.md
+        - name: CD-ROM 实时流式处理
+          href: cd-rom-real-time-streaming-.md
+        - name: ACL 和设备堆栈
+          href: acls-and-the-device-stack.md
+        - name: CD-ROM I/O 控制代码
+          href: cd-rom-io-control-codes.md
+    - name: 磁带驱动程序
+      href: tape-drivers.md
+      items:
+        - name: 使用磁带类驱动程序
+          href: using-the-tape-class-driver.md
+        - name: 必需的和可选的磁带微型类例程
+          href: required-and-optional-tape-miniclass-routines.md
+        - name: 磁带微型类驱动程序的 DriverEntry
+          href: driverentry-of-tape-miniclass-driver.md
+        - name: 将磁带微型类上下文存储在可选扩展中
+          href: storing-tape-miniclass-context-in-optional-extensions.md
+        - name: 处理磁带设备控制请求
+          href: processing-tape-device-control-requests.md
+    - name: 更换器驱动程序
+      href: changer-drivers.md
+      items:
+        - name: 系统提供的更换器驱动程序
+          href: system-supplied-changer-drivers.md
+          items:
+            - name: 更换器驱动程序模型
+              href: the-changer-driver-model.md
+            - name: 更换器类驱动程序
+              href: the-changer-class-driver.md
+            - name: 更换器类驱动程序版本中的差异
+              href: differences-in-changer-class-driver-versions.md
+        - name: 供应商提供的更换器驱动程序
+          href: vendor-supplied-changer-drivers.md
+          items:
+            - name: 规划器微型类驱动程序简介
+              href: introduction-to-changer-miniclass-drivers.md
+            - name: 必需的更换器微型类例程
+              href: required-changer-miniclass-routines.md
+            - name: 更换器微型类驱动程序的 DriverEntry
+              href: driverentry-of-changer-miniclass-drivers.md
+            - name: 安装更换器微型类驱动程序
+              href: installing-changer-miniclass-drivers.md
+        - name: 将特定于设备的信息存储在更换器的设备扩展中
+          href: storing-device-specific-information-in-the-changer-s-device-extension.md
+        - name: 处理更换器设备控制请求
+          href: processing-changer-device-control-requests.md
+    - name: 存储方案
+      href: storage-scenarios.md
+      items:
+        - name: 卸载了数据传输
+          href: offloaded-data-transfer.md
+        - name: 精简预配
+          href: thin-provisioning.md
+    - name: 存储管理和 WMI 类
+      href: storage-wmi-classes.md
+      items:
+        - name: HBA WMI 类
+          href: hba-wmi-classes.md
+          items:
+            - name: Hbaapi.mof 中的 WMI 类限定符定义
+              href: wmi-class-qualifier-definitions-in-hbaapi-mof.md
+              items:
+                - name: EVENT_TYPES_QUALIFIERS
+                  href: event-types-qualifiers.md
+                - name: HBA_BIND_TYPE
+                  href: hba-bind-type.md
+                - name: HBA_STATUS
+                  href: hba-status.md
+            - name: HBAFC3MgmtInfo WMI 类
+              href: hbafc3mgmtinfo-wmi-class.md
+            - name: HBAFCPBindingEntry WMI 类
+              href: hbafcpbindingentry-wmi-class.md
+            - name: HBAFCPBindingEntry2 WMI 类
+              href: hbafcpbindingentry2-wmi-class.md
+            - name: HBAFCPID WMI 类
+              href: hbafcpid-wmi-class.md
+            - name: HBAFCPScsiEntry WMI 类
+              href: hbafcpscsientry-wmi-class.md
+            - name: HBAScsiID WMI 类
+              href: hbascsiid-wmi-class.md
+            - name: MS_SM_AdapterInformationQuery WMI 类
+              href: ms-sm-adapterinformationquery-wmi-class.md
+            - name: MS_SM_EventControl WMI 类
+              href: ms-sm-eventcontrol-wmi-class.md
+              items:
+                - name: SM_AddTarget
+                  href: sm-addtarget.md
+                - name: SM_RemoveTarget
+                  href: sm-removetarget.md
+                - name: SM_AddPort
+                  href: sm-addport.md
+                - name: SM_RemovePort
+                  href: sm-removeport.md
+                - name: SM_AddLink
+                  href: sm-addlink.md
+                - name: SM_RemoveLink
+                  href: sm-removelink.md
+            - name: MS_SM_FabricAndDomainManagementMethods WMI 类
+              href: ms-sm-fabricanddomainmanagementmethods-wmi-class.md
+              items:
+                - name: SM_SendCTPassThru
+                  href: sm-sendctpassthru.md
+                - name: SM_GetRNIDMgmtInfo
+                  href: sm-getrnidmgmtinfo.md
+                - name: SM_SetRNIDMgmtInfo
+                  href: sm-setrnidmgmtinfo.md
+                - name: SM_SendRNID
+                  href: sm-sendrnid.md
+                - name: SM_SendRPL
+                  href: sm-sendrpl.md
+                - name: SM_SendRPS
+                  href: sm-sendrps.md
+                - name: SM_SendSRL
+                  href: sm-sendsrl.md
+                - name: SM_SendLIRR
+                  href: sm-sendlirr.md
+                - name: SM_SendRLS
+                  href: sm-sendrls.md
+            - name: MS_SM_HbaApiVersion WMI 类
+              href: ms-sm-hbaapiversion-wmi-class.md
+            - name: MS_SM_PortInformationMethods WMI 类
+              href: ms-sm-portinformationmethods-wmi-class.md
+            - name: MS_SM_ScsiInformationMethods WMI 类
+              href: ms-sm-scsiinformationmethods-wmi-class.md
+              items:
+                - name: SM_ScsiInquiry
+                  href: sm-scsiinquiry.md
+                - name: SM_ScsiReportLuns
+                  href: sm-scsireportluns.md
+                - name: SM_ScsiReadCapacity
+                  href: sm-scsireadcapacity.md
+            - name: MS_SM_TargetInformationMethods WMI 类
+              href: ms-sm-targetinformationmethods-wmi-class.md
+              items:
+                - name: SM_GetTargetMapping
+                  href: sm-gettargetmapping.md
+                - name: SM_GetBindingCapability
+                  href: sm-getbindingcapability.md
+                - name: SM_GetBindingSupport
+                  href: sm-getbindingsupport.md
+                - name: SM_SetBindingSupport
+                  href: sm-setbindingsupport.md
+                - name: SM_GetPersistentBinding
+                  href: sm-getpersistentbinding.md
+                - name: SM_SetPersistentBinding
+                  href: sm-setpersistentbinding.md
+                - name: SM_RemovePersistentBinding
+                  href: sm-removepersistentbinding.md
+                - name: SM_GetLUNStatistics
+                  href: sm-getlunstatistics.md
+            - name: MS_SMHBA_BINDINGENTRY WMI 类
+              href: ms-smhba-bindingentry-wmi-class.md
+            - name: MS_SMHBA_FC_PHY WMI 类
+              href: ms-smhba-fc-phy-wmi-class.md
+            - name: MS_SMHBA_FC_Port WMI 类
+              href: ms-smhba-fc-port-wmi-class.md
+            - name: MS_SMHBA_PORTATTRIBUTES WMI 类
+              href: ms-smhba-portattributes-wmi-class.md
+            - name: MS_SMHBA_PORTLUN WMI 类
+              href: ms-smhba-portlun-wmi-class.md
+            - name: MS_SMHBA_PROTOCOLSTATISTICS WMI 类
+              href: ms-smhba-protocolstatistics-wmi-class.md
+            - name: MS_SMHBA_SAS_PHY WMI 类
+              href: ms-smhba-sas-phy-wmi-class.md
+            - name: MS_SMHBA_SAS_Port WMI 类
+              href: ms-smhba-sas-port-wmi-class.md
+            - name: MS_SMHBA_SASPHYSTATISTICS WMI 类
+              href: ms-smhba-sasphystatistics-wmi-class.md
+            - name: MS_SMHBA_SCSIENTRY WMI 类
+              href: ms-smhba-scsientry-wmi-class.md
+            - name: MSFC_AdapterEvent WMI 类
+              href: msfc-adapterevent-wmi-class.md
+            - name: MSFC_EventBuffer WMI 类
+              href: msfc-eventbuffer-wmi-class.md
+            - name: MSFC_EventControl WMI 类
+              href: msfc-eventcontrol-wmi-class.md
+              items:
+                - name: AddLink
+                  href: addlink.md
+                - name: AddPort
+                  href: addport.md
+                - name: AddTarget
+                  href: addtarget.md
+                - name: RemoveLink
+                  href: removelink.md
+                - name: RemovePort
+                  href: removeport.md
+                - name: RemoveTarget
+                  href: removetarget.md
+            - name: MSFC_FC4STATISTICS WMI 类
+              href: msfc-fc4statistics-wmi-class.md
+            - name: MSFC_FCAdapterHBAAttributes WMI 类
+              href: msfc-fcadapterhbaattributes-wmi-class.md
+            - name: MSFC_FibrePortHBAAttributes WMI 类
+              href: msfc-fibreporthbaattributes-wmi-class.md
+            - name: MSFC_FibrePortHBAMethods WMI 类
+              href: msfc-fibreporthbamethods-wmi-class.md
+            - name: MSFC_FibrePortHBAStatistics WMI 类
+              href: msfc-fibreporthbastatistics-wmi-class.md
+            - name: MSFC_HbaApiVersion WMI 类
+              href: msfc-hbaapiversion-wmi-class.md
+            - name: MSFC_HBAAdapterMethods WMI 类
+              href: msfc-hbaadaptermethods-wmi-class.md
+              items:
+                - name: GetDiscoveredPortAttributes
+                  href: getdiscoveredportattributes.md
+                - name: GetEventBuffer
+                  href: geteventbuffer.md
+                - name: GetFC3MgmtInfo
+                  href: getfc3mgmtinfo.md
+                - name: GetFC4Statistics
+                  href: getfc4statistics.md
+                - name: GetFCPStatistics
+                  href: getfcpstatistics.md
+                - name: GetPortAttributesByWWN
+                  href: getportattributesbywwn.md
+                - name: RefreshInformation
+                  href: refreshinformation.md
+                - name: ScsiInquiry
+                  href: scsiinquiry6.md
+                - name: ScsiReadCapacity
+                  href: scsireadcapacity.md
+                - name: ScsiReportLuns
+                  href: scsireportluns.md
+                - name: SendCTPassThru
+                  href: sendctpassthru.md
+                - name: SendLIRR
+                  href: sendlirr.md
+                - name: SendRLS
+                  href: sendrls.md
+                - name: SendRNID
+                  href: sendrnid.md
+                - name: SendRNIDV2
+                  href: sendrnidv2.md
+                - name: SendRPL
+                  href: sendrpl.md
+                - name: SendRPS
+                  href: sendrps.md
+                - name: SendSRL
+                  href: sendsrl.md
+                - name: SetFC3MgmtInfo
+                  href: setfc3mgmtinfo.md
+            - name: MSFC_HBAFCPInfo WMI 类
+              href: msfc-hbafcpinfo-wmi-class.md
+              items:
+                - name: GetBindingCapability
+                  href: getbindingcapability.md
+                - name: GetBindingSupport
+                  href: getbindingsupport.md
+                - name: GetFcpPersistentBinding
+                  href: getfcppersistentbinding.md
+                - name: GetFcpTargetMapping
+                  href: getfcptargetmapping.md
+                - name: GetPersistentBinding2
+                  href: getpersistentbinding2.md
+                - name: RemovePersistentEntry
+                  href: removepersistententry.md
+                - name: SetBindingSupport
+                  href: setbindingsupport.md
+                - name: SetPersistentEntry
+                  href: setpersistententry.md
+            - name: MSFC_HBAPortAttributesResults WMI 类
+              href: msfc-hbaportattributesresults-wmi-class.md
+            - name: MSFC_HBAPortStatistics WMI 类
+              href: msfc-hbaportstatistics-wmi-class.md
+            - name: MSFC_LinkEvent WMI 类
+              href: msfc-linkevent-wmi-class.md
+            - name: MSFC_PortEvent WMI 类
+              href: msfc-portevent-wmi-class.md
+            - name: MSFC_TargetEvent WMI 类
+              href: msfc-targetevent-wmi-class.md
+            - name: MSFC_TM WMI 类
+              href: msfc-tm-wmi-class.md
+        - name: iSCSI WMI 类
+          href: iscsi-wmi-classes.md
+          items:
+            - name: iSCSI WMI 通用类
+              href: iscsi-wmi-common-classes.md
+              items:
+                - name: Common.mof 中的 WMI 属性限定符定义
+                  href: wmi-property-qualifier-definitions-in-common-mof.md
+                  items:
+                    - name: ISCSI_AUTH_TYPES_QUALIFIERS
+                      href: iscsi-auth-types-qualifiers.md
+                    - name: ISCSI_STATUS_QUALIFIERS
+                      href: iscsi-status-qualifiers.md
+                    - name: SECURITY_FLAG_QUALIFIERS
+                      href: security-flag-qualifiers.md
+                - name: ISCSI_IP_Address WMI 类
+                  href: iscsi-ip-address-wmi-class.md
+                - name: ISCSI_LoginOptions WMI 类
+                  href: iscsi-loginoptions-wmi-class.md
+                - name: ISCSI_LUNList WMI 类
+                  href: iscsi-lunlist-wmi-class.md
+                - name: ISCSI_TargetMapping WMI 类
+                  href: iscsi-targetmapping-wmi-class.md
+                - name: ISCSI_TargetPortal WMI 类
+                  href: iscsi-targetportal-wmi-class.md
+                - name: ISCSI_TargetPortalGroup WMI 类
+                  href: iscsi-targetportalgroup-wmi-class.md
+            - name: 用于管理发起程序、端口、会话和连接的 iSCSI WMI 类
+              href: iscsi-wmi-classes-that-manage-initiators--ports--sessions-and-connecti.md
+              items:
+                - name: Mgmt.mof 中的 WMI 属性限定符定义
+                  href: wmi-property-qualifier-definitions-in-mgmt-mof.md
+                  items:
+                    - name: ISCSI_CONNECTION_STATE_TYPE_QUALIFIERS
+                      href: iscsi-connection-state-type-qualifiers.md
+                    - name: ISCSI_CONNECTION_PROTOCOL_TYPE_QUALIFIERS
+                      href: iscsi-connection-protocol-type-qualifiers.md
+                    - name: ISCSI_SESSION_TYPE_QUALIFIERS
+                      href: iscsi-session-type-qualifiers.md
+                    - name: ISCSI_HEADER_INTEGRITY_TYPE_QUALIFIERS
+                      href: iscsi-header-integrity-type-qualifiers.md
+                    - name: ISCSI_DATA_INTEGRITY_TYPE_QUALIFIERS
+                      href: iscsi-data-integrity-type-qualifiers.md
+                    - name: ISCSI_PORTAL_TYPE_QUALIFIERS
+                      href: iscsi-portal-type-qualifiers.md
+                    - name: ISCSI_INITIATOR_NODE_FAILURE_TYPE_QUALIFIERS
+                      href: iscsi-initiator-node-failure-type-qualifiers.md
+                    - name: ISCSI_INITIATOR_FAILURE_TYPE_QUALIFIERS
+                      href: iscsi-initiator-failure-type-qualifiers.md
+                - name: ISCSI_ConnectionStaticInfo WMI 类
+                  href: iscsi-connectionstaticinfo-wmi-class.md
+                - name: ISCSI_Path WMI 类
+                  href: iscsi-path-wmi-class.md
+                - name: ISCSI_PortalInfo WMI 类
+                  href: iscsi-portalinfo-wmi-class.md
+                - name: ISCSI_RedirectPortalInfo WMI 类
+                  href: iscsi-redirectportalinfo-wmi-class.md
+                - name: ISCSI_RedirectSessionInfo WMI 类
+                  href: iscsi-redirectsessioninfo-wmi-class.md
+                - name: ISCSI_SessionStaticInfo WMI 类
+                  href: iscsi-sessionstaticinfo-wmi-class.md
+                - name: ISCSI_Supported_LB_Policies WMI 类
+                  href: iscsi-supported-lb-policies-wmi-class.md
+                - name: MSiSCSI_EventLog WMI 类
+                  href: msiscsi-eventlog-wmi-class.md
+                - name: MSiSCSI_HBAInformation WMI 类
+                  href: msiscsi-hbainformation-wmi-class.md
+                - name: MSiSCSI_HBASessionConfig WMI 类
+                  href: msiscsi-hbasessionconfig-wmi-class.md
+                - name: MSiSCSI_InitiatorInstanceFailureEvent WMI 类
+                  href: msiscsi-initiatorinstancefailureevent-wmi-class.md
+                - name: MSiSCSI_InitiatorNodeFailureEvent WMI 类
+                  href: msiscsi-initiatornodefailureevent-wmi-class.md
+                - name: MSiSCSI_InitiatorSessionInfo WMI 类
+                  href: msiscsi-initiatorsessioninfo-wmi-class.md
+                - name: MSiSCSI_LB_Operations WMI 类
+                  href: msiscsi-lb-operations-wmi-class.md
+                - name: MSiSCSI_ManagementOperations WMI 类
+                  href: msiscsi-managementoperations-wmi-class.md
+                - name: MSiSCSI_PortalInfoClass WMI 类
+                  href: msiscsi-portalinfoclass-wmi-class.md
+                - name: MSiSCSI_QueryLBPolicy WMI 类
+                  href: msiscsi-querylbpolicy-wmi-class.md
+                - name: MSiSCSI_RedirectPortalInfoClass WMI 类
+                  href: msiscsi-redirectportalinfoclass-wmi-class.md
+            - name: 可报告性能统计信息的 iSCSI WMI 类
+              href: iscsi-wmi-classes-that-report-performance-statistics.md
+              items:
+                - name: MSiSCSI_ConnectionStatistics WMI 类
+                  href: msiscsi-connectionstatistics-wmi-class.md
+                - name: MSiSCSI_InitiatorInstanceStatistics WMI 类
+                  href: msiscsi-initiatorinstancestatistics-wmi-class.md
+                - name: MSiSCSI_InitiatorLoginStatistics WMI 类
+                  href: msiscsi-initiatorloginstatistics-wmi-class.md
+                - name: MSiSCSI_MMIPSECStats WMI 类
+                  href: msiscsi-mmipsecstats-wmi-class.md
+                - name: MSiSCSI_NICPerformance WMI 类
+                  href: msiscsi-nicperformance-wmi-class.md
+                - name: MSiSCSI_QMIPSECStats WMI 类
+                  href: msiscsi-qmipsecstats-wmi-class.md
+                - name: MSiSCSI_RequestTimeStatistics WMI 类
+                  href: msiscsi-requesttimestatistics-wmi-class.md
+                - name: MSiSCSI_SessionStatistics WMI 类
+                  href: msiscsi-sessionstatistics-wmi-class.md
+            - name: iSCSI WMI 操作类
+              href: iscsi-wmi-operations-classes.md
+              items:
+                - name: ISCSI_Persistent_Login WMI 类
+                  href: iscsi-persistent-login-wmi-class.md
+                - name: MSiSCSI_AdapterEvent WMI 类
+                  href: msiscsi-adapterevent-wmi-class.md
+                - name: MSiSCSI_BootInformation WMI 类
+                  href: msiscsi-bootinformation-wmi-class.md
+                - name: MSiSCSI_LUNMappingInformation WMI 类
+                  href: msiscsi-lunmappinginformation-wmi-class.md
+                - name: MSiSCSI_Operations WMI 类
+                  href: msiscsi-operations-wmi-class.md
+                  items:
+                    - name: AddConnectionToSession
+                      href: addconnectiontosession.md
+                    - name: AddiSNSServer
+                      href: addisnsserver.md
+                    - name: AddRADIUSServer
+                      href: addradiusserver.md
+                    - name: DeleteInitiatorNodeName
+                      href: deleteinitiatornodename.md
+                    - name: LoginToTarget
+                      href: logintotarget.md
+                    - name: LogoutFromTarget
+                      href: logoutfromtarget.md
+                    - name: RemoveConnectionFromSession
+                      href: removeconnectionfromsession.md
+                    - name: RemoveiSNSServer
+                      href: removeisnsserver.md
+                    - name: RemovePersistentLogin
+                      href: removepersistentlogin.md
+                    - name: RemoveRADIUSServer
+                      href: removeradiusserver.md
+                    - name: ScsiInquiry
+                      href: scsiinquiry.md
+                    - name: ScsiReadCapacity
+                      href: scsireadcapacity6.md
+                    - name: ScsiReportLuns
+                      href: scsireportluns6.md
+                    - name: SendTargets
+                      href: sendtargets.md
+                    - name: SetCHAPSharedSecret
+                      href: setchapsharedsecret.md
+                    - name: SetInitiatorNodeName
+                      href: setinitiatornodename.md
+                    - name: SetRADIUSSharedSecret
+                      href: setradiussharedsecret.md
+                - name: MSiSCSI_PersistentLogins WMI 类
+                  href: msiscsi-persistentlogins-wmi-class.md
+                - name: MSiSCSI_SecurityConfigOperations WMI 类
+                  href: msiscsi-securityconfigoperations-wmi-class.md
+                  items:
+                    - name: ClearCache
+                      href: clearcache.md
+                    - name: GetPresharedKeyForId
+                      href: getpresharedkeyforid.md
+                    - name: SetGenerationalGuid
+                      href: setgenerationalguid.md
+                    - name: SetGroupPresharedKey
+                      href: setgrouppresharedkey.md
+                    - name: SetPresharedKeyForId
+                      href: setpresharedkeyforid.md
+                    - name: SetTunnelModeOuterAddress
+                      href: settunnelmodeouteraddress.md
+                - name: MSiSCSI_TargetMappings WMI 类
+                  href: msiscsi-targetmappings-wmi-class.md
+            - name: iSCSI WMI 发现类
+              href: iscsi-wmi-discovery-classes.md
+              items:
+                - name: ISCSI_DiscoveredTarget WMI 类
+                  href: iscsi-discoveredtarget-wmi-class.md
+                - name: ISCSI_DiscoveredTarget2 WMI 类
+                  href: iscsi-discoveredtarget2-wmi-class.md
+                - name: ISCSI_DiscoveredTargetPortal WMI 类
+                  href: iscsi-discoveredtargetportal-wmi-class.md
+                - name: ISCSI_DiscoveredTargetPortal2 WMI 类
+                  href: iscsi-discoveredtargetportal2-wmi-class.md
+                - name: ISCSI_DiscoveredTargetPortalGroup WMI 类
+                  href: iscsi-discoveredtargetportalgroup-wmi-class.md
+                - name: ISCSI_DiscoveredTargetPortalGroup2 WMI 类
+                  href: iscsi-discoveredtargetportalgroup2-wmi-class.md
+                - name: MSiSCSI_DiscoveryOperations WMI 类
+                  href: msiscsi-discoveryoperations-wmi-class.md
+                  items:
+                    - name: ReportDiscoveredTargets
+                      href: reportdiscoveredtargets.md
+                    - name: ReportDiscoveredTargets2
+                      href: reportdiscoveredtargets2.md
+            - name: iSCSI WMI 网络类
+              href: iscsi-wmi-network-classes.md
+              items:
+                - name: Config.mof 中的 WMI 属性限定符定义
+                  href: wmi-property-qualifier-definitions-in-config-mof.md
+                  items:
+                    - name: ENCRYPTION_TYPES_QUALIFIERS
+                      href: encryption-types-qualifiers.md
+                - name: MSiSCSI_BootConfiguration WMI 类
+                  href: msiscsi-bootconfiguration-wmi-class.md
+                - name: MSiSCSI_DiscoveryConfig WMI 类
+                  href: msiscsi-discoveryconfig-wmi-class.md
+                - name: MSiSCSI_NICConfig WMI 类
+                  href: msiscsi-nicconfig-wmi-class.md
+                - name: MSiSCSI_RADIUSConfig WMI 类
+                  href: msiscsi-radiusconfig-wmi-class.md
+                - name: MSiSCSI_SecurityCapabilities WMI 类
+                  href: msiscsi-securitycapabilities-wmi-class.md
+                - name: MSiSCSI_TCPIPConfig WMI 类
+                  href: msiscsi-tcpipconfig-wmi-class.md
+        - name: MPIO WMI 类
+          href: mpio-wmi-classes.md
+          items:
+            - name: MPIO_PATH_HEALTH_CLASS WMI 类
+              href: mpio-path-health-class-wmi-class.md
+            - name: MPIO_PATH_HEALTH_INFO WMI 类
+              href: mpio-path-health-info-wmi-class.md
+            - name: MPIO_DISK_HEALTH_CLASS WMI 类
+              href: mpio-disk-health-class-wmi-class.md
+            - name: MPIO_DISK_HEALTH_INFO WMI 类
+              href: mpio-disk-health-info-wmi-class.md
+            - name: SCSI_ADDR WMI 类
+              href: scsi-addr-wmi-class.md
+            - name: MPIO_DRIVE_INFO WMI 类
+              href: mpio-drive-info-wmi-class.md
+            - name: MPIO_DISK_INFO WMI 类
+              href: mpio-disk-info-wmi-class.md
+            - name: DSM_VERSION WMI 类
+              href: dsm-version-wmi-class.md
+            - name: DSM_COUNTERS WMI 类
+              href: dsm-counters-wmi-class.md
+            - name: DSM_PARAMETERS WMI 类
+              href: dsm-parameters-wmi-class.md
+            - name: MPIO_REGISTERED_DSM WMI 类
+              href: mpio-registered-dsm-wmi-class.md
+            - name: MPIO_ADAPTER_INFORMATION WMI 类
+              href: mpio-adapter-information-wmi-class.md
+            - name: MPIO_PATH_INFORMATION WMI 类
+              href: mpio-path-information-wmi-class.md
+            - name: MPIO_CONTROLLER_INFO WMI 类
+              href: mpio-controller-info-wmi-class.md
+            - name: MPIO_CONTROLLER_CONFIGURATION WMI 类
+              href: mpio-controller-configuration-wmi-class.md
+            - name: MPIO_TIMERS_COUNTERS WMI 类
+              href: mpio-timers-counters-wmi-class.md
+            - name: MPIO_WMI_METHODS WMI 类
+              href: mpio-wmi-methods-wmi-class.md
+              items:
+                - name: MPIOMoveDevice
+                  href: mpiomovedevice.md
+                - name: GetPathConfiguration
+                  href: getpathconfiguration.md
+                - name: SetDSMCounters
+                  href: setdsmcounters.md
+                - name: ClearPathHealthCounters
+                  href: clearpathhealthcounters.md
+                - name: ClearMpioDiskHealthCounters
+                  href: clearmpiodiskhealthcounters.md
+                - name: ClearAllPathHealthCounters
+                  href: clearallpathhealthcounters.md
+                - name: ClearAllMpioDiskHealthCounters
+                  href: clearallmpiodiskhealthcounters.md
+            - name: MPIO_EventEntry WMI 类
+              href: mpio-evententry-wmi-class.md
+            - name: PDOSCSI_ADDR WMI 类
+              href: pdoscsi-addr-wmi-class.md
+            - name: PDO_INFORMATION WMI 类
+              href: pdo-information-wmi-class.md
+            - name: MPIO_GET_DESCRIPTOR WMI 类
+              href: mpio-get-descriptor-wmi-class.md
+            - name: MPIO_DEVINSTANCE_HEALTH_CLASS WMI 类
+              href: mpio-devinstance-health-class-wmi-class.md
+            - name: MPIO_DEVINSTANCE_HEALTH_INFO WMI 类
+              href: mpio-devinstance-health-info-wmi-class.md
+            - name: MPIO_DSM_Path_V2 WMI 类
+              href: mpio-dsm-path-v2-wmi-class.md
+            - name: DSM_Load_Balance_Policy_V2 WMI 类
+              href: dsm-load-balance-policy-v2-wmi-class.md
+            - name: DSM_QueryLBPolicy_V2 WMI 类
+              href: dsm-querylbpolicy-v2-wmi-class.md
+            - name: DSM_QuerySupportedLBPolicies_V2 WMI 类
+              href: dsm-querysupportedlbpolicies-v2-wmi-class.md
+            - name: MPIO_DSM_Path WMI 类
+              href: mpio-dsm-path-wmi-class.md
+            - name: DSM_Load_Balance_Policy WMI 类
+              href: dsm-load-balance-policy-wmi-class.md
+            - name: DSM_QueryLBPolicy WMI 类
+              href: dsm-querylbpolicy-wmi-class.md
+            - name: DSM_QuerySupportedLBPolicies WMI 类
+              href: dsm-querysupportedlbpolicies-wmi-class.md
+            - name: DSM_LB_Operations WMI 类
+              href: dsm-lb-operations-wmi-class.md
+              items:
+                - name: DsmSetLoadBalancePolicy
+                  href: dsmsetloadbalancepolicy.md
+                - name: DsmSetLoadBalancePolicyALUA
+                  href: dsmsetloadbalancepolicyalua.md
+            - name: DSM_QueryUniqueId WMI 类
+              href: dsm-queryuniqueid-wmi-class.md
+        - name: NPIV WMI 类
+          href: npiv-wmi-classes.md
+          items:
+            - name: MSFC_DH_Chap_Parameters WMI 类
+              href: msfc-dh-chap-parameters-wmi-class.md
+            - name: MSFC_FibrePortNPIVAttributes WMI 类
+              href: msfc-fibreportnpivattributes-wmi-class.md
+            - name: MSFC_FibrePortNPIVMethods WMI 类
+              href: msfc-fibreportnpivmethods-wmi-class.md
+              items:
+                - name: CreateVirtualPort
+                  href: createvirtualport.md
+                - name: RemoveVirtualPort
+                  href: removevirtualport.md
+            - name: MSFC_NPIVLUNMappingInformation WMI 类
+              href: msfc-npivlunmappinginformation-wmi-class.md
+            - name: MSFC_VirtualFibrePortAttributes WMI 类
+              href: msfc-virtualfibreportattributes-wmi-class.md
+    - name: 存储类内存
+      href: storage-class-memory-portal.md
+      items:
+        - name: JEDEC 可按字节寻址且以能源为支持的接口 NVDIMM 特定于设备的方法 (_DSM)
+          href: jedec-byte-addressable-energy-backed-interface-nvdimms-device-specific-method---dsm-.md
+          items:
+            - name: 存储类内存术语表
+              href: glossary.md
+            - name: 可按字节寻址且以能源为支持的功能类的 _DSM 接口（功能接口 1）
+              href: '-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md'
+              items:
+                - name: 查询实现的功能（功能索引 0）
+                  href: query-implemented-functions--function-index-0-.md
+                - name: 获取 NVDIMM-N 标识（功能索引 1）
+                  href: get-nvdimm-n-identification--function-index-1-.md
+                - name: 获取保存操作要求（功能索引 2）
+                  href: get-save-operation-requirements--function-index-2-.md
+                - name: 获取能量源标识（功能索引 3）
+                  href: get-energy-source-identification--function-index-3-.md
+                - name: 获取上次备份信息（功能索引 4）
+                  href: get-last-backup-information--function-index-4-.md
+                - name: 获取 NVM 阈值（功能索引 5）
+                  href: get-nvm-thresholds--function-index-5-.md
+                - name: 设置 NVM 生存期百分比警告阈值（功能索引 6）
+                  href: set-nvm-lifetime-percentage-warning-threshold--function-index-6-.md
+                - name: 获取能量源阈值（功能索引 7）
+                  href: get-energy-source-thresholds--function-index-7-.md
+                - name: 设置能量源生存期警告阈值（功能索引 8）
+                  href: set-energy-source-lifetime-warning-threshold--function-index-8-.md
+                - name: 设置能量源温度警告阈值（功能索引 9）
+                  href: set-energy-source-temperature-warning-threshold--function-index-9-.md
+                - name: 获取关键的运行状况信息（功能索引 10）
+                  href: get-critical-health-info--function-index-10-.md
+                - name: 获取 NVDIMM-N 运行状况信息（功能索引 11）
+                  href: get-nvdimm-n-health-info--function-index-11-.md
+                - name: 获取能量源运行状况信息（功能索引 12）
+                  href: get-energy-source-health-info--function-index-12-.md
+                - name: 获取操作统计信息（功能索引 13）
+                  href: get-operational-statistics--function-index-13-.md
+                - name: 获取供应商日志页大小（功能索引 14）
+                  href: get-vendor-log-page-size--function-index-14-.md
+                - name: 获取供应商日志页（功能索引 15）
+                  href: get-vendor-log-page--function-index-15-.md
+                - name: 查询错误注入状态（功能索引 16）
+                  href: query-error-injection-status--function-index-16-.md
+                - name: 注入错误（功能索引 17）
+                  href: inject-error--function-index-17-.md
+                - name: 获取注入的错误（功能索引 18）
+                  href: get-injected-errors--function-index-18-.md
+                - name: 擦除 NVM 图像（功能索引 19）
+                  href: erase-nvm-image--function-index-19-.md
+                - name: Arm NVDIMM-N（功能索引 20）
+                  href: arm-nvdimm-n--function-index-20-.md
+                - name: 重置为出厂默认设置（功能索引 21）
+                  href: reset-to-factory-defaults--function-index-21-.md
+                - name: 启动固件更新（功能索引 22）
+                  href: start-firmware-update--function-index-22-.md
+                - name: 发送固件更新数据（功能索引 23）
+                  href: send-firmware-update-data--function-index-23-.md
+                - name: 完成固件更新（功能索引 24）
+                  href: finish-firmware-update--function-index-24-.md
+                - name: 选择固件映像槽（功能索引 25）
+                  href: select-firmware-image-slot--function-index-25-.md
+                - name: 获取固件信息（功能索引 26）
+                  href: get-firmware-info--function-index-26-.md
+                - name: I2C 读取（功能索引 27）
+                  href: i2c-read--function-index-27-.md
+                - name: I2C 写入（功能索引 28）
+                  href: i2c-write--function-index-28-.md
+                - name: 读取类型化数据（功能索引 29）
+                  href: read-typed-data--function-index-29-.md
+                - name: 写入类型化数据（功能索引 30）
+                  href: write-typed-data--function-index-30-.md
+                - name: 设置内存错误计数器（功能索引 31）
+                  href: set-memory-error-counters--function-index-31-.md

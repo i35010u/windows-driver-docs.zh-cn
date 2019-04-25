@@ -6,11 +6,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 00f9dbd93e7ee1bd11c1c6d20c9cba097f9ee903
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386500"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 

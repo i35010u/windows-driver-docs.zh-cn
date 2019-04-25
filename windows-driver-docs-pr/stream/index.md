@@ -11,17 +11,17 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 55354358cd234df8ef9cf2b66ef1d432a018ac7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379967"
 ---
 # <a name="streaming-media-device-driver-design-guide"></a>流媒体设备驱动程序设计指南
 
 使用本部分中的指南为对视频和音频进行流式处理的设备（例如网络摄像头和数码摄像机）设计和实现驱动程序。
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 - [在不使用共同安装程序的情况下为 USB 设备更新设备固件](device-firmware-update-for-usb-devices-without-using-a-co-installer.md)
 - [USB 视频类 (UVC) 相机实现指南](uvc-camera-implementation-guide.md)

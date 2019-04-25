@@ -1,70 +1,63 @@
-items:
 - name: Windows 驱动程序示例
   href: index.md
   items:
-  - name: 音频驱动程序示例
-    href: audio-driver-samples.md
-  - name: AVStream 驱动程序示例
-    href: avstream-driver-samples.md
-  - name: 电池驱动程序示例
-    href: battery-driver-samples.md
-  - name: 生物识别驱动程序示例
-    href: biometrics-driver-samples.md
-  - name: 蓝牙驱动程序示例
-    href: bluetooth-driver-samples.md
-  - name: 相机驱动程序示例
-    href: camera-driver-samples.md
-  - name: 文件系统驱动程序示例
-    href: file-system-driver-samples.md
-  - name: 相机驱动程序示例
-    href: general-driver-samples.md
-  - name: 通用输入/输出 (GPIO) 驱动程序示例
-    href: general-purpose-input-output--gpio--driver-samples.md
-  - name: 人机接口设备 (HID) 驱动程序示例
-    href: human-interface-devices--hid--driver-samples.md
-  - name: 输入驱动程序示例
-    href: input-driver-samples.md
-  - name: 网络驱动程序示例
-    href: networking-driver-samples.md
-  - name: 近场邻近感应 (NFP) 驱动程序示例
-    href: near-field-proximity--nfp--driver-samples.md
-  - name: Power 框架 (PoFx) 驱动程序示例
-    href: power-framework--pofx--driver-samples.md
-  - name: 服务点 (POS) 驱动程序示例
-    href: point-of-service--pos--driver-samples.md
-  - name: 打印驱动程序示例
-    href: print-driver-samples.md
-  - name: 安全数字 (SD) 驱动程序示例
-    href: secure-digital--sd--driver-samples.md
-  - name: 安全性驱动程序示例
-    href: security-driver-samples.md
-  - name: 传感器驱动程序示例
-    href: sensor-driver-samples.md
-  - name: 串行驱动程序示例
-    href: serial-driver-samples.md
-  - name: 设置示例
-    href: driver-setup-samples.md
-  - name: 智能卡驱动程序示例
-    href: smart-card-driver-samples.md
-  - name: 简单外设总线 (SPB) 驱动程序示例
-    href: simple-peripheral-bus--spb--driver-samples.md
-  - name: 存储驱动程序示例
-    href: storage-driver-samples.md
-  - name: 热感驱动程序示例
-    href: thermal-driver-samples.md
-  - name: 工具示例
-    href: driver-tools-samples.md
-  - name: 通用串行总线 (USB) 驱动程序示例
-    href: universal-serial-bus--usb--driver-samples.md
-  - name: 视频驱动程序示例
-    href: video-driver-samples.md
-  - name: Windows Management Instrumentation (WMI) 驱动程序示例
-    href: windows-management-instrumentation--wmi--driver-samples.md
-  - name: Windows 便携设备 (WPD) 驱动程序示例
-    href: windows-portable-device--wpd--driver-samples.md
-ms.openlocfilehash: 0e31233f144a7184dbf2e9439c4172123b1806c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465430"
+    - name: 音频驱动程序示例
+      href: audio-driver-samples.md
+    - name: AVStream 驱动程序示例
+      href: avstream-driver-samples.md
+    - name: 电池驱动程序示例
+      href: battery-driver-samples.md
+    - name: 生物识别驱动程序示例
+      href: biometrics-driver-samples.md
+    - name: 蓝牙驱动程序示例
+      href: bluetooth-driver-samples.md
+    - name: 相机驱动程序示例
+      href: camera-driver-samples.md
+    - name: 文件系统驱动程序示例
+      href: file-system-driver-samples.md
+    - name: 相机驱动程序示例
+      href: general-driver-samples.md
+    - name: 通用输入/输出 (GPIO) 驱动程序示例
+      href: general-purpose-input-output--gpio--driver-samples.md
+    - name: 人机接口设备 (HID) 驱动程序示例
+      href: human-interface-devices--hid--driver-samples.md
+    - name: 输入驱动程序示例
+      href: input-driver-samples.md
+    - name: 网络驱动程序示例
+      href: networking-driver-samples.md
+    - name: 近场邻近感应 (NFP) 驱动程序示例
+      href: near-field-proximity--nfp--driver-samples.md
+    - name: Power 框架 (PoFx) 驱动程序示例
+      href: power-framework--pofx--driver-samples.md
+    - name: 服务点 (POS) 驱动程序示例
+      href: point-of-service--pos--driver-samples.md
+    - name: 打印驱动程序示例
+      href: print-driver-samples.md
+    - name: 安全数字 (SD) 驱动程序示例
+      href: secure-digital--sd--driver-samples.md
+    - name: 安全性驱动程序示例
+      href: security-driver-samples.md
+    - name: 传感器驱动程序示例
+      href: sensor-driver-samples.md
+    - name: 串行驱动程序示例
+      href: serial-driver-samples.md
+    - name: 设置示例
+      href: driver-setup-samples.md
+    - name: 智能卡驱动程序示例
+      href: smart-card-driver-samples.md
+    - name: 简单外设总线 (SPB) 驱动程序示例
+      href: simple-peripheral-bus--spb--driver-samples.md
+    - name: 存储驱动程序示例
+      href: storage-driver-samples.md
+    - name: 热感驱动程序示例
+      href: thermal-driver-samples.md
+    - name: 工具示例
+      href: driver-tools-samples.md
+    - name: 通用串行总线 (USB) 驱动程序示例
+      href: universal-serial-bus--usb--driver-samples.md
+    - name: 视频驱动程序示例
+      href: video-driver-samples.md
+    - name: Windows Management Instrumentation (WMI) 驱动程序示例
+      href: windows-management-instrumentation--wmi--driver-samples.md
+    - name: Windows 便携设备 (WPD) 驱动程序示例
+      href: windows-portable-device--wpd--driver-samples.md

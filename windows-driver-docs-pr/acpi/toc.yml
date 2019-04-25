@@ -1,73 +1,66 @@
-items:
 - name: ACPI 设计指南
   href: index.md
   items:
-  - name: 支持 ACPI 设备
-    href: supporting-acpi-devices.md
-    items:
-    - name: ACPI 设备的设备堆栈
-      href: device-stacks-for-an-acpi-device.md
-    - name: ACPI 设备函数驱动程序的操作
-      href: operation-of-an-acpi-device-function-driver.md
+    - name: 支持 ACPI 设备
+      href: supporting-acpi-devices.md
       items:
-      - name: 支持操作区域
-        href: supporting-an-operation-region.md
-        items:
-        - name: 维护操作区域内存缓冲区
-          href: maintaining-an-operation-region-memory-buffer.md
-        - name: 注册和注销操作区域处理程序
-          href: registering-and-deregistering-an-operation-region-handler.md
-        - name: 实现操作区域处理程序
-          href: implementing-an-operation-region-handler.md
-        - name: 访问操作区域
-          href: accessing-an-operation-region.md
-      - name: 提供供应商定义的 ACPI 设备接口
-        href: providing-a-vendor-defined-acpi-device-interface.md
-  - name: 评估 ACPI 控制方法
-    href: evaluating-acpi-control-methods.md
-    items:
-    - name: 同步评估 ACPI 控制方法
-      href: evaluating-acpi-control-methods-synchronously.md
+        - name: ACPI 设备的设备堆栈
+          href: device-stacks-for-an-acpi-device.md
+        - name: ACPI 设备函数驱动程序的操作
+          href: operation-of-an-acpi-device-function-driver.md
+          items:
+            - name: 支持操作区域
+              href: supporting-an-operation-region.md
+              items:
+                - name: 维护操作区域内存缓冲区
+                  href: maintaining-an-operation-region-memory-buffer.md
+                - name: 注册和注销操作区域处理程序
+                  href: registering-and-deregistering-an-operation-region-handler.md
+                - name: 实现操作区域处理程序
+                  href: implementing-an-operation-region-handler.md
+                - name: 访问操作区域
+                  href: accessing-an-operation-region.md
+            - name: 提供供应商定义的 ACPI 设备接口
+              href: providing-a-vendor-defined-acpi-device-interface.md
+    - name: 评估 ACPI 控制方法
+      href: evaluating-acpi-control-methods.md
       items:
-      - name: 控制方法输入缓冲区结构
-        href: control-method-input-buffer-structures.md
-      - name: 评估不带输入参数的控制方法
-        href: evaluating-a-control-method-without-input-arguments.md
-      - name: 评估采用输入参数的控制方法
-        href: evaluating-a-control-method-that-takes-input-arguments.md
-      - name: SendDownStreamIrp 函数
-        href: senddownstreamirp-function.md
-    - name: 枚举子设备和控制方法
-      href: enumerating-child-devices-and-control-methods.md
-      items:
-      - name: 发送 IOCTL_ACPI_ENUM_CHILDREN 请求
-        href: sending-an-ioctl-acpi-enum-children-request.md
-    - name: 控制方法宏
-      href: control-method-macros.md
-      items:
-      - name: ACPI_METHOD_SET_ARGUMENT_INTEGER
-        href: acpi-method-set-argument-integer.md
-      - name: ACPI_METHOD_SET_ARGUMENT_STRING
-        href: acpi-method-set-argument-string.md
-      - name: ACPI_METHOD_SET_ARGUMENT_BUFFER
-        href: acpi-method-set-argument-buffer.md
-      - name: ACPI_ENUM_CHILD_NEXT
-        href: acpi-enum-child-next.md
-      - name: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD
-        href: acpi-enum-child-length-from-child.md
-      - name: ACPI_METHOD_ARGUMENT_LENGTH
-        href: acpi-method-argument-length.md
-      - name: ACPI_METHOD_ARGUMENT_LENGTH_FROM_ARGUMENT
-        href: acpi-method-argument-length-from-argument.md
-      - name: ACPI_METHOD_NEXT_ARGUMENT
-        href: acpi-method-next-argument.md
-      - name: ACPI_MANIPULATE_LOCK_BUFFER
-        href: acpi-manipulate-lock-buffer.md
-  - name: 如何使用 _OSI 识别 ACPI 中的 Windows 版本
-    href: winacpi-osi.md
-ms.openlocfilehash: 9119af137cd209f2fc2e01e236e4371407d7fe09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465621"
+        - name: 同步评估 ACPI 控制方法
+          href: evaluating-acpi-control-methods-synchronously.md
+          items:
+            - name: 控制方法输入缓冲区结构
+              href: control-method-input-buffer-structures.md
+            - name: 评估不带输入参数的控制方法
+              href: evaluating-a-control-method-without-input-arguments.md
+            - name: 评估采用输入参数的控制方法
+              href: evaluating-a-control-method-that-takes-input-arguments.md
+            - name: SendDownStreamIrp 函数
+              href: senddownstreamirp-function.md
+        - name: 枚举子设备和控制方法
+          href: enumerating-child-devices-and-control-methods.md
+          items:
+            - name: 发送 IOCTL_ACPI_ENUM_CHILDREN 请求
+              href: sending-an-ioctl-acpi-enum-children-request.md
+        - name: 控制方法宏
+          href: control-method-macros.md
+          items:
+            - name: ACPI_METHOD_SET_ARGUMENT_INTEGER
+              href: acpi-method-set-argument-integer.md
+            - name: ACPI_METHOD_SET_ARGUMENT_STRING
+              href: acpi-method-set-argument-string.md
+            - name: ACPI_METHOD_SET_ARGUMENT_BUFFER
+              href: acpi-method-set-argument-buffer.md
+            - name: ACPI_ENUM_CHILD_NEXT
+              href: acpi-enum-child-next.md
+            - name: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD
+              href: acpi-enum-child-length-from-child.md
+            - name: ACPI_METHOD_ARGUMENT_LENGTH
+              href: acpi-method-argument-length.md
+            - name: ACPI_METHOD_ARGUMENT_LENGTH_FROM_ARGUMENT
+              href: acpi-method-argument-length-from-argument.md
+            - name: ACPI_METHOD_NEXT_ARGUMENT
+              href: acpi-method-next-argument.md
+            - name: ACPI_MANIPULATE_LOCK_BUFFER
+              href: acpi-manipulate-lock-buffer.md
+    - name: 如何使用 _OSI 识别 ACPI 中的 Windows 版本
+      href: winacpi-osi.md

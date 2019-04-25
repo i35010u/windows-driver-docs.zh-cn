@@ -7,16 +7,16 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 0b3335f1bf688083233b4e90e59e3ec2325341f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345207"
 ---
 # <a name="sensor-device-driver-design-guide"></a>传感器设备驱动程序设计指南
 
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 
 -   [传感器驱动程序开发方面的新增内容](what-s-new-in-sensors.md)
@@ -27,7 +27,7 @@ ms.locfileid: "56465616"
 
 ## <a name="whitepapers"></a>白皮书
 
-| 标题 | 描述 |
+| Title | 描述 |
 | -- | -- |
 | [HID 传感器用途](https://docs.microsoft.com/windows-hardware/design/whitepapers/hid-sensors-usages) | 本白皮书提供了有关 Windows 8 及更高版本操作系统的 HID 传感器类驱动程序的信息。 |
 | [将氛围光传感器与运行 Windows 10 创意者更新的计算机集成](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-ambient-light-sensors-with-computers-running-windows-10-creators-update) | 本白皮书提供了有关 Windows 10 操作系统的环境光线传感器 (ALS) 功能的信息。  |

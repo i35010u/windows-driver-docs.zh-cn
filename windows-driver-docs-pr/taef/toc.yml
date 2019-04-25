@@ -1,122 +1,115 @@
-items:
-- name: 测试创作和执行框架 (TAEF)
+- name: 测试授权和执行框架 (TAEF)
   href: index.md
   items:
-  - name: 入门
-    href: getting-started.md
-  - name: Te.Service
-    href: te-service.md
-  - name: 创作测试
-    href: authoring-tests.md
-    items:
-    - name: 使用 C + + 创作测试
-      href: authoring-tests-in-c--.md
-    - name: 使用 C# 创作测试
-      href: authoring-tests-in-c-.md
-    - name: 使用脚本语言创作测试
-      href: authoring-tests-in-scripting-languages.md
-    - name: 使用 AXE 创作测试
-      href: authoring-tests-in-axe.md
-    - name: 验证框架
-      href: verify.md
-    - name: 充分利用 TAEF
-      href: making-the-most-of-taef.md
-    - name: 标准测试元数据
-      href: standard-test-metadata.md
-    - name: 条件元数据
-      href: conditional-metadata.md
-    - name: 重新启动
-      href: reboot.md
-    - name: 运行时参数
-      href: runtime-parameters.md
-    - name: 线程模型
-      href: threading-models.md
-    - name: 执行组
-      href: execution-groups.md
-    - name: 程序集配置文件
-      href: assembly-config-files.md
-    - name: 设备支持
-      href: device-support.md
-    - name: WexLogger
-      href: wexlogger.md
-    - name: DeploymentItem 元数据
-      href: deploymentitem-metadata.md
-  - name: 数据驱动的测试
-    href: data-driven-testing.md
-    items:
-    - name: 使用脚本语言创作数据驱动的测试
-      href: data-driven-testing-in-scripting-languages.md
-    - name: 表数据源
-      href: table-data-source.md
-    - name: 表数据源中的参数类型
-      href: parameter-types-in-table-data-sources.md
-    - name: 简单的数据驱动的测试示例
-      href: simple-data-driven-test-example.md
-    - name: 元数据覆盖数据驱动的测试示例
-      href: metadata-overriding-data-driven-test-example.md
-    - name: 数组支持数据驱动的测试示例
-      href: array-support-data-driven-test-example.md
-    - name: 数据驱动的类
-      href: data-driven-class.md
-    - name: PICT 数据源
-      href: pict-data-source.md
-    - name: WMI 数据源
-      href: wmi-data-source.md
-    - name: 轻量数据驱动的测试
-      href: light-weight-data-driven-testing.md
-    - name: 执行数据驱动的测试
-      href: executing-data-driven-tests.md
-    - name: 多个数据源
-      href: multiple-datasources.md
-  - name: 执行测试
-    href: executing-tests.md
-    items:
-    - name: 执行测试概述
-      href: overview-of-executing-tests.md
-    - name: Te.exe 命令选项
-      href: te-exe-command-line-parameters.md
-    - name: TAEF 的退出代码
-      href: exit-codes-for-taef.md
-    - name: 选择
-      href: selection.md
-    - name: 测试隔离
-      href: test-isolation.md
-    - name: 测试模式
-      href: test-modes.md
-    - name: 并行
-      href: parallel.md
-    - name: RunAs
-      href: runas.md
+    - name: 入门
+      href: getting-started.md
+    - name: Te.Service
+      href: te-service.md
+    - name: 创作测试
+      href: authoring-tests.md
       items:
-      - name: RunAs Elevated
-        href: runas-elevated.md
-      - name: RunAs LowIL
-        href: runas-lowil.md
-      - name: RunAs Restricted
-        href: runas-restricted.md
-      - name: RunAs System
-        href: runas-system.md
-    - name: RunFixtureAs
-      href: runfixtureas.md
-    - name: 跨计算机执行
-      href: cross-machine-execution.md
-    - name: 跨体系结构执行
-      href: cross-architecture-execution.md
-    - name: TAEF 超时
-      href: taef-timeouts.md
-    - name: 用户模式监视器
-      href: user-mode-monitor.md
-    - name: 堆栈和转储日志记录
-      href: stack-and-dump-logging.md
-    - name: 调试 TAEF 测试
-      href: debugging-taef-tests.md
-    - name: 激活上下文
-      href: activation-context.md
-    - name: TAEF 错误代码
-      href: taef-error-codes.md
-ms.openlocfilehash: b9d7b830e899347c3b12331d44147384d46d452d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465570"
+        - name: 使用 C + + 创作测试
+          href: authoring-tests-in-c--.md
+        - name: '使用 C# 创作测试'
+          href: authoring-tests-in-c-.md
+        - name: 使用脚本语言创作测试
+          href: authoring-tests-in-scripting-languages.md
+        - name: 使用 AXE 创作测试
+          href: authoring-tests-in-axe.md
+        - name: 验证框架
+          href: verify.md
+        - name: 充分利用 TAEF
+          href: making-the-most-of-taef.md
+        - name: 标准测试元数据
+          href: standard-test-metadata.md
+        - name: 条件元数据
+          href: conditional-metadata.md
+        - name: 重新启动
+          href: reboot.md
+        - name: 运行时参数
+          href: runtime-parameters.md
+        - name: 线程模型
+          href: threading-models.md
+        - name: 执行组
+          href: execution-groups.md
+        - name: 程序集配置文件
+          href: assembly-config-files.md
+        - name: 设备支持
+          href: device-support.md
+        - name: WexLogger
+          href: wexlogger.md
+        - name: DeploymentItem 元数据
+          href: deploymentitem-metadata.md
+    - name: 数据驱动的测试
+      href: data-driven-testing.md
+      items:
+        - name: 使用脚本语言创作数据驱动的测试
+          href: data-driven-testing-in-scripting-languages.md
+        - name: 表数据源
+          href: table-data-source.md
+        - name: 表数据源中的参数类型
+          href: parameter-types-in-table-data-sources.md
+        - name: 简单的数据驱动的测试示例
+          href: simple-data-driven-test-example.md
+        - name: 元数据覆盖数据驱动的测试示例
+          href: metadata-overriding-data-driven-test-example.md
+        - name: 数组支持数据驱动的测试示例
+          href: array-support-data-driven-test-example.md
+        - name: 数据驱动的类
+          href: data-driven-class.md
+        - name: PICT 数据源
+          href: pict-data-source.md
+        - name: WMI 数据源
+          href: wmi-data-source.md
+        - name: 轻量数据驱动的测试
+          href: light-weight-data-driven-testing.md
+        - name: 执行数据驱动的测试
+          href: executing-data-driven-tests.md
+        - name: 多个数据源
+          href: multiple-datasources.md
+    - name: 执行测试
+      href: executing-tests.md
+      items:
+        - name: 执行测试概述
+          href: overview-of-executing-tests.md
+        - name: Te.exe 命令选项
+          href: te-exe-command-line-parameters.md
+        - name: TAEF 的退出代码
+          href: exit-codes-for-taef.md
+        - name: 选择
+          href: selection.md
+        - name: 测试隔离
+          href: test-isolation.md
+        - name: 测试模式
+          href: test-modes.md
+        - name: 并行
+          href: parallel.md
+        - name: 运行方式
+          href: runas.md
+          items:
+            - name: RunAs Elevated
+              href: runas-elevated.md
+            - name: RunAs LowIL
+              href: runas-lowil.md
+            - name: RunAs Restricted
+              href: runas-restricted.md
+            - name: RunAs System
+              href: runas-system.md
+        - name: RunFixtureAs
+          href: runfixtureas.md
+        - name: 跨计算机执行
+          href: cross-machine-execution.md
+        - name: 跨体系结构执行
+          href: cross-architecture-execution.md
+        - name: TAEF 超时
+          href: taef-timeouts.md
+        - name: 用户模式监视器
+          href: user-mode-monitor.md
+        - name: 堆栈和转储日志记录
+          href: stack-and-dump-logging.md
+        - name: 调试 TAEF 测试
+          href: debugging-taef-tests.md
+        - name: 激活上下文
+          href: activation-context.md
+        - name: TAEF 错误代码
+          href: taef-error-codes.md

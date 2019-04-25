@@ -1,158 +1,151 @@
-items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-  - name: Windows 硬件
-    tocHref: /windows-hardware/
-    topicHref: https://docs.microsoft.com/windows/#pivot=hardware-dev
-    items:
-    - name: Windows 驱动程序
-      tocHref: /windows-hardware/drivers/
-      topicHref: /windows-hardware/drivers/index
+    - name: Windows 硬件
+      tocHref: /windows-hardware/
+      topicHref: 'https://docs.microsoft.com/windows/#pivot=hardware-dev'
       items:
-      - name: “引入”指南
-        tocHref: /windows-hardware/drivers/bringup/
-        topicHref: /windows-hardware/drivers/bringup/index
-      - name: 开发
-        tocHref: /windows-hardware/drivers/develop/
-        topicHref: /windows-hardware/drivers/develop/visual-studio-driver-development-environment
-      - name: 安装
-        tocHref: /windows-hardware/drivers/install/
-        topicHref: /windows-hardware/drivers/install/index
-      - name: 内核模式驱动程序体系结构
-        tocHref: /windows-hardware/drivers/kernel/
-        topicHref: /windows-hardware/drivers/kernel/index
-      - name: Windows 驱动程序框架
-        tocHref: /windows-hardware/drivers/wdf/
-        topicHref: /windows-hardware/drivers/wdf/index
-      - name: Windows 调试工具
-        tocHref: /windows-hardware/drivers/debugger/
-        topicHref: /windows-hardware/drivers/debugger/index
-      - name: 设备和驱动程序技术
-        tocHref: /windows-hardware/drivers/device-and-driver-technologies/
-        topicHref: /windows-hardware/drivers/device-and-driver-technologies
-        items:
-        - name: 3D 打印
-          tocHref: /windows-hardware/drivers/3dprint/
-          topicHref: /windows-hardware/drivers/3dprint/index
-        - name: ACPI
-          tocHref: /windows-hardware/drivers/acpi/
-          topicHref: /windows-hardware/drivers/acpi/index
-        - name: 音频
-          tocHref: /windows-hardware/drivers/audio/
-          topicHref: /windows-hardware/drivers/audio/index
-        - name: 电池
-          tocHref: /windows-hardware/drivers/battery/
-          topicHref: /windows-hardware/drivers/battery/index
-        - name: 生物识别
-          tocHref: /windows-hardware/drivers/biometric/
-          topicHref: /windows-hardware/drivers/biometric/index
-        - name: 蓝牙
-          tocHref: /windows-hardware/drivers/bluetooth/
-          topicHref: /windows-hardware/drivers/bluetooth/index
-        - name: 仪表板
-          tocHref: /windows-hardware/drivers/dashboard/
-          topicHref: /windows-hardware/drivers/dashboard/index
-        - name: 设备应用
-          tocHref: /windows-hardware/drivers/devapps/
-          topicHref: /windows-hardware/drivers/devapps/index
-        - name: 显示
-          tocHref: /windows-hardware/drivers/display/
-          topicHref: /windows-hardware/drivers/display/index
-        - name: 用于测试驱动程序的工具
-          tocHref: /windows-hardware/drivers/devtest/
-          topicHref: /windows-hardware/drivers/devtest/index
-        - name: HID
-          tocHref: /windows-hardware/drivers/hid/
-          topicHref: /windows-hardware/drivers/hid/index
-        - name: IEEE
-          tocHref: /windows-hardware/drivers/ieee/
-          topicHref: /windows-hardware/drivers/ieee/index
-        - name: 图像
-          tocHref: /windows-hardware/drivers/image/
-          topicHref: /windows-hardware/drivers/image/index
-        - name: 可安装的文件系统
-          tocHref: /windows-hardware/drivers/ifs/
-          topicHref: /windows-hardware/drivers/ifs/index
-        - name: Windows 驱动程序入门
-          tocHref: /windows-hardware/drivers/gettingstarted/
-          topicHref: /windows-hardware/drivers/gettingstarted/index
-        - name: GNSS
-          tocHref: /windows-hardware/drivers/gnss/
-          topicHref: /windows-hardware/drivers/gnss/index
-        - name: GPIO
-          tocHref: /windows-hardware/drivers/gpio/
-          topicHref: /windows-hardware/drivers/gpio/index
-        - name: 移动宽带
-          tocHref: /windows-hardware/drivers/mobilebroadband/
-          topicHref: /windows-hardware/drivers/mobilebroadband/index
-        - name: 多功能
-          tocHref: /windows-hardware/drivers/multifunction/
-          topicHref: /windows-hardware/drivers/multifunction/index
-        - name: NetCx
-          tocHref: /windows-hardware/drivers/netcx/
-          topicHref: /windows-hardware/drivers/netcx/index
-        - name: Network
-          tocHref: /windows-hardware/drivers/network/
-          topicHref: /windows-hardware/drivers/network/index
-        - name: NFC
-          tocHref: /windows-hardware/drivers/nfc/
-          topicHref: /windows-hardware/drivers/nfc/index
-        - name: 合作伙伴应用程序开发
-          tocHref: /windows-hardware/drivers/partnerapps/
-          topicHref: /windows-hardware/drivers/partnerapps/index
-        - name: PCI
-          tocHref: /windows-hardware/drivers/pci/
-          topicHref: /windows-hardware/drivers/pci/index
-        - name: PCMCIA
-          tocHref: /windows-hardware/drivers/pcmcia/
-          topicHref: /windows-hardware/drivers/pcmcia/index
-        - name: 功率表
-          tocHref: /windows-hardware/drivers/powermeter/
-          topicHref: /windows-hardware/drivers/powermeter/index
-        - name: 服务点
-          tocHref: /windows-hardware/drivers/pos/
-          topicHref: /windows-hardware/drivers/pos/index
-        - name: 打印
-          tocHref: /windows-hardware/drivers/print/
-          topicHref: /windows-hardware/drivers/print/index
-        - name: SD
-          tocHref: /windows-hardware/drivers/sd/
-          topicHref: /windows-hardware/drivers/sd/index
-        - name: 传感器
-          tocHref: /windows-hardware/drivers/sensors/
-          topicHref: /windows-hardware/drivers/sensors/index
-        - name: SPB
-          tocHref: /windows-hardware/drivers/spb/
-          topicHref: /windows-hardware/drivers/spb/index
-        - name: 存储
-          tocHref: /windows-hardware/drivers/storage/
-          topicHref: /windows-hardware/drivers/storage/index
-        - name: 流
-          tocHref: /windows-hardware/drivers/stream/
-          topicHref: /windows-hardware/drivers/stream/index
-        - name: TAEF
-          tocHref: /windows-hardware/drivers/taef
-          topicHref: /windows-hardware/drivers/taef/index
-        - name: USB
-          tocHref: /windows-hardware/drivers/usbcon
-          topicHref: /windows-hardware/drivers/usbcon/index
-        - name: WDTF
-          tocHref: /windows-hardware/drivers/wdtf/
-          topicHref: /windows-hardware/drivers/wdtf/index
-        - name: WHEA
-          tocHref: /windows-hardware/drivers/whea/
-          topicHref: /windows-hardware/drivers/whea/index
-        - name: Windows 驱动程序示例
-          tocHref: /windows-hardware/drivers/samples/
-          topicHref: /windows-hardware/drivers/samples/index
-        - name: Windows 便携设备
-          tocHref: /windows-hardware/drivers/portable/
-          topicHref: /windows-hardware/drivers/portable/index
-ms.openlocfilehash: 64590e777dcd18706f31ece0ecf93d6dbe640fa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465439"
+        - name: Windows 驱动程序
+          tocHref: /windows-hardware/drivers/
+          topicHref: /windows-hardware/drivers/index
+          items:
+            - name: “引入”指南
+              tocHref: /windows-hardware/drivers/bringup/
+              topicHref: /windows-hardware/drivers/bringup/index
+            - name: 开发
+              tocHref: /windows-hardware/drivers/develop/
+              topicHref: /windows-hardware/drivers/develop/visual-studio-driver-development-environment
+            - name: 安装
+              tocHref: /windows-hardware/drivers/install/
+              topicHref: /windows-hardware/drivers/install/index
+            - name: 内核模式驱动程序体系结构
+              tocHref: /windows-hardware/drivers/kernel/
+              topicHref: /windows-hardware/drivers/kernel/index
+            - name: Windows 驱动程序框架
+              tocHref: /windows-hardware/drivers/wdf/
+              topicHref: /windows-hardware/drivers/wdf/index
+            - name: Windows 调试工具
+              tocHref: /windows-hardware/drivers/debugger/
+              topicHref: /windows-hardware/drivers/debugger/index
+            - name: 设备和驱动程序技术
+              tocHref: /windows-hardware/drivers/device-and-driver-technologies/
+              topicHref: /windows-hardware/drivers/device-and-driver-technologies
+              items:
+                - name: 3D 打印
+                  tocHref: /windows-hardware/drivers/3dprint/
+                  topicHref: /windows-hardware/drivers/3dprint/index
+                - name: ACPI
+                  tocHref: /windows-hardware/drivers/acpi/
+                  topicHref: /windows-hardware/drivers/acpi/index
+                - name: Audio
+                  tocHref: /windows-hardware/drivers/audio/
+                  topicHref: /windows-hardware/drivers/audio/index
+                - name: 电池
+                  tocHref: /windows-hardware/drivers/battery/
+                  topicHref: /windows-hardware/drivers/battery/index
+                - name: 生物识别
+                  tocHref: /windows-hardware/drivers/biometric/
+                  topicHref: /windows-hardware/drivers/biometric/index
+                - name: 蓝牙
+                  tocHref: /windows-hardware/drivers/bluetooth/
+                  topicHref: /windows-hardware/drivers/bluetooth/index
+                - name: 仪表板
+                  tocHref: /windows-hardware/drivers/dashboard/
+                  topicHref: /windows-hardware/drivers/dashboard/index
+                - name: 设备应用
+                  tocHref: /windows-hardware/drivers/devapps/
+                  topicHref: /windows-hardware/drivers/devapps/index
+                - name: 显示
+                  tocHref: /windows-hardware/drivers/display/
+                  topicHref: /windows-hardware/drivers/display/index
+                - name: 用于测试驱动程序的工具
+                  tocHref: /windows-hardware/drivers/devtest/
+                  topicHref: /windows-hardware/drivers/devtest/index
+                - name: HID
+                  tocHref: /windows-hardware/drivers/hid/
+                  topicHref: /windows-hardware/drivers/hid/index
+                - name: IEEE
+                  tocHref: /windows-hardware/drivers/ieee/
+                  topicHref: /windows-hardware/drivers/ieee/index
+                - name: 图像
+                  tocHref: /windows-hardware/drivers/image/
+                  topicHref: /windows-hardware/drivers/image/index
+                - name: 可安装的文件系统
+                  tocHref: /windows-hardware/drivers/ifs/
+                  topicHref: /windows-hardware/drivers/ifs/index
+                - name: Windows 驱动程序入门
+                  tocHref: /windows-hardware/drivers/gettingstarted/
+                  topicHref: /windows-hardware/drivers/gettingstarted/index
+                - name: GNSS
+                  tocHref: /windows-hardware/drivers/gnss/
+                  topicHref: /windows-hardware/drivers/gnss/index
+                - name: GPIO
+                  tocHref: /windows-hardware/drivers/gpio/
+                  topicHref: /windows-hardware/drivers/gpio/index
+                - name: 移动宽带
+                  tocHref: /windows-hardware/drivers/mobilebroadband/
+                  topicHref: /windows-hardware/drivers/mobilebroadband/index
+                - name: 多功能
+                  tocHref: /windows-hardware/drivers/multifunction/
+                  topicHref: /windows-hardware/drivers/multifunction/index
+                - name: NetCx
+                  tocHref: /windows-hardware/drivers/netcx/
+                  topicHref: /windows-hardware/drivers/netcx/index
+                - name: Network
+                  tocHref: /windows-hardware/drivers/network/
+                  topicHref: /windows-hardware/drivers/network/index
+                - name: NFC
+                  tocHref: /windows-hardware/drivers/nfc/
+                  topicHref: /windows-hardware/drivers/nfc/index
+                - name: 合作伙伴应用程序开发
+                  tocHref: /windows-hardware/drivers/partnerapps/
+                  topicHref: /windows-hardware/drivers/partnerapps/index
+                - name: PCI
+                  tocHref: /windows-hardware/drivers/pci/
+                  topicHref: /windows-hardware/drivers/pci/index
+                - name: PCMCIA
+                  tocHref: /windows-hardware/drivers/pcmcia/
+                  topicHref: /windows-hardware/drivers/pcmcia/index
+                - name: 功率表
+                  tocHref: /windows-hardware/drivers/powermeter/
+                  topicHref: /windows-hardware/drivers/powermeter/index
+                - name: 服务点
+                  tocHref: /windows-hardware/drivers/pos/
+                  topicHref: /windows-hardware/drivers/pos/index
+                - name: Print
+                  tocHref: /windows-hardware/drivers/print/
+                  topicHref: /windows-hardware/drivers/print/index
+                - name: SD
+                  tocHref: /windows-hardware/drivers/sd/
+                  topicHref: /windows-hardware/drivers/sd/index
+                - name: 传感器
+                  tocHref: /windows-hardware/drivers/sensors/
+                  topicHref: /windows-hardware/drivers/sensors/index
+                - name: SPB
+                  tocHref: /windows-hardware/drivers/spb/
+                  topicHref: /windows-hardware/drivers/spb/index
+                - name: 存储
+                  tocHref: /windows-hardware/drivers/storage/
+                  topicHref: /windows-hardware/drivers/storage/index
+                - name: 流
+                  tocHref: /windows-hardware/drivers/stream/
+                  topicHref: /windows-hardware/drivers/stream/index
+                - name: TAEF
+                  tocHref: /windows-hardware/drivers/taef
+                  topicHref: /windows-hardware/drivers/taef/index
+                - name: USB
+                  tocHref: /windows-hardware/drivers/usbcon
+                  topicHref: /windows-hardware/drivers/usbcon/index
+                - name: WDTF
+                  tocHref: /windows-hardware/drivers/wdtf/
+                  topicHref: /windows-hardware/drivers/wdtf/index
+                - name: WHEA
+                  tocHref: /windows-hardware/drivers/whea/
+                  topicHref: /windows-hardware/drivers/whea/index
+                - name: Windows 驱动程序示例
+                  tocHref: /windows-hardware/drivers/samples/
+                  topicHref: /windows-hardware/drivers/samples/index
+                - name: Windows 便携设备
+                  tocHref: /windows-hardware/drivers/portable/
+                  topicHref: /windows-hardware/drivers/portable/index

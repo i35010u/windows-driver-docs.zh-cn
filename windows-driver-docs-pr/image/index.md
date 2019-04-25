@@ -7,11 +7,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: c2d80e65b5ec396ef1da7de6313d37dd949848c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378398"
 ---
 # <a name="imaging-device-driver-design-guide"></a>图像处理设备驱动程序设计指南
 
@@ -21,7 +21,7 @@ ms.locfileid: "56465468"
 > [!NOTE]
 > WIA 编程接口用于为现代 Windows 操作系统开发图像处理驱动程序。 STI 编程接口用于为旧的 Windows 操作系统开发图像处理驱动程序。 STI 编程接口文档将存档在将来的版本中。 
 
-## <a name="in-this-section"></a>本部分中的内容
+## <a name="in-this-section"></a>本部分内容
 
 -   [图像处理设备的设备接口类](device-interface-classes-for-imaging-devices.md)
 -   [Windows 图像采集驱动程序](windows-image-acquisition-drivers.md)

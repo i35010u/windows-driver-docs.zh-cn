@@ -1,1471 +1,1470 @@
-items:
 - name: 打印机驱动程序设计指南
   href: index.md
 - name: V4 打印机驱动程序
   href: v4-printer-driver.md
   items:
-  - name: V4 打印机驱动程序渲染
-    href: v4-driver-rendering.md
-    items:
-    - name: V4 打印机驱动程序渲染体系结构
-      href: v4-driver-rendering-architecture.md
-    - name: XPSDrv 的改进
-      href: improvements-in-xpsdrv.md
-    - name: 标准 XPS 筛选器
-      href: standard-xps-filters.md
+    - name: V4 打印机驱动程序渲染
+      href: v4-driver-rendering.md
       items:
-      - name: 支持的 PrintTicket 功能
-        href: supported-printticket-features.md
-      - name: 默认 PageMediaSize 映射
-        href: default-pagemediasize-mappings.md
-    - name: V4 打印类驱动程序渲染
-      href: print-class-driver-rendering.md
-  - name: V4 打印机驱动程序配置
-    href: v4-driver-configuration.md
-    items:
-    - name: V4 打印机驱动程序配置体系结构
-      href: v4-driver-configuration-architecture.md
-    - name: 配置格式的改进
-      href: improvements-in-configuration-formats.md
-    - name: JavaScript 约束
-      href: javascript-constraints.md
-    - name: V4 打印机驱动程序属性包
-      href: v4-driver-property-bags.md
-    - name: V4 打印机驱动程序本地化
-      href: v4-driver-localization.md
-    - name: 受保护打印的驱动程序支持
-      href: driver-support-for-protected-printing.md
+        - name: V4 打印机驱动程序渲染体系结构
+          href: v4-driver-rendering-architecture.md
+        - name: XPSDrv 的改进
+          href: improvements-in-xpsdrv.md
+        - name: 标准 XPS 筛选器
+          href: standard-xps-filters.md
+          items:
+            - name: 支持的 PrintTicket 功能
+              href: supported-printticket-features.md
+            - name: 默认 PageMediaSize 映射
+              href: default-pagemediasize-mappings.md
+        - name: V4 打印类驱动程序渲染
+          href: print-class-driver-rendering.md
+    - name: V4 打印机驱动程序配置
+      href: v4-driver-configuration.md
       items:
-      - name: PIN 打印的示例 PrintTicket 文件
-        href: sample-printticket-file-for-pin-printing.md
-      - name: PIN 打印的示例 PrintCapabilities 文件
-        href: sample-printcapabilities-file-for-pin-printing.md
-  - name: V4 打印机驱动程序安装
-    href: v4-driver-setup.md
-    items:
-    - name: V4 驱动程序安装的概念
-      href: v4-driver-setup-concepts.md
-    - name: V4 驱动程序 INF
-      href: v4-driver-inf.md
-    - name: V4 驱动程序清单
-      href: v4-driver-manifest.md
-  - name: V4 打印机驱动程序用户界面
-    href: v4-printer-driver-user-interfaces.md
-    items:
-    - name: V4 驱动程序 UI 体系结构
-      href: v4-driver-ui-architecture.md
-    - name: 自定义 UI 的驱动程序支持
-      href: driver-support-for-customized-ui.md
-    - name: 作业管理
-      href: job-management.md
-    - name: 设备维护
-      href: device-maintenance.md
-    - name: 打印机扩展
-      href: printer-extensions.md
-    - name: 打印机的 UWP 设备应用
-      href: uwp-device-apps-for-printers.md
-  - name: V4 打印机驱动程序连接
-    href: v4-printer-driver-connectivity.md
-    items:
-    - name: V4 驱动程序连接体系结构
-      href: v4-driver-connectivity-architecture.md
-    - name: USB 双向扩展程序
-      href: usb-bidi-extender.md
+        - name: V4 打印机驱动程序配置体系结构
+          href: v4-driver-configuration-architecture.md
+        - name: 配置格式的改进
+          href: improvements-in-configuration-formats.md
+        - name: JavaScript 约束
+          href: javascript-constraints.md
+        - name: V4 打印机驱动程序属性包
+          href: v4-driver-property-bags.md
+        - name: V4 打印机驱动程序本地化
+          href: v4-driver-localization.md
+        - name: 受保护打印的驱动程序支持
+          href: driver-support-for-protected-printing.md
+          items:
+            - name: PIN 打印的示例 PrintTicket 文件
+              href: sample-printticket-file-for-pin-printing.md
+            - name: PIN 打印的示例 PrintCapabilities 文件
+              href: sample-printcapabilities-file-for-pin-printing.md
+    - name: V4 打印机驱动程序安装
+      href: v4-driver-setup.md
       items:
-      - name: JavaScript API 参考
-        href: javascript-api-reference-.md
-    - name: 增强的驱动程序配置
-      href: enhanced-driver-configuration.md
-    - name: 用于打印的基于设备的 Web 服务 (WS-Print)
-      href: ws-print-v1-1.md
-  - name: V4 打印机驱动程序开发最佳做法
-    href: v4-printer-driver-development-best-practices.md
-    items:
-    - name: 使用驱动程序存储
-      href: working-with-the-driver-store.md
-    - name: 顺利使用增强式点选打印
-      href: working-well-with-enhanced-point-and-print.md
-    - name: V4 打印机驱动程序安全注意事项
-      href: v4-printer-driver-security-considerations.md
-  - name: 在 Visual Studio 中生成 v4 打印机驱动程序
-    href: build-a-v4-print-driver-in-visual-studio.md
-    items:
-    - name: 生成基本的 v4 打印机驱动程序
-      href: building-a-basic-v4-printer-driver.md
-    - name: 浏览向导中的驱动程序选项
-      href: exploring-the-driver-options-in-the-wizard.md
+        - name: V4 驱动程序安装的概念
+          href: v4-driver-setup-concepts.md
+        - name: V4 驱动程序 INF
+          href: v4-driver-inf.md
+        - name: V4 驱动程序清单
+          href: v4-driver-manifest.md
+    - name: V4 打印机驱动程序用户界面
+      href: v4-printer-driver-user-interfaces.md
+      items:
+        - name: V4 驱动程序 UI 体系结构
+          href: v4-driver-ui-architecture.md
+        - name: 自定义 UI 的驱动程序支持
+          href: driver-support-for-customized-ui.md
+        - name: 作业管理
+          href: job-management.md
+        - name: 设备维护
+          href: device-maintenance.md
+        - name: 打印机扩展
+          href: printer-extensions.md
+        - name: 打印机的 UWP 设备应用
+          href: uwp-device-apps-for-printers.md
+    - name: V4 打印机驱动程序连接
+      href: v4-printer-driver-connectivity.md
+      items:
+        - name: V4 驱动程序连接体系结构
+          href: v4-driver-connectivity-architecture.md
+        - name: USB 双向扩展程序
+          href: usb-bidi-extender.md
+          items:
+            - name: JavaScript API 参考
+              href: javascript-api-reference-.md
+        - name: 增强的驱动程序配置
+          href: enhanced-driver-configuration.md
+        - name: 用于打印的基于设备的 Web 服务 (WS-Print)
+          href: ws-print-v1-1.md
+    - name: V4 打印机驱动程序开发最佳做法
+      href: v4-printer-driver-development-best-practices.md
+      items:
+        - name: 使用驱动程序存储
+          href: working-with-the-driver-store.md
+        - name: 顺利使用增强式点选打印
+          href: working-well-with-enhanced-point-and-print.md
+        - name: V4 打印机驱动程序安全注意事项
+          href: v4-printer-driver-security-considerations.md
+    - name: 在 Visual Studio 中生成 v4 打印机驱动程序
+      href: build-a-v4-print-driver-in-visual-studio.md
+      items:
+        - name: 生成基本的 v4 打印机驱动程序
+          href: building-a-basic-v4-printer-driver.md
+        - name: 浏览向导中的驱动程序选项
+          href: exploring-the-driver-options-in-the-wizard.md
 - name: Microsoft 打印机驱动程序
   href: microsoft-printer-drivers.md
   items:
-  - name: 打印简介
-    href: introduction-to-printing.md
+    - name: 打印简介
+      href: introduction-to-printing.md
 - name: 打印机驱动程序概述
   href: printer-driver-overview.md
   items:
-  - name: OpenXPS 的驱动程序支持
-    href: driver-support-for-openxps.md
-  - name: XPS 打印机驱动程序 (XPSDrv)
-    href: xpsdrv-printer-driver.md
-    items:
-    - name: XPSDrv 渲染器模块
-      href: xpsdrv-render-module.md
+    - name: OpenXPS 的驱动程序支持
+      href: driver-support-for-openxps.md
+    - name: XPS 打印机驱动程序 (XPSDrv)
+      href: xpsdrv-printer-driver.md
       items:
-      - name: XPS 筛选器
-        href: xps-filters.md
-        items:
-        - name: 实现 XPS 筛选器
-          href: implementing-xps-filters.md
-        - name: 打印筛选器中的异步通知
-          href: asynchronous-notifications-in-print-filters.md
-        - name: 筛选器管道配置文件
-          href: filter-pipeline-configuration-file.md
-        - name: 将调试器附加到打印筛选器管道服务
-          href: attaching-a-debugger-to-the-print-filter-pipeline-service.md
-        - name: 使用 XPS 光栅化服务
-          href: using-the-xps-rasterization-service.md
-        - name: XPSRas GPU 使用情况决策树
-          href: xpsras-usage-decision-tree.md
-      - name: XPSDrv 渲染模块中的打印票证支持
-        href: print-ticket-support-in-the-xpsdrv-render-module.md
-        items:
-        - name: 打印票证合并
-          href: print-ticket-merging.md
-        - name: 打印票证分析
-          href: print-ticket-parsing.md
-    - name: XPSDrv 配置模块
-      href: xpsdrv-configuration-module.md
-      items:
-      - name: 版本 3 XPSDrv 打印驱动程序组件
-        href: version-3-xpsdrv-print-driver-components.md
-        items:
-        - name: XPSDrv 驱动程序选项
-          href: xpsdrv-driver-options.md
-        - name: XPSDrv 驱动程序要求
-          href: xpsdrv-driver-requirements.md
-        - name: XPSDrv 驱动程序建议
-          href: xpsdrv-driver-recommendations.md
-        - name: XPSDrv 驱动程序实现
-          href: xpsdrv-driver-implementation.md
+        - name: XPSDrv 渲染器模块
+          href: xpsdrv-render-module.md
           items:
-          - name: 基于 GPD 或 PPD 文件的配置模块
-            href: configuration-modules-based-on-gpd-or-ppd-files.md
-          - name: Unidrv/PScript5 插件配置模块
-            href: unidrv-pscript5-plug-in-configuration-modules.md
-          - name: XPS 驱动程序文档事件
-            href: xps-driver-document-events.md
-        - name: 基于 Unidrv 或基于 PScript5 的 XPSDrv 驱动程序更改
-          href: unidrv-based-or-pscript5-based-xpsdrv-driver-changes.md
+            - name: XPS 筛选器
+              href: xps-filters.md
+              items:
+                - name: 实现 XPS 筛选器
+                  href: implementing-xps-filters.md
+                - name: 打印筛选器中的异步通知
+                  href: asynchronous-notifications-in-print-filters.md
+                - name: 筛选器管道配置文件
+                  href: filter-pipeline-configuration-file.md
+                - name: 将调试器附加到打印筛选器管道服务
+                  href: attaching-a-debugger-to-the-print-filter-pipeline-service.md
+                - name: 使用 XPS 光栅化服务
+                  href: using-the-xps-rasterization-service.md
+                - name: XPSRas GPU 使用情况决策树
+                  href: xpsras-usage-decision-tree.md
+            - name: XPSDrv 渲染模块中的打印票证支持
+              href: print-ticket-support-in-the-xpsdrv-render-module.md
+              items:
+                - name: 打印票证合并
+                  href: print-ticket-merging.md
+                - name: 打印票证分析
+                  href: print-ticket-parsing.md
+        - name: XPSDrv 配置模块
+          href: xpsdrv-configuration-module.md
           items:
-          - name: XPSDrv 的硬编码 UniDrv 和 PScript5 功能
-            href: hard-coded-unidrv-and-pscript5-features-for-xpsdrv.md
-          - name: Unidrv/PScript5 XPSDrv UI 行为更改
-            href: unidrv-pscript5-xpsdrvui-behavior-changes.md
-          - name: Win32 DeviceCapabilities API 行为更改
-            href: win32-devicecapabilities-api-behavior-changes.md
-          - name: Unidrv/PScript5 驱动程序的默认 DEVMODE 设置行为更改
-            href: unidrv-pscript5-driver-default-devmode-setup-behaviorchanges.md
-          - name: Unidrv/PScript5 驱动程序 PT/PC 提供程序实现行为更改
-            href: unidrv-pscript5-driver-pt-pc-provider-implementation-behavior-changes.md
-          - name: '基于 GPD/PPD 的功能说明更改 '
-            href: gpd-ppd-based-feature-description-changes.md
-          - name: Unidrv/PScript5 UI 标准选项卡与高级树视图更改
-            href: unidrv-pscript5-ui-standard-tab-vs--advanced-tree-view-changes.md
-          - name: 在筛选器中提供 IPrintCoreHelper 配置服务
-            href: providing-iprintcorehelper-configuration-service-to-filters.md
-    - name: XPSDrv 安装
-      href: xpsdrv-installation.md
+            - name: 版本 3 XPSDrv 打印驱动程序组件
+              href: version-3-xpsdrv-print-driver-components.md
+              items:
+                - name: XPSDrv 驱动程序选项
+                  href: xpsdrv-driver-options.md
+                - name: XPSDrv 驱动程序要求
+                  href: xpsdrv-driver-requirements.md
+                - name: XPSDrv 驱动程序建议
+                  href: xpsdrv-driver-recommendations.md
+                - name: XPSDrv 驱动程序实现
+                  href: xpsdrv-driver-implementation.md
+                  items:
+                    - name: 基于 GPD 或 PPD 文件的配置模块
+                      href: configuration-modules-based-on-gpd-or-ppd-files.md
+                    - name: Unidrv/PScript5 插件配置模块
+                      href: unidrv-pscript5-plug-in-configuration-modules.md
+                    - name: XPS 驱动程序文档事件
+                      href: xps-driver-document-events.md
+                - name: 基于 Unidrv 或基于 PScript5 的 XPSDrv 驱动程序更改
+                  href: unidrv-based-or-pscript5-based-xpsdrv-driver-changes.md
+                  items:
+                    - name: XPSDrv 的硬编码 UniDrv 和 PScript5 功能
+                      href: hard-coded-unidrv-and-pscript5-features-for-xpsdrv.md
+                    - name: Unidrv/PScript5 XPSDrv UI 行为更改
+                      href: unidrv-pscript5-xpsdrvui-behavior-changes.md
+                    - name: Win32 DeviceCapabilities API 行为更改
+                      href: win32-devicecapabilities-api-behavior-changes.md
+                    - name: Unidrv/PScript5 驱动程序的默认 DEVMODE 设置行为更改
+                      href: unidrv-pscript5-driver-default-devmode-setup-behaviorchanges.md
+                    - name: Unidrv/PScript5 驱动程序 PT/PC 提供程序实现行为更改
+                      href: unidrv-pscript5-driver-pt-pc-provider-implementation-behavior-changes.md
+                    - name: '基于 GPD/PPD 的功能说明更改 '
+                      href: gpd-ppd-based-feature-description-changes.md
+                    - name: Unidrv/PScript5 UI 标准选项卡与高级树视图更改
+                      href: unidrv-pscript5-ui-standard-tab-vs--advanced-tree-view-changes.md
+                    - name: 在筛选器中提供 IPrintCoreHelper 配置服务
+                      href: providing-iprintcorehelper-configuration-service-to-filters.md
+        - name: XPSDrv 安装
+          href: xpsdrv-installation.md
 - name: Microsoft 通用打印机驱动程序
   href: microsoft-universal-printer-driver.md
   items:
-  - name: 通用打印机驱动程序简介
-    href: introduction-to-the-universal-printer-driver.md
-    items:
-    - name: Unidrv 功能
-      href: unidrv-capabilities.md
-    - name: Unidrv 组件
-      href: unidrv-components.md
-    - name: Unidrv 微型驱动程序
-      href: unidrv-minidrivers.md
-    - name: Unidrv 用户界面
-      href: unidrv-user-interface.md
-    - name: Unidrv 渲染器
-      href: unidrv-renderer.md
-    - name: 示例 GPD 文件
-      href: sample-gpd-files.md
-  - name: GPD 文件简介
-    href: introduction-to-gpd-files.md
-    items:
-    - name: GPD 文件项
-      href: gpd-file-entries.md
+    - name: 通用打印机驱动程序简介
+      href: introduction-to-the-universal-printer-driver.md
       items:
-      - name: GPD 文件项格式
-        href: gpd-file-entry-format.md
-      - name: GPD 值类型
-        href: gpd-value-types.md
-        items:
-        - name: 符号名称
-          href: symbolic-names.md
-        - name: 文本字符串
-          href: text-strings.md
-        - name: 常量
-          href: constants.md
-        - name: 数字值
-          href: numeric-values.md
-        - name: 布尔值
-          href: boolean-values.md
-        - name: 列表
-          href: lists.md
-        - name: 对
-          href: pairs.md
-        - name: 矩形
-          href: rectangles.md
-      - name: 续行符
-        href: line-continuation.md
-      - name: 注释和已忽略的块
-        href: comments-and-ignored-blocks.md
-      - name: 宏
-        href: macros.md
-        items:
-        - name: 块宏
-          href: block-macros.md
-        - name: 值宏
-          href: value-macros.md
-      - name: 预处理器指令
-        href: preprocessor-directives.md
-      - name: 标准变量
-        href: standard-variables.md
-    - name: 主控单元
-      href: master-units.md
-    - name: 在微型驱动程序中使用多个 GPD 文件
-      href: using-multiple-gpd-files-in-a-minidriver.md
-    - name: 在微型驱动程序中使用资源 DLL
-      href: using-resource-dlls-in-a-minidriver.md
-  - name: 打印机属性
-    href: printer-attributes.md
-    items:
-    - name: 打印机属性格式
-      href: printer-attribute-format.md
-    - name: 属性类型
-      href: attribute-types.md
-    - name: 常规属性
-      href: general-attributes.md
+        - name: Unidrv 功能
+          href: unidrv-capabilities.md
+        - name: Unidrv 组件
+          href: unidrv-components.md
+        - name: Unidrv 微型驱动程序
+          href: unidrv-minidrivers.md
+        - name: Unidrv 用户界面
+          href: unidrv-user-interface.md
+        - name: Unidrv 渲染器
+          href: unidrv-renderer.md
+        - name: 示例 GPD 文件
+          href: sample-gpd-files.md
+    - name: GPD 文件简介
+      href: introduction-to-gpd-files.md
       items:
-      - name: 仅限根级别的属性
-        href: root-level-only-attributes.md
-        items:
-        - name: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
-          href: new-root-level-only-gpd-attributes-for-windows-vista.md
-        - name: 适用于 Windows Vista 的仅限根级别的新 PPD 属性
-          href: new-root-level-only-ppd-attributes-for-windows-vista.md
-      - name: 常规打印属性
-        href: general-printing-attributes.md
-        items:
-        - name: 打印机功能属性
-          href: printer-capability-attributes.md
-        - name: 颜色属性
-          href: color-attributes.md
-        - name: 光标属性
-          href: cursor-attributes.md
-      - name: 文本打印属性
-        href: text-printing-attributes.md
-        items:
-        - name: 设备字体属性
-          href: attributes-for-device-fonts.md
-        - name: 下载字体属性
-          href: attributes-for-downloaded-fonts.md
-        - name: 模拟字体属性
-          href: attributes-for-simulated-fonts.md
-      - name: 光栅打印属性
-        href: raster-printing-attributes.md
-        items:
-        - name: 光栅数据压缩属性
-          href: raster-data-compression-attributes.md
-        - name: 光栅数据发射属性
-          href: raster-data-emission-attributes.md
-        - name: 预分析基础结构
-          href: preanalysis-infrastructure.md
-      - name: 矢量打印属性
-        href: vector-printing-attributes.md
-        items:
-        - name: 矩形区域填充属性
-          href: rectangle-area-fill-attributes.md
-  - name: 打印机命令
-    href: printer-commands.md
-    items:
-    - name: 命令项格式
-      href: command-entry-format.md
-    - name: 命令名称
-      href: command-names.md
+        - name: GPD 文件项
+          href: gpd-file-entries.md
+          items:
+            - name: GPD 文件项格式
+              href: gpd-file-entry-format.md
+            - name: GPD 值类型
+              href: gpd-value-types.md
+              items:
+                - name: 符号名称
+                  href: symbolic-names.md
+                - name: 文本字符串
+                  href: text-strings.md
+                - name: 常量
+                  href: constants.md
+                - name: 数字值
+                  href: numeric-values.md
+                - name: 布尔值
+                  href: boolean-values.md
+                - name: 列表
+                  href: lists.md
+                - name: 对
+                  href: pairs.md
+                - name: 矩形
+                  href: rectangles.md
+            - name: 续行符
+              href: line-continuation.md
+            - name: 注释和已忽略的块
+              href: comments-and-ignored-blocks.md
+            - name: 宏
+              href: macros.md
+              items:
+                - name: 块宏
+                  href: block-macros.md
+                - name: 值宏
+                  href: value-macros.md
+            - name: 预处理器指令
+              href: preprocessor-directives.md
+            - name: 标准变量
+              href: standard-variables.md
+        - name: 主控单元
+          href: master-units.md
+        - name: 在微型驱动程序中使用多个 GPD 文件
+          href: using-multiple-gpd-files-in-a-minidriver.md
+        - name: 在微型驱动程序中使用资源 DLL
+          href: using-resource-dlls-in-a-minidriver.md
+    - name: 打印机属性
+      href: printer-attributes.md
       items:
-      - name: 常规打印命令
-        href: general-printing-commands.md
-        items:
-        - name: 颜色命令
-          href: color-commands.md
-        - name: 光标命令
-          href: cursor-commands.md
-      - name: 打印机配置命令
-        href: printer-configuration-commands.md
-      - name: 选项选择命令
-        href: option-selection-command.md
-      - name: 文本打印命令
-        href: text-printing-commands.md
-        items:
-        - name: 设备字体命令
-          href: commands-for-device-fonts.md
-        - name: 下载字体命令
-          href: commands-for-downloaded-fonts.md
-        - name: 模拟字体命令
-          href: commands-for-simulated-fonts.md
-      - name: 光栅打印命令
-        href: raster-printing-commands.md
-        items:
-        - name: 光栅数据压缩命令
-          href: raster-data-compression-commands.md
-        - name: 光栅数据发射命令
-          href: raster-data-emission-commands.md
-      - name: 矢量打印命令
-        href: vector-printing-commands.md
-        items:
-        - name: 矩形区域填充命令
-          href: rectangle-area-fill-commands.md
-    - name: 命令属性
-      href: command-attributes.md
-    - name: 命令字符串格式
-      href: command-string-format.md
+        - name: 打印机属性格式
+          href: printer-attribute-format.md
+        - name: 属性类型
+          href: attribute-types.md
+        - name: 常规属性
+          href: general-attributes.md
+          items:
+            - name: 仅限根级别的属性
+              href: root-level-only-attributes.md
+              items:
+                - name: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
+                  href: new-root-level-only-gpd-attributes-for-windows-vista.md
+                - name: 适用于 Windows Vista 的仅限根级别的新 PPD 属性
+                  href: new-root-level-only-ppd-attributes-for-windows-vista.md
+            - name: 常规打印属性
+              href: general-printing-attributes.md
+              items:
+                - name: 打印机功能属性
+                  href: printer-capability-attributes.md
+                - name: 颜色属性
+                  href: color-attributes.md
+                - name: 光标属性
+                  href: cursor-attributes.md
+            - name: 文本打印属性
+              href: text-printing-attributes.md
+              items:
+                - name: 设备字体属性
+                  href: attributes-for-device-fonts.md
+                - name: 下载字体属性
+                  href: attributes-for-downloaded-fonts.md
+                - name: 模拟字体属性
+                  href: attributes-for-simulated-fonts.md
+            - name: 光栅打印属性
+              href: raster-printing-attributes.md
+              items:
+                - name: 光栅数据压缩属性
+                  href: raster-data-compression-attributes.md
+                - name: 光栅数据发射属性
+                  href: raster-data-emission-attributes.md
+                - name: 预分析基础结构
+                  href: preanalysis-infrastructure.md
+            - name: 矢量打印属性
+              href: vector-printing-attributes.md
+              items:
+                - name: 矩形区域填充属性
+                  href: rectangle-area-fill-attributes.md
+    - name: 打印机命令
+      href: printer-commands.md
       items:
-      - name: 命令字符串参数类型
-        href: command-string-argument-types.md
-      - name: 标准变量表达式
-        href: standard-variable-expressions.md
-    - name: 命令执行顺序
-      href: command-execution-order.md
-  - name: 打印机功能
-    href: printer-features.md
-    items:
-    - name: 标准功能
-      href: standard-features.md
-    - name: 自定义功能
-      href: customized-features.md
-    - name: 功能项格式
-      href: feature-entry-format.md
-    - name: 功能属性
-      href: feature-attributes.md
-    - name: 功能冲突优先级
-      href: feature-conflict-priority.md
-  - name: 打印机选项
-    href: printer-options.md
-    items:
-    - name: 标准选项
-      href: standard-options.md
-    - name: 自定义选项
-      href: customized-options.md
-    - name: 选项格式
-      href: option-entry-format.md
-    - name: 选项属性
-      href: option-attributes.md
+        - name: 命令项格式
+          href: command-entry-format.md
+        - name: 命令名称
+          href: command-names.md
+          items:
+            - name: 常规打印命令
+              href: general-printing-commands.md
+              items:
+                - name: 颜色命令
+                  href: color-commands.md
+                - name: 光标命令
+                  href: cursor-commands.md
+            - name: 打印机配置命令
+              href: printer-configuration-commands.md
+            - name: 选项选择命令
+              href: option-selection-command.md
+            - name: 文本打印命令
+              href: text-printing-commands.md
+              items:
+                - name: 设备字体命令
+                  href: commands-for-device-fonts.md
+                - name: 下载字体命令
+                  href: commands-for-downloaded-fonts.md
+                - name: 模拟字体命令
+                  href: commands-for-simulated-fonts.md
+            - name: 光栅打印命令
+              href: raster-printing-commands.md
+              items:
+                - name: 光栅数据压缩命令
+                  href: raster-data-compression-commands.md
+                - name: 光栅数据发射命令
+                  href: raster-data-emission-commands.md
+            - name: 矢量打印命令
+              href: vector-printing-commands.md
+              items:
+                - name: 矩形区域填充命令
+                  href: rectangle-area-fill-commands.md
+        - name: 命令属性
+          href: command-attributes.md
+        - name: 命令字符串格式
+          href: command-string-format.md
+          items:
+            - name: 命令字符串参数类型
+              href: command-string-argument-types.md
+            - name: 标准变量表达式
+              href: standard-variable-expressions.md
+        - name: 命令执行顺序
+          href: command-execution-order.md
+    - name: 打印机功能
+      href: printer-features.md
       items:
-      - name: 所有功能的选项属性
-        href: option-attributes-for-all-features.md
-      - name: 色彩模式功能的选项属性
-        href: option-attributes-for-the-colormode-feature.md
-      - name: 半色调功能的选项属性
-        href: option-attributes-for-the-halftone-feature.md
-      - name: 输入 Bin 功能的选项属性
-        href: option-attributes-for-the-inputbin-feature.md
-      - name: 内存功能的选项属性
-        href: option-attributes-for-the-memory-feature.md
-      - name: 输出 Bin 功能的选项属性
-        href: option-attributes-for-the-outputbin-feature.md
-      - name: 纸张大小功能的选项属性
-        href: option-attributes-for-the-papersize-feature.md
-      - name: 分辨率功能的选项属性
-        href: option-attributes-for-the-resolution-feature.md
-    - name: 选项约束
-      href: option-constraints.md
+        - name: 标准功能
+          href: standard-features.md
+        - name: 自定义功能
+          href: customized-features.md
+        - name: 功能项格式
+          href: feature-entry-format.md
+        - name: 功能属性
+          href: feature-attributes.md
+        - name: 功能冲突优先级
+          href: feature-conflict-priority.md
+    - name: 打印机选项
+      href: printer-options.md
       items:
-      - name: 选择约束
-        href: selection-constraints.md
-      - name: 安装约束
-        href: installation-constraints.md
-      - name: 选择与安装之间的约束
-        href: constraints-between-selections-and-installations.md
-  - name: 打印机字体说明
-    href: printer-font-descriptions.md
-    items:
-    - name: 硬件中的字体
-      href: hardware-resident-fonts.md
-    - name: 字体盒
-      href: font-cartridges.md
+        - name: 标准选项
+          href: standard-options.md
+        - name: 自定义选项
+          href: customized-options.md
+        - name: 选项格式
+          href: option-entry-format.md
+        - name: 选项属性
+          href: option-attributes.md
+          items:
+            - name: 所有功能的选项属性
+              href: option-attributes-for-all-features.md
+            - name: 色彩模式功能的选项属性
+              href: option-attributes-for-the-colormode-feature.md
+            - name: 半色调功能的选项属性
+              href: option-attributes-for-the-halftone-feature.md
+            - name: 输入 Bin 功能的选项属性
+              href: option-attributes-for-the-inputbin-feature.md
+            - name: 内存功能的选项属性
+              href: option-attributes-for-the-memory-feature.md
+            - name: 输出 Bin 功能的选项属性
+              href: option-attributes-for-the-outputbin-feature.md
+            - name: 纸张大小功能的选项属性
+              href: option-attributes-for-the-papersize-feature.md
+            - name: 分辨率功能的选项属性
+              href: option-attributes-for-the-resolution-feature.md
+        - name: 选项约束
+          href: option-constraints.md
+          items:
+            - name: 选择约束
+              href: selection-constraints.md
+            - name: 安装约束
+              href: installation-constraints.md
+            - name: 选择与安装之间的约束
+              href: constraints-between-selections-and-installations.md
+    - name: 打印机字体说明
+      href: printer-font-descriptions.md
       items:
-      - name: 字体盒属性
-        href: font-cartridge-attributes.md
-    - name: 字体替换
-      href: font-substitution.md
-  - name: 条件语句
-    href: conditional-statements.md
-  - name: 压缩光栅数据
-    href: compressing-raster-data.md
-    items:
-    - name: 使用 Unidrv 支持的压缩
-      href: using-unidrv-supported-compression.md
-    - name: 使用自定义压缩
-      href: using-customized-compression.md
-  - name: 筛选光栅数据
-    href: filtering-raster-data.md
-  - name: 处理颜色格式
-    href: handling-color-formats.md
-  - name: 使用 Unidrv 设置半色调
-    href: halftoning-with-unidrv.md
-    items:
-    - name: GDI 提供的半色调
-      href: gdi-supplied-halftoning.md
+        - name: 硬件中的字体
+          href: hardware-resident-fonts.md
+        - name: 字体盒
+          href: font-cartridges.md
+          items:
+            - name: 字体盒属性
+              href: font-cartridge-attributes.md
+        - name: 字体替换
+          href: font-substitution.md
+    - name: 条件语句
+      href: conditional-statements.md
+    - name: 压缩光栅数据
+      href: compressing-raster-data.md
       items:
-      - name: 微型驱动程序提供的半色调模式
-        href: minidriver-supplied-halftone-patterns.md
-    - name: 微型驱动程序提供的半色调
-      href: minidriver-supplied-halftoning.md
-    - name: 设备提供的半色调
-      href: device-supplied-halftoning.md
-  - name: 控制图像质量
-    href: controlling-image-quality.md
-  - name: 处理可安装的功能和选项
-    href: handling-installable-features-and-options.md
-  - name: 指定功能和选项显示顺序
-    href: specifying-feature-and-option-display-order.md
-  - name: 描述打印机内存配置
-    href: describing-printer-memory-configurations.md
-  - name: 指定纸张方向
-    href: specifying-paper-orientation.md
-  - name: 指定纸张大小
-    href: specifying-paper-sizes.md
-    items:
-    - name: 支持标准纸张大小
-      href: supporting-standard-paper-sizes.md
-    - name: 支持供应商定义的纸张大小
-      href: supporting-vendor-defined-paper-sizes.md
-    - name: 支持用户定义的纸张大小
-      href: supporting-user-defined-paper-sizes.md
-  - name: 引用的区域设置
-    href: referencing-locales.md
-  - name: 使用 Unidrv 矢量图形功能
-    href: using-unidrv-vector-graphics-capabilities.md
-    items:
-    - name: HP/2 单色 (PCL-5e) 矢量图形支持
-      href: hp-gl-2-monochrome--pcl-5e--vector-graphics-support.md
+        - name: 使用 Unidrv 支持的压缩
+          href: using-unidrv-supported-compression.md
+        - name: 使用自定义压缩
+          href: using-customized-compression.md
+    - name: 筛选光栅数据
+      href: filtering-raster-data.md
+    - name: 处理颜色格式
+      href: handling-color-formats.md
+    - name: 使用 Unidrv 设置半色调
+      href: halftoning-with-unidrv.md
       items:
-      - name: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
-        href: enabling-hp-gl-2-vector-graphics-support--pcl-5e--in-the-gpd.md
-      - name: 半色调算法
-        href: halftone-algorithms.md
-      - name: HP-GL/2 支持的字体
-        href: hp-gl-2-supported-fonts.md
-      - name: HP-GL/2 注意事项
-        href: hp-gl-2-caveats.md
-    - name: PCL XL (PCL-6) 矢量图形支持
-      href: pcl-xl--pcl-6--vector-graphics-support.md
+        - name: GDI 提供的半色调
+          href: gdi-supplied-halftoning.md
+          items:
+            - name: 微型驱动程序提供的半色调模式
+              href: minidriver-supplied-halftone-patterns.md
+        - name: 微型驱动程序提供的半色调
+          href: minidriver-supplied-halftoning.md
+        - name: 设备提供的半色调
+          href: device-supplied-halftoning.md
+    - name: 控制图像质量
+      href: controlling-image-quality.md
+    - name: 处理可安装的功能和选项
+      href: handling-installable-features-and-options.md
+    - name: 指定功能和选项显示顺序
+      href: specifying-feature-and-option-display-order.md
+    - name: 描述打印机内存配置
+      href: describing-printer-memory-configurations.md
+    - name: 指定纸张方向
+      href: specifying-paper-orientation.md
+    - name: 指定纸张大小
+      href: specifying-paper-sizes.md
       items:
-      - name: 编写 PCL XL GPD 文件
-        href: writing-a-pcl-xl-gpd-file.md
-      - name: 启用对 PCL XL 微型驱动程序中的颜色的支持
-        href: enabling-support-for-color-in-pcl-xl-minidrivers.md
-      - name: 在 PCL XL 微型驱动程序中指定新的设备字体
-        href: specifying-new-device-fonts-in-pcl-xl-minidrivers.md
-      - name: 使用默认的 PCL XL 字体
-        href: using-default-pcl-xl-fonts.md
-      - name: 安装 PCL XL 微型驱动程序
-        href: installing-a-pcl-xl-minidriver.md
-      - name: PCL 分隔符页转义代码
-        href: pcl-separator-page-escape-codes.md
-      - name: PCL XL 问题
-        href: pcl-xl-issues.md
-    - name: 伪矢量图形支持
-      href: pseudo-vector-graphics-support.md
-  - name: 安装 Unidrv 微型驱动程序
-    href: installing-a-unidrv-minidriver.md
-  - name: Unidrv 打印机微型驱动程序版本控制
-    href: unidrv-printer-minidriver-versioning.md
-  - name: 将表单添加到表单数据库
-    href: adding-forms-to-the-forms-database.md
+        - name: 支持标准纸张大小
+          href: supporting-standard-paper-sizes.md
+        - name: 支持供应商定义的纸张大小
+          href: supporting-vendor-defined-paper-sizes.md
+        - name: 支持用户定义的纸张大小
+          href: supporting-user-defined-paper-sizes.md
+    - name: 引用的区域设置
+      href: referencing-locales.md
+    - name: 使用 Unidrv 矢量图形功能
+      href: using-unidrv-vector-graphics-capabilities.md
+      items:
+        - name: HP/2 单色 (PCL-5e) 矢量图形支持
+          href: hp-gl-2-monochrome--pcl-5e--vector-graphics-support.md
+          items:
+            - name: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
+              href: enabling-hp-gl-2-vector-graphics-support--pcl-5e--in-the-gpd.md
+            - name: 半色调算法
+              href: halftone-algorithms.md
+            - name: HP-GL/2 支持的字体
+              href: hp-gl-2-supported-fonts.md
+            - name: HP-GL/2 注意事项
+              href: hp-gl-2-caveats.md
+        - name: PCL XL (PCL-6) 矢量图形支持
+          href: pcl-xl--pcl-6--vector-graphics-support.md
+          items:
+            - name: 编写 PCL XL GPD 文件
+              href: writing-a-pcl-xl-gpd-file.md
+            - name: 启用对 PCL XL 微型驱动程序中的颜色的支持
+              href: enabling-support-for-color-in-pcl-xl-minidrivers.md
+            - name: 在 PCL XL 微型驱动程序中指定新的设备字体
+              href: specifying-new-device-fonts-in-pcl-xl-minidrivers.md
+            - name: 使用默认的 PCL XL 字体
+              href: using-default-pcl-xl-fonts.md
+            - name: 安装 PCL XL 微型驱动程序
+              href: installing-a-pcl-xl-minidriver.md
+            - name: PCL 分隔符页转义代码
+              href: pcl-separator-page-escape-codes.md
+            - name: PCL XL 问题
+              href: pcl-xl-issues.md
+        - name: 伪矢量图形支持
+          href: pseudo-vector-graphics-support.md
+    - name: 安装 Unidrv 微型驱动程序
+      href: installing-a-unidrv-minidriver.md
+    - name: Unidrv 打印机微型驱动程序版本控制
+      href: unidrv-printer-minidriver-versioning.md
+    - name: 将表单添加到表单数据库
+      href: adding-forms-to-the-forms-database.md
 - name: Microsoft PostScript 打印机驱动程序
   href: microsoft-postscript-printer-driver.md
   items:
-  - name: Pscript 功能
-    href: pscript-capabilities.md
-  - name: Pscript 组件
-    href: pscript-components.md
-  - name: Pscript 微型驱动程序
-    href: pscript-minidrivers.md
-    items:
-    - name: AddEuro
-      href: addeuro.md
-    - name: 将 AFM 文件转换为 NTF 文件
-      href: converting-afm-files-to-ntf-files.md
-    - name: 将东亚版 AFM 文件转换为 NTF 文件
-      href: converting-east-asian-afm-files-to-ntf-files.md
-    - name: 安装 Pscript 微型驱动程序
-      href: installing-a-pscript-minidriver.md
-    - name: PostScript 打印机标准功能
-      href: postscript-printer-driver-standard-features.md
-    - name: Pscript 打印机微型驱动程序版本控制
-      href: pscript-printer-minidriver-versioning.md
-    - name: Pscript 装钉支持
-      href: pscript-support-for-stapling.md
-    - name: TrueGray
-      href: truegray.md
-  - name: Pscript 用户界面
-    href: pscript-user-interface.md
-  - name: Pscript 渲染器
-    href: pscript-renderer.md
-  - name: Hostfont 注册表项
-    href: hostfont-registry-entries.md
-  - name: Pscript 支持的转义符
-    href: pscript-supported-escapes.md
-  - name: 特定于 PPD 的接口
-    href: ppd-specific-interface.md
-    items:
-    - name: 使用 GetOptions 和 SetOptions
-      href: using-getoptions-and-setoptions.md
+    - name: Pscript 功能
+      href: pscript-capabilities.md
+    - name: Pscript 组件
+      href: pscript-components.md
+    - name: Pscript 微型驱动程序
+      href: pscript-minidrivers.md
       items:
-      - name: PPD 功能
-        href: ppd-features.md
-      - name: 驱动程序功能
-        href: driver-features.md
-    - name: 使用 GetGlobalAttribute
-      href: using-getglobalattribute.md
-    - name: 使用 EnumFeatures
-      href: using-enumfeatures.md
-    - name: 使用 EnumOptions
-      href: using-enumoptions.md
-    - name: 使用 GetFeatureAttribute
-      href: using-getfeatureattribute.md
-    - name: 使用 GetOptionAttribute
-      href: using-getoptionattribute.md
+        - name: AddEuro
+          href: addeuro.md
+        - name: 将 AFM 文件转换为 NTF 文件
+          href: converting-afm-files-to-ntf-files.md
+        - name: 将东亚版 AFM 文件转换为 NTF 文件
+          href: converting-east-asian-afm-files-to-ntf-files.md
+        - name: 安装 Pscript 微型驱动程序
+          href: installing-a-pscript-minidriver.md
+        - name: PostScript 打印机标准功能
+          href: postscript-printer-driver-standard-features.md
+        - name: Pscript 打印机微型驱动程序版本控制
+          href: pscript-printer-minidriver-versioning.md
+        - name: Pscript 装钉支持
+          href: pscript-support-for-stapling.md
+        - name: TrueGray
+          href: truegray.md
+    - name: Pscript 用户界面
+      href: pscript-user-interface.md
+    - name: Pscript 渲染器
+      href: pscript-renderer.md
+    - name: Hostfont 注册表项
+      href: hostfont-registry-entries.md
+    - name: Pscript 支持的转义符
+      href: pscript-supported-escapes.md
+    - name: 特定于 PPD 的接口
+      href: ppd-specific-interface.md
+      items:
+        - name: 使用 GetOptions 和 SetOptions
+          href: using-getoptions-and-setoptions.md
+          items:
+            - name: PPD 功能
+              href: ppd-features.md
+            - name: 驱动程序功能
+              href: driver-features.md
+        - name: 使用 GetGlobalAttribute
+          href: using-getglobalattribute.md
+        - name: 使用 EnumFeatures
+          href: using-enumfeatures.md
+        - name: 使用 EnumOptions
+          href: using-enumoptions.md
+        - name: 使用 GetFeatureAttribute
+          href: using-getfeatureattribute.md
+        - name: 使用 GetOptionAttribute
+          href: using-getoptionattribute.md
 - name: Microsoft 绘图仪驱动程序
   href: microsoft-plotter-driver.md
   items:
-  - name: 绘图仪驱动程序功能
-    href: plotter-driver-capabilities.md
-  - name: 绘图仪驱动程序组件
-    href: plotter-driver-components.md
-  - name: 绘图仪驱动程序文件示例
-    href: sample-plotter-driver-files.md
-  - name: 绘图仪驱动程序微型驱动程序
-    href: plotter-driver-minidrivers.md
-    items:
-    - name: PCD 源文件格式
-      href: pcd-source-file-format.md
-  - name: 绘图仪驱动程序用户界面
-    href: plotter-driver-user-interface.md
-  - name: 绘图仪驱动程序渲染器
-    href: plotter-driver-renderer.md
-  - name: 打印机驱动程序体系结构
-    href: printer-driver-architecture.md
-    items:
-    - name: XPSDrv 打印机驱动程序
-      href: xpsdrv-printer-drivers.md
+    - name: 绘图仪驱动程序功能
+      href: plotter-driver-capabilities.md
+    - name: 绘图仪驱动程序组件
+      href: plotter-driver-components.md
+    - name: 绘图仪驱动程序文件示例
+      href: sample-plotter-driver-files.md
+    - name: 绘图仪驱动程序微型驱动程序
+      href: plotter-driver-minidrivers.md
       items:
-      - name: XPS 打印功能
-        href: xps-printing-features.md
-        items:
-        - name: '改进的彩色打印 '
-          href: improved-color-printing.md
-        - name: 高保真打印输出
-          href: high-fidelity-print-output.md
-        - name: 改进的最终用户体验
-          href: improved-end-user-experience.md
-        - name: 改进的后台打印和渲染
-          href: improved-spooling-and-rendering.md
-        - name: '可扩展体系结构 '
-          href: extensible-architecture.md
-      - name: Windows 打印路径概述
-        href: windows-print-path-overview.md
-      - name: 早期 Windows 版本中的 XPS 支持
-        href: xps-support-in-earlier-versions-of-windows.md
+        - name: PCD 源文件格式
+          href: pcd-source-file-format.md
+    - name: 绘图仪驱动程序用户界面
+      href: plotter-driver-user-interface.md
+    - name: 绘图仪驱动程序渲染器
+      href: plotter-driver-renderer.md
+    - name: 打印机驱动程序体系结构
+      href: printer-driver-architecture.md
+      items:
+        - name: XPSDrv 打印机驱动程序
+          href: xpsdrv-printer-drivers.md
+          items:
+            - name: XPS 打印功能
+              href: xps-printing-features.md
+              items:
+                - name: '改进的彩色打印 '
+                  href: improved-color-printing.md
+                - name: 高保真打印输出
+                  href: high-fidelity-print-output.md
+                - name: 改进的最终用户体验
+                  href: improved-end-user-experience.md
+                - name: 改进的后台打印和渲染
+                  href: improved-spooling-and-rendering.md
+                - name: '可扩展体系结构 '
+                  href: extensible-architecture.md
+            - name: Windows 打印路径概述
+              href: windows-print-path-overview.md
+            - name: 早期 Windows 版本中的 XPS 支持
+              href: xps-support-in-earlier-versions-of-windows.md
 - name: GDI 打印机驱动程序
   href: gdi-printer-drivers.md
   items:
-  - name: 打印机图形 DLL
-    href: printer-graphics-dll.md
-    items:
-    - name: 打印机图形 DLL 简介
-      href: introduction-to-printer-graphics-dlls.md
-    - name: 打印机图形 DLL 定义的函数
-      href: functions-defined-by-printer-graphics-dlls.md
-    - name: 打印机图形 DLL 示例
-      href: sample-printer-graphics-dll.md
-    - name: 渲染打印作业
-      href: rendering-a-print-job.md
-    - name: 支持设备字体
-      href: supporting-device-fonts.md
-    - name: 返回打印机特定的信息
-      href: returning-printer-specific-information.md
-    - name: 选择用户模式或内核模式
-      href: choosing-user-mode-or-kernel-mode.md
-    - name: 生成打印机图形 DLL
-      href: building-a-printer-graphics-dll.md
-  - name: 打印机接口 DLL
-    href: printer-interface-dll.md
-    items:
-    - name: 打印机接口 DLL 简介
-      href: introduction-to-printer-interface-dlls.md
-    - name: 按打印机接口 DLL 定义的函数
-      href: functions-defined-by-printer-interface-dlls.md
-    - name: 打印机接口 DLL 示例
-      href: sample-printer-interface-dll.md
-    - name: 为打印机创建属性表页
-      href: creating-property-sheet-pages-for-printers.md
-    - name: 识别打印机的颜色功能
-      href: identifying-a-printer-s-color-capability.md
-    - name: 打印票证和打印功能支持
-      href: print-ticket-and-print-capabilities-support.md
+    - name: 打印机图形 DLL
+      href: printer-graphics-dll.md
       items:
-      - name: 打印机驱动程序实现的打印票证和打印功能提供程序接口
-        href: print-ticket-and-print-capabilities-provider-interface-implemented-by-2.md
-      - name: Unidrv/Pscript5 插件实现的打印票证和打印功能提供程序接口
-        href: print-ticket-and-print-capabilities-provider-interface-implemented-by-.md
-      - name: 打印票证接口和打印驱动程序插件
-        href: print-ticket-interfaces-and-print-driver-plug-ins.md
-        items:
-        - name: OpenPrinter
-          href: openprinter.md
-        - name: ConvertDevModeToPrintTicket 概述
-          href: convertdevmodetoprintticket.md
-        - name: ConvertPrintTicketToDevMode 概述
-          href: convertprinttickettodevmode.md
-        - name: ValidatePrintTicket 概述
-          href: validateprintticket.md
-    - name: 将打印票证支持添加到一体式打印驱动程序
-      href: adding-print-ticket-support-to-monolithic-print-drivers.md
+        - name: 打印机图形 DLL 简介
+          href: introduction-to-printer-graphics-dlls.md
+        - name: 打印机图形 DLL 定义的函数
+          href: functions-defined-by-printer-graphics-dlls.md
+        - name: 打印机图形 DLL 示例
+          href: sample-printer-graphics-dll.md
+        - name: 渲染打印作业
+          href: rendering-a-print-job.md
+        - name: 支持设备字体
+          href: supporting-device-fonts.md
+        - name: 返回打印机特定的信息
+          href: returning-printer-specific-information.md
+        - name: 选择用户模式或内核模式
+          href: choosing-user-mode-or-kernel-mode.md
+        - name: 生成打印机图形 DLL
+          href: building-a-printer-graphics-dll.md
+    - name: 打印机接口 DLL
+      href: printer-interface-dll.md
       items:
-      - name: GetSupportedVersions
-        href: getsupportedversions.md
-      - name: BindPrinter
-        href: bindprinter.md
-      - name: QueryDeviceNamespace
-        href: querydevicenamespace.md
-      - name: GetPrintCapabilities
-        href: getprintcapabilities.md
-      - name: ConvertDevModeToPrintTicket 打印票证支持
-        href: convertdevmodetoprintticket2.md
-      - name: ConvertPrintTicketToDevMode 打印票证支持
-        href: convertprinttickettodevmode2.md
-      - name: ValidatePrintTicket 打印票证支持
-        href: validateprintticket2.md
-    - name: 打印机驱动程序和插件帮助程序接口
-      href: printer-driver-and-plug-in-helper-interfaces.md
-      items:
-      - name: 插件的 Unidrv 和 Pscript5 帮助程序接口
-        href: unidrv-and-pscript5-helper-interfaces-for-plug-ins.md
-      - name: 发布接口
-        href: publishing-the-interfaces.md
-      - name: IPrintCoreHelper 接口详细信息
-        href: details-of-the-iprintcorehelper-interface.md
-        items:
-        - name: IPrintCoreHelperUni 接口详细信息
-          href: details-of-the-iprintcorehelperuni-interface.md
-        - name: IPrintCoreHelperPS 接口详细信息
-          href: details-of-the-iprintcorehelperps-interface.md
-    - name: 关键字映射
-      href: keyword-mapping.md
-      items:
-      - name: Pscript5 关键字
-        href: pscript5-keywords.md
-      - name: Unidrv 关键字
-        href: unidrv-keywords.md
-  - name: 打印机数据文件
-    href: printer-data-files.md
+        - name: 打印机接口 DLL 简介
+          href: introduction-to-printer-interface-dlls.md
+        - name: 按打印机接口 DLL 定义的函数
+          href: functions-defined-by-printer-interface-dlls.md
+        - name: 打印机接口 DLL 示例
+          href: sample-printer-interface-dll.md
+        - name: 为打印机创建属性表页
+          href: creating-property-sheet-pages-for-printers.md
+        - name: 识别打印机的颜色功能
+          href: identifying-a-printer-s-color-capability.md
+        - name: 打印票证和打印功能支持
+          href: print-ticket-and-print-capabilities-support.md
+          items:
+            - name: 打印机驱动程序实现的打印票证和打印功能提供程序接口
+              href: print-ticket-and-print-capabilities-provider-interface-implemented-by-2.md
+            - name: Unidrv/Pscript5 插件实现的打印票证和打印功能提供程序接口
+              href: print-ticket-and-print-capabilities-provider-interface-implemented-by-.md
+            - name: 打印票证接口和打印驱动程序插件
+              href: print-ticket-interfaces-and-print-driver-plug-ins.md
+              items:
+                - name: OpenPrinter
+                  href: openprinter.md
+                - name: ConvertDevModeToPrintTicket 概述
+                  href: convertdevmodetoprintticket.md
+                - name: ConvertPrintTicketToDevMode 概述
+                  href: convertprinttickettodevmode.md
+                - name: ValidatePrintTicket 概述
+                  href: validateprintticket.md
+        - name: 将打印票证支持添加到一体式打印驱动程序
+          href: adding-print-ticket-support-to-monolithic-print-drivers.md
+          items:
+            - name: GetSupportedVersions
+              href: getsupportedversions.md
+            - name: BindPrinter
+              href: bindprinter.md
+            - name: QueryDeviceNamespace
+              href: querydevicenamespace.md
+            - name: GetPrintCapabilities
+              href: getprintcapabilities.md
+            - name: ConvertDevModeToPrintTicket 打印票证支持
+              href: convertdevmodetoprintticket2.md
+            - name: ConvertPrintTicketToDevMode 打印票证支持
+              href: convertprinttickettodevmode2.md
+            - name: ValidatePrintTicket 打印票证支持
+              href: validateprintticket2.md
+        - name: 打印机驱动程序和插件帮助程序接口
+          href: printer-driver-and-plug-in-helper-interfaces.md
+          items:
+            - name: 插件的 Unidrv 和 Pscript5 帮助程序接口
+              href: unidrv-and-pscript5-helper-interfaces-for-plug-ins.md
+            - name: 发布接口
+              href: publishing-the-interfaces.md
+            - name: IPrintCoreHelper 接口详细信息
+              href: details-of-the-iprintcorehelper-interface.md
+              items:
+                - name: IPrintCoreHelperUni 接口详细信息
+                  href: details-of-the-iprintcorehelperuni-interface.md
+                - name: IPrintCoreHelperPS 接口详细信息
+                  href: details-of-the-iprintcorehelperps-interface.md
+        - name: 关键字映射
+          href: keyword-mapping.md
+          items:
+            - name: Pscript5 关键字
+              href: pscript5-keywords.md
+            - name: Unidrv 关键字
+              href: unidrv-keywords.md
+    - name: 打印机数据文件
+      href: printer-data-files.md
 - name: 打印票证和打印功能技术
   href: print-ticket-and-print-capabilities-technologies.md
   items:
-  - name: 打印架构
-    href: print-schema.md
-  - name: 打印功能
-    href: print-capabilities.md
-    items:
-    - name: 打印功能体系结构
-      href: print-capabilities-architecture.md
-    - name: 打印功能的 Win32 API 支持
-      href: win32-api-support-for-print-capabilities.md
-    - name: Unidrv 和 PScript5 打印驱动程序中的打印功能
-      href: print-capabilities-in-unidrv-and-pscript5-print-drivers.md
-    - name: 打印驱动程序插件支持
-      href: print-driver-plug-in-support.md
-    - name: 基于 GDI 的一体式打印驱动程序中的打印功能支持
-      href: print-capabilities-support-in-gdi-based--monolithic-print-drivers.md
-  - name: 打印票证
-    href: print-ticket.md
-    items:
-    - name: 打印票证组织
-      href: print-ticket-organization.md
-    - name: 打印票证与 Win 32 应用程序的兼容性
-      href: print-ticket-compatibility-with-win-32-applications.md
-    - name: 打印驱动程序中的打印票证处理
-      href: print-ticket-processing-in-the-print-driver.md
-    - name: Unidrv 和 PScript5 打印驱动程序中的打印票证支持
-      href: print-ticket-support-in-unidrv-and-pscript5-print-drivers.md
+    - name: 打印架构
+      href: print-schema.md
+    - name: 打印功能
+      href: print-capabilities.md
+      items:
+        - name: 打印功能体系结构
+          href: print-capabilities-architecture.md
+        - name: 打印功能的 Win32 API 支持
+          href: win32-api-support-for-print-capabilities.md
+        - name: Unidrv 和 PScript5 打印驱动程序中的打印功能
+          href: print-capabilities-in-unidrv-and-pscript5-print-drivers.md
+        - name: 打印驱动程序插件支持
+          href: print-driver-plug-in-support.md
+        - name: 基于 GDI 的一体式打印驱动程序中的打印功能支持
+          href: print-capabilities-support-in-gdi-based--monolithic-print-drivers.md
+    - name: 打印票证
+      href: print-ticket.md
+      items:
+        - name: 打印票证组织
+          href: print-ticket-organization.md
+        - name: 打印票证与 Win 32 应用程序的兼容性
+          href: print-ticket-compatibility-with-win-32-applications.md
+        - name: 打印驱动程序中的打印票证处理
+          href: print-ticket-processing-in-the-print-driver.md
+        - name: Unidrv 和 PScript5 打印驱动程序中的打印票证支持
+          href: print-ticket-support-in-unidrv-and-pscript5-print-drivers.md
 - name: 写 64 位打印机驱动程序
   href: writing-64-bit-printer-drivers.md
 - name: 安装和配置打印机驱动程序
   href: installing-and-configuring-printer-drivers.md
   items:
-  - name: 打印机安装基础知识
-    href: printer-installation-basics.md
-    items:
-    - name: 打印机 INF 文件
-      href: printer-inf-files.md
+    - name: 打印机安装基础知识
+      href: printer-installation-basics.md
       items:
-      - name: 打印机 INF 文件的即插即用 ID
-        href: plug-and-play-ids-for-printer-inf-files.md
-      - name: 打印机 Dirids
-        href: printer-dirids.md
-      - name: 打印机 INF 文件项
-        href: printer-inf-file-entries.md
-        items:
-        - name: 自定义的打印机安装操作
-          href: customized-printer-setup-operations.md
-        - name: INF InboxVersionRequired 指令
-          href: inf-inboxversionrequired-directive.md
-      - name: 打印机 INF 文件的 Data 节
-        href: printer-inf-file-data-sections.md
-      - name: 打印机 INF 文件的 Install 节
-        href: printer-inf-file-install-sections.md
-      - name: 打印机 INF 文件的 CopyFiles 节
-        href: printer-inf-file-copyfiles-sections.md
-      - name: 打印机 INF 文件中的修饰
-        href: decorations-in-printer-inf-files.md
-        items:
-        - name: 如何使用打印机驱动程序 INF 文件中的修饰
-          href: how-to-use-decorations-in-inf-files-for-printer-drivers.md
-      - name: 打印机 INF 文件中的虚拟打印机
-        href: virtual-printers-in-printer-inf-files.md
-      - name: 打印机 INF 文件示例
-        href: sample-printer-inf-files.md
-    - name: 打印驱动程序清单
-      href: print-driver-manifests.md
-      items:
-      - name: 使用主题清单
-        href: using-theme-manifests.md
-    - name: 打印驱动程序版本控制
-      href: print-driver-versioning.md
-    - name: 打印驱动程序包
-      href: print-driver-packages.md
-      items:
-      - name: 点选打印与驱动程序包
-        href: point-and-print-with-driver-packages.md
-      - name: 包感知打印驱动程序
-        href: package-aware-print-drivers.md
-        items:
-        - name: 不共享文件的包感知打印驱动程序
-          href: package-aware-print-drivers-that-do-not-share-files.md
-        - name: 共享文件的包感知打印驱动程序
-          href: package-aware-print-drivers-that-share-files.md
+        - name: 打印机 INF 文件
+          href: printer-inf-files.md
           items:
-          - name: 编写核心驱动程序
-            href: writing-core-drivers.md
-          - name: 使用核心驱动程序
-            href: using-core-drivers.md
-          - name: 核心驱动程序示例
-            href: core-driver-sample.md
-      - name: 使用更新的核心打印驱动程序
-        href: using-updated-core-print-drivers.md
-        items:
-        - name: 使用更新的核心驱动程序构造包感知驱动程序
-          href: constructing-a-package-aware-driver-with-updated-core-drivers.md
+            - name: 打印机 INF 文件的即插即用 ID
+              href: plug-and-play-ids-for-printer-inf-files.md
+            - name: 打印机 Dirids
+              href: printer-dirids.md
+            - name: 打印机 INF 文件项
+              href: printer-inf-file-entries.md
+              items:
+                - name: 自定义的打印机安装操作
+                  href: customized-printer-setup-operations.md
+                - name: INF InboxVersionRequired 指令
+                  href: inf-inboxversionrequired-directive.md
+            - name: 打印机 INF 文件的 Data 节
+              href: printer-inf-file-data-sections.md
+            - name: 打印机 INF 文件的 Install 节
+              href: printer-inf-file-install-sections.md
+            - name: 打印机 INF 文件的 CopyFiles 节
+              href: printer-inf-file-copyfiles-sections.md
+            - name: 打印机 INF 文件中的修饰
+              href: decorations-in-printer-inf-files.md
+              items:
+                - name: 如何使用打印机驱动程序 INF 文件中的修饰
+                  href: how-to-use-decorations-in-inf-files-for-printer-drivers.md
+            - name: 打印机 INF 文件中的虚拟打印机
+              href: virtual-printers-in-printer-inf-files.md
+            - name: 打印机 INF 文件示例
+              href: sample-printer-inf-files.md
+        - name: 打印驱动程序清单
+          href: print-driver-manifests.md
           items:
-          - name: 获取更新的核心驱动程序包
-            href: getting-the-updated-core-driver-package.md
-          - name: 将核心驱动程序与包感知驱动程序捆绑到一起
-            href: bundling-the-core-driver-with-your-package-aware-driver.md
-          - name: 更新包感知驱动程序的 INF
-            href: updating-your-package-aware-driver-s-inf.md
-        - name: 更新非包感知驱动程序的核心驱动程序文件
-          href: updating-core-drivers-files-for-non-package-aware-drivers.md
-        - name: 创建适用于 Windows XP 和 Windows Vista 的单个驱动程序包
-          href: creating-a-single-driver-package-for-windows-xp-and-windows-vista.md
-  - name: 打印机即插即用
-    href: plug-and-play-for-printers.md
-    items:
-    - name: 打印机安装和即插即用管理器
-      href: printer-installation-and-the-plug-and-play-manager.md
-    - name: 即插即用总线枚举器
-      href: plug-and-play-bus-enumerators.md
+            - name: 使用主题清单
+              href: using-theme-manifests.md
+        - name: 打印驱动程序版本控制
+          href: print-driver-versioning.md
+        - name: 打印驱动程序包
+          href: print-driver-packages.md
+          items:
+            - name: 点选打印与驱动程序包
+              href: point-and-print-with-driver-packages.md
+            - name: 包感知打印驱动程序
+              href: package-aware-print-drivers.md
+              items:
+                - name: 不共享文件的包感知打印驱动程序
+                  href: package-aware-print-drivers-that-do-not-share-files.md
+                - name: 共享文件的包感知打印驱动程序
+                  href: package-aware-print-drivers-that-share-files.md
+                  items:
+                    - name: 编写核心驱动程序
+                      href: writing-core-drivers.md
+                    - name: 使用核心驱动程序
+                      href: using-core-drivers.md
+                    - name: 核心驱动程序示例
+                      href: core-driver-sample.md
+            - name: 使用更新的核心打印驱动程序
+              href: using-updated-core-print-drivers.md
+              items:
+                - name: 使用更新的核心驱动程序构造包感知驱动程序
+                  href: constructing-a-package-aware-driver-with-updated-core-drivers.md
+                  items:
+                    - name: 获取更新的核心驱动程序包
+                      href: getting-the-updated-core-driver-package.md
+                    - name: 将核心驱动程序与包感知驱动程序捆绑到一起
+                      href: bundling-the-core-driver-with-your-package-aware-driver.md
+                    - name: 更新包感知驱动程序的 INF
+                      href: updating-your-package-aware-driver-s-inf.md
+                - name: 更新非包感知驱动程序的核心驱动程序文件
+                  href: updating-core-drivers-files-for-non-package-aware-drivers.md
+                - name: 创建适用于 Windows XP 和 Windows Vista 的单个驱动程序包
+                  href: creating-a-single-driver-package-for-windows-xp-and-windows-vista.md
+    - name: 打印机即插即用
+      href: plug-and-play-for-printers.md
       items:
-      - name: 连接到 LPT 端口的打印机
-        href: printer-connected-to-an-lpt-port.md
-      - name: 连接到 USB 端口的打印机
-        href: printer-connected-to-a-usb-port.md
-      - name: 连接到红外端口的打印机
-        href: printer-connected-to-an-infrared-port.md
-    - name: 安装自定义的即插即用打印机驱动程序
-      href: installing-a-custom-plug-and-play-printer-driver.md
-  - name: 通过网络安装打印机
-    href: installing-printers-over-a-network.md
-    items:
-    - name: 支持点选打印
-      href: supporting-point-and-print.md
+        - name: 打印机安装和即插即用管理器
+          href: printer-installation-and-the-plug-and-play-manager.md
+        - name: 即插即用总线枚举器
+          href: plug-and-play-bus-enumerators.md
+          items:
+            - name: 连接到 LPT 端口的打印机
+              href: printer-connected-to-an-lpt-port.md
+            - name: 连接到 USB 端口的打印机
+              href: printer-connected-to-a-usb-port.md
+            - name: 连接到红外端口的打印机
+              href: printer-connected-to-an-infrared-port.md
+        - name: 安装自定义的即插即用打印机驱动程序
+          href: installing-a-custom-plug-and-play-printer-driver.md
+    - name: 通过网络安装打印机
+      href: installing-printers-over-a-network.md
       items:
-      - name: 点选打印简介
-        href: introduction-to-point-and-print.md
-      - name: 使用包进行点选打印
-        href: point-and-print-with-packages.md
-      - name: 在打印机期间支持点选打印
-        href: supporting-point-and-print-during-printer-installations.md
-        items:
-        - name: 安装驱动程序特定的文件
-          href: installing-driver-specific-files.md
-        - name: 安装队列特定的文件
-          href: installing-queue-specific-files.md
-        - name: 点选打印 DLL
-          href: point-and-print-dlls.md
-      - name: 在打印机连接期间支持点选打印
-        href: supporting-point-and-print-during-printer-connections.md
-        items:
-        - name: 下载驱动程序特定的文件
-          href: downloading-driver-specific-files.md
-        - name: 下载队列特定的文件
-          href: downloading-queue-specific-files.md
-    - name: 打印机的目录服务
-      href: directory-services-for-printers.md
-      items:
-      - name: 打印机目录服务的打印后台处理程序支持
-        href: print-spooler-support-for-printer-directory-services.md
-      - name: 打印机目录服务的打印机驱动程序支持
-        href: printer-driver-support-for-printer-directory-services.md
-    - name: 安装 TCP/IP 打印机
-      href: installing-tcp-ip-printers.md
-    - name: 安装支持 WSD 的打印机
-      href: web-services-device-installation.md
+        - name: 支持点选打印
+          href: supporting-point-and-print.md
+          items:
+            - name: 点选打印简介
+              href: introduction-to-point-and-print.md
+            - name: 使用包进行点选打印
+              href: point-and-print-with-packages.md
+            - name: 在打印机期间支持点选打印
+              href: supporting-point-and-print-during-printer-installations.md
+              items:
+                - name: 安装驱动程序特定的文件
+                  href: installing-driver-specific-files.md
+                - name: 安装队列特定的文件
+                  href: installing-queue-specific-files.md
+                - name: 点选打印 DLL
+                  href: point-and-print-dlls.md
+            - name: 在打印机连接期间支持点选打印
+              href: supporting-point-and-print-during-printer-connections.md
+              items:
+                - name: 下载驱动程序特定的文件
+                  href: downloading-driver-specific-files.md
+                - name: 下载队列特定的文件
+                  href: downloading-queue-specific-files.md
+        - name: 打印机的目录服务
+          href: directory-services-for-printers.md
+          items:
+            - name: 打印机目录服务的打印后台处理程序支持
+              href: print-spooler-support-for-printer-directory-services.md
+            - name: 打印机目录服务的打印机驱动程序支持
+              href: printer-driver-support-for-printer-directory-services.md
+        - name: 安装 TCP/IP 打印机
+          href: installing-tcp-ip-printers.md
+        - name: 安装支持 WSD 的打印机
+          href: web-services-device-installation.md
 - name: 打印机配置
   href: printer-configuration.md
 - name: 通用描述语言
   href: generic-description-language.md
   items:
-  - name: GDL 体系结构
-    href: gdl-architecture.md
-  - name: GDL 编程指南
-    href: gdl-programming-guide.md
-    items:
-    - name: GDL 语法
-      href: gdl-syntax.md
+    - name: GDL 体系结构
+      href: gdl-architecture.md
+    - name: GDL 编程指南
+      href: gdl-programming-guide.md
       items:
-      - name: GDL 源文件
-        href: gdl-source-files.md
-      - name: GDL 属性
-        href: gdl-attributes.md
-        items:
-        - name: GDL 关键字
-          href: gdl-keywords.md
-        - name: GDL 值
-          href: gdl-values.md
-      - name: GDL 上下文
-        href: gdl-contexts.md
-        items:
-        - name: GDL 嵌套上下文
-          href: gdl-nested-contexts.md
-        - name: GDL 任意值上下文
-          href: gdl-arbitrary-value-contexts.md
-      - name: GDL 构造
-        href: gdl-constructs.md
-        items:
-        - name: GDL 构造分隔符
-          href: gdl-construct-delimiters.md
-        - name: GDL 中的语法和逻辑构造
-          href: syntactical-and-logical-constructs-in-gdl.md
-        - name: GDL 构造联合
-          href: gdl-construct-unions.md
-        - name: GDL 空白字符
-          href: gdl-whitespace-characters.md
-        - name: GDL 注释
-          href: gdl-comments.md
-        - name: GDL 字符串
-          href: gdl-strings.md
+        - name: GDL 语法
+          href: gdl-syntax.md
           items:
-          - name: GDL 带引号字符串
-            href: gdl-quoted-strings.md
-          - name: GDL 十六进制子字符串
-            href: gdl-hexsubstrings.md
-    - name: GDL 元素
-      href: gdl-elements.md
-      items:
-      - name: GDL 模板
-        href: gdl-templates.md
-      - name: GDL 架构
-        href: gdl-schemas.md
-      - name: GDL 命名空间
-        href: gdl-namespaces.md
-    - name: 使用 GDL
-      href: using-gdl.md
-      items:
-      - name: GDL 配置
-        href: gdl-configurations.md
-        items:
-        - name: 创建 GDL 配置相关的数据
-          href: creating-gdl-configuration-dependent-data.md
+            - name: GDL 源文件
+              href: gdl-source-files.md
+            - name: GDL 属性
+              href: gdl-attributes.md
+              items:
+                - name: GDL 关键字
+                  href: gdl-keywords.md
+                - name: GDL 值
+                  href: gdl-values.md
+            - name: GDL 上下文
+              href: gdl-contexts.md
+              items:
+                - name: GDL 嵌套上下文
+                  href: gdl-nested-contexts.md
+                - name: GDL 任意值上下文
+                  href: gdl-arbitrary-value-contexts.md
+            - name: GDL 构造
+              href: gdl-constructs.md
+              items:
+                - name: GDL 构造分隔符
+                  href: gdl-construct-delimiters.md
+                - name: GDL 中的语法和逻辑构造
+                  href: syntactical-and-logical-constructs-in-gdl.md
+                - name: GDL 构造联合
+                  href: gdl-construct-unions.md
+                - name: GDL 空白字符
+                  href: gdl-whitespace-characters.md
+                - name: GDL 注释
+                  href: gdl-comments.md
+                - name: GDL 字符串
+                  href: gdl-strings.md
+                  items:
+                    - name: GDL 带引号字符串
+                      href: gdl-quoted-strings.md
+                    - name: GDL 十六进制子字符串
+                      href: gdl-hexsubstrings.md
+        - name: GDL 元素
+          href: gdl-elements.md
           items:
-          - name: 定义配置相关的数据参数
-            href: defining-the-configuration-dependent-data-parameters.md
-          - name: 将依赖项添加到配置相关的数据
-            href: adding-dependencies-to-the-configuration-dependent-data.md
-      - name: GDL 快照
-        href: gdl-snapshots.md
-        items:
-        - name: GDL 分析器
-          href: gdl-parser.md
+            - name: GDL 模板
+              href: gdl-templates.md
+            - name: GDL 架构
+              href: gdl-schemas.md
+            - name: GDL 命名空间
+              href: gdl-namespaces.md
+        - name: 使用 GDL
+          href: using-gdl.md
           items:
-          - name: 标准 GDL 分析
-            href: standard-gdl-parsing.md
-          - name: 排查 GDL 分析问题
-            href: troubleshooting-gdl-parsing.md
-        - name: 创建 GDL 快照
-          href: creating-gdl-snapshots.md
-          items:
-          - name: 用于创建快照的配置
-            href: configurations-for-creating-snapshots.md
-          - name: 有效的 GDL 配置
-            href: valid-gdl-configurations.md
-          - name: 默认的 GDL 配置
-            href: default-gdl-configurations.md
-          - name: 更改默认的 GDL 配置
-            href: changing-the-default-gdl-configuration.md
-          - name: 使用无效的 GDL 配置
-            href: using-invalid-gdl-configurations.md
-          - name: 解决 GDL 配置冲突
-            href: resolving-gdl-configuration-conflicts.md
-        - name: GDL 快照的 XML 结构
-          href: xml-structure-of-gdl-snapshots.md
-          items:
-          - name: GDL 架构根元素
-            href: gdl-schema-root-element.md
-          - name: GDL 架构构造元素
-            href: gdl-schema-construct-element.md
-          - name: GDL 架构属性元素
-            href: gdl-schema-attribute-element.md
-          - name: 枚举和 XSD 定义的数据类型
-            href: enumerations-and-xsd-defined-data-types.md
-          - name: 数据类型包装器
-            href: data-type-wrappers.md
-          - name: XML 快照命名空间
-            href: xml-snapshot-namespaces.md
-          - name: XML 架构换行符转换
-            href: xml-schema-linebreak-translations.md
-          - name: XML 快照中的 Unicode 表示形式
-            href: unicode-representations-in-xml-snapshots.md
-          - name: 针对快照中允许的字符施加的 XML 限制
-            href: xml-restrictions-on-allowed-characters-in-snapshots.md
+            - name: GDL 配置
+              href: gdl-configurations.md
+              items:
+                - name: 创建 GDL 配置相关的数据
+                  href: creating-gdl-configuration-dependent-data.md
+                  items:
+                    - name: 定义配置相关的数据参数
+                      href: defining-the-configuration-dependent-data-parameters.md
+                    - name: 将依赖项添加到配置相关的数据
+                      href: adding-dependencies-to-the-configuration-dependent-data.md
+            - name: GDL 快照
+              href: gdl-snapshots.md
+              items:
+                - name: GDL 分析器
+                  href: gdl-parser.md
+                  items:
+                    - name: 标准 GDL 分析
+                      href: standard-gdl-parsing.md
+                    - name: 排查 GDL 分析问题
+                      href: troubleshooting-gdl-parsing.md
+                - name: 创建 GDL 快照
+                  href: creating-gdl-snapshots.md
+                  items:
+                    - name: 用于创建快照的配置
+                      href: configurations-for-creating-snapshots.md
+                    - name: 有效的 GDL 配置
+                      href: valid-gdl-configurations.md
+                    - name: 默认的 GDL 配置
+                      href: default-gdl-configurations.md
+                    - name: 更改默认的 GDL 配置
+                      href: changing-the-default-gdl-configuration.md
+                    - name: 使用无效的 GDL 配置
+                      href: using-invalid-gdl-configurations.md
+                    - name: 解决 GDL 配置冲突
+                      href: resolving-gdl-configuration-conflicts.md
+                - name: GDL 快照的 XML 结构
+                  href: xml-structure-of-gdl-snapshots.md
+                  items:
+                    - name: GDL 架构根元素
+                      href: gdl-schema-root-element.md
+                    - name: GDL 架构构造元素
+                      href: gdl-schema-construct-element.md
+                    - name: GDL 架构属性元素
+                      href: gdl-schema-attribute-element.md
+                    - name: 枚举和 XSD 定义的数据类型
+                      href: enumerations-and-xsd-defined-data-types.md
+                    - name: 数据类型包装器
+                      href: data-type-wrappers.md
+                    - name: XML 快照命名空间
+                      href: xml-snapshot-namespaces.md
+                    - name: XML 架构换行符转换
+                      href: xml-schema-linebreak-translations.md
+                    - name: XML 快照中的 Unicode 表示形式
+                      href: unicode-representations-in-xml-snapshots.md
+                    - name: 针对快照中允许的字符施加的 XML 限制
+                      href: xml-restrictions-on-allowed-characters-in-snapshots.md
 - name: GDL 参考
   href: gdl-reference.md
   items:
-  - name: GDL 源文件结构
-    href: gdl-source-file-structure.md
-  - name: GDL 指令
-    href: gdl-directives.md
-    items:
-    - name: GDL 源文件预处理器指令
-      href: gdl-source-file-preprocessor-directives.md
+    - name: GDL 源文件结构
+      href: gdl-source-file-structure.md
+    - name: GDL 指令
+      href: gdl-directives.md
       items:
-      - name: GDL 预处理器语法
-        href: gdl-preprocessor-syntax.md
-      - name: GDL 预处理器关键字
-        href: gdl-preprocessor-keywords.md
-        items:
-        - name: '#定义预处理器指令'
-          href: -define-preprocessor-directive.md
-        - name: '#取消定义预处理器指令'
-          href: -undefine-preprocessor-directive.md
-        - name: '#包含预处理器指令'
-          href: -include-preprocessor-directive.md
-        - name: '#SetPPPrefix 预处理器指令'
-          href: -setppprefix-preprocessor-directive.md
-        - name: '#UndefinePrefix 预处理器指令'
-          href: -undefineprefix-preprocessor-directive.md
-        - name: '#预编译的预处理器指令'
-          href: -precompiled-preprocessor-directive.md
-        - name: '#EnablePPDirective 预处理器指令'
-          href: -enableppdirective-preprocessor-directive.md
-        - name: '#DisablePPDirective 预处理器指令'
-          href: -disableppdirective-preprocessor-directive.md
-        - name: GDL 预处理器条件指令
-          href: gdl-preprocessor-conditional-directives.md
+        - name: GDL 源文件预处理器指令
+          href: gdl-source-file-preprocessor-directives.md
           items:
-          - name: '#Ifdef 条件预处理器指令'
-            href: -ifdef-conditional-preprocessor-directive.md
-          - name: '#Elseifdef 条件预处理器指令'
-            href: -elseifdef-conditional-preprocessor-directive.md
-          - name: '#Else 条件预处理器指令'
-            href: -else-conditional-preprocessor-directive.md
-          - name: '#Endif 条件预处理器指令'
-            href: -endif-conditional-preprocessor-directive.md
-      - name: GDL 与 GPD 预处理之间的差异
-        href: differences-between-gdl-and-gpd-preprocessing.md
-      - name: GDL 预处理器指导原则
-        href: gdl-preprocessor-guidelines.md
-        items:
-        - name: GDL 预处理中的逻辑运算符问题
-          href: problems-with-logical-operators-in-gdl-preprocessing.md
-    - name: 用于配置的 GDL 指令
-      href: gdl-directives-for-configurations.md
-    - name: 用于宏的 GDL 指令
-      href: gdl-directives-for-macros.md
-    - name: 用于模板的 GDL 指令
-      href: gdl-directives-for-templates.md
-    - name: 用于命名空间的 GDL 指令
-      href: gdl-directives-for-namespaces.md
-    - name: 其他 GDL 指令
-      href: miscellaneous-gdl-directives.md
-  - name: GDL 宏
-    href: gdl-macros.md
-    items:
-    - name: GDL 值宏
-      href: gdl-value-macros.md
-    - name: GDL 块宏
-      href: gdl-block-macros.md
-    - name: GDL 宏参数
-      href: gdl-macro-arguments.md
-    - name: GDL 宏注意事项
-      href: gdl-macro-considerations.md
-    - name: GDL 其他宏
-      href: gdl-miscellaneous-macros.md
-  - name: GDL 模板结构
-    href: gdl-template-structure.md
-    items:
-    - name: GDL 模板继承
-      href: gdl-template-inheritance.md
-    - name: 有关将 GDL 模板与关键字相关联的条件
-      href: criteria-for-associating-gdl-templates-with-keywords.md
+            - name: GDL 预处理器语法
+              href: gdl-preprocessor-syntax.md
+            - name: GDL 预处理器关键字
+              href: gdl-preprocessor-keywords.md
+              items:
+                - name: '#定义预处理器指令'
+                  href: '-define-preprocessor-directive.md'
+                - name: '#取消定义预处理器指令'
+                  href: '-undefine-preprocessor-directive.md'
+                - name: '#包含预处理器指令'
+                  href: '-include-preprocessor-directive.md'
+                - name: '#SetPPPrefix 预处理器指令'
+                  href: '-setppprefix-preprocessor-directive.md'
+                - name: '#UndefinePrefix 预处理器指令'
+                  href: '-undefineprefix-preprocessor-directive.md'
+                - name: '#预编译的预处理器指令'
+                  href: '-precompiled-preprocessor-directive.md'
+                - name: '#EnablePPDirective 预处理器指令'
+                  href: '-enableppdirective-preprocessor-directive.md'
+                - name: '#DisablePPDirective 预处理器指令'
+                  href: '-disableppdirective-preprocessor-directive.md'
+                - name: GDL 预处理器条件指令
+                  href: gdl-preprocessor-conditional-directives.md
+                  items:
+                    - name: '#Ifdef 条件预处理器指令'
+                      href: '-ifdef-conditional-preprocessor-directive.md'
+                    - name: '#Elseifdef 条件预处理器指令'
+                      href: '-elseifdef-conditional-preprocessor-directive.md'
+                    - name: '#Else 条件预处理器指令'
+                      href: '-else-conditional-preprocessor-directive.md'
+                    - name: '#Endif 条件预处理器指令'
+                      href: '-endif-conditional-preprocessor-directive.md'
+            - name: GDL 与 GPD 预处理之间的差异
+              href: differences-between-gdl-and-gpd-preprocessing.md
+            - name: GDL 预处理器指导原则
+              href: gdl-preprocessor-guidelines.md
+              items:
+                - name: GDL 预处理中的逻辑运算符问题
+                  href: problems-with-logical-operators-in-gdl-preprocessing.md
+        - name: 用于配置的 GDL 指令
+          href: gdl-directives-for-configurations.md
+        - name: 用于宏的 GDL 指令
+          href: gdl-directives-for-macros.md
+        - name: 用于模板的 GDL 指令
+          href: gdl-directives-for-templates.md
+        - name: 用于命名空间的 GDL 指令
+          href: gdl-directives-for-namespaces.md
+        - name: 其他 GDL 指令
+          href: miscellaneous-gdl-directives.md
+    - name: GDL 宏
+      href: gdl-macros.md
       items:
-      - name: GDL 关联搜索条件
-        href: gdl-association-search-criteria.md
-      - name: GDL 模板限定
-        href: gdl-template-qualification.md
-    - name: GDL 模板数据类型
-      href: gdl-template-data-types.md
+        - name: GDL 值宏
+          href: gdl-value-macros.md
+        - name: GDL 块宏
+          href: gdl-block-macros.md
+        - name: GDL 宏参数
+          href: gdl-macro-arguments.md
+        - name: GDL 宏注意事项
+          href: gdl-macro-considerations.md
+        - name: GDL 其他宏
+          href: gdl-miscellaneous-macros.md
+    - name: GDL 模板结构
+      href: gdl-template-structure.md
       items:
-      - name: GDL 基元数据类型
-        href: gdl-primitive-data-types.md
-        items:
-        - name: 直通模板数据类型
-          href: passthrough-template-data-types.md
-        - name: 本机 XML 模板数据类型
-          href: native-xml-template-data-types.md
-        - name: XSD 模板数据类型
-          href: xsd-template-data-types.md
-        - name: 枚举器模板数据类型
-          href: enumerator-template-data-type.md
-        - name: 筛选器模板数据类型
-          href: filter-template-data-type.md
-      - name: GDL 复合数据类型
-        href: gdl-compound-data-types.md
-        items:
-        - name: GDL 模板数据类型问题
-          href: gdl-template-data-type-issues.md
+        - name: GDL 模板继承
+          href: gdl-template-inheritance.md
+        - name: 有关将 GDL 模板与关键字相关联的条件
+          href: criteria-for-associating-gdl-templates-with-keywords.md
           items:
-          - name: 复合模板数据类型问题
-            href: compound-template-data-type-issues.md
-          - name: 列表模板数据类型问题
-            href: list-template-data-type-issues.md
-          - name: 范围模板数据类型问题
-            href: range-template-data-type-issues.md
-          - name: 代码页模板项问题
-            href: codepage-template-entry-issues.md
-        - name: 数组模板数据类型
-          href: array-template-data-types.md
-        - name: 复合模板数据类型
-          href: composite-template-data-types.md
-        - name: 多个个性化模板数据类型
-          href: multiple-personality-template-data-types.md
-      - name: 使用模板定义数据类型
-        href: defining-data-types-by-using-templates.md
-      - name: 数据类型模板继承
-        href: data-type-template-inheritance.md
-    - name: GDL 模板指令
-      href: gdl-template-directives.md
-      items:
-      - name: Template 模板指令
-        href: template-template-directive.md
-      - name: Name 模板指令
-        href: name-template-directive.md
-      - name: Inherits 模板指令
-        href: inherits-template-directive.md
-      - name: Members 模板指令
-        href: members-template-directive.md
-      - name: ValueType 模板指令
-        href: valuetype-template-directive.md
-      - name: Type 模板指令
-        href: type-template-directive.md
-      - name: DataType 模板指令
-        href: datatype-template-directive.md
-      - name: ElementType 模板指令
-        href: elementtype-template-directive.md
-      - name: ArrayLabel 模板指令
-        href: arraylabel-template-directive.md
-      - name: ElementTags 模板指令
-        href: elementtags-template-directive.md
-      - name: Production 模板指令
-        href: production-template-directive.md
-      - name: Member 模板指令
-        href: member-template-directive.md
-      - name: Additive 模板指令
-        href: additive-template-directive.md
-      - name: 模板指令示例
-        href: template-directive-example.md
+            - name: GDL 关联搜索条件
+              href: gdl-association-search-criteria.md
+            - name: GDL 模板限定
+              href: gdl-template-qualification.md
+        - name: GDL 模板数据类型
+          href: gdl-template-data-types.md
+          items:
+            - name: GDL 基元数据类型
+              href: gdl-primitive-data-types.md
+              items:
+                - name: 直通模板数据类型
+                  href: passthrough-template-data-types.md
+                - name: 本机 XML 模板数据类型
+                  href: native-xml-template-data-types.md
+                - name: XSD 模板数据类型
+                  href: xsd-template-data-types.md
+                - name: 枚举器模板数据类型
+                  href: enumerator-template-data-type.md
+                - name: 筛选器模板数据类型
+                  href: filter-template-data-type.md
+            - name: GDL 复合数据类型
+              href: gdl-compound-data-types.md
+              items:
+                - name: GDL 模板数据类型问题
+                  href: gdl-template-data-type-issues.md
+                  items:
+                    - name: 复合模板数据类型问题
+                      href: compound-template-data-type-issues.md
+                    - name: 列表模板数据类型问题
+                      href: list-template-data-type-issues.md
+                    - name: 范围模板数据类型问题
+                      href: range-template-data-type-issues.md
+                    - name: 代码页模板项问题
+                      href: codepage-template-entry-issues.md
+                - name: 数组模板数据类型
+                  href: array-template-data-types.md
+                - name: 复合模板数据类型
+                  href: composite-template-data-types.md
+                - name: 多个个性化模板数据类型
+                  href: multiple-personality-template-data-types.md
+            - name: 使用模板定义数据类型
+              href: defining-data-types-by-using-templates.md
+            - name: 数据类型模板继承
+              href: data-type-template-inheritance.md
+        - name: GDL 模板指令
+          href: gdl-template-directives.md
+          items:
+            - name: Template 模板指令
+              href: template-template-directive.md
+            - name: Name 模板指令
+              href: name-template-directive.md
+            - name: Inherits 模板指令
+              href: inherits-template-directive.md
+            - name: Members 模板指令
+              href: members-template-directive.md
+            - name: ValueType 模板指令
+              href: valuetype-template-directive.md
+            - name: Type 模板指令
+              href: type-template-directive.md
+            - name: DataType 模板指令
+              href: datatype-template-directive.md
+            - name: ElementType 模板指令
+              href: elementtype-template-directive.md
+            - name: ArrayLabel 模板指令
+              href: arraylabel-template-directive.md
+            - name: ElementTags 模板指令
+              href: elementtags-template-directive.md
+            - name: Production 模板指令
+              href: production-template-directive.md
+            - name: Member 模板指令
+              href: member-template-directive.md
+            - name: Additive 模板指令
+              href: additive-template-directive.md
+            - name: 模板指令示例
+              href: template-directive-example.md
 - name: GDL 示例
   href: gdl-examples.md
   items:
-  - name: GDL 教程
-    href: gdl-tutorials.md
-    items:
-    - name: GDL 练习 1：实现 GDL 架构
-      href: gdl-exercise-1--implementing-a-gdl-schema.md
-    - name: GDL 练习 2：从虚拟模板继承
-      href: gdl-exercise-2--inheriting-from-virtual-templates.md
-    - name: GDL 练习 3：创建根级构造
-      href: gdl-exercise-3--creating-root-level-constructs.md
-    - name: GDL 练习 4：定义构造的变体
-      href: gdl-exercise-4--defining-variants-of-constructs.md
-    - name: GDL 练习 5：定义不同功能的名称限制
-      href: gdl-exercise-5--defining-name-limits-for-different-features.md
-    - name: GDL 练习 6：创建专用版本
-      href: gdl-exercise-6--creating-specialized-versions.md
-    - name: GDL 练习说明
-      href: gdl-exercise-notes.md
+    - name: GDL 教程
+      href: gdl-tutorials.md
+      items:
+        - name: GDL 练习 1：实现 GDL 架构
+          href: gdl-exercise-1--implementing-a-gdl-schema.md
+        - name: GDL 练习 2：从虚拟模板继承
+          href: gdl-exercise-2--inheriting-from-virtual-templates.md
+        - name: GDL 练习 3：创建根级构造
+          href: gdl-exercise-3--creating-root-level-constructs.md
+        - name: GDL 练习 4：定义构造的变体
+          href: gdl-exercise-4--defining-variants-of-constructs.md
+        - name: GDL 练习 5：定义不同功能的名称限制
+          href: gdl-exercise-5--defining-name-limits-for-different-features.md
+        - name: GDL 练习 6：创建专用版本
+          href: gdl-exercise-6--creating-specialized-versions.md
+        - name: GDL 练习说明
+          href: gdl-exercise-notes.md
 - name: 打印机自动配置
   href: printer-autoconfiguration.md
 - name: 自动配置详细信息
   href: autoconfiguration-details.md
   items:
-  - name: 设备安装期间的自动配置
-    href: autoconfiguration-during-device-installation.md
-  - name: 配置更改期间的自动配置
-    href: autoconfiguration-during-configuration-change.md
+    - name: 设备安装期间的自动配置
+      href: autoconfiguration-during-device-installation.md
+    - name: 配置更改期间的自动配置
+      href: autoconfiguration-during-configuration-change.md
 - name: 自动配置实现选项
   href: autoconfiguration-implementation-options.md
   items:
-  - name: IHV 驱动程序中的自动配置
-    href: autoconfiguration-in-an-ihv-driver.md
-  - name: IHV 端口监视器中的自动配置
-    href: autoconfiguration-in-an-ihv-port-monitor.md
-  - name: 现成的自动配置支持
-    href: in-box-support-for-autoconfiguration.md
-    items:
-    - name: 打印机微型驱动程序更改
-      href: printer-minidriver-changes.md
+    - name: IHV 驱动程序中的自动配置
+      href: autoconfiguration-in-an-ihv-driver.md
+    - name: IHV 端口监视器中的自动配置
+      href: autoconfiguration-in-an-ihv-port-monitor.md
+    - name: 现成的自动配置支持
+      href: in-box-support-for-autoconfiguration.md
       items:
-      - name: UI 插件更改
-        href: ui-plug-in-changes.md
-      - name: 将 GDL 扩展添加到现有的 GPD 文件
-        href: adding-gdl-extensions-to-an-existing-gpd-file.md
-        items:
-        - name: GPD 架构的新关键字
-          href: new-keyword-for-gpd-schema.md
-        - name: Windows Vista 中 GPD 的自动配置流
-          href: autoconfiguration-flow-for-gpd-in-windows-vista.md
-        - name: 将构造添加到 GPD 的 GDL 文件
-          href: adding-constructs-to-your-gdl-file-for-gpd.md
+        - name: 打印机微型驱动程序更改
+          href: printer-minidriver-changes.md
           items:
-          - name: 自动检测 GPD 的双工单元
-            href: autodetecting-the-duplex-unit-for-gpd.md
-          - name: 自动配置 GPD 的打印机内存
-            href: autoconfiguring-the-printer-s-memory-for-gpd.md
-          - name: 自动检测 GPD 的打印机硬盘驱动器
-            href: autodetecting-the-printer-s-hard-drive-for-gpd.md
-      - name: 将 GDL 扩展添加到现有的 PPD 文件
-        href: adding-gdl-extensions-to-an-existing-ppd-file.md
-        items:
-        - name: PPD 架构的新关键字
-          href: new-keyword-for-ppd-schema.md
-        - name: Windows Vista 中的 PPD 自动配置流
-          href: autoconfig-flow-in-windows-vista-for-ppd.md
-        - name: 将构造添加到 PPD 的 GDL 文件
-          href: adding-constructs-to-your-gdl-file-for-ppd.md
+            - name: UI 插件更改
+              href: ui-plug-in-changes.md
+            - name: 将 GDL 扩展添加到现有的 GPD 文件
+              href: adding-gdl-extensions-to-an-existing-gpd-file.md
+              items:
+                - name: GPD 架构的新关键字
+                  href: new-keyword-for-gpd-schema.md
+                - name: Windows Vista 中 GPD 的自动配置流
+                  href: autoconfiguration-flow-for-gpd-in-windows-vista.md
+                - name: 将构造添加到 GPD 的 GDL 文件
+                  href: adding-constructs-to-your-gdl-file-for-gpd.md
+                  items:
+                    - name: 自动检测 GPD 的双工单元
+                      href: autodetecting-the-duplex-unit-for-gpd.md
+                    - name: 自动配置 GPD 的打印机内存
+                      href: autoconfiguring-the-printer-s-memory-for-gpd.md
+                    - name: 自动检测 GPD 的打印机硬盘驱动器
+                      href: autodetecting-the-printer-s-hard-drive-for-gpd.md
+            - name: 将 GDL 扩展添加到现有的 PPD 文件
+              href: adding-gdl-extensions-to-an-existing-ppd-file.md
+              items:
+                - name: PPD 架构的新关键字
+                  href: new-keyword-for-ppd-schema.md
+                - name: Windows Vista 中的 PPD 自动配置流
+                  href: autoconfig-flow-in-windows-vista-for-ppd.md
+                - name: 将构造添加到 PPD 的 GDL 文件
+                  href: adding-constructs-to-your-gdl-file-for-ppd.md
+                  items:
+                    - name: 自动检测 PPD 的双工单元
+                      href: autodetect-the-duplex-unit-for-ppd.md
+                    - name: 自动配置 PPD 的打印机内存
+                      href: autoconfigure-the-printer-s-memory-for-ppd.md
+                    - name: 自动检测 PPD 的打印机硬盘驱动器
+                      href: autodetect-the-printer-s-hard-drive-for-ppd.md
+            - name: 微型驱动程序 INI 文件中的 BidiFiles 项
+              href: bidifiles-entry-in-a-minidriver-s-ini-file.md
+            - name: Pscript 和 Unidrv 微型驱动程序中的命名约定
+              href: naming-conventions-in-pscript-and-unidrv-minidrivers.md
+        - name: 自定义打印机端口监视器
+          href: customizing-the-printer-port-monitors.md
           items:
-          - name: 自动检测 PPD 的双工单元
-            href: autodetect-the-duplex-unit-for-ppd.md
-          - name: 自动配置 PPD 的打印机内存
-            href: autoconfigure-the-printer-s-memory-for-ppd.md
-          - name: 自动检测 PPD 的打印机硬盘驱动器
-            href: autodetect-the-printer-s-hard-drive-for-ppd.md
-      - name: 微型驱动程序 INI 文件中的 BidiFiles 项
-        href: bidifiles-entry-in-a-minidriver-s-ini-file.md
-      - name: Pscript 和 Unidrv 微型驱动程序中的命名约定
-        href: naming-conventions-in-pscript-and-unidrv-minidrivers.md
-    - name: 自定义打印机端口监视器
-      href: customizing-the-printer-port-monitors.md
-      items:
-      - name: TCP/IP 架构扩展
-        href: tcp-ip-schema-extensions.md
-        items:
-        - name: 驱动程序特定查询的 TCP/IP 架构扩展
-          href: tcp-ip-schema-extensions-for-driver-specific-queries.md
-          items:
-          - name: Const (TCP/IP)
-            href: const.md
-          - name: Converter
-            href: converter.md
-          - name: Installed (TCP/IP)
-            href: installed2.md
-          - name: Value (TCP/IP)
-            href: value4.md
-        - name: 输入和输出 Bin 的 TCP/IP 架构扩展
-          href: tcp-ip-schema-extensions-for-input-and-output-bins.md
-          items:
-          - name: 隐式 Bin 扩展
-            href: implicit-bin-extensions.md
-          - name: 显式 Bin 扩展
-            href: explicit-bin-extensions.md
-          - name: 驱动程序特定的 Bin
-            href: driver-specific-bins.md
-        - name: TCP/IP 带索引属性和设备索引
-          href: tcp-ip-indexed-properties-and-device-indexes.md
-        - name: TCP/IP 端口监视器的双向扩展示例
-          href: bidi-extension-sample-for-tcp-ip-port-monitor.md
-      - name: WSD 架构扩展
-        href: wsd-schema-extensions.md
-        items:
-        - name: 驱动程序特定查询的 WSD 架构扩展
-          href: wsd-schema-extensions-for-driver-specific-queries.md
-          items:
-          - name: Const (WSD)
-            href: const5.md
-          - name: Installed (WSD)
-            href: installed.md
-          - name: 列表
-            href: list.md
-          - name: Value (WSD)
-            href: value.md
-        - name: WSD 端口监视器的双向扩展示例
-          href: bidi-extension-example-for-wsd-port-monitor.md
+            - name: TCP/IP 架构扩展
+              href: tcp-ip-schema-extensions.md
+              items:
+                - name: 驱动程序特定查询的 TCP/IP 架构扩展
+                  href: tcp-ip-schema-extensions-for-driver-specific-queries.md
+                  items:
+                    - name: Const (TCP/IP)
+                      href: const.md
+                    - name: Converter
+                      href: converter.md
+                    - name: Installed (TCP/IP)
+                      href: installed2.md
+                    - name: Value (TCP/IP)
+                      href: value4.md
+                - name: 输入和输出 Bin 的 TCP/IP 架构扩展
+                  href: tcp-ip-schema-extensions-for-input-and-output-bins.md
+                  items:
+                    - name: 隐式 Bin 扩展
+                      href: implicit-bin-extensions.md
+                    - name: 显式 Bin 扩展
+                      href: explicit-bin-extensions.md
+                    - name: 驱动程序特定的 Bin
+                      href: driver-specific-bins.md
+                - name: TCP/IP 带索引属性和设备索引
+                  href: tcp-ip-indexed-properties-and-device-indexes.md
+                - name: TCP/IP 端口监视器的双向扩展示例
+                  href: bidi-extension-sample-for-tcp-ip-port-monitor.md
+            - name: WSD 架构扩展
+              href: wsd-schema-extensions.md
+              items:
+                - name: 驱动程序特定查询的 WSD 架构扩展
+                  href: wsd-schema-extensions-for-driver-specific-queries.md
+                  items:
+                    - name: Const (WSD)
+                      href: const5.md
+                    - name: Installed (WSD)
+                      href: installed.md
+                    - name: 列表
+                      href: list.md
+                    - name: Value (WSD)
+                      href: value.md
+                - name: WSD 端口监视器的双向扩展示例
+                  href: bidi-extension-example-for-wsd-port-monitor.md
 - name: 双向通信
   href: bidirectional-communication.md
   items:
-  - name: 双向通信架构
-    href: bidirectional-communication-schema.md
-    items:
-    - name: 双向请求和响应架构
-      href: bidirectional-request-and-response-schemas.md
+    - name: 双向通信架构
+      href: bidirectional-communication-schema.md
       items:
-      - name: 获取请求和响应架构
-        href: get-request-and-response-schemas.md
-      - name: EnumSchema 请求和响应架构
-        href: enumschema-request-and-response-schemas.md
-      - name: 设置请求和响应架构
-        href: set-request-and-response-schemas.md
-      - name: GetWithArgument 请求和响应架构
-        href: getwithargument-request-and-response-schemas.md
-    - name: 双向通信架构层次结构
-      href: bidirectional-communication-schema-hierarchy.md
-    - name: 扩展双向通信架构
-      href: extending-the-bidi-communication-schema.md
-    - name: 构造双向通信架构查询
-      href: constructing-a-bidi-communication-schema-query.md
+        - name: 双向请求和响应架构
+          href: bidirectional-request-and-response-schemas.md
+          items:
+            - name: 获取请求和响应架构
+              href: get-request-and-response-schemas.md
+            - name: EnumSchema 请求和响应架构
+              href: enumschema-request-and-response-schemas.md
+            - name: 设置请求和响应架构
+              href: set-request-and-response-schemas.md
+            - name: GetWithArgument 请求和响应架构
+              href: getwithargument-request-and-response-schemas.md
+        - name: 双向通信架构层次结构
+          href: bidirectional-communication-schema-hierarchy.md
+        - name: 扩展双向通信架构
+          href: extending-the-bidi-communication-schema.md
+        - name: 构造双向通信架构查询
+          href: constructing-a-bidi-communication-schema-query.md
 - name: 双向通信架构参考
   href: bidi-communications-schema-reference.md
   items:
-  - name: 打印机属性
-    href: printer-property.md
-  - name: DeviceInfo 节
-    href: deviceinfo-section.md
-    items:
-    - name: DeviceInfo
-      href: deviceinfo.md
+    - name: 打印机属性
+      href: printer-property.md
+    - name: DeviceInfo 节
+      href: deviceinfo-section.md
       items:
-      - name: NetworkingInfo
-        href: networkinginfo.md
-  - name: Configuration 节
-    href: configuration-section.md
-    items:
-    - name: 配置
-      href: configuration.md
-      items:
-      - name: 内存
-        href: memory.md
-      - name: HardDisk
-        href: harddisk.md
-      - name: DuplexUnit
-        href: duplexunit.md
-  - name: Consumables 节
-    href: consumables-section.md
-    items:
-    - name: Consumables
-      href: consumables3.md
-      items:
-      - name: Name]
-        href: -name-.md
-  - name: Layout 节
-    href: layout-section.md
-    items:
-    - name: 布局
-      href: layout.md
-      items:
-      - name: NumberUp
-        href: numberup2.md
-        items:
-        - name: PagesPerSheet
-          href: pagespersheet2.md
-        - name: 方向
-          href: direction2.md
-      - name: Orientation
-        href: orientation2.md
-      - name: 解决方法
-        href: resolutions.md
-      - name: InputBins
-        href: inputbins2.md
-        items:
-        - name: TrayName]
-          href: -trayname-.md
-  - name: Finishing 节
-    href: finishing-section.md
-    items:
-    - name: Finishing
-      href: finishing.md
-      items:
-      - name: 装订
-        href: staple3.md
-        items:
-        - name: 位置
-          href: location3.md
-        - name: 角度
-          href: angle2.md
-      - name: HolePunch
-        href: holepunch3.md
-        items:
-        - name: 模式
-          href: pattern2.md
-        - name: 位置
-          href: location2.md
-      - name: OutputBins
-        href: outputbins2.md
-        items:
-        - name: TrayName]
-          href: -trayname-2.md
-  - name: Maintenance 节
-    href: maintenance-section.md
-    items:
-    - name: 维护
-      href: maintenance.md
-  - name: Status 节
-    href: status-section.md
-    items:
-    - name: 状态
-      href: status.md
-      items:
-      - name: 摘要
-        href: summary.md
-      - name: 详细
-        href: detailed.md
-        items:
-        - name: Event###
-          href: event---.md
+        - name: DeviceInfo
+          href: deviceinfo.md
           items:
-          - name: Component
-            href: component2.md
-  - name: 双向通信错误代码
-    href: bidi-error-codes.md
+            - name: NetworkingInfo
+              href: networkinginfo.md
+    - name: Configuration 节
+      href: configuration-section.md
+      items:
+        - name: 配置
+          href: configuration.md
+          items:
+            - name: 内存
+              href: memory.md
+            - name: HardDisk
+              href: harddisk.md
+            - name: DuplexUnit
+              href: duplexunit.md
+    - name: Consumables 节
+      href: consumables-section.md
+      items:
+        - name: Consumables
+          href: consumables3.md
+          items:
+            - name: 'Name]'
+              href: '-name-.md'
+    - name: Layout 节
+      href: layout-section.md
+      items:
+        - name: 布局
+          href: layout.md
+          items:
+            - name: NumberUp
+              href: numberup2.md
+              items:
+                - name: PagesPerSheet
+                  href: pagespersheet2.md
+                - name: 方向
+                  href: direction2.md
+            - name: Orientation
+              href: orientation2.md
+            - name: 解决方法
+              href: resolutions.md
+            - name: InputBins
+              href: inputbins2.md
+              items:
+                - name: 'TrayName]'
+                  href: '-trayname-.md'
+    - name: Finishing 节
+      href: finishing-section.md
+      items:
+        - name: Finishing
+          href: finishing.md
+          items:
+            - name: 装订
+              href: staple3.md
+              items:
+                - name: 位置
+                  href: location3.md
+                - name: 角度
+                  href: angle2.md
+            - name: HolePunch
+              href: holepunch3.md
+              items:
+                - name: 模式
+                  href: pattern2.md
+                - name: 位置
+                  href: location2.md
+            - name: OutputBins
+              href: outputbins2.md
+              items:
+                - name: 'TrayName]'
+                  href: '-trayname-2.md'
+    - name: Maintenance 节
+      href: maintenance-section.md
+      items:
+        - name: 维护
+          href: maintenance.md
+    - name: Status 节
+      href: status-section.md
+      items:
+        - name: 状态
+          href: status.md
+          items:
+            - name: 摘要
+              href: summary.md
+            - name: 详细
+              href: detailed.md
+              items:
+                - name: 'Event###'
+                  href: event---.md
+                  items:
+                    - name: Component
+                      href: component2.md
+    - name: 双向通信错误代码
+      href: bidi-error-codes.md
 - name: 双向接口和枚举
   href: bidi-interfaces-and-structures.md
   items:
-  - name: 打印机双向接口
-    href: printer-bidi-interfaces.md
-    items:
-    - name: IPrinterBidiSchemaElement
-      href: iprinterbidischemaelement-interface.md
+    - name: 打印机双向接口
+      href: printer-bidi-interfaces.md
       items:
-      - name: BidiType
-        href: iprinterbidischemaelement-biditype.md
-      - name: 名称
-        href: iprinterbidischemaelement-name.md
-      - name: 值
-        href: iprinterbidischemaelement-value.md
-    - name: IPrinterBidiSchemaResponses
-      href: iprinterbidischemaresponses.md
+        - name: IPrinterBidiSchemaElement
+          href: iprinterbidischemaelement-interface.md
+          items:
+            - name: BidiType
+              href: iprinterbidischemaelement-biditype.md
+            - name: 名称
+              href: iprinterbidischemaelement-name.md
+            - name: 值
+              href: iprinterbidischemaelement-value.md
+        - name: IPrinterBidiSchemaResponses
+          href: iprinterbidischemaresponses.md
+          items:
+            - name: AddBlob 方法
+              href: iprinterbidischemaresponses-addblob.md
+            - name: AddBool
+              href: iprinterbidischemaresponses--addbool.md
+            - name: AddEnum
+              href: iprinterbidischemaresponses-addenum.md
+            - name: AddFloat 方法
+              href: iprinterbidischemaresponses-addfloat.md
+            - name: AddInt32
+              href: iprinterbidischemaresponses--addint32.md
+            - name: AddNull
+              href: iprinterbidischemaresponses-addnull.md
+            - name: AddRequeryKey 方法
+              href: iprinterbidischemaresponses-addrequerykey.md
+            - name: AddString
+              href: iprinterbidischemaresponses-addstring.md
+            - name: AddText
+              href: iprinterbidischemaresponses-addtext.md
+        - name: IPrinterScriptUsbJobContext
+          href: iprinterscriptusbjobcontext.md
+          items:
+            - name: JobPropertyBag 方法
+              href: iprinterscriptusbjobcontext-jobpropertybag.md
+            - name: PrintedPageCount 方法
+              href: iprinterscriptusbjobcontext-printedpagecount.md
+            - name: PrintedPageCount 方法
+              href: iprinterscriptusbjobcontext-printedpagecount-in.md
+            - name: ReturnCodes 方法
+              href: iprinterscriptusbjobcontext-returncodes.md
+            - name: TemporaryStreams 方法
+              href: iprinterscriptusbjobcontext-temporarystreams.md
+        - name: IPrinterScriptUsbJobContextReturnCodes
+          href: iprinterscriptusbjobcontextreturncodes.md
+          items:
+            - name: Success 方法
+              href: iprinterscriptusbjobcontextreturncodes-success.md
+            - name: Failure 方法
+              href: iprinterscriptusbjobcontextreturncodes-failure.md
+            - name: Retry 方法
+              href: iprinterscriptusbjobcontextreturncodes-retry.md
+            - name: DeviceBusy 方法
+              href: iprinterscriptusbjobcontextreturncodes-devicebusy.md
+            - name: AbortTheJob 方法
+              href: iprinterscriptusbjobcontextreturncodes-abortthejob.md
+        - name: IPrinterScriptUsbWritePrintDataProgress
+          href: iprinterscriptusbwriteprintdataprogress.md
+          items:
+            - name: ProcessedByteCount 方法
+              href: iprinterscriptusbwriteprintdataprogress-processedbytecount.md
+            - name: ProcessedByteCount 方法
+              href: iprinterscriptusbwriteprintdataprogress-processedbytecount-in.md
+    - name: 打印机双向枚举
+      href: printer-bidi-structures.md
       items:
-      - name: AddBlob 方法
-        href: iprinterbidischemaresponses-addblob.md
-      - name: AddBool
-        href: iprinterbidischemaresponses--addbool.md
-      - name: AddEnum
-        href: iprinterbidischemaresponses-addenum.md
-      - name: AddFloat 方法
-        href: iprinterbidischemaresponses-addfloat.md
-      - name: AddInt32
-        href: iprinterbidischemaresponses--addint32.md
-      - name: AddNull
-        href: iprinterbidischemaresponses-addnull.md
-      - name: AddRequeryKey 方法
-        href: iprinterbidischemaresponses-addrequerykey.md
-      - name: AddString
-        href: iprinterbidischemaresponses-addstring.md
-      - name: AddText
-        href: iprinterbidischemaresponses-addtext.md
-    - name: IPrinterScriptUsbJobContext
-      href: iprinterscriptusbjobcontext.md
-      items:
-      - name: JobPropertyBag 方法
-        href: iprinterscriptusbjobcontext-jobpropertybag.md
-      - name: PrintedPageCount 方法
-        href: iprinterscriptusbjobcontext-printedpagecount.md
-      - name: PrintedPageCount 方法
-        href: iprinterscriptusbjobcontext-printedpagecount-in.md
-      - name: ReturnCodes 方法
-        href: iprinterscriptusbjobcontext-returncodes.md
-      - name: TemporaryStreams 方法
-        href: iprinterscriptusbjobcontext-temporarystreams.md
-    - name: IPrinterScriptUsbJobContextReturnCodes
-      href: iprinterscriptusbjobcontextreturncodes.md
-      items:
-      - name: Success 方法
-        href: iprinterscriptusbjobcontextreturncodes-success.md
-      - name: Failure 方法
-        href: iprinterscriptusbjobcontextreturncodes-failure.md
-      - name: Retry 方法
-        href: iprinterscriptusbjobcontextreturncodes-retry.md
-      - name: DeviceBusy 方法
-        href: iprinterscriptusbjobcontextreturncodes-devicebusy.md
-      - name: AbortTheJob 方法
-        href: iprinterscriptusbjobcontextreturncodes-abortthejob.md
-    - name: IPrinterScriptUsbWritePrintDataProgress
-      href: iprinterscriptusbwriteprintdataprogress.md
-      items:
-      - name: ProcessedByteCount 方法
-        href: iprinterscriptusbwriteprintdataprogress-processedbytecount.md
-      - name: ProcessedByteCount 方法
-        href: iprinterscriptusbwriteprintdataprogress-processedbytecount-in.md
-  - name: 打印机双向枚举
-    href: printer-bidi-structures.md
-    items:
-    - name: PRINTERBIDISCHEMAELEMENTTYPE
-      href: printerbidischemaelementtype.md
+        - name: PRINTERBIDISCHEMAELEMENTTYPE
+          href: printerbidischemaelementtype.md
 - name: 异步用户通知架构
   href: asynchronous-user-notification-schema.md
   items:
-  - name: action
-    href: action.md
-  - name: asyncPrintUIRequest
-    href: asyncprintuirequest.md
-  - name: balloonUI
-    href: balloonui.md
-  - name: bitmap
-    href: bitmap.md
-  - name: 正文
-    href: body.md
-  - name: button
-    href: button.md
-  - name: buttons
-    href: buttons.md
-  - name: customData
-    href: customdata.md
-  - name: customUI
-    href: customui.md
-  - name: messageBoxUI
-    href: messageboxui.md
-  - name: parameter
-    href: parameter.md
-  - name: requestClose
-    href: requestclose.md
-  - name: requestOpen
-    href: requestopen.md
-  - name: title
-    href: title.md
+    - name: action
+      href: action.md
+    - name: asyncPrintUIRequest
+      href: asyncprintuirequest.md
+    - name: balloonUI
+      href: balloonui.md
+    - name: bitmap
+      href: bitmap.md
+    - name: 正文
+      href: body.md
+    - name: button
+      href: button.md
+    - name: buttons
+      href: buttons.md
+    - name: customData
+      href: customdata.md
+    - name: customUI
+      href: customui.md
+    - name: messageBoxUI
+      href: messageboxui.md
+    - name: parameter
+      href: parameter.md
+    - name: requestClose
+      href: requestclose.md
+    - name: requestOpen
+      href: requestopen.md
+    - name: title
+      href: title.md
 - name: 设备打印服务架构的 Web 服务
   href: web-services-for-devices-print-service-schema.md
 - name: 打印机驱动程序隔离
@@ -1473,604 +1472,598 @@ items:
 - name: 自定义 Microsoft 打印机驱动程序
   href: customizing-microsoft-s-printer-drivers.md
   items:
-  - name: 用户界面插件
-    href: user-interface-plug-ins.md
-    items:
-    - name: 用户界面插件简介
-      href: introduction-to-user-interface-plug-ins.md
-    - name: 示例 UI 插件
-      href: sample-ui-plug-in.md
-    - name: UI 插件的 COM 接口
-      href: com-interfaces-for-ui-plug-ins.md
+    - name: 用户界面插件
+      href: user-interface-plug-ins.md
       items:
-      - name: IPrintOemCommon COM 接口
-        href: iprintoemcommon-com-interface.md
-      - name: IPrintOemUI COM 接口
-        href: iprintoemui-com-interface.md
-      - name: IPrintOemUI2 COM 接口
-        href: iprintoemui2-com-interface.md
-      - name: IPrintOemUIMXDC COM 接口
-        href: iprintoemuimxdc-com-interface.md
-      - name: IPrintOemDriverUI COM 接口
-        href: iprintoemdriverui-com-interface.md
-      - name: IPrintCoreUI2 COM 接口
-        href: iprintcoreui2-com-interface.md
-    - name: 提供 DEVMODE 结构补充
-      href: providing-devmode-structure-additions.md
-    - name: 从 UI 插件访问驱动程序设置
-      href: accessing-driver-settings-from-ui-plug-ins.md
-    - name: 修改驱动程序提供的属性表页
-      href: modifying-a-driver-supplied-property-sheet-page.md
-    - name: 替换驱动程序提供的属性表页
-      href: replacing-driver-supplied-property-sheet-pages.md
-    - name: 添加新的属性表页
-      href: adding-new-property-sheet-pages.md
-    - name: 自定义其他打印机接口操作
-      href: customizing-other-printer-interface-operations.md
-  - name: 渲染插件
-    href: rendering-plug-ins.md
-    items:
-    - name: 渲染插件简介
-      href: introduction-to-rendering-plug-ins.md
-    - name: 渲染插件示例
-      href: sample-rendering-plug-ins.md
-    - name: 渲染插件的 COM 接口
-      href: com-interfaces-for-rendering-plug-ins.md
+        - name: 用户界面插件简介
+          href: introduction-to-user-interface-plug-ins.md
+        - name: 示例 UI 插件
+          href: sample-ui-plug-in.md
+        - name: UI 插件的 COM 接口
+          href: com-interfaces-for-ui-plug-ins.md
+          items:
+            - name: IPrintOemCommon COM 接口
+              href: iprintoemcommon-com-interface.md
+            - name: IPrintOemUI COM 接口
+              href: iprintoemui-com-interface.md
+            - name: IPrintOemUI2 COM 接口
+              href: iprintoemui2-com-interface.md
+            - name: IPrintOemUIMXDC COM 接口
+              href: iprintoemuimxdc-com-interface.md
+            - name: IPrintOemDriverUI COM 接口
+              href: iprintoemdriverui-com-interface.md
+            - name: IPrintCoreUI2 COM 接口
+              href: iprintcoreui2-com-interface.md
+        - name: 提供 DEVMODE 结构补充
+          href: providing-devmode-structure-additions.md
+        - name: 从 UI 插件访问驱动程序设置
+          href: accessing-driver-settings-from-ui-plug-ins.md
+        - name: 修改驱动程序提供的属性表页
+          href: modifying-a-driver-supplied-property-sheet-page.md
+        - name: 替换驱动程序提供的属性表页
+          href: replacing-driver-supplied-property-sheet-pages.md
+        - name: 添加新的属性表页
+          href: adding-new-property-sheet-pages.md
+        - name: 自定义其他打印机接口操作
+          href: customizing-other-printer-interface-operations.md
+    - name: 渲染插件
+      href: rendering-plug-ins.md
       items:
-      - name: IPrintOemUni COM 接口
-        href: iprintoemuni-com-interface.md
-      - name: IPrintOemUni2 COM 接口
-        href: iprintoemuni2-com-interface.md
-      - name: IPrintOemUni3 COM 接口
-        href: iprintoemuni3-com-interface.md
-      - name: IPrintOemDriverUni COM 接口
-        href: iprintoemdriveruni-com-interface.md
-      - name: IPrintOemPS COM 接口
-        href: iprintoemps-com-interface.md
-      - name: IPrintOemPS2 COM 接口
-        href: iprintoemps2-com-interface.md
-      - name: IPrintOemDriverPS COM 接口
-        href: iprintoemdriverps-com-interface.md
-      - name: IPrintCorePS2 COM 接口
-        href: iprintcoreps2-com-interface.md
-    - name: 自定义的图形 DDI 函数
-      href: customized-graphics-ddi-functions.md
+        - name: 渲染插件简介
+          href: introduction-to-rendering-plug-ins.md
+        - name: 渲染插件示例
+          href: sample-rendering-plug-ins.md
+        - name: 渲染插件的 COM 接口
+          href: com-interfaces-for-rendering-plug-ins.md
+          items:
+            - name: IPrintOemUni COM 接口
+              href: iprintoemuni-com-interface.md
+            - name: IPrintOemUni2 COM 接口
+              href: iprintoemuni2-com-interface.md
+            - name: IPrintOemUni3 COM 接口
+              href: iprintoemuni3-com-interface.md
+            - name: IPrintOemDriverUni COM 接口
+              href: iprintoemdriveruni-com-interface.md
+            - name: IPrintOemPS COM 接口
+              href: iprintoemps-com-interface.md
+            - name: IPrintOemPS2 COM 接口
+              href: iprintoemps2-com-interface.md
+            - name: IPrintOemDriverPS COM 接口
+              href: iprintoemdriverps-com-interface.md
+            - name: IPrintCorePS2 COM 接口
+              href: iprintcoreps2-com-interface.md
+        - name: 自定义的图形 DDI 函数
+          href: customized-graphics-ddi-functions.md
+          items:
+            - name: 基于 COM 的渲染插件
+              href: com-based-rendering-plug-ins.md
+            - name: 不是基于 COM 的渲染插件
+              href: non-com-based-rendering-plug-ins.md
+        - name: 自定义的 PDEV 结构
+          href: customized-pdev-structures.md
+        - name: 从渲染插件访问驱动程序设置
+          href: accessing-driver-settings-from-rendering-plug-ins.md
+        - name: Pscript 特定的自定义渲染
+          href: pscript-specific-customized-rendering.md
+        - name: Unidrv 特定的自定义渲染
+          href: unidrv-specific-customized-rendering.md
+          items:
+            - name: 自定义的颜色格式
+              href: customized-color-formats.md
+            - name: 自定义的半色调
+              href: customized-halftoning.md
+            - name: 自定义的数据流压缩
+              href: customized-data-stream-compression.md
+            - name: 自定义的数据流筛选
+              href: customized-data-stream-filtering.md
+            - name: 自定义的字体管理
+              href: customized-font-management.md
+            - name: 动态生成的打印机命令
+              href: dynamically-generated-printer-commands.md
+            - name: 处理设备管理的图面
+              href: handling-device-managed-surfaces.md
+    - name: 实现打印机驱动程序 COM 接口
+      href: implementing-printer-driver-com-interfaces.md
       items:
-      - name: 基于 COM 的渲染插件
-        href: com-based-rendering-plug-ins.md
-      - name: 不是基于 COM 的渲染插件
-        href: non-com-based-rendering-plug-ins.md
-    - name: 自定义的 PDEV 结构
-      href: customized-pdev-structures.md
-    - name: 从渲染插件访问驱动程序设置
-      href: accessing-driver-settings-from-rendering-plug-ins.md
-    - name: Pscript 特定的自定义渲染
-      href: pscript-specific-customized-rendering.md
-    - name: Unidrv 特定的自定义渲染
-      href: unidrv-specific-customized-rendering.md
+        - name: 打印机驱动程序的接口标识符
+          href: interface-identifiers-for-printer-drivers.md
+        - name: 创建插件
+          href: creating-the-plug-in.md
+        - name: 从打印机驱动程序访问插件接口
+          href: accessing-plug-in-interfaces-from-printer-drivers.md
+        - name: 从插件访问打印机驱动程序接口
+          href: accessing-printer-driver-interfaces-from-plug-ins.md
+    - name: 安装自定义的驱动程序组件
+      href: installing-customized-driver-components.md
       items:
-      - name: 自定义的颜色格式
-        href: customized-color-formats.md
-      - name: 自定义的半色调
-        href: customized-halftoning.md
-      - name: 自定义的数据流压缩
-        href: customized-data-stream-compression.md
-      - name: 自定义的数据流筛选
-        href: customized-data-stream-filtering.md
-      - name: 自定义的字体管理
-        href: customized-font-management.md
-      - name: 动态生成的打印机命令
-        href: dynamically-generated-printer-commands.md
-      - name: 处理设备管理的图面
-        href: handling-device-managed-surfaces.md
-  - name: 实现打印机驱动程序 COM 接口
-    href: implementing-printer-driver-com-interfaces.md
-    items:
-    - name: 打印机驱动程序的接口标识符
-      href: interface-identifiers-for-printer-drivers.md
-    - name: 创建插件
-      href: creating-the-plug-in.md
-    - name: 从打印机驱动程序访问插件接口
-      href: accessing-plug-in-interfaces-from-printer-drivers.md
-    - name: 从插件访问打印机驱动程序接口
-      href: accessing-printer-driver-interfaces-from-plug-ins.md
-  - name: 安装自定义的驱动程序组件
-    href: installing-customized-driver-components.md
-    items:
-    - name: 自定义的 Unidrv 字体安装程序
-      href: customized-font-installers-for-unidrv.md
-  - name: 通用属性页用户界面
-    href: common-property-sheet-user-interface.md
-    items:
-    - name: CPSUI 简介
-      href: introduction-to-cpsui.md
-    - name: 示例 CPSUI 应用程序
-      href: sample-cpsui-application.md
-    - name: CPSUI 提供的函数
-      href: cpsui-supplied-functions.md
-    - name: 应用程序提供的回调函数
-      href: application-supplied-callback-functions.md
+        - name: 自定义的 Unidrv 字体安装程序
+          href: customized-font-installers-for-unidrv.md
+    - name: 通用属性页用户界面
+      href: common-property-sheet-user-interface.md
       items:
-      - name: 页面创建回调
-        href: page-creation-callbacks.md
-      - name: 页面事件回调
-        href: page-event-callbacks.md
-        items:
-        - name: CPSUI 消息处理程序
-          href: cpsui-message-handler.md
-        - name: 对话框过程和 CPSUI
-          href: dialog-box-procedures-and-cpsui.md
-    - name: 创建属性表页
-      href: creating-property-sheet-pages.md
+        - name: CPSUI 简介
+          href: introduction-to-cpsui.md
+        - name: 示例 CPSUI 应用程序
+          href: sample-cpsui-application.md
+        - name: CPSUI 提供的函数
+          href: cpsui-supplied-functions.md
+        - name: 应用程序提供的回调函数
+          href: application-supplied-callback-functions.md
+          items:
+            - name: 页面创建回调
+              href: page-creation-callbacks.md
+            - name: 页面事件回调
+              href: page-event-callbacks.md
+              items:
+                - name: CPSUI 消息处理程序
+                  href: cpsui-message-handler.md
+                - name: 对话框过程和 CPSUI
+                  href: dialog-box-procedures-and-cpsui.md
+        - name: 创建属性表页
+          href: creating-property-sheet-pages.md
+          items:
+            - name: 属性表选项
+              href: property-sheet-options.md
+            - name: CPSUI 支持的窗口控件
+              href: cpsui-supported-window-controls.md
+              items:
+                - name: 自定义 CPSUI 支持的窗口控件
+                  href: customizing-cpsui-supported-window-controls.md
+            - name: CPSUI 提供的页面和模板
+              href: cpsui-supplied-pages-and-templates.md
+            - name: 用于指定页面的方法
+              href: methods-for-specifying-pages.md
+              items:
+                - name: 组的父级
+                  href: group-parent.md
+            - name: 将打印机驱动程序与 CPSUI 配合使用
+              href: using-cpsui-with-printer-drivers.md
+        - name: CPSUI 选项类型
+          href: cpsui-option-types.md
+          items:
+            - name: TVOT_2STATES
+              href: tvot-2states.md
+            - name: TVOT_3STATES
+              href: tvot-3states.md
+            - name: TVOT_CHKBOX
+              href: tvot-chkbox.md
+            - name: TVOT_COMBOBOX
+              href: tvot-combobox.md
+            - name: TVOT_EDITBOX
+              href: tvot-editbox.md
+            - name: TVOT_LISTBOX
+              href: tvot-listbox.md
+            - name: TVOT_PUSHBUTTON
+              href: tvot-pushbutton.md
+            - name: TVOT_SCROLLBAR
+              href: tvot-scrollbar.md
+            - name: TVOT_TRACKBAR
+              href: tvot-trackbar.md
+            - name: TVOT_UDARROW
+              href: tvot-udarrow.md
+    - name: 打印机的颜色管理
+      href: color-management-for-printers.md
       items:
-      - name: 属性表选项
-        href: property-sheet-options.md
-      - name: CPSUI 支持的窗口控件
-        href: cpsui-supported-window-controls.md
-        items:
-        - name: 自定义 CPSUI 支持的窗口控件
-          href: customizing-cpsui-supported-window-controls.md
-      - name: CPSUI 提供的页面和模板
-        href: cpsui-supplied-pages-and-templates.md
-      - name: 用于指定页面的方法
-        href: methods-for-specifying-pages.md
-        items:
-        - name: 组的父级
-          href: group-parent.md
-      - name: 将打印机驱动程序与 CPSUI 配合使用
-        href: using-cpsui-with-printer-drivers.md
-    - name: CPSUI 选项类型
-      href: cpsui-option-types.md
+        - name: 启用颜色管理
+          href: enabling-color-management.md
+        - name: 控制颜色管理
+          href: controlling-color-management.md
+          items:
+            - name: 系统控制
+              href: system-control.md
+            - name: 驱动程序控制和设备控制
+              href: driver-control-and-device-control.md
+            - name: 支持 CMYK 色彩空间
+              href: supporting-cmyk-color-space.md
+            - name: JPEG 和 PNG 图像的颜色管理
+              href: color-management-of-jpeg-and-png-images.md
+        - name: 查找 ICC 配置文件
+          href: locating-icc-profiles.md
+    - name: 将打印票证支持添加到打印驱动程序
+      href: adding-print-ticket-support-to-print-drivers.md
+    - name: 文档设备的设备阶段
+      href: device-stage-for-document-devices.md
       items:
-      - name: TVOT_2STATES
-        href: tvot-2states.md
-      - name: TVOT_3STATES
-        href: tvot-3states.md
-      - name: TVOT_CHKBOX
-        href: tvot-chkbox.md
-      - name: TVOT_COMBOBOX
-        href: tvot-combobox.md
-      - name: TVOT_EDITBOX
-        href: tvot-editbox.md
-      - name: TVOT_LISTBOX
-        href: tvot-listbox.md
-      - name: TVOT_PUSHBUTTON
-        href: tvot-pushbutton.md
-      - name: TVOT_SCROLLBAR
-        href: tvot-scrollbar.md
-      - name: TVOT_TRACKBAR
-        href: tvot-trackbar.md
-      - name: TVOT_UDARROW
-        href: tvot-udarrow.md
-  - name: 打印机的颜色管理
-    href: color-management-for-printers.md
-    items:
-    - name: 启用颜色管理
-      href: enabling-color-management.md
-    - name: 控制颜色管理
-      href: controlling-color-management.md
-      items:
-      - name: 系统控制
-        href: system-control.md
-      - name: 驱动程序控制和设备控制
-        href: driver-control-and-device-control.md
-      - name: 支持 CMYK 色彩空间
-        href: supporting-cmyk-color-space.md
-      - name: JPEG 和 PNG 图像的颜色管理
-        href: color-management-of-jpeg-and-png-images.md
-    - name: 查找 ICC 配置文件
-      href: locating-icc-profiles.md
-  - name: 将打印票证支持添加到打印驱动程序
-    href: adding-print-ticket-support-to-print-drivers.md
-  - name: 文档设备的设备阶段
-    href: device-stage-for-document-devices.md
-    items:
-    - name: 设备阶段简介
-      href: introduction-to-device-stage.md
-      items:
-      - name: 什么是设备阶段？
-        href: what-is-device-stage-.md
-      - name: 获取更多信息
-        href: getting-more-information.md
-        items:
-        - name: 设备阶段常规开发工具包
-          href: device-stage-general-development-kit.md
-        - name: 设备阶段文档设备开发工具包
-          href: device-stage-document-device-development-kit.md
-    - name: 文档设备的设备体验方案
-      href: device-experience-scenarios-for-document-devices.md
-    - name: 识别 MFP 中的设备函数
-      href: identifying-device-functions-in-mfps.md
-    - name: 安装 ICC 配置文件
-      href: installing-icc-profiles.md
+        - name: 设备阶段简介
+          href: introduction-to-device-stage.md
+          items:
+            - name: 什么是设备阶段？
+              href: what-is-device-stage-.md
+            - name: 获取更多信息
+              href: getting-more-information.md
+              items:
+                - name: 设备阶段常规开发工具包
+                  href: device-stage-general-development-kit.md
+                - name: 设备阶段文档设备开发工具包
+                  href: device-stage-document-device-development-kit.md
+        - name: 文档设备的设备体验方案
+          href: device-experience-scenarios-for-document-devices.md
+        - name: 识别 MFP 中的设备函数
+          href: identifying-device-functions-in-mfps.md
+        - name: 安装 ICC 配置文件
+          href: installing-icc-profiles.md
 - name: 打印机网页的 COM 接口
   href: com-interfaces-for-printer-web-pages.md
   items:
-  - name: Iasphelp 自动化接口
-    href: iasphelp-automation-interface.md
-    items:
-    - name: Iasphelp 方法
-      href: iasphelp-methods.md
+    - name: Iasphelp 自动化接口
+      href: iasphelp-automation-interface.md
       items:
-      - name: CalcJobETA
-        href: iasphelp-calcjobeta.md
-      - name: 关闭
-        href: iasphelp-close.md
-      - name: 打开
-        href: iasphelp-open.md
-    - name: Iasphelp 属性获取操作
-      href: iasphelp-property-get-operations.md
+        - name: Iasphelp 方法
+          href: iasphelp-methods.md
+          items:
+            - name: CalcJobETA
+              href: iasphelp-calcjobeta.md
+            - name: 关闭
+              href: iasphelp-close.md
+            - name: 打开
+              href: iasphelp-open.md
+        - name: Iasphelp 属性获取操作
+          href: iasphelp-property-get-operations.md
+          items:
+            - name: AspPage
+              href: iasphelp-asppage.md
+            - name: AvgJobSize
+              href: iasphelp-avgjobsize.md
+            - name: AvgJobSizeUnit
+              href: iasphelp-avgjobsizeunit.md
+            - name: 颜色
+              href: iasphelp-color.md
+            - name: 社区
+              href: iasphelp-community.md
+            - name: ComputerName
+              href: iasphelp-computername.md
+            - name: DriverName
+              href: iasphelp-drivername.md
+            - name: Duplex
+              href: iasphelp-duplex.md
+            - name: ErrorDscp
+              href: iasphelp-errordscp.md
+            - name: IPAddress
+              href: iasphelp-ipaddress.md
+            - name: IsCluster
+              href: iasphelp-iscluster.md
+            - name: IsHTTP
+              href: iasphelp-ishttp.md
+            - name: IsTCPMonSupported
+              href: iasphelp-istcpmonsupported.md
+            - name: JobCompletionMinute
+              href: iasphelp-jobcompletionminute.md
+            - name: LongPaperName
+              href: iasphelp-longpapername.md
+            - name: MaximumResolution
+              href: iasphelp-maximumresolution.md
+            - name: MediaReady
+              href: iasphelp-mediaready.md
+            - name: MibErrorDscp
+              href: iasphelp-miberrordscp.md
+            - name: PageRate
+              href: iasphelp-pagerate.md
+            - name: PageRateUnit
+              href: iasphelp-pagerateunit.md
+            - name: PaperNames
+              href: iasphelp-papernames.md
+            - name: PendingJobCount
+              href: iasphelp-pendingjobcount.md
+            - name: PortName
+              href: iasphelp-portname.md
+            - name: ShareName
+              href: iasphelp-sharename.md
+            - name: SNMPDevice
+              href: iasphelp-snmpdevice.md
+            - name: SNMPSupported
+              href: iasphelp-snmpsupported.md
+            - name: 状态
+              href: iasphelp-status.md
+    - name: IOleCvt 自动化接口
+      href: iolecvt-automation-interface.md
       items:
-      - name: AspPage
-        href: iasphelp-asppage.md
-      - name: AvgJobSize
-        href: iasphelp-avgjobsize.md
-      - name: AvgJobSizeUnit
-        href: iasphelp-avgjobsizeunit.md
-      - name: 颜色
-        href: iasphelp-color.md
-      - name: 社区
-        href: iasphelp-community.md
-      - name: ComputerName
-        href: iasphelp-computername.md
-      - name: DriverName
-        href: iasphelp-drivername.md
-      - name: Duplex
-        href: iasphelp-duplex.md
-      - name: ErrorDscp
-        href: iasphelp-errordscp.md
-      - name: IPAddress
-        href: iasphelp-ipaddress.md
-      - name: IsCluster
-        href: iasphelp-iscluster.md
-      - name: IsHTTP
-        href: iasphelp-ishttp.md
-      - name: IsTCPMonSupported
-        href: iasphelp-istcpmonsupported.md
-      - name: JobCompletionMinute
-        href: iasphelp-jobcompletionminute.md
-      - name: LongPaperName
-        href: iasphelp-longpapername.md
-      - name: MaximumResolution
-        href: iasphelp-maximumresolution.md
-      - name: MediaReady
-        href: iasphelp-mediaready.md
-      - name: MibErrorDscp
-        href: iasphelp-miberrordscp.md
-      - name: PageRate
-        href: iasphelp-pagerate.md
-      - name: PageRateUnit
-        href: iasphelp-pagerateunit.md
-      - name: PaperNames
-        href: iasphelp-papernames.md
-      - name: PendingJobCount
-        href: iasphelp-pendingjobcount.md
-      - name: PortName
-        href: iasphelp-portname.md
-      - name: ShareName
-        href: iasphelp-sharename.md
-      - name: SNMPDevice
-        href: iasphelp-snmpdevice.md
-      - name: SNMPSupported
-        href: iasphelp-snmpsupported.md
-      - name: 状态
-        href: iasphelp-status.md
-  - name: IOleCvt 自动化接口
-    href: iolecvt-automation-interface.md
-    items:
-    - name: IOleCvt 属性获取操作
-      href: iolecvt-property-get-operations.md
+        - name: IOleCvt 属性获取操作
+          href: iolecvt-property-get-operations.md
+          items:
+            - name: DecodeUnicodeName
+              href: iolecvt-decodeunicodename.md
+            - name: EncodeUnicodeName
+              href: iolecvt-encodeunicodename.md
+            - name: ToUtf8
+              href: iolecvt-toutf8.md
+            - name: ToUnicode
+              href: iolecvt-tounicode.md
+    - name: ISNMP 自动化接口
+      href: isnmp-automation-interface.md
       items:
-      - name: DecodeUnicodeName
-        href: iolecvt-decodeunicodename.md
-      - name: EncodeUnicodeName
-        href: iolecvt-encodeunicodename.md
-      - name: ToUtf8
-        href: iolecvt-toutf8.md
-      - name: ToUnicode
-        href: iolecvt-tounicode.md
-  - name: ISNMP 自动化接口
-    href: isnmp-automation-interface.md
-    items:
-    - name: ISNMP 方法
-      href: isnmp-methods.md
-      items:
-      - name: 关闭
-        href: isnmp-close.md
-      - name: Get
-        href: isnmp-get.md
-      - name: GetAsByte
-        href: isnmp-getasbyte.md
-      - name: GetList
-        href: isnmp-getlist.md
-      - name: GetTree
-        href: isnmp-gettree.md
-      - name: OIDFromString
-        href: isnmp-oidfromstring.md
-      - name: 打开
-        href: isnmp-open.md
-      - name: 设置
-        href: isnmp-set.md
-      - name: SetList
-        href: isnmp-setlist.md
+        - name: ISNMP 方法
+          href: isnmp-methods.md
+          items:
+            - name: 关闭
+              href: isnmp-close.md
+            - name: Get
+              href: isnmp-get.md
+            - name: GetAsByte
+              href: isnmp-getasbyte.md
+            - name: GetList
+              href: isnmp-getlist.md
+            - name: GetTree
+              href: isnmp-gettree.md
+            - name: OIDFromString
+              href: isnmp-oidfromstring.md
+            - name: 打开
+              href: isnmp-open.md
+            - name: 设置
+              href: isnmp-set.md
+            - name: SetList
+              href: isnmp-setlist.md
 - name: 打印管道属性包
   href: print-pipeline-property-bag.md
 - name: 其他打印机主题
   href: additional-printer-topics.md
   items:
-  - name: Internet 打印
-    href: internet-printing.md
-    items:
-    - name: 从应用程序打印到 URL
-      href: printing-to-urls-from-applications.md
-    - name: 查看打印网页
-      href: viewing-print-web-pages.md
-    - name: 自定义打印网页
-      href: customizing-print-web-pages.md
+    - name: Internet 打印
+      href: internet-printing.md
       items:
-      - name: 打印网页的 ASP 文件
-        href: asp-files-for-print-web-pages.md
-        items:
-        - name: 示例 ASP 文件
-          href: sample-asp-files.md
-      - name: 自定义打印机详细信息网页
-        href: customizing-the-printer-details-web-page.md
-        items:
-        - name: 替换默认的打印机详细信息页
-          href: replacing-the-default-printer-details-page.md
-        - name: 显示哪个打印机详细信息页？
-          href: which-printer-details-page-is-displayed-.md
-        - name: 打印网页的 ASP 变量
-          href: asp-variables-for-print-web-pages.md
-        - name: 打印网页的 ActiveX 对象
-          href: activex-objects-for-print-web-pages.md
-        - name: 更新网页信息
-          href: updating-web-page-information.md
-      - name: 安装自定义的打印网页
-        href: installing-customized-print-web-pages.md
-        items:
-        - name: 安装打印机类型的页面
-          href: installing-pages-for-a-printer-type.md
-        - name: 安装制造商的页面
-          href: installing-pages-for-a-manufacturer.md
-        - name: 安装端口监视器的页面
-          href: installing-pages-for-a-port-monitor.md
-    - name: 从网页安装打印驱动程序
-      href: installing-print-drivers-from-a-web-page.md
-  - name: 终端服务器打印
-    href: terminal-server-printing.md
-  - name: Microsoft USB 打印机驱动程序 (Usbprint.sys)
-    href: usb-printing.md
-    items:
-    - name: USBPRINT 编程注意事项
-      href: programming-considerations-for-usbprint.md
-  - name: 蓝牙打印
-    href: bluetooth-printing.md
-  - name: Wi-Fi 直接打印
-    href: wi-fi-direct-printing.md
-    items:
-    - name: Wi-Fi 直接打印概述
-      href: wfd-overview.md
-    - name: 实现 Wi-Fi 直接打印
-      href: wfd-implementation.md
-  - name: 移动打印
-    href: mobile-printing.md
-    items:
-    - name: WS-Discovery 移动打印支持
-      href: ws-discovery-mobile-printing-support.md
-  - name: 打印后台处理程序体系结构
-    href: print-spooler-architecture.md
-    items:
-    - name: 后台处理程序组件
-      href: spooler-components.md
+        - name: 从应用程序打印到 URL
+          href: printing-to-urls-from-applications.md
+        - name: 查看打印网页
+          href: viewing-print-web-pages.md
+        - name: 自定义打印网页
+          href: customizing-print-web-pages.md
+          items:
+            - name: 打印网页的 ASP 文件
+              href: asp-files-for-print-web-pages.md
+              items:
+                - name: 示例 ASP 文件
+                  href: sample-asp-files.md
+            - name: 自定义打印机详细信息网页
+              href: customizing-the-printer-details-web-page.md
+              items:
+                - name: 替换默认的打印机详细信息页
+                  href: replacing-the-default-printer-details-page.md
+                - name: 显示哪个打印机详细信息页？
+                  href: which-printer-details-page-is-displayed-.md
+                - name: 打印网页的 ASP 变量
+                  href: asp-variables-for-print-web-pages.md
+                - name: 打印网页的 ActiveX 对象
+                  href: activex-objects-for-print-web-pages.md
+                - name: 更新网页信息
+                  href: updating-web-page-information.md
+            - name: 安装自定义的打印网页
+              href: installing-customized-print-web-pages.md
+              items:
+                - name: 安装打印机类型的页面
+                  href: installing-pages-for-a-printer-type.md
+                - name: 安装制造商的页面
+                  href: installing-pages-for-a-manufacturer.md
+                - name: 安装端口监视器的页面
+                  href: installing-pages-for-a-port-monitor.md
+        - name: 从网页安装打印驱动程序
+          href: installing-print-drivers-from-a-web-page.md
+    - name: 终端服务器打印
+      href: terminal-server-printing.md
+    - name: Microsoft USB 打印机驱动程序 (Usbprint.sys)
+      href: usb-printing.md
       items:
-      - name: 后台处理程序组件简介
-        href: introduction-to-spooler-components.md
-      - name: 打印提供程序
-        href: print-providers.md
-        items:
-        - name: 打印提供程序简介
-          href: introduction-to-print-providers.md
-        - name: 示例打印提供程序
-          href: sample-print-provider.md
-        - name: 打印提供程序的功能
-          href: print-provider-capabilities.md
-        - name: 打印提供程序定义的函数
-          href: functions-defined-by-print-providers.md
-        - name: 本地打印提供程序
-          href: local-print-provider.md
-    - name: 后台处理程序通知
-      href: spooler-notification.md
+        - name: USBPRINT 编程注意事项
+          href: programming-considerations-for-usbprint.md
+    - name: 蓝牙打印
+      href: bluetooth-printing.md
+    - name: Wi-Fi 直接打印
+      href: wi-fi-direct-printing.md
       items:
-      - name: 后台处理程序通知概述
-        href: overview-of-spooler-notification.md
-      - name: 后台处理程序通知的术语
-        href: spooler-notification-terminology.md
-      - name: 公共接口
-        href: public-interfaces.md
-        items:
-        - name: '通知筛选和通信样式 '
-          href: notification-filtering-and-communication-styles.md
-        - name: 在通知通道两端实现的接口
-          href: interfaces-implemented-at-both-ends-of-the-notification-channel.md
-        - name: 通知数据对象
-          href: notification-data-object.md
-        - name: 通知回调
-          href: notification-callback.md
-        - name: 通知通道
-          href: notification-channel.md
-        - name: 注册以接收通知
-          href: registering-to-receive-notifications.md
-        - name: 通知错误
-          href: notification-errors.md
-    - name: 客户端呈现
-      href: client-side-rendering.md
+        - name: Wi-Fi 直接打印概述
+          href: wfd-overview.md
+        - name: 实现 Wi-Fi 直接打印
+          href: wfd-implementation.md
+    - name: 移动打印
+      href: mobile-printing.md
       items:
-      - name: 客户端呈现概述
-        href: client-side-rendering-overview.md
-      - name: 客户端呈现的已知问题
-        href: known-issues-with-client-side-rendering.md
-      - name: 有关客户端呈现的最佳做法
-        href: best-practices-for-client-side-rendering.md
-    - name: 打印机窗体支持
-      href: printer-forms-support.md
+        - name: WS-Discovery 移动打印支持
+          href: ws-discovery-mobile-printing-support.md
+    - name: 打印后台处理程序体系结构
+      href: print-spooler-architecture.md
       items:
-      - name: Windows Vista 中对打印机窗体的更改
-        href: changes-to-printer-forms-in-windows-vista.md
-        items:
-        - name: FORM_INFO_2 数据结构
-          href: form-info-2-data-structure.md
-        - name: 改进的窗体匹配算法
-          href: improved-form-matching-algorithm.md
-        - name: 改进的窗体-纸盘匹配算法
-          href: improved-form-to-tray-matching-algorithm.md
+        - name: 后台处理程序组件
+          href: spooler-components.md
+          items:
+            - name: 后台处理程序组件简介
+              href: introduction-to-spooler-components.md
+            - name: 打印提供程序
+              href: print-providers.md
+              items:
+                - name: 打印提供程序简介
+                  href: introduction-to-print-providers.md
+                - name: 示例打印提供程序
+                  href: sample-print-provider.md
+                - name: 打印提供程序的功能
+                  href: print-provider-capabilities.md
+                - name: 打印提供程序定义的函数
+                  href: functions-defined-by-print-providers.md
+                - name: 本地打印提供程序
+                  href: local-print-provider.md
+        - name: 后台处理程序通知
+          href: spooler-notification.md
+          items:
+            - name: 后台处理程序通知概述
+              href: overview-of-spooler-notification.md
+            - name: 后台处理程序通知的术语
+              href: spooler-notification-terminology.md
+            - name: 公共接口
+              href: public-interfaces.md
+              items:
+                - name: '通知筛选和通信样式 '
+                  href: notification-filtering-and-communication-styles.md
+                - name: 在通知通道两端实现的接口
+                  href: interfaces-implemented-at-both-ends-of-the-notification-channel.md
+                - name: 通知数据对象
+                  href: notification-data-object.md
+                - name: 通知回调
+                  href: notification-callback.md
+                - name: 通知通道
+                  href: notification-channel.md
+                - name: 注册以接收通知
+                  href: registering-to-receive-notifications.md
+                - name: 通知错误
+                  href: notification-errors.md
+        - name: 客户端呈现
+          href: client-side-rendering.md
+          items:
+            - name: 客户端呈现概述
+              href: client-side-rendering-overview.md
+            - name: 客户端呈现的已知问题
+              href: known-issues-with-client-side-rendering.md
+            - name: 有关客户端呈现的最佳做法
+              href: best-practices-for-client-side-rendering.md
+        - name: 打印机窗体支持
+          href: printer-forms-support.md
+          items:
+            - name: Windows Vista 中对打印机窗体的更改
+              href: changes-to-printer-forms-in-windows-vista.md
+              items:
+                - name: FORM_INFO_2 数据结构
+                  href: form-info-2-data-structure.md
+                - name: 改进的窗体匹配算法
+                  href: improved-form-matching-algorithm.md
+                - name: 改进的窗体-纸盘匹配算法
+                  href: improved-form-to-tray-matching-algorithm.md
 - name: 打印后台处理程序组件
   href: print-spooler-components.md
   items:
-  - name: 编写打印处理器
-    href: writing-a-print-processor.md
-    items:
-    - name: 打印处理器简介
-      href: introduction-to-print-processors.md
+    - name: 编写打印处理器
+      href: writing-a-print-processor.md
       items:
-      - name: EMF 数据类型
-        href: emf-data-type.md
-      - name: RAW 数据类型
-        href: raw-data-type.md
-      - name: TEXT 数据类型
-        href: text-data-type.md
-      - name: PSCRIPT1 数据类型
-        href: pscript1-data-type.md
-    - name: 示例打印处理器
-      href: sample-print-processor.md
-    - name: 打印处理器定义的函数
-      href: functions-defined-by-print-processors.md
-    - name: 处理打印作业
-      href: processing-a-print-job.md
-      items:
-      - name: 使用打印处理器中的 GDI 函数
-        href: using-gdi-functions-in-print-processors.md
-    - name: 提供亚洲语言布局支持
-      href: providing-support-for-asian-layout.md
-    - name: 安装打印处理器
-      href: installing-a-print-processor.md
-  - name: 编写打印监视器
-    href: writing-a-print-monitor.md
-    items:
-    - name: 语言监视器
-      href: language-monitors.md
-      items:
-      - name: 示例语言监视器
-        href: sample-language-monitor.md
-    - name: 端口监视器
-      href: port-monitors.md
-      items:
-      - name: 示例端口监视器
-        href: sample-port-monitor.md
-    - name: 语言监视器与端口监视器的交互
-      href: language-and-port-monitor-interaction.md
-      items:
-      - name: 语言监视器与端口监视器的组合
-        href: combined-language-and-port-monitor.md
-    - name: 打印监视器定义的函数
-      href: functions-defined-by-print-monitors.md
-      items:
-      - name: 语言监视器函数
-        href: language-monitor-functions.md
-      - name: 端口监视器客户端 DLL 函数
-        href: port-monitor-client-dll-functions.md
-      - name: 端口监视器服务器 DLL 函数
-        href: port-monitor-server-dll-functions.md
-    - name: 初始化打印监视器
-      href: initializing-a-print-monitor.md
-    - name: 打开和关闭端口
-      href: opening-and-closing-a-port.md
-    - name: 打印打印作业
-      href: printing-a-print-job.md
-    - name: 管理端口
-      href: managing-a-port.md
-      items:
-      - name: 添加端口
-        href: adding-a-port.md
-      - name: 配置端口
-        href: configuring-a-port.md
-      - name: 删除端口
-        href: deleting-a-port.md
-      - name: 设置端口超时值
-        href: setting-port-time-out-values.md
-      - name: 存储端口配置信息
-        href: storing-port-configuration-information.md
-    - name: TCPMON Xcv 接口
-      href: tcpmon-xcv-interface.md
-      items:
-      - name: TCPMON Xcv 命令
-        href: tcpmon-xcv-commands.md
-        items:
-        - name: 其他 TCPMON 命令
-          href: additional-tcpmon-commands.md
+        - name: 打印处理器简介
+          href: introduction-to-print-processors.md
           items:
-          - name: GetIdlePollingState
-            href: getidlepollingstate.md
-          - name: SetIdlePollingState
-            href: setidlepollingstate.md
-    - name: WSDMON 端口监视器
-      href: wsdmon-port-monitor.md
+            - name: EMF 数据类型
+              href: emf-data-type.md
+            - name: RAW 数据类型
+              href: raw-data-type.md
+            - name: TEXT 数据类型
+              href: text-data-type.md
+            - name: PSCRIPT1 数据类型
+              href: pscript1-data-type.md
+        - name: 示例打印处理器
+          href: sample-print-processor.md
+        - name: 打印处理器定义的函数
+          href: functions-defined-by-print-processors.md
+        - name: 处理打印作业
+          href: processing-a-print-job.md
+          items:
+            - name: 使用打印处理器中的 GDI 函数
+              href: using-gdi-functions-in-print-processors.md
+        - name: 提供亚洲语言布局支持
+          href: providing-support-for-asian-layout.md
+        - name: 安装打印处理器
+          href: installing-a-print-processor.md
+    - name: 编写打印监视器
+      href: writing-a-print-monitor.md
       items:
-      - name: CleanupPort
-        href: cleanupport.md
-      - name: DeviceID
-        href: deviceid2.md
-      - name: PnPXID
-        href: pnpxid.md
-      - name: ResetCommunication
-        href: resetcommunication.md
-      - name: ServiceID
-        href: serviceid.md
-    - name: 转换打印监视器以便与群集打印服务器配合使用
-      href: converting-print-monitors-for-use-with-clustered-print-servers.md
-    - name: 安装打印监视器
-      href: installing-a-print-monitor.md
-  - name: 编写网络打印提供程序
-    href: writing-a-network-print-provider.md
-    items:
-    - name: 不完整打印提供程序的概述
-      href: overview-of-partial-print-providers.md
-    - name: 支持打印机更改通知
-      href: supporting-printer-change-notifications.md
-    - name: 安装网络打印提供程序
-      href: installing-a-network-print-provider.md
-  - name: 添加双向通信
-    href: adding-bidirectional-communication.md
-  - name: 在 Windows Vista 以前的操作系统中显示 UI
-    href: displaying-a-ui-in-operating-systems-prior-to-windows-vista.md
+        - name: 语言监视器
+          href: language-monitors.md
+          items:
+            - name: 示例语言监视器
+              href: sample-language-monitor.md
+        - name: 端口监视器
+          href: port-monitors.md
+          items:
+            - name: 示例端口监视器
+              href: sample-port-monitor.md
+        - name: 语言监视器与端口监视器的交互
+          href: language-and-port-monitor-interaction.md
+          items:
+            - name: 语言监视器与端口监视器的组合
+              href: combined-language-and-port-monitor.md
+        - name: 打印监视器定义的函数
+          href: functions-defined-by-print-monitors.md
+          items:
+            - name: 语言监视器函数
+              href: language-monitor-functions.md
+            - name: 端口监视器客户端 DLL 函数
+              href: port-monitor-client-dll-functions.md
+            - name: 端口监视器服务器 DLL 函数
+              href: port-monitor-server-dll-functions.md
+        - name: 初始化打印监视器
+          href: initializing-a-print-monitor.md
+        - name: 打开和关闭端口
+          href: opening-and-closing-a-port.md
+        - name: 打印打印作业
+          href: printing-a-print-job.md
+        - name: 管理端口
+          href: managing-a-port.md
+          items:
+            - name: 添加端口
+              href: adding-a-port.md
+            - name: 配置端口
+              href: configuring-a-port.md
+            - name: 删除端口
+              href: deleting-a-port.md
+            - name: 设置端口超时值
+              href: setting-port-time-out-values.md
+            - name: 存储端口配置信息
+              href: storing-port-configuration-information.md
+        - name: TCPMON Xcv 接口
+          href: tcpmon-xcv-interface.md
+          items:
+            - name: TCPMON Xcv 命令
+              href: tcpmon-xcv-commands.md
+              items:
+                - name: 其他 TCPMON 命令
+                  href: additional-tcpmon-commands.md
+                  items:
+                    - name: GetIdlePollingState
+                      href: getidlepollingstate.md
+                    - name: SetIdlePollingState
+                      href: setidlepollingstate.md
+        - name: WSDMON 端口监视器
+          href: wsdmon-port-monitor.md
+          items:
+            - name: CleanupPort
+              href: cleanupport.md
+            - name: DeviceID
+              href: deviceid2.md
+            - name: PnPXID
+              href: pnpxid.md
+            - name: ResetCommunication
+              href: resetcommunication.md
+            - name: ServiceID
+              href: serviceid.md
+        - name: 转换打印监视器以便与群集打印服务器配合使用
+          href: converting-print-monitors-for-use-with-clustered-print-servers.md
+        - name: 安装打印监视器
+          href: installing-a-print-monitor.md
+    - name: 编写网络打印提供程序
+      href: writing-a-network-print-provider.md
+      items:
+        - name: 不完整打印提供程序的概述
+          href: overview-of-partial-print-providers.md
+        - name: 支持打印机更改通知
+          href: supporting-printer-change-notifications.md
+        - name: 安装网络打印提供程序
+          href: installing-a-network-print-provider.md
+    - name: 添加双向通信
+      href: adding-bidirectional-communication.md
+    - name: 在 Windows Vista 以前的操作系统中显示 UI
+      href: displaying-a-ui-in-operating-systems-prior-to-windows-vista.md
 - name: 打印机驱动程序测试和调试
   href: printer-driver-testing-and-debugging.md
   items:
-  - name: 调试打印机驱动程序和后台处理程序组件
-    href: debugging-printer-drivers-and-spooler-components.md
-    items:
-    - name: 调试打印机驱动程序组件
-      href: debugging-printer-driver-components.md
-    - name: 调试后台处理程序组件
-      href: debugging-spooler-components.md
-    - name: 调试 XPSDrv 打印机驱动程序
-      href: debugging-xpsdrv-printer-drivers.md
-  - name: 测试本地打印机连接
-    href: testing-local-printer-connectivity.md
-    items:
-    - name: 设备安装
-      href: device-installation.md
-    - name: 测试设备功能
-      href: testing-device-functionality.md
-    - name: 设备错误状态
-      href: device-error-states.md
-    - name: 电源管理
-      href: power-management.md
-    - name: 压力测试
-      href: stress-testing.md
-ms.openlocfilehash: 2d75d4de1702d8d0992bcfbe8338760011f6bc60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465559"
+    - name: 调试打印机驱动程序和后台处理程序组件
+      href: debugging-printer-drivers-and-spooler-components.md
+      items:
+        - name: 调试打印机驱动程序组件
+          href: debugging-printer-driver-components.md
+        - name: 调试后台处理程序组件
+          href: debugging-spooler-components.md
+        - name: 调试 XPSDrv 打印机驱动程序
+          href: debugging-xpsdrv-printer-drivers.md
+    - name: 测试本地打印机连接
+      href: testing-local-printer-connectivity.md
+      items:
+        - name: 设备安装
+          href: device-installation.md
+        - name: 测试设备功能
+          href: testing-device-functionality.md
+        - name: 设备错误状态
+          href: device-error-states.md
+        - name: 电源管理
+          href: power-management.md
+        - name: 压力测试
+          href: stress-testing.md

@@ -1,322 +1,315 @@
-items:
 - name: 初期
   href: index.md
 - name: 固件 Windows 工程指南 (WEG)
   href: firmware-weg.md
   items:
-  - name: UEFI 安全性
-    href: uefi-security.md
-    items:
-    - name: 统一可扩展固件接口 (UEFI)
-      href: unified-extensible-firmware-interface.md
-    - name: Device Guard 和 Credential Guard
-      href: device-guard-and-credential-guard.md
-    - name: 修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
-      href: fixed-combuffer-and-windows-smm-security-mitigation-table.md
-    - name: 硬件安全测试接口 (HSTI) 1.1a
-      href: hardware-security-test-interface-1-1a.md
-    - name: 内存覆盖请求控件 (MOR) LOCK 版本 2
-      href: memory-overwrite-request-control-lock-version-2.md
-    - name: 安全启动
-      href: secure-boot.md
-    - name: 受信任的平台模块 (TPM) 注意事项
-      href: trusted-platform-module-considerations.md
-  - name: 固件更新
-    href: firmware-update.md
-    items:
-    - name: 生成固件包并将其提交到 Windows 更新 (WU)
-      href: build-and-submit-a-firmware-package-to-windows-update.md
-    - name: 面向使用 CHID 的系统
-      href: target-a-system-using-chid.md
-    - name: 固件用户体验 (UX) 最佳做法
-      href: firmware-user-experience-best-practices.md
-    - name: 固件更新验证测试
-      href: firmware-update-validation-testing.md
-  - name: SMBIOS
-    href: smbios.md
-  - name: HTTPS
-    href: https-boot.md
-  - name: 固件中的 Wi-Fi 支持
-    href: wi-fi-support-in-firmware.md
-  - name: 从旧的 MBR 磁盘切换到 Windows 10 的 GPT 磁盘
-    href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
-    items:
-    - name: 从旧版 BIOS 启动和 CSM 切换到 UEFI 和 GPT
-      href: switch-legacy-bios-boot-and-csm-to-uefi-and-gpt.md
-    - name: 新方法：Windows 10 版本 1703 及更高版本
-      href: new-method--windows-10--version-1703-and-later.md
-    - name: MBR2GPT 工具测试指南
-      href: mbr2gpt-tool-test-guidance.md
-    - name: 旧方法：方法：Windows 10 版本 1607 及更低版本
-      href: old-method--windows-10--version-1607-and-earlier.md
-    - name: 如何转换已安装的 x64 Windows 7 系统
-      href: how-to-convert-an-installed-x64-windows-7.md
-  - name: 固件 WEG 常见问题解答
-    href: frequently-asked-questions.md
-  - name: 为 Windows 7 及 Windows 10 的更高版本的更新配置系统固件
-    href: configure-system-firmware-for-windows-7-and-later-update-for-windows-10.md
-  - name: 用于在本地查询 SMBIOS 的示例 PowerShell 脚本
-    href: sample-powershell-script-to-query-smbios-locally.md
+    - name: UEFI 安全性
+      href: uefi-security.md
+      items:
+        - name: 统一可扩展固件接口 (UEFI)
+          href: unified-extensible-firmware-interface.md
+        - name: Device Guard 和 Credential Guard
+          href: device-guard-and-credential-guard.md
+        - name: 修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
+          href: fixed-combuffer-and-windows-smm-security-mitigation-table.md
+        - name: 硬件安全测试接口 (HSTI) 1.1a
+          href: hardware-security-test-interface-1-1a.md
+        - name: 内存覆盖请求控件 (MOR) LOCK 版本 2
+          href: memory-overwrite-request-control-lock-version-2.md
+        - name: 安全启动
+          href: secure-boot.md
+        - name: 受信任的平台模块 (TPM) 注意事项
+          href: trusted-platform-module-considerations.md
+    - name: 固件更新
+      href: firmware-update.md
+      items:
+        - name: 生成固件包并将其提交到 Windows 更新 (WU)
+          href: build-and-submit-a-firmware-package-to-windows-update.md
+        - name: 面向使用 CHID 的系统
+          href: target-a-system-using-chid.md
+        - name: 固件用户体验 (UX) 最佳做法
+          href: firmware-user-experience-best-practices.md
+        - name: 固件更新验证测试
+          href: firmware-update-validation-testing.md
+    - name: SMBIOS
+      href: smbios.md
+    - name: HTTPS
+      href: https-boot.md
+    - name: 固件中的 Wi-Fi 支持
+      href: wi-fi-support-in-firmware.md
+    - name: 从旧的 MBR 磁盘切换到 Windows 10 的 GPT 磁盘
+      href: switch-from-legacy-mbr-disk-to-gpt-disk-with-windows-10.md
+      items:
+        - name: 从旧版 BIOS 启动和 CSM 切换到 UEFI 和 GPT
+          href: switch-legacy-bios-boot-and-csm-to-uefi-and-gpt.md
+        - name: 新方法：Windows 10 版本 1703 及更高版本
+          href: new-method--windows-10--version-1703-and-later.md
+        - name: MBR2GPT 工具测试指南
+          href: mbr2gpt-tool-test-guidance.md
+        - name: 旧方法：方法：Windows 10 版本 1607 及更低版本
+          href: old-method--windows-10--version-1607-and-earlier.md
+        - name: 如何转换已安装的 x64 Windows 7 系统
+          href: how-to-convert-an-installed-x64-windows-7.md
+    - name: 固件 WEG 常见问题解答
+      href: frequently-asked-questions.md
+    - name: 为 Windows 7 及 Windows 10 的更高版本的更新配置系统固件
+      href: configure-system-firmware-for-windows-7-and-later-update-for-windows-10.md
+    - name: 用于在本地查询 SMBIOS 的示例 PowerShell 脚本
+      href: sample-powershell-script-to-query-smbios-locally.md
 - name: 启动和 UEFI
   href: boot-and-uefi.md
   items:
-  - name: Windows 中的 UEFI
-    href: uefi-in-windows.md
-    items:
-    - name: SoC 平台上的 Windows 的最低 UEFI 要求
-      href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
+    - name: Windows 中的 UEFI
+      href: uefi-in-windows.md
       items:
-      - name: 适用于 SoC 平台上的所有 Windows 版本的 UEFI 要求
-        href: uefi-requirements-that-apply-to-all-windows-platforms.md
-      - name: Windows 10 移动版的 UEFI 要求
-        href: uefi-requirements-specific-to-windows-mobile.md
-      - name: USB 刷写支持的 UEFI 要求
-        href: uefi-requirements-for-usb-flashing-support.md
-    - name: Windows 的 UEFI 协议
-      href: uefi-protocols-for-windows.md
-      items:
-      - name: UEFI 熵收集协议
-        href: uefi-entropy-gathering-protocol.md
-        items:
-        - name: EFI_RNG_SERVICE_BINDING_PROTOCOL
-          href: efi-rng-service-binding-protocol.md
-        - name: EFI_RNG_PROTOCOL
-          href: efi-rng-protocol.md
+        - name: SoC 平台上的 Windows 的最低 UEFI 要求
+          href: minimum-uefi-requirements-for-windows-on-soc-platforms.md
           items:
-          - name: EFI_RNG_PROTOCOL.GetInfo
-            href: efi-rng-protocol-getinfo.md
-          - name: EFI_RNG_PROTOCOL.GetRNG
-            href: efi-rng-protocol-getrng.md
-          - name: EFI_RNG_ALGORITHM_LIST
-            href: efi-rng-algorithm-list.md
-      - name: UEFI USB 功能协议
-        href: uefi-usb-function-protocol.md
-        items:
-        - name: EFI_USBFN_IO_PROTOCOL.AbortTransfer
-          href: efi-usbfn-io-protocolaborttransfer.md
-        - name: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
-          href: efi-usbfn-io-protocolallocatetransferbuffer.md
-        - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
-          href: efi-usbfn-io-protocolconfigureenableendpoints.md
-        - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpointsEx
-          href: efi-usbfn-io-protocol-configureenableendpointsex.md
-        - name: EFI_USBFN_IO_PROTOCOL.DetectPort
-          href: efi-usbfn-io-protocoldetectport.md
-        - name: EFI_USBFN_IO_PROTOCOL.EventHandler
-          href: efi-usbfn-io-protocoleventhandler.md
-        - name: EFI_USBFN_IO_PROTOCOL.FreeTransferBuffer
-          href: efi-usbfn-io-protocolfreetransferbuffer.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetDeviceInfo
-          href: efi-usbfn-io-protocolgetdeviceinfo.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
-          href: efi-usbfn-io-protocolgetendpointmaxpacketsize.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
-          href: efi-usbfn-io-protocolgetendpointpolicy.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetEndpointStallState
-          href: efi-usbfn-io-protocolgetendpointstallstate.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetMaxTransferSize
-          href: efi-usbfn-io-protocolgetmaxtransfersize.md
-        - name: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
-          href: efi-usbfn-io-protocolgetvendoridproductid.md
-        - name: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
-          href: efi-usbfn-io-protocolsetendpointpolicy.md
-        - name: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
-          href: efi-usbfn-io-protocolsetendpointstallstate.md
-        - name: EFI_USBFN_IO_PROTOCOL.StartController
-          href: efi-usbfn-io-protocolstartcontroller.md
-        - name: EFI_USBFN_IO_PROTOCOL.StopController
-          href: efi-usbfn-io-protocolstopcontroller.md
-        - name: EFI_USBFN_IO_PROTOCOL.Transfer
-          href: efi-usbfn-io-protocoltransfer.md
-        - name: EFI_USB_BOS_DESCRIPTOR
-          href: efi-usb-bos-descriptor.md
-        - name: EFI_USB_BUS_SPEED
-          href: efi-usb-bus-speed.md
-        - name: EFI_USB_CONFIG_INFO
-          href: efi-usb-config-info.md
-        - name: EFI_USB_DEVICE_INFO
-          href: efi-usb-device-info.md
-        - name: EFI_USB_ENDPOINT_TYPE
-          href: efi-usb-endpoint-type.md
-        - name: EFI_USB_INTERFACE_INFO
-          href: efi-usb-interface-info.md
-        - name: EFI_USB_SUPERSPEED_CONFIG_INFO
-          href: efi-usb-superspeed-config-info.md
-        - name: EFI_USB_SUPERSPEED_DEVICE_INFO
-          href: efi-usb-superspeed-device-info.md
-        - name: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
-          href: efi-usb-superspeed-endpoint-companion-descriptor.md
-        - name: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
-          href: efi-usb-superspeed-endpoint-descriptor.md
-        - name: EFI_USB_SUPERSPEED_INTERFACE_INFO
-          href: efi-usb-superspeed-interface-info.md
-        - name: EFI_USBFN_DEVICE_INFO_ID
-          href: efi-usbfn-device-info-id.md
-        - name: EFI_USBFN_ENDPOINT_DIRECTION
-          href: efi-usbfn-endpoint-direction.md
-        - name: EFI_USBFN_MESSAGE
-          href: efi-usbfn-message.md
-        - name: EFI_USBFN_MESSAGE_PAYLOAD
-          href: efi-usbfn-message-payload.md
-        - name: EFI_USBFN_POLICY_TYPE
-          href: efi-usbfn-policy-type.md
-        - name: EFI_USBFN_PORT_TYPE
-          href: efi-usbfn-port-type.md
-        - name: EFI_USBFN_TRANSFER_RESULT
-          href: efi-usbfn-transfer-result.md
-        - name: EFI_USBFN_TRANSFER_STATUS
-          href: efi-usbfn-transfer-status.md
-        - name: UEFI 序列图
-          href: uefi-sequence-diagram.md
-      - name: UEFI 简单 I/O 协议
-        href: uefi-simple-io-protocol.md
-        items:
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
-          href: efi-simple-winphone-io-protocolinitialize.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
-          href: efi-simple-winphone-io-protocolread.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Write
-          href: efi-simple-winphone-io-protocolwrite.md
-        - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
-          href: efi-simple-winphone-io-protocolgetmaxpacketsize.md
-      - name: UEFI 检查签名协议
-        href: uefi-check-signature-protocol.md
-        items:
-        - name: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
-          href: efi-checksig-protocolefichecksignatureandhash.md
-      - name: UEFI 电池充电协议
-        href: uefi-battery-charging-protocol.md
-        items:
-        - name: EFI_BATTERY_CHARGING_PROTOCOL
-          href: efi-battery-charging-protocol.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
-          href: efi-battery-charging-protocolgetbatteryinformation.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
-          href: efi-battery-charging-protocolgetbatterystatus.md
-        - name: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
-          href: efi-battery-charging-protocolchargebattery.md
-        - name: EFI_BATTERY_CHARGING_STATUS
-          href: efi-battery-charging-status.md
-        - name: EFI_BATTERY_CHARGING_COMPLETION_TOKEN
-          href: efi-battery-charging-completion-token.md
-      - name: UEFI 显示器电源状态协议
-        href: uefi-display-power-state-protocol.md
-        items:
-        - name: EFI_DISPLAY_POWER_PROTOCOL
-          href: efi-display-power-protocol.md
-        - name: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
-          href: efi-display-power-protocolgetdisplaypowerstate.md
-        - name: EFI_DISPLAY_POWER_PROTOCOL.SetDisplayPowerState
-          href: efi-display-power-protocolsetdisplaypowerstate.md
-        - name: EFI_DISPLAY_POWER_STATE
-          href: efi-display-power-state.md
-    - name: Windows UEFI 固件更新平台
-      href: windows-uefi-firmware-update-platform.md
+            - name: 适用于 SoC 平台上的所有 Windows 版本的 UEFI 要求
+              href: uefi-requirements-that-apply-to-all-windows-platforms.md
+            - name: Windows 10 移动版的 UEFI 要求
+              href: uefi-requirements-specific-to-windows-mobile.md
+            - name: USB 刷写支持的 UEFI 要求
+              href: uefi-requirements-for-usb-flashing-support.md
+        - name: Windows 的 UEFI 协议
+          href: uefi-protocols-for-windows.md
+          items:
+            - name: UEFI 熵收集协议
+              href: uefi-entropy-gathering-protocol.md
+              items:
+                - name: EFI_RNG_SERVICE_BINDING_PROTOCOL
+                  href: efi-rng-service-binding-protocol.md
+                - name: EFI_RNG_PROTOCOL
+                  href: efi-rng-protocol.md
+                  items:
+                    - name: EFI_RNG_PROTOCOL.GetInfo
+                      href: efi-rng-protocol-getinfo.md
+                    - name: EFI_RNG_PROTOCOL.GetRNG
+                      href: efi-rng-protocol-getrng.md
+                    - name: EFI_RNG_ALGORITHM_LIST
+                      href: efi-rng-algorithm-list.md
+            - name: UEFI USB 功能协议
+              href: uefi-usb-function-protocol.md
+              items:
+                - name: EFI_USBFN_IO_PROTOCOL.AbortTransfer
+                  href: efi-usbfn-io-protocolaborttransfer.md
+                - name: EFI_USBFN_IO_PROTOCOL.AllocateTransferBuffer
+                  href: efi-usbfn-io-protocolallocatetransferbuffer.md
+                - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpoints
+                  href: efi-usbfn-io-protocolconfigureenableendpoints.md
+                - name: EFI_USBFN_IO_PROTOCOL.ConfigureEnableEndpointsEx
+                  href: efi-usbfn-io-protocol-configureenableendpointsex.md
+                - name: EFI_USBFN_IO_PROTOCOL.DetectPort
+                  href: efi-usbfn-io-protocoldetectport.md
+                - name: EFI_USBFN_IO_PROTOCOL.EventHandler
+                  href: efi-usbfn-io-protocoleventhandler.md
+                - name: EFI_USBFN_IO_PROTOCOL.FreeTransferBuffer
+                  href: efi-usbfn-io-protocolfreetransferbuffer.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetDeviceInfo
+                  href: efi-usbfn-io-protocolgetdeviceinfo.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointMaxPacketSize
+                  href: efi-usbfn-io-protocolgetendpointmaxpacketsize.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointPolicy
+                  href: efi-usbfn-io-protocolgetendpointpolicy.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetEndpointStallState
+                  href: efi-usbfn-io-protocolgetendpointstallstate.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetMaxTransferSize
+                  href: efi-usbfn-io-protocolgetmaxtransfersize.md
+                - name: EFI_USBFN_IO_PROTOCOL.GetVendorIdProductId
+                  href: efi-usbfn-io-protocolgetvendoridproductid.md
+                - name: EFI_USBFN_IO_PROTOCOL.SetEndpointPolicy
+                  href: efi-usbfn-io-protocolsetendpointpolicy.md
+                - name: EFI_USBFN_IO_PROTOCOL.SetEndpointStallState
+                  href: efi-usbfn-io-protocolsetendpointstallstate.md
+                - name: EFI_USBFN_IO_PROTOCOL.StartController
+                  href: efi-usbfn-io-protocolstartcontroller.md
+                - name: EFI_USBFN_IO_PROTOCOL.StopController
+                  href: efi-usbfn-io-protocolstopcontroller.md
+                - name: EFI_USBFN_IO_PROTOCOL.Transfer
+                  href: efi-usbfn-io-protocoltransfer.md
+                - name: EFI_USB_BOS_DESCRIPTOR
+                  href: efi-usb-bos-descriptor.md
+                - name: EFI_USB_BUS_SPEED
+                  href: efi-usb-bus-speed.md
+                - name: EFI_USB_CONFIG_INFO
+                  href: efi-usb-config-info.md
+                - name: EFI_USB_DEVICE_INFO
+                  href: efi-usb-device-info.md
+                - name: EFI_USB_ENDPOINT_TYPE
+                  href: efi-usb-endpoint-type.md
+                - name: EFI_USB_INTERFACE_INFO
+                  href: efi-usb-interface-info.md
+                - name: EFI_USB_SUPERSPEED_CONFIG_INFO
+                  href: efi-usb-superspeed-config-info.md
+                - name: EFI_USB_SUPERSPEED_DEVICE_INFO
+                  href: efi-usb-superspeed-device-info.md
+                - name: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
+                  href: efi-usb-superspeed-endpoint-companion-descriptor.md
+                - name: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
+                  href: efi-usb-superspeed-endpoint-descriptor.md
+                - name: EFI_USB_SUPERSPEED_INTERFACE_INFO
+                  href: efi-usb-superspeed-interface-info.md
+                - name: EFI_USBFN_DEVICE_INFO_ID
+                  href: efi-usbfn-device-info-id.md
+                - name: EFI_USBFN_ENDPOINT_DIRECTION
+                  href: efi-usbfn-endpoint-direction.md
+                - name: EFI_USBFN_MESSAGE
+                  href: efi-usbfn-message.md
+                - name: EFI_USBFN_MESSAGE_PAYLOAD
+                  href: efi-usbfn-message-payload.md
+                - name: EFI_USBFN_POLICY_TYPE
+                  href: efi-usbfn-policy-type.md
+                - name: EFI_USBFN_PORT_TYPE
+                  href: efi-usbfn-port-type.md
+                - name: EFI_USBFN_TRANSFER_RESULT
+                  href: efi-usbfn-transfer-result.md
+                - name: EFI_USBFN_TRANSFER_STATUS
+                  href: efi-usbfn-transfer-status.md
+                - name: UEFI 序列图
+                  href: uefi-sequence-diagram.md
+            - name: UEFI 简单 I/O 协议
+              href: uefi-simple-io-protocol.md
+              items:
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Initialize
+                  href: efi-simple-winphone-io-protocolinitialize.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Read
+                  href: efi-simple-winphone-io-protocolread.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.Write
+                  href: efi-simple-winphone-io-protocolwrite.md
+                - name: EFI_SIMPLE_WINPHONE_IO_PROTOCOL.GetMaxPacketSize
+                  href: efi-simple-winphone-io-protocolgetmaxpacketsize.md
+            - name: UEFI 检查签名协议
+              href: uefi-check-signature-protocol.md
+              items:
+                - name: EFI_CHECKSIG_PROTOCOL.EfiCheckSignatureAndHash
+                  href: efi-checksig-protocolefichecksignatureandhash.md
+            - name: UEFI 电池充电协议
+              href: uefi-battery-charging-protocol.md
+              items:
+                - name: EFI_BATTERY_CHARGING_PROTOCOL
+                  href: efi-battery-charging-protocol.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryInformation
+                  href: efi-battery-charging-protocolgetbatteryinformation.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.GetBatteryStatus
+                  href: efi-battery-charging-protocolgetbatterystatus.md
+                - name: EFI_BATTERY_CHARGING_PROTOCOL.ChargeBattery
+                  href: efi-battery-charging-protocolchargebattery.md
+                - name: EFI_BATTERY_CHARGING_STATUS
+                  href: efi-battery-charging-status.md
+                - name: EFI_BATTERY_CHARGING_COMPLETION_TOKEN
+                  href: efi-battery-charging-completion-token.md
+            - name: UEFI 显示器电源状态协议
+              href: uefi-display-power-state-protocol.md
+              items:
+                - name: EFI_DISPLAY_POWER_PROTOCOL
+                  href: efi-display-power-protocol.md
+                - name: EFI_DISPLAY_POWER_PROTOCOL.GetDisplayPowerState
+                  href: efi-display-power-protocolgetdisplaypowerstate.md
+                - name: EFI_DISPLAY_POWER_PROTOCOL.SetDisplayPowerState
+                  href: efi-display-power-protocolsetdisplaypowerstate.md
+                - name: EFI_DISPLAY_POWER_STATE
+                  href: efi-display-power-state.md
+        - name: Windows UEFI 固件更新平台
+          href: windows-uefi-firmware-update-platform.md
+          items:
+            - name: 通过固件驱动程序包进行的系统和设备固件更新
+              href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
+              items:
+                - name: 填充 ESRT 表
+                  href: populating-the-esrt-table.md
+                - name: 自定义不同地理区域的固件
+                  href: customizing-firmware-for-different-geographic-regions.md
+                - name: 创作固件更新包
+                  href: authoring-a-firmware-update-package.md
+                - name: 认证和签署更新包
+                  href: certifying-and-signing-the-update-package.md
+                - name: 安装更新
+                  href: installing-the-update.md
+            - name: 实现对 UEFI 固件更新的支持
+              href: implementing-support-for-uefi-firmware-updates.md
+              items:
+                - name: ESRT 表定义
+                  href: esrt-table-definition.md
+                - name: 即插即用设备
+                  href: plug-and-play-device.md
+                - name: 创作更新驱动程序包
+                  href: authoring-an-update-driver-package.md
+                - name: 处理更新
+                  href: processing-updates.md
+                - name: 来自 UEFI 环境的设备 I/O
+                  href: device-i-o-from-the-uefi-environment.md
+                - name: 无缝危机预防和恢复
+                  href: seamless-crisis-prevention-and-recovery.md
+                - name: 固件更新状态
+                  href: firmware-update-status.md
+            - name: UEFI 固件更新的用户体验
+              href: user-experience-for-uefi-firmware-updates.md
+              items:
+                - name: 启动屏幕组件
+                  href: boot-screen-components.md
+    - name: 启动环境中 Windows 10 移动版的电池充电
+      href: battery-charging-in-the-boot-environment.md
       items:
-      - name: 通过固件驱动程序包进行的系统和设备固件更新
-        href: system-and-device-firmware-updates-via-a-firmware-driver-package.md
-        items:
-        - name: 填充 ESRT 表
-          href: populating-the-esrt-table.md
-        - name: 自定义不同地理区域的固件
-          href: customizing-firmware-for-different-geographic-regions.md
-        - name: 创作固件更新包
-          href: authoring-a-firmware-update-package.md
-        - name: 认证和签署更新包
-          href: certifying-and-signing-the-update-package.md
-        - name: 安装更新
-          href: installing-the-update.md
-      - name: 实现对 UEFI 固件更新的支持
-        href: implementing-support-for-uefi-firmware-updates.md
-        items:
-        - name: ESRT 表定义
-          href: esrt-table-definition.md
-        - name: 即插即用设备
-          href: plug-and-play-device.md
-        - name: 创作更新驱动程序包
-          href: authoring-an-update-driver-package.md
-        - name: 处理更新
-          href: processing-updates.md
-        - name: 来自 UEFI 环境的设备 I/O
-          href: device-i-o-from-the-uefi-environment.md
-        - name: 无缝危机预防和恢复
-          href: seamless-crisis-prevention-and-recovery.md
-        - name: 固件更新状态
-          href: firmware-update-status.md
-      - name: UEFI 固件更新的用户体验
-        href: user-experience-for-uefi-firmware-updates.md
-        items:
-        - name: 启动屏幕组件
-          href: boot-screen-components.md
-  - name: 启动环境中 Windows 10 移动版的电池充电
-    href: battery-charging-in-the-boot-environment.md
-    items:
-    - name: Microsoft 提供的 UEFI 电池充电应用程序的体系结构
-      href: architecture-of-the-uefi-battery-charging-application.md
+        - name: Microsoft 提供的 UEFI 电池充电应用程序的体系结构
+          href: architecture-of-the-uefi-battery-charging-application.md
 - name: SoC 平台的 Windows ACPI 设计指南
   href: windows-acpi-design-guide-for-soc-platforms.md
   items:
-  - name: 针对 ACPI 5.0 的 Windows 支持概述
-    href: overview-of-windows-support-for-acpi-5-0.md
-    items:
-    - name: Windows 中的 ACPI 支持摘要
-      href: summary-of-acpi-support-in-windows.md
-    - name: 基于 SoC 的平台的硬件要求
-      href: hardware-requirements-for-soc-based-platforms.md
-    - name: ACPI 命名空间层次结构
-      href: acpi-namespace-hierarchy.md
-    - name: Microsoft ASL 编译器
-      href: microsoft-asl-compiler.md
-  - name: ACPI 系统说明表
-    href: acpi-system-description-tables.md
-    items:
-    - name: 使用 AcpiGenFx 生成 ACPI 表
-      href: generate-acpi-tables-by-using-acpigenfx.md
-  - name: 设备管理命名空间对象
-    href: device-management-namespace-objects.md
-  - name: 常规用途 I/O (GPIO)
-    href: general-purpose-i-o--gpio-.md
-    items:
-    - name: GPIO 控制器要求清单
-      href: gpio-controller-requirements-checklist.md
-  - name: 简单外设总线 (SPB)
-    href: simple-peripheral-bus--spb-.md
-  - name: 设备电源管理
-    href: device-power-management.md
-    items:
-    - name: D3cold 固件要求
-      href: firmware-requirements-for-d3cold.md
-  - name: ACPI 定义的设备
-    href: acpi-defined-devices.md
-  - name: 其他 ACPI 命名空间对象
-    href: other-acpi-namespace-objects.md
-  - name: ACPI 的特定于设备的方法
-    href: acpi-device-specific-methods.md
-    items:
-    - name: GPIO 控制器的特定于设备的方法 (_DSM)
-      href: gpio-controller-device-specific-method---dsm-.md
-    - name: 电池的特定于设备的方法
-      href: battery-device-specific-method.md
-    - name: Microsoft 热量扩展的特定于设备的方法
-      href: device-specific-method-for-microsoft-thermal-extensions.md
-    - name: USB 的特定于设备的方法 (_DSM)
-      href: usb-device-specific-method---dsm-.md
-    - name: HIDI2C 的特定于设备的方法 (_DSM)
-      href: hidi2c-device-specific-method---dsm-.md
-    - name: Windows 按钮数组的特定于设备的方法 (_DSM)
-      href: windows-button-array-device-specific-method---dsm-.md
+    - name: 针对 ACPI 5.0 的 Windows 支持概述
+      href: overview-of-windows-support-for-acpi-5-0.md
+      items:
+        - name: Windows 中的 ACPI 支持摘要
+          href: summary-of-acpi-support-in-windows.md
+        - name: 基于 SoC 的平台的硬件要求
+          href: hardware-requirements-for-soc-based-platforms.md
+        - name: ACPI 命名空间层次结构
+          href: acpi-namespace-hierarchy.md
+        - name: Microsoft ASL 编译器
+          href: microsoft-asl-compiler.md
+    - name: ACPI 系统说明表
+      href: acpi-system-description-tables.md
+      items:
+        - name: 使用 AcpiGenFx 生成 ACPI 表
+          href: generate-acpi-tables-by-using-acpigenfx.md
+    - name: 设备管理命名空间对象
+      href: device-management-namespace-objects.md
+    - name: 常规用途 I/O (GPIO)
+      href: general-purpose-i-o--gpio-.md
+      items:
+        - name: GPIO 控制器要求清单
+          href: gpio-controller-requirements-checklist.md
+    - name: 简单外设总线 (SPB)
+      href: simple-peripheral-bus--spb-.md
+    - name: 设备电源管理
+      href: device-power-management.md
+      items:
+        - name: D3cold 固件要求
+          href: firmware-requirements-for-d3cold.md
+    - name: ACPI 定义的设备
+      href: acpi-defined-devices.md
+    - name: 其他 ACPI 命名空间对象
+      href: other-acpi-namespace-objects.md
+    - name: ACPI 的特定于设备的方法
+      href: acpi-device-specific-methods.md
+      items:
+        - name: GPIO 控制器的特定于设备的方法 (_DSM)
+          href: gpio-controller-device-specific-method---dsm-.md
+        - name: 电池的特定于设备的方法
+          href: battery-device-specific-method.md
+        - name: Microsoft 热量扩展的特定于设备的方法
+          href: device-specific-method-for-microsoft-thermal-extensions.md
+        - name: USB 的特定于设备的方法 (_DSM)
+          href: usb-device-specific-method---dsm-.md
+        - name: HIDI2C 的特定于设备的方法 (_DSM)
+          href: hidi2c-device-specific-method---dsm-.md
+        - name: Windows 按钮数组的特定于设备的方法 (_DSM)
+          href: windows-button-array-device-specific-method---dsm-.md
 - name: 安全性
   href: security-overview.md
   items:
-  - name: 安全启动和设备加密概述
-    href: secure-boot-and-device-encryption-overview.md
-  - name: 安全 MOR 实现
-    href: device-guard-requirements.md
+    - name: 安全启动和设备加密概述
+      href: secure-boot-and-device-encryption-overview.md
+    - name: 安全 MOR 实现
+      href: device-guard-requirements.md
 - name: 分区布局
   href: partition-layout.md
-ms.openlocfilehash: 513d2025326ca8a6fbea090a296a07b5e964b84f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56465437"

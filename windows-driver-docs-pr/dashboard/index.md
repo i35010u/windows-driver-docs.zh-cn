@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 4bb342daec85f651954135ebbc76f4c8c20e3619
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337178"
 ---
 # <a name="partner-center-for-windows-hardware"></a>Windows 硬件合作伙伴中心
 
