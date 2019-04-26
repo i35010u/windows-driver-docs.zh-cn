@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f0e610c54c38102ed21ee52e4a8284c2c75dc5d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325937"
 ---
 # <a name="kspropertycameracontrolextendedisoadvanced"></a>KSPROPERTY\_CAMERACONTROL\_EXTENDED\_ISO\_ADVANCED
 
@@ -102,7 +102,7 @@ MF 管道接受的以下任何功能。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1，</p></td>
 </tr>
 <tr class="even">
@@ -110,7 +110,7 @@ MF 管道接受的以下任何功能。
 <td><p>这必须是照片 pin 与关联的 Pin ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>这必须是 sizeof(KSCAMERA_EXTENDEDPROP_HEADER)+sizeof(KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING)，</p></td>
 </tr>
 <tr class="even">
@@ -189,7 +189,7 @@ KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING。如果 VideoProc.Value.ul 包含所�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

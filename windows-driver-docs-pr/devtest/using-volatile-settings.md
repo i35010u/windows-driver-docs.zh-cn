@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb1aa9c074a96f4da35f7e0b366c7dbfa43117c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326183"
 ---
 # <a name="using-volatile-settings"></a>使用易失性设置
 
@@ -153,7 +153,7 @@ ms.locfileid: "56521474"
 
 每个这些屏幕显示的 Driver Verifier 选项当前有效，包括易失性设置，但不是包括更改到永久性设置，计划在下一步的重启后才会生效。 每个驱动程序将列出其状态。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**驱动程序验证工具的命令语法**](verifier-command-line.md)

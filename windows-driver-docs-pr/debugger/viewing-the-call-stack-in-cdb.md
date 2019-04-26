@@ -5,11 +5,11 @@ ms.assetid: 4694AFEC-24CF-4331-AA0A-1AE176048295
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b47fee135019688613b1cd28507195bf2ac77c19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325914"
 ---
 # <a name="viewing-the-call-stack-in-cdb"></a>在 CDB 中查看调用堆栈
 

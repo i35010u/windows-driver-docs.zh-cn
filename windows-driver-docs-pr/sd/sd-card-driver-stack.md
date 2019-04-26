@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4a041bbfe09be7f489c8a1e938fd1e2c800466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325962"
 ---
 # <a name="sd-card-driver-stack"></a>SD 卡驱动程序堆栈
 

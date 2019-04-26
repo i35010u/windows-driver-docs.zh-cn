@@ -5,11 +5,11 @@ ms.assetid: 83FF780F-6B8F-4222-90F0-42037FFF7653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b48ea9fca3fdab6780950e61726f3feab2b9c6b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325733"
 ---
 # <a name="handling-packet-coalescing-receive-filters"></a>处理数据包合并接收筛选器
 

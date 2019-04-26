@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecd6228fa30e4a4de754d01d583a3af53eccc1eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328759"
 ---
 # <a name="power-management-for-audio-devices"></a>音频设备的电源管理
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1f078ced043e3662b24ddfc7a896938aecea40e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325283"
 ---
 # <a name="wiadpaconnectstatus"></a>WIA\_DPA\_CONNECT\_状态
 
@@ -47,7 +47,7 @@ WIA\_DPA\_CONNECT\_状态属性包含设备的当前连接状态。 WIA 微型�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -75,7 +75,7 @@ WIA\_DPA\_CONNECT\_状态属性包含设备的当前连接状态。 WIA 微型�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

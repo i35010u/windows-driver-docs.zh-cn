@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9b390b501f20d0d00c59c0c184da33b1e36cae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325993"
 ---
 # <a name="inf-updateinifields-directive"></a>INF UpdateIniFields 指令
 
@@ -103,7 +103,7 @@ INF 提供的完整路径给定*ini 文件*中通过以下方式之一在分发�
 -   在提供 IHV/OEM INF 文件中，通过使用[ **SourceDisksNames** ](inf-sourcedisksnames-section.md)并[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分到此 INF 显式指定在分发媒体的根目录 （或目录） 中不是每个命名的源文件的完整路径。
 -   在系统提供 INF 文件中，通过提供一个或多个附加 INF 文件中标识**LayoutFile**中的条目[**版本**](inf-version-section.md) INF 文件部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)

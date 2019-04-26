@@ -5,11 +5,11 @@ ms.assetid: 8BF4B63B-B723-4899-BCAF-7826FAFF2155
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f4c7c80de36691644eae17970dcf7481d8489dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329609"
 ---
 # <a name="minidriver-version-602-features"></a>微型驱动程序版本 6.02 功能
 

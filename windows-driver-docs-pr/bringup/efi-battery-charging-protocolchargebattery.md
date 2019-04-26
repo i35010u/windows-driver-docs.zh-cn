@@ -5,11 +5,11 @@ ms.assetid: 362b812f-b64b-4b6c-84a6-61c09a60f8a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21f3ab95d77e144a3b4d5808e70f4e9185f7d34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328046"
 ---
 # <a name="efibatterychargingprotocolchargebattery"></a>EFI\_BATTERY\_CHARGING\_PROTOCOL.ChargeBattery
 
@@ -27,7 +27,7 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_CHARGE_BATTERY) (
     IN EFI_BATTERY_CHARGING_COMPLETION_TOKEN *CompletionToken );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

@@ -1,5 +1,5 @@
 ---
-title: 音频的虚拟设备
+title: 虚拟音频设备
 description: 虚拟的音频设备表示筛选器关系图的呈现和捕获音频内容。 系统音频驱动程序 (SysAudio) 使用可用的硬件和软件组件来确定要生成的筛选器图。
 ms.assetid: 0f8ddd2d-f852-4b35-8a18-16416081d3c0
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 090b73c229940010c37955529ce65ff3eb1c0aac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328503"
 ---
-# <a name="virtual-audio-devices"></a>音频的虚拟设备
+# <a name="virtual-audio-devices"></a>虚拟音频设备
 
 
 虚拟的音频设备表示筛选器关系图的呈现和捕获音频内容。 系统音频驱动程序 (SysAudio) 使用可用的硬件和软件组件来确定要生成的筛选器图。

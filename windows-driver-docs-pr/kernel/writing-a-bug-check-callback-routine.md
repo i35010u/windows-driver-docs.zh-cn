@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66ef9c90be5fe83827ead362cdc813fd95870fdc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327334"
 ---
 # <a name="writing-a-bug-check-callback-routine"></a>编写 Bug 检查回调例程
 

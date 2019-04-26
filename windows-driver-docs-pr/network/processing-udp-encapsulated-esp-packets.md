@@ -1,19 +1,19 @@
 ---
-title: 处理 UDP 封装 ESP 数据包
-description: 处理 UDP 封装 ESP 数据包
+title: 处理 UDP 封装的 ESP 数据包
+description: 处理 UDP 封装的 ESP 数据包
 ms.assetid: b5b10a2c-1080-4c21-a187-1c0aff30b229
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载、 处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5801bcc4d86b78b162b55e51740eba605c073bc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327577"
 ---
-# <a name="processing-udp-encapsulated-esp-packets"></a>处理 UDP 封装 ESP 数据包
+# <a name="processing-udp-encapsulated-esp-packets"></a>处理 UDP 封装的 ESP 数据包
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

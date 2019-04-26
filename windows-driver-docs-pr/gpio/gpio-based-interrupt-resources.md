@@ -5,11 +5,11 @@ ms.assetid: 65031C43-917D-4665-BD7F-97D3DDA0A918
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4faac9f588b4980abb7094d4c13895603f342b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326147"
 ---
 # <a name="gpio-based-interrupt-resources"></a>基于 GPIO 的中断资源
 

@@ -1,5 +1,5 @@
 ---
-title: 数据偏移量的位置
+title: 数据偏移位置
 description: 本部分介绍 Windows 筛选平台标注驱动程序的数据偏移量的位置。
 ms.assetid: cf4656cf-b978-4539-9fff-8f0aa5de1b5e
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 568d5f786aef4c385d5637babf6ff9741284d73a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330191"
 ---
-# <a name="data-offset-positions"></a>数据偏移量的位置
+# <a name="data-offset-positions"></a>数据偏移位置
 
 当筛选器引擎调用标注驱动程序[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数，它将指针传递到一个结构*数据*参数。 对于筛选数据包数据层，该指针指向[NET_BUFFER_LIST](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 具体取决于在其中筛选层*classifyFn*标注函数被调用时，筛选器引擎将指针数据 * 参数中传递给以下结构：
 

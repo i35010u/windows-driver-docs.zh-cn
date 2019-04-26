@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13a329f73fa8e505d5858cf57f51337d38d2d126
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325731"
 ---
 # <a name="handling-srbfunctionflush-and-srbfunctionshutdown"></a>处理 SRB\_函数\_刷新和 SRB\_函数\_关闭
 

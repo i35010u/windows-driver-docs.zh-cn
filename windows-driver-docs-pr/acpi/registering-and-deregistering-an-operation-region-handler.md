@@ -1,6 +1,6 @@
 ---
-title: 注册和取消的操作区域处理程序
-description: 注册和取消的操作区域处理程序
+title: 注册和注销操作区域处理程序
+description: 注册和注销操作区域处理程序
 ms.assetid: de40488d-7935-431c-b1f4-87f8aff1125b
 keywords:
 - ACPI 设备 WDK，操作区域
@@ -12,13 +12,13 @@ keywords:
 ms.date: 01/24/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c5d3a1ff703d23b0256a43e81522fa1f3ac7513
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328837"
 ---
-# <a name="registering-and-deregistering-an-operation-region-handler"></a>注册和取消的操作区域处理程序
+# <a name="registering-and-deregistering-an-operation-region-handler"></a>注册和注销操作区域处理程序
 
 
 ACPI 设备功能驱动程序注册的操作区域处理程序通过调用[ **RegisterOpRegionHandler** ](https://msdn.microsoft.com/library/windows/hardware/ff536158)并提供以下信息：

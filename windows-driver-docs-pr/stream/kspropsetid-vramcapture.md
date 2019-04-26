@@ -5,11 +5,11 @@ ms.assetid: 369bb258-5335-42f7-bd2f-7bfc9848e7f0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1bea11f87dfb05a28cedaf9d3236115ab501f7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324803"
 ---
 # <a name="kspropsetidvramcapture"></a>KSPROPSETID\_VramCapture
 

@@ -5,11 +5,11 @@ ms.assetid: 1D0AC55B-60F7-400E-A376-F3E2F7373A92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dce3c0ff8072655d8922171319c9494084863e4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327701"
 ---
 # <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-V 可扩展交换机策略概述
 

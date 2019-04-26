@@ -1,6 +1,6 @@
 ---
-title: 处理的 CoNDIS WAN 微型端口驱动程序中的查询
-description: 处理的 CoNDIS WAN 微型端口驱动程序中的查询
+title: 处理 CoNDIS WAN 微型端口驱动程序中的查询
+description: 处理 CoNDIS WAN 微型端口驱动程序中的查询
 ms.assetid: 634618ce-3168-4729-b74a-e69f27b62ef4
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络、 查询处理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 554c9ffb60ed9a1e36992ef230a76f137afe779e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325023"
 ---
-# <a name="handling-queries-in-a-condis-wan-miniport-driver"></a>处理的 CoNDIS WAN 微型端口驱动程序中的查询
+# <a name="handling-queries-in-a-condis-wan-miniport-driver"></a>处理 CoNDIS WAN 微型端口驱动程序中的查询
 
 
 

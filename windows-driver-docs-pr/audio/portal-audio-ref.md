@@ -5,18 +5,18 @@ ms.assetid: 41a45180-4635-4d5d-befa-3e57467d4e33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd8997e925fa468159203b5db6f319cbd8f4d38d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328801"
 ---
 # <a name="audio-devices-ddi-reference"></a>音频设备 DDI 引用
 
 
 本部分包含符合音频处理对象的接口的 Windows 驱动程序模型 (WDM) 和引用页的音频驱动程序的参考页。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [音频驱动程序枚举](audio-drivers-enumerations.md)

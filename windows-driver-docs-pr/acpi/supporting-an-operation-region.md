@@ -1,6 +1,6 @@
 ---
-title: 支持的操作区域
-description: 支持的操作区域
+title: 支持操作区域
+description: 支持操作区域
 ms.assetid: 262a7201-d89e-4639-9630-a51aaa28db34
 keywords:
 - ACPI 设备 WDK，操作区域
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00ef759f96c948b8d68e5ea44aedc5e99afbbf1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331069"
 ---
-# <a name="supporting-an-operation-region"></a>支持的操作区域
+# <a name="supporting-an-operation-region"></a>支持操作区域
 
 
 

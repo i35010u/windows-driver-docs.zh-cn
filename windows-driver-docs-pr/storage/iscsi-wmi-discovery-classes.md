@@ -1,17 +1,17 @@
 ---
-title: iSCSI 发现的 WMI 类
-description: iSCSI 发现的 WMI 类
+title: iSCSI WMI 发现类
+description: iSCSI WMI 发现类
 ms.assetid: 4711cf7f-6351-4804-872d-c94e2737a6ee
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 583bf72a8938a01e782d425ab3633bee64e96faf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329870"
 ---
-# <a name="iscsi-wmi-discovery-classes"></a>iSCSI 发现的 WMI 类
+# <a name="iscsi-wmi-discovery-classes"></a>iSCSI WMI 发现类
 
 
 ## <span id="ddk_iscsi_wmi_classes_used_in_discovery_kr"></span><span id="DDK_ISCSI_WMI_CLASSES_USED_IN_DISCOVERY_KR"></span>

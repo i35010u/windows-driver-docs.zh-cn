@@ -5,11 +5,11 @@ ms.assetid: dc2b647b-b3b6-4d85-9faf-9e401fa67571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6159f4fea5db4361067d0ec066a5574b9f393df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328021"
 ---
 # <a name="efibatterychargingprotocolgetbatterystatus"></a>EFI\_BATTERY\_CHARGING\_PROTOCOL.GetBatteryStatus
 
@@ -27,7 +27,7 @@ typedef EFI_STATUS (EFIAPI * EFI_BATTERY_CHARGING_GET_BATTERY_STATUS) (
     OUT INT32 *ChargeCurrent );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

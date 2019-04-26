@@ -1,17 +1,17 @@
 ---
-title: 连接 Id 的串行连接的外围设备
+title: 串行连接的外围设备的连接 ID
 description: 如果编写用于连接到串行端口由 SerCx2 管理的外围设备的驱动程序，驱动程序收到的硬件资源的列表将包含封装平台固件中的设备连接信息的连接 ID。
 ms.assetid: 9A688552-DFAF-48A1-935D-70C3B13F30EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a7e22bef2608daf2719213a74a4ec4b37502876
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327555"
 ---
-# <a name="connection-ids-for-serially-connected-peripheral-devices"></a>连接 Id 的串行连接的外围设备
+# <a name="connection-ids-for-serially-connected-peripheral-devices"></a>串行连接的外围设备的连接 ID
 
 
 SerCx2 管理永久连接到外围设备的串行端口。 这些物理连接固定的因为它们可以在硬件平台的 ACPI 固件中所述。 如果编写用于连接到串行端口由 SerCx2 管理的外围设备的驱动程序，包括驱动程序收到的硬件资源的列表*连接 ID*封装设备连接信息从平台固件中。

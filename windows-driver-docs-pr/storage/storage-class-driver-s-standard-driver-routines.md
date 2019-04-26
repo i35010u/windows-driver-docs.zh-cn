@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a5bc12b6952b55ed60d4a9bf5efcc553ee7afc7
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329610"
 ---
 # <a name="storage-class-drivers-standard-driver-routines"></a>存储类驱动程序的标准驱动程序例程
 

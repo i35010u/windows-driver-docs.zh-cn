@@ -5,11 +5,11 @@ ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9acae4bdd2577d02567bd9feb027ae9a18def63c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326035"
 ---
 # <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 打印实现
 
@@ -227,7 +227,7 @@ VPI 一来，设备使用 WPS 协议来预配设备的服务。 在这种情况�
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>

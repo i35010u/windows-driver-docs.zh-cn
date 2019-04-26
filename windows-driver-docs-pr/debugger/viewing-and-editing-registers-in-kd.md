@@ -1,17 +1,17 @@
 ---
-title: 查看和编辑寄存器中 KD
+title: 在 KD 中查看和编辑寄存器
 description: KD，可以查看和编辑寄存器输入 r （寄存器） 命令。 使用多个选项或使用 rm （注册掩码） 命令，可以自定义显示。
 ms.assetid: 42306338-6E11-4724-B62F-D1E0BDBA7F8D
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aef4589d8237dee7308f168cf4ff534850800013
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326005"
 ---
-# <a name="viewing-and-editing-registers-in-kd"></a>查看和编辑寄存器中 KD
+# <a name="viewing-and-editing-registers-in-kd"></a>在 KD 中查看和编辑寄存器
 
 
 寄存器是位于在 CPU 的小易失性内存单位。 许多寄存器专用于特定用途，并可用于用户模式应用程序使用的其他寄存器。 基于 x86 和基于 x64 的处理器在有可用的寄存器的不同集合。 在每个处理器寄存器的详细信息，请参阅[处理器体系结构](processor-architecture.md)。

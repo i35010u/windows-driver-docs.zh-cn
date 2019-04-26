@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e74d5378ac92f6698bcbd0e96be9b2305e33e39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327879"
 ---
 # <a name="fsctlgetretrievalpointerbase-control-code"></a>FSCTL\_获取\_检索\_指针\_基控件代码
 
@@ -28,7 +28,7 @@ ms.locfileid: "56545132"
 
 若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)函数或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)以下函数参数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject--in-"></a>*FileObject \[in\]*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 为其卷的文件对象指针**FSCTL\_获取\_检索\_指针\_基**是检索 base。 此参数是必需的不能**NULL**。
@@ -108,17 +108,17 @@ FSCTL\_获取\_检索\_指针\_可 FastFAT 和 exFAT 的设备上使用的基控
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Windows Server 2008 R2, Windows 7</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)

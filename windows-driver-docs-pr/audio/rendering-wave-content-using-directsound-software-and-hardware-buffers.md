@@ -1,6 +1,6 @@
 ---
-title: 使用 DirectSound 软件和硬件缓冲区呈现批内容
-description: 使用 DirectSound 软件和硬件缓冲区呈现批内容
+title: 使用 DirectSound 软件和硬件缓冲区呈现 Wave 内容
+description: 使用 DirectSound 软件和硬件缓冲区呈现 Wave 内容
 ms.assetid: df92dac3-2580-4910-8a55-bd9e9f82eb1f
 keywords:
 - DirectSound WDK 音频，则内容呈现
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 082c62d647746a0fa4362046473ec40754e10c20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328715"
 ---
-# <a name="rendering-wave-content-using-directsound-software-and-hardware-buffers"></a>使用 DirectSound 软件和硬件缓冲区呈现批内容
+# <a name="rendering-wave-content-using-directsound-software-and-hardware-buffers"></a>使用 DirectSound 软件和硬件缓冲区呈现 Wave 内容
 
 
 ## <span id="ddk_rendering_wave_content_using_directsound_software_and_hardware_buf"></span><span id="DDK_RENDERING_WAVE_CONTENT_USING_DIRECTSOUND_SOFTWARE_AND_HARDWARE_BUF"></span>

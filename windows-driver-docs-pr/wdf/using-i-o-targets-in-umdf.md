@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8ac3b30b27d7c568dcc8cb5395bcfbab6aa028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327161"
 ---
 # <a name="using-io-targets-in-umdf"></a>在 UMDF 中使用 I/O 目标
 

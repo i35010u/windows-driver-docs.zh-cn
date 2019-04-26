@@ -1,6 +1,6 @@
 ---
-title: 传入请求，更改调用参数
-description: 传入请求，更改调用参数
+title: 传入的更改呼叫参数请求
+description: 传入的更改呼叫参数请求
 ms.assetid: f7b9483c-070e-4a5d-a1b0-fadb65843a1e
 keywords:
 - 调用参数将更改 WDK 的 CoNDIS
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed58acc038a1a62122db55040d0abe3733b7833
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327786"
 ---
-# <a name="incoming-request-to-change-call-parameters"></a>传入请求，更改调用参数
+# <a name="incoming-request-to-change-call-parameters"></a>传入的更改呼叫参数请求
 
 
 

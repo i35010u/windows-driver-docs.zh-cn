@@ -5,11 +5,11 @@ ms.assetid: B010C7E5-6B67-43D2-92A6-5258B132FB5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd53b3081a0d0fa329f4cd4adf380b9f01214b0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330597"
 ---
 # <a name="system-paging-process"></a>系统分页进程
 

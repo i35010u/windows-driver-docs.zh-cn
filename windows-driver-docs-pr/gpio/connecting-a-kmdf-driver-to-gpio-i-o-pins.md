@@ -1,17 +1,17 @@
 ---
-title: 连接到 GPIO I/O 插针的 KMDF 驱动程序
+title: 将 KMDF 驱动程序连接到 GPIO I/O 管脚
 description: 外围设备的内核模式驱动程序框架 (KMDF) 驱动程序如何获取 GPIO I/O 资源的说明。
 ms.assetid: 02F6431C-7B55-4DFB-9792-4A72F0268C76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf771912ecf322e67b2e6e697b2f73740312e76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326165"
 ---
-# <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>连接到 GPIO I/O 插针的 KMDF 驱动程序
+# <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>将 KMDF 驱动程序连接到 GPIO I/O 管脚
 
 
 GPIO I/O 资源的一个或多个 GPIO 固定配置为数据输入或数据输出。 以物理方式连接到这些引脚的外围设备的驱动程序将获取从操作系统的相应 GPIO I/O 资源。 外围设备驱动程序在此资源中打开的 GPIO 插针的连接，并将 I/O 请求发送到表示此连接的句柄。

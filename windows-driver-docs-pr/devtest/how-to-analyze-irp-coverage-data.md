@@ -1,19 +1,19 @@
 ---
-title: 如何分析 IRP 覆盖率数据
-description: 如何分析 IRP 覆盖率数据
+title: 如何分析 IRP 覆盖范围数据
+description: 如何分析 IRP 覆盖范围数据
 ms.assetid: 71b87948-8e69-4b4a-9546-ea27e96a4bf8
 keywords:
 - 驱动程序覆盖范围工具包 WDK，分析数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dd6779cd00fb756fccc96f5a057e1eb3ad7110c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329731"
 ---
-# <a name="how-to-analyze-irp-coverage-data"></a>如何分析 IRP 覆盖率数据
+# <a name="how-to-analyze-irp-coverage-data"></a>如何分析 IRP 覆盖范围数据
 
 
 **请注意**  的驱动程序覆盖范围工具包不再需要在 Windows 10 中，安装程序不再包含在 WDK 中。 若要执行此处所述在 Windows 10 中的任务，请改用[Driver Verifier](driver-verifier.md)并[IRP 日志记录](irp-logging.md)。

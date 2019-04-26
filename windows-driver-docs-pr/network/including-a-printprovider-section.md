@@ -1,6 +1,6 @@
 ---
-title: 包括 PrintProvider 部分
-description: 包括 PrintProvider 部分
+title: 包含 PrintProvider 节
+description: 包含 PrintProvider 节
 ms.assetid: 2cbf1b56-e603-4a21-a1d7-d51634c91456
 keywords:
 - INF 文件 WDK 网络，PrintProvider 部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ecd949a2278e56790f3ad9b37f6531bf4362605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327777"
 ---
-# <a name="including-a-printprovider-section"></a>包括 PrintProvider 部分
+# <a name="including-a-printprovider-section"></a>包含 PrintProvider 节
 
 
 

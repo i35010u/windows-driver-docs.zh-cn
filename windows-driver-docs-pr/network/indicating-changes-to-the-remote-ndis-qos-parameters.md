@@ -5,11 +5,11 @@ ms.assetid: E09EBF25-96B6-417F-9538-D0BEBE5B9E19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e0875d66834c76750e75b0025cf5c1a35f462b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327753"
 ---
 # <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>指示对远程 NDIS QoS 参数的更改
 

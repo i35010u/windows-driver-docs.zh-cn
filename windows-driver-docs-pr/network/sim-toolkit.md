@@ -5,11 +5,11 @@ ms.assetid: 39869948-d61c-438c-a90c-05dcb099acad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 351dbe512f2009553db5ba0127db56d367b5fb10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330566"
 ---
 # <a name="sim-toolkit"></a>SIM 工具包
 

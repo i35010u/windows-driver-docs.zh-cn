@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea21ae1b5260054952c351bdb7bfbe60fce2ecfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331037"
 ---
 # <a name="opening-a-window"></a>打开窗口
 
@@ -36,7 +36,7 @@ WinDbg 开始调试会话时[调试器命令窗口](debugger-command-window.md)�
 <tr class="header">
 <th align="left">窗口</th>
 <th align="left">菜单命令</th>
-<th align="left">按钮</th>
+<th align="left">Button</th>
 <th align="left">键盘快捷方式</th>
 </tr>
 </thead>

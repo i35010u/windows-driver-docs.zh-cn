@@ -1,6 +1,6 @@
 ---
-title: IP 帮助程序的包括标头文件
-description: IP 帮助程序的包括标头文件
+title: 包含 IP 帮助程序的标头文件
+description: 包含 IP 帮助程序的标头文件
 ms.assetid: f4642717-223c-425a-8389-cbbc75567ae3
 keywords:
 - IP 帮助程序 WDK 网络，包括头文件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e9427cf63f510262c5704092267661f34edc0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327779"
 ---
-# <a name="including-header-files-for-ip-helper"></a>IP 帮助程序的包括标头文件
+# <a name="including-header-files-for-ip-helper"></a>包含 IP 帮助程序的标头文件
 
 
 使用内核模式 IP 帮助程序函数、 MIB 结构和 Netioapi.h 中声明的枚举的驱动程序代码必须具有**\#包括**语句按以下顺序。

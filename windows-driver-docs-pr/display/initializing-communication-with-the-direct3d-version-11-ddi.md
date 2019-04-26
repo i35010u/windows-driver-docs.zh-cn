@@ -1,6 +1,6 @@
 ---
-title: 初始化与 Direct3D 版本 11 DDI 的通信
-description: 初始化与 Direct3D 版本 11 DDI 的通信
+title: 初始化与 Direct3D 版本 11 DDI 之间的通信
+description: 初始化与 Direct3D 版本 11 DDI 之间的通信
 ms.assetid: 3b383f78-da88-4979-b55f-8e234f230df7
 keywords:
 - Direct3D 11 版 WDK Windows 7 显示，初始化 DDI 通信
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d6c0c926b04793a2fc26f1fc28d0a914d72b06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325042"
 ---
-# <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>初始化与 Direct3D 版本 11 DDI 的通信
+# <a name="initializing-communication-with-the-direct3d-version-11-ddi"></a>初始化与 Direct3D 版本 11 DDI 之间的通信
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

@@ -1,17 +1,17 @@
 ---
-title: 报告的按钮
+title: 按钮报告
 description: 在框通用 I/O (GPIO) 按钮驱动程序报告给 Windows，基于的按钮数组定义的 GPIO 资源接收的中断。
 ms.assetid: 7D96E1CB-3406-4D61-9D5C-65BC6BFD1FFA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6f0c40026327c04bb08d41e0927643dfc18518e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326097"
 ---
-# <a name="button-reporting"></a>报告的按钮
+# <a name="button-reporting"></a>按钮报告
 
 
 在框通用 I/O (GPIO) 按钮驱动程序报告给 Windows，基于的按钮数组定义的 GPIO 资源接收的中断。
@@ -20,7 +20,7 @@ ms.locfileid: "56547017"
 
 **表 1 GPIO 按钮报告**
 
-| 按钮        | 需要\_CRS 可唤醒 | 需要在 SOC GPIO | 边缘 Reporting (假定 ActiveLow) |
+| Button        | 需要\_CRS 可唤醒 | 需要在 SOC GPIO | 边缘 Reporting (假定 ActiveLow) |
 |---------------|-------------------------|----------------------|-------------------------------------|
 | Windows       | 是                     | 是                  | 两者                                |
 | 调高音量     | 是                     | 是                  | 两者                                |
@@ -40,7 +40,7 @@ ms.locfileid: "56547017"
 
 **表 2 会触发报告非 GPIO 按钮**
 
-| 个别按钮报告 | 来源              | 使用要求      | 报表触发器         | 重复 |
+| 个别按钮报告 | Source              | 使用要求      | 报表触发器         | 重复 |
 |-----------------------------|---------------------|-------------------------|------------------------|----------|
 | 电源                       | 系统控制      | 0x84 （电源）            | 物理按钮 – 向上一级   | 否       |
 | Windows                     | 键盘            | 0xE3 (Win)              | 物理按钮 – 向上一级   | 否       |

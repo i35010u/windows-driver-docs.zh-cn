@@ -1,17 +1,17 @@
 ---
-title: 评估没有输入参数的控制方法
-description: 评估没有输入参数的控制方法
+title: 评估不带输入参数的控制方法
+description: 评估不带输入参数的控制方法
 ms.assetid: dd989b4d-46db-4fe3-aa7b-8dbfe37057cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 334fa6bab425915bb4aaeec4721f2450e63c2b96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328838"
 ---
-# <a name="evaluating-a-control-method-without-input-arguments"></a>评估没有输入参数的控制方法
+# <a name="evaluating-a-control-method-without-input-arguments"></a>评估不带输入参数的控制方法
 
 
 若要以同步方式评估则不使用输入的参数的控制方法，设备的驱动程序发送[ **IOCTL\_ACPI\_EVAL\_方法**](https://msdn.microsoft.com/library/windows/hardware/ff536148)请求或[ **IOCTL\_ACPI\_EVAL\_方法\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)到设备的请求。 使用这两个这些请求的一般过程所述[评估 ACPI 控件方法以同步方式](evaluating-acpi-control-methods-synchronously.md)。 使用以下两个请求的特定区别是，如下所示：

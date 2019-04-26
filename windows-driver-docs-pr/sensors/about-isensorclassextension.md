@@ -5,11 +5,11 @@ ms.assetid: 1f55f28a-796a-40e5-9995-e6a28761b9a4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af3c76e885cb050b4751f598fbe02ed7673105b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325955"
 ---
 # <a name="about-isensorclassextension"></a>关于 ISensorClassExtension
 

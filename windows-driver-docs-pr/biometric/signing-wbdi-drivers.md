@@ -5,11 +5,11 @@ ms.assetid: 1BE83F60-4A04-457E-BD31-5E6F104A3505
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfd484b2aac839ec3227de9f0fde097b245cf6c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328365"
 ---
 # <a name="signing-wbdi-drivers"></a>为 WBDI 驱动程序签名
 

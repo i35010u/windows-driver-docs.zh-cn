@@ -5,11 +5,11 @@ ms.assetid: 47E24D50-6007-4CD7-91C5-2D72788106B8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a42f6c4b07bf02d3a8889a50a3dde80db5c5ff25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326099"
 ---
 # <a name="gpio-buttons-and-indicators-supplemental-testing"></a>GPIO 按钮和指示器实现测试
 

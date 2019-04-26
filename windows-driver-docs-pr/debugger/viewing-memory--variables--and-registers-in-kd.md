@@ -1,17 +1,17 @@
 ---
-title: 查看和编辑内存中 KD
-description: 查看和编辑内存中 KD
+title: 在 KD 中查看和编辑内存
+description: 在 KD 中查看和编辑内存
 ms.assetid: 7E40F32F-C7B4-44A2-B3F9-84D673013EB2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e5f10729960d63ee57d570f4ead32ab083cc2a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325923"
 ---
-# <a name="viewing-and-editing-memory-in-kd"></a>查看和编辑内存中 KD
+# <a name="viewing-and-editing-memory-in-kd"></a>在 KD 中查看和编辑内存
 
 
 ## <a name="span-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanviewing-and-editing-memory"></a><span id="Viewing_and_Editing_Memory"></span><span id="viewing_and_editing_memory"></span><span id="VIEWING_AND_EDITING_MEMORY"></span>查看和编辑内存

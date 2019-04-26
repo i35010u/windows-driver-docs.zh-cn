@@ -5,11 +5,11 @@ ms.assetid: 289bdf85-9138-4920-a61f-050c51077d3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a3a9803c7f335985abe3baa2929a17d1e9d02a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328754"
 ---
 # <a name="programming-guidelines"></a>编程指南
 

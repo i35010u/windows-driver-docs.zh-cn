@@ -1,17 +1,17 @@
 ---
-title: 语音呼叫期间数据包数据服务连接
-description: 语音呼叫期间数据包数据服务连接
+title: 数据包数据服务连接期间的语音呼叫
+description: 数据包数据服务连接期间的语音呼叫
 ms.assetid: 441d2fea-eb39-4af5-a8de-c288c81be99a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b60c20acd9c88d3119c6df8e07f742a93598848c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327595"
 ---
-# <a name="voice-calls-during-packet-data-service-connections"></a>语音呼叫期间数据包数据服务连接
+# <a name="voice-calls-during-packet-data-service-connections"></a>数据包数据服务连接期间的语音呼叫
 
 
 下图表示微型端口驱动程序时语音呼叫位于数据包数据服务处于活动状态时应遵循的过程。 关系图使用 1xRTT 作为示例，但该过程适用于其他的无线接口。 在下图中所述的过程仅适用于返回的微型端口驱动程序**WwanVoiceClassSeparateVoiceData**中**WwanVoiceClass** OID 的响应中的成员\_WWAN\_设备\_CAPS*查询*请求。 粗体表示 OID 标识符或事务流控制中的标签和中常规文本的标签表示 OID 结构中的重要标志。

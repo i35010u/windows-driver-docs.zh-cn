@@ -5,11 +5,11 @@ ms.assetid: d25e37e2-2e29-4bf9-8150-221ebef88c87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a1f45d2daa9dea6ba789ed5d00d4184d62fe507
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328473"
 ---
 # <a name="wavert-port-driver"></a>WaveRT 端口驱动程序
 

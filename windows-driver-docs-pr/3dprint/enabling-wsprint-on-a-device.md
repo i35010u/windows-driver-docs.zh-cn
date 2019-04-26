@@ -4,11 +4,11 @@ description: 使用这些设置在设备上启用 WSPrint 2.0
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5942989ce749569d87966d3ea403aab5cca803c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325461"
 ---
 # <a name="enable-wsprint-20-on-a-device"></a>在设备上启用 WSPrint 2.0
 
@@ -87,7 +87,7 @@ WSDPRINT\MS3DCompatE2D2
 
 WSPrint 2.0 的详细信息，请参阅以下资源：
 
-[对于打印设备上实现 Web 服务](https://go.microsoft.com/fwlink/p/?linkid=867155)
+[在用于打印的设备上实现 Web 服务](https://go.microsoft.com/fwlink/p/?linkid=867155)
 
 [WSPrint 2.0 规范](https://go.microsoft.com/fwlink/p/?LinkId=534008) 
 

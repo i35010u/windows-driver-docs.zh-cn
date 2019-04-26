@@ -1,17 +1,17 @@
 ---
-title: 运行方式系统
+title: RunAs System
 description: TAEF 作为本地系统运行测试。
 ms.assetid: E1138F36-D043-458A-8424-C649854CB7EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c4e4828404dfe8cb55c8461cc89e567ed7cfa0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326006"
 ---
-# <a name="runas-system"></a>运行方式系统
+# <a name="runas-system"></a>RunAs System
 
 
 TAEF 作为本地系统运行测试。
@@ -49,7 +49,7 @@ class MyTests
 };
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [RunAs](runas.md)

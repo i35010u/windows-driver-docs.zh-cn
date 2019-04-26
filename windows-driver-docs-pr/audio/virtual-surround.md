@@ -5,11 +5,11 @@ ms.assetid: be68a531-6691-4db1-ad85-d56e77ee82e2
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 49077027100bb4aa273d46ee5b97df9bed4f82ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328505"
 ---
 # <a name="virtual-surround"></a>虚拟环绕
 

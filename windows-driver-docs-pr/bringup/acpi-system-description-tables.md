@@ -5,11 +5,11 @@ ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 07/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8392a2f25f3a62be193cfd93bb62d9c4bc9f27a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328113"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 

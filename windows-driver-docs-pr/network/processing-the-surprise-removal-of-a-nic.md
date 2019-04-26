@@ -1,6 +1,6 @@
 ---
-title: 处理 NIC 被意外删除
-description: 处理 NIC 被意外删除
+title: 处理 NIC 意外删除
+description: 处理 NIC 意外删除
 ms.assetid: c7de3bbc-5c7a-4669-a28e-086435fa9782
 keywords:
 - 意外删除 WDK 网络
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 130659d1e11473fdb81bc425ba6a8f8821df5b33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327633"
 ---
-# <a name="processing-the-surprise-removal-of-a-nic"></a>处理 NIC 被意外删除
+# <a name="processing-the-surprise-removal-of-a-nic"></a>处理 NIC 意外删除
 
 
 

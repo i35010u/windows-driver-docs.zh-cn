@@ -5,11 +5,11 @@ ms.assetid: b4b0980b-db87-44e8-842c-afce0c8df0a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2a9230c4286efe8a39a2a3f7fdbee8c2a8cf327
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328008"
 ---
 # <a name="efidisplaypowerstate"></a>EFI\_DISPLAY\_POWER\_STATE
 

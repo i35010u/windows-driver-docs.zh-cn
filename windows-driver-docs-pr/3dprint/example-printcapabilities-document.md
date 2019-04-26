@@ -5,11 +5,11 @@ ms.assetid: 0FCEFC25-C22F-44BD-9693-B3DBE6F6D314
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f26649f3d38363e4ce4c3c36ddfb8df279d5d228
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325417"
 ---
 # <a name="printcapabilities-document-example"></a>PrintCapabilities 文档示例
 

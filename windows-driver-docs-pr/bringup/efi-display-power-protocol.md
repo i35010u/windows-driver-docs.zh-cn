@@ -5,11 +5,11 @@ ms.assetid: 61ccf856-7e0b-4f1b-9be9-7b8a31339a6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 646406e0af3a813e986c3d804f64f279bff9f668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328015"
 ---
 # <a name="efidisplaypowerprotocol"></a>EFI\_DISPLAY\_电源\_协议
 

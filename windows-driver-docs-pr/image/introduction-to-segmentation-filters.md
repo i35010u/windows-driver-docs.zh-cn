@@ -1,17 +1,17 @@
 ---
-title: 分段的筛选器简介
-description: 分段的筛选器简介
+title: 分段筛选器简介
+description: 分段筛选器简介
 ms.assetid: 3f73aa08-c3ef-4e97-9e3e-a1f0325cd599
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec74a5e0932326c049c8735c343cdb5b1239050f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327066"
 ---
-# <a name="introduction-to-segmentation-filters"></a>分段的筛选器简介
+# <a name="introduction-to-segmentation-filters"></a>分段筛选器简介
 
 
 

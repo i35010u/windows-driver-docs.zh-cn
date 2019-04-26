@@ -1,6 +1,6 @@
 ---
-title: 支持多个 PDEVs
-description: 支持多个 PDEVs
+title: 支持多个 PDEV
+description: 支持多个 PDEV
 ms.assetid: e06fe2da-b677-4649-bf7a-09a8f2ddfc6b
 keywords:
 - 显示驱动程序 WDK Windows 2000 中，桌面管理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73767e0a78153195ca162eb8dc5a3805f09374fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330609"
 ---
-# <a name="supporting-multiple-pdevs"></a>支持多个 PDEVs
+# <a name="supporting-multiple-pdevs"></a>支持多个 PDEV
 
 
 ## <span id="ddk_supporting_multiple_pdevs_gg"></span><span id="DDK_SUPPORTING_MULTIPLE_PDEVS_GG"></span>

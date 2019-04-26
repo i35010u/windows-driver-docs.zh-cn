@@ -1,17 +1,17 @@
 ---
-title: 设备安装程序类的概述
-description: 设备安装程序类的概述
+title: 设备安装程序类概述
+description: 设备安装程序类概述
 ms.assetid: 318ec3f4-f2c2-437c-a767-494ac240cb89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 433dec1ec7f9de7b0113e04bdeabdce8472be9db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330232"
 ---
-# <a name="overview-of-device-setup-classes"></a>设备安装程序类的概述
+# <a name="overview-of-device-setup-classes"></a>设备安装程序类概述
 
 
 若要简化设备安装，设备设置和配置相同的方式进行分组到设备安装程序类。 例如，SCSI 媒体更换器设备分为 MediumChanger 设备安装程序类。 设备安装程序类定义中安装设备的安装程序类和所涉及的类共同安装程序。

@@ -1,15 +1,15 @@
 ---
-title: 调试使用 Visual Studio 的用户模式进程
+title: 使用 Visual Studio 调试用户模式进程
 description: 在 Microsoft Visual Studio 中，可以使用 Windows 用户模式调试器附加到正在运行的进程或重新生成并附加到新的进程。
 ms.assetid: C19D1B6F-B97B-4C1B-AD84-AC974C5F5C8C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f04f48700e6a6633d84e8be61ec6bb2faedf155
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327350"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingvisualstudiospandebugging-a-user-mode-process-using-visual-studio"></a><span id="debugger.debugging_a_user-mode_process_using_visual_studio"></span>调试使用 Visual Studio 的用户模式进程
 

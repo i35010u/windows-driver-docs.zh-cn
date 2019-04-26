@@ -5,11 +5,11 @@ ms.assetid: 9005966A-CCC2-478C-9221-56007B7FADFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 502b99e61f97df9585478d4a02fda524acdb72fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328458"
 ---
 # <a name="windows-10-whats-new-for-audio-drivers"></a>Windows 10：What's New for 音频驱动程序
 
@@ -87,7 +87,7 @@ Windows 10 中已完成工作以减少在 OS 中的延迟。 无需更改任何�
 <tr class="odd">
 <td align="left"><strong>模式</strong></td>
 <td align="left"><strong>呈现/捕获</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">原始</td>
@@ -142,7 +142,7 @@ Windows 10 中已完成工作以减少在 OS 中的延迟。 无需更改任何�
 
 |                |                                                                                                       |
 |----------------|-------------------------------------------------------------------------------------------------------|
-| **类别**   | **描述**                                                                                       |
+| **类别**   | **说明**                                                                                       |
 | 电影\*        | 电影、 视频中，对话框 (替换 ForegroundOnlyMedia)                                              |
 | 媒体\*        | 媒体的播放 (替换 BackgroundCapableMedia) 的默认类别                                 |
 | 游戏聊天\*    | 中的游戏用户之间的沟通 （Windows 10 中的新类别）                                      |

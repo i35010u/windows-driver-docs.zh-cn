@@ -5,11 +5,11 @@ ms.assetid: 1F0CBFC4-F641-4D82-9173-C89218E822B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ec29efb414e47f69866dba34ad695b4763dcb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325707"
 ---
 # <a name="device-control-keywords"></a>设备控制关键字
 
@@ -48,7 +48,7 @@ Psk3d:Job3DOutputArea 属性应该用于定义可以实际打印设备的区域�
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，它必须包含 Job3DOutputAreaWidth、 Job3DOutputAreaDepth 和 Job3DOutputAreaHeight 属性，并且可能包含 Job3DOutputAreaMesh。</p>
-<p><strong>子项：</strong>ReplTest1</p>
+<p><strong>子项：</strong>值</p>
 <p><strong>xsi: type:</strong>不可用</p>
 <p><strong>值：</strong>OutputDimensions</p>
 <p><strong>描述:</strong>OutputDimensions 包含 3 个构成每个输出区域维度的属性集。</p></td>
@@ -110,7 +110,7 @@ Job3DOutputArea 关键字的用法
 </thead>
 <tbody>
 <tr class="odd">
-<td>“属性”</td>
+<td>名称</td>
 <td>psk3d:Job3DOutputAreaWidth</td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ Job3DOutputArea 关键字的用法
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>ReplTest1</p>
+<p><strong>子项：</strong>值</p>
 <p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>值：</strong>OutputWidth</p>
 <p><strong>描述:</strong>OutputWidth 必须包含大于 0，它等于微米沿 X 轴，输出区域的宽度的整数。</p></td>
@@ -165,7 +165,7 @@ Job3DOutputArea 关键字的用法
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>ReplTest1</p>
+<p><strong>子项：</strong>值</p>
 <p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>值：</strong>OutputDepth</p>
 <p><strong>描述:</strong>OutputDepth 必须包含大于 0，它等于微米输出区域沿 Y 轴的深度的整数。</p></td>
@@ -289,7 +289,7 @@ Job3DOutputArea 关键字的用法
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>值：</strong></p>
 <p><strong>描述:</strong>要用于此打印机现代打印对话框中的工作流应用的包名称</p></td>
@@ -375,7 +375,7 @@ Job3DWSDAPackageFamilyName 关键字的用法
 </thead>
 <tbody>
 <tr class="odd">
-<td>“属性”</td>
+<td>名称</td>
 <td>psk3d:Job3D3MFVersion</td>
 </tr>
 <tr class="even">
@@ -389,7 +389,7 @@ Job3DWSDAPackageFamilyName 关键字的用法
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>ReplTest1</p>
+<p><strong>子项：</strong>值</p>
 <p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>值：</strong></p>
 <p><strong>描述:</strong>定义 3MF core 版本作为输入设备支持的 URI 命名空间。</p></td>

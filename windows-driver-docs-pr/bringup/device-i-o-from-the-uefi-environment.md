@@ -1,17 +1,17 @@
 ---
-title: 设备 I/O 从 UEFI 环境
+title: 来自 UEFI 环境的设备 I/O
 description: 当 Windows OS 加载程序调用 UpdateCapsule 函数时，将执行 CapsuleHeaderArray 中包含每个 capsule。
 ms.assetid: 843B177F-CD1F-47E6-8F35-0A0FFA8FA192
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ee06201013d4f4874021c3a1211b8586026dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328065"
 ---
-# <a name="device-io-from-the-uefi-environment"></a>设备 I/O 从 UEFI 环境
+# <a name="device-io-from-the-uefi-environment"></a>来自 UEFI 环境的设备 I/O
 
 
 当 Windows OS 加载程序调用 UpdateCapsule 函数时，将执行 CapsuleHeaderArray 中包含每个 capsule。 封装的执行顺序是依赖于 UEFI 固件实现，并 capsule 无法进行任何这一假设条件及其执行顺序相对于其他马蹄形或依赖于其他马蹄形。 每个 capsule 是自包含的有效负载，其中包含这两个可执行 UEFI 代码来管理更新和固件映像。

@@ -5,11 +5,11 @@ ms.assetid: 7b600d18-343e-4c22-b1e9-5dcc83d88695
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c51b1297822e443bd1b93ae9f00f62a591194f20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325835"
 ---
 # <a name="wdbgexts-memory-access"></a>WdbgExts 内存访问
 

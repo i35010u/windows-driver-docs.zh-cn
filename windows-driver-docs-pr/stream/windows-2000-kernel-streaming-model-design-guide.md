@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a463708fe04dbb3758adcff45c7cb9380cec4059
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327403"
 ---
 # <a name="windows-2000-kernel-streaming-model-design-guide"></a>Windows 2000 内核流式处理模型设计指南
 

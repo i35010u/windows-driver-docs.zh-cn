@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cf6bb9c1d7209f46ba2efd38455cfbea32a356c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325385"
 ---
 # <a name="bug-check-bug-check-0x356-xboxeractrlcstimeout"></a>Bug 检查 Bug 检查 0x356:XBOX\_ERACTRL\_CS\_超时
 

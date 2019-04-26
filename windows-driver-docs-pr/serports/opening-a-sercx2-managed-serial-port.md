@@ -5,11 +5,11 @@ ms.assetid: CBFE1789-0D60-480A-B467-4690DFF88AAC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a68d07a9106363dd2f126630059d6b875076770c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331133"
 ---
 # <a name="opening-a-sercx2-managed-serial-port"></a>打开 SerCx2 托管串行端口
 
@@ -18,7 +18,7 @@ ms.locfileid: "56522039"
 
 串行控制器是 16550 通用异步接收器/转换器 (UART) 或兼容的设备。 有关详细信息，请参阅[串行控制器驱动程序概述](serial-drivers-overview.md)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

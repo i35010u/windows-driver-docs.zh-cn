@@ -5,11 +5,11 @@ ms.assetid: 718ae583-254d-4807-b8e2-5eb39017c097
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d9a944f9b572fc5f1b585edeebf45b9c8015e270
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325275"
 ---
 # <a name="mssmhbaprotocolstatistics-wmi-class"></a>MS\_SMHBA\_PROTOCOLSTATISTICS WMI 类
 

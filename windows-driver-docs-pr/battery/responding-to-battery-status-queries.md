@@ -1,6 +1,6 @@
 ---
-title: 响应的电池状态查询
-description: 响应的电池状态查询
+title: 响应电池状态查询
+description: 响应电池状态查询
 ms.assetid: 756d7dd3-c4cc-4185-95cf-5a28ce86cacc
 keywords:
 - 电池状态 WDK
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe40c89cdb124b5397d86b4abeb76645ab713132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328429"
 ---
-# <a name="responding-to-battery-status-queries"></a>响应的电池状态查询
+# <a name="responding-to-battery-status-queries"></a>响应电池状态查询
 
 
 ## <span id="ddk_responding_to_battery_status_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_STATUS_QUERIES_DG"></span>

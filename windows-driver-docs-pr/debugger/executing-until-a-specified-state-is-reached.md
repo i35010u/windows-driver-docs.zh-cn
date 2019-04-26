@@ -1,6 +1,6 @@
 ---
-title: 达到执行之前指定的状态
-description: 达到执行之前指定的状态
+title: 一直执行到出现指定的状态为止
+description: 一直执行到出现指定的状态为止
 ms.assetid: 0657a7bf-4d72-4248-9e45-d79d51b91139
 keywords:
 - 达到执行到指定的状态
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b49c5dee6c4e08093349fc75ae19f3686104a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329745"
 ---
-# <a name="executing-until-a-specified-state-is-reached"></a>达到执行之前指定的状态
+# <a name="executing-until-a-specified-state-is-reached"></a>一直执行到出现指定的状态为止
 
 
 ## <span id="ddk_determining_the_acl_of_an_object_dbg"></span><span id="DDK_DETERMINING_THE_ACL_OF_AN_OBJECT_DBG"></span>

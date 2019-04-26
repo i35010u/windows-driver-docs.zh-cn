@@ -1,17 +1,17 @@
 ---
-title: 检查数据包和 Stream 数据
-description: 检查数据包和 Stream 数据
+title: 检查数据包和流数据
+description: 检查数据包和流数据
 ms.assetid: 8bc5dc92-98aa-4457-a2a9-1a62a8ba0d9c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8d683a82d8ea5a6f17ad90adb5b2ee19397d67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324921"
 ---
-# <a name="inspecting-packet-and-stream-data"></a>检查数据包和 Stream 数据
+# <a name="inspecting-packet-and-stream-data"></a>检查数据包和流数据
 
 
 以下主题讨论如何使用 WFP 检查数据包和流数据：

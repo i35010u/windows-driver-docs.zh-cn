@@ -1,6 +1,6 @@
 ---
-title: 处理对以异步方式进行分类的标注
-description: 处理对以异步方式进行分类的标注
+title: 以异步方式处理分类标注
+description: 以异步方式处理分类标注
 ms.assetid: 1026f917-7b21-4b01-8cfd-4d14e92106fe
 keywords:
 - 异步处理的 WFP 分类标注 WDK Windows 筛选平台
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17932ca1577d5817bc23c46c5f7359424751429b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327707"
 ---
-# <a name="processing-classify-callouts-asynchronously"></a>处理对以异步方式进行分类的标注
+# <a name="processing-classify-callouts-asynchronously"></a>以异步方式处理分类标注
 
 
 WFP 标注驱动程序可以授权或拒绝网络操作，或者承认或放弃网络数据包时，通过返回的操作类型**FWP\_操作\_允许**， **FWP\_操作\_继续**，或**FWP\_操作\_阻止**从[ *classifyFn* ](https://msdn.microsoft.com/library/windows/hardware/ff544890)标注函数。 经常标注驱动程序不能返回检查决策及其*classifyFn*函数指示的信息，如与可分类字段、 元数据或数据包，直至可以转发到另一个处理例如，用户模式应用程序的组件。 在这些情况下可能需要在稍后的某个时间以异步方式进行决策。

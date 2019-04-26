@@ -1,19 +1,19 @@
 ---
-title: DirectX 9.0 版发行说明
-description: DirectX 9.0 版发行说明
+title: DirectX 9.0 发行说明
+description: DirectX 9.0 发行说明
 ms.assetid: b5a35a59-762e-42df-9599-fa1175928810
 keywords:
 - DirectX 9.0 发行说明 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ab860bed121849362e65fcd27e75bf96054e68d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327963"
 ---
-# <a name="directx-90-release-notes"></a>DirectX 9.0 版发行说明
+# <a name="directx-90-release-notes"></a>DirectX 9.0 发行说明
 
 
 ## <span id="ddk_directx_9_0_release_notes_gg"></span><span id="DDK_DIRECTX_9_0_RELEASE_NOTES_GG"></span>

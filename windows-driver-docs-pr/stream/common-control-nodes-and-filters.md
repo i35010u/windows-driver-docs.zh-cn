@@ -1,6 +1,6 @@
 ---
-title: 常见的控制节点和筛选器
-description: 常见的控制节点和筛选器
+title: 常见控制节点和筛选器
+description: 常见控制节点和筛选器
 ms.assetid: 33e0605b-0fd1-4506-a48b-427976e94dfc
 keywords:
 - 控制节点 WDK BDA
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5548cbfb31875ed0c5cdad67b1895ce00a87124e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329738"
 ---
-# <a name="common-control-nodes-and-filters"></a>常见的控制节点和筛选器
+# <a name="common-control-nodes-and-filters"></a>常见控制节点和筛选器
 
 
 

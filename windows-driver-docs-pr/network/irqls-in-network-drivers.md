@@ -1,6 +1,6 @@
 ---
-title: 网络驱动程序中于 Irql
-description: 网络驱动程序中于 Irql
+title: 网络驱动程序中的 IRQL
+description: 网络驱动程序中的 IRQL
 ms.assetid: d8720084-460e-4b62-90de-abfd96cd6364
 keywords:
 - 网络驱动程序 WDK，于 Irql
@@ -8,13 +8,13 @@ keywords:
 ms.date: 11/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e417d5d605c9de6d97b5bce77120ec8eb550ae9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327677"
 ---
-# <a name="irqls-in-network-drivers"></a>网络驱动程序中于 Irql
+# <a name="irqls-in-network-drivers"></a>网络驱动程序中的 IRQL
 
 在系统确定 IRQL 运行每个驱动程序函数调用的 NDIS (一个被动\_级别&lt;调度\_级别&lt;DIRQL)。 例如，微型端口驱动程序的[初始化](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，[暂停](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数，[重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)函数，以及[关闭](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)函数通常运行在被动\_级别，但如果系统要求它可以在更高版本的 IRQL 调用重置和关机函数。 因此，NDIS 中间或协议驱动程序永远不会运行在 DIRQL 中断 DIRQL，在代码运行。 所有其他 NDIS 驱动程序函数运行或以下的 IRQL = 调度\_级别。
 

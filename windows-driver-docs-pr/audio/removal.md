@@ -5,11 +5,11 @@ ms.assetid: 99B6C09E-2467-4124-9F9A-5116586BB38C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b13e5dcb722b69a131ebbca0d4439dffef02a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328716"
 ---
 # <a name="hfp-device-removal"></a>HFP 设备删除
 
@@ -28,7 +28,7 @@ HFP 设备删除本主题将讨论从 （叶） 删除蓝牙免提配置文件 (
 
 5. 调用 KsDeleteFilterFactory 删除表示 HFP 设备与已删除接口关联的筛选器工厂。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [理论上的操作](theory-of-operation.md)  
 
 

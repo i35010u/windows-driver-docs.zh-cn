@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2629817079e25d5787f9be7ac64098b88f93aeed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327877"
 ---
 # <a name="imageinformation-element"></a>ImageInformation 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56546384"
 </wscn:ImageInformation>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -87,7 +87,7 @@ ms.locfileid: "56546384"
 
 WSD 扫描服务将返回**ImageInformation**通过元素[ **CreateScanJobResponse** ](createscanjobresponse.md)操作元素。 扫描应用程序可以使用中指定的数据**ImageInformation**进行解码的图像文件中的图像。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CreateScanJobResponse**](createscanjobresponse.md)

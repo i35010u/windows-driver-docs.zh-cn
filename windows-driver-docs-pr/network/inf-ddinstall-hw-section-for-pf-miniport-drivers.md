@@ -1,17 +1,17 @@
 ---
-title: PF 微型端口驱动程序 INF DDInstall.HW 部分
-description: PF 微型端口驱动程序 INF DDInstall.HW 部分
+title: PF 微型端口驱动程序的 INF DDInstall.HW 节
+description: PF 微型端口驱动程序的 INF DDInstall.HW 节
 ms.assetid: 65399462-4AF1-401C-87CB-BF387CA0B053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48849e69ccaf708fc9b31340cd023ec5018a9080
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327716"
 ---
-# <a name="inf-ddinstallhw-section-for-pf-miniport-drivers"></a>PF 微型端口驱动程序 INF DDInstall.HW 部分
+# <a name="inf-ddinstallhw-section-for-pf-miniport-drivers"></a>PF 微型端口驱动程序的 INF DDInstall.HW 节
 
 
 INF <em>DDInstall</em>**。HW**部分通常用于设置在注册表中，任何特定于设备的信息是否显式**AddReg**指令或使用**Include**和**需要**条目。

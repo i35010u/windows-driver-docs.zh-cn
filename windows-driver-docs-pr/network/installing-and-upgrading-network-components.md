@@ -19,11 +19,11 @@ keywords:
 ms.date: 12/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 718e71a810441957ff1947102d9c747dc0494c9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324895"
 ---
 # <a name="installing-and-upgrading-network-components"></a>安装和升级网络组件
 

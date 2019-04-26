@@ -5,11 +5,11 @@ ms.assetid: 07fbdd27-59a9-4fe1-8662-6c2489efdb7f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf5bde84c25e0936ad7ccdd4a47eb8a2d564f65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329881"
 ---
 # <a name="how-to-include-the-source-line-number-in-the-trace-message-prefix"></a>如何在跟踪消息前缀中包含的源行号
 

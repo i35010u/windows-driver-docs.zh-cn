@@ -1,19 +1,19 @@
 ---
-title: 设备元数据系统的概述
-description: 设备元数据系统的概述
+title: 设备元数据系统概述
+description: 设备元数据系统概述
 ms.assetid: 1ba0d1d7-da5a-4871-b47d-201f6bd35fac
 keywords:
 - 设备元数据系统 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 599795650ecc4ce94f0b79e0beb8d7e124b5643c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330227"
 ---
-# <a name="overview-of-the-device-metadata-system"></a>设备元数据系统的概述
+# <a name="overview-of-the-device-metadata-system"></a>设备元数据系统概述
 
 
 从 Windows 7 开始，设备元数据系统提供了一个端到端过程来分发设备元数据包。 此系统的组件进行了以下主题：

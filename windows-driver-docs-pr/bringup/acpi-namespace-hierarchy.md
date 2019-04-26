@@ -5,11 +5,11 @@ ms.assetid: 14B5F787-65B1-4BC3-90CD-D4AD1C8044D1
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ef292aa814845a758fd29ead682b525250e1a4a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328121"
 ---
 # <a name="acpi-namespace-hierarchy"></a>ACPI 命名空间层次结构
 

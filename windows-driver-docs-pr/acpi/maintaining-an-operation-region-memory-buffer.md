@@ -12,11 +12,11 @@ keywords:
 ms.date: 01/24/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8abd68c6a0e1d10f05d3f996348b799da1e3ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328820"
 ---
 # <a name="maintaining-an-operation-region-memory-buffer"></a>维护操作区域内存缓冲区
 

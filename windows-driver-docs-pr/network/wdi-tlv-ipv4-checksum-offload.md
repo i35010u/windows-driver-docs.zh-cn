@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_IPV4_CHECKSUM_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 856197e294922427b34d1e28f4795aa575c82453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327599"
 ---
 # <a name="wditlvipv4checksumoffload"></a>WDI\_TLV\_IPV4\_CHECKSUM\_OFFLOAD
 
@@ -56,7 +56,7 @@ WDI\_TLV\_IPV4\_校验和\_卸载是包含校验和卸载功能的 IPv4 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,17 +1,17 @@
 ---
-title: 认证和签名的更新包
+title: 认证和签署更新包
 description: 固件更新驱动程序包以交付，并且必须通过相同的验证和签名的进程作为常规驱动程序包。
 ms.assetid: 054E98A5-E860-43BD-9AD2-7CCE55D2164B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1152a98b27d4a9d17a82374f37003d6b535c362f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328118"
 ---
-# <a name="certifying-and-signing-the-update-package"></a>认证和签名的更新包
+# <a name="certifying-and-signing-the-update-package"></a>认证和签署更新包
 
 
 由于固件更新为驱动程序包发送，因此，它将需要遍历所有相同的验证和签名的进程作为常规驱动程序包。 驱动程序包将需要通过 Windows 硬件实验室工具包 (Windows HLK) 测试，并且将需要将应用提交到合作伙伴中心进行签名。 签名之后，将回复到提交者分发驱动程序包。

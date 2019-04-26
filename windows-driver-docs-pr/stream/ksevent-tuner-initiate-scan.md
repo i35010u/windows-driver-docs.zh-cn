@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff8630acc99a3a65d13de67cb18ad7c26fe170da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327417"
 ---
 # <a name="kseventtunerinitiatescan"></a>KSEVENT\_调谐器\_启动\_扫描
 
@@ -79,7 +79,7 @@ KSEVENT\_调谐器\_启动\_扫描事件请求驱动程序启动扫描操作，�
 
 每当一个新通道，必须完成扫描操作或信号找到。 然后，该驱动程序返回通过扫描状态[ **KSPROPERTY\_调谐器\_扫描\_状态**](ksproperty-tuner-scan-status.md)属性。 只要新的通道找到即使该驱动程序确定的最新找到的通道与以前应用的标准不匹配，则必须完成扫描。 应用程序必须处理新的通道信息，必须重新提交扫描请求以查找具有相同的信号的另一个通道标准。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT\_调谐器\_启动\_扫描\_S**](https://msdn.microsoft.com/library/windows/hardware/ff561901)

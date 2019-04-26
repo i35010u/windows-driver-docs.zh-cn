@@ -1,17 +1,17 @@
 ---
-title: 评估采用输入的参数的控制方法
-description: 评估采用输入的参数的控制方法
+title: 评估采用输入参数的控制方法
+description: 评估采用输入参数的控制方法
 ms.assetid: 3a4be8a8-0906-4d38-bf6d-f245e6ae236a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cad6bc7b279af08b276a0e90c1fd8e2fecf0248
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328835"
 ---
-# <a name="evaluating-a-control-method-that-takes-input-arguments"></a>评估采用输入的参数的控制方法
+# <a name="evaluating-a-control-method-that-takes-input-arguments"></a>评估采用输入参数的控制方法
 
 
 若要以同步方式评估采用输入的参数的控制方法，设备的驱动程序发送[ **IOCTL\_ACPI\_EVAL\_方法**](https://msdn.microsoft.com/library/windows/hardware/ff536148)请求或[**IOCTL\_ACPI\_EVAL\_方法\_EX** ](https://msdn.microsoft.com/library/windows/hardware/ff536149)到设备的请求。 使用这两个这些请求的一般过程所述[评估 ACPI 控件方法以同步方式](evaluating-acpi-control-methods-synchronously.md)。 使用以下两个请求的特定区别是，如下所示：

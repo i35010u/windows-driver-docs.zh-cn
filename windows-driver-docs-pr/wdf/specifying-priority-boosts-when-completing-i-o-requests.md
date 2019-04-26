@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c04f7acf369affb090a23d011a9c27611e88ae12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325125"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>完成 I/O 请求时指定优先级提升
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RECEIVE_QUEUE_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6342877c9ca16d6380253701ff7a4044b90e038f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330200"
 ---
 # <a name="ndisstatusreceivequeuestate"></a>NDIS\_状态\_接收\_队列\_状态
 
@@ -41,7 +41,7 @@ NDIS 6.20 和更高版本支持的虚拟机队列接口的微型端口驱动程�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.20 及更高版本。</p></td>
 </tr>
 <tr class="even">

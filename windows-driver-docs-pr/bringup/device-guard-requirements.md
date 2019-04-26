@@ -1,17 +1,17 @@
 ---
-title: 保护多个实现
+title: 安全 MOR 实现
 description: 描述的行为和 MemoryOverwriteRequestControlLock UEFI 变量，修订版 2 的使用情况。
 ms.assetid: 94F42629-3B76-4EB1-A5FA-4FA13C932CED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2beead842d1b671b84de6eb0ea167d88534417e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328095"
 ---
-# <a name="secure-mor-implementation"></a>保护多个实现
+# <a name="secure-mor-implementation"></a>安全 MOR 实现
 
 
 **摘要**
@@ -44,7 +44,7 @@ ms.locfileid: "56520161"
 
 **请注意**  调用此缓解*MorLock*，必须在所有新系统上实现并不仅限于系统的受信任的平台模块。 修订版本 2 添加了新功能*解锁*，以缓解启动性能问题，尤其是在较大内存系统上的。
 
-**请注意 2**  有关 ACPI \_DSM 控件方法用于设置 MOR 位状态 (中的第 6 节所述[PC 客户端工作组平台重置攻击缓解规范，版本 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)):    
+**请注意 2**  有关 ACPI \_DSM 控件方法用于设置 MOR 位状态 (中的第 6 节所述[PC 客户端工作组平台重置攻击缓解规范，版本 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)):  
 Microsoft 建议删除此\_DSM 现代 BIOS 实现方法。  但是，如果 BIOS 实现这\_DSM 方法，它必须遵守 MorLock 的状态。  如果锁定 MorLock，带或不带密钥，这\_DSM 方法时不能更改 MOR 和返回值 1 对应于"常规失败"。  定义没有 ACPI 的机制来解锁 MorLock 修订版本 2。  请注意，Windows 不直接调用此\_DSM 方法，因为 Windows 7，并认为它已被否决。  某些 BIOS*间接*调用此\_DSM 方法时 Windows 将调用 ACPI \_PTS 作为 MOR 自动检测的干净关闭的实现 (如的第 2.3 节中所述[PC 客户端工作组平台重置攻击缓解规范，版本 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870))。  此 ACPI \_MOR 自动检测的 PTS 实现是在不完善的安全，不应使用。
 
 ## <a name="memoryoverwriterequestcontrollock"></a>MemoryOverwriteRequestControlLock

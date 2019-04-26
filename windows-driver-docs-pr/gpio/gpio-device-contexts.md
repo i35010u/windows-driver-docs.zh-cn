@@ -5,11 +5,11 @@ ms.assetid: 4BE99C71-9BA6-44E3-A54F-DE8C3440A474
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18038820c85b31fe193472e74df1c9f606444dea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326149"
 ---
 # <a name="gpio-device-contexts"></a>GPIO 设备上下文
 

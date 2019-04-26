@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f21cc89dd5d464b6d993178b70342571b1f2707f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327030"
 ---
 # <a name="determining-the-buffering-method-for-an-io-operation"></a>确定 I/O 操作的缓冲方法
 

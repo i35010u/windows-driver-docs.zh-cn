@@ -5,11 +5,11 @@ ms.assetid: 148D044E-B736-4526-BDC5-2C180A590C21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 434a1e10747edb83b8deb74a14d9b45bc2257f4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328765"
 ---
 # <a name="portcls-registry-power-settings"></a>PortCls 注册表电源设置
 

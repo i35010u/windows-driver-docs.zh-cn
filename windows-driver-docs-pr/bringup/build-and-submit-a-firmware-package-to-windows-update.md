@@ -1,16 +1,16 @@
 ---
-title: 生成并提交固件包到 Windows Update (WU)
-description: 生成并提交固件包到 Windows Update (WU)
+title: 生成固件包并将其提交到 Windows 更新 (WU)
+description: 生成固件包并将其提交到 Windows 更新 (WU)
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e94d3d264a4d8bb4afecbe7e597f10f62eee9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328100"
 ---
-# <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>生成并提交固件包到 Windows Update (WU)
+# <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>生成固件包并将其提交到 Windows 更新 (WU)
 
 由于固件更新为驱动程序包发送，因此，它遵循为设备驱动程序包的相同的验证和签名过程。
 
@@ -81,7 +81,7 @@ C:\Desktop
 
 [通过固件驱动程序包的系统和设备固件更新](https://docs.microsoft.com/windows-hardware/drivers/bringup/system-and-device-firmware-updates-via-a-firmware-driver-package)
 
-[通过使用 Windows HLK 疑难解答设备基础知识可靠性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
+[使用 Windows HLK 排查设备基本组件可靠性测试问题](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
 
 [Windows 硬件认证博客](https://blogs.msdn.microsoft.com/windows_hardware_certification)
 

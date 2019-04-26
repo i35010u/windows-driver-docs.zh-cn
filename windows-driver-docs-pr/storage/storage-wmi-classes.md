@@ -5,11 +5,11 @@ ms.assetid: 32cfb51e-b02a-4624-88ea-804d823256a6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1a9584df30f6cc3807a1f42e7fee24163ac14fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325726"
 ---
 # <a name="storage-management-and-wmi-classes"></a>存储管理和 WMI 类
 

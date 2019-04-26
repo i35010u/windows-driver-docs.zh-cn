@@ -5,11 +5,11 @@ ms.assetid: 7E896BC3-839F-4119-BF79-A7BB4CA61CDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78dec8376f7df295cfee5dac65ed75e13d30de87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327775"
 ---
 # <a name="indicating-ndis-qos-parameter-status"></a>指示 NDIS QoS 参数状态
 

@@ -1,6 +1,6 @@
 ---
-title: 初始化使用 WDM 下边缘的微型端口驱动程序
-description: 初始化使用 WDM 下边缘的微型端口驱动程序
+title: 初始化包含 WDM 下边缘的微型端口驱动程序
+description: 初始化包含 WDM 下边缘的微型端口驱动程序
 ms.assetid: 1c5b0ec0-5d63-423d-af21-ffd8990f6160
 keywords:
 - NDIS WDM 微型端口驱动程序 WDK 连接网络、 初始化
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1db5a94c97047f82ac2a1f48b8f64f0b1a6a023
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325010"
 ---
-# <a name="initializing-a-miniport-driver-with-a-wdm-lower-edge"></a>初始化使用 WDM 下边缘的微型端口驱动程序
+# <a name="initializing-a-miniport-driver-with-a-wdm-lower-edge"></a>初始化包含 WDM 下边缘的微型端口驱动程序
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 初始化支持 NDK 微型端口驱动程序
+title: 初始化支持 NDK 的微型端口驱动程序
 description: 支持 Network Direct 内核 (NDK) 的微型端口驱动程序初始化其他微型端口驱动程序的方式相同。 但是，它还必须注册其他 NDKPI 入口点。
 ms.assetid: 9C9799AB-75A8-4E9A-8702-D389B73522DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1650f8766e58d6521eb11d46bb613d58364d951b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324947"
 ---
-# <a name="initializing-an-ndk-capable-miniport-driver"></a>初始化支持 NDK 微型端口驱动程序
+# <a name="initializing-an-ndk-capable-miniport-driver"></a>初始化支持 NDK 的微型端口驱动程序
 
 
 支持 Network Direct 内核 (NDK) 的微型端口驱动程序初始化其他微型端口驱动程序的方式相同。 但是，它还必须注册其他 NDKPI 入口点。

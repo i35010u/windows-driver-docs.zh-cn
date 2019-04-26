@@ -5,11 +5,11 @@ ms.assetid: 3ceeb54f-ecc5-40c5-b0a8-8c6f86203f1c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c0738f9bc137a4adaf8e753a1631f7088c0a9265
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327038"
 ---
 # <a name="iscsiipaddress-wmi-class"></a>ISCSI\_IP\_解决 WMI 类
 

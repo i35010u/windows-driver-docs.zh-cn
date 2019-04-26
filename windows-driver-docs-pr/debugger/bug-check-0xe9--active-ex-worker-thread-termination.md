@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d99c7e46a83e32c2994150413ce71c535e9185
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331020"
 ---
 # <a name="bug-check-0xe9-activeexworkerthreadtermination"></a>Bug 检查 0xE9：ACTIVE\_EX\_辅助角色\_线程\_终止
 

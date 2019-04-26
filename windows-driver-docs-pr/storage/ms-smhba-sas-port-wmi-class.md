@@ -5,11 +5,11 @@ ms.assetid: d3528212-f884-4db8-aadc-eb4ca15814da
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 170483796e69491975bb9211fb83ed3f1a93b70a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325299"
 ---
 # <a name="mssmhbasasport-wmi-class"></a>MS\_SMHBA\_SAS\_端口 WMI 类
 

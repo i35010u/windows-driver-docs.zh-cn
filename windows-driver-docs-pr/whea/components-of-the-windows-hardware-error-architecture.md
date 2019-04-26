@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f121486c0b7b207e865f0ab9657a1a0c6cc2f90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327384"
 ---
 # <a name="components-of-the-windows-hardware-error-architecture"></a>Windows 硬件错误体系结构的组件
 

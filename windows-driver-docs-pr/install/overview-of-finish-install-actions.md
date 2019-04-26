@@ -1,17 +1,17 @@
 ---
-title: 完成安装操作概述
-description: 完成安装操作概述
+title: Finish-Install 操作概述
+description: Finish-Install 操作概述
 ms.assetid: 986ac884-2970-4eda-a800-88fd30b95562
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0ea4716a90be11cc970705621d0ab19ff65b682
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330255"
 ---
-# <a name="overview-of-finish-install-actions"></a>完成安装操作概述
+# <a name="overview-of-finish-install-actions"></a>Finish-Install 操作概述
 
 
 如果*安装程序*（安装程序类、 类共同安装程序中或设备共同安装程序） 提供了完成安装操作的设备，Windows 运行完成安装操作*后*所有其他设备设备的安装操作已完成，并启动设备。 在新系统上，完成安装操作运行第一次完成 Windows 后启动操作系统。

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b5c7c3789db267533e211852f9f4b44ebb68516
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328529"
 ---
 # <a name="vendor-audio-driver-options"></a>供应商音频驱动程序选项
 

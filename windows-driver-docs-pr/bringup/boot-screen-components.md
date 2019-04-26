@@ -5,11 +5,11 @@ ms.assetid: 7ACD6BFC-AB92-4BCC-A9E1-9574D959B577
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f07f71943a6ad1a5433d26da7c66b01be0f8e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328108"
 ---
 # <a name="boot-screen-components"></a>启动屏幕组件
 
@@ -104,7 +104,7 @@ BGRT 中两个重要的字段是"图像偏移量 X"和"图像偏移量 Y"。 这
 </thead>
 <tbody>
 <tr class="odd">
-<td>版本</td>
+<td>Version</td>
 <td>1</td>
 <td>28</td>
 <td>标识实现显示 capsule 的修订版本。 此字段将设置为 1。</td>
@@ -151,7 +151,7 @@ BGRT 中两个重要的字段是"图像偏移量 X"和"图像偏移量 Y"。 这
 <img src="images/imageoffsetrelativetodisplay.png" alt="Image offset value relative to display" /></td>
 </tr>
 <tr class="even">
-<td>图像</td>
+<td>Image</td>
 <td>不可用</td>
 <td>44</td>
 <td>一个字节的数组，其中包含嵌入的位图，以显示固件更新过程中。 位图可以是 24 位位图像素格式 0xRRGGBB 或 32 位位图像素格式 0xrrRRGGBB，其中保留 rr。</td>

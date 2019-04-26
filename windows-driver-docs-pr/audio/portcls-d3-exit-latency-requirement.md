@@ -1,17 +1,17 @@
 ---
-title: PortCls D3 退出滞后时间要求
+title: PortCls D3 退出延迟要求
 description: 本主题讨论 Windows 端口类驱动程序 (PortCls) 如何使用新的 Windows 8 界面来操作 D3 睡眠状态的退出延迟要求。
 ms.assetid: 3CEFF85B-5A2E-4F85-BCAC-00F1773A8F4D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2844edd1faf7efb1f6e2d871266c30314b584b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328775"
 ---
-# <a name="portcls-d3-exit-latency-requirement"></a>PortCls D3 退出滞后时间要求
+# <a name="portcls-d3-exit-latency-requirement"></a>PortCls D3 退出延迟要求
 
 
 本主题讨论 Windows 端口类驱动程序 (PortCls) 如何使用新的 Windows 8 界面来操作 D3 睡眠状态的退出延迟要求。

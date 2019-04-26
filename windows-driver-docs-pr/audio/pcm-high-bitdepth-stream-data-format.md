@@ -1,6 +1,6 @@
 ---
-title: PCM 高 Bitdepth Stream 数据格式
-description: PCM 高 Bitdepth Stream 数据格式
+title: PCM 高位深度流数据格式
+description: PCM 高位深度流数据格式
 ms.assetid: 0ad63f01-4fcf-4eca-b8d6-b0b65f384455
 keywords:
 - PCM 高 bitdepth 流数据格式 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4bcaf4ab83d2e0d5c945240d5de894713fbc7c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332239"
 ---
-# <a name="pcm-high-bitdepth-stream-data-format"></a>PCM 高 Bitdepth Stream 数据格式
+# <a name="pcm-high-bitdepth-stream-data-format"></a>PCM 高位深度流数据格式
 
 
 ## <span id="pcm_high_bitdepth_stream_data_format"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_FORMAT"></span>

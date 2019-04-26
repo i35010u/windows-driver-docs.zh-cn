@@ -1,6 +1,6 @@
 ---
-title: 以同步方式评估 ACPI 控制方法
-description: 以同步方式评估 ACPI 控制方法
+title: 同步评估 ACPI 控制方法
+description: 同步评估 ACPI 控制方法
 ms.assetid: 3fd8f7bd-bfae-4846-8051-3a0023d565e4
 keywords:
 - ACPI 控制方法 WDK，以同步方式评估
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 934819d87936d2ce2b705bc3090751284415d63c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328824"
 ---
-# <a name="evaluating-acpi-control-methods-synchronously"></a>以同步方式评估 ACPI 控制方法
+# <a name="evaluating-acpi-control-methods-synchronously"></a>同步评估 ACPI 控制方法
 
 
 设备驱动程序可以使用以下设备控制请求以同步方式对设备的 ACPI 命名空间中定义的控制方法进行评估：

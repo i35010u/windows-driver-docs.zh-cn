@@ -1,17 +1,17 @@
 ---
-title: 服务中断
-description: 服务中断
+title: 为中断提供服务
+description: 为中断提供服务
 ms.assetid: 79BA75B3-E10F-4AC1-A2C5-A502BF821188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dc6865d3c35eb8d4f6b041a09ab8a84106f4350
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325159"
 ---
-# <a name="servicing-an-interrupt"></a>服务中断
+# <a name="servicing-an-interrupt"></a>为中断提供服务
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

@@ -1,6 +1,6 @@
 ---
-title: 指示从 CoNDIS WAN 微型端口驱动程序收到的数据
-description: 指示从 CoNDIS WAN 微型端口驱动程序收到的数据
+title: 指示已从 CoNDIS WAN 微型端口驱动程序收到数据
+description: 指示已从 CoNDIS WAN 微型端口驱动程序收到数据
 ms.assetid: d49ea741-df5c-4b65-b899-a751cb2b9929
 keywords:
 - CoNDIS WAN 的驱动程序 WDK 网络接收数据
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b2babe8e7ddde0ac5739a2352af8e318670a47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327727"
 ---
-# <a name="indicating-received-data-from-a-condis-wan-miniport-driver"></a>指示从 CoNDIS WAN 微型端口驱动程序收到的数据
+# <a name="indicating-received-data-from-a-condis-wan-miniport-driver"></a>指示已从 CoNDIS WAN 微型端口驱动程序收到数据
 
 
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41fbe4fc3a3688d89af2f3898732d45728d21908
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328739"
 ---
 # <a name="rendering-and-capturing-audio-content-by-using-the-usbaudio-driver"></a>使用 USBAudio 驱动程序呈现和捕获音频内容
 

@@ -1,17 +1,17 @@
 ---
-title: INF 的 HYPER-V 可扩展交换机扩展的要求
-description: INF 的 HYPER-V 可扩展交换机扩展的要求
+title: Hyper-V 可扩展交换机扩展的 INF 要求
+description: Hyper-V 可扩展交换机扩展的 INF 要求
 ms.assetid: 378F619A-C799-4330-A388-9955A67251F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e67236218d221904c02b654f65bf766faaa46ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327705"
 ---
-# <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>INF 的 HYPER-V 可扩展交换机扩展的要求
+# <a name="inf-requirements-for-hyper-v-extensible-switch-extensions"></a>Hyper-V 可扩展交换机扩展的 INF 要求
 
 
 NDIS 筛选器驱动程序作为开发的 HYPER-V 可扩展交换机扩展。 因此，扩展的 INF 要求基于所有 NDIS 筛选器驱动程序的 INF 要求。 在创建可扩展交换机扩展的 INF 文件时，您应将 INF 设置用于修改或监视筛选器驱动程序。 有关这些设置的详细信息，请参阅[筛选器驱动程序的 INF 文件设置](inf-file-settings-for-filter-drivers.md)。

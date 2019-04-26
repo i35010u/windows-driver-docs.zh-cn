@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 881419fbf354b7ff25379fceaa51ce01476ef8e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327316"
 ---
 # <a name="devpkeydeviceremovalpolicy"></a>DEVPKEY_Device_RemovalPolicy
 
@@ -76,7 +76,7 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

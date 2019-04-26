@@ -5,11 +5,11 @@ ms.assetid: 694daed4-d794-4835-a052-27cc498baa10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f183d4e1b6996e6be4f6f9179e4449dbcc886b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330253"
 ---
 # <a name="how-the-application-releases-the-wia-device"></a>应用程序如何释放 WIA 设备
 

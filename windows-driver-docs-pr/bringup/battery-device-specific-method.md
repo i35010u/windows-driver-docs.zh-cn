@@ -1,17 +1,17 @@
 ---
-title: 电池特定于设备的方法
+title: 电池的特定于设备的方法
 description: 本主题介绍 _DSM 控件方法和被动热量电池管理的参数。
 ms.assetid: 622803F4-2548-4E8A-A330-179ABDF374AD
 ms.date: 05/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d31df93181b72a9c42767fe2e494ea5c5a8962e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328105"
 ---
-# <a name="battery-device-specific-method"></a>电池特定于设备的方法
+# <a name="battery-device-specific-method"></a>电池的特定于设备的方法
 
 
 若要支持电池的被动热量管理平台，Microsoft 定义\_DSM 方法进行通信平台固件散热限制限制由电池的散热区域设置。

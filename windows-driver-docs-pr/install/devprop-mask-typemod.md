@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 209ed77f0fbe7dc6f9193a5a4a64e3caa3dfe465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327426"
 ---
 # <a name="devpropmasktypemod"></a>DEVPROP_MASK_TYPEMOD
 
@@ -43,13 +43,13 @@ ms.locfileid: "56525742"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_MASK_TYPE**](devprop-mask-type.md)

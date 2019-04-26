@@ -5,11 +5,11 @@ ms.assetid: 7fb31e18-a2f0-48fe-b0a8-cf4aca7d27d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda84d8ae0a3435906738a902a68cdfbb0c70616
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324911"
 ---
 # <a name="installation-requirements-for-network-filter-drivers"></a>网络筛选器驱动程序的安装要求
 

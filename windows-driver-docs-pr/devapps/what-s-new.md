@@ -1,20 +1,20 @@
 ---
 title: 什么是 UWP 设备应用程序的新增功能
-description: 本部分提供了大致了解什么是 UWP 设备应用程序的新增功能。
+description: 本部分概述 UWP 设备应用的新增功能。
 ms.assetid: AF18ACFD-EA38-4ABD-9369-3974C019E132
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c7c164aa7b7058524141cc7a77f4954a4cc177e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327617"
 ---
 # <a name="whats-new-for-uwp-device-apps"></a>什么是 UWP 设备应用程序的新增功能
 
 
-本部分提供了大致了解什么是 UWP 设备应用程序的新增功能。 有关设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+本部分概述 UWP 设备应用的新增功能。 有关设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
 
 **提示**  Windows 运行时设备 Api 不需要的设备元数据。 这意味着您的应用程序不必是一个 UWP 设备应用来使用它们。 UWP 应用可以使用这些 Api 来访问 USB、 人体学接口设备 (HID)、 蓝牙 GATT、 蓝牙 RFCOMM、 Wi-Fi Direct 设备和的详细信息。 有关详细信息，请参阅[集成设备](https://go.microsoft.com/fwlink/p/?LinkId=533279)。
 
@@ -23,7 +23,7 @@ ms.locfileid: "56546987"
 ## <a name="span-idwhatsnewforwindows10spanspan-idwhatsnewforwindows10spanspan-idwhatsnewforwindows10spanwhats-new-for-windows-10"></a><span id="What_s_new_for_Windows_10"></span><span id="what_s_new_for_windows_10"></span><span id="WHAT_S_NEW_FOR_WINDOWS_10"></span>什么是 Windows 10 的新增功能
 
 
-Windows 10 中，没有到 Microsoft Store 设备应用程序功能更改。 Windows 8.1 处理为生成、 测试，并提交 UWP 设备应用程序将继续适用于 Windows 10。 但是，我们建议开发通用 Windows 平台 (UWP) 应用程序使用自定义功能。 有关详细信息，请参阅[硬件支持应用程序 (HSA):面向应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+Windows 10 中，没有到 Microsoft Store 设备应用程序功能更改。 Windows 8.1 处理为生成、 测试，并提交 UWP 设备应用程序将继续适用于 Windows 10。 但是，我们建议开发通用 Windows 平台 (UWP) 应用程序使用自定义功能。 有关详细信息，请参阅[硬件支持应用程序 (HSA):适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
 ## <a name="span-iddevicemetadatawizardspanspan-iddevicemetadatawizardspanspan-iddevicemetadatawizardspandevice-metadata-wizard"></a><span id="Device_metadata_wizard"></span><span id="device_metadata_wizard"></span><span id="DEVICE_METADATA_WIZARD"></span>设备元数据向导
 

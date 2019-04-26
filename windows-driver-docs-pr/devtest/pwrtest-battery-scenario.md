@@ -5,11 +5,11 @@ ms.assetid: e0bad871-a826-4951-9a84-93c9b1aa0653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37c7323d6b3ff4a5cb1b299ebc0acade9cd1707f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327347"
 ---
 # <a name="pwrtest-battery-scenario"></a>PwrTest 电池方案
 
@@ -166,7 +166,7 @@ pwrtest /battery /c:4 /i:1000
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

@@ -1,19 +1,19 @@
 ---
-title: 专有扬声器配置实用程序
-description: 专有扬声器配置实用程序
+title: 专有的 Speaker-Configuration 实用程序
+description: 专有的 Speaker-Configuration 实用程序
 ms.assetid: d04b8c1b-13c6-422f-b13a-909f7074ac75
 keywords:
 - 专有扬声器配置实用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5836daea553c951b31be90b572ce59b19c660d0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328719"
 ---
-# <a name="proprietary-speaker-configuration-utilities"></a>专有扬声器配置实用程序
+# <a name="proprietary-speaker-configuration-utilities"></a>专有的 Speaker-Configuration 实用程序
 
 
 ## <span id="proprietary_speaker_configuration_utilities"></span><span id="PROPRIETARY_SPEAKER_CONFIGURATION_UTILITIES"></span>

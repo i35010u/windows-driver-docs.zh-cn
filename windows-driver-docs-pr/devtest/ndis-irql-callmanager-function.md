@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f453fd4021e215dad8208600ac4c25b062388bc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325109"
 ---
 # <a name="irqlcallmanagerfunction-rule-ndis"></a>Irql\_CallManager\_函数规则 (ndis)
 
@@ -75,7 +75,7 @@ ms.locfileid: "56554645"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisCmActivateVc**](https://msdn.microsoft.com/library/windows/hardware/ff561649)

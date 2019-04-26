@@ -5,11 +5,11 @@ ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3c8d0a8e8015545f12f82bc4fe4e5e01829004f
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326168"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>为 Windows 8.1 编写位置传感器驱动程序
 
@@ -226,7 +226,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>含义</th>
 <th>位置 API 状态</th>
 </tr>

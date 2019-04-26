@@ -1,6 +1,6 @@
 ---
-title: 使用 Static Driver Verifier 报表
-description: 使用 Static Driver Verifier 报表
+title: 使用静态驱动程序验证程序报告
+description: 使用静态驱动程序验证程序报告
 ms.assetid: ca6eaa53-cee5-4caf-b1e1-035ea800779b
 keywords:
 - 静态驱动程序验证程序 WDK，验证结果
@@ -24,13 +24,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cc0afed9f938254957b4cd9d8c08a83e6102158
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327273"
 ---
-# <a name="using-the-static-driver-verifier-report"></a>使用 Static Driver Verifier 报表
+# <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
 
 SDV 报表是以交互方式显示的验证结果。 本部分介绍如何使用 SDV 报表要在驱动程序中查找编码错误。 有关报表的详细信息，windows 和 windows 中的元素的功能，请参阅[静态驱动程序验证工具报告](static-driver-verifier-report.md)。

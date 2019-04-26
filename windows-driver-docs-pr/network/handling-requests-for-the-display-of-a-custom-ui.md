@@ -1,6 +1,6 @@
 ---
-title: 显示的数据的自定义 UI 处理的请求
-description: 显示的数据的自定义 UI 处理的请求
+title: 处理自定义 UI 显示请求
+description: 处理自定义 UI 显示请求
 ms.assetid: 77c67469-ac59-449a-87d9-8535527059cb
 keywords:
 - IHV UI 扩展 DLL WDK 本机 802.11、 自定义 UI 显示请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca14bab257ed52d17af2f224c1b84f61700ee562
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325717"
 ---
-# <a name="handling-requests-for-the-display-of-a-custom-ui"></a>显示的数据的自定义 UI 处理的请求
+# <a name="handling-requests-for-the-display-of-a-custom-ui"></a>处理自定义 UI 显示请求
 
 
 

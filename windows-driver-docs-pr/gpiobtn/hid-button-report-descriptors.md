@@ -1,17 +1,17 @@
 ---
-title: HID 的按钮报告描述符
+title: HID 按钮报告描述符
 description: 本主题包含示例 HID 按钮报告描述符。
 ms.assetid: FB1D482A-A147-4362-969F-7A37E5ECF0B4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 48dc708730e7069639a18d0478fba5ded495d457
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326094"
 ---
-# <a name="hid-button-report-descriptors"></a>HID 的按钮报告描述符
+# <a name="hid-button-report-descriptors"></a>HID 按钮报告描述符
 
 
 本主题包含示例 HID 按钮报告描述符。

@@ -5,11 +5,11 @@ ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ebce26adba414e14a4685b2f664248c99bfe23
-ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57693050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325301"
 ---
 # <a name="using-the-spb-io-request-interface"></a>使用 SPB I/O 请求接口
 

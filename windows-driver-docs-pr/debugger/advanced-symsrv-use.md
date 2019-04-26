@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 566163bd79334c22c2b094ab08975af1b03b439c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327367"
 ---
 # <a name="advanced-symsrv-use"></a>SymSrv 的高级用法
 

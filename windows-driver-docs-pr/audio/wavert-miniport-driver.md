@@ -5,11 +5,11 @@ ms.assetid: 154dc921-424f-4021-8f17-5482ceef99a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4ae39f1364f90e8f9900e132d471c10688e7528
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328466"
 ---
 # <a name="wavert-miniport-driver"></a>WaveRT 微型端口驱动程序
 

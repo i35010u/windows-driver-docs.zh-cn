@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a64acbc2d146aea7a6f13765b4cb62cb1224351d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325147"
 ---
 # <a name="sending-io-requests-to-general-io-targets"></a>将 I/O 请求发送到常规 I/O 目标
 

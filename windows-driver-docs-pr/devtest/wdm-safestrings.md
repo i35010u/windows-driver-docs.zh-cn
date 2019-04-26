@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b2b0d542473ecffe88968f770c5b03045856057
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325065"
 ---
 # <a name="safestrings-rule-wdm"></a>SafeStrings 规则 (wdm)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56519866"
 </tbody>
 </table>
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [**使用安全的字符串函数**](https://msdn.microsoft.com/library/windows/hardware/ff565508)

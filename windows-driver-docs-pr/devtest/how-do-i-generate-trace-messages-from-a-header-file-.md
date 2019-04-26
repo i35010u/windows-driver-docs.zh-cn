@@ -5,13 +5,13 @@ ms.assetid: 00b97f26-90e2-4efe-8bba-e3ffe7ba90ea
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 564b4f70862ab858ac0fd698e91d816c3340472e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329871"
 ---
-# <a name="how-do-i-generate-trace-messages-from-a-header-file"></a>如何从标头文件中生成跟踪消息？
+# <a name="how-do-i-generate-trace-messages-from-a-header-file"></a>如何从标头文件生成跟踪消息？
 
 
 若要从具有文件扩展名.c、.c + +、.cpp 和.cxx 以外的源文件生成跟踪消息，请添加 **-ext**参数运行\_WPP 宏调用 Windows 软件跟踪预处理器。

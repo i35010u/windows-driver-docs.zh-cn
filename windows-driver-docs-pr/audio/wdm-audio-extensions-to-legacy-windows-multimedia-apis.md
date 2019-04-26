@@ -1,6 +1,6 @@
 ---
-title: WDM 音频扩展到旧版 Windows 多媒体 Api
-description: WDM 音频扩展到旧版 Windows 多媒体 Api
+title: 针对旧版 Windows 多媒体 API 的 WDM 音频扩展
+description: 针对旧版 Windows 多媒体 API 的 WDM 音频扩展
 ms.assetid: a1009b7f-3720-454f-a128-ae148f781edc
 keywords:
 - WDM 音频扩展 WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14860d7795db633e22ce113c4ad67738e86c7cb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328471"
 ---
-# <a name="wdm-audio-extensions-to-legacy-windows-multimedia-apis"></a>WDM 音频扩展到旧版 Windows 多媒体 Api
+# <a name="wdm-audio-extensions-to-legacy-windows-multimedia-apis"></a>针对旧版 Windows 多媒体 API 的 WDM 音频扩展
 
 
 ## <span id="wdm_audio_extensions_to_legacy_windows_multimedia_apis"></span><span id="WDM_AUDIO_EXTENSIONS_TO_LEGACY_WINDOWS_MULTIMEDIA_APIS"></span>

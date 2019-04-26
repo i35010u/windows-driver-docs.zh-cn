@@ -1,6 +1,6 @@
 ---
-title: 编写电池 Miniclass 驱动程序
-description: 编写电池 Miniclass 驱动程序
+title: 编写电池微型类驱动程序
+description: 编写电池微型类驱动程序
 ms.assetid: 4135af1a-1448-46ad-af6f-26ce8aee6b1d
 keywords:
 - 电池 miniclass 驱动程序 WDK
@@ -12,21 +12,21 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc25453bdb285ae71edd8fd64d59296ccc9115a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328418"
 ---
-# <a name="writing-battery-miniclass-drivers"></a>编写电池 Miniclass 驱动程序
+# <a name="writing-battery-miniclass-drivers"></a>编写电池微型类驱动程序
 
 
 ## <span id="ddk_writing_battery_miniclass_drivers_dg"></span><span id="DDK_WRITING_BATTERY_MINICLASS_DRIVERS_DG"></span>
 
 
-电池通常具有一对驱动程序： Microsoft 提供，在泛型电池类驱动程序和编写专门为该单个类型的电池的 miniclass 驱动程序。
+电池通常有一对驱动程序：Microsoft 提供的通用电池类驱动程序，以及专门为具体电池类型编写的小型驱动程序。
 
-在类驱动程序定义的系统中的电池的整体功能和与电源管理器进行交互。
+类驱动程序定义系统中电池的整体功能，并与电源管理器进行交互。
 
 Miniclass 驱动程序处理特定于设备的功能，例如添加和删除电池，以及跟踪的其容量和费用。 Miniclass 驱动程序将导出的类驱动程序调用以获取有关它控制的设备的信息的例程。
 

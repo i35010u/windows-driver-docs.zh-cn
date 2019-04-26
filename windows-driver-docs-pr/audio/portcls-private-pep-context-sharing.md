@@ -1,17 +1,17 @@
 ---
-title: 共享 PortCls 专用 PEP 上下文
+title: PortCls 专用 PEP 上下文共享
 description: 从 Windows 8 开始，微型端口驱动程序可以共享与 Windows 电源引擎插件 (PEP) 的专用上下文使用 IPortClsRuntimePower，一个新的接口。
 ms.assetid: 27A0DD72-8AD0-4F38-B17C-9BDD63C5E7E1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a6770297adafe12a4cb6d01637c2766c232039e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328763"
 ---
-# <a name="portcls-private-pep-context-sharing"></a>共享 PortCls 专用 PEP 上下文
+# <a name="portcls-private-pep-context-sharing"></a>PortCls 专用 PEP 上下文共享
 
 
 从 Windows 8 开始，微型端口驱动程序可以共享与 Windows 电源引擎插件 (PEP) 的专用上下文使用 IPortClsRuntimePower，一个新的接口。

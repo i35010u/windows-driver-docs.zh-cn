@@ -1,20 +1,20 @@
 ---
 title: GPIO 驱动程序支持概述
-description: 从 Windows 8，GPIO 框架扩展开始 (GpioClx) 简化了编写 GPIO 控制器设备的驱动程序的任务。
+description: 从 Windows 8 开始，GPIO 框架扩展 (GpioClx) 简化了为 GPIO 控制器设备编写驱动程序的任务。
 ms.assetid: 450E7F80-D9AC-4F52-8062-2DA5343C8D0F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd49c365f797b1271206f9af87ecdde0a16b686
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326158"
 ---
 # <a name="gpio-driver-support-overview"></a>GPIO 驱动程序支持概述
 
 
-从 Windows 8，GPIO 框架扩展开始 (GpioClx) 简化了编写 GPIO 控制器设备的驱动程序的任务。 此外，GpioClx 为连接到 GPIO 插针的外围设备提供驱动程序支持。 GpioClx，是对内核模式驱动程序框架 (KMDF) 系统提供的扩展，执行处理任务所共有的 GPIO 设备类的成员。
+从 Windows 8 开始，GPIO 框架扩展 (GpioClx) 简化了为 GPIO 控制器设备编写驱动程序的任务。 另外，GpioClx 还为连接到 GPIO 引脚的外围设备提供驱动程序支持。 GpioClx 是系统提供的针对内核模式驱动程序框架 (KMDF) 的扩展，其执行的处理任务对于 GPIO 设备类的成员来说很常见。
 
 此概述讨论了以下主题：
 

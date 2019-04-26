@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 7a14f8551a6a03841072c36587c15ad5ff9925eb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330202"
 ---
 # <a name="oidwdisetconnectionquality"></a>OID\_WDI\_设置\_连接\_质量
 

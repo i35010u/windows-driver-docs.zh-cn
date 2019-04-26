@@ -1,17 +1,17 @@
 ---
-title: PNP-X 的设备的容器 Id
-description: PNP-X 的设备的容器 Id
+title: PnP-X 设备的容器 ID
+description: PnP-X 设备的容器 ID
 ms.assetid: 6a1ea4e9-e672-4f37-ab26-932591fe4da4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1250b34309df64f25321c0e6154bdc0bb0032574
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329805"
 ---
-# <a name="container-ids-for-pnp-x-devices"></a>PNP-X 的设备的容器 Id
+# <a name="container-ids-for-pnp-x-devices"></a>PnP-X 设备的容器 ID
 
 
 即插即用扩展 (PNP-X) 通过基于 IP 的网络扩展了 Windows 即插即用和 Play (PnP)，以支持连接到计算机的设备。 有关 PNP-X 的详细信息，请参阅[PnP x:Windows 规范的即插扩展。](https://go.microsoft.com/fwlink/p/?linkid=142398                  )

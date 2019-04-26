@@ -1,17 +1,17 @@
 ---
-title: 被动级别 Isr
+title: 被动级别 ISR
 description: 作为一个选项，从 Windows 8、 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以注册其中断服务例程 (Isr) 在被动级别运行。
 ms.assetid: E7556046-D85C-4CD1-8C27-578BF5CAFF2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4530aab95ee8564db0230bcaccca66efbd588aa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326123"
 ---
-# <a name="passive-level-isrs"></a>被动级别 Isr
+# <a name="passive-level-isrs"></a>被动级别 ISR
 
 
 作为一个选项，从 Windows 8、 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以注册其中断服务例程 (Isr) 在被动级别运行。

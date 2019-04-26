@@ -5,11 +5,11 @@ ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af9bc003e24c90fa776d8161af8879e8ca9d1fc6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330700"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>确定内部相机 （UWP 设备应用） 的位置
 

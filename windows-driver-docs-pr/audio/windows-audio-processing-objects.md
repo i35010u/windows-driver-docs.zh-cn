@@ -5,11 +5,11 @@ ms.assetid: 67EA9A13-1AA6-4BF2-A16D-518075EA7E37
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a936c745b51a7dff16210190caea6abea3948cf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328451"
 ---
 # <a name="windows-audio-processing-objects"></a>Windows 音频处理对象
 

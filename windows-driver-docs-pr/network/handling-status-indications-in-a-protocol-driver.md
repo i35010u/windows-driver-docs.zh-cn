@@ -1,17 +1,17 @@
 ---
-title: 处理状态指示在协议驱动程序
-description: 处理状态指示在协议驱动程序
+title: 处理协议驱动程序中的状态指示
+description: 处理协议驱动程序中的状态指示
 ms.assetid: 1a021919-fd27-49b2-95a0-5ccb9029abd4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eba1b6cc8279c844ed15e36f14c43879cab2679
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325719"
 ---
-# <a name="handling-status-indications-in-a-protocol-driver"></a>处理状态指示在协议驱动程序
+# <a name="handling-status-indications-in-a-protocol-driver"></a>处理协议驱动程序中的状态指示
 
 
 

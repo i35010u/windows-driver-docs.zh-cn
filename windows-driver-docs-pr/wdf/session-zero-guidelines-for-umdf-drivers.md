@@ -1,17 +1,17 @@
 ---
-title: 会话零 UMDF 驱动程序的指导原则
-description: 会话零 UMDF 驱动程序的指导原则
+title: UMDF 驱动程序的初级指南
+description: UMDF 驱动程序的初级指南
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed6d6c7dac34cbcd9a74420ad6ab2d47a7d0805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325133"
 ---
-# <a name="session-zero-guidelines-for-umdf-drivers"></a>会话零 UMDF 驱动程序的指导原则
+# <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
 
 从 Windows Vista 中，操作系统将隔离服务和运行后续会话 0，而应用程序中的系统进程、 更高版本带编号的会话。 由于 UMDF 主机进程 (WUDFHost.exe) 是一个在会话 0 中运行的系统进程，UMDF 驱动程序是独立于应用程序。 因此，开发您的驱动程序时必须使用以下准则：

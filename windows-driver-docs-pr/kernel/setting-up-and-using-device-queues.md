@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54294a7b37a30053b879193607d3dd8923029378
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325027"
 ---
 # <a name="setting-up-and-using-device-queues"></a>设置和使用设备队列
 

@@ -5,11 +5,11 @@ ms.assetid: 8ed13c75-86d1-4ac0-9f44-05162521b915
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b021560320ab68f7a1fc7399c150171c712a58a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328375"
 ---
 # <a name="roadmap-for-developing-biometric-drivers"></a>开发生物识别驱动程序的路线图
 
@@ -36,7 +36,7 @@ ms.locfileid: "56563374"
 
     [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)演示如何实现使用 USB I/O 目标的基于 UMDF WBDI 驱动程序。
 
-    如果使用 UMDF，Microsoft 建议您在 c + + 中的生物识别驱动程序开发。
+    如果使用 UMDF，Microsoft 建议您开发在生物识别驱动程序C++。
 
 -   步骤 5：了解有关 Windows 驱动程序生成、 测试和调试的进程和工具。
 

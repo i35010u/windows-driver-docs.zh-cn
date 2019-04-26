@@ -1,5 +1,5 @@
 ---
-title: vertarget （显示目标计算机版本）
+title: vertarget（显示目标计算机版本）
 description: Vertarget 命令显示目标计算机的 Microsoft Windows 操作系统的当前版本。
 ms.assetid: 27aa26ac-6343-412f-a0ed-6d5e3546827b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e67a23a69ce81d08da03f3a2a78a9c3c4bf9fd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325930"
 ---
-# <a name="vertarget-show-target-computer-version"></a>vertarget （显示目标计算机版本）
+# <a name="vertarget-show-target-computer-version"></a>vertarget（显示目标计算机版本）
 
 
 **Vertarget**命令将显示目标计算机的 Microsoft Windows 操作系统的当前版本。

@@ -1,17 +1,17 @@
 ---
-title: 使用传感器类扩展以处理事件
+title: 使用传感器类扩展来处理事件
 description: 传感器类扩展处理传感器驱动程序和传感器 API 之间的事件链接。
 ms.assetid: A49489EF-1721-4F12-9793-6FBA76BA7976
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 795e5e55a545dc6fd42fc0979c79aeb86cb57e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326177"
 ---
-# <a name="using-the-sensor-class-extension-to-handle-events"></a>使用传感器类扩展以处理事件
+# <a name="using-the-sensor-class-extension-to-handle-events"></a>使用传感器类扩展来处理事件
 
 > [!IMPORTANT] 
 > 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。

@@ -1,6 +1,6 @@
 ---
-title: 正在启动 DMA 事务
-description: 正在启动 DMA 事务
+title: 启动 DMA 事务
+description: 启动 DMA 事务
 ms.assetid: fa26ef08-01c0-4502-9cb3-865000242e4a
 keywords:
 - DMA 事务 WDK KMDF，启动
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68c7a60344d3a9f86d034b679d9b10fb04f87cea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325129"
 ---
-# <a name="starting-a-dma-transaction"></a>正在启动 DMA 事务
+# <a name="starting-a-dma-transaction"></a>启动 DMA 事务
 
 
 \[仅适用于 KMDF\]

@@ -1,15 +1,15 @@
 ---
-title: 如何在 C/c + + 宏中包括跟踪语句
-description: 如何在 C/c + + 宏中包括跟踪语句
+title: 如何将跟踪语句包括一个 C 中 /C++宏
+description: 如何将跟踪语句包括一个 C 中 /C++宏
 ms.assetid: 1ab7f87e-7dbc-49a1-b3a2-24e4d525dc8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15ed0afac0f86b5de4aee95003c3008175522e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329867"
 ---
 # <a name="how-do-i-include-a-trace-statement-in-a-cc-macro"></a>如何在 C/C++ 宏中包含跟踪语句？
 

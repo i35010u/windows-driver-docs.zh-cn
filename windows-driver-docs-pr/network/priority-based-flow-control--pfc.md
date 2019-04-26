@@ -5,11 +5,11 @@ ms.assetid: 9DD8A66F-273F-4E5A-99EF-33C2EDF3240C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f6eca784b20a3ab4eb370449e8156a6ffca3022
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328027"
 ---
 # <a name="priority-based-flow-control-pfc"></a>基于优先级的流控制 (PFC)
 

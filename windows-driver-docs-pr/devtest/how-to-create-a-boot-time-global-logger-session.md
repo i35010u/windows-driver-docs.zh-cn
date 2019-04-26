@@ -1,6 +1,6 @@
 ---
-title: 如何创建启动时全局记录器会话
-description: 如何创建启动时全局记录器会话
+title: 如何创建启动时的全局记录器会话
+description: 如何创建启动时的全局记录器会话
 ms.assetid: ddd9e1b1-d732-4ef1-a0e0-4d8e95660d7c
 keywords:
 - 全局记录器跟踪会话 WDK，创建
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3c4923f32b7f38f04c30f28ec8375168f42cbce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329747"
 ---
-# <a name="how-to-create-a-boot-time-global-logger-session"></a>如何创建启动时全局记录器会话
+# <a name="how-to-create-a-boot-time-global-logger-session"></a>如何创建启动时的全局记录器会话
 
 
 若要创建记录内核事件的全局记录器跟踪会话的最简单方法是使用[Tracelog](tracelog.md)若要创建标准的全局记录器跟踪会话，然后再添加**EnableKernelFlags**条目并将其值。 本主题描述的过程。
@@ -46,7 +46,7 @@ ms.locfileid: "56526391"
 
 有关跟踪日志命令的详细信息，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**事件\_跟踪\_属性**](https://msdn.microsoft.com/library/windows/desktop/aa363784)

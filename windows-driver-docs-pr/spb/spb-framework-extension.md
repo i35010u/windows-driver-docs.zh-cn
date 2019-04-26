@@ -1,17 +1,17 @@
 ---
-title: 存储框架扩展 (SpbCx)
+title: SPB 框架扩展 (SpbCx)
 description: 从 Windows 8 开始，存储框架扩展 (SpbCx) 是系统提供的扩展到内核模式驱动程序框架 (KMDF)。
 ms.assetid: 84015f3c-ff55-4c1a-bb52-63b6f29b99d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a3392b4f1d79c84c300324ccaf8dfac7668ebdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325725"
 ---
-# <a name="spb-framework-extension-spbcx"></a>存储框架扩展 (SpbCx)
+# <a name="spb-framework-extension-spbcx"></a>SPB 框架扩展 (SpbCx)
 
 
 从 Windows 8 开始，存储框架扩展 (SpbCx) 是对系统提供的扩展[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF)。 SpbCx 一起使用的工作原理[存储控制器驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh698221)若要执行的已连接到外围设备上的 I/O 操作[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储），如 I²C 或 SPI。

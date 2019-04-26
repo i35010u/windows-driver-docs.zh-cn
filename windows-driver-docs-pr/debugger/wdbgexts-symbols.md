@@ -7,18 +7,18 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e84d2f0573ab54d8a46e22484acc7ce742fd513d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325837"
 ---
 # <a name="wdbgexts-symbols"></a>WdbgExts 符号
 
 
 本主题提供概述的符号可以是操作使用 WdbgExts API。 有关使用中的符号的概述[调试器引擎](introduction.md#debugger-engine)，请参阅[符号](symbols.md)中[调试器引擎概述](debugger-engine-overview.md)此文档的部分。
 
-若要评估 MASM 或 c + + 表达式，使用函数[ **GetExpression** ](https://msdn.microsoft.com/library/windows/hardware/ff546683)或[ **GetExpressionEx**](https://msdn.microsoft.com/library/windows/hardware/ff546691)。
+若要评估 MASM 或C++表达式中，使用函数[ **GetExpression** ](https://msdn.microsoft.com/library/windows/hardware/ff546683)或[ **GetExpressionEx**](https://msdn.microsoft.com/library/windows/hardware/ff546691)。
 
 若要读取的结构中成员的值，使用[ **GetFieldData** ](https://msdn.microsoft.com/library/windows/hardware/ff546743)函数或，如果成员包含基元值[ **GetFieldValue** ](https://msdn.microsoft.com/library/windows/hardware/ff546781)可用。 若要确定目标的内存中的符号的实例大小，请使用[ **GetTypeSize** ](https://msdn.microsoft.com/library/windows/hardware/ff549446)函数。
 

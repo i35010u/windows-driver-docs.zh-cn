@@ -1,6 +1,6 @@
 ---
-title: 用于 KMDF 驱动程序的安全问题
-description: 用于 KMDF 驱动程序的安全问题
+title: KMDF 驱动程序的安全问题
+description: KMDF 驱动程序的安全问题
 ms.assetid: 8e72be8f-2a48-4521-810a-dd00c4295206
 keywords:
 - 安全 WDK KMDF
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 025d62fb77f975167bb658035fab4301f4dd17c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325156"
 ---
-# <a name="security-issues-for-kmdf-drivers"></a>用于 KMDF 驱动程序的安全问题
+# <a name="security-issues-for-kmdf-drivers"></a>KMDF 驱动程序的安全问题
 
 
 所有内核模式驱动程序，如基于框架的驱动程序必须可靠且安全。

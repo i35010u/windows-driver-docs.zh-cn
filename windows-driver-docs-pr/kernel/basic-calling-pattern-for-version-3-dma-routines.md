@@ -5,11 +5,11 @@ ms.assetid: 5D73120F-79F5-4C9A-8AE5-25D5CF9B06F5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4388b99b25791bd7440c3e611f65d375f4de6f29
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326047"
 ---
 # <a name="basic-calling-pattern-for-version-3-dma-routines"></a>DMA 例程版本 3 的基本调用模式
 

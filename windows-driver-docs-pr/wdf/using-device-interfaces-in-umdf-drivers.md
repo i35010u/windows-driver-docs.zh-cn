@@ -1,6 +1,6 @@
 ---
-title: 使用在 UMDF 驱动程序中的设备接口
-description: 使用在 UMDF 驱动程序中的设备接口
+title: 在 UMDF 驱动程序中使用设备接口
+description: 在 UMDF 驱动程序中使用设备接口
 ms.assetid: acb6da80-bd04-48f0-b42a-96463f091b0a
 keywords:
 - 用户模式驱动程序 WDK UMDF，设备接口
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 039fff15e83c421416746e4c93f791ec9e37149a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327168"
 ---
-# <a name="using-device-interfaces-in-umdf-drivers"></a>使用在 UMDF 驱动程序中的设备接口
+# <a name="using-device-interfaces-in-umdf-drivers"></a>在 UMDF 驱动程序中使用设备接口
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

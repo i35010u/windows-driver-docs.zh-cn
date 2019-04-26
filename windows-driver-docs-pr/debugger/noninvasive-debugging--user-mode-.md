@@ -1,6 +1,6 @@
 ---
-title: 非侵入调试 （用户模式）
-description: 非侵入调试 （用户模式）
+title: 非侵入式调试（用户模式）
+description: 非侵入式调试（用户模式）
 ms.assetid: 91f09fb1-9f5e-4081-89b3-78c95eada817
 keywords:
 - noninvasively 调试的进程
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7474dabd0cbf06f71ab7ca976aa848e4eef21a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331016"
 ---
-# <a name="noninvasive-debugging-user-mode"></a>非侵入调试 （用户模式）
+# <a name="noninvasive-debugging-user-mode"></a>非侵入式调试（用户模式）
 
 
 ## <span id="ddk_noninvasive_debugging_user_mode__dbg"></span><span id="DDK_NONINVASIVE_DEBUGGING_USER_MODE__DBG"></span>

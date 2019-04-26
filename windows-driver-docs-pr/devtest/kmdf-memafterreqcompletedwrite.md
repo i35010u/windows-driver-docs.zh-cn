@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 38ea29898488d77f09bf8918f86e06fb21c29565
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327603"
 ---
 # <a name="memafterreqcompletedwrite-rule-kmdf"></a>MemAfterReqCompletedWrite 规则 (kmdf)
 

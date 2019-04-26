@@ -5,11 +5,11 @@ ms.assetid: 48df55c4-aa5e-4157-8b90-65ad127d876b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2bacf4a97294dbf5a5888dd33f337edb0ae7e624
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326102"
 ---
 # <a name="hardware-notifications-support"></a>硬件通知支持
 

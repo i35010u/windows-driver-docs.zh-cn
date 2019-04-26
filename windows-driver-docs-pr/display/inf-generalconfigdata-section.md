@@ -1,6 +1,6 @@
 ---
-title: INF GeneralConfigData Section
-description: INF GeneralConfigData Section
+title: INF GeneralConfigData 节
+description: INF GeneralConfigData 节
 ms.assetid: 49b00396-479f-471a-8c79-bb8ef33ebcaa
 keywords:
 - GeneralConfigData 部分
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d374a91642d4eef7e36bd05e1b3472ef16735762
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325047"
 ---
-# <a name="inf-generalconfigdata-section"></a>INF GeneralConfigData Section
+# <a name="inf-generalconfigdata-section"></a>INF GeneralConfigData 节
 
 
 ## <span id="ddk_inf_generalconfigdata_section_gg"></span><span id="DDK_INF_GENERALCONFIGDATA_SECTION_GG"></span>

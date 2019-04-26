@@ -5,11 +5,11 @@ ms.assetid: 8e09d6a6-7e4f-44fc-a2b0-5f21b4ac0593
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90c43df04cdedd9d8f93d53aad2969b94abe8607
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325711"
 ---
 # <a name="storports-interface-with-storport-miniport-drivers"></a>Storport 的接口与 Storport 微型端口驱动程序
 

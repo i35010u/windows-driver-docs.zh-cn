@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9f8d4e6b4da6a48d6d8dab3df6ae450268c931c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328487"
 ---
 # <a name="wavepci-port-driver"></a>WavePci 端口驱动程序
 

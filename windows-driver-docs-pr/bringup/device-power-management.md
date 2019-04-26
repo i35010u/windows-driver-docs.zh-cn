@@ -5,11 +5,11 @@ ms.assetid: F57AD5A0-F459-4A20-BDBE-87C30CF957B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc8b420f2d84b7c9342bfab10303f761dfc22da3
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328057"
 ---
 # <a name="device-power-management"></a>设备电源管理
 

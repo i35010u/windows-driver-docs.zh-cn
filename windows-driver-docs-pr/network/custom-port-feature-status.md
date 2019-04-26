@@ -5,11 +5,11 @@ ms.assetid: 87E88302-6FEA-4D71-A80D-E7AD6D42C0BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34ba24ba8744b3b2814f6a58fd8c2291044207d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326031"
 ---
 # <a name="custom-port-feature-status"></a>自定义端口功能状态
 

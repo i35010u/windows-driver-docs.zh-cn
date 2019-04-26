@@ -1,20 +1,20 @@
 ---
 title: 基于 GPIO 的硬件资源
-description: 从 Windows 8 开始，控制 GPIO 控制器驱动程序的通用 I/O (GPIO) 插针可供其他驱动程序为系统管理硬件资源。
+description: 从 Windows 8 开始，受 GPIO 控制器驱动程序控制的常规用途 I/O (GPIO) 引脚可以作为系统管理的硬件资源供其他驱动程序使用。
 ms.assetid: 03A6ACDF-8BB7-40C0-A331-7F61F48A44DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 773ba87676a66ca840a21945c10166a5f8a1fe72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326154"
 ---
 # <a name="gpio-based-hardware-resources"></a>基于 GPIO 的硬件资源
 
 
-从 Windows 8 开始，控制 GPIO 控制器驱动程序的通用 I/O (GPIO) 插针可供其他驱动程序为系统管理硬件资源。 GPIO I/O 的 pin，pin 配置为数据输入或输出数据，都可用作新的 Windows 资源类型，即*GPIO I/O 资源*。 此外，GPIO 中断插针，这是配置为中断请求输入的 pin，都可用作普通 Windows 中断资源。
+从 Windows 8 开始，受 GPIO 控制器驱动程序控制的常规用途 I/O (GPIO) 引脚可以作为系统管理的硬件资源供其他驱动程序使用。 GPIO I/O 的引脚是已配置为数据输入或数据输出的引脚，可以作为新的 Windows 资源类型（即 *GPIO I/O 资源*）使用。 另外，GPIO 中断引脚是已配置为中断请求输入的引脚，可以作为普通 Windows 中断资源使用。
 
 GPIO I/O 资源表示一系列一个或多个 GPIO 插针的外围设备的驱动程序可以读取或写入。 Windows 隐藏有关 GPIO I/O pin 的底层实现的详细信息，以便可以将外围设备驱动程序编写为操作抽象 GPIO I/O 资源。 使用这些抽象的资源的外围设备驱动程序可跨平台而不考虑实现资源 GPIO 控制器硬件。 GPIO I/O 资源表示通过将此资源与拥有基础的 GPIO 插针或 pin 的特定 GPIO 控制器驱动程序相关联的 WDFIOTARGET 句柄。
 

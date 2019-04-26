@@ -1,6 +1,6 @@
 ---
-title: 使用 Framework 注册表项对象
-description: 使用 Framework 注册表项对象
+title: 使用框架注册表项对象
+description: 使用框架注册表项对象
 ms.assetid: 2236b4e1-2e17-4e59-b12e-70fff5fd7513
 keywords:
 - 注册表 WDK KMDF
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c21a9983f14ab9992d7001e1698b50ab677a8bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327211"
 ---
-# <a name="using-framework-registry-key-objects"></a>使用 Framework 注册表项对象
+# <a name="using-framework-registry-key-objects"></a>使用框架注册表项对象
 
 
 基于框架的驱动程序使用访问注册表*framework 注册表项对象*。 注册表项对象定义使您的驱动程序来创建、 打开和关闭注册表项; 方法添加和删除注册表值;和读取或写入分配给一个注册表值的数据。

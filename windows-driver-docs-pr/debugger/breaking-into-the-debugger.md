@@ -1,6 +1,6 @@
 ---
-title: 中断到调试器
-description: 中断到调试器
+title: 突入调试器
+description: 突入调试器
 ms.assetid: 4fec7170-7480-4a8a-b060-1c8a8c3fb9dc
 keywords:
 - 中断到调试器
@@ -14,13 +14,13 @@ keywords:
 ms.date: 08/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f10e442ea7c18f65d4ddd8330555777618dcbe0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327355"
 ---
-# <a name="breaking-into-the-debugger"></a>中断到调试器
+# <a name="breaking-into-the-debugger"></a>突入调试器
 
 
 ## <span id="ddk_breaking_into_the_debugger_dbg"></span><span id="DDK_BREAKING_INTO_THE_DEBUGGER_DBG"></span>

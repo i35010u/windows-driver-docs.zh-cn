@@ -5,11 +5,11 @@ ms.assetid: 7c6d1756-a3db-4754-9edb-af6ba1ecf65b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1957ac140db9ba79a90297385a8523e074fbbeec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328490"
 ---
 # <a name="efichecksigprotocolefichecksignatureandhash"></a>EFI\_CHECKSIG\_PROTOCOL.EfiCheckSignatureAndHash
 

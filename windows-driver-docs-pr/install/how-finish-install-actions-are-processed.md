@@ -1,6 +1,6 @@
 ---
-title: 如何处理完成安装操作
-description: 如何处理完成安装操作
+title: 如何处理 Finish-Install 操作
+description: 如何处理 Finish-Install 操作
 ms.assetid: 028cce46-018d-496e-bc99-c8bf6158c898
 keywords:
 - 完成安装操作 WDK 设备安装
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8368607b1af9f00f2a2044cfca3a6dd622ffc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325820"
 ---
-# <a name="how-finish-install-actions-are-processed"></a>如何处理完成安装操作
+# <a name="how-finish-install-actions-are-processed"></a>如何处理 Finish-Install 操作
 
 
 在通过相同的方式处理设备的完成安装操作*安装程序*（安装程序类、 类共同安装程序中或设备共同安装程序），而不考虑安装是否[ *硬件第一个安装*](hardware-first-installation.md)或通过运行安装程序，如发现新硬件向导、 更新驱动程序软件向导或供应商提供的安装程序 (来启动安装[*软件的第一个安装*](software-first-installation.md))。

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2ec9264a890e509a3247c8bffad338fe49b292
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331375"
 ---
 # <a name="irqlpspassive-rule-wdm"></a>IrqlPsPassive 规则 (wdm)
 

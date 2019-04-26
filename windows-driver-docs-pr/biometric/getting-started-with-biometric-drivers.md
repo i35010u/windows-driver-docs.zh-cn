@@ -1,19 +1,19 @@
 ---
-title: 开始使用生物识别驱动程序
-description: 开始使用生物识别驱动程序
+title: 生物识别驱动程序入门
+description: 生物识别驱动程序入门
 ms.assetid: 7f5dcac2-db0d-4ddd-9e57-886db324e38b
 keywords:
 - 生物识别驱动程序 WDK，有关生物识别驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b661f71a1c9c1e2568395d342975c47844f3797f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328393"
 ---
-# <a name="getting-started-with-biometric-drivers"></a>开始使用生物识别驱动程序
+# <a name="getting-started-with-biometric-drivers"></a>生物识别驱动程序入门
 
 
 Windows 生物识别框架 (WBF) 是 Windows 7 和更高版本的 Windows 中的泛型生物识别体系结构。

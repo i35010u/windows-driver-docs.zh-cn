@@ -5,11 +5,11 @@ ms.assetid: 759DE159-F2A8-4BB1-AAF5-B2B91C4F91B0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1827ec250381d96a06f72955f679ecf7ec4fd25a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325340"
 ---
 # <a name="failure-analysis-entries"></a>故障分析项
 

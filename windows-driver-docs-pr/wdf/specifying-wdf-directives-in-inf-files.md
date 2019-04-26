@@ -1,6 +1,6 @@
 ---
-title: INF 文件中指定 WDF 指令
-description: INF 文件中指定 WDF 指令
+title: 在 INF 文件中指定 WDF 指令
+description: 在 INF 文件中指定 WDF 指令
 ms.assetid: aefc678e-dc81-47dc-a84b-f1a79c16cad9
 keywords:
 - WDF 指令 WDK UMDF
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 265a68ae5e2139051e497fbd32321215bac2a70c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325127"
 ---
-# <a name="specifying-wdf-directives-in-inf-files"></a>INF 文件中指定 WDF 指令
+# <a name="specifying-wdf-directives-in-inf-files"></a>在 INF 文件中指定 WDF 指令
 
 
 本主题适用于这两种用户模式驱动程序框架 (UMDF) 版本 1 和 2。
@@ -108,7 +108,7 @@ UMDF 版本 1.11 及更高版本支持**UmdfRegisterAccessMode**指令。
 
 -   **匿名**
 
--   **标识**
+-   **Identification**
 
 -   **模拟**
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d863b23ce42ef9854171537c4856001f7053a4c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327329"
 ---
 # <a name="code-analysis-for-drivers-warnings"></a>驱动程序的代码分析警告
 
@@ -22,7 +22,7 @@ ms.locfileid: "57350192"
 
 驱动程序的代码分析报告的警告的以下类型：
 
--   **常规警告**(6000 6999):在 C 和 c + + 语法和一般的编码实践的潜在错误。 有关这些警告的说明，请参阅[的代码分析 C/c + + 警告](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)。
+-   **常规警告**(6000 6999):在 C 中的潜在错误和C++语法和一般的编码实践。 有关这些警告的说明，请参阅[于 c 语言的代码分析 /C++警告](/visualstudio/code-quality/code-analysis-for-c-cpp-warnings)。
 
 -   **Windows 特定警告**(28600 28799):这些警告特定于 Windows，在使用某些模式，但并不特定于驱动程序。
 

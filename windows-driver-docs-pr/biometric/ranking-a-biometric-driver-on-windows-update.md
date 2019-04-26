@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc9a56c5201890283c9bef44f27eb3531a925a5
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328373"
 ---
 # <a name="ranking-a-biometric-driver-on-windows-update"></a>在 Windows 更新上为生物识别驱动程序排名
 

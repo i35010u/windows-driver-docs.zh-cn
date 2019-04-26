@@ -1,6 +1,6 @@
 ---
-title: 将两个流与具有不同高度和宽度相结合
-description: 将两个流与具有不同高度和宽度相结合
+title: 将高度和宽度不同的两个流合并
+description: 将高度和宽度不同的两个流合并
 ms.assetid: a4b0e32d-17f0-4373-bed2-ce9248b3ceb2
 keywords:
 - 组合流式传输 WDK DirectX VA
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 763a1186579773c932f05f067130d6aaa0f89ee6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329858"
 ---
-# <a name="combining-two-streams-with-different-heights-and-widths"></a>将两个流与具有不同高度和宽度相结合
+# <a name="combining-two-streams-with-different-heights-and-widths"></a>将高度和宽度不同的两个流合并
 
 
 ## <span id="ddk_combining_two_streams_with_different_heights_and_widths_gg"></span><span id="DDK_COMBINING_TWO_STREAMS_WITH_DIFFERENT_HEIGHTS_AND_WIDTHS_GG"></span>

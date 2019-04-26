@@ -1,17 +1,17 @@
 ---
-title: Visual Studio 中查看调用堆栈
+title: 在 Visual Studio 中查看调用堆栈
 description: 过程介绍如何在 Visual Studio 中查看调用堆栈
 ms.assetid: 060A2441-C1A7-4485-82E5-2C024E6A3FBE
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e9de51ed45073a29f8ba2dd4f09b2ccb687d40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325903"
 ---
-# <a name="viewing-the-call-stack-in-visual-studio"></a>Visual Studio 中查看调用堆栈
+# <a name="viewing-the-call-stack-in-visual-studio"></a>在 Visual Studio 中查看调用堆栈
 
 > [!IMPORTANT]
 > 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。

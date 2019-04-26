@@ -1,17 +1,17 @@
 ---
-title: 查看和编辑内存和 Visual Studio 中的寄存器
+title: 在 Visual Studio 中查看和编辑内存与寄存器
 description: 查看和编辑内存并在 Visual Studio 中的注册过程的封面。
 ms.assetid: BE365305-F1C7-4D29-885A-55D040D5D900
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d58e744a3869f84581496ca9d03a3f038ace07c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325913"
 ---
-# <a name="viewing-and-editing-memory-and-registers-in-visual-studio"></a>查看和编辑内存和 Visual Studio 中的寄存器
+# <a name="viewing-and-editing-memory-and-registers-in-visual-studio"></a>在 Visual Studio 中查看和编辑内存与寄存器
 
 > [!IMPORTANT]
 > 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。
@@ -24,7 +24,7 @@ Visual Studio 提供了很多窗口，可用于查看本地变量、 全局变�
 
 -   局部变量
 -   自动
--   注册
+-   寄存器
 -   观看
 -   内存
 

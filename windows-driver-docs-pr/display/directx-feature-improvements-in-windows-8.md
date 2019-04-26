@@ -1,17 +1,17 @@
 ---
-title: 在 Windows 8 中的 DirectX 功能改进
+title: Windows 8 中的 DirectX 功能改进
 description: Windows 8 包含 Microsoft DirectX 功能改进，开发人员、 最终用户和系统制造商中受益。
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa4fb6c19989f24a30f5ced4630387a9474d3fad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328404"
 ---
-# <a name="directx-feature-improvements-in-windows-8"></a>在 Windows 8 中的 DirectX 功能改进
+# <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 中的 DirectX 功能改进
 
 
 Windows 8 包含 Microsoft DirectX 功能改进，开发人员、 最终用户和系统制造商中受益。

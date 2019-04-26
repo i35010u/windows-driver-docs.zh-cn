@@ -1,6 +1,6 @@
 ---
-title: 服务中断
-description: 服务中断
+title: 为中断提供服务
+description: 为中断提供服务
 ms.assetid: b6306d2c-a7be-4fc3-8123-4d2b5c60c988
 keywords:
 - 硬件中断 WDK KMDF，维护服务
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea2f58ab9d26aaab66cc6b95d7e88243bddf9346
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325143"
 ---
-# <a name="servicing-an-interrupt"></a>服务中断
+# <a name="servicing-an-interrupt"></a>为中断提供服务
 
 
 本主题介绍如何以服务的 DIRQL 中断。 有关维护服务的被动级别中断的信息，请参阅[支持被动中断级别](supporting-passive-level-interrupts.md#servicing)。

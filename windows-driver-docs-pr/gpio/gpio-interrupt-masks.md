@@ -5,11 +5,11 @@ ms.assetid: FD6537DA-2AAA-4646-896D-D5BC834526B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f715aba1a58805825a9b23fb3d559b6cc41cfc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326151"
 ---
 # <a name="gpio-interrupt-masks"></a>GPIO 中断掩码
 

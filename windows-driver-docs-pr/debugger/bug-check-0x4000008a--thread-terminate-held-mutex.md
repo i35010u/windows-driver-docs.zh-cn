@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e9359c862b7c3be1d7b599ce8d133aac503719
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325383"
 ---
 # <a name="bug-check-0x4000008a-threadterminateheldmutex"></a>Bug 检查 0x4000008A：线程\_TERMINATE\_保持\_互斥体
 

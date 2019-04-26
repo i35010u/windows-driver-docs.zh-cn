@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcfede0805a8f792eb7aabc6210e928be3e619d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329817"
 ---
 # <a name="wditlvchecksumoffloadcapabilities"></a>WDI\_TLV\_CHECKSUM\_卸载\_功能
 
@@ -56,7 +56,7 @@ WDI\_TLV\_CHECKSUM\_卸载\_功能是包含 IPv4 和 IPv6 的校验和卸载功�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

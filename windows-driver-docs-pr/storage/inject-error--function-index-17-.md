@@ -1,17 +1,17 @@
 ---
-title: 注入错误 （函数索引 17）
+title: 注入错误（功能索引 17）
 description: 此函数会注入 NVDIMM N 模块固件中的错误。 此函数的用途是启用软件验证。
 ms.assetid: 4D77DC95-25BC-4D28-83B7-7A62383803E6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25d749b13a6a4b3e34629532c942e0d391af03f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327001"
 ---
-# <a name="inject-error-function-index-17"></a>注入错误 （函数索引 17）
+# <a name="inject-error-function-index-17"></a>注入错误（功能索引 17）
 
 
 此函数会注入 NVDIMM N 模块固件中的错误。 此函数的用途是启用软件验证。 该平台可以选择仅启用在特定情况下，错误注入，例如用户配置的 BIOS 设置后。 宿主可能调用[查询错误注入状态 (函数索引 16)](query-error-injection-status--function-index-16-.md)若要了解是否错误注入启用的函数。
@@ -118,7 +118,7 @@ ms.locfileid: "56534888"
 
 3.  如果新的值*插入\_OPS\_故障*匹配的 0 字节**注入操作失败**字段中，返回成功消息。 否则，返回特定于函数的错误代码 2。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [查询错误注入状态 （函数索引 16）](query-error-injection-status--function-index-16-.md)

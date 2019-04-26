@@ -1,17 +1,17 @@
 ---
-title: 设备安装期间启动系统重新启动
-description: 设备安装期间启动系统重新启动
+title: 设备安装过程中开始系统重启
+description: 设备安装过程中开始系统重启
 ms.assetid: 52db2894-e759-4382-97de-5db7f268ff59
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a96876ac81b7b8fa15697588dfaebf4fc8debf1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325815"
 ---
-# <a name="initiating-system-restarts-during-device-installations"></a>设备安装期间启动系统重新启动
+# <a name="initiating-system-restarts-during-device-installations"></a>设备安装过程中开始系统重启
 
 
 在极少数的情况下它是所需系统重新启动，以完成设备安装，请使用以下规则：

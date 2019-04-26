@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2acdc3d54894078bc3fce5f53b513ab5d8251db2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327991"
 ---
 # <a name="usbkdusbpnp"></a>!usbkd.usbpnp
 

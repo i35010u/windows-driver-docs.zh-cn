@@ -5,11 +5,11 @@ ms.assetid: eec9474c-5aad-4b81-b7df-5e89cbfe92ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81b932c128bc20b87c13ad617e99ef47ea6ebbf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330224"
 ---
 # <a name="overview-of-installing-private-builds-of-inbox-drivers"></a>概述安装专用生成的收件箱驱动程序
 

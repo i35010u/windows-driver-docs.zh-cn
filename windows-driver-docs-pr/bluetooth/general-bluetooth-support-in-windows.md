@@ -5,13 +5,13 @@ ms.assetid: F43DA802-37D0-4527-AA51-DA3C0AEF6914
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a13c2a3cc1c4dd9d69ddde93b5d66df3f5bb3bbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328230"
 ---
-# <a name="bluetooth-version-and-profile-support-in-windows-10"></a>蓝牙版本和 Windows 10 中的配置文件支持
+# <a name="bluetooth-version-and-profile-support-in-windows-10"></a>Windows 10 中的蓝牙版本和配置文件支持
 
 
 **请注意**  寻找您的 Bluetooth 音频设备的驱动程序？ 请参阅[解决了连接到 Bluetooth 音频设备和无线显示](https://go.microsoft.com/fwlink/p/?LinkID=623629)。
@@ -225,7 +225,7 @@ Windows 10 (版本 1803) 支持蓝牙版本 5.0 和以下蓝牙用户配置文�
 
 若要了解有关新功能和不同版本的 Windows 10 的硬件开发人员建议的详细信息，请参阅[蓝牙](https://msdn.microsoft.com/library/windows/hardware/dn915047)中[硬件组件指南](https://msdn.microsoft.com/library/windows/hardware/dn915049)部分。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [在早期 Windows 版本中的蓝牙支持](bluetooth-support-in-previous-windows-versions.md)

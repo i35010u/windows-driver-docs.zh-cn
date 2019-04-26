@@ -1,6 +1,6 @@
 ---
-title: 用户模式下 WDM 音频组件
-description: 用户模式下 WDM 音频组件
+title: 用户模式 WDM 音频组件
+description: 用户模式 WDM 音频组件
 ms.assetid: 067944fb-6854-4ae8-81ca-9b8f2eed939e
 keywords:
 - 用户模式组件 WDK 音频
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21bdb025f98a292fc81252fb4051d0bbb4492113
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328523"
 ---
-# <a name="user-mode-wdm-audio-components"></a>用户模式下 WDM 音频组件
+# <a name="user-mode-wdm-audio-components"></a>用户模式 WDM 音频组件
 
 
 ## <span id="user_mode_wdm_audio_components"></span><span id="USER_MODE_WDM_AUDIO_COMPONENTS"></span>

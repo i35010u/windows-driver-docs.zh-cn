@@ -1,6 +1,6 @@
 ---
-title: 实现的操作区域处理
-description: 实现的操作区域处理
+title: 实现操作区域处理程序
+description: 实现操作区域处理程序
 ms.assetid: e435393c-d637-45c1-ab65-0b23f796ec02
 keywords:
 - ACPI 设备 WDK，操作区域
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f814c1b018c8b93f9fec94ef066bd08346ddb185
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328822"
 ---
-# <a name="implementing-an-operation-region-handler"></a>实现的操作区域处理
+# <a name="implementing-an-operation-region-handler"></a>实现操作区域处理程序
 
 
 

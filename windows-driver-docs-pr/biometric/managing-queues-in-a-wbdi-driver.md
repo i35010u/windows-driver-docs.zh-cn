@@ -1,6 +1,6 @@
 ---
-title: 管理队列的 WBDI 驱动程序
-description: 管理队列的 WBDI 驱动程序
+title: 在 WBDI 驱动程序中管理队列
+description: 在 WBDI 驱动程序中管理队列
 ms.assetid: f0434581-8492-42e1-ae50-4114e7b8b202
 keywords:
 - 生物识别驱动程序 WDK、 管理队列
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd717b6b621fca0da0c9a4c2bb4d4573651f4f44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328383"
 ---
-# <a name="managing-queues-in-a-wbdi-driver"></a>管理队列的 WBDI 驱动程序
+# <a name="managing-queues-in-a-wbdi-driver"></a>在 WBDI 驱动程序中管理队列
 
 
 WBDI 驱动程序应创建至少一个队列来处理来自服务的多个并发请求。 如果使用 UMDF，您可以利用其队列管理支持。

@@ -5,13 +5,13 @@ ms.assetid: 05fc8225-ba4e-4718-a5e1-c9e49ec931b7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b68ac23817724130314ed08d04950621e896f75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329824"
 ---
-# <a name="how-are-trace-if-expressions-used"></a>如何将跟踪-如果使用表达式？
+# <a name="how-are-trace-if-expressions-used"></a>如何使用 Trace-If 表达式？
 
 
 若要帮助你了解如何跟踪-如果使用了表达式，我们提供了演示如何使用此类表达式的示例和语法的"开始\_wpp config"语句。 此示例中引用的函数跟踪\_返回，该记录的事件，如果表达式 FAILED(HR) 为 true。
@@ -51,7 +51,7 @@ FAILED(HR) 为 true，如果假定没有有状态 ULONG 的源文件，并将通
 <span id="FUNC"></span><span id="func"></span>**FUNC**  
 定义名称和跟踪函数的签名。 在示例中，该函数采用一个参数和没有任何格式字符串。
 
-有关跟踪的另一个示例-如果表达式，请参阅[如何将跟踪语句包括中的 C/c + + 宏？](how-do-i-include-a-trace-statement-in-a-c-c---macro-.md)部分。
+有关跟踪的另一个示例-如果表达式，请参阅[如何将跟踪语句包括一个 C 中 /C++宏？](how-do-i-include-a-trace-statement-in-a-c-c---macro-.md)部分。
 
 
 

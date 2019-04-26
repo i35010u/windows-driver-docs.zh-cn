@@ -1,17 +1,17 @@
 ---
-title: 使用设备池在 UMDF 驱动程序
-description: 使用设备池在 UMDF 驱动程序
+title: 在 UMDF 驱动程序中使用设备池
+description: 在 UMDF 驱动程序中使用设备池
 ms.assetid: EC36CB33-3877-445B-8AC6-1D41E6397FF9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 310ead906064f940538a9135fd6842dd03457d01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327007"
 ---
-# <a name="using-device-pooling-in-umdf-drivers"></a>使用设备池在 UMDF 驱动程序
+# <a name="using-device-pooling-in-umdf-drivers"></a>在 UMDF 驱动程序中使用设备池
 
 
 ## <a name="user-mode-driver-framework-umdf-versions-111-and-20"></a>用户模式驱动程序框架 (UMDF) 版本 1.11 和 2.0

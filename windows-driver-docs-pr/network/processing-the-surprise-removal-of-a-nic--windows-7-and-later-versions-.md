@@ -1,17 +1,17 @@
 ---
 title: 处理意外删除的 NIC (Windows 7 及更高版本)
-description: 处理意外删除的 NIC （Windows 7 和更高版本）
+description: 处理 NIC 意外删除（Windows 7 和更高版本）
 ms.assetid: D1C1C862-8AFF-490F-8A1D-362280196548
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 994db45f6a54a4cfbfd7fa77bc7637d13aeb99e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327646"
 ---
-# <a name="processing-the-surprise-removal-of-a-nic-windows-7-and-later-versions"></a>处理意外删除的 NIC （Windows 7 和更高版本）
+# <a name="processing-the-surprise-removal-of-a-nic-windows-7-and-later-versions"></a>处理 NIC 意外删除（Windows 7 和更高版本）
 
 
 

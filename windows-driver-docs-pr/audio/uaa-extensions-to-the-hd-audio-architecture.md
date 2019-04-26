@@ -1,6 +1,6 @@
 ---
-title: UAA 扩展到高清晰度音频体系结构
-description: UAA 扩展到高清晰度音频体系结构
+title: 针对 HD 音频体系结构的 UAA 扩展
+description: 针对 HD 音频体系结构的 UAA 扩展
 ms.assetid: 895dc7b6-f484-4be2-8f43-112254d6ef4b
 keywords:
 - 高清晰度音频，通用音频体系结构
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1da9370a41fad1c787d476f6a0b96b0fcf52e242
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328527"
 ---
-# <a name="uaa-extensions-to-the-hd-audio-architecture"></a>UAA 扩展到高清晰度音频体系结构
+# <a name="uaa-extensions-to-the-hd-audio-architecture"></a>针对 HD 音频体系结构的 UAA 扩展
 
 
 若要符合 UAA，硬件控制器必须实现以下更改*Intel 高定义音频规范*:

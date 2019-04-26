@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eed9d18e7fe58a525f8f48af33990c6a23f30b28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327339"
 ---
 # <a name="interpreting-bug-check-0xcb"></a>解释 Bug 检查 0xCB
 

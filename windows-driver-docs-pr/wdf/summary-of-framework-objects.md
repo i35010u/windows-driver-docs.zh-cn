@@ -1,6 +1,6 @@
 ---
-title: Framework 对象的摘要
-description: Framework 对象的摘要
+title: 框架对象摘要
+description: 框架对象摘要
 ms.assetid: 799284a5-91c0-47b0-8f20-75a5f8e2284d
 keywords:
 - 列出的 framework 对象 WDK KMDF
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ffe55ce414c9455d0af212a6dead96b9950060
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325116"
 ---
-# <a name="summary-of-framework-objects"></a>Framework 对象的摘要
+# <a name="summary-of-framework-objects"></a>框架对象摘要
 
 
 下表列出了所有 framework 对象，并提供了有关每个对象的一些基本信息。 模式列指示是否可以使用该对象在 KMDF 和 UMDF 驱动程序或仅 KMDF。

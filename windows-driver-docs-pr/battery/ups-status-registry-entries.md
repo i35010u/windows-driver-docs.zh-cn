@@ -5,11 +5,11 @@ ms.assetid: c24ef185-ba8d-4cfd-9d33-b70682905f00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 874a732c925e8663acd04de22c970860f8dba5f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328423"
 ---
 # <a name="upsstatus-registry-entries"></a>UPS\\状态注册表项
 
@@ -94,7 +94,7 @@ UPS 的通信路径的状态。 下表列出了值。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -1,6 +1,6 @@
 ---
-title: 在 NDIS 6.1 的 IPsec 任务卸载版本 2
-description: 在 NDIS 6.1 的 IPsec 任务卸载版本 2
+title: NDIS 6.1 中的 IPsec 任务卸载版本 2
+description: NDIS 6.1 中的 IPsec 任务卸载版本 2
 ms.assetid: ecd7b1ab-b2e6-4b56-8610-17b5ff5e77cd
 keywords:
 - IPsec 卸载 WDK TCP/IP 传输，第 2 版
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d293959944531420fe661fd5cbdb11886ad1102d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327679"
 ---
-# <a name="ipsec-task-offload-version-2-in-ndis-61"></a>在 NDIS 6.1 的 IPsec 任务卸载版本 2
+# <a name="ipsec-task-offload-version-2-in-ndis-61"></a>NDIS 6.1 中的 IPsec 任务卸载版本 2
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

@@ -1,17 +1,17 @@
 ---
-title: 查看和编辑内存中 CDB
-description: 查看和编辑内存中 CDB
+title: 在 CDB 中查看和编辑内存
+description: 在 CDB 中查看和编辑内存
 ms.assetid: EE2424F3-A692-4AEA-9F09-337C5758D8AD
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31314654be47633411871eb82fe22c5d33bd9c7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325925"
 ---
-# <a name="viewing-and-editing-memory-in-cdb"></a>查看和编辑内存中 CDB
+# <a name="viewing-and-editing-memory-in-cdb"></a>在 CDB 中查看和编辑内存
 
 
 ## <a name="span-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanspan-idviewingandeditingmemoryspanviewing-and-editing-memory"></a><span id="Viewing_and_Editing_Memory"></span><span id="viewing_and_editing_memory"></span><span id="VIEWING_AND_EDITING_MEMORY"></span>查看和编辑内存

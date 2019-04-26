@@ -1,19 +1,19 @@
 ---
-title: 控制方法的宏
-description: 控制方法的宏
+title: 控制方法宏
+description: 控制方法宏
 ms.assetid: cffcfb7a-c949-4bc9-a92f-349f5637ab84
 keywords:
 - ACPI 控制方法 WDK，宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6489eeb7e3c5e0758bbb3df0b1bfd304fba98335
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328849"
 ---
-# <a name="control-method-macros"></a>控制方法的宏
+# <a name="control-method-macros"></a>控制方法宏
 
 
 驱动程序可以使用以下宏来设置与 ACPI Ioctl 一起使用的输入的参数的[评估控制方法](evaluating-acpi-control-methods.md):

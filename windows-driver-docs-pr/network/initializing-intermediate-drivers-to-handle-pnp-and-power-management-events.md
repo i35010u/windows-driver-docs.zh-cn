@@ -1,17 +1,17 @@
 ---
 title: 在中间的驱动程序中处理 PnP 和电源管理事件
-description: 初始化句柄 PnP 和电源管理事件的中间驱动程序
+description: 初始化中间驱动程序以处理 PnP 和电源管理事件
 ms.assetid: 7c9f10f1-1094-4b43-990b-fc3b3fee5ed1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a14f345f48748f8c61ca890eb7fd7f5aeab6246f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324943"
 ---
-# <a name="initializing-intermediate-drivers-to-handle-pnp-and-power-management-events"></a>初始化句柄 PnP 和电源管理事件的中间驱动程序
+# <a name="initializing-intermediate-drivers-to-handle-pnp-and-power-management-events"></a>初始化中间驱动程序以处理 PnP 和电源管理事件
 
 
 若要处理插即用 (PnP) 和电源管理事件，中间的 NDIS 驱动程序必须执行以下操作：

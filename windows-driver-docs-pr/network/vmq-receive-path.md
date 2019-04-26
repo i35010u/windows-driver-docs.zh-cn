@@ -5,11 +5,11 @@ ms.assetid: e59907fc-94dc-45c4-943d-1628c63961dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3a73392af7f2d75256a8a2cc76f8e3900fed33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327619"
 ---
 # <a name="vmq-receive-path"></a>VMQ 接收路径
 

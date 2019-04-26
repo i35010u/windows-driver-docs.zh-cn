@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 55a3b6a4b76fa16fb6f562530175c31caf5c6b23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325377"
 ---
 # <a name="irpcancelfield-rule-wdm"></a>IrpCancelField 规则 (wdm)
 

@@ -1,6 +1,6 @@
 ---
-title: 以同步方式发送的 I/O 请求
-description: 以同步方式发送的 I/O 请求
+title: 同步发送 I/O 请求
+description: 同步发送 I/O 请求
 ms.assetid: e7e9f2d2-afc5-439b-8a04-72d117114fae
 keywords:
 - 常规 I/O 面向 WDK KMDF，I/O 将请求发送到
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2df1beb7b971cea9ca326e29c1d9afb2f632df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325145"
 ---
-# <a name="sending-io-requests-synchronously"></a>以同步方式发送的 I/O 请求
+# <a name="sending-io-requests-synchronously"></a>同步发送 I/O 请求
 
 
 

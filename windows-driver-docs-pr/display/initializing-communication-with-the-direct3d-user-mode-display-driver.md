@@ -1,6 +1,6 @@
 ---
 title: 初始化 D3D 用户模式显示驱动程序通信
-description: 初始化与 Direct3D 用户模式显示驱动程序的通信
+description: 初始化与 Direct3D 用户模式显示驱动程序之间的通信
 ms.assetid: 96e85df4-e340-4017-b348-7c24349ffe69
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista 中，初始化
@@ -10,13 +10,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 0165c251a2c888339a7d3238d185c54a8ba2e542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325049"
 ---
-# <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>初始化与 Direct3D 用户模式显示驱动程序的通信
+# <a name="initializing-communication-with-the-direct3d-user-mode-display-driver"></a>初始化与 Direct3D 用户模式显示驱动程序之间的通信
 
 初始化与 Microsoft Direct3D 用户模式显示驱动程序，这是一个动态链接库 (DLL)，通信 Direct3D 运行时首次加载该 DLL。 Direct3D 运行时接下来将调用用户模式显示驱动程序[ **OpenAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff568601)函数通过 DLL 的导出表以打开图形适配器的实例。 *OpenAdapter*函数仅用于 DLL 的导出函数。
 

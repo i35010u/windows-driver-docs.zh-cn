@@ -1,17 +1,17 @@
 ---
-title: 有关 ISensorDriver
-description: 有关 ISensorDriver
+title: 关于 ISensorDriver
+description: 关于 ISensorDriver
 ms.assetid: 2c51c235-e402-4f89-bff5-39af87d95e19
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e56cb8067e009a760f6f6edaf87836d03fa3d9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325971"
 ---
-# <a name="about-isensordriver"></a>有关 ISensorDriver
+# <a name="about-isensordriver"></a>关于 ISensorDriver
 
 
 传感器驱动程序必须实现[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nn-sensorsclassextension-isensordriver)接口。 通过此接口，该驱动程序提供有关哪些传感器类型、 属性、 数据字段和事件支持传感器，以及实际的属性值和传感器数据的信息。 类扩展调用回调方法来处理 I/O 请求，以指定的属性的 API 层请求，来管理客户端连接，并订阅事件的列表。

@@ -5,11 +5,11 @@ ms.assetid: 17596119-6b31-4a69-b83c-cec1dfd55572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c565d3e753cc44abdc7af9879411a89295007aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330633"
 ---
 # <a name="importing-certificates-from-a-file"></a>从文件导入证书
 

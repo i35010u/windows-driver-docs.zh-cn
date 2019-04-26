@@ -6,11 +6,11 @@ keywords:
 ms.date: 09/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 036d7057fefec0a39780ddad259079c81ac73605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327071"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
 

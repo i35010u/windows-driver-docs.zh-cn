@@ -1,17 +1,17 @@
 ---
-title: 集合列表旧帮助器
+title: 集合列表旧版帮助程序
 description: 集合列表旧帮助程序函数由 v2 传感器驱动程序用来与传感器交互\_集合\_列表结构。
 ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d1acced6e3386fea3b3d8691becbe88f5f6b8c31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325273"
 ---
-# <a name="collection-list-legacy-helpers"></a>集合列表旧帮助器
+# <a name="collection-list-legacy-helpers"></a>集合列表旧版帮助程序
 
 
 集合列表旧帮助程序函数的 v2 传感器驱动程序用于与进行交互[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)结构。
@@ -92,7 +92,7 @@ ms.locfileid: "56519273"
 |--------------------------|------------------------|
 | 最低受支持的客户端 | Windows 8.1            |
 | 最低受支持的服务器 | Windows Server 2012 R2 |
-| 标头                   | Sensorsutils.h         |
+| Header                   | Sensorsutils.h         |
 
  
 

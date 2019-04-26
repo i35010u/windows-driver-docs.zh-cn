@@ -5,11 +5,11 @@ ms.assetid: AE8883C3-178F-44AB-AB1D-65DEC1472929
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff8a5283367f4ecebdd4de59308f4f42c264c815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326133"
 ---
 # <a name="gpioclx-ddi"></a>GpioClx DDI
 

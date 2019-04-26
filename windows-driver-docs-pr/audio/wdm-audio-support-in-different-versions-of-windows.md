@@ -5,11 +5,11 @@ ms.assetid: 63894118-508c-406b-a96c-7eee6867d7d4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 667c20c309b3b78475aa10132803a1fbf86f93de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328461"
 ---
 # <a name="wdm-audio-support-in-different-versions-of-windows"></a>不同版本的 Windows 中的 WDM 音频支持
 

@@ -5,11 +5,11 @@ ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc53d29a376517562885c2fb8a13611c812895f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327773"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>检索设备实例的状态和问题代码
 

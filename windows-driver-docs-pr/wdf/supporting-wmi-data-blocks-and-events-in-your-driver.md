@@ -1,6 +1,6 @@
 ---
-title: 支持 WMI 数据块和您的驱动程序中的事件
-description: 支持 WMI 数据块和您的驱动程序中的事件
+title: 在驱动程序中支持 WMI 数据块和事件
+description: 在驱动程序中支持 WMI 数据块和事件
 ms.assetid: a5138413-3ec4-4c61-9f00-6604759532e9
 keywords:
 - WMI WDK KMDF，数据块
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c7d7afa07cdf99c914920618fc117043e56af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327037"
 ---
-# <a name="supporting-wmi-data-blocks-and-events-in-your-driver"></a>支持 WMI 数据块和您的驱动程序中的事件
+# <a name="supporting-wmi-data-blocks-and-events-in-your-driver"></a>在驱动程序中支持 WMI 数据块和事件
 
 
 \[仅适用于 KMDF\]

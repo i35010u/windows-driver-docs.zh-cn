@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bcb37128088c2461d316de5d8cc5a8e91dfebf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330642"
 ---
 # <a name="enable-heap-tagging"></a>启用堆标记
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fb5b8b04d2bf243e2d3b3b181e5d45b54d05b7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328751"
 ---
 # <a name="preferred-voice-communications-device-id"></a>首选的语音通信设备 ID
 

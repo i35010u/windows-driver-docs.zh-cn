@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 00661feb3c3443e2b5c19633b104e419876710a2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325367"
 ---
 # <a name="bug-check-0x46-derefunknownlogonsession"></a>Bug 检查 0x46：DEREF\_未知\_登录\_会话
 

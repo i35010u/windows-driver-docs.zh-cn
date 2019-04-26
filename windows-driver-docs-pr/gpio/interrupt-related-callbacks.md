@@ -5,11 +5,11 @@ ms.assetid: 638B52A0-CB8D-4A79-B7D1-ED2474E46DAE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 755abefdf6f0d1e866d6f00c883eaac5cbbf451d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326142"
 ---
 # <a name="interrupt-related-callbacks"></a>与中断相关的回调
 

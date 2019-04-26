@@ -5,11 +5,11 @@ ms.assetid: 9018900A-3670-4C78-9094-1DDAB82847DD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1644d0f152627fb8f043160bbf8ee514edcf9a2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328103"
 ---
 # <a name="authoring-an-update-driver-package"></a>创作更新驱动程序包
 
@@ -111,7 +111,7 @@ Modify any strings here [optional]
 <thead>
 <tr class="header">
 <th>部分/字段</th>
-<th>ReplTest1</th>
+<th>值</th>
 <th>备注</th>
 </tr>
 </thead>

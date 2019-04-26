@@ -5,11 +5,11 @@ ms.assetid: E091DF59-2E9F-4652-801C-3F55CBB910FE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9d1badd6c1aee7326d4584df13203f6bd0eb9d58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326119"
 ---
 # <a name="acpi-descriptor-samples"></a>ACPI 描述符示例
 

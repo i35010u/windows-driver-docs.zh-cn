@@ -1,17 +1,17 @@
 ---
-title: 控制输入的缓冲区结构方法
-description: 控制输入的缓冲区结构方法
+title: 控制方法输入缓冲区结构
+description: 控制方法输入缓冲区结构
 ms.assetid: 41d4c53f-9dc7-4723-9707-ae48ff07f5f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee217a998db52c4bdc6c81c05ca9fc42c1d65e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328842"
 ---
-# <a name="control-method-input-buffer-structures"></a>控制输入的缓冲区结构方法
+# <a name="control-method-input-buffer-structures"></a>控制方法输入缓冲区结构
 
 
 ACPI 驱动程序支持[ **IOCTL\_ACPI\_EVAL\_方法**](https://msdn.microsoft.com/library/windows/hardware/ff536148)请求。 设备的驱动程序可以使用此请求来评估是请求发送到设备的 ACPI 命名空间中的直接子对象的控制方法。 IOCTL\_ACPI\_EVAL\_方法请求支持以下输入的结构：
