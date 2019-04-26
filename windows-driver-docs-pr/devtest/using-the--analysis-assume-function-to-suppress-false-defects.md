@@ -1,15 +1,15 @@
 ---
-title: 使用 _analysis_assume 函数禁止显示 False 缺陷
-description: 使用 _analysis_assume 函数禁止显示 False 缺陷
+title: 使用 _analysis_assume 函数抑制误判缺陷
+description: 使用 _analysis_assume 函数抑制误判缺陷
 ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 215121b46c1fb8f49f24bb8eece471e62f20f7fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325420"
 ---
 # <a name="using-the-analysisassume-function-to-suppress-false-defects"></a>使用\_分析\_假定禁止显示 False 缺陷函数
 

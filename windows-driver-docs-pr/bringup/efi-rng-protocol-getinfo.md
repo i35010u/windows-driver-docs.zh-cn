@@ -5,11 +5,11 @@ ms.assetid: 11E9927B-8BC6-4B01-A12D-C75B636E3988
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5a73e42b9de694807312a0e018185969bfd512a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328003"
 ---
 # <a name="efirngprotocolgetinfo"></a>EFI\_RNG\_PROTOCOL.GetInfo
 
@@ -29,7 +29,7 @@ EFI_STATUS
     );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  
