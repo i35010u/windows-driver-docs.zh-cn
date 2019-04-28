@@ -1,16 +1,16 @@
 ---
-Description: The topics in this section provides an USB pipes, URBs for I/O requests, and describes how a client driver can use the device driver interfaces (DDIs) to transfer data to and from a USB device.
-title: USB 客户端驱动程序中的发送 USB 数据传输
+Description: 在本部分中的主题提供 USB 管道 URBs 的 I/O 请求，并介绍客户端驱动程序如何使用设备驱动程序接口 (DDIs) 将数据传入和传出的 USB 设备。
+title: 在 USB 客户端驱动程序中发送 USB 数据传输
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: dd92cf4ac5eb08d2123c28fa604672ab74df39aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331609"
 ---
-# <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>USB 客户端驱动程序中的发送 USB 数据传输
+# <a name="sending-usb-data-transfers-in-usb-client-drivers"></a>在 USB 客户端驱动程序中发送 USB 数据传输
 
 
 在本部分中的主题提供有关 USB 管道和 URBs I/O 请求的信息，并介绍客户端驱动程序如何使用设备驱动程序接口 (DDIs) 来传输数据传入和传出的 USB 设备。
@@ -26,7 +26,7 @@ ms.locfileid: "56546937"
 
 客户端驱动程序已配置设备后，该驱动程序有权访问由在当前所选的备用设置每个终结点的 USB 驱动程序堆栈创建的管道句柄。 若要将数据传输到一个终结点，客户端驱动程序的格式设置特定于类型的请求 URB 创建请求。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

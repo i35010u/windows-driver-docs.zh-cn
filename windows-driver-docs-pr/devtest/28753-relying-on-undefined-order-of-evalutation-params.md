@@ -7,18 +7,18 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28753
 ms.openlocfilehash: f95dcececc7071227dec9f761f0f5af9f2873100
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330979"
 ---
 # <a name="c28753"></a>C28753
 
 
 警告 C28753:依赖于未定义参数的计算顺序
 
-C/c + + 允许编译器生成代码以计算实际参数按任意顺序和 x86 和 ARM 编译器倾向于选择不同的顺序。 在不同平台上，依赖于特定的顺序的代码的行为可能有所不同。
+C /C++允许编译器生成代码以计算实际参数按任意顺序和 x86 和 ARM 编译器倾向于选择不同的顺序。 在不同平台上，依赖于特定的顺序的代码的行为可能有所不同。
 
 一个常见错误是通过使用智能指针其中 address-of 运算符**&** 中调用此类还具有负面影响：
 

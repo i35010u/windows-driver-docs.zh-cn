@@ -5,18 +5,18 @@ ms.assetid: 988B1E95-2268-4B4F-B0C6-3C965FCD1B1C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e397833e94ce9cc45c5a1d9dbefeace8945de10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337590"
 ---
 # <a name="firmware-update-status"></a>固件更新状态
 
 
 此时应将应用所有固件更新，并在 ESRT 反映在 Windows OS 加载程序的后续调用上的所有更新的结果。 返回引用中的 ESRT 示例[ESRT 表定义](esrt-table-definition.md)以及中的固件资源更新驱动程序 INF 包示例[创作更新驱动程序包](authoring-an-update-driver-package.md)，如果版本 2 的 firmware.bin 的时间已成功应用固件，然后新 ESRT 表会反映这一点。 请注意，表中的唯一区别是系统固件资源条目的固件版本和上次尝试版本字段已更改以反映已成功应用新的固件版本。
 
-| 字段                               | 值                     | 备注                                                                                                                                                                                                              |
+| 字段                               | ReplTest1                     | 备注                                                                                                                                                                                                              |
 |-------------------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 固件资源计数             | 2                         | 此表包含两个固件资源条目。                                                                                                                                                                   |
 | 固件资源最大值           | 2                         | 此表分配包含足够的空间来描述最多为两个资源。                                                                                                                                  |

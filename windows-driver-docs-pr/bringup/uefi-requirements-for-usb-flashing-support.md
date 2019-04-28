@@ -1,17 +1,17 @@
 ---
-title: USB 闪烁的支持的 UEFI 要求
+title: USB 刷写支持的 UEFI 要求
 description: Microsoft 提供用于在设计和制造环境中使用多个基于 USB 的闪烁的解决方案。 按顺序，使设备能够与这些工具一起使用，在设备上的 UEFI 环境必须满足本主题中列出的要求。
 ms.assetid: 8979173C-DCBC-4544-9978-BB069FF35914
 ms.date: 01/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 088b3b8c2ea0c30c1b3cf9bae9676bbb60614d7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337372"
 ---
-# <a name="uefi-requirements-for-usb-flashing-support"></a>USB 闪烁的支持的 UEFI 要求
+# <a name="uefi-requirements-for-usb-flashing-support"></a>USB 刷写支持的 UEFI 要求
 
 Microsoft 提供用于在设计和制造环境中使用多个基于 USB 的闪烁的解决方案。 按顺序，使设备能够与这些工具一起使用，在设备上的 UEFI 环境必须满足本主题中列出的要求。
 

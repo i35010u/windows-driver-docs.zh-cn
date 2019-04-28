@@ -1,22 +1,22 @@
 ---
-title: 用于 KMDF 驱动程序的规则
-description: 用于 KMDF 驱动程序的规则
+title: KMDF 驱动程序的规则
+description: KMDF 驱动程序的规则
 ms.assetid: 63ac4df5-b2dc-43da-abaa-49c5de036d79
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 91900f908a3d6361c136f1b3a621753d2cee1668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340154"
 ---
-# <a name="rules-for-kmdf-drivers"></a>用于 KMDF 驱动程序的规则
+# <a name="rules-for-kmdf-drivers"></a>KMDF 驱动程序的规则
 
 
 本部分列出并描述[DDI 符合性规则](static-driver-verifier-rules.md)可包括在验证中的内核模式驱动程序框架 (KMDF) 驱动程序。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

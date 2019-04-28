@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 082ebff5e3412fa32311522501e1d0bcebec2c65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331940"
 ---
 # <a name="stopping-a-device-to-disable-it-windows-98me"></a>停止设备以将其禁用 (Windows 98/Me)
 

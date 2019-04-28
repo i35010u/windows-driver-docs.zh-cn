@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a099231f27e801c1c15f0ea4b41461520ac551
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341606"
 ---
 # <a name="irqlkeapclte1-rule-wdm"></a>IrqlKeApcLte1 规则 (wdm)
 
@@ -90,7 +90,7 @@ ms.locfileid: "56525663"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**KeAcquireGuardedMutex**](https://msdn.microsoft.com/library/windows/hardware/ff551892)

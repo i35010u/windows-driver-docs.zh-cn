@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f864db184a687a7128a8e2dda2865dfa6ca115e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340796"
 ---
 # <a name="introduction-to-pshed-plug-ins"></a>PSHED 插件简介
 

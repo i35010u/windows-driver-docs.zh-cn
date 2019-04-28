@@ -1,6 +1,6 @@
 ---
 title: 解决问题的已签名的驱动程序包
-description: 安装和已签名的驱动程序包的负载问题疑难解答
+description: 排查已签名驱动程序包的安装和加载问题
 ms.assetid: c1e33cf1-e423-422e-95fa-8617bea30430
 keywords:
 - 驱动程序签名 WDK，故障排除
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ae2668d3fd463657fbe977511cc892375cbb61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339520"
 ---
-# <a name="troubleshooting-install-and-load-problems-with-signed-driver-packages"></a>安装和已签名的驱动程序包的负载问题疑难解答
+# <a name="troubleshooting-install-and-load-problems-with-signed-driver-packages"></a>排查已签名驱动程序包的安装和加载问题
 
 
 有一些可用于识别和排查与验证内核模式代码签名相关的潜在问题的特定步骤。 本部分提供有关如何对问题进行故障排除信息[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)并[插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)的 Windows Vista和更高版本的 Windows。

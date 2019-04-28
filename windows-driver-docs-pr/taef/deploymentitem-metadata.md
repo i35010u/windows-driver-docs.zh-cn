@@ -5,11 +5,11 @@ ms.assetid: 7F18CD71-F000-4231-9093-82980EB7584D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eade6e024352f6b6eb881863534e470c75b8ebf8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341187"
 ---
 # <a name="deploymentitem-metadata"></a>DeploymentItem 元数据
 

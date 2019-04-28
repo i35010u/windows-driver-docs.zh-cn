@@ -5,13 +5,13 @@ ms.assetid: 739428e8-14ff-4435-80e6-35b5c3366c79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 358775b6a920a2c870eadaf38b9a58d37a8f6320
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329923"
 ---
-# <a name="how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver"></a>如何初始化 WPP 软件跟踪中的内核模式驱动程序？
+# <a name="how-do-i-initialize-wpp-software-tracing-in-a-kernel-mode-driver"></a>如何在内核模式驱动程序中初始化 WPP 软件跟踪？
 
 
 您可以通过调用初始化 WPP 内核模式驱动程序中的跟踪[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)宏来初始化 WPP 软件跟踪。

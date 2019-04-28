@@ -5,11 +5,11 @@ ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d276834e26f7c1fd35d380e3d89f5c990f5e06a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340433"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 

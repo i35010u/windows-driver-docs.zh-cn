@@ -1,6 +1,6 @@
 ---
-title: 中断关联
-description: 中断关联
+title: 中断相关性
+description: 中断相关性
 ms.assetid: e36a52d0-3a94-4017-b4a1-0b41f737523c
 keywords:
 - 中断服务例程 WDK 内核相关性
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db9bf41015d10da67a46ae7c2e7c3f81bf731011
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341069"
 ---
-# <a name="interrupt-affinity"></a>中断关联
+# <a name="interrupt-affinity"></a>中断相关性
 
 
 *相关性*中断是可以为服务中断的处理器组。 每台设备都*相关性策略*。 操作系统使用的关联策略来计算该设备的中断的关联。 关联策略可以指定设备的 INF 文件或注册表设置。

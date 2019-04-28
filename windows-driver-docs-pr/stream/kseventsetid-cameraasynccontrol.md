@@ -5,11 +5,11 @@ ms.assetid: 3B6EE26C-C2A0-462C-BCC0-E54FBAD3DD47
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b8c8ae3e80f0f858ecf1e868723814760db2c09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329590"
 ---
 # <a name="kseventsetidcameraasynccontrol"></a>KSEVENTSETID\_CameraAsyncControl
 

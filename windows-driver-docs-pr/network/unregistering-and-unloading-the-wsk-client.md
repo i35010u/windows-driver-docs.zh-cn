@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0df3b4cbc19b082553bec52093ba7f201c77329
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340919"
 ---
 # <a name="unregistering-and-unloading-the-wsk-client"></a>取消注册和卸载 WSK 客户端
 

@@ -1,6 +1,6 @@
 ---
-title: 内核模式软件合成器批接收器
-description: 内核模式软件合成器批接收器
+title: 适用于内核模式软件合成器的 Wave 接收器
+description: 适用于内核模式软件合成器的 Wave 接收器
 ms.assetid: 37ba9ad5-8b35-4252-a6fd-46dead924294
 keywords:
 - 批接收器 WDK 音频，内核模式软件合成器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89dcb17890d03ad20f851c3c3a7adc780fcb02c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330848"
 ---
-# <a name="a-wave-sink-for-kernel-mode-software-synthesizers"></a>内核模式软件合成器批接收器
+# <a name="a-wave-sink-for-kernel-mode-software-synthesizers"></a>适用于内核模式软件合成器的 Wave 接收器
 
 
 ## <span id="a_wave_sink_for_kernel_mode_software_synthesizers"></span><span id="A_WAVE_SINK_FOR_KERNEL_MODE_SOFTWARE_SYNTHESIZERS"></span>

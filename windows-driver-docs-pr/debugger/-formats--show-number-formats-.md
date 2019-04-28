@@ -1,5 +1,5 @@
 ---
-title: .formats （显示数字格式）
+title: .formats（显示数字格式）
 description: .Formats 命令的表达式或符号在当前线程和进程的上下文中的计算结果，并将其显示在多个数字的格式。
 ms.assetid: 9eac92b3-5137-4adb-a074-31510dc9bff7
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 11a836c5c1dca791b17d16c5bee08f0e1e0dc5dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336617"
 ---
-# <a name="formats-show-number-formats"></a>.formats （显示数字格式）
+# <a name="formats-show-number-formats"></a>.formats（显示数字格式）
 
 
 **.Formats**命令的表达式或符号在当前线程和进程的上下文中的计算结果并将其显示在多个数字的格式。
@@ -86,7 +86,7 @@ Evaluate expression:
 
 [**?（计算表达式）**](---evaluate-expression-.md)
 
-[**??（计算结果 c + + 表达式）**](----evaluate-c---expression-.md)
+[**??(评估C++表达式)**](----evaluate-c---expression-.md)
 
  
 

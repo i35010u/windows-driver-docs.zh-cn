@@ -4,11 +4,11 @@ description: 在 Windows 10 版本 19 H 1 及更高版本，**主键\_设备\_Au
 ms.date: 02/13/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 89a38c5cd59318c13d9c1e7ce248bad62eb1138f
-ms.sourcegitcommit: 5f4404a7010a6b26530f60144c5ea7cab846feec
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56582907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332157"
 ---
 # <a name="pkeydevicesaudiodevicemicrophoneisfarfield"></a>PKEY\_Devices\_AudioDevice\_Microphone\_IsFarField
 

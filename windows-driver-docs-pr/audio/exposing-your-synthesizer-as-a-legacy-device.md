@@ -1,6 +1,6 @@
 ---
-title: 将你合成器公开为旧设备
-description: 将你合成器公开为旧设备
+title: 将合成器作为旧设备公开
+description: 将合成器作为旧设备公开
 ms.assetid: 25e5e14f-1db5-45dc-9048-674420d79824
 keywords:
 - 合成器 WDK 音频的旧设备
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40b7a6c4b531f921215d419f8053f43e6f8c4e22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333652"
 ---
-# <a name="exposing-your-synthesizer-as-a-legacy-device"></a>将你合成器公开为旧设备
+# <a name="exposing-your-synthesizer-as-a-legacy-device"></a>将合成器作为旧设备公开
 
 
 ## <span id="exposing_your_synthesizer_as_a_legacy_device"></span><span id="EXPOSING_YOUR_SYNTHESIZER_AS_A_LEGACY_DEVICE"></span>

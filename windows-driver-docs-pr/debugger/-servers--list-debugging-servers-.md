@@ -1,5 +1,5 @@
 ---
-title: .servers （调试服务器的列表）
+title: .servers（列出调试服务器）
 description: .Servers 命令将列出已通过此调试器建立的所有调试服务器。
 ms.assetid: bf65c6f7-9c59-4756-a667-8b896bd7ea2a
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab582243523d36d9e842f1d910026b6ae3672533
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339775"
 ---
-# <a name="servers-list-debugging-servers"></a>.servers （调试服务器的列表）
+# <a name="servers-list-debugging-servers"></a>.servers（列出调试服务器）
 
 
 **.Servers**命令将列出已通过此调试器建立的所有调试服务器。

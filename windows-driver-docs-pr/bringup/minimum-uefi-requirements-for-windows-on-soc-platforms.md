@@ -1,17 +1,17 @@
 ---
-title: 最小的 Windows 在 SoC 平台上的 UEFI 要求
-description: 最小的 Windows 在 SoC 平台上的 UEFI 要求
+title: SoC 平台上的 Windows 的最低 UEFI 要求
+description: SoC 平台上的 Windows 的最低 UEFI 要求
 ms.assetid: 32743d69-83a2-4658-8652-6d624e75e3db
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cfb1408e1c2d1a19cb9bd0fd2bc25dd22821568
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337597"
 ---
-# <a name="minimum-uefi-requirements-for-windows-on-soc-platforms"></a>最小的 Windows 在 SoC 平台上的 UEFI 要求
+# <a name="minimum-uefi-requirements-for-windows-on-soc-platforms"></a>SoC 平台上的 Windows 的最低 UEFI 要求
 
 
 统一可扩展固件接口 (UEFI) 是用于运行 Windows 的 SoC 平台所需的启动固件。 本部分介绍在 SoC 平台上运行 Windows 的 UEFI 实现需求。 观察并遵循这些要求将有助于确保适当的 Windows 的功能。
@@ -24,7 +24,7 @@ Windows 支持基于统一可扩展固件接口 (UEFI) 版本 2.3.1 或更高版
 
  
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: 系统托盘和 SndVol32
-description: 系统托盘和 SndVol32
+title: SysTray 和 SndVol32
+description: SysTray 和 SndVol32
 ms.assetid: 53f8c5be-d0a5-4364-8fac-813cf9f8318c
 keywords:
 - 系统托盘 WDK 音频
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c133bebc25bc2209b8b77dfacbadac7cee0f8b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328556"
 ---
-# <a name="systray-and-sndvol32"></a>系统托盘和 SndVol32
+# <a name="systray-and-sndvol32"></a>SysTray 和 SndVol32
 
 
 ## <span id="systray_and_sndvol32"></span><span id="SYSTRAY_AND_SNDVOL32"></span>

@@ -1,17 +1,17 @@
 ---
-title: 实现 UI 用于配置 APO 效果
+title: 实现用于配置 APO 效果的 UI
 description: 本主题介绍如何实现用户可以配置效果的用户界面 (UI)。
 ms.assetid: C8D1CB20-2E77-430A-9933-4BDFFB997158
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfac675a3f9b846ca43822e1036e2947b3de20b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333494"
 ---
-# <a name="implementing-a-ui-for-configuring-apo-effects"></a>实现 UI 用于配置 APO 效果
+# <a name="implementing-a-ui-for-configuring-apo-effects"></a>实现用于配置 APO 效果的 UI
 
 
 本主题介绍如何实现用户可以配置效果的用户界面 (UI)。 有关 a p o s 的常规信息，请参阅[音频处理对象体系结构](audio-processing-object-architecture.md)。
@@ -147,7 +147,7 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
 
 |                    |                                                            |
 |--------------------|------------------------------------------------------------|
-| **Project**        | **描述**                                            |
+| **Project**        | **说明**                                            |
 | PropPageExtensions | 例如自定义属性页 UI 扩展插件示例的代码 |
 
  
@@ -156,7 +156,7 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
 
 |                         |                                                                                                      |
 |-------------------------|------------------------------------------------------------------------------------------------------|
-| **名称**                | **描述**                                                                                      |
+| **名称**                | **说明**                                                                                      |
 | SwapPropPage.cpp        | CSwapPropPage 类的实现                                                            |
 | CplExt.cpp              | 控制面板扩展 DLL 导出的实现                                       |
 | UIWidgets.cpp           | CUIWidget 和派生的类的实现                                                      |
@@ -181,7 +181,7 @@ Microsoft 提供了控制面板上的声音小程序的增强功能属性页。 
 
 若要熟悉 PropPageExtensions 示例，可能想要查看标头，然后检查与属性页上定义文本相关的源代码。 如果您的要求是类似于示例代码提供，你可能能够重复使用很多代码创建和更新的自定义 UI 页。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [音频处理对象体系结构](audio-processing-object-architecture.md)  
 [Windows 音频处理对象](windows-audio-processing-objects.md)  
 [实现音频处理对象](implementing-audio-processing-objects.md)  

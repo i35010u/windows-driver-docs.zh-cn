@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75e03a1b5780be073f242ccc0d20dbb367634e71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331386"
 ---
 # <a name="exttdopsetfromexpr"></a>EXT\_TDOP\_SET\_FROM\_EXPR
 
 
 EXT\_TDOP\_设置\_FROM\_EXPR 子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将返回表示表达式的值的类型化的数据说明。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
 设置为 EXT\_TDOP\_设置\_FROM\_EXPR 此子操作。

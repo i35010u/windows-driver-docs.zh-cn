@@ -1,17 +1,17 @@
 ---
-title: SerCx2 I/O 事务的概述
+title: SerCx2 I/O 事务概述
 description: SerCx2 通过向串行控制器驱动程序发出一个或多个 I/O 事务处理读取或写入请求从客户端。
 ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c29685682913abc8e3f9976aebbeb164ceb86ded
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331111"
 ---
-# <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O 事务的概述
+# <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O 事务概述
 
 
 SerCx2 通过向串行控制器驱动程序发出一个或多个 I/O 事务处理读取或写入请求从客户端。 此驱动程序将每个事务视为串行控制器与请求中的数据缓冲区之间传输数据的自包含 I/O 操作。

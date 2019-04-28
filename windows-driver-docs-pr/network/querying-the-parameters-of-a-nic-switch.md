@@ -1,17 +1,17 @@
 ---
-title: 查询 NIC 开关的参数
-description: 查询 NIC 开关的参数
+title: 查询 NIC 交换机的参数
+description: 查询 NIC 交换机的参数
 ms.assetid: 8C1F0F8A-D290-4552-A324-062DB92F6B5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c855acc3df5f563500d76f68783b79720c2b713
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340003"
 ---
-# <a name="querying-the-parameters-of-a-nic-switch"></a>查询 NIC 开关的参数
+# <a name="querying-the-parameters-of-a-nic-switch"></a>查询 NIC 交换机的参数
 
 
 基础驱动程序或用户应用程序可以获得可支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器上已创建的 NIC 开关的参数。 驱动程序或应用程序发出的对象标识符 (OID) 方法请求[OID\_NIC\_交换机\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451823)来获取这些参数。

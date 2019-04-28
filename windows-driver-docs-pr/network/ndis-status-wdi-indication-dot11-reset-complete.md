@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_DOT11_RESET_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6761e7ace510d793d6da903ff891d7b9763fd66b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330525"
 ---
 # <a name="ndisstatuswdiindicationdot11resetcomplete"></a>NDIS\_状态\_WDI\_指示\_DOT11\_重置\_完成
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_DOT11\_重置\_完成以指示完成[OID\_WDI\_任务\_DOT11\_重置](oid-wdi-task-dot11-reset.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

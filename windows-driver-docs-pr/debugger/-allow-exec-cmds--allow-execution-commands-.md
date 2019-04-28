@@ -1,5 +1,5 @@
 ---
-title: .allow_exec_cmds （允许执行命令）
+title: .allow_exec_cmds（允许执行命令）
 description: .Allow_exec_cmds 命令控制是否可以使用执行命令。
 ms.assetid: c6e37cf1-42cc-4f82-9eb8-d252f0b6e196
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b81c201ee4429b131c1e7f41f00814cae541f724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337034"
 ---
 # <a name="allowexeccmds-allow-execution-commands"></a>.allow\_exec\_传送的命令 （允许执行命令）
 

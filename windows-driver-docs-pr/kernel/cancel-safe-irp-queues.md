@@ -1,6 +1,6 @@
 ---
-title: 取消安全 IRP 队列
-description: 取消安全 IRP 队列
+title: 可安全取消的 IRP 队列
+description: 可安全取消的 IRP 队列
 ms.assetid: a759d1e0-120f-4db9-9b84-ff921f2f5ba4
 keywords:
 - 取消安全 IRP 队列 WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c10c34d0b75e6f649c0d4737b7f2a247f3d4f516
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338576"
 ---
-# <a name="cancel-safe-irp-queues"></a>取消安全 IRP 队列
+# <a name="cancel-safe-irp-queues"></a>可安全取消的 IRP 队列
 
 
 

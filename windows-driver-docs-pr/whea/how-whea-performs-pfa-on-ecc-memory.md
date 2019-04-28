@@ -1,6 +1,6 @@
 ---
-title: WHEA 的执行方式 PFA ECC 内存
-description: WHEA 的执行方式 PFA ECC 内存
+title: WHEA 如何在 ECC 内存上执行 PFA
+description: WHEA 如何在 ECC 内存上执行 PFA
 ms.assetid: def94688-9ca6-4146-8d5b-4c3550d3d272
 keywords:
 - 预计故障分析 (PFA) WDK WHEA，错误更正代码内存
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd43fbbff691133978503716618368cbabed8a7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340810"
 ---
-# <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA 的执行方式 PFA ECC 内存
+# <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA 如何在 ECC 内存上执行 PFA
 
 
 从 Windows 7 开始，Windows 硬件错误体系结构 (WHEA) 支持错误更正代码 (ECC) 内存用于预测故障分析 (PFA)。

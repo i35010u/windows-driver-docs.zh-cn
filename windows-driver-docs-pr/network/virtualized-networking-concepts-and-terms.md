@@ -1,17 +1,17 @@
 ---
-title: 虚拟化网络概念和术语
-description: 虚拟化网络概念和术语
+title: 虚拟化网络的概念和术语
+description: 虚拟化网络的概念和术语
 ms.assetid: 467996B2-9319-47F9-BAEB-5AC1F20B6E01
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efec1cbf7fdbb0c5d3f0fa9dcd150d60640ea041
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338329"
 ---
-# <a name="virtualized-networking-concepts-and-terms"></a>虚拟化网络概念和术语
+# <a name="virtualized-networking-concepts-and-terms"></a>虚拟化网络的概念和术语
 
 
 以下列表提供的关键概念和虚拟化网络部分中使用的术语的定义。 我们建议您熟悉这些条款，然后阅读此部分中的其他主题：

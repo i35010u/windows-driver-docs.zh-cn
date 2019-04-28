@@ -1,6 +1,6 @@
 ---
-title: 存储类驱动程序 SplitTransferRequest 例程
-description: 存储类驱动程序 SplitTransferRequest 例程
+title: 存储类驱动程序的 SplitTransferRequest 例程
+description: 存储类驱动程序的 SplitTransferRequest 例程
 ms.assetid: 4f449d3b-9a0a-4ff9-a7fb-bfa21b8a56c0
 keywords:
 - SplitTransferRequest
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bfe1b3a3c36c55b8119b0e0a841454c8f96496c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339011"
 ---
-# <a name="storage-class-drivers-splittransferrequest-routine"></a>存储类驱动程序 SplitTransferRequest 例程
+# <a name="storage-class-drivers-splittransferrequest-routine"></a>存储类驱动程序的 SplitTransferRequest 例程
 
 
 ## <span id="ddk_storage_class_drivers_splittransferrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_SPLITTRANSFERREQUEST_ROUTINE_KG"></span>

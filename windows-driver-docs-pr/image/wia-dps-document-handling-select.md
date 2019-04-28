@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b75d37f14a8a533f0b95ac85b809839faf7bb9fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335079"
 ---
 # <a name="wiadpsdocumenthandlingselect"></a>WIA\_DPS\_文档\_处理\_选择
 
@@ -90,7 +90,7 @@ WIA\_DPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -130,7 +130,7 @@ WIA\_DPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 和更高版本，使用 WIA_IPS_DOCUMENT_HANDLING_SELECT 属性。</p></td>
 </tr>
 <tr class="even">

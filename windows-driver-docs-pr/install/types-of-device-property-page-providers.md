@@ -1,17 +1,17 @@
 ---
-title: 类型的设备属性页提供程序
-description: 类型的设备属性页提供程序
+title: 设备属性页提供程序的类型
+description: 设备属性页提供程序的类型
 ms.assetid: b467543e-6907-44e5-b407-637cad7f6d78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebae27b634f97d95d094f7150283ca86f779b95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339517"
 ---
-# <a name="types-of-device-property-page-providers"></a>类型的设备属性页提供程序
+# <a name="types-of-device-property-page-providers"></a>设备属性页提供程序的类型
 
 
 可以使用以下类型的属性页提供程序来提供自定义设备属性页：

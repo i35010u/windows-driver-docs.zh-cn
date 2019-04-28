@@ -1,19 +1,19 @@
 ---
-title: 导出到文本日志查看器文件
-description: 导出到文本日志查看器文件
+title: 将 LogViewer 文件导出为文本
+description: 将 LogViewer 文件导出为文本
 ms.assetid: b014dc23-ca6e-4563-aa8d-f4dd19c89f80
 keywords:
 - 日志查看器，将文件导出到文本
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fab8c7e2d24af8c73434d25cc3802995f6bbfa54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332119"
 ---
-# <a name="exporting-logviewer-files-to-text"></a>导出到文本日志查看器文件
+# <a name="exporting-logviewer-files-to-text"></a>将 LogViewer 文件导出为文本
 
 
 ## <span id="ddk_exporting_logviewer_files_to_text_dtoolq"></span><span id="DDK_EXPORTING_LOGVIEWER_FILES_TO_TEXT_DTOOLQ"></span>

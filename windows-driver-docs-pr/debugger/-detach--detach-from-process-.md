@@ -1,5 +1,5 @@
 ---
-title: .detach （从进程分离）
+title: .detach（从进程分离）
 description: .Detach 命令将结束调试会话，但保留运行任何用户模式目标应用程序。
 ms.assetid: 4f0fbd8b-3037-4549-99da-be40a091a363
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16176b96fe6cc3acda159c547c2120555b42fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336850"
 ---
-# <a name="detach-detach-from-process"></a>.detach （从进程分离）
+# <a name="detach-detach-from-process"></a>.detach（从进程分离）
 
 
 **.Detach**命令将结束调试会话，但会使任何用户模式下的目标应用程序运行。

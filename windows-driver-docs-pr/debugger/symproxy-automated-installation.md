@@ -5,11 +5,11 @@ ms.assetid: 9E5433D8-D024-4E2B-AEAA-2271C133FD0E
 ms.date: 03/12/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 793172c6f2b0b1fda5e43be688c38b532886c25e
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335478"
 ---
 # <a name="symproxy-automated-installation"></a>SymProxy 自动安装
 

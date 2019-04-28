@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d200b94823ebf1ab7fcb1a63feca9908f35fa68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337014"
 ---
 # <a name="bthkddibflags"></a>!bthkd.dibflags
 

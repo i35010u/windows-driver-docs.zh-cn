@@ -5,11 +5,11 @@ ms.assetid: 40BD11CD-A559-4F90-BF39-4ED2FB800392
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64ecfc2e698591f8e373ed2e76d88cf034561acb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341149"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-storport-drivers"></a>使用 Storport 驱动程序的函数角色类型来声明函数
 

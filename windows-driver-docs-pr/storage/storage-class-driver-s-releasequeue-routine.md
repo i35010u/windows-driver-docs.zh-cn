@@ -1,6 +1,6 @@
 ---
-title: 存储类驱动程序 ReleaseQueue 例程
-description: 存储类驱动程序 ReleaseQueue 例程
+title: 存储类驱动程序的 ReleaseQueue 例程
+description: 存储类驱动程序的 ReleaseQueue 例程
 ms.assetid: 4d0f74f2-6c98-4de1-bc28-dfff3c01e319
 keywords:
 - ReleaseQueue
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c9f2be59fc652ae3e9b262b6a8bcc0f66eea0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339026"
 ---
-# <a name="storage-class-drivers-releasequeue-routine"></a>存储类驱动程序 ReleaseQueue 例程
+# <a name="storage-class-drivers-releasequeue-routine"></a>存储类驱动程序的 ReleaseQueue 例程
 
 
 ## <span id="ddk_storage_class_drivers_releasequeue_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_RELEASEQUEUE_ROUTINE_KG"></span>

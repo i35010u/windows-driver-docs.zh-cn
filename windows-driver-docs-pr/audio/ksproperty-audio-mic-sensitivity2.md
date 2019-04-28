@@ -14,11 +14,11 @@ api_type:
 ms.date: 05/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ceb3f629202e768ca1c013d853494c38120ca183
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333011"
 ---
 # <a name="kspropertyaudiomicsensitivity2"></a>KSPROPERTY\_AUDIO\_MIC\_SENSITIVITY2
 

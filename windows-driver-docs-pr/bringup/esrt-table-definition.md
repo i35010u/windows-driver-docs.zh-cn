@@ -5,11 +5,11 @@ ms.assetid: F332CCF3-AE6D-4B02-A63E-DB05910C8E6E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b7f46d926c20be7b920c31848401b782d3c24c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337592"
 ---
 # <a name="esrt-table-definition"></a>ESRT 表定义
 

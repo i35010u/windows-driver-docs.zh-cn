@@ -1,17 +1,17 @@
 ---
-title: Jack Description 属性
-description: Jack Description 属性
+title: 插孔说明属性
+description: 插孔说明属性
 ms.assetid: 6398efc9-4435-4234-bd72-1ed0f96c9f9f
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b8f579dab6541c820f0cc1af2be276b4801c2cd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333382"
 ---
-# <a name="jack-description-property"></a>Jack Description 属性
+# <a name="jack-description-property"></a>插孔说明属性
 
 
 在 Windows Vista 及更高版本， [ **KSPROPERTY\_JACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)属性描述音频适配器上的音频插孔或其他物理连接器。 属性值描述 jack 的颜色、 jack、 连接器类型和其他 jack 功能的物理位置。 此信息旨在帮助用户查找有关等麦克风、 耳机或扬声器音频终结点设备中插入正确的插孔。 有关详细信息，请参阅[音频终结点设备](https://go.microsoft.com/fwlink/p/?linkid=130876)。
@@ -300,7 +300,7 @@ PropertyHandler_TopoFilter(IN PPCPROPERTY_REQUEST PropertyRequest)
 
 前面的代码示例是指三个 KSJACK\_说明变量-SynthIn\_Jack、 MicIn\_插孔和线路输出\_Jack-之前定义。 如果客户端会查询的一个有效的 pin，但其中一个 jack 说明的不是桥 pin （并因此没有 jack 说明） 的筛选器，查询将成功 (，其状态代码状态\_成功)，但属性处理程序返回空插孔描述包含 KSMULTIPLE\_项结构和其他任何内容。 如果客户端指定的 pin 无效 ID （用于标识不存在的 pin），该处理程序将返回状态代码状态\_无效\_参数。
 
-对简单 MSVAD 示例的两个其他修改都需要支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。 它们是：
+对简单 MSVAD 示例的两个其他修改都需要支持 KSPROPERTY\_JACK\_DESCRIPTION 属性。 这些是：
 
 -   添加的声明**PropertyHandlerJackDescription**向标头文件 Mintopo.h 中 CMiniportTopology 类定义前面的代码示例中的方法。
 

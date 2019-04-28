@@ -1,6 +1,6 @@
 ---
-title: 若要取消例程的简介
-description: 若要取消例程的简介
+title: Cancel 例程简介
+description: Cancel 例程简介
 ms.assetid: 99f7f045-2b2f-4fb3-ac1c-99ab76fa46ad
 keywords:
 - 有关取消 Irp 取消 Irp，
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9dfbe1ab41be51e44498c2c0ac5fa80b790920
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341053"
 ---
-# <a name="introduction-to-cancel-routines"></a>若要取消例程的简介
+# <a name="introduction-to-cancel-routines"></a>Cancel 例程简介
 
 
 

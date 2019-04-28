@@ -1,6 +1,6 @@
 ---
-title: 默认数据交集的处理程序
-description: 默认数据交集的处理程序
+title: 默认数据交集处理程序
+description: 默认数据交集处理程序
 ms.assetid: 5c70a6e4-702f-4fd0-bb3e-2cde2955b2ad
 keywords:
 - 数据交集处理程序 WDK 音频，默认值
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aee3aeb9c615367bffd158854158373c757320e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333918"
 ---
-# <a name="default-data-intersection-handlers"></a>默认数据交集的处理程序
+# <a name="default-data-intersection-handlers"></a>默认数据交集处理程序
 
 
 ## <span id="default_data_intersection_handlers"></span><span id="DEFAULT_DATA_INTERSECTION_HANDLERS"></span>

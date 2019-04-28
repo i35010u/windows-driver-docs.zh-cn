@@ -1,5 +1,5 @@
 ---
-title: .readmem （从文件读取内存）
+title: .readmem（从文件读取内存）
 description: .Readmem 命令从指定的文件中读取原始二进制数据，并将数据复制到目标计算机的内存。
 ms.assetid: 128cbea1-5fb5-4685-8587-f814f94cc658
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a23efb0889cccf1ab13cc167866222c4701306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338930"
 ---
-# <a name="readmem-read-memory-from-file"></a>.readmem （从文件读取内存）
+# <a name="readmem-read-memory-from-file"></a>.readmem（从文件读取内存）
 
 
 **.Readmem**命令从指定的文件中读取原始二进制数据，并将数据复制到目标计算机的内存。

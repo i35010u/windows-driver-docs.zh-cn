@@ -5,11 +5,11 @@ ms.assetid: FFE7C946-4406-46A5-A9A7-CD0E2756C98E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06f349161f8fd26a6b19a2a2cdb31f21a2b04dd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339991"
 ---
 # <a name="querying-the-pci-configuration-space-for-a-virtual-function"></a>查询虚拟功能的 PCI 配置空间
 

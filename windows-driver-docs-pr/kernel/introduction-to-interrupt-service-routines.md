@@ -1,6 +1,6 @@
 ---
-title: 若要中断服务例程的简介
-description: 若要中断服务例程的简介
+title: 中断服务例程简介
+description: 中断服务例程简介
 ms.assetid: e83eb873-7cdf-4faf-9a6e-cc5954ebf1d6
 keywords:
 - 中断服务例程 WDK 内核，有关 Isr
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d595cdac33579fa225695380362379b4a6e66e32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340975"
 ---
-# <a name="introduction-to-interrupt-service-routines"></a>若要中断服务例程的简介
+# <a name="introduction-to-interrupt-service-routines"></a>中断服务例程简介
 
 
 接收中断的物理设备的驱动程序将注册一个或多个中断服务例程 (ISR) 服务中断。 系统调用 ISR 每次收到中断。

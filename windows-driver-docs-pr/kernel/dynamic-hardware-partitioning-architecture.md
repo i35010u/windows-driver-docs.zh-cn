@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57366470ad89d8305ad0958c1530c7ea671e4da7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341479"
 ---
 # <a name="dynamic-hardware-partitioning-architecture"></a>动态硬件分区体系结构
 

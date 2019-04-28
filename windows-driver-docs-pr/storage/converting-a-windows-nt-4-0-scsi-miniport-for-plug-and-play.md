@@ -1,6 +1,6 @@
 ---
-title: 转换 Plug and play Windows NT 4.0 SCSI 微型端口
-description: 转换 Plug and play Windows NT 4.0 SCSI 微型端口
+title: 转换 Windows NT 4.0 SCSI 微型端口以实现即插即用
+description: 转换 Windows NT 4.0 SCSI 微型端口以实现即插即用
 ms.assetid: 46e5eb41-ff41-4054-856b-cc32f286e543
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，即插即用
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7192f8e41bbef16bc8c0ec0d3a46fa4235327924
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330450"
 ---
-# <a name="converting-a-windows-nt-40-scsi-miniport-for-plug-and-play"></a>转换 Plug and play Windows NT 4.0 SCSI 微型端口
+# <a name="converting-a-windows-nt-40-scsi-miniport-for-plug-and-play"></a>转换 Windows NT 4.0 SCSI 微型端口以实现即插即用
 
 
 ## <span id="ddk_converting_a_windows_nt_4_0_scsi_miniport_for_plug_and_play_kg"></span><span id="DDK_CONVERTING_A_WINDOWS_NT_4_0_SCSI_MINIPORT_FOR_PLUG_AND_PLAY_KG"></span>

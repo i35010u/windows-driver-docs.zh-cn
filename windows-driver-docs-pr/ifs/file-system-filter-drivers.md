@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2581ddb31c498e6bb6ffede13838654294c45c36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327441"
 ---
 # <a name="file-system-filter-drivers"></a>文件系统筛选器驱动程序
 

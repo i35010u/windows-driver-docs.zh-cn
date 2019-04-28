@@ -4,17 +4,17 @@ description: 介绍如何使用软件组件包括特定于设备的用户模式�
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 633023f0187a3ff1d331d1bdf83bad258d125ce1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339439"
 ---
 # <a name="using-a-component-inf-file"></a>使用组件 INF 文件
 
 如果你想要使用 Windows 10 上的设备包括使用用户模式软件，具有以下选项来创建[DCHU 符合通用驱动程序](../develop/getting-started-with-universal-drivers.md):
     
-|方法|方案|
+|方法|应用场景|
 |---|---|
 |[硬件支持应用程序 (HSA)](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md) | 打包为 UWP 应用的交付和从 Microsoft Store 中处理的设备外接程序软件。  建议的方法。 |
 |软件组件|MSI 或 EXE 的二进制文件、 Win32 服务或使用 AddReg 和 CopyFiles 安装的软件，设备外接程序软件。  引用的二进制文件仅在桌面版本中 （主页、 Pro 和 Enterprise） 上运行。  引用的二进制文件将不运行在 Windows 10 秒。|
@@ -182,7 +182,7 @@ ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel"
 
 安装程序类的详细信息，请参阅[系统定义设备安装程序类可用于供应商](https://msdn.microsoft.com/library/windows/hardware/ff553426)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [INF AddComponent 指令](inf-addcomponent-directive.md)
 

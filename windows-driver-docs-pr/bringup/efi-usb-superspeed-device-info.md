@@ -5,11 +5,11 @@ ms.assetid: 7861BA16-7499-48A1-9D6A-9BB8F5AA36CE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2bcc9909d7cc666164b80e737d2b2b74f6afdb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337747"
 ---
 # <a name="efiusbsuperspeeddeviceinfo"></a>EFI\_USB\_SUPERSPEED\_DEVICE\_INFO
 

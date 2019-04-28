@@ -4,11 +4,11 @@ description: 目标系统使用 CHID 目标
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 05f94ca402648d357df71dafcd799f463d67f7cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337382"
 ---
 # <a name="target-a-system-using-chid-targeting"></a>目标系统使用 CHID 目标
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 654f80a38ba4ff0a2b4edc60521e3be188185c8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339107"
 ---
 # <a name="acpi-notifications"></a>ACPI 通知
 

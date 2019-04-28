@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f7a4deb4a694ff39be7d0d2b694e9a1aad8dea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329681"
 ---
 # <a name="disk-integrity-checking"></a>磁盘完整性检查
 

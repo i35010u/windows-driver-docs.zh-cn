@@ -1,6 +1,6 @@
 ---
-title: 指定 ac-3 数据范围
-description: 指定 ac-3 数据范围
+title: 指定 AC-3 数据范围
+description: 指定 AC-3 数据范围
 ms.assetid: 87d59554-43fa-4d61-9829-c38691d0a525
 keywords:
 - S/PDIF 传递 WDK 音频
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6b9480e9ad1d81af5d547f57bbe1f0f4ddfc70d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328621"
 ---
-# <a name="specifying-ac-3-data-ranges"></a>指定 ac-3 数据范围
+# <a name="specifying-ac-3-data-ranges"></a>指定 AC-3 数据范围
 
 
 ## <span id="specifying_ac_3_data_ranges"></span><span id="SPECIFYING_AC_3_DATA_RANGES"></span>

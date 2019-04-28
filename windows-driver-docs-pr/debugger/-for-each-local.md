@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0272d43871bccc209522d4521113c2f2a1a31791
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336693"
 ---
 # <a name="foreachlocal"></a>！ 有关\_每个\_本地
 
@@ -35,7 +35,7 @@ ms.locfileid: "56519705"
 <span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span> *CommandString*   
 指定要在当前堆栈帧中执行一次为每个本地变量的调试器命令。 如果*CommandString*包括多个命令，必须使用分号分隔并括起来*CommandString*引号引起来。 如果包含多个命令，对单个命令中*CommandString*不能包含引号引起来。
 
-内*CommandString*，或在任何脚本中的命令*CommandString*执行，则可以使用 **@\#本地**别名。 此别名替换为本地变量的名称。 这种替换之前发生*CommandString*执行和任何其他分析发生之前。 此别名是区分大小写，并且必须添加一个空格前并后，添加一个空格，即使将别名括在括号中。 如果您使用 c + + 表达式语法，则必须引用此别名来作为 **@ @ (@\#本地)**。
+内*CommandString*，或在任何脚本中的命令*CommandString*执行，则可以使用 **@\#本地**别名。 此别名替换为本地变量的名称。 这种替换之前发生*CommandString*执行和任何其他分析发生之前。 此别名是区分大小写，并且必须添加一个空格前并后，添加一个空格，即使将别名括在括号中。 如果使用C++表达式语法，必须引用此别名来作为 **@ @ (@\#本地)**。
 
 此别名对调用的生存期内只是可用 **！ 有关\_每个\_本地**。 不要混淆此别名使用伪寄存器，固定名称的别名或用户命名别名。
 

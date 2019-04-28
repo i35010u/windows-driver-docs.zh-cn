@@ -5,11 +5,11 @@ ms.assetid: 4a4dfe91-a70b-4297-9f11-fcc4b0e5a900
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1763ff1609b98b888a0f55d8ab6651282507d77d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341660"
 ---
 # <a name="do-i-need-to-call-wppcheckfornullstring"></a>我需要调用 WPP\_检查\_有关\_NULL\_字符串？
 

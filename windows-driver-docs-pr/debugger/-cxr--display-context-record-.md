@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fcedc429b537dea85194ce04ef331fa576d7d62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336878"
 ---
 # <a name="cxr-display-context-record"></a>.cxr（显示上下文记录）
 

@@ -1,19 +1,19 @@
 ---
-title: 使用安装程序 Api 以访问设备的属性
-description: 使用安装程序 Api 以访问设备的属性
+title: 使用 SetupAPI 访问设备属性
+description: 使用 SetupAPI 访问设备属性
 ms.assetid: 27dcbff1-e739-4369-aec0-3bc6e8794059
 keywords:
 - 设备属性 WDK 设备安装，访问
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10a92e54643c893328f391dd8ce3ef869e270da9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339386"
 ---
-# <a name="using-setupapi-to-access-device-properties"></a>使用安装程序 Api 以访问设备的属性
+# <a name="using-setupapi-to-access-device-properties"></a>使用 SetupAPI 访问设备属性
 
 
 在 Windows Vista 和更高版本的 Windows 中，可以使用 SetupAPI 属性函数来访问设备实例、 设备类别和设备接口的属性。 了解如何使用这些属性函数来访问[系统定义的设备属性](system-defined-device-properties2.md)，请参阅以下主题：

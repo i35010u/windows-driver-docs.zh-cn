@@ -1,6 +1,6 @@
 ---
-title: 公用日志文件系统简介
-description: 公用日志文件系统简介
+title: 通用日志文件系统简介
+description: 通用日志文件系统简介
 ms.assetid: 2185d834-81f3-4bf9-afa6-897c1515f8b5
 keywords:
 - 有关常见日志文件系统的常见日志文件系统 WDK 内核
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2f61ec177cdab10e1d0219f450ed0860fc70aac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341443"
 ---
-# <a name="introduction-to-the-common-log-file-system"></a>公用日志文件系统简介
+# <a name="introduction-to-the-common-log-file-system"></a>通用日志文件系统简介
 
 
 

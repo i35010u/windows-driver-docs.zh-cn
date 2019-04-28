@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: da59ea96bd8beec1d7d43e5e6e7e32989d10261f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334083"
 ---
 # <a name="usbkdusbhcdlistlogs"></a>!usbkd.usbhcdlistlogs
 

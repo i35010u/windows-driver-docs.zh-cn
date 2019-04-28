@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5551b7ee85e5b7cd7f01635e76a7f87bad472c87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336530"
 ---
 # <a name="heap"></a>!heap
 
@@ -62,7 +62,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -125,7 +125,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -195,7 +195,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -252,7 +252,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -304,7 +304,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -345,7 +345,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -379,7 +379,7 @@ ms.locfileid: "56575409"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>

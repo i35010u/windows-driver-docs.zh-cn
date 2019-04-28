@@ -1,6 +1,6 @@
 ---
-title: 杂项 GDL 指令
-description: 杂项 GDL 指令
+title: 其他 GDL 指令
+description: 其他 GDL 指令
 ms.assetid: 8a1c4bdf-7a84-44b5-8dad-4518edc2b560
 keywords:
 - 指令 WDK GDL，杂项指令
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4460a94babcfc1c2f6b59f9bd265617da14b09d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338356"
 ---
-# <a name="miscellaneous-gdl-directives"></a>杂项 GDL 指令
+# <a name="miscellaneous-gdl-directives"></a>其他 GDL 指令
 
 
 GDL 提供了两个其他指令：

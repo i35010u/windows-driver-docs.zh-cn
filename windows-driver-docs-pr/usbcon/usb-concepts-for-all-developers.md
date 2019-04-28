@@ -1,21 +1,21 @@
 ---
-Description: A Universal Serial Bus (USB) device defines its capabilities and features through configurations, interfaces, alternate settings, and endpoints.
-title: 所有 USB 开发人员的概念
+Description: 通用串行总线 (USB) 设备定义其功能和通过配置、 接口、 替代设置和终结点的功能。
+title: 适用于所有 USB 开发人员的概念
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8a91ceaf9fb8602e0c507f1541ebce1ef7e0624
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331765"
 ---
-#  <a name="concepts-for-all-usb-developers"></a>所有 USB 开发人员的概念
+#  <a name="concepts-for-all-usb-developers"></a>适用于所有 USB 开发人员的概念
 
 
 通用串行总线 (USB) 设备定义其功能和通过配置、 接口、 替代设置和终结点的功能。 本主题提供了这些概念的高级概述。 有关详细信息，请参阅上的 USB 规范[通用串行总线文档]( https://go.microsoft.com/fwlink/p/?linkid=224892)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

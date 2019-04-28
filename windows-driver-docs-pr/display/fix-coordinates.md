@@ -1,6 +1,6 @@
 ---
-title: 修复坐标
-description: 修复坐标
+title: FIX 坐标
+description: FIX 坐标
 ms.assetid: dfa5c61f-9464-4c63-998e-7fee21cfd278
 keywords:
 - 图面协商 WDK GDI，修复坐标
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 588dbdfa8a62c2de5994cefe29049184872e038b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327912"
 ---
-# <a name="fix-coordinates"></a>修复坐标
+# <a name="fix-coordinates"></a>FIX 坐标
 
 
 ## <span id="ddk_fix_coordinates_gg"></span><span id="DDK_FIX_COORDINATES_GG"></span>

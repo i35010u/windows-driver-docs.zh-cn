@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 46be32a919d0d8b18f80e00f2cf5dbb00a6f6d96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336965"
 ---
-# <a name="bthkdbthhelp"></a>！ bthkd.bthhelp
+# <a name="bthkdbthhelp"></a>!bthkd.bthhelp
 
 
 **！ Bthkd.bthhelp**命令显示蓝牙调试扩展命令的帮助。

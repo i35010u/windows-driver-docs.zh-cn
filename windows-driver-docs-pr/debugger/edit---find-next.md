@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80006ab1fcadb4e04aea61663a03c70c9f2ab40f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331419"
 ---
-# <a name="edit--find-next"></a>编辑 |查找下一个
+# <a name="edit--find-next"></a>编辑 | 查找下一个
 
 
 ## <span id="ddk_edit_find_next_dbg"></span><span id="DDK_EDIT_FIND_NEXT_DBG"></span>

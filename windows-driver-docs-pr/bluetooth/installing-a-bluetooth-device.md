@@ -1,6 +1,6 @@
 ---
-title: 安装 Bluetooth 的设备
-description: 安装 Bluetooth 的设备
+title: 安装蓝牙设备
+description: 安装蓝牙设备
 ms.assetid: 2bf2b2df-260c-42a5-9ee9-6db91f304036
 keywords:
 - 蓝牙 WDK 安装
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 212adebec6cd3e04f98c905d70da82bb39109cbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328196"
 ---
-# <a name="installing-a-bluetooth-device"></a>安装 Bluetooth 的设备
+# <a name="installing-a-bluetooth-device"></a>安装蓝牙设备
 
 
 蓝牙配置文件驱动程序的两种安装类型

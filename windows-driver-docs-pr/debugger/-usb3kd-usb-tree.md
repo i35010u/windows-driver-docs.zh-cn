@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d6a8fef0d862caa8025ffb7b104746217264364b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330780"
 ---
 # <a name="usb3kdusbtree"></a>!usb3kd.usb\_tree
 

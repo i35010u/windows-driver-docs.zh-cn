@@ -5,11 +5,11 @@ ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 842c15524c0e3517c15a666666719fcfb67f8954
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339762"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>创建 UWP 设备应用的照相机驱动程序 MFT
 

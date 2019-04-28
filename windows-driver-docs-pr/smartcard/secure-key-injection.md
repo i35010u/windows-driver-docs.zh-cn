@@ -5,11 +5,11 @@ ms.assetid: 21F8ED59-B04C-40D3-AEED-015890798215
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56843d10d3555f7b21f53785f7304f95e0eda6d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339120"
 ---
 # <a name="secure-key-injection"></a>安全密钥注入
 

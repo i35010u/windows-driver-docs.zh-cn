@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e8a12ed7cadcd80d0a588d96f14bc087a2d1bd85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339065"
 ---
 # <a name="smremovelink-function"></a>SM\_RemoveLink 函数
 
@@ -35,7 +35,7 @@ void SM_RemoveLink(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *HBAStatus*   
@@ -65,7 +65,7 @@ void SM_RemoveLink(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi.h</td>
 </tr>
 </tbody>

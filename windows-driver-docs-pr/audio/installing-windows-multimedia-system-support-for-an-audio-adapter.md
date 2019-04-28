@@ -1,6 +1,6 @@
 ---
-title: 安装 Windows 多媒体系统支持的音频的适配器
-description: 安装 Windows 多媒体系统支持的音频的适配器
+title: 为音频适配器安装 Windows 多媒体系统支持
+description: 为音频适配器安装 Windows 多媒体系统支持
 ms.assetid: 5846404f-3a6a-4e55-ba83-18404ea7cace
 keywords:
 - 音频适配器 WDK、 多媒体支持
@@ -11,13 +11,13 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a01293d8d5ab3e25fc2f25abb68fdc28eda9729
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333432"
 ---
-# <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>安装 Windows 多媒体系统支持的音频的适配器
+# <a name="installing-windows-multimedia-system-support-for-an-audio-adapter"></a>为音频适配器安装 Windows 多媒体系统支持
 
 
 ## <span id="ddk_installing_windows_multimedia_system_support_for_an_audio_adapter_"></span><span id="DDK_INSTALLING_WINDOWS_MULTIMEDIA_SYSTEM_SUPPORT_FOR_AN_AUDIO_ADAPTER_"></span>

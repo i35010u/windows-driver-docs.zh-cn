@@ -15,11 +15,11 @@ api_type:
 ms.date: 06/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c339780650097e711d9969ae9033113d0968f50b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332673"
 ---
 # <a name="kspropertyrtaudiopacketcount"></a>KSPROPERTY\_RTAUDIO\_PACKETCOUNT
 
@@ -87,11 +87,11 @@ KSPROPERTY\_RTAUDIO\_PACKETCOUNT 属性请求将返回状态\_成功以指示已
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 10 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
-title: 存储类驱动程序 BuildRequest 例程
-description: 存储类驱动程序 BuildRequest 例程
+title: 存储类驱动程序的 BuildRequest 例程
+description: 存储类驱动程序的 BuildRequest 例程
 ms.assetid: 2ba26628-4862-440c-b8f1-dd983cf9923b
 keywords:
 - BuildRequest
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a45786810fa0afed81032af4481142dfa7bf87e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339050"
 ---
-# <a name="storage-class-drivers-buildrequest-routine"></a>存储类驱动程序 BuildRequest 例程
+# <a name="storage-class-drivers-buildrequest-routine"></a>存储类驱动程序的 BuildRequest 例程
 
 
 ## <span id="ddk_storage_class_drivers_buildrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_BUILDREQUEST_ROUTINE_KG"></span>

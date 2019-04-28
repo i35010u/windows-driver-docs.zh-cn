@@ -1,6 +1,6 @@
 ---
-title: 使用仅提供插 SCSI 微型端口中的资源
-description: 使用仅提供插 SCSI 微型端口中的资源
+title: 在即插即用 SCSI 微型端口中只使用供应的资源
+description: 在即插即用 SCSI 微型端口中只使用供应的资源
 ms.assetid: 26c688dc-b6af-4a0c-8401-d53e653d90b3
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，即插即用
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec21cad95e73fee1f7e0d2d47b354bbdd9cf135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339842"
 ---
-# <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>使用仅提供插 SCSI 微型端口中的资源
+# <a name="use-only-supplied-resources-in-a-plug-and-play-scsi-miniport"></a>在即插即用 SCSI 微型端口中只使用供应的资源
 
 
 ## <span id="ddk_use_only_supplied_resources_in_a_plug_and_play_scsi_miniport_kg"></span><span id="DDK_USE_ONLY_SUPPLIED_RESOURCES_IN_A_PLUG_AND_PLAY_SCSI_MINIPORT_KG"></span>

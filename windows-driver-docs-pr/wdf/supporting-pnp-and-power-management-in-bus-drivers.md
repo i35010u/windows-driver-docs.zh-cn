@@ -1,6 +1,6 @@
 ---
-title: 总线驱动程序中支持的即插即用和电源管理
-description: 总线驱动程序中支持的即插即用和电源管理
+title: 支持在总线驱动程序中进行 PnP 和电源管理
+description: 支持在总线驱动程序中进行 PnP 和电源管理
 ms.assetid: 35a3d734-7d7e-46ee-aba6-fc6a579d4394
 keywords:
 - 即插即用 WDK KMDF，总线驱动程序
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97d8e6c082ab7fe3e65f5fb8f4682f674c89cf28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331589"
 ---
-# <a name="supporting-pnp-and-power-management-in-bus-drivers"></a>总线驱动程序中支持的即插即用和电源管理
+# <a name="supporting-pnp-and-power-management-in-bus-drivers"></a>支持在总线驱动程序中进行 PnP 和电源管理
 
 
 某些设备永久插入到系统，而其他人可插入和拔出系统运行时。 *总线驱动程序*必须标识和报告此设备已连接到其总线，且它们必须发现和报告系统中的抵达和出发的设备。

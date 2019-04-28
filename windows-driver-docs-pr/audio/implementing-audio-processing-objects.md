@@ -5,11 +5,11 @@ ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fa596eeaa6d6962226863023402da5f75de61397
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333524"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -131,7 +131,7 @@ SwapAPO 示例的主头文件是 swapapo.h。 下面总结了其他主代码元�
 |                      |                                                                   |
 |----------------------|-------------------------------------------------------------------|
 | **文件**             | **说明**                                                   |
-| Swap.cpp             | 包含的交换 APO 实现的 c + + 代码。        |
+| Swap.cpp             | C++包含交换 APO 的实现代码。        |
 | SwapAPOMFX.cpp       | CSwapAPOMFX 的实现                                     |
 | SwapAPOSFX.cpp       | CSwapAPOSFX 的实现                                     |
 | SwapAPODll.cpp       | DLL 导出的实现。                                    |
@@ -152,7 +152,7 @@ SwapAPO 示例的主头文件是 swapapo.h。 下面总结了其他主代码元�
 
 1.  创建一个类继承自**CBaseAudioProcessingObject**。
 
-    下面的 c + + 代码示例演示如何从继承的类创建**CBaseAudioProcessingObject**。 这一概念的实际实现，请按照中的说明**音频处理对象驱动程序示例**部分以转到交换示例中，并指向*Swapapo.h*文件。
+    以下C++的代码示例演示如何创建继承的类**CBaseAudioProcessingObject**。 这一概念的实际实现，请按照中的说明**音频处理对象驱动程序示例**部分以转到交换示例中，并指向*Swapapo.h*文件。
 
     ```cpp
     // Custom APO class - LFX
@@ -176,7 +176,7 @@ SwapAPO 示例的主头文件是 swapapo.h。 下面总结了其他主代码元�
 
     -   **ValidateAndCacheConnectionInfo**。 此方法分配的内存来存储格式的详细信息，例如，通道计数，采样率、 示例深度和通道掩码。
 
-下面的 c + + 代码示例演示的实现[ **APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)步骤 1 中创建的示例类的方法。 这一概念的实际实现，请按照中的说明**音频处理对象驱动程序示例**部分以转到交换示例中，并指向*Swapapolfx.cpp*文件。
+以下C++的代码示例演示一种实现[ **APOProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff536506)步骤 1 中创建的示例类的方法。 这一概念的实际实现，请按照中的说明**音频处理对象驱动程序示例**部分以转到交换示例中，并指向*Swapapolfx.cpp*文件。
 
 ```cpp
 // Custom implementation of APOProcess method
@@ -251,7 +251,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 面向 Windows 10 的驱动程序应动态链接对通用 CRT。
 
-如果你需要支持 Windows 8,1，启用 C/c + +，代码生成中设置项目属性的静态链接。 设置为"运行时库" */MT*为发布生成或 */MTd*对于调试版本。 进行此更改，因为驱动程序很难重新分发 MSVCRT&lt;n&gt;二进制.dll。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息请参阅[/MD、 /MT、 /LD （使用运行时库）](https://msdn.microsoft.com/library/2kzt1wy3.aspx) 。
+如果你需要支持 Windows 8,1，启用通过在 C 中设置项目属性的静态链接 /C++，代码生成。 设置为"运行时库" */MT*为发布生成或 */MTd*对于调试版本。 进行此更改，因为驱动程序很难重新分发 MSVCRT&lt;n&gt;二进制.dll。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息请参阅[/MD、 /MT、 /LD （使用运行时库）](https://msdn.microsoft.com/library/2kzt1wy3.aspx) 。
 
 **禁用使用嵌入的清单**
 

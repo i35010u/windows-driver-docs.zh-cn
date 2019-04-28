@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 84912ddbe4cc9f21afcfd7489a4cae979e2e88d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334100"
 ---
 # <a name="usbkdhub2infofromfdo"></a>!usbkd.hub2\_info\_from\_fdo
 

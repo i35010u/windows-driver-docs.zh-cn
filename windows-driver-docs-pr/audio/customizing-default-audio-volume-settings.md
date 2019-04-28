@@ -1,5 +1,5 @@
 ---
-title: 自定义高清晰度音频驱动程序的卷设置
+title: 自定义 HD 音频驱动程序音量设置
 description: 可以自定义箱 HD 音频默认音频音量和麦克风提升级别以满足特定的 PC，为 Oem 提供了其音频适配器中某些灵活性安装参数。
 ms.assetid: 0C86C869-447E-4A77-A723-5D9A17D95C7C
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f5ba4155d7a499646fadbee71b166d7c816f441
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333838"
 ---
-# <a name="customizing-hd-audio-driver-volume-settings"></a>自定义高清晰度音频驱动程序的卷设置
+# <a name="customizing-hd-audio-driver-volume-settings"></a>自定义 HD 音频驱动程序音量设置
 
 
 可以自定义箱 HD 音频默认音频音量和麦克风提升级别以满足特定的 PC，为 Oem 提供了其音频适配器中某些灵活性安装参数。
@@ -157,7 +157,7 @@ HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-
 
 HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e96c-e325-11ce-bfc1-08002be10318}\\0002\\DeviceInterfaces\\eAuxIn
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [默认音频的音量设置](default-audio-volume-settings.md)  
 [**KSPROPERTY\_音频\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)  
 

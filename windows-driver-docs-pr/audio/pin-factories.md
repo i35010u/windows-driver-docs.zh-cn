@@ -1,6 +1,6 @@
 ---
-title: Pin 工厂
-description: Pin 工厂
+title: 引脚工厂
+description: 引脚工厂
 ms.assetid: 1399b8e1-bd73-4052-afa5-3e992be8789b
 keywords:
 - 音频筛选器 WDK 音频、 固定工厂
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa2f3cd4858e895d6b599817881210b8a8abbf20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332227"
 ---
-# <a name="pin-factories"></a>Pin 工厂
+# <a name="pin-factories"></a>引脚工厂
 
 
 ## <span id="pin_factories"></span><span id="PIN_FACTORIES"></span>

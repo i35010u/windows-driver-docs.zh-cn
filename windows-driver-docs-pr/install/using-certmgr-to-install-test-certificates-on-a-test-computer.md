@@ -1,6 +1,6 @@
 ---
-title: 使用 CertMgr 测试计算机上安装测试证书
-description: 使用 CertMgr 测试计算机上安装测试证书
+title: 使用 CertMgr 在测试计算机上安装测试证书
+description: 使用 CertMgr 在测试计算机上安装测试证书
 ms.assetid: 5928c810-65e8-412e-9723-7b371574006c
 keywords:
 - Certmgr 工具
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccda7273b3b8173f0382a0e3e928fc6cb7a16193
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339454"
 ---
-# <a name="using-certmgr-to-install-test-certificates-on-a-test-computer"></a>使用 CertMgr 测试计算机上安装测试证书
+# <a name="using-certmgr-to-install-test-certificates-on-a-test-computer"></a>使用 CertMgr 在测试计算机上安装测试证书
 
 
 若要使用的测试计算机上安装测试证书[ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)，请执行以下步骤：

@@ -5,11 +5,11 @@ ms.assetid: 8557AE39-56DF-4184-A74A-186AF30F2A63
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 407b86451b547a28cab88bd7ca4db9e9f5a3d182
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332139"
 ---
 # <a name="pkeyfxstreameffectclsid"></a>PKEY\_FX\_StreamEffectClsid
 
@@ -34,7 +34,7 @@ FX_STREAM_CLSID      = "{00000000-0000-0000-0000-000000000000}"
 HKR,"FX\\0",%PKEY_FX_StreamEffectClsid%,,%FX_STREAM_CLSID%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

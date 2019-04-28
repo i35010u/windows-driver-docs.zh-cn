@@ -5,11 +5,11 @@ ms.assetid: 143ee448-2c29-46f4-b62c-6429a4a1d890
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad5c2af7349738995cb17a4ff1e25b754ff831b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337700"
 ---
 # <a name="efiusbfnioprotocolgetendpointpolicy"></a>EFI\_USBFN\_IO\_PROTOCOL.GetEndpointPolicy
 

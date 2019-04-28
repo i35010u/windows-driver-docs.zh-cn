@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 49913265188f5e821015c673c1974a9e81e2c371
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336044"
 ---
 # <a name="ndiskdnetqueue"></a>!ndiskd.netqueue
 

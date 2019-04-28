@@ -18,11 +18,11 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec15f1f408f9b09e32e3b1bd14bb44a4404529e6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333669"
 ---
 # <a name="extensible-wave-format-descriptors"></a>可扩展的波形格式描述符
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 095f4ec16702756e9126a076a3f5e0b5f06f0770
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341488"
 ---
 # <a name="installing-device-specific-applications"></a>安装特定于设备的应用程序
 

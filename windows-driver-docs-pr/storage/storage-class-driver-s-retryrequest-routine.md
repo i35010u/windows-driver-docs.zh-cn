@@ -1,6 +1,6 @@
 ---
-title: 存储类驱动程序 RetryRequest 例程
-description: 存储类驱动程序 RetryRequest 例程
+title: 存储类驱动程序的 RetryRequest 例程
+description: 存储类驱动程序的 RetryRequest 例程
 ms.assetid: de1eea7d-88db-444c-a9f7-462ad4a5df27
 keywords:
 - RetryRequest
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdfd72c30a243cef7c1d608c3a0b7e889e6bfcb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339006"
 ---
-# <a name="storage-class-drivers-retryrequest-routine"></a>存储类驱动程序 RetryRequest 例程
+# <a name="storage-class-drivers-retryrequest-routine"></a>存储类驱动程序的 RetryRequest 例程
 
 
 ## <span id="ddk_storage_class_drivers_retryrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_RETRYREQUEST_ROUTINE_KG"></span>

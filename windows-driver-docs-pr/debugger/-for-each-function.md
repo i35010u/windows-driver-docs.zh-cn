@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d9699254771ad1784fd6009d97c46639f41ad429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336644"
 ---
 # <a name="foreachfunction"></a>!for\_each\_function
 
@@ -53,13 +53,13 @@ ms.locfileid: "56521614"
 <tr class="header">
 <th align="left">别名</th>
 <th align="left">数据类型</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>@#SymbolName</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>符号名称。</p></td>
 </tr>
 <tr class="even">
@@ -69,12 +69,12 @@ ms.locfileid: "56521614"
 </tr>
 <tr class="odd">
 <td align="left"><p>@#ModName</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>模块名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>@#FunctionName</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>函数名称。</p></td>
 </tr>
 </tbody>

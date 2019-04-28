@@ -1,6 +1,6 @@
 ---
-title: Winsock 内核扩展插件接口
-description: Winsock 内核扩展插件接口
+title: Winsock 内核扩展接口
+description: Winsock 内核扩展接口
 ms.assetid: db0030fa-0ee9-482b-b6ba-e95b40a25473
 keywords:
 - 网络、 Winsock 内核 WDK 扩展插件接口
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45126db08fc387f48b798fceead8807cf28d1f60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330443"
 ---
-# <a name="winsock-kernel-extension-interfaces"></a>Winsock 内核扩展插件接口
+# <a name="winsock-kernel-extension-interfaces"></a>Winsock 内核扩展接口
 
 
 Winsock Kernel (WSK)[网络编程接口 (NPI)](network-programming-interface.md)包括对支持*扩展插件接口*。 WSK 子系统可以使用扩展插件接口来扩展 WSK 之外的一套接字函数和由 WSK NPI 当前定义的事件回调函数的套接字功能。 由独立于 WSK NPI NPI 定义每个扩展接口。 当前已不定义任何扩展插件接口。

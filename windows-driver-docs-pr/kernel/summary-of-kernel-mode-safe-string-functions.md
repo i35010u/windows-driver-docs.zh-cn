@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fbcd8d1d7105995b5f66b1727164148968234d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331931"
 ---
 # <a name="summary-of-kernel-mode-safe-string-functions"></a>内核模式安全字符串函数摘要
 
@@ -19,7 +19,7 @@ ms.locfileid: "56577537"
 
 
 
-下表总结了适用于内核模式驱动程序的安全字符串函数，并指示它们替换的 C/c + + 语言运行时库函数。 如果函数的名称中包含**Cb**，该函数将字符串视为字节计数。 如果函数的名称中包含**Cch**，该函数将字符串视为字符计数。
+下表总结了适用于内核模式驱动程序的安全字符串函数，它表示 C /C++语言运行时库函数时，它们替换。 如果函数的名称中包含**Cb**，该函数将字符串视为字节计数。 如果函数的名称中包含**Cch**，该函数将字符串视为字符计数。
 
 <table>
 <colgroup>

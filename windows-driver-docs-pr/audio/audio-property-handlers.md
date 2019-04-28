@@ -17,11 +17,11 @@ keywords:
 ms.date: 08/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c33f8bd792e46e14e98061e59a236e13c625805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331421"
 ---
 # <a name="audio-property-handlers"></a>音频属性处理程序
 

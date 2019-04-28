@@ -5,11 +5,11 @@ ms.assetid: 7dedcc62-4ad6-42d5-a461-b0a69c9c97cd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1e357d03f819bdc5d10c6ac35c6e645749d272cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331092"
 ---
 # <a name="setgrouppresharedkey"></a>SetGroupPresharedKey
 

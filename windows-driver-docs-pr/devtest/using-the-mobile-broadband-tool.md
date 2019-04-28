@@ -1,19 +1,19 @@
 ---
-title: 使用创作向导移动宽带元数据
-description: 使用创作向导移动宽带元数据
+title: 使用移动宽带元数据创作向导
+description: 使用移动宽带元数据创作向导
 ms.assetid: CBEF0B73-9C1D-4ACF-9EB2-52020FBC2625
 keywords:
-- 使用创作向导移动宽带元数据
+- 使用移动宽带元数据创作向导
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6250320e330d312a187b0dea5c46ec9ce47672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327159"
 ---
-# <a name="using-the-mobile-broadband-metadata-authoring-wizard"></a>使用创作向导移动宽带元数据
+# <a name="using-the-mobile-broadband-metadata-authoring-wizard"></a>使用移动宽带元数据创作向导
 
 
 \[本主题介绍提供在 Windows Driver Kit (WDK) 8 的设备元数据创作工具。 如果要开发 Windows 8.1 的设备体验，使用设备元数据创建向导附带[Microsoft Visual Studio 2013 和 Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)。 有关详细信息，请参阅[Windows 8.1 设备体验](https://go.microsoft.com/fwlink/p/?linkid=325561)。 \]

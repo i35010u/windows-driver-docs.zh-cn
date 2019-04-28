@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69bd9d6bbf5284ec1676acafc7677186caf2b19b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341330"
 ---
 # <a name="iasphelpgetstatus-method"></a>Iasphelp::get\_状态方法
 
@@ -40,7 +40,7 @@ HRESULT get_Status(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *pVal* \[out\]  
@@ -108,6 +108,6 @@ PtrStatus = objPrinter.Status
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp::Open**](iasphelp-open.md)

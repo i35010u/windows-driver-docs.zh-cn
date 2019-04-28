@@ -1,6 +1,6 @@
 ---
-title: Stream 类别
-description: Stream 类别
+title: 流类别
+description: 流类别
 ms.assetid: dc2af282-4976-42d8-b07b-13b2a6dfb7d5
 keywords:
 - 视频捕获 WDK AVStream，流类别
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e688b53bf4e63683bb982ba584b2e0a9f8b722fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333967"
 ---
-# <a name="stream-categories"></a>Stream 类别
+# <a name="stream-categories"></a>流类别
 
 
 KsProxy 筛选器支持多种类型的流类别。 以下各小节中的表描述了不同类型的流类别和与每种类型的类别，以及视频捕获微型驱动程序应指定每个类别的扩展标头大小值相关联的数据格式。

@@ -5,11 +5,11 @@ ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 653724ee75540e1bcff7b23853696cd43d53edd1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330678"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义打印设置 （UWP 设备应用）
 
@@ -18,7 +18,7 @@ ms.locfileid: "57349246"
 
 C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)的示例使用**Preferences.xaml**页以显示自定义浮出控件的 UI 高级打印设置。 打印帮助器类用于创建设备上下文 (IPrinterExtensionContext)，并执行设备查询。 **PrinterHelperClass.cs**文件位于**DeviceAppForPrintersLibrary**项目，然后使用 Api 中定义**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也是在 JavaScript 和 c + + 中可用。 请注意由于 c + + 可以直接访问 COM，该示例的 c + + 版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
 
  
 
@@ -57,14 +57,14 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
 5.  构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
 6.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**并**DeviceAppForPrintersLibrary**到您 UWP 设备应用程序解决方案的项目。 您可以找到这些项目中的每个[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。
-    **请注意**  因为 c + + 可以直接访问 COM，c + + 应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
 
      
 
 ## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>步骤 1：注册扩展
 
 
-为了使 Windows 能够识别应用程序可以提供高级打印设置的自定义浮出控件，它必须注册打印任务设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.printTaskSettings`。 在C#和 c + + 示例`Executable`属性设置为`$targetnametoken$.exe`并`EntryPoint`属性设置为`DeviceAppForPrinters.App`。
+为了使 Windows 能够识别应用程序可以提供高级打印设置的自定义浮出控件，它必须注册打印任务设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.printTaskSettings`。 在C#和C++示例中，`Executable`属性设置为`$targetnametoken$.exe`并且`EntryPoint`属性设置为`DeviceAppForPrinters.App`。
 
 可以在添加打印任务设置扩展**声明**清单设计器在 Microsoft Visual Studio 中的选项卡。 您还可以编辑的应用程序包清单 XML 手动，使用 XML （文本） 编辑器。 右键单击**Package.appxmanifest**中的文件**解决方案资源管理器**的编辑选项。
 
@@ -475,7 +475,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 1.  在应用激活过程中检索的打印票证。 前面部分中所述的打印设置的应用程序激活[步骤 3:处理激活](#step3)。
 
-2.  检查是否已指定页大小选项。 在C#或 JS 应用程序打印的帮助器类可以检查此选项。 在 c + + 应用中，对 IPrintSchemaOption 检索 IPrintSchemaPageMediaSizeOption 调用 QueryInterface。
+2.  检查是否已指定页大小选项。 在C#或 JS 应用程序打印的帮助器类可以检查此选项。 在C++应用程序中，在 IPrintSchemaOption 检索 IPrintSchemaPageMediaSizeOption 上调用 QueryInterface。
 
     如果指定页大小选项，则将检查打印帮助程序类中，此示例演示一种方法。
 

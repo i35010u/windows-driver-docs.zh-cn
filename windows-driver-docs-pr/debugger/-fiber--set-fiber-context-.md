@@ -1,5 +1,5 @@
 ---
-title: .fiber （设置纤程上下文）
+title: .fiber（设置光纤上下文）
 description: .Fiber 命令指定哪些纤程使用纤程上下文。
 ms.assetid: 37473c90-018c-417f-a2b2-3723b9d03ca7
 keywords:
@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b6a637c508e4fb708514cedc6758bc3f8e14904a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334476"
 ---
-# <a name="fiber-set-fiber-context"></a>.fiber （设置纤程上下文）
+# <a name="fiber-set-fiber-context"></a>.fiber（设置光纤上下文）
 
 
 **.Fiber**命令指定哪些纤程使用纤程上下文。

@@ -1,17 +1,17 @@
 ---
-title: 虚拟化的 HYPER-V 中的网络接口
-description: 虚拟化的 HYPER-V 中的网络接口
+title: Hyper-V 中的虚拟化网络接口
+description: Hyper-V 中的虚拟化网络接口
 ms.assetid: ABBC74CF-C30B-413E-B368-A09157E0575C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc1a9b4ebff3c8d580f315137ef18c2cf79ee681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338336"
 ---
-# <a name="virtualized-networking-interfaces-in-hyper-v"></a>虚拟化的 HYPER-V 中的网络接口
+# <a name="virtualized-networking-interfaces-in-hyper-v"></a>Hyper-V 中的虚拟化网络接口
 
 
 

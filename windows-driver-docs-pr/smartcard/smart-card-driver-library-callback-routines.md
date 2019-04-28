@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 523bc557ed901eb64cb4ca0b0da6161fa3276e36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340874"
 ---
 # <a name="smart-card-driver-library-callback-routines"></a>智能卡驱动程序库回调例程
 

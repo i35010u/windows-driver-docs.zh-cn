@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c0f910d85b503f028ee9fe6b70f59d87c1baa033
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341569"
 ---
 # <a name="removelockforwarddevicecontrolinternal2-rule-wdm"></a>RemoveLockForwardDeviceControlInternal2 规则 (wdm)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56548257"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)

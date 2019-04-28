@@ -1,5 +1,5 @@
 ---
-title: NDIS WMI Guid
+title: NDIS WMI GUID
 description: 本主题介绍在 NDIS WMI GUID。
 ms.assetid: c07f5042-6193-49f5-80bb-ef1a5aa63335
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac82079223f82cbe0d7715ca0db07164be9fc8b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338435"
 ---
-# <a name="ndis-wmi-guids"></a>NDIS WMI Guid
+# <a name="ndis-wmi-guids"></a>NDIS WMI GUID
 
 本部分包括在 NDIS WMI 界面中使用的 GUID 的列表。
 

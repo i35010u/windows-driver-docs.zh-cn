@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b9b0b7ef7c80f5e0b49d32bd5019cf6813da13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335446"
 ---
 # <a name="wiadpsdocumenthandlingcapacity"></a>WIA\_DPS\_文档\_处理\_容量
 
@@ -42,7 +42,7 @@ WIA\_DPS\_文档\_处理\_容量属性已过时，不应使用。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

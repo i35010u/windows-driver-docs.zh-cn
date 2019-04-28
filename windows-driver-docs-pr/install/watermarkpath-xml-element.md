@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 02359f3886acbad1a5c846c85ea9194fd6b81e4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339279"
 ---
 # <a name="watermarkpath-xml-element"></a>watermarkPath XML 元素
 
@@ -81,7 +81,7 @@ ms.locfileid: "56540514"
 
 如果**watermarkPath**元素未指定，DPInst 将使用默认水印。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

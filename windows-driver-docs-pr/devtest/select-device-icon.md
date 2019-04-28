@@ -1,19 +1,19 @@
 ---
-title: 设备元数据创建向导中选择设备图标
-description: 设备元数据创建向导中选择设备图标
+title: 在设备元数据创作向导中选择设备图标
+description: 在设备元数据创作向导中选择设备图标
 ms.assetid: D66A6141-87DA-49E6-9634-705D279C5E97
 keywords:
-- 设备元数据创建向导中选择设备图标
+- 在设备元数据创作向导中选择设备图标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ceb7ea2f11c991a1d25efedb502a5ca160dfdbcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340131"
 ---
-# <a name="select-device-icon-in-the-device-metadata-authoring-wizard"></a>设备元数据创建向导中选择设备图标
+# <a name="select-device-icon-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中选择设备图标
 
 
 您可以指定在 Windows 中的设备显示的图标。 图标必须具有透明背景和平滑边缘。 它们还必须满足以下的格式和大小要求：

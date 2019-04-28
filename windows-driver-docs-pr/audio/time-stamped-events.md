@@ -1,6 +1,6 @@
 ---
-title: 带有时间戳的事件
-description: 带有时间戳的事件
+title: 带时间戳的事件
+description: 带时间戳的事件
 ms.assetid: 8db89e31-bfd7-48cf-9eb2-12ac7784cc31
 keywords:
 - 合成器 WDK 音频，时间戳
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f68ed0b65b1cae533c3ee4b4e5bca676a3bbd123
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328551"
 ---
-# <a name="time-stamped-events"></a>带有时间戳的事件
+# <a name="time-stamped-events"></a>带时间戳的事件
 
 
 ## <span id="time_stamped_events"></span><span id="TIME_STAMPED_EVENTS"></span>

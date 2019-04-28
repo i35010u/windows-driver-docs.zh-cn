@@ -1,17 +1,17 @@
 ---
 title: 验证由商业证书签名的编录文件
-description: 验证签名的商业版本发布证书签名的编录文件
+description: 验证通过商业发布证书签名的目录文件的签名
 ms.assetid: 153bb1e7-009d-4ef8-b5d7-a9e6eecf65bf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1780998634cbbe23211e080ef8c6012fdd1512b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339304"
 ---
-# <a name="verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-release-certificate"></a>验证签名的商业版本发布证书签名的编录文件
+# <a name="verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-release-certificate"></a>验证通过商业发布证书签名的目录文件的签名
 
 
 若要确认[编录文件](catalog-files.md)由有效签名[商业版本发布证书](commercial-release-certificate.md)，使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令：

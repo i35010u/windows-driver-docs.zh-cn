@@ -5,11 +5,11 @@ ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd53e46e57783d59ae626835ca0c8ce5f80ad0d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331442"
 ---
 # <a name="audio-processing-object-architecture"></a>音频处理对象体系结构
 
@@ -144,7 +144,7 @@ Microsoft HLK 提供了可用于不的测试。 有关音频测试，请参阅�
 
 ![图示显示 dsp 配备系统硬件中实现的效果。](images/audio-apo-dsp-equipped-system-with-hardware-effects-3.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [Windows 音频处理对象](windows-audio-processing-objects.md)  
 [实现 UI 用于配置 APO 效果](implementing-a-ui-for-configuring-apo-effects.md)  
 

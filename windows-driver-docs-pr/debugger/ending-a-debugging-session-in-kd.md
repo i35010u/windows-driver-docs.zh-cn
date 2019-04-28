@@ -1,17 +1,17 @@
 ---
-title: 结束调试会话中 KD
-description: 结束调试会话中 KD
+title: 在 KD 中结束调试会话
+description: 在 KD 中结束调试会话
 ms.assetid: 6CD39971-424D-4F29-9A36-CCD14187DEB0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d114286fd8ebfc1e2f2bfe8e8eeba0a255c7586
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340577"
 ---
-# <a name="ending-a-debugging-session-in-kd"></a>结束调试会话中 KD
+# <a name="ending-a-debugging-session-in-kd"></a>在 KD 中结束调试会话
 
 
 有两种不同方式退出 KD。

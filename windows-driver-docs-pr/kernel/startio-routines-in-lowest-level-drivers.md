@@ -1,6 +1,6 @@
 ---
-title: 在最低级别驱动程序中的 StartIo 例程
-description: 在最低级别驱动程序中的 StartIo 例程
+title: 最低级驱动程序中的 StartIo 例程
+description: 最低级驱动程序中的 StartIo 例程
 ms.assetid: f79f8929-bcf4-46a2-bf0e-0f8fb0720dd9
 keywords:
 - StartIo 例程，最低级别的驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b100a04e9389f40d152f9c70f50760c1f0af43a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331939"
 ---
-# <a name="startio-routines-in-lowest-level-drivers"></a>在最低级别驱动程序中的 StartIo 例程
+# <a name="startio-routines-in-lowest-level-drivers"></a>最低级驱动程序中的 StartIo 例程
 
 
 

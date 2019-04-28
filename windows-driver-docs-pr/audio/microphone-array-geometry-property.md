@@ -1,6 +1,6 @@
 ---
-title: 麦克风阵列 Geometry 属性
-description: 麦克风阵列 Geometry 属性
+title: 麦克风阵列几何属性
+description: 麦克风阵列几何属性
 ms.assetid: 7f280677-f86d-4687-b992-e2580046bd57
 keywords:
 - mic 数组 WDK 音频
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a9ca3ddc96b3ece4005691749373dfc0f9d2d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332335"
 ---
-# <a name="microphone-array-geometry-property"></a>麦克风阵列 Geometry 属性
+# <a name="microphone-array-geometry-property"></a>麦克风阵列几何属性
 
 
 在 Windows Vista 及更高版本，提供的麦克风阵列支持。 在大多数情况下，单个麦克风嵌入在便携式计算机或监视器不会捕获声音很好。 麦克风的数组执行更好地找出声音源并拒绝避免环境噪音和混响。 [ **KSPROPERTY\_音频\_MIC\_数组\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537289)属性指定几何图形的麦克风阵列。 属性值， [ **KSAUDIO\_MIC\_数组\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537087)，描述的数组类型 （线性、 平面，等等），数组中的麦克风的数量和其他功能。

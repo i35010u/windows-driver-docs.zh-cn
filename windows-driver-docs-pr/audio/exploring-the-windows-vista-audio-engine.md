@@ -5,11 +5,11 @@ ms.assetid: 6301f6d7-57f5-4b9f-9567-57efb9dc58f3
 ms.date: 11/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b7dd26437fba19251729fe31dc9a8b92a4564465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333710"
 ---
 # <a name="exploring-the-windows-vista-audio-engine"></a>探索 Windows Vista 音频引擎
 
@@ -53,19 +53,19 @@ ms.locfileid: "56548028"
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>低频率保护</p></td>
+<td align="left"><p>低频保护</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>演讲者填充</p></td>
+<td align="left"><p>扬声器填充</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>演讲者 Phantoming</p></td>
+<td align="left"><p>扬声器构成幻路</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>虚拟外侧代码</p></td>
+<td align="left"><p>虚拟环绕</p></td>
 <td align="left"><p>LFX</p></td>
 </tr>
 <tr class="even">
@@ -77,7 +77,7 @@ ms.locfileid: "56548028"
 <td align="left"><p>GFX</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>聊天室更正</p></td>
+<td align="left"><p>房间修正</p></td>
 <td align="left"><p>GFX</p></td>
 </tr>
 </tbody>

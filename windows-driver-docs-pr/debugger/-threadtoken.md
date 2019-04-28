@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 55d87c8396c45ba7537e288cdd6c845fd7c3e089
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338731"
 ---
-# <a name="threadtoken"></a>！ threadtoken
+# <a name="threadtoken"></a>!threadtoken
 
 
 **！ Threadtoken**扩展显示当前线程的模拟状态。

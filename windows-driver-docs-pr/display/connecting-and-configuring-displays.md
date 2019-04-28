@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 009254a44c1b873eea26023ec2ba5cc6c0dff709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327527"
 ---
 # <a name="connecting-and-configuring-displays"></a>连接和配置显示
 

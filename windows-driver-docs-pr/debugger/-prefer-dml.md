@@ -1,5 +1,5 @@
 ---
-title: .prefer_dml （更倾向调试器标记语言）
+title: .prefer_dml（首选调试器标记语言）
 description: .Prefer_dml 命令设置都能够提供调试器标记语言 (DML) 格式的输出的命令的默认行为。
 ms.assetid: BBB96770-A575-4E31-AE8B-9226BB61727D
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f1fec50a3d1bc943bf8ce9b95e147fe5d4bbef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335786"
 ---
 # <a name="preferdml-prefer-debugger-markup-language"></a>.prefer\_dml （更喜欢调试器标记语言）
 

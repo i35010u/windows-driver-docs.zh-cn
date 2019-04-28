@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aaea7ebea615fceac2d37bfc4af5a7fb2bc79ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341567"
 ---
 # <a name="buffer-description-list"></a>缓冲区说明列表
 

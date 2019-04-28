@@ -5,11 +5,11 @@ ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65fdb85ef48cec5515b9f3029eeb42b1797e588
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339582"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>排查驱动程序签名安装问题
 

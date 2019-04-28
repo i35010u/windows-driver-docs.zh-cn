@@ -8,11 +8,11 @@ keywords:
 ms.date: 11/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9381560e45cac35f9dc4005368d3590edf38be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340236"
 ---
 # <a name="run-the-tests"></a>运行测试
 ## <a name="description-of-the-tests-and-configuration-file"></a>测试和配置文件的说明
@@ -43,7 +43,7 @@ ms.locfileid: "56523774"
 -   二进制：Sysfund_PNP_RemoveAndRestartDevice_DataDriven.dll
 -   [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ead2222e-4485-4bfc-84cd-43ac0d2e8181)
 
-**系统-IO （可靠性） 期间为的重新启动重新启动**
+**系统 - 使用期间 IO 重新引导/重启（可靠性）**
 -   二进制：Sysfund_RebootRestart_With_IO_During_DataDriven.dll
 -   [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6d6ed5ec-1765-4569-a7ac-20ed7869d89a)
 

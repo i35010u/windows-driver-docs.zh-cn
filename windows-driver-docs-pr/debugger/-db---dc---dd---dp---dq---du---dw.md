@@ -21,13 +21,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ef7aeeb0f6597c7be3ae0e18c007e5dc7dd14fe8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336876"
 ---
-# <a name="db-dc-dd-dp-dq-du-dw"></a>！ db ！ dc，！ dd，！ dp，！ dq，！ du，！ dw
+# <a name="db-dc-dd-dp-dq-du-dw"></a>!db、!dc、!dd、!dp、!dq、!du、!dw
 
 
 **！ Db**， **！ dc**， **！ dd**， **！ dp**， **！ dq**， **！ du**，和 **！ dw**扩展插件在目标计算机上指定的物理地址会显示数据。

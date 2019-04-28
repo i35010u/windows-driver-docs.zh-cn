@@ -1,19 +1,19 @@
 ---
-title: 启用 NDIS 通过设置注册表值来调试跟踪
-description: 启用 NDIS 通过设置注册表值来调试跟踪
+title: 通过设置注册表值启用 NDIS 调试跟踪
+description: 通过设置注册表值启用 NDIS 调试跟踪
 ms.assetid: ae01f546-0636-4e67-bfc7-229c3cc24b27
 keywords:
 - NDIS 调试，调试跟踪，设置注册表值
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d06839b09b7af4aa5c290e9d5628e7ce30a91c7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340596"
 ---
-# <a name="enabling-ndis-debug-tracing-by-setting-registry-values"></a>启用 NDIS 通过设置注册表值来调试跟踪
+# <a name="enabling-ndis-debug-tracing-by-setting-registry-values"></a>通过设置注册表值启用 NDIS 调试跟踪
 
 
 通过编辑注册表，可以启用不同级别的各种 NDIS 组件中的调试跟踪。 通常情况下，应添加以下条目和值与**HKLM\\系统\\CurrentControlSet\\Services\\NDIS\\参数**注册表项：
@@ -87,9 +87,9 @@ ms.locfileid: "56526625"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Component</th>
+<th align="left">组件</th>
 <th align="left">描述</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

@@ -5,11 +5,11 @@ ms.assetid: d999955b-d620-41c9-b42d-6870ce1d4b93
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8984a5e2436ea38b954d148dec4949e11f1387
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333936"
 ---
 # <a name="audio-topology-nodes"></a>音频拓扑节点
 

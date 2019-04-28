@@ -1,6 +1,6 @@
 ---
-title: 非 PCM Pin 工厂的要求
-description: 非 PCM Pin 工厂的要求
+title: 非 PCM 引脚工厂的要求
+description: 非 PCM 引脚工厂的要求
 ms.assetid: 3ba5da2e-f96f-4645-8a37-dd985287a9f2
 keywords:
 - 非 PCM 音频格式 WDK，pin 工厂
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9784bf5d3ce72c5cb3811a2c0e82446de748a86a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328687"
 ---
-# <a name="requirements-for-a-non-pcm-pin-factory"></a>非 PCM Pin 工厂的要求
+# <a name="requirements-for-a-non-pcm-pin-factory"></a>非 PCM 引脚工厂的要求
 
 
 ## <span id="requirements_for_a_non_pcm_pin_factory"></span><span id="REQUIREMENTS_FOR_A_NON_PCM_PIN_FACTORY"></span>

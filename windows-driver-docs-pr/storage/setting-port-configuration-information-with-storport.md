@@ -1,17 +1,17 @@
 ---
-title: Storport 设置端口配置信息
-description: Storport 设置端口配置信息
+title: 使用 Storport 设置端口配置信息
+description: 使用 Storport 设置端口配置信息
 ms.assetid: dcc2cb3c-2fe6-4f70-814b-66b59a237dd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3451b741796457e6ef103e4d5eaf205bef73a10a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341238"
 ---
-# <a name="setting-port-configuration-information-with-storport"></a>Storport 设置端口配置信息
+# <a name="setting-port-configuration-information-with-storport"></a>使用 Storport 设置端口配置信息
 
 
 ## <span id="ddk_setting_port_configuration_information_with_storport_kg"></span><span id="DDK_SETTING_PORT_CONFIGURATION_INFORMATION_WITH_STORPORT_KG"></span>

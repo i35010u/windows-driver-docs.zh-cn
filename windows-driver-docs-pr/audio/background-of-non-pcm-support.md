@@ -1,6 +1,6 @@
 ---
-title: 背景的非 PCM 支持
-description: 背景的非 PCM 支持
+title: 非 PCM 支持的背景
+description: 非 PCM 支持的背景
 ms.assetid: 4f0e1101-e4cc-4bde-a178-fb47fe24ae4d
 keywords:
 - 非 PCM 音频格式 WDK DirectSound
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e90b2b801c998e7bae90e4c438766ba88b39b2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333933"
 ---
-# <a name="background-of-non-pcm-support"></a>背景的非 PCM 支持
+# <a name="background-of-non-pcm-support"></a>非 PCM 支持的背景
 
 
 ## <span id="background_of_non_pcm_support"></span><span id="BACKGROUND_OF_NON_PCM_SUPPORT"></span>

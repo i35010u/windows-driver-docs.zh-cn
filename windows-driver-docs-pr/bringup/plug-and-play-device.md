@@ -5,11 +5,11 @@ ms.assetid: 85EE32E7-1871-490D-9FF6-07E0891C78E3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48b1bb482bca8f6c2d1d8aa41947ed5804297529
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337532"
 ---
 # <a name="plug-and-play-device"></a>即插即用设备
 

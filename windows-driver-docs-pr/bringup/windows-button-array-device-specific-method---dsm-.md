@@ -5,11 +5,11 @@ ms.assetid: B79ED0F9-B46A-4915-8FF3-5CF3D2E0E945
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fdfa6c35d0cfc715401c7b89f42f6c9c35d8466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338093"
 ---
 # <a name="windows-button-array-device-specific-method-dsm"></a>Windows 按钮数组特定于设备的方法 (\_DSM)
 

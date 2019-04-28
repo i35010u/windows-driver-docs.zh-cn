@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fa73c53c7b472bb2fe49b138e33de8c749a4af6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331299"
 ---
 # <a name="coppsequencestart-function"></a>COPPSequenceStart 函数
 
@@ -29,7 +29,7 @@ HRESULT COPPSequenceStart(
 );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 *pThis [in]*
 
@@ -66,7 +66,7 @@ COPPSequenceStart 函数接收包含开始序列，其中包括以下各项串�
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | 值 |
+| 成员 | ReplTest1 |
 | -- | -- |
 | dwNumBuffers | 为零。 |
 | lpBufferInfo | NULL。 |
@@ -130,7 +130,7 @@ COPPSequenceStart(
 
 **要求**
 
-| 目标平台 | 版本 |
+| 目标平台 | Version |
 | -- | -- |
 | 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
 

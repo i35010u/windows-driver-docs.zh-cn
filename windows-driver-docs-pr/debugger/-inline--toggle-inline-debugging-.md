@@ -1,5 +1,5 @@
 ---
-title: .inline （调试切换内联函数）
+title: .inline（切换内联函数调试）
 description: .Inline 命令启用或禁用调试内联函数。
 ms.assetid: 7B6CB75D-E318-4832-935F-239531B8DC66
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f61df3a754db9974b72031bc10fa9b2a70de429d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336436"
 ---
-# <a name="inline-toggle-inline-function-debugging"></a>.inline （调试切换内联函数）
+# <a name="inline-toggle-inline-function-debugging"></a>.inline（切换内联函数调试）
 
 
 **.Inline**命令启用或禁用调试内联函数。

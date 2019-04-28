@@ -5,11 +5,11 @@ ms.assetid: BF89F0D0-2ED3-4900-996F-BB7B9C8C9B80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f36f5f9d432dc584864a1a6efb29c924fcf24382
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330032"
 ---
 # <a name="install-the-driver-and-sample-app"></a>安装驱动程序和示例应用
 
@@ -58,7 +58,7 @@ ms.locfileid: "56519508"
 
     ![应用程序开发功能](images/wsd-app-5.png)
 
-6.  单击“确定” 。 **将更改应用**对话框将显示安装进度。
+6.  单击 **“确定”**。 **将更改应用**对话框将显示安装进度。
 
     ![应用更改](images/wsd-app-6.png)
 

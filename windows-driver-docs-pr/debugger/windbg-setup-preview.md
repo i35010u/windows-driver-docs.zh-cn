@@ -4,11 +4,11 @@ description: 本部分介绍如何设置 WinDbg 预览调试器。
 ms.date: 08/17/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64cf7cc9d215afc29e332ea6ee5b5a4fa10ab199
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340495"
 ---
 # <a name="windbg-preview---settings-and-workspaces"></a>WinDbg 预览版-设置和工作区
 
@@ -62,7 +62,7 @@ SymOptExactSymbols | false | 此选项会导致调试器执行的所有符号文
 SymOptFailCriticalErrors | false | 此符号选项将导致文件访问错误对话框来禁止显示。
 SymOptIgnoreCvRec | false | 此选项会导致要搜索的符号时忽略 CV 记录加载的映像标头中的符号处理程序。 
 SymOptIgnoreNtSympath | false | 此选项会导致调试器忽略符号路径和可执行映像路径的环境变量设置。 
-SymOptNoCpp | false | 此符号选项将关闭 c + + 转换。 当设置此符号选项时，:: 替换为 __ 中的所有符号。 
+SymOptNoCpp | false | 此符号选项将关闭C++转换。 当设置此符号选项时，:: 替换为 __ 中的所有符号。 
 SymOptNoUnqualifiedLoads | false | 此符号选项禁用符号处理程序的自动加载模块。 如果设置此选项，调试器会尝试匹配一个符号，它将仅搜索已加载的模块。 
 SymOptAutoPublics | false | 此符号选项将导致 DbgHelp 公共符号表中仅作为最后的手段的.pdb 文件中搜索。 如果找到任何匹配项搜索中的私有符号数据时，将不搜索公共符号。 这提高了符号搜索速度。 
 SymOptDebug | false | 此符号选项开启干扰符号加载。 这会指示调试器以显示有关其搜索符号信息。

@@ -1,17 +1,17 @@
 ---
-title: 蓝牙 HFP DDI 引用
+title: 蓝牙 HFP DDI 参考
 description: Windows 8 引入了 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 类，无需手动为实现 I/O 控制代码 (Ioctl) 和结构的接口配置文件 (HFP) 绕过音频驱动程序。
 ms.assetid: 980B7283-56C5-44FA-8992-6DA5BE263FCD
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5bee5b4f82889094e99f97b2105345088562ab0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333886"
 ---
-# <a name="bluetooth-hfp-ddi-reference"></a>蓝牙 HFP DDI 引用
+# <a name="bluetooth-hfp-ddi-reference"></a>蓝牙 HFP DDI 参考
 
 
 Windows 8 引入了 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 类，无需手动为实现 I/O 控制代码 (Ioctl) 和结构的接口配置文件 (HFP) 绕过音频驱动程序。

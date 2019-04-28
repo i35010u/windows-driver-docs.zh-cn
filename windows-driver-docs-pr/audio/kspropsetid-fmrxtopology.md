@@ -5,11 +5,11 @@ ms.assetid: 66ACE82D-F0C2-4BF8-9B16-8A1B3A2C05E0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5adc0f31ca156727332ec9664cda43ef8ef7e98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332487"
 ---
 # <a name="kspropsetidfmrxtopology"></a>KSPROPSETID\_FMRXTopology
 

@@ -1,17 +1,17 @@
 ---
-title: 蓝牙邻近配置文件
+title: 蓝牙邻近感应配置文件
 description: 邻近配置文件定义两个目的是允许设备检测其邻近的角色。
 ms.assetid: 6BA67CA4-AAE4-4D01-97A4-65970704E7ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b34e99aad337ea5ec3aa16437eb22728da676d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328259"
 ---
-# <a name="bluetooth-proximity-profile"></a>蓝牙邻近配置文件
+# <a name="bluetooth-proximity-profile"></a>蓝牙邻近感应配置文件
 
 
 邻近配置文件定义两个目的是允许设备检测其邻近的角色。

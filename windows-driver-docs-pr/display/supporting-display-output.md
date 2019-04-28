@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a1bf1a049a3685b00da1bf134c191d24a76cc44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331279"
 ---
 # <a name="supporting-display-output-and-acpi-events"></a>支持显示输出和 ACPI 事件
 
@@ -63,7 +63,7 @@ Dispmprt.h 中定义的 ACPI 显示输出的下列别名：
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [支持在集成的显示器的亮度控件](supporting-brightness-controls-on-integrated-display-panels.md)

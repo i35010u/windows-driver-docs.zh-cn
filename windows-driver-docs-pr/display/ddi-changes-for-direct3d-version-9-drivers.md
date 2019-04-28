@@ -1,6 +1,6 @@
 ---
-title: DDI 更改为 9 的 Direct3D 版本的驱动程序的
-description: DDI 更改为 9 的 Direct3D 版本的驱动程序的
+title: Direct3D 版本 9 驱动程序的 DDI 更改
+description: Direct3D 版本 9 驱动程序的 DDI 更改
 ms.assetid: b702c02d-3be6-46e8-9e53-5d33e5e3fc70
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，DDI 的变化情况的 Direct3D 版本 9 的驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: daeb1c81340810f5c59fbc9439aad7971fbdfc79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341528"
 ---
-# <a name="ddi-changes-for-direct3d-version-9-drivers"></a>DDI 更改为 9 的 Direct3D 版本的驱动程序的
+# <a name="ddi-changes-for-direct3d-version-9-drivers"></a>Direct3D 版本 9 驱动程序的 DDI 更改
 
 
 本部分仅适用于 Windows 7 和更高版本的操作系统。

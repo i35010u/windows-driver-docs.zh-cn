@@ -5,11 +5,11 @@ ms.assetid: 5449A10A-17BC-40CB-A8FC-19F867CFC9D0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4f5536405e92ac5b1b938f4c60389a09c92f051
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337775"
 ---
 # <a name="efiusbsuperspeedendpointcompaniondescriptor"></a>EFI\_USB\_SUPERSPEED\_终结点\_配套\_描述符
 

@@ -1,5 +1,5 @@
 ---
-title: .load，.loadby （加载扩展 DLL）
+title: .load、.loadby（加载扩展 DLL）
 description: .Load 和.loadby 命令加载到调试器中新的扩展 DLL。
 ms.assetid: bf54064a-6f30-4f31-a373-fbc643e2660c
 keywords:
@@ -17,13 +17,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c559509c916563fe1f9fedc459503c407b55fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336513"
 ---
-# <a name="load-loadby-load-extension-dll"></a>.load，.loadby （加载扩展 DLL）
+# <a name="load-loadby-load-extension-dll"></a>.load、.loadby（加载扩展 DLL）
 
 
 **.Load**并 **.loadby**命令加载到调试器中新的扩展 DLL。

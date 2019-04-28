@@ -1,6 +1,6 @@
 ---
-title: 驱动程序而无需 StartIo 例程中的取消例程
-description: 驱动程序而无需 StartIo 例程中的取消例程
+title: 不包含 StartIo 例程的驱动程序中的 Cancel 例程
+description: 不包含 StartIo 例程的驱动程序中的 Cancel 例程
 ms.assetid: c6e1a05e-28ed-4f42-8678-55f01303b312
 keywords:
 - 正在取消 Irp，StartIo 例程
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cee9b06809bc16e81acf960aade0998eda1a2ced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338718"
 ---
-# <a name="cancel-routines-in-drivers-without-startio-routines"></a>驱动程序而无需 StartIo 例程中的取消例程
+# <a name="cancel-routines-in-drivers-without-startio-routines"></a>不包含 StartIo 例程的驱动程序中的 Cancel 例程
 
 
 

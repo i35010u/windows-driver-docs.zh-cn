@@ -5,11 +5,11 @@ ms.assetid: fb28863a-920a-4b26-a652-fb255622824f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18814746f04783600801f5f2e60b19fc26f77867
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327869"
 ---
 # <a name="page-orientation"></a>页面方向
 

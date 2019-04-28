@@ -5,11 +5,11 @@ ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0755dd805032549faaca00bfb4185fac858ffc5a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332055"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "57350128"
 
 -   [步骤 1：定义控件的 GUID 和跟踪标志](#step-1-define-the-control-guid-and-trace-flags)
 -   [步骤 2：选择你想要使用并定义这些函数的 WPP 宏的跟踪消息函数](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
--   [步骤 3：在 C 或 c + + 源文件中包含关联的跟踪头文件 （.h 和.tmh）](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
+-   [步骤 3：在 C 中包括相关的跟踪标头文件 （.h 和.tmh） 或C++源文件](#step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files)
 -   [步骤 4：将宏添加到要初始化和清理 WPP 的相应回调函数](#step-4-add-macros-to-the-appropriate-callback-functions-to-initialize-and-clean-up-wpp)
 -   [步骤 5：检测驱动程序代码以生成在适当的位置的跟踪消息](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)
 -   [步骤 6：修改 Visual Studio 项目，以运行预处理器 WPP 并生成解决方案](#step-6-modify-the-visual-studio-project-to-run-the-wpp-preprocessor-and-build-the-solution)
@@ -33,7 +33,7 @@ ms.locfileid: "57350128"
 
 **若要添加 WPP\_控制\_GUID 宏为您的驱动程序：**
 
-1.  将新的 c + + 头文件添加到 Visual Studio 项目，可用于定义 WPP 跟踪宏。 例如，右键单击解决方案资源管理器中的驱动程序，然后单击**外&gt;新项**。 将该文件 （存 Trace.h，例如)。
+1.  添加一个新C++可用于定义 WPP 跟踪宏在 Visual Studio 项目的标头文件。 例如，右键单击解决方案资源管理器中的驱动程序，然后单击**外&gt;新项**。 将该文件 （存 Trace.h，例如)。
 
 2.  添加[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)宏来指定跟踪提供程序的友好名称，定义一个控件的 GUID，并定义可用于限定特定跟踪消息的跟踪标志。
 
@@ -208,7 +208,7 @@ ms.locfileid: "57350128"
 //
 ```
 
-## <a name="step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files"></a>步骤 3:在 C 或 c + + 源文件中包含关联的跟踪头文件 （.h 和.tmh）
+## <a name="step-3-include-the-associated-trace-header-files-h-and-tmh-in-your-c-or-c-source-files"></a>步骤 3:在 C 中包括相关的跟踪标头文件 （.h 和.tmh） 或C++源文件
 
 
 如果为您的驱动程序标头文件 (例如，trace.h) 中定义的控件 GUID 和跟踪标志，您需要将在其中初始化和卸载 WPP (步骤 4) 或调用跟踪消息的函数在源文件中包含头文件。

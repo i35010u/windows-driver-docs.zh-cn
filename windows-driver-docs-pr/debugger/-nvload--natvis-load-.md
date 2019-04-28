@@ -1,5 +1,5 @@
 ---
-title: .nvload （NatVis 加载）
+title: .nvload（NatVis 加载）
 description: .Nvload 命令将 NatVis 文件加载到调试器环境。 加载可视化效果后，它将用于呈现可视化效果中定义的数据。
 ms.assetid: 9B14B3B4-EA90-426E-8555-0E5B8F63E0A9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4a08aeb8e7676a6759a89726701a6a2f24ae44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335838"
 ---
-# <a name="nvload-natvis-load"></a>.nvload （NatVis 加载）
+# <a name="nvload-natvis-load"></a>.nvload（NatVis 加载）
 
 
 .Nvload 命令将 NatVis 文件加载到调试器环境。 加载可视化效果后，它将用于呈现可视化效果中定义的数据。
@@ -65,7 +65,7 @@ ms.locfileid: "56544276"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关详细信息，请参阅[c + + 使用.natvis 文件的写入调试器类型可视化工具](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)。
+有关详细信息，请参阅[写入调试器类型可视化工具的C++使用.natvis 文件](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 

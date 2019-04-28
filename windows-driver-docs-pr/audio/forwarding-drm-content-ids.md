@@ -1,6 +1,6 @@
 ---
-title: 转发 DRM 内容 Id
-description: 转发 DRM 内容 Id
+title: 转发 DRM 内容 ID
+description: 转发 DRM 内容 ID
 ms.assetid: 62bcc44f-303a-4e72-8140-4b9bee59c252
 keywords:
 - 数字权限管理 WDK 音频、 安全的数据路径
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 327c4b69ffb80849e4f7ecd28a68ad7ad91019a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333658"
 ---
-# <a name="forwarding-drm-content-ids"></a>转发 DRM 内容 Id
+# <a name="forwarding-drm-content-ids"></a>转发 DRM 内容 ID
 
 
 ## <span id="forwarding_drm_content_ids"></span><span id="FORWARDING_DRM_CONTENT_IDS"></span>

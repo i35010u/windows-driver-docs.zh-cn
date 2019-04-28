@@ -1,17 +1,17 @@
 ---
-title: 结束在 WinDbg 中的调试会话
-description: 结束在 WinDbg 中的调试会话
+title: 在 WinDbg 中结束调试会话
+description: 在 WinDbg 中结束调试会话
 ms.assetid: 9C19211B-38CC-482B-B69F-B83B29963B3F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3406b5ecef7d23eb740093b99942bfdf382dd182
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340599"
 ---
-# <a name="ending-a-debugging-session-in-windbg"></a>结束在 WinDbg 中的调试会话
+# <a name="ending-a-debugging-session-in-windbg"></a>在 WinDbg 中结束调试会话
 
 
 ## <a name="span-idexitingwindbgspanspan-idexitingwindbgspanspan-idexitingwindbgspanexiting-windbg"></a><span id="Exiting_WinDbg"></span><span id="exiting_windbg"></span><span id="EXITING_WINDBG"></span>退出 WinDbg

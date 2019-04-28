@@ -5,11 +5,11 @@ ms.assetid: 8808bb5d-e00d-4b19-87ad-4a071a896e22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 473395ba84360980f2a279e56a2a1b420fb3e21e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337793"
 ---
 # <a name="efisimplewinphoneioprotocolgetmaxpacketsize"></a>EFI\_SIMPLE\_WINPHONE\_IO\_PROTOCOL.GetMaxPacketSize
 
@@ -28,7 +28,7 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

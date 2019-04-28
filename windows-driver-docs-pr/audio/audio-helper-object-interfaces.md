@@ -1,17 +1,17 @@
 ---
-title: 音频的帮助程序对象接口
-description: 音频的帮助程序对象接口
+title: 音频帮助程序对象接口
+description: 音频帮助程序对象接口
 ms.assetid: 94d3f7f3-7ccc-4f66-b5fa-95f18b8a0f17
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5a993a7dca6e1acf423b6870570416084e04bbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331465"
 ---
-# <a name="audio-helper-object-interfaces"></a>音频的帮助程序对象接口
+# <a name="audio-helper-object-interfaces"></a>音频帮助程序对象接口
 
 
 ## <span id="ddk_audio_helper_object_interfaces_ks"></span><span id="DDK_AUDIO_HELPER_OBJECT_INTERFACES_KS"></span>

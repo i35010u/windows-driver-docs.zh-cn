@@ -1,19 +1,19 @@
 ---
-title: 为注册的提供程序创建跟踪会话
-description: 为注册的提供程序创建跟踪会话
+title: 为已注册的提供程序创建跟踪会话
+description: 为已注册的提供程序创建跟踪会话
 ms.assetid: 3013b5fa-5390-4d46-b138-4ddcda468ddf
 keywords:
 - 注册的提供程序 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9bd580f5251a74e34a74eee211cb3bbb3e2f9b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340611"
 ---
-# <a name="creating-a-trace-session-for-a-registered-provider"></a>为注册的提供程序创建跟踪会话
+# <a name="creating-a-trace-session-for-a-registered-provider"></a>为已注册的提供程序创建跟踪会话
 
 
 ## <span id="ddk_create_a_trace_session_for_a_registered_provider_tools"></span><span id="DDK_CREATE_A_TRACE_SESSION_FOR_A_REGISTERED_PROVIDER_TOOLS"></span>
@@ -45,7 +45,7 @@ ms.locfileid: "56555672"
 
 10. [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)，如果所需的。
 
-11. 单击“完成” 。
+11. 单击 **“完成”**。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

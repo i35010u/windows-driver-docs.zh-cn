@@ -1,6 +1,6 @@
 ---
-title: 系统截获设备的消息
-description: 系统截获设备的消息
+title: 系统截获的设备消息
+description: 系统截获的设备消息
 ms.assetid: 5cf1c9a6-e56f-4358-933f-e8aa2ad1b1da
 keywords:
 - 对旧设备 WDK 音频设备的消息
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4623a07cb6a70873934bcfcab66b99e95ca28590
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328549"
 ---
-# <a name="system-intercepted-device-messages"></a>系统截获设备的消息
+# <a name="system-intercepted-device-messages"></a>系统截获的设备消息
 
 
 ## <span id="system_intercepted_device_messages"></span><span id="SYSTEM_INTERCEPTED_DEVICE_MESSAGES"></span>

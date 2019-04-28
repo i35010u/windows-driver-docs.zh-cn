@@ -5,11 +5,11 @@ ms.assetid: CD2EF726-CF0F-4BB6-9F41-794699568F17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 178c92b13970c1636671e7b85273ea1ee48dc152
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330143"
 ---
 # <a name="javascript-constraints"></a>JavaScript 约束
 
@@ -106,7 +106,7 @@ V4 打印机驱动程序模型支持新模型，用于扩展约束和 PrintTicke
 function validatePrintTicket(printTicket, scriptContext)
 ```
 
-参数
+Parameters
 
 *printTicket*
 
@@ -135,7 +135,7 @@ function validatePrintTicket(printTicket, scriptContext)
 function completePrintCapabilities(printTicket, scriptContext, printCapabilities)
 ```
 
-参数
+Parameters
 
 *printTicket*
 
@@ -161,7 +161,7 @@ function completePrintCapabilities(printTicket, scriptContext, printCapabilities
 function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTicket)
 ```
 
-参数
+Parameters
 
 *devModeProperties*
 
@@ -187,7 +187,7 @@ function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTick
 function convertPrintTicketToDevMode(printTicket, scriptContext, devModeProperties)
 ```
 
-参数
+Parameters
 
 *printTicket*
 

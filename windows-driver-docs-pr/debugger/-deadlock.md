@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df3c218a781e2d42d3e1b7bb1477059bad8e97c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336842"
 ---
-# <a name="deadlock"></a>！ 死锁
+# <a name="deadlock"></a>!deadlock
 
 
 **！ 死锁**扩展显示有关死锁所收集的信息**死锁检测**Driver Verifier 选项。

@@ -5,11 +5,11 @@ ms.assetid: 65078F78-B7F2-41A7-BD3B-A90A4A77750F
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fb5de9d6182bba07eb1bec0287714049c6728f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340231"
 ---
 # <a name="rules-for-audio-drivers"></a>音频驱动程序的规则
 

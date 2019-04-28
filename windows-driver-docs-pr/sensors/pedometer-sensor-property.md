@@ -5,11 +5,11 @@ ms.assetid: 91A47EEE-094B-47AE-B2B9-E7A32F33FA11
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dd8fcd5732a9b78ecb2d30f8959b571ec4c753b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330123"
 ---
 # <a name="pedometer-sensor-property"></a>计步器传感器属性
 

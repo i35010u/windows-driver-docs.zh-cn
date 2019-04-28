@@ -5,13 +5,13 @@ ms.assetid: 18F2944A-D5A7-41BB-885F-EC183A00F7CE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e99f33d7e13c78941b68d898866827f653a6a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340921"
 ---
-# <a name="updating-the-ip-headers-for-coalesced-segments"></a>有关合并的段更新 IP 标头
+# <a name="updating-the-ip-headers-for-coalesced-segments"></a>更新合并段的 IP 标头
 
 
 正在最后完成单个合并单元 (SCU)，当接收段合并 (RSC)-支持微型端口驱动程序更新中的 IP 标头字段的以下表中所述。
@@ -55,7 +55,7 @@ ms.locfileid: "56545828"
 <td align="left"><p>每次新段 TCP 有效负载长度为非零值合并到现有 SCU 时，必须重新计算此字段的值。 请参阅<a href="exception-conditions-that-terminate-coalescing.md" data-raw-source="[Exception Conditions that Terminate Coalescing](exception-conditions-that-terminate-coalescing.md)">异常条件终止合并</a>的特殊情况所带来的此字段中的值。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>标识</strong></p></td>
+<td align="left"><p><strong>Identification</strong></p></td>
 <td align="left"><p>必须设置为第一个合并段 IP ID。</p></td>
 </tr>
 <tr class="odd">

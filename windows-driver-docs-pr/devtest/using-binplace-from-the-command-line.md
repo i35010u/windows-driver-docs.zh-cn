@@ -1,17 +1,17 @@
 ---
-title: 使用命令行从 BinPlace
-description: 使用命令行从 BinPlace
+title: 从命令行使用 BinPlace
+description: 从命令行使用 BinPlace
 ms.assetid: ed92fee5-d45c-437a-8c3f-de51b910c2ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12c5fdb3b54fa7e01b969518a56bb614e679d242
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341635"
 ---
-# <a name="using-binplace-from-the-command-line"></a>使用命令行从 BinPlace
+# <a name="using-binplace-from-the-command-line"></a>从命令行使用 BinPlace
 
 
 **重要**  此主题中的示例讨论如何使用 BINPLACE\_PLACEFILE 宏和[BinPlace](binplace.md)[**位置文件**](place-file-syntax.md). 此宏和文件中的 Windows 驱动程序工具包的 Windows 7 版本已过时和 WDK 的未来版本中可能不支持。

@@ -1,5 +1,5 @@
 ---
-title: .echocpunum （显示 CPU 数）
+title: .echocpunum（显示 CPU 数目）
 description: .Echocpunum 命令打开或关闭调试多处理器的目标计算机时显示的处理器数。
 ms.assetid: a238b291-8c6e-4a4c-adc3-3be5a9916a29
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fead002bd508311910785e453d4e3ab067cd2c62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336799"
 ---
-# <a name="echocpunum-show-cpu-number"></a>.echocpunum （显示 CPU 数）
+# <a name="echocpunum-show-cpu-number"></a>.echocpunum（显示 CPU 数目）
 
 
 **.Echocpunum**命令打开或关闭调试多处理器的目标计算机时显示的处理器数。

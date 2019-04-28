@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab31ac822ae5a30984581643c56e21a8f3146dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331510"
 ---
-# <a name="edit--paste"></a>编辑 |粘贴
+# <a name="edit--paste"></a>编辑 | 粘贴
 
 
 ## <span id="ddk_edit_paste_dbg"></span><span id="DDK_EDIT_PASTE_DBG"></span>

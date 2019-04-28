@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e9199b9e3eac555eab8be8ac9e11dfc463cc9c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338316"
 ---
 # <a name="modifying-a-driver-supplied-property-sheet-page"></a>修改驱动程序提供的属性表页
 

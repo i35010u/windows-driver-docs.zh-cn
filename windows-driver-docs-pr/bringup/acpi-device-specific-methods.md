@@ -5,11 +5,11 @@ ms.assetid: E49BE897-28A5-42FE-875C-A8EB56EABF8B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d49bb40956cca3c8312d8aec4bf6d109385b94
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328123"
 ---
 # <a name="device-specific-methods-dsm"></a>特定于设备的方法 (\_DSM)
 

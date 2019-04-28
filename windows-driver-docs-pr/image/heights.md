@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 70b7ad6b8a7e165a71a3e70dfc041afb756ba676
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330274"
 ---
 # <a name="heights-element"></a>高度元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56520132"
 </wscn:Heights>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -89,7 +89,7 @@ ms.locfileid: "56520132"
 
 [**宽度**](widths.md)元素包含在扫描仪支持的宽度的列表。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ADFResolutions**](adfresolutions.md)

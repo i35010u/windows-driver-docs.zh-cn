@@ -5,11 +5,11 @@ ms.assetid: B5321732-50FD-4719-BBD0-F0A3BE1EE532
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e4edba5e0044bee795a5c3b65544cfb34806f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331196"
 ---
 # <a name="avoiding-reboot-when-updating-a-umdf-driver"></a>更新 UMDF 驱动程序时避免重启
 

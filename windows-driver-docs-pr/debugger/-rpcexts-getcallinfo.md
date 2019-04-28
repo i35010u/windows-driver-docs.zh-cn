@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d3fa1f75d1226ed6aa0d95935ffb69cbe7b74935
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338906"
 ---
 # <a name="rpcextsgetcallinfo"></a>!rpcexts.getcallinfo
 

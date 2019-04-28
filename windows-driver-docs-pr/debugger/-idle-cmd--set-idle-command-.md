@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 551d784cf4e1ed7c18aa6cb9ef36bcdd7937743b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336470"
 ---
 # <a name="idlecmd-set-idle-command"></a>.idle\_cmd （设置空闲命令）
 

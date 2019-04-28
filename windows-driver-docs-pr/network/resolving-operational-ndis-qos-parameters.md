@@ -5,11 +5,11 @@ ms.assetid: F6C486B4-ABD5-413A-9E2D-283D83802C2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 103d6b3425deaad36e9428ce5c55276acdf8db70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341361"
 ---
 # <a name="resolving-operational-ndis-qos-parameters"></a>解析 NDIS QoS 操作参数
 

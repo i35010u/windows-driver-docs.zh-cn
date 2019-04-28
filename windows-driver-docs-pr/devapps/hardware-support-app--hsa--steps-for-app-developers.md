@@ -10,11 +10,11 @@ keywords:
 ms.date: 08/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9f45b8c1005a42b8905086d9f1d3038c8ec1130
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330709"
 ---
 # <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA)：适用于应用开发人员的步骤
 
@@ -40,9 +40,9 @@ Microsoft Store 上的开发人员帐户是必需的。 硬件合作伙伴将需
 
 ## <a name="choosing-a-programming-language-for-the-app"></a>选择应用程序的编程语言
 
-如果您的应用程序将与驱动程序进行通信，则可以使用[Windows.Devices.Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)，这是 WinRT API 的一部分，因此可在 JavaScript 中， C#，和 c + +。
+如果您的应用程序将与驱动程序进行通信，则可以使用[Windows.Devices.Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)，这是 WinRT API 的一部分，因此可在 JavaScript 中， C#，并C++。
 
-如果您的应用程序将与 NT 服务进行通信，然后您需要使用 RPC Api。  因为 RPC Api 是在 WinRT 中不可用的 Win32 Api，需要使用 c + +，或包装 RPC 调用使用.NET 互操作 (PInvoke)。  有关详细信息，请参阅[从托管代码调用本机函数](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)。
+如果您的应用程序将与 NT 服务进行通信，然后您需要使用 RPC Api。  因为 RPC Api 是在 WinRT 中不可用的 Win32 Api，你需要使用C++，或将包装的 RPC 调用使用.NET 互操作 (PInvoke)。  有关详细信息，请参阅[从托管代码调用本机函数](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)。
 
 ## <a name="contact-the-custom-capability-owner"></a>与自定义功能所有者联系
 

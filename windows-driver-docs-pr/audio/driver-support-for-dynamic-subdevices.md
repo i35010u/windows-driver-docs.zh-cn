@@ -1,6 +1,6 @@
 ---
-title: 针对动态子设备驱动程序支持
-description: 针对动态子设备驱动程序支持
+title: 针对动态子设备的驱动程序支持
+description: 针对动态子设备的驱动程序支持
 ms.assetid: ca355dfc-46ad-4df2-ac48-f3a0780dc3d3
 keywords:
 - 动态子音频设备 WDK 音频
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d3555827754fc0d3d44a753271b9b7228f13b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333746"
 ---
-# <a name="driver-support-for-dynamic-subdevices"></a>针对动态子设备驱动程序支持
+# <a name="driver-support-for-dynamic-subdevices"></a>针对动态子设备的驱动程序支持
 
 
 中的代码示例[子创建](subdevice-creation.md)演示如何使用**PcRegisterSubdevice**例程，以注册子。 SB16 示例音频驱动程序在 Windows Driver Kit (WDK) 演示如何使用**PcRegisterPhysicalConnection**例程，以注册相同的音频适配器中包含的子设备之间的物理连接。

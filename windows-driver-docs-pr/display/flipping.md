@@ -1,6 +1,6 @@
 ---
-title: 翻转
-description: 翻转
+title: 交替
+description: 交替
 ms.assetid: e577b73f-7664-4c87-8d43-c3cf04705081
 keywords:
 - 消除 WDK DirectDraw
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51eb8efb73a02b29987bab0afeed9b12b2234297
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338662"
 ---
-# <a name="flipping"></a>翻转
+# <a name="flipping"></a>交替
 
 
 ## <span id="ddk_flipping_gg"></span><span id="DDK_FLIPPING_GG"></span>

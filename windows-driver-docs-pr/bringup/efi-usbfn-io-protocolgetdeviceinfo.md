@@ -5,11 +5,11 @@ ms.assetid: b72f6ba1-7704-4661-8855-1ff88bd08e5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92f35031fd4bec7d933003aef775c01f9d0ae061
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337702"
 ---
 # <a name="efiusbfnioprotocolgetdeviceinfo"></a>EFI\_USBFN\_IO\_PROTOCOL.GetDeviceInfo
 

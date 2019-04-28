@@ -5,11 +5,11 @@ ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a76b55ed3084b756e802d834f071e57629e63b8d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339921"
 ---
 # <a name="test-signing"></a>测试签名
 

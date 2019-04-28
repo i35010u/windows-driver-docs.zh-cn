@@ -5,11 +5,11 @@ ms.assetid: F52BC6D1-DF67-4DE7-BEEC-D18C2A90B4CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ec1985eaaeca713d1ea898fc2c8ebcef74a47cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330107"
 ---
 # <a name="new-sensor-features-and-improvements-for-windows-81"></a>新的传感器功能和改进的 Windows 8.1
 

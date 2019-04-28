@@ -5,11 +5,11 @@ ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e732a2310e8461d0e120ce7b7dcbfe924abaaec0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332419"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -167,7 +167,7 @@ Windows 10 进行了增强以减少延迟的三个方面：
 
 ### <a name="span-idaudiographspanspan-idaudiographspanspan-idaudiographspanaudiograph"></a><span id="AudioGraph"></span><span id="audiograph"></span><span id="AUDIOGRAPH"></span>AudioGraph
 
-AudioGraph 是新的通用 Windows 平台 API 在 Windows 10 中，针对的是意识到交互式和音乐创建方案轻松。 AudioGraph 是提供了多种编程语言 (c + +， C#，JavaScript) 和具有简单而功能丰富的编程模型。
+AudioGraph 是新的通用 Windows 平台 API 在 Windows 10 中，针对的是意识到交互式和音乐创建方案轻松。 AudioGraph 是提供了多种编程语言 (C++， C#，JavaScript) 和具有简单而功能丰富的编程模型。
 
 要针对低延迟方案，提供 AudioGraph [AudioGraphSettings::QuantumSizeSelectionMode 属性](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiographsettings.quantumsizeselectionmode.aspx)。 此属性可以显示下表中的以下值之一：
 
@@ -178,7 +178,7 @@ AudioGraph 是新的通用 Windows 平台 API 在 Windows 10 中，针对的是�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>值</p></td>
+<td align="left"><p>ReplTest1</p></td>
 <td align="left"><p>描述</p></td>
 </tr>
 <tr class="even">

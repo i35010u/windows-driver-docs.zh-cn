@@ -1,5 +1,5 @@
 ---
-title: .dump （创建转储文件）
+title: .dump（创建转储文件）
 description: .Dump 命令创建的用户模式或内核模式崩溃转储文件。
 ms.assetid: df6bcf7f-eb2e-4605-87a0-c0a7e9e4776b
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fa90f8f9e53325aada256104c3690cf30521250f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334539"
 ---
-# <a name="dump-create-dump-file"></a>.dump （创建转储文件）
+# <a name="dump-create-dump-file"></a>.dump（创建转储文件）
 
 
 **.Dump**命令创建一个用户模式或内核模式崩溃转储文件。

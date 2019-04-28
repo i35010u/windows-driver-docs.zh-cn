@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ACTION_FRAME_IES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: bd10a7237c03759fc6df127de245fd0a406b5cb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331221"
 ---
 # <a name="wditlvp2pactionframeies"></a>WDI\_TLV\_P2P\_操作\_帧\_导致浏览器
 

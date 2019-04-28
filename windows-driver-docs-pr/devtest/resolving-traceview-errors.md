@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d82be9f0bf8de5bd34c786ff6a60c4809e9d9c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340264"
 ---
 # <a name="resolving-traceview-errors"></a>解决 TraceView 错误
 

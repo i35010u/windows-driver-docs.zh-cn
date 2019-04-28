@@ -1,14 +1,14 @@
 ---
-Description: This section provides guidance concerning the careful management of USB bandwidth.
+Description: 本部分提供有关 USB 带宽慎重地管理的指南。
 title: USB 带宽分配
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6f96f0b7d9390f4627a9fd156fc63bb7f7ba4d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331690"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 带宽分配
 

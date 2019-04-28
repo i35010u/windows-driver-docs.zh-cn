@@ -1,6 +1,6 @@
 ---
-title: 停止设备来重新平衡资源
-description: 停止设备来重新平衡资源
+title: 停止设备以重新平衡资源
+description: 停止设备以重新平衡资源
 ms.assetid: eed28d41-8a9d-4b9e-90d7-ea4ddeeaad2d
 keywords:
 - 重新平衡资源 WDK 即插即用
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bad732842210f4ff390b73815506f1d88c3968a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331971"
 ---
-# <a name="stopping-a-device-to-rebalance-resources"></a>停止设备来重新平衡资源
+# <a name="stopping-a-device-to-rebalance-resources"></a>停止设备以重新平衡资源
 
 
 

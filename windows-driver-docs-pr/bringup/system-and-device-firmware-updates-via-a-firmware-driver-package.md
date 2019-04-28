@@ -1,17 +1,17 @@
 ---
-title: 通过固件驱动程序包的系统和设备固件更新
+title: 通过固件驱动程序包进行的系统和设备固件更新
 description: 部署使用固件驱动程序包的固件更新遵循一个相对较简单的过程，可以分为三个阶段
 ms.assetid: D649234A-B757-41A6-B2C1-6D43775FF999
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e614ca76be6790021f5b037d42625e2d5be8a09d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337409"
 ---
-# <a name="system-and-device-firmware-updates-via-a-firmware-driver-package"></a>通过固件驱动程序包的系统和设备固件更新
+# <a name="system-and-device-firmware-updates-via-a-firmware-driver-package"></a>通过固件驱动程序包进行的系统和设备固件更新
 
 
 部署使用固件驱动程序包的固件更新遵循一个相对较简单的过程，可以分为三个阶段：
@@ -33,7 +33,7 @@ ms.locfileid: "56519948"
 
 设备驱动程序包包含描述包适用的设备的 INF 文件。 固件驱动程序包是相同的。 设备和系统固件资源支持此更新机制必须唯一地标识本身要绑定到固件驱动程序包。 下一节介绍标识机制。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [填充 ESRT 表](populating-the-esrt-table.md)

@@ -5,11 +5,11 @@ ms.assetid: 38f510ed-1f31-4b3c-84c6-515f5d42a1f8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5283d4a3d717f36082a76a696aa5abd50c2a7e12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325740"
 ---
 # <a name="msiscsiredirectportalinfoclass-wmi-class"></a>MSiSCSI\_RedirectPortalInfoClass WMI 类
 

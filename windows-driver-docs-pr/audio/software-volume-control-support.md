@@ -1,17 +1,17 @@
 ---
-title: 软件卷控制支持
-description: 软件卷控制支持
+title: 软件音量控制支持
+description: 软件音量控制支持
 ms.assetid: 2bdc7d01-9e47-4deb-b551-13e9cbc9c844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d2fad43f553c9168788ba98341b8fad7389573
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328647"
 ---
-# <a name="software-volume-control-support"></a>软件卷控制支持
+# <a name="software-volume-control-support"></a>软件音量控制支持
 
 
 在 Windows Vista 及更高版本，不包括的音频硬件和使用关联的物理卷控件放大器提供软件卷支持。

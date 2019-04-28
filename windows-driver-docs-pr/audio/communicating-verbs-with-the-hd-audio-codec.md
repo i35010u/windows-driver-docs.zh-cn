@@ -1,17 +1,17 @@
 ---
-title: 通信的高清晰度音频编解码器的谓词
-description: 通信的高清晰度音频编解码器的谓词
+title: 将谓词与 HD 音频编解码器通信
+description: 将谓词与 HD 音频编解码器通信
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f8ec7ff40cd04a6236fef85a75b933365a78b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333876"
 ---
-# <a name="communicating-verbs-with-the-hd-audio-codec"></a>通信的高清晰度音频编解码器的谓词
+# <a name="communicating-verbs-with-the-hd-audio-codec"></a>将谓词与 HD 音频编解码器通信
 
 
 IOCTL\_AZALIABUS\_SENDVERBS IOCTL 由 Hdau.exe pin 配置工具时为音频适配器定义声音的拓扑。 请不要将此 IOCTL 用于其他目的。 此信息 IOCTL\_AZALIABUS\_SENDVERBS 提供其设计和实施仅记录。 Windows 7 Hdaudio.sys 音频类驱动程序支持此 IOCTL。

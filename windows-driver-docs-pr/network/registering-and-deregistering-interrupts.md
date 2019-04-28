@@ -1,6 +1,6 @@
 ---
-title: 注册和取消中断
-description: 注册和取消中断
+title: 注册和取消注册中断
+description: 注册和取消注册中断
 ms.assetid: 222782f3-092e-417d-ab1b-1988a593caa4
 keywords:
 - 中断 WDK 连接网络、 注册
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93fd829d70a7e9bf1699319262f6f94141ee8412
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330152"
 ---
-# <a name="registering-and-deregistering-interrupts"></a>注册和取消中断
+# <a name="registering-and-deregistering-interrupts"></a>注册和取消注册中断
 
 
 

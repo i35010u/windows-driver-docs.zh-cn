@@ -5,11 +5,11 @@ ms.assetid: 8c242d61-6c5b-44d9-84d1-f78ef9a56a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 097114a7782c79d216a3a2adfb0506ad28f267ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339733"
 ---
 # <a name="pwrtest"></a>PwrTest
 
@@ -65,7 +65,7 @@ PwrTest 功能分为方案。 有关这些方案的信息，请参阅[PwrTest �
 
     有关详细信息，请参阅[PwrTest 语法](pwrtest-syntax.md)并[PwrTest 方案](pwrtest-scenarios.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)
@@ -74,7 +74,7 @@ PwrTest 功能分为方案。 有关这些方案的信息，请参阅[PwrTest �
 
 [PwrTest 方案](pwrtest-scenarios.md)
 
-[预配的计算机的驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)
+[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)
 
 [预配的计算机的驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)
 

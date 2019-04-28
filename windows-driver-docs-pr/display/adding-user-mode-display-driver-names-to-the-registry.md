@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 823b56df8251bfcd2c3bc2843b6ecc0e8ccbc52b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341592"
 ---
 # <a name="adding-user-mode-display-driver-names-to-the-registry"></a>将用户模式显示驱动程序名称添加到注册表
 

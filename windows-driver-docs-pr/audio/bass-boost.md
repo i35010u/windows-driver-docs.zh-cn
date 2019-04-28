@@ -5,11 +5,11 @@ ms.assetid: 20f6b1af-37bc-4c8e-8c6a-2926fc6a0c7f
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a7353166b45158664981549165e70a39d7bc339
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333949"
 ---
 # <a name="bass-boost"></a>低音增强
 

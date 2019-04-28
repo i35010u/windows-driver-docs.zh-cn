@@ -1,6 +1,6 @@
 ---
-title: 筛选设备对象附加到文件系统
-description: 筛选设备对象附加到文件系统
+title: 附加到文件系统的筛选器设备对象
+description: 附加到文件系统的筛选器设备对象
 ms.assetid: 5fb0ec43-a639-4b2a-8057-3313e9dee457
 keywords:
 - 筛选设备对象 WDK 文件系统
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ac461c09b91c00ec11118f1cc0907d751e22227
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341519"
 ---
-# <a name="filter-device-object-attached-to-a-file-system"></a>筛选设备对象附加到文件系统
+# <a name="filter-device-object-attached-to-a-file-system"></a>附加到文件系统的筛选器设备对象
 
 
 ## <span id="ddk_a_filter_device_object_attached_to_a_file_system_if"></span><span id="DDK_A_FILTER_DEVICE_OBJECT_ATTACHED_TO_A_FILE_SYSTEM_IF"></span>

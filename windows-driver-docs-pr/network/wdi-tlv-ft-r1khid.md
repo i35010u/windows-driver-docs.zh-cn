@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_R1KHID 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e25eac0612f36a2ae63daaf22cbd2245b11b20b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329624"
 ---
 # <a name="wditlvftr1khid"></a>WDI\_TLV\_FT\_R1KHID
 
@@ -36,7 +36,7 @@ WDI\_TLV\_FT\_R1KHID 是未使用的 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: 748205a5-d37b-4080-b6ce-9176139cef4a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8616dd4021da05b66fee64b940a6a3e9f93716ab
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339592"
 ---
 # <a name="mpioadapterinformation-wmi-class"></a>MPIO\_适配器\_信息 WMI 类
 

@@ -5,11 +5,11 @@ ms.assetid: 74BFE4C1-89C2-400D-A915-88552C215251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20641a8518a111dc8202b5bf61b3e281bdfaf54a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338378"
 ---
 # <a name="vmq-components"></a>VMQ 组件
 

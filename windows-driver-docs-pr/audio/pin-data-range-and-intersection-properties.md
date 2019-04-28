@@ -1,6 +1,6 @@
 ---
-title: 固定数据区域和交集属性
-description: 固定数据区域和交集属性
+title: 引脚数据范围和交集属性
+description: 引脚数据范围和交集属性
 ms.assetid: 55a749b2-1f54-42f8-876c-f391112d7bab
 keywords:
 - 音频属性 WDK，pin
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c75222f1c2bcf2bdfa92b14cfbfc68c57592f7e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332224"
 ---
-# <a name="pin-data-range-and-intersection-properties"></a>固定数据区域和交集属性
+# <a name="pin-data-range-and-intersection-properties"></a>引脚数据范围和交集属性
 
 
 ## <span id="pin_data_range_and_intersection_properties"></span><span id="PIN_DATA_RANGE_AND_INTERSECTION_PROPERTIES"></span>

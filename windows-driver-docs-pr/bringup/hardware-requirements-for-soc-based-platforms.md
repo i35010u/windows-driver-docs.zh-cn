@@ -1,17 +1,17 @@
 ---
-title: SoC 基于平台的硬件要求
+title: 基于 SoC 的平台的硬件要求
 description: ACPI 5.0 规范引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。
 ms.assetid: C8AA4EE1-D9A6-438E-801B-8EDDF8AA0560
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 807841e42f46a4204619df75a9937f510115a2d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337526"
 ---
-# <a name="hardware-requirements-for-soc-based-platforms"></a>SoC 基于平台的硬件要求
+# <a name="hardware-requirements-for-soc-based-platforms"></a>基于 SoC 的平台的硬件要求
 
 
 [ACPI 5.0 规范](https://www.uefi.org/specifications)引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。

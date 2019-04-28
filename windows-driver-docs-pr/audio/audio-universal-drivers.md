@@ -5,11 +5,11 @@ ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 795050c4d65f5be9d98dfc14572bd782bcb5d751
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333943"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d06d5b2c99fc62971f9dc99be5d44b6b7bd747cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328178"
 ---
 # <a name="supporting-bluetooth-event-notifications"></a>支持蓝牙事件通知
 
@@ -69,7 +69,7 @@ ms.locfileid: "56555425"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>IndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>Connect</strong></p></td>
+<td align="left"><p><strong>“连接”</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IndicationRemoteConfigRequest</strong></p></td>
@@ -120,7 +120,7 @@ SCO 连接[ *SCO 回调函数*](https://msdn.microsoft.com/library/windows/hardw
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>ScoIndicationRemoteConnect</strong></p></td>
-<td align="left"><p><strong>Connect</strong></p></td>
+<td align="left"><p><strong>“连接”</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ScoIndicationRemoteDisconnect</strong></p></td>

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: faef4ed68c07f2bbf09f3564bc551cd868378764
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339144"
 ---
 # <a name="writing-log-entries-in-a-text-log"></a>在文本日志中写入日志条目
 

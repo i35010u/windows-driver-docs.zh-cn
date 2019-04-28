@@ -5,11 +5,11 @@ ms.assetid: 44b47db2-8e48-4b78-bba7-dc2c0254b3b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 37430684d79451bbcf422faf9135af5a87a03fb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339868"
 ---
 # <a name="iscsidiscoveredtarget2-wmi-class"></a>ISCSI\_DiscoveredTarget2 WMI 类
 

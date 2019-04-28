@@ -5,11 +5,11 @@ ms.assetid: DAFC5B26-09BA-483C-B964-1DA96E77765F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0faefc875791e74ed3e8c8b6498a046a58640d2f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328913"
 ---
 # <a name="getting-started-guide---microsoft-standard-driver-for-3d-printers"></a>入门指南-3D 打印机的 Microsoft 标准驱动程序
 

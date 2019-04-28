@@ -5,11 +5,11 @@ ms.assetid: 409CC5FD-1632-4120-95C6-60574C9BAD32
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18a48f8cccf8b59cfc499518f75ac46d4d4cff2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341190"
 ---
 # <a name="data-driven-testing"></a>数据驱动的测试
 

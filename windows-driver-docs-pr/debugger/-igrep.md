@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c3696a8748cb5b84de485d2ba700708454626b7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336448"
 ---
-# <a name="igrep"></a>！ igrep
+# <a name="igrep"></a>!igrep
 
 
 **！ Igrep**扩展搜索的反汇编模式。

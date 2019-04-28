@@ -1,17 +1,17 @@
 ---
-title: 卸载音频驱动程序实现
+title: 已卸载音频的驱动程序实现
 description: 当实现卸载音频的驱动程序时，您开发的驱动程序，能够处理卸载音频流。
 ms.assetid: 371D7D15-17DA-40C5-8E20-D17399DB2A1E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ccd03256a8e276fca86c8c896c85704d8ec2a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333742"
 ---
-# <a name="driver-implementation-for-offloaded-audio"></a>卸载音频驱动程序实现
+# <a name="driver-implementation-for-offloaded-audio"></a>已卸载音频的驱动程序实现
 
 
 实现用于卸载音频的驱动程序时，您开发的驱动程序，可以卸载音频流，并公开到 Windows 音频系统该功能。

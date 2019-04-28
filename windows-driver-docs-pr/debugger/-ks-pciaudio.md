@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b73db84e86a5829cb22b763fd79cceb31f620887
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336222"
 ---
 # <a name="kspciaudio"></a>!ks.pciaudio
 

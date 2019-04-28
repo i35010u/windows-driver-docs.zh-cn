@@ -1,6 +1,6 @@
 ---
-title: DirectSound 硬件加速的 WDM 音频
-description: DirectSound 硬件加速的 WDM 音频
+title: WDM 音频中的 DirectSound 硬件加速
+description: WDM 音频中的 DirectSound 硬件加速
 ms.assetid: 75c34a10-1956-4117-b5b9-73de6d615521
 keywords:
 - DirectSound WDK 音频硬件加速
@@ -12,19 +12,19 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6abaac1b70d120c98f6cca4b7eb655ca330e81c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333774"
 ---
-# <a name="directsound-hardware-acceleration-in-wdm-audio"></a>DirectSound 硬件加速的 WDM 音频
+# <a name="directsound-hardware-acceleration-in-wdm-audio"></a>WDM 音频中的 DirectSound 硬件加速
 
 
 ## <span id="directsound_hardware_acceleration_in_wdm_audio"></span><span id="DIRECTSOUND_HARDWARE_ACCELERATION_IN_WDM_AUDIO"></span>
 
 
-本部分介绍了 WDM 音频驱动程序支持的 DirectSound 硬件加速。 讨论了以下主题：
+本部分介绍了 WDM 音频驱动程序支持的 DirectSound 硬件加速。 论述了以下主题：
 
 [DirectSound 硬件加速的概述](overview-of-directsound-hardware-acceleration.md)
 

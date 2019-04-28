@@ -26,11 +26,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a751f9c44cc38873bf48deac054e6f1bed30824
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332374"
 ---
 # <a name="mapping-stream-formats-to-speaker-configurations"></a>将流格式映射到扬声器配置
 

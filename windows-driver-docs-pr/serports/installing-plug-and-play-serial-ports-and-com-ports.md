@@ -1,6 +1,6 @@
 ---
-title: 安装即插串行端口和 COM 端口
-description: 安装即插串行端口和 COM 端口
+title: 安装即插即用串行端口和 COM 端口
+description: 安装即插即用串行端口和 COM 端口
 ms.assetid: 48a489a1-6ed9-4e17-a7b5-0f2325486ab6
 keywords:
 - 串行驱动程序 WDK，插设备
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a54ad46994756effe287f65ea4ac87802511a8ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331181"
 ---
-# <a name="installing-plug-and-play-serial-ports-and-com-ports"></a>安装即插串行端口和 COM 端口
+# <a name="installing-plug-and-play-serial-ports-and-com-ports"></a>安装即插即用串行端口和 COM 端口
 
 
 

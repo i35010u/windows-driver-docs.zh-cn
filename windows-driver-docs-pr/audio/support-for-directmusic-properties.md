@@ -1,6 +1,6 @@
 ---
-title: 支持的 DirectMusic 属性
-description: 支持的 DirectMusic 属性
+title: 对 DirectMusic 属性的支持
+description: 对 DirectMusic 属性的支持
 ms.assetid: f44cf9a9-bdfc-4794-b064-4d1126fb83aa
 keywords:
 - 硬件加速 WDK 音频
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 002741111cf4ada0be65f717c7bda15b9526538a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328587"
 ---
-# <a name="support-for-directmusic-properties"></a>支持的 DirectMusic 属性
+# <a name="support-for-directmusic-properties"></a>对 DirectMusic 属性的支持
 
 
 ## <span id="support_for_directmusic_properties"></span><span id="SUPPORT_FOR_DIRECTMUSIC_PROPERTIES"></span>

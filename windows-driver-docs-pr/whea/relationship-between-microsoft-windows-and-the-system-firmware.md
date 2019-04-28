@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51f8c275257ccac541203080295a9c6809e7fe00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340663"
 ---
 # <a name="relationship-between-microsoft-windows-and-the-system-firmware"></a>Microsoft Windows 和系统固件之间的关系
 

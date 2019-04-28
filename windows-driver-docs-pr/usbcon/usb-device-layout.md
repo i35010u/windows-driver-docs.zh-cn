@@ -1,14 +1,14 @@
 ---
-Description: A USB device defines its capabilities and features through configurations, interfaces, alternate settings, and endpoints.
+Description: USB 设备定义其功能和通过配置、 接口、 替代设置和终结点的功能。
 title: USB 设备布局
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d993ebce6f93018be7e0ed01a3af7e27f8ef9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331623"
 ---
 # <a name="usb-device-layout"></a>USB 设备布局
 

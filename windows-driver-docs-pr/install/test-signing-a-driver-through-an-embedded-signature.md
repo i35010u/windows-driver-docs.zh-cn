@@ -1,17 +1,17 @@
 ---
-title: 测试签名通过嵌入式签名的驱动程序
-description: 测试签名通过嵌入式签名的驱动程序
+title: 通过嵌入式签名对驱动程序进行测试签名
+description: 通过嵌入式签名对驱动程序进行测试签名
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 934e373a83a897d71b607c0996e4c482b0317223
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339568"
 ---
-# <a name="test-signing-a-driver-through-an-embedded-signature"></a>测试签名通过嵌入式签名的驱动程序
+# <a name="test-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行测试签名
 
 
 有符号[编录文件](catalog-files.md)是所有这些必须具有正确安装并加载大多数[驱动程序包](driver-packages.md)。 但是，嵌入签名也可能是一个选项。 嵌入签名是指将数字签名添加到驱动程序的二进制图像文件本身，而不是在编录文件中保存的数字签名。 因此，嵌入签名驱动程序时修改驱动程序的二进制图像。

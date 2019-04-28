@@ -1,17 +1,17 @@
 ---
-title: 结束调试会话中 CDB
+title: 在 CDB 中结束调试会话
 description: 可以通过输入 q (Quit) 命令来退出 CDB。 此命令也会关闭正在调试的应用程序。
 ms.assetid: B32AD09D-7F88-420E-94BD-59FAE6EC1720
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60741484442d6e66411251968fbc88af001a412c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340575"
 ---
-# <a name="ending-a-debugging-session-in-cdb"></a>结束调试会话中 CDB
+# <a name="ending-a-debugging-session-in-cdb"></a>在 CDB 中结束调试会话
 
 
 可以通过输入退出 CDB [ **q (Quit)** ](q--qq--quit-.md)命令。 此命令也会关闭正在调试的应用程序。

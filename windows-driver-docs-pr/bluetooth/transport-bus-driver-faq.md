@@ -5,11 +5,11 @@ ms.assetid: 7189EB3B-E071-4145-8308-EFA6D4E89D4B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 172d5d753747d46a60c1b563542d588c1eb31021
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328183"
 ---
 # <a name="transport-bus-driver-faq"></a>传输总线驱动程序常见问题解答
 
@@ -28,7 +28,7 @@ ms.locfileid: "56521894"
 这些主题中的更详细地介绍驱动程序签名：
 
 -   [驱动程序签名](https://msdn.microsoft.com/library/windows/hardware/ff544865)
--   [Windows 的驱动程序签名要求](https://msdn.microsoft.com/windows/hardware/gg487317)
+-   [Windows 驱动程序签名要求](https://msdn.microsoft.com/windows/hardware/gg487317)
 
 ## <a name="span-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanwhy-is-my-serial-bus-driver-not-getting-any-ioctls-from-the-bluetooth-core-stack"></a><span id="Why_is_my_serial_bus_driver_not_getting_any_IOCTLs_from_the_Bluetooth_core_stack_"></span><span id="why_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_"></span><span id="WHY_IS_MY_SERIAL_BUS_DRIVER_NOT_GETTING_ANY_IOCTLS_FROM_THE_BLUETOOTH_CORE_STACK_"></span>为什么我串行总线驱动程序未获得任何 Ioctl 从蓝牙核心堆栈？
 

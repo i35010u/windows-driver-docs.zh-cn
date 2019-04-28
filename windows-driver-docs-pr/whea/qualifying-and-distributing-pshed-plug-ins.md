@@ -1,6 +1,6 @@
 ---
-title: 符合条件的和分发 PSHED 插件
-description: 符合条件的和分发 PSHED 插件
+title: 限定和分发 PSHED 插件
+description: 限定和分发 PSHED 插件
 ms.assetid: fe6cbb01-552f-4b24-b300-168d6311a596
 keywords:
 - 数字签名 WDK WHEA），PSHED 插件
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 906c41d26fd154203b9ce07efbd8c24d8766ecd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340703"
 ---
-# <a name="qualifying-and-distributing-pshed-plug-ins"></a>符合条件的和分发 PSHED 插件
+# <a name="qualifying-and-distributing-pshed-plug-ins"></a>限定和分发 PSHED 插件
 
 
 若要确保质量和驱动程序的完整性，PSHED 插件必须进行数字签名。 进行数字签名 PSHED 插件时，平台供应商必须遵循以下准则：

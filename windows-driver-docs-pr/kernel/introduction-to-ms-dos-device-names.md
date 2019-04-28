@@ -1,19 +1,19 @@
 ---
-title: 简介 MS-DOS 设备名称
-description: 简介 MS-DOS 设备名称
+title: MS-DOS 设备名称简介
+description: MS-DOS 设备名称简介
 ms.assetid: 44b2f871-56e1-46d3-aab4-c38f498d089d
 keywords:
 - MS-DOS 设备名称 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3af3eab546708499c904671148af90609e2ac36e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341458"
 ---
-# <a name="introduction-to-ms-dos-device-names"></a>简介 MS-DOS 设备名称
+# <a name="introduction-to-ms-dos-device-names"></a>MS-DOS 设备名称简介
 
 
 

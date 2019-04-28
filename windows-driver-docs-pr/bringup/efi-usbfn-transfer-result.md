@@ -5,11 +5,11 @@ ms.assetid: d101b061-2a83-4bf8-9502-ccb6e56f5cea
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0267bdc76cdd0cfeefc3bcdeb1b164686bdcfd3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337692"
 ---
 # <a name="efiusbfntransferresult"></a>EFI\_USBFN\_传输\_结果
 

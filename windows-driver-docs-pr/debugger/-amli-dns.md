@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d05bafcb96bdd57130ee9d849edfebcea5d5ab3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334762"
 ---
-# <a name="amli-dns"></a>！ amli dns
+# <a name="amli-dns"></a>!amli dns
 
 
 **！ Amli dns**扩展显示 ACPI 命名空间对象。

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 381355b70ad2029a31d0c2c4bcde481baca8d7aa
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340619"
 ---
 # <a name="bug-check-0xf6-pciverifierdetectedviolation"></a>Bug 检查 0xF6：PCI\_VERIFIER\_检测到\_冲突
 

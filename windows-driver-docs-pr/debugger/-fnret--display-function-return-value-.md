@@ -1,5 +1,5 @@
 ---
-title: .fnret （显示函数返回值）
+title: .fnret（显示函数返回值）
 description: .Fnret 命令显示有关函数的返回值的信息。
 ms.assetid: b7ce3047-5b0a-43ba-877f-76235139d66c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 51eb7e56fb249b72ba9abf3034e54bad3e17230c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336668"
 ---
-# <a name="fnret-display-function-return-value"></a>.fnret （显示函数返回值）
+# <a name="fnret-display-function-return-value"></a>.fnret（显示函数返回值）
 
 
 **.Fnret**命令显示有关函数的返回值的信息。

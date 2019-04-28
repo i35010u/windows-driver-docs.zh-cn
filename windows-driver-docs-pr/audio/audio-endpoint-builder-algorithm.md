@@ -1,17 +1,17 @@
 ---
-title: 音频的终结点生成器算法
-description: 音频的终结点生成器算法
+title: 音频终结点生成器算法
+description: 音频终结点生成器算法
 ms.assetid: 2338bca7-5743-42c3-9baf-ac4a54cf0393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aac4c8b70594f341c51b2109aa17e185c59d3ec7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331514"
 ---
-# <a name="audio-endpoint-builder-algorithm"></a>音频的终结点生成器算法
+# <a name="audio-endpoint-builder-algorithm"></a>音频终结点生成器算法
 
 
 在 Windows Vista 和更高版本的 Windows，AudioEndpointBuilder 是枚举，初始化，并在系统中激活的音频的终结点的系统服务。 本主题概述 AudioEndpointBuilder 服务使用的算法。

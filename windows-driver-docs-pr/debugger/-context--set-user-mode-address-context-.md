@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b6d270f3a75516c1732da48f16b30728c60701
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334620"
 ---
 # <a name="context-set-user-mode-address-context"></a>.context（设置用户模式地址上下文）
 

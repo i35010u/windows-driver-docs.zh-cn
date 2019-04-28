@@ -5,11 +5,11 @@ ms.assetid: 25162982-6A98-4018-82B3-8DD3E0A0A002
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b30faff0f3176ba63a328c1b21d2b441e2973aa
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340271"
 ---
 # <a name="requestprocessing-rule-set-kmdf"></a>RequestProcessing 规则集 (KMDF)
 

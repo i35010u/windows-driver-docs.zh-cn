@@ -1,17 +1,17 @@
 ---
-title: 查询的参数的虚拟端口
-description: 查询的参数的虚拟端口
+title: 查询虚拟端口的参数
+description: 查询虚拟端口的参数
 ms.assetid: 482DA041-2C70-438A-8D29-0F338CDCF935
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afb90e36f69cd108e752d3f30e2ff2a75dc0a54e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339966"
 ---
-# <a name="querying-the-parameters-of-a-virtual-port"></a>查询的参数的虚拟端口
+# <a name="querying-the-parameters-of-a-virtual-port"></a>查询虚拟端口的参数
 
 
 基础驱动程序可以获取支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器上的 NIC 交换机上的虚拟端口 (VPort) 的参数。 该驱动程序发出的一个对象标识符 (OID) 方法请求[OID\_NIC\_交换机\_VPORT\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451825)来获取这些参数。

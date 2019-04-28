@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: df0ce99c1d41011a468b0edf042aec272cf3ff63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336205"
 ---
-# <a name="kuser"></a>！ kuser
+# <a name="kuser"></a>!kuser
 
 
 **！ Kuser**扩展插件都会显示共享的用户模式页 (KUSER\_共享\_数据)。

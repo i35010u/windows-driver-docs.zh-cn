@@ -5,11 +5,11 @@ ms.assetid: 7dc125cb-0f20-4d3d-8124-df556a9644d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c64079f3ca14aae688e9cb02cffed6b3aba7de1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326069"
 ---
 # <a name="installing-a-wia-scanner-driver-with-wsd"></a>使用 WSD 安装 WIA 扫描仪驱动程序
 

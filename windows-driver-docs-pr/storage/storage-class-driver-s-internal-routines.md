@@ -1,6 +1,6 @@
 ---
-title: 存储类驱动程序内部例程
-description: 存储类驱动程序内部例程
+title: 存储类驱动程序的内部例程
+description: 存储类驱动程序的内部例程
 ms.assetid: 44017d1d-2866-4b5e-87ea-69cbc6611c25
 keywords:
 - 存储类驱动程序 WDK，内部例程
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 312f741d2800fa8116097ce9998e7211795d327a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339016"
 ---
-# <a name="storage-class-drivers-internal-routines"></a>存储类驱动程序内部例程
+# <a name="storage-class-drivers-internal-routines"></a>存储类驱动程序的内部例程
 
 
 ## <span id="ddk_storage_class_driver_s_internal_routines_kg"></span><span id="DDK_STORAGE_CLASS_DRIVER_S_INTERNAL_ROUTINES_KG"></span>

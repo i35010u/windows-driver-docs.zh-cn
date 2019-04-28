@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1409f8a7e6f64a4c239b87aca0c0a0b6dadabacf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332796"
 ---
 # <a name="kspropertyaudiomodulenotificationdeviceid"></a>KSPROPERTY\_AUDIOMODULE\_通知\_设备\_ID
 
@@ -91,7 +91,7 @@ ms.locfileid: "56576840"
 <td align="left"><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Windows 10，版本 1703</p></td>
 </tr>
 </tbody>

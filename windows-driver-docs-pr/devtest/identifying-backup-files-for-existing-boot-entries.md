@@ -13,11 +13,11 @@ keywords:
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8777a62ce485103921a1c7bc93ce160be870d580
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330676"
 ---
 # <a name="identifying-backup-files-for-existing-boot-entries"></a>识别现有启动项的备份文件
 

@@ -5,11 +5,11 @@ ms.assetid: 59ac7ec7-1b96-4fe1-a221-d8422e60072d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c7fccb17923cebd1236b368820130abb71900d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337517"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 移动版的分区布局
 
@@ -19,7 +19,7 @@ ms.locfileid: "56523835"
 在手机的存储子系统中指定的要求必须符合[部分 2.2:Windows 10 移动版的最低硬件要求的内存，](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)。
 
 <div class="alert">
-<strong>注意：</strong> Oem 可能不添加、 删除或修改由 Microsoft 和 SV 设计布局中的分区。 这有助于确保在手机上的所有软件和配置数据可以为电话更新提供都服务。 OEM 组件通常内置于主要的 OS 分区 （适用于预加载应用程序和本机服务），数据分区 （适用于数据预加载映射等） 或在设备预配分区 （适用于特定于设备的只读配置数据）。
+<strong>注意：</strong>  Oem 可能不添加、 删除或修改由 Microsoft 和 SV 设计布局中的分区。 这有助于确保在手机上的所有软件和配置数据可以为电话更新提供都服务。 OEM 组件通常内置于主要的 OS 分区 （适用于预加载应用程序和本机服务），数据分区 （适用于数据预加载映射等） 或在设备预配分区 （适用于特定于设备的只读配置数据）。
 </div>
  
 
@@ -53,7 +53,7 @@ ms.locfileid: "56523835"
 <th align="left">文件系统</th>
 <th align="left">装入点</th>
 <th align="left">Encrypted</th>
-<th align="left">尺寸</th>
+<th align="left">大小</th>
 <th align="left">保留供将来的更新的可用空间</th>
 <th align="left">所有者</th>
 </tr>
@@ -66,17 +66,17 @@ ms.locfileid: "56523835"
 <td align="left"><p>C:\DPP</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>8 MB</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SV 分区</p></td>
 <td align="left"><p>UEFI 固件和其他特定于 SV 的分区</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>没有装入点</p></td>
 <td align="left"><p>可能</p></td>
 <td align="left"><p>变量</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>SV/OEM</p></td>
 </tr>
 <tr class="odd">
@@ -86,7 +86,7 @@ ms.locfileid: "56523835"
 <td align="left"><p>C:\ESP</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>32 MB （最低）</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="even">
@@ -96,7 +96,7 @@ ms.locfileid: "56523835"
 <td align="left"><p>C:\CrashDump</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>变量-此分区的大小取决于的值<strong>SOC</strong> OEMInput 文件用于生成映像中的元素。</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ ms.locfileid: "56523835"
 <td align="left"><p>C:\Data</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>EMMC 存储未由其他分区的其余部分。 大约 256 MB 用于页面文件。</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 <tr class="odd">
@@ -128,7 +128,7 @@ ms.locfileid: "56523835"
 <td align="left"><p>变量</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>变量</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>Microsoft</p></td>
 </tr>
 </tbody>

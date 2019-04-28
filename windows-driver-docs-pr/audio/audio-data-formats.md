@@ -17,11 +17,11 @@ keywords:
 ms.date: 02/15/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b60db2eb43445b213991664c6b1aa61bd1ab2a28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331571"
 ---
 # <a name="audio-data-formats"></a>音频数据格式
 

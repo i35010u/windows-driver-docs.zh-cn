@@ -1,5 +1,5 @@
 ---
-title: .create （创建过程）
+title: .create（创建进程）
 description: .Create 命令创建新的目标应用程序。
 ms.assetid: 9e34eadf-1f68-4eec-ad6b-d70163d5d876
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a0b03dd9795701910d8d001d6da7f0d9e458a8a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334598"
 ---
-# <a name="create-create-process"></a>.create （创建过程）
+# <a name="create-create-process"></a>.create（创建进程）
 
 
 **.Create**命令将创建一个新的目标应用程序。

@@ -1,19 +1,19 @@
 ---
-title: 设备元数据存储区
-description: 设备元数据存储区
+title: 设备元数据存储
+description: 设备元数据存储
 ms.assetid: 59af6173-28f3-44f5-874e-305bf570d683
 keywords:
 - 设备元数据存储区 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34758c5bec60d815e183f6165bc18f2e26dd5517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335266"
 ---
-# <a name="device-metadata-store"></a>设备元数据存储区
+# <a name="device-metadata-store"></a>设备元数据存储
 
 
 设备元数据存储是本地计算机存储设备元数据包的目录。 设备元数据存储区访问从下列目录中：

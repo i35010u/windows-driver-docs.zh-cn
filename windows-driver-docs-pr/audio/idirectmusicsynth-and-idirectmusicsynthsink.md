@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2043c16e2122b9607499bf21e29b48c272614e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333550"
 ---
 # <a name="idirectmusicsynth-and-idirectmusicsynthsink"></a>IDirectMusicSynth 和 IDirectMusicSynthSink
 
@@ -41,7 +41,7 @@ DirectMusic 与软件合成器通过其**IDirectMusicSynth**接口。 DirectMusi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">组</th>
+<th align="left">Group</th>
 <th align="left">方法名称</th>
 </tr>
 </thead>
@@ -106,7 +106,7 @@ DirectMusic 与软件合成器通过其**IDirectMusicSynth**接口。 DirectMusi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">组</th>
+<th align="left">Group</th>
 <th align="left">方法名称</th>
 </tr>
 </thead>

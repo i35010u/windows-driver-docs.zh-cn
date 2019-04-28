@@ -5,11 +5,11 @@ ms.assetid: 2aa6d4be-5ebb-4f9f-956a-2491ce483bfa
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5428f26106282356a733b1ac5fd04fcd0281b6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333572"
 ---
 # <a name="hd-audio-ddi-structures"></a>HD 音频 DDI 结构
 

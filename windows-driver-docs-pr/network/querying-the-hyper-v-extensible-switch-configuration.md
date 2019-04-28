@@ -1,17 +1,17 @@
 ---
-title: 查询的 HYPER-V 可扩展交换机配置
-description: 查询的 HYPER-V 可扩展交换机配置
+title: 查询 Hyper-V 可扩展交换机配置
+description: 查询 Hyper-V 可扩展交换机配置
 ms.assetid: AF646860-01AB-4F4B-84F8-B570054B10FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2116ba6b1927e9a17aaeaffb7926618ae1781b4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339981"
 ---
-# <a name="querying-the-hyper-v-extensible-switch-configuration"></a>查询的 HYPER-V 可扩展交换机配置
+# <a name="querying-the-hyper-v-extensible-switch-configuration"></a>查询 Hyper-V 可扩展交换机配置
 
 
 HYPER-V 可扩展交换机接口包括颁发的可扩展交换机扩展来查询可扩展交换机、 其端口和其网络适配器连接的当前配置的对象标识符 (OID) 请求。 这些请求包括下列 Oid:

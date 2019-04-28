@@ -1,17 +1,17 @@
 ---
-title: 更新使用 Windows 更新设备固件
+title: 使用 Windows 更新更新设备固件
 description: 本主题介绍如何使用 Windows Update (WU) 服务的设备的固件更新。
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6eeab3f3f202b34af9f094e2dd56380f3b9735b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339493"
 ---
-# <a name="updating-device-firmware-using-windows-update"></a>更新使用 Windows 更新设备固件
+# <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
 本主题介绍如何使用 Windows Update (WU) 服务的可移动或机箱中设备的固件更新。  有关更新系统固件的信息，请参阅[Windows UEFI 固件更新平台](../bringup/windows-uefi-firmware-update-platform.md)。
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a820fcfb620faa1773f7aed5eddaf49da1b1aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334498"
 ---
-# <a name="exchain"></a>！ exchain
+# <a name="exchain"></a>!exchain
 
 
 **！ Exchain**扩展显示当前的异常处理程序链。
@@ -35,10 +35,10 @@ ms.locfileid: "56541945"
 以下值之一：
 
 <span id="_c"></span><span id="_C"></span>**/c**  
-显示用于调试 c + + 相关的信息**尝试**/**捕获**异常，如果检测到此类异常。
+显示适用于调试的信息C++**尝试**/**捕获**异常，如果检测到此类异常。
 
 <span id="_C"></span><span id="_c"></span>**/C**  
-显示用于调试 c + + 相关的信息**尝试**/**捕获**异常，即使此类异常未检测到。
+显示适用于调试的信息C++**尝试**/**捕获**异常，即使此类异常未检测到。
 
 <span id="_f"></span><span id="_F"></span>**/f**  
 显示即使 CRT 异常处理程序未检测到 CRT 函数表的每个步骤获取的信息。

@@ -1,17 +1,17 @@
 ---
-title: 即插即用实现重新平衡 PortCls 音频驱动程序
+title: 为 PortCls 音频驱动程序实现 PnP 再平衡
 description: 即插即用重新平衡是方案中使用某些 PCI 需要重新分配内存资源。
 ms.assetid: FCAD7F8B-AA9B-430A-BCAF-04E13FA15382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0881661fb05211711bfcb13845fd748293d7fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333487"
 ---
-# <a name="implement-pnp-rebalance-for-portcls-audio-drivers"></a>即插即用实现重新平衡 PortCls 音频驱动程序
+# <a name="implement-pnp-rebalance-for-portcls-audio-drivers"></a>为 PortCls 音频驱动程序实现 PnP 再平衡
 
 
 即插即用重新平衡是方案中使用某些 PCI 需要重新分配内存资源。

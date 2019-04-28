@@ -1,19 +1,19 @@
 ---
-title: 将扬声器配置设置应用
-description: 将扬声器配置设置应用
+title: 应用 Speaker-Configuration 设置
+description: 应用 Speaker-Configuration 设置
 ms.assetid: 98fe96cc-8436-4400-9b39-86d188e085c9
 keywords:
 - 失败的扬声器配置请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a07ff462e58a2ac314b43671368e73a309290ab0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331569"
 ---
-# <a name="applying-speaker-configuration-settings"></a>将扬声器配置设置应用
+# <a name="applying-speaker-configuration-settings"></a>应用 Speaker-Configuration 设置
 
 
 ## <span id="applying_speaker_configuration_settings"></span><span id="APPLYING_SPEAKER_CONFIGURATION_SETTINGS"></span>

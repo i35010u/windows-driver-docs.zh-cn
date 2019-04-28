@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 96a4a462b858be1d066a6a8e587eaa4b2007d26a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340357"
 ---
 # <a name="deferredrequestcompleted-rule-kmdf"></a>DeferredRequestCompleted 规则 (kmdf)
 
@@ -80,7 +80,7 @@ I/O 请求的延迟的处理回调函数是**EvtTimerFunc**， **EvtDpcFunc**，
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**WdfDeviceEnqueueRequest**](https://msdn.microsoft.com/library/windows/hardware/ff545945)

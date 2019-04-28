@@ -1,5 +1,5 @@
 ---
-title: .bugcheck （显示 Bug 检查数据）
+title: .bugcheck（显示 Bug 检查数据）
 description: .Bugcheck 命令显示在目标计算机上的 bug 检查中的数据。
 ms.assetid: 4b453b5a-4a3c-4056-92e7-b6a17f987fa4
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a24198184af88054b599c230d8e308bdd3d882fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336934"
 ---
-# <a name="bugcheck-display-bug-check-data"></a>.bugcheck （显示 Bug 检查数据）
+# <a name="bugcheck-display-bug-check-data"></a>.bugcheck（显示 Bug 检查数据）
 
 
 **.Bugcheck**命令显示来自错误数据时，请在目标计算机。

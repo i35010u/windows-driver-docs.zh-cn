@@ -5,11 +5,11 @@ ms.assetid: 431406c3-6b96-4815-a8a0-01100e8a5a5f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6053e93a7d9e47b20ec716513a4e50a7d596e991
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337684"
 ---
 # <a name="efiusbfnioprotocolstartcontroller"></a>EFI\_USBFN\_IO\_PROTOCOL.StartController
 
@@ -27,7 +27,7 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

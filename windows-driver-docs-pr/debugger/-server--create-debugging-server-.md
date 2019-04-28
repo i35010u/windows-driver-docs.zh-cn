@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bbdc4d1fdf3d16e42e98cb61a0d036ff67d6a5b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338838"
 ---
 # <a name="server-create-debugging-server"></a>.server（创建调试服务器）
 

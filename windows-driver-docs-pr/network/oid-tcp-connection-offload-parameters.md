@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29f5a500a249237ce22a4205f7f5c010ab9189b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331809"
 ---
 # <a name="oidtcpconnectionoffloadparameters"></a>OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
 
@@ -26,7 +26,7 @@ ms.locfileid: "56520283"
 > [!NOTE]
 > 不要混淆与 OID_TCP_CONNECTION_OFFLOAD_PARAMETERS [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID 管理应用程序用来启用或禁用 TCP 卸载功能。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)
@@ -35,6 +35,6 @@ ms.locfileid: "56520283"
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

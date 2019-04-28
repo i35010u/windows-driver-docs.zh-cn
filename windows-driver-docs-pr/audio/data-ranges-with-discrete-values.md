@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23ed312824aeb1196f8c2e684eb5fabfdbd7fe12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333818"
 ---
 # <a name="data-ranges-with-discrete-values"></a>具有离散值的数据范围
 

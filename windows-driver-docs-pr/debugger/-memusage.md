@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ef8468f84e63c62f9ee54280adf8f755f8a4d5e7
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336122"
 ---
 # <a name="memusage"></a>!memusage
 

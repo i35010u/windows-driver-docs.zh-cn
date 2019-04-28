@@ -1,6 +1,6 @@
 ---
-title: WHQL 测试签名程序
-description: WHQL 测试签名程序
+title: WHQL 测试签名计划
+description: WHQL 测试签名计划
 ms.assetid: 241a8cfe-c7c4-4c88-9d61-831f18f4eb21
 keywords:
 - 驱动程序签名 WDK，WHQL 数字签名
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f1d101a5a93cab22c4077b3c68e92ba8a011ca4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339265"
 ---
-# <a name="whql-test-signature-program"></a>WHQL 测试签名程序
+# <a name="whql-test-signature-program"></a>WHQL 测试签名计划
 
 
 Windows 硬件质量实验室 (WHQL) 测试签名程序支持的驱动程序随后会提交到测试签名[WHQL 版本签名](whql-release-signature.md)。 独立硬件供应商 (Ihv) 参与此计划可以提交[驱动程序包](driver-packages.md)若要对其进行测试签名。 测试签名的签名[编录文件](catalog-files.md)WHQL 下 Microsoft 测试根颁发机构颁发的测试根证书生成。 测试签名目录文件，以及 WHQL 还提供了具有测试根证书的参与者。

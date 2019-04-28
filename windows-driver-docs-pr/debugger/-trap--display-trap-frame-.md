@@ -1,5 +1,5 @@
 ---
-title: .trap （显示陷阱帧）
+title: .trap（显示陷阱帧）
 description: .Trap 命令显示陷阱框架注册状态，并还会设置寄存器上下文。
 ms.assetid: c53177ad-243c-4276-8602-2edc14b44251
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d8e6a82cdbcd316ec278da383ec8a5777645f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339783"
 ---
-# <a name="trap-display-trap-frame"></a>.trap （显示陷阱帧）
+# <a name="trap-display-trap-frame"></a>.trap（显示陷阱帧）
 
 
 **.Trap**命令显示陷阱框架注册状态，并还会设置寄存器上下文。

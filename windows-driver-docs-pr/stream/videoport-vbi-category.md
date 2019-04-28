@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 087b262ac037b362e7236a954840b42fe23992d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329955"
 ---
 # <a name="videoport-vbi-category"></a>视频端口 VBI 类别
 
@@ -34,7 +34,7 @@ ms.locfileid: "56554248"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>值</th>
 </tr>
 </thead>

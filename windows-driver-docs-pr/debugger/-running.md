@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be23896e3bb75514251c78d37c3e5359400aed6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338860"
 ---
-# <a name="running"></a>！ 运行
+# <a name="running"></a>!running
 
 
 **！ 运行**扩展显示的目标计算机的所有处理器上运行的线程的列表。

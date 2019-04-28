@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试相关联的线程模型对象�
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5694c648acd00d3933db17cac8e46e661b8f0211
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330957"
 ---
 # <a name="ttd-thread-objects"></a>TTD 线程对象
 ## <a name="description"></a>描述
@@ -24,7 +24,7 @@ ms.locfileid: "56541753"
 
 ## <a name="children"></a>Children
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | LifeTime | 一个[TTD 范围对象](time-travel-debugging-range-objects.md)描述的线程的生存期。 |
 | ActiveTime | 一个[TTD 范围对象](time-travel-debugging-range-objects.md)用于描述该线程处于活动状态的时间。 |
@@ -78,7 +78,7 @@ ntdll!NtTestAlert+0x14:
 ```
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

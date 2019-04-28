@@ -5,11 +5,11 @@ ms.assetid: 71DFA31C-019E-4602-83F6-71E235B9DB66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3965494ffcf4eb7a556b53128d05b167922fd63b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330737"
 ---
 # <a name="wdi-design-guide"></a>WDI 设计指南
 

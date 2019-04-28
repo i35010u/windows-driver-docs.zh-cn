@@ -1,6 +1,6 @@
 ---
-title: 驱动程序代码中包括的 Guid
-description: 驱动程序代码中包括的 Guid
+title: 在驱动程序代码中包含 GUID
+description: 在驱动程序代码中包含 GUID
 ms.assetid: 9235f9e6-9c40-4c4b-a98b-99e6b46a11ce
 keywords:
 - 全局唯一标识符 WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e083ae2ec3a89eb47292dafe80ca5705a0765a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341086"
 ---
-# <a name="including-guids-in-driver-code"></a>驱动程序代码中包括的 Guid
+# <a name="including-guids-in-driver-code"></a>在驱动程序代码中包含 GUID
 
 
 

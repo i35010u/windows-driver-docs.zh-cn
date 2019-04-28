@@ -5,11 +5,11 @@ ms.assetid: d77573e0-7866-46a5-88bc-c911bbd2a165
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e58b8cf9c61d1b21ae60adf366e07cfa741cb0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339384"
 ---
 # <a name="using-the-devcon-tool-to-install-a-driver-package"></a>使用 DevCon 工具安装驱动程序包
 

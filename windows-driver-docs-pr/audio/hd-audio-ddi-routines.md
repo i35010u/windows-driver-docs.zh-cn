@@ -1,17 +1,17 @@
 ---
-title: 高清晰度音频 DDI 例程
-description: 高清晰度音频 DDI 例程
+title: HD 音频 DDI 例程
+description: HD 音频 DDI 例程
 ms.assetid: 2f360031-39bd-457e-8b64-04b37e21a7fe
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 571394fa686deb866253d5d9712f12de92a81d87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333594"
 ---
-# <a name="hd-audio-ddi-routines"></a>高清晰度音频 DDI 例程
+# <a name="hd-audio-ddi-routines"></a>HD 音频 DDI 例程
 
 
 中所述[差异之间 HD 音频 DDI 版本](https://msdn.microsoft.com/library/windows/hardware/ff536258)，HD 音频 DDI 的三个版本存在。 通过定义以下三个 DDI 版本[ **HDAUDIO\_总线\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff536413)， [ **HDAUDIO\_总线\_接口\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff536418)，和[ **HDAUDIO\_总线\_接口\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)结构。

@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 909ac5e2f1ae49d83f7c2a0ef59fa44d5a9dae1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341705"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
@@ -111,7 +111,7 @@ Devcon 功能包括：
 
 DevCon 源代码也是可用的以便你可以检查 DevCon 用于检索和更改设置和配置数据的方法。 DevCon 演示如何使用[常规设置函数](https://msdn.microsoft.com/library/windows/hardware/ff544985)，[设备安装函数](https://msdn.microsoft.com/library/windows/hardware/ff541299)，并[即插即用 Configuration Manager 功能](https://msdn.microsoft.com/library/windows/hardware/ff549713)。 源代码[设备控制台 (DevCon) 工具](https://go.microsoft.com/fwlink/p/?LinkId=617966)现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [DevCon 命令](devcon-general-commands.md)

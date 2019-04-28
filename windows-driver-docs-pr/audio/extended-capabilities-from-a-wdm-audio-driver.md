@@ -1,6 +1,6 @@
 ---
-title: 从 WDM 音频驱动程序的扩展的功能
-description: 从 WDM 音频驱动程序的扩展的功能
+title: 从 WDM 音频驱动程序扩展的功能
+description: 从 WDM 音频驱动程序扩展的功能
 ms.assetid: 8ee081ee-623d-4eaf-953f-20ccfbbe9800
 keywords:
 - 有关旧版支持扩展的 WDM 音频扩展 WDK，
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed4463d9772a3f738c25d51753057fc19458235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333642"
 ---
-# <a name="extended-capabilities-from-a-wdm-audio-driver"></a>从 WDM 音频驱动程序的扩展的功能
+# <a name="extended-capabilities-from-a-wdm-audio-driver"></a>从 WDM 音频驱动程序扩展的功能
 
 
 ## <span id="extended_capabilities_from_a_wdm_audio_driver"></span><span id="EXTENDED_CAPABILITIES_FROM_A_WDM_AUDIO_DRIVER"></span>

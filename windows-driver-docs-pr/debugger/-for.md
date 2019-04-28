@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 09e3d3fc802c7a81aa9e1564a1bb7ee6f6d52fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336632"
 ---
 # <a name="for"></a>.for
 
@@ -35,7 +35,7 @@ ms.locfileid: "56544248"
 指定将在循环开始之前执行的命令。 允许单个初始命令。
 
 <span id="_______Condition______"></span><span id="_______condition______"></span><span id="_______CONDITION______"></span> *Condition*   
-指定的条件。 如果此计算结果为零，则将其视为 false;否则为 true。 封闭*条件*在括号是可选的。 *条件*必须是一个表达式，而不是调试器命令。 它将由默认表达式计算器 （MASM 或 c + +） 进行评估。 有关详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+指定的条件。 如果此计算结果为零，则将其视为 false;否则为 true。 封闭*条件*在括号是可选的。 *条件*必须是一个表达式，而不是调试器命令。 默认表达式计算器将评估 (MASM 或C++)。 有关详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
 
 <span id="_______IncrementCommands______"></span><span id="_______incrementcommands______"></span><span id="_______INCREMENTCOMMANDS______"></span> *IncrementCommands*   
 指定将在每个循环结束执行的一个或多个命令。 如果你想要使用多个增量命令，用分号分隔它们，但不将它们放在大括号中。

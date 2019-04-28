@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 964256c44e62ae2f4ee206c9f7323a76ab8ceb3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327845"
 ---
 # <a name="wiaipsyres"></a>WIA\_IP\_YRES
 
@@ -54,13 +54,13 @@ WIA\_IP\_YRES 是所有图像采集启用项目和存储的图像项所必需的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPS\_XEXTENT**](wia-ips-xextent.md)

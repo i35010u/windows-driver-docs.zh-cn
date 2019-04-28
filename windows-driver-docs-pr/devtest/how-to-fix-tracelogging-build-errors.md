@@ -5,11 +5,11 @@ ms.assetid: E0C7ACA5-68C9-40FF-8D6E-4A65CEB0A851
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3dab8293ffad7098dc400309a84c0d163786052
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329939"
 ---
 # <a name="how-to-fix-tracelogging-build-errors"></a>如何修复 TraceLogging 生成错误
 
@@ -29,7 +29,7 @@ ms.locfileid: "57349678"
 <span id="Fix_"></span><span id="fix_"></span><span id="FIX_"></span>解决方法：  
 在源文件中包含 TraceLoggingProvider.h 之前包括 windows.h。
 
-## <a name="span-idcase2tracelogginginmoderncappsspanspan-idcase2tracelogginginmoderncappsspanspan-idcase2tracelogginginmoderncappsspancase-2-tracelogging-in-modern-c-apps"></a><span id="Case_2__TraceLogging_in_Modern_C___Apps"></span><span id="case_2__tracelogging_in_modern_c___apps"></span><span id="CASE_2__TRACELOGGING_IN_MODERN_C___APPS"></span>案例 2：在现代 c + + 应用程序中的 TraceLogging
+## <a name="span-idcase2tracelogginginmoderncappsspanspan-idcase2tracelogginginmoderncappsspanspan-idcase2tracelogginginmoderncappsspancase-2-tracelogging-in-modern-c-apps"></a><span id="Case_2__TraceLogging_in_Modern_C___Apps"></span><span id="case_2__tracelogging_in_modern_c___apps"></span><span id="CASE_2__TRACELOGGING_IN_MODERN_C___APPS"></span>案例 2：现代版中的 TraceLoggingC++应用程序
 
 
 <span id="Build_Error__snippet__"></span><span id="build_error__snippet__"></span><span id="BUILD_ERROR__SNIPPET__"></span>生成错误 （代码段）：  

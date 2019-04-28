@@ -1,6 +1,6 @@
 ---
-title: 音频的终结点、 属性和事件
-description: 音频的终结点、 属性和事件
+title: 音频终结点、属性和事件
+description: 音频终结点、属性和事件
 ms.assetid: ffc5834f-30c8-40b5-b57b-fe784331690c
 keywords:
 - 音频事件 WDK
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27992b8952761b42a049e746ea329a2446297586
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331479"
 ---
-# <a name="audio-endpoints-properties-and-events"></a>音频的终结点、 属性和事件
+# <a name="audio-endpoints-properties-and-events"></a>音频终结点、属性和事件
 
 
 ## <span id="audio_properties_and_events"></span><span id="AUDIO_PROPERTIES_AND_EVENTS"></span>

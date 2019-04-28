@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a760ab85eb0a5ea9b484754eb987dbd2c2a7da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334371"
 ---
-# <a name="powertriage"></a>！ powertriage
+# <a name="powertriage"></a>!powertriage
 
 
 ！ Powertriage 扩展显示摘要信息系统和设备电源相关的组件。 它还提供了指向可用于收集的其他信息的相关命令。 ！ Powertriage 命令不具有任何参数。 可以使用此命令，以及这两个实时内核模式调试和故障转储文件分析。

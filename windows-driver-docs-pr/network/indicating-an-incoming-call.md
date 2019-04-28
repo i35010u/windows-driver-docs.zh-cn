@@ -1,6 +1,6 @@
 ---
-title: 指示传入呼叫
-description: 指示传入呼叫
+title: 指示来电
+description: 指示来电
 ms.assetid: ca7f4a1f-47a2-4ac0-b4a2-d0367163135f
 keywords:
 - 调用安装 WDK 的 CoNDIS
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2576b6cbe67185f5e224526094acf25330c55eeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327798"
 ---
-# <a name="indicating-an-incoming-call"></a>指示传入呼叫
+# <a name="indicating-an-incoming-call"></a>指示来电
 
 
 

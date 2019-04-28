@@ -1,19 +1,19 @@
 ---
-title: PCM 多渠道 Stream 数据格式
-description: PCM 多渠道 Stream 数据格式
+title: PCM 多声道流数据格式
+description: PCM 多声道流数据格式
 ms.assetid: cab528a7-5db4-4e37-89c4-35dfc472f0ae
 keywords:
 - PCM 多渠道的流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afe5949b7f3049df52ebc7d0f3390430a821e03b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332231"
 ---
-# <a name="pcm-multichannel-stream-data-format"></a>PCM 多渠道 Stream 数据格式
+# <a name="pcm-multichannel-stream-data-format"></a>PCM 多声道流数据格式
 
 
 ## <span id="pcm_multichannel_stream_data_format"></span><span id="PCM_MULTICHANNEL_STREAM_DATA_FORMAT"></span>

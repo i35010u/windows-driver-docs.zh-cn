@@ -5,11 +5,11 @@ ms.assetid: 94B54281-7A7E-4DBA-85AE-313EEF09E733
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f174738bab9d6bbffdab9a28d29606be4c4921b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335346"
 ---
 # <a name="overview-of-ndis-wake-reason-status-indications"></a>NDIS 唤醒原因状态指示概述
 

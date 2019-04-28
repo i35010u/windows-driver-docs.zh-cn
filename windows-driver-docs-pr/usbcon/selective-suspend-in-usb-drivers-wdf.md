@@ -1,14 +1,14 @@
 ---
-Description: A USB function driver supports runtime idle detection by implementing USB selective suspend.
+Description: USB 函数驱动程序支持运行时空闲检测通过实现 USB 选择性挂起。
 title: USB 驱动程序 (WDF) 中的选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be1759f7aee84db8120eb104e491fd3e3fbcd1d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331330"
 ---
 # <a name="selective-suspend-in-usb-drivers-wdf"></a>USB 驱动程序 (WDF) 中的选择性挂起
 
@@ -61,7 +61,7 @@ USB 函数驱动程序应实现选择性挂起 WDF，这与总线驱动程序进
 
 如果驱动程序不是 PPO，框架会采用任何进一步操作，因为仅 PPO 可以恢复设备。 请求将保留在队列中。 设备堆栈停留如果 PPO 不会接收会导致它以恢复设备的任何请求。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

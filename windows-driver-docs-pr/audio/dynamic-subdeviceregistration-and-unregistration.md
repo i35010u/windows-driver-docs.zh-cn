@@ -1,6 +1,6 @@
 ---
-title: 动态子注册和注销
-description: 动态子注册和注销
+title: 动态子设备注册和注销
+description: 动态子设备注册和注销
 ms.assetid: 7157b7b3-655b-49d9-be45-c4a86a3cc82d
 keywords:
 - 动态子 WDK 音频
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d625ee56111367272c94f0575f21bb75df7e8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333816"
 ---
-# <a name="dynamic-subdevice-registration-and-unregistration"></a>动态子注册和注销
+# <a name="dynamic-subdevice-registration-and-unregistration"></a>动态子设备注册和注销
 
 
 支持某种形式的插孔在场检测的设备称为动态设备，并且必须支持其插孔[ **KSPROPERTY\_JACK\_说明**](https://msdn.microsoft.com/library/windows/hardware/ff537364)属性。 以下步骤显示的动态设备驱动程序用来创建、 注册或注销这些动态设备相关联的子设备的算法。 筛选器的窗体中创建子设备。

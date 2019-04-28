@@ -1,17 +1,17 @@
 ---
-title: 麦克风阵列 Geometry 描述符格式
-description: 麦克风阵列 Geometry 描述符格式
+title: 麦克风阵列几何描述符格式
+description: 麦克风阵列几何描述符格式
 ms.assetid: 83fae1e2-cc67-4322-8250-f642508383ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99d8b688d21a898ca0b726d5bc3bd0a2a57b2de3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332340"
 ---
-# <a name="microphone-array-geometry-descriptor-format"></a>麦克风阵列 Geometry 描述符格式
+# <a name="microphone-array-geometry-descriptor-format"></a>麦克风阵列几何描述符格式
 
 
 USB 音频麦克风阵列必须描述自身到连接到系统。 这意味着需要描述数组的参数必须嵌入数组设备本身。 阵列几何信息通过从设备中检索**获取\_内存优化**请求。
@@ -30,9 +30,9 @@ USB 音频麦克风阵列必须描述自身到连接到系统。 这意味着需
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

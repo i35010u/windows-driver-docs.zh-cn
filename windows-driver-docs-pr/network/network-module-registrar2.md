@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b8723f604a0a26fa197408653ad895f599e02a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331877"
 ---
 # <a name="network-module-registrar"></a>网络模块注册机构
 

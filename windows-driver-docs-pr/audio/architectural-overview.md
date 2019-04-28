@@ -5,11 +5,11 @@ ms.assetid: B8D71C86-E2FF-48F1-8DC1-F232399F324D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b455a1880e696212edbc50d8cf88eb2e3700ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331598"
 ---
 # <a name="architectural-overview"></a>体系结构概述
 

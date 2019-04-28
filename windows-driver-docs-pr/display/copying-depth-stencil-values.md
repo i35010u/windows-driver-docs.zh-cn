@@ -1,6 +1,6 @@
 ---
-title: 将深度模具的值复制
-description: 将深度模具的值复制
+title: 复制深度模具值
+description: 复制深度模具值
 ms.assetid: b83d4e6d-5645-49ab-bbb0-c694f1410cba
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista 中，将深度模具的值复制
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03944cdf380d8fa0c8111a4eaf5bf3e9f1ce8171
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338668"
 ---
-# <a name="copying-depth-stencil-values"></a>将深度模具的值复制
+# <a name="copying-depth-stencil-values"></a>复制深度模具值
 
 
 Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **Blt** ](https://msdn.microsoft.com/library/windows/hardware/ff538251)函数来复制深度模具值从视频内存复制到系统内存，反之亦然。 驱动程序和硬件必须执行格式转换，或对所有驱动程序支持的不透明的深度模具格式 (即，所定义的所有格式[ **D3DDDIFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff544312)以外的枚举类型D3DDDIFMT\_D\*\_LOCKABLE)，或从任一以下格式：

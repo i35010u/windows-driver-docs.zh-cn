@@ -5,11 +5,11 @@ ms.assetid: 54DE0D7F-788F-49C3-AF5C-7EDAA0D09D20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ecd4fac8636e67f6e2e35b9b10071a658cd45c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337718"
 ---
 # <a name="efiusbfnioprotocolconfigureenableendpointsex"></a>EFI\_USBFN\_IO\_PROTOCOL.ConfigureEnableEndpointsEx
 
@@ -29,7 +29,7 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

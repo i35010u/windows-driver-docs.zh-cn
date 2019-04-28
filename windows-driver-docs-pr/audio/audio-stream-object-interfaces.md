@@ -1,17 +1,17 @@
 ---
-title: 音频 Stream 对象接口
-description: 音频 Stream 对象接口
+title: 音频流对象接口
+description: 音频流对象接口
 ms.assetid: 9d68016a-ddb1-4fbb-b6cc-384f8c76552c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c8200d748100332562c16a2382edbd53c4ad60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331543"
 ---
-# <a name="audio-stream-object-interfaces"></a>音频 Stream 对象接口
+# <a name="audio-stream-object-interfaces"></a>音频流对象接口
 
 
 ## <span id="ddk_audio_stream_object_interfaces_ks"></span><span id="DDK_AUDIO_STREAM_OBJECT_INTERFACES_KS"></span>
