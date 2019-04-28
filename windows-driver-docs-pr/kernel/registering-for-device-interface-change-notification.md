@@ -1,6 +1,6 @@
 ---
-title: 正在注册的设备接口更改通知
-description: 正在注册的设备接口更改通知
+title: 注册设备接口更改通知
+description: 注册设备接口更改通知
 ms.assetid: 680e4c5c-dac6-41b1-b754-aee782145ed0
 keywords:
 - 通知 WDK 即插即用设备接口更改
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ba4c9d31d21e381bc006f9d6c5f0bb8e7d35f0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338440"
 ---
-# <a name="registering-for-device-interface-change-notification"></a>正在注册的设备接口更改通知
+# <a name="registering-for-device-interface-change-notification"></a>注册设备接口更改通知
 
 
 

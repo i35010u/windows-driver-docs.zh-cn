@@ -5,11 +5,11 @@ ms.assetid: de79b87e-2c9a-4181-b531-8ad283bb9d5b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7290a26106ccdaee47377040ff17592d345b3e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340747"
 ---
 # <a name="persistence-of-pfa-results"></a>PFA 结果的持久性
 

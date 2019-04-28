@@ -1,6 +1,6 @@
 ---
-title: 中断到调试器从 KMDF 驱动程序
-description: 中断到调试器从 KMDF 驱动程序
+title: 从 KMDF 驱动程序突入调试程序
+description: 从 KMDF 驱动程序突入调试程序
 ms.assetid: b18e210c-cc9b-436c-b762-6346b946357c
 keywords:
 - 调试驱动程序 WDK KMDF，中断到调试器
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7afbfcffa7b84d9464fbe292a193653e3597d9c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330868"
 ---
-# <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>中断到调试器从 KMDF 驱动程序
+# <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>从 KMDF 驱动程序突入调试程序
 
 
 如果您希望基于 framework 的驱动程序以在内核模式调试器中中断，可以使用以下：

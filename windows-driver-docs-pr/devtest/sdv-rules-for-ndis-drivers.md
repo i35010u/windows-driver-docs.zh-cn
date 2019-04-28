@@ -5,18 +5,18 @@ ms.assetid: fd31b797-1175-4f65-8fa0-a50acd01f446
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 18051a880e7f048efc37ece0e81e62f36cb50362
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340125"
 ---
 # <a name="rules-for-ndis-drivers"></a>NDIS 驱动程序的规则
 
 
 本部分列出并描述[Static Driver Verifier 规则](https://msdn.microsoft.com/library/windows/hardware/ff552839)可以验证您的驱动程序中包含的 NDIS 驱动程序。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

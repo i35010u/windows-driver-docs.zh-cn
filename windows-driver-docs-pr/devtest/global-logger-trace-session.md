@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c256324de636d8cb467d88b02b89972da967a1a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329697"
 ---
 # <a name="global-logger-trace-session"></a>全局记录器跟踪会话
 
@@ -171,7 +171,7 @@ ms.locfileid: "56563900"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">Constant</th>
 <th align="left">描述</th>
 </tr>

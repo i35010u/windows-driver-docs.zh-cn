@@ -1,17 +1,17 @@
 ---
-title: 设置的友好名称，注册 a p o s
+title: 设置友好名称，注册 APO
 description: 本主题介绍如何设置设备接口的友好名称和注册的蓝牙设备使用任何 APO 端口类蓝牙旁带音频驱动程序。
 ms.assetid: A3C4E04C-8F3B-49B4-8E46-CF37E1A4F5AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f62f0caa5ce3b03d482d573bed9381898712a5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328643"
 ---
-# <a name="setting-friendly-names-registering-apos"></a>设置的友好名称，注册 a p o s
+# <a name="setting-friendly-names-registering-apos"></a>设置友好名称，注册 APO
 
 
 设置友好名称，注册 a p o s 主题介绍如何设置设备接口的友好名称和注册的蓝牙设备使用的任何音频处理对象 (APO) 端口类蓝牙旁带音频驱动程序。
@@ -57,7 +57,7 @@ HKR,"EPFX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [相关的设计准则](related-design-guidelines.md)  
 
 

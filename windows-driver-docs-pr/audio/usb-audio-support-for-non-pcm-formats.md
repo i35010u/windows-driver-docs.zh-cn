@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f338f58f3fb616eb454ebf7ba0632f526ede748
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335341"
 ---
 # <a name="usb-audio-support-for-non-pcm-formats"></a>对非 PCM 格式的 USB 音频支持
 

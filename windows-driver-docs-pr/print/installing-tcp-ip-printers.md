@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b7bce0ae75003b7bc7648497afb8308a8871a0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329603"
 ---
 # <a name="installing-tcpip-printers"></a>安装 TCP/IP 打印机
 

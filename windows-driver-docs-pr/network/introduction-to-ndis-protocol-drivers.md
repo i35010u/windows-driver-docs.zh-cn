@@ -1,17 +1,17 @@
 ---
-title: 协议的 NDIS 驱动程序简介
-description: 协议的 NDIS 驱动程序简介
+title: NDIS 协议驱动程序简介
+description: NDIS 协议驱动程序简介
 ms.assetid: 398a1cf1-9bf8-45a5-9b6d-65467d061e99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c85109f5611e60fd47575ee30e97b46b208a2874
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329629"
 ---
-# <a name="introduction-to-ndis-protocol-drivers"></a>协议的 NDIS 驱动程序简介
+# <a name="introduction-to-ndis-protocol-drivers"></a>NDIS 协议驱动程序简介
 
 
 NDIS 协议驱动程序将一组导出*ProtocolXxx*函数在其下边缘。 使用 NDIS 发送和接收网络数据，这样的协议驱动程序进行通信。 协议驱动程序将绑定到基础微型端口驱动程序或中间驱动程序，它将导出*MiniportXxx*接口在其上边缘。

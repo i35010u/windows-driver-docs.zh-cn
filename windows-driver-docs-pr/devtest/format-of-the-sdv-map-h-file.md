@@ -1,6 +1,6 @@
 ---
-title: Sdv map.h 文件的格式
-description: Sdv map.h 文件的格式
+title: Sdv-map.h 文件的格式
+description: Sdv-map.h 文件的格式
 ms.assetid: 1b9e2b8d-04b8-4288-9d63-e7d84d75a9c6
 keywords:
 - Sdv map.h WDK Static Driver Verifier 格式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f3bc99f130f1cddf240003f6b26234ba732fa39
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329684"
 ---
-# <a name="format-of-the-sdv-maph-file"></a>Sdv map.h 文件的格式
+# <a name="format-of-the-sdv-maph-file"></a>Sdv-map.h 文件的格式
 
 
 Sdv map.h 文件列出了所有驱动程序及其相关联的回调函数和驱动程序入口点中声明了函数角色类型。

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5081f9204e5cf13ea97fa9916484d633654a641e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328935"
 ---
 # <a name="acpimethodargumentlength-macro"></a>ACPI\_方法\_自变量\_长度宏
 
@@ -27,7 +27,7 @@ void ACPI_METHOD_ARGUMENT_LENGTH(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *DataLength*   
@@ -57,13 +57,13 @@ void ACPI_METHOD_ARGUMENT_LENGTH(
 <td>桌面设备</td>
 </tr>
 <tr>
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Acpiioct.h （包括 Acpiioct.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)

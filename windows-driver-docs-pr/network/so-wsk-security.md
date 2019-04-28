@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 SO_WSK_SECURITY 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 49658a55beabad6539913604a6ccdc5a2f425d8f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331224"
 ---
 # <a name="sowsksecurity"></a>因此\_WSK\_安全
 
@@ -32,7 +32,7 @@ SO\_WSK\_安全套接字选项允许 WSK 的应用程序安全描述符应用到
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -146,7 +146,7 @@ WSK 应用程序必须调用[ **WskControlClient** ](https://msdn.microsoft.com/
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

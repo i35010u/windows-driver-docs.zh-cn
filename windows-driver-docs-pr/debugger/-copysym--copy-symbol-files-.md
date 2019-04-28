@@ -1,5 +1,5 @@
 ---
-title: .copysym （复制符号文件）
+title: .copysym（复制符号文件）
 description: .Copysym 命令将当前的符号文件复制到指定的目录。
 ms.assetid: f90d1402-4bf3-4cd0-993e-a42c220beb7a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4882da268e2f74ad4d9f832241bb14a1142814c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336893"
 ---
-# <a name="copysym-copy-symbol-files"></a>.copysym （复制符号文件）
+# <a name="copysym-copy-symbol-files"></a>.copysym（复制符号文件）
 
 
 **.Copysym**命令将当前的符号文件复制到指定的目录。

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ab8f9d5a680c1b5118a2b051e64ed7d156a6ff
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334389"
 ---
 # <a name="printf"></a>.printf
 
@@ -47,7 +47,7 @@ ms.locfileid: "57350332"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">消息类型</th>
 <th align="left">选项对话框中的颜色的标题</th>
 </tr>
@@ -180,7 +180,7 @@ ms.locfileid: "57350332"
  
 
 <span id="_______Arguments______"></span><span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span> *自变量*   
-为指定参数的格式字符串，如**printf**。 指定的参数数目应与匹配的转换中的字符数*FormatString*。 每个自变量是将默认表达式计算器 （MASM 或 c + +） 计算的表达式。 有关详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+为指定参数的格式字符串，如**printf**。 指定的参数数目应与匹配的转换中的字符数*FormatString*。 每个自变量是将默认表达式计算器计算的表达式 (MASM 或C++)。 有关详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 

@@ -1,6 +1,6 @@
 ---
-title: 提供设备电池严重短缺通知
-description: 提供设备电池严重短缺通知
+title: 提供电池设备通知
+description: 提供电池设备通知
 ms.assetid: 7104c43b-84f1-496d-9552-608101f5b379
 keywords:
 - 电池通知 WDK
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4377456517a153610c7a88f66c7d5674a010309
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335047"
 ---
-# <a name="supplying-battery-device-notification"></a>提供设备电池严重短缺通知
+# <a name="supplying-battery-device-notification"></a>提供电池设备通知
 
 
 ## <span id="ddk_supplying_battery_device_notification_dg"></span><span id="DDK_SUPPLYING_BATTERY_DEVICE_NOTIFICATION_DG"></span>

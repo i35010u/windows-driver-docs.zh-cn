@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f6b918d60462c13c535b80c28750cce4a0f51180
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335520"
 ---
 # <a name="bug-check-0x153-kernellockentryleakedonthreadtermination"></a>Bug 检查 0x153：内核\_锁\_条目\_已泄漏\_ON\_线程\_终止
 

@@ -1,6 +1,6 @@
 ---
-title: 检查遍历 IRP_MJ_CREATE 特权
-description: 检查遍历 IRP_MJ_CREATE 特权
+title: 检查 IRP_MJ_CREATE 上的遍历特权
+description: 检查 IRP_MJ_CREATE 上的遍历特权
 ms.assetid: 9ba743d6-8e78-4f9a-9cb8-cb98f734c290
 keywords:
 - IRP_MJ_CREATE
@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06de785fdbbed8272e54d7c7df2047cd0b159266
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327904"
 ---
 # <a name="checking-for-traverse-privilege-on-irpmjcreate"></a>检查遍历特权 IRP\_MJ\_创建
 

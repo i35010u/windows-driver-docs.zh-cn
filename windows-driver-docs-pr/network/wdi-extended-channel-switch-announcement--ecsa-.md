@@ -1,17 +1,17 @@
 ---
-title: WDI 扩展通道交换机公告 (ECSA)
+title: WDI 扩展通道切换通告 (ECSA)
 description: 本部分提供了建议的驱动程序/固件更改以实现扩展通道交换机公告 (ECSA)
 ms.assetid: 9C59C8A2-335F-4BA4-8682-6DFFB82E1CAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d652f12f862992d6d02c5de2f269a3cc4bfb069
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330519"
 ---
-# <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 扩展通道交换机公告 (ECSA)
+# <a name="wdi-extended-channel-switch-announcement-ecsa"></a>WDI 扩展通道切换通告 (ECSA)
 
 
 若要最大程度减少其中 Wi-Fi Direct 端口将导致系统运行多渠道中的用例模式下，多渠道使用情况下不是作为单个通道的高性能为用例。 我们建议设备 （驱动程序/固件） 实现 ECSA。 此功能应完全位于 IHV 端。

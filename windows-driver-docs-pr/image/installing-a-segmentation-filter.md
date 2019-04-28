@@ -5,11 +5,11 @@ ms.assetid: 39f96c16-2408-460c-8aa3-08b6a6584bef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8422cb60810455087efbcf2be9fce69539d3651
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326076"
 ---
 # <a name="installing-a-segmentation-filter"></a>安装分段筛选器
 

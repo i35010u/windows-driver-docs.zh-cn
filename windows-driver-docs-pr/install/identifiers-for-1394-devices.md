@@ -1,6 +1,6 @@
 ---
-title: 1394 设备标识符
-description: 1394 设备标识符
+title: 1394 设备的标识符
+description: 1394 设备的标识符
 ms.assetid: 6ab2538a-af4c-4c46-bda5-abb431c5bd6b
 keywords:
 - 设备标识字符串 WDK，1394年设备
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c1ce1e6a3f9261b6619f483b47fdee6a80f43c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335350"
 ---
-# <a name="identifiers-for-1394-devices"></a>1394 设备标识符
+# <a name="identifiers-for-1394-devices"></a>1394 设备的标识符
 
 
 

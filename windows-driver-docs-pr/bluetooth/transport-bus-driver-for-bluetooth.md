@@ -5,11 +5,11 @@ ms.assetid: C47FA9B7-9627-452F-8FDC-4B97FFF79E9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5985f7d0494d23d3d3c4df51a85d3985550342a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328188"
 ---
 # <a name="transport-bus-driver-for-bluetooth"></a>蓝牙的传输总线驱动程序
 

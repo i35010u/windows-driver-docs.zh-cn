@@ -1,6 +1,6 @@
 ---
 title: Windows Vista 默认 a p o s
-description: Windows 默认 a p o s
+description: Windows 默认 APO
 ms.assetid: 713d848c-4b74-4682-a625-eba5f9f24bb7
 keywords:
 - APO WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4570fb34d544c1c034f857d29b5dc204386602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335240"
 ---
-# <a name="windows-default-apos"></a>Windows 默认 a p o s
+# <a name="windows-default-apos"></a>Windows 默认 APO
 
 
 使用 Windows Vista 音频驱动程序不提供数字音频系统效果。 由称为系统效果音频处理对象 (Apo) 的实时进程内 COM 对象提供用于创建系统效果处理的所有数字信号。

@@ -5,11 +5,11 @@ ms.assetid: F3155DF6-0710-4941-94DC-478A8F5DE8D1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eaf256d66414c9b410c0afff49867c50cbb221f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332547"
 ---
 # <a name="kspropsetidaudioengine"></a>KSPROPSETID\_AudioEngine
 

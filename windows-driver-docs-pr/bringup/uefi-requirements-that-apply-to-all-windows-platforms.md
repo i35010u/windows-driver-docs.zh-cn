@@ -5,11 +5,11 @@ ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c32694d75dcdd948d93f0fda50674f7fdf3abc55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337378"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>针对在 SoC 平台上的 Windows 版本的 UEFI 要求
 
@@ -25,7 +25,7 @@ Microsoft 欢迎反馈，并注释来自实施者这组需求。 对于任何被
 
 有关特定要求的更多详细信息，请在表格之后参阅部分。
 
-| 要求                               | UEFI 规范部分 | 注释                          |
+| 要求                               | UEFI 规范部分 | 说明                          |
 |-------------------------------------------|----------------------------|--------------------------------|
 | **EFI 系统表**                      | 4.3                        | 明确 Windows 要求   |
 | **EFI 启动服务**                     | 6.0                        |                                |
@@ -280,7 +280,7 @@ Windows 在安全引导、 标准引导、 加密和数据保护方面具有的�
 </colgroup>
 <thead>
 <tr class="header">
-<th>领域</th>
+<th>区域</th>
 <th>要求</th>
 </tr>
 </thead>

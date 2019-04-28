@@ -1,19 +1,19 @@
 ---
 title: 选择区域设置和移动宽带元数据创建向导中的包类型
-description: 选择区域设置和移动宽带元数据创建向导中的包类型
+description: 在移动宽带元数据创作向导中选择区域设置和包类型
 ms.assetid: B2C9AEE8-6278-4870-A977-15FE1B59C9FD
 keywords:
-- 选择区域设置和移动宽带元数据创建向导中的包类型
+- 在移动宽带元数据创作向导中选择区域设置和包类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25102051cb2eba5ac8fdf4e8a9c40f7b6a2ec048
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340103"
 ---
-# <a name="select-locales-and-package-type-in-the-mobile-broadband-metadata-authoring-wizard"></a>选择区域设置和移动宽带元数据创建向导中的包类型
+# <a name="select-locales-and-package-type-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中选择区域设置和包类型
 
 
 选择适当的区域设置的区域设置的元数据包，以及你的包类型 （Windows 7 或 Windows 8）。

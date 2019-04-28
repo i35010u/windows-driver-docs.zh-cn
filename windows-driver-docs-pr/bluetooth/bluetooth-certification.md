@@ -5,11 +5,11 @@ ms.assetid: B9AC4035-E52E-4B2B-8AE5-76F314C35EDD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b47b7f1a1965e09de6f7e622634adb13edd8b82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328315"
 ---
 # <a name="bluetooth-certification"></a>蓝牙认证
 

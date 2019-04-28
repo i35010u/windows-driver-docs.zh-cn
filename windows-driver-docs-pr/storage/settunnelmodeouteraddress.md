@@ -5,11 +5,11 @@ ms.assetid: 0f67a15c-5077-460a-923c-8d86cc79a1bb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b339a44e37ef94b1a7fc6482c8df593ff4f8002b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341209"
 ---
 # <a name="settunnelmodeouteraddress"></a>SetTunnelModeOuterAddress
 

@@ -1,6 +1,6 @@
 ---
-title: 编写共同安装程序
-description: 编写共同安装程序
+title: 编写辅助安装程序
+description: 编写辅助安装程序
 ms.assetid: d5637321-9cff-4b24-8941-d3ca16b0d8c1
 keywords:
 - 设备安装程序 WDK 设备安装，共同安装程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 812c7d40cf4da3d6c323f92fd934faea7c8ecf24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339258"
 ---
-# <a name="writing-a-co-installer"></a>编写共同安装程序
+# <a name="writing-a-co-installer"></a>编写辅助安装程序
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: .echotime （显示当前时间）
+title: .echotime（显示当前时间）
 description: .Echotime 命令显示当前时间。
 ms.assetid: 08da8914-0882-4525-8e15-e23176484915
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd7e11674bcd05c23559dac068660e1b9124df96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334535"
 ---
-# <a name="echotime-show-current-time"></a>.echotime （显示当前时间）
+# <a name="echotime-show-current-time"></a>.echotime（显示当前时间）
 
 
 **.Echotime**命令显示当前时间。

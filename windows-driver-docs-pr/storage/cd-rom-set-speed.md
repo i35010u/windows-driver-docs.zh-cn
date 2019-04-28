@@ -1,6 +1,6 @@
 ---
-title: CD-ROM 设置的速度
-description: CD-ROM 设置的速度
+title: CD-ROM 设置速度
+description: CD-ROM 设置速度
 ms.assetid: 25a46b23-f823-4fc7-a370-cab1c9418a94
 keywords:
 - CD-ROM 驱动程序 WDK 存储
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c2fcd248faa5737cdeab70295bfb0df63570a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338327"
 ---
-# <a name="cd-rom-set-speed"></a>CD-ROM 设置的速度
+# <a name="cd-rom-set-speed"></a>CD-ROM 设置速度
 
 
 通常很方便地旋转 CDs 小于最佳主轴转速 CD-ROM 驱动器允许的速度。 例如，便携式计算机在快速启动的 CD-ROM 驱动器消耗电池的速度非常快。 可以将 CD-ROM 驱动器设置为较低的速度，节省电池电量。

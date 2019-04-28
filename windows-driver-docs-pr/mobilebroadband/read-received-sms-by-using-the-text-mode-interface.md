@@ -5,11 +5,11 @@ ms.assetid: 5e095fc0-59bf-4ec4-96a3-efe6f4ae054f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 640cafd6eecf72b8d19e1380389ed1f7a6bce780
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335334"
 ---
 # <a name="read-received-sms-by-using-the-text-mode-interface"></a>使用文本模式界面读取收到的短信
 

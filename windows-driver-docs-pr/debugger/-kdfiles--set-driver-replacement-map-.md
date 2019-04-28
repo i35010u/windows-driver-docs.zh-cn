@@ -1,5 +1,5 @@
 ---
-title: .kdfiles (组驱动程序替换 Map)
+title: .kdfiles（设置驱动程序替换映射）
 description: .Kdfiles 命令读取文件，并使用其内容为驱动程序替换映射。
 ms.assetid: 3b0ac8c1-f0bd-4878-9303-23d6999650ee
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 95e85cd4e0d5bc300ec195d55d0e25d33891891c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336345"
 ---
-# <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles (组驱动程序替换 Map)
+# <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles（设置驱动程序替换映射）
 
 
 **.Kdfiles**命令读取文件，并使用其内容为驱动程序替换映射。
@@ -110,7 +110,7 @@ ms.locfileid: "56546023"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>支持 Windows XP 和更高版本的 Windows 操作系统中。</p></td>
 </tr>
 </tbody>

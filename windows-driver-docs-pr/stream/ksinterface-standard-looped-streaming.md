@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2790708409e3ce9079d6c6329cc5043cb6a35fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334018"
 ---
 # <a name="ksinterfacestandardloopedstreaming"></a>KSINTERFACE\_标准\_LOOPED\_流式处理
 
@@ -29,7 +29,7 @@ KSINTERFACE\_标准\_LOOPED\_DSound 的客户端使用流式处理接口。 在 
 
 如果 pin 支持 KSINTERFACE\_标准\_LOOPED\_流式处理相关的筛选器才会完成缓冲区 pin 将被置于*停止*状态。 通过连续循环围绕单个缓冲区中的数据筛选器处理数据提交到筛选器。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [KSINTERFACESETID\_标准](ksinterfacesetid-standard.md)， [ **KSPIN\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff563537)， [ **KSPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff563533)
 

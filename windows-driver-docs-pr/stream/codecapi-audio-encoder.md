@@ -5,11 +5,11 @@ ms.assetid: c66cbbe1-36dc-4088-8ecd-7663d4503d6e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71774812c89a4f093f6cf4498a3c55de501b8a36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329599"
 ---
 # <a name="codecapiaudioencoder"></a>CODECAPI\_音频\_编码器
 
@@ -55,7 +55,7 @@ ms.locfileid: "56543532"
 
 **标头：** 在中声明*ksmedia.h*。 包括*ksmedia.h*。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

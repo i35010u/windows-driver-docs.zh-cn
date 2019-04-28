@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38283a28dc2b033cac7026158f7a458353f5de5d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332277"
 ---
 # <a name="obtaining-an-hdaudiobusinterface-ddi-object"></a>获取 HDAUDIO\_总线\_接口 DDI 对象
 
@@ -67,7 +67,7 @@ ms.locfileid: "57349704"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

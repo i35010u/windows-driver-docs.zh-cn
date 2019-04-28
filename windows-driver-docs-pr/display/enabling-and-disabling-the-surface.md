@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47cda8256721daf09021a397865939f97ec2e11c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331283"
 ---
 # <a name="enabling-and-disabling-the-surface"></a>启用和禁用图面
 

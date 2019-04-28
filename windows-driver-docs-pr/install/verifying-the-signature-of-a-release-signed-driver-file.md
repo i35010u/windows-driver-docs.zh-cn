@@ -1,17 +1,17 @@
 ---
-title: 验证已发布签名驱动程序文件的签名
-description: 验证已发布签名驱动程序文件的签名
+title: 验证已进行发布签名的驱动程序文件的签名
+description: 验证已进行发布签名的驱动程序文件的签名
 ms.assetid: 70876389-6493-4c16-8a82-ca72fc23325c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dadda4e302a79b3fba8699a06f0c82885286b2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339313"
 ---
-# <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>验证已发布签名驱动程序文件的签名
+# <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>验证已进行发布签名的驱动程序文件的签名
 
 
 若要验证创建的驱动程序文件中的嵌入式的签名[软件发布者证书 (SPC)](software-publisher-certificate.md)，使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令：

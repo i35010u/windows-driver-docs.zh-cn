@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7fc5a19fdfade3d64daaae0bc842057080e641
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340677"
 ---
 # <a name="registering-for-notification-of-hardware-error-events"></a>注册获取硬件错误事件通知
 

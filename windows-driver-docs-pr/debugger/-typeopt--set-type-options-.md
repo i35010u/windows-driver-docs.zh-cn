@@ -1,5 +1,5 @@
 ---
-title: .typeopt （设置类型选项）
+title: .typeopt（设置类型选项）
 description: .Typeopt 命令设置或显示类型选项。
 ms.assetid: 17842897-26e3-4b61-aa65-e5cfe8576324
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 85db79a1a1d3d29017c16c103463df926cb9bd5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334175"
 ---
-# <a name="typeopt-set-type-options"></a>.typeopt （设置类型选项）
+# <a name="typeopt-set-type-options"></a>.typeopt（设置类型选项）
 
 
 **.Typeopt**命令设置或显示类型选项。

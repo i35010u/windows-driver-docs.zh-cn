@@ -1,5 +1,5 @@
 ---
-title: .scriptload （负载脚本）
+title: .scriptload（加载脚本）
 description: .Scriptload 命令加载并执行指定的脚本文件。
 ms.assetid: 1D4C9587-1491-4D34-9D09-45587B272641
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bd18d5268a62cb7ca21bd99b47c0b63a05a560
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334316"
 ---
-# <a name="scriptload-load-script"></a>.scriptload （负载脚本）
+# <a name="scriptload-load-script"></a>.scriptload（加载脚本）
 
 
 **.Scriptload**命令将加载并执行指定的脚本文件。
@@ -100,7 +100,7 @@ Error: Unable to execute JavaScript script 'C:\WinDbg\Scripts\TestScript.js'
 
 [**.scriptunload （卸载脚本）**](-scriptunload--unload-script-.md)
 
-[脚本编写的 JavaScript 调试器](javascript-debugger-scripting.md)
+[JavaScript 调试器脚本](javascript-debugger-scripting.md)
 
  
 

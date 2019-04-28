@@ -5,11 +5,11 @@ ms.assetid: 789c61cf-edd2-4354-91a8-87a0a7af28a3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d46944dc9ab0a023a90198f527b5bace5be7d139
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335527"
 ---
 # <a name="starting-the-debugging-session"></a>启动调试会话
 

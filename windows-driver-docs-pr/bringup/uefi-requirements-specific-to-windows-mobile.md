@@ -5,11 +5,11 @@ ms.assetid: 12a03f5b-1717-4daf-90ef-5e530f72b19e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e144aa50e4d664cc5766d9297410afcd8db7f22
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337370"
 ---
 # <a name="uefi-requirements-for-windows-10-mobile"></a>Windows 10 移动版的 UEFI 要求
 

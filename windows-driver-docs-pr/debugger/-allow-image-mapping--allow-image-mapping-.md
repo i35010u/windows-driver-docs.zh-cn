@@ -1,5 +1,5 @@
 ---
-title: .allow_image_mapping （允许图像映射）
+title: .allow_image_mapping（允许映像映射）
 description: .Allow_image_mapping 命令控制是否将映射图像文件。
 ms.assetid: 3d216d17-f2af-48f7-9d91-e12c3c305a67
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c1f0fe1fc270df9ee1212ce26848ecf37d139c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334776"
 ---
 # <a name="allowimagemapping-allow-image-mapping"></a>.allow\_图像\_映射 （允许图像映射）
 

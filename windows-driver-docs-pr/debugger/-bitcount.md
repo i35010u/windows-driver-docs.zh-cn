@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e5b05f50dd6941ae1fc1ffee34db45a4cdeb5789
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334694"
 ---
-# <a name="bitcount"></a>！ bitcount
+# <a name="bitcount"></a>!bitcount
 
 
 **！ Bitcount**扩展对内存范围内的"1"比特数进行计数。

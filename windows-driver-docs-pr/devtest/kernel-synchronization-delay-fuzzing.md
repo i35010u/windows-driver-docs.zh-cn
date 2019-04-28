@@ -5,11 +5,11 @@ ms.assetid: B4BB3A75-C458-4718-8BE9-065CFC09E194
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bbbc061191211991fd68db65e2fa4f5da301109
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340453"
 ---
 # <a name="kernel-synchronization-delay-fuzzing"></a>内核同步延迟模糊处理
 

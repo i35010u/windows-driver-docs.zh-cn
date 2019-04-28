@@ -1,6 +1,6 @@
 ---
-title: DriverEntry 例程的电池 Miniclass 驱动程序
-description: DriverEntry 例程的电池 Miniclass 驱动程序
+title: 电池微型类驱动程序的 DriverEntry 例程
+description: 电池微型类驱动程序的 DriverEntry 例程
 ms.assetid: dc7c9f75-835b-4646-b30b-24c9dcb6ed2d
 keywords:
 - 电池 miniclass 驱动程序 WDK，例程
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45c69b4003285662ab64f95ab3566e3f4dbeb5ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335269"
 ---
-# <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>DriverEntry 例程的电池 Miniclass 驱动程序
+# <a name="driverentry-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 DriverEntry 例程
 
 
 ## <span id="ddk_driverentry_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_DRIVERENTRY_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>

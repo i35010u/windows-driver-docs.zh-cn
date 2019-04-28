@@ -5,11 +5,11 @@ ms.assetid: 67AADA80-3AC8-47AA-89A2-4460DC5880A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a18d50315cc1385ff05f1738ec17fae95dc8da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337368"
 ---
 # <a name="uefi-protocols-for-windows"></a>Windows 的 UEFI 协议
 

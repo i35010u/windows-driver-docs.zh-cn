@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c935357f6ce270037409c71e57e3324945098f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327893"
 ---
 # <a name="fsctlgetreparsepoint-control-code"></a>FSCTL\_获取\_重新分析\_点控制代码
 
@@ -30,7 +30,7 @@ FSCTL\_获取\_重新分析\_点控制代码会检索与指定的文件或目录
 
 有关重新分析点和 FSCTL\_获取\_重新分析\_点控制代码，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 要从其中检索重新分析点数据的目录的文件的文件对象指针。 此参数是必需的不能**NULL**。
@@ -101,13 +101,13 @@ FSCTL\_获取\_重新分析\_点控制代码会检索与指定的文件或目录
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h 或 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

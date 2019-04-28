@@ -1,5 +1,5 @@
 ---
-title: .ocommand （预期目标的命令）
+title: .ocommand（需要目标提供命令）
 description: .Ocommand 命令启用目标应用程序将命令发送到调试器。
 ms.assetid: a4363395-111f-48eb-b1da-c17c0ad9f067
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fed3a43c22ade7994ff92ebd3df1bbf8a32b470
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334438"
 ---
-# <a name="ocommand-expect-commands-from-target"></a>.ocommand （预期目标的命令）
+# <a name="ocommand-expect-commands-from-target"></a>.ocommand（需要目标提供命令）
 
 
 **.Ocommand**命令使目标应用程序将命令发送到调试器。

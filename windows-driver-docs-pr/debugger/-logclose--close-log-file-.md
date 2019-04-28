@@ -1,5 +1,5 @@
 ---
-title: .logclose （关闭日志文件）
+title: .logclose（关闭日志文件）
 description: .Logclose 命令关闭任何打开的日志文件。
 ms.assetid: 730cfab3-5529-4054-ba62-8a780572603d
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5025fb1613ad6d9ad32b316f3b35578d6c72c434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336142"
 ---
-# <a name="logclose-close-log-file"></a>.logclose （关闭日志文件）
+# <a name="logclose-close-log-file"></a>.logclose（关闭日志文件）
 
 
 **.Logclose**命令关闭任何打开的日志文件。

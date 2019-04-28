@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9574f14e6be8e9f5805337786f30f63f49a30acb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335870"
 ---
 # <a name="netuse-control-network-connections"></a>.netuse（控制网络连接）
 

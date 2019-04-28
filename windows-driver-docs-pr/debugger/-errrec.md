@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 31285e2986b7f51e798a17cf8bbddfa9f0b07f9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334512"
 ---
-# <a name="errrec"></a>！ errrec
+# <a name="errrec"></a>!errrec
 
 
 **！ Errrec**扩展将显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。

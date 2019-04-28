@@ -1,17 +1,17 @@
 ---
-title: 音频的终结点，容器 ID
+title: 音频终结点容器 ID
 description: 音频的终结点容器 ID 本主题将讨论可靠的方式可用来获取与蓝牙音频设备关联的音频终结点的容器 ID。
 ms.assetid: 82A852FF-688C-496A-AFF1-C68B0CC1756A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bfd7d30c0922b17748306f16b6eddabf9d1553f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331481"
 ---
-# <a name="audio-endpoint-container-id"></a>音频的终结点，容器 ID
+# <a name="audio-endpoint-container-id"></a>音频终结点容器 ID
 
 
 音频的终结点容器 ID 本主题将讨论可靠的方式可用来获取与蓝牙音频设备关联的音频终结点的容器 ID。
@@ -26,7 +26,7 @@ ms.locfileid: "56556071"
 
 有关容器 Id 以及在上一部分中所述的算法的详细信息，请参阅[容器 ID](https://msdn.microsoft.com/library/windows/hardware/ff540024.aspx)并[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [理论上的操作](theory-of-operation.md)  
 
 

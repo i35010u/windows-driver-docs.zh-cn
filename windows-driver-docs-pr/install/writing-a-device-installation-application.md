@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4963dac2ff7bc9a626767bc2c3eb3e49b61471
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339249"
 ---
 # <a name="writing-a-device-installation-application"></a>编写设备安装应用程序
 

@@ -5,11 +5,11 @@ ms.assetid: 06412F66-3192-4D25-BDBA-FAB2211519DA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd98d57cfa6baff0050939562c9c5fd157aec0c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331131"
 ---
 # <a name="peripheral-drivers-for-devices-on-sercx2-managed-serial-ports"></a>SerCx2 托管串行端口上的设备的外设驱动程序
 

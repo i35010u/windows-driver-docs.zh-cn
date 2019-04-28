@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bfbcdc6fe050700fcf3bf6115ab5aa0ac0c2989
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335917"
 ---
 # <a name="ndiskdndiskdversion"></a>!ndiskd.ndiskdversion
 

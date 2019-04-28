@@ -1,5 +1,5 @@
 ---
-title: .hh * （打开 HTML 帮助文件）
+title: .hh（打开 HTML 帮助文件）
 description: .Hh * 命令将打开的 Windows 调试工具文档。
 ms.assetid: 6c6d5b33-ad54-4325-93d7-ed63f9f012e8
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d418cb363e08b9358401f9139df9c41de6e75ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336541"
 ---
-# <a name="hh-open-html-help-file"></a>.hh * （打开 HTML 帮助文件）
+# <a name="hh-open-html-help-file"></a>.hh（打开 HTML 帮助文件）
 
 
 **.Hh *** 命令将打开的 Windows 调试工具文档。

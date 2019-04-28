@@ -5,11 +5,11 @@ ms.assetid: c6c52aa1-68ee-4d64-be97-509203db6970
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b12f89fb71ef18c2cdeadd3e03caacc67d84f4f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330910"
 ---
 # <a name="hardwareid-registry-subkey"></a>HardwareID 注册表子项
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dbf67fa17ae99a66ea2e7241c2b1d0969daa498
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339463"
 ---
 # <a name="using-device-installation-functions"></a>使用设备安装函数
 

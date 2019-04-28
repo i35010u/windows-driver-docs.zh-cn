@@ -5,11 +5,11 @@ ms.assetid: 503ea37c-9320-470c-aeb7-e8056ab6e4e3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a672cf7abda840b6a0cfefa103a2d83e9b528908
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332530"
 ---
 # <a name="kspropsetidbtaudio"></a>KSPROPSETID\_BtAudio
 

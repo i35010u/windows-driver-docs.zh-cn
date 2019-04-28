@@ -5,11 +5,11 @@ ms.assetid: 6e798b87-a35d-414a-8116-ee1523c782ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4498a88f2d1e0d65b3ca46ef38bc12df454f9e51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339446"
 ---
 # <a name="using-device-manager-to-uninstall-devices-and-driver-packages"></a>使用设备管理器卸载设备和驱动程序包
 

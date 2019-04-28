@@ -1,6 +1,6 @@
 ---
-title: 构建打印机图形 DLL
-description: 构建打印机图形 DLL
+title: 生成打印机图形 DLL
+description: 生成打印机图形 DLL
 ms.assetid: bec1e9cc-a846-43e5-bc9e-e43a151ef6c4
 keywords:
 - 打印机图形 DLL WDK，构建
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e203066f09f027d734a131089edb42948f218eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330385"
 ---
-# <a name="building-a-printer-graphics-dll"></a>构建打印机图形 DLL
+# <a name="building-a-printer-graphics-dll"></a>生成打印机图形 DLL
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 5cb20302-e3f9-40fe-b501-7c23d284c120
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: beb2f871a80429c2b209356a6b4849216698c8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330051"
 ---
 # <a name="msiscsiinitiatorinstancestatistics-wmi-class"></a>MSiSCSI\_InitiatorInstanceStatistics WMI 类
 

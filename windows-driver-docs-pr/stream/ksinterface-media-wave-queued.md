@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 493bdd63545d073e81b31f08eb478a4f788a8ae5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334031"
 ---
 # <a name="ksinterfacemediawavequeued"></a>KSINTERFACE\_媒体\_批\_已排队
 
@@ -37,7 +37,7 @@ KSINTERFACE\_媒体\_批\_排队接口是专用的用于 Windows XP 及更高版
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Microsoft Windows XP 和更高版本的操作系统专用。</p></td>
 </tr>
 </tbody>

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a2fd49489ef0d8dbfb49cb7cd0d2b3410e895a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337053"
 ---
 # <a name="acpikdhelp"></a>!acpikd.help
 

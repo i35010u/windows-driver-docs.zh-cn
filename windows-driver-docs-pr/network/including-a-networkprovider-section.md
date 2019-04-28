@@ -1,6 +1,6 @@
 ---
-title: 包括 NetworkProvider 部分
-description: 包括 NetworkProvider 部分
+title: 包含 NetworkProvider 节
+description: 包含 NetworkProvider 节
 ms.assetid: 8972f926-c4f5-4a2f-8f2d-f9353fdbd83f
 keywords:
 - INF 文件 WDK 网络，NetworkProvider 部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e13c6bbbc5927cf4577f5c854d9c3089950126dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327812"
 ---
-# <a name="including-a-networkprovider-section"></a>包括 NetworkProvider 部分
+# <a name="including-a-networkprovider-section"></a>包含 NetworkProvider 节
 
 
 

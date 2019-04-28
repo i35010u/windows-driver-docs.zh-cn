@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c8b3f23a4796bdeb8e7cabe0b6abb499c5821e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334366"
 ---
-# <a name="ppmsettings"></a>！ ppmsettings
+# <a name="ppmsettings"></a>!ppmsettings
 
 
 **！ Ppmsettings**命令显示当前处于活动状态的 ppm 处理器设置。

@@ -5,11 +5,11 @@ ms.assetid: A95382E6-DFF4-4F36-9C9B-4B26161160DE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76030386ae552f6e789b69fc3385241a48abfd89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330751"
 ---
 # <a name="autoplay-for-uwp-device-apps"></a>UWP 设备应用的自动播放
 

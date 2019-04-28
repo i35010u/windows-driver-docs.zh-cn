@@ -1,5 +1,5 @@
 ---
-title: .pagein （在内存中的页）
+title: .pagein（内存中的页面）
 description: 中指定的内存区域的.pagein 命令页。
 ms.assetid: 5fb8f9d2-d07a-49c3-b844-aade9bdba367
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b9f6f6126d3d0ff439bbfe212c6c431ab1476a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338997"
 ---
-# <a name="pagein-page-in-memory"></a>.pagein （在内存中的页）
+# <a name="pagein-page-in-memory"></a>.pagein（内存中的页面）
 
 
 **.Pagein**命令中指定的内存区域的页。
@@ -95,7 +95,7 @@ ms.locfileid: "56554994"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>支持 Windows XP 和更高版本的 Windows 中。</p></td>
 </tr>
 </tbody>

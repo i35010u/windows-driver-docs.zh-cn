@@ -1,6 +1,6 @@
 ---
-title: 打开安装程序类中的所有设备的软件密钥
-description: 打开安装程序类中的所有设备的软件密钥
+title: 打开安装程序类中所有设备的软件键
+description: 打开安装程序类中所有设备的软件键
 ms.assetid: B601982E-FCD6-4932-813C-A68B2F15FC5C
 keywords:
 - 软件密钥 WDK 设备安装，打开安装程序类中的所有设备
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 603a1cdc57e3645c02848c997af5deba9bf6bf58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330262"
 ---
-# <a name="opening-software-keys-for-all-devices-in-a-setup-class"></a>打开安装程序类中的所有设备的软件密钥
+# <a name="opening-software-keys-for-all-devices-in-a-setup-class"></a>打开安装程序类中所有设备的软件键
 
 
 在用户模式应用程序打开时*软件密钥*对于设备安装程序类中的所有设备，它必须不直接访问注册表，以枚举设备安装程序类的子项。 与任何注册表项，可能会更改的 Windows 不同版本之间的位置和此密钥的名称。

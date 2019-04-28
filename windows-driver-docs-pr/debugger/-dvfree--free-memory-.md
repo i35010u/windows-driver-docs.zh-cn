@@ -1,5 +1,5 @@
 ---
-title: .dvfree （可用内存）
+title: .dvfree（释放内存）
 description: .Dvfree 命令释放所拥有的目标进程的内存分配。
 ms.assetid: 46845a5c-6ec4-4ae4-b89d-886df367dc5e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e65add81d64a3818c45061001879a5692f30f72a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334552"
 ---
-# <a name="dvfree-free-memory"></a>.dvfree （可用内存）
+# <a name="dvfree-free-memory"></a>.dvfree（释放内存）
 
 
 **.Dvfree**命令释放所拥有的目标进程的内存分配。

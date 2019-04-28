@@ -1,5 +1,5 @@
 ---
-title: 解释错误检查代码
+title: 解释 Bug 检查代码
 description: 当 Microsoft Windows 遇到一个条件，从而危及安全系统的状态时，系统就会停止。
 ms.assetid: b5c8e18e-c2d3-47d9-b2bd-38aaaedcfde9
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad601c2da8e67a4ae181e9f03e7bc2adad2ebf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340477"
 ---
-# <a name="interpreting-a-bug-check-code"></a>解释错误检查代码
+# <a name="interpreting-a-bug-check-code"></a>解释 Bug 检查代码
 
 
 当 Microsoft Windows 遇到一个条件，从而危及安全系统的状态时，系统就会停止。 这种情况称为*bug 检查*。 它通常也称为*系统崩溃*即*内核错误*即*停止错误*，或*BSOD*。 硬件设备、 其驱动程序或相关的软件可能会导致此错误。
@@ -74,7 +74,7 @@ The system has been shut down.
 
 Bug 的完整列表检查代码，请参阅 Bugcodes.h 文件。 可以在 inc 目录的 Microsoft Windows Driver Kit (WDK) 中找到此文件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Bug 检查代码参考](https://msdn.microsoft.com/library/windows/hardware/hh994433)

@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec6a45831e8f04d9b6cf7b6ba66fb57622e5fb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334440"
 ---
-# <a name="pcitree"></a>！ pcitree
+# <a name="pcitree"></a>!pcitree
 
 
 **！ Pcitree**扩展显示有关 PCI 设备对象，包括子 PCI 总线和 CardBus 总线的信息和设备连接到它们。

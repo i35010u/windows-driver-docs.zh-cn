@@ -1,16 +1,16 @@
 ---
-title: 如何将转换已安装的 x64 Windows 7 系统
-description: 如何将转换已安装的 x64 Windows 7 系统
+title: 如何转换已安装的 x64 Windows 7 系统
+description: 如何转换已安装的 x64 Windows 7 系统
 ms.date: 01/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: cffd5cfbf35961844f840f4b4b6e40c8e8e1107e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337522"
 ---
-# <a name="how-to-convert-an-installed-x64-windows-7-system"></a>如何将转换已安装的 x64 Windows 7 系统
+# <a name="how-to-convert-an-installed-x64-windows-7-system"></a>如何转换已安装的 x64 Windows 7 系统
 
 以下步骤适用于使用由 it 专业人员在方案中需要从旧版 MBR + CSM 转换为 UEFI + GPT 的哪个位置。 通常，此过程开始 Windows 7 安装 x64 的系统。
 

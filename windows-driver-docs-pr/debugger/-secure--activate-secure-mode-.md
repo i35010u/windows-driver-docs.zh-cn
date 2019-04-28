@@ -1,5 +1,5 @@
 ---
-title: .secure （激活安全模式下）
+title: .secure（激活安全模式）
 description: 激活的.secure 命令或显示的安全模式下的状态。
 ms.assetid: 58a8936e-898f-4608-b1b0-399d5152f410
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c22b9876bc2f237acf5faee7364301b2e6c278f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339810"
 ---
-# <a name="secure-activate-secure-mode"></a>.secure （激活安全模式下）
+# <a name="secure-activate-secure-mode"></a>.secure（激活安全模式）
 
 
 **.Secure**命令激活或显示的安全模式下的状态。

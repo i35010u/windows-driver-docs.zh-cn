@@ -5,11 +5,11 @@ ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a60e9ec98226c5bfcea29ca6397d623c1aea2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339228"
 ---
 # <a name="writing-an-error-or-warning-log-entry"></a>写入错误或警告日志条目
 

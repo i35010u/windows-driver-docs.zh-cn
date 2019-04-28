@@ -1,17 +1,17 @@
 ---
-title: 设置内存错误计数器 （函数索引 31）
+title: 设置内存错误计数器（功能索引 31）
 description: 此函数将跟踪对调用方指定的值可纠正和无法纠正的内存错误事件的计数器。 此函数的用途是启用软件验证。
 ms.assetid: 0EC4B442-902B-4589-A831-9637F4D60F86
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 60d21eb2395e2ccdac11ec39b1f71c2044b74527
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329977"
 ---
-# <a name="set-memory-error-counters-function-index-31"></a>设置内存错误计数器 （函数索引 31）
+# <a name="set-memory-error-counters-function-index-31"></a>设置内存错误计数器（功能索引 31）
 
 
 此函数将跟踪对调用方指定的值可纠正和无法纠正的内存错误事件的计数器。 此函数的用途是启用软件验证。
@@ -86,7 +86,7 @@ ms.locfileid: "56524238"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [获取 NVDIMM N 运行状况信息 （函数索引 11）](get-nvdimm-n-health-info--function-index-11-.md)

@@ -5,11 +5,11 @@ ms.assetid: 4D35F0AB-44CE-49CA-8AB7-3922871567B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1448822e25ac18af5b120e9de28bd72fd8626d9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337785"
 ---
 # <a name="differences-between-wdm-and-wdf"></a>WDM 和 WDF 之间的差异
 

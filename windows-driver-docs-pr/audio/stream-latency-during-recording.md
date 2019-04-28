@@ -1,17 +1,17 @@
 ---
-title: 录制期间的 Stream 延迟
-description: 录制期间的 Stream 延迟
+title: 录制期间的流延迟
+description: 录制期间的流延迟
 ms.assetid: b9391b34-acd8-4434-b00c-48bbbc0b6647
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f1f5f4987e239ea0c05949b580bf1e7c2b81b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328611"
 ---
-# <a name="stream-latency-during-recording"></a>录制期间的 Stream 延迟
+# <a name="stream-latency-during-recording"></a>录制期间的流延迟
 
 
 运行状态的音频记录流时，很小 WaveRT 端口驱动程序的角色。 在录制过程中，如下图中所示的音频设备捕获音频数据，并将其写入到循环缓冲区。 音频引擎然后从缓冲区读取此数据。 此活动无需干预从端口驱动程序。 换而言之，音频数据的音频硬件和用户模式应用程序之间直接流动而无需涉及到的任何内核模式软件组件。

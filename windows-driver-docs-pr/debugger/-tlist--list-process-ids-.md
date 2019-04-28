@@ -1,5 +1,5 @@
 ---
-title: .tlist (列表进程 Id)
+title: .tlist（列出进程 ID）
 description: .Tlist 命令列出所有系统上运行的进程。
 ms.assetid: 44d46b74-5cf1-4384-b468-baec5a87eaed
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a5182dcc140b561ae766d5b462a963e7360ab0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334229"
 ---
-# <a name="tlist-list-process-ids"></a>.tlist (列表进程 Id)
+# <a name="tlist-list-process-ids"></a>.tlist（列出进程 ID）
 
 
 **.Tlist**命令列出所有系统上运行的进程。

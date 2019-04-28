@@ -1,6 +1,6 @@
 ---
-title: 电池类和 Miniclass 驱动程序的交互
-description: 电池类和 Miniclass 驱动程序的交互
+title: 电池类和微型类驱动程序的交互
+description: 电池类和微型类驱动程序的交互
 ms.assetid: bf35a034-1bb9-4106-aafe-7692d0ff92d0
 keywords:
 - 电池 miniclass 驱动程序 WDK，电池类驱动程序交互
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e66ae9502d314715d099a6dd929a3d6cd7bb13d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335265"
 ---
-# <a name="interaction-of-battery-class-and-miniclass-drivers"></a>电池类和 Miniclass 驱动程序的交互
+# <a name="interaction-of-battery-class-and-miniclass-drivers"></a>电池类和微型类驱动程序的交互
 
 
 ## <span id="ddk_interaction_of_battery_class_and_miniclass_drivers_dg"></span><span id="DDK_INTERACTION_OF_BATTERY_CLASS_AND_MINICLASS_DRIVERS_DG"></span>

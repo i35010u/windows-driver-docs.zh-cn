@@ -1,6 +1,6 @@
 ---
-title: 正在注册的硬件配置文件更改通知
-description: 正在注册的硬件配置文件更改通知
+title: 注册硬件配置文件更改通知
+description: 注册硬件配置文件更改通知
 ms.assetid: 3aaa09f7-ac63-4b56-917a-74cf344f6dd3
 keywords:
 - 通知 WDK 即插即用，硬件配置文件更改
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11ad18adc1ac01f59c8aaa6ec9f30eed7d503624
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338444"
 ---
-# <a name="registering-for-hardware-profile-change-notification"></a>正在注册的硬件配置文件更改通知
+# <a name="registering-for-hardware-profile-change-notification"></a>注册硬件配置文件更改通知
 
 
 

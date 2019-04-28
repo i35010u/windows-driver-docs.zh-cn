@@ -1,5 +1,5 @@
 ---
-title: 使用 WDF 选项卡上的设备
+title: 使用 WDF 选项卡的设备
 description: 本主题讨论使用 WDF 页 WDF 验证程序的设备。
 ms.assetid: 06144cf4-bb6f-4b5b-ac0d-f4fae89a04a9
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4a1aad9820544f91c4c9be23197bf43db1aca2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329663"
 ---
-# <a name="devices-using-wdf-tab"></a>使用 WDF 选项卡上的设备
+# <a name="devices-using-wdf-tab"></a>使用 WDF 选项卡的设备
 
 
 本主题讨论了 WDF Verifier**使用 WDF 设备**页。 此页列出了使用 WDF 驱动程序的所有设备。 在突出显示设备，可以看到突出显示设备的 WDF 驱动程序堆栈。 在此屏幕中，您还可以更改验证设置。

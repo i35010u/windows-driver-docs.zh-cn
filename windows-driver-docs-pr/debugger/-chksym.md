@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8f6fce41e4fb8e70116fd1c15e38c70d512317
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336901"
 ---
-# <a name="chksym"></a>！ chksym
+# <a name="chksym"></a>!chksym
 
 
 **！ Chksym**扩展测试针对符号文件的模块的有效性。

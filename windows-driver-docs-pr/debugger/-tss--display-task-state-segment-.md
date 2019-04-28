@@ -16,11 +16,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 66f233b2fea635695b7403e3c2a1851b71ba9852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334171"
 ---
 # <a name="tss-display-task-state-segment"></a>.tss（显示任务状态段）
 

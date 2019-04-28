@@ -1,5 +1,5 @@
 ---
-title: .remote （创建 Remote.exe 服务器）
+title: .remote（创建 Remote.exe 服务器）
 description: .Remote 命令启动 Remote.exe 服务器，启用到当前调试会话的远程连接。
 ms.assetid: fa3de33c-ba8c-4e9c-9899-b9a43f3195bf
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 86f546e75d8e999298b0b59aaad0573291ef9dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338916"
 ---
-# <a name="remote-create-remoteexe-server"></a>.remote （创建 Remote.exe 服务器）
+# <a name="remote-create-remoteexe-server"></a>.remote（创建 Remote.exe 服务器）
 
 
 **.Remote**命令启动[Remote.exe Server](starting-a-remote-exe-session.md)，启用到当前调试会话的远程连接。

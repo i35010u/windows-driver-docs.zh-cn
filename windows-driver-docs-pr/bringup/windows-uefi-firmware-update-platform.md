@@ -5,11 +5,11 @@ ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82190d7efe9a28700310df7a188f391618ba6c20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338066"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 

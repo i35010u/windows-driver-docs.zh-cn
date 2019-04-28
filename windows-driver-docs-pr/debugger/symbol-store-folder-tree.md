@@ -5,11 +5,11 @@ ms.assetid: AB23A180-71C3-4EBE-A3DE-765D264EF130
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b25b29a516c09eab1232b66df7416c5dd439b29d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335484"
 ---
 # <a name="symbol-store-folder-tree"></a>符号存储文件夹树
 

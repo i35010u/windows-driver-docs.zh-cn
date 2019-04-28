@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NIC_SWITCH_ENUM_SWITCHES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 20213059153311ea49056c5b42b8b5f2855dd98e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335348"
 ---
 # <a name="oidnicswitchenumswitches"></a>OID\_NIC\_交换机\_枚举\_开关
 
@@ -89,17 +89,17 @@ NDIS 时处理 OID\_NIC\_交换机\_枚举\_开关请求，它将返回一个下
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

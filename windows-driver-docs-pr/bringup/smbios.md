@@ -4,11 +4,11 @@ description: SMBIOS 规范定义数据结构和会提供与系统相关的数据
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 81046d457daa15e0cd9a7c694d42ecd19d621ad9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337494"
 ---
 # <a name="smbios"></a>SMBIOS
 

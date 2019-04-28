@@ -1,17 +1,17 @@
 ---
-title: 简单的外围总线 （存储）
+title: 简单外设总线 (SPB)
 description: SoC 集成电路充分利用简单，低-pin-计数，和低功耗序列互连设备连接到外围设备平台。
 ms.assetid: E85BDD36-7ECE-47DB-A770-E28DA8383BA2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcdbec4748deb281f462f2416f865f1dfb89d30a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337398"
 ---
-# <a name="simple-peripheral-bus-spb"></a>简单的外围总线 （存储）
+# <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
 简单的芯片 (SoC) 集成电路进行广泛使用的系统，用于连接到平台外围设备互连低 pin 计数和低功耗的序列。 I²C、 SPI 和 UARTs 是示例。 对于基于 SoC 的平台，Windows 提供了常规的简单外围总线 （存储） 硬件抽象和这种抽象形式需要高级配置和电源接口 (ACPI) 命名空间的新支持。

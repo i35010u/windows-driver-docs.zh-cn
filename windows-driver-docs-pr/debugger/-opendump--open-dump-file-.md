@@ -1,5 +1,5 @@
 ---
-title: .opendump （打开转储文件）
+title: .opendump（打开转储文件）
 description: .Opendump 命令将打开转储文件以进行调试。
 ms.assetid: 751af9ea-be7e-4aef-a6f6-fc99e3b3a56e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 820a38241bfc83ea1a8929132da3298cdd77eeb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334434"
 ---
-# <a name="opendump-open-dump-file"></a>.opendump （打开转储文件）
+# <a name="opendump-open-dump-file"></a>.opendump（打开转储文件）
 
 
 **.Opendump**命令将打开转储文件以进行调试。

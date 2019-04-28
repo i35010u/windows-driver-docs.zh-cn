@@ -1,6 +1,6 @@
 ---
-title: 使用通用安装程序函数
-description: 使用通用安装程序函数
+title: 使用常规设置函数
+description: 使用常规设置函数
 ms.assetid: 08a7b585-7930-47a3-9fa0-a36625242e5d
 keywords:
 - 安装程序 Api 函数 WDK，常规安装函数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c38f5cbe6d0158a4362c4a9e35285a2eb28b01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339428"
 ---
-# <a name="using-general-setup-functions"></a>使用通用安装程序函数
+# <a name="using-general-setup-functions"></a>使用常规设置函数
 
 
 

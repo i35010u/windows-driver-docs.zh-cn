@@ -1,6 +1,6 @@
 ---
-title: 显示具有 TMF 文件的跟踪日志
-description: 显示具有 TMF 文件的跟踪日志
+title: 使用 TMF 文件显示跟踪日志
+description: 使用 TMF 文件显示跟踪日志
 ms.assetid: 1d592ed3-44d2-4d12-9d31-19b07e6962ea
 keywords:
 - 跟踪消息格式文件 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dbfc7f30e1627885971841f3d0aed0652d45c75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329686"
 ---
-# <a name="displaying-a-trace-log-with-a-tmf-file"></a>显示具有 TMF 文件的跟踪日志
+# <a name="displaying-a-trace-log-with-a-tmf-file"></a>使用 TMF 文件显示跟踪日志
 
 
 ## <span id="ddk_using_a_tmf_file_tools"></span><span id="DDK_USING_A_TMF_FILE_TOOLS"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56533618"
 
 4.  在中**日志文件选择**对话框中，您还可以设置选择选项，以生成其他输出日志文件中的文件。 此步骤可选。 有关详细信息，请参阅[设置跟踪日志选项](setting-trace-log-options.md)。
 
-5.  单击“确定” 。
+5.  单击 **“确定”**。
 
 6.  单击**TMF （跟踪格式） 文件**，然后单击**确定**。
 

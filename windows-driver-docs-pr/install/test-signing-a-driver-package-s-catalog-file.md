@@ -5,11 +5,11 @@ ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b571acb71206973608a8a9ecb051abc3f70fbfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339574"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>对驱动程序包的目录文件进行测试签名
 

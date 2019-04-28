@@ -1,17 +1,17 @@
 ---
-title: 获取 NVM 阈值 （函数索引 5）
+title: 获取 NVM 阈值（功能索引 5）
 description: 此函数返回的生存期百分比警告和错误阈值，如果命中或超过，表示存在问题 NVDIMM n。
 ms.assetid: E243AF8B-D70A-4FEF-BB88-ED78C4883D42
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9de60d95aeb322250c93a840d96a3e8ebfd27710
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330048"
 ---
-# <a name="get-nvm-thresholds-function-index-5"></a>获取 NVM 阈值 （函数索引 5）
+# <a name="get-nvm-thresholds-function-index-5"></a>获取 NVM 阈值（功能索引 5）
 
 
 此函数返回的生存期百分比警告和错误阈值，如果命中或超过，表示存在问题 NVDIMM n。
@@ -71,7 +71,7 @@ ms.locfileid: "56521485"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设置 NVM 生存期百分比警告阈值 （函数索引 6）](set-nvm-lifetime-percentage-warning-threshold--function-index-6-.md)

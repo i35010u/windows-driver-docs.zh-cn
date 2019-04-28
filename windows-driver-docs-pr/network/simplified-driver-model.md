@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea80f7125b3176ccb271d71bc0faa80255a50dc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330531"
 ---
 # <a name="simplified-driver-model"></a>简化的驱动程序模型
 

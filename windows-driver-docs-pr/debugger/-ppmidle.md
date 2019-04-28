@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b262991a1bb4aa528d9e8e40cbdf4c4cf4c30e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334372"
 ---
-# <a name="ppmidle"></a>！ ppmidle
+# <a name="ppmidle"></a>!ppmidle
 
 
 **！ Ppmidle**命令显示处理器空闲状态。

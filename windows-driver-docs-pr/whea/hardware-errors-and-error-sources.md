@@ -20,11 +20,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 454f0741ae4aa1a7f1b37aa423709e70df837dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340820"
 ---
 # <a name="hardware-errors-and-error-sources"></a>硬件错误和错误源
 

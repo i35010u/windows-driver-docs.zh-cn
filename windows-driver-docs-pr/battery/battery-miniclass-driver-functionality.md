@@ -1,19 +1,19 @@
 ---
-title: 电池 Miniclass 驱动程序的功能
-description: 电池 Miniclass 驱动程序的功能
+title: 电池微型类驱动程序功能
+description: 电池微型类驱动程序功能
 ms.assetid: f8da63fd-0bf9-4085-88c2-022c4ddc7caa
 keywords:
 - 电池 miniclass 驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4a9309a6835b02d33a79798788098c38bddf07e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335248"
 ---
-# <a name="battery-miniclass-driver-functionality"></a>电池 Miniclass 驱动程序的功能
+# <a name="battery-miniclass-driver-functionality"></a>电池微型类驱动程序功能
 
 
 ## <span id="ddk_battery_miniclass_driver_functionality_dg"></span><span id="DDK_BATTERY_MINICLASS_DRIVER_FUNCTIONALITY_DG"></span>

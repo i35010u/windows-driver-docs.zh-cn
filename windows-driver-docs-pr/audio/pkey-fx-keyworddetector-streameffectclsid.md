@@ -5,11 +5,11 @@ ms.assetid: C4ED26A0-FDFB-499B-8A61-429E53CCAE6A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fee9f8ab71264773be7b1a970878db19afdd0d71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332123"
 ---
 # <a name="pkeyfxkeyworddetectorstreameffectclsid"></a>PKEY\_FX\_KeywordDetector\_StreamEffectClsid
 

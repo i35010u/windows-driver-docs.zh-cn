@@ -5,11 +5,11 @@ ms.assetid: 121A6B05-9D5D-447C-B7C6-B2B86C24114B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cd9a3ee3371170d2afe5ba620096d3f1a69c935
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330132"
 ---
 # <a name="prepare-your-sensor-test-board"></a>准备在传感器测试板
 

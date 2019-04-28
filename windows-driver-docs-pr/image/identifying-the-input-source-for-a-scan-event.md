@@ -1,17 +1,17 @@
 ---
-title: 为扫描事件标识输入的源
-description: 为扫描事件标识输入的源
+title: 标识扫描事件的输入源
+description: 标识扫描事件的输入源
 ms.assetid: aaa0bbf4-6866-45d7-8150-c6a74d6c46c1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7973699746af26d45679b854ecf51d2034290454
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330281"
 ---
-# <a name="identifying-the-input-source-for-a-scan-event"></a>为扫描事件标识输入的源
+# <a name="identifying-the-input-source-for-a-scan-event"></a>标识扫描事件的输入源
 
 
 一个*推送扫描*操作在用户启动从 WIA 的扫描程序设备而不是从桌面计算机上运行的 WIA 应用程序的用户界面是扫描操作。 当用户在设备上按开始扫描按钮时，该应用程序将接收到扫描事件以通知用户已请求扫描操作。 对此事件作出响应，该应用程序可以在以下两种方式之一执行推送扫描操作：

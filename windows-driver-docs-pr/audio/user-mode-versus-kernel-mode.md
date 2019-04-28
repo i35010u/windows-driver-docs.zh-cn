@@ -1,6 +1,6 @@
 ---
-title: 用户模式还是内核模式
-description: 用户模式还是内核模式
+title: 用户模式与内核模式
+description: 用户模式与内核模式
 ms.assetid: ee506167-6b64-4e50-9988-102416bcb056
 keywords:
 - 软件合成器 WDK 音频
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a94943d2ec07fe783963e6b1c4e3595da0e5419
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335336"
 ---
-# <a name="user-mode-versus-kernel-mode"></a>用户模式还是内核模式
+# <a name="user-mode-versus-kernel-mode"></a>用户模式与内核模式
 
 
 ## <span id="user_mode_versus_kernel_mode"></span><span id="USER_MODE_VERSUS_KERNEL_MODE"></span>

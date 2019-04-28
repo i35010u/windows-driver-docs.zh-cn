@@ -1,5 +1,5 @@
 ---
-title: .force_radix_output （使用基数范围内的整数）
+title: .force_radix_output（对整数使用基数）
 description: .Force_radix_output 命令指定以十进制格式或默认基数中是否显示整数。
 ms.assetid: 9ce79919-69fd-426f-8de1-34d0721c35a5
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca7d5faacd29e0cf8d5c473b56811e02e23a946
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336636"
 ---
 # <a name="forceradixoutput-use-radix-for-integers"></a>.force\_基数\_输出 （使用基数范围内的整数）
 

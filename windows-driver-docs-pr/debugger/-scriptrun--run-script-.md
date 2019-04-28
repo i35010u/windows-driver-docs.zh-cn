@@ -1,5 +1,5 @@
 ---
-title: .scriptrun （运行脚本）
+title: .scriptrun（运行脚本）
 description: .Scriptrun 命令加载并运行 JavaScript。
 ms.assetid: 6481B852-F0B4-4B02-BF7F-81DA21457A40
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 97eeb3313a500ef90130631121f435701206973e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334275"
 ---
-# <a name="scriptrun-run-script"></a>.scriptrun （运行脚本）
+# <a name="scriptrun-run-script"></a>.scriptrun（运行脚本）
 
 
 .Scriptrun 命令加载并运行 JavaScript。
@@ -153,7 +153,7 @@ function invokeScript()
 
 [**.scriptload （负载脚本）**](-scriptload--load-script-.md)
 
-[脚本编写的 JavaScript 调试器](javascript-debugger-scripting.md)
+[JavaScript 调试器脚本](javascript-debugger-scripting.md)
 
 
 

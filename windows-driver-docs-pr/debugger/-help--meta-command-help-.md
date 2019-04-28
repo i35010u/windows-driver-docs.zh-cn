@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f47a0059d6bee0a90afceaeb02e4b3ef93f6b927
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336508"
 ---
 # <a name="help-meta-command-help"></a>.help（元命令帮助）
 

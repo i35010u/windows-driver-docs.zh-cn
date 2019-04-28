@@ -1,5 +1,5 @@
 ---
-title: .sympath （设置符号路径）
+title: .sympath（设置符号路径）
 description: .Sympath 命令设置或更改的符号路径。 符号路径指定的调试器查找符号文件的位置。
 ms.assetid: 32146871-a59f-4c93-b886-137c5ecf5c99
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 35abbd135a02d86ef44baab83858a989ec4f3d4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338795"
 ---
-# <a name="sympath-set-symbol-path"></a>.sympath （设置符号路径）
+# <a name="sympath-set-symbol-path"></a>.sympath（设置符号路径）
 
 
 **.Sympath**命令设置或更改的符号路径。 符号路径指定的调试器查找符号文件的位置。

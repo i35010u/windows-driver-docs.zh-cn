@@ -5,11 +5,11 @@ ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58f45248683bd487d421bb3503bfff6b5fabc881
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339440"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
@@ -78,7 +78,7 @@ ms.locfileid: "56547465"
     -   10，*供应商特定的子目录名称*  
             **注意：** 在 Windows 10 版本 1709，使用*dirid* 10 与供应商特定的子目录名称是测量使用通用 INF 中有效[InfVerif](../devtest/infverif.md)工具。  在更高版本中，可能不支持此值。  我们建议移到*dirid* 13。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [安装通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
 * [InfVerif](https://msdn.microsoft.com/library/windows/hardware/dn929319)

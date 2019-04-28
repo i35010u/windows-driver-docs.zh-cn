@@ -1,5 +1,5 @@
 ---
-title: .restart （重新启动内核连接）
+title: .restart（重启内核连接）
 description: .Restart 命令重新启动内核连接。不要混淆.restart （重新启动目标应用程序） 命令中，只能在用户模式中运行此命令。
 ms.assetid: 2c81625b-d75f-4c5f-9437-9619bf33b500
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a57ecd03ed93ca6dc2c2a4f4882737e33f1122
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335706"
 ---
-# <a name="restart-restart-kernel-connection"></a>.restart （重新启动内核连接）
+# <a name="restart-restart-kernel-connection"></a>.restart（重启内核连接）
 
 
 **.Restart**命令重新启动内核连接。

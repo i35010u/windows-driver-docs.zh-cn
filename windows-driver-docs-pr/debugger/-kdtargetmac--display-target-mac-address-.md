@@ -1,5 +1,5 @@
 ---
-title: .kdtargetmac （显示目标 MAC 地址）
+title: .kdtargetmac（显示目标 MAC 地址）
 description: 显示目标 MAC 地址。
 ms.assetid: 95042682-BD92-44B0-AAA8-AB8661393230
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c92bc89fa5ba62ce8aca2a33240b6761eb9444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336340"
 ---
-# <a name="kdtargetmac-display-target-mac-address"></a>.kdtargetmac （显示目标 MAC 地址）
+# <a name="kdtargetmac-display-target-mac-address"></a>.kdtargetmac（显示目标 MAC 地址）
 
 
 显示目标 MAC 地址

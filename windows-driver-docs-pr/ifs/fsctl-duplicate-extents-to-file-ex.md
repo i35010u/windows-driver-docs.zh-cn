@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c78c9f36a52c3c930761324c8667464c13d7fb53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327889"
 ---
 # <a name="fsctlduplicateextentstofileex-control-code"></a>FSCTL\_重复\_区\_TO\_文件\_EX 控制代码
 
@@ -42,7 +42,7 @@ BOOL
                     (LPOVERLAPPED) lpOverlapped );  // OVERLAPPED structure
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *hDevice* \[in\]  
@@ -103,13 +103,13 @@ BOOL
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">WinIoctl.h; Ntifs.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DeviceIoControl**](https://msdn.microsoft.com/library/windows/desktop/aa363216)

@@ -5,11 +5,11 @@ ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5630075da3329f76ac160e0fce24516755c31f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332211"
 ---
 # <a name="pkeyaudioengineoemformat"></a>PKEY\_AudioEngine\_OEMFormat
 
@@ -42,7 +42,7 @@ PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04
 
 在上述示例中，添加注册表部分 OEMSettingsOverride.AddReg 的名称定义由[ **AddReg** ](https://msdn.microsoft.com/library/windows/hardware/ff546320)指令 Sysfx.inf 界面安装部分中。 前面的示例中添加终结点号 0 的多个属性 (由字符串"EP\\\\0") 到设备接口的注册表项。 (如果设备接口表示[批筛选器](https://msdn.microsoft.com/library/windows/hardware/ff538862)与多个终结点，额外的终结点是编号 1，2，依此类推。)有关接口安装部分的详细信息，请参阅[ **INF AddInterface 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546310)。
 
-应用程序的 INF 文件已创建三个属性键和相关联的值加载到注册表后，可以通过获取访问属性[IPropertyStore](https://msdn.microsoft.com/library/windows/hardware/ff536954)终结点设备的接口。 标头文件 Mmdeviceapi.h Windows SDK 中包含三个属性键的 C/c + + 的定义。 有关获取 IPropertyStore 接口的详细信息，请参阅的说明[ **IMMDevice::OpenPropertyStore** ](https://msdn.microsoft.com/library/windows/desktop/dd371412) Windows SDK 文档中的方法。
+应用程序的 INF 文件已创建三个属性键和相关联的值加载到注册表后，可以通过获取访问属性[IPropertyStore](https://msdn.microsoft.com/library/windows/hardware/ff536954)终结点设备的接口。 标头文件 Mmdeviceapi.h Windows SDK 中包含 C /C++的三个属性键定义。 有关获取 IPropertyStore 接口的详细信息，请参阅的说明[ **IMMDevice::OpenPropertyStore** ](https://msdn.microsoft.com/library/windows/desktop/dd371412) Windows SDK 文档中的方法。
 
 在前面的示例 INF 中，**主键\_AudioEndpoint\_关联**属性键标识终结点设备 KS pin 类别的 GUID。 **主键\_AudioEndpoint\_ControlPanelProvider**属性键标识的 COM 接口对象，用于提供到 Mmsys.cpl 中的终结点的属性页的属性值的类 GUID设备。 有关这些属性密钥的详细信息，请参阅 Windows SDK 文档。 详细了解 KS 固定类别 Guid，请参阅[Pin Category 属性](https://msdn.microsoft.com/library/windows/hardware/ff537742)。
 

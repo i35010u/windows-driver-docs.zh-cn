@@ -1,5 +1,5 @@
 ---
-title: ~ n （挂起线程）
+title: ~n（挂起线程）
 description: ~ N 命令挂起指定的线程的执行。不要混淆此命令使用 n (设置数量 Base) 命令。
 ms.assetid: 4b1063ad-edba-4cd3-9084-dc6c08c69f55
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c0026bbc37a027ca11865800c1e28e1381f701
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336046"
 ---
-# <a name="n-suspend-thread"></a>~ n （挂起线程）
+# <a name="n-suspend-thread"></a>~n（挂起线程）
 
 
 **~ N**命令挂起指定的线程的执行。

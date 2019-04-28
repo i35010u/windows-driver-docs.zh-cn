@@ -1,5 +1,5 @@
 ---
-title: .call （调用函数）
+title: .call（调用函数）
 description: .Call 命令会使目标进程执行函数。
 ms.assetid: 93265c2a-ea4d-4523-928c-1bb75a9356b1
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a4d7edfab7998d62d2696b5d351264cbfeb37f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334654"
 ---
-# <a name="call-call-function"></a>.call （调用函数）
+# <a name="call-call-function"></a>.call（调用函数）
 
 
 **.Call**命令将导致目标过程执行函数。
@@ -41,10 +41,10 @@ ms.locfileid: "56521897"
 可以调用指定的函数*函数*即使您没有正确的符号。 在这种情况下，您必须具有与要调用的函数调用原型的相同的另一个函数的符号。 *原型*参数是此原型函数的名称。
 
 <span id="_______Function______"></span><span id="_______function______"></span><span id="_______FUNCTION______"></span> *函数*   
-指定要调用的函数。 这可以是 （最好是用模块名称限定），该函数或任何其他表达式的计算结果为函数地址的名称。 如果你需要调用构造函数或析构函数，必须提供该地址也可以使用 c + + 表达式评估命名的语法的运算符 (请参阅[数值表达式语法](numerical-expression-syntax.md)有关详细信息)。
+指定要调用的函数。 这可以是 （最好是用模块名称限定），该函数或任何其他表达式的计算结果为函数地址的名称。 如果你需要调用构造函数或析构函数，您必须提供该地址也可以使用C++要计算命名的语法的运算符的表达式 (请参阅[数值表达式语法](numerical-expression-syntax.md)有关详细信息)。
 
 <span id="_______Arguments______"></span><span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span> *自变量*   
-指定传递给函数的参数。 如果正在调用的方法，第一个参数必须是**这**，并且所有其他参数遵循它。 参数应该用逗号分隔，并且应与匹配的常用参数语法。 支持的长度可变的参数列表。 由 c + + 表达式计算器; 中参数的表达式进行分析请参阅[c + + 数字和运算符](c---numbers-and-operators.md)有关详细信息。 不能输入文本字符串作为参数，但可以使用一个字符串或其他任何可以访问目标进程内存的指针。
+指定传递给函数的参数。 如果正在调用的方法，第一个参数必须是**这**，并且所有其他参数遵循它。 参数应该用逗号分隔，并且应与匹配的常用参数语法。 支持的长度可变的参数列表。 参数中的表达式进行分析C++表达式计算器;请参阅[C++数字和运算符](c---numbers-and-operators.md)有关详细信息。 不能输入文本字符串作为参数，但可以使用一个字符串或其他任何可以访问目标进程内存的指针。
 
 <span id="________c______"></span><span id="________C______"></span> **/c**   
 清除当前线程上的任何现有调用。

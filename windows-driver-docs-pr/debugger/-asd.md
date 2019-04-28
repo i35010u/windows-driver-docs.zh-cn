@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 672a6cb35443fff4c4ec0c201bb38b0e1ae19313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334748"
 ---
-# <a name="asd"></a>！ asd
+# <a name="asd"></a>!asd
 
 
 **！ Asd**扩展显示指定的数目的失败分析从数据缓存，在指定地址开始的条目。

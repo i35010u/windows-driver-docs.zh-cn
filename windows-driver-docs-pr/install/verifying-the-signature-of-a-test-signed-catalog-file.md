@@ -1,6 +1,6 @@
 ---
-title: 验证测试签名的目录文件的签名
-description: 验证测试签名的目录文件的签名
+title: 验证已进行测试签名的目录文件的签名
+description: 验证已进行测试签名的目录文件的签名
 ms.assetid: fa627f5b-977e-49ca-b099-358ed686eef7
 keywords:
 - 验证测试签名
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71e7622aa7d62cb9292ab0bd316a4b9c2e4d58cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339316"
 ---
-# <a name="verifying-the-signature-of-a-test-signed-catalog-file"></a>验证测试签名的目录文件的签名
+# <a name="verifying-the-signature-of-a-test-signed-catalog-file"></a>验证已进行测试签名的目录文件的签名
 
 
 若要确认[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)由有效签名[测试证书](test-certificates.md)，使用以下[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令：

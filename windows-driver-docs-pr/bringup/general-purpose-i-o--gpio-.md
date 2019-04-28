@@ -1,17 +1,17 @@
 ---
-title: 通用 I/O (GPIO)
+title: 常规用途 I/O (GPIO)
 description: 芯片 (SoC) 集成线路上的系统地广泛使用的通用 I/O (GPIO) 插针。
 ms.assetid: 9EB4EFC3-B94E-42C9-9FC7-12DF4AD01622
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f8da517665d4a0cc897ea82f8e2ccc69efa94f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337611"
 ---
-# <a name="general-purpose-io-gpio"></a>通用 I/O (GPIO)
+# <a name="general-purpose-io-gpio"></a>常规用途 I/O (GPIO)
 
 
 芯片 (SoC) 集成线路上的系统地广泛使用的通用 I/O (GPIO) 插针。 对于基于 SoC 的平台，Windows 定义 GPIO 硬件常规抽象和这种抽象形式需要高级配置和电源接口 (ACPI) 命名空间的支持。

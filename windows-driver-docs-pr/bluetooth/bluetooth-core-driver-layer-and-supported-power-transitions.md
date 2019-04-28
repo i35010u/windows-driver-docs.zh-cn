@@ -1,17 +1,17 @@
 ---
-title: 蓝牙核心驱动程序层和支持的电源转换
+title: 蓝牙核心驱动程序层和支持的功率转换
 description: 下表总结了蓝牙核心驱动程序支持的设备和系统电源状态。
 ms.assetid: 25A3598E-51A7-4B16-92F7-9D2F39177946
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58fbf752748e57c0fe0017d902d942474d0af1e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328323"
 ---
-# <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>蓝牙核心驱动程序层和支持的电源转换
+# <a name="bluetooth-core-driver-layer-and-supported-power-transitions"></a>蓝牙核心驱动程序层和支持的功率转换
 
 
 下表总结了蓝牙核心驱动程序支持的设备和系统电源状态。 "睡眠"状态是本部分中的使用的吞吐量和及其副主题描述非常低功耗状态蓝牙无线内部设置和配置具有持久性。
@@ -38,32 +38,32 @@ ms.locfileid: "56525197"
     </tr>
     <tr>
         <td>S1</td>
-        <td>不适用</td>
-        <td>不适用</td>
-        <td>不适用</td>
+        <td>不可用</td>
+        <td>不可用</td>
+        <td>不可用</td>
     </tr>
     <tr>
        <td>S2</td>
-        <td>不适用</td>
-        <td>不适用</td>
-        <td>不适用</td>
+        <td>不可用</td>
+        <td>不可用</td>
+        <td>不可用</td>
     </tr>
     <tr>
         <td>S3 （睡眠）</td>
-        <td>不适用</td>
+        <td>不可用</td>
         <td>如果有唤醒睡眠状态</td>
         <td>可以关闭</td>
     </tr>
     <tr>
         <td>S4（休眠）</td>
-        <td>不适用</td>
+        <td>不可用</td>
         <td>如果有唤醒睡眠状态</td>
         <td>可以关闭</td>
     </tr>
     <tr>
         <td>S5（关闭）</td>
-        <td>不适用</td>
-        <td>不适用</td>
+        <td>不可用</td>
+        <td>不可用</td>
         <td>可以关闭</td>
     </tr>
 </table>

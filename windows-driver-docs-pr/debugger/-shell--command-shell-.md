@@ -1,5 +1,5 @@
 ---
-title: .shell （命令行界面）
+title: .shell（命令 Shell）
 description: .Shell 命令启动外壳进程，并将其输出重定向到调试器，或指定的文件。
 ms.assetid: 351cbd54-6e1a-4dc1-b0d8-8e61294b0e86
 keywords:
@@ -17,13 +17,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 24774ef64bb31b80eb473bee91ccf4b35cfb5068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339780"
 ---
-# <a name="shell-command-shell"></a>.shell （命令行界面）
+# <a name="shell-command-shell"></a>.shell（命令 Shell）
 
 
 **.Shell**命令启动外壳进程，并将其输出重定向到调试器，或指定的文件。

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0defffbc2d4077efcefdbb95695610d0e92155d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335241"
 ---
 # <a name="devproptypeempty"></a>DEVPROP_TYPE_EMPTY
 
@@ -59,7 +59,7 @@ ms.locfileid: "56521920"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
 </tr>
 </tbody>

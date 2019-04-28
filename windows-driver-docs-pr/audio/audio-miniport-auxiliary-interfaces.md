@@ -5,11 +5,11 @@ ms.assetid: cda22e86-f3f7-430c-856d-a2c868caa975
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a13664b1c4fb2c557773b8ddd9ee21781ad5fb53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331460"
 ---
 # <a name="audio-miniport-auxiliary-interfaces"></a>音频微型端口辅助接口
 

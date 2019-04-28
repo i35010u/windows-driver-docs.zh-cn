@@ -1,17 +1,17 @@
 ---
-title: 符号进行调试时的问题
-description: 符号进行调试时的问题
+title: 调试时的符号问题
+description: 调试时的符号问题
 ms.assetid: 2713c371-9683-4d0d-a8ab-8a4c897ba0ab
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc7b959d45d576368aa37c4d6d3dfef6db3714a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335491"
 ---
-# <a name="symbol-problems-while-debugging"></a>符号进行调试时的问题
+# <a name="symbol-problems-while-debugging"></a>调试时的符号问题
 
 
 ## <span id="ddk_debugging_user_mode_processes_without_symbols_dbg"></span><span id="DDK_DEBUGGING_USER_MODE_PROCESSES_WITHOUT_SYMBOLS_DBG"></span>

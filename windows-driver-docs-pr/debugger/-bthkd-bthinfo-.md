@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ff1d4267e229b32819631537f9747ab5ab20de88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334659"
 ---
-# <a name="bthkdbthinfo"></a>！ bthkd.bthinfo
+# <a name="bthkdbthinfo"></a>!bthkd.bthinfo
 
 
 **！ Bthkd.bthinfo**命令显示有关 BTHPORT FDO 的详细信息。 此命令是蓝牙调查的良好起点，因为它显示可用于访问的许多其他蓝牙调试扩展命令的地址信息。

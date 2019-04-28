@@ -1,5 +1,5 @@
 ---
-title: .outmask （控制输出掩码）
+title: .outmask（控制输出掩码）
 description: .Outmask 命令控制当前的输出掩码。
 ms.assetid: a925f948-a746-4fed-9ccd-95513f41e3bf
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 953176c909b580c2d04b0305c1d690755a6c453f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334427"
 ---
-# <a name="outmask-control-output-mask"></a>.outmask （控制输出掩码）
+# <a name="outmask-control-output-mask"></a>.outmask（控制输出掩码）
 
 
 **.Outmask**命令控制当前的输出掩码。
@@ -91,7 +91,7 @@ ms.locfileid: "56542538"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">默认设置</th>
 <th align="left">描述</th>
 </tr>

@@ -1,6 +1,6 @@
 ---
-title: 音频筛选器关系图
-description: 音频筛选器关系图
+title: 音频筛选器图
+description: 音频筛选器图
 ms.assetid: 823de0d5-9368-4ae6-9f11-a8daa0640edd
 keywords:
 - 音频筛选器 WDK 音频，关系图
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6ba6e0b89b4e7cea8e50f77ddfbc5a17b33d0f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331485"
 ---
-# <a name="audio-filter-graphs"></a>音频筛选器关系图
+# <a name="audio-filter-graphs"></a>音频筛选器图
 
 
 ## <span id="audio_filter_graphs"></span><span id="AUDIO_FILTER_GRAPHS"></span>

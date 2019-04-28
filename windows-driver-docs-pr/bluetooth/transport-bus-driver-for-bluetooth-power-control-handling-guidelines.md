@@ -1,17 +1,17 @@
 ---
-title: 用于蓝牙电源控制处理指南的传输总线驱动程序
+title: 用于蓝牙功率控制处理的传输总线驱动程序指南
 description: Ihv 需要实现传输总线驱动程序支持多功能控制器通常集成中的系统芯片 (SoC) 系统上的蓝牙功能。
 ms.assetid: 00792128-320E-45C1-9F58-343B72565CA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5cec025dd7c59e8bf9ab46105fd46211ef7b152
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328177"
 ---
-# <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>用于蓝牙电源控制处理指南的传输总线驱动程序
+# <a name="transport-bus-driver-for-bluetooth-power-control-handling-guidelines"></a>用于蓝牙功率控制处理的传输总线驱动程序指南
 
 
 Ihv 需要实现传输总线驱动程序支持多功能控制器通常集成中的系统芯片 (SoC) 系统上的蓝牙功能。

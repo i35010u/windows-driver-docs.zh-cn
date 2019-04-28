@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d67224669169850ce0047d5a7317364d59035520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328903"
 ---
 # <a name="reference-counting-conventions-for-com-objects"></a>COM 对象的引用计数约定
 

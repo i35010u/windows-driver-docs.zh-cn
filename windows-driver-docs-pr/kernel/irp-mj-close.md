@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_CLOSE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 46dcf7742a7c57527dd6e3206890c263e493ccd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338520"
 ---
 # <a name="irpmjclose"></a>IRP\_MJ\_CLOSE
 
@@ -52,13 +52,13 @@ ms.locfileid: "56520115"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [*DispatchClose*](separate-dispatchcreate-and-dispatchclose-routines.md)
 

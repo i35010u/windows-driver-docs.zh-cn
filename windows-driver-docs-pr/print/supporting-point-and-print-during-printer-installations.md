@@ -1,19 +1,19 @@
 ---
-title: 支持指向并打印在打印机安装过程
-description: 支持指向并打印在打印机安装过程
+title: 在打印机期间支持点选打印
+description: 在打印机期间支持点选打印
 ms.assetid: 70e65c7b-bba2-4da1-ac80-9719f8005c50
 keywords:
 - 点和打印 WDK，打印机安装期间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96ede67c055b21ca208ab7992ab1baeb340d3f73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331754"
 ---
-# <a name="supporting-point-and-print-during-printer-installations"></a>支持指向并打印在打印机安装过程
+# <a name="supporting-point-and-print-during-printer-installations"></a>在打印机期间支持点选打印
 
 
 

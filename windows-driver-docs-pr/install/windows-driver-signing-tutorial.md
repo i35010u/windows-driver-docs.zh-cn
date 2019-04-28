@@ -5,11 +5,11 @@ description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c13a66fb8a69e2c464c12f3d59112d1462a2e40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339260"
 ---
 # <a name="windows-driver-signing-tutorial"></a>Windows 驱动程序签名教程
 

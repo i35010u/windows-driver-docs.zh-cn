@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f2b332f3b87e5da91f6b7d64bfeb01477a9a7f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335594"
 ---
 # <a name="usbkdehciitd"></a>!usbkd.\_ehciitd
 

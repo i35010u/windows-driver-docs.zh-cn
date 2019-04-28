@@ -1,24 +1,24 @@
 ---
-title: 接受 L2CAP 蓝牙驱动程序中的连接
-description: 接受 L2CAP 蓝牙驱动程序中的连接
+title: 在蓝牙配置文件驱动程序中接受 L2CAP 连接
+description: 在蓝牙配置文件驱动程序中接受 L2CAP 连接
 ms.assetid: 26a8238d-717a-438f-84d0-047ce9618928
 keywords:
 - L2CAP 配置文件驱动程序 WDK 蓝牙
 - 逻辑链接控制器和适应协议 WDK 蓝牙
 - 传入的 L2CAP 连接请求 WDK 蓝牙
-- WDK 蓝牙连接
+- 连接 WDK 蓝牙
 - 远程连接通知 WDK 蓝牙
 - 通知 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 358c02116c2bbae1a35a543e0ef8a9f35fe816b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328347"
 ---
-# <a name="accepting-l2cap-connections-in-a-bluetooth-profile-driver"></a>接受 L2CAP 蓝牙驱动程序中的连接
+# <a name="accepting-l2cap-connections-in-a-bluetooth-profile-driver"></a>在蓝牙配置文件驱动程序中接受 L2CAP 连接
 
 
 L2CAP server 配置文件驱动程序对传入的逻辑链接控件和自适应协议 (L2CAP) 连接请求的响应从远程设备。 例如，PDA 的 L2CAP 服务器配置文件驱动程序将响应传入的连接请求从 PDA。

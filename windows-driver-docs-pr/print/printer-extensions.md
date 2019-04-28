@@ -5,11 +5,11 @@ ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ac419a9f97ecb648733dd3244c41e632ff722b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339943"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -27,7 +27,7 @@ IT 管理员有几个选项用于管理打印机扩展的分发。 如果应用�
 
 [扩展插件示例的打印机](https://go.microsoft.com/fwlink/p/?LinkId=617945)在 GitHub 上演示了如何生成打印机扩展使用C#。 为了使 UWP 设备应用程序和打印机扩展之间共享代码，本示例使用两个项目：PrinterExtensionLibrary (C) 和 ExtensionSample （取决于 PrinterExtensionLibrary 打印机扩展）。
 
-本主题中所示的代码片段全部摘自 PrinterExtensionSample 解决方案。 如果要生成 C、 c + + 或其他基于 COM 的语言中的打印机扩展插件，概念是类似但中指定的而是必须匹配 Api *PrinterExtension.IDL*，包含在 Windows 驱动程序工具包。 从示例文档 PrinterExtensionLibrary 中的代码注释还包括指示对应于特定对象的基础 COM 接口的代码注释。
+本主题中所示的代码片段全部摘自 PrinterExtensionSample 解决方案。 如果您正在构建在 C 中，打印机扩展C++或其他基于 COM 的语言，这些概念是类似但中指定的而是必须匹配 Api *PrinterExtension.IDL*，Windows 驱动程序工具包中包含的。 从示例文档 PrinterExtensionLibrary 中的代码注释还包括指示对应于特定对象的基础 COM 接口的代码注释。
 
 开发打印机扩展时, 有个，您必须知道的六个主要区域。 以下列表中显示这些关注领域。
 

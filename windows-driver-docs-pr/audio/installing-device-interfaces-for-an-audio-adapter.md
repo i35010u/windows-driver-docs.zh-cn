@@ -12,11 +12,11 @@ keywords:
 ms.date: 10/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaa23ba599e5afdd4e7b36817619ba67112f09d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333463"
 ---
 # <a name="installing-device-interfaces-for-an-audio-adapter"></a>为音频适配器安装设备接口
 
@@ -30,7 +30,7 @@ ms.locfileid: "56546512"
 
 下表列出了拓扑类别音频适配器是最有可能要用来描述其子设备的功能。
 
-|类别|描述|
+|Category|描述|
 |--- |--- |
 |KSCATEGORY_ACOUSTIC_ECHO_CANCEL|可以执行回声的音频设备 (请参阅[DirectSound 捕获效果](directsound-capture-effects.md)) 自行注册此类别下。|
 |KSCATEGORY_AUDIO|所有音频设备将自行注册此类别下。|

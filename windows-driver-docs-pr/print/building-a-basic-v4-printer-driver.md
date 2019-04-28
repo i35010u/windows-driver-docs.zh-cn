@@ -1,17 +1,17 @@
 ---
-title: 构建基本 v4 打印机驱动程序
+title: 生成基本的 v4 打印机驱动程序
 description: 使用 Microsoft Visual Studio 2017 中的驱动程序开发向导来选择要创建的功能的打印机驱动程序的功能的最小集生成基本 v4 打印机驱动程序。
 ms.assetid: 6E50CD69-D385-4724-B6B1-85D42EFFC6F0
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e4f77618193c0778250e3a623f34899e3cac1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330412"
 ---
-# <a name="building-a-basic-v4-printer-driver"></a>构建基本 v4 打印机驱动程序
+# <a name="building-a-basic-v4-printer-driver"></a>生成基本的 v4 打印机驱动程序
 
 使用 Microsoft Visual Studio 2017 中的驱动程序开发向导来选择要创建的功能的打印机驱动程序的功能的最小集生成基本 v4 打印机驱动程序。
 
@@ -49,8 +49,8 @@ Microsoft Visual Studio 使用前面的选择生成的项目文件*MyV4PrintDriv
     |--------------------------------------------------------|------------------------------------------------------------|
     | MyV4PrintDriver.gpd                                    | 打印机说明文件                                   |
     | MyV4PrintDriver.inf                                    | 安装程序信息文件                                     |
-    | MyV4PrintDriver.vcxproj                                | C + + 项目文件                                           |
-    | MyV4PrintDriver.vcxproj.filters                        | C + + 项目筛选器文件                                   |
+    | MyV4PrintDriver.vcxproj                                | C++项目文件                                           |
+    | MyV4PrintDriver.vcxproj.filters                        | C++项目筛选器文件                                   |
     | MyV4PrintDriver-manifest.ini                           | 配置设置文件 （也称为 打印驱动程序清单） |
     | V4PrintDriver-Intellisense.js                          | Intellisense 的 JavaScript 文件                           |
     | V4PrintDriver-Intellisense-Windows8.1.js               | Intellisense 的 JavaScript 文件                           |
@@ -239,7 +239,7 @@ DiskName="MyV4PrintDriver Installation Disk"
     - 导航到项目目录。
     - 向下导航中，向*MyV4PrintDriver 呈现筛选器*目录。
     - 选择文件 MyV4PrintDriverRenderFilter PipelineConfig.xml，然后按**打开**。
-    - 单击“确定” 。
+    - 单击 **“确定”**。
 
 ### <a name="add-a-reference-to-the-render-filter-to-the-driver-package"></a>将对呈现器筛选器的引用添加到驱动程序包 
 
@@ -260,7 +260,7 @@ DiskName="MyV4PrintDriver Installation Disk"
     - 选中**部署前删除以前的驱动程序版本**。
     - 选择**安装/重新安装并验证**，然后选择**默认打印机驱动程序包安装任务**从下拉列表框。
     - 键入的名称中的驱动程序**可选参数**（不带任何括住名称） 字段。
-    - 单击“确定” 。
+    - 单击 **“确定”**。
 
 ### <a name="configure-driver-signing"></a>配置驱动程序签名
 
@@ -276,7 +276,7 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 6. 单击**TimeStampServer**，然后从下拉列表框中选择 Verisign。
 
-7. 单击“确定” 。
+7. 单击 **“确定”**。
 
 ### <a name="build-and-deploy-the-driver"></a>生成和部署驱动程序
 

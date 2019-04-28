@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ddfd3297c1539096b9fb6980cb7d48539a6ba0b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338790"
 ---
 # <a name="stdmap"></a>!std\_map
 

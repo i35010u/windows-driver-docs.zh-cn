@@ -1,14 +1,14 @@
 ---
 title: 如何使用 _OSI 识别 ACPI 中的 Windows 版本
-description: 提供有关 ACPI 源语言 (ASL) 操作系统接口级别的信息 (\_OSI) 用于标识的主机操作系统的方法。
+description: 提供了用来识别主机操作系统的 ACPI 源语言 (ASL) 操作系统接口级别 (\_OSI) 方法的信息。
 ms.date: 11/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bed2365560ab1fd5e75303901746c2fa66975f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330861"
 ---
 # <a name="how-to-identify-the-windows-version-in-acpi-by-using-osi"></a>如何使用 _OSI 识别 ACPI 中的 Windows 版本
 

@@ -1,16 +1,16 @@
 ---
-title: USB 2.0 音频驱动程序
+title: USB 音频 2.0 驱动程序
 description: 从 Windows 10 版本 1703年，USB 音频 2.0 驱动程序随 Windows。 此驱动程序提供基本功能。
 ms.date: 10/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fcdf5f1a141a94257ded52be6616ba068164912f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335387"
 ---
-# <a name="usb-audio-20-drivers"></a>USB 2.0 音频驱动程序
+# <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
 从 Windows 10 版本 1703年，USB 音频 2.0 驱动程序随 Windows。 它旨在支持 USB 音频 2.0 设备类。 WaveRT 音频端口类微型端口驱动程序。 有关 USB 音频 2.0 设备类的详细信息，请参阅[ https://www.usb.org/developers/docs/devclass_docs/ ](https://www.usb.org/developers/docs/devclass_docs/)。 
 
@@ -349,7 +349,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 此 USB 音频 2.0 类驱动程序由 Thesycon 开发，Microsoft 支持。
 
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [Windows Driver Model (WDM)](https://msdn.microsoft.com/library/windows/hardware/ff565698)
 

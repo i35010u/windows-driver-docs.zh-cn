@@ -1,19 +1,19 @@
 ---
-title: 停止挂起 GUI 上
-description: 停止挂起 GUI 上
+title: GUI 挂起时停止
+description: GUI 挂起时停止
 ms.assetid: f1c1a045-e5ca-4274-9b47-b64d389b5fe5
 keywords:
 - 停止挂起 GUI （全局标志） 上的
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5954dbcaa801b790bab0aba8d369a18f8f798ee5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335518"
 ---
-# <a name="stop-on-hung-gui"></a>停止挂起 GUI 上
+# <a name="stop-on-hung-gui"></a>GUI 挂起时停止
 
 
 ## <span id="ddk_stop_on_hung_gui_dtools"></span><span id="DDK_STOP_ON_HUNG_GUI_DTOOLS"></span>

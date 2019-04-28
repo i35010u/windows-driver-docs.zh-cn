@@ -1,6 +1,6 @@
 ---
-title: 默认音频的音量设置
-description: 默认音频的音量设置
+title: 默认的音频音量设置
+description: 默认的音频音量设置
 ms.assetid: 5d694aa2-5a47-44c5-92d5-ec8c4885820f
 keywords:
 - 音频适配器 WDK、 音量设置
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2ca4779183d005f3a06082783b17b593c7b3225
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333814"
 ---
-# <a name="default-audio-volume-settings"></a>默认音频的音量设置
+# <a name="default-audio-volume-settings"></a>默认的音频音量设置
 
 
 ## <span id="default_audio_volume_settings"></span><span id="DEFAULT_AUDIO_VOLUME_SETTINGS"></span>
@@ -91,7 +91,7 @@ SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示
 \*术语非-麦克风描述所有播放设备和非麦克风录音设备。
 有关由 Windows 应用程序中的软件卷滑块物理卷滑块的操作特征的信息，请参阅[Audio-Tapered 音量控件](https://msdn.microsoft.com/library/windows/desktop/dd370798.aspx)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [自定义默认音频音量设置](customizing-default-audio-volume-settings.md)  
 
 

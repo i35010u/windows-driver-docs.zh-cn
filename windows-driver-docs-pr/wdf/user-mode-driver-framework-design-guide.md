@@ -5,11 +5,11 @@ ms.assetid: 4e56b62a-640d-4a9d-bf38-118b211d41f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fec70e24cd31ff198785e85a4c019a1bf1404ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331077"
 ---
 # <a name="umdf-1x-design-guide"></a>UMDF 1.x 设计指南
 

@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ca660e5a95b68af9766bb8c9c1e2e9ddb484161f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335828"
 ---
-# <a name="obja"></a>！ obja
+# <a name="obja"></a>!obja
 
 
 **！ Obja**扩展对象管理器中显示的对象的属性。

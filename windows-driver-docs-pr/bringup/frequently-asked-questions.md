@@ -4,11 +4,11 @@ description: 固件 WEG-常见问题 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fead67ee21c49364b6effe1c03a141e1cd2f22d3
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337610"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>固件 WEG:常见问题 (FAQ)
 

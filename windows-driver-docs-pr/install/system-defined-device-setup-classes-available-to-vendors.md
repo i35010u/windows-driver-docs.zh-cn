@@ -5,11 +5,11 @@ ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 913deb31788028721c29f7d1ccf0551adcba74d6
-ms.sourcegitcommit: a5cbd86f3019a54ba6425999b651d6ef8bd29937
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57693054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339626"
 ---
 # <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
   

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b0d75d3eda156570b2ddfec2a11544465382ca8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336124"
 ---
 # <a name="logextslogm"></a>!logexts.logm
 
@@ -76,7 +76,7 @@ ms.locfileid: "56525008"
 
 扩展 **！ logexts.logm 我\\** * 和 **！ logexts.logm x**是等效的： 它们会导致包含仅 Logexts.dll 和 kernel32.dll 的排除列表。 这两个模块始终为排除，因为不允许使用记录器以记录本身。
 
-下面提供了一些示例：
+下面是一些可能的恶意活动：
 
 ```dbgcmd
 0:001> !logm

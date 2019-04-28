@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30235aae4772d555ad99a7109b534c2f6bb67721
-ms.sourcegitcommit: 5bfb01d5aa52632b54182f3db87454df2d61cbe2
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56905506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330127"
 ---
 # <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 PPD 属性
 

@@ -1,5 +1,5 @@
 ---
-title: ~ （线程状态）
+title: ~（线程状态）
 description: 波形符 （~） 命令显示当前进程中指定的线程或所有线程的状态。
 ms.assetid: c27e4c72-86da-459d-833f-d27d26bdea0e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 42c87cbfb06cd0afb50b2f1da6275ecfea8dfe77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334833"
 ---
-# <a name="-thread-status"></a>~ （线程状态）
+# <a name="-thread-status"></a>~（线程状态）
 
 
 波形符 (**~**) 命令显示当前进程中的指定线程或所有线程的状态。

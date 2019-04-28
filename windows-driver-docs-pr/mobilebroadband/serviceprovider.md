@@ -5,11 +5,11 @@ ms.assetid: 6fa22f4d-9be9-4d02-b610-e20bed4958e9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d170aa38f54eaf91340aa8d9c02ffc6765eae6b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335400"
 ---
 # <a name="serviceprovider"></a>ServiceProvider
 

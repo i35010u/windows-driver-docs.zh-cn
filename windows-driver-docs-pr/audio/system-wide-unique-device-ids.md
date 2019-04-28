@@ -1,6 +1,6 @@
 ---
-title: 系统范围内唯一设备 Id
-description: 系统范围内唯一设备 Id
+title: 系统范围内唯一的设备 ID
+description: 系统范围内唯一的设备 ID
 ms.assetid: 628577b6-05fe-4b63-929f-6d63e93c9266
 keywords:
 - 音频适配器 WDK，唯一设备 Id
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 457fefef9c81a3b7a1bc7fa79f8b0b193f5f73ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335436"
 ---
-# <a name="system-wide-unique-device-ids"></a>系统范围内唯一设备 Id
+# <a name="system-wide-unique-device-ids"></a>系统范围内唯一的设备 ID
 
 
 ## <span id="system_wide_unique_device_ids"></span><span id="SYSTEM_WIDE_UNIQUE_DEVICE_IDS"></span>

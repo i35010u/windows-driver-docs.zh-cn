@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32a29f1a099572a24d0023a7c1a0200890827d8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335226"
 ---
 # <a name="metadata-fields-at-each-filtering-layer"></a>每个筛选层的元数据字段
 

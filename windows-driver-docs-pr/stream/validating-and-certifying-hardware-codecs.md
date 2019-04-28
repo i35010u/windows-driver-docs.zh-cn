@@ -1,6 +1,6 @@
 ---
-title: 正在验证和认证硬件编解码器
-description: 正在验证和认证硬件编解码器
+title: 验证和认证硬件编解码器
+description: 验证和认证硬件编解码器
 ms.assetid: 8cf96aac-78ba-41f0-b9d0-48948f704262
 keywords:
 - 硬件编解码器 WDK AVStream 验证
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 679ba0e2cb5db52f0834cb430bcb1339f0c71c4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337812"
 ---
-# <a name="validating-and-certifying-hardware-codecs"></a>正在验证和认证硬件编解码器
+# <a name="validating-and-certifying-hardware-codecs"></a>验证和认证硬件编解码器
 
 
 如果你供应商提供 AVStream 微型驱动程序提供基于硬件的编解码器支持，或已实现自定义的 MFT 以支持您的硬件，您必须提供 X.509 证书链中，在驱动程序 INF 文件中，指定荣誉奖值和实现 KSPROPSETID\_OPMVideoOutput 驱动程序中的。

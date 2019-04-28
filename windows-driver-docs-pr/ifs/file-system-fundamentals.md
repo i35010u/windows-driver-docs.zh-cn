@@ -5,11 +5,11 @@ ms.assetid: 29f0d7cb-9574-489c-affd-31ffdce6abdc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b6c2641f7ae5e26172fe8ca8816b732c1229b06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327483"
 ---
 # <a name="file-system-fundamentals"></a>文件系统基础知识
 
@@ -22,7 +22,7 @@ ms.locfileid: "56544754"
 </div>
  
 
-本部分介绍基本的文件系统驱动程序概念的文件系统筛选器驱动程序的开发人员很重要。 讨论了以下主题：
+本部分介绍基本的文件系统驱动程序概念的文件系统筛选器驱动程序的开发人员很重要。 论述了以下主题：
 
 [加载驱动程序时由什么决定](what-determines-when-a-driver-is-loaded.md)
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98db0bc4dc24d7286de26b45d99ce3072d0f4257
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334021"
 ---
 # <a name="ksinterfacestandardcontrol"></a>KSINTERFACE\_标准\_控件
 
@@ -37,7 +37,7 @@ KSINTERFACE\_标准\_控件接口不支持。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持。</p></td>
 </tr>
 </tbody>

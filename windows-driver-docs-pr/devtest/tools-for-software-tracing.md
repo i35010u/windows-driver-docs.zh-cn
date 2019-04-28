@@ -1,5 +1,5 @@
 ---
-title: 用于软件跟踪工具
+title: 用于软件跟踪的工具
 description: WDK 包含旨在支持 Windows 事件跟踪 (ETW) 并补充在 Windows 中包含的跟踪工具的工具。
 ms.assetid: 31056b02-378f-4756-b5a0-3d4cbbc6d3da
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ea87821206a6aba081bd95a836042b86c515328
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339731"
 ---
-# <a name="tools-for-software-tracing"></a>用于软件跟踪工具
+# <a name="tools-for-software-tracing"></a>用于软件跟踪的工具
 
 
 Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于命令行工具。 这些工具旨在以支持 Windows 事件跟踪 (ETW) 并补充在 Windows 中包含的跟踪工具。
@@ -113,7 +113,7 @@ Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于
 
 [软件跟踪常见问题](software-tracing-faq.md)
 
-[Windows (ETW) 事件跟踪](event-tracing-for-windows--etw-.md)
+[Windows 事件跟踪 (ETW)](event-tracing-for-windows--etw-.md)
 
 [内核模式性能监视](kernel-mode-performance-monitoring.md)
 

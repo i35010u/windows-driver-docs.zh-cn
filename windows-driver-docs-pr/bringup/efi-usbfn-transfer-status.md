@@ -5,11 +5,11 @@ ms.assetid: 60631dad-a617-4ed4-a975-5e480cf324e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4aa9b795c851f1bc958bf05a5eef0bdae43a9c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337669"
 ---
 # <a name="efiusbfntransferstatus"></a>EFI\_USBFN\_传输\_状态
 

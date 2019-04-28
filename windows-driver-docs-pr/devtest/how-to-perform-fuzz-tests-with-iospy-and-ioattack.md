@@ -5,11 +5,11 @@ ms.assetid: f800e962-2a0f-4039-a479-395a62428b06
 ms.date: 07/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 646c9b4592b3cc23fde1305a14398d761e46f026
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330693"
 ---
 > [!NOTE]
 > IoSpy 和 IoAttack 不再在 WDK 中可用后 Windows 10 版本 1703年。

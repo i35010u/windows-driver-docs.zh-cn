@@ -1,6 +1,6 @@
 ---
-title: 唤醒启用
-description: 唤醒启用
+title: 启用唤醒
+description: 启用唤醒
 ms.assetid: f4a2d4b1-d3a0-449a-ac65-a448d2bcab5c
 keywords:
 - HD Audio，唤醒启用
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 961e4c925c3375d7339d537b6ea83196766bc4e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335333"
 ---
-# <a name="wake-enable"></a>唤醒启用
+# <a name="wake-enable"></a>启用唤醒
 
 
 之前关闭编解码器，编解码器功能驱动程序通常情况下允许要唤醒系统，如果编解码器处于关闭状态时发生的状态更改事件的编解码器。 有关音频编解码器，这种情况下可以在用户输入插孔中插入即插即用或删除从插孔的即插即用时触发。 对于调制解调器编解码器，电话响铃以指示的传入呼叫时，可以发生的状态更改事件。 有关状态更改事件的详细信息，请参阅*Intel 高定义音频规范*处[Intel HD Audio](https://go.microsoft.com/fwlink/p/?linkid=42508)网站。

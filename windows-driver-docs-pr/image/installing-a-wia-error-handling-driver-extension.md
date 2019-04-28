@@ -5,11 +5,11 @@ ms.assetid: 8a16b0db-25ed-4512-8b45-0256fed6b83e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42239d5ce8c1a6b002e0218e0ad0d14c9592f721
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326075"
 ---
 # <a name="installing-a-wia-error-handling-driver-extension"></a>安装 WIA 错误处理驱动程序扩展
 

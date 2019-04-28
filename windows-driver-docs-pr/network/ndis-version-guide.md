@@ -5,11 +5,11 @@ ms.assetid: 5B1AB601-6C84-44AA-8333-C8FC723CAA7A
 ms.date: 06/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48068116400cefd78cd4db0c9464f8662698f633
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335440"
 ---
 # <a name="ndis-version-guide"></a>NDIS 版本指南
 

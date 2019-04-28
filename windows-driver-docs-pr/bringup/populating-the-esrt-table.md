@@ -5,11 +5,11 @@ ms.assetid: 8C1FF785-7A05-4E10-9E38-C6AC597E3FA8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4070714be51d83082c8b6d6ad23ea2315c91f08e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337472"
 ---
 # <a name="populating-the-esrt-table"></a>填充 ESRT 表
 

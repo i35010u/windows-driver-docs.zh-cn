@@ -1,19 +1,19 @@
 ---
-title: PCM Stream 数据格式
-description: PCM Stream 数据格式
+title: PCM 流数据格式
+description: PCM 流数据格式
 ms.assetid: 86599e55-e771-4d6e-ad59-6dc905c53cd8
 keywords:
 - PCM 流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 165a69f9b0efc90ab86fd70f1e8c59de4505dcb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332229"
 ---
-# <a name="pcm-stream-data-format"></a>PCM Stream 数据格式
+# <a name="pcm-stream-data-format"></a>PCM 流数据格式
 
 
 ## <span id="pcm_stream_data_format"></span><span id="PCM_STREAM_DATA_FORMAT"></span>

@@ -1,6 +1,6 @@
 ---
-title: 设置在 HwScsiFindAdapter ConfigInfo
-description: 设置在 HwScsiFindAdapter ConfigInfo
+title: 在 HwScsiFindAdapter 中设置 ConfigInfo
+description: 在 HwScsiFindAdapter 中设置 ConfigInfo
 ms.assetid: f9c5d23d-feab-4cc4-9cd9-29c21d4fdf0b
 keywords:
 - HwScsiFindAdapter
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79202cefaac4ad7108ab81cf057d96e661b761b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341218"
 ---
-# <a name="setting-up-configinfo-in-hwscsifindadapter"></a>设置在 HwScsiFindAdapter ConfigInfo
+# <a name="setting-up-configinfo-in-hwscsifindadapter"></a>在 HwScsiFindAdapter 中设置 ConfigInfo
 
 
 ## <span id="ddk_setting_up_configinfo_in_hwscsifindadapter_kg"></span><span id="DDK_SETTING_UP_CONFIGINFO_IN_HWSCSIFINDADAPTER_KG"></span>

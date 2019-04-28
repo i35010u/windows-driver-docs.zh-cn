@@ -1,5 +1,5 @@
 ---
-title: .scriptdebug (调试 JavaScript)
+title: .scriptdebug（调试 JavaScript）
 description: 使用.scriptdebug 命令来调试 JavaScript 的脚本。
 keywords:
 - .scriptdebug 调试 JavaScript Windows 调试
@@ -14,13 +14,13 @@ api_name:
 api_type:
 - NA
 ms.openlocfilehash: cd1dd7119b2eca9716e7b4779319c37b538e62cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334310"
 ---
-# <a name="scriptdebug-debug-javascript"></a>.scriptdebug (调试 JavaScript)
+# <a name="scriptdebug-debug-javascript"></a>.scriptdebug（调试 JavaScript）
 
 使用 **.scriptdebug**命令来调试 JavaScript 的脚本。
 
@@ -28,7 +28,7 @@ ms.locfileid: "56524888"
 .scriptdebug FileName
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 *FileName*
 

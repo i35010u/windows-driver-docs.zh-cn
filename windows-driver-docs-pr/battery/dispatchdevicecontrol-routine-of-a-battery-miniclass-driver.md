@@ -1,6 +1,6 @@
 ---
-title: DispatchDeviceControl Routine 电池 Miniclass 驱动程序
-description: DispatchDeviceControl Routine 电池 Miniclass 驱动程序
+title: 电池微型类驱动程序的 DispatchDeviceControl 例程
+description: 电池微型类驱动程序的 DispatchDeviceControl 例程
 ms.assetid: 26313dcc-9f37-4c5e-a21e-c4d8a50ff564
 keywords:
 - 电池 miniclass 驱动程序 WDK，例程
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02975b04526f7de95580f62aa67895761ac52988
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335247"
 ---
-# <a name="dispatchdevicecontrol-routine-of-a-battery-miniclass-driver"></a>DispatchDeviceControl Routine 电池 Miniclass 驱动程序
+# <a name="dispatchdevicecontrol-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 DispatchDeviceControl 例程
 
 
 ## <span id="ddk_dispatchdevicecontrol_routine_of_battery_miniclass_driver_dg"></span><span id="DDK_DISPATCHDEVICECONTROL_ROUTINE_OF_BATTERY_MINICLASS_DRIVER_DG"></span>

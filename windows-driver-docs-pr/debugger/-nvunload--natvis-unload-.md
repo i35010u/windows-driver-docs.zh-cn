@@ -1,5 +1,5 @@
 ---
-title: .nvunload (NatVis Unload)
+title: .nvload（NatVis 卸载）
 description: .Nvunload 命令将卸载调试器环境中的 NatVis 文件。
 ms.assetid: E63BE2B5-291B-4F78-98FF-C1D7663A184E
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 00b7e084694d3430bf84e3c8859a0674d4f0ba55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335843"
 ---
-# <a name="nvunload-natvis-unload"></a>.nvunload (NatVis Unload)
+# <a name="nvunload-natvis-unload"></a>.nvload（NatVis 卸载）
 
 
 .Nvunload 命令将卸载调试器环境中的 NatVis 文件。
@@ -62,7 +62,7 @@ ms.locfileid: "56523604"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-有关详细信息，请参阅[c + + 使用.natvis 文件的写入调试器类型可视化工具](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)。
+有关详细信息，请参阅[写入调试器类型可视化工具的C++使用.natvis 文件](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 

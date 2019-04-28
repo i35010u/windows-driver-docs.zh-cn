@@ -1,5 +1,5 @@
 ---
-title: .chain （列表调试器扩展）
+title: .chain（列出调试器扩展）
 description: .Chain 命令将列出其默认的搜索顺序中的所有已加载的调试器扩展。
 ms.assetid: 73139b02-265a-424d-9de8-f4f3736e62db
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd87e6c1863a3ad9e1883c40fefc7f8e137e30a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336908"
 ---
-# <a name="chain-list-debugger-extensions"></a>.chain （列表调试器扩展）
+# <a name="chain-list-debugger-extensions"></a>.chain（列出调试器扩展）
 
 
 **.Chain**命令将列出其默认的搜索顺序中的所有已加载的调试器扩展。

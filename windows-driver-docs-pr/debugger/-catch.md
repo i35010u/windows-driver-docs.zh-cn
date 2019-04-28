@@ -1,6 +1,6 @@
 ---
 title: .catch
-description: .Catch 令牌用于防止程序终止如果发生错误。它与在 c + + catch 关键字类似不符。
+description: .Catch 令牌用于防止程序终止如果发生错误。它不会不等中的 catch 关键字的行为与C++。
 ms.assetid: cda195d8-c0b8-4fb2-99a8-e2e8d338482b
 keywords:
 - .catch Windows 调试
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 25eb75dc00c119855f41f58ea0f7f115665e12e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334641"
 ---
 # <a name="catch"></a>.catch
 
 
 **.Catch**令牌用于防止程序终止如果发生错误。
 
-它不会不行为类似于**捕获**c + + 中的关键字。
+它不会不行为类似于**捕获**中的关键字C++。
 
 ```dbgsyntax
     Commands ; .catch { Commands } ; Commands 

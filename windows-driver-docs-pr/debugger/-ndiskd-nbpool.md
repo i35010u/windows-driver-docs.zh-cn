@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fb374611ea34d06b6ddb1ebc1f411b4e8e424aaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335934"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 

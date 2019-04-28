@@ -1,5 +1,5 @@
 ---
-title: .dml_start （显示 DML 开始位置）
+title: .dml_start（显示 DML 起点）
 description: .Dml_start 命令显示可作为一个起始点，探索使用支持调试器标记语言 (DML) 命令的输出。
 ms.assetid: 1CFCACDC-B253-4E9B-9877-EE9F1E91395F
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a7fae322482beeb1624a1facc33185954cdc5df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336811"
 ---
 # <a name="dmlstart-display-dml-starting-point"></a>.dml\_启动 （显示 DML 起始点）
 

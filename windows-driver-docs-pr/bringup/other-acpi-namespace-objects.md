@@ -5,11 +5,11 @@ ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c3c9c26dd4de717c6c386f427f3e5cb51a14bdc7
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58845551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337518"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 

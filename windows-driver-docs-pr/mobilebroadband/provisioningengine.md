@@ -5,11 +5,11 @@ ms.assetid: b6b10145-d554-43be-8682-1355145b3241
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ce5c65436e9da9d14496c32ec90b32b007bbcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335270"
 ---
 # <a name="provisioningengine"></a>ProvisioningEngine
 

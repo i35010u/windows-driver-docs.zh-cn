@@ -5,11 +5,11 @@ ms.assetid: 3591F4DD-2404-4893-88F3-1DC6A0CC3F0D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e7205b333c10e1ec19a8fe5843222f9ecd527a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330109"
 ---
 # <a name="overview-of-the-universal-sensor-driver-model"></a>通用传感器驱动程序模型概述
 

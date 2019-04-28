@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cadafae4ce7d46c0da6f89f4771548563a5eaa96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340879"
 ---
 # <a name="kspropertybdaguardinterval"></a>KSPROPERTY\_BDA\_防护\_间隔
 

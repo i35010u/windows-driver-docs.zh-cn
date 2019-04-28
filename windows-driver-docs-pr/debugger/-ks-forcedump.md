@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b423c675d4e5b9d5e50307eec9c0cafc5bc24c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336315"
 ---
 # <a name="ksforcedump"></a>!ks.forcedump
 

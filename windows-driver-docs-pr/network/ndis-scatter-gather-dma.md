@@ -1,6 +1,6 @@
 ---
-title: NDIS 散播-聚集 DMA
-description: NDIS 散播-聚集 DMA
+title: NDIS 分散/聚合 DMA
+description: NDIS 分散/聚合 DMA
 ms.assetid: 70b8321b-7b21-4d11-a9c2-46b0caa26ce6
 keywords:
 - 微型端口驱动程序 WDK 网络、 散播-聚集 DMA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5623532e4f023b76079da33e76929d40b79396fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329664"
 ---
-# <a name="ndis-scattergather-dma"></a>NDIS 散播-聚集 DMA
+# <a name="ndis-scattergather-dma"></a>NDIS 分散/聚合 DMA
 
 [!include[NDIS DMA ARM note](ndis-dma-arm-note.md)]
 

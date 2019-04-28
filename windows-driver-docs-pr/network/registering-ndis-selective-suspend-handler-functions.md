@@ -1,17 +1,17 @@
 ---
-title: 注册 NDIS 选择性挂起的处理程序函数
-description: 注册 NDIS 选择性挂起的处理程序函数
+title: 注册 NDIS 选择性挂起处理程序函数
+description: 注册 NDIS 选择性挂起处理程序函数
 ms.assetid: D4125F14-8356-4D9E-A287-D35D3BF69182
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0db84c30f6f1aec53c62529dde5040a10b46c7ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331332"
 ---
-# <a name="registering-ndis-selective-suspend-handler-functions"></a>注册 NDIS 选择性挂起的处理程序函数
+# <a name="registering-ndis-selective-suspend-handler-functions"></a>注册 NDIS 选择性挂起处理程序函数
 
 
 如果微型端口驱动程序支持 NDIS 选择性挂起，NDIS 会通知驱动程序的基础网络适配器已进入空闲状态。 微型端口驱动程序必须提供用于处理这些空闲通知的以下函数：

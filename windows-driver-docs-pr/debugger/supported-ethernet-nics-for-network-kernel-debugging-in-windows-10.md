@@ -1,17 +1,17 @@
 ---
-title: 支持的网络内核调试在 Windows 10 中的以太网 Nic
+title: Windows 10 中的网络内核调试支持的以太网 NIC
 description: 您可以执行操作时目标计算机运行的 Windows 内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
 ms.date: 12/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4653c71d6a736abf7f36a2d713384d0d6478666e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335482"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>支持的网络内核调试在 Windows 10 中的以太网 Nic
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 中的网络内核调试支持的以太网 NIC
 
 您可以执行操作时目标计算机运行的 Windows 内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
 
@@ -101,7 +101,7 @@ ms.locfileid: "56540610"
 
 0043
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设置通过网络电缆在 Visual Studio 中的内核模式调试](setting-up-a-network-debugging-connection-in-visual-studio.md)

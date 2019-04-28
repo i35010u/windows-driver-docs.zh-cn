@@ -1,17 +1,17 @@
 ---
-title: 蓝牙常见问题
+title: 蓝牙常见问题解答
 description: 此常见问题部分提供有关 Windows 操作系统系列的蓝牙无线技术支持信息。
 ms.assetid: 529DD4A2-4E4B-47F4-BD65-BE89EA21E217
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c18d2e9d8420c09dfb2bf3d8cc890dd77a59454c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328311"
 ---
-# <a name="bluetooth-faq"></a>蓝牙常见问题
+# <a name="bluetooth-faq"></a>蓝牙常见问题解答
 
 
 此常见问题部分提供有关 Windows 操作系统系列的蓝牙无线技术支持信息。 它是主要面向独立硬件供应商 (Ihv) 的新硬件和软件开发人员感兴趣的 Windows 和地址主题上的蓝牙生态系统。

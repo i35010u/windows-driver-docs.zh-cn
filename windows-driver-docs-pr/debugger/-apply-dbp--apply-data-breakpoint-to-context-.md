@@ -1,5 +1,5 @@
 ---
-title: .apply_dbp （适用于上下文的数据断点）
+title: .apply_dbp（将数据断点应用到上下文）
 description: .Apply_dbp 命令适用于指定的寄存器上下文当前进程的现有数据断点。
 ms.assetid: c74fd4b3-3335-4e03-a57a-6a9aa883dd9f
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b86c00a0c785ae6f52172f918b076148eb1ef6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334742"
 ---
 # <a name="applydbp-apply-data-breakpoint-to-context"></a>.apply\_dbp （到上下文应用数据断点）
 

@@ -1,6 +1,6 @@
 ---
-title: 在 AVStream Mutex
-description: 在 AVStream Mutex
+title: AVStream 中的互斥
+description: AVStream 中的互斥
 ms.assetid: 011edaaa-7449-41c3-8cfb-0d319901af8b
 keywords:
 - AVStream 互斥体 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65dda3311d6ffbc40dedd06e6d1b396e1b79cde5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329938"
 ---
-# <a name="mutexes-in-avstream"></a>在 AVStream Mutex
+# <a name="mutexes-in-avstream"></a>AVStream 中的互斥
 
 
 

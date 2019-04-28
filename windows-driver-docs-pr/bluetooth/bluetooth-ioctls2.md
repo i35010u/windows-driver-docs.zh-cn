@@ -1,6 +1,6 @@
 ---
-title: 蓝牙 Ioctl
-description: 蓝牙 Ioctl
+title: 蓝牙 IOCTL
+description: 蓝牙 IOCTL
 ms.assetid: 384ea4bb-863c-4da7-bf81-85d2de734ef7
 keywords:
 - 蓝牙 WDK Ioctl
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eb288aecf802f99cffc26b0184eff1fe67d1fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328289"
 ---
-# <a name="bluetooth-ioctls"></a>蓝牙 Ioctl
+# <a name="bluetooth-ioctls"></a>蓝牙 IOCTL
 
 
 蓝牙驱动程序堆栈提供了具有多个 Ioctl，若要收集其信息的配置文件驱动程序：

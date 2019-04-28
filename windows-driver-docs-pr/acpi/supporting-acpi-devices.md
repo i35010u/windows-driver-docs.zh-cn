@@ -1,6 +1,6 @@
 ---
-title: 支持 ACPI 的设备
-description: 支持 ACPI 的设备
+title: 支持 ACPI 设备
+description: 支持 ACPI 设备
 ms.assetid: ebaf2e66-4f56-48ca-93ca-f34e694c0d73
 keywords:
 - 高级的配置和电源接口规范 WDK
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d0d544118b6e030ed46b1008fc4116f6a4af724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330889"
 ---
-# <a name="supporting-acpi-devices"></a>支持 ACPI 的设备
+# <a name="supporting-acpi-devices"></a>支持 ACPI 设备
 
 
 本部分介绍如何供应商可以使用 WDM 功能驱动程序在 Windows 中功能增强的功能的高级配置和电源接口 (ACPI) 设备。

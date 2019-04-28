@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd8e01ffc3d97669b132daa691931970e8f7b43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335906"
 ---
 # <a name="ndiskdndisstack"></a>!ndiskd.ndisstack
 

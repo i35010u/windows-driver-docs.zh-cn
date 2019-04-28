@@ -1,6 +1,6 @@
 ---
-title: 批筛选器
-description: 批筛选器
+title: 滤波器
+description: 滤波器
 ms.assetid: 9e364c8f-55c3-4ec9-a9ce-9ee0f6a0746b
 keywords:
 - 音频筛选器 WDK 音频，批
@@ -20,13 +20,13 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c32ab24051c34ffe8cf8f265baaabdc5fa44880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335238"
 ---
-# <a name="wave-filters"></a>批筛选器
+# <a name="wave-filters"></a>滤波器
 
 
 ## <span id="wave_filters"></span><span id="WAVE_FILTERS"></span>

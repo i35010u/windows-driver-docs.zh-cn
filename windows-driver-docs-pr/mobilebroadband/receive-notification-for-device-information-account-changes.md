@@ -1,17 +1,17 @@
 ---
-title: 接收通知的设备信息帐户更改
-description: 接收通知的设备信息帐户更改
+title: 接收有关设备信息帐户更改的通知
+description: 接收有关设备信息帐户更改的通知
 ms.assetid: 67d96f61-57dc-4e4b-a6c1-5c3da28e8aaf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9732c1c3412adcfe49f419645e0d9220402c87d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335428"
 ---
-# <a name="receive-notification-for-device-information-account-changes"></a>接收通知的设备信息帐户更改
+# <a name="receive-notification-for-device-information-account-changes"></a>接收有关设备信息帐户更改的通知
 
 
 若要接收通知的设备信息帐户更改，请使用[ **AccountUpdated** ](https://msdn.microsoft.com/library/windows/apps/hh770601)的事件[ **MobileBroadbandAccountWatcher** ](https://msdn.microsoft.com/library/windows/apps/hh770597)如下所述：
@@ -35,7 +35,7 @@ ms.locfileid: "56556005"
     }
     ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)

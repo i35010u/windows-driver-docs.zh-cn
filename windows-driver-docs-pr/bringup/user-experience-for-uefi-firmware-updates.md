@@ -1,17 +1,17 @@
 ---
-title: 用户体验的 UEFI 固件更新
+title: UEFI 固件更新的用户体验
 description: 本部分介绍如何在 UEFI 固件更新过程中实现基本的用户体验。
 ms.assetid: 178F37B2-5CED-4AAF-8434-1C7532B36510
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea463536eec53fce1e6031448708183e3049a139
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337344"
 ---
-# <a name="user-experience-for-uefi-firmware-updates"></a>用户体验的 UEFI 固件更新
+# <a name="user-experience-for-uefi-firmware-updates"></a>UEFI 固件更新的用户体验
 
 
 本部分介绍如何在 UEFI 固件更新过程中实现基本的用户体验。

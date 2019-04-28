@@ -1,5 +1,5 @@
 ---
-title: .pcmd （set 提示命令）
+title: .pcmd（设置提示命令）
 description: .Pcmd 命令会使调试器发出命令，只要目标停止执行，并在注册或目标的状态信息的调试器命令窗口中显示的提示。
 ms.assetid: 8cda10c3-860c-453d-9fdd-0dfc74d71c53
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 25113801956a4519271aca0743b6dbfa9ffa6b2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334430"
 ---
-# <a name="pcmd-set-prompt-command"></a>.pcmd （set 提示命令）
+# <a name="pcmd-set-prompt-command"></a>.pcmd（设置提示命令）
 
 
 **.Pcmd**命令将导致发出命令，只要目标停止执行并显示提示，可在调试器[调试器命令窗口](debugger-command-window.md)与注册或目标的状态信息。

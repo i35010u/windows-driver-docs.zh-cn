@@ -1,16 +1,16 @@
 ---
-title: 在固件中的 Wi-fi 支持
-description: 在固件中的 Wi-fi 支持
+title: 固件中的 Wi-Fi 支持
+description: 固件中的 Wi-Fi 支持
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a7aebfc4a97d53c723597754cc07669e1b4c85cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338108"
 ---
-# <a name="wi-fi-support-in-firmware"></a>在固件中的 Wi-fi 支持 
+# <a name="wi-fi-support-in-firmware"></a>固件中的 Wi-Fi 支持 
 
 
 Wi-fi 支持最初定义在 UEFI 规范 2.5 中，使用 UEFI 规范 2.6 中的相关。

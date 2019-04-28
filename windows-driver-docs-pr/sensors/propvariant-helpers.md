@@ -5,11 +5,11 @@ ms.assetid: 5A5A008A-399F-4464-ADD0-7F2DDACB6D4B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eb19c657d5e56b4459081b6645c3d48f4af60728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330070"
 ---
 # <a name="propvariant-helpers"></a>PropVariant 帮助程序
 
@@ -235,7 +235,7 @@ PropVariant 帮助器函数用于处理由 v2 传感器驱动程序[PROPVARIANT]
 |--------------------------|------------------------|
 | 最低受支持的客户端 | Windows 8.1            |
 | 最低受支持的服务器 | Windows Server 2012 R2 |
-| 标头                   | Sensorsutils.h         |
+| Header                   | Sensorsutils.h         |
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: 87BC1366-F69D-412A-883E-861853A4902A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b554d462080271a0886272ccbeed1a09d57d33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337400"
 ---
 # <a name="processing-updates"></a>处理更新
 
@@ -18,7 +18,7 @@ ms.locfileid: "56563318"
 
 返回引用中的 ESRT 示例[ESRT 表定义](esrt-table-definition.md)以及中的固件资源更新驱动程序 INF 包示例[创作更新驱动程序包](authoring-an-update-driver-package.md)，封装标头的 Windows 操作系统加载程序创建到进入 UpdateCapsule 会按如下所示。
 
-| 字段            | ReplTest1              | 备注                                                 |
+| 字段            | 值              | 备注                                                 |
 |------------------|--------------------|---------------------------------------------------------|
 | CapsuleGuid      | {SYSTEM\_固件} | 从相应 ESRT 资源条目 FirmwareClass。 |
 | HeaderSize       | …                  | 填充页对齐*firmware.bin*开始。              |
@@ -29,7 +29,7 @@ ms.locfileid: "56563318"
 
 请注意，在此示例中只有一个 ESRT 中定义的两个设备表已安装新的固件资源更新驱动程序包。 如果固件资源更新驱动程序包已创作表 2 中的第二个设备，然后安装相应的固件资源设备上，将按如下所示创建第二个封装标头：
 
-| 字段            | 值              | 备注                                                                                                                                 |
+| 字段            | ReplTest1              | 备注                                                                                                                                 |
 |------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | CapsuleGuid      | {设备\_固件} | 从相应 ESRT 资源条目 FirmwareClass。                                                                                 |
 | HeaderSize       | …                  | 填充页对齐设备。BIN 开始。                                                                                                  |

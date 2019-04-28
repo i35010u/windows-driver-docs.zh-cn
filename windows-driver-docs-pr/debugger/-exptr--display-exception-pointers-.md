@@ -1,5 +1,5 @@
 ---
-title: .exptr （显示异常的指针）
+title: .exptr（显示异常指针）
 description: .Exptr 命令显示 EXCEPTION_POINTERS 结构。
 ms.assetid: ef98bf22-10a1-4fd2-80f1-fd7eb75015c1
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a59e282fb32eb5b14a2da5fb7ab4c3095ac5c7df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334496"
 ---
-# <a name="exptr-display-exception-pointers"></a>.exptr （显示异常的指针）
+# <a name="exptr-display-exception-pointers"></a>.exptr（显示异常指针）
 
 
 **.Exptr**命令将显示异常\_指针结构。

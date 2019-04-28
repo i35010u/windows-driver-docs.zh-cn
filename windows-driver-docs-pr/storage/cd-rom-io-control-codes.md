@@ -7,11 +7,11 @@ keywords:
 ms.date: 12/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dbff0e504ed489843bba098ceaba315ecaa7b4c
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338369"
 ---
 # <a name="cd-rom-io-control-codes"></a>CD-ROM I/O 控制代码
 

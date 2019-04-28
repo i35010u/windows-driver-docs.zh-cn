@@ -5,11 +5,11 @@ ms.assetid: d20b78bd-8369-4f50-b161-e8ad0bb4c52f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af735b385de3b47075f1eebf938a2129c902991
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337763"
 ---
 # <a name="efiusbinterfaceinfo"></a>EFI\_USB\_INTERFACE\_INFO
 

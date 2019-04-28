@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a5e2600a8a4d9b218e3c2153cf3d476c5861d46a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334826"
 ---
-# <a name="acpicache"></a>！ acpicache
+# <a name="acpicache"></a>!acpicache
 
 
 **！ Acpicache**扩展将显示所有缓存的 HAL 的高级配置和电源接口 (ACPI) 表。
@@ -32,7 +32,7 @@ ms.locfileid: "56524951"
 
 
 <span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span> *DisplayLevel*   
-指定显示的详细信息级别。 此值是缩写显示为 0 或 1 的更多详细显示。 默认值为 0
+指定显示的详细信息级别。 此值是缩写显示为 0 或 1 的更多详细显示。 默认值为 0。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 

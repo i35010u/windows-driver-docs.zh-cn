@@ -1,17 +1,17 @@
 ---
-title: Storport I/O 模型中的映射缓冲区的使用
-description: Storport I/O 模型中的映射缓冲区的使用
+title: 在 Storport I/O 模型中使用映射缓冲区
+description: 在 Storport I/O 模型中使用映射缓冲区
 ms.assetid: cd22ec31-ff4d-42d4-a47d-7b8bd85804be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44338c8441ce43d24d4126ab434576984609fbe1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339859"
 ---
-# <a name="use-of-mapping-buffers-in-the-storport-io-model"></a>Storport I/O 模型中的映射缓冲区的使用
+# <a name="use-of-mapping-buffers-in-the-storport-io-model"></a>在 Storport I/O 模型中使用映射缓冲区
 
 
 ## <span id="ddk_use_of_mapping_buffers_in_the_storport_i_o_model_kg"></span><span id="DDK_USE_OF_MAPPING_BUFFERS_IN_THE_STORPORT_I_O_MODEL_KG"></span>

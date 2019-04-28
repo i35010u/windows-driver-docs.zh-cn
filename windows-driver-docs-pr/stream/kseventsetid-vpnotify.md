@@ -5,11 +5,11 @@ ms.assetid: 97511a75-b66b-40c1-b508-a82e3a10832e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c265b8be7f1b380c589b8a6c0bb4927a596b436
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334028"
 ---
 # <a name="kseventsetidvpnotify"></a>KSEVENTSETID\_VPNotify
 

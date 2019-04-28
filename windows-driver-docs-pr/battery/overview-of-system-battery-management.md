@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 952ba366f90c76aaa44f57e126485144a120bf1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335394"
 ---
 # <a name="overview-of-system-battery-management"></a>系统电池管理概述
 

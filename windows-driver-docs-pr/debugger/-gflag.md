@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 95848b6dc0eded63d377144d75aa0d3d3be0f1ae
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336560"
 ---
 # <a name="gflag"></a>!gflag
 
@@ -84,7 +84,7 @@ Kdextx86.dll Ntsdexts.dll</td>
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">名称</th>
 <th align="left">描述</th>
 </tr>

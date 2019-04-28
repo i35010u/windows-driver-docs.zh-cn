@@ -1,6 +1,6 @@
 ---
-title: Windows 套接字直接体系结构
-description: Windows 套接字直接体系结构
+title: Windows Sockets Direct 体系结构
+description: Windows Sockets Direct 体系结构
 ms.assetid: 2f6ac4a7-76fe-45b4-8b5b-3a5f1d5c0553
 keywords:
 - Windows 套接字直接 WDK，体系结构
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be57f40aeb1111a0e4ccb8f7254128a38b383cde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335442"
 ---
-# <a name="windows-sockets-direct-architecture"></a>Windows 套接字直接体系结构
+# <a name="windows-sockets-direct-architecture"></a>Windows Sockets Direct 体系结构
 
 
 

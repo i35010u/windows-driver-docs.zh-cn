@@ -1,5 +1,5 @@
 ---
-title: .quit_lock （防止意外退出）
+title: .quit_lock（防止意外退出）
 description: .Quit_lock 命令设置密码，以防用户意外结束调试会话。
 ms.assetid: fd40e642-beba-4da0-a072-6493588980de
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a3c975a14ce2adfeabd2604b35c06d1bbb92b629
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335757"
 ---
 # <a name="quitlock-prevent-accidental-quit"></a>.quit\_锁 （防止意外后退出）
 

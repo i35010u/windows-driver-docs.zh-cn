@@ -1,5 +1,5 @@
 ---
-title: .ignore_missing_pages （取消显示缺少的页面错误）
+title: .ignore_missing_pages（隐藏缺少页面错误）
 description: 内核内存转储具有缺少页时，.ignore_missing_pages 命令禁止显示错误消息。
 ms.assetid: 74f4944e-6f0b-4541-b32f-a2da58df7f03
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef9064462f24c7e48d6bf16bbdf9bbb9aad2488
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336469"
 ---
 # <a name="ignoremissingpages-suppress-missing-page-errors"></a>.ignore\_缺少\_页 （取消显示缺少的页错误）
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a1f410785a8ece4b4c8cdc8d799573d506513d7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334491"
 ---
-# <a name="fadt"></a>！ fadt
+# <a name="fadt"></a>!fadt
 
 
 **！ Fadt**扩展显示固定的 ACPI 描述表 (FADT)。

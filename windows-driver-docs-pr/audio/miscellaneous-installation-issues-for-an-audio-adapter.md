@@ -1,6 +1,6 @@
 ---
-title: 音频的适配器的其他安装问题
-description: 音频的适配器的其他安装问题
+title: 音频适配器的其他安装问题
+description: 音频适配器的其他安装问题
 ms.assetid: fcfa9c41-7fad-4b22-9054-a1debb972580
 keywords:
 - 音频适配器 WDK，安装
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc213ade503bb193ad906a3414e5104d33a0c7f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332302"
 ---
-# <a name="miscellaneous-installation-issues-for-an-audio-adapter"></a>音频的适配器的其他安装问题
+# <a name="miscellaneous-installation-issues-for-an-audio-adapter"></a>音频适配器的其他安装问题
 
 
 ## <span id="miscellaneous_installation_issues_for_an_audio_adapter"></span><span id="MISCELLANEOUS_INSTALLATION_ISSUES_FOR_AN_AUDIO_ADAPTER"></span>

@@ -1,17 +1,17 @@
 ---
-title: 用户模式驱动程序框架方面的常见问题
+title: 用户模式驱动程序框架常见问题解答
 description: Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系统运行的设备驱动程序的库。
 ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85b94151a985dfdfa262cfadeaff93b2da70f24e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337790"
 ---
-# <a name="user-mode-driver-framework-frequently-asked-questions"></a>用户模式驱动程序框架方面的常见问题
+# <a name="user-mode-driver-framework-frequently-asked-questions"></a>用户模式驱动程序框架常见问题解答
 
 
 Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系统运行的设备驱动程序的库。 WDF 定义单独的驱动程序模型支持的两个框架：内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF)。 本主题提供有关 UMDF 常见问题的解答。

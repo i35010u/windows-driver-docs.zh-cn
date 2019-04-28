@@ -1,5 +1,5 @@
 ---
-title: 打开 （开放源代码文件）
+title: .open（打开源文件）
 description: 打开命令将搜索源文件的源路径，并打开此文件。
 ms.assetid: 49944fc8-5ecb-47a4-a046-0df18a242e72
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ef67ba926a5c6612c7dc30f9281a916b91751788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334421"
 ---
-# <a name="open-open-source-file"></a>打开 （开放源代码文件）
+# <a name="open-open-source-file"></a>.open（打开源文件）
 
 
 **打开**命令将搜索源文件的源路径，并打开此文件。

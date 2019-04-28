@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e6c9563b19f9e2c53287bf424a2bea52f551930
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335986"
 ---
-# <a name="ndiskdnbllog"></a>！ ndiskd.nbllog
+# <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
 **！ Ndiskd.nbllog**扩展插件都会显示所有 NBL 日志 ([**NET\_缓冲区\_列表**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)) 系统中的活动。

@@ -1,15 +1,15 @@
 ---
-title: HIDI2C 特定于设备的方法 (_DSM)
+title: HIDI2C 的特定于设备的方法 (_DSM)
 description: 9.14.1，一节中定义 _DSM 方法 \ 0034; _DSM （设备特定的方法） \ 0034; 在 ACPI 5.0 规范。
 ms.assetid: D78077F4-9995-4DC6-9DF6-89D0F8E0C545
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f42a1f680caefbf0830a280346bd9953760bfd0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337606"
 ---
 # <a name="hidi2c-device-specific-method-dsm"></a>HIDI2C 特定于设备的方法 (\_DSM)
 

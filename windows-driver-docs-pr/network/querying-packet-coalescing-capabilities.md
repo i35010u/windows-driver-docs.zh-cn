@@ -5,11 +5,11 @@ ms.assetid: CD1839B5-2279-4E8C-ADD8-7869A3123B86
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5bf109b70aa92325922e99847fc969e86c3161f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340001"
 ---
 # <a name="querying-packet-coalescing-capabilities"></a>查询数据包合并功能
 

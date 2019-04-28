@@ -4,11 +4,11 @@ description: ！ 索引扩展索引按时间顺序查看跟踪或显示索引的
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e5b6875e29a47074688c39d1398e121607f107aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327125"
 ---
 #  <a name="index"></a>!index
 
@@ -68,7 +68,7 @@ ttdext.dll
 此扩展只适用于时间传输跟踪。 有关按时间顺序查看详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-扩展的命令](time-travel-debugging-extension-commands.md)
 

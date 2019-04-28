@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 09edfc0884edb0742ef62acd871cdf9c88634b95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334179"
 ---
-# <a name="token"></a>！ 令牌
+# <a name="token"></a>!token
 
 
 **！ 令牌**扩展插件都会显示一个安全令牌对象的格式化的视图。

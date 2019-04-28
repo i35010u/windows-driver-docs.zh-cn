@@ -18,11 +18,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 81d31c09168df2ea28d43674313cfc2644cfcb52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334590"
 ---
 # <a name="devext"></a>!devext
 
@@ -41,7 +41,7 @@ ms.locfileid: "56576704"
 #### <a name="typecode"></a>*TypeCode*   
 指定拥有设备扩展要显示对象的类型。 类型代码，不区分大小写。 有效的类型代码为：
 
-|TypeCode|对象|
+|TypeCode|Object|
 |--- |--- |
 |ISAPNP|ISA 即插即用设备扩展|
 |PCMCIA|PCMCIA 设备扩展|

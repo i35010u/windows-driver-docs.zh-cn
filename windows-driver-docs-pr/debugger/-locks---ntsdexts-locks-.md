@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5947ac71adbfde2a2a85e7fee0adcf05bd69145a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336184"
 ---
-# <a name="locks-ntsdextslocks"></a>！ 锁 (！ ntsdexts.locks)
+# <a name="locks-ntsdextslocks"></a>!locks (!ntsdexts.locks)
 
 
 **！ 锁**Ntsdexts.dll 中的扩展显示与当前进程关联的关键部分的列表。

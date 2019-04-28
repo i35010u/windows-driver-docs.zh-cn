@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4455402ce1b2b061449c54cad58983e89077f7b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336634"
 ---
 # <a name="foreachmodule"></a>!for\_each\_module
 
@@ -47,7 +47,7 @@ ms.locfileid: "56564484"
 <tr class="header">
 <th align="left">别名</th>
 <th align="left">数据类型</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
@@ -161,7 +161,7 @@ ms.locfileid: "56564484"
 
  
 
-这些别名会替换之前*CommandString*为每个模块和任何其他分析发生之前执行。 这些别名是区分大小写。 必须添加别名之前的空格和一个空格后，即使该别名括在括号中。 如果您使用 c + + 表达式语法，则必须引用作为这些别名 @ @ (@\#*别名*)。
+这些别名会替换之前*CommandString*为每个模块和任何其他分析发生之前执行。 这些别名是区分大小写。 必须添加别名之前的空格和一个空格后，即使该别名括在括号中。 如果使用C++表达式语法，必须引用作为这些别名 @ @ (@\#*别名*)。
 
 这些别名对调用的生存期内仅有 **！ 有关\_每个\_模块**。 不要混淆它们使用伪寄存器、 固定名称的别名或用户命名别名。
 

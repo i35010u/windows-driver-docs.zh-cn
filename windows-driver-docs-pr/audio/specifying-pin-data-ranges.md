@@ -1,6 +1,6 @@
 ---
-title: 指定 Pin 数据范围
-description: 指定 Pin 数据范围
+title: 指定引脚数据范围
+description: 指定引脚数据范围
 ms.assetid: bef74cd1-d2be-402d-be7f-acc7d8cbf392
 keywords:
 - pin WDK 音频，数据范围
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 079a7f348257d6aa9f6c77d1e940d8f94efdd389
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328619"
 ---
-# <a name="specifying-pin-data-ranges"></a>指定 Pin 数据范围
+# <a name="specifying-pin-data-ranges"></a>指定引脚数据范围
 
 
 定义表示数据路径和控制你的设备中的节点的拓扑之后, 的下一步是定义[数据范围](audio-data-ranges.md)对于每个可配置的插针。 可以创建、 配置和连接到的批或软件控制下的 MIDI 流可配置的 pin。 与此相反，物理连接或桥 pin 存在隐式和既不能创建也不能在软件控制下配置。

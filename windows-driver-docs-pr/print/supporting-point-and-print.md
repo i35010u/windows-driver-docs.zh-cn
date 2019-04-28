@@ -1,19 +1,19 @@
 ---
-title: 指向并打印支持
-description: 指向并打印支持
+title: 支持点选打印
+description: 支持点选打印
 ms.assetid: a41bed5e-a006-4b9e-aa71-d2bcd154fae2
 keywords:
 - 指向并打印 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a9f3cca7d7ae1b2ff03df0c052b89cae64576c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331767"
 ---
-# <a name="supporting-point-and-print"></a>指向并打印支持
+# <a name="supporting-point-and-print"></a>支持点选打印
 
 
 

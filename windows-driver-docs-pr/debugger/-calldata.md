@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aa13ef08711196c45efedcdf7e26bda48f1b0a23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334638"
 ---
-# <a name="calldata"></a>！ calldata
+# <a name="calldata"></a>!calldata
 
 
 **！ Calldata**扩展过程调用中命名的表的统计信息的表单中显示性能信息。

@@ -1,5 +1,5 @@
 ---
-title: .endpsrv （结束进程服务器）
+title: .endpsrv（结束进程服务器）
 description: .Endpsrv 命令会使当前进程服务器或 KD 连接服务器关闭。
 ms.assetid: 3f8d0a85-f0f4-4c13-ab52-e4d99ba3599c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9339a9aaf2d51e9b7f9a2d13b1ee0685543f660b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337218"
 ---
-# <a name="endpsrv-end-process-server"></a>.endpsrv （结束进程服务器）
+# <a name="endpsrv-end-process-server"></a>.endpsrv（结束进程服务器）
 
 
 **.Endpsrv**命令将导致当前进程服务器或 KD 连接服务器关闭。

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8637ca3f86556e94a1cc8b047abc01fdc9e5f925
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328344"
 ---
 # <a name="accepting-sco-connections-in-a-bluetooth-profile-driver"></a>在蓝牙配置文件驱动程序中接受 SCO 连接
 

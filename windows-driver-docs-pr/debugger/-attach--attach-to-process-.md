@@ -1,5 +1,5 @@
 ---
-title: .attach （附加到进程）
+title: .attach（附加到进程）
 description: .Attach 命令将附加到新的目标应用程序。
 ms.assetid: e637c7eb-9c3c-4501-b972-a9293a6da52a
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ca03126ac57aa6b9a45056e50f2eb7a1cee3f72a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334726"
 ---
-# <a name="attach-attach-to-process"></a>.attach （附加到进程）
+# <a name="attach-attach-to-process"></a>.attach（附加到进程）
 
 
 **.Attach**命令将附加到新的目标应用程序。

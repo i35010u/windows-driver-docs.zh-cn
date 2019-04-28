@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ad6c9c453ad5ea1d28b090e3052fc7b1a7b63d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336891"
 ---
 # <a name="closehandle-close-handle"></a>.closehandle（关闭句柄）
 

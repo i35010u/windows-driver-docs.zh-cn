@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58845547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327493"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍以下串行 IRP 主要函数代码：

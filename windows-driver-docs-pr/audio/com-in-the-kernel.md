@@ -1,6 +1,6 @@
 ---
-title: 在内核中的 COM
-description: 在内核中的 COM
+title: 内核中的 COM
+description: 内核中的 COM
 ms.assetid: 2ce13ef1-9868-4f6d-9c42-b71f9e3d5615
 keywords:
 - 音频的微型端口驱动程序 WDK COM
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf62cac5151f7c102eb29a7f0252bdfe2c772100
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333878"
 ---
-# <a name="com-in-the-kernel"></a>在内核中的 COM
+# <a name="com-in-the-kernel"></a>内核中的 COM
 
 
 ## <span id="com_in_the_kernel"></span><span id="COM_IN_THE_KERNEL"></span>

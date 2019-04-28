@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e3d8e42aa26416006e772ae0e1e83486b306d56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336638"
 ---
 # <a name="foreachregister"></a>!for\_each\_register
 

@@ -5,11 +5,11 @@ ms.assetid: cbad53dd-4320-4920-9d16-231d0aaae839
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 620b75352436551925c185984b6c5ed24fcf1ef0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330273"
 ---
 # <a name="sending-an-ioctlacpienumchildren-request"></a>发送 IOCTL\_ACPI\_枚举\_子级请求
 

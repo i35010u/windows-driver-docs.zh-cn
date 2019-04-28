@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a1bfc79973c5aa23d3d92e762ce5e8258ea0c3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336030"
 ---
 # <a name="minipkdreq"></a>!minipkd.req
 

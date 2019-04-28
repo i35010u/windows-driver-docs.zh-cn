@@ -5,11 +5,11 @@ ms.assetid: E6A3E1CF-C25B-429B-946D-B300BAF3CF9B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de4b7a842b8f49498a353ffe949fd36a6d8ea264
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328194"
 ---
 # <a name="serial-bus-driver-layer"></a>串行总线驱动程序层
 
