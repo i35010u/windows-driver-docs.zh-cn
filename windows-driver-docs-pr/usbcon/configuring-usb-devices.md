@@ -1,14 +1,14 @@
 ---
-Description: The topics in this section describe how a client driver must configure their device.
+Description: 在本部分中的主题介绍客户端驱动程序必须配置其设备的方式。
 title: 选择 USB 驱动程序中的 USB 配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 863cfa49f6b779888e79e795623bbf3988889e2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352603"
 ---
 # <a name="selecting-a-usb-configuration-in-usb-drivers"></a>选择 USB 驱动程序中的 USB 配置
 

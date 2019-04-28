@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_VF_SERIAL_NUMBER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: f2f4b5fddfc84b6ca1bbd6362afc46481cbba87b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351261"
 ---
 # <a name="oidsriovvfserialnumber"></a>OID\_SRIOV\_VF\_SERIAL\_NUMBER
 
@@ -73,7 +73,7 @@ NDIS 时处理 OID\_SRIOV\_VF\_串行\_请求数，它将返回一个下面的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

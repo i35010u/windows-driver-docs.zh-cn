@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27e3bcb2b5abbc4acd623b00cba6aa90a09dc9b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344417"
 ---
 # <a name="support-for-transactions-in-microsoft-windows-vista"></a>对 Microsoft Windows Vista 中的事务的支持
 

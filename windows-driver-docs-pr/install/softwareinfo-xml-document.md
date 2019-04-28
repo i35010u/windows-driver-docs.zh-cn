@@ -5,11 +5,11 @@ ms.assetid: 6B6BE16F-3064-452B-9C4E-5829D9AE11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a39658e0fc6a6aba515ec7ffc30a6ec300d3d0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348592"
 ---
 # <a name="softwareinfo-xml-document"></a>SoftwareInfo XML 文档
 

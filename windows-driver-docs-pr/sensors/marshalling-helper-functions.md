@@ -1,17 +1,17 @@
 ---
-title: 帮助器函数的封送处理
+title: 帮助程序函数的封送处理
 description: 本主题提供有关封送处理 sensorsutils.h 标头文件中的帮助器函数的信息。
 ms.assetid: AE5C70E4-1971-4BAF-AE7D-315A15F030DD
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d2af831155fcea2123eaa6221471921d812399a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345111"
 ---
-# <a name="marshalling-helper-functions"></a>帮助器函数的封送处理
+# <a name="marshalling-helper-functions"></a>帮助程序函数的封送处理
 
 
 本主题提供有关在封送处理的帮助器函数的信息*sensorsutils.h*标头文件。
@@ -20,7 +20,7 @@ V2 传感器驱动程序，使用这些帮助器函数和传感器设备驱动�
 
 如果您实现您自己封送处理的帮助器函数，请记住填充的枚举列表中时，必须不使用 helper 函数[**传感器\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_config)结构，或当报告更新的数据与[ **SensorsCxSensorDataReady** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/nf-sensorscx-sensorscxsensordataready)函数。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 |主题|描述|

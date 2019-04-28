@@ -5,11 +5,11 @@ ms.assetid: cd5dad3e-fa25-4ec2-bc17-9332b4c00d17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c69c960cf71a05aa6b540360aa1667254160608b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344831"
 ---
 # <a name="how-do-i-enable-wpp-tracing-through-the-windows-event-log-service"></a>如何通过 Windows 事件日志服务启用 WPP 跟踪？
 

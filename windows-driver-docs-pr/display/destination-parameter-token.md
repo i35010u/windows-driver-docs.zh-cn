@@ -5,11 +5,11 @@ ms.assetid: 1a9842c5-0ea9-47ee-a341-77e705ab5e25
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: dc28ec9d6278727879b16ea290a366eb08d4d34e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348881"
 ---
 # <a name="destination-parameter-token"></a>目标参数标记
 

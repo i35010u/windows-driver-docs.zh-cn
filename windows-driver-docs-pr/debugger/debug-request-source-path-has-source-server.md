@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc2da8b54ae135b4a721acaa9c5f0e521c2212bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349047"
 ---
 # <a name="debugrequestsourcepathhassourceserver"></a>调试\_请求\_源\_路径\_HAS\_源\_服务器
 
 
 调试\_请求\_源\_路径\_HAS\_源\_SERVER [**请求**](request.md)操作检查源服务器的源路径。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 不使用。

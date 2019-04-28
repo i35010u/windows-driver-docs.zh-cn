@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 97bdde0cf34405cac21736725d3355d24e896a9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347626"
 ---
 # <a name="irqlnetbufferfunction-rule-ndis"></a>Irql\_网络缓冲区\_函数规则 (ndis)
 
@@ -91,7 +91,7 @@ Irql\_网络缓冲区\_函数规则指定 NET\_缓冲区相关函数的调用必
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisAdvanceNetBufferDataStart**](https://msdn.microsoft.com/library/windows/hardware/ff560703)

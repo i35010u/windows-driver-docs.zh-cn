@@ -1,17 +1,17 @@
 ---
-title: Multiplane 覆盖 VidPN 演示文稿
+title: 多平面覆盖 VidPN 呈现
 ms.assetid: BAD7FD48-905D-4547-8C69-133240B39FA3
 description: 适用于使用在多个图面上显示的函数的要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ea8a5bd67758f98cd2c0337b58613a84201dc59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345597"
 ---
-# <a name="multiplane-overlay-vidpn-presentation"></a>Multiplane 覆盖 VidPN 演示文稿
+# <a name="multiplane-overlay-vidpn-presentation"></a>多平面覆盖 VidPN 呈现
 
 
 当使用 multiplane 叠加时，这些要求适用于用于视频存在网络 (VidPNs) 中的多个面上呈现的函数：

@@ -5,13 +5,13 @@ ms.assetid: 3c6102e6-4dac-4d90-ab8f-162dd6d8adf9
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0730f0242c1011826bfbf037f1879b81a8db2823
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347757"
 ---
-# <a name="example-15-using-object-reference-tracing"></a>例如，如果希望：使用对象引用跟踪
+# <a name="example-15-using-object-reference-tracing"></a>示例 15：使用对象引用跟踪
 
 
 对象引用跟踪是一项 Windows 功能，用于引用或取消引用某个对象时记录顺序的堆栈跟踪。 这被为了检测可能会导致崩溃或内存泄漏的对象处理中的错误。 这些错误的一些很难检测，因为它们不一致地出现。 有关详细信息，请参阅[对象引用跟踪](object-reference-tracing.md)。

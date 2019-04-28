@@ -1,6 +1,6 @@
 ---
-title: 注册和队列 CustomTimerDpc 例程
-description: 注册和队列 CustomTimerDpc 例程
+title: CustomTimerDpc 例程注册和排队
+description: CustomTimerDpc 例程注册和排队
 ms.assetid: 884bff8e-8437-44fb-acc0-f535d64ce900
 keywords:
 - 计时器对象 WDK 内核，CustomTimerDpc 例程
@@ -22,13 +22,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d328e808a94225536cd8ef31216a86ecf8a477c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352994"
 ---
-# <a name="registering-and-queuing-a-customtimerdpc-routine"></a>注册和队列 CustomTimerDpc 例程
+# <a name="registering-and-queuing-a-customtimerdpc-routine"></a>CustomTimerDpc 例程注册和排队
 
 
 

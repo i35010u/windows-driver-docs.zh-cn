@@ -1,17 +1,17 @@
 ---
-title: 为非 PnP 驱动程序包创建编录文件
-description: 为非 PnP 驱动程序包创建编录文件
+title: 为非 PnP 驱动程序包创建目录文件
+description: 为非 PnP 驱动程序包创建目录文件
 ms.assetid: b40a6f42-53a8-468f-abf1-335c5ead3cbd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e301da648db48a14ae97b3635b3283a2687d350
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344335"
 ---
-# <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>为非 PnP 驱动程序包创建编录文件
+# <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>为非 PnP 驱动程序包创建目录文件
 
 
 可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具来创建[编录文件](catalog-files.md)为非 PnP[驱动程序包](driver-packages.md)。

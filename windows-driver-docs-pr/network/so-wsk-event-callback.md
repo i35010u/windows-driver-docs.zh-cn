@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 SO_WSK_EVENT_CALLBACK 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cb01680ab134812a027a8b3ddd0a01bd3c4ce4b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349341"
 ---
 # <a name="sowskeventcallback"></a>因此\_WSK\_事件\_回调
 
@@ -183,11 +183,11 @@ WSK 应用程序时启用事件回调函数，可以同时启用适用于特定�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

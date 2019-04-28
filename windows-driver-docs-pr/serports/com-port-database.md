@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed3a09f0d0b8450c87283006f0c79d0c9ea46d36
-ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58505145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345049"
 ---
 # <a name="com-port-database"></a>COM 端口数据库
 

@@ -5,11 +5,11 @@ ms.assetid: 4A3EDD12-00CC-48A0-BCD9-8F64E90FA9F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0ed2366c45c5dc523cd77a0d9f0d9156d5d1495
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343431"
 ---
 # <a name="mb-identity-morphing-solution-overview"></a>MB 标识变换解决方案概述
 

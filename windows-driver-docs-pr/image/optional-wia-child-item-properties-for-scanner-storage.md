@@ -1,17 +1,17 @@
 ---
-title: 扫描程序存储的可选 WIA 子项目属性
-description: 扫描程序存储的可选 WIA 子项目属性
+title: 扫描仪存储的可选 WIA 子项属性
+description: 扫描仪存储的可选 WIA 子项属性
 ms.assetid: 3683e5ed-0a0a-479f-90ed-8d0d17833260
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 000f057f2e96810a13fe0489a5a4960fc4cc4132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342386"
 ---
-# <a name="optional-wia-child-item-properties-for-scanner-storage"></a>扫描程序存储的可选 WIA 子项目属性
+# <a name="optional-wia-child-item-properties-for-scanner-storage"></a>扫描仪存储的可选 WIA 子项属性
 
 
 WIA 扫描程序存储子 （文件） 项目都可以选择支持以下 WIA 属性：

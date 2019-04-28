@@ -1,14 +1,14 @@
 ---
-Description: This section provides information about certain limitations of the Universal Serial Bus (USB) 2.0 Selective Suspend mechanism.
+Description: 本部分提供有关特定限制的通用串行总线 (USB) 2.0 选择性挂起机制的信息。
 title: USB 3.0 硬件中的链接电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2780c8bc844d3da866e484582dbe3e798ce7a712
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355457"
 ---
 # <a name="link-power-management-in-usb-30-hardware"></a>USB 3.0 硬件中的链接电源管理
 
@@ -20,7 +20,7 @@ ms.locfileid: "56554522"
 -   官方[USB 3.0 规范](http://www.usb.org/developers/docs/)。
 -   [USB 选择性挂起](https://go.microsoft.com/fwlink/p/?linkid=230964)机制。 在博客文章介绍机制[揭开面纱 USB 选择性挂起](https://go.microsoft.com/fwlink/p/?linkid=230962)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

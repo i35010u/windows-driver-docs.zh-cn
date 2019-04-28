@@ -5,11 +5,11 @@ ms.assetid: 2f041190-8001-4e79-8398-8b642884f751
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1423974d09b271acc21b8d2781aa814bb2e5fbaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350215"
 ---
 # <a name="setting-the-protection-level-for-a-protected-output"></a>设置受保护输出的保护级别
 

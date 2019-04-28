@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54578361f7883c035bf97bab3e315fe4ccfd0d25
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345642"
 ---
 # <a name="mpeg2d"></a>MPEG2\_D
 
@@ -33,7 +33,7 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ MPEG2\_D 受限制的配置文件中包含的一组功能所需的 mpeg-2 视频
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

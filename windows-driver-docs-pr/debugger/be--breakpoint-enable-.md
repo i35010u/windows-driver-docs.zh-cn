@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 17f0ab8fcf782655dfee280abbe77a688f00026b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347875"
 ---
 # <a name="be-breakpoint-enable"></a>be（断点启用）
 

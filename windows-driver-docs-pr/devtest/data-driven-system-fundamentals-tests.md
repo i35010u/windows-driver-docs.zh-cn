@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e66284eaf9a04f5e90af4c1d90ad81b7f601fb0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356613"
 ---
 # <a name="data-driven-system-fundamentals-tests"></a>数据驱动系统基础测试
 

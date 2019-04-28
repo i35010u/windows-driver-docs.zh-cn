@@ -1,6 +1,6 @@
 ---
-title: 扩展的堆限制
-description: 扩展的堆限制
+title: 扩展堆限制
+description: 扩展堆限制
 ms.assetid: 4f907768-670a-4ce5-b2d7-7af27baf80da
 keywords:
 - 绘图图面上的扩展的功能 WDK DirectDraw，堆
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2d9ef2a829691e0412b581c134c966527e1e149
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353361"
 ---
-# <a name="extended-heap-restrictions"></a>扩展的堆限制
+# <a name="extended-heap-restrictions"></a>扩展堆限制
 
 
 ## <span id="ddk_extended_heap_restrictions_gg"></span><span id="DDK_EXTENDED_HEAP_RESTRICTIONS_GG"></span>

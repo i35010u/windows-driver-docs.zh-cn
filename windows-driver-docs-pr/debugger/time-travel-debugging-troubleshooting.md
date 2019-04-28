@@ -1,18 +1,18 @@
 ---
-title: 时间顺序查看调试-故障排除
+title: 时光穿越调试 - 故障排除
 description: 本部分介绍如何进行故障排除时传输跟踪。
 ms.date: 10/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9fcb1c922b3bc769d78153c0fb90c01f31be67f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349023"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
 
-# <a name="time-travel-debugging---troubleshooting"></a>时间顺序查看调试-故障排除
+# <a name="time-travel-debugging---troubleshooting"></a>时光穿越调试 - 故障排除
 
 本部分介绍如何进行故障排除时传输跟踪。
 
@@ -105,7 +105,7 @@ TTD 工作原理是运行仿真程序内执行的调试进程才能复制该过�
 在大多数情况下此失败消息指示的。运行的跟踪文件将具有正常执行，它正常执行的一些不确定的指令数的点处开始的线程中存在间隔。 如果你尝试调试的感兴趣的事件并未发生期间的差距，跟踪可能可用。 如果感兴趣的事件发生期间的差距，跟踪将需要重新录制。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
 

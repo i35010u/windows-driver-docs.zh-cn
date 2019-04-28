@@ -1,17 +1,17 @@
 ---
-title: 设置本地的 NDIS QoS 参数
-description: 设置本地的 NDIS QoS 参数
+title: 设置本地 NDIS QoS 参数
+description: 设置本地 NDIS QoS 参数
 ms.assetid: 7AB30829-16A0-46BF-8066-506E01E718A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e499fbe42c94322009b239b82400cb4988fd60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346639"
 ---
-# <a name="setting-local-ndis-qos-parameters"></a>设置本地的 NDIS QoS 参数
+# <a name="setting-local-ndis-qos-parameters"></a>设置本地 NDIS QoS 参数
 
 
 本地 NDIS 服务质量 (QoS) 参数指定的微型端口驱动程序和其网络适配器的预配本地 QoS 设置。 微型端口驱动程序中通过以下方式获取本地的 NDIS QoS 参数：

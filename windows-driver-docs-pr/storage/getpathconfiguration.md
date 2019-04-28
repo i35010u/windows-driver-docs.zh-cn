@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5d81c1dbbd0dd708699cb1f70f5cc068dd02f3d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354075"
 ---
 # <a name="getpathconfiguration-function"></a>GetPathConfiguration 函数
 
@@ -37,7 +37,7 @@ void GetPathConfiguration(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *PathID*   
@@ -73,7 +73,7 @@ void GetPathConfiguration(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">MPIOwmi.h （包括 MPIOwmi.h）</td>
 </tr>
 </tbody>

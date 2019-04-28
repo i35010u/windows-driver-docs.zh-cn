@@ -1,6 +1,6 @@
 ---
-title: 筛选器模块即插即用事件通知
-description: 筛选器模块即插即用事件通知
+title: 筛选器模块 PnP 事件通知
+description: 筛选器模块 PnP 事件通知
 ms.assetid: ca1e250a-aaa8-4fbc-abe5-c30c8913a67a
 keywords:
 - 筛选器模块 WDK 网络中，PnP 事件通知
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f96ec7e9531a65b5d3720c04e53609a9429c495e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350048"
 ---
-# <a name="filter-module-pnp-event-notifications"></a>筛选器模块即插即用事件通知
+# <a name="filter-module-pnp-event-notifications"></a>筛选器模块 PnP 事件通知
 
 
 

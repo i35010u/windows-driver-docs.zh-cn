@@ -1,17 +1,17 @@
 ---
-title: 虚函数拆卸序列
-description: 虚函数拆卸序列
+title: 虚拟功能解除序列
+description: 虚拟功能解除序列
 ms.assetid: 8C59A4F7-FC5D-4680-8CDD-751422588601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b321feb096cc65e2298d03cf3991b94ca2e738c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346002"
 ---
-# <a name="virtual-function-teardown-sequence"></a>虚函数拆卸序列
+# <a name="virtual-function-teardown-sequence"></a>虚拟功能解除序列
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须能够支持以下硬件组件：

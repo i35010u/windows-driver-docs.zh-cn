@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1755716139d831c4a2015db127e99eb22ddd5e0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348543"
 ---
 # <a name="ndisstatuswwandeviceresetstatus"></a>NDIS_STATUS_WWAN_DEVICE_RESET_STATUS
 
@@ -23,10 +23,10 @@ ms.locfileid: "56523115"
 
 | | |
 | --- | --- |
-| 版本 | Windows 10 版本 1709 |
-| 标头 | Ndis.h |
+| Version | Windows 10 版本 1709 |
+| Header | Ndis.h |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [OID_WWAN_DEVICE_RESET](oid-wwan-device-reset.md)
 

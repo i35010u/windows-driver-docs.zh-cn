@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9a905dac30e8584243a4b60e72887aded34503f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349069"
 ---
 # <a name="debugrequestgetwin32majorminorversions"></a>调试\_请求\_获取\_WIN32\_主要\_次要\_版本
 

@@ -5,11 +5,11 @@ ms.assetid: 102e21eb-bad4-4ab5-8630-9ac37c33f20a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e77350d3e2f9f0d61a4caf5311ee5233dce2c8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352183"
 ---
 # <a name="procamp-control-ddi"></a>ProcAmp 控制 DDI
 

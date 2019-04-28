@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be8603547204b01d95b7df25c4bfa19c36f42e38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354396"
 ---
 # <a name="usbdevicecreatetarget-rule-kmdf"></a>UsbDeviceCreateTarget 规则 (kmdf)
 
@@ -56,7 +56,7 @@ ms.locfileid: "56525927"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**WdfUsbTargetDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff550077)

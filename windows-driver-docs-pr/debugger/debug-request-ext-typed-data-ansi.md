@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4efeb9c99f2b921b2213b714501068e8c0269d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349100"
 ---
 # <a name="debugrequestexttypeddataansi"></a>调试\_请求\_EXT\_类型化\_数据\_ANSI
 
 
 调试\_请求\_EXT\_类型化\_数据\_ANSI [**请求**](request.md)操作执行各种不同帮助解释的类型化数据的子操作。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 指定[ **EXT\_类型化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff545306)结构，它确定要执行的子操作。 此 EXT\_类型化\_数据结构中包含的输入的参数的子操作以及 （可选） 的任何其他数据。 其他数据包括在*InBuffer* EXT 后\_类型化\_数据结构。 大小*InBuffer*是包含 EXT 的缓冲区的总大小\_类型化\_数据结构和其他数据。 请参阅**EXT\_类型化\_数据**有关此结构以及如何包括附加的数据的详细信息。

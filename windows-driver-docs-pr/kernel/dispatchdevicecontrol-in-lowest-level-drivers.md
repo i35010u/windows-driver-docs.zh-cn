@@ -1,6 +1,6 @@
 ---
-title: 在最低级别驱动程序中的 DispatchDeviceControl
-description: 在最低级别驱动程序中的 DispatchDeviceControl
+title: 最低级驱动程序中的 DispatchDeviceControl
+description: 最低级驱动程序中的 DispatchDeviceControl
 ms.assetid: 51caacd3-c9e0-450e-9060-f308ab46b5a0
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e215dccc837f5b32a228ed6dd3b7762c37204260
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350033"
 ---
-# <a name="dispatchdevicecontrol-in-lowest-level-drivers"></a>在最低级别驱动程序中的 DispatchDeviceControl
+# <a name="dispatchdevicecontrol-in-lowest-level-drivers"></a>最低级驱动程序中的 DispatchDeviceControl
 
 
 

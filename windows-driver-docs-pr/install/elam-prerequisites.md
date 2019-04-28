@@ -5,11 +5,11 @@ ms.assetid: 48759EB3-F8F9-4881-BD30-6D1252F08DFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21799b9b7a3bb988d1cb2b128e504d0bceab3bd4
-ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59534161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346158"
 ---
 # <a name="elam-prerequisites"></a>ELAM 先决条件
 

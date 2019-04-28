@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef1b97c96339ed747f8dac108230f325fa606c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346246"
 ---
 # <a name="d3dkmtoutputduplgetpointershapedata-structure"></a>D3DKMT\_OUTPUTDUPL\_获取\_指针\_形状\_数据结构
 

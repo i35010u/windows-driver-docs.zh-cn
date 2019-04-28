@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3601e71eb0892cbbd2314ed0fcbe533763e98261
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348106"
 ---
 # <a name="command-string-argument-types"></a>命令字符串参数类型
 

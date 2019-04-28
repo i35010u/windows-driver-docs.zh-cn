@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机 OID 请求
-description: HYPER-V 可扩展交换机 OID 请求
+title: Hyper-V 可扩展交换机 OID 请求
+description: Hyper-V 可扩展交换机 OID 请求
 ms.assetid: 0B6D1628-DD83-4EA6-B5D5-33D74AD45EFD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 447a4aaf2898c9f089067f3d43c8b4b20eaf1529
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349548"
 ---
-# <a name="hyper-v-extensible-switch-oid-requests"></a>HYPER-V 可扩展交换机 OID 请求
+# <a name="hyper-v-extensible-switch-oid-requests"></a>Hyper-V 可扩展交换机 OID 请求
 
 
 HYPER-V 可扩展交换机接口包括以下方面使用的对象标识符 (OID) 请求：

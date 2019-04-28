@@ -1,6 +1,6 @@
 ---
-title: 管理启动驱动器的微型端口驱动程序的限制
-description: 管理启动驱动器的微型端口驱动程序的限制
+title: 对管理启动驱动器的微型端口驱动程序的限制
+description: 对管理启动驱动器的微型端口驱动程序的限制
 ms.assetid: 78375e9b-8be9-4e64-b90e-cc8c4ab1751b
 keywords:
 - 存储微型端口驱动程序 WDK、 启动驱动器
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8054aab82bd62b7a47b8d6b3025effaad30d31b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346541"
 ---
-# <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>管理启动驱动器的微型端口驱动程序的限制
+# <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>对管理启动驱动器的微型端口驱动程序的限制
 
 
 系统崩溃期间，存储微型端口驱动程序，用于管理启动设备的适配器会受到特殊限制。 时转储到磁盘的系统的内存映像，微型端口驱动程序必须运行在不同环境中。 微型端口驱动程序、 端口驱动程序和磁盘类驱动程序之间的常见通信会中断。 内核执行通过直接调用磁盘转储端口驱动程序，磁盘 I/O *diskdump.sys* (*dumpata.sys* ATA 控制器)，跳过文件系统和正常 I/O 堆栈。 磁盘转储驱动程序，都依次调用启动设备微型端口驱动程序来处理所有 I/O 操作，以及磁盘转储驱动程序会截获所有对端口驱动程序微型端口驱动程序的调用。

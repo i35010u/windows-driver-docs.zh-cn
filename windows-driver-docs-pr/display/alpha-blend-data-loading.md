@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5edf23d4319372fb9f76f989504c7571dea57250
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344640"
 ---
 # <a name="alpha-blend-data-loading"></a>Alpha 混合数据加载
 

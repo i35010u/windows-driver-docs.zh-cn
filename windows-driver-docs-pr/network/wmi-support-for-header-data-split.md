@@ -1,6 +1,6 @@
 ---
-title: 标头数据拆分为 WMI 支持
-description: 标头数据拆分为 WMI 支持
+title: 标头数据拆分的 WMI 支持
+description: 标头数据拆分的 WMI 支持
 ms.assetid: f923779d-1170-4307-97d9-9a133a62a002
 keywords:
 - 标头数据拆分 WDK、 配置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eac98ce8456209da54460947ae32e8c72e973de0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348443"
 ---
-# <a name="wmi-support-for-header-data-split"></a>标头数据拆分为 WMI 支持
+# <a name="wmi-support-for-header-data-split"></a>标头数据拆分的 WMI 支持
 
 
 

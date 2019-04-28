@@ -1,6 +1,6 @@
 ---
-title: 翻转的时间间隔
-description: 翻转的时间间隔
+title: 交替间隔
+description: 交替间隔
 ms.assetid: 9372d63c-e2a7-4f70-a4f0-c50df9183f75
 keywords:
 - 绘图页上翻转 WDK DirectDraw，时间间隔
@@ -26,13 +26,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae28d4406f78466634d321f5c0ee240596f0cefd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347571"
 ---
-# <a name="flip-intervals"></a>翻转的时间间隔
+# <a name="flip-intervals"></a>交替间隔
 
 
 ## <span id="ddk_flip_intervals_gg"></span><span id="DDK_FLIP_INTERVALS_GG"></span>

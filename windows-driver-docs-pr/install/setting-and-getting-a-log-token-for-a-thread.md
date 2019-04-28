@@ -1,6 +1,6 @@
 ---
-title: 设置和获取日志标记线程
-description: 设置和获取日志标记线程
+title: 设置和获取线程的日志标记
+description: 设置和获取线程的日志标记
 ms.assetid: 6c701b91-ae0a-48ba-a1e0-711fc21eaf60
 keywords:
 - 文本日志 WDK SetupAPI，日志上下文
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fd984a1cda789acb583c4a570992a92e9ab8c26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348682"
 ---
-# <a name="setting-and-getting-a-log-token-for-a-thread"></a>设置和获取日志标记线程
+# <a name="setting-and-getting-a-log-token-for-a-thread"></a>设置和获取线程的日志标记
 
 
 [SetupAPI 日志记录](setupapi-logging--windows-vista-and-later-.md)支持建立一个线程的日志上下文的机制。 通过设置来建立此上下文[日志令牌](log-tokens.md)线程。 安装程序 Api 提供这种机制，以便由线程调用的代码可以将日志项写入日志上下文调用线程。

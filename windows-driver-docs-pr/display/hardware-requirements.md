@@ -5,11 +5,11 @@ ms.assetid: 7297C938-D2DD-4A06-B9AD-18DDAA73A1E4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 130268432a805b92fed9cf90a644fbd19b2bbb9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353898"
 ---
 # <a name="direct3d-hardware-requirements-in-windows-8"></a>在 Windows 8 中的 Direct3D 硬件要求
 

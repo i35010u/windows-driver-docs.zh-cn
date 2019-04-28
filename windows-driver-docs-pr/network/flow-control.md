@@ -5,11 +5,11 @@ ms.assetid: e7a0846e-0999-4e40-83e0-f4877871f1e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 505340af4262ec8a8d789effdc41252b8a999f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347325"
 ---
 # <a name="flow-control"></a>流控制
 

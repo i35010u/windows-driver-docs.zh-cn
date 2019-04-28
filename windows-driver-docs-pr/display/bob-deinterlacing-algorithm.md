@@ -1,6 +1,6 @@
 ---
-title: Bob 取消隔行扫描算法
-description: Bob 取消隔行扫描算法
+title: Bob 反交错算法
+description: Bob 反交错算法
 ms.assetid: ef3220bd-841d-4187-bc86-11b999eae2bd
 keywords:
 - bob 去隔行 WDK DirectX VA，算法
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20cf5e3cbab2f267ddaf61e07947dd42ac0e078c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344634"
 ---
-# <a name="bob-deinterlacing-algorithm"></a>Bob 取消隔行扫描算法
+# <a name="bob-deinterlacing-algorithm"></a>Bob 反交错算法
 
 
 ## <span id="ddk_bob_deinterlacing_algorithm_gg"></span><span id="DDK_BOB_DEINTERLACING_ALGORITHM_GG"></span>

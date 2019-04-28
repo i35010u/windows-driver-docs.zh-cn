@@ -5,11 +5,11 @@ ms.assetid: ff3d090f-cf76-40a7-9215-8440a592f303
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d19f85569a04c35f05a9937afdaf16737e5a849b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345454"
 ---
 # <a name="sending-hid-reports-by-kernel-mode-drivers"></a>发送由内核模式驱动程序的 HID 报告
 

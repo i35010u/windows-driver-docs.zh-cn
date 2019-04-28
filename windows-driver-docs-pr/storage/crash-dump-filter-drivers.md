@@ -1,17 +1,17 @@
 ---
-title: 崩溃转储筛选器驱动程序
-description: 崩溃转储筛选器驱动程序
+title: 故障转储筛选器驱动程序
+description: 故障转储筛选器驱动程序
 ms.assetid: d91c00d7-ad17-4fa8-9e78-fee0698d9049
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec7da19c64f38f62230b51bb7e808ecbee00ce1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345203"
 ---
-# <a name="crash-dump-filter-drivers"></a>崩溃转储筛选器驱动程序
+# <a name="crash-dump-filter-drivers"></a>故障转储筛选器驱动程序
 
 
 若要扩展的 Windows Vista Service Pack 1 (SP1) 和 Windows Server 2008 和更高版本操作系统的崩溃转储接口，用途，Microsoft 已崩溃转储驱动程序堆栈中定义筛选器驱动程序支持。

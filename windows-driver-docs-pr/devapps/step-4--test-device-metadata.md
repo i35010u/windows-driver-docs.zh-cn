@@ -5,11 +5,11 @@ ms.assetid: C1DA36DE-DB89-4A2A-8B9F-DF2A279D3EDD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac63ded86f4c48343fd3073d3eb55d3bdc35984a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348368"
 ---
 # <a name="step-4-test-the-device-metadata-for-your-uwp-device-app"></a>步骤 4：测试 UWP 设备应用的设备元数据
 

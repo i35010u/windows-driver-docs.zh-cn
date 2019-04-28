@@ -1,17 +1,17 @@
 ---
-title: Storport 使用了适配器的要求
-description: Storport 使用了适配器的要求
+title: 将 Storport 与适配器配合使用的要求
+description: 将 Storport 与适配器配合使用的要求
 ms.assetid: 85adf2f9-e9eb-40d8-9177-adda150a8ea4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 845db304e2823be4be07648d809f302ec1a29404
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352623"
 ---
-# <a name="requirements-for-using-storport-with-an-adapter"></a>Storport 使用了适配器的要求
+# <a name="requirements-for-using-storport-with-an-adapter"></a>将 Storport 与适配器配合使用的要求
 
 
 ## <span id="ddk_requirements_for_using_storport_with_an_adapter_kg"></span><span id="DDK_REQUIREMENTS_FOR_USING_STORPORT_WITH_AN_ADAPTER_KG"></span>

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 090fb0fe3d97293f250989526f608dbd19d0747e
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348939"
 ---
 # <a name="oidwdisetsaeauthparams"></a>OID_WDI_SET_SAE_AUTH_PARAMS
 
@@ -36,6 +36,6 @@ ms.locfileid: "59905334"
 
 |   |   |
 | --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
+| 最低受支持的客户端 | Windows 10 版本 1903 |
 | 最低受支持的服务器 | Windows Server 2016 |
 | Header | Dot11wdi.h |

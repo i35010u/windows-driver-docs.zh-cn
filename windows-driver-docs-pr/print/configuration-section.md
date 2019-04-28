@@ -5,11 +5,11 @@ ms.assetid: 77f275d9-6cee-40a5-b118-cb82f6d2c9d3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d419da4d3a5dad2bcde8d54086b36b891d13d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349255"
 ---
 # <a name="configuration-section"></a>Configuration 节
 

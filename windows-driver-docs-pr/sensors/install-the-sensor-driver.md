@@ -5,11 +5,11 @@ ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda94f5dc8955bce05a900764d818c967f15779c
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345256"
 ---
 # <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 

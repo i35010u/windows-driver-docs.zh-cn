@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d26ee923972cf76b2de93340d4cc88b6a51fdc46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346916"
 ---
 # <a name="creating-and-destroying-directdraw-surfaces"></a>创建和销毁 DirectDraw 图面
 

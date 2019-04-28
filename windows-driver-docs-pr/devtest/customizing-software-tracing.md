@@ -5,11 +5,11 @@ ms.assetid: ae547a51-b8a5-4e61-8da4-24aa247a360d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b504e7821accf47eeff1154ae7a8cb7543fd32b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356615"
 ---
 # <a name="customizing-software-tracing"></a>自定义软件跟踪
 

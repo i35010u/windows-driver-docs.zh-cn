@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RESET_END 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c6c344047bde049e87f03fd2edcc02590703a0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353162"
 ---
 # <a name="ndisstatusresetend"></a>NDIS\_状态\_重置\_结束
 
@@ -39,17 +39,17 @@ NDIS 微型端口驱动程序启动时重置操作，会使用过量的驱动程
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_重置\_开始**](ndis-status-reset-start.md)

@@ -1,6 +1,6 @@
 ---
-title: 锁定 Swizzled 分配
-description: 锁定 Swizzled 分配
+title: 锁定重排分配
+description: 锁定重排分配
 ms.assetid: c9be52d9-36b2-4a0f-9629-01b31293af38
 keywords:
 - 锁定 WDK 显示 swizzled 分配
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4488bf5f490d4fa43b76f2df7c340aa6d18d8cb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347552"
 ---
-# <a name="locking-swizzled-allocations"></a>锁定 Swizzled 分配
+# <a name="locking-swizzled-allocations"></a>锁定重排分配
 
 
 视频内存管理器提供特殊支持直接 swizzled 分配 CPU 访问 (也就是说，在其中分配显示微型端口驱动程序[ **DxgkDdiCreateAllocation** ](https://msdn.microsoft.com/library/windows/hardware/ff559606)函数集**Swizzled**中的标志**标志**的成员[ **DXGK\_ALLOCATIONINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff560960)结构)。

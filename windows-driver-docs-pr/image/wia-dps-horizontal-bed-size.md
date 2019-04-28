@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 091874d26248c2b01cab016008595918ba168387
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352735"
 ---
 # <a name="wiadpshorizontalbedsize"></a>WIA\_DPS\_水平\_平台\_大小
 
@@ -45,7 +45,7 @@ WIA\_DPS\_水平\_平台\_SIZE 属性包含物理扫描仪的平板、 千分之
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>从 Windows Vista 开始，WIA_DPS_HORIZONTAL_BED_SIZE 属性仍然可用，但它已被取代 WIA_IPS_MAX_HORIZONTAL_SIZE 属性，因此您应该将其视为可选。</p></td>
 </tr>
 <tr class="even">

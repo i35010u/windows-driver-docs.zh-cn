@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e56dbb72a4e6380fae617855c7eed206f570df7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353902"
 ---
 # <a name="irqlkewaitformutexobject-rule-wdm"></a>IrqlKeWaitForMutexObject 规则 (wdm)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56525666"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**KeWaitForSingleObject**](https://msdn.microsoft.com/library/windows/hardware/ff553350)

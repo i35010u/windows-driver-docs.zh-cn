@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CONNECT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a5a9a95aa1390d530160326764507d6bd086a8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351243"
 ---
 # <a name="oidswitchnicconnect"></a>OID\_交换机\_NIC\_连接
 
@@ -83,17 +83,17 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

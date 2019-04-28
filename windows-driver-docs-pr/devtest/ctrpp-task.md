@@ -5,11 +5,11 @@ ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356623"
 ---
 # <a name="ctrpp-task"></a>Ctrpp 任务
 
@@ -54,7 +54,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">源</td>
+<td align="left">Source</td>
 <td align="left">@(Ctrpp)</td>
 <td align="left"></td>
 <td align="left">所需的 ITaskItem 参数。 指定要处理的计数器清单。</td>

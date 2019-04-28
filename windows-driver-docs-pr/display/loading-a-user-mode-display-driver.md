@@ -1,6 +1,6 @@
 ---
-title: 正在加载用户模式显示驱动程序
-description: 正在加载用户模式显示驱动程序
+title: 加载用户模式显示驱动程序
+description: 加载用户模式显示驱动程序
 ms.assetid: bfebe590-bcde-40cf-9074-8d0f63e0562d
 keywords:
 - INF 文件 WDK 显示，用户模式驱动程序加载
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81932134fbd1d5f3500ac576a3bc0703dd19f72a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347583"
 ---
-# <a name="loading-a-user-mode-display-driver"></a>正在加载用户模式显示驱动程序
+# <a name="loading-a-user-mode-display-driver"></a>加载用户模式显示驱动程序
 
 
 以便在驱动程序安装过程中用户模式显示驱动程序的 DLL 名称添加到注册表，以便 Microsoft Direct3D 运行时可以随后加载 DLL，必须添加注册表部分中的 INF 文件设置以下条目：

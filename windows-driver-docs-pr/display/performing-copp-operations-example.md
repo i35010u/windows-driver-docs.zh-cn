@@ -1,5 +1,5 @@
 ---
-title: 执行 COPP 操作示例
+title: 执行 COPP 操作的示例
 description: 用于执行 COPP 操作示例
 ms.assetid: ba5c98d3-63d1-4e2d-ba11-6054c1623e80
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11716ec6ce25a67748a93cd2afe860a396b32f20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352293"
 ---
-# <a name="performing-copp-operations-example"></a>执行 COPP 操作示例
+# <a name="performing-copp-operations-example"></a>执行 COPP 操作的示例
 
 
 ## <span id="ddk_performing_copp_operations_gg"></span><span id="DDK_PERFORMING_COPP_OPERATIONS_GG"></span>

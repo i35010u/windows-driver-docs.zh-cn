@@ -5,11 +5,11 @@ ms.assetid: 87AA23A1-AB70-48CC-8F96-350C121F250E
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af7ecf9e047111c316a4cfa1b662ed829d434256
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346317"
 ---
 # <a name="debugging-windows-apps-using-the-windows-debugger"></a>使用 Windows 调试器调试 Windows 应用
 

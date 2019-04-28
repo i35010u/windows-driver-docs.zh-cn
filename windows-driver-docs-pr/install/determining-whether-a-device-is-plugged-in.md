@@ -1,6 +1,6 @@
 ---
-title: 确定是否在插入设备
-description: 确定是否在插入设备
+title: 确定设备是否已插入
+description: 确定设备是否已插入
 ms.assetid: 26dc3c2b-49a6-4bba-b86b-2c93a1914f87
 keywords:
 - 重新安装拔出的设备
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa9d278f6b4d44cfff671b4f510bdf187b92984b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346195"
 ---
-# <a name="determining-whether-a-device-is-plugged-in"></a>确定是否在插入设备
+# <a name="determining-whether-a-device-is-plugged-in"></a>确定设备是否已插入
 
 
 请注意，自动运行调用的行为*设备安装应用程序*必须依赖于是否用户插入硬件中第一次或第一次插入分发介质。 由于独立硬件供应商 (Ihv) 通常会提供一个分发磁盘，并且磁盘只能有一个自动运行调用应用程序，因此将自动运行调用设备安装应用程序必须确定是否在插入你的设备。

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8643e04580b7c5077bf5457c47d4b6f6ac8af6ed
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351502"
 ---
 # <a name="zombies"></a>!zombies
 

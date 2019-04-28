@@ -5,11 +5,11 @@ ms.assetid: CC911199-A16D-4B06-A5BE-FA476F916F21
 ms.date: 06/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: bf11114b57547ea264806214defb4dc1d4ce694a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352916"
 ---
 # <a name="span-iddebuggerperformingkernel-modedebuggingusingwindbgspanlive-kernel-mode-debugging-using-windbg"></a><span id="debugger.performing_kernel-mode_debugging_using_windbg"></span>实时内核模式下使用 WinDbg 进行调试
 

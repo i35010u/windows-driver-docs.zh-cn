@@ -1,6 +1,6 @@
 ---
-title: 关闭调用
-description: 关闭调用
+title: 放弃呼叫
+description: 放弃呼叫
 ms.assetid: 6b695c28-16c1-4961-9633-e56c009337b2
 keywords:
 - 关闭调用 WDK 的 CoNDIS
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 007438aac7b2e4b3361bd487ae2a0628cb826e20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350826"
 ---
-# <a name="tearing-down-a-call"></a>关闭调用
+# <a name="tearing-down-a-call"></a>放弃呼叫
 
 
 

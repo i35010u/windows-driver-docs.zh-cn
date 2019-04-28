@@ -5,11 +5,11 @@ ms.assetid: 56F4202D-6A5F-4177-BBFD-70DA717FF24A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2a29ec8c61a0a2e3d4873370c800ab6a80f359a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350577"
 ---
 # <a name="debugging-oca-minidump-files"></a>调试 OCA 小型转储文件
 
@@ -53,7 +53,7 @@ Microsoft 在 Internet 上提供符号服务器，你可以使用它来分析显
 
 有关将 WER 集成到应用程序中的更多信息，请参阅[使用 WER](https://msdn.microsoft.com/library/bb513616.aspx)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [高级驱动程序调试\[336 KB\] \[PPT\]](https://download.microsoft.com/download/f/0/5/f05a42ce-575b-4c60-82d6-208d3754b2d6/adv-drv_debug.ppt)

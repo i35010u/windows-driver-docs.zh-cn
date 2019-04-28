@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3da45d1c5f9088da55ec0b771ecfecc433b25ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349636"
 ---
 # <a name="hsmacaddress-structure"></a>HS\_MAC\_地址结构
 
@@ -46,7 +46,7 @@ MAC 地址。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
 </tr>
 </tbody>

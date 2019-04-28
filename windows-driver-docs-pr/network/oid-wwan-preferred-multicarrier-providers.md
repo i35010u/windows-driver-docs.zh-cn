@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 63b98071b56285e6c112c7eb14dd4a608446cf15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354594"
 ---
 # <a name="oidwwanpreferredmulticarrierproviders"></a>OID\_WWAN\_PREFERRED\_多\_提供程序
 
@@ -37,17 +37,17 @@ OID\_WWAN\_PREFERRED\_多\_提供程序是用于*设置*或者*查询*首选多�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_WWAN\_PREFERRED\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh831864)

@@ -1,6 +1,6 @@
 ---
-title: 引入的 Static Driver Verifier
-description: 引入的 Static Driver Verifier
+title: 静态驱动程序验证程序简介
+description: 静态驱动程序验证程序简介
 ms.assetid: fa6e8b0f-0d0f-4293-87ec-e67decd6acb7
 keywords:
 - WDK，关于 Static Driver Verifier 的 static Driver Verifier
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6bb44e32f323c409d8f0d8930d2e289ad0210d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356535"
 ---
-# <a name="introducing-static-driver-verifier"></a>引入的 Static Driver Verifier
+# <a name="introducing-static-driver-verifier"></a>静态驱动程序验证程序简介
 
 
 Static Driver Verifier (SDV) 是运行在编译时静态验证工具。 它通过种执行源代码，从而使代码有关的状态的操作系统和驱动程序的初始状态的最少可能假设了驱动程序代码中的路径。 因此，SDV 可以运用中传统测试会丢失的路径中的代码。

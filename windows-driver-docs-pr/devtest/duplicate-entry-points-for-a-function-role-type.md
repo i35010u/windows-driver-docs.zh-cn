@@ -1,17 +1,17 @@
 ---
-title: 重复入口点函数角色类型
-description: 重复入口点函数角色类型
+title: 函数角色类型的重复入口点
+description: 函数角色类型的重复入口点
 ms.assetid: cf6604da-bd79-4adf-a08f-9b903aa91133
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0c356561c2bae6c8dc73f097eac12b04e5f2f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344854"
 ---
-# <a name="duplicate-entry-points-for-a-function-role-type"></a>重复入口点函数角色类型
+# <a name="duplicate-entry-points-for-a-function-role-type"></a>函数角色类型的重复入口点
 
 
 对于大多数函数角色类型，SDV 假设驱动程序，最多为每个入口点的一个回调函数。 但是，有一些函数角色类型可以具有多个与之关联的事件回调函数。 例如，KMDF 驱动程序可能有多个[ *EvtTimerFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541823)或[ *EvtDpcFunc* ](https://msdn.microsoft.com/library/windows/hardware/ff541683) （使用 EVT的回调函数\_WDF\_计时器和 EVT\_WDF\_DPC 角色类型批注)。 在这种情况下，SDV 将追加到 Sdv map.h 中的函数类型的整数。 例如，如果您的驱动程序有两个 DPC 回调函数，SDV 将它们映射到**有趣\_WDF\_DPC\_1**并**有趣\_WDF\_DPC\_2**.

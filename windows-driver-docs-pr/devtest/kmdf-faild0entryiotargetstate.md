@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 991fb8b77a5fccce386683c7260a31c7cc304ba9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350410"
 ---
 # <a name="faild0entryiotargetstate-rule-kmdf"></a>FailD0EntryIoTargetState 规则 (kmdf)
 

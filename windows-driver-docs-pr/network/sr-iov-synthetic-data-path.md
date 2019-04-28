@@ -1,17 +1,17 @@
 ---
-title: SR-IOV 综合数据路径
-description: SR-IOV 综合数据路径
+title: SR-IOV 合成数据路径
+description: SR-IOV 合成数据路径
 ms.assetid: FB7E57F6-AA99-421D-8344-B76615BD20ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ab27fbe1e04a4518925bc08891f24574df8f13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346053"
 ---
-# <a name="sr-iov-synthetic-data-path"></a>SR-IOV 综合数据路径
+# <a name="sr-iov-synthetic-data-path"></a>SR-IOV 合成数据路径
 
 
 当启动 HYPER-V 子分区，并且运行来宾操作系统时，虚拟化堆栈启动网络虚拟服务客户端 (NetVSC)。 NetVSC 公开提供给在来宾操作系统中运行的协议堆栈的一个微型端口驱动程序边缘的虚拟机 (VM) 网络适配器。

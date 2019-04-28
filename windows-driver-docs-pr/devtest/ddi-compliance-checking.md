@@ -1,17 +1,17 @@
 ---
-title: DDI 符合性检查
+title: DDI 合规性检查
 description: DDI 符合性检查选项确定驱动程序是否正确交互与 Windows 操作系统内核。
 ms.assetid: 1E536DE0-071B-4529-B228-DB5DAE71099C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2293fc4dec72244756870dc8bbfdd3ea19c1b608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356620"
 ---
-# <a name="ddi-compliance-checking"></a>DDI 符合性检查
+# <a name="ddi-compliance-checking"></a>DDI 合规性检查
 
 
 DDI 符合性检查选项确定驱动程序是否正确交互与 Windows 操作系统内核。
@@ -20,7 +20,7 @@ DDI 符合性检查选项确定驱动程序是否正确交互与 Windows 操作�
 
 
 
-| DDI 符合性检查 |
+| DDI 合规性检查 |
 |-------------------------|
 |                         |
 

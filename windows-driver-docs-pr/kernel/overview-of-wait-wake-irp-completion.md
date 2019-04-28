@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 936b23454102a8fe20fffc79f4a0e279fe65cb50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352002"
 ---
 # <a name="overview-of-waitwake-irp-completion"></a>等待/唤醒 IRP 完成概述
 

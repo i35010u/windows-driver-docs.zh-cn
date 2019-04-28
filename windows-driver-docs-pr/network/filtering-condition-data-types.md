@@ -1,5 +1,5 @@
 ---
-title: 筛选条件的数据类型
+title: 筛选条件数据类型
 description: 本部分介绍筛选条件的数据类型。
 ms.assetid: 43810fc0-f386-4a21-9229-c8c8f8d6710f
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3f6d1796ea469cd3849cde750a6fc9b7709d21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350001"
 ---
-# <a name="filtering-condition-data-types"></a>筛选条件的数据类型
+# <a name="filtering-condition-data-types"></a>筛选条件数据类型
 
 每个筛选条件的条件值的数据类型指定为 FWP_DATA_TYPE 值，如下所示。
 

@@ -1,6 +1,6 @@
 ---
-title: 自动检测打印机的硬推动 PPD
-description: 自动检测打印机的硬推动 PPD
+title: 自动检测 PPD 的打印机硬盘驱动器
+description: 自动检测 PPD 的打印机硬盘驱动器
 ms.assetid: 0f2eba5c-1a05-4aaf-8780-266d2339570e
 keywords:
 - 自动检测打印机硬盘驱动器 WDK 打印机自动配置
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ddc8db58ea8a5db956970fe4435b8ce4a078c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349259"
 ---
-# <a name="autodetect-the-printers-hard-drive-for-ppd"></a>自动检测打印机的硬推动 PPD
+# <a name="autodetect-the-printers-hard-drive-for-ppd"></a>自动检测 PPD 的打印机硬盘驱动器
 
 
 将条目添加到 PPD 文件中任何硬与驱动器有关功能的 GDL 文件。 可以通过使用在前面的示例所示的相同技术 GDL 文件中创建相应的功能构造来执行此操作。 以下 GDL 构造会自动检测是否已安装硬盘。

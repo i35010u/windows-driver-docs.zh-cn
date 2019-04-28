@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5e566b3456886913988461e9469b3ed6e5af45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343867"
 ---
 # <a name="changes-to-the-amount-of-physical-memory"></a>物理内存量的更改
 

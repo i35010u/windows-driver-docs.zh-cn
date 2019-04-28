@@ -1,6 +1,6 @@
 ---
-title: 搜索 XML 元素
-description: 搜索 XML 元素
+title: search XML 元素
+description: search XML 元素
 ms.assetid: 34eff240-a96a-4b73-a001-5ea698e9f7ae
 keywords:
 - 搜索 XML 元素设备和驱动程序安装
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 397fba7639374dcad7a28f22a44528674db45c62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348695"
 ---
-# <a name="search-xml-element"></a>搜索 XML 元素
+# <a name="search-xml-element"></a>search XML 元素
 
 
 \[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
@@ -83,7 +83,7 @@ ms.locfileid: "56522317"
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

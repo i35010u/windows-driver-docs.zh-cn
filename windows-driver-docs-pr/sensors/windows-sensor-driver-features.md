@@ -5,11 +5,11 @@ ms.assetid: 6272DC75-7412-4D74-B009-D1DDF343B44B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf56729ae41bc7769876fcc8d524a73322df784c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345056"
 ---
 # <a name="windows-sensor-driver-features"></a>Windows 传感器驱动程序功能
 

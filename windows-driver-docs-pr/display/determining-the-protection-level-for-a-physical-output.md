@@ -1,19 +1,19 @@
 ---
-title: 确定物理输出保护级别
-description: 确定物理输出保护级别
+title: 确定物理输出的保护级别
+description: 确定物理输出的保护级别
 ms.assetid: ea06903a-0ad5-43fd-b2d3-013584ae6f69
 keywords:
 - 保护级别 WDK 显示，确定物理输出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efc6ae4e16b771eb4bab21c3c490042a4ff63cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348826"
 ---
-# <a name="determining-the-protection-level-for-a-physical-output"></a>确定物理输出保护级别
+# <a name="determining-the-protection-level-for-a-physical-output"></a>确定物理输出的保护级别
 
 
 应使用以下各节中的算法来确定物理的视频输出连接器的保护级别。 在伪代码中表示这些算法。

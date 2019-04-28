@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed85b901d9f80e57b5647a58fb6dceb08bdbebc
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351356"
 ---
 # <a name="bug-check-0x130-dynamicaddprocessormismatch"></a>Bug 检查 0x130：DYNAMIC\_ADD\_PROCESSOR\_MISMATCH
 

@@ -1,6 +1,6 @@
 ---
-title: 将数据包发送从 CoNDIS WAN 微型端口驱动程序
-description: 将数据包发送从 CoNDIS WAN 微型端口驱动程序
+title: 从 CoNDIS WAN 微型端口驱动程序发送数据包
+description: 从 CoNDIS WAN 微型端口驱动程序发送数据包
 ms.assetid: 66c42e90-e0d9-47d1-9e6d-cadb511bcb7a
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络数据包发送
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38b7cca58a4078077c91857a9d088c572c33cdc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346748"
 ---
-# <a name="sending-packets-from-a-condis-wan-miniport-driver"></a>将数据包发送从 CoNDIS WAN 微型端口驱动程序
+# <a name="sending-packets-from-a-condis-wan-miniport-driver"></a>从 CoNDIS WAN 微型端口驱动程序发送数据包
 
 
 

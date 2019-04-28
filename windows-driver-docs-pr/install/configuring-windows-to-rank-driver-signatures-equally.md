@@ -5,11 +5,11 @@ ms.assetid: 727ad66d-b8f3-4e22-b51f-af9571ae0ec8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6afc27ab997232703ecea67a4cd01e8b1dfc4d3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346847"
 ---
 # <a name="configuring-windows-to-rank-driver-signatures-equally"></a>将 Windows 配置为对驱动程序签名进行平等的分级
 

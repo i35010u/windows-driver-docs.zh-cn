@@ -1,17 +1,17 @@
 ---
-title: 管理本地 DCBX 愿意状态
-description: 管理本地 DCBX 愿意状态
+title: 管理本地 DCBX 意愿状态
+description: 管理本地 DCBX 意愿状态
 ms.assetid: B37CA18B-FCCD-414D-95AB-0C54B9F1F421
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8bf348dbc6ee033ae6cd0f0e3f85b04ff4bd7fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343497"
 ---
-# <a name="managing-the-local-dcbx-willing-state"></a>管理本地 DCBX 愿意状态
+# <a name="managing-the-local-dcbx-willing-state"></a>管理本地 DCBX 意愿状态
 
 
 IEEE 802.1Qaz 草稿标准定义的数据中心桥接交换 (DCBX) 协议。 此协议允许在网络适配器 （本地对等方） 和直接连接的远程对等方之间交换 DCB 配置参数。 这样，这些对等方可以调整和优化服务质量 (QoS) 参数，以优化通过连接的数据传输。

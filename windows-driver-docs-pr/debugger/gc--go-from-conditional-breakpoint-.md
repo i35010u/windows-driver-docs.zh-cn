@@ -1,5 +1,5 @@
 ---
-title: gc （从条件性断点转）
+title: gc（从条件断点继续）
 description: Gc 命令继续执行从条件断点命中断点 （单步执行、 跟踪、 或自由地执行） 所用的方式相同。
 ms.assetid: 7850269a-3fc7-48b6-a369-bb020a5e11c3
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 79095e76fcd3a683ed45e2ab7511c86d9a6e92f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347097"
 ---
-# <a name="gc-go-from-conditional-breakpoint"></a>gc （从条件性断点转）
+# <a name="gc-go-from-conditional-breakpoint"></a>gc（从条件断点继续）
 
 
 **Gc**命令继续执行从条件断点命中断点 （单步执行、 跟踪，或自由地执行） 所用的方式相同。

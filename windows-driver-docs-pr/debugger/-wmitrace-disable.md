@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fb49cbd5fcf8b1fc1139e7601b8644458b3e379
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344224"
 ---
 # <a name="wmitracedisable"></a>!wmitrace.disable
 

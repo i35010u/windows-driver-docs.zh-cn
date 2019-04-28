@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PRESHUTDOWN 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 17f955d1179697ebdc8d8940b1abd0df293a703b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354566"
 ---
 # <a name="oidwwanpreshutdown"></a>OID\_WWAN\_PRESHUTDOWN
 
@@ -33,17 +33,17 @@ OID\_WWAN\_PRESHUTDOWN 发送通知调制解调器，系统即将进入关机阶
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>从 Windows 10，版本 1511年开始可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_WWAN\_PRESHUTDOWN\_状态**](https://msdn.microsoft.com/library/windows/hardware/mt593233)

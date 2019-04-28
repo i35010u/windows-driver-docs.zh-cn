@@ -1,19 +1,19 @@
 ---
-title: 使用源代码文件
-description: 使用源代码文件
+title: 使用源文件
+description: 使用源文件
 ms.assetid: c6dfcb37-140f-43d8-aa15-14f0317b5e19
 keywords:
 - 调试器引擎 API、 源
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b59dcc530b3d4c9708c7539b049b654e2a7aeaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353169"
 ---
-# <a name="using-source-files"></a>使用源代码文件
+# <a name="using-source-files"></a>使用源文件
 
 
 [调试器引擎](introduction.md#debugger-engine)维护*源路径*，这是目录和包含与最新的目标源代码文件的源服务器的列表。 调试器引擎可以搜索这些目录和源文件的源服务器。 符号文件的帮助下，调试器引擎可匹配目标的内存中的位置与源文件中的行。

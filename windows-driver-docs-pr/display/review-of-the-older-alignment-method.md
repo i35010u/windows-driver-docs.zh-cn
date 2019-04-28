@@ -1,6 +1,6 @@
 ---
-title: 评审的较旧的对齐方式方法
-description: 评审的较旧的对齐方式方法
+title: 回顾旧式对齐方法
+description: 回顾旧式对齐方法
 ms.assetid: 4efc380f-6303-42e1-8651-c9d64498942a
 keywords:
 - 绘制扩展 WDK DirectDraw 图面上对齐
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75e34887915424364e5893f3aac3581aefcf84db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351290"
 ---
-# <a name="review-of-the-older-alignment-method"></a>评审的较旧的对齐方式方法
+# <a name="review-of-the-older-alignment-method"></a>回顾旧式对齐方法
 
 
 ## <span id="ddk_review_of_the_older_alignment_method_gg"></span><span id="DDK_REVIEW_OF_THE_OLDER_ALIGNMENT_METHOD_GG"></span>

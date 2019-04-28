@@ -1,17 +1,17 @@
 ---
-title: 可移动设备功能的概述
-description: 可移动设备功能的概述
+title: 可移动设备功能概述
+description: 可移动设备功能概述
 ms.assetid: c6dfb2ac-89a5-40fd-ae9a-1f2800af9ef8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65e92ad0b95132a95afeb3bb60f158cb4042c73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348745"
 ---
-# <a name="overview-of-the-removable-device-capability"></a>可移动设备功能的概述
+# <a name="overview-of-the-removable-device-capability"></a>可移动设备功能概述
 
 
 可移动设备功能是一些 (**可移动**) 中设置总线驱动程序**DEVICE_CAPABILITIES**)。

@@ -1,17 +1,17 @@
 ---
-title: DIFx 指导原则
-description: DIFx 指导原则
+title: DIFx 指南
+description: DIFx 指南
 ms.assetid: de34f810-0e90-4626-b84d-160ac61541ad
 ms.date: 05/24/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ecc9e613e9207794263a89b1a4c677fd8bda05ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356071"
 ---
-# <a name="difx-guidelines"></a>DIFx 指导原则
+# <a name="difx-guidelines"></a>DIFx 指南
 
 从 Windows 10 版本 1607 (Redstone 1) 开始，驱动程序安装框架 (DIFx) 工具不再包含在 WDK 中。  相反，我们建议作为一个独立包，不需要的安装程序，理想情况下通过 Windows Update 来提供您的驱动程序。  若要将您的驱动程序添加到 Windows 更新，第一步是提交到驱动程序包[Windows 硬件开发人员中心](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)。
 

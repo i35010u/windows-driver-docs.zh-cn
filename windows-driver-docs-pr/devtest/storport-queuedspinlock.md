@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b42de30b120feb2efbfe7c68f67b32b2e99914
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345737"
 ---
 # <a name="queuedspinlock-rule-storport"></a>QueuedSpinLock 规则 (storport)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56522191"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**KeAcquireInStackQueuedSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff551899)

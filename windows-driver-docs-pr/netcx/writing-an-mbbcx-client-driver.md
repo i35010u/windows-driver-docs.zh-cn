@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fdbe9f8861a0db9217fdbf4c6276003547a815
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353412"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>编写 MBBCx 客户端驱动程序
 

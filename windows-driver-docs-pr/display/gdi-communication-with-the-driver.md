@@ -1,6 +1,6 @@
 ---
-title: 使用驱动程序的 GDI 通信
-description: 使用驱动程序的 GDI 通信
+title: GDI 与驱动程序的通信
+description: GDI 与驱动程序的通信
 ms.assetid: 81d9e87f-883b-4019-86fc-bccde861de46
 keywords:
 - GDI WDK Windows 2000 显示，驱动程序通信
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35905c02d622b0e31c1aaedf6d25190361cfa1a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353863"
 ---
-# <a name="gdi-communication-with-the-driver"></a>使用驱动程序的 GDI 通信
+# <a name="gdi-communication-with-the-driver"></a>GDI 与驱动程序的通信
 
 
 ## <span id="ddk_gdi_communication_with_the_driver_gg"></span><span id="DDK_GDI_COMMUNICATION_WITH_THE_DRIVER_GG"></span>

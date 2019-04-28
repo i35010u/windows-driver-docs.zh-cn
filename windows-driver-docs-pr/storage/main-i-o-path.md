@@ -5,11 +5,11 @@ ms.assetid: 643842e4-a75e-4d86-a1f7-d1a4468b5e17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5addbfc40365043d8cfed8f03674968192b7cca9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355571"
 ---
 # <a name="main-io-path"></a>主要 I/O 路径
 

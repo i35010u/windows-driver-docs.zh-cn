@@ -1,5 +1,5 @@
 ---
-title: 输入 （重复执行最后一个命令）
+title: ENTER（重复上一条命令）
 description: ENTER 键重复刚才的最后一个命令。
 ms.assetid: 058e455a-8934-4b28-8cf0-2d3f09a7e7cc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd72fad5a79c949b008ae271f5d89fe0d1e076f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347857"
 ---
-# <a name="enter-repeat-last-command"></a>输入 （重复执行最后一个命令）
+# <a name="enter-repeat-last-command"></a>ENTER（重复上一条命令）
 
 
 ENTER 键重复刚才的最后一个命令。

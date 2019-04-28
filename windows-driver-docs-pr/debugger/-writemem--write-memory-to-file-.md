@@ -1,5 +1,5 @@
 ---
-title: .writemem （到文件写入内存）
+title: .writemem（将内存写入文件）
 description: .Writemem 命令向文件写入内存的一部分。
 ms.assetid: 928e9452-d9b4-49fa-a5fa-cdc3832d7349
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed5a669a39292388e96294742b9f7749516f03f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348033"
 ---
-# <a name="writemem-write-memory-to-file"></a>.writemem （到文件写入内存）
+# <a name="writemem-write-memory-to-file"></a>.writemem（将内存写入文件）
 
 
 **.Writemem**命令向文件写入内存的一部分。

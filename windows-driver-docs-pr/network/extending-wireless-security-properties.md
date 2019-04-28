@@ -1,6 +1,6 @@
 ---
-title: 扩展的无线安全属性
-description: 扩展的无线安全属性
+title: 扩展无线安全属性
+description: 扩展无线安全属性
 ms.assetid: be6af188-fa60-4ac8-a699-97a3baaec6be
 keywords:
 - IHV UI 扩展 DLL WDK 本机 802.11，安全属性
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49c9ad86cb3185d24e3d1df13bb29c9c9bd079d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347416"
 ---
-# <a name="extending-wireless-security-properties"></a>扩展的无线安全属性
+# <a name="extending-wireless-security-properties"></a>扩展无线安全属性
 
 
 

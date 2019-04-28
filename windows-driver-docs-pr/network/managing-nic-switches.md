@@ -1,17 +1,17 @@
 ---
-title: 管理 NIC 开关
-description: 管理 NIC 开关
+title: 管理 NIC 交换机
+description: 管理 NIC 交换机
 ms.assetid: EE198C8D-427B-4013-8D19-5323332A4D87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2972ccf8272335c115c40929722024b57eefaf62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343547"
 ---
-# <a name="managing-nic-switches"></a>管理 NIC 开关
+# <a name="managing-nic-switches"></a>管理 NIC 交换机
 
 
 本部分介绍的要求和管理支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器上的 NIC 开关的指南。 有关 PCI Express (PCIe) 物理函数 (PF) 的 SR-IOV 网络适配器的微型端口驱动程序管理适配器上的 NIC 开关。

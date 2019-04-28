@@ -1,17 +1,17 @@
 ---
-title: 传感器和位置在 Windows 平台简介
-description: 传感器和位置在 Windows 平台简介
+title: Windows 中的传感器和位置平台简介
+description: Windows 中的传感器和位置平台简介
 ms.assetid: 62e945e5-78a1-4eb6-ad59-b30cf5e3d5ad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43bb07f40abf23af895b6d5a0dfe1e7c318f1909
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345175"
 ---
-# <a name="introduction-to-the-sensor-and-location-platform-in-windows"></a>传感器和位置在 Windows 平台简介
+# <a name="introduction-to-the-sensor-and-location-platform-in-windows"></a>Windows 中的传感器和位置平台简介
 
 
 传感器设备的 Windows 操作系统提供本机支持。 此支持包括位置传感器，例如 GPS 设备。 作为此支持的一部分，该平台提供公开的软件开发人员和使用者的传感器设备的设备制造商的标准方法。 同时，平台会提供标准化 API 开发人员和设备驱动程序接口 (DDI) 使用传感器和传感器数据。 本部分总结了 Windows 传感器和位置平台、 讨论的各个组成部分平台，并介绍如何部分协同工作以提供用于处理传感器的综合系统。
@@ -46,11 +46,11 @@ Windows 传感器和位置平台包括以下开发人员和用户组件：
 
 ### <a name="sensor-api"></a>传感器 API
 
-Windows 传感器 API 使 c + + 开发人员能够使用一组 COM 接口创建基于传感器的程序。 API 定义来执行常见传感器编程任务，包括管理按类别、 类型或 ID、 管理传感器事件，使用不同的传感器和传感器集合和处理传感器数据的传感器的接口。 Windows SDK 包含标头文件、 文档、 示例和工具来帮助指南软件开发人员的关于如何在 Windows 程序中使用传感器。
+Windows 传感器 API，C++开发人员通过使用一组 COM 接口中创建基于传感器的程序。 API 定义来执行常见传感器编程任务，包括管理按类别、 类型或 ID、 管理传感器事件，使用不同的传感器和传感器集合和处理传感器数据的传感器的接口。 Windows SDK 包含标头文件、 文档、 示例和工具来帮助指南软件开发人员的关于如何在 Windows 程序中使用传感器。
 
 ### <a name="location-api"></a>位置 API
 
-位置 API 在传感器平台上构建，提供保护用户隐私的同时检索有关地理位置数据的简单方法。 位置 API 提供了通过 COM 接口表示对象的一组其功能。 这些对象可以通过编程人员了解如何通过 c + + 编程语言，或在脚本编写语言，如 JScript 中使用 COM 使用。 脚本支持在本地计算机区域，例如小工具中运行的项目的位置数据，轻松访问。 Windows SDK 包括标头文件、 文档 （包括脚本引用文档）、 示例和工具来帮助指导如何在其程序中使用位置信息的 Web 和软件开发人员。
+位置 API 在传感器平台上构建，提供保护用户隐私的同时检索有关地理位置数据的简单方法。 位置 API 提供了通过 COM 接口表示对象的一组其功能。 这些对象可由编程人员了解如何使用通过 COMC++编程语言，或在脚本编写语言，如 JScript。 脚本支持在本地计算机区域，例如小工具中运行的项目的位置数据，轻松访问。 Windows SDK 包括标头文件、 文档 （包括脚本引用文档）、 示例和工具来帮助指导如何在其程序中使用位置信息的 Web 和软件开发人员。
 
 ### <a name="user-control-panel"></a>用户控件面板
 

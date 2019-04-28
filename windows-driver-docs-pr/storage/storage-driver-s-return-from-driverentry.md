@@ -1,6 +1,6 @@
 ---
-title: 从 DriverEntry 存储驱动程序返回
-description: 从 DriverEntry 存储驱动程序返回
+title: 存储驱动程序从 DriverEntry 返回的内容
+description: 存储驱动程序从 DriverEntry 返回的内容
 ms.assetid: a5772e9c-ec7b-4570-aaae-d2879f7e0bc7
 keywords:
 - 返回值 WDK SCSI
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e9d41262f3b4981bf18f5e808db818dbda53054
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348457"
 ---
-# <a name="storage-drivers-return-from-driverentry"></a>从 DriverEntry 存储驱动程序返回
+# <a name="storage-drivers-return-from-driverentry"></a>存储驱动程序从 DriverEntry 返回的内容
 
 
 ## <span id="ddk_storage_driver_s_return_from_driverentry_kg"></span><span id="DDK_STORAGE_DRIVER_S_RETURN_FROM_DRIVERENTRY_KG"></span>

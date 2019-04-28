@@ -5,11 +5,11 @@ ms.assetid: e5d04e61-859a-49ee-bc54-58be4133b38a
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 57703edb67b4db5b2b3776cc550ede5c4a46db2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349301"
 ---
 # <a name="statusupdated"></a>StatusUpdated
 

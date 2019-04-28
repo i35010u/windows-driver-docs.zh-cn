@@ -1,6 +1,6 @@
 ---
-title: 必需和可选磁带 Miniclass 例程
-description: 必需和可选磁带 Miniclass 例程
+title: 必需的和可选的磁带微型类例程
+description: 必需的和可选的磁带微型类例程
 ms.assetid: 7a641199-2607-4980-bd8b-ec3856b311ef
 keywords:
 - 磁带驱动程序 WDK 存储，可选的例程
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f50eae3803f9297bf157153ed563e3f1cbad0cf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352631"
 ---
-# <a name="required-and-optional-tape-miniclass-routines"></a>必需和可选磁带 Miniclass 例程
+# <a name="required-and-optional-tape-miniclass-routines"></a>必需的和可选的磁带微型类例程
 
 
 ## <span id="ddk_required_and_optional_tape_miniclass_routines_kg"></span><span id="DDK_REQUIRED_AND_OPTIONAL_TAPE_MINICLASS_ROUTINES_KG"></span>

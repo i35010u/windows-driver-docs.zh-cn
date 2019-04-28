@@ -1,17 +1,17 @@
 ---
-title: 调试使用 CDB 和 NTSD
+title: 使用 CDB 和 NTSD 进行调试
 description: 本部分介绍如何执行基本的调试任务，使用 Microsoft Console Debugger (CDB) 和 Microsoft NT 符号调试器 (NTSD)。
 ms.assetid: 770D8A69-9B0C-4745-B7E8-D461760C851B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f13fef88af6c9eabe78d5554794cc54bf87c41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346363"
 ---
-# <a name="debugging-using-cdb-and-ntsd"></a>调试使用 CDB 和 NTSD
+# <a name="debugging-using-cdb-and-ntsd"></a>使用 CDB 和 NTSD 进行调试
 
 
 本部分介绍如何执行基本的调试任务，使用 Microsoft Console Debugger (CDB) 和 Microsoft NT 符号调试器 (NTSD)。

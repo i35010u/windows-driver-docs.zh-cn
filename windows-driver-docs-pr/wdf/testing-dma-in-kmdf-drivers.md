@@ -5,11 +5,11 @@ ms.assetid: 1D37F8B3-EAFC-4BB0-988D-64ADF30DBC40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c1f02897021ee80b3c3bea917968efda609303e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350635"
 ---
 # <a name="testing-dma-in-kmdf-drivers"></a>在 KMDF 驱动程序中测试 DMA
 

@@ -5,11 +5,11 @@ ms.assetid: a1d6908d-e43a-413d-965b-3af226d5c26f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03ece74b9a63a53d7021d2a3ea2b04b9fb517c65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348930"
 ---
 # <a name="setting-a-device-class-property-value"></a>设置设备类属性值
 

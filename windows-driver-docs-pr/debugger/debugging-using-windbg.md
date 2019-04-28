@@ -5,11 +5,11 @@ ms.assetid: 6738E3B9-FD79-4720-A8A8-8FA8EE1BA256
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74a63fdf57d64d4805f0448ed44d428debf1f400
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346326"
 ---
 # <a name="debugging-using-windbg"></a>使用 WinDbg 进行调试
 

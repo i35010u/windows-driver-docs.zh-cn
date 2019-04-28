@@ -5,11 +5,11 @@ ms.assetid: 6d1b15ea-ba27-4bde-8000-d31f014ab47d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3617232bcb436851c4302320f2c41a5edd5e50b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351670"
 ---
 # <a name="architecture-overview-for-sensor-drivers"></a>传感器驱动程序的体系结构概述
 

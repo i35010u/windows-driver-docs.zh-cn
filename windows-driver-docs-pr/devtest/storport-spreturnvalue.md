@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b932c1030ad29a58f0ae55bd32a2dfd84305302
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345705"
 ---
 # <a name="spreturnvalue-rule-storport"></a>SpReturnValue 规则 (storport)
 

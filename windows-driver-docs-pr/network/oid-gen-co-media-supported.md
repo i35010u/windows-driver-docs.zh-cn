@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b473639e3788c38c876d7d116da1db5f29b6a97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348203"
 ---
 # <a name="oidgencomediasupported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 
@@ -63,6 +63,6 @@ WAN 无线 NIC 驱动程序必须报告为其介质类型**NdisMediumWirelessWan
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

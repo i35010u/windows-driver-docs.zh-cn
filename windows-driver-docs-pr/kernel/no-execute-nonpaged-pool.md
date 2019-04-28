@@ -1,17 +1,17 @@
 ---
-title: 无执行 (NX) 非分页缓冲的池
+title: 非执行 (NX) 非分页缓冲池
 description: 最佳做法是，Windows 8 和更高版本的 Windows 驱动程序应从中分配大多数或所有其非分页内存不执行 (NX) 非分页缓冲的池。
 ms.assetid: E5BF34F6-ABA0-4EC7-B740-CC83EF8438CF
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 0981ffff9c53307c3d39958990c585e529b436e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341947"
 ---
-# <a name="no-execute-nx-nonpaged-pool"></a>无执行 (NX) 非分页缓冲的池
+# <a name="no-execute-nx-nonpaged-pool"></a>非执行 (NX) 非分页缓冲池
 
 
 最佳做法是，Windows 8 和更高版本的 Windows 驱动程序应从中分配大多数或所有其非分页内存不执行 (NX) 非分页缓冲的池。 通过从 NX 中分配内存，非分页的池的内核模式驱动程序提高了安全性通过防止恶意软件执行此内存中的说明。

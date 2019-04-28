@@ -1,5 +1,5 @@
 ---
-title: bsc （更新条件断点）
+title: bsc（更新条件断点）
 description: Bsc 命令更改的条件在其下一个断点发生或发生更改时遇到指定条件断点执行的命令。
 ms.assetid: 4d491797-3ba2-4a63-a575-67df39484bcf
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a0fc70c55d4dbeb8e6e00e5836c80e1d98f6262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347825"
 ---
-# <a name="bsc-update-conditional-breakpoint"></a>bsc （更新条件断点）
+# <a name="bsc-update-conditional-breakpoint"></a>bsc（更新条件断点）
 
 
 **Bsc**命令更改的条件在其下一个断点发生或发生更改时遇到指定条件断点执行的命令。

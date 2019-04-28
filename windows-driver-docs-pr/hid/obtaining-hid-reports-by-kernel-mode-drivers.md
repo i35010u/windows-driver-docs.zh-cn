@@ -5,11 +5,11 @@ ms.assetid: 017481f1-8021-4fd5-ab8e-f09f6006e616
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: afc0458e931dc164dd9869b5c6863433cbef8032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346199"
 ---
 # <a name="obtaining-hid-reports-by-kernel-mode-drivers"></a>获取由内核模式驱动程序的 HID 报表
 

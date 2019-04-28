@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier 常规工具和技术的限制
-description: Static Driver Verifier 常规工具和技术的限制
+title: 静态驱动程序验证程序常规工具和技术限制
+description: 静态驱动程序验证程序常规工具和技术限制
 ms.assetid: d263dee5-2408-4772-96d7-d1895a445fab
 keywords:
 - 静态驱动程序验证程序 WDK 限制
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7e5ae2e2ac118888b298e2a9703e91847e08b99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353477"
 ---
-# <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>Static Driver Verifier 常规工具和技术的限制
+# <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静态驱动程序验证程序常规工具和技术限制
 
 
 SDV 具有以下常规限制：

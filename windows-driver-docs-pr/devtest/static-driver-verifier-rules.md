@@ -1,17 +1,17 @@
 ---
-title: DDI 符合性规则
-description: DDI 符合性规则
+title: DDI 合规性规则
+description: DDI 合规性规则
 ms.assetid: f020fff9-f880-4aa8-b422-5452728d2fdd
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d1261b3e37bef67b11d9b3844abed2b3c2e1cdef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345755"
 ---
-# <a name="ddi-compliance-rules"></a>DDI 符合性规则
+# <a name="ddi-compliance-rules"></a>DDI 合规性规则
 
 
 本部分列出并描述可用于验证 Windows 驱动程序模型 (WDM)、 内核模式驱动程序框架 (KMDF)、 音频 (PortCls)、 AVStream (KS)、 NDIS 和 Storport 驱动程序的 Windows 设备驱动程序接口 (DDI) 符合性规则。 DDI 符合性规则定义一个驱动程序和操作系统的内核接口之间的正确交互的要求。

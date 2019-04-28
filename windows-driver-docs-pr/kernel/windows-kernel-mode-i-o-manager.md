@@ -1,17 +1,17 @@
 ---
-title: Windows Kernel-Mode I/O Manager
-description: Windows Kernel-Mode I/O Manager
+title: Windows 内核模式 I/O 管理器
+description: Windows 内核模式 I/O 管理器
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e2f1c9dcd8798ddf47dee17d0cce0859af59e506
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353425"
 ---
-# <a name="windows-kernel-mode-io-manager"></a>Windows Kernel-Mode I/O Manager
+# <a name="windows-kernel-mode-io-manager"></a>Windows 内核模式 I/O 管理器
 
 
 计算机包含提供输入和输出 (I/O) 与外部世界的各种设备。 典型设备是键盘、 鼠标、 音频控制器、 视频控制器、 磁盘驱动器、 网络端口和等等。 设备驱动程序提供的设备和操作系统之间的软件连接。 出于此原因，I/O 是非常重要的设备驱动程序编写器。

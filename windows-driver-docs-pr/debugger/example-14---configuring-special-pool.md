@@ -5,13 +5,13 @@ ms.assetid: a89f8a08-30e4-4d04-9689-c665b2175780
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d2bb2345c4378c2cf2214510ffecfb7250585
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347809"
 ---
-# <a name="example-14-configuring-special-pool"></a>示例 14:配置特殊的池
+# <a name="example-14-configuring-special-pool"></a>示例 14：配置特殊池
 
 
 从 Windows Vista 开始，你可以配置[特殊池](special-pool.md)内核标志设置为或注册表设置的功能。 如果将其配置为内核 （运行时间） 的标志设置，您不需要重新启动计算机以使更改生效。 在早期版本的 Windows 中，特殊的池是仅作为注册表设置。

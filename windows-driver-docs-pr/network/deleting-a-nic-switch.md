@@ -1,17 +1,17 @@
 ---
-title: 删除 NIC 开关
-description: 删除 NIC 开关
+title: 删除 NIC 交换机
+description: 删除 NIC 交换机
 ms.assetid: BCC6A38B-F25B-483A-B9FF-D6FF73F9B2F3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d35b1913ce7845cdf9d89aff75b55340721e2a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347463"
 ---
-# <a name="deleting-a-nic-switch"></a>删除 NIC 开关
+# <a name="deleting-a-nic-switch"></a>删除 NIC 交换机
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须能够删除 NIC 交换机。 仅微型端口驱动程序为 PCI Express (PCIe) 物理函数 (PF) 的 SR-IOV 适配器可以删除该适配器上的 NIC 交换机。

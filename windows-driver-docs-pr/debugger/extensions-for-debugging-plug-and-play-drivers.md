@@ -1,6 +1,6 @@
 ---
-title: Plug and Play 驱动程序调试扩展
-description: Plug and Play 驱动程序调试扩展
+title: 用于调试即插即用驱动程序的扩展
+description: 用于调试即插即用驱动程序的扩展
 ms.assetid: 0b60c4ce-5c2d-4cce-a1e6-8275186aa147
 keywords:
 - Plug and Play (PnP) 扩展
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a1d0aa5d3a93d3517875cf9f7d446b78a84741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347715"
 ---
-# <a name="extensions-for-debugging-plug-and-play-drivers"></a>Plug and Play 驱动程序调试扩展
+# <a name="extensions-for-debugging-plug-and-play-drivers"></a>用于调试即插即用驱动程序的扩展
 
 
 当调试插驱动程序时，可能会发现以下调试器扩展很有用。

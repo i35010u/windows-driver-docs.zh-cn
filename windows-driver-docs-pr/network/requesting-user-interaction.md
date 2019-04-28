@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2fe595483b2b03c5e16354a0963cc68aea85b80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349394"
 ---
 # <a name="requesting-user-interaction"></a>请求用户交互
 

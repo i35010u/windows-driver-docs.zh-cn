@@ -1,5 +1,5 @@
 ---
-title: DevCon 重新扫描
+title: DevCon Rescan
 description: 使用 Windows 即插即用和播放功能来更新计算机的设备列表。 在本地和远程计算机上有效。
 ms.assetid: 08762f30-a276-4ef4-8936-dfb1e1f692ca
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d43ef82d23d3efd96486873d83798cce1a4d8274
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347019"
 ---
-# <a name="devcon-rescan"></a>DevCon 重新扫描
+# <a name="devcon-rescan"></a>DevCon Rescan
 
 
 使用 Windows 即插即用和播放功能来更新计算机的设备列表。 在本地和远程计算机上有效。

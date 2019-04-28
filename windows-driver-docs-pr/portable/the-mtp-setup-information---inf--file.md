@@ -4,11 +4,11 @@ title: MTP 安装程序信息 (.inf) 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f76f42c17479d35ea63ae846708bbf3900f3d6f6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349327"
 ---
 # <a name="the-mtp-setup-information-inf-file"></a>MTP 安装程序信息 (.inf) 文件
 

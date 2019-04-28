@@ -5,11 +5,11 @@ ms.assetid: E1589FD0-5D03-42EF-8078-0AE53CFB1ACA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5c76bff652d9cad466c66907bc26828a0395c435
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348060"
 ---
 # <a name="get-energy-source-identification-function-index-3"></a>获取能量源标识（功能索引 3）
 

@@ -1,19 +1,19 @@
 ---
-title: 修改存储微型端口驱动程序例程以支持 WMI Srb
-description: 修改存储微型端口驱动程序例程以支持 WMI Srb
+title: 修改存储器微型端口驱动程序例程，使之支持 WMI SRB
+description: 修改存储器微型端口驱动程序例程，使之支持 WMI SRB
 ms.assetid: c3a222e8-dd02-4e45-b3e2-cec35d3abfdc
 keywords:
 - WMI Srb WDK 存储，修改例程以支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b8184f8419852b73991423297b660faef2a2f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355573"
 ---
-# <a name="modifying-storage-miniport-driver-routines-to-support-wmi-srbs"></a>修改存储微型端口驱动程序例程以支持 WMI Srb
+# <a name="modifying-storage-miniport-driver-routines-to-support-wmi-srbs"></a>修改存储器微型端口驱动程序例程，使之支持 WMI SRB
 
 
 ## <span id="ddk_modifying_storage_miniport_driver_routines_to_support_wmi_srbs_kg"></span><span id="DDK_MODIFYING_STORAGE_MINIPORT_DRIVER_ROUTINES_TO_SUPPORT_WMI_SRBS_KG"></span>

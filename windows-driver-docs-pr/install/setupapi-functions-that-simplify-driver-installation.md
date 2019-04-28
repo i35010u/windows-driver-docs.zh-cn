@@ -1,6 +1,6 @@
 ---
-title: 安装程序 Api 函数，可简化驱动程序安装
-description: 安装程序 Api 函数，可简化驱动程序安装
+title: 可简化驱动程序安装的 SetupAPI 函数
+description: 可简化驱动程序安装的 SetupAPI 函数
 ms.assetid: 7201b260-6239-4c76-8d48-7e2df9c662cd
 keywords:
 - 安装程序 Api 函数 WDK，从而简化了驱动程序安装
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14f781b80d64c58948d0f8fe602968dec8cfd256
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348659"
 ---
-# <a name="setupapi-functions-that-simplify-driver-installation"></a>安装程序 Api 函数，可简化驱动程序安装
+# <a name="setupapi-functions-that-simplify-driver-installation"></a>可简化驱动程序安装的 SetupAPI 函数
 
 
 安装应用程序可以使用以下安装程序 Api 函数来简化安装的即插即用功能驱动程序。

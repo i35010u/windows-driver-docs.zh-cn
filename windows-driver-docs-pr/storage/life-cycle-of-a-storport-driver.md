@@ -5,11 +5,11 @@ ms.assetid: 6b48cf8e-83c3-4403-88fd-1bf1f285aafc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74266fa57d7663c70cbd1e8b0ddec100c1cbdcd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355631"
 ---
 # <a name="life-cycle-of-a-storport-driver"></a>Storport 驱动程序的生命周期
 

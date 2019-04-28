@@ -1,17 +1,17 @@
 ---
-title: WIA 扫描程序项树的 Windows Me 和 Windows XP
-description: WIA 扫描程序项树的 Windows Me 和 Windows XP
+title: Windows Me 和 Windows XP 的 WIA 扫描仪项树
+description: Windows Me 和 Windows XP 的 WIA 扫描仪项树
 ms.assetid: a9da4725-995b-4745-aa0e-c1372bd5d445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb9e9e66e7528a5e75726e5a6876b9e50cbf3ed7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352663"
 ---
-# <a name="wia-scanner-item-tree-for-windows-me-and-windows-xp"></a>WIA 扫描程序项树的 Windows Me 和 Windows XP
+# <a name="wia-scanner-item-tree-for-windows-me-and-windows-xp"></a>Windows Me 和 Windows XP 的 WIA 扫描仪项树
 
 
 

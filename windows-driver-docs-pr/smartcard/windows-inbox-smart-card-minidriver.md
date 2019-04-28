@@ -5,11 +5,11 @@ ms.assetid: 4B61607E-090A-4935-B944-110ACE9A4D83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6711bb48a2a0e4b81067fa734c26fcbd2c8ca5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348124"
 ---
 # <a name="windows-inbox-smart-card-minidriver"></a>Windows 收件箱智能卡微型驱动程序
 
@@ -51,7 +51,7 @@ ms.locfileid: "56563513"
 <tr class="header">
 <th align="left">Tag</th>
 <th align="left">Len</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

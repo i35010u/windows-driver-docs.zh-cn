@@ -5,11 +5,11 @@ ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16859876b0bf381c6b46f36d6d0aa7e54643b90a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346629"
 ---
 # <a name="wdi-message-structure"></a>WDI 消息结构
 
@@ -27,7 +27,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 |----------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | 在任务栏的搜索框中键入                       | UINT16   | TLV 结构的类型。 无法识别的 TLV 类型必须跳过不触发错误。                                              |
 | 值缓冲区的长度 | UINT16   | 以字节为单位的值缓冲区的大小。                                                                                                        |
-| 值                      | 字节\[\] | 有效负载缓冲区，其中可能包含一个结构、 结构、 列表或其他 TLVs。 数据大小必须完全符合预期的长度。 |
+| ReplTest1                      | 字节\[\] | 有效负载缓冲区，其中可能包含一个结构、 结构、 列表或其他 TLVs。 数据大小必须完全符合预期的长度。 |
 
  
 
@@ -44,7 +44,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 |--------|------------------------------------|
 | 在任务栏的搜索框中键入   | WDI\_TLV\_单播\_算法\_列表 |
 | 长度 | N \* sizeof(WDI\_ALGO\_PAIRS)      |
-| 值  | WDI\_ALGO\_PAIRS\[N\]              |
+| ReplTest1  | WDI\_ALGO\_PAIRS\[N\]              |
 
  
 

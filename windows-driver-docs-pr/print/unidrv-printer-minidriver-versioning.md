@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: deaf4c3919e2de8068edadbfc13305703e918876
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348496"
 ---
 # <a name="unidrv-printer-minidriver-versioning"></a>Unidrv 打印机微型驱动程序版本控制
 

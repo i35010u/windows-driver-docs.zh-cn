@@ -1,6 +1,6 @@
 ---
-title: DEVPKEY_NAME （设备实例）
-description: DEVPKEY_NAME （设备实例）
+title: DEVPKEY_NAME（设备实例）
+description: DEVPKEY_NAME（设备实例）
 ms.assetid: 4968a215-7e22-4d17-938c-4aa5289b2803
 keywords:
 - DEVPKEY_NAME （设备实例） 设备和驱动程序安装
@@ -15,13 +15,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6446a472912d83d4d7025a01cfa245315366dcd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353821"
 ---
-# <a name="devpkeyname-device-instance"></a>DEVPKEY_NAME （设备实例）
+# <a name="devpkeyname-device-instance"></a>DEVPKEY_NAME（设备实例）
 
 
 DEVPKEY_NAME 设备属性表示设备实例的名称。
@@ -74,17 +74,17 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_Device_DeviceDesc**](devpkey-device-devicedesc.md)

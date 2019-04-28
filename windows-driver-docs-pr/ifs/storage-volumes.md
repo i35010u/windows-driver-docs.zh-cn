@@ -17,15 +17,15 @@ keywords:
 - Guid WDK 文件系统
 - 名称 WDK 文件系统
 - 唯一的卷名称
-- DFS-R：
+- 卷 GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33aa59f884e99a17349c2c73a66dd404553de677
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344413"
 ---
 # <a name="storage-volumes"></a>存储卷
 

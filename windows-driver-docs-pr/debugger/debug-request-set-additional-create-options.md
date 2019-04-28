@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a443041865d023db1669747a1b03a4bd9696bc1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349043"
 ---
 # <a name="debugrequestsetadditionalcreateoptions"></a>DEBUG\_REQUEST\_SET\_ADDITIONAL\_CREATE\_OPTIONS
 
 
 调试\_请求\_设置\_其他\_创建\_选项[**请求**](request.md)操作设置默认进程创建选项。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 新的默认进程创建选项。 进程创建选项的类型是[**调试\_创建\_进程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)。

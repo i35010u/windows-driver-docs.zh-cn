@@ -1,6 +1,6 @@
 ---
-title: 服务访问点
-description: 服务访问点
+title: 服务接入点
+description: 服务接入点
 ms.assetid: a6fab686-6adb-4d77-8f0d-2b48e2e49f1f
 keywords:
 - 传入呼叫 WDK 的 CoNDIS
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b23a35d0aa405d4ba2b413e76b854e8f9e60827c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346771"
 ---
-# <a name="service-access-points"></a>服务访问点
+# <a name="service-access-points"></a>服务接入点
 
 
 

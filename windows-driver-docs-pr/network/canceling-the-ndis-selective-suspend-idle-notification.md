@@ -5,11 +5,11 @@ ms.assetid: 14C19F15-9D0E-4F37-942C-7F7AFE1EBA0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 887127920a4a04574994d82744b50570db3c1a4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351977"
 ---
 # <a name="canceling-the-ndis-selective-suspend-idle-notification"></a>取消 NDIS 选择性挂起空闲通知
 

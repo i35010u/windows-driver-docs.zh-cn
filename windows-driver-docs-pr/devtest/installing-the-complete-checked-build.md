@@ -1,6 +1,6 @@
 ---
-title: 安装完整的调试内部版本
-description: 安装完整的调试内部版本
+title: 安装完整的已检验版本
+description: 安装完整的已检验版本
 ms.assetid: 92953679-ab38-4df2-9241-135b57429b66
 keywords:
 - 检查内部版本号 WDK，安装
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8155e49e86cead0d7b2feec2f45d4c76dd98f56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356549"
 ---
-# <a name="installing-the-complete-checked-build"></a>安装完整的调试内部版本
+# <a name="installing-the-complete-checked-build"></a>安装完整的已检验版本
 
 
 ## <span id="ddk_installing_the_complete_checked_build_tools"></span><span id="DDK_INSTALLING_THE_COMPLETE_CHECKED_BUILD_TOOLS"></span>

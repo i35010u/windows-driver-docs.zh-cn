@@ -6,11 +6,11 @@ ms.assetid: 0ca1a07e-ab4d-47d1-b6ab-a1aa02ee3ee6
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 173a315d7ea4f0745cae80f6a203650fd7f0f3e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345143"
 ---
 # <a name="testing-auto-brightness"></a>测试自动亮度
 

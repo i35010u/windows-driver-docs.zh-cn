@@ -1,5 +1,5 @@
 ---
-title: bd （断点停用）
+title: bd（断点禁用）
 description: Bd 命令禁用，但不会删除，之前设置断点。
 ms.assetid: 9b408f4a-6036-41d7-b89a-3e7841c50a90
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 650a6a564eaaf6317b56d2c765106a52c3eda5fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347873"
 ---
-# <a name="bd-breakpoint-disable"></a>bd （断点停用）
+# <a name="bd-breakpoint-disable"></a>bd（断点禁用）
 
 
 **Bd**命令禁用，但不会删除，之前设置断点。

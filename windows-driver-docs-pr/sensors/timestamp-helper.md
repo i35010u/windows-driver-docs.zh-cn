@@ -5,11 +5,11 @@ ms.assetid: AE02CEBE-C5CB-4F54-BCB0-439D360DF6A1
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cc7f491235dbc958a42aec09a7cae54de65de7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345098"
 ---
 # <a name="time-stamp-helper"></a>时间戳帮助程序
 
@@ -32,7 +32,7 @@ ms.locfileid: "56546490"
 |--------------------------|------------------------|
 | 最低受支持的客户端 | Windows 8.1            |
 | 最低受支持的服务器 | Windows Server 2012 R2 |
-| 标头                   | Sensorsutils.h         |
+| Header                   | Sensorsutils.h         |
 
  
 

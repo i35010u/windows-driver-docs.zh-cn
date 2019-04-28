@@ -1,6 +1,6 @@
 ---
-title: 作为一种图形语言的应用程序的 GDI
-description: 作为一种图形语言的应用程序的 GDI
+title: 用作应用程序图形语言的 GDI
+description: 用作应用程序图形语言的 GDI
 ms.assetid: fc824284-0400-47b0-ac4e-ff21e1e0ded9
 keywords:
 - GDI WDK Windows 2000 显示、 图形的应用程序的语言
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93e0738724ae028f131c93606806b357a771e640
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351188"
 ---
-# <a name="gdi-as-a-graphics-language-for-applications"></a>作为一种图形语言的应用程序的 GDI
+# <a name="gdi-as-a-graphics-language-for-applications"></a>用作应用程序图形语言的 GDI
 
 
 ## <span id="ddk_gdi_as_a_graphics_language_for_applications_gg"></span><span id="DDK_GDI_AS_A_GRAPHICS_LANGUAGE_FOR_APPLICATIONS_GG"></span>

@@ -1,19 +1,19 @@
 ---
-title: 选择要验证驱动程序
-description: 选择要验证驱动程序
+title: 选择要验证的驱动程序
+description: 选择要验证的驱动程序
 ms.assetid: a752dea1-f49c-4e58-9e56-6b54701c760e
 keywords:
 - 驱动程序验证程序 WDK，驱动程序选择
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2eb963341b9012da015bb1151c427d7de5423ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351151"
 ---
-# <a name="selecting-drivers-to-be-verified"></a>选择要验证驱动程序
+# <a name="selecting-drivers-to-be-verified"></a>选择要验证的驱动程序
 
 
 ## <span id="ddk_selecting_drivers_to_be_verified_tools"></span><span id="DDK_SELECTING_DRIVERS_TO_BE_VERIFIED_TOOLS"></span>

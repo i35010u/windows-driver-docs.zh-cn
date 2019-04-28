@@ -1,6 +1,6 @@
 ---
-title: 测试升级网络组件
-description: 测试升级网络组件
+title: 测试网络组件的升级
+description: 测试网络组件的升级
 ms.assetid: 1e71e376-2c35-49d8-b1bc-6278679ab46f
 keywords:
 - 网络组件升级 WDK，测试
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eb0d1be98072b4cd53c4adb50eca7a2c366e9ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350819"
 ---
-# <a name="testing-the-upgrade-of-network-components"></a>测试升级网络组件
+# <a name="testing-the-upgrade-of-network-components"></a>测试网络组件的升级
 
 
 

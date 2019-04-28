@@ -5,11 +5,11 @@ ms.assetid: 77866143-FB10-4623-9923-368B23808715
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5500faa606bd02a97815ec49652a2648835065fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343733"
 ---
 # <a name="component-level-power-management"></a>组件级电源管理
 

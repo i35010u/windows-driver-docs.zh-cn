@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3c74de9deb44e5da45b3f612e338fe5c41b8457
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344432"
 ---
 # <a name="storage-device-stacks"></a>存储设备堆栈
 

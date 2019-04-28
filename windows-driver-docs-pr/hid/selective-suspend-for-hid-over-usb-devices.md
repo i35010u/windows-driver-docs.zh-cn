@@ -1,17 +1,17 @@
 ---
-title: 有关 HID USB 设备的选择性挂起
+title: 基于 USB 的 HID 设备的选择性挂起
 description: 版本 2.0 的通用串行总线规范指定 USB 选择性挂起功能。
 ms.assetid: A4560D7C-8A32-4A91-95B6-4377E0F0D0C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db622b90b32fff0e64e92fc8738edd0939d3d0da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345447"
 ---
-# <a name="selective-suspend-for-hid-over-usb-devices"></a>有关 HID USB 设备的选择性挂起
+# <a name="selective-suspend-for-hid-over-usb-devices"></a>基于 USB 的 HID 设备的选择性挂起
 
 
 版本 2.0*通用串行总线规范*指定 USB 选择性挂起功能。 通过使用此功能，Windows 操作系统可以有选择地挂起空闲的 USB 设备。 这使 Windows 能够高效地管理整个系统的电源需求。 详细了解 Windows 如何支持 USB 选择性挂起功能，请参阅[USB 选择性挂起](../usbcon/usb-selective-suspend.md)。 （此资源可能不会在某些语言和国家/地区中可用。）

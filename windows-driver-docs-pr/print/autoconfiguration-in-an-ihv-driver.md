@@ -1,6 +1,6 @@
 ---
-title: IHV 驱动程序中自动配置
-description: IHV 驱动程序中自动配置
+title: IHV 驱动程序中的自动配置
+description: IHV 驱动程序中的自动配置
 ms.assetid: 81febae0-6fab-4226-9e98-7705d606caf4
 keywords:
 - IHV 驱动程序自动配置 WDK 打印机
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb13bbf726003ee037c4cf392f4fc90826e2539d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350764"
 ---
-# <a name="autoconfiguration-in-an-ihv-driver"></a>IHV 驱动程序中自动配置
+# <a name="autoconfiguration-in-an-ihv-driver"></a>IHV 驱动程序中的自动配置
 
 
 支持自动配置的独立 IHV 驱动程序必须满足以下要求：

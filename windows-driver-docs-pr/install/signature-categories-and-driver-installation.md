@@ -5,11 +5,11 @@ ms.assetid: d5b0e3a3-51c3-40d8-a2dc-c9392feff2cb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 553a0c6855a958259a303d471c9d8ff6a9457dee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348639"
 ---
 # <a name="signature-categories-and-driver-installation"></a>签名类别和驱动程序安装
 

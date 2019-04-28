@@ -1,6 +1,6 @@
 ---
-title: Autoconfiguring GPD 的打印机的内存
-description: Autoconfiguring GPD 的打印机的内存
+title: 自动配置 GPD 的打印机内存
+description: 自动配置 GPD 的打印机内存
 ms.assetid: 5e8339a5-d515-4821-853e-bc6607b2d9c1
 keywords:
 - 内存 WDK 打印机自动配置
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ece6688e56a9f3e601ff76272c83383268b1d313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349275"
 ---
-# <a name="autoconfiguring-the-printers-memory-for-gpd"></a>Autoconfiguring GPD 的打印机的内存
+# <a name="autoconfiguring-the-printers-memory-for-gpd"></a>自动配置 GPD 的打印机内存
 
 
 下面的代码示例演示如何将条目添加到 GPD 文件中的任何内存选项 GDL 文件。 下面的示例后显示 GPD 代码示例是典型的内存功能的定义。

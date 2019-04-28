@@ -5,13 +5,13 @@ ms.assetid: 952cc60f-1877-49d5-b87c-493c1b90cfdf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 467431b21c66864d5dcf018704c030acdf30473b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347740"
 ---
-# <a name="how-do-i-update-the-flags-in-a-running-trace-session"></a>如何在正在运行的跟踪会话中更新标志
+# <a name="how-do-i-update-the-flags-in-a-running-trace-session"></a>如何更新正在运行的跟踪会话中的标志？
 
 
 若要更改[跟踪标志](trace-flags.md)或[跟踪级别](trace-level.md)在正在运行的跟踪会话，使用**tracelog-启用**未命令**tracelog-更新**命令。 有关详细信息，请参阅[ **Tracelog 命令语法**](tracelog-command-syntax.md)。

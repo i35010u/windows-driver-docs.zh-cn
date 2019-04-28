@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f6fbf4b052a9d074e3e908725d155c1f5b265392
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351080"
 ---
 # <a name="devpkeydevicemodelid"></a>DEVPKEY_Device_ModelId
 
@@ -72,7 +72,7 @@ DEVPKEY_Device_ModelId 设备属性包含的值[ **ModelID** ](https://msdn.micr
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

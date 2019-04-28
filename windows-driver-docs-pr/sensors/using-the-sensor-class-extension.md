@@ -5,11 +5,11 @@ ms.assetid: F9632F86-10E8-4006-8FB7-97FA5EED492D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10b4818e8e7da6513df09adffb1fe2a1abf8db0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345059"
 ---
 # <a name="using-the-sensor-class-extension"></a>使用传感器类扩展
 

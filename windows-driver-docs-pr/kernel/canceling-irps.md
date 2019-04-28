@@ -1,6 +1,6 @@
 ---
-title: 正在取消 Irp
-description: 正在取消 Irp
+title: 取消 IRP
+description: 取消 IRP
 ms.assetid: da199435-f6c3-44f4-b1ed-0280f39ee452
 keywords:
 - Irp WDK 内核，取消
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e2888c0913c923a2d46c52ee80ffd45967ac6b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343791"
 ---
-# <a name="canceling-irps"></a>正在取消 Irp
+# <a name="canceling-irps"></a>取消 IRP
 
 
 

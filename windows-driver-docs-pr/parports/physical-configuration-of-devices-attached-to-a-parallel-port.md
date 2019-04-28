@@ -1,6 +1,6 @@
 ---
-title: 连接到并行端口设备的物理配置
-description: 连接到并行端口设备的物理配置
+title: 连接到并行端口的设备的物理配置
+description: 连接到并行端口的设备的物理配置
 ms.assetid: ae90fcc6-7ea8-4cb1-89a1-1fbf1ad5c05e
 keywords:
 - IEEE 1284 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2a18430701f9a851b06f06f9bb2ab2364cdf4b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349345"
 ---
-# <a name="physical-configuration-of-devices-attached-to-a-parallel-port"></a>连接到并行端口设备的物理配置
+# <a name="physical-configuration-of-devices-attached-to-a-parallel-port"></a>连接到并行端口的设备的物理配置
 
 
 
@@ -57,7 +57,7 @@ IEEE 1284.3 标准规定，最多四个菊花链设备和最终的链设备可�
 <tr class="odd">
 <td><p>Windows Me</p></td>
 <td><p>zero</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 <td><p>不支持系统提供的驱动程序。</p></td>
 </tr>
 <tr class="even">

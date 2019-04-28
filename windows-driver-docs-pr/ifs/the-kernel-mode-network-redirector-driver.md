@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40cdf12a020fa6de7d0decd81963d85f3c633e6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344354"
 ---
 # <a name="the-kernel-mode-network-redirector-driver"></a>内核模式网络重定向程序驱动程序
 

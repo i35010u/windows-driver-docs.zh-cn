@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57edeb588101d2c8876d7be2b7503c0554595dc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353346"
 ---
 # <a name="wiadpcartist"></a>WIA\_DPC\_艺术家
 
@@ -45,11 +45,11 @@ WIA\_DPC\_艺术家属性包含设备的所有者 （这是当前用户） 的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和专为 Windows Server 2003、 Windows XP 和早期版本的 Windows 操作系统的设备的兼容性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: CE89E02E-6527-4285-998B-618EE235CB8F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44770f53929f205f3a27915af8df440cefd5cd59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344625"
 ---
 # <a name="microsoft-basic-display-driver"></a>Microsoft 基本显示驱动程序
 

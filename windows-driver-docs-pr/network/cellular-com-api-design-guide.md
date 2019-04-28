@@ -1,5 +1,5 @@
 ---
-title: 移动电话的 COM API 设计指南
+title: 手机网络 COM API 设计指南
 description: 本部分提供在移动电话的 COM API 的信息。
 ms.assetid: 93aa20d0-d8c3-40ec-baf1-fab56ff5686d
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da7aa11d0d6e2b5d35a87d593cdd8aa3ba965f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353355"
 ---
-# <a name="cellular-com-api-design-guide"></a>移动电话的 COM API 设计指南
+# <a name="cellular-com-api-design-guide"></a>手机网络 COM API 设计指南
 
 > [!WARNING]
 > 移动电话的 COM API 在 Windows 10 中已弃用。 提供此内容是为了支持 OEM 和移动运营商创建的 Windows Phone 8.1 应用程序的维护。
@@ -29,7 +29,7 @@ ms.locfileid: "56522659"
 
 必须声明相应功能中包含的移动电话应用程序的包。 有关详细信息，请参阅[移动电话的 COM API 功能](cellular-com-api-capabilities.md)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 [移动电话的 COM API 功能](cellular-com-api-capabilities.md)
 

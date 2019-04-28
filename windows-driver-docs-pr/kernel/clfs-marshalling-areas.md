@@ -1,6 +1,6 @@
 ---
-title: CLFS 的封送处理区域
-description: CLFS 的封送处理区域
+title: CLFS 封送区域
+description: CLFS 封送区域
 ms.assetid: 1153bcfd-43e9-43bd-b893-5ec044ea9584
 keywords:
 - 常见日志文件系统 WDK 内核，封送处理区域
@@ -17,13 +17,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6202c5524e84a9bb4239c866643c694809d5f9d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343711"
 ---
-# <a name="clfs-marshalling-areas"></a>CLFS 的封送处理区域
+# <a name="clfs-marshalling-areas"></a>CLFS 封送区域
 
 
 

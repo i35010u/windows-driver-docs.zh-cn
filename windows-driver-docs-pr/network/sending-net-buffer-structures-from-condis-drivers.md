@@ -1,15 +1,15 @@
 ---
-title: 从的 CoNDIS 驱动程序发送 NET_BUFFER 结构
-description: 从的 CoNDIS 驱动程序发送 NET_BUFFER 结构
+title: 从 CoNDIS 驱动程序发送 NET_BUFFER 结构
+description: 从 CoNDIS 驱动程序发送 NET_BUFFER 结构
 ms.assetid: 63bca3f0-b598-4006-bfd0-6df32ab2cbe7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc0a10797adda7b32410b47ac7defc37c25eed3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346817"
 ---
 # <a name="sending-netbuffer-structures-from-condis-drivers"></a>发送 NET\_缓冲区结构的 CoNDIS 驱动程序
 

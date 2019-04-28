@@ -5,11 +5,11 @@ ms.assetid: a67f3b71-b7a6-4712-a76f-b3b412a149c2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5893789273a46615f428b354d3eadbe63f56b36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352055"
 ---
 # <a name="installing-a-release-signed-catalog-file-for-a-non-pnp-driver"></a>安装适用于非 PnP 驱动程序且已进行发布签名的目录文件
 

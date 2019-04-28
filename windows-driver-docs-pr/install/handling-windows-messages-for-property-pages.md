@@ -1,6 +1,6 @@
 ---
-title: 处理 Windows 消息的属性页
-description: 处理 Windows 消息的属性页
+title: 处理属性页的 Windows 消息
+description: 处理属性页的 Windows 消息
 ms.assetid: 4920a003-59b5-41dc-a8ee-5e034087006a
 keywords:
 - 设备属性页 WDK 设备安装，Windows 消息
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7648e76a22ea1e88b9eb28caa73b0173d5e692c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357039"
 ---
-# <a name="handling-windows-messages-for-property-pages"></a>处理 Windows 消息的属性页
+# <a name="handling-windows-messages-for-property-pages"></a>处理属性页的 Windows 消息
 
 
 

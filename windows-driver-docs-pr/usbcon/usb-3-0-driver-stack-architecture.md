@@ -1,16 +1,16 @@
 ---
-Description: This topic provides an overview of the Universal Serial Bus (USB) driver stack architecture.
-title: 在 Windows 中的 USB 宿主端驱动程序
+Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系结构的概述。
+title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e021cffe443cab922140fab6d5c5c32af6460d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355100"
 ---
-# <a name="usb-host-side-drivers-in-windows"></a>在 Windows 中的 USB 宿主端驱动程序
+# <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
 
 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系结构的概述。

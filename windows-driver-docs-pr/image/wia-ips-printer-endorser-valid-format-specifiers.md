@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69ef6b7f9e5404fe827c2b8a893b1ca40223fac8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351099"
 ---
 # <a name="wiaipsprinterendorservalidformatspecifiers"></a>WIA\_IPS\_打印机\_印记签署器\_有效\_格式\_说明符
 
@@ -48,7 +48,7 @@ ms.locfileid: "57464167"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>格式字符串</th>
 <th>描述</th>
 </tr>

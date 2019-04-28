@@ -1,17 +1,17 @@
 ---
-title: 桌面的重复项
+title: 桌面复制
 description: Windows 8 引入了新的基于 Microsoft DirectX 图形基础结构 DXGI 的 API，使独立软件供应商 (Isv) 以支持桌面协作和远程桌面访问方案轻松。
 ms.assetid: 5D4CBEA1-3C13-4B5C-A43D-7E6DBBB1A80F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7b9e7d6792d60a231da694ff409c7e502a734a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348889"
 ---
-# <a name="desktop-duplication"></a>桌面的重复项
+# <a name="desktop-duplication"></a>桌面复制
 
 
 Windows 8 引入了新的基于 Microsoft DirectX 图形基础结构 DXGI 的 API，使独立软件供应商 (Isv) 以支持桌面协作和远程桌面访问方案轻松。

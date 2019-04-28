@@ -1,19 +1,19 @@
 ---
-title: 解释日志比较
-description: 解释日志比较
+title: 解释日志比较结果
+description: 解释日志比较结果
 ms.assetid: fe2acdd5-00aa-4414-a59e-e6203ad48363
 keywords:
 - UMDH，解释日志比较
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f223dab0c0d50915f715758a9302b53f6deb87b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357043"
 ---
-# <a name="interpreting-a-log-comparison"></a>解释日志比较
+# <a name="interpreting-a-log-comparison"></a>解释日志比较结果
 
 
 ## <span id="ddk_interpreting_a_log_comparison_dtools"></span><span id="DDK_INTERPRETING_A_LOG_COMPARISON_DTOOLS"></span>
@@ -55,7 +55,7 @@ MyApp!mainCRTStartup+0x000000FC
 KERNEL32!BaseProcessStart+0x0000003D
 ```
 
-检查调用堆栈显示**LeakyFunc**函数通过使用 Visual c + + 运行时库分配内存。 如果检查其他日志文件显示随着时间逐渐分配，你可能能够得出结论： 从堆中分配的内存不被释放。
+检查调用堆栈显示**LeakyFunc**函数通过使用视觉对象分配内存C++运行时库。 如果检查其他日志文件显示随着时间逐渐分配，你可能能够得出结论： 从堆中分配的内存不被释放。
 
 ### <a name="span-idsymbolfilesforanalyzingalogfilespanspan-idsymbolfilesforanalyzingalogfilespanspan-idsymbolfilesforanalyzingalogfilespansymbol-files-for-analyzing-a-log-file"></a><span id="Symbol_Files_for_Analyzing_a_Log_File"></span><span id="symbol_files_for_analyzing_a_log_file"></span><span id="SYMBOL_FILES_FOR_ANALYZING_A_LOG_FILE"></span>用于分析日志文件的符号文件
 

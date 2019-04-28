@@ -1,17 +1,17 @@
 ---
-title: PwrTest 执行状态的情况
+title: PwrTest 执行状态方案
 description: PwrTest 执行状态的情况 (/ es) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
 ms.assetid: 5470c99b-5780-486f-b36a-922fb821b7f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f321396beaddca43406e4c201840a24d5f29cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345772"
 ---
-# <a name="pwrtest-execution-state-scenario"></a>PwrTest 执行状态的情况
+# <a name="pwrtest-execution-state-scenario"></a>PwrTest 执行状态方案
 
 
 PwrTest 执行状态的情况 (**/es**) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
@@ -180,7 +180,7 @@ pwrtest /es /all /idle
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

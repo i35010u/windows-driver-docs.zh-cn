@@ -1,17 +1,17 @@
 ---
-title: 调试工具的 Windows8 发行说明
-description: 调试工具的 Windows8 发行说明
+title: Windows 8 调试工具发行说明
+description: Windows 8 调试工具发行说明
 ms.assetid: 15776778-691F-4F76-92CE-2DB266AD31E8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1761adeaf561a6063544d0fdf9419ce6961f33f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346352"
 ---
-# <a name="debugging-tools-for-windows8-release-notes"></a>调试工具的 Windows8 发行说明
+# <a name="debugging-tools-for-windows8-release-notes"></a>Windows 8 调试工具发行说明
 
 
 ## <a name="span-idchannelnumberfor1394debugginginvisualstudiospanspan-idchannelnumberfor1394debugginginvisualstudiospanspan-idchannelnumberfor1394debugginginvisualstudiospanchannel-number-for-1394-debugging-in-visual-studio"></a><span id="Channel_number_for_1394_debugging_in_Visual_Studio"></span><span id="channel_number_for_1394_debugging_in_visual_studio"></span><span id="CHANNEL_NUMBER_FOR_1394_DEBUGGING_IN_VISUAL_STUDIO"></span>用于 1394年调试在 Visual Studio 中的频道号

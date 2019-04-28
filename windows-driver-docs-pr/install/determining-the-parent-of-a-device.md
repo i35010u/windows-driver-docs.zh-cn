@@ -1,6 +1,6 @@
 ---
-title: 确定设备的父
-description: 确定设备的父
+title: 确定设备的父设备
+description: 确定设备的父设备
 ms.assetid: 61458911-222f-46aa-bc0e-a61ee25337bb
 keywords:
 - 安装程序 Api 函数 WDK，确定父项
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c492882772d986215087acc68dfaf0b704df0e38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346186"
 ---
-# <a name="determining-the-parent-of-a-device"></a>确定设备的父
+# <a name="determining-the-parent-of-a-device"></a>确定设备的父设备
 
 
 

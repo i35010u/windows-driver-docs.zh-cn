@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dd38f91738c15f75e8d3b02f863dc7e0f0c36f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342507"
 ---
 # <a name="storportspinlock4-rule-storport"></a>StorPortSpinLock4 规则 (storport)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56541710"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**StorPortAcquireSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff567025)

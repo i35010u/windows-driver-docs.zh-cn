@@ -1,17 +1,17 @@
 ---
-title: 方向
-description: 方向
+title: Direction
+description: Direction
 ms.assetid: 19aa1c88-968d-4789-89cc-00b76b1a30d9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 128f89fd1fabbd08524d3adf634292aa9a5346d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342837"
 ---
-# <a name="direction"></a>方向
+# <a name="direction"></a>Direction
 
 
 架构路径：\\Printer.Layout.NumberUp.Direction
@@ -42,7 +42,7 @@ Direction 属性包含两个对子值：CurrentValue 和支持。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 <th>逻辑页序 (4Up)</th>
 </tr>

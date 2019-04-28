@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier KMDF 函数声明
-description: Static Driver Verifier KMDF 函数声明
+title: 静态驱动程序验证程序 KMDF 函数声明
+description: 静态驱动程序验证程序 KMDF 函数声明
 ms.assetid: 1623f3a4-e318-41b3-bbcf-d443202f31e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cbc67327c87323f87060757be75227e95ec4e53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353466"
 ---
-# <a name="static-driver-verifier-kmdf-function-declarations"></a>Static Driver Verifier KMDF 函数声明
+# <a name="static-driver-verifier-kmdf-function-declarations"></a>静态驱动程序验证程序 KMDF 函数声明
 
 
 若要启用 SDV 来验证 KMDF 驱动程序，必须声明每个回调函数，使用回调函数角色类型。 回调函数角色类型各种 WDF 标头文件中定义和使用 Wdf.h 标头文件生成您的驱动程序时将包括在内。 下表显示了函数角色类型和与之关联的事件回调函数。

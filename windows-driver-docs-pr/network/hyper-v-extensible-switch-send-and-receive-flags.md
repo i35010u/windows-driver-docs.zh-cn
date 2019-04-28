@@ -5,11 +5,11 @@ ms.assetid: FBA506EC-4E9F-4964-9C9C-FF4910DDA908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ca974256b6d9ea1e83a3e9f52896a88848fb8e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349506"
 ---
 # <a name="hyper-v-extensible-switch-send-and-receive-flags"></a>Hyper-V 可扩展交换机发送和接收标志
 

@@ -1,17 +1,17 @@
 ---
-title: 初始化与 Direct3D 版本 10 DDI 的通信
-description: 初始化与 Direct3D 版本 10 DDI 的通信
+title: 初始化与 Direct3D 版本 10 DDI 之间的通信
+description: 初始化与 Direct3D 版本 10 DDI 之间的通信
 ms.assetid: dc3cc26f-7295-46d6-9bd7-aae7027ea92c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d42768b98d18dec92194fa33598889819dc172
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350271"
 ---
-# <a name="initializing-communication-with-the-direct3d-version-10-ddi"></a>初始化与 Direct3D 版本 10 DDI 的通信
+# <a name="initializing-communication-with-the-direct3d-version-10-ddi"></a>初始化与 Direct3D 版本 10 DDI 之间的通信
 
 
 初始化与用户模式显示驱动程序 DLL 版本之间的通信 10 DDI 的 Direct3D 版本 10 运行时首次加载该 DLL 如果尚未加载该 DLL。 Direct3D 运行时接下来将调用用户模式显示驱动程序[ **OpenAdapter10** ](https://msdn.microsoft.com/library/windows/hardware/ff568602)函数通过 DLL 的导出表以打开图形适配器的实例。 *OpenAdapter10*函数仅用于 DLL 的导出的 Direct3D 版本 10 函数。

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef845df16c6780d252bd0d90809829a3baab6668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342323"
 ---
 # <a name="supporting-multifunction-pci-devices"></a>支持多功能 PCI 设备
 

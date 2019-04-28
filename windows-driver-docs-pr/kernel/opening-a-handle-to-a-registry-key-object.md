@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41051871ed71f806dd6d8f6c8727a19759b97871
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352064"
 ---
 # <a name="opening-a-handle-to-a-registry-key-object"></a>打开注册表项对象的句柄
 

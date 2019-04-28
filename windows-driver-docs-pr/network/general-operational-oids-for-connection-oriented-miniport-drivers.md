@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3756d5b2ebd74d787342e585e516916dfd5e3680
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349921"
 ---
 # <a name="general-operational-oids-for-connection-oriented-miniport-drivers"></a>面向连接的微型端口驱动程序的常规操作 OID
 

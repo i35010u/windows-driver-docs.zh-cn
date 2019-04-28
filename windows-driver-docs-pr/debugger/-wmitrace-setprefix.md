@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c04b8e2376d877c470ed651061a452e7fd5606ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348045"
 ---
 # <a name="wmitracesetprefix"></a>!wmitrace.setprefix
 
@@ -58,12 +58,12 @@ ms.locfileid: "56523610"
 <tbody>
 <tr class="odd">
 <td align="left"><p>%1</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>消息的跟踪消息的 GUID 的友好名称。 默认情况下，一条消息的 GUID 的友好名称是目录的在其中生成跟踪提供程序的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%2</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>源文件和行号。</p>
 <p>此变量表示的跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是代码的源文件和生成的跟踪消息的行号的名称。</p></td>
 </tr>
@@ -75,18 +75,18 @@ ms.locfileid: "56523610"
 </tr>
 <tr class="even">
 <td align="left"><p>%4</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>生成的跟踪消息的时间的时间戳。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>%5</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>内核时间。</p>
 <p>在生成的跟踪消息的时间中 CPU 时钟周期数，显示内核模式的说明，已用的执行时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%6</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>用户时间。</p>
 <p>在生成的跟踪消息的时间中 CPU 时钟周期数，显示用户模式下的说明，已用的执行时间。</p></td>
 </tr>
@@ -110,29 +110,29 @@ ms.locfileid: "56523610"
 </tr>
 <tr class="even">
 <td align="left"><p>%!FUNC!</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>函数名称。</p>
 <p>显示生成的跟踪消息的函数的名称。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>%!FLAGS%</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>显示启用跟踪消息的跟踪标志的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%!级别 ！</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>显示启用跟踪消息的跟踪级别值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>%!COMPNAME!</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>组件名称。</p>
 <p>显示生成的跟踪消息的提供程序的组件的名称。 仅当指定的跟踪代码中，将显示该组件名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%!SUBCOMP!</p></td>
-<td align="left"><p>字符串</p></td>
+<td align="left"><p>string</p></td>
 <td align="left"><p>子组件名称。</p>
 <p>显示生成的跟踪消息的提供程序的子组件名称。 仅当指定的跟踪代码中，将显示子组件名称。</p></td>
 </tr>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 01/09/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f482562c043fac91c9d9d18172f586b57ebe8ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347407"
 ---
 # <a name="deserialized-ndis-miniport-drivers"></a>反序列化的 NDIS 微型端口驱动程序
 

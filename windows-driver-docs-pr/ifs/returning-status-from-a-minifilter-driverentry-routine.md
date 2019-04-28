@@ -1,6 +1,6 @@
 ---
-title: 从一个微筛选器 DriverEntry 例程返回状态
-description: 从一个微筛选器 DriverEntry 例程返回状态
+title: 从微筛选器 DriverEntry 例程返回状态
+description: 从微筛选器 DriverEntry 例程返回状态
 ms.assetid: a9448908-f712-43f7-99c0-e02abc1678ed
 keywords:
 - 状态值 WDK 文件系统
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f7d305d3599b7d105f9580bd0812d7efd1ec95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344554"
 ---
-# <a name="returning-status-from-a-minifilter-driverentry-routine"></a>从一个微筛选器 DriverEntry 例程返回状态
+# <a name="returning-status-from-a-minifilter-driverentry-routine"></a>从微筛选器 DriverEntry 例程返回状态
 
 
 ## <span id="ddk_returning_status_from_a_minifilter_driverentry_routine_if"></span><span id="DDK_RETURNING_STATUS_FROM_A_MINIFILTER_DRIVERENTRY_ROUTINE_IF"></span>

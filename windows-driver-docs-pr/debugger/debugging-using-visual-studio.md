@@ -1,17 +1,17 @@
 ---
-title: 使用 Visual Studio 调试
+title: 使用 Visual Studio 进行调试
 description: 开始使用 Windows Driver Kit (WDK) 8、 驱动程序开发环境和调试器集成到 Microsoft Visual Studio Windows。
 ms.assetid: B961B0C9-FF6C-4F6B-AC15-CA1B405A4C4C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d52bf3207354471280f523c1106664cd2723e516
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346316"
 ---
-# <a name="debugging-using-visual-studio"></a>使用 Visual Studio 调试
+# <a name="debugging-using-visual-studio"></a>使用 Visual Studio 进行调试
 
 开始使用 Windows Driver Kit (WDK) 8、 驱动程序开发环境和调试器集成到 Microsoft Visual Studio Windows。 在此集成环境中，大多数工具所需的编码、 构建、 打包、 测试、 调试和部署驱动程序中提供了 Visual Studio 用户界面。
 
@@ -27,7 +27,7 @@ ms.locfileid: "56523240"
 
 这些主题说明如何使用 Visual Studio 来执行多个调试驱动程序所涉及的任务。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [调试使用 Visual Studio 的用户模式进程](debugging-a-user-mode-process-using-visual-studio.md)

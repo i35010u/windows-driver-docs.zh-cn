@@ -1,17 +1,17 @@
 ---
-title: 签名的商业版本发布证书的目录文件
-description: 签名的商业版本发布证书的目录文件
+title: 使用商业发布证书对目录文件进行签名
+description: 使用商业发布证书对目录文件进行签名
 ms.assetid: 362b0c79-50b9-4749-80e2-62601d76e9e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ccb98c77c8c7e29ffbab77d2c73edca33826f4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348769"
 ---
-# <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>签名的商业版本发布证书的目录文件
+# <a name="signing-a-catalog-file-with-a-commercial-release-certificate"></a>使用商业发布证书对目录文件进行签名
 
 
 使用以下[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)命令以登录[编录文件](catalog-files.md)的内核模式[驱动程序包](driver-packages.md)与[商业版本发布证书](commercial-release-certificate.md)。

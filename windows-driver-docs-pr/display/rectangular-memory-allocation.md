@@ -1,19 +1,19 @@
 ---
-title: 矩形的内存分配
-description: 矩形的内存分配
+title: 矩形内存分配
+description: 矩形内存分配
 ms.assetid: 27e60130-3a6e-410a-86a7-19acad5ecb53
 keywords:
 - 矩形的内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 771eb07b14039e986bb71780aab07d3a5426010b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351480"
 ---
-# <a name="rectangular-memory-allocation"></a>矩形的内存分配
+# <a name="rectangular-memory-allocation"></a>矩形内存分配
 
 
 ## <span id="ddk_rectangular_memory_allocation_gg"></span><span id="DDK_RECTANGULAR_MEMORY_ALLOCATION_GG"></span>

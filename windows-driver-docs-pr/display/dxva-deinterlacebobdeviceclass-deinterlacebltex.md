@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b4c7db76944cf84823098a6bf8547609b2e43ffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353375"
 ---
 # <a name="dxvadeinterlacebobdeviceclassdeinterlacebltex-method"></a>DXVA\_DeinterlaceBobDeviceClass::DeinterlaceBltEx 方法
 
@@ -43,7 +43,7 @@ HRESULT DeinterlaceBltEx(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *rtTargetFrame* \[中\]提供输出帧中的一系列输入帧的位置。 如果执行纯去隔行，则目标时间应与其中一个一致**rtStart**时间或中点时间 (也就是说，(**rtStart**+**rtEnd**) / 2) 的示例，如中所定义的[ **DXVA\_VideoSample2** ](https://msdn.microsoft.com/library/windows/hardware/ff564092)结构。
@@ -143,7 +143,7 @@ HRESULT DeinterlaceBltEx(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>版本： Windows Server 2003 SP1 及更高版本和 Windows XP SP2 和更高版本。</p></td>
 </tr>
 </tbody>

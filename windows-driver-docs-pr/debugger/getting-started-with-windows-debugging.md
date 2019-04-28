@@ -1,17 +1,17 @@
 ---
-title: 如何开始使用 Windows 调试
+title: Windows 调试入门
 description: 本部分介绍如何开始使用 Windows 调试。 如果你的目标是要使用的调试器来分析故障转储，请参阅使用 Windows 故障转储分析调试器 (WinDbg)。
 ms.assetid: 4981928E-A33D-4F60-AAA0-124C360B7E03
 ms.date: 08/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 46df3c5645ea0403f7a10f5ccb757b943bf1ac2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350567"
 ---
-# <a name="getting-started-with-windows-debugging"></a>如何开始使用 Windows 调试
+# <a name="getting-started-with-windows-debugging"></a>Windows 调试入门
 
 
 本部分介绍如何开始使用 Windows 调试。 如果你的目标是要使用的调试器来分析故障转储，请参阅[使用 Windows 故障转储分析调试器 (WinDbg)](crash-dump-files.md)。
@@ -40,8 +40,8 @@ ms.locfileid: "56544678"
    根据您决定要调试在什么模式下，将需要配置和调试程序使用不同的方式。 一些调试命令操作相同，并且在不同模式下以不同方式运行一些命令。
 
    在内核模式中使用调试器的信息，请参阅以下主题：
-   - [开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md) 
-   - [调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md) 
+   - [Getting Started with WinDbg (Kernel-Mode)](getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式）） 
+   - [调试通用驱动程序 - 分步实验室（回显内核模式）](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md) 
    - [调试步骤的实验室 （Sysvad 内核模式） 的驱动程序-](debug-universal-drivers--kernel-mode-.md)。 
     
      有关在用户模式下使用调试器的信息，请参阅[开始使用 WinDbg （用户模式）](getting-started-with-windbg.md)。
@@ -90,14 +90,14 @@ ms.locfileid: "56544678"
     -   [碎片整理工具显示 WinDbg 剧集 13 29](https://channel9.msdn.com/Shows/Defrag-Tools)
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
--   [开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)
--   [开始使用 WinDbg （用户模式）](getting-started-with-windbg.md)
+-   [Getting Started with WinDbg (Kernel-Mode)](getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式））
+-   [Getting Started with WinDbg (User-Mode)](getting-started-with-windbg.md)（WinDbg 入门（用户模式））
 -   [选择 32 位或 64 位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)
 -   [调试环境](debuggers-in-the-debugging-tools-for-windows-package.md)
 -   [设置调试 （内核模式和用户模式下）](getting-set-up-for-debugging.md)
--   [调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
+-   [调试通用驱动程序 - 分步实验室（回显内核模式）](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 -   [调试驱动程序的执行步骤的实验室 （Sysvad 内核模式）](debug-universal-drivers--kernel-mode-.md)
 
 

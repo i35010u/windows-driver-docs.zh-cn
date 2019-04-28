@@ -1,6 +1,6 @@
 ---
-title: 通过 StretchBlt 多重采样支持
-description: 通过 StretchBlt 多重采样支持
+title: 通过 StretchBlt 提供多重采样支持
+description: 通过 StretchBlt 提供多重采样支持
 ms.assetid: c829c612-d09d-4a33-a117-e50b9ed57251
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，呈现，multisample StretchBlt
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b43d65a06e4bf45f3830e13b3bdd789fef8f41a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345561"
 ---
-# <a name="multisample-support-through-stretchblt"></a>通过 StretchBlt 多重采样支持
+# <a name="multisample-support-through-stretchblt"></a>通过 StretchBlt 提供多重采样支持
 
 
 ## <span id="ddk_multisample_support_through_stretchblt_gg"></span><span id="DDK_MULTISAMPLE_SUPPORT_THROUGH_STRETCHBLT_GG"></span>

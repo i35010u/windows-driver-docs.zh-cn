@@ -1,6 +1,6 @@
 ---
-title: 线程 Dpc 简介
-description: 线程 Dpc 简介
+title: 线程 DPC 简介
+description: 线程 DPC 简介
 ms.assetid: 891a8a52-83ff-400a-9477-8edca1b9a83c
 keywords:
 - 线程的 Dpc WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b57f17caa1b966ec79273d6456b041b1e2286cea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351741"
 ---
-# <a name="introduction-to-threaded-dpcs"></a>线程 Dpc 简介
+# <a name="introduction-to-threaded-dpcs"></a>线程 DPC 简介
 
 
 

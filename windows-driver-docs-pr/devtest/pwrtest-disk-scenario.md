@@ -5,11 +5,11 @@ ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 671cee3e73d0a0a64a8efbf4a4c2cea17cd1d265
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345791"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest 磁盘方案
 
@@ -179,7 +179,7 @@ pwrtest /disk
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

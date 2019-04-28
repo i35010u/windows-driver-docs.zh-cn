@@ -1,6 +1,6 @@
 ---
-title: 引擎的连接管理
-description: 引擎的连接管理
+title: 连接引擎管理
+description: 连接引擎管理
 ms.assetid: 00ac74c5-2a69-493f-ad9b-6fa2f9082ac1
 keywords:
 - RDBSS WDK 的文件系统，引擎的连接管理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bad704fc0dc11ec9b7bdeeebf918a839cf379ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351359"
 ---
-# <a name="connection-engine-management"></a>引擎的连接管理
+# <a name="connection-engine-management"></a>连接引擎管理
 
 
 ## <span id="ddk_connection_engine_management_if"></span><span id="DDK_CONNECTION_ENGINE_MANAGEMENT_IF"></span>

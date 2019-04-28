@@ -1,17 +1,17 @@
 ---
-title: 在资源创建时传递 DXGI 信息
-description: 在资源创建时传递 DXGI 信息
+title: 创建资源时传递 DXGI 信息
+description: 创建资源时传递 DXGI 信息
 ms.assetid: d99fc77a-7192-4e45-852a-7a2ae87cc9a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef9c4e2123918ff3c9321ccf086f96e78b6d2490
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352409"
 ---
-# <a name="passing-dxgi-information-at-resource-creation-time"></a>在资源创建时传递 DXGI 信息
+# <a name="passing-dxgi-information-at-resource-creation-time"></a>创建资源时传递 DXGI 信息
 
 
 Direct3D 版本 10 运行时可以调用用户模式显示驱动程序时，传递 DXGI 特有的信息[ **CreateResource(D3D10)** ](https://msdn.microsoft.com/library/windows/hardware/ff540691)函数来创建资源。 在运行时可以传递一个指向[ **DXGI\_DDI\_主\_DESC** ](https://msdn.microsoft.com/library/windows/hardware/ff557511)结构**pPrimaryDesc**的成员[ **D3D10DDIARG\_CREATERESOURCE** ](https://msdn.microsoft.com/library/windows/hardware/ff541697)结构，以指定资源可作为主 （也就是说，资源可以扫描出到显示）。 运行时设置**pPrimaryDesc**为非 NULL 值，仅当运行时还会设置 D3D10\_DDI\_绑定\_存在比以**BindFlags**的成员D3D10DDIARG\_CREATERESOURCE。

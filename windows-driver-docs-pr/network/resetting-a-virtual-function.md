@@ -1,17 +1,17 @@
 ---
-title: 重置虚拟函数
-description: 重置虚拟函数
+title: 重置虚拟功能
+description: 重置虚拟功能
 ms.assetid: 4B7A4E02-6383-45FB-9F75-D17C047C40D0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a74f7e369b87d4e4ca7d84d4eeea501e007c025
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347331"
 ---
-# <a name="resetting-a-virtual-function"></a>重置虚拟函数
+# <a name="resetting-a-virtual-function"></a>重置虚拟功能
 
 
 基础驱动程序发出的一个对象标识符 (OID) 组请求[OID\_SRIOV\_重置\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)重置指定 PCI Express (PCIe) 虚拟函数 (VF)。 VF 是支持单根 I/O 虚拟化的网络适配器的硬件组件。 基础驱动程序微型端口驱动程序的 PCI Express (PCIe) 物理函数 (PF) 向颁发此 OID 集请求。

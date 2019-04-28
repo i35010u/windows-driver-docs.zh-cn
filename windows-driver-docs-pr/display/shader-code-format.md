@@ -5,11 +5,11 @@ ms.assetid: 62377d19-8e45-4d0c-b974-0c0417d1a948
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 506c7be066efb38ef8ef473c6194ad1dd1c5e27a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348323"
 ---
 # <a name="shader-code-format"></a>着色器代码格式
 

@@ -5,11 +5,11 @@ ms.assetid: A72D04F7-EB09-4B1B-9AF5-7FEBC2514CE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01595a4a45e6ec441fa339af107be0cc27dad5cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349423"
 ---
 # <a name="reporting-wake-reason-status-indication-capabilities"></a>报告唤醒原因状态指示功能
 

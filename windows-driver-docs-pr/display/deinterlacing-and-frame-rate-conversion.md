@@ -1,6 +1,6 @@
 ---
-title: 取消隔行和帧速率转换
-description: 取消隔行和帧速率转换
+title: 反交错和帧速率转换
+description: 反交错和帧速率转换
 ms.assetid: 73435a68-532a-4a15-b2b9-a6165cadb8fe
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，帧速率转换
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e31311751b166968cf89e08fb39eac0c4be0e425
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348906"
 ---
-# <a name="deinterlacing-and-frame-rate-conversion"></a>取消隔行和帧速率转换
+# <a name="deinterlacing-and-frame-rate-conversion"></a>反交错和帧速率转换
 
 
 ## <span id="ddk_deinterlacing_and_frame_rate_conversion_gg"></span><span id="DDK_DEINTERLACING_AND_FRAME_RATE_CONVERSION_GG"></span>

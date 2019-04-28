@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd20426087a054acc693411e02c4fa5c9e9f831
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354903"
 ---
 # <a name="wsdmon-port-monitor"></a>WSDMON 端口监视器
 

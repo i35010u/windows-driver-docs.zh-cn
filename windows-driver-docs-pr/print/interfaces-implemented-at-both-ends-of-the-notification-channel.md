@@ -1,6 +1,6 @@
 ---
-title: 这两个点的通知通道实现的接口
-description: 这两个点的通知通道实现的接口
+title: 在通知通道两端实现的接口
+description: 在通知通道两端实现的接口
 ms.assetid: cc6f1b06-c185-4915-a212-d0b3a2702d5d
 keywords:
 - 后台处理程序通知 WDK 打印，通道
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf6e5128be561a2643635bfe428e9431a6f20b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345303"
 ---
-# <a name="interfaces-implemented-at-both-ends-of-the-notification-channel"></a>这两个点的通知通道实现的接口
+# <a name="interfaces-implemented-at-both-ends-of-the-notification-channel"></a>在通知通道两端实现的接口
 
 
 

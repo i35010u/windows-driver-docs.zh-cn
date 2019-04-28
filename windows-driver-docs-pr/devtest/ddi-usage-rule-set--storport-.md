@@ -1,22 +1,22 @@
 ---
-title: DDI 使用规则集 (Storport)
+title: DDI 用法规则集 (Storport)
 description: 使用这些规则来验证您的驱动程序正确使用 Storport DDIs 正确。
 ms.assetid: 858BBD97-4E3D-464A-B85F-358809431347
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 19011dc2606e6ed79b526a20e3bd06963410c8a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356605"
 ---
-# <a name="ddi-usage-rule-set-storport"></a>DDI 使用规则集 (Storport)
+# <a name="ddi-usage-rule-set-storport"></a>DDI 用法规则集 (Storport)
 
 
 使用这些规则来验证您的驱动程序正确使用 Storport DDIs 正确。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

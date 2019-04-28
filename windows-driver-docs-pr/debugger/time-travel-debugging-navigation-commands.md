@@ -4,11 +4,11 @@ description: 本部分介绍时间旅行导航命令。
 ms.date: 09/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b07f9dbc2b5f447ad6229fd6782ed0d3e019bb9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349029"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "56519907"
 
 旅行导航命令仅处理时间的时间传输跟踪。 有关按时间顺序查看详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
 

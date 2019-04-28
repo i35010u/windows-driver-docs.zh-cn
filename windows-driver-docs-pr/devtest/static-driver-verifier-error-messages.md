@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier 错误消息
-description: Static Driver Verifier 错误消息
+title: 静态驱动程序验证程序错误消息
+description: 静态驱动程序验证程序错误消息
 ms.assetid: 16fae27c-2495-4b54-9df8-b70ad20d30ab
 keywords:
 - 静态驱动程序验证程序 WDK 错误
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbc8ed12a58a59cbd347c88b1c44b3f4dde888c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353473"
 ---
-# <a name="static-driver-verifier-error-messages"></a>Static Driver Verifier 错误消息
+# <a name="static-driver-verifier-error-messages"></a>静态驱动程序验证程序错误消息
 
 
 本部分介绍的一些更频繁地看到 SDV 错误含义消息并建议解决问题的方法。

@@ -1,16 +1,16 @@
 ---
-Description: Best practices for a host controller driver for handling I/O requests sent by UCX.
-title: USB 主控制器驱动程序中处理 I/O 请求
+Description: 用于处理由 UCX 发送的 I/O 请求的主机控制器驱动程序的最佳做法。
+title: 处理 USB 主控制器驱动程序中的 I/O 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1e2837d698a81d8fa27820b7b5c62d168901217
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357030"
 ---
-# <a name="handle-io-requests-in-a-usb-host-controller-driver"></a>USB 主控制器驱动程序中处理 I/O 请求
+# <a name="handle-io-requests-in-a-usb-host-controller-driver"></a>处理 USB 主控制器驱动程序中的 I/O 请求
 
 
 用于处理由 UCX 发送的 I/O 请求的主机控制器驱动程序的最佳做法。
@@ -26,7 +26,7 @@ ms.locfileid: "56544939"
 框架请求对象[ **IOCTL\_内部\_USB\_提交\_URB** ](https://msdn.microsoft.com/library/windows/hardware/ff537271)包含位于 URB **Parameters.Others.Arg1**的请求。 URB 状态时请求完成时，必须设置为任一 USBD\_状态\_成功，或指示失败性质的故障状态。 Usb.h 标头文件中定义的失败状态的值。
 
 ## <a name="related-topics"></a>相关主题
-[开发 USB 主控制器的 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)  
+[为 USB 主控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)  
 
 
 

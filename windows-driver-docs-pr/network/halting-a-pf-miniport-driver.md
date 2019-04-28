@@ -1,17 +1,17 @@
 ---
-title: 正在停止 PF 微型端口驱动程序
-description: 正在停止 PF 微型端口驱动程序
+title: 停止 PF 微型端口驱动程序
+description: 停止 PF 微型端口驱动程序
 ms.assetid: E3F6B78E-6938-459B-883E-5DA0BB1D73C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43dba8bda1cc62e6f1cf7ed277ca022f84c94e1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349829"
 ---
-# <a name="halting-a-pf-miniport-driver"></a>正在停止 PF 微型端口驱动程序
+# <a name="halting-a-pf-miniport-driver"></a>停止 PF 微型端口驱动程序
 
 
 本主题讨论与停止的 PCI Express (PCIe) 物理函数 (PF) 上支持单根 I/O 虚拟化 (SR-IOV) 的适配器的微型端口驱动程序所涉及的步骤。 下图中显示这些步骤。

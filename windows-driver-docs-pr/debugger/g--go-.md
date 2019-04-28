@@ -1,5 +1,5 @@
 ---
-title: g （转向）
+title: g（转到）
 description: G 命令开始执行给定的进程或线程。 BreakAddress 命中时，或另一个事件导致调试器停止时，执行将暂停程序，结尾处。
 ms.assetid: 9b6aac94-6c53-40c2-a8de-2ad106678c65
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b9d7cd181a6c508374323b2ad877886a06c0d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357589"
 ---
-# <a name="g-go"></a>g （转向）
+# <a name="g-go"></a>g（转到）
 
 
 **G**命令开始执行给定的进程或线程。 执行该程序结束时都将停止时*BreakAddress*到达时，或导致调试器停止另一个事件。

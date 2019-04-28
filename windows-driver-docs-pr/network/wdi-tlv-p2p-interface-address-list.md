@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INTERFACE_ADDRESS_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c5bfbd8b5f56b3b329aeaaae9540cb1c6bcc47ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347259"
 ---
 # <a name="wditlvp2pinterfaceaddresslist"></a>WDI\_TLV\_P2P\_INTERFACE\_ADDRESS\_LIST
 
@@ -55,7 +55,7 @@ WDI\_TLV\_P2P\_界面\_地址\_列表是包含 Wi-Fi Direct 接口的地址列�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

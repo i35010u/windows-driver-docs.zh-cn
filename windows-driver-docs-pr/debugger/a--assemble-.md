@@ -1,5 +1,5 @@
 ---
-title: （组装）
+title: a（汇编）
 description: 命令对 32 位 x86 指令助记键和放到内存中生成的指令代码。
 ms.assetid: 6736a5fd-5a33-4698-9510-8a95f6a1caf7
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f77510936fbc6d3073b300b1ccd52a4cf5c531e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351495"
 ---
-# <a name="a-assemble"></a>（组装）
+# <a name="a-assemble"></a>a（汇编）
 
 
 的命令对 32 位 x86 指令助记键和放到内存中生成的指令代码。

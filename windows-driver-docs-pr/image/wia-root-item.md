@@ -5,11 +5,11 @@ ms.assetid: cf4d1056-3437-4ba7-8a87-421e91afd02a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 414ba5d4bf0d4c72d16eeadfd6ebc708a186f605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352655"
 ---
 # <a name="wia-root-item"></a>WIA 根项
 

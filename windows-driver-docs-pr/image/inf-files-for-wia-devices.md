@@ -5,11 +5,11 @@ ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ef278843da0b6e35b5954b238a2f44f201f5a51c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352119"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
@@ -130,7 +130,7 @@ ms.locfileid: "57463855"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -263,7 +263,7 @@ ms.locfileid: "57463855"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>备注</th>
 </tr>
 </thead>

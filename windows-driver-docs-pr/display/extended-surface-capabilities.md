@@ -1,6 +1,6 @@
 ---
-title: 扩展图面上的功能
-description: 扩展图面上的功能
+title: 扩展图面功能
+description: 扩展图面功能
 ms.assetid: daa1a310-1cea-48ca-a373-a496b997424f
 keywords:
 - 绘制扩展表面功能 WDK DirectDraw 图面上的扩展功能
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c7a1fafc74e381b65f454c1676d087c86178860
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353365"
 ---
-# <a name="extended-surface-capabilities"></a>扩展图面上的功能
+# <a name="extended-surface-capabilities"></a>扩展图面功能
 
 
 ## <span id="ddk_extended_surface_capabilities_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITIES_GG"></span>

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e9db6fc4eead1efd0e893f62de4494a3f4be37f4
-ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351491"
 ---
 # <a name="activating-a-smart-client"></a>激活智能客户端
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71e42d915720be7b96214a9fc098c53c97e4aaa0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353013"
 ---
 # <a name="getactivejobsresponse-element"></a>GetActiveJobsResponse 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56534212"
 </wscn:GetActiveJobsResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -153,7 +153,7 @@ WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ActiveJobs**](activejobs.md)

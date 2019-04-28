@@ -5,13 +5,13 @@ ms.assetid: 5d0303a9-29f7-4759-ae7b-ad670eaee0ee
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fbcf00019ca2620cb3883d868e90a72830207bef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347819"
 ---
-# <a name="example-11-enabling-page-heap-verification"></a>示例 11:启用页面堆验证
+# <a name="example-11-enabling-page-heap-verification"></a>示例 11：启用页堆验证
 
 
 ## <span id="ddk_example_11___enabling_page_heap_verification_dtools"></span><span id="DDK_EXAMPLE_11___ENABLING_PAGE_HEAP_VERIFICATION_DTOOLS"></span>

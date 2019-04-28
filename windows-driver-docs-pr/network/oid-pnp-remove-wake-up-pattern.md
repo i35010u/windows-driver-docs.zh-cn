@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_REMOVE_WAKE_UP_PATTERN 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a28cc63e48767ddff5d42b388d61f8253c849579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351716"
 ---
 # <a name="oidpnpremovewakeuppattern"></a>OID\_PNP\_REMOVE\_WAKE\_UP\_PATTERN
 
@@ -40,17 +40,17 @@ OID\_PNP\_删除\_唤醒\_向上\_模式 OID 请求微型端口驱动程序，�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和 6.1 中受支持。 NDIS 6.20 和更高版本，使用<a href="oid-pm-remove-wol-pattern.md" data-raw-source="[OID_PM_REMOVE_WOL_PATTERN](oid-pm-remove-wol-pattern.md)">OID_PM_REMOVE_WOL_PATTERN</a>相反。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_PM\_PACKET\_PATTERN**](https://msdn.microsoft.com/library/windows/hardware/ff566756)

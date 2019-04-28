@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7a9df7b0b9aa67cc82eaaea6b7802002f57f7f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350777"
 ---
 # <a name="autoconfiguration-during-configuration-change"></a>配置更改期间的自动配置
 

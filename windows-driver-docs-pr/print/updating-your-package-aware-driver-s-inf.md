@@ -1,17 +1,17 @@
 ---
-title: 更新包识别驱动程序的 INF
-description: 更新包识别驱动程序的 INF
+title: 更新包感知驱动程序的 INF
+description: 更新包感知驱动程序的 INF
 ms.assetid: d0bf489d-d084-40df-b5aa-69cdf679993f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a58709ac71945097fb69619f9225d95bf72d788a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346535"
 ---
-# <a name="updating-your-package-aware-drivers-inf"></a>更新包识别驱动程序的 INF
+# <a name="updating-your-package-aware-drivers-inf"></a>更新包感知驱动程序的 INF
 
 
 捆绑包识别驱动程序使用的核心驱动程序后下, 一步是更新包识别驱动程序的 INF 文件。

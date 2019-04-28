@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bbf7c19bd175b05f8cb09527ea7524c2dca7cd27
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353900"
 ---
 # <a name="irqlkeraiselower2-rule-wdm"></a>IrqlKeRaiseLower2 规则 (wdm)
 

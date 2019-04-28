@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eacffa782652e541c1874d1d39f78c47222b3de2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347858"
 ---
 # <a name="bug-check-0x1000007f-unexpectedkernelmodetrapm"></a>Bug 检查 0x1000007F：意外\_内核\_模式\_陷阱\_M
 

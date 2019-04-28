@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier 输入的文件
-description: Static Driver Verifier 输入的文件
+title: 静态驱动程序验证程序输入文件
+description: 静态驱动程序验证程序输入文件
 ms.assetid: 0c31a752-6946-4704-aff6-c9cd1bf9f522
 keywords:
 - 静态驱动程序验证程序 WDK，输入文件
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d79e38c64ac7365e4cc9e562ba07d93d00dd0e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353465"
 ---
-# <a name="static-driver-verifier-input-files"></a>Static Driver Verifier 输入的文件
+# <a name="static-driver-verifier-input-files"></a>静态驱动程序验证程序输入文件
 
 
 SDV[验证引擎](verification-engine.md)将以下文件作为输入验证。 驱动程序源文件和操作系统模型文件所需的所有验证。

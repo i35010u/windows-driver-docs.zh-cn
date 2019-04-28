@@ -1,5 +1,5 @@
 ---
-title: 在 KMDF 驱动程序支持 WMI
+title: 在 KMDF 驱动程序中支持 WMI
 description: 本部分介绍如何将 KMDF 驱动程序注册为 WMI 数据提供程序，响应请求对实例数据，并将事件发送到已注册的 WMI 客户端。
 ms.assetid: 821c4b4f-162a-4a2f-8846-47e5173ad412
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be8fe6ffd66079c9bd29d9cf5798e7d3ce940d08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350666"
 ---
-# <a name="supporting-wmi-in-kmdf-drivers"></a>在 KMDF 驱动程序支持 WMI
+# <a name="supporting-wmi-in-kmdf-drivers"></a>在 KMDF 驱动程序中支持 WMI
 
 
 \[仅适用于 KMDF\]
@@ -28,7 +28,7 @@ ms.locfileid: "56541013"
 
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [用于 KMDF 驱动程序的 WMI 简介](introduction-to-wmi-for-kmdf-drivers.md)

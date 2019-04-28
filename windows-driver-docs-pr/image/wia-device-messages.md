@@ -5,11 +5,11 @@ ms.assetid: b498a75d-1252-4f13-ae62-9a53491c2bde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d27a47b4988e4168f9f0e20685a0b4275599ebe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355074"
 ---
 # <a name="wia-device-messages"></a>WIA 设备消息
 

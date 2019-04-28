@@ -5,11 +5,11 @@ ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f29c31fae56bc7aac668d08854a40ee5bb55b5cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346250"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>键盘和鼠标类驱动程序
 
@@ -198,7 +198,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 |            |                                                    |
 |------------|----------------------------------------------------|
-| ReplTest1      | 解释                                     |
+| 值      | 解释                                     |
 | 0x00000000 | 标头：“版本”旁边的数字。 设置为零。                |
 | 0x00000000 | 标头：标志。 设置为零。                  |
 | 0x00000003 | 地图 （包括 null 项） 中的三个条目。   |

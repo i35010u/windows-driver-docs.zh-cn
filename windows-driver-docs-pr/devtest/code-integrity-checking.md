@@ -7,11 +7,11 @@ keywords:
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a596e6e1e9e7adc71efa3e66ac582b7bedcd1de
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343937"
 ---
 # <a name="code-integrity-checking"></a>代码完整性检查
 

@@ -5,11 +5,11 @@ ms.assetid: 775FA8D7-ECF7-4F94-8958-C51D74243C3A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 280c19391778b6f92a354fcbca65e8d00c6b6c09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349427"
 ---
 # <a name="receiving-remote-ndis-qos-parameters"></a>接收远程 NDIS QoS 参数
 

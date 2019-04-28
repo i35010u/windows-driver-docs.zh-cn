@@ -5,11 +5,11 @@ ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d506012ba8554a2bd9bd019ac69ad84cabc77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346205"
 ---
 # <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>微型驱动程序要求 tablet Pc 更早版本的 Windows 上运行
 

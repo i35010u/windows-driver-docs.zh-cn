@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c54f58b1621c844c25f8b7bbebab91dfd1f66b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348913"
 ---
 # <a name="deinterlacing-and-compositing-on-64-bit-operating-systems"></a>在 64 位操作系统上进行反交错与合成
 

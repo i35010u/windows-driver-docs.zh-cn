@@ -1,6 +1,6 @@
 ---
-title: 获取集合的信息
-description: 获取集合的信息
+title: 获取集合信息
+description: 获取集合信息
 ms.assetid: 0568993b-ff50-48ac-a875-95ab643d6c28
 keywords:
 - WDK HID，收集的信息的集合
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 871aa3a668e7554dbb7002a313d2963c67067b60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346190"
 ---
-# <a name="obtaining-collection-information"></a>获取集合的信息
+# <a name="obtaining-collection-information"></a>获取集合信息
 
 
 

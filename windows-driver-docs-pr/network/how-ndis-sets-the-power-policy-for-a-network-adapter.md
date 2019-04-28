@@ -1,6 +1,6 @@
 ---
-title: NDIS 网络适配器设置电源策略的方式
-description: NDIS 网络适配器设置电源策略的方式
+title: NDIS 如何设置网络适配器的电源策略
+description: NDIS 如何设置网络适配器的电源策略
 ms.assetid: ede0e33d-16f9-45ec-9e9d-b188f6360b2f
 keywords:
 - 网络接口卡 WDK 网络、 电源策略
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abc803dd36329774f3928581555520aa8fa9a108
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349631"
 ---
-# <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS 网络适配器设置电源策略的方式
+# <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS 如何设置网络适配器的电源策略
 
 
 

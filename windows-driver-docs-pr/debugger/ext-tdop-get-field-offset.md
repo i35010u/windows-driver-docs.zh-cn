@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ebab86ea70bb2113b54aef97325acebe554eeec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346288"
 ---
 # <a name="exttdopgetfieldoffset"></a>EXT\_TDOP\_GET\_FIELD\_OFFSET
 
 
 EXT\_TDOP\_获取\_字段\_偏移量的子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将返回在结构中成员的偏移量。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
 设置为 EXT\_TDOP\_获取\_字段\_此子操作的偏移量。

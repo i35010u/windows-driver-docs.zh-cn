@@ -5,13 +5,13 @@ ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ff1dc27865727c148b2450d29d31f288135aff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348263"
 ---
-# <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化
+# <a name="network-virtualization-using-generic-routing-encapsulation-nvgre-task-offload"></a>使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化
 
 HYPER-V 网络虚拟化支持网络虚拟化使用通用路由封装 (NVGRE) 作为机制来虚拟化 IP 地址。 在 NVGRE 中，虚拟机的数据包被封装在另一个数据包。 此新，NVGRE 格式数据包的标头具有适当的源和目标提供程序区域 (PA) IP 地址。 此外，它有 24 位虚拟子网 ID (VSID)，它存储在 GRE 报头中的新的数据包。
 

@@ -1,6 +1,6 @@
 ---
-title: 系统工作线程数
-description: 系统工作线程数
+title: 系统工作线程
+description: 系统工作线程
 ms.assetid: 01ae1c1b-0cb0-4b9b-bd74-341b7c289fd4
 keywords:
 - executive 辅助线程 WDK 内核
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf3ce35dd4cafaa2cc890874199c6ceb77323031
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345405"
 ---
-# <a name="system-worker-threads"></a>系统工作线程数
+# <a name="system-worker-threads"></a>系统工作线程
 
 
 

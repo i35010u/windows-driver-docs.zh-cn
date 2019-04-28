@@ -1,19 +1,19 @@
 ---
-title: 请求自定义用户界面的显示
-description: 请求自定义用户界面的显示
+title: 请求显示自定义 UI
+description: 请求显示自定义 UI
 ms.assetid: 4b7366d9-e55a-4b24-b75f-a5f133b80ca7
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，请求显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4a14426a8874e8630f128976d364b59ddf1d933
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349391"
 ---
-# <a name="requesting-the-display-of-a-custom-ui"></a>请求自定义用户界面的显示
+# <a name="requesting-the-display-of-a-custom-ui"></a>请求显示自定义 UI
 
 
 

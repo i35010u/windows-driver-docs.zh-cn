@@ -5,11 +5,11 @@ ms.assetid: 710BAEAF-BC45-416E-8359-69E9DFCA2570
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2ac691b1bb58f52f506e9fb7d3fbf6caa5031fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354398"
 ---
 # <a name="avoiding-debugger-searches-for-un-needed-symbols"></a>避免调试器搜索不需要的符号
 
@@ -53,7 +53,7 @@ ms.locfileid: "56542715"
 -   若要防止调试器搜索中卸载的模块的符号，激活**SYMOPT\_否\_UNQUALIFIED\_加载**通过 **-snul**命令行选项或者，如果调试器已在运行，通过使用 **.symopt + 0x100**。
 -   若要显式加载所需的调试会话的模块，使用调试器命令如 **.reload**或**ld**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WDK 和 WinDbg 下载](https://go.microsoft.com/fwlink/p/?LinkId=733614)

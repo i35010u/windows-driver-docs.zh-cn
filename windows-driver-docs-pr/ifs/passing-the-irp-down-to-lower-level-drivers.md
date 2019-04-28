@@ -1,6 +1,6 @@
 ---
-title: 传递到较低级别的驱动程序 IRP
-description: 传递到较低级别的驱动程序 IRP
+title: 将 IRP 向下传递到较低级别的驱动程序
+description: 将 IRP 向下传递到较低级别的驱动程序
 ms.assetid: 9a8e72fb-b0a8-4026-8606-57fa03344146
 keywords:
 - IRP 调度例程 WDK 文件系统中，向下传递 IRP
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6200c24666752c8ce20eda6e72cdfa407571b558
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352779"
 ---
-# <a name="passing-the-irp-down-to-lower-level-drivers"></a>传递到较低级别的驱动程序 IRP
+# <a name="passing-the-irp-down-to-lower-level-drivers"></a>将 IRP 向下传递到较低级别的驱动程序
 
 
 ## <span id="ddk_passing_the_irp_down_to_lower_level_drivers_if"></span><span id="DDK_PASSING_THE_IRP_DOWN_TO_LOWER_LEVEL_DRIVERS_IF"></span>

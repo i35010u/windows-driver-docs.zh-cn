@@ -5,11 +5,11 @@ ms.assetid: 1EAAF6F7-17B6-452F-9273-D7CD1DC33154
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1abc1e6bfc59a5affed22e6104470253a31ce497
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348170"
 ---
 # <a name="audio-playback-fidelity-tests-in-mitt"></a>MITT 中的音频播放保真度测试
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f8806bf3588b8564c604d97cd6ad22c4d9832c51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347957"
 ---
 # <a name="kspropertycameracontrolextendedflashmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE
 
@@ -81,7 +81,7 @@ ms.locfileid: "56534497"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

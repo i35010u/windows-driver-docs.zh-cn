@@ -5,11 +5,11 @@ ms.assetid: ADF6622F-93E1-4A0D-AB54-A99F7D33EBA0
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d54d14fbf8bb9a111b299e7617bab24b716fb146
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349497"
 ---
 # <a name="hyper-v-extensible-switch-status-indications"></a>Hyper-V 可扩展交换机状态指示
 

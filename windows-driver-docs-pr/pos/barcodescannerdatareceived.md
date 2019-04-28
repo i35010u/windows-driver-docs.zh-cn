@@ -5,11 +5,11 @@ ms.assetid: 3dd7699a-5e2b-484b-bd83-c37ee7f0e851
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d163fb0b0f679d71dc8f5692dd8bd8e8af62f83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346617"
 ---
 # <a name="barcodescannerdatareceived"></a>BarcodeScannerDataReceived
 

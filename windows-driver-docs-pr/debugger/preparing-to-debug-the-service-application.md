@@ -1,17 +1,17 @@
 ---
-title: 调试服务应用程序的准备工作
-description: 调试服务应用程序的准备工作
+title: 准备调试服务应用程序
+description: 准备调试服务应用程序
 ms.assetid: 332b7bcf-22e4-4b98-bcb3-3646f8bd63fd
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2967f4b5d31b49adbfbf25f9f967948ffb761429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357037"
 ---
-# <a name="preparing-to-debug-the-service-application"></a>调试服务应用程序的准备工作
+# <a name="preparing-to-debug-the-service-application"></a>准备调试服务应用程序
 
 
 本主题列出了所有可能无需在调试服务应用程序之前的预备步骤。 你的方案中需要哪些步骤取决于其附加已选择，但选择的调试配置的选项。 有关这些选项的列表，请参阅[选择最佳方法](choosing-the-best-method.md)。

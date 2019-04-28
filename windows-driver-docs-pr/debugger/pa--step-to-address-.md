@@ -1,5 +1,5 @@
 ---
-title: pa （到地址的步骤）
+title: pa（步进到地址）
 description: Pa 命令执行程序，直到达到指定的地址时，显示每个步骤。
 ms.assetid: 497261a9-69fb-4df2-b342-cd62bda8a51f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b00bb0951cb306f538499ea35fa52504121321d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351497"
 ---
-# <a name="pa-step-to-address"></a>pa （到地址的步骤）
+# <a name="pa-step-to-address"></a>pa（步进到地址）
 
 
 **Pa**命令执行程序，直到达到指定的地址时，显示每个步骤。

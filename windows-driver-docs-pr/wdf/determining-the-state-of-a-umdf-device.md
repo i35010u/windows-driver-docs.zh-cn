@@ -1,5 +1,5 @@
 ---
-title: 确定 UMDF 设备状态
+title: 确定 UMDF 设备的状态
 description: 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用调试器扩展来确定 UMDF 设备处于什么状态。
 ms.assetid: ed1a4429-4f36-44b9-9564-587aa381342f
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca57211ad0850d1e1cc41d92b2bcb2b7b5c1e398
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344954"
 ---
-# <a name="determining-the-state-of-a-umdf-device"></a>确定 UMDF 设备状态
+# <a name="determining-the-state-of-a-umdf-device"></a>确定 UMDF 设备的状态
 
 
 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用调试器扩展来确定 UMDF 设备处于什么状态。

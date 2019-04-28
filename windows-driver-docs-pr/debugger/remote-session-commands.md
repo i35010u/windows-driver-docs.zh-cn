@@ -1,19 +1,19 @@
 ---
-title: 远程会话的命令
-description: 远程会话的命令
+title: 远程会话命令
+description: 远程会话命令
 ms.assetid: 8c7da3e9-c983-4253-92fb-ce64f22cdc6c
 keywords:
 - 远程工具中，远程会话命令
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16cb7320d235c7a7ad2b2731d5ec65fa8a902f13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353593"
 ---
-# <a name="remote-session-commands"></a>远程会话的命令
+# <a name="remote-session-commands"></a>远程会话命令
 
 
 ## <span id="ddk_remote_session_commands_dtools"></span><span id="DDK_REMOTE_SESSION_COMMANDS_DTOOLS"></span>

@@ -1,16 +1,16 @@
 ---
-Description: This section describes the Usbccgp.sys driver provided by Microsoft for composite devices.
-title: USB 泛型父驱动程序 (Usbccgp.sys)
+Description: 本部分介绍由 Microsoft 提供的复合设备 Usbccgp.sys 驱动程序。
+title: USB 常规父驱动程序 (Usbccgp.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0ecd4e815027c763921b339e3c0fb20b4f41867
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355041"
 ---
-# <a name="usb-generic-parent-driver-usbccgpsys"></a>USB 泛型父驱动程序 (Usbccgp.sys)
+# <a name="usb-generic-parent-driver-usbccgpsys"></a>USB 常规父驱动程序 (Usbccgp.sys)
 
 
 本部分介绍由 Microsoft 提供的复合设备 Usbccgp.sys 驱动程序。

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d90fc239bb159d3926f3147b8be91ca5ec3695d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352285"
 ---
 # <a name="performing-floating-point-operations-in-direct3d"></a>在 Direct3D 中执行浮点运算
 

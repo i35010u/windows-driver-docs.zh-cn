@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d05d4f395db9c6f86c1b98cf8837d35f4af301a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344684"
 ---
-# <a name="example-3-typical-start-command"></a>示例 3：典型的启动命令
+# <a name="example-3-typical-start-command"></a>示例 3：典型启动命令
 
 ## <span id="ddk_typical_start_command_tools"></span><span id="DDK_TYPICAL_START_COMMAND_TOOLS"></span>
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a90580eea69d85ccf616b3793ba48617810d5678
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350937"
 ---
 # <a name="oidpacketcoalescingfiltermatchcount"></a>OID\_数据包\_COALESCING\_筛选器\_匹配\_计数
 
@@ -63,7 +63,7 @@ OID 请求已成功完成。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

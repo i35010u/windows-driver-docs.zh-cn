@@ -5,11 +5,11 @@ ms.assetid: 97C88E82-96AA-41AD-9B1F-3EB848A08BD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d32596886982c9e1c549b1cf17ca5ffb73ec4a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345955"
 ---
 # <a name="networking-driver-samples"></a>网络驱动程序示例
 

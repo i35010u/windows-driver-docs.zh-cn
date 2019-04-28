@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 325f5403ad585813e81b06c3b8eb505c1a9cd5d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351611"
 ---
 # <a name="srbproposedataformat"></a>SRB\_提议\_数据\_格式
 
@@ -51,7 +51,7 @@ ms.locfileid: "56555229"
 
 在更高版本的时间段的类驱动程序微型驱动程序是否能够接受新的格式，可能会发送微型驱动程序格式更改，这将由**OptionsFlags**中的成员[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB\_SET\_DATA\_FORMAT**](srb-set-data-format.md)

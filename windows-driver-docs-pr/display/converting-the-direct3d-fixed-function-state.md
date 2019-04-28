@@ -1,6 +1,6 @@
 ---
-title: 将 Direct3D 固定函数状态转换
-description: 将 Direct3D 固定函数状态转换
+title: 转换 Direct3D 固定函数状态
+description: 转换 Direct3D 固定函数状态
 ms.assetid: bc93d65e-ac16-470d-8c52-db8b1cc74456
 keywords:
 - 用户模式显示驱动程序 WDK Windows Vista，Direct3D 固定函数状态进行相互转换
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eb742e9c11b271d408abd2f310936f62b5ebf22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346937"
 ---
-# <a name="converting-the-direct3d-fixed-function-state"></a>将 Direct3D 固定函数状态转换
+# <a name="converting-the-direct3d-fixed-function-state"></a>转换 Direct3D 固定函数状态
 
 
 Microsoft Direct3D 运行时将 Direct3D 固定函数状态转换为顶点或像素着色器版本 2.0 中，如果用户模式显示驱动程序支持为每个着色器类型的版本 2.0 或更高版本。 但是，在运行时不转换着色器版本。 例如，如果应用程序使用顶点或像素着色器版本 1.1，则版本 1.1 中传递未转换到用户模式显示驱动程序，无论该驱动程序是否支持着色器版本 2.0 或更高版本。 与固定函数处理使用灵活的顶点格式 (FVF) 代码。

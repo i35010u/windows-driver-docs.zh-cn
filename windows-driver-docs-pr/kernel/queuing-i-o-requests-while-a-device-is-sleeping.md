@@ -1,6 +1,6 @@
 ---
-title: 设备处于睡眠状态时排队的 I/O 请求
-description: 设备处于睡眠状态时排队的 I/O 请求
+title: 设备睡眠时将 I/O 请求排队
+description: 设备睡眠时将 I/O 请求排队
 ms.assetid: 8cc0cea0-e5be-4705-ad4d-13a44d536469
 keywords:
 - I/O WDK 电源管理
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8235955f0cfe59c2fcba47f5bb5dc65f4ef289
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353603"
 ---
-# <a name="queuing-io-requests-while-a-device-is-sleeping"></a>设备处于睡眠状态时排队的 I/O 请求
+# <a name="queuing-io-requests-while-a-device-is-sleeping"></a>设备睡眠时将 I/O 请求排队
 
 
 

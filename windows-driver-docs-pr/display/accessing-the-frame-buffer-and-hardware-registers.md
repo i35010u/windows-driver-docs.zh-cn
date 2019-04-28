@@ -1,6 +1,6 @@
 ---
-title: 访问的帧缓冲区和硬件注册
-description: 访问的帧缓冲区和硬件注册
+title: 访问帧缓冲区和硬件寄存器
+description: 访问帧缓冲区和硬件寄存器
 ms.assetid: 6f735f33-0bb7-45b8-ac01-f34ec4937a8b
 keywords:
 - 显示帧缓冲区 WDK Windows 2000
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88f2f3a3282b0b255fe592142232c5388ea7ef36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346280"
 ---
-# <a name="accessing-the-frame-buffer-and-hardware-registers"></a>访问的帧缓冲区和硬件注册
+# <a name="accessing-the-frame-buffer-and-hardware-registers"></a>访问帧缓冲区和硬件寄存器
 
 
 ## <span id="ddk_accessing_the_frame_buffer_and_hardware_registers_gg"></span><span id="DDK_ACCESSING_THE_FRAME_BUFFER_AND_HARDWARE_REGISTERS_GG"></span>

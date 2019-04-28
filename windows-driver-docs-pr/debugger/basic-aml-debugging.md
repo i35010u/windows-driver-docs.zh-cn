@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 50b7c7a420aec9633ef368da3bf363b3aeca96eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357045"
 ---
 # <a name="basic-aml-debugging"></a>基本 AML 调试
 
@@ -61,6 +61,6 @@ AMLI 调试器处于活动状态，有多种：
 
 扩展和命令的完整列表，请参阅[使用 AMLI 调试器扩展](using-amli-debugger-extensions.md)并[使用 AMLI 调试器命令](using-amli-debugger-commands.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [AMLI 调试器](the-amli-debugger.md)

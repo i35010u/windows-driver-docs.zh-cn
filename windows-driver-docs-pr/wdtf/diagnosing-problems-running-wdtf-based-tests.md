@@ -5,11 +5,11 @@ ms.assetid: 24257B50-ED9C-4D45-A245-1EC855463D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5136738c5fb9a69b6508ee3bafab18ba23616a03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348019"
 ---
 # <a name="diagnosing-problems-running-wdtf-based-tests"></a>对运行基于 WDTF 的测试时出现的问题进行诊断
 

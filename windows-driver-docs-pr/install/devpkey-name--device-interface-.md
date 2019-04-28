@@ -1,6 +1,6 @@
 ---
-title: DEVPKEY_NAME （设备接口）
-description: DEVPKEY_NAME （设备接口）
+title: DEVPKEY_NAME（设备接口）
+description: DEVPKEY_NAME（设备接口）
 ms.assetid: 276862d0-8ab9-4914-9e57-834cc17d0e59
 keywords:
 - DEVPKEY_NAME （设备接口） 设备和驱动程序安装
@@ -15,13 +15,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 96d917d97f39fefc1117d19228251d0f792e4314
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353819"
 ---
-# <a name="devpkeyname-device-interface"></a>DEVPKEY_NAME （设备接口）
+# <a name="devpkeyname-device-interface"></a>DEVPKEY_NAME（设备接口）
 
 
 DEVPKEY_NAME 设备接口属性表示设备接口的名称。
@@ -76,17 +76,17 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md)

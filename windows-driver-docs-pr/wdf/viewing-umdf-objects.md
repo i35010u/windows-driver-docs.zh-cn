@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc429e4394d8a4fb946627c2b3019aad9065f6bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347953"
 ---
 # <a name="viewing-umdf-objects"></a>查看 UMDF 对象
 

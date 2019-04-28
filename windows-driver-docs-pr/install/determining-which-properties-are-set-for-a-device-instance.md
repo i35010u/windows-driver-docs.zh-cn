@@ -1,17 +1,17 @@
 ---
-title: 确定为设备实例设置的属性
-description: 确定为设备实例设置的属性
+title: 确定为设备实例设置哪些属性
+description: 确定为设备实例设置哪些属性
 ms.assetid: aeca4da5-9632-4523-aa2d-8d1c64b1eccc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 294671676af288ea25932b3835c8d09933462978
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346165"
 ---
-# <a name="determining-which-properties-are-set-for-a-device-instance"></a>确定为设备实例设置的属性
+# <a name="determining-which-properties-are-set-for-a-device-instance"></a>确定为设备实例设置哪些属性
 
 
 若要确定哪些属性设置为在 Windows Vista 和更高版本的 Windows 上的设备实例，请执行以下步骤：

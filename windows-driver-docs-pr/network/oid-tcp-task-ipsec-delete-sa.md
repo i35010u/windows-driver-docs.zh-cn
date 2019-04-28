@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f6c61150fd7976f2fb6b9b0c590bf524afadf94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350943"
 ---
 # <a name="oidtcptaskipsecdeletesa"></a>OID_TCP_TASK_IPSEC_DELETE_SA
 
@@ -23,6 +23,6 @@ ms.locfileid: "56523492"
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

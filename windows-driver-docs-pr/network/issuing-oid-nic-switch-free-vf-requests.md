@@ -5,11 +5,11 @@ ms.assetid: D9A8548C-02D8-4537-9053-6B262004CBC4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ec6849b658de7b791621e1d112a502d4c17e049
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352954"
 ---
 # <a name="issuing-oidnicswitchfreevf-requests"></a>发出 OID\_NIC\_交换机\_免费\_VF 请求
 

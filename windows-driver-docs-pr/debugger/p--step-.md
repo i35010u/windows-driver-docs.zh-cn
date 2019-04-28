@@ -1,5 +1,5 @@
 ---
-title: p （步骤）
+title: p（步进）
 description: P 命令执行单个指令或源行，并有选择性地显示所有寄存器和标志的生成值。
 ms.assetid: 4ee24e76-b751-4346-80af-d481d9513ce0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cac8b8f3578104ecf07d0ed4150b77b6e2d22e00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351475"
 ---
-# <a name="p-step"></a>p （步骤）
+# <a name="p-step"></a>p（步进）
 
 
 **P**命令执行单个指令或源行，并有选择性地显示所有寄存器和标志的生成值。 当子例程调用或中断发生，它们被视为单步执行。

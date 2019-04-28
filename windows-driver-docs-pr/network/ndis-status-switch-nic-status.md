@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_SWITCH_NIC_STATUS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cffe960cf89909e93c8cc1f6e8fcd81b1e2fb429
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353152"
 ---
 # <a name="ndisstatusswitchnicstatus"></a>NDIS\_状态\_交换机\_NIC\_状态
 
@@ -51,7 +51,7 @@ ms.locfileid: "56562404"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

@@ -1,17 +1,17 @@
 ---
-title: 主机关闭设备服务
+title: HOST 关闭设备服务
 description: 本主题提供指南的移动宽带接口模型 (MBIM)-当通过 CID_MBIM_DEVICE_SERVICES 查询符合条件的设备实现并报告所述的设备的服务。
 ms.assetid: 62BFC796-EDB2-489E-B487-65E2DD7C4256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 708a9460279773e71816242146b1f2c44a4564d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349648"
 ---
-# <a name="host-shutdown-device-service"></a>主机关闭设备服务
+# <a name="host-shutdown-device-service"></a>HOST 关闭设备服务
 
 
 本主题提供指南的移动宽带接口模型 (MBIM)-符合条件的设备实现并报告所述的设备服务 CID 进行查询时\_MBIM\_设备\_服务。
@@ -50,10 +50,10 @@ UUID Value = **883b7c26-985f-43fa-9804-27d7fb80959c**
 | 命令代码                         | 1                         |
 | 设置                                  | 是                       |
 | 查询                                | 否                        |
-| 事件                                | 否                        |
-| 设置 InformationBuffer 有效负载        | 不适用                       |
-| 查询 InformationBuffer 有效负载      | 不适用                       |
-| 完成 InformationBuffer 有效负载 | 不适用                       |
+| Event                                | 否                        |
+| 设置 InformationBuffer 有效负载        | 不可用                       |
+| 查询 InformationBuffer 有效负载      | 不可用                       |
+| 完成 InformationBuffer 有效负载 | 不可用                       |
 
  
 
@@ -97,27 +97,27 @@ UUID Value = **883b7c26-985f-43fa-9804-27d7fb80959c**
 <tr class="odd">
 <td align="left"><p>D0</p></td>
 <td align="left"><p>MBIM_CMD_OPEN</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D1</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D2</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>MBIM_CMD_CLOSE</p></td>
 <td align="left"><p>MSHOSTSHUTDOWN</p></td>
 <td align="left"><p>MSHOSTSHUTDOWN</p></td>
@@ -139,9 +139,9 @@ UUID Value = **883b7c26-985f-43fa-9804-27d7fb80959c**
 | 设置                                  | 是                          |
 | 查询                                | 否                           |
 | 通知                         | 否                           |
-| 设置 InformationBuffer 有效负载        | 不适用                          |
-| 查询 InformationBuffer 有效负载      | 不适用                          |
-| 完成 InformationBuffer 有效负载 | 不适用                          |
+| 设置 InformationBuffer 有效负载        | 不可用                          |
+| 查询 InformationBuffer 有效负载      | 不可用                          |
+| 完成 InformationBuffer 有效负载 | 不可用                          |
 
  
 
@@ -164,16 +164,16 @@ UUID Value = **883b7c26-985f-43fa-9804-27d7fb80959c**
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">命令</td>
+<td align="left">Command</td>
 <td align="left">CID_MBIM_SET_MSHOSTPRESHUTDOWN</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
+<td align="left">不可用</td>
 </tr>
 <tr class="even">
 <td align="left">响应</td>
 <td align="left">空</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
+<td align="left">不可用</td>
 </tr>
 </tbody>
 </table>

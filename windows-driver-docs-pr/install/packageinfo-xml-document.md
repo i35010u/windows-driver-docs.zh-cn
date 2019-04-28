@@ -5,11 +5,11 @@ ms.assetid: 1fa9b8a5-d6ab-4952-8e2d-7cb7ccc88804
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 620c477a6a5d49d049b72367bad796766d178385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348988"
 ---
 # <a name="packageinfo-xml-document"></a>PackageInfo XML 文档
 

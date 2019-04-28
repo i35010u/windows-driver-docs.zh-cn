@@ -1,5 +1,5 @@
 ---
-title: / 调试开关
+title: /Debug 开关
 description: /Debug 转换来增强存储证书管理工具的报告的功能，并在 IEEE 1667 合规 USB 存储设备中存储有关身份验证接收器证书 (ASC) 的信息。
 ms.assetid: 9a7c8fd0-34a8-4f60-a8cb-d5777645f672
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6712be11ed34a234460ee6088d2b81c349a40d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344013"
 ---
-# <a name="debug-switch"></a>/ 调试开关
+# <a name="debug-switch"></a>/Debug 开关
 
 
 /**调试**开关的增强存储证书管理工具的报告功能和 IEEE 1667 合规的 USB 存储设备中的身份验证接收器证书 (ASC) 存储有关的信息。 此报告包括以下几个部分：

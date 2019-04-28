@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 SIO_WSK_QUERY_RECEIVE_BACKLOG 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ed4d02617201f39c6ebeb9f98d02ed52069d4edc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351698"
 ---
 # <a name="siowskqueryreceivebacklog"></a>SIO\_WSK\_查询\_接收\_积压工作
 
@@ -81,7 +81,7 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

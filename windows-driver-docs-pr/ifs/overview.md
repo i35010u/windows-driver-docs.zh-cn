@@ -5,11 +5,11 @@ ms.assetid: 3b2895a2-9a2e-46eb-b8fb-47d6db4a1de0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee729166924cf60c7af642c2891c6e6e7745135d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352783"
 ---
 # <a name="overview"></a>概述
 

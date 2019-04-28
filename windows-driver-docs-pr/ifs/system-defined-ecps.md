@@ -1,17 +1,17 @@
 ---
-title: 系统定义 ECPs
-description: 系统定义 ECPs
+title: 系统定义的 ECP
+description: 系统定义的 ECP
 ms.assetid: 6acb4be4-a7aa-431d-b2d8-3ef6d41cb4ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc84b3904b4b97aa42a79b96c4e4b9808847751
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344349"
 ---
-# <a name="system-defined-ecps"></a>系统定义 ECPs
+# <a name="system-defined-ecps"></a>系统定义的 ECP
 
 
 操作系统定义中的以下 ECPs *Ntifs.h*标头文件。 这些系统定义 ECPs 附加到指定的额外信息[ **IRP\_MJ\_创建**](https://msdn.microsoft.com/library/windows/hardware/ff548630)文件中的操作。 文件系统堆栈中的元素可以查询有关的额外信息 ECPs。

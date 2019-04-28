@@ -5,11 +5,11 @@ ms.assetid: d27bd44c-41c1-4546-b463-11ed3f5c7d84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a118245ea93182b1c938a4a87f22ae9c00b836c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348643"
 ---
 # <a name="setupapi-logging-functions"></a>SetupAPI 日志记录函数
 

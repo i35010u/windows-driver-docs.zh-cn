@@ -1,17 +1,17 @@
 ---
-title: 不识别包的驱动程序更新核心驱动程序文件
-description: 不识别包的驱动程序更新核心驱动程序文件
+title: 更新非包感知驱动程序的核心驱动程序文件
+description: 更新非包感知驱动程序的核心驱动程序文件
 ms.assetid: ce5da376-edac-4cd1-8750-9981bb5b709d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4e01fbef1146d184f1d1f9f114a93486862ff2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346523"
 ---
-# <a name="updating-core-drivers-files-for-non-package-aware-drivers"></a>不识别包的驱动程序更新核心驱动程序文件
+# <a name="updating-core-drivers-files-for-non-package-aware-drivers"></a>更新非包感知驱动程序的核心驱动程序文件
 
 
 核心驱动程序 Windows 早操作系统比 Windows Vista，包括 Windows Server 2003、 Windows XP 和 Windows 2000 中，提供了用于组件在 Microsoft [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880) XPSDrv，不同的软件包的网站UniDrv 和 PostScript 驱动程序。 每个包具有不同的再分发协议。 包中的文件，实际上是，与 Windows Vista 中的对应项相同。 若要解压缩驱动程序文件，请按照中列出的步骤[获取更新核心驱动程序包](getting-the-updated-core-driver-package.md)。 一旦具有展开核心驱动程序包，包含就像您的驱动程序的一部分，您需要自己的驱动程序包中的核心驱动程序文件。 换而言之，将驱动程序二进制文件从核心包复制到驱动程序包的主目录。 这将中断的包的完整性进行数字签名的核心驱动程序，但它可实现 Windows XP （和其他 Windows 操作系统早于 Windows Vista） 和驱动程序不打包注意若要利用核心驱动程序更新。

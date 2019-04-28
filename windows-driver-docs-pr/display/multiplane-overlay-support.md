@@ -1,17 +1,17 @@
 ---
-title: Multiplane 覆盖的支持
+title: 多平面覆盖支持
 description: Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以支持 multiplane 覆盖。 此功能是从 Windows 8.1 新增功能。
 ms.assetid: 8B2F5497-554D-4D4A-B44E-985A9F89143D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23daa66180396b6b4a65458a13a122e977777db5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345615"
 ---
-# <a name="multiplane-overlay-support"></a>Multiplane 覆盖的支持
+# <a name="multiplane-overlay-support"></a>多平面覆盖支持
 
 
 Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以支持 multiplane 覆盖。 此功能是从 Windows 8.1 新增功能。

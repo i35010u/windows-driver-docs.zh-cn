@@ -1,6 +1,6 @@
 ---
-title: 标头数据拆分的标准化的 INF 关键字
-description: 标头数据拆分的标准化的 INF 关键字
+title: 标头数据拆分的标准化 INF 关键字
+description: 标头数据拆分的标准化 INF 关键字
 ms.assetid: 4c341940-9d9d-4c58-8d15-d54680eef50e
 keywords:
 - 标头数据拆分 WDK、 配置
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82af1d7b2770042bc9c42be706f3a9a205850862
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345995"
 ---
-# <a name="standardized-inf-keywords-for-header-data-split"></a>标头数据拆分的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-header-data-split"></a>标头数据拆分的标准化 INF 关键字
 
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "56554882"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -51,7 +51,7 @@ ms.locfileid: "56554882"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

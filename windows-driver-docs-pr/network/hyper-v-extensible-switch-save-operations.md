@@ -5,11 +5,11 @@ ms.assetid: 7148B094-2551-4035-A6BE-141DD01BEA14
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 576c4caef1b964d7695d5c69a6a88cde4a16f6d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349493"
 ---
 # <a name="hyper-v-extensible-switch-save-operations"></a>Hyper-V 可扩展交换机保存操作
 

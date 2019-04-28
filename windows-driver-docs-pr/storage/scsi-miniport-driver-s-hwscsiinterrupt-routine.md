@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 044e7e95950cd724feda8b59eb1ca47256fcec0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354557"
 ---
 # <a name="scsi-miniport-drivers-hwscsiinterrupt-routine"></a>SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 

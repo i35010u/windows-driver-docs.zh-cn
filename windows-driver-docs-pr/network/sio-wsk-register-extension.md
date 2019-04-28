@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 SIO_WSK_REGISTER_EXTENSION 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 722f69616475e59f1a343f5895a9afd513b5fefd
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351677"
 ---
 # <a name="siowskregisterextension"></a>SIO\_WSK\_注册\_扩展
 
@@ -28,7 +28,7 @@ SIO\_WSK\_注册\_扩展套接字 I/O 控制操作允许 WSK 的应用程序注�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +84,7 @@ WSK 应用程序调用时未指定指向 IRP **WskControlSocket**函数以注册
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

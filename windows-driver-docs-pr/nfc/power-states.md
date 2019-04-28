@@ -4,18 +4,18 @@ description: NFC 类扩展驱动程序充当设备的电源策略所有者，因
 ms.assetid: 12433344-9C33-415B-BA14-4BD4C7E838CC
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7870bf343ed2870f3330124c5a4721727690426c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348525"
 ---
 # <a name="power-states"></a>电源状态
 

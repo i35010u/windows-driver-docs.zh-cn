@@ -1,17 +1,17 @@
 ---
-title: 查看和编辑在 WinDbg 中的全局变量
-description: 查看和编辑在 WinDbg 中的全局变量
+title: 在 WinDbg 中查看和编辑全局变量
+description: 在 WinDbg 中查看和编辑全局变量
 ms.assetid: 4273F6D8-A2A1-43FA-80BF-97E5673FAF05
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a559fb816042a272e0430f58ec02c96828799448
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348943"
 ---
-# <a name="viewing-and-editing-global-variables-in-windbg"></a>查看和编辑在 WinDbg 中的全局变量
+# <a name="viewing-and-editing-global-variables-in-windbg"></a>在 WinDbg 中查看和编辑全局变量
 
 
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a2e7cb64dfb26e03b541870eb2fc23717f1f0f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352493"
 ---
 # <a name="bug-check-0x18b-securekernelerror"></a>Bug 检查 0x18B：安全\_内核\_错误
 

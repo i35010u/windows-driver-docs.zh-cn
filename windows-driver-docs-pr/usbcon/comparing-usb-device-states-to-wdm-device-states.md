@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the WDM device states to use for USB device power states as specified in section 9.1 of the Universal Serial Bus 2.0 specification.
+Description: 本主题介绍了要使用 USB 设备电源状态为指定的通用串行总线 2.0 规范的 9.1 节中的 WDM 设备状态。
 title: USB 设备电源状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1d086417d1f4898c2bc80dfb62a1f3591d20d93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352675"
 ---
 # <a name="usb-device-power-states"></a>USB 设备电源状态
 

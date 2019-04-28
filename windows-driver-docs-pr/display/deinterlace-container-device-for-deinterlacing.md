@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 157b49a4e111a86084baff0668ed45c1b079e2b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348917"
 ---
 # <a name="deinterlace-container-device-for-deinterlacing"></a>用于反交错的反交错容器设备
 

@@ -5,13 +5,13 @@ ms.assetid: aa3f5c53-8522-48be-a3cd-49b740803fe3
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a541f8ef5e454d73afebb0fd1ee48b251f453068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347776"
 ---
-# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>示例 12:使用页面堆验证来查找 Bug
+# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>示例 12：使用页堆验证查找 Bug
 
 
 ## <span id="ddk_example_12___using_page_heap_verification_to_find_a_bug_dtools"></span><span id="DDK_EXAMPLE_12___USING_PAGE_HEAP_VERIFICATION_TO_FIND_A_BUG_DTOOLS"></span>
@@ -21,7 +21,7 @@ ms.locfileid: "56521566"
 
 NTSD 的详细信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-and-ntsd.md)。
 
-### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>步骤 1:启用标准页面堆验证
+### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>步骤 1：启用标准页面堆验证
 
 以下命令启用 pheap 的标准页面堆验证-buggy.exe:
 
@@ -29,7 +29,7 @@ NTSD 的详细信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-
 gflags /p /enable pheap-buggy.exe
 ```
 
-### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>步骤 2:验证已启用该页面堆
+### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>步骤 2：验证已启用该页面堆
 
 以下命令将列出为其启用页堆验证图像文件：
 
@@ -43,7 +43,7 @@ gflags /p
 pheap-buggy.exe: page heap enabled with flags (traces )
 ```
 
-### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>步骤 3:运行调试器
+### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>步骤 3：运行调试器
 
 以下命令将运行**CorruptAfterEnd**函数中与 NTSD 的 pheap buggy.exe **-g** （忽略初始断点） 和 **-x** （在上设置第二次中断访问冲突异常） 参数：
 
@@ -75,7 +75,7 @@ ntdll!DbgBreakPoint:
 
 "已损坏的后缀模式"消息指示应用程序违反 GFlags pheap buggy.exe 堆分配结束后插入的数据完整性模式。
 
-### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>步骤 4:显示调用堆栈
+### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>步骤 4：显示调用堆栈
 
 在下一步中，使用 NTSD 报告，以找到导致此错误的函数的地址。 接下来两个命令启用转储的调试器和显示行号的调用堆栈中的行号。
 
@@ -105,7 +105,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 
 此错误最可能原因是缓冲区的该程序编写了它在此函数中分配的末尾。
 
-### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>步骤 5:启用整页堆验证
+### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>步骤 5：启用整页堆验证
 
 与不同的标准页面堆验证整页堆验证可以捕获此堆缓冲区的滥用，一旦它发生。 以下命令启用 pheap 整页堆验证-buggy.exe:
 
@@ -113,7 +113,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 gflags /p /enable pheap-buggy.exe /full
 ```
 
-### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>步骤 6:验证已启用该整页堆
+### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>步骤 6：验证已启用该整页堆
 
 以下命令列出了为其启用页堆验证程序：
 
@@ -127,7 +127,7 @@ gflags /p
 pheap-buggy.exe: page heap enabled with flags (full traces )
 ```
 
-### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>步骤 7:再次运行调试器
+### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>步骤 7：再次运行调试器
 
 以下命令将运行**CorruptAfterEnd**函数中使用的是 NTSD 调试器的 pheap buggy.exe **-g** （忽略初始断点） 和 **-x** （设置第二次访问冲突异常时中断) 参数：
 
@@ -167,7 +167,7 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 
 堆栈跟踪显示 pheap buggy.exe 184 行中出现问题。 由于启用了整页堆验证，调用堆栈开始在程序代码中，不在系统 DLL。 因此，发生，而不是堆块已释放时捕获冲突。
 
-### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>步骤 8:在代码中查找错误
+### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>步骤 8：在代码中查找错误
 
 快速检查揭示问题的原因：该程序尝试写入的 257th 字节 (0x101) 的 256 字节 (0x100) 缓冲区，一种常见关闭--一个错误。
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ec2391559d7849351f58c43b594208956c0b18f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356063"
 ---
 # <a name="digital-signatures-and-pnp-device-installation-windows-vista-and-later"></a>数字签名和即插即用设备安装 (Windows Vista 及更高版本)
 

@@ -1,6 +1,6 @@
 ---
-title: 扩展图面上的对齐方式
-description: 扩展图面上的对齐方式
+title: 扩展图面对齐
+description: 扩展图面对齐
 ms.assetid: 3a91a826-7f57-4cad-b236-b41178ac3b17
 keywords:
 - 绘制扩展 WDK DirectDraw 图面上对齐
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7517b9a9019df36de76dd60474d2a58705963c8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353352"
 ---
-# <a name="extended-surface-alignment"></a>扩展图面上的对齐方式
+# <a name="extended-surface-alignment"></a>扩展图面对齐
 
 
 ## <span id="ddk_extended_surface_alignment_gg"></span><span id="DDK_EXTENDED_SURFACE_ALIGNMENT_GG"></span>

@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d679e9d66700d0d2ff5207cbdb3dff4b305d6deb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349022"
 ---
 # <a name="debugrequesttargetexceptionthread"></a>调试\_请求\_目标\_异常\_线程
 
 
 调试\_请求\_目标\_异常\_线程[**请求**](request.md)操作将返回中的存储事件的操作系统线程 ID用户模式的小型转储文件。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 不使用。

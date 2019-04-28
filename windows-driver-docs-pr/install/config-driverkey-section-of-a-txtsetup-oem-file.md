@@ -1,5 +1,5 @@
 ---
-title: Config.DriverKey TxtSetup.oem 文件的节
+title: TxtSetup.oem 文件的 Config.DriverKey 节
 description: Config.DriverKey 部分指定要为特定组件选项的注册表中设置值。
 ms.assetid: 0b9fe0ff-2b97-416e-8ced-62b59eabf94a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf88e4b0b1fe90c0d951b7f1a4f4bff37dc3ce12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353847"
 ---
-# <a name="configdriverkey-section-of-a-txtsetupoem-file"></a>Config.DriverKey TxtSetup.oem 文件的节
+# <a name="configdriverkey-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 Config.DriverKey 节
 
 
 一个**配置。**<em>DriverKey</em>部分指定要为特定组件选项的注册表中设置值。 Windows 会自动创建所需的值中**Services\\**<em>DriverKey</em>密钥。 使用本部分中指定其他密钥，从而下创建**Services\\**<em>DriverKey</em>和值下**Services\\**  <em>DriverKey</em>并**服务\\**<em>DriverKey</em>\\*subkey_name*。

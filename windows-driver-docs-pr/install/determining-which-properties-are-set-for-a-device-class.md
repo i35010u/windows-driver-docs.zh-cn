@@ -1,17 +1,17 @@
 ---
-title: 确定哪些属性设置为设备类
-description: 确定哪些属性设置为设备类
+title: 确定为设备类设置哪些属性
+description: 确定为设备类设置哪些属性
 ms.assetid: a8016b04-ae52-47d9-b3ef-74e0896aa825
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08fc5374cf0be9ccdf03a82dbcd69dde2793bfbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346177"
 ---
-# <a name="determining-which-properties-are-set-for-a-device-class"></a>确定哪些属性设置为设备类
+# <a name="determining-which-properties-are-set-for-a-device-class"></a>确定为设备类设置哪些属性
 
 
 以下主题介绍如何确定哪些类属性设置为 Windows Vista 和更高版本的 Windows 中的设备类：

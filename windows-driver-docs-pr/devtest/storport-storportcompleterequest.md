@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de042c9d9af5f7ab608b2f1e97a5ac765161b2b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345685"
 ---
 # <a name="storportcompleterequest-rule-storport"></a>StorPortCompleteRequest 规则 (storport)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56541612"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**StorPortCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff567042)

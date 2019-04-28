@@ -1,6 +1,6 @@
 ---
-title: 基元的绘制和状态更改
-description: 基元的绘制和状态更改
+title: 基元绘制和状态更改
+description: 基元绘制和状态更改
 ms.assetid: 01eba14d-234e-48f5-9116-47760dfdae0e
 keywords:
 - Direct3D WDK Windows 2000 显示基元绘制
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bac427081e1d5c9a7d43e6e1f7ef23fc17f6763
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352201"
 ---
-# <a name="primitive-drawing-and-state-changes"></a>基元的绘制和状态更改
+# <a name="primitive-drawing-and-state-changes"></a>基元绘制和状态更改
 
 
 ## <span id="ddk_primitive_drawing_and_state_changes_gg"></span><span id="DDK_PRIMITIVE_DRAWING_AND_STATE_CHANGES_GG"></span>

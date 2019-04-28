@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fb3a15ff015592a8e4e11a6fdb2b76c43bf67ee0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351854"
 ---
 # <a name="kspropertycameracontrolextendedprofile"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件
 
@@ -64,7 +64,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_使用配置文件以允许捕获框架以通
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1。</p></td>
 </tr>
 <tr class="even">

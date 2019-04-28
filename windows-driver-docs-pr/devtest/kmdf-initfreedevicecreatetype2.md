@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 01c5f16232ddd79e0d72153140bcff2cd9bff3d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350414"
 ---
 # <a name="initfreedevicecreatetype2-rule-kmdf"></a>InitFreeDeviceCreateType2 规则 (kmdf)
 

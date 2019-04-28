@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C30031
 ms.openlocfilehash: 5c0d38c2ba2d317f2c1f44d8dc51707cee8b5ec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347049"
 ---
 # <a name="c30031"></a>C30031
 

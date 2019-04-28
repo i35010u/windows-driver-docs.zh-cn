@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9af0a18c33c832d7ca393e9d7a7fbf3bfa7c0c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354430"
 ---
 # <a name="error-record-persistence"></a>错误记录持久性
 

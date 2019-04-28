@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19df39bf26e3bf061fb08d09a2e9d7b45d433e6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350591"
 ---
 # <a name="error-recovery"></a>错误恢复
 

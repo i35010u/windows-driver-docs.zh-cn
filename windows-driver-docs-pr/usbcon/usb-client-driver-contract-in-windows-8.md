@@ -1,16 +1,16 @@
 ---
-Description: This topic describes best practices for a client driver for allocating, building, and sending an URB to the USB driver stack included with Windows 8.
+Description: 本主题介绍用于分配、 生成和发送到 Windows 8 附带的 USB 驱动程序堆栈 URB 的客户端驱动程序的最佳做法。
 title: 最佳做法-使用 URBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 496f0017819bfb9743948da82c41ae27eb91b235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355059"
 ---
-# <a name="best-practices-using-urbs"></a>最佳做法：使用 URBs
+# <a name="best-practices-using-urbs"></a>最佳做法：使用 URB
 
 
 本主题介绍用于分配、 生成和发送到 Windows 8 附带的 USB 驱动程序堆栈 URB 的客户端驱动程序的最佳做法。

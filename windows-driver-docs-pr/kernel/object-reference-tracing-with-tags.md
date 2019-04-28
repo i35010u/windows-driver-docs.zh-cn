@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cd71cca13a7d87fb4e981215cef0f6c593964a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351072"
 ---
 # <a name="object-reference-tracing-with-tags"></a>使用标记进行对象引用跟踪
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 62bab08cc8f2cf01b5fb9addf6518d91f96cec48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341851"
 ---
 # <a name="kspropertycameracontrolextendedwarmstart"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_WARMSTART
 
@@ -82,12 +82,12 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头)。 **大�
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>版本</td>
+<td>Version</td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -95,7 +95,7 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头)。 **大�
 <td>照片 pin 的 pin ID。</td>
 </tr>
 <tr class="odd">
-<td>尺寸</td>
+<td>大小</td>
 <td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER)</p></td>
 </tr>
 <tr class="even">
@@ -117,6 +117,6 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头)。 **大�
 
 **结果**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)始终设置为 0 表示获取操作。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

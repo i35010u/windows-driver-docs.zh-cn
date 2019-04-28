@@ -5,11 +5,11 @@ ms.assetid: 2601603D-F9AF-4DEB-9A1B-F5A091A51B2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dfd00a1637484860280ff137cfa8038d30af7d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345781"
 ---
 # <a name="pwrtest-connected-standby-scenario"></a>PwrTest 连接待机方案
 

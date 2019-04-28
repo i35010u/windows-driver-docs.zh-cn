@@ -1,6 +1,6 @@
 ---
-title: 在 64 位系统上的设备安装
-description: 在 64 位系统上的设备安装
+title: 64 位系统上的设备安装
+description: 64 位系统上的设备安装
 ms.assetid: 76d9bff7-6429-4d20-9790-a41ed2cb1bdd
 keywords:
 - 64 位 WDK 设备安装
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b156df529315318ebe412bf6ae728c8dfe416ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354622"
 ---
-# <a name="device-installations-on-64-bit-systems"></a>在 64 位系统上的设备安装
+# <a name="device-installations-on-64-bit-systems"></a>64 位系统上的设备安装
 
 
 

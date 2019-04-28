@@ -1,6 +1,6 @@
 ---
-title: 路径信息的模式信息的关系
-description: 路径信息的模式信息的关系
+title: 模式信息与路径信息之间的关系
+description: 模式信息与路径信息之间的关系
 ms.assetid: 214717dd-1c01-4daf-9296-586299668d3a
 keywords:
 - 连接显示 WDK Windows 7 的显示器、 CCD 概念、 模式和路径信息
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53658021a130763c19ac750fa3a2c73acecafa1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351468"
 ---
-# <a name="relationship-of-mode-information-to-path-information"></a>路径信息的模式信息的关系
+# <a name="relationship-of-mode-information-to-path-information"></a>模式信息与路径信息之间的关系
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

@@ -1,6 +1,6 @@
 ---
-title: Windows Vista 中的 GPD 的自动配置流
-description: Windows Vista 中的 GPD 的自动配置流
+title: Windows Vista 中 GPD 的自动配置流
+description: Windows Vista 中 GPD 的自动配置流
 ms.assetid: 41468218-fa05-4431-a57d-3056449f2e2e
 keywords:
 - GPD 文件 WDK GDL 扩展，自动配置流
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04830129bf16f80c99f2ce5e2247f7252d5ee1dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350745"
 ---
-# <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista 中的 GPD 的自动配置流
+# <a name="autoconfiguration-flow-for-gpd-in-windows-vista"></a>Windows Vista 中 GPD 的自动配置流
 
 
 自动配置为按以下顺序：

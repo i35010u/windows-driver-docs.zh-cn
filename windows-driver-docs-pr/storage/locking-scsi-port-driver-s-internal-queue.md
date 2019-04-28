@@ -5,11 +5,11 @@ ms.assetid: ea5be4e1-4908-431c-9c80-96539157b87e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e938816dd8fa1ef0db51995733118bcac7199012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355621"
 ---
 # <a name="locking-scsi-port-drivers-internal-queue"></a>锁定 SCSI 端口驱动程序的内部队列
 

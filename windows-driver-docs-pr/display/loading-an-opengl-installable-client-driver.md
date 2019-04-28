@@ -1,6 +1,6 @@
 ---
-title: 正在加载 OpenGL 可安装的客户端驱动程序
-description: 正在加载 OpenGL 可安装的客户端驱动程序
+title: 加载 OpenGL 可安装客户端驱动程序
+description: 加载 OpenGL 可安装客户端驱动程序
 ms.assetid: 2b244bbf-f26c-4307-a347-a29e12c6d496
 keywords:
 - OpenGL ICD WDK 显示
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 338c0d0896a789b659c17d4a5a4b5c0a5941e829
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347561"
 ---
-# <a name="loading-an-opengl-installable-client-driver"></a>正在加载 OpenGL 可安装的客户端驱动程序
+# <a name="loading-an-opengl-installable-client-driver"></a>加载 OpenGL 可安装客户端驱动程序
 
 
 OpenGL 运行时访问注册表，以确定哪个 OpenGL 可安装的客户端驱动程序 (ICD) 加载。 若要加载 OpenGL ICD，OpenGL 运行时：

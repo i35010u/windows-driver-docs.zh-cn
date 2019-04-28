@@ -5,11 +5,11 @@ ms.assetid: 5E2D0063-2251-40B3-8982-46001E67EB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4b7da0609d5fbc9c09ee229ecf410ba799a58c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350669"
 ---
 # <a name="synchronizing-interrupt-code"></a>同步中断代码
 

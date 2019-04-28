@@ -1,6 +1,6 @@
 ---
-title: 处理 IRP_MN_SET_POWER 的系统电源状态
-description: 处理 IRP_MN_SET_POWER 的系统电源状态
+title: 处理系统电源状态的 IRP_MN_SET_POWER
+description: 处理系统电源状态的 IRP_MN_SET_POWER
 ms.assetid: 21e8e8a7-ca77-445b-a49e-28a53f431a26
 keywords:
 - IRP_MN_SET_POWER
@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36e2048aac516b4420188cbbd383317396f67956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350014"
 ---
 # <a name="handling-irpmnsetpower-for-system-power-states"></a>处理 IRP\_MN\_设置\_的电源可用于系统的电源状态
 

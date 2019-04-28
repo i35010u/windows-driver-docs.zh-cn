@@ -1,17 +1,17 @@
 ---
-title: 安装已发布签名驱动程序包
-description: 安装已发布签名驱动程序包
+title: 安装进行了发布签名的驱动程序包
+description: 安装进行了发布签名的驱动程序包
 ms.assetid: cf25858b-7e04-4093-8c81-19d5c0673bcc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f51dfd1b42354992d56ed5b39cad48e5283e59d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352047"
 ---
-# <a name="installing-a-release-signed-driver-package"></a>安装已发布签名驱动程序包
+# <a name="installing-a-release-signed-driver-package"></a>安装进行了发布签名的驱动程序包
 
 
 版本签名[驱动程序包](driver-packages.md)可以通过在计算机上安装：

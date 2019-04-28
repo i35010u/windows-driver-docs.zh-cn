@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cdbd1fd7471c4c726fa0d23f15dc6611f6d3c99
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347823"
 ---
 # <a name="bug-check-0x1000008e-kernelmodeexceptionnothandledm"></a>Bug 检查 0x1000008E：内核\_模式下\_异常\_不\_HANDLED\_M
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: af1d2f1d97b3c237642c0ef6e32846432df2e3a6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347101"
 ---
 # <a name="bug-check-0xbf-mutexalreadyowned"></a>Bug 检查 0xBF：MUTEX\_ALREADY\_拥有的
 

@@ -1,19 +1,19 @@
 ---
-title: NetAdapterCx 客户端驱动程序的关闭序列
-description: NetAdapterCx 客户端驱动程序的关闭序列
+title: NetAdapterCx 客户端驱动程序的关闭顺序
+description: NetAdapterCx 客户端驱动程序的关闭顺序
 ms.assetid: 9E16172C-9E45-4ED7-B6D2-7539DF4718B5
 keywords:
-- NetAdapterCx 客户端驱动程序的关闭序列
+- NetAdapterCx 客户端驱动程序的关闭顺序
 ms.date: 08/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 48635d5c7bb5decb13c6a7c69da2f2db7e31ced7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353423"
 ---
-# <a name="power-down-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx 客户端驱动程序的关闭序列
+# <a name="power-down-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx 客户端驱动程序的关闭顺序
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

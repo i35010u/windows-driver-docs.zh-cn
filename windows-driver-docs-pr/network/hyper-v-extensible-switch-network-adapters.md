@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机的网络适配器
-description: HYPER-V 可扩展交换机的网络适配器
+title: Hyper-V 可扩展交换机网络适配器
+description: Hyper-V 可扩展交换机网络适配器
 ms.assetid: 30FBB908-74C1-480B-8DA7-B1334964BF53
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 339284ea41566f8f71effb1def4cfd0d1a27116a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349555"
 ---
-# <a name="hyper-v-extensible-switch-network-adapters"></a>HYPER-V 可扩展交换机的网络适配器
+# <a name="hyper-v-extensible-switch-network-adapters"></a>Hyper-V 可扩展交换机网络适配器
 
 
 本部分包括描述可扩展交换机的网络适配器的特征和其连接到可扩展交换机端口的以下主题：

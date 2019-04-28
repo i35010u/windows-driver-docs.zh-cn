@@ -1,17 +1,17 @@
 ---
-title: Package (SoftwareInfo)
-description: Package (SoftwareInfo)
+title: 包 (SoftwareInfo)
+description: 包 (SoftwareInfo)
 ms.assetid: f15f0ffe-593d-4007-8002-4d593d18dd9a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 612d0a90275e67c0988c8254682a6f7b3cb2d065
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347570"
 ---
-# <a name="package-softwareinfo"></a>Package (SoftwareInfo)
+# <a name="package-softwareinfo"></a>包 (SoftwareInfo)
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 

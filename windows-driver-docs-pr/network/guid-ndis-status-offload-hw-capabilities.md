@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f9a3b2e6cfcbe0219e3f03ae45211f6a6514220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349853"
 ---
 # <a name="guidndisstatusoffloadhwcapabilities"></a>GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
 

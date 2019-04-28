@@ -1,16 +1,16 @@
 ---
-title: 将信息追加到 Windows 7 的显示器驱动程序友好名称
+title: 将信息追加到 Windows 7 显示驱动程序友好名称
 description: 描述你必须将其附加到 Windows 7 的显示器驱动程序的友好字符串名称的信息。
 ms.assetid: 8c65f3d9-6f4c-49e9-a9b2-2689d83a181c
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 3541b8030ca6be161a7275aaf63bcd078387d0d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344655"
 ---
 # <a name="appending-information-to-the-friendly-string-names-for-windows-7-display-drivers"></a>将信息追加到 Windows 7 的显示器驱动程序的友好字符串名称
 

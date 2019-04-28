@@ -1,6 +1,6 @@
 ---
-title: MB 5g 数据类支持
-description: MB 5g 数据类支持
+title: MB 5G 数据类支持
+description: MB 5G 数据类支持
 ms.assetid: 16531A63-76EC-4722-8817-FA8DB3B2B82F
 keywords:
 - MB 5g 数据类支持，移动宽带的 5 个 G 数据类的支持
@@ -8,13 +8,13 @@ ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c895a81e549bcd856ff796c1cdddd85bbbcf82d9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343466"
 ---
-# <a name="mb-5g-data-class-support"></a>MB 5g 数据类支持
+# <a name="mb-5g-data-class-support"></a>MB 5G 数据类支持
 
 ## <a name="terminology"></a>术语
 
@@ -285,7 +285,7 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
 
 以下枚举用作上述 MBIM_PACKET_SERVICE_INFO_V2 结构中的值。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述|
+| 在任务栏的搜索框中键入 | 值 | 描述|
 | --- | --- | --- |
 | MBIMFrequencyRangeUnknown | 0 | 如果系统类型不 5g。 |
 | MBIMFrequencyRange1 | 1 | 中的频率范围 1 (FR1) [3GPP TS 38.101 1](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3283) (Sub-6 G)。 |

@@ -1,19 +1,19 @@
 ---
-title: 正在取消筛选器驱动程序中的发送请求
-description: 正在取消筛选器驱动程序中的发送请求
+title: 取消筛选器驱动程序中的发送请求
+description: 取消筛选器驱动程序中的发送请求
 ms.assetid: afa9c8d3-b30b-4009-8428-d31719885154
 keywords:
 - 取消发送操作 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dfeda07f9ef8a4178781f2c8a9fb18fc3ac98e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352040"
 ---
-# <a name="canceling-a-send-request-in-a-filter-driver"></a>正在取消筛选器驱动程序中的发送请求
+# <a name="canceling-a-send-request-in-a-filter-driver"></a>取消筛选器驱动程序中的发送请求
 
 
 

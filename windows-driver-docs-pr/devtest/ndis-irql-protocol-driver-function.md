@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a3082c21af570a061f7069cf67941f837955e5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347652"
 ---
 # <a name="irqlprotocoldriverfunction-rule-ndis"></a>Irql\_协议\_驱动程序\_函数规则 (ndis)
 
@@ -78,7 +78,7 @@ Irql\_协议\_驱动程序\_函数规则指定必须在正确的 IRQL 级别上�
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisClAddParty**](https://msdn.microsoft.com/library/windows/hardware/ff561625)

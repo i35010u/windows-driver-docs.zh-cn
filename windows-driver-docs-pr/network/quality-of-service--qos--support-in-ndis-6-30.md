@@ -5,11 +5,11 @@ ms.assetid: B425C05C-0F65-4F94-AECD-0BAD35DA441F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5411b0ee5d87e8b6575023e04d2cc8995bc1478e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347321"
 ---
 # <a name="quality-of-service-qos-support-in-ndis-630"></a>NDIS 6.30 中的服务质量 (QoS) 支持
 

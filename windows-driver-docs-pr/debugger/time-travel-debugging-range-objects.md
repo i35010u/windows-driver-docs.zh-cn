@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试关联的范围模型对象。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 049dd6643565d218253a5c967819ee4f7e3e988b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349003"
 ---
 # <a name="ttd-range-objects"></a>TTD Range 对象
 ## <a name="description"></a>描述
@@ -16,7 +16,7 @@ ms.locfileid: "56568511"
 
 ## <a name="children"></a>Children
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | MinPosition | 一个[位置对象](time-travel-debugging-position-objects.md)，它描述与范围相关的最早位置。 |
 | MaxPosition | 一个[位置对象](time-travel-debugging-position-objects.md)，它描述与范围相关的最新位置。 |

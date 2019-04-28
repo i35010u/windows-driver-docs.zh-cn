@@ -5,11 +5,11 @@ ms.assetid: 0E740E1A-8DEA-4086-AE9D-6B135BF278B0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 058180e21b9d294f80329ad97b9b12bf7ca83376
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353587"
 ---
 # <a name="remote-debugging-on-workgroup-computers"></a>在工作组计算机上进行远程调试
 

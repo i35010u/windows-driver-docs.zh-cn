@@ -13,11 +13,11 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a72f7b449c7bc42ec938077c76467070d90737ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353003"
 ---
 # <a name="backing-up-boot-options-in-efi"></a>备份 EFI 中的启动选项
 

@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试关联的位置模型对象。
 ms.date: 12/19/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b0fc92625a91645eb807b2ebfae44420ca5e089
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349002"
 ---
 # <a name="ttd-position-objects"></a>TTD 位置对象
 ## <a name="description"></a>描述
@@ -34,7 +34,7 @@ FFFFFFFFFFFFFFFE:0 中的位置指示跟踪的末尾。
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

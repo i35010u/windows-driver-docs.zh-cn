@@ -1,6 +1,6 @@
 ---
-title: 打印中打印驱动程序的处理的票证
-description: 打印中打印驱动程序的处理的票证
+title: 打印驱动程序中的打印票证处理
+description: 打印驱动程序中的打印票证处理
 ms.assetid: a7295632-0133-4133-b62e-5526dcc12c7d
 keywords:
 - 打印票证 WDK、 打印驱动程序处理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bb37596b19b3f473a3d5159d40a797770017748
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351859"
 ---
-# <a name="print-ticket-processing-in-the-print-driver"></a>打印中打印驱动程序的处理的票证
+# <a name="print-ticket-processing-in-the-print-driver"></a>打印驱动程序中的打印票证处理
 
 
 PrintTicket 对象中的验证的设置用于配置打印 XPSDrv 打印机驱动程序执行的处理。 组件的打印驱动程序，因此，必须阅读并解释驱动程序执行任何处理，因此驱动程序可以处理这些设置根据文档前打印票证中的设置。

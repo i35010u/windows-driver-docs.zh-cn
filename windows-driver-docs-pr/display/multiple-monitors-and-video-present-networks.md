@@ -1,6 +1,6 @@
 ---
-title: 多个监视器和视频存在网络
-description: 多个监视器和视频存在网络
+title: 多个监视器和视频呈现网络
+description: 多个监视器和视频呈现网络
 ms.assetid: 27687fa4-1266-4341-b68a-83374c24ef73
 keywords:
 - 显示驱动程序模型 WDK Windows Vista 中，视频存在网络
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c038055485f92afc25894a62cc3b7a51b887fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345604"
 ---
-# <a name="multiple-monitors-and-video-present-networks"></a>多个监视器和视频存在网络
+# <a name="multiple-monitors-and-video-present-networks"></a>多个监视器和视频呈现网络
 
 
 本部分介绍视频存在网络 (VidPN) 管理器，显示微型端口驱动程序，并显示端口驱动程序的协作方式来管理连接到显示适配器的显示设备的集合。

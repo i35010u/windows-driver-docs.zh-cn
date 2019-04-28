@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6448456a819ba9501651ad91bdcde40e85d7e01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345957"
 ---
 # <a name="virtual-interface-architecture-and-support-for-san"></a>虚拟接口体系结构和 SAN 支持
 

@@ -1,6 +1,6 @@
 ---
-title: 执行硬件功能扫描
-description: 执行硬件功能扫描
+title: 执行硬件功能性扫描
+description: 执行硬件功能性扫描
 ms.assetid: 966b30b7-2f08-4611-9f4d-f85b301de414
 keywords:
 - OPM WDK 显示 HFS
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f4118d3b34858c9e4f86c8c2e5e2003e665faab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352314"
 ---
-# <a name="performing-a-hardware-functionality-scan"></a>执行硬件功能扫描
+# <a name="performing-a-hardware-functionality-scan"></a>执行硬件功能性扫描
 
 
 显示微型端口驱动程序的硬件功能扫描 (HFS) 可确保与所需的硬件进行通信的微型端口驱动程序。 有关 HFS 的详细信息，请下载处的输出内容保护文档[输出内容保护和 Windows Vista](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/output_protect.doc)网站。

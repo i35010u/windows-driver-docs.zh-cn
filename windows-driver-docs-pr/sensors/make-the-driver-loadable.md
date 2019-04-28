@@ -5,11 +5,11 @@ ms.assetid: 6BEB7CBC-0179-41B3-BD3D-126290940768
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 522791f3f858b57ea2ced94220ae02b6a944619b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345137"
 ---
 # <a name="make-the-driver-loadable"></a>使驱动程序可加载
 

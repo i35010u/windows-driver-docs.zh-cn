@@ -1,6 +1,6 @@
 ---
-title: 在 NDIS 6.20 接收端限制
-description: 在 NDIS 6.20 接收端限制
+title: NDIS 6.20 中的接收端限制
+description: NDIS 6.20 中的接收端限制
 ms.assetid: dc8d0f32-37ee-4383-864d-7d814d37c3c8
 keywords:
 - NDIS 6.20 WDK，接收方限制
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f753335a06a4592e407b92503803623a664d7a0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353326"
 ---
-# <a name="receive-side-throttle-in-ndis-620"></a>在 NDIS 6.20 接收端限制
+# <a name="receive-side-throttle-in-ndis-620"></a>NDIS 6.20 中的接收端限制
 
 
 

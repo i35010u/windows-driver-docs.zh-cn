@@ -5,11 +5,11 @@ ms.assetid: FAC4D538-4C2B-46C1-B971-63FF66C2922B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51dc254ab2a6bcfb3deb6fa4f6db1c90ce12ef7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352940"
 ---
 # <a name="writing-a-wdtf-simple-io-plug-in-for-your-device"></a>编写 WDTF 简单 I/O 的设备的插件
 

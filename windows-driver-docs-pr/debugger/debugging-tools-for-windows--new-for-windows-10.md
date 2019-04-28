@@ -5,13 +5,13 @@ ms.assetid: DCF1222F-6A67-463E-8C31-B7753CAFFC20
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b3f05b74821862e834ed98a82adbd3b048cf403
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350559"
 ---
-# <a name="debugging-tools-for-windows-new-for-windows-10"></a>用于 Windows 的调试工具：Windows 10 的新增功能
+# <a name="debugging-tools-for-windows-new-for-windows-10"></a>Windows 调试工具：Windows 10 的新增功能
 
 ## <a name="span-idwindbgpreviewspanspan-idwindbgpreviewspanspan-idwindbgpreviewspanwindbg-preview"></a><span id="Windbg_Preview"></span><span id="windbg_preview"></span><span id="WINDBG_PREVIEW"></span>Windbg 预览
 

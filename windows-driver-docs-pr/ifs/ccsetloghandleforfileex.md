@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0709e0223fdf6ab65bcf094792ebeaf361666fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352197"
 ---
 # <a name="ccsetloghandleforfileex-routine"></a>CcSetLogHandleForFileEx routine
 
@@ -111,7 +111,7 @@ VOID (*PQUERY_LOG_USAGE) (
 <td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>适用于 Windows 8 及更高版本。</p></td>
 </tr>
 <tr class="odd">

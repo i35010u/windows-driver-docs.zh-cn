@@ -5,11 +5,11 @@ ms.assetid: 6d536e79-66fa-495b-ad0b-1714a56450b2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 734852cbffd1d0c3ebef2c1137244b8911c95840
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353008"
 ---
 # <a name="cmprobdevicereset"></a>CM_PROB_DEVICE_RESET
 

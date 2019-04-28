@@ -5,11 +5,11 @@ ms.assetid: bfee8a3c-d2be-4718-beb4-067b66756a41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a4bae14a406d2dda2be7cb7e3603d96f493f15a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346687"
 ---
 # <a name="setting-and-clearing-vmq-filters"></a>设置和清除 VMQ 筛选器
 

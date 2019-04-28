@@ -5,11 +5,11 @@ ms.assetid: 849f83ae-5fe7-447b-9d02-3d980757bf7d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bb1889b4508fff579fbe6ca241c53363d0bde74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348306"
 ---
 # <a name="how-do-you-define-custom-data-types"></a>如何定义自定义数据类型？
 

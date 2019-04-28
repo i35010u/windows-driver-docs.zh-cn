@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad38b67e5b2ed8e8c218c32a442be33013c6a89
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347203"
 ---
 # <a name="bug-check-0xa5-acpibioserror"></a>Bug 检查 0xA5：ACPI\_BIOS\_ERROR
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_CREATE_PORT_MAC_ADDRESS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 06e99e197ea7d8733bea3db77feb7f65a6948d6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348195"
 ---
 # <a name="wditlvcreateportmacaddress"></a>WDI\_TLV\_创建\_端口\_MAC\_地址
 
@@ -55,7 +55,7 @@ WDI\_TLV\_创建\_端口\_MAC\_地址是包含的 MAC 地址 TLV [OID\_WDI\_任�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

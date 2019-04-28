@@ -5,11 +5,11 @@ ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdbc2f5019b71faefb9b29343e41bb00ac7eaeac
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343345"
 ---
 # <a name="mb-interface-model-supplement"></a>MB 接口模型补充
 

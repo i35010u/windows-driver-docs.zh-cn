@@ -5,11 +5,11 @@ ms.assetid: 4726DD47-C22E-4B92-A7BD-EB37BA53496F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b8733769a44e5fbda86c942c86cf5931bc6561e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346214"
 ---
 # <a name="non-hid-legacy-devices"></a>非 HID 旧设备
 

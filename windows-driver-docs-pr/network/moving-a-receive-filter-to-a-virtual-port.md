@@ -5,11 +5,11 @@ ms.assetid: 6315FB18-3F57-43C2-B864-3759058092BB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79fa01624e4c06e40bc051106e1ea3382894634b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342333"
 ---
 # <a name="moving-a-receive-filter-to-a-virtual-port"></a>将接收筛选器移到虚拟端口
 

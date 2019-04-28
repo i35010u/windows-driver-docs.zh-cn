@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机转发上下文数据类型
-description: HYPER-V 可扩展交换机转发上下文数据类型
+title: Hyper-V 可扩展交换机转发上下文数据类型
+description: Hyper-V 可扩展交换机转发上下文数据类型
 ms.assetid: B5377411-C6F0-47BE-BD45-534AC784ED76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7f1272b456789c535ca77582ef3cbc2e20e57db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349576"
 ---
-# <a name="hyper-v-extensible-switch-forwarding-context-data-types"></a>HYPER-V 可扩展交换机转发上下文数据类型
+# <a name="hyper-v-extensible-switch-forwarding-context-data-types"></a>Hyper-V 可扩展交换机转发上下文数据类型
 
 
 [ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构为每个数据包的传输的 HYPER-V 可扩展交换机数据路径包含带外 (OOB) 数据。 此数据指定从数据包源于何处，以及数据包传递的一个或多个目标端口的源端口。 此 OOB 数据被称为*可扩展交换机转发上下文*。

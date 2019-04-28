@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c42d60a12a90939048987b3b75d78058b71586
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351951"
 ---
 # <a name="parallel-device-interfaces-internal-names-and-symbolic-links"></a>并行设备接口、内部名称和符号链接
 

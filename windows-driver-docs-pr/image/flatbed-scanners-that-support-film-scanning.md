@@ -1,17 +1,17 @@
 ---
-title: 支持电影扫描平板扫描仪
-description: 支持电影扫描平板扫描仪
+title: 支持底片扫描的平板扫描仪
+description: 支持底片扫描的平板扫描仪
 ms.assetid: ee77c2c6-41a2-43dd-90e4-baf902b46f69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c6873b33303cca9182bf7a90764b8f010189ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352163"
 ---
-# <a name="flatbed-scanners-that-support-film-scanning"></a>支持电影扫描平板扫描仪
+# <a name="flatbed-scanners-that-support-film-scanning"></a>支持底片扫描的平板扫描仪
 
 
 

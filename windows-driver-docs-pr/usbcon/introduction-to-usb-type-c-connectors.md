@@ -4,11 +4,11 @@ title: 对 USB 类型 C Windows 系统的消息进行故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 060ecddcb41ae474d0845afc0b9f11216525c407
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355469"
 ---
 # <a name="troubleshoot-messages-for-a-usb-type-c-windows-system"></a>对 USB 类型 C Windows 系统的消息进行故障排除
 

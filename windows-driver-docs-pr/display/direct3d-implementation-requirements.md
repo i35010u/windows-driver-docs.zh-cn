@@ -1,19 +1,19 @@
 ---
-title: Direct3D 实现要求
-description: Direct3D 实现要求
+title: Direct3D 实施要求
+description: Direct3D 实施要求
 ms.assetid: 292af6f5-bccb-4b5e-932a-bdc15763f89a
 keywords:
 - Direct3D WDK Windows 2000 显示要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f9dfdd420be7679d2578e1d40d63b32e1c3fc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348399"
 ---
-# <a name="direct3d-implementation-requirements"></a>Direct3D 实现要求
+# <a name="direct3d-implementation-requirements"></a>Direct3D 实施要求
 
 
 ## <span id="ddk_direct3d_implementation_requirements_gg"></span><span id="DDK_DIRECT3D_IMPLEMENTATION_REQUIREMENTS_GG"></span>

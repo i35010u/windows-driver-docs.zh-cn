@@ -5,11 +5,11 @@ ms.assetid: 93D6EFC7-B701-4D10-8114-FA437E80096B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 764a4c1297dda8282014042edcc75abcb9a3b011
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346018"
 ---
 # <a name="sr-iov-vf-failover-and-live-migration-support"></a>SR-IOV VF 故障转移和实时迁移支持
 

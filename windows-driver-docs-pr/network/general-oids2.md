@@ -1,17 +1,17 @@
 ---
-title: 常规 Oid
-description: 常规 Oid
+title: 常规 OID
+description: 常规 OID
 ms.assetid: fcd0e7fe-d1ab-4ec3-9c47-0bfb0ce63572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48c5b2899cbc974ea0c90d65bf9c4b93ffcdad5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349919"
 ---
-# <a name="general-oids"></a>常规 Oid
+# <a name="general-oids"></a>常规 OID
 
 
 
