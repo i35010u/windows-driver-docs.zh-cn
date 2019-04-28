@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b419ded9f6c7296d82ba6df4d48dc51687c3c440
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343769"
 ---
 # <a name="kscategorysensorcamera"></a>KSCATEGORY_SENSOR_CAMERA
 
@@ -33,7 +33,7 @@ KSCATEGORY_SENSOR_CAMERA GUID 定义，如下所示：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -61,7 +61,7 @@ KSCATEGORY_SENSOR_CAMERA GUID 定义，如下所示：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>

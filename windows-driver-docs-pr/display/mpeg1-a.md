@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f230f191c6b5383192f4366dab6940670ef9babd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345643"
 ---
 # <a name="mpeg1a"></a>MPEG1\_A
 
@@ -33,7 +33,7 @@ MPEG1\_受限制的配置文件中包含的一组支持 mpeg-1 视频所需的�
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -147,7 +147,7 @@ MPEG1\_受限制的配置文件中包含的一组支持 mpeg-1 视频所需的�
 <thead>
 <tr class="header">
 <th align="left">wMBtype Bits</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

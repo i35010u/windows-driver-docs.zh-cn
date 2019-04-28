@@ -5,11 +5,11 @@ ms.assetid: D295E450-C8AF-43A9-B169-5387EB2A2CF0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf18704287fea57bc8a4aea36c27095c64fa3a0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342996"
 ---
 # <a name="potential-performance-bottlenecks-in-an-ndis-virtualized-networking-environment"></a>NDIS 虚拟化网络环境中的潜在性能瓶颈
 

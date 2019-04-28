@@ -1,17 +1,17 @@
 ---
-title: 跟踪托管的对象格式 (MOF) 文件
-description: 跟踪托管的对象格式 (MOF) 文件
+title: 跟踪托管对象格式 (MOF) 文件
+description: 跟踪托管对象格式 (MOF) 文件
 ms.assetid: e0ef452b-042d-42d0-be0f-b36e7bf47285
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c59746b7db6531087f94418e8ebefb17a612a5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343064"
 ---
-# <a name="trace-managed-object-format-mof-file"></a>跟踪托管的对象格式 (MOF) 文件
+# <a name="trace-managed-object-format-mof-file"></a>跟踪托管对象格式 (MOF) 文件
 
 
 跟踪[托管的对象格式](https://go.microsoft.com/fwlink/p/?linkid=74565)(MOF) 文件是文本文件，其中包含每个控件 GUID[跟踪提供程序](trace-provider.md)PDB 文件中表示。 MOF 文件的名称是跟踪生成者、.mof 文件扩展名的模块名称。

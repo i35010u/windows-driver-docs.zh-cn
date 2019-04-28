@@ -6,11 +6,11 @@ ms.assetid: 969FD292-5D92-4257-8E15-F2129B832E22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7d0431ca0b13cbd247d35a55eeae2c6f70519fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344934"
 ---
 # <a name="videos-debugging-umdf-drivers"></a>视频：调试 UMDF 驱动程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "56522969"
 
 有关调试 UMDF 的详细信息，请参阅中列出的主题[调试 WDF 驱动程序](debugging-a-wdf-driver.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 若要充分利用此内容应具有 UMDF 和调试工具的 Windows 的应用知识。 由于每个会话建立在上一基础之上，我们建议按所列顺序查看这些演示。

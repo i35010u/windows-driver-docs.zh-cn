@@ -5,11 +5,11 @@ ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b72b67507864b2177cd42ae43c318da390cf0ea7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343374"
 ---
 # <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
 

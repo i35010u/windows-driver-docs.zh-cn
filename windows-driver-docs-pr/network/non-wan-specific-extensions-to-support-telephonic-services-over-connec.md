@@ -1,6 +1,6 @@
 ---
 title: 通过面向连接的 NDIS TAPI 的非 WAN 特定扩展
-description: 非 WAN 特定扩展，以支持通过面向连接的 NDIS 台电话服务
+description: 用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展
 ms.assetid: be677971-8c4a-435a-81b1-ff1ad9d849b4
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 联网，TAPI 服务
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29999186934e2393241190b33bbeb2a2485cd224
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342290"
 ---
-# <a name="non-wan-specific-extensions-to-support-telephonic-services-over-connection-oriented-ndis"></a>非 WAN 特定扩展，以支持通过面向连接的 NDIS 台电话服务
+# <a name="non-wan-specific-extensions-to-support-telephonic-services-over-connection-oriented-ndis"></a>用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展
 
 
 

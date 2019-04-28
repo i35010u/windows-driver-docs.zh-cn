@@ -1,5 +1,5 @@
 ---
-title: WDF 驱动程序 （KMDF 或 UMDF） 中访问数据缓冲区
+title: 在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 description: 当 Windows 驱动程序框架 (WDF) 驱动程序收到读取、 写入或设备的 I/O 控制请求时，请求对象将包含输入的缓冲区、 输出缓冲区，或这两者。
 ms.assetid: ceba2279-b0fb-4261-b439-723d5dad967b
 keywords:
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcf3495783391447c9b33a443906ae4d463b3ccf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342123"
 ---
-# <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>WDF 驱动程序 （KMDF 或 UMDF） 中访问数据缓冲区
+# <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 
 
 当 Windows 驱动程序框架 (WDF) 驱动程序收到读取、 写入或设备的 I/O 控制请求时，请求对象将包含输入的缓冲区、 输出缓冲区，或这两者。

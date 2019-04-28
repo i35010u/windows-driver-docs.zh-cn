@@ -1,5 +1,5 @@
 ---
-title: 不同的方法来处理 Irp 的备忘单
+title: 不同的 IRP 处理方法 - 速查表
 author: kaushika-msft
 description: 不同的方法来处理 Irp
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 12/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 555dc8d8fb051791959fe6492633481888f1fc87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342695"
 ---
-# <a name="different-ways-of-handling-irps---cheat-sheet"></a>不同的方法来处理 Irp 的备忘单 
+# <a name="different-ways-of-handling-irps---cheat-sheet"></a>不同的 IRP 处理方法 - 速查表 
 
 Windows 驱动程序模型 (WDM) 驱动程序通常将输入/输出请求数据包 (Irp) 发送到其他驱动程序。 驱动程序创建其自己 IRP，并将其发送到较低的驱动程序，或该驱动程序将收到来自另一个驱动程序，它上面附加 Irp 转发。 
 

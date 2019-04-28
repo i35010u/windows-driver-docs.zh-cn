@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_REGISTER_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 112703407a936bd52aa90f2e3c0921a0f5f4e368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342949"
 ---
 # <a name="ndisstatuswwanregisterstate"></a>NDIS\_状态\_WWAN\_注册\_状态
 
@@ -84,17 +84,17 @@ CDMA 的设备，不要支持 MB 服务发起的注册和注销。 但是，在�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_WWAN\_REGISTRATION\_STATE**](https://msdn.microsoft.com/library/windows/hardware/ff567917)

@@ -5,11 +5,11 @@ ms.assetid: dbf170ba-92ab-47bd-a076-5f54129305a5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a9849b12b0f6254d69d9ded7c8eafdc91635f296
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346499"
 ---
 # <a name="msiscsidiscoveryconfig-wmi-class"></a>MSiSCSI\_DiscoveryConfig WMI 类
 

@@ -5,11 +5,11 @@ ms.assetid: 1a04ad29-4aa1-45fb-b554-1e18a93e91af
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4327f55db0fa8c22cfc586f883fd24fd249fe209
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343269"
 ---
 # <a name="mb-packet-service-attach-operations"></a>MB 数据包服务附加操作
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aa191b9cb029664ed31cf8bf7e61e323e6ae75a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344509"
 ---
 # <a name="rxassert-routine"></a>RxAssert 例程
 
@@ -38,7 +38,7 @@ VOID RxAssert(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *FailedAssertion* \[in\]  
@@ -79,7 +79,7 @@ VOID RxAssert(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Rxassert.h （包括 Rxassert.h）</td>
 </tr>
 <tr class="odd">
@@ -89,7 +89,7 @@ VOID RxAssert(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ASSERT**](https://msdn.microsoft.com/library/windows/hardware/ff542107)

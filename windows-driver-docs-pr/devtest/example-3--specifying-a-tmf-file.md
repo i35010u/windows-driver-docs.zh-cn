@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d83a2a1899393f503f6efddd514de426823471f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344695"
 ---
 # <a name="example-3-specifying-a-tmf-file"></a>示例 3：指定 TMF 文件
 

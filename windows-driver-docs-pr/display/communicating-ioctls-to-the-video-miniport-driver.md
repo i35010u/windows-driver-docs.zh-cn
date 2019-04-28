@@ -1,6 +1,6 @@
 ---
-title: 通信 Ioctl 到视频微型端口驱动程序
-description: 通信 Ioctl 到视频微型端口驱动程序
+title: 将 IOCTL 传送到视频微型端口驱动程序
+description: 将 IOCTL 传送到视频微型端口驱动程序
 ms.assetid: 9f9ad20e-d8cf-485d-adad-c04eeb40b705
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 Ioctl
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2069d020a909c5a40f055b404fc87961b11fadb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343038"
 ---
-# <a name="communicating-ioctls-to-the-video-miniport-driver"></a>通信 Ioctl 到视频微型端口驱动程序
+# <a name="communicating-ioctls-to-the-video-miniport-driver"></a>将 IOCTL 传送到视频微型端口驱动程序
 
 
 ## <span id="ddk_communicating_ioctls_to_the_video_miniport_driver_gg"></span><span id="DDK_COMMUNICATING_IOCTLS_TO_THE_VIDEO_MINIPORT_DRIVER_GG"></span>

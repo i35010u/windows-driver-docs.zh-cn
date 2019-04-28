@@ -1,17 +1,17 @@
 ---
-title: MB 设备的准备情况
-description: MB 设备的准备情况
+title: MB 设备就绪状态
+description: MB 设备就绪状态
 ms.assetid: 67a67ff7-dcff-4aec-bea9-7b1be9593649
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f83da274cae07e6a886ab706d852a48c8c1afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343409"
 ---
-# <a name="mb-device-readiness"></a>MB 设备的准备情况
+# <a name="mb-device-readiness"></a>MB 设备就绪状态
 
 
 本主题介绍的过程，以确保 MB 设备可访问，并且准备好之前 MB 服务将继续安装程序的数据连接到用于与网络相关的活动。 设备已准备好使用已激活用户订阅和订阅服务器相关信息存储到设备或用户识别模块 （SIM 卡）

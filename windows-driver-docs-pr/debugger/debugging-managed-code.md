@@ -1,18 +1,18 @@
 ---
-title: 调试托管代码使用 Windows 调试器
+title: 使用 Windows 调试器调试托管代码
 description: 可以使用 windows 调试器 （WinDbg、 CDB 和 NTSD） 调试包含托管的代码的目标应用程序。
 ms.assetid: eb4cc883-71ac-4a57-8654-07c3120310c0
 keywords: 调试时，调试 Windbg、 托管的代码调试、.NET 公共语言运行时、 公共语言运行时，CLR，JIT 编译器，实时编译的代码
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edea69504ef1085bb2df54934350426a28e1a01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350607"
 ---
-# <a name="debugging-managed-code-using-the-windows-debugger"></a>调试托管代码使用 Windows 调试器
+# <a name="debugging-managed-code-using-the-windows-debugger"></a>使用 Windows 调试器调试托管代码
 
 
 可以使用 Windows 调试器 （WinDbg、 CDB 和 NTSD） 调试包含托管的代码的目标应用程序。 若要调试托管的代码，必须加载[SOS 调试扩展 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)和数据访问组件 (mscordacwks.dll)。
@@ -26,7 +26,7 @@ Windows 调试器是独立于 Visual Studio 调试器。 有关 Windows 调试�
 
 当运行托管的代码时，运行时生成特定于平台的本机代码。 从 MSIL 中生成本机代码的过程称为*实时 (JIT) 编译*。 JIT 编译器编译特定方法的 MSIL 后，该方法的本机代码保留在内存中。 此方法更高版本时调用，本机代码执行和 JIT 编译器不需要参与。
 
-可以使用多种软件生成者而制造的多个编译器来生成托管的代码。 具体而言，Microsoft Visual Studio 可以生成多种不同语言，包括从托管的代码C#，Visual Basic、 JScript 中和 c + + 和托管扩展。
+可以使用多种软件生成者而制造的多个编译器来生成托管的代码。 具体而言，Microsoft Visual Studio 可以生成多种不同语言，包括从托管的代码C#，Visual Basic、 JScript 中，和C++与托管扩展。
 
 每次更新.NET Framework CLR 不会更新。 例如，版本 2.0、 3.0 和 3.5 的.NET Framework 的 clr 的所有使用版本 2.0。 下表显示的版本和使用的每个版本的.NET Framework 的 clr 的文件名。
 

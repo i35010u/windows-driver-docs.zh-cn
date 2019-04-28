@@ -1,17 +1,17 @@
 ---
-title: 常规统计信息 Oid
-description: 常规统计信息 Oid
+title: 常规统计信息 OID
+description: 常规统计信息 OID
 ms.assetid: ebdd5723-d913-4c1a-8b1f-f70e4b0080ad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35fd0aea63406a37355fd12967cbdc510640104e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349899"
 ---
-# <a name="general-statistic-oids"></a>常规统计信息 Oid
+# <a name="general-statistic-oids"></a>常规统计信息 OID
 
 
 

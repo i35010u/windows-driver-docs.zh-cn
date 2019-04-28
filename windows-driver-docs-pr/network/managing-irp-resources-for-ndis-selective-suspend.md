@@ -5,11 +5,11 @@ ms.assetid: 542A96A7-AD6D-4780-8FEF-34730A663C1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f78cf1cc0efba4782c5590cec27aa7abcb3894
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343601"
 ---
 # <a name="managing-irp-resources-for-ndis-selective-suspend"></a>管理 NDIS 选择性挂起的 IRP 资源
 

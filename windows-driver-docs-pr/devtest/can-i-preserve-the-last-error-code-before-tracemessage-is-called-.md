@@ -5,13 +5,13 @@ ms.assetid: 57390fb1-5e01-4b98-960f-0201213d673c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea0614ceee3bc10330bebb08786c36b041c47666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344917"
 ---
-# <a name="can-i-preserve-the-last-error-code-before-tracemessage-is-called"></a>调用 TraceMessage 之前是否可以保留的最后一个错误代码？
+# <a name="can-i-preserve-the-last-error-code-before-tracemessage-is-called"></a>是否可以在调用 TraceMessage 之前保留最后一个错误代码？
 
 
 默认情况下[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)使用 WPP 调用\_TRACE 宏。 在早于 Windows Vista 的 Windows 版本[最后一个错误代码](https://go.microsoft.com/fwlink/p/?linkid=179346)已覆盖**TraceMessage**。

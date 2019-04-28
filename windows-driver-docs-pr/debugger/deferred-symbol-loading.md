@@ -1,6 +1,6 @@
 ---
-title: 延迟加载的符号
-description: 延迟加载的符号
+title: 延迟符号加载
+description: 延迟符号加载
 ms.assetid: 58771089-dd0c-4ea9-8a9a-41553f290e88
 keywords:
 - 延迟的符号加载
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 853eba6fce8395fb81e6a37e8e33bfefed0ba557
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346313"
 ---
-# <a name="deferred-symbol-loading"></a>延迟加载的符号
+# <a name="deferred-symbol-loading"></a>延迟符号加载
 
 
 ## <span id="ddk_deferred_symbol_loading_dbg"></span><span id="DDK_DEFERRED_SYMBOL_LOADING_DBG"></span>

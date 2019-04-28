@@ -1,5 +1,5 @@
 ---
-title: pct （下一步调用或返回到步骤）
+title: pct（步进到下一个 Call 或 Return）
 description: Pct 命令执行程序，直到它达到调用指令或返回指令。
 ms.assetid: ff4b5708-b9d0-4809-9fe4-9a22d4cacbc0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 84ff99ce4d7c55d80f6fe905fbb41a429335c453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345911"
 ---
-# <a name="pct-step-to-next-call-or-return"></a>pct （下一步调用或返回到步骤）
+# <a name="pct-step-to-next-call-or-return"></a>pct（步进到下一个 Call 或 Return）
 
 
 **Pct**命令执行程序，直到它达到调用指令或返回指令。

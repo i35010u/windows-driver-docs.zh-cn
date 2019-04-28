@@ -5,11 +5,11 @@ ms.assetid: b5533962-ea42-416e-bbd8-ce9dce1a9a40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb842736555a1b824dcefd98ee0bd1590179cba5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344294"
 ---
 # <a name="packageidentity"></a>PackageIdentity
 
@@ -44,7 +44,7 @@ PackageIdentity 元素指定当用户插入设备时应显示为建议的自动�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“属性”</p></td>
+<td><p>名称</p></td>
 <td><p>tns:PackageNameType</p></td>
 <td><p>是</p></td>
 <td><p>从备注中描述的应用程序清单的标识元素的 Name 属性中复制此元素。</p></td>

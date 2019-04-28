@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e7f31d1f9c4dcf46b51cd462a5432d015334b4e
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343146"
 ---
 # <a name="bug-check-0xc9-driververifieriomanagerviolation"></a>Bug 检查 0xC9：驱动程序\_VERIFIER\_IOMANAGER\_冲突
 

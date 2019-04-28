@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ae68fce209bb88acec21b488ebf8d053e76589
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341781"
 ---
 # <a name="wake-wake-debugger"></a>.wake（唤醒调试器）
 

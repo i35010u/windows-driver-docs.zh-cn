@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 840fa4452e61c1725555dcbfdcc1725204c93c3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348044"
 ---
 # <a name="kspropertycameracontrolextendedadvancedphoto"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_ADVANCEDPHOTO
 
@@ -123,7 +123,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_ADVANCEDPHOTO 用于控制照片 HDR，flash 
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1。</p></td>
 </tr>
 <tr class="even">

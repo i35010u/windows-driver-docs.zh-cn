@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2210ec915ca4d224f6ccbc2eeb3a4cef3d456cab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342679"
 ---
 # <a name="sending-a-waitwake-irp"></a>发送等待/唤醒 IRP
 

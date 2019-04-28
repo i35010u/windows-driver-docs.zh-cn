@@ -1,6 +1,6 @@
 ---
-title: NDIS 筛选器驱动程序中的筛选 OID 请求
-description: NDIS 筛选器驱动程序中的筛选 OID 请求
+title: 在 NDIS 筛选器驱动程序中筛选 OID 请求
+description: 在 NDIS 筛选器驱动程序中筛选 OID 请求
 ms.assetid: 88bb8318-f19c-4d98-bb06-6120e6adb51d
 keywords:
 - Oid WDK 网络筛选器驱动程序
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d7c1e81b8d422f60dcc8cd5e41c9b93c5d1a6d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347384"
 ---
-# <a name="filtering-oid-requests-in-an-ndis-filter-driver"></a>NDIS 筛选器驱动程序中的筛选 OID 请求
+# <a name="filtering-oid-requests-in-an-ndis-filter-driver"></a>在 NDIS 筛选器驱动程序中筛选 OID 请求
 
 
 

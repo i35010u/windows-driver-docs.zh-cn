@@ -1,17 +1,17 @@
 ---
-title: CPU 主机 aperture
+title: CPU 主机孔径
 description: 对于 32 位操作系统离散图形处理的单元 (Gpu)，这不支持条可调整大小，或者当调整大小的帧缓冲区失败栏，Windows 显示驱动程序模型 (WDDM) v2 将提供替代机制，通过其离散的 GPU VRAM 可以有效地访问. 为 Gpu，支持可编程栏地址空间，WDDM v2 进行抽象该功能中引入了新的 CPU 主机 Aperture 功能。
 ms.assetid: 0E4D01E4-93AF-4205-A360-0CA3470716D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c745c74a503fef51b1e5557e60b1618a051c8fe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346955"
 ---
-# <a name="cpu-host-aperture"></a>CPU 主机 aperture
+# <a name="cpu-host-aperture"></a>CPU 主机孔径
 
 
 对于 32 位操作系统离散图形处理的单元 (Gpu)，这不支持条可调整大小，或者当调整大小的帧缓冲区失败栏，Windows 显示驱动程序模型 (WDDM) v2 将提供替代机制，通过其离散的 GPU VRAM 可以有效地访问. 为 Gpu，支持可编程栏地址空间，WDDM v2 进行抽象该功能中引入了新的 CPU 主机 Aperture 功能。

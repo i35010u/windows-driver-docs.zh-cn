@@ -1,6 +1,6 @@
 ---
-title: 在响应系统集 Power IRP 发送设备集 Power IRP
-description: 在响应系统集 Power IRP 发送设备集 Power IRP
+title: 在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
+description: 在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
 ms.assetid: b2029292-d770-4095-8bd7-9358b282216c
 keywords:
 - 发送集 power Irp
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a9b96219bd9ced1b5761dda271fb261388a2126
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342687"
 ---
-# <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>在响应系统集 Power IRP 发送设备集 Power IRP
+# <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
 
 
 

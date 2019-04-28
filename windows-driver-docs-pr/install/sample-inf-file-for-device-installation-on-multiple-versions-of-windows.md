@@ -5,11 +5,11 @@ ms.assetid: b7165a14-ab2f-46ee-bb05-c89e2b33ab5f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e03fb958b48e228623a84be18e77d429ab04ef1
-ms.sourcegitcommit: 23dc00b066687b068836d617e3355d7970301c7c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348715"
 ---
 # <a name="sample-inf-file-for-device-installation-on-multiple-versions-of-windows"></a>适合在多个 Windows 版本上进行设备安装的示例 INF 文件
 

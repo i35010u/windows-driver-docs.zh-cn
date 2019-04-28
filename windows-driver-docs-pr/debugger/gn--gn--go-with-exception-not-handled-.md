@@ -1,5 +1,5 @@
 ---
-title: gn，gN (Go 出现未处理的异常)
+title: gn、gN（转到未经处理的异常）
 description: Gn 和 gN 命令继续执行给定线程而不将标记为已处理的异常。 这允许应用程序的异常处理程序处理异常。
 ms.assetid: b6f69882-b30a-45b7-b777-1b4857719e7f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab11fa4e087cce9bb0448eee10dff4e95e551d46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342064"
 ---
-# <a name="gn-gn-go-with-exception-not-handled"></a>gn，gN (Go 出现未处理的异常)
+# <a name="gn-gn-go-with-exception-not-handled"></a>gn、gN（转到未经处理的异常）
 
 
 **Gn**并**gN**命令继续执行给定线程而不将标记为已处理的异常。 这允许应用程序的异常处理程序处理异常。

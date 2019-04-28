@@ -5,11 +5,11 @@ ms.assetid: 4C3ED1DB-5EDC-4386-B91C-CF86973EE1F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b49d9c51ca2141a12f518298bb56fd5505e94e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344867"
 ---
 # <a name="span-iddevtestdebuggingdeadlocks-driververifierdetectedviolationc40x1001spandebugging-deadlocks---driververifierdetectedviolation-c4-0x1001"></a><span id="devtest.debugging_deadlocks_-_driver_verifier_detected_violation__c4___0x1001"></span>调试死锁的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x1001
 
@@ -228,7 +228,7 @@ NTSTATUS DeviceControlIrpWorker(_In_ PIRP Irp,
 
 有关自旋锁和其他同步技术的详细信息，请参阅[自旋锁](https://msdn.microsoft.com/library/windows/hardware/ff563830)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [自旋锁](https://msdn.microsoft.com/library/windows/hardware/ff563830)

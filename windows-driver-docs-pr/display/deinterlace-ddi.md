@@ -1,17 +1,17 @@
 ---
-title: 取消隔行扫描 DDI
-description: 取消隔行扫描 DDI
+title: 反交错 DDI
+description: 反交错 DDI
 ms.assetid: 06b85f76-950a-4a9b-af6b-ded823bfda6a
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a2aa7869adf9fdb6c3c9cd7aaa92eadfddaef6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348897"
 ---
-# <a name="deinterlace-ddi"></a>取消隔行扫描 DDI
+# <a name="deinterlace-ddi"></a>反交错 DDI
 
 
 ## <span id="ddk_deinterlace_ddi_gg"></span><span id="DDK_DEINTERLACE_DDI_GG"></span>

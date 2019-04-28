@@ -10,11 +10,11 @@ keywords:
 - 网络、 Winsock 内核 WDK 操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 932d834d2400c4d7983be34f8e78ba398c95e02e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342593"
 ---
 # <a name="wsk-client-control-operations"></a>WSK 客户端控制操作
 

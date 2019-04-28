@@ -1,15 +1,15 @@
 ---
-title: _Flt_CompletionContext_Outptr_批注
+title: _Flt_CompletionContext_Outptr_ 注释
 description: 使用_Flt_CompletionContext_Outptr_批注声明的文件系统微筛选器预操作回调函数 PFLT_PRE_OPERATION_CALLBACK 时。
 ms.assetid: C3B285EA-0DAB-48D4-AE2F-CB4FBB30EF15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02b3e10ef2e3aec771e9d8407cc837b5d762e639
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344789"
 ---
 # <a name="fltcompletioncontextoutptr-annotation"></a>\_Flt\_CompletionContext\_Outptr\_批注
 
@@ -34,14 +34,14 @@ SwapPreReadBuffers(
 
 **\_Flt\_CompletionContext\_Outptr\_** specstrings.h 中定义批注。 使用批注可以添加有价值的错误检查，而无需添加到你的代码的开销或复杂程度。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**PFLT\_PRE\_OPERATION\_CALLBACK**](https://msdn.microsoft.com/library/windows/hardware/ff551109)
 
 [**PFLT\_POST\_OPERATION\_CALLBACK**](https://msdn.microsoft.com/library/windows/hardware/ff551107)
 
-[SAL 2.0 注释 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)
+[Windows 驱动程序的 SAL 2.0 注释](sal-2-annotations-for-windows-drivers.md)
 
 
 

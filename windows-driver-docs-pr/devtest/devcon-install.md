@@ -1,5 +1,5 @@
 ---
-title: DevCon 安装
+title: DevCon Install
 description: 创建新的、 根枚举的 devnode 非即插即用设备并安装其支持软件。 仅在本地计算机上有效。
 ms.assetid: d31007dd-6f20-460d-8561-d1639c69aa09
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 122eab295ea09855ca4c49d77fc1fa899de59adf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347046"
 ---
-# <a name="devcon-install"></a>DevCon 安装
+# <a name="devcon-install"></a>DevCon Install
 
 
 创建新的、 根枚举的 devnode 非即插即用设备并安装其支持软件。 仅在本地计算机上有效。

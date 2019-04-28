@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0af4f957b5e8bc92b513c13e3b7e164814fa6c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346633"
 ---
 # <a name="unloading-a-callout-driver"></a>卸载标注驱动程序
 

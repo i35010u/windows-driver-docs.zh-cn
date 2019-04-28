@@ -5,11 +5,11 @@ ms.assetid: 2e96dec7-43a9-44a4-9636-4ccb5244d5bd
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f62a40a6bfa20f3487e7d5c52afbe751ad97bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342167"
 ---
 # <a name="propsetidexttransport"></a>PROPSETID\_EXT\_传输
 

@@ -1,6 +1,6 @@
 ---
-title: 事件处理方案
-description: 事件处理方案
+title: 事件方案
+description: 事件方案
 ms.assetid: 6f7832ed-2b0b-4857-b47e-7db492a53855
 keywords:
 - WSDBIT 工具 WDK，测试方案
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3eaf46b6a30cdc2684a373b2c746c7d655ec174
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344785"
 ---
-# <a name="eventing-scenarios"></a>事件处理方案
+# <a name="eventing-scenarios"></a>事件方案
 
 
 事件处理方案测试事件处理，因为中加以约束[设备配置文件的 Web 服务 (DPWS)](https://go.microsoft.com/fwlink/p/?linkid=81255)。

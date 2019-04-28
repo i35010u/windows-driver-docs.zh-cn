@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: df6a9b410a7498c3aadc31a68435af08c19b9836
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346234"
 ---
 # <a name="d3dkmtoutputduplmetadata-structure"></a>D3DKMT\_OUTPUTDUPL\_元数据结构
 
@@ -73,7 +73,7 @@ typedef struct _D3DKMT_OUTPUTDUPL_METADATA {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
 </tr>
 </tbody>

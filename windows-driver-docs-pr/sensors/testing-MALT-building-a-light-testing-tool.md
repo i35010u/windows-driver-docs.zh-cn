@@ -6,11 +6,11 @@ ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f5d4866cc3244a94a1094ec8fb5a01b21471f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345177"
 ---
 # <a name="building-a-light-testing-tool-malt"></a>构建测试工具 (MALT) 的光
 
@@ -24,7 +24,7 @@ ms.locfileid: "56554550"
 
 本指南假定编程，和焊接，电子设备，在具有基本知识。
 
-## <a name="components"></a>组件数
+## <a name="components"></a>组件
 
 您将需要以下组件。
 

@@ -5,11 +5,11 @@ ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15a989a7f5b46dfec63e58e02c5429c6edbc08dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343059"
 ---
 # <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>将 WDK 源文件转换为 Visual Studio 项目
 
@@ -23,7 +23,7 @@ ms.locfileid: "56524333"
 ## <a name="span-idthenmake2msbuildconversionprocessspanspan-idthenmake2msbuildconversionprocessspanspan-idthenmake2msbuildconversionprocessspanthe-nmake2msbuild-conversion-process"></a><span id="The_Nmake2MsBuild_conversion_process"></span><span id="the_nmake2msbuild_conversion_process"></span><span id="THE_NMAKE2MSBUILD_CONVERSION_PROCESS"></span>Nmake2MsBuild 转换过程
 
 
-[Nmake2MsBuild](nmake2msbuild.md)工具将执行基于规则的内容的映射*源*到 Visual Studio c + + 项目文件的内容文件 (。VcxProj)。 对于要转换每个生成宏，没有相应的转换规则中使用 msbuild 和生成期间检测到的属性文件 (.props)。 在 MSBuild 环境中，属性、 项和对这些项的元数据的生成系统使用。 在每个宏*源*文件映射到 MSBuild 属性、 项或作为由规则指定项元数据。 默认情况下，如果没有规则存在，则宏名为 A，B 的值转换为属性的值 b。初始转换步骤涉及 NMake 语法中的映射*makefile.inc*或*源*MSBuild 语法关联的属性文件 (.props) 中的文件。 NMake 文件中的每个宏转换为属性文件 (.props) 中的属性。 在生成期间，这些属性的计算，并已某些属性的计算的值进行映射到各种属性、 项或作为指定的转换规则元数据。
+[Nmake2MsBuild](nmake2msbuild.md)工具将执行基于规则的内容的映射*源*文件内容的 Visual StudioC++项目文件 (。VcxProj)。 对于要转换每个生成宏，没有相应的转换规则中使用 msbuild 和生成期间检测到的属性文件 (.props)。 在 MSBuild 环境中，属性、 项和对这些项的元数据的生成系统使用。 在每个宏*源*文件映射到 MSBuild 属性、 项或作为由规则指定项元数据。 默认情况下，如果没有规则存在，则宏名为 A，B 的值转换为属性的值 b。初始转换步骤涉及 NMake 语法中的映射*makefile.inc*或*源*MSBuild 语法关联的属性文件 (.props) 中的文件。 NMake 文件中的每个宏转换为属性文件 (.props) 中的属性。 在生成期间，这些属性的计算，并已某些属性的计算的值进行映射到各种属性、 项或作为指定的转换规则元数据。
 
 例如，用户\_C\_中的标志宏*源*文件用于指定在生成过程传递到编译器 (cl.exe) 的命令行参数。 在 MSBuild 环境中，ClCompile 项目列表包含将编译的源代码文件。 ClCompile 项列表由在编译器[CL 任务](https://msdn.microsoft.com/library/ee862477.aspx)。 在列表中的每个项上的其他元数据确定其他标志传递到编译器 (cl.exe)。 因此，用户的值\_C\_标志宏应映射到类型 ClCompile 的项的其他项元数据。 在初始转换步骤中，用户\_C\_源文件中的标志宏转换为 MSBuild 属性，也称为用户\_C\_标志生成的文件中名为*sources.props*. 用户的计算值的映射\_C\_在生成时，发生的其他元数据的标志属性，如下面的示例中所示：
 
@@ -131,12 +131,12 @@ NMake2MsBuild 实用工具不支持的自定义目标的转换或某些非生成
 
 转换后的项目不支持 VS。筛选文件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Nmake2MsBuild](nmake2msbuild.md)
 
-[从现有源代码文件创建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
+[从现有源文件创建驱动程序](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_from_existing_source_files)
 
  
 

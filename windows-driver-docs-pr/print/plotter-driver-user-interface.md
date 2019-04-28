@@ -1,6 +1,6 @@
 ---
-title: 绘图器驱动程序用户界面
-description: 绘图器驱动程序用户界面
+title: 绘图仪驱动程序用户界面
+description: 绘图仪驱动程序用户界面
 ms.assetid: 681e9215-d34b-4991-9c0f-b9dbe23412f6
 keywords:
 - 绘图器驱动程序 WDK 打印，用户界面
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66298fc17c2c8253c447abbf075b05edbd4cedea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342862"
 ---
-# <a name="plotter-driver-user-interface"></a>绘图器驱动程序用户界面
+# <a name="plotter-driver-user-interface"></a>绘图仪驱动程序用户界面
 
 
 

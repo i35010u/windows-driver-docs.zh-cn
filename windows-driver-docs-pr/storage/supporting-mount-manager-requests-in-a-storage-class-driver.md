@@ -1,6 +1,6 @@
 ---
-title: 在存储类驱动程序中支持装入管理器请求
-description: 在存储类驱动程序中支持装入管理器请求
+title: 支持存储类驱动程序中的装入管理器请求
+description: 支持存储类驱动程序中的装入管理器请求
 ms.assetid: fb37f862-70d6-4514-b481-16f664346422
 keywords:
 - 存储类驱动程序 WDK，计数管理器
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a05bb94b0be40e790074ee82ddcef48fb6d52160
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342194"
 ---
-# <a name="supporting-mount-manager-requests-in-a-storage-class-driver"></a>在存储类驱动程序中支持装入管理器请求
+# <a name="supporting-mount-manager-requests-in-a-storage-class-driver"></a>支持存储类驱动程序中的装入管理器请求
 
 
 ## <span id="ddk_supporting_mount_manager_requests_in_a_storage_class_driver_kg"></span><span id="DDK_SUPPORTING_MOUNT_MANAGER_REQUESTS_IN_A_STORAGE_CLASS_DRIVER_KG"></span>

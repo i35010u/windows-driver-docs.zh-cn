@@ -1,6 +1,6 @@
 ---
-title: 创建出色的事务管理器
-description: 创建出色的事务管理器
+title: 创建高级事务管理器
+description: 创建高级事务管理器
 ms.assetid: 6f6bf61a-fe53-47b5-9559-f76334969af8
 keywords:
 - 事务管理器 WDK KTM
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25f9ba7163ef8816fc8cdbb1e83be7b741ed0cdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345439"
 ---
-# <a name="creating-a-superior-transaction-manager"></a>创建出色的事务管理器
+# <a name="creating-a-superior-transaction-manager"></a>创建高级事务管理器
 
 
 KTM，在*上级事务管理器*创建卓越的登记其参与的事务的资源管理器。 一个*上级登记*是授予资源管理器的功能进行协调的登记[提交操作](handling-commit-operations.md)登记的事务。 换而言之，事务的客户端或上级事务管理器可以启动的事务前的 prepare/准备/提交序列。

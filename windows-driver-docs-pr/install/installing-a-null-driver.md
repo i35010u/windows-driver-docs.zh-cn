@@ -1,6 +1,6 @@
 ---
-title: 安装为 Null 的驱动程序
-description: 安装为 Null 的驱动程序
+title: 安装 Null 驱动程序
+description: 安装 Null 驱动程序
 ms.assetid: 8684eade-3f25-48fe-94e7-a7e76d8072ad
 keywords:
 - 设备安装程序 WDK 设备安装，为 null 的驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f371e29e64de92310352164b9c1e7a8f2f6d461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352051"
 ---
-# <a name="installing-a-null-driver"></a>安装为 Null 的驱动程序
+# <a name="installing-a-null-driver"></a>安装 Null 驱动程序
 
 
 

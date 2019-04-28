@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f2575b6e5a51d65ad08d2e50e77b04d6fa7a70e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343833"
 ---
 # <a name="wiaipsthreshold"></a>WIA\_IP\_阈值
 
@@ -52,13 +52,13 @@ WIA\_IP\_阈值属性包含设备的当前硬件阈值设置。 WIA 微型驱动
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPA\_DATATYPE**](wia-ipa-datatype.md)

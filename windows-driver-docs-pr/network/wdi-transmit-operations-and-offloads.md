@@ -5,11 +5,11 @@ ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30d215fbc9906b339d82d4d734636fb0472eed49
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342904"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 传输操作和卸载
 

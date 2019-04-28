@@ -3,19 +3,19 @@ title: 对等
 ms.assetid: 0234BA57-477E-408C-94C8-8DD8922FD386
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 description: 定义对等标准 NFC 论坛有关的信息，确保设备的协议可以使用 NFC 进行交互。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0272feb0fd890058c34c911742fb0155b9c466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348409"
 ---
 # <a name="peer-to-peer"></a>对等
 

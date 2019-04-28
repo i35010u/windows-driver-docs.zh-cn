@@ -1,6 +1,6 @@
 ---
-title: 在源代码窗格中的颜色编码
-description: 在源代码窗格中的颜色编码
+title: 源代码窗格中的颜色编码
+description: 源代码窗格中的颜色编码
 ms.assetid: 1bc3635b-31ed-4453-aaef-cd5aac637df2
 keywords:
 - 颜色编码 WDK Static Driver Verifier
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cf997c4d9268f5a1619f41233faa93630bdbd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343157"
 ---
-# <a name="color-coding-in-the-source-code-pane"></a>在源代码窗格中的颜色编码
+# <a name="color-coding-in-the-source-code-pane"></a>源代码窗格中的颜色编码
 
 
 SDV 使用颜色编码以帮助您快速识别代码源。

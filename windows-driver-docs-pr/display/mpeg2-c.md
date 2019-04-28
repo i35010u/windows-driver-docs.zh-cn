@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efdd51cc9e0cc8fec615e36c1dce9534acac1b4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345649"
 ---
 # <a name="mpeg2c"></a>MPEG2\_C
 
@@ -35,7 +35,7 @@ MPEG2\_C 受限制的配置文件中包含的一组功能支持 mpeg-2 视频主
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -60,7 +60,7 @@ MPEG2\_C 受限制的配置文件中包含的一组功能支持 mpeg-2 视频主
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

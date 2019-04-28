@@ -1,6 +1,6 @@
 ---
-title: 确定父虚幻设备
-description: 确定父虚幻设备
+title: 确定虚幻设备的父设备
+description: 确定虚幻设备的父设备
 ms.assetid: 2d5948db-5844-4f78-b3a6-2f9f88ee1b24
 keywords:
 - 安装程序 Api 函数 WDK，确定父项
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c035b398accb563efca4635424e0e0f8f690aba1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346171"
 ---
-# <a name="determining-the-parent-of-a-nonpresent-device"></a>确定父虚幻设备
+# <a name="determining-the-parent-of-a-nonpresent-device"></a>确定虚幻设备的父设备
 
 
 

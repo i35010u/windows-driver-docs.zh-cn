@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b658a41298600c8216500b8a8c8eeeb6b8e262
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344587"
 ---
 # <a name="registering-irp-dispatch-routines"></a>注册 IRP 调度例程
 

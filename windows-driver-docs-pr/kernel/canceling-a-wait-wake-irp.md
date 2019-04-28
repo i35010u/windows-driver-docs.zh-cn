@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 930e7d6a365f2cc49c0588909e04062619cd4b40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343789"
 ---
 # <a name="canceling-a-waitwake-irp"></a>取消等待/唤醒 IRP
 

@@ -10,11 +10,11 @@ ms.assetid: B13FECA3-FBD1-4B95-8400-ECDDC3FD09FC
 ms.date: 08/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b004611835036611865b78a8c1ddba16f50e746
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346020"
 ---
 本部分包含在单个根 I/O 虚拟化 (SR-IOV) 中使用 NDIS 状态指示。
 

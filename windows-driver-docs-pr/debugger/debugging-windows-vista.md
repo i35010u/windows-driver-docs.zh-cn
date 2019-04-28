@@ -5,11 +5,11 @@ ms.assetid: 1E4FC9D9-7F84-4F67-8FBC-4283C69AB0AC
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a2f4cae56eb5c7046b4dfcfefa4f3c0b68b6b5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346324"
 ---
 # <a name="debugging-windows-vista"></a>调试 Windows Vista
 
@@ -18,7 +18,7 @@ ms.locfileid: "56568737"
 
 如果你想要下载仅调试工具的 Windows，安装 SDK，并安装过程中，选择**有关 Windows 调试工具**框，并清除所有其他框。
 
-**请注意**  可能需要在安装 SDK 之前卸载 Microsoft Visual c + + 2010年可再发行组件。 有关详细信息，请参阅[Microsoft 支持网站](https://support.microsoft.com/kb/2717426)。
+**请注意**  可能需要卸载 Microsoft Visual C++ 2010年可再发行组件安装 SDK 之前。 有关详细信息，请参阅[Microsoft 支持网站](https://support.microsoft.com/kb/2717426)。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: 打开基础中间驱动程序的适配器
-description: 打开基础中间驱动程序的适配器
+title: 打开中间驱动程序下面的适配器
+description: 打开中间驱动程序下面的适配器
 ms.assetid: 437f8d2a-74c6-4a00-aa32-f790d39c0629
 keywords:
 - 打开 WDK 网络的基础适配器
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ddba3123fa6c699b335d95484d2210975defb3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342300"
 ---
-# <a name="opening-an-adapter-underlying-an-intermediate-driver"></a>打开基础中间驱动程序的适配器
+# <a name="opening-an-adapter-underlying-an-intermediate-driver"></a>打开中间驱动程序下面的适配器
 
 
 

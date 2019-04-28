@@ -1,6 +1,6 @@
 ---
-title: 编辑在 EFI 启动选项
-description: 编辑在 EFI 启动选项
+title: 编辑 EFI 中的启动选项
+description: 编辑 EFI 中的启动选项
 ms.assetid: 0fdd01b3-7475-4959-87d8-5ec8ae65fea0
 keywords:
 - WDK 的 NVRAM 引导选项编辑
@@ -16,13 +16,13 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d9dc5ea74b6d95452edce219253eef5a00aa45c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344825"
 ---
-# <a name="editing-boot-options-in-efi"></a>编辑在 EFI 启动选项
+# <a name="editing-boot-options-in-efi"></a>编辑 EFI 中的启动选项
 
 
 若要编辑的启动选项的计算机上使用 EFI NVRAM 在运行 Windows Server 2003 或早期版本的基于 NT 的 Windows，请使用 Bootcfg (bootcfg.exe)，Windows 或 Nvrboot (nvrboot.efi)，在 EFI 环境中运行的工具运行的工具。 在 Windows XP 64-Bit Edition 和 Windows Server 2003 的 64 位版本中包含这两个工具。

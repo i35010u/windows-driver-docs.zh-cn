@@ -5,11 +5,11 @@ ms.assetid: 9817AC4B-2BE8-44AC-8C9B-DED5EF0A7DD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca4dfeb4728968de0c7e2773afd6a53dbecbb15b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344861"
 ---
 # <a name="debugging-ddi-compliance-bugs---driververifierdetectedviolation-c4-0x20002---0x20022"></a>调试 DDI 符合性错误的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x20002 - 0x20022
 
@@ -153,7 +153,7 @@ FAULTING_SOURCE_LINE_NUMBER:  206
 
 [DDI 符合性规则](https://msdn.microsoft.com/library/windows/hardware/ff552840)
 
-[Static Driver Verifier](static-driver-verifier.md)
+[静态驱动程序验证程序](static-driver-verifier.md)
 
 [**Bug 检查 0xC4:驱动程序\_VERIFIER\_检测到\_冲突**](https://msdn.microsoft.com/library/windows/hardware/ff560187)
 

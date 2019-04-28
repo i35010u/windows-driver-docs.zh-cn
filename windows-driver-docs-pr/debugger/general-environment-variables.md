@@ -15,11 +15,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04adc9364db52af5579676fa1da57524c38fe799
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347100"
 ---
 # <a name="general-environment-variables"></a>常规环境变量
 
@@ -79,7 +79,7 @@ ms.locfileid: "56567420"
 </tr>
 <tr class="even">
 <td align="left"><p>_NT_EXPR_EVAL = {<strong>masm</strong> | <strong>c++</strong>}</p></td>
-<td align="left"><p>指定默认表达式计算器。 如果<strong>masm</strong>指定，则将使用 MASM 表达式语法。 如果<strong>c + +</strong>指定，则将使用 c + + 表达式语法。 默认值为 MASM 表达式语法。 请参阅<a href="evaluating-expressions.md" data-raw-source="[Evaluating Expressions](evaluating-expressions.md)">评估表达式</a>有关详细信息。</p></td>
+<td align="left"><p>指定默认表达式计算器。 如果<strong>masm</strong>指定，则将使用 MASM 表达式语法。 如果<strong>c + +</strong>指定，则C++将使用表达式语法。 默认值为 MASM 表达式语法。 请参阅<a href="evaluating-expressions.md" data-raw-source="[Evaluating Expressions](evaluating-expressions.md)">评估表达式</a>有关详细信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>_NO_DEBUG_HEAP</p></td>

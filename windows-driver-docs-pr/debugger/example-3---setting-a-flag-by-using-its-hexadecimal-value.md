@@ -5,11 +5,11 @@ ms.assetid: 64fa0b2e-9fe7-47d0-bf83-8ae7c06252b6
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ca853bd3c788025563a5ca358e9d1570605f225
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347725"
 ---
 # <a name="example-3-setting-a-flag-by-using-its-hexadecimal-value"></a>示例 3：使用标志的十六进制值设置标志
 

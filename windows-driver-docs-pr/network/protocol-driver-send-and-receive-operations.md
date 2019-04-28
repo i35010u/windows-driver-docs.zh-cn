@@ -5,11 +5,11 @@ ms.assetid: c621d673-167e-41e1-a121-68e0d0bc6f8a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb76d8424590c461c50e2c26551f89344b9c3609
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347411"
 ---
 # <a name="protocol-driver-send-and-receive-operations"></a>协议驱动程序发送和接收操作
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd942a1d9b9f154807319484fdd6f5bd16fdc3e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345560"
 ---
 # <a name="multiple-vertex-streams"></a>多个顶点流
 

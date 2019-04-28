@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b2bf7c48a9efaee8b1dd3117ab1d791cfdeb83f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342286"
 ---
 # <a name="using-the-network-driver-design-guide"></a>使用网络驱动程序设计指南
 
@@ -82,7 +82,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570735" data-raw-source="[Scalable Networking](https://msdn.microsoft.com/library/windows/hardware/ff570735)">可伸缩网络</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff570735" data-raw-source="[Scalable Networking](https://msdn.microsoft.com/library/windows/hardware/ff570735)">可缩放网络</a></p></td>
 <td align="left"><p>支持的网络适配器，如下所示的任务卸载的网络技术：</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">标头数据拆分</a>，将拆分标头和中的数据的服务接收到单独的缓冲区的以太网帧。</p></li>
@@ -100,7 +100,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="virtualized-networking.md" data-raw-source="[Virtualized Networking](virtualized-networking.md)">虚拟化的网络</a></p></td>
+<td align="left"><p><a href="virtualized-networking.md" data-raw-source="[Virtualized Networking](virtualized-networking.md)">虚拟化网络</a></p></td>
 <td align="left"><p>支持的 HYPER-V 虚拟化环境，如下所示的网络技术：</p>
 <ul>
 <li><p><a href="single-root-i-o-virtualization--sr-iov-.md" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)">单根 I/O 虚拟化 (SR-IOV)</a></p></li>
@@ -113,7 +113,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的内核模
 <td align="left"><p>包含本机 802.11 无线 LAN 的网络功能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568366" data-raw-source="[Network Module Registrar](https://msdn.microsoft.com/library/windows/hardware/ff568366)">网络模块注册机构</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff568366" data-raw-source="[Network Module Registrar](https://msdn.microsoft.com/library/windows/hardware/ff568366)">网络模块注册器</a></p></td>
 <td align="left"><p>系统工具，使得将附加到另一个网络模块的驱动程序。</p></td>
 </tr>
 <tr class="odd">

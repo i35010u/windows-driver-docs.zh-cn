@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e2689975c2d301be5c5b547d35404a910dc077c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344629"
 ---
 # <a name="alpha-blend-combination"></a>Alpha 混合组合
 

@@ -1,6 +1,6 @@
 ---
-title: 已检验的版本的 Windows
-description: 已检验的版本的 Windows
+title: Windows 已检验版本
+description: Windows 已检验版本
 ms.assetid: c0e5ccc4-78fc-4c48-a6d7-2f9825aa7de2
 keywords:
 - 验证驱动程序 WDK，检查生成
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a311c298d7b1a73fc9baf8faeebef8baa4fdcc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343973"
 ---
-# <a name="checked-build-of-windows"></a>已检验的版本的 Windows
+# <a name="checked-build-of-windows"></a>Windows 已检验版本
 
 
 ## <span id="ddk_using_the_checked_build_of_windows_tools"></span><span id="DDK_USING_THE_CHECKED_BUILD_OF_WINDOWS_TOOLS"></span>
@@ -24,7 +24,7 @@ ms.locfileid: "56525502"
 
 本部分介绍了如何 Microsoft Windows*已检验版本*(也称为*调试版本*) 的基于 NT 的操作系统的不同于*免费生成*（还名为*零售生成*) 的此操作系统。 本节介绍如何调试内部版本的独特功能可以帮助开发和调试 x86 和 x64 平台上的驱动程序。 部分还列出了安装和在不同的驱动程序开发中使用的已检验的版本和调试环境的几种方法。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [Checked 和免费生成差异](checked-and-free-build-differences.md)

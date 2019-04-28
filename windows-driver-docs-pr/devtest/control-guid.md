@@ -1,6 +1,6 @@
 ---
-title: 控件 GUID
-description: 控件 GUID
+title: 控制 GUID
+description: 控制 GUID
 ms.assetid: a85a5e1a-c4c1-40d4-a0ef-d8e552590f03
 keywords:
 - 控件 Guid WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 191806f223c1d44d3aeb54f48f297adf5cc600b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343097"
 ---
-# <a name="control-guid"></a>控件 GUID
+# <a name="control-guid"></a>控制 GUID
 
 ## <span id="ddk_control_guid_tools"></span><span id="DDK_CONTROL_GUID_TOOLS"></span>
 

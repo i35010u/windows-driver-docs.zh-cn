@@ -1,6 +1,6 @@
 ---
-title: 添加构造 PPD GDL 文件
-description: 添加构造 PPD GDL 文件
+title: 将构造添加到 PPD 的 GDL 文件
+description: 将构造添加到 PPD 的 GDL 文件
 ms.assetid: 981952b2-cc13-4c62-935b-74e749278c0f
 keywords:
 - 构造 WDK 打印机自动配置
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b89bc0f78ffcca00337410f1144a2c7d43e924
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343231"
 ---
-# <a name="adding-constructs-to-your-gdl-file-for-ppd"></a>添加构造 PPD GDL 文件
+# <a name="adding-constructs-to-your-gdl-file-for-ppd"></a>将构造添加到 PPD 的 GDL 文件
 
 
 若要支持自动配置，您必须构造到 GDL 文件使用添加以下新关键字：\***BidiQuery**， \* **QueryString**， \* **BidiResponse**， \* **ResponseType**， \* **ResponseData**，并\* **BidiValue**。 这些关键字可用于指定与一个选择一项功能，并对该选项的可能响应相关联的 bidi 架构请求。

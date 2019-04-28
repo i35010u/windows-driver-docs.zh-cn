@@ -1,5 +1,5 @@
 ---
-title: 处理 Bug 检查时驱动程序验证程序已启用
+title: 在启用驱动程序验证程序的情况下处理 Bug 检查
 description: 驱动程序验证程序在运行时检测到驱动程序错误。 可以使用驱动程序验证程序以及分析调试器命令，来检测和驱动程序中显示有关错误的信息。
 ms.assetid: 4226B62B-0AA5-4D04-A32D-7DD22FD694E3
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a835eb71d0a959575ae04a7f55970b02d68a89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342079"
 ---
-# <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>处理 Bug 检查时驱动程序验证程序已启用
+# <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>在启用驱动程序验证程序的情况下处理 Bug 检查
 
 
 [驱动程序验证程序](https://go.microsoft.com/fwlink/p?LinkID=268663)在运行时检测到驱动程序错误。 可以使用与 Driver Verifier [ **！ 分析**](-analyze.md)调试器命令，以检测和驱动程序中显示有关错误的信息。
@@ -164,10 +164,10 @@ FAILURE_BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[Static Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268668)
+[静态驱动程序验证程序](https://go.microsoft.com/fwlink/p?LinkID=268668)
 
  
 

@@ -5,11 +5,11 @@ ms.assetid: D0CC0536-5569-47ed-8DE8-B64FF3042C51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90c098dafbaf6c14d04b30e4db95f2d99cd5b413
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341811"
 ---
 # <a name="table-data-source"></a>表数据源
 

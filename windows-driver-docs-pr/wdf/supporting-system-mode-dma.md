@@ -5,11 +5,11 @@ ms.assetid: CCC77C15-69CA-44CB-8DEB-29F3EAEA44F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d629648ae39ec68f5817d8f58fbda8ff75e685c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350727"
 ---
 # <a name="supporting-system-mode-dma"></a>支持系统模式 DMA
 

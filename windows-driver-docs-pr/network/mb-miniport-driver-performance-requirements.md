@@ -5,11 +5,11 @@ ms.assetid: 16986208-7572-412d-8839-71f1a66b074f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7cc897488d143b7fe69bbfbe17dba3115dcd970
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343295"
 ---
 # <a name="mb-miniport-driver-performance-requirements"></a>MB 微型端口驱动程序性能要求
 

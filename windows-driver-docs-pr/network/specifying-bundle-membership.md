@@ -1,6 +1,6 @@
 ---
-title: 指定捆绑包成员身份
-description: 指定捆绑包成员身份
+title: 指定捆绑成员身份
+description: 指定捆绑成员身份
 ms.assetid: aa73c7fd-a5c8-4ef5-99fd-229fbcc6b4df
 keywords:
 - 添加注册表部分 WDK 网络，捆绑包成员身份
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d05b309142d200f4cee8f9ba7fcfcb259e6512
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342579"
 ---
-# <a name="specifying-bundle-membership"></a>指定捆绑包成员身份
+# <a name="specifying-bundle-membership"></a>指定捆绑成员身份
 
 
 

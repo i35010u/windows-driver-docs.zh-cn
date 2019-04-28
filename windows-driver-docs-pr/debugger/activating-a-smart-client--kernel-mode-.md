@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e0db7c53d27c0cfb5ae753b4f3c6160d7a8ef859
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354423"
 ---
 # <a name="activating-a-smart-client-kernel-mode"></a>激活智能客户端（内核模式）
 

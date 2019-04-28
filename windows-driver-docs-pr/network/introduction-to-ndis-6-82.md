@@ -5,11 +5,11 @@ ms.assetid: 6BB75BC5-0E49-4467-B030-E0A23D0ED2DA
 ms.date: 08/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 90e7a6a86cd5af9a5d486c9df176c24503859bde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343657"
 ---
 # <a name="introduction-to-ndis-682"></a>NDIS 6.82 简介
 

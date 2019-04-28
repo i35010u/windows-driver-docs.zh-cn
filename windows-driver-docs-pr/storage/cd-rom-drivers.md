@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 473785555fd63c98ea2cb111c4a0ffd503bffc68
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348467"
 ---
 # <a name="cd-rom-drivers"></a>CD-ROM 驱动程序
 

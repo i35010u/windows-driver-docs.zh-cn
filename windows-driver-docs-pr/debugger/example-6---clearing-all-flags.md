@@ -5,13 +5,13 @@ ms.assetid: 07a6af3d-3ef7-429d-9afa-439b20915ab1
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d76940e358f53d82f4785332849140710e0316d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342049"
 ---
-# <a name="example-6-clearing-all-flags"></a>示例 6:清除所有标志
+# <a name="example-6-clearing-all-flags"></a>示例 6：清除所有标志
 
 
 ## <span id="ddk_example_6___clearing_all_flags_dtools"></span><span id="DDK_EXAMPLE_6___CLEARING_ALL_FLAGS_DTOOLS"></span>

@@ -1,15 +1,15 @@
 ---
-title: 可以将软件跟踪添加到用 c + + 托管代码编写的程序
-description: 可以将软件跟踪添加到用 c + + 托管代码编写的程序
+title: 可以将软件跟踪添加到程序编写C++托管代码
+description: 可以将软件跟踪添加到程序编写C++托管代码
 ms.assetid: f016c710-9b27-4b62-9573-0e66857b0fb0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6612028afa87ea7cee701fda64cd3319f901b7fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344924"
 ---
 # <a name="can-i-add-software-tracing-to-programs-written-in-c-managed-code"></a>是否可将软件跟踪添加到以 C++ 托管代码编写的程序？
 

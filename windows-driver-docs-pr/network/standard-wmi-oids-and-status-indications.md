@@ -1,17 +1,17 @@
 ---
-title: 标准 WMI Oid 和状态指示
-description: 标准 WMI Oid 和状态指示
+title: 标准 WMI OID 和状态指示
+description: 标准 WMI OID 和状态指示
 ms.assetid: d36f49be-da29-4190-ad9e-2c5a24c3830e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3a716abc4eb919ce182eb6f133c513f9d28c3bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345998"
 ---
-# <a name="standard-wmi-oids-and-status-indications"></a>标准 WMI Oid 和状态指示
+# <a name="standard-wmi-oids-and-status-indications"></a>标准 WMI OID 和状态指示
 
 
 本部分包括：

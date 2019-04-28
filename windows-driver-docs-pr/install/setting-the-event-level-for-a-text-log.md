@@ -1,6 +1,6 @@
 ---
-title: 事件级别设置为文本日志
-description: 事件级别设置为文本日志
+title: 设置文本日志的事件级别
+description: 设置文本日志的事件级别
 ms.assetid: 3dfd2df3-179e-434c-97fb-fd8329198f8a
 keywords:
 - 事件级别 WDK SetupAPI 日志记录
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5211e76e3837d4d52cdb7d99c5b7ba476444dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348676"
 ---
-# <a name="setting-the-event-level-for-a-text-log"></a>事件级别设置为文本日志
+# <a name="setting-the-event-level-for-a-text-log"></a>设置文本日志的事件级别
 
 
 [SetupAPI](setupapi.md)写入日志项的文本日志仅当事件级别设置文本日志是大于或等于日志条目事件的事件级别和[事件类别](enabling-event-categories-for-a-text-log.md)日志条目启用文本日志。

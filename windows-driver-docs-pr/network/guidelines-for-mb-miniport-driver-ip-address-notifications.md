@@ -5,11 +5,11 @@ ms.assetid: 23d74bc4-5648-45e3-a603-350d71bb16e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbf70c2ecb3338ee39a93b905e4c52a1f8975cd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349825"
 ---
 # <a name="guidelines-for-mb-miniport-driver-ip-address-notifications"></a>有关 MB 微型端口驱动程序 IP 地址通知的指导原则
 

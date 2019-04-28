@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_CHANNEL_NUMBER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d73f64587c46f1ecbeaf9f79c477d37f9ef84597
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345951"
 ---
 # <a name="wditlvp2pchannelnumber"></a>WDI\_TLV\_P2P\_CHANNEL\_NUMBER
 

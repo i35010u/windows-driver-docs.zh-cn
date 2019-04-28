@@ -5,11 +5,11 @@ ms.assetid: C80FE3F2-6659-4DE8-8F77-F77EDA60400F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c9aad36345ec0e46e4ab2677cf66c112a6ae485
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348061"
 ---
 # <a name="full-duplex-io-requests"></a>全双工 I/O 请求
 
@@ -58,7 +58,7 @@ SPB_TRANSFER_LIST_INIT(&(seq.List), transfers);
 
 读取的缓冲区和写入缓冲区**IOCTL\_存储\_完整\_双工**请求不需要是相同的长度。 如果写入缓冲区小于读取缓冲区，存储控制器驱动程序将停止写入缓冲区的内容写入到设备后缓冲区为空，但会继续以填充读取的缓冲区，直到它已满。 同样，如果读取的缓冲区小于写入缓冲区，将停止存储控制器驱动程序后它已满，但仍然无法写入设备的写入缓冲区的内容，直到清空缓冲区填充读取的缓冲区。
 
-## <a name="example-kmdf-driver"></a>示例：KMDF 驱动程序
+## <a name="example-kmdf-driver"></a>例如：KMDF 驱动程序
 
 
 存储外围设备的内核模式驱动程序的基础 (KMDF) 驱动程序调用的方法，如[ **WdfIoTargetSendIoctlSynchronously** ](https://msdn.microsoft.com/library/windows/hardware/ff548660)将 IOCTL 请求发送到存储控制器。 此方法具有*InputBuffer*并*OutputBuffer*参数。 对于某些类型的设备驱动程序可能会使用这两个参数以指向写入缓冲区和读取的缓冲区中，分别为 IOCTL 请求。 但是，若要将 IOCTL 请求发送到的存储控制器，存储外围设备驱动程序集*InputBuffer*参数以指向指向的内存描述符**存储\_传输\_列表**结构。 例如，此结构描述同时写入缓冲区和读取的缓冲区 （按此顺序） **IOCTL\_存储\_完整\_双工**请求。 驱动程序集*OutputBuffer*参数为 NULL。
@@ -89,7 +89,7 @@ Status = WdfIoTargetSendIoctlSynchronously(
 
 **WdfIoTargetSendIoctlSynchronously**在此调用的代码示例设置`BytesTransferred`总字节数的变量传输 （写入的字节数加上读取字节）。 例如，如果请求具有 1 个字节写入缓冲区和 4 字节的读取的缓冲区，并在调用成功，`BytesTransferred`值应为 5。
 
-## <a name="example-umdf-driver"></a>示例：UMDF 驱动程序
+## <a name="example-umdf-driver"></a>例如：UMDF 驱动程序
 
 
 存储外围设备的用户模式驱动程序的基础 (UMDF) 驱动程序调用的方法，如[ **IWDFIoTarget::FormatRequestForIoctl** ](https://msdn.microsoft.com/library/windows/hardware/ff559230)格式化 I/O 控制操作的 I/O 请求。 此方法具有*pInputMemory*并*pOutputMemory*参数。 对于某些类型的设备驱动程序可能会使用这两个参数以指向读取的缓冲区和 IOCTL 请求写入缓冲区。 但是，若要将 IOCTL 请求发送到的存储控制器，存储外围设备驱动程序集*pInputMemory*参数，以对内存对象，其中包含指向**存储\_传输\_列表**结构。 例如，此结构描述写入缓冲区和读取的缓冲区**IOCTL\_存储\_完整\_双工**请求。 驱动程序集*pOutputMemory*参数为 NULL。

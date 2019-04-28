@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0264517c0956a00dee2d59cff3c17078856963b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350606"
 ---
 # <a name="debugging-in-source-mode"></a>在源模式下调试
 
@@ -24,7 +24,7 @@ ms.locfileid: "56576476"
 
 调试应用程序是代码的可以分析，而不是代码的已拆装的二进制文件的源的情况下更轻松。
 
-WinDbg、 CDB 和 KD 可以使用源代码在调试中，如果源代码的语言为 C、 c + + 或程序集。
+WinDbg、 CDB 和 KD 可以使用源代码在调试中，如果源语言为 C， C++，或程序集。
 
 ### <a name="span-idcompilationrequirementsspanspan-idcompilationrequirementsspancompilation-requirements"></a><span id="compilation_requirements"></span><span id="COMPILATION_REQUIREMENTS"></span>编译需求
 

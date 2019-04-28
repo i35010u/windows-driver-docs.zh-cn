@@ -5,11 +5,11 @@ ms.assetid: 303d1b08-1f1c-48ca-89a9-9087516fcd48
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 756ee7eb302e6cde389d51141b469ceabd710e0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352068"
 ---
 # <a name="debugging-device-metadata-packages-by-using-problem-reports"></a>使用问题报告调试设备元数据包
 

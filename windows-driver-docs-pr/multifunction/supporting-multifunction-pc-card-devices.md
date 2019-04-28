@@ -1,6 +1,6 @@
 ---
-title: 支持多功能 PC 卡设备
-description: 支持多功能 PC 卡设备
+title: 支持多功能电脑卡设备
+description: 支持多功能电脑卡设备
 ms.assetid: 4da3b99c-0731-41b5-9f67-29c7e181342f
 keywords:
 - 多功能设备 WDK、 PC 卡
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b33988d24ad7fd53dc3c620d7187a676a70ca1cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342341"
 ---
-# <a name="supporting-multifunction-pc-card-devices"></a>支持多功能 PC 卡设备
+# <a name="supporting-multifunction-pc-card-devices"></a>支持多功能电脑卡设备
 
 
 

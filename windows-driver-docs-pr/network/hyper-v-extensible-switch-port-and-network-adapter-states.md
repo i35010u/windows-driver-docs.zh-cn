@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机端口和网络适配器状态
-description: HYPER-V 可扩展交换机端口和网络适配器状态
+title: Hyper-V 可扩展交换机端口和网络适配器状态
+description: Hyper-V 可扩展交换机端口和网络适配器状态
 ms.assetid: 1E2075E3-D7CC-4364-ABB2-D5969DB361B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bd220ab2293647821d2615c9831db60bf953363
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349524"
 ---
-# <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>HYPER-V 可扩展交换机端口和网络适配器状态
+# <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>Hyper-V 可扩展交换机端口和网络适配器状态
 
 
 HYPER-V 可扩展交换机接口管理以下组件的生存期：

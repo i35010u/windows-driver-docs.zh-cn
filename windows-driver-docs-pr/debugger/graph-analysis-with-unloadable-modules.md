@@ -1,19 +1,19 @@
 ---
-title: 无法加载模块的图形分析
-description: 无法加载模块的图形分析
+title: 无法加载的模块的图形分析
+description: 无法加载的模块的图形分析
 ms.assetid: 12441fa1-3d19-4485-815c-546367f31567
 keywords:
 - 流式处理调试，无法加载模块的内核
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22993d158783a7661bb55bf0c24dc275b2a390c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342075"
 ---
-# <a name="graph-analysis-with-unloadable-modules"></a>无法加载模块的图形分析
+# <a name="graph-analysis-with-unloadable-modules"></a>无法加载的模块的图形分析
 
 
 本部分介绍可能影响您，如果你正在使用如 KMixer 无法加载模块的方案。

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2bd64fcae87c8b88a898e70cc4082719bc0c80b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342197"
 ---
 # <a name="kspropertytunerscanstatus"></a>KSPROPERTY\_调谐器\_扫描\_状态
 
@@ -81,7 +81,7 @@ KSPROPERTY\_调谐器\_扫描\_状态属性描述扫描操作的状态。 可以
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">

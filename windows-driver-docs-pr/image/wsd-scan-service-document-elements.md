@@ -5,11 +5,11 @@ ms.assetid: 5f0c6604-0fad-4e7a-a7b4-7e0814821a55
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25decdae8069eac92b15620aa02ebfefb598865c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353596"
 ---
 # <a name="wsd-scan-service-document-elements"></a>WSD 扫描服务文档元素
 

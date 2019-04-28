@@ -5,11 +5,11 @@ ms.assetid: 57f83d03-29e5-4a20-8c0c-2d00954e7ccb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 015bf2fe6831729d7a624c2bc938751cb89f48f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343319"
 ---
 # <a name="mb-miniport-driver-error-logging"></a>MB 微型端口驱动程序错误日志记录
 

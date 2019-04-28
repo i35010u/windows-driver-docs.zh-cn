@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机体系结构
-description: HYPER-V 可扩展交换机体系结构
+title: Hyper-V 可扩展交换机体系结构
+description: Hyper-V 可扩展交换机体系结构
 ms.assetid: AEFF534A-56AF-47AC-AA94-46EA0C2FC50A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 457b623d5511c1fd3e239d82b361d0cf6f24c41b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341945"
 ---
-# <a name="hyper-v-extensible-switch-architecture"></a>HYPER-V 可扩展交换机体系结构
+# <a name="hyper-v-extensible-switch-architecture"></a>Hyper-V 可扩展交换机体系结构
 
 
 本部分介绍 Microsoft HYPER-V 可扩展交换机接口体系的结构。 本部分包括以下主题：

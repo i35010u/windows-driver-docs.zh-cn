@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_POWER_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1b24240693da7075c8a90ebc5dc4986e79cfe4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342229"
 ---
 # <a name="wditlvpowerstate"></a>WDI\_TLV\_POWER\_STATE
 

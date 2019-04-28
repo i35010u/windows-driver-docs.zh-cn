@@ -5,11 +5,11 @@ ms.assetid: 63FBEBFA-BD57-4350-89C3-9F0FAAA18973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7da419870171cfa8caaf9b3490ac27066dd28e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343530"
 ---
 # <a name="managing-the-hyper-v-extensible-switch-forwarding-context"></a>管理 Hyper-V 可扩展交换机转发上下文
 

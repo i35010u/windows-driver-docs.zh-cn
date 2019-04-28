@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3132b3b85b026a8ef707a9cdf07653a608f3cb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347345"
 ---
 # <a name="handling-the-surprise-removal-of-a-nic"></a>处理 NIC 意外删除
 

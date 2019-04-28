@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: eaebcaf97dc1c90d3351901a9327d1bce5be5abf
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347813"
 ---
 # <a name="bug-check-0x102-dpcwatchdogtimeout"></a>Bug 检查 0x102：DPC\_监视器\_超时
 

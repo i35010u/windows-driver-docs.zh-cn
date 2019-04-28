@@ -5,11 +5,11 @@ ms.assetid: fcb79029-4225-4759-a130-6ef8b3f2d25d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b71c30c87057ae7544f0170288948ca92ba831
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343387"
 ---
 # <a name="mb-interface-overview"></a>MB 接口概述
 

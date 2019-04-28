@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0160e44812155cac4ac16a1ef4f3c2b97f8775a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348805"
 ---
 # <a name="jobname-element"></a>JobName 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56522592"
 </wscn:JobName>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -82,7 +82,7 @@ WSD 扫描服务可以提供默认值**JobName**名称在其[ **DefaultScanTicke
 
 中指定的提交该作业的用户名称[ **JobOriginatingUserName** ](joboriginatingusername.md)元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DefaultScanTicket**](defaultscanticket.md)

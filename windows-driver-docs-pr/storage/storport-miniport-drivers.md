@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fb0f51940d4222564674a00ed3723407e73337c
-ms.sourcegitcommit: 132f0c2d827982b808053ecd3b4d137a2883cca1
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56577635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344966"
 ---
 # <a name="storport-miniport-drivers"></a>Storport 微型端口驱动程序
 

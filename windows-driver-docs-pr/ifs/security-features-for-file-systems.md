@@ -1,19 +1,19 @@
 ---
-title: 对于文件系统的安全功能
-description: 对于文件系统的安全功能
+title: 文件系统的安全功能
+description: 文件系统的安全功能
 ms.assetid: 344083d5-781a-46e3-ab90-b70e57d07dd0
 keywords:
 - 安全 WDK 文件系统功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5c946b7a0bd284656990cec4583e29358d1f628
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344461"
 ---
-# <a name="security-features-for-file-systems"></a>对于文件系统的安全功能
+# <a name="security-features-for-file-systems"></a>文件系统的安全功能
 
 
 ## <span id="ddk_security_features_for_file_systems_if"></span><span id="DDK_SECURITY_FEATURES_FOR_FILE_SYSTEMS_IF"></span>

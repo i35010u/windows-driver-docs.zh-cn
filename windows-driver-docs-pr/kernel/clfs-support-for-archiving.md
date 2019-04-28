@@ -1,6 +1,6 @@
 ---
-title: CLFS 存档的支持
-description: CLFS 存档的支持
+title: 存档的 CLFS 支持
+description: 存档的 CLFS 支持
 ms.assetid: 5a07d7d2-4939-48f8-bd4c-855af61034fb
 keywords:
 - 常见日志文件系统 WDK 内核，存档
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2772bcd6ec7a7b23fd4beb0cef59cfeb6fef3de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343719"
 ---
-# <a name="clfs-support-for-archiving"></a>CLFS 存档的支持
+# <a name="clfs-support-for-archiving"></a>存档的 CLFS 支持
 
 
 

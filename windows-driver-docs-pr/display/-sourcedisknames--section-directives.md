@@ -5,11 +5,11 @@ ms.assetid: 0AC01548-3E53-41ED-9C7E-E33FC2DD14FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3058ea992a1f6c4809369d30783ab7e69e385acf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346293"
 ---
 # <a name="sourcedisknames-section-directives"></a>\[SourceDiskNames\]部分指令
 

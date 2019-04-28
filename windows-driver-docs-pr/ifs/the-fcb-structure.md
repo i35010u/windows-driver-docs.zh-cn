@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3680969457f0a74aecf5a0c35fbad29858043361
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344351"
 ---
 # <a name="the-fcb-structure"></a>FCB 结构
 

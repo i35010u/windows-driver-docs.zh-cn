@@ -1,6 +1,6 @@
 ---
-title: 映射 Netmap.inf 文件中的 Id
-description: 映射 Netmap.inf 文件中的 Id
+title: Netmap.inf 文件中的映射 ID
+description: Netmap.inf 文件中的映射 ID
 ms.assetid: 7cab4aa1-8b0b-4cdc-a093-b91be6170961
 keywords:
 - 网络组件升级，WDK，netmap.inf 文件
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3a4342a2285ad86a97619b78b68baee07ee2a14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343473"
 ---
-# <a name="mapping-ids-in-a-netmapinf-file"></a>映射 Netmap.inf 文件中的 Id
+# <a name="mapping-ids-in-a-netmapinf-file"></a>Netmap.inf 文件中的映射 ID
 
 
 

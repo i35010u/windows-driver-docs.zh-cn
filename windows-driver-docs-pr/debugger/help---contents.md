@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48eeefd6251b8134ed1fd7c268a61a48115aac9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342043"
 ---
-# <a name="help--contents"></a>帮助 |内容
+# <a name="help--contents"></a>帮助 | 内容
 
 
 ## <span id="ddk_help_contents_dbg"></span><span id="DDK_HELP_CONTENTS_DBG"></span>

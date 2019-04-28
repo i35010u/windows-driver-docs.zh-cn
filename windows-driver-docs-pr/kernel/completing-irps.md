@@ -1,6 +1,6 @@
 ---
-title: 完成 Irp
-description: 完成 Irp
+title: 完成 IRP
+description: 完成 IRP
 ms.assetid: 4b4be95e-ebf5-4726-87fc-20c3e6c94f52
 keywords:
 - Irp WDK 内核完成
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9621f371bf6bf3bb64b2670711d7c2b010a0ade5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343689"
 ---
-# <a name="completing-irps"></a>完成 Irp
+# <a name="completing-irps"></a>完成 IRP
 
 
 

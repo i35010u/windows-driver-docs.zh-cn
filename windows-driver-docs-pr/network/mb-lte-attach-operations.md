@@ -4,11 +4,11 @@ description: MB LTE 附加操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e11ca811b7caea3538fcc6391ab2afaf78fdc77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343336"
 ---
 # <a name="mb-lte-attach-operations"></a>MB LTE 附加操作
 
@@ -102,11 +102,11 @@ MBIM_MS_LTE_ATTACH_CONFIG_INFO InformationBuffer 中已完成的查询和设置�
 
 事件 InformationBuffer 包含 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构。 在某些情况下，默认值 LTE 附加上下文是由网络中更新任一无线 (OTA) 或通过短信服务 (SMS)，不需要通过 MBIM_CID_MS_LTE_ATTACH_CONFIG 命令从操作系统。 该函数必须更新默认 LTE 附加上下文并将标记 MBIM_MS_CONTEXT_SOURCE 相应地 = MbimMsContextSourceOperatorProvisioned。 此后，函数必须通知主机有关更新列表使用此事件的更新。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_SET_MS_LTE_ATTACH_CONFIG | 不适用 | 不适用 |
+| Command | MBIM_SET_MS_LTE_ATTACH_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_LTE_ATTACH_CONFIG_INFO | MBIM_MS_LTE_ATTACH_CONFIG_INFO | MBIM_MS_LTE_ATTACH_CONFIG_INFO |
 
 ### <a name="data-structures"></a>数据结构
@@ -119,7 +119,7 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SET_LTE_ATTACH_CONFIG 结构。 Set 命令才有效的列表包含的元素计数为 3，一个用于每个漫游条件 （主页/合作伙伴/非合作伙伴）。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | 操作 | MBIM_MS_LTE_CONTEXT_OPERATIONS | 指定的操作使用 Set 命令的类型。 如果设置为 MbimMsLteAttachContextOperationRestoreFactory，则应忽略所有其他字段。 LTE 附加的 OS 创建或修改默认值应删除上下文和默认的工厂预配置 LTE 附加的默认加载上下文。 如果调制解调器不具有默认配置，则所有漫游条件默认 LTE 附加到上下文应设置为空的 APN 字符串和 IP 类型 = 默认值。 |
 | 4 | 4 | ElementCount (EC) | UINT32 | 按照中 DataBuffer MBIM_MS_LTE_ATTACH_CONTEXT 计数结构。 此组件当前指定至 3，一个用于每个漫游条件 （主页/合作伙伴/非合作伙伴）。 |
@@ -130,18 +130,18 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 
 MBIM_MS_LTE_ATTACH_CONTEXT_OPERATIONS 介绍可以使用 Set 命令中的操作的类型。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MbimMsLteAttachContextOperationDefault | 0 | 覆盖现有默认 LTE 的默认操作将附加的上下文中调制解调器。 操作系统将始终替换所有三个默认 LTE 附加漫游条件的上下文。 |
 | MbimMsLteAttachContextOperationRestoreFactory | 1 | 还原的工厂预配置的默认 LTE 的提供程序 ID 的附加上下文当前插入 SIM。 应删除并替换为 LTE 附加上下文替换或由操作系统创建的所有默认值。 如果没有默认 LTE 附加的预配置的默认值为当前上下文插入 SIM 提供程序 ID 与一个或多个漫游条件，则 LTE 附加的默认值应返回空 APN 字符串和 IP 类型 = 默认值。 |
 
 MBIM_MS_LTE_ATTACH_CONTEXT 指定的上下文用于 LTE 附加配置。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | IPType | MBIM_CONTEXT_IP_TYPE | 有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPE 表。 |
 | 4 | 4 | Roaming | MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL | 指示应用于此默认设置的漫游条件 LTE 附加上下文。 有关详细信息，请参阅 MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 表。 |
-| 8 | 4 | 来源 | MBIM_MS_CONTEXT_SOURCE | 指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。 |
+| 8 | 4 | Source | MBIM_MS_CONTEXT_SOURCE | 指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。 |
 | 12 | 4 | AccessStringOffset | 偏移量 | 为一个字符串，AccessString，可以访问网络的数据缓冲区中的偏移量。 对于基于 GSM 的网络，这将是"data.thephone company.com"等的访问点名称 (APN) 字符串。 字符串的大小不应超过 100 个字符。 如果 AccessString 为空，设备需要网络以将访问字符串分配回设备。 IP 类型仍必须在这种情况下指定。 |
 | 16 | 4 | AccessStringSize | SIZE(0..200) | 用于 AccessString 的大小。 此值应为 0，如果设备需要网络以将访问字符串分配回设备为 LTE 附加。 |
 | 20 | 4 | UserNameOffset | 偏移量 | 以字节为单位，此结构，从头计算为一个字符串，表示要进行身份验证的用户名的用户名的偏移量。 此成员可以为 NULL。 |
@@ -154,7 +154,7 @@ MBIM_MS_LTE_ATTACH_CONTEXT 指定的上下文用于 LTE 附加配置。
 
 MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 指示应用于此默认设置的漫游条件 LTE 附加上下文。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MbimMsLteAttachContextRoamingControlHome | 0 | 指示是否附加默认 LTE 上下文允许或不在家庭网络上使用。 |
 | MbimMsLteAttachContextRoamingControlPartner | 1 | 指示上下文是否允许或不在合作伙伴漫游网络中使用。 |
@@ -162,7 +162,7 @@ MBIM_MS_LTE_ATTACH_CONTEXT_ROAMING_CONTROL 指示应用于此默认设置的漫�
 
 MBIM_MS_CONTEXT_SOURCE 指定上下文的创建源。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MbimMsContextSourceAdmin | 0 | 上下文已通过从操作系统的企业 IT 管理员。 |
 | MbimMsContextSourceUser | 1 | 上下文是由通过 OS 设置的用户创建的。 |
@@ -174,7 +174,7 @@ MBIM_MS_CONTEXT_SOURCE 指定上下文的创建源。
 
 应在 InformationBuffer 中使用以下 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 按照中 DataBuffer MBIM_MS_LTE_ATTACH_CONTEXT 计数结构。 此组件当前指定至 3，一个用于每个漫游条件 （主页/合作伙伴/非合作伙伴）。 |
 | 4 | 8 * EC | MsLteAttachContextRefList | OL_PAIR_LIST | 该对的第一个元素是 4 字节的偏移量，从一开始 （偏移量为 0） 的此 MBIM_MS_LTE_ATTACH_CONFIG_INFO 结构，计算到 MBIM_MS_LTE_ATTACH_CONTEXT 结构 （有关详细信息，请参阅 MBIM_MS_LTE_ATTACH_CONTEXT 表）。 该对的第二个元素是指针的指向相应 MBIM_MS_LTE_ATTACH_CONTEXT 结构的 4 字节大小。 |
@@ -239,11 +239,11 @@ MBIM_MS_LTE_ATTACH_STATUS InformationBuffer 中查询完成消息返回。 对�
 
 事件 InformationBuffer 包含 MBIM_MS_LTE_ATTACH_STATUS 结构。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_LTE_ATTACH_STATUS | MBIM_MS_LTE_ATTACH_STATUS |
 
 ### <a name="data-structures"></a>数据结构
@@ -261,7 +261,7 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 应在 InformationBuffer 中使用以下 MBIM_MS_LTE_ATTACH_STATUS 结构。
 
 
-| 偏移量 | 尺寸 |       字段        |           在任务栏的搜索框中键入           |                                                                                                                                                                                                                                                                                                    描述                                                                                                                                                                                                                                                                                                     |
+| 偏移量 | 大小 |       字段        |           在任务栏的搜索框中键入           |                                                                                                                                                                                                                                                                                                    描述                                                                                                                                                                                                                                                                                                     |
 |--------|------|--------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |   LteAttachState   | MBIM_MS_LTE_ATTACH_STATE |                                                                                                                                                                                                                                    指示设备当前是否附加到 LTE 网络或不。  有关详细信息，请参阅 MBIM_MS_LTE_ATTACH_STATE 表。                                                                                                                                                                                                                                     |
 |   4    |  4   |       IPType       |  MBIM_CONTEXT_IP_TYPES   |                                                                                                                                                                                                                                                                             有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPE 表。                                                                                                                                                                                                                                                                              |
@@ -279,7 +279,7 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 
 MBIM_MS_LTE_ATTACH_STATE 指示设备当前是否附加到 LTE 网络或不。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MbimMsLteAttachStateDetached | 0 | 指示设备未附加到 LTE 网络。 |
 | MbimMsLteAttachStateAttached | 1 | 指示设备已连接至 LTE 网络。 |

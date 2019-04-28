@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a7886c3cbb5b66cc18c67511eb4b601ab195c850
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347865"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 

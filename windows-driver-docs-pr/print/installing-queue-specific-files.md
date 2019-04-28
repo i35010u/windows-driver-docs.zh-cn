@@ -1,6 +1,6 @@
 ---
-title: 安装特定于队列的文件
-description: 安装特定于队列的文件
+title: 安装队列特定的文件
+description: 安装队列特定的文件
 ms.assetid: 86cb16d5-6035-4a4d-a6b7-f27ebd3e9f5c
 keywords:
 - 点和打印 WDK，特定于队列的文件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e022281cfbdc68ff209919f5de75c978f9a20bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345515"
 ---
-# <a name="installing-queue-specific-files"></a>安装特定于队列的文件
+# <a name="installing-queue-specific-files"></a>安装队列特定的文件
 
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "56524634"
 <tr class="header">
 <th>值名称</th>
 <th>值类型</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

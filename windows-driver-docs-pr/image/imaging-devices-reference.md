@@ -5,11 +5,11 @@ ms.assetid: 2ee6ce92-44dc-4c59-a438-f65b41f3b43a
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b69702cc3df8fdae47c717be62f9d8273623c1dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343910"
 ---
 # <a name="imaging-devices-reference"></a>图像处理设备引用
 
@@ -21,7 +21,7 @@ ms.locfileid: "56555776"
 
 [静止图像接口](https://msdn.microsoft.com/library/windows/hardware/ff548281)
 
-[基于设备引用的 web 服务](https://msdn.microsoft.com/library/windows/hardware/ff549148)
+[基于设备的 Web 服务参考](https://msdn.microsoft.com/library/windows/hardware/ff549148)
 
 ## <a name="wia-and-sti-driver-reference-table"></a>WIA 和 STI 驱动程序参考表
 
@@ -106,7 +106,7 @@ ms.locfileid: "56555776"
 <td><p>接口、 结构、 数据类型和 STI 驱动程序使用的控制代码。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547963" data-raw-source="[Web Services on Devices Reference](https://msdn.microsoft.com/library/windows/hardware/ff547963)">基于设备引用的 web 服务</a></p></td>
+<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff547963" data-raw-source="[Web Services on Devices Reference](https://msdn.microsoft.com/library/windows/hardware/ff547963)">基于设备的 Web 服务参考</a></p></td>
 <td><p>基于设备的信息，包括扫描服务 （WS-扫描） 的 web 服务</p></td>
 </tr>
 </tbody>

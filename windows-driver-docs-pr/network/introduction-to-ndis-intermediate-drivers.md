@@ -1,6 +1,6 @@
 ---
-title: 中间的 NDIS 驱动程序简介
-description: 中间的 NDIS 驱动程序简介
+title: NDIS 中间驱动程序简介
+description: NDIS 中间驱动程序简介
 ms.assetid: 63e1b34b-c59e-4aa9-9551-ac9ccb8bcc82
 keywords:
 - 中间驱动程序 WDK 网络，有关中间驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7c603d8e3d571e16c3f98580c0639435a4f4b64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343668"
 ---
-# <a name="introduction-to-ndis-intermediate-drivers"></a>中间的 NDIS 驱动程序简介
+# <a name="introduction-to-ndis-intermediate-drivers"></a>NDIS 中间驱动程序简介
 
 
 

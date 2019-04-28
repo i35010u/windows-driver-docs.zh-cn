@@ -5,11 +5,11 @@ ms.assetid: 46F50544-B130-4690-8047-6FBB6DD4749F
 ms.date: 11/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d0b2c481efb93022e0bd2ad75cce630f2f1b108
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345101"
 ---
 # <a name="test-your-universal-sensor-driver"></a>测试通用传感器驱动程序
 

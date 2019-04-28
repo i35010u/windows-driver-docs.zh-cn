@@ -5,11 +5,11 @@ ms.assetid: 0d3942c2-3ae8-4eaa-9780-f146dd49699c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9248a3960b28ca2ba0665cedfd74a8f641ae885
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346230"
 ---
 # <a name="querying-for-information-from-the-gpu"></a>从 GPU 查询信息
 

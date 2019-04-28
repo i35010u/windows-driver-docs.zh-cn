@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9436c96016c702efdc95c1fe32919b7d6b4b6dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345107"
 ---
 # <a name="testing-sensor-functionality-with-the-sensor-diagnostic-tool"></a>使用传感器诊断工具测试传感器功能
 

@@ -1,17 +1,17 @@
 ---
-title: 正在删除虚拟端口
-description: 正在删除虚拟端口
+title: 删除虚拟端口
+description: 删除虚拟端口
 ms.assetid: CBE7AC59-D878-44BA-8FE6-168EC17A2D67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b612265ed2aa877eab4eed80ae6e31cb99c6a0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347483"
 ---
-# <a name="deleting-a-virtual-port"></a>正在删除虚拟端口
+# <a name="deleting-a-virtual-port"></a>删除虚拟端口
 
 
 基础驱动程序发出的一个对象标识符 (OID) 组请求[OID\_NIC\_交换机\_删除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818)若要删除的网络适配器上的非默认虚拟端口 (VPort)NIC 开关。 基础驱动程序时，才能删除它之前已创建通过发出的 OID 方法请求 VPort [OID\_NIC\_交换机\_创建\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451816)。

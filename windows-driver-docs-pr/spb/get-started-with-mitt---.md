@@ -5,11 +5,11 @@ ms.assetid: 4467B82F-7B06-430B-A0CB-A6825045E5F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb0f35e136ca13e608bbb3c25ae2975cfbe5a309
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348139"
 ---
 # <a name="get-started-with-mitt"></a>MITT 入门
 

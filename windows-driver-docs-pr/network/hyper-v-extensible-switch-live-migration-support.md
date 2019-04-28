@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机实时迁移支持
-description: HYPER-V 可扩展交换机实时迁移支持
+title: Hyper-V 可扩展交换机实时迁移支持
+description: Hyper-V 可扩展交换机实时迁移支持
 ms.assetid: 4AFC9E3F-C9C5-4693-BA8C-BC7122A4055F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 027b8b09f76383277e3f69ac8eef00c0529fbcce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349554"
 ---
-# <a name="hyper-v-extensible-switch-live-migration-support"></a>HYPER-V 可扩展交换机实时迁移支持
+# <a name="hyper-v-extensible-switch-live-migration-support"></a>Hyper-V 可扩展交换机实时迁移支持
 
 
 在 HYPER-V 实时迁移，子分区，或*虚拟机 (VM)*，在一台主机计算机上停止 (*源主机*) 和迁移到另一台主机计算机 (*目标主机*). 在实时迁移期间将发生以下操作：

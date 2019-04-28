@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67e217f6d1e3474904de2fa9a55d96bbdd82a91c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341939"
 ---
 # <a name="nt-device-names"></a>NT 设备名称
 

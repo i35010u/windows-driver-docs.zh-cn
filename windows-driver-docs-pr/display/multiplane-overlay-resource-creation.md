@@ -1,17 +1,17 @@
 ---
-title: 创建 multiplane 覆盖资源
+title: 创建多平面覆盖资源
 description: 当使用 multiplane 叠加时，这些要求适用于 Microsoft DirectX 应用中创建的分配。
 ms.assetid: B3E9BEF8-5CB8-45A3-9491-19AB1EA3D74F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac2cf5a648d676dc1580ad18ef2e77bfe6926c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345611"
 ---
-# <a name="multiplane-overlay-resource-creation"></a>创建 multiplane 覆盖资源
+# <a name="multiplane-overlay-resource-creation"></a>创建多平面覆盖资源
 
 
 当使用 multiplane 叠加时，这些要求适用于 Microsoft DirectX 应用中创建的分配。

@@ -5,11 +5,11 @@ ms.assetid: F245AD4C-F63C-48A7-9AEB-7414047E0627
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecaa0ae3e678b386eb87a1be195d3bf93cc8a1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345113"
 ---
 # <a name="magnetometer-thresholds"></a>磁力计阈值
 

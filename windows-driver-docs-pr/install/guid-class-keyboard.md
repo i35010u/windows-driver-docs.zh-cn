@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 07c78de8a238b97a5a706af8369a529079ab913c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348232"
 ---
 # <a name="guidclasskeyboard"></a>GUID_CLASS_KEYBOARD
 
@@ -41,7 +41,7 @@ WDK 中提供的 HID 示例包括在键盘类驱动程序。 在键盘类驱动�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_KEYBOARD。</p></td>
 </tr>
 <tr class="even">

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b358d5adf70961f65ebcc04cd52256b9f280ddcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344970"
 ---
 # <a name="deferring-interrupt-driven-io-from-hwscsiinterrupt"></a>延迟 HwScsiInterrupt 中的中断驱动型 I/O
 

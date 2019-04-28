@@ -5,11 +5,11 @@ description: 提供了一系列 MB 接口中使用的移动宽带术语
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46c96e1a27c77b559e35b178be481984e9db5ab3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343356"
 ---
 # <a name="mb-interface-terms"></a>MB 接口术语
 

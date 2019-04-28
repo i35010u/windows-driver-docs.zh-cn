@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 300e54540855e4536b7a59ad9942f142013fc51d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344516"
 ---
 # <a name="security-considerations-for-file-systems"></a>文件系统的安全注意事项
 
@@ -22,7 +22,7 @@ ms.locfileid: "56522366"
 ## <span id="ddk_security_considerations_for_file_systems_if"></span><span id="DDK_SECURITY_CONSIDERATIONS_FOR_FILE_SYSTEMS_IF"></span>
 
 
-本部分提供文件系统开发人员的安全指南。 使用 Windows Driver Kit (WDK) 实现的文件系统和 Microsoft Windows 操作系统的文件系统筛选器驱动程序时，请遵循以下准则。 讨论了以下主题：
+本部分提供文件系统开发人员的安全指南。 使用 Windows Driver Kit (WDK) 实现的文件系统和 Microsoft Windows 操作系统的文件系统筛选器驱动程序时，请遵循以下准则。 论述了以下主题：
 
 [文件系统安全简介](introduction-to-file-systems-security.md)
 

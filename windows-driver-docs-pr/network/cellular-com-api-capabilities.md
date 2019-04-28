@@ -1,5 +1,5 @@
 ---
-title: 移动电话的 COM API 功能
+title: 手机网络 COM API 功能
 description: 本主题提供在移动电话的 COM API 功能的信息。
 ms.assetid: f6172f25-9003-4b98-a87d-26dc193d40e3
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e87107e64fd6fffd5c62e6f6e8cc4dc9bdbed98c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341901"
 ---
-# <a name="cellular-com-api-capabilities"></a>移动电话的 COM API 功能
+# <a name="cellular-com-api-capabilities"></a>手机网络 COM API 功能
 
 > [!WARNING]
 > 移动电话的 COM API 在 Windows 10 中已弃用。 提供此内容是为了支持 OEM 和移动运营商创建的 Windows Phone 8.1 应用程序的维护。

@@ -1,6 +1,6 @@
 ---
-title: 在类/端口驱动程序中的调度 （内部） DeviceControl
-description: 在类/端口驱动程序中的调度 （内部） DeviceControl
+title: 类/端口驱动程序中的 Dispatch(Internal)DeviceControl
+description: 类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 ms.assetid: 94f6050d-c47e-4fb2-8b7f-afadcf12e0b8
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 348956033719d1fedb417bd47946c76d175bd179
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342699"
 ---
-# <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>在类/端口驱动程序中的调度 （内部） DeviceControl
+# <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 部分对象和视图的安全问题
-description: 部分对象和视图的安全问题
+title: 节对象和视图的安全问题
+description: 节对象和视图的安全问题
 ms.assetid: a2044ea1-c90c-4487-850b-d07ac55aea6d
 keywords:
 - 内存部分 WDK 内核
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 818231039bb7ca11c95e473fc9d4baf21d1cc53b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342697"
 ---
-# <a name="security-issues-for-section-objects-and-views"></a>部分对象和视图的安全问题
+# <a name="security-issues-for-section-objects-and-views"></a>节对象和视图的安全问题
 
 
 

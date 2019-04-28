@@ -1,6 +1,6 @@
 ---
-title: 发送具有 WmiFireEvent 的事件
-description: 发送具有 WmiFireEvent 的事件
+title: 使用 WmiFireEvent 发送事件
+description: 使用 WmiFireEvent 发送事件
 ms.assetid: f9cf8491-0f5a-4d83-849f-3edb77488092
 keywords:
 - WMI WDK 内核事件跟踪
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd6ae6b9dda93810b374e1160a852fde64ffd8d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342666"
 ---
-# <a name="sending-an-event-with-wmifireevent"></a>发送具有 WmiFireEvent 的事件
+# <a name="sending-an-event-with-wmifireevent"></a>使用 WmiFireEvent 发送事件
 
 
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e989dfce52272e71665a51680d5d8279ce4e341
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343056"
 ---
 # <a name="iobuildfsdfree-rule-wdm"></a>IoBuildFsdFree 规则 (wdm)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56523443"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoBuildAsynchronousFsdRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548310)

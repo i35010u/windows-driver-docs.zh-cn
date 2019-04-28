@@ -1,17 +1,17 @@
 ---
-title: 示例自定义属性页
-description: 示例自定义属性页
+title: 自定义属性页示例
+description: 自定义属性页示例
 ms.assetid: 96dd5f08-1543-4e13-9344-767cd9e6df78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2eb6f4429061a99af5fa54a2d1ad399d58cb74f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348729"
 ---
-# <a name="sample-custom-property-page"></a>示例自定义属性页
+# <a name="sample-custom-property-page"></a>自定义属性页示例
 
 
 下面的对话框中包含一个示例自定义属性页：

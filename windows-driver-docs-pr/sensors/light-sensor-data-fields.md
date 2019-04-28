@@ -1,17 +1,17 @@
 ---
-title: 光线传感器数据字段
+title: 光传感器数据字段
 description: 本主题提供有关特定于光线传感器的数据字段的信息。
 ms.assetid: 96572A6A-CACC-4B79-B63C-5554C07F7C83
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f731ab9f09c2776063f610fbc653d7ae78d7f60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345221"
 ---
-# <a name="light-sensor-data-fields"></a>光线传感器数据字段
+# <a name="light-sensor-data-fields"></a>光传感器数据字段
 
 
 本主题提供有关特定于光线传感器的数据字段的信息。

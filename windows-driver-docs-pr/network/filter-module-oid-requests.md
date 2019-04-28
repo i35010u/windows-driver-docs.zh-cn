@@ -1,6 +1,6 @@
 ---
-title: 筛选模块 OID 请求
-description: 筛选模块 OID 请求
+title: 筛选器模块 OID 请求
+description: 筛选器模块 OID 请求
 ms.assetid: 6de5ec1c-8e12-4f50-8708-ec136cafd9c2
 keywords:
 - 筛选器模块 WDK 网络、 OID 请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77b384ad25b00c26b864e82ea7bb4776fa5b7b9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350007"
 ---
-# <a name="filter-module-oid-requests"></a>筛选模块 OID 请求
+# <a name="filter-module-oid-requests"></a>筛选器模块 OID 请求
 
 
 

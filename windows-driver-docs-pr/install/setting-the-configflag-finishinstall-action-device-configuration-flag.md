@@ -5,11 +5,11 @@ ms.assetid: 7f2560e6-94a7-4dd0-aa2a-e6cdd96c6d9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d829f2eb41923ae6884f370bcfeb091adc12e114
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348677"
 ---
 # <a name="marking-a-device-as-having-a-finish-install-action-to-perform"></a>将标记为具有执行完成安装操作的设备
 

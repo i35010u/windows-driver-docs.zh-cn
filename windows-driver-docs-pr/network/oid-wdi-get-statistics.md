@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 29e824f4444501c88e40d3c4e0d8f2d3c8bc8c05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346779"
 ---
 # <a name="oidwdigetstatistics"></a>OID\_WDI\_GET\_STATISTICS
 

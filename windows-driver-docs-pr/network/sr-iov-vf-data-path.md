@@ -5,11 +5,11 @@ ms.assetid: 0DC2327E-3A58-46BC-A3D6-3AFD24ABC901
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55582ede1f934862e1aca9890dc5c3d7561f166e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346041"
 ---
 # <a name="sr-iov-vf-data-path"></a>SR-IOV VF 数据路径
 

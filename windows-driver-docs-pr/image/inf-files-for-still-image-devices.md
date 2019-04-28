@@ -5,17 +5,17 @@ ms.assetid: f68ba904-9049-4f7e-9903-fdf6f413a1a5
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: bc4aec4498ba796cd832a592772f7a05a7b863fa
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352151"
 ---
 # <a name="inf-files-for-still-image-devices"></a>静态图像设备的 INF 文件
 
 静止图像设备的默认类安装程序*sti\_ci.dll*，可以识别一组特殊的 INF 文件条目。 在 INF 文件中，这些项必须放置在设备的[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。 下表所述的条目。
 
-| INF 文件条目 | 值 | 备注 |
+| INF 文件条目 | ReplTest1 | 备注 |
 | --- | --- | --- |
 | SubClass | StillImage | 必需 |
 | DeviceType | 1 表示扫描仪，2 表示照相机，适用于视频设备 3 | 必需 |

@@ -5,11 +5,11 @@ ms.assetid: 5f34d0ad-ab31-4361-9a42-83930aef267b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12bd50b5d5318016e0e8581a10b0c7390cd410a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342391"
 ---
 # <a name="roadmap-for-the-windows-2000-display-driver-model-xddm"></a>Windows 2000 显示驱动程序模型 (XDDM) 路线图
 

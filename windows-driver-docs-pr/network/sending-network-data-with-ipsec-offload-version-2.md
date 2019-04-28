@@ -1,6 +1,6 @@
 ---
-title: 发送与 IPsec 卸载版本 2 的网络数据
-description: 发送与 IPsec 卸载版本 2 的网络数据
+title: 使用 IPsec 卸载版本 2 发送网络数据
+description: 使用 IPsec 卸载版本 2 发送网络数据
 ms.assetid: d3580313-a98b-4150-b344-e3e395ce68e9
 keywords:
 - IPsecOV2 WDK TCP/IP 传输，将数据发送
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb98bbf7cab9961e7d5c2361a763a4ec9ed91234
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346751"
 ---
-# <a name="sending-network-data-with-ipsec-offload-version-2"></a>发送与 IPsec 卸载版本 2 的网络数据
+# <a name="sending-network-data-with-ipsec-offload-version-2"></a>使用 IPsec 卸载版本 2 发送网络数据
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

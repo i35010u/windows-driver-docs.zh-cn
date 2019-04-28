@@ -1,17 +1,17 @@
 ---
-title: 支持的自动项 WIA 属性
-description: 支持的自动项 WIA 属性
+title: 自动项支持的 WIA 属性
+description: 自动项支持的 WIA 属性
 ms.assetid: 71b3a9ea-e402-4be8-9c62-9463e2a10f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 995920193026fc1f5702cb4fe42ba27da6c2697b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352681"
 ---
-# <a name="wia-properties-supported-by-an-auto-item"></a>支持的自动项 WIA 属性
+# <a name="wia-properties-supported-by-an-auto-item"></a>自动项支持的 WIA 属性
 
 
 [自动项](auto-item.md)表示[自动配置扫描](auto-configured-scanning.md)WIA 设备的自动配置 WIA 应用程序的大部分而无需干预的扫描作业及其设置的函数。 有关自动项目的详细信息，请参阅 WIA 的讨论\_类别\_中的自动类别[WIA 项类别](wia-item-categories.md)。

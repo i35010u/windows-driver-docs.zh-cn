@@ -1,6 +1,6 @@
 ---
-title: CoNDIS 调用管理器注册
-description: CoNDIS 调用管理器注册
+title: CoNDIS 呼叫管理程序注册
+description: CoNDIS 呼叫管理程序注册
 ms.assetid: 63cde3d1-122c-4411-91b6-97e97bdd2df3
 keywords:
 - 调用的 CoNDIS-网络管理器 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01ae1c677ac5d289a8fccd2bb10c03454b3c988e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344247"
 ---
-# <a name="condis-call-manager-registration"></a>CoNDIS 调用管理器注册
+# <a name="condis-call-manager-registration"></a>CoNDIS 呼叫管理程序注册
 
 
 

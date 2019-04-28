@@ -1,6 +1,6 @@
 ---
-title: 控件 GUID 与创建跟踪会话
-description: 控件 GUID 与创建跟踪会话
+title: 使用控制 GUID 创建跟踪会话
+description: 使用控制 GUID 创建跟踪会话
 ms.assetid: a651ac6b-9ae0-46b0-8180-59d70ceb57fe
 keywords:
 - 控件 Guid WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16c40c4bbf3f20d82ba2269d5099e170d100635a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347763"
 ---
-# <a name="creating-a-trace-session-with-a-control-guid"></a>控件 GUID 与创建跟踪会话
+# <a name="creating-a-trace-session-with-a-control-guid"></a>使用控制 GUID 创建跟踪会话
 
 
 可以通过键入或粘贴创建跟踪会话[控制 GUID](control-guid.md)跟踪的提供程序和定位[跟踪消息格式 (.tmf) 文件](trace-message-format-file.md)为其消息。
@@ -45,7 +45,7 @@ ms.locfileid: "56524827"
 
 11. [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)，如果所需的。
 
-12. 单击“完成” 。
+12. 单击 **“完成”**。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

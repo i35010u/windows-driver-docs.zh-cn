@@ -1,17 +1,17 @@
 ---
-title: 调试支持软件跟踪
-description: 调试支持软件跟踪
+title: 软件跟踪的调试支持
+description: 软件跟踪的调试支持
 ms.assetid: cfa272ba-e117-4ba1-9e3a-5d380ac299c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68705aea7d76c27b8644f34896e911027562b1ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344844"
 ---
-# <a name="debugging-support-for-software-tracing"></a>调试支持软件跟踪
+# <a name="debugging-support-for-software-tracing"></a>软件跟踪的调试支持
 
 
 本部分包括以下主题：

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ad1fceba52fcf3c86a75e865cc605ed8649d3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343155"
 ---
 # <a name="winrterr"></a>!winrterr
 

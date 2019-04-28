@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7560faa0a27216251438b8697d885b1b3ddcd365
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343036"
 ---
 # <a name="command-and-vertex-buffers"></a>命令和顶点缓冲区
 

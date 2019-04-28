@@ -1,15 +1,15 @@
 ---
 title: 驱动程序的代码分析
-description: 驱动程序的代码分析是一个编译时静态验证工具，检测 C 和 c + + 程序中的基本编码错误。
+description: 驱动程序的代码分析是一个编译时静态验证工具，检测 C 中的基本编码错误和C++程序。
 ms.assetid: 2F3549EF-B50F-455A-BDC7-1F67782B8DCA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d0b2a0df11e04523564c0e633d83482e424fb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343935"
 ---
 # <a name="code-analysis-for-drivers"></a>驱动程序的代码分析
 
@@ -20,11 +20,11 @@ ms.locfileid: "56555665"
 
  
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [代码分析驱动程序概述](code-analysis-for-drivers-overview.md)
--   [如何运行代码分析的驱动程序](how-to-run-code-analysis-for-drivers.md)
+-   [如何为驱动程序运行“代码分析”](how-to-run-code-analysis-for-drivers.md)
 -   [SAL 2 注释 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)
 -   [代码分析驱动程序警告](prefast-for-drivers-warnings.md)
 

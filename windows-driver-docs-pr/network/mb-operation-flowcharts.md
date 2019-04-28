@@ -5,11 +5,11 @@ ms.assetid: 0d450af1-6e39-4492-b112-9db7b6597539
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d03cb7818483b912d942c3f09613e0d3e52cbeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343271"
 ---
 # <a name="mb-operation-flowcharts"></a>MB 操作流程图
 

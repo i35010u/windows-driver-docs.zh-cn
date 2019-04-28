@@ -5,11 +5,11 @@ ms.assetid: cadc2cd3-10aa-4a4a-926f-edc01b046f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 621a63f0d81101bc8fca0fd9ddc0d3a4b685b42b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345065"
 ---
 # <a name="using-vector-types-with-sensors"></a>使用与传感器的矢量类型
 

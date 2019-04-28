@@ -5,11 +5,11 @@ ms.assetid: 451a5e9e-bc5c-4148-b475-7f38c535cf6a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78e47bd3171e3f0c05d8288962a6997010178e8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344849"
 ---
 # <a name="enabling-fault-injection"></a>启用错误注入
 

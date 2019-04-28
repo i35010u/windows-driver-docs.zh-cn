@@ -1,6 +1,6 @@
 ---
-title: 电源管理 （NDIS 6.0 和 NDIS 6.1）
-description: 电源管理 （NDIS 6.0 和 NDIS 6.1）
+title: 电源管理（NDIS 6.0 和 NDIS 6.1）
+description: 电源管理（NDIS 6.0 和 NDIS 6.1）
 ms.assetid: 10CACB4E-BBC8-497F-9B54-810518B726A8
 keywords:
 - 微型端口驱动程序 WDK 网络、 电源管理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e386c5e8f29eb9ef099686979b27964badfb749
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342958"
 ---
-# <a name="power-management-ndis-60-and-ndis-61"></a>电源管理 （NDIS 6.0 和 NDIS 6.1）
+# <a name="power-management-ndis-60-and-ndis-61"></a>电源管理（NDIS 6.0 和 NDIS 6.1）
 
 
 

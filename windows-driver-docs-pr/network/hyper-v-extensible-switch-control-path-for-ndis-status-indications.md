@@ -5,11 +5,11 @@ ms.assetid: D52FAC95-64EC-4A99-807A-B39DB136D8F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67fb1a1a709881b42ea1c5612e5038729d64d4ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341915"
 ---
 # <a name="hyper-v-extensible-switch-control-path-for-ndis-status-indications"></a>NDIS 状态指示的 Hyper-V 可扩展交换机控制路径
 

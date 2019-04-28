@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c9469b55a507c14727e566bf610541f4e960308
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344710"
 ---
-# <a name="example-15-measuring-dpcisr-time"></a>例如，如果希望：测量 DPC/ISR 时间
+# <a name="example-15-measuring-dpcisr-time"></a>示例 15：测量 DPC/ISR 时间
 
 
 ## <span id="ddk_measuring_dpc_isr_time_tools"></span><span id="DDK_MEASURING_DPC_ISR_TIME_TOOLS"></span>

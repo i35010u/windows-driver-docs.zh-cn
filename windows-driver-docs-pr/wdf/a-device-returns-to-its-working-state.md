@@ -1,6 +1,6 @@
 ---
-title: 设备将恢复工作状态
-description: 设备将恢复工作状态
+title: 设备回到工作状态
+description: 设备回到工作状态
 ms.assetid: 0a5bdaf5-ed9e-44d0-bc8a-876ceb342520
 keywords:
 - 设备电源状态 WDK KMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce525cafebccd00971426e0ebfdcf7ea5cd58287
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342142"
 ---
-# <a name="a-device-returns-to-its-working-state"></a>设备将恢复工作状态
+# <a name="a-device-returns-to-its-working-state"></a>设备回到工作状态
 
 
 如果发生下列其中一项处于低功耗状态的设备将恢复工作状态：

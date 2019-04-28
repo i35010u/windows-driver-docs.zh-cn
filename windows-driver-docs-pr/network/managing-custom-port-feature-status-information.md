@@ -1,17 +1,17 @@
 ---
-title: 管理自定义端口功能的状态信息
-description: 管理自定义端口功能的状态信息
+title: 管理自定义端口功能状态信息
+description: 管理自定义端口功能状态信息
 ms.assetid: C989888B-1636-488A-80BF-13D136312417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 372388340c148149f2f49d03150fa969abae1bd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343608"
 ---
-# <a name="managing-custom-port-feature-status-information"></a>管理自定义端口功能的状态信息
+# <a name="managing-custom-port-feature-status-information"></a>管理自定义端口功能状态信息
 
 
 HYPER-V 可扩展交换机接口为可扩展交换机端口使用查询自定义状态信息的以下对象标识符 (OID)。 此状态信息被称为*端口功能状态*信息：

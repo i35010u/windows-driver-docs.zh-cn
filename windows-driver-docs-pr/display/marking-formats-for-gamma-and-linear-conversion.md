@@ -1,6 +1,6 @@
 ---
-title: 标记格式的 Gamma 和线性转换
-description: 标记格式的 Gamma 和线性转换
+title: 标记灰度和线性转换的格式
+description: 标记灰度和线性转换的格式
 ms.assetid: 1285b04e-b67a-46d2-82b2-3cde433bf578
 keywords:
 - 灰度校正 WDK DirectX 9.0 中，将标记格式的 gamma 转换
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5939fbadf9cb4ea6ff5ab5fb22ca4b0257dbff6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347524"
 ---
-# <a name="marking-formats-for-gamma-and-linear-conversion"></a>标记格式的 Gamma 和线性转换
+# <a name="marking-formats-for-gamma-and-linear-conversion"></a>标记灰度和线性转换的格式
 
 
 ## <span id="ddk_marking_formats_for_gamma_and_linear_conversion_gg"></span><span id="DDK_MARKING_FORMATS_FOR_GAMMA_AND_LINEAR_CONVERSION_GG"></span>

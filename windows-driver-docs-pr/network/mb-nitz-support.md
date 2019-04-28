@@ -8,11 +8,11 @@ ms.date: 03/13/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 09cfce70987bd3e19955449250dc88b793a1c7a2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343273"
 ---
 # <a name="mb-nitz-support"></a>MB NITZ 支持
 

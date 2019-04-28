@@ -5,11 +5,11 @@ ms.assetid: 3C48EEBA-3407-4A4A-91C2-EF001EFCDA6E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e1e90598ef52716cc164e6dedf01469366242cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347762"
 ---
 # <a name="bluetooth-inquiry-record-verifier"></a>蓝牙查询记录验证程序
 

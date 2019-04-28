@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6b2c01ad414ffea9756b38bce9eca80a6d8821d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342361"
 ---
 # <a name="guiddevinterfacecomport"></a>GUID_DEVINTERFACE_COMPORT
 
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://msdn.microsoft.com/library/wi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -76,17 +76,17 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://msdn.microsoft.com/library/wi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntddser.h （包括 Ntddser.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_COMPORT**](guid-class-comport.md)

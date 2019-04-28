@@ -5,11 +5,11 @@ ms.assetid: CF8789E0-790E-4110-A40B-ED9F43CD4DA2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a78517b2f4d35c2a19603b757a82c076431a9d44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342871"
 ---
 # <a name="video-driver-samples"></a>视频驱动程序示例
 

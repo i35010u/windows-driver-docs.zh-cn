@@ -1,17 +1,17 @@
 ---
-title: 光线传感器的阈值
+title: 光传感器阈值
 description: 本主题提供有关光线传感器阈值的信息。
 ms.assetid: A120601A-A5CE-4778-94A9-97E71B721E9B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f87faf112f72635362704fe06e3ce5b82f38745f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345172"
 ---
-# <a name="light-sensor-thresholds"></a>光线传感器的阈值
+# <a name="light-sensor-thresholds"></a>光传感器阈值
 
 
 本主题提供有关光线传感器阈值的信息。

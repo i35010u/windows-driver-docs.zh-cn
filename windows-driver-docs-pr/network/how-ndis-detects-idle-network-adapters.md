@@ -5,11 +5,11 @@ ms.assetid: 1FF01B0B-9826-4467-8071-D26CA5E5EF4F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc8a934f9df6b5e7dfa27eeb82072fe0793597b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349655"
 ---
 # <a name="how-ndis-detects-idle-network-adapters"></a>NDIS 如何检测空闲的网络适配器
 

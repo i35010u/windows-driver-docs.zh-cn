@@ -5,11 +5,11 @@ ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2431ebd44c6e3c2338b7859e3daf03b7988c07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350601"
 ---
 # <a name="debugging-resources"></a>调试资源
 
@@ -64,14 +64,14 @@ ms.locfileid: "56554953"
 -   [Q168609:如何使用显示堆 (DH。EXE) 实用程序](https://support.microsoft.com/kb/168609)
 -   [Q103861:信息：选择的调试程序将生成系统](https://support.microsoft.com/kb/103861)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [DebugView 监视工具](https://technet.microsoft.com/sysinternals/bb896647.aspx)
 
 [驱动程序开发人员社区资源](https://msdn.microsoft.com/windows/hardware/gg454517)
 
-[Windows 的驱动程序签名要求](https://msdn.microsoft.com/library/windows/hardware/gg487317)
+[Windows 驱动程序签名要求](https://msdn.microsoft.com/library/windows/hardware/gg487317)
 
 [对开发人员工具包和工具的支持](https://msdn.microsoft.com/windows/hardware/gg454528)
 

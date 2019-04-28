@@ -1,5 +1,5 @@
 ---
-title: 没有唤醒计时器
+title: 无唤醒功能的计时器
 description: 从 Windows 8.1，驱动程序可以使用无唤醒计时器以避免不必要地唤醒从低功耗状态的处理器。
 ms.assetid: 04CD107B-F196-4FF8-A423-C43CAA9A7EBD
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e69f335ee69c22d6385d7a8130b64c1b745a59b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341968"
 ---
-# <a name="no-wake-timers"></a>没有唤醒计时器
+# <a name="no-wake-timers"></a>无唤醒功能的计时器
 
 
 从 Windows 8.1，驱动程序可以使用无唤醒计时器以避免不必要地唤醒从低功耗状态的处理器。 通过在低功耗状态中保留的处理器，否唤醒计时器降低了电源消耗，并将扩展的平板电脑或其他移动计算机可以在电池电量运行的时间。

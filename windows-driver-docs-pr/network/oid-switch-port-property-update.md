@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_UPDATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ce04afb1c726cefb28f6030ec61c2a68fe051fe1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343353"
 ---
 # <a name="oidswitchportpropertyupdate"></a>OID\_SWITCH\_PORT\_PROPERTY\_UPDATE
 
@@ -108,7 +108,7 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

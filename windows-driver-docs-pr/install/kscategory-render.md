@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a94957eecdf8be9b6f556f1568389f6fe01a3e79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343794"
 ---
 # <a name="kscategoryrender"></a>KSCATEGORY_RENDER
 
@@ -33,7 +33,7 @@ KSCATEGORY_RENDER[设备接口类](https://msdn.microsoft.com/library/windows/ha
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ KS 音频适配器设备驱动程序注册 KSCATEGORY_RENDER 以指示设备支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>

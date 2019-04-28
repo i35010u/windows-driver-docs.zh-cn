@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78811c4e2c1546efe7dc5f9feccfaec884c1102d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347658"
 ---
 # <a name="supported-drivers"></a>支持的驱动程序
 
@@ -27,7 +27,7 @@ SDV 可以验证驱动程序，它必须能够解释的驱动程序代码，具�
 
 SDV 是能够验证驱动程序具有以下特征：
 
--   SDV 验证驱动程序和在 C 和 c + + 中编写的库。
+-   SDV 验证驱动程序和用 C 编写的库和C++。
 
 -   SDV 仅在符合 KMDF 和 WDM 符合设备驱动程序 （函数驱动程序、 筛选器驱动程序和总线驱动程序）、 NDIS 驱动程序 （筛选器、 微型端口和协议驱动程序） 和 Storport 驱动程序上执行完全验证。
 

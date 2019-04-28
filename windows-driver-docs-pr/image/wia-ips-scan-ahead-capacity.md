@@ -15,11 +15,11 @@ api_type:
 ms.date: 05/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b217831f3282502a17c0376a7ced3fa18f6e9ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343885"
 ---
 # <a name="wiaipsscanaheadcapacity"></a>WIA\_IPS\_扫描\_预先\_容量
 
@@ -52,7 +52,7 @@ ms.locfileid: "56522917"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

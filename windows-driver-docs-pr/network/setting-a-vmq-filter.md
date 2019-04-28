@@ -1,17 +1,17 @@
 ---
-title: VMQ 筛选器设置
-description: VMQ 筛选器设置
+title: 设置 VMQ 筛选器
+description: 设置 VMQ 筛选器
 ms.assetid: d40b6806-6ba8-4073-b802-57cb886ffcfb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da692ecad229f9aa87d9a288db66573faf1badda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346676"
 ---
-# <a name="setting-a-vmq-filter"></a>VMQ 筛选器设置
+# <a name="setting-a-vmq-filter"></a>设置 VMQ 筛选器
 
 
 接收队列分配后，过量驱动程序可以设置在接收队列上的筛选器。 分配接收队列的驱动程序可以在该队列上设置筛选器。

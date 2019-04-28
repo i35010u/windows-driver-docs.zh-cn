@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c3b2e71211f1c06865ac7ffe5a585c635a7081
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346865"
 ---
 # <a name="creating-compressed-buffers-and-decode-render-targets"></a>创建压缩缓冲区和解码渲染器目标
 

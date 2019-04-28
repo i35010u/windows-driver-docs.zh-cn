@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00964b69e87ff3846041d34e7d3e6629eb47446e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346120"
 ---
 # <a name="invoking-a-device-properties-dialog-box-from-a-command-line-prompt"></a>从命令行提示符调用设备属性对话框
 

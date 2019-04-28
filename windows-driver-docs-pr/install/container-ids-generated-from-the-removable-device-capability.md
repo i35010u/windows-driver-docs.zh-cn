@@ -5,11 +5,11 @@ ms.assetid: e09b1ee5-9ccd-428a-8af3-79f138eb07f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c095c8c503a36b56e3d01ee25b8984e0388d5f63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344311"
 ---
 # <a name="container-ids-generated-from-the-removable-device-capability"></a>通过可移动设备功能生成的容器 ID
 

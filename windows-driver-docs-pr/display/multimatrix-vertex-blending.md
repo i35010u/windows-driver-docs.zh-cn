@@ -1,6 +1,6 @@
 ---
-title: Multimatrix 顶点值混合处理
-description: Multimatrix 顶点值混合处理
+title: 多矩阵顶点混合
+description: 多矩阵顶点混合
 ms.assetid: d7348609-324d-4852-b217-4c298b8aaab7
 keywords:
 - 贷款 WDK Direct3D
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef426d08b1e3e987abbf4763805faa93a7602eb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345647"
 ---
-# <a name="multimatrix-vertex-blending"></a>Multimatrix 顶点值混合处理
+# <a name="multimatrix-vertex-blending"></a>多矩阵顶点混合
 
 
 ## <span id="ddk_multimatrix_vertex_blending_gg"></span><span id="DDK_MULTIMATRIX_VERTEX_BLENDING_GG"></span>

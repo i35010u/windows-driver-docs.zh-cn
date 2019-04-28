@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c454e2deea3ad0f27476f75fff549f8541f59cd9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343837"
 ---
 # <a name="wiaipssupportedbarcodetypes"></a>WIA\_IPS\_支持\_条形码\_类型
 
@@ -47,7 +47,7 @@ ms.locfileid: "57464273"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>

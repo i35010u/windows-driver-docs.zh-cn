@@ -1,6 +1,6 @@
 ---
-title: 用户断开设备
-description: 用户断开设备
+title: 用户拔出设备
+description: 用户拔出设备
 ms.assetid: d0c8fd6d-b356-4048-aa97-ebe331d23361
 keywords:
 - 电源管理方案 WDK UMDF，拔出该设备
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c62856b8a758994825e3ba4969fb59477f38ff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342186"
 ---
-# <a name="a-user-unplugs-a-device"></a>用户断开设备
+# <a name="a-user-unplugs-a-device"></a>用户拔出设备
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -NDIS_STATUS_NIC_SWITCH_HARDWARE_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 49b911a31a2b9df397db61c1e3462f67a11bd1bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343268"
 ---
 # <a name="ndisstatusnicswitchhardwarecapabilities"></a>NDIS\_状态\_NIC\_交换机\_硬件\_功能
 
@@ -53,7 +53,7 @@ PF 微型端口驱动程序必须发出**NDIS\_状态\_NIC\_交换机\_硬件\_�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

@@ -1,17 +1,17 @@
 ---
-title: WIA TWAIN 锁定
-description: WIA TWAIN 锁定
+title: WIA-TWAIN 锁定
+description: WIA-TWAIN 锁定
 ms.assetid: bf2dc7f5-f3a0-4c51-86e1-854d0704074a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc6180e98766c7c3ee83fad88a1423a7c63c2b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344328"
 ---
-# <a name="wia-twain-locking"></a>WIA TWAIN 锁定
+# <a name="wia-twain-locking"></a>WIA-TWAIN 锁定
 
 
 

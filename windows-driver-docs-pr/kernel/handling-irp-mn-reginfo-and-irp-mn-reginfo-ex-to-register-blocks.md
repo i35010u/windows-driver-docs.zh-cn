@@ -1,6 +1,6 @@
 ---
-title: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 注册块
-description: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 注册块
+title: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
+description: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
 ms.assetid: 2c17fc63-3c33-4d03-8c46-8d56242556d1
 keywords:
 - WMI WDK 内核，向 WMI 注册
@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60860c450401e03b7f38c53bde34a3fa836b7c72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350049"
 ---
 # <a name="handling-irpmnreginfo-and-irpmnreginfoex-to-register-blocks"></a>处理 IRP\_MN\_REGINFO 和 IRP\_MN\_REGINFO\_EX 注册块
 

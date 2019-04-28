@@ -5,11 +5,11 @@ ms.assetid: 08b0cf86-0f19-4972-8ae1-44ffdc968c16
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bbb7d307999c5eab10e7ce69906c2af20fd8a11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347705"
 ---
 # <a name="how-do-i-trace-function-entry-and-exit"></a>如何跟踪函数入口和出口？
 

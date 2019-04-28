@@ -1,17 +1,17 @@
 ---
-title: 驱动程序的编程技术
-description: 驱动程序的编程技术
+title: 驱动程序编程技术
+description: 驱动程序编程技术
 ms.assetid: ddad49ab-fe3c-4959-8a29-a850380b978f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d1155532f2af1a35c506bc418e9c4ff986b459df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352999"
 ---
-# <a name="driver-programming-techniques"></a>驱动程序的编程技术
+# <a name="driver-programming-techniques"></a>驱动程序编程技术
 
 
 编程中的 Windows 内核模式驱动程序需要有时存在显著差异的普通用户模式编程的技术。 虽然可能永远不会更改编程的基础知识，内核领域有很大差异。

@@ -1,6 +1,6 @@
 ---
-title: 指定的设备对象
-description: 指定的设备对象
+title: 命名的设备对象
+description: 命名的设备对象
 ms.assetid: 4e24f0c1-57b2-4e06-a7f5-9a93d365ac8c
 keywords:
 - 设备对象 WDK 内核，名为
@@ -8,13 +8,13 @@ keywords:
 ms.date: 09/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bb7c6f5ce76485b5715fb5b5a9a7c8de02ca4b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341957"
 ---
-# <a name="named-device-objects"></a>指定的设备对象
+# <a name="named-device-objects"></a>命名的设备对象
 
 
 

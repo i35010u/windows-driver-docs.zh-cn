@@ -1,20 +1,20 @@
 ---
-title: 存储外围设备驱动程序
+title: SPB 外围设备驱动程序
 description: 存储外围设备驱动程序控制外围设备连接到简单的外围总线 （存储）。
 ms.assetid: 8352EBD9-D94C-4EC6-A17E-3A72DDE4C16C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 898ef8984e290c923d5e166a65cc84dfb0108cca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344998"
 ---
-# <a name="spb-peripheral-device-drivers"></a>存储外围设备驱动程序
+# <a name="spb-peripheral-device-drivers"></a>SPB 外围设备驱动程序
 
 
-存储外围设备驱动程序控制外围设备连接到[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储）。 只能通过存储此设备的硬件寄存器。 若要从读取或写入到设备，该驱动程序必须将 I/O 请求发送到存储控制器。 仅此控制器可以启动数据传输到和从设备上存储。
+SPB 外围设备驱动程序控制连接到[简单外设总线](https://msdn.microsoft.com/library/windows/hardware/hh450903) (SPB) 的外围设备。 此设备的硬件寄存器只能通过 SPB 使用。 若要从设备读取数据或向其写入数据，驱动程序必须将 I/O 请求发送到 SPB 控制器。 只有该控制器可以通过 SPB 启动将数据传输到设备或从设备传输数据的过程。
 
 从 Windows 8 开始，Windows 提供的驱动程序支持外围设备的有关[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPBs)。 SPBs，如 I²C 和 SPI，广泛用于连接到较慢的传感器的设备，如加速感应器、 GPS 设备和电池电量水平监视器。 本概述介绍了存储外围设备驱动程序，与其他系统组件，如何控制与存储连接的外围设备。
 
@@ -60,7 +60,7 @@ SpbCx 是一个系统提供的组件，用于管理的存储控制器，例如 I
 
 辅助中断响应，存储外围设备驱动程序将事件发送传感器类扩展，这将告知用户模式应用程序通过传感器 API 或位置 API 的事件中。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
@@ -89,7 +89,7 @@ SpbCx 是一个系统提供的组件，用于管理的存储控制器，例如 I
 </tr>
 <tr class="even">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh698218" data-raw-source="[Interrupts from SPB-Connected Peripheral Devices](https://msdn.microsoft.com/library/windows/hardware/hh698218)">从存储连接的外围设备的中断</a></p></td>
-<td><p>与不同的是如 PCI 总线<a href="https://msdn.microsoft.com/library/windows/hardware/hh450903" data-raw-source="[simple peripheral bus](https://msdn.microsoft.com/library/windows/hardware/hh450903)">简单的外围总线</a>（存储），如 I²C 或 SPI，标准化的不提供特定于总线的意味着要传达给处理器的中断请求从外围设备。 相反，与存储连接的外围设备发出信号通过单独的硬件路径之外的存储和存储控制器的中断。</p></td>
+<td><p>与不同的是如 PCI 总线<a href="https://msdn.microsoft.com/library/windows/hardware/hh450903" data-raw-source="[simple peripheral bus](https://msdn.microsoft.com/library/windows/hardware/hh450903)">简单的外围总线</a>（存储），如 I²C 或 SPI，标准化的不提供特定于总线的意味着要传达给处理器的中断请求从外围设备。 与之相反，通过 SPB 连接的外围设备通过单独的硬件路径来指示某个中断，该路径位于 SPB 和 SPB 控制器外部。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh698217" data-raw-source="[Hardware Resources for Kernel-Mode SPB Peripheral Drivers](https://msdn.microsoft.com/library/windows/hardware/hh698217)">内核模式存储外围设备驱动程序的硬件资源</a></p></td>

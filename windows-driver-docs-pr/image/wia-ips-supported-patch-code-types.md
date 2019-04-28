@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c47b9810313db00796afbfacca7d5a353d1838d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343835"
 ---
 # <a name="wiaipssupportedpatchcodetypes"></a>WIA\_IPS\_支持\_修补\_代码\_类型
 
@@ -47,7 +47,7 @@ ms.locfileid: "56533969"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -99,7 +99,7 @@ WIA 微型驱动程序可以使用定义为 WIA 的其他自定义值来扩展�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

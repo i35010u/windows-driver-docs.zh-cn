@@ -5,11 +5,11 @@ ms.assetid: 44d49fe9-0983-4753-8f6f-f3445b5b9f3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d769b7f8d0ca87df47368153100f015367a6a49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348619"
 ---
 # <a name="wol-patterns-for-ndis-power-management"></a>NDIS 电源管理的 WOL 模式
 

@@ -1,6 +1,6 @@
 ---
-title: 更新 Web 页面信息
-description: 更新 Web 页面信息
+title: 更新网页信息
+description: 更新网页信息
 ms.assetid: 3ea2c8c0-7e46-47ff-8c32-82760eafd893
 keywords:
 - 打印网页 WDK，更新信息
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb2dab33b6b60c55f5b836b06875bfe5a5a29d12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346539"
 ---
-# <a name="updating-web-page-information"></a>更新 Web 页面信息
+# <a name="updating-web-page-information"></a>更新网页信息
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 36da02d7-0b8f-40ed-a594-0e2374595782
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8342c4db377eb4c8c0153800336349a5e514ebb6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344641"
 ---
 # <a name="example-45-add-and-remove-driver-packages"></a>示例 45：添加和删除驱动程序包
 

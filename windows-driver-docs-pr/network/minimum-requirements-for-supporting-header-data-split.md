@@ -1,6 +1,6 @@
 ---
-title: 最低要求，以支持标头数据拆分
-description: 最低要求，以支持标头数据拆分
+title: 标头数据拆分的最低支持要求
+description: 标头数据拆分的最低支持要求
 ms.assetid: 32ca214a-5103-4472-bbdb-1338188750d9
 keywords:
 - 标头数据拆分 WDK，要求
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f06b029c1a4b5db1e96a0c37e5205b21bc56415f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342318"
 ---
-# <a name="minimum-requirements-for-supporting-header-data-split"></a>最低要求，以支持标头数据拆分
+# <a name="minimum-requirements-for-supporting-header-data-split"></a>标头数据拆分的最低支持要求
 
 
 

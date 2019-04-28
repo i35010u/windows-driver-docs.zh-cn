@@ -1,5 +1,5 @@
 ---
-title: Checked 和免费生成差异
+title: 已检验版本和免费版本的差异
 description: 有两个非重复生成的基于 NT 的操作系统的可用免费 （零售） 并选中 （调试）。 还有一个名为部分已检验的版本，结合了两个元素的第三个选项。
 ms.assetid: 43aebfdb-2605-485c-a3a4-93e03b33aeca
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b23da3179e4241544f0dd3d12c5ec2066ccd55c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343977"
 ---
-# <a name="checked-and-free-build-differences"></a>Checked 和免费生成差异
+# <a name="checked-and-free-build-differences"></a>已检验版本和免费版本的差异
 
 
 有两个不同内部提供的基于 NT 的操作系统： 释放 （零售） 并选中 （调试）。 还有第三个选项，*称为部分已检验的版本*，它将两个元素。

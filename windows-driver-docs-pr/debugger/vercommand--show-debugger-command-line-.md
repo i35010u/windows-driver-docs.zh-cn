@@ -1,5 +1,5 @@
 ---
-title: vercommand （显示调试器命令行）
+title: vercommand（显示调试器命令行）
 description: Vercommand 命令显示打开调试器的命令。
 ms.assetid: cfac4fb6-8a70-4eeb-a755-caffc6d146e3
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 616d2336dbd03910225f876f3f1bf46093bd3bd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354890"
 ---
-# <a name="vercommand-show-debugger-command-line"></a>vercommand （显示调试器命令行）
+# <a name="vercommand-show-debugger-command-line"></a>vercommand（显示调试器命令行）
 
 
 **Vercommand**命令显示打开调试器的命令。

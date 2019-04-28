@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f550d0f9acb33b23343ee50487f200b2fbc8be7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346672"
 ---
 # <a name="setting-miniport-driver-information"></a>设置微型端口驱动程序信息
 

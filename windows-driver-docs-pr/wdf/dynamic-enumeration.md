@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa6659f7cac4e5bd15aa28a1d7cdc07a47c3792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342828"
 ---
 # <a name="dynamic-enumeration"></a>动态枚举
 

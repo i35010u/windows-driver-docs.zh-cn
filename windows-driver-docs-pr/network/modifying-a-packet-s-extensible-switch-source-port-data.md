@@ -5,11 +5,11 @@ ms.assetid: 44338441-160C-4CD1-8C0B-27CFBE136910
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a352c08500542cb8e00e62ea7d79d692ce7c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342320"
 ---
 # <a name="modifying-a-packets-extensible-switch-source-port-data"></a>修改数据包的可扩展交换机源端口数据
 

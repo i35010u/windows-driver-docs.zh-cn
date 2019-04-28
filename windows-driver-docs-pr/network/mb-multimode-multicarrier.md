@@ -5,11 +5,11 @@ ms.assetid: ADEC17E0-9150-4094-8287-CA13C186AB5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a026632670ba0db4d0cbeb8eb512cdf620c4bc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343288"
 ---
 # <a name="mb-multimode-multicarrier"></a>MB 多模多载波
 

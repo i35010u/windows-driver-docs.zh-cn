@@ -1,8 +1,8 @@
 ---
-title: SR-IOV 的 Oid
+title: SR-IOV OID
 description: 本部分介绍单根 I/O 虚拟化 (SR-IOV) Oid 和它们的特征。
 keywords:
-- SR-IOV 的 Oid
+- SR-IOV OID
 - 单根 I/O 虚拟化 Oid
 - WDK 的 SR-IOV Oid
 - SR-IOV 对象标识符
@@ -10,13 +10,13 @@ ms.assetid: E93751BF-17BC-4BE7-89F7-53F6C9941120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c197ce76720fb8e67a24355fd260af47f4585b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346050"
 ---
-# <a name="sr-iov-oids"></a>SR-IOV 的 Oid
+# <a name="sr-iov-oids"></a>SR-IOV OID
 
 单根 I/O 虚拟化 (SR-IOV) 对象标识符 (Oid) 适用于微型端口和基础驱动程序支持 SR-IOV 的接口。 在 NDIS 版本 6.30 和更高版本中支持此接口。 
 

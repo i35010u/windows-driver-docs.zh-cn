@@ -5,18 +5,18 @@ ms.assetid: A67EBD9C-9C5A-49D3-9205-37FC4396DF56
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4933140d66f1aa5a7d8f9b0ce89d384aa87e808c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345245"
 ---
 # <a name="install-the-sample-device-and-driver-on-your-sharks-cove-board"></a>Shark Cove 板上安装的示例设备和驱动程序
 
 
 请按照下列步骤安装示例驱动程序并将 ADXL345 加速感应器附加到 Shark Cove 板上的 J1C1 标头。
 
-## <a name="install-windows-on-the-sharks-cove-board"></a>Shark Cove 板上安装 Windows
+## <a name="install-windows-on-the-sharks-cove-board"></a>在 Sharks Cove 板上安装 Windows
 
 
 有关如何获取 Shark Cove 看板以及如何在看板上安装 Windows 的信息，请参阅[Shark Cove 硬件开发板](https://msdn.microsoft.com/library/windows/hardware/dn745910)并[SharksCove.org](https://go.microsoft.com/fwlink/p/?linkid=403167)。
@@ -42,7 +42,7 @@ ms.locfileid: "56521481"
 ## <a name="install-kits-and-tools"></a>安装工具包和工具
 
 
-一个驱动程序开发环境具有两台计算机：*主计算机*和*目标计算机*。 目标计算机也称为*测试计算机*。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
+一个驱动程序开发环境具有两台计算机：*主计算机*和*目标计算机*。 目标计算机也称为“测试计算机”。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
 
 在主计算机上安装工具包和工具中所述[Shark Cove 硬件开发板](https://msdn.microsoft.com/library/windows/hardware/dn745910)。
 
@@ -82,12 +82,12 @@ ms.locfileid: "56521481"
 
 
 
-## <a name="alter-the-secondary-system-description-table-ssdt"></a>更改辅助系统说明表 (SSDT)
+## <a name="alter-the-secondary-system-description-table-ssdt"></a>更改辅助系统描述表 (SSDT)
 
 
 1.  将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL.exe 包括 Windows Driver Kit (WDK) 中。
 
-    示例：C:\\程序文件 (x86)\\Windows 工具包\\8.1\\工具\\x86\\ACPIVerify\\ASL.exe
+    例如：C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
 
 2.  Shark Cove 板上以管理员身份打开命令提示符窗口。 通过输入以下命令反编译 SSDT：
 
@@ -133,7 +133,7 @@ ms.locfileid: "56521481"
     }
     ```
 
-4.  插入一个作用域 (\_SB\_) 条目。 在 Scope 条目内，插入你自己的 Device 条目。 下面是一个作用域 (\_SB\_) 条目和 ADXL345 加速感应器设备条目。
+4.  插入 Scope(\_SB\_) 条目。 在 Scope 条目内，插入你自己的 Device 条目。 下面是一个作用域 (\_SB\_) 条目和 ADXL345 加速感应器设备条目。
 
     ``` syntax
     Scope(_SB_)
@@ -194,27 +194,27 @@ ms.locfileid: "56521481"
 } // Scope(_SB_)
 ```
 
-在此示例中，`ResourceTemplate()` 下的条目指定加速计需要两个硬件资源：特定 I2C 总线控制器 (I2C3) 的连接 ID 和 GPIO 中断。 中断使用名为 GPO2 的 GPIO 控制器上的 Pin 0x17。
+在此示例中，`ResourceTemplate()` 下的条目指定加速计需要两个硬件资源：特定 I2C 总线控制器 (I2C3) 的连接 ID 和 GPIO 中断。 中断使用名为 GPO2 的 GPIO 控制器上的引脚 0x17。
 
 
-5.  将你自己的 Device 条目添加到 Ssdt.asl 之后，通过输入以下命令编译 Ssdt.asl：
+5.  将自己的 Device 条目添加到 Ssdt.asl 之后，通过输入以下命令编译 Ssdt.asl：
 
     **asl ssdt.asl**
 
     这会将编译的输出放置在名为 Ssdt.aml 的文件中。
 
-6.  验证是否为 Sharks Cove 板启用测试签名。
+6.  验证是否已为 Sharks Cove 板启用测试签名。
 
     **注意**  测试签名将在预配期间自动启用。
 
 
 
 
-在 Sharks Cove 板上，以管理员身份打开命令提示符窗口。 输入此命令。
+在 Sharks Cove 板上，以管理员身份打开命令提示符窗口。 输入此命令：
 
 **bcdedit /enum {current}**
 
-验证你是否可以在输出中看到 `testsigning Yes`。
+验证是否可以在输出中看到 `testsigning Yes`。
 
 ``` syntax
 Windows Boot Loader
@@ -225,13 +225,13 @@ testsigning             Yes
 ...
 ```
 
-如果你需要手动启用测试签名，请参照以下步骤：
+如果需要手动启用测试签名，请参照以下步骤：
 
-1.  以管理员身份打开命令提示符窗口，并输入此命令。
+1.  以管理员身份打开命令提示符窗口，并输入此命令：
 
     **bcdedit /set TESTSIGNING ON**
 
-2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到**设备管理器 &gt; 系统设置 &gt; 启动**。 将 **UEFI 安全启动**设置为**已禁用**。
+2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到“设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”设置为“禁用”。
 3.  保存更改并继续启动到 Windows。
 
 
@@ -245,7 +245,7 @@ testsigning             Yes
 
 
 1.  在主计算机上 Visual Studio 中打开 SpbAccelerometer 解决方案。
-2.  在解决方案资源管理器，双击**包**（小写），然后选择**属性**。 转到**驱动程序安装 &gt; 部署**。 检查**启用部署**。 选中**部署前删除以前的驱动程序版本**。 有关**目标计算机名称**，输入以前预配你 Shark Cove 看板的名称。 选择**安装并验证**。 单击“确定” 。
+2.  在解决方案资源管理器，双击**包**（小写），然后选择**属性**。 转到**驱动程序安装 &gt; 部署**。 检查**启用部署**。 选中**部署前删除以前的驱动程序版本**。 有关**目标计算机名称**，输入以前预配你 Shark Cove 看板的名称。 选择**安装并验证**。 单击 **“确定”**。
 3.  上**调试**菜单中，选择**开始调试**。 驱动程序包会自动复制到 Shark Cove 板。 您的驱动程序将自动安装和加载。 Windows 用户模式下调试程序 （在 Visual Studio 中的主机计算机上运行） 会自动将附加到承载您的驱动程序的 Wudfhost.exe （Shark Cove 板上运行） 的实例。
 
 

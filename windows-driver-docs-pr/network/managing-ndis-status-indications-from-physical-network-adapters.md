@@ -5,11 +5,11 @@ ms.assetid: ECA336FD-3E07-47D8-9006-6FE9CC1BEC2F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26e6e34f48f006b5f05599726e297e8f9df2a60b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343545"
 ---
 # <a name="managing-ndis-status-indications-from-physical-network-adapters"></a>管理物理网络适配器发出的 NDIS 状态指示
 

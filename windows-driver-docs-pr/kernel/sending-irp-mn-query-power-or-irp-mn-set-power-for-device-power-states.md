@@ -1,6 +1,6 @@
 ---
-title: 发送 IRP_MN_QUERY_POWER 或 IRP_MN_SET_POWER 的设备的电源状态
-description: 发送 IRP_MN_QUERY_POWER 或 IRP_MN_SET_POWER 的设备的电源状态
+title: 发送设备电源状态的 IRP_MN_QUERY_POWER 或 IRP_MN_SET_POWER
+description: 发送设备电源状态的 IRP_MN_QUERY_POWER 或 IRP_MN_SET_POWER
 ms.assetid: 58f65138-abb9-4bb8-bf9b-14f17347e309
 keywords:
 - IRP_MN_SET_POWER
@@ -17,11 +17,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e15f682310e29ca2f3a5392b951f00c2633f5bb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342659"
 ---
 # <a name="sending-irpmnquerypower-or-irpmnsetpower-for-device-power-states"></a>发送 IRP\_MN\_查询\_电源或 IRP\_MN\_设置\_的电源可用于设备的电源状态
 

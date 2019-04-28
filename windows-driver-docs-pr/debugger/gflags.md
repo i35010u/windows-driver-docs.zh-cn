@@ -6,11 +6,11 @@ keywords: GFlags、 全局标志编辑器 gflags.exe
 ms.date: 06/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cfa08a777d1e4a9e5fd7c59687fb5a7f419aef18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342052"
 ---
 # <a name="gflags"></a>GFlags
 
@@ -84,7 +84,7 @@ GFlags 具有一个对话框和命令行接口。 大多数功能可从这两个
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试工具中包含的工具](extra-tools.md)

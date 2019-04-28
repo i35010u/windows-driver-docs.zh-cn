@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e8b124f0d13ce5e5ba68c3db7037b68db2c8d80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341858"
 ---
 # <a name="kspropertycameracontrolextendedvideohdr"></a>KSPROPERTY\_CAMERACONTROL\_EXTENDED\_VIDEOHDR
 
@@ -109,7 +109,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_VIDEOHDR 用于启用或禁用该驱动程序
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1。</p></td>
 </tr>
 <tr class="even">

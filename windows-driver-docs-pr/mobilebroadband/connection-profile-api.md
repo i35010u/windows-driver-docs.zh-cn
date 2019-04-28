@@ -5,11 +5,11 @@ ms.assetid: 671b0df6-4f4b-4867-86dd-5eb832d86b4b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61df3cf586cab1f4968c508c8b51015a86647dd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344283"
 ---
 # <a name="connection-profile-api"></a>连接配置文件 API
 
@@ -24,7 +24,7 @@ ms.locfileid: "56533534"
 
 此 API 还包括每当操作员的接口上的连接发生更改时通知应用程序的状态更改事件。 有关详细信息[ **NetworkStatusChanged** ](https://msdn.microsoft.com/library/windows/apps/br207299)事件，请参阅[ **NetworkStatusChangedEventHandler 委托**](https://msdn.microsoft.com/library/windows/apps/br207303)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的列表](list-of-mobile-broadband-windows-runtime-apis.md)

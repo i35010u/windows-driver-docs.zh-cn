@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27ca23fe8c86b7f62b523a0fb8d919b256d9ec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344659"
 ---
-# <a name="example-5-formatting-real-time-trace-sessions"></a>示例 5:格式设置实时跟踪会话
+# <a name="example-5-formatting-real-time-trace-sessions"></a>示例 5：设置实时跟踪会话的格式
 
 
 可以从实时跟踪会话除了跟踪日志文件格式的跟踪消息中使用 Tracefmt。

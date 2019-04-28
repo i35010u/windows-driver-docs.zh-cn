@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2809441e4a488a115205a63a56c6f0c92b070a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348778"
 ---
 # <a name="jobstatereason-element"></a>JobStateReason 元素
 

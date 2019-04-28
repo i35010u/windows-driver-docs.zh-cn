@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ENUM 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e997fd31f419cd448813a8cb7ebdb15d7a7dc64c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343263"
 ---
 # <a name="oidswitchportpropertyenum"></a>OID\_SWITCH\_PORT\_PROPERTY\_ENUM
 
@@ -79,7 +79,7 @@ OID\_切换\_端口\_属性\_的 HYPER-V 可扩展交换机完成激活后，才
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

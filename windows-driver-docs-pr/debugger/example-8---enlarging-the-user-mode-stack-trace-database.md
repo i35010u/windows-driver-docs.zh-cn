@@ -5,11 +5,11 @@ ms.assetid: b04f6b86-a210-4941-a4eb-a9059d9890d9
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b2a72106e22c3737782ceb0b48aca8d5d791971
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344151"
 ---
 # <a name="example-8-enlarging-the-user-mode-stack-trace-database"></a>示例 8：扩大用户模式堆栈跟踪数据库
 

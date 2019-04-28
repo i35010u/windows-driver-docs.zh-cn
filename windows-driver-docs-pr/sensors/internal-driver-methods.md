@@ -5,11 +5,11 @@ ms.assetid: BF5956FE-E1B6-476A-9B6E-86B400DE0A20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02df7ba4f8621f8ee4bdf8aff85a537a5c1cb294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345200"
 ---
 # <a name="internal-helper-methods"></a>内部帮助器方法
 

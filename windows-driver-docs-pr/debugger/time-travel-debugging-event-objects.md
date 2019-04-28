@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试相关联的事件模型对象�
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3511933227006dc5a5fe22b8c8da99a75dbfe887
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342048"
 ---
 # <a name="ttd-event-objects"></a>TTD 事件对象
 ## <a name="description"></a>描述
@@ -22,7 +22,7 @@ ms.locfileid: "56526747"
 
 ## <a name="children"></a>Children
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | 位置 | 一个[位置对象](time-travel-debugging-position-objects.md)用于描述该事件发生的位置。 |
 | 模块 * | 一个[模块对象](time-travel-debugging-module-objects.md)包含已加载或卸载的模块有关的信息。 |
@@ -55,7 +55,7 @@ ms.locfileid: "56526747"
 ```
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

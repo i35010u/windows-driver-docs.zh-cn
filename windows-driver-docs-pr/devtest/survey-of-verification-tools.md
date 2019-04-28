@@ -1,6 +1,6 @@
 ---
-title: 验证工具的调查
-description: 验证工具的调查
+title: 验证工具调查
+description: 验证工具调查
 ms.assetid: d36e041f-efa5-450f-b4de-c84c4880e44d
 keywords:
 - 动态验证工具 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: feeee25ed8dd8687a68f75c730e6e86a27a3542a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347603"
 ---
-# <a name="survey-of-verification-tools"></a>验证工具的调查
+# <a name="survey-of-verification-tools"></a>验证工具调查
 
 
 使用以下验证工具是在 WDK 中所述，建议使用驱动程序开发人员和测试人员。 它们在其中，通常会使用顺序列出。
@@ -23,13 +23,13 @@ ms.locfileid: "56546097"
 
 -   [代码分析驱动程序](code-analysis-for-drivers.md)是运行在编译时静态验证工具。 Windows 驱动程序工具包提供的特定于驱动程序的扩展[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)Microsoft Visual Studio Ultimate 2012 中。
 
-    [代码分析驱动程序](code-analysis-for-drivers.md)可以验证驱动程序编写 C/c + + 和托管代码。 它将检查驱动程序的每个函数中的代码独立，以便您可以构建您的驱动程序时，就立即可以运行它。 它运行相对较快，并使用一些资源。
+    [代码分析驱动程序](code-analysis-for-drivers.md)可以验证驱动程序以 C 编写 /C++和托管代码。 它将检查驱动程序的每个函数中的代码独立，以便您可以构建您的驱动程序时，就立即可以运行它。 它运行相对较快，并使用一些资源。
 
     基本功能[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)检测常规编码错误，例如不检查返回值。 特定于驱动程序的功能检测更微妙的驱动程序编码错误，如保持未初始化的字段中复制的 IRP 和未能还原更改的 IRQL 例程的结束。
 
 <!-- -->
 
--   [Static Driver Verifier](static-driver-verifier.md) (SDV) 是一个静态验证工具，在编译时运行，并验证编写 C/c + + 中的内核模式驱动程序代码。 它包含在 WDK 中并从 Visual Studio Ultimate 2012 或 Visual Studio 命令提示窗口中使用 MSBuild 可以启动。
+-   [Static Driver Verifier](static-driver-verifier.md) (SDV) 是一个静态验证工具，在编译时运行，并验证用 C 编写的内核模式驱动程序代码 /C++。 它包含在 WDK 中并从 Visual Studio Ultimate 2012 或 Visual Studio 命令提示窗口中使用 MSBuild 可以启动。
 
     根据一组接口规则和操作系统的模型，Static Driver Verifier 确定驱动程序是否正确交互与 Windows 操作系统内核。 Static Driver Verifier 是极其全面--它探讨了驱动程序源代码中的所有可访问路径并执行这些符号。 在这种情况下，它会查找使用驱动程序测试的任何其他传统方法来检测不到的 bug。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56546097"
     -   **内存泄漏。** 驱动程序验证程序跟踪所做的驱动程序的内存分配的并确保该驱动程序被卸载之前, 释放内存。
     -   **需要很长时间以完成或取消的 I/O 操作。** 驱动程序验证程序可以测试用于响应状态的驱动程序的逻辑\_PENDING 返回值从[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
     -   **DDI 符合性检查。** （可从 Windows 8 开始）驱动程序验证器应用一组检查驱动程序和操作系统的内核接口之间的正确交互的设备驱动程序接口 (DDI) 规则。 这些规则对应于在分析驱动程序源代码中使用 Static Driver Verifier 的规则。 如果驱动程序验证工具发现错误时启用 DDI 符合性检查，运行[Static Driver Verifier](static-driver-verifier.md)和选择的相同规则，导致该错误。 Static Driver Verifier 可帮助您的驱动程序源代码中找到缺陷的原因。
--   [应用程序验证工具](application-verifier.md)是一个用于用户模式应用程序和驱动程序编写 C/c + + 中的动态验证工具。 它不会验证托管的代码。 应用程序验证程序不包含在 WDK 中，但可以下载并安装它从[Microsoft 下载中心网站](https://go.microsoft.com/fwlink/p/?linkid=11573)。
+-   [应用程序验证工具](application-verifier.md)是一个用于用户模式应用程序和驱动程序以 C 编写的动态验证工具 /C++。 它不会验证托管的代码。 应用程序验证程序不包含在 WDK 中，但可以下载并安装它从[Microsoft 下载中心网站](https://go.microsoft.com/fwlink/p/?linkid=11573)。
 
  
 

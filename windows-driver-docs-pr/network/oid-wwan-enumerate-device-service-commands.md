@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: aa2574afdffd0d5d1b91ab38743747f748ba4eb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343244"
 ---
 # <a name="oidwwanenumeratedeviceservicecommands"></a>OID\_WWAN\_ENUMERATE\_设备\_服务\_命令
 
@@ -33,17 +33,17 @@ OID\_WWAN\_ENUMERATE\_设备\_服务\_命令返回的设备服务支持的命令
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://msdn.microsoft.com/library/windows/hardware/hh846210)

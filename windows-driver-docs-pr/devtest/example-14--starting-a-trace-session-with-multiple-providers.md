@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 496a596b75df6c98adcd9808b1ba3a5a50ec9e89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344692"
 ---
-# <a name="example-14-starting-a-trace-session-with-multiple-providers"></a>示例 14:使用多个提供程序启动跟踪会话
+# <a name="example-14-starting-a-trace-session-with-multiple-providers"></a>示例 14：使用多个提供程序启动跟踪会话
 
 
 ## <span id="ddk_starting_a_session_with_multiple_providers_tools"></span><span id="DDK_STARTING_A_SESSION_WITH_MULTIPLE_PROVIDERS_TOOLS"></span>

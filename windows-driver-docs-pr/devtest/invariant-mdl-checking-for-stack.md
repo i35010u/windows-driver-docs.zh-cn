@@ -5,11 +5,11 @@ ms.assetid: AB27803A-6B3A-40FA-B962-79B0DA2F5FA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f54c83c39bc3935033de21060aea1c3319877ea8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350519"
 ---
 # <a name="invariant-mdl-checking-for-stack"></a>面向堆栈的固定 MDL 检查
 

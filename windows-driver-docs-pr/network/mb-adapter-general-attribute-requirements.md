@@ -5,11 +5,11 @@ ms.assetid: c2bfb625-3455-41e0-abdd-ab7204eaae0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 183dd81a4bfb7e5c9383e0cabc4e740cffcb4f45
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343455"
 ---
 # <a name="mb-adapter-general-attribute-requirements"></a>MB 适配器常规属性要求
 

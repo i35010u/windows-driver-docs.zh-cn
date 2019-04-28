@@ -1,17 +1,17 @@
 ---
-title: 正在完成数据传输请求
-description: 正在完成数据传输请求
+title: 完成数据传输请求
+description: 完成数据传输请求
 ms.assetid: 4c187202-c7a8-4fd8-984a-5bae647b74b0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dad5ee2937b9810d0076ac3ab6dfca612f1e1a13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344249"
 ---
-# <a name="completing-data-transfer-requests"></a>正在完成数据传输请求
+# <a name="completing-data-transfer-requests"></a>完成数据传输请求
 
 
 

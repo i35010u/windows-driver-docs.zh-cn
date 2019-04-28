@@ -1,19 +1,19 @@
 ---
-title: 选择区域设置和设备元数据创建向导中的包类型
-description: 选择区域设置和设备元数据创建向导中的包类型
+title: 在设备元数据创作向导中选择区域设置和包类型
+description: 在设备元数据创作向导中选择区域设置和包类型
 ms.assetid: 02227FAB-A37F-4B20-AD52-E071C19E8743
 keywords:
-- 选择区域设置和设备元数据创建向导中的包类型
+- 在设备元数据创作向导中选择区域设置和包类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5693c025865ea9f4620b1ecf7861dd9e2584e7d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351357"
 ---
-# <a name="select-locales-and-package-type-in-the-device-metadata-authoring-wizard"></a>选择区域设置和设备元数据创建向导中的包类型
+# <a name="select-locales-and-package-type-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中选择区域设置和包类型
 
 
 若要开始，请选择相应的区域设置的元数据包，以及你的包类型 （Windows 7 或 Windows 8）。

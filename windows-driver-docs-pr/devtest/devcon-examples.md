@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23508e68c050334b1090993d5b3b00921d9b4ed7
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347699"
 ---
 # <a name="device-console-devconexe-examples"></a>设备控制台 (DevCon.exe) 示例
 

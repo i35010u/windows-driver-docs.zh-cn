@@ -1,17 +1,17 @@
 ---
-title: 运行短信接收到的新后台事件
-description: 运行短信接收到的新后台事件
+title: 运行收到短信后的新后台事件
+description: 运行收到短信后的新后台事件
 ms.assetid: 57534569-3678-4e2c-b55a-7dc6f057fb7d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3196d69f70e3e044915a21d30c0bfa076e9e372
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345325"
 ---
-# <a name="run-new-sms-received-background-events"></a>运行短信接收到的新后台事件
+# <a name="run-new-sms-received-background-events"></a>运行收到短信后的新后台事件
 
 
 移动宽带短信平台的新接收，具体取决于是否管理短信通知从移动网络运营商或常规短信的短信数据提供单独的系统事件。 新的管理短信通知从移动网络运营商收到的后台系统事件才可由移动宽带应用访问。
@@ -85,7 +85,7 @@ taskAway.addEventListener("progress", new ProgressHandler(taskAway).onProgress);
 taskAway.addEventListener("completed", new CompleteHandler(taskAway).onCompleted);
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [开发 SMS 应用程序](developing-sms-apps.md)

@@ -5,11 +5,11 @@ ms.assetid: BF3DFE01-6583-4FBB-AFFA-2C017A3D9A05
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 806f9af053dee9448fbfed201a2e83551f9dab1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343499"
 ---
 # <a name="managing-virtual-ports"></a>管理虚拟端口
 

@@ -5,11 +5,11 @@ ms.assetid: 100F5DAB-FD25-4B42-8E3B-321E96CD25A2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aaaec5e465cf85eb2fc6e1a352d3bf3588f2d5a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343947"
 ---
 # <a name="general-unicode-requirement-in-inf-files"></a>INF 文件中的常规 Unicode 要求
 

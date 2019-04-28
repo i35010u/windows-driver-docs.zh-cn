@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1c7d189c43fa9d21405ba2ce72d8a13137ea69f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351219"
 ---
 # <a name="static-driver-verifier"></a>静态驱动程序验证程序
 
@@ -34,8 +34,8 @@ ms.locfileid: "57464211"
 <p></p>
  
 <p><strong>安装</strong></p>
-<p>Static Driver Verifier 可作为的一部分<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk">Windows Driver Kit (WDK)</a>和独立企业 WDK 中完整的 WDK 体验。  此外，<a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">适用于 Visual Studio 2013 的 Visual c + + 可再发行组件包</a>并<a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual Studio 2017 的 Visual c + + 可再发行组件包</a>所需的 SDV 来运行。  
-<p></p>对于版本的 WDK 为 Windows 10，版本 1809年或更早版本中可用的 SDV<a href="https://my.visualstudio.com/Downloads?pid=1452">适用于 Visual Studio 2012 的 Visual c + + 可再发行组件包</a>应安装而不是 2017年包。
+<p>Static Driver Verifier 可作为的一部分<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk">Windows Driver Kit (WDK)</a>和独立企业 WDK 中完整的 WDK 体验。  此外， <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">Visual C++ Visual Studio 2013 可再发行组件包</a>并<a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Visual Studio 2017 可再发行组件包</a>所需的 SDV 来运行。  
+<p></p>对于版本的 WDK 为 Windows 10，版本 1809年或更早版本中可用的 SDV <a href="https://my.visualstudio.com/Downloads?pid=1452">VisualC++用于 Visual Studio 2012 可再发行组件包</a>应安装而不是 2017年包。
 <p></p>
  
 </div>

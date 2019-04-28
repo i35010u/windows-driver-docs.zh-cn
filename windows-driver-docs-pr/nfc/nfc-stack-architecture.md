@@ -11,11 +11,11 @@ description: 近字段通信 (NFC) 堆栈体系结构和设计的关系图。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab19a5254ffd34e7a93a57eb511ae85af80d0ac4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343029"
 ---
 # <a name="nfc-stack-architecture"></a>NFC 堆栈体系结构
 

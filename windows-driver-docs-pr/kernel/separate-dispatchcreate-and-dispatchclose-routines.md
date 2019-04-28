@@ -1,6 +1,6 @@
 ---
-title: 单独 DispatchCreate 和 DispatchClose 例程
-description: 单独 DispatchCreate 和 DispatchClose 例程
+title: 独立的 DispatchCreate 和 DispatchClose 例程
+description: 独立的 DispatchCreate 和 DispatchClose 例程
 ms.assetid: b2e05555-c70d-4293-8622-51eea92091b1
 keywords:
 - 调度例程 WDK 内核，DispatchCreate 例程
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cf1686cf8e32b28bf29b5987307440f8a883d8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342649"
 ---
-# <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>单独 DispatchCreate 和 DispatchClose 例程
+# <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>独立的 DispatchCreate 和 DispatchClose 例程
 
 
 

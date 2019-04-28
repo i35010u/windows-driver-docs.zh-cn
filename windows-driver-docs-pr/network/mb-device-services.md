@@ -5,11 +5,11 @@ ms.assetid: 7F9DFD96-2221-4F64-AC51-F336CCBED6BF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f9e1b26cf1dd3d64c901f5ad18eebc5a3755760
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343394"
 ---
 # <a name="mb-device-services"></a>MB 设备服务
 

@@ -5,11 +5,11 @@ ms.assetid: A6F23D12-BCF0-496A-B881-C1F6B35EDA4D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ddccf6beed7f381f52ed29c9a02f4bb18325d66d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345338"
 ---
 # <a name="cellular-architecture-and-implementation"></a>手机网络体系结构和实现
 

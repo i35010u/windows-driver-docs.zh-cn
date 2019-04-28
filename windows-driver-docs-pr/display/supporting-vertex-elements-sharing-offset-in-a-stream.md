@@ -1,6 +1,6 @@
 ---
-title: 支持共享 Stream 中的偏移量的顶点元素
-description: 支持共享 Stream 中的偏移量的顶点元素
+title: 支持流中具有相同偏移量的顶点元素
+description: 支持流中具有相同偏移量的顶点元素
 ms.assetid: 52b2d891-15a1-4b82-aaf2-634f33202974
 keywords:
 - 顶点着色器声明 WDK DirectX 9.0 中，共享流中的偏移量
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbe198f9fda0496b165a28b90df11fb4499feee9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350104"
 ---
-# <a name="supporting-vertex-elements-sharing-offset-in-a-stream"></a>支持共享 Stream 中的偏移量的顶点元素
+# <a name="supporting-vertex-elements-sharing-offset-in-a-stream"></a>支持流中具有相同偏移量的顶点元素
 
 
 ## <span id="ddk_supporting_vertex_elements_sharing_offset_in_a_stream_gg"></span><span id="DDK_SUPPORTING_VERTEX_ELEMENTS_SHARING_OFFSET_IN_A_STREAM_GG"></span>

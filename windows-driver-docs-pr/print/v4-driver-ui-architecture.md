@@ -5,11 +5,11 @@ ms.assetid: 6318E480-C567-4866-8E88-B19904408C59
 ms.date: 09/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb6a7e4feb816b79aa9f366bff0883f79b7c120
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348475"
 ---
 # <a name="v4-driver-ui-architecture"></a>V4 驱动程序 UI 体系结构
 

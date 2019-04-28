@@ -5,11 +5,11 @@ ms.assetid: ec1743a1-4c5e-4960-b352-40fc5b9c016a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d211d9601932917cd491dcb09c46416161997704
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343285"
 ---
 # <a name="mb-miniport-driver-types"></a>MB 微型端口驱动程序类型
 

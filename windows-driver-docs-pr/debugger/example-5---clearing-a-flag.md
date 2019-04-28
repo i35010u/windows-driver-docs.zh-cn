@@ -5,11 +5,11 @@ ms.assetid: 63c8bae9-ae6e-4d82-9389-ec36554635ab
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d0de0975e41bc5452ececcc237f83a2cfa605398
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347729"
 ---
 # <a name="example-5-clearing-a-flag"></a>示例 5：清除标志
 

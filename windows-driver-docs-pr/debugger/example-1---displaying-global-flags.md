@@ -5,11 +5,11 @@ ms.assetid: c1a1eafd-d70a-43f9-af90-33ddc33758fe
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a635b2bfa7f0cb6b7f627f207564263c1a4ed3da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347795"
 ---
 # <a name="example-1-displaying-global-flags"></a>示例 1：显示全局标志
 

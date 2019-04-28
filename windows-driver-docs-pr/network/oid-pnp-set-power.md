@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 902d2fd60d315c3430194c7e19f835178b11f330
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342973"
 ---
 # <a name="oidpnpsetpower"></a>OID\_PNP\_SET\_POWER
 
@@ -127,7 +127,7 @@ NDIS 调用微型端口驱动程序[ *MiniportRestart* ](https://msdn.microsoft.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>NDIS 5.1 和 NDIS 6.0 及更高版本支持。</p></td>
 </tr>
 <tr class="even">

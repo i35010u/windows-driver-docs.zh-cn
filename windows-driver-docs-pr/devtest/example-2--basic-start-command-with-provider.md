@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9ad3f3e0687e8e2d494e10d090662d898e290a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344700"
 ---
-# <a name="example-2-basic-start-command-with-provider"></a>示例 2：与提供程序的基本 Start 命令
+# <a name="example-2-basic-start-command-with-provider"></a>示例 2：使用提供程序的基本启动命令
 
 以下启动命令是到示例 1 中的命令相同，但它使用**guid**参数来启用用于跟踪会话提供程序：
 

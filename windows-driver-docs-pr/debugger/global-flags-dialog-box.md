@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d514d8ac487435b4202eb8753b0e6caa3a167c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342061"
 ---
 # <a name="global-flags-dialog-box"></a>全局标志对话框
 

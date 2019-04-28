@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WAN_CO_GET_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 29e5b4f9b6f884c20df931c7f9b15964047ec358
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342281"
 ---
 # <a name="oidwancogetinfo"></a>OID\_WAN\_共同\_获取\_信息
 
@@ -136,17 +136,17 @@ NDISWAN 将从协议字段时此 LCP 选项进行协商，适用于删除 1 个�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMCoIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553458)

@@ -5,13 +5,13 @@ ms.assetid: 15AA7CFA-5BEC-4E45-B222-0DE2D620E099
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 90f09acf6967dc08997ece19f0b37011f8195188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342682"
 ---
-# <a name="selective-opt-out-poolnxoptout"></a>选择性退出：池\_NX\_OPTOUT
+# <a name="selective-opt-out-poolnxoptout"></a>选择性禁用：池\_NX\_OPTOUT
 
 
 可以全局启用的机制之一来不执行 (NX) 池参加驱动程序源文件，一组，然后，重写与池的一个或多个选定的源代码文件的此选择机制\_NX\_OPTOUT。 这样，所选的源代码文件，以继续使用可执行文件的非分页的内存。 可以使用池中\_NX\_OPTOUT 选择退出机制与每个池\_NX\_OPTIN 或池\_NX\_OPTIN\_自动选择机制。 有关详细信息，请参阅[NX 池选择的机制](nx-pool-opt-in-mechanisms.md)。

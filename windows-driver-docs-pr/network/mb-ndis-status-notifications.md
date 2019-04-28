@@ -6,11 +6,11 @@ ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: a929922a6a67b2e9d618308e187514af2c1254bb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343315"
 ---
 # <a name="mb-ndis-status-notifications"></a>MB NDIS 状态通知
 

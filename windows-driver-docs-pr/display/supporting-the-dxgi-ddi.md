@@ -5,11 +5,11 @@ ms.assetid: 3a49d7cb-984f-4e4f-a549-5c0442e1c45a
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9accff4e1d95f836bd937c0328216a471da998ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350113"
 ---
 # <a name="supporting-the-dxgi-ddi"></a>支持 DXGI DDI
 

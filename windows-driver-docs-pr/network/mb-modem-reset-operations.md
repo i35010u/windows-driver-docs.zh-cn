@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6172d1949ae8b52a8c353f26503d14ad01435a80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343290"
 ---
 # <a name="mb-modem-reset-operations"></a>MB 调制解调器重置操作
 
@@ -29,11 +29,11 @@ ms.locfileid: "56547610"
 | --- | --- | --- | --- | --- |
 | MBIM_CID_MS_DEVICE_RESET | 10 | Y | N | N |
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 |   | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 空 | 不适用 | 不适用 |
+| Command | 空 | 不适用 | 不适用 |
 | 响应 | 空 | 不适用 | 不适用 |
 
 ### <a name="query"></a>查询

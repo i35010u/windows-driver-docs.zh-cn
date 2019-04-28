@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c141cffa79d9188d7fff476f776d4aecd26052
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344673"
 ---
-# <a name="example-4-sequence-numbers"></a>示例 4:序列号
+# <a name="example-4-sequence-numbers"></a>示例 4：序列号
 
 
 以下命令在输出文件中包含消息的本地或全局序列的号。 如果没有生成序列号，序列字段将包含零。

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9804d7d615b85fadffe04fe01ccd8e998c2f03f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349890"
 ---
 # <a name="gui-mode-phase-of-the-network-upgrade-process"></a>网络升级过程的 GUI 模式阶段
 

@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cd78bd2a9304cd6cfe3732189fc00828d43b17f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345537"
 ---
 # <a name="technique-1-defining-a-64bit-field"></a>方法 1：定义一个"64 位"字段
 

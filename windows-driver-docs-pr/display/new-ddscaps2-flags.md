@@ -1,6 +1,6 @@
 ---
-title: 新 DDSCAPS2 标志
-description: 新 DDSCAPS2 标志
+title: 新的 DDSCAPS2 标志
+description: 新的 DDSCAPS2 标志
 ms.assetid: a5171865-7339-422f-8470-154a0aadc496
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示、 演示文稿
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9938243a85570bd1bdcb85e5ef95200bdc7ed24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345554"
 ---
-# <a name="new-ddscaps2-flags"></a>新 DDSCAPS2 标志
+# <a name="new-ddscaps2-flags"></a>新的 DDSCAPS2 标志
 
 
 ## <span id="ddk_new_ddscaps2_flags_gg"></span><span id="DDK_NEW_DDSCAPS2_FLAGS_GG"></span>

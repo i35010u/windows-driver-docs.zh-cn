@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_SUPPORTED 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b121850c66dc8990be0701c6e5d5dd05d33ea0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348189"
 ---
 # <a name="oidgenmediasupported"></a>OID\_GEN\_媒体\_支持
 

@@ -1,6 +1,6 @@
 ---
-title: 使用 DSS MB 调制解调器日志记录
-description: 使用 DSS MB 调制解调器日志记录
+title: 使用 DSS 进行 MB 调制解调器日志记录
+description: 使用 DSS 进行 MB 调制解调器日志记录
 ms.assetid: A40EAF7C-A808-4C2D-848C-EAD2D639EB55
 keywords:
 - 使用 DSS，移动宽带调制解调器使用 DSS 进行日志记录的 MB 调制解调器日志记录
@@ -8,13 +8,13 @@ ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d9f4869fed3c1929f35520eccc6811d7d24ed7e8
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343304"
 ---
-# <a name="mb-modem-logging-with-dss"></a>使用 DSS MB 调制解调器日志记录
+# <a name="mb-modem-logging-with-dss"></a>使用 DSS 进行 MB 调制解调器日志记录
 
 ## <a name="overview"></a>概述
 
@@ -98,7 +98,7 @@ Moddem 日志记录使用 MBIM 数据服务 Stream (DSS) 传输的日志记录�
 
 上述 MBIM_MODEM_LOGGING_CONFIG 结构中使用以下 MBIM_LOGGING_LEVEL_CONFIG 枚举。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 在任务栏的搜索框中键入 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMLoggingLevelProd | 0 | 适用于从零售或生产环境的遥测数据收集。 生成的日志应 capsule 大小且包含密钥的调制解调器或 MBB 状态或失败信息仅。 |
 | MBIMLoggingLevelLabVerbose | 1 | 欠成熟与适用于 MBB 产品的开发。 详细完整堆栈捕获的调制解调器。 生成的调制解调器捕获应启用 IHV 重播，并完全恢复日志捕获。 |

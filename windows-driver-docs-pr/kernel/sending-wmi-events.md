@@ -1,6 +1,6 @@
 ---
-title: 发送的 WMI 事件
-description: 发送的 WMI 事件
+title: 发送 WMI 事件
+description: 发送 WMI 事件
 ms.assetid: 0d5e62f1-b84e-42b7-be40-8665f0b58ba8
 keywords:
 - WMI WDK 内核事件跟踪
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c08a40310671c2f49f3b48326c82738b06774a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342647"
 ---
-# <a name="sending-wmi-events"></a>发送的 WMI 事件
+# <a name="sending-wmi-events"></a>发送 WMI 事件
 
 
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6acf19daa493a712d31474b31092d11bce3f0c46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342870"
 ---
 # <a name="handling-sd-card-interrupts"></a>处理 SD 卡中断
 

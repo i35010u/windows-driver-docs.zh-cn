@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 173a4fd8912f5bd27b8230b44b1dc800cd6202e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343622"
 ---
 # <a name="managing-ndis-network-interfaces"></a>管理 NDIS 网络接口
 

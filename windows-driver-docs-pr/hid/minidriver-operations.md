@@ -5,11 +5,11 @@ ms.assetid: 3A8F5545-F8EB-47E2-989D-7DE83E32110E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c9e0ae2cf19ed107445480cef430d4b13a61f02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346217"
 ---
 # <a name="minidrivers-and-the-hid-class-driver"></a>微型驱动程序和 HID 类驱动程序
 

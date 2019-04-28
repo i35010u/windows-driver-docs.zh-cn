@@ -1,6 +1,6 @@
 ---
-title: 日志记录驱动程序错误
-description: 日志记录驱动程序错误
+title: 记录驱动程序错误
+description: 记录驱动程序错误
 ms.assetid: 7deb2a9a-70aa-4660-a0c8-e118e03eef3b
 keywords:
 - 错误日志 WDK 显示
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a28cea0f52cff495f1f2a7fcc1fc0f849a9ce087
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347540"
 ---
-# <a name="logging-driver-errors"></a>日志记录驱动程序错误
+# <a name="logging-driver-errors"></a>记录驱动程序错误
 
 
 Microsoft DirectX 图形内核子系统 (*Dxgkrnl.sys*) 记录向内存中的日志显示驱动程序相关的错误、 断言、 警告和事件 (在*Watchdog.sys*)。

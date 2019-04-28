@@ -1,6 +1,6 @@
 ---
-title: 添加对整体化打印驱动程序的打印票证支持
-description: 添加对整体化打印驱动程序的打印票证支持
+title: 将打印票证支持添加到一体式打印驱动程序
+description: 将打印票证支持添加到一体式打印驱动程序
 ms.assetid: 82c65b9a-6e7b-4acd-93aa-33d696ddc421
 keywords:
 - 打印机接口 DLL WDK、 打印票证支持
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f267349111f0c5059197d720479957a1afc7ab5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342261"
 ---
-# <a name="adding-print-ticket-support-to-monolithic-print-drivers"></a>添加对整体化打印驱动程序的打印票证支持
+# <a name="adding-print-ticket-support-to-monolithic-print-drivers"></a>将打印票证支持添加到一体式打印驱动程序
 
 
 整体化打印驱动程序，以提供打印票证支持，并且支持[打印票证和打印功能技术](print-ticket-and-print-capabilities-technologies.md)，它必须实现[IPrintTicketProvider 接口](https://msdn.microsoft.com/library/windows/hardware/ff554375)以及使用由打印驱动程序的 COM 样式调用方法为提供必要的 IClassFactory 接口支持。 最小值，该驱动程序必须支持在 OpenPrinter 期间调用 IPrintTicketProvider 接口的方法调用顺序如下所示：

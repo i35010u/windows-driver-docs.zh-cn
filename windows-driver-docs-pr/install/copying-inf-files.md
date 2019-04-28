@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c64e22b166a4da7de7cd6dc969da2862725be3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344301"
 ---
 # <a name="copying-inf-files"></a>复制 INF 文件
 

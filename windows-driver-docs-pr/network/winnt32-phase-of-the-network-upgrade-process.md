@@ -1,6 +1,6 @@
 ---
-title: Winnt32 网络升级过程阶段
-description: Winnt32 网络升级过程阶段
+title: 网络升级过程的 Winnt32 阶段
+description: 网络升级过程的 Winnt32 阶段
 ms.assetid: a83edcfb-e075-4763-8a6a-33879ccf2357
 keywords:
 - 网络组件升级，WDK 阶段
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0298b9c63779032a3d3fb80fd2fbef8c3d850aea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342902"
 ---
-# <a name="winnt32-phase-of-the-network-upgrade-process"></a>Winnt32 网络升级过程阶段
+# <a name="winnt32-phase-of-the-network-upgrade-process"></a>网络升级过程的 Winnt32 阶段
 
 
 

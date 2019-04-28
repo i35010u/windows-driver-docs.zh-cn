@@ -5,13 +5,13 @@ ms.assetid: b8c7301b-4a34-4f03-8c5e-ba43a1fb3681
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e11c0db223385480076b1aea7d84458541516dc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347714"
 ---
-# <a name="example-4-setting-multiple-flags"></a>示例 4:设置多个标志
+# <a name="example-4-setting-multiple-flags"></a>示例 4：设置多个标志
 
 
 ## <span id="ddk_example_4___setting_multiple_flags_dtools"></span><span id="DDK_EXAMPLE_4___SETTING_MULTIPLE_FLAGS_DTOOLS"></span>

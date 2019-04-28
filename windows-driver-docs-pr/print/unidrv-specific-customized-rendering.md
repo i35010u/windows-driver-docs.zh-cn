@@ -1,6 +1,6 @@
 ---
-title: 特定于 Unidrv 的自定义呈现
-description: 特定于 Unidrv 的自定义呈现
+title: Unidrv 特定的自定义渲染
+description: Unidrv 特定的自定义渲染
 ms.assetid: aff39531-ca40-4985-b458-c6217f8a2e5c
 keywords:
 - 呈现插件 WDK 打印 Unidrv
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6fc1aa2fe2474707dc16abd14979a3e1c79a6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346553"
 ---
-# <a name="unidrv-specific-customized-rendering"></a>特定于 Unidrv 的自定义呈现
+# <a name="unidrv-specific-customized-rendering"></a>Unidrv 特定的自定义渲染
 
 
 

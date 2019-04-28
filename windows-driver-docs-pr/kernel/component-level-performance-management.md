@@ -5,16 +5,16 @@ ms.assetid: D5341D6D-7C71-43CB-9C70-7E939B32C33F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e10d95d11c5d8620ab9f84a5f7dfe90f6090f6b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343685"
 ---
 # <a name="component-level-performance-state-management"></a>组件级性能状态管理
 
 
-电源管理框架 (PoFx) 从 Windows 10 开始，使驱动程序来定义一个或多个集的设备中的单个组件可单独调整性能状态。 该驱动程序可以使用性能状态来限制组件的工作负荷以提供其当前需求的足够性能。
+电源管理框架 (PoFx) 从 Windows 10 开始，使驱动程序来定义一个或多个集的设备中的单个组件可单独调整性能状态。 驱动程序可以使用性能状态来限制组件的工作负荷，以提供刚好足够的性能来满足工作负荷的当前需求。
 
 ## <a name="overview-of-performance-states"></a>性能状态概述
 

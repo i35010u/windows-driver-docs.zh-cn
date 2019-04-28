@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 670a60f3a91c281eafd80048ca845853fcf2c39b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342096"
 ---
 # <a name="bug-check-0xf3-disorderlyshutdown"></a>Bug 检查 0xF3：DISORDERLY\_关闭
 

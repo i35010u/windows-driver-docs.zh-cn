@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0da3421309af849261e51f07ac3f77c518ad13bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344797"
 ---
-# <a name="example-global-logger-provider"></a>示例：全局记录器提供程序
+# <a name="example-global-logger-provider"></a>例如：全局记录器提供程序
 
 
 下面的屏幕截图所示**GlobalLogger**子项，其中包含配置条目[全局记录器跟踪会话](global-logger-trace-session.md)。 下**GlobalLogger**子项**ControlGUID**表示记录到全局记录器跟踪会话的跟踪提供程序的子项。 **ControlGUID**子项已选中，然后在右窗格中显示子项中的项。

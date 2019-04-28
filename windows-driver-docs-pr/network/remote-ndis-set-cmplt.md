@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_SET_CMPLT
-Description: A Remote NDIS device will respond to a REMOTE_NDIS_SET_MSG message with a REMOTE_NDIS_SET_CMPLT message.
+Description: 远程 NDIS 设备将响应将 REMOTE_NDIS_SET_MSG 消息 REMOTE_NDIS_SET_CMPLT 消息。
 ms.assetid: 97436a5f-7516-46cf-b789-a6b1c8c067a2
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3664bd100a640d6ece3441b68a3f1242c60e595
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343221"
 ---
 # <a name="remotendissetcmplt"></a>远程\_NDIS\_设置\_CMPLT
 
@@ -71,7 +71,7 @@ ms.locfileid: "56575195"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">

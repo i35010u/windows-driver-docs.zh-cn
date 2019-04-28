@@ -5,11 +5,11 @@ ms.assetid: 9BB77BB8-1382-4F65-A4E8-80E229F43425
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 457f1a5bfbfb09344ff7996d10f3b68c43402b41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342976"
 ---
 # <a name="porting-packet-processing-drivers-and-apps-to-wfp"></a>将数据包处理驱动程序和应用移植到 WFP
 

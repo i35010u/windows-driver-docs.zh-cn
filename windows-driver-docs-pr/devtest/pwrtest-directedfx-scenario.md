@@ -5,11 +5,11 @@ ms.assetid: edf70fce-4c2a-4747-854f-feb919e01324
 ms.date: 03/27/2019
 ms.custom: 19H1
 ms.openlocfilehash: 24716ed7cc721c67340843f37d1285ddae9b6a7b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345753"
 ---
 # <a name="pwrtest-directedfx-scenario"></a>PwrTest DirectedFx 方案
 

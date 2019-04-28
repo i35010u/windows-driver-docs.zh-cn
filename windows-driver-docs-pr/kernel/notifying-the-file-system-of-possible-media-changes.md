@@ -1,6 +1,6 @@
 ---
-title: 通知可能的介质更改的文件系统
-description: 通知可能的介质更改的文件系统
+title: 向文件系统通知可能发生了媒体更改
+description: 向文件系统通知可能发生了媒体更改
 ms.assetid: b1956370-ec9c-4a43-90a8-12705d28e314
 keywords:
 - 可移动媒体 WDK 内核的媒体的更改通知
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78c0f16444119e460ddab1434f8422769310ca2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341959"
 ---
-# <a name="notifying-the-file-system-of-possible-media-changes"></a>通知可能的介质更改的文件系统
+# <a name="notifying-the-file-system-of-possible-media-changes"></a>向文件系统通知可能发生了媒体更改
 
 
 

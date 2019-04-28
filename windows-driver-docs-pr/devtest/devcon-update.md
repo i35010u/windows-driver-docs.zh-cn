@@ -1,5 +1,5 @@
 ---
-title: DevCon 更新
+title: DevCon Update
 description: 强制将指定的设备的当前设备驱动程序替换指定的 INF 文件中列出的驱动程序。 仅在本地计算机上有效。
 ms.assetid: c07d7abe-31d8-4a8d-87da-8db649710c15
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2922b2e9a0cd45183bf56d1b4145437133f1d956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346998"
 ---
-# <a name="devcon-update"></a>DevCon 更新
+# <a name="devcon-update"></a>DevCon Update
 
 
 强制将指定的设备的当前设备驱动程序替换指定的 INF 文件中列出的驱动程序。 仅在本地计算机上有效。

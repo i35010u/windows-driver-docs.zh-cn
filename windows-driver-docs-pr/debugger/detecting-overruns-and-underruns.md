@@ -1,17 +1,17 @@
 ---
-title: 检测溢出和不足
-description: 检测溢出和不足
+title: 检测超量运行和欠量运行
+description: 检测超量运行和欠量运行
 ms.assetid: d7d282c8-adde-49fc-a20e-d633abd6dd3f
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14eed792f1d8c57a75d125d84fbffb4e2ddd025d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346332"
 ---
-# <a name="detecting-overruns-and-underruns"></a>检测溢出和不足
+# <a name="detecting-overruns-and-underruns"></a>检测超量运行和欠量运行
 
 
 ## <span id="ddk_detecting_overruns_and_underruns_dtools"></span><span id="DDK_DETECTING_OVERRUNS_AND_UNDERRUNS_DTOOLS"></span>

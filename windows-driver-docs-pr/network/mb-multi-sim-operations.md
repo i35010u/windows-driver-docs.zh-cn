@@ -4,11 +4,11 @@ description: MB 多 SIM 操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ed574ad545900fa22d779253824d49c32d4205c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343362"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -193,11 +193,11 @@ InformationBuffer MBIM_COMMAND_MSG 从头计算以下 CID 部分中的所有偏�
 
 不适用。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SYS_CAPS_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -214,7 +214,7 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 应在 InformationBuffer 中使用以下 MBIM_SYS_CAPS_INFO 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | 报告该调制解调器的 MBB 实例数 |
 | 4 | 4 | NumberOfSlots | UINT32 | 可在该调制解调器上的物理 UICC 槽数 |
@@ -241,11 +241,11 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 此 CID 仍是仅限查询的将返回 MBIM_MS_DEVICE_CAPS_INFO_V2 MSUUID_BASIC_CONNECT 和 CID MBIM_CID_MS_DEVICE_CAPS_V2 响应与 MBIM MBIM_COMMAND_MSG 结构提供服务。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | 不适用 | 不适用 |
+| Command | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_DEVICE_CAPS_INFO_V2 | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -262,7 +262,7 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 应在 InformationBuffer 中使用以下 MBIM_DEVICE_CAPS_INFO_V2 结构。 与公共 USB MBIM 标准 10.5.1 节中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构有一个名为的新字段*DeviceIndex*。 除非另有说明，字段说明表 10-14 中的公共标准 USB MBIM 在此处适用。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
@@ -305,11 +305,11 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO。 MB
 
 不适用。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
+| Command | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -322,7 +322,7 @@ InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
 
 应在 InformationBuffer 中使用以下 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MapCount (MC) | UINT32 | 数映射，也始终等于的设备/执行程序数量。 |
 | 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | *第 i 个*对此列表中，其中 (0 < = i < = (MC-1)) 记录的当前映射到的槽索引*第 i 个*设备/执行程序。 对中的第一个元素是与 DataBuffer，计算从 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 此结构的开头 （偏移量为 0） 到 UINT32 中的偏移量的 4 字节字段。 该对的第二个元素是记录元素的一个 4 字节大小。 因为槽索引的类型为 UINT32，对中的第二个元素始终为 4。 |
@@ -359,11 +359,11 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 事件 InformationBuffer 包含 MBIM_MS_SLOT_INFO 结构。 该函数发送该事件的事件中复合槽/卡状态更改。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
+| Command | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>数据结构
@@ -372,7 +372,7 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SLOT_INFO_REQ 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 要查询的槽的索引。 |
 
@@ -384,7 +384,7 @@ MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 结构。 MBIM_C
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SLOT_INFO 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 槽的索引。 |
 | 4 | 4 | 状态 | MBIM_MS_UICC_SLOT_STATE | 此槽和数据卡 （如果适用） 的状态。 |

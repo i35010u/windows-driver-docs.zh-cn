@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c51299daa2df05c73f735d0be8207d8808901357
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347617"
 ---
 # <a name="irqlsendrcvfunction-rule-ndis"></a>Irql\_SendRcv\_函数规则 (ndis)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56546527"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisCancelSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff561623)

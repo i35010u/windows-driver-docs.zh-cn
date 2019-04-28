@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_LISTEN_DURATION 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 105b45d743e363ad9e4eb043a6d39a2ab41efd85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342595"
 ---
 # <a name="wditlvp2plistenduration"></a>WDI\_TLV\_P2P\_侦听\_持续时间
 

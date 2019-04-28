@@ -1,5 +1,5 @@
 ---
-title: 查看和编辑在 WinDbg 中的内存
+title: 在 WinDbg 中查看和编辑内存
 description: 在 WinDbg 中，可以查看和编辑内存，通过输入命令或通过使用内存窗口。
 ms.assetid: 4ac3b94c-5d92-4074-bf79-6da151ce52c8
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc1f6a57867190c3144b344508ac07d70ed35279
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351815"
 ---
-# <a name="viewing-and-editing-memory-in-windbg"></a>查看和编辑在 WinDbg 中的内存
+# <a name="viewing-and-editing-memory-in-windbg"></a>在 WinDbg 中查看和编辑内存
 
 
 在 WinDbg 中，可以查看和编辑内存，通过输入命令或通过使用内存窗口。

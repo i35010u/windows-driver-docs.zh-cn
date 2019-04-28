@@ -1,14 +1,14 @@
 ---
-Description: The goal of hub testing is to generate a complete set of possible traffic patterns from devices. You can test disconnect scenarios by adding an upstream SuperMUTT pack.
+Description: 中心测试的目标是从设备中生成一组完整的可能的通信模式。 你可以测试通过添加上游的 SuperMUTT 包来断开连接的方案。
 title: 测试与 MUTT 设备的 USB 集线器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a153cc9039ce5787d07348e8d56a5c7f1ac9b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342164"
 ---
 # <a name="usb-hub-testing-with-mutt-devices"></a>测试与 MUTT 设备的 USB 集线器
 

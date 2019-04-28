@@ -1,17 +1,17 @@
 ---
-title: 电源框架延迟模糊
+title: 电源框架延迟模糊处理
 description: 电源框架延迟模糊选项随机排列线程计划来帮助检测使用电源管理框架 (PoFx) 的驱动程序中的并发 bug。
 ms.assetid: A33DEA5B-4758-456A-B4CF-F036CB511A1F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f3268173a4500e1111aa08ed4027f5190add8fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343102"
 ---
-# <a name="power-framework-delay-fuzzing"></a>电源框架延迟模糊
+# <a name="power-framework-delay-fuzzing"></a>电源框架延迟模糊处理
 
 
 电源框架延迟模糊选项随机排列线程计划，以帮助驱动程序中使用的检测并发 bug[电源管理框架 (PoFx)](https://msdn.microsoft.com/library/windows/hardware/hh406637)。 对不直接利用电源管理框架 (PoFx) 的驱动程序不建议使用此选项。

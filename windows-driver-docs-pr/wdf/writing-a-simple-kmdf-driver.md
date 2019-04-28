@@ -1,5 +1,5 @@
 ---
-title: 编写的简单 WDF 驱动程序
+title: 编写简单的 WDF 驱动程序
 description: 本主题介绍您需要自己编写的内核模式驱动程序框架 (KMDF) 驱动程序的最少功能。 需要相同的最小功能来编写在 UMDF 版本 2 中启动的用户模式驱动程序框架 (UMDF) 驱动程序。
 ms.assetid: 6225b81c-e0da-473a-ba38-24846436dae7
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c3caa669af0041b3b59716313ee1ce9682c3db3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347997"
 ---
-# <a name="writing-a-simple-wdf-driver"></a>编写的简单 WDF 驱动程序
+# <a name="writing-a-simple-wdf-driver"></a>编写简单的 WDF 驱动程序
 
 
 本主题介绍您需要自己编写的内核模式驱动程序框架 (KMDF) 驱动程序的最少功能。 需要相同的最小功能来编写在 UMDF 版本 2 中启动的用户模式驱动程序框架 (UMDF) 驱动程序。

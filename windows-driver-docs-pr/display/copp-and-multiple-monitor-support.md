@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aab7bad643d839cfc720262a25e40b4fc467dcb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346935"
 ---
 # <a name="copp-and-multiple-monitor-support"></a>COPP 和多监视器支持
 

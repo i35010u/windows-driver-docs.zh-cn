@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad23cac352db91acafb9a1526b3897c7e3ed591
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347391"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 

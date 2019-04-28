@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e7a94cc1a773805fe4043c21b6d746fd87677ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342807"
 ---
 # <a name="removelock-rule-wdm"></a>RemoveLock 规则 (wdm)
 

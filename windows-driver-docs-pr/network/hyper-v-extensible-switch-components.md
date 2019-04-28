@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机组件
-description: HYPER-V 可扩展交换机组件
+title: Hyper-V 可扩展交换机的组件
+description: Hyper-V 可扩展交换机的组件
 ms.assetid: 510A4D75-8DB4-46D7-BA54-248ED4FEC349
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cff31c4e67ebb02218729c2cc1afa4914bce076
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341953"
 ---
-# <a name="hyper-v-extensible-switch-components"></a>HYPER-V 可扩展交换机组件
+# <a name="hyper-v-extensible-switch-components"></a>Hyper-V 可扩展交换机的组件
 
 
 从 Windows Server 2012 开始，HYPER-V 可扩展交换机支持允许 NDIS 筛选器驱动程序的接口 (称为*HYPER-V 可扩展交换机扩展*) 要在可扩展交换机驱动程序堆栈中绑定。 这允许扩展监视、 修改和将数据包转发到可扩展的交换机端口。 这也允许扩展来删除、 重定向，或源自 HYPER-V 分区都使用的端口的数据包。

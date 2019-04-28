@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 351a02fab804eae8ca4aac99a5356b3b3bcb5830
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342981"
 ---
 # <a name="control-panel-requirements"></a>控制面板要求
 

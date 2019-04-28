@@ -5,11 +5,11 @@ ms.assetid: B4D40C6B-DCEF-4661-9DF2-411326870014
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c088586551098a1bf019f883ecf6fbf7a0fde7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342952"
 ---
 # <a name="iddcx-objects"></a>IddCx 对象
 

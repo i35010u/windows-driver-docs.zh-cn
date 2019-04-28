@@ -1,6 +1,6 @@
 ---
-title: 设备处于工作状态 D0
-description: 设备处于工作状态 D0
+title: 设备工作状态 D0
+description: 设备工作状态 D0
 ms.assetid: 6b0ec03a-eaf1-4c96-aaae-dfe821583787
 keywords:
 - 设备电源状态 WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a1621674ba0f63155e7ccd32b91da8e59007e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342729"
 ---
-# <a name="device-working-state-d0"></a>设备处于工作状态 D0
+# <a name="device-working-state-d0"></a>设备工作状态 D0
 
 
 

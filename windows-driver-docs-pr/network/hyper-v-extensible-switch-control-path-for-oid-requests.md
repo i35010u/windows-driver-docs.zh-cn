@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机的 OID 请求的控制路径
-description: HYPER-V 可扩展交换机的 OID 请求的控制路径
+title: OID 请求的 Hyper-V 可扩展交换机控制路径
+description: OID 请求的 Hyper-V 可扩展交换机控制路径
 ms.assetid: 69ABBD54-F794-4A0A-8F50-915CA1EDD95C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9795b9d7167f923722434b34fe76a46950f03c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349620"
 ---
-# <a name="hyper-v-extensible-switch-control-path-for-oid-requests"></a>HYPER-V 可扩展交换机的 OID 请求的控制路径
+# <a name="hyper-v-extensible-switch-control-path-for-oid-requests"></a>OID 请求的 Hyper-V 可扩展交换机控制路径
 
 
 本主题讨论在之间移动的 HYPER-V 可扩展交换机对象标识符 (OID) 请求的控制路径。

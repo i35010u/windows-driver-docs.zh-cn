@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a42d62abc4e6f4866354fd253d3551805daecec2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344719"
 ---
-# <a name="example-13-creating-a-global-logger-session"></a>示例 13:创建全局记录器会话
+# <a name="example-13-creating-a-global-logger-session"></a>示例 13：创建全局记录器会话
 
 
 ## <span id="ddk_controlling_a_global_logger_session_tools"></span><span id="DDK_CONTROLLING_A_GLOBAL_LOGGER_SESSION_TOOLS"></span>

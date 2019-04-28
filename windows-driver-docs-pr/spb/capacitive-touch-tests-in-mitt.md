@@ -1,17 +1,17 @@
 ---
-title: 在 MITT 电容式触摸测试
+title: MITT 中的电容式触控测试
 description: MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容式应用程序测试工具）。
 ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e98f80fa90859a2ca62803a0611608c4d0d95c2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348151"
 ---
-# <a name="capacitive-touch-tests-in-mitt"></a>在 MITT 电容式触摸测试
+# <a name="capacitive-touch-tests-in-mitt"></a>MITT 中的电容式触控测试
 
 
 **上次更新时间**
@@ -60,7 +60,7 @@ MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容�
 2.  运行\[WDTF 目录\]\\UnRegisterWDTF.exe
 3.  运行\[WDTF 目录\]\\RegisterWDTF.exe
 
-## <a name="example-sending-input-sequence"></a>示例：发送输入的序列
+## <a name="example-sending-input-sequence"></a>例如：发送输入的序列
 
 
 可以通过编程看板，在循环中运行指定的接触点序列。

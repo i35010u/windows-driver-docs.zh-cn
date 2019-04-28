@@ -5,11 +5,11 @@ ms.assetid: C4012369-F1C6-4EBC-8DAE-F4E551DE782D
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f265d1402c548515773528a57bb419c6dee6059
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346560"
 ---
 # <a name="usb-bidi-extender"></a>USB 双向扩展程序
 

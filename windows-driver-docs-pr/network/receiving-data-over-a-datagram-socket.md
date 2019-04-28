@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c0d272ce226776387d5f53a772d7cec34621541
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346067"
 ---
 # <a name="receiving-data-over-a-datagram-socket"></a>通过数据报套接字接收数据
 

@@ -5,11 +5,11 @@ ms.assetid: F2261CA6-2D7A-4499-82F9-7E2D7C9C908D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3645f6da02e6d0d1db8a939ea616b452d4531b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343513"
 ---
 # <a name="managing-switch-policies"></a>管理交换机策略
 

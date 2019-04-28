@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3c17c4cd31ffddec2b44aad9c177fb2268b8547
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342709"
 ---
 # <a name="sample-device-and-driver-configuration"></a>示例设备和驱动程序配置
 

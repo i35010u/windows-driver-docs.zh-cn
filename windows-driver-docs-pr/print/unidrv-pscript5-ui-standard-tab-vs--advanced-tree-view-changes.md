@@ -5,11 +5,11 @@ ms.assetid: 07374e07-f0ca-4e97-8e5f-e5fe54d14af4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab8047427c0a4ac56ea048916b22f694d280941
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346598"
 ---
 # <a name="unidrvpscript5-ui-standard-tab-vs-advanced-tree-view-changes"></a>Unidrv/PScript5 UI 标准选项卡与高级树视图更改
 

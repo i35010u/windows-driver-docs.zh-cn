@@ -1,6 +1,6 @@
 ---
-title: 累加性模板指令
-description: 累加性模板指令
+title: Additive 模板指令
+description: Additive 模板指令
 ms.assetid: 94883a51-a3a6-492e-9597-6a2f913d40bc
 keywords:
 - 累加性指令 WDK GDL
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b313c5588761c01a6db6cef331ccb445236dcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342219"
 ---
-# <a name="additive-template-directive"></a>累加性模板指令
+# <a name="additive-template-directive"></a>Additive 模板指令
 
 
 \***累加性**： 指令定义的模板定义的顺序。

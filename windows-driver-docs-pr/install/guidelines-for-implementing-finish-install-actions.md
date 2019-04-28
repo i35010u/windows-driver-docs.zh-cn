@@ -1,17 +1,17 @@
 ---
-title: 实现完成安装操作的准则
-description: 实现完成安装操作的准则
+title: 实施 Finish-Install 操作的指南
+description: 实施 Finish-Install 操作的指南
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 968e752fa905d35eaf7c7479ff4cff59e8995807
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342749"
 ---
-# <a name="guidelines-for-implementing-finish-install-actions"></a>实现完成安装操作的准则
+# <a name="guidelines-for-implementing-finish-install-actions"></a>实施 Finish-Install 操作的指南
 
 
 完成安装操作可以通过运行*安装程序*（安装程序类、 类共同安装程序中或设备共同安装程序）。 在其完成安装操作，安装程序可以运行可执行程序、 创建过程、 创建线程，或在设备驱动程序安装完成安装过程中执行代码。

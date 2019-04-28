@@ -1,6 +1,6 @@
 ---
-title: 将依赖项添加到依赖于配置的数据
-description: 将依赖项添加到依赖于配置的数据
+title: 将依赖项添加到配置相关的数据
+description: 将依赖项添加到配置相关的数据
 ms.assetid: 16e15147-6e83-4675-b050-cf13dcd6b397
 keywords:
 - GDL WDK 配置
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7a5ad83041e6a5b425f423676395eaf28d79e9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343171"
 ---
-# <a name="adding-dependencies-to-the-configuration-dependent-data"></a>将依赖项添加到依赖于配置的数据
+# <a name="adding-dependencies-to-the-configuration-dependent-data"></a>将依赖项添加到配置相关的数据
 
 
 **\*交换机**/**\*用例**指令进行数据依赖于使用定义的参数**\*功能** / **\*选项**指令。 构造标记**\*交换机**构造名称中定义的参数之一**\*功能**构造。 由构造标记的参数的引用**\*交换机**构造可能通过定义前面**\*功能**构造。

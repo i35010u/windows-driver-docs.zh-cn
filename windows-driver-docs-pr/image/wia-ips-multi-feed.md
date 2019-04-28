@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7aa0b980da213adfd84d18afc6c4f9b04cf5300
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348246"
 ---
 # <a name="wiaipsmultifeed"></a>WIA\_IPS\_多\_源
 

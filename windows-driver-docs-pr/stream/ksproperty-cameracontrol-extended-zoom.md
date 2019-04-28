@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e0e5dd084e5205aa23a9101cdf6c96edec0360
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341827"
 ---
 # <a name="kspropertycameracontrolextendedzoom"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_缩放
 
@@ -107,7 +107,7 @@ ms.locfileid: "56545164"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1，</p></td>
 </tr>
 <tr class="even">
@@ -115,7 +115,7 @@ ms.locfileid: "56545164"
 <td><p>这必须是<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xFFFFFFFF)</p></td>
 </tr>
 <tr class="odd">
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://msdn.microsoft.com/library/windows/hardware/dn567566" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn567566)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>)，</p></td>
 </tr>
 <tr class="even">
@@ -177,7 +177,7 @@ ms.locfileid: "56545164"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

@@ -1,17 +1,17 @@
 ---
-title: WIA 微型驱动程序进行故障排除
-description: WIA 微型驱动程序进行故障排除
+title: 排查 WIA 微型驱动程序问题
+description: 排查 WIA 微型驱动程序问题
 ms.assetid: a0944bdd-56c4-4f7b-b542-eb353cd4d1f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f79c92fbca686d31c29f6014898e5143a7c8673d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343774"
 ---
-# <a name="wia-minidriver-troubleshooting"></a>WIA 微型驱动程序进行故障排除
+# <a name="wia-minidriver-troubleshooting"></a>排查 WIA 微型驱动程序问题
 
 
 

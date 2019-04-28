@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 109ecd5c2d88808dc944af465e5f2bf168453388
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342964"
 ---
 # <a name="power-management-ndis-620"></a>电源管理 (NDIS 6.20)
 

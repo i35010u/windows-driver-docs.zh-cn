@@ -1,17 +1,17 @@
 ---
-title: 添加构造 GPD GDL 文件
-description: 添加构造 GPD GDL 文件
+title: 将构造添加到 GPD 的 GDL 文件
+description: 将构造添加到 GPD 的 GDL 文件
 ms.assetid: a0ce5a46-152f-47f3-9246-c272224d4be9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808de9030b2089929445403dec6132f79e93464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343169"
 ---
-# <a name="adding-constructs-to-your-gdl-file-for-gpd"></a>添加构造 GPD GDL 文件
+# <a name="adding-constructs-to-your-gdl-file-for-gpd"></a>将构造添加到 GPD 的 GDL 文件
 
 
 若要支持自动配置，您必须构造到 GDL 文件使用添加以下新关键字：\***BidiQuery**， \* **QueryString**， \* **BidiResponse**， \* **ResponseType**， \* **ResponseData**，并\* **BidiValue**。 这些关键字可用于指定与一个选择一项功能，并对该选项的可能响应相关联的 bidi 架构请求。

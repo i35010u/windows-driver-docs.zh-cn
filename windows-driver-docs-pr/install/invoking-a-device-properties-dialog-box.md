@@ -5,11 +5,11 @@ ms.assetid: 43164b2a-282e-4cef-8c89-b9695ab30539
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a008a406c6f6b03595d38e3edc9e2132aafae1cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346101"
 ---
 # <a name="invoking-a-device-properties-dialog-box"></a>调用设备属性对话框
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06706db926cbc3d7c062f0fabbc8042b1ef1ebe2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345437"
 ---
 # <a name="creating-a-resource-manager"></a>创建资源管理器
 

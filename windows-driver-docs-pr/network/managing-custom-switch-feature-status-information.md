@@ -5,11 +5,11 @@ ms.assetid: A1D561CC-22D8-47B6-9D95-6294B2998F3E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 228382aab92f39c7b72a618ec782ffc5bb9365c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343631"
 ---
 # <a name="managing-custom-switch-feature-status-information"></a>管理自定义交换机功能状态信息
 

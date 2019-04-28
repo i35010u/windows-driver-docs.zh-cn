@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d563a91557e1ad7b242ec669c044bff816ebdede
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346493"
 ---
 # <a name="kspropertymediaseekingpreroll"></a>KSPROPERTY\_MEDIASEEKING\_预播放
 
@@ -76,13 +76,13 @@ KSPROPERTY\_MEDIASEEKING\_预播放属性检索的以 100 毫微秒为单位对�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)

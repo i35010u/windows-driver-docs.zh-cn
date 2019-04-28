@@ -5,11 +5,11 @@ ms.assetid: 958A2588-A847-4699-9906-95FB47CA1CDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2e6759c3617c1bf5342bd3eae75e1df3baa16f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342311"
 ---
 # <a name="ndis-selective-suspend-idle-notifications"></a>NDIS 选择性挂起空闲通知
 

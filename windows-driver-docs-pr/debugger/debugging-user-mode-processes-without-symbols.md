@@ -1,19 +1,19 @@
 ---
-title: 调试用户模式进程，而无需符号
-description: 调试用户模式进程，而无需符号
+title: 不使用符号调试用户模式进程
+description: 不使用符号调试用户模式进程
 ms.assetid: ac742239-ed6b-4813-80d6-7b8eb84a0cb4
 keywords:
 - 不含符号进行调试的符号
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed71b1003b1a5f0667b8ae89bdf02ef0a18c40de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346365"
 ---
-# <a name="debugging-user-mode-processes-without-symbols"></a>调试用户模式进程，而无需符号
+# <a name="debugging-user-mode-processes-without-symbols"></a>不使用符号调试用户模式进程
 
 
 ## <span id="ddk_debugging_user_mode_processes_without_symbols_dbg"></span><span id="DDK_DEBUGGING_USER_MODE_PROCESSES_WITHOUT_SYMBOLS_DBG"></span>

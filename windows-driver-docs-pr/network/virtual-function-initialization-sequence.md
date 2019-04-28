@@ -5,11 +5,11 @@ ms.assetid: 352E12EC-FAF0-4566-8632-B6DA97ACCAD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11a86525cd4d55bba3f227d154dff8d3c02540f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345973"
 ---
 # <a name="virtual-function-initialization-sequence"></a>虚拟功能初始化序列
 

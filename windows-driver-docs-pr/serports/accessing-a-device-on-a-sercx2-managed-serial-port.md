@@ -5,18 +5,18 @@ ms.assetid: EF7F42D3-21A5-42F8-86AB-897281DF4F18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea57350c220ff0ed11be014f3d8b32beffaaf5a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345297"
 ---
 # <a name="accessing-a-device-on-a-sercx2-managed-serial-port"></a>访问 SerCx2 托管串行端口上的设备
 
 
 SerCx2 和串行控制器驱动程序合作共同管理永久连接到外围设备的串行端口。 若要访问 SerCx2 托管的串行端口上的外围设备，您外围设备的驱动程序打开串行端口的逻辑连接，并获取文件句柄来表示此连接。 然后驱动程序使用此句柄将 I/O 请求发送到端口。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

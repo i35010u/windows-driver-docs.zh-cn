@@ -5,11 +5,11 @@ ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 005cc3daaee4e66308dbbfea2e97782b4f2d7963
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346173"
 ---
 # <a name="elam-driver-requirements"></a>ELAM 驱动程序要求
 
@@ -160,8 +160,8 @@ BdCbStatusPrepareForUnload 回调 StatusType 时，这是到上午驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p>内存占用 (驱动程序 + 配置内存中的数据)</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>128kB</p></td>
 </tr>
 </tbody>

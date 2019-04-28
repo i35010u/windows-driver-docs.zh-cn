@@ -5,11 +5,11 @@ ms.assetid: C4B5976B-7655-4FD1-B415-98C256873EBC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b9c2731d4d21fc5d3b83e8f4d5b32547cbfc87ef
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350512"
 ---
 # <a name="irppending-rule-set-wdm"></a>IrpPending 规则集 (WDM)
 

@@ -5,13 +5,13 @@ ms.assetid: AF027939-06C7-435C-90D9-82272CED6A84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4d0cba0a654d8e9f6996f63e103ec601fcd0da0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344252"
 ---
-# <a name="compiling-an-ndis-640-driver"></a>编译 6.40 NDIS 驱动程序
+# <a name="compiling-an-ndis-640-driver"></a>编译 NDIS 6.40 驱动程序
 
 
 Windows 8.1 的 WDK 支持标头版本控制。 标头版本控制可确保 NDIS 6.40 驱动程序在编译时使用的合适的 NDIS 6.40 数据结构。

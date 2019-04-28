@@ -1,6 +1,6 @@
 ---
-title: Cab 文件函数
-description: Cab 文件函数
+title: Cabinet 文件函数
+description: Cabinet 文件函数
 ms.assetid: 0f72c833-6bcb-4b11-aa7e-dc5cc678836f
 keywords:
 - 安装程序 Api 函数 WDK，cabinet 文件
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c2ad124295c0e42081b0ae38e359e825fa3be5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342777"
 ---
-# <a name="cabinet-file-function"></a>Cab 文件函数
+# <a name="cabinet-file-function"></a>Cabinet 文件函数
 
 
 

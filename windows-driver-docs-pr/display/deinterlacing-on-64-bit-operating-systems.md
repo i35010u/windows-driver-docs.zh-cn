@@ -1,6 +1,6 @@
 ---
-title: 在 64 位操作系统上去隔行
-description: 在 64 位操作系统上去隔行
+title: 64 位操作系统上的反交错
+description: 64 位操作系统上的反交错
 ms.assetid: ffac0c1a-2c92-4beb-9622-26d10e1a06aa
 keywords:
 - 取消隔行扫描 WDK DirectX VA，64年位
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60ac6369578520237a9695065d6e84b5b250dd4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348900"
 ---
-# <a name="deinterlacing-on-64-bit-operating-systems"></a>在 64 位操作系统上去隔行
+# <a name="deinterlacing-on-64-bit-operating-systems"></a>64 位操作系统上的反交错
 
 
 为了确保由 32 位应用程序启动的取消隔行扫描操作已成功上运行 64 位操作系统，显示器驱动程序代码必须首先检测到应用程序是 32 位或 64 位。 若要执行检测，该驱动程序应检查**大小**的成员[ **DXVA\_DeinterlaceBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff563912)应用程序传递的结构。 DXVA 的 32 位版本的大小\_DeinterlaceBlt 小于 32 位和 64 位之间的指针大小差异由于 64 位版本的大小。 如果该驱动程序确定起始应用程序是 32 位，该驱动程序应处理取消隔行扫描操作的形式转换。 有关形式转换的详细信息，请参阅[在 64 位驱动程序中支持 32 位 I/O](https://msdn.microsoft.com/library/windows/hardware/ff563897)。

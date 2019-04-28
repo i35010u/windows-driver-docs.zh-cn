@@ -1,6 +1,6 @@
 ---
-title: 公开扩展的表面功能
-description: 公开扩展的表面功能
+title: 公开扩展图面功能
+description: 公开扩展图面功能
 ms.assetid: 833171f0-e86a-46c9-9596-87b9b292c03c
 keywords:
 - 绘图图面上的扩展的功能 WDK DirectDraw、 公开
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db1f1b89d3f6c2d508036d42090dab67f855784c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342799"
 ---
-# <a name="exposing-the-extended-surface-capabilities"></a>公开扩展的表面功能
+# <a name="exposing-the-extended-surface-capabilities"></a>公开扩展图面功能
 
 
 ## <span id="ddk_exposing_the_extended_surface_capabilities_gg"></span><span id="DDK_EXPOSING_THE_EXTENDED_SURFACE_CAPABILITIES_GG"></span>

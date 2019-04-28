@@ -1,6 +1,6 @@
 ---
-title: 网络 INF 文件中删除部分
-description: 网络 INF 文件中删除部分
+title: 网络 INF 文件中的 Remove 节
+description: 网络 INF 文件中的 Remove 节
 ms.assetid: c9be4e98-fa35-4966-895a-aebe29f16289
 keywords:
 - INF 文件 WDK 网络，删除部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e95cf8aecd7d411470c53ed8640c05b154316fdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342269"
 ---
-# <a name="remove-section-in-a-network-inf-file"></a>网络 INF 文件中删除部分
+# <a name="remove-section-in-a-network-inf-file"></a>网络 INF 文件中的 Remove 节
 
 
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f55a14ae7b0c72a0b49436fee3e8bd054ab9408e
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347839"
 ---
 # <a name="bug-check-0x138-gpiocontrollerdrivererror"></a>Bug 检查 0x138：GPIO\_控制器\_驱动程序\_错误
 

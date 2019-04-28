@@ -1,19 +1,19 @@
 ---
-title: 修改运行驱动程序堆栈
-description: 修改运行驱动程序堆栈
+title: 修改正在运行的驱动程序堆栈
+description: 修改正在运行的驱动程序堆栈
 ms.assetid: b8279471-50f4-46f5-8c77-d354dd9b94b5
 keywords:
 - 驱动程序堆栈 WDK 网络，修改正在运行的堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4db538bebf285924c017166a6aca7cca9448e4ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342287"
 ---
-# <a name="modifying-a-running-driver-stack"></a>修改运行驱动程序堆栈
+# <a name="modifying-a-running-driver-stack"></a>修改正在运行的驱动程序堆栈
 
 
 

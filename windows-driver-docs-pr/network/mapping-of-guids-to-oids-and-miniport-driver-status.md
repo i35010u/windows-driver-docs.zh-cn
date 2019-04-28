@@ -1,6 +1,6 @@
 ---
-title: 映射的 Oid 和微型端口驱动程序状态的 Guid
-description: 映射的 Oid 和微型端口驱动程序状态的 Guid
+title: 将 GUID 映射到 OID 和微型端口驱动程序状态
+description: 将 GUID 映射到 OID 和微型端口驱动程序状态
 ms.assetid: b3c9bb40-2906-4059-b9fa-06f6ababd3f2
 keywords:
 - WMI WDK 网络、 Guid
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2ebc35e7715eaacef425ba7f575c013949df08d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343476"
 ---
-# <a name="mapping-of-guids-to-oids-and-miniport-driver-status"></a>映射的 Oid 和微型端口驱动程序状态的 Guid
+# <a name="mapping-of-guids-to-oids-and-miniport-driver-status"></a>将 GUID 映射到 OID 和微型端口驱动程序状态
 
 
 

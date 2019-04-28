@@ -5,11 +5,11 @@ ms.assetid: ff401ae8-b0c5-4f20-88dd-055a14e1d065
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f2ab471bb1cef99cf832a10c1577691aa29bfd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342860"
 ---
 # <a name="unidrvpscript5-driver-ptpc-provider-implementation-behavior-changes"></a>Unidrv/PScript5 驱动程序 PT/PC 提供程序实现的行为更改
 

@@ -1,5 +1,5 @@
 ---
-title: gu （向上转）
+title: gu（向上）
 description: Gu 命令会导致目标以执行，直到当前函数已完成。
 ms.assetid: 10022292-92a4-4663-b277-26aa3c0d73a7
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 840c33d31bc3bf7358d7fdda939a35d0f2a8bea6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342030"
 ---
-# <a name="gu-go-up"></a>gu （向上转）
+# <a name="gu-go-up"></a>gu（向上）
 
 
 **Gu**命令将导致目标以执行，直到当前函数已完成。

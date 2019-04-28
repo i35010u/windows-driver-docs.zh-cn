@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee63e77c0760c1aef2619c25e18d0038da4082b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350999"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -21,9 +21,9 @@ ms.locfileid: "56568981"
 
 
 
-许多系统安全性问题所引起的不佳缓冲区处理和得到的缓冲区溢出。 不佳缓冲区处理通常是与字符串处理操作相关联。 由 C/c + + 语言运行时库提供的标准字符串操作函数 (**strcat**， **strcpy**， **sprintf**等) 不会阻止写入超出缓冲区末尾。
+许多系统安全性问题所引起的不佳缓冲区处理和得到的缓冲区溢出。 不佳缓冲区处理通常是与字符串处理操作相关联。 提供的 C 标准字符串操作函数 /C++的语言运行时库 (**strcat**， **strcpy**， **sprintf**等) 不会阻止超出缓冲区末尾的写入。
 
-两组新的字符串操作函数，称为*安全的字符串函数*，提供适当的缓冲区在代码中处理的其他处理。 这些安全的字符串函数是可在 Windows Driver Kit (WDK) 和 Microsoft Windows XP SP1 和更高版本的驱动程序开发工具包 (DDK) 和 Windows SDK。 它们旨在替换其内置的 C/c + + 对应项和由 Windows 提供的类似例程。
+两组新的字符串操作函数，称为*安全的字符串函数*，提供适当的缓冲区在代码中处理的其他处理。 这些安全的字符串函数是可在 Windows Driver Kit (WDK) 和 Microsoft Windows XP SP1 和更高版本的驱动程序开发工具包 (DDK) 和 Windows SDK。 它们旨在取代其内置的 C /C++对应的和由 Windows 提供的类似例程。
 
 一组安全的字符串函数是在内核模式代码中使用。 在名为 Ntstrsafe.h 的标头文件中，这些函数是构建出原型。 WDK 中提供了此标头文件和关联的库。
 

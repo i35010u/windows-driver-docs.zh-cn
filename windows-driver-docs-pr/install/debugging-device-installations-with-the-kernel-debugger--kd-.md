@@ -5,11 +5,11 @@ ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a236e3391cae97bd201fe6f6d8790b2a4a4923
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352085"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>使用内核调试程序 (KD) 调试设备安装
 

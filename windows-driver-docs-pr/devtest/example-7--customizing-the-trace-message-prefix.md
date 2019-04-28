@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45ef8258a2b8252951b6fd602a080af8d5cb7bb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352897"
 ---
-# <a name="example-7-customizing-the-trace-message-prefix"></a>示例 7:自定义跟踪消息前缀
+# <a name="example-7-customizing-the-trace-message-prefix"></a>示例 7：自定义跟踪消息前缀
 
 
 每条跟踪消息开头[跟踪消息前缀](trace-message-prefix.md)组成有关跟踪消息的数据。 跟踪消息前缀的格式存储在 %跟踪\_格式\_前缀 %环境变量。 通过更改环境变量的值，可以自定义要显示有关中对您最有用的格式的跟踪消息所需的数据的跟踪消息前缀。 中默认跟踪消息前缀的变量和可以使用跟踪消息前缀中的所有变量都跟踪消息前缀主题中所述。

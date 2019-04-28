@@ -5,11 +5,11 @@ ms.assetid: 8ce311d6-a182-4d04-a453-81f6abe2043b
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c8b605a0430e60956392ffbcea88bd3d58300293
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344913"
 ---
 # <a name="boot-parameters-to-test-drivers-for-multiple-processor-group-support"></a>用于测试驱动程序是否支持多个处理器组的启动参数
 

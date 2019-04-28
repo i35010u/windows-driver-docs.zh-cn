@@ -1,19 +1,19 @@
 ---
-title: 协议驱动程序中接收数据
-description: 协议驱动程序中接收数据
+title: 在协议驱动程序中接收数据
+description: 在协议驱动程序中接收数据
 ms.assetid: 758c6a86-6704-410b-ba13-bf589b1e330f
 keywords:
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd6d71ac8c24e7ea5d063cb70d0525a31a13202e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342921"
 ---
-# <a name="receiving-data-in-protocol-drivers"></a>协议驱动程序中接收数据
+# <a name="receiving-data-in-protocol-drivers"></a>在协议驱动程序中接收数据
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 软件跟踪工具的调查
-description: 软件跟踪工具的调查
+title: 软件跟踪工具调查
+description: 软件跟踪工具调查
 ms.assetid: d6b5d131-ed03-4961-9680-1c4ded35de96
 keywords:
 - 软件跟踪 WDK，列出工具
@@ -22,13 +22,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b61d157a36319926691e98acba80ca3e2bb05e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347614"
 ---
-# <a name="survey-of-software-tracing-tools"></a>软件跟踪工具的调查
+# <a name="survey-of-software-tracing-tools"></a>软件跟踪工具调查
 
 
 ## <span id="ddk_survey_of_software_tracing_tools_tools"></span><span id="DDK_SURVEY_OF_SOFTWARE_TRACING_TOOLS_TOOLS"></span>

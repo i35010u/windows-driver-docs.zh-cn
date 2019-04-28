@@ -1,6 +1,6 @@
 ---
-title: 身份欺骗
-description: 身份欺骗
+title: 欺骗身份
+description: 欺骗身份
 ms.assetid: adc0b986-a8c2-45ce-a4d5-9d4d867603b5
 keywords:
 - 威胁建模 WDK 文件系统中，身份欺骗
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe71c0ab36a0922ce1fc23e784a9c217d555cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344433"
 ---
-# <a name="spoofing-identity"></a>身份欺骗
+# <a name="spoofing-identity"></a>欺骗身份
 
 
 ## <span id="ddk_spoofing_identity_if"></span><span id="DDK_SPOOFING_IDENTITY_IF"></span>

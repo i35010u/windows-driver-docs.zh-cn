@@ -1,6 +1,6 @@
 ---
-title: 多个会话复制保护
-description: 多个会话复制保护
+title: 多会话复制保护
+description: 多会话复制保护
 ms.assetid: f6ac9854-3326-48da-9153-1eec596a157b
 keywords:
 - 复制保护 WDK 微型端口，多个会话
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c35ad31da613268a8b9a77de6ef7d01dbd5e22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345583"
 ---
-# <a name="multiple-session-copy-protection"></a>多个会话复制保护
+# <a name="multiple-session-copy-protection"></a>多会话复制保护
 
 
 ## <span id="ddk_multiple_session_copy_protection_gg"></span><span id="DDK_MULTIPLE_SESSION_COPY_PROTECTION_GG"></span>

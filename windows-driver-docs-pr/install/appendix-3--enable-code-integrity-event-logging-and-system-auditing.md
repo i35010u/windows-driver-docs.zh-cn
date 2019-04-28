@@ -1,20 +1,20 @@
 ---
-title: 启用代码完整性事件日志记录和审核系统
+title: 启用代码完整性事件日志记录和系统审核
 description: 介绍如何启用代码完整性事件日志记录和审核系统。
 ms.assetid: D17C64F1-B295-4EC1-B0D0-F1A119D77F64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa5f52d76a41d18bda2c3d1de153f86a901b5a1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342008"
 ---
-# <a name="appendix-3-enable-code-integrity-event-logging-and-system-auditing"></a>附录 3:启用代码完整性事件日志记录和审核系统
+# <a name="appendix-3-enable-code-integrity-event-logging-and-system-auditing"></a>附录 3：启用代码完整性事件日志记录和系统审核
 
 
-## <a name="enable-code-integrity-event-logging-and-system-auditing"></a>启用代码完整性事件日志记录和审核系统
+## <a name="enable-code-integrity-event-logging-and-system-auditing"></a>启用代码完整性事件日志记录和系统审核
 
 
 *从节选*[代码完整性事件日志记录和审核系统](enabling-code-integrity-event-logging-and-system-auditing.md):

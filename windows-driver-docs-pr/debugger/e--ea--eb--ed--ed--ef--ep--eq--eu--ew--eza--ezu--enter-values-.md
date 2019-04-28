@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f6d3ea07a9370798d35c9099ac3837a7b917b23
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348479"
 ---
 # <a name="e-ea-eb-ed-ed-ef-ep-eq-eu-ew-eza-enter-values"></a>电子、 ea、 eb、 ed、 eD、 ef、 ep、 eq、 欧盟、 的新增功能，eza （输入值）
 
@@ -147,7 +147,7 @@ e Address [Values]
 
 数字值将被解释为当前基数 （16、 10 或 8） 中的数字。 若要更改默认基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令。 可以通过指定重写默认基数**0x**前缀 （十六进制） **0n**前缀 （十进制） **0t**前缀 （八进制） 或**0y**前缀 （二进制）。
 
-**请注意**  默认基数以不同方式行为时正在使用 c + + 表达式。 请参阅[评估表达式](evaluating-expressions.md)有关详细信息。
+**请注意**  的默认基数以不同方式行为时C++使用表达式。 请参阅[评估表达式](evaluating-expressions.md)有关详细信息。
 
  
 

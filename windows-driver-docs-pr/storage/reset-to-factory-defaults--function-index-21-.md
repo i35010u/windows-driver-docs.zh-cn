@@ -1,17 +1,17 @@
 ---
-title: 重置为出厂默认值 （函数索引 21）
+title: 重置为出厂默认设置（功能索引 21）
 description: 此函数将返回到供应商预先配置的设置重置 NVDIMM N。
 ms.assetid: 64CEF5C8-FC2A-4C6E-829C-27E18A4EDC26
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bb6598830bb7efc03f016b22dfe2949a2904eb42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346544"
 ---
-# <a name="reset-to-factory-defaults-function-index-21"></a>重置为出厂默认值 （函数索引 21）
+# <a name="reset-to-factory-defaults-function-index-21"></a>重置为出厂默认设置（功能索引 21）
 
 
 此函数将返回到供应商预先配置的设置重置 NVDIMM N。
@@ -59,7 +59,7 @@ ms.locfileid: "56540428"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

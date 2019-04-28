@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a3d735b1c176b9f8d07e94c481bbbb427bd3dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343395"
 ---
 # <a name="mb-hang-detection"></a>MB 挂起检测
 

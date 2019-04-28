@@ -5,11 +5,11 @@ ms.assetid: 73D4B6DF-E667-4C71-B985-FCDC05837908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 556d04d6c369ab9c5efb8600eac68345845463a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344865"
 ---
 # <a name="debugging-ndiswifi-time-out-errors---driververifierdetectedviolation-c4"></a>调试 NDIS/WiFi 超时错误的驱动程序\_VERIFIER\_检测到\_冲突 (C4)
 
@@ -148,7 +148,7 @@ kd> dps 0x9C1F3480 + 0x10
 
 当已为计时规则生成故障转储时，则可能可以在故障转储的时间找到根本原因的。 若要进一步调试，请考虑从开始 NdisKd 调试器扩展命令，请参阅[NDIS 扩展 (Ndiskd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff552270)并[入门 NDISKD](https://go.microsoft.com/fwlink/p/?linkid=327569)。 您可能还需要看一下[事件跟踪 Windows (ETW)](event-tracing-for-windows--etw-.md)日志，如果您的驱动程序已实现 ETW。 如果未启用此规则，此错误将表现为用户应用程序挂起，或者[ **Bug 检查 0x9F:驱动程序\_电源\_状态\_失败**](https://msdn.microsoft.com/library/windows/hardware/ff559329)在最差。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [NDIS 扩展 (Ndiskd.dll)](https://msdn.microsoft.com/library/windows/hardware/ff552270)

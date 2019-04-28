@@ -5,11 +5,11 @@ ms.assetid: afa1ca68-1bc2-4a41-b8e4-c09f0a009cfe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a85bbd18733026b90925fbc9a74584074d2c83d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342401"
 ---
 # <a name="direct3d-driver-ddi"></a>Direct3D 驱动程序 DDI
 

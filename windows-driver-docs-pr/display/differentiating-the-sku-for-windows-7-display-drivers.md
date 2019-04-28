@@ -1,17 +1,17 @@
 ---
-title: Windows 7 的显示器驱动程序的区分 SKU
-description: Windows 7 的显示器驱动程序的区分 SKU
+title: 区分 Windows 7 显示驱动程序的 SKU
+description: 区分 Windows 7 显示驱动程序的 SKU
 ms.assetid: 3cf72bd5-21bc-4a7f-8c2f-98f8e70d8248
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1222b8231372d251dabb72d6e010dd8aa483b216
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342406"
 ---
-# <a name="differentiating-the-sku-for-windows-7-display-drivers"></a>Windows 7 的显示器驱动程序的区分 SKU
+# <a name="differentiating-the-sku-for-windows-7-display-drivers"></a>区分 Windows 7 显示驱动程序的 SKU
 
 
 所有 Windows Server 2008 中的框中显示驱动程序 INF 文件、 Windows Vista SP1 和更高版本中必须都包含一个值，指示的驱动程序是为仅限 Windows 客户端版本和在于不安装在 Windows 服务器 Sku 上。

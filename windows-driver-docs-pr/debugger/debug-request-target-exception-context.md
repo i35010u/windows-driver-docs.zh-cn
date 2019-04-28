@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e85b67bfb58caa4d2715150a92d8ff9dabd5877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349039"
 ---
 # <a name="debugrequesttargetexceptioncontext"></a>调试\_请求\_目标\_异常\_上下文
 
 
 调试\_请求\_目标\_异常\_上下文[**请求**](request.md)操作返回[线程上下文](https://msdn.microsoft.com/library/windows/hardware/ff554702#thread-context)中的用户模式的小型转储文件的存储事件。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 不使用。

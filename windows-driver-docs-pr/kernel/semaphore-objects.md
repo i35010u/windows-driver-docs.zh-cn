@@ -1,6 +1,6 @@
 ---
-title: 信号量对象
-description: 信号量对象
+title: 信号灯对象
+description: 信号灯对象
 ms.assetid: e6703c39-3b47-4d3b-86e7-bf2bf37af493
 keywords:
 - 内核调度程序对象 WDK，信号量对象
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d512786419ff1104986e9a8d2fe080a11f6dff6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342718"
 ---
-# <a name="semaphore-objects"></a>信号量对象
+# <a name="semaphore-objects"></a>信号灯对象
 
 
 

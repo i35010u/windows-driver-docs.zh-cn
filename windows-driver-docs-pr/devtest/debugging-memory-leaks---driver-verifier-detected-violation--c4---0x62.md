@@ -5,11 +5,11 @@ ms.assetid: CDBE9A18-4126-4AD7-8E53-6D75DCA8B022
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01151f9b50e7e8a10e8f4e8a88a16c233bb10243
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344842"
 ---
 # <a name="debugging-memory-leaks---driververifierdetectedviolation-c4-0x62"></a>调试内存泄漏的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x62
 
@@ -265,7 +265,7 @@ Pool block 9a836fd0, Size 00000030, Thread 88758740
 
 [查找内核模式内存泄漏](https://msdn.microsoft.com/library/windows/hardware/ff545403)
 
-[Static Driver Verifier](static-driver-verifier.md)
+[静态驱动程序验证程序](static-driver-verifier.md)
 
 [Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)
 

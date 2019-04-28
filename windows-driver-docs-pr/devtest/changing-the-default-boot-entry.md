@@ -1,6 +1,6 @@
 ---
-title: 更改默认启动项目
-description: 更改默认启动项目
+title: 更改默认启动项
+description: 更改默认启动项
 ms.assetid: 0dce10d4-f73a-49bd-8a24-a4aa14c82233
 keywords:
 - 默认引导条目
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5f6f5e29e977095c2b28f19feb08199c11a37a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344053"
 ---
-# <a name="changing-the-default-boot-entry"></a>更改默认启动项目
+# <a name="changing-the-default-boot-entry"></a>更改默认启动项
 
 
 ## <span id="ddk_changing_the_default_boot_entry_tools"></span><span id="DDK_CHANGING_THE_DEFAULT_BOOT_ENTRY_TOOLS"></span>

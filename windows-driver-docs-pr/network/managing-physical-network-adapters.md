@@ -5,11 +5,11 @@ ms.assetid: 564841F2-997C-44F5-8EC9-264FC9128483
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9753a7a37816966e72b4a6ac8d9650cf1f72a32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343603"
 ---
 # <a name="managing-physical-network-adapters"></a>管理物理网络适配器
 

@@ -5,11 +5,11 @@ ms.assetid: 3c011ca5-8901-4bf2-b95d-364d644cb476
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b4a3d2e7cff878921886a0b93bfa9ed6db721345
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347724"
 ---
 # <a name="example-2-setting-a-flag-by-using-a-flag-abbreviation"></a>示例 2：使用标志缩写设置标志
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e2405122012154c1a54133e0a5134942496c64fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342009"
 ---
 # <a name="using-amli-debugger-extensions"></a>使用 AMLI 调试器扩展
 

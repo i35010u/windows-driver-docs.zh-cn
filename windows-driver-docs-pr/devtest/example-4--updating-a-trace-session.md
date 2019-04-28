@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e7c333a44a22b2d25650e2782b58d90be6145e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344643"
 ---
-# <a name="example-4-updating-a-trace-session"></a>示例 4:更新跟踪会话
+# <a name="example-4-updating-a-trace-session"></a>示例 4：更新跟踪会话
 
 ## <span id="ddk_updating_a_trace_session_tools"></span><span id="DDK_UPDATING_A_TRACE_SESSION_TOOLS"></span>
 

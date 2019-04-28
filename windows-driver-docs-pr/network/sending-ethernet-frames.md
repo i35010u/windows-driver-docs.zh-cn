@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 697f0d5e4d4f1d2531db3d0469c970e45a7fa341
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346753"
 ---
 # <a name="sending-ethernet-frames"></a>发送以太网帧
 

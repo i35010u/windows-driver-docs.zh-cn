@@ -1,6 +1,6 @@
 ---
-title: MB / NDIS 6.20 交互概述
-description: MB / NDIS 6.20 交互概述
+title: MB/NDIS 6.20 接口概述
+description: MB/NDIS 6.20 接口概述
 ms.assetid: 6abde9b4-8ac2-4757-8db3-4f563fc5ed24
 keywords:
 - NDIS 6.20 WDK，移动宽带 (MB) 进行连接
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55d2751b0406ebb7eac538bba9b61f7902ba9900
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343462"
 ---
-# <a name="mb--ndis-620-interfacing-overview"></a>MB / NDIS 6.20 交互概述
+# <a name="mb--ndis-620-interfacing-overview"></a>MB/NDIS 6.20 接口概述
 
 
 本主题提供有关提供足够的背景*NDIS 6.20 规范*将放入透视 MB 驱动程序模型。 它不是 NDIS 6.20 的引用。 在此内容之间的差异的情况下， *NDIS 6.20 规范*，请参阅[NDIS 6.20](introduction-to-ndis-6-20.md)文档的完整信息。

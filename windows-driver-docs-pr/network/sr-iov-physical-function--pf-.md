@@ -5,11 +5,11 @@ ms.assetid: 176ABEA4-B6BE-41D6-9171-8E9A537F8CA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 376c366a2e198c04a9d08f7f952706b749c94625
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346012"
 ---
 # <a name="sr-iov-physical-function-pf"></a>SR-IOV 物理功能 (PF)
 

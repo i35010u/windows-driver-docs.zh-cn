@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c00fc287cd6fd4c5563801fecd12ae1f02214a5
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344213"
 ---
 # <a name="bug-check-0x5f-securityinitializationfailed"></a>Bug 检查 0x5F：安全\_初始化\_失败
 

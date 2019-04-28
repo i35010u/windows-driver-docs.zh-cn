@@ -5,11 +5,11 @@ ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f97641467932fa3abe3b9648f5f15363e5886ad9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343964"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>驱动程序的代码分析概述
 
@@ -38,7 +38,7 @@ Windows 驱动程序工具包提供的特定于驱动程序的扩展[代码分�
 
 -   **优先顺序规则：** 可能不会作为程序员不由于 C 编程的优先规则的代码。
 
--   **内核模式的编码实践：** 编码实践，可能会导致错误，例如修改不透明内存描述符列表 (MDL) 结构、 失败的调用函数，通过检查设置变量的值并使用 C/c + + 字符串操作函数而不是安全的字符串函数在 Ntstrsafe.h 中定义。
+-   **内核模式的编码实践：** 编码实践，可能会导致错误，例如修改不透明内存描述符列表 (MDL) 结构，对故障调用函数，通过检查设置变量的值以及使用 C /C++而不是安全字符串的字符串操作函数Ntstrsafe.h 中定义的函数。
 
 -   **特定于驱动程序的编码做法：** 通常是内核模式驱动程序中的错误的源的特定操作。 例如，复制整个的 I/O 请求数据包 (IRP) 而无需修改成员并将一个指针保存到一个字符串或结构的参数，而不是复制中的自变量[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。
 
@@ -50,7 +50,7 @@ Windows 驱动程序工具包提供的特定于驱动程序的扩展[代码分�
 ## <a name="span-idannotationsspanspan-idannotationsspanspan-idannotationsspanannotations"></a><span id="Annotations"></span><span id="annotations"></span><span id="ANNOTATIONS"></span>批注
 
 
-代码分析工具提供的重要功能之一是能够批注函数说明和驱动程序的源代码中的某些其他实体。 代码分析工具具有内部功能的作用域;也就是说，它将分析函数之间的交互。 批注的目的是协定的提供名为和调用函数之间的更完整的表达式，以便代码分析工具可检查符合协定。 批注的另一个目标是他们告知任何人读取应如何使用该函数的代码，并可以预期的结果。 批注声明接口的协定，并不试图介绍如何实现该协定。 在许多情况下，运行代码分析工具的结果反映没有相应批注，并且通过添加批注，抑制缺少批注有关的警告，和启用了其他检查。 有关详细信息，请参阅[SAL 2.0 注释为 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)。 有关 SAL 2.0 的详细信息，请参阅[使用 SAL 注释减少 C/c + + 代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应在 Windows 8 的 WDK。 如果驱动程序需要有关 SAL 1.0 的信息，请参阅 WDK 为 Windows 7 附带的驱动程序批注文档 PREfast。
+代码分析工具提供的重要功能之一是能够批注函数说明和驱动程序的源代码中的某些其他实体。 代码分析工具具有内部功能的作用域;也就是说，它将分析函数之间的交互。 批注的目的是协定的提供名为和调用函数之间的更完整的表达式，以便代码分析工具可检查符合协定。 批注的另一个目标是他们告知任何人读取应如何使用该函数的代码，并可以预期的结果。 批注声明接口的协定，并不试图介绍如何实现该协定。 在许多情况下，运行代码分析工具的结果反映没有相应批注，并且通过添加批注，抑制缺少批注有关的警告，和启用了其他检查。 有关详细信息，请参阅[SAL 2.0 注释为 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)。 有关 SAL 2.0 的详细信息，请参阅[使用 SAL 注释减少 C /C++代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应在 Windows 8 的 WDK。 如果驱动程序需要有关 SAL 1.0 的信息，请参阅 WDK 为 Windows 7 附带的驱动程序批注文档 PREfast。
 
 ## <a name="span-idinterpretingtheresultspanspan-idinterpretingtheresultspanspan-idinterpretingtheresultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>解释结果
 

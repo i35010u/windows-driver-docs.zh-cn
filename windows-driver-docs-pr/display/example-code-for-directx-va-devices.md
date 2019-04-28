@@ -1,6 +1,6 @@
 ---
-title: 适用于 DirectX VA 设备的示例代码
-description: 适用于 DirectX VA 设备的示例代码
+title: DirectX VA 设备的示例代码
+description: DirectX VA 设备的示例代码
 ms.assetid: 3afdb99b-8a26-4caf-8285-1aff791a8123
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示中，示例代码
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf4a56ebf5b94aa7305b5b3a28f9034586701903
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348343"
 ---
-# <a name="example-code-for-directx-va-devices"></a>适用于 DirectX VA 设备的示例代码
+# <a name="example-code-for-directx-va-devices"></a>DirectX VA 设备的示例代码
 
 
 ## <span id="ddk_example_code_for_directx_va_devices_gg"></span><span id="DDK_EXAMPLE_CODE_FOR_DIRECTX_VA_DEVICES_GG"></span>

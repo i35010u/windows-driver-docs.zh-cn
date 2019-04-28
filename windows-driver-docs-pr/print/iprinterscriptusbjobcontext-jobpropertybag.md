@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f31afd0131ee0b0c89d83c0608108fbeacd8e8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349251"
 ---
 # <a name="iprinterscriptusbjobcontextjobpropertybag-method"></a>IPrinterScriptUsbJobContext::JobPropertyBag 方法
 
@@ -37,7 +37,7 @@ HRESULT JobPropertyBag(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *ppPropertyBag* \[out, retval\]  
@@ -77,6 +77,6 @@ HRESULT JobPropertyBag(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)

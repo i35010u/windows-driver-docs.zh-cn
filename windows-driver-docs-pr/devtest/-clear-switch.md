@@ -1,5 +1,5 @@
 ---
-title: / 清除交换机
+title: /Clear 开关
 description: /Clear 开关指定 IEEE 1667 合规 USB 存储设备存储的证书的身份验证接收器证书 (ASC) 的大多数增强存储证书管理工具中删除。注意在本主题中，指定 IEEE 1667 合规 USB 存储设备被称为目标设备。
 ms.assetid: b8002d0c-450a-4c4c-bee6-83e382984b34
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3217f60cad90fa6cc70e59d4489ef405fabad662
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344003"
 ---
-# <a name="clear-switch"></a>/ 清除交换机
+# <a name="clear-switch"></a>/Clear 开关
 
 
 **/Clear**增强存储证书管理工具的开关指定 IEEE 1667 合规 USB 存储设备上的身份验证接收器证书 (ASC) 存储中删除大部分的证书。

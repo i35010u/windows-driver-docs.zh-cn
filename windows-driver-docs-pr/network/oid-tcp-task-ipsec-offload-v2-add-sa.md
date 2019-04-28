@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e3eb0253b8e671fc02efec29ba7363c7e1fa10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350913"
 ---
 # <a name="oidtcptaskipsecoffloadv2addsa"></a>OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA
 
@@ -52,7 +52,7 @@ TCP/IP 传输确定 NIC 可以执行 IPsecOV2 操作后，TCP/IP 传输请求的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.1 和 6.20 中受支持。 NDIS 6.30 和更高版本，使用<a href="oid-tcp-task-ipsec-offload-v2-add-sa-ex.md" data-raw-source="[OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)">OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX</a>。</p></td>
 </tr>
 <tr class="even">

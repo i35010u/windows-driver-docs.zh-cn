@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e9564f4d5bf27437b18ca386db43b636618b83df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341877"
 ---
 # <a name="kspropertycameracontrolextendedvideostabilization"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_VIDEOSTABILIZATION
 
@@ -125,7 +125,7 @@ ms.locfileid: "56555727"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1。</p></td>
 </tr>
 <tr class="even">
@@ -133,7 +133,7 @@ ms.locfileid: "56555727"
 <td><p>必须将 Pin 与关联的 ID 视频的 pin。</p></td>
 </tr>
 <tr class="odd">
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>这必须是 sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE)。</p></td>
 </tr>
 <tr class="even">
@@ -160,7 +160,7 @@ ms.locfileid: "56555727"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

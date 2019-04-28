@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f3f0e910e2301eabc1383409205f8054d870f57
-ms.sourcegitcommit: b13e6d44c71197971697f710c0ecb23db13fea91
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342690"
 ---
 # <a name="sample-kernel-mode-drivers"></a>示例内核模式驱动程序
 

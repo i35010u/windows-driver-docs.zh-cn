@@ -1,17 +1,17 @@
 ---
-title: 设置内核模式下通过 USB 3.0 电缆在 Visual Studio 中调试
+title: 在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 description: 可以使用 Microsoft Visual Studio 设置和执行通过 USB 3.0 电缆内核模式调试。
 ms.assetid: F8DD0475-13CE-464A-A491-AEFA962A96DB
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ed02881634cb1ada2f2cf26a4b4cf8bc80e8ed05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342529"
 ---
-# <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>设置内核模式下通过 USB 3.0 电缆在 Visual Studio 中调试
+# <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 
 > [!IMPORTANT]
 > 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。
@@ -110,7 +110,7 @@ busparams               48.0.0
 
 其中*b*， *d*，并*f*是总线、 设备和已选择要用于调试的目标计算机上的 xHCI 控制器的函数数量。
 
-示例：
+例如：
 
 **bcdedit /set "{dbgsettings}" busparams 48.0.0**
 
@@ -146,10 +146,10 @@ busparams               48.0.0
 
 完成后对调试使用 xHCI 主控制器的操作后，启用选择性挂起 xHCI 主控制器的功能。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设置 Visual Studio 中的内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
+[在 Visual Studio 中设置内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
 

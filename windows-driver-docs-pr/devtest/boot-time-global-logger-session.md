@@ -1,6 +1,6 @@
 ---
-title: 启动时全局记录器会话
-description: 启动时全局记录器会话
+title: 启动时的全局记录器会话
+description: 启动时的全局记录器会话
 ms.assetid: f1f5bbee-48bd-4e4d-8849-9d21a4f85d44
 keywords:
 - 启动时跟踪 WDK 时，全局记录器跟踪会话
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3843a428892e609e64c758f4d9d2d88785c0586
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344929"
 ---
-# <a name="boot-time-global-logger-session"></a>启动时全局记录器会话
+# <a name="boot-time-global-logger-session"></a>启动时的全局记录器会话
 
 
 可以创建在系统启动期间跟踪 Windows 内核事件的全局记录器跟踪会话。 此方法的功能整合[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)，其中跟踪了内核，与[全局记录器跟踪会话](global-logger-trace-session.md)，其中跟踪了在系统启动期间发生的事件。

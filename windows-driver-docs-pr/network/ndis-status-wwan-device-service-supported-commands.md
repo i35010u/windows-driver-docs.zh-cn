@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b6f9d6f5b41c30704d9ed3f4d3f92e46287e1468
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343283"
 ---
 # <a name="ndisstatuswwandeviceservicesupportedcommands"></a>NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令
 
@@ -32,17 +32,17 @@ ms.locfileid: "56546200"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持从 Windows 8 开始。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WWAN\_ENUMERATE\_DEVICE\_SERVICE\_COMMANDS](https://msdn.microsoft.com/library/windows/hardware/hh846221)

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6588bb880f2bca199fc33e9f27c001e0c6c7d32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345651"
 ---
 # <a name="multimatrix-vertex-blending-algorithm"></a>多矩阵顶点混合算法
 
