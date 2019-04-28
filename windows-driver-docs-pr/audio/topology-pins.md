@@ -1,6 +1,6 @@
 ---
-title: 拓扑 Pin
-description: 拓扑 Pin
+title: 拓扑引脚
+description: 拓扑引脚
 ms.assetid: b434e2a7-4acc-4ef1-9db9-8f1b82f68de3
 keywords:
 - 拓扑 pin WDK 音频
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2ec2c37f3b4244c8d17f5050eda21c0197adc78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335274"
 ---
-# <a name="topology-pins"></a>拓扑 Pin
+# <a name="topology-pins"></a>拓扑引脚
 
 
 ## <span id="topology_pins"></span><span id="TOPOLOGY_PINS"></span>

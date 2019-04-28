@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c296564cba7f129dbe0ab49f40c0387aaf3a9619
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338826"
 ---
-# <a name="sel"></a>！ sel
+# <a name="sel"></a>!sel
 
 
 ## <span id="ddk__sel_dbg"></span><span id="DDK__SEL_DBG"></span>

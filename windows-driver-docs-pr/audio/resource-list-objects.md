@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f781a3ab77ca2e7fcd74e3b4a1cb2f4b5b697b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328684"
 ---
 # <a name="resource-list-objects"></a>资源列表对象
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e19431dbecdea7e366840bbaa8e7951b19c487
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339890"
 ---
 # <a name="notification-errors"></a>通知错误
 
@@ -35,7 +35,7 @@ ms.locfileid: "57348772"
 <thead>
 <tr class="header">
 <th>错误代码</th>
-<th>ReplTest1</th>
+<th>值</th>
 <th>通信类型</th>
 <th>适用对象</th>
 <th>描述</th>

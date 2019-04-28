@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f26868420f3cd2a08328fae9117ffaf824d70e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334754"
 ---
-# <a name="analyze"></a>！ 分析
+# <a name="analyze"></a>!analyze
 
 
 **！ 分析**扩展显示有关当前异常或错误检查的信息。

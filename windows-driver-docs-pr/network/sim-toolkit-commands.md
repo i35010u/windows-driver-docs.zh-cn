@@ -5,11 +5,11 @@ ms.assetid: 7c13c27a-7a2d-4eae-a64e-1133aa533343
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e64b2cc1cf13d891c078b1381c3798506830ab77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330512"
 ---
 # <a name="sim-toolkit-commands"></a>SIM 工具包命令
 

@@ -1,17 +1,17 @@
 ---
-title: 启动固件更新 （函数索引 22）
+title: 启动固件更新（功能索引 22）
 description: 此函数会初始化到特定固件插槽的固件更新。
 ms.assetid: 34950124-6DBF-43CE-862A-E6DEF7A5FADE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8479001241b1fdfade828f17224174cca17c5ee9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339056"
 ---
-# <a name="start-firmware-update-function-index-22"></a>启动固件更新 （函数索引 22）
+# <a name="start-firmware-update-function-index-22"></a>启动固件更新（功能索引 22）
 
 
 此函数会初始化到特定固件插槽的固件更新。 只能有一个在任何给定时间的固件更新操作。
@@ -93,7 +93,7 @@ ms.locfileid: "56525199"
 
 4.  在宿主调用[选择固件映像槽 (函数索引 25)](select-firmware-image-slot--function-index-25-.md)才能激活新的固件映像。 更新将会在下一步的系统重新启动时生效。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [发送固件更新数据 （函数索引 23）](send-firmware-update-data--function-index-23-.md)

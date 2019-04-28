@@ -5,11 +5,11 @@ ms.assetid: 4BADC310-CC53-4084-A592-66197C348279
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff10d3af3c23cf857e2e68f772bfeacc59683d03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338675"
 ---
 # <a name="firmware-requirements-for-d3cold"></a>D3cold 固件要求
 

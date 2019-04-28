@@ -1,17 +1,17 @@
 ---
-title: ACPI 用于设备容器分组
-description: ACPI 用于设备容器分组
+title: 将 ACPI 用于设备容器分组
+description: 将 ACPI 用于设备容器分组
 ms.assetid: c49949cd-59e0-4ad2-a067-bc4e048f26c5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88106262ae3e4eaf9d2d280a3a6b70500a522c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339430"
 ---
-# <a name="using-acpi-for-device-container-grouping"></a>ACPI 用于设备容器分组
+# <a name="using-acpi-for-device-container-grouping"></a>将 ACPI 用于设备容器分组
 
 
 使用 ACPI 设置来指定设备容器分组被适用于使用由计算机原始设备制造商 (Oem)。 通过配置计算机 BIOS 中的 ACPI 对象，则可以指示计算机的精确的配置。 此功能不包括其他设备容器，用于分组在本文中介绍的机制。

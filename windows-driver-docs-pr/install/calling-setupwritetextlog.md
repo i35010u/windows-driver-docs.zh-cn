@@ -1,17 +1,17 @@
 ---
-title: Calling SetupWriteTextLog
-description: Calling SetupWriteTextLog
+title: 调用 SetupWriteTextLog
+description: 调用 SetupWriteTextLog
 ms.assetid: a07118ae-bef6-4d01-94d9-98587cbff863
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57a0c11671f5735c740c0dd08026b166277e01c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341525"
 ---
-# <a name="calling-setupwritetextlog"></a>Calling SetupWriteTextLog
+# <a name="calling-setupwritetextlog"></a>调用 SetupWriteTextLog
 
 
 [**SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)添加到安装事件的相关信息与单个条目[SetupAPI 文本日志](setupapi-text-logs.md)。

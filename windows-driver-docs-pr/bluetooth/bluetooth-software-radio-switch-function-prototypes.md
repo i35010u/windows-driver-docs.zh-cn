@@ -1,17 +1,17 @@
 ---
-title: 蓝牙版本和早期 Windows 版本中的配置文件支持
-description: 蓝牙版本和早期 Windows 版本中的配置文件支持
+title: 以前的 Windows 版本中的蓝牙版本和配置文件支持
+description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ce02d9d590e14f1cbff085c8f403e6f83aca5306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328247"
 ---
-# <a name="bluetooth-software-radio-switch-function-prototypes"></a>蓝牙软件无线电交换机函数原型
+# <a name="bluetooth-software-radio-switch-function-prototypes"></a>蓝牙软件无线电开关函数原型
 
 > 注意：从 Windows 8.1 开始供应商不再需要软件本主题中所述的 DLL 中实现功能 （适用于蓝牙 4.0 无线电收发器） 打开/关闭无线电，因为操作系统现在可处理此功能。 Windows 8.1 将忽略任何此类 DLL，即使存在。
 
@@ -56,7 +56,7 @@ DLL 注册
 
 值数据: （路径）
 
-示例：
+例如：
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio Support]
 

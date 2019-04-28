@@ -4,11 +4,11 @@ title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c5c7310e1e6ddac12e13049916d1dac618098a4
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331684"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
@@ -193,7 +193,7 @@ ms.locfileid: "57349142"
 
     通过将合并的数据包映射到的设备描述符 (请参阅表 9-8) 结构，我们可以看到这些字段和值：
 
-    | 字段                  | 大小 | ReplTest1  | 描述                                                                       |
+    | 字段                  | 大小 | 值  | 描述                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | 设备描述符，它是 18 个字节的长度。                               |
     | **bDescriptorType**    | 1    | 0x01   | 描述符类型是设备。                                                    |

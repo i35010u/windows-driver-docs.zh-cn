@@ -4,11 +4,11 @@ description: 内存覆盖请求控件 (MOR) LOCK 版本 2
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a86784ffc1142ea38e3dfec682a0120d6bc7a0cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337570"
 ---
 # <a name="memory-overwrite-request-control-mor-lock-version-2"></a>内存覆盖请求控件 (MOR) LOCK 版本 2
 

@@ -1,6 +1,6 @@
 ---
-title: 枚举旧 COM 端口
-description: 枚举旧 COM 端口
+title: 枚举旧版 COM 端口
+description: 枚举旧版 COM 端口
 ms.assetid: 36a73153-0e3e-4b41-9b3d-08b29b5220fe
 keywords:
 - 串行驱动程序 WDK、 COM 端口
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 355d59ab334d70715131ab2605ae39b2b46def07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341294"
 ---
-# <a name="enumerating-legacy-com-ports"></a>枚举旧 COM 端口
+# <a name="enumerating-legacy-com-ports"></a>枚举旧版 COM 端口
 
 
 

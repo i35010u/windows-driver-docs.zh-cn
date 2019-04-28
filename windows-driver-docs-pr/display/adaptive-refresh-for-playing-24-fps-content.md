@@ -1,5 +1,5 @@
 ---
-title: 用于播放 24 fps 视频内容自适应刷新
+title: 进行自适应刷新以播放 24 fps 视频内容
 description: Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序播放时第二个 (fps) 视频内容每 24 帧 60 Hz 监视器上，它们必须实现 48 Hz 自适应刷新，以节省电量。
 ms.assetid: CFA1AE0F-B591-4C5E-A97B-8D4E4B475167
 ms.date: 10/19/2018
@@ -8,13 +8,13 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0ac9cacd5d61e254dc84f88b1af1a38b401c9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341577"
 ---
-# <a name="adaptive-refresh-for-playing-24-fps-video-content"></a>用于播放 24 fps 视频内容自适应刷新
+# <a name="adaptive-refresh-for-playing-24-fps-video-content"></a>进行自适应刷新以播放 24 fps 视频内容
 
 
 Windows 显示器驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序播放时第二个 (fps) 视频内容每 24 帧 60 Hz 监视器上，它们必须实现 48 Hz 自适应刷新，以节省电量。 在此方案中该监视器切换 60 Hz 到 48 Hz 的刷新频率播放 24 fps 视频内容。

@@ -5,11 +5,11 @@ ms.assetid: 91d37d25-ca0d-413f-9e6f-5a22a0406714
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0fbaa9c4f60ac3b90072c21b24746d8c5287154
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327139"
 ---
 # <a name="cmprobunsigneddriver"></a>CM_PROB_UNSIGNED_DRIVER
 

@@ -5,11 +5,11 @@ ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: da363a5b00d061bd18f97d11cf7b37c66c25f985
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331427"
 ---
 # <a name="audio-signal-processing-modes"></a>音频信号处理模式
 

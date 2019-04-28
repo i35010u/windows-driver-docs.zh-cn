@@ -1,5 +1,5 @@
 ---
-title: .push （保存调试器状态）
+title: .push（保存调试器状态）
 description: .Push 命令保存在调试器的当前状态。
 ms.assetid: 2e0b45d6-35b8-4c86-9c54-df8d16b4dcc2
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 12e52dd705ed1c0581bad4e3308bd3db336ecdd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335740"
 ---
-# <a name="push-save-debugger-state"></a>.push （保存调试器状态）
+# <a name="push-save-debugger-state"></a>.push（保存调试器状态）
 
 
 **.Push**命令保存在调试器的当前状态。

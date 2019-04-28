@@ -1,6 +1,6 @@
 ---
-title: Dmu 微型端口驱动程序
-description: Dmu 微型端口驱动程序
+title: DMus 微型端口驱动程序
+description: DMus 微型端口驱动程序
 ms.assetid: a0ce6545-2050-49fb-88b5-a75dcd4c7ebc
 keywords:
 - 音频的微型端口驱动程序 WDK Dmu
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c703e8dba133d2b12eb5a54daf5a3d17ec11e25d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333757"
 ---
-# <a name="dmus-miniport-driver"></a>Dmu 微型端口驱动程序
+# <a name="dmus-miniport-driver"></a>DMus 微型端口驱动程序
 
 
 ## <span id="dmus_miniport_driver"></span><span id="DMUS_MINIPORT_DRIVER"></span>

@@ -1,17 +1,17 @@
 ---
-title: 使用自定义硬件 Id 和兼容 Id
-description: 使用自定义硬件 Id 和兼容 Id
+title: 使用自定义硬件 ID 和兼容 ID
+description: 使用自定义硬件 ID 和兼容 ID
 ms.assetid: 4f0ae082-b601-4322-add8-63941c2bdad3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c5e18696706d9e787f395829baa553a437b3e4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339457"
 ---
-# <a name="using-custom-hardware-ids-and-compatible-ids"></a>使用自定义硬件 Id 和兼容 Id
+# <a name="using-custom-hardware-ids-and-compatible-ids"></a>使用自定义硬件 ID 和兼容 ID
 
 
 如中所述[设备标识字符串](device-identification-strings.md)，以下是新的总线驱动程序应使用插即用 (PnP) 硬件 Id 和兼容 Id 的通用格式。

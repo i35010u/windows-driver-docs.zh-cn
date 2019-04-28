@@ -5,11 +5,11 @@ ms.assetid: a243637a-7b6b-4675-99ef-a365f5fb7d00
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10291007bd9a4adb6a161fbe7819c0036ad6ebe3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332484"
 ---
 # <a name="kspropsetidrtaudio"></a>KSPROPSETID\_RTAudio
 

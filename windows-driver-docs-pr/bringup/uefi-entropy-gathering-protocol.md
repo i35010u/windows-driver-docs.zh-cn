@@ -1,17 +1,17 @@
 ---
-title: UEFI 平均信息量正在收集协议
+title: UEFI 熵收集协议
 description: UEFI 平均信息量收集协议用于生成随机数生成 (RNG) 值的已知的方式。
 ms.assetid: 616F178F-B4A0-4B8B-B71D-F7474738EA35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1ce227750ac8a71300da634487ad586357a5140
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337424"
 ---
-# <a name="uefi-entropy-gathering-protocol"></a>UEFI 平均信息量正在收集协议
+# <a name="uefi-entropy-gathering-protocol"></a>UEFI 熵收集协议
 
 
 UEFI 平均信息量收集协议用于生成随机数生成 (RNG) 值的已知的方式。

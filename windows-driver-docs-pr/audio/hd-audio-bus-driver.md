@@ -1,6 +1,6 @@
 ---
-title: 高清晰度音频总线驱动程序
-description: 高清晰度音频总线驱动程序
+title: HD 音频总线驱动程序
+description: HD 音频总线驱动程序
 ms.assetid: a08f4304-467b-45cf-8026-87f41b408692
 keywords:
 - 高清晰度音频，通用音频体系结构
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a15802a495212ec51a559917614093d565ca1c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333602"
 ---
-# <a name="hd-audio-bus-driver"></a>高清晰度音频总线驱动程序
+# <a name="hd-audio-bus-driver"></a>HD 音频总线驱动程序
 
 
 HD Audio 总线驱动程序是唯一的软件组件来直接访问硬件的 HD Audio 总线界面控制器注册。 总线驱动程序公开 HD 音频 DDI 的子级-实例的功能的驱动程序，用于控制音频和调制解调器的编解码器-可以使用 HD Audio 控制器硬件进行编程。 此外，总线驱动程序管理的 HD 音频链接硬件资源，其中包括的 DMA 引擎和总线带宽。 功能的驱动程序分配和释放这些资源通过 HD 音频 DDI。

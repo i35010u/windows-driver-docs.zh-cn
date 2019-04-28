@@ -5,11 +5,11 @@ ms.assetid: BE23FA51-FCA0-4391-B2AB-447C6096C75B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8678b6ca9c70d0b978566de3e885380c8af97b10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332113"
 ---
 # <a name="pkeymfxprocessingmodessupportedforstreaming"></a>PKEY\_MFX\_ProcessingModes\_Supported\_For\_Streaming
 
@@ -36,7 +36,7 @@ AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS = "{98951333-B9CD-48B1-A0A3-FF40682D73
 HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

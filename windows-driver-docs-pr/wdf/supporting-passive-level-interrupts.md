@@ -5,11 +5,11 @@ ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2980eaf64483fd2ceb74708a7a8286986f0f4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331604"
 ---
 # <a name="supporting-passive-level-interrupts"></a>支持被动级别中断
 

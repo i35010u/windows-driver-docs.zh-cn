@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aeb69d43659916b55b6b9239733b167ba9e2f363
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334781"
 ---
-# <a name="amli-bl"></a>！ amli bl
+# <a name="amli-bl"></a>!amli bl
 
 
 **！ Amli bl**扩展插件都会显示所有 AML 断点的列表。

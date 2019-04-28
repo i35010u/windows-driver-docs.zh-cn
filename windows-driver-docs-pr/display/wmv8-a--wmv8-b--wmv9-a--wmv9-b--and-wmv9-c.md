@@ -1,6 +1,6 @@
 ---
-title: WMV8_A、 WMV8_B、 WMV9_A、 WMV9_B 和 WMV9_C
-description: WMV8_A、 WMV8_B、 WMV9_A、 WMV9_B 和 WMV9_C
+title: WMV8_A、WMV8_B、WMV9_A、WMV9_B 和 WMV9_C
+description: WMV8_A、WMV8_B、WMV9_A、WMV9_B 和 WMV9_C
 ms.assetid: ffc203e9-fca4-48d3-842b-d9f75ad7caa0
 keywords:
 - WMV8_A 受限制的配置文件 WDK DirectX VA
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6b49e3e617a786d7e19be273bdb2d5768d54e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340117"
 ---
 # <a name="wmv8a-wmv8b-wmv9a-wmv9b-and-wmv9c"></a>WMV8\_A，WMV8\_B，WMV9\_A，WMV9\_B 和 WMV9\_C
 

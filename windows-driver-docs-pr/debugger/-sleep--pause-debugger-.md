@@ -1,5 +1,5 @@
 ---
-title: .sleep （暂停调试器）
+title: .sleep（暂停调试器）
 description: .Sleep 命令将导致用户模式下调试器以暂停和目标计算机变为活动状态。 当正在控制用户模式下的调试程序与内核调试程序时，仅使用此命令。
 ms.assetid: bc3ee17f-e3b8-4bdb-8c80-6b1fef29000e
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d05c72238575ddf79a51f0f7e9f2035212e0dde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339915"
 ---
-# <a name="sleep-pause-debugger"></a>.sleep （暂停调试器）
+# <a name="sleep-pause-debugger"></a>.sleep（暂停调试器）
 
 
 **.Sleep**命令将导致用户模式下的调试器暂停和目标计算机变为活动状态。 当正在控制用户模式下的调试程序与内核调试程序时，仅使用此命令。

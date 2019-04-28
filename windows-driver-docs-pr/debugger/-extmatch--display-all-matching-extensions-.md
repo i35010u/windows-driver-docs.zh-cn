@@ -1,5 +1,5 @@
 ---
-title: .extmatch （显示所有匹配的扩展）
+title: .extmatch（显示所有匹配的扩展）
 description: .Extmatch 命令显示当前加载的扩展插件与指定的模式匹配的 Dll 导出的扩展命令。
 ms.assetid: 068a32ce-c5ac-4fee-9e9d-e47393097675
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 34b0e8fe39749ce5a29d1ff0cd3f1417296f3b44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337200"
 ---
-# <a name="extmatch-display-all-matching-extensions"></a>.extmatch （显示所有匹配的扩展）
+# <a name="extmatch-display-all-matching-extensions"></a>.extmatch（显示所有匹配的扩展）
 
 
 **.Extmatch**命令显示当前加载的扩展插件与指定的模式匹配的 Dll 导出的扩展命令。

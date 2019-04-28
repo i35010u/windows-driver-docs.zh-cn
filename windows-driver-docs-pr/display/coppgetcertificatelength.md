@@ -10,11 +10,11 @@ keywords:
 ms.date: 02/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d162c85630794490ae4596b2a4cab151370e002
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331309"
 ---
 # <a name="coppgetcertificatelength-function"></a>COPPGetCertificateLength 函数
 
@@ -29,7 +29,7 @@ HRESULT COPPGetCertificateLength(
 );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 *pThis [in]*
 
@@ -55,7 +55,7 @@ COPP DirectX VA 设备应接收到对其 COPPGetCertificateLength 函数的调�
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | 值 |
+| 成员 | ReplTest1 |
 | -- | -- |
 | dwNumBuffers | 为零。 |
 | lpBufferInfo | NULL。 |
@@ -85,7 +85,7 @@ COPPGetCertificateLength(
 
 **要求**
 
-| 目标平台 | 版本 |
+| 目标平台 | Version |
 | -- | -- |
 | 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
 

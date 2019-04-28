@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31bd35a38ec4a4707914335d1e1c3c480e02a0ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331722"
 ---
 # <a name="device-object-example-for-a-scsi-hba"></a>SCSI HBA 的设备对象示例
 

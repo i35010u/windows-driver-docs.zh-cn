@@ -1,6 +1,6 @@
 ---
-title: 用户模式下 Power 服务
-description: 用户模式下 Power 服务
+title: 用户模式功率服务
+description: 用户模式功率服务
 ms.assetid: 57f3affd-18cc-440c-ba18-9ba89fd3c84f
 keywords:
 - 电源计量和预算 WDK，用户模式下 Power 服务
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30d03f1e10a009d8c169b71457287a6fce2deb83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331805"
 ---
-# <a name="user-mode-power-service"></a>用户模式下 Power 服务
+# <a name="user-mode-power-service"></a>用户模式功率服务
 
 
 从 Windows 7 和 Windows Server 2008 R2 开始，用户模式下 Power 服务 (UMPS) 提供用于对用户模式服务和应用程序的电源管理的所有方面的接口。 此接口包含对能源计量和预算 (PMB) 基础结构与电源相关信息的支持。 应用程序，如 Windows 性能监视器 (PerfMon)，使用此信息有关电源管理和报告。

@@ -5,11 +5,11 @@ ms.assetid: 2596dd4f-26bd-454b-9550-a89c7e1f790b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dea889b1b34bf22dcc97311dcb0693b54681e60f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337670"
 ---
 # <a name="efiusbfnporttype"></a>EFI\_USBFN\_端口\_类型
 

@@ -5,11 +5,11 @@ ms.assetid: 45f27e86-23ff-4604-8501-3a3091110fc1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4b393e3db6b7620112e72f8c4bcfc35f0e49bd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329705"
 ---
 # <a name="getting-started-with-software-tracing"></a>开始使用软件跟踪
 

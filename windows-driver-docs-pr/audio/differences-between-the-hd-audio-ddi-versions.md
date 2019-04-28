@@ -1,6 +1,6 @@
 ---
-title: 高清晰度音频 DDI 版本之间的差异
-description: 高清晰度音频 DDI 版本之间的差异
+title: HD 音频 DDI 版本之间的差异
+description: HD 音频 DDI 版本之间的差异
 ms.assetid: e24071d3-9021-40c0-907a-91ada8a1306b
 keywords:
 - HD Audio，DDI 版本差异
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b50727c187b3910c925917bc68107c1d2ad560
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333802"
 ---
-# <a name="differences-between-the-hd-audio-ddi-versions"></a>高清晰度音频 DDI 版本之间的差异
+# <a name="differences-between-the-hd-audio-ddi-versions"></a>HD 音频 DDI 版本之间的差异
 
 
 HD 音频 DDI 现已推出，如下所示定义的三个稍有不同版本：

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3acae875f16df0a2d1c2517bc31d1c005c73119e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336754"
 ---
 # <a name="exr-display-exception-record"></a>.exr（显示异常记录）
 

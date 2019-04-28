@@ -5,11 +5,11 @@ ms.assetid: 1FC95504-18AA-4F3B-8E96-005276699694
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b2b241feb5c90811a787e2d38b355764795172
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335361"
 ---
 # <a name="windows-audio-architecture"></a>Windows 音频体系结构
 
@@ -30,10 +30,10 @@ ms.locfileid: "56546368"
 
 最高级别 Api 用于应用程序开发。 这些 Api 中当前正在使用和支持。
 
--   XAML [MediaElement 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement)(C#，VB、 c + +)
+-   XAML [MediaElement 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement)(C#，VB， C++)
 -   HTML[音频对象](https://msdn.microsoft.com/library/windows/apps/hh767373.aspx)并[视频对象](https://msdn.microsoft.com/library/windows/apps/hh767390.aspx)&lt;标记&gt;（由网站和 Windows Web 应用）
--   [Windows.Media.Capture 命名空间](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture)(C#，VB、 c + +)
--   [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) （c + +）
+-   [Windows.Media.Capture 命名空间](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture)(C#，VB， C++)
+-   [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)(C++)
 
 这些较旧的 Api 已弃用。
 

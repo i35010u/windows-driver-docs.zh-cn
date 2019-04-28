@@ -1,17 +1,17 @@
 ---
-title: 互锁操作数的驱动程序批注
-description: 互锁操作数的驱动程序批注
+title: 联锁操作数的驱动程序注释
+description: 联锁操作数的驱动程序注释
 ms.assetid: 33C85016-765B-42BF-9F38-BB682951B20C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65c1f021f73da6f72fa077c8a1b79097535a9df1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341663"
 ---
-# <a name="driver-annotations-for-interlocked-operands"></a>互锁操作数的驱动程序批注
+# <a name="driver-annotations-for-interlocked-operands"></a>联锁操作数的驱动程序注释
 
 
 一大系列函数将作为其参数之一应使用互锁的处理器指令进行访问的变量的地址。 这些是缓存直读原子说明，并且如果操作数使用不正确，导致非常难以发现的 bug。
@@ -59,7 +59,7 @@ InterlockedExchange (
     );  
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [SAL 2.0 注释驱动程序](sal-2-annotations-for-windows-drivers.md)

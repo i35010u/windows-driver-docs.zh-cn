@@ -1,6 +1,6 @@
 ---
-title: 流式处理音频 Mixer API 转换到拓扑的内核
-description: 流式处理音频 Mixer API 转换到拓扑的内核
+title: 从内核流式处理拓扑到音频混音器 API 的转换
+description: 从内核流式处理拓扑到音频混音器 API 的转换
 ms.assetid: ee89dc67-c9f3-41cd-8a09-0c46d636fe64
 keywords:
 - mixer API WDK 音频
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c8cec89573b194e34114757b5bc49cd80ac5602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333360"
 ---
-# <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>流式处理音频 Mixer API 转换到拓扑的内核
+# <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>从内核流式处理拓扑到音频混音器 API 的转换
 
 
 ## <span id="kernel_streaming_topology_to_audio_mixer_api_translation"></span><span id="KERNEL_STREAMING_TOPOLOGY_TO_AUDIO_MIXER_API_TRANSLATION"></span>

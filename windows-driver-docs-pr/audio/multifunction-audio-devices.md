@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e62ece95af8c3122dc583b6c0437e1fb720ccfbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332308"
 ---
 # <a name="multifunction-audio-devices"></a>多功能音频设备
 
@@ -32,7 +32,7 @@ ms.locfileid: "56548227"
 
 2.  设计多功能设备第二种方法是将单个设备 ID 分配给作为一个整体设备并提供单独的 PCI 基址为各个子设备注册 （条形图）。 在此方案中，子设备共享一组通用的配置注册表，但每个子都有其自己条或图条。 系统多功能驱动程序 (例如， *Mf.sys* Microsoft Windows 2000 及更高版本; 请参阅[使用 System-Supplied 多功能总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff542778)) 可以为每个配置的基址独立于其他函数的寄存器子的状态、 命令和数据寄存器。 如果你的设备的条不是可由子逻辑上分离的则无法使用 PortCls 来管理你的设备。
 
-本部分的剩余部分将介绍实现上述列表中的方法 (2) 所需的步骤。 讨论了以下主题：
+本部分的剩余部分将介绍实现上述列表中的方法 (2) 所需的步骤。 论述了以下主题：
 
 [多个音频子设备](multiple-audio-subdevices.md)
 

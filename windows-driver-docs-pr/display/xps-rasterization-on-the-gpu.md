@@ -1,17 +1,17 @@
 ---
-title: 在 GPU 上的 XPS 光栅化
+title: 在 GPU 上进行 XPS 光栅化
 description: XML 纸张规范 (XPS) 光栅化 GPU 上的不需要任何独立硬件供应商 (IHV) 代码或驱动程序中的行为更改。
 ms.assetid: 3C43552A-7D2B-4C10-9AD3-66755171D997
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95436d3e791d758404b9e29672e215c7eca4620c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340110"
 ---
-# <a name="xps-rasterization-on-the-gpu"></a>在 GPU 上的 XPS 光栅化
+# <a name="xps-rasterization-on-the-gpu"></a>在 GPU 上进行 XPS 光栅化
 
 
 XML 纸张规范 (XPS) 光栅化 GPU 上的不需要任何独立硬件供应商 (IHV) 代码或驱动程序中的行为更改。 但是，XPS 光栅化是使用模式时，可能会泄露一些 bug 或驱动程序代码中不正确的假设。 Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本的驱动程序必须能够通过以确保高质量的 Windows 打印 XPS 光栅化显示符合性测试。
@@ -19,7 +19,7 @@ XML 纸张规范 (XPS) 光栅化 GPU 上的不需要任何独立硬件供应商 
 |                                                                                   |                                                   |
 |-----------------------------------------------------------------------------------|---------------------------------------------------|
 | WDDM 的最低版本                                                              | 1.2                                               |
-| 最低 Windows 版本                                                           | 8                                                 |
+| 最大 Windows 版本                                                           | 8                                                 |
 | 驱动程序实现 — 仅完全图形和显示                              | 强制                                         |
 | [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **Device.Graphics¦XPSRasterizationConformance** |
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 982d0b18fe330785cadc60810c8c205c1dfb9642
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333092"
 ---
 # <a name="kspropertyaecstatus"></a>KSPROPERTY\_AEC\_状态
 
@@ -72,7 +72,7 @@ KSPROPERTY\_AEC\_STATUS 属性用于监视 AEC 节点的状态 ([**KSNODETYPE\_�
 <thead>
 <tr class="header">
 <th align="left">AEC 的状态标志</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">DSCFX_AEC_STATUS 标志</th>
 </tr>
 </thead>
@@ -131,7 +131,7 @@ CH 状态 AEC 算法收敛后，切换到已聚合状态，AEC\_状态\_FD\_历�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>

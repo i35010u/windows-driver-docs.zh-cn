@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cbd26bdccc2b040a85939746860817aeb175f461
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336199"
 ---
-# <a name="list"></a>！ 列表
+# <a name="list"></a>!list
 
 
 **！ 列表**扩展指定的调试器命令重复执行，一次的链接列表中的每个元素。

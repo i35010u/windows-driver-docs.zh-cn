@@ -5,11 +5,11 @@ ms.assetid: bd754296-5002-48b6-9986-fa09c2094470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f2df4b3b5f81bc2e9b78ea27c9b306b83e9f5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337673"
 ---
 # <a name="efiusbfnioprotocolsetendpointstallstate"></a>EFI\_USBFN\_IO\_PROTOCOL.SetEndpointStallState
 
@@ -30,7 +30,7 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

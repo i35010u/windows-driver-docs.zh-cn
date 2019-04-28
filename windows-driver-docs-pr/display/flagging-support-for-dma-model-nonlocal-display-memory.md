@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 014f96f31bff351ab66ba6e6464362c47f6d9474
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327921"
 ---
 # <a name="flagging-support-for-dma-model-nonlocal-display-memory"></a>DMA 模型非本地显示内存的标志支持
 

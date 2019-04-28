@@ -1,14 +1,14 @@
 ---
-Description: The device descriptor contains information about a USB device as a whole. This topic describes the USB_DEVICE_DESCRIPTOR structure and includes information about how a client driver can send a get-descriptor request to obtain the device descriptor.
+Description: 设备描述符包含有关 USB 设备作为一个整体的信息。 本主题描述 USB_DEVICE_DESCRIPTOR 结构，并包括有关客户端驱动程序将获取描述符请求以获取设备描述符可以发送的信息。
 title: USB 设备描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cc586d3575f648784d45b99544e029d0d3af7c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331631"
 ---
 # <a name="usb-device-descriptors"></a>USB 设备描述符
 

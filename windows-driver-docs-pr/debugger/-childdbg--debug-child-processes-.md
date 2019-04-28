@@ -1,5 +1,5 @@
 ---
-title: .childdbg （调试子进程）
+title: .childdbg（调试子进程）
 description: .Childdbg 命令控制子进程调试。
 ms.assetid: 87d70d3b-d9d5-4a37-b8a7-1616ba78b2f3
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 83df9291f16ec69bc8a1286e5d098fc77352e44b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334632"
 ---
-# <a name="childdbg-debug-child-processes"></a>.childdbg （调试子进程）
+# <a name="childdbg-debug-child-processes"></a>.childdbg（调试子进程）
 
 
 **.Childdbg**命令控制子进程调试。

@@ -1,5 +1,5 @@
 ---
-title: .pop （还原调试器状态）
+title: .pop（还原调试器状态）
 description: .Pop 命令将调试程序的状态还原到以前使用.push （保存调试器状态） 命令已保存的状态。
 ms.assetid: 31f94b2a-3597-40e4-845a-d686274e36c3
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d8f2f5878de2a13c3e09e00fcec6e03424b9d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334360"
 ---
-# <a name="pop-restore-debugger-state"></a>.pop （还原调试器状态）
+# <a name="pop-restore-debugger-state"></a>.pop（还原调试器状态）
 
 
 **.Pop**命令将调试程序的状态还原到以前通过使用保存的状态[ **.push （保存调试器状态）** ](-push--save-debugger-state-.md)命令。

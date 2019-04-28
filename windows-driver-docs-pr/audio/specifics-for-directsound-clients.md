@@ -1,6 +1,6 @@
 ---
-title: DirectSound 客户端的详细信息
-description: DirectSound 客户端的详细信息
+title: 有关 DirectSound 客户端的具体信息
+description: 有关 DirectSound 客户端的具体信息
 ms.assetid: 95ef53d3-572d-478b-839b-0555e9051129
 keywords:
 - DirectSound WDK 音频非 PCM 波形格式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e99263af89366e96537056cddb7d1e754f4854c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328635"
 ---
-# <a name="specifics-for-directsound-clients"></a>DirectSound 客户端的详细信息
+# <a name="specifics-for-directsound-clients"></a>有关 DirectSound 客户端的具体信息
 
 
 ## <span id="specifics_for_directsound_clients"></span><span id="SPECIFICS_FOR_DIRECTSOUND_CLIENTS"></span>

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fad3585b2e31b2d95eb0b9a0e52ece0de633d5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339724"
 ---
 # <a name="trace-flags"></a>跟踪标志
 

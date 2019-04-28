@@ -5,11 +5,11 @@ ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c0f577f152b1744aa5199d83a98a8478a3e26fb6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340291"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream 驱动程序的规则
 

@@ -1,14 +1,14 @@
 ---
-Description: A USB device exposes its capabilities in the form of a series of interfaces called a USB configuration.
+Description: USB 设备公开的接口称为 USB 配置一系列的窗体中的其功能。
 title: USB 配置描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b445f88f648983cdcc20bba5f52cd317d8806c8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331654"
 ---
 # <a name="usb-configuration-descriptors"></a>USB 配置描述符
 

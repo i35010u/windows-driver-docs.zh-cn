@@ -1,19 +1,19 @@
 ---
-title: 其他符号存储区
-description: 其他符号存储区
+title: 其他符号存储
+description: 其他符号存储
 ms.assetid: 65bb4291-c56a-4837-ac45-6751ebdbd579
 keywords:
 - 符号存储区，编写您自己符号存储区
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc2863c2ad0614c9b889712c39936e316724b618
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331261"
 ---
-# <a name="other-symbol-stores"></a>其他符号存储区
+# <a name="other-symbol-stores"></a>其他符号存储
 
 
 ## <span id="ddk_using_other_symbol_stores_dbg"></span><span id="DDK_USING_OTHER_SYMBOL_STORES_DBG"></span>

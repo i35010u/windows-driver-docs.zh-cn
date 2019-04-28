@@ -1,19 +1,19 @@
 ---
-title: 在移动宽带元数据创建向导中选择服务图标
-description: 在移动宽带元数据创建向导中选择服务图标
+title: 在移动宽带元数据创作向导中选择服务图标
+description: 在移动宽带元数据创作向导中选择服务图标
 ms.assetid: 6BD0A5A1-E954-42A8-B216-721AE888157F
 keywords:
-- 在移动宽带元数据创建向导中选择服务图标
+- 在移动宽带元数据创作向导中选择服务图标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e1fb9b21ea633714d750dd44343bb03686a645c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340119"
 ---
-# <a name="select-service-icon-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创建向导中选择服务图标
+# <a name="select-service-icon-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中选择服务图标
 
 
 必须指定要为你的服务 Windows 连接管理器中显示的图标。 移动宽带卡注册到家庭网络提供程序时，网络条目旁边会显示图标。 该图标不会显示是否漫游移动宽带卡。

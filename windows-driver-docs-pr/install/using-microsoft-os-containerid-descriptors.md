@@ -5,11 +5,11 @@ ms.assetid: e51b1bc8-fd9d-40f9-b2ae-9f5886f57c7b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 194c94c2516d6083a40d6339d2626ef99f426b35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339412"
 ---
 # <a name="using-microsoft-os-containerid-descriptors"></a>使用 Microsoft OS ContainerID 描述符
 

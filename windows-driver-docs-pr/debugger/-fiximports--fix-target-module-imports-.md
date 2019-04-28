@@ -1,5 +1,5 @@
 ---
-title: .fiximports （修复目标模块导入）
+title: .fiximports（修复目标模块导入）
 description: .Fiximports 命令验证并更正目标模块的所有静态导入链接。
 ms.assetid: 584a5060-5ab5-4126-bfec-e2fe647d50ff
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 92a5ef997dc3ae8bc85d4bb762a93994e6b38ad1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336656"
 ---
-# <a name="fiximports-fix-target-module-imports"></a>.fiximports （修复目标模块导入）
+# <a name="fiximports-fix-target-module-imports"></a>.fiximports（修复目标模块导入）
 
 
 **.Fiximports**命令验证并更正目标模块的所有静态导入链接。

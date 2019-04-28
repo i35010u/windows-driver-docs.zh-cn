@@ -1,17 +1,17 @@
 ---
-title: 支持的网络内核调试在 Windows 8.1 中的以太网 Nic
+title: Windows 8.1 中的网络内核调试支持的以太网 NIC
 description: 你可以执行在目标计算机正在运行 Windows 8.1 时内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
 ms.assetid: C608A406-C008-4075-B6BE-C14CFFC3A820
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89b9ae9f1ca4bf7047251af014b19807671f5453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335494"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-81"></a>支持的网络内核调试在 Windows 8.1 中的以太网 Nic
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-81"></a>Windows 8.1 中的网络内核调试支持的以太网 NIC
 
 
 你可以执行在目标计算机正在运行 Windows 8.1 时内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
@@ -84,7 +84,7 @@ ms.locfileid: "56534069"
 
 1000 1001 1002 1003 1004 1005 1006 1007 1008 1009 100A 100B 100C 100D 100E 100F 1010 6340 6341 634A 634B 6354 6368 6369 6372 6732 6733 673C 673D 6746 6750 6751 675A 6764 6765 676E 6778
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: dx （显示调试器对象模型表达式）
-description: Dx 命令显示使用 NatVis 扩展模型的 c + + 表达式。 Dx 命令处理调试器对象。
+title: dx（显示调试器对象模型表达式）
+description: Dx 命令显示C++表达式中使用 NatVis 扩展模型。 Dx 命令处理调试器对象。
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
 - dx （显示调试器对象模型表达式） Windows 调试
@@ -13,16 +13,16 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 619990863697246463e2df375700ba15c15c1c5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339755"
 ---
-# <a name="dx-display-debugger-object-model-expression"></a>dx （显示调试器对象模型表达式）
+# <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 NatVis 有关详细信息，请参阅[创建本机对象的自定义视图](https://msdn.microsoft.com/library/jj620914.aspx)。
+**Dx**命令将显示C++使用 NatVis 扩展模型表达式。 NatVis 有关详细信息，请参阅[创建本机对象的自定义视图](https://msdn.microsoft.com/library/jj620914.aspx)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
@@ -33,7 +33,7 @@ dx [{-?}|{-h}]
 
 
 <span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-要显示的 c + + 表达式。
+一个C++要显示的表达式。
 
 <span id="_______-g______"></span><span id="_______-G______"></span> **-g**   
 显示为数据网格对象，后者是可迭代。 每个循环访问元素是在网格中的行并且这些元素的每个显示子列。 这样，您可以查看类似于数组的结构，其中每个数组元素显示在一行中和结构的每个字段显示在列中。
@@ -54,7 +54,7 @@ dx [{-?}|{-h}]
 显示容器延续 (跳过\#容器中的元素)。此选项通常用于自定义输出自动化方案，并提供一个"..."在列表底部的继续符元素。
 
 <span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
-有两种方法可呈现数据。 使用 NatVis 可视化效果 （默认值） 或使用的基础本机 C/c + + 结构。 指定-n 参数来呈现使用只是本机 C/c + + 结构和不 NatVis 可视化效果的输出。
+有两种方法可呈现数据。 使用 NatVis 可视化效果 （默认值） 或使用基础本机 C /C++结构。 指定要呈现的输出使用只是本机的 C-n 参数 /C++结构和不 NatVis 可视化效果。
 
 <span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
 显示详细信息，包括方法和其他非典型的对象。
@@ -336,7 +336,7 @@ dx (nt!_EPROCESS *)&nt!PsIdleProcess
 
 Dx 命令不支持切换表达式计算器使用 @ @ MASM 语法。 有关表达式计算器的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
 
-## <a name="using-linq-with-the-debugger-objects"></a>使用 LINQ 与调试器对象
+## <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
 可以使用调试器对象使用 LINQ 语法，用于搜索和操作数据。 LINQ 是从概念上讲类似到结构化查询语言 (SQL)，用于查询数据库。 许多 LINQ 方法可用于搜索、 筛选和分析调试数据。 了解我们使用 LINQ 和对象的调试器，请参阅[使用调试器对象与 LINQ](using-linq-with-the-debugger-objects.md)。
 

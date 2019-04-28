@@ -1,6 +1,6 @@
 ---
-title: XR_BIAS 浮动的转换规则
-description: XR_BIAS 浮动的转换规则
+title: XR_BIAS 到浮点数转换规则
+description: XR_BIAS 到浮点数转换规则
 ms.assetid: fef4a1cb-6567-4d8f-aa8a-ceed00eefec8
 keywords:
 - 转换 XR_BIAS 浮动的 Direct3D 版本 10.1 WDK Windows 7 显示
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebaf3c24d26207973755fe44d1d5d512d118203b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340083"
 ---
 # <a name="xrbias-to-float-conversion-rules"></a>XR\_偏置浮动的转换规则
 

@@ -6,11 +6,11 @@ keywords: 调试。 调试，Windbg，事后调试、 在实时调试、 JIT 调
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b1863b10c40818e328d156af05378617702d1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340584"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -277,7 +277,7 @@ ProcDump"打包"包含的 32 位和 64 位版本的应用程序-这种情况下�
 
 如前文所述，它是非常可取，以将上下文设置为导致使用 JIT 发生故障的异常\_调试\_信息参数。 有关详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)**](-jdinfo--use-jit-debug-info-.md)。
 
-**有关 Windows 调试工具**
+**Windows 调试工具**
 
 此示例演示如何编辑注册表以运行初始命令 (-c)，它使用.jdinfo&lt;地址&gt;命令以显示其他异常信息，并将上下文更改为 （类似于如何异常的位置。使用 ecxr 将上下文设置为异常记录)。
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c41685a855f42fc453c71ef300fb6c0ab9259a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340903"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 
@@ -49,9 +49,9 @@ Windows 2000 和更高版本的打印机驱动程序组成的一套[打印机驱
 
 [Microsoft 通用打印机驱动程序](microsoft-universal-printer-driver.md)
 
-[Microsoft PostScript Printer Driver](microsoft-postscript-printer-driver.md)
+[Microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md)
 
-[Microsoft Plotter Driver](microsoft-plotter-driver.md)
+[Microsoft 绘图仪驱动程序](microsoft-plotter-driver.md)
 
 以下三个的驱动程序支持大多数最终用户可以立即购买的打印设备。 您需要编写的打印机驱动程序仅打印设备是否不与相应的 Microsoft 提供的驱动程序兼容。 您可以通过只需添加支持大多数新打印机[打印机数据文件](printer-data-files.md)到一个 Microsoft 提供的驱动程序。 可能需要新的驱动程序的设备包括这些控制的专有命令序列的包含硬件绘制加速器。
 

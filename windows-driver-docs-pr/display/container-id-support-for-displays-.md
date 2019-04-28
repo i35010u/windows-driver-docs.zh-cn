@@ -1,17 +1,17 @@
 ---
-title: 显示的容器 ID 支持
+title: 显示设备的容器 ID 支持
 description: 描述对显示的容器 ID 支持嵌入在显示器或监视器的设备中的设备的可视表示形式。
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d613567fd2d9c73ac4fb5388037c5b02db010ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327542"
 ---
-# <a name="container-id-support-for-displays"></a>显示的容器 ID 支持
+# <a name="container-id-support-for-displays"></a>显示设备的容器 ID 支持
 
 
 本主题介绍对显示的容器 ID 支持 — 嵌入在显示器或监视器的设备中的设备的可视表示形式。
@@ -19,9 +19,9 @@ ms.locfileid: "56524716"
 |                                                                                   |                                          |
 |-----------------------------------------------------------------------------------|------------------------------------------|
 | Windows 显示器驱动程序模型 (WDDM) 的最低版本                               | 1.2                                      |
-| 最低 Windows 版本                                                           | 8                                        |
+| 最大 Windows 版本                                                           | 8                                        |
 | 驱动程序实现 — 仅完全图形和显示                              | 强制                                |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 |  [容器 id 为显示器的功能测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
+| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 |  [监视器容器 ID 功能测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
 
  
 

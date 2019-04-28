@@ -27,11 +27,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e27ec98c27599f251f2c49062874110fd43b09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333548"
 ---
 # <a name="header-file-changes"></a>标头文件更改
 

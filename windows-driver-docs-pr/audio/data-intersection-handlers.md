@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c35d9e78a4049ab989b137ac5600005b0829528
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333822"
 ---
 # <a name="data-intersection-handlers"></a>数据交集处理程序
 
@@ -43,7 +43,7 @@ ms.locfileid: "56545053"
 
 端口驱动程序的默认数据交集处理程序用于处理最常见的硬件功能。 对于简单的音频设备，默认处理程序提供一个便捷替代方式，到在适配器驱动程序中实现专有的处理程序。 但是，有更高级的功能的适配器可能需要专有的处理程序，以便公开硬件的完整功能。
 
-本部分的其余部分介绍了一些端口驱动程序的默认数据交集处理程序的限制，并呈现设计方案的适配器驱动程序的专有数据交集处理程序所需的技术。 讨论了以下主题：
+本部分的其余部分介绍了一些端口驱动程序的默认数据交集处理程序的限制，并呈现设计方案的适配器驱动程序的专有数据交集处理程序所需的技术。 论述了以下主题：
 
 [数据交集](data-intersection.md)
 

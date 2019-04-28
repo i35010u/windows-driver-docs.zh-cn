@@ -5,11 +5,11 @@ ms.assetid: 35E52085-9727-465D-B6EF-D95974423CD5
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f270cda0552421c0d71efedf490e8c833c7ce12e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330091"
 ---
 # <a name="pedometer-data-fields"></a>计步器数据字段
 

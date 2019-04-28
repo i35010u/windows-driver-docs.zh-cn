@@ -1,6 +1,6 @@
 ---
-title: 如何登录到全局记录器会话
-description: 如何登录到全局记录器会话
+title: 如何记录到全局记录器会话
+description: 如何记录到全局记录器会话
 ms.assetid: b5efea00-39cd-4df3-aac4-ade9126f69ed
 keywords:
 - 全局记录器跟踪会话 WDK，日志记录
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3586e9ac23a2c38be1067a0a8520b2ac91b88bfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330686"
 ---
-# <a name="how-to-log-to-the-global-logger-session"></a>如何登录到全局记录器会话
+# <a name="how-to-log-to-the-global-logger-session"></a>如何记录到全局记录器会话
 
 
 使用以下过程配置的驱动程序将记录到全局记录器跟踪会话：

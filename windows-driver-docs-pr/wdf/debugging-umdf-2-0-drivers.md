@@ -1,17 +1,17 @@
 ---
-title: 故障排除 2.0 UMDF 驱动程序崩溃
+title: 排查 UMDF 2.0 驱动程序崩溃问题
 description: 从在用户模式驱动程序框架 (UMDF) 版本 2 开始，可以使用调试器扩展命令在 Wdfkd.dll 中实现的子集来调试 UMDF 驱动程序。
 ms.assetid: df1bfc10-379b-457f-a9c8-40fa10048f81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba636c96e7cbf3e38afb96f62ac069d4ac50f29a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330865"
 ---
-# <a name="troubleshooting-umdf-20-driver-crashes"></a>故障排除 2.0 UMDF 驱动程序崩溃
+# <a name="troubleshooting-umdf-20-driver-crashes"></a>排查 UMDF 2.0 驱动程序崩溃问题
 
 
 从在用户模式驱动程序框架 (UMDF) 版本 2 开始，可以使用调试器扩展命令在 Wdfkd.dll 中实现的子集来调试 UMDF 驱动程序。 本主题介绍的命令可能与启动解决 UMDF 驱动程序问题。

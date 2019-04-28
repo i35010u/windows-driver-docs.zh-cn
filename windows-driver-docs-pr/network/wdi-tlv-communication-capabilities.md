@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_COMMUNICATION_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e12e3367a119d9883b1e7fe1f1b741cd16393934
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331217"
 ---
 # <a name="wditlvcommunicationcapabilities"></a>WDI\_TLV\_通信\_功能
 

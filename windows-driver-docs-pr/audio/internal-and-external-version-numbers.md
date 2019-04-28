@@ -1,6 +1,6 @@
 ---
-title: 内部和外部的版本号
-description: 内部和外部的版本号
+title: 内部和外部版本号
+description: 内部和外部版本号
 ms.assetid: 705a2e5f-11b8-499c-815d-a2a54e907980
 keywords:
 - 版本编号 WDK 音频
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c62927fc6aee38f0e4d69f119f50361b20e509e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333430"
 ---
-# <a name="internal-and-external-version-numbers"></a>内部和外部的版本号
+# <a name="internal-and-external-version-numbers"></a>内部和外部版本号
 
 
 ## <span id="internal_and_external_version_numbers"></span><span id="INTERNAL_AND_EXTERNAL_VERSION_NUMBERS"></span>

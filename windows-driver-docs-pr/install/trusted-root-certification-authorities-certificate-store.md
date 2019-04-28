@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87c95dc9919eeae52a0ea904386afffeb6f3517e
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339515"
 ---
 # <a name="trusted-root-certification-authorities-certificate-store"></a>受信任的根证书颁发机构证书存储
 

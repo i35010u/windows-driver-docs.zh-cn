@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de243d303667476b3831123a166fc3a94e39573b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341614"
 ---
 # <a name="irqlkeapclte2-rule-wdm"></a>IrqlKeApcLte2 规则 (wdm)
 
@@ -92,7 +92,7 @@ ms.locfileid: "56519143"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**KeDeregisterNmiCallback**](https://msdn.microsoft.com/library/windows/hardware/ff552008)

@@ -1,5 +1,5 @@
 ---
-title: .createdir （集创建的进程目录）
+title: .createdir（设置已创建的进程目录）
 description: .Createdir 命令控制调试器创建的任何进程的开始目录和句柄继承。
 ms.assetid: 797f5398-f0b4-48e9-bc5f-eac5a53cad67
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5245f42b272564849464fd2c57a794c9f73e43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336885"
 ---
-# <a name="createdir-set-created-process-directory"></a>.createdir （集创建的进程目录）
+# <a name="createdir-set-created-process-directory"></a>.createdir（设置已创建的进程目录）
 
 
 **.Createdir**命令控制调试器创建的任何进程的开始目录和句柄继承。

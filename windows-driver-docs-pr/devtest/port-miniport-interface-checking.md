@@ -7,13 +7,13 @@ keywords:
 ms.date: 09/14/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f71ea841e0304bb0c9924b99098a4307b789f61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338705"
 ---
-# <a name="portminiport-interface-checking"></a>检查端口/微型端口接口
+# <a name="portminiport-interface-checking"></a>端口/微型端口接口检查
 
 检查端口/微型端口接口使驱动程序验证程序检查 PortCls.sys 和其音频微型端口驱动程序，以及 ks.sys 和其 AVStream 微型端口驱动程序之间的 DDI 接口。 请参阅[AVStream 驱动程序的规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)和[音频驱动程序的规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-audio-drivers)
 

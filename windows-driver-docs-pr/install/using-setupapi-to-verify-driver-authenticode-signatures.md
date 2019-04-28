@@ -1,6 +1,6 @@
 ---
-title: 使用 SetupAPI 来验证驱动程序验证码签名
-description: 使用 SetupAPI 来验证驱动程序验证码签名
+title: 使用 SetupAPI 验证驱动程序验证码签名
+description: 使用 SetupAPI 验证驱动程序验证码签名
 ms.assetid: 2019d77d-2d98-4bae-8d9d-aa41e47f3811
 keywords:
 - 安装程序 Api 函数 WDK，验证签名
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6710e892a5dae0827394540786ae5bba00e6e19d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339379"
 ---
-# <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 来验证驱动程序验证码签名
+# <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 验证驱动程序验证码签名
 
 
 

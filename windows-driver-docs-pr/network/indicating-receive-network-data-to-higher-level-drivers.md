@@ -1,6 +1,6 @@
 ---
-title: 指示接收到更高级别驱动程序的网络数据
-description: 指示接收到更高级别驱动程序的网络数据
+title: 指示将网络数据接收到更高级别的驱动程序
+description: 指示将网络数据接收到更高级别的驱动程序
 ms.assetid: 27272427-86bc-4fd3-bd2f-12d94273fcd4
 keywords:
 - 中间驱动程序 WDK 网络，接收操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4bb97a5a664978159a5cae81afd6292eb7cb7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327808"
 ---
-# <a name="indicating-receive-network-data-to-higher-level-drivers"></a>指示接收到更高级别驱动程序的网络数据
+# <a name="indicating-receive-network-data-to-higher-level-drivers"></a>指示将网络数据接收到更高级别的驱动程序
 
 
 

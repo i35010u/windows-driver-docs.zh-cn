@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a0905f792e32ed595c7053573525b5836b1ba277
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339800"
 ---
 # <a name="sendfile-send-file"></a>.send\_文件 （发送文件）
 

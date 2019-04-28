@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d20d6da973b5a5a49bd7f0e5bf7c24adee375c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338999"
 ---
 # <a name="kspropertyconnectionstartat"></a>KSPROPERTY\_连接\_STARTAT
 
@@ -76,13 +76,13 @@ Pin 处于暂停状态，若要转换到运行状态的 pin 时，应仅请求�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSRELATIVEEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff566776)

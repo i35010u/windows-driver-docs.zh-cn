@@ -5,11 +5,11 @@ ms.assetid: C478BCBA-2A17-4604-AE2B-99B3445C741B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13434323205ff001db3eb1105ecfd2c5817ed878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328607"
 ---
 # <a name="hfp-device-startup"></a>HFP 设备启动
 
@@ -80,7 +80,7 @@ HFP 设备启动本主题将讨论蓝牙免提配置文件 (HFP) 设备到达音
 
 音频驱动程序将发送 get 卷状态 IOCTL，若要获取中音量级别中的耳机该卷的状态已发生的任何更改的信息。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [**IOCTL\_BTHHFP\_DEVICE\_GET\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/hardware/dn265108)  
 [理论上的操作](theory-of-operation.md)  
 [获取 HF 设备的蓝牙地址](obtaining-bluetooth-address-of-hf-device.md)  

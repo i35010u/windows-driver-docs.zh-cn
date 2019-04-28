@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7736dba8fbb19b3b0e73e7fe5a2cea85cfa7fae6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330855"
 ---
 # <a name="usb3kdxhcidumpall"></a>!usb3kd.xhci\_dumpall
 

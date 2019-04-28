@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 72c24e2bbd3ea296555b4563294ae229dd022233
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339635"
 ---
 # <a name="suppresswizard-xml-element"></a>suppressWizard XML 元素
 
@@ -65,7 +65,7 @@ ms.locfileid: "56547332"
 
  
 
-**备注**
+**注释**
 
 默认情况下**suppressWizard**标志设置为 OFF。 可以设置**suppressWizard**通过包括标志为 ON **suppressWizard**作为子元素的 XML 元素**dpinst** DPInst 描述符文件中或通过使用 XML 元素 **/sw** 命令行开关。 **SuppressWizard**标志适用于**suppressEulaPage**标志。
 
@@ -79,7 +79,7 @@ ms.locfileid: "56547332"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

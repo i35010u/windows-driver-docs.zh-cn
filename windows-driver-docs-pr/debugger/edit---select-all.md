@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe23bc564101bb4ab2f2c83ffbff4ea10ee7003c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331391"
 ---
-# <a name="edit--select-all"></a>编辑 |选择所有
+# <a name="edit--select-all"></a>编辑 | 全选
 
 
 ## <span id="ddk_edit_select_all_dbg"></span><span id="DDK_EDIT_SELECT_ALL_DBG"></span>

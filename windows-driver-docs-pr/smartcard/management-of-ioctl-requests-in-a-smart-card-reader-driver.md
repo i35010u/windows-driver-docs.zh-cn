@@ -1,6 +1,6 @@
 ---
-title: IOCTL 请求智能卡读卡器驱动程序中的管理
-description: IOCTL 请求智能卡读卡器驱动程序中的管理
+title: 智能卡读卡器驱动程序中的 IOCTL 请求管理
+description: 智能卡读卡器驱动程序中的 IOCTL 请求管理
 ms.assetid: 610476fc-59e7-4981-9afa-20ed7cc697c1
 keywords:
 - 智能卡驱动程序 WDK，IOCTL 请求管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6a1f254bda1ac3754f278461600b929592a69a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331107"
 ---
-# <a name="management-of-ioctl-requests-in-a-smart-card-reader-driver"></a>IOCTL 请求智能卡读卡器驱动程序中的管理
+# <a name="management-of-ioctl-requests-in-a-smart-card-reader-driver"></a>智能卡读卡器驱动程序中的 IOCTL 请求管理
 
 
 ## <span id="_ntovr_management_of_ioctl_requests_in_a_smart_card_reader_driver"></span><span id="_NTOVR_MANAGEMENT_OF_IOCTL_REQUESTS_IN_A_SMART_CARD_READER_DRIVER"></span>

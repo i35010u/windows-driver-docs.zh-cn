@@ -5,11 +5,11 @@ ms.assetid: E8649FE1-3BC3-4F55-953B-82A1AACCF572
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d8547ad0d135b37cb94529b1144755f2a3a355c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330140"
 ---
 # <a name="other-sensor-properties"></a>其他传感器属性
 

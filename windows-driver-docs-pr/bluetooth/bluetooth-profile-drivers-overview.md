@@ -5,15 +5,15 @@ ms.assetid: 86806113-28b6-470c-883c-506ac1205f85
 keywords:
 - 蓝牙 WDK，有关蓝牙
 - 远程连接 WDK 蓝牙
-- WDK 蓝牙连接
+- 连接 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 811734c706f25cedaddd03e929ad398456a83cc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328261"
 ---
 # <a name="bluetooth-profile-drivers-overview"></a>蓝牙配置文件驱动程序概述
 

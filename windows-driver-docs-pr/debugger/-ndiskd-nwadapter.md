@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 813f290a94856444214e734e7e22a9991326f5a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335954"
 ---
-# <a name="ndiskdnwadapter"></a>！ ndiskd.nwadapter
+# <a name="ndiskdnwadapter"></a>!ndiskd.nwadapter
 
 
 **！ Ndiskd.nwadapter**扩展显示有关一个或多个 nwifi 信息 ！ADAPT 结构。 如果不带任何参数运行此扩展 ！ ndiskd 将显示一组所有 nwifi ！ADAPT 结构。

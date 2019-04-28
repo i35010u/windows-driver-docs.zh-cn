@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 10b925d99cd29487ed4d3d1ce72a43861bf97213
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336796"
 ---
 # <a name="drivers"></a>!drivers
 

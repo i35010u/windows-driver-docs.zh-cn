@@ -5,11 +5,11 @@ ms.assetid: D0B41718-37B9-4FB4-BA10-20765F836214
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a91050334c16928f908ed9b1139bf03c95e7af8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339992"
 ---
 # <a name="querying-packet-coalescing-receive-filters"></a>查询数据包合并接收筛选器
 

@@ -1,5 +1,5 @@
 ---
-title: .remote_exit （退出调试客户端）
+title: .remote_exit（退出调试客户端）
 description: .Remote_exit 命令退出调试客户端，但不会结束调试会话。
 ms.assetid: 9e15a842-6864-4ff9-97bc-f6cc8549a422
 keywords:
@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f19ade2702be6d8b1df22fbe6444458a77fbb3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339850"
 ---
 # <a name="remoteexit-exit-debugging-client"></a>.remote\_退出 （退出调试客户端）
 

@@ -5,20 +5,20 @@ ms.assetid: 661BFB7E-D190-450D-A466-7D6AD0EAAAB0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6479aa3ec938df80a873bac6f9dbad01f2f475a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337324"
 ---
 # <a name="windows-acpi-design-guide-for-soc-platforms"></a>SoC 平台的 Windows ACPI 设计指南
 
 
-高级配置和电源接口规范，修订版本 5.0 ([ACPI 5.0 规范](https://www.uefi.org/specifications))，定义一组新的功能，可支持基于系统芯片 (SoC) 集成线路的低功率的移动设备和实现连接待机电源模型。 从 Windows 8 和 Windows 8.1 开始，Windows 支持 SoC 基于平台的新 ACPI 5.0 的功能。
+高级配置和电源接口规格 5.0 修正版（[ACPI 5.0 规格](https://www.uefi.org/specifications)）定义了一组新的功能，这些功能可以支持低功耗的移动设备，而这些移动设备则基于系统单芯片 (SoC) 集成电路并实现了连接待机电源模型。 从 Windows 8 和 Windows 8.1 开始，Windows 支持 SoC 基于平台的新 ACPI 5.0 的功能。
 
 本部分包含 Windows Pc 和设备支持 ACPI 5.0 规范中的新功能的实现准则。 固件开发人员和系统设计人员可以使用这些准则以确保 Windows 在其平台上正常运行。 所有 Windows 固件要求的列表，请参阅的文档[Windows 认证计划](https://go.microsoft.com/fwlink/p/?linkid=227314)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

@@ -1,6 +1,6 @@
 ---
-title: DirectMusic 的驱动程序支持
-description: DirectMusic 的驱动程序支持
+title: 针对 DirectMusic 的驱动程序支持
+description: 针对 DirectMusic 的驱动程序支持
 ms.assetid: 48f6245e-0911-46b6-9cf9-ea4db8875021
 keywords:
 - DirectMusic WDK 音频
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c3a4b60205a85ca4432980cede12c02c874ca8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333740"
 ---
-# <a name="driver-support-for-directmusic"></a>DirectMusic 的驱动程序支持
+# <a name="driver-support-for-directmusic"></a>针对 DirectMusic 的驱动程序支持
 
 
 ## <span id="driver_support_for_directmusic"></span><span id="DRIVER_SUPPORT_FOR_DIRECTMUSIC"></span>

@@ -5,11 +5,11 @@ ms.assetid: 14b54fe3-49f7-4ad8-b9b6-ecc747dff137
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ce63723ac4fa81625b634647792edc18062b5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337403"
 ---
 # <a name="uefi-in-windows"></a>Windows 中的 UEFI
 
@@ -24,7 +24,7 @@ UEFI 是基于标准的 UEFI 规范，其中描述了一个标准环境和一组
 
 除了 UEFI 规范中所述的实现详细信息，还有一组额外的 SoC 平台上运行 Windows 的 UEFI 要求。 有关这些要求，请参阅[SoC 平台上的 Windows 最小值 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

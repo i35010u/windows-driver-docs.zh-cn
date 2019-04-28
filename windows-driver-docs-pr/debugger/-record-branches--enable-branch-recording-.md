@@ -1,5 +1,5 @@
 ---
-title: .record_branches （启用分支录制）
+title: .record_branches（启用分支记录）
 description: .Record_branches 命令启用目标的代码执行的分支的记录。
 ms.assetid: 522eeba5-b6c5-473c-9c8e-8ef4c941079f
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f06ce24825ac7170f226347d2477d55af9aa6720
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334298"
 ---
 # <a name="recordbranches-enable-branch-recording"></a>.record\_分支 （启用分支录制）
 

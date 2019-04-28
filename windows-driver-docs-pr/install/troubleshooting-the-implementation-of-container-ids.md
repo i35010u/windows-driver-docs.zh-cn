@@ -1,19 +1,19 @@
 ---
-title: 故障排除容器 Id 的实现
-description: 故障排除容器 Id 的实现
+title: 排查容器 ID 实现问题
+description: 排查容器 ID 实现问题
 ms.assetid: 9c992f5a-73b6-4567-977f-1cd92862bf60
 keywords:
 - 容器 Id WDK 故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 165189d318d5065d594cf721a9b0c958e536bdf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339518"
 ---
-# <a name="troubleshooting-the-implementation-of-container-ids"></a>故障排除容器 Id 的实现
+# <a name="troubleshooting-the-implementation-of-container-ids"></a>排查容器 ID 实现问题
 
 
 如果预期只有一个时，将显示多个设备在设备和打印机用户界面 (UI) 的实例，该设备未正确实现容器 ID 要求。 此实现不正确会导致 Plug and Play (PnP) 管理器以一个或多个设备节点进行分组 (*devnodes*) 到设备的其他设备容器。

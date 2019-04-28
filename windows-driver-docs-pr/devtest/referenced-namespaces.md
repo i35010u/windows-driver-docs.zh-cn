@@ -1,6 +1,6 @@
 ---
-title: 引用的命名空间
-description: 引用的命名空间
+title: 参考的命名空间
+description: 参考的命名空间
 ms.assetid: 4adb0979-1e97-4697-bd85-c808023ce43f
 keywords:
 - WSDBIT 工具 WDK，命名空间
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2eaacd83d10e2b4832bfa3c11f05112e45a3f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339740"
 ---
-# <a name="referenced-namespaces"></a>引用的命名空间
+# <a name="referenced-namespaces"></a>参考的命名空间
 
 
 下表中的信息描述在本部分和 DWPS 规范中引用的命名空间。

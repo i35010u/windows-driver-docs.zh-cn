@@ -1,22 +1,22 @@
 ---
-title: 测试签名驱动程序包
+title: 对驱动程序包进行测试签名
 description: 本部分介绍如何测试签名驱动程序包。
 ms.assetid: 3BC92099-A464-4C62-9EB7-DD6AA0D1FB03
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ac12f24d66237581ba90831b04a7da3237192ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328899"
 ---
-# <a name="test-sign-a-driver-package"></a>测试签名驱动程序包
+# <a name="test-sign-a-driver-package"></a>对驱动程序包进行测试签名
 
 
 本部分介绍如何测试签名驱动程序包。
 
-## <a name="test-sign-a-driver-package"></a>测试签名驱动程序包
+## <a name="test-sign-a-driver-package"></a>对驱动程序包进行测试签名
 
 
 使用以下步骤测试签名驱动程序包使用的测试证书：

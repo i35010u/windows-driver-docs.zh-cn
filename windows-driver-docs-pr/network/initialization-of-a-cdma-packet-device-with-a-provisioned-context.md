@@ -1,17 +1,17 @@
 ---
-title: CDMA 数据包设备预配的上下文使用的初始化
-description: CDMA 数据包设备预配的上下文使用的初始化
+title: 初始化使用预配上下文的 CDMA 数据包设备
+description: 初始化使用预配上下文的 CDMA 数据包设备
 ms.assetid: 07b4881c-b8df-4831-b0d3-521d187e4232
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec11d588984d99b13bda1d58525d8862e6274da2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339110"
 ---
-# <a name="initialization-of-a-cdma-packet-device-with-a-provisioned-context"></a>CDMA 数据包设备预配的上下文使用的初始化
+# <a name="initialization-of-a-cdma-packet-device-with-a-provisioned-context"></a>初始化使用预配上下文的 CDMA 数据包设备
 
 
 下图说明了基于 CDMA 的设备的最佳用户体验。 开箱体验不需要用户配置。 此方案假定尚未激活基于 CDMA 的帐户。 与不同的是基于 GSM 的设备，基于 CDMA 的设备会自动启动注册与网络完成激活后。 以粗体显示的标签是 OID 标识符或事务流控制，并在常规文本的标签是 OID 结构中的重要标志。

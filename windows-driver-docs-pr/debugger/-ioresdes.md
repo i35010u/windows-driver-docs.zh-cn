@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fe4f2bff66961e0fe2c713c394e483e4efead11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336434"
 ---
-# <a name="ioresdes"></a>！ ioresdes
+# <a name="ioresdes"></a>!ioresdes
 
 
 **！ Ioresdes**扩展插件都会显示 IO\_资源\_指定地址处的描述符结构。

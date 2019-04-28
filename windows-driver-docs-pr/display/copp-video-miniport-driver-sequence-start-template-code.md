@@ -1,19 +1,19 @@
 ---
-title: COPP 视频微型端口驱动程序序列开始模板代码
-description: COPP 视频微型端口驱动程序序列开始模板代码
+title: COPP 视频微型端口驱动程序序列启动模板代码
+description: COPP 视频微型端口驱动程序序列启动模板代码
 ms.assetid: f1fc0d03-43f6-44a0-b911-1ca473e4e701
 keywords:
 - 序列启动 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb5c9294e1b38975e75bb8c49c9328a38faf6de6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331327"
 ---
-# <a name="copp-video-miniport-driver-sequence-start-template-code"></a>COPP 视频微型端口驱动程序序列开始模板代码
+# <a name="copp-video-miniport-driver-sequence-start-template-code"></a>COPP 视频微型端口驱动程序序列启动模板代码
 
 
 ## <span id="ddk_copp_video_miniport_driver_sequence_start_template_code_gg"></span><span id="DDK_COPP_VIDEO_MINIPORT_DRIVER_SEQUENCE_START_TEMPLATE_CODE_GG"></span>

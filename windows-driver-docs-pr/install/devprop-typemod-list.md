@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 09215fa94fb7d05caf7c0dd393b3679a42fb05c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331269"
 ---
 # <a name="devproptypemodlist"></a>DEVPROP_TYPEMOD_LIST
 
@@ -47,13 +47,13 @@ ms.locfileid: "56521601"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_TYPEMOD_ARRAY**](devprop-typemod-array.md)

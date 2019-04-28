@@ -1,5 +1,5 @@
 ---
-title: .sound_notify （使用通知声音）
+title: .sound_notify（使用通知音）
 description: .Sound_notify 命令使 WinDbg 进入等待的命令状态时要播放的声音。
 ms.assetid: 72ef33ea-1c75-4add-80eb-a0d824571948
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fb846550287246a942cbd36da74bfadf122013a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338841"
 ---
 # <a name="soundnotify-use-notification-sound"></a>.sound\_通知 （使用通知声音）
 

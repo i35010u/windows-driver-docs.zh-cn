@@ -5,11 +5,11 @@ ms.assetid: 92FEEBAF-9978-4BDE-BB4F-81454D84A7E7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1973d4d39270d6a9ac25f9badfedc45b1adfccb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335486"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-8"></a>Windows 8 中的网络内核调试支持的以太网 NIC
 

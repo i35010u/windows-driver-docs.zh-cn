@@ -5,11 +5,11 @@ ms.assetid: 01cdb3c8-df6b-4eb5-b9a0-0cd8e5358422
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf7d7be0367fe8d68590eaf6d9e8687dad783dff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332523"
 ---
 # <a name="kspropsetidjack"></a>KSPROPSETID\_插孔
 

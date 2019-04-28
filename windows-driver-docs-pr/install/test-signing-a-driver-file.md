@@ -1,6 +1,6 @@
 ---
-title: 测试签名的驱动程序文件
-description: 测试签名的驱动程序文件
+title: 对驱动程序文件进行测试签名
+description: 对驱动程序文件进行测试签名
 ms.assetid: 3d73d632-e910-43e7-a8fd-c78a11df0206
 keywords:
 - 测试签名驱动程序包 WDK，驱动程序文件
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7442f05d8d409f950b4e364fae179a61ce2e1b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339598"
 ---
-# <a name="test-signing-a-driver-file"></a>测试签名的驱动程序文件
+# <a name="test-signing-a-driver-file"></a>对驱动程序文件进行测试签名
 
 
 使用[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)驱动程序文件中嵌入签名，如以下主题中所述：

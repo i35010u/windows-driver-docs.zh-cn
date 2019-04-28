@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50718cd3a4f084e94a267ac30d902af04388fcd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333392"
 ---
 # <a name="introduction-to-port-class"></a>端口类简介
 
@@ -48,7 +48,7 @@ PortCls Portcls.sys 系统文件中实现作为导出驱动程序 (内核模式 
 
 通常情况下，端口驱动程序提供了大多数的音频子每个类的功能。 例如，WaveRT 端口驱动程序的大部分内容是流式传输到基于 DMA 的音频设备时，音频数据所需的工作而微型端口驱动程序提供特定于设备的详细信息，例如 DMA 地址和设备名称。
 
-音频适配器驱动程序和微型端口驱动程序通常以 Microsoft c + + 编写并广泛使用的 COM 接口。 端口微型端口驱动程序体系结构将提升模块化设计。 微型端口驱动程序编写人员应实现其驱动程序，如 c + + 类派生自[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698) Portcls.h 标头文件中定义的接口。 硬件初始化发生在驱动程序加载时间--通常**Init**方法**IMiniport**-派生类 (例如， [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅[内核中的 COM](com-in-the-kernel.md)。
+音频适配器驱动程序和微型端口驱动程序通常以 Microsoft 编写C++和广泛使用的 COM 接口。 端口微型端口驱动程序体系结构将提升模块化设计。 微型端口驱动程序编写人员应实现其驱动程序，因为C++类派生自[IMiniport](https://msdn.microsoft.com/library/windows/hardware/ff536698)接口，该标头文件 Portcls.h 中定义接口。 硬件初始化发生在驱动程序加载时间--通常**Init**方法**IMiniport**-派生类 (例如， [ **IMiniportWaveRT::Init**](https://msdn.microsoft.com/library/windows/hardware/ff536759)). 有关音频微型端口驱动程序的 COM 实现的详细信息，请参阅[内核中的 COM](com-in-the-kernel.md)。
 
 下图说明了端口和微型端口驱动程序和音频堆栈中的位置之间的关系。
 

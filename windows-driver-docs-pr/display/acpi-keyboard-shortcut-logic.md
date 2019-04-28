@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba92265c4f40d64e18cecef1f6f22d9f172fccd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341590"
 ---
 # <a name="acpi-keyboard-shortcut-logic"></a>ACPI 键盘快捷方式逻辑
 

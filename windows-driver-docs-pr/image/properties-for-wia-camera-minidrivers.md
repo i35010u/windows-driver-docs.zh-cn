@@ -1,17 +1,17 @@
 ---
-title: WIA 照相机微型驱动程序的属性
-description: WIA 照相机微型驱动程序的属性
+title: WIA 相机微型驱动程序的属性
+description: WIA 相机微型驱动程序的属性
 ms.assetid: 3a5e61d7-1ca8-44a8-b24a-7a5929d424a5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd5b8ac48c69f7058c543b80dc85426dc8920393
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327850"
 ---
-# <a name="properties-for-wia-camera-minidrivers"></a>WIA 照相机微型驱动程序的属性
+# <a name="properties-for-wia-camera-minidrivers"></a>WIA 相机微型驱动程序的属性
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: .kframes （设置堆栈的长度）
+title: .kframes（设置堆栈长度）
 description: .Kframes 命令设置堆栈跟踪显示的默认长度。
 ms.assetid: 4f11a197-add1-4957-8345-dfbdb2037605
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6775751def8fa5a72ec6b191b660a11f22907ce7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336329"
 ---
-# <a name="kframes-set-stack-length"></a>.kframes （设置堆栈的长度）
+# <a name="kframes-set-stack-length"></a>.kframes（设置堆栈长度）
 
 
 **.Kframes**命令设置的堆栈跟踪显示默认长度。

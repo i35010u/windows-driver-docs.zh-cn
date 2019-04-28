@@ -1,6 +1,6 @@
 ---
-title: 注册为异步的驱动程序通知
-description: 注册为异步的驱动程序通知
+title: 注册异步驱动程序通知
+description: 注册异步驱动程序通知
 ms.assetid: e1f97a65-7c82-4d7b-97ec-0293fc69fd8c
 keywords:
 - 驱动程序通知 WDK 动态硬件分区、 注册
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6c2de67b4a1094cc4779e72e6ec5d16270fb1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338537"
 ---
-# <a name="registering-for-asynchronous-driver-notification"></a>注册为异步的驱动程序通知
+# <a name="registering-for-asynchronous-driver-notification"></a>注册异步驱动程序通知
 
 
 若要使用异步驱动程序通知，设备驱动程序实现到硬件分区动态添加处理器或内存模块时，操作系统将调用的回调函数。 下面的代码示例显示了此类回调函数的原型：

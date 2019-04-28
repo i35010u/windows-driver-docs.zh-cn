@@ -5,11 +5,11 @@ ms.assetid: 6BAE348D-B5BA-4B74-8D9B-79B146427D8C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc9a33e7534e39642cf8f1b4968015836df93c59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338459"
 ---
 # <a name="cloning-packet-traffic"></a>克隆数据包流量
 

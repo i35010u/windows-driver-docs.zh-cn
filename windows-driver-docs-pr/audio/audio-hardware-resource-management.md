@@ -5,11 +5,11 @@ ms.assetid: 6E94529E-F3F0-4DC5-AF8B-F896A4F991E3
 ms.date: 10/29/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1e3b7d4995110d9d998cbc02173a48693943b0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331467"
 ---
 # <a name="audio-hardware-resource-management"></a>音频硬件资源管理
 

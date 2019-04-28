@@ -5,11 +5,11 @@ ms.assetid: 66f7500e-e075-495b-9ce0-aed2aa11f66a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 815b857212f225c7da8e9a87880d5333829a85ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337689"
 ---
 # <a name="efiusbfnioprotocoldetectport"></a>EFI\_USBFN\_IO\_PROTOCOL.DetectPort
 

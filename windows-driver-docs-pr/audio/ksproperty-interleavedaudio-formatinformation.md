@@ -14,11 +14,11 @@ api_type:
 ms.date: 02/15/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d1677ef926b8cdef3fa64933c3b67cabfaf8cb6
-ms.sourcegitcommit: 5f4404a7010a6b26530f60144c5ea7cab846feec
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56582911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332718"
 ---
 # <a name="kspropertyinterleavedaudioformatinformation"></a>KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 
 

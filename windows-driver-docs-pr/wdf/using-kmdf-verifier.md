@@ -5,11 +5,11 @@ ms.assetid: ab6a0149-9341-435b-b7e7-9c5d6520ebd8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3e781d04e506db62b0aa2ca4e336b743f641fed
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327147"
 ---
 # <a name="using-kmdf-verifier"></a>使用 KMDF 验证程序
 

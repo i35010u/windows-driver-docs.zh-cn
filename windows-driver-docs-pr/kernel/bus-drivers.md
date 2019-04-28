@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9618484d66ecfeeea4834673a80023cbc996f63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338633"
 ---
 # <a name="bus-drivers"></a>总线驱动程序
 

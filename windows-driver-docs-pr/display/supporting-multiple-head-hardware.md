@@ -1,6 +1,6 @@
 ---
-title: 支持多个头硬件
-description: 支持多个头硬件
+title: 支持多头硬件
+description: 支持多头硬件
 ms.assetid: ea618586-3649-405c-b1fd-78a11f14c742
 keywords:
 - 多个头硬件 WDK DirectX 9.0
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5df8008ccbb6c650498d92ef55e6fb54798a88b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330685"
 ---
-# <a name="supporting-multiple-head-hardware"></a>支持多个头硬件
+# <a name="supporting-multiple-head-hardware"></a>支持多头硬件
 
 
 ## <span id="ddk_supporting_multiple_head_hardware_gg"></span><span id="DDK_SUPPORTING_MULTIPLE_HEAD_HARDWARE_GG"></span>

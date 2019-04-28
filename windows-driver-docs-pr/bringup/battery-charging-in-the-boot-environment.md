@@ -5,11 +5,11 @@ ms.assetid: 5aa1ef68-6939-4896-aabd-d499ba23f89f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21508f751ebaf0a5ffb5e90fbb49609e436dd505
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328149"
 ---
 # <a name="battery-charging-in-the-boot-environment-for-windows-10-mobile"></a>启动环境中 Windows 10 移动版的电池充电
 

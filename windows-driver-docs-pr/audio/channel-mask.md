@@ -1,6 +1,6 @@
 ---
-title: 通道掩码
-description: 通道掩码
+title: 声道掩码
+description: 声道掩码
 ms.assetid: 875ed000-ac53-4365-8381-3fe08d45cbcc
 keywords:
 - 数据格式 WDK 音频
@@ -27,13 +27,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6154059f7b282e3bef75a8c295868f67129fa26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333898"
 ---
-# <a name="channel-mask"></a>通道掩码
+# <a name="channel-mask"></a>声道掩码
 
 
 在 Windows 中， [ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构定义多渠道的 PCM 音频流的数据格式。 此结构指定的参数，如示例中的每个 PCM 的位数的流和通道掩码中的通道数。 通道掩码指定的映射到扬声器的通道。 下图显示通道掩码中的单个位。

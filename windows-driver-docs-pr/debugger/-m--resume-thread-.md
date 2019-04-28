@@ -1,5 +1,5 @@
 ---
-title: ~ m （恢复线程）
+title: ~m（恢复线程）
 description: ~ M 命令恢复指定线程的执行。不要混淆此命令使用 m （移动内存） 命令。
 ms.assetid: fc4eec45-2a28-4571-abf5-3896b77a52c9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f783fe1bc23252fbc40d936124711d8b2ccd0d3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336098"
 ---
-# <a name="m-resume-thread"></a>~ m （恢复线程）
+# <a name="m-resume-thread"></a>~m（恢复线程）
 
 
 **~ M**命令恢复指定线程的执行。

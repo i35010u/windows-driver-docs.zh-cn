@@ -5,11 +5,11 @@ ms.assetid: 03c6bbd1-bd4f-415f-b4ed-c6e812c50f8d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5aad0b79cf7eb6ca1d3d468b6908270a4b1d6b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329882"
 ---
 # <a name="introduction-to-ndis-virtual-machine-queue-vmq"></a>NDIS 虚拟机队列 (VMQ) 简介
 

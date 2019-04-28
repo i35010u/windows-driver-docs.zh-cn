@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 527c7f1488a855300c65a14951b9a120a27a760a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331861"
 ---
 # <a name="software-defined-battery"></a>软件定义的电池
 

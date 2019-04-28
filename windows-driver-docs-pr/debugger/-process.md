@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2740945a72b1b77f7b4c6db84e8fca2b1e9567b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334355"
 ---
 # <a name="process"></a>!process
 
@@ -140,7 +140,7 @@ PROCESS 809258e0  Cid: 0044    Peb: 7ffde000  ParentCid: 0026
 <td align="left"><p>十六进制数后 word ParentCid 是父进程的 PID。 在上述示例中，父进程的 PID 是 0x26 中的最后一项或十进制 38。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>图像</p></td>
+<td align="left"><p>Image</p></td>
 <td align="left"><p>拥有进程的模块的名称。 在前面的示例中的最后一项，所有者是 spoolss.exe。 在第一个项，所有者是操作系统本身。</p></td>
 </tr>
 <tr class="even">

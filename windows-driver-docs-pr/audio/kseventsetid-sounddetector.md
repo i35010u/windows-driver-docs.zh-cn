@@ -5,11 +5,11 @@ ms.assetid: 372F7BD6-3015-4B60-8089-71222E533FE3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21370ef6c59676f77a88f0d31b6b00678372ef65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333328"
 ---
 # <a name="kseventsetidsounddetector"></a>KSEVENTSETID\_SoundDetector
 

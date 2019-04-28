@@ -1,17 +1,17 @@
 ---
-title: 动态配置 MSI X
-description: 动态配置 MSI X
+title: 动态配置 MSI-X
+description: 动态配置 MSI-X
 ms.assetid: 53051239-e00f-41e8-b95d-9618693e696d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 564c18d512d23ab7372d7ab089e570b47ea7658a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341461"
 ---
-# <a name="dynamically-configuring-msi-x"></a>动态配置 MSI X
+# <a name="dynamically-configuring-msi-x"></a>动态配置 MSI-X
 
 
 Windows Vista Service Pack 1 (SP1)、 Windows Server 2008 和更高版本的操作系统支持动态修改 MSI X 中断消息的属性。 （PCI 3.0 规范定义 MSI X。）PCI 总线驱动程序公开 GUID\_MSIX\_表\_CONFIG\_接口接口，以允许修改总线硬件中断表中的设置的 PCI 设备的驱动程序。

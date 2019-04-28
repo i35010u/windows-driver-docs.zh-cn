@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5162aa2d79a996f32676e8575a929a2f5aa7d975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340481"
 ---
 # <a name="using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak"></a>使用内核调试程序查找内核模式内存泄漏
 
@@ -28,7 +28,7 @@ ms.locfileid: "56564672"
 
 若要确定哪个池标记为泄漏与相关联，它是通常最容易使用 PoolMon 工具执行此步骤。 有关详细信息，请参阅[查找内核模式内存泄漏到使用 PoolMon](using-poolmon-to-find-a-kernel-mode-memory-leak.md)。
 
-或者，可以使用内核调试程序来查找与大型池分配关联的标记。 若要执行此操作，请使用以下过程：
+或者，可以使用内核调试程序来查找与大型池分配关联的标记。 为此，请按照以下过程：
 
 1.  使用重新加载所有模块[ **.reload （重新都加载模块）** ](-reload--reload-module-.md)命令。
 

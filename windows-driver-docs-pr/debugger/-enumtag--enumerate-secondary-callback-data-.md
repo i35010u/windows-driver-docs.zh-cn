@@ -1,5 +1,5 @@
 ---
-title: .enumtag （辅助回调数据枚举）
+title: .enumtag（枚举辅助回调数据）
 description: .Enumtag 命令显示辅助 bug 检查回调数据和所有数据标记。
 ms.assetid: 2146ebb9-96ce-4eb0-8c23-c9aaa5ed7f73
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c9987446b2e863e298d6a223b1533185ade168aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336779"
 ---
-# <a name="enumtag-enumerate-secondary-callback-data"></a>.enumtag （辅助回调数据枚举）
+# <a name="enumtag-enumerate-secondary-callback-data"></a>.enumtag（枚举辅助回调数据）
 
 
 **.Enumtag**命令显示辅助 bug 检查回调数据和所有数据标记。

@@ -1,14 +1,14 @@
 ---
-Description: Guidelines for hardware vendors and device manufacturers to prepare USB devices and host controllers for Windows Hardware Certification Program submission.
+Description: 若要准备的 Windows 硬件认证计划提交的 USB 设备和主机控制器的硬件供应商和设备制造商的指南。
 title: USB-IF 认证测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51b5169c89d717d031dc5e43f0b7e548ba717cf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330371"
 ---
 # <a name="usb-if-certification-tests"></a>USB-IF 认证测试
 

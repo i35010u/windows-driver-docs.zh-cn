@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22776d03ddc3ebe099d63b98d607f58cdacdd04c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332918"
 ---
 # <a name="kspropertyaudiowavertcurrentwritelastbufferposition"></a>KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_位置
 
@@ -91,7 +91,7 @@ KSPROPERTY\_音频\_WAVERT\_当前\_编写\_LASTBUFFER\_位置属性请求将返
 <td align="left"><p>Windows Server 2012 R2</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: 232c4272-0bf0-4a4e-9560-3bceeca8a3e3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6467f919247aa8b34e9df5b81eaf001e2965f6b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341155"
 ---
 # <a name="declaring-functions-by-using-function-role-types-for-ndis-drivers"></a>使用 NDIS 驱动程序的函数角色类型来声明函数
 

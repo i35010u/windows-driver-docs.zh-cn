@@ -1,19 +1,19 @@
 ---
-title: 停止后失败的启动设备 (Windows 98 / 我)
-description: 停止后失败的启动设备 (Windows 98 / 我)
+title: 启动失败后停止设备 (Windows 98/Me)
+description: 启动失败后停止设备 (Windows 98/Me)
 ms.assetid: 373a1797-6479-4b99-b577-c74494f1774c
 keywords:
 - 启动 WDK 即插即用失败
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 392b9b11e3e59f046a6095c106e76c6a619198ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331937"
 ---
-# <a name="stopping-a-device-after-a-failed-start-windows-98me"></a>停止后失败的启动设备 (Windows 98 / 我)
+# <a name="stopping-a-device-after-a-failed-start-windows-98me"></a>启动失败后停止设备 (Windows 98/Me)
 
 
 

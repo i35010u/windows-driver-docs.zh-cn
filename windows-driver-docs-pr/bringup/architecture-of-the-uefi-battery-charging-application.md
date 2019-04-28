@@ -5,11 +5,11 @@ ms.assetid: eabac2ec-6e2f-448f-9793-117e12c288d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e69976ba90a8fd4d87c0d2a29a2e223a05669aa8
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328135"
 ---
 # <a name="architecture-of-the-uefi-battery-charging-application-provided-by-microsoft"></a>Microsoft 提供的 UEFI 电池充电应用程序的体系结构
 

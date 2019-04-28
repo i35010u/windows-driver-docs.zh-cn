@@ -1,5 +1,5 @@
 ---
-title: .clients （调试客户端的列表）
+title: .clients（列出调试客户端）
 description: .Clients 命令将列出当前已连接到调试会话的所有调试客户端。
 ms.assetid: a5f760d7-f454-49c5-853d-bcb545c0b05e
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f13a31dee3236d848242efb350fd58fcc9feb7ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334628"
 ---
-# <a name="clients-list-debugging-clients"></a>.clients （调试客户端的列表）
+# <a name="clients-list-debugging-clients"></a>.clients（列出调试客户端）
 
 
 **.Clients**命令将列出当前已连接到调试会话的所有调试客户端。

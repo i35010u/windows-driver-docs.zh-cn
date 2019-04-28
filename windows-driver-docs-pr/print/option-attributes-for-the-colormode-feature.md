@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f635661505a0a8249b061feebf124e41fc0e8e58
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339872"
 ---
 # <a name="option-attributes-for-the-colormode-feature"></a>色彩模式功能的选项属性
 

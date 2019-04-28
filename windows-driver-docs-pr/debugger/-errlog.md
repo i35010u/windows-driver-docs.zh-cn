@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dc0b78c88df258019db1abd0da15c6404dc7774
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337216"
 ---
-# <a name="errlog"></a>！ errlog
+# <a name="errlog"></a>!errlog
 
 
 **！ Errlog**扩展 I/O 系统错误日志中显示的任何挂起的项的内容。

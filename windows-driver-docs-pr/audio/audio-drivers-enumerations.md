@@ -5,11 +5,11 @@ ms.assetid: 9C7530BE-C63F-438C-A853-9A7E47C240E9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d1ec48b69ed7c04c4b2dcdda36252456c67e783
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331539"
 ---
 # <a name="audio-drivers-enumerations"></a>音频驱动程序枚举
 

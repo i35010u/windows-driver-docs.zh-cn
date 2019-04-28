@@ -1,17 +1,17 @@
 ---
-title: 处理的 SR-IOV，VMQ 和 RSS 标准化 INF 关键字
-description: 处理的 SR-IOV，VMQ 和 RSS 标准化 INF 关键字
+title: 处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
+description: 处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
 ms.assetid: EF556563-4097-4388-A563-29FC891AC626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1537e1823822d994e3d50e5eda27b9378299f8ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325743"
 ---
-# <a name="handling-sr-iov-vmq-and-rss-standardized-inf-keywords"></a>处理的 SR-IOV，VMQ 和 RSS 标准化 INF 关键字
+# <a name="handling-sr-iov-vmq-and-rss-standardized-inf-keywords"></a>处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
 
 
 支持单根 I/O 虚拟化 (SR-IOV)，虚拟机队列 (VMQ) 和接收方缩放 (RSS) 的网络适配器可以按以下方式启用这些接口的使用：
@@ -95,7 +95,7 @@ ms.locfileid: "56554634"
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>SR-IOV 和 VMQ</p></td>
 </tr>
 <tr class="even">
@@ -103,7 +103,7 @@ ms.locfileid: "56554634"
 <td align="left"><p>1</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>VMQ</p></td>
 </tr>
 <tr class="odd">
@@ -111,38 +111,38 @@ ms.locfileid: "56554634"
 <td align="left"><p>1，0，或在注册表中不存在</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>无</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0，或在注册表中不存在</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>VMQ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0，或在注册表中不存在</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>无</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0，或在注册表中不存在</p></td>
 <td align="left"><p>0，或在注册表中不存在</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>RSS</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0，或在注册表中不存在</p></td>
 <td align="left"><p>0，或在注册表中不存在</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>无</p></td>
 </tr>

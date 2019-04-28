@@ -1,5 +1,5 @@
 ---
-title: .unload （卸载扩展 DLL）
+title: .unload（卸载扩展 DLL）
 description: .Unload 命令将卸载扩展 DLL 在调试器中。
 ms.assetid: 8399e4a8-0265-4690-b35f-973b69fe2764
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b25de3865a9d6d04e066fba1eb64f50e15c20ab6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334147"
 ---
-# <a name="unload-unload-extension-dll"></a>.unload （卸载扩展 DLL）
+# <a name="unload-unload-extension-dll"></a>.unload（卸载扩展 DLL）
 
 
 **.Unload**命令将卸载扩展 DLL 在调试器中的。

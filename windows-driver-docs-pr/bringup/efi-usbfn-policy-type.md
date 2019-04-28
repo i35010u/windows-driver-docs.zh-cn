@@ -5,11 +5,11 @@ ms.assetid: 51f615d4-a226-45d5-b5e9-fea4859640a9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fba94c165161fe8a6131cd74ed5402d5e322552
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337667"
 ---
 # <a name="efiusbfnpolicytype"></a>EFI\_USBFN\_策略\_类型
 

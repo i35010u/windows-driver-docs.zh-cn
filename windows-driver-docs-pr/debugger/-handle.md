@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e4d4c011d120c66d8cd9ade7d019832bf63cca6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336558"
 ---
-# <a name="handle"></a>！ 处理
+# <a name="handle"></a>!handle
 
 
 **！ 处理**或扩展显示有关一个句柄的信息或处理，其中一个在目标系统中的所有进程都拥有。

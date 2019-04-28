@@ -1,6 +1,6 @@
 ---
-title: 批的 MIDI
-description: 批的 MIDI
+title: MIDI 到 Wave
+description: MIDI 到 Wave
 ms.assetid: 0c69ce48-ded0-44b8-9d34-20decb75058e
 keywords:
 - 合成器 WDK 音频、 MIDI 批转换
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de3e1f827fb4d8354e7cdb735c937f01b7b4b496
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332305"
 ---
-# <a name="midi-to-wave"></a>批的 MIDI
+# <a name="midi-to-wave"></a>MIDI 到 Wave
 
 
 ## <span id="midi_to_wave"></span><span id="MIDI_TO_WAVE"></span>

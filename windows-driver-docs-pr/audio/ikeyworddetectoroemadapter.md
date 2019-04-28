@@ -14,11 +14,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93381ca46dfe40548ce39ebd49c27dafc81b09cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333534"
 ---
 # <a name="ikeyworddetectoroemadapter-interface"></a>IKeywordDetectorOemAdapter 接口
 
@@ -29,7 +29,7 @@ OEM 提供充当中介的操作系统和驱动程序，帮助计算或分析是�
 
 COM 对象的类标识符 (CLSID) 是检测程序模式类型返回的 GUID [ **KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](ksproperty-sounddetector-supportedpatterns.md)。 操作系统调用[ **CoCreateInstance** ](https://msdn.microsoft.com/library/windows/desktop/ms686615)传递要实例化与关键字模式类型兼容，并在对象上调用方法的相应 COM 对象的模式类型 GUID**IKeywordDetectorOemAdapter**接口。 操作系统提供的代理存根**IKeywordDetectorOemAdapter**。 OEM 的实现可能会选择任何 COM 线程模型。
 
-接口设计会试图保持无状态的对象实现。 换而言之，实现应要求存储方法调用之间没有状态。 实际上，内部的 c + + 类可能不需要除一般情况下实现 COM 对象所需之外的所有成员变量。
+接口设计会试图保持无状态的对象实现。 换而言之，实现应要求存储方法调用之间没有状态。 事实上，内部C++类可能不需要除一般情况下实现 COM 对象所需之外的所有成员变量。
 
 <a name="members"></a>成员
 -------

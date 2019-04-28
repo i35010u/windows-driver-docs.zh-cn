@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 552b9ac5d04b0764ad1248649b828b02177340a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337858"
 ---
-# <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>确定 UMDF 为什么在设备删除时指示未完成的文件
+# <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>确定 UMDF 在删除设备时指示文件未完成的原因
 
 
 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用 Wudfext.dll 调试器扩展来确定为何 UMDF 指示时删除设备有未完成的文件。

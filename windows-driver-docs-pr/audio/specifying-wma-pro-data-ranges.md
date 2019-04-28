@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 757c87ccc2234773b6570bde8b4a0e5f56cc0ffe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328617"
 ---
 # <a name="specifying-wma-pro-data-ranges"></a>指定 WMA Pro 数据范围
 

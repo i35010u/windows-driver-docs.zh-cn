@@ -1,6 +1,6 @@
 ---
-title: 父级组
-description: 父级组
+title: 组的父级
+description: 组的父级
 ms.assetid: b4c40c15-df16-4af0-81c8-9e70d26ba598
 keywords:
 - 组父级 WDK 打印
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e34d3494cb46325580c4ee4d1a24c45efe4950ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341316"
 ---
-# <a name="group-parent"></a>父级组
+# <a name="group-parent"></a>组的父级
 
 
 

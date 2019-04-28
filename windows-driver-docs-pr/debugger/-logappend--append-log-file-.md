@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2355ff00e776403108f1f480b2b04a6965927956
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336180"
 ---
 # <a name="logappend-append-log-file"></a>.logappend（追加日志文件）
 

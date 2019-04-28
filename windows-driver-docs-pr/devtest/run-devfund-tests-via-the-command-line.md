@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/29/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: de9a0d34ca201833aacb5857a3260f6f9e71bf4f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340234"
 ---
 # <a name="how-to-run-the-devfund-tests-via-the-command-line"></a>如何通过命令行运行 DevFund 测试
 

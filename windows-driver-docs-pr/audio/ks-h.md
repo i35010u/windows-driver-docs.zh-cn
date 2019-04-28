@@ -5,18 +5,18 @@ ms.assetid: 8A4058E3-4232-4C0E-80AE-C361F6613425
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb0e9d912978fb685e31cfbe9fc0b0bbf2fb9ffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333457"
 ---
 # <a name="ksh"></a>Ks.h
 
 
 本部分包含 Ks.h 标头的参考主题。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

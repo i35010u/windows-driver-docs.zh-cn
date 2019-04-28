@@ -1,19 +1,19 @@
 ---
-title: 能源计量和预算方面的基础结构概述
-description: 能源计量和预算方面的基础结构概述
+title: 功率计量和预算基础结构概述
+description: 功率计量和预算基础结构概述
 ms.assetid: eda1c829-eb5e-404b-bf6b-1b0807ee02c7
 keywords:
 - Power 计量和预算 WDK 概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aaeef30d377b47a548a5bb159c00173e995bc017
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331843"
 ---
-# <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>能源计量和预算方面的基础结构概述
+# <a name="overview-of-the-power-metering-and-budgeting-infrastructure"></a>功率计量和预算基础结构概述
 
 
 从 Windows 7 和 Windows Server 2008 R2 开始，Windows 支持的能源计量和预算 (PMB) 基础结构。 此基础结构将在计算机系统的能源效率提升通过提供电源使用情况和管理功能。 此外，PMB 提供配置其他选项 power 计量和预算。 系统制造商、 IT 专业人员和最终用户可以使用 PMB 基础结构优化他们的系统，以便以满足其需求的能力和性能之间进行平衡。

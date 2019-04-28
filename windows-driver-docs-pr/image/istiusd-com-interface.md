@@ -5,11 +5,11 @@ ms.assetid: 2f805955-8c66-4c9e-839e-c8a98c6637a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea4f4f5b4670df9aff4a33719d5d0904c22f1ce7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327451"
 ---
 # <a name="istiusd-com-interface"></a>IStiUSD COM 接口
 

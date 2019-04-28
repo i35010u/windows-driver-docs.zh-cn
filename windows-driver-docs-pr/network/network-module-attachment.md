@@ -1,6 +1,6 @@
 ---
-title: 网络模块附件
-description: 网络模块附件
+title: 网络模块附加
+description: 网络模块附加
 ms.assetid: 4b3602dd-a9cf-4cb6-bfeb-d2d74d2f391d
 keywords:
 - 网络模块 WDK 网络模块注册机构，附件
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06aff6e1dd570eb521bd60394cc5d236bdf6cbf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331911"
 ---
-# <a name="network-module-attachment"></a>网络模块附件
+# <a name="network-module-attachment"></a>网络模块附加
 
 
 之前[客户端模块](client-module.md)和一个[提供程序模块](provider-module.md)可以附加到彼此，它们都必须向进行自行注册 NMR。 客户端模块向 NMR 注册通过调用[ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782)函数和提供程序注册通过调用 NMR 模块[ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)函数。 下图演示了网络模块注册。

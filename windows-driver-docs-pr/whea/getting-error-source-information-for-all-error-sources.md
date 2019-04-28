@@ -1,6 +1,6 @@
 ---
-title: 获取错误的所有错误源的源信息
-description: 获取错误的所有错误源的源信息
+title: 获取所有错误源的错误源信息
+description: 获取所有错误源的错误源信息
 ms.assetid: 78e3a015-128d-44d1-b0ec-4da43c359090
 keywords:
 - 错误源 WDK WHEA，获取信息
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a021928b8b7bd6420443b5f3df96d0bcb41c6c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340813"
 ---
-# <a name="getting-error-source-information-for-all-error-sources"></a>获取错误的所有错误源的源信息
+# <a name="getting-error-source-information-for-all-error-sources"></a>获取所有错误源的错误源信息
 
 
 在用户模式应用程序可以获取有关的所有信息[错误源](hardware-errors-and-error-sources.md)中通过调用系统[ **WHEAErrorSourceMethods::GetAllErrorSourcesRtn** ](https://msdn.microsoft.com/library/windows/hardware/ff559527)方法。 此方法返回的数组[ **WHEA\_错误\_源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff560505)介绍的所有受支持的错误源的结构硬件平台。

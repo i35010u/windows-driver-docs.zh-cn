@@ -1,6 +1,6 @@
 ---
-title: 设备管理方案
-description: 设备管理方案
+title: 设备控制方案
+description: 设备控制方案
 ms.assetid: 9effc192-77ef-40fd-9ab6-564637019576
 keywords:
 - WSDBIT 工具 WDK，测试方案
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a23a22ab9de5580998f1bb990c479716dff1a7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341671"
 ---
-# <a name="device-control-scenarios"></a>设备管理方案
+# <a name="device-control-scenarios"></a>设备控制方案
 
 
 设备控制方案测试简单 SOAP 消息交换。

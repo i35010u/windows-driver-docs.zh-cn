@@ -5,11 +5,11 @@ ms.assetid: 3e1eb744-e480-4478-9705-94da8029c382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b59a3972ad9a9e09a08da880ace307e68d096f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340680"
 ---
 # <a name="roadmap-for-developing-pshed-plug-ins"></a>用于开发 PSHED 插件的路线图
 

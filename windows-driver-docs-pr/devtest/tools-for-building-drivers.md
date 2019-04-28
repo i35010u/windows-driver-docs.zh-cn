@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc3a12cb75e38579de8d29f8d5e38d115566b0af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339745"
 ---
 # <a name="tools-for-building-drivers"></a>用于生成驱动程序的工具
 

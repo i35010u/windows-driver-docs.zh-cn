@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4b75b692992085c20b7988766b4d46b4b49eef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338858"
 ---
-# <a name="ruleinfo"></a>！ ruleinfo
+# <a name="ruleinfo"></a>!ruleinfo
 
 
 **！ Ruleinfo**命令显示有关驱动程序验证程序规则的信息。

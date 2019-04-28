@@ -1,17 +1,17 @@
 ---
-title: 通过用于 KMDF 驱动程序函数的角色类型声明函数
-description: 通过用于 KMDF 驱动程序函数的角色类型声明函数
+title: 使用 KMDF 驱动程序的函数角色类型来声明函数
+description: 使用 KMDF 驱动程序的函数角色类型来声明函数
 ms.assetid: 73a408ba-0219-4fde-8dad-ca330e4e67c3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9024cd3b17c4b2aa5f43326268468183d248c0b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341167"
 ---
-# <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>通过用于 KMDF 驱动程序函数的角色类型声明函数
+# <a name="declaring-functions-by-using-function-role-types-for-kmdf-drivers"></a>使用 KMDF 驱动程序的函数角色类型来声明函数
 
 
 若要启用 SDV 分析 KMDF 驱动程序，您必须声明您使用 KMDF 函数角色类型声明的函数。 Wdf.h 和 Wdf.h 中包含其他 KMDF 标头文件中定义的函数角色类型。 有关函数的角色类型和其相应的事件回调函数的列表，请参阅[静态验证工具 KMDF 驱动程序函数声明](static-driver-verifier-kmdf-function-declarations.md)。

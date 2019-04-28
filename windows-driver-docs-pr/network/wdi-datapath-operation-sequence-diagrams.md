@@ -5,11 +5,11 @@ ms.assetid: F192CC01-8F70-4DF5-8170-5BF88F3270CB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c831ae9a6660e10db7c37879a927ac75dd64ebbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330766"
 ---
 # <a name="wdi-datapath-operation-sequence-diagrams"></a>WDI 数据路径操作顺序图
 

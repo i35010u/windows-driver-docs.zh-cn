@@ -1,17 +1,17 @@
 ---
-title: 蓝牙版本和早期 Windows 版本中的配置文件支持
-description: 蓝牙版本和早期 Windows 版本中的配置文件支持
+title: 以前的 Windows 版本中的蓝牙版本和配置文件支持
+description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 718ebaac30af197e506a8fd8f58887cffbe3bee5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328254"
 ---
-# <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>蓝牙版本和早期 Windows 版本中的配置文件支持
+# <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前的 Windows 版本中的蓝牙版本和配置文件支持
 
 
 **请注意**  寻找您的 Bluetooth 音频设备的驱动程序？ 请参阅[解决了连接到 Bluetooth 音频设备和无线显示](https://go.microsoft.com/fwlink/p/?LinkID=623629)。
@@ -431,7 +431,7 @@ Windows Vista 引入了 Bluetooth 无线技术，提供对 SCO、 SDP 和 L2CAP 
 
 Windows Vista SP2 和 Windows 7 还支持用户模式下 RFComm 和蓝牙 Api。 有关详细信息，请参阅[蓝牙设计指南](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/)。 WDK 包括有关新的内核模式 DDI 的文档。 有关如何下载 WDK 的详细信息，请参阅[其他 WDK 下载](https://docs.microsoft.com/windows-hardware/drivers/other-wdk-downloads)HCK 包括驱动程序测试管理器 (DTM) 的文档。 有关如何下载 HCK 的详细信息，请参阅[Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)文档。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 10 中的蓝牙支持](general-bluetooth-support-in-windows.md)

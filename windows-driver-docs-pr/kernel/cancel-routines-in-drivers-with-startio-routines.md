@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba91d7266f9a04dd6ba57b9c98ea28bb042d406
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338550"
 ---
 # <a name="cancel-routines-in-drivers-with-startio-routines"></a>包含 StartIo 例程的驱动程序中的 Cancel 例程
 

@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 222e73663b9d19edac1e57e92a76eaf3eeaf0eac
-ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59534151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339646"
 ---
 # <a name="supplying-an-inf-file"></a>提供 INF 文件
 

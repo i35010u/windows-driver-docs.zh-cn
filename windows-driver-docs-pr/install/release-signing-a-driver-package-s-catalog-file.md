@@ -1,17 +1,17 @@
 ---
-title: 版本签名驱动程序包的目录文件
-description: 版本签名驱动程序包的目录文件
+title: 对驱动程序包的目录文件进行发布签名
+description: 对驱动程序包的目录文件进行发布签名
 ms.assetid: 8bfedf24-403a-406e-993d-5ab8cc790f60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a1790c394107945fd7778ec1ea377ce13453aaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338629"
 ---
-# <a name="release-signing-a-driver-packages-catalog-file"></a>版本签名驱动程序包的目录文件
+# <a name="release-signing-a-driver-packages-catalog-file"></a>对驱动程序包的目录文件进行发布签名
 
 
 一次[编录文件](catalog-files.md)有关[驱动程序包](driver-packages.md)创建或更新目录文件可以通过签名[ **SignTool**](https://msdn.microsoft.com/library/windows/hardware/ff551778)。 签名之后，目录文件中存储的数字签名会失效，如果驱动程序包的任何组件进行了修改。

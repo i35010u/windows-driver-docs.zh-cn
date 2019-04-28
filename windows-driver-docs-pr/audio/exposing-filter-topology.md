@@ -1,6 +1,6 @@
 ---
-title: 公开筛选拓扑
-description: 公开筛选拓扑
+title: 公开筛选器拓扑
+description: 公开筛选器拓扑
 ms.assetid: bf791f40-b2fb-48fe-8350-3b926db4ead7
 keywords:
 - 拓扑 WDK 音频筛选器
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95c1cbd6e7fc512a94605f64ab3b5d29f14e42df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333678"
 ---
-# <a name="exposing-filter-topology"></a>公开筛选拓扑
+# <a name="exposing-filter-topology"></a>公开筛选器拓扑
 
 
 ## <span id="exposing_filter_topology"></span><span id="EXPOSING_FILTER_TOPOLOGY"></span>

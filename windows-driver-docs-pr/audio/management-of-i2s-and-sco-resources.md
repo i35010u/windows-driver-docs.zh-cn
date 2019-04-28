@@ -5,11 +5,11 @@ ms.assetid: C6CA73D9-0DCC-496D-8306-CB1625B86AC9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d93401243ac280e5c5ff344f6f39e047fac7e3dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332390"
 ---
 # <a name="management-of-i2s-and-sco-resources"></a>I2S 和 SCO 资源的管理
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03c27cdaae466f11c9d220e412f7a327b923fa31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338604"
 ---
 # <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>从设备电源策略所有者调用 PoStartNextPowerIrp
 

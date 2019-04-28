@@ -1,5 +1,5 @@
 ---
-Description: This article shows how to send commands and receive change notifications from audio device modules. from a Universal Windows Platform (UWP) app.
+Description: 本文介绍如何将命令发送和接收来自音频设备模块更改通知。 从通用 Windows 平台 (UWP) 应用。
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: 配置和查询音频设备模块
 label: Configure and query audio device modules
@@ -9,11 +9,11 @@ ms.date: 06/28/2017
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 608926ac8c1eab801eecb31027c9261e4041134a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333922"
 ---
 # <a name="configure-and-query-audio-device-modules"></a>配置和查询音频设备模块 
 

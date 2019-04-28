@@ -1,14 +1,14 @@
 ---
-Description: Starting in Windows 8.1, the set of WinUSB Functions have APIs that allow a desktop application to transfer data to and from isochronous endpoints of a USB device. For such an application, the Microsoft-provided Winusb.sys must be the device driver.
+Description: 从 Windows 8.1，组 WinUSB 函数都允许在桌面应用程序传输数据传入和传出的 USB 设备的同步终结点的 Api。 对于此类应用程序，由 Microsoft 提供 Winusb.sys 必须是设备驱动程序。
 title: 发送来自 UWP 桌面应用的 USB 常时等量传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e006c8cce52229f75dcfbe0771fb8ea4cf7d607b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341219"
 ---
 # <a name="send-usb-isochronous-transfers-from-a-winusb-desktop-app"></a>发送来自 UWP 桌面应用的 USB 常时等量传输
 

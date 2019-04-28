@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20762860ae8d4239a9ec93b064b596b9ebc6d6a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335460"
 ---
 # <a name="wiadpsdocumenthandlingcapabilities"></a>WIA\_DPS\_文档\_处理\_功能
 
@@ -88,7 +88,7 @@ WIA\_DPS\_文档\_处理\_功能属性包含扫描程序的功能。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -150,7 +150,7 @@ WIA\_DPS\_文档\_处理\_功能属性包含扫描程序的功能。
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>

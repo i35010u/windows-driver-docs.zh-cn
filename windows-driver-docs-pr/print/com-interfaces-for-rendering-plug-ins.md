@@ -1,6 +1,6 @@
 ---
-title: 用于呈现插件的 COM 接口
-description: 用于呈现插件的 COM 接口
+title: 渲染插件的 COM 接口
+description: 渲染插件的 COM 接口
 ms.assetid: 3a1a67ed-7c29-42fa-9bd2-ee38468f6d4b
 keywords:
 - 呈现插件 WDK 打印，COM 接口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b74e4b2af07f9c1479828842a9795629aec3899
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331794"
 ---
-# <a name="com-interfaces-for-rendering-plug-ins"></a>用于呈现插件的 COM 接口
+# <a name="com-interfaces-for-rendering-plug-ins"></a>渲染插件的 COM 接口
 
 
 

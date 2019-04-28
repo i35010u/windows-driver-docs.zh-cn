@@ -1,6 +1,6 @@
 ---
-title: 识别不可用的启动项的备份文件
-description: 识别不可用的启动项的备份文件
+title: 识别不可用的启动项备份文件
+description: 识别不可用的启动项备份文件
 ms.assetid: ff61c8e9-ad6b-4f3f-9c4b-72c24c27eda6
 keywords:
 - NVRAM 启动选项 WDK，
@@ -8,13 +8,13 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e84f7deda6ff41901cbae59ef00ec3872886f77c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339747"
 ---
-# <a name="recognizing-unusable-boot-entry-backup-files"></a>识别不可用的启动项的备份文件
+# <a name="recognizing-unusable-boot-entry-backup-files"></a>识别不可用的启动项备份文件
 
 遗憾的是，启动项的备份副本并不总是可用。
 

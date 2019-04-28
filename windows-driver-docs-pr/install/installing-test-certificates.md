@@ -5,11 +5,11 @@ ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbd67a9ce610e2b3167791182dae5d20ce09d613
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341474"
 ---
 # <a name="installing-test-certificates"></a>安装测试证书
 

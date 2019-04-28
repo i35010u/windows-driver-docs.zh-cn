@@ -5,11 +5,11 @@ ms.assetid: E87B3A94-66AF-4557-AB0D-A4D8B0E976E6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01b1a3bfa2ba6bc628f40aad24b62b035d717773
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332125"
 ---
 # <a name="pkeysfxkeyworddetectorprocessingmodessupportedforstreaming"></a>PKEY\_SFX\_KeywordDetector\_ProcessingModes\_Supported\_For\_Streaming
 
@@ -38,7 +38,7 @@ AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS = "{98951333-B9CD-48B1-A0A3-FF40682D73
 HKR,"FX\\0",%PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

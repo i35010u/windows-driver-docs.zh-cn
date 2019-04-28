@@ -5,11 +5,11 @@ ms.assetid: c115eb29-8bd2-40f7-b979-cff386bdc9aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a01abb24cf2e1c9de3de5c1afea43c8f2d427bde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341039"
 ---
 # <a name="introduction-to-application-notification"></a>应用程序通知简介
 

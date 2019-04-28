@@ -1,6 +1,6 @@
 ---
-title: 合成和批接收器
-description: 合成和批接收器
+title: 合成器和 Wave 接收器
+description: 合成器和 Wave 接收器
 ms.assetid: ddcb847e-d46e-4860-9be9-4480e5a6b710
 keywords:
 - DirectMusic 自定义呈现 WDK 音频，合成器
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7be4a2c764744162576bdcb75d37d268cabe877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335306"
 ---
-# <a name="synthesizers-and-wave-sinks"></a>合成和批接收器
+# <a name="synthesizers-and-wave-sinks"></a>合成器和 Wave 接收器
 
 
 ## <span id="synthesizers_and_wave_sinks"></span><span id="SYNTHESIZERS_AND_WAVE_SINKS"></span>

@@ -5,11 +5,11 @@ ms.assetid: BDD4EC2C-FB23-44BE-9A52-F98774AC7268
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7afc921336f407ef693fe94ebdced0a0d5cfb6c2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330658"
 ---
 # <a name="how-to-run-code-analysis-for-drivers"></a>如何为驱动程序运行代码分析
 

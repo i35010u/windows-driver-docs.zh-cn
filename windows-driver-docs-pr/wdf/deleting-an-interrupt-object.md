@@ -5,11 +5,11 @@ ms.assetid: B72DA452-B22F-47CD-8C5D-E741F09F556E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7432fb4727fe0460b3ecfa3eaff927e1c7e1449c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330879"
 ---
 # <a name="deleting-an-interrupt-object"></a>删除中断对象
 

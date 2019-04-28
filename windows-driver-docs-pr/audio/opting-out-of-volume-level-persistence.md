@@ -1,17 +1,17 @@
 ---
-title: 选择退出卷级持久性
-description: 选择退出卷级持久性
+title: 选择退出音量级别持久性
+description: 选择退出音量级别持久性
 ms.assetid: e96533be-25e8-49ae-8e56-7105dfa92b5a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d5742006ae28e4a5db2166e674197e4f4ab0f29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332275"
 ---
-# <a name="opting-out-of-volume-level-persistence"></a>选择退出卷级持久性
+# <a name="opting-out-of-volume-level-persistence"></a>选择退出音量级别持久性
 
 
 默认情况下重新启动计算机时保留卷级别设置。 此默认的系统行为被称为*卷持久性*。 如果不想要在计算机重启后由系统维护的卷级别，可以在音频的适配器，安装时使用 INF 文件，可以选择不使用默认的系统行为。

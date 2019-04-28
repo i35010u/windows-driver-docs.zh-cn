@@ -5,13 +5,13 @@ ms.assetid: def82d48-454b-421b-a63d-695dae733fd0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a9ca30dca368e7bf167f3eaf94a61324b0f74c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341679"
 ---
-# <a name="how-do-i-redefine-an-fprintf-function-as-a-tracing-call"></a>如何重新 fprintf 函数定义为跟踪调用
+# <a name="how-do-i-redefine-an-fprintf-function-as-a-tracing-call"></a>如何将 fprintf 函数重新定义为跟踪调用？
 
 
 **Fprintf**最终转换为函数调用**sprintf**函数调用中，是 perceptibly，会降低性能，尤其是在使用它的非常耗费资源的调用重复。

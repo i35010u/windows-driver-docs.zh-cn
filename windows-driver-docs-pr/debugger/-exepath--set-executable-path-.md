@@ -1,5 +1,5 @@
 ---
-title: .exepath （设置可执行文件路径）
+title: .exepath（设置可执行文件路径）
 description: .Exepath 命令设置或显示的可执行文件搜索路径。
 ms.assetid: 09f8c2f6-4df7-4039-bb92-66d42015c3dc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c705f2f67abb356c53a3f846ae6dcdb2a75e05f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334495"
 ---
-# <a name="exepath-set-executable-path"></a>.exepath （设置可执行文件路径）
+# <a name="exepath-set-executable-path"></a>.exepath（设置可执行文件路径）
 
 
 **.Exepath**命令设置或显示的可执行文件搜索路径。

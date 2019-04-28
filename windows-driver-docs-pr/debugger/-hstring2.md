@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 56da35472225cef34a96c39456d5952634d8c9d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336491"
 ---
-# <a name="hstring2"></a>！ hstring2
+# <a name="hstring2"></a>!hstring2
 
 
 **！ Hstring2**扩展插件都会显示整个**HSTRING**本身在字符串中包括任何嵌入的 NULL 字符。

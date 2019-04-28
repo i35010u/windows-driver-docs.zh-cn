@@ -1,6 +1,6 @@
 ---
-title: GDL 杂项宏
-description: GDL 杂项宏
+title: GDL 其他宏
+description: GDL 其他宏
 ms.assetid: d3c66bc1-815d-484b-b69b-6616d2b43069
 keywords:
 - GDL WDK 宏
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 307e3ef168ca7f47488edbc273ceb1c93fa11525
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338360"
 ---
-# <a name="gdl-miscellaneous-macros"></a>GDL 杂项宏
+# <a name="gdl-miscellaneous-macros"></a>GDL 其他宏
 
 
 使用 GDL  **\*IgnoreBlock**指令以禁用构造的内容的处理。 当实现分而治之调试策略时，此指令很有用或注释掉已过时的代码。 内容 **\*IgnoreBlock**仍必须遵守的基本语法规则。 无效 GDL 或大型的注释块可以括起&lt;Begin/EndValue:&gt;分隔符的值进行 **\*IgnoreBlock**。

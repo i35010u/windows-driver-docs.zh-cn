@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b94a5e0b8fd18fc689a7a18b0de9f1920b7d48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332608"
 ---
 # <a name="kspropertysysaudioinstanceinfo"></a>KSPROPERTY\_SYSAUDIO\_实例\_信息
 
@@ -79,7 +79,7 @@ KSPROPERTY\_SYSAUDIO\_实例\_信息属性请求将返回状态\_成功以指示
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>

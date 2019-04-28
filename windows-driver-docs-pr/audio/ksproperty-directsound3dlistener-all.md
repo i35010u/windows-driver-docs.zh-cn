@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b067aca3265c18f1dec8a692a449f6c92cc077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332800"
 ---
 # <a name="kspropertydirectsound3dlistenerall"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_所有
 
@@ -82,7 +82,7 @@ DirectSound 使用此属性来实现**IDirectSound3DBuffer::GetAllParameters**�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>

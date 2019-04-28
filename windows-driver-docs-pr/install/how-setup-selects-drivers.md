@@ -1,6 +1,6 @@
 ---
-title: Windows 中如何选择驱动程序
-description: Windows 中如何选择驱动程序
+title: Windows 如何选择驱动程序
+description: Windows 如何选择驱动程序
 ms.assetid: 738f7188-aedb-4a1a-9d3e-49ee31dfb35f
 keywords:
 - 设备安装程序 WDK 设备安装，驱动程序选择
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: feb52cc181d196c02cadad60616421ca1c301c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327841"
 ---
-# <a name="how-windows-selects-drivers"></a>Windows 中如何选择驱动程序
+# <a name="how-windows-selects-drivers"></a>Windows 如何选择驱动程序
 
 
 

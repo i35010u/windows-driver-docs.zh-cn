@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/10/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7880050e1712a5daaa245dc8b0ae77b9cd2dcbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335532"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebugginginvisualstudiospansetting-up-kernel-mode-debugging-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_in_visual_studio"></span>设置 Visual Studio 中的内核模式调试
 
@@ -28,7 +28,7 @@ ms.locfileid: "56520680"
 
 内核模式调试通常需要两台计算机。 在运行调试程序*主机计算机*和代码正在上调试运行*目标计算机*。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [设置通过网络电缆在 Visual Studio 中的内核模式调试](setting-up-a-network-debugging-connection-in-visual-studio.md)
@@ -39,7 +39,7 @@ ms.locfileid: "56520680"
 -   [设置内核模式调试使用通过 Visual Studio 中的 USB 串行](setting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio.md)
 -   [设置内核模式调试的 Visual Studio 中的虚拟机](setting-up-a-connection-to-a-virtual-machine-in-visual-studio.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设置调试 （内核模式和用户模式下）](getting-set-up-for-debugging.md)

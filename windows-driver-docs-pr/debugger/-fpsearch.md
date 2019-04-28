@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a8e116eef4a8758a7824482a4ef37ba4ec5deb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336620"
 ---
-#  <a name="fpsearch"></a>！ fpsearch
+#  <a name="fpsearch"></a>!fpsearch
 
 
 **！ Fpsearch**扩展搜索指定的地址已释放特殊池。

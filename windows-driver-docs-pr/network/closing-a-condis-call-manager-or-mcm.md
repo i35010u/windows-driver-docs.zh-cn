@@ -1,6 +1,6 @@
 ---
-title: 关闭的 CoNDIS 呼叫管理器或 MCM
-description: 关闭的 CoNDIS 呼叫管理器或 MCM
+title: 关闭 CoNDIS 呼叫管理程序或 MCM
+description: 关闭 CoNDIS 呼叫管理程序或 MCM
 ms.assetid: 6ef64e4c-eec4-4477-a06c-f80e21d5b1c7
 keywords:
 - 调用的 CoNDIS-网络管理器 WDK
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff88c1c9a61198e9207d24ae997df85238c32e53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338560"
 ---
-# <a name="closing-a-condis-call-manager-or-mcm"></a>关闭的 CoNDIS 呼叫管理器或 MCM
+# <a name="closing-a-condis-call-manager-or-mcm"></a>关闭 CoNDIS 呼叫管理程序或 MCM
 
 
 

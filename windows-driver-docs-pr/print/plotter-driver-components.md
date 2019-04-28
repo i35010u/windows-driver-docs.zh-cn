@@ -1,6 +1,6 @@
 ---
-title: 绘图器驱动程序组件
-description: 绘图器驱动程序组件
+title: 绘图仪驱动程序组件
+description: 绘图仪驱动程序组件
 ms.assetid: 6a976956-c188-4d31-b176-e97e09e8cc0b
 keywords:
 - 绘图器驱动程序 WDK 打印，组件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca72ad8a69679f708a65dada9be031724c1de4eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331205"
 ---
-# <a name="plotter-driver-components"></a>绘图器驱动程序组件
+# <a name="plotter-driver-components"></a>绘图仪驱动程序组件
 
 
 

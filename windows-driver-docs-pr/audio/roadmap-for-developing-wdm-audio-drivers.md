@@ -5,11 +5,11 @@ ms.assetid: fa75ff65-32fe-4002-89fd-bf345502a9ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e2029c60e7285d1b211c6d2b18d7f34bd8ed490
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328675"
 ---
 # <a name="roadmap-for-developing-wdm-audio-drivers"></a>开发 WDM 音频驱动程序的路线图
 

@@ -15,11 +15,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cf1b650d02b6abc31e9e8aa8c29e2ccb410603c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336592"
 ---
 # <a name="gle"></a>!gle
 

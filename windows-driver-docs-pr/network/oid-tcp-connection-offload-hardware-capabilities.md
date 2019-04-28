@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b30f73ac9405a5063d3166bca76bbf9f7823845c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331824"
 ---
 # <a name="oidtcpconnectionoffloadhardwarecapabilities"></a>OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -28,7 +28,7 @@ NDIS 处理此 OID 的微型端口驱动程序。 微型端口驱动程序报告
 OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，响应**封装**NDIS_TCP_CONNECTION_OFFLOAD 成员定义的微型端口适配器当前数据包封装硬件功能。 NDIS 提供中提供的标志的按位 OR**封装**成员。 NDIS_TCP_CONNECTION_OFFLOAD 的其他成员包含各种连接卸载服务的设置。 有关封装和其他功能的详细信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://msdn.microsoft.com/library/windows/hardware/ff567875)并[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)。
 
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)  
 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
@@ -38,6 +38,6 @@ OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，响应**封装**NDIS_TCP_CONN
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

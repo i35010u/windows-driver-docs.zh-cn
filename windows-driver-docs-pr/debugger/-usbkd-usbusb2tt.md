@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1e58b1fb5600d78e101f861a8be70b2421ad71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331431"
 ---
 # <a name="usbkdusbusb2tt"></a>!usbkd.usbusb2tt
 

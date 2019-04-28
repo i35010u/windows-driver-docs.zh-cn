@@ -1,6 +1,6 @@
 ---
-title: 处理端口激活即插即用事件
-description: 处理端口激活即插即用事件
+title: 处理端口激活 PnP 事件
+description: 处理端口激活 PnP 事件
 ms.assetid: 433018bf-daf5-4ea1-be3f-63349558f6b7
 keywords:
 - 端口 WDK NDIS，即插即用事件通知
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b40a36ccc7fcb83110e1c8a684977bd2b5ac453e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327123"
 ---
-# <a name="handling-the-port-activation-pnp-event"></a>处理端口激活即插即用事件
+# <a name="handling-the-port-activation-pnp-event"></a>处理端口激活 PnP 事件
 
 
 

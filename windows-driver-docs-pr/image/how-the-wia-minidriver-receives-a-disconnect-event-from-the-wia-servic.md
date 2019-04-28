@@ -5,11 +5,11 @@ ms.assetid: 6ae3c230-d026-469e-a699-860a295fba85
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e53088dc765201a468101122bc5e096747cb3809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330363"
 ---
 # <a name="how-the-wia-minidriver-receives-a-disconnect-event-from-the-wia-service"></a>WIA 微型驱动程序如何从 WIA 服务接收断开连接事件
 

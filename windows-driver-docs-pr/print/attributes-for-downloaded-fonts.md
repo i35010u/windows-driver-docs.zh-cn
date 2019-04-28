@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b12c310b3089961b40335a729b68e24f5d279b0b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331197"
 ---
 # <a name="attributes-for-downloaded-fonts"></a>下载字体属性
 

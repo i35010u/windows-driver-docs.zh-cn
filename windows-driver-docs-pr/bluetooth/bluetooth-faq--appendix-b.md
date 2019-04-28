@@ -5,11 +5,11 @@ ms.assetid: 37865571-D632-4A69-A2AB-D0B2570A6F9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e27e66ef8c3ba8ef6d16dc4b9993e18cd090014a
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58761826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328308"
 ---
 # <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
 

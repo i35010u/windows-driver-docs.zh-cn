@@ -1,17 +1,17 @@
 ---
-title: 驱动程序的浮动点批注
+title: 驱动程序的浮点注释
 description: 批注可以帮助检测的浮点使用的代码分析工具的浮点数在内核模式代码点和可以报告错误，如果未正确保护的浮点状态。 仅对内核模式代码检查浮点规则。
 ms.assetid: 86FF1A21-674F-4BDA-AC03-C1E5F06A4439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45f5d626d7c43d231514d92b98d96671e6a03754
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329707"
 ---
-# <a name="floating-point-annotations-for-drivers"></a>驱动程序的浮动点批注
+# <a name="floating-point-annotations-for-drivers"></a>驱动程序的浮点注释
 
 
 批注可以帮助检测的浮点使用的代码分析工具的浮点数在内核模式代码点和可以报告错误，如果未正确保护的浮点状态。 仅对内核模式代码检查浮点规则。
@@ -76,10 +76,10 @@ void
     MyDoesFloatingPoint(arguments);
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[SAL 2.0 注释 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)
+[Windows 驱动程序的 SAL 2.0 注释](sal-2-annotations-for-windows-drivers.md)
 
 
 

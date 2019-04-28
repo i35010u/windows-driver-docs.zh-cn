@@ -1,5 +1,5 @@
 ---
-title: ~ u （取消冻结线程）
+title: ~u（解冻线程）
 description: ~ U 命令取消冻结指定的线程。不要混淆此命令使用 U （反汇编） 命令。
 ms.assetid: 6ac3c84a-3734-4b16-a239-4233e186c2df
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f1a6a3486589d110713195e82536b06ba07b7f68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334170"
 ---
-# <a name="u-unfreeze-thread"></a>~ u （取消冻结线程）
+# <a name="u-unfreeze-thread"></a>~u（解冻线程）
 
 
 **~ U**命令取消冻结指定的线程。

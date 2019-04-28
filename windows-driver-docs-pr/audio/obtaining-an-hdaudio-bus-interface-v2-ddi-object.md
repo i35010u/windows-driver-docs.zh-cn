@@ -5,11 +5,11 @@ ms.assetid: 3aad8c7a-8c89-499a-bfe8-e3facdffcd15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4710436e2fee9d4a827c03f4be372c214ed4d45
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332268"
 ---
 # <a name="obtaining-an-hdaudiobusinterfacev2-ddi-object"></a>获取 HDAUDIO\_总线\_接口\_V2 DDI 对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "57349140"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ ms.locfileid: "57349140"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 34a302d69631437aa883d8c077aab7b516ce41ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334756"
 ---
-# <a name="amli-ln"></a>！ amli ln
+# <a name="amli-ln"></a>!amli ln
 
 
 **！ Amli ln**扩展显示指定的方法或包含给定的地址的方法。

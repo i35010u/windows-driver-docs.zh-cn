@@ -1,17 +1,17 @@
 ---
-title: 卸载音频处理的帮助程序接口
+title: 用于已卸载音频的处理的帮助程序接口
 description: 本主题介绍 PortCls 使用帮助程序接口，以简化驱动程序支持卸载音频处理。
 ms.assetid: 9C78621E-9824-4992-9D7E-BCF3B51F1BFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cd0728ed4ad791d1b3411c90139861e53d71b24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333563"
 ---
-# <a name="helper-interfaces-for-offloaded-audio-processing"></a>卸载音频处理的帮助程序接口
+# <a name="helper-interfaces-for-offloaded-audio-processing"></a>用于已卸载音频的处理的帮助程序接口
 
 
 本主题介绍了 Microsoft 已添加到其音频端口类驱动程序 (PortCls)，以简化驱动程序实现的帮助程序接口，支持卸载音频处理。

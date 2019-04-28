@@ -1,6 +1,6 @@
 ---
 title: cppexr
-description: Cppexr 扩展显示 c + + 异常记录的内容。
+description: Cppexr 扩展显示的内容C++异常记录。
 ms.assetid: 568c98e9-31d9-4c49-9b7a-bc8eccfed24a
 keywords:
 - 异常记录
@@ -14,16 +14,16 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 327c2e2ab4bfde70b0363f6d66e48fdf1d1e9820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336882"
 ---
 # <a name="cppexr"></a>!cppexr
 
 
-**！ Cppexr**扩展显示的 c + + 异常记录内容。
+**！ Cppexr**扩展显示的内容C++异常记录。
 
 ```dbgsyntax
     !cppexr Address 
@@ -33,7 +33,7 @@ ms.locfileid: "56569346"
 
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定要显示的 c + + 异常记录的地址。
+指定的地址的C++若要显示的异常记录。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -63,11 +63,11 @@ ms.locfileid: "56569346"
 <a name="remarks"></a>备注
 -------
 
-**！ Cppexr**扩展显示目标遇到，包括异常代码、 异常和异常标志的地址的 c + + 异常与相关的信息。 此异常必须是一个在 Msvcrt.dll 中定义的标准 c + + 异常。
+**！ Cppexr**扩展插件都会显示为相关的信息，C++目标遇到，包括异常代码、 异常和异常标志的地址的异常。 此异常必须是一个标准C++在 Msvcrt.dll 中定义的异常。
 
 通常可以获得*地址*使用的参数[ **！ 分析-v** ](-analyze.md)命令。
 
-**！ Cppexr**扩展可用于确定 c + + 异常的类型。
+**！ Cppexr**扩展插件可用于确定的类型C++异常。
 
  
 

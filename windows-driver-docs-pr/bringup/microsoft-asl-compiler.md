@@ -5,11 +5,11 @@ ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 307ced356e9347b38cd320038465ba5ebff79e6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337538"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL 编译器
 
@@ -33,7 +33,7 @@ asl [/nologo] /tab=<TabSig> [/c] [/Fa=<ASMfile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>]
 asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <ASLFile>
 ```
 
-| 选项             | 描述                                                                   |
+| Option             | 描述                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
 | ?                  | 打印此帮助消息。                                                      |
 | nologo             | 禁止显示徽标横幅。                                                     |
@@ -71,7 +71,7 @@ asl.exe /loadtable [-v] [-d] <AMLFile>
 
 其中 AMLFile 是编译 AML 文件包含你想要加载到注册表的表的名称。
 
-| 选项  | 描述                                                                                              |
+| Option  | 描述                                                                                              |
 |---------|----------------------------------------------------------------------------------------------------------|
 | -v      | 详细模式。 打开从实用程序的额外的调试输出。                                          |
 | -d      | “删除”。 从注册表中，删除先前加载的 AML 文件并删除所有相关的注册表项。|

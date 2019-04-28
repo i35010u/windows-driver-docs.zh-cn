@@ -1,5 +1,5 @@
 ---
-title: INF ClassInstall32.Services 部分
+title: INF ClassInstall32.Services 节
 description: ClassInstall32 部分的新类中的设备安装新的设备安装程序类 （和可能的类安装程序）。
 ms.assetid: 602cf407-f3c0-4342-9e59-87481a0f41ef
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a7b4a1e8c5978474b5121eac5626cea06b79d09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330916"
 ---
-# <a name="inf-classinstall32services-section"></a>INF ClassInstall32.Services 部分
+# <a name="inf-classinstall32services-section"></a>INF ClassInstall32.Services 节
 
 
 **请注意**  如果要构建一个通用或移动设备的驱动程序包，此部分无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
@@ -76,7 +76,7 @@ INF 文件通常使用**ClassInstall32.Services**上至少有一个部分**AddSe
 
 不区分大小写 **.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，和 **.ntarm64**扩展插件可以将插入**ClassInstall32.Services**部分跨平台 INF 文件中的名称，如正式语法语句中所示。 有关详细信息，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8eb11e83460f6f4719bb93fba01d4b2e9a233d7a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340751"
 ---
 # <a name="participating-in-error-source-control"></a>参与错误源控制
 

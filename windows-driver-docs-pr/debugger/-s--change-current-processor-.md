@@ -1,5 +1,5 @@
 ---
-title: ~ s （更改当前处理器）
+title: ~s（更改当前处理器）
 description: ~ S 命令设置的多处理器系统上调试哪个处理器。在内核模式下，~ s 更改当前的处理器。
 ms.assetid: bd036a25-1e3c-4b57-9c7c-5f1730008cd7
 keywords:
@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b4e8cc1a59cfb25f6485536b4d88b8bc146b75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335715"
 ---
-# <a name="s-change-current-processor"></a>~ s （更改当前处理器）
+# <a name="s-change-current-processor"></a>~s（更改当前处理器）
 
 
 **~ S**命令设置的多处理器系统上调试哪个处理器。

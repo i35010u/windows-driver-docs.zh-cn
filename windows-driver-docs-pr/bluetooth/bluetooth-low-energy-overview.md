@@ -1,17 +1,17 @@
 ---
-title: 蓝牙低能耗概述
+title: 低耗电蓝牙概述
 description: 本部分提供了 Windows 8 中引入的蓝牙低能耗的概述
 ms.assetid: 8783E31B-99A3-40EB-8A67-647AFAB7D4D3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50458e93c187ba76c38986045ab43282dbe8c032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328293"
 ---
-# <a name="bluetooth-low-energy-overview"></a>蓝牙低能耗概述
+# <a name="bluetooth-low-energy-overview"></a>低耗电蓝牙概述
 
 
 Windows 8 引入了对蓝牙低功耗技术的支持。

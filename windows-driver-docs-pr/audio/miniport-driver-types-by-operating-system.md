@@ -5,11 +5,11 @@ ms.assetid: 6ab0e4e4-5118-4df5-ba4e-7da66ce5880d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c71078f5888a658afb70930453a65fae3a1b48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332315"
 ---
 # <a name="miniport-driver-types-by-operating-system"></a>按操作系统划分的微型端口驱动程序类型
 

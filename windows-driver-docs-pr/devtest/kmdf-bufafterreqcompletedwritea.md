@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: af298bff645ba391188ebbb022d87a83cf28922e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340405"
 ---
 # <a name="bufafterreqcompletedwritea-rule-kmdf"></a>BufAfterReqCompletedWriteA 规则 (kmdf)
 
@@ -58,7 +58,7 @@ BufAfterReqCompletedWriteA 规则指定，在[ *EvtIoWrite* ](https://msdn.micro
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**WDF\_内存\_描述符\_INIT\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552393)

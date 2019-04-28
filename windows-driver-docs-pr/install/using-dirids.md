@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339420"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -75,7 +75,7 @@ ms.locfileid: "57463853"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">目标目录</th>
 </tr>
 </thead>
@@ -187,7 +187,7 @@ ms.locfileid: "57463853"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">Shell 特殊文件夹</th>
 </tr>
 </thead>

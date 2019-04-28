@@ -4,11 +4,11 @@ description: 在 Windows 10 版本 1803年和更高版本，主键\_CompositeFX\
 ms.date: 11/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d90095ecd9aa410ce625ccc55c5d4a48038234f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332197"
 ---
 # <a name="pkeycompositefxkeyworddetectormodeeffectclsid"></a>PKEY\_CompositeFX\_KeywordDetector\_ModeEffectClsid
 
@@ -36,7 +36,7 @@ HKR,FX\0,%PKEY_CompositeFX_KeywordDetector_ModeEffectClsid%,0x00010000,%SWAP_FX_
 
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7763b9c07c2d2a34e9a3c1f3838a3266a0743c6e
-ms.sourcegitcommit: bb4f9c8dab2f4cb7a57ebd30457f427d909c928f
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58624780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334792"
 ---
 # <a name="address"></a>!address
 
@@ -75,7 +75,7 @@ Kernel-Mode
 <td align="left"><p>可用内存。 这包括所有未保留的内存。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>图像</p></td>
+<td align="left"><p>Image</p></td>
 <td align="left"><p>映射到可执行映像的一部分的文件的内存。</p></td>
 </tr>
 <tr class="even">
@@ -254,7 +254,7 @@ Kernel-Mode
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">输出格式</th>
 </tr>
 </thead>

@@ -1,6 +1,6 @@
 ---
-title: 调试蓝牙驱动程序
-description: 调试蓝牙驱动程序
+title: 调试蓝牙配置文件驱动程序
+description: 调试蓝牙配置文件驱动程序
 ms.assetid: 3c04017e-7f5c-49d4-ad7e-36c7405133a1
 keywords:
 - 调试配置文件驱动程序 WDK 蓝牙
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecaf8b97b1ce29faf84cecef41e4e5d7f339d44e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328221"
 ---
-# <a name="debugging-bluetooth-profile-drivers"></a>调试蓝牙驱动程序
+# <a name="debugging-bluetooth-profile-drivers"></a>调试蓝牙配置文件驱动程序
 
 
 虽然开发蓝牙配置文件驱动程序，你可以使用[Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff545448)以帮助其调试。

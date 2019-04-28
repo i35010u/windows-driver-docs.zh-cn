@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ca40efafbe61729d7adb6ec86f0f3d4f253d7b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336292"
 ---
 # <a name="ksenumdevobj"></a>!ks.enumdevobj
 

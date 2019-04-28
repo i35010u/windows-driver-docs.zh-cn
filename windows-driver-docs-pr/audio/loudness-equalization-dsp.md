@@ -5,11 +5,11 @@ ms.assetid: 14b3d8c9-1bfc-4c44-8eba-0bad9e485a19
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d199fcb18f10f570b392b359beb9b6d7a728cbcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332411"
 ---
 # <a name="loudness-equalization-dsp"></a>响度均衡 DSP
 

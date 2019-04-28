@@ -1,6 +1,6 @@
 ---
-title: 单向和双向链接的列表
-description: 单向和双向链接的列表
+title: 单向和双向链接列表
+description: 单向和双向链接列表
 ms.assetid: 3a305f54-7866-4163-a3e4-e078d1927adc
 keywords:
 - 单向链接的列表 WDK 内核
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c36c7b617e22035e0ec52df045ddf14b3c37332
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331995"
 ---
-# <a name="singly-and-doubly-linked-lists"></a>单向和双向链接的列表
+# <a name="singly-and-doubly-linked-lists"></a>单向和双向链接列表
 
 
 

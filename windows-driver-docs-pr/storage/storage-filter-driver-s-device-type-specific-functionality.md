@@ -1,6 +1,6 @@
 ---
-title: 存储筛选器驱动程序的设备类型特定的功能
-description: 存储筛选器驱动程序的设备类型特定的功能
+title: 存储筛选器驱动程序的特定于设备类型的功能
+description: 存储筛选器驱动程序的特定于设备类型的功能
 ms.assetid: ecc0d938-e931-46bd-a1e1-0e6da8e149a4
 keywords:
 - 存储筛选器驱动程序 WDK、 设备类型特定的功能
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf5973213406c3fc5c29934c535205538c3bce88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331707"
 ---
-# <a name="storage-filter-drivers-device-type-specific-functionality"></a>存储筛选器驱动程序的设备类型特定的功能
+# <a name="storage-filter-drivers-device-type-specific-functionality"></a>存储筛选器驱动程序的特定于设备类型的功能
 
 
 ## <span id="ddk_storage_filter_drivers_device_type_specific_functionality_kg"></span><span id="DDK_STORAGE_FILTER_DRIVERS_DEVICE_TYPE_SPECIFIC_FUNCTIONALITY_KG"></span>

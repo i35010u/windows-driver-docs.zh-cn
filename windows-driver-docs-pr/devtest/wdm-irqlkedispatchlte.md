@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 22fe0d717046da2ab5a33b6c1338eff6396565df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341583"
 ---
 # <a name="irqlkedispatchlte-rule-wdm"></a>IrqlKeDispatchLte 规则 (wdm)
 

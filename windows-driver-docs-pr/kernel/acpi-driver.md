@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee177f689b1deebcd1b1fbe275a15686d3304f0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339108"
 ---
-# <a name="acpisys-the-windows-acpi-driver"></a>Acpi.sys:Windows ACPI 驱动程序
+# <a name="acpisys-the-windows-acpi-driver"></a>Acpi.sysWindows ACPI 驱动程序
 
 
 Windows ACPI 驱动程序，Acpi.sys，是 Windows 操作系统的收件箱组件。 Acpi.sys 的职责包括电源管理的支持和即插即用 (PnP) 设备枚举。 有的硬件平台上[ACPI BIOS](acpi-bios.md)，则[HAL](windows-kernel-mode-hal-library.md)会导致要在位于底部的系统启动期间加载的 Acpi.sys[设备树](device-tree.md)。 Acpi.sys 充当操作系统和 ACPI BIOS 之间的接口。 Acpi.sys 是透明的设备树中的其他驱动程序。

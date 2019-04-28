@@ -1,17 +1,17 @@
 ---
-title: 音频驱动程序的事件集
-description: 音频驱动程序的事件集
+title: 音频驱动程序事件集
+description: 音频驱动程序事件集
 ms.assetid: 9e800f71-9c90-4084-b879-32300e6706fc
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fadbf816fe601d9be9b4273d6282bcee1bfae5f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331535"
 ---
-# <a name="audio-drivers-event-sets"></a>音频驱动程序的事件集
+# <a name="audio-drivers-event-sets"></a>音频驱动程序事件集
 
 
 ## <span id="ddk_audio_drivers_event_sets_ks"></span><span id="DDK_AUDIO_DRIVERS_EVENT_SETS_KS"></span>

@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e18d22c735b87de98a731e3d6a9db9bfe0031022
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336096"
 ---
-# <a name="mca"></a>！ mca
+# <a name="mca"></a>!mca
 
 ！ Mca 扩展显示计算机检查体系结构 (MCA) 寄存器。 
 

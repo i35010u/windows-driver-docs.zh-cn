@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc4e5ad7cffd8493468853e7e6bd0f0ba6b6fe97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328317"
 ---
 # <a name="accessing-sdp-service-information"></a>访问 SDP 服务信息
 

@@ -1,5 +1,5 @@
 ---
-title: .ttime （显示线程时间）
+title: .ttime（显示线程时间）
 description: .Ttime 命令显示线程正在运行的时间。
 ms.assetid: ff48310f-3eb9-4112-b5ab-b7c16878ac8f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fd367035c7fb38f99c1c30782701d211fd0f36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334181"
 ---
-# <a name="ttime-display-thread-times"></a>.ttime （显示线程时间）
+# <a name="ttime-display-thread-times"></a>.ttime（显示线程时间）
 
 
 **.Ttime**命令显示线程正在运行的时间。

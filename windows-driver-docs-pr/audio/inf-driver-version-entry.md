@@ -1,6 +1,6 @@
 ---
-title: INF 驱动程序版本条目
-description: INF 驱动程序版本条目
+title: INF Driver-Version 条目
+description: INF Driver-Version 条目
 ms.assetid: 092cd9ed-8988-4ffd-9958-1267f3c52819
 keywords:
 - 版本编号 WDK 音频
@@ -9,17 +9,17 @@ keywords:
 - 微型端口驱动程序 WDK 音频，版本号
 - 音频驱动程序 WDK，版本号
 - 驱动程序版本数字 WDK 音频
-- INF DriverVer Directive
+- INF DriverVer 指令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 545ce33436a4870432329a2c2394cc2197bab446
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333544"
 ---
-# <a name="inf-driver-version-entry"></a>INF 驱动程序版本条目
+# <a name="inf-driver-version-entry"></a>INF Driver-Version 条目
 
 
 ## <span id="inf_driver_version_entry"></span><span id="INF_DRIVER_VERSION_ENTRY"></span>

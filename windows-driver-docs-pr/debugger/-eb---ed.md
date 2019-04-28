@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ec85a19cf391ba5831c813b1749e6ffe0bbeb695
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334542"
 ---
-# <a name="eb-ed"></a>！ eb，！ ed
+# <a name="eb-ed"></a>!eb、!ed
 
 
 **！ Eb**并 **！ ed**扩展将一系列值写入到指定的物理地址。

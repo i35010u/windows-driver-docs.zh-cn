@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db7122df9cac0bc88c34729fb446c126c709891c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333074"
 ---
 # <a name="kspropertyaudiodelay"></a>KSPROPERTY\_音频\_延迟
 
@@ -77,7 +77,7 @@ KSPROPERTY\_音频\_延迟属性请求将返回状态\_成功以指示已成功�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>

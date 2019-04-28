@@ -1,17 +1,17 @@
 ---
-title: 邻近传感器阈值
+title: 邻近感应传感器阈值
 description: 本主题提供有关邻近信息传感器的阈值。
 ms.assetid: AD93421B-4787-4E56-B01D-58027EFEAC2D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c74b23e558e490338b82963f6b06abc7e5e29b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330057"
 ---
-# <a name="proximity-sensor-thresholds"></a>邻近传感器阈值
+# <a name="proximity-sensor-thresholds"></a>邻近感应传感器阈值
 
 为接近传感器定义没有可配置的阈值。
 

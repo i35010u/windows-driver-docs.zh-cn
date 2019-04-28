@@ -24,11 +24,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a513660a95cac611b1258e1ab4a898eb9a135c45
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326055"
 ---
 # <a name="always-preemptible-and-always-interruptible"></a>始终可抢占且始终可中断
 

@@ -1,6 +1,6 @@
 ---
-title: 显示驱动程序 （Windows 2000 模式）
-description: 显示驱动程序 （Windows 2000 模式）
+title: 显示驱动程序（Windows 2000 模型）
+description: 显示驱动程序（Windows 2000 模型）
 ms.assetid: 9d49f4e7-5153-417e-8f15-42b3dcdf3fa6
 keywords:
 - 显示驱动程序模型 WDK Windows 2000 中，显示器驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aee86541ef21033780ec0a0dfb483ec0ba48ba50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329929"
 ---
-# <a name="display-drivers-windows-2000-model"></a>显示驱动程序 （Windows 2000 模式）
+# <a name="display-drivers-windows-2000-model"></a>显示驱动程序（Windows 2000 模型）
 
 
 ## <span id="ddk_display_drivers_windows_2000_model__gg"></span><span id="DDK_DISPLAY_DRIVERS_WINDOWS_2000_MODEL__GG"></span>

@@ -1,5 +1,5 @@
 ---
-title: .force_tb （强制允许分支跟踪）
+title: .force_tb（强制允许分支跟踪）
 description: .Force_tb 命令会强制在启动过程中尽早跟踪分支到处理器。
 ms.assetid: ac4aabfa-6d00-4478-9c13-213bf89f613a
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ec13cd9f4e87654e952746a81d5e4df6b3f282c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336710"
 ---
 # <a name="forcetb-forcibly-allow-branch-tracing"></a>.force\_tb （强制允许分支跟踪）
 

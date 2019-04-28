@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab40601db1fdbeedf41b1dcc4c41e0fd2ffa6ad9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331351"
 ---
 # <a name="coppquerystatus-function"></a>COPPQueryStatus 函数
 
@@ -30,7 +30,7 @@ HRESULT COPPQueryStatus(
 );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 *pThis [in]*
 
@@ -163,6 +163,6 @@ COPPQueryStatus(
 
 **要求**
 
-| 目标平台 | 版本 |
+| 目标平台 | Version |
 | -- | -- |
 | 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |

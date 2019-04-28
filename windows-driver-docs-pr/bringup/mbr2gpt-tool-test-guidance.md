@@ -4,11 +4,11 @@ description: MBR2GPT 工具测试指南
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 434cf876f6e88e7a913a3acad2e44321b580d9a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337602"
 ---
 # <a name="mbr2gpt-tool-test-guidance"></a>MBR2GPT 工具测试指南
 

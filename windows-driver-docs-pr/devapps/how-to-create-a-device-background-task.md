@@ -5,11 +5,11 @@ ms.assetid: 34263DB8-BB42-480B-AF7F-CC45772E6E84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f47e173582c5007bb8ac90310926fd19ff49a2d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330669"
 ---
 # <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>在 Windows 8.1 （UWP 设备应用） 中创建设备后台任务
 
@@ -104,14 +104,14 @@ ms.locfileid: "56541405"
 
 8.  私有`CancelSyncWithDevice`方法中注销，并取消任何活动设备同步，因此可以通过重新打开该设备[BackgroundTaskRegistration.Unregister](https://go.microsoft.com/fwlink/p/?LinkId=309315)方法。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [自定义的 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )
 
 [固件更新 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=309186)
 
-[设备同步和 UWP 的设备应用程序的更新](device-sync-and-update-for-uwp-device-apps.md)
+[UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)
 
 [启动、 恢复和多任务](https://go.microsoft.com/fwlink/p/?LinkId=309316)
 

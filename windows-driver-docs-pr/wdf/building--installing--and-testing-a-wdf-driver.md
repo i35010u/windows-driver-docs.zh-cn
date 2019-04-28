@@ -1,26 +1,26 @@
 ---
-title: 构建、 安装和测试
+title: 构建、安装和测试
 description: 本部分介绍如何构建在 Microsoft Visual Studio 中的 Windows 驱动程序框架 (WDF) 驱动程序，您是否需要提供共同安装程序，以及如何测试您的驱动程序使用 WDF 验证程序和内置事件日志记录。
 ms.assetid: 178E51A0-A6FA-42A7-958C-6D2A5F195B58
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3df8b5cf3d8f54956428d44d33a61293b4007f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330885"
 ---
-# <a name="building-installing-and-testing"></a>构建、 安装和测试
+# <a name="building-installing-and-testing"></a>构建、安装和测试
 
 
 本部分介绍如何构建在 Microsoft Visual Studio 中的 Windows 驱动程序框架 (WDF) 驱动程序，您是否需要提供共同安装程序，以及如何测试您的驱动程序使用 WDF 验证程序和内置事件日志记录。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [生成和加载 WDF 驱动程序](building-and-loading-a-kmdf-driver.md)
--   [构建用于 Windows 的多个版本的 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+-   [针对多个 Windows 版本生成 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 -   [可再发行框架组件](installation-components-for-kmdf-drivers.md)
 -   [INF 文件中指定 KMDF 共同安装程序](installing-the-framework-s-co-installer.md)
 -   [使用 UMDF 共同安装程序](using-the-umdf-co-installer.md)

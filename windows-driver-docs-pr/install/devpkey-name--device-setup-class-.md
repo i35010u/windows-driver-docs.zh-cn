@@ -1,6 +1,6 @@
 ---
-title: DEVPKEY_NAME （设备安装程序类）
-description: DEVPKEY_NAME （设备安装程序类）
+title: DEVPKEY_NAME（设备安装程序类）
+description: DEVPKEY_NAME（设备安装程序类）
 ms.assetid: cc953918-f11a-464c-95cc-ee2a9aa68b7a
 keywords:
 - DEVPKEY_NAME （设备安装程序类） 设备和驱动程序安装
@@ -15,13 +15,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3939d28abf4ae90921e48c724f29200e739b1d3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327498"
 ---
-# <a name="devpkeyname-device-setup-class"></a>DEVPKEY_NAME （设备安装程序类）
+# <a name="devpkeyname-device-setup-class"></a>DEVPKEY_NAME（设备安装程序类）
 
 
 DEVPKEY_NAME 设备属性表示的名称[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
@@ -74,17 +74,17 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_DeviceClass_ClassName**](devpkey-deviceclass-classname.md)

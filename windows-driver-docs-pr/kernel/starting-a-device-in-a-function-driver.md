@@ -1,19 +1,19 @@
 ---
-title: 功能驱动程序中启动设备
-description: 功能驱动程序中启动设备
+title: 在函数驱动程序中启动设备
+description: 在函数驱动程序中启动设备
 ms.assetid: 148a3128-9cb1-4a2c-a62e-45199476d968
 keywords:
 - 功能的驱动程序 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4df2793edb316b5433edd1e2a7f62107bd362c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331961"
 ---
-# <a name="starting-a-device-in-a-function-driver"></a>功能驱动程序中启动设备
+# <a name="starting-a-device-in-a-function-driver"></a>在函数驱动程序中启动设备
 
 
 

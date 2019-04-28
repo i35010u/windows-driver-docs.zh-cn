@@ -5,11 +5,11 @@ ms.assetid: 29B33A3F-63BB-4E1E-B245-E90372A7812F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 673930dc731aa5cfe7ae575372e6c65feb1eb167
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333540"
 ---
 # <a name="hfp-device-connection"></a>HFP 设备连接
 
@@ -51,7 +51,7 @@ Stream 频道表示无线带宽的音频驱动程序的分配。 大多数情况
 
 此过程允许将 VoIP 应用程序从 CallButtons API 接收的音频传输回调，而不会过早地拒绝或 SCO 连接建立 HFP 终结点上的音频资源的时间。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [理论上的操作](theory-of-operation.md)  
 
 

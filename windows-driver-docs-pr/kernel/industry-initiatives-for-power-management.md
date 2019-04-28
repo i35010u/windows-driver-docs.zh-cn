@@ -1,6 +1,6 @@
 ---
-title: 电源管理的行业计划
-description: 电源管理的行业计划
+title: 电源管理的行业举措
+description: 电源管理的行业举措
 ms.assetid: 81754a9b-67ec-47a6-bd18-5da10a1f18f5
 keywords:
 - 电源管理 WDK 内核，行业计划
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c8e5c8a800a1fa80bd4d10550179bb485ea3ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341047"
 ---
-# <a name="industry-initiatives-for-power-management"></a>电源管理的行业计划
+# <a name="industry-initiatives-for-power-management"></a>电源管理的行业举措
 
 
 

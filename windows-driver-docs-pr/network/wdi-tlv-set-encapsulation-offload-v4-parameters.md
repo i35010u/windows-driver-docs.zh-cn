@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_ENCAPSULATION_OFFLOAD_V4_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0cb169cddebc1f46cf1403b2bd5502af7b1695
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330422"
 ---
 # <a name="wditlvsetencapsulationoffloadv4parameters"></a>WDI\_TLV\_SET\_ENCAPSULATION\_OFFLOAD\_V4\_PARAMETERS
 
@@ -55,13 +55,13 @@ WDI\_TLV\_设置\_封装\_卸载\_V4\_参数是由 TLV [OID\_WDI\_设置\_封装
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_卸载\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566706)

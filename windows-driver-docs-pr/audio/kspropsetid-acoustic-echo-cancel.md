@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f21b6dbebd0a17c7855cf3446853b9bd50bad0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332565"
 ---
 # <a name="kspropsetidacousticechocancel"></a>KSPROPSETID\_声学\_Echo\_取消
 

@@ -1,15 +1,15 @@
 ---
-title: GPIO 控制器特定于设备的方法 (_DSM)
+title: GPIO 控制器的特定于设备的方法 (_DSM)
 description: 若要支持各种特定于设备的类的 Windows 中的通用 I/O (GPIO) 驱动程序堆栈和平台固件之间的通信，Microsoft 定义了特定于设备的方法 (_DSM) 可以包含在 ACPI 中的 GPIO 控制器命名空间。
 ms.assetid: 2891A78C-8C4F-4FE4-AB69-402F04DFA885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9223bb68b3869bafa9e3c04a3c41c6781f42534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337619"
 ---
 # <a name="gpio-controller-device-specific-method-dsm"></a>GPIO 控制器特定于设备的方法 (\_DSM)
 

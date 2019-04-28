@@ -1,21 +1,21 @@
 ---
-Description: This section describes tools that you can use to test your USB hardware or software, capture traces of operations and other system events, and observe how the USB driver stack responds to a request sent by a client driver or an application.
-title: 在 Windows 中测试 USB 硬件、 驱动程序和应用程序
+Description: 本部分介绍可用于测试您的 USB 硬件或软件、 捕获跟踪的操作和其他系统事件，并观察 USB 驱动程序堆栈由客户端驱动程序或应用程序发送的请求的响应方式的工具。
+title: 在 Windows 中测试 USB 硬件、驱动程序和应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb54a520aed50db51b5c7dc72ba51e5f0d2f641
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325737"
 ---
-# <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>在 Windows 中测试 USB 硬件、 驱动程序和应用程序
+# <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>在 Windows 中测试 USB 硬件、驱动程序和应用程序
 
 
 本部分介绍可用于测试您的 USB 硬件或软件、 捕获跟踪的操作和其他系统事件，并观察 USB 驱动程序堆栈由客户端驱动程序或应用程序发送的请求的响应方式的工具。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d05697309b7d8bfc3778d532482f8334fc9c1c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63329596"
 ---
 # <a name="kseventvpnotifyformatchange"></a>KSEVENT\_VPNOTIFY\_格式
 

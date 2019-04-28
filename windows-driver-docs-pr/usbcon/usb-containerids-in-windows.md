@@ -1,14 +1,14 @@
 ---
-Description: This paper provides information about USB ContainerIDs for the Windows operating system. It includes guidelines for device manufacturers to program their multifunction USB devices so that they can be correctly detected by Windows.
+Description: 本白皮书提供有关 USB ContainerIDs Windows 操作系统的信息。 它包括进行编程，以便它们可以正确检测 Windows 其多功能的 USB 设备的设备制造商的指导原则。
 title: Windows 中的 USB ContainerID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8214980cf6f42494b66141d8791922955aee635
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331650"
 ---
 # <a name="usb-containerids-in-windows"></a>Windows 中的 USB ContainerID
 
@@ -96,7 +96,7 @@ Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填�
 <tr class="header">
 <th>字段</th>
 <th>长度 （字节）</th>
-<th>ReplTest1</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>

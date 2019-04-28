@@ -1,14 +1,14 @@
 ---
-Description: USBTCD is the combination of a user-mode application and kernel-mode driver.
+Description: USBTCD 是用户模式应用程序和内核模式驱动程序的组合。
 title: USBTCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d8e248fed9356c98e46843caed4f538cfaf3faa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333947"
 ---
 # <a name="usbtcd"></a>USBTCD
 

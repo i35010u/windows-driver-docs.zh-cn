@@ -1,6 +1,6 @@
 ---
-title: Dpc 简介
-description: Dpc 简介
+title: DPC 简介
+description: DPC 简介
 ms.assetid: 10e8d0e7-c04a-4dca-853c-74c911f59341
 keywords:
 - 延迟的过程调用 WDK 内核
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 990e4151becb3d9a7bbee1b9ef303a542bd5795b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341030"
 ---
-# <a name="introduction-to-dpcs"></a>Dpc 简介
+# <a name="introduction-to-dpcs"></a>DPC 简介
 
 
 

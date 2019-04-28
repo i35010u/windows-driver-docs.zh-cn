@@ -1,5 +1,5 @@
 ---
-title: .frame （设置本地上下文）
+title: .frame（设置本地上下文）
 description: .Frame 命令指定使用哪些本地上下文 （作用域） 来解释本地变量，或显示当前的本地上下文。
 ms.assetid: eb843712-204f-4bbd-b711-a10756c9279a
 keywords:
@@ -16,13 +16,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ed2e2c3306edd234b46b96ba3f4ded323a545da7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336674"
 ---
-# <a name="frame-set-local-context"></a>.frame （设置本地上下文）
+# <a name="frame-set-local-context"></a>.frame（设置本地上下文）
 
 
 **.Frame**命令指定使用哪些本地上下文 （作用域） 来解释本地变量，或显示当前的本地上下文。

@@ -1,5 +1,5 @@
 ---
-title: .lastevent （显示最后一个事件）
+title: .lastevent（显示最后一个事件）
 description: .Lastevent 命令显示的最新的异常或发生的事件。
 ms.assetid: 6f722c22-cb0f-4a10-b719-a168f7ba0943
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fc4137f1aa7b2ed47a26aedaabd990995d15a0eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336196"
 ---
-# <a name="lastevent-display-last-event"></a>.lastevent （显示最后一个事件）
+# <a name="lastevent-display-last-event"></a>.lastevent（显示最后一个事件）
 
 
 **.Lastevent**命令显示的最新的异常或发生的事件。

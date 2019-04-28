@@ -1,19 +1,19 @@
 ---
-title: 启用堆免费检查
-description: 启用堆免费检查
+title: 启用堆释放检查
+description: 启用堆释放检查
 ms.assetid: d97d6aac-608c-4c0a-8702-c078ed4820db
 keywords:
 - 启用堆免费检查 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e269447c45690ec48c6c188136aa5d324dfe869e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330703"
 ---
-# <a name="enable-heap-free-checking"></a>启用堆免费检查
+# <a name="enable-heap-free-checking"></a>启用堆释放检查
 
 
 ## <span id="ddk_enable_heap_free_checking_dtools"></span><span id="DDK_ENABLE_HEAP_FREE_CHECKING_DTOOLS"></span>

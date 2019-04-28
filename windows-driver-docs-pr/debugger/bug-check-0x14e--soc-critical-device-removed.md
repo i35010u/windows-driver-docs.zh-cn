@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 27eb523f460f8783bf2935ffeaea3f4aca15736f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335568"
 ---
 # <a name="bug-check-0x14e-soccriticaldeviceremoved"></a>Bug 检查 0x14E：SOC\_严重\_设备\_已删除
 

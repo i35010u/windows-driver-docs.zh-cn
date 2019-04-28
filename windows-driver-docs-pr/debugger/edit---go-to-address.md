@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 382806163042c46208aaeee42fade339070023e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331407"
 ---
-# <a name="edit--go-to-address"></a>编辑 |转到地址
+# <a name="edit--go-to-address"></a>编辑 | 转到地址
 
 
 ## <span id="ddk_edit_go_to_address_dbg"></span><span id="DDK_EDIT_GO_TO_ADDRESS_DBG"></span>

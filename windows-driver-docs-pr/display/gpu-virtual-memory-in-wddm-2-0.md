@@ -1,17 +1,17 @@
 ---
-title: 在 2.0 中 WDDM 的 GPU 虚拟内存
+title: WDDM 2.0 中的 GPU 虚拟内存
 description: 本部分提供有关 GPU 虚拟内存，包括已进行了更改的原因和驱动程序将使用它的详细信息。
 ms.assetid: 88A99A31-9B84-4594-8A93-1C2783F7390D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4a848311cbb7e802b970bcc11598e9d96a23f90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331288"
 ---
-# <a name="gpu-virtual-memory-in-wddm-20"></a>在 2.0 中 WDDM 的 GPU 虚拟内存
+# <a name="gpu-virtual-memory-in-wddm-20"></a>WDDM 2.0 中的 GPU 虚拟内存
 
 
 本部分提供有关 GPU 虚拟内存，包括已进行了更改的原因和驱动程序将使用它的详细信息。 此功能可从 Windows 10 开始。

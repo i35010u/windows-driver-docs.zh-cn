@@ -1,17 +1,17 @@
 ---
-title: 查询虚拟函数的参数
-description: 查询虚拟函数的参数
+title: 查询虚拟功能的参数
+description: 查询虚拟功能的参数
 ms.assetid: D834762D-9141-4F0F-B76D-5C8ABB016B64
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2e2ca1b03bd73611583a102902e1455887a8ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339983"
 ---
-# <a name="querying-the-parameters-of-a-virtual-function"></a>查询虚拟函数的参数
+# <a name="querying-the-parameters-of-a-virtual-function"></a>查询虚拟功能的参数
 
 
 基础驱动程序或用户模式应用程序可以获取当前参数的 PCI Express (PCIe) 虚拟函数 (VF) 上支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器。 驱动程序或应用程序发出的对象标识符 (OID) 方法请求[OID\_NIC\_交换机\_VF\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451824)来获取这些参数。

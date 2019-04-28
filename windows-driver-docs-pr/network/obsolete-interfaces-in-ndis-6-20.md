@@ -1,6 +1,6 @@
 ---
-title: 已过时的 NDIS 6.20 中的接口
-description: 已过时的 NDIS 6.20 中的接口
+title: NDIS 6.20 中已过时的接口
+description: NDIS 6.20 中已过时的接口
 ms.assetid: 11c3abd5-651e-4f9c-9f0b-ced6c00947f1
 keywords:
 - NDIS 6.20 WDK 过时 NDIS 6.1 接口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ea07ff327bf81f2d8e57bac380008cb680fa6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331235"
 ---
-# <a name="obsolete-interfaces-in-ndis-620"></a>已过时的 NDIS 6.20 中的接口
+# <a name="obsolete-interfaces-in-ndis-620"></a>NDIS 6.20 中已过时的接口
 
 
 

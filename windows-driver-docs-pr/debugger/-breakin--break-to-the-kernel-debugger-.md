@@ -1,5 +1,5 @@
 ---
-title: .breakin （中断添加到内核调试程序）
+title: .breakin（突入内核调试程序）
 description: 从用户模式下调试到内核模式调试切换.breakin 命令。 当正在控制用户模式下的调试程序与内核调试程序时，此命令将特别有用。
 ms.assetid: f0dab2c2-60f4-4a85-91bd-6379b247ceaf
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ead826fad720ba8e9729b0044cd2db10064a1fe0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336973"
 ---
-# <a name="breakin-break-to-the-kernel-debugger"></a>.breakin （中断添加到内核调试程序）
+# <a name="breakin-break-to-the-kernel-debugger"></a>.breakin（突入内核调试程序）
 
 
 **.Breakin**命令切换不同的用户模式下调试到内核模式调试。 当正在控制用户模式下的调试程序与内核调试程序时，此命令将特别有用。

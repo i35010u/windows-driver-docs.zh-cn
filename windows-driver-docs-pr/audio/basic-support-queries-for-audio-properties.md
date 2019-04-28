@@ -1,6 +1,6 @@
 ---
-title: 基本支持查询的音频属性
-description: 基本支持查询的音频属性
+title: 音频属性的基本支持查询
+description: 音频属性的基本支持查询
 ms.assetid: d08b6f86-e4fd-4b2c-bfaa-191bcbac3ff8
 keywords:
 - 音频属性 WDK，basic 支持的查询
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be69fde2d31986b3459dc859b123674dc3f215bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333938"
 ---
-# <a name="basic-support-queries-for-audio-properties"></a>基本支持查询的音频属性
+# <a name="basic-support-queries-for-audio-properties"></a>音频属性的基本支持查询
 
 
 ## <span id="basic_support_queries_for_audio_properties"></span><span id="BASIC_SUPPORT_QUERIES_FOR_AUDIO_PROPERTIES"></span>

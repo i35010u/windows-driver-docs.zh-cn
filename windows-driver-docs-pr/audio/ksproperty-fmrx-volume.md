@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a06caefd922bccec83190aee6a87b6cff3c722ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332725"
 ---
 # <a name="kspropertyfmrxvolume"></a>KSPROPERTY\_FMRX\_VOLUME
 
@@ -91,7 +91,7 @@ FM 卷和路由 （终结点选择） 受**KSPROPERTY\_FMRX\_卷**并[ **KSPROPE
 <td align="left"><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>

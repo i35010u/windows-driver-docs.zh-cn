@@ -1,14 +1,14 @@
 ---
-Description: A USB device provides information about itself in data structures called USB descriptors. This section provides information about various descriptors that a client driver can obtain from a USB device.
+Description: USB 设备提供了有关其自身的数据结构称为 USB 描述符中的信息。 本部分提供有关客户端驱动程序可以从 USB 设备中获取的各种描述符信息。
 title: USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6623b236ccdd5ac287d79272c85542f4d749e660
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331633"
 ---
 # <a name="usb-descriptors"></a>USB 描述符
 
@@ -24,7 +24,7 @@ USB 设备提供了有关其自身在名为的数据结构中的信息*USB 描�
 
 例如，请考虑 OSR FX2 板设备布局中所述[USB 设备布局](usb-device-layout.md)。 在设备级别，设备会公开设备描述符和默认终结点的终结点描述符。 在配置级别，设备配置 0 公开配置描述符。 在接口级别，它公开一个接口描述符为备用设置 0。 为终结点级别，它公开三个终结点描述符。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

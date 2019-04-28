@@ -5,11 +5,11 @@ ms.assetid: D0690A6F-F44F-465D-9115-DD662074D0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bca4e08c9267f0227db41376819b7192600e5866
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333920"
 ---
 # <a name="bluetooth-bypass-guidelines-for-audio-drivers"></a>音频驱动程序的蓝牙旁路指南
 

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f0167052142b57fe0c940e3160c0ea5da92272
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333673"
 ---
 # <a name="exposing-hardware-accelerated-capture-effects"></a>公开硬件加速捕获效果
 
@@ -93,7 +93,7 @@ PCM 微型端口驱动程序公开形式为满足此附加要求的捕获流的�
 <thead>
 <tr class="header">
 <th align="left">Pin ID 参数名称</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 230312578cde427e1503f6a4b647ce43eece226f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328670"
 ---
 # <a name="retrieving-device-setup-information"></a>检索设备安装程序信息
 

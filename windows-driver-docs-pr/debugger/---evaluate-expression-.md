@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a3314967d8b9b9249a8c66ca0889ec536c90308
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337063"
 ---
 # <a name="-evaluate-expression"></a>? （计算表达式）
 
@@ -64,7 +64,7 @@ ms.locfileid: "56564313"
 <a name="remarks"></a>备注
 -------
 
-输入和输出 **？** 命令取决于您使用的 MASM 表达式语法或 c + + 表达式语法。 有关这些类型的表达式语法的详细信息，请参阅[评估表达式](evaluating-expressions.md)并[数值表达式语法](numerical-expression-syntax.md)。
+输入和输出 **？** 命令取决于是否使用 MASM 表达式语法或C++表达式语法。 有关这些类型的表达式语法的详细信息，请参阅[评估表达式](evaluating-expressions.md)并[数值表达式语法](numerical-expression-syntax.md)。
 
 如果使用 MASM 语法，输入和输出取决于当前的基数。 若要更改的基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令。
 
@@ -104,7 +104,7 @@ Evaluate expression: 0 = 00000000
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**??（计算结果 c + + 表达式）**](----evaluate-c---expression-.md)
+[**??(评估C++表达式)**](----evaluate-c---expression-.md)
 
 [**.formats （显示数字格式）**](-formats--show-number-formats-.md)
 

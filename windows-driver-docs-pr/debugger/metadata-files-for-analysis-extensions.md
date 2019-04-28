@@ -5,11 +5,11 @@ ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f859a93a32304c8fc75c3ebf4f101297fa515da0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341726"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析扩展插件的元数据文件
 
@@ -93,7 +93,7 @@ help text from plug-in analysis}
 #
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [分析扩展插件写入扩展 ！ 分析](writing-an-analysis-extension-to-extend--analyze.md)

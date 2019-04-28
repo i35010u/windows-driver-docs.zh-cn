@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 645a9c477d60059a22228fdff7f153f0d9a14ae6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335783"
 ---
 # <a name="rpcextsrpctime"></a>!rpcexts.rpctime
 

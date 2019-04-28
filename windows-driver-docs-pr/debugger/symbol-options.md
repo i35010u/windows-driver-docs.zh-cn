@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9832b751affe05bd31977c0a82280a3e2f692e7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335515"
 ---
 # <a name="symbol-options"></a>符号选项
 
@@ -209,7 +209,7 @@ DBH 中默认情况下，此选项处于关闭状态。 DBH 开始运行后，�
 
 ### <a name="span-idsymopt-no-cppspanspan-idsymoptnocppspansymoptnocpp"></a><span id="symopt-no-cpp"></span><span id="SYMOPT_NO_CPP"></span>SYMOPT\_NO\_CPP
 
-此符号选项将关闭 c + + 转换。 当设置此符号选项时， **::** 替换为**\_ \_** 中所有的符号。
+此符号选项将关闭C++转换。 当设置此符号选项时， **::** 替换为**\_ \_** 中所有的符号。
 
 默认情况下，在所有调试器情况下，此选项处于关闭状态。 使用-snc 命令行选项，可以激活它。 调试器开始运行后，它可以打开或关闭通过使用 **.symopt + 0x8**或.symopt 0x8，分别。
 

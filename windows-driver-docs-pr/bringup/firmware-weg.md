@@ -1,21 +1,21 @@
 ---
 title: 固件 Windows 工程指南 (WEG)
-description: 固件 Windows 工程指南 (WEG) 提供了实施系统固件相关的最佳实践中应遵循的步骤。
+description: 固件 Windows 工程指南 (WEG) 提供了在实施与系统固件相关的最佳做法时需遵循的路线图。
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fc5fd86aa82665f574d42dde95d2a998a4cd2a02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337620"
 ---
 # <a name="firmware-windows-engineering-guide-weg"></a>固件 Windows 工程指南 (WEG)
 
-固件 Windows 工程指南 (WEG) 提供了实施系统固件相关的最佳实践中应遵循的步骤。
+固件 Windows 工程指南 (WEG) 提供了在实施与系统固件相关的最佳做法时需遵循的路线图。
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 [UEFI 安全](uefi-security.md)
 

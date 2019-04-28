@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5fdfd6178affa2c58f280092fa546df993e4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333984"
 ---
 # <a name="srbwritedata"></a>SRB\_WRITE\_DATA
 
@@ -40,7 +40,7 @@ ms.locfileid: "56544724"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态\_IO\_设备\_错误  
 指示发生了硬件故障。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB\_SET\_STREAM\_STATE**](srb-set-stream-state.md)

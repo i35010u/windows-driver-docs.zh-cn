@@ -5,11 +5,11 @@ ms.assetid: e5ae8d66-b2dc-409e-bdac-9034a9e24672
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf63e5b2cb5d9ddda5d616d563f4f76fa07df949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339392"
 ---
 # <a name="using-the-inf-addproperty-directive-and-the-inf-delproperty-directive"></a>使用 INF AddProperty 指令和 INF DelProperty 指令
 

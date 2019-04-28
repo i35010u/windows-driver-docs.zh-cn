@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 05310b438903a114631b764b8d7e068e78c4f5a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336597"
 ---
-# <a name="fxdevice"></a>！ fxdevice
+# <a name="fxdevice"></a>!fxdevice
 
 
 ！ Fxdevice 扩展显示有关所有电源管理框架 (PoFx) 的摘要信息注册设备。 可以在内核模式调试期间仅使用此命令。

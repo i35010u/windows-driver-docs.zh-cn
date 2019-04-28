@@ -5,11 +5,11 @@ ms.assetid: 4BA34A3F-3C0D-4DDC-BA0A-E62AE9A6A93A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a715334377e827f67d42361fad6d39538b801fec
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330664"
 ---
 # <a name="how-to-customize-camera-options-with-a-uwp-device-app"></a>如何自定义 UWP 设备应用使用照相机选项
 
@@ -21,7 +21,7 @@ ms.locfileid: "58419585"
 C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)的示例使用**DeviceAppPage.xaml**页以显示自定义的浮出控件，有关更多的相机选项 UI。 此示例也适用照相机效果使用照相机驱动程序 MFT （媒体基础转换）。 有关的详细信息，请参阅[创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
 
 > [!NOTE]
-> 本主题中所示的代码示例基于C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。 此示例也是在 JavaScript 和 c + + 中可用。 下载示例，请参阅最新版本的代码。
+> 本主题中所示的代码示例基于C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。 此示例也会出现在 JavaScript 和C++。 下载示例，请参阅最新版本的代码。
 
 ## <a name="more-options-for-cameras"></a>用于相机的更多选项
 
@@ -56,7 +56,7 @@ C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwli
 
 ## <a name="step-1-register-the-extension"></a>第 1 步：注册扩展
 
-为了使 Windows 能够识别应用程序可以提供有关更多的照相机选项自定义浮出控件，它必须注册相机设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.cameraSettings`。 在C#和 c + + 示例`Executable`属性设置为`DeviceAppForWebcam.exe`并`EntryPoint`属性设置为`DeviceAppForWebcam.App`。
+为了使 Windows 能够识别应用程序可以提供有关更多的照相机选项自定义浮出控件，它必须注册相机设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.cameraSettings`。 在C#和C++示例中，`Executable`属性设置为`DeviceAppForWebcam.exe`并且`EntryPoint`属性设置为`DeviceAppForWebcam.App`。
 
 可以添加照相机设置扩展**声明**清单设计器在 Microsoft Visual Studio 中的选项卡。 您还可以编辑的应用程序包清单 XML 手动，使用 XML （文本） 编辑器。 右键单击**Package.appxmanifest**中的文件**解决方案资源管理器**的编辑选项。
 
@@ -295,7 +295,7 @@ protected void OnEffectSliderValueChanged(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="testing-your-app"></a>测试您的应用程序
+## <a name="testing-your-app"></a>测试应用
 
 本部分介绍如何安装 UWP 设备应用提供的自定义浮出控件**更多选项**的照相机，如中所示[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。
 

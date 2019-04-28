@@ -1,6 +1,6 @@
 ---
-title: 符号语法和匹配的符号
-description: 符号语法和匹配的符号
+title: 符号语法和符号匹配
+description: 符号语法和符号匹配
 ms.assetid: 7fda24bf-57be-4c7d-9eff-bd688de7cf1b
 keywords:
 - 符号，符号语法
@@ -13,13 +13,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07451ed31f6d92f26ebbadfbddadd9ca6bf6f932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335499"
 ---
-# <a name="symbol-syntax-and-symbol-matching"></a>符号语法和匹配的符号
+# <a name="symbol-syntax-and-symbol-matching"></a>符号语法和符号匹配
 
 
 ## <span id="ddk_symbol_syntax_and_symbol_matching_dbg"></span><span id="DDK_SYMBOL_SYNTAX_AND_SYMBOL_MATCHING_DBG"></span>
@@ -39,11 +39,11 @@ ms.locfileid: "56547745"
 
 ### <a name="span-idsymbolsyntaxinnumericalexpressionsspanspan-idsymbolsyntaxinnumericalexpressionsspansymbol-syntax-in-numerical-expressions"></a><span id="symbol_syntax_in_numerical_expressions"></span><span id="SYMBOL_SYNTAX_IN_NUMERICAL_EXPRESSIONS"></span>数值表达式中的符号语法
 
-调试器无法识别两个不同类型的表达式：Microsoft Macro Assembler (MASM) 表达式和 c + + 表达式。 符号是而言，这两种形式的语法不同，如下所示：
+调试器无法识别两个不同类型的表达式：Microsoft Macro Assembler (MASM) 表达式和C++表达式。 符号是而言，这两种形式的语法不同，如下所示：
 
 -   在 MASM 表达式中，每个符号被解释为一个地址。 具体取决于符号所引用的内容，这将是全局变量、 本地变量、 函数、 段、 模块或任何其他可识别的标签的地址。
 
--   在 c + + 表达式中，每个符号解释根据其类型。 具体取决于符号所引用的内容，可能被解释为整数、 数据结构、 函数指针或任何其他数据类型。 与 c + + 数据类型 （例如未修改的模块名称） 不对应的符号将导致语法错误。
+-   在C++表达式，每个符号解释根据其类型。 具体取决于符号所引用的内容，可能被解释为整数、 数据结构、 函数指针或任何其他数据类型。 不对应的符号C++数据类型 （例如未修改的模块名称） 将导致语法错误。
 
 有关何时以及如何使用每种类型的语法的说明，请参阅[评估表达式](evaluating-expressions.md)。
 

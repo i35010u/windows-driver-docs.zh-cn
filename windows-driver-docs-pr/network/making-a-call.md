@@ -1,6 +1,6 @@
 ---
-title: 进行调用
-description: 进行调用
+title: 呼叫
+description: 呼叫
 ms.assetid: b5273df1-b99f-415c-a099-16a51f3329ee
 keywords:
 - 调用安装 WDK 的 CoNDIS
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00250ab411fc4859bd05f1f960739f23ef9356b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331916"
 ---
-# <a name="making-a-call"></a>进行调用
+# <a name="making-a-call"></a>呼叫
 
 
 

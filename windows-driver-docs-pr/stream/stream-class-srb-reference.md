@@ -5,11 +5,11 @@ ms.assetid: fdd2de58-8825-429a-937a-0bd27a180f2a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd87f49a4c10ee036c03699b051b6f5969fa21cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339839"
 ---
 # <a name="stream-class-srb-reference"></a>流式处理类 SRB 参考
 

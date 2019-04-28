@@ -1,6 +1,6 @@
 ---
-title: 公开多渠道的节点
-description: 公开多渠道的节点
+title: 公开多声道节点
+description: 公开多声道节点
 ms.assetid: 48ee3b33-fb97-4e71-bf6f-5dbdb76aa7f8
 keywords:
 - 音频属性 WDK，多渠道的节点
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b6d4939617eb3deca96f9e40cd68fbf85005043
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333703"
 ---
-# <a name="exposing-multichannel-nodes"></a>公开多渠道的节点
+# <a name="exposing-multichannel-nodes"></a>公开多声道节点
 
 
 ## <span id="exposing_multichannel_nodes"></span><span id="EXPOSING_MULTICHANNEL_NODES"></span>

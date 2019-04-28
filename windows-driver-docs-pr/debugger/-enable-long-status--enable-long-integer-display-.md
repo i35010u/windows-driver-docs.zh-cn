@@ -1,5 +1,5 @@
 ---
-title: .enable_long_status （启用长整型显示）
+title: .enable_long_status（启用长整数显示）
 description: .Enable_long_status 命令指定十进制格式或默认基数，调试器是否显示长整数。
 ms.assetid: e08f5a40-5246-4120-ae43-37e876269463
 keywords:
@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2faea3fce198d956ccf0d8652851b925c96b4dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336777"
 ---
 # <a name="enablelongstatus-enable-long-integer-display"></a>.enable\_长\_状态 （启用长整数的显示）
 

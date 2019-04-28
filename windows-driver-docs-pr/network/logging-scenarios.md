@@ -5,11 +5,11 @@ ms.assetid: B9E10527-9C25-46B6-ADC2-4CF5AB749E04
 ms.date: 06/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5397717ab4f81be578f50c105f560db489d4a000
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340934"
 ---
 # <a name="logging-scenarios"></a>日志记录方案
 

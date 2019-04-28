@@ -1,15 +1,15 @@
 ---
-title: USB 设备特定的方法 (_DSM)
+title: USB 的特定于设备的方法 (_DSM)
 description: 若要支持 USB 子系统的设备类特定配置，Windows 定义特定于设备的方法 (_DSM) 具有本文中介绍的函数。
 ms.assetid: 8F0EDE17-9895-4C24-B061-963DA0D7882B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6379d3b85d092e6867fc60436b1a7f5ebd6dc185
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337350"
 ---
 # <a name="usb-device-specific-method-dsm"></a>USB 设备特定的方法 (\_DSM)
 

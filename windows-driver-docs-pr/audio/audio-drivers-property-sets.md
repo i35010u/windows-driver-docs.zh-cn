@@ -1,17 +1,17 @@
 ---
-title: 音频驱动程序的属性集
-description: 音频驱动程序的属性集
+title: 音频驱动程序属性集
+description: 音频驱动程序属性集
 ms.assetid: bac74ad5-3a9b-40b1-ae49-c86558c34e94
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 661e29d53d64a01521d0ee891d9f931950ff0ad3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331537"
 ---
-# <a name="audio-drivers-property-sets"></a>音频驱动程序的属性集
+# <a name="audio-drivers-property-sets"></a>音频驱动程序属性集
 
 
 ## <span id="ddk_audio_drivers_property_sets_ks"></span><span id="DDK_AUDIO_DRIVERS_PROPERTY_SETS_KS"></span>

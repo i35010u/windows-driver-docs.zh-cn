@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65d14c0499124818c3566c0f69a13a4aa298743c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340063"
 ---
 # <a name="xr-format-alpha-content"></a>XR 格式 Alpha 内容
 

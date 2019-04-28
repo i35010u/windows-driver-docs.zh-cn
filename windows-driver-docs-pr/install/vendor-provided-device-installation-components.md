@@ -5,11 +5,11 @@ ms.assetid: d86bdf75-9726-4b44-8753-7e9c19e88a61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4fa6b7aa475aae900ec78004268c82625ff6ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339324"
 ---
 # <a name="vendor-provided-device-installation-components"></a>供应商提供的设备安装组件
 

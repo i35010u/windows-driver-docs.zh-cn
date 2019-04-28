@@ -1,5 +1,5 @@
 ---
-title: .dbgdbg （调试当前调试器）
+title: .dbgdbg（调试当前调试器）
 description: .Dbgdbg 命令启动 CDB; 的新实例此新调试器将当前的调试器作为其目标。
 ms.assetid: a90392b5-d8ae-495d-8074-060e4ec89037
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c74ab6390a7a18b07aee3df31d3456691ab24d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336888"
 ---
-# <a name="dbgdbg-debug-current-debugger"></a>.dbgdbg （调试当前调试器）
+# <a name="dbgdbg-debug-current-debugger"></a>.dbgdbg（调试当前调试器）
 
 
 **.Dbgdbg**命令启动 CDB 的新实例; 此新调试器所需的当前调试器作为其目标。

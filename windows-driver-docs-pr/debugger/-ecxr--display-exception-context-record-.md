@@ -1,5 +1,5 @@
 ---
-title: .ecxr （显示异常上下文记录）
+title: .ecxr（显示异常上下文记录）
 description: .Ecxr 命令将显示与当前异常相关联的上下文记录。
 ms.assetid: 020dfa99-ba25-4af3-929a-143d5c91ad87
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5776f993fd21050a6e8c6ef44c78e568aec8d259
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336773"
 ---
-# <a name="ecxr-display-exception-context-record"></a>.ecxr （显示异常上下文记录）
+# <a name="ecxr-display-exception-context-record"></a>.ecxr（显示异常上下文记录）
 
 
 **.Ecxr**命令将显示与当前异常相关联的上下文记录。

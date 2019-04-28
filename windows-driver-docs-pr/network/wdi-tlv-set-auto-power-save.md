@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_AUTO_POWER_SAVE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b4a3e271edc4dd47da9f3a37adcdbf076d4cd888
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330418"
 ---
 # <a name="wditlvsetautopowersave"></a>WDI\_TLV\_SET\_AUTO\_POWER\_SAVE
 
@@ -36,7 +36,7 @@ WDI\_TLV\_设置\_自动\_POWER\_保存为未使用的 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

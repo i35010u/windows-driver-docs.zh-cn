@@ -4,11 +4,11 @@ description: 提供了指导和信息以使您能够执行和验证固件的 Win
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d82013a45be216f1383c0fe2986f612ad98da073
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337381"
 ---
 # <a name="uefi-security"></a>UEFI 安全性
 

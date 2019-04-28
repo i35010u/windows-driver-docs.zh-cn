@@ -1,17 +1,17 @@
 ---
-title: UEFI 显示电源状态协议
-description: UEFI 显示电源状态协议
+title: UEFI 显示器电源状态协议
+description: UEFI 显示器电源状态协议
 ms.assetid: ab16c548-1402-4819-9fbb-a1d6f55d934a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db59ebd78497c04b6db27b85cce692e85835139c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337396"
 ---
-# <a name="uefi-display-power-state-protocol"></a>UEFI 显示电源状态协议
+# <a name="uefi-display-power-state-protocol"></a>UEFI 显示器电源状态协议
 
 
 **请注意**  本部分中的某些信息可能仅适用于 Windows 10 移动版和某些处理器体系结构。

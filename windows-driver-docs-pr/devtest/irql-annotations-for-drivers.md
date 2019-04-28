@@ -1,17 +1,17 @@
 ---
-title: 驱动程序的 IRQL 批注
+title: 驱动程序的 IRQL 注释
 description: 当驱动程序代码的 IRQL 批注时，代码分析工具可使的范围级别的函数应运行和的详细信息可以准确地找到错误的更好地推断。
 ms.assetid: E4C1D490-BE06-483A-90E4-6F3223E269A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d184f7742da975a6375884141aa9f33f2e033e4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340470"
 ---
-# <a name="irql-annotations-for-drivers"></a>驱动程序的 IRQL 批注
+# <a name="irql-annotations-for-drivers"></a>驱动程序的 IRQL 注释
 
 当驱动程序代码的 IRQL 批注时，代码分析工具可使的范围级别的函数应运行和的详细信息可以准确地找到错误的更好地推断。 例如，可以添加指定的可调用的函数; 最大 IRQL 的批注如果在更高版本的 IRQL 调用的函数，代码分析工具可以识别不一致。
 
@@ -111,7 +111,7 @@ DRIVER_CANCEL (
 typedef DRIVER_CANCEL *PDRIVER_CANCEL;  
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [SAL 2.0 注释驱动程序](sal-2-annotations-for-windows-drivers.md)

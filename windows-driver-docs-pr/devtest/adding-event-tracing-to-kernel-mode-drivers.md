@@ -9,11 +9,11 @@ keywords:
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d28efb71879df2ae4700e770484753bb15b98bb5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332065"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>将事件跟踪添加到内核模式驱动程序
 

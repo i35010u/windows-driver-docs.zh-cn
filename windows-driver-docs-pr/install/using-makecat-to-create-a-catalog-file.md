@@ -1,17 +1,17 @@
 ---
-title: 使用 MakeCat 创建编录文件
-description: 使用 MakeCat 创建编录文件
+title: 使用 MakeCat 创建目录文件
+description: 使用 MakeCat 创建目录文件
 ms.assetid: c9f9360b-2b1d-4060-af4d-8d281319e181
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae642f6045a968a8f990fe5acec10add2609f7d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339409"
 ---
-# <a name="using-makecat-to-create-a-catalog-file"></a>使用 MakeCat 创建编录文件
+# <a name="using-makecat-to-create-a-catalog-file"></a>使用 MakeCat 创建目录文件
 
 
 可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具来创建[编录文件](catalog-files.md)有关[驱动程序包](driver-packages.md)。

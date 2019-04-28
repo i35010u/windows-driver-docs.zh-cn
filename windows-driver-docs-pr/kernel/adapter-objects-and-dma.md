@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6df4d17b02b6f10b60ceed8489fbdf0e7d0688b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339098"
 ---
 # <a name="adapter-objects-and-dma"></a>适配器对象和 DMA
 

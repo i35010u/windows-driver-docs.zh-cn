@@ -5,11 +5,11 @@ ms.assetid: 8c4db391-380b-4644-8d46-372f82acffae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96af0ebcf50f89dc633c5984a05c2802e4688dc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333612"
 ---
 # <a name="hardware-resource-management"></a>硬件资源管理
 

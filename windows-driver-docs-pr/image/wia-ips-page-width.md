@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d587ea9ab9ff4985d8004e4024044999a77a3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340041"
 ---
 # <a name="wiaipspagewidth"></a>WIA\_IPS\_页\_宽度
 
@@ -53,7 +53,7 @@ WIA\_IPS\_页面\_宽度必须是 WIA 的值与同步\_IP\_大 XEXTENT，报告�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中可用。 对于 Windows XP 中，而是使用 WIA_DPS_PAGE_WIDTH 属性。</p></td>
 </tr>
 <tr class="even">

@@ -5,11 +5,11 @@ ms.assetid: A4093485-076A-4414-A3D2-9285B2AC097B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6aef9449c82b5cc3cd18088ab2057539bd57eacd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338411"
 ---
 # <a name="span-idstoragecd-romreal-timestreamingspancd-rom-real-time-streaming"></a><span id="storage.cd-rom_real-time_streaming_"></span>CD-ROM 实时流式处理
 
@@ -72,7 +72,7 @@ DVD 播放应用程序和文件系统驱动程序可以选择使用 Ioctl 访问
 
 MMC 规范建议应用程序指示需要读取和写入速度使用流式处理 I/O，因此，在驱动器可以找到之间更好地平衡之前读取和写入质量和吞吐量。 应用程序可以使用[ **IOCTL\_CDROM\_设置\_速度**](https://msdn.microsoft.com/library/windows/hardware/ff559381)以指示首选的速度。 若要确定驱动器的支持的功能，Windows 7 引入了[ **IOCTL\_CDROM\_获取\_性能**](https://msdn.microsoft.com/library/windows/hardware/gg441242)控制代码，将作为输入[ **CDROM\_性能\_请求**](https://msdn.microsoft.com/library/windows/hardware/gg441233)结构。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [**IOCTL\_CDROM\_ENABLE\_STREAMING**](https://msdn.microsoft.com/library/windows/hardware/gg441241)  
 [**IOCTL\_CDROM\_GET\_PERFORMANCE**](https://msdn.microsoft.com/library/windows/hardware/gg441242)  
 [**IOCTL\_CDROM\_SEND\_OPC\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/gg441243)  

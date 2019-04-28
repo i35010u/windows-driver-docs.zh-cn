@@ -1,5 +1,5 @@
 ---
-title: .setdll （设置默认扩展 DLL）
+title: .setdll（设置默认扩展 DLL）
 description: .Setdll 命令更改默认扩展插件 DLL 的调试程序。
 ms.assetid: 9dc5cd9e-d4f2-4112-bf3d-f7061c786ddf
 keywords:
@@ -15,13 +15,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 32db5bf0ee2da68d7d1f9d8e71c9c6850cf9c622
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339801"
 ---
-# <a name="setdll-set-default-extension-dll"></a>.setdll （设置默认扩展 DLL）
+# <a name="setdll-set-default-extension-dll"></a>.setdll（设置默认扩展 DLL）
 
 
 **.Setdll**命令更改默认扩展插件 DLL 的调试程序。

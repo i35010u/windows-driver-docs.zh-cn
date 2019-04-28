@@ -5,11 +5,11 @@ ms.assetid: 2D776DB4-A317-4097-B188-65CA495D0F89
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0ed082502892fde4d872e146c01e613359a8d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332126"
 ---
 # <a name="pkeyfxkeyworddetectorendpointeffectclsid"></a>PKEY\_FX\_KeywordDetector\_EndpointEffectClsid
 

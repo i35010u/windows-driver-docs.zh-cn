@@ -1,6 +1,6 @@
 ---
-title: 编写 Stream 微型驱动程序
-description: 编写 Stream 微型驱动程序
+title: 编写流微型驱动程序
+description: 编写流微型驱动程序
 ms.assetid: 83540dff-3774-4197-8ba1-d28e12b4e366
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核、 编写
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c00bcd9db95bd9e3ca27da17f8236685996e9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327523"
 ---
-# <a name="writing-a-stream-minidriver"></a>编写 Stream 微型驱动程序
+# <a name="writing-a-stream-minidriver"></a>编写流微型驱动程序
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 531fd280-bcb1-4b6f-a2fa-9052318171b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 366b30016650084b171e94321117fae20d6eab0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63337691"
 ---
 # <a name="efiusbfnioprotocolstopcontroller"></a>EFI\_USBFN\_IO\_PROTOCOL.StopController
 
@@ -27,7 +27,7 @@ EFI_STATUS
   );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 <a href="" id="this"></a>*此*  

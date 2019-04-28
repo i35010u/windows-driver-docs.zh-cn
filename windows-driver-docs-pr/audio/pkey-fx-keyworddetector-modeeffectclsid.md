@@ -5,11 +5,11 @@ ms.assetid: 67030999-0658-4880-9CC8-A25496DE584E
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce7adbf5a9ccd819806f80ae19ef7d6b70e18be7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332135"
 ---
 # <a name="pkeyfxkeyworddetectormodeeffectclsid"></a>PKEY\_FX\_KeywordDetector\_ModeEffectClsid
 
@@ -34,7 +34,7 @@ FX_KEYWORD_MODE_CLSID      = "{00000000-0000-0000-0000-000000000000}"
 HKR,"FX\\0",%PKEY_FX_KeywordDetector_ModeEffectClsid%,,%FX_KEYWORD_MODE_CLSID%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

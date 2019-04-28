@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd7dbc6f32e7abdea2b6ac5a40e0d491fdfebfba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63330831"
 ---
 # <a name="deleting-io-queues"></a>删除 I/O 队列
 

@@ -1,5 +1,5 @@
 ---
-title: .fnent （显示函数的数据）
+title: .fnent（显示函数数据）
 description: .Fnent 命令显示有关指定的函数的函数表项的信息。
 ms.assetid: 914caf55-2fbf-4f30-af6e-e666dc47c7da
 keywords:
@@ -14,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 22385219eaa6914c6561e6ce3acf0d6186d8075b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336651"
 ---
-# <a name="fnent-display-function-data"></a>.fnent （显示函数的数据）
+# <a name="fnent-display-function-data"></a>.fnent（显示函数数据）
 
 
 **.Fnent**命令显示有关指定的函数的函数表项的信息。

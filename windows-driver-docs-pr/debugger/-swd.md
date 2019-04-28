@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b00f32e34ef8729dbd2f5a690d965c9113e49c68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63334216"
 ---
 # <a name="swd"></a>!swd
 

@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 10a8a2890eb558ee6394666831a4c5adb8a79a96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335642"
 ---
-# <a name="usb3kdusbanalyze"></a>！ usb3kd.usbanalyze
+# <a name="usb3kdusbanalyze"></a>!usb3kd.usbanalyze
 
 
 [ **！ Usb3kd.usbanalyze** ](-usb3kd-device-info.md)扩展分析的 USB 3.0 bug 检查。

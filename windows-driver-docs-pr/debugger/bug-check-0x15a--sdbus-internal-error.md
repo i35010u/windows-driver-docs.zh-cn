@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 368734b10bc0b03f3562e82f8ee8af3a2d763f61
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63335512"
 ---
 # <a name="bug-check-0x15a-sdbusinternalerror"></a>Bug 检查 0x15A：SDBUS\_INTERNAL\_ERROR
 

@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a00b21b822ad710cf165e6c08fbf3adbc6e2fdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327895"
 ---
 # <a name="fltparameters-for-irpmjsystemcontrol-union"></a>FLT\_IRP 的参数\_MJ\_系统\_控件联合
 

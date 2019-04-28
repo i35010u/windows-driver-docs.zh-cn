@@ -9,11 +9,11 @@ keywords:
 ms.date: 10/26/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86f81e2b9a783d30193dc83b271bfaf74eec515f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333454"
 ---
 # <a name="installing-in-windows"></a>在 Windows 中安装
 

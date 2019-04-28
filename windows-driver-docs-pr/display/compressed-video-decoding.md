@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81ce9b47b1d7893a1c68c47bb4544554a34ce321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338698"
 ---
 # <a name="compressed-video-decoding"></a>压缩视频解码
 

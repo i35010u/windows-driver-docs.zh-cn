@@ -5,11 +5,11 @@ ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ac909cb176bd644fdaa76895d56ad1c62e3dd014
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341321"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
@@ -136,7 +136,7 @@ TRACE_LEVEL_PERF            6
 <td><p>CLX_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td><p>CLX_FunctionExit</p></td>
@@ -148,7 +148,7 @@ TRACE_LEVEL_PERF            6
 <td><p>SENSOR_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不适用</p></td>
+<td><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td><p>SENSOR_FunctionExit</p></td>

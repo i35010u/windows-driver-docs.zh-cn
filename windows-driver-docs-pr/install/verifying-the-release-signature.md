@@ -5,11 +5,11 @@ ms.assetid: 28ed3bb6-dc57-42f9-8bd5-7118619f3bf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc0e13a995606f97c117aacb3a3cebb6a6486a8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339327"
 ---
 # <a name="verifying-the-release-signature"></a>验证发布签名
 

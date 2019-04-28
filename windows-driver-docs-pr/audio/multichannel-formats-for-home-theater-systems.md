@@ -1,6 +1,6 @@
 ---
-title: 对于家庭影院系统的多渠道格式
-description: 对于家庭影院系统的多渠道格式
+title: 适用于家庭影院系统的多声道格式
+description: 适用于家庭影院系统的多声道格式
 ms.assetid: b8bd1dc7-c9a8-4f4f-8014-d31f1ae5361a
 keywords:
 - 数据格式 WDK 音频
@@ -26,13 +26,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e668d94b8a288e2bf960ef4333033370e4c0a25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332320"
 ---
-# <a name="multichannel-formats-for-home-theater-systems"></a>对于家庭影院系统的多渠道格式
+# <a name="multichannel-formats-for-home-theater-systems"></a>适用于家庭影院系统的多声道格式
 
 
 用于家庭影院系统的成本相对较低的解决方案是连接到运行 Windows 操作系统的计算机上的音频适配器的一套环绕声扬声器。 或者，用户可以连接外部音频/视频 (A / V) 适配器输出和演讲者之间的接收方。 家庭影院系统的受欢迎程度响应，5.1 和 7.1 渠道进行创作为这些系统的音频内容变得越来越多地可用。

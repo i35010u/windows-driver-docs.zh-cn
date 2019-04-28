@@ -5,17 +5,17 @@ ms.assetid: D5654BC1-45F5-4EC9-9E93-60318EF4C159
 ms.date: 11/27/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 763afb3b4f28d1b66b8476f2d37ce193c0681cdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333422"
 ---
 # <a name="ksmediah"></a>Ksmedia.h
 
 本部分包含 Ksmedia.h 标头的参考主题。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 |主题|描述|
 |--- |--- |

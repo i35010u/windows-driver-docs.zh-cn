@@ -1,6 +1,6 @@
 ---
-title: 创建 SCO 客户端连接到远程设备
-description: 创建 SCO 客户端连接到远程设备
+title: 创建到远程设备的 SCO 客户端连接
+description: 创建到远程设备的 SCO 客户端连接
 ms.assetid: e5a4ed14-1fb0-4a5f-b388-5e536d674c23
 keywords:
 - 同步面向连接的 WDK 蓝牙
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19bcc017d23799c5c4af684d476dad10b91c4984
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328239"
 ---
-# <a name="creating-a-sco-client-connection-to-a-remote-device"></a>创建 SCO 客户端连接到远程设备
+# <a name="creating-a-sco-client-connection-to-a-remote-device"></a>创建到远程设备的 SCO 客户端连接
 
 
 SCO 客户端配置文件驱动程序是请求 Synchronous Connection-Oriented (SCO) 连接到远程设备的配置文件驱动程序。 如果设备接受连接，连接到任何更改通知 SCO 客户端配置文件驱动程序。 例如，SCO 客户端配置文件驱动程序可以请求连接到远程耳机，并将耳机接受连接请求后，蓝牙驱动程序堆栈耳机处于关闭状态时，可以通知配置文件驱动程序或删除。

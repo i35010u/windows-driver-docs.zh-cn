@@ -1,17 +1,17 @@
 ---
-title: 备用休眠优化
+title: 待机休眠优化
 description: Windows 8 提供了您的驱动程序 （可选） 可以充分利用提高睡眠的系统性能和恢复了图形堆栈的优化。
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e12306d7874d99cb0900c94353baeb1c3a2877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327923"
 ---
-# <a name="standby-hibernate-optimizations"></a>备用休眠优化
+# <a name="standby-hibernate-optimizations"></a>待机休眠优化
 
 
 Windows 8 提供了您的驱动程序 （可选） 可以充分利用提高睡眠的系统性能和恢复了图形堆栈的优化。
@@ -19,7 +19,7 @@ Windows 8 提供了您的驱动程序 （可选） 可以充分利用提高睡�
 |                                                                                   |                                             |
 |-----------------------------------------------------------------------------------|---------------------------------------------|
 | Windows 显示器驱动程序模型 (WDDM) 的最低版本                               | 1.2                                         |
-| 最低 Windows 版本                                                           | 8                                           |
+| 最大 Windows 版本                                                           | 8                                           |
 | 驱动程序实现 — 仅完全图形和呈现                               | 可选                                    |
 | [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **Device.Graphics¦StandbyHibernateFlags** |
 

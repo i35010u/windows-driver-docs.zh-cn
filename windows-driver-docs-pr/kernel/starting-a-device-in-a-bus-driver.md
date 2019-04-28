@@ -1,19 +1,19 @@
 ---
-title: 总线驱动程序中启动设备
-description: 总线驱动程序中启动设备
+title: 在总线驱动程序中启动设备
+description: 在总线驱动程序中启动设备
 ms.assetid: 1babeabb-1866-4ca5-b5a3-380c246596e5
 keywords:
 - 总线驱动程序 WDK 即插即用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18671be874293d10e008fc6870850bb360058103
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331955"
 ---
-# <a name="starting-a-device-in-a-bus-driver"></a>总线驱动程序中启动设备
+# <a name="starting-a-device-in-a-bus-driver"></a>在总线驱动程序中启动设备
 
 
 

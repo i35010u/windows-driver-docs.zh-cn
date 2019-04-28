@@ -1,19 +1,19 @@
 ---
-title: 在创作向导移动宽带元数据中添加硬件 Id
-description: 在创作向导移动宽带元数据中添加硬件 Id
+title: 在移动宽带元数据创作向导中添加硬件 ID
+description: 在移动宽带元数据创作向导中添加硬件 ID
 ms.assetid: 1A540E7F-CA03-4CFA-8711-6CDBD7E152AD
 keywords:
-- 在创作向导移动宽带元数据中添加硬件 Id
+- 在移动宽带元数据创作向导中添加硬件 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3d89980809aedc4d280e73e1321f266a1e26f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332066"
 ---
-# <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>在创作向导移动宽带元数据中添加硬件 Id
+# <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中添加硬件 ID
 
 指定的元数据的包适用于基于 IMSI 或 ICCID （GSM 网络运营商）、 提供程序的 SID 或提供程序名称 （CDMA 网络运营商） 的硬件 ID 范围。
 

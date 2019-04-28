@@ -5,11 +5,11 @@ ms.assetid: B93B9A6D-7317-482B-A0B8-298CE8F21193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb5fcb1a691f139e962039c0d64889ed0c5381c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333516"
 ---
 # <a name="implementation-overview"></a>实现概述
 

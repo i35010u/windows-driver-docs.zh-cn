@@ -5,11 +5,11 @@ ms.assetid: A3A33459-869A-4F75-B1B9-A3D59863E82C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87fd8e14ec3325145167ab48df43cde9e5c8953d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332261"
 ---
 # <a name="obtaining-bluetooth-address-of-hf-device"></a>获取 HF 设备的蓝牙地址
 
@@ -206,7 +206,7 @@ Exit:
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [相关的设计准则](related-design-guidelines.md)  
 
 

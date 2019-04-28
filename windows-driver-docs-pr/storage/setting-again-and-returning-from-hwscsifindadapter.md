@@ -1,6 +1,6 @@
 ---
-title: 再次设置并返回从 HwScsiFindAdapter
-description: 再次设置并返回从 HwScsiFindAdapter
+title: 再次设置并从 HwScsiFindAdapter 返回
+description: 再次设置并从 HwScsiFindAdapter 返回
 ms.assetid: 8a9cde40-06fa-4b56-818d-63a9c71da208
 keywords:
 - HwScsiFindAdapter
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5e5294d49243fe708b76837135ac9f5b647133
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341241"
 ---
-# <a name="setting-again-and-returning-from-hwscsifindadapter"></a>再次设置并返回从 HwScsiFindAdapter
+# <a name="setting-again-and-returning-from-hwscsifindadapter"></a>再次设置并从 HwScsiFindAdapter 返回
 
 
 ## <span id="ddk_setting_again_and_returning_from_hwscsifindadapter_kg"></span><span id="DDK_SETTING_AGAIN_AND_RETURNING_FROM_HWSCSIFINDADAPTER_KG"></span>

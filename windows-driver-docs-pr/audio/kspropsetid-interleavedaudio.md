@@ -4,11 +4,11 @@ description: KSPROPSETID\_InterleavedAudio 属性集实现想要提供有关交�
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 19699f56b023b94917203f51a7b3eb1279acef60
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332489"
 ---
 # <a name="kspropsetidinterleavedaudio"></a>KSPROPSETID\_InterleavedAudio
 

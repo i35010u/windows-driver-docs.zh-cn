@@ -1,6 +1,6 @@
 ---
-title: S/PDIF 直通传输的非 PCM 流
-description: S/PDIF 直通传输的非 PCM 流
+title: 非 PCM 流的 S/PDIF 直通传输
+description: 非 PCM 流的 S/PDIF 直通传输
 ms.assetid: c06b880e-20d1-417b-9868-a4fb3b418dbf
 keywords:
 - S/PDIF 传递 WDK 音频
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e38c1e16935a44861547f95eb5eb385d79c1d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328654"
 ---
-# <a name="spdif-pass-through-transmission-of-non-pcm-streams"></a>S/PDIF 直通传输的非 PCM 流
+# <a name="spdif-pass-through-transmission-of-non-pcm-streams"></a>非 PCM 流的 S/PDIF 直通传输
 
 
 ## <span id="s_pdif_pass_through_transmission_of_non_pcm_streams"></span><span id="S_PDIF_PASS_THROUGH_TRANSMISSION_OF_NON_PCM_STREAMS"></span>

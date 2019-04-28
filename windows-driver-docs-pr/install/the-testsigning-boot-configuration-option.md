@@ -5,11 +5,11 @@ ms.assetid: 4898595e-20c9-4607-aad7-792f7d1074e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 009082b702987ab3abacfadca89f3b6e90c32ac0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63339551"
 ---
 # <a name="the-testsigning-boot-configuration-option"></a>TESTSIGNING 启动配置选项
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dff1469610c6659ceb2b7a1d9003cd93bfa07c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63336737"
 ---
 # <a name="f-f--shift-local-context"></a>.f+、.f-（切换本地上下文）
 
