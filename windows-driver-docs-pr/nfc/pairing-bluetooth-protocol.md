@@ -4,20 +4,20 @@ description: 配对的蓝牙协议
 ms.assetid: 6C95CA57-A226-4252-91E2-FAD8F1A0432B
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f185a04d31ab54d2931a97a774e23c41643b0852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348566"
 ---
-# <a name="pairingbluetooth-protocol"></a>配对： 蓝牙协议
+# <a name="pairingbluetooth-protocol"></a>配对：蓝牙协议
 
 
 "配对： 蓝牙"协议是一种抽象出来也一点蓝牙 OOB 配对结构的订阅。 Windows 订阅以向 Windows 感兴趣接收配对结构才能完成邻近触发蓝牙简单 OOB 配对的蓝牙 OOB 的提供程序注册此类型。

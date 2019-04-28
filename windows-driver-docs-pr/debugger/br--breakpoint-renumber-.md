@@ -1,5 +1,5 @@
 ---
-title: br （断点重新编号）
+title: br（断点重新编号）
 description: B 命令对一个或多个断点进行重新编号。
 ms.assetid: 1b41eb37-3375-4203-bbf5-f55869383db8
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c53c99d28d259391fd85b44b745f3b069673a013
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347869"
 ---
-# <a name="br-breakpoint-renumber"></a>br （断点重新编号）
+# <a name="br-breakpoint-renumber"></a>br（断点重新编号）
 
 
 **Br**命令对一个或多个断点进行重新编号。

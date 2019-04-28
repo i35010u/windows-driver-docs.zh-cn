@@ -1,6 +1,6 @@
 ---
-title: 存储设备堆栈、 存储卷和文件系统堆栈
-description: 存储设备堆栈、 存储卷和文件系统堆栈
+title: 存储设备堆栈、存储卷和文件系统堆栈
+description: 存储设备堆栈、存储卷和文件系统堆栈
 ms.assetid: 5240ce9b-acfa-4e9c-9962-bc776878827c
 keywords:
 - 存储设备 WDK 文件系统
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63fb8bbf643a66a6c8a8a19d34bbe1a359e5fc58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344428"
 ---
-# <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>存储设备堆栈、 存储卷和文件系统堆栈
+# <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>存储设备堆栈、存储卷和文件系统堆栈
 
 
 ## <span id="ddk_storage_volumes_storage_device_stacks_and_file_system_stacks_if"></span><span id="DDK_STORAGE_VOLUMES_STORAGE_DEVICE_STACKS_AND_FILE_SYSTEM_STACKS_IF"></span>

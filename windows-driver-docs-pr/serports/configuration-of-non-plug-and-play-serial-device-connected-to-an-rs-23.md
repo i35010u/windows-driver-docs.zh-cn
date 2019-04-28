@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 149f929b743235455396cb30cde41e11d8eda0a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345014"
 ---
 # <a name="configuration-of-non-plug-and-play-serial-device-connected-to-an-rs-232-port"></a>非即插串行设备连接到 RS-232 端口的配置
 

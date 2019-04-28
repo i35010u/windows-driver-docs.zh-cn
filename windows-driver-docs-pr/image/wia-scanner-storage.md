@@ -1,17 +1,17 @@
 ---
-title: WIA 扫描程序存储
-description: WIA 扫描程序存储
+title: WIA 扫描仪存储
+description: WIA 扫描仪存储
 ms.assetid: d47d2c30-1f2f-4baf-927c-eda30377ab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1351e35319e9784836b4f63617101ede3c610bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352642"
 ---
-# <a name="wia-scanner-storage"></a>WIA 扫描程序存储
+# <a name="wia-scanner-storage"></a>WIA 扫描仪存储
 
 
 本部分介绍在 Windows Vista 中引入的扫描仪的配备了能够图像和其他类型的获得的数据仍保留的数字存储 WIA 项树状结构。

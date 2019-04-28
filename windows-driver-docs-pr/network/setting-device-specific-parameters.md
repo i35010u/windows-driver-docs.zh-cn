@@ -5,11 +5,11 @@ ms.assetid: 5df72c11-e8d4-4e06-8f34-c9b85ad779f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cd4cf05812dfa5ed694cc6a58c5b2c404f24a73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346660"
 ---
 # <a name="setting-device-specific-parameters"></a>设置特定于设备的参数
 

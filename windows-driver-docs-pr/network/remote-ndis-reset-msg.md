@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_RESET_MSG
-Description: This message is sent to a Remote NDIS device from a host to reset the device and return status.
+Description: 此消息发送给远程 NDIS 设备的主机以将设备重置并返回状态。
 ms.assetid: b5938b0d-75bf-497f-afeb-9950b383af5e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: beed2ca885a5d76af4f43c1efc58411b215e3bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351259"
 ---
 # <a name="remotendisresetmsg"></a>远程\_NDIS\_重置\_消息
 
@@ -26,7 +26,7 @@ ms.locfileid: "56520425"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -65,11 +65,11 @@ ms.locfileid: "56520425"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Rndis.h （包括 Rndis.h）</td>
 </tr>
 </tbody>

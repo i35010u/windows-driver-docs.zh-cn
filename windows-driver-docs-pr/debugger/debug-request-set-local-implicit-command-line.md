@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c6f2750b6c9713d27d4d7bbdbfe1e4502d52884
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349045"
 ---
 # <a name="debugrequestsetlocalimplicitcommandline"></a>调试\_请求\_设置\_本地\_隐式\_命令\_行
 
 
 调试\_请求\_设置\_本地\_隐式\_命令\_行[**请求**](request.md)操作设置[调试器引擎](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)的隐式命令行。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 新的隐式命令行。 类型*InBuffer*指向 Unicode 字符串 (PWSTR) 的指针。 指针将被复制但不能复制它指向的字符串。

@@ -15,11 +15,11 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b178b36b0646ba3850ac77abadc6c212ac39df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353864"
 ---
 # <a name="components-of-a-driver-package"></a>驱动程序包的组件
 
@@ -67,7 +67,7 @@ ms.locfileid: "56533959"
 
 ### <a name="other-files"></a>其他文件
 
-驱动程序包还可以包含其他文件，例如设备安装应用程序、 设备图标、 设备属性页中，等等。 有关详情，请参阅以下主题：
+驱动程序包还可以包含其他文件，例如设备安装应用程序、 设备图标、 设备属性页中，等等。 有关详细信息，请参阅下列主题：
 
 [提供设备属性页](providing-device-property-pages.md)
 

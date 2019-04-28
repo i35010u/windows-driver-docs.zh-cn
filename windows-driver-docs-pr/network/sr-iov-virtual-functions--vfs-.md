@@ -1,17 +1,17 @@
 ---
-title: SR-IOV 虚拟功能 (VFs)
-description: SR-IOV 虚拟功能 (VFs)
+title: SR-IOV 虚拟功能 (VF)
+description: SR-IOV 虚拟功能 (VF)
 ms.assetid: 92EFC8C3-A610-46EB-A1BC-750715378077
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5fcc02cbe32598a6f7417a75e10fdea49d948ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346000"
 ---
-# <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 虚拟功能 (VFs)
+# <a name="sr-iov-virtual-functions-vfs"></a>SR-IOV 虚拟功能 (VF)
 
 
 PCI Express (PCIe) 虚拟函数 (VF) 是一种轻型 PCIe 函数支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器上。 VF 关联与 PCIe 物理函数 (PF) 上的网络适配器，并表示网络适配器的虚拟化的实例。 每个 VF 具有其自己的 PCI 配置空间。 每个 VF 还与 PF 和其他 VFs 共享一个或多个网络适配器，如外部网络端口上的物理资源。

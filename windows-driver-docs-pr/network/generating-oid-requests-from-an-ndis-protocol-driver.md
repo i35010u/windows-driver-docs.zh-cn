@@ -1,17 +1,17 @@
 ---
-title: 正在从 NDIS 协议驱动程序生成 OID 请求
-description: 正在从 NDIS 协议驱动程序生成 OID 请求
+title: 从 NDIS 协议驱动程序生成 OID 请求
+description: 从 NDIS 协议驱动程序生成 OID 请求
 ms.assetid: a27d1c9c-fc7e-414f-8cad-595e8d8fe8f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba05cb659bf9ae9ec87b28112152974e81fa22fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349905"
 ---
-# <a name="generating-oid-requests-from-an-ndis-protocol-driver"></a>正在从 NDIS 协议驱动程序生成 OID 请求
+# <a name="generating-oid-requests-from-an-ndis-protocol-driver"></a>从 NDIS 协议驱动程序生成 OID 请求
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 新 DP2 Stream 绘图令牌
-description: 新 DP2 Stream 绘图令牌
+title: 新的 DP2 流绘图标记
+description: 新的 DP2 流绘图标记
 ms.assetid: 09f3e5a4-60ed-4649-a30b-de4b320a54de
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，DP2 绘制令牌
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79321adf0c18f6dafbc7fc7a252502bfe9fe32bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345542"
 ---
-# <a name="new-dp2-stream-drawing-tokens"></a>新 DP2 Stream 绘图令牌
+# <a name="new-dp2-stream-drawing-tokens"></a>新的 DP2 流绘图标记
 
 
 ## <span id="ddk_new_dp2_stream_drawing_tokens_gg"></span><span id="DDK_NEW_DP2_STREAM_DRAWING_TOKENS_GG"></span>

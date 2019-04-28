@@ -1,17 +1,17 @@
 ---
-title: 打开要使用 CDB 的转储文件
-description: 打开要使用 CDB 的转储文件
+title: 使用 CDB 打开转储文件
+description: 使用 CDB 打开转储文件
 ms.assetid: 204DFA6F-2BA2-4B76-AFE0-28207710322B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7bcc014ca2c85e294c2edc19a669d3ad175c40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354895"
 ---
-# <a name="opening-a-dump-file-using-cdb"></a>打开要使用 CDB 的转储文件
+# <a name="opening-a-dump-file-using-cdb"></a>使用 CDB 打开转储文件
 
 
 ## <a name="span-idcommandpromptspanspan-idcommandpromptspanspan-idcommandpromptspancommand-prompt"></a><span id="Command_Prompt"></span><span id="command_prompt"></span><span id="COMMAND_PROMPT"></span>命令提示符

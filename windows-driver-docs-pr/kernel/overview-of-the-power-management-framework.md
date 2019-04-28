@@ -5,11 +5,11 @@ ms.assetid: 9F2D8ACD-44D5-46E0-9FC7-1B38B99450FF
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d90b6db0fbbb0ee964a6ed7e9dafdd7a7d2e11d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352020"
 ---
 # <a name="overview-of-the-power-management-framework"></a>电源管理框架概述
 

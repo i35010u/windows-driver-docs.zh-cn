@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81709afe5d496b731b495d8195b1e28eb4c4df16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348287"
 ---
 # <a name="wiaipsmultifeedsensitivity"></a>WIA\_IPS\_多\_馈送\_敏感度
 
@@ -50,7 +50,7 @@ ms.locfileid: "56546119"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

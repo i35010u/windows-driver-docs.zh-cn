@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: f39f8917244fc2ed35e1f60a6cb9d022689e5d60
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352600"
 ---
 # <a name="bug-check-0x16a-clustercsvvolumeremovallivedump"></a>Bug 检查 0x16A：群集\_CSV\_卷\_删除\_LIVEDUMP
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3b92d4c9f74caf5b02dee1a54ae40cfe8be305f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346108"
 ---
 # <a name="invoking-a-device-properties-dialog-box-programmatically-in-an-installation-application"></a>在安装应用程序中以编程方式调用设备属性对话框
 

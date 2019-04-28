@@ -5,11 +5,11 @@ ms.assetid: 3168b5c1-30fa-4ff5-b871-736dcdeb8f31
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2155fbf040a18ec4e7036ffd8ff8793918aecc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350563"
 ---
 # <a name="debugging-the-service-application-automatically"></a>自动调试服务应用程序
 
@@ -44,7 +44,7 @@ ms.locfileid: "56526526"
 
 6.  使用[ **g （转向）** ](g--go-.md)或另一个执行命令来恢复服务应用程序的执行。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [DebugBreak 函数](https://go.microsoft.com/fwlink/p/?linkid=124229)

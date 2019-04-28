@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 393da6d1968da18c793ce9000a441c546d03e067
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344677"
 ---
-# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>示例 16:在调试器中查看跟踪消息
+# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>示例 16：在调试器中查看跟踪消息
 
 
 ## <span id="ddk_viewing_trace_messages_in_a_debugger_tools"></span><span id="DDK_VIEWING_TRACE_MESSAGES_IN_A_DEBUGGER_TOOLS"></span>

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b42c6cdc01d3903c0f1bfd52174e92081ebaf9d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344845"
 ---
 # <a name="driver-verifier"></a>驱动程序验证程序
 
@@ -101,7 +101,7 @@ ms.locfileid: "57349768"
    </colgroup>
    <thead>
    <tr class="header">
-   <th align="left">选项</th>
+   <th align="left">Option</th>
    <th align="left">建议的使用</th>
    </tr>
    </thead>

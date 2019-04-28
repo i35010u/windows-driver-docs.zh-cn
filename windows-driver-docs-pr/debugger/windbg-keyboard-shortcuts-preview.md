@@ -4,11 +4,11 @@ description: 本部分提供有关 WinDbg 预览调试器键盘快捷方式。
 ms.date: 08/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ea41f3c3bf56bb02a6be0346199ce9786d0d0d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353140"
 ---
 # <a name="windbg-preview-keyboard-shortcuts"></a>WinDbg 预览键盘快捷方式 
 
@@ -106,7 +106,7 @@ Ctrl+Alt+V      |       切换详细模式
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
 

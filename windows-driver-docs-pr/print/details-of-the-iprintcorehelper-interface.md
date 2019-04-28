@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8d4904bb4c27f071dd8290bf4c9fd6b2bc83aec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352989"
 ---
 # <a name="details-of-the-iprintcorehelper-interface"></a>IPrintCoreHelper 接口详细信息
 

@@ -1,6 +1,6 @@
 ---
-title: 多台计算机上的调试目标
-description: 多台计算机上的调试目标
+title: 在多台计算机上调试目标
+description: 在多台计算机上调试目标
 ms.assetid: 3c4fa2d9-1443-4460-b570-9415a3600393
 keywords:
 - 多个计算机调试
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b6fb0725150b2cf8e317169a2fea2beb9508b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350570"
 ---
-# <a name="debugging-targets-on-multiple-computers"></a>多台计算机上的调试目标
+# <a name="debugging-targets-on-multiple-computers"></a>在多台计算机上调试目标
 
 
 ## <span id="ddk_debugging_targets_on_multiple_computers_dbg"></span><span id="DDK_DEBUGGING_TARGETS_ON_MULTIPLE_COMPUTERS_DBG"></span>

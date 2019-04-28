@@ -1,6 +1,6 @@
 ---
-title: 错误的信息检索
-description: 错误的信息检索
+title: 错误信息检索
+description: 错误信息检索
 ms.assetid: 4af06727-9660-4bbc-8c9e-a50c8f2d566d
 keywords:
 - Windows 硬件错误体系结构 WDK、 错误的信息检索
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 143d8296c23015bbc52052dcdf88c2d124dd1a06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354457"
 ---
-# <a name="error-information-retrieval"></a>错误的信息检索
+# <a name="error-information-retrieval"></a>错误信息检索
 
 
 在硬件错误条件的处理期间 PSHED 调用在错误处理过程中的三个单独的点。

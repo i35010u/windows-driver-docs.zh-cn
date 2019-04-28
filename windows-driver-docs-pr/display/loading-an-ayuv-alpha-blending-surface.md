@@ -1,6 +1,6 @@
 ---
-title: 正在加载 AYUV Alpha 混合图面
-description: 正在加载 AYUV Alpha 混合图面
+title: 加载 AYUV Alpha 混合图面
+description: 加载 AYUV Alpha 混合图面
 ms.assetid: 93b60622-47af-485c-a1db-9a05783ff698
 keywords:
 - alpha 混合数据加载 WDK DirectX VA
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27309f40e7e9c1a9f178714e0ef257862ca5bf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347599"
 ---
-# <a name="loading-an-ayuv-alpha-blending-surface"></a>正在加载 AYUV Alpha 混合图面
+# <a name="loading-an-ayuv-alpha-blending-surface"></a>加载 AYUV Alpha 混合图面
 
 
 ## <span id="ddk_loading_an_ayuv_alpha_blending_surface_gg"></span><span id="DDK_LOADING_AN_AYUV_ALPHA_BLENDING_SURFACE_GG"></span>

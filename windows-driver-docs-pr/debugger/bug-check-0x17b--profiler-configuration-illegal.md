@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ec9a9cc82d30c73828ea7c89b185846eac2914b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352549"
 ---
 # <a name="bug-check-bug-check-0x17b-profilerconfigurationillegal"></a>Bug 检查 Bug 检查 0x17B:探查器\_配置\_非法 
 

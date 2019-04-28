@@ -1,6 +1,6 @@
 ---
-title: 游标命令
-description: 游标命令
+title: 光标命令
+description: 光标命令
 ms.assetid: 3ef09c7e-0e88-4236-a4c9-d89eb7ec61cb
 keywords:
 - 打印机命令 WDK Unidrv，游标
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4825df7d9d8f129854e415c1ad3b05796ed09d54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349257"
 ---
-# <a name="cursor-commands"></a>游标命令
+# <a name="cursor-commands"></a>光标命令
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56521629"
 </colgroup>
 <thead>
 <tr class="header">
-<th>命令</th>
+<th>Command</th>
 <th>描述</th>
 <th>备注</th>
 </tr>

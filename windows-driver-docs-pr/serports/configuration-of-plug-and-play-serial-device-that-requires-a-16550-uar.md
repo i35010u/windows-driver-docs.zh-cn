@@ -1,5 +1,5 @@
 ---
-title: 即插即用串行设备配置为 16550 UART 接口
+title: 为 16550 UART 接口配置 PnP 串行设备
 description: Plug and Play 串行设备 16550 UART 兼容接口所需的配置
 ms.assetid: b99259bd-7573-4f71-9ab5-b263eed41288
 keywords:
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d33022330c634889e371ed428c898d702098eff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344982"
 ---
 # <a name="configuration-of-plug-and-play-serial-device-that-requires-a-16550-uart-compatible-interface"></a>Plug and Play 串行设备 16550 UART 兼容接口所需的配置
 

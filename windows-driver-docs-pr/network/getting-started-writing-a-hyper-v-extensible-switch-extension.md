@@ -5,13 +5,13 @@ ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef7f91118982c0372ebf4ad28fd9845f8cdff05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349876"
 ---
-# <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>编写入门的 HYPER-V 可扩展交换机扩展
+# <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>开始编写 Hyper-V 可扩展交换机扩展
 
 
 NDIS 筛选器或 HYPER-V 可扩展交换机 （也称为"HYPER-V 虚拟交换机"） 中运行的 Windows 筛选平台 (WFP) 筛选器，HYPER-V 可扩展交换机扩展。

@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dd7b651700e2d811a0ffe3437f45e1b9ed92ea68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352061"
 ---
 # <a name="obtaining-device-configuration-information-at-irql--passivelevel"></a>获取设备配置信息在 IRQL = 被动\_级别
 

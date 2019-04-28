@@ -5,11 +5,11 @@ ms.assetid: 38C52EAD-9DC6-4575-A9FF-1472FDDC2702
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e57fee93bed6df65f70880218801673980d87812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345219"
 ---
 # <a name="human-interface-devices-hid-driver-samples"></a>人机接口设备 (HID) 驱动程序示例
 

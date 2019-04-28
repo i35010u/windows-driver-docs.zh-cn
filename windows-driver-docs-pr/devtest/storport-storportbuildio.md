@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afca27eb559e9d1f1bc1e9bf27e2e76c637246e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345677"
 ---
 # <a name="storportbuildio-rule-storport"></a>StorPortBuildIo 规则 (storport)
 

@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d205ea49f63df5fcaa187f88995061aac3df90f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344753"
 ---
-# <a name="example-10-starting-a-real-time-trace-session"></a>示例 10:启动实时跟踪会话
+# <a name="example-10-starting-a-real-time-trace-session"></a>示例 10：启动实时跟踪会话
 
 
 ## <span id="ddk_starting_a_real_time_trace_session_tools"></span><span id="DDK_STARTING_A_REAL_TIME_TRACE_SESSION_TOOLS"></span>

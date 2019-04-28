@@ -1,14 +1,14 @@
 ---
-Description: This topic discusses the LPM mechanism for saving power and described various common problems seen in current USB 3.0 hardware.
+Description: 本主题讨论用于保存 power LPM 机制，并介绍各种常见的问题当前 USB 3.0 硬件中所示。
 title: 常见的硬件问题的 U1 或 U2 实现
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 764a3e326883e3c78ddc422d0c03e5eef608ba78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352753"
 ---
 # <a name="common-hardware-problems-with-u1-or-u2-implementation"></a>常见的硬件问题的 U1 或 U2 实现
 

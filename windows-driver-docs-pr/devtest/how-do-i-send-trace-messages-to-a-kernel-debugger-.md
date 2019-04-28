@@ -5,11 +5,11 @@ ms.assetid: 867791a7-30a5-4539-be85-61f1716c279a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2783a065d9dce8080d559cefb394c47c5d29d483
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347719"
 ---
 # <a name="how-do-i-send-trace-messages-to-a-kernel-debugger"></a>如何将跟踪消息发送到内核调试器？
 

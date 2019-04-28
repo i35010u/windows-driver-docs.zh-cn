@@ -1,6 +1,6 @@
 ---
-title: 添加打印驱动程序的打印票证支持
-description: 添加打印驱动程序的打印票证支持
+title: 将打印票证支持添加到打印驱动程序
+description: 将打印票证支持添加到打印驱动程序
 ms.assetid: ef4db930-2b4c-40b9-b1f4-85767b7f6855
 keywords:
 - 自定义 WDK、 打印票证的打印机驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17456eaef415b5570a65695bca153e698f62c1e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354088"
 ---
-# <a name="adding-print-ticket-support-to-print-drivers"></a>添加打印驱动程序的打印票证支持
+# <a name="adding-print-ticket-support-to-print-drivers"></a>将打印票证支持添加到打印驱动程序
 
 
 若要完全支持[打印票证和打印功能技术](print-ticket-and-print-capabilities-technologies.md)，打印驱动程序必须：

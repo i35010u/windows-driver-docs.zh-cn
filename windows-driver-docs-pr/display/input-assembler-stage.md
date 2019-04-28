@@ -5,11 +5,11 @@ ms.assetid: 8db6a2ab-8354-4690-8141-2cdd91c77d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa2a2f0d0065c4562b7aab79374e648305a49a66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350253"
 ---
 # <a name="input-assembler-stage"></a>输入装配器阶段
 

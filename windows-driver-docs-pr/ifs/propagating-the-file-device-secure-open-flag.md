@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea027f7b7eef6b90c9e7bb1ed8e16e9704197e73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352749"
 ---
 # <a name="propagating-the-filedevicesecureopen-flag"></a>传播文件\_设备\_SECURE\_打开标志
 

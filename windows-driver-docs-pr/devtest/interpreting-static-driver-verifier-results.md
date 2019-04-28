@@ -1,6 +1,6 @@
 ---
-title: 解释 Static Driver Verifier 结果
-description: 解释 Static Driver Verifier 结果
+title: 解释静态驱动程序验证程序结果
+description: 解释静态驱动程序验证程序结果
 ms.assetid: ec7e3b90-5d55-411a-8cfe-a1c9c4029694
 keywords:
 - 静态驱动程序验证程序 WDK，显示选项
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 922e804db8e60443d6df75a230d4d199677bd495
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356579"
 ---
-# <a name="interpreting-static-driver-verifier-results"></a>解释 Static Driver Verifier 结果
+# <a name="interpreting-static-driver-verifier-results"></a>解释静态驱动程序验证程序结果
 
 
 当启动 Static Driver Verifier 从 Visual Studio 并运行您的驱动程序的分析，结果将显示在**结果**摘要 Main 选项卡上。

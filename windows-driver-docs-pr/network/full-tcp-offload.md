@@ -1,6 +1,6 @@
 ---
-title: 完整的 TCP 卸载
-description: 完整的 TCP 卸载
+title: 完全 TCP 卸载
+description: 完全 TCP 卸载
 ms.assetid: a940617a-b848-430d-8da1-acd946feba1b
 keywords:
 - TCP 卸载 WDK 网络
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a588b090ccadb36e2adca78c4124a38ead0d7b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349996"
 ---
-# <a name="full-tcp-offload"></a>完整的 TCP 卸载
+# <a name="full-tcp-offload"></a>完全 TCP 卸载
 
 
 

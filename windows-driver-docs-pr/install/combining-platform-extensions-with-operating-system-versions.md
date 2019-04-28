@@ -5,11 +5,11 @@ ms.assetid: ef3b7138-b68a-4dba-b011-fcb93e3072a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 827d79100eae252ec08dca93ac455f8dc1371fd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357027"
 ---
 # <a name="combining-platform-extensions-with-operating-system-versions"></a>将平台扩展与操作系统版本相结合
 

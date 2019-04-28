@@ -1,5 +1,5 @@
 ---
-title: DevCon 重新启动
+title: DevCon Reboot
 description: 停止，然后启动操作系统。 仅在本地计算机上有效。
 ms.assetid: 4e27c35c-8b98-4edc-98d7-8ba0f96d7a78
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92af29ce5dd13cb84d8eaff0ce5286ff1694d2da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347033"
 ---
-# <a name="devcon-reboot"></a>DevCon 重新启动
+# <a name="devcon-reboot"></a>DevCon Reboot
 
 
 停止，然后启动操作系统。 仅在本地计算机上有效。

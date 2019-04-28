@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机端口
-description: HYPER-V 可扩展交换机端口
+title: Hyper-V 可扩展交换机端口
+description: Hyper-V 可扩展交换机端口
 ms.assetid: A9A07C71-BA64-4223-8402-254D87810167
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c803b7433a5cd83e9ff2bbc42882937088662d67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349496"
 ---
-# <a name="hyper-v-extensible-switch-ports"></a>HYPER-V 可扩展交换机端口
+# <a name="hyper-v-extensible-switch-ports"></a>Hyper-V 可扩展交换机端口
 
 
 本部分包括以下主题的描述的 HYPER-V 可扩展交换机端口的特征：

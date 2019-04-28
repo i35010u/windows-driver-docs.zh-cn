@@ -1,17 +1,17 @@
 ---
-title: 枚举网络适配器上的虚函数
-description: 枚举网络适配器上的虚函数
+title: 枚举网络适配器上的虚拟功能
+description: 枚举网络适配器上的虚拟功能
 ms.assetid: 3AAF2D8B-9C7A-4E5B-86B6-264ACA5EA492
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e173ef1dbbe084bc3960e64761ed4831e95bc2ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352969"
 ---
-# <a name="enumerating-virtual-functions-on-a-network-adapter"></a>枚举网络适配器上的虚函数
+# <a name="enumerating-virtual-functions-on-a-network-adapter"></a>枚举网络适配器上的虚拟功能
 
 
 基础驱动程序或用户应用程序可以获取所有 PCI Express (PCIe) 虚函数 (VFs) 支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器上的列表。 驱动程序或应用程序发出的对象标识符 (OID) 方法请求[OID\_NIC\_交换机\_枚举\_VFS](https://msdn.microsoft.com/library/windows/hardware/hh451820)来获取此列表。

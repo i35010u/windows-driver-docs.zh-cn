@@ -5,11 +5,11 @@ ms.assetid: 71db6fa6-d1f8-4aed-9de1-bba1f6cee1ce
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: af0733469351edaab1164680fb4e0f7a6ea4e2ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351096"
 ---
 # <a name="ntxxx-routines"></a>NtXxx 例程
 

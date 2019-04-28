@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 657f8ed9931624b1a7ef80d08dd555d844c735ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352091"
 ---
 # <a name="wiaipsprinterendorsergraphicsposition"></a>WIA\_IPS\_打印机\_印记签署器\_图形\_位置
 
@@ -47,7 +47,7 @@ ms.locfileid: "56566098"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>

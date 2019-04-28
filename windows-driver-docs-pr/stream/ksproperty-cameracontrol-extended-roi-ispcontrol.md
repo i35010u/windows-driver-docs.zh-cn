@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fd09ba9f2267d5a5e78493eff0b4ae42aa35715
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351849"
 ---
 # <a name="kspropertycameracontrolextendedroiispcontrol"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_投资回报率\_ISPCONTROL
 
@@ -80,7 +80,7 @@ ms.locfileid: "56555806"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1，</p></td>
 </tr>
 <tr class="even">
@@ -88,7 +88,7 @@ ms.locfileid: "56555806"
 <td><p>这必须是<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xFFFFFFFF)</p></td>
 </tr>
 <tr class="odd">
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>对于初始的 GET 调用 （如果没有集调用曾经发生） 这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER</strong>)。 此外，驱动程序必须在其 ISO 控制标头有效负载中返回 ControlCount。</p>
 <p>为任何其他 SET 或 GET 调用，这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ ROI_ISPCONTROLHEADER</strong>) + ControlCount * sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROL</strong>) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_ROI_FOCUS</strong>) * ROICount(focus) + sizeof (<strong>KSCAMERA_EXTENDEDPROP_EXPOSURE</strong>) * ROICount (暴露） + sizeof (<strong>KSCAMERA_EXTENDEDPROP_WHITEBALANCE</strong>) * ROICount(whitebalance)。</p></td>
 </tr>
@@ -116,7 +116,7 @@ ms.locfileid: "56555806"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

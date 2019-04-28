@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_ALLOWED_BSSIDS_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: aa222b0cd05be2ae522a9467116816cb1481aff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349344"
 ---
 # <a name="wditlvallowedbssidslist"></a>WDI\_TLV\_ALLOWED\_BSSIDS\_LIST
 
@@ -55,7 +55,7 @@ WDI\_TLV\_允许\_BSSIDS\_列表是包含一系列允许关联所使用的 BSSID
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

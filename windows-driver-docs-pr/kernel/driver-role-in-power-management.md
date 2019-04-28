@@ -1,6 +1,6 @@
 ---
-title: 中电源管理的驱动程序角色
-description: 中电源管理的驱动程序角色
+title: 电源管理中的驱动程序角色
+description: 电源管理中的驱动程序角色
 ms.assetid: 24b55880-e767-4f18-977e-c4a93332b909
 keywords:
 - 电源管理 WDK 内核，驱动程序中的角色
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a8f19f06ebaf779ba8015659ebe27e65ec71d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353002"
 ---
-# <a name="driver-role-in-power-management"></a>中电源管理的驱动程序角色
+# <a name="driver-role-in-power-management"></a>电源管理中的驱动程序角色
 
 
 

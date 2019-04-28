@@ -6,11 +6,11 @@ keywords: 调试器，断点在方法、 断点、 命令、 b （断点标识�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b714acd984506f36205285f0c61cd90e43c839b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347860"
 ---
 # <a name="breakpoint-syntax"></a>断点语法
 
@@ -43,7 +43,7 @@ ms.locfileid: "56542618"
     0:000> bp MyClass__MyMethod 
     ```
 
--   在 c + + 表达式语法中，必须通过使用两个冒号指示一种方法。
+-   在C++表达式语法，必须通过使用两个冒号指示一种方法。
 
     ```dbgcmd
     0:000> bp @@( MyClass::MyMethod ) 
@@ -53,7 +53,7 @@ ms.locfileid: "56542618"
 
 ### <a name="span-idbreakpointsusingcomplicatedtextspanspan-idbreakpointsusingcomplicatedtextspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>使用复杂的文本的断点
 
-若要在复杂处设置断点函数，包括包含空格，以及 c + + 公共类的成员的函数将表达式括在括号中。 例如，使用**最佳实践 （??MyPublic)** 或**最佳实践 （new 运算符）**。
+若要在复杂的函数，包括包含空格，和的成员函数上设置断点C++公共类中，将表达式括在括号中。 例如，使用**最佳实践 （??MyPublic)** 或**最佳实践 （new 运算符）**。
 
 更灵活方法是使用 @ ！"字符"语法。 这是使你可以提供的符号解析的任意文本 MASM 计算器中是一种特殊转义。 必须以开头的三个符号 @ ！" 引号 （"） 开头和结尾。 而无需此语法中，您不能使用空格，尖括号 (&lt;， &gt;)，或在 MASM 计算器中的符号名称中的其他特殊字符。 此语法是以独占方式的名称，并不是参数。 模板和重载都需要此引号表示法的符号的主要来源。 您还可以设置**bu**命令通过使用 @ ！"字符"语法，如以下代码示例所示。
 
@@ -63,9 +63,9 @@ ms.locfileid: "56542618"
 
 在此示例中， *ExecutableName*是可执行文件的名称。
 
-此转义语法是更适用于 c + + （例如，重载运算符） 而不是 C，因为没有空格 （或特殊字符） 中有 C 函数名称。 但是，此语法也很重要的托管代码大量由于大量使用.NET Framework 中的重载。
+此转义语法是更适用于C++（例如，重载运算符） 而不是 C 因为没有在 C 中的任何空格 （或特殊字符） 函数名称。 但是，此语法也很重要的托管代码大量由于大量使用.NET Framework 中的重载。
 
-若要在 c + + 语法中的任意文本上设置断点，请使用<strong>bu @@c+ + (</strong><em>文本</em>**)** c + + 兼容符号。
+中的任意文本上设置断点C++语法，使用<strong>bu @@c+ + (</strong><em>文本</em>**)** 为C++-兼容的符号。
 
 ### <a name="span-idbreakpointsinscriptsspanspan-idbreakpointsinscriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>在脚本中的断点
 

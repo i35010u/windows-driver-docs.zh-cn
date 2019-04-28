@@ -4,11 +4,11 @@ description: 本部分介绍时间旅行调试。
 ms.date: 04/15/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f9d25dfef0a29d3d11566e784cdae0257a7183a2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349050"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
 

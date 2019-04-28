@@ -1,17 +1,17 @@
 ---
-title: 使用事件查看器中调试设备元数据包
-description: 使用事件查看器中调试设备元数据包
+title: 使用事件查看器调试设备元数据包
+description: 使用事件查看器调试设备元数据包
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10a6ba2d48a0d191822a799c9bb33e8f2308af01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352074"
 ---
-# <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器中调试设备元数据包
+# <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
 
 从 Windows 7 开始，到的设备元数据包处理相关的事件的事件跟踪 Windows (ETW) 服务支持 DeviceMetadata/调试通道。

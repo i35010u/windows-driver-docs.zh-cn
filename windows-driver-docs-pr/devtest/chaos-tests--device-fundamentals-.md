@@ -5,11 +5,11 @@ ms.assetid: FA0D73DC-B0B8-4CA7-8DDC-A2C3EC106C3F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ba7b831802cf9ffe7b76bc5b29526a0c10cbf23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343981"
 ---
 # <a name="chaos-tests-device-fundamentals"></a>混沌测试（设备基础功能）
 
@@ -52,20 +52,20 @@ ms.locfileid: "56540861"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[设备基础测试](device-fundamentals-tests.md)
+[设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
 [PwrTest](pwrtest.md)
 
-[渗透测试 （设备基础知识）](penetration-tests--device-fundamentals-.md)
+[渗透压力测试（设备基础功能）](penetration-tests--device-fundamentals-.md)
 
 [即插即用测试 （设备基础知识）](pnp-tests--device-fundamentals-.md)
 

@@ -6,11 +6,11 @@ ms.date: 08/23/2018
 keywords: -NDIS_STATUS_WWAN_LTE_ATTACH_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dcd88fa09cd7d99c5baf53f9bc5fa4366035b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346071"
 ---
 # <a name="ndisstatuswwanlteattachstatus"></a>NDIS_STATUS_WWAN_LTE_ATTACH_STATUS
 
@@ -24,10 +24,10 @@ ms.locfileid: "56533082"
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1703 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 

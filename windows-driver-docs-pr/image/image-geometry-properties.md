@@ -1,17 +1,17 @@
 ---
-title: 图像 Geometry 属性
-description: 图像 Geometry 属性
+title: 图像几何属性
+description: 图像几何属性
 ms.assetid: d1343ad4-3a54-414c-bc08-e07e0fb079cd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bafa66387e115d1c75bd05b8227aa8133edcf32a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352147"
 ---
-# <a name="image-geometry-properties"></a>图像 Geometry 属性
+# <a name="image-geometry-properties"></a>图像几何属性
 
 
 

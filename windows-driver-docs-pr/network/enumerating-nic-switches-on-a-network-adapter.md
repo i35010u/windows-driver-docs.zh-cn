@@ -1,17 +1,17 @@
 ---
-title: 枚举的网络适配器上的 NIC 开关
-description: 枚举的网络适配器上的 NIC 开关
+title: 枚举网络适配器上的 NIC 交换机
+description: 枚举网络适配器上的 NIC 交换机
 ms.assetid: 0799A879-2BC0-43C5-A6B6-6D46C74A26FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5066ebde7ac30d395c459da0faa64e7993d01c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352979"
 ---
-# <a name="enumerating-nic-switches-on-a-network-adapter"></a>枚举的网络适配器上的 NIC 开关
+# <a name="enumerating-nic-switches-on-a-network-adapter"></a>枚举网络适配器上的 NIC 交换机
 
 
 基础驱动程序或用户应用程序可以获取已在支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器创建的所有 NIC 交换机的列表。 驱动程序或应用程序发出的对象标识符 (OID) 查询请求[OID\_NIC\_交换机\_枚举\_开关](https://msdn.microsoft.com/library/windows/hardware/hh451819)来获取此列表。

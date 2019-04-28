@@ -1,6 +1,6 @@
 ---
-title: 正在自动检测打印机的硬推动 GPD
-description: 正在自动检测打印机的硬推动 GPD
+title: 自动检测 GPD 的打印机硬盘驱动器
+description: 自动检测 GPD 的打印机硬盘驱动器
 ms.assetid: c3bc415e-fa4d-42d0-9686-3105a588a7ea
 keywords:
 - 自动检测打印机硬盘驱动器 WDK 打印机自动配置
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54409b51cd6d1ea1a1aee0a8faf3db8e47d91587
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349254"
 ---
-# <a name="autodetecting-the-printers-hard-drive-for-gpd"></a>正在自动检测打印机的硬推动 GPD
+# <a name="autodetecting-the-printers-hard-drive-for-gpd"></a>自动检测 GPD 的打印机硬盘驱动器
 
 
 将条目添加到 GPD 文件中任何硬与驱动器有关功能的 GDL 文件。 例如，如果您有取决于是否安装了硬盘驱动器的逐份打印功能，可以使用自动配置来自动确定打印机是否能够逐份打印。 请考虑下面的代码示例从 GPD 文件。

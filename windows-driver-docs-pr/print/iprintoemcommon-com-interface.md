@@ -5,11 +5,11 @@ ms.assetid: 1d4b2f77-6682-4a4b-8d7f-34acd03523e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 498bb3ba233bc8ccaeda2b234a6ff90a5adb6222
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349184"
 ---
 # <a name="iprintoemcommon-com-interface"></a>IPrintOemCommon COM 接口
 

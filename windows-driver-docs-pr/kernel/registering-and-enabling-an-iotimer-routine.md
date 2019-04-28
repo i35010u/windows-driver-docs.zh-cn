@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fb4440e38d71d6b799f6e1e8e3eedd74d724627
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353032"
 ---
 # <a name="registering-and-enabling-an-iotimer-routine"></a>注册和启用 IoTimer 例程
 

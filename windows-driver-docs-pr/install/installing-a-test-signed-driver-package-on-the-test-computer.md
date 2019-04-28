@@ -1,17 +1,17 @@
 ---
-title: 在测试计算机上安装测试签名驱动程序包
-description: 在测试计算机上安装测试签名驱动程序包
+title: 在测试计算机上安装进行了测试签名的驱动程序包
+description: 在测试计算机上安装进行了测试签名的驱动程序包
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 470068734445ea3c7d9c1b7248da56f9966c3814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352045"
 ---
-# <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>在测试计算机上安装测试签名驱动程序包
+# <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>在测试计算机上安装进行了测试签名的驱动程序包
 
 
 你可以安装测试签名[驱动程序包](driver-packages.md)一次测试计算机上：

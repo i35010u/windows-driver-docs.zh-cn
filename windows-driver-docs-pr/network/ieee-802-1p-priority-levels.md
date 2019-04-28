@@ -1,17 +1,17 @@
 ---
-title: IEEE 802.1p 优先级级别
-description: IEEE 802.1p 优先级级别
+title: IEEE 802.1p 优先级
+description: IEEE 802.1p 优先级
 ms.assetid: C7EB3D85-544E-4898-A456-843621F6488D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92c91917211c16566728241d5999597a03d2e129
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349472"
 ---
-# <a name="ieee-8021p-priority-levels"></a>IEEE 802.1p 优先级级别
+# <a name="ieee-8021p-priority-levels"></a>IEEE 802.1p 优先级
 
 
 IEEE 802.1p 由 IEEE 802.1 任务指定的组，以满足服务质量 (QoS) 的通信优先级。 802.1p 不是单独的 IEEE 802.1 标准，但在 IEEE 802.1Q 的附录 G 中定义的标准 2005年。

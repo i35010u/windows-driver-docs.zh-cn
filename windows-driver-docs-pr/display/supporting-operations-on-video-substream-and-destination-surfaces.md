@@ -1,5 +1,5 @@
 ---
-title: 视频子流和目标图面上的操作
+title: 针对视频子流和目标图面的操作
 description: VMR Microsoft Windows Server 2003 SP1 及更高版本和 Windows XP SP2 和更高版本必须能够执行视频子流和目标的图面上进行某些操作。
 ms.assetid: ad0214b9-5d75-455f-8748-ff7c5a3d89db
 keywords:
@@ -13,13 +13,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 00c3c941896e21055f1146850463b1edd5d5c6c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350179"
 ---
-# <a name="operations-on-video-substream-and-destination-surfaces"></a>视频子流和目标图面上的操作
+# <a name="operations-on-video-substream-and-destination-surfaces"></a>针对视频子流和目标图面的操作
 
 
 ## <span id="ddk_supporting_operations_on_video_substream_and_destination_surfaces_"></span><span id="DDK_SUPPORTING_OPERATIONS_ON_VIDEO_SUBSTREAM_AND_DESTINATION_SURFACES_"></span>

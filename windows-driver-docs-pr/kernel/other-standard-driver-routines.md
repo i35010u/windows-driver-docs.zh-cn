@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55176b65ea228ee474a8057cef082b8e10fdea1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352034"
 ---
 # <a name="other-standard-driver-routines"></a>其他标准驱动程序例程
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95df63ab479eb2da8abd59ec991ba6ca8e0269b8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345645"
 ---
 # <a name="mpeg2b"></a>MPEG2\_B
 
@@ -60,7 +60,7 @@ MPEG2 的限制\_MPEG2 为列出的限制由定义 B\_A，但下面的其他限�
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

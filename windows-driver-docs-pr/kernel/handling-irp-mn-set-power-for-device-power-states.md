@@ -1,6 +1,6 @@
 ---
-title: 处理设备的电源状态的 IRP_MN_SET_POWER
-description: 处理设备的电源状态的 IRP_MN_SET_POWER
+title: 处理设备电源状态的 IRP_MN_SET_POWER
+description: 处理设备电源状态的 IRP_MN_SET_POWER
 ms.assetid: b4a19995-7933-41f7-b951-15ce0e4627da
 keywords:
 - IRP_MN_SET_POWER
@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f80deda87b323aea0d72b09ec5f2c4af319d3186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350030"
 ---
 # <a name="handling-irpmnsetpower-for-device-power-states"></a>处理 IRP\_MN\_设置\_的电源可用于设备的电源状态
 

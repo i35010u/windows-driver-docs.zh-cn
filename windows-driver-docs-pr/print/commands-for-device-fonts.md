@@ -1,6 +1,6 @@
 ---
-title: 设备字体的命令
-description: 设备字体的命令
+title: 设备字体命令
+description: 设备字体命令
 ms.assetid: c74ed63c-819a-4451-bc18-816713689d3e
 keywords:
 - 设备字体 WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f7a30b0566afcd6861dc24ce9c808785ce5c16d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348087"
 ---
-# <a name="commands-for-device-fonts"></a>设备字体的命令
+# <a name="commands-for-device-fonts"></a>设备字体命令
 
 
 

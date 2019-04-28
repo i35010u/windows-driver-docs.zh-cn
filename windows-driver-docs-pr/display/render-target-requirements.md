@@ -1,6 +1,6 @@
 ---
-title: 呈现目标的要求
-description: 呈现目标的要求
+title: 渲染目标要求
+description: 渲染目标要求
 ms.assetid: 4d16819e-f209-44df-b5af-f3ff9cae256b
 keywords:
 - 呈现器目标 WDK Direct3D
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e70f923768bf7be7ca6352ac8a123b42a39ee5f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351486"
 ---
-# <a name="render-target-requirements"></a>呈现目标的要求
+# <a name="render-target-requirements"></a>渲染目标要求
 
 
 ## <span id="ddk_render_target_requirements_gg"></span><span id="DDK_RENDER_TARGET_REQUIREMENTS_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: 列表和三维管道支持线程处理，命令
-description: 列表和三维管道支持线程处理，命令
+title: 支持线程、命令列表和 3-D 管道
+description: 支持线程、命令列表和 3-D 管道
 ms.assetid: 2c5adc7d-b8ac-48d2-9777-b3d9fbba829a
 keywords:
 - Direct3D 11 版 WDK Windows 7 显示的线程支持
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c5984748274c8a2e0e418df5ce4177959e6a4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350116"
 ---
-# <a name="supporting-threading-command-lists-and-3-d-pipeline"></a>列表和三维管道支持线程处理，命令
+# <a name="supporting-threading-command-lists-and-3-d-pipeline"></a>支持线程、命令列表和 3-D 管道
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

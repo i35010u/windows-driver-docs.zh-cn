@@ -1,6 +1,6 @@
 ---
-title: 供应商提供的 IDE 控制器微型驱动程序的要求
-description: 供应商提供的 IDE 控制器微型驱动程序的要求
+title: 对供应商提供的 IDE 控制器微型驱动程序的要求
+description: 对供应商提供的 IDE 控制器微型驱动程序的要求
 ms.assetid: a1584665-8788-49a4-b86f-50c265e7ce7a
 keywords:
 - IDE 控制器微型驱动程序 WDK 存储，供应商提供
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c6db1bc511f5dc21e4d8e6c3ccd7ef3a1c3a568
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352627"
 ---
-# <a name="requirements-for-vendor-supplied-ide-controller-minidrivers"></a>供应商提供的 IDE 控制器微型驱动程序的要求
+# <a name="requirements-for-vendor-supplied-ide-controller-minidrivers"></a>对供应商提供的 IDE 控制器微型驱动程序的要求
 
 
 ## <span id="ddk_requirements_for_vendor_supplied_ide_controller_minidrivers_kg"></span><span id="DDK_REQUIREMENTS_FOR_VENDOR_SUPPLIED_IDE_CONTROLLER_MINIDRIVERS_KG"></span>

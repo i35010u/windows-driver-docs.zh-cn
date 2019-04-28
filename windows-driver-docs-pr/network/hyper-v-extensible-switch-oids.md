@@ -10,11 +10,11 @@ ms.assetid: A97C5BF0-7319-4BEE-ABF7-12B11CEAF3DB"
 ms.date: 04/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7034925cfc6b7187bf9cacf8e49738c9952d7a67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349527"
 ---
 # <a name="hyper-v-extensible-switch-oids"></a>Hyper-V 可扩展交换机 OID
 
@@ -33,7 +33,7 @@ OID 请求颁发可扩展交换机的协议边缘。 该扩展可以检查 OID �
 - E  
 由扩展发出 OID 请求。
 
-| “属性”                                                                                                 | Q | S | M | P | E |
+| 名称                                                                                                 | Q | S | M | P | E |
 |---                                                                                                   |---|---|---|---|---|
 | [OID_SWITCH_FEATURE_STATUS_QUERY](https://msdn.microsoft.com/library/windows/hardware/hh598260)      |   |   | X | X |   | 
 | [OID_SWITCH_NIC_ARRAY](https://msdn.microsoft.com/library/windows/hardware/hh598261)                 | X |   |   |   | X | 

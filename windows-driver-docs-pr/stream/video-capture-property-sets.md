@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e3f0fecbe54d01fbb80b6aa6a60e632ee47e4cbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344980"
 ---
 # <a name="video-capture-property-sets"></a>视频捕获属性集
 

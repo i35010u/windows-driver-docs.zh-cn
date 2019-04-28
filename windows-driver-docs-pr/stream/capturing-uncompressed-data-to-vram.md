@@ -1,6 +1,6 @@
 ---
-title: 捕获到 vram 能够未压缩的数据
-description: 捕获到 vram 能够未压缩的数据
+title: 将未压缩的数据捕获到 VRAM
+description: 将未压缩的数据捕获到 VRAM
 ms.assetid: efec607d-3337-40a5-812c-57292f201d54
 keywords:
 - Vram 能够捕获 WDK AVStream，未压缩数据
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59ef846fe259895bc3a0c5ce0dff4a4ffe017fc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357028"
 ---
-# <a name="capturing-uncompressed-data-to-vram"></a>捕获到 vram 能够未压缩的数据
+# <a name="capturing-uncompressed-data-to-vram"></a>将未压缩的数据捕获到 VRAM
 
 
 AVStream vram 能够启用了的微型驱动程序可以通过提供以下支持捕获 pin 描述符中的捕获未压缩的数据。

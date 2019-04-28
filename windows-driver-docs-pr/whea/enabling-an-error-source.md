@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc24927a76845f5a7db39f1cfb3e4521d8eea95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354481"
 ---
 # <a name="enabling-an-error-source"></a>启用错误源
 

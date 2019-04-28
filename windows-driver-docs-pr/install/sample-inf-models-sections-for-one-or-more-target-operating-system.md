@@ -1,17 +1,17 @@
 ---
 title: 示例 INF 适用目标操作系统于模型的各部分
-description: 示例 INF 模型部分用于一个或多针对操作系统
+description: 适用于一个或多个目标操作系统的示例 INF 模型部分
 ms.assetid: bc1d9a5f-573f-4773-8716-8ac53478d0ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a11f39ddd9ea284eae37c9bcf6971a2b42b77a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348701"
 ---
-# <a name="sample-inf-models-sections-for-one-or-more-target-operating-systems"></a>示例 INF 模型部分用于一个或多针对操作系统
+# <a name="sample-inf-models-sections-for-one-or-more-target-operating-systems"></a>适用于一个或多个目标操作系统的示例 INF 模型部分
 
 
 本主题说明在各种操作系统和平台安装驱动程序包的示例 INF 文件。 此 INF 文件具有以下 INF 部分和指令：

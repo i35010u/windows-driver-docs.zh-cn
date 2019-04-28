@@ -5,11 +5,11 @@ ms.assetid: 92C067E0-3787-441E-8A2D-C48367ECE471
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 726aa3f25c3481877d79908126cf484e1aff8e68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354563"
 ---
 # <a name="testing-sensor-events"></a>测试传感器事件
 

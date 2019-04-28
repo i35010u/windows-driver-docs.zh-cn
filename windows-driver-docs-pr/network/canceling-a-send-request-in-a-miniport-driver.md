@@ -1,6 +1,6 @@
 ---
-title: 正在取消微型端口驱动程序中的发送请求
-description: 正在取消微型端口驱动程序中的发送请求
+title: 在微型端口驱动程序中取消发送请求
+description: 在微型端口驱动程序中取消发送请求
 ms.assetid: 9339e661-b91a-49e1-9924-66c85cc80ee8
 keywords:
 - NdisCancelSendNetBufferLists
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 323ff3f63d506620382aa38dc574e50603d68597
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351993"
 ---
-# <a name="canceling-a-send-request-in-a-miniport-driver"></a>正在取消微型端口驱动程序中的发送请求
+# <a name="canceling-a-send-request-in-a-miniport-driver"></a>在微型端口驱动程序中取消发送请求
 
 
 

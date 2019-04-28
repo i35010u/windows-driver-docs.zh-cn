@@ -1,14 +1,14 @@
 ---
-Description: Firmware is internal to a device, and is independent of the operating system. However, firmware downloads can cause operating system errors.
+Description: 固件是内部的一台设备，并独立于操作系统。 但是，固件下载会导致操作系统错误。
 title: 配置 USB 设备的固件更新
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4c1d98ac24d0381046fbed203ab3550707ea4ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352595"
 ---
 # <a name="configuring-a-usb-device-for-firmware-update"></a>配置 USB 设备的固件更新
 

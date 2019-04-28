@@ -1,6 +1,6 @@
 ---
-title: 对象的包
-description: 对象的包
+title: 对象包
+description: 对象包
 ms.assetid: b7ee5756-1c79-4ead-9999-d13be9a0d3d9
 keywords:
 - AVStream 对象包 WDK
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59000e54a1b35e33d382fdeaae7ad943ded5232e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345972"
 ---
-# <a name="object-bags"></a>对象的包
+# <a name="object-bags"></a>对象包
 
 
 

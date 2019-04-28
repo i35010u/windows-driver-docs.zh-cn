@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be54f424f8b0d421e046f6bf7a495cd8fe01cd61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351250"
 ---
 # <a name="oidtcpoffloadparameters"></a>OID_TCP_OFFLOAD_PARAMETERS
 
@@ -33,7 +33,7 @@ OID_TCP_OFFLOAD_PARAMETERS 是支持 TCP 卸载的微型端口驱动程序的必
 
 在之前设置 OID_TCP_OFFLOAD_PARAMETERS，过量的应用程序或驱动程序可以使用[OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md) OID 来确定微型端口适配器的硬件能够支持哪些功能。 使用 OID_TCP_OFFLOAD_PARAMETERS 以启用报告功能为未通过启用[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md) OID。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)  
 [NDIS_OID_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff566710)  
@@ -45,6 +45,6 @@ OID_TCP_OFFLOAD_PARAMETERS 是支持 TCP 卸载的微型端口驱动程序的必
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

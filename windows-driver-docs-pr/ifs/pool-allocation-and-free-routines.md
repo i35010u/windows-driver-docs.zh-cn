@@ -1,6 +1,6 @@
 ---
-title: 池分配和免费的例程
-description: 池分配和免费的例程
+title: 池分配和免费例程
+description: 池分配和免费例程
 ms.assetid: 757eebc0-ebd4-49a1-acea-6c27956b4b23
 keywords:
 - RDBSS WDK 文件系统中，池分配
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1abe38b4e02dbaabd26b858824ad8332fa8e7d7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352912"
 ---
-# <a name="pool-allocation-and-free-routines"></a>池分配和免费的例程
+# <a name="pool-allocation-and-free-routines"></a>池分配和免费例程
 
 
 ## <span id="ddk_pool_allocation_and_free_functions_if"></span><span id="DDK_POOL_ALLOCATION_AND_FREE_FUNCTIONS_IF"></span>

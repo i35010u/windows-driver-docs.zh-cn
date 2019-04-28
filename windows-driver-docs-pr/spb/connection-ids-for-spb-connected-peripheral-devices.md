@@ -1,17 +1,17 @@
 ---
-title: 连接存储的外围设备的连接 Id
+title: SPB 连接的外围设备的连接 ID
 description: 驱动程序可以将 I/O 请求发送到简单的外围总线 （存储） 上的外围设备之前，该驱动程序必须打开到设备的逻辑连接。
 ms.assetid: 234B5858-5930-40AD-BE4C-4A774A809D10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b66cbbb6cab93960503be1e800503c2a4810cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348071"
 ---
-# <a name="connection-ids-for-spb-connected-peripheral-devices"></a>连接存储的外围设备的连接 Id
+# <a name="connection-ids-for-spb-connected-peripheral-devices"></a>SPB 连接的外围设备的连接 ID
 
 
 驱动程序可以外围设备向发送 I/O 请求之前[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储），该驱动程序必须打开到设备的逻辑连接。 通过此连接，该驱动程序可以发送读取和写入请求来传输设备数据。 此外，驱动程序可以发送 I/O 控制 (IOCTL) 请求到设备来执行特定于存储的操作。

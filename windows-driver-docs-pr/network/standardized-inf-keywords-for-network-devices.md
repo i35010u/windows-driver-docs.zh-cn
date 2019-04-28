@@ -1,17 +1,17 @@
 ---
-title: 网络设备的标准化的 INF 关键字
-description: 网络设备的标准化的 INF 关键字
+title: 网络设备的标准化 INF 关键字
+description: 网络设备的标准化 INF 关键字
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d55125e09c24d6b12248b4802e6a992ee71543a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345962"
 ---
-# <a name="standardized-inf-keywords-for-network-devices"></a>网络设备的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-network-devices"></a>网络设备的标准化 INF 关键字
 
 
 

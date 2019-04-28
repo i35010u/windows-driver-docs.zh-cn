@@ -5,11 +5,11 @@ ms.assetid: A8C2E550-4B1F-4DDB-B97F-1F7B6B74F5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d260e5edb69b902c3b4c84539ca34408bb24bc3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351944"
 ---
 # <a name="capturing-extensions"></a>捕获扩展
 

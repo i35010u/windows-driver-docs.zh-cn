@@ -5,11 +5,11 @@ ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9edee9cb08971a5cd6eeabb6511359f0fca5989
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63347376"
 ---
 # <a name="forwarding-extensions"></a>转发扩展
 

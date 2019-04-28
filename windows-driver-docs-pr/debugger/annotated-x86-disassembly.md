@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ffc922683f13ddbb2c4de0523439e3b9cb8a95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63346349"
 ---
 # <a name="annotated-x86-disassembly"></a>带批注的 x86 反汇编
 
@@ -343,7 +343,7 @@ No_Capture:
                 if (pSink == (IAdviseSink *)this)
 ```
 
-这些下一步的多个行是为了弥补这一事实的 c + + 中，(IAdviseSink \*)**NULL**仍必须**NULL**。 因此，如果将"this"真正"(ViewState\*) NULL"，然后强制转换的结果应**NULL**和不 IAdviseSink IBrowserService 之间的距离。
+这些下一步的多个行是为了弥补这一事实，在C++，(IAdviseSink \*)**NULL**仍必须**NULL**。 因此，如果将"this"真正"(ViewState\*) NULL"，然后强制转换的结果应**NULL**和不 IAdviseSink IBrowserService 之间的距离。
 
 ```dbgcmd
 71517202 8d46ec           lea     eax,[esi-0x14]    ; eax = -(IAdviseSink*)this

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3610080427c4c3ec3defce989d4689e994690468
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351487"
 ---
 # <a name="accessing-memory-by-virtual-address"></a>按虚拟地址访问内存
 

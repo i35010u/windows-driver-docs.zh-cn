@@ -1,17 +1,17 @@
 ---
-title: 输入的缓冲区顺序示例 2
-description: 输入的缓冲区顺序示例 2
+title: 输入缓冲区顺序示例 2
+description: 输入缓冲区顺序示例 2
 ms.assetid: e480bd93-4ae2-4a6c-b669-69c44c0154d0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3a637b335544acce6b32cf1daacdb23897359e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350233"
 ---
-# <a name="input-buffer-order-example-2"></a>输入的缓冲区顺序示例 2
+# <a name="input-buffer-order-example-2"></a>输入缓冲区顺序示例 2
 
 
 ## <span id="ddk_input_buffer_order_example_2_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_EXAMPLE_2_GG"></span>

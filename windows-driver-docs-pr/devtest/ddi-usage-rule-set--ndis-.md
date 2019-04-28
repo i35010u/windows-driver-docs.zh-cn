@@ -1,22 +1,22 @@
 ---
-title: DDI 使用规则集 (NDIS)
+title: DDI 用法规则集 (NDIS)
 description: 使用这些规则来验证您的驱动程序正确使用 NDIS DDIs 正确。
 ms.assetid: A109A452-D3A7-4204-B267-1F0F98652597
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b6f876d189f9c83e274e16591aade6694eb24a3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356606"
 ---
-# <a name="ddi-usage-rule-set-ndis"></a>DDI 使用规则集 (NDIS)
+# <a name="ddi-usage-rule-set-ndis"></a>DDI 用法规则集 (NDIS)
 
 
 使用这些规则来验证您的驱动程序正确使用 NDIS DDIs 正确。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

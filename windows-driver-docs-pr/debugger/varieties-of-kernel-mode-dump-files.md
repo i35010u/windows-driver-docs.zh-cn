@@ -1,19 +1,19 @@
 ---
-title: 类型的内核模式转储文件
-description: 类型的内核模式转储文件
+title: 内核模式转储文件的种类
+description: 内核模式转储文件的种类
 ms.assetid: 6db2a755-ed9c-492a-a650-9ae34ae59968
 keywords:
 - 转储文件中，内核模式下的文件类型
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f963d98be95c454f2be57cadbaaf792c09927e77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354896"
 ---
-# <a name="varieties-of-kernel-mode-dump-files"></a>类型的内核模式转储文件
+# <a name="varieties-of-kernel-mode-dump-files"></a>内核模式转储文件的种类
 
 
 ## <span id="ddk_varieties_of_kernel_mode_dump_files_dbg"></span><span id="DDK_VARIETIES_OF_KERNEL_MODE_DUMP_FILES_DBG"></span>
@@ -45,7 +45,7 @@ ms.locfileid: "56541019"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [内核模式转储文件](kernel-mode-dump-files.md)

@@ -5,18 +5,18 @@ ms.assetid: 9AD62397-6840-42FF-ADEC-6836EDD16647
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 792994e2a6071a8a94626b67611bd45649113693
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350515"
 ---
 # <a name="irptracking-rule-set-wdm"></a>IrpTracking 规则集 (WDM)
 
 
 使用这些规则来验证您的驱动程序正确跟踪 I/O 请求数据包 (IRP)，这样，Irp 未完成而不删除该设备。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>
