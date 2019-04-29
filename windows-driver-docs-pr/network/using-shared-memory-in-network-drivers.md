@@ -1,6 +1,6 @@
 ---
-title: 使用共享内存中的网络驱动程序
-description: 使用共享内存中的网络驱动程序
+title: 使用网络驱动程序中的共享内存
+description: 使用网络驱动程序中的共享内存
 ms.assetid: f7dfe785-6c1a-4f56-9018-76be9cdec7fc
 keywords:
 - 网络驱动程序 WDK，共享内存
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 806c597dcb2e7193567c5b757ea541a3c5cba99a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373783"
 ---
-# <a name="using-shared-memory-in-network-drivers"></a>使用共享内存中的网络驱动程序
+# <a name="using-shared-memory-in-network-drivers"></a>使用网络驱动程序中的共享内存
 
 
 

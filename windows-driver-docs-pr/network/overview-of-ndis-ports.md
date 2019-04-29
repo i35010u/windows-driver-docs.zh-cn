@@ -1,6 +1,6 @@
 ---
-title: NDIS 端口的概述
-description: NDIS 端口的概述
+title: NDIS 端口概述
+description: NDIS 端口概述
 ms.assetid: 324f06c9-d482-4acd-a7a6-050721197c89
 keywords:
 - 有关 NDIS 端口端口 WDK NDIS
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a2c02d1c518289f3c5a57a8deb94c1c063021e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368931"
 ---
-# <a name="overview-of-ndis-ports"></a>NDIS 端口的概述
+# <a name="overview-of-ndis-ports"></a>NDIS 端口概述
 
 
 

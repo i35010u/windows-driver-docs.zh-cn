@@ -1,6 +1,6 @@
 ---
-title: 视频捕获的事件
-description: 视频捕获的事件
+title: 视频捕获事件
+description: 视频捕获事件
 ms.assetid: 9d40b9f7-41c1-4410-afc7-9b4ff1c2fe7e
 keywords:
 - 事件 WDK 视频捕获
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3094178fd038d734f0f4e28c95c535023ba0fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380622"
 ---
-# <a name="video-capture-events"></a>视频捕获的事件
+# <a name="video-capture-events"></a>视频捕获事件
 
 
 [KSEVENTSETID\_VIDCAPNotify](https://msdn.microsoft.com/library/windows/hardware/ff561773)事件集中包含与调谐器事件相关的事件。 下表描述了属于 KSEVENTSETID 事件\_VIDCAPNotify 事件集。

@@ -1,6 +1,6 @@
 ---
-title: 处理 Subrectangles 而不是拉伸
-description: 处理 Subrectangles 而不是拉伸
+title: 在不拉伸的情况下处理子矩形
+description: 在不拉伸的情况下处理子矩形
 ms.assetid: ee59b06c-a3fb-41ac-875e-754d20a5eaa6
 keywords:
 - 取消隔行扫描 WDK DirectX VA，subrectangular 处理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82740d69a5af194bbd2feca611988b2205e41a6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370213"
 ---
-# <a name="processing-subrectangles-without-stretching"></a>处理 Subrectangles 而不是拉伸
+# <a name="processing-subrectangles-without-stretching"></a>在不拉伸的情况下处理子矩形
 
 
 ## <span id="ddk_processing_subrectangles_without_stretching_gg"></span><span id="DDK_PROCESSING_SUBRECTANGLES_WITHOUT_STRETCHING_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97183ea47da2174722cac9b6316375dbb92261af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372138"
 ---
 # <a name="using-bind-or-connect-redirection"></a>使用绑定或连接重定向
 

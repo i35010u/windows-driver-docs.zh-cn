@@ -1,6 +1,6 @@
 ---
-title: 类型的 Apc
-description: 类型的 Apc
+title: APC 的类型
+description: APC 的类型
 ms.assetid: 74ed953c-1b2a-40b9-9df3-16869b198b38
 keywords:
 - 异步过程调用 WDK 内核
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 514f03879913030db26c5bfc094b394de2d9768e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377027"
 ---
-# <a name="types-of-apcs"></a>类型的 Apc
+# <a name="types-of-apcs"></a>APC 的类型
 
 
 异步过程调用 (APC) 是以异步方式执行的函数。 Apc 类似于延缓的过程调用 (Dpc)，但 Apc 特定线程的上下文中与 Dpc，不同的执行。 （而不是文件系统和文件系统筛选器驱动程序） 的驱动程序不使用 Apc 直接，但操作系统的其他部分执行操作，因此需要注意的 Apc 的工作原理。

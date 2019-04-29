@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c1152c85fb382c27db8610af7f735b156c2710
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375320"
 ---
 # <a name="wditlvdeviceserviceparamsopcode"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE
 
@@ -37,4 +37,4 @@ WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE 是包含特定于设备服务的操作码 
 | --- | --- |
 | 最低受支持的客户端 | Windows 10 版本 1809 |
 | 最低受支持的服务器 | Windows Server 2016 |
-| 标头 | Wditypes.hpp |
+| Header | Wditypes.hpp |

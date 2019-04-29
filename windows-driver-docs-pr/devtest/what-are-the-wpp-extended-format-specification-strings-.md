@@ -5,11 +5,11 @@ ms.assetid: f05117c0-cb4b-483a-a141-08423555170a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44b4ee86a2d9ac5c93c9df135032aa5f19b59856
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385031"
 ---
 # <a name="what-are-the-wpp-extended-format-specification-strings"></a>什么是 WPP 扩展格式规范字符串？
 
@@ -146,7 +146,7 @@ WPP 跟踪消息的费用为定义的标准格式字符串中包含可以使用�
 <td align="left"><p>表示 Windows 错误，并显示错误消息字符串。</p></td>
 </tr>
 <tr class="even">
-<td align="left">Network</td>
+<td align="left">网络</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">

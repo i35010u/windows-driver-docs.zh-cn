@@ -1,6 +1,6 @@
 ---
-title: UVC 扩展单元的代码示例
-description: UVC 扩展单元的代码示例
+title: UVC 扩展单元代码示例
+description: UVC 扩展单元代码示例
 ms.assetid: c4f24646-57ea-4467-ad48-a3e6044658e3
 keywords:
 - 扩展单位 WDK USB 视频类，示例
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61190b022ef78b5e0d40c9eacb588806fbc8b0ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374045"
 ---
-# <a name="uvc-extension-unit-code-samples"></a>UVC 扩展单元的代码示例
+# <a name="uvc-extension-unit-code-samples"></a>UVC 扩展单元代码示例
 
 
 本部分包含以下主题：

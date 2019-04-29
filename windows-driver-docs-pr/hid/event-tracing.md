@@ -5,11 +5,11 @@ ms.assetid: F23E5516-36B9-478E-90D3-54D1C52CB467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 970b20c211b3ac163136e14ab5e03d6d843d6cf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371026"
 ---
 # <a name="event-tracing"></a>事件跟踪
 

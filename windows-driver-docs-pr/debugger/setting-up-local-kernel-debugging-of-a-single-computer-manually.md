@@ -5,11 +5,11 @@ ms.assetid: FC717B1C-A68A-4002-A528-BFC3521C5E8A
 ms.date: 07/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c09ae58a59a182fbb01170a7402927b9dd88336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374327"
 ---
 # <a name="setting-up-local-kernel-debugging-of-a-single-computer-manually"></a>手动设置一台计算机的本地内核调试
 

@@ -1,6 +1,6 @@
 ---
-title: 对着色器 3 支持报告功能
-description: 对着色器 3 支持报告功能
+title: 报告着色器 3 支持功能
+description: 报告着色器 3 支持功能
 ms.assetid: 89590647-646c-47ec-a46e-e781b1b9f33e
 keywords:
 - 着色器 WDK DirectX 9.0，着色器 3.0 支持
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51e57409a4ef41be2a6dc3b33fdfd3cf56e68dad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383282"
 ---
-# <a name="reporting-capabilities-for-shader-3-support"></a>对着色器 3 支持报告功能
+# <a name="reporting-capabilities-for-shader-3-support"></a>报告着色器 3 支持功能
 
 
 ## <span id="ddk_reporting_capabilities_for_shader_3_support_gg"></span><span id="DDK_REPORTING_CAPABILITIES_FOR_SHADER_3_SUPPORT_GG"></span>

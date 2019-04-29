@@ -1,6 +1,6 @@
 ---
-title: 调整大小和移动窗口
-description: 调整大小和移动窗口
+title: 调整窗口大小和移动窗口
+description: 调整窗口大小和移动窗口
 ms.assetid: 135e1ec1-9d58-45de-a0b4-5f962ed9e1f7
 keywords:
 - 调试信息窗口、 调整大小和移动窗口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78ed01fb656b4c9550c91c9625955ff4278da7bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382072"
 ---
-# <a name="resizing-and-moving-a-window"></a>调整大小和移动窗口
+# <a name="resizing-and-moving-a-window"></a>调整窗口大小和移动窗口
 
 
 ## <span id="ddk_resizing_and_moving_windows_dbg"></span><span id="DDK_RESIZING_AND_MOVING_WINDOWS_DBG"></span>

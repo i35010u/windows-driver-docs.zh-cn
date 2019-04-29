@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8489381804a608883393c34c73ddd9a987b519af
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377055"
 ---
 # <a name="format-of-log-entries-that-are-not-part-of-a-text-log-section"></a>不是文本日志部分的日志条目的格式
 

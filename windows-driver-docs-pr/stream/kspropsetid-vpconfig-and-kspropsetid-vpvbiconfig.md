@@ -5,11 +5,11 @@ ms.assetid: 3e9a79a2-f217-4736-87b2-a968b358bbc7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 877251b0bcd4da65c16f64a46ac642d0ed1d70ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370901"
 ---
 # <a name="kspropsetidvpconfig-and-kspropsetidvpvbiconfig"></a>KSPROPSETID\_VPConfig 和 KSPROPSETID\_VPVBIConfig
 

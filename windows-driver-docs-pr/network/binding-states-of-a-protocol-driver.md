@@ -1,6 +1,6 @@
 ---
-title: 绑定协议驱动程序的状态
-description: 绑定协议驱动程序的状态
+title: 协议驱动程序的绑定状态
+description: 协议驱动程序的绑定状态
 ms.assetid: 15bc6217-e258-4e07-abc8-6c46fd01d85b
 keywords:
 - 协议驱动程序 WDK 网络，绑定状态
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7840780652dcfd1f45b9611485648fb53f24fb2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367696"
 ---
-# <a name="binding-states-of-a-protocol-driver"></a>绑定协议驱动程序的状态
+# <a name="binding-states-of-a-protocol-driver"></a>协议驱动程序的绑定状态
 
 
 

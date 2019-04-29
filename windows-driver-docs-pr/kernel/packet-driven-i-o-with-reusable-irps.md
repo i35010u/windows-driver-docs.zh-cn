@@ -1,6 +1,6 @@
 ---
-title: 使用可重用的 Irp 数据包驱动 I/O
-description: 使用可重用的 Irp 数据包驱动 I/O
+title: 数据包驱动的 I/O 与可重用 IRP
+description: 数据包驱动的 I/O 与可重用 IRP
 ms.assetid: ff315b61-9fa3-4a20-bc3e-82db0ea3cde7
 keywords:
 - I/O 堆栈位置 WDK 内核
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 908b910039544ae9de2409af2e89ee9682f316e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377913"
 ---
-# <a name="packet-driven-io-with-reusable-irps"></a>使用可重用的 Irp 数据包驱动 I/O
+# <a name="packet-driven-io-with-reusable-irps"></a>数据包驱动的 I/O 与可重用 IRP
 
 
 

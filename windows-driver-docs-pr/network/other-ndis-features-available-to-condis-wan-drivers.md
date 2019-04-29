@@ -1,19 +1,19 @@
 ---
-title: 提供的 CoNDIS WAN 驱动程序的其他 NDIS 功能
-description: 提供的 CoNDIS WAN 驱动程序的其他 NDIS 功能
+title: 适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
+description: 适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
 ms.assetid: eb002029-d7da-45ff-9308-f61d90f751d0
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98888f638b98aaa33bcdd15733f76a0cab734c41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378235"
 ---
-# <a name="other-ndis-features-available-to-condis-wan-drivers"></a>提供的 CoNDIS WAN 驱动程序的其他 NDIS 功能
+# <a name="other-ndis-features-available-to-condis-wan-drivers"></a>适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
 
 
 

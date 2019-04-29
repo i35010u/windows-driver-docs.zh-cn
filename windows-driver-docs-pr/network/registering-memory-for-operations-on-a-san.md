@@ -1,6 +1,6 @@
 ---
-title: 注册在 SAN 上的操作内存
-description: 注册在 SAN 上的操作内存
+title: 为 SAN 上的操作注册内存
+description: 为 SAN 上的操作注册内存
 ms.assetid: 5492466e-4765-4d43-b6bc-1d5bc74996ba
 keywords:
 - SAN 连接安装 WDK，注册内存
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bc6a51cde8a8cb5cd7369a8a0c045f3aa8325dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373858"
 ---
-# <a name="registering-memory-for-operations-on-a-san"></a>注册在 SAN 上的操作内存
+# <a name="registering-memory-for-operations-on-a-san"></a>为 SAN 上的操作注册内存
 
 
 

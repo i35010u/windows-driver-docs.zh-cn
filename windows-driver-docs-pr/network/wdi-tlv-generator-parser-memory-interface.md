@@ -1,20 +1,20 @@
 ---
 title: WDI TLV 生成器/分析器内存接口
-description: 分析器和生成器在内部与新/delete 一起使用 c + +。
+description: 分析器和生成器在内部使用C++new/delete。
 ms.assetid: 318519FF-AF1F-4D86-96A9-ED0918D91310
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a50a22edbd4e4ee495ea517e82dcdf0255f01a95
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382860"
 ---
 # <a name="wdi-tlv-generatorparser-memory-interface"></a>WDI TLV 生成器/分析器内存接口
 
 
-分析器和生成器在内部与新/delete 一起使用 c + +。 这简化了多个实现详细信息。 这意味着时链接到此库，库的使用者必须提供这些 Api 的重载的运算符实现。 这是你的代码必须执行的唯一 c + + 依赖关系。
+分析器和生成器在内部使用C++new/delete。 这简化了多个实现详细信息。 这意味着时链接到此库，库的使用者必须提供这些 Api 的重载的运算符实现。 这是唯一C++你的代码必须执行的依赖关系。
 
 执行任何分配的所有 Api 都采用参数*上下文*PCTLV 类型化为\_上下文，其中包括 2 个字段： ULONG\_名为 PTR **AllocationContext**和名为ULONG**PeerVersion**。 **AllocationContext**字段传递到重载`new`运算符。 这允许使用者的自定义以各种方式分配的 Api。 详细了解 TLV\_上下文参数，请参阅[WDI TLV 版本控制](wdi-tlv-versioning.md)。
 

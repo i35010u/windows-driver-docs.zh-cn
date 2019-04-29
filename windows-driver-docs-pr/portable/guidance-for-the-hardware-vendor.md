@@ -1,16 +1,16 @@
 ---
-Description: Guidance for the Hardware Vendor
-title: 硬件供应商的指南
+Description: 硬件供应商指南
+title: 硬件供应商指南
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56f5dddc0b11c2139c132d0ac410d11b980c2316
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378159"
 ---
-# <a name="guidance-for-the-hardware-vendor"></a>硬件供应商的指南
+# <a name="guidance-for-the-hardware-vendor"></a>硬件供应商指南
 
 
 如果制造便携式设备，并需要与 Windows 建立连接，您具有以下选项：
@@ -20,7 +20,7 @@ ms.locfileid: "56525367"
 -   对于数字静态相机实现 PTP/MTP 类协议。 MTP PTP，通过提供增强功能，因此较好的选择。 但是，出于兼容性原因，建议您 MTP 的实现是与 PTP 向后的兼容。
 -   移动电话和其他多功能设备，实现类协议，如 MTP，在设备上。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)

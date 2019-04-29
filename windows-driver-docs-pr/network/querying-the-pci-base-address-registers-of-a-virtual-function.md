@@ -5,11 +5,11 @@ ms.assetid: 99C2BF61-E87E-4C3B-BE7E-C16B5318EC1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e49faced65a34a893e64b6c5b67c64696f92b01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376594"
 ---
 # <a name="querying-the-pci-base-address-registers-of-a-virtual-function"></a>查询虚拟功能的 PCI 基址寄存器
 

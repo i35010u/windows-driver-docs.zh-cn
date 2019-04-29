@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 02121f426a757a068598e603dbf99101acaeb99d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383561"
 ---
 # <a name="sendrls-function"></a>SendRLS 函数
 
@@ -41,7 +41,7 @@ void SendRLS(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *HBAStatus*   
@@ -86,7 +86,7 @@ RLS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**�
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
 </tr>
 <tr class="odd">

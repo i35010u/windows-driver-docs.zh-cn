@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5265147b4d1bd47c16f0e46ba5dc4508d805fd4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384548"
 ---
 # <a name="inf-files-for-netadaptercx-client-drivers"></a>NetAdapterCx 客户端驱动程序的 INF 文件
 

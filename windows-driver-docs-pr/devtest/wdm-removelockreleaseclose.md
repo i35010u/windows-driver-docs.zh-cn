@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 20155f7eb1baeb58e9e3e946b4557d3afb0b2cdd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368628"
 ---
 # <a name="removelockreleaseclose-rule-wdm"></a>RemoveLockReleaseClose 规则 (wdm)
 

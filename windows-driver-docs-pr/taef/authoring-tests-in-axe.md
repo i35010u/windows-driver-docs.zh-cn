@@ -5,11 +5,11 @@ ms.assetid: B042FE1B-98E4-48ae-BE2C-15C71EC6640A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 336bf4b0eff08ceda7b978660bcd2bf5dab9141b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372742"
 ---
 # <a name="authoring-tests-in-axe"></a>使用 AXE 创作测试
 

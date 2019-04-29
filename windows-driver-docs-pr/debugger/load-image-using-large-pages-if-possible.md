@@ -1,19 +1,19 @@
 ---
-title: 如有可能使用大型页的图像加载
-description: 如有可能使用大型页的图像加载
+title: 在可能的情况下大型页加载映像
+description: 在可能的情况下大型页加载映像
 ms.assetid: 7f75b5bd-cc25-4f09-9d60-55b86969d16b
 keywords:
 - 加载图像如有可能使用大型页 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bccbe3e8f6ac111c0e2a0309391fe604f0391fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383334"
 ---
-# <a name="load-image-using-large-pages-if-possible"></a>如有可能使用大型页的图像加载
+# <a name="load-image-using-large-pages-if-possible"></a>在可能的情况下大型页加载映像
 
 
 ## <span id="ddk_load_image_using_large_pages_if_possible_dtools"></span><span id="DDK_LOAD_IMAGE_USING_LARGE_PAGES_IF_POSSIBLE_DTOOLS"></span>

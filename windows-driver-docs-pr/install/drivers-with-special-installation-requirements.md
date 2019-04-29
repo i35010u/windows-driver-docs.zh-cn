@@ -1,17 +1,17 @@
 ---
-title: 具有特殊的安装要求的驱动程序
-description: 具有特殊的安装要求的驱动程序
+title: 具有特殊安装要求的驱动程序
+description: 具有特殊安装要求的驱动程序
 ms.assetid: 43aad88a-dc38-4345-a1db-81d874f2573f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60e0c5b41949ebbe27de329706b46fd88bcb667e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370591"
 ---
-# <a name="drivers-with-special-installation-requirements"></a>具有特殊的安装要求的驱动程序
+# <a name="drivers-with-special-installation-requirements"></a>具有特殊安装要求的驱动程序
 
 
 

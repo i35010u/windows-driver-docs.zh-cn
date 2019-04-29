@@ -1,6 +1,6 @@
 ---
-title: 支持的图形输出
-description: 支持的图形输出
+title: 支持图形输出
+description: 支持图形输出
 ms.assetid: 2ac9b01d-9dca-44b4-9645-9c5eefb2ef1b
 keywords:
 - GDI WDK Windows 2000 显示中，图形输出
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c204a83447a8f64cdbc14b76552da3f729024a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372756"
 ---
-# <a name="supporting-graphics-output"></a>支持的图形输出
+# <a name="supporting-graphics-output"></a>支持图形输出
 
 
 ## <span id="ddk_supporting_graphics_output_gg"></span><span id="DDK_SUPPORTING_GRAPHICS_OUTPUT_GG"></span>

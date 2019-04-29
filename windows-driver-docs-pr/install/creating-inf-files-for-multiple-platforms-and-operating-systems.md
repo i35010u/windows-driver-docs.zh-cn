@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e1eea87b4be2374b764981dcc7288e94ae469a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381502"
 ---
 # <a name="creating-inf-files-for-multiple-platforms-and-operating-systems"></a>创建适用于多个平台和操作系统的 INF 文件
 
@@ -81,7 +81,7 @@ ms.locfileid: "56555948"
 
  
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [INF 文件平台扩展和基于 x64 的系统](inf-file-platform-extensions-and-x64-based-systems.md)

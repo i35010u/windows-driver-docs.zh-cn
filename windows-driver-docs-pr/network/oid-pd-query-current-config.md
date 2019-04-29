@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PD_QUERY_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c35c2c408bd89f804ebaafb2c80fa933dc3ded9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375657"
 ---
 # <a name="oidpdquerycurrentconfig"></a>OID\_PD\_查询\_当前\_配置
 
@@ -42,13 +42,13 @@ NDIS 协议或筛选器驱动程序将发送对象标识符 (OID) 方法请求�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)

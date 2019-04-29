@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b46fb82c021aa4fa09fd0c7da77f2942d7f0e0b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370363"
 ---
 # <a name="bug-check-0xa2-memoryimagecorrupt"></a>Bug 检查 0xA2：内存\_图像\_损坏
 

@@ -5,11 +5,11 @@ ms.assetid: 558DBDD7-8724-42E7-919A-ADAF01721F8F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bc10fbaedd68fe9992c3a1e833a1a85b87078d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386145"
 ---
 # <a name="scalable-networking-enhancements-in-ndis-630"></a>NDIS 6.30 中的可缩放网络增强
 

@@ -1,6 +1,6 @@
 ---
-title: 报告支持 2D 操作使用图面上的格式
-description: 报告支持 2D 操作使用图面上的格式
+title: 报告使用图面格式执行 2D 操作的支持
+description: 报告使用图面格式执行 2D 操作的支持
 ms.assetid: c7737daf-3342-48dc-a365-f789b7203013
 keywords:
 - 二维操作 WDK DirectX 9.0，图面上的格式
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e330d894a99852d7feead255a795c2a04596155c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383255"
 ---
-# <a name="reporting-support-for-2d-operations-using-surface-formats"></a>报告支持 2D 操作使用图面上的格式
+# <a name="reporting-support-for-2d-operations-using-surface-formats"></a>报告使用图面格式执行 2D 操作的支持
 
 
 ## <span id="ddk_reporting_support_for_2d_operations_using_surface_formats_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_2D_OPERATIONS_USING_SURFACE_FORMATS_GG"></span>

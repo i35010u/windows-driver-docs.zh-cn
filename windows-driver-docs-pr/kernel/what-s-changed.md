@@ -1,6 +1,6 @@
 ---
-title: 更改的内容
-description: 更改的内容
+title: 更改的功能
+description: 更改的功能
 ms.assetid: c7799406-d046-4261-8af7-7abbac18fa70
 keywords:
 - 64 位 WDK 内核，移植到驱动程序
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d3749f842322988a33b50dbddfd2aab23b8629a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383655"
 ---
-# <a name="whats-changed"></a>更改的内容
+# <a name="whats-changed"></a>更改的功能
 
 
 

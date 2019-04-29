@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7c7212c67a0f41bce4080445b77bb672a349d19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379703"
 ---
 # <a name="irpmjdirectorycontrol"></a>IRP\_MJ\_DIRECTORY\_控件
 
@@ -69,7 +69,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 
 筛选器驱动程序必须在堆栈上传递此 IRP 到下一步低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理目录控制请求的 IRP 堆栈位置中设置的信息：
@@ -227,7 +227,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 <a href="" id="irpsp--parameters-querydirectory-length"></a>*IrpSp-&gt;Parameters.QueryDirectory.Length*  
 指向缓冲区的长度以字节为单位*Irp-&gt;UserBuffer*。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件\_两者\_DIR\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540235)

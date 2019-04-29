@@ -1,6 +1,6 @@
 ---
-title: HID 报表故障排除
-description: HID 报表故障排除
+title: 排查 HID 报告问题
+description: 排查 HID 报告问题
 ms.assetid: 8fbf641b-461b-44c2-9cc5-c1547abc75d6
 keywords:
 - HID 报告 WDK，故障排除
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a668f4a72cf44ca47e9c454178da2e4bf8d797a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376745"
 ---
-# <a name="troubleshooting-hid-reports"></a>HID 报表故障排除
+# <a name="troubleshooting-hid-reports"></a>排查 HID 报告问题
 
 
 

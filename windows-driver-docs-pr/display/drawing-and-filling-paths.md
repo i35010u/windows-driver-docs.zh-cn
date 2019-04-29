@@ -1,6 +1,6 @@
 ---
-title: 绘制并填充路径
-description: 绘制并填充路径
+title: 绘制和填充路径
+description: 绘制和填充路径
 ms.assetid: bc31aeba-d1f1-4e38-a8df-19e8d7e178c7
 keywords:
 - GDI WDK Windows 2000 显示中路径
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e6fbe39ea55055b243bdc6befb934fb2a44435a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377721"
 ---
-# <a name="drawing-and-filling-paths"></a>绘制并填充路径
+# <a name="drawing-and-filling-paths"></a>绘制和填充路径
 
 
 ## <span id="ddk_drawing_and_filling_paths_gg"></span><span id="DDK_DRAWING_AND_FILLING_PATHS_GG"></span>

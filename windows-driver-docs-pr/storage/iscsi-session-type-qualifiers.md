@@ -5,11 +5,11 @@ ms.assetid: e293c4c3-3e98-4481-b71f-9433ede0cc61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 24d7a048da4e5eefd0424012a3aac5a0bb8a7d00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377487"
 ---
 # <a name="iscsisessiontypequalifiers"></a>ISCSI\_会话\_类型\_限定符
 

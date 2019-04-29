@@ -8,11 +8,11 @@ ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: b911cd1a888166419f113e34b09a7dd2da988c13
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375339"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 

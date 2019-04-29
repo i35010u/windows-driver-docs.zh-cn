@@ -5,11 +5,11 @@ ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21b6854177caada0cd72e669aa2eff6ad6c3267
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382081"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 

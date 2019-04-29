@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY_SIGNAL_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 589ce10edc66861e06ec1721367e5876dce2dc32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379183"
 ---
 # <a name="wditlvbssentrysignalinfo"></a>WDI\_TLV\_BSS\_条目\_信号\_信息
 
@@ -56,7 +56,7 @@ WDI\_TLV\_BSS\_条目\_信号\_信息是包含 BSS 入口的信号信息 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

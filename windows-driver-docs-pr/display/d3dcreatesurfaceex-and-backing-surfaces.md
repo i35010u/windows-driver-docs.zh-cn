@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d9afd6f955c1a8c5eea51e406eba2490bd3cb3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370879"
 ---
 # <a name="d3dcreatesurfaceex-and-backing-surfaces"></a>D3dCreateSurfaceEx 和后备图面
 

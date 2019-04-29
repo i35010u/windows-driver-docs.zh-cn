@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d62094720d99017ad9597c84ad3b7f3d24224c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377947"
 ---
 # <a name="statussummary-element"></a>StatusSummary 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56555771"
 </wscn:StatusSummary>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -84,7 +84,7 @@ ms.locfileid: "56555771"
 
 WSD 扫描服务必须包括**StatusSummary**元素会在发送时[ **ScannerStatusSummaryEvent** ](scannerstatussummaryevent.md)事件元素到客户端。 中指定扫描程序的当前状态以及为何处于此状态的原因[ **ScannerState** ](scannerstate.md)并[ **ScannerStateReasons** ](scannerstatereasons.md)元素，分别。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ScannerStateReasons**](scannerstatereasons.md)

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8d4876ba56d25b5b9b5ae27223292936a475c8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372251"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注进行流数据深度检测
 

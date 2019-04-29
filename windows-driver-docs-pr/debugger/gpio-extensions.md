@@ -5,11 +5,11 @@ ms.assetid: 1703C402-D770-4D3F-AB70-F2D30712A5D9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f35df5cb6bc7b76170002ba43a3a4cfcaae20795
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370863"
 ---
 # <a name="gpio-extensions"></a>GPIO 扩展
 
@@ -39,7 +39,7 @@ GPIO framework 扩展驱动程序设备扩展结构。 此结构保存有关单�
 
 若要开始调试 GPIO 问题，请输入[ **！ gpiokd.clientlist** ](-gpiokd-clientlist.md)命令。 **！ Gpiokd.clientlist**命令显示所有已注册的 GPIO 控制器和显示地址，可以将它们传递给其他 GPIO 调试器命令的概述。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -87,7 +87,7 @@ GPIO framework 扩展驱动程序设备扩展结构。 此结构保存有关单�
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [专用的扩展命令](specialized-extensions.md)

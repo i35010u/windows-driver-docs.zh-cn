@@ -1,19 +1,19 @@
 ---
-title: 常见的 RPC 调试技术
-description: 常见的 RPC 调试技术
+title: 常用 RPC 调试方法
+description: 常用 RPC 调试方法
 ms.assetid: 4439ba40-909d-4fa8-a96d-8ffaf90e22d9
 keywords:
 - RPC 调试、 常见技术
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1222ef76248587d2ccb2e2a4070c93752f0a6a50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375075"
 ---
-# <a name="common-rpc-debugging-techniques"></a>常见的 RPC 调试技术
+# <a name="common-rpc-debugging-techniques"></a>常用 RPC 调试方法
 
 
 ## <span id="ddk_common_rpc_debugging_techniques_dbg"></span><span id="DDK_COMMON_RPC_DEBUGGING_TECHNIQUES_DBG"></span>

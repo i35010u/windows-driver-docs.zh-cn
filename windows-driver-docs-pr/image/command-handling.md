@@ -5,11 +5,11 @@ ms.assetid: 1b940585-8228-4857-92bf-c77c789f6ad5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e766b929e130030dcb28c2a3dbd4cef30626f52e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373183"
 ---
 # <a name="command-handling"></a>命令处理
 

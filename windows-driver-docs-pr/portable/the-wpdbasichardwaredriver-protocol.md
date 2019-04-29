@@ -1,14 +1,14 @@
 ---
-Description: The WpdBasicHardwareDriver Protocol
+Description: WpdBasicHardwareDriver 协议
 title: WpdBasicHardwareDriver 协议
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a53dc95edb3b90acd1a56727ac6fdd2ac19ae24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378669"
 ---
 # <a name="the-wpdbasichardwaredriver-protocol"></a>WpdBasicHardwareDriver 协议
 
@@ -58,7 +58,7 @@ DEFINE_GUID (EVENT_SENSOR_READING_UPDATED, 0xada23b0b, 0xce13, 0x4e11, 0x9d, 0x2
 <th align="left">元素计数</th>
 <th align="left">元素大小</th>
 <th align="left">元素</th>
-<th align="left">间隔</th>
+<th align="left">Interval</th>
 </tr>
 </thead>
 <tbody>

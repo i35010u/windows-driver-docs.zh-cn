@@ -5,11 +5,11 @@ ms.assetid: 332FEBD6-9803-4502-8F84-9DB2F17BB19B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df83902740e4143861243de30ef4a11a91764c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377210"
 ---
 # <a name="minidriver-registration"></a>微型驱动程序注册
 

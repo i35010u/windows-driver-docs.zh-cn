@@ -1,6 +1,6 @@
 ---
-title: 命令条目格式
-description: 命令条目格式
+title: 命令项格式
+description: 命令项格式
 ms.assetid: f2b14c12-3c34-45b2-9ead-8cd57d657e9e
 keywords:
 - 打印机命令 WDK Unidrv，条目格式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da6a4734f4555ecfe543cdcfc11b01891806f9e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382621"
 ---
-# <a name="command-entry-format"></a>命令条目格式
+# <a name="command-entry-format"></a>命令项格式
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 114e1604-0d9a-418c-aee1-a9b615d13d21
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7aed1acdaae9c12ad6e7f7138df44f8b30dbcdf
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385919"
 ---
 # <a name="wi-fi-hotspot-offloading-functions"></a>Wi-Fi 热点卸载函数
 
@@ -27,7 +27,7 @@ ms.locfileid: "57464337"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“属性”</th>
+<th>名称</th>
 <th>描述</th>
 </tr>
 </thead>

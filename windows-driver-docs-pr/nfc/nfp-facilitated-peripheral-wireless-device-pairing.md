@@ -1,23 +1,23 @@
 ---
-title: NFP 商外围无线设备配对
-description: NFP 商外围无线设备配对
+title: NFP 推动的外设无线设备配对
+description: NFP 推动的外设无线设备配对
 ms.assetid: 7B57019F-C80A-4E74-BBC2-A26BEDEB20DD
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88935187221e5e387936a63f7dd6cc4b31e75fb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378641"
 ---
-# <a name="nfp-facilitated-peripheral-wireless-device-pairing"></a>NFP 商外围无线设备配对
+# <a name="nfp-facilitated-peripheral-wireless-device-pairing"></a>NFP 推动的外设无线设备配对
 
 
 NFP 技术如何帮助的方案之一是与 Windows 的蓝牙键盘、 鼠标和耳机等的无线设备配对。 支持仅单向配对。 不支持双向配对智能手机等设备所需的。

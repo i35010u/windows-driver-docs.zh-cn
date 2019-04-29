@@ -5,11 +5,11 @@ ms.assetid: 26f17443-cb89-4c93-9b67-35acb75b6d03
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 60c045db6de116d45e23cc505e314d6ee547d126
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380352"
 ---
 # <a name="mssmhbaportattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI 类
 

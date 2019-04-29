@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1458d9820f7bc2766c8f07f74b982d1b5d6a6fa9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384183"
 ---
 # <a name="isnmpoidfromstring-method"></a>ISNMP::OIDFromString 方法
 
@@ -43,7 +43,7 @@ HRESULT OIDFromString(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *bstrOID* \[in\]  
@@ -111,7 +111,7 @@ OIDArray = objSNMP.OIDFromString (". 43.18.1.1.2")
 <td>桌面设备</td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Olesnmp.h</td>
 </tr>
 </tbody>

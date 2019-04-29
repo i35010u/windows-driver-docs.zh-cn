@@ -5,11 +5,11 @@ ms.assetid: DB88876E-3C92-40E9-A2E2-19493F3357B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 213869001380bd45adae241e6f26d31ef7266e28
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379493"
 ---
 # <a name="building-uwp-device-apps"></a>构建 UWP 设备应用
 

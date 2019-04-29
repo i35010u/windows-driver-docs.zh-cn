@@ -1,14 +1,14 @@
 ---
-Description: This topic describes how a client driver can build a USB Request Block (URB) to transfer data to and from isochronous endpoints in a USB device.
+Description: 本主题介绍客户端驱动程序可以如何生成 USB 请求块 (URB) 将在同步终结点在 USB 设备中的数据传输。
 title: 如何将数据传输到 USB 常时等量终结点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7895644493e58c4d72ce0a7054007d12655b26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379913"
 ---
 # <a name="how-to-transfer-data-to-usb-isochronous-endpoints"></a>如何将数据传输到 USB 常时等量终结点
 
@@ -29,7 +29,7 @@ ms.locfileid: "56569182"
 
 客户端驱动程序将开始创建请求 URB 并提交到 USB 驱动程序堆栈 URB 等时传输。 由一个 USB 驱动程序堆栈中较低的驱动程序处理请求。 一旦收到 URB，USB 驱动程序堆栈请求执行一系列验证和计划的事务。 对于全速运行，在网络上的单个事务中包含同步总线每个间隔中传输数据包。 某些高速设备总线间隔中允许多个事务。 在这种情况下，客户端驱动程序可以发送或接收单个请求 (URB) 中同步的数据包中的更多数据。 SuperSpeed 设备支持多个事务，并且迸发传输，每个总线间隔允许更多的字节数。 突发传输有关的详细信息，请参阅 USB 3.0 规范页 9-42。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 同步传输创建一个请求之前，必须具有有关等时终结点的打开的管道的信息。
 
@@ -65,7 +65,7 @@ Windows 驱动程序框架 (WDF) 客户端驱动程序必须获得对框架的�
 
     下表显示**间隔**和高速度和 SuperSpeed 传输的计算的轮询期：
 
-    | 间隔 | 轮询期间 (2Interval-1)                      |
+    | Interval | 轮询期间 (2Interval-1)                      |
     |----------|---------------------------------------------------|
     | 1        | 1;数据传输总线间隔。        |
     | 2        | 2;数据传输到每个第二个总线时间间隔。 |

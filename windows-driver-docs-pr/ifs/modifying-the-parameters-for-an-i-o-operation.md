@@ -1,6 +1,6 @@
 ---
-title: 对于 I/O 操作修改的参数
-description: 对于 I/O 操作修改的参数
+title: 修改 I/O 操作的参数
+description: 修改 I/O 操作的参数
 ms.assetid: 8e25842f-6f10-412f-8cb2-156bea7d7983
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，修改参数
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bba99331db7919c3b2c44ada8bbe286f8dfc0ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384272"
 ---
-# <a name="modifying-the-parameters-for-an-io-operation"></a>对于 I/O 操作修改的参数
+# <a name="modifying-the-parameters-for-an-io-operation"></a>修改 I/O 操作的参数
 
 
 ## <span id="ddk_modifying_the_parameters_for_an_io_operation_if"></span><span id="DDK_MODIFYING_THE_PARAMETERS_FOR_AN_IO_OPERATION_IF"></span>

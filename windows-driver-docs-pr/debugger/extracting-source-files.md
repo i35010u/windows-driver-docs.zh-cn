@@ -1,6 +1,6 @@
 ---
-title: 解压缩源代码文件
-description: 解压缩源代码文件
+title: 提取源文件
+description: 提取源文件
 ms.assetid: b7c859a9-5264-401c-ad96-ad044bcc140e
 keywords:
 - 解压缩源代码文件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acd9accb0cec0ee66680071bbdd607f14ad9ee29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375406"
 ---
-# <a name="extracting-source-files"></a>解压缩源代码文件
+# <a name="extracting-source-files"></a>提取源文件
 
 
 若要从你想要提供源的所有模块中提取所有源代码文件，使用该命令：
@@ -27,7 +27,7 @@ srctool.exe -x
 
 ### <a name="span-idwalkspanspan-idwalkspanwalk"></a><span id="walk"></span><span id="WALK"></span>遍历
 
-审核 (Walk.cmd) 脚本包含在为 Windows 调试工具。 此脚本浏览目录树以递归方式搜索，并与指定的文件掩码匹配的任何文件上执行任何指定的命令。 此语法为：
+审核 (Walk.cmd) 脚本包含在为 Windows 调试工具。 此脚本浏览目录树以递归方式搜索，并与指定的文件掩码匹配的任何文件上执行任何指定的命令。 语法为：
 
 ```console
 walk.cmd FileMask Command

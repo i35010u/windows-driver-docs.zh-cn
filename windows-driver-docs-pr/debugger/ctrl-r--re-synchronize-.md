@@ -1,5 +1,5 @@
 ---
-title: CTRL + R （重新同步）
+title: CTRL+R（重新同步）
 description: CTRL + R 键将与目标计算机同步。
 ms.assetid: 95ffa380-af90-4d56-b973-038e7ccc6760
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fb95a8994c80d6cc36432ae71eb9ac064bb33229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374392"
 ---
-# <a name="ctrlr-re-synchronize"></a>CTRL + R （重新同步）
+# <a name="ctrlr-re-synchronize"></a>CTRL+R（重新同步）
 
 
 CTRL + R 键将与目标计算机同步。

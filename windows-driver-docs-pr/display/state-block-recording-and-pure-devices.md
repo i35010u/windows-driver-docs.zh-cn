@@ -1,6 +1,6 @@
 ---
-title: 块录制和纯设备状态
-description: 块录制和纯设备状态
+title: 状态块记录和单纯设备
+description: 状态块记录和单纯设备
 ms.assetid: 9959d361-aa92-4209-8f81-deba96498941
 keywords:
 - DirectX 8.0 版本显示注释 WDK Windows 2000 中，纯设备状态阻止处理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c40c708ebf6429de76853bc5112dcbbb574b13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376013"
 ---
-# <a name="state-block-recording-and-pure-devices"></a>块录制和纯设备状态
+# <a name="state-block-recording-and-pure-devices"></a>状态块记录和单纯设备
 
 
 ## <span id="ddk_state_block_recording_and_pure_devices_gg"></span><span id="DDK_STATE_BLOCK_RECORDING_AND_PURE_DEVICES_GG"></span>

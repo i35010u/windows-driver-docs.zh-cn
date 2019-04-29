@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_USSD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ac8ac570b99b641aa3b3833fc1a528eeae97a5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383180"
 ---
 # <a name="oidwwanussd"></a>OID\_WWAN\_USSD
 
@@ -35,7 +35,7 @@ Windows 不会发送一个 OID\_WWAN\_USSD 请求到微型端口驱动程序如�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持从 Windows 8 开始。</p></td>
 </tr>
 <tr class="even">

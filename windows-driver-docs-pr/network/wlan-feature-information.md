@@ -5,11 +5,11 @@ ms.assetid: E8B759CC-695E-418A-A93F-FA7F0E302D6D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34c568da241b9868df1e2d8bd3f1a8b331738eb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379787"
 ---
 # <a name="wlan-feature-information"></a>WLAN 功能信息
 

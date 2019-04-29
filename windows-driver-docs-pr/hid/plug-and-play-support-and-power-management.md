@@ -5,11 +5,11 @@ ms.assetid: 2D51B1B7-345E-4311-81D6-8A14CE2B44FE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c8ab4e5227671e191e68336422157605adfaa75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372989"
 ---
 # <a name="plug-and-play-support-for-i2c"></a>即插即用支持 I2C
 
@@ -24,13 +24,13 @@ ACPI 5.0 规范包括的 HID 类设备的支持。 HID I²C 的 ACPI 定义如�
 
 |                           |                                             |             |                                                 |                                                                                      |
 |---------------------------|---------------------------------------------|-------------|-------------------------------------------------|--------------------------------------------------------------------------------------|
-| 字段                     | 值                                       | ACPI 对象 | 格式                                          | 备注                                                                             |
+| 字段                     | ReplTest1                                       | ACPI 对象 | 格式                                          | 备注                                                                             |
 | 兼容 ID             | PNP0C50                                     | \_CID       | ACPI0C50 或 PNP0C50 的格式字符串     | CompatibleID                                                                         |
 | 硬件 ID               | 特定于供应商                             | \_HID       | VVVVdddd （例如 NVDA0001） 格式的字符串 | VendorID + DeviceID                                                                  |
 | 子系统                 | 特定于供应商                             | \_SUB       | VVVVssss （例如 INTL1234） 格式的字符串 | SubVendorID + SubSystemID                                                            |
 | 硬件版本         | 特定于供应商                             | \_HRV       | 0xRRRR （2 个字节修订版本）                         | RevisionID                                                                           |
 | 当前资源设置 | 特定于供应商                             | \_CRS       | 字节流                                     | 必须包括 I2CSerialBus 和 GPIO\_I2C 控制器 INT 和 GPIO 中断响应 |
-| 设备特定的方法    | GUID {3CDFF6F7-4267-4555-AD05-B30A3D8938DE} | \_DSM       | 应用包                                         | 定义包含 HID 描述符地址的结构。                        |
+| 设备特定的方法    | GUID {3CDFF6F7-4267-4555-AD05-B30A3D8938DE} | \_DSM       | package                                         | 定义包含 HID 描述符地址的结构。                        |
 
  
 
@@ -68,11 +68,11 @@ HIDClass.sys 组件生成的隐藏客户端设备节点的硬件 ID 是按如下
 |                                                      |                       |
 |------------------------------------------------------|-----------------------|
 | 硬件标识符                                  | 兼容的标识符 |
-| HID\\VEN\_MSFT&DEV\_0010&REV\_0002&Col01;            | 不适用                   |
-| -HID\\VEN\_MSFT&DEV\_0010&Col01 HID\\MSFT0010&Col01; | 不适用                   |
-| -HID\\\*MSFT0010Col01                                | 不适用                   |
-| -HID\_DEVICE\_UP:FF00\_U:0001;                       | 不适用                   |
-| -HID\_DEVICE                                         | 不适用                   |
+| HID\\VEN\_MSFT&DEV\_0010&REV\_0002&Col01;            | 不可用                   |
+| -HID\\VEN\_MSFT&DEV\_0010&Col01 HID\\MSFT0010&Col01; | 不可用                   |
+| -HID\\\*MSFT0010Col01                                | 不可用                   |
+| -HID\_DEVICE\_UP:FF00\_U:0001;                       | 不可用                   |
+| -HID\_DEVICE                                         | 不可用                   |
 
  
 
@@ -113,7 +113,7 @@ HIDI2C。SYS 驱动程序支持以下命令
 
 |                 |                                                |                                                                                                                                                                                                       |
 |-----------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 命令         | 如何使用它                                  | 使用时                                                                                                                                                                                        |
+| Command         | 如何使用它                                  | 使用时                                                                                                                                                                                        |
 | Reset           | Windows 支持主机启动的重置。     | Windows 将发出此命令在以下方案-设备初始化期间的禁用/启用-卸载/重新安装                                                                         |
 | 获取/设置\_报表 | Windows 支持 Get/Set\_报表命令。 | Windows 将在以下方案中的过程发出以下命令，当 HID 客户端驱动程序发出 get/set 功能报表请求-当 HID 客户端驱动程序发出的同步输入/输出报表 |
 | 设置\_电源      | Windows 支持一组\_电源命令        | 系统将转换为低能耗 S3 / 连接待机状态-当系统处于关闭状态时，Windows 将在以下方案中的过程发出此命令。                               |

@@ -1,17 +1,17 @@
 ---
-title: 安装某个应用程序的设备元数据包
-description: 安装某个应用程序的设备元数据包
+title: 通过应用程序安装设备元数据包
+description: 通过应用程序安装设备元数据包
 ms.assetid: 3fec5938-b81b-4efe-8bcd-b2ef4b1c4b8b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d522b4f759455843b774385cf6781a359880d70d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369460"
 ---
-# <a name="installing-device-metadata-packages-through-an-application"></a>安装某个应用程序的设备元数据包
+# <a name="installing-device-metadata-packages-through-an-application"></a>通过应用程序安装设备元数据包
 
 
 若要安装中的设备元数据包[设备元数据存储区](device-metadata-store.md)通过使用应用程序，例如设备安装应用程序，请执行以下步骤：

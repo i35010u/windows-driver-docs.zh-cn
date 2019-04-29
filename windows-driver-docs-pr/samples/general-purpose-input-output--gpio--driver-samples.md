@@ -5,11 +5,11 @@ ms.assetid: F56180C7-44CF-47A6-A292-48DEF5AD90A6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93834e05c96e6f5b63be819f66fe4fcd7a9a4663
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371859"
 ---
 # <a name="general-purpose-inputoutput-gpio-driver-samples"></a>通用输入/输出 (GPIO) 驱动程序示例
 

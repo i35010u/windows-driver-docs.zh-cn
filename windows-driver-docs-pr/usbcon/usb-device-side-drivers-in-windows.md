@@ -1,16 +1,16 @@
 ---
-Description: Describes the architecture of the USB function stack.
-title: 在 Windows 中的 USB 设备端驱动程序
+Description: 介绍 USB 函数堆栈的体系结构。
+title: Windows 中的 USB 设备端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55390287dc7d81316f9eabc306fe97d5e28b47c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384512"
 ---
-# <a name="usb-device-side-drivers-in-windows"></a>在 Windows 中的 USB 设备端驱动程序
+# <a name="usb-device-side-drivers-in-windows"></a>Windows 中的 USB 设备端驱动程序
 
 
 介绍 USB 函数堆栈的体系结构。

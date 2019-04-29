@@ -1,5 +1,5 @@
 ---
-title: 跟踪日志
+title: Tracelog
 description: 跟踪日志 (Tracelog.exe) 是在命令提示符窗口中运行的事件跟踪控制器。 本部分介绍 Tracelog，说明了其命令语法，并供其使用提供实际示例。
 ms.assetid: aa3c144d-260b-44d2-b41c-d18be40ba541
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1505480232f53ad163fb5204c5d0375a8e0f0ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369717"
 ---
-# <a name="tracelog"></a>跟踪日志
+# <a name="tracelog"></a>Tracelog
 
 
 跟踪日志 (Tracelog.exe) 是在命令提示符窗口中运行的事件跟踪控制器。 本部分介绍 Tracelog，说明了其命令语法，并供其使用提供实际示例。
@@ -81,7 +81,7 @@ Tracelog 运行于 Windows 7 和更高版本的 Windows。
 
 许多功能跟踪日志也会出现在[TraceView](traceview.md)，包含具有除了命令行界面的图形用户界面 Windows Driver Kit (WDK) 中的工具。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 -   [**Tracelog 命令语法**](tracelog-command-syntax.md)
 -   [Tracelog 显示](tracelog-displays.md)

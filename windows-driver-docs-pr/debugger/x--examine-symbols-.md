@@ -1,5 +1,5 @@
 ---
-title: x （检查符号）
+title: x（检查符号）
 description: X 命令显示所有与指定的模式匹配的上下文中的符号。
 ms.assetid: 8c71c2ca-4a9d-43e4-91b3-f05b5475316d
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cf8fe0e8af0ae4eefd8de0b99998e00c7d6284
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381923"
 ---
-# <a name="x-examine-symbols"></a>x （检查符号）
+# <a name="x-examine-symbols"></a>x（检查符号）
 
 
 **X**命令显示所有与指定的模式匹配的上下文中的符号。

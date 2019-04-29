@@ -1,6 +1,6 @@
 ---
-title: 渐进式扫描监视器和交错的数据
-description: 渐进式扫描监视器和交错的数据
+title: 逐行扫描监视器和隔行扫描数据
+description: 逐行扫描监视器和隔行扫描数据
 ms.assetid: 324d8b1f-5b7d-46b6-854a-e93b10db24e5
 keywords:
 - 交错视频 WDK 的视频端口扩展
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51817f2b58d40677b65871db843fb92c910334e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383911"
 ---
-# <a name="progressive-scan-monitors-and-interleaved-data"></a>渐进式扫描监视器和交错的数据
+# <a name="progressive-scan-monitors-and-interleaved-data"></a>逐行扫描监视器和隔行扫描数据
 
 
 ## <span id="ddk_progressive_scan_monitors_and_interleaved_data_gg"></span><span id="DDK_PROGRESSIVE_SCAN_MONITORS_AND_INTERLEAVED_DATA_GG"></span>

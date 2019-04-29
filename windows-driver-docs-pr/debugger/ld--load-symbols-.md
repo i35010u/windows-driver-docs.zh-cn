@@ -1,5 +1,5 @@
 ---
-title: ld （加载符号）
+title: ld（加载符号）
 description: Ld 命令加载指定的模块的符号和更新模块的所有信息。
 ms.assetid: 1dae519f-8dd1-4f30-98f4-fe904454c84c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 606e10615b5c49e421f448d95991d0ad77956578
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383514"
 ---
-# <a name="ld-load-symbols"></a>ld （加载符号）
+# <a name="ld-load-symbols"></a>ld（加载符号）
 
 
 **Ld**命令加载指定的模块的符号和更新模块的所有信息。

@@ -5,11 +5,11 @@ ms.assetid: 59f9b71b-e4bd-44a3-a4f2-dfea9f1045e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 289f90f3a34325df8a1d6f2942189639be609bf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373371"
 ---
 # <a name="auto-item"></a>自动项
 

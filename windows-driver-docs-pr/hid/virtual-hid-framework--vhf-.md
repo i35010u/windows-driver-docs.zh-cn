@@ -5,11 +5,11 @@ ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92286f38db7ec35cd94b6f64f2ab7ac8fdd4a539
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376733"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID Framework (VHF) 编写的 HID 源驱动程序
 

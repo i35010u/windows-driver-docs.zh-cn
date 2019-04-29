@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2deba7b3bc230bd92ee4e6ec35651063035c4d08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383847"
 ---
-# <a name="example-simple-pass-through-dispatch-and-completion"></a>示例：简单传递调度和完成
+# <a name="example-simple-pass-through-dispatch-and-completion"></a>例如：简单传递调度和完成
 
 
 ## <span id="ddk_example_simple_pass_through_dispatch_and_completion_if"></span><span id="DDK_EXAMPLE_SIMPLE_PASS_THROUGH_DISPATCH_AND_COMPLETION_IF"></span>

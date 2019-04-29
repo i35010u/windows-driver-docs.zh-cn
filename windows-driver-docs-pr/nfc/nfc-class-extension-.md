@@ -4,19 +4,19 @@ description: 本部分介绍 NFC 类扩展 (CX) 和 NFC 客户端驱动程序之
 ms.assetid: 64599C5E-7E72-4712-B733-24C078919B84
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 - CX
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ff8f74e80942dc8d8578e9921cf23e9b7995a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378869"
 ---
 # <a name="nfc-class-extension-cx-design-guide"></a>NFC 类扩展 (CX) 设计指南
 
@@ -61,7 +61,7 @@ Windows 定义 NFC 驱动程序由 NFC CX 驱动程序实现的 DDI 如下：
 
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [术语表](glossary.md)

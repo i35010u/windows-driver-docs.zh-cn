@@ -1,6 +1,6 @@
 ---
-title: IOCTL 和并行端口和设备的回调支持
-description: IOCTL 和并行端口和设备的回调支持
+title: 对并行端口和设备的 IOCTL 和回调支持
+description: 对并行端口和设备的 IOCTL 和回调支持
 ms.assetid: 72a31f50-2f59-4a4d-aac7-571f83a94259
 keywords:
 - 系统提供并行的驱动程序 WDK Ioctl
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8d707bbd2b70b5af8ce580c5ba9ab489eceff6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373533"
 ---
-# <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>IOCTL 和并行端口和设备的回调支持
+# <a name="ioctl-and-callback-support-for-parallel-ports-and-devices"></a>对并行端口和设备的 IOCTL 和回调支持
 
 
 

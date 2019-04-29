@@ -5,11 +5,11 @@ ms.assetid: 9C0BB4B8-184A-4C1A-8B47-C30C8318AEEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 966b6d52548c937c3479bab0af8736e855ad6950
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385481"
 ---
 # <a name="le-hang-detection"></a>LE 挂起检测
 

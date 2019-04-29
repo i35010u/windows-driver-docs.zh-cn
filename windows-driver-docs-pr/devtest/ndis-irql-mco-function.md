@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d72092554e646d7785bf658317cd422bd28c6764
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370795"
 ---
 # <a name="irqlmcofunction-rule-ndis"></a>Irql\_MCO\_函数规则 (ndis)
 

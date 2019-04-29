@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dfa7dadb57b5a6c532499f7bde0c46399774c65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380505"
 ---
 # <a name="kseventbdapinconnected"></a>KSEVENT\_BDA\_PIN\_已连接
 

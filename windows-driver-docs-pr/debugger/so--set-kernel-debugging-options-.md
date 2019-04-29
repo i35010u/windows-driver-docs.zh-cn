@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 331c83819a53e818e1dfb962224b3e6583025d05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368109"
 ---
 # <a name="so-set-kernel-debugging-options"></a>so（设置内核调试选项）
 

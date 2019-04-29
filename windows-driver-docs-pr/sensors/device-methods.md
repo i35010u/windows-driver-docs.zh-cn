@@ -5,11 +5,11 @@ ms.assetid: 4F1463B0-A307-4C70-A660-18AD876B3363
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01d505461c005775b77f2055ff4aafd994245ad8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377829"
 ---
 # <a name="device-methods"></a>设备方法
 

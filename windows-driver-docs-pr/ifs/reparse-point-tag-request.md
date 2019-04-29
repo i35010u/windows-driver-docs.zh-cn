@@ -5,11 +5,11 @@ ms.assetid: B4E4382B-4FB8-4E21-8FC4-EDDE8DD4AC77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ed9aa4f44f08bd41a64588d5f8350074dfc2b7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370109"
 ---
 # <a name="reparse-point-tag-request"></a>重新分析点标记请求
 

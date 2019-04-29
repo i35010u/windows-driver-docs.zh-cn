@@ -4,11 +4,11 @@ description: 对于完全分析反汇编，每个基本块包含一组控制流�
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b410b04de5f2ad5172bbd1c3fe85498ac71c6f28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374389"
 ---
 # <a name="control-flow-objects"></a>控制流对象 
 ## <a name="summary"></a>总结

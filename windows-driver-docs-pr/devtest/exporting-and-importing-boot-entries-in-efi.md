@@ -1,6 +1,6 @@
 ---
-title: 导出和导入在 EFI 启动项
-description: 导出和导入在 EFI 启动项
+title: 导出和导入 EFI 中的启动项
+description: 导出和导入 EFI 中的启动项
 ms.assetid: bd019064-cb8c-434c-b471-192168564540
 keywords:
 - NVRAM 启动选项 WDK，导出
@@ -15,13 +15,13 @@ keywords:
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d0f19d6219aa1c1fdf057ad2884b71f75ef3f508
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378813"
 ---
-# <a name="exporting-and-importing-boot-entries-in-efi"></a>导出和导入在 EFI 启动项
+# <a name="exporting-and-importing-boot-entries-in-efi"></a>导出和导入 EFI 中的启动项
 
 使用**nvrboot x** （导出） 命令，以创建一份备份的启动项。 设计可轻松在需要时查找的备份副本文件命名和存储约定。
 

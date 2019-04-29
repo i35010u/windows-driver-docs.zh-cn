@@ -5,11 +5,11 @@ ms.assetid: 44745e33-2bd8-4200-be29-b3ddb0e30de4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9631053a57ee794600b353d06f4bcbce48bcbe52
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370374"
 ---
 # <a name="win32-devicecapabilities-api-behavior-changes"></a>Win32 DeviceCapabilities API 行为更改
 

@@ -1,17 +1,17 @@
 ---
-title: 原始数据包流量
-description: 原始数据包流量
+title: 发起数据包流量
+description: 发起数据包流量
 ms.assetid: 613C7E82-387D-47AE-A699-A799087D3C1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ed5afb14e21e4d99530bc5496e6980ed4924eb0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378245"
 ---
-# <a name="originating-packet-traffic"></a>原始数据包流量
+# <a name="originating-packet-traffic"></a>发起数据包流量
 
 
 本主题介绍如何 HYPER-V 扩展发起新的数据包，并将其注入到可扩展交换机数据路径。

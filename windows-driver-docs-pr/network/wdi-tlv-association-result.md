@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESULT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d556abb4211f97a067c2013035cddbd46df70d9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376242"
 ---
 # <a name="wditlvassociationresult"></a>WDI\_TLV\_关联\_结果
 

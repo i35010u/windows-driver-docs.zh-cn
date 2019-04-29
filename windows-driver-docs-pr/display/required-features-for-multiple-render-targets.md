@@ -1,6 +1,6 @@
 ---
-title: 多个呈现器目标所需的功能
-description: 多个呈现器目标所需的功能
+title: 多个渲染器目标的必需功能
+description: 多个渲染器目标的必需功能
 ms.assetid: fa807bde-8c3b-4ba8-b899-cdcd0b8d2458
 keywords:
 - 呈现多个目标 WDK DirectX 9.0，必需的功能
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 141c176389218f3efc798aa7f464c356213efd20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383218"
 ---
-# <a name="required-features-for-multiple-render-targets"></a>多个呈现器目标所需的功能
+# <a name="required-features-for-multiple-render-targets"></a>多个渲染器目标的必需功能
 
 
 ## <span id="ddk_required_features_for_multiple_render_targets_gg"></span><span id="DDK_REQUIRED_FEATURES_FOR_MULTIPLE_RENDER_TARGETS_GG"></span>

@@ -1,14 +1,14 @@
 ---
-Description: Installing the Sample Driver
+Description: 安装示例驱动程序
 title: 安装示例驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b941ddd5d1ee3bc51b8b9e5a3b4fa69184725b0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378629"
 ---
 # <a name="installing-the-sample-driver"></a>安装示例驱动程序
 
@@ -60,7 +60,7 @@ UmdfDispatcher = FileHandle
 1.  打开 Windows 设备管理器。
 2.  右键单击在驱动程序**便携设备**节点，然后单击**卸载**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

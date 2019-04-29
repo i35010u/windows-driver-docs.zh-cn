@@ -1,6 +1,6 @@
 ---
-title: 有关在着色器 3 支持额外的指令槽
-description: 有关在着色器 3 支持额外的指令槽
+title: 支持着色器 3 的其他指令槽
+description: 支持着色器 3 的其他指令槽
 ms.assetid: 8ff00178-cd08-42ce-8dea-127fc0d04733
 keywords:
 - 指令槽 WDK DirectX 9.0
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1859e6504b6f9eb7664d74864a3a453750efe2f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375905"
 ---
-# <a name="supporting-additional-instruction-slots-for-shader-3"></a>有关在着色器 3 支持额外的指令槽
+# <a name="supporting-additional-instruction-slots-for-shader-3"></a>支持着色器 3 的其他指令槽
 
 
 ## <span id="ddk_supporting_additional_instruction_slots_for_shader_3_gg"></span><span id="DDK_SUPPORTING_ADDITIONAL_INSTRUCTION_SLOTS_FOR_SHADER_3_GG"></span>

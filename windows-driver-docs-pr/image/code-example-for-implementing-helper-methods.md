@@ -5,11 +5,11 @@ ms.assetid: 4f9710c2-3741-4048-9b6c-b21241b72c91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64a71728098415e97494ee2a0e228033d59912d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373229"
 ---
 # <a name="code-example-for-implementing-helper-methods"></a>演示如何实现帮助程序方法的代码示例
 

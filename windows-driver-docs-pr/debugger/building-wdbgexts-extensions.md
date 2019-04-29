@@ -1,6 +1,6 @@
 ---
-title: 构建 WdbgExts 扩展
-description: 构建 WdbgExts 扩展
+title: 生成 WdbgExts 扩展
+description: 生成 WdbgExts 扩展
 ms.assetid: a3923de6-bed5-40e0-a9cb-99e0f4354448
 keywords:
 - 生成实用工具 (build.exe) 构建 WdbgExts 扩展
@@ -9,13 +9,13 @@ keywords:
 ms.date: 10/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d76e961f07cb4cedab340efcfd8b0f82d96c3527
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373973"
 ---
-# <a name="building-wdbgexts-extensions"></a>构建 WdbgExts 扩展
+# <a name="building-wdbgexts-extensions"></a>生成 WdbgExts 扩展
 
 
 ## <span id="ddk_building_wdbgexts_extensions_dbwx"></span><span id="DDK_BUILDING_WDBGEXTS_EXTENSIONS_DBWX"></span>

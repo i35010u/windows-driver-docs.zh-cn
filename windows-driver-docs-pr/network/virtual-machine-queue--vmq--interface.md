@@ -5,11 +5,11 @@ ms.assetid: AE0F65F0-7A5B-48FA-8635-617E71D86479
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5caf6ae4646b3baee1bbd0b877b71e779d5d87b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378228"
 ---
 # <a name="virtual-machine-queue-vmq-interface"></a>虚拟机队列 (VMQ) 接口
 

@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c01270f84d0068459cfa792f20aa33ab3623c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380409"
 ---
 # <a name="macroblock-oriented-picture-decoding"></a>面向宏块的图片解码
 

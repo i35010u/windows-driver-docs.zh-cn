@@ -1,6 +1,6 @@
 ---
-title: 完成某个 I/O 操作中 Preoperation 回调例程
-description: 完成某个 I/O 操作中 Preoperation 回调例程
+title: 在预操作回调例程中完成 I/O 操作
+description: 在预操作回调例程中完成 I/O 操作
 ms.assetid: 1f339779-dc88-4673-87d5-36cee0b27fc2
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，完成 I/O 操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0265d13001fa251b3a5ac769b5d1f25b8b7fa631
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370709"
 ---
-# <a name="completing-an-io-operation-in-a-preoperation-callback-routine"></a>完成某个 I/O 操作中 Preoperation 回调例程
+# <a name="completing-an-io-operation-in-a-preoperation-callback-routine"></a>在预操作回调例程中完成 I/O 操作
 
 
 ## <span id="ddk_completing_an_io_operation_in_a_preoperation_callback_routine_if"></span><span id="DDK_COMPLETING_AN_IO_OPERATION_IN_A_PREOPERATION_CALLBACK_ROUTINE_IF"></span>

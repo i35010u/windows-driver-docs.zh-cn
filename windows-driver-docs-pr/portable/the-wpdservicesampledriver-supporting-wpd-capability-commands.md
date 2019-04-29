@@ -1,14 +1,14 @@
 ---
-Description: Support for capability commands (WpdServiceSampleDriver sample)
+Description: 对功能命令 （WpdServiceSampleDriver 示例） 的支持
 title: 对功能命令 （WpdServiceSampleDriver 示例） 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3125c92465bc90d9f60816239ca6ed3301ed1dce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370486"
 ---
 # <a name="support-for-capability-commands-wpdservicesampledriver-sample"></a>对功能命令 （WpdServiceSampleDriver 示例） 的支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "56526414"
 
 当应用程序调用中的几种方法之一发布设备功能命令**IPortableDeviceCapabilities**接口。 这些命令处理最初由**WpdCapabilities::DispatchMessage**反过来，将调用相应的命令处理程序的方法。 **DispatchMessage**方法和单个处理程序中找到*WpdCapabilities.cpp*文件。下表描述了每个设备功能命令处理程序的名称以及该**DispatchMessage**处理给定的命令时调用。
 
-| 命令                                                            | 处理程序                        | 描述                                                                                                                                  |
+| Command                                                            | 处理程序                        | 描述                                                                                                                                  |
 |--------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | WPD\_命令\_功能\_获取\_支持\_命令               | OnGetSupportedCommands         | 应用程序尝试检索的设备支持的命令集时，发出。                                           |
 | WPD\_命令\_功能\_获取\_命令\_选项                  | OnGetCommandOptions            | 应用程序尝试检索受给定命令的选项时，发出。                                              |
@@ -40,7 +40,7 @@ ms.locfileid: "56526414"
 
 当应用程序调用中的几种方法之一，在发出服务功能命令**IPortableDeviceServiceCapabilities**接口。 这些命令处理最初由**WpdServiceCapabilities::DispatchMessage**方法，反过来，将调用相应的命令处理程序。 **DispatchMessage**方法和单个处理程序中找到*WpdServiceCapabilities.cpp*文件。下表描述了每个设备功能命令处理程序的名称以及该**DispatchMessage**处理给定的命令时调用。
 
-| 命令                                                                     | 处理程序                        | 描述                                                                                                            |
+| Command                                                                     | 处理程序                        | 描述                                                                                                            |
 |-----------------------------------------------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | WPD\_命令\_服务\_功能\_获取\_支持\_命令               | OnGetSupportedCommands         | 应用程序尝试检索给定的服务支持的命令集时，发出。              |
 | WPD\_命令\_服务\_功能\_获取\_命令\_选项                  | OnGetCommandOptions            | 应用程序尝试检索受给定命令的选项时，发出。                        |
@@ -60,7 +60,7 @@ ms.locfileid: "56526414"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

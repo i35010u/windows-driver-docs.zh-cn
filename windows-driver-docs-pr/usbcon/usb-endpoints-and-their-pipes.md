@@ -1,16 +1,16 @@
 ---
-Description: A USB device has endpoints that are used to for data transfers.
-title: USB 终结点和其管道
+Description: USB 设备都有用于数据传输到的终结点。
+title: USB 终结点及其管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6e04a27d03fe54fcd80370d8ae6e40b66b22566
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376403"
 ---
-# <a name="usb-endpoints-and-their-pipes"></a>USB 终结点和其管道
+# <a name="usb-endpoints-and-their-pipes"></a>USB 终结点及其管道
 
 
 **摘要**

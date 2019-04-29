@@ -5,11 +5,11 @@ ms.assetid: 454FB042-76FA-4A46-9549-4DE8BF52A2D3
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d59bffca23d1e7cf6d4819a73ca848a843914227
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380471"
 ---
 # <a name="warning-rule-set-ndis"></a>警告规则集 (NDIS)
 

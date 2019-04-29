@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fd2eb0d92e75bcd6259ae0a9b979204b3518a2b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384279"
 ---
 # <a name="miscellaneous-routines"></a>杂项例程
 

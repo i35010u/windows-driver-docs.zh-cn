@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 7dacbac9eaf8a6203a72ef249a0788d9f219265a
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376627"
 ---
 # <a name="oidwdisetassociationparameters"></a>OID\_WDI\_设置\_关联\_参数
 

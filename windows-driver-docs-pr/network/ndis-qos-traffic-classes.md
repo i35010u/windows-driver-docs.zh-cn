@@ -1,17 +1,17 @@
 ---
-title: NDIS QoS 通信类
-description: NDIS QoS 通信类
+title: NDIS QoS 流量类
+description: NDIS QoS 流量类
 ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e05568cda29e6447344c3251b3786b9dc89abb15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378257"
 ---
-# <a name="ndis-qos-traffic-classes"></a>NDIS QoS 通信类
+# <a name="ndis-qos-traffic-classes"></a>NDIS QoS 流量类
 
 
 NDIS 服务质量 (QoS) 通信类指定一组策略，以确定网络适配器如何处理传输，或*出口*，为优先传送的数据包。 每个流量类指定应用于传出数据包的以下策略：

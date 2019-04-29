@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LAST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 40330e5150a2ef45be4c3057ec319fd971adbd66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375697"
 ---
 # <a name="oidgenlastchange"></a>OID\_GEN\_最后一个\_更改
 

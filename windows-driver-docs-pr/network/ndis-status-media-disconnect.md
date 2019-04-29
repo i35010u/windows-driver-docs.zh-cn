@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_MEDIA_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 155e63b7bb3d2bf9af0d50f2db842869dc9dc52e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380151"
 ---
 # <a name="ndisstatusmediadisconnect"></a>NDIS\_状态\_媒体\_断开连接
 
@@ -37,7 +37,7 @@ NDIS 5。*x*和更早的微型端口驱动程序指示[ **NDIS\_状态\_媒体\_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不受支持 NDIS 6.0 及更高版本 (使用<a href="ndis-status-link-state.md" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](ndis-status-link-state.md)"> <strong>NDIS_STATUS_LINK_STATE</strong> </a>相反)。 仅支持 Windows Vista 和 Windows XP 中的 NDIS 5.1 驱动程序。</p></td>
 </tr>
 <tr class="even">

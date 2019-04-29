@@ -5,11 +5,11 @@ ms.assetid: a5f4384a-8d78-4dc6-969b-f7a1fa6cb5e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67764e4db2fea599b805c81e6a094e83e66b6a8a
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372522"
 ---
 # <a name="pscript5-keywords"></a>Pscript5 关键字
 

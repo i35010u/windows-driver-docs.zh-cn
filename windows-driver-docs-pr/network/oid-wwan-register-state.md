@@ -7,11 +7,11 @@ keywords: -从 Windows Vista 开始 OID_WWAN_REGISTER_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: a4eb8530c35d537061fd8e7b138efd5f6bec4127
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368535"
 ---
 # <a name="oidwwanregisterstate"></a>OID\_WWAN\_REGISTER\_STATE
 
@@ -45,7 +45,7 @@ RegisterAction 值的语义定义，如下所示：
 
 -   *手动*并*自动*注册模式只会影响网络选择模式。 MB 设备应尝试注册到所选网络，只要启用单选。
 
-### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+### <a name="windows-10-version-1903"></a>Windows 10 版本 1903
 
 在 Windows 10，版本 1903年开始支持此 OID 的新修订版本 3。 此扩展使宿主能够查询首选的无线访问技术 (Rat) 从微型端口驱动程序。 
 

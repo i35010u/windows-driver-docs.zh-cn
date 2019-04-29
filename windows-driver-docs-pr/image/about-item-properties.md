@@ -5,11 +5,11 @@ ms.assetid: f8d00e29-ce7d-4949-a713-07755f495d6a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52e4f310e019d3d622e72179eb6f0fec985f1a22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377615"
 ---
 # <a name="about-item-properties"></a>关于项属性
 

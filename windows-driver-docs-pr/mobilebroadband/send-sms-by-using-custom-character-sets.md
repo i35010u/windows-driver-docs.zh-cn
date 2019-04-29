@@ -1,17 +1,17 @@
 ---
-title: 通过使用自定义字符集发送短信
-description: 通过使用自定义字符集发送短信
+title: 使用自定义字符集发送短信
+description: 使用自定义字符集发送短信
 ms.assetid: c1f19c16-66f5-4bcd-ba28-950eaa6472d2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d978497c3245c4168e9c20263f7c43fed6e6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384647"
 ---
-# <a name="send-sms-by-using-custom-character-sets"></a>通过使用自定义字符集发送短信
+# <a name="send-sms-by-using-custom-character-sets"></a>使用自定义字符集发送短信
 
 
 如果文本模式界面需要访问原始消息协议数据单元 (PDU) 来实现不支持的方案，Windows 8、 Windows 8.1 和 Windows 10 启用 PDU 模式发送和读取收到的 SMS 消息。
@@ -110,7 +110,7 @@ function smsMessageReadSuccess(smsMessage)
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [开发 SMS 应用程序](developing-sms-apps.md)

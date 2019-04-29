@@ -1,6 +1,6 @@
 ---
-title: 较低的驱动程序完成之前推迟 PnP IRP 处理
-description: 较低的驱动程序完成之前推迟 PnP IRP 处理
+title: 将 PnP IRP 处理推迟到较低级驱动程序完成为止
+description: 将 PnP IRP 处理推迟到较低级驱动程序完成为止
 ms.assetid: 5bd9f3aa-30d5-4c45-afec-3e5ae0264f4a
 keywords:
 - 即插即用 WDK 内核，推迟 IRP 处理
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41a7b2bef603ee1268cd8eb60a4163e625850cda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369195"
 ---
-# <a name="postponing-pnp-irp-processing-until-lower-drivers-finish"></a>较低的驱动程序完成之前推迟 PnP IRP 处理
+# <a name="postponing-pnp-irp-processing-until-lower-drivers-finish"></a>将 PnP IRP 处理推迟到较低级驱动程序完成为止
 
 
 

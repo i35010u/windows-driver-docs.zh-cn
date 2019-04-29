@@ -5,18 +5,18 @@ ms.assetid: d0d57a4f-df83-4f3b-b7b4-417ad4e11350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2415989df11aba351d28b3a9da915070fd773ac2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380240"
 ---
 # <a name="enumerate-sms-devices"></a>枚举短信设备
 
 
 移动宽带短信平台提供的功能来获取第一个支持短信的移动宽带设备，或者获取所有支持短信的移动宽带设备的列表。 下面的示例代码显示了实例化的 SMS 对象，与默认短信设备和与特定设备。
 
-**请注意**  使用应用中的C#或在 Windows 8、 Windows 8.1 或 Windows 10 中，首次使用 c + + [ **SmsDevice** ](https://msdn.microsoft.com/library/windows/apps/br206511)对象调用[ **GetDefaultAsync** ](https://msdn.microsoft.com/library/windows/apps/br211915)或[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/br211914)应为 STA 线程上。 来自 MTA 线程的调用可能导致未定义的行为。
+**请注意**  使用应用中的C#或C++在 Windows 8、 Windows 8.1 或 Windows 10 中，第一个利用[ **SmsDevice** ](https://msdn.microsoft.com/library/windows/apps/br206511)对象调用[ **GetDefaultAsync** ](https://msdn.microsoft.com/library/windows/apps/br211915)或[ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/br211914)应为 STA 线程上。 来自 MTA 线程的调用可能导致未定义的行为。
 
  
 

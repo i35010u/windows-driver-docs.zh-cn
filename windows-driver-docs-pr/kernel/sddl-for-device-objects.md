@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 223c6ae8277ad5a31984ecdf1c3ada1851b941b3
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377309"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 

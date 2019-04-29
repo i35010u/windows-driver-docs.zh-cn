@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f39c780b1c308cd0af5fe093f692f59d08078da7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380641"
 ---
 # <a name="kspropertydroppedframescurrent"></a>KSPROPERTY\_DROPPEDFRAMES\_当前
 

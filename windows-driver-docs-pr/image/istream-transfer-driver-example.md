@@ -5,11 +5,11 @@ ms.assetid: fb830522-f95e-4dd7-8c1b-de092a6c5a51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf5d0bc9d4e670158d57f680e5c40ef5d6b2dcf5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381873"
 ---
 # <a name="istream-transfer-driver-example"></a>IStream 传输驱动程序示例
 

@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_LEGACY_BUS_INFORMATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e0f3efda270bedc00de5ccd97ba42dc745ee656
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381431"
 ---
 # <a name="irpmnquerylegacybusinformation"></a>IRP\_MN\_查询\_旧版\_总线\_信息
 
@@ -31,7 +31,7 @@ ms.locfileid: "56547919"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

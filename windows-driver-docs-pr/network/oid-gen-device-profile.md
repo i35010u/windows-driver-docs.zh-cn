@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DEVICE_PROFILE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f66944a4cebf1f4306d695b3832b46500172abc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368940"
 ---
 # <a name="oidgendeviceprofile"></a>OID\_GEN\_DEVICE\_PROFILE
 
@@ -27,7 +27,7 @@ OID\_GEN\_设备\_配置文件 OID 已过时。 NDIS 和 NDIS 驱动程序不使
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持。</p></td>
 </tr>
 <tr class="even">

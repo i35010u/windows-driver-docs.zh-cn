@@ -5,11 +5,11 @@ ms.assetid: 770ad50d-d42d-49ad-a302-e839a0ca1fb4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bbcdd8a09ec6e0235d0be7dbdb76115614ac561c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375750"
 ---
 # <a name="operator"></a>运算符
 
@@ -37,7 +37,7 @@ ms.locfileid: "56545695"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -49,7 +49,7 @@ ms.locfileid: "56545695"
 <td><p>xs:string</p></td>
 <td><p>是</p></td>
 <td><p>名称和国家/地区的运算符。</p>
-<p>示例：Contoso （阿根廷）</p></td>
+<p>例如：Contoso （阿根廷）</p></td>
 </tr>
 <tr class="even">
 <td><p>AccountExperienceURL</p></td>

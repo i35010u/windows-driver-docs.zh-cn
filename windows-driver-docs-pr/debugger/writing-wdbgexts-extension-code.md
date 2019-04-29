@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e895a8a9305905ec60e3b790bc62539e05e75b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374801"
 ---
 # <a name="writing-wdbgexts-extension-code"></a>编写 WdbgExts 扩展代码
 
@@ -26,7 +26,7 @@ WdbgExts 函数适用于在调试器扩展命令中使用。 它们可用于控�
 
 多个这些函数具有 32 位版本和 64 位版本。 通常情况下，64 位 WdbgExts 函数的名称以结尾"64"，例如**ReadIoSpace64**。 32 位版本具有任何数字结尾，例如， **ReadIoSpace**。 如果使用的 64 位指针，应使用"64"; 以结尾的函数名称如果使用的 32 位指针，则应使用"未修饰"函数名称。 你正在编写的所有扩展，建议 64 位指针。 请参阅[32 位指针和 64 位指针](32-bit-pointers-and-64-bit-pointers.md)有关详细信息。
 
-WdbgExts 扩展不能使用 DbgEng.h 标头文件中显示的 c + + 接口。 如果你想要使用这些接口，应改为编写 DbgEng 扩展或 EngExtCpp 扩展。 DbgEng 扩展和 EngExtCpp 扩展可以使用 DbgEng.h 中的所有接口以及 WdbgExts.h 中。 有关详细信息，请参阅[编写 DbgEng 扩展](writing-dbgeng-extensions.md)并[编写 EngExtCpp 扩展](writing-engextcpp-extensions.md)。
+WdbgExts 扩展不能使用C++DbgEng.h 标头文件中出现的接口。 如果你想要使用这些接口，应改为编写 DbgEng 扩展或 EngExtCpp 扩展。 DbgEng 扩展和 EngExtCpp 扩展可以使用 DbgEng.h 中的所有接口以及 WdbgExts.h 中。 有关详细信息，请参阅[编写 DbgEng 扩展](writing-dbgeng-extensions.md)并[编写 EngExtCpp 扩展](writing-engextcpp-extensions.md)。
 
 **请注意**  必须尝试从调试器扩展调用任何 DbgHelp 或了内部错误的例程。 这不受支持，可能会导致各种问题。
 

@@ -1,17 +1,17 @@
 ---
-title: 获取注入错误 （函数索引 18）
+title: 获取注入的错误（功能索引 18）
 description: 此函数返回有关当前注入错误的信息。
 ms.assetid: 60D4E64C-ABB6-4B24-971F-594306D8C07C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bcf77d0d8e67a87e4d60189fd9de968f8cd65ff5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379759"
 ---
-# <a name="get-injected-errors-function-index-18"></a>获取注入错误 （函数索引 18）
+# <a name="get-injected-errors-function-index-18"></a>获取注入的错误（功能索引 18）
 
 
 此函数返回有关当前注入错误的信息。
@@ -84,7 +84,7 @@ ms.locfileid: "56524408"
 
 如果禁用了平台错误注入，此函数应成功并返回相同的信息，如果有当前注入任何错误。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [注入错误 （函数索引 17）](inject-error--function-index-17-.md)

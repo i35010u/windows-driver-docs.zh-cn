@@ -1,18 +1,18 @@
 ---
-title: 启用 PCI 高速本机控制在 Windows 中
+title: 在 Windows 中启用 PCI Express 原生控制
 description: PCI Express 的功能，可通过在 Windows 中 PCI Express 本机控件功能控制
 ms:assetid: 0E3A4408-CBF7-494F-9F25-7C78E04526B4
 keywords: ACPI、 ACPI \_OSC 方法
 ms.date: 06/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b6d3572482779b7b0db40bd1e6936fb59034a88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379761"
 ---
-# <a name="enabling-pci-express-native-control-in-windows"></a>启用 PCI 高速本机控制在 Windows 中
+# <a name="enabling-pci-express-native-control-in-windows"></a>在 Windows 中启用 PCI Express 原生控制
 
 高级配置和电源接口 (ACPI) 操作系统功能 (\_OSC) 方法用于通信的功能或可由操作系统控制平台中提供的功能。 ACPI 规范，修订版本 4.0 中定义此方法。
 
@@ -36,5 +36,5 @@ ms.locfileid: "56544846"
   - [ACPI 网站](https://www.uefi.org/specifications)
   - [PCI SIG 网站](http://www.pcisig.org/)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 [PCIe 根端口的设备特定数据 (_DSD)](dsd-for-pcie-root-ports.md)

@@ -5,11 +5,11 @@ ms.assetid: 7fc8e53a-3fa9-4dad-a507-310329ca88c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad0ce4704485bdc2aea3d787893d0bd14b85c1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369425"
 ---
 # <a name="specifying-hardware-ids-for-a-bluetooth-device"></a>指定蓝牙设备的硬件 ID
 

@@ -1,6 +1,6 @@
 ---
-title: 使用 SetupAPI 的准则
-description: 使用 SetupAPI 的准则
+title: SetupAPI 使用指南
+description: SetupAPI 使用指南
 ms.assetid: a5005a4e-206a-4971-b89d-0d8f833d38c8
 keywords:
 - 安装程序 Api 函数 WDK，准则
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a6abc3b0fe5f41edd2dae26ee97c5d92bb843b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374563"
 ---
-# <a name="guidelines-for-using-setupapi"></a>使用 SetupAPI 的准则
+# <a name="guidelines-for-using-setupapi"></a>SetupAPI 使用指南
 
 
 

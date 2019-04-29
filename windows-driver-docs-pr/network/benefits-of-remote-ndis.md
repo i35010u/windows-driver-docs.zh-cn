@@ -1,19 +1,19 @@
 ---
-title: 远程 NDIS 的优点
-description: 远程 NDIS 的优点
+title: 远程 NDIS 的优势
+description: 远程 NDIS 的优势
 ms.assetid: ca559f2e-c7e3-4b8e-a04d-f3a544d33a68
 keywords:
 - 远程 NDIS WDK 网络、 优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 101186eaf0d6017731111d74fd02a6358f01b675
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367690"
 ---
-# <a name="benefits-of-remote-ndis"></a>远程 NDIS 的优点
+# <a name="benefits-of-remote-ndis"></a>远程 NDIS 的优势
 
 
 

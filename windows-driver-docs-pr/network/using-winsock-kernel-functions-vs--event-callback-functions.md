@@ -1,6 +1,6 @@
 ---
-title: 使用 Winsock 内核函数 vs。事件回调函数
-description: 使用 Winsock 内核函数 vs。
+title: 使用 Winsock 内核函数与事件回调函数
+description: 使用 Winsock 内核函数与
 ms.assetid: 63a3f933-f74a-4cb8-a7a9-9498e1c17afa
 keywords:
 - 网络、 Winsock 内核 WDK 函数
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2362f1c9194a4a55442a6d65a007ea8056e32249
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368916"
 ---
-# <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>使用 Winsock 内核函数 vs。事件回调函数
+# <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>使用 Winsock 内核函数与事件回调函数
 
 
 对于某些套接字操作 Winsock Kernel (WSK) 应用程序可以调用一个套接字的 WSK 函数以执行该操作或实现以及使 WSK 子系统调用时在套接字上一个事件的回调函数[事件](winsock-kernel-events.md)与操作关联时发生。 例如，在接收时面向连接的套接字上的数据，WSK 应用程序可以使对套接字的调用[ **WskReceive** ](https://msdn.microsoft.com/library/windows/hardware/ff571139)函数，或实现并启用[ *WskReceiveEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571140)套接字上的事件的回调函数。 WSK 应用程序的要求规定应用程序应使用哪种方法。 整个 WSK 文档提供了有关如何使用这两种方法的示例。

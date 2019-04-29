@@ -1,6 +1,6 @@
 ---
-title: 各个设备管理的电源
-description: 各个设备管理的电源
+title: 管理单个设备的电源
+description: 管理单个设备的电源
 ms.assetid: 95c7e900-5d51-4eb7-8780-1c40befa3599
 keywords:
 - 电源管理 WDK 内核，设备管理
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d7df6d5266e19b0d8cde98506123533e13183eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380265"
 ---
-# <a name="managing-power-for-individual-devices"></a>各个设备管理的电源
+# <a name="managing-power-for-individual-devices"></a>管理单个设备的电源
 
 
 

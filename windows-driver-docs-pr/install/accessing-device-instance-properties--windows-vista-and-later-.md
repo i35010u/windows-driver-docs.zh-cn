@@ -5,11 +5,11 @@ ms.assetid: b571201a-e765-45d0-993b-5855041b4697
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 863f039cbc12a4e42250658880c292635e4a97c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375717"
 ---
 # <a name="accessing-device-instance-properties"></a>访问设备实例属性
 

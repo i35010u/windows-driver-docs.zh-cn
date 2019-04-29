@@ -5,11 +5,11 @@ ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac2f74a3c2b78b90ebc585964b8cb93cdbd290e8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379607"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 

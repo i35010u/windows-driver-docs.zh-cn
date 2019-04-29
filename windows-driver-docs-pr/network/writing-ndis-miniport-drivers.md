@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2cae199f5b862f78c1988665c80b9b5079c883
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379768"
 ---
 # <a name="writing-ndis-miniport-drivers"></a>编写 NDIS 微型端口驱动程序
 

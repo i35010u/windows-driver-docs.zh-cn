@@ -5,11 +5,11 @@ ms.assetid: d7f1b3b7-fdfc-45d6-bb62-19b475d466c6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f10d1637f526618209ebabfefc974b77bc47ac81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367524"
 ---
 # <a name="remote-ndis-version"></a>远程 NDIS 版本
 
@@ -28,7 +28,7 @@ ms.locfileid: "56520424"
 <thead>
 <tr class="header">
 <th align="left">版本标识符</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

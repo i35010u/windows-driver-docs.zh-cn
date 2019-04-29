@@ -4,11 +4,11 @@ title: 支持的格式检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d66ee2d63beb61e30e36fa0c3a8b0c86ff91b76
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376193"
 ---
 # <a name="supported-format-retrieval"></a>支持的格式检索
 

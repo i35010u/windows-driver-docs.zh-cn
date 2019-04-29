@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d70f693c518b594259c9d4cb1d15ffd50091977
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58898058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374941"
 ---
 # <a name="ctrlw-show-debugger-version"></a>CTRL+W（显示调试器版本）
 

@@ -1,20 +1,20 @@
 ---
-title: 存储控制器驱动程序
+title: SPB 控制器驱动程序
 description: 存储控制器是用于控制简单外围总线 （存储） 和传输数据传入和传出连接到存储的外围设备的设备。
 ms.assetid: 046353F9-315F-4328-8ECA-1C23AF87B4B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb56a5d4d05e8a7fa5c6200166555509523e6ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377799"
 ---
-# <a name="spb-controller-drivers"></a>存储控制器驱动程序
+# <a name="spb-controller-drivers"></a>SPB 控制器驱动程序
 
 
-存储控制器是控制的设备[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储），并将数据传入和传出连接到存储的外围设备。 存储控制器的硬件供应商提供的存储控制器驱动程序来管理控制器中的硬件功能。
+SPB 控制器是一个设备，该设备控制[简单外设总线](https://msdn.microsoft.com/library/windows/hardware/hh450903) (SPB) 并可向连接到 SPB 的外围设备传输数据以及从其传输数据。 SPB 控制器的硬件供应商会提供 SPB 控制器驱动程序来管理控制器中的硬件功能。
 
 从 Windows 8 开始，存储框架扩展 (SpbCx) 简化了控制器的驱动程序开发[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)(SPBs)。 SpbCx 是对系统提供的扩展[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF)。 存储控制器设备的硬件供应商提供的控制器驱动程序来执行特定于硬件的驱动程序的所有操作。 此驱动程序与 SpbCx 来执行特定于存储控制器的操作进行通信，并直接与 KMDF 执行通用驱动程序操作进行通信。
 
@@ -36,7 +36,7 @@ SpbCx 配合 SBP 控制器驱动程序来处理连接到存储的外围设备的
 
 驱动程序可以直接向存储控制器发送 I/O 请求。 当在用户模式应用程序将数据传输至存储连接外围设备中，应用程序必须依赖于存储外围设备驱动程序将发送相应的读取或写入请求到的存储控制器。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

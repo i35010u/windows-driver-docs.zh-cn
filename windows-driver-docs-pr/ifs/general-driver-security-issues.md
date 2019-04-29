@@ -1,17 +1,17 @@
 ---
-title: 通用驱动程序的安全问题
-description: 通用驱动程序的安全问题
+title: 常规的驱动程序安全问题
+description: 常规的驱动程序安全问题
 ms.assetid: 6788dc1e-585b-4a64-b65c-b8857a716cae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef25acdb2d847084ea548de41dcde553280260f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370155"
 ---
-# <a name="general-driver-security-issues"></a>通用驱动程序的安全问题
+# <a name="general-driver-security-issues"></a>常规的驱动程序安全问题
 
 
 ## <span id="ddk_general_driver_security_issues_if"></span><span id="DDK_GENERAL_DRIVER_SECURITY_ISSUES_IF"></span>

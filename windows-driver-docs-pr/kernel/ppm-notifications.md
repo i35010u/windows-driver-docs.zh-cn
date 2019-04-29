@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a7e925c079a0b727c558c9020ce6a88e3fffaaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369139"
 ---
 # <a name="processor-power-management-ppm-notifications"></a>处理器电源管理 (PPM) 通知
 PEP AcceptProcessorNotification 回调例程接收每个处理器电源管理 (PPM) 通知伴随通知参数指示类型的通知，以及指向数据结构的数据参数包含指定的通知类型的信息。

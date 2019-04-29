@@ -5,11 +5,11 @@ ms.assetid: CD2370F5-424C-405E-8A41-42C168023608
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8df7a17eafc35a724fd80f9f2fc3e9955766cd92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376650"
 ---
 # <a name="ieee-1394-sample"></a>IEEE 1394 示例
 

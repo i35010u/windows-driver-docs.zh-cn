@@ -1,6 +1,6 @@
 ---
-title: 实现 Plug and Play
-description: 实现 Plug and Play
+title: 实现即插即用
+description: 实现即插即用
 ms.assetid: ebd3aaa2-a701-41f3-88ff-2a6bdf7bd7cb
 keywords:
 - 即插即用 WDK 内核
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd581f42f0b738f12c423efb93498b97505cbed1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378757"
 ---
-# <a name="implementing-plug-and-play"></a>实现 Plug and Play
+# <a name="implementing-plug-and-play"></a>实现即插即用
 
 
 

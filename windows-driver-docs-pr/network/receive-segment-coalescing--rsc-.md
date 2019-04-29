@@ -5,11 +5,11 @@ ms.assetid: 9CB2AB1C-924C-4A19-B1E7-70C8C5C05B46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5e2018f14a3d6b7d4a1e2f4ad69af2367d93bc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372235"
 ---
 # <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 

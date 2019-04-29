@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6e662a22b27114ee6faf4629340c20cc3611baf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378903"
 ---
 # <a name="smsendrps-function"></a>SM\_SendRPS 函数
 
@@ -44,7 +44,7 @@ void SM_SendRPS(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *PortWWN*   
@@ -101,7 +101,7 @@ RPS 命令的结果。 微型端口驱动程序返回此信息在 SM RespBuffer 
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi.h</td>
 </tr>
 </tbody>

@@ -1,16 +1,16 @@
 ---
-Description: The Network Monitor tool (NetMon.exe) is a Windows-based application that you can use to view traces from WPD components.
-title: 使用网络监视工具
+Description: 网络监视工具 (NetMon.exe) 是基于 Windows 的应用程序，可用于查看来自 WPD 组件的跟踪。
+title: 使用网络监视器工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0de82fbc512572af5f18e1524fe032adbed34a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370471"
 ---
-# <a name="using-the-network-monitor-tool"></a>使用网络监视工具
+# <a name="using-the-network-monitor-tool"></a>使用网络监视器工具
 
 
 网络监视器工具 (*NetMon.exe*) 是一个基于 Windows 的应用程序，可用于查看来自 WPD 组件的跟踪。 该工具将替换*WpdMon.exe* ，并提供新的收集和查看 WPD 跟踪在 Windows 8 中。

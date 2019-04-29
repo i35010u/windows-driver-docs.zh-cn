@@ -5,11 +5,11 @@ ms.assetid: 0D16C46F-4622-4191-83F2-579FC17DE985
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9b63b47f6a8aeab61f29e575ca63fbabbef1ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371139"
 ---
 # <a name="adding-support-for-real-hardware-to-the-geolocation-driver-sample"></a>将对实际硬件的支持添加到地理位置驱动程序示例
 

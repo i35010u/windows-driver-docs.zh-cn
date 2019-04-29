@@ -1,6 +1,6 @@
 ---
-title: 将磁带 Miniclass 上下文存储在可选扩展
-description: 将磁带 Miniclass 上下文存储在可选扩展
+title: 将磁带微型类上下文存储在可选扩展中
+description: 将磁带微型类上下文存储在可选扩展中
 ms.assetid: 9b259403-2fae-4708-8765-2d998a535620
 keywords:
 - 磁带驱动程序 WDK 存储，上下文存储
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9a3330ca4ee4770a4bb3bfbb47c45e103b9f217
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376466"
 ---
-# <a name="storing-tape-miniclass-context-in-optional-extensions"></a>将磁带 Miniclass 上下文存储在可选扩展
+# <a name="storing-tape-miniclass-context-in-optional-extensions"></a>将磁带微型类上下文存储在可选扩展中
 
 
 ## <span id="ddk_storing_tape_miniclass_context_in_optional_extensions_kg"></span><span id="DDK_STORING_TAPE_MINICLASS_CONTEXT_IN_OPTIONAL_EXTENSIONS_KG"></span>

@@ -1,19 +1,19 @@
 ---
-title: 跟踪中的服务器进程的争用
-description: 跟踪中的服务器进程的争用
+title: 跟踪服务器进程中的争用
+description: 跟踪服务器进程中的争用
 ms.assetid: ef0c0294-a010-439b-82dd-25148e05a7f1
 keywords:
 - RPC 调试、 跟踪争用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 041d8a089755a25fafb2586295b787fa2776081c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380793"
 ---
-# <a name="tracking-contention-in-the-server-process"></a>跟踪中的服务器进程的争用
+# <a name="tracking-contention-in-the-server-process"></a>跟踪服务器进程中的争用
 
 
 ## <span id="ddk_tracking_contention_in_the_server_process_dbg"></span><span id="DDK_TRACKING_CONTENTION_IN_THE_SERVER_PROCESS_DBG"></span>

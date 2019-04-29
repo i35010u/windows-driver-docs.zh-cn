@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d5cbd295dca86a534a222134513fa5dd4a85517c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376028"
 ---
 # <a name="irqliodispatch-rule-wdm"></a>IrqlIoDispatch 规则 (wdm)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56519561"
 </tbody>
 </table>
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [管理硬件优先级](https://msdn.microsoft.com/library/windows/hardware/ff554368)

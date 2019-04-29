@@ -5,11 +5,11 @@ ms.assetid: deded77d-8810-498c-a5ae-44885189c061
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 629538fce62acd6f785fb722104458c2a8f00a02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380261"
 ---
 # <a name="discover-whether-the-network-device-radio-is-turned-on"></a>发现网络设备无线电是否已打开
 

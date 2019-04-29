@@ -5,11 +5,11 @@ ms.assetid: 5d8a2bb7-efe1-4cf2-9424-b63d4f17805e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e99786e33559627d9e1e8d31096eb6e25792c22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379127"
 ---
 # <a name="where-do-i-put-the-include-statement-for-the-trace-message-header-file"></a>在其中放置\#包括语句为跟踪消息标头文件？
 

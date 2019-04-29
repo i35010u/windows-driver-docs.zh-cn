@@ -5,11 +5,11 @@ ms.assetid: d4e3c5e0-d904-4049-9bc2-6c21d2a6f905
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d128dc66ea205734f4e807ecedc9ce2e98c558d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373211"
 ---
 # <a name="code-example-for-obtaining-a-function-instance-object"></a>用于获取函数实例对象的代码示例
 

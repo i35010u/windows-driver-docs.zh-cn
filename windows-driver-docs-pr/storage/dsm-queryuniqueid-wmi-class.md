@@ -5,11 +5,11 @@ ms.assetid: 576e208d-972c-47ba-ab30-a05bf3d0943d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a747abe604f7c7030e82e5ff1ecd9a2a3fd2bff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380663"
 ---
 # <a name="dsmqueryuniqueid-wmi-class"></a>DSM\_QueryUniqueId WMI 类
 

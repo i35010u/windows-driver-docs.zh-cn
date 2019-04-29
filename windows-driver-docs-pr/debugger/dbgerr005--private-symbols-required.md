@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ab67971615c9971fba45d4c27c3c6e8e470a250
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376074"
 ---
-# <a name="dbgerr005-private-symbols-required"></a>dbgerr005:需要私有符号
+# <a name="dbgerr005-private-symbols-required"></a>dbgerr005:需要专用符号
 
 
 ## <span id="ddk_dbgerr005_dbg"></span><span id="DDK_DBGERR005_DBG"></span>

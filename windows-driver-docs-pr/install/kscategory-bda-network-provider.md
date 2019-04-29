@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f3c28d09bcb824d6ddbf2a64e4b234f430a3f2e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377348"
 ---
 # <a name="kscategorybdanetworkprovider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
 
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://msdn.microsoft.com/libr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -68,11 +68,11 @@ BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_PROVIDER 向操作系统�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows XP 和更高版本的 Windows 中可用。 在使用 DirectX 9.0 a 安装 Windows 2000 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>

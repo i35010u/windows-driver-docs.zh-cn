@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SEND_RESPONSE_ACTION_FRAME_RESULT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d595a3a2a6e8795b19119b84dddff144053e3c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380863"
 ---
 # <a name="wditlvp2psendresponseactionframeresult"></a>WDI\_TLV\_P2P\_发送\_响应\_操作\_帧\_结果
 

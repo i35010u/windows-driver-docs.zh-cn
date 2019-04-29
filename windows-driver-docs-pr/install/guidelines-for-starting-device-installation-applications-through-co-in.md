@@ -5,11 +5,11 @@ ms.assetid: 94b21eef-5660-4d05-8eb5-da6589c85e65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5bc455a9c54ef9811c6b35ebff8f396b12f5575
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374591"
 ---
 # <a name="guidelines-for-starting-device-installation-applications-through-co-installers"></a>通过辅助安装程序启动设备安装应用程序的指南
 

@@ -1,17 +1,17 @@
 ---
-title: 用于打印 （WS-打印） 的设备上的 web 服务
+title: 用于打印的基于设备的 Web 服务 (WS-Print)
 description: 有关在 Windows Vista 中，以提供用于打印和扫描外围设备的连接协议引入了打印 （WS-打印） 的 web 服务在设备上。
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c4afbe76e0f522c62d3785d7b416680503e10b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380513"
 ---
-# <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印 （WS-打印） 的设备上的 web 服务
+# <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印的基于设备的 Web 服务 (WS-Print)
 
 
 有关在 Windows Vista 中，以提供用于打印和扫描外围设备的连接协议引入了打印 （WS-打印） 的 web 服务在设备上。
@@ -67,12 +67,12 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 
 **WS-Print v1.1**
 
-**Namespace:**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
+**命名空间：**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
 **XML Namespace 定义：** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
 
 **WS-Print v1.2**
 
-**Namespace:**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
+**命名空间：**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
 **XML Namespace 定义：** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
 ## <a name="specifying-ws-print-11-support"></a>指定 WS 打印 1.1 支持
 

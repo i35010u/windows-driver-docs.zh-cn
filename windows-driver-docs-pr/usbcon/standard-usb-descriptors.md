@@ -1,14 +1,14 @@
 ---
-Description: A USB device provides information about itself in data structures called USB descriptors. This section provides information about device, configuration, interface, and endpoint descriptors and ways to retrieve them from a USB device.
+Description: USB 设备提供了有关其自身的数据结构称为 USB 描述符中的信息。 本部分提供有关设备、 配置、 接口和终结点描述符和方法从 USB 设备中检索信息。
 title: 标准 USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72b445cd88a078b261dfcdee731338b8e332bcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379936"
 ---
 # <a name="standard-usb-descriptors"></a>标准 USB 描述符
 

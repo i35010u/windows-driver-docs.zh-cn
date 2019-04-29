@@ -5,11 +5,11 @@ ms.assetid: 9886BBBC-7EE5-45AF-AEDD-75C0885C622B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecc49488e52a51cc37dd658c71740a486534a5b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377789"
 ---
 # <a name="driver-initialization"></a>驱动程序初始化
 
@@ -20,7 +20,7 @@ ms.locfileid: "56545267"
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | 不适用             |
+| SpbAccelerometer.asl | 不可用             |
 
  
 
@@ -52,7 +52,7 @@ ACPI 允许 Windows 用于控制设备的配置和电源管理。 ACPI 规范具
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.inf | 不适用             |
+| SpbAccelerometer.inf | 不可用             |
 
  
 
@@ -72,7 +72,7 @@ ACPI 允许 Windows 用于控制设备的配置和电源管理。 ACPI 规范具
 
 | 模块      | 类/接口 |
 |-------------|-----------------|
-| DllMain.cpp | 不适用             |
+| DllMain.cpp | 不可用             |
 | Device.cpp  | CMyDevice       |
 | Driver.cpp  | CMyDriver       |
 | Queue.cpp   | CMyQueue        |

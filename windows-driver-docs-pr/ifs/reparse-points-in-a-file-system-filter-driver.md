@@ -1,6 +1,6 @@
 ---
-title: 重新分析点中的文件系统筛选器驱动程序
-description: 重新分析点中的文件系统筛选器驱动程序
+title: 文件系统筛选器驱动程序中的重新分析点
+description: 文件系统筛选器驱动程序中的重新分析点
 ms.assetid: 6aae70d9-c934-4759-bb26-728b0ac025d1
 keywords:
 - 安全 WDK 文件系统，重新分析点
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9dccec8fc849213a3a07b6f4a4346852e0de52d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377943"
 ---
-# <a name="reparse-points-in-a-file-system-filter-driver"></a>重新分析点中的文件系统筛选器驱动程序
+# <a name="reparse-points-in-a-file-system-filter-driver"></a>文件系统筛选器驱动程序中的重新分析点
 
 
 ## <span id="ddk_reparse_points_in_a_file_system_filter_driver_if"></span><span id="DDK_REPARSE_POINTS_IN_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>

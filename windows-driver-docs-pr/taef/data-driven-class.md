@@ -5,11 +5,11 @@ ms.assetid: 2998D5BB-A873-4df9-86B2-88937736862F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cee3b8cc16d499907771381a5a00d44a003640c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385068"
 ---
 # <a name="span-idtaefdata-drivenclassspandata-driven-class"></a><span id="taef.data-driven_class"></span>数据驱动的类
 

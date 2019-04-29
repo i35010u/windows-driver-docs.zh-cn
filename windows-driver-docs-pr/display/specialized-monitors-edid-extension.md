@@ -15,11 +15,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
 ms.openlocfilehash: b3d0009724a22ad2aceb221c4dc99d89c21e8bc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382335"
 ---
 # <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>EDID HMDs 和专用的显示扩展插件 (VSDB)
 
@@ -65,7 +65,7 @@ IEEE 组织唯一标识符 (OUI) 用于标识显示分配给 Microsoft: `0x5C`�
 
 Microsoft 显示特定于供应商的数据块的内容与关联的版本号。
 
-| 建议的用例 | 版本 | 受支持的 Windows 版本 |
+| 建议的用例 | Version | 受支持的 Windows 版本 |
 |----------------------|---------|---------------------------|
 | 将由 Windows Mixed Reality 的 HMD (VR/AR) 显示设备体验 | `0x1` | 支持 Windows 10 创意者更新及更高版本 |
 | 将由第三方 （而不是 Windows Mixed Reality 体验中） 的排序器的 HMD (VR/AR) 显示设备 | `0x2` | 支持在 Windows 10 2018 年 10 月更新及更高版本 |

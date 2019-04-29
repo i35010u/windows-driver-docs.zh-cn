@@ -1,17 +1,17 @@
 ---
-title: 同步而无需取消例程的更高级别的驱动程序中的取消操作
-description: 同步而无需取消例程的更高级别的驱动程序中的取消操作
+title: 在不包含 Cancel 例程的较高级驱动程序中同步取消
+description: 在不包含 Cancel 例程的较高级驱动程序中同步取消
 ms.assetid: 741d504e-7e61-4f60-a8cf-e4ea92f0654e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5d71b962278ea66de32d11639848f8bd78d5b3e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377893"
 ---
-# <a name="synchronizing-cancellation-in-higher-level-drivers-without-cancel-routines"></a>同步而无需取消例程的更高级别的驱动程序中的取消操作
+# <a name="synchronizing-cancellation-in-higher-level-drivers-without-cancel-routines"></a>在不包含 Cancel 例程的较高级驱动程序中同步取消
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: ExtExtension
-description: ExtExtension 类是表示 EngExtCpp 扩展库的 c + + 类的基类。
+description: ExtExtension 类是基类C++类表示 EngExtCpp 扩展库。
 ms.assetid: 9c6c4633-df49-4f49-8116-d680bb20c3f5
 keywords:
 - ExtExtension Windows 调试
@@ -13,16 +13,16 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ce030343c11671499718338cf6c8fe1f9de16f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373965"
 ---
 # <a name="extextension"></a>ExtExtension
 
 
-**ExtExtension**类是表示 EngExtCpp 扩展库的 c + + 类的基类。
+**ExtExtension**类是类的基类C++表示 EngExtCpp 扩展库的类。
 
 **ExtExtension**类包括以下方法，可由子类：
 

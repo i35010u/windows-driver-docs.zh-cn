@@ -1,6 +1,6 @@
 ---
-title: 原始数据类型
-description: 原始数据类型
+title: RAW 数据类型
+description: RAW 数据类型
 ms.assetid: f53264c1-97aa-42f0-8bab-76bf984f2c79
 keywords:
 - 打印处理器 WDK，数据类型
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06427b130d4960d932e6b992292d599243b84d30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372389"
 ---
-# <a name="raw-data-type"></a>原始数据类型
+# <a name="raw-data-type"></a>RAW 数据类型
 
 
 

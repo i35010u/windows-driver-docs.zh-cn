@@ -5,11 +5,11 @@ ms.assetid: CF74B946-BF62-481A-B8AA-DD106DDB94CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16f5f07cc9e09b26c0ed9dc62c202d0b5e551e8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367613"
 ---
 # <a name="coordinating-io-requests-with-component-power-state"></a>对 I/O 请求与组件电源状态进行协调
 

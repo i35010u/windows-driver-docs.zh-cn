@@ -5,13 +5,13 @@ description: 引入了 NDIS 6.30 电源管理增强功能，以减少计算机�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e73c806ca55185eac4c4410cedfd1e443bd65ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380082"
 ---
-# <a name="power-management-enhancements-in-ndis-630"></a>在 NDIS 6.30 电源管理增强功能
+# <a name="power-management-enhancements-in-ndis-630"></a>NDIS 6.30 中的电源管理增强
 
 
 NDIS 6.20 包括电源管理的新功能和改进，可减少计算机的功率消耗。 NDIS 6.30 扩展 NDIS 6.20 电源管理支持具有以下功能，如中所述[电源管理 (NDIS 6.30)](power-management--ndis-6-30-.md):

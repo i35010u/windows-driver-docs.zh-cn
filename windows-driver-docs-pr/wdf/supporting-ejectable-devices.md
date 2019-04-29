@@ -1,6 +1,6 @@
 ---
-title: 支持无可退出设备
-description: 支持无可退出设备
+title: 支持可弹出设备
+description: 支持可弹出设备
 ms.assetid: 7820bb71-7218-4c5f-af2b-f41e1b5f696d
 keywords:
 - 即插即用 WDK KMDF，无可退出设备
@@ -20,13 +20,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f017f893bf5673b1e9fb307e62334922c59cd820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382086"
 ---
-# <a name="supporting-ejectable-devices"></a>支持无可退出设备
+# <a name="supporting-ejectable-devices"></a>支持可弹出设备
 
 
 *无可退出设备*是可以插入到扩展坞，从扩展坞弹出的设备。 通常情况下，可以删除该设备之前，必须禁用无可退出设备的总线电源。

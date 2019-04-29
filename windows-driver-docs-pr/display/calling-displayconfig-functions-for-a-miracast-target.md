@@ -1,17 +1,17 @@
 ---
-title: 用于 Miracast 目标调用 DisplayConfig 函数
+title: 对 Miracast 目标调用 DisplayConfig 函数
 ms.assetid: D408986B-B33B-4A96-B93C-2A2F301E74AF
-description: 用于 Miracast 目标调用 DisplayConfig 函数
+description: 对 Miracast 目标调用 DisplayConfig 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 252ce447878a3d2742ee25954b90c33052f1c124
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370826"
 ---
-# <a name="calling-displayconfig-functions-for-a-miracast-target"></a>用于 Miracast 目标调用 DisplayConfig 函数
+# <a name="calling-displayconfig-functions-for-a-miracast-target"></a>对 Miracast 目标调用 DisplayConfig 函数
 
 
 若要减少到支持 Miracast 的新目标，公开的现有应用程序的兼容性问题[ **QueryDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569215)并[ **SetDisplayConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff569533)函数实现具有应用，从而查找 Miracast 目标的方法：

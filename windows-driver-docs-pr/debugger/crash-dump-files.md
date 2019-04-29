@@ -1,18 +1,18 @@
 ---
-title: 故障转储分析使用 Windows 调试器 (WinDbg)
+title: 使用 Windows 调试器 (WinDbg) 进行故障转储分析
 description: 通过使用 WinDbg 和其他 Windows 调试器分析故障转储文件。
 ms.assetid: e7b4883c-6551-4a94-80d2-635f79348a48
 keywords: 转储文件中，故障转储文件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1bd1c07278491bb0fb1c961df7d30affe5597f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374438"
 ---
-# <a name="crash-dump-analysis-using-the-windows-debuggers-windbg"></a>故障转储分析使用 Windows 调试器 (WinDbg)
+# <a name="crash-dump-analysis-using-the-windows-debuggers-windbg"></a>使用 Windows 调试器 (WinDbg) 进行故障转储分析
 
 
 通过使用 WinDbg 和其他 Windows 调试器分析故障转储文件。

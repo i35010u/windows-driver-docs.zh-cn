@@ -1,14 +1,14 @@
 ---
-Description: Describes the various tasks that a function controller client driver performs while interacting with USB function controller extension (UFX).
+Description: 介绍与 USB 函数控制器扩展 (UFX) 交互时执行函数控制器客户端驱动程序的各种任务。
 title: 编写函数控制器客户端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d590b462e8898d7644737ccca9c035dfb34674c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383014"
 ---
 # <a name="write-a-function-controller-client-driver"></a>编写函数控制器客户端驱动程序
 
@@ -100,7 +100,7 @@ UFX 调用的驱动程序之前，客户端驱动程序不应允许连接到主�
 
 UFX 清除终结点的所有队列，并将发送[ **IOCTL\_内部\_USBFN\_描述符\_更新**](https://msdn.microsoft.com/library/windows/hardware/mt187895)更新到客户端驱动程序请求**wMaxPacketSize**的终结点 0。 UFX 启动默认终结点的队列，并将状态设置为**默认**。
 
-**默认值**
+**默认**
 
 UFX 调用客户端驱动程序[ *EVT\_UFX\_设备\_USB\_状态\_更改*](https://msdn.microsoft.com/library/windows/hardware/mt187863)函数。 它还将通知类驱动程序的状态。 UFX 收到设置后\_地址标准安装数据包，UFX 将状态设置为**寻址**。
 
@@ -158,7 +158,7 @@ UFX 进入和退出工作状态，通过调用[ *EVT\_UFX\_设备\_USB\_状态\_
 
 ## <a name="related-topics"></a>相关主题
 [在 Windows 中的 USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)  
-[开发 USB 函数控制器的 Windows 驱动的程序](developing-windows-drivers-for-usb-function-controllers.md)  
+[为 USB 功能控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  
 [UFX 对象和 USB 函数客户端驱动程序使用的句柄](ufx-objects-and-handles-used-by-a-usb-function-controller.md)  
 
 

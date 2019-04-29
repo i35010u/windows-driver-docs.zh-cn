@@ -5,11 +5,11 @@ ms.assetid: b7fc0d38-feaa-46c5-bcde-fcd6c71b329b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ff547c38ecbc133003bab2f83cee0d4e87be108e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380665"
 ---
 # <a name="dsmquerylbpolicy-wmi-class"></a>DSM\_QueryLBPolicy WMI 类
 

@@ -4,11 +4,11 @@ title: 查询总线驱动程序接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc0af9d081017db8cb0c3346f27bf9933d274f70
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378857"
 ---
 # <a name="querying-for-bus-driver-interfaces"></a>查询总线驱动程序接口
 

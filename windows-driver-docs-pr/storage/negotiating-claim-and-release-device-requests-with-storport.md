@@ -1,17 +1,17 @@
 ---
-title: 协商声明和使用 Storport 发布设备请求
-description: 协商声明和使用 Storport 发布设备请求
+title: 通过 Storport 协商声明和释放设备请求
+description: 通过 Storport 协商声明和释放设备请求
 ms.assetid: 9212f2b0-6319-47a6-8c61-02002ad81178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fe5d55df4b7d5d70b0bd3b3f266494803c9439c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382743"
 ---
-# <a name="negotiating-claim-and-release-device-requests-with-storport"></a>协商声明和使用 Storport 发布设备请求
+# <a name="negotiating-claim-and-release-device-requests-with-storport"></a>通过 Storport 协商声明和释放设备请求
 
 
 存储类驱动程序必须请求权限从到 Storport*声明*设备。 有关如何类驱动程序声明设备详细信息，请参阅[存储类驱动程序 ClaimDevice 例程](storage-class-driver-s-claimdevice-routine.md)。

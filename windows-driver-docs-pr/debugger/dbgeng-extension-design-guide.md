@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f323844c69677d34b09b8bec5ae4417651a530de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376065"
 ---
 # <a name="dbgeng-extension-design-guide"></a>DbgEng 扩展设计指南
 

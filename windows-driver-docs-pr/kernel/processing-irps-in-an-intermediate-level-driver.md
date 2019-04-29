@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 507c38243eb92aabc1d81daa423eaafa0e52e361
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369109"
 ---
 # <a name="processing-irps-in-an-intermediate-level-driver"></a>在中间级驱动程序中处理 IRP
 

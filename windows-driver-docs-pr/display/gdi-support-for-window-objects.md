@@ -1,6 +1,6 @@
 ---
-title: GDI 支持窗口对象
-description: GDI 支持窗口对象
+title: 窗口对象的 GDI 支持
+description: 窗口对象的 GDI 支持
 ms.assetid: 288120e0-e43c-4733-8bba-0e310ed55aae
 keywords:
 - GDI WDK Windows 2000 显示，窗口对象
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3493aba14b3bb655c1ae23ee31cbccfb52a41fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384464"
 ---
-# <a name="gdi-support-for-window-objects"></a>GDI 支持窗口对象
+# <a name="gdi-support-for-window-objects"></a>窗口对象的 GDI 支持
 
 
 ## <span id="ddk_gdi_support_for_window_objects_gg"></span><span id="DDK_GDI_SUPPORT_FOR_WINDOW_OBJECTS_GG"></span>

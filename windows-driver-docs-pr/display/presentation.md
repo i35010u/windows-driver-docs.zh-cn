@@ -1,6 +1,6 @@
 ---
-title: 演示文稿
-description: 演示文稿
+title: 呈现
+description: 呈现
 ms.assetid: 23a01b5b-0654-4c43-ac96-a75810fa20df
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示、 演示文稿
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 447fdb356dfca551498b760bf6af3a241764e59f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383919"
 ---
-# <a name="presentation"></a>演示文稿
+# <a name="presentation"></a>呈现
 
 
 ## <span id="ddk_presentation_gg"></span><span id="DDK_PRESENTATION_GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: 适用于呈现操作的报告的可选支持
-description: 适用于呈现操作的报告的可选支持
+title: 报告渲染操作的可选支持
+description: 报告渲染操作的可选支持
 ms.assetid: 97a0b8c6-7ff8-47df-97df-4e9714ebc903
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12590b6ef5fb1956aaf50477b07380483f23e100
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383259"
 ---
-# <a name="reporting-optional-support-for-rendering-operations"></a>适用于呈现操作的报告的可选支持
+# <a name="reporting-optional-support-for-rendering-operations"></a>报告渲染操作的可选支持
 
 
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>

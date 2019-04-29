@@ -1,16 +1,16 @@
 ---
-Description: This topic provides information for client driver developers about the tracing and logging features for Universal Serial Bus (USB).
-title: USB Windows 事件跟踪
+Description: 本主题提供信息的客户端驱动程序开发人员的跟踪和日志记录功能的通用串行总线 (USB)。
+title: Windows 的 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcdf5d475339f928e83557fc36d42793e4ceb878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376103"
 ---
-# <a name="usb-event-tracing-for-windows"></a>USB Windows 事件跟踪
+# <a name="usb-event-tracing-for-windows"></a>Windows 的 USB 事件跟踪
 
 
 本主题提供信息的客户端驱动程序开发人员的跟踪和日志记录功能的通用串行总线 (USB)。 为了方便开发和调试 USB 设备的人员提供此信息。 它包括有关如何安装工具、 创建跟踪文件和分析 USB 跟踪文件中的事件的信息。 本主题假定你已成功使用 USB 跟踪和日志记录功能所需的硬件的 USB 生态系统的全面了解。
@@ -74,7 +74,7 @@ Windows 8 提供的 USB 驱动程序堆栈，以支持 USB 3.0 设备。 Microso
 
     启用 USB 事件收集时，USB xHCI 事件提供程序报告的属性系统的 xHCI 控制器和 xHCI 操作的低级别详细信息。 xHCI 报告命令请求发送到和完成的 xHCI 硬件，包括特定于 xHCI 的完成代码。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

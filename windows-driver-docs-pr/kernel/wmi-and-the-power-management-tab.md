@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2045ef0e2cc8102c1876275cb7784bfa5620a631
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380930"
 ---
 # <a name="wmi-and-the-power-management-tab"></a>WMI 和电源管理选项卡
 

@@ -5,11 +5,11 @@ ms.assetid: 93DD3B6A-533D-4060-9EE6-0CE91B2BE612
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55738859fda1ffd02cee4b2341542f724cbffa42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381975"
 ---
 # <a name="configuring-silent-process-exit-monitoring"></a>配置静默进程退出监视
 

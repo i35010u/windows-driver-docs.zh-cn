@@ -5,11 +5,11 @@ ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7203fb01847ce67f6913b25b7209b3fb70a6c0ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383767"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 

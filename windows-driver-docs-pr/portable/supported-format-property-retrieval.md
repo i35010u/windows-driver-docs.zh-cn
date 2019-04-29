@@ -1,16 +1,16 @@
 ---
-Description: Supported Format-Property Retrieval
-title: 检索受支持的格式属性
+Description: 支持的格式-属性检索
+title: 支持的格式-属性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b9f56445c052333adcf74069fcd12412d8cfdf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376191"
 ---
-# <a name="supported-format-property-retrieval"></a>检索受支持的格式属性
+# <a name="supported-format-property-retrieval"></a>支持的格式-属性检索
 
 
 当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedFormatProperties**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedFormatProperties**中的示例驱动程序的方法。 后一种方法创建**IPortableDeviceKeyCollection**驱动程序将支持的以给定格式的对象的属性存储到其中的对象。

@@ -5,11 +5,11 @@ ms.assetid: 02b5ef48-413d-403b-8c42-caecd9521067
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 921006eaed7cc236ddfc30f4fee701745478c260
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379671"
 ---
 # <a name="multipage-scanning-and-twain"></a>多页扫描和 TWAIN
 

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85b399b4e2490cbec2ec4fd6a3c3d02f9d832d91
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379110"
 ---
 # <a name="wpp-preprocessor"></a>WPP 预处理器
 
@@ -228,9 +228,9 @@ ms.locfileid: "57464347"
 <td align="left"><p>为源文件指定 WPP 可识别的文件类型。 WPP 将忽略具有不同的文件扩展名的文件。</p>
 <p>默认情况下，WPP 识别仅.c、.c + +、.cpp 和.cxx 文件。</p>
 <p>此选项允许您为 WPP 使用默认设置，而无需删除或重命名 WPP 不使用，如.rc 资源文件和.mc 文件。</p>
-<p>例如，若要将跟踪添加到 c + + 文件和标头 (.h) 文件，使用以下命令：</p>
+<p>例如，若要添加到跟踪C++文件和标头 (.h) 文件，请使用以下命令：</p>
 <p><strong>-ext:.cpp.CPP.h.H</strong></p>
-<p>此外，若要为 c + + 和标头文件不同名称的 TMH 文件，使用<strong>-preserveext</strong>选项。</p></td>
+<p>此外，若要提供 TMH 文件的C++和头文件不同的名称，请使用<strong>-preserveext</strong>选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>保留文件扩展</p></td>

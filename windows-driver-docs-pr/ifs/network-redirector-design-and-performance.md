@@ -1,6 +1,6 @@
 ---
-title: 网络重定向程序设计和性能
-description: 网络重定向程序设计和性能
+title: 网络重定向程序的设计和性能
+description: 网络重定向程序的设计和性能
 ms.assetid: 60ee4548-f81c-4d10-91ef-0e31e2837268
 keywords:
 - 网络重定向程序 WDK，性能
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f126c86e0224f9f9f9a3d55089f3a1476a33349
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379469"
 ---
-# <a name="network-redirector-design-and-performance"></a>网络重定向程序设计和性能
+# <a name="network-redirector-design-and-performance"></a>网络重定向程序的设计和性能
 
 
 ## <span id="ddk_network_redirector_design_and_performance_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_AND_PERFORMANCE_IF"></span>

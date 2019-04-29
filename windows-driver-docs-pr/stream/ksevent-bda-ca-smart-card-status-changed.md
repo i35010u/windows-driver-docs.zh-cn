@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1e0aae5164f4d1d06e15a864425068b64f8b03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380115"
 ---
 # <a name="kseventbdacasmartcardstatuschanged"></a>KSEVENT\_BDA\_CA\_智能\_卡\_状态\_已更改
 
@@ -47,13 +47,13 @@ KSEVENTDATA 结构，它描述有关事件通知的方式。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)

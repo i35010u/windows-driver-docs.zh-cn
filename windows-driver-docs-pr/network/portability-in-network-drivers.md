@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 918a55747ae4a99eba93018c24f379a1fbe6963d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377585"
 ---
 # <a name="portability-in-network-drivers"></a>网络驱动程序中的可移植性
 

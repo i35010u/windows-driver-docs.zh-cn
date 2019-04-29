@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_ID 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: a219da899a672f471652e3f6a215b18c8369db10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381435"
 ---
 # <a name="irpmnqueryid"></a>IRP\_MN\_查询\_ID
 
@@ -150,13 +150,13 @@ IRP 完成，该驱动程序完成了 ID 后，该驱动程序必须释放处理
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [设备标识字符串](https://msdn.microsoft.com/library/windows/hardware/ff541224)

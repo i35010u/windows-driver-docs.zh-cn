@@ -5,11 +5,11 @@ ms.assetid: 7aa8c9a4-1bb2-48a5-be28-9806e16d4e94
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cf2813ad11f895e1c5d8a7bdcbf08ab6bd7bbba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378227"
 ---
 # <a name="virtual-machine-queue-architecture"></a>虚拟机队列体系结构
 

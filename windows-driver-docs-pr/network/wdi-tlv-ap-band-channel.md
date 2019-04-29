@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_AP_BAND_CHANNEL 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8da2db372b59d25c5560309e8ceb30f4143308b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374552"
 ---
 # <a name="wditlvapbandchannel"></a>WDI\_TLV\_AP\_BAND\_CHANNEL
 
@@ -60,13 +60,13 @@ WDI\_TLV\_AP\_外\_通道是 TLV，指定访问点外和通道信息。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_TASK\_START\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964)

@@ -5,11 +5,11 @@ ms.assetid: 9149BFF3-59B3-4563-A1A1-34FDD115964E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5178593ec01cc71c61a03d1f01305a2e36670e66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372483"
 ---
 # <a name="receiving-oid-requests-about-hyper-v-extensible-switch-configuration-changes"></a>接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
 

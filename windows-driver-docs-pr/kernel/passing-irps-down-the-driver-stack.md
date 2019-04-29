@@ -1,6 +1,6 @@
 ---
-title: 将驱动程序堆栈的下层的 Irp 传递
-description: 将驱动程序堆栈的下层的 Irp 传递
+title: 向驱动程序堆栈的下层传递 IRP
+description: 向驱动程序堆栈的下层传递 IRP
 ms.assetid: 69d912c5-83cf-4651-b379-de6baea8ddd0
 keywords:
 - Irp WDK 内核，关闭堆栈传递
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bca7a2a342fae50c39b1d3e58fce128ce2fe8ea9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378048"
 ---
-# <a name="passing-irps-down-the-driver-stack"></a>将驱动程序堆栈的下层的 Irp 传递
+# <a name="passing-irps-down-the-driver-stack"></a>向驱动程序堆栈的下层传递 IRP
 
 
 

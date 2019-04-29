@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fa78ee1223ea4a12b210d24207be83893f6d858
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373099"
 ---
 # <a name="client-module-operations"></a>客户端模块操作
 

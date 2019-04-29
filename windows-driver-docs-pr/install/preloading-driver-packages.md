@@ -1,6 +1,6 @@
 ---
-title: 预加载的驱动程序包
-description: 预加载的驱动程序包
+title: 预加载驱动程序包
+description: 预加载驱动程序包
 ms.assetid: e617764d-0b48-4cd8-aeac-04d6039aba71
 keywords:
 - 安装应用程序 WDK，预加载的驱动程序包
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 70c02af27baab235d5f4d857d4be127a855b8371
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369444"
 ---
-# <a name="preloading-driver-packages"></a>预加载的驱动程序包
+# <a name="preloading-driver-packages"></a>预加载驱动程序包
 
 
 插即用 (PnP)[驱动程序包](driver-packages.md)可以是*预加载*Windows 安装的或者之后的计算机上安装 Windows 的计算机上。 网络管理员也可以预加载的网络计算机安装的驱动程序包中提供的源的网络服务器上的驱动程序包。 当 Windows 搜索与设备匹配的驱动程序时，Windows 将检查是否有与设备匹配的预加载的驱动程序包。

@@ -1,17 +1,17 @@
 ---
-title: 有关上下文
-description: 有关上下文
+title: 关于上下文
+description: 关于上下文
 ms.assetid: 39d51828-cfb3-4692-be9b-a89411ba7841
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a207ce0bfb05f886a6328c3018cedb9d7c584c1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377631"
 ---
-# <a name="about-contexts"></a>有关上下文
+# <a name="about-contexts"></a>关于上下文
 
 
 

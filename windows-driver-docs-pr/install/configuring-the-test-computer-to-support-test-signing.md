@@ -5,11 +5,11 @@ ms.assetid: 5aa2bb34-73aa-4640-bbfe-4df180f3b61f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85250352daec02f0eafae8ffc5fcc8cdb4e3223a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374577"
 ---
 # <a name="configuring-the-test-computer-to-support-test-signing"></a>配置支持测试签名的测试计算机
 

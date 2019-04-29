@@ -1,5 +1,5 @@
 ---
-title: INF DefaultInstall 部分
+title: INF DefaultInstall 节
 description: 如果用户的 INF 文件的名称上右键单击后选择"安装"菜单项，访问的 INF 文件 DefaultInstall 部分。
 ms.assetid: 41412124-38d9-43c0-9954-d34b242a3922
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e88d0693ed72ea338b7a7287838bb9b7d168bb17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370580"
 ---
-# <a name="inf-defaultinstall-section"></a>INF DefaultInstall 部分
+# <a name="inf-defaultinstall-section"></a>INF DefaultInstall 节
 
 
 **请注意**  如果要构建一个通用或移动设备的驱动程序包，此部分无效，不应使用。  相反，仅使用[ **INF 制造商部分**](inf-manufacturer-section.md)。  同时使用这二者**DefaultInstall**并**制造商**中你 INF 部分将会导致通用 INF 验证失败，可能会导致不一致的安装行为。  请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
@@ -189,7 +189,7 @@ AddReg=MyAppRegEntries
 
 在此示例中， **DefaultInstall**部分右键单击的 INF 文件名称之后执行如果用户选择"安装"。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [***DDInstall***](inf-ddinstall-section.md)

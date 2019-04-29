@@ -5,11 +5,11 @@ ms.assetid: 194A26DA-A138-4967-9A09-5843A38007E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5e0e06a362fbde672c908d387a61e9e69dbb694
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385405"
 ---
 # <a name="wdi-low-latency-connection-quality"></a>WDI 低延迟连接质量
 

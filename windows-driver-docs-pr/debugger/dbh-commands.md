@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6901252e447d6635428b41b42d48f50b6a9f7e59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376071"
 ---
 # <a name="dbh-commands"></a>DBH 命令
 
@@ -350,7 +350,7 @@ ms.locfileid: "56575951"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>undec</strong> <em>Name</em></p></td>
-<td align="left"><p>将显示附加到指定的符号名称的修饰的含义。 <em>名称</em>可以是任意字符串; 它不需要对应的当前加载的符号。 如果<em>名称</em>包含 c + + 修饰显示这些修饰的含义。</p></td>
+<td align="left"><p>将显示附加到指定的符号名称的修饰的含义。 <em>名称</em>可以是任意字符串; 它不需要对应的当前加载的符号。 如果<em>名称</em>包含C++显示修饰，这些修饰的含义。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>添加</strong><em>名称地址大小</em></p></td>

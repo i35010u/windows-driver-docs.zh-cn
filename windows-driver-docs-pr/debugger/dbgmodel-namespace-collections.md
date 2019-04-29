@@ -4,11 +4,11 @@ description: 提供用于创建和操作的对象的集合的方法。
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3814c3a8aabaed01abd2b1b26fccda31d0bb50dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376077"
 ---
 # <a name="the-collections-namespace"></a>集合 Namespace
 ## <a name="summary"></a>总结

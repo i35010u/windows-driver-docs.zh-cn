@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b34fdf2d201e757faded0aac433e73a9a087640
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374855"
 ---
-# <a name="debug--kernel-connection--resynchronize"></a>调试 |内核连接 |重新同步
+# <a name="debug--kernel-connection--resynchronize"></a>调试 | 内核连接 | 重新同步
 
 
 ## <span id="ddk_debug_kernel_connection_resynchronize_dbg"></span><span id="DDK_DEBUG_KERNEL_CONNECTION_RESYNCHRONIZE_DBG"></span>

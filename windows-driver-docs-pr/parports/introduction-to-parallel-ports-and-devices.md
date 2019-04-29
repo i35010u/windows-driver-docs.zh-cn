@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83915f7f1db60def28425c00ecaff99708889b3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373535"
 ---
 # <a name="introduction-to-parallel-ports-and-devices"></a>并行端口和设备简介
 
@@ -46,9 +46,9 @@ ms.locfileid: "56540569"
 
 有关 Windows 支持的并行端口和设备的详细信息，请参阅：
 
-[系统提供并行的驱动程序](system-supplied-parallel-drivers.md)
+[系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[供应商提供并行的驱动程序](vendor-supplied-parallel-drivers.md)
+[供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
 [系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

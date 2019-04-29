@@ -5,11 +5,11 @@ ms.assetid: 57D82C5E-3758-492C-A1DA-B7BC3DBE2E7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29801591a0c6991162e44a04c5e48d9c2d679196
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379799"
 ---
 # <a name="querying-a-packets-extensible-switch-destination-port-data"></a>查询数据包的可扩展交换机目标端口数据
 

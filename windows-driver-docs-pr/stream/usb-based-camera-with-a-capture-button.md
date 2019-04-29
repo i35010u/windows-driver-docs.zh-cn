@@ -1,6 +1,6 @@
 ---
-title: 基于 USB 的 Camera 替换捕获按钮
-description: 基于 USB 的 Camera 替换捕获按钮
+title: 带捕获按钮的基于 USB 的摄像机
+description: 带捕获按钮的基于 USB 的摄像机
 ms.assetid: abbd824c-1ade-4dbc-8807-e558c444a3ea
 keywords:
 - 筛选器图形配置 WDK 视频捕获，基于 USB 的相机捕获按钮
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 052c22163d86ebb35a975a3bbbcca58ec65c31f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382525"
 ---
-# <a name="usb-based-camera-with-a-capture-button"></a>基于 USB 的 Camera 替换捕获按钮
+# <a name="usb-based-camera-with-a-capture-button"></a>带捕获按钮的基于 USB 的摄像机
 
 
 一个稍微复杂的筛选器关系图，相比[USB 或基于的 1394年会议摄像机](usb-or-1394-based-conferencing-camera.md)，为其微型驱动程序公开仍 pin 支持捕获静止图像的按钮的会议摄像机创建。 用户将一个按钮推送摄像机上时，仍处于 pin 可以提供更高分辨率图像。

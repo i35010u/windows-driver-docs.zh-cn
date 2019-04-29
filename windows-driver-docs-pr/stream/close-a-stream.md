@@ -1,6 +1,6 @@
 ---
-title: 关闭 Stream
-description: 关闭 Stream
+title: 关闭流
+description: 关闭流
 ms.assetid: 1ed9b07c-8d22-485f-a7e8-3a27ca3768b0
 keywords:
 - Avcstrm.sys 流式处理筛选器驱动程序 WDK、 关闭流
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6713a9e053d918b2569663ac7b0e9ae24b8e9ff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372360"
 ---
-# <a name="close-a-stream"></a>关闭 Stream
+# <a name="close-a-stream"></a>关闭流
 
 流操作完成后，必须关闭该数据流来释放所分配的打开的流请求的资源。
 

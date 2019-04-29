@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380283"
 ---
 # <a name="eula-xml-element"></a>eula XML 元素
 

@@ -1,6 +1,6 @@
 ---
-title: 异步 I/O 的 IEEE 1394 设备
-description: 异步 I/O 的 IEEE 1394 设备
+title: IEEE 1394 设备的异步 I/O
+description: IEEE 1394 设备的异步 I/O
 ms.assetid: 36ca83d9-83ed-4366-81e7-63c5337f8643
 keywords:
 - IEEE 1394 WDK 总线，异步 I/O
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f939f719e3b7bdf37ab28541b71173bb1eb955
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376713"
 ---
-# <a name="asynchronous-io-for-ieee-1394-devices"></a>异步 I/O 的 IEEE 1394 设备
+# <a name="asynchronous-io-for-ieee-1394-devices"></a>IEEE 1394 设备的异步 I/O
 
 
 

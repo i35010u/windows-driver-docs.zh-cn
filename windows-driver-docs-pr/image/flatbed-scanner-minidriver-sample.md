@@ -5,11 +5,11 @@ ms.assetid: 8c1ad90a-cff9-45a0-b2d9-e2605436f128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f87a4e80ceb6be62e781990a80d06286b57a028
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378403"
 ---
 # <a name="flatbed-scanner-minidriver-sample"></a>平板扫描仪微型驱动程序示例
 

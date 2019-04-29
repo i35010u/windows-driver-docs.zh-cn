@@ -5,11 +5,11 @@ ms.assetid: 178be416-3936-4e17-b055-134897b3e2eb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a08a704e0ec1db82a5208f4f2b2160165ad1f84b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385835"
 ---
 # <a name="security-guidelines-for-offload-capable-miniport-drivers"></a>支持卸载的微型端口驱动程序安全指导原则
 

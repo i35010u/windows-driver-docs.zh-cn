@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d9ac1f25cbcda65fdcc167111b97fa5a80e2da6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375603"
 ---
 # <a name="kspropertyclockresolution"></a>KSPROPERTY\_时钟\_解析
 
@@ -76,13 +76,13 @@ ms.locfileid: "56520034"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCLOCK\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff561017)

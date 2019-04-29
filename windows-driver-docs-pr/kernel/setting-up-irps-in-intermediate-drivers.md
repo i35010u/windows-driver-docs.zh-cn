@@ -1,6 +1,6 @@
 ---
-title: 设置中间驱动程序中的 Irp
-description: 设置中间驱动程序中的 Irp
+title: 在中间驱动程序中设置 IRP
+description: 在中间驱动程序中设置 IRP
 ms.assetid: 0d04a951-a68e-4fa1-bdc6-dd92ec49deae
 keywords:
 - 可移动媒体 WDK 内核，中间层驱动程序 Irp
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc848103b57c6c6b52c96c89c88c452004c5375e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367866"
 ---
-# <a name="setting-up-irps-in-intermediate-drivers"></a>设置中间驱动程序中的 Irp
+# <a name="setting-up-irps-in-intermediate-drivers"></a>在中间驱动程序中设置 IRP
 
 
 

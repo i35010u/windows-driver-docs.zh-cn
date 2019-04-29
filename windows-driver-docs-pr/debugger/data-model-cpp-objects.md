@@ -1,32 +1,32 @@
 ---
-title: 调试器数据模型 c + + 对象
-description: 本主题介绍如何使用调试器数据模型 c + + 对象以及它们如何扩展调试器的功能。
+title: 调试器数据模型 C++ 对象
+description: 本主题介绍如何使用调试器数据模型C++对象以及它们如何扩展调试器的功能。
 ms.date: 10/08/2018
 ms.openlocfilehash: df747dd779761f71a07ec23085f991287c36f518
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376129"
 ---
-# <a name="debugger-data-model-c-objects"></a>调试器数据模型 c + + 对象
+# <a name="debugger-data-model-c-objects"></a>调试器数据模型 C++ 对象
 
-本主题介绍如何使用调试器数据模型 c + + 对象以及它们如何扩展调试器的功能。
+本主题介绍如何使用调试器数据模型C++对象以及它们如何扩展调试器的功能。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -71,7 +71,7 @@ ms.locfileid: "56542455"
 
 #### <a name="context-the-this-pointer"></a>上下文：**这**指针
 
-由于可能会在数据模型树的任何级别实现给定的属性或方法，因此它是所需的方法或属性，以便能够访问原始对象的实现 (所谓**这**c + + 中的指针或**这**在 JavaScript 中的对象。 该实例对象传递到各种方法的第一个参数调用**上下文**中所述的方法。
+由于可能会在数据模型树的任何级别实现给定的属性或方法，因此它是所需的方法或属性，以便能够访问原始对象的实现 (所谓**这**C++或**这**在 JavaScript 中的对象。 该实例对象传递到各种方法的第一个参数调用**上下文**中所述的方法。
 
 #### <a name="context-the-address-space"></a>上下文：地址空间
 
@@ -294,7 +294,7 @@ EnumerateRawValues 方法枚举所有本机子项 (例如： 字段、 基类、
 
 [TryCastToRuntimeType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-trycasttoruntimetype)
 
-TryCastToRuntimeType 方法会询问调试主机来执行分析并确定实际运行时类型 (例如： 最派生的类) 的给定对象。 使用过度的精确分析特定于调试主机，可能包括 RTTI （c + + 运行时类型信息），检查的对象，或任何其他 V Table(virtual function table) 结构意味着，宿主可用于可靠地确定动态/运行时键入从静态类型。 无法转换为运行时类型并不意味着此方法调用将失败。 在这种情况下，该方法将返回给定的对象 (此指针) 的输出参数中。 
+TryCastToRuntimeType 方法会询问调试主机来执行分析并确定实际运行时类型 (例如： 最派生的类) 的给定对象。 使用过度的精确分析特定于调试主机，并且可能包括 RTTI (C++运行时类型信息)，检查的对象或在主机可用于可靠地确定动态的其他任何方式 V Table(virtual function table) 结构 /从静态类型的运行时类型。 无法转换为运行时类型并不意味着此方法调用将失败。 在这种情况下，该方法将返回给定的对象 (此指针) 的输出参数中。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getlocation) 
 
@@ -310,7 +310,7 @@ GetTargetInfo 方法实际上是对象的 GetLocation 和 GetTypeInfo 方法返�
 
 [GetRawReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-getrawreference)
 
-GetRawReference 方法查找给定的对象中的本机构造并返回对它的引用。 此类构造可能是字段、 基本类、 字段中的基类、 成员函数，等等...务必要区分语言引用中返回此处 （ObjectTargetObjectReference 类型的对象） 的引用 (例如： c + + （& a) 或 & & 样式引用)。 
+GetRawReference 方法查找给定的对象中的本机构造并返回对它的引用。 此类构造可能是字段、 基本类、 字段中的基类、 成员函数，等等...务必要区分语言引用中返回此处 （ObjectTargetObjectReference 类型的对象） 的引用 (例如： C++ （& a) 或 & & 样式引用)。 
 
 [EnumerateRawReferences](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawreferences)
 
@@ -481,7 +481,7 @@ OverrideContextObject 方法 （仅提供 IModelKeyReference2 上） 是一个�
 
 上下文对象都是信息的不透明 blob 的调试主机 （位于数据模型与协作） 相关联的每个对象。 它可能包括等进程的上下文或地址空间的信息来自等内容...上下文对象是 IDebugHostContext 内 IModelObject 装箱的实现。 请注意，IDebugHostContext 主机定义接口。 客户端将永远不会实现此接口。 
 
-有关上下文对象的详细信息，请参阅[调试器的数据模型 c + + 主机接口](data-model-cpp-interfaces.md#hostinterface)中调试器的数据模型 c + + 接口。 
+有关上下文对象的详细信息，请参阅[调试程序数据模型C++主机接口](data-model-cpp-interfaces.md#hostinterface)调试器数据模型中C++接口。 
 
 
 ## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager"> 数据模型管理器  
@@ -574,7 +574,7 @@ CreateTypedObject 方法是允许客户端在调试目标的地址空间中创�
 
 [CreateTypedObjectReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedobjectreference)
 
-CreateTypedObjectReference 方法是在语义上类似于 CreateTypedObject 方法，只不过它创建对基础本机/语言构造的引用。 创建的引用的是具有一种类型的 ObjectTargetObjectReference 的对象。 它不是因为基础语言可能支持的本机引用 (例如： c + + （& a) 或 & &)。 它是完全可能有 ObjectTargetObjectReference 为 c + + 引用。 类型 ObjectTargetObjectReference 对象可以转换为通过使用 IModelObject 上的取消引用方法的基础值。 该引用还可以传递到基础主机的表达式计算器以便将分配后一种语言中的值为适当的方式。 
+CreateTypedObjectReference 方法是在语义上类似于 CreateTypedObject 方法，只不过它创建对基础本机/语言构造的引用。 创建的引用的是具有一种类型的 ObjectTargetObjectReference 的对象。 它不是因为基础语言可能支持的本机引用 (例如： C++ （& a) 或 & &)。 完全有可能具有到 ObjectTargetObjectReferenceC++引用。 类型 ObjectTargetObjectReference 对象可以转换为通过使用 IModelObject 上的取消引用方法的基础值。 该引用还可以传递到基础主机的表达式计算器以便将分配后一种语言中的值为适当的方式。 
 
 [CreateSyntheticObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idatamodelmanager-createsyntheticobject)
 
@@ -674,17 +674,17 @@ AcquireSubNamespace 方法可帮助更传统上可能看起来是语言命名空
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)

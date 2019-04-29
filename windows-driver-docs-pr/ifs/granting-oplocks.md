@@ -5,11 +5,11 @@ ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2e2f77d7b12be4d97f73dd0f93dccb23e001a59
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370139"
 ---
 # <a name="granting-oplocks"></a>授予 Oplock
 

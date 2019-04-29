@@ -1,6 +1,6 @@
 ---
-title: Framework 对象简介
-description: Framework 对象简介
+title: 框架对象简介
+description: 框架对象简介
 ms.assetid: 1314501a-bff1-4aac-a391-a72acca9cc26
 keywords:
 - framework 对象 WDK KMDF 关于 framework 对象
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30820eddd3ea14defa66c337c291ae044f8c3c34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378153"
 ---
-# <a name="introduction-to-framework-objects"></a>Framework 对象简介
+# <a name="introduction-to-framework-objects"></a>框架对象简介
 
 
 

@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acaf37b2c3c1c157a112b23a0cf0da3b7607eed2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379887"
 ---
 # <a name="exttdopoutputsimplevalue"></a>EXT\_TDOP\_输出\_简单\_值
 
 
 EXT\_TDOP\_输出\_简单\_值的子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将打印指定的类型化数据的值。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
 设置为 EXT\_TDOP\_输出\_简单\_此子操作的值。

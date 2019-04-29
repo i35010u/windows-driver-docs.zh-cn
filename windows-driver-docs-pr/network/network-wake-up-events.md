@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 835f99f4b4af8465f37ff43bfcdb9238b0585c52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380891"
 ---
 # <a name="network-wake-up-events"></a>网络唤醒事件
 

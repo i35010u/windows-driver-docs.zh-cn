@@ -1,6 +1,6 @@
 ---
-title: 特定的 WMI 问题疑难解答
-description: 特定的 WMI 问题疑难解答
+title: 排查具体的 WMI 问题
+description: 排查具体的 WMI 问题
 ms.assetid: 966191e7-aec4-4eff-b975-99a6d3eb8d02
 keywords:
 - WMI WDK 内核故障排除
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1759ae885a46d2e8a45e08e5916ac25ca7723025
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377035"
 ---
-# <a name="troubleshooting-specific-wmi-problems"></a>特定的 WMI 问题疑难解答
+# <a name="troubleshooting-specific-wmi-problems"></a>排查具体的 WMI 问题
 
 
 

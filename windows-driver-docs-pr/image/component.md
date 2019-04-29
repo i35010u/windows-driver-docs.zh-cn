@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08304753deae656990fe1fb629758695a4152a42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373213"
 ---
 # <a name="component-element"></a>组件元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56542269"
 </wscn:Component>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -44,9 +44,9 @@ ms.locfileid: "56542269"
 必需。 以下值之一：
 
 -   ADF
--   电影
+-   Film
 -   MediaPath
--   辊
+-   Platen
 
 ## <a name="child-elements"></a>子元素
 
@@ -80,7 +80,7 @@ ms.locfileid: "56542269"
 
 您都可以扩展和子集的允许的值为此元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ConditionHistoryEntry**](conditionhistoryentry.md)

@@ -5,11 +5,11 @@ ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb23ce474690030042163b09c570e203d6630ea6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379181"
 ---
 # <a name="using-proxied-connections-tracking"></a>使用代理连接跟踪
 

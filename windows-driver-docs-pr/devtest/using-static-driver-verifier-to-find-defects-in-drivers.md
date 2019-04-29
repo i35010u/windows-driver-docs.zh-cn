@@ -5,11 +5,11 @@ ms.assetid: 94D4104C-66ED-4C1E-8EE1-4C669EB4EAAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecf17c5836dd28eb12f398a4fb11bbf9c342a960
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371558"
 ---
 # <a name="using-static-driver-verifier-to-find-defects-in-windows-drivers"></a>使用静态驱动程序验证程序查找 Windows 驱动程序中的缺陷
 
@@ -70,7 +70,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 
     因为在 WDK 标头文件中已定义的函数角色类型，只需声明回调函数来为该类型。 在这种情况下，声明*DriverEntry*属于类型**驱动程序\_初始化**。 有关驱动程序模型的函数角色类型的完整列表，请参阅[使用函数角色类型声明](using-function-role-type-declarations.md)。
 
-2.  **运行的 C/c + + 代码分析**
+2.  **面向 C 运行代码分析 /C++**
 
     若要帮助您确定是否准备好的源代码，请运行[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)Visual Studio 中。 代码分析工具检查函数角色类型声明，这 SDV 要求。 代码分析工具可以帮助识别可能会遗漏任何函数声明或函数定义的参数不匹配函数角色类型中时向您发出警告。
 
@@ -81,7 +81,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
 
     下表显示了一些代码分析工具可能会发现在驱动程序代码中的警告。 若要运行 Static Driver Verifier，您的驱动程序必须是免费的这些缺陷。
 
-    | C/c + + 警告的代码分析 | 描述                                                                                                                         |
+    | 为 C 代码分析 /C++警告 | 描述                                                                                                                         |
     |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
     | C28101                          | 驱动程序模块已推断当前函数，是&lt;函数类型&gt;函数                                       |
     | C28022                          | 有关该函数的函数类与使用定义它的 typedef 上的函数类不匹配。                       |

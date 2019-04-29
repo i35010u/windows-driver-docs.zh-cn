@@ -1,16 +1,16 @@
 ---
-Description: Retrieving Resource Attributes
-title: 检索资源属性
+Description: 检索资源特性
+title: 检索资源特性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2df0c06a25c298f8bb1fcd8fff03547c86d7cde1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376228"
 ---
-# <a name="retrieving-resource-attributes"></a>检索资源属性
+# <a name="retrieving-resource-attributes"></a>检索资源特性
 
 
 当应用程序需要检索一组给定的资源支持的属性时，它将调用**IPortableDeviceResources::GetResourceAttributes**方法并传递一个字符串，指定的标识符相关资源。 此 API 调用，进而触发**WpdObjectResources::OnGetResourceAttributes**命令处理程序中的示例驱动程序。 此方法创建**IPortableDeviceValues**它将资源支持的每个属性的 PROPERTYKEY/PROPVARIANT 对插入到其中的对象。

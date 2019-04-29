@@ -5,11 +5,11 @@ ms.assetid: E759E022-C1E6-4403-B3DC-82A269E04B93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0a93c6920e41868a0bfacb2c0a549faf6ab634a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375189"
 ---
 # <a name="modify-the-sample-to-support-another-sensor"></a>修改示例以支持另一台传感器
 

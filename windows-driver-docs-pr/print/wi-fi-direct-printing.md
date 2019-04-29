@@ -1,17 +1,17 @@
 ---
-title: Wi-Fi Direct 打印
+title: Wi-Fi 直接打印
 description: Windows 8.1 和更高版本的 Windows 支持通过 Wi-Fi Direct (WFD) 打印。
 ms.assetid: B2FC1293-F9E4-43A4-84BF-21EF8C3D27E0
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 22ef2a07b95369716d567bb4bfd4c8d3cb94ca63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370387"
 ---
-# <a name="wi-fi-direct-printing"></a>Wi-Fi Direct 打印
+# <a name="wi-fi-direct-printing"></a>Wi-Fi 直接打印
 
 
 Windows 8.1 和更高版本的 Windows 支持通过 Wi-Fi Direct (WFD) 打印。
@@ -49,7 +49,7 @@ Windows 8.1 和更高版本的 Windows 支持通过 Wi-Fi Direct (WFD) 打印。
 <td><p>设备关联服务</p></td>
 </tr>
 <tr class="even">
-<td><p>GO</p></td>
+<td><p>前往</p></td>
 <td><p>组所有者</p></td>
 </tr>
 <tr class="odd">

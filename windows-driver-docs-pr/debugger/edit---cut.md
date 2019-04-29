@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2fe908322852a80b9e54cb38a94a77ba599ae1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378849"
 ---
-# <a name="edit--cut"></a>编辑 |剪切
+# <a name="edit--cut"></a>编辑 | 剪切
 
 
 ## <span id="ddk_edit_cut_dbg"></span><span id="DDK_EDIT_CUT_DBG"></span>

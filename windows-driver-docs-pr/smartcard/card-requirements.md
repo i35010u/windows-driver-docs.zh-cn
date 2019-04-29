@@ -1,17 +1,17 @@
 ---
-title: 卡的要求
-description: 卡的要求
+title: 卡要求
+description: 卡要求
 ms.assetid: 3BE887F9-4B35-4A83-9E98-DD7555DF2953
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c46911e0aa0fe77815b353f52e3e44ec665d00f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373540"
 ---
-# <a name="card-requirements"></a>卡的要求
+# <a name="card-requirements"></a>卡要求
 
 
 要为其他要求提供一些背景信息，本部分提供有关如何预配和使用卡一些信息。

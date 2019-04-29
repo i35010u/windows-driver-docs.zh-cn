@@ -1,6 +1,6 @@
 ---
-title: 在安装过程中设置设备对象注册表属性
-description: 在安装过程中设置设备对象注册表属性
+title: 在安装期间设置设备对象注册表属性
+description: 在安装期间设置设备对象注册表属性
 ms.assetid: 29d40398-09b9-4e64-aa47-da229066bffd
 keywords:
 - 设备对象 WDK 内核注册表
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf560b528f01f4c22d04d8933a7e9342446da804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385531"
 ---
-# <a name="setting-device-object-registry-properties-during-installation"></a>在安装过程中设置设备对象注册表属性
+# <a name="setting-device-object-registry-properties-during-installation"></a>在安装期间设置设备对象注册表属性
 
 
 

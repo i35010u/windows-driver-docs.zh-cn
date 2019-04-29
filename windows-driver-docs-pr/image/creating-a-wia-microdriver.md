@@ -1,17 +1,17 @@
 ---
-title: 创建 WIA Microdriver
-description: 创建 WIA Microdriver
+title: 创建 WIA 微驱动程序
+description: 创建 WIA 微驱动程序
 ms.assetid: 4f453569-d768-47fb-9b70-ebb51e303cf0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f77d905d77de2217b7fde09f510771391e70a92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386325"
 ---
-# <a name="creating-a-wia-microdriver"></a>创建 WIA Microdriver
+# <a name="creating-a-wia-microdriver"></a>创建 WIA 微驱动程序
 
 
 

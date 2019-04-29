@@ -5,11 +5,11 @@ ms.assetid: 68DBA705-235B-4D74-9E03-A6B934A6ED68
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: deb5ed04c6bd1a49db2e8bde67f0dda06dfe11a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368821"
 ---
 # <a name="sensor-helper-functions"></a>传感器帮助器函数
 

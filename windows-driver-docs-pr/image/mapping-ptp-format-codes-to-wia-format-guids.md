@@ -1,17 +1,17 @@
 ---
-title: PTP 格式代码映射到 WIA 格式 Guid
-description: PTP 格式代码映射到 WIA 格式 Guid
+title: 将 PTP 格式代码映射到 WIA 格式 GUID
+description: 将 PTP 格式代码映射到 WIA 格式 GUID
 ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e19dcb705575aa728b4a167379795247c4b9aa6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380383"
 ---
-# <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>PTP 格式代码映射到 WIA 格式 Guid
+# <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>将 PTP 格式代码映射到 WIA 格式 GUID
 
 
 
@@ -55,7 +55,7 @@ ms.locfileid: "56525195"
 </tr>
 <tr class="odd">
 <td><p>0x3004</p></td>
-<td><p>文本</p></td>
+<td><p>Text</p></td>
 <td><p>DATAFMT_UNICODE16</p></td>
 </tr>
 <tr class="even">

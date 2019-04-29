@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_DISABLE_EVENTS Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 372197386e8e1755dc65fcdd079e1ecd11859cd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368385"
 ---
 # <a name="irpmndisableevents"></a>IRP\_MN\_DISABLE\_EVENTS
 
@@ -82,13 +82,13 @@ STATUS\_INVALID\_DEVICE\_REQUEST
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DpWmiFunctionControl*](https://msdn.microsoft.com/library/windows/hardware/ff544094)

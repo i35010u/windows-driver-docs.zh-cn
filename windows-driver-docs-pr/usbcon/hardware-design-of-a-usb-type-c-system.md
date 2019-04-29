@@ -1,14 +1,14 @@
 ---
-Description: Here are some example designs for USB Type-C system.
+Description: 以下是一些示例设计为 USB C 类型系统。
 title: USB C 类型系统的硬件设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a2677550b5c56a958b77a9af31ec3844a8263d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371844"
 ---
 # <a name="hardware-design-usb-type-c-systems"></a>硬件设计：USB 类型 C 系统
 

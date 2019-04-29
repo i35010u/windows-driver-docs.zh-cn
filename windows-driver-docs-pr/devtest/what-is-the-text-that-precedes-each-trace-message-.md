@@ -5,13 +5,13 @@ ms.assetid: bff8eb0b-f571-405f-b930-3003e2c50621
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aeffbafc960ad92289d51f5ae7738d4582851d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379131"
 ---
-# <a name="what-is-the-text-that-precedes-each-trace-message"></a>什么是前每条跟踪消息的文本？
+# <a name="what-is-the-text-that-precedes-each-trace-message"></a>每条跟踪消息前面的的文本是什么？
 
 
 [Tracefmt](tracefmt.md)并[TraceView](traceview.md)添加[跟踪消息前缀](trace-message-prefix.md)到它们格式化每条跟踪消息。 前缀是组成的跟踪消息有关的数据字符串。 Tracefmt 和 TraceView 输出中，可以查看该前缀。

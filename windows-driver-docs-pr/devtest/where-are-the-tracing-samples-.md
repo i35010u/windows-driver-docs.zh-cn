@@ -5,13 +5,13 @@ ms.assetid: 68882242-4956-4492-b3ac-e93b67a993a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94e09b26cb81bb68ee327a038ef8df30da0ff756
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379133"
 ---
-# <a name="where-are-the-tracing-samples"></a>跟踪示例在哪里？
+# <a name="where-are-the-tracing-samples"></a>跟踪示例位于何处？
 
 
 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)是设计为演示 WPP 软件跟踪的示例驱动程序。 TraceDrv 现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub 上的存储库。

@@ -1,19 +1,19 @@
 ---
-title: NDIS 6.20 到 NDIS 6.1 功能更新
-description: NDIS 6.20 到 NDIS 6.1 功能更新
+title: 将 NDIS 6.20 更新到 NDIS 6.1 的功能
+description: 将 NDIS 6.20 更新到 NDIS 6.1 的功能
 ms.assetid: b57af71b-2718-4a52-888b-b378b3e6097f
 keywords:
 - NDIS 6.20 WDK、 NDIS 6.1 功能更新
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d123910b9c304c406e794049209f299c4bab072
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383608"
 ---
-# <a name="ndis-620-updates-to-ndis-61-features"></a>NDIS 6.20 到 NDIS 6.1 功能更新
+# <a name="ndis-620-updates-to-ndis-61-features"></a>将 NDIS 6.20 更新到 NDIS 6.1 的功能
 
 
 

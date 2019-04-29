@@ -1,5 +1,5 @@
 ---
-title: lsc （列表当前源）
+title: lsc（列出当前源）
 description: Lsc 命令显示当前的源代码文件名称和行号。
 ms.assetid: 5c500974-c405-4335-94bd-a36e7389667b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a44a461e64cb25c9c681099a4461abf48b5fcbbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383319"
 ---
-# <a name="lsc-list-current-source"></a>lsc （列表当前源）
+# <a name="lsc-list-current-source"></a>lsc（列出当前源）
 
 
 **Lsc**命令显示当前的源代码文件名称和行号。

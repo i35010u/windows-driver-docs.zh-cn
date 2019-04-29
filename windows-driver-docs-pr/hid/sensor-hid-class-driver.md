@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5edeb20dbe097552c3c96b03f3f925c271d7238
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384456"
 ---
 # <a name="sensor-hid-class-driver"></a>传感器 HID 类驱动程序
 

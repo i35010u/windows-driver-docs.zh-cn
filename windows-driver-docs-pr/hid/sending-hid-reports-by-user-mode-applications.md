@@ -5,11 +5,11 @@ ms.assetid: 265d7393-62be-41ad-8f87-efcfa462de1f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fc130997ee844e70ab5e11268820ed60b649c6ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384454"
 ---
 # <a name="sending-hid-reports-by-user-mode-applications"></a>发送用户模式应用程序通过 HID 报告
 

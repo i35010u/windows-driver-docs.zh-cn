@@ -1,6 +1,6 @@
 ---
-title: 多个个人设置模板的数据类型
-description: 多个个人设置模板的数据类型
+title: 多个个性化模板数据类型
+description: 多个个性化模板数据类型
 ms.assetid: ee550416-9185-41fa-b113-6a1d22c3aa96
 keywords:
 - 模板 WDK GDL，数据类型
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c3d34adb0c002da6fdd019ad85f9e37dd5edce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372469"
 ---
-# <a name="multiple-personality-template-data-types"></a>多个个人设置模板的数据类型
+# <a name="multiple-personality-template-data-types"></a>多个个性化模板数据类型
 
 
 多个\_个性数据类型表示一个值，可以在不同的时间保存不同的数据类型。 此数据类型是类似于 C 语言**union**数据类型。

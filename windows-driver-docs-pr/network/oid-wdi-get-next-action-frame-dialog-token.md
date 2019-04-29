@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_NEXT_ACTION_FRAME_DIALOG_TOKEN 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a5c2c208211580f6f6b868e447352c9826eb158e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377243"
 ---
 # <a name="oidwdigetnextactionframedialogtoken"></a>OID\_WDI\_GET\_NEXT\_ACTION\_FRAME\_DIALOG\_TOKEN
 
@@ -55,7 +55,7 @@ OID\_WDI\_获取\_下一步\_操作\_帧\_对话框\_令牌请求 DialogToken �
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

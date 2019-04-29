@@ -5,11 +5,11 @@ ms.assetid: ''
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8fbb292ea7c4e3e1bb5f60dc89d89b2e37e67dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373694"
 ---
 # <a name="supported-smart-card-attributes"></a>支持的智能卡属性
 本主题介绍当前支持的智能卡属性。 唯一受支持的属性如下所示;作为 STATUS_NOT_SUPPORTED 返回 Winsmcrd.h 中定义的所有其他属性。 中说明了这些属性*ICCs 和个人计算机系统的互操作性规范*。

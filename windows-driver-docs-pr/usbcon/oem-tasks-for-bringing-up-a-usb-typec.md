@@ -1,16 +1,16 @@
 ---
-Description: Windows support for USB Type-C connector and tasks for OEMs who are building USB Type-C systems.
-title: Windows 支持 USB 类型 C 连接器
+Description: 适用于在构建 USB 类型 C 的系统的 Oem 支持 USB C 型连接器和任务的 Windows。
+title: Windows 对 USB 类型 C 连接器的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 313e6caf41852998ca277011a9abe13d956d0a1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376464"
 ---
-# <a name="windows-support-for-usb-type-c-connectors"></a>Windows 支持 USB 类型 C 连接器
+# <a name="windows-support-for-usb-type-c-connectors"></a>Windows 对 USB 类型 C 连接器的支持
 
 本主题适用于想要构建 Windows 10 的系统，使用 USB C 型连接器，并且想要利用操作系统功能，通过宣传位置设备能够更快地收费、 power 交付、 双角色、 备用模式和错误通知的 Oem。
 
@@ -64,7 +64,7 @@ USB C 型连接器是可还原和对称。
 |---|---|
 |未实现 PD 状态机 |写入 UcmTcpciCx 类扩展客户端驱动程序。 <p>[写入 USB 类型 C 端口控制器驱动程序](write-a-usb-type-c-port-controller-driver.md)</p>|
 |实现 PD 状态中的硬件或固件的计算机，并通过 ACPI 支持 USB 类型 C 连接器系统软件接口 (UCSI)| 加载 Microsoft 提供的现成驱动程序，UcmUcsiCx.sys 和 UcmUcsiAcpiClient.sys。 <p>请参阅[UCSI 驱动程序](ucsi.md)。</p>|
-|实现 PD 状态机中的硬件或固件，但不能支持 UCSI，或者支持 UCSI 但需要非 ACPI 传输|编写 UcmCx 类扩展的客户端驱动程序。<p>[编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)</p><p>[写入 USB 类型 C 策略管理器客户端驱动程序](policy-manager-client.md)</p>|
+|实现 PD 状态机中的硬件或固件，但不能支持 UCSI，或者支持 UCSI 但需要非 ACPI 传输|编写 UcmCx 类扩展的客户端驱动程序。<p>[编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)</p><p>[编写 USB 类型 C 策略管理器客户端驱动程序](policy-manager-client.md)</p>|
 |实现 UCSI，但需要非 ACPI 传输|写入 UcmUcsiCx 类扩展客户端驱动程序。<p>使用[此示例模板](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmCxUcsi)并修改它基于您的硬件使用的传输。</P><p>[编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)</P>|
 
 
@@ -89,10 +89,10 @@ USB C 型连接器是可还原和对称。
 
 符合性认证/参加 Power 交付和 USB 类型 C 标准主体由托管的符合性研讨会。
  
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
--   [常见问题：Windows 系统上的 USB C 型连接器](faq--usb-type-c-connector-on-a-windows-system.md)
+-   [常见问题解答：Windows 系统上的 USB C 型连接器](faq--usb-type-c-connector-on-a-windows-system.md)
 -   [在用户界面中的消息疑难解答](https://go.microsoft.com/fwlink/?LinkId=526894) 
 
  

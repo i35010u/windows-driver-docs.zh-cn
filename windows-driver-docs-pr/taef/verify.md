@@ -5,23 +5,23 @@ ms.assetid: A954B5E2-E3C7-4021-BE53-AE1257139607
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a9aaf7a41b6a6d0f1c137c2c456cf0283d22a98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383033"
 ---
 # <a name="verify-framework"></a>验证框架
 
 
 若要使编写测试更容易，TAEF，提供了"验证"框架，利用[WexLogger](wexlogger.md)来报告使用极少量的代码的详细的日志。 验证框架可帮助测试，以提供结构化的日志输出-它将输出登录成功，如果给定的验证成功，并且它将输出的详细的信息，如果验证失败。
 
-## <a name="span-idcplusplusspanspan-idcplusplusspanusing-verify-from-c"></a><span id="cplusplus"></span><span id="CPLUSPLUS"></span>使用验证从 c + +
+## <a name="span-idcplusplusspanspan-idcplusplusspanusing-verify-from-c"></a><span id="cplusplus"></span><span id="CPLUSPLUS"></span>从使用验证C++
 
 
-验证 API 在 c + + 中显示为一系列"Verify.h"标头文件中定义的宏 (注意：不需要显式包括 Verify.h，应包括包含标记 c + + 测试和与验证和 WexLogger API 交互所需的所有内容的"WexTestClass.h"）。
+验证 API 显示在C++为一系列"Verify.h"标头文件中定义的宏 (注意：不需要显式包括 Verify.h，应包括包含全部所需标记的"WexTestClass.h"C++测试和与验证和 WexLogger API 进行交互)。
 
-以下验证宏是可用于本机 c + + 测试：
+以下验证宏是可用于本机C++测试：
 
 | 宏                                                                                     | 功能                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +57,7 @@ ms.locfileid: "56527079"
 
 ### <a name="span-idexceptioncplusplusspanspan-idexceptioncplusplusspanexception-based-verify-usage"></a><span id="exception_cplusplus"></span><span id="EXCEPTION_CPLUSPLUS"></span>基于异常验证使用情况
 
-如果使用 c + + 异常启用编译你的源代码 (通过指定"/ EHsc"命令行开关或"使用\_本机\_EH = 1" 宏源文件中的)，验证宏将默认为日志记录失败时后, 接错误通过引发本机 c + + 异常。 引发的异常**WEX::TestExecution::VerifyFailureException**。 不需要捕获此异常-TAEF 框架将为你捕获并转到下一步的测试用例。
+如果你的源代码编译使用C++启用的异常 (通过指定"/ EHsc"命令行开关或"使用\_本机\_EH = 1" 宏源文件中的)，验证宏将默认为日志记录失败，错误遵循通过引发一个本机C++异常。 引发的异常**WEX::TestExecution::VerifyFailureException**。 不需要捕获此异常-TAEF 框架将为你捕获并转到下一步的测试用例。
 
 （可选） 如果你想要执行一系列验证中的行，而不是无需在测试时中止第一次的验证失败，则可以使用**DisableVerifyExceptions**类。 对象的生存期控制异常处于禁用状态的时间量。
 
@@ -76,9 +76,9 @@ if (NULL != m_key)
 
 ### <a name="span-idnonexceptioncplusplusspanspan-idnonexceptioncplusplusspannon-exception-based-verify-usage"></a><span id="nonexception_cplusplus"></span><span id="NONEXCEPTION_CPLUSPLUS"></span>非基于异常验证使用情况
 
-如果你的源代码***不***编译启用 c + + 异常，验证宏将不会引发本机 c + + 时验证失败。 此外，如果你的源代码编译与启用 c + + 异常，但你想要禁用验证例外情况，只需\#定义否\_验证\_之前包括"WexTestClass.h"的异常。
+如果你的源代码***不***编译的C++启用的异常，验证宏将不会引发一个本机C++当验证失败。 此外，如果你的源代码编译使用C++启用的例外，但想要禁用验证例外情况，只需\#定义无\_验证\_之前包括"WexTestClass.h"的异常。
 
-在此模型中，您必须执行一系列嵌套语句以便控制流的测试用例中，而不是如果比依赖于 c + + 异常。
+在此模型中，您必须执行一系列嵌套如果语句以便控制流的测试用例中，而是依赖于比C++异常。
 
 ```cpp
 if (VERIFY_WIN32_SUCCEEDED(::RegDeleteKey(HKEY_CURRENT_USER, zTempName)))
@@ -125,7 +125,7 @@ SetVerifyOutput verifySettings(VerifyOutputSettings::LogOnlyFailures | VerifyOut
 
 ### <a name="span-idoutcustomcplusplusspanspan-idoutcustomcplusplusspanproviding-value-output-for-custom-types"></a><span id="outcustom_cplusplus"></span><span id="OUTCUSTOM_CPLUSPLUS"></span>提供为自定义类型的值输出
 
-C + + 验证框架提供的功能，以生成的任何自定义类型的详细的输出。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyOutputTraits**类模板。
+C++验证框架提供的功能，以生成的任何自定义类型的详细的输出。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyOutputTraits**类模板。
 
 **WEX::TestExecution::VerifyOutputTraits**类模板专用化必须存在于**WEX::TestExecution**命名空间。 它还应提供名为的公共静态方法**ToString**，它将引用您的类，并返回**WEX::Common::NoThrowString**包含其值的字符串表示形式.
 
@@ -163,7 +163,7 @@ C + + 验证框架提供的功能，以生成的任何自定义类型的详细�
 
 ### <a name="span-idcomparatorscplusplusspanspan-idcomparatorscplusplusspanproviding-comparators-for-custom-types"></a><span id="comparators_cplusplus"></span><span id="COMPARATORS_CPLUSPLUS"></span>为自定义类型提供比较运算符
 
-C + + 验证框架提供的功能来定义未实现相应的运算符重载的自定义类型的比较运算符 (运算符 =、 运算符&lt;，等等)。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyCompareTraits**类模板。
+C++验证框架提供的功能来定义未实现相应的运算符重载的自定义类型的比较运算符 (运算符 =、 运算符&lt;等)。 要执行此操作，其中一个必须实现的专用化**WEX::TestExecution::VerifyCompareTraits**类模板。
 
 **WEX::TestExecution::VerifyCompareTraits**类模板专用化必须存在于**WEX::TestExecution**命名空间。 它还应提供一种公共静态方法调用**AreEqual**， **AreSame**， **IsLessThan**， **IsGreaterThan**，和**IsNull**。
 
@@ -222,7 +222,7 @@ C + + 验证框架提供的功能来定义未实现相应的运算符重载的�
 ## <a name="span-idcsharpspanspan-idcsharpspanusing-verify-from-c"></a><span id="csharp"></span><span id="CSHARP"></span>从使用验证C#
 
 
-C#验证使用情况是类似于 c + +。 但是，通过提供**WEX。TestExecution.Verify**类，该类是位于**Te.Managed.dll**。
+C#验证使用情况是类似于C++。 但是，通过提供**WEX。TestExecution.Verify**类，该类是位于**Te.Managed.dll**。
 
 下面的验证方法是可用于C#测试：
 
@@ -266,7 +266,7 @@ C#验证使用情况是类似于 c + +。 但是，通过提供**WEX。TestExecu
 
 ### <a name="span-idexceptioncsharpspanspan-idexceptioncsharpspanexception-based-verify-usage"></a><span id="exception_csharp"></span><span id="EXCEPTION_CSHARP"></span>基于异常验证使用情况
 
-验证失败时出现在C#的测试用例，将错误写入到记录器，和一个**WEX。TestExecution.VerifyFailureException**引发。 如同本机 c + + 模型，您不必担心如何捕获这些异常。 TAEF 框架将为您捕获，并转到下一步的测试用例。
+验证失败时出现在C#的测试用例，将错误写入到记录器，和一个**WEX。TestExecution.VerifyFailureException**引发。 就像本机一样C++模型中，您不需要担心如何捕获这些异常。 TAEF 框架将为您捕获，并转到下一步的测试用例。
 
 （可选） 如果你想要执行一系列验证中的行，而不是无需在测试时中止第一次的验证失败，则可以使用**DisableVerifyExceptions**类。 对象的生存期控制异常处于禁用状态的时间量。 **DisableVerifyExceptions**类是引用计数，并在每个线程进行函数。
 
@@ -355,7 +355,7 @@ using (new SetVerifyOutput(VerifyOutputSettings.LogFailuresAsBlocked | VerifyOut
 ## <a name="span-idscriptspanspan-idscriptspanusing-verify-from-script"></a><span id="script"></span><span id="SCRIPT"></span>使用脚本验证
 
 
-验证 API 还提供对脚本语言，遵循相同的使用情况模式作为 c + + 和C#。
+验证 API 还可以找出脚本语言，遵循相同的使用情况模式为C++和C#。
 
 ### <a name="span-idinstallationspanspan-idinstallationspanspan-idinstallationspaninstallation"></a><span id="Installation"></span><span id="installation"></span><span id="INSTALLATION"></span>安装
 

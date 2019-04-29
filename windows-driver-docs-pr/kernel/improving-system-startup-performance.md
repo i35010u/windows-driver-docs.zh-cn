@@ -5,11 +5,11 @@ ms.assetid: 9fce451c-73b3-4e3b-875d-319aaa8765ff
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f96db85ed44e261d2a66f23b92881db216a296a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384257"
 ---
 # <a name="improving-system-startup-performance"></a>改进系统启动性能
 

@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ca05c45f2f7c03d93c450bc41a6febf266d8ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370323"
 ---
 # <a name="sensorcategorylight"></a>传感器\_类别\_光
 
@@ -114,11 +114,11 @@ ms.locfileid: "56533323"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Sensors.h</td>
 </tr>
 </tbody>

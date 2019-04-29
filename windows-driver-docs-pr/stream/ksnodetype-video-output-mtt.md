@@ -5,11 +5,11 @@ ms.assetid: 451b5a3f-8168-4ac3-85bb-46460999128b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46b9a1b6f8797f8fcaf07c3c3f49e7ff046a6bd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379969"
 ---
 # <a name="ksnodetypevideooutputmtt"></a>KSNODETYPE\_视频\_输出\_MTT
 

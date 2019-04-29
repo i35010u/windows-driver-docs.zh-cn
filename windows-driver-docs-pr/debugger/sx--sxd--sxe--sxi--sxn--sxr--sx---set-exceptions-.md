@@ -1,5 +1,5 @@
 ---
-title: sx，sxd，sxe，sxi，sxn，sxr，sx-（设置异常）
+title: sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 description: Sx * 命令来控制调试程序会为正在调试的应用程序中发生异常时或发生某些事件时的操作。
 ms.assetid: fdb5059f-e7d9-4e14-aa3d-030e72c30732
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: db9b92435bd60bde07fff905bb7af15337799f5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383005"
 ---
-# <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx，sxd，sxe，sxi，sxn，sxr，sx-（设置异常）
+# <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 
 
 **Sx * * *\** 命令控制则调试器会在应用程序正在调试的或发生某些事件时出现异常时的操作。
@@ -107,7 +107,7 @@ sxr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">状态名称</th>
 <th align="left">描述</th>
 </tr>
@@ -151,7 +151,7 @@ sxr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">状态名称</th>
 <th align="left">描述</th>
 </tr>

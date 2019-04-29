@@ -5,11 +5,11 @@ ms.assetid: 771b5751-db9f-43fa-90d1-1c43918a3a80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54aa6b0955850869d358f9a700c7f5b85149ce5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370017"
 ---
 # <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>访问类注册表项下的注册表项值
 

@@ -5,11 +5,11 @@ ms.assetid: 3fde6e89-c9ea-43d2-a999-506686b223f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88e21083fe59d46ee4c9fae0e285f67e7b2db7a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377288"
 ---
 # <a name="windows-automatically-selects-optimal-character-encoding"></a>Windows 自动选择最佳字符编码
 

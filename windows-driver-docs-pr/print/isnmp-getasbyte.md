@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2daf9bf51c6ec3f814aa188616d26538f583e493
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384191"
 ---
 # <a name="isnmpgetasbyte-method"></a>ISNMP::GetAsByte 方法
 

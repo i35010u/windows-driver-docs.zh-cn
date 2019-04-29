@@ -1,17 +1,17 @@
 ---
-title: 调试器数据模型-活动变量的对象
+title: 调试器数据模型 - 实时变量对象
 description: 这是该特定的指令处实时和它们的位置的变量信息的集合
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c228ccd00d97693462a94e6f96589513e889e7b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376081"
 ---
 # <a name="live-variable-objects"></a>活动变量的对象 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 具有完整符号信息时，每个指令包含的变量，这是该特定的指令处实时和它们的位置信息的集合。
 ## <a name="object-properties"></a>对象属性
 |名称|描述|

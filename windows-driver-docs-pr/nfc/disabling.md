@@ -4,18 +4,18 @@ description: 订阅、 发布和状态，可以暂时禁用客户端。
 ms.assetid: 94BE6D24-60AD-45BD-AF2D-388022114975
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cd3d487df406c2f15d3755abf8ab370b5b9f356
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375215"
 ---
 # <a name="disabling-nfp"></a>禁用 NFP
 

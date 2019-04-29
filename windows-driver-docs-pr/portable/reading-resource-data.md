@@ -1,14 +1,14 @@
 ---
-Description: Reading Resource Data
+Description: 读取资源数据
 title: 读取资源数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c50ef5912266fdb8420ee0edf9aaea2ed3b0b8cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376221"
 ---
 # <a name="reading-resource-data"></a>读取资源数据
 

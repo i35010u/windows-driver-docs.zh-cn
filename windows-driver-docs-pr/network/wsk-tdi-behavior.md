@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WSK_TDI_BEHAVIOR 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6321bd798bdec847caaefa8a4dddc517cf5e645a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375289"
 ---
 # <a name="wsktdibehavior"></a>WSK\_TDI\_BEHAVIOR
 
@@ -34,7 +34,7 @@ WSK 应用程序使用 WSK\_TDI\_行为客户端控制来控制操作是否 WSK 
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +92,7 @@ WSK 应用程序使用 WSK\_TDI\_行为客户端控制来控制操作是否 WSK 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

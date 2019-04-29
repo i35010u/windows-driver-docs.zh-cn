@@ -1,17 +1,17 @@
 ---
-title: 为筛选器提供 IPrintCoreHelper 配置服务
-description: 为筛选器提供 IPrintCoreHelper 配置服务
+title: 在筛选器中提供 IPrintCoreHelper 配置服务
+description: 在筛选器中提供 IPrintCoreHelper 配置服务
 ms.assetid: 78f12957-fc05-4183-a79b-4c637afe25b2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ff7e3e6def8ff3a315da86a57ee0b27cb07acf0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376545"
 ---
-# <a name="providing-iprintcorehelper-configuration-service-to-filters"></a>为筛选器提供 IPrintCoreHelper 配置服务
+# <a name="providing-iprintcorehelper-configuration-service-to-filters"></a>在筛选器中提供 IPrintCoreHelper 配置服务
 
 
 **IPrintCoreHelper**接口是由 Windows Vista Unidrv/PScript5 配置模块实现的新接口。 此接口允许对客户端计算机：

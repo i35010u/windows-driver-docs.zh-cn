@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5b0acfc05ace3e31b055f896f0c0461122350c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381583"
 ---
 # <a name="rotationssupported-element"></a>RotationsSupported 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56522076"
 </wscn:RotationsSupported>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -81,7 +81,7 @@ ms.locfileid: "56522076"
 
 WSD 扫描服务必须在数据采集后将所有旋转值都应用于扫描数据。 必须按顺时针方向应用所有的旋转。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DeviceSettings**](devicesettings.md)

@@ -5,11 +5,11 @@ ms.assetid: 2fabfa86-7f8a-4c90-8aa0-53e42bd5c075
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2a7fcd25e206cc64fdfaa9ecfc9c89bd47d43c63
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383103"
 ---
 # <a name="hbastatus"></a>HBA\_状态
 

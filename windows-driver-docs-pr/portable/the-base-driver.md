@@ -1,14 +1,14 @@
 ---
-Description: The Base Driver
+Description: 基础驱动程序
 title: 基础驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55eb40463baa06eda3bb0749adafb66e8aaae5db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380841"
 ---
 # <a name="the-base-driver"></a>基础驱动程序
 

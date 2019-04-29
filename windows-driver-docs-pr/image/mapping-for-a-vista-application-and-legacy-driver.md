@@ -1,17 +1,17 @@
 ---
-title: Vista 应用程序和旧驱动程序映射
-description: Vista 应用程序和旧驱动程序映射
+title: 适用于 Vista 应用程序和旧版驱动程序的映射
+description: 适用于 Vista 应用程序和旧版驱动程序的映射
 ms.assetid: 176157b0-cc30-467b-95ec-2d25a40c43ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96a305c388f371e151bd27b84b26e6fb36487b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379687"
 ---
-# <a name="mapping-for-a-vista-application-and-legacy-driver"></a>Vista 应用程序和旧驱动程序映射
+# <a name="mapping-for-a-vista-application-and-legacy-driver"></a>适用于 Vista 应用程序和旧版驱动程序的映射
 
 
 本部分介绍 Windows Vista 应用程序需要使用旧驱动程序时使用的映射。 下表描述了 WIA 兼容性层将旧传输消息和对 Windows Vista 传输消息的数据流和数据流的映射。

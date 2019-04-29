@@ -5,11 +5,11 @@ ms.assetid: 0d4d0273-775f-4cbb-8b7f-63b22f3ccdae
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 849e879833c40eb06ac63562bbbae10185dd0ae0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381373"
 ---
 # <a name="libraries-and-headers"></a>库和标头
 

@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_SET_RADIO_STATE_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 613973a9a580ed9288e7fcd745a0f964ddbed47e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372919"
 ---
 # <a name="ndisstatuswdiindicationsetradiostatecomplete"></a>NDIS\_状态\_WDI\_指示\_设置\_单选\_状态\_完成
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_设置\_单选\_状态\_完成以指示完成[OID\_WDI\_任务\_设置\_单选\_状态](oid-wdi-task-set-radio-state.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -47,13 +47,13 @@ ms.locfileid: "56548323"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_TASK\_SET\_RADIO\_STATE](oid-wdi-task-set-radio-state.md)

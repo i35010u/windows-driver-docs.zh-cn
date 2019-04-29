@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9acc2fe84ac85ee53f80cd9f2dd4754257be911
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375913"
 ---
 # <a name="supplying-video-substream-and-destination-surfaces"></a>提供视频子流和目标图面
 

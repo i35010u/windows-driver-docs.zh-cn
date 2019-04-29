@@ -1,17 +1,17 @@
 ---
-title: NDIS 筛选器驱动程序开发的路线图
-description: NDIS 筛选器驱动程序开发的路线图
+title: NDIS 筛选器驱动程序开发路线图
+description: NDIS 筛选器驱动程序开发路线图
 ms.assetid: 346dae93-4cb7-4cb5-a2cf-41be9809fec2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a208e56b4e873c441d523350d15d01414967af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377525"
 ---
-# <a name="roadmap-for-developing-ndis-filter-drivers"></a>NDIS 筛选器驱动程序开发的路线图
+# <a name="roadmap-for-developing-ndis-filter-drivers"></a>NDIS 筛选器驱动程序开发路线图
 
 
 若要创建的网络驱动程序接口规范 (NDIS) 筛选器驱动程序包，请执行以下步骤：

@@ -5,11 +5,11 @@ ms.assetid: d81a8b72-91d3-4132-9cc2-1cf1b597306a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c34d767fe386a3c1982bc6bea1cb0e80a37b18b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378475"
 ---
 # <a name="using-driver-verifier-to-find-a-kernel-mode-memory-leak"></a>使用驱动程序验证程序查找内核模式内存泄漏
 

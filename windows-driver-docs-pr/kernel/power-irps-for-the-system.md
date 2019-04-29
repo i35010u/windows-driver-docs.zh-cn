@@ -1,6 +1,6 @@
 ---
-title: 系统电源 Irp
-description: 系统电源 Irp
+title: 系统的电源 IRP
+description: 系统的电源 IRP
 ms.assetid: a37e8dda-af7a-4f28-bf04-908a74bb5b2f
 keywords:
 - power Irp WDK 内核系统
@@ -19,13 +19,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a37ec3e3d472b333257e6041a55fc77c9569142
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369180"
 ---
-# <a name="power-irps-for-the-system"></a>系统电源 Irp
+# <a name="power-irps-for-the-system"></a>系统的电源 IRP
 
 
 

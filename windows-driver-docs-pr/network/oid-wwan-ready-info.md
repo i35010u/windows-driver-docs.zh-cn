@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_READY_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b34a8b706684b9b3871f6ae1f71d3ed20b4132a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368516"
 ---
 # <a name="oidwwanreadyinfo"></a>OID\_WWAN\_准备\_信息
 
@@ -54,7 +54,7 @@ OID\_WWAN\_准备\_信息返回设备就绪状态，其中包括其用户识别�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

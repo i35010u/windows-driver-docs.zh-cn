@@ -1,6 +1,6 @@
 ---
-title: 从 Multipoint 调用删除参与方
-description: 从 Multipoint 调用删除参与方
+title: 从多点呼叫中删除参与方
+description: 从多点呼叫中删除参与方
 ms.assetid: db23e911-7c70-432e-992a-fdfdf8cb28ae
 keywords:
 - WDK 的 CoNDIS 的参与方
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a5c3775dad289a577d688db78ee22f2de438d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372709"
 ---
-# <a name="dropping-a-party-from-a-multipoint-call"></a>从 Multipoint 调用删除参与方
+# <a name="dropping-a-party-from-a-multipoint-call"></a>从多点呼叫中删除参与方
 
 
 

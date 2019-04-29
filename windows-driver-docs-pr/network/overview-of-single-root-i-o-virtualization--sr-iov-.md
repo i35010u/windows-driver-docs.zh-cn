@@ -1,17 +1,17 @@
 ---
-title: 单根 I/O 虚拟化 (SR-IOV) 的概述
-description: 单根 I/O 虚拟化 (SR-IOV) 的概述
+title: 单根 I/O 虚拟化 (SR-IOV) 概述
+description: 单根 I/O 虚拟化 (SR-IOV) 概述
 ms.assetid: B241F468-F568-4500-9356-E576CEBA8F3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba74bd92a204a7828e85239ff1e142a1d405b9a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381326"
 ---
-# <a name="overview-of-single-root-io-virtualization-sr-iov"></a>单根 I/O 虚拟化 (SR-IOV) 的概述
+# <a name="overview-of-single-root-io-virtualization-sr-iov"></a>单根 I/O 虚拟化 (SR-IOV) 概述
 
 
 单根 I/O 虚拟化 (SR-IOV) 接口是 PCI Express (PCIe) 规范的扩展。 SR-IOV 允许的设备，如网络适配器，将在各种 PCIe 硬件函数及其资源的访问权限。 这些函数包括以下类型：
@@ -24,7 +24,7 @@ ms.locfileid: "56540665"
 
 SR-IOV 允许网络流量绕过 HYPER-V 虚拟化堆栈的软件切换层。 由于 VF 分配给子分区中，网络之间的流量直接 VF 和子分区。 结果是，I/O 开销在软件仿真层就会降低，实现性能与非虚拟化环境几乎相同的网络性能。
 
-有关详情，请参阅以下主题：
+有关详细信息，请参阅下列主题：
 
 [SR-IOV 体系结构](sr-iov-architecture.md)
 

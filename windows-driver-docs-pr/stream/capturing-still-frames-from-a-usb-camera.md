@@ -1,6 +1,6 @@
 ---
-title: 通过 USB 摄像头仍捕获帧
-description: 通过 USB 摄像头仍捕获帧
+title: 通过 USB 相机捕获静态帧
+description: 通过 USB 相机捕获静态帧
 ms.assetid: 762021ea-753c-4cd2-9eec-1403ee918d4e
 keywords:
 - Windows 2000 内核流式处理模型 WDK，USBCAMD2 微型驱动程序库
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d991129d9d4a13bb3cbd5601259c4264b7c15cf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370229"
 ---
-# <a name="capturing-still-frames-from-a-usb-camera"></a>通过 USB 摄像头仍捕获帧
+# <a name="capturing-still-frames-from-a-usb-camera"></a>通过 USB 相机捕获静态帧
 
 
 

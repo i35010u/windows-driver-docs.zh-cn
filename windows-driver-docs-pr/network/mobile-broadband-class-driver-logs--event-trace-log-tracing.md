@@ -5,11 +5,11 @@ ms.assetid: 9742BFCA-CC22-497A-B11F-D3E89F0B4FE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c54fd625e34cba642b3bd6f2288e36f33c13c510
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375764"
 ---
 # <a name="mobile-broadband-class-driver-logs-event-trace-log-tracing"></a>移动宽带类驱动程序日志：事件跟踪日志跟踪
 

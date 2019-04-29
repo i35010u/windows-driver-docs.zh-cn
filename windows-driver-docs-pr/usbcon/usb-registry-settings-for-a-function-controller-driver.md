@@ -1,16 +1,16 @@
 ---
-Description: OEMs must set several registry values to make sure that their device enumerates with the correct metadata when connected to a computer.
-title: USB 函数控制器驱动程序的注册表设置
+Description: Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数据时连接到计算机。
+title: 适用于功能控制器驱动程序的 USB 注册表设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18bf5bde14e3a9fc21d2ae1842ec19281e81a099
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377207"
 ---
-# <a name="usb-registry-settings-for-a-function-controller-driver"></a>USB 函数控制器驱动程序的注册表设置
+# <a name="usb-registry-settings-for-a-function-controller-driver"></a>适用于功能控制器驱动程序的 USB 注册表设置
 
 
 **摘要**
@@ -65,7 +65,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 <p><strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control</strong>&lt;strong&gt;USBFN</strong>&lt;strong&gt;Associations</strong></p></td>
 </tr>
 <tr class="odd">
-<td><strong>默认值</strong></td>
+<td><strong>默认</strong></td>
 <td>此子项包含用于描述特定于设备的设置，例如 VID 和 PID 的默认值。 这是其值被重写父项中的一个 Microsoft 拥有的子项：
 <p><strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control</strong>&lt;strong&gt;USBFN</strong></p></td>
 </tr>
@@ -78,7 +78,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 <td>此子项包含默认配置的值。 默认配置中的接口添加之前的当前配置存在何时<strong>IncludeDefaultCfg</strong>下设置值<strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control</strong>&lt;强&gt;USBFN</strong>密钥。</td>
 </tr>
 <tr class="even">
-<td><strong>接口</strong></td>
+<td><strong>Interfaces</strong></td>
 <td>此子项包含其他描述特定接口描述符。 例如，IP over USB 配置可能驻留在名为一个子项下<strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control</strong>&lt;强&gt;USBFN</strong>&lt;强&gt;接口</strong>&lt;强&gt;IpOverUsb</strong>。 此接口的名称是子项的由什么决定类驱动程序的硬件 ID。 在 IP over USB 示例，是加载 PDO _HID <strong>USBFN\IpOverUsb</strong>。</td>
 </tr>
 </tbody>
@@ -90,7 +90,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 
 必须设置所有 Oem **idVendor**， **idProduct**， **ManufacturerString**，以及**ProductString**值。 创建并添加其自身接口还必须设置的 Oem **CurrentConfiguration**下的子项的名称**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制**\\**USBFN**\\**配置**中包括其接口中**InterfaceList**。
 
-| 值                    | 在任务栏的搜索框中键入       | 所有者 | 描述                                                                                                                                                                                                                                                                                                                |
+| ReplTest1                    | 在任务栏的搜索框中键入       | 所有者 | 描述                                                                                                                                                                                                                                                                                                                |
 |--------------------------|------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **idVendor**             | REG\_DWORD | OEM   | 在枚举期间发送到主机的设备描述符供应商标识符。                                                                                                                                                                                                                               |
 | **idProduct**            | REG\_DWORD | OEM   | 在枚举期间发送到主机的设备描述符产品标识符。                                                                                                                                                                                                                              |
@@ -115,7 +115,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>在任务栏的搜索框中键入</th>
 <th>所有者</th>
 <th>描述</th>
@@ -147,7 +147,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 
 每个子项表示不同的 USB 接口。 若要定义一个接口，创建下的子项**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制**\\ **USBFN**\\**接口**使用接口的名称，并使用下表中的值填充它。 此外，接口才会包含如果接口的一部分**InterfaceList**的**CurrentConfiguration**。
 
-| 值                              | 在任务栏的搜索框中键入        | 所有者            | 描述                                                                                                                                                                                                                                                                                                  |
+| ReplTest1                              | 在任务栏的搜索框中键入        | 所有者            | 描述                                                                                                                                                                                                                                                                                                  |
 |------------------------------------|-------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **InterfaceDescriptor**            | REG\_二进制 | OEM 或 Microsoft | 将 USB 枚举过程中发送到主机接口描述符的二进制表示形式。 **BInterfaceNumber**并**iInterface**值自动填充通过 USB 函数堆栈编译一个完整的配置描述符，以避免与其他接口冲突后描述符。 |
 | **InterfaceGUID**                  | REG\_SZ     | OEM 或 Microsoft | 用于唯一标识总线上的接口的 GUID。                                                                                                                                                                                                                                                     |
@@ -163,7 +163,7 @@ Oem 必须设置几个注册表值，以确保其设备枚举与正确的元数�
 
 每个子项表示不同的接口。 若要使用备用设置定义一个接口，创建下的子项**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制**\\ **USBFN**\\**交替**通过使用接口的名称，并使用下表中的值填充它。
 
-| 值                              | 在任务栏的搜索框中键入           | 所有者            | 描述                                                                                                                                                                                                                                                                                                                                                        |
+| ReplTest1                              | 在任务栏的搜索框中键入           | 所有者            | 描述                                                                                                                                                                                                                                                                                                                                                        |
 |------------------------------------|----------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **InterfaceList**                  | REG\_MULTI\_SZ | OEM 或 Microsoft | 两个对应于在定义的接口的多个接口名称的列表**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制**\\**USBFN**\\**接口**。 该注册表项共同定义替代设置的接口。 第一个接口对应于第二个接口对应替代设置的备用设置 0，1，依此类推。 |
 | **InterfaceNumber**                | REG\_DWORD     | OEM 或 Microsoft | 可选。 此值用于将固定的接口分配到一个函数。 接口数字 0 1f 之间保留的旧版功能、 20 3F 仅供 Microsoft 和 40 5F 保留供 Oem。                                                                                                                                                 |
@@ -178,7 +178,7 @@ Oem 可以通过定义接口关联描述符 (Iad) 指定的关联。 每个 IAD 
 
 每个子项表示不同 IAD。 若要定义的关联，创建下的子项**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制**\\ **USBFN**\\**关联**通过使用 IAD，名称并使用下表中的值填充它。
 
-| 值                              | 在任务栏的搜索框中键入           | 所有者            | 描述                                                                                                                                                                                                                 |
+| ReplTest1                              | 在任务栏的搜索框中键入           | 所有者            | 描述                                                                                                                                                                                                                 |
 |------------------------------------|----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **InterfaceList**                  | REG\_MULTI\_SZ | OEM 或 Microsoft | 接口或与 USB 函数相关联的备用接口的列表。 如果列表的大小，小于 2 函数驱动程序堆栈将无法加载。 其他函数或接口继续进行加载。 |
 | **bFunctionClass**                 | REG\_DWORD     | OEM 或 Microsoft | 该函数的类代码设置为 02。                                                                                                                                                                                  |
@@ -197,7 +197,7 @@ MirrorLink 是一种互操作性标准，允许移动设备和汽车位系统之
 -   通过设置注册表值在上表中所示使用接口关联描述符 (IAD) 创建的通信和数据接口的关联。
 -   除了注册表设置中，将此注册表值设置为非零值。
 
-    | 值          | 在任务栏的搜索框中键入       | 所有者            | 描述                                                                                                                     |
+    | ReplTest1          | 在任务栏的搜索框中键入       | 所有者            | 描述                                                                                                                     |
     |----------------|------------|------------------|---------------------------------------------------------------------------------------------------------------------------------|
     | **MirrorLink** | REG\_DWORD | OEM 或 Microsoft | 一个非零值指示该接口支持 MirrorLink。 USB 函数堆栈不会不会出现延迟 MirrorLink USB 命令。 |
 
@@ -209,7 +209,7 @@ MirrorLink 是一种互操作性标准，允许移动设备和汽车位系统之
 
 ## <a name="related-topics"></a>相关主题
 [在 Windows 中的 USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)  
-[开发 USB 函数控制器的 Windows 驱动的程序](developing-windows-drivers-for-usb-function-controllers.md)  
+[为 USB 功能控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  
 
 
 

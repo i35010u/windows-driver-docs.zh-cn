@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c24df40a70030dfed450ba60a37f98a58f48928
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376831"
 ---
 # <a name="interacting-with-the-engine"></a>与引擎交互
 
@@ -20,7 +20,7 @@ ms.locfileid: "56567088"
 
 调试器引擎 API 提供了执行命令和计算表达式，如键入到 WinDbg 的方法[调试器命令窗口](the-debugger-command-window.md)。 若要执行的调试器命令，使用[ **Execute**](https://msdn.microsoft.com/library/windows/hardware/ff543208)。 或者，若要执行的所有命令在文件中，使用[ **ExecuteCommandFile**](https://msdn.microsoft.com/library/windows/hardware/ff543215)。
 
-该方法[ **Evaluate** ](https://msdn.microsoft.com/library/windows/hardware/ff543046)将评估使用 c + + 或 MASM 语法的表达式。 调试器引擎中要计算表达式-例如所使用的语法**Evaluate**方法--由给定[ **GetExpressionSyntax** ](https://msdn.microsoft.com/library/windows/hardware/ff546701) ，可以使用更改[**SetExpressionSyntaxByName** ](https://msdn.microsoft.com/library/windows/hardware/ff556697)并[ **SetExpressionSyntax**](https://msdn.microsoft.com/library/windows/hardware/ff556696)。 将返回不同的语法识别的调试器数[ **GetNumberExpressionSyntaxes**](https://msdn.microsoft.com/library/windows/hardware/ff547913)，并返回其名称[ **GetExpressionSyntaxNames**](https://msdn.microsoft.com/library/windows/hardware/ff546708)。
+该方法[ **Evaluate** ](https://msdn.microsoft.com/library/windows/hardware/ff543046)将计算表达式使用C++或 MASM 语法。 调试器引擎中要计算表达式-例如所使用的语法**Evaluate**方法--由给定[ **GetExpressionSyntax** ](https://msdn.microsoft.com/library/windows/hardware/ff546701) ，可以使用更改[**SetExpressionSyntaxByName** ](https://msdn.microsoft.com/library/windows/hardware/ff556697)并[ **SetExpressionSyntax**](https://msdn.microsoft.com/library/windows/hardware/ff556696)。 将返回不同的语法识别的调试器数[ **GetNumberExpressionSyntaxes**](https://msdn.microsoft.com/library/windows/hardware/ff547913)，并返回其名称[ **GetExpressionSyntaxNames**](https://msdn.microsoft.com/library/windows/hardware/ff546708)。
 
 返回的值的类型**Evaluate**由符号和已计算的字符串中使用的常量。 值包含在[**调试\_值**](https://msdn.microsoft.com/library/windows/hardware/ff541719)结构，并且可以强制转换为使用不同类型[ **CoerceValue** ](https://msdn.microsoft.com/library/windows/hardware/ff539158)并[ **CoerceValues**](https://msdn.microsoft.com/library/windows/hardware/ff539162)。
 

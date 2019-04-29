@@ -5,11 +5,11 @@ ms.assetid: e4a82cc6-8031-4d67-bef8-1d73e2d98b6b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63b90d3206ffd0764e5abf8ebfa1c3ce3d2cb615
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379833"
 ---
 # <a name="required-commands"></a>必需命令
 

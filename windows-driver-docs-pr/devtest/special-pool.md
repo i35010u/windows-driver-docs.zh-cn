@@ -1,6 +1,6 @@
 ---
-title: 特殊的池
-description: 特殊的池
+title: 特殊池
+description: 特殊池
 ms.assetid: b1381a75-279a-42b7-b18d-43aba796424b
 keywords:
 - 特殊池功能 WDK Driver Verifier
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28e20ecd0216b2556780281d2af4c424c346628a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378065"
 ---
-# <a name="special-pool"></a>特殊的池
+# <a name="special-pool"></a>特殊池
 
 
 ## <span id="ddk_special_memory_pool_tools"></span><span id="DDK_SPECIAL_MEMORY_POOL_TOOLS"></span>

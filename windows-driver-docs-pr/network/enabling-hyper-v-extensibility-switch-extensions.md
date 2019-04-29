@@ -1,17 +1,17 @@
 ---
-title: 启用的 HYPER-V 可扩展交换机扩展
-description: 启用的 HYPER-V 可扩展交换机扩展
+title: 启用 Hyper-V 可扩展交换机扩展
+description: 启用 Hyper-V 可扩展交换机扩展
 ms.assetid: 13FD68CB-8F50-4BE3-8822-03464D8C118C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d1a3a90dcff5d00d692ca2d4598d2b3568e05ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372497"
 ---
-# <a name="enabling-hyper-v-extensible-switch-extensions"></a>启用的 HYPER-V 可扩展交换机扩展
+# <a name="enabling-hyper-v-extensible-switch-extensions"></a>启用 Hyper-V 可扩展交换机扩展
 
 
 当安装 HYPER-V 可扩展交换机扩展时，将它们绑定到可扩展交换机的每个实例。 但是，扩展默认情况下禁用，必须显式启用每个可扩展交换机实例上。

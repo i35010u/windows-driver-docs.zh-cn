@@ -5,11 +5,11 @@ ms.assetid: a5f930c3-f92c-498a-a334-b5eb60fbd61b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26978081c3a9afbb3d9e4a1fce13ca7a68033a5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384549"
 ---
 # <a name="loading-and-unloading-a-wia-minidriver"></a>加载和卸载 WIA 微型驱动程序
 

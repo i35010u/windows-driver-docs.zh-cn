@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f97a7f34911afd3e8777ca2717ee0b06fd5ce6e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372963"
 ---
 # <a name="wiadipwiaversion"></a>WIA\_DIP\_WIA\_版本
 
@@ -50,7 +50,7 @@ WIA\_DIP\_WIA\_版本属性包含的计算机安装的当前 WIA 版本 （作�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本操作系统中可用。</p></td>
 </tr>
 <tr class="even">

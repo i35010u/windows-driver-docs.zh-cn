@@ -5,11 +5,11 @@ ms.assetid: BA7F5C17-1385-4308-9943-9485F7CA3C50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f0cdfc3d13974e8a598bfbc799f43daedc10bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375732"
 ---
 # <a name="accessing-and-modifying-registry-values"></a>访问和修改注册表值
 

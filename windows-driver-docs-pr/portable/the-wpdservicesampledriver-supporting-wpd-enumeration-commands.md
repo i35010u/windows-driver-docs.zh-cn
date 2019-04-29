@@ -1,14 +1,14 @@
 ---
-Description: Support for enumeration commands (WpdServiceSampleDriver)
+Description: 对枚举命令 (WpdServiceSampleDriver) 的支持
 title: 对枚举命令 (WpdServiceSampleDriver) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ee7271f82d41f60408f886682f1b2484adde82f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370481"
 ---
 # <a name="support-for-enumeration-commands-wpdservicesampledriver"></a>对枚举命令 (WpdServiceSampleDriver) 的支持
 
@@ -19,7 +19,7 @@ ms.locfileid: "56520485"
 
 下表显示每个受支持的枚举命令，以及处理程序的名称， **DispatchMessage**处理给定的命令时调用。 当应用程序调用中的几种方法之一发布这些命令后**IPortableDeviceContent**或**IEnumPortableDeviceObjectIDs**接口。
 
-| 命令                                        | 处理程序     | 描述                                                                |
+| Command                                        | 处理程序     | 描述                                                                |
 |------------------------------------------------|-------------|----------------------------------------------------------------------------|
 | WPD\_命令\_对象\_枚举\_启动\_查找 | OnStartFind | 创建新的枚举上下文并将其存储在客户端上下文映射。 |
 | WPD\_命令\_对象\_枚举\_查找\_下一步  | OnFindNext  | 返回所请求的对象的对象标识符。                     |
@@ -83,7 +83,7 @@ ms.locfileid: "56520485"
                     }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

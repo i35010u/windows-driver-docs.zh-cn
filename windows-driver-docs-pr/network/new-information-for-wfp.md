@@ -5,11 +5,11 @@ ms.assetid: f3629e65-6a73-40d3-96c1-416f9bb82eb7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9045e210ed8f9ae8381a9520ce5819ea6bb54a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380593"
 ---
 # <a name="new-information-for-wfp"></a>WFP 的新信息
 

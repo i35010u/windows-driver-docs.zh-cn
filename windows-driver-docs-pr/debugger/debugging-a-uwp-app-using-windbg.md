@@ -1,17 +1,17 @@
 ---
-title: 调试使用 WinDbg 的 UWP 应用
+title: 使用 WinDbg 调试 UWP 应用
 description: 您可以调试使用 WinDbg 的通用 Windows 平台 (UWP) 应用。
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1e3ffdbbde7fd0177e3ab5707f1be90e887d1a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377194"
 ---
-# <a name="debugging-a-uwp-app-using-windbg"></a>调试使用 WinDbg 的 UWP 应用
+# <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
 
 您可以调试使用 WinDbg 的通用 Windows 平台 (UWP) 应用。 此方法将通常用于高级方案，其中不能完成 Visual Studio 调试器中使用内置的调试任务。 有关在 Visual Studio 中调试的详细信息，请参阅[Visual Studio 中调试](https://msdn.microsoft.com/library/sc65sadd.aspx)。
@@ -42,7 +42,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -72,7 +72,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 使用.querypackages 命令查找完整包名称和 AppId。 键入.querypackages，然后选择用户 CRTL + F 将该应用程序名称，例如 HelloWorld 的输出中向上搜索。 使用 CTRL + F 定位该条目时，它会显示包完整名称，例如*e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8*和AppId*应用*。
 
-示例：
+例如：
 
 ```dbgcmd
 0:000>  .querypackages 
@@ -141,7 +141,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -223,7 +223,7 @@ windbg.exe -premote npipe:pipe=fdsa,server=localhost -plmPackage e24caf14-8483-4
 .querypackage <PLMPackageName>
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 0:000> .querypackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -247,7 +247,7 @@ Executable: HelloWorld.exe
 .querypackages
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 0:000> .querypackages
@@ -306,7 +306,7 @@ AppId: BackgroundTask.App
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -326,7 +326,7 @@ AppId: BackgroundTask.App
 
  
 
-示例：
+例如：
 
 ```dbgcmd
 .createpackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 App
@@ -344,7 +344,7 @@ AppId: BackgroundTask.App
 .enablepackagedebug <PLMPackageName>
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 .enablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -358,7 +358,7 @@ AppId: BackgroundTask.App
 .disablepackagedebug <PLMPackageName>
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -376,7 +376,7 @@ AppId: BackgroundTask.App
 .suspendpackage <PLMPackageName> 
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 0:024> .suspendpackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -390,7 +390,7 @@ AppId: BackgroundTask.App
 .resumepackage <PLMPackageName> 
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 .resumepackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -404,7 +404,7 @@ AppId: BackgroundTask.App
 .terminatepackageapp <PLMPackageName> 
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 .terminatepackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -420,7 +420,7 @@ AppId: BackgroundTask.App
  .activatepackagebgtask <PLMPackageName> <bgTaskId>
 ```
 
-示例：
+例如：
 
 ```dbgcmd
 .activatepackagebgtask Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe {C05806B1-9647-4765-9A0F-97182CEA5AAD}
@@ -504,7 +504,7 @@ AppId: App
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用 WinDbg 进行调试](debugging-using-windbg.md)

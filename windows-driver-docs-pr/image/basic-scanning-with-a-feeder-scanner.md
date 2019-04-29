@@ -1,17 +1,17 @@
 ---
-title: 基本使用送纸器扫描程序扫描
-description: 基本使用送纸器扫描程序扫描
+title: 使用送纸器扫描仪进行的基本扫描
+description: 使用送纸器扫描仪进行的基本扫描
 ms.assetid: 29b0752e-88f7-482b-a618-4d7730eceaad
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bb28843d4ed37cbb5d6d0b5e15f8d176abcccce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373333"
 ---
-# <a name="basic-scanning-with-a-feeder-scanner"></a>基本使用送纸器扫描程序扫描
+# <a name="basic-scanning-with-a-feeder-scanner"></a>使用送纸器扫描仪进行的基本扫描
 
 
 

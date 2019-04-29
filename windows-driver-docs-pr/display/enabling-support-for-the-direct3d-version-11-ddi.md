@@ -1,6 +1,6 @@
 ---
-title: 启用对 Direct3D 11 版 DDI 的支持
-description: 启用对 Direct3D 11 版 DDI 的支持
+title: 启用 Direct3D 版本 11 DDI 的支持
+description: 启用 Direct3D 版本 11 DDI 的支持
 ms.assetid: 997d6b06-110b-403d-bcf5-350a26ecffbd
 keywords:
 - Direct3D 11 版 WDK Windows 7 显示，从而启用 DDI 的支持
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73bdda91b8dee52a87bddf59585efbc610e9e1c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379479"
 ---
-# <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>启用对 Direct3D 11 版 DDI 的支持
+# <a name="enabling-support-for-the-direct3d-version-11-ddi"></a>启用 Direct3D 版本 11 DDI 的支持
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

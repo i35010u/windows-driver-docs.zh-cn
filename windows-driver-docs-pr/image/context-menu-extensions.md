@@ -5,11 +5,11 @@ ms.assetid: 6c52dd43-7f47-476e-acbc-15269d23ea71
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c3ed0b12339a922e786dbfa30f15e66d5281d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368551"
 ---
 # <a name="context-menu-extensions"></a>上下文菜单扩展
 

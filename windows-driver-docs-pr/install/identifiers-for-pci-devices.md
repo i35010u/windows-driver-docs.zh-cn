@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/29/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9188b95ec43959eefd11d4eb80d9ee80d9676ad5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370960"
 ---
 # <a name="identifiers-for-pci-devices"></a>PCI 设备的标识符
 

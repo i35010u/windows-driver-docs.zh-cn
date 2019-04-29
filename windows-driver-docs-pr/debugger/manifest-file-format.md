@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8676e65a2a0a57fb185a8915d820a7cff71d32f6
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383301"
 ---
 # <a name="manifest-file-format"></a>清单文件格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "57464001"
 ## <span id="ddk_manifest_file_format_dtoolq"></span><span id="DDK_MANIFEST_FILE_FORMAT_DTOOLQ"></span>
 
 
-清单文件的文件格式尽可能多地从 c + + 和 IDL 中继承。 因此，它是相当轻松地执行普通的 c + + SDK 标头文件和其修改为清单文件。 分析程序完全支持 C 和 c + + 样式注释，以帮助您组织和文档文件。
+清单文件的文件格式借用尽可能从C++和尽可能 IDL。 结果是，它是相当轻松地采用常规C++SDK 标头文件并修改其清单文件。 分析程序完全支持 C 和C++样式的注释可帮助您组织和文档文件。
 
 如果你尝试添加一个清单文件或对现有的文件进行更改，执行此操作的最佳方式是只是试验。 当您发出 **！ logexts.logi**或 **！ logexts.loge**命令在调试器中，记录器将尝试分析清单文件。 如果遇到问题，则会产生一条错误消息可能指示错误。
 
@@ -47,7 +47,7 @@ category CommonControls:
 
 ### <a name="span-idfunctiondeclarationsspanspan-idfunctiondeclarationsspanfunction-declarations"></a><span id="function_declarations"></span><span id="FUNCTION_DECLARATIONS"></span>函数声明
 
-函数声明是什么情况下实际要求记录器以记录的内容。 它与几乎完全相同的 C/c + + 标头文件中找到的函数原型。 有几个值得注意的新增功能为格式，这可以最好地说明了下面的示例：
+函数声明是什么情况下实际要求记录器以记录的内容。 它几乎等同于在 C 中找到的函数原型 /C++标头文件。 有几个值得注意的新增功能为格式，这可以最好地说明了下面的示例：
 
 ```cpp
 HANDLE [gle] FindFirstFileA(
@@ -183,7 +183,7 @@ interface IDispatch : IUnknown
 <td align="left"><p>0x0203404A</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>值</p></td>
+<td align="left"><p>value</p></td>
 <td align="left"><p>相关的基类型</p></td>
 <td align="left"><p>ERROR_TOO_MANY_OPEN_FILES</p></td>
 </tr>
@@ -203,13 +203,13 @@ interface IDispatch : IUnknown
 
  
 
-清单文件的工作中的类型定义，如 C/c + + typedef。 例如，下面的语句定义 PLONG 为指向 long 类型的值：
+类型定义中清单文件的效果与 C /C++ typedef。 例如，下面的语句定义 PLONG 为指向 long 类型的值：
 
 ```cpp
 typedef LONG *PLONG;
 ```
 
-已在 Main.h 声明最基本的 typedef。 只需添加特定于你的组件的 typedef。 结构定义具有与 C/c + + 结构类型相同的格式。
+已在 Main.h 声明最基本的 typedef。 只需添加特定于你的组件的 typedef。 结构定义具有相同的格式为 C /C++结构类型。
 
 有四种特殊类型： 值、 掩码、 GUID 和 COM\_接口\_PTR。
 

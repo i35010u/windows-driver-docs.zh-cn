@@ -1,17 +1,17 @@
 ---
-title: 用户界面扩展插件注册表项
-description: 用户界面扩展插件注册表项
+title: 用户界面扩展注册表项
+description: 用户界面扩展注册表项
 ms.assetid: 1ddf12a1-50e9-4f6e-9394-5bb1afb67798
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc4c4acea8ef9c38149f4c2e93c51135ae29442b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383699"
 ---
-# <a name="user-interface-extension-registry-entries"></a>用户界面扩展插件注册表项
+# <a name="user-interface-extension-registry-entries"></a>用户界面扩展注册表项
 
 
 

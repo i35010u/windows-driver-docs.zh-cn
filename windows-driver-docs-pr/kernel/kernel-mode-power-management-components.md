@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d01b1cc3f1127b48f27c1014a0567a8750788faf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381385"
 ---
 # <a name="kernel-mode-power-management-components"></a>内核模式电源管理组件
 
@@ -21,7 +21,7 @@ ms.locfileid: "56547537"
 
 以下主题提供在 Windows 中执行电源管理的内核模式组件的简要介绍。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [ACPI BIOS](acpi-bios.md)

@@ -1,6 +1,6 @@
 ---
-title: 消除马赛克功能筛选器的命令
-description: 消除马赛克功能筛选器的命令
+title: 除块筛选器命令
+description: 除块筛选器命令
 ms.assetid: 9f20c6fa-c515-43b8-a947-f6290d15bd35
 keywords:
 - 宏块 WDK DirectX VA，消除马赛克功能筛选器的命令
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90391018119db1e5c9854f5190354641850b00d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383293"
 ---
-# <a name="deblocking-filter-commands"></a>消除马赛克功能筛选器的命令
+# <a name="deblocking-filter-commands"></a>除块筛选器命令
 
 
 ## <span id="ddk_deblocking_filter_commands_gg"></span><span id="DDK_DEBLOCKING_FILTER_COMMANDS_GG"></span>

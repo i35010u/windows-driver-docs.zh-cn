@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7a0bc4fab91134ad6181dcec2bfca1c9d93a02d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377219"
 ---
 # <a name="introduction-to-gpd-files"></a>GPD 文件简介
 

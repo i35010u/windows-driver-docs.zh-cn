@@ -1,6 +1,6 @@
 ---
-title: 支持高序位修补图面
-description: 支持高序位修补图面
+title: 支持高阶修补图面
+description: 支持高阶修补图面
 ms.assetid: 020fb91c-c8cd-43e8-a180-bbb2ef606be8
 keywords:
 - 高序位修补表面 WDK DirectX 9.0
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f1b8db2d23d05506d79ca214c079dd1a0f94689
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373409"
 ---
-# <a name="supporting-high-order-patched-surfaces"></a>支持高序位修补图面
+# <a name="supporting-high-order-patched-surfaces"></a>支持高阶修补图面
 
 
 ## <span id="ddk_supporting_high_order_patched_surfaces_gg"></span><span id="DDK_SUPPORTING_HIGH_ORDER_PATCHED_SURFACES_GG"></span>

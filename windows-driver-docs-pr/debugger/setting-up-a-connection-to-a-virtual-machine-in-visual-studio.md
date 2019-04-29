@@ -5,11 +5,11 @@ ms.assetid: E7A289CA-29CE-4C6F-AD08-529E58379715
 ms.date: 10/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fa784a5cdb58fdcdb0830978688503f6b6e6e01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381935"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-in-visual-studio"></a>在 Visual Studio 中设置虚拟机的内核模式调试
 

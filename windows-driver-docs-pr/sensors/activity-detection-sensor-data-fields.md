@@ -5,11 +5,11 @@ ms.assetid: D123C082-9E20-44C2-A9F2-DAC0E09F61B7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b05f8f13c86323edc699cc9a33a7ef6485ea3771
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376511"
 ---
 # <a name="activity-detection-sensor-data-fields"></a>活动检测传感器数据字段
 

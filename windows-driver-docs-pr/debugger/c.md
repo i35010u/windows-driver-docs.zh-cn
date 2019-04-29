@@ -6,17 +6,17 @@ ms.assetid: 295b05a3-e27f-4761-a562-7e87e25bfd3b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67cafefd6e476c1274871599301a7769e495c07a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373959"
 ---
 # <a name="c"></a>C
 
 
-<span id="c___expression"></span><span id="C___EXPRESSION"></span>**C + + 表达式**  
-可以通过 c + + 表达式计算器计算的表达式。
+<span id="c___expression"></span><span id="C___EXPRESSION"></span>**C++表达式**  
+可以通过计算的表达式C++表达式计算器。
 
 <span id="c_call_stack"></span><span id="C_CALL_STACK"></span>**C 调用堆栈**  
 查看调用堆栈。

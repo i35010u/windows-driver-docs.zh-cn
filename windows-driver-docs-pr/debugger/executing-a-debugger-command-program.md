@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 412bb20e950615b2247f31a52ba16ba2ea990b2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379745"
 ---
 # <a name="executing-a-debugger-command-program"></a>执行调试器命令程序
 

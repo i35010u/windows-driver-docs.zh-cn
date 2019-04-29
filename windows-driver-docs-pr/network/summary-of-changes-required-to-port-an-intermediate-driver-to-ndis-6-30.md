@@ -5,13 +5,13 @@ ms.assetid: 02FAC8B2-16B1-49C2-8B3A-29535A698CEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 006c3baf552407484f36085a8b9c8f53044e61e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376917"
 ---
-# <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-630"></a>若要移植到 NDIS 6.30 中间驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-630"></a>将中间驱动程序移植到 NDIS 6.30 所要做出的更改摘要
 
 
 若要更新的 NDIS 6.x 中间 (IM) 驱动程序以支持 NDIS 6.30，您必须修改以下各节中所述。

@@ -5,11 +5,11 @@ ms.assetid: bfd53d0d-d9cb-4b6a-bbad-549139c5a1ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef429b8c0075126d8e3d6759f75442e50534bbf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380384"
 ---
 # <a name="enabling-mobile-broadband-mb-experiences-using-portable-hotspot-devices"></a>使用便携式热点设备启用移动宽带 (MB) 体验
 
@@ -25,7 +25,7 @@ Windows 8、 Windows 8.1 和 Windows 10 修改为按流量计费网络操作系�
 
 -   [通信通道](communication-channels.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带概述](overview-of-mobile-broadband.md)

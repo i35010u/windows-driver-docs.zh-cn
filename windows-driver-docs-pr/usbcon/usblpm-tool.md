@@ -1,14 +1,14 @@
 ---
-Description: The USBLPM tool monitors the U0/U1/U2/U3 power states of USB 3.0 ports.
+Description: USBLPM 工具监视 USB 3.0 端口 U0/U1/U2/U3 电源的状态。
 title: USBLPM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b78f84cda3a74955ae1861f093e95731fc841c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377221"
 ---
 # <a name="usblpm"></a>USBLPM
 

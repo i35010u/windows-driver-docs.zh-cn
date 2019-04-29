@@ -1,21 +1,21 @@
 ---
-title: NDIS 网络接口 Oid
+title: NDIS 网络接口 OID
 description: 本部分介绍了所有的 NDIS 驱动程序的网络接口 Oid
 keywords:
-- NDIS 网络接口 Oid
+- NDIS 网络接口 OID
 - WDK NDIS 网络接口 Oid
 - WDK 网络接口 Oid
 ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d2a026cb2a86460b506fd55c0ca4036d6cb4641
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378345"
 ---
-# <a name="ndis-network-interface-oids"></a>NDIS 网络接口 Oid
+# <a name="ndis-network-interface-oids"></a>NDIS 网络接口 OID
 
 NDIS 网络接口对象标识符 (Oid) 提供了有关支持的 MIB 的网络接口的信息 ([RFC 2863](overview-of-ndis-network-interfaces.md))。
 

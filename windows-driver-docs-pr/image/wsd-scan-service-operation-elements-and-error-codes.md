@@ -5,11 +5,11 @@ ms.assetid: c3dde1b9-fb81-4e33-8970-ec20bb83e13f
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01d76fa2a6cc335fa64b838081c81713049a65b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375841"
 ---
 # <a name="wsd-scan-service-operation-elements-and-error-codes"></a>WSD 扫描服务操作元素和错误代码
 

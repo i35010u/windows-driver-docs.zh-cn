@@ -1,6 +1,6 @@
 ---
-title: 提供 DEVMODE 结构新增功能
-description: 提供 DEVMODE 结构新增功能
+title: 提供 DEVMODE 结构补充
+description: 提供 DEVMODE 结构补充
 ms.assetid: 7ce698f5-14c7-484d-be3d-b41c690b9576
 keywords:
 - 接口插件 WDK 打印，DEVMODEW 结构添加用户
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a89551be81348cf9bdd95529fc8b5ca02ca167
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376573"
 ---
-# <a name="providing-devmode-structure-additions"></a>提供 DEVMODE 结构新增功能
+# <a name="providing-devmode-structure-additions"></a>提供 DEVMODE 结构补充
 
 
 

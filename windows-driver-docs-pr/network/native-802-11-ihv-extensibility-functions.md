@@ -9,11 +9,11 @@ ms.assetid: 0E7CC153-5434-459D-9773-8CCAFBACD016
 ms.date: 04/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f6fcbe43c6bce7fc63bbae4bed1cb7923851124
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382629"
 ---
 # <a name="native-80211-ihv-extensibility-functions"></a>本机 802.11 IHV 扩展性函数
 

@@ -5,11 +5,11 @@ ms.assetid: 531CFE28-B0DA-4B6D-896F-C8F678C7FE00
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dd1150ec033d3f5b075b8a96fddc71f6b112a89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375066"
 ---
 # <a name="configuring-exceptions-and-events-in-visual-studio"></a>在 Visual Studio 中配置异常和事件
 

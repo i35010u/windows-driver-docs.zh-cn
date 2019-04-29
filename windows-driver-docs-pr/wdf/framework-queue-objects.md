@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef636f79cd697c4fbf2d92fcd7f5f6af8fcf27c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378083"
 ---
 # <a name="framework-queue-objects"></a>框架队列对象
 

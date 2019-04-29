@@ -1,6 +1,6 @@
 ---
-title: 指定模块和函数的所有者
-description: 指定模块和函数的所有者
+title: 指定模块和函数所有者
+description: 指定模块和函数所有者
 ms.assetid: be227712-7f70-4e74-b090-ca8b3ecd1e13
 keywords:
 - 可执行文件和路径，指定模块所有者
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27077d9553a11a96755abf3eb6897496bad6040
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368080"
 ---
-# <a name="specifying-module-and-function-owners"></a>指定模块和函数的所有者
+# <a name="specifying-module-and-function-owners"></a>指定模块和函数所有者
 
 
 ## <span id="ddk_specifying_module_and_function_owners_dbg"></span><span id="DDK_SPECIFYING_MODULE_AND_FUNCTION_OWNERS_DBG"></span>

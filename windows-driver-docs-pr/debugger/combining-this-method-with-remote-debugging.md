@@ -1,17 +1,17 @@
 ---
-title: 将此方法与远程调试相结合
-description: 将此方法与远程调试相结合
+title: 将此方法与远程调试结合使用
+description: 将此方法与远程调试结合使用
 ms.assetid: 4f9a60ab-b221-4a60-b3d5-cd907e33ec19
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba4ac0f24818d621af9580d54fff0559721fbccd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375081"
 ---
-# <a name="combining-this-method-with-remote-debugging"></a>将此方法与远程调试相结合
+# <a name="combining-this-method-with-remote-debugging"></a>将此方法与远程调试结合使用
 
 
 ## <span id="ddk_opening_a_crash_dump_dbg"></span><span id="DDK_OPENING_A_CRASH_DUMP_DBG"></span>

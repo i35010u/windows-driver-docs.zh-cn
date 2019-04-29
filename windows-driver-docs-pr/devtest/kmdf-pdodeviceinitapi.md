@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fc21879522b82f74bb092d16727f38623f8e75
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384113"
 ---
 # <a name="pdodeviceinitapi-rule-kmdf"></a>PdoDeviceInitAPI 规则 (kmdf)
 

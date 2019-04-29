@@ -1,15 +1,15 @@
 ---
 title: 远程 NDIS 控制消息
-Description: Remote NDIS Control Messages
+Description: 远程 NDIS 控制消息
 ms.assetid: b9cb2ef3-c664-4cb7-a235-229e9465a6b9
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22a87bc16a38ead28121a6fa40db9fd3e3403c1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373768"
 ---
 # <a name="remote-ndis-control-messages"></a>远程 NDIS 控制消息
 

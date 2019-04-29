@@ -5,11 +5,11 @@ ms.assetid: c3e1578e-26f1-4fe3-b56d-a2baacb8e4c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49e4b4615b26e424bda25c196a5b424d3bea75d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379637"
 ---
 # <a name="providing-a-com-interface"></a>提供 COM 接口
 

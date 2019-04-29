@@ -5,11 +5,11 @@ ms.assetid: 87787a84-6403-4246-abf5-49747b883202
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 708b308a6b77f3058a2fc3254484582f8c981136
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369438"
 ---
 # <a name="properties-and-related-system-defined-items"></a>属性和相关的系统定义项
 

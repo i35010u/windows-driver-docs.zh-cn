@@ -1,6 +1,6 @@
 ---
-title: 用于配置 PC 卡 INF 替代中断
-description: 用于配置 PC 卡 INF 替代中断
+title: 用于配置电脑卡中断的 INF 替代
+description: 用于配置电脑卡中断的 INF 替代
 ms.assetid: 90c951c4-0106-426a-b650-aeb93b893206
 keywords:
 - IRQ 路由 WDK PCMCIA 总线
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 920d44b4cde6e909d55bddc55a9af7d0dbd0bbd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378208"
 ---
-# <a name="inf-override-for-configuring-pc-card-interrupts"></a>用于配置 PC 卡 INF 替代中断
+# <a name="inf-override-for-configuring-pc-card-interrupts"></a>用于配置电脑卡中断的 INF 替代
 
 
 

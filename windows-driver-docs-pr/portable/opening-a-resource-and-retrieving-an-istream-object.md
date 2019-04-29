@@ -1,14 +1,14 @@
 ---
-Description: Opening a Resource and Retrieving an IStream object
+Description: 打开资源并检索 IStream 对象
 title: 打开资源并检索 IStream 对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63ef19d94bc7d5c224f8e069d417d19810942cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376241"
 ---
 # <a name="opening-a-resource-and-retrieving-an-istream-object"></a>打开资源并检索 IStream 对象
 

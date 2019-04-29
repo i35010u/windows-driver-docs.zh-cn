@@ -5,11 +5,11 @@ ms.assetid: 5abbcda2-66cc-4460-99b6-e7796e65af68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5ecfa4de9f6cdf0670d56d197662a0ab8a32497
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379657"
 ---
 # <a name="object-handle-and-event-order"></a>对象句柄和事件顺序
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_SET_HOME_PROVIDER_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 32502335abc79f9deaa56095d7d0dc8d46e1320a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372888"
 ---
 # <a name="ndisstatuswwansethomeprovidercomplete"></a>NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_完成
 
@@ -30,7 +30,7 @@ ms.locfileid: "56564194"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持从 Windows 8 开始。</p></td>
 </tr>
 <tr class="even">

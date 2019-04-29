@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae545ef7f9404214dfdcce25081ac440846cc141
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382854"
 ---
 # <a name="getidlepollingstate"></a>GetIdlePollingState
 
@@ -34,7 +34,7 @@ GetIdlePollingState 命令返回的状态 TCPMON 空闲轮询。
 <tbody>
 <tr class="odd">
 <td><p>True</p></td>
-<td><p>已启用</p></td>
+<td><p>Enabled</p></td>
 </tr>
 <tr class="even">
 <td><p>False</p></td>
