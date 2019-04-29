@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eccb08fddbdba327c176428e2f4efffa3ba14d11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373178"
 ---
 # <a name="destinationresponses-element"></a>DestinationResponses 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56520943"
 </wscn:DestinationResponses>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -81,7 +81,7 @@ ms.locfileid: "56520943"
 
 WSD 扫描服务必须指定一个[ **DestinationResponse** ](destinationresponse.md)中的子元素**DestinationResponses**元素为每个[ **ScanDestination** ](scandestination.md)客户端在指定的元素 **&lt;wse： 订阅&gt;** 请求。  **&lt;Wse： 订阅&gt;** 元素规范中所述。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DestinationResponse**](destinationresponse.md)

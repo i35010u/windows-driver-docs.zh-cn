@@ -1,17 +1,17 @@
 ---
-title: 数据包合并的标准化的 INF 关键字
-description: 数据包合并的标准化的 INF 关键字
+title: 数据包合并的标准化 INF 关键字
+description: 数据包合并的标准化 INF 关键字
 ms.assetid: 423E9B50-6474-454A-97BB-91404DF9F729
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76402d713dcde5ea18730920425a1e5b45574c70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390667"
 ---
-# <a name="standardized-inf-keywords-for-packet-coalescing"></a>数据包合并的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-packet-coalescing"></a>数据包合并的标准化 INF 关键字
 
 
 标准化的 INF 关键字定义来启用或禁用对数据包合并微型端口驱动程序的支持。
@@ -51,7 +51,7 @@ ms.locfileid: "56521464"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -66,7 +66,7 @@ ms.locfileid: "56521464"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

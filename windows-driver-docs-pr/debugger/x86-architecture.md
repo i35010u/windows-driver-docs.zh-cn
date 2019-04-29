@@ -11,11 +11,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7da158a055960451e60d2275f2b26333db1fadc5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381915"
 ---
 # <a name="x86-architecture"></a>x86 体系结构
 
@@ -198,11 +198,11 @@ X86 体系结构具有多个不同的调用约定。 幸运的是，它们都遵
 
     直接推送到左侧，在堆栈上传递的函数参数和被调用方清理堆栈。
 
--   本机 c + + 方法调用 (也称为 thiscall)
+-   本机C++方法调用 (也称为 thiscall)
 
     从左到右推送到堆栈上传递的函数参数，"this"指针传入**ecx**和被调用方清理堆栈。
 
--   COM (**\_\_stdcall**的 c + + 方法调用)
+-   COM (**\_\_stdcall**为C++方法调用)
 
     函数参数传递到堆栈上，推送右到左，然后"this"指针推送到堆栈上，然后调用该函数。 被调用方清理堆栈。
 

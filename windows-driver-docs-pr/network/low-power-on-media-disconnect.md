@@ -1,17 +1,17 @@
 ---
-title: 在媒体断开连接的低能耗
-description: 在媒体断开连接的低能耗
+title: 介质断开连接时降低功耗
+description: 介质断开连接时降低功耗
 ms.assetid: 592f3835-47ec-443a-9ab5-e700fed2f7f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef84631c6abb275ddf4fe325c3d00324fffa533
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365904"
 ---
-# <a name="low-power-on-media-disconnect"></a>在媒体断开连接的低能耗
+# <a name="low-power-on-media-disconnect"></a>介质断开连接时降低功耗
 
 
 
