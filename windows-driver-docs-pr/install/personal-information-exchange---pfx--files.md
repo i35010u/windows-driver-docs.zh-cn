@@ -5,11 +5,11 @@ ms.assetid: 58849ccc-c86f-4c49-b848-8926febb5521
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a5d9fe8dfa02ca0315bd4d8df204eaff27ef4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391476"
 ---
 # <a name="personal-information-exchange-pfx-files"></a>个人信息交换 (.pfx) 文件
 

@@ -1,6 +1,6 @@
 ---
 title: 使用具有 DXVA 2.0 加密会话解码器
-description: 使用 DirectX 视频 Accelerator 2.0 解码器具有加密的会话
+description: 将加密会话与 DirectX 视频加速器 2.0 解码器配合使用
 ms.assetid: 2a3577f5-bc44-4e0d-a5fa-217dc6c6f5f3
 keywords:
 - DXVA 2.0 解码器 WDK Windows 7 显示
@@ -19,13 +19,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: b48df8ff7b8fb12ce20c23b6ac929c0e2837c8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389085"
 ---
-# <a name="using-crypto-session-with-directx-video-accelerator-20-decoder"></a>使用 DirectX 视频 Accelerator 2.0 解码器具有加密的会话
+# <a name="using-crypto-session-with-directx-video-accelerator-20-decoder"></a>将加密会话与 DirectX 视频加速器 2.0 解码器配合使用
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

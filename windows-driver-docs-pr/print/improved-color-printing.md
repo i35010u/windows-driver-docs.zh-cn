@@ -1,6 +1,6 @@
 ---
-title: 改进了的彩色打印
-description: 改进了的彩色打印
+title: 改进的彩色打印
+description: 改进的彩色打印
 ms.assetid: b0487ee0-9b4a-4083-9416-ad22b97ed94b
 keywords:
 - XPSDrv 的打印机驱动程序 WDK、 彩色打印
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b16cfe7f7e3ca4a0c8902720526800619d8336ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392826"
 ---
-# <a name="improved-color-printing"></a>改进了的彩色打印
+# <a name="improved-color-printing"></a>改进的彩色打印
 
 
 新的颜色管理功能和 XPS 打印路径在 Windows Vista 工作一起，以提供更丰富、 更可预测的彩色打印。 增强的颜色支持，通过支持打印功能与多个四个颜料高端打印。 （四个以上颜料是与印前应用程序的客户要求的。）新的 XPS 打印体系结构可以应用程序生成扩展的颜色信息传递给范围内所有彩色打印机。 设备驱动程序可以访问和控制打印管道内的颜色信息。

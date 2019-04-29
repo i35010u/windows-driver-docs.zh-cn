@@ -1,17 +1,17 @@
 ---
-title: 标准化的 INF 关键字 ndis 选择性挂起
-description: 标准化的 INF 关键字 ndis 选择性挂起
+title: NDIS 选择性挂起的标准化 INF 关键字
+description: NDIS 选择性挂起的标准化 INF 关键字
 ms.assetid: A45EE23D-1C60-4DA4-82A5-89DB5CE48E21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe9ba1c7f75ea7c462996ea276a140a9e9f0175
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345970"
 ---
-# <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>标准化的 INF 关键字 ndis 选择性挂起
+# <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>NDIS 选择性挂起的标准化 INF 关键字
 
 
 以下的标准化的 INF 关键字定义以启用、 禁用和配置参数的 NDIS 选择性挂起微型端口驱动程序：
@@ -63,7 +63,7 @@ ms.locfileid: "56547546"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -78,7 +78,7 @@ ms.locfileid: "56547546"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

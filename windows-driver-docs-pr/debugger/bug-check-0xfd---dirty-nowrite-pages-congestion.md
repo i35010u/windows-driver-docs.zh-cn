@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e5c86cda8e607e5f6570d5ab38c33138c074b4ca
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367597"
 ---
 # <a name="bug-check-0xfd-dirtynowritepagescongestion"></a>Bug 检查 0xFD：脏\_非写入\_页面\_拥塞
 

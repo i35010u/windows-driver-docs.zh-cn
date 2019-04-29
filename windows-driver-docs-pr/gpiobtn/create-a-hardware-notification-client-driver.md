@@ -5,11 +5,11 @@ ms.assetid: 348950d3-fb80-4800-a606-290d473aa412
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ef6f9d7653241245c1c462bb008cfc2a766bef36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326092"
 ---
 # <a name="create-a-hardware-notification-client-driver"></a>创建硬件通知客户端驱动程序
 

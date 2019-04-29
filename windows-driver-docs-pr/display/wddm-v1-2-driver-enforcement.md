@@ -1,17 +1,17 @@
 ---
-title: 强制 WDDM 1.2 驱动程序
+title: WDDM 1.2 驱动程序实施
 description: 从 Windows 8，以确定是否通过 WDDM 1.2 驱动程序支持强制 Windows 显示驱动程序模型 (WDDM) 1.2 功能开始强制执行由 Microsoft DirectX 图形内核子系统 (Dxgkrnl) 验证。
 ms.assetid: DF0C6F50-CC68-4002-9ED3-F42EA24D24B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c596a2f25f46e1d35d85a80a8152cd18566548e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391189"
 ---
-# <a name="wddm-12-driver-enforcement"></a>强制 WDDM 1.2 驱动程序
+# <a name="wddm-12-driver-enforcement"></a>WDDM 1.2 驱动程序实施
 
 
 从 Windows 8，以确定是否通过 WDDM 1.2 驱动程序支持强制 Windows 显示驱动程序模型 (WDDM) 1.2 功能开始强制执行由 Microsoft DirectX 图形内核子系统 (Dxgkrnl) 验证。

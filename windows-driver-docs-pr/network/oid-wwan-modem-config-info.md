@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 OID_WWAN_MODEM_CONFIG_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee6dbf13c9a69f5a19b50463464ae22e26024df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353735"
 ---
 # <a name="oidwwanmodemconfiginfo"></a>OID\_WWAN\_调制解调器\_CONFIG\_信息
 
@@ -37,17 +37,17 @@ MBB 驱动程序可能不具有有效信息尚未从调制解调器在早期的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>下一步的重大更新到 Windows 10</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [NDIS\_状态\_WWAN\_调制解调器\_配置\_信息](ndis-status-wwan-modem-config-info.md)

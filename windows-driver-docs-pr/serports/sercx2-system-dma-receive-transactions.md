@@ -1,17 +1,17 @@
 ---
-title: SerCx2 系统 DMA 接收事务
+title: SerCx2 System-DMA-Receive 事务
 description: 某些串行控制器驱动程序实现对支持接收使用系统 DMA 控制器的事务。
 ms.assetid: 0374D1BE-96ED-43D6-8661-5E9676B82C0D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad5d3b4ac0b153294e36245431871a54c2ac4278
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387968"
 ---
-# <a name="sercx2-system-dma-receive-transactions"></a>SerCx2 系统 DMA 接收事务
+# <a name="sercx2-system-dma-receive-transactions"></a>SerCx2 System-DMA-Receive 事务
 
 
 某些串行控制器驱动程序实现对支持接收使用系统 DMA 控制器的事务。 这种支持是可选的但可以提高性能，因为它使主处理器需要的用于通过编程方式设置 I/O (PIO) 的长整型数据传输。 SerCx2 执行设置了系统 DMA 控制器并启动代表串行控制器驱动程序的必要 DMA 传输系统 DMA 接收事务。

@@ -1,6 +1,6 @@
 ---
-title: 设备的电源状态
-description: 设备的电源状态
+title: 设备电源状态
+description: 设备电源状态
 ms.assetid: 2229f34c-9b88-4e3e-802e-f7be2c7ef168
 keywords:
 - 设备电源状态 WDK 内核
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e0e40294b306f873788c21fa18856eb075d201
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388148"
 ---
-# <a name="device-power-states"></a>设备的电源状态
+# <a name="device-power-states"></a>设备电源状态
 
 
 ## <a href="" id="ddk-device-power-states-kg"></a>
@@ -48,7 +48,7 @@ ms.locfileid: "56554172"
 
 请注意，某些设备中的单个设备电源状态的多个不同的低能耗模式的支持。 如果其驱动程序可以自动切换到另一种模式的设备，而无需更改设备电源状态，此类设备可以使用这些模式。 作为一般规则，但是，如果没有在模式之间没有明显区别设备应使用仅是最低的电源模式。 如果低能耗模式，一种较慢的模式，如产生负面影响性能，或者不是透明的软件，只将设备驱动程序，硬件应该不会自动使用它。 请参阅设备类电源管理引用技术指标，有关详细信息。
 
-驱动程序或电源管理器可以请求设备电源状态转换，而所有驱动程序必须准备好处理 Irp 请求这样的变革。 有关详情，请参阅以下主题：
+驱动程序或电源管理器可以请求设备电源状态转换，而所有驱动程序必须准备好处理 Irp 请求这样的变革。 有关详细信息，请参阅下列主题：
 
 [发送 IRP\_MN\_查询\_电源或 IRP\_MN\_设置\_的电源可用于设备的电源状态](sending-irp-mn-query-power-or-irp-mn-set-power-for-device-power-states.md)
 

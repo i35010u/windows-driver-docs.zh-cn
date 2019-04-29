@@ -5,11 +5,11 @@ ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15a72528f4cadb34bd9c91b75385dca8370bc0b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366495"
 ---
 # <a name="handling-active-both-interrupts"></a>处理同时处于活动状态的中断
 

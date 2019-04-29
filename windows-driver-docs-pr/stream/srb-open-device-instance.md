@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba54fe8fde7331c633373de02acc54b41aa6af6d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387106"
 ---
 # <a name="srbopendeviceinstance"></a>SRB\_开放\_设备\_实例
 
@@ -49,7 +49,7 @@ ms.locfileid: "56533690"
 
 大多数适配器不支持多个实例，因此，在这种情况下**FilterInstanceExtensionSize**字段中**HW\_初始化\_数据**结构应设置为零和应永远不会收到此命令。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB\_CLOSE\_DEVICE\_INSTANCE**](srb-close-device-instance.md)

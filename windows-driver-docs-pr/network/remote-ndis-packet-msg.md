@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_PACKET_MSG
-Description: REMOTE_NDIS_PACKET_MSG encapsulates NDIS data packets to form a single data message.
+Description: REMOTE_NDIS_PACKET_MSG 封装 NDIS 数据包，以形成单个数据消息。
 ms.assetid: cc4efe94-6e2c-4201-b251-10e76cf5a553
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb6a990e578f3e14634bac684270755004e2afaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350828"
 ---
 # <a name="remotendispacketmsg"></a>远程\_NDIS\_数据包\_消息
 
@@ -30,7 +30,7 @@ ms.locfileid: "56545785"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -119,7 +119,7 @@ ms.locfileid: "56545785"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "56545785"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>以字节为单位的此 OOB 标头和追加 OOB 数据和填充的长度。 这是一个整数 4 的倍数。</p></td>
 </tr>
 <tr class="even">
@@ -170,7 +170,7 @@ ms.locfileid: "56545785"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -179,7 +179,7 @@ ms.locfileid: "56545785"
 <tr class="odd">
 <td><p>0</p></td>
 <td><p>4</p></td>
-<td><p>尺寸</p></td>
+<td><p>大小</p></td>
 <td><p>以字节为单位的此每个数据包标头和追加的每个数据包数据和填充的长度。 此值是一个整数 4 的倍数。</p></td>
 </tr>
 <tr class="even">
@@ -238,11 +238,11 @@ ms.locfileid: "56545785"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Rndis.h （包括 Rndis.h）</td>
 </tr>
 </tbody>

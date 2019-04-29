@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fdf835318841a22e843126d5157fd724ba5fb88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387171"
 ---
 # <a name="driver-entry-points-in-driver-objects"></a>驱动程序对象中的驱动程序入口点
 

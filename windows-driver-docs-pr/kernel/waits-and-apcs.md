@@ -1,6 +1,6 @@
 ---
-title: 等待和 Apc
-description: 等待和 Apc
+title: 等待和 APC
+description: 等待和 APC
 ms.assetid: b967beec-922c-4acf-a578-c476ce024fdb
 keywords:
 - 内核调度程序对象 WDK，警报
@@ -16,13 +16,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5536a081e269ab3905e3f080030f4ae77d20d2a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391446"
 ---
-# <a name="waits-and-apcs"></a>等待和 Apc
+# <a name="waits-and-apcs"></a>等待和 APC
 
 
 
@@ -44,7 +44,7 @@ ms.locfileid: "56555307"
 </colgroup>
 <thead>
 <tr class="header">
-<th>参数</th>
+<th>Parameters</th>
 <th>等待中断？</th>
 <th>用户 APC 传递？</th>
 </tr>

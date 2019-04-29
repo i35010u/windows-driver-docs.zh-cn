@@ -1,6 +1,6 @@
 ---
-title: 驱动程序定义的 WMI 数据项目
-description: 驱动程序定义的 WMI 数据项目
+title: 驱动程序定义的 WMI 数据项
+description: 驱动程序定义的 WMI 数据项
 ms.assetid: 97b64571-95ff-4d61-9fa0-5690e9f29345
 keywords:
 - 数据类型 WDK WMI
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4f60b9b54329682edccfbc81fea01b995d3fa48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387174"
 ---
-# <a name="driver-defined-wmi-data-items"></a>驱动程序定义的 WMI 数据项目
+# <a name="driver-defined-wmi-data-items"></a>驱动程序定义的 WMI 数据项
 
 
 

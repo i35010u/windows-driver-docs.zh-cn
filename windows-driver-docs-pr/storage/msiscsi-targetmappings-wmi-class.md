@@ -5,11 +5,11 @@ ms.assetid: 12bfe80a-8431-4607-99f5-ddd6815aecc6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1221885af565d908e6d35f8c57fe432972551e80
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389445"
 ---
 # <a name="msiscsitargetmappings-wmi-class"></a>MSiSCSI\_TargetMappings WMI 类
 

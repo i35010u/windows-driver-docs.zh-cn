@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e9b95a36e7703f247eaee1bb02f7e8168b42384
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390191"
 ---
 # <a name="avcfunctionsendresponse"></a>AVC\_函数\_发送\_响应
 
@@ -149,7 +149,7 @@ GUID 的上下文中\_AVC\_类设备接口**AVC\_函数\_发送\_响应**函数�
 
 可能在 IRQL 调用此函数代码&lt;= 调度\_级别。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC\_FUNCTION\_GET\_REQUEST**](avc-function-get-request.md), [**AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105), [**AVC\_FUNCTION**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
 
@@ -163,7 +163,7 @@ GUID 的上下文中\_AVC\_类设备接口**AVC\_函数\_发送\_响应**函数�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Avc.h （包括 Avc.h）</td>
 </tr>
 </tbody>

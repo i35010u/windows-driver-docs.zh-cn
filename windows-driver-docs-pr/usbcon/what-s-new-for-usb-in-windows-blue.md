@@ -1,16 +1,16 @@
 ---
-Description: Here are the new features and improvements for Universal Serial Bus (USB) in Windows 8.1.
+Description: 以下是新功能和改进的通用串行总线 (USB) 在 Windows 8.1。
 title: Windows 8.1-什么是 USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7c846902fe660db70227bde70c3a06577e803d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389191"
 ---
-# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：什么是 USB 的新增功能
+# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
 
 以下是新功能和改进的通用串行总线 (USB) 在 Windows 8.1。
@@ -26,7 +26,7 @@ ms.locfileid: "56522508"
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>有关开发 UWP 应用的 Windows 运行时 USB API
 
 
-Windows 运行时提供新的命名空间：[**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466) (请参阅[编写的 USB 设备的应用 (UWP 应用使用C#/VB/c + +)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263144)的简要概述)。 通过使用命名空间，可以编写与自定义的 USB 设备进行通信的 UWP 应用。
+Windows 运行时提供新的命名空间：[**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466) (请参阅[编写的 USB 设备的应用 (UWP 应用使用C#/VB/C++)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263144)的简要概述)。 通过使用命名空间，可以编写与自定义的 USB 设备进行通信的 UWP 应用。
 
 有关详细信息，请参阅以下主题：
 
@@ -118,7 +118,7 @@ Microsoft 提供 WinUSB （内核模式驱动程序） 现在支持在 USB 设�
     -   [USB 公开的端口系统测试](https://msdn.microsoft.com/library/windows/hardware/jj123655.aspx)
     -   [USB 选择性挂起测试 (xHCI)](https://msdn.microsoft.com/library/windows/hardware/jj124491.aspx)
     -   [USB 3.0 挂起测试](https://msdn.microsoft.com/library/windows/hardware/jj125210.aspx)
--   MUTT 和 SuperMUTT 设备现 USB-如果符合要求的设备。 设备和随附的软件程序包中集成到 HCK 的 USB 测试套件。 它们提供了自动测试，可以在开发周期的 USB 控制器、 设备和系统使用，尤其是压力测试。
+-   MUTT 和 SuperMUTT 设备现 USB-如果符合要求的设备。 设备和随附的软件程序包中集成到 HCK 的 USB 测试套件。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。
 
     可以从购买 MUTT 硬件[JJG 技术](http://jjgtechnologies.com/mutt.md)。 设备没有安装的已安装的固件。 若要安装固件，下载从 MUTT 软件包[此网站](https://msdn.microsoft.com/windows/hardware/jj590752)并运行 MUTTUtil.exe。 有关详细信息，请参阅随程序包提供的文档。
 

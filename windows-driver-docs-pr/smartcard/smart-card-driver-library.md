@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 682f9bbd6f6bcacd2c2722b4315b03a1730fcae9
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390913"
 ---
 # <a name="smart-card-driver-library"></a>智能卡驱动程序库
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecd4fbbcf8eb0b72057ca48c53f1550450723d23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389425"
 ---
 # <a name="other-srbfunctionxxx-requests"></a>其他 SRB\_函数\_XXX 请求
 

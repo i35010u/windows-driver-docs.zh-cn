@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f003c0fbcf0b516873157b75cf6afd1fa3fd773b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389807"
 ---
 # <a name="threading-model-of-user-mode-display-driver"></a>用户模式显示驱动程序的线程模型
 

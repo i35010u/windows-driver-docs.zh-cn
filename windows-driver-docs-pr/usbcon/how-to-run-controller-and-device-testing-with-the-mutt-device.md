@@ -1,14 +1,14 @@
 ---
-Description: The goal of controller testing is to generate a complete set of possible traffic patterns from hubs and devices.
+Description: 测试控制器的目标是从中心和设备生成一组完整的可能的通信模式。
 title: USB 主控制器使用 MUTT 设备进行测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acb66bf48481da17e45a06d979797a61364c6957
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366049"
 ---
 # <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主控制器使用 MUTT 设备进行测试
 

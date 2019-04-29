@@ -1,6 +1,6 @@
 ---
-title: 将特定于设备的信息存储在换带机的设备扩展
-description: 将特定于设备的信息存储在换带机的设备扩展
+title: 将特定于设备的信息存储在更换器的设备扩展中
+description: 将特定于设备的信息存储在更换器的设备扩展中
 ms.assetid: 72048d84-1c2d-4f3c-b5e8-f55a812ad567
 keywords:
 - 更换器驱动程序 WDK 存储特定于设备的数据存储
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38ed70319bd7c22cc20044f0a63296e6538674b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389392"
 ---
-# <a name="storing-device-specific-information-in-the-changers-device-extension"></a>将特定于设备的信息存储在换带机的设备扩展
+# <a name="storing-device-specific-information-in-the-changers-device-extension"></a>将特定于设备的信息存储在更换器的设备扩展中
 
 
 ## <span id="ddk_storing_device_specific_information_in_the_changers_device_extensi"></span><span id="DDK_STORING_DEVICE_SPECIFIC_INFORMATION_IN_THE_CHANGERS_DEVICE_EXTENSI"></span>

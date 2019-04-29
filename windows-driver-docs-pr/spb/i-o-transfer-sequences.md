@@ -5,11 +5,11 @@ ms.assetid: 7415DB28-5E93-4F47-B169-7C652969D4C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffbe0d3ea5c54f3185f321dd0e85df598e0bb63c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356711"
 ---
 # <a name="io-transfer-sequences"></a>I/O 传输序列
 

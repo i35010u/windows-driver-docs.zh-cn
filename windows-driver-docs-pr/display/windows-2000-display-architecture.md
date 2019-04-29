@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 的显示器体系结构
-description: Windows 2000 的显示器体系结构
+title: Windows 2000 显示体系结构
+description: Windows 2000 显示体系结构
 ms.assetid: c18e1464-13b7-4e55-b3e1-77aaf9270f60
 keywords:
 - VGA WDK Windows 2000 显示
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c9d1bb10a8645cb33cbdcc884d5d195ddd28f60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391179"
 ---
-# <a name="windows-2000-display-architecture"></a>Windows 2000 的显示器体系结构
+# <a name="windows-2000-display-architecture"></a>Windows 2000 显示体系结构
 
 
 ## <span id="ddk_display_architecture_gg"></span><span id="DDK_DISPLAY_ARCHITECTURE_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: a1bc3bff-b109-4a52-8466-48a0be7611b7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4226c5e572f252f5facc095e8150f50d46c6411b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390216"
 ---
 # <a name="synchronized-access-within-miniport-driver-routines"></a>微型端口驱动程序例程中的同步的访问
 

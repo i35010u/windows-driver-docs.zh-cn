@@ -1,6 +1,6 @@
 ---
-title: 语言和端口监视器交互
-description: 语言和端口监视器交互
+title: 语言监视器与端口监视器的交互
+description: 语言监视器与端口监视器的交互
 ms.assetid: 6c3c55fc-40f3-43d7-b8a2-20fed8d28813
 keywords:
 - 打印监视器 WDK，语言监视器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a37d379ac0f27b470248f56ba3130cec8109f322
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388107"
 ---
-# <a name="language-and-port-monitor-interaction"></a>语言和端口监视器交互
+# <a name="language-and-port-monitor-interaction"></a>语言监视器与端口监视器的交互
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: SerCx2 PIO 接收事务
+title: SerCx2 PIO-Receive 事务
 description: SerCx2 需要所有串行控制器驱动程序，以实现对支持接收事务使用编程 I/O (PIO)。
 ms.assetid: 00C43A55-ACAF-4AB6-BDFB-F3D9350C4536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f56e30cdb94ac38c1f2ac7e293c31ea405a9e9e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387973"
 ---
-# <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO 接收事务
+# <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO-Receive 事务
 
 
 SerCx2 需要所有串行控制器驱动程序，以实现对支持接收事务使用编程 I/O (PIO)。 若要启动 PIO 接收事务，SerCx2 调用驱动程序的[ *EvtSerCx2PioReceiveReadBuffer* ](https://msdn.microsoft.com/library/windows/hardware/dn265214)事件回叫函数并读取缓冲区作为参数提供。

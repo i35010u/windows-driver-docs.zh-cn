@@ -1,6 +1,6 @@
 ---
-title: 介绍驱动程序的注册表项
-description: 介绍驱动程序的注册表项
+title: 驱动程序的注册表项简介
+description: 驱动程序的注册表项简介
 ms.assetid: ec1a21db-1a31-4041-941d-31156884ffae
 keywords:
 - 注册表 WDK KMDF
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b0eb09c81628c1e9072f1e062dc1dfb30f882af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388684"
 ---
-# <a name="introduction-to-registry-keys-for-drivers"></a>介绍驱动程序的注册表项
+# <a name="introduction-to-registry-keys-for-drivers"></a>驱动程序的注册表项简介
 
 
 驱动程序通常使用一系列系统定义的注册表项来存储或访问特定于驱动程序或特定于设备的信息。 您的驱动程序可能会访问以下注册表项：

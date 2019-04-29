@@ -5,11 +5,11 @@ ms.assetid: 057A4F21-3514-4CCA-BCE2-279E8228B5A9
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: db3152b8a63d774b5220ab35b66265586f84f1a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326112"
 ---
 # <a name="button-behavior"></a>按钮行为
 

@@ -1,6 +1,6 @@
 ---
-title: 用于模拟的字体的命令
-description: 用于模拟的字体的命令
+title: 模拟字体命令
+description: 模拟字体命令
 ms.assetid: 3bfdcf86-35ac-4b95-9efd-31f79a8b9871
 keywords:
 - 模拟的字体命令 WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dc65447889349cf1071c4bb64654a005062c146
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355897"
 ---
-# <a name="commands-for-simulated-fonts"></a>用于模拟的字体的命令
+# <a name="commands-for-simulated-fonts"></a>模拟字体命令
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56546024"
 </colgroup>
 <thead>
 <tr class="header">
-<th>命令</th>
+<th>Command</th>
 <th>描述</th>
 <th>备注</th>
 </tr>

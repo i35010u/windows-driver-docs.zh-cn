@@ -1,6 +1,6 @@
 ---
-title: Stream 类调试
-description: Stream 类调试
+title: 流类调试
+description: 流类调试
 ms.assetid: 544b922b-58e4-4cbb-a76c-d8e13ae17e55
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，调试
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2afff5ab5c84684411417be7acaf3d8aa2e0dd47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391376"
 ---
-# <a name="stream-class-debugging"></a>Stream 类调试
+# <a name="stream-class-debugging"></a>流类调试
 
 
 

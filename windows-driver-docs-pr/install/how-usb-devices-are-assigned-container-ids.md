@@ -1,17 +1,17 @@
 ---
-title: USB 设备方式分配容器 Id
-description: USB 设备方式分配容器 Id
+title: 如何为 USB 设备分配容器 ID
+description: 如何为 USB 设备分配容器 ID
 ms.assetid: 769f9486-d179-44f0-9fd1-b3e737143ced
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a5298352c7941dba1511c0a5fe942b48cfde7992
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386972"
 ---
-# <a name="how-usb-devices-are-assigned-container-ids"></a>USB 设备方式分配容器 Id
+# <a name="how-usb-devices-are-assigned-container-ids"></a>如何为 USB 设备分配容器 ID
 
 
 对于连接到计算机通过通用串行总线 (USB) 设备，下列流程图显示了用于将容器 ID 分配给 USB 设备节点的启发式方法 (*devnode*)。

@@ -1,5 +1,5 @@
 ---
-title: pc （到下一次调用步骤）
+title: pc（步进到下一个调用）
 description: Pc 命令执行程序，直到达到调用指令。
 ms.assetid: 4b9b786c-2ecc-44a6-a82b-0641d7991abc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: afc399926d026638f79881c3fe5db27ef1ac5e3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387260"
 ---
-# <a name="pc-step-to-next-call"></a>pc （到下一次调用步骤）
+# <a name="pc-step-to-next-call"></a>pc（步进到下一个调用）
 
 
 **Pc**命令执行程序，直到达到调用指令。

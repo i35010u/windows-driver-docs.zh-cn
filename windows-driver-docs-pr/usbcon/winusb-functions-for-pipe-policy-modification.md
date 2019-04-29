@@ -4,11 +4,11 @@ title: 用于管道策略修改的 WinUSB 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be882716dba12fa59631c16209c695a0d6a5f078
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389146"
 ---
 # <a name="winusb-functions-for-pipe-policy-modification"></a>用于管道策略修改的 WinUSB 函数
 

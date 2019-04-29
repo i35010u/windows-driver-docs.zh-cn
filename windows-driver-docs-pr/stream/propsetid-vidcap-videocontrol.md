@@ -5,11 +5,11 @@ ms.assetid: 892663c1-a807-4d03-9af0-f065149e7d42
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bb5c9851e41e63293133c5abdf2e261cf2e5bf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390883"
 ---
 # <a name="propsetidvidcapvideocontrol"></a>PROPSETID\_VIDCAP\_VIDEOCONTROL
 

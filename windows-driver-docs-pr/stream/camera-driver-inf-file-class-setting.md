@@ -4,11 +4,11 @@ description: 介绍如何将照相机类设置添加到通用的照相机的驱�
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eb833199746b0367efef8dfa2edba9177859f303
-ms.sourcegitcommit: 68bfa1f69229b7ac29d0e98f049734f5bc566a30
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58187464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387938"
 ---
 # <a name="camera-class-inf-file-setting-for-universal-camera-drivers"></a>通用相机驱动程序的相机类 INF 文件设置
 

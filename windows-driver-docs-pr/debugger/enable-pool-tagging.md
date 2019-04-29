@@ -1,19 +1,19 @@
 ---
-title: 启用标记池
-description: 启用标记池
+title: 启用池标记
+description: 启用池标记
 ms.assetid: e88f97a0-a8c3-4162-871a-b78671b902bb
 keywords:
 - 启用池标记 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dabbd77f722b6d6b55c0062b42487ea6432a08d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354795"
 ---
-# <a name="enable-pool-tagging"></a>启用标记池
+# <a name="enable-pool-tagging"></a>启用池标记
 
 
 ## <span id="ddk_enable_pool_tagging_dtools"></span><span id="DDK_ENABLE_POOL_TAGGING_DTOOLS"></span>

@@ -5,11 +5,11 @@ ms.assetid: 75c66c84-d815-43a5-a70d-1952bf0e8d44
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 29157213afa02c12e366f20850c33714e0e24be1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391409"
 ---
 # <a name="mpiodiskinfo-wmi-class"></a>MPIO\_磁盘\_信息 WMI 类
 

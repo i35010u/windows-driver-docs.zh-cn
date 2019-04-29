@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b99892a9d0f5daedbf77209d2fb9917c1008c77
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352450"
 ---
 # <a name="bug-check-0x19a-workerthreadreturnedwhileattachedtosilo"></a>Bug 检查 0x19A：辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器
 

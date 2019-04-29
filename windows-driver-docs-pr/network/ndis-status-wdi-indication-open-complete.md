@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_OPEN_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a28e4ee031c728992fa1c076cd0c5d2429fdc22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390679"
 ---
 # <a name="ndisstatuswdiindicationopencomplete"></a>NDIS\_状态\_WDI\_指示\_打开\_完成
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_打开\_完成，以指示完成[OID\_WDI\_任务\_打开](oid-wdi-task-open.md)。
 
-| 对象  |
+| Object  |
 |---------|
 | 适配器 |
 

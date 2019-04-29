@@ -1,6 +1,6 @@
 ---
-title: 有关 HwScsiFindAdapter 端口驱动程序提供 ConfigInfo
-description: 有关 HwScsiFindAdapter 端口驱动程序提供 ConfigInfo
+title: 端口驱动程序提供的适用于 HwScsiFindAdapter 的 ConfigInfo
+description: 端口驱动程序提供的适用于 HwScsiFindAdapter 的 ConfigInfo
 ms.assetid: 9691f47d-1ea8-4ef6-8e0d-57570ff70a16
 keywords:
 - HwScsiFindAdapter
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd526ffb3bb0f295f0e42403508ee4e03958f2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389413"
 ---
-# <a name="port-driver-supplied-configinfo-for-hwscsifindadapter"></a>有关 HwScsiFindAdapter 端口驱动程序提供 ConfigInfo
+# <a name="port-driver-supplied-configinfo-for-hwscsifindadapter"></a>端口驱动程序提供的适用于 HwScsiFindAdapter 的 ConfigInfo
 
 
 ## <span id="ddk_port_driver_supplied_configinfo_for_hwscsifindadapter_kg"></span><span id="DDK_PORT_DRIVER_SUPPLIED_CONFIGINFO_FOR_HWSCSIFINDADAPTER_KG"></span>

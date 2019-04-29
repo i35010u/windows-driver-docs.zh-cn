@@ -1,6 +1,6 @@
 ---
-title: 设备和驱动程序安装的最佳实践
-description: 设备和驱动程序安装的最佳实践
+title: 设备和驱动程序安装最佳做法
+description: 设备和驱动程序安装最佳做法
 ms.assetid: fca32a7f-5af1-42cf-880c-0312022a3266
 keywords:
 - 设备安装 WDK，最佳做法
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fbd97abaca78189a1b02479772a1b8d2dde97dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387226"
 ---
-# <a name="best-practices-for-device-and-driver-installation"></a>设备和驱动程序安装的最佳实践
+# <a name="best-practices-for-device-and-driver-installation"></a>设备和驱动程序安装最佳做法
 
 
 本部分提供的指导原则的组件[驱动程序包](driver-packages.md)必须遵循有关设备和驱动程序安装成功。 这些组件包括：

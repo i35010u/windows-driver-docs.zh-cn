@@ -6,11 +6,11 @@ ms.date: 08/23/2018
 keywords: -OID_WWAN_LTE_ATTACH_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a1355569f886c606cbf9c5e3cef5710a81a8303
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353713"
 ---
 # <a name="oidwwanlteattachstatus"></a>OID_WWAN_LTE_ATTACH_STATUS
 
@@ -28,7 +28,7 @@ OID_WWAN_LTE_ATTACH_STATUS 用于通知的最后一个使用默认 OS LTE 附加
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1703 |
+| Version | Windows 10 版本 1703 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

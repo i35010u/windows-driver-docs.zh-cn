@@ -1,14 +1,14 @@
 ---
-Description: The WPD Driver Samples
+Description: WPD 驱动程序示例
 title: WPD 驱动程序示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ebe80026e12e30ce4f758f1a3072425f77b6298
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387133"
 ---
 # <a name="the-wpd-driver-samples"></a>WPD 驱动程序示例
 

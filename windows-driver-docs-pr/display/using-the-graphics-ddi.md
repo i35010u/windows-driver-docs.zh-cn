@@ -1,6 +1,6 @@
 ---
-title: 使用 DDI 的图形
-description: 使用 DDI 的图形
+title: 使用图形 DDI
+description: 使用图形 DDI
 ms.assetid: e48d117b-8c1c-4617-84f8-b0b489b1083a
 keywords:
 - 绘制 WDK GDI DDI
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7c1c3ea3fc87aa17227417af5ae5349a3485d1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388984"
 ---
-# <a name="using-the-graphics-ddi"></a>使用 DDI 的图形
+# <a name="using-the-graphics-ddi"></a>使用图形 DDI
 
 
 ## <span id="ddk_using_the_graphics_ddi_gg"></span><span id="DDK_USING_THE_GRAPHICS_DDI_GG"></span>

@@ -1,22 +1,22 @@
 ---
-title: WDDM 1.2 驱动程序强制实施指南
+title: WDDM 1.2 驱动程序实施指导原则
 description: 本部分介绍 WDDM 1.2 驱动程序强制实施指南。
 ms.assetid: FD7D5519-DB2D-40D7-B6FA-1AD88E70B15A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be45531c6ec55c78743011904b37aedaf1eca094
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391187"
 ---
-# <a name="wddm-12-driver-enforcement-guidelines"></a>WDDM 1.2 驱动程序强制实施指南
+# <a name="wddm-12-driver-enforcement-guidelines"></a>WDDM 1.2 驱动程序实施指导原则
 
 
 本部分介绍 WDDM 1.2 驱动程序强制实施指南。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

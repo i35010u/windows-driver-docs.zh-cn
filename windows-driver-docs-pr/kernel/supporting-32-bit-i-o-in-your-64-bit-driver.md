@@ -1,6 +1,6 @@
 ---
-title: 在 64 位驱动程序支持 32 位 I/O
-description: 在 64 位驱动程序支持 32 位 I/O
+title: 在 64 位驱动程序中支持 32 位 I/O
+description: 在 64 位驱动程序中支持 32 位 I/O
 ms.assetid: c024c74e-0b83-4f86-8370-8269cbf69c9a
 keywords:
 - 32 位 I/O 支持 WDK 64 位
@@ -18,13 +18,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b406413798edea839afee76c89600eea0bc46c9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392405"
 ---
-# <a name="supporting-32-bit-io-in-your-64-bit-driver"></a>在 64 位驱动程序支持 32 位 I/O
+# <a name="supporting-32-bit-io-in-your-64-bit-driver"></a>在 64 位驱动程序中支持 32 位 I/O
 
 
 

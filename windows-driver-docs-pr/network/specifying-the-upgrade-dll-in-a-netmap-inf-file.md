@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 419782188d85fb046e836d9120c5fa8a1725e792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388119"
 ---
 # <a name="specifying-the-upgrade-dll-in-a-netmapinf-file"></a>在 Netmap.inf 文件中指定升级 DLL
 

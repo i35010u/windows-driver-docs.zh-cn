@@ -1,6 +1,6 @@
 ---
-title: 注册为微型端口驱动程序的中间驱动程序
-description: 注册为微型端口驱动程序的中间驱动程序
+title: 将中间驱动程序注册为微型端口驱动程序
+description: 将中间驱动程序注册为微型端口驱动程序
 ms.assetid: a01bc0f4-4a03-4d44-88c0-7029042d6953
 keywords:
 - 注册中间驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36c74262f88f6b25b759053172339e1891f73b57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391965"
 ---
-# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>注册为微型端口驱动程序的中间驱动程序
+# <a name="registering-an-intermediate-driver-as-a-miniport-driver"></a>将中间驱动程序注册为微型端口驱动程序
 
 
 

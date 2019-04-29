@@ -1,21 +1,21 @@
 ---
-Description: The Windows Hardware Lab Kit (HLK) tests can be used for additional testing of Systems, USB host controllers, hubs, and devices.
+Description: Windows 硬件 Lab Kit (HLK) 测试可以用于其他测试系统、 USB 主控制器、 中心和设备。
 title: 有关 USB 的 Windows 硬件实验室 Kit (HLK) 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4ece82c5267b85db8cd658dddbe6191fb43a479
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389181"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>有关 USB 的 Windows 硬件实验室 Kit (HLK) 测试
 
 
 Windows 硬件 Lab Kit (HLK) 测试可以用于其他测试系统、 USB 主控制器、 中心和设备。 这些测试涵盖基本的设备功能、 可靠性和与 Windows 兼容性。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 
 在之前运行的徽标测试开始请确保满足以下要求：

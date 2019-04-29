@@ -1,5 +1,5 @@
 ---
-title: 正在删除系统分配计时器对象
+title: 删除系统分配的计时器对象
 description: 从 Windows 8.1 开始，ExDeleteTimer 例程中删除已通过 ExAllocateTimer 例程的计时器对象。
 ms.assetid: 7D119448-3890-4E8F-BC79-7FEB3213B693
 keywords:
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e5af582c1926f1222f53050f749438548dea06
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388218"
 ---
-# <a name="deleting-a-system-allocated-timer-object"></a>正在删除系统分配计时器对象
+# <a name="deleting-a-system-allocated-timer-object"></a>删除系统分配的计时器对象
 
 
 从 Windows 8.1 [ **ExDeleteTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265181)例程中删除已创建的计时器对象[ **ExAllocateTimer** ](https://msdn.microsoft.com/library/windows/hardware/dn265179)例程。 此计时器对象是系统分配[ **EX\_计时器**](https://msdn.microsoft.com/library/windows/hardware/dn265199)结构，其成员是不透明的驱动程序。 删除计时器对象之前，请**ExDeleteTimer**进一步禁用计时器对象上的操作和取消或完成任何挂起的操作可能正在进行中的对象。

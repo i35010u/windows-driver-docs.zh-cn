@@ -1,6 +1,6 @@
 ---
-title: 创建依赖于设备的位图
-description: 创建依赖于设备的位图
+title: 创建设备相关的位图
+description: 创建设备相关的位图
 ms.assetid: da53a8bf-5991-4abb-81f1-2d3a7cb0ff90
 keywords:
 - GDI WDK Windows 2000 显示位图
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42e2f6dec985d51533ef7e0bfe37698bcb4de7a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387250"
 ---
-# <a name="creating-device-dependent-bitmaps"></a>创建依赖于设备的位图
+# <a name="creating-device-dependent-bitmaps"></a>创建设备相关的位图
 
 
 ## <span id="ddk_creating_device_dependent_bitmaps_gg"></span><span id="DDK_CREATING_DEVICE_DEPENDENT_BITMAPS_GG"></span>

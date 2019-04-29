@@ -1,6 +1,6 @@
 ---
-title: 使用电源管理的 I/O 队列
-description: 使用电源管理的 I/O 队列
+title: 使用通过电源管理的 I/O 队列
+description: 使用通过电源管理的 I/O 队列
 ms.assetid: 271d55ef-d82e-4ffd-bf41-a602c42c3f0e
 keywords:
 - I/O 队列 WDK KMDF，电源管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40e964f09d464c0ee5d0c9140fa364be84ddc1ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391843"
 ---
-# <a name="using-power-managed-io-queues"></a>使用电源管理的 I/O 队列
+# <a name="using-power-managed-io-queues"></a>使用通过电源管理的 I/O 队列
 
 
 当驱动程序创建的 I/O 队列时，可以指定队列是否*电源管理*。 电源管理队列中可用的 I/O 请求时，框架提供给驱动程序请求的仅当设备处于其工作 (D0) 状态。 框架不允许设备之前该框架已从电源管理队列传递到驱动程序的所有 I/O 请求已完成、 取消或推迟，将保留其工作状态。

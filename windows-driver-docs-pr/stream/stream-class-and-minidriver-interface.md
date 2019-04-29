@@ -1,6 +1,6 @@
 ---
-title: Stream 类和微型驱动程序接口
-description: Stream 类和微型驱动程序接口
+title: 流类和微型驱动程序接口
+description: 流类和微型驱动程序接口
 ms.assetid: d85510e6-1fd7-442a-bd88-f32b6c13ff75
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，流类接口
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a5cf4d56758ad2a33e650ddcdec10822b9b017e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391385"
 ---
-# <a name="stream-class-and-minidriver-interface"></a>Stream 类和微型驱动程序接口
+# <a name="stream-class-and-minidriver-interface"></a>流类和微型驱动程序接口
 
 
 

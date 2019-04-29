@@ -1,17 +1,17 @@
 ---
-title: 阻止旧版的文件系统筛选器驱动程序
+title: 阻止旧版文件系统筛选器驱动程序
 description: 从开始于 Windows 10，版本 1607 中，管理员和驱动程序开发人员可以使用注册表设置来阻止旧式文件系统筛选器驱动程序。
 ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9069f8556b9bb888400ec47d4e048c0e3d1e2ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387244"
 ---
-# <a name="blocking-legacy-file-system-filter-drivers"></a>阻止旧版的文件系统筛选器驱动程序
+# <a name="blocking-legacy-file-system-filter-drivers"></a>阻止旧版文件系统筛选器驱动程序
 
 从开始于 Windows 10，版本 1607 中，管理员和驱动程序开发人员可以使用注册表设置来阻止旧式文件系统筛选器驱动程序。 *旧的文件系统筛选器驱动程序*是附加到文件系统的驱动程序直接堆栈，并不使用筛选器管理器。 本主题介绍阻止和解除阻止旧版的文件系统筛选器驱动程序的注册表设置。 它还介绍了旧的文件系统筛选器被阻止时输入到系统事件日志的事件以及如何检查操作系统是否有旧的文件系统驱动程序运行。
 
@@ -66,11 +66,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 <td align="left">系统</td>
 </tr>
 <tr class="even">
-<td align="left">来源</td>
+<td align="left">Source</td>
 <td align="left">Microsoft-Windows-Kernel-IO</td>
 </tr>
 <tr class="odd">
-<td align="left">日期</td>
+<td align="left">date</td>
 <td align="left">2015 年 12 月 29 日下午 2:55:05</td>
 </tr>
 <tr class="even">
@@ -90,7 +90,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">用户</td>
+<td align="left">“用户”</td>
 <td align="left">CONTOSO\user</td>
 </tr>
 <tr class="odd">

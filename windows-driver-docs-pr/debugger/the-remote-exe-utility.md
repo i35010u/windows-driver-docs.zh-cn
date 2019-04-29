@@ -1,19 +1,19 @@
 ---
-title: Remote.exe 实用程序
-description: Remote.exe 实用程序
+title: Remote.exe 实用工具
+description: Remote.exe 实用工具
 ms.assetid: 3780d632-939e-4adb-82f1-fd7c25706b54
 keywords:
 - remote.exe，remote.exe 实用程序通过远程调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc26101fbe58a0d1d95abc0fd9801e1666d7a21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365987"
 ---
-# <a name="the-remoteexe-utility"></a>Remote.exe 实用程序
+# <a name="the-remoteexe-utility"></a>Remote.exe 实用工具
 
 
 ## <span id="ddk_the_remote_exe_utility_dbg"></span><span id="DDK_THE_REMOTE_EXE_UTILITY_DBG"></span>

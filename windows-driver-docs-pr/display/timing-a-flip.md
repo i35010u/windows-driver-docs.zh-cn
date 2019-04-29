@@ -1,6 +1,6 @@
 ---
-title: 计时翻转
-description: 计时翻转
+title: 交替计时
+description: 交替计时
 ms.assetid: abd3188e-0f75-401a-88e3-e2a9c5788ad5
 keywords:
 - 绘制翻转页面 WDK DirectDraw、 计时
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7b99ce62e87932f52a700c4dd903e3cd5d95194
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389787"
 ---
-# <a name="timing-a-flip"></a>计时翻转
+# <a name="timing-a-flip"></a>交替计时
 
 
 ## <span id="ddk_timing_a_flip_gg"></span><span id="DDK_TIMING_A_FLIP_GG"></span>

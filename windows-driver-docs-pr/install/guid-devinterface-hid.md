@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d5e00285233b5e15aaef46d2d75f92cd974a4257
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391999"
 ---
 # <a name="guiddevinterfacehid"></a>GUID_DEVINTERFACE_HID
 
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_HID[设备接口类](https://msdn.microsoft.com/library/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -76,13 +76,13 @@ HID 集合的驱动程序注册通知的操作系统和应用程序的 HID 集�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hidclass.h （包括 Hidclass.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_CLASS_INPUT**](guid-class-input.md)

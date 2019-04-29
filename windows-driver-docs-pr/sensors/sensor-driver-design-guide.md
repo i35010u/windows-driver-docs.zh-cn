@@ -5,11 +5,11 @@ ms.assetid: b787b398-8bcd-4efd-81bf-36a4d9626347
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e383c950e174a8c26e9eeeb816d0403c6712bd59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368834"
 ---
 # <a name="sensor-driver-design-guide"></a>传感器驱动程序设计指南
 

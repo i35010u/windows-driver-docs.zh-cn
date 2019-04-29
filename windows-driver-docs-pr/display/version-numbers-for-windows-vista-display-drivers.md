@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 658900f0a2614e096a854bac49d0871ed5bb1bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390780"
 ---
 # <a name="version-numbers-for-wddm-drivers"></a>WDDM 驱动程序的版本号
 

@@ -1,14 +1,14 @@
 ---
-Description: WMCDC Device Management Model
+Description: WMCDC 设备管理模型
 title: WMCDC 设备管理模型
 ms.localizationpriority: medium
 ms.date: 01/07/2019
 ms.openlocfilehash: f5a884549c6e16184c8752637743a6ac8e6acddb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389117"
 ---
 # <a name="wmcdc-device-management-model"></a>WMCDC 设备管理模型
 

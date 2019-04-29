@@ -5,11 +5,11 @@ ms.assetid: fa8490f0-1460-4b13-86ee-4617d3e87abc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840cf6404404604969ec04446908f530e342e11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368236"
 ---
 # <a name="summary-of-connection-oriented-operations"></a>面向连接的操作摘要
 

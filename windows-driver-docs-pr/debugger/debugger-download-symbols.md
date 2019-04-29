@@ -5,16 +5,16 @@ keywords:
 - 下载 Windows 调试
 - WinDbg
 - 下载
-- 符号
+- Symbols
 - 下载符号
 ms.date: 04/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c32a3743b44db5299f0becc4f6e80320656bc51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368484"
 ---
 # <a name="windows-symbol-packages"></a>Windows 符号程序包
 

@@ -1,6 +1,6 @@
 ---
-title: WSD 端口监视器 Bidi 扩展示例
-description: WSD 端口监视器 Bidi 扩展示例
+title: WSD 端口监视器的双向扩展示例
+description: WSD 端口监视器的双向扩展示例
 ms.assetid: a04f16d5-ae99-4df5-bb55-aef95bd03588
 keywords:
 - bidi 扩展文件 WDK 打印机自动配置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0738fc4f183ee29829f3b650e41347c04951d757
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387274"
 ---
-# <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD 端口监视器 Bidi 扩展示例
+# <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD 端口监视器的双向扩展示例
 
 下面的代码示例是为 Web Services for Devices (WSD) 端口监视器扩展 bidi 通信架构的示例 XML 文件：
 

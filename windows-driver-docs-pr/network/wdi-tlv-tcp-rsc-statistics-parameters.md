@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 26b1b9fa0f06a91546f308e077937cdd8fa4eca0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366634"
 ---
 # <a name="wditlvtcprscstatisticsparameters"></a>WDI\_TLV\_TCP\_RSC\_STATISTICS\_PARAMETERS
 
@@ -58,7 +58,7 @@ WDI\_TLV\_TCP\_RSC\_统计信息\_参数是包含 TCP RSC 的统计信息 TLV [O
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

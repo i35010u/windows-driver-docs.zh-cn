@@ -4,11 +4,11 @@ description: 介绍用于硬件支持的应用 (HSA) 以及它们之间的区别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 432e205c52bb9cd5617ab2cb3f024ae7b8adab7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387927"
 ---
 # <a name="faq-on-custom-capabilities"></a>有关自定义功能的常见问题解答
 

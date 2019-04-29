@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb6c684c785322aa18c7950b4d26f3b8f5e27bd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390873"
 ---
 # <a name="srbgetdeviceproperty"></a>SRB\_获取\_设备\_属性
 
@@ -46,7 +46,7 @@ ms.locfileid: "56543622"
 
 有关属性集的详细信息，请参阅[KS 属性](https://msdn.microsoft.com/library/windows/hardware/ff567671)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**流\_属性\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568442)

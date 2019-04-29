@@ -1,6 +1,6 @@
 ---
-title: 删除插 RS-232 端口
-description: 删除插 RS-232 端口
+title: 删除即插即用 RS-232 端口
+description: 删除即插即用 RS-232 端口
 ms.assetid: b439dc51-09f2-4149-a562-2e376bb504c5
 keywords:
 - RS-232 端口 WDK 串行设备
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ea89439b59d7b1f35b1f7d3194e3e0ed5403af2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388041"
 ---
-# <a name="removing-a-plug-and-play-rs-232-port"></a>删除插 RS-232 端口
+# <a name="removing-a-plug-and-play-rs-232-port"></a>删除即插即用 RS-232 端口
 
 
 

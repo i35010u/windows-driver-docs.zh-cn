@@ -1,6 +1,6 @@
 ---
-title: 专用的 CLFS 日志
-description: 专用的 CLFS 日志
+title: 专用 CLFS 日志
+description: 专用 CLFS 日志
 ms.assetid: c6ca580c-b7f4-493a-8bd6-35d0aa932b1a
 keywords:
 - 常见日志文件系统 WDK 内核，专用日志
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 860735d2ae97d08a090a888b324079754b771257
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388226"
 ---
-# <a name="dedicated-clfs-logs"></a>专用的 CLFS 日志
+# <a name="dedicated-clfs-logs"></a>专用 CLFS 日志
 
 
 

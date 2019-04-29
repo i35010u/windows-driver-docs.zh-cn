@@ -1,17 +1,17 @@
 ---
-title: XPSDrv 中的改进
+title: XPSDrv 的改进
 description: 本主题提供有关对 XPSDrv 呈现体系结构所做的更新的信息。
 ms.assetid: 5D76ECA2-C5F6-47E4-BC05-B5137AD4196B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bdc1c53f3a8d5505ecfc23271229e8f6e93c5ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390566"
 ---
-# <a name="improvements-in-xpsdrv"></a>XPSDrv 中的改进
+# <a name="improvements-in-xpsdrv"></a>XPSDrv 的改进
 
 
 本主题提供有关对 XPSDrv 呈现体系结构所做的更新的信息。

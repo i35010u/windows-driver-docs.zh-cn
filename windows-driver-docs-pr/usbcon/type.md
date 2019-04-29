@@ -1,14 +1,14 @@
 ---
-Description: This topic explains how to test the interoperability of USB Type-C enabled systems and Windows.
+Description: 本主题说明如何测试 USB 类型-C 启用系统和 Windows 的互操作性。
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d67c271a1983222ebbe8aa529b6c216cac979eea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324382"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 

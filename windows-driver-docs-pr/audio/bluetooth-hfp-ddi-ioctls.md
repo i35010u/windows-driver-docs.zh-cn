@@ -1,17 +1,17 @@
 ---
-title: 蓝牙 HFP DDI Ioctl
+title: 蓝牙 HFP DDI IOCTL
 description: Windows 8 引入了一组的 I/O 控制代码 (Ioctl)，允许音频驱动程序能够在无需手动配置文件 (HFP) 类驱动程序，运行蓝牙音频绕过连接使用 DDI 的一部分。
 ms.assetid: 94B6F113-5130-4772-B8A0-5C9992501824
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae729e5e7f8ef4ab4372f66b342eb85ad065957f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63333893"
 ---
-# <a name="bluetooth-hfp-ddi-ioctls"></a>蓝牙 HFP DDI Ioctl
+# <a name="bluetooth-hfp-ddi-ioctls"></a>蓝牙 HFP DDI IOCTL
 
 
 Windows 8 引入了一组的 I/O 控制代码 (Ioctl)，允许音频驱动程序能够在无需手动配置文件 (HFP) 类驱动程序，运行蓝牙音频绕过连接使用 DDI 的一部分。
@@ -70,7 +70,7 @@ Windows 10 已通过添加以下新一个更新的一套 Ioctl:
 
 有关使用这些 Ioctl 的结构的信息，请参阅[蓝牙 HFP DDI 结构](bluetooth-hfp-ddi-structures.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [蓝牙 HFP DDI 结构](bluetooth-hfp-ddi-structures.md)

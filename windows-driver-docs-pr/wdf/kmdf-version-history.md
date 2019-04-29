@@ -10,11 +10,11 @@ ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 358d5eb53fc4005f17577f79c2644b2074423ae4
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390185"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 

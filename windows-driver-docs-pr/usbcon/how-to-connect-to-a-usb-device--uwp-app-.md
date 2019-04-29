@@ -1,14 +1,14 @@
 ---
-Description: In Windows 8.1, you can write a UWP app that interacts with a USB device.
+Description: 在 Windows 8.1，可以编写与 USB 设备进行交互的 UWP 应用。
 title: 如何连接到 USB 设备（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5eca6881309b15cda4619af2df05e708a826aa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364822"
 ---
 # <a name="how-to-connect-to-a-usb-device-uwp-app"></a>如何连接到 USB 设备（UWP 应用）
 
@@ -208,7 +208,7 @@ void CreateSuperMuttDeviceWatcher(void)
 
 在完成后使用[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象，必须将其释放。 通过释放对象，则将取消所有挂起的数据传输。 仍以已取消的错误或操作已完成，调用这些操作的完成回调例程。
 
-C + + 应用程序必须通过使用发布的引用**删除**关键字。 C#/VB 应用必须调用[ **UsbDevice.Dispose** ](https://msdn.microsoft.com/library/windows/apps/dn264007)方法。 JavaScript 应用程序必须调用[ **UsbDevice.Close**](https://msdn.microsoft.com/library/windows/apps/dn263990)。
+C++应用必须通过使用发布的引用**删除**关键字。 C#/VB 应用必须调用[ **UsbDevice.Dispose** ](https://msdn.microsoft.com/library/windows/apps/dn264007)方法。 JavaScript 应用程序必须调用[ **UsbDevice.Close**](https://msdn.microsoft.com/library/windows/apps/dn263990)。
 
 [ **FromIdAsync** ](https://msdn.microsoft.com/library/windows/apps/dn264010)失败，如果设备处于使用或找不到。
 

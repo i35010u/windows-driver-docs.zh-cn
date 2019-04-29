@@ -5,11 +5,11 @@ ms.assetid: 6A240A73-C487-4001-8F60-7C7C2C7031F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae43643621de653a9e246c5c305df56802ff3108
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324888"
 ---
 # <a name="installing-hyper-v-extensible-switch-extensions"></a>安装 Hyper-V 可扩展交换机扩展
 

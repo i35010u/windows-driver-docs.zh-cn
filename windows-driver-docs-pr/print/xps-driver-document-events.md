@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8d1d67663b6d33f8d8d144636ac3b7531a47399
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390914"
 ---
 # <a name="xps-driver-document-events"></a>XPS 驱动程序文档事件
 

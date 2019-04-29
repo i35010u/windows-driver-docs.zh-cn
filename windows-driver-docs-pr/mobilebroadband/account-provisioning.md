@@ -5,11 +5,11 @@ ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf7dc1f67600a9deccc4773d733330654744c7a
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386904"
 ---
 # <a name="account-provisioning"></a>帐户预配
 

@@ -4,11 +4,11 @@ title: 编写 UCSI 客户端驱动程序
 ms.date: 09/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 625212799bed9e6bec50495c7556736d8a6f20ad
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389142"
 ---
 # <a name="write-a-ucsi-client-driver"></a>编写 UCSI 客户端驱动程序
 

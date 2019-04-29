@@ -1,5 +1,5 @@
 ---
-title: HwComponent TxtSetup.oem 文件的节
+title: TxtSetup.oem 文件的 HwComponent 节
 description: HwComponent 部分列出了可用于特定组件的驱动程序。 没有一个 HwComponent 节，用于每种类型的支持文件的组件。
 ms.assetid: 84ba057b-6699-4709-bee8-24cb555d4165
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3f21243aee18b677491771bb518464148b2d7db4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386918"
 ---
-# <a name="hwcomponent-section-of-a-txtsetupoem-file"></a>HwComponent TxtSetup.oem 文件的节
+# <a name="hwcomponent-section-of-a-txtsetupoem-file"></a>TxtSetup.oem 文件的 HwComponent 节
 
 
 一个*HwComponent*部分列出了可用于特定组件的驱动程序。 没有*HwComponent*部分，了解每种类型的支持文件的组件。

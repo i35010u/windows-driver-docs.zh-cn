@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbe36a437adb9db84fcc7dff9656baef6aa2113c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391661"
 ---
 # <a name="intermediate-driver-network-data-management"></a>中间驱动程序网络数据管理
 

@@ -5,11 +5,11 @@ description: 示例筛选器驱动程序中 Microsoft Windows Driver Kit (WDK)�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 763eb9aa7503a66938bdee9dddefde5e806c5cf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390406"
 ---
 # <a name="3rd-party-filter-drivers"></a>第三方筛选器驱动程序
 

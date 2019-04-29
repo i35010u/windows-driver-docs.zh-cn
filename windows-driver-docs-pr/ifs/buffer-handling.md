@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d1c608fb47e03e842b8c3ac52af7a2b10f0815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391500"
 ---
 # <a name="buffer-handling"></a>缓冲区处理
 
@@ -61,7 +61,7 @@ WDK 包含许多缓冲区 FASTFAT 和 CDFS 文件系统的示例代码中，验�
 
 -   **FatGetVolumeBitmap**函数中 fastfat\\fsctl.c 使用[ **ProbeForRead** ](https://msdn.microsoft.com/library/windows/hardware/ff559876)并[ **ProbeForWrite**](https://msdn.microsoft.com/library/windows/hardware/ff559879)来验证用户缓冲区中的碎片整理 API。
 
--   **CdCommonRead**中的 cdf 函数\\read.c 使用\_\_尝试并\_\_到零个用户缓冲区的代码周围除外。 请注意，此示例中的代码**CdCommonRead**似乎使用 try 和 except 关键字。 在 WDK 环境中，这些关键字在 C 中的定义的编译器扩展方面\_\_尝试并\_\_除外。 使用 c + + 代码的任何人都必须使用本机编译器类型正确，处理异常作为\_ \_try 是 c + + 关键字，但不是 C 关键字，并将提供不是有效的内核驱动程序的 c + + 异常处理的一种形式。
+-   **CdCommonRead**中的 cdf 函数\\read.c 使用\_\_尝试并\_\_到零个用户缓冲区的代码周围除外。 请注意，此示例中的代码**CdCommonRead**似乎使用 try 和 except 关键字。 在 WDK 环境中，这些关键字在 C 中的定义的编译器扩展方面\_\_尝试并\_\_除外。 使用的任何人C++代码必须使用本机编译器类型来处理异常，作为\_ \_try 是C++关键字，但不是 C 关键字，并将提供一种形式的C++异常处理功能，它不是有效的内核驱动程序。
 
  
 

@@ -5,18 +5,18 @@ ms.assetid: 2A15B6CC-E13F-47BD-AE73-622937ACF351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b76853bdef4170f2fa463f4c13abfe79ede8524
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391201"
 ---
 # <a name="wddm-20-and-windows10"></a>WDDM 2.0 和 Windows 10
 
 
 本部分提供有关新功能和增强功能在 Windows 显示驱动程序模型 (WDDM) 2.0 版中，详细信息可从 Windows 10 开始。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

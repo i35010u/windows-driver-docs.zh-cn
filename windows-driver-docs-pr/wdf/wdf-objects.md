@@ -5,11 +5,11 @@ ms.assetid: 842B0182-5108-4A72-9DAE-753E038F36D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26ebfd441fde94f1fb4d7da28efbf4e4253db213
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390839"
 ---
 # <a name="wdf-objects"></a>WDF 对象
 

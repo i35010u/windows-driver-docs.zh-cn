@@ -1,6 +1,6 @@
 ---
-title: 使用内存段描述的 GPU 地址空间
-description: 使用内存段描述的 GPU 地址空间
+title: 使用内存段描述 GPU 地址空间
+description: 使用内存段描述 GPU 地址空间
 ms.assetid: 5ff23d53-0860-44fa-8ce1-c34aa22b8730
 keywords:
 - 内存段 WDK 显示有关内存段
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f342510d634ef43fd8872888bb64fcfe1a6470e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389010"
 ---
-# <a name="using-memory-segments-to-describe-the-gpu-address-space"></a>使用内存段描述的 GPU 地址空间
+# <a name="using-memory-segments-to-describe-the-gpu-address-space"></a>使用内存段描述 GPU 地址空间
 
 
 ## <span id="ddk_using_memory_segments_to_describe_the_gpu_address_space_gg"></span><span id="DDK_USING_MEMORY_SEGMENTS_TO_DESCRIBE_THE_GPU_ADDRESS_SPACE_GG"></span>

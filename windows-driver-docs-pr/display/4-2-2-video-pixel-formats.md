@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0919efd2985e1c6dbb449267ce32f39943036c54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387028"
 ---
-# <a name="422-video-pixel-formats"></a>4:2:2 视频的像素格式
+# <a name="422-video-pixel-formats"></a>4:2:2 视频像素格式
 
 
 ## <span id="ddk_4_2_2_video_pixel_formats_gg"></span><span id="DDK_4_2_2_VIDEO_PIXEL_FORMATS_GG"></span>

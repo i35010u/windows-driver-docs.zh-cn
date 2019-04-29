@@ -1,6 +1,6 @@
 ---
-title: 打开跟踪标志和级别所选内容对话框
-description: 打开跟踪标志和级别所选内容对话框
+title: 打开跟踪标志和级别选择对话框
+description: 打开跟踪标志和级别选择对话框
 ms.assetid: f6ee808e-ea29-492b-b161-0a3b57140214
 keywords:
 - 跟踪标志 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea90faac2f86afc3a68b03b0ab21f6f9feb634bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356349"
 ---
-# <a name="opening-the-tracing-flags-and-level-selection-dialog-box"></a>打开跟踪标志和级别所选内容对话框
+# <a name="opening-the-tracing-flags-and-level-selection-dialog-box"></a>打开跟踪标志和级别选择对话框
 
 
 可以使用**跟踪标志和级别选择**对话框来选择和更改的标志和提供程序的级别时创建会话和而会话正在运行。

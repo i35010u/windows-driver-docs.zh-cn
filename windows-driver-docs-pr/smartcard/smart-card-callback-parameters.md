@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a18240c2f97c7af4ecb7300f5de3c91f4cd8377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390552"
 ---
 # <a name="smart-card-callback-parameters"></a>智能卡回调参数
 

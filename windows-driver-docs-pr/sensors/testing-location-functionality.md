@@ -1,17 +1,17 @@
 ---
-title: 测试位置的功能
+title: 测试定位功能
 description: 传感器诊断工具包括单独的位置选项卡，以记录特定于位置的属性。
 ms.assetid: A96AF9C7-69FA-492C-941E-4E296488875C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8684ac12c530cebc1c25e08f58b5a1e5d9abd5c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391526"
 ---
-# <a name="testing-location-functionality"></a>测试位置的功能
+# <a name="testing-location-functionality"></a>测试定位功能
 
 
 传感器诊断工具包括单独的位置选项卡，以记录特定于位置的属性。 这些属性包括纬度、 经度和市政地址。

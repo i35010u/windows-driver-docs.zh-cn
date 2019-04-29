@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c2452df3c64fc1bdaf3f1aae2765353e28ccd2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386940"
 ---
 # <a name="irpmnquerydevicerelations"></a>IRP\_MN\_查询\_设备\_关系
 
@@ -217,13 +217,13 @@ PnP 管理器将发送[ **IRP\_MN\_弹出**](irp-mn-eject.md) IRP 正在弹出�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*AddDevice*](https://msdn.microsoft.com/library/windows/hardware/ff540521)

@@ -17,11 +17,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c308fcb3462440e902b071e73e608bc7c6ea7370
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390003"
 ---
 # <a name="cpixelcomputemipvolumesize-method"></a>CPixel::ComputeMipVolumeSize 方法
 
@@ -41,7 +41,7 @@ static UINT ComputeMipVolumeSize(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *cpWidth*以像素为单位的 mipmap 卷指定的宽度。
@@ -78,7 +78,7 @@ static UINT ComputeMipVolumeSize(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Pixel.hpp （包括 Pixel.hpp）</td>
 </tr>
 </tbody>

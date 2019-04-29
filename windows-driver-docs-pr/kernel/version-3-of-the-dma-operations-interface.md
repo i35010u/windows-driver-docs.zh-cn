@@ -1,17 +1,17 @@
 ---
-title: 版本 3 的 DMA 操作接口
+title: DMA 操作接口版本 3
 description: 可从 Windows 8 开始 DMA 操作接口的版本 3。
 ms.assetid: EFB59930-7D58-4E6E-8242-66A326E239E5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7633e221a34c4ac09c77ce11797512a0bdf1d901
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355251"
 ---
-# <a name="version-3-of-the-dma-operations-interface"></a>版本 3 的 DMA 操作接口
+# <a name="version-3-of-the-dma-operations-interface"></a>DMA 操作接口版本 3
 
 
 可从 Windows 8 开始 DMA 操作接口的版本 3。 **DMA\_OPERATIONS**结构为此接口包含多个未定义此接口的早期版本中的新例程。 版本 3 中的例程的列表，请参阅[ **DMA\_OPERATIONS**](https://msdn.microsoft.com/library/windows/hardware/ff544071)。

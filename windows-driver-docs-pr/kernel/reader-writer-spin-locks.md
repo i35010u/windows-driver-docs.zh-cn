@@ -5,11 +5,11 @@ ms.assetid: E2853F35-590E-4EF5-8647-1261BC4B8D15
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9da891fc77c5a1f3a4bd17b36936cf2c9eab7035
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353307"
 ---
 # <a name="readerwriter-spin-locks"></a>读取器/写入器自旋锁
 

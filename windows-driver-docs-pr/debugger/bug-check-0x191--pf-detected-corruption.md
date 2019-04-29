@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 89b678a84670e4c36dee6225f6bc59fecb868dde
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352454"
 ---
 # <a name="bug-check-0x191-pfdetectedcorruption"></a>Bug 检查 0x191：PF\_检测到\_损坏
 

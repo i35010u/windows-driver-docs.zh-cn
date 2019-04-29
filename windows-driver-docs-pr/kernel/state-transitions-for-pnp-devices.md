@@ -1,6 +1,6 @@
 ---
-title: 即插即用设备的状态转换
-description: 即插即用设备的状态转换
+title: PnP 设备的状态转换
+description: PnP 设备的状态转换
 ms.assetid: 31969515-899b-407e-ab73-f6f7f36adb85
 keywords:
 - 即插即用 WDK 内核，状态转换
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 595cc4ecfbfe279eb436d3e0732db3eaf70b5475
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331983"
 ---
-# <a name="state-transitions-for-pnp-devices"></a>即插即用设备的状态转换
+# <a name="state-transitions-for-pnp-devices"></a>PnP 设备的状态转换
 
 
 ## <a href="" id="ddk-state-transitions-for-pnp-devices-kg"></a>

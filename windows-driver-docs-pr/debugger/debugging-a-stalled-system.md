@@ -1,19 +1,19 @@
 ---
-title: 调试停止的系统
-description: 调试停止的系统
+title: 调试已停止的系统
+description: 调试已停止的系统
 ms.assetid: 83679dca-2477-4d03-9a89-5a5aebc7b9d9
 keywords:
 - 停止的系统调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 187712a6006aef96a60e99ff97d5469a07d2f08d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324590"
 ---
-# <a name="debugging-a-stalled-system"></a>调试停止的系统
+# <a name="debugging-a-stalled-system"></a>调试已停止的系统
 
 
 ## <span id="ddk_debugging_a_stalled_system_dbg"></span><span id="DDK_DEBUGGING_A_STALLED_SYSTEM_DBG"></span>

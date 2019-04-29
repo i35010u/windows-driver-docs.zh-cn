@@ -5,11 +5,11 @@ ms.assetid: 0eb00955-127c-4ef7-a18f-69448b5fd105
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda2be72f5eed52d0a4e255e053a68d265f6f335
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389430"
 ---
 # <a name="negotiating-claim-and-release-device-requests-with-scsi-port"></a>通过 SCSI 端口协商声明和释放设备请求
 

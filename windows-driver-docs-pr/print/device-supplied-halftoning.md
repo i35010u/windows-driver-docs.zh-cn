@@ -1,19 +1,19 @@
 ---
-title: 设备提供半色调
-description: 设备提供半色调
+title: 设备提供的半色调
+description: 设备提供的半色调
 ms.assetid: d1d7963e-c23e-4cb5-a33f-43fec5dc74d2
 keywords:
 - 设备提供半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a539326bb9879a6c56baba893e5f4daa16e14ef0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387272"
 ---
-# <a name="device-supplied-halftoning"></a>设备提供半色调
+# <a name="device-supplied-halftoning"></a>设备提供的半色调
 
 
 

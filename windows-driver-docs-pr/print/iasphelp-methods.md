@@ -11,11 +11,11 @@ ms.assetid: 1d0fa5d9-0046-4f48-b171-afdc6fb32df3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc622da3091310913054ff97492946be1b6055bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392829"
 ---
 # <a name="iasphelp-methods"></a>Iasphelp 方法
 

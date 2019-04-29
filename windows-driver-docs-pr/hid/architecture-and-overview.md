@@ -5,11 +5,11 @@ ms.assetid: 99384729-552C-4847-AA35-E0D413018104
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4813e9d83300861618d293a0ef9b4295b2a1998f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390426"
 ---
 # <a name="architecture-and-overview-for-hid-over-the-ic-transport"></a>体系结构和通过 I²C 传输的 HID 概述
 

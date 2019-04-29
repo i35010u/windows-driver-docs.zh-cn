@@ -1,6 +1,6 @@
 ---
-title: IHV 扩展性概述
-description: IHV 扩展性概述
+title: IHV 可扩展性概述
+description: IHV 可扩展性概述
 ms.assetid: 446d91e9-3497-4b45-82a6-7f36dd136e08
 keywords:
 - IHV 扩展 WDK 本机 802.11 有关 IHV 扩展性
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65de079b2e210c23b399a77930808326041629c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392386"
 ---
-# <a name="overview-of-ihv-extensibility"></a>IHV 扩展性概述
+# <a name="overview-of-ihv-extensibility"></a>IHV 可扩展性概述
 
 
 

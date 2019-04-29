@@ -5,11 +5,11 @@ ms.assetid: 8FCFDA98-621E-415E-83D7-0371F55DD8A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eb9f685aebd3a65e4a8821737e8f1f016b3f1ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390103"
 ---
 # <a name="porting-adddevice-to-evtdriverdeviceadd"></a>将 AddDevice 移植到 EvtDriverDeviceAdd
 

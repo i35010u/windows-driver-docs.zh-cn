@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e8ef78649edfb16c3771e8ab9651a88917531646
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351794"
 ---
 # <a name="kspropertycameracontrolextendedtorchmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_TORCHMODE
 
@@ -90,7 +90,7 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 </thead>
 <tbody>
 <tr class="odd">
-<td>版本</td>
+<td>Version</td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -133,7 +133,7 @@ Torch 模式时 KSCAMERA\_EXTENDEDPROP\_VIDEOTORCH\_ON\_ADJUSTABLEPOWER， **Val
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>从开始提供 Windows 8.1。</p></td>
 </tr>
 <tr class="even">

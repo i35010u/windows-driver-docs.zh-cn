@@ -10,19 +10,19 @@ keywords:
 ms.date: 08/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52811ed7c1c2b481f4b9ef43a588a3079f0aaa3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387952"
 ---
-# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用程序 (HSA):驱动程序开发人员的步骤
+# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤
 
 硬件支持应用程序 (HSA) 是一种特定于设备的应用，与特定的驱动程序配对或[RPC （远程过程调用）](https://msdn.microsoft.com/library/windows/desktop/aa378651)终结点。
 
 若要将驱动程序与关联的应用商店应用，首先保留名为自定义功能的特殊值。 然后允许访问的播发功能和应用开发人员提供的功能的应用。  此页为驱动程序开发人员介绍这些步骤。
 
-应用程序开发人员的步骤所述[硬件支持应用程序 (HSA):面向应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+应用程序开发人员的步骤所述[硬件支持应用程序 (HSA):适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
 HSA 是四个 ("DCHU") 设计原则之一[通用 Windows 驱动程序](../develop/getting-started-with-universal-drivers.md)。
 
@@ -121,7 +121,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 完成后 SCCD，功能所有者电子邮件发送给 Microsoft 进行签名。  Microsoft 返回签名的 SCCD 功能所有者。
 
-然后，功能所有者将 SCCD 发送到应用程序开发人员。  应用程序开发人员在应用程序清单中包含签名的 SCCD。  若要了解应用程序开发人员需要执行操作，请参阅[硬件支持应用程序 (HSA):面向应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+然后，功能所有者将 SCCD 发送到应用程序开发人员。  应用程序开发人员在应用程序清单中包含签名的 SCCD。  若要了解应用程序开发人员需要执行操作，请参阅[硬件支持应用程序 (HSA):适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
 ## <a name="limiting-the-scope-of-an-sccd"></a>SCCD 作用域限制
 
@@ -166,13 +166,13 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 从 Windows 10 1803年版开始，应用程序可以声明一个或多个 SCCD 文件中的自定义功能。 将 SCCD 文件放在应用程序包的根目录中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 下图总结了前面所述的序列：
 
 ![获取签名 SCCD](images/signsccd.png)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [通用 Windows 驱动程序入门](../develop/getting-started-with-universal-drivers.md)
 * [通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

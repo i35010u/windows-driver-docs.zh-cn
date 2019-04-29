@@ -1,18 +1,18 @@
 ---
-title: WDF 中使用 Windows 性能工具包 (WPT)
+title: 将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 description: 从 Windows 10 开始，你可以使用 Windows 性能工具包 (WPT) 若要查看 KMDF 或 UMDF 2 驱动程序的性能数据。
 Search.SourceType: Video
 ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e4cbfe2e61cbc474055f06e9e73f7a417a18b69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391872"
 ---
-# <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>WDF 中使用 Windows 性能工具包 (WPT)
+# <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 
 
 从 Windows 10 开始，你可以使用 Windows 性能工具包 (WPT) 若要查看给定内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF) 2 驱动程序的性能数据。
@@ -176,7 +176,7 @@ WdfDevice 列包含与回调相关联的 WDFDEVICE 句柄。 ActivityID 包含�
 ## <a name="related-topics"></a>相关主题
 
 
-[Windows 性能分析器](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)
+[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)
 
 
 

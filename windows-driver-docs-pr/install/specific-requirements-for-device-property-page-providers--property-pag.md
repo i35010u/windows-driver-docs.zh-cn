@@ -5,11 +5,11 @@ ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04ef7180f4854a12bfbe45fe6f7d8ee95501dc62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369431"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>设备属性页提供程序（属性页扩展 DLL）的特定要求
 

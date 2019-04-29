@@ -5,11 +5,11 @@ ms.assetid: 29ADD3CF-7CDE-4D97-8082-76B4F94DB6A2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6daa8fa80e9608975e12d1e449fb9631e3979f98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390083"
 ---
 # <a name="porting-pnp-and-power-management"></a>移植 PnP 和电源管理
 

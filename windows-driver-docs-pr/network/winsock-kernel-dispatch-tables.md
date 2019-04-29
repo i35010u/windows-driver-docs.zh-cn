@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c62de8e85bfd1ca9251bf5ae7a6c19e0d9eb8d41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387135"
 ---
 # <a name="winsock-kernel-dispatch-tables"></a>Winsock 内核调度表
 

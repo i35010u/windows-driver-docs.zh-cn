@@ -5,11 +5,11 @@ ms.assetid: 8ac7a979-b3fe-4da6-a8e7-301c64b27e46
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3273d333ff381fcdd00e2a4788face80c29dcb52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325238"
 ---
 # <a name="mssmhbascsientry-wmi-class"></a>MS\_SMHBA\_SCSIENTRY WMI 类
 

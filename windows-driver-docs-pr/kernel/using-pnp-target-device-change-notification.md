@@ -1,6 +1,6 @@
 ---
-title: 使用即插即用的目标设备更改通知
-description: 使用即插即用的目标设备更改通知
+title: 使用 PnP 目标设备更改通知
+description: 使用 PnP 目标设备更改通知
 ms.assetid: a56bda5c-e398-442d-bc90-2e63f8f7e6bf
 keywords:
 - 通知 WDK 即插即用，目标设备更改
@@ -9,13 +9,13 @@ keywords:
 ms.date: 10/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec75ef243cc1b8dd7f6b6bb6dda05a4dc84ba3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391066"
 ---
-# <a name="using-pnp-target-device-change-notification"></a>使用即插即用的目标设备更改通知
+# <a name="using-pnp-target-device-change-notification"></a>使用 PnP 目标设备更改通知
 
 驱动程序注册**EventCategoryTargetDeviceChange** ，驱动程序可以向其通报将要移除设备时在设备上的通知。 例如，如果驱动程序将打开到设备的句柄，该驱动程序应注册，以便**EventCategoryTargetDeviceChange**因此驱动程序可以关闭其句柄，当需要删除该设备的即插即用的管理器时在设备上的通知。
 

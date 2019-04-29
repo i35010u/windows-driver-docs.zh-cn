@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d4c8c0fbea93f73ceedfac0bc723518be398b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387356"
 ---
 # <a name="oidwwansubscribedeviceserviceevents"></a>OID\_WWAN\_SUBSCRIBE\_设备\_服务\_事件
 
@@ -31,17 +31,17 @@ OID\_WWAN\_SUBSCRIBE\_设备\_服务\_事件集的列表信息的设备服务的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_STATUS\_WWAN\_DEVICE\_SERVICE\_EVENT**](https://msdn.microsoft.com/library/windows/hardware/hh846204)

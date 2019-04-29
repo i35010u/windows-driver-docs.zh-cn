@@ -5,11 +5,11 @@ ms.assetid: 3DB30155-8DBE-4AE9-A0CC-8089DC255E32
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0afbf379b21e98378e19cf552ca99cffa61b5a70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368861"
 ---
 # <a name="sensor-ddsi-functions"></a>传感器 DDSI 函数
 

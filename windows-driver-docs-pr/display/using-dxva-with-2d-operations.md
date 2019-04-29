@@ -1,6 +1,6 @@
 ---
-title: DXVA 使用 2D 操作
-description: DXVA 使用 2D 操作
+title: 使用 DXVA 执行 2D 操作
+description: 使用 DXVA 执行 2D 操作
 ms.assetid: a864941d-69ac-48a4-85a2-7e05cd3c9617
 keywords:
 - 二维操作 WDK DirectX 9.0 DXVA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf083f8908300663aa77e6ee4f5804229437812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389079"
 ---
-# <a name="using-dxva-with-2d-operations"></a>DXVA 使用 2D 操作
+# <a name="using-dxva-with-2d-operations"></a>使用 DXVA 执行 2D 操作
 
 
 ## <span id="ddk_using_dxva_with_2d_operations_gg"></span><span id="DDK_USING_DXVA_WITH_2D_OPERATIONS_GG"></span>

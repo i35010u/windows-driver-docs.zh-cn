@@ -1,6 +1,6 @@
 ---
-title: XPSDrv 呈现器模块
-description: XPSDrv 呈现器模块
+title: XPSDrv 渲染器模块
+description: XPSDrv 渲染器模块
 ms.assetid: e844e320-bd3d-4855-bb47-fdfbdb157802
 keywords:
 - XPSDrv 的打印机驱动程序 WDK，呈现模块
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: caa259f3d7463f3336fb321b2a47b52d4a3bd561
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390232"
 ---
-# <a name="xpsdrv-render-module"></a>XPSDrv 呈现器模块
+# <a name="xpsdrv-render-module"></a>XPSDrv 渲染器模块
 
 
 XPSDrv 打印机驱动程序的呈现器模块包含呈现到打印机的输出 XPS 假脱机文件的内容的筛选器。 呈现筛选器驱动程序集是实例化并在筛选器管道中运行。 筛选器管道管理器 (FPM) 管理这些筛选器，并间的筛选器 Communicator (IFC) 控制筛选器之间的交互。

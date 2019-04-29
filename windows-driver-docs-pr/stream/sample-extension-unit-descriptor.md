@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e48e469e0016179d1be1e05f2bc08f4daa7edc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389211"
 ---
 # <a name="sample-extension-unit-descriptor"></a>示例扩展单元描述符
 

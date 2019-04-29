@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff5f91809335557bc4717dfb5ef4130f8572143d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390959"
 ---
 # <a name="windows-filtering-platform-callout-drivers"></a>Windows 筛选平台标注驱动程序
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cfddc7a8c35d69f1418dd6aa0cecd782a9b14b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324903"
 ---
 # <a name="installation-requirements-for-network-services"></a>网络服务的安装要求
 

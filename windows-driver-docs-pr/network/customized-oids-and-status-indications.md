@@ -1,6 +1,6 @@
 ---
-title: 自定义的 Oid 和状态指示
-description: 自定义的 Oid 和状态指示
+title: 自定义的 OID 和状态指示
+description: 自定义的 OID 和状态指示
 ms.assetid: 675aff2c-8e4a-4a02-8d08-0f59b8fcd4a2
 keywords:
 - 状态指示 WDK 网络 WMI
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d1ea0cf282703841c61492398126fd73b1b7c63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387392"
 ---
-# <a name="customized-oids-and-status-indications"></a>自定义的 Oid 和状态指示
+# <a name="customized-oids-and-status-indications"></a>自定义的 OID 和状态指示
 
 
 

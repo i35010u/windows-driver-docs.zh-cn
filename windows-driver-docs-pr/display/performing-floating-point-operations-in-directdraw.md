@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 94fe18ca429ab07640306399adeab4ad35107466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366402"
 ---
 # <a name="performing-floating-point-operations-in-directdraw"></a>在 DirectDraw 中执行浮点运算
 

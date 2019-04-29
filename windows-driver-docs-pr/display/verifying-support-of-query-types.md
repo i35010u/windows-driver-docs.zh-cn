@@ -1,6 +1,6 @@
 ---
-title: 正在验证的查询类型的支持
-description: 正在验证的查询类型的支持
+title: 验证查询类型支持
+description: 验证查询类型支持
 ms.assetid: 0f925796-d827-42ba-9232-8f221919e6d4
 keywords:
 - 异步查询操作 WDK DirectX 9.0 中，验证的查询类型的支持
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ae69298ebf203a16f2edbb9f431947309b6dbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390795"
 ---
-# <a name="verifying-support-of-query-types"></a>正在验证的查询类型的支持
+# <a name="verifying-support-of-query-types"></a>验证查询类型支持
 
 
 ## <span id="ddk_verifying_support_of_query_types_gg"></span><span id="DDK_VERIFYING_SUPPORT_OF_QUERY_TYPES_GG"></span>

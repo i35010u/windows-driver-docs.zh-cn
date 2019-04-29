@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dabe8d5d1cd4aaba5ace84bc66acb2f2830699e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388296"
 ---
 # <a name="creating-export-drivers"></a>创建导出驱动程序
 
@@ -51,7 +51,7 @@ TARGETTYPE=EXPORT_DRIVER
 DLLDEF="c:\project\driver.def"
 ```
 
-模块定义文件提供了编译器和链接器的其他信息一起导出的例程的列表。 有关模块定义文件的详细信息，请参阅 Microsoft Visual c + + 文档。
+模块定义文件提供了编译器和链接器的其他信息一起导出的例程的列表。 有关模块定义文件的详细信息，请参阅 Microsoft VisualC++文档。
 
 许多生成用户模式 DLL 中采用的生成实用工具宏无法生成内核模式 DLL 时使用。 
 

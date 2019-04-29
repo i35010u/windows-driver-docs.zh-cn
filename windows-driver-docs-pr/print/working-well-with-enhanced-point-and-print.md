@@ -1,17 +1,17 @@
 ---
-title: 还使用增强的指向和打印
+title: 顺利使用增强式点选打印
 description: 为增强的指向和打印，引用更新的打印机共享机制，它允许打印客户端打印到 v4 共享而无需从打印服务器下载制造商提供的设备驱动程序。
 ms.assetid: AD01AAD1-B209-419A-B73B-CA746F1B772A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a791b6b9c0c6ae788da290968f6686a27566926d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366536"
 ---
-# <a name="working-well-with-enhanced-point-and-print"></a>还使用增强的指向和打印
+# <a name="working-well-with-enhanced-point-and-print"></a>顺利使用增强式点选打印
 
 
 为增强的指向和打印，引用更新的打印机共享机制，它允许打印客户端打印到 v4 共享而无需从打印服务器下载制造商提供的设备驱动程序。

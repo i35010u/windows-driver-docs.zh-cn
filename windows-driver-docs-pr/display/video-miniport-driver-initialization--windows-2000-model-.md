@@ -1,6 +1,6 @@
 ---
-title: 视频微型端口驱动程序初始化 （Windows 2000 模式）
-description: 视频微型端口驱动程序初始化 （Windows 2000 模式）
+title: 视频微型端口驱动程序初始化（Windows 2000 模型）
+description: 视频微型端口驱动程序初始化（Windows 2000 模型）
 ms.assetid: b18b5483-f11f-4533-9434-a3a4a30fb4b2
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，初始化
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45204b0068b630bd440580ee9b3e6b9c6e40ca89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389651"
 ---
-# <a name="video-miniport-driver-initialization-windows-2000-model"></a>视频微型端口驱动程序初始化 （Windows 2000 模式）
+# <a name="video-miniport-driver-initialization-windows-2000-model"></a>视频微型端口驱动程序初始化（Windows 2000 模型）
 
 
 ## <span id="ddk_video_miniport_driver_initialization_windows_2000_model__gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_INITIALIZATION_WINDOWS_2000_MODEL__GG"></span>

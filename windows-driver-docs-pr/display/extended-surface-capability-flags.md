@@ -1,6 +1,6 @@
 ---
-title: 扩展图面上的功能标志
-description: 扩展图面上的功能标志
+title: 扩展图面功能标志
+description: 扩展图面功能标志
 ms.assetid: 197d899e-57ab-40f8-9c09-440c2dc6197c
 keywords:
 - 绘图图面上的扩展的功能 WDK DirectDraw，标志
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77cc677189af22b0f734b1f6f965f0c740d282f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353515"
 ---
-# <a name="extended-surface-capability-flags"></a>扩展图面上的功能标志
+# <a name="extended-surface-capability-flags"></a>扩展图面功能标志
 
 
 ## <span id="ddk_extended_surface_capability_flags_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITY_FLAGS_GG"></span>

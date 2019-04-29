@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/30/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df64636c9cba08c5927cdd131bb1f096f2716f6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388020"
 ---
 # <a name="sercx-io-control-requests"></a>SerCx I/O 控制请求
 

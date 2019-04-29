@@ -5,11 +5,11 @@ ms.assetid: 58A94C75-94C1-4517-A300-9F04AA7B771A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6584ea910624f07992ab6c3d40e1a86cfb973f6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390038"
 ---
 # <a name="reading-and-writing-to-device-registers"></a>读取设备注册表和写入到设备注册表
 

@@ -1,16 +1,16 @@
 ---
-Description: This topic summarizes the new features and improvements for Windows Portable Devices (WPD) in Windows 8.
-title: 什么是 WPD 中的新增功能
+Description: 本主题总结了新功能和改进的 Windows 便携式设备 (WPD) 在 Windows 8 中。
+title: WPD 中的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfa7eda3504c42d2f067b074a219bf377876b8ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370437"
 ---
-# <a name="whats-new-in-wpd"></a>什么是 WPD 中的新增功能
+# <a name="whats-new-in-wpd"></a>WPD 中的新增功能
 
 
 本主题总结了新功能和改进的 Windows 便携式设备 (WPD)。
@@ -20,7 +20,7 @@ ms.locfileid: "56526301"
 
 *NetMon.exe*工具是基于 Windows 的应用程序，可用于查看来自 WPD 组件的跟踪。 此工具将替代*WpdMon.exe*这已发在以前版本的操作系统。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用 NetMon 工具](using-the-netmon-tool.md)

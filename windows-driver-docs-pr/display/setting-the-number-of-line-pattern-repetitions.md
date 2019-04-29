@@ -1,19 +1,19 @@
 ---
-title: 设置行模式重复次数
-description: 设置行模式重复次数
+title: 设置线条模式重复次数
+description: 设置线条模式重复次数
 ms.assetid: 090b823a-59d0-40e1-8feb-0b03b7f08fee
 keywords:
 - 行模式重复 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce303a8f85fb7e1aba7aaf00cb3da37f62986d97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390431"
 ---
-# <a name="setting-the-number-of-line-pattern-repetitions"></a>设置行模式重复次数
+# <a name="setting-the-number-of-line-pattern-repetitions"></a>设置线条模式重复次数
 
 
 ## <span id="ddk_setting_the_number_of_line_pattern_repetitions_gg"></span><span id="DDK_SETTING_THE_NUMBER_OF_LINE_PATTERN_REPETITIONS_GG"></span>

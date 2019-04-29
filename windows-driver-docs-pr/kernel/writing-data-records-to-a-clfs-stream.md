@@ -1,6 +1,6 @@
 ---
-title: 数据记录写入 CLFS Stream
-description: 数据记录写入 CLFS Stream
+title: 将数据记录写入 CLFS 流
+description: 将数据记录写入 CLFS 流
 ms.assetid: 22bd6d39-b777-4a62-85b1-3d03a7144f7a
 keywords:
 - 常见日志文件系统 WDK 内核，数据记录
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f817b8406a1d5ad041ba418004b09e1ed9f13e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356007"
 ---
-# <a name="writing-data-records-to-a-clfs-stream"></a>数据记录写入 CLFS Stream
+# <a name="writing-data-records-to-a-clfs-stream"></a>将数据记录写入 CLFS 流
 
 
 
@@ -51,7 +51,7 @@ ms.locfileid: "56534463"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ ms.locfileid: "56534463"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -171,7 +171,7 @@ ms.locfileid: "56534463"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -228,7 +228,7 @@ ms.locfileid: "56534463"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

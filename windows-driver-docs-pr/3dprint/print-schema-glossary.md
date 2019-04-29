@@ -6,11 +6,11 @@ ms.assetid: 70B4C1B6-F076-4D58-A9A6-46DA9CBF5151
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0c9d4f7de1f4af1b3f5c3937fcba0e5858f892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324708"
 ---
 # <a name="print-schema-glossary"></a>打印架构术语表
 
@@ -45,7 +45,7 @@ ms.locfileid: "56522407"
 ## <a name="m"></a>M
 
 
-**模型**  
+**Model**  
 要作为单个作业的一部分制造的对象集。 这可能包括在程序集中的单个对象，相同的对象、 多个不同的对象或多个对象的多个实例。
 
 ## <a name="n"></a>N

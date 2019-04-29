@@ -1,6 +1,6 @@
 ---
-title: 使用基于数据包的总线 Master DMA
-description: 使用基于数据包的总线 Master DMA
+title: 使用基于数据包的总线主控 DMA
+description: 使用基于数据包的总线主控 DMA
 ms.assetid: 57b37103-8ae0-4c54-b613-55b1a629d9ae
 keywords:
 - 主总线 DMA WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d20d035bc5982c60f3abdc9b9bc5f900efdedb0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391073"
 ---
-# <a name="using-packet-based-bus-master-dma"></a>使用基于数据包的总线 Master DMA
+# <a name="using-packet-based-bus-master-dma"></a>使用基于数据包的总线主控 DMA
 
 
 

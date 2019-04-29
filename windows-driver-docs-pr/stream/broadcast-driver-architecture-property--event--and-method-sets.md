@@ -1,17 +1,17 @@
 ---
-title: 广播驱动程序体系结构属性、 事件和方法集
-description: 广播驱动程序体系结构属性、 事件和方法集
+title: 广播驱动程序体系结构属性、事件和方法集
+description: 广播驱动程序体系结构属性、事件和方法集
 ms.assetid: 4323c19a-e47d-4ec6-a39c-3f2e95c526e4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1f6c9ddf7941cc9cd6a2b8a0f68d76d1b1cc9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370419"
 ---
-# <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>广播驱动程序体系结构属性、 事件和方法集
+# <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>广播驱动程序体系结构属性、事件和方法集
 
 
 ## <span id="ddk_broadcast_driver_architecture_property_event_and_method_sets_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_PROPERTY_EVENT_AND_METHOD_SETS_KS"></span>

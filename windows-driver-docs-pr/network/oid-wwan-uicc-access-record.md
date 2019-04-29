@@ -7,11 +7,11 @@ keywords: -从 Windows Vista 开始 OID_WWAN_UICC_ACCESS_RECORD 网络驱动程�
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 7e92bd5d5a8e5ffc5f3277b95e5acd31e16f0dca
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387347"
 ---
 # <a name="oidwwanuiccaccessrecord"></a>OID_WWAN_UICC_ACCESS_RECORD
 
@@ -29,7 +29,7 @@ OID_WWAN_UICC_ACCESS_RECORD 访问 UICC 线性固定或循环文件，其中的�
 
 |   |   |
 | --- | --- |
-| Version | Windows 10，版本 1903 |
+| Version | Windows 10 版本 1903 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

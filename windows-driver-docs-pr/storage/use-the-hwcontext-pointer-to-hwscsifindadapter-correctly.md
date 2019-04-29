@@ -1,6 +1,6 @@
 ---
-title: 正确使用 HwContext 指向 HwScsiFindAdapter
-description: 正确使用 HwContext 指向 HwScsiFindAdapter
+title: 正确使用指向 HwScsiFindAdapter 的 HwContext 指针
+description: 正确使用指向 HwScsiFindAdapter 的 HwContext 指针
 ms.assetid: 9f287989-423b-4084-bf18-8df8676f7123
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，即插即用
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20fb54b6db08f04b7e2087f83392fb9cf30680df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390200"
 ---
-# <a name="use-the-hwcontext-pointer-to-hwscsifindadapter-correctly"></a>正确使用 HwContext 指向 HwScsiFindAdapter
+# <a name="use-the-hwcontext-pointer-to-hwscsifindadapter-correctly"></a>正确使用指向 HwScsiFindAdapter 的 HwContext 指针
 
 
 ## <span id="ddk_use_the_hwcontext_pointer_to_hwscsifindadapter_correctly_kg"></span><span id="DDK_USE_THE_HWCONTEXT_POINTER_TO_HWSCSIFINDADAPTER_CORRECTLY_KG"></span>

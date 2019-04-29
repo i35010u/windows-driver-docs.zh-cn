@@ -1,17 +1,17 @@
 ---
-title: 移植到 2 UMDF 驱动程序从 UMDF 1
+title: 将驱动程序从 UMDF 1 移植到 UMDF 2
 description: 本主题介绍如何移植到 UMDF 2 的用户模式驱动程序框架 (UMDF) 1 驱动程序。
 ms.assetid: 99D20B4C-17C4-42AC-B4D9-F5FD64E10723
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c5a09e25a9d12c4bc7e452b560390d9937560f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390105"
 ---
-# <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>移植到 2 UMDF 驱动程序从 UMDF 1
+# <a name="porting-a-driver-from-umdf-1-to-umdf-2"></a>将驱动程序从 UMDF 1 移植到 UMDF 2
 
 
 本主题介绍如何移植到 UMDF 2 的用户模式驱动程序框架 (UMDF) 1 驱动程序。 你可以开始使用源/目录文件 （非 Visual Studio 项目） 的 UMDF 1 驱动程序或可以转换到 Visual Studio 项目中包含的 UMDF 1 驱动程序。 结果将是 Visual Studio 中的 UMDF 2 驱动程序项目。 在桌面版本中 （主页、 专业版、 企业版和教育） 这两个 Windows 10 和 Windows 10 移动版上运行 UMDF 2 驱动程序。
@@ -24,7 +24,7 @@ Echo 驱动程序示例是为 UMDF 2 移植 UMDF 1 的驱动程序的示例。
 ## <a name="getting-started"></a>入门
 
 
-若要开始，请在 Visual Studio 中打开一个新的驱动程序项目。 选择**Visual c + +-&gt;Windows 驱动程序-&gt;WDF-&gt;用户模式驱动程序 (UMDF 2)** 模板。 Visual Studio 会打开一个部分填充的模板，包括您的驱动程序必须实现的回调函数的存根。 此新的驱动程序项目将为 UMDF 2 驱动程序的基础。 使用 UMDF 2 Echo 示例作为代码应引入的类型的指南。
+若要开始，请在 Visual Studio 中打开一个新的驱动程序项目。 选择**可视化C++-&gt;Windows 驱动程序-&gt;WDF-&gt;用户模式驱动程序 (UMDF 2)** 模板。 Visual Studio 会打开一个部分填充的模板，包括您的驱动程序必须实现的回调函数的存根。 此新的驱动程序项目将为 UMDF 2 驱动程序的基础。 使用 UMDF 2 Echo 示例作为代码应引入的类型的指南。
 
 接下来，查看现有 UMDF 1 驱动程序代码并确定对象映射。 UMDF 1 中的每个 COM 对象 UMDF 2 中有一个相应的 WDF 对象。 例如， **IWDFDevice**接口映射到 WDF 设备对象，表示由 WDFDEVICE 句柄。 UMDF 1 中的几乎所有框架提供的接口方法 UMDF 2 中都有对应的方法。 例如， [ **IWDFDevice::GetDefaultIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff558830)映射到[ **WdfDeviceGetDefaultQueue**](https://msdn.microsoft.com/library/windows/hardware/ff545965)。
 
@@ -90,7 +90,7 @@ UMDF 2 驱动程序实现[ **DriverEntry** ](https://msdn.microsoft.com/library/
 ## <a name="related-topics"></a>相关主题
 
 
-[开始使用 UMDF](getting-started-with-umdf-version-2.md)
+[UMDF 入门](getting-started-with-umdf-version-2.md)
 
 [框架对象上下文空间](framework-object-context-space.md)
 

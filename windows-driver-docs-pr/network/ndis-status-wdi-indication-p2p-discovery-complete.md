@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_DISCOVERY_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 34ee6fed555d6d3d708b534b028e1174cdc8ad3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390669"
 ---
 # <a name="ndisstatuswdiindicationp2pdiscoverycomplete"></a>NDIS\_状态\_WDI\_指示\_P2P\_发现\_完成
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_P2P\_发现\_完成以指示完成[OID\_WDI\_任务\_P2P\_DISCOVER](oid-wdi-task-p2p-discover.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

@@ -1,15 +1,15 @@
 ---
-title: 实时使用 KD 内核模式调试
-description: 实时使用 KD 内核模式调试
+title: 使用 KD 进行实时内核模式调试
+description: 使用 KD 进行实时内核模式调试
 ms.assetid: 4C3DB315-CF92-44FC-A54C-0C100A32EB3C
 ms.date: 06/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa0e69c775859a620f1a7510773e1feda3b7e19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387442"
 ---
 # <a name="span-iddebuggerperformingkernel-modedebuggingusingkdspanlive-kernel-mode-debugging-using-kd"></a><span id="debugger.performing_kernel-mode_debugging_using_kd"></span>实时使用 KD 内核模式调试
 

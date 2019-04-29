@@ -1,22 +1,22 @@
 ---
-title: GPIO 按钮和指示器实施指南
-description: Windows 8 引入了通过 HID 微型端口类驱动程序支持通用 I/O (GPIO) 按钮和指示器。
+title: GPIO 按钮和指示器实现指南
+description: Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) 按钮和指示器的支持。
 ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1e0083c8497436b5f422510e8320e5f833712afb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326088"
 ---
-# <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO 按钮和指示器实施指南
+# <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO 按钮和指示器实现指南
 
 
-Windows 8 引入了通过 HID 微型端口类驱动程序支持通用 I/O (GPIO) 按钮和指示器。 目标是一种标准化方法，以及关联相应 Windows 工程指南 (WEG) 为密钥按钮 （电源，Windows，卷和旋转锁） 提供支持。 Windows 8.1 侧重于提高端到端的用户体验的质量和统一跨各种创新外形规格的行为。
+Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) 按钮和指示器的支持。 目标是以标准化方式提供对主要按钮（电源、Windows、音量和旋转锁）的支持，另外还介绍了已关联的相应 Windows 工程指南 (WEG)。 Windows 8.1 专注于增强端到端用户体验的质量以及统一各种创新性外形规格的行为。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -72,7 +72,7 @@ Windows 8.1 投资的一部分**msgpio**按钮驱动程序带来了重要的增�
 
 GPIO 按钮和指示器实现有关的问题，将一封电子邮件发送到的 Microsoft 支持小组dockingsupport@microsoft.com。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [电源按钮行为和实现](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=47452)  
 [连接的备用唤醒源](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=49891)  
 [ACPI 设计指南](http://connect.microsoft.com/site1304/Downloads/DownloadDetails.aspx?DownloadID=48755)  
@@ -83,7 +83,7 @@ GPIO 按钮和指示器实现有关的问题，将一封电子邮件发送到的
 [I²C 上的 HID](https://go.microsoft.com/fwlink/p/?linkid=324690)  
 [在 MITT GPIO 测试](https://msdn.microsoft.com/library/windows/hardware/dn919780)  
 [Windows 系统映像管理器技术参考](https://go.microsoft.com/fwlink/p/?linkid=324691)  
-[无人参与的 Windows 安装程序参考](https://go.microsoft.com/fwlink/p/?linkid=276788)  
+[无人参与 Windows 安装程序参考](https://go.microsoft.com/fwlink/p/?linkid=276788)  
 [Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?linkid=310164)  
 
 

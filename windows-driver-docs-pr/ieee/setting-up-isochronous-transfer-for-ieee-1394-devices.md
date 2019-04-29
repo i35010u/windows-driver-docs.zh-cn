@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2785ccf8456c3d43a48237eed60a292efc0f90a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390311"
 ---
 # <a name="setting-up-isochronous-transfer-for-ieee-1394-devices"></a>设置 IEEE 1394 设备的常时等量传输
 

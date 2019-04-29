@@ -1,5 +1,5 @@
 ---
-title: 调试 WDF 驱动程序 （KMDF 和 UMDF） 的注册表值
+title: 用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
 description: 本主题介绍 Windows 驱动程序框架 (WDF) 驱动程序可以设置的注册表值。 它适用于内核模式驱动程序框架 (KMDF) 驱动程序和用户模式驱动程序框架 (UMDF) 驱动程序从 UMDF 版本 2 开始。
 ms.assetid: d54bdc6c-b409-4973-9b29-16967a4d83fb
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 490cfdc7456c00562bbc3105e595e2c3b852c675
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390035"
 ---
-# <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>调试 WDF 驱动程序 （KMDF 和 UMDF） 的注册表值
+# <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
 
 
 本指南介绍了 Windows 驱动程序框架 (WDF) 驱动程序可以设置的注册表值。 它适用于内核模式驱动程序框架 (KMDF) 驱动程序和用户模式驱动程序框架 (UMDF) 驱动程序从 UMDF 版本 2 开始。
@@ -131,7 +131,7 @@ Microsoft Windows 2000，设置为非零值若要在初始化过程中引入延�
 
 |            |                                                                                                                                                                                                                  |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | 结果                                                                                                                                                                                                           |
+| ReplTest1      | 结果                                                                                                                                                                                                           |
 | 0x00000004 | 框架尝试连接到用户模式下调试程序一次一种为 4 秒。 框架永远不会尝试连接到内核模式调试程序。                                                       |
 | 0x80000000 | 该框架可以一次尝试连接到用户模式下调试程序。 如果用户模式下调试器未附加，框架将尝试连接到内核模式调试程序。                                |
 | 0x80000004 | 框架尝试连接到用户模式下调试程序一次一种为 4 秒。 如果在 4 秒内未附加用户模式下调试程序，该框架将尝试连接到内核模式调试程序。 |

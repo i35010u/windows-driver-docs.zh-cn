@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 18c711a3024b804c88c7375617ed3a00f2264da9
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324679"
 ---
 # <a name="bug-check-0x9e-usermodehealthmonitor"></a>Bug 检查 0x9E：用户\_模式下\_运行状况\_监视器
 

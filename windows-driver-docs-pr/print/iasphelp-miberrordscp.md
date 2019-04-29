@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba6acc8a6a5d9e39e823dcee7d687e7ac56bbc5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392831"
 ---
 # <a name="iasphelpgetmiberrordscp-method"></a>Iasphelp::get\_MibErrorDscp 方法
 
@@ -41,7 +41,7 @@ HRESULT get_MibErrorDscp(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *dwError* \[in\]  

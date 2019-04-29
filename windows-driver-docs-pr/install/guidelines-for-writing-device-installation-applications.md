@@ -1,6 +1,6 @@
 ---
-title: 用于编写设备安装应用程序的指导原则
-description: 用于编写设备安装应用程序的指导原则
+title: 设备安装应用程序编写指南
+description: 设备安装应用程序编写指南
 ms.assetid: 7f364b95-98ca-479a-8cdb-5e5e77c70cfa
 keywords:
 - 安装应用程序 WDK，准则
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4836c78f2e1a864c291ad56f8b899bed6eb84676
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391100"
 ---
-# <a name="guidelines-for-writing-device-installation-applications"></a>用于编写设备安装应用程序的指导原则
+# <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
 
 *设备安装应用程序*   *必须*执行以下操作：

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1156ee5a1763bfd2ffa33c15c2f5ce9e1ab0295a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392922"
 ---
 # <a name="ndis-filter-drivers"></a>NDIS 筛选器驱动程序
 

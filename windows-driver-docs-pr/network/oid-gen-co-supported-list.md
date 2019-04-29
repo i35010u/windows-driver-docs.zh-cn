@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f053e840ecc7994dbe7c8a0e94c9b04213bbacea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355728"
 ---
 # <a name="oidgencosupportedlist"></a>OID_GEN_CO_SUPPORTED_LIST
 
@@ -23,6 +23,6 @@ OID_GEN_CO_SUPPORTED_LIST OID 指定基础驱动程序或其 NIC 支持的对象
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

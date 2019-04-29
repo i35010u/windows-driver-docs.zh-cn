@@ -1,6 +1,6 @@
 ---
-title: 使用注册表值来启用和禁用连接卸载
-description: 使用注册表值来启用和禁用连接卸载
+title: 使用注册表值启用和禁用连接卸载
+description: 使用注册表值启用和禁用连接卸载
 ms.assetid: dd5d1e8a-0c6f-40d2-8a33-4d6fc70c17d5
 keywords:
 - 连接将卸载 WDK TCP/IP 传输，注册表值
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e825b74a670a3931ffbfc11f37b8d8c5367ffe3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390280"
 ---
-# <a name="using-registry-values-to-enable-and-disable-connection-offloading"></a>使用注册表值来启用和禁用连接卸载
+# <a name="using-registry-values-to-enable-and-disable-connection-offloading"></a>使用注册表值启用和禁用连接卸载
 
 
 
@@ -45,7 +45,7 @@ ms.locfileid: "56526323"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -60,7 +60,7 @@ ms.locfileid: "56526323"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "56526323"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

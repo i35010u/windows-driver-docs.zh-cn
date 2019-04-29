@@ -5,11 +5,11 @@ ms.assetid: EDFA6AFB-7D14-44F8-A105-E74182D26398
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5ba3fad840820d8c772e645220f3d12fd0705be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389422"
 ---
 # <a name="offloaded-data-transfer"></a>卸载了数据传输
 

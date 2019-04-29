@@ -1,6 +1,6 @@
 ---
-title: 注册和队列 CustomDpc 例程
-description: 注册和队列 CustomDpc 例程
+title: CustomDpc 例程注册和排队
+description: CustomDpc 例程注册和排队
 ms.assetid: 7c35f8f8-a6dc-43b1-9120-701227d7b4c5
 keywords:
 - CustomDpc
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec8f265a45fd052996cc52fbe068b8e1b2490306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391102"
 ---
-# <a name="registering-and-queuing-a-customdpc-routine"></a>注册和队列 CustomDpc 例程
+# <a name="registering-and-queuing-a-customdpc-routine"></a>CustomDpc 例程注册和排队
 
 
 

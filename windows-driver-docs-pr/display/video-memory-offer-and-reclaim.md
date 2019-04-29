@@ -1,17 +1,17 @@
 ---
-title: 视频内存产品/服务和回收
+title: 视频内存供应和回收
 description: Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本的用户模式显示驱动程序必须使用的内存产品/服务，并回收功能，从 Windows 8 中，以减少内存开销所需的临时应用层协议在本地和系统内存中开始提供。
 ms.assetid: 8BB6A7A3-E102-4069-BFC2-9605DDE9F020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fe712818c8e32756d6008c4457f05746009081a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389665"
 ---
-# <a name="video-memory-offer-and-reclaim"></a>视频内存产品/服务和回收
+# <a name="video-memory-offer-and-reclaim"></a>视频内存供应和回收
 
 
 Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本的用户模式显示驱动程序必须使用的内存产品/服务，并回收功能，从 Windows 8 中，以减少内存开销所需的临时应用层协议在本地和系统内存中开始提供。
@@ -19,7 +19,7 @@ Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本的用户模式显示
 |                                                                                   |                                  |
 |-----------------------------------------------------------------------------------|----------------------------------|
 | WDDM 的最低版本                                                              | 1.2                              |
-| 最低 Windows 版本                                                           | 8                                |
+| 最大 Windows 版本                                                           | 8                                |
 | 驱动程序实现 — 仅完全图形和呈现                               | 强制                        |
 | [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **Device.Graphics...OfferReclaim** |
 

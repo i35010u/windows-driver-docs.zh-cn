@@ -1,17 +1,17 @@
 ---
-title: 区分从唤醒从休眠状态的快速启动
+title: 快速启动与休眠唤醒的区分
 description: 从 Windows 8 开始，快速启动模式，可在更少的时间比通常需要传统，冷启动中启动计算机。
 ms.assetid: 1768F739-619A-441F-B270-029DD1F72953
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 47af091e3faa9284145a06dfc802b9d1d7dbcb0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387181"
 ---
-# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>区分从唤醒从休眠状态的快速启动
+# <a name="distinguishing-fast-startup-from-wake-from-hibernation"></a>快速启动与休眠唤醒的区分
 
 
 从 Windows 8 开始，快速启动模式，可在更少的时间比通常需要传统，冷启动中启动计算机。 快速启动是混合组合的冷启动和唤醒从休眠状态启动。 通常情况下，需要将快速初创企业与唤醒从休眠区分开来，使其设备的行为像预期的用户内核模式设备驱动程序。 若要弄清楚这一点，驱动程序可以使用信息现已推出[系统电源 Irp](power-irps-for-the-system.md)。

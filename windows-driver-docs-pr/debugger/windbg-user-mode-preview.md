@@ -4,11 +4,11 @@ description: 本部分介绍如何使用 WinDbg 预览调试器启动的用户�
 ms.date: 08/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c27d3ada4127adb697eb81349c7212afa67597df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390049"
 ---
 # <a name="windbg-preview---start-a-user-mode-session"></a>WinDbg 预览-启动用户模式会话  
 
@@ -66,7 +66,7 @@ ms.locfileid: "56519777"
 
 ---
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
 

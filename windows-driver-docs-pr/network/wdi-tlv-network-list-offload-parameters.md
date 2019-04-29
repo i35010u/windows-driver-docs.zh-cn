@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_NETWORK_LIST_OFFLOAD_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a57cef35df6f346d947deec674c27b8b554e067
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392269"
 ---
 # <a name="wditlvnetworklistoffloadparameters"></a>WDI\_TLV\_NETWORK\_LIST\_OFFLOAD\_PARAMETERS
 
@@ -56,7 +56,7 @@ WDI\_TLV\_网络\_列表\_卸载\_参数是包含网络列表卸载 (NLO) 参数
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

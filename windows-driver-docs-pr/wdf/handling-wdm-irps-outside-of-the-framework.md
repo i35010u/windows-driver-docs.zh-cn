@@ -1,6 +1,6 @@
 ---
-title: 处理框架外部的 WDM Irp
-description: 处理框架外部的 WDM Irp
+title: 在框架外部处理 WDM IRP
+description: 在框架外部处理 WDM IRP
 ms.assetid: 43e1df0c-c0d1-4d41-87de-9f8f5831fb19
 keywords:
 - WDM Irp WDK KMDF
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dc11d49c35f418e56a9fb14287339b2150ce51f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391879"
 ---
-# <a name="handling-wdm-irps-outside-of-the-framework"></a>处理框架外部的 WDM Irp
+# <a name="handling-wdm-irps-outside-of-the-framework"></a>在框架外部处理 WDM IRP
 
 
 \[仅适用于 KMDF\]

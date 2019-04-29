@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95228298ec048e0753e108691eed2546cdfadc52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354641"
 ---
 # <a name="trace-message-prefix"></a>跟踪消息前缀
 
@@ -46,13 +46,13 @@ Tracefmt 默认情况下，包括特定的数据元素，但用户可以添加�
 <tbody>
 <tr>
 <td><p>%1</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>友好名称<a href="message-guid.md" data-raw-source="[message GUID](message-guid.md)">消息 GUID</a>的跟踪消息。 默认情况下，一条消息的 GUID 的友好名称是在其中的目录名称<a href="trace-provider.md" data-raw-source="[trace provider](trace-provider.md)">跟踪提供程序</a>生成。</p>
 <p>若要更改消息的 GUID 的友好名称，请使用<strong>-p</strong>参数与 Tracewpp 或 RUN_WPP 宏。 有关详细信息，请参阅 Run_WPP 选项。</p></td>
 </tr>
 <tr class="even">
 <td><p>%2</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>源文件和行号。</p>
 <p>此变量表示的跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称为源文件和生成的跟踪消息的代码的行号的名称。</p></td>
 </tr>
@@ -64,18 +64,18 @@ Tracefmt 默认情况下，包括特定的数据元素，但用户可以添加�
 </tr>
 <tr class="even">
 <td><p>%4</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>生成的跟踪消息的时间的时间戳。</p></td>
 </tr>
 <tr>
 <td><p>%5</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>内核时间。</p>
 <p>在生成的跟踪消息的时间中 CPU 时钟周期数，显示内核模式的说明，已用的执行时间。</p></td>
 </tr>
 <tr class="even">
 <td><p>%6</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>用户时间。</p>
 <p>在生成的跟踪消息的时间中 CPU 时钟周期数，显示用户模式下的说明，已用的执行时间。</p></td>
 </tr>
@@ -99,31 +99,31 @@ Tracefmt 默认情况下，包括特定的数据元素，但用户可以添加�
 </tr>
 <tr class="even">
 <td><p>%!FUNC!</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>函数名称。</p>
 <p>显示生成的跟踪消息的函数的名称。</p></td>
 </tr>
 <tr>
 <td><p>%!标志 ！</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>显示的名称<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>启用跟踪消息。</p>
 <p>(因为<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的值<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>此字段中.)</p></td>
 </tr>
 <tr class="even">
 <td><p>%!级别 ！</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>显示的值<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>这样的跟踪消息。</p>
 <p>(因为<a href="https://msdn.microsoft.com/library/windows/hardware/ff544918" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff544918)"> <strong>DoTraceMessage</strong> </a>宏反转的标志和级别的参数，生成的 DoTraceMessage 消息显示的名称<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>此字段中。)</p></td>
 </tr>
 <tr>
 <td><p>%!COMPNAME!</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>组件名称。</p>
 <p>显示生成的跟踪消息的提供程序的组件的名称。 仅当指定的跟踪代码中，将显示该组件名称。</p></td>
 </tr>
 <tr class="even">
 <td><p>%!SUBCOMP!</p></td>
-<td><p>字符串</p></td>
+<td><p>string</p></td>
 <td><p>子组件名称。</p>
 <p>显示生成的跟踪消息的提供程序的子组件名称。 仅当指定的跟踪代码中，将显示该组件名称。</p></td>
 </tr>

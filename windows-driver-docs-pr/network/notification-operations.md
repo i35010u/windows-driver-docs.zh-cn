@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6b938e00aa5af2b948cea2e69b68a3c25a08996
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391651"
 ---
 # <a name="notification-operations"></a>通知操作
 

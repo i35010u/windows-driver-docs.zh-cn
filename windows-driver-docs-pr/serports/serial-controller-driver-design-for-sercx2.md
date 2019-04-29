@@ -5,11 +5,11 @@ ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f33404a8980827e4d79736ca4ea7e35045c358ac
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387961"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 串行控制器驱动程序设计
 

@@ -5,11 +5,11 @@ ms.assetid: 71397945-D9DB-43E2-AE06-548684F72B63
 ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 078a45682635d4670782f75f57fca1b017388f6f
-ms.sourcegitcommit: 282e17efc5ff5bc4541e277d67567d37aa2d957b
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58563982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390087"
 ---
 # <a name="power-down-and-removal-sequence-for-a-bus-driver"></a>总线驱动程序的电源关闭和删除顺序
 

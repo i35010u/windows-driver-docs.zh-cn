@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0313a9e2c2982f752cc1dc5b576bd7af2757843d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389428"
 ---
 # <a name="multi-tier-reset-in-storport"></a>Storport 中的多层重置
 

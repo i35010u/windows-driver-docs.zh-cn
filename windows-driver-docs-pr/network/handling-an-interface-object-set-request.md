@@ -1,6 +1,6 @@
 ---
-title: 处理的接口对象会将请求设置
-description: 处理的接口对象会将请求设置
+title: 处理接口对象设置请求
+description: 处理接口对象设置请求
 ms.assetid: aed27b0b-fff5-4e9f-b368-526a8bf79c59
 keywords:
 - NDIS 网络接口 WDK 中，将请求设置
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1aea81421cd2d09ef7461c782b8920835183e05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349753"
 ---
-# <a name="handling-an-interface-object-set-request"></a>处理的接口对象会将请求设置
+# <a name="handling-an-interface-object-set-request"></a>处理接口对象设置请求
 
 
 若要设置与接口对象相关联的数据，NDIS 调用的接口提供[ **ProviderSetObject** ](https://msdn.microsoft.com/library/windows/hardware/ff570403)函数。 此函数将返回 NDIS\_状态\_成功，如果已成功更改数据或 NDIS\_状态\_*Xxx*错误代码，否则为。

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c87cc2f2f7ffb9905ab91f84c2ccebfd42d4681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357237"
 ---
 # <a name="combined-language-and-port-monitor"></a>语言监视器与端口监视器的组合
 

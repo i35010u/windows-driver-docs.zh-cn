@@ -1,17 +1,17 @@
 ---
-title: 磁贴资源
+title: 平铺资源
 description: 有关磁贴资源，运行设备分页队列上的异步视频内存管理器服务不足够。
 ms.assetid: D48D2046-64A6-4B0E-9235-84DD2A83DB39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8a663c211d154411e5191072aaf1464ca93f3b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389851"
 ---
-# <a name="tile-resources"></a>磁贴资源
+# <a name="tile-resources"></a>平铺资源
 
 
 有关磁贴资源，运行设备分页队列上的异步视频内存管理器服务不足够。 具体而言，磁贴资源我们想要对队列以及呈现的页表更新，确保之间绘制操作以同步方式应用更新。

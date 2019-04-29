@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_BLOCK_SIZE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 128b017418cbc9d1dc7f7d2c6464845acab3f235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387888"
 ---
 # <a name="oidgentransmitblocksize"></a>OID\_GEN\_传输\_阻止\_大小
 
@@ -51,7 +51,7 @@ OID\_GEN\_传输\_阻止\_大小 OID NIC 的传输缓冲区空间中指定的最
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>

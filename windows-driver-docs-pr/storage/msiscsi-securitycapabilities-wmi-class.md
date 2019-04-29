@@ -5,11 +5,11 @@ ms.assetid: 50f7aa98-0743-4775-808b-c5a90dc1d0fe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c0d6fa61a54594bd1c57b37fefdd0c3affc5c1cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389466"
 ---
 # <a name="msiscsisecuritycapabilities-wmi-class"></a>MSiSCSI\_SecurityCapabilities WMI 类
 

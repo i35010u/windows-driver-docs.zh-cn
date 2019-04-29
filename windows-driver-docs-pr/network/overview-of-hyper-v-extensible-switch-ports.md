@@ -1,17 +1,17 @@
 ---
-title: HYPER-V 可扩展交换机端口的概述
-description: HYPER-V 可扩展交换机端口的概述
+title: Hyper-V 可扩展交换机端口概述
+description: Hyper-V 可扩展交换机端口概述
 ms.assetid: FD6B6014-B840-4EC8-96F4-34C08EC303EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ee7ae1318529ff27be29a4fd24b49f90be5d66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328031"
 ---
-# <a name="overview-of-hyper-v-extensible-switch-ports"></a>HYPER-V 可扩展交换机端口的概述
+# <a name="overview-of-hyper-v-extensible-switch-ports"></a>Hyper-V 可扩展交换机端口概述
 
 
 每个网络连接到 HYPER-V 可扩展交换机是由端口表示。 可扩展交换机接口创建并配置一个端口，才能建立网络连接。 网络连接，则将调用后，接口可能会删除该端口或它重用于另一个网络连接。

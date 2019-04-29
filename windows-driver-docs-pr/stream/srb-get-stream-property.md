@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a92d556c5fc34ddc63ca2aa15343f1661ebe9c48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390869"
 ---
 # <a name="srbgetstreamproperty"></a>SRB\_获取\_流\_属性
 
@@ -46,7 +46,7 @@ ms.locfileid: "56520799"
 
 **属性**流的成员\_属性\_描述符结构描述的属性有问题，同时**PropertyInfo**成员指定用于复制的缓冲区属性数据。 如果缓冲区太小，微型驱动程序应设置**状态**指向成员*pSrb*到状态\_缓冲区\_溢出。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB\_SET\_STREAM\_PROPERTY**](srb-set-stream-property.md)

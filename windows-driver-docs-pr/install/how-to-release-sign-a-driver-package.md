@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 777ebffd59e2b14766050698aecff2995aca2b8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386937"
 ---
 # <a name="how-to-release-sign-a-driver-package"></a>如何对驱动程序包进行发布签名
 

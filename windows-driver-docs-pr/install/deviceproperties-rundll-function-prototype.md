@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c761d8a554267920e29c8f53647ff0637d85dee1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389560"
 ---
 # <a name="devicepropertiesrundll-function-prototype"></a>DeviceProperties_RunDLL 函数原型
 
@@ -31,7 +31,7 @@ void DeviceProperties_RunDLL(
   );
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 <a href="" id="hwndstub"></a>*hwndStub*  
 创建要在其中显示用户界面项目该 DeviceProperties_RunDLL 窗口的句柄。

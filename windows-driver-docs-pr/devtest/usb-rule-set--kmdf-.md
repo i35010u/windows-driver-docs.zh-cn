@@ -5,11 +5,11 @@ ms.assetid: E07F4E18-CE93-43A8-AAB4-C3CF8CC790CC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b69d5dbafcde769b73472699cb020674b4bffe
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351781"
 ---
 # <a name="usb-rule-set-kmdf"></a>USB 规则集 (KMDF)
 

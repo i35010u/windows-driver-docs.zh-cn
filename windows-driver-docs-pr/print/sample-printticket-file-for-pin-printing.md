@@ -5,11 +5,11 @@ ms.assetid: FC1BE797-7097-4BEF-A530-3846CED3E400
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc1d54085cece9e86be0710a51e2883d6370b077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365341"
 ---
 # <a name="sample-printticket-file-for-pin-printing"></a>PIN 打印的示例 PrintTicket 文件
 

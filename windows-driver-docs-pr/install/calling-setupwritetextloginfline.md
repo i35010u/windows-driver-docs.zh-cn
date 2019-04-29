@@ -5,11 +5,11 @@ ms.assetid: 7b7a08bf-b97a-4dfe-8695-dc947481ad2b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c932f0b1c5d72d22a25404ab0577c0e4d5e3acaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358175"
 ---
 # <a name="calling-setupwritetextloginfline"></a>调用 SetupWriteTextLogInfLine
 

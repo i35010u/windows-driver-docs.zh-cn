@@ -1,17 +1,17 @@
 ---
-title: 基于堆栈的故障注入
+title: 基于堆栈的错误注入
 description: 基于堆栈的故障注入选项注入资源故障。 内核模式驱动程序中。
 ms.assetid: B5C06413-81FB-46DA-B053-80ED347DA3EB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e51b2e851d153436f72a766b4e6bfe866507a24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387918"
 ---
-# <a name="stack-based-failure-injection"></a>基于堆栈的故障注入
+# <a name="stack-based-failure-injection"></a>基于堆栈的错误注入
 
 
 **请注意**  的说明启用此功能仅适用于 Windows 8 的 WDK。 对于 Windows 8.1，此功能已集成到驱动程序验证程序。 在运行 Windows 8.1 的计算机，使用[系统资源不足模拟](systematic-low-resource-simulation.md)选项。

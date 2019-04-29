@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee11b980eedcdebc6bf51fc097f032cd32eef108
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387904"
 ---
 # <a name="stampinf"></a>Stampinf
 
@@ -24,7 +24,7 @@ Stampinf (Stampinf.exe) 是一种工具，可用于生成该驱动程序时更�
 
 INX 文件类似于 INF 文件和 KMDF 和 UMDF 驱动程序用于支持多个平台和 KMDF 和 UMDF 版本。 有关 INX 文件的信息，请参阅[使用 INX 文件转换为创建 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff545473)。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [**Stampinf 命令选项**](stampinf-command-options.md)

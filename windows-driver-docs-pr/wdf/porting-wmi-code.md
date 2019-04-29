@@ -5,11 +5,11 @@ ms.assetid: 10843A15-3F6F-4DB5-A43B-4D9964DD3312
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dac2952f884cf89be0ac9a1a4074c9827cf06a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390081"
 ---
 # <a name="porting-wmi"></a>移植 WMI
 

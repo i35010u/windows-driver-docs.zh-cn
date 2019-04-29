@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 视频微型端口驱动程序责任
-description: Windows 2000 视频微型端口驱动程序责任
+title: Windows 2000 视频微型端口驱动程序的责任
+description: Windows 2000 视频微型端口驱动程序的责任
 ms.assetid: 55301260-af1b-4ef7-8f33-e0acbeb22039
 keywords:
 - 显示器驱动程序模型 WDK Windows 2000，职责
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1bd067752ea118b5e99968f6e52819f99ac66e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391120"
 ---
-# <a name="windows-2000-video-miniport-driver-responsibilities"></a>Windows 2000 视频微型端口驱动程序责任
+# <a name="windows-2000-video-miniport-driver-responsibilities"></a>Windows 2000 视频微型端口驱动程序的责任
 
 
 ## <span id="ddk_video_miniport_driver_responsibilities_gg"></span><span id="DDK_VIDEO_MINIPORT_DRIVER_RESPONSIBILITIES_GG"></span>

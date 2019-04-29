@@ -5,11 +5,11 @@ ms.assetid: b894dab6-5e38-43f9-adbd-376a25346029
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 444c7b4f62dec29bbfa3f2173dba46d700f38985
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367602"
 ---
 # <a name="mb-registration-operations"></a>MB 注册操作
 

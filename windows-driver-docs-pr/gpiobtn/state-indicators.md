@@ -5,18 +5,18 @@ ms.assetid: F21DDC60-296E-4F3B-A063-431D87BF28A2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3a0e99d250738591ca0321a030943c8706649fa8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390422"
 ---
 # <a name="state-indicators"></a>状态指示器
 
 
 本部分介绍的模式和停靠的指示器的状态。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b2309eb3ae18e3c3654356e66f939ea62513b30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352220"
 ---
 # <a name="picture-resampling-control"></a>画面重新采样控制
 

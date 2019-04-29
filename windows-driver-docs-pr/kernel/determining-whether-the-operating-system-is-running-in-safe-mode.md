@@ -1,6 +1,6 @@
 ---
-title: 确定是否在安全模式下运行的操作系统
-description: 确定是否在安全模式下运行的操作系统
+title: 确定操作系统是否在安全模式下运行
+description: 确定操作系统是否在安全模式下运行
 ms.assetid: 5724a731-81a2-4c4e-a9e2-146859977e44
 keywords:
 - 安全模式 WDK 内核
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73420029be5b6649c4fd413888240137efbd167e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388170"
 ---
-# <a name="determining-whether-the-operating-system-is-running-in-safe-mode"></a>确定是否在安全模式下运行的操作系统
+# <a name="determining-whether-the-operating-system-is-running-in-safe-mode"></a>确定操作系统是否在安全模式下运行
 
 
 本主题介绍如何将设备驱动程序可以确定运行的操作系统是否已在安全模式下启动。 本主题还介绍如何以阻止驱动程序在安全模式下操作。

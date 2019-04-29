@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7472dc34fec0c8c2f14e252d6d262efc7d1c36e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354154"
 ---
 # <a name="oidtcpoffloadcurrentconfig"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -50,6 +50,6 @@ OID_TCP_OFFLOAD_CURRENT_CONFIG，响应**封装**上述列表中的结构的成�
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
+| Version | Windows Vista 及更高版本 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 

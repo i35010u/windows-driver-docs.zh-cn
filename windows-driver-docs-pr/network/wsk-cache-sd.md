@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WSK_CACHE_SD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1089c9fda0ca6347c0db1df54e3f9b1fed9ccb63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390954"
 ---
 # <a name="wskcachesd"></a>WSK\_CACHE\_SD
 
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK\_缓存\_SD 客户端控制操作，以获取可以�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -79,11 +79,11 @@ WSK 应用程序必须通过使用发布的安全描述符的缓存的副本[ **
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

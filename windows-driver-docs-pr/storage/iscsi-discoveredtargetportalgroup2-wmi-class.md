@@ -5,11 +5,11 @@ ms.assetid: 9285c74c-ad20-4d34-abdb-d5c5db1f9e90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25fc6f491bf4b708048eaee74347ab728a39ce31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387107"
 ---
 # <a name="iscsidiscoveredtargetportalgroup2-wmi-class"></a>ISCSI\_DiscoveredTargetPortalGroup2 WMI 类
 

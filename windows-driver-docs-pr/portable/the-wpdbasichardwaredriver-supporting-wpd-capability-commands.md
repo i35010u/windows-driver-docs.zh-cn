@@ -4,11 +4,11 @@ title: 对功能命令 （WpdBasicHardwareDriver 示例） 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33c40f06cebbc17e6d45918cb502b4e4fc6b2930
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387301"
 ---
 # <a name="support-for-capability-commands-wpdbasichardwaredriver-sample"></a>对功能命令 （WpdBasicHardwareDriver 示例） 的支持
 

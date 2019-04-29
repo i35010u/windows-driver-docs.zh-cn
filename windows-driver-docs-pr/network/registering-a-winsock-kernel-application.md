@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d67b641949397063071d8f4e49faeb28f67abc04
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391964"
 ---
 # <a name="registering-a-winsock-kernel-application"></a>注册 Winsock 内核应用程序
 

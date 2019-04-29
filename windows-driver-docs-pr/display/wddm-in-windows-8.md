@@ -5,18 +5,18 @@ ms.assetid: 8757ADDD-EDCA-4C09-BB71-2ED925DB2E41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a2f5b024ef1228b4ccb2fdeb17664a6ffff41f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391193"
 ---
 # <a name="wddm-12-and-windows-8"></a>WDDM 1.2 和 Windows 8
 
 
 本部分提供有关新功能和增强功能在 Windows 显示驱动程序模型 (WDDM) 1.2 版的详细信息可从 Windows 8 开始。 它还介绍了硬件要求、 实现指导原则和使用方案。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -234,8 +234,8 @@ WDDM 1.2 引入了新类型的图形驱动程序，面向特定的方案，如�
 <td align="left">无外设</td>
 <td align="left">不允许</td>
 <td align="left">可选</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
+<td align="left">不可用</td>
 </tr>
 </tbody>
 </table>

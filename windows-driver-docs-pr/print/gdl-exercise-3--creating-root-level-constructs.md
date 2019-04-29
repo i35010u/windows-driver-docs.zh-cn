@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acd075821593522ea53e5aefc061c59afb183815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388116"
 ---
-# <a name="gdl-exercise-3-creating-root-level-constructs"></a>GDL 练习 3:创建根级别构造
+# <a name="gdl-exercise-3-creating-root-level-constructs"></a>GDL 练习 3：创建根级构造
 
 
 ### <a href="" id="exercise"></a> 练习

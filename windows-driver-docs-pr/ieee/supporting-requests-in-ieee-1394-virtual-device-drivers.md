@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ddcd8bcf65daec9dcd058ec871f899d69ab8f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390308"
 ---
 # <a name="supporting-requests-in-ieee-1394-virtual-device-drivers"></a>支持 IEEE 1394 虚拟设备驱动程序中的请求
 

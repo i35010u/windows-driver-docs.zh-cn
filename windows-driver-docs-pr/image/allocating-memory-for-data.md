@@ -5,11 +5,11 @@ ms.assetid: 15df5616-ddce-44ec-bd10-65cae0d95cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5179716df822729294bf7c35291eb63b3bd89fcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367079"
 ---
 # <a name="allocating-memory-for-data"></a>为数据分配内存
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_NDK_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d4a077454e36a151fa862af3391538908b106d12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391641"
 ---
 # <a name="oidndkstatistics"></a>OID\_NDK\_统计信息
 
@@ -52,7 +52,7 @@ NDIS 发出具有此 OID **InformationBuffer**的成员[ **NDIS\_OID\_请求**](
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

@@ -1,17 +1,17 @@
 ---
-title: 电影扫描程序的可选 WIA 子项目属性
-description: 电影扫描程序的可选 WIA 子项目属性
+title: 底片扫描仪的可选 WIA 子项属性
+description: 底片扫描仪的可选 WIA 子项属性
 ms.assetid: 85364b59-e0a8-4a82-bc89-6f160609f35d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9d2dc1756c6b09303b7ac5866d6d409fa6b761
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358030"
 ---
-# <a name="optional-wia-child-item-properties-for-film-scanners"></a>电影扫描程序的可选 WIA 子项目属性
+# <a name="optional-wia-child-item-properties-for-film-scanners"></a>底片扫描仪的可选 WIA 子项属性
 
 
 WIA 电影扫描程序子项目 （可选） 可以支持以下 WIA 属性：

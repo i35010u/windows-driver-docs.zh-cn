@@ -1,16 +1,16 @@
 ---
-Description: This topic summarizes the new features and improvements for Universal Serial Bus (USB) client drivers in Windows 8.
+Description: 本主题总结了新功能和 Windows 8 中的通用串行总线 (USB) 客户端驱动程序的改进。
 title: Windows 8-什么是 USB 的新增功能
 ms.date: 05/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 904d32f55ec988f23007672197298820c3643ff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389193"
 ---
-# <a name="windows8-whats-new-for-usb"></a>Windows 8:什么是 USB 的新增功能
+# <a name="windows8-whats-new-for-usb"></a>Windows 8：USB 的新增功能
 
 
 本主题总结了新功能和 Windows 8 中的通用串行总线 (USB) 客户端驱动程序的改进。
@@ -115,7 +115,7 @@ Windows 8 提供新 Ioctl 应用程序可以用来检索有关 USB 3.0 集线器
 ## <a name="new-visual-studio-templates-for-usb-client-drivers-new-for-beta"></a>USB 客户端驱动程序的新 Visual Studio 模板 *(\*Beta 针对新功能)*
 
 
-Microsoft Visual Studio 2012 包含**USB 用户模式驱动程序**并**USB 内核模式驱动程序**分别生成 UMDF 和 KMDF USB 客户端驱动程序，起始代码的模板。 模板代码初始化要启用与硬件通信的 USB 目标设备对象。 有关详情，请参阅以下主题：
+Microsoft Visual Studio 2012 包含**USB 用户模式驱动程序**并**USB 内核模式驱动程序**分别生成 UMDF 和 KMDF USB 客户端驱动程序，起始代码的模板。 模板代码初始化要启用与硬件通信的 USB 目标设备对象。 有关详细信息，请参阅下列主题：
 
 -   [如何编写第一个 USB 客户端驱动程序 (UMDF)](implement-driver-entry-for-a-usb-driver--umdf-.md)
 -   [如何编写第一个 USB 客户端驱动程序 (KMDF)](tutorial--write-your-first-usb-client-driver--kmdf-.md)

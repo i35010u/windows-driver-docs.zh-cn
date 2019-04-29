@@ -1,17 +1,17 @@
 ---
-title: 自定义开关功能状态
-description: 自定义开关功能状态
+title: 自定义交换机功能状态
+description: 自定义交换机功能状态
 ms.assetid: 2362EE05-9CC9-451D-80D1-C18CC9274BAB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5efba9e9f5e2dbb0c7731998a1164bdc74feaa34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387395"
 ---
-# <a name="custom-switch-feature-status"></a>自定义开关功能状态
+# <a name="custom-switch-feature-status"></a>自定义交换机功能状态
 
 
 HYPER-V 平台和 HYPER-V 可扩展交换机接口提供了基础结构，以获取有关可扩展交换机的自定义状态信息。 此信息被称为*切换功能状态*信息。

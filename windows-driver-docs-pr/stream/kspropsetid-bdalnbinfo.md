@@ -5,11 +5,11 @@ ms.assetid: 2b385e93-2d0d-44ca-9cfc-58afea946db6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f1049488fbdeeb88420332f7b8dfdf369b227e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389230"
 ---
 # <a name="kspropsetidbdalnbinfo"></a>KSPROPSETID\_BdaLNBInfo
 
@@ -36,7 +36,7 @@ LNB 是设备所带来的卫星电视的焦点。 LNB 收集反映的电视信�
 
 KSPROPSETID\_BdaLNBInfo 属性集通信到 RF 调谐器的卫星电视的 LNB 设备的相关信息。 当客户端发送[ **KSPROPERTY\_BDA\_RF\_调谐器\_频率**](ksproperty-bda-rf-tuner-frequency.md)请求来优化该调谐器可以发送到特定的频率，RF 调谐器如果需要，控制到 LNB 设备的信号以调整根据 LNB 属性的内部参数。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**KSPROPERTY\_BDA\_RF\_调谐器\_频率**](ksproperty-bda-rf-tuner-frequency.md)
 

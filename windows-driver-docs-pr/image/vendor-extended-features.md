@@ -5,11 +5,11 @@ ms.assetid: 8063622e-efc4-4940-893f-2916bf297d12
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfd697a934ce8b04fe13b3d117e73b30b23ef7ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356121"
 ---
 # <a name="vendor-extended-features"></a>供应商扩展的功能
 

@@ -1,6 +1,6 @@
 ---
-title: 在更高级别的驱动程序中的 DispatchReadWrite
-description: 在更高级别的驱动程序中的 DispatchReadWrite
+title: 较高级驱动程序中的 DispatchReadWrite
+description: 较高级驱动程序中的 DispatchReadWrite
 ms.assetid: d8406115-c62e-4362-8d2c-77d0414c4104
 keywords:
 - DispatchReadWrite 例程
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9437729bd477f3489265614a6b35d502065600b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387218"
 ---
-# <a name="dispatchreadwrite-in-higher-level-drivers"></a>在更高级别的驱动程序中的 DispatchReadWrite
+# <a name="dispatchreadwrite-in-higher-level-drivers"></a>较高级驱动程序中的 DispatchReadWrite
 
 
 

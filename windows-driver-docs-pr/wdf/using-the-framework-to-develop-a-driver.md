@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e27575d44a27f611034e3c70b9b75e9d1160a14d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391833"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>使用 WDF 开发驱动程序
 

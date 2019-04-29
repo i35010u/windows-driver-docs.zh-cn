@@ -1,17 +1,17 @@
 ---
-title: 实现的无人参与的 Windows 安装程序设置
+title: 实现无人参与 Windows 安装程序设置
 description: 本主题介绍如何设置无人参与的 Windows 安装程序组件设置。
 ms.assetid: 593F8E05-F886-45FE-83EB-8DDD204F7900
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 392db897c42d4a96d02874f84e0a54e286a8ca12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323416"
 ---
-# <a name="implement-the-unattended-windows-setup-setting"></a>实现的无人参与的 Windows 安装程序设置
+# <a name="implement-the-unattended-windows-setup-setting"></a>实现无人参与 Windows 安装程序设置
 
 
 本主题介绍如何设置无人参与的 Windows 安装程序组件设置。

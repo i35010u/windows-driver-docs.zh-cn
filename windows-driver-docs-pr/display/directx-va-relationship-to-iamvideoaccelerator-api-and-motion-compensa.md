@@ -16,11 +16,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 788b25ccf393d830c439dece55781c819c07f53e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390024"
 ---
 # <a name="directx-va-relationship-to-iamvideoaccelerator-api-and-motion-compensation-ddi"></a>DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
 

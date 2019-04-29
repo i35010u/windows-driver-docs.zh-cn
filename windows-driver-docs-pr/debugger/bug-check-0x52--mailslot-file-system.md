@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 10ac1ec16449b622e9680fcab2dad8a794e97735
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365199"
 ---
 # <a name="bug-check-0x52-mailslotfilesystem"></a>Bug 检查 0x52：邮件槽\_文件\_系统
 

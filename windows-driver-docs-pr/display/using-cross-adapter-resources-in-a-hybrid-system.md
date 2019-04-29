@@ -5,11 +5,11 @@ ms.assetid: ECBB0AA7-50C2-41C8-9DC6-6EEFC5CEEB15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7b08b9d2b3c7fbaecb9d10b7784b10bd81f8291
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389087"
 ---
 # <a name="span-iddisplayusingcross-adapterresourcesinahybridsystemspanusing-cross-adapter-resources-in-a-hybrid-system"></a><span id="display.using_cross-adapter_resources_in_a_hybrid_system"></span>在混合系统中使用跨适配器资源
 

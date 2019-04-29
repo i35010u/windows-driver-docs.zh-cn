@@ -1,6 +1,6 @@
 ---
-title: INF 文件的工具
-description: INF 文件的工具
+title: 用于处理 INF 文件的工具
+description: 用于处理 INF 文件的工具
 ms.assetid: 739c9a35-bfc1-4ca1-a8fa-b8be013257a2
 keywords:
 - 工具 WDK、 INF 文件
@@ -9,19 +9,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de3312ca1a6cd97a3fa07855235a1f4f91130c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391291"
 ---
-# <a name="tools-for-inf-files"></a>INF 文件的工具
+# <a name="tools-for-inf-files"></a>用于处理 INF 文件的工具
 
 
 ## <span id="ddk_tools_for_inf_files_tools"></span><span id="DDK_TOOLS_FOR_INF_FILES_TOOLS"></span>
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

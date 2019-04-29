@@ -1,20 +1,20 @@
 ---
-title: 适用于 UWP 设备应用的自动安装
-description: 本主题介绍如何自动安装工作原理以及如何可以更新和卸载应用程序、 元数据和驱动程序。
+title: UWP 设备应用的自动安装
+description: 本主题介绍如何进行自动安装，以及如何更新和卸载应用、元数据和驱动程序。
 ms.assetid: ED9C7A63-5D2A-45D3-AD62-32C6876142FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 332a9277cad1f60cd142b226f3e302e6f17db89a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387955"
 ---
-# <a name="automatic-installation-for-uwp-device-apps"></a>适用于 UWP 设备应用的自动安装
+# <a name="automatic-installation-for-uwp-device-apps"></a>UWP 设备应用的自动安装
 
 
-在 Windows 8.1 设备制造商可以配置当用户将其设备连接到 PC 时自动安装其 UWP 设备应用。 本主题介绍如何自动安装工作原理以及如何可以更新和卸载应用程序、 元数据和驱动程序。 有关设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+在 Windows 8.1 设备制造商可以配置当用户将其设备连接到 PC 时自动安装其 UWP 设备应用。 本主题介绍如何进行自动安装，以及如何更新和卸载应用、元数据和驱动程序。 有关设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
 
 **请注意**  务必要考虑，自动安装功能不提供通知给用户安装应用。 有些用户可能发现这种体验让人困惑和令人沮丧，并为您的应用程序提供错误评级。
 

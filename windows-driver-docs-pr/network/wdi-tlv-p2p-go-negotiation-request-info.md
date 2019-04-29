@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_REQUEST_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: dc90926dfe3f8664e9de868746233d7010e6df3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392274"
 ---
 # <a name="wditlvp2pgonegotiationrequestinfo"></a>WDI\_TLV\_P2P\_GO\_NEGOTIATION\_REQUEST\_INFO
 

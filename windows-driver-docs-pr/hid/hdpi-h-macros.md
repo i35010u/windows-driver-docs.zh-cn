@@ -4,11 +4,11 @@ description: Hdpi.h 标头中包含的宏。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3dbbc0c8d237e3b1cc9d5b6e787bcd79db03bd3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388906"
 ---
 # <a name="hdpih-macros"></a>Hdpi.h 宏
 
@@ -71,13 +71,13 @@ Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hidpi.h （包括 Hidpi.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**HidP\_GetUsages**](https://msdn.microsoft.com/library/windows/hardware/ff539742)
 

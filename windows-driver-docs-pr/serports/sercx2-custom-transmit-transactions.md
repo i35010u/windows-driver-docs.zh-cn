@@ -1,17 +1,17 @@
 ---
-title: SerCx2 自定义传输的事务
+title: SerCx2 Custom-Transmit 事务
 description: 某些串行控制器硬件可能会实现用于将数据写入串行控制器 PIO 或系统 DMA 以外的数据传输机制。
 ms.assetid: E72E68BC-A60A-41BE-8606-92A608648042
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 097f850487cb4c26cb5b0b1d162facc9eb840acf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388016"
 ---
-# <a name="sercx2-custom-transmit-transactions"></a>SerCx2 自定义传输的事务
+# <a name="sercx2-custom-transmit-transactions"></a>SerCx2 Custom-Transmit 事务
 
 
 某些串行控制器硬件可能会实现用于将数据写入串行控制器 PIO 或系统 DMA 以外的数据传输机制。 串行控制器驱动程序支持自定义传输的事务以 SerCx2 即可使用此数据传输机制。

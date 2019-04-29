@@ -7,11 +7,11 @@ ms.date: 12/17/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: f57e13ce1653e1dadf3b7e8901db869adf47410c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388135"
 ---
 # <a name="device-power-management-reference"></a>设备电源管理参考
 
@@ -127,7 +127,7 @@ ms.locfileid: "59902883"
 #define PO_FX_FLAG_PERF_QUERY_ON_ALL_IDLE_STATES 0x4
 ```
 
-|Constant|值|描述|
+|Constant|ReplTest1|描述|
 |----|----|----|
 |**PO_FX_FLAG_PERF_PEP_OPTIONAL**|1 (0x1)|指示该驱动程序可以从平台扩展插件 (PEP) 更改而无需协助的性能状态或，驱动程序注册到性能状态 PoFx 仅用于日志记录。 如果设置此标志， [PoFxRegisterComponentPerfStates](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxregistercomponentperfstates)调用将仍成功 PEP 不支持组件的性能状态。|
 |**PO_FX_FLAG_PERF_QUERY_ON_F0**|2 (0x2)|对于某些设备，PEP 可能需要为性能状态设置为组件为某些性能状态的地方 (称为*名义上的性能状态*) 时，其空闲组件。 如果组件包含名义上的性能状态，用例 PoFx 查询以确定当前的性能状态时该组件将转换为 F0 PEP，驱动程序设置此标志。|

@@ -1,17 +1,17 @@
 ---
-title: 用于启动设备的设计准则
-description: 用于启动设备的设计准则
+title: 启动设备的设计指导原则
+description: 启动设备的设计指导原则
 ms.assetid: fbdde107-f3a5-4713-a4ac-1c9bafa3c634
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a82ff0a188147bbe034728fc2a372b7069948182
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388186"
 ---
-# <a name="design-guidelines-for-starting-devices"></a>用于启动设备的设计准则
+# <a name="design-guidelines-for-starting-devices"></a>启动设备的设计指导原则
 
 
 

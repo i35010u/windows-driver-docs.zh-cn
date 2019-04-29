@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 933880b385a3bf0098e0d90ea6d64a025b926ea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391504"
 ---
 # <a name="edge-filtering-command-bytes"></a>边缘筛选命令字节
 

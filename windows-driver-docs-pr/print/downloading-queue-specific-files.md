@@ -1,6 +1,6 @@
 ---
-title: 下载特定于队列的文件
-description: 下载特定于队列的文件
+title: 下载队列特定的文件
+description: 下载队列特定的文件
 ms.assetid: b6aad46a-2934-461a-ad11-6ad699687fc1
 keywords:
 - 下载特定于队列的打印机文件
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f96e29981841ccda93d675da69bec12d6b077517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387268"
 ---
-# <a name="downloading-queue-specific-files"></a>下载特定于队列的文件
+# <a name="downloading-queue-specific-files"></a>下载队列特定的文件
 
 
 

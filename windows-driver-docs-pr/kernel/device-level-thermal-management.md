@@ -1,17 +1,17 @@
 ---
-title: 设备级别的热量管理
+title: 设备级热量管理
 description: 从 Windows 8 开始，Windows 支持设备级热量管理内核模式设备驱动程序。
 ms.assetid: C66E0050-04E8-4DCD-B989-94A97558C4CE
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9fae6e9bcb09ee5192eb537f22682ea3aa0acea1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388141"
 ---
-# <a name="device-level-thermal-management"></a>设备级别的热量管理
+# <a name="device-level-thermal-management"></a>设备级热量管理
 
 
 从 Windows 8 开始，Windows 支持设备级热量管理内核模式设备驱动程序。 Windows 热量管理具有这些目标：

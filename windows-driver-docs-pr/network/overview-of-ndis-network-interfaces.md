@@ -1,6 +1,6 @@
 ---
-title: NDIS 网络接口的概述
-description: NDIS 网络接口的概述
+title: NDIS 网络接口概述
+description: NDIS 网络接口概述
 ms.assetid: 55cbdf2d-389f-457e-a901-eedca93a3005
 keywords:
 - NDIS 网络接口 WDK，有关 NDIS 网络接口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85438c2967168afbf41474e38b07fa207cbaad9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392384"
 ---
-# <a name="overview-of-ndis-network-interfaces"></a>NDIS 网络接口的概述
+# <a name="overview-of-ndis-network-interfaces"></a>NDIS 网络接口概述
 
 
 

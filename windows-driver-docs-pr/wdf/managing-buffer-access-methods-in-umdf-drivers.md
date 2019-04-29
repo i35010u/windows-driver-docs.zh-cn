@@ -5,11 +5,11 @@ ms.assetid: BDB78BCD-1964-431B-BE99-CABA6DF44D7A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4565b87f69d248af8b8944a0acf08461e9d94e50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390170"
 ---
 # <a name="managing-buffer-access-methods-in-umdf-drivers"></a>管理 UMDF 驱动程序中的缓冲区访问方法
 

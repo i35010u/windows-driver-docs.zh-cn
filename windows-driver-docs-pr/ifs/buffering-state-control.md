@@ -1,6 +1,6 @@
 ---
-title: 缓冲状态的控件
-description: 缓冲状态的控件
+title: 缓冲状态控件
+description: 缓冲状态控件
 ms.assetid: 16590332-9d0d-4d8b-8304-a3fa9269c0e2
 keywords:
 - RDBSS WDK 的文件系统，缓冲状态
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f3042dc6dd1a967db8b6fad3f7b4b6c050a687f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391497"
 ---
-# <a name="buffering-state-control"></a>缓冲状态的控件
+# <a name="buffering-state-control"></a>缓冲状态控件
 
 
 ## <span id="ddk_buffering_state_control_if"></span><span id="DDK_BUFFERING_STATE_CONTROL_IF"></span>

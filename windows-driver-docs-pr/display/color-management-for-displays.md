@@ -1,6 +1,6 @@
 ---
-title: 显示的颜色管理
-description: 显示的颜色管理
+title: 显示颜色管理
+description: 显示颜色管理
 ms.assetid: a0c3f35f-3741-4d5a-b7ae-dd177c719508
 keywords:
 - 显示驱动程序 WDK Windows 2000 中，颜色管理
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a9395da8b7007a77225667c99b8d9dbfbd5aa53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354225"
 ---
-# <a name="color-management-for-displays"></a>显示的颜色管理
+# <a name="color-management-for-displays"></a>显示颜色管理
 
 
 ## <span id="ddk_color_management_for_displays_gg"></span><span id="DDK_COLOR_MANAGEMENT_FOR_DISPLAYS_GG"></span>

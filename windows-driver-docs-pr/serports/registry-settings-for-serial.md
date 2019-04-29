@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: baa474b998814271090aad38f6c0a97fddc3b233
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388045"
 ---
 # <a name="registry-settings-for-serial"></a>用于串行的注册表设置
 

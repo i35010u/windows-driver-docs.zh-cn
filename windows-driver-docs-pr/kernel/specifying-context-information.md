@@ -1,6 +1,6 @@
 ---
-title: 指定的上下文信息
-description: 指定的上下文信息
+title: 指定上下文信息
+description: 指定上下文信息
 ms.assetid: 7133529f-5a6c-4df1-8d03-1c79c0d98fa9
 keywords:
 - 筛选注册表调用 WDK 内核，上下文信息
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42749cfe5bc25ca98405d0061cb3f3acade2dd70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367932"
 ---
-# <a name="specifying-context-information"></a>指定的上下文信息
+# <a name="specifying-context-information"></a>指定上下文信息
 
 
 配置管理器提供多种方式筛选驱动程序，以将上下文信息分配给注册表操作的注册表。 注册表筛选驱动程序可以：

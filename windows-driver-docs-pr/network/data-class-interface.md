@@ -5,11 +5,11 @@ ms.assetid: d7bf9ec3-8bf3-45a9-84a2-c507953d1ad4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b16b280d233c3e4142db334d16e853ba3e3361e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387390"
 ---
 # <a name="data-class-interface"></a>数据类接口
 
@@ -32,7 +32,7 @@ ms.locfileid: "56524658"
 <th align="left">偏移量 （字节）</th>
 <th align="left">字段</th>
 <th align="left">大小 （字节）</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

@@ -5,11 +5,11 @@ ms.assetid: 7c12846a-0934-4397-b236-487a812a01f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f099383eb8281263018f7846634a7567b8012e1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390628"
 ---
 # <a name="starting-and-pausing-a-filter-module"></a>启动和暂停筛选器模块
 

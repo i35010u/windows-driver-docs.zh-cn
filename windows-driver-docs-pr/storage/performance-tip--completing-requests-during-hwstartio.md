@@ -5,13 +5,13 @@ ms.assetid: b1a3feff-ca18-4757-a336-c70ada998ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10e01b53f3c8d6d58326823989d63721e7bdf579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389395"
 ---
-# <a name="performance-tip-completing-requests-during-hwstartio"></a>性能提示：在 HwStartIo 期间完成的请求
+# <a name="performance-tip-completing-requests-during-hwstartio"></a>性能提示：在 HwStartIo 期间完成请求
 
 
 通过完成未完成的 I/O 请求已准备好进行中的完成其[ **HwStorStartIo** ](https://msdn.microsoft.com/library/windows/hardware/ff557423)例程，微型端口可以花费更少的时间设备 IRQL (DIRQL)，从而提高系统的响应能力，并此外可以利用新的 Storport 优化，进一步提高系统的响应能力和 I/O 吞吐量。 要点是尝试时间尽可能中断处理程序。 若要充分利用新的 Storport 优化微型端口：

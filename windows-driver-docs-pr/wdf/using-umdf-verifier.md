@@ -1,17 +1,17 @@
 ---
-title: 使用 UMDF 验证器
-description: 使用 UMDF 验证器
+title: 使用 UMDF 验证程序
+description: 使用 UMDF 验证程序
 ms.assetid: 95D85894-86AF-4312-B5BD-F1C9E8F8B2E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1825120f534ba82299792ae6971ee0775bdf2dd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391826"
 ---
-# <a name="using-umdf-verifier"></a>使用 UMDF 验证器
+# <a name="using-umdf-verifier"></a>使用 UMDF 验证程序
 
 
 该框架提供可用于测试正在运行的用户模式驱动程序框架 (UMDF) 驱动程序的内置验证功能。 此功能，有时称为 UMDF 验证程序，广泛验证驱动程序的状态和驱动程序将传递给框架对象方法的参数。 可以使用 UMDF 验证工具本身，或者与常规用途[应用程序验证器 (AppVerif.exe)](../debugger/debugger-download-tools.md)工具。

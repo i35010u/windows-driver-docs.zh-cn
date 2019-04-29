@@ -1,6 +1,6 @@
 ---
-title: 转换器类驱动程序
-description: 转换器类驱动程序
+title: 更换器类驱动程序
+description: 更换器类驱动程序
 ms.assetid: c1c2330c-9cfc-432f-945c-630dc16aa54d
 keywords:
 - 更换器驱动程序 WDK 存储类驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91613ffdd4037b6622537eff242a6d9cd72c25a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390209"
 ---
-# <a name="the-changer-class-driver"></a>转换器类驱动程序
+# <a name="the-changer-class-driver"></a>更换器类驱动程序
 
 
 ## <span id="ddk_the_changer_class_driver_kg"></span><span id="DDK_THE_CHANGER_CLASS_DRIVER_KG"></span>

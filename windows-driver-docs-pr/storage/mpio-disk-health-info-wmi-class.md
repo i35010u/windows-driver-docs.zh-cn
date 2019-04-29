@@ -5,11 +5,11 @@ ms.assetid: 5a3ca8be-8940-4ba4-9206-75d0c7c90d53
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d85cf76339f5f411a767adcfaa55a3c7d5fe1d20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391410"
 ---
 # <a name="mpiodiskhealthinfo-wmi-class"></a>MPIO\_磁盘\_运行状况\_信息 WMI 类
 

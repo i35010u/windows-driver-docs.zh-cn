@@ -5,11 +5,11 @@ ms.assetid: 9b745ff3-c00b-4a43-9bf3-52f9bf61e062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 917eb72e9d21dffcff502fe69f53f9501d1bf21b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367661"
 ---
 # <a name="mb-radio-power-state-operations"></a>MB 发射功率状态操作
 

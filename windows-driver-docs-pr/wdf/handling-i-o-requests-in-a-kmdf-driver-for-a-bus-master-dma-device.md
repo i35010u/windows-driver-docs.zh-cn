@@ -1,5 +1,5 @@
 ---
-title: 主总线 DMA 设备 KMDF 驱动程序中处理 I/O 请求
+title: 在适用于总线主控 DMA 设备的 KMDF 驱动程序中处理 I/O 请求
 description: 本部分中的本主题介绍如何总线 master DMA 设备的 KMDF 驱动程序处理的 I/O 请求。 如果你正在编写实现系统模式 DMA KMDF 驱动程序，请参阅支持系统模式 DMA。
 ms.assetid: c94819c5-212d-404f-a7c7-b736e0832282
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5cdc8b599b3d6bcb97779509040043f4603f03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391903"
 ---
-# <a name="handling-io-requests-in-a-kmdf-driver-for-a-bus-master-dma-device"></a>主总线 DMA 设备 KMDF 驱动程序中处理 I/O 请求
+# <a name="handling-io-requests-in-a-kmdf-driver-for-a-bus-master-dma-device"></a>在适用于总线主控 DMA 设备的 KMDF 驱动程序中处理 I/O 请求
 
 
 \[仅适用于 KMDF\]

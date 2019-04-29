@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_SUPPORTED_PACKET_FILTERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 157b47e3be2f47858c051f0600a4c77161696f0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387885"
 ---
 # <a name="oidgensupportedpacketfilters"></a>OID\_GEN\_支持\_数据包\_筛选器
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 70124be0c3ae0e867c4447231b959a288917bd1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388088"
 ---
 # <a name="local-print-provider"></a>本地打印提供程序
 

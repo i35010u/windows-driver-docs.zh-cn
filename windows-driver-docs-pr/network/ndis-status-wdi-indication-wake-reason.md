@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 48459164e04bdfdfe304b7da4b506acd624ec82a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323255"
 ---
 # <a name="ndisstatuswdiindicationwakereason"></a>NDIS\_状态\_WDI\_指示\_唤醒\_原因
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_唤醒\_NIC 唤醒主机时指示唤醒原因的理由。 唤醒原因用于调试目的，没有功能起作用。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -57,7 +57,7 @@ ms.locfileid: "56555966"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

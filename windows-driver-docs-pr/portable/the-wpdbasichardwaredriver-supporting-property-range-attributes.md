@@ -1,16 +1,16 @@
 ---
-Description: Supporting the Property Range Attributes
-title: 支持属性范围属性
+Description: 支持属性范围特性
+title: 支持属性范围特性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 692759b656b8e2cfd10c8a29910492772413b39c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387302"
 ---
-# <a name="supporting-the-property-range-attributes"></a>支持属性范围属性
+# <a name="supporting-the-property-range-attributes"></a>支持属性范围特性
 
 
 示例驱动程序支持两个属性： 更新间隔 (传感器\_更新\_间隔) 和当前的传感器读数 (传感器\_读取)。 每个属性支持一的组常规属性 （删除、 可读、 可写，等等）。 此外，这些属性支持特定范围属性 （最小值、 最大值和步长值）。
@@ -57,7 +57,7 @@ else if (IsEqualPropertyKey(Key, SENSOR_READING))
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

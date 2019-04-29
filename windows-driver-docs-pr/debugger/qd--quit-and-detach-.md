@@ -1,5 +1,5 @@
 ---
-title: qd （Quit 和分离）
+title: qd（退出和分离）
 description: Qd 命令将结束调试会话，并保持运行任何用户模式目标应用程序。
 ms.assetid: 3282c78b-6c4b-4c1b-a086-4890c3140ab9
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a1c615d108c8af8319764af5beb651255da28d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387070"
 ---
-# <a name="qd-quit-and-detach"></a>qd （Quit 和分离）
+# <a name="qd-quit-and-detach"></a>qd（退出和分离）
 
 
 **Qd**命令将结束调试会话，并保持运行任何用户模式目标应用程序。 （在 CDB 和 KD 中，此命令还将退出调试器本身。 在 WinDbg 中，此命令返回调试器到休眠模式。）

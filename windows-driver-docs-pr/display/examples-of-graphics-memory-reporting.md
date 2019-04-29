@@ -1,17 +1,17 @@
 ---
-title: 示例图形内存报告
-description: 示例图形内存报告
+title: 图形内存报告示例
+description: 图形内存报告示例
 ms.assetid: 3dc0e7ae-db6f-4440-8c9c-7227f409f81f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7eadc4a6ffe397cd7b06a63c7568c8271795371
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391859"
 ---
-# <a name="examples-of-graphics-memory-reporting"></a>示例图形内存报告
+# <a name="examples-of-graphics-memory-reporting"></a>图形内存报告示例
 
 
 下面的示例不同的适配器和内存配置为与 Windows XP 的 Windows Vista 报告的数字进行比较。 示例演示**显示**应用程序和 WinSAT 小程序报告的可用内存。

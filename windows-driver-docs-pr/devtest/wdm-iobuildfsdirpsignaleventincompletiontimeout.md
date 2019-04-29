@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3a61b58f0a4de17ef3d3e53f1556a8d28e018e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390514"
 ---
 # <a name="iobuildfsdirpsignaleventincompletiontimeout-rule-wdm"></a>IoBuildFsdIrpSignalEventInCompletionTimeout 规则 (wdm)
 

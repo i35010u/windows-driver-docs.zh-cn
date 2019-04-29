@@ -1,6 +1,6 @@
 ---
-title: 捕获，预览版中，并且仍然类别
-description: 捕获，预览版中，并且仍然类别
+title: 捕获、预览和静态类别
+description: 捕获、预览和静态类别
 ms.assetid: b82cc3b6-1cea-4864-9501-95919f05455f
 keywords:
 - 流类别 WDK 视频捕获，捕获视频流
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca096532db207df77cfa9f430bab9ca81bb14def
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387930"
 ---
-# <a name="capture-preview-and-still-category"></a>捕获，预览版中，并且仍然类别
+# <a name="capture-preview-and-still-category"></a>捕获、预览和静态类别
 
 
 以下 Guid 对应于用于捕获视频流、 预览视频流，并仍捕获映像 （如果支持的硬件） 类别：
@@ -53,8 +53,8 @@ ms.locfileid: "56522785"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

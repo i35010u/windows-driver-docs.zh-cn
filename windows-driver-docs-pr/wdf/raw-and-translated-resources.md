@@ -1,6 +1,6 @@
 ---
-title: 原始和已翻译资源
-description: 原始和已翻译资源
+title: 原始资源和已转换的资源
+description: 原始资源和已转换的资源
 ms.assetid: dfc1376d-7a1a-421c-82ae-e183cac77ec8
 keywords:
 - 硬件资源 WDK KMDF，原始资源
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d608551898ea3ce4cce0756ec06010418b0a937
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390042"
 ---
-# <a name="raw-and-translated-resources"></a>原始和已翻译资源
+# <a name="raw-and-translated-resources"></a>原始资源和已转换的资源
 
 
 当驱动程序的[ *EvtDeviceRemoveAddedResources* ](https://msdn.microsoft.com/library/windows/hardware/ff540892)或[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调函数接收资源列表中，它会收到两个版本的列表。 一个版本表示的设备*原始资源*，和另一个表示设备的*资源转换*。 这两个版本表示同一组中的顺序相同的硬件资源。

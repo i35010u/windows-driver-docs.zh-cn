@@ -1,6 +1,6 @@
 ---
-title: 改进了匹配算法的窗体
-description: 改进了匹配算法的窗体
+title: 改进的窗体匹配算法
+description: 改进的窗体匹配算法
 ms.assetid: 6b4f5ce5-c206-42ee-a707-3205f08e0ee0
 keywords:
 - 匹配算法 WDK 窗体
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 980b11e86955f84f79e45260d9763606f75798da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392769"
 ---
-# <a name="improved-form-matching-algorithm"></a>改进了匹配算法的窗体
+# <a name="improved-form-matching-algorithm"></a>改进的窗体匹配算法
 
 
 在 Windows Vista 中，Unidrv 打印机驱动程序中的窗体匹配算法也提高了查找最适合与搜索条件匹配时确定的驱动程序可以支持请求的窗体的窗体。

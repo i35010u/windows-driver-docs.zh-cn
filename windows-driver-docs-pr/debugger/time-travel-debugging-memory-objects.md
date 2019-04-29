@@ -4,17 +4,17 @@ description: 本部分介绍与时间旅行调试相关联的内存模型对象�
 ms.date: 01/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: aaa9dc8d392fa4f14ef5df663bd1a657c2965502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389113"
 ---
 # <a name="ttd-memory-objects"></a>TTD 内存对象
 ## <a name="description"></a>描述
 *TTD 内存*是一种方法接受 beginAddress、 endAddress 和 dataAccessMask 参数并返回包含内存访问信息的内存对象的集合。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 | 属性 | 描述 |
 | --- | --- |
@@ -25,7 +25,7 @@ ms.locfileid: "56545940"
 
 ## <a name="children"></a>Children
 
-| 对象      | 描述 |
+| Object      | 描述 |
 | ----------- | ----------- |
 | EventType  |  事件的类型。 这是为所有 TTD"MemoryAccess"。内存对象。 |
 | ThreadId   |  发出请求的线程的操作系统线程 ID。 |
@@ -35,8 +35,8 @@ ms.locfileid: "56545940"
 | AccessType |  访问类型的读取、 写入或执行。 |
 | IP         |  所做的内存访问的代码指令指针。 |
 | 地址    |  已读取 / 写入 / 执行的地址并将处于的范围 [beginAddress, endAddress) 从的参数。Memory()。  请注意，该间隔是半开。  也就是说，没有任何返回的事件将具有匹配 endAddress，但可以匹配 endAddress – 1 的事件。|
-| 尺寸       |  读取/写入/执行以字节为单位的大小。 这通常是 8 个字节或更少。 发生时执行代码，它是已执行的指令中的字节数。 |
-| 值   | 读取、 写入或执行的值。 如果执行，它包含指令的代码字节。 请注意指令字节拆装器 MSB 顺序列出，但将存储在 LSB 顺序的值。 |
+| 大小       |  读取/写入/执行以字节为单位的大小。 这通常是 8 个字节或更少。 发生时执行代码，它是已执行的指令中的字节数。 |
+| ReplTest1   | 读取、 写入或执行的值。 如果执行，它包含指令的代码字节。 请注意指令字节拆装器 MSB 顺序列出，但将存储在 LSB 顺序的值。 |
 
 
 ## <a name="remarks"></a>备注
@@ -116,7 +116,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

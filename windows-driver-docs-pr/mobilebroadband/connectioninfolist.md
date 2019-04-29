@@ -5,11 +5,11 @@ ms.assetid: e62f0106-0f2b-4990-aaf3-9cb398abfb2d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5889c6f6a39338e22ec5aae89706b44bd34b51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387906"
 ---
 # <a name="connectioninfolist"></a>ConnectionInfoList
 

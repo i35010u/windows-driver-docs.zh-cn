@@ -1,14 +1,14 @@
 ---
-Description: Supporting Device Events
+Description: 支持设备事件
 title: 支持设备事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 635a977b619c5783b9f60d3f0787e8ad114bf465
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387315"
 ---
 # <a name="supporting-device-events"></a>支持设备事件
 
@@ -82,7 +82,7 @@ if (hr == S_OK)
 
 在事件回叫，应用程序会检查事件 GUID 是否与匹配 WPD\_事件\_传感器\_读取\_已更新，并获取传感器读取数据和区间数据从事件参数。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

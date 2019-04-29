@@ -1,6 +1,6 @@
 ---
-title: 日志标记
-description: 日志标记
+title: 日志令牌
+description: 日志令牌
 ms.assetid: f666d457-eb0a-4482-a8ac-e2921ab8c5a9
 keywords:
 - 记录令牌 WDK SetupAPI
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec67e2d57826eb4c16336fc46e50414f2a355eff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356937"
 ---
-# <a name="log-tokens"></a>日志标记
+# <a name="log-tokens"></a>日志令牌
 
 
 使用 SetupAPI 文本日志记录*登录令牌*写入条目[SetupAPI 文本日志](setupapi-text-logs.md)。

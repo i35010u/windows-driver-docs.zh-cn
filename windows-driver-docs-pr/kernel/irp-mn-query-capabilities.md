@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_CAPABILITIES 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 3813da19b49203ccfa085b7ee8f12023e382e301
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386920"
 ---
 # <a name="irpmnquerycapabilities"></a>IRP\_MN\_查询\_功能
 

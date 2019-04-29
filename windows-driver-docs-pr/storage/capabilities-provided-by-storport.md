@@ -1,17 +1,17 @@
 ---
-title: 所提供的 Storport 功能
-description: 所提供的 Storport 功能
+title: Storport 提供的功能
+description: Storport 提供的功能
 ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a556b01864bdc5676e6fc47009510c3d102cee98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390560"
 ---
-# <a name="capabilities-provided-by-storport"></a>所提供的 Storport 功能
+# <a name="capabilities-provided-by-storport"></a>Storport 提供的功能
 
 
 Storport 驱动程序提供了以下功能：

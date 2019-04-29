@@ -1,17 +1,17 @@
 ---
-title: 不包括的数据包发送到可扩展的交换目标端口
-description: 不包括的数据包发送到可扩展的交换目标端口
+title: 排除将数据包传送到可扩展交换机目标端口
+description: 排除将数据包传送到可扩展交换机目标端口
 ms.assetid: 04BF02A6-360F-482E-A86B-31232AFCB778
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4251c44daa9e71f74721830a8cd0b82b4dfff70c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391664"
 ---
-# <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>不包括的数据包发送到可扩展的交换目标端口
+# <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>排除将数据包传送到可扩展交换机目标端口
 
 
 本主题介绍 HYPER-V 可扩展交换机扩展可以如何排除数据包传送到可扩展的交换机端口。 带外 (OOB) 转发的数据包内的上下文内指定数据包的目标端口[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 在此上下文的详细信息，请参阅[HYPER-V 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。

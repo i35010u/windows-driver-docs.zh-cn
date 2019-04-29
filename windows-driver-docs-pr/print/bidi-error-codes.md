@@ -21,18 +21,18 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ae6dcf22bf6b4fc238ae5612418cfb36e3305e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387278"
 ---
 # <a name="bidirectional-communication-error-codes"></a>双向通信错误代码
 
 
 打印机的双向通信中使用以下的错误代码。
 
-| 值                               | 描述                                                                                            |
+| ReplTest1                               | 描述                                                                                            |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------|
 | 错误\_BIDI\_设备\_脱机        | 支持双向调用，但与远程打印机的连接不可用。                  |
 | ERROR\_BIDI\_ERROR\_BASE            | Bidi 调用已成功完成，但在单个响应中有一个或多个错误。    |

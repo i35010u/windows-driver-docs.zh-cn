@@ -5,11 +5,11 @@ ms.assetid: 60BCE8C7-416E-4D5B-9B32-9B398CEA6A8A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8c8774c64672b171c9e8e1825a0ce60ebdb1c5d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323363"
 ---
 # <a name="indicator-implementation"></a>指示器实现
 

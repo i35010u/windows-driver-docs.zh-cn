@@ -9,16 +9,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9f0ab4e1cbc32b693237557a749cec70a10ff92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388914"
 ---
 # <a name="hid-architecture"></a>HID 体系结构
 
 
-Windows 中的 HID 驱动程序堆栈的体系结构基于名为的类驱动程序*hidclass.sys*。 客户端和传输微型驱动程序从用户模式或内核模式下访问的类驱动程序。
+Windows 中的 HID 驱动程序堆栈的体系结构基于名为 *hidclass.sys* 的类驱动程序。 客户端和传输微型驱动程序从用户模式或内核模式下访问的类驱动程序。
 
 ## <a name="the-hid-class-driver"></a>HID 类驱动程序
 
@@ -59,7 +59,7 @@ HID 客户端是驱动程序、 服务或应用程序与通信*HIDClass.sys*和�
 |             | Drivers                      | 应用程序 |
 |-------------|------------------------------|--------------|
 | 用户模式   | HidD\_Xxx                    | HidP\_Xxx    |
-| 内核模式 | HidD\_Xxx 或 IOCTL\_HID\_xxx | 不适用          |
+| 内核模式 | HidD\_Xxx 或 IOCTL\_HID\_xxx | 不可用          |
 
  
 

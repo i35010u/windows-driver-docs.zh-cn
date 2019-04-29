@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_INDICATE_STATUS_MSG
-Description: This message is sent from a Remote NDIS device to a host to indicate a change in the status of the device.
+Description: 此消息是从远程 NDIS 设备发送到主机以指示设备的状态中的更改。
 ms.assetid: 768aad13-3da6-436c-a7ba-d420af34643e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26c27b3fb61aacdfc6e9463f47b8041e31a1731f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350883"
 ---
 # <a name="remotendisindicatestatusmsg"></a>远程\_NDIS\_指示\_状态\_消息
 
@@ -26,7 +26,7 @@ ms.locfileid: "56524918"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -84,7 +84,7 @@ ms.locfileid: "56524918"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -125,11 +125,11 @@ ms.locfileid: "56524918"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Rndis.h （包括 Rndis.h）</td>
 </tr>
 </tbody>

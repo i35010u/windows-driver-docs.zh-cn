@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c056950901a2ee049eedc7e59a0a1c8993c54666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387413"
 ---
 # <a name="using-direct-io-with-dma"></a>将直接 I/O 与 DMA 配合使用
 

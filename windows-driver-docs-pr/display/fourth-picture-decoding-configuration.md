@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 612af66a774273502729bfb63bb5753059716d67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387233"
 ---
 # <a name="fourth-picture-decoding-configuration"></a>第四个图片解码配置
 
@@ -30,7 +30,7 @@ ms.locfileid: "56555416"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

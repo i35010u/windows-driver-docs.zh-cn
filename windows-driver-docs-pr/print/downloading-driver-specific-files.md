@@ -1,6 +1,6 @@
 ---
-title: 下载特定于驱动程序文件
-description: 下载特定于驱动程序文件
+title: 下载驱动程序特定的文件
+description: 下载驱动程序特定的文件
 ms.assetid: 7ac5057a-32fb-4c3a-a5c3-3fc1217dbdc6
 keywords:
 - 点和打印 WDK，特定于驱动程序的文件
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7f3d7547808e0af7b06a1b297561f796f0fcc92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387269"
 ---
-# <a name="downloading-driver-specific-files"></a>下载特定于驱动程序文件
+# <a name="downloading-driver-specific-files"></a>下载驱动程序特定的文件
 
 
 

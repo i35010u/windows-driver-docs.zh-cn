@@ -1,6 +1,6 @@
 ---
-title: 报告设备失败
-description: 报告设备失败
+title: 报告设备故障
+description: 报告设备故障
 ms.assetid: ca536547-d51a-4450-8a83-19aac67aab92
 keywords:
 - 即插即用 WDK KMDF，设备故障
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a52d23061350a2e5009300467bffa17666c06068
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390034"
 ---
-# <a name="reporting-device-failures"></a>报告设备失败
+# <a name="reporting-device-failures"></a>报告设备故障
 
 
 有两种方式可以报告设备失败：

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32dad429bf1ce8b92fa66ffeeb4eca5bb1e95c0f
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389031"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -213,7 +213,7 @@ CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处�
 <div>
  
 </div>
-<strong>注意：</strong>256 条目调色板中的操作中心 (x M x Y C) 索引。 即，有相等数量的黑色条目填充低端的调色板和白色填充的高端的条目。
+<strong>注意：</strong> 256 条目调色板中的操作中心 (x M x Y C) 索引。 即，有相等数量的黑色条目填充低端的调色板和白色填充的高端的条目。
 <div>
  
 </div>

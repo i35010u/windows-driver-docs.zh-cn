@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e364a34d9c45d4b9cfd9c7d3a866c83f83829dbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392539"
 ---
 # <a name="devpkeydeviceclassdevtype"></a>DEVPKEY_DeviceClass_DevType
 
@@ -78,17 +78,17 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Devpkey.h （包括 Devpkey.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)

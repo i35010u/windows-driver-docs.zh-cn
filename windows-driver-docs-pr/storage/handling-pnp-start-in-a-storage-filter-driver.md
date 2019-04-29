@@ -1,6 +1,6 @@
 ---
-title: 处理存储筛选器驱动程序中的即插即用开始
-description: 处理存储筛选器驱动程序中的即插即用开始
+title: 处理存储筛选器驱动程序中的 PnP 启动
+description: 处理存储筛选器驱动程序中的 PnP 启动
 ms.assetid: 02a87fec-772d-4416-bd3a-5c7f98e8d55e
 keywords:
 - 存储筛选器驱动程序 WDK，即插即用
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57aa07a455768c97524442764a0f1cb016a33cb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390895"
 ---
-# <a name="handling-pnp-start-in-a-storage-filter-driver"></a>处理存储筛选器驱动程序中的即插即用开始
+# <a name="handling-pnp-start-in-a-storage-filter-driver"></a>处理存储筛选器驱动程序中的 PnP 启动
 
 
 ## <span id="ddk_handling_pnp_start_in_a_storage_filter_driver_kg"></span><span id="DDK_HANDLING_PNP_START_IN_A_STORAGE_FILTER_DRIVER_KG"></span>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb965e9aca6447f0e531bc89d0714afb5e46aad0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389477"
 ---
 # <a name="print-driver-manifests"></a>打印驱动程序清单
 

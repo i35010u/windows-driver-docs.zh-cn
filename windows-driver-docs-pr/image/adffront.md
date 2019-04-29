@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eda5373bd855dc0d2108174e36c6fb100c43194a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367085"
 ---
 # <a name="adffront-element"></a>ADFFront 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56554350"
 </wscn:ADFFront>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -93,7 +93,7 @@ ms.locfileid: "56554350"
 
 如果扫描仪具有 ADF WSD 扫描服务必须中为其提供详细信息**ADFFront**元素，而不考虑的 ADF 进行双面打印功能。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ADF**](adf.md)

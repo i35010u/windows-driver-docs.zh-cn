@@ -5,11 +5,11 @@ ms.assetid: 208d24d0-0505-41ed-bffd-9edb30d3a01a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a9efb58d71df06976ba0f6173a544d2e34c7360
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353310"
 ---
 # <a name="wsd-scan-service-job-and-document-elements"></a>WSD 扫描服务作业和文档元素
 

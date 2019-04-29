@@ -5,11 +5,11 @@ ms.assetid: 710667D1-6C02-48F7-90FA-513AA9EF6DAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fece57ce1dd722a513fb064d957fca0a992d828
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324867"
 ---
 # <a name="wdi-ihv-extensible-types"></a>WDI IHV 可扩展类型
 

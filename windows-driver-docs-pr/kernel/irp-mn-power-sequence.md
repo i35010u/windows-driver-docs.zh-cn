@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_POWER_SEQUENCE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 827976878f8f947d00a9b96c78654108f662ecb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391970"
 ---
 # <a name="irpmnpowersequence"></a>IRP\_MN\_POWER\_SEQUENCE
 
@@ -79,7 +79,7 @@ ms.locfileid: "56554130"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

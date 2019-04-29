@@ -5,11 +5,11 @@ ms.assetid: 65072545-76F0-43A8-9E46-703CA99BFE90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbac4a14090306d9306f9a56cc7d837db23c194
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391184"
 ---
 # <a name="wddm-12-features"></a>WDDM 1.2 功能
 

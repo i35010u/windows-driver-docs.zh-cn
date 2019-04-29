@@ -1,6 +1,6 @@
 ---
-title: XPSDrv 的打印机驱动程序
-description: XPSDrv 的打印机驱动程序
+title: XPSDrv 打印机驱动程序
+description: XPSDrv 打印机驱动程序
 ms.assetid: 9e61cb21-4e02-48dc-b291-576d37bb640d
 keywords:
 - XPSDrv 的打印机驱动程序 WDK，关于 XPS
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c821b81b00cb315987fa849590330d432578fdb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390227"
 ---
-# <a name="xpsdrv-printer-drivers"></a>XPSDrv 的打印机驱动程序
+# <a name="xpsdrv-printer-drivers"></a>XPSDrv 打印机驱动程序
 
 
 XPSDrv 打印机驱动程序扩展了 Microsoft 的基于 GDI 的版本 3 打印机驱动程序体系结构以支持使用 XML 纸张规范 (XPS) 文档。 通过 XPSDrv 打印机驱动程序，XPS 文档格式可用作后台打印文件格式和文档文件格式。

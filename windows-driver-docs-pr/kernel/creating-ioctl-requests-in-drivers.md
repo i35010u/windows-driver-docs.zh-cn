@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7484e66ea127da239c2c080d460c463d3f3b62d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388265"
 ---
 # <a name="creating-ioctl-requests-in-drivers"></a>在驱动程序中创建 IOCTL 请求
 

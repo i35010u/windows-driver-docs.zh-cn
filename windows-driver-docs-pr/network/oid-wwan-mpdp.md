@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 757b96d735e332cdbf265fd5b37f8515133b2bc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353726"
 ---
 # <a name="oidwwanmpdp"></a>OID_WWAN_MPDP
 
@@ -29,10 +29,10 @@ OID_WWAN_MPDP 设置或查询表示主 PDP 上下文/EPS 持有者的 MB 设备�
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1809 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1809 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_STATUS_WWAN_MPDP_LIST](ndis-status-wwan-mpdp-list.md)
 

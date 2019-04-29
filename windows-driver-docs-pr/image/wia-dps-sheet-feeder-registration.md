@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64a709470f58b593f2d53f9421faf4be09e26706
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366983"
 ---
 # <a name="wiadpssheetfeederregistration"></a>WIA\_DPS\_表\_送纸器\_注册
 
@@ -83,7 +83,7 @@ WIA\_DPS\_表\_送纸器\_注册属性指示文档如何水平定位在手持设
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>对于 Windows Vista 和更高版本操作系统，请改为使用 WIA_IPS_SHEET_FEEDER_REGISTRATION 属性。</p></td>
 </tr>
 <tr class="even">

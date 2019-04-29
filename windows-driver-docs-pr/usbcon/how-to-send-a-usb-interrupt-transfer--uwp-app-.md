@@ -1,16 +1,16 @@
 ---
-Description: A USB device can support interrupt endpoints so that it can send or receive data at regular intervals.
-title: 如何发送 USB 中断传输请求 （UWP 应用）
+Description: USB 设备可以支持中断终结点，以便它可以发送或接收的数据按固定间隔。
+title: 如何发送 USB 中断传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5a44305f4e7a2cd0b52ea3d1d96a44ce6b3e95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390548"
 ---
-# <a name="how-to-send-a-usb-interrupt-transfer-request-uwp-app"></a>如何发送 USB 中断传输请求 （UWP 应用）
+# <a name="how-to-send-a-usb-interrupt-transfer-request-uwp-app"></a>如何发送 USB 中断传输请求（UWP 应用）
 
 
 **摘要**

@@ -5,11 +5,11 @@ ms.assetid: EB9AB15A-4E47-48AE-AE39-6051F8FC39A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ad434b8d769ba7189b442ff67b1e06fd7b0d05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391217"
 ---
 # <a name="direct3d-software-requirements-in-windows-8"></a>Windows 8 中的 Direct3D 软件要求
 

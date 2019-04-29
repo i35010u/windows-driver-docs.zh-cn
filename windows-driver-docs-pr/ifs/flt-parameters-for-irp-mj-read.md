@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1ae103d05ffd2262ada7c8043809e7e39b97e07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370753"
 ---
 # <a name="fltparameters-for-irpmjread-union"></a>FLT\_IRP 的参数\_MJ\_读取联合
 
@@ -54,7 +54,7 @@ typedef union _FLT_PARAMETERS {
 **长度**  
 长度 （字节），要读取的数据。
 
-**密钥**  
+**Key**  
 目标文件的字节范围锁与关联的密钥值。
 
 **ByteOffset**  
@@ -83,13 +83,13 @@ IRP\_MJ\_读取可以是基于 IRP 的操作或快速 I/O 操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

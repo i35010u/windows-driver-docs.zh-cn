@@ -1,17 +1,17 @@
 ---
-title: 移植的 I/O 队列
-description: 移植的 I/O 队列
+title: 移植 I/O 队列
+description: 移植 I/O 队列
 ms.assetid: 90319342-5FAB-451B-BCA1-B273B81418DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fe656759e9492fbe1a2875048e7ccf5ddeb40e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390094"
 ---
-# <a name="porting-io-queues"></a>移植的 I/O 队列
+# <a name="porting-io-queues"></a>移植 I/O 队列
 
 
 WDF 驱动程序创建队列并注册中的 I/O 事件回调[ *EvtDriverDeviceAdd* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调。 默认情况下，每个 I/O 队列对象是一个设备对象的子级。 WDF 驱动程序可以配置为每个队列的以下任务：

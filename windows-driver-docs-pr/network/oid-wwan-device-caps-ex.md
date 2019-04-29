@@ -8,11 +8,11 @@ ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386744"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_DEVICE\_CAPS\_EX
 
@@ -42,7 +42,7 @@ OID\_WWAN\_设备\_CAPS\_EX 也用于检索每个执行器的功能。 此 OID �
 
 在 Windows 10 版本 1703年之前的 Windows 版本仍可以使用现有[OID\_WWAN\_设备\_CAPS](oid-wwan-device-caps.md); 它们与多执行器能够调制解调器的行为不受支持的方案。 Ihv 必须定义此行为。
 
-### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+### <a name="windows-10-version-1903"></a>Windows 10 版本 1903
 
 从 Windows 10，版本 1903，开始 OID_WWAN_DEVICE_CAPS_EX 已升级到版本 2。 微型端口驱动程序必须使用版本 2 的此 OID 和它包含如果微型端口驱动程序支持 5 个 G 的数据结构。
 

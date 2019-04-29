@@ -7,11 +7,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: aae5edf8cdb3b551bb776063c6cf8cc5f98e4d03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390327"
 ---
 # <a name="current-settings"></a>当前设置
 

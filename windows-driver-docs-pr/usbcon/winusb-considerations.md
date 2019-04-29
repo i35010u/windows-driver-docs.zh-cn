@@ -1,14 +1,14 @@
 ---
-Description: Guidelines for choosing the best driver model for developing a USB client driver that acts as the device's function driver.
+Description: 选择用于开发的 USB 客户端驱动程序，充当设备的功能驱动程序的最佳驱动程序模型的指导原则。
 title: 选择用于开发的 USB 驱动程序的驱动程序模型
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 86e7f84cfe9b766beb4a0cd7c59d8089f8dd19e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389173"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>选择用于开发 USB 客户端驱动程序的驱动程序模型
 
@@ -67,7 +67,7 @@ USB 设备制造商通常必须提供应用程序访问设备的功能的方法�
 
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)(UMDF)
 
-    UMDF 提供客户端驱动程序可以使用与 Windows 组件，如插管理器和电源管理器集成的设备驱动程序接口 (DDIs)。 UMDF 还提供对 USB 设备，即在用户模式下的硬件的抽象并简化驱动程序的 I/O 操作的专用化的目标对象。 除了 UMDF 接口，WDF 提供增强的调试器扩展和跟踪工具对用户模式驱动程序。 UMDF 基于组件对象模型 (COM) 和开发的用户模式驱动程序的 c + + 开发人员更轻松。
+    UMDF 提供客户端驱动程序可以使用与 Windows 组件，如插管理器和电源管理器集成的设备驱动程序接口 (DDIs)。 UMDF 还提供对 USB 设备，即在用户模式下的硬件的抽象并简化驱动程序的 I/O 操作的专用化的目标对象。 除了 UMDF 接口，WDF 提供增强的调试器扩展和跟踪工具对用户模式驱动程序。 UMDF 基于组件对象模型 (COM) 和开发的用户模式驱动程序是更轻松C++开发人员。
 
     在以下情况下实现 USB 设备的 UMDF 基于客户端驱动程序：
 
@@ -94,7 +94,7 @@ USB 设备制造商通常必须提供应用程序访问设备的功能的方法�
 
     纯 WDM 驱动程序是难以编写、 复杂，且不可靠。 随着 KMDF 的发展，编写这种类型的驱动程序不再需要。
 
-Microsoft Visual Studio 2012 包含**USB 用户模式驱动程序**并**USB 内核模式驱动程序**分别生成 UMDF 和 KMDF USB 客户端驱动程序，起始代码的模板。 模板代码初始化 USB 目标设备对象，以允许与硬件进行通信。 有关详情，请参阅以下主题：
+Microsoft Visual Studio 2012 包含**USB 用户模式驱动程序**并**USB 内核模式驱动程序**分别生成 UMDF 和 KMDF USB 客户端驱动程序，起始代码的模板。 模板代码初始化 USB 目标设备对象，以允许与硬件进行通信。 有关详细信息，请参阅下列主题：
 -   [编写第一个 USB 客户端驱动程序 (UMDF)](implement-driver-entry-for-a-usb-driver--umdf-.md)
 -   [编写第一个 USB 客户端驱动程序 (KMDF)](tutorial--write-your-first-usb-client-driver--kmdf-.md)
 

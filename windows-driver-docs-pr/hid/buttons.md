@@ -5,11 +5,11 @@ ms.assetid: FBA8141D-8DBA-4C68-8BB5-44B3EDB7D062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86a8556376cc86cc43c30b2cc8bdfa0561c2071d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390367"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 

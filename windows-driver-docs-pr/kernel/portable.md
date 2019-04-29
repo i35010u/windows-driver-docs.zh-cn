@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7c351fbb84fd7d343666f502a63a6a3d2fd3d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369201"
 ---
 # <a name="portable"></a>可移植
 
@@ -28,7 +28,7 @@ ms.locfileid: "56565079"
 
 ### <a name="coding-drivers-in-c"></a>编码 C 中的驱动程序
 
-应在 C 中编写所有内核模式驱动程序，以便他们可以用系统兼容 C 编译器重新编译、 重新链接，并在不同的 Microsoft Windows 平台上运行而无需重写或替换任何代码。 大多数操作系统组件完全在 C 中，编码的以便跨硬件平台的操作系统是随时可移植程序集语言编写的 HAL 和内核组件仅少量使用。 因此，应该仔细评估使用的此类构造的情况下，不能在内核模式驱动程序中使用许多 c + + 语言构造。 有关驱动程序包括 c + + 功能时出现的问题的详细信息，请参阅[内核模式驱动程序的 c + +:优点和缺点](https://go.microsoft.com/fwlink/p/?linkid=56294)白皮书。
+应在 C 中编写所有内核模式驱动程序，以便他们可以用系统兼容 C 编译器重新编译、 重新链接，并在不同的 Microsoft Windows 平台上运行而无需重写或替换任何代码。 大多数操作系统组件完全在 C 中，编码的以便跨硬件平台的操作系统是随时可移植程序集语言编写的 HAL 和内核组件仅少量使用。 您不能使用许多C++语言中内核模式驱动程序，因此，应该仔细评估使用的此类构造的构造。 有关驱动程序包括时出现的问题详细信息C++功能，请参阅[C++内核模式驱动程序：优点和缺点](https://go.microsoft.com/fwlink/p/?linkid=56294)白皮书。
 
 如果不能保证这些功能必须由其他系统兼容编译器支持，驱动程序不应依赖于任何特定的系统兼容 C 编译器或 C 支持库的功能。 一般情况下，驱动程序代码应符合 ANSI C 标准，而依赖于此标准描述为"实现定义。"的任何内容
 

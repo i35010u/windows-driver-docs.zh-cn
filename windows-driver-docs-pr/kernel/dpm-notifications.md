@@ -7,11 +7,11 @@ keywords:
 ms.date: 01/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 984444958b8a4ae24edcfa04188933fe7aefc204
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387178"
 ---
 # <a name="device-power-management-dpm-notifications"></a>设备电源管理 (DPM) 通知
 

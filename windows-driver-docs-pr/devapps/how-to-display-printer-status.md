@@ -5,11 +5,11 @@ ms.assetid: 91AD1B3B-0D0B-4FB6-8A0F-4943143D8FCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8770e6e44f9433c009bcac80e5b26c2e13d1b76
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387925"
 ---
 # <a name="how-to-display-printer-status-in-a-uwp-device-app"></a>如何在 UWP 设备应用中显示打印机状态
 
@@ -18,7 +18,7 @@ ms.locfileid: "57350350"
 
 C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)的示例使用**InkLevel.xaml**页后，可以演示如何获取打印机状态 （在此情况下，墨迹级别） 并将其显示。 打印帮助器类用于创建设备上下文 (IPrinterExtensionContext)，并执行设备查询。 **PrinterHelperClass.cs**文件位于**DeviceAppForPrintersLibrary**项目，然后使用 Api 中定义**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也是在 JavaScript 和 c + + 中可用。 请注意由于 c + + 可以直接访问 COM，该示例的 c + + 版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
 
  
 
@@ -32,7 +32,7 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 3.  将你的应用与应用商店相关联。 请参阅本主题中的[步骤 1：创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)有关的信息。
 4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[步骤 2:创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
 5.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**并**DeviceAppForPrintersLibrary**到您 UWP 设备应用程序解决方案的项目。 您可以找到这些项目中的每个[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。
-    **请注意**  因为 c + + 可以直接访问 COM，c + + 应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
 
      
 

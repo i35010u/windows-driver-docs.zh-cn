@@ -1,6 +1,6 @@
 ---
-title: 安装、 升级和删除组件
-description: 安装、 升级和删除组件
+title: 安装、升级和删除组件
+description: 安装、升级和删除组件
 ms.assetid: 7069e7a0-0c7e-4f7c-a764-a83e758df1bf
 keywords:
 - 通知对象 WDK 网络，删除网络组件
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48336b860b90f5fd9e925c638ffcaed7377e50fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324901"
 ---
-# <a name="installing-upgrading-and-removing-the-component"></a>安装、 升级和删除组件
+# <a name="installing-upgrading-and-removing-the-component"></a>安装、升级和删除组件
 
 
 

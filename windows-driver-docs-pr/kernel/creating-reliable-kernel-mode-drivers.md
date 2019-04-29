@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec3d064e5f1bd63d0876519025edeaac9a2683d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388248"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>创建可靠的内核模式驱动程序
 
@@ -34,7 +34,7 @@ ms.locfileid: "56519301"
 
 -   使用"安全字符串"函数。
 
-    当操作字符串时，驱动程序应使用安全的字符串函数而不是与 C/c + + 语言运行时库提供的字符串函数。 有关详细信息，请参阅[使用安全字符串函数](using-safe-string-functions.md)。
+    操作字符串，驱动程序应使用安全的字符串函数而不是字符串函数提供了 C /C++的语言运行时库。 有关详细信息，请参阅[使用安全字符串函数](using-safe-string-functions.md)。
 
 -   验证对象句柄。
 
@@ -90,7 +90,7 @@ ms.locfileid: "56519301"
 
 -   处理 IRP 清理并正确关闭操作。
 
-    请务必了解之间的区别[ **IRP\_MJ\_清理**](https://msdn.microsoft.com/library/windows/hardware/ff550718)并[ **IRP\_MJ\_关闭** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详情，请参阅以下主题：
+    请务必了解之间的区别[ **IRP\_MJ\_清理**](https://msdn.microsoft.com/library/windows/hardware/ff550718)并[ **IRP\_MJ\_关闭** ](https://msdn.microsoft.com/library/windows/hardware/ff550720)请求。 清理请求到达后关闭的应用程序的所有句柄上的文件对象，但有时在所有 I/O 之前请求已完成。 关闭请求到达后的文件对象的所有 I/O 请求已完成或已取消。 有关详细信息，请参阅下列主题：
 
     [DispatchCreate、 DispatchClose 和 DispatchCreateClose 例程](dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 

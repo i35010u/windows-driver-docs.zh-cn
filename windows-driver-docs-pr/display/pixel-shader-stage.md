@@ -5,11 +5,11 @@ ms.assetid: 969b6cb9-7b03-4c9f-bf4a-e8d9b442c847
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ec1c0e0bdda7e7a246b332bf2075af41caf72b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352280"
 ---
 # <a name="pixel-shader-stage"></a>像素着色器阶段
 

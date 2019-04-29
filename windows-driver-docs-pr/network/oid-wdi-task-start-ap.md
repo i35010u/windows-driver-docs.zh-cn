@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 1631e42945f5e4e73177003dbcbe45b50cc764fe
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365738"
 ---
 # <a name="oidwditaskstartap"></a>OID\_WDI\_TASK\_START\_AP
 

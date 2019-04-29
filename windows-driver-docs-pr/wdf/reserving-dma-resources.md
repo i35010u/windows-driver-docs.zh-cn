@@ -5,11 +5,11 @@ ms.assetid: 8C5FF779-8D54-47D9-8EC6-7D4921F8F697
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d76698c0c8b89b907354e1f06bb30730d277d8fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325171"
 ---
 # <a name="reserving-dma-resources"></a>保留 DMA 资源
 

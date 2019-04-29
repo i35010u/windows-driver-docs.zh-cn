@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4462c2f603f5d7c6e6ce57017fe9048961c2e8f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390128"
 ---
 # <a name="obtaining-information-about-an-io-request"></a>获取有关 I/O 请求的信息
 

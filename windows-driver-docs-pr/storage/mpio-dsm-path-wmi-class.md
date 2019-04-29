@@ -5,11 +5,11 @@ ms.assetid: 4f8d7fb0-2b9a-44dc-bb87-f70285f1b47c
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1a861a667cc0c73ec437c4d54aa977bb67b18f7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391391"
 ---
 # <a name="mpiodsmpath-wmi-class"></a>MPIO\_DSM\_路径 WMI 类
 

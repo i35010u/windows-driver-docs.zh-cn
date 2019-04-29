@@ -1,19 +1,19 @@
 ---
-title: 显示器驱动程序的版本号
-description: 显示器驱动程序的版本号
+title: 显示驱动程序的版本号
+description: 显示驱动程序的版本号
 ms.assetid: 73d26532-61c1-45d1-a388-7c0befc53487
 keywords:
 - 显示版本号 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dabe47e0f30e73e63831039886eebbcffd33a32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390756"
 ---
-# <a name="version-numbers-for-display-drivers"></a>显示器驱动程序的版本号
+# <a name="version-numbers-for-display-drivers"></a>显示驱动程序的版本号
 
 
 ## <span id="ddk_ensuring_correct_version_numbers_gg"></span><span id="DDK_ENSURING_CORRECT_VERSION_NUMBERS_GG"></span>

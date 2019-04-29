@@ -1,17 +1,17 @@
 ---
-title: PwrTest 监视器方案
+title: PwrTest 监视方案
 description: PwrTest 监视器方案记录用户监视或显示自动变暗和消隐功能相关的空闲统计信息。
 ms.assetid: 8B45C85A-01E8-4256-82F3-097871CB9021
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a9e3a9b439f3888e05ffcbdee460e10f80462c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351789"
 ---
-# <a name="pwrtest-monitor-scenario"></a>PwrTest 监视器方案
+# <a name="pwrtest-monitor-scenario"></a>PwrTest 监视方案
 
 PwrTest 监视器方案记录用户监视或显示自动变暗和消隐功能相关的空闲统计信息。
 
@@ -196,6 +196,6 @@ pwrtest.exe /device /t:60
 </tbody>
 </table>
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [PwrTest 语法](pwrtest-syntax.md)

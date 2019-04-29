@@ -1,17 +1,17 @@
 ---
-title: 显示适配器 （Windows 2000 模式） 的子设备
-description: 显示适配器 （Windows 2000 模式） 的子设备
+title: 显示适配器的子设备（Windows 2000 模型）
+description: 显示适配器的子设备（Windows 2000 模型）
 ms.assetid: 953e0e2d-214e-456e-8f5f-8e927887cab3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86aa9213845c1ae865cf2ae318efb1b0d0814ff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354339"
 ---
-# <a name="child-devices-of-the-display-adapter-windows-2000-model"></a>显示适配器 （Windows 2000 模式） 的子设备
+# <a name="child-devices-of-the-display-adapter-windows-2000-model"></a>显示适配器的子设备（Windows 2000 模型）
 
 
 ## <span id="ddk_child_devices_of_the_display_adapter_windows_2000_model__gg"></span><span id="DDK_CHILD_DEVICES_OF_THE_DISPLAY_ADAPTER_WINDOWS_2000_MODEL__GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 2ceb54ff-f111-4cf7-8c8e-f9a4dce42d4e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 790b4723cbffc05290e133012bc211f4bd822e74
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389233"
 ---
 # <a name="kspropsetidbdaca"></a>KSPROPSETID\_BdaCA
 
@@ -43,7 +43,7 @@ KSPROPSETID\_BdaCA 是 BDA 条件性访问 (CA) 属性集。 它用于查询授�
 
 属性中设置此属性对应于事件中 KSEVENTSETID\_BdaCAEvent 事件集。 BDA 微型驱动程序发出信号中设置通知 CA 插件此事件的事件。 这些 CA 插件然后查询 KSPROPSETID 中的相应属性\_BdaCA。 BDA 微型驱动程序通知这些事件或者每当发生重要的状态更改或与用户进行交互。 BDA 微型驱动程序与用户交互，例如，若要向用户显示一条消息，或协商与用户事务。 重要的状态更改时，例如，用户卸下智能卡从智能卡读卡器。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [KSEVENTSETID\_BdaCAEvent](kseventsetid-bdacaevent.md)
 

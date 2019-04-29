@@ -1,17 +1,17 @@
 ---
-title: 生成从特定于总线的唯一 ID 的容器 Id
-description: 生成从特定于总线的唯一 ID 的容器 Id
+title: 从特定于总线的唯一 ID 生成的容器 ID
+description: 从特定于总线的唯一 ID 生成的容器 ID
 ms.assetid: 06bd4f06-51f2-4983-9ddc-bff27eaa367e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 270a709ce21667d57740e46c56d1da443446141b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387222"
 ---
-# <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>生成从特定于总线的唯一 ID 的容器 Id
+# <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>从特定于总线的唯一 ID 生成的容器 ID
 
 
 生成的容器 ID 的设备的首选的方法基于特定于总线的唯一 id。 这是生成的容器 Id 的最精确和最可靠方法。

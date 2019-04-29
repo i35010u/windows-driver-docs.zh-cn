@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4c01f47bb90f157ac4e2b411f006bf553ff4211
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356318"
 ---
 # <a name="place-file-syntax"></a>位置文件语法
 

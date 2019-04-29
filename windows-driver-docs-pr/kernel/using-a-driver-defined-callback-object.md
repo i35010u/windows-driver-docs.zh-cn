@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a28711ec8958f9dc14e8884e946f153de2dd6ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355291"
 ---
 # <a name="using-a-driver-defined-callback-object"></a>使用驱动程序定义的回调对象
 

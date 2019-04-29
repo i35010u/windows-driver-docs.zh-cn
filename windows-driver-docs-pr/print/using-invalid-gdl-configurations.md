@@ -1,6 +1,6 @@
 ---
-title: 使用无效 GDL 配置
-description: 使用无效 GDL 配置
+title: 使用无效的 GDL 配置
+description: 使用无效的 GDL 配置
 ms.assetid: a61232dd-ab64-4ca4-9eb9-68fe5c7249e4
 keywords:
 - GDL WDK 配置
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1226ffd071ea12c837db07467e22700111368188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387131"
 ---
-# <a name="using-invalid-gdl-configurations"></a>使用无效 GDL 配置
+# <a name="using-invalid-gdl-configurations"></a>使用无效的 GDL 配置
 
 
 并非所有可能的设置包括无效或不允许。 例如，打印设备可能不允许某个项硬性媒体，放入任何送纸器，因为媒体可能卡纸。 GDL 语言，可通过定义的无效的参数设置的组合还定义无效配置。

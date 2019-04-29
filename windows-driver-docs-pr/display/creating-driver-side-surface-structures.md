@@ -1,6 +1,6 @@
 ---
-title: 创建驱动程序端图面上结构
-description: 创建驱动程序端图面上结构
+title: 创建驱动程序端图面结构
+description: 创建驱动程序端图面结构
 ms.assetid: d5e2e6ee-8853-4a17-b1c6-48c75474b2b7
 keywords:
 - 上下文 WDK Direct3D，驱动程序端图面上结构
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d715e7c1e46d59516eec7283a5360db4c74d409e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387248"
 ---
-# <a name="creating-driver-side-surface-structures"></a>创建驱动程序端图面上结构
+# <a name="creating-driver-side-surface-structures"></a>创建驱动程序端图面结构
 
 
 ## <span id="ddk_creating_driver_side_surface_structures_gg"></span><span id="DDK_CREATING_DRIVER_SIDE_SURFACE_STRUCTURES_GG"></span>

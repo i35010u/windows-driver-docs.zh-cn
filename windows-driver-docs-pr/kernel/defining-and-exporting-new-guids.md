@@ -1,6 +1,6 @@
 ---
-title: 定义和导出新的 Guid
-description: 定义和导出新的 Guid
+title: 定义和导出新 GUID
+description: 定义和导出新 GUID
 ms.assetid: a7deb283-7cab-4f3c-ad96-f8085222456e
 keywords:
 - 全局唯一标识符 WDK 内核
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5a2e76726008bdee18a36bf5a7496e3fbbe5e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388216"
 ---
-# <a name="defining-and-exporting-new-guids"></a>定义和导出新的 Guid
+# <a name="defining-and-exporting-new-guids"></a>定义和导出新 GUID
 
 
 

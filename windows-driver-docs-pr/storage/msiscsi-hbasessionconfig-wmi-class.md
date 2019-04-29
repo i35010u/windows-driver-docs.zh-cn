@@ -5,11 +5,11 @@ ms.assetid: ef3ac7d0-be4a-457e-b837-a6434776dfc1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 916c0350f6fda5c23b66d04895d1fd81b765efb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351874"
 ---
 # <a name="msiscsihbasessionconfig-wmi-class"></a>MSiSCSI\_HBASessionConfig WMI 类
 

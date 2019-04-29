@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8763ef709eee0286984b769c22ca83515325856f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391823"
 ---
 # <a name="using-wpp-software-tracing-in-umdf-drivers"></a>在 UMDF 驱动程序中使用 WPP 软件跟踪
 

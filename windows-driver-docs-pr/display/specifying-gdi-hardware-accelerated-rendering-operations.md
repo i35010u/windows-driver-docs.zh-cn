@@ -1,19 +1,19 @@
 ---
-title: 指定 GDI 硬件加速的呈现操作
-description: 指定 GDI 硬件加速的呈现操作
+title: 指定 GDI 硬件加速渲染操作
+description: 指定 GDI 硬件加速渲染操作
 ms.assetid: 71eb9cdf-0448-48d1-835a-84bbbba13670
 keywords:
 - 呈现 GDI WDK 显示采用硬件加速的操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e67aa705c8eca6d9243cccd72fc4ed8f7661a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389924"
 ---
-# <a name="specifying-gdi-hardware-accelerated-rendering-operations"></a>指定 GDI 硬件加速的呈现操作
+# <a name="specifying-gdi-hardware-accelerated-rendering-operations"></a>指定 GDI 硬件加速渲染操作
 
 
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99db8f3645f569daff11cbc767fdd81a0585841a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389546"
 ---
 # <a name="ppd-specific-interface"></a>特定于 PPD 的接口
 

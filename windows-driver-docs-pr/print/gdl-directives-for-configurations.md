@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 950f183fcbeb5e4d28c69068c856dd6748372649
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392149"
 ---
 # <a name="gdl-directives-for-configurations"></a>用于配置的 GDL 指令
 

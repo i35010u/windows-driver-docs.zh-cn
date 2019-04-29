@@ -1,6 +1,6 @@
 ---
-title: 绘图器驱动程序微型驱动程序
-description: 绘图器驱动程序微型驱动程序
+title: 绘图仪驱动程序微型驱动程序
+description: 绘图仪驱动程序微型驱动程序
 ms.assetid: f7223a0a-df02-4a4f-a3d6-7910aed926eb
 keywords:
 - 绘图器驱动程序 WDK 打印，微型驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c38dbc5d532a603fc524c6ca7b8313c3813c88f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388070"
 ---
-# <a name="plotter-driver-minidrivers"></a>绘图器驱动程序微型驱动程序
+# <a name="plotter-driver-minidrivers"></a>绘图仪驱动程序微型驱动程序
 
 
 

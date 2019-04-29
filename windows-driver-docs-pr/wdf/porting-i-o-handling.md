@@ -5,11 +5,11 @@ ms.assetid: D65B85C4-401F-4143-9626-5C16E24925A0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a991b3a73d9014e3214c5409869973c238a3de43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390096"
 ---
 # <a name="porting-io"></a>移植 I/O
 

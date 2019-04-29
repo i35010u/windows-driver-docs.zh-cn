@@ -5,11 +5,11 @@ ms.assetid: FBCE5E9C-8411-46C1-899E-A6C8FE27D947
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c190b112862a9068f9ef8e5c067f1b8f12c905
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324763"
 ---
 # <a name="output-keywords"></a>输出关键字
 
@@ -204,7 +204,7 @@ Job3DSliceHeight 初始化配置文件
 </thead>
 <tbody>
 <tr class="odd">
-<td>“属性”</td>
+<td>名称</td>
 <td>psk3d:Job3DSliceHeight</td>
 </tr>
 <tr class="even">
@@ -218,7 +218,7 @@ Job3DSliceHeight 初始化配置文件
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>值：</strong>SliceHeight</p>
 <p><strong>描述:</strong>SliceHeight 必须包含一个等于微米所需扇区高度的正整数。</p></td>

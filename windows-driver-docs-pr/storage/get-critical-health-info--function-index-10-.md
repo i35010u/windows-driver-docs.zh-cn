@@ -5,11 +5,11 @@ ms.assetid: 2083628D-FB46-4104-9F70-F7124B35DD04
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: aa0417aefa8af1ec41b2f9c27f4bbe938069f176
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355855"
 ---
 # <a name="get-critical-health-info-function-index-10"></a>获取关键的运行状况信息（功能索引 10）
 

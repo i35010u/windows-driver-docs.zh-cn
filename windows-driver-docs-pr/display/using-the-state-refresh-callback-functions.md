@@ -1,17 +1,17 @@
 ---
-title: 使用状态刷新的回调函数
-description: 使用状态刷新的回调函数
+title: 使用状态刷新回调函数
+description: 使用状态刷新回调函数
 ms.assetid: fadd2edb-776b-4ef1-b663-cc004522f8ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4edba9ebd26408382aa9ab9deb46569e2c5044e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388978"
 ---
-# <a name="using-the-state-refresh-callback-functions"></a>使用状态刷新的回调函数
+# <a name="using-the-state-refresh-callback-functions"></a>使用状态刷新回调函数
 
 
 用户模式显示驱动程序可以使用[Direct3D 运行时版本 10 状态刷新回调函数](https://msdn.microsoft.com/library/windows/hardware/ff552879)要实现无状态的驱动程序或者构建命令缓冲区前导码数据。

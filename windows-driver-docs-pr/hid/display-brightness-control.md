@@ -1,17 +1,17 @@
 ---
-title: 显示的亮度控制
+title: 显示器亮度控制
 description: 允许键盘 （外部或嵌入在便携式计算机上），来控制通过 HID 的便携式计算机或平板电脑的屏幕亮度。
 ms.assetid: B22BA244-C5C6-4A50-AFE6-4E773194F18C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f4277b52857efe36a1c17c484521cc95be19d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388956"
 ---
-# <a name="display-brightness-control"></a>显示的亮度控制
+# <a name="display-brightness-control"></a>显示器亮度控制
 
 
 从 Windows 8 开始，已对标准化的解决方案已添加为允许键盘 （外部或嵌入在便携式计算机上），来控制通过 HID 的便携式计算机或平板电脑的屏幕亮度。
@@ -59,7 +59,7 @@ End Collection
 -   只能使用一次处于活动状态且已发送。 使用者控件不允许多个按钮，同时按下。 当发送新的用途时，假定释放以前的密钥的使用情况。
 -   亮度向上/向下的 retriggering 密钥并由 Windows 处理重复的其速率。 硬件应不保留重新发送使用情况时这些密钥保持由用户按下。 释放键时，硬件应该只会发送一个输入的报告按钮被按下时，另一个。
 
-## <a name="troubleshooting-common-errors"></a>故障排除的常见错误
+## <a name="troubleshooting-common-errors"></a>排查常见错误
 
 
 提示\#1:亮度递增/递减 HID 用法仅只能对移动系统 （由电池供电） 进行操作，需要 Windows 8。

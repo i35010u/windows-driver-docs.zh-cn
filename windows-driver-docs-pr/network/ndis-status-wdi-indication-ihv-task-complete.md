@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_TASK_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 01103caf1cfb5b576ee47556ae64447d94c0a118
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390722"
 ---
 # <a name="ndisstatuswdiindicationihvtaskcomplete"></a>NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成
 
 
 NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成指示完成[OID\_WDI\_任务\_IHV](oid-wdi-task-ihv.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

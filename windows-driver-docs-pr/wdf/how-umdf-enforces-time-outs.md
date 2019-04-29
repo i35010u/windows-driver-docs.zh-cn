@@ -1,6 +1,6 @@
 ---
-title: 在 UMDF 主机进程超时
-description: 在 UMDF 主机进程超时
+title: UMDF 中的主机进程超时
+description: UMDF 中的主机进程超时
 ms.assetid: b8a0a4cc-9c6d-40e2-a3f1-9807dbcf15d9
 keywords:
 - 用户模式驱动程序框架 WDK，超时值
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b3c3c77bff4c2597a89f66c7c43c9f990357c7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391880"
 ---
-# <a name="host-process-timeouts-in-umdf"></a>在 UMDF 主机进程超时
+# <a name="host-process-timeouts-in-umdf"></a>UMDF 中的主机进程超时
 
 
 当该发送程序发送到驱动程序主机进程的关键请求时，主机将启动内部计时器。 默认超时间隔为 60 秒。 关键的请求包括插、 电源和 I/O 取消。

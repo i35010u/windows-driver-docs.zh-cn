@@ -11,11 +11,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c67c4f3d883d4e32b5ea3f4ed334002cdc73f13e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355813"
 ---
 # <a name="application-verifier"></a>应用程序验证工具
 
@@ -30,7 +30,7 @@ Application Verifier (AppVerif.exe) 是*动态验证*用户模式应用程序的
 
 应用程序验证工具附带了其自身的文档。 若要阅读的文档，请启动应用程序验证程序，并从**帮助**菜单上，单击**帮助**，或按**F1**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [对于 Windows 调试工具与相关的工具](tools-related-to-debugging-tools-for-windows.md)

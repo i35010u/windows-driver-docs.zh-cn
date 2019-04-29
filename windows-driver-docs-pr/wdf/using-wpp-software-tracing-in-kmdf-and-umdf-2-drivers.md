@@ -1,17 +1,17 @@
 ---
-title: 使用 KMDF 和 UMDF 2 中的即时跟踪记录器 (IFR) 驱动程序
+title: 在 KMDF 和 UMDF 2 驱动程序中使用即时跟踪记录器 (IFR)
 description: 从 Windows 10 开始，可以构建 WDF 驱动程序，以便获取其他驱动程序调试通过 Windows 软件跟踪预处理的信息。
 ms.assetid: CA2A7ED3-4372-4EE9-8B04-042A8C864BD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8deb7a4491b22e674fb1329dc7b5b8c42e17b59b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391830"
 ---
-# <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>使用 KMDF 和 UMDF 2 中的即时跟踪记录器 (IFR) 驱动程序
+# <a name="using-inflight-trace-recorder-ifr-in-kmdf-and-umdf-2-drivers"></a>在 KMDF 和 UMDF 2 驱动程序中使用即时跟踪记录器 (IFR)
 
 
 从 Windows 10 开始，可以构建 KMDF 或 UMDF 驱动程序，以便获取其他驱动程序调试通过 Windows 软件跟踪预处理的信息。 从版本 1.15 KMDF 和 UMDF 2.15 版本开始，提供此功能，称为即时跟踪记录器 (IFR)。

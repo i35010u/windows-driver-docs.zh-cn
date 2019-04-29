@@ -4,11 +4,11 @@ description: 本主题介绍专门为版本 2 的串行框架扩展 (SerCx2) 定
 ms.localizationpriority: medium
 ms.date: 12/27/2018
 ms.openlocfilehash: b82a1e22366c31791cd86214ea098711e71edba1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387988"
 ---
 # <a name="sercx2-object-handles"></a>SerCx2 对象句柄
 

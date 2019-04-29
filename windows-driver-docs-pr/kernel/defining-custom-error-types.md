@@ -17,11 +17,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1841930f086c7081e0422de724fce11150b08d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388222"
 ---
 # <a name="defining-custom-error-types"></a>定义自定义错误类型
 
@@ -86,7 +86,7 @@ SeverityNames = (
 <thead>
 <tr class="header">
 <th>关键字</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ SeverityNames = (
 <td><p>代码字段的新 IO_ERR_<em>XXX</em>值。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>严重级别</strong></p></td>
+<td><p><strong>Severity</strong></p></td>
 <td><p>Severity 字段的新 IO_ERR_<em>XXX</em>值。 指定的值必须是由定义的符号名称之一<strong>SeverityNames</strong>标头指令。</p></td>
 </tr>
 <tr class="odd">

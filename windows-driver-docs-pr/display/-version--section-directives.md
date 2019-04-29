@@ -5,11 +5,11 @@ ms.assetid: 76AC10DC-AECC-4C35-8BEE-4B2E8B06FEE0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e472b66ca51893a81e181c97fde57322f4960594
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391287"
 ---
 # <a name="version-section-directives"></a>\[版本\]部分指令
 

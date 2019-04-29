@@ -1,17 +1,17 @@
 ---
-title: 可用接口和相关的 Api
+title: 可用接口和相关 API
 description: 有三个 GPIO 接口一个，每个设备。 每个接口的 guid 引用。
 ms.assetid: 87A275B0-825A-47F1-9701-D7E91C493877
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1964a81972ae77c7034ae9d516437ab2f7b01274
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326116"
 ---
-# <a name="available-interfaces-and-related-apis"></a>可用接口和相关的 Api
+# <a name="available-interfaces-and-related-apis"></a>可用接口和相关 API
 
 
 有三个 GPIO 接口： 一个用于每个设备。 每个接口的 guid 引用。

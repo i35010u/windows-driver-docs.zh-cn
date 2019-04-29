@@ -5,11 +5,11 @@ ms.assetid: cca51b9c-ce37-4efb-ab42-8eb62b25eb21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a10fd71af917dd6e946328afc319e60ae7c3e22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390438"
 ---
 # <a name="setting-the-driver-control-flags"></a>设置驱动程序控制标志
 

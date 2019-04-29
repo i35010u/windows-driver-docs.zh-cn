@@ -1,17 +1,17 @@
 ---
-title: V4 打印机驱动程序呈现
+title: V4 打印机驱动程序渲染
 description: 用于呈现打印作业打印设备的页面描述语言到，v4 打印驱动程序模型使用 XPSDrv 呈现模块。
 ms.assetid: 8952063C-3706-43A0-BA6B-231E7CD01514
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fa8369d625a1c5e0ce9633243507b984a819c4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358675"
 ---
-# <a name="v4-printer-driver-rendering"></a>V4 打印机驱动程序呈现
+# <a name="v4-printer-driver-rendering"></a>V4 打印机驱动程序渲染
 
 
 用于呈现打印作业打印设备的页面描述语言到，v4 打印驱动程序模型使用[XPSDrv 呈现模块](xpsdrv-render-module.md)。

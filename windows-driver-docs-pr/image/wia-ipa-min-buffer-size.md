@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a038ca873179974a9d2f4958bc3d129fce867c0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388776"
 ---
 # <a name="wiaipaminbuffersize"></a>WIA\_IPA\_MIN\_缓冲区\_大小
 
@@ -58,17 +58,17 @@ WIA\_IPA\_MIN\_缓冲区\_大小等同于[ **WIA\_IPA\_缓冲区\_大小**](wia-
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>对于 Windows Vista 驱动程序的所有传输启用项可选。 如果实施此属性，则编写的 Windows Server 2003、 Windows XP 和早期 Windows 版本的应用程序可以估计的传输缓冲区大小，并将因此，最佳的传输速率。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPA\_缓冲区\_大小**](wia-ipa-buffer-size.md)

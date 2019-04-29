@@ -1,6 +1,6 @@
 ---
-title: 基于数据包的总线 Master DMA
-description: 基于数据包的总线 Master DMA
+title: 基于数据包的总线主控 DMA
+description: 基于数据包的总线主控 DMA
 ms.assetid: f94b9ca9-6e29-4801-a092-30af19345f6d
 keywords:
 - 主总线 DMA WDK 微型端口，基于数据包
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d352e018433c845c2d96e0ed89cd648cf6e85ec8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352417"
 ---
-# <a name="packet-based-bus-master-dma"></a>基于数据包的总线 Master DMA
+# <a name="packet-based-bus-master-dma"></a>基于数据包的总线主控 DMA
 
 
 ## <span id="ddk_packet_based_bus_master_dma_gg"></span><span id="DDK_PACKET_BASED_BUS_MASTER_DMA_GG"></span>

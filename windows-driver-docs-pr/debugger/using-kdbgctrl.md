@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ee250977198e420ec2a818d18e9953f4efcf9193
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390026"
 ---
 # <a name="using-kdbgctrl"></a>使用 KDbgCtrl
 

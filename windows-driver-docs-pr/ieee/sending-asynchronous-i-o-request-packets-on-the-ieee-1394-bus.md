@@ -1,6 +1,6 @@
 ---
-title: IEEE 1394 总线上发送的异步 I/O 请求数据包
-description: IEEE 1394 总线上发送的异步 I/O 请求数据包
+title: 在 IEEE 1394 总线上发送异步 I/O 请求数据包
+description: 在 IEEE 1394 总线上发送异步 I/O 请求数据包
 ms.assetid: 93ad0cdf-5ac2-4916-b90e-1e64ca4494b6
 keywords:
 - 发送异步 I/O 请求
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 900b3d0c4690d8f778ed42725fbc4a6e0b03365d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390331"
 ---
-# <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>IEEE 1394 总线上发送的异步 I/O 请求数据包
+# <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上发送异步 I/O 请求数据包
 
 
 

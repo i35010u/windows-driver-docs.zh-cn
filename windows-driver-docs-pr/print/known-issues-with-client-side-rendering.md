@@ -1,19 +1,19 @@
 ---
-title: 客户端呈现的已知的问题
-description: 客户端呈现的已知的问题
+title: 客户端呈现的已知问题
+description: 客户端呈现的已知问题
 ms.assetid: ad17639d-6671-466b-8f72-e635e79fd1cc
 keywords:
 - 客户端呈现 WDK 打印、 已知问题
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5341cd48c106547511308f8abb532bb59540ad15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388131"
 ---
-# <a name="known-issues-with-client-side-rendering"></a>客户端呈现的已知的问题
+# <a name="known-issues-with-client-side-rendering"></a>客户端呈现的已知问题
 
 客户端呈现为启用，所有驱动程序默认情况下，因为它对大多数打印机驱动程序是透明的并向用户提供明确的权益。 大多数打印机驱动程序不会启用此功能的任何问题。
 

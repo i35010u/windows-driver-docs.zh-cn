@@ -5,11 +5,11 @@ ms.assetid: e38ae148-3bb8-41b4-acdd-55bd67c24d48
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 663a895f6c234d8265e4295b6110b119a69377cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390764"
 ---
 # <a name="version-token"></a>版本标记
 

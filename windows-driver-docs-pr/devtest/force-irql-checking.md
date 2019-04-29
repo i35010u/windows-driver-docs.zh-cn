@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73b01d0459207857b8a573334ad4d79eb7857e9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387258"
 ---
 # <a name="force-irql-checking"></a>强制 IRQL 检查
 

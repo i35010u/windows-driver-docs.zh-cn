@@ -1,6 +1,6 @@
 ---
-title: 设置和使用互锁的队列
-description: 设置和使用互锁的队列
+title: 设置和使用联锁队列
+description: 设置和使用联锁队列
 ms.assetid: af44a4c0-5aa7-40aa-b511-df95c9bfe9bb
 keywords:
 - 互锁的 IRP 队列 WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bea2e7ebbf5870f7c5e65bedea3fa7b2a867430
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391093"
 ---
-# <a name="setting-up-and-using-interlocked-queues"></a>设置和使用互锁的队列
+# <a name="setting-up-and-using-interlocked-queues"></a>设置和使用联锁队列
 
 
 

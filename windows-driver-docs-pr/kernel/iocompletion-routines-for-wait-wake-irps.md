@@ -1,6 +1,6 @@
 ---
-title: 等待/唤醒 Irp 的 IoCompletion 例程
-description: 等待/唤醒 Irp 的 IoCompletion 例程
+title: 等待/唤醒 IRP 的 IoCompletion 例程
+description: 等待/唤醒 IRP 的 IoCompletion 例程
 ms.assetid: 61239398-2d37-4163-8128-7a4a0916a262
 keywords:
 - 接收等待/唤醒 Irp
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f2df22314f662f05957524c8da7e39890b00453
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358320"
 ---
-# <a name="iocompletion-routines-for-waitwake-irps"></a>等待/唤醒 Irp 的 IoCompletion 例程
+# <a name="iocompletion-routines-for-waitwake-irps"></a>等待/唤醒 IRP 的 IoCompletion 例程
 
 
 

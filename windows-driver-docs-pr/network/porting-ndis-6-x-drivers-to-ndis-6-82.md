@@ -5,11 +5,11 @@ ms.assetid: D0BF7BB0-D9FD-434A-A02E-0667083485D2
 ms.date: 08/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 86f9d8dc9928aba3bc00c145da3ba3d41f6022fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324865"
 ---
 # <a name="porting-ndis-6x-drivers-to-ndis-682"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.82
 

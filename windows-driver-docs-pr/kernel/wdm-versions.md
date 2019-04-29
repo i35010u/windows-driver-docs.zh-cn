@@ -10,18 +10,18 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ef1fda1634a0375cb79f2fdc1c683c20c08e686
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391436"
 ---
 # <a name="wdm-versions"></a>WDM 版本
 
 
 虽然 Microsoft Windows 2000 和更高版本的基于 NT 的操作系统，以及 Windows 98 和 Windows Me，所有支持各种版本的 WDM，但对 WDM 增量更改会导致更高版本发布的操作系统支持其他 WDM不支持早期版本的功能。 更高版本的 WDM 通常支持所有的 WDM; 早期版本中提供的功能也就是说，WDM 每个新版本是以前的 WDM 版本的超集。 如果可能，应为在任何操作系统上的最低 WDM 版本符合跨系统驱动程序。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [确定 WDM 版本](determining-the-wdm-version.md)

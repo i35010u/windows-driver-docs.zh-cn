@@ -1,6 +1,6 @@
 ---
-title: 在基于 x86 的计算机中的开窗 Vdm
-description: 在基于 x86 的计算机中的开窗 Vdm
+title: 基于 x86 的计算机中的开窗 VDM
+description: 基于 x86 的计算机中的开窗 VDM
 ms.assetid: 01250cef-1ddb-4b32-a155-0170e1e4517a
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，VGA，在基于 x86 的计算机中的开窗 Vdm
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49eaf87deb795ba00cc6052d2e99169cb1a19998
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391148"
 ---
-# <a name="windowed-vdms-in-x86-based-machines"></a>在基于 x86 的计算机中的开窗 Vdm
+# <a name="windowed-vdms-in-x86-based-machines"></a>基于 x86 的计算机中的开窗 VDM
 
 
 ## <span id="ddk_windowed_vdms_in_x86_based_machines_gg"></span><span id="DDK_WINDOWED_VDMS_IN_X86_BASED_MACHINES_GG"></span>

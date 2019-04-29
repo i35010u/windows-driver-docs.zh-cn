@@ -5,13 +5,13 @@ ms.assetid: 5CE619F4-E136-4F8F-8F90-F7F96DE4642E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0842652ef965ac39a694619d4640ec1648b88cc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387969"
 ---
-# <a name="camera-driver-bring-up-guide"></a>照相机的驱动程序显示指南
+# <a name="camera-driver-bring-up-guide"></a>相机驱动程序启动指南
 
 本主题介绍如何启用红外 (IR) 照相机的人脸身份验证，并适用于原始设备制造商 (Oem) 和独立硬件供应商 (Ihv) 想要提供此功能在其设备中。
 

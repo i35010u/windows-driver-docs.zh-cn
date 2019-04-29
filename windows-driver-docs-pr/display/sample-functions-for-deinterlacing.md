@@ -1,19 +1,19 @@
 ---
-title: 有关去隔行示例函数
-description: 有关去隔行示例函数
+title: 反交错的示例函数
+description: 反交错的示例函数
 ms.assetid: a91c0267-7a3e-4206-8680-6e87778a329d
 keywords:
 - 取消隔行扫描 WDK DirectX va，因此示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68b58482bb0dbaa30635568a46e4dc58cfb17205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390532"
 ---
-# <a name="sample-functions-for-deinterlacing"></a>有关去隔行示例函数
+# <a name="sample-functions-for-deinterlacing"></a>反交错的示例函数
 
 
 ## <span id="ddk_sample_functions_for_deinterlacing_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_DEINTERLACING_GG"></span>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d0658d58919e081417e17c00603ac29a7d962dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322169"
 ---
 # <a name="hspluginquerycellularexceptionhosts-function"></a>HS\_插件\_查询\_移动电话\_异常\_主机函数
 
@@ -29,7 +29,7 @@ ms.locfileid: "56525676"
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *\*pExceptionsList* \[in、 out\]  
@@ -55,17 +55,17 @@ ms.locfileid: "56525676"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**HS\_PLUGIN\_CELLULAR\_EXCEPTION\_HOSTS**](hs-plugin-cellular-exception-hosts.md)

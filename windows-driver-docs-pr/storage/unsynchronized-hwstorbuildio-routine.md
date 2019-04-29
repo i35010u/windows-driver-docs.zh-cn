@@ -5,11 +5,11 @@ ms.assetid: 6b18e3ff-30dd-414b-99b5-4bb914660a67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a09fe0e96910027c62ce0ed76fa75a65ce4da90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390205"
 ---
 # <a name="unsynchronized-hwstorbuildio-routine"></a>未同步的 HwStorBuildIo 例程
 

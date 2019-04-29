@@ -5,11 +5,11 @@ ms.assetid: E2AF7B3A-B614-4fe1-9CFB-0860F68E895C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f3579444172825987cbde409823b564f3a8725d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355475"
 ---
 # <a name="parallel"></a>并行
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 390fcdb77395689fcc540afc8ba58472a00f1635
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388224"
 ---
 # <a name="d1latency-d2latency-and-d3latency"></a>D1Latency、D2Latency 和 D3Latency
 

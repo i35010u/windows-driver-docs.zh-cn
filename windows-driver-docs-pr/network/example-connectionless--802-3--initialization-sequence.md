@@ -1,17 +1,17 @@
 ---
-title: 示例无连接 (802.3) 初始化序列
-description: 示例无连接 (802.3) 初始化序列
+title: 无连接 (802.3) 初始化序列示例
+description: 无连接 (802.3) 初始化序列示例
 ms.assetid: 9625f717-81c3-460b-83e8-c7a86aa85f36
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e0320207ba01037fbb37a84a51f7e99c86c348d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391666"
 ---
-# <a name="example-connectionless-8023-initialization-sequence"></a>示例无连接 (802.3) 初始化序列
+# <a name="example-connectionless-8023-initialization-sequence"></a>无连接 (802.3) 初始化序列示例
 
 
 

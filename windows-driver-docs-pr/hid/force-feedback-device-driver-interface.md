@@ -1,6 +1,6 @@
 ---
-title: 力反馈设备驱动程序接口
-description: 力反馈设备驱动程序接口
+title: 强制反馈设备驱动程序接口
+description: 强制反馈设备驱动程序接口
 ms.assetid: 59668521-84b9-4a1a-980b-6de57422a2c5
 keywords:
 - 强制反馈驱动程序 WDK HID
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92790a166e7b0aace709dfc12e0bf9416bfa81c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388954"
 ---
-# <a name="force-feedback-device-driver-interface"></a>力反馈设备驱动程序接口
+# <a name="force-feedback-device-driver-interface"></a>强制反馈设备驱动程序接口
 
 
 

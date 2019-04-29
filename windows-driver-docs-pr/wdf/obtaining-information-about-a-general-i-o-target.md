@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf5d87c4e59010fd69377ca112233415028d816f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390130"
 ---
 # <a name="obtaining-information-about-a-general-io-target"></a>获取有关常规 I/O 目标的信息
 

@@ -4,11 +4,11 @@ title: USB 设备的 UWP 应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30bde1de66ca92298e34c272d2c8ddca339eac1e
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389107"
 ---
 # <a name="uwp-app-for-a-usb-device"></a>USB 设备的 UWP 应用
 

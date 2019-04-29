@@ -1,17 +1,17 @@
 ---
-title: 位置
-description: 位置
+title: Location
+description: Location
 ms.assetid: f04ce4de-233d-4763-be4d-e913623f4f1a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba732e515fdaa7a8d2d89753f0dd7dfa0d3f851e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388079"
 ---
-# <a name="location"></a>位置
+# <a name="location"></a>Location
 
 
 架构路径：\\Printer.Finishing.HolePunch.Location

@@ -1,17 +1,17 @@
 ---
-title: WIA 错误处理程序取消的无模式对话框
-description: WIA 错误处理程序取消的无模式对话框
+title: WIA 错误处理程序取消无模式对话框
+description: WIA 错误处理程序取消无模式对话框
 ms.assetid: eca6c3a3-c196-4d28-925a-c8f5d5d8601b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e303e750fa61e0a48e72e05f56b8c71a57b5d7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392545"
 ---
-# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>WIA 错误处理程序取消的无模式对话框
+# <a name="wia-error-handler-cancellation-of-modeless-dialogs"></a>WIA 错误处理程序取消无模式对话框
 
 
 中的错误处理程序的复杂性大部分围绕如何处理取消和上诉无模式对话框。

@@ -1,17 +1,17 @@
 ---
-title: 停靠与便携式计算机盖板转换
+title: 扩展连接与笔记本电脑平板电脑转换
 description: 本主题介绍为指示器便携式计算机的静态转换和停靠操作之间的区别。
 ms.assetid: B6E33F63-5BEA-4588-80D2-F49821856708
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 20d6b0a977b34355865e092e312fa9be84c2d252
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326091"
 ---
-# <a name="docking-versus-laptop-slate-conversion"></a>停靠与便携式计算机盖板转换
+# <a name="docking-versus-laptop-slate-conversion"></a>扩展连接与笔记本电脑平板电脑转换
 
 
 本主题介绍为指示器便携式计算机的静态转换和停靠操作之间的区别。

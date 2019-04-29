@@ -10,11 +10,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 25d058c55351bf8233cdd0d7a0f37cc07c6cff14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390403"
 ---
 # <a name="about-the-directinput-control-panel"></a>有关 DirectInput 控制面板
 

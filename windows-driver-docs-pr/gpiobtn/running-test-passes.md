@@ -1,17 +1,17 @@
 ---
-title: 正在运行的测试通过
+title: 运行测试通过
 description: MITT 平台可以提供测试自动化和选择自定义发送目标调查的 GPIO 模式测试 GPIO 按钮。
 ms.assetid: E24AD015-1E14-4EF9-8443-D0F38FA3321E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 03235cd635ea5c5db9da6b9926867c05fe38ac6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390430"
 ---
-# <a name="running-test-passes"></a>正在运行的测试通过
+# <a name="running-test-passes"></a>运行测试通过
 
 
 MITT 平台可以提供测试自动化和选择自定义发送目标调查的 GPIO 模式测试 GPIO 按钮。

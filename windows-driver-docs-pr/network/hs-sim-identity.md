@@ -8,11 +8,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f1e8b3931fd6dd90e84f413d0e531ad02d9035c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322141"
 ---
 # <a name="hssimidentity-structure"></a>HS\_SIM\_IDENTITY 结构
 
@@ -74,13 +74,13 @@ EAP 身份验证方法。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [可扩展的身份验证协议](https://msdn.microsoft.com/library/windows/desktop/aa363502)

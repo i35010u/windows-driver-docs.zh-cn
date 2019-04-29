@@ -1,5 +1,5 @@
 ---
-title: 什么是 Windows 8 显示器驱动程序 (WDDM 1.2) 的新增功能
+title: Windows 8 显示驱动程序 (WDDM 1.2) 的新增功能
 ms.assetid: E2EE9B0A-B9EA-4073-ACF0-2B8CC00760FC
 description: 有关 Windows 8 中的新功能显示驱动程序。
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15c66765571f261dbbee3015d241574b4b736127
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391144"
 ---
-# <a name="whats-new-for-windows-8-display-drivers-wddm-12"></a>什么是 Windows 8 显示器驱动程序 (WDDM 1.2) 的新增功能
+# <a name="whats-new-for-windows-8-display-drivers-wddm-12"></a>Windows 8 显示驱动程序 (WDDM 1.2) 的新增功能
 
 
 Windows 8 引入了 Windows 显示器驱动程序模型 (WDDM) 1.2 版。 WDDM 1.2 还支持 Microsoft Direct3D 版本 11.1。 有关功能、 独立硬件供应商 (Ihv) 和硬件要求的指南，请参阅这些主题信息：

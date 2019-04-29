@@ -1,6 +1,6 @@
 ---
-title: 适用于 ISAPNP 设备标识符
-description: 适用于 ISAPNP 设备标识符
+title: ISAPNP 设备的标识符
+description: ISAPNP 设备的标识符
 ms.assetid: 67337bd6-3b5f-41a7-b50d-bf3587f243e8
 keywords:
 - 设备标识字符串 WDK、 ISAPNP 设备
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 341d5ef9ae7a5337e0b241f8ede14847e3ec0174
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388759"
 ---
-# <a name="identifiers-for-isapnp-devices"></a>适用于 ISAPNP 设备标识符
+# <a name="identifiers-for-isapnp-devices"></a>ISAPNP 设备的标识符
 
 
 

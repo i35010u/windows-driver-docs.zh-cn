@@ -1,19 +1,19 @@
 ---
-title: 最小 DirectX 8.0 DDI 支持
-description: 最小 DirectX 8.0 DDI 支持
+title: DirectX 8.0 DDI 最低支持要求
+description: DirectX 8.0 DDI 最低支持要求
 ms.assetid: 8758e25e-e54f-42e5-a23d-354af634bce9
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，最小支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f58ac91933e961a3d3c46adddd2841a35097d7c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390820"
 ---
-# <a name="minimal-directx-80-ddi-support"></a>最小 DirectX 8.0 DDI 支持
+# <a name="minimal-directx-80-ddi-support"></a>DirectX 8.0 DDI 最低支持要求
 
 
 ## <span id="ddk_minimal_directx_8_0_ddi_support_gg"></span><span id="DDK_MINIMAL_DIRECTX_8_0_DDI_SUPPORT_GG"></span>

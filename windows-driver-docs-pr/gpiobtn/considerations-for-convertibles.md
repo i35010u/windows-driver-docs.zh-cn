@@ -1,17 +1,17 @@
 ---
-title: 双用型的注意事项
+title: 有关变形的注意事项
 description: 本主题讨论双用型计时和性能的注意事项。
 ms.assetid: 2353023A-989A-4836-A39C-0B5F749E7FF2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8c5eedb732e502156623dce31328a5c6cc233e05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326110"
 ---
-# <a name="considerations-for-convertibles"></a>双用型的注意事项
+# <a name="considerations-for-convertibles"></a>有关变形的注意事项
 
 
 本主题讨论双用型计时和性能的注意事项。

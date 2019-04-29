@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a1068fdabfc1dc1747065eb09693d4ab6a0db3c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390864"
 ---
 # <a name="streaming-states"></a>流式处理状态
 

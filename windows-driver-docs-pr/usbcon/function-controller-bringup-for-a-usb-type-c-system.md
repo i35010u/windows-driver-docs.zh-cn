@@ -1,16 +1,16 @@
 ---
-Description: The driver for the function controller informs the operating system about the charging levels that its USB Type-C connector supports and notifies the battery subsystem when it can begin charging and the maximum amount of current the device can draw.
-title: 启动的 USB 类型 C Windows 系统上函数控制器
+Description: 函数控制器的驱动程序通知有关充电级别操作系统，其 USB C 型连接器支持，并在它可以开始收费和设备可以绘制当前的最长时通知电池子系统。
+title: 在 USB 类型 C Windows 系统上启动功能控制器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 488ea8a90b8d46564e7351c001267271f719f854
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391558"
 ---
-# <a name="bring-up-the-function-controller-on-a-usb-type-c-windows-system"></a>启动的 USB 类型 C Windows 系统上函数控制器
+# <a name="bring-up-the-function-controller-on-a-usb-type-c-windows-system"></a>在 USB 类型 C Windows 系统上启动功能控制器
 
 
 **摘要**
@@ -81,7 +81,7 @@ Device (UFN0)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[开发 USB 类型 C 连接器的 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)  
+[为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)  
 
 
 

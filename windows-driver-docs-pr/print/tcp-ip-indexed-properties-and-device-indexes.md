@@ -1,6 +1,6 @@
 ---
-title: TCP/IP 编制索引的属性和设备索引
-description: TCP/IP 编制索引的属性和设备索引
+title: TCP/IP 带索引属性和设备索引
+description: TCP/IP 带索引属性和设备索引
 ms.assetid: b26b0c18-1787-43e0-8461-acfbd9fb38f9
 keywords:
 - TCP/IP 索引属性 WDK 打印机
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: debaae0b9b7525edd897c6cb364263f98ea209e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388066"
 ---
-# <a name="tcpip-indexed-properties-and-device-indexes"></a>TCP/IP 编制索引的属性和设备索引
+# <a name="tcpip-indexed-properties-and-device-indexes"></a>TCP/IP 带索引属性和设备索引
 
 
 索引的属性启用要追加到架构属性名称，从而支持多个相关的属性，以共享相同的名称，但每个都有一个数字索引来标识的单个属性的数字索引。 索引值必须是正整数，但其大小上没有上限。 架构查询确定与特定元素相关联的索引值。 此机制允许您访问 MIB 表中的数据。

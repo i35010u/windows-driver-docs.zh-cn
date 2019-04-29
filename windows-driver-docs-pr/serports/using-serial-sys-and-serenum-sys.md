@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35ad74e71e0ee020988d41399fde05674d2e8cfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390917"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 

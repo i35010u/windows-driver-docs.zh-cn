@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c50ccdeb1454a184cfaac36460a0f9fb6bfed3ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392833"
 ---
 # <a name="iasphelpgetjobcompletionminute-method"></a>Iasphelp::get\_JobCompletionMinute 方法
 
@@ -40,7 +40,7 @@ HRESULT get_JobCompletionMinute(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *pVal* \[out\]  
@@ -107,7 +107,7 @@ EndMinute = objPrinter.JobCompletionMinute
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp::Open**](iasphelp-open.md)
 

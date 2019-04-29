@@ -5,11 +5,11 @@ ms.assetid: 04f7df17-d289-44a1-8c2d-7d0fa618cc97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 002946aa4e4678c1c190969697298dc7ce8053ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352210"
 ---
 # <a name="flatbed-scanner-architecture"></a>平板扫描仪体系结构
 

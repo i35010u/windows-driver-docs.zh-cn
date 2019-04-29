@@ -1,6 +1,6 @@
 ---
-title: 启动和暂停的微型端口适配器
-description: 启动和暂停的微型端口适配器
+title: 启动和暂停微型端口适配器
+description: 启动和暂停微型端口适配器
 ms.assetid: d278b331-90d9-4d19-bf00-732981962522
 keywords:
 - 微型端口适配器 WDK 网络启动
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7cc9ef56c74eb8644c19128be1503737d942f76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390632"
 ---
-# <a name="starting-and-pausing-a-miniport-adapter"></a>启动和暂停的微型端口适配器
+# <a name="starting-and-pausing-a-miniport-adapter"></a>启动和暂停微型端口适配器
 
 
 

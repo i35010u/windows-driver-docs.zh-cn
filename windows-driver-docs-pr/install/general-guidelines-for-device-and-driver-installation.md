@@ -1,6 +1,6 @@
 ---
-title: 设备和驱动程序安装的通用指南
-description: 设备和驱动程序安装的通用指南
+title: 设备和驱动程序安装常规指南
+description: 设备和驱动程序安装常规指南
 ms.assetid: E62906AB-CE32-4b07-B7DB-F523FFE4E6C2
 keywords:
 - 设备安装 WDK，一般指导原则
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0932ff8a78ebeac39edfc7bac798efe4807114c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392514"
 ---
-# <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装的通用指南
+# <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装常规指南
 
 
 设备和驱动程序安装在 Windows 操作系统上的基本目标是使过程尽可能轻松为用户。 安装过程和组件的你[驱动程序包](driver-packages.md)应与操作系统的无缝协作[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)。

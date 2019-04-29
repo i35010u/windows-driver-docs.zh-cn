@@ -5,11 +5,11 @@ ms.assetid: 9D4DD1A9-DA49-4132-B98F-AFEC8B427272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 354219205dd2d52df290fe01d1d5fe7e2143cb34
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389101"
 ---
 # <a name="comparing-umdf-2-functionality-to-kmdf"></a>比较 UMDF 2 的 KMDF 的功能
 

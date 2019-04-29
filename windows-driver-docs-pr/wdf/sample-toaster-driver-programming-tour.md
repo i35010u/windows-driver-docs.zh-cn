@@ -1,17 +1,17 @@
 ---
-title: 示例 Toaster 驱动程序编程简介
+title: 示例 Toaster 驱动程序编程指南
 description: 本主题提供 Toaster 示例，其中包含出于学习目的而设计的内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序代码的演练。
 ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23706c4a4736d6911f3369ba062cbb1ceae8fe92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325161"
 ---
-# <a name="sample-toaster-driver-programming-tour"></a>示例 Toaster 驱动程序编程简介
+# <a name="sample-toaster-driver-programming-tour"></a>示例 Toaster 驱动程序编程指南
 
 
 本主题提供的代码演练[Toaster](https://go.microsoft.com/fwlink/p/?LinkId=618939)示例，其中包含出于学习目的而设计的内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序。
@@ -63,7 +63,7 @@ KMDF 总线驱动程序服务 toaster 总线控制器、 枚举已接通的设�
 
   **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\Root\\SYSTEM\\&lt;InstanceNumber&gt;\\Device Parameters**
 
-  **NumberOfToasters:REG\_DWORD:2**
+  **NumberOfToasters:REG\_DWORD:错误代码为 2**
 
   可以使用此注册表设置枚举子设备的最大数目为 10。 此外可以通过 Toaster 总线 Inf 文件中配置此值。
 

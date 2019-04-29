@@ -1,6 +1,6 @@
 ---
-title: 系统提供更换器驱动程序
-description: 系统提供更换器驱动程序
+title: 系统提供的更换器驱动程序
+description: 系统提供的更换器驱动程序
 ms.assetid: 52f052c2-4780-45ce-b0dc-4a152e9b23f6
 keywords:
 - 系统提供的更换器驱动程序 WDK 存储
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31eca84dcdaff1b39a6a2e8374e7b6ae7e4b3573
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390210"
 ---
-# <a name="system-supplied-changer-drivers"></a>系统提供更换器驱动程序
+# <a name="system-supplied-changer-drivers"></a>系统提供的更换器驱动程序
 
 
 ## <span id="ddk_system_supplied_changer_drivers_kg"></span><span id="DDK_SYSTEM_SUPPLIED_CHANGER_DRIVERS_KG"></span>

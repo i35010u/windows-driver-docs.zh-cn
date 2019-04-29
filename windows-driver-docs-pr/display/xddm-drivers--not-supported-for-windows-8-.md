@@ -5,11 +5,11 @@ ms.assetid: 2D527787-55AF-4D44-BBA2-8052FB594902
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8439c0f8c8b47824e386bb263c4e0f7fb3c5ccaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388973"
 ---
 # <a name="xddm-drivers-not-supported-for-windows-8"></a>不支持针对 Windows 8 的 XDDM 驱动程序
 
@@ -26,13 +26,13 @@ T*能 1 Windows 8 中的驱动程序升级体验*汇总图形驱动程序迁移�
 
 **表 1 Windows 8 中的驱动程序升级体验**
 
-| 在 Windows 7 中使用的驱动程序                                       | 方案 | Windows 8 中框覆盖率 | 在 Windows 8 中的生成初始驱动程序 |
+| 在 Windows 7 中使用的驱动程序                                       | 应用场景 | Windows 8 中框覆盖率 | 在 Windows 8 中的生成初始驱动程序 |
 |----------------------------------------------------------------|----------|---------------------------|---------------------------------------|
 | Win7 OTB 驱动程序 / Win7 ITB 驱动程序 / 没有驱动程序 / XDDM 驱动程序    | 升级  | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
 | Win7 OTB 驱动程序                                                | 升级  | 没有 ITB 驱动程序支持     | Win7 OTB 驱动程序                       |
 | Win7 ITB 驱动程序 / 没有驱动程序阻塞 OTB 驱动程序 / XDDM 驱动程序 | 升级  | 没有 ITB 驱动程序支持     | Win8 MSBDD                            |
-| 不适用                                                            | clean    | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
-| 不适用                                                            | clean    | 没有 ITB 驱动程序支持     | Win8 MSBDD                            |
+| 不可用                                                            | clean    | ITB 驱动程序支持        | Win8 ITB 驱动程序                       |
+| 不可用                                                            | clean    | 没有 ITB 驱动程序支持     | Win8 MSBDD                            |
 
  
 

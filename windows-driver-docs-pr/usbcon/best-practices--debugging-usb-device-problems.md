@@ -1,16 +1,16 @@
 ---
-Description: This topic provides tips for debugging USB device problems by using ETW events.
-title: 使用 ETW 事件进行调试 USB 设备问题
+Description: 本主题提供了使用 ETW 事件进行调试 USB 设备问题的技巧。
+title: 使用 ETW 事件调试 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f416387697ba48af38bcff2921ec3d2592dd8b28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389200"
 ---
-# <a name="debugging-usb-device-issues-by-using-etw-events"></a>使用 ETW 事件进行调试 USB 设备问题
+# <a name="debugging-usb-device-issues-by-using-etw-events"></a>使用 ETW 事件调试 USB 设备问题
 
 
 本主题提供了使用 ETW 事件进行调试 USB 设备问题的技巧。

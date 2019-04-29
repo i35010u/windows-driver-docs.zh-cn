@@ -1,14 +1,14 @@
 ---
-Description: Install WinUSB (Winusb.sys) in the device's kernel-mode stack as the USB device's function driver instead of implementing a driver.
+Description: 在内核模式堆栈中设备的 USB 设备的功能而不是实现一个驱动程序的驱动程序作为安装 WinUSB (Winusb.sys)。
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0898e03722bfa73103966b5855cc016d9ce05ef1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389178"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 

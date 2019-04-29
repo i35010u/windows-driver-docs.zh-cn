@@ -1,6 +1,6 @@
 ---
-title: 改进了后台处理和呈现
-description: 改进了后台处理和呈现
+title: 改进的后台打印和渲染
+description: 改进的后台打印和渲染
 ms.assetid: 0e385282-fbc8-4c4b-9070-19ee8290ddd6
 keywords:
 - XPSDrv 打印机驱动程序 WDK、 后台处理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fd249ee27c4d226fe45d0f45c1b61af2c6176a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390580"
 ---
-# <a name="improved-spooling-and-rendering"></a>改进了后台处理和呈现
+# <a name="improved-spooling-and-rendering"></a>改进的后台打印和渲染
 
 
 XPS 打印路径提高了 XPS 后台打印文件格式的后台打印 XPS 文档的后台处理程序效率，当最终用户打印到 XPSDrv 的打印机驱动程序。 XPS 文档文件格式是 XPS 后台打印文件格式相同，因为后台处理过程的简化而来，无需生成中间后台打印文件，如增强型图元文件 (EMF) 数据文件，后台处理文档之前。 通过较小后台打印文件的大小，XPS 打印路径可以减少网络流量并提高打印性能。

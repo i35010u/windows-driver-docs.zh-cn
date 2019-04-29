@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bfd057e9da495f3b0a67b0d9cd18e226052a8ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386996"
 ---
 # <a name="directx-video-acceleration"></a>DirectX 视频加速
 

@@ -1,6 +1,6 @@
 ---
-title: 在 AVStream 中重新启动处理
-description: 在 AVStream 中重新启动处理
+title: 在 AVStream 中重启处理
+description: 在 AVStream 中重启处理
 ms.assetid: f60d4dbd-61e6-4ae2-aa43-9edc8f36c3ff
 keywords:
 - 重新启动 AVStream 处理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c37c47133e927627987a8a8f8b9840e41dd19792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368307"
 ---
-# <a name="restarting-processing-in-avstream"></a>在 AVStream 中重新启动处理
+# <a name="restarting-processing-in-avstream"></a>在 AVStream 中重启处理
 
 
 

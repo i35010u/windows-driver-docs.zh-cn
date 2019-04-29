@@ -5,11 +5,11 @@ ms.assetid: 19DD6B95-AAE7-4F40-BB48-7AA1C20BA01E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 500c93c33d9f005e899c5981dc6914aae9a43290
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391916"
 ---
 # <a name="input-driver-samples"></a>输入驱动程序示例
 

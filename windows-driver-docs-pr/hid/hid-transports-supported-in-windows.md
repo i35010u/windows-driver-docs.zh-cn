@@ -1,22 +1,22 @@
 ---
-title: 在 Windows 中受支持的 HID 传输方式
-description: Windows 支持以下传输。
+title: Windows 中支持的 HID 传输方式
+description: Windows 支持以下传输方式。
 ms.assetid: 03B66788-A930-4C18-A019-CA906634DC4C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e70740e3f611510101de9e629397fda1cd2ba28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388790"
 ---
-# <a name="hid-transports-supported-in-windows"></a>在 Windows 中受支持的 HID 传输方式
+# <a name="hid-transports-supported-in-windows"></a>Windows 中支持的 HID 传输方式
 
 
-Windows 支持以下传输。
+Windows 支持以下传输方式。
 
-| “传输”    | Windows 7 | Windows 8 | 注释                                                                                                 |
+| “传输”    | Windows 7 | Windows 8 | 说明                                                                                                 |
 |--------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
 | USB          | 是       | 是       | 追溯到 Windows 2000 的 Windows 操作系统上提供的 USB HID 1.11 + 的支持。       |
 | 蓝牙    | 是       | 是       | 追溯到 Windows Vista 的 Windows 操作系统上提供对蓝牙 HID 1.1 + 的支持。 |

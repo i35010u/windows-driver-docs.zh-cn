@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 482df3ee811b54185e4e48f9b9df6fc064ad0880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356327"
 ---
 # <a name="pdb-symbol-files"></a>PDB 符号文件
 

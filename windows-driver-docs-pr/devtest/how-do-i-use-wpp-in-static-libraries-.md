@@ -5,11 +5,11 @@ ms.assetid: 02e13837-f8c7-4824-a4db-5e8b49fdcb59
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b24dbd13c108e0e9e16c139354eab9dd5be8985e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390534"
 ---
 # <a name="how-do-i-use-wpp-in-static-libraries"></a>如何在静态库中使用 WPP？
 

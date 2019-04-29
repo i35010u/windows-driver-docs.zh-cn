@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5af16830e4ebdf1c98da667000d2dffc70c98675
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351809"
 ---
 # <a name="kspropertycameracontrolextendedscenemode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_SCENEMODE
 
@@ -100,7 +100,7 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 </thead>
 <tbody>
 <tr class="odd">
-<td>版本</td>
+<td>Version</td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -108,7 +108,7 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 <td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0XFFFFFFFF)。</td>
 </tr>
 <tr class="odd">
-<td>尺寸</td>
+<td>大小</td>
 <td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VALUE)</p></td>
 </tr>
 <tr class="even">
@@ -141,17 +141,17 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>从开始提供 Windows 8.1。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

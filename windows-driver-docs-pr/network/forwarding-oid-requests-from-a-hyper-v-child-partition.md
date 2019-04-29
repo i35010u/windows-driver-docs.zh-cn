@@ -1,17 +1,17 @@
 ---
-title: OID 请求转发从的 HYPER-V 子分区
-description: OID 请求转发从的 HYPER-V 子分区
+title: 从 Hyper-V 子分区转发 OID 请求
+description: 从 Hyper-V 子分区转发 OID 请求
 ms.assetid: 35EA9964-4CD0-4636-9573-65F37393B7E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90cfdfcb4f95805e5f60cc7487566bef0166b39e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356904"
 ---
-# <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>OID 请求转发从的 HYPER-V 子分区
+# <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>从 Hyper-V 子分区转发 OID 请求
 
 
 多播的对象标识符 (OID) 请求，包括[OID\_802\_3\_添加\_多播\_地址](https://msdn.microsoft.com/library/windows/hardware/ff569068)并[OID\_802\_3\_删除\_多播\_地址](https://msdn.microsoft.com/library/windows/hardware/ff569070)、 颁发的过量协议和筛选器驱动程序运行所示：

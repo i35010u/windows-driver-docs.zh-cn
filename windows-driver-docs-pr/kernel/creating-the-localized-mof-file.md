@@ -1,6 +1,6 @@
 ---
-title: 创建本地化的 MOF 文件
-description: 创建本地化的 MOF 文件
+title: 创建本地化 MOF 文件
+description: 创建本地化 MOF 文件
 ms.assetid: 1cc99e43-b09a-445d-abb6-4a3d73b6d7ed
 keywords:
 - MOF 文件 WDK WMI
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9585b6a44f07154a7a09ed41c19c3a0ba713a43a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388245"
 ---
-# <a name="creating-the-localized-mof-file"></a>创建本地化的 MOF 文件
+# <a name="creating-the-localized-mof-file"></a>创建本地化 MOF 文件
 
 
 

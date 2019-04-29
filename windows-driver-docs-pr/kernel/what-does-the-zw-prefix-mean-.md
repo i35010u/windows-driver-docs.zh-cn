@@ -5,13 +5,13 @@ ms.assetid: 9529cce9-9c46-4906-854d-d0aef9118a90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e2e5aa0bdff701eb7eda6713a6fce120902b0697
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391434"
 ---
-# <a name="what-does-the-zw-prefix-mean"></a>Zw 前缀是什么意思？
+# <a name="what-does-the-zw-prefix-mean"></a>Zw 前缀是什么？
 
 
 Windows 本机系统服务例程具有以前缀开头的名称**Nt**并**Zw**。 **Nt**前缀是 Windows NT 的缩写，但**Zw**前缀没有任何意义。 **Zw**部分以避免与其他 Api 的潜在命名冲突并一定程度上避免使用任何可能有用的两个字母前缀可能需要在将来的选择。

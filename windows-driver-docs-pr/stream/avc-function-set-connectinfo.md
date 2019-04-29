@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23d6016942535b915b4bd9654b80b4beee1d9f08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390193"
 ---
 # <a name="avcfunctionsetconnectinfo"></a>AVC\_函数\_设置\_CONNECTINFO
 
@@ -101,7 +101,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 这必须在调用在 IRQL = 被动\_级别。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_为表示\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff554192)， [ **AVCCONNECTINFO**](https://msdn.microsoft.com/library/windows/hardware/ff554101)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [ **AV/C 相交处理程序**](https://msdn.microsoft.com/library/windows/hardware/ff556379)
 

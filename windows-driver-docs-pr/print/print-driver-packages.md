@@ -1,6 +1,6 @@
 ---
-title: 打印驱动程序的包
-description: 打印驱动程序的包
+title: 打印驱动程序包
+description: 打印驱动程序包
 ms.assetid: 902e1634-e705-4902-baab-a93818288b08
 keywords:
 - 安装驱动程序 WDK 打印机，包
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bea539224ece6f6c75b36b799e5478879a8b10c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389476"
 ---
-# <a name="print-driver-packages"></a>打印驱动程序的包
+# <a name="print-driver-packages"></a>打印驱动程序包
 
 
 在 Windows Vista 中，安装程序和打印基础结构使用尽可能完整的驱动程序包。 必须提供使你的设备以支持在 Windows 下的所有硬件和软件组件的包含驱动程序包。

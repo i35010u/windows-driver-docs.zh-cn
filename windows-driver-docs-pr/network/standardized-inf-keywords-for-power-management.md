@@ -5,11 +5,11 @@ ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e7789589b24256aa2efdff9836b12d3c2df9b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390665"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
@@ -84,7 +84,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
@@ -96,7 +96,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
@@ -108,7 +108,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMARPOffload</strong></p></td>
@@ -120,7 +120,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PMNSOffload</strong></p></td>
@@ -132,7 +132,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
@@ -144,7 +144,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*EEE</strong></p></td>
@@ -156,7 +156,7 @@ ms.locfileid: "56562540"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_XMIT_DISCARDS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e28c7d4ca38bb09a9ee8ca6c517bc3ddbc12bc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354183"
 ---
 # <a name="oidgenxmitdiscards"></a>OID\_GEN\_XMIT\_放弃
 

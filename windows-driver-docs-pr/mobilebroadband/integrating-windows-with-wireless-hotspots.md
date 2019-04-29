@@ -1,17 +1,17 @@
 ---
-title: 将 Windows 集成与无线热点
-description: 将 Windows 集成与无线热点
+title: 将 Windows 与无线热点集成
+description: 将 Windows 与无线热点集成
 ms.assetid: 948660a2-7ecf-4860-9092-1cfb332cfd04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43ecb4fc711d7d5f519b68244a25015c1f6c2fc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387170"
 ---
-# <a name="integrating-windows-with-wireless-hotspots"></a>将 Windows 集成与无线热点
+# <a name="integrating-windows-with-wireless-hotspots"></a>将 Windows 与无线热点集成
 
 
 在机场、 咖啡厅和酒店等公共区域中已扩展的 Wi-fi 热点。 此类网络的运营商通常提供 Internet 访问权限，作为其由地点所有者投资的客户端的免费服务或付费产品/服务。
@@ -24,7 +24,7 @@ ms.locfileid: "56523406"
 
 -   [热点身份验证方法](hotspot-authentication-methods.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动运营商方案](mobile-operator-scenarios-b-mb.md)

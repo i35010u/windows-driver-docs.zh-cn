@@ -1,6 +1,6 @@
 ---
-title: 到可优化信号扫描
-description: 到可优化信号扫描
+title: 扫描到可调谐信号
+description: 扫描到可调谐信号
 ms.assetid: cc934079-5d00-42e0-a024-1b7548bb88e4
 keywords:
 - 扫描 WDK 视频捕获的信号
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad799f32d8ea09db75f01d8565171aafcdbc3777
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389203"
 ---
-# <a name="scanning-to-tunable-signals"></a>到可优化信号扫描
+# <a name="scanning-to-tunable-signals"></a>扫描到可调谐信号
 
 
 **本部分仅适用于与 Microsoft Windows Vista 一起启动的操作系统。**

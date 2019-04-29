@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a69ab7c28e10e17e98e8f75699ee1e9f58aa2c43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387239"
 ---
 # <a name="dxgiddimultiplaneoverlaystereocaps-enumeration"></a>DXGI\_DDI\_MULTIPLANE\_覆盖\_立体声\_CAPS 枚举
 
@@ -70,7 +70,7 @@ typedef enum DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Dxgiddi.h</td>
 </tr>
 </tbody>
