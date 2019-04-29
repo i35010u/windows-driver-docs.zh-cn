@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_IDLE_HINT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e44e2c0c399ee8ea9a1f7c65792ac167324a5892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388768"
 ---
 # <a name="oidwwannetworkidlehint"></a>OID\_WWAN\_NETWORK\_IDLE\_HINT
 
@@ -31,17 +31,17 @@ OID\_WWAN\_网络\_空闲\_提示将提示发送到有关是否应数据的接�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 10 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_WWAN\_NETWORK\_IDLE\_HINT**](https://msdn.microsoft.com/library/windows/hardware/dn931088)

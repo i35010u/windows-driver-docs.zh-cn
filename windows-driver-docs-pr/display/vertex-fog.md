@@ -1,6 +1,6 @@
 ---
-title: 顶点雾
-description: 顶点雾
+title: 顶点雾化
+description: 顶点雾化
 ms.assetid: 55083ccb-b93e-4506-baf2-358f90e2c6a6
 keywords:
 - 顶点雾 WDK Direct3D
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6696a374f48089573141d3084203284d5dea6c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387432"
 ---
-# <a name="vertex-fog"></a>顶点雾
+# <a name="vertex-fog"></a>顶点雾化
 
 
 ## <span id="ddk_vertex_fog_gg"></span><span id="DDK_VERTEX_FOG_GG"></span>

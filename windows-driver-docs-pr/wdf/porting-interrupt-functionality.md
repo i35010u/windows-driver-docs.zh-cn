@@ -5,11 +5,11 @@ ms.assetid: E91B971D-044C-45A4-AD76-44AFB1213F8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1642864a7816681ceecc8d4ab044dfd06b78dc09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390093"
 ---
 # <a name="porting-interrupts"></a>移植中断
 

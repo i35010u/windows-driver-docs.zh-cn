@@ -1,20 +1,20 @@
 ---
-title: 在 Windows 中受支持的 HID 客户端
+title: Windows 中支持的 HID 客户端
 ms.assetid: E6584286-6BF1-40C7-83C1-D07077B13F3E
 description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22da4c313bc8301660dc9d0ee10f7a8250685347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388854"
 ---
-# <a name="hid-clients-supported-in-windows"></a>在 Windows 中受支持的 HID 客户端
+# <a name="hid-clients-supported-in-windows"></a>Windows 中支持的 HID 客户端
 
 
-Windows 还支持以下顶级集合：
+Windows 支持以下顶级集合：
 
 | **使用情况页面** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | **注意** | **访问模式** |
 | --- | --- | --- | --- | --- | --- | --- |

@@ -5,11 +5,11 @@ ms.assetid: 6280E9CC-422B-4100-8B38-07BADD6A578A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4189c4b4978a106f21e8197889cb4107a7b3e75
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387959"
 ---
 # <a name="getting-started-with-uwp-device-apps"></a>开始使用 UWP 设备应用程序
 

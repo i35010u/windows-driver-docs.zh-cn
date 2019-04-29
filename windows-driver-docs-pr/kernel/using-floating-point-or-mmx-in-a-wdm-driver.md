@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a6235167e1d91c94fa3d9c60f6f1dc50eb3d4a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387404"
 ---
 # <a name="using-floating-point-in-a-wdm-driver"></a>在 WDM 驱动程序中使用浮点数
 

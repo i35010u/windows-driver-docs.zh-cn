@@ -1,6 +1,6 @@
 ---
-title: 转换的 8 位每像素半色调索引墨迹级别
-description: 转换的 8 位每像素半色调索引墨迹级别
+title: 将每像素 8 位半色调索引转换为墨位
+description: 将每像素 8 位半色调索引转换为墨位
 ms.assetid: 5859b379-4e03-4cd8-836d-9a0b068b47c0
 keywords:
 - GDI WDK Windows 2000 显示、 半色调
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d664d9cc1e4662081bafa86777b8592f347a60b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389797"
 ---
-# <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>转换的 8 位每像素半色调索引墨迹级别
+# <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>将每像素 8 位半色调索引转换为墨位
 
 
 ## <span id="ddk_translating_8_bit_per_pixel_halftone_indexes_to_ink_levels_gg"></span><span id="DDK_TRANSLATING_8_BIT_PER_PIXEL_HALFTONE_INDEXES_TO_INK_LEVELS_GG"></span>

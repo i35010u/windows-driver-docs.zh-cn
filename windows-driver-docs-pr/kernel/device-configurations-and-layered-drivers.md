@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0ce221816c0507c1143737287e478bfd11078e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388142"
 ---
 # <a name="device-configurations-and-layered-drivers"></a>设备配置和分层驱动程序
 
@@ -30,7 +30,7 @@ ms.locfileid: "56533134"
 
 新 （或替换） 驱动程序的设备驱动程序链中的适当位置部分取决于在给定的 Windows 平台，和部分多少支持新的驱动程序可以从现有系统驱动程序获取设备的硬件配置。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [示例设备和驱动程序配置](sample-device-and-driver-configuration.md)

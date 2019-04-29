@@ -1,5 +1,5 @@
 ---
-title: 处理 HID 报表
+title: 处理 HID 报告
 description: 本部分介绍了用于处理 HID 报表用户模式应用程序和内核模式驱动程序使用的机制。
 ms.assetid: 5bd43bd3-3c7a-40a3-97cd-2c43c168e721
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ae5d377d6e348a2f3ed561cf67115bdf362605
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388952"
 ---
-# <a name="handling-hid-reports"></a>处理 HID 报表
+# <a name="handling-hid-reports"></a>处理 HID 报告
 
 
 本部分介绍了用户模式应用程序和内核模式驱动程序用于处理的机制[HID 报表](introduction-to-hid-concepts.md)。

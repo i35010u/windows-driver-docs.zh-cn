@@ -1,6 +1,6 @@
 ---
-title: NetClient 组件的指定名称和提供程序路径
-description: NetClient 组件的指定名称和提供程序路径
+title: 指定 NetClient 组件的名称和提供程序路径
+description: 指定 NetClient 组件的名称和提供程序路径
 ms.assetid: 4c9c2162-8e7e-44dc-a97c-81074071664b
 keywords:
 - 添加注册表部分 WDK 网络、 NetClient 组件名称和路径
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78a1100794641c826466c159a58c44d15014b8a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388127"
 ---
-# <a name="specifying-the-name-and-provider-path-for-a-netclient-component"></a>NetClient 组件的指定名称和提供程序路径
+# <a name="specifying-the-name-and-provider-path-for-a-netclient-component"></a>指定 NetClient 组件的名称和提供程序路径
 
 
 

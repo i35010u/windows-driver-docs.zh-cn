@@ -1,14 +1,14 @@
 ---
-Description: Describes the behavior of USB Device Emulation(UDE) class extension and tasks that a client driver must perform for an emulated host controller and devices attached to it.
+Description: 介绍 USB 设备 Emulation(UDE) 类扩展和客户端驱动程序必须为仿真的主机控制器和设备附加到它执行的任务的行为。
 title: 编写 UDE 客户端驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 33419b91aa06d9e88c4faee51350b657b176914d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389108"
 ---
 # <a name="write-a-ude-client-driver"></a>编写 UDE 客户端驱动程序
 
@@ -28,7 +28,7 @@ ms.locfileid: "56534863"
 
 **重要的 Api**
 
-- [模拟的 USB 主机控制器驱动程序的编程参考](https://msdn.microsoft.com/library/windows/hardware/mt628025)
+- [Emulated USB host controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628025)（模拟 USB 主控制器驱动程序编程参考）
 
 介绍 USB 设备 Emulation(UDE) 类扩展和客户端驱动程序必须为仿真的主机控制器和设备附加到它执行的任务的行为。 它提供有关与每个通过一系列例程和回调函数的类驱动程序和类扩展的进行通信的信息。 它还介绍的功能的客户端驱动程序应实现。
 

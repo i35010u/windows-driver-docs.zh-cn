@@ -1,17 +1,17 @@
 ---
-title: 修改源索引中的.pdb 文件的流
-description: 修改源索引中的.pdb 文件的流
+title: 修改 .pdb 文件中的源索引流
+description: 修改 .pdb 文件中的源索引流
 ms.assetid: 9c319667-fc71-4baf-ad12-a20e18b67d40
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d82119e1214b6c09f4017d0586c2d77b0d4ea938
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387077"
 ---
-# <a name="modifying-the-source-indexing-streams-in-a-pdb-file"></a>修改源索引中的.pdb 文件的流
+# <a name="modifying-the-source-indexing-streams-in-a-pdb-file"></a>修改 .pdb 文件中的源索引流
 
 
 对于使用 SrcSrv 网站调试器客户端，必须修改.pdb 文件以指向它。 若要手动执行此操作，使所有.pdb 文件的副本，更改它们，并将它们从单独的位置-通常该网站本身提供。

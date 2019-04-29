@@ -5,11 +5,11 @@ ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20471a126d170cfbc779250a4d2dc6af3bf1d765
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387923"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何执行 UWP 设备应用中的打印机维护
 
@@ -18,7 +18,7 @@ ms.locfileid: "57349650"
 
 C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例演示如何使用打印机维护**DeviceMaintenance.xaml.cs**中的文件**DeviceAppForPrinters2**项目。 若要使用 Bidi，该示例使用的打印机扩展库中**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例。 此示例也是在 JavaScript 和 c + + 中可用。 请注意由于 c + + 可以直接访问 COM，该示例的 c + + 版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**请注意**  本主题中所示的代码示例基于C#的版本[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
 
  
 
@@ -42,7 +42,7 @@ Windows 8.1 引入了新的打印机扩展插件接口，可用于实现设备�
 4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
 5.  构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
 6.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**到 UWP 设备应用程序解决方案的项目。 您可以找到此项目中的[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例。
-    **请注意**  因为 c + + 可以直接访问 COM，c + + 应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
 
      
 

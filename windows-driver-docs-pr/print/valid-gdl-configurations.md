@@ -1,6 +1,6 @@
 ---
-title: 有效 GDL 配置
-description: 有效 GDL 配置
+title: 有效的 GDL 配置
+description: 有效的 GDL 配置
 ms.assetid: 68dbe7f7-4f6d-46e5-b2f1-27b123c4bedb
 keywords:
 - GDL WDK 配置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 001d71ea7dd73e6303894488457410d8a66259ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387818"
 ---
-# <a name="valid-gdl-configurations"></a>有效 GDL 配置
+# <a name="valid-gdl-configurations"></a>有效的 GDL 配置
 
 
 GDL 分析器接口函数将始终验证传入的配置，因为分析器将假定客户端有时可能有误，提供无效的配置。 有关无效配置的详细信息，请参阅[使用无效 GDL 配置](using-invalid-gdl-configurations.md)。

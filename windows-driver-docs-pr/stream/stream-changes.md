@@ -1,6 +1,6 @@
 ---
-title: Stream 更改
-description: Stream 更改
+title: 流更改
+description: 流更改
 ms.assetid: 3bd6a511-c602-4159-87b4-7e1e55c03b2e
 keywords:
 - 流更改 WDK DVD 解码器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35e0355d9292b543a2f51570b30d96a5b6ad50e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391378"
 ---
-# <a name="stream-changes"></a>Stream 更改
+# <a name="stream-changes"></a>流更改
 
 
 

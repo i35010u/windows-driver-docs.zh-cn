@@ -5,11 +5,11 @@ ms.assetid: a6a3746a-3638-464b-bca0-60003f37af76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5b2d72552e16ad793a19b5fa5ab02336a29369c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387113"
 ---
 # <a name="using-the-xps-rasterization-service"></a>使用 XPS 光栅化服务
 

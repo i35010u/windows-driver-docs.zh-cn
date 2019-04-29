@@ -5,11 +5,11 @@ ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b5e2de2b91ddef3adceccc134a6668198d58aa85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389451"
 ---
 # <a name="msiscsisessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI 类
 

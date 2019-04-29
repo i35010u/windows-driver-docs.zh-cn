@@ -1,6 +1,6 @@
 ---
-title: 为空闲检测使用电源管理器例程
-description: 为空闲检测使用电源管理器例程
+title: 使用电源管理器例程进行空闲检测
+description: 使用电源管理器例程进行空闲检测
 ms.assetid: 6a89b2eb-d987-4722-b521-9df93153d957
 keywords:
 - 空闲检测 WDK 电源管理
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c25ae08b4ef5f4b6d5d83b6812816a00bb3830da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391061"
 ---
-# <a name="using-power-manager-routines-for-idle-detection"></a>为空闲检测使用电源管理器例程
+# <a name="using-power-manager-routines-for-idle-detection"></a>使用电源管理器例程进行空闲检测
 
 
 

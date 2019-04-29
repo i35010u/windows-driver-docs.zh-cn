@@ -5,11 +5,11 @@ ms.assetid: 57451576-a900-4eaa-b229-bda79a81d014
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6578c9591cef84f1de7a9be37eb224fc247c1ab8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389446"
 ---
 # <a name="msiscsitcpipconfig-wmi-class"></a>MSiSCSI\_TCPIPConfig WMI 类
 

@@ -1,19 +1,19 @@
 ---
-title: 串行服务的注册表设置
-description: 串行服务的注册表设置
+title: 用于串行服务的注册表设置
+description: 用于串行服务的注册表设置
 ms.assetid: 5c4a28ab-e2e5-45b4-8179-6f5d40e9c98c
 keywords:
 - 串行服务 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf34c958de7cdd09e6fabfbb5b913fbfb472381a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388043"
 ---
-# <a name="registry-settings-for-the-serial-service"></a>串行服务的注册表设置
+# <a name="registry-settings-for-the-serial-service"></a>用于串行服务的注册表设置
 
 
 

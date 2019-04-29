@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdc7b165318f7bbbef02dbc148ecb2e9071ef55d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390752"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface 指令
 
@@ -134,7 +134,7 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 ; ... 
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)

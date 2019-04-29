@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f06127f7d66bc7fd98adc8b726c2e4e0435d92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389251"
 ---
 # <a name="kspropertybdasignallocked"></a>KSPROPERTY\_BDA\_信号\_已锁定
 

@@ -5,11 +5,11 @@ ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47801d82b5d3959b9b27751b602ae5da18163c8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390564"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI 端口提供的功能
 

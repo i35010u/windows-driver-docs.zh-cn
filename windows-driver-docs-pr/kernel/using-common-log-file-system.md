@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47044f51c6b222ddc96e0276d40ee0a9a9353a6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387418"
 ---
 # <a name="using-common-log-file-system"></a>使用通用日志文件系统
 

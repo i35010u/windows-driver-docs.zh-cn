@@ -1,6 +1,6 @@
 ---
-title: DP2 Stream 中的复制卷纹理
-description: DP2 Stream 中的复制卷纹理
+title: 在 DP2 流中复制体积纹理
+description: 在 DP2 流中复制体积纹理
 ms.assetid: c7f982d8-d35b-4462-a0cf-49dfb82860f8
 keywords:
 - 纹理 WDK DirectX 8.0
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b225f03106e802d10706dbeb3ab7e813c4d2d2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390020"
 ---
-# <a name="copying-volume-textures-in-the-dp2-stream"></a>DP2 Stream 中的复制卷纹理
+# <a name="copying-volume-textures-in-the-dp2-stream"></a>在 DP2 流中复制体积纹理
 
 
 ## <span id="ddk_copying_volume_textures_in_the_dp2_stream_gg"></span><span id="DDK_COPYING_VOLUME_TEXTURES_IN_THE_DP2_STREAM_GG"></span>

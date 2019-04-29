@@ -1,17 +1,17 @@
 ---
-title: SerCx2 PIO 传输的事务
+title: SerCx2 PIO-Transmit 事务
 description: SerCx2 需要所有串行控制器驱动程序，以实现对支持传输使用编程 I/O (PIO) 的事务。
 ms.assetid: 3BEF9A3D-1FEF-4626-B07F-1670359062AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7e66efce687e92da9345a9f81245912304a7e62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387966"
 ---
-# <a name="sercx2-pio-transmit-transactions"></a>SerCx2 PIO 传输的事务
+# <a name="sercx2-pio-transmit-transactions"></a>SerCx2 PIO-Transmit 事务
 
 
 SerCx2 需要所有串行控制器驱动程序，以实现对支持传输使用编程 I/O (PIO) 的事务。 若要启动 PIO 传输的事务，SerCx2 调用驱动程序的[ *EvtSerCx2PioTransmitWriteBuffer* ](https://msdn.microsoft.com/library/windows/hardware/dn265223)事件回叫函数并提供写入缓冲区作为参数。

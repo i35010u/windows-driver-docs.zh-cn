@@ -1,19 +1,19 @@
 ---
-title: WAN 的 CoNDIS 是不太复杂
-description: WAN 的 CoNDIS 是不太复杂
+title: CoNDIS WAN 更简单
+description: CoNDIS WAN 更简单
 ms.assetid: 750f321a-72c9-4d90-b02e-cbe5177dc2af
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络权益
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d060329cdcc7d3166b6196f7c62cada81f8ea8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390732"
 ---
-# <a name="condis-wan-is-less-complex"></a>WAN 的 CoNDIS 是不太复杂
+# <a name="condis-wan-is-less-complex"></a>CoNDIS WAN 更简单
 
 
 

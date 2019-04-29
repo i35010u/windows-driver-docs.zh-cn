@@ -7,11 +7,11 @@ keywords: -从 Windows Vista 开始 OID_WWAN_UICC_APP_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 1661b5eb4baf57a302e1e12b96c74fb9e4f88b47
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387348"
 ---
 # <a name="oidwwanuiccapplist"></a>OID_WWAN_UICC_APP_LIST
 
@@ -31,7 +31,7 @@ OID_WWAN_UICC_APP_LIST 检索 UICC 中的应用程序和其相关信息的列表
 
 |   |   |
 | --- | --- |
-| Version | Windows 10，版本 1903 |
+| Version | Windows 10 版本 1903 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

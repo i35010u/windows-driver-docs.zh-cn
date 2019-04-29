@@ -20,11 +20,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a92b5e358c21369390f2030b07232aa85336d8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388056"
 ---
 # <a name="tcpmon-xcv-commands"></a>TCPMON Xcv 命令
 
@@ -189,7 +189,7 @@ ms.locfileid: "57464349"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -283,7 +283,7 @@ ms.locfileid: "57464349"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -330,7 +330,7 @@ ms.locfileid: "57464349"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -377,7 +377,7 @@ ms.locfileid: "57464349"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -424,7 +424,7 @@ ms.locfileid: "57464349"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

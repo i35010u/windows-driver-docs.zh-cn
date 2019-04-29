@@ -1,6 +1,6 @@
 ---
-title: DispatchReadWrite 使用缓冲的 I/O
-description: DispatchReadWrite 使用缓冲的 I/O
+title: 使用缓冲 I/O 执行 DispatchReadWrite
+description: 使用缓冲 I/O 执行 DispatchReadWrite
 ms.assetid: bb8ce47d-5722-4050-9492-bec154744597
 keywords:
 - DispatchReadWrite 例程
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4d031a1d9a4b8dcaa405de4fde95a3e933ed550
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387194"
 ---
-# <a name="dispatchreadwrite-using-buffered-io"></a>DispatchReadWrite 使用缓冲的 I/O
+# <a name="dispatchreadwrite-using-buffered-io"></a>使用缓冲 I/O 执行 DispatchReadWrite
 
 
 

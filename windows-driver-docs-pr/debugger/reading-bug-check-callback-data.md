@@ -15,11 +15,11 @@ keywords:
 ms.date: 10/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a6803969949d640b9ac5215ce6014d9d7ea9070f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388571"
 ---
 # <a name="reading-bug-check-callback-data"></a>读取 Bug 检查回调数据
 

@@ -1,17 +1,17 @@
 ---
-title: 在 Windows 8 中的更新的功能分数指令
+title: Windows 8 中已更新的功能评分指令
 description: 更新的功能分数指令是以遵循 Windows 显示器驱动程序模型 (WDDM) 的所有 Windows 8 驱动程序所需的常规安装设置。
 ms.assetid: E50E132A-DEC8-42F4-AAF8-05F658990CF5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f23be96576ac2d2328f7a8e6cf45a7d83e56607e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389804"
 ---
-# <a name="updated-feature-score-directive-in-windows-8"></a>在 Windows 8 中的更新的功能分数指令
+# <a name="updated-feature-score-directive-in-windows-8"></a>Windows 8 中已更新的功能评分指令
 
 
 更新的功能分数指令是以遵循 Windows 显示器驱动程序模型 (WDDM) 的所有 Windows 8 驱动程序所需的常规安装设置。

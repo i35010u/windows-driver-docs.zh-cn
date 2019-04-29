@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f96f90dfa6dc299ee15b426aa4364a2f30a8262d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387373"
 ---
 # <a name="customizing-the-network-upgrade-process"></a>自定义网络升级过程
 

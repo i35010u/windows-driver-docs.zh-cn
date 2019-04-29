@@ -1,6 +1,6 @@
 ---
-title: 在将控制权返还从 HwScsiFindAdapter
-description: 在将控制权返还从 HwScsiFindAdapter
+title: 从 HwScsiFindAdapter 返回控制权
+description: 从 HwScsiFindAdapter 返回控制权
 ms.assetid: 689eae76-9b5b-438f-bbdc-5ee11c6fe737
 keywords:
 - HwScsiFindAdapter
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a987b07a9f153f9c2e063c52f5607525f685aea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391523"
 ---
-# <a name="returning-control-from-hwscsifindadapter"></a>在将控制权返还从 HwScsiFindAdapter
+# <a name="returning-control-from-hwscsifindadapter"></a>从 HwScsiFindAdapter 返回控制权
 
 
 ## <span id="ddk_returning_control_from_hwscsifindadapter_kg"></span><span id="DDK_RETURNING_CONTROL_FROM_HWSCSIFINDADAPTER_KG"></span>

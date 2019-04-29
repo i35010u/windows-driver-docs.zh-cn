@@ -4,11 +4,11 @@ title: 对枚举命令 (WpdBasicHardwareDriverSample) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5074671e507c94df29c2009e1f0fea38b13fd81
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387299"
 ---
 # <a name="support-for-enumeration-commands-wpdbasichardwaredriversample"></a>对枚举命令 (WpdBasicHardwareDriverSample) 的支持
 

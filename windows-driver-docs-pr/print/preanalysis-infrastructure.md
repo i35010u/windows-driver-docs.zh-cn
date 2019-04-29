@@ -1,6 +1,6 @@
 ---
-title: Preanalysis 基础结构
-description: Preanalysis 基础结构
+title: 预分析基础结构
+description: 预分析基础结构
 ms.assetid: 4c07145a-9a08-4507-8bab-769617e73d77
 keywords:
 - 具有带区 WDK Unidrv
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bc64d2921a72837475655b58c26bb5815e736fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389547"
 ---
-# <a name="preanalysis-infrastructure"></a>Preanalysis 基础结构
+# <a name="preanalysis-infrastructure"></a>预分析基础结构
 
 
 

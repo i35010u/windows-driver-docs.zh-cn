@@ -1,17 +1,17 @@
 ---
-title: 升级为 NVMe 设备固件
+title: 升级为 NVMe 设备的固件
 description: NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序。
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0448455477b959ab6c097c77a2adfcb8ad0fa5dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390203"
 ---
-# <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备固件
+# <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备的固件
 
 
 NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序。 函数用于获取固件信息的命令，下载和激活固件映像被颁发给微型端口。

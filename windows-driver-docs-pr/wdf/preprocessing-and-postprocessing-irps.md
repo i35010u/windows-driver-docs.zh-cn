@@ -1,6 +1,6 @@
 ---
-title: 预处理和后处理 Irp
-description: 预处理和后处理 Irp
+title: 对 IRP 进行预处理和后处理
+description: 对 IRP 进行预处理和后处理
 ms.assetid: a0e14ae6-a06e-4c24-8b64-b56f485cf9ff
 keywords:
 - 预处理 Irp WDK KMDF
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d01f64a404e9698a37009c69ef2506674cb8542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390054"
 ---
-# <a name="preprocessing-and-postprocessing-irps"></a>预处理和后处理 Irp
+# <a name="preprocessing-and-postprocessing-irps"></a>对 IRP 进行预处理和后处理
 
 
 \[仅适用于 KMDF\]

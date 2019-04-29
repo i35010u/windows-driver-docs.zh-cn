@@ -1,19 +1,19 @@
 ---
-title: 设备元数据创建向导中指定自动播放处理程序和选项
-description: 设备元数据创建向导中指定自动播放处理程序和选项
+title: 在设备元数据创作向导中指定自动播放处理程序和选项
+description: 在设备元数据创作向导中指定自动播放处理程序和选项
 ms.assetid: 7604E8D4-BCBB-45C4-9510-3860304CE7C8
 keywords:
-- 设备元数据创建向导中指定自动播放处理程序和选项
+- 在设备元数据创作向导中指定自动播放处理程序和选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c90774cdf08c1d27a3cc3691634893e8fe18d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387916"
 ---
-# <a name="specify-autoplay-handler-and-options-in-the-device-metadata-authoring-wizard"></a>设备元数据创建向导中指定自动播放处理程序和选项
+# <a name="specify-autoplay-handler-and-options-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中指定自动播放处理程序和选项
 
 
 若要指定用于你的设备，包括已断开连接的状态和自动播放处理程序中，单击**选项**选项卡。

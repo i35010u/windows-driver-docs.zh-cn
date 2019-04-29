@@ -1,17 +1,17 @@
 ---
-title: 与其他 Windows 组件集成，移动宽带应用
-description: 与其他 Windows 组件集成，移动宽带应用
+title: 将移动宽带应用与其他 Windows 组件集成
+description: 将移动宽带应用与其他 Windows 组件集成
 ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c08f251204697d34a24ac41650c92fc168af22a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387207"
 ---
-# <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>与其他 Windows 组件集成，移动宽带应用
+# <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>将移动宽带应用与其他 Windows 组件集成
 
 
 可以使用 Windows 10 用户界面 (UI) 图面以增强你的移动宽带应用的整体体验。
@@ -24,7 +24,7 @@ ms.locfileid: "56547000"
 
 -   [错误的用户体验](#errorux)
 
--   [应用程序视图](#appviews)
+-   [应用视图](#appviews)
 
 -   [启动点](#launchpts)
 
@@ -176,7 +176,7 @@ Toast 通知应仅用于高用户所需的信息，并且通常涉及某种形�
 
 -   [指南和 toast 通知的核对清单](https://msdn.microsoft.com/library/windows/apps/hh465391)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设计用户体验的移动宽带应用程序](designing-the-user-experience-of-a-mobile-broadband-app.md)

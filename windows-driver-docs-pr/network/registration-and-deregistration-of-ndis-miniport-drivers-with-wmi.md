@@ -1,6 +1,6 @@
 ---
-title: 注册和注销的与 WMI 的 NDIS 微型端口驱动程序
-description: 注册和注销的与 WMI 的 NDIS 微型端口驱动程序
+title: 在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
+description: 在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
 ms.assetid: 7460cb3f-7dc1-4454-b683-e1849233fc1d
 keywords:
 - 微型端口适配器 WDK 连接网络、 注册
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01397140076554bb1e7033f53b826674e31fa0c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388761"
 ---
-# <a name="registration-and-deregistration-of-ndis-miniport-drivers-with-wmi"></a>注册和注销的与 WMI 的 NDIS 微型端口驱动程序
+# <a name="registration-and-deregistration-of-ndis-miniport-drivers-with-wmi"></a>在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
 
 
 

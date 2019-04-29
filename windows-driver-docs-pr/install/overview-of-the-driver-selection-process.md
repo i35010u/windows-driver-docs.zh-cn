@@ -1,17 +1,17 @@
 ---
-title: 驱动程序选择过程的概述
-description: 驱动程序选择过程的概述
+title: 驱动程序选择过程概述
+description: 驱动程序选择过程概述
 ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d154e17f867200696eb190a175b257daa70058
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388303"
 ---
-# <a name="overview-of-the-driver-selection-process"></a>驱动程序选择过程的概述
+# <a name="overview-of-the-driver-selection-process"></a>驱动程序选择过程概述
 
 
 Windows 表示驱动程序，因为*驱动程序节点*，其中包括的设备，如任何服务、 特定于设备的共同安装程序和注册表项的所有软件支持。 设备服务包括功能驱动程序和任何较高级别和较低级别设备筛选器驱动程序。

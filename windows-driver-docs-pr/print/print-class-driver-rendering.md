@@ -1,17 +1,17 @@
 ---
-title: V4 打印类驱动程序呈现
+title: V4 打印类驱动程序渲染
 description: 进行呈现，v4 打印机驱动程序可以利用现有的呈现功能的打印类驱动程序。
 ms.assetid: F8178988-1C11-4B21-B250-6626528E0AE5
 ms.date: 07/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b9dd9fa0b4ca6576794281e6e6460b8c0ee9d2f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389480"
 ---
-# <a name="v4-print-class-driver-rendering"></a>V4 打印类驱动程序呈现
+# <a name="v4-print-class-driver-rendering"></a>V4 打印类驱动程序渲染
 
 
 进行呈现，v4 打印机驱动程序可以利用现有的呈现功能的打印类驱动程序。

@@ -1,6 +1,6 @@
 ---
-title: 创建压缩的纹理图面
-description: 创建压缩的纹理图面
+title: 创建压缩纹理图面
+description: 创建压缩纹理图面
 ms.assetid: 6d1cc079-642c-4662-ae72-c0362d8a5b2a
 keywords:
 - 绘制压缩的纹理 WDK DirectDraw 创建
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d81b763acf3677e1062855602c7ff9d9584ff60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387232"
 ---
-# <a name="creating-the-compressed-texture-surface"></a>创建压缩的纹理图面
+# <a name="creating-the-compressed-texture-surface"></a>创建压缩纹理图面
 
 
 ## <span id="ddk_creating_the_compressed_texture_surface_gg"></span><span id="DDK_CREATING_THE_COMPRESSED_TEXTURE_SURFACE_GG"></span>

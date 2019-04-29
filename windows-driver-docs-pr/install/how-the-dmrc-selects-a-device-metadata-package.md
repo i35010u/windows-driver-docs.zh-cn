@@ -5,11 +5,11 @@ ms.assetid: dbedc995-520a-4b54-8613-d5a7810ab99c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48545d2f50c2cf8f11ca0fd2ea601707f28b5b9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386969"
 ---
 # <a name="how-the-dmrc-selects-a-device-metadata-package"></a>DMRC 如何选择设备元数据包
 

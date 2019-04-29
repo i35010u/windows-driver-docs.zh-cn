@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b75f50578d869c83b2a5b22357d4a1ed41c477b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390028"
 ---
 # <a name="ux-unassemble-x86-bios"></a>ux（取消汇编 x86 BIOS）
 

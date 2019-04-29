@@ -5,11 +5,11 @@ ms.assetid: 5B0662B0-CBD3-4F31-B98F-6BC8184574DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c55bdac9dd253b236aa95afe77b07d5cfbc08b18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390418"
 ---
 # <a name="airplane-mode-radio-management"></a>飞行模式无线管理
 
@@ -147,7 +147,7 @@ OUTPUT (Cnst,Var,Abs)                          91 03
 END_COLLECTION                                 C0
 ```
 
-## <a name="troubleshooting-common-errors"></a>故障排除的常见错误
+## <a name="troubleshooting-common-errors"></a>排查常见错误
 
 
 提示\#1:使用单选 manager 按钮时，PC 制造商应释放按钮时并不是在按下按钮时发送一个 HID 报表。 这是因为切换按钮通常是相对的输入，不是绝对的另一个。

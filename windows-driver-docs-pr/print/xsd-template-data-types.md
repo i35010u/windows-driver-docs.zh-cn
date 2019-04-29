@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be818179c0e27790b0b453a256355400933ae891
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390219"
 ---
 # <a name="xsd-template-data-types"></a>XSD 模板数据类型
 

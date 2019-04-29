@@ -1,6 +1,6 @@
 ---
-title: 版本控制的接口
-description: 版本控制的接口
+title: 版本受控的接口
+description: 版本受控的接口
 ms.assetid: 9512bfff-9225-45a3-b8c3-73469a1fe870
 keywords:
 - NDIS WDK、 版本控制
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc90c6a997221f1f254d1ddd8718582dfe5d627a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387313"
 ---
-# <a name="versioned-interfaces"></a>版本控制的接口
+# <a name="versioned-interfaces"></a>版本受控的接口
 
 
 

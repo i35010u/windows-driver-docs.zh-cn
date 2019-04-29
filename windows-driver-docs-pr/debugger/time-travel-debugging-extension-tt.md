@@ -4,11 +4,11 @@ description: ！ Tt 时间旅行调试器扩展，可用于在时间中向前和
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26817ac6f106064afdec8f80a74359c23d476768
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389119"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
 
@@ -60,7 +60,7 @@ ttdext.dll
 
 此扩展只适用于时间传输跟踪。 有关按时间顺序查看详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
 

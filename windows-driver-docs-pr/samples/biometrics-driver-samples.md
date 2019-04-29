@@ -5,11 +5,11 @@ ms.assetid: AF13B554-4774-4F62-9C1E-3AED5B753B68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14dfdcc9e74e21e0986359c194d2df5786027521
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390221"
 ---
 # <a name="biometrics-driver-samples"></a>生物识别驱动程序示例
 

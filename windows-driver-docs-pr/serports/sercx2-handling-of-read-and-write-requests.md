@@ -1,17 +1,17 @@
 ---
-title: SerCx2 处理读取和写入请求
+title: SerCx2 对读取和写入请求的处理
 description: 外围设备驱动程序将写入 (IRP_MJ_WRITE) 和读取 (IRP_MJ_READ) 请求发送到传输数据传入和传出连接到端口的外围设备的串行控制器上的端口。
 ms.assetid: 98100680-7D27-42B7-A445-C539B2DF95AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e71adc20a8da60c2a600f5aa4fcc43810ab84b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388001"
 ---
-# <a name="sercx2-handling-of-read-and-write-requests"></a>SerCx2 处理读取和写入请求
+# <a name="sercx2-handling-of-read-and-write-requests"></a>SerCx2 对读取和写入请求的处理
 
 
 外围设备的驱动程序将发送写入 ([**IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) 和读取 ([**IRP\_MJ\_读取** ](https://msdn.microsoft.com/library/windows/hardware/ff546883)) 串行控制器上的端口的请求来传输数据传入和传出外围设备连接到的端口。 在其中 SerCx2 处理这些请求的方式是有明确定义，即使请求超时或被取消。

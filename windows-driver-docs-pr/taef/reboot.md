@@ -5,11 +5,11 @@ ms.assetid: 8AB66CAB-9BAA-4911-A143-618627226B78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02549bbc4e798526fdf37bf50ff97bb42084d6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387444"
 ---
 # <a name="reboot"></a>重新启动
 
@@ -29,7 +29,7 @@ TAEF 允许一个测试，以指定它会导致或需要重启计算机。 该�
 ## <a name="span-idmetadatarebootspanspan-idmetadatarebootspanmetadata"></a><span id="metadata_reboot"></span><span id="METADATA_REBOOT"></span>元数据
 
 
-若要启用重新启动 Api 使用，应将测试标记通过设置**RebootPossible**元数据 **"true"**。 此元数据遵循元数据继承的常用规则，因此它可以指定在类级别如果在类中的任何测试可能会重启 （尽管由于而不是重量级性质的重新启动，它会建议明确确定有关哪些测试可以不能启动重新启动)。 请参阅上的文档[c + + 中创作测试](authoring-tests-in-c--.md)并[创作中的测试C#](authoring-tests-in-c-.md)有关的元数据规范示例。
+若要启用重新启动 Api 使用，应将测试标记通过设置**RebootPossible**元数据 **"true"**。 此元数据遵循元数据继承的常用规则，因此它可以指定在类级别如果在类中的任何测试可能会重启 （尽管由于而不是重量级性质的重新启动，它会建议明确确定有关哪些测试可以不能启动重新启动)。 请参阅上的文档[中创作测试C++](authoring-tests-in-c--.md)并[中创作测试C#](authoring-tests-in-c-.md)有关的元数据规范示例。
 
 ## <a name="span-idapirebootspanspan-idapirebootspanapi"></a><span id="api_reboot"></span><span id="API_REBOOT"></span>API
 

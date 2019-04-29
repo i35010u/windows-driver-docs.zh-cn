@@ -1,6 +1,6 @@
 ---
-title: 对于延迟的上下文中不包括 DDI 函数
-description: 对于延迟的上下文中不包括 DDI 函数
+title: 排除延迟上下文的 DDI 函数
+description: 排除延迟上下文的 DDI 函数
 ms.assetid: f6e7898a-7fb8-4a70-ab2e-3372a28db6f4
 keywords:
 - Direct3D 版本显示 11 WDK Windows 7，延迟的上下文中，不包括 DDI 函数
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8a7532626cab62b764fff86c4b813f36a74de0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387892"
 ---
-# <a name="excluding-ddi-functions-for-deferred-contexts"></a>对于延迟的上下文中不包括 DDI 函数
+# <a name="excluding-ddi-functions-for-deferred-contexts"></a>排除延迟上下文的 DDI 函数
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

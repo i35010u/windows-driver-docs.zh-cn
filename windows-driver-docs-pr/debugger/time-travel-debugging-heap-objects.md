@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试关联的堆模型对象。
 ms.date: 09/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29bbd1e05ed966095eebff5655db0e72c885592f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389099"
 ---
 # <a name="ttd-heap-objects"></a>TTD 堆对象
 ## <a name="description"></a>描述
@@ -30,7 +30,7 @@ ms.locfileid: "56520588"
 | --- | --- |
 | 地址 | 已分配的对象的地址。 |
 | PreviousAddress | 之前已重新分配已分配的对象的地址。 如果地址不是与 PreviousAddress 相同重新分配操作将导致要移动的内存。 |
-| 尺寸 | 大小和/或请求的已分配的对象的大小。 |
+| 大小 | 大小和/或请求的已分配的对象的大小。 |
 | BaseAddress | 在堆中分配的对象的地址。  它可以表示该地址将释放 (Free) 或在其之前的对象的地址重新分配 (ReAlloc。) |
 | Flags | 含义取决于该 API。 |
 | 结果 | 调用堆 API 的结果。 非零表示成功，零表示失败。 |
@@ -40,7 +40,7 @@ ms.locfileid: "56520588"
 
 ## <a name="children"></a>Children
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | TimeStart | 一个[位置对象](time-travel-debugging-position-objects.md)描述分配的开始处的位置。 |
 | TimeEnd | 一个[位置对象](time-travel-debugging-position-objects.md)，它描述在分配末尾的位置。 |
@@ -80,7 +80,7 @@ dx -r1 @$cursession.TTD.Data.Heap()[2].@"Parameters"
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

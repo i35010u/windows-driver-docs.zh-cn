@@ -1,6 +1,6 @@
 ---
-title: 从应用程序打印到 Url
-description: 从应用程序打印到 Url
+title: 从应用程序打印到 URL
+description: 从应用程序打印到 URL
 ms.assetid: bc9aedb4-1d64-4b70-b14b-1392f914a635
 keywords:
 - Internet 打印 WDK，打印到的 Url
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d099985ded26f5e03fa83da22de7946948b81878
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390276"
 ---
-# <a name="printing-to-urls-from-applications"></a>从应用程序打印到 Url
+# <a name="printing-to-urls-from-applications"></a>从应用程序打印到 URL
 
 
 

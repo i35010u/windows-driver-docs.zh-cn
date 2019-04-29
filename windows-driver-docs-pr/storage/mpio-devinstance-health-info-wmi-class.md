@@ -5,11 +5,11 @@ ms.assetid: 4d47b41b-eac6-4f8b-801b-76eec8158074
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9307fe6cb3cbef5b9a98b7333713e21c21d118f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391428"
 ---
 # <a name="mpiodevinstancehealthinfo-wmi-class"></a>MPIO\_DEVINSTANCE\_运行状况\_信息 WMI 类
 

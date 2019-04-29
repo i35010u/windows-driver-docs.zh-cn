@@ -5,11 +5,11 @@ ms.assetid: 646add52-f946-4169-9f6b-974253ec30af
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8e40aa4b601feb670a4f2fb99fc42def75a57b31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387946"
 ---
 # <a name="msiscsilunmappinginformation-wmi-class"></a>MSiSCSI\_LUNMappingInformation WMI 类
 

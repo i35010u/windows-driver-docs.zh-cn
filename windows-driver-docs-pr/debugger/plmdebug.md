@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fab398b359d46a8c2147c2d3d67994a236ee4f52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387936"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
@@ -52,7 +52,7 @@ plmdebug /activateBgTaskTaskId
 包或正在运行的进程的 ID 的完整名称。
 
 <span id="_______DebuggerCommandLine"></span><span id="_______debuggercommandline"></span><span id="_______DEBUGGERCOMMANDLINE"></span> *DebuggerCommandLine*  
-若要打开调试程序命令行。 命令行必须包含到调试器的完整路径。 如果该路径包含空格，则必须放在引号中。 命令行还可以包含参数。 下面提供了一些示例：
+若要打开调试程序命令行。 命令行必须包含到调试器的完整路径。 如果该路径包含空格，则必须放在引号中。 命令行还可以包含参数。 下面是一些可能的恶意活动：
 
 `"C:\Program Files (x86)\Windows Kits\8.0\Debuggers\x64\WinDbg.exe"`
 

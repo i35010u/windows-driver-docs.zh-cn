@@ -1,6 +1,6 @@
 ---
-title: 使用直接 I/O DispatchReadWrite
-description: 使用直接 I/O DispatchReadWrite
+title: 使用直接 I/O 执行 DispatchReadWrite
+description: 使用直接 I/O 执行 DispatchReadWrite
 ms.assetid: 5174fe1f-aee5-4c8a-87a1-7f185ed4e242
 keywords:
 - DispatchReadWrite 例程
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1b2f72145086b17d8f7a78b18f256503e17f1ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387189"
 ---
-# <a name="dispatchreadwrite-using-direct-io"></a>使用直接 I/O DispatchReadWrite
+# <a name="dispatchreadwrite-using-direct-io"></a>使用直接 I/O 执行 DispatchReadWrite
 
 
 

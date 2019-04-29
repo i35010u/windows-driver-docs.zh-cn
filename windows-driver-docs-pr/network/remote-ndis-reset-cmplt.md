@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_RESET_CMPLT
-Description: A Remote NDIS device will respond to a REMOTE_NDIS_RESET_MSG message from the host by resetting the device and returning the status of the request in the REMOTE_NDIS_RESET_CMPLT message.
+Description: 远程 NDIS 设备将响应 REMOTE_NDIS_RESET_MSG 消息从主机通过将设备重置并 REMOTE_NDIS_RESET_CMPLT 消息中返回请求的状态。
 ms.assetid: 80ab998f-9690-49d3-bb47-1937c832d13e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 853e8d4fc849662eeda2426c504b50e570b238c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388125"
 ---
 # <a name="remotendisresetcmplt"></a>远程\_NDIS\_重置\_CMPLT
 
@@ -26,7 +26,7 @@ ms.locfileid: "56547442"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -71,11 +71,11 @@ ms.locfileid: "56547442"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Rndis.h （包括 Rndis.h）</td>
 </tr>
 </tbody>

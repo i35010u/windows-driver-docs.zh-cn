@@ -1,6 +1,6 @@
 ---
-title: 选择 Stream 格式
-description: 选择 Stream 格式
+title: 选择流格式
+description: 选择流格式
 ms.assetid: 876eca52-4d5e-45bd-90df-ff4b6405078d
 keywords:
 - 视频捕获 WDK AVStream，流格式
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5979f18fb5525c322a6681238f5be874da97d92d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389202"
 ---
-# <a name="selecting-a-stream-format"></a>选择 Stream 格式
+# <a name="selecting-a-stream-format"></a>选择流格式
 
 
 视频捕获设备可以捕获在许多不同的格式的视频。 [ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构用于传达有关宽度、 高度、 粒度，剪切、 信息和帧速率为特定颜色空间。 结构[ **KS\_DATARANGE\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567628)并[ **KS\_DATARANGE\_视频 2**](https://msdn.microsoft.com/library/windows/hardware/ff567629)是 KSDATARANGE 结构的扩展，应使用用于描述视频捕获格式。 使用 KS\_DATARANGE\_视频来描述仅视频帧。 使用 KS\_DATARANGE\_视频 2 来描述视频字段和视频帧，带或不带 bob 或将设置。

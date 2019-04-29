@@ -1,6 +1,6 @@
 ---
-title: 处理与存储外围设备的即插即用请求
-description: 处理与存储外围设备的即插即用请求
+title: 处理对存储外设的 PnP 请求
+description: 处理对存储外设的 PnP 请求
 ms.assetid: 9c7ea576-11e6-46d7-b04c-ce412a0fc569
 keywords:
 - 外围设备 WDK 存储，即插即用请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f111fc01d7d9c7d0fc0e28caf05f1c3512bcaacc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390901"
 ---
-# <a name="handling-pnp-requests-to-storage-peripherals"></a>处理与存储外围设备的即插即用请求
+# <a name="handling-pnp-requests-to-storage-peripherals"></a>处理对存储外设的 PnP 请求
 
 
 ## <span id="ddk_handling_pnp_requests_to_storage_peripherals_kg"></span><span id="DDK_HANDLING_PNP_REQUESTS_TO_STORAGE_PERIPHERALS_KG"></span>

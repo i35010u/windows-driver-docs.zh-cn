@@ -1,6 +1,6 @@
 ---
-title: RS-232 端口上的 Plug and Play 串行设备中删除
-description: RS-232 端口上的 Plug and Play 串行设备中删除
+title: 删除 RS-232 端口上的即插即用串行设备
+description: 删除 RS-232 端口上的即插即用串行设备
 ms.assetid: a9019445-3013-49b2-94fd-1ab8a85c3d7a
 keywords:
 - RS-232 端口 WDK 串行设备
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64492606b8f580092d74d96175b1d7e2b7aafc53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388026"
 ---
-# <a name="removing-a-plug-and-play-serial-device-on-an-rs-232-port"></a>RS-232 端口上的 Plug and Play 串行设备中删除
+# <a name="removing-a-plug-and-play-serial-device-on-an-rs-232-port"></a>删除 RS-232 端口上的即插即用串行设备
 
 
 

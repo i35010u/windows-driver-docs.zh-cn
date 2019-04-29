@@ -1,6 +1,6 @@
 ---
-title: 创建事务的客户端
-description: 创建事务的客户端
+title: 创建事务客户端
+description: 创建事务客户端
 ms.assetid: 75d4758b-dfba-431b-9bfa-9dcb98c2a7cc
 keywords:
 - 事务客户端 WDK KTM
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63675a9d2815d7e5404be597e00bb840034c631b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388299"
 ---
-# <a name="creating-a-transactional-client"></a>创建事务的客户端
+# <a name="creating-a-transactional-client"></a>创建事务客户端
 
 
 一个[*事务客户端*](transaction-processing-terms.md#ktm-term-transactional-client)是事务处理系统 (TPS) 组件，它使用资源管理器的导出的接口来访问资源，例如数据库、 的资源管理器支持。

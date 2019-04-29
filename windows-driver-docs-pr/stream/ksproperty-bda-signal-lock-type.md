@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58b8a3fb6f41d14ad28e7e4aa81a8ba69d8b8fd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389265"
 ---
 # <a name="kspropertybdasignallocktype"></a>KSPROPERTY\_BDA\_信号\_锁\_类型
 
@@ -77,13 +77,13 @@ RF 调谐器节点应提供此有关的指示。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA\_LockType**](https://msdn.microsoft.com/library/windows/hardware/ff556526)

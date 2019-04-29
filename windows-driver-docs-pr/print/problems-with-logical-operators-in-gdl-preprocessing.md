@@ -1,6 +1,6 @@
 ---
-title: GDL 预处理中的逻辑运算符的问题
-description: GDL 预处理中的逻辑运算符的问题
+title: GDL 预处理中的逻辑运算符问题
+description: GDL 预处理中的逻辑运算符问题
 ms.assetid: 8ba1758c-8b8e-4eb2-8625-ffee213025aa
 keywords:
 - 预处理器指令 WDK GDL 预处理的问题
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79ce6bb7e1f9fa21eefb1e2461a53c087ce43450
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390255"
 ---
-# <a name="problems-with-logical-operators-in-gdl-preprocessing"></a>GDL 预处理中的逻辑运算符的问题
+# <a name="problems-with-logical-operators-in-gdl-preprocessing"></a>GDL 预处理中的逻辑运算符问题
 
 
 当前不支持 GDL 预处理器条件语句中的逻辑运算符，但可以模拟。

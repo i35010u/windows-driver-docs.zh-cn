@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0899597957116b4051d05560aac01aa6104b19ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390195"
 ---
 # <a name="avcfunctionrelease"></a>AVC\_函数\_版本
 
@@ -99,7 +99,7 @@ Pin 变为非活动状态时，子单元驱动程序必须使用此函数。
 
 这必须在调用在 IRQL = 被动\_级别。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC\_MULTIFUNC\_IRB**](https://msdn.microsoft.com/library/windows/hardware/ff554177)， [ **AVC\_PIN\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff554187)， [ **AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)
 

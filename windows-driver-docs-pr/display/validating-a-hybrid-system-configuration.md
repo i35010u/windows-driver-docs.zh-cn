@@ -5,11 +5,11 @@ description: 要验证的混合系统的过程的 decription。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c99c101318a756eb0f142331b8bc03d9eb077811
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388986"
 ---
 # <a name="validating-a-hybrid-system-configuration"></a>验证混合系统配置
 

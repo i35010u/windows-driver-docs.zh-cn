@@ -1,6 +1,6 @@
 ---
-title: 升级网络组件的过程
-description: 升级网络组件的过程
+title: 网络组件的升级过程
+description: 网络组件的升级过程
 ms.assetid: ddd1eda0-7bed-44e7-8636-8db3508825f5
 keywords:
 - 网络组件升级 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc22be488ce1facd2e0fa35afdc31da0b01fe45f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387147"
 ---
-# <a name="process-for-upgrading-network-components"></a>升级网络组件的过程
+# <a name="process-for-upgrading-network-components"></a>网络组件的升级过程
 
 
 

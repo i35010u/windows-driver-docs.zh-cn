@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 720e096a4e2615098f74c011d0f813385dcddd47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388063"
 ---
 # <a name="tcpip-schema-extensions-for-input-and-output-bins"></a>输入和输出 Bin 的 TCP/IP 架构扩展
 

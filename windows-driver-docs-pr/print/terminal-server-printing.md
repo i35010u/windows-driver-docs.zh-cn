@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 533e945e07f8fcdc22eb6d8a5dbed996b69d61a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388059"
 ---
 # <a name="terminal-server-printing"></a>终端服务器打印
 
@@ -30,9 +30,9 @@ Microsoft Windows 2000 和更高版本支持终端服务技术，它允许多个
 
     [Microsoft 通用打印机驱动程序](microsoft-universal-printer-driver.md)
 
-    [Microsoft PostScript Printer Driver](microsoft-postscript-printer-driver.md)
+    [Microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md)
 
-    [Microsoft Plotter Driver](microsoft-plotter-driver.md)
+    [Microsoft 绘图仪驱动程序](microsoft-plotter-driver.md)
 
 -   在 Windows Vista 中，您必须设计打印机图形 DLL 来在用户模式下执行。 请参阅[选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
 

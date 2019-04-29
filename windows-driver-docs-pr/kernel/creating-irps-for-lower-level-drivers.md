@@ -1,6 +1,6 @@
 ---
-title: 创建 Irp 的较低级驱动程序
-description: 创建 Irp 的较低级驱动程序
+title: 为较低级驱动程序创建 IRP
+description: 为较低级驱动程序创建 IRP
 ms.assetid: 2d298eb1-6169-4742-80c1-200223a2d4fa
 keywords:
 - Irp WDK 内核，创建
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a22064f49292ebefa6b6a29bc1c9db4813ba876d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388255"
 ---
-# <a name="creating-irps-for-lower-level-drivers"></a>创建 Irp 的较低级驱动程序
+# <a name="creating-irps-for-lower-level-drivers"></a>为较低级驱动程序创建 IRP
 
 
 

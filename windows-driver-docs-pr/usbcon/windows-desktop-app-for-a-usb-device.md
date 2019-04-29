@@ -1,16 +1,16 @@
 ---
-Description: Learn about how an application can call WinUSB Functions to communicate with a USB device.
-title: 有关 USB 设备的 Windows 桌面应用程序
+Description: 了解如何应用程序可以调用 WinUSB 函数与 USB 设备进行通信。
+title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 557ae71709675dc25facc322c8d9a752fbd2c73f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389188"
 ---
-# <a name="windows-desktop-app-for-a-usb-device"></a>有关 USB 设备的 Windows 桌面应用程序
+# <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
 
 将本主题中了解有关应用程序可以调用[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)与 USB 设备进行通信。 有关此类应用程序[WinUSB](winusb.md) (Winusb.sys) 必须作为设备的功能驱动程序安装。 在设备的内核模式堆栈 WinUSB。 此驱动程序包含在 Windows 中\\Windows\\System32\\驱动程序文件夹。
@@ -26,7 +26,7 @@ Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O �
 -   WinUSB 函数不支持已有内核模式下支持的设备。 此类设备的示例包括调制解调器和网络适配器，分别由电话服务 API (TAPI) 和 NDIS，支持。
 -   对于多功能设备，可以使用设备的 INF 文件单独为每个 USB 函数指定一个框中的内核模式驱动程序或 Winusb.sys。 但是，您可以指定特定的函数，不能同时为这些选项之一。
 
-**请注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/c + + 应用程序中使用这些函数与 USB 设备进行通信。 若要编写使用 WinUSB Api 的 UWP 应用，请参阅[USB 设备的 UWP 应用](writing-usb-device-companion-apps-for-microsoft-store.md)。
+**请注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C 中使用这些函数 /C++应用程序与您的 USB 设备进行通信。 若要编写使用 WinUSB Api 的 UWP 应用，请参阅[USB 设备的 UWP 应用](writing-usb-device-companion-apps-for-microsoft-store.md)。
 
 ## <a name="getting-started"></a>入门...
 
@@ -60,7 +60,7 @@ Winusb.dll 使用的应用程序提供的数据来构造相应的设备的 I/O �
 <td><p><strong>步骤 2</strong>— 获取测试 USB 设备和其硬件规范。 使用规范来确定应用程序和相关的设计决策的功能。</p></td>
 <td><p>为了方便学习，受欢迎的选项有：</p>
 <ul>
-<li>OSR USB FX2 学习工具包。 该工具包是最适合研究 USB 示例包含在此文档集。 就可以从学习工具包<a href="http://www.osronline.com/" data-raw-source="[OSR Online](http://www.osronline.com/)">OSR 联机</a>。</li>
+<li>OSR USB FX2 学习工具包。 此工具包最适合学习本文档集中包括的 USB 示例。 就可以从学习工具包<a href="http://www.osronline.com/" data-raw-source="[OSR Online](http://www.osronline.com/)">OSR 联机</a>。</li>
 <li>Microsoft USB 测试工具 (MUTT) 设备。 可以从购买 MUTT 硬件<a href="http://jjgtechnologies.com/mutt.md" data-raw-source="[JJG Technologies](http://jjgtechnologies.com/mutt.md)">JJG 技术</a>。 设备没有安装的已安装的固件。 若要安装固件，下载从 MUTT 软件包<a href="mutt-software-package.md" data-raw-source="[this Web site](mutt-software-package.md)">此网站</a>并运行 MUTTUtil.exe。 有关详细信息，请参阅随程序包提供的文档。</li>
 </ul></td>
 </tr>

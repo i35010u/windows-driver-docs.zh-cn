@@ -5,11 +5,11 @@ ms.assetid: AC327938-A813-4665-8E2E-43BEE11D4AA9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 469a4ebd97b0f47897e15d16a8dd8a6bf75be3e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390315"
 ---
 # <a name="retrieving-the-contents-of-a-ieee-1394-nodes-configuration-rom"></a>检索 IEEE 1394 节点的配置 ROM 的内容
 
@@ -59,7 +59,7 @@ Windows 7 包括 1394ohci.sys，新 IEEE 1394 总线驱动程序，通过使用�
 
 ## <a name="related-topics"></a>相关主题
 [IEEE 1394 驱动程序堆栈](https://msdn.microsoft.com/library/windows/hardware/ff538867)  
-[修改 1394年配置 ROM](https://msdn.microsoft.com/library/windows/hardware/ff537433)  
+[修改 1394 配置 ROM](https://msdn.microsoft.com/library/windows/hardware/ff537433)  
 [**REQUEST\_GET\_CONFIG\_ROM**](https://msdn.microsoft.com/library/windows/hardware/gg266404)  
 
 

@@ -1,14 +1,14 @@
 ---
-Description: This section describes the generic WinUSB driver (Winusb.sys) and its user-mode component (Winusb.dll) provided by Microsoft for all USB devices.
+Description: 本部分介绍通用 WinUSB 驱动程序 (Winusb.sys) 和其由 Microsoft 提供的所有 USB 设备的用户模式组件 (Winusb.dll)。
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5d624fc901e7b8a587b123590fc58aa75b89c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389115"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
@@ -21,7 +21,7 @@ Windows USB (WinUSB) 是为带有 SP2 的 Windows XP 开发的 Windows 驱动程
 
 Winusb.sys 也是链接的 UMDF 功能驱动程序和关联的设备之间的重要组成部分。 Winusb.sys 作为上限的筛选器驱动程序安装在设备的内核模式堆栈中。 应用程序与设备的 UMDF 功能驱动程序发出的读取、 写入或设备的 I/O 控制请求进行通信。 该驱动程序框架，它将请求传递给 Winusb.sys 与进行交互。 Winusb.sys 然后处理请求，并将其传递给协议驱动程序并最终移到设备。 按反向路径返回任何响应。 Winusb.sys 也可作为设备堆栈插和 power 所有者。
 
-**请注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/c + + 应用程序中使用这些函数与 USB 设备进行通信。 Microsoft 不提供有关 WinUSB 托管的 API。
+**请注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C 中使用这些函数 /C++应用程序与您的 USB 设备进行通信。 Microsoft 不提供有关 WinUSB 托管的 API。
 
 本部分介绍如何使用 WinUSB 与 USB 设备进行通信。 在本部分中的主题提供有关选择正确的驱动程序为你的设备，安装 Winusb.sys 为 USB 设备的功能驱动程序，并包含代码示例，说明的详细的演练信息的指导原则如何应用程序和 USB 设备与彼此通信。
 

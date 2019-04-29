@@ -5,11 +5,11 @@ ms.assetid: 0DD7865F-C31C-48AD-8775-4AC1E469176F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf95ec0a0826da32f61aac4cfce28a67a25cc5b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390409"
 ---
 # <a name="touchscreen-laptop-system-testing"></a>触摸屏笔记本电脑系统测试
 

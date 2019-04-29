@@ -5,11 +5,11 @@ ms.assetid: 0BD65185-C358-4E28-8E31-255AF8D77F93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f16f8116bd4d8aa0afc4b8056815f585d1ca6bf9
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390099"
 ---
 # <a name="porting-io-dispatch-routines-to-io-event-callback-functions"></a>将 I/O 调度例程移植到 I/O 事件回调函数
 

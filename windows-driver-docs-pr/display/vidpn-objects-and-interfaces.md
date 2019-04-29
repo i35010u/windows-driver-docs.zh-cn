@@ -13,11 +13,11 @@ keywords:
 ms.date: 10/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 83a153440ba05804fcbf0ebc159e083183b93aab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391219"
 ---
 # <a name="vidpn-objects-and-interfaces"></a>VidPN 对象和接口
 
@@ -42,7 +42,7 @@ VidPN 对象包含以下子对象。
 
 -   路径
 
--   源
+-   Source
 
 -   目标
 
@@ -67,7 +67,7 @@ VidPN 对象包含以下子对象。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">对象</th>
+<th align="left">Object</th>
 <th align="left">访问方法和数据类型</th>
 </tr>
 </thead>
@@ -108,7 +108,7 @@ VidPN 对象包含以下子对象。
 <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546647" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_PRESENT_PATH&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546647)"><strong>D3DKMDT_VIDPN_PRESENT_PATH</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>源</p></td>
+<td align="left"><p>Source</p></td>
 <td align="left"><p>访问通过结构的指针。</p>
 <p><a href="https://msdn.microsoft.com/library/windows/hardware/ff546614" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_SOURCE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff546614)"><strong>D3DKMDT_VIDEO_PRESENT_SOURCE</strong></a></p></td>
 </tr>

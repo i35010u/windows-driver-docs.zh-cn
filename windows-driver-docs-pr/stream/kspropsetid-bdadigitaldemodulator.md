@@ -5,11 +5,11 @@ ms.assetid: 536c247d-049b-4d48-96b7-f2aa01f1fa91
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3c5945c68444e0134f383640a330368b52276f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389228"
 ---
 # <a name="kspropsetidbdadigitaldemodulator"></a>KSPROPSETID\_BdaDigitalDemodulator
 
@@ -52,7 +52,7 @@ KSPROPSETID\_BdaDigitalDemodulator 是 BDA 数字解调器属性集。 它用于
 
 KSPROPSETID\_BdaDigitalDemodulator 属性集介绍 DVB 解调器节点的属性。 使用此属性集，而不是 KSPROPSETID\_BdaAutodemodulate 如果解调器要求要设置特定值。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [KSPROPSETID\_BdaAutodemodulate](kspropsetid-bdaautodemodulate.md)
 

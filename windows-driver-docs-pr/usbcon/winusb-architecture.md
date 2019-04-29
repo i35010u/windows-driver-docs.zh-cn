@@ -1,14 +1,14 @@
 ---
-Description: WinUSB consists of two primary components - Winusb.sys, a kernel-mode driver and Winusb.dll - user-mode DLL.
+Description: WinUSB 包含两个主要组件-Winusb.sys、 内核模式驱动程序和 Winusb.dll-用户模式 DLL。
 title: WinUSB 体系结构和模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8af8e1ac30fd4585ee25864ed38080d3a4cc6fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389184"
 ---
 # <a name="winusb-architecture-and-modules"></a>WinUSB 体系结构和模块
 

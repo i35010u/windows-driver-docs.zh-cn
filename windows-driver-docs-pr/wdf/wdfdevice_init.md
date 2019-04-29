@@ -7,11 +7,11 @@ keywords:
 ms.date: 02/23/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 26d6a182eb9223512eeaf190ea7ef9f23dfdff5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390840"
 ---
 # <a name="wdfdeviceinit-structure"></a>WDFDEVICE_INIT 结构
 
@@ -60,7 +60,7 @@ struct WDFDEVICE_INIT {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdftypes.h （包括 Wdftypes.h）</td>
 </tr>
 </tbody>

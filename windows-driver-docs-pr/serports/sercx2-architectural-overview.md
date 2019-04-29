@@ -5,11 +5,11 @@ ms.assetid: BA5D8966-ACC5-44ED-8CB8-61D1BCF39522
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b568e09c87923ac88c4b80725d66fa8748e60b81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388024"
 ---
 # <a name="sercx2-architectural-overview"></a>SerCx2 体系结构概述
 

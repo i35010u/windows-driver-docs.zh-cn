@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05b14aefae6204f0d24c95fc6f388b70f4451577
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386746"
 ---
 # <a name="oidwwanbasestationsinfo"></a>OID_WWAN_BASE_STATIONS_INFO
 
@@ -27,10 +27,10 @@ OID_WWAN_BASE_STATIONS_INFO 检索有关服务和相邻单元格到调制解调�
 
 | | |
 | --- | --- |
-| 版本 | Windows 10 版本 1709 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1709 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_WWAN_BASE_STATIONS_INFO_REQ](https://msdn.microsoft.com/library/windows/hardware/4327021B-93FB-4605-B7D1-A7A6D661C8DF)
 

@@ -5,11 +5,11 @@ ms.assetid: eb2cbe3c-b516-4db3-92ad-5eafd7181624
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b694ad3010b5cf44fb5ec506719cead6bed40694
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388103"
 ---
 # <a name="keyword-mapping"></a>关键字映射
 

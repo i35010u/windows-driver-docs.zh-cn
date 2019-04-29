@@ -1,19 +1,19 @@
 ---
-title: 旧微型端口驱动程序的电源管理
-description: 旧微型端口驱动程序的电源管理
+title: 旧式微型端口驱动程序的电源管理
+description: 旧式微型端口驱动程序的电源管理
 ms.assetid: 676c8c4c-3fd7-4063-a704-2bbfdd03a94e
 keywords:
 - 电源管理 WDK NDIS 微型端口，旧的微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2aab7c0950cea4b5a90376f13365a5cc33b4aa1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63388756"
 ---
-# <a name="power-management-for-old-miniport-drivers"></a>旧微型端口驱动程序的电源管理
+# <a name="power-management-for-old-miniport-drivers"></a>旧式微型端口驱动程序的电源管理
 
 
 

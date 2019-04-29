@@ -5,11 +5,11 @@ ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f9c895ca011b7c42cacaa232aa74867a1af618c5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63387914"
 ---
 # <a name="srbprocessing-rule-set-storport"></a>SrbProcessing 规则集 (Storport)
 
