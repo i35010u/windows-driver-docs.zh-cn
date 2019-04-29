@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 20973717890237a2b62a9d907cd306024ef3378d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361533"
 ---
 # <a name="bug-check-0x30-setofinvalidcontext"></a>Bug 检查 0x30：设置\_OF\_无效\_上下文
 

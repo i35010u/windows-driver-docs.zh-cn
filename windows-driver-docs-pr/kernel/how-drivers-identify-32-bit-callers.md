@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1c0e5aa033197d94d201c2afbaf5c67d2114a54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364279"
 ---
 # <a name="how-drivers-identify-32-bit-callers"></a>驱动程序如何识别 32 位调用方
 

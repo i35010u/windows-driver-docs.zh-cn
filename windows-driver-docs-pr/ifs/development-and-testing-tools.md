@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73737850d38bc3ddfb5e0f6fb38581e40d43fe10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359316"
 ---
 # <a name="development-and-testing-tools"></a>开发和测试工具
 
@@ -39,7 +39,7 @@ Fltmc.exe 控件程序是用于常见微筛选器驱动程序管理操作的命�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">描述</th>
 </tr>
 </thead>

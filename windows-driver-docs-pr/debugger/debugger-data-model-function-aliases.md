@@ -6,15 +6,15 @@ keywords:
 ms.date: 03/21/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c04dcac55ffd45c03742252a279d6f1ed3a7bc69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368539"
 ---
 # <a name="debugger-data-model-function-aliases"></a>调试器数据模型函数别名
 
-函数别名是唯一的短名称调试器的用户可以访问 （无论是编写 c + + 或 JavaScript 等一些脚本编写环境） 中的调试器扩展定义的功能。 此短名称获取与数据模型函数对象 （可实现 IModelMethod 对象） 相关联。 该函数采用任意数量的参数并返回单个值。 调用的函数别名并做了什么的效果的值依赖于如何调用函数别名和哪些主机调试器调用中。 
+函数别名是唯一的短名称调试器的用户可以访问调试器扩展中定义的功能 (编写的C++或 JavaScript 等一些脚本编写环境)。 此短名称获取与数据模型函数对象 （可实现 IModelMethod 对象） 相关联。 该函数采用任意数量的参数并返回单个值。 调用的函数别名并做了什么的效果的值依赖于如何调用函数别名和哪些主机调试器调用中。 
 
 本主题假定读者熟悉的调试器对象模型和 JavaScript。 与 JavaScript 一起使用调试器对象的信息，请参阅[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
 
@@ -106,7 +106,7 @@ function initializeScript()
 
 ## <a name="function-alias-design-considerations"></a>函数别名设计注意事项
 
-函数别名永远不应在绝大部分数据中的哪些功能公开模型扩展的唯一方式。 （为它在 c + + 或 JavaScript 中） 的数据模型扩展应几乎始终包含它所公开的类型或其他调试程序的概念与关联的数据。 与进程相关联的所有操作应都是 Debugger.Models.Process 或该对象的一个子命名空间下。 函数别名可在方便的入门到 （或转换） 可能需要相当长的时间的查询的数据。 
+函数别名永远不应在绝大部分数据中的哪些功能公开模型扩展的唯一方式。 数据模型扩展 (比如在C++或 JavaScript) 应几乎始终包括它所公开的类型或其他调试程序的概念与关联的数据。 与进程相关联的所有操作应都是 Debugger.Models.Process 或该对象的一个子命名空间下。 函数别名可在方便的入门到 （或转换） 可能需要相当长的时间的查询的数据。 
 
 作为内核模式示例中，以下查询将即插即用设备树，并平展到一个简单的设备的平面列表： 
 

@@ -4,18 +4,18 @@ description: 发布 NFP 消息
 ms.assetid: 45BE3620-ADF4-413D-90B3-586FCEB5F606
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ad5b29f3064cb5cc84f6e9844c514fc2bb1d9f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373720"
 ---
 # <a name="publishing-nfp-messages"></a>发布 NFP 消息
 

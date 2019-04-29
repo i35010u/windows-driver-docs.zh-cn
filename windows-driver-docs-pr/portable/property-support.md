@@ -1,14 +1,14 @@
 ---
-Description: Property Support
+Description: 属性支持
 title: 属性支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a36aaa31b751f6672e97906fe6d8aa6c90e9e8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376236"
 ---
 # <a name="property-support"></a>属性支持
 

@@ -1,6 +1,6 @@
 ---
-title: 同步和线程 dpc 进行标记
-description: 同步和线程 dpc 进行标记
+title: 同步和线程 DPC
+description: 同步和线程 DPC
 ms.assetid: b4f2c77b-226c-4229-bcbb-5eebabdc28a4
 keywords:
 - 线程的 Dpc WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43c99ddab8dde7102ad0ab4fc8d6762c5b4f1709
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378005"
 ---
-# <a name="synchronization-and-threaded-dpcs"></a>同步和线程 dpc 进行标记
+# <a name="synchronization-and-threaded-dpcs"></a>同步和线程 DPC
 
 
 

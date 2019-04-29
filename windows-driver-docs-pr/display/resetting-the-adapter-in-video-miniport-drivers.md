@@ -1,6 +1,6 @@
 ---
-title: 重置视频微型端口驱动程序中的适配器
-description: 重置视频微型端口驱动程序中的适配器
+title: 在视频微型端口驱动程序中重置适配器
+description: 在视频微型端口驱动程序中重置适配器
 ms.assetid: 321a5b6c-5a70-4acb-bf88-42ffb0cff86d
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，重置适配器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54ac4ce9ab3a43f62ab736928ca12fc608427525
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378433"
 ---
-# <a name="resetting-the-adapter-in-video-miniport-drivers"></a>重置视频微型端口驱动程序中的适配器
+# <a name="resetting-the-adapter-in-video-miniport-drivers"></a>在视频微型端口驱动程序中重置适配器
 
 
 ## <span id="ddk_resetting_the_adapter_in_video_miniport_drivers_gg"></span><span id="DDK_RESETTING_THE_ADAPTER_IN_VIDEO_MINIPORT_DRIVERS_GG"></span>

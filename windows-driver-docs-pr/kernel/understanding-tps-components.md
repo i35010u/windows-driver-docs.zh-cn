@@ -1,6 +1,6 @@
 ---
-title: 了解 TP 组件
-description: 了解 TP 组件
+title: 了解 TPS 组件
+description: 了解 TPS 组件
 ms.assetid: 4bc962fa-8c05-4b0f-b634-9c0f435907b7
 keywords:
 - 事务处理系统 WDK KTM，组件
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66708e2418a48d30492986900b278f39781817db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355305"
 ---
-# <a name="understanding-tps-components"></a>了解 TP 组件
+# <a name="understanding-tps-components"></a>了解 TPS 组件
 
 
 任何[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS)，它使用内核事务管理器 (KTM) 和[公用日志文件系统](using-common-log-file-system.md)(CLFS) 应包含以下重要的组件：

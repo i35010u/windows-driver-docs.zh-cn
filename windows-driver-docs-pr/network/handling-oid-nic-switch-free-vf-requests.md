@@ -5,11 +5,11 @@ ms.assetid: 56134421-6D3C-4A40-B7EE-FDB729D46DEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 014b2843f9004fe81a1a56200cd3e1f0c52e2692
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349713"
 ---
 # <a name="handling-oidnicswitchfreevf-requests"></a>处理 OID\_NIC\_交换机\_免费\_VF 请求
 

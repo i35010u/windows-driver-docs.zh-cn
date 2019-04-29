@@ -1,6 +1,6 @@
 ---
-title: 实现 Ioctl SAN 服务提供程序
-description: 实现 Ioctl SAN 服务提供程序
+title: 实现 SAN 服务提供程序的 IOCTL
+description: 实现 SAN 服务提供程序的 IOCTL
 ms.assetid: 7d4c7039-6b42-4620-aee5-9189b4acd030
 keywords:
 - 代理驱动程序 WDK San Ioctl
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a831bf17ff3870e44bf7f43bdfb368c854f3260a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362949"
 ---
-# <a name="implementing-ioctls-for-a-san-service-provider"></a>实现 Ioctl SAN 服务提供程序
+# <a name="implementing-ioctls-for-a-san-service-provider"></a>实现 SAN 服务提供程序的 IOCTL
 
 
 

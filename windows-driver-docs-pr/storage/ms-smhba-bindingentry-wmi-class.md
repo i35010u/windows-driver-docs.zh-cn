@@ -5,11 +5,11 @@ ms.assetid: b7b2315f-21db-41a4-8390-3c413cb39f5b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f9dcb5d829ae0473fb41177da7060d0f66802be1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380363"
 ---
 # <a name="mssmhbabindingentry-wmi-class"></a>MS\_SMHBA\_BINDINGENTRY WMI 类
 

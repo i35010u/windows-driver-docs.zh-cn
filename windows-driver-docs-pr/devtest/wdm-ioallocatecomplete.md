@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fbdc4431485c533c3ea4c2377cc8b206a1f337
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365173"
 ---
 # <a name="ioallocatecomplete-rule"></a>IoAllocateComplete 规则
 
@@ -50,7 +50,7 @@ ms.locfileid: "56546098"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)

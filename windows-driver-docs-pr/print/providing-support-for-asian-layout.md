@@ -1,6 +1,6 @@
 ---
-title: 提供对亚洲布局的支持
-description: 提供对亚洲布局的支持
+title: 提供亚洲语言布局支持
+description: 提供亚洲语言布局支持
 ms.assetid: 38c7dfca-ce30-4967-84a4-e2f40bba8c57
 keywords:
 - 打印处理器 WDK，亚洲语言
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c49b95b8c7a45bbde4b33e9b0b85387d3bb0e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376563"
 ---
-# <a name="providing-support-for-asian-layout"></a>提供对亚洲布局的支持
+# <a name="providing-support-for-asian-layout"></a>提供亚洲语言布局支持
 
 
 Microsoft Windows 打印处理器支持亚洲语言读取从右到左，如阿拉伯语、 日语和乌尔都语，具有以下功能：

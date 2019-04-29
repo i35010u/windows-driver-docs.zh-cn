@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b526bef7ffc56392d207f1d39f41489fb55fc686
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357859"
 ---
 # <a name="cmdeletedevnodekeyex"></a>CM_Delete_DevNode_Key_Ex
 

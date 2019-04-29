@@ -1,6 +1,6 @@
 ---
-title: 隐藏的设备从设备管理器
-description: 隐藏的设备从设备管理器
+title: 在设备管理器中隐藏设备
+description: 在设备管理器中隐藏设备
 ms.assetid: dd362ae1-ab14-44ee-982e-f972454c2623
 keywords:
 - 设备管理器 WDK，隐藏的设备
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9a2483d39287f6dd2f0dc6a8ab0737e84b02d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358799"
 ---
-# <a name="hiding-devices-from-device-manager"></a>隐藏的设备从设备管理器
+# <a name="hiding-devices-from-device-manager"></a>在设备管理器中隐藏设备
 
 
 默认情况下，设备管理器的计算机上显示每个设备的状态。 在某些情况下，你可能想要阻止某些设备出现在设备管理器。 例如，主板可能包含不是用户可访问的槽的 CardBus 控制器。 用户不能使用该槽，因为您不希望设备管理器以显示有关设备的任何信息。

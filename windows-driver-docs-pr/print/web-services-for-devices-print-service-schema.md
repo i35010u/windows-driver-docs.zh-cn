@@ -1,17 +1,17 @@
 ---
-title: 设备打印服务架构的的 web 服务
-description: 设备打印服务架构的的 web 服务
+title: 设备打印服务架构的 Web 服务
+description: 设备打印服务架构的 Web 服务
 ms.assetid: 6a629b69-73a9-4d78-ace1-4cb2c807db14
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd5bf908be13a75ac5f4e385f5a973a20e872456
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360945"
 ---
-# <a name="web-services-for-devices-print-service-schema"></a>设备打印服务架构的的 web 服务
+# <a name="web-services-for-devices-print-service-schema"></a>设备打印服务架构的 Web 服务
 
 
 Windows Vista 和更高版本的 Windows 操作系统作为具有打印和扫描的外围设备的连接协议的设备上提供 Web 服务。

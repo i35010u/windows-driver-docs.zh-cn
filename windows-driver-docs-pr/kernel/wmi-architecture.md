@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d025215e6de0ee64f6c527ed476df32696e5e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379371"
 ---
 # <a name="wmi-architecture"></a>WMI 体系结构
 

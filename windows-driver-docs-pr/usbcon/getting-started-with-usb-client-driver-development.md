@@ -4,18 +4,18 @@ title: USB 客户端驱动程序开发入门
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f8120c47fd0ff99ba20465d37061f5260fbb9e
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374467"
 ---
 # <a name="getting-started-with-usb-client-driver-development"></a>USB 客户端驱动程序开发入门
 
 
 本部分介绍 USB 驱动程序开发。 如果您不熟悉驱动程序开发; 部分适用于您想要实现 USB 设备，Microsoft 不提供现成驱动程序的驱动程序。 此类驱动程序称为*USB 客户端驱动程序*本文档中设置。 在本部分中的主题介绍高级 USB 概念并提供有关执行常见任务的 USB 客户端驱动程序的分步说明。 有关这些概念的详细信息，请参阅上的 USB 规范[USB 文档](https://go.microsoft.com/fwlink/p/?linkid=617552)。
 
-驱动程序开发人员必须有编码经验，在 C 编程语言中，并了解函数指针、 回调函数和事件处理程序的概念。 如果要编写驱动程序基于用户模式驱动程序框架，请确保您熟悉 c + + 和 com。
+驱动程序开发人员必须有编码经验，在 C 编程语言中，并了解函数指针、 回调函数和事件处理程序的概念。 如果要编写驱动程序基于用户模式驱动程序框架，请确保使自己熟悉C++和 com。
 
 ## <a name="learning-path-for-usb-client-driver-developers"></a>USB 客户端驱动程序开发人员的学习路径
 

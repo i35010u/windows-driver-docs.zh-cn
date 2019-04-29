@@ -1,16 +1,16 @@
 ---
 title: NatVis 中的本机调试器对象
-description: Dx 命令显示使用 NatVis 扩展模型的 c + + 表达式。 NatVis 有关的详细信息，请参阅在调试器中的本机对象的创建自定义视图。
+description: Dx 命令显示C++表达式中使用 NatVis 扩展模型。 NatVis 有关的详细信息，请参阅在调试器中的本机对象的创建自定义视图。
 keywords:
 - NatVis 中本机调试器对象"
 ms.date: 08/10/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22087a2b36d254b9b287d85ca37103f119647af0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353101"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis 中的本机调试器对象
 
@@ -40,7 +40,7 @@ ms.locfileid: "56561750"
 
 [创建本机对象的自定义视图](https://msdn.microsoft.com/library/jj620914.aspx)
 
-[C + + 使用.natvis 文件的写入调试器类型可视化工具](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)
+[编写调试器类型可视化工具的C++使用.natvis 文件](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)
 
 [**.nvload**](-nvload--natvis-load-.md)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56561750"
 ## <a name="span-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespancustom-natvis-object-example"></a><span id="Custom_NatVis_object_example"></span><span id="custom_natvis_object_example"></span><span id="CUSTOM_NATVIS_OBJECT_EXAMPLE"></span>自定义 NatVis 对象示例
 
 
-创建一个简单的 c + + 应用程序具有类的实例**CDog**。
+创建一个简单的C++类的实例的应用程序**CDog**。
 
 ```cpp
 class CDog

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e9fd63ba928358c3ae5395f3a3544c04c29ae1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374069"
 ---
 # <a name="determining-bda-device-topology"></a>确定 BDA 设备拓扑
 

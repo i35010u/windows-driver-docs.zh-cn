@@ -1,5 +1,5 @@
 ---
-title: dda，ddp，ddu，dpa dpp，dpu，dqa，dqp，dqu （显示引用内存）
+title: dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu（显示引用的内存）
 description: Dda、 ddp、 ddu、 dpa、 dpp、 dpu、 dqa、 dqp 和 dqu 命令显示在指定位置的指针、 取消引用该指针和显示相关联的内存。
 ms.assetid: af3db4e2-e3fc-4c4d-9432-13b87e699716
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0141024d6efe46fce102f7880ea94f5026e8be4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374917"
 ---
-# <a name="dda-ddp-ddu-dpa-dpp-dpu-dqa-dqp-dqu-display-referenced-memory"></a>dda，ddp，ddu，dpa dpp，dpu，dqa，dqp，dqu （显示引用内存）
+# <a name="dda-ddp-ddu-dpa-dpp-dpu-dqa-dqp-dqu-display-referenced-memory"></a>dda、ddp、ddu、dpa、dpp、dpu、dqa、dqp、dqu（显示引用的内存）
 
 
 **Dda**， **ddp**， **ddu**， **dpa**， **dpp**， **dpu**， **dqa**， **dqp**，并**dqu**命令显示在指定位置的指针、 取消引用该指针，然后在结果中显示的内存各种格式的位置。
@@ -80,7 +80,7 @@ dpu [Options] [Range]
 
 此命令的第二个字符确定指针使用大小：
 
-|命令|显示|
+|Command|显示|
 |--- |--- |
 |dd|所使用的 32 位指针|
 |dq|所使用的 64 位指针|
@@ -90,7 +90,7 @@ dpu [Options] [Range]
 
 此命令的第三个字符确定取消引用的内存的显示方式：
 
-|命令|显示|
+|Command|显示|
 |--- |--- |
 |dp|显示格式为 DWORD 或 QWORD，具体取决于目标的处理器体系结构的指针大小指针所引用的内存的内容。 如果此值与匹配任何已知的符号，也将显示此符号。|
 |da|显示格式为 ASCII 字符指针所引用的内存的内容。|

@@ -1,17 +1,17 @@
 ---
-title: 不需要进行任何更改的特殊情况的 WIA 属性映射
-description: 不需要进行任何更改的特殊情况的 WIA 属性映射
+title: 映射不需更改的 WIA 属性 - 特殊案例
+description: 映射不需更改的 WIA 属性 - 特殊案例
 ms.assetid: 4ed02c01-efe8-4728-a54a-26fe27aa403c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64c997952055b0c72f9463b4f99558cd2793d6bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380379"
 ---
-# <a name="mapping-wia-properties-that-need-no-changes---special-cases"></a>不需要进行任何更改的特殊情况的 WIA 属性映射
+# <a name="mapping-wia-properties-that-need-no-changes---special-cases"></a>映射不需更改的 WIA 属性 - 特殊案例
 
 
 其中的兼容性层可能会失败的情形是：

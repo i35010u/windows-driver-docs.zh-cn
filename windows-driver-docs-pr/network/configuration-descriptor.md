@@ -5,11 +5,11 @@ ms.assetid: 256edfa8-de02-438d-b4ce-0a2df0d0f46e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6768651c9c16aff0bbd80941b66938132672ccd7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354185"
 ---
 # <a name="configuration-descriptor"></a>配置描述符
 
@@ -29,9 +29,9 @@ ms.locfileid: "56545948"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

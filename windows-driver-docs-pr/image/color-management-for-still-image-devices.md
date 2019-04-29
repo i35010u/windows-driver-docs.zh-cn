@@ -1,17 +1,17 @@
 ---
-title: 静止图像设备的颜色管理
-description: 静止图像设备的颜色管理
+title: 静态图像设备的颜色管理
+description: 静态图像设备的颜色管理
 ms.assetid: dfc4afad-221a-436c-9124-981a74f70ee3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0212d7682407b7af814421ca28130485cbee3147
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373224"
 ---
-# <a name="color-management-for-still-image-devices"></a>静止图像设备的颜色管理
+# <a name="color-management-for-still-image-devices"></a>静态图像设备的颜色管理
 
 
 

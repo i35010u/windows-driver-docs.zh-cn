@@ -1,6 +1,6 @@
 ---
-title: 修改设备的软件项中的注册表值
-description: 修改设备的软件项中的注册表值
+title: 修改设备的软件键中的注册表值
+description: 修改设备的软件键中的注册表值
 ms.assetid: 4DBDB53D-CA64-4c19-84A5-FBE1529FD0C5
 keywords:
 - 修改设备的软件项中的注册表值的注册表 WDK 设备安装
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7750413002377ad67d9ff3206ba8041e997a1f87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378352"
 ---
-# <a name="modifying-registry-values-in-a-devices-software-key"></a>修改设备的软件项中的注册表值
+# <a name="modifying-registry-values-in-a-devices-software-key"></a>修改设备的软件键中的注册表值
 
 
 您必须修改以下注册表项的值 (*设备属性*) 中的设备*软件密钥*:

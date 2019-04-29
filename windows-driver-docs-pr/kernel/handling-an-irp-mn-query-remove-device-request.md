@@ -1,17 +1,17 @@
 ---
-title: 处理一个 IRP_MN_QUERY_REMOVE_DEVICE 请求
-description: 处理一个 IRP_MN_QUERY_REMOVE_DEVICE 请求
+title: 处理 IRP_MN_QUERY_REMOVE_DEVICE 请求
+description: 处理 IRP_MN_QUERY_REMOVE_DEVICE 请求
 ms.assetid: 30177e51-5312-4a24-972e-0c1c2d183d18
 keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a34dcd72d4c683f819630b16bf211f4d947915d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359800"
 ---
 # <a name="handling-an-irpmnqueryremovedevice-request"></a>处理 IRP\_MN\_查询\_删除\_设备请求
 

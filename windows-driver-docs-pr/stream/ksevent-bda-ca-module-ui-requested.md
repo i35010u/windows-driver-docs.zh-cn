@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5537eebab50adf5371b8e9adec2b32203b2854b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380643"
 ---
 # <a name="kseventbdacamoduleuirequested"></a>KSEVENT\_BDA\_CA\_模块\_UI\_请求
 
@@ -47,13 +47,13 @@ KSEVENTDATA 结构，它描述有关事件通知的方式。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT**](https://msdn.microsoft.com/library/windows/hardware/ff561744)

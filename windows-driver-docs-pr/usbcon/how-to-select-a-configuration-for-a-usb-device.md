@@ -1,14 +1,14 @@
 ---
-Description: In this topic, you will learn about how to select a configuration in a universal serial bus (USB) device.
+Description: 在本主题中，您将学习有关如何选择一种配置中的通用串行总线 (USB) 设备。
 title: 如何选择 USB 设备的配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3f0877c8f73c5a464ea76f21fd5c747faefe85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366043"
 ---
 # <a name="how-to-select-a-configuration-for-a-usb-device"></a>如何选择 USB 设备的配置
 
@@ -21,7 +21,7 @@ ms.locfileid: "56542797"
 
 或者，你可以分配[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构，然后手动或通过调用格式设置 URB [ **UsbBuildSelectConfigurationRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff538968)宏。
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>系统必备
 
 -   在 Windows 8 中， [ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://msdn.microsoft.com/library/windows/hardware/hh406243)替换[ **USBD\_CreateConfigurationRequestEx**](https://msdn.microsoft.com/library/windows/hardware/ff539029).
 -   在发送前选择配置请求，必须具有客户端驱动程序的注册与 USB 驱动程序堆栈的 USBD 句柄。 若要创建 USBD 句柄调用[ **USBD\_CreateHandle**](https://msdn.microsoft.com/library/windows/hardware/hh406241)。

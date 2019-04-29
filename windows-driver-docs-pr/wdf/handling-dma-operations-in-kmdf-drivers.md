@@ -1,5 +1,5 @@
 ---
-title: 处理 DMA KMDF 驱动程序中的操作
+title: 在 KMDF 驱动程序中处理 DMA 操作
 description: 介绍如何 KMDF 驱动程序将 I/O 请求转换为直接内存访问 (DMA) 的操作。 KMDF 支持总线 master 和系统模式 DMA。
 ms.assetid: 1ca8ba66-201d-42f2-a6f1-6184a9d7c2a6
 keywords:
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609be5b5f3c7b4f286dd5dc5e8eaf7540a7d0d2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366624"
 ---
-# <a name="handling-dma-operations-in-kmdf-drivers"></a>处理 DMA KMDF 驱动程序中的操作
+# <a name="handling-dma-operations-in-kmdf-drivers"></a>在 KMDF 驱动程序中处理 DMA 操作
 
 
 \[仅适用于 KMDF\]
@@ -29,7 +29,7 @@ ms.locfileid: "56541632"
 
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [在 Windows 驱动程序框架的 DMA 简介](introduction-to-dma-in-windows-driver-framework.md)

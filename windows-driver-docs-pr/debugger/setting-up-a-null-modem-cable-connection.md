@@ -11,11 +11,11 @@ keywords:
 ms.date: 07/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d46ae155ae7a2b8ec69b8f79ee0f0232776b074
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381927"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-serial-cable-manually"></a>手动设置通过串行线缆进行的内核模式调试
 

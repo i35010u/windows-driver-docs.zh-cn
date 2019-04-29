@@ -6,11 +6,11 @@ keywords: TList、 任务列表查看器中，任务列表查看器中，请参�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2a3ea7a874542b76884378e5bcfd7d2f70c06a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364726"
 ---
 # <a name="tlist"></a>TList
 

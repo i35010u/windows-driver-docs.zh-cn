@@ -1,6 +1,6 @@
 ---
-title: DVD 解码器相关时钟事件
-description: DVD 解码器相关时钟事件
+title: 与 DVD 解码器相关的时钟事件
+description: 与 DVD 解码器相关的时钟事件
 ms.assetid: c3ed0ee4-95a3-4596-9f29-86397b0d8753
 keywords:
 - DVD 解码器微型驱动程序 WDK，主时钟
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1397806062f999c298ec4622ab5ffeab12c332c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363587"
 ---
-# <a name="dvd-decoder-related-clock-events"></a>DVD 解码器相关时钟事件
+# <a name="dvd-decoder-related-clock-events"></a>与 DVD 解码器相关的时钟事件
 
 
 
@@ -34,7 +34,7 @@ DVD 解码器微型驱动程序应检查未完成的时钟事件。 典型的实
 </colgroup>
 <thead>
 <tr class="header">
-<th>事件</th>
+<th>Event</th>
 <th>描述</th>
 </tr>
 </thead>

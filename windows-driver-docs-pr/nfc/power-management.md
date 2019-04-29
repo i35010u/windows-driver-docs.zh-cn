@@ -4,18 +4,18 @@ description: NFP 电源管理
 ms.assetid: A47F4B01-A912-410A-8CF8-656D2C125148
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e3022a7a88e885b657f0cd7f11b54a04bdab691
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373723"
 ---
 # <a name="nfp-power-management"></a>NFP 电源管理
 

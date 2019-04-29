@@ -1,17 +1,17 @@
 ---
-title: 图像处理的代码示例
-description: 图像处理的代码示例
+title: 图像处理代码示例
+description: 图像处理代码示例
 ms.assetid: fe5ac3db-46e0-4162-9add-c3b0ae736926
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5007b5edd26d1f2eae9db4f9f9d4e09f2c866d65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364979"
 ---
-# <a name="image-processing-code-example"></a>图像处理的代码示例
+# <a name="image-processing-code-example"></a>图像处理代码示例
 
 
 

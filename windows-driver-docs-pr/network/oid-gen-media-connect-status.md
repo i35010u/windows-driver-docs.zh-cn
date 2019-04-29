@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_MEDIA_CONNECT_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 72575278de3943b532989997a37fd8f3e8afcfa3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358745"
 ---
 # <a name="oidgenmediaconnectstatus"></a>OID\_GEN\_媒体\_CONNECT\_状态
 
@@ -57,13 +57,13 @@ OID\_GEN\_媒体\_CONNECT\_状态 OID 请求在网络上的 NIC 的连接状态�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMCoIndicateStatusEx**](https://msdn.microsoft.com/library/windows/hardware/ff563562)

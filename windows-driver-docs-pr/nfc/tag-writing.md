@@ -4,18 +4,18 @@ description: 标记写入
 ms.assetid: 916150D9-9A98-4463-81BE-7F46DF2694F4
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b61266fffa648c57f55c630d2e5cd67c1cf508f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373597"
 ---
 # <a name="tag-writing"></a>标记写入
 

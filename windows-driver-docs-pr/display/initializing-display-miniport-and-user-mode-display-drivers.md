@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8df23098de8d1a59fae94deffd53eb5bc9720648
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350281"
 ---
 # <a name="initializing-display-miniport-and-user-mode-display-drivers"></a>初始化显示微型端口和用户模式显示驱动程序
 

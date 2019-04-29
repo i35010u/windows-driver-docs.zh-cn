@@ -1,17 +1,17 @@
 ---
-title: 加速感应器阈值
+title: 加速计阈值
 description: 本主题提供有关加速感应器阈值的信息。
 ms.assetid: 7BB8B087-6CE5-4BD2-9286-350AE607B1D7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6715820e6eb21af2b4452bfa9d00b67078c9f655
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360930"
 ---
-# <a name="accelerometer-thresholds"></a>加速感应器阈值
+# <a name="accelerometer-thresholds"></a>加速计阈值
 
 
 本主题提供有关加速感应器阈值的信息。

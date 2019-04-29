@@ -5,11 +5,11 @@ ms.assetid: 63af8432-3e38-451a-a26d-57b5ad1f29dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 47b80acc4f6388d6c845acd8e4023527b83beaf4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363309"
 ---
 # <a name="iscsiconnectionstaticinfo-wmi-class"></a>ISCSI\_ConnectionStaticInfo WMI 类
 

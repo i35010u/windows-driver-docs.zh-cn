@@ -1,17 +1,17 @@
 ---
-title: 调试在 WDF Power 引用泄漏
+title: 在 WDF 中调试电源参考漏孔
 description: 当 Windows 驱动程序框架 (WDF) 驱动程序调用 WdfDeviceStopIdle 时，框架将递增设备的 power 引用计数。
 ms.assetid: 25F4EEBB-4733-498C-8704-8E015F81FE06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 585be1886c274efcfbbb23ddc16568f4d5d91468
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362737"
 ---
-# <a name="debugging-power-reference-leaks-in-wdf"></a>调试在 WDF Power 引用泄漏
+# <a name="debugging-power-reference-leaks-in-wdf"></a>在 WDF 中调试电源参考漏孔
 
 
 当 Windows 驱动程序框架 (WDF) 驱动程序调用[ **WdfDeviceStopIdle**](https://msdn.microsoft.com/library/windows/hardware/ff546921)，framework 递增设备的 power 引用计数。 每次成功调用**WdfDeviceStopIdle**必须通过调用匹配[ **WdfDeviceResumeIdle** ](https://msdn.microsoft.com/library/windows/hardware/ff546838)以减少 power 引用计数。

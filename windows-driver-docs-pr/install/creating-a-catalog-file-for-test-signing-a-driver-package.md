@@ -1,6 +1,6 @@
 ---
-title: 为测试签名驱动程序包创建编录文件
-description: 为测试签名驱动程序包创建编录文件
+title: 创建用于对驱动程序包进行测试签名的目录文件
+description: 创建用于对驱动程序包进行测试签名的目录文件
 ms.assetid: 0bbb4dfa-d203-4618-946e-95d2896081ac
 keywords:
 - 测试签名驱动程序包 WDK，目录文件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b77d0715a981ffdfa69518f087f55420f4f6fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364342"
 ---
-# <a name="creating-a-catalog-file-for-test-signing-a-driver-package"></a>为测试签名驱动程序包创建编录文件
+# <a name="creating-a-catalog-file-for-test-signing-a-driver-package"></a>创建用于对驱动程序包进行测试签名的目录文件
 
 
 目录 (*.cat*) 文件包含的所有文件都是一部分的数字签名的[驱动程序包](driver-packages.md)。 有关详细信息，请参阅[目录文件](catalog-files.md)。

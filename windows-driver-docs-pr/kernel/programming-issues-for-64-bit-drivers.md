@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5732fd7888c22a25644fa35d9e8fbcbbb090f33f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376641"
 ---
 # <a name="programming-issues-for-64-bit-drivers"></a>64 位驱动程序的编程问题
 
@@ -30,7 +30,7 @@ ms.locfileid: "56545891"
 
 [X64 的驱动程序限制](driver-x64-restrictions.md)
 
-有关使用 64 位编译器进行编程的信息，请参阅[64 位 Visual c + + 编程](https://go.microsoft.com/fwlink/p/?linkid=165521)。
+有关使用 64 位编译器进行编程的信息，请参阅[64 位编程与视觉对象C++ ](https://go.microsoft.com/fwlink/p/?linkid=165521)。
 
  
 

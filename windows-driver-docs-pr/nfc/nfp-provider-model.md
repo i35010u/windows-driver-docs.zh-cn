@@ -4,18 +4,18 @@ description: 附近字段邻近 (NFP) 提供程序的驱动程序模型提供了
 ms.assetid: AD8DC80F-5CE2-4547-B951-A82A280F18ED
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82eb4adefbfb7ea4001863cac229eaa072d2ec7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378834"
 ---
 # <a name="nfp-provider-model"></a>NFP 提供程序模型
 

@@ -1,17 +1,17 @@
 ---
-title: 选择固件映像槽 （函数索引 25）
+title: 选择固件映像槽（功能索引 25）
 description: 此函数选择的固件映像处于活动状态。
 ms.assetid: 65B8BF11-4377-455A-9A08-0C15FADC0BBC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: db61d647aabb4c20f6006d3bc348773eb80f9f08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378535"
 ---
-# <a name="select-firmware-image-slot-function-index-25"></a>选择固件映像槽 （函数索引 25）
+# <a name="select-firmware-image-slot-function-index-25"></a>选择固件映像槽（功能索引 25）
 
 
 此函数选择的固件映像处于活动状态。 当设备重置时，应加载所选的映像。
@@ -89,7 +89,7 @@ ms.locfileid: "56524270"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启动固件更新 （函数索引 22）](start-firmware-update--function-index-22-.md)

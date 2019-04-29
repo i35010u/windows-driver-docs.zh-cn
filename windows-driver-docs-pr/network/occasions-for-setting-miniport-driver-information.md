@@ -1,17 +1,17 @@
 ---
-title: 有关设置微型端口驱动程序信息的情况下
-description: 有关设置微型端口驱动程序信息的情况下
+title: 设置微型端口驱动程序信息的场合
+description: 设置微型端口驱动程序信息的场合
 ms.assetid: 46834d76-e1b9-440c-af18-a4b564d1a76e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 564b0ef7ce7e8709f3171c922bc57fff1fbc6e08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359199"
 ---
-# <a name="occasions-for-setting-miniport-driver-information"></a>有关设置微型端口驱动程序信息的情况下
+# <a name="occasions-for-setting-miniport-driver-information"></a>设置微型端口驱动程序信息的场合
 
 
 

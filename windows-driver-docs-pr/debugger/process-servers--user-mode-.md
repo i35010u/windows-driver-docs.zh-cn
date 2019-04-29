@@ -1,6 +1,6 @@
 ---
-title: 进程服务器 （用户模式）
-description: 进程服务器 （用户模式）
+title: 进程服务器（用户模式）
+description: 进程服务器（用户模式）
 ms.assetid: 9391fcd4-c64f-4c2b-89c2-da09be7646d1
 keywords:
 - 通过进程服务器的远程调试
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 169761324cce07939590b34ec0e1421d5377b02d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362404"
 ---
-# <a name="process-servers-user-mode"></a>进程服务器 （用户模式）
+# <a name="process-servers-user-mode"></a>进程服务器（用户模式）
 
 
 ## <span id="ddk_process_servers_user_mode__dbg"></span><span id="DDK_PROCESS_SERVERS_USER_MODE__DBG"></span>
@@ -32,7 +32,7 @@ ms.locfileid: "56534579"
 
 若要设置此远程会话，进程服务器设置第一个，并智能客户端激活。 通过一个进程服务器可以运行任意数量的智能客户端--这些调试会话将保持独立，并将不会影响。 如果结束调试会话，进程服务器将继续运行并可用于新的调试会话。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [**激活进程服务器**](activating-a-process-server.md)

@@ -1,6 +1,6 @@
 ---
-title: 翻转到 GDI 面
-description: 翻转到 GDI 面
+title: 交替到 GDI 图面
+description: 交替到 GDI 图面
 ms.assetid: e74e108d-f88c-4e42-9136-ef087378807a
 keywords:
 - 翻转 WDK DirectDraw，GDI 面绘制页面
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5287f565c499a1325bc7b7d049946bc57359f1d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359405"
 ---
-# <a name="flipping-to-the-gdi-surface"></a>翻转到 GDI 面
+# <a name="flipping-to-the-gdi-surface"></a>交替到 GDI 图面
 
 
 ## <span id="ddk_flipping_to_the_gdi_surface_gg"></span><span id="DDK_FLIPPING_TO_THE_GDI_SURFACE_GG"></span>

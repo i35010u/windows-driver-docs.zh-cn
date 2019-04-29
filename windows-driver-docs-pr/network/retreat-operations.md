@@ -1,6 +1,6 @@
 ---
-title: 参加操作
-description: 参加操作
+title: 重新处理操作
+description: 重新处理操作
 ms.assetid: fdf1228b-ccae-4079-b968-b4dbb5665555
 keywords:
 - 网络 WDK，参加操作数据
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c627ac99fb778ce7a3346f899804f5ce77c9b306
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362932"
 ---
-# <a name="retreat-operations"></a>参加操作
+# <a name="retreat-operations"></a>重新处理操作
 
 
 

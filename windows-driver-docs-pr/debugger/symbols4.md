@@ -1,19 +1,19 @@
 ---
-title: 符号
-description: 符号
+title: Symbols
+description: Symbols
 ms.assetid: 7eec815b-f81a-4c0f-b862-6ee31be7ed8f
 keywords:
 - 调试器引擎符号
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 516dced9ed3291a43dbea785931e1a990c478afd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368145"
 ---
-# <a name="symbols"></a>符号
+# <a name="symbols"></a>Symbols
 
 
 一个*符号*命名单位的数据或出现在模块中的源文件中的代码。 有关符号的信息可以包括名称、 类型 （如果适用）、 地址或注册存储位置和任何父或子符号。 符号的示例包括 （本地和全局） 的变量、 函数和模块任何入口点。

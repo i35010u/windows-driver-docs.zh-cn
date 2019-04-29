@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_SSID_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d0076d527ad57cba611b4f2e0e4e98331411a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366643"
 ---
 # <a name="wditlvssidoffload"></a>WDI\_TLV\_SSID\_OFFLOAD
 
@@ -57,7 +57,7 @@ WDI\_TLV\_SSID\_卸载是 TLV 包含 SSID 和有关 SSID 的提示。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

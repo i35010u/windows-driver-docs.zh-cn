@@ -6,11 +6,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: ea18cb642e22bc1845c347c8d1417098739902e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358019"
 ---
 # <a name="direct3d-runtime-functions-called-by-user-mode-display-drivers"></a>Direct3D 调用的用户模式显示驱动程序的运行时函数
 
@@ -207,7 +207,7 @@ Direct3D 11 运行时缓存的应用程序的当前绑定的对象，因为运�
 |[PFND3DWDDM2_2DDI_SET_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_set_shadercache_session)|[PFND3DWDDM2_2DDI_SHADERCACHE_ADDREF_RELEASE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_addref_release_cb)|
 |PFND3DWDDM2_2DDI_SHADERCACHE_GET_VALUE|[PFND3DWDDM2_2DDI_SHADERCACHE_STORE_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_store_value_cb)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [支持 DXGI DDI](supporting-the-dxgi-ddi.md)
 

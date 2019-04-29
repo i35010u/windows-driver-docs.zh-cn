@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b3f616d83929319c21da3036f2633b346e79ac6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368053"
 ---
 # <a name="symbols-and-symbol-files"></a>符号和符号文件
 
@@ -43,7 +43,7 @@ ms.locfileid: "56547405"
 
 Windows 具有扩展名为.pdb 的文件中保留其符号。
 
-编译器和链接器控制符号格式。 Visual c + + 链接器，将所有符号都放入.pdb 文件。
+编译器和链接器控制符号格式。 视觉对象C++链接器将所有符号都放入.pdb 文件。
 
 Windows 操作系统是内置的两个版本。 *免费生成*(或*零售生成*) 具有相对较小的二进制文件，并*已检验版本*(或*调试版本*) 具有更大的二进制文件与代码本身中更多的调试符号。 这些生成的每个有其自己的符号文件。 在调试时在 Windows 上的目标，必须使用与匹配的目标上的 Windows 生成的符号文件。
 

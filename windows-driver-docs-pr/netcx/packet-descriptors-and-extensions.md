@@ -8,11 +8,11 @@ ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 250eaa4e0c5e6657a04d61f57b59f0c739d7429d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375430"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 

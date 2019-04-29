@@ -1,5 +1,5 @@
 ---
-title: 检索受保护的输出 COPP 兼容信息
+title: 检索有关受保护输出的 COPP 兼容信息
 description: 显示微型端口驱动程序可以接收请求来检索有关与图形适配器的物理输出连接器关联的受保护输出 COPP 兼容信息。
 ms.assetid: 9114f232-4123-47a8-b43d-62d14b9f6b08
 keywords:
@@ -8,13 +8,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 3d8a6c83ae7aa46153de12437537a871fee99661
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378453"
 ---
-# <a name="retrieving-copp-compatible-information-on-protected-output"></a>检索受保护的输出 COPP 兼容信息
+# <a name="retrieving-copp-compatible-information-on-protected-output"></a>检索有关受保护输出的 COPP 兼容信息
 
 
 显示微型端口驱动程序可以接收请求来检索有关与图形适配器的物理输出连接器关联的受保护输出 COPP 兼容信息。 显示微型端口驱动程序[ **DxgkDdiOPMGetCOPPCompatibleInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559720)函数传递一个指向[ **DXGKMDT\_OPM\_COPP\_兼容\_获取\_信息\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff560859)结构*参数*参数，其中包含信息请求。 *DxgkDdiOPMGetCOPPCompatibleInformation*写入到所需的信息[ **DXGKMDT\_OPM\_请求\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560910)结构的*RequestedInformation*参数指向。 **GuidInformation**并**abParameters** DXGKMDT 成员\_OPM\_COPP\_兼容\_获取\_信息\_参数指定信息请求。 具体取决于信息请求，显示微型端口驱动程序应填充的成员[ **DXGKMDT\_OPM\_标准\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560925)， [**DXGKMDT\_OPM\_实际\_输出\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff560840)， [ **DXGKMDT\_OPM\_ACP\_AND\_CGMSA\_信号发送**](https://msdn.microsoft.com/library/windows/hardware/ff560830)，或者[ **DXGKMDT\_OPM\_已连接\_HDCP\_设备\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff560854)具有所需的信息和点结构**abRequestedInformation** DXGKMDT 成员\_OPM\_请求\_向该结构的信息。 该驱动程序指定后**cbRequestedInformationSize** (例如， <strong>sizeof (</strong>DXGKMDT\_OPM\_标准\_信息<strong>)</strong>) 和**abRequestedInformation** DXGKMDT 成员\_OPM\_请求\_信息，该驱动程序必须计算一个密钥加密块链接 (CBC)-DXGKMDT 中的数据的模式消息身份验证代码 (OMAC)\_OPM\_请求\_信息，必须设置此 OMAC **omac** DXGKMDT 成员\_OPM\_请求\_信息。 有关计算 OMAC 的详细信息，请参阅[OMAC 1 算法](https://go.microsoft.com/fwlink/p/?linkid=70417)。

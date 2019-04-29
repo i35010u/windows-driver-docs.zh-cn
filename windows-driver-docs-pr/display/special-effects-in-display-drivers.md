@@ -1,6 +1,6 @@
 ---
-title: 显示驱动程序中的特殊效果
-description: 显示驱动程序中的特殊效果
+title: 显示驱动程序中的特效
+description: 显示驱动程序中的特效
 ms.assetid: f44a89df-6412-442c-8491-3e2f2bbd826f
 keywords:
 - 显示驱动程序 WDK Windows 2000 中，特殊效果
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3390248bdfc81aba6604f2abe79d7cd395d99bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382332"
 ---
-# <a name="special-effects-in-display-drivers"></a>显示驱动程序中的特殊效果
+# <a name="special-effects-in-display-drivers"></a>显示驱动程序中的特效
 
 
 ## <span id="ddk_special_effects_in_display_drivers_gg"></span><span id="DDK_SPECIAL_EFFECTS_IN_DISPLAY_DRIVERS_GG"></span>

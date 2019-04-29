@@ -1,17 +1,17 @@
 ---
-title: 设置符号和 KD 中的可执行映像路径
-description: 设置符号和 KD 中的可执行映像路径
+title: 在 KD 中设置符号和可执行映像路径
+description: 在 KD 中设置符号和可执行映像路径
 ms.assetid: AF1D0A9A-2A5C-4E69-8F8A-EF74027F6742
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a16f14960a8da8eb92013d7ec6ae4bf06c21e0c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381955"
 ---
-# <a name="setting-symbol-and-executable-image-paths-in-kd"></a>设置符号和 KD 中的可执行映像路径
+# <a name="setting-symbol-and-executable-image-paths-in-kd"></a>在 KD 中设置符号和可执行映像路径
 
 
 ## <a name="span-idddksymbolpathdbgspanspan-idddksymbolpathdbgspansymbol-path"></a><span id="ddk_symbol_path_dbg"></span><span id="DDK_SYMBOL_PATH_DBG"></span>符号路径

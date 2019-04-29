@@ -4,18 +4,18 @@ description: 客户端应用程序与通过一组定义的 I/O 控制代码发�
 ms.assetid: ED63FDCF-3253-4976-8571-82F4824923C5
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd84160c7bcc8f7a665d0516b87b2bdf3c526559
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375220"
 ---
 # <a name="nfp-device-interface"></a>NFP 设备接口
 

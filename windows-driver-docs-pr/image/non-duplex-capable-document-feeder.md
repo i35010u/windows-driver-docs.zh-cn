@@ -1,17 +1,17 @@
 ---
-title: 非双工能力文档送纸器
-description: 非双工能力文档送纸器
+title: 支持非双工的文档送纸器
+description: 支持非双工的文档送纸器
 ms.assetid: e22ec1bb-623e-45c6-88f4-d3b6a45fa175
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b19996c226a8fd2a5b8b08f40410ad9e9fce8a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379668"
 ---
-# <a name="non-duplex-capable-document-feeder"></a>非双工能力文档送纸器
+# <a name="non-duplex-capable-document-feeder"></a>支持非双工的文档送纸器
 
 
 

@@ -1,22 +1,22 @@
 ---
-title: 故障排除的常见错误
+title: 排查常见错误
 description: 本部分介绍调试其 I²C 固件或驱动程序软件时，硬件供应商和驱动程序开发人员可能会遇到的常见问题。
 ms.assetid: F53BD17C-ABBC-495F-895A-99BFC7E29B71
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60d99d986283e81e41e7dad5137302f03f45ba91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376741"
 ---
-# <a name="troubleshooting-common-errors"></a>故障排除的常见错误
+# <a name="troubleshooting-common-errors"></a>排查常见错误
 
 
 本部分介绍调试其 I²C 固件或驱动程序软件时，硬件供应商和驱动程序开发人员可能会遇到的常见问题。
 
-## <a name="troubleshooting-common-errors"></a>故障排除的常见错误
+## <a name="troubleshooting-common-errors"></a>排查常见错误
 
 
 ### <a href="" id="hidi2c-driver-does-not-load"></a>HIDI²C 驱动程序不会加载

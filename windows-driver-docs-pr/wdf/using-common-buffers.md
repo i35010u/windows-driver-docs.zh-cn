@@ -1,6 +1,6 @@
 ---
-title: 使用常见的缓冲区
-description: 使用常见的缓冲区
+title: 使用常用缓冲区
+description: 使用常用缓冲区
 ms.assetid: 81a56f62-917e-4798-b2cc-6469c802fab8
 keywords:
 - DMA 操作 WDK KMDF，常见的缓冲区
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc15afc844dd6e06befcb323d28df6437f922ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365519"
 ---
-# <a name="using-common-buffers"></a>使用常见的缓冲区
+# <a name="using-common-buffers"></a>使用常用缓冲区
 
 
 \[仅适用于 KMDF\]

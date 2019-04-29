@@ -5,11 +5,11 @@ ms.assetid: DD5A527F-5F8D-4892-A2D5-C0279913B6A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41f18a1da45c2fe994992ac92768ef14435123de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375727"
 ---
 # <a name="accessing-and-modifying-files"></a>访问和修改文件
 

@@ -1,17 +1,17 @@
 ---
-title: 专用的调试技术
+title: 专业调试方法
 description: 本部分介绍适用于特定的技术和类型的代码模块的调试技术。
 ms.assetid: ADCEC5D6-5CA1-4F46-AAFD-D4BFD27D8A29
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08971b1579103d137337e361a678ada4dfda9b67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368086"
 ---
-# <a name="specialized-debugging-techniques"></a>专用的调试技术
+# <a name="specialized-debugging-techniques"></a>专业调试方法
 
 
 本部分介绍适用于特定的技术和类型的代码模块的调试技术。

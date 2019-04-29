@@ -1,19 +1,19 @@
 ---
-title: 其他权益的 CoNDIS WAN
-description: 其他权益的 CoNDIS WAN
+title: CoNDIS WAN 的其他优势
+description: CoNDIS WAN 的其他优势
 ms.assetid: 5b937ae4-1486-4563-a863-5c02ba57c7df
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络权益
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 907fb7e326a1349292e9615e6c45a34b44f33c76
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378243"
 ---
-# <a name="other-benefits-of-condis-wan"></a>其他权益的 CoNDIS WAN
+# <a name="other-benefits-of-condis-wan"></a>CoNDIS WAN 的其他优势
 
 
 

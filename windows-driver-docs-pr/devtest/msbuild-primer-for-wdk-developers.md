@@ -1,17 +1,17 @@
 ---
-title: MSBuild WDK 开发人员的入门读物
+title: 面向 WDK 开发人员的 MSBuild 入门教程
 description: 本部分介绍到 WDK 开发人员，他们熟悉 Build.exe 和 NMake.exe 的一些基本的 MSBuild 术语。 本部分显示了简单的 MSBuild 项目中的构造。
 ms.assetid: EA223DF3-71FF-442F-B3E8-56C3B57F7B67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4745f3c158ecc2732ce373e305795edc9ca9178
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363119"
 ---
-# <a name="msbuild-primer-for-wdk-developers"></a>MSBuild WDK 开发人员的入门读物
+# <a name="msbuild-primer-for-wdk-developers"></a>面向 WDK 开发人员的 MSBuild 入门教程
 
 
 本部分介绍到 WDK 开发人员，他们熟悉 Build.exe 和 NMake.exe 的一些基本的 MSBuild 术语。 本部分显示了简单的 MSBuild 项目中的构造。
@@ -33,8 +33,8 @@ ms.locfileid: "56542492"
 ## <a name="span-idmsbuildconceptsspanspan-idmsbuildconceptsspanspan-idmsbuildconceptsspanmsbuild-concepts"></a><span id="MSBuild_concepts_"></span><span id="msbuild_concepts_"></span><span id="MSBUILD_CONCEPTS_"></span>MSBuild 概念
 
 
--   C + + 项目主要的 MSBuild 文件扩展名为.vcxproj。
--   现在调用命令*任务*，它们也不是只需调用的命令行进程。 相反，任务是可执行代码单元，可以使用 MSBuild 来执行原子生成操作。 有关任务的完整列表，请参阅[特定于 Visual c + + 的任务 MSBuild]( https://go.microsoft.com/fwlink/p/?linkid=236121)...
+-   主要的 MSBuild 文件扩展名为C++项目为.vcxproj。
+-   现在调用命令*任务*，它们也不是只需调用的命令行进程。 相反，任务是可执行代码单元，可以使用 MSBuild 来执行原子生成操作。 有关任务的完整列表，请参阅[特定于视觉对象的任务 MSBuild C++ ]( https://go.microsoft.com/fwlink/p/?linkid=236121)...
 -   MSBuild 将任务从其公共语言运行时 (CLR) 程序集与导入**UsingTask**元素，如以下示例所示。
     ```
     <UsingTask TaskName="TaskName" AssemblyName="AssemblyName" />

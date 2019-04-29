@@ -1,6 +1,6 @@
 ---
-title: 管理互锁与驱动程序创建线程队列
-description: 管理互锁与驱动程序创建线程队列
+title: 使用驱动程序创建的线程管理联锁队列
+description: 使用驱动程序创建的线程管理联锁队列
 ms.assetid: e2712d52-e98a-4450-b010-9278db3a7a1e
 keywords:
 - 互锁的 IRP 队列 WDK 内核
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7be720cc186db2dc10f4e3511953d72c09e21144
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360281"
 ---
-# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>管理互锁与驱动程序创建线程队列
+# <a name="managing-interlocked-queues-with-a-driver-created-thread"></a>使用驱动程序创建的线程管理联锁队列
 
 
 

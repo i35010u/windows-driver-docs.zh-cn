@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 600f330141fdec96ac179db42aed178967535aaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362859"
 ---
 # <a name="ndisstatusreceivefiltercurrentcapabilities"></a>NDIS\_状态\_接收\_筛选器\_当前\_功能
 
@@ -71,17 +71,17 @@ NDIS 接收筛选器在以下的 NDIS 接口中使用：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

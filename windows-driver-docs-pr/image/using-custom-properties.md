@@ -5,11 +5,11 @@ ms.assetid: cf4e728f-7900-4849-ab1c-135f9fec9713
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bec7fc3e78b0981fbb0e903c102e897ed247de05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383703"
 ---
 # <a name="using-custom-properties"></a>使用自定义属性
 

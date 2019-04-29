@@ -1,6 +1,6 @@
 ---
-title: Serenum 的注册表设置
-description: Serenum 的注册表设置
+title: 用于 Serenum 的注册表设置
+description: 用于 Serenum 的注册表设置
 ms.assetid: c8a8f1b7-ea58-49ed-98e0-40297ec9a769
 keywords:
 - Serenum 驱动程序 WDK、 注册表设置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 128249a1ec0591190b4c2763a05edda3f8663484
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379006"
 ---
-# <a name="registry-settings-for-serenum"></a>Serenum 的注册表设置
+# <a name="registry-settings-for-serenum"></a>用于 Serenum 的注册表设置
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: cce75c2e-fc93-4c17-9560-aef55451528b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acf49611495268e7c09928fe521b4c05b5c3378b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351800"
 ---
 # <a name="umdf-settings-test-use-only-tab"></a>UMDF 设置（仅供测试）选项卡
 

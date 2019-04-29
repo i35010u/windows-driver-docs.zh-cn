@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_RECEIVE_SCALE_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c63bdc1a616b91d8e7f262c9107bcaac4e5d773
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362853"
 ---
 # <a name="oidgenreceivescalecapabilities"></a>OID\_GEN\_接收\_规模\_功能
 
@@ -34,17 +34,17 @@ NDIS 微型端口驱动程序不会收到此 OID 请求。 NDIS 处理查询的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.0 及更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_接收\_规模\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff567220)

@@ -5,11 +5,11 @@ ms.assetid: 7EDBF55D-27C3-4E90-B540-5A2D1EB564BA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6ad113eab8e3b631ef11417dbb6ac89d8b3acd12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362267"
 ---
 # <a name="msfcfibreportnpivmethods-wmi-class"></a>MSFC\_FibrePortNPIVMethods WMI 类
 

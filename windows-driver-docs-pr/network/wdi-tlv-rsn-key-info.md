@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_RSN_KEY_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c86ecacd424f00a41db920352ce3bd618aa7e0ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359092"
 ---
 # <a name="wditlvrsnkeyinfo"></a>WDI_TLV_RSN_KEY_INFO
 
@@ -41,4 +41,4 @@ WDI_TLV_RSN_KEY_INFO 是包含 Rsn Eapol 密钥参数 TLV。 值的此 TLV 处�
 | --- | --- |
 | 最低受支持的客户端 | Windows 10 版本 1803 |
 | 最低受支持的服务器 | Windows Server 2016 |
-| 标头 | Wditypes.hpp |
+| Header | Wditypes.hpp |

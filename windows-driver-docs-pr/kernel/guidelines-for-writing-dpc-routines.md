@@ -1,6 +1,6 @@
 ---
-title: 编写 DPC 例程准则
-description: 编写 DPC 例程准则
+title: 有关编写 DPC 例程的指导原则
+description: 有关编写 DPC 例程的指导原则
 ms.assetid: 570219be-d152-4826-855a-737bbed67ffd
 keywords:
 - 延迟的过程调用 WDK 内核
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bc6b179d708942de114158b1430763815a8ef22c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359884"
 ---
-# <a name="guidelines-for-writing-dpc-routines"></a>编写 DPC 例程准则
+# <a name="guidelines-for-writing-dpc-routines"></a>有关编写 DPC 例程的指导原则
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 筛选应用程序上的注册表操作配置单元
+title: 筛选针对应用程序配置单元执行的注册表操作
 description: Windows Vista 中引入了对应用程序配置单元的初始支持。
 ms.assetid: A8D06E25-7CC6-476A-AB55-DAFE19954347
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ce08bbe206c7cda4125e0a1c8f97f469172e4dc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359959"
 ---
-# <a name="filtering-registry-operations-on-application-hives"></a>筛选应用程序上的注册表操作配置单元
+# <a name="filtering-registry-operations-on-application-hives"></a>筛选针对应用程序配置单元执行的注册表操作
 
 
 Windows Vista 中引入了对应用程序配置单元的初始支持。 从 Windows 8 开始，改进了对应用程序配置单元支持，并且可预期得到更广泛使用的应用程序配置单元。 因此，注册表筛选器驱动程序开发的这些版本的 Windows，并且特别适用于 Windows 8 和更高版本，必须了解应用程序配置单元中的注册表操作。 这些驱动程序应处理此类操作有效地以避免对用户体验造成负面影响。

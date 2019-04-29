@@ -1,17 +1,17 @@
 ---
-title: 适用于 Windows 10 的新照相机的驱动程序控件
+title: 适用于 Windows 10 的全新相机驱动程序控件
 description: 以下相机上的驱动程序控制是适用于 Windows 10 新功能。
 ms.assetid: E2995039-E8FD-4EC2-9B2F-9BFB767AEE16
 ms.date: 04/06/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6981b0296f5500439205ad0703477cd58c1f808d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370259"
 ---
-# <a name="new-camera-driver-controls-for-windows-10"></a>适用于 Windows 10 的新照相机的驱动程序控件
+# <a name="new-camera-driver-controls-for-windows-10"></a>适用于 Windows 10 的全新相机驱动程序控件
 
 
 以下相机上的驱动程序控制是适用于 Windows 10 新功能。

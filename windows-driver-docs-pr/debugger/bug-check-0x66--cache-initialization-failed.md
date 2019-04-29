@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a275885af4e0300e4bcb0109e7d2a4f155357137
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363151"
 ---
 # <a name="bug-check-0x66-cacheinitializationfailed"></a>Bug 检查 0x66：缓存\_初始化\_失败
 

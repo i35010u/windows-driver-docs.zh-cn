@@ -4,11 +4,11 @@ description: 提供有关如何处理驱动程序调度例程指南。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a093548a83921a7d3f49da61887c7e968a8660
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363530"
 ---
 # <a name="handling-dispatch-routines-in-stream-drivers"></a>处理流驱动程序中的调度例程
 
@@ -107,7 +107,7 @@ DRIVER_DISPATCH KsDefaultForwardIrp;
 
 有关详细信息，请参阅[DRIVER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [KsAddDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksadddevice)

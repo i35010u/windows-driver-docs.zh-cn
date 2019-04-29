@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2b696c45a8c3026af38850de3d1c7fa66ab3eb53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376729"
 ---
 # <a name="user-mode-functions"></a>用户模式下函数
 

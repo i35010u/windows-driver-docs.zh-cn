@@ -5,11 +5,11 @@ ms.assetid: 71A3AB26-AAC5-46DB-99A3-6693D5AF5AC9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2a477c5a1ff8ad446ac8bdee6aeaa9238345b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360097"
 ---
 # <a name="pwrtest-platform-idle-scenario"></a>PwrTest 平台空闲方案
 
@@ -84,7 +84,7 @@ pwrtest /platidle
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

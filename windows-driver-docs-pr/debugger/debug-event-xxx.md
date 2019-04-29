@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 40d0fbc01267f596d8630eb771d13566b5b41b26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353991"
 ---
 # <a name="debugeventxxx"></a>DEBUG\_EVENT\_XXX
 

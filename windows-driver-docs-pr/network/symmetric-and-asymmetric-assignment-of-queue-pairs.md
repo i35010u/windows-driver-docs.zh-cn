@@ -5,11 +5,11 @@ ms.assetid: B4BA1567-D536-4E7D-924C-7476FB82DAEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cc1a7bc46684996c0b402af5665d536fb6e672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362556"
 ---
 # <a name="symmetric-and-asymmetric-assignment-of-queue-pairs"></a>队列对的对称和非对称分配
 

@@ -5,11 +5,11 @@ ms.assetid: 23ea8c36-56cf-45ae-a066-765d3a91b542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d45ccefde367738be798f4f1965076baccf78623
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360921"
 ---
 # <a name="error-handling-in-storport-miniport-drivers"></a>Storport 微型端口驱动程序中的错误处理
 

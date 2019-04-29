@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 70ff2fc673f82c35ec34a393aeee205f214174c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367965"
 ---
 # <a name="kscategoryaudiosplitter"></a>KSCATEGORY_AUDIO_SPLITTER
 
@@ -61,7 +61,7 @@ KSCATEGORY_AUDIO_SPLITTER[设备接口类](https://msdn.microsoft.com/library/wi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Server 2003、 Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

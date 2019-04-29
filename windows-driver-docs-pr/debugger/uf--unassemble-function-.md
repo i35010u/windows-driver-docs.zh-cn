@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e4dd50771339718b2a6c77a6c062100db3e8dca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380769"
 ---
 # <a name="uf-unassemble-function"></a>uf（取消汇编函数）
 

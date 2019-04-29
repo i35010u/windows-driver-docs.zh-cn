@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58433daf71a339c3bca4176d65a3c3a5d67371ae
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358822"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>针对套接字执行控制操作
 

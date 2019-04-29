@@ -1,6 +1,6 @@
 ---
-title: 缓冲等时 DMA 传输的 IEEE 1394 设备
-description: 缓冲等时 DMA 传输的 IEEE 1394 设备
+title: 缓冲 IEEE 1394 设备的常时等量 DMA 传输
+description: 缓冲 IEEE 1394 设备的常时等量 DMA 传输
 ms.assetid: 5a08303b-8a4a-4c55-ba48-c4d5ea06157e
 keywords:
 - 同步 I/O WDK IEEE 1394 总线，缓冲 DMA 传输
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c11deb2df1752d7866417537c7d8ce7e1f1660c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376721"
 ---
-# <a name="buffering-isochronous-dma-transfers-for-ieee-1394-devices"></a>缓冲等时 DMA 传输的 IEEE 1394 设备
+# <a name="buffering-isochronous-dma-transfers-for-ieee-1394-devices"></a>缓冲 IEEE 1394 设备的常时等量 DMA 传输
 
 
 

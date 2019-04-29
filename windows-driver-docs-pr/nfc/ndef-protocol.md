@@ -4,18 +4,18 @@ description: NDEF 协议
 ms.assetid: 5AF082EC-70D6-4117-BFCE-B28A8DBAC210
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55fd1ca5757f3847303eca218c0e827c76d7386b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378680"
 ---
 # <a name="ndef-protocol"></a>NDEF 协议
 

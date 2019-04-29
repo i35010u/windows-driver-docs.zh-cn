@@ -5,11 +5,11 @@ ms.assetid: 116ee448-b0a8-4441-845c-945fc5ae0ddd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f045ea209aaa1db14ee2a37862c13575634d96a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376978"
 ---
 # <a name="trustedcertificatelist"></a>TrustedCertificateList
 

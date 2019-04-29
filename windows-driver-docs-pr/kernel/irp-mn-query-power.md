@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_QUERY_POWER Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9df260fdf923b619a5c3298724044b0b8ed6dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381426"
 ---
 # <a name="irpmnquerypower"></a>IRP\_MN\_查询\_电源
 
@@ -100,13 +100,13 @@ Microsoft Windows 2000 和更高版本的系统，处的值上**ShutdownType**�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP\_MN\_查询\_电源**](irp-mn-query-power.md)

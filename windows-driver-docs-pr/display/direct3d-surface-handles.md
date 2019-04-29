@@ -1,6 +1,6 @@
 ---
-title: Direct3D 图面上的句柄
-description: Direct3D 图面上的句柄
+title: Direct3D 图面句柄
+description: Direct3D 图面句柄
 ms.assetid: cefede2e-3e82-4de3-ae49-4982578fd2fe
 keywords:
 - 上下文 WDK Direct3D 图面上的句柄
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 369734515b7ff1c9c26144fc0768eb20501edff9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357992"
 ---
-# <a name="direct3d-surface-handles"></a>Direct3D 图面上的句柄
+# <a name="direct3d-surface-handles"></a>Direct3D 图面句柄
 
 
 ## <span id="ddk_direct3d_surface_handles_gg"></span><span id="DDK_DIRECT3D_SURFACE_HANDLES_GG"></span>

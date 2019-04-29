@@ -1,17 +1,17 @@
 ---
-title: Direct3D 11 视频播放的改进
+title: Direct3D 11 视频播放改进
 description: 与更广泛采用的主流应用程序中的 Microsoft Direct3D 10 技术，某些应用程序开发人员希望将视为所有内容相同。
 ms.assetid: BB32F074-16E8-46E4-B9CF-6AEBE331B549
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03c48a09e9d84ccf56214c00e21c2466ac89b8c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376765"
 ---
-# <a name="direct3d-11-video-playback-improvements"></a>Direct3D 11 视频播放的改进
+# <a name="direct3d-11-video-playback-improvements"></a>Direct3D 11 视频播放改进
 
 
 与更广泛采用的主流应用程序中的 Microsoft Direct3D 10 技术，某些应用程序开发人员希望将视为所有内容相同。 这是一个挑战通过 Direct3D 10 或 11 Api 处理所有的二维和三维内容时，如何使用 Microsoft Direct3D 9 API 上的视频。 因为 Windows 8 引入了 Microsoft Direct3D 11 的视频，应用程序可以使用单个 API 来执行所有图形操作。
@@ -27,7 +27,7 @@ ms.locfileid: "56533087"
 <td align="left">1.2</td>
 </tr>
 <tr class="even">
-<td align="left">最低 Windows 版本</td>
+<td align="left">最大 Windows 版本</td>
 <td align="left">8</td>
 </tr>
 <tr class="odd">

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_ISOLATION_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b06fb11539b35acde945f1d25b4646e52deebb6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375703"
 ---
 # <a name="oidgenisolationparameters"></a>OID\_GEN\_隔离\_参数
 
@@ -82,17 +82,17 @@ VM 网络适配器的微型端口驱动程序返回一个此 OID 请求的以下
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.40 及更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_隔离\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn383679)

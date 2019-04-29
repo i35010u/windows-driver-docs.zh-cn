@@ -5,11 +5,11 @@ ms.assetid: A48B75DD-5424-48CC-AC8B-251874414FCE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 435b906ec74bd1c76d6365324f5de40af44d6a16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358541"
 ---
 # <a name="relative-orientation-sensor-data-fields"></a>相对方向传感器数据字段
 

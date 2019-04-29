@@ -1,6 +1,6 @@
 ---
-title: Preparsed 的数据
-description: Preparsed 的数据
+title: 预分析的数据
+description: 预分析的数据
 ms.assetid: 50ac2877-4c45-4d55-b5cc-013486892fbf
 keywords:
 - WDK HID 的已分析的数据
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dec1402e9c9deca3745b03476bb0eed4160ad7c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372962"
 ---
-# <a name="preparsed-data"></a>Preparsed 的数据
+# <a name="preparsed-data"></a>预分析的数据
 
 
 

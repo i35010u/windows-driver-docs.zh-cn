@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_HD_SPLIT_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 50b99e004bce1df1a5b2dff8eb1493adea8dd2e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375682"
 ---
 # <a name="ndisstatushdsplitcurrentconfig"></a>NDIS\_状态\_HD\_拆分\_当前\_配置
 
@@ -35,7 +35,7 @@ ms.locfileid: "56565004"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.1 及更高版本。</p></td>
 </tr>
 <tr class="even">

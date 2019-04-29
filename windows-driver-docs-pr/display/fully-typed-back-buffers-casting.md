@@ -1,6 +1,6 @@
 ---
-title: 强制转换的完全类型化的后台缓冲区
-description: 强制转换的完全类型化的后台缓冲区
+title: 完全类型化后端缓冲区强制转换
+description: 完全类型化后端缓冲区强制转换
 ms.assetid: d34f95a4-e380-4bfb-9909-0938f63174be
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，并完全类型化后台缓冲区进行类型转换
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62600b1c0f7616139f859aff503cfef3c309328c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378001"
 ---
-# <a name="fully-typed-back-buffers-casting"></a>强制转换的完全类型化的后台缓冲区
+# <a name="fully-typed-back-buffers-casting"></a>完全类型化后端缓冲区强制转换
 
 
 本部分仅适用于 Windows 7 和更高版本的操作系统。

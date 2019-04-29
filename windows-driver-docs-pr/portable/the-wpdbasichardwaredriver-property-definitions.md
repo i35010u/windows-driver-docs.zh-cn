@@ -1,14 +1,14 @@
 ---
-Description: Defining the Sensor Properties
+Description: 定义传感器属性
 title: 定义传感器属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d36174949ef6b5dd40e0f6b53c3e3270219500af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378665"
 ---
 # <a name="defining-the-sensor-properties"></a>定义传感器属性
 
@@ -115,7 +115,7 @@ const PROPERTYKEY g_SupportedSensorProperties[] =
 
 这些值也在分配**WpdObjectProperties::GetPropertyValuesForObject**方法。 但是，分配到传感器的值\_读取和传感器\_更新\_间隔属性不是常量; 相反，它们是两个 helper 函数来检索在真实时间中的值：**WpdObjectProperties::GetSensorReading**并**WpdObjectProperties::GetUpdateInterval**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

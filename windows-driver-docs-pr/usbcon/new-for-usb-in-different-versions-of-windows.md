@@ -1,16 +1,16 @@
 ---
-Description: What's new for USB in different versions of Windows.
-title: USB 的不同版本的 Windows 中的新增功能
+Description: 什么是 USB 的不同版本的 Windows 中的新增功能。
+title: 不同版本的 Windows 中的 USB 新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 702e034bf6678ce3f2d87eabe0ef9f2bda0dc906
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370221"
 ---
-# <a name="new-for-usb-in-different-versions-of-windows"></a>USB 的不同版本的 Windows 中的新增功能
+# <a name="new-for-usb-in-different-versions-of-windows"></a>不同版本的 Windows 中的 USB 新增功能
 
 
 在本部分中主题指出了什么是 USB 的不同版本的 Windows 中的新增功能。

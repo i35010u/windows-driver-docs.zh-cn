@@ -5,11 +5,11 @@ ms.assetid: AF451636-DBA0-4905-9723-73EE7AA9483E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3d43014655454b20629cdda877bcc7e0cb6f792f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377326"
 ---
 # <a name="run-down-protection"></a>停止运行保护
 

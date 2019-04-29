@@ -1,6 +1,6 @@
 ---
-title: 扩展盘区调整
-description: 扩展盘区调整
+title: 范围调整
+description: 范围调整
 ms.assetid: b3562744-375a-4d6f-be09-e28314282faa
 keywords:
 - Direct3D WDK Windows 2000 显示，扩展盘区调整
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aa4b75f3c6d50e75a3383e4793c9a8749d59882
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360733"
 ---
-# <a name="extents-adjustment"></a>扩展盘区调整
+# <a name="extents-adjustment"></a>范围调整
 
 
 ## <span id="ddk_extents_adjustment_gg"></span><span id="DDK_EXTENTS_ADJUSTMENT_GG"></span>

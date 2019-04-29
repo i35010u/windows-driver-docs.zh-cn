@@ -1,6 +1,6 @@
 ---
-title: Windows 套接字 SPI 函数所需的 San
-description: Windows 套接字 SPI 函数所需的 San
+title: SAN 所需的 Windows Sockets SPI 函数
+description: SAN 所需的 Windows Sockets SPI 函数
 ms.assetid: b41bd7e0-bb6c-4933-a5d0-18e4d067601b
 keywords:
 - SAN 服务提供商 WDK，所需的功能
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9da03118f624130a3465120f7f6b8be82139315
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382857"
 ---
-# <a name="windows-sockets-spi-functions-required-for-sans"></a>Windows 套接字 SPI 函数所需的 San
+# <a name="windows-sockets-spi-functions-required-for-sans"></a>SAN 所需的 Windows Sockets SPI 函数
 
 
 

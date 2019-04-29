@@ -1,17 +1,17 @@
 ---
-title: 中的注册表通知无效密钥对象指针
-description: 中的注册表通知无效密钥对象指针
+title: 注册表通知中的项对象指针无效
+description: 注册表通知中的项对象指针无效
 ms.assetid: 96709c34-63a7-4b4e-8588-c7e8b41b5dea
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ad92e0663df7dc22756e05fea0c29d2a1c425e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369283"
 ---
-# <a name="invalid-key-object-pointers-in-registry-notifications"></a>中的注册表通知无效密钥对象指针
+# <a name="invalid-key-object-pointers-in-registry-notifications"></a>注册表通知中的项对象指针无效
 
 
 若要避免错误和可能存在内存损坏，注册表筛选驱动程序必须不尝试使用无效的对象指针访问密钥的对象。 本主题列出了在其中的情况**对象**注册表回调通知结构的成员可能包含未定义非**NULL**值。

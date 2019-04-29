@@ -1,6 +1,6 @@
 ---
-title: 在全屏幕上启用 Alpha 通道后台缓冲区
-description: 在全屏幕上启用 Alpha 通道后台缓冲区
+title: 在全屏后端缓冲区中启用 Alpha 通道
+description: 在全屏后端缓冲区中启用 Alpha 通道
 ms.assetid: 9d922464-fb1b-459b-9363-61afff7c51e3
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，alpha 通道上的全屏后台缓冲区
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9829939051617356f0c62cd2eda516c4808b7f9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355349"
 ---
-# <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>在全屏幕上启用 Alpha 通道后台缓冲区
+# <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>在全屏后端缓冲区中启用 Alpha 通道
 
 
 ## <span id="ddk_enabling_alpha_channels_on_full_screen_back_buffers_gg"></span><span id="DDK_ENABLING_ALPHA_CHANNELS_ON_FULL_SCREEN_BACK_BUFFERS_GG"></span>

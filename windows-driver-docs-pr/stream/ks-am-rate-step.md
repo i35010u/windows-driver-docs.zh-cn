@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dabb9f0c97067cd48b038643bf40dcee82e6ba69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362249"
 ---
 # <a name="ksamratestep"></a>KS\_AM\_速率\_步骤
 

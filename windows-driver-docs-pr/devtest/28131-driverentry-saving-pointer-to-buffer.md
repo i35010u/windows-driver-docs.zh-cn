@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28131
 ms.openlocfilehash: e6933b3a4c67a0ad71f2f4b372b4331944678e24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361439"
 ---
 # <a name="c28131"></a>C28131
 

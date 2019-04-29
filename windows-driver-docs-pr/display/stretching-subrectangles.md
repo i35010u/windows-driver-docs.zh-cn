@@ -1,6 +1,6 @@
 ---
-title: 拉伸 Subrectangles
-description: 拉伸 Subrectangles
+title: 拉伸子矩形
+description: 拉伸子矩形
 ms.assetid: c8642ea4-67e9-4a15-9636-8d7efbfd8c9e
 keywords:
 - 取消隔行扫描 WDK DirectX VA，subrectangular 处理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2874ddb904f8f13a8cf979f93dd2e6104dabbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376006"
 ---
-# <a name="stretching-subrectangles"></a>拉伸 Subrectangles
+# <a name="stretching-subrectangles"></a>拉伸子矩形
 
 
 ## <span id="ddk_stretching_subrectangles_gg"></span><span id="DDK_STRETCHING_SUBRECTANGLES_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 0de4a547-6c8e-4fbf-a7a3-7af440bf72f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d691b11c1ff1c842d0c53606f8a36114233655e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379830"
 ---
 # <a name="twain-and-raw-rgb-format"></a>TWAIN 和原始 RGB 格式
 

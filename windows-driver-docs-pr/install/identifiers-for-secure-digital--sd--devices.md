@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91ba0562c4f2d84b2e81d3453ae6c9e28c8e85b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362993"
 ---
 # <a name="identifiers-for-secure-digital-sd-devices"></a>安全数字 (SD) 设备的标识符
 

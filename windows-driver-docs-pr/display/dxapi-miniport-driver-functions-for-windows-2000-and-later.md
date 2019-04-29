@@ -1,6 +1,6 @@
 ---
-title: DxApi 微型端口驱动程序功能适用于 Windows 2000 及更高版本
-description: DxApi 微型端口驱动程序功能适用于 Windows 2000 及更高版本
+title: Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
+description: Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
 ms.assetid: e9a41e27-930c-49a2-b5e3-0b709b873bb3
 keywords:
 - DxApi 微型端口驱动程序 WDK DirectDraw
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2baec9c6192ee5e8eed74c926c4d46acb836c28a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361225"
 ---
-# <a name="dxapi-miniport-driver-functions-for-windows-2000-and-later"></a>DxApi 微型端口驱动程序功能适用于 Windows 2000 及更高版本
+# <a name="dxapi-miniport-driver-functions-for-windows-2000-and-later"></a>Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
 
 
 ## <span id="ddk_dxapi_miniport_driver_functions_for_windows_2000_and_later_gg"></span><span id="DDK_DXAPI_MINIPORT_DRIVER_FUNCTIONS_FOR_WINDOWS_2000_AND_LATER_GG"></span>

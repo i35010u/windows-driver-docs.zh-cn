@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fec31a2b8ae23c04ed5a58b8505b016dfc75771e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368152"
 ---
 # <a name="debugbaseeventcallbackswide-class"></a>DebugBaseEventCallbacksWide 类 
 
@@ -29,12 +29,12 @@ DebugBaseEventCallbacksWide 类提供的基实现[IDebugEventCallbacksWide](http
  
 ### <a name="requirements"></a>要求
 
-标头
+Header
 
 Dbgeng.h （包括 Dbgeng.h）  
 
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 [DebugBaseEventCallbacks](debugbaseeventcallbacks.md)
 
  

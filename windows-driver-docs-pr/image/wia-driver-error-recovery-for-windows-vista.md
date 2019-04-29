@@ -1,17 +1,17 @@
 ---
-title: 适用于 Windows Vista 的 WIA 驱动程序错误恢复
-description: 适用于 Windows Vista 的 WIA 驱动程序错误恢复
+title: Windows Vista 的 WIA 驱动程序错误恢复
+description: Windows Vista 的 WIA 驱动程序错误恢复
 ms.assetid: 7347cc02-e00e-418e-9ac4-8bfda7d02857
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9ae92080403be4494efab3ba45ad0fe7b229781
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366892"
 ---
-# <a name="wia-driver-error-recovery-for-windows-vista"></a>适用于 Windows Vista 的 WIA 驱动程序错误恢复
+# <a name="wia-driver-error-recovery-for-windows-vista"></a>Windows Vista 的 WIA 驱动程序错误恢复
 
 
 

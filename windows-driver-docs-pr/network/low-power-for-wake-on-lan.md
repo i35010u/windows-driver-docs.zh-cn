@@ -1,17 +1,17 @@
 ---
-title: LAN 唤醒的的低能耗
-description: LAN 唤醒的的低能耗
+title: 在 LAN 上唤醒时离开低功耗状态
+description: 在 LAN 上唤醒时离开低功耗状态
 ms.assetid: 9ab8fa19-e75a-4266-accf-4e8b2964f82e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4fddddcc10f9eddb5e58a26bd3d036f18c4875d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365871"
 ---
-# <a name="low-power-for-wake-on-lan"></a>LAN 唤醒的的低能耗
+# <a name="low-power-for-wake-on-lan"></a>在 LAN 上唤醒时离开低功耗状态
 
 
 

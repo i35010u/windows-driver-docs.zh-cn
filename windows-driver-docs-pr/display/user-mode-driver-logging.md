@@ -5,11 +5,11 @@ ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 291bc3072a934958d816240d2e563e0f90e14792
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359130"
 ---
 # <a name="span-iddisplayuser-modedriverloggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>用户模式驱动程序日志记录
 
@@ -19,7 +19,7 @@ ms.locfileid: "56533329"
 |                                                                                   |                                  |
 |-----------------------------------------------------------------------------------|----------------------------------|
 | WDDM 的最低版本                                                              | 1.2                              |
-| 最低 Windows 版本                                                           | 8                                |
+| 最大 Windows 版本                                                           | 8                                |
 | 驱动程序实现 — 仅完全图形和呈现                               | 强制                        |
 | [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **Device.Graphics¦UMDLogging** |
 

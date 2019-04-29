@@ -4,11 +4,11 @@ title: 如何安装 Netmon 和 USB ETW 分析程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a7f62cf203e6e0071db1c03d6e93924b4469876
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364797"
 ---
 # <a name="how-to-install-netmon-and-usb-etw-parsers"></a>如何安装 Netmon 和 USB ETW 分析程序
 

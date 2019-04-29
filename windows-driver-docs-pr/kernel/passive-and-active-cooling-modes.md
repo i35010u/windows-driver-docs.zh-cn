@@ -1,17 +1,17 @@
 ---
-title: 被动和主动冷却模式
+title: 被动和主动散热模式
 description: 从 Windows 8 开始，具有热量管理功能的设备可以公开到操作系统 GUID_THERMAL_COOLING_INTERFACE 驱动程序接口通过这些功能。
 ms.assetid: 4AB70ED3-E71A-45EE-818D-7DCDE0FFBCB3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 16a346a52e347e5859030e57dc8057abcfc7269a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369275"
 ---
-# <a name="passive-and-active-cooling-modes"></a>被动和主动冷却模式
+# <a name="passive-and-active-cooling-modes"></a>被动和主动散热模式
 
 
 从 Windows 8 开始，具有热量管理功能的设备可以公开到操作系统通过这些功能[GUID\_热量\_冷却\_接口](https://msdn.microsoft.com/library/windows/hardware/hh698265)驱动程序接口。 此接口中的两个主体驱动程序实现的回调例程都[ *PassiveCooling* ](https://msdn.microsoft.com/library/windows/hardware/hh698270)并[ *ActiveCooling*](https://msdn.microsoft.com/library/windows/hardware/hh698235)。 被动冷却功能实现的驱动程序*PassiveCooling*例程。 具有活动冷却功能实现的驱动程序*ActiveCooling*例程。 在响应计算机使用情况或环境条件中的更改，操作系统将调用一个 （或可能是两者） 的这些例程来管理动态中的硬件平台的热量级别。

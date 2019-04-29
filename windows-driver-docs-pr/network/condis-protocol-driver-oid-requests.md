@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4f89e3c2366793d1c333bad592dc5fefb3ec142
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366781"
 ---
 # <a name="condis-protocol-driver-oid-requests"></a>CoNDIS 协议驱动程序 OID 请求
 

@@ -1,15 +1,15 @@
 ---
-title: 设置通过在 Visual Studio 中的串行电缆内核模式调试
+title: 在 Visual Studio 中设置通过串行线缆进行的内核模式调试
 description: 可以使用 Microsoft Visual Studio 设置和执行通过调制解调器电缆内核模式调试。
 ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 368ebc2681fce48dc5ef26a11538515be7fda63f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381932"
 ---
 # <a name="span-iddebuggersettingupanull-modemcableconnectioninvisualstudiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>设置通过在 Visual Studio 中的串行电缆内核模式调试
 
@@ -109,10 +109,10 @@ ms.locfileid: "56521516"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设置 Visual Studio 中的内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
+[在 Visual Studio 中设置内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
 

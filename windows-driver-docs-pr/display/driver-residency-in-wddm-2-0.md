@@ -5,11 +5,11 @@ ms.assetid: 9BD0138A-E957-4675-8E08-2750825A5C87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86f179b00a5a0300b8354ccebaa25bc4013fbe5f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358443"
 ---
 # <a name="driver-residency-in-wddm-20"></a>WDDM 2.0 中的驱动程序驻留
 

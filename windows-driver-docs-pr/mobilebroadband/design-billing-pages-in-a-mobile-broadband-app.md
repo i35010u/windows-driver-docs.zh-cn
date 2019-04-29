@@ -5,11 +5,11 @@ ms.assetid: 44c5a273-1dd4-4ff5-90aa-9d1f4f855439
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2abd40354ef9dd74f550d750593324007ca59070
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383792"
 ---
 # <a name="design-billing-pages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的计费页面
 
@@ -54,13 +54,13 @@ ms.locfileid: "56543782"
 
 -   错误处理的设计指南，请参阅[布置 UI](https://msdn.microsoft.com/library/windows/apps/hh465304)。
 
--   有关可访问性的指南，请参阅[中使用 c + +，UWP 应用的辅助功能C#，或 Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)。
+-   有关可访问性的指南，请参阅[中使用的 UWP 应用的辅助功能C++， C#，或 Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh452680)。
 
 -   有关如何使用内置控件的详细信息，请参阅[添加控件和内容](https://msdn.microsoft.com/library/windows/apps/hh465393)。
 
 -   触摸输入准则，请参阅[快速入门：触摸输入](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设计用户体验的移动宽带应用程序](designing-the-user-experience-of-a-mobile-broadband-app.md)

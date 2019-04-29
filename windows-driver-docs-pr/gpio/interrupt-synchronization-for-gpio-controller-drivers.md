@@ -1,17 +1,17 @@
 ---
-title: 中断 GPIO 控制器驱动程序的同步
+title: GPIO 控制器驱动程序的中断同步
 description: GPIO 控制器驱动程序可以调用 GPIO_CLX_AcquireInterruptLock 和 GPIO_CLX_ReleaseInterruptLock 方法来获取和释放由 GPIO 框架扩展 (GpioClx) 在内部实现的中断锁。
 ms.assetid: D9698A50-7CC2-463C-9E46-7FE428F3193E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf1021e090f88db9470790e9c9ef67f50690ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326135"
 ---
-# <a name="interrupt-synchronization-for-gpio-controller-drivers"></a>中断 GPIO 控制器驱动程序的同步
+# <a name="interrupt-synchronization-for-gpio-controller-drivers"></a>GPIO 控制器驱动程序的中断同步
 
 
 GPIO 控制器驱动程序可以调用[ **GPIO\_CLX\_AcquireInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439482)并[ **GPIO\_CLX\_ReleaseInterruptLock** ](https://msdn.microsoft.com/library/windows/hardware/hh439494)方法来获取和释放中断由 GPIO 框架扩展 (GpioClx) 在内部实现的锁。 驱动程序代码运行在 IRQL = 被动\_级别可以调用这些方法来同步到 GpioClx 中断服务例程 (ISR)。 GpioClx 到引脚 GPIO 控制器中的每个插槽将专用的单独的中断锁。

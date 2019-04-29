@@ -1,6 +1,6 @@
 ---
-title: 在 UMDF 1.x 驱动程序中处理客户端模拟
-description: 在 UMDF 1.x 驱动程序中处理客户端模拟
+title: 处理 UMDF 1.x 驱动程序中的客户端模拟
+description: 处理 UMDF 1.x 驱动程序中的客户端模拟
 ms.assetid: 25beab8c-e6b8-479b-ad60-fcc3b5b56a6d
 keywords:
 - 用户模式驱动程序框架 WDK 模拟
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 329f57369e88186a9dcc750ed11fac48b4003a98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378119"
 ---
-# <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中处理客户端模拟
+# <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>处理 UMDF 1.x 驱动程序中的客户端模拟
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

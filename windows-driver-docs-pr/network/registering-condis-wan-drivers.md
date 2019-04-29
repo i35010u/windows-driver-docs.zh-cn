@@ -1,6 +1,6 @@
 ---
-title: 注册的 CoNDIS WAN 驱动程序
-description: 注册的 CoNDIS WAN 驱动程序
+title: 注册 CoNDIS WAN 驱动程序
+description: 注册 CoNDIS WAN 驱动程序
 ms.assetid: e699d1b0-9dbd-4845-b8e3-e83da20e997c
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 连接网络、 注册
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0ae782bce2b9fa27523ae908308932ab8004012
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364071"
 ---
-# <a name="registering-condis-wan-drivers"></a>注册的 CoNDIS WAN 驱动程序
+# <a name="registering-condis-wan-drivers"></a>注册 CoNDIS WAN 驱动程序
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 3744C1D5-E411-4E47-9154-40E15626250D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6c6bab0b7fc17d9e66a3938c62d20d9a76a048f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376668"
 ---
 # <a name="ieee-1394-bus-driver-in-windows-7"></a>Windows 7 中的 IEEE 1394 总线驱动程序
 

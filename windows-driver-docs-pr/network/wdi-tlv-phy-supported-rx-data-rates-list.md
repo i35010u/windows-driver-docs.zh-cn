@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_SUPPORTED_RX_DATA_RATES_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 09549b3b0acc14cea95d6c90749ee770d9f40e97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363635"
 ---
 # <a name="wditlvphysupportedrxdatarateslist"></a>WDI\_TLV\_PHY\_支持\_RX\_数据\_费率\_列表
 
@@ -36,7 +36,7 @@ WDI\_TLV\_PHY\_支持\_RX\_数据\_费率\_列表是未使用的 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

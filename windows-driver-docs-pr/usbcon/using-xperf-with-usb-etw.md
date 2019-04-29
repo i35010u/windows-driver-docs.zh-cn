@@ -1,14 +1,14 @@
 ---
-Description: This topic describes how to use Xperf with Netmon to analyze USB trace data.
+Description: 本主题介绍如何使用 Netmon Xperf 分析 USB 跟踪数据。
 title: 将 Xperf 与 USB ETW 配合使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 521ff7449b3dba99e2fd71570fbf2b87dbfd1f5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357637"
 ---
 # <a name="using-xperf-with-usb-etw"></a>将 Xperf 与 USB ETW 配合使用
 

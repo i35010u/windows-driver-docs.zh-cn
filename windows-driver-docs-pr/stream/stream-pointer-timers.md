@@ -1,6 +1,6 @@
 ---
-title: Stream 指针计时器
-description: Stream 指针计时器
+title: 流指针计时器
+description: 流指针计时器
 ms.assetid: 98413fc6-2b62-4c52-9ac4-bd2a3a60db60
 keywords:
 - 流指针 WDK AVStream，计时器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 260dfebf9324a34365ba757d25daeb42d6f47b4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373570"
 ---
-# <a name="stream-pointer-timers"></a>Stream 指针计时器
+# <a name="stream-pointer-timers"></a>流指针计时器
 
 
 

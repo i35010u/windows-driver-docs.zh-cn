@@ -4,11 +4,11 @@ title: 支持自动播放
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae2236bccd98008dadffbb349c988caac1e65c42
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380857"
 ---
 # <a name="supporting-autoplay"></a>支持自动播放
 
@@ -22,9 +22,9 @@ ms.locfileid: "57464090"
 
 与 Windows Vista 自动播放功能集成，WPD 自动播放方案。 它会通过支持以下表所述的三个自动播放类别。
 
-| 类别 | 描述                                                                                                         |
+| Category | 描述                                                                                                         |
 |----------|---------------------------------------------------------------------------------------------------------------------|
-| 源   | WPD 设备可将其视为内容的源，即，从设备传输内容。        |
+| Source   | WPD 设备可将其视为内容的源，即，从设备传输内容。        |
 | 接收器     | WPD 设备可将其视为内容的目标，也就是说，内容可以传输到设备。    |
 | 函数 | WPD 设备支持可编程或可控制功能，例如，它可以发送和接收 SMS 消息。 |
 

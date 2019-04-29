@@ -1,6 +1,6 @@
 ---
-title: 在程序集模式中进行调试
-description: 在程序集模式中进行调试
+title: 在程序集模式下调试
+description: 在程序集模式下调试
 ms.assetid: 048c43ff-7f9e-4a20-a524-44f66d92eefe
 keywords:
 - 调试的程序集
@@ -9,19 +9,19 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78107ec7196f9948dddecd85dd12458c01a14347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377224"
 ---
-# <a name="debugging-in-assembly-mode"></a>在程序集模式中进行调试
+# <a name="debugging-in-assembly-mode"></a>在程序集模式下调试
 
 
 ## <span id="ddk_debugging_in_assembly_mode_dbg"></span><span id="DDK_DEBUGGING_IN_ASSEMBLY_MODE_DBG"></span>
 
 
-如果您应用程序具有 C 或 c + + 源文件，则可以使用调试器功能非常强大得多如果您[在源模式下调试](debugging-in-source-mode.md)。
+如果具有 C 或C++为应用程序的源文件，如果，则可以更有效地使用调试器您[在源模式中进行调试](debugging-in-source-mode.md)。
 
 但是，有很多时候，不能执行源调试。 不可能适用于你的应用程序的源文件。 您可以调试其他人的代码。 您可能不生成完整的.pdb 符号与可执行文件。 即使你可以执行源在你的应用程序上进行调试，则可能必须跟踪 Microsoft Windows 例程应用程序应调用或使用以加载你的应用程序。
 
@@ -89,7 +89,7 @@ ms.locfileid: "56522806"
 
 如果你的应用程序在程序集语言编写的调试器会生成反汇编可能与原始代码不完全匹配。 具体而言，进行任何操作和提出的意见将不会显示。
 
-如果你想要调试你的代码通过引用原始.asm 文件，则必须使用源模式调试。 您可以加载的程序集文件，如 C 或 c + + 源文件。 有关调试此类的详细信息，请参阅[在源模式中进行调试](debugging-in-source-mode.md)。
+如果你想要调试你的代码通过引用原始.asm 文件，则必须使用源模式调试。 可以加载程序集文件，如 C 或C++源文件。 有关调试此类的详细信息，请参阅[在源模式中进行调试](debugging-in-source-mode.md)。
 
  
 

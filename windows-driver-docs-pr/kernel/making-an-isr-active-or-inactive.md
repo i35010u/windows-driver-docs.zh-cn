@@ -1,17 +1,17 @@
 ---
-title: 使 ISR 处于活动状态或处于非活动状态
+title: 使 ISR 处于活动或非活动状态
 description: 从 Windows 8 开始，驱动程序可以调用 IoReportInterruptActive 或 IoReportInterruptInactive 例程，以使已注册的中断服务例程 (ISR) 活动或非活动。
 ms.assetid: 788D9341-D1F8-4126-8C30-AA49DE27F4BB
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6dfb0b4a3e803d2368dbc0657cebf0df5d00f12d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378741"
 ---
-# <a name="making-an-isr-active-or-inactive"></a>使 ISR 处于活动状态或处于非活动状态
+# <a name="making-an-isr-active-or-inactive"></a>使 ISR 处于活动或非活动状态
 
 
 从 Windows 8 开始，驱动程序可以调用[ **IoReportInterruptActive** ](https://msdn.microsoft.com/library/windows/hardware/jj158875)或[ **IoReportInterruptInactive** ](https://msdn.microsoft.com/library/windows/hardware/jj158876)例程，以使已注册的中断服务例程 (ISR) 活动或非活动。

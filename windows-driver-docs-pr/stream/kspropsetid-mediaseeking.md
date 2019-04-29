@@ -5,11 +5,11 @@ ms.assetid: 0c0ffb59-0b67-4d88-9737-7dd4ad5369ac
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb87c1a447fff59ab23418b48af4f771e6ab0e96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364917"
 ---
 # <a name="kspropsetidmediaseeking"></a>KSPROPSETID\_MediaSeeking
 

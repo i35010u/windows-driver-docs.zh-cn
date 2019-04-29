@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cce9d57d5cd2b005aa4ac48a4ddba2dfe4ccd369
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376031"
 ---
 # <a name="irqliopassive3-rule-wdm"></a>IrqlIoPassive3 规则 (wdm)
 
@@ -82,7 +82,7 @@ IrqlIoPassive3 规则指定驱动程序调用以下例程，仅当执行在 IRQL
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoCreateSymbolicLink**](https://msdn.microsoft.com/library/windows/hardware/ff549043)

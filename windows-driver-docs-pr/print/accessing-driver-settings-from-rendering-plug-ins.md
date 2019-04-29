@@ -1,6 +1,6 @@
 ---
-title: 从呈现插件访问驱动程序设置
-description: 从呈现插件访问驱动程序设置
+title: 从渲染插件访问驱动程序设置
+description: 从渲染插件访问驱动程序设置
 ms.assetid: d13526f5-85e1-4036-98fb-aea2c6d5a1e3
 keywords:
 - 呈现插件 WDK 打印，则访问驱动程序设置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0784a4ebe720ecd0124c5edc29b28d75d386aa84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372877"
 ---
-# <a name="accessing-driver-settings-from-rendering-plug-ins"></a>从呈现插件访问驱动程序设置
+# <a name="accessing-driver-settings-from-rendering-plug-ins"></a>从渲染插件访问驱动程序设置
 
 
 

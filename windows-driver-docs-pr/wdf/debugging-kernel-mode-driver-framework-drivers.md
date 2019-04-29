@@ -5,11 +5,11 @@ ms.assetid: 62D0F1DA-318F-4989-94C5-968C67F420C8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f34255e1be2c2fad5f8e8f6241796212514bcb16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362450"
 ---
 # <a name="videos-debugging-kmdf-drivers"></a>视频：调试 KMDF 驱动程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "56564968"
 
 观看视频之后, 将熟悉 KMDF 调试器扩展并知道如何在基本的调试方案中使用它们。
 
-## <a name="prerequisites"></a>必备组件
+## <a name="prerequisites"></a>先决条件
 
 
 在高级技术级别提供了这一系列的演示。 若要充分利用此内容应具有 Windows 内核调试器 (windbg.exe) 的应用知识，并应熟悉创建和使用 KMDF 码。 由于每个会话建立在上一基础之上，我们建议按所列顺序查看这些演示。

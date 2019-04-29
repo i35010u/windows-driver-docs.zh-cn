@@ -5,11 +5,11 @@ ms.assetid: 2ad0dabe-54b3-4075-966b-491e078f2c8b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 56318f4eea7591a5ae01d56369c470470dac6349
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359695"
 ---
 # <a name="iscsilunlist-wmi-class"></a>ISCSI\_LUNList WMI 类
 

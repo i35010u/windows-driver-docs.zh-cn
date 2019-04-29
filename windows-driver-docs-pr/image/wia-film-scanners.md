@@ -1,17 +1,17 @@
 ---
-title: WIA 电影扫描仪
-description: WIA 电影扫描仪
+title: WIA 底片扫描仪
+description: WIA 底片扫描仪
 ms.assetid: 2f754ae6-42e1-4398-9220-cddf090810f8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5f464d329d23e8c6effc6854ead45fa9e8aed54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363059"
 ---
-# <a name="wia-film-scanners"></a>WIA 电影扫描仪
+# <a name="wia-film-scanners"></a>WIA 底片扫描仪
 
 
 

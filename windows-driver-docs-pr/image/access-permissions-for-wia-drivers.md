@@ -5,11 +5,11 @@ ms.assetid: 593e9367-5304-4b04-8597-4a7c498b9f47
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7358e254013db4b48becc17d9bf83359ee9135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377634"
 ---
 # <a name="access-permissions-for-wia-drivers"></a>WIA 驱动程序的访问权限
 

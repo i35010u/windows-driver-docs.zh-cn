@@ -5,11 +5,11 @@ ms.assetid: 292c5ffe-fbdf-42b8-9642-024c78709843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 932b342376ec64415f808e713d4e4a9ba8c89117
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369386"
 ---
 # <a name="step-3-the-driver-for-the-device-is-installed"></a>步骤 3:安装设备的驱动程序
 

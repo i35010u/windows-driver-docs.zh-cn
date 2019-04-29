@@ -1,21 +1,21 @@
 ---
-Description: Describes various tools you can use to test USB devices and drivers.
+Description: 介绍可用于测试 USB 设备和驱动程序的各种工具。
 title: USB 测试工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b3155c1af400918332470821c43df3d9b82358
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377200"
 ---
 # <a name="usb-test-tools"></a>USB 测试工具
 
 
 介绍可用于测试 USB 设备和驱动程序的各种工具。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

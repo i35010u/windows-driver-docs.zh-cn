@@ -5,11 +5,11 @@ ms.assetid: 933EE18B-917A-40BC-87AA-0F463615A082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a50e45082a5e9fdb1035ed073ec8bf776d314b50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373774"
 ---
 # <a name="supporting-nvgre-in-checksum-offload"></a>在校验和卸载中支持 NVGRE
 

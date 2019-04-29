@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: dc28299656dcd97578f3012b678b6ee28b94caea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356813"
 ---
 # <a name="wditlvp2pasp2advertisedserviceentry"></a>WDI\_TLV\_P2P\_ASP2\_ADVERTISED\_SERVICE\_ENTRY
 
@@ -66,7 +66,7 @@ WDI\_TLV\_P2P\_ASP2\_播发\_服务\_项是包含一个 ASP2 播发服务条目 
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

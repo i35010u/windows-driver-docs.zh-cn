@@ -5,11 +5,11 @@ ms.assetid: a8efc393-60fd-4ff8-ba9a-53846f5fbba4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1bb4866e1adc3b4e3f434579ae5d675b8032eff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364203"
 ---
 # <a name="determining-the-vmq-capabilities-of-a-network-adapter"></a>确定网络适配器的 VMQ 功能
 

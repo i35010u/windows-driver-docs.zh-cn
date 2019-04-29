@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1692656e1383fa1a9746d68243d02dea405a985f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358319"
 ---
 # <a name="removelockmnremove-rule-wdm"></a>RemoveLockMnRemove 规则 (wdm)
 
@@ -70,7 +70,7 @@ PnP 管理器将发送通过堆栈查询删除。 FDO 启用空闲系统运行�
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoAcquireRemoveLock**](https://msdn.microsoft.com/library/windows/hardware/ff548204)

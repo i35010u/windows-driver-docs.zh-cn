@@ -20,18 +20,18 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65eab193ffccd22bd0f4608d202c5a53040cedc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361847"
 ---
 # <a name="exxxxtimer-routines-and-extimer-objects"></a>ExXxxTimer 例程和 EX\_计时器对象
 
 
 从 Windows 8.1 开始，一套综合的**Ex*Xxx*计时器**例程是可用于管理计时器。 这些例程使用计时器对象的基于[ **EX\_计时器**](https://msdn.microsoft.com/library/windows/hardware/dn265199)结构。 **Ex*Xxx*计时器**例程是替换**Ke*Xxx*计时器**例程，可从 Windows 2000 开始。 驱动程序用于只能在 Windows 8.1 上运行，并可以使用更高版本的 Windows **Ex*Xxx*计时器**而不是例程**Ke*Xxx*计时器**例程。 继续支持 Windows 8.1 和更高版本的 Windows **Ke*Xxx*计时器**例程。
 
-**Ex*Xxx*计时器**例程拥有由提供的所有重要的功能**Ke*Xxx*计时器**例程。 此外， **Ex*Xxx*计时器**例程都支持两个计时器类型*高分辨率计时器*并*否唤醒计时器*，不是受**Ke*Xxx*计时器**例程。 高分辨率计时器是其过期时间可以指定与准确性更高的系统时钟的默认分辨率受限于其准确性的计时器的计时器。 没有唤醒计时器是避免不必要地唤醒从低功耗状态的处理器的计时器。 有关详情，请参阅以下主题：
+**Ex*Xxx*计时器**例程拥有由提供的所有重要的功能**Ke*Xxx*计时器**例程。 此外， **Ex*Xxx*计时器**例程都支持两个计时器类型*高分辨率计时器*并*否唤醒计时器*，不是受**Ke*Xxx*计时器**例程。 高分辨率计时器是其过期时间可以指定与准确性更高的系统时钟的默认分辨率受限于其准确性的计时器的计时器。 没有唤醒计时器是避免不必要地唤醒从低功耗状态的处理器的计时器。 有关详细信息，请参阅下列主题：
 
 [高分辨率计时器](high-resolution-timers.md)
 [否唤醒计时器](no-wake-timers.md)从 Windows 8.1，以下**Ex*Xxx*计时器**例程都可用：

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5746d9e9e187441a5798a4ceab9fdb65615f51f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359543"
 ---
 # <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>不允许 Preoperation 回调例程中的快速 I/O 操作
 

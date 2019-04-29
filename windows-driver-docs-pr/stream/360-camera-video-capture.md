@@ -1,16 +1,16 @@
 ---
-title: 360 照相机视频捕获
+title: 360 相机视频捕获
 description: 提供了有关 360 照相机视频捕获的信息。
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d8bf634a005b626a64df5a3d394b10bd293199ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357283"
 ---
-# <a name="360-camera-video-capture"></a>360 照相机视频捕获
+# <a name="360-camera-video-capture"></a>360 相机视频捕获
 
 Windows 10 版本 1803年为 360 摄像头预览、 捕获和记录与现有的 MediaCapture Api 提供支持。 这使平台以显示球形帧源 （例如，equirectangular 帧），因而应用程序可以检测和处理 360 视频摄像机流提供 360 捕获体验。
 
@@ -61,7 +61,7 @@ Windows 10 版本 1803年为 360 摄像头预览、 捕获和记录与现有的 
 <p>值</p>
 </th>
 <th>
-<p>属性</p>
+<p>特性</p>
 </th>
 </tr>
 </thead>

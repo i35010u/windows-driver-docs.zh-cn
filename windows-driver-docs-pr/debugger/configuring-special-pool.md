@@ -1,6 +1,6 @@
 ---
-title: 配置特殊的池
-description: 配置特殊的池
+title: 配置特殊池
+description: 配置特殊池
 ms.assetid: a6c90e88-8d67-47e8-8862-b7585a5d8bec
 keywords:
 - GFlags、 内核特殊池配置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13439d575fa762306539fe547793a6bba0b55305
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375060"
 ---
-# <a name="configuring-special-pool"></a>配置特殊的池
+# <a name="configuring-special-pool"></a>配置特殊池
 
 
 ## <span id="ddk_configuring_kernel_special_pool_dtools"></span><span id="DDK_CONFIGURING_KERNEL_SPECIAL_POOL_DTOOLS"></span>

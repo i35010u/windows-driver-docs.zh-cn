@@ -1,17 +1,17 @@
 ---
-title: 查询的 NDIS QoS 功能
-description: 查询的 NDIS QoS 功能
+title: 查询 NDIS QoS 功能
+description: 查询 NDIS QoS 功能
 ms.assetid: 00A2EFCD-CD90-446C-B588-EC66E3E730B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79f4c4a77d0c8154c56cc57c74d8f9dcb5c8037a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360954"
 ---
-# <a name="querying-ndis-qos-capabilities"></a>查询的 NDIS QoS 功能
+# <a name="querying-ndis-qos-capabilities"></a>查询 NDIS QoS 功能
 
 
 过量协议和筛选器驱动程序可以按以下方式来查询网络适配器的 NDIS 服务质量 (QoS) 功能：

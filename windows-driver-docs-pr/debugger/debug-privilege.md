@@ -1,5 +1,5 @@
 ---
-title: 调试权限
+title: 调试特权
 description: 调试权限可让人调试它们否则不会有权访问的进程。
 ms.assetid: f3ea9065-6d04-4629-88ed-85428f7915ca
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c2ddfbf7f2d0e75b47727a6250402de47bd5c6e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359555"
 ---
-# <a name="debug-privilege"></a>调试权限
+# <a name="debug-privilege"></a>调试特权
 
 
 调试权限可让人调试它们否则不会有权访问的进程。 例如，使用其令牌上启用了调试特权以用户身份运行的进程可以调试作为本地系统运行的服务。

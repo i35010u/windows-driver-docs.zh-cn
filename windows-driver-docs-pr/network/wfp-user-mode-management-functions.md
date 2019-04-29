@@ -1,5 +1,5 @@
 ---
-title: WFP 用户模式下管理功能
+title: WFP 用户模式管理函数
 description: 本主题介绍 WFP 用户模式下管理功能。
 ms.assetid: 14accd49-5b96-40]()e6-b9d7-6638a4e5c2dc
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8fd4d0cf0aa8818acd22c2a49553abd2d7fe99e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365746"
 ---
-# <a name="wfp-user-mode-management-functions"></a>WFP 用户模式下管理功能
+# <a name="wfp-user-mode-management-functions"></a>WFP 用户模式管理函数
 
 Windows 筛选平台用户模式下管理功能的语义是完全相同时，从调用标注驱动程序，因为从用户模式应用程序，名为唯一的差别在于返回类型时**NTSTATUS**代码而不是 Win32 错误代码。 
 

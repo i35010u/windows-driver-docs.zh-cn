@@ -15,11 +15,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 3f49c9ad7f0fd1db6c5dcefe8054342cc68874d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365452"
 ---
 # <a name="installation-requirements-for-display-miniport-and-user-mode-display-drivers"></a>显示微型端口和用户模式显示驱动程序的安装要求
 

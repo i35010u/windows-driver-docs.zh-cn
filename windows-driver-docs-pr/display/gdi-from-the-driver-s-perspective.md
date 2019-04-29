@@ -1,6 +1,6 @@
 ---
-title: 从驱动程序的角度来看的 GDI
-description: 从驱动程序的角度来看的 GDI
+title: 从驱动程序角度理解 GDI
+description: 从驱动程序角度理解 GDI
 ms.assetid: 2a6769ea-c6ae-4397-a5e4-f38964d2d8d1
 keywords:
 - GDI WDK Windows 2000 显示，驱动程序通信
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a8cde56bd38f37d2b3c1d91307d59adfe8bf267
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363815"
 ---
-# <a name="gdi-from-the-drivers-perspective"></a>从驱动程序的角度来看的 GDI
+# <a name="gdi-from-the-drivers-perspective"></a>从驱动程序角度理解 GDI
 
 
 ## <span id="ddk_gdi_from_the_driver_92_s_perspective_gg"></span><span id="DDK_GDI_FROM_THE_DRIVER_92_S_PERSPECTIVE_GG"></span>

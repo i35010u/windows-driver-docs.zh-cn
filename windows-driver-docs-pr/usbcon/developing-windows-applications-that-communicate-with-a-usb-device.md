@@ -1,16 +1,16 @@
 ---
-Description: This topic provides guidelines for deciding whether you should write a UWP app or a Windows desktop app to communicate with a USB device.
-title: USB 设备的 Windows 应用程序开发
+Description: 本主题提供指南以决定是否应编写的 UWP 应用或 Windows 桌面应用程序与 USB 设备进行通信。
+title: 为 USB 设备开发 Windows 应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a77f33ae68926157e7c8d324dbf29a25c3c50b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377409"
 ---
-# <a name="developing-windows-applications-for-usb-devices"></a>USB 设备的 Windows 应用程序开发
+# <a name="developing-windows-applications-for-usb-devices"></a>为 USB 设备开发 Windows 应用程序
 
 
 **摘要**
@@ -153,7 +153,7 @@ Windows 提供了可用于编写与自定义的 USB 设备的应用程序的 API
 </tr>
 <tr class="even">
 <td>编程语言</td>
-<td>C#VB.NET、 c + +、 JavaScript</td>
+<td>C#VB.NET， C++，JavaScript</td>
 <td>C/C++</td>
 </tr>
 </tbody>

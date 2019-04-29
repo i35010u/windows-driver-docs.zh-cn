@@ -5,11 +5,11 @@ ms.assetid: 24c787b6-b9f7-4c9b-8d1d-6b2796f65622
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e6b040685fb53fb582a98f89e817d411d52eb98a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362403"
 ---
 # <a name="msfcfibreporthbastatistics-wmi-class"></a>MSFC\_FibrePortHBAStatistics WMI 类
 

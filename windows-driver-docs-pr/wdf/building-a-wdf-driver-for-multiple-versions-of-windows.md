@@ -1,16 +1,16 @@
 ---
-title: 构建用于 Windows 的多个版本的 WDF 驱动程序
+title: 针对多个 Windows 版本生成 WDF 驱动程序
 description: 介绍如何构建用于 Windows 的多个版本的 WDF 驱动程序。
 ms.date: 04/06/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 85816ea4d802853f730b5279e83724d4f4890b3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376923"
 ---
-# <a name="building-a-wdf-driver-for-multiple-versions-of-windows"></a>构建用于 Windows 的多个版本的 WDF 驱动程序
+# <a name="building-a-wdf-driver-for-multiple-versions-of-windows"></a>针对多个 Windows 版本生成 WDF 驱动程序
 
 WDF 始终允许您一次生成一个驱动程序，并使用生成的二进制文件在多个版本的 Windows，但之前 Windows 10 版本 1803 (Redstone 4)，这被限制为"基于较旧，更高版本上运行。" WDF 启动 Windows 10 版本 1803年中，添加"生成更高版本，运行更早版本，"有条件执行的其他优势。 总结：
 * **现有**:与较早版本的 framework 包括提供的主版本的框架的较新版本的 Windows 版本上运行生成的二进制文件匹配。 例如，使用 KMDF 1.9 (Windows 7) 构建的驱动程序在 Windows 8 系统 (KMDF 1.11) 上运行。 在示例中，该驱动程序被限制为 KMDF 1.9 的意大功能。

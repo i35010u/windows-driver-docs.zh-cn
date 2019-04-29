@@ -1,18 +1,18 @@
 ---
-title: 显示驱动程序 Dll 的格式设置的文件版本
+title: 显示驱动程序 DLL 的文件版本格式
 description: 本主题介绍用于显示适配器和芯片集显示器驱动程序 Dll 的正确格式设置。
 ms.assetid: E39B2A48-D3F8-4EA5-BCF3-23B1053E8D96
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 831415adc7b00cb71eaad09e7bd3fb029577317e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377670"
 ---
-# <a name="file-version-formatting-for-display-driver-dlls"></a>显示驱动程序 Dll 的格式设置的文件版本
+# <a name="file-version-formatting-for-display-driver-dlls"></a>显示驱动程序 DLL 的文件版本格式
 
 
 本主题介绍了适当的文件格式设置为显示显示适配器或芯片组驱动程序 Dll。

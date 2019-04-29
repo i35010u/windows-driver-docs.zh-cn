@@ -5,26 +5,26 @@ ms.assetid: 4cc5bf5c-f9e4-43d4-8532-dd7813b6f2a0
 ms.date: 07/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a8ee226ee52ab9754fc21be11fa9406dea3ce144
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356521"
 ---
 > [!NOTE]
 > IoSpy 和 IoAttack 不再在 WDK 中可用后 Windows 10 版本 1703年。
 >
 > 作为这些工具的替代方法，请考虑使用 HLK 中可用的模糊测试。 下面是一些需要考虑。
 > 
-> [DF-模糊随机 IOCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
+> [DF - 模糊随机 IOCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 >
-> [DF-模糊子打开测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
+> [DF - 模糊 sub-open 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/92bf534e-aa48-4aeb-b3cd-e46fb7cc7d80)
 >
-> [DF-模糊零长度的缓冲区 FSCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
+> [DF - 模糊零长度缓冲区 FSCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5f5f6c7e-d5db-4ff1-8cee-da47203ab070)
 >
-> [DF-模糊随机 FSCTL 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
+> [DF - 模糊随机 FSCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e529e34e-076a-4978-926f-7eca333e8f4d)
 >
-> [DF-模糊杂项 API 测试 （可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
+> [DF - 模糊杂项 API 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 >
 > 此外可以使用[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)随驱动程序验证程序。
 >

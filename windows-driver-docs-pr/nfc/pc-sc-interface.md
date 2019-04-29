@@ -5,11 +5,11 @@ ms.assetid: ''
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bb96aa0d8dd80f0a478a9512b1eaef9e9a9b3ebf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373725"
 ---
 # <a name="pcsc-interface-for-smart-cards"></a>智能卡的 PC/SC 接口
 
@@ -17,7 +17,7 @@ ms.locfileid: "56543626"
 
 ## <a name="atr-format-for-iso14443-4-cards"></a>ISO14443 4 卡的 ATR 格式
 
-| 字节偏移量 | 值 | 指定内容      | 描述                                                                                                                 |
+| 字节偏移量 | ReplTest1 | 指定内容      | 描述                                                                                                                 |
 |-------------|-------|------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | 0           | 3B    | 初始标头   |                                                                                                                             |
 | 1           | 8n    | T0               | 更高版本的四位指示仅存在 TD1。 较低的位元组表示历史字节的大小                       |
@@ -31,7 +31,7 @@ ms.locfileid: "56543626"
     <tbody>
         <tr>
             <th>字节偏移量</th>
-            <th>值</th>
+            <th>ReplTest1</th>
             <th>指定内容</th>
             <th>描述</th>
         </tr>

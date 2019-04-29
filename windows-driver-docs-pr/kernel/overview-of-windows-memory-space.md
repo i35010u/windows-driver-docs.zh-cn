@@ -1,6 +1,6 @@
 ---
-title: Windows 内存空间的概述
-description: Windows 内存空间的概述
+title: Windows 内存空间概述
+description: Windows 内存空间概述
 ms.assetid: b49a35c2-6da6-4239-a67b-542d42a5c9e4
 keywords:
 - 内存管理 WDK 内核，有关内存空间
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5773a3afab3cbd857cf86b25085b36de86b9f6f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377931"
 ---
-# <a name="overview-of-windows-memory-space"></a>Windows 内存空间的概述
+# <a name="overview-of-windows-memory-space"></a>Windows 内存空间概述
 
 
 

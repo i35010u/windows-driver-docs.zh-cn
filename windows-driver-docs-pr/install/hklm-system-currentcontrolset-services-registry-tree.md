@@ -1,15 +1,15 @@
 ---
-title: HKLM\SYSTEM\CurrentControlSet\Services Registry Tree
+title: HKLM\SYSTEM\CurrentControlSet\Services 注册表树
 description: HKLM\SYSTEM\CurrentControlSet\Services 注册表树将有关每个服务的信息存储在系统上。
 ms.assetid: c966b029-8171-4db7-9fbb-3a4222ff184b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a705e118b4863cf39610a5baf8415fbf0b161c1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363455"
 ---
 # <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM\\SYSTEM\\CurrentControlSet\\Services Registry Tree
 

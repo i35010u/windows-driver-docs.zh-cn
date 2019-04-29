@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45f14eadd827386e503aca77ebddb6f2669f1fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358963"
 ---
 # <a name="moving-through-a-window"></a>通过窗口移动
 

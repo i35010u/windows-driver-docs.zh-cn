@@ -1,6 +1,6 @@
 ---
-title: 扩展格式识别要求
-description: 扩展格式识别要求
+title: 扩展格式感知要求
+description: 扩展格式感知要求
 ms.assetid: eab9c254-fca7-449d-a6cf-1b20d2e7173c
 keywords:
 - 扩展格式识别要求的 Direct3D 版本 10.1 WDK Windows 7 显示
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f81c0837544feb8c612a09b31a73c934a3d2d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363372"
 ---
-# <a name="extended-format-aware-requirements"></a>扩展格式识别要求
+# <a name="extended-format-aware-requirements"></a>扩展格式感知要求
 
 
 本部分仅适用于 Windows 7 和更高版本的操作系统。

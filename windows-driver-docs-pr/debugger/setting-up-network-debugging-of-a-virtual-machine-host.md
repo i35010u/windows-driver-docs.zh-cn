@@ -5,11 +5,11 @@ ms.assetid: E4C4D2A1-2FB0-4028-8A52-30B8F4F738D0
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c42087cdf0cd516cb14cb57025a2697bbc8fe86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364729"
 ---
 # <a name="setting-up-network-debugging-of-a-virtual-machine---kdnet"></a>设置网络调试的虚拟机-KDNET
 
@@ -30,10 +30,10 @@ ms.locfileid: "56562172"
 
 外部网络交换机配置时必须设置以下选项。
 
-|选项| ReplTest1|
+|Option| ReplTest1|
 |----------|----------|
 | 连接类型 | 外部网络|
-| 允许管理操作系统共享此网络适配器 | 已启用 |
+| 允许管理操作系统共享此网络适配器 | Enabled |
 | VLAN ID | Disabled |
 
 

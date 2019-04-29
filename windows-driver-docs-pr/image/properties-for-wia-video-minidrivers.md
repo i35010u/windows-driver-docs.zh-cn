@@ -5,11 +5,11 @@ ms.assetid: 1d02baba-c9af-4596-9d7a-2b6c6675c87c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81d0734db9bc16e05035c76246e6b4cb47f9801d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379645"
 ---
 # <a name="properties-for-wia-video-minidrivers"></a>WIA 视频微型驱动程序的属性
 

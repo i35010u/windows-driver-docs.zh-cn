@@ -1,17 +1,17 @@
 ---
-title: 设置虚拟函数的 PCI 配置数据
-description: 设置虚拟函数的 PCI 配置数据
+title: 设置虚拟功能的 PCI 配置数据
+description: 设置虚拟功能的 PCI 配置数据
 ms.assetid: 74CAAD8B-7009-4C79-A496-93B4A3DA0B43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c7fcadadbc051005d0ae467cf986bb93731da5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362025"
 ---
-# <a name="setting-the-pci-configuration-data-of-a-virtual-function"></a>设置虚拟函数的 PCI 配置数据
+# <a name="setting-the-pci-configuration-data-of-a-virtual-function"></a>设置虚拟功能的 PCI 配置数据
 
 
 微型端口驱动程序为 PCI Express (PCIe) 虚拟函数 (VF) 在运行 HYPER-V 子分区的来宾操作系统中。 正因为如此，VF 微型端口驱动程序不能直接访问硬件资源，例如 VF PCI 配置空间。 仅微型端口驱动程序 PCIe 物理函数 (PF) 为可访问以 VF PCI 配置空间。 PF 微型端口驱动程序管理操作系统的 HYPER-V 父分区中运行，并具有特权 VF 资源的访问权限。

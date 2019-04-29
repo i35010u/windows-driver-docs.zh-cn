@@ -1,6 +1,6 @@
 ---
-title: 处理 Power Irp 规则
-description: 处理 Power Irp 规则
+title: 电源 IRP 的处理规则
+description: 电源 IRP 的处理规则
 ms.assetid: ea4a1c57-6184-4160-bf23-b86e3e403388
 keywords:
 - 电源管理 WDK 内核 Irp
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b4bfb66815ed1a970e148b5e5839f8ba0e05e67
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379339"
 ---
-# <a name="rules-for-handling-power-irps"></a>处理 Power Irp 规则
+# <a name="rules-for-handling-power-irps"></a>电源 IRP 的处理规则
 
 
 

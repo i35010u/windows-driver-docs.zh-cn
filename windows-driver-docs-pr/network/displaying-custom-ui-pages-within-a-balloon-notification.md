@@ -1,6 +1,6 @@
 ---
-title: 显示气球状通知中的自定义 UI 页
-description: 显示气球状通知中的自定义 UI 页
+title: 在气球通知中显示自定义 UI 页
+description: 在气球通知中显示自定义 UI 页
 ms.assetid: 5ed2ba59-88ae-4379-b729-1d741b30a7a0
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，气球状通知
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c03eab2bda27b7a1cd7e8f75879debb952492dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379559"
 ---
-# <a name="displaying-custom-ui-pages-within-a-balloon-notification"></a>显示气球状通知中的自定义 UI 页
+# <a name="displaying-custom-ui-pages-within-a-balloon-notification"></a>在气球通知中显示自定义 UI 页
 
 
 

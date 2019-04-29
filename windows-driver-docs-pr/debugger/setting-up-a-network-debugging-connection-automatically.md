@@ -10,11 +10,11 @@ keywords:
 ms.date: 09/25/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d33e84652f94172fa4df340ae488450cee94615f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381948"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>自动设置 KDNET 网络内核调试
 

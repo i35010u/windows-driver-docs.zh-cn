@@ -1,5 +1,5 @@
 ---
-title: / 列表开关
+title: /List 开关
 description: 增强型存储证书管理工具的 /List 开关列出了所有的 IEEE 1667 合规 USB 存储设备连接到计算机。
 ms.assetid: ae0e2991-32db-42b3-839d-83b7e2b8b35f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da7b84a0cf06767ae209e6822168982ad87c8f45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361458"
 ---
-# <a name="list-switch"></a>/ 列表开关
+# <a name="list-switch"></a>/List 开关
 
 
 **/List**增强存储证书管理工具的开关列出了所有的 IEEE 1667 合规 USB 存储设备连接到计算机。 此开关也可用来列出 （以及它们的属性） 的证书的身份验证接收器证书 (ASC) 存储中指定的 USB 存储设备中。

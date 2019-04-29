@@ -6,11 +6,11 @@ keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid 同步 OI
 ms.date: 09/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 834028856064246b1c74282574cadda65b1b4788
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362590"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>在 NDIS 6.80 同步 OID 请求接口
 

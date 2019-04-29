@@ -1,17 +1,17 @@
 ---
-title: 扩展的照相机控件属性
+title: 扩展的相机控件属性
 ms.assetid: 27D94D73-D190-4C01-B082-7798CA71EDB4
 description: 扩展的照相机控件接口用于映像捕获过程控制照相机功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed19dacfca630a12f51bb8b3e7d974c1b27ba23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374480"
 ---
-# <a name="extended-camera-control-properties"></a>扩展的照相机控件属性
+# <a name="extended-camera-control-properties"></a>扩展的相机控件属性
 
 
 扩展的相机控件接口，在 Windows 8 中，从开始，提供用于在映像捕获过程控制照相机功能。 该驱动程序可以控制这些相机功能：

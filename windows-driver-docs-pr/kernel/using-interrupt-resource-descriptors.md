@@ -5,11 +5,11 @@ ms.assetid: 0e9aa9a1-c1aa-42e1-9c0b-a91a2424ad1a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 62cc50fc73edce4420f6d11eda97fee8cd1cd1ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364951"
 ---
 # <a name="using-interrupt-resource-descriptors"></a>使用中断资源描述符
 

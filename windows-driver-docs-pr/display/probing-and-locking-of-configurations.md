@@ -1,6 +1,6 @@
 ---
-title: 探测和锁定的配置
-description: 探测和锁定的配置
+title: 探测和锁定配置
+description: 探测和锁定配置
 ms.assetid: 6f68db48-ed4b-487c-b425-43c610651c16
 keywords:
 - 视频解码 WDK DirectX va，因此配置探测和锁定
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d31d21d387fdbfacaab9fbe22cf2043d2f12b8cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352230"
 ---
-# <a name="probing-and-locking-of-configurations"></a>探测和锁定的配置
+# <a name="probing-and-locking-of-configurations"></a>探测和锁定配置
 
 
 ## <span id="ddk_probing_and_locking_of_configurations_gg"></span><span id="DDK_PROBING_AND_LOCKING_OF_CONFIGURATIONS_GG"></span>

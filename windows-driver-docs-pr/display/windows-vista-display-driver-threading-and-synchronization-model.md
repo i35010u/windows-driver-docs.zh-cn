@@ -1,6 +1,6 @@
 ---
-title: WDDM 线程处理和同步模型
-description: WDDM 线程处理和同步模型
+title: WDDM 线程和同步模型
+description: WDDM 线程和同步模型
 ms.assetid: 7d5397d5-0bce-4a0b-aa10-bac8dbd0b515
 keywords:
 - 显示驱动程序模型 WDK Windows Vista 中，线程处理
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8219069c8188969db3aecee62db2dfb86b2f7552
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375855"
 ---
-# <a name="wddm-threading-and-synchronization-model"></a>WDDM 线程处理和同步模型
+# <a name="wddm-threading-and-synchronization-model"></a>WDDM 线程和同步模型
 
 
 ## <span id="ddk_windows_codename_longhorn_display_driver_thread_model_gg"></span><span id="DDK_WINDOWS_CODENAME_LONGHORN_DISPLAY_DRIVER_THREAD_MODEL_GG"></span>

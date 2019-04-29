@@ -1,19 +1,19 @@
 ---
-title: 打印机接口 dll 函数简介
-description: 打印机接口 dll 函数简介
+title: 打印机接口 DLL 简介
+description: 打印机接口 DLL 简介
 ms.assetid: 1993d818-9761-418e-96c3-e3c46965bef1
 keywords:
 - 打印机接口 DLL WDK 有关打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d6f65a96b58a4557f128d52727c6e70ace6149c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366328"
 ---
-# <a name="introduction-to-printer-interface-dlls"></a>打印机接口 dll 函数简介
+# <a name="introduction-to-printer-interface-dlls"></a>打印机接口 DLL 简介
 
 
 

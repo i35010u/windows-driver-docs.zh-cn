@@ -1,6 +1,6 @@
 ---
-title: Master 时钟
-description: Master 时钟
+title: 主时钟
+description: 主时钟
 ms.assetid: 87a99371-9c72-4310-bcc7-02af19207b3e
 keywords:
 - DVD 解码器微型驱动程序 WDK，主时钟
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 13d23dc4318f5cbebb44d6009b17581009cbb368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375593"
 ---
-# <a name="master-clock"></a>Master 时钟
+# <a name="master-clock"></a>主时钟
 
 
 

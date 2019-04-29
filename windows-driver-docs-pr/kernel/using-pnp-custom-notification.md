@@ -1,6 +1,6 @@
 ---
-title: 使用即插即用的自定义通知
-description: 使用即插即用的自定义通知
+title: 使用 PnP 自定义通知
+description: 使用 PnP 自定义通知
 ms.assetid: de5562f8-07a8-4f4e-ac49-58c789bd9fde
 keywords:
 - WDK 即插即用的自定义通知
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ae6795262b4600251fa2e78dae896385a85404
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354219"
 ---
-# <a name="using-pnp-custom-notification"></a>使用即插即用的自定义通知
+# <a name="using-pnp-custom-notification"></a>使用 PnP 自定义通知
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 适用于 Windows 8 的 WFP 更改
-description: 适用于 Windows 8 的 WFP 更改
+title: Windows 8 的 WFP 更改
+description: Windows 8 的 WFP 更改
 ms.assetid: B83EC5A5-6169-49AB-A7EC-F2078AA0735E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1393411cc9f0d908d494ef03a4aee2b21297e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365704"
 ---
-# <a name="wfp-changes-for-windows-8"></a>适用于 Windows 8 的 WFP 更改
+# <a name="wfp-changes-for-windows-8"></a>Windows 8 的 WFP 更改
 
 
 可用的函数和行为的 Windows 筛选平台以与 Windows 8 中进行多项更改。 通常情况下，若要充分利用新功能，您必须编译或重新编译的标注驱动程序，具有 NTDDI\_版本宏设置为 NTDDI\_WIN8。

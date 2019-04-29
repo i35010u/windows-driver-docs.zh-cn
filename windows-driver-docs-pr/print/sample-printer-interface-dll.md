@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cad1163feeebd4dc5a39bef1777f713f3eebcf9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378199"
 ---
 # <a name="sample-printer-interface-dll"></a>打印机接口 DLL 示例
 

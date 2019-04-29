@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6852d48f426a1c09c124eb1d510dc694e9ef3a51
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364232"
 ---
 # <a name="detaching-a-provider-module-from-a-client-module"></a>从客户端模块分离提供程序模块
 

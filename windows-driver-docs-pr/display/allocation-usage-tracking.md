@@ -5,11 +5,11 @@ ms.assetid: F913C9A3-535F-4DA0-8895-7A05CBF4D4AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5a6e169b040825ac1d2ab84e086ef16c02054c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354644"
 ---
 # <a name="allocation-usage-tracking"></a>分配用法跟踪
 

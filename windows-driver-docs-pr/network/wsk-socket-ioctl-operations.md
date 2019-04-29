@@ -10,11 +10,11 @@ keywords:
 - 网络、 Winsock 内核 WDK 操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a8875ba387c3a72c77f6321d5bfdd16ff657741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356759"
 ---
 # <a name="wsk-socket-ioctl-operations"></a>WSK 套接字 IOCTL 操作
 
@@ -23,7 +23,7 @@ WSK 子系统支持以下的套接字 I/O 控制操作：
 
 基础网络协议可能支持其他套接字 I/O 控制操作。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [**SIO\_WSK\_查询\_理想\_发送\_积压工作**](sio-wsk-query-ideal-send-backlog.md)

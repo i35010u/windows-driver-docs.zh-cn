@@ -5,11 +5,11 @@ ms.assetid: 4B14C515-1B79-4B67-BA9A-365B2D6C0F07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10c36e299afa4e7d9480b7eee9c16e795ad3543e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377817"
 ---
 # <a name="sensor-driver-logic"></a>传感器驱动程序逻辑
 

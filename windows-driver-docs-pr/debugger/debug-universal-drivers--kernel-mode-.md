@@ -9,11 +9,11 @@ keywords:
 ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f080677e88433499d3a8ee3840d3810e8aa476b6
-ms.sourcegitcommit: a43a696c5b4d2f08ee77d507631b41ecfdea6742
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363304"
 ---
 # <a name="span-iddebuggerdebuguniversaldriverskernel-modespandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序的执行步骤的实验室 （Sysvad 内核模式）
 
@@ -21,7 +21,7 @@ ms.locfileid: "56666735"
 
 Microsoft Windows 调试器 (WinDbg) 是一个功能强大的基于 Windows 的调试工具，可用于执行用户模式和内核模式调试。 WinDbg 提供了源代码级别调试的 Windows 内核、 内核模式驱动程序和系统服务，以及用户模式应用程序和驱动程序。
 
-WinDbg 可以单步执行源代码，设置断点，查看变量 （包括 c + + 对象）、 堆栈跟踪和内存。 其调试器命令窗口中，用户可以发出各种命令。
+WinDbg 可以单步执行源代码，设置断点、 查看变量 (包括C++对象)，堆栈跟踪和内存。 其调试器命令窗口中，用户可以发出各种命令。
 
 ## <a name="span-idlabsetupspanlab-setup"></a><span id="lab_setup"></span>实验室设置
 
@@ -917,7 +917,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -1058,7 +1058,7 @@ ba r 4 fffff800`7bc9eff0
 
 -   中断 (Ctrl + Break)-此命令将中断一个系统，只要系统正在运行，并且是与 WinDbg （内核调试程序中的序列是 Ctrl + C） 的通信中。
 
--   步跃 (f10) – 此命令将导致代码执行来继续执行一个语句或一次一条指令。 如果遇到调用，代码执行将通过调用而无需输入调用的例程。 (如果编程语言为 C 或 c + +，WinDbg 为源模式中，源模式可以打开或关闭使用**调试**&gt;**源模式**)。
+-   步跃 (f10) – 此命令将导致代码执行来继续执行一个语句或一次一条指令。 如果遇到调用，代码执行将通过调用而无需输入调用的例程。 (如果编程语言为 C 或C++和 WinDbg 位于源模式中，源模式可以打开或关闭使用**调试**&gt;**源模式**)。
 
 -   步骤中 (F11)-此命令是逐过程类似，只不过调用的执行将进入被调用例程。
 

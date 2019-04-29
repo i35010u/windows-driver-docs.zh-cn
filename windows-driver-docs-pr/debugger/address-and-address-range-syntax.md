@@ -5,11 +5,11 @@ ms.assetid: 3d4f41f1-07ec-484d-a748-27fbbb9bd0b2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce680cc5b5fc66fe10dff5ca6b24844ed5653c04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354942"
 ---
 # <a name="address-and-address-range-syntax"></a>地址和地址范围语法
 
@@ -113,7 +113,7 @@ ms.locfileid: "56524871"
 0:000> dd poi(123456) 
 ```
 
-在 c + + 表达式中，指针的行为类似于 c + + 中的指针。 但是，数字被解释为整数。 如果有 deference 实际数量，必须将其转换首先，如以下示例所示。
+在C++表达式，指针的行为方式类似于指针中C++。 但是，数字被解释为整数。 如果有 deference 实际数量，必须将其转换首先，如以下示例所示。
 
 ```dbgcmd
 0:000> dd *( (long*) 0x123456 ) 

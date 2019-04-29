@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28101
 ms.openlocfilehash: 451f1f65ed47180a642d0ce2db1be9448529bc84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361444"
 ---
 # <a name="c28101"></a>C28101
 
@@ -23,7 +23,7 @@ ms.locfileid: "56542706"
 
 代码分析工具检测到的函数为特定类型，例如回调函数。 这只是一条信息性消息。 它不指示错误。
 
-此消息指示代码分析工具应用特定于该函数类型的规则。 如果此推断出现错误，代码分析工具会生成误报警告，但可以安全地忽略这些警告。 有关详细信息，请参阅[使用注释减少 C/c + + 代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=227826)。
+此消息指示代码分析工具应用特定于该函数类型的规则。 如果此推断出现错误，代码分析工具会生成误报警告，但可以安全地忽略这些警告。 有关详细信息，请参阅[使用注释减少 C /C++代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=227826)。
 
 *函数签名*（参数和结果类型） 用于标识应尽可能的函数。 一些标准驱动程序例程，如[**取消**](https://msdn.microsoft.com/library/windows/hardware/ff540742)并[ **StartIo**](https://msdn.microsoft.com/library/windows/hardware/ff563858)，因此名称检查以查看是否具有相同的签名，它与该函数的常规名称相匹配。 其他函数可能会检查有约定俗成的名称。
 

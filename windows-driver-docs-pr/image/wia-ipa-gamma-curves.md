@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d3b28cc92c4800d1a7e62babd22de439fba2283
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369515"
 ---
 # <a name="wiaipagammacurves"></a>WIA\_IPA\_GAMMA\_曲线
 
@@ -45,7 +45,7 @@ WIA\_IPA\_GAMMA\_曲线属性保留供将来使用由 Microsoft 和未实现这�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_PROVISION_DISCOVERY_REQUEST_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cac289c152243e71c6ab03c98518bdfd88eb763a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362813"
 ---
 # <a name="wditlvp2pprovisiondiscoveryrequestinfo"></a>WDI\_TLV\_P2P\_预配\_发现\_请求\_信息
 
@@ -59,7 +59,7 @@ WDI\_TLV\_P2P\_预配\_发现\_请求\_信息是 TLV 包含 Wi-Fi Direct 预配�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

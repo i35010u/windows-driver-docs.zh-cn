@@ -1,6 +1,6 @@
 ---
-title: 配置模块基于 GPD 或 PPD 文件
-description: 配置模块基于 GPD 或 PPD 文件
+title: 基于 GPD 或 PPD 文件的配置模块
+description: 基于 GPD 或 PPD 文件的配置模块
 ms.assetid: b0aeea58-1c58-475e-8d4a-597778e42a7c
 keywords:
 - 版本 3 的 XPS 驱动程序 WDK XPSDrv，GPD 文件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cd79dada49ce41896df9ddb766fd63a10b6e478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360579"
 ---
-# <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>配置模块基于 GPD 或 PPD 文件
+# <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>基于 GPD 或 PPD 文件的配置模块
 
 
 适用于 Windows Vista GPD 和 PPD 文件包含打印架构映射和特定于 XPSDrv 的新条目的打印驱动程序。 可用于创建仅 GPD 或仅 PPD 配置模块和配置模块 Unidrv 或 Pscript5 打印驱动程序插件，这些更改适用于 GPD 和 PPD 文件。

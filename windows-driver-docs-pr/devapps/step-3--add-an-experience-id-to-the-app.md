@@ -5,11 +5,11 @@ ms.assetid: D114C916-EADE-4C08-BF7E-628D2FA5AACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4817a2c5c8f6395d5c0e30b47f877ab95954a435
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356637"
 ---
 # <a name="step-3-add-an-experience-id-to-the-microsoft-store-device-app"></a>步骤 3:将体验 ID 添加到 Microsoft Store 设备应用
 
@@ -28,7 +28,7 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>在开始之前
+## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前的准备工作
 
 
 此步骤需要 StoreManifest.xml 文件中创建[上一步](step-2--create-device-metadata.md)。 StoreManifest.xml 文件指定体验 id。
@@ -54,7 +54,7 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 ## <a name="span-idnextstepspanspan-idnextstepspanspan-idnextstepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>下一步
 
 
-[步骤 4:测试设备元数据](step-4--test-device-metadata.md)
+[步骤 4：测试设备元数据](step-4--test-device-metadata.md)
 
  
 

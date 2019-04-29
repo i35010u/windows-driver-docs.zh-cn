@@ -5,11 +5,11 @@ ms.assetid: 8a46816b-56c5-49e9-8250-9ede037ae2b5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10c5e127a6c37984645f3edf6e24da09c94a686c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361189"
 ---
 # <a name="accessing-device-interface-properties"></a>访问设备接口属性
 

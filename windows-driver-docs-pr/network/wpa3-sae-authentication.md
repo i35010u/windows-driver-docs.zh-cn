@@ -1,18 +1,18 @@
 ---
-title: WPA3 SAE 身份验证
+title: WPA3-SAE 身份验证
 description: 本主题介绍 WDI 版本 1.1.8 WPA3 SAE 身份验证和更高版本。
 ms.assetid: BE6EF8E4-F4EB-4D39-AC33-B67F8935DCBC
 ms.date: 02/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 90ead0fe0ef244a3ee0f5a5e3439ba0f6ae530e0
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379790"
 ---
-# <a name="wpa3-sae-authentication"></a>WPA3 SAE 身份验证
+# <a name="wpa3-sae-authentication"></a>WPA3-SAE 身份验证
 
 WPA3 SAE，也称为 WPA3 个人、 是支持在 Windows 中使用 WDI 版本 1.1.8 及更高版本。 生成和分析 SAE （安全身份验证的等于） 身份验证在 Windows 中，完成，但操作系统需要驱动程序支持用于发送和接收 WPA3 SAE 身份验证框架内容的帧。
 

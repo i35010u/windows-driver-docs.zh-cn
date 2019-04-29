@@ -10,11 +10,11 @@ keywords:
 ms.date: 08/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e0d3456068a930d2ab8f3859709d1e45e0884c86
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351787"
 ---
 # <a name="the-wdtf-runtime-library"></a>WDTF 运行时库
 
@@ -76,7 +76,7 @@ WDTF 运行时库包括可帮助会审和运行测试工具。
 
 下表描述了可用于的选项**msiexec**命令。
 
-|选项|描述|
+|Option|描述|
 |----|----|
 |**/l*** *filename*|将所有消息和错误都写入到文件中，*文件名*。|
 |**WDTFDIR=**_CustomInstallationDirectory_|WDTF 运行时指定目标目录。 默认值**WDTFDir**是 %programfiles%\Windows Kits\10\Testing\Runtimes\WDTF|

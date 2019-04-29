@@ -1,6 +1,6 @@
 ---
-title: DirectX VA COPP Device
-description: DirectX VA COPP Device
+title: DirectX VA COPP 设备
+description: DirectX VA COPP 设备
 ms.assetid: f9268b38-3317-4c4f-b9c1-e0ad3c88f92e
 keywords:
 - COPP 设备 WDK DirectX VA
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c70743891b3a1c48dc327e6a9f5186ab093edf54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380417"
 ---
-# <a name="directx-va-copp-device"></a>DirectX VA COPP Device
+# <a name="directx-va-copp-device"></a>DirectX VA COPP 设备
 
 
 ## <span id="ddk_directx_va_copp_device_gg"></span><span id="DDK_DIRECTX_VA_COPP_DEVICE_GG"></span>

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d19d4fd97a53252283a725f635876d166a8607
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375187"
 ---
 # <a name="standard-variables"></a>标准变量
 
@@ -42,7 +42,7 @@ GPD 语言定义一组标准可以使用的命令字符串中引用的变量[命
 <thead>
 <tr class="header">
 <th>标准变量名称</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>备注</th>
 </tr>
 </thead>

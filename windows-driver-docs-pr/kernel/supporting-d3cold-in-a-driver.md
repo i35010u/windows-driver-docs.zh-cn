@@ -1,17 +1,17 @@
 ---
-title: 在驱动程序支持 D3cold
+title: 在驱动程序中支持 D3cold
 description: 从 Windows 8 开始，设备电源状态 （关闭） D3 被划分为两个不同子状态的状态，D3hot 和 D3cold。
 ms.assetid: D085820E-EDAC-4353-8500-207F77D9CC1F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 71bc176204f94c2be25ba71c0e2b7ecaf8a4e65c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378009"
 ---
-# <a name="supporting-d3cold-in-a-driver"></a>在驱动程序支持 D3cold
+# <a name="supporting-d3cold-in-a-driver"></a>在驱动程序中支持 D3cold
 
 
 从 Windows 8 开始，设备电源状态 （关闭） D3 被划分为两个不同子状态的状态，D3hot 和 D3cold。 D3 是最低功率设备电源状态，并 D3cold 是最低驱动 D3 子状态。 将空闲设备移动到的 D3cold 子状态可以减少能源消耗和扩展移动硬件平台可以在电池电量运行的时间。
@@ -30,7 +30,7 @@ Windows 8 是 Windows，以支持设备电源状态转换到的 D3cold 子状态
 
 以下主题包含有关设备驱动程序中支持 D3cold 详细信息。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

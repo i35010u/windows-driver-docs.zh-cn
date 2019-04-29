@@ -5,11 +5,11 @@ ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc4778aab27945662eca2422ae55cb594c516632
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359489"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义的 WPP 扩展格式规范字符串？
 

@@ -1,17 +1,17 @@
 ---
-title: 包含分页文件以及内存转储的 CAB 文件
+title: 包含页面文件和内存转储的 CAB 文件
 description: 内存转储文件可放在 cabinet (CAB) 文件和分页文件。
 ms.assetid: 89B54522-1B21-4E4E-9AF3-1F637E3BA50F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a16260eaa2a95de7a60d7374f7ecba009376aaf1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373955"
 ---
-# <a name="cab-files-that-contain-paging-files-along-with-a-memory-dump"></a>包含分页文件以及内存转储的 CAB 文件
+# <a name="cab-files-that-contain-paging-files-along-with-a-memory-dump"></a>包含页面文件和内存转储的 CAB 文件
 
 
 内存转储文件可放在 cabinet (CAB) 文件和分页文件。 当 Windows 调试器分析内存转储文件时，它可以使用分页文件提供完整视图内存，包括创建转储文件时换出的内存。

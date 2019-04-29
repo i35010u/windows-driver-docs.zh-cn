@@ -1,6 +1,6 @@
 ---
-title: INF 文件中检索信息
-description: INF 文件中检索信息
+title: 从 INF 文件中检索信息
+description: 从 INF 文件中检索信息
 ms.assetid: 4174357f-bca3-43b8-8ad6-331b9accd905
 keywords:
 - INF 文件 WDK 设备安装，检索信息
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e304467888391b5856db1f6717a439e9de470eb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363320"
 ---
-# <a name="retrieving-information-from-an-inf-file"></a>INF 文件中检索信息
+# <a name="retrieving-information-from-an-inf-file"></a>从 INF 文件中检索信息
 
 
 

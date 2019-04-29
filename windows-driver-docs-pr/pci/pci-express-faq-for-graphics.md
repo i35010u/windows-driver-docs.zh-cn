@@ -1,17 +1,17 @@
 ---
-title: PCI Express 常见问题的图形
+title: 有关图形的 PCI Express 常见问题解答
 description: 本白皮书提供有关 PCI Express 图形信息对于 Microsoft Windows 操作系统，并解答常见问题。
 ms.assetid: 30FC1CF9-B642-4E00-869C-63009BA3F128
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcdf1aa33dd0bb170d63a21adca2dc9d55cf4b42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380543"
 ---
-# <a name="pci-express-faq-for-graphics"></a>PCI Express 常见问题的图形
+# <a name="pci-express-faq-for-graphics"></a>有关图形的 PCI Express 常见问题解答
 
 
 **上次更新时间：**

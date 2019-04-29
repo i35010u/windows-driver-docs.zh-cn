@@ -5,11 +5,11 @@ ms.assetid: 6aa4b31c-8e1c-4506-b5ab-9e8440823319
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a970e7ef5cb78f3f0ca2ef74ad57036c240642be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374508"
 ---
 # <a name="microsoft-printer-drivers"></a>Microsoft 打印机驱动程序
 

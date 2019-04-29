@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 161cd14ede3f952e299631ca29ee252963066230
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368150"
 ---
 # <a name="debugger-command-program-examples"></a>调试器命令程序示例
 
@@ -67,7 +67,7 @@ ms.locfileid: "56545589"
 
 -   **美元 t0**， **$t1**，并 **$t2**伪寄存器用作此程序中的变量。 该程序还使用名为别名**Procc**并 **$ImageName**。
 
--   此程序使用 MASM 表达式计算器。 但是， **@@c+ + （)** 标记将出现一次。 此令牌会导致程序能够使用 c + + 表达式计算器分析表达式的括号中。 这种用法使程序能够直接使用 c + + 结构标记。
+-   此程序使用 MASM 表达式计算器。 但是， **@@c+ + （)** 标记将出现一次。 此令牌会导致程序能够使用C++表达式计算器分析表达式的括号中。 这种用法使程序能够使用C++直接结构令牌。
 
 -   **？** 与使用标志[ **r （寄存器）** ](r--registers-.md)命令。 此标志将类型化的值分配给伪寄存器 **$t2**。
 
@@ -104,7 +104,7 @@ $$  Iterate over all processes in list.
 
 此示例说明了以下功能：
 
-- 此程序使用 MASM 表达式计算器。 但是，在两个位置 **@@c+ + （)** 标记将出现。 此令牌会导致程序能够使用 c + + 表达式计算器分析表达式的括号中。 这种用法使程序能够直接使用 c + + 结构标记。
+- 此程序使用 MASM 表达式计算器。 但是，在两个位置 **@@c+ + （)** 标记将出现。 此令牌会导致程序能够使用C++表达式计算器分析表达式的括号中。 这种用法使程序能够使用C++直接结构令牌。
 
 - **？** 与使用标志[ **r （寄存器）** ](r--registers-.md)命令。 此标志将类型化的值分配给伪寄存器**美元 t0**并 **$t1**。 中的循环，正文 **$t1**具有类型 * * ntdll ！\_LDR\_数据\_表\_条目\\* * *，因此程序可以创建直接成员的引用。
 

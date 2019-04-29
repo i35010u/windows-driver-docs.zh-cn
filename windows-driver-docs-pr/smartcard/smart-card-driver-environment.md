@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cc9c9d2fe9b901576b86705ece238aed27c7f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379775"
 ---
 # <a name="smart-card-driver-environment"></a>智能卡驱动程序环境
 

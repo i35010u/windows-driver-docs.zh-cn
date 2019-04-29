@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a449c9a3da97a07b0fbf9b81d3a0aeaccdb9e62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361976"
 ---
-# <a name="extended-example-defining-a-64bit-field"></a>扩展的示例所示：定义一个"64 位"字段
+# <a name="extended-example-defining-a-64bit-field"></a>扩展示例：定义一个"64 位"字段
 
 
 

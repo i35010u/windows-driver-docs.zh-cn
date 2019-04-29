@@ -1,19 +1,19 @@
 ---
-title: 混合的内存分配
-description: 混合的内存分配
+title: 混合内存分配
+description: 混合内存分配
 ms.assetid: 171efa48-bd1e-4545-a5c2-0b3ad4383448
 keywords:
 - 混合的内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9740f8f9877d7d01e79e2b93a67e6c62247d9341
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358415"
 ---
-# <a name="mixed-memory-allocation"></a>混合的内存分配
+# <a name="mixed-memory-allocation"></a>混合内存分配
 
 
 ## <span id="ddk_mixed_memory_allocation_gg"></span><span id="DDK_MIXED_MEMORY_ALLOCATION_GG"></span>

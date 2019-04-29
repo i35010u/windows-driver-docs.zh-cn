@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef4e5b19acb4c005e2280d2eb234969df171b0a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358476"
 ---
 # <a name="creating-and-initializing-a-dma-transaction"></a>创建并初始化 DMA 事务
 

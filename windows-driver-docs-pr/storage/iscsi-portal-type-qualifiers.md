@@ -5,11 +5,11 @@ ms.assetid: 58865d45-2932-4168-8ca7-db7a101f5850
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c417ac093129ec2a14d62d3f5e8208948d965689
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380509"
 ---
 # <a name="iscsiportaltypequalifiers"></a>ISCSI\_门户\_类型\_限定符
 

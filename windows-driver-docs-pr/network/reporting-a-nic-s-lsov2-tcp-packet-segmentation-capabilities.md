@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3d4106176ec1f63560cc5a919c16562df2e2a57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380883"
 ---
 # <a name="reporting-a-nics-lsov2-tcp-packet-segmentation-capabilities"></a>报告 NIC 的 LSOV2 TCP 数据包分段功能
 

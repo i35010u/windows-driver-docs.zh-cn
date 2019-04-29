@@ -1,6 +1,6 @@
 ---
-title: CPSUI 支持窗口控件
-description: CPSUI 支持窗口控件
+title: CPSUI 支持的窗口控件
+description: CPSUI 支持的窗口控件
 ms.assetid: 557aa4e6-e48e-44fe-b833-93728426b056
 keywords:
 - 常用属性页用户界面 WDK 打印，窗口控件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 701bc284d746eaf7e81991bbf94ed4dbade64622
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365578"
 ---
-# <a name="cpsui-supported-window-controls"></a>CPSUI 支持窗口控件
+# <a name="cpsui-supported-window-controls"></a>CPSUI 支持的窗口控件
 
 
 

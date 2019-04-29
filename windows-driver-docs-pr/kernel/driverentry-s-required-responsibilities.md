@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ef6d686d4bd295e8694a7e603b2c69ae9d0193
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359253"
 ---
 # <a name="driverentrys-required-responsibilities"></a>DriverEntry 的必要责任
 

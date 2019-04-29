@@ -5,11 +5,11 @@ ms.assetid: 55edc72a-2d53-4084-a1e4-e7e6515a4990
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1c43885ad71347e009312daa1088bd9d6e71d87
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380097"
 ---
 # <a name="calling-setupwritetextlogerror"></a>调用 SetupWriteTextLogError
 

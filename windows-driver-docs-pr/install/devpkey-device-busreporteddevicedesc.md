@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ddd29cb685f473f3b050e04f62077cc5b9547fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362365"
 ---
 # <a name="devpkeydevicebusreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 
@@ -70,7 +70,7 @@ DEVPKEY_Device_BusReportedDeviceDesc 的值设置通过 Windows 即插即用和�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

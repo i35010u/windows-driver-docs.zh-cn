@@ -5,11 +5,11 @@ ms.assetid: eea7565c-be15-4610-a1b4-16596d1daca2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 748b20929d4584d60359508128bc021a04b29526
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373217"
 ---
 # <a name="deleting-an-item-from-the-driver-tree"></a>从驱动程序树中删除项
 

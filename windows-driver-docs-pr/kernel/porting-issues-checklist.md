@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2d63a59ae3a3fdfe5f81e3dc3d73a87b6a36d5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369211"
 ---
 # <a name="porting-issues-checklist"></a>移植问题清单
 
@@ -56,7 +56,7 @@ ms.locfileid: "57349794"
 
     使用 **%p**打印十六进制中的指针。 这是打印指针的最佳选择。
 
-    **请注意**   Visual c + + 的未来版本将支持 **%I**打印多态数据。 它会将值视为在 64 位 Windows 和 32 位 Windows 中的 32 位的 64 位。 也支持 visual c + + **%i64**打印都是 64 位的值。
+    **请注意**  视觉对象的未来版本C++将支持 **%I**打印多态数据。 它会将值视为在 64 位 Windows 和 32 位 Windows 中的 32 位的 64 位。 VisualC++还将支持 **%i64**打印都是 64 位的值。
 
      
 
@@ -221,7 +221,7 @@ ms.locfileid: "57349794"
 
   使用**UINT**\_**PTR**并**INT**\_**PTR**在适当的位置 （并且您不确定它们是否必需的没有任何危害只是在用例中使用它们）。 不强制转换的类型指针**ULONG**，**长**， **INT**， **UINT**，或**DWORD**。
 
-  **请注意****处理**定义为**void \\** <em>因此类型上强制转换、 **处理</em>* 值**ULONG**值以测试、 设置或清除低两位是编程错误。  
+  **请注意****处理**定义为**void \\** <em>因此类型上强制转换、 **处理</em>* 值**ULONG**值以测试、 设置或清除低两位是编程错误。
 
      
 

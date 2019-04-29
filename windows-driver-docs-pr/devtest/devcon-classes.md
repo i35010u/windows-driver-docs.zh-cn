@@ -1,5 +1,5 @@
 ---
-title: DevCon 类
+title: DevCon Classes
 description: 列出所有的设备安装程序类，包括在系统上的设备不使用的类。 在本地和远程计算机上有效。
 ms.assetid: 05b9339c-30d1-45df-8f43-20a07e520a42
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76725660621ec94910d8931cfce7e5ab6446b7ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360115"
 ---
-# <a name="devcon-classes"></a>DevCon 类
+# <a name="devcon-classes"></a>DevCon Classes
 
 
 列出所有[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)，包括在系统上的设备不使用的类。 在本地和远程计算机上有效。

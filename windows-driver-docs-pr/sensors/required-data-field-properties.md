@@ -5,11 +5,11 @@ ms.assetid: DC8D04B0-0721-4429-BA52-573FC7738AE9
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c31dcbbfabe58765a53effbd70ab5e13d0e995
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358658"
 ---
 # <a name="required-data-field-properties"></a>必需数据字段属性
 

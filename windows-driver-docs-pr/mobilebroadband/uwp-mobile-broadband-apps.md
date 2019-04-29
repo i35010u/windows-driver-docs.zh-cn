@@ -5,11 +5,11 @@ ms.assetid: bb02397b-0da5-4e09-be1c-8812abec6fd5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74f027fb0345820982bb5ec4c4cb9b55f9c6f4b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353777"
 ---
 # <a name="uwp-mobile-broadband-apps"></a>UWP 移动宽带应用
 
@@ -37,7 +37,7 @@ UWP 应用针对触控进行了优化，了解用户的位置和标识，和托�
 
 -   **开发平台**UWP 应用使用生成的 Windows 软件开发工具包适用于 Windows 10 和 Windows 运行时 Api。
 
--   **编程语言**您可以通过使用 JavaScript with HTML 和级联样式表 (CSS) 表示层，或通过使用 c + + 生成 UWP 应用或C#与 Extensible Application Markup Language (XAML) 表示层。
+-   **编程语言**可生成 UWP 应用，通过使用 JavaScript with HTML 和级联样式表 (CSS) 表示层，或通过使用C++或C#与 Extensible Application Markup Language (XAML) 表示层。
 
 -   **触摸优化**触摸交互支持已内置。 您可以设计您的触控体验，移动宽带的应用程序，并且 Windows 提供键盘、 鼠标和图形的缩放支持。
 

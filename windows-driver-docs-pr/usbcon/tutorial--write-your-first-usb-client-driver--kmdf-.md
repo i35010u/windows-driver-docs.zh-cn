@@ -1,14 +1,14 @@
 ---
-Description: In this topic you'll use the USB Kernel-Mode Driver template provided with Microsoft Visual Studio Professional 2012 to write a simple kernel-mode driver framework (KMDF)-based client driver.
+Description: 本主题中你将使用随 Microsoft Visual Studio Professional 2012 一起提供的 USB 内核模式驱动程序模板编写简单的内核模式驱动程序框架 (KMDF) 的基于客户端驱动程序。
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f0dc7337526e0736a6b9adb850e86e386a0a8ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379905"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 

@@ -1,6 +1,6 @@
 ---
 title: HID 概念简介
-description: 本部分介绍人机接口设备 （或 HID）。 通常情况下，这些是人们用于直接控制操作的计算机系统的设备。
+description: 本部分介绍了人机接口设备（或 HID）。 通常情况下，这些设备是人们用来直接控制计算机系统操作的设备。
 ms.assetid: 477FF911-5A17-4EA5-9403-1D7B4E8B3BA5
 keywords:
 - “人机接口设备”
@@ -13,16 +13,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b30948cea3a3d07b29e1f1843ff683fe11194e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364635"
 ---
 # <a name="introduction-to-hid-concepts"></a>HID 概念简介
 
 
-本部分介绍人机接口设备 （或 HID）。 通常情况下，这些是人们用于直接控制操作的计算机系统的设备。
+本部分介绍了人机接口设备（或 HID）。 通常情况下，这些设备是人们用来直接控制计算机系统操作的设备。
 
 ## <a name="history-of-hid"></a>HID 的历史记录
 

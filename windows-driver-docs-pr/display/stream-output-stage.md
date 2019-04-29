@@ -5,11 +5,11 @@ ms.assetid: e3f4685f-a214-4934-a36f-92591ef99db8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 308cc023ea57d844f2c0d12bb7182c68f45283c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376017"
 ---
 # <a name="stream-output-stage"></a>流输出阶段
 

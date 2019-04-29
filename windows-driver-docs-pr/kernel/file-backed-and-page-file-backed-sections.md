@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b70187103b1c9f6caa707497d3ab516eba883b7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359954"
 ---
 # <a name="file-backed-and-page-file-backed-sections"></a>基于文件和基于页文件的节
 

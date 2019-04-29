@@ -1,14 +1,14 @@
 ---
-Description: Device, configuration, and interface descriptors may contain references to string descriptors. This topic describes how to get a particular string descriptor from the device.
+Description: 设备、 配置和接口描述符可能包含对字符串描述符的引用。 本主题介绍如何从设备获取特定字符串描述符。
 title: USB 字符串描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a899061b7910dd9149eb2c68c5bb156ee8b6f1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377199"
 ---
 # <a name="usb-string-descriptors"></a>USB 字符串描述符
 

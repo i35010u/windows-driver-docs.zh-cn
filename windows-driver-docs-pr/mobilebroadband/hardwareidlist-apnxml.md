@@ -5,13 +5,13 @@ ms.assetid: 9a3ca581-0afb-42fa-b13e-d233d9555b7e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0eef38a54f6cbebca4f53b0f66683275d4540b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380183"
 ---
-# <a name="hardwareidlist-apn-element"></a>HardwareIdList （APN 元素）
+# <a name="hardwareidlist-apn-element"></a>HardwareIdList（APN 元素）
 
 
 HardwareIdList 元素指定的操作员的硬件 Id 列表。

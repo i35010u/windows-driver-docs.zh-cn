@@ -1,5 +1,5 @@
 ---
-title: CTRL + K （更改重启后中断状态）
+title: CTRL+K（更改重新启动后的中断状态）
 description: CTRL + K 键更改在其调试程序将自动中断到目标计算机的条件。
 ms.assetid: 74f57775-63ad-4a96-9ba5-bfedd4c8c826
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 918a4ccd632f2d8534b5fca185c94fd19d6efd10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374975"
 ---
-# <a name="ctrlk-change-post-reboot-break-state"></a>CTRL + K （更改重启后中断状态）
+# <a name="ctrlk-change-post-reboot-break-state"></a>CTRL+K（更改重新启动后的中断状态）
 
 
 CTRL + K 键更改在其调试程序将自动中断到目标计算机的条件。

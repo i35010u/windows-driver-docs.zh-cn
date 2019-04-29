@@ -1,6 +1,6 @@
 ---
-title: TraceView 概念
-description: TraceView 概念
+title: TraceView 的概念
+description: TraceView 的概念
 ms.assetid: 4fab2b23-8f7b-407b-b944-41ac8caf1a75
 keywords:
 - TraceView WDK 术语
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de4318021c115d9e983f4339eb94f50824fb28e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369627"
 ---
-# <a name="traceview-concepts"></a>TraceView 概念
+# <a name="traceview-concepts"></a>TraceView 的概念
 
 ## <span id="ddk_traceview_concepts_tools"></span><span id="DDK_TRACEVIEW_CONCEPTS_TOOLS"></span>
 

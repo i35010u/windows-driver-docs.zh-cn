@@ -1,6 +1,6 @@
 ---
-title: 选项条目格式
-description: 选项条目格式
+title: 选项格式
+description: 选项格式
 ms.assetid: defc035a-d571-4bf1-abeb-c7528ba23b81
 keywords:
 - 打印机选项 WDK Unidrv，条目格式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 687d7ccbd26df18f635f99a42ff1e40e0c804507
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366560"
 ---
-# <a name="option-entry-format"></a>选项条目格式
+# <a name="option-entry-format"></a>选项格式
 
 
 

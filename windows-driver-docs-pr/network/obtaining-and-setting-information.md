@@ -1,6 +1,6 @@
 ---
-title: 获取和设置的信息
-description: 获取和设置的信息
+title: 获取和设置信息
+description: 获取和设置信息
 ms.assetid: 48de3b16-0aaf-4703-ac19-03d7808b687a
 keywords:
 - 面向连接的 NDIS WDK，收集的信息
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3bf64e366993919a9a8aa2f88c44f86c35191d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376637"
 ---
-# <a name="obtaining-and-setting-information"></a>获取和设置的信息
+# <a name="obtaining-and-setting-information"></a>获取和设置信息
 
 
 

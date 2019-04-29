@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d560f7216de76fea185bd7e5e679d79ae128112
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367521"
 ---
 # <a name="bug-check-0x7b-inaccessiblebootdevice"></a>Bug 检查 0x7B：无法访问\_启动\_设备
 

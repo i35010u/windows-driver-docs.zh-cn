@@ -1,6 +1,6 @@
 ---
-title: 使用命令浏览器窗口在 WinDbg 中
-description: 使用命令浏览器窗口在 WinDbg 中
+title: 在 WinDbg 中使用命令浏览器窗口
+description: 在 WinDbg 中使用命令浏览器窗口
 ms.assetid: b895f463-38ec-451a-8c0a-0deb8650a904
 keywords:
 - 调试信息窗口中，命令浏览器窗口
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fd0e489b10125f6ef2174aa80c65a8a7a1a8bca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375089"
 ---
-# <a name="using-the-command-browser-window-in-windbg"></a>使用命令浏览器窗口在 WinDbg 中
+# <a name="using-the-command-browser-window-in-windbg"></a>在 WinDbg 中使用命令浏览器窗口
 
 
 命令浏览器窗口中显示，并将存储的调试器命令文本结果。 此窗口创建可用于查看特定命令的结果，而无需重新输入该命令的命令参考。 命令浏览器窗口中还提供了通过存储命令导航、 详细信息以便您可以快速访问具有比命令[调试器命令窗口](debugger-command-window.md)。

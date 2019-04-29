@@ -1,6 +1,6 @@
 ---
-title: 删除每个 Stream 上下文
-description: 删除每个 Stream 上下文
+title: 删除按流上下文
+description: 删除按流上下文
 ms.assetid: 293a2ba2-af8a-4c1b-bc35-5e37e6e84d57
 keywords:
 - 筛选器驱动程序 WDK 文件系统中，每个流的上下文跟踪
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e559ba5dd4caecdcf5545eb970fb62184686f9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359331"
 ---
-# <a name="deleting-a-per-stream-context"></a>删除每个 Stream 上下文
+# <a name="deleting-a-per-stream-context"></a>删除按流上下文
 
 
 ## <span id="ddk_deleting_a_per_stream_context_if"></span><span id="DDK_DELETING_A_PER_STREAM_CONTEXT_IF"></span>

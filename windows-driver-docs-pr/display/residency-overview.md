@@ -5,11 +5,11 @@ ms.assetid: E610C2B8-354C-4DF5-8B25-6472A9313B15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ca2d31c9921b88a1c991d6fc22d984d9f22f71a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378435"
 ---
 # <a name="residency-overview"></a>驻留概述
 

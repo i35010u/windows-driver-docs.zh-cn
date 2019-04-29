@@ -5,11 +5,11 @@ ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4326689b9b276cc1f7be8d753042b52dd15f6d64
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356321"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>渗透压力测试（设备基础功能）
 

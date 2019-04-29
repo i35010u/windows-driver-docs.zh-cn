@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aeacc40a9306854311cdbb6cefa93d9142553f94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378833"
 ---
-# <a name="example-8-configuring-trace-buffers"></a>示例 8:配置跟踪缓冲区
+# <a name="example-8-configuring-trace-buffers"></a>示例 8：配置跟踪缓冲区
 
 
 ## <span id="ddk_configuring_trace_buffers_tools"></span><span id="DDK_CONFIGURING_TRACE_BUFFERS_TOOLS"></span>

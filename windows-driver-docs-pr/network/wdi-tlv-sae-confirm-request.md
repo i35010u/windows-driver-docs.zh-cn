@@ -1,5 +1,5 @@
 ---
-title: WDI_TLV_SAE_CONFIRM_REQUEST
+title: WDI_TLV_SAE_COMMIT_REQUEST
 description: WDI_TLV_SAE_CONFIRM_REQUEST 是 TLV，其中包含同时进行身份验证的等于 (SAE) 确认请求的参数。
 ms.assetid: 9E46D8BA-D359-45B3-8074-FA54F4618E71
 ms.date: 02/15/2019
@@ -8,13 +8,13 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2037de1054b6a4117fbe03a4bddbdf74fb8c5322
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359345"
 ---
-# <a name="wditlvsaeconfirmrequest"></a>WDI_TLV_SAE_CONFIRM_REQUEST
+# <a name="wditlvsaeconfirmrequest"></a>WDI_TLV_SAE_COMMIT_REQUEST
 
 **WDI_TLV_SAE_CONFIRM_REQUEST**是 TLV，其中包含同时进行身份验证的等于 (SAE) 确认请求的参数。 
 
@@ -39,6 +39,6 @@ ms.locfileid: "59905314"
 
 |   |   |
 | --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
+| 最低受支持的客户端 | Windows 10 版本 1903 |
 | 最低受支持的服务器 | Windows Server 2016 |
 | Header | Wditypes.hpp |

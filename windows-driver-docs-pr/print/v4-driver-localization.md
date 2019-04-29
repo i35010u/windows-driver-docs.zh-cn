@@ -5,11 +5,11 @@ ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31cffd917fad5cda53ba8ad4de2619720ee9bd32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358581"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 打印机驱动程序本地化
 

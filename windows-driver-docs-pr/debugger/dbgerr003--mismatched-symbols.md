@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64af678de7d99c634966e3d7be01ed38a5c26987
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374921"
 ---
-# <a name="dbgerr003-mismatched-symbols"></a>dbgerr003:不匹配的符号
+# <a name="dbgerr003-mismatched-symbols"></a>dbgerr003:符号不匹配
 
 
 ## <span id="ddk_dbgerr003_dbg"></span><span id="DDK_DBGERR003_DBG"></span>

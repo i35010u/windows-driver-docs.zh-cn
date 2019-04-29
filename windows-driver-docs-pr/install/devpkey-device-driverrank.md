@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e1f5489727054e3d2703bf0f829deca217a73a89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354847"
 ---
 # <a name="devpkeydevicedriverrank"></a>DEVPKEY_Device_DriverRank
 
@@ -74,7 +74,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

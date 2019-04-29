@@ -1,14 +1,14 @@
 ---
-Description: Describes the Device Fundamental tests that you must run for MUTT devices that are attached to available ports.
+Description: 介绍适用于连接到可用端口的 MUTT 设备必须运行设备基础测试。
 title: 在 Visual Studio 中运行系统电源说明测试 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61c9c14b4dbea00de855e89135593836ba81f385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366053"
 ---
 # <a name="how-to-run-system-power-devfund-tests-in-visual-studio-for-mutt-devices"></a>如何在 Visual Studio 中针对 MUTT 设备运行系统电源 devfund 测试
 

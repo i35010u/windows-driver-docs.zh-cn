@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec343fd5db0345044216287d0d559aa4c32d43f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363445"
 ---
 # <a name="functions-defined-by-print-providers"></a>打印提供程序定义的函数
 

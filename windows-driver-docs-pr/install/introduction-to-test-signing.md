@@ -1,19 +1,19 @@
 ---
-title: 测试签名的简介
-description: 测试签名的简介
+title: 测试签名简介
+description: 测试签名简介
 ms.assetid: 63d4627d-b92c-489d-accf-16cfb5ac1410
 keywords:
 - 测试签名驱动程序包 WDK，有关测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2426a79f688a0df2ad5f4794a006b07a7a2c05f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364303"
 ---
-# <a name="introduction-to-test-signing"></a>测试签名的简介
+# <a name="introduction-to-test-signing"></a>测试签名简介
 
 
 驱动程序应使用测试签名[数字签名](digital-signatures.md)在开发和测试，原因如下：

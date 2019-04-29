@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f0c57c71e81b1d2b28187f2777370939e9180d0
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361637"
 ---
 # <a name="bug-check-0x1d-nospinlockavailable"></a>Bug 检查 0x1D：否\_旋转\_锁\_可用
 

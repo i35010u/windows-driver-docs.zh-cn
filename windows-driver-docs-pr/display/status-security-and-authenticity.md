@@ -1,6 +1,6 @@
 ---
-title: 状态安全性和可靠性
-description: 状态安全性和可靠性
+title: 状态安全性和真实性
+description: 状态安全性和真实性
 ms.assetid: 554d74ee-26fb-4e75-b799-c55c6bdd0153
 keywords:
 - WDK COPP 的状态信息
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f51d9830df9a37c3d8bc14b782344922c23d3c55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376042"
 ---
-# <a name="status-security-and-authenticity"></a>状态安全性和可靠性
+# <a name="status-security-and-authenticity"></a>状态安全性和真实性
 
 
 ## <span id="ddk_status_security_and_authenticity_gg"></span><span id="DDK_STATUS_SECURITY_AND_AUTHENTICITY_GG"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "56548145"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

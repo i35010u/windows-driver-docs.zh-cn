@@ -5,11 +5,11 @@ ms.assetid: 72285E72-DEC7-4578-9B6C-E616FECD6F41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48395ca61ef3e2cc48ae1bee5394d19173829140
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353753"
 ---
 # <a name="issuing-oidnicswitchallocatevf-requests"></a>发出 OID\_NIC\_交换机\_分配\_VF 请求
 

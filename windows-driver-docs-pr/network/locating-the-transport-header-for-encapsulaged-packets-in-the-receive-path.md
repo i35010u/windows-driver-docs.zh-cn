@@ -5,11 +5,11 @@ ms.assetid: D3BDE575-C9EB-49E3-9B61-FDB99B68ED8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48ae704226266e887de0df3fb4082e8444e67328
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365365"
 ---
 # <a name="locating-the-transport-header-for-encapsulated-packets-in-the-receive-path"></a>在接收路径中查找已封装数据包的传输标头
 

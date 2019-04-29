@@ -1,6 +1,6 @@
 ---
-title: 有关驱动程序的事件跟踪
-description: 有关驱动程序的事件跟踪
+title: 关于驱动程序的事件跟踪
+description: 关于驱动程序的事件跟踪
 ms.assetid: 1b5c85b1-5b7a-48bc-bdd4-356316d4467f
 keywords:
 - Windows WDK，有关 Windows 事件跟踪的事件跟踪
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23fee31ba48a8afb8f50a267438e5524e9b70faf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358091"
 ---
-# <a name="about-event-tracing-for-drivers"></a>有关驱动程序的事件跟踪
+# <a name="about-event-tracing-for-drivers"></a>关于驱动程序的事件跟踪
 
 
 ## <a name="what-is-event-tracing"></a>什么是事件跟踪？

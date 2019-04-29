@@ -5,11 +5,11 @@ ms.assetid: 40a1094d-50fa-42b6-9976-ec6b05fdc384
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a9c3b2adbc9531b84e1920b2d4c80bb1140f0a4
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380364"
 ---
 # <a name="mapping-wia-properties-with-the-same-ids-and-names"></a>映射具有相同 ID 和名称的 WIA 属性
 

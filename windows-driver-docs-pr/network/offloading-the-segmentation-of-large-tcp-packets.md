@@ -1,6 +1,6 @@
 ---
-title: 卸载大型 TCP 数据包的分段
-description: 卸载大型 TCP 数据包的分段
+title: 卸载大型 TCP 数据包的段
+description: 卸载大型 TCP 数据包的段
 ms.assetid: 6ae162fb-a8fc-47b8-80ae-ff39f3059d53
 keywords:
 - 任务卸载，WDK TCP/IP 传输，大数据包分段
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7a386de570abd90929988ae3fdf142b339e844
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359559"
 ---
-# <a name="offloading-the-segmentation-of-large-tcp-packets"></a>卸载大型 TCP 数据包的分段
+# <a name="offloading-the-segmentation-of-large-tcp-packets"></a>卸载大型 TCP 数据包的段
 
 
 

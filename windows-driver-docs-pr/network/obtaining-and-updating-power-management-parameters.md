@@ -5,11 +5,11 @@ ms.assetid: 46c4d2ab-e6d9-4d23-bf40-0037b80b01af
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a80244107ea0a90e0c527a9e004d6c277bd0512
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380716"
 ---
 # <a name="obtaining-and-updating-power-management-parameters"></a>获取和更新电源管理参数
 

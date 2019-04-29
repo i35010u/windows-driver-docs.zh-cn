@@ -1,19 +1,19 @@
 ---
-title: 使用已检验的版本的负面影响
-description: 使用已检验的版本的负面影响
+title: 已检验版本的负面影响
+description: 已检验版本的负面影响
 ms.assetid: 8c08d4f3-1221-4858-afd4-249d966c14a7
 keywords:
 - 检查内部版本号 WDK，对性能的影响
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 143270b884efea157d98b35c3c50d6e9e7fc3205
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378031"
 ---
-# <a name="side-effects-of-using-the-checked-build"></a>使用已检验的版本的负面影响
+# <a name="side-effects-of-using-the-checked-build"></a>已检验版本的负面影响
 
 
 ## <span id="ddk_side_effects_of_using_the_checked_build_tools"></span><span id="DDK_SIDE_EFFECTS_OF_USING_THE_CHECKED_BUILD_TOOLS"></span>

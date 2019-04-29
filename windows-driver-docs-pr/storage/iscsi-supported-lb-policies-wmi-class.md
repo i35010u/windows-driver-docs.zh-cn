@@ -5,11 +5,11 @@ ms.assetid: c11eebe8-519a-473d-9e9c-8a787333223e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 36df0a2a5921c602f80206ec73bbdf9ebb83bdc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366121"
 ---
 # <a name="iscsisupportedlbpolicies-wmi-class"></a>ISCSI\_支持\_LB\_策略 WMI 类
 

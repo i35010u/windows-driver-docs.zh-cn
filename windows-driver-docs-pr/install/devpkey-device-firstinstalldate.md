@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c8196ea108cccd16758330b6a29cbca59c6b92b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380760"
 ---
 # <a name="devpkeydevicefirstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
@@ -74,7 +74,7 @@ Windows 设置 DEVPKEY_Device_FirstInstallDate 的具有指定首次在系统中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

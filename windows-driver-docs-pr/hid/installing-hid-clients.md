@@ -5,11 +5,11 @@ ms.assetid: 080992B1-AB36-4BA1-BF44-7CF0C9F4EEE3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b28626a1f26d62cab03d8cae7724815d7fc5ce38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364641"
 ---
 # <a name="installing-hid-clients"></a>安装 HID 客户端
 

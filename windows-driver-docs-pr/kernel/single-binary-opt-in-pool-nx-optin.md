@@ -5,13 +5,13 @@ ms.assetid: BE9D3C85-0212-4206-A59B-4D53FB842C39
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 00366b375a953a585acadf52f8cca8331f6ad943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367939"
 ---
-# <a name="single-binary-opt-in-poolnxoptin"></a>单个二进制参加：池\_NX\_OPTIN
+# <a name="single-binary-opt-in-poolnxoptin"></a>启用单个二进制文件：池\_NX\_OPTIN
 
 
 若要生成单独的驱动程序二进制文件运行在 Windows 8 和 Windows 的早期版本中，使用该池\_NX\_OPTIN 选择机制。 这是第三方硬件供应商提供单个驱动程序支持多个 Windows 版本的二进制移植辅助工具。

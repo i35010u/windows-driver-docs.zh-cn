@@ -1,6 +1,6 @@
 ---
-title: 动态控制多个示例呈现
-description: 动态控制多个示例呈现
+title: 动态控制多重采样渲染
+description: 动态控制多重采样渲染
 ms.assetid: cd0bea22-29e8-40f7-987b-5c36765e5677
 keywords:
 - 多个示例呈现 WDK DirectX 9.0 中，动态控件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a120347701607e95e65e1f44f2c03258921e615
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360351"
 ---
-# <a name="dynamically-controlling-multiple-sample-rendering"></a>动态控制多个示例呈现
+# <a name="dynamically-controlling-multiple-sample-rendering"></a>动态控制多重采样渲染
 
 
 ## <span id="ddk_dynamically_controlling_multiple_sample_rendering_gg"></span><span id="DDK_DYNAMICALLY_CONTROLLING_MULTIPLE_SAMPLE_RENDERING_GG"></span>

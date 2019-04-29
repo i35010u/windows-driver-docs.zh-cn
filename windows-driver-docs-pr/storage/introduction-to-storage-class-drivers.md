@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10cce3a7243996a0e11b82202b1e68e0e7672e9e
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382113"
 ---
 # <a name="introduction-to-storage-class-drivers"></a>存储类驱动程序简介
 

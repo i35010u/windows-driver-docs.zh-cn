@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcd94d84a537e4b9113c1d4520a0c19f244b9f1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379039"
 ---
 # <a name="bidirectional-communication"></a>双向通信
 
@@ -30,12 +30,12 @@ ms.locfileid: "56523184"
 
 有关如何打印后台处理程序支持双向通信的说明，请参阅[添加双向通信](adding-bidirectional-communication.md)并[后台处理程序通知](spooler-notification.md)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 [双向通信架构](bidirectional-communication-schema.md)
 
-## <a name="related-sections"></a>相关的章节
+## <a name="related-sections"></a>相关章节
 
 
 [双向通信接口](https://msdn.microsoft.com/library/windows/hardware/ff545163)

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d1fe5bc36ab8aa7281fadfae1cd2275784935f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374215"
 ---
 # <a name="connections-between-two-unit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个单元插头之间的连接
 

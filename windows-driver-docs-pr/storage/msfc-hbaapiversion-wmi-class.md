@@ -5,11 +5,11 @@ ms.assetid: 642b8313-d1ca-4c07-9c39-b49ef65b4438
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ff89d0e4041b10e429270db1cbc752b78616ec8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378983"
 ---
 # <a name="msfchbaapiversion-wmi-class"></a>MSFC\_HbaApiVersion WMI 类
 

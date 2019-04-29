@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c88994c9d124c8decbe07e6f92729791c6337de9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359819"
 ---
 # <a name="handling-a-waitwake-irp-in-a-function-fdo-or-filter-driver-filter-do"></a>处理函数 (FDO) 或筛选器驱动程序（筛选器 DO）中的等待/唤醒 IRP
 

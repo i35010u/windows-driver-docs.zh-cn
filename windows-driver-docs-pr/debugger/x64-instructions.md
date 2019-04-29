@@ -1,19 +1,19 @@
 ---
-title: x64 说明
-description: x64 说明
+title: x64 指令
+description: x64 指令
 ms.assetid: f05cbf3e-001c-43cc-8a53-0e22fd161a53
 keywords:
 - x64 处理器，说明
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 864abf8d4d44426f90f580b209b66e8fd78f3581
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381917"
 ---
-# <a name="x64-instructions"></a>x64 说明
+# <a name="x64-instructions"></a>x64 指令
 
 
 ## <span id="ddk_x64_instructions_dbg"></span><span id="DDK_X64_INSTRUCTIONS_DBG"></span>

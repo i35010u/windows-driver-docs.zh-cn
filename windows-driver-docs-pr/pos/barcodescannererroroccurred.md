@@ -5,11 +5,11 @@ ms.assetid: 38cfbd87-0526-49d1-8580-96f4e1adf7bb
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0060519110f16262ca643b8bb4c2805ab640a534
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358775"
 ---
 # <a name="barcodescannererroroccurred"></a>BarcodeScannerErrorOccurred
 
@@ -46,7 +46,7 @@ typedef struct _PosBarcodeScannerErrorOccurredEventData
 | 0x00000006                             | **事件类型 = PosEventType::BarcodeScannerTriggerPressed**                                                                             |
 | UINT32                                 | **DataLength** = sizeof(**PosBarcodeScannerErrorOccurredData**) + **MessageLength** + **ScanDataLength** + **ScanDataLabelLength**)     |
 | BOOL                                   | **IsRetriable**                                                                                                                         |
-| 32 位 UnifiedPosErrorSeverity         | **严重级别**                                                                                                                            |
+| 32 位 UnifiedPosErrorSeverity         | **Severity**                                                                                                                            |
 | UINT32                                 | **VendorErrorCode**                                                                                                                     |
 | 32 位 UnifiedPosErrorReason           | **Reason**                                                                                                                              |
 | UINT32                                 | **ExtendedReason**                                                                                                                      |

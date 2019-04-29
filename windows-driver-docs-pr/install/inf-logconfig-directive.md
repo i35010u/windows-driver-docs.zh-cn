@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76b4fddfb7ba74d4a9784cdafd54d15f32bfbb67
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380739"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig 指令
 
@@ -92,7 +92,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =**\[*DMAattrs:*\]*DMANum*\[<strong>，</strong>DMANum\]...\]  
 *DMAattrs*是可选的如果具有唯一的 8 位 DMA 通道的总线上连接设备和设备使用标准系统 DMA。 否则，它可以是以下字母之一：
 
-| 字母 | 含义    |
+| Letter | 含义    |
 |--------|------------|
 | **D**  | 32 位 DMA |
 | **W**  | 16 位 DMA |
@@ -181,7 +181,7 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 <a href="" id="attr"></a>*attr*  
 指定为一个或多个以下字母的内存范围的属性：
 
-| 字母 | 含义                                             |
+| Letter | 含义                                             |
 |--------|-----------------------------------------------------|
 | **R**  | 只读                                           |
 | **W**  | 只写                                          |

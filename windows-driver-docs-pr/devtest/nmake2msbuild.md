@@ -5,11 +5,11 @@ ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b896b9147b2e5470c27992cad01a6fd1d766952
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374655"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 

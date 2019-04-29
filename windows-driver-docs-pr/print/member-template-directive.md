@@ -1,19 +1,19 @@
 ---
-title: 成员模板指令
-description: 成员模板指令
+title: Member 模板指令
+description: Member 模板指令
 ms.assetid: 3f4bdf3c-30cb-4edc-bd9e-422c4bfbb5b7
 keywords:
 - 成员指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41bfee072481fea3e585fe2b61a1e60fc63a953a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358610"
 ---
-# <a name="member-template-directive"></a>成员模板指令
+# <a name="member-template-directive"></a>Member 模板指令
 
 
 \* `Member`指令也是一种构造。 此构造的值是一个模板名称。 此模板名称必须出现在\*成员列表的主机模板 （在生产中驻留的模板） 中或在\*主机模板 （直接或间接） 继承的成员列表。 \* `Member`构造可包含一个名为的可选子属性\* **Occurs**。

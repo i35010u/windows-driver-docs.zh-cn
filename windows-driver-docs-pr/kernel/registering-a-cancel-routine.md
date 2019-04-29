@@ -1,6 +1,6 @@
 ---
-title: 注册在取消例程
-description: 注册在取消例程
+title: 注册 Cancel 例程
+description: 注册 Cancel 例程
 ms.assetid: ebc63fb6-bf4d-4de3-9232-08d810c2f730
 keywords:
 - 正在取消 Irp，注册取消例程
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9b5316b713470832d64a5454e9c7f68309ed177
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382653"
 ---
-# <a name="registering-a-cancel-routine"></a>注册在取消例程
+# <a name="registering-a-cancel-routine"></a>注册 Cancel 例程
 
 
 

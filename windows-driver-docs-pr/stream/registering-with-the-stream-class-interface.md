@@ -1,6 +1,6 @@
 ---
-title: 注册 Stream 类接口
-description: 注册 Stream 类接口
+title: 注册到流类接口
+description: 注册到流类接口
 ms.assetid: dfc94f8d-0c0a-44ed-a4f8-791ce49aba2d
 keywords:
 - 视频捕获 WDK AVStream，注册 Stream 类接口
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df66766eebcaa06a8d0636c1fd4d9c4c3f9c1c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376395"
 ---
-# <a name="registering-with-the-stream-class-interface"></a>注册 Stream 类接口
+# <a name="registering-with-the-stream-class-interface"></a>注册到流类接口
 
 
 Stream 类微型驱动程序使用以下步骤来初始化并准备好流式传输数据：

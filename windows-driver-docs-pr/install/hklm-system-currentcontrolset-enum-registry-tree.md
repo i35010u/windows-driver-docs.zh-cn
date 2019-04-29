@@ -5,11 +5,11 @@ ms.assetid: 9de3ca54-d23f-4ee6-a638-27e52a60dfdd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bcac6c6badc9813457b69b66db174b8a298d083
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360607"
 ---
 # <a name="hklmsystemcurrentcontrolsetenum-registry-tree"></a>HKLM\\系统\\CurrentControlSet\\枚举注册表树
 

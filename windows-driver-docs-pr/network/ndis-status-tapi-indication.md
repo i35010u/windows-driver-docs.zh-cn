@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_TAPI_INDICATION 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f587338985eedc6b1556c5795f07ac3caa0a3e9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381358"
 ---
 # <a name="ndisstatustapiindication"></a>NDIS\_状态\_TAPI\_指示
 
@@ -37,17 +37,17 @@ NDIS 4。*x*和早期 NDIS WAN 的微型端口驱动程序使用此状态指示�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持 NDIS 6.0 驱动程序或 NDIS 5.1 在 Windows Vista 或 Windows XP 中的驱动程序。 支持 NDIS 4.x 驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_TAPI\_EVENT**](https://msdn.microsoft.com/library/windows/hardware/ff558986)

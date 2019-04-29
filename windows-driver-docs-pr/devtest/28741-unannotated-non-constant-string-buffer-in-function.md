@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28741
 ms.openlocfilehash: c8d4c02623eebce83909f33fd51d2375132886b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374733"
 ---
 # <a name="c28741"></a>C28741
 

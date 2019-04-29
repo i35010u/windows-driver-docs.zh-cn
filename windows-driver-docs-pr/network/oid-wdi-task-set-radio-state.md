@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SET_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c39173824acf545f079d3cf83095a43ca4953e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365718"
 ---
 # <a name="oidwditasksetradiostate"></a>OID\_WDI\_TASK\_SET\_RADIO\_STATE
 
 
 OID\_WDI\_任务\_设置\_单选\_状态用于为适配器设置的 Wi-fi 无线电的状态。
 
-| 对象  | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| Object  | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
 |---------|---------------|---------------------------------------|---------------------------------|
 | 适配器 | 否            | 1                                     | 1                               |
 
@@ -66,7 +66,7 @@ IHV 组件也可能会向主机发送未经请求的单选状态更改的迹象�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

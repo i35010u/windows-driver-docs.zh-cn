@@ -5,11 +5,11 @@ ms.assetid: 2feedbe0-ee42-487d-b8b9-06c2bc4532ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9688d92e340d540cdcb294ebcbe41febbf5538e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379877"
 ---
 # <a name="using-traceview"></a>使用 TraceView
 

@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd29935e2de3aae94f170c5b0fe3aaa64aa37f75
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363557"
 ---
 # <a name="encoder-implementation-and-support"></a>编码器实现和支持
 

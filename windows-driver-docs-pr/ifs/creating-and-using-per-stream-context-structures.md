@@ -1,6 +1,6 @@
 ---
-title: 创建和使用每个 Stream 上下文结构
-description: 创建和使用每个 Stream 上下文结构
+title: 创建和使用按流上下文结构
+description: 创建和使用按流上下文结构
 ms.assetid: f34898e2-f82e-4962-89d2-e9fb077c04f9
 keywords:
 - 筛选器驱动程序 WDK 文件系统中，每个流的上下文跟踪
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 055d1c33c2d6830aa6a35e6e89f6ff824bf7725f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359385"
 ---
-# <a name="creating-and-using-per-stream-context-structures"></a>创建和使用每个 Stream 上下文结构
+# <a name="creating-and-using-per-stream-context-structures"></a>创建和使用按流上下文结构
 
 
 ## <span id="ddk_creating_and_using_per_stream_context_structures_if"></span><span id="DDK_CREATING_AND_USING_PER_STREAM_CONTEXT_STRUCTURES_IF"></span>

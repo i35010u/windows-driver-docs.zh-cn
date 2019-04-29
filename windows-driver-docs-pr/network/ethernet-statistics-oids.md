@@ -1,5 +1,5 @@
 ---
-title: 以太网统计信息 Oid
+title: 以太网统计信息 OID
 description: 本主题描述以太网的统计信息 Oid
 ms.assetid: b38ec79d-d8f3-46fa-9e6f-d42fa18f467c
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15ca916da71bc065f6110428ed0606807ff817a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368317"
 ---
-# <a name="ethernet-statistics-oids"></a>以太网统计信息 Oid
+# <a name="ethernet-statistics-oids"></a>以太网统计信息 OID
 
 下表总结了用于获取网络接口控制器 (Nic) 的以太网统计信息的 Oid。
 

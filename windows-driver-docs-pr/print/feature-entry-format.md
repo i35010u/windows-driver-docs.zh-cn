@@ -1,6 +1,6 @@
 ---
-title: 功能条目格式
-description: 功能条目格式
+title: 功能项格式
+description: 功能项格式
 ms.assetid: f4e91611-aa68-4426-82ef-9ad3f09d62f2
 keywords:
 - 打印机功能 WDK Unidrv，条目格式
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31cefd326154fe90d4a11d9e027d947f28af26db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361984"
 ---
-# <a name="feature-entry-format"></a>功能条目格式
+# <a name="feature-entry-format"></a>功能项格式
 
 
 

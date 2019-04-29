@@ -4,11 +4,11 @@ title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379922"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -26,7 +26,7 @@ ms.locfileid: "57464351"
 
 在 Windows 8.1 中引入的 Windows 运行时 Api 用于编写允许用户访问其外围的 USB 设备的 UWP 应用。 此类应用程序可以连接到基于用户指定的条件的设备、 获取有关设备的信息、 将数据发送到设备并与之相反从设备中，获取数据流和轮询中断数据的设备。
 
-此处介绍，如何使用 c + +，UWP 应用C#，或 Visual Basic 应用程序可以实现这些任务，并将链接到演示中包括的类的用法的示例[ **Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/dn278466)。 我们将通过应用程序清单中所需的设备功能以及如何在设备连接时启动应用。 并且，我们将介绍如何进行数据传输任务在后台运行甚至当挂起应用程序时要维护电池寿命。
+此处介绍，如何在 UWP 应用使用C++， C#，或 Visual Basic 应用程序可以实现这些任务，并将链接到演示中包括的类的用法的示例[ **Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/dn278466)。 我们将通过应用程序清单中所需的设备功能以及如何在设备连接时启动应用。 并且，我们将介绍如何进行数据传输任务在后台运行甚至当挂起应用程序时要维护电池寿命。
 
 按照本部分中的步骤，或直接跳到[自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)。 随附示例实现所有此处的步骤，但若要保持我们不会向通过代码。 某些步骤会随之**在此示例中找到该**部分来帮助你快速找到的代码。 示例的源代码文件的结构是简单和平面，因此您可以轻松地找到代码，而无需向下钻取的源代码文件的多个层。 但您可能更倾向于进行分解和组织您自己的项目，以不同的方式。
 
@@ -254,7 +254,7 @@ ms.locfileid: "57464351"
 <p><strong>步骤 13</strong>— 关闭设备。</p></td>
 <td><p><strong>快速入门：</strong><a href="how-to-connect-to-a-usb-device--uwp-app-.md" data-raw-source="[How to connect to a USB device (UWP app)](how-to-connect-to-a-usb-device--uwp-app-.md)">如何连接到 USB 设备 （UWP 应用）</a></p>
 <p>在使用完 UsbDevice 对象后，关闭设备。</p>
-<p>C + + 应用程序必须通过使用发布的引用<strong>删除</strong>关键字。 C#/VB 应用必须调用<a href="https://msdn.microsoft.com/library/windows/apps/dn264007" data-raw-source="[&lt;strong&gt;UsbDevice.Dispose&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn264007)"> <strong>UsbDevice.Dispose</strong> </a>方法。 JavaScript 应用程序必须调用<a href="https://msdn.microsoft.com/library/windows/apps/dn263990" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn263990)"> <strong>UsbDevice.Close</strong></a>。</p>
+<p>C++应用必须通过使用发布的引用<strong>删除</strong>关键字。 C#/VB 应用必须调用<a href="https://msdn.microsoft.com/library/windows/apps/dn264007" data-raw-source="[&lt;strong&gt;UsbDevice.Dispose&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn264007)"> <strong>UsbDevice.Dispose</strong> </a>方法。 JavaScript 应用程序必须调用<a href="https://msdn.microsoft.com/library/windows/apps/dn263990" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/apps/dn263990)"> <strong>UsbDevice.Close</strong></a>。</p>
 <p><strong>在此示例中找到它：</strong>请参阅名为 Scenario1_DeviceConnect 的文件。</p></td>
 </tr>
 <tr class="even">
@@ -393,9 +393,9 @@ ms.locfileid: "57464351"
 
 了解设计 UWP 应用程序 UI 的详细信息。
 
-[使用的 UWP 应用的路线图C#和 Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)并[使用 c + + 的 UWP 应用的路线图](https://msdn.microsoft.com/library/windows/apps/hh700360)
+[使用的 UWP 应用的路线图C#和 Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)并[使用的 UWP 应用的路线图C++](https://msdn.microsoft.com/library/windows/apps/hh700360)
 
-详细了解如何创建 UWP 应用使用 c + +， C#，或在常规中的 Visual Basic。
+详细了解如何创建 UWP 应用使用C++， C#，或在常规中的 Visual Basic。
 
 [异步编程（UWP 应用）](https://msdn.microsoft.com/library/windows/apps/hh464924)
 

@@ -1,17 +1,17 @@
 ---
-title: 扫描程序 Microdriver 示例
-description: 扫描程序 Microdriver 示例
+title: 扫描仪微驱动程序示例
+description: 扫描仪微驱动程序示例
 ms.assetid: 1b50d057-1585-4f2d-b3dc-0d5cad5533ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f8c4f83207e25a9d49682403e1509adc999b7d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364349"
 ---
-# <a name="scanner-microdriver-sample"></a>扫描程序 Microdriver 示例
+# <a name="scanner-microdriver-sample"></a>扫描仪微驱动程序示例
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: Pscript 呈现器
-description: Pscript 呈现器
+title: Pscript 渲染器
+description: Pscript 渲染器
 ms.assetid: b1707a83-c5c9-4578-8603-7c19de4960ed
 keywords:
 - PostScript 打印机驱动程序 WDK 打印，呈现器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee28253b9faab9a5bd14abaaacaa30a42b5c3fbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357647"
 ---
-# <a name="pscript-renderer"></a>Pscript 呈现器
+# <a name="pscript-renderer"></a>Pscript 渲染器
 
 
 

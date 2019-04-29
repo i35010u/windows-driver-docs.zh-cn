@@ -1,17 +1,17 @@
 ---
-title: Windows 内核过时例程
-description: Windows 内核过时例程
+title: Windows 内核的已过时例程
+description: Windows 内核的已过时例程
 ms.assetid: 876f48be-1d8f-4c65-bc84-e35c31919c47
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3c246e05794e8793a15c3bf30e5fd09b5130cacc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380245"
 ---
-# <a name="windows-kernel-obsolete-routines"></a>Windows 内核过时例程
+# <a name="windows-kernel-obsolete-routines"></a>Windows 内核的已过时例程
 
 
 导出以下已过时例程以支持现有的二进制文件：

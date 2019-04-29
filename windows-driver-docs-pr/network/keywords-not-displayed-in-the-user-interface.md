@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 821d469359adb012f4c2b8227703d7347022206d
-ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56582903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361065"
 ---
 # <a name="keywords-not-displayed-in-the-user-interface"></a>不在用户界面中显示的关键字
 

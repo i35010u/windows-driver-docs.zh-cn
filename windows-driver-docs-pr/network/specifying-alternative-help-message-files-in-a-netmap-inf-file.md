@@ -1,6 +1,6 @@
 ---
-title: Netmap.inf 文件中指定备用的帮助消息文件
-description: Netmap.inf 文件中指定备用的帮助消息文件
+title: 在 Netmap.inf 文件中指定备用帮助消息文件
+description: 在 Netmap.inf 文件中指定备用帮助消息文件
 ms.assetid: 66ab7124-803a-4497-b5e0-98b47006dfb6
 keywords:
 - 网络组件升级，WDK，netmap.inf 文件
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90811d5ba23b3e3771e9c98461bb720fee3781a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378968"
 ---
-# <a name="specifying-alternative-help-message-files-in-a-netmapinf-file"></a>Netmap.inf 文件中指定备用的帮助消息文件
+# <a name="specifying-alternative-help-message-files-in-a-netmapinf-file"></a>在 Netmap.inf 文件中指定备用帮助消息文件
 
 
 

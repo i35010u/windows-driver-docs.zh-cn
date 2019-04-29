@@ -5,11 +5,11 @@ ms.assetid: C82AEB00-E699-40AB-85E8-064B841B83F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb10aeafe3855b9c9288c2158f921e622d0d348b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381328"
 ---
 # <a name="overview-of-sr-iov-data-paths"></a>SR-IOV 数据路径概述
 

@@ -5,11 +5,11 @@ ms.assetid: d21e7195-37be-4821-a326-68bcdff9cdd6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce6b8f3559901026c8b74e10a53718776a067c69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358036"
 ---
 # <a name="optional-wia-item-properties-for-scanner-storage"></a>扫描仪存储的可选 WIA 项属性
 

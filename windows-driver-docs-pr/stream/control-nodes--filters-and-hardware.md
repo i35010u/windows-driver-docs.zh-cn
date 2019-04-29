@@ -1,6 +1,6 @@
 ---
-title: 控制节点、 筛选器和硬件
-description: 控制节点、 筛选器和硬件
+title: 控制节点、筛选器和硬件
+description: 控制节点、筛选器和硬件
 ms.assetid: c299f5d9-634f-46c9-becf-cf59aaa0257f
 keywords:
 - 功能拓扑 WDK BDA
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 927804a6f5b06dc87b4d26b67382d6f1c0f3f5d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374175"
 ---
-# <a name="control-nodes-filters-and-hardware"></a>控制节点、 筛选器和硬件
+# <a name="control-nodes-filters-and-hardware"></a>控制节点、筛选器和硬件
 
 
 

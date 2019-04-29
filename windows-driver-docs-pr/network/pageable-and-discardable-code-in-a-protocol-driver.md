@@ -1,6 +1,6 @@
 ---
-title: 协议驱动程序中的可分页和可放弃代码
-description: 协议驱动程序中的可分页和可放弃代码
+title: 协议驱动程序中的可分页和可丢弃代码
+description: 协议驱动程序中的可分页和可丢弃代码
 ms.assetid: acc27690-cdc3-433c-85c4-489501ea3d26
 keywords:
 - 协议驱动程序 WDK 网络、 可分页和可放弃代码
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6c661ccc3942785b1ae9c4c5a0336f7f654cb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376251"
 ---
-# <a name="pageable-and-discardable-code-in-a-protocol-driver"></a>协议驱动程序中的可分页和可放弃代码
+# <a name="pageable-and-discardable-code-in-a-protocol-driver"></a>协议驱动程序中的可分页和可丢弃代码
 
 
 

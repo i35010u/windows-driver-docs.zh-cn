@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f841fe876dab7b0114b4ceb435625a21450c4e
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383989"
 ---
 # <a name="optional-display-driver-functions"></a>可选的显示驱动程序函数
 

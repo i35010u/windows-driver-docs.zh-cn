@@ -1,19 +1,19 @@
 ---
-title: SCSI 微型端口驱动程序调试扩展
-description: SCSI 微型端口驱动程序调试扩展
+title: 用于调试 SCSI 微型端口驱动程序的扩展
+description: 用于调试 SCSI 微型端口驱动程序的扩展
 ms.assetid: 6e6c35e5-d9dd-430a-8fc4-86f24344c24d
 keywords:
 - SCSI 微型端口调试，有用的扩展
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6cc9c9db0203cd571eb22d24eb88b9632115032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373929"
 ---
-# <a name="extensions-for-debugging-scsi-miniport-drivers"></a>SCSI 微型端口驱动程序调试扩展
+# <a name="extensions-for-debugging-scsi-miniport-drivers"></a>用于调试 SCSI 微型端口驱动程序的扩展
 
 
 当调试 SCSI 微型端口驱动程序时，可能会发现以下调试器扩展很有用。 常规调试器扩展会首先列出后, 跟的那些特定 SCSI 微型端口调试。
@@ -135,7 +135,7 @@ minipkd error (0) <path> ... \minipkd\minipkd.c @ line 435
 [**！ scsikd.scsiext 设备**](-scsikd-scsiext.md)  
 **！ Scsikd.scsiext**扩展显示有关指定的 SCSI 端口扩展的详细的信息。 *设备*可以是设备对象或设备适配器或 LUN 的扩展。
 
-下面提供了一些示例：
+下面是一些可能的恶意活动：
 
 ```dbgcmd
 0: kd> !scsikd.scsiext 86353040

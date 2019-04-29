@@ -1,17 +1,17 @@
 ---
-title: 硬件 Id （APN 元素）
-description: 硬件 Id （APN 元素）
+title: HardwareId（APN 元素）
+description: HardwareId（APN 元素）
 ms.assetid: 9c09915c-d0f6-4ddf-b2e1-79f00599c3a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c8c0e1d6b997622f6118369835d3cea6870fc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380156"
 ---
-# <a name="hardwareid-apn-element"></a>硬件 Id （APN 元素）
+# <a name="hardwareid-apn-element"></a>HardwareId（APN 元素）
 
 
 HardwareId 元素指定 HWID 对于指定的运算符。

@@ -5,11 +5,11 @@ ms.assetid: bc54e057-3c98-457b-859a-79d216b2a34d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21b550712d4c40042110061d35f889ba14e6b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379650"
 ---
 # <a name="object-size-in-ptp"></a>PTP 中的对象大小
 

@@ -5,11 +5,11 @@ ms.assetid: 1E1D659D-80C9-45B1-B96F-78E5A1EE4F6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd7eb8e35537cd0fbfc752b8286863c03e3d7501
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376894"
 ---
 # <a name="canceling-dma-transactions"></a>取消 DMA 事务
 

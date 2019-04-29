@@ -1,16 +1,16 @@
 ---
-Description: This section provides links for manufacturers of USB peripheral devices.
-title: 针对 Windows 构建的 USB 设备
+Description: 此部分提供的 USB 外围设备制造商的链接。
+title: 为 Windows 构建 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4513544d1bf003721e8f0a29668683b0454caec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377442"
 ---
-# <a name="building-usb-devices-for-windows"></a>针对 Windows 构建的 USB 设备
+# <a name="building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备
 
 
 **摘要**

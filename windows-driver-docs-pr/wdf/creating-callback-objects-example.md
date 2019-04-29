@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f852def4de16f87cef0b970f1ed39e78ca9024
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358473"
 ---
 # <a name="creating-callback-objects-example"></a>创建回调对象示例
 

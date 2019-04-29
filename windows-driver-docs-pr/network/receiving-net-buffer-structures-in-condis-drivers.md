@@ -1,15 +1,15 @@
 ---
-title: 接收 NET_BUFFER 结构中的 CoNDIS 驱动程序
-description: 接收 NET_BUFFER 结构中的 CoNDIS 驱动程序
+title: 在 CoNDIS 驱动程序中接收 NET_BUFFER 结构
+description: 在 CoNDIS 驱动程序中接收 NET_BUFFER 结构
 ms.assetid: b3bbd3ef-9206-4edc-8f7a-4ce896d77150
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e923133330db0932a3c0656c6607736e8e575df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380585"
 ---
 # <a name="receiving-netbuffer-structures-in-condis-drivers"></a>接收 NET\_缓冲区中的 CoNDIS 驱动程序的结构
 

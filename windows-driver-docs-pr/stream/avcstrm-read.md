@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de3cfc78bd3bd34b4ed2880a140b41e9b7d5739c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374489"
 ---
 # <a name="avcstrmread"></a>AVCSTRM\_READ
 
@@ -117,7 +117,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 此函数代码必须调用在 IRQL = 被动\_级别。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff554194)， [ **INIT\_AVCSTRM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff560750)， [ **IRP\_MJ\_内部\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550766)， [ **IOCTL\_AVCSTRM\_类**](https://msdn.microsoft.com/library/windows/hardware/ff560778)， [ **AVCSTRM\_缓冲区\_结构**](https://msdn.microsoft.com/library/windows/hardware/ff554108)， [ **AVCSTRM\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554120)
 

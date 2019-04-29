@@ -6,11 +6,11 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: d82450c3d99e99cf73cc33c452ad46bf0c5db20f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380961"
 ---
 # <a name="pwrtest-syntax"></a>PwrTest 语法
 

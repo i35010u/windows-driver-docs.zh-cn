@@ -5,11 +5,11 @@ ms.assetid: 2ab71f74-5a94-4f07-bd08-d3f5f6b6a785
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 446055e4774094b72d8c2f7fce96c5c324f444d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325285"
 ---
 # <a name="installing-a-catalog-file-by-using-cryptcatadminaddcatalog"></a>使用 CryptCATAdminAddCatalog 安装目录文件
 

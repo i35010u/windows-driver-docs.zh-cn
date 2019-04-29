@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be5291f6faf4ce9b1b394d3bc1216cccc34afc1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358546"
 ---
 # <a name="fltparameters-for-irpmjacquireformodwrite-union"></a>FLT\_IRP 的参数\_MJ\_ACQUIRE\_有关\_MOD\_写入联合
 
@@ -73,13 +73,13 @@ IRP\_MJ\_ACQUIRE\_有关\_MOD\_写为文件系统 (FSFilter) 回调操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

@@ -1,6 +1,6 @@
 ---
-title: X 通道的解释
-description: X 通道的解释
+title: X 通道解释
+description: X 通道解释
 ms.assetid: ba039e5a-78ee-43cb-b883-4675b011a29d
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示 X 通道
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be94ebfc01de84d94cdd28a2f24dfd4297753bcb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362279"
 ---
-# <a name="interpretation-of-x-channel"></a>X 通道的解释
+# <a name="interpretation-of-x-channel"></a>X 通道解释
 
 
 本部分仅适用于 Windows 7 和更高版本的操作系统。

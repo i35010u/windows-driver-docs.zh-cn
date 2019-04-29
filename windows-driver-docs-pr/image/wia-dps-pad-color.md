@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45da42ad8c6d7d70794a31c49e9d3ea44d79beca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378071"
 ---
 # <a name="wiadpspadcolor"></a>WIA\_DPS\_PAD\_颜色
 
@@ -52,7 +52,7 @@ WIA\_DPS\_PAD\_COLOR 属性应报告为 RGBQUAD 结构 （它 Microsoft Windows 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

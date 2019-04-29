@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 162182ad651b4ab694eb11e9efb0f8f891937f4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370140"
 ---
 # <a name="handling-quotas-on-irpmjcreate"></a>处理 IRP 的配额\_MJ\_创建
 

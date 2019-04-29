@@ -1,6 +1,6 @@
 ---
-title: 内核调试流式处理的概述
-description: 内核调试流式处理的概述
+title: 内核流调试概述
+description: 内核流调试概述
 ms.assetid: 7e09eccf-f74e-4faa-bb59-5c11f93c4b90
 keywords:
 - 流式处理调试的内核
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a67013761de690522cff4248584823456b2ecd7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363887"
 ---
-# <a name="overview-of-kernel-streaming-debugging"></a>内核调试流式处理的概述
+# <a name="overview-of-kernel-streaming-debugging"></a>内核流调试概述
 
 
 可在扩展模块 Ks.dll 内核调试的流式处理扩展插件。

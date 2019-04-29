@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d6d0a0bffdc0d067be7bf742c727e159be8ab30a
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358133"
 ---
 # <a name="bug-check-0x124-wheauncorrectableerror"></a>Bug 检查 0x124：WHEA\_无法纠正\_错误
 

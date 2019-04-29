@@ -1,17 +1,17 @@
 ---
-title: 添加和删除低能耗协议卸载
-description: 添加和删除低能耗协议卸载
+title: 添加和删除低功耗协议卸载
+description: 添加和删除低功耗协议卸载
 ms.assetid: f00f13b4-9204-4480-884a-407684a4b2d4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53e2d24faa332147e2f382850d459301184de8dd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367774"
 ---
-# <a name="adding-and-deleting-low-power-protocol-offloads"></a>添加和删除低能耗协议卸载
+# <a name="adding-and-deleting-low-power-protocol-offloads"></a>添加和删除低功耗协议卸载
 
 
 

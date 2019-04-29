@@ -1,17 +1,17 @@
 ---
-title: 使用用户模式下调试程序调试设备安装
-description: 使用用户模式下调试程序调试设备安装
+title: 使用用户模式调试程序调试设备安装
+description: 使用用户模式调试程序调试设备安装
 ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a86b65d148ce509e7e85619775ce7fadd8427728
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358853"
 ---
-# <a name="debugging-device-installations-with-a-user-mode-debugger"></a>使用用户模式下调试程序调试设备安装
+# <a name="debugging-device-installations-with-a-user-mode-debugger"></a>使用用户模式调试程序调试设备安装
 
 
 Windows vista 中，从开始，当插即用 (PnP) 管理器检测到系统中的新设备时，在操作系统启动设备安装主机进程 (*DrvInst.exe*) 若要搜索并安装设备的驱动程序。

@@ -1,6 +1,6 @@
 ---
-title: 作用域和符号组
-description: 作用域和符号组
+title: 范围和符号组
+description: 范围和符号组
 ms.assetid: f14b6361-9962-4fa3-bb1a-dfde066754b9
 keywords:
 - 调试器引擎 API、 符号、 符号组
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9937d4ccbf7a6472c935d116e1a94f255c0cc134
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382011"
 ---
-# <a name="scopes-and-symbol-groups"></a>作用域和符号组
+# <a name="scopes-and-symbol-groups"></a>范围和符号组
 
 
 ## <span id="ddk_scopes_and_symbol_groups_dbx"></span><span id="DDK_SCOPES_AND_SYMBOL_GROUPS_DBX"></span>

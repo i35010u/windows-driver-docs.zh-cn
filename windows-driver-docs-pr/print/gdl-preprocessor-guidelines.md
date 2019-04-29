@@ -1,6 +1,6 @@
 ---
-title: GDL 预处理器的指导原则
-description: GDL 预处理器的指导原则
+title: GDL 预处理器指导原则
+description: GDL 预处理器指导原则
 ms.assetid: dc8450ca-cacc-458c-a05b-8566d04d8bae
 keywords:
 - 预处理器指令 WDK GDL，准则
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec04844e5ff0377c384b21363e3e5101723a19f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380013"
 ---
-# <a name="gdl-preprocessor-guidelines"></a>GDL 预处理器的指导原则
+# <a name="gdl-preprocessor-guidelines"></a>GDL 预处理器指导原则
 
 
 在编写 GDL 预处理器指令时，请使用以下准则：

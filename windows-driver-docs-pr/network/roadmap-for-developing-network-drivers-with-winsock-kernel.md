@@ -1,17 +1,17 @@
 ---
-title: 有关开发网络驱动程序与 Winsock 内核的路线图
-description: 有关开发网络驱动程序与 Winsock 内核的路线图
+title: 使用 Winsock 内核的网络驱动程序开发路线图
+description: 使用 Winsock 内核的网络驱动程序开发路线图
 ms.assetid: f94952c3-02b1-4bd2-bd73-e6d6d42a06fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e4c42e9936fb4f948af432bf9d5803f9b7e5cc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359415"
 ---
-# <a name="roadmap-for-developing-network-drivers-with-winsock-kernel"></a>有关开发网络驱动程序与 Winsock 内核的路线图
+# <a name="roadmap-for-developing-network-drivers-with-winsock-kernel"></a>使用 Winsock 内核的网络驱动程序开发路线图
 
 
 若要创建使用内核模式套接字编程功能的 Winsock Kernel (WSK) 的网络驱动程序包，请执行以下步骤：

@@ -5,11 +5,11 @@ ms.assetid: 24c44f97-5ff3-46fa-a5bf-aa76f7f0d3f2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8e012558719bdb406d2fa50b8a26d729ef432648
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351888"
 ---
 # <a name="msiscsihbainformation-wmi-class"></a>MSiSCSI\_HBAInformation WMI 类
 

@@ -5,11 +5,11 @@ ms.assetid: ca25c14d-120e-4e53-9d57-ba5663536bae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c055b8743eeb97b505a6f2daf8efc79232580dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373330"
 ---
 # <a name="basic-scanning-for-film-scanners"></a>底片扫描仪的基本扫描
 

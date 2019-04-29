@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86dd32e25cfe4a16e8a0c379abed235015420850
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327227"
 ---
 # <a name="wmi-property-qualifiers"></a>WMI 属性限定符
 

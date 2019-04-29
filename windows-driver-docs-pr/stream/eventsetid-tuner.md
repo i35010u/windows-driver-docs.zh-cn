@@ -5,11 +5,11 @@ ms.assetid: 0b8770cd-f88b-4c1d-8625-39c42cb14dff
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea0cff86d868967d08199d53b0caffd5b1f3efb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363807"
 ---
 # <a name="eventsetidtuner"></a>EVENTSETID\_调谐器
 

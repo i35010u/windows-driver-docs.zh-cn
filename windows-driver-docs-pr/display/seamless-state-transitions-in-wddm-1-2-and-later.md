@@ -1,5 +1,5 @@
 ---
-title: 提供无缝的状态转换 WDDM 1.2 及更高版本
+title: 在 WDDM 1.2 和更高版本中提供无缝状态转换
 description: 多项功能有助于最大程度减少屏幕闪烁，在引导过程、 从较低的电源状态转换以及转换返回到操作系统控制。
 ms.assetid: CD2208AA-62B6-4BAD-BE7C-0791B13D1E96
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 110fad8e532db83f0010651275cc867add39de5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361939"
 ---
-# <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>提供无缝的状态转换 WDDM 1.2 及更高版本
+# <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>在 WDDM 1.2 和更高版本中提供无缝状态转换
 
 
 从开始 Windows 8 中，多个功能帮助以最大程度减少或消除屏幕闪烁和闪烁在启动过程中，从较低的电源状态，进行转换时和进行转换时返回到操作系统中的控件驱动程序升级或系统错误检查。 此外，Windows 8 和更高版本的计算机上的系统固件必须检测到自身分辨率和计时的集成了电源时显示面板并将提交给系统的此信息。 Windows 显示驱动程序模型 (WDDM) 1.2 和更高版本显示微型端口驱动程序必须支持此行为。
@@ -31,7 +31,7 @@ ms.locfileid: "56547734"
 <td align="left">1.2</td>
 </tr>
 <tr class="even">
-<td align="left">最低 Windows 版本</td>
+<td align="left">最大 Windows 版本</td>
 <td align="left">8</td>
 </tr>
 <tr class="odd">

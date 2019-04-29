@@ -5,18 +5,18 @@ ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e762c59c2d2dd2c5ad79108c028be473d3167e0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356375"
 ---
 # <a name="oidprocessing-rule-set-ndis"></a>OidProcessing 规则集 (NDIS)
 
 
 使用这些规则来验证您的驱动程序正确处理 OID 请求。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

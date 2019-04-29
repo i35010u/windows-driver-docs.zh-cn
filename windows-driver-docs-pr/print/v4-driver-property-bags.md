@@ -5,11 +5,11 @@ ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b6c12ec567d99dc8d96b1fc2dbae21352e0f41d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358566"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 

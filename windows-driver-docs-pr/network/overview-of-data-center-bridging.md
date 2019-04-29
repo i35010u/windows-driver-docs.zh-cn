@@ -5,11 +5,11 @@ ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2d945df6ce4df8239e7174ab70116953e2611b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380580"
 ---
 # <a name="overview-of-data-center-bridging"></a>数据中心桥接概述
 

@@ -5,11 +5,11 @@ description: 支持的传感器驱动程序，以更新传感器设备的方法�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d20b4d4e9dfe740e9a22c22c80a1d3921568435
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362285"
 ---
 # <a name="device-update-methods"></a>设备更新方法
 

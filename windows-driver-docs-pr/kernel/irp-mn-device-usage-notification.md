@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_DEVICE_USAGE_NOTIFICATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ce83261421bbddb47b3653a6ddff1e0707256c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368393"
 ---
 # <a name="irpmndeviceusagenotification"></a>IRP\_MN\_DEVICE\_USAGE\_NOTIFICATION
 

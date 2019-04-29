@@ -1,17 +1,17 @@
 ---
-title: 使用 Pep ACPI 服务
+title: 对 ACPI 服务使用 PEP
 description: 本主题提供有关使用 ACPI 服务平台扩展插件 (Pep) 的信息。
 ms.assetid: 80ED3B80-A1FF-4A41-BA88-EC1C832C4639
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: dabdecc43254606cebbf6f8cdec6da962c0fb164
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354212"
 ---
-# <a name="using-peps-for-acpi-services"></a>使用 Pep ACPI 服务
+# <a name="using-peps-for-acpi-services"></a>对 ACPI 服务使用 PEP
 
 
 本主题提供有关使用 ACPI 服务平台扩展插件 (Pep) 的信息。

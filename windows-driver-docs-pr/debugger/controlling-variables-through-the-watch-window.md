@@ -1,6 +1,6 @@
 ---
-title: 通过监视窗口的控制变量
-description: 通过监视窗口的控制变量
+title: 通过监视窗口控制变量
+description: 通过监视窗口控制变量
 ms.assetid: bd857442-fbd7-4c00-9743-6077d38ee38e
 keywords:
 - 监视窗口中，全局变量
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fd952b95525585095a9008dcdfef5c5ca7c6a92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375041"
 ---
-# <a name="controlling-variables-through-the-watch-window"></a>通过监视窗口的控制变量
+# <a name="controlling-variables-through-the-watch-window"></a>通过监视窗口控制变量
 
 
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>

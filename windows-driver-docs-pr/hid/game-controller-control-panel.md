@@ -9,11 +9,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1beb73c41d4b2f2e6cfc116a0b92077a39febb63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378795"
 ---
 # <a name="game-controller-control-panel"></a>游戏控制器控制面板
 
@@ -23,7 +23,7 @@ ms.locfileid: "56563636"
 
 DirectInput 控件面板的基本体系结构包含的 DirectInput 游戏控制器控件面板中，支持的抽象层库**IDIGameCntrlPropSheet** COM 接口，并为每个 COM 对象游戏控制器属性表。
 
-**请注意**   "对象"一词描述 CreateInstance 来支持 COM 接口的方法，即使这些方法不通过一种编程语言面向对象的 c + + 等调用创建的实体。 "表"一词描述向其中插入页的对话框。 单词"page"描述"属性表"对话框的内容对话框。
+**请注意**   "对象"一词描述 CreateInstance 来支持 COM 接口的方法，即使调用这些方法不被面向对象的编程语言通过如创建的实体C++。 "表"一词描述向其中插入页的对话框。 单词"page"描述"属性表"对话框的内容对话框。
 
  
 

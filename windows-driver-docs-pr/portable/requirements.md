@@ -1,14 +1,14 @@
 ---
-Description: Requirements
+Description: 要求
 title: 要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65cfd58a71c6da5af4bfed01d51d8a48bc9b1835
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376223"
 ---
 # <a name="requirements"></a>要求
 
@@ -40,7 +40,7 @@ ms.locfileid: "56544709"
 
 这些文件的*BridgeDeviceService.h*并*DeviceService.h*所需的所有服务应用程序。 其他应用程序必须包含一个或多个这些其他文件，以支持特定的设备。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**WPD 驱动程序**](wpd-drivers.md)

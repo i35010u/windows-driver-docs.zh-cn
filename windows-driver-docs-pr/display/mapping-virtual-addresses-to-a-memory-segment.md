@@ -1,6 +1,6 @@
 ---
-title: 虚拟地址映射到一个内存段
-description: 虚拟地址映射到一个内存段
+title: 将虚拟地址映射到内存段
+description: 将虚拟地址映射到内存段
 ms.assetid: 3ff64e33-eceb-4603-a3d9-11cb2f7dac85
 keywords:
 - 映射虚拟地址的内存段 WDK 显示
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 053df494f4be2bcc4d1c1a0e4015a074d7697cfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379089"
 ---
-# <a name="mapping-virtual-addresses-to-a-memory-segment"></a>虚拟地址映射到一个内存段
+# <a name="mapping-virtual-addresses-to-a-memory-segment"></a>将虚拟地址映射到内存段
 
 
 ## <span id="ddk_mapping_virtual_addresses_to_a_memory_segment_gg"></span><span id="DDK_MAPPING_VIRTUAL_ADDRESSES_TO_A_MEMORY_SEGMENT_GG"></span>

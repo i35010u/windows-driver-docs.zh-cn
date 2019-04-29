@@ -5,11 +5,11 @@ ms.assetid: e3873a58-34fc-4ca0-8c45-197401cbf08b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e87c6169d447e5d49e316d589045d5d96ad7e02d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380730"
 ---
 # <a name="interface-descriptor-for-communication-class-interface"></a>通信类接口的接口描述符
 
@@ -29,8 +29,8 @@ ms.locfileid: "56542012"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

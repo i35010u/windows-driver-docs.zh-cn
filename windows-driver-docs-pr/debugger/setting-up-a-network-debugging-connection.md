@@ -1,5 +1,5 @@
 ---
-title: KDNET 网络内核调试手动设置
+title: 手动设置 KDNET 网络内核调试
 description: 调试工具的 Windows 支持通过网络内核调试。
 ms.assetid: B4A79B2E-D4B1-42CA-9121-DEC923C76927
 keywords:
@@ -10,13 +10,13 @@ keywords:
 ms.date: 12/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 79081114edf4e475df2fcf353851bfa12642a005
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381929"
 ---
-# <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>KDNET 网络内核调试手动设置
+# <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>手动设置 KDNET 网络内核调试
 
 调试工具的 Windows 支持通过网络内核调试。 本主题介绍如何设置网络手动调试。
 
@@ -111,7 +111,7 @@ ms.locfileid: "56521055"
 
 确认网络集线器或交换机使用相应的网络电缆的主机计算机的网络适配器。
 
-在主计算机上打开 WinDbg。 上**文件**菜单中，选择**内核调试**。 在内核调试对话框中，打开**Net**选项卡。输入端口号和密钥。 单击“确定” 。
+在主计算机上打开 WinDbg。 上**文件**菜单中，选择**内核调试**。 在内核调试对话框中，打开**Net**选项卡。输入端口号和密钥。 单击 **“确定”**。
 
 您还可以启动会话使用 WinDbg 通过打开命令提示符窗口并输入以下命令，其中*n*是端口号和*MyKey*是由自动生成的密钥**bcdedit**目标计算机的设置时：
 

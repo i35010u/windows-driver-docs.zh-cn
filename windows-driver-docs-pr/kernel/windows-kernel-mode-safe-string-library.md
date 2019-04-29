@@ -5,11 +5,11 @@ ms.assetid: a54cd20c-2c2d-462d-b9fc-112e99562e52
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 65f17fabfd5ec34940e77be5a4c66e57559c8b78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357419"
 ---
 # <a name="windows-kernel-mode-safe-string-library"></a>Windows 内核模式安全字符串库
 

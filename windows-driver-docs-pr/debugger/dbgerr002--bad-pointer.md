@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97c0a79de5df862985213bb4c378fd011f8e917f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373452"
 ---
-# <a name="dbgerr002-bad-pointer"></a>dbgerr002:无效的指针
+# <a name="dbgerr002-bad-pointer"></a>dbgerr002:错误的指针
 
 
 ## <span id="ddk_dbgerr002_dbg"></span><span id="DDK_DBGERR002_DBG"></span>

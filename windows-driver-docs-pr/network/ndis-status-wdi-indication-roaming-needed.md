@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a70f2320aa2bb62f0db75d3b35eca9060925fc4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361033"
 ---
 # <a name="ndisstatuswdiindicationroamingneeded"></a>NDIS\_状态\_WDI\_指示\_漫游\_需执行
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_解除关联以指示应尝试找到更好的对等方连接到主机。 链接质量与当前连接的对等方低于特定阈值时，使用此通知。 在发送此通知，主机可能会触发漫游扫描和/或漫游操作。 开始漫游操作之前，Microsoft 组件不执行断开连接。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -51,13 +51,13 @@ ms.locfileid: "56524789"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_TASK\_ROAM](oid-wdi-task-roam.md)

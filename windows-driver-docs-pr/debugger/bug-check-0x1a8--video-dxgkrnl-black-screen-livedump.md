@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f78142a9898ce49d6cb29b7d109c92aadfcc606
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362675"
 ---
 # <a name="bug-check-0x1a8-videodxgkrnlblackscreenlivedump"></a>Bug 检查 0x1A8：视频\_DXGKRNL\_黑色\_屏幕\_LIVEDUMP
 

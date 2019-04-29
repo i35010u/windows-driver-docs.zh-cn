@@ -1,6 +1,6 @@
 ---
-title: 结构字段的图片
-description: 结构字段的图片
+title: 场结构化图片
+description: 场结构化图片
 ms.assetid: fa058a30-74a2-4e8b-aa65-98ac5aa43e57
 keywords:
 - MPEG 2 WDK DirectX VA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c29a347277b369e1bcb0e60df0e216be6c72e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360711"
 ---
-# <a name="field-structured-pictures"></a>结构字段的图片
+# <a name="field-structured-pictures"></a>场结构化图片
 
 
 ## <span id="ddk_field_structured_pictures_gg"></span><span id="DDK_FIELD_STRUCTURED_PICTURES_GG"></span>

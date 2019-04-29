@@ -1,5 +1,5 @@
 ---
-title: lsp （设置源行数）
+title: lsp（设置源行数目）
 description: Lsp 命令控制单步执行或执行代码或使用 ls 和 lsa 命令时显示源行数。
 ms.assetid: 350933f1-5459-4ba2-9ca7-a42341cf95de
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3350405a16da2b9fb75e8f41f73ae1c48e902897
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383312"
 ---
-# <a name="lsp-set-number-of-source-lines"></a>lsp （设置源行数）
+# <a name="lsp-set-number-of-source-lines"></a>lsp（设置源行数目）
 
 
 **Lsp**命令控制单步执行时显示或执行代码或使用的源行数[ **ls 和 lsa 命令**](ls--lsa--list-source-lines-.md)。

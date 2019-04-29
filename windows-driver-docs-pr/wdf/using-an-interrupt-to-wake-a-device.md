@@ -1,17 +1,17 @@
 ---
-title: 使用中断以唤醒设备
+title: 使用中断来唤醒设备
 description: 当设备转换到低功耗状态时，framework 断开连接 （或报告为非活动状态） 用于 I/O 的中断处理。
 ms.assetid: 6A4E62BD-B10F-4F01-B4B4-1FF5086710D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c618dea1cdc8b54bd11579df398b9b19aa1a6895
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363477"
 ---
-# <a name="using-an-interrupt-to-wake-a-device"></a>使用中断以唤醒设备
+# <a name="using-an-interrupt-to-wake-a-device"></a>使用中断来唤醒设备
 
 
 当设备转换到低功耗状态时，framework 断开连接 （或报告为非活动状态） 用于 I/O 的中断处理。 从开始 KMDF 1.13 并且 UMDF Windows 8.1 上运行的 2.0，WDF 驱动程序可以创建一个框架中断对象的保持活动状态时设备转换为低功耗状态，并使用以唤醒设备并将其还原到其完全处于 D0 状态。

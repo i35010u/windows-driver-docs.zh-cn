@@ -1,19 +1,19 @@
 ---
-title: 使用日志记录跟踪重要的事件
-description: 使用日志记录跟踪重要的事件
+title: 使用日志记录跟踪重要事件
+description: 使用日志记录跟踪重要事件
 ms.assetid: 297336c2-85fb-4235-a7ab-0bbf571b8b98
 keywords:
 - 流式处理调试的内核，视频流停滞，日志记录
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc8b7ee79e43c7e50043218a41f278cc51753eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376363"
 ---
-# <a name="using-logging-to-track-important-events"></a>使用日志记录跟踪重要的事件
+# <a name="using-logging-to-track-important-events"></a>使用日志记录跟踪重要事件
 
 
 一般情况下，仅通过触发事件、 微型驱动程序的处理和缓冲区完成下游移动数据。 若要找出了挂起的原因或停滞的程序：
