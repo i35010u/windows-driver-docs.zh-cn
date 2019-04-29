@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_REQUEST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: dce1228aa7cbbdb554536ed635b8eb69f09f15b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353228"
 ---
 # <a name="oidswitchnicrequest"></a>OID\_交换机\_NIC\_请求
 
@@ -115,17 +115,17 @@ ms.locfileid: "56541283"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

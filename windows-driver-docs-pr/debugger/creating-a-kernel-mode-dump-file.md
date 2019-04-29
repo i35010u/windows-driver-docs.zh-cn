@@ -1,6 +1,6 @@
 ---
-title: 正在创建内核模式转储文件
-description: 正在创建内核模式转储文件
+title: 创建内核模式转储文件
+description: 创建内核模式转储文件
 ms.assetid: d3eb86b2-eba7-4ddb-90e9-0e26414436fb
 keywords:
 - 转储文件，创建内核模式转储文件
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9198aa1b0d552078bc9058d402d5911073a9aa3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374455"
 ---
-# <a name="creating-a-kernel-mode-dump-file"></a>正在创建内核模式转储文件
+# <a name="creating-a-kernel-mode-dump-file"></a>创建内核模式转储文件
 
 
 ## <span id="ddk_creating_a_kernel_mode_dump_file_dbg"></span><span id="DDK_CREATING_A_KERNEL_MODE_DUMP_FILE_DBG"></span>

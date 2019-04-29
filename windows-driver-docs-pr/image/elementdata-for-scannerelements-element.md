@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df93a1b4bbc408cff1de244b816cdc714a45eae9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364463"
 ---
 # <a name="elementdata-for-scannerelements-element"></a>ElementData ScannerElements 元素
 
@@ -35,7 +35,7 @@ ms.locfileid: "56554078"
 </wscn:ElementData Name="" Valid="">
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 <table>
@@ -47,7 +47,7 @@ ms.locfileid: "56554078"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -127,7 +127,7 @@ QName 值**名称**属性必须为架构关键字，表示为其客户端请求�
 
 **有效**属性指示客户端提供的架构关键字是否有效。 WSD 扫描服务将此属性设置为 **，则返回 true**如果它可以将请求的架构关键字映射到有效部分的架构; 否则，它必须将此属性设置**false**。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DefaultScanTicket**](defaultscanticket.md)

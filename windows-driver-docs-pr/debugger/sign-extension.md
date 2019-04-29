@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bda170b255d20262e20db0cfc2be783f5ce4449
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368240"
 ---
 # <a name="sign-extension"></a>符号扩展
 
@@ -24,7 +24,7 @@ ms.locfileid: "56525481"
 
 负 32 位有符号的整数时，其最高的位是等于 1。 当此 32 位有符号的整数转换为 64 位数字时，可以将高的位设置为零 （保留的无符号的整数和数字的十六进制值） 或可以将高的位设置为一个 （保留数的有符号的值）。 后一种情况称为*签名扩展*。
 
-调试器遵循用于在 MASM 表达式中，在 c + + 表达式中，并显示数字的符号扩展不同规则。
+调试器在时所遵循的 MASM 表达式中的符号扩展不同规则C++表达式，并显示数字时。
 
 ### <a name="span-idsignextensioninmasmexpressionsspanspan-idsignextensioninmasmexpressionsspansign-extension-in-masm-expressions"></a><span id="sign_extension_in_masm_expressions"></span><span id="SIGN_EXTENSION_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的符号扩展
 
@@ -38,20 +38,20 @@ ms.locfileid: "56525481"
 
 -   32 位寄存器是在这两种模式中扩展的信号。
 
--   伪寄存器始终存储为 64 位值。 它们不是符号扩展时将计算它们。 伪寄存器，何时*分配*根据标准 c + + 标准计算一个值，使用的表达式。
+-   伪寄存器始终存储为 64 位值。 它们不是符号扩展时将计算它们。 伪寄存器，何时*分配*根据标准计算一个值，使用的表达式C++条件。
 
 -   单个数字和寄存器在表达式中的可以是登录扩展，但没有其他计算表达式计算期间登录扩展。 因此，可以屏蔽高位的数字或通过使用以下语法注册。
     ```console
     ( 0x0`FFFFFFFF & expression )
     ```
 
-### <a name="span-idsignextensionincexpressionsspanspan-idsignextensionincexpressionsspansign-extension-in-c-expressions"></a><span id="sign_extension_in_c___expressions"></span><span id="SIGN_EXTENSION_IN_C___EXPRESSIONS"></span>在 c + + 表达式中的符号扩展
+### <a name="span-idsignextensionincexpressionsspanspan-idsignextensionincexpressionsspansign-extension-in-c-expressions"></a><span id="sign_extension_in_c___expressions"></span><span id="SIGN_EXTENSION_IN_C___EXPRESSIONS"></span>登录扩展C++表达式
 
-当调试器 c + + 表达式的计算结果时，以下规则适用：
+当调试器将计算C++表达式，则适用以下规则：
 
 -   寄存器和伪寄存器永远不会是扩展的登录。
 
--   C + + 想将其类型的值时一样，将被视为所有其他值。
+-   所有其他值被视为完全相同C++会将其类型的值。
 
 ### <a name="span-iddisplayingsignextendedand64bitnumbersspanspan-iddisplayingsignextendedand64bitnumbersspandisplaying-sign-extended-and-64-bit-numbers"></a><span id="displaying_sign_extended_and_64_bit_numbers"></span><span id="DISPLAYING_SIGN_EXTENDED_AND_64_BIT_NUMBERS"></span>显示符号扩展和 64 位数字
 

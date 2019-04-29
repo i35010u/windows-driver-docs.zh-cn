@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: f3f7b50a8401cd5f49e8cf80f9a99a6d43f5e4d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368679"
 ---
 # <a name="debugasmoptxxx"></a>DEBUG\_ASMOPT\_XXX
 
@@ -73,7 +73,7 @@ ms.locfileid: "56554944"
 </table>
 
 
-**备注**
+**注释**
 
 此外，值 DEBUG_ASMOPT_DEFAULT 表示程序集和反汇编选项的默认的集。 这意味着在上表中的所有选项都关闭。 
 
@@ -89,7 +89,7 @@ ms.locfileid: "56554944"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">DbgEng.h （包括 DbgEng.h）</td>
 </tr>
 </tbody>

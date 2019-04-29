@@ -5,11 +5,11 @@ ms.assetid: 4cec9132-5a28-492d-bbb1-39e388413ad0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d14fe31c3d4d79cd6b8b8f4fab68df2e7a44b7e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361121"
 ---
 # <a name="retrieving-a-device-instance-property-value"></a>检索设备实例属性值
 

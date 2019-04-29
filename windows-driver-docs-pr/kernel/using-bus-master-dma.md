@@ -1,6 +1,6 @@
 ---
-title: 使用总线 Master DMA
-description: 使用总线 Master DMA
+title: 使用总线主控 DMA
+description: 使用总线主控 DMA
 ms.assetid: 08357a55-aec2-4454-923f-6daaf1583a25
 keywords:
 - AdapterControl 例程，总线 master DMA
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f83451eeae3184bd7ef0438443ff3a92c95f8a1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361080"
 ---
-# <a name="using-bus-master-dma"></a>使用总线 Master DMA
+# <a name="using-bus-master-dma"></a>使用总线主控 DMA
 
 
 

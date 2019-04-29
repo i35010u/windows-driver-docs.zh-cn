@@ -1,17 +1,17 @@
 ---
-title: 通过总线驱动程序设备通信
-description: 通过总线驱动程序设备通信
+title: 通过总线驱动程序进行的设备通信
+description: 通过总线驱动程序进行的设备通信
 ms.assetid: 093e95db-dc3e-467b-9163-e61d793c042e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0670f10de09ebd9d6c9fc13ab0b07163b61cba48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364576"
 ---
-# <a name="device-communication-through-the-bus-driver"></a>通过总线驱动程序设备通信
+# <a name="device-communication-through-the-bus-driver"></a>通过总线驱动程序进行的设备通信
 
 
 

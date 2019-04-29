@@ -5,11 +5,11 @@ ms.assetid: 2003ff3e-bc29-4741-a0a6-371948982679
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fef839a284e51312cc828c5653d3a5bfdb950a46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360095"
 ---
 # <a name="pwrtest-sleep-scenario"></a>PwrTest 睡眠方案
 

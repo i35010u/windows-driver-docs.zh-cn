@@ -1,17 +1,17 @@
 ---
-title: OID 请求转发给物理网络适配器
-description: OID 请求转发给物理网络适配器
+title: 将 OID 请求转发到物理网络适配器
+description: 将 OID 请求转发到物理网络适配器
 ms.assetid: 2A6AA842-FFC2-4CEF-BA56-2FDB277E37C9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b00e1b6ad41a5a10185ad0879468d4284164399
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356928"
 ---
-# <a name="forwarding-oid-requests-to-physical-network-adapters"></a>OID 请求转发给物理网络适配器
+# <a name="forwarding-oid-requests-to-physical-network-adapters"></a>将 OID 请求转发到物理网络适配器
 
 
 本主题讨论如何 HYPER-V 可扩展交换机扩展将转发的基础上的 HYPER-V 可扩展交换机控制路径的物理适配器的对象标识符 (OID) 请求。 扩展还可以按照本主题中所述的方法源自对基础物理网络适配器的 OID 请求。

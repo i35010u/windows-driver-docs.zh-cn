@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2969e6314ebd2fb24b0ce09104070069811476cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363315"
 ---
 # <a name="oidcoaddaddress"></a>OID_CO_ADD_ADDRESS
 
@@ -39,6 +39,6 @@ typedef struct _CO_ADDRESS{
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
+| Version | Windows Vista 及更高版本 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 

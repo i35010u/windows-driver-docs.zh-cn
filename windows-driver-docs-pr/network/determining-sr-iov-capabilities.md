@@ -1,17 +1,17 @@
 ---
-title: 确定的 SR-IOV 功能
-description: 确定的 SR-IOV 功能
+title: 确定 SR-IOV 功能
+description: 确定 SR-IOV 功能
 ms.assetid: 61895987-2469-471E-BB29-FF1CDD2869DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cc33088464d31588e6cde641f6758e7441413610
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364200"
 ---
-# <a name="determining-sr-iov-capabilities"></a>确定的 SR-IOV 功能
+# <a name="determining-sr-iov-capabilities"></a>确定 SR-IOV 功能
 
 
 本主题介绍如何 NDIS 和过量驱动程序确定网络适配器的单根 I/O 虚拟化 (SR-IOV) 功能。 本主题包含下列信息：

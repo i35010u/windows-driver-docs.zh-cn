@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_OPERATING_CHANNEL_ATTRIBUTES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: bc85dc2b7ad550306b13d1d656d5e08300b8fe03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360201"
 ---
 # <a name="ndisstatuswdiindicationp2poperatingchannelattributes"></a>NDIS\_状态\_WDI\_指示\_P2P\_OPERATING\_通道\_属性
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_P2P\_OPERATING\_通道\_属性，指示首选操作通道启动 GO首选如果要求输入侦听状态和受支持的通道在任何时间点的完整集侦听通道。 指示适配器初始化时，发送一次，然后每次发送一个事件由于这些参数更改如漫游或连接或断开与访问点的连接。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

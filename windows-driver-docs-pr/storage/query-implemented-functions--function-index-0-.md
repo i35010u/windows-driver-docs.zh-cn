@@ -5,11 +5,11 @@ ms.assetid: AFF735D7-BB3F-4532-8BF4-F616C081921C
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2fa2cd7b3d30d556153f98e27e31e4f82d950314
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366370"
 ---
 # <a name="query-implemented-functions-function-index-0"></a>查询实现的功能（功能索引 0）
 

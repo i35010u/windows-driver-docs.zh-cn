@@ -1,6 +1,6 @@
 ---
-title: 正在删除上下文
-description: 正在删除上下文
+title: 删除上下文
+description: 删除上下文
 ms.assetid: 43a30a75-4344-4fc5-ad57-28b48c2e54a8
 keywords:
 - 上下文 WDK 文件系统微筛选器，删除
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0947b9c8704fc00c54d3c892d5f73e1840e3c5fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359323"
 ---
-# <a name="deleting-contexts"></a>正在删除上下文
+# <a name="deleting-contexts"></a>删除上下文
 
 
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>

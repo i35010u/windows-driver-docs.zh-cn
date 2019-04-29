@@ -1,17 +1,17 @@
 ---
-title: 消费品
-description: 消费品
+title: Consumables
+description: Consumables
 ms.assetid: e017a8e9-5460-4ba5-aa64-5dffd4f09bc9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c8e5b53ad3a5b8ce9c89cb3154a505e5068b16e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358865"
 ---
-# <a name="consumables"></a>消费品
+# <a name="consumables"></a>Consumables
 
 
 架构路径：\\Printer.Consumables

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a6c9beb6395f17a2cd5c225231a0c22357bf846
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365460"
 ---
 # <a name="installing-checked-binaries"></a>安装已检查的二进制文件
 

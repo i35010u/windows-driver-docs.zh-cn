@@ -5,11 +5,11 @@ ms.assetid: b43d7ef5-0464-4e07-a5ec-9d7d8a55479e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05980287e270604da7d57d9eab5e8cdbbf8a1a7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341653"
 ---
 # <a name="using-sdvsaveadaptercontext-to-track-adapter-context-fields"></a>使用\_ \_sdv\_保存\_适配器\_跟踪适配器上下文字段的上下文
 

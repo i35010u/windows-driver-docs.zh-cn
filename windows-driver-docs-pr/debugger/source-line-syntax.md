@@ -1,6 +1,6 @@
 ---
-title: 源行语法
-description: 源行语法
+title: 源文件行语法
+description: 源文件行语法
 ms.assetid: a4622a89-6419-4547-9650-eb10c3803462
 keywords:
 - 表达式中，源行号
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f2595e618906116bbe89a05e91082d3051912a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368098"
 ---
-# <a name="source-line-syntax"></a>源行语法
+# <a name="source-line-syntax"></a>源文件行语法
 
 
 ## <span id="ddk_source_line_syntax_dbg"></span><span id="DDK_SOURCE_LINE_SYNTAX_DBG"></span>
@@ -26,7 +26,7 @@ ms.locfileid: "56527080"
 
 您可以指定为 MASM 表达式的全部或部分的源文件行号。 这些数字的计算结果为与此源行相对应的可执行代码的偏移量。
 
-**请注意**  不能作为 c + + 表达式的一部分使用源行号。 有关使用 MASM 和 c + + 表达式语法的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
+**请注意**  不能作为的一部分使用源行号C++表达式。 有关详细信息，有关何时 MASM 和C++使用表达式语法，请参阅[评估表达式](evaluating-expressions.md)。
 
  
 

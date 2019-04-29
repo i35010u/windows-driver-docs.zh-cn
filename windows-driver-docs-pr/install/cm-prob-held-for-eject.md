@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be2b0c9d11d69a885f4ca447ee78f4235702461a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360317"
 ---
 # <a name="cmprobheldforeject"></a>CM_PROB_HELD_FOR_EJECT
 

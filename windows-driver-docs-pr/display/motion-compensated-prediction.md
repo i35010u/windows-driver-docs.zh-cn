@@ -1,6 +1,6 @@
 ---
-title: 经过运动补偿预测
-description: 经过运动补偿预测
+title: 运动补偿预测
+description: 运动补偿预测
 ms.assetid: 02706369-2d99-4ac9-8dad-9e431acff42f
 keywords:
 - MCP WDK DirectX VA
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e21f0a8336ceab731cbc881f5866487a58c0251
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354260"
 ---
-# <a name="motion-compensated-prediction"></a>经过运动补偿预测
+# <a name="motion-compensated-prediction"></a>运动补偿预测
 
 
 ## <span id="ddk_motion_compensated_prediction_gg"></span><span id="DDK_MOTION_COMPENSATED_PREDICTION_GG"></span>

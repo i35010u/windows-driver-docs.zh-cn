@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1771074892d19dbfb3fecbb0c51622b9c52b8d41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364542"
 ---
 # <a name="documentfinalparameters-element"></a>DocumentFinalParameters 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56534191"
 </wscn:DocumentFinalParameters>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -120,7 +120,7 @@ ms.locfileid: "56534191"
 
 下列元素可以具有**重写**并**UsedDefault**属性：[**亮度**](brightness.md)， [ **ColorProcessing**](colorprocessing.md)， [ **CompressionQualityFactor**](compressionqualityfactor.md)， [**ContentType**](contenttype.md)， [**对比度**](contrast.md)， [ **FilmScanMode**](filmscanmode.md)，[**格式**](format.md)， [**高度**](height.md)， [ **ImagesToTransfer** ](imagestotransfer.md)， [ **InputSource**](inputsource.md)， [**旋转**](rotation.md)， [ **ScalingHeight**](scalingheight.md)， [ **ScalingWidth**](scalingwidth.md)， [ **ScanRegionHeight**](scanregionheight.md)， [ **ScanRegionWidth**](scanregionwidth.md)， [ **ScanRegionXOffset**](scanregionxoffset.md)， [ **ScanRegionYOffset** ](scanregionyoffset.md)， [**清晰度**](sharpness.md)，和[**宽度**](width.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**亮度**](brightness.md)

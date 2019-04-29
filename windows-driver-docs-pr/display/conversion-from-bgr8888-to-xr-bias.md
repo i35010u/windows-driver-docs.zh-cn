@@ -1,6 +1,6 @@
 ---
-title: 从 BGR8888 到 XR_BIAS 转换
-description: 从 BGR8888 到 XR_BIAS 转换
+title: 从 BGR8888 转换为 XR_BIAS
+description: 从 BGR8888 转换为 XR_BIAS
 ms.assetid: 53145cfe-d344-4242-b124-ddb507d876ad
 keywords:
 - Direct3D 版本 10.1 WDK Windows 7 显示，将 BGR8888 转换为 XR_BIAS
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9acd50bbd2bc5e56628e27d3f529f039fff17e73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368631"
 ---
 # <a name="conversion-from-bgr8888-to-xrbias"></a>从 BGR8888 转换为 XR\_偏差
 

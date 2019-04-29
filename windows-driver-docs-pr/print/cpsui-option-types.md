@@ -5,11 +5,11 @@ ms.assetid: 3b3c002c-a201-4f81-b208-30864343409b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d877029ea5a51d6e8f65ca1107358ff2b2a24051
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365567"
 ---
 # <a name="cpsui-option-types"></a>CPSUI 选项类型
 

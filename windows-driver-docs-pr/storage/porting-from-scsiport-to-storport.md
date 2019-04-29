@@ -5,11 +5,11 @@ ms.assetid: 2a14051d-dc23-4420-a3e5-0827b16b1e42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4868d662d747d964e662280dff9be86aaea6e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366385"
 ---
 # <a name="porting-from-scsiport-to-storport"></a>从 ScsiPort 移植到 StorPort
 

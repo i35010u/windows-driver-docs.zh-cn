@@ -5,11 +5,11 @@ ms.assetid: 3d9f874c-f026-40fc-a97d-0d4cefa3d1f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e37a799d52336fd96d4b5fe342e6b7d3cc7dcd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360913"
 ---
 # <a name="filter-callback-routines"></a>筛选器回调例程
 

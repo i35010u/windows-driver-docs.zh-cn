@@ -1,6 +1,6 @@
 ---
-title: 与 Win 32 应用程序的打印票证兼容性
-description: 与 Win 32 应用程序的打印票证兼容性
+title: 打印票证与 Win 32 应用程序的兼容性
+description: 打印票证与 Win 32 应用程序的兼容性
 ms.assetid: 3e358f8a-e950-4da0-b8ef-4e350ea28091
 keywords:
 - Win32 应用程序 WDK 打印
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af24bec9343a18fc82e34a07581453aa5a833dfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362713"
 ---
-# <a name="print-ticket-compatibility-with-win-32-applications"></a>与 Win 32 应用程序的打印票证兼容性
+# <a name="print-ticket-compatibility-with-win-32-applications"></a>打印票证与 Win 32 应用程序的兼容性
 
 
 当您使用 Microsoft 基于 Win32 的应用程序和基于 GDI 的打印驱动程序中的打印票证时，必须考虑以下的兼容性方案：

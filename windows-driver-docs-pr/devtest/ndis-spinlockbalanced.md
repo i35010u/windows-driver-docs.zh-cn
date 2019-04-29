@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bd7289b5bd27f886c02cada8d79d7263f7627f70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354345"
 ---
 # <a name="spinlockbalanced-rule-ndis"></a>SpinLockBalanced 规则 (ndis)
 

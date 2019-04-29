@@ -1,18 +1,18 @@
 ---
-title: 适用于 UVC 设备 DShow 桥实现指南
+title: 适用于 UVC 设备的 DShow 桥实现指南
 description: 提供了适用于 UVC 设备 DShow 桥实现指南。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ccaa5be9ac2ff404335aaa5dc2f3a31caf75464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363612"
 ---
-# <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>适用于 UVC 设备 DShow 桥实现指南
+# <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>适用于 UVC 设备的 DShow 桥实现指南
 
-本主题提供了用于 DShow 桥配置的照相机和设备的符合 USB 视频类 (UVC) 规范实现指南。 该平台使用[Microsoft OS 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)从 USB 总线标准配置 DShow 桥。 扩展属性 OS 描述符是一种扩展的标准 USB 描述符和 USB 设备用于返回未启用通过标准规范的 Windows 特定的设备属性。
+本主题提供了用于 DShow 桥配置的照相机和设备的符合 USB 视频类 (UVC) 规范实现指南。 该平台使用[Microsoft OS 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)从 USB 总线标准配置 DShow 桥。 扩展属性 OS 描述符是 USB 标准描述符的扩展，USB 设备使用它来返回尚未通过标准规范启用的 Windows 特定设备属性。
 
 ## <a name="overview"></a>概述
 
@@ -68,7 +68,7 @@ OS 描述符允许设备可以定义的 USB 设备注册表属性或复合设备
 
 标头部分将介绍整个扩展的属性描述符，包括总长度和版本号。
 
-| 偏移量 | 字段      | 大小 （字节） | 值      | 描述                     |
+| 偏移量 | 字段      | 大小 （字节） | ReplTest1      | Description                     |
 |--------|------------|--------------|------------|---------------------------------|
 | 0      | dwLength   | 4            | 0x0000004c | 十进制 76                      |
 | 4      | bcdVersion | 2            | 0x0100     | 版本 1.0                     |
@@ -79,7 +79,7 @@ OS 描述符允许设备可以定义的 USB 设备注册表属性或复合设备
 
 USB HID 设备的扩展的属性的操作系统描述符都有一个自定义属性部分中创建**EnableDshowRedirection** DWORD 注册表项。
 
-| 偏移量 | 字段 | 大小 （字节） | 值 |
+| 偏移量 | 字段 | 大小 （字节） | ReplTest1 |
 |--------|----------------------|---------|-------------------------------------------|
 | 0      | dwSize               | 4       | 0x00000042 （此属性 66 字节为单位）   |
 | 4      | dwPropertyDataType   | 4       | 0x00000004 (REG\_DWORD\_LITTLE\_ENDIAN)   |
@@ -94,7 +94,7 @@ USB HID 设备的扩展的属性的操作系统描述符都有一个自定义属
 
 #### <a name="custom-property-section"></a>自定义属性部分
 
-| 偏移量 | 字段 | 大小 （字节） | 值 |
+| 偏移量 | 字段 | 大小 （字节） | ReplTest1 |
 |--------|----------------------|----------|-----------------------------------------|
 | 0      | wLength              | 2        | 此描述符的长度 （字节）      |
 | 4      | wDescriptorType      | 2        | 0x00000004 (REG\_DWORD\_LITTLE\_ENDIAN) |

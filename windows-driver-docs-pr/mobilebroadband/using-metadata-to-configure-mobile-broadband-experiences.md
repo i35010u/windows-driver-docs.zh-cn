@@ -1,17 +1,17 @@
 ---
-title: 使用元数据来配置移动宽带体验
-description: 使用元数据来配置移动宽带体验
+title: 使用元数据配置移动宽带体验
+description: 使用元数据配置移动宽带体验
 ms.assetid: d3ceab6e-550f-4852-8ee0-4a261c238434
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6926c33ac4f65c377a48c81eb560d32850ae3c95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359798"
 ---
-# <a name="using-metadata-to-configure-mobile-broadband-experiences"></a>使用元数据来配置移动宽带体验
+# <a name="using-metadata-to-configure-mobile-broadband-experiences"></a>使用元数据配置移动宽带体验
 
 > [!IMPORTANT] 
 > 从 Windows 10，版本 1703，开始 APN 数据库将替换为新格式称为 COSA。 Windows 8、 Windows 8.1 和 Windows 10 1703年将继续使用 APN 数据库存在时 Windows 10 之前的版本，版本 1703年及更高版本使用 COSA。 有关 COSA 详细信息，请参阅[COSA 概述](cosa-overview.md)。

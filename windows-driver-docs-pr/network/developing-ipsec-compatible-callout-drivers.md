@@ -1,6 +1,6 @@
 ---
-title: 开发 IPsec 兼容标注驱动程序
-description: 开发 IPsec 兼容标注驱动程序
+title: 开发 IPsec 兼容的标注驱动程序
+description: 开发 IPsec 兼容的标注驱动程序
 ms.assetid: 5e4fad4e-a790-4294-b3ac-a796f76265ad
 keywords:
 - IPsec WDK Windows 筛选平台，与 WFP 标注驱动程序的兼容性
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4df4238dce5f8e40169e09c891e33fdc42a4ea0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364206"
 ---
-# <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容标注驱动程序
+# <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容的标注驱动程序
 
 
 ### <a name="layers-that-are-compatible-with-ipsec"></a>IPsec 与兼容的层

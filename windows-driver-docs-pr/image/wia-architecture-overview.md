@@ -5,11 +5,11 @@ ms.assetid: 47f44042-f22b-4ee0-88c5-fc977bf13791
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 02162adc8a745ba70c147c0ab442699688f6d129
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356137"
 ---
 # <a name="wia-architecture-overview"></a>WIA 体系结构概述
 

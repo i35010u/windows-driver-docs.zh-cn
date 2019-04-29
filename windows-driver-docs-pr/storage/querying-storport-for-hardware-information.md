@@ -1,17 +1,17 @@
 ---
-title: 硬件信息的查询 Storport
-description: 硬件信息的查询 Storport
+title: 查询 Storport 以获取硬件信息
+description: 查询 Storport 以获取硬件信息
 ms.assetid: 1e807e42-d03f-44be-a0a4-8187e2d5667a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27a746adc7e6fd5983e963906fd6ffc5e8344e42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366363"
 ---
-# <a name="querying-storport-for-hardware-information"></a>硬件信息的查询 Storport
+# <a name="querying-storport-for-hardware-information"></a>查询 Storport 以获取硬件信息
 
 
 存储类驱动程序和其他更高级别的驱动程序可以查询设备的功能信息 Storport 和查询属性请求通过主机总线适配器 ([**IOCTL\_存储\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff560590))。 查询属性请求是旧系统中查询和功能请求的即插即用等效项 ([**IOCTL\_SCSI\_获取\_查询\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff560509)并[ **IOCTL\_SCSI\_获取\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff560502))。 对于存储设备，Storport 返回存储设备描述符 ([**存储\_设备\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff566971)) 包含 SCSI 查询数据或非 SCSI 等效项，以及承载的适配器 Storport 返回存储适配器说明符 ([**存储\_适配器\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff566346)) 包含的功能和限制的数据。

@@ -1,5 +1,5 @@
 ---
-title: k、 kb、 kc、 kd、 kp、 kP，kv （显示堆栈回溯）
+title: k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 description: K * 命令将显示给定线程，以及相关信息的堆栈帧。
 ms.assetid: 1061015f-cb0c-490b-b256-e0dedb659f22
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fad326f48550d25c1e91a806e787b9da703e811d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367231"
 ---
-# <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、 kb、 kc、 kd、 kp、 kP，kv （显示堆栈回溯）
+# <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 
 
 <strong>K*\\</strong>** 命令将显示给定线程，以及相关信息的堆栈帧...

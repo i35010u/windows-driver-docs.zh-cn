@@ -1,6 +1,6 @@
 ---
-title: 字体墨盒特性
-description: 字体墨盒特性
+title: 字体盒属性
+description: 字体盒属性
 ms.assetid: d1f99322-9c77-428a-beb5-6d0ff166c3e5
 keywords:
 - 打印机字体说明 WDK Unidrv，盒式磁带
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4072ce5fd3e5f6d5479f451ad6802efda50ebc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363241"
 ---
-# <a name="font-cartridge-attributes"></a>字体墨盒特性
+# <a name="font-cartridge-attributes"></a>字体盒属性
 
 
 

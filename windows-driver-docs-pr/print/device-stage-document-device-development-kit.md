@@ -5,11 +5,11 @@ ms.assetid: b66912d9-27f5-41e2-9e10-1e16aca14a8a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7212ad5e33fc2193396e179341eb9f0839b04b08
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366887"
 ---
 # <a name="device-stage-document-device-development-kit"></a>设备阶段文档设备开发工具包
 

@@ -5,11 +5,11 @@ ms.assetid: 53A5AAC2-A608-4153-9482-D8EF3D05EF04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c41a5ae6821997fef5d49809758b4105b929236
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358083"
 ---
 # <a name="wdk-tasks-for-msbuild"></a>MSBuild 的 WDK 任务
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e37240bf8b0339b69aad892f395b007fa0a3ef58
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361684"
 ---
 # <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6：快速\_ERESOURCE\_不满足前提条件\_冲突
 

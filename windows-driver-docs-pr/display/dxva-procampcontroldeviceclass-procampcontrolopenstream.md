@@ -16,11 +16,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 85b4ae38bae3b9b70ec2465d144a48f98cc23efc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370849"
 ---
 # <a name="dxvaprocampcontroldeviceclassprocampcontrolopenstream-method"></a>DXVA\_ProcAmpControlDeviceClass::ProcAmpControlOpenStream 方法
 
@@ -36,7 +36,7 @@ HRESULT ProcAmpControlOpenStream(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)结构，它定义的 ProcAmp 控件参数要处理的视频。

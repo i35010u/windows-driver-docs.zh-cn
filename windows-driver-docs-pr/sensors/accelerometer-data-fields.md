@@ -1,17 +1,17 @@
 ---
-title: 加速感应器数据字段
+title: 加速计数据字段
 description: 本主题提供有关特定于加速感应器数据字段的信息。
 ms.assetid: 88333B6A-E262-4937-9349-156B00BA8CC4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f2d8883d56e3180559e52271b75b787bfda33360
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360933"
 ---
-# <a name="accelerometer-data-fields"></a>加速感应器数据字段
+# <a name="accelerometer-data-fields"></a>加速计数据字段
 
 
 本主题提供有关特定于加速感应器数据字段的信息。

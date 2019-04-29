@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3648eda3b91911adb525c74ae0bb720866bd00b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371152"
 ---
 # <a name="isochronous-talk-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量交谈选项
 

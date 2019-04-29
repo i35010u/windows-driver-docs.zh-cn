@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c81d8a2f2c936af10d8bb7c5725525a1b707a204
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373925"
 ---
 # <a name="dc-origin"></a>DC 原点
 

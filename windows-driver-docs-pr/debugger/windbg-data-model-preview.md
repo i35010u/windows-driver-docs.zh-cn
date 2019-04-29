@@ -4,11 +4,11 @@ description: 本部分介绍如何使用 WinDbg 预览调试器中数据模型�
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e35ba5ffb7fa8bd170b1401e3e6b4a80987174
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353089"
 ---
 # <a name="windbg-preview---data-model"></a>WinDbg 预览版-数据模型 
 
@@ -67,7 +67,7 @@ Debugger.Sessions.First().Devices.DeviceTree.Flatten(n => n.Children).GroupBy(n 
 
 ---
  
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
 

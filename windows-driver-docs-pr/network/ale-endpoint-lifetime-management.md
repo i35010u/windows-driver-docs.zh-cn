@@ -5,11 +5,11 @@ ms.assetid: cbf54062-4ced-4cf6-babf-e9e4e1ddf302
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 976ac66dc1e0bc436cfc464d5ad940d54b9afc79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367744"
 ---
 # <a name="ale-endpoint-lifetime-management"></a>ALE 终结点生存期管理
 

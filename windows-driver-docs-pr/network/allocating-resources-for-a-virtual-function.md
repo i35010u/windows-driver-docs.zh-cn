@@ -1,17 +1,17 @@
 ---
-title: 为虚拟函数分配的资源
-description: 为虚拟函数分配的资源
+title: 为虚拟功能分配资源
+description: 为虚拟功能分配资源
 ms.assetid: 00191D2C-E093-4DB7-AC82-8E8E5A74656F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d53fae6f93dccd62de66edfe2be9a7e4f857266
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367721"
 ---
-# <a name="allocating-resources-for-a-virtual-function"></a>为虚拟函数分配的资源
+# <a name="allocating-resources-for-a-virtual-function"></a>为虚拟功能分配资源
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须能够支持以下硬件组件：

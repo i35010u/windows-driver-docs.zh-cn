@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c2ec62ee88c9ae1bfe68388bf9e15016f6fc16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367220"
 ---
 # <a name="kd-command-line-options"></a>KD 命令行选项
 
@@ -87,7 +87,7 @@ kd -?
 在重新启动后，调试器将中断到目标计算机加载了内核模块。 (此中断是早于从中断 **-b**选项。)请参阅[崩溃和重新启动目标计算机](crashing-and-rebooting-the-target-computer.md)为详细信息和更改此状态的其他方法。
 
 <span id="_______-ee__masm_c___"></span><span id="_______-EE__MASM_C___"></span> **-ee** {**masm**|**c++**}  
-设置默认表达式计算器。 如果**masm**指定，则将使用 MASM 表达式语法。 如果**c + +** 指定，则将使用 c + + 表达式语法。 如果 **-ee**省略选项，MASM 表达式语法将用作默认值。 请参阅[评估表达式](evaluating-expressions.md)有关详细信息。
+设置默认表达式计算器。 如果**masm**指定，则将使用 MASM 表达式语法。 如果**c + +** 指定，则C++将使用表达式语法。 如果 **-ee**省略选项，MASM 表达式语法将用作默认值。 请参阅[评估表达式](evaluating-expressions.md)有关详细信息。
 
 <span id="_______-failinc______"></span><span id="_______-FAILINC______"></span> **-failinc**   
 会导致调试器忽略任何可疑的符号。 在调试用户模式或内核模式的小型转储文件时，此选项将会阻止调试器加载任何模块不能映射其映像。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_EXACT\_符号](symbol-options.md#symopt-exact-symbols)。
@@ -167,7 +167,7 @@ kd -?
 会导致调试器忽略符号路径和可执行文件映像路径环境变量。 有关详细信息，请参阅[SYMOPT\_忽略\_NT\_SYMPATH](symbol-options.md#symopt-ignore-nt-sympath)。
 
 <span id="_______-snc______"></span><span id="_______-SNC______"></span> **-snc**   
-使调试器后，若要关闭 c + + 转换。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_否\_CPP](symbol-options.md#symopt-no-cpp)。
+使调试器后，若要关闭C++转换。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_否\_CPP](symbol-options.md#symopt-no-cpp)。
 
 <span id="_______-snul______"></span><span id="_______-SNUL______"></span> **-snul**   
 禁用自动符号加载的非限定名称。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_否\_UNQUALIFIED\_加载](symbol-options.md#symopt-no-unqualified-loads)。
@@ -189,7 +189,7 @@ kd -?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Constant</th>
 <th align="left">含义</th>
 </tr>

@@ -1,17 +1,17 @@
 ---
-title: Windows Vista 应用程序和旧驱动程序之间传输数据
-description: Windows Vista 应用程序和旧驱动程序之间传输数据
+title: 在 Windows Vista 应用程序和旧版驱动程序之间进行的数据传输
+description: 在 Windows Vista 应用程序和旧版驱动程序之间进行的数据传输
 ms.assetid: 0acb2ca3-6ac6-441d-a12d-446ae5b70295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75ea897f1a5be214671057a2fbdb26fe1db4e132
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364631"
 ---
-# <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>Windows Vista 应用程序和旧驱动程序之间传输数据
+# <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>在 Windows Vista 应用程序和旧版驱动程序之间进行的数据传输
 
 
 兼容性层，使 Windows Vista 应用程序可以调用**IWiaTransfer::Download** （Microsoft Windows SDK 文档中所述） 上旧版的驱动程序。 兼容性层必须实现文件夹传输代码，以及格式转换。 兼容性层实现特殊的送纸器传输以确保它始终是最有可能从旧驱动程序转换多个页面的代码。 Windows Vista 应用程序应始终能够从甚至具有 TYMED 的送纸器项在扫描过程中请求多个页\_文件传输。 下图说明了与 Windows Vista 应用程序的旧驱动程序。

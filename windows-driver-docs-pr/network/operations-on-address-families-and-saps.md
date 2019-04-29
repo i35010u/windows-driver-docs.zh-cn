@@ -1,6 +1,6 @@
 ---
-title: 地址系列和 SAPs 的操作
-description: 地址系列和 SAPs 的操作
+title: 针对地址系列和 SAP 的操作
+description: 针对地址系列和 SAP 的操作
 ms.assetid: 0fc821bb-49a2-4631-8735-ef5217073ba9
 keywords:
 - 面向连接的 NDIS WDK，地址系列
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97a4665814121328a6fdcf0ef9ef7e971944a316
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359139"
 ---
-# <a name="operations-on-address-families-and-saps"></a>地址系列和 SAPs 的操作
+# <a name="operations-on-address-families-and-saps"></a>针对地址系列和 SAP 的操作
 
 
 

@@ -1,22 +1,22 @@
 ---
-title: Direct3D 功能和 WDDM 1.2 中的要求
+title: WDDM 1.2 中的 Direct3D 功能和要求
 description: Microsoft Direct3D 提供了一系列丰富的 3-D 图形 Api，广泛使用的软件应用程序以进行复杂的可视化和游戏开发。
 ms.assetid: 8A40276D-FAE3-4433-A3E5-573700331B07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32befb6229afe1856f6dad3c66db68867b29f796
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358057"
 ---
-# <a name="direct3d-features-and-requirements-in-wddm-12"></a>Direct3D 功能和 WDDM 1.2 中的要求
+# <a name="direct3d-features-and-requirements-in-wddm-12"></a>WDDM 1.2 中的 Direct3D 功能和要求
 
 
 Microsoft Direct3D 提供了一系列丰富的 3-D 图形 Api，广泛使用的软件应用程序以进行复杂的可视化和游戏开发。 本部分介绍功能改进和 Windows 8 Direct3D 软件和硬件要求。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

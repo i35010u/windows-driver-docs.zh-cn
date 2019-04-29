@@ -1,6 +1,6 @@
 ---
-title: 指定 Stream 格式
-description: 指定 Stream 格式
+title: 指定流格式
+description: 指定流格式
 ms.assetid: 60ef129c-f4a1-4eb5-97d9-6be6c7803258
 keywords:
 - 视频捕获 WDK AVStream，流格式
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9438d9c0151e83b5f9bdd035c5184af76a3e9eb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360822"
 ---
-# <a name="specifying-stream-formats"></a>指定 Stream 格式
+# <a name="specifying-stream-formats"></a>指定流格式
 
 
 通常情况下，DirectShow 和内核共享媒体流式处理格式定义和流式处理的转换。 在内核模式和用户模式组件使用的命名约定中的差异有些模糊不清此一致性。 许多媒体格式和内核模式中使用的 GUID 定义具有前缀*KS\_* 但除此之外，与对应的用户模式相同。 例如，Win32 用户模式版本的内核模式结构[ **KS\_BITMAPINFOHEADER**](https://msdn.microsoft.com/library/windows/hardware/ff567305)，是 BITMAPINFOHEADER。

@@ -4,11 +4,11 @@ title: 如何获取 USB 描述符（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d18df5103cc11a300748a3070e212b015dd38b79
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364809"
 ---
 # <a name="how-to-get-usb-descriptors-uwp-app"></a>如何获取 USB 描述符（UWP 应用）
 

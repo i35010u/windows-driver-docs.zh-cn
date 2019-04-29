@@ -1,6 +1,6 @@
 ---
-title: 批准的 Sdv map.h 文件
-description: 批准的 Sdv map.h 文件
+title: 审批 Sdv-map.h 文件
+description: 审批 Sdv-map.h 文件
 ms.assetid: eb192eb2-7a2c-47eb-846e-3d641d5046a8
 keywords:
 - Sdv map.h WDK Static Driver Verifier，批准
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65e1ac75efd01e57684a09fd11ff386c47b46a26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361309"
 ---
-# <a name="approving-the-sdv-maph-file"></a>批准的 Sdv map.h 文件
+# <a name="approving-the-sdv-maph-file"></a>审批 Sdv-map.h 文件
 
 
 Sdv map.h 文件包含告知 SDV 之后检查该文件并更正任何错误可能批准该文件的文本行。 在创建时的 Sdv map.h 文件包括短语："批准 = false。"

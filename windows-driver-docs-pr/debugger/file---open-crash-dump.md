@@ -9,13 +9,13 @@ keywords:
 ms.date: 08/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 997ec56fa1ebe7b5c784a61e43d5981e025893ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361953"
 ---
-# <a name="file--open-crash-dump"></a>文件 |打开故障转储
+# <a name="file--open-crash-dump"></a>文件 | 打开故障转储
 
 
 ## <span id="ddk_file_open_crash_dump_dbg"></span><span id="DDK_FILE_OPEN_CRASH_DUMP_DBG"></span>

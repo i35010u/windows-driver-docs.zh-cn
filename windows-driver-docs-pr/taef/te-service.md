@@ -5,11 +5,11 @@ ms.assetid: 2F137748-865C-45de-8F60-B607EEB791C0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7a5b22621058cc0ed4132759ab12606a01fc11d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369794"
 ---
 # <a name="teservice"></a>Te.Service
 
@@ -87,7 +87,7 @@ Te.Service 的 x86 和 x64 版本支持正在执行的 x86 和 x64 测试。
 -   当你不再想要接收通知时，取消注册此函数。
 -   将你的代码链接到 Te.Common.lib
 
-示例：
+例如：
 
 ```cpp
     // define a call back function

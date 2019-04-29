@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa62f65e4322e9c895694767a788c21512abe947
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362935"
 ---
 # <a name="overview-of-spooler-notification"></a>后台处理程序通知概述
 

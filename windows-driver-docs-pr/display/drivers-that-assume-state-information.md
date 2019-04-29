@@ -1,6 +1,6 @@
 ---
-title: 假定的状态信息的驱动程序
-description: 假定的状态信息的驱动程序
+title: 采用状态信息的驱动程序
+description: 采用状态信息的驱动程序
 ms.assetid: c4dfb701-c547-4e94-8fd8-05571508137c
 keywords:
 - WDK DirectDraw 图阵的图面
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8389c49c4763282bb684e23e66a320e30bf3a0e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358427"
 ---
-# <a name="drivers-that-assume-state-information"></a>假定的状态信息的驱动程序
+# <a name="drivers-that-assume-state-information"></a>采用状态信息的驱动程序
 
 
 ## <span id="ddk_drivers_that_assume_state_information_gg"></span><span id="DDK_DRIVERS_THAT_ASSUME_STATE_INFORMATION_GG"></span>

@@ -4,11 +4,11 @@ description: 本部分介绍如何开始使用 WinDbg 预览版内核模式会�
 ms.date: 08/15/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 078dce80d3efc3cf85ea6ce4d4d6622806cbd2e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353074"
 ---
 # <a name="windbg-preview---starting-a-kernel-mode-session"></a>WinDbg 预览版-启动内核模式会话 
 
@@ -26,7 +26,7 @@ ms.locfileid: "56544233"
 如果您不熟悉设置调试器内核模式会话，请参阅[入门 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
  

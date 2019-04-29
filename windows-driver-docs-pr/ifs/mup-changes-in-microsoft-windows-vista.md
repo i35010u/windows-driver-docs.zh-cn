@@ -1,6 +1,6 @@
 ---
-title: 在 Microsoft Windows Vista MUP 更改
-description: 在 Microsoft Windows Vista MUP 更改
+title: Microsoft Windows Vista 中的 MUP 更改
+description: Microsoft Windows Vista 中的 MUP 更改
 ms.assetid: 8ca2f9bc-14f1-45d3-a397-f3e5459cf8ec
 keywords:
 - 内核网络重定向程序 WDK MUP
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45524f2823bda74db343326487a536f2a4014b12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352880"
 ---
-# <a name="mup-changes-in-microsoft-windows-vista"></a>在 Microsoft Windows Vista MUP 更改
+# <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista 中的 MUP 更改
 
 
 Windows Vista 实现多个对多个可能会影响网络重定向程序 UNC provider (MUP) 的更改。

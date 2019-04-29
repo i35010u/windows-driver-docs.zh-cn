@@ -1,6 +1,6 @@
 ---
-title: 扫描该驱动程序
-description: 扫描该驱动程序
+title: 扫描驱动程序
+description: 扫描驱动程序
 ms.assetid: c36960b4-d97e-49b7-a7ad-e71b0820db8a
 keywords:
 - 静态驱动程序验证程序 WDK DriverEntry 例程会扫描
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9953e67c8242108d74aeeac2afc44be80ee3518a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340205"
 ---
-# <a name="scanning-the-driver"></a>扫描该驱动程序
+# <a name="scanning-the-driver"></a>扫描驱动程序
 
 
 驱动程序使用扫描 **/扫描**命令选项是可选的。 如果你不执行操作之前验证您的驱动程序进行扫描，SDV 扫描函数角色类型声明，并验证该驱动程序时创建的 Sdv map.h 文件。

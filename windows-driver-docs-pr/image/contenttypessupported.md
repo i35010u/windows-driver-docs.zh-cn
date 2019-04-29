@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 029bb0269a265bdb49c536d68eddb61bb1c93d0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368561"
 ---
 # <a name="contenttypessupported-element"></a>ContentTypesSupported 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56525330"
 </wscn:ContentTypesSupported>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -81,7 +81,7 @@ ms.locfileid: "56525330"
 
 每个[ **ContentTypeValue** ](contenttypevalue.md)中列出的元素**ContentTypesSupported**元素描述原始文档的主要特征。 客户端将选取的一种内容类型及其[ **ScanTicket** ](scanticket.md)启动一次扫描时此列表中。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ScanTicket**](scanticket.md)

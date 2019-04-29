@@ -1,5 +1,5 @@
 ---
-title: INF DDInstall.Interfaces 部分
+title: INF DDInstall.Interfaces 节
 description: 每个模型 DDInstall.Interfaces 部分可以具有一个或多个 AddInterface 指令，具体取决于特定设备/驱动程序支持多少个设备接口。
 ms.assetid: 16904119-00a4-45d7-a32e-24ba4c8a3416
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfdcd6e7f8b96e80bad364a7b5f18cd199cf2bb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354845"
 ---
-# <a name="inf-ddinstallinterfaces-section"></a>INF DDInstall.Interfaces 部分
+# <a name="inf-ddinstallinterfaces-section"></a>INF DDInstall.Interfaces 节
 
 
 每个每个模型<em>DDInstall</em>**。接口**部分可以具有一个或多个[ **AddInterface** ](inf-addinterface-directive.md)指令，具体取决于特定设备/驱动程序支持多少个设备接口。
@@ -101,7 +101,7 @@ KSNAME_Topology = "Topology"
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)

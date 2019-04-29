@@ -5,11 +5,11 @@ ms.assetid: 444a20e0-f3af-4dbc-9272-44e992e059e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6565d8e8f3d5297e9fc1468c4a6436adae8b999
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363559"
 ---
 # <a name="encapiparampeakbitrate"></a>ENCAPIPARAM\_PEAK\_BITRATE
 
@@ -59,7 +59,7 @@ ENCAPIPARAM\_比特率属性用于描述设备的受支持的峰值位速率 （
 
 **标头：** 在中声明*ksmedia.h*。 包括*ksmedia.h*。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)， [ **VIDEOENCODER\_比特率\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff568695)
 

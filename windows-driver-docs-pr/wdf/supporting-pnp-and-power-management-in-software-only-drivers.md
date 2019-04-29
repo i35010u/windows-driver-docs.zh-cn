@@ -1,6 +1,6 @@
 ---
-title: 仅限软件的驱动程序中支持的即插即用和电源管理
-description: 仅限软件的驱动程序中支持的即插即用和电源管理
+title: 支持在仅限软件的驱动程序中进行 PnP 和电源管理
+description: 支持在仅限软件的驱动程序中进行 PnP 和电源管理
 ms.assetid: bcfca8b2-68d6-4875-8687-27351becd6f4
 keywords:
 - 即插即用 WDK KMDF，仅限软件的驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeb96e085cbb0c3c087b24c8410465204174ea47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363965"
 ---
-# <a name="supporting-pnp-and-power-management-in-software-only-drivers"></a>仅限软件的驱动程序中支持的即插即用和电源管理
+# <a name="supporting-pnp-and-power-management-in-software-only-drivers"></a>支持在仅限软件的驱动程序中进行 PnP 和电源管理
 
 
 *仅限软件的驱动程序*都不访问任何硬件的驱动程序。 仅限软件的某些驱动程序驻留在不访问硬件的驱动程序堆栈。 这些驱动程序不会访问硬件，因为它们通常不需要执行任何即插即用或电源管理操作。

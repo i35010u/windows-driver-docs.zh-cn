@@ -5,11 +5,11 @@ ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5449f89d31cffeb2f7e55275d9ec3e6c84a5c01f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364781"
 ---
 # <a name="span-iddebuggersettingupkernel-modedebuggingusingserialoverusbinvisualstudiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>设置内核模式调试使用通过 Visual Studio 中的 USB 串行
 
@@ -92,10 +92,10 @@ ms.locfileid: "56520679"
 3.  选择**预配计算机，并选择调试器设置**。 单击“下一步” 。
 4.  确认**波特率**是 115200。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设置 Visual Studio 中的内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
+[在 Visual Studio 中设置内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
 

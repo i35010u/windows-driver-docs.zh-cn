@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0907fb119a7f48afbad2d66f0ec15b6d5e88d762
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359729"
 ---
 # <a name="wditlvradiostate"></a>WDI\_TLV\_RADIO\_STATE
 
@@ -76,7 +76,7 @@ WDI\_TLV\_单选\_状态是包含在硬件和软件无线电状态 TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

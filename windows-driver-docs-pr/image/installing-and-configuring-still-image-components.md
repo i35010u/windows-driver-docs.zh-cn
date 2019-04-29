@@ -1,17 +1,17 @@
 ---
-title: 安装和配置仍映像组件
-description: 安装和配置仍映像组件
+title: 安装和配置静态图像组件
+description: 安装和配置静态图像组件
 ms.assetid: 18d32f09-28e0-40f2-a9cb-962de0554b74
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e32d298733c122eaea3c3ab81b3a485b923a44d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363369"
 ---
-# <a name="installing-and-configuring-still-image-components"></a>安装和配置仍映像组件
+# <a name="installing-and-configuring-still-image-components"></a>安装和配置静态图像组件
 
 
 

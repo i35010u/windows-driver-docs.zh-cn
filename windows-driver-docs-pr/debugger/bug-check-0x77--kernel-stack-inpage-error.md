@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a4a9d6aa1e50ea5dd79142f1bb7162c62552e4
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367327"
 ---
 # <a name="bug-check-0x77-kernelstackinpageerror"></a>Bug 检查 0x77：内核\_堆栈\_页内\_错误
 

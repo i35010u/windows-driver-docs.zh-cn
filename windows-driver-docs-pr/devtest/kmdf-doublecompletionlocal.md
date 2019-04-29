@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 052bf2a7b19c14242c032a6f3aa8289dbdd21290
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356441"
 ---
 # <a name="doublecompletionlocal-rule-kmdf"></a>DoubleCompletionLocal 规则 (kmdf)
 

@@ -5,11 +5,11 @@ ms.assetid: 0CAD1CCE-5AF6-4EBD-85C9-040FA0D1C141
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 466e7bf9dc2851e8f3aa9850cd004764f8865bf5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372105"
 ---
 # <a name="using-ndis-630-data-structures"></a>使用 NDIS 6.30 数据结构
 

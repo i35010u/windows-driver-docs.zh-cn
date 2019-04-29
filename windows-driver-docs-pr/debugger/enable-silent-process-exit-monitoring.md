@@ -1,17 +1,17 @@
 ---
-title: 启用无提示的进程退出监视
-description: 启用无提示的进程退出监视
+title: 启用静默进程退出监视
+description: 启用静默进程退出监视
 ms.assetid: 3FEA9660-541B-42D0-B020-CECEBF14BB4D
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da0530cf8c63ace48b68f03478af099b7fc54b10
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354693"
 ---
-# <a name="enable-silent-process-exit-monitoring"></a>启用无提示的进程退出监视
+# <a name="enable-silent-process-exit-monitoring"></a>启用静默进程退出监视
 
 
 ## <span id="ddk_enable_pool_tagging_dtools"></span><span id="DDK_ENABLE_POOL_TAGGING_DTOOLS"></span>

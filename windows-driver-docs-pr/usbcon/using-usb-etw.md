@@ -1,14 +1,14 @@
 ---
-Description: This topic provides information about Activity ID GUIDs, how to add those GUIDs in the event trace providers, and view them in Netmon.
+Description: 本主题介绍有关活动 ID Guid，如何添加这些 Guid 在事件跟踪提供程序，以及在网络监视器中查看它们。
 title: 使用 USB ETW 跟踪中的活动 ID GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8977f94f6de275cc0f47f77a2318acbf33737baf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358225"
 ---
 # <a name="using-activity-id-guids-in-usb-etw-traces"></a>使用 USB ETW 跟踪中的活动 ID GUID
 

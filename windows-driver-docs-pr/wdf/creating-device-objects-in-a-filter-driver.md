@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 587ff9cab9b7ff1f2bb6dfa7990c365245fe7c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358685"
 ---
 # <a name="creating-device-objects-in-a-filter-driver"></a>在筛选器驱动程序中创建设备对象
 

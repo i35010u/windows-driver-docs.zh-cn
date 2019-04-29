@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_PROVISIONED_CONTEXTS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 78ea8f12f45601342fe47b3e6e0abd8baabd0adb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354535"
 ---
 # <a name="oidwwanprovisionedcontexts"></a>OID\_WWAN\_已设置\_上下文
 
@@ -62,7 +62,7 @@ OID\_WWAN\_已设置\_上下文读取或更新存储在 MB 设备或订阅服务
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

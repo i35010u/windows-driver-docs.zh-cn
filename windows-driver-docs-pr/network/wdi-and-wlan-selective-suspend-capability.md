@@ -5,11 +5,11 @@ ms.assetid: 4FCF726B-4CCF-4F0F-9088-2EABA0DA7D3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2c250d0be241b1f12e69199cf92cf082168bd48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366644"
 ---
 # <a name="wdi-and-wlan-selective-suspend-capability"></a>WDI 和 WLAN 选择性挂起功能
 

@@ -5,11 +5,11 @@ ms.assetid: 303A6034-7ED7-4C21-86E5-076383AF3A5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d598c4cead43a200638525c5370333ba7fd5786
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326139"
 ---
 # <a name="implementation-issues-for-gpio-controller-drivers"></a>GPIO 控制器驱动程序的实现问题
 

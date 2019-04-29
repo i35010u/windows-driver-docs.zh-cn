@@ -1,6 +1,6 @@
 ---
-title: 微型端口驱动程序使用 WDM 降低接口
-description: 微型端口驱动程序使用 WDM 降低接口
+title: 包含 WDM 下接口的微型端口驱动程序
+description: 包含 WDM 下接口的微型端口驱动程序
 ms.assetid: defa955b-c1d2-4c78-a983-584aedc8a1a3
 keywords:
 - 微型端口驱动程序 WDK 网络 WDM 低接口
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3bb792ffb6d3328e33a8fcbcd719e06e1dd75fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362325"
 ---
-# <a name="miniport-drivers-with-a-wdm-lower-interface"></a>微型端口驱动程序使用 WDM 降低接口
+# <a name="miniport-drivers-with-a-wdm-lower-interface"></a>包含 WDM 下接口的微型端口驱动程序
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 像素雾
-description: 像素雾
+title: 像素雾化
+description: 像素雾化
 ms.assetid: 40896f51-87f5-44e9-9199-e92f51a1e8f1
 keywords:
 - 全局雾 WDK Direct3D
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6470a86c19c3c580044cee5a3099d662d2b3e6d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352267"
 ---
-# <a name="pixel-fog"></a>像素雾
+# <a name="pixel-fog"></a>像素雾化
 
 
 ## <span id="ddk_pixel_fog_gg"></span><span id="DDK_PIXEL_FOG_GG"></span>

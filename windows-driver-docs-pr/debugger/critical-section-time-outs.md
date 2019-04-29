@@ -1,19 +1,19 @@
 ---
-title: 临界区的超时
-description: 临界区的超时
+title: 关键节超时
+description: 关键节超时
 ms.assetid: 736ec6e9-e822-49aa-8f1c-7e5e43779dbd
 keywords:
 - 关键部分中，调试临界区的超时
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90563b4284a138aae520e14b6da72bf2e82d90a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374439"
 ---
-# <a name="critical-section-time-outs"></a>临界区的超时
+# <a name="critical-section-time-outs"></a>关键节超时
 
 
 ## <span id="ddk_critical_section_time_outs_dbg"></span><span id="DDK_CRITICAL_SECTION_TIME_OUTS_DBG"></span>

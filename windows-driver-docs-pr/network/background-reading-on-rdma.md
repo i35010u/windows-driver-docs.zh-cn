@@ -1,17 +1,17 @@
 ---
-title: 背景阅读过有关 RDMA
+title: 对 RDMA 进行后台读取
 description: RDMA 是一种可提供最大程度减少 CPU 使用情况的高吞吐量、 低延迟通信的网络技术。
 ms.assetid: 583A806D-B7E8-40F5-9CEB-406FAEE8B6C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6153a230feba6b0a4ec6c4b7abfbffef0f46e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367692"
 ---
-# <a name="background-reading-on-rdma"></a>背景阅读过有关 RDMA
+# <a name="background-reading-on-rdma"></a>对 RDMA 进行后台读取
 
 
 RDMA 是一种可提供最大程度减少 CPU 使用情况的高吞吐量、 低延迟通信的网络技术。 NDK 目前支持以下 RDMA 技术：

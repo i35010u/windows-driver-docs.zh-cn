@@ -1,19 +1,19 @@
 ---
-title: 基于 Unidrv 或 PScript5 基于 XPSDrv 驱动程序更改
-description: 基于 Unidrv 或 PScript5 基于 XPSDrv 驱动程序更改
+title: 基于 Unidrv 或基于 PScript5 的 XPSDrv 驱动程序更改
+description: 基于 Unidrv 或基于 PScript5 的 XPSDrv 驱动程序更改
 ms.assetid: 47398d3a-5e50-40ee-b3d7-7fc559368981
 keywords:
 - 版本 3 的 XPS 驱动程序 WDK XPSDrv，更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e38b56fe011ba5cb17094db14fc7499a870e2d49
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325278"
 ---
-# <a name="unidrv-based-or-pscript5-based-xpsdrv-driver-changes"></a>基于 Unidrv 或 PScript5 基于 XPSDrv 驱动程序更改
+# <a name="unidrv-based-or-pscript5-based-xpsdrv-driver-changes"></a>基于 Unidrv 或基于 PScript5 的 XPSDrv 驱动程序更改
 
 
 在 XPSDrv 模式下运行时，以下更改适用于核心 Unidrv 或 PScript5 行为：

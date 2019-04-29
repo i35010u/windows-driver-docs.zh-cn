@@ -1,17 +1,17 @@
 ---
-title: SerCx2 系统 DMA 传输的事务
+title: SerCx2 System-DMA-Transmit 事务
 description: 某些串行控制器驱动程序实现对支持传输使用系统 DMA 控制器的事务。
 ms.assetid: 8569E76F-CAFF-4A2C-8052-62B340C5ADED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7865785c2016c101d63eabdcf5629ce7e23ba608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356749"
 ---
-# <a name="sercx2-system-dma-transmit-transactions"></a>SerCx2 系统 DMA 传输的事务
+# <a name="sercx2-system-dma-transmit-transactions"></a>SerCx2 System-DMA-Transmit 事务
 
 
 某些串行控制器驱动程序实现对支持传输使用系统 DMA 控制器的事务。 这种支持是可选的但可以提高性能，因为它使主处理器需要的用于通过编程方式设置 I/O (PIO) 的长整型数据传输。 SerCx2 执行设置了系统 DMA 控制器并启动代表串行控制器驱动程序的必要 DMA 传输系统 DMA 传输的事务。

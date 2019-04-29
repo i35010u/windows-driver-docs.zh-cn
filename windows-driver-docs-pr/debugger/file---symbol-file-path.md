@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28f4b2a4a734841f084667a39c09f82863b7cdca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365182"
 ---
-# <a name="file--symbol-file-path"></a>文件 |符号文件路径
+# <a name="file--symbol-file-path"></a>文件 | 符号文件路径
 
 
 ## <span id="ddk_file_symbol_file_path_dbg"></span><span id="DDK_FILE_SYMBOL_FILE_PATH_DBG"></span>

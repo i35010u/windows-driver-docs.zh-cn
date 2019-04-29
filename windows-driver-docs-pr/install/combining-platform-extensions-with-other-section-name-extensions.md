@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4234541fcb785fe0112bc8e0386682d3dfe1879
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361179"
 ---
 # <a name="combining-platform-extensions-with-other-section-name-extensions"></a>将平台扩展与其他节名称扩展相结合
 

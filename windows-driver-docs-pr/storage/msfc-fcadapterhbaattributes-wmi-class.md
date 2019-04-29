@@ -5,11 +5,11 @@ ms.assetid: fa0ff9c2-e7cc-4000-bd18-ade953e57dcc
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 49de9254ff7d685068ae3fbff008bcfca09f638e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360888"
 ---
 # <a name="msfcfcadapterhbaattributes-wmi-class"></a>MSFC\_FCAdapterHBAAttributes WMI 类
 

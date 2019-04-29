@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dcf26d1d83a9e9eb19c6169a8f931e6d6a4baf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358661"
 ---
 # <a name="driverentry-of-video-miniport-driver-function"></a>DriverEntry 的视频微型端口驱动程序函数
 
@@ -36,7 +36,7 @@ ULONG DriverEntry(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *Context1* \[中\]微型端口驱动程序必须与其调用的上下文值指向[ **VideoPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff570320)。 此上下文值标识创建为此微型端口驱动程序的系统的驱动程序对象。
@@ -143,7 +143,7 @@ ULONG DriverEntry(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Video.h （包括 Video.h）</td>
 </tr>
 <tr class="odd">

@@ -1,6 +1,6 @@
 ---
-title: 在文件系统筛选器驱动程序中的代理操作
-description: 在文件系统筛选器驱动程序中的代理操作
+title: 文件系统筛选器驱动程序中的代理操作
+description: 文件系统筛选器驱动程序中的代理操作
 ms.assetid: 01cc7a48-8b27-4de7-8968-8958e9512989
 keywords:
 - 安全 WDK 文件系统，代理操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2e14c7ba51fd00ddd8a95ea761b3d2fa8ea747
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352827"
 ---
-# <a name="proxy-operations-in-file-system-filter-drivers"></a>在文件系统筛选器驱动程序中的代理操作
+# <a name="proxy-operations-in-file-system-filter-drivers"></a>文件系统筛选器驱动程序中的代理操作
 
 
 ## <span id="ddk_proxy_operations_in_file_system_filter_drivers_if"></span><span id="DDK_PROXY_OPERATIONS_IN_FILE_SYSTEM_FILTER_DRIVERS_IF"></span>

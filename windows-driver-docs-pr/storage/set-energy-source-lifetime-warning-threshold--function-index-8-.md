@@ -1,17 +1,17 @@
 ---
-title: 设置能量源生存期警告阈值 （函数索引 8）
+title: 设置能量源生存期警告阈值（功能索引 8）
 description: 此函数将剩余的能源源 (ES) 生存期百分比的警告阈值。
 ms.assetid: 18D80829-8B54-48CE-A4A1-C3D57D0F60DC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3ccd5d51b5aed7bcd56847cb66db1fab274c4726
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362260"
 ---
-# <a name="set-energy-source-lifetime-warning-threshold-function-index-8"></a>设置能量源生存期警告阈值 （函数索引 8）
+# <a name="set-energy-source-lifetime-warning-threshold-function-index-8"></a>设置能量源生存期警告阈值（功能索引 8）
 
 
 此函数将剩余的能源源 (ES) 生存期百分比的警告阈值。 如果 ES 是主机托管和平台不支持的阈值，此函数可返回的故障状态。
@@ -85,7 +85,7 @@ ms.locfileid: "56554260"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设置能源源温度警告阈值 （函数索引 9）](set-energy-source-temperature-warning-threshold--function-index-9-.md)

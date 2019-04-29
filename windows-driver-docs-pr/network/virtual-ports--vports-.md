@@ -5,11 +5,11 @@ ms.assetid: FCE0B5F5-5E2E-493A-BE25-57FB2C8B0389
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f1875343a6de5ef827f13f3b2b699618deda236
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366648"
 ---
 # <a name="virtual-ports-vports"></a>虚拟端口 (VPort)
 

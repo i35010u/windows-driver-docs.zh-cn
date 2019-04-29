@@ -1,6 +1,6 @@
 ---
-title: 双视图高级实现详细信息
-description: 双视图高级实现详细信息
+title: DualView 高级实施详细信息
+description: DualView 高级实施详细信息
 ms.assetid: 07fb7640-d723-4dc0-9403-9f70a75518f1
 keywords:
 - 双视图 WDK 微型端口
@@ -12,19 +12,19 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e685b11746d2a58440d7634b1303727b1cd3f59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361273"
 ---
-# <a name="dualview-advanced-implementation-details"></a>双视图高级实现详细信息
+# <a name="dualview-advanced-implementation-details"></a>DualView 高级实施详细信息
 
 
 ## <span id="ddk_dualview_advanced_implementation_details_gg"></span><span id="DDK_DUALVIEW_ADVANCED_IMPLEMENTATION_DETAILS_GG"></span>
 
 
-启用或禁用其辅助视图时，应识别理想双视图实现。 当辅助视图都被禁用时，而启用的双视图不像行为主视图。 这意味着：
+启用或禁用其辅助视图时，应识别理想双视图实现。 当辅助视图都被禁用时，而启用的双视图不像行为主视图。 这表示：
 
 -   主显示器可以访问视频内存的所有的部分。
 

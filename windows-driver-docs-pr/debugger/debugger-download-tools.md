@@ -1,5 +1,5 @@
 ---
-title: 下载适用于 Windows 的 WinDbg 调试工具
+title: 下载 Windows 调试工具 - WinDbg
 description: 此页提供的 Windows 调试工具，如 WinDbg 下载。
 keywords:
 - 下载 Windows 调试
@@ -8,11 +8,11 @@ keywords:
 ms.date: 01/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 478f32454966e96982a46ad4fafab2403362bafe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368142"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载适用于 Windows 调试工具
 

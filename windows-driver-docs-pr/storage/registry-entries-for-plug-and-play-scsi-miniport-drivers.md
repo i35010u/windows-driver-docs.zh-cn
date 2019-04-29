@@ -1,6 +1,6 @@
 ---
-title: Plug and Play SCSI 微型端口驱动程序的注册表项
-description: Plug and Play SCSI 微型端口驱动程序的注册表项
+title: 即插即用 SCSI 微型端口驱动程序的注册表项
+description: 即插即用 SCSI 微型端口驱动程序的注册表项
 ms.assetid: d4c7c8ee-9d04-4fd4-9b70-2630d2ce6401
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，即插即用
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03afdab59d1a54b7d24f137405ffc2b1785e4ac9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366244"
 ---
-# <a name="registry-entries-for-plug-and-play-scsi-miniport-drivers"></a>Plug and Play SCSI 微型端口驱动程序的注册表项
+# <a name="registry-entries-for-plug-and-play-scsi-miniport-drivers"></a>即插即用 SCSI 微型端口驱动程序的注册表项
 
 
 ## <span id="ddk_registry_entries_for_plug_and_play_scsi_miniport_drivers_kg"></span><span id="DDK_REGISTRY_ENTRIES_FOR_PLUG_AND_PLAY_SCSI_MINIPORT_DRIVERS_KG"></span>

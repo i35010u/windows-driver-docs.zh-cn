@@ -5,11 +5,11 @@ ms.assetid: B02D196F-E8D5-4FE9-8983-AD08EAE00DE5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b09091b17a7d35c69f69e73103f1ff1008db9ab6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356519"
 ---
 # <a name="irql-rule-set-kmdf"></a>Irql 规则集 (KMDF)
 

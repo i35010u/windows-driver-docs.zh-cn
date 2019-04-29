@@ -9,11 +9,11 @@ ms.assetid: BF0DC1C7-48E1-487E-8F64-146BBA322F40
 ms.date: 04/27/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c92d8407c06c5ab590d047f4378439f4c65c3a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368281"
 ---
 # <a name="native-80211-ihv-handler-functions"></a>本机 802.11 IHV 处理程序函数
 

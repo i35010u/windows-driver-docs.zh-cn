@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bbe247e5f9cd7f9716a4bfa7c401b6a6d1bbc18c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324827"
 ---
 # <a name="iprinterbidischemaelementname-method"></a>IPrinterBidiSchemaElement::Name 方法
 
@@ -62,7 +62,7 @@ HRESULT Name(
 <td>桌面设备</td>
 </tr>
 <tr class="even">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 8 及更高版本</p></td>
 </tr>
 </tbody>

@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28150
 ms.openlocfilehash: d1ff92b9b831a75c62a5422b823f7bc91fce19b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361367"
 ---
 # <a name="c28150"></a>C28150
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a611bacfb4707c0422febdf401f277640ed5d99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359439"
 ---
 # <a name="irqlexallocatepool-rule-wdm"></a>IrqlExAllocatePool 规则 (wdm)
 

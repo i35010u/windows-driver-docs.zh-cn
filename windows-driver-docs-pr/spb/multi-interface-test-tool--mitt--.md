@@ -1,17 +1,17 @@
 ---
-title: 购买硬件使用 MITT
+title: 使用 MITT 购买硬件
 description: 为使用多个接口测试工具 (MITT)、 订单需要 MITT 板和总线特定于适配器任务插件板插入 MITT 板上的端口。 适配器看板的类型取决于你想要测试的总线。
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dde67b15c83688ad3eaa57bd41edad6954060a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361994"
 ---
-# <a name="buy-hardware-for-using-mitt"></a>购买硬件使用 MITT
+# <a name="buy-hardware-for-using-mitt"></a>使用 MITT 购买硬件
 
 
 为使用多个接口测试工具 (MITT)、 订单需要 MITT 板和总线特定于适配器任务插件板插入 MITT 板上的端口。 适配器看板的类型取决于你想要测试的总线。

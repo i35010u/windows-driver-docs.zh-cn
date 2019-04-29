@@ -5,11 +5,11 @@ ms.assetid: DAB7FAE0-1632-4FD1-8697-48553A51BD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 173fc0057b061ac902046084c8ada6fd16bb6b32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362075"
 ---
 # <a name="reordering-hyper-v-extensible-switch-extensions"></a>重新排列 Hyper-V 可扩展交换机扩展的顺序
 

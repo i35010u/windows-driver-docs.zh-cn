@@ -5,11 +5,11 @@ ms.assetid: 5d8fc015-cbf5-43a3-8f65-3ebb17754417
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7869102247ce3d88a400666d2657d2458eeb0c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356201"
 ---
 # <a name="security-issues-for-wia-drivers"></a>WIA 驱动程序的安全问题
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_HOME_PROVIDER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: bb86023c594a1cfad4f7a6153e6fab7f828f5477
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353742"
 ---
 # <a name="oidwwanhomeprovider"></a>OID\_WWAN\_主页\_提供程序
 
@@ -50,17 +50,17 @@ Windows 8 同时支持两者*设置*并*查询*请求。 仅支持 Windows 7*查
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_WWAN\_HOME\_PROVIDER**](https://msdn.microsoft.com/library/windows/hardware/ff567909)

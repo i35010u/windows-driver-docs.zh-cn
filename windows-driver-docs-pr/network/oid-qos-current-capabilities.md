@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_QOS_CURRENT_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d876cd65e16c950b0aa64742c94d686d542478b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364157"
 ---
 # <a name="oidqoscurrentcapabilities"></a>OID\_QOS\_当前\_功能
 
@@ -87,7 +87,7 @@ NDIS 处理 OID 查询请求的 OID\_QOS\_当前\_微型端口驱动程序，并
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

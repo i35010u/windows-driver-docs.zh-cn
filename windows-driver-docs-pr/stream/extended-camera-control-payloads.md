@@ -1,17 +1,17 @@
 ---
-title: 扩展的照相机控件有效负载
+title: 扩展的相机控件有效负载
 description: KSPROPERTYSETID_ExtendedCameraControl 属性集内的控件属性用于获取和设置属性数据使用常见的负载格式。
 ms.assetid: 347413DB-229B-40D7-BD3E-931493EE1FBC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aae6659e5b423f6c84af29a3e3a1ccbd7489643
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363735"
 ---
-# <a name="extended-camera-control-payloads"></a>扩展的照相机控件有效负载
+# <a name="extended-camera-control-payloads"></a>扩展的相机控件有效负载
 
 
 中的控件属性[KSPROPERTYSETID\_ExtendedCameraControl](https://msdn.microsoft.com/library/windows/hardware/dn567570)属性集使用的通用的有效负载格式，用于获取和设置属性数据。

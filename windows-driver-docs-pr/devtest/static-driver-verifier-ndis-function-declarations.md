@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad8b288019c549b109bdcf08bb366421e6a11f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365159"
 ---
 # <a name="static-driver-verifier-ndis-function-declarations"></a>静态驱动程序验证程序 NDIS 函数声明
 

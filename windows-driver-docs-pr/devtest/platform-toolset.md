@@ -5,11 +5,11 @@ ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db5d836e8cadfa735432e6073f08e90c0792a72d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356307"
 ---
 # <a name="platform-toolset"></a>平台工具集
 
@@ -68,11 +68,11 @@ WDK 引入了名为此属性的新值**驱动程序**来生成内核模式驱动
 ## <a name="span-idabouttheplatformtoolsetpropertyfordriversspanspan-idabouttheplatformtoolsetpropertyfordriversspanspan-idabouttheplatformtoolsetpropertyfordriversspanabout-the-platformtoolset-property-for-drivers"></a><span id="About_the_PlatformToolset_property_for_drivers"></span><span id="about_the_platformtoolset_property_for_drivers"></span><span id="ABOUT_THE_PLATFORMTOOLSET_PROPERTY_FOR_DRIVERS"></span>有关**PlatformToolset**驱动程序的属性
 
 
-**PlatformToolset**是一组的属性表、 目标、 工具和任务，它们共同协作以扩展和修改一个平台，以便生成驱动程序或该特定平台的内核模式组件。 驱动程序和相关的组件和应用程序， **PlatformToolset**属性应设置为**WindowsKernelModeDriver8.1**， **WindowsUserModeDriver8.1**，或**WindowsApplicationForDrivers8.1**项目文件中。 这些平台工具集旨在扩展现有的 Visual Studio C\\c + + 工具链编译器和链接器使用其他 WDK 特定应在 WDK 标头和库生成工具和目标。 **WindowsApplicationForDrivers8.1**工具集提供与生成的兼容性选项设置在 WDK 适用于 Windows 7 (WDK 7.1) 中提供且还默认设置通用开发的用户模式与驱动程序进行交互的应用程序。
+**PlatformToolset**是一组的属性表、 目标、 工具和任务，它们共同协作以扩展和修改一个平台，以便生成驱动程序或该特定平台的内核模式组件。 驱动程序和相关的组件和应用程序， **PlatformToolset**属性应设置为**WindowsKernelModeDriver8.1**， **WindowsUserModeDriver8.1**，或**WindowsApplicationForDrivers8.1**项目文件中。 这些平台工具集旨在扩展现有的 Visual Studio C\\ C++工具链编译器和链接器使用其他 WDK 特定应在 WDK 标头和库生成工具和目标。 **WindowsApplicationForDrivers8.1**工具集提供与生成的兼容性选项设置在 WDK 适用于 Windows 7 (WDK 7.1) 中提供且还默认设置通用开发的用户模式与驱动程序进行交互的应用程序。
 
 **平台工具集**具有默认平台级别设置和目标，以便生成任何驱动程序项目。 使用如编译器或链接器生成工具，例如有关 WDK、 INCLUDE 或库路径的系统信息和功能设置，例如各个属性的默认开关，若要使用 Unicode 或 ANSI 字符串可以生成一个驱动程序时，设置。 如果要开发适用于桌面的 Windows 应用程序，请不要使用**WindowsKernelModeDriver8.1**， **WindowsUserModeDriver8.1**，或**WindowsApplicationForDrivers8.1**平台工具集。 请改用**Visual Studio 2013 (v120)** 平台工具集。
 
-默认情况下**PlatformToolset**属性是**Visual Studio 2013 (v120)** 用于新创建 Win32 用户模式 c + + 项目和已转换为 Visual Studio 2013 的项目。 在这两种情况下， **PlatformToolset**属性不会写入项目文件。
+默认情况下**PlatformToolset**属性是**Visual Studio 2013 (v120)** 这两个新创建的 Win32 用户模式下的C++项目和已转换为 Visual Studio 2013 的项目。 在这两种情况下， **PlatformToolset**属性不会写入项目文件。
 
 当你选择其中一个驱动程序的平台工具集时，设置以下属性。
 

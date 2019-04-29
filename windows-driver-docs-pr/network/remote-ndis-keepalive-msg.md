@@ -1,15 +1,15 @@
 ---
 title: REMOTE_NDIS_KEEPALIVE_MSG
-Description: The host sends this message periodically when there has been no other control or data traffic from the device to the host for the bus-defined KeepAliveTimeoutPeriod.
+Description: 主机已没有其他控件或数据从设备到通信的主机总线定义 KeepAliveTimeoutPeriod 时定期发送此消息。
 ms.assetid: 7e0b329f-8ba7-488d-b99d-63e6b9bbc171
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9415e36ec305b1fb0df2e30106d8f4398d051f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350856"
 ---
 # <a name="remotendiskeepalivemsg"></a>远程\_NDIS\_KEEPALIVE\_消息
 
@@ -26,7 +26,7 @@ ms.locfileid: "56544189"
 <thead>
 <tr class="header">
 <th>偏移量</th>
-<th>尺寸</th>
+<th>大小</th>
 <th>字段</th>
 <th>描述</th>
 </tr>
@@ -78,11 +78,11 @@ ms.locfileid: "56544189"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Rndis.h （包括 Rndis.h）</td>
 </tr>
 </tbody>

@@ -1,22 +1,22 @@
 ---
-title: 对显示基础结构的改进
+title: 显示基础结构的发展
 description: Windows 8 提供了增强功能并对进一步显示基础结构优化改进用户体验。
 ms.assetid: 312F39D8-5D95-4E3D-AB66-627E074115CD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d40739ef5c709627cf56264ea3ef27f635844a0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356283"
 ---
-# <a name="advances-to-the-display-infrastructure"></a>对显示基础结构的改进
+# <a name="advances-to-the-display-infrastructure"></a>显示基础结构的发展
 
 
 Windows 8 提供了增强功能并对进一步显示基础结构优化改进用户体验。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

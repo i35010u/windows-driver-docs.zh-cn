@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28110
 ms.openlocfilehash: 8e5ed2c55c69a77510133ffc9b606577adada1ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361453"
 ---
 # <a name="c28110"></a>C28110
 

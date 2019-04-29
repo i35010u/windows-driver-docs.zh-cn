@@ -1,6 +1,6 @@
 ---
-title: 测试 WMI 驱动程序的常规技术支持
-description: 测试 WMI 驱动程序的常规技术支持
+title: 用于测试 WMI 驱动程序支持的常规方法
+description: 用于测试 WMI 驱动程序支持的常规方法
 ms.assetid: 4d1a9198-2cc7-491d-a803-80f846882a6e
 keywords:
 - WMI WDK 内核测试
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f6c326a43b9c5dbef7029d6cbb1d382d2590bc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359946"
 ---
-# <a name="general-techniques-for-testing-wmi-driver-support"></a>测试 WMI 驱动程序的常规技术支持
+# <a name="general-techniques-for-testing-wmi-driver-support"></a>用于测试 WMI 驱动程序支持的常规方法
 
 
 

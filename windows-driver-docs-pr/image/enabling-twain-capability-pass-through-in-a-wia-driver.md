@@ -1,17 +1,17 @@
 ---
-title: 启用了 TWAIN 功能传递到 WIA 的驱动程序
-description: 启用了 TWAIN 功能传递到 WIA 的驱动程序
+title: 在 WIA 驱动程序中启用 TWAIN 功能传递
+description: 在 WIA 驱动程序中启用 TWAIN 功能传递
 ms.assetid: b2108109-9e41-481d-bc25-67327420faf9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49a79ddc3846d23fbc6e20da11e8c50144557c11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364431"
 ---
-# <a name="enabling-twain-capability-pass-through-in-a-wia-driver"></a>启用了 TWAIN 功能传递到 WIA 的驱动程序
+# <a name="enabling-twain-capability-pass-through-in-a-wia-driver"></a>在 WIA 驱动程序中启用 TWAIN 功能传递
 
 
 

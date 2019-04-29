@@ -1,17 +1,17 @@
 ---
-title: 增强的存储证书管理工具的概述
-description: 增强的存储证书管理工具的概述
+title: 增强的存储证书管理工具概述
+description: 增强的存储证书管理工具概述
 ms.assetid: 963e6510-d62f-421f-9c3d-781092f98969
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89869f3ae2d630381283bcb63f13915e0ff7de92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356330"
 ---
-# <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>增强的存储证书管理工具的概述
+# <a name="overview-of-the-enhanced-storage-certificate-management-tool"></a>增强的存储证书管理工具概述
 
 
 从 Windows 7 开始，操作系统提供*增强存储*连接到计算机的 USB 存储设备的基础结构。 此基础结构基于 IEEE 1667 标准进行设备身份验证和通信的 1.1 版。 有关 IEEE 1667 标准的概述，请参阅 IEEE 1667 标准术语和定义。

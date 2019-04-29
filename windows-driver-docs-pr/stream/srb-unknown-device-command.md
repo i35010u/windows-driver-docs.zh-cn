@@ -5,11 +5,11 @@ ms.assetid: 89bc2176-e384-48bf-82d8-4a8ab2bd5159
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6701f014b637320d4c681c0fe67b164881738444
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364816"
 ---
 # <a name="srbunknowndevicecommand"></a>SRB\_未知\_设备\_命令
 

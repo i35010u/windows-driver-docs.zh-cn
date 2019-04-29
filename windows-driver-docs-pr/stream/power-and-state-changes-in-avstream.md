@@ -1,6 +1,6 @@
 ---
-title: 电源和 AVStream 中的状态更改
-description: 电源和 AVStream 中的状态更改
+title: AVStream 中的电源和状态更改
+description: AVStream 中的电源和状态更改
 ms.assetid: f62f4306-97c0-40fe-89ec-d08eb18988c9
 keywords:
 - AVStream WDK、 power 和状态更改
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 32b676e55353c1dbfd290149bba7ba1d79631ec0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362231"
 ---
-# <a name="power-and-state-changes-in-avstream"></a>电源和 AVStream 中的状态更改
+# <a name="power-and-state-changes-in-avstream"></a>AVStream 中的电源和状态更改
 
 
 当收到 AVStream [ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求，它将调用微型驱动程序的[ *AVStrMiniDeviceSetPower* ](https://msdn.microsoft.com/library/windows/hardware/ff554309)回调例程，如果微型驱动程序提供了一个。

@@ -5,11 +5,11 @@ ms.assetid: 3cf14fd3-1dfa-480e-a69c-c4d2c196a504
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0579d3db48d6e5943b24ee021711e89d620649d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364575"
 ---
 # <a name="developing-a-wia-video-driver"></a>开发 WIA 视频驱动程序
 

@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 65b662bd940d39ddb251bab5420ea76c48be4c3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355987"
 ---
 # <a name="writing-dpc-routines"></a>编写 DPC 例程
 

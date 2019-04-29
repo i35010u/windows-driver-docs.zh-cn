@@ -1,19 +1,19 @@
 ---
-title: 跟踪消息列表的功能
-description: 跟踪消息列表的功能
+title: 跟踪消息列表功能
+description: 跟踪消息列表功能
 ms.assetid: c640626d-6d64-45c4-861f-6e2f20b7dfb1
 keywords:
 - 跟踪消息列表 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5912df03c0a6c848fe9dd5f5d73698b796fca06a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354745"
 ---
-# <a name="trace-message-list-features"></a>跟踪消息列表的功能
+# <a name="trace-message-list-features"></a>跟踪消息列表功能
 
 
 本主题介绍跟踪消息列表的功能。 这些功能可用于自定义的列表。

@@ -5,11 +5,11 @@ ms.assetid: b163b2e7-8f12-4cd2-a682-7b755f28792e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b02bf8a7cc56a90f63d477db31cef6eea05c4e98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366112"
 ---
 # <a name="iscsitargetportal-wmi-class"></a>ISCSI\_TargetPortal WMI 类
 

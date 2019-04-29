@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 661364e75d37b9f0515b155b1826a95949947cea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362057"
 ---
 # <a name="difaddpropertypageadvanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -124,7 +124,7 @@ Windows 仅显示一个驱动程序页、 一个资源页上和设备的一个 p
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
 </tr>
 <tr class="even">

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79defb49537e5f0521a67edf860751e872f20cf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360452"
 ---
 # <a name="kseventcameracontrolzoom"></a>KSEVENT\_CAMERACONTROL\_缩放
 
@@ -64,7 +64,7 @@ ms.locfileid: "56534114"
 
 有关详细信息，请参阅[ **KSPROPERTY\_CAMERACONTROL\_S\_EX**](https://msdn.microsoft.com/library/windows/hardware/jj151593)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT\_CAMERACONTROL**](https://msdn.microsoft.com/library/windows/hardware/jj151587)

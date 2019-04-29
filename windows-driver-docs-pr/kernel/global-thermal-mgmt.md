@@ -1,6 +1,6 @@
 ---
 title: 全局热量管理
-description: 处理一个 IRP_MN_SURPRISE_REMOVAL 请求
+description: 处理 IRP_MN_SURPRISE_REMOVAL 请求
 ms.assetid: 3CBF44B2-891A-4B68-97F6-3563EC0D5122
 keywords:
 - 全局热量管理
@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3177ded380484b2f4661582cc643680672eaa4bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359906"
 ---
 # <a name="global-thermal-management"></a>全局热量管理 
 

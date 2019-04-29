@@ -1,17 +1,17 @@
 ---
-title: GPU 电源管理的空闲状态和活动的电源
+title: 空闲状态和活动电源的 GPU 电源管理
 description: 允许 Windows 显示器驱动程序模型 (WDDM) 1.2 和更高版本的驱动程序的 GPU 电源管理基础结构管理个人设备或一组设备的能力。
 ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 944d08c13f17ec0853897f855e1d8cc4d9a50bc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365026"
 ---
-# <a name="gpu-power-management-of-idle-states-and-active-power"></a>GPU 电源管理的空闲状态和活动的电源
+# <a name="gpu-power-management-of-idle-states-and-active-power"></a>空闲状态和活动电源的 GPU 电源管理
 
 
 从 Windows 8 开始，是可选的 GPU 电源管理基础结构可用，可让 Windows 显示器驱动程序模型 (WDDM) 1.2 和更高版本的驱动程序管理的电源可用于单个设备或一组设备。 此基础结构提供了支持 F 状态和 P 状态电源管理中与 Windows 协作的标准化的机制。
@@ -19,7 +19,7 @@ ms.locfileid: "56545365"
 |                                                                                   |                                        |
 |-----------------------------------------------------------------------------------|----------------------------------------|
 | WDDM 的最低版本                                                              | 1.2                                    |
-| 最低 Windows 版本                                                           | 8                                      |
+| 最大 Windows 版本                                                           | 8                                      |
 | 驱动程序实现                                                             | 可选                               |
 | [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **Device.Graphics…RuntimePowerMgmt** |
 

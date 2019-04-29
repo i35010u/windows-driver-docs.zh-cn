@@ -1,17 +1,17 @@
 ---
-title: 初始化使用 SAN
-description: 初始化使用 SAN
+title: 初始化 SAN 的用法
+description: 初始化 SAN 的用法
 ms.assetid: 199971a5-72ec-410c-834a-1e7b93ca1487
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52a701e14b19f0ceaa93dad99981030a424b836d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324934"
 ---
-# <a name="initializing-the-use-of-a-san"></a>初始化使用 SAN
+# <a name="initializing-the-use-of-a-san"></a>初始化 SAN 的用法
 
 
 

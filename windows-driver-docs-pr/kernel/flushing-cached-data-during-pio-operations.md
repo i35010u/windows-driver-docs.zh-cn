@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5f1e04a3a4d4ccb1ed2b959b74fef150af06e17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359963"
 ---
 # <a name="flushing-cached-data-during-pio-operations"></a>执行 PIO 操作期间刷新缓存数据
 

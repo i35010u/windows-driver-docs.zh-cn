@@ -5,11 +5,11 @@ ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9b5552ba5db2b5e4ad041ecf2d07e382238d0af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322287"
 ---
 # <a name="span-idifskanti-virusoptimizationforwindowscontainersspananti-virus-optimization-for-windows-containers"></a><span id="ifsk.anti-virus_optimization_for_windows_containers"></span>用于 Windows 容器的防病毒优化
 

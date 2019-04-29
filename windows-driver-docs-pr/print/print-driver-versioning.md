@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2766f0f4de62a036b03612b71df86780e3fdb4e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358238"
 ---
 # <a name="print-driver-versioning"></a>打印驱动程序版本控制
 
@@ -33,7 +33,7 @@ Pdrvver.h 标头以独占方式几乎包含预处理器\#定义指令。 前两�
 <a href="" id="ver-fileversion"></a>VER\_的文件版本  
 此常量应设置为一系列以逗号分隔的四个 WORD 值。 第三个和第四个单词用于设置高和低的单词，分别在 vs\_FIXEDFILEINFO 结构**dwFileVersionLS**成员。 下表中描述了每个四个词的含义：
 
-值
+ReplTest1
 
 含义
 

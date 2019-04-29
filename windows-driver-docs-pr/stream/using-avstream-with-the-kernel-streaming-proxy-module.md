@@ -1,6 +1,6 @@
 ---
-title: 与流式处理代理模块内核使用 AVStream
-description: 与流式处理代理模块内核使用 AVStream
+title: 将 AVStream 与内核流式处理代理模块配合使用
+description: 将 AVStream 与内核流式处理代理模块配合使用
 ms.assetid: c8ae1385-337e-46ad-841e-fbdf5d685210
 keywords:
 - 内核流式处理代理 WDK AVStream
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a99a391a0b448b68f2d1f86c0b4130776572b9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367461"
 ---
-# <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>与流式处理代理模块内核使用 AVStream
+# <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>将 AVStream 与内核流式处理代理模块配合使用
 
 
 

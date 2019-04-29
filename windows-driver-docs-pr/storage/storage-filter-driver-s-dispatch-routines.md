@@ -1,6 +1,6 @@
 ---
-title: 存储筛选器驱动程序调度例程
-description: 存储筛选器驱动程序调度例程
+title: 存储筛选器驱动程序的调度例程
+description: 存储筛选器驱动程序的调度例程
 ms.assetid: 0d1af035-537f-4632-800b-eb344dc5a3c8
 keywords:
 - 存储筛选器驱动程序 WDK、 调度例程
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e2b05d9e02f1954b9991d719739decc4bb24e79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362815"
 ---
-# <a name="storage-filter-drivers-dispatch-routines"></a>存储筛选器驱动程序调度例程
+# <a name="storage-filter-drivers-dispatch-routines"></a>存储筛选器驱动程序的调度例程
 
 
 ## <span id="ddk_storage_filter_drivers_dispatch_routines_kg"></span><span id="DDK_STORAGE_FILTER_DRIVERS_DISPATCH_ROUTINES_KG"></span>

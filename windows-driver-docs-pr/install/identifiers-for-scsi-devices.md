@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 917a542f60f67beb473cadc340232a481da0c3ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362995"
 ---
 # <a name="identifiers-for-scsi-devices"></a>SCSI 设备的标识符
 
@@ -157,7 +157,7 @@ SCSI 端口驱动程序当前将返回以下设备类型字符串，其中的第
 </tr>
 <tr class="odd">
 <td align="left"><p>16</p></td>
-<td align="left"><p>桥接</p></td>
+<td align="left"><p>Bridge</p></td>
 <td align="left"><p>ScsiBridge</p></td>
 <td align="left"><p>BridgePeripheral</p></td>
 </tr>

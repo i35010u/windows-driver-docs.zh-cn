@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_GET 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c2781cc3242716b45bdcd4efe133b8347740527a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362787"
 ---
 # <a name="wditlvpmprotocoloffloadget"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_GET
 

@@ -5,11 +5,11 @@ description: 描述包含 WIA 微型驱动程序可以调用以获取帮助中�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c966aa0a8563ae0ab2b62a38a39a6660642b51c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365980"
 ---
 # <a name="wia-driver-services-library"></a>WIA 驱动程序服务库
 

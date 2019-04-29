@@ -1,14 +1,14 @@
 ---
-Description: Initializing the Driver
+Description: 初始化驱动程序
 title: 初始化驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6145c0b10ae249d1335753ddcdf1f7b86593d14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365381"
 ---
 # <a name="initializing-the-driver"></a>初始化驱动程序
 

@@ -1,19 +1,19 @@
 ---
-title: GDI 提供半色调
-description: GDI 提供半色调
+title: GDI 提供的半色调
+description: GDI 提供的半色调
 ms.assetid: c7f3d148-4620-4060-bbf8-253e9e35c397
 keywords:
 - GDI 提供半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c0c9abbdf8db43f14fbd86a9bda5e29ca72bca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363196"
 ---
-# <a name="gdi-supplied-halftoning"></a>GDI 提供半色调
+# <a name="gdi-supplied-halftoning"></a>GDI 提供的半色调
 
 
 

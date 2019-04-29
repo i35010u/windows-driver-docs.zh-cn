@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01a83fcfbe0e3da71bb46b010c9ad1c2b0ad22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63342883"
 ---
 # <a name="defining-the-configuration-dependent-data-parameters"></a>定义配置相关的数据参数
 

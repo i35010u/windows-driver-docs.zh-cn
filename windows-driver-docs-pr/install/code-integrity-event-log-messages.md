@@ -5,11 +5,11 @@ ms.assetid: 1b47e802-ed1c-4402-86f6-5ef0608b1445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f24da52748c382a11eebb68927231d1edbe51f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361176"
 ---
 # <a name="code-integrity-event-log-messages"></a>代码完整性事件日志消息
 

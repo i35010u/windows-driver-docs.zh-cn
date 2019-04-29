@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72632a005c9d2a2324d5c45977f6fef7a62f526c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366472"
 ---
 # <a name="wdfptraddoffsettype-macro"></a>WDF_PTR_ADD_OFFSET_TYPE 宏
 
@@ -29,7 +29,7 @@ _type WDF_PTR_ADD_OFFSET_TYPE(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *_ptr*   
@@ -78,7 +78,7 @@ _type WDF_PTR_ADD_OFFSET_TYPE(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfcore.h （包括 Wdf.h）</td>
 </tr>
 </tbody>

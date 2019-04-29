@@ -1,17 +1,17 @@
 ---
-title: 条形码扫描程序蓝牙服务 Uuid
+title: 条形码扫描仪蓝牙服务 UUID
 description: 本主题介绍使用蓝牙服务发现协议 (SDP) 与条码扫描器的 Uuid。
 ms.assetid: 354654EC-95C8-4BE9-83D3-0926A1E71221
 ms.date: 02/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b6a272f76e803de67fe2d7cd3567e7e07fbddee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358682"
 ---
-# <a name="barcode-scanner-bluetooth-service-uuids"></a>条形码扫描程序蓝牙服务 Uuid
+# <a name="barcode-scanner-bluetooth-service-uuids"></a>条形码扫描仪蓝牙服务 UUID
 
 本主题介绍使用蓝牙服务发现协议 (SDP) 与条码扫描器的 Uuid。
 

@@ -5,11 +5,11 @@ ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aaed883fbba4d9b9186829d0af0a269fd4763803
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360772"
 ---
 # <a name="infverif"></a>InfVerif
 
@@ -31,7 +31,7 @@ InfVerif 工具将报告以下类型的错误/警告：
 
 -   **警告**(2000年-2999):这些问题会始终报告为警告。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -59,12 +59,12 @@ InfVerif 工具将报告以下类型的错误/警告：
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [安装通用 Windows 驱动程序](https://msdn.microsoft.com/windows-drivers/develop/installing_a_universal_driver)
 
-[使用通用 INF 文件](https://msdn.microsoft.com/library/windows/hardware/dn941087)
+[Using a Universal INF File](https://msdn.microsoft.com/library/windows/hardware/dn941087)（使用通用 INF 文件）
 
  
 

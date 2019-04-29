@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 420532a2f91190afcc0d70bf7dcfdf2e43f42f30
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353711"
 ---
 # <a name="option-attributes-for-the-memory-feature"></a>内存功能的选项属性
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a27e35b9a5678c9ae4da847c0591aed83cf9022
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352439"
 ---
 # <a name="selecting-flags-and-levels"></a>选择标志和级别
 

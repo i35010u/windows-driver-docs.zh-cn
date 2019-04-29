@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 416ffe6f75517082538a03605fe9f5ce4b1620f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367245"
 ---
 # <a name="exttdopsetptrfromtypeidandu64"></a>EXT\_TDOP\_SET\_PTR\_FROM\_TYPE\_ID\_AND\_U64
 
 
 EXT\_TDOP\_设置\_PTR\_FROM\_类型\_ID\_AND\_U64 子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作创建类型化数据说明表示到具有指定类型的指定的内存位置的指针。
 
-**参数**
+**Parameters**
 
 <span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
 设置为 EXT\_TDOP\_设置\_PTR\_FROM\_类型\_ID\_AND\_U64 此子操作。

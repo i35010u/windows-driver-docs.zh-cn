@@ -1,6 +1,6 @@
 ---
-title: 编写即插即用通知回调例程准则
-description: 编写即插即用通知回调例程准则
+title: 有关编写 PnP 通知回调例程的指导原则
+description: 有关编写 PnP 通知回调例程的指导原则
 ms.assetid: 2153b4c2-f60f-4ac9-8eee-66c5f3a9f414
 keywords:
 - 通知 WDK 即插即用，回调例程
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c08c88bf63918451585353762e01dbc5a84dd1b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359883"
 ---
-# <a name="guidelines-for-writing-pnp-notification-callback-routines"></a>编写即插即用通知回调例程准则
+# <a name="guidelines-for-writing-pnp-notification-callback-routines"></a>有关编写 PnP 通知回调例程的指导原则
 
 
 

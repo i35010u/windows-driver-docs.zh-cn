@@ -1,17 +1,17 @@
 ---
-title: 设置虚拟函数的电源状态
-description: 设置虚拟函数的电源状态
+title: 设置虚拟功能的电源状态
+description: 设置虚拟功能的电源状态
 ms.assetid: 7504677D-9B3A-47A2-9990-7BBF50A832EA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 638eaa417f3071171511f719491b4f21abcdbe4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362027"
 ---
-# <a name="setting-the-power-state-of-a-virtual-function"></a>设置虚拟函数的电源状态
+# <a name="setting-the-power-state-of-a-virtual-function"></a>设置虚拟功能的电源状态
 
 
 基础驱动程序发出的一个对象标识符 (OID) 组请求[OID\_SRIOV\_设置\_VF\_POWER\_状态](https://msdn.microsoft.com/library/windows/hardware/hh451896)若要更改指定 PCI 的电源状态Express (PCIe) 虚拟函数 (VF) 上的网络适配器。 更改电源状态是一项特权的操作，因为基础驱动程序微型端口驱动程序的 PCIe 物理函数 (PF) 网络适配器上发出此 OID 集请求。 PF 微型端口驱动程序然后 VF 上设置指定的电源状态。

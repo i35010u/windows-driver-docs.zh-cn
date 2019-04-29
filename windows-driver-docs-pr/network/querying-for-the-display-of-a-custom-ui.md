@@ -1,6 +1,6 @@
 ---
-title: 查询自定义 UI 的显示器
-description: 查询自定义 UI 的显示器
+title: 查询自定义 UI 的显示
+description: 查询自定义 UI 的显示
 ms.assetid: 89f39281-db97-4cbe-8753-43ab30d840c8
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，查询
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f359fb087120412a9bbdd99fc6ed99cfb39d51b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360963"
 ---
-# <a name="querying-for-the-display-of-a-custom-ui"></a>查询自定义 UI 的显示器
+# <a name="querying-for-the-display-of-a-custom-ui"></a>查询自定义 UI 的显示
 
 
 

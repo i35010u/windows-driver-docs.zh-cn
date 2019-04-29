@@ -15,11 +15,11 @@ api_type:
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c50d0281f1136be2d273ebc736f1b35b305a87f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357011"
 ---
 # <a name="kspropertycameracontrolextendedoptimizationhint"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_OPTIMIZATIONHINT
 
@@ -124,7 +124,7 @@ f 驱动程序支持此控件，则它必须支持 KSCAMERA\_EXTENDEDPROP\_优�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>这必须是 1。</p></td>
 </tr>
 <tr class="even">

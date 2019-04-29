@@ -1,6 +1,6 @@
 ---
-title: 设备的唯一标识符 (Duid) 存储设备
-description: 设备的唯一标识符 (Duid) 存储设备
+title: 存储设备的设备唯一标识符 (DUID)
+description: 存储设备的设备唯一标识符 (DUID)
 ms.assetid: 3846961c-5b75-4a1b-bced-601fc25bf071
 keywords:
 - 存储驱动程序 WDK、 Duid
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9906f16975c3d3c5139c121da512c0a9560d1da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365254"
 ---
-# <a name="device-unique-identifiers-duids-for-storage-devices"></a>设备的唯一标识符 (Duid) 存储设备
+# <a name="device-unique-identifiers-duids-for-storage-devices"></a>存储设备的设备唯一标识符 (DUID)
 
 
 当文件系统体系结构变得更加复杂时，操作系统组件数执行乘法运算，并通过越来越多地各种硬件和软件路径的发起程序访问存储目标，技术来识别存储设备变得不能满足需要。

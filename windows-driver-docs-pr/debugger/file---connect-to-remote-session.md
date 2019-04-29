@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2022f1062a3ea2663ff234e5c8d5c8a841cb4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361497"
 ---
-# <a name="file--connect-to-remote-session"></a>文件 |连接到远程会话
+# <a name="file--connect-to-remote-session"></a>文件 | 连接到远程会话
 
 
 ## <span id="ddk_file_connect_to_remote_session_dbg"></span><span id="DDK_FILE_CONNECT_TO_REMOTE_SESSION_DBG"></span>

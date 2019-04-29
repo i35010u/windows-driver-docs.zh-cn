@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77d579ad68f13b44fae6f450048ecaa5c6111e17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361243"
 ---
 # <a name="dvd-43-pan-scan-within-169-pictures-example"></a>16:9 画面中的 DVD 4:3 平移扫描示例
 
@@ -32,7 +32,7 @@ ms.locfileid: "56567713"
 <thead>
 <tr class="header">
 <th align="left">MPEG 2 变量</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

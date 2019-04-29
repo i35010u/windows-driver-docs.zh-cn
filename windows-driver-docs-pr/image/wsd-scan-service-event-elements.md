@@ -5,11 +5,11 @@ ms.assetid: 87141df8-a0cf-484c-a0ec-12129ad5fa3a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcdf0977b9b732adf06de5377a345adb989e45d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353319"
 ---
 # <a name="wsd-scan-service-event-elements"></a>WSD 扫描服务事件元素
 

@@ -5,11 +5,11 @@ ms.assetid: E797CB4A-C28E-4442-89E6-97B589900BD6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f581861a41a02141560b8aed3221d2941d5500
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358713"
 ---
 # <a name="v4-printer-driver-configuration-architecture"></a>V4 打印机驱动程序配置体系结构
 

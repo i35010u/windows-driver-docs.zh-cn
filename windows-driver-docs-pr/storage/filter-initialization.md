@@ -5,11 +5,11 @@ ms.assetid: c39dc5a6-f529-40a2-87d4-bac325b4fa1a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa300c91141903a0ea3736e1bed07e8d059101cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357232"
 ---
 # <a name="filter-initialization"></a>筛选器初始化
 

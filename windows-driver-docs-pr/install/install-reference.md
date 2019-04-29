@@ -4,11 +4,11 @@ description: 包含用于安装的 Windows 驱动程序的参考文档。
 ms.date: 10/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b34094e9abe5f90259486909a97594168f2160c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362989"
 ---
 # <a name="device-and-driver-installation-reference"></a>设备和驱动程序安装参考
 

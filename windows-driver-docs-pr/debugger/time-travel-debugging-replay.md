@@ -1,18 +1,18 @@
 ---
-title: 时间旅行调试-重播的跟踪
+title: 时光穿越调试 - 重放跟踪
 description: 本部分介绍如何重播时间旅行跟踪。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f9eb21ef930c66b3995e4afbd587a347049b880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364775"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
 
-# <a name="time-travel-debugging---replay-a-trace"></a>时间旅行调试-重播的跟踪 
+# <a name="time-travel-debugging---replay-a-trace"></a>时光穿越调试 - 重放跟踪 
 
 本部分介绍如何重播按时间顺序查看跟踪，向前导航和向后的时间。
 
@@ -20,7 +20,7 @@ ms.locfileid: "56527187"
 
 使用以下命令使用尾随负号在过去。
 
-| 命令  | 
+| Command  | 
 |----------------|
 | p-（后退） | 
 | t-（回溯）| 
@@ -207,7 +207,7 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 有关的信息`!tt`，`!positions`并`!index`命令查看[时间旅行调试-扩展命令](time-travel-debugging-extension-commands.md)。
 
  
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
 

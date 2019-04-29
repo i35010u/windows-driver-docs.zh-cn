@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62993cca9e37a60ae1a6b674e15bc219f10404c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355390"
 ---
 # <a name="annotated-x64-disassembly"></a>带批注的 x64 反汇编
 
@@ -163,7 +163,7 @@ Meaningless:
 0100114a call    qword ptr [rax+0x18]   ; call Init method
 ```
 
-这是使用 c + + vtable 的间接函数调用。 **这**指针传入**rcx**作为第一个参数。 前三个参数将传入寄存器，而在堆栈上传递的最后一个参数。 该函数会保留在寄存器中传递，因此在开始第五个参数的参数的 16 个字节**rsp**+ 0x20。
+这是一个间接函数调用使用C++vtable。 **这**指针传入**rcx**作为第一个参数。 前三个参数将传入寄存器，而在堆栈上传递的最后一个参数。 该函数会保留在寄存器中传递，因此在开始第五个参数的参数的 16 个字节**rsp**+ 0x20。
 
 ```dbgcmd
         if (SUCCEEDED(hr)) {

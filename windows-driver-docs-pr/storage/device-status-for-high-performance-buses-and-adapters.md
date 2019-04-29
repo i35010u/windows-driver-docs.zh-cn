@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10dbf15b1c58d58ed773837b02d682966a02deeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365287"
 ---
 # <a name="device-status-for-high-performance-buses-and-adapters"></a>高性能总线和适配器的设备状态
 

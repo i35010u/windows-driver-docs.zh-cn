@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab8c1bac989b414c4d95e77863aedc5e5f1cc1e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365065"
 ---
 # <a name="ioallocatefree-rule"></a>IoAllocateFree 规则
 
@@ -50,7 +50,7 @@ ms.locfileid: "56523351"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)

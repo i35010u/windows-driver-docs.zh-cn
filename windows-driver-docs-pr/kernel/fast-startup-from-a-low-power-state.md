@@ -1,17 +1,17 @@
 ---
-title: 从低功耗状态的快速启动
-description: 从低功耗状态的快速启动
+title: 从低功耗状态快速启动
+description: 从低功耗状态快速启动
 ms.assetid: 1091571c-2e30-4ad5-b4b9-0f8633e68288
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: eb6dadd7721bb235ec0a51c8ee63a29b5303ed7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359953"
 ---
-# <a name="fast-startup-from-a-low-power-state"></a>从低功耗状态的快速启动
+# <a name="fast-startup-from-a-low-power-state"></a>从低功耗状态快速启动
 
 
 若要实现低功耗状态从快速启动，叶节点设备的驱动程序应处理 IRP S0 power (即[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)的 IRPS0 系统电源状态）。 设备层次结构中的叶节点的设备具有任何子设备。 叶节点设备具有子设备上没有依赖关系，因为设备的功能驱动程序可以重新初始化设备作为后台任务以避免导致不必要的延迟对操作系统或其他驱动程序。 与此相反，总线驱动程序有需要附加的同步逻辑来协调使用其子设备电源的序列的依赖项。

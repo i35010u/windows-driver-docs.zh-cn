@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa0be1bd273a620d252be35c452fa946550b99f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361048"
 ---
 # <a name="keywords-that-can-be-edited"></a>可编辑的关键字
 
@@ -116,10 +116,10 @@ HKR, Ndi\params\<SubkeyName>,Max, 0, "<IHV defined>"
 <tr class="even">
 <td align="left"><p>NetworkAddress</p></td>
 <td align="left"><p>网络地址</p></td>
-<td align="left"><p>编辑</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>Edit</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 </tbody>
 </table>

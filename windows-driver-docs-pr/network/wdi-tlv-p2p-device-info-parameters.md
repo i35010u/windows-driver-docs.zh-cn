@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_INFO_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c34165d616b00bed68c2d78ad056b02cc696c0c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366347"
 ---
 # <a name="wditlvp2pdeviceinfoparameters"></a>WDI\_TLV\_P2P\_DEVICE\_INFO\_PARAMETERS
 
@@ -59,7 +59,7 @@ WDI\_TLV\_P2P\_设备\_信息\_参数是包含 Wi-Fi Direct 设备信息参数 T
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

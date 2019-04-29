@@ -8,11 +8,11 @@ keywords:
 ms.date: 09/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 36e50d3218236b52430e2f0e00f1b9d47a09453c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359196"
 ---
 # <a name="offloading-checksum-tasks"></a>卸载校验和任务
 

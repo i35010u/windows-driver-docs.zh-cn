@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_QOS_OPERATIONAL_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 07caef0308875b398f3ee917751fa418057809f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364127"
 ---
 # <a name="oidqosoperationalparameters"></a>OID\_QOS\_OPERATIONAL\_参数
 
@@ -83,7 +83,7 @@ NDIS 返回下面的状态代码的一个。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">

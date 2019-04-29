@@ -1,6 +1,6 @@
 ---
-title: 发送路径中的 IPsec 任务卸载
-description: 发送路径中的 IPsec 任务卸载
+title: 在发送路径中卸载 IPsec 任务
+description: 在发送路径中卸载 IPsec 任务
 ms.assetid: b95878e0-0aee-43cb-a64c-b5d8e07cb1b4
 keywords:
 - WDK IPsec 卸载、 受保护的 ESP 数据包发送路径卸载
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ced113f09c7b91db094da2e954446eb31753e777
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545583"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359342"
 ---
-# <a name="offloading-ipsec-tasks-in-the-send-path"></a>发送路径中的 IPsec 任务卸载
+# <a name="offloading-ipsec-tasks-in-the-send-path"></a>在发送路径中卸载 IPsec 任务
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

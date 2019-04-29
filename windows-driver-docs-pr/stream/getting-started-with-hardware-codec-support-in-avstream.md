@@ -1,19 +1,19 @@
 ---
-title: 开始使用硬件中 AVStream 编解码器支持
-description: 开始使用硬件中 AVStream 编解码器支持
+title: AVStream 中的硬件编解码器支持入门
+description: AVStream 中的硬件编解码器支持入门
 ms.assetid: f8335285-e74f-4600-aee9-7e2881cb0764
 keywords:
 - 硬件编解码器支持 WDK AVStream 使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e21751d64eac49db8337e789474709134f08782
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363624"
 ---
-# <a name="getting-started-with-hardware-codec-support-in-avstream"></a>开始使用硬件中 AVStream 编解码器支持
+# <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持入门
 
 
 在 Windows 7 中，启动[Windows Media Foundation](https://go.microsoft.com/fwlink/p/?linkid=155069) AVStream 基于媒体组件表示为用户模式下媒体基础转换 (Mft)。

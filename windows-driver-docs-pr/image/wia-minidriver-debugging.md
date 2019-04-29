@@ -5,11 +5,11 @@ ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6df7c6a5e6cb14575afc1bd1edc9aec20c871a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352685"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA 微型驱动程序调试
 

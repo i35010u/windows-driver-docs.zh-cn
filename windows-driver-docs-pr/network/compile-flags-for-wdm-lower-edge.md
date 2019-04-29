@@ -1,6 +1,6 @@
 ---
-title: 用于 WDM 下边缘编译标志
-description: 用于 WDM 下边缘编译标志
+title: 编译 WDM 下边缘的标志
+description: 编译 WDM 下边缘的标志
 ms.assetid: 60fbee2a-b8f3-4d1a-95c2-b4962a406065
 keywords:
 - NDIS WDM 微型端口驱动程序 WDK 网络，编译标志
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b7fcf5c7f29e17abdb009b6e1b120b9f40bd6a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356916"
 ---
-# <a name="compile-flags-for-wdm-lower-edge"></a>用于 WDM 下边缘编译标志
+# <a name="compile-flags-for-wdm-lower-edge"></a>编译 WDM 下边缘的标志
 
 
 

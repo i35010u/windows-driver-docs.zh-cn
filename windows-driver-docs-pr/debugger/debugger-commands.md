@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af6b6f2eb613392e03d399ee732f437cd56a9078
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368261"
 ---
 # <a name="debugger-commands"></a>调试器命令
 

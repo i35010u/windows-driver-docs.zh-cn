@@ -1,19 +1,19 @@
 ---
-title: 将 vram 能够捕获支持添加到现有 AVStream 驱动程序
-description: 将 vram 能够捕获支持添加到现有 AVStream 驱动程序
+title: 将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
+description: 将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
 ms.assetid: 10736533-3873-4f1d-91c5-d2e55163daaa
 keywords:
 - Vram 能够捕获 WDK AVStream，现有的驱动程序支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7e90a157e5e2f40d939be708adbeab913dde608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357016"
 ---
-# <a name="adding-vram-capture-support-to-existing-avstream-drivers"></a>将 vram 能够捕获支持添加到现有 AVStream 驱动程序
+# <a name="adding-vram-capture-support-to-existing-avstream-drivers"></a>将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
 
 
 若要添加到现有 pin 构建以 AVStream 驱动程序使用 DMA 的 vram 能够捕获支持，请执行以下步骤。

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e178b556ff219b788f92ae9da4fc1f061dc25fc1
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324717"
 ---
 # <a name="bug-check-0x96-invalidworkqueueitem"></a>Bug 检查 0x96：无效\_工作\_队列\_项
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad865665dd74739d47577916b8ad33eb228fa393
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354651"
 ---
 # <a name="compressionqualityfactorsupported-element"></a>CompressionQualityFactorSupported 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56525347"
 </wscn:CompressionQualityFactorSupported>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -88,7 +88,7 @@ ms.locfileid: "56525347"
 
 中指定扫描设备支持的最小值和最大的压缩质量因素[ **MinValue** ](minvalue.md)并[ **MaxValue** ](maxvalue.md)元素，分别。 **MinValue**并**MaxValue**必须是 1 到 100 之间的整数。 值为 100 表示设备应使用最少量的压缩该解决方案还支持以生成最高质量的图像。 目前，JPEG 压缩是唯一受支持的有损压缩类型。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DeviceSettings**](devicesettings.md)

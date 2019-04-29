@@ -1,16 +1,16 @@
 ---
-Description: An app that communicates with a USB device usually sends several control transfers requests.
-title: 如何发送 USB 控制传输 （UWP 应用）
+Description: 通常与 USB 设备进行通信的应用将请求发送多个控制传输。
+title: 如何发送 USB 控制传输（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b2251863942c5ab21c4fae499603422459930ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360144"
 ---
-# <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>如何发送 USB 控制传输 （UWP 应用）
+# <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>如何发送 USB 控制传输（UWP 应用）
 
 
 **摘要**

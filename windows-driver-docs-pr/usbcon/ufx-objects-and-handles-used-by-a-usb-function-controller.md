@@ -1,16 +1,16 @@
 ---
-Description: USB function class extension (UFX) uses the WDF object functionality to define these USB-specific UFX objects.
-title: UFX 对象和 USB 函数客户端驱动程序使用的句柄
+Description: USB 函数类扩展 (UFX) 使用 WDF 对象功能来定义这些特定于 USB 的 UFX 对象。
+title: USB 功能客户端驱动程序使用的 UFX 对象和句柄
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 268d3e82963c889328671c5bcc4ab1856daad554
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355167"
 ---
-# <a name="ufx-objects-and-handles-used-by-a-usb-function-client-driver"></a>UFX 对象和 USB 函数客户端驱动程序使用的句柄
+# <a name="ufx-objects-and-handles-used-by-a-usb-function-client-driver"></a>USB 功能客户端驱动程序使用的 UFX 对象和句柄
 
 
 **摘要**
@@ -86,7 +86,7 @@ USB 函数类扩展 (UFX) 使用 WDF 对象功能来定义这些特定于 USB �
 表示主机和设备之间的逻辑连接。 该对象负责与主机的数据传输。 为每个设备对象可以有一个或多个终结点。 默认终结点始终控制终结点，而 rest 则类驱动程序特定对象。 函数控制器驱动程序创建中的对象[ *EVT\_UFX\_设备\_终结点\_添加*](https://msdn.microsoft.com/library/windows/hardware/mt187851)回调通过调用[ **UfxEndpointCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt187965)方法。
 
 ## <a name="related-topics"></a>相关主题
-[开发 USB 函数控制器的 Windows 驱动的程序](developing-windows-drivers-for-usb-function-controllers.md)  
+[为 USB 功能控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  
 
 
 

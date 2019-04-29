@@ -1,6 +1,6 @@
 ---
-title: 处理等待/唤醒总线驱动程序 (PDO) 中的 IRP
-description: 处理等待/唤醒总线驱动程序 (PDO) 中的 IRP
+title: 处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
+description: 处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 ms.assetid: 9583b935-26e1-49c6-827d-932762af114d
 keywords:
 - 接收等待/唤醒 Irp
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9185f81649a2c637aa94ce65df560c96e5673662
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359835"
 ---
-# <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>处理等待/唤醒总线驱动程序 (PDO) 中的 IRP
+# <a name="handling-a-waitwake-irp-in-a-bus-driver-pdo"></a>处理总线驱动程序 (PDO) 中的等待/唤醒 IRP
 
 
 

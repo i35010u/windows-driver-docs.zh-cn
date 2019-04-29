@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2af3fee05f59822117c7416135f2dada6eb1dd17
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358814"
 ---
 # <a name="inf-delproperty-directive"></a>INF DelProperty 指令
 
@@ -106,7 +106,7 @@ DeviceModel
 {c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e}, 2, 0x00000001, "DeleteThisString"
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)

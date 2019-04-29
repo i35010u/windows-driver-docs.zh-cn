@@ -4,11 +4,11 @@ description: 本部分介绍如何在 WinDbg 预览调试程序中使用的主�
 ms.date: 08/04/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ed549918efe252cdbc490187d4a39bcc1900cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353112"
 ---
 # <a name="windbg-preview---home-menu"></a>WinDbg 预览的主菜单 
 
@@ -36,7 +36,7 @@ ms.locfileid: "56556077"
 - 发送反馈 (发送反馈，以改进 WinDbg 的详细信息，请参阅[提供反馈](debugging-using-windbg-preview.md#providing-feedback)。) 
 
  
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
  

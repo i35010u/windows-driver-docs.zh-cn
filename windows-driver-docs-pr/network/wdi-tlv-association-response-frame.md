@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESPONSE_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 63275012362764ae538d30a9cfab2d19ba281b82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362833"
 ---
 # <a name="wditlvassociationresponseframe"></a>WDI\_TLV\_关联\_响应\_帧
 
@@ -55,7 +55,7 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

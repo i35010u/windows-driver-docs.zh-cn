@@ -5,11 +5,11 @@ ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6caa307ecdfe6a720f8f1050c89193a9a6e72040
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360785"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 

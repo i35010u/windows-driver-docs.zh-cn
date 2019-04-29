@@ -5,13 +5,13 @@ ms.assetid: C1FB0519-6BB7-46B0-A3FA-B8E982279C44
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99dd3b002389b3844b0f68ef21c750d00ba91893
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345967"
 ---
-# <a name="standardized-inf-keywords-for-nvgre-task-offload"></a>NVGRE 任务卸载的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-nvgre-task-offload"></a>NVGRE 任务卸载的标准化 INF 关键字
 
 
  **\*EncapsulatedPacketTaskOffload**标准化的枚举关键字定义来启用或禁用对支持[使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)微型端口适配器中。
@@ -29,7 +29,7 @@ ms.locfileid: "56533774"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -45,7 +45,7 @@ ms.locfileid: "56533774"
 <td align="left"></td>
 <td align="left"><p>1</p>
 “(默认)”</td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

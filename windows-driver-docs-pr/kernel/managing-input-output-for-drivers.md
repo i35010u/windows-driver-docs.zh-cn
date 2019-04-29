@@ -5,11 +5,11 @@ ms.assetid: 09f23775-8c98-4344-9f68-43297ef50849
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 410f525b69f0059d6603f8326dd321622336faf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360287"
 ---
 # <a name="managing-inputoutput-for-drivers"></a>管理驱动程序的输入/输出
 

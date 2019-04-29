@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6859211afb123d3bc10039a67a203fe4490892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362801"
 ---
 # <a name="canceling-io-requests"></a>取消 I/O 请求
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c7fb09cf1195713a35843206dd5557bab689797
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357687"
 ---
 # <a name="mobile-plans-integration"></a>移动计划集成
 

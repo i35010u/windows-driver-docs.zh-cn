@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d4cd089852424a3945455bb7c84aa57ad8c0585f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362824"
 ---
 # <a name="iobuilddevicecontrolnofree-rule-wdm"></a>IoBuildDeviceControlNoFree 规则 (wdm)
 
@@ -56,7 +56,7 @@ ms.locfileid: "56545622"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)

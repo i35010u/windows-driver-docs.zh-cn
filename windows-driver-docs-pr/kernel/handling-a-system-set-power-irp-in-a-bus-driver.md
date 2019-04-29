@@ -1,6 +1,6 @@
 ---
-title: 处理系统集 Power IRP 总线驱动程序中
-description: 处理系统集 Power IRP 总线驱动程序中
+title: 处理总线驱动程序中的系统 Set-Power IRP
+description: 处理总线驱动程序中的系统 Set-Power IRP
 ms.assetid: e88344bd-4223-4cd5-9428-201d46c6dbb4
 keywords:
 - 设置 power Irp WDK 电源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 482e495e7806b24659e43b0aeade26094e8b883c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359823"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-bus-driver"></a>处理系统集 Power IRP 总线驱动程序中
+# <a name="handling-a-system-set-power-irp-in-a-bus-driver"></a>处理总线驱动程序中的系统 Set-Power IRP
 
 
 

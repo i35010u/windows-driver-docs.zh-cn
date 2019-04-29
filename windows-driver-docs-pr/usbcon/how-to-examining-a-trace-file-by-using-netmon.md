@@ -1,14 +1,14 @@
 ---
-Description: This topic describes how to example a event trace file by using Netmon.
+Description: 本主题介绍如何为示例的事件跟踪文件使用网络监视器。
 title: 如何在 Netmon 中查看 USB ETW 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a88369c90b3896d1a7aaa4f6bdf457c80f8c3a35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364858"
 ---
 # <a name="how-to-view-a-usb-etw-trace-in-netmon"></a>如何在 Netmon 中查看 USB ETW 跟踪
 

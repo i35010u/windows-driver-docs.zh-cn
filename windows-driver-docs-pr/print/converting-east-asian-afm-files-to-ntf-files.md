@@ -1,6 +1,6 @@
 ---
-title: 将东亚 AFM 文件转换为 NTF 文件
-description: 将东亚 AFM 文件转换为 NTF 文件
+title: 将东亚版 AFM 文件转换为 NTF 文件
+description: 将东亚版 AFM 文件转换为 NTF 文件
 ms.assetid: 0932068a-9101-4cdc-8c80-b2d3a4b507ba
 keywords:
 - 微型驱动程序 WDK Pscript，转换 AFM 文件
@@ -19,13 +19,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef9272459d5353a20f2273779bb596627aeb207e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365697"
 ---
-# <a name="converting-east-asian-afm-files-to-ntf-files"></a>将东亚 AFM 文件转换为 NTF 文件
+# <a name="converting-east-asian-afm-files-to-ntf-files"></a>将东亚版 AFM 文件转换为 NTF 文件
 
 
 

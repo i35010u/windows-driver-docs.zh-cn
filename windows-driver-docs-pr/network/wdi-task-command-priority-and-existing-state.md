@@ -1,17 +1,17 @@
 ---
-title: WDI 任务命令优先级和现有的状态
+title: WDI 任务命令优先级和现有状态
 description: 当适配器处于特定状态时，新的命令可能会涉及到它可能会影响现有状态 （例如，会影响现有连接的扫描）。
 ms.assetid: 11EE42BF-2C44-4601-B262-570E6D154151
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b2d485a38cd8f4718ed28bc031ead8ba6a35aa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356889"
 ---
-# <a name="wdi-task-command-priority-and-existing-state"></a>WDI 任务命令优先级和现有的状态
+# <a name="wdi-task-command-priority-and-existing-state"></a>WDI 任务命令优先级和现有状态
 
 
 当适配器处于特定状态时，新的命令可能会涉及到它可能会影响现有状态 （例如，会影响现有连接的扫描）。 下表描述了如何新的命令应优先对适配器中的现有状态。 列说明了新的命令时提供服务的现有状态。

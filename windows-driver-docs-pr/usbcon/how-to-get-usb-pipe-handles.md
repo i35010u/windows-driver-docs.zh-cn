@@ -1,14 +1,14 @@
 ---
-Description: This topic provides an overview of USB pipes and describes the steps required by a USB client driver to obtain pipe handles from the USB driver stack.
+Description: 本主题概述了 USB 管道，并介绍了通过 USB 客户端驱动程序从 USB 驱动程序堆栈获取管道句柄所必需的步骤。
 title: 如何枚举 USB 管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 022f4be7db31ec0f7d1c7ba289dcca2829faad0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364771"
 ---
 # <a name="how-to-enumerate-usb-pipes"></a>如何枚举 USB 管道
 
@@ -33,7 +33,7 @@ Windows Driver Foundation (WDF) 中提供了专用的 I/O 目标对象[内核模
 -   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 客户端驱动程序可以枚举管道之前，请确保满足这些要求：
 

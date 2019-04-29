@@ -1,17 +1,17 @@
 ---
-title: 存储 I/O 请求
+title: SPB I/O 请求
 description: 这些 Ioctl 发送由控制器驱动程序处理的客户端 （外围设备驱动程序）。
 ms.assetid: 4b8ed75e-1f03-4b7a-ad9d-0dfa9b20274c
 ms.date: 11/29/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 019da4445482ffffe61e6117e0d17eff1a478ce4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368189"
 ---
-# <a name="spb-io-requests"></a>存储 I/O 请求
+# <a name="spb-io-requests"></a>SPB I/O 请求
 系统提供 CTL_CODE 宏，这定义 I/O 控制代码中所述，用于定义在 Spb.h IOCTL_SPB_ * 控制代码。
 
 |主题 | 描述|

@@ -5,11 +5,11 @@ ms.assetid: 5f696e16-0c22-4d71-98d2-d642e721ac8c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88596293ea08d745d11fece45f6b3cb5202f6ed9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366889"
 ---
 # <a name="wia-driver-error-reporting-for-windows-me-and-windows-xp"></a>Windows Me 和 Windows XP 的 WIA 驱动程序错误报告
 

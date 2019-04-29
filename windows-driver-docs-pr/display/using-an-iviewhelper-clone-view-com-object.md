@@ -1,6 +1,6 @@
 ---
-title: 使用 IViewHelper 克隆视图 COM 对象
-description: 使用 IViewHelper 克隆视图 COM 对象
+title: 使用 IViewHelper Clone-View COM 对象
+description: 使用 IViewHelper Clone-View COM 对象
 ms.assetid: 2f264c5d-0e12-4116-9561-16dce99ce1fe
 keywords:
 - 有关 IViewHelper TMM WDK 显示器
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5270208041af24fbf168805a311d1f2f46129838
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359123"
 ---
-# <a name="using-an-iviewhelper-clone-view-com-object"></a>使用 IViewHelper 克隆视图 COM 对象
+# <a name="using-an-iviewhelper-clone-view-com-object"></a>使用 IViewHelper Clone-View COM 对象
 
 
 TMM 将使用硬件供应商的克隆视图的方法[IViewHelper](https://msdn.microsoft.com/library/windows/hardware/ff568164)在新的监视器和持久化的监视器配置中的 COM 接口对象。 在持久化的监视器配置中，TMM 将显示数据 （即，显示模式和拓扑的数据） 还原到监视器。 TMM 可以将此显示的数据传递给用户模式显示驱动程序通过[ **IViewHelper::SetConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff568176)方法，使驱动程序可以修改或在其他显示数据 （例如，gamma 或电视折叠设置）。

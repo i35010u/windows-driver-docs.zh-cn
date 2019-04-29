@@ -1,6 +1,6 @@
 ---
-title: 中的 IPsec 任务卸载接收路径
-description: 中的 IPsec 任务卸载接收路径
+title: 在接收路径中卸载 IPsec 任务
+description: 在接收路径中卸载 IPsec 任务
 ms.assetid: d1dff4fa-7354-4c8c-8591-223c6b524619
 keywords:
 - ESP 受保护的数据包，WDK IPsec 卸载、 接收路径卸载
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 173ce6885d4b161f40b93be6f625958a523ac60e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359348"
 ---
-# <a name="offloading-ipsec-tasks-in-the-receive-path"></a>中的 IPsec 任务卸载接收路径
+# <a name="offloading-ipsec-tasks-in-the-receive-path"></a>在接收路径中卸载 IPsec 任务
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

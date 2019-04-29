@@ -1,17 +1,17 @@
 ---
-title: 条形码扫描程序驱动程序示例
+title: 条形码扫描仪驱动程序示例
 description: 条形码扫描程序驱动程序示例演示如何创建条形码扫描程序的通用驱动程序，旨在以用作创建新的条形码扫描程序驱动程序的模板。
 ms.assetid: 29374910-AF1A-40E4-8A5D-B48D7D2FD5D8
 ms.date: 09/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4d5b830b25bfc9a010829d28b1ca1056d8b25c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358691"
 ---
-# <a name="barcode-scanner-driver-sample"></a>条形码扫描程序驱动程序示例
+# <a name="barcode-scanner-driver-sample"></a>条形码扫描仪驱动程序示例
 
 条形码扫描程序驱动程序示例演示如何创建条形码扫描程序的通用驱动程序，旨在以用作创建新的条形码扫描程序驱动程序的模板。 此示例使用用户模式驱动程序框架 (UMDF) 2.0，并演示了基本功能，如声明进行独占访问设备。 可以编译示例驱动程序，并且将其部署到 x86、amd64 和 ARM 平台。 有关通用驱动程序的详细信息，请转到[通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)。
 

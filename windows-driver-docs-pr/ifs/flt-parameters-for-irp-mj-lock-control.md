@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a84304a4abd2e921a06c0e78d7886651d1a45b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364987"
 ---
 # <a name="fltparameters-for-irpmjlockcontrol-union"></a>FLT\_IRP 的参数\_MJ\_锁\_控件联合
 
@@ -55,7 +55,7 @@ typedef union _FLT_PARAMETERS {
 **长度**  
 为指定的长度以字节为单位的要锁定的范围的变量的指针。
 
-**密钥**  
+**Key**  
 要分配给字节范围锁定的密钥值。
 
 **ByteOffset**  
@@ -87,13 +87,13 @@ IRP\_MJ\_锁\_控件可以是基于 IRP 的 I/O 操作或快速 I/O 操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ACCESS\_MASK**](https://msdn.microsoft.com/library/windows/hardware/ff540466)

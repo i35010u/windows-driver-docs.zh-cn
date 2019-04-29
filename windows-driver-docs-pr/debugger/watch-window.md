@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8dde55d8f5a09c94b01f8076f0975ac81634fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325879"
 ---
 # <a name="using-the-watch-window"></a>使用监视窗口
 
@@ -53,7 +53,7 @@ ALT + SHIFT + 2 将关闭监视窗口。
 
 - 类型的整数**int**显示为十进制值; 类型的整数**UINT**显示在当前的基数。 若要更改当前的基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令在调试器命令窗口中。
 
-- 若要更改本地变量的值，请双击其**值**单元格。 输入新值，或编辑旧值。 （剪切、 复制和粘贴命令是可用来进行编辑。）您输入的值可以包含任何[c + + 表达式](c---numbers-and-operators.md)。 输入新值或编辑旧值后，您可以按 enter 键来存储新值或按 esc 键放弃它。 如果提交无效的值后按 ENTER,，将重新出现的旧值。
+- 若要更改本地变量的值，请双击其**值**单元格。 输入新值，或编辑旧值。 （剪切、 复制和粘贴命令是可用来进行编辑。）您输入的值可以包含任何[C++表达式](c---numbers-and-operators.md)。 输入新值或编辑旧值后，您可以按 enter 键来存储新值或按 esc 键放弃它。 如果提交无效的值后按 ENTER,，将重新出现的旧值。
 
   类型的整数**int**显示为十进制值; 类型的整数**UINT**显示在当前的基数。 若要更改当前的基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令在调试器命令窗口中。
 

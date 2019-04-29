@@ -1,17 +1,17 @@
 ---
-title: 如何实现扩展的照相机控件属性
+title: 如何实现扩展的相机控件属性
 description: 照相机的驱动程序实现扩展的照相机控件属性。
 ms.assetid: BF5B2F1F-AC1D-4ED1-B1FC-64E8FA1218DA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df91e1cef783dc6e70bd43c4505c7aaee426e48b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363501"
 ---
-# <a name="how-to-implement-extended-camera-control-properties"></a>如何实现扩展的照相机控件属性
+# <a name="how-to-implement-extended-camera-control-properties"></a>如何实现扩展的相机控件属性
 
 
 照相机的驱动程序应实现[扩展相机控件属性](extended-camera-control-properties.md)作为单个属性设置 — 也就是说，每个属性应作为单个属性集。 下面的示例代码可以用于实现这些属性使用作为起始点。

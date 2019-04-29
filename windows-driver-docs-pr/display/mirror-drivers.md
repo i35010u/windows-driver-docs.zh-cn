@@ -14,16 +14,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c977d484fa9f698afb2db77400efd5a2b821a740
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352427"
 ---
 # <a name="mirror-drivers"></a>镜像驱动程序
 
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [远程显示器驱动程序](remote-display-drivers.md)

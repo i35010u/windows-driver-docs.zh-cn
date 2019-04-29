@@ -5,11 +5,11 @@ ms.assetid: 68E34B92-155B-401E-8D90-5BD1AF036B4D
 ms.date: 02/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 400fdb42155f468a03c2570cfa295f269334f44c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328227"
 ---
 # <a name="microsoft-defined-bluetooth-hci-extensions"></a>Microsoft 定义的蓝牙 HCI 扩展
 
@@ -107,7 +107,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供描述其中一个位图 Microsoft 定
 
 **Subcommand_opcode** （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x00   |  HCI_VS_MSFT_Read_Supported_Features 子命令操作码。|
 
@@ -115,7 +115,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供描述其中一个位图 Microsoft 定
 
 **状态**（1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |  0x00 |  命令成功。 |
 | 0x01&#160;-&#160;0xFF  |  该命令失败。 请参阅_错误代码_蓝牙核心规范中有关详细信息。 |
@@ -140,13 +140,13 @@ HCI_VS_MSFT_Read_Supported_Features 提供描述其中一个位图 Microsoft 定
 
 **Microsoft_event_prefix_length** （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x00&#160;-&#160;0x20|指定在返回 Microsoft 事件前缀字段中的字节数_Microsoft_event_prefix_。 这是信息的常量开头的每个 Microsoft 指定 HCI 事件的字节数。|
 
 **Microsoft_event_prefix** （可变长度）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |事件&#160;前缀&#160;值| 常量在每个 Microsoft 定义的事件的开始处出现的情况的信息。 此信息用于将 Microsoft 定义的事件与其他自定义事件区分开来。|
 
@@ -187,13 +187,13 @@ Connection_handle （2 个字节）：
 
 RSSI_threshold_high （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |N_ = 范围&#160;RSSI 阈值&#160;值 |  最大的预期的 RSSI 值。 如果观察到的 RSSI 变得大于或等于此值，则控制器会生成一个事件。 为 b R/edr 规范： <ul><li>范围:-128 &lt; =  _N_ &lt;= 127 （有符号整数）</li><li>单位： dBm</li></ul>有关 LE:<ul><li>范围:-127 为 20 （有符号整数）</li><li>单位： dBm</li></ul>|
 
 RSSI_threshold_low （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |N_ = _Low&#160;RSSI 阈值&#160;值|最小的预期的 RSSI 值。 如果观察到的 RSSI 变得，控制器会生成一个事件小于或等于此值。 为 b R/edr 规范：<ul><li>范围:-128 &lt; =  _N_ &lt;= 127 （有符号整数）</li><li>单位： dBm</li></ul>有关 LE:<ul><li>范围:-127 为 20 （有符号整数）</li><li>单位： dBm</li></ul>|
 
@@ -206,7 +206,7 @@ RSSI_threshold_low_time_interval （1 个字节）：
 
 RSSI_sampling_period （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x00|保留的值。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 millisecondsThe 采样间隔 （毫秒）。|
@@ -216,7 +216,7 @@ RSSI_sampling_period （1 个字节）：
 
 状态 （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |  0x00 |  命令成功。 |
 | 0x01&#160;-&#160;0xFF  |  该命令失败。 请参阅_错误代码_蓝牙核心规范中有关详细信息。 |
@@ -225,7 +225,7 @@ RSSI_sampling_period （1 个字节）：
 
 Subcommand_opcod （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x01|HCI_VS_MSFT_Monitor_Rssi 子命令操作码。|
 
@@ -254,7 +254,7 @@ HCI_VS_MSFT_Cancel_Monitor_Rssi 取消以前颁发[HCI_VS_MSFT_Monitor_Rssi](#hc
 
 Subcommand_opcode （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |0x02   |  HCI_VS_MSFT_Cancel_Monitor_Rssi 子命令操作码。|
 
@@ -350,7 +350,7 @@ _模式数据_采用以下格式。
 
 Subcommand_opcode （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |0x03   |  HCI_VS_MSFT_LE_Monitor_Advertisement 子命令操作码。|
 
@@ -362,20 +362,20 @@ RSSI_threshold_high （1 个字节）：
 
 RSSI_threshold_low （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |低 RSSI 阈值|最小的预期的 RSSI 值。 如果观察到的 RSSI 变得，控制器会生成一个事件小于或等于此值。 有关 LE:<ul><li>范围:-127 为 20 （有符号整数）</li><li>单位： dBm</li></ul>|
 
 RSSI_threshold_low_time_interval （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x00|保留的值。|
 |N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 秒。 时间 （秒） 对其 RSSI 值应为如下_RSSI_threshold_low_之前[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)生成。
 
 RSSI_sampling_period （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |0x00|保留的值。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 毫秒。 采样间隔 （毫秒）。|
@@ -394,7 +394,7 @@ Condition_type （1 个字节）：
 
 Number_of_patterns （1 个字节）：
 
-|值 | 参数说明|
+|ReplTest1 | 参数说明|
 |---|---|
 |0xXX| 模式 Pattern_data 参数中指定的数量。|
 
@@ -409,7 +409,7 @@ Pattern_data (> 3 个八位字节):
 
 UUID_type （1 个字节）：
 
-|ReplTest1 | 参数说明|
+|值 | 参数说明|
 |---|---|
 |0x01| UUID 是 16 位服务。|
 |0x02| UUID 是 32 位服务。|
@@ -429,7 +429,7 @@ IRK （16 个八位字节）：
 
 Address_type （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x00| 公共设备地址。|
 |0x01| 随机设备地址。|
@@ -453,7 +453,7 @@ Address_type （1 个字节）：
 
 Subcommand_opcode （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |0x03| HCI_VS_MSFT_LE_Monitor_Advertisement 子命令操作码。 |
 
@@ -503,7 +503,7 @@ Connection_handle （1 个字节）：
 
 Subcommand_opcode （1 个字节）：
 
-| 值  |  参数说明 |
+| ReplTest1  |  参数说明 |
 |---|---|
 |0x04| HCI_VS_MSFT_LE_Cancel_Monitor_Adver 子命令操作码。 |
 
@@ -533,7 +533,7 @@ HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 
 Subcommand_opcode （1 个字节）：
 
-| ReplTest1  |  参数说明 |
+| 值  |  参数说明 |
 |---|---|
 |0x05|  HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 子命令操作码。|
 
@@ -600,13 +600,13 @@ Subcommand_opcode （1 个字节）：
 
 Subcommand_opcode （1 个字节）：
 
-|值|参数说明|
+|ReplTest1|参数说明|
 |---|---|
 |0x06|HCI_VS_MSFT_Read_Absolute_RSSI 子命令操作码。|
 
 句柄 （2 个字节）：
 
-|值|参数说明|
+|ReplTest1|参数说明|
 |---|---|
 |0xXXXX| 读取其 RSSI b R/edr 规范连接句柄。|
 
@@ -654,20 +654,20 @@ Microsoft_event_code （1 个字节）：
 
 状态 （1 个字节）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |0x00|成功。 连接的 RSSI 值已满足以下条件之一。<ul><li>RSSI 达到或超出_RSSI_threshold_high_。</li><li>RSSI 达到或下降到低于_RSSI_threshold_low_转移_RSSI_threshold_low_time_interval_秒。</li><li>_RSSI_sampling_period_已过期并生成该事件用于通知宿主 RSSI 值。</li></ul>|
 |0x01&#160;-&#160;0xFF|失败。 连接的 RSSI 值可以不再进行监视。 错误代码通常是介绍基础的 ACL 连接已断开的原因代码之一。|
 
 Connection_handle （2 个字节）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |0x_XXXX_|要监视其 RSSI 的连接句柄。|
 
 RSSI （1 个字节）：
 
-|值|参数说明|
+|ReplTest1|参数说明|
 |---|---|
 |_N_ = _RSSI&#160;值_|测量的链接连接的 RSSI 值。 为 b R/edr 规范：<ul><li>范围:-128 &lt; =  _N_ &lt;= 127 （有符号整数）</li><li>单位： dBm</li></ul>有关 LE:<ul><li>范围:-127 为 20 （有符号整数）</li><li>单位： dBm</li></ul>|
 
@@ -687,19 +687,19 @@ HCI_VS_MSFT_LE_Monitor_Device_Event 指示控制器已启动或停止监视蓝�
 
 Event_prefix （变量大小）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |事件前缀|标记为 Microsoft 定义此事件的事件前缀。 大小和值是所返回的[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)命令。
 
 Microsoft_event_code （1 个字节）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |0x02|HCI_VS_MSFT_LE_Monitor_Device_Event 事件代码。|
 
 Address_type （1 个字节）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |0x00|公共设备地址。|
 |0x01|随机设备地址。|
@@ -707,13 +707,13 @@ Address_type （1 个字节）：
 
 BD_ADDR （6 个八位字节）：
 
-|值|参数说明|
+|ReplTest1|参数说明|
 |---|---|
 |0x_XXXXXXXXXXXX_|蓝牙设备的地址。|
 
 Monitor_handle （1 个字节）：
 
-|ReplTest1|参数说明|
+|值|参数说明|
 |---|---|
 |0x_XX_|为指定的筛选器的句柄[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)命令。|
 

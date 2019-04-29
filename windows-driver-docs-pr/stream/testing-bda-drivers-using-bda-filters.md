@@ -1,6 +1,6 @@
 ---
-title: 测试 BDA 驱动程序使用 BDA 筛选器
-description: 测试 BDA 驱动程序使用 BDA 筛选器
+title: 使用 BDA 筛选器测试 BDA 驱动程序
+description: 使用 BDA 筛选器测试 BDA 驱动程序
 ms.assetid: 136810b7-9378-482b-8e21-a7eae0142909
 keywords:
 - 广播驱动程序体系结构 WDK AVStream，测试驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2a9dec9af2e17292f22cb8ab242bc95c6c3c579
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364803"
 ---
-# <a name="testing-bda-drivers-using-bda-filters"></a>测试 BDA 驱动程序使用 BDA 筛选器
+# <a name="testing-bda-drivers-using-bda-filters"></a>使用 BDA 筛选器测试 BDA 驱动程序
 
 
 

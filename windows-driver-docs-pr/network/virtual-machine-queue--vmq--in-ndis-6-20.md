@@ -1,6 +1,6 @@
 ---
-title: 在 NDIS 6.20 中的虚拟机队列 (VMQ)
-description: 在 NDIS 6.20 中的虚拟机队列 (VMQ)
+title: NDIS 6.20 中的虚拟机队列 (VMQ)
+description: NDIS 6.20 中的虚拟机队列 (VMQ)
 ms.assetid: fb48b019-4646-426d-b10e-d760788f9985
 keywords:
 - NDIS 6.20 WDK，虚拟机队列 (VMQ)
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df2443645c7ce6614b57d3eb2f25dd8880cb10b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366647"
 ---
-# <a name="virtual-machine-queue-vmq-in-ndis-620"></a>在 NDIS 6.20 中的虚拟机队列 (VMQ)
+# <a name="virtual-machine-queue-vmq-in-ndis-620"></a>NDIS 6.20 中的虚拟机队列 (VMQ)
 
 
 

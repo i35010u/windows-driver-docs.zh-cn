@@ -5,11 +5,11 @@ ms.assetid: 32e72d48-b80a-4cfb-ad35-174219753c01
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf6bee4593e434a47e25af10ee4b1b2ffd395cef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358535"
 ---
 # <a name="iscsiheaderintegritytypequalifiers"></a>ISCSI\_标头\_完整性\_类型\_限定符
 

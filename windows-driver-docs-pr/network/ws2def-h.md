@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e2098970cf0809c610199f0940d1bb4c92045e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359726"
 ---
 # <a name="ws2defh"></a>Ws2def.h
 
@@ -24,7 +24,7 @@ Ws2def.h 标头包含 Winsock2 规范的定义。 它包含在 Winsock2.h。 用
 >
 > 有关适用于此标头的网络驱动程序参考的详细信息，请参阅[Ws2def.h （参考）](https://msdn.microsoft.com/library/windows/hardware/mt808757)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 * [AF_INET](af-inet.md)
 * [AF_INET6](af-inet6.md)

@@ -1,6 +1,6 @@
 ---
-title: 标准和非标准模式之间切换
-description: 标准和非标准模式之间切换
+title: 在标准与非标准模式之间切换
+description: 在标准与非标准模式之间切换
 ms.assetid: 15939910-b325-47ff-b4ed-bbaeec4149bd
 keywords:
 - 使用了非标准的显示模式 WDK DirectX 9.0，标准和非标准模式之间切换
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd007ce8d8298fe85907c80bb7005e1147e26681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354206"
 ---
-# <a name="switching-between-standard-and-nonstandard-modes"></a>标准和非标准模式之间切换
+# <a name="switching-between-standard-and-nonstandard-modes"></a>在标准与非标准模式之间切换
 
 
 ## <span id="ddk_switching_between_standard_and_nonstandard_modes_gg"></span><span id="DDK_SWITCHING_BETWEEN_STANDARD_AND_NONSTANDARD_MODES_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: 兼容的 VGA 的微型端口驱动程序 HwVidStartIO
-description: 兼容的 VGA 的微型端口驱动程序 HwVidStartIO
+title: VGA 兼容的微型端口驱动程序的 HwVidStartIO
+description: VGA 兼容的微型端口驱动程序的 HwVidStartIO
 ms.assetid: e5a81f87-b220-4497-aed3-8c4d08504340
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，VGA、 HwVidStartIO
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7cf64a18633bbba8aaf664a794a34a3f53d697
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354830"
 ---
-# <a name="vga-compatible-miniport-drivers-hwvidstartio"></a>兼容的 VGA 的微型端口驱动程序 HwVidStartIO
+# <a name="vga-compatible-miniport-drivers-hwvidstartio"></a>VGA 兼容的微型端口驱动程序的 HwVidStartIO
 
 
 ## <span id="ddk_vga_compatible_miniport_driver_s_hwvidstartio_gg"></span><span id="DDK_VGA_COMPATIBLE_MINIPORT_DRIVER_S_HWVIDSTARTIO_GG"></span>

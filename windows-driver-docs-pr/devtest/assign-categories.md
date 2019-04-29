@@ -1,19 +1,19 @@
 ---
-title: 分配设备元数据创建向导中的类别
-description: 分配设备元数据创建向导中的类别
+title: 在设备元数据创作向导中分配类别
+description: 在设备元数据创作向导中分配类别
 ms.assetid: B96C46A7-A276-4410-83D1-BCE4CC8D2807
 keywords:
-- 分配设备元数据创建向导中的类别
+- 在设备元数据创作向导中分配类别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef641316531917e68f41912b92fcb50e80ede32c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361294"
 ---
-# <a name="assign-categories-in-the-device-metadata-authoring-wizard"></a>分配设备元数据创建向导中的类别
+# <a name="assign-categories-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中分配类别
 
 
 类别确定如何对设备进行分组。

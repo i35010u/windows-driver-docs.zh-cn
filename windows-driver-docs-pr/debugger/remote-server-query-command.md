@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d98ff180d451e52e4f2e4e2b11b3c1240d95d37c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353525"
 ---
 # <a name="remote-server-query-command"></a>远程服务器查询命令
 

@@ -1,6 +1,6 @@
 ---
-title: 选择和取消选择附加到并行端口的 IEEE 1284 设备
-description: 选择和取消选择附加到并行端口的 IEEE 1284 设备
+title: 选择和取消选择连接到并行端口的 IEEE 1284 设备
+description: 选择和取消选择连接到并行端口的 IEEE 1284 设备
 ms.assetid: 1a3ac1b1-9180-4b71-8740-70c6fbe9a885
 keywords:
 - IEEE 1284 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2258c60201d3a224206dcc969fdea10851ef119
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365373"
 ---
-# <a name="selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-port"></a>选择和取消选择附加到并行端口的 IEEE 1284 设备
+# <a name="selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-port"></a>选择和取消选择连接到并行端口的 IEEE 1284 设备
 
 
 

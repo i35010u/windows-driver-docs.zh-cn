@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9ffecf467ded2996a682634312c0ea684657af45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360599"
 ---
 # <a name="guiddevinterfacewpdprivate"></a>GUID_DEVINTERFACE_WPD_PRIVATE
 
@@ -70,7 +70,7 @@ GUID_DEVINTERFACE_WPD_PRIVATE 应仅为使用的自定义 WPD 应用程序的专
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista、 Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

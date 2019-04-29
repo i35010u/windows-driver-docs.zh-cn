@@ -1,17 +1,17 @@
 ---
-title: 即插即用测试 （设备基础知识）
+title: PnP 测试（设备基础功能）
 description: PnP 设备基础测试强制驱动程序来处理几乎所有 PnP Irp;但是，有三个区域的强调专门删除、 重新平衡和意外删除。
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6a7d773b8c5111dd7577db676e4f09aa8e0b688
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356305"
 ---
-# <a name="pnp-tests-device-fundamentals"></a>即插即用测试 （设备基础知识）
+# <a name="pnp-tests-device-fundamentals"></a>PnP 测试（设备基础功能）
 
 
 PnP 设备基础测试强制驱动程序来处理几乎所有 PnP Irp;但是，有专门强调的三个方面： 删除、 重新平衡和意外删除。 即插即用的测试提供了一种机制，测试每个单独或组合在一起对其进行测试 （即，作为压力测试中）。 此即插即用的测试被通过使用用户模式 API 调用 （通过测试应用程序） 和内核模式 （通过右上筛选器驱动程序） 的 API 调用的组合。
@@ -300,17 +300,17 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 ## <a name="related-topics"></a>相关主题
 
 
-[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
+[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
 [如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[设备基础测试](device-fundamentals-tests.md)
+[设备基础功能测试](device-fundamentals-tests.md)
 
-[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[设备基础功能测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
 
-[提供 WDTF 简单 I/O 插件](https://msdn.microsoft.com/library/windows/hardware/hh781398)
+[Provided WDTF Simple I/O plug-ins](https://msdn.microsoft.com/library/windows/hardware/hh781398)（提供的 WDTF 简单 I/O 插件）
 
-[如何测试在运行时从命令提示符下的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
+[如何在运行时通过命令提示符测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/how_to_test_a_driver_at_runtime_from_a_command_prompt)
 
  
 

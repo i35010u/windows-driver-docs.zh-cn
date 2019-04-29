@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a757161240a7ab057329c16392cad5fb71e3f3b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324891"
 ---
 # <a name="installing-ndis-wdm-miniport-drivers"></a>安装 NDIS-WDM 微型端口驱动程序
 

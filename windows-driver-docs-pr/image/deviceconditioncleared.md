@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2aab29ddeb8ee49430928f2b4f81dbc8a7c12fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364555"
 ---
 # <a name="deviceconditioncleared-element"></a>DeviceConditionCleared 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56521809"
 </wscn:DeviceConditionCleared>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -84,7 +84,7 @@ ms.locfileid: "56521809"
 
 **DeviceConditionCleared**元素包含[ **ConditionId** ](conditionid.md)并[ **ConditionClearTime** ](conditioncleartime.md)元素，用于指定的条件标识符和时间的条件已清除，分别。 WSD 扫描服务发送**DeviceConditionCleared**元素中的客户端[ **ScannerStatusConditionClearedEvent** ](scannerstatusconditionclearedevent.md)事件元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ConditionClearTime**](conditioncleartime.md)

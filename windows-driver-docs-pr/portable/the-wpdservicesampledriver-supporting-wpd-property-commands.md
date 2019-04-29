@@ -4,11 +4,11 @@ title: 对属性命令 (WpdBasicHardwareDriverSample) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd89ce3ce9653958bf77bc3c2c0d8d6f45c897ad
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370693"
 ---
 # <a name="support-for-property-commands-wpdbasichardwaredriversample"></a>对属性命令 (WpdBasicHardwareDriverSample) 的支持
 

@@ -5,11 +5,11 @@ ms.assetid: 8FF26AB3-F473-4352-8951-D3F7DF366B5F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b920fcec53aa336f42e833ea175ed68cd9ab355
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351795"
 ---
 # <a name="runas-lowil"></a>RunAs LowIL
 

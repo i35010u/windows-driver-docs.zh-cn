@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e59e43bb970484ef4d1a344ec941847e052346b6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357722"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回调通知
 

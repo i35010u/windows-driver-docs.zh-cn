@@ -1,6 +1,6 @@
 ---
-title: 通过测试和验证失败
-description: 通过测试和验证失败
+title: 通过和未通过验证
+description: 通过和未通过验证
 ms.assetid: 2639358b-eb6a-49b7-b23a-877a452917dc
 keywords:
 - 静态驱动程序验证程序 WDK，验证结果
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a840d3ddf31d7fa1ee33a997ce09e196eb6d9d3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356344"
 ---
-# <a name="passing-and-failing-a-verification"></a>通过测试和验证失败
+# <a name="passing-and-failing-a-verification"></a>通过和未通过验证
 
 
 SDV 验证规则的具有三个基本的结果：

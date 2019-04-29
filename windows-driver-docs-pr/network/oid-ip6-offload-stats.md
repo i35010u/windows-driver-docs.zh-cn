@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58affcd02f9bd3871e0f217808b74f5234b7de95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355932"
 ---
 # <a name="oidip6offloadstats"></a>OID_IP6_OFFLOAD_STATS
 
@@ -25,6 +25,6 @@ OID_IP6_OFFLOAD_STATS 一组响应，卸载目标应重置所有卸载 TCP 连�
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
+| Version | Windows Vista 及更高版本 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 

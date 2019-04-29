@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d36013bca95fd55a2bbadf4532fe1904f3380f1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352803"
 ---
 # <a name="wiadpshorizontalsheetfeedsize"></a>WIA\_DPS\_水平\_工作表\_馈送\_大小
 
@@ -45,17 +45,17 @@ WIA\_DPS\_水平\_工作表\_馈送\_SIZE 属性包含文档送纸器扫描程�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>从 Windows Vista 开始，WIA_DPS_HORIZONTAL_SHEET_FEED_SIZE 属性仍可在根级别的 WIA 驱动程序，但它已被取代 WIA_IPS_MAX_HORIZONTAL_SIZE 属性，因此您应该将其视为可选。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_DPS\_VERTICAL\_SHEET\_FEED\_SIZE**](wia-dps-vertical-sheet-feed-size.md)

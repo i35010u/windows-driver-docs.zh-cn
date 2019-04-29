@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b67117f9a9f75071c12f3819fbd4ed8d806c5f11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363683"
 ---
 # <a name="kscategorydatadecompressor"></a>KSCATEGORY_DATADECOMPRESSOR
 
@@ -33,7 +33,7 @@ KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://msdn.microsoft.com/library/
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,13 +70,13 @@ KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGOR
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)

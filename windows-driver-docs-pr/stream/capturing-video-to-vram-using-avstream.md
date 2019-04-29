@@ -1,6 +1,6 @@
 ---
-title: 捕获到 vram 能够使用 AVStream 视频
-description: 捕获到 vram 能够使用 AVStream 视频
+title: 使用 AVStream 将视频捕获到 VRAM
+description: 使用 AVStream 将视频捕获到 VRAM
 ms.assetid: c4ca4a67-83cb-4a89-bc84-e06b1dc67b66
 keywords:
 - AVStream WDK，vram 能够捕获
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15648b4a90d3be8e89662406132babbad8ab4a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370369"
 ---
-# <a name="capturing-video-to-vram-using-avstream"></a>捕获到 vram 能够使用 AVStream 视频
+# <a name="capturing-video-to-vram-using-avstream"></a>使用 AVStream 将视频捕获到 VRAM
 
 
 从 Windows Vista 开始，视频和音频图形适配器的 vram 能够直接向可以捕获 AVStream 驱动程序。 AVStream 驱动程序在 Windows Vista 之前已存在的必须首先将数据置于 vram 能够、 将其传输到系统内存，然后最后再到 vram 能够显示。

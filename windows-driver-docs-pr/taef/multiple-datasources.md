@@ -5,11 +5,11 @@ ms.assetid: FD0B252F-1D70-4840-986F-94FF80D42246
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd2518c0b91964ed13e57d4ff3a1d7c410b27f08
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355501"
 ---
 # <a name="multiple-datasources"></a>多个数据源
 

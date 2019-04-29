@@ -5,11 +5,11 @@ ms.assetid: 3325B492-2A70-4EB7-99B0-3FE3E24CE398
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 881528423e31121f8e6705ab7bd2f86ca9a83e9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359511"
 ---
 # <a name="uwp-device-apps-for-printers"></a>适用于打印机的 UWP 设备应用
 

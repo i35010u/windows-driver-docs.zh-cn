@@ -1,5 +1,5 @@
 ---
-title: WDI_TLV_SAE_CONFIRM_RESPONSE
+title: WDI_TLV_SAE_COMMIT_RESPONSE
 description: WDI_TLV_SAE_CONFIRM_RESPONSE 是包含同时进行身份验证的等于 (SAE) 确认响应帧 TLV。
 ms.assetid: 42ACD823-3FFB-442F-B81C-82446C3606FF
 ms.date: 02/15/2019
@@ -8,13 +8,13 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 994ffc57f0550dc5ec59e7ae9f1f262d4e2f64ee
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359340"
 ---
-# <a name="wditlvsaeconfirmresponse"></a>WDI_TLV_SAE_CONFIRM_RESPONSE
+# <a name="wditlvsaeconfirmresponse"></a>WDI_TLV_SAE_COMMIT_RESPONSE
 
 **WDI_TLV_SAE_CONFIRM_RESPONSE**是包含同时进行身份验证的等于 (SAE) 确认响应帧 TLV。
 
@@ -38,6 +38,6 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 
 |   |   |
 | --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
+| 最低受支持的客户端 | Windows 10 版本 1903 |
 | 最低受支持的服务器 | Windows Server 2016 |
 | Header | Wditypes.hpp |

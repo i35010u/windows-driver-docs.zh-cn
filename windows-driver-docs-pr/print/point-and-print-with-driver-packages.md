@@ -1,19 +1,19 @@
 ---
-title: 指向并打印与驱动程序包
-description: 指向并打印与驱动程序包
+title: 点选打印与驱动程序包
+description: 点选打印与驱动程序包
 ms.assetid: 4574d0c3-2ec5-4870-96ac-f828ba8515b3
 keywords:
 - 点和打印 WDK，包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 915933d74555707a885ab4181bd8929ca9c54a68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362727"
 ---
-# <a name="point-and-print-with-driver-packages"></a>指向并打印与驱动程序包
+# <a name="point-and-print-with-driver-packages"></a>点选打印与驱动程序包
 
 
 连接到打印服务器的打印客户端可以使用点和打印复制安装整个驱动程序包。 使用的优点点和包使用打印的：

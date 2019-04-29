@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21292ca6ed92b9fc419dae7231298ca630ca6183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354811"
 ---
 # <a name="additional-dbh-examples"></a>其他 DBH 示例
 
@@ -142,7 +142,7 @@ modbase :  1000000
 
 ### <a name="span-iddecodingsymboldecorationsspanspan-iddecodingsymboldecorationsspandecoding-symbol-decorations"></a><span id="decoding_symbol_decorations"></span><span id="DECODING_SYMBOL_DECORATIONS"></span>解码符号修饰
 
-**Undec**命令可用于显示 c + + 符号修饰的含义。 以下示例中，在装饰物附加到??\_C @\_03GGCAPAJC@Sep？ $AA @ 解码以指示它是一个字符串：
+**Undec**命令可用于显示的含义C++符号修饰。 以下示例中，在装饰物附加到??\_C @\_03GGCAPAJC@Sep？ $AA @ 解码以指示它是一个字符串：
 
 ```dbgcmd
 dbh: undec ??_C@_03GGCAPAJC@Sep?$AA@

@@ -1,6 +1,6 @@
 ---
-title: GDL 带引号的字符串
-description: GDL 带引号的字符串
+title: GDL 带引号字符串
+description: GDL 带引号字符串
 ms.assetid: 52d6f1bf-0b8c-4aa7-8cc8-1a18def224be
 keywords:
 - 构造 WDK GDL，字符串
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0911ff78717c40e1bdc78f39c7fd1a4c2e5306e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366343"
 ---
-# <a name="gdl-quoted-strings"></a>GDL 带引号的字符串
+# <a name="gdl-quoted-strings"></a>GDL 带引号字符串
 
 
 一个*带引号的字符串*开头和结尾的双引号字符 （"）。 有以下例外带引号的字符串的一部分，将按原义视为之间出现的任何字符：

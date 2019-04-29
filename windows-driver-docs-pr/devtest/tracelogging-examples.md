@@ -5,11 +5,11 @@ ms.assetid: 0FD7D517-D46A-4D76-A5E1-3267DBB09A29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fd529c986e1626d3e2d5ffcae6f43a0a403abae
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369701"
 ---
 # <a name="tracelogging-examples"></a>TraceLogging 示例
 

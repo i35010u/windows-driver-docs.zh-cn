@@ -5,11 +5,11 @@ ms.assetid: b083d9ba-2f76-4e4b-a29c-5cd20d914479
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 493a5b5cbac460de379dc99d313a20775c20affc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362697"
 ---
 # <a name="ksnodetypevideocameraterminal"></a>KSNODETYPE\_视频\_照相机\_终端
 

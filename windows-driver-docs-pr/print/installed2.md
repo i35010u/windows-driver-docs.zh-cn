@@ -1,5 +1,5 @@
 ---
-title: 已安装 (TCP/IP)
+title: Installed (TCP/IP)
 description: 安装 tcp/ip 协议构造包含的对象 ID (OID) 的 MIB 表的行和查找值的列表。
 ms.assetid: 4e14d8c1-7c66-4035-845d-f3f92dad8c4f
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc940e2b3b5d5f40cf0ddd587281c3782a976de2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362863"
 ---
-# <a name="installed-tcpip"></a>已安装 (TCP/IP)
+# <a name="installed-tcpip"></a>Installed (TCP/IP)
 
 
 安装 tcp/ip 协议构造包含的对象 ID (OID) 的 MIB 表的行和查找值的列表。 如果查找值的任何存在的行中，此算法返回 **，则返回 TRUE**。 配置打印机相关的大多数查询应确定是否存在特定的值存储在打印机的 MIB，然后返回结果为布尔值。 已安装构造 Tcpbidi.xsd 中定义。
@@ -25,7 +25,7 @@ ms.locfileid: "56541079"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

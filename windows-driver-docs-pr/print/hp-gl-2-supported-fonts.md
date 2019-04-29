@@ -1,6 +1,6 @@
 ---
-title: HP/2 支持的字体
-description: HP/2 支持的字体
+title: HP-GL/2 支持的字体
+description: HP-GL/2 支持的字体
 ms.assetid: e7ddc9d0-3007-4c63-9176-3507909282f7
 keywords:
 - HP/2 单色 WDK Unidrv，字体
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 698575b1ba8e67b7d01e69e73f29bbaf060540cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360499"
 ---
-# <a name="hp-gl2-supported-fonts"></a>HP/2 支持的字体
+# <a name="hp-gl2-supported-fonts"></a>HP-GL/2 支持的字体
 
 
 

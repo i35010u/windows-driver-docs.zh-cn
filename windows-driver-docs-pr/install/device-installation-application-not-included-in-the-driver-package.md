@@ -1,17 +1,17 @@
 ---
 title: 不包含驱动程序包中的设备安装应用程序
-description: 不包含驱动程序包中的设备安装应用程序
+description: 不包含在驱动程序包中的设备安装应用程序
 ms.assetid: 3c8fd504-50c9-4a61-9cca-cd8cee4e2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8386c1bb6ece9d68be9e7c032cfff8cf9744adc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357939"
 ---
-# <a name="device-installation-application-not-included-in-the-driver-package"></a>不包含驱动程序包中的设备安装应用程序
+# <a name="device-installation-application-not-included-in-the-driver-package"></a>不包含在驱动程序包中的设备安装应用程序
 
 
 此方法介绍了通过该共同安装程序中，通过使用完成安装操作来安装特定于设备的应用程序的方法。

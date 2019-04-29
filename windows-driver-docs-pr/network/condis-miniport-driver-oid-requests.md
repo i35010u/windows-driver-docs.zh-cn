@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ebc76b73a9e648991c6189cda319371b61dd2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367762"
 ---
 # <a name="condis-miniport-driver-oid-requests"></a>CoNDIS 微型端口驱动程序 OID 请求
 

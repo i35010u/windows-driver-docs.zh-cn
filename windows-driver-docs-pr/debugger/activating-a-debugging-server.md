@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c2cac5496dcf0cf3b821773cea0e7b64b87a23a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353223"
 ---
 # <a name="activating-a-debugging-server"></a>激活调试服务器
 
@@ -135,7 +135,7 @@ Debugger -server ssl:proto=Protocol,{certuser=Cert|machuser=Cert},port=Socket,cl
 可以使用[ **.server** ](-server--create-debugging-server-.md)命令以启动多个服务器使用不同的协议选项。 这允许不同的调试客户端要加入会话。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [控制远程调试会话](controlling-a-remote-debugging-session.md)
 

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 92102685e65bb641b57d9db5ccdbeae1c4620420
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359057"
 ---
 # <a name="wditlvsaeindicationtype"></a>WDI_TLV_SAE_INDICATION_TYPE
 
@@ -38,6 +38,6 @@ UINT32 大小 （以字节为单位）。
 
 |   |   |
 | --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
+| 最低受支持的客户端 | Windows 10 版本 1903 |
 | 最低受支持的服务器 | Windows Server 2016 |
 | Header | Wditypes.hpp |

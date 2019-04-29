@@ -1,17 +1,17 @@
 ---
-title: 类型的物理网络适配器配置
-description: 类型的物理网络适配器配置
+title: 物理网络适配器配置的类型
+description: 物理网络适配器配置的类型
 ms.assetid: 83F71AF7-A807-4F81-A0B3-1777135AAE39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b33f31989c5df18e65ec11a09981db1acf11e29
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358292"
 ---
-# <a name="types-of-physical-network-adapter-configurations"></a>类型的物理网络适配器配置
+# <a name="types-of-physical-network-adapter-configurations"></a>物理网络适配器配置的类型
 
 
 HYPER-V 可扩展交换机体系结构支持与单个外部网络适配器连接到基础物理介质的访问。 外部网络适配器可以绑定到以下物理网络适配器配置之一：

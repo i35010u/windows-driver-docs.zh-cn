@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 52726498ccf71f138fe65b79af67e3a1875ff629
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354633"
 ---
 # <a name="trace-message-list-columns"></a>跟踪消息列表列
 

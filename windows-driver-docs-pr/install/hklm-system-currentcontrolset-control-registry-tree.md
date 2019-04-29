@@ -1,15 +1,15 @@
 ---
-title: HKLM\SYSTEM\CurrentControlSet\Control Registry Tree
+title: HKLM\SYSTEM\CurrentControlSet\Control 注册表树
 description: HKLM\SYSTEM\CurrentControlSet\Control 注册表树包含控制系统启动的信息和设备配置的某些方面。
 ms.assetid: 58eacd32-425d-4224-8d37-21e2caf124cf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28e40e0717c39243aec0df5c6e4b1ae7bc0efd97
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360597"
 ---
 # <a name="hklmsystemcurrentcontrolsetcontrol-registry-tree"></a>HKLM\\系统\\CurrentControlSet\\控制注册表树
 

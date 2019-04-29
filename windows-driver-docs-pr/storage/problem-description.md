@@ -5,11 +5,11 @@ ms.assetid: 5e811011-9848-43fc-969d-abdf1ad45acf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1820f418472043b269176364cd998ab1804517bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366375"
 ---
 # <a name="problem-description"></a>问题说明
 

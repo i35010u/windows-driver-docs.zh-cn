@@ -1,24 +1,24 @@
 ---
 title: GPIO 中断
-description: 某些常规用途的 I/O (GPIO) 控制器设备可以配置其 GPIO 插针，以充当中断请求输入。
+description: 某些常规用途 I/O (GPIO) 控制器设备可以配置其 GPIO 引脚，使之充当中断请求输入。
 ms.assetid: 0F56AD4C-E0BF-49F1-AB67-0107D08DEF9F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5caf6df9af8a5e6991ccf9154b79f27cffb407be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326145"
 ---
 # <a name="gpio-interrupts"></a>GPIO 中断
 
 
-某些常规用途的 I/O (GPIO) 控制器设备可以配置其 GPIO 插针，以充当中断请求输入。 这些中断请求输入是根据物理连接到的 GPIO 插针的外围设备。 这些 GPIO 控制器的驱动程序可以启用、 禁用、 屏蔽、 取消屏蔽，以及清除单个 GPIO 插针上的中断请求。
+某些常规用途 I/O (GPIO) 控制器设备可以配置其 GPIO 引脚，使之充当中断请求输入。 这些中断请求输入由通过物理方式连接到 GPIO 引脚的外围设备驱动。 这些 GPIO 控制器的驱动程序可以启用、禁用、屏蔽、取消屏蔽以及清除单个 GPIO 引脚上的中断请求。
 
 GPIO 中断的支持是可选的。 GPIO 框架扩展 (GpioClx) 不需要 GPIO 控制器，以支持 GPIO 中断。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

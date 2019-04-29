@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 72fa51716e5a80dbdfe838888b721179a662e405
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63343459"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB 基于设备的重置和恢复
 

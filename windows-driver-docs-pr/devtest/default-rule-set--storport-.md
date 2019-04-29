@@ -5,11 +5,11 @@ ms.assetid: 8310E393-4CA7-4701-8BBC-6E758C927FBE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d5c7f94469073467a95080ba1221e3320eac17de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359049"
 ---
 # <a name="default-rule-set-storport"></a>默认规则集 (Storport)
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f7c51ccf7f02182041c4fac9ad0b3b600978c42
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367384"
 ---
 # <a name="bug-check-0x75-cannotwriteconfiguration"></a>Bug 检查 0x75：不能\_编写\_配置
 

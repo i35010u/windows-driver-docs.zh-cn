@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09b0907cebc3a4b08ac03471373c3690e2649566
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363993"
 ---
 # <a name="kspropertygeneralcomponentid"></a>KSPROPERTY\_常规\_COMPONENTID
 
@@ -76,13 +76,13 @@ KSPROPERTY\_常规\_COMPONENTID 属性是可选属性，允许访问常规组件
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks.h （包括 Ks.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCOMPONENTID**](https://msdn.microsoft.com/library/windows/hardware/ff561027)

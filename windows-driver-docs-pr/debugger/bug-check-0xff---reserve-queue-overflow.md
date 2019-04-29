@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 369da6be516d4686dc1d3694b4d7653c2d0e566c
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367267"
 ---
 # <a name="bug-check-0xff-reservequeueoverflow"></a>Bug 检查 0xFF：RESERVE\_QUEUE\_OVERFLOW
 

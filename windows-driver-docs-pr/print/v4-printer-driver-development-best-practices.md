@@ -5,11 +5,11 @@ ms.assetid: D26241F5-A514-40D3-8618-70C8636B7405
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5eaffbaace4f1a1a438d283bca4a85860a636c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324818"
 ---
 # <a name="v4-printer-driver-development-best-practices"></a>V4 打印机驱动程序开发最佳做法
 

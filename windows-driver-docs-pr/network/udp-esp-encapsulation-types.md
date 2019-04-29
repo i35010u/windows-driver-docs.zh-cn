@@ -1,6 +1,6 @@
 ---
-title: UDP ESP 封装类型
-description: UDP ESP 封装类型
+title: UDP-ESP 封装类型
+description: UDP-ESP 封装类型
 ms.assetid: 126d2fd5-778e-43ff-87f6-5b0b54a83bac
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载、 封装类型和子
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b1dc8ff441c908c7b1e9a395ace740e5601dfed6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358358"
 ---
-# <a name="udp-esp-encapsulation-types"></a>UDP ESP 封装类型
+# <a name="udp-esp-encapsulation-types"></a>UDP-ESP 封装类型
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

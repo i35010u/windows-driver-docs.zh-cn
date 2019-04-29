@@ -5,11 +5,11 @@ ms.assetid: 9c34b437-97f7-49fa-afcd-16f1c238828a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82f5b13b1f8b5289e20161bbb9175a3bbbc66c4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327613"
 ---
 # <a name="vmq-receive-queues"></a>VMQ 接收队列
 

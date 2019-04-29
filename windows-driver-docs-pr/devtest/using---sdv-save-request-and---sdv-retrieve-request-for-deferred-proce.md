@@ -1,6 +1,6 @@
 ---
 title: 使用 __sdv_save_request 和 __sdv_retrieve_request 延缓的过程调用
-description: 使用 __sdv_save_request 和 __sdv_retrieve_request for 延缓的过程调用
+description: 对延迟的过程调用使用 __sdv_save_request 和 __sdv_retrieve_request
 ms.assetid: 14d3a022-3e74-4526-9bf5-fee1ce36ac9e
 keywords:
 - __sdv_save_request
@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b15e8f76027bc25c168d4d993652bfc671223c6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341647"
 ---
 # <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用\_ \_sdv\_保存\_请求并\_ \_sdv\_检索\_延迟过程调用的请求
 

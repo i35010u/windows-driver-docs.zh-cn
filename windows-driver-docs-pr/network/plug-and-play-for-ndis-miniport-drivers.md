@@ -1,6 +1,6 @@
 ---
-title: Plug and Play NDIS 微型端口驱动程序
-description: Plug and Play NDIS 微型端口驱动程序
+title: NDIS 微型端口驱动程序的即插即用
+description: NDIS 微型端口驱动程序的即插即用
 ms.assetid: 277a5f8b-f6a6-444e-831a-712d8f05e59f
 keywords:
 - 微型端口驱动程序 WDK 网络插
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ae265a816ed16472e678594de3cecd2fcc2cdde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358735"
 ---
-# <a name="plug-and-play-for-ndis-miniport-drivers"></a>Plug and Play NDIS 微型端口驱动程序
+# <a name="plug-and-play-for-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序的即插即用
 
 
 

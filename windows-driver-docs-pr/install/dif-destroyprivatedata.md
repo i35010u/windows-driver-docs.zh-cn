@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 34546f44c89b83361299bd2299e6016fdccb1111
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362045"
 ---
 # <a name="difdestroyprivatedata"></a>DIF_DESTROYPRIVATEDATA
 
@@ -102,17 +102,17 @@ DIF_DESTROYPRIVATEDATA 请求将定向类安装程序以释放任何内存或资
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Setupapi.h （包括 Setupapi.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_DEVINFO_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff552344)

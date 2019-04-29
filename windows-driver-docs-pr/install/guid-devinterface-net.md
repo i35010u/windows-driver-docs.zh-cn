@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5970f5a734e17a9b59c3a4db9b163b89aa71c68e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363745"
 ---
 # <a name="guiddevinterfacenet"></a>GUID_DEVINTERFACE_NET
 
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_NET[设备接口类](https://msdn.microsoft.com/library/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,11 +70,11 @@ NDIS 注册 NDIS 微型端口驱动程序将此接口类的实例。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista、 Windows Server 2003 可伸缩网络包 (SNP) 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ndisguid.h （包括 Ndisguid.h）</td>
 </tr>
 </tbody>

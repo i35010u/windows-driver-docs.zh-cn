@@ -5,18 +5,18 @@ ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 098241eb5ad4ed03950eff668265d9db41e9d57b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324736"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
 
 TAEF 使用 RunFixtureAs 之外所对应的测试的上下文中执行测试装置 （模块、 类和测试级别设置和清理功能）。
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 -   [Te.Service](te-service.md)必须安装并在计算机上运行，以便从非提升 Te.exe 过程中，运行提升的测试装置或作为本地系统运行测试装置。

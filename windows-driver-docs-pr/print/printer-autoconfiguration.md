@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a6e6ea45766ccc8409fe10394f66a4d42e7262c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364912"
 ---
 # <a name="printer-autoconfiguration"></a>打印机自动配置
 
@@ -32,7 +32,7 @@ ms.locfileid: "56547173"
 
 自动配置的主要目标是网络打印机，因为它们是最有可能拥有多个可选功能，需要使用更多的配置。 如果未使用自动配置，用户将需要手动执行此配置。
 
-[自动配置的详细信息](autoconfiguration-details.md)
+[自动配置详细信息](autoconfiguration-details.md)
 
 [自动配置实现选项](autoconfiguration-implementation-options.md)
 

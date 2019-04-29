@@ -1,5 +1,5 @@
 ---
-title: 扩展属性的内核
+title: 内核扩展属性
 description: 筛选器管理器和微筛选器驱动程序体系结构
 keywords:
 - 扩展文件属性
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb4e1e5ad527df91273ad8b9ddaef84f0996ca1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324351"
 ---
-# <a name="kernel-extended-attributes"></a>扩展属性的内核
+# <a name="kernel-extended-attributes"></a>内核扩展属性
 内核扩展的特性 (内核 EA 的) 是作为一种方法来提高性能的图像文件签名验证添加到 Windows 8 中 NTFS 的功能。  它是代价高昂的操作来验证映像签名。 因此，有关存储信息，是否的二进制文件，以前已验证、 已更改或不会降低图像将不得不进行完整签名检查的实例数。
 
 
@@ -68,7 +68,7 @@ EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字�
 - 内核 EA 可以位于与正常 EA 相同的文件。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 [FltQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff543435)  
 [FltSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff544500)  
 [FSCTL_QUERY_USN_JOURNAL](https://msdn.microsoft.com/library/windows/desktop/aa364583)  

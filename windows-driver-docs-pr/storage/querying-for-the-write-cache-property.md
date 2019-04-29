@@ -1,6 +1,6 @@
 ---
-title: 查询的写缓存属性
-description: 查询的写缓存属性
+title: 查询写缓存属性
+description: 查询写缓存属性
 ms.assetid: 80b7c366-3b54-4dae-8ac7-63caaa1767f9
 keywords:
 - 存储驱动程序 WDK，写入缓存
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8719997cc86e24bf4560c5d97287264249fa1e2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366264"
 ---
-# <a name="querying-for-the-write-cache-property"></a>查询的写缓存属性
+# <a name="querying-for-the-write-cache-property"></a>查询写缓存属性
 
 
 存储设备通常将数据写入到非易失性的媒体，如磁盘盘片之前缓冲写入缓存中的数据。 此类型的缓冲区可以提高设备性能，但它还会降低数据的完整性。 如果写入缓存没有备用电池，电源故障可能导致丢失缓存数据。

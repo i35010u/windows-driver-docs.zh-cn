@@ -1,6 +1,6 @@
 ---
-title: 对于 SAN 阻止调用
-description: 对于 SAN 阻止调用
+title: 阻止调用 SAN
+description: 阻止调用 SAN
 ms.assetid: 93be861c-4cf1-48ea-ac69-a4a171ca9052
 keywords:
 - 阻止调用 WDK San
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a851f2ae874a2a016add304376805e15c1a0a82d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367685"
 ---
-# <a name="blocking-calls-for-a-san"></a>对于 SAN 阻止调用
+# <a name="blocking-calls-for-a-san"></a>阻止调用 SAN
 
 
 

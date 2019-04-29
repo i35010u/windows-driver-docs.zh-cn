@@ -5,11 +5,11 @@ ms.assetid: B4485626-9062-4892-B317-8FFA8B68C0D0
 ms.date: 11/01/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 900bfc1806e5cbbfdb548af810062ba8dc29e4fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366317"
 ---
 # <a name="print-driver-samples"></a>打印驱动程序示例
 

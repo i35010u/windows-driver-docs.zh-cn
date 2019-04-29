@@ -1,6 +1,6 @@
 ---
-title: 写入 PCL XL GPD 文件
-description: 写入 PCL XL GPD 文件
+title: 编写 PCL XL GPD 文件
+description: 编写 PCL XL GPD 文件
 ms.assetid: 35abc33a-a046-452b-b650-5c4f626bf6cb
 keywords:
 - PCL XL 矢量图形 WDK Unidrv，写入 GPD 文件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b89db1789728e3d220193fd5247cdd6ceddd67a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370354"
 ---
-# <a name="writing-a-pcl-xl-gpd-file"></a>写入 PCL XL GPD 文件
+# <a name="writing-a-pcl-xl-gpd-file"></a>编写 PCL XL GPD 文件
 
 
 

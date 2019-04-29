@@ -1,5 +1,5 @@
 ---
-title: INF AddEventProvider Directive
+title: INF AddEventProvider 指令
 author: andylsn
 description: AddEventProvider 指令使用 INF DDInstall.Events 部分内。
 ms.assetid: ''
@@ -14,13 +14,13 @@ api_type:
 ms.date: 06/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 797705e2c6ade14f4a9c6b641f5b6ccc164deb53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356995"
 ---
-# <a name="inf-addeventprovider-directive"></a>INF AddEventProvider Directive
+# <a name="inf-addeventprovider-directive"></a>INF AddEventProvider 指令
 
 **AddEventProvider**中使用指令[ **INF *DDInstall*。事件部分**](inf-ddinstall-services-section.md)。 指定的特征[Windows 的事件跟踪](https://msdn.microsoft.com/library/windows/desktop/aa363668)(ETW) 提供程序与驱动程序相关联。 适用于 Windows 10 1809年和更高版本支持此指令。
 
@@ -185,7 +185,7 @@ LoggingRetention  = 2                                       ; Sequential
 LoggingAutoBackup = 1
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [***DDInstall *。事件**](inf-ddinstall-events-section.md)

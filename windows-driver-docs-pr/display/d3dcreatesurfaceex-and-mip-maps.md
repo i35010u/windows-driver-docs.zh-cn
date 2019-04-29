@@ -1,6 +1,6 @@
 ---
-title: D3dCreateSurfaceEx 和 MIP 映射
-description: D3dCreateSurfaceEx 和 MIP 映射
+title: D3dCreateSurfaceEx 和 MIP 贴图
+description: D3dCreateSurfaceEx 和 MIP 贴图
 ms.assetid: d0f4ee41-7622-4153-877c-17c88f8147a9
 keywords:
 - MIP 映射可呈现 WDK Direct3D
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19c652e50ee642e61c4e9c76ed804b7761004be6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327209"
 ---
-# <a name="d3dcreatesurfaceex-and-mip-maps"></a>D3dCreateSurfaceEx 和 MIP 映射
+# <a name="d3dcreatesurfaceex-and-mip-maps"></a>D3dCreateSurfaceEx 和 MIP 贴图
 
 
 ## <span id="ddk_d3dcreatesurfaceex_and_mip_maps_gg"></span><span id="DDK_D3DCREATESURFACEEX_AND_MIP_MAPS_GG"></span>

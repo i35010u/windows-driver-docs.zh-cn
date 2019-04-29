@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 38793feb6e7d643aef4fe9ed36db2123cdb04952
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359804"
 ---
 # <a name="handling-an-irpmncancelstopdevice-request-windows-98me"></a>处理 IRP\_MN\_取消\_停止\_设备请求 (Windows 98 / 我)
 

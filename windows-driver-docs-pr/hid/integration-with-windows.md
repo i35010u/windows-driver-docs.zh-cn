@@ -15,11 +15,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f3649c75c807479fc1040577ded80728582ce405
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364639"
 ---
 # <a name="integration-with-windows"></a>与 Windows 集成
 

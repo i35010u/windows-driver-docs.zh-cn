@@ -5,11 +5,11 @@ ms.assetid: eb1ec866-2dcd-4099-a24f-ae1d0c702b95
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 498f01f3adecde383d40df806b3be6b3db9cb3bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359673"
 ---
 # <a name="iscsiredirectsessioninfo-wmi-class"></a>ISCSI\_RedirectSessionInfo WMI 类
 

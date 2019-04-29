@@ -5,11 +5,11 @@ ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46e307638dcbfdd6648a801560c2eb1b3f86d62f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63340925"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 接收操作和卸载
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_PRESHUTDOWN_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b820110f9e770d9ff1379d2eb062da3eb75541e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368279"
 ---
 # <a name="ndisstatuswwanpreshutdownstate"></a>NDIS\_状态\_WWAN\_PRESHUTDOWN\_状态
 
@@ -30,11 +30,11 @@ NDIS\_状态\_WWAN\_PRESHUTDOWN\_状态通知是向主机 MBB 驱动程序中的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持从 Windows 10，版本 1511年开始。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h</td>
 </tr>
 </tbody>

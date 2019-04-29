@@ -5,11 +5,11 @@ ms.assetid: 6AF8DD2C-400F-4E9D-A6DF-40A847BCBD76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b98d079b1c206957e4d92db710f24c0d8dffad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369697"
 ---
 # <a name="tracelogging-for-kernel-mode-drivers-and-components"></a>内核模式驱动程序和组件的 TraceLogging
 
@@ -24,7 +24,7 @@ ms.locfileid: "56567506"
 
 ## <a name="include-the-tracelogging-header-files"></a>包括 TraceLogging 标头文件
 
-若要使用 TraceLogging API，包括 TraceLogging 标头文件 TraceLoggingProvider.h。 其他 TraceLogging API 标头文件，TraceLoggingActivity.h，才可供 c + + 编写的用户模式驱动程序中使用。
+若要使用 TraceLogging API，包括 TraceLogging 标头文件 TraceLoggingProvider.h。 其他 TraceLogging API 标头文件，TraceLoggingActivity.h，才可在编写的用户模式驱动程序中使用C++。
 
 ```command
 #include <wdm.h>
@@ -107,7 +107,7 @@ TraceLoggingWrite(g_hProvider, "EventName", args...)
 其中 g\_hProvider 是您定义的提供程序的句柄和"EventName"是一个字符串，用于标识特定事件的文本 （而不是变量）。 像**printf**或**DbgPrint**，则**TraceLoggingWrite**宏支持个数可变的 （最多 99) 的其他参数。 参数 （参数） 必须是 TraceLogging 包装宏，如[ **TraceLoggingLevel**](https://docs.microsoft.com/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogginglevel)， [TraceLoggingInt32](https://docs.microsoft.com/windows/desktop/tracelogging/tracelogging-wrapper-macros)，或[TraceLoggingString](https://docs.microsoft.com/windows/desktop/tracelogging/tracelogging-wrapper-macros). TraceLogging 包装宏 TraceLoggingProvider.h 中定义。
 
 > [!NOTE]
-> 如果使用的 c + +，则可以使用[ **TraceLoggingValue** ](https://docs.microsoft.com/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-traceloggingvalue)包装宏以进行自动调整的类型。 如果用 C 编写您的驱动程序，则必须使用特定于类型的字段宏 (例如， **TraceLoggingInt32**或**TraceLoggingUnicodeString**)。
+> 如果使用的C++，可以使用[ **TraceLoggingValue** ](https://docs.microsoft.com/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-traceloggingvalue)包装宏以进行自动调整的类型。 如果用 C 编写您的驱动程序，则必须使用特定于类型的字段宏 (例如， **TraceLoggingInt32**或**TraceLoggingUnicodeString**)。
 
 下面的示例提供程序，记录一个事件 g\_hProvider。 此事件时调用"MyDriverEntryEvent。" 该宏利用 TraceLoggingPointer 和 TraceLoggingUnicodeString 包装器将写入跟踪日志的驱动程序对象和注册表路径的指针。 TraceLoggingUnicodeString 包装器采用的可选名称。 在此示例中，"RegPath"是 RegistryPath 值的名称。 如果未不指定任何名称，值用作名称。
 
@@ -122,6 +122,6 @@ TraceLoggingWrite(
 
 如果要检测内核模式驱动程序 （在 C 中)，则链接到 TraceLoggingProvider.h，可以使用**TraceLoggingWrite**， **TraceLoggingWriteActivity**，或**TraceLoggingActivityMarker**宏。 跟踪日志记录的示例，请参阅[TraceLogging 示例](tracelogging-examples.md)。
 
-如果要检测的驱动程序或组件，它用 c + + 编写的则链接到 TraceLoggingProvider.h 和 TraceLoggingActivity.h。 当你链接到 c + + 标头时，可以记录使用事件**TraceLoggingWriteStart**， **TraceLoggingWriteStop**，并**TraceLoggingWriteTagged**宏。
+如果要检测的驱动程序或组件中编写的C++，链接到 TraceLoggingProvider.h 和 TraceLoggingActivity.h。 链接到C++标头，您可以记录使用事件**TraceLoggingWriteStart**， **TraceLoggingWriteStop**，并**TraceLoggingWriteTagged**宏。
 
 有关如何捕获和查看 TraceLogging 数据的示例，请参阅[捕获和查看 TraceLogging 数据](capture-and-view-tracelogging-data.md)。

@@ -1,6 +1,6 @@
 ---
-title: 写入调度例程
-description: 写入调度例程
+title: 编写 Dispatch 例程
+description: 编写 Dispatch 例程
 ms.assetid: 84eb9372-2ef7-4cc2-94af-97e3399e69e0
 keywords:
 - 调度例程 WDK 内核
@@ -19,13 +19,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88fc1eb1c4616afa4c0765d8e24601f922a7db54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355988"
 ---
-# <a name="writing-dispatch-routines"></a>写入调度例程
+# <a name="writing-dispatch-routines"></a>编写 Dispatch 例程
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: d7e82483-bee3-44bd-9066-c2877130a1f9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18593d48db168d4a891b8fbe4691c956cbcaa9a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363669"
 ---
 # <a name="encapiparambitratemode"></a>ENCAPIPARAM\_BITRATE\_MODE
 
@@ -61,7 +61,7 @@ ENCAPIPARAM\_比特率属性用于描述设备的编码模式。
 
 **标头：** 在中声明*ksmedia.h*。 包括*ksmedia.h*。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)， [ **VIDEOENCODER\_比特率\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff568695)
 

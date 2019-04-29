@@ -1,6 +1,6 @@
 ---
-title: ControlFlags 网络 INF 文件中的部分
-description: ControlFlags 网络 INF 文件中的部分
+title: 网络 INF 文件中的 ControlFlags 节
+description: 网络 INF 文件中的 ControlFlags 节
 ms.assetid: 384e56e3-8a64-4b47-ae9c-e9973733c7e7
 keywords:
 - INF 文件 WDK 网络，ControlFlags 部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e64a7cdec2c73ebac5b9cd2ce539f31e091ebc5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357393"
 ---
-# <a name="controlflags-section-in-a-network-inf-file"></a>ControlFlags 网络 INF 文件中的部分
+# <a name="controlflags-section-in-a-network-inf-file"></a>网络 INF 文件中的 ControlFlags 节
 
 
 

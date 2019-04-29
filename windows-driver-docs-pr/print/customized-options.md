@@ -1,6 +1,6 @@
 ---
-title: 自定义的选项
-description: 自定义的选项
+title: 自定义选项
+description: 自定义选项
 ms.assetid: 8b54c59e-b469-488a-ae31-52045c00c971
 keywords:
 - 打印机选项 WDK Unidrv，自定义
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caff8562f1b5e306908267500eb0e8fcc7e0a86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369823"
 ---
-# <a name="customized-options"></a>自定义的选项
+# <a name="customized-options"></a>自定义选项
 
 
 

@@ -1,22 +1,22 @@
 ---
-title: 用于 KMDF 驱动程序的其他主题
+title: 针对 KMDF 驱动程序的其他主题
 description: 本部分包含应用到内核模式驱动程序框架 (KMDF) 中的仅的信息。
 ms.assetid: 6607ABFF-43EB-47FA-BA87-BDD417F1BBB8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f03a1ba6209db7ad3692634f6c539a1874caaba6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363685"
 ---
-# <a name="additional-topics-for-kmdf-drivers"></a>用于 KMDF 驱动程序的其他主题
+# <a name="additional-topics-for-kmdf-drivers"></a>针对 KMDF 驱动程序的其他主题
 
 
 本部分包含应用到内核模式驱动程序框架 (KMDF) 中的仅的信息。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [使用内核模式驱动程序框架和非 PnP 驱动程序](using-kernel-mode-driver-framework-with-non-pnp-drivers.md)

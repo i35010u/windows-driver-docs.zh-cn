@@ -5,11 +5,11 @@ ms.assetid: b8983c80-6d3f-404d-a0b3-74e44e43d39e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7427056973c8f0a74027790701897d9b4e76d93c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358530"
 ---
 # <a name="iscsiinitiatorfailuretypequalifiers"></a>ISCSI\_发起方\_失败\_类型\_限定符
 

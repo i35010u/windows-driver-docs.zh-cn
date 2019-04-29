@@ -6,11 +6,11 @@ keywords: 多处理器计算机多处理器，命令语法，双处理器计算�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c76c200699c287359f4d50167f4a8d58175b2da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351791"
 ---
 # <a name="multiprocessor-syntax"></a>多处理器语法
 

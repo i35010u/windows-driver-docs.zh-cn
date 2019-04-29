@@ -1,22 +1,22 @@
 ---
-title: 传感器的阈值
+title: 传感器阈值
 description: 本主题提供有关与每个传感器的阈值的信息。
 ms.assetid: 89BEAA46-8AC3-4C5B-96ED-8F773D56EFBE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 256f37330d7811d8305b80ef69a4de7a246a826b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368802"
 ---
-# <a name="sensor-thresholds"></a>传感器的阈值
+# <a name="sensor-thresholds"></a>传感器阈值
 
 
 本主题提供有关适用于传感器数据字段 （也称为变化敏感度） 相对于每个传感器的阈值的信息。 本主题中所述的阈值用于配置的传感器硬件筛选发送到应用程序数据的方式。 应用程序可以配置阈值来让硬件筛选出的传感器数据中的任何不相关更改。 使用阈值的值进行配置更改相关程度。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 |主题|描述|
 |---|---|

@@ -5,11 +5,11 @@ ms.assetid: 8246826A-BDBD-4A9B-9FFC-B813033E0FDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fc56a011372c388de87ca952d5d4b8b9bfd61c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325178"
 ---
 # <a name="revise-canceled-request-logic"></a>修改已取消的请求逻辑
 

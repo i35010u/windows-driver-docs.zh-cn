@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 495d9684a41c3b3292e7e75e0f776fc795c94ed3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324777"
 ---
 # <a name="whea-management-applications"></a>WHEA 管理应用程序
 

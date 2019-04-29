@@ -5,11 +5,11 @@ ms.assetid: 6e21c11e-d2c8-4c57-8225-1fbc365cbbac
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cffba2edcd9116c1ebe12c1e5096276d92e76973
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365095"
 ---
 # <a name="fltfilenameoptions"></a>FLT\_文件\_名称\_选项
 
@@ -44,7 +44,7 @@ typedef ULONG FLT_FILE_NAME_OPTIONS;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

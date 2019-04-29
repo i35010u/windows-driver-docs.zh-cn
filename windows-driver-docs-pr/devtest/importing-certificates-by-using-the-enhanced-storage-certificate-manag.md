@@ -5,11 +5,11 @@ ms.assetid: de1174c2-453c-44ab-8c80-89b40510179c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b613e63f014363cfbd61318e3ceb809741bf77e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358090"
 ---
 # <a name="importing-certificates-by-using-the-enhanced-storage-certificate-management-tool"></a>使用增强的存储证书管理工具导入证书
 

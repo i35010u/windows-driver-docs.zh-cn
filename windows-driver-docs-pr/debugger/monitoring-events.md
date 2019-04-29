@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 614907f4c965e2ea93109f9c7e835691e2bb2ead
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354786"
 ---
 # <a name="monitoring-events"></a>监视事件
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e090547a65b599eb1f778d7a012f17a0b8ffd853
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355006"
 ---
 # <a name="aml-debugging-examples"></a>AML 调试示例
 

@@ -1,19 +1,19 @@
 ---
-title: 显示加载程序的快照
-description: 显示加载程序的快照
+title: 显示加载器快照
+description: 显示加载器快照
 ms.assetid: fb3843fe-451f-444c-a690-862253df944e
 keywords:
 - 显示加载程序对齐 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 565841af185edf5ca38827643f8f3820a04354df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368120"
 ---
-# <a name="show-loader-snaps"></a>显示加载程序的快照
+# <a name="show-loader-snaps"></a>显示加载器快照
 
 
 ## <span id="ddk_show_loader_snaps_dtools"></span><span id="DDK_SHOW_LOADER_SNAPS_DTOOLS"></span>

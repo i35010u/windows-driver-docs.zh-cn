@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81013fd6a543b9bfbccb98665afadb346d9cdb18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356227"
 ---
 # <a name="scanscompleted-element"></a>ScansCompleted 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56533658"
 </wscn:ScansCompleted>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -80,7 +80,7 @@ WSD 扫描服务多个时间扫描一张纸的媒体时，必须递增**ScansCom
 
 **ScansCompleted**可能不知道计数，直到扫描程序已完成处理该作业。 WSD 扫描服务必须更新**ScansCompleted**元素时更多具体信息不可用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**JobEndState**](jobendstate.md)

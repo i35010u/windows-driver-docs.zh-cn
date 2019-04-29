@@ -1,17 +1,17 @@
 ---
-title: 输出混合阶段
-description: 输出混合阶段
+title: 输出合并器阶段
+description: 输出合并器阶段
 ms.assetid: 9b549614-0f51-4c79-a6c4-ba907a5f9068
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3de6b397b57ae785c386d2aabc7c5a023ad44df8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358349"
 ---
-# <a name="output-merger-stage"></a>输出混合阶段
+# <a name="output-merger-stage"></a>输出合并器阶段
 
 
 逻辑管道的最后一步是可见性决定，通过模具或深度，并编写或值混合处理的输出呈现器目标，可以是多个资源类型之一。 在输出混合阶段定义这些操作，以及输出资源 （呈现器目标） 的绑定。

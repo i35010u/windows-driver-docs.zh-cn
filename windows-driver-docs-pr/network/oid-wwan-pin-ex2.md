@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 126f8a38903e477bffe60b07086d038050518124
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354577"
 ---
 # <a name="oidwwanpinex2"></a>OID_WWAN_PIN_EX2
 
@@ -34,7 +34,7 @@ OID_WWAN_PIN_EX2 设置或返回与个人标识号 (Pin) 相关的扩展的信�
 
 |   |   |
 | --- | --- |
-| Version | Windows 10，版本 1903 |
+| Version | Windows 10 版本 1903 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

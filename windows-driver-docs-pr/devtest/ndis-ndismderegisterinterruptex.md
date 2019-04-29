@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ca0edc2418941e04fc0cd761b98a2466fadf868a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363418"
 ---
 # <a name="ndismderegisterinterruptex-rule-ndis"></a>NdisMDeregisterInterruptEx 规则 (ndis)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56524682"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisMDeregisterInterruptEx**](https://msdn.microsoft.com/library/windows/hardware/ff563575)

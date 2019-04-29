@@ -1,6 +1,6 @@
 ---
-title: PCMCIA 设备标识符
-description: PCMCIA 设备标识符
+title: PCMCIA 设备的标识符
+description: PCMCIA 设备的标识符
 ms.assetid: 7eaf6372-a9cc-4714-8955-52653ec57141
 keywords:
 - 设备标识字符串 WDK、 PCMCIA 设备
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d244ddd3d19256849ec6a7860156b87eb1c50962
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363010"
 ---
-# <a name="identifiers-for-pcmcia-devices"></a>PCMCIA 设备标识符
+# <a name="identifiers-for-pcmcia-devices"></a>PCMCIA 设备的标识符
 
 
 

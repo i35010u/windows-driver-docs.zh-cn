@@ -1,6 +1,6 @@
 ---
-title: 母版单位
-description: 母版单位
+title: 主控单元
+description: 主控单元
 ms.assetid: 6c3abf16-1206-4b90-a7e9-c8a581191502
 keywords:
 - GPD 文件 WDK Unidrv，主单位
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785ea6c316358d9a991159008bbff3d2ab1a51b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358625"
 ---
-# <a name="master-units"></a>母版单位
+# <a name="master-units"></a>主控单元
 
 
 

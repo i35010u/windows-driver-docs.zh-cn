@@ -1,22 +1,22 @@
 ---
-title: 简单的外围总线 （存储） 驱动程序示例
+title: 简单外设总线 (SPB) 驱动程序示例
 description: 此目录中的驱动程序示例编写你的设备的自定义存储驱动程序提供一个起始点。
 ms.assetid: E9A667EA-3AE5-4A0E-BC3F-CD442141886B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 691244e8d41c104439b91219e148116edb0d0707
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366291"
 ---
-# <a name="simple-peripheral-bus-spb-driver-samples"></a>简单的外围总线 （存储） 驱动程序示例
+# <a name="simple-peripheral-bus-spb-driver-samples"></a>简单外设总线 (SPB) 驱动程序示例
 
 
 此目录中的驱动程序示例编写你的设备的自定义存储驱动程序提供一个起始点。
 
-## <a name="simple-peripheral-bus-spb"></a>简单的外围总线 （存储）
+## <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
 | 示例名称                | 解决方案                                                       | 描述                                                                                                                                                                                                                                                                                                                                                                   |

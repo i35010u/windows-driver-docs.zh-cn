@@ -5,11 +5,11 @@ ms.assetid: F2424842-88A7-4520-9C52-9574D049FB5F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae531b547f9d3831473d1de17073366c55441bba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366233"
 ---
 # <a name="debugging-tools-for-windows-new-for-windows-81"></a>Windows 调试工具：Windows 8.1 的新增功能
 

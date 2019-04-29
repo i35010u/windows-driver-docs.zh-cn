@@ -1,6 +1,6 @@
 ---
-title: 类型的 NDIS 微型端口驱动程序
-description: 类型的 NDIS 微型端口驱动程序
+title: NDIS 微型端口驱动程序的类型
+description: NDIS 微型端口驱动程序的类型
 ms.assetid: 81467270-aed6-4f3b-8208-898003951781
 keywords:
 - 微型端口驱动程序 WDK 网络类型
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc35d959905c9e969bda3b0d510f739ba3e197ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358279"
 ---
-# <a name="types-of-ndis-miniport-drivers"></a>类型的 NDIS 微型端口驱动程序
+# <a name="types-of-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序的类型
 
 
 

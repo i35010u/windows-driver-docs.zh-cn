@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f860743c2ffe9810321b4ac10e80ba83b21558a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368643"
 ---
 # <a name="requestforurbxrb-rule-kmdf"></a>RequestForUrbXrb 规则 (kmdf)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56526252"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**WdfRequestCreate**](https://msdn.microsoft.com/library/windows/hardware/ff549951)

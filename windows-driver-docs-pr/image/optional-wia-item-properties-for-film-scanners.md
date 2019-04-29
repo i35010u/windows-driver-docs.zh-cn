@@ -1,17 +1,17 @@
 ---
-title: 电影扫描程序的可选 WIA 项属性
-description: 电影扫描程序的可选 WIA 项属性
+title: 底片扫描仪的可选 WIA 项属性
+description: 底片扫描仪的可选 WIA 项属性
 ms.assetid: 6c17deed-7840-4ec0-bc19-d695b3e80c38
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d5a87679d936be9e5916991e8df110b57553efe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357883"
 ---
-# <a name="optional-wia-item-properties-for-film-scanners"></a>电影扫描程序的可选 WIA 项属性
+# <a name="optional-wia-item-properties-for-film-scanners"></a>底片扫描仪的可选 WIA 项属性
 
 
 

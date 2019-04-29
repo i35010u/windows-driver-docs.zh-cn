@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e31f9d83928a71628828d6e6416beccd4cf421e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354735"
 ---
-# <a name="displaying-169-video-within-a-43-destination-surface"></a>显示 16:9 视频 4:3 目标面中
+# <a name="displaying-169-video-within-a-43-destination-surface"></a>在 4:3 目标图面中显示 16:9 视频
 
 
 ## <span id="ddk_displaying_16_9_video_within_a_4_3_destination_surface_gg"></span><span id="DDK_DISPLAYING_16_9_VIDEO_WITHIN_A_4_3_DESTINATION_SURFACE_GG"></span>

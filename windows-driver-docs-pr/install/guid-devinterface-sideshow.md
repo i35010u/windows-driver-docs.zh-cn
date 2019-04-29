@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d80259093c3b6b18952cd90e88dd2df51983cb5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363686"
 ---
 # <a name="guiddevinterfacesideshow"></a>GUID_DEVINTERFACE_SIDESHOW
 
@@ -66,7 +66,7 @@ Windows 边栏显示兼容设备的驱动程序注册的 GUID_DEVINTERFACE_SIDES
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Microsoft Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

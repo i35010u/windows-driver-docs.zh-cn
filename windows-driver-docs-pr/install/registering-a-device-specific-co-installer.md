@@ -1,6 +1,6 @@
 ---
-title: 注册的特定于设备的共同安装程序
-description: 注册的特定于设备的共同安装程序
+title: 注册特定于设备的辅助安装程序
+description: 注册特定于设备的辅助安装程序
 ms.assetid: 7a80bc60-e2f0-4447-bd73-4ce12fcfc2e3
 keywords:
 - 特定于设备的共同安装程序 WDK 设备安装
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ab7e8a3ff040d26938a099d52b91ff6d58ad263
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373893"
 ---
-# <a name="registering-a-device-specific-co-installer"></a>注册的特定于设备的共同安装程序
+# <a name="registering-a-device-specific-co-installer"></a>注册特定于设备的辅助安装程序
 
 
 

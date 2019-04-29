@@ -1,17 +1,17 @@
 ---
-title: Plug and Play 次要 Irp
-description: Plug and Play 次要 Irp
+title: 即插即用次要 IRP
+description: 即插即用次要 IRP
 ms.date: 08/12/2017
 ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f596962a85f29ddcb1986da40e37d011316bd78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369251"
 ---
-# <a name="plug-and-play-minor-irps"></a>Plug and Play 次要 Irp
+# <a name="plug-and-play-minor-irps"></a>即插即用次要 IRP
 
 
 

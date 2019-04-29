@@ -1,19 +1,19 @@
 ---
-title: 排列 Windows
-description: 排列 Windows
+title: 排列窗口
+description: 排列窗口
 ms.assetid: f6c0b778-42a8-4073-8cdb-c4b801e59274
 keywords:
 - 调试信息窗口中，停靠的建议
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2fcc6682e4aefeb87675a6a14e24f5c69f8f9e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354705"
 ---
-# <a name="arranging-windows"></a>排列 Windows
+# <a name="arranging-windows"></a>排列窗口
 
 
 ## <span id="ddk_suggested_configurations_dbg"></span><span id="DDK_SUGGESTED_CONFIGURATIONS_DBG"></span>

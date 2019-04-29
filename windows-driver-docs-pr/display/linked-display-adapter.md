@@ -5,11 +5,11 @@ ms.assetid: 28B13BD7-6CC7-47C7-9FA3-BC55C73441DF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 983e94a1b280423261980c4518c7a2b09519b5e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354267"
 ---
 # <a name="linked-display-adapter"></a>链接的显示适配器
 
@@ -38,7 +38,7 @@ ms.locfileid: "56547259"
 
 **InputDataSize**并**pInputData**有关[ *DxgkDdiQueryAdapterInfo*](https://msdn.microsoft.com/library/windows/hardware/ff559746)(**DXGKQAITYPE\_PAGETABLELEVELDESC**)将指向**DXGK\_PAGETABLELEVELDESCIN**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [*DxgkDdiCreateDevice*](https://msdn.microsoft.com/library/windows/hardware/ff559615)

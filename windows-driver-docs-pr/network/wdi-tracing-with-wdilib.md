@@ -5,11 +5,11 @@ ms.assetid: 2F4FFF67-F88A-4CB0-9980-E3710D4F04EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c467aa82abe582f3a25ef49c38211a12919aa4cd
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362315"
 ---
 # <a name="wdi-tracing-with-wdilib"></a>使用 WDILib 进行 WDI 跟踪
 

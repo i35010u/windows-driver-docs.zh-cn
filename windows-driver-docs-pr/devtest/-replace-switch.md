@@ -1,5 +1,5 @@
 ---
-title: / 替换开关
+title: /Replace 开关
 description: 增强型存储证书管理工具的 /Replace 开关替换提供的证书的身份验证接收器证书 (ASC) 存储设备中。
 ms.assetid: 8fbdeb88-ec38-4ffc-a669-83fd612819ed
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 636891f8495724145fd65d546000b210dfafa246
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361441"
 ---
-# <a name="replace-switch"></a>/ 替换开关
+# <a name="replace-switch"></a>/Replace 开关
 
 
 **/替换**增强存储证书管理工具的开关替换 IEEE 1667 合规的 USB 存储设备中的身份验证接收器证书 (ASC) 存储从指定的证书。

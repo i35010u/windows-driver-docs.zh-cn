@@ -1,6 +1,6 @@
 ---
-title: 热替换的分区单位
-description: 热替换的分区单位
+title: 分区单元的热更换
+description: 分区单元的热更换
 ms.assetid: 6d50dc7d-6c3b-41e5-b6eb-aead9833dd1e
 keywords:
 - 动态硬件分区 WDK，热替换
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cac476042cecc13b09c77426a96825edcac7975
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364297"
 ---
-# <a name="hot-replace-of-partition-units"></a>热替换的分区单位
+# <a name="hot-replace-of-partition-units"></a>分区单元的热更换
 
 
 在动态可分区服务器上，您可以动态替换硬件分区中的分区单元在任何时间。 这被称为热替换操作。 当替换分区单元时，操作系统会将硬件分区放入伪 S4 休眠状态。 若要将该硬件分区放入此特殊睡眠状态，操作系统将 S4*将幂设置*到系统中的所有设备驱动程序的电源管理请求。 但是，与典型的 S4 电源状态，不同的操作系统不会写入到休眠文件系统的状态。

@@ -5,11 +5,11 @@ ms.assetid: 1e9d6c34-f7fc-47e9-aa52-409b9e9ff4f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 193810084e1648ec7274f8b4b88a1e45f2af2df4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365950"
 ---
 # <a name="losing-and-regaining-packet-data-service"></a>丢失和重新获取数据包数据服务
 

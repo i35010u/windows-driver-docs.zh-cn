@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b9c36595743fb3004ba75f143e447496d8c421df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364549"
 ---
 # <a name="devicesettings-element"></a>DeviceSettings 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56525141"
 </wscn:DeviceSettings>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -105,7 +105,7 @@ ms.locfileid: "56525141"
 
 **DeviceSettings**元素包含支持的值可以设置中的图像处理选项的许多[ **ScanTicket** ](scanticket.md)扫描操作的元素。 客户端可以使用中返回的值**DeviceSettings**若要创建有效**ScanTicket**元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AutoExposureSupported**](autoexposuresupported.md)

@@ -1,5 +1,5 @@
 ---
-title: 已安装 (WSD)
+title: Installed (WSD)
 description: Web Services for Devices (WSD) 已安装构造指示是否已安装与一组给定的条件相匹配的打印机功能。
 ms.assetid: f05add2a-d37e-4eb5-8408-dd5eeef4b13c
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7940468d4083e31ffaee5c7dfd1ff6fa60a8dd6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362761"
 ---
-# <a name="installed-wsd"></a>已安装 (WSD)
+# <a name="installed-wsd"></a>Installed (WSD)
 
 
 Web Services for Devices (WSD) 已安装构造指示是否已安装与一组给定的条件相匹配的打印机功能。 如果 XPath 筛选器获取有效的 XML 结果应用于给定的条件时，此算法返回 **，则返回 TRUE**。 已安装构造 WsdBidi.xsd 中定义。
@@ -25,7 +25,7 @@ Web Services for Devices (WSD) 已安装构造指示是否已安装与一组给�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

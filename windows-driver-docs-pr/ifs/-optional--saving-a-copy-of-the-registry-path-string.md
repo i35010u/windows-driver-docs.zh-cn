@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd0bac911f9fd2e9a8fc1fcc8dc387c9f4c5ad7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366795"
 ---
 # <a name="optional-saving-a-copy-of-the-registry-path-string"></a>\[可选\]保存注册表路径字符串的副本
 

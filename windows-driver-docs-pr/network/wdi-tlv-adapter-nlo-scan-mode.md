@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_ADAPTER_NLO_SCAN_MODE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 95dadeb161840e0e4d975d40c701159b3fa5147d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356817"
 ---
 # <a name="wditlvadapternloscanmode"></a>WDI\_TLV\_适配器\_NLO\_扫描\_模式
 
@@ -55,7 +55,7 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

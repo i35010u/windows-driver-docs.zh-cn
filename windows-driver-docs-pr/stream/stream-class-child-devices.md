@@ -1,6 +1,6 @@
 ---
-title: Stream 类子设备
-description: Stream 类子设备
+title: 流类子设备
+description: 流类子设备
 ms.assetid: 2885a77d-5e39-4730-b715-99f0a426f273
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，子设备
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2193cb84d3c7713ce0b74b403f4dcea1308d84f6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371206"
 ---
-# <a name="stream-class-child-devices"></a>Stream 类子设备
+# <a name="stream-class-child-devices"></a>流类子设备
 
 
 

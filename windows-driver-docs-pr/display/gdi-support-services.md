@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca220ac893d235b99633179f7c4618a3ca9712bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357901"
 ---
 # <a name="gdi-support-services"></a>GDI 支持服务
 
@@ -24,7 +24,7 @@ ms.locfileid: "56543141"
 
 *GDI*导出可以简化驱动程序设计的许多服务例程。 该驱动程序可以直接调用这些例程。 名称的例程的是常规的图形引擎的服务的名称开头**Eng**。 始终与特定对象相关的服务例程开头的对象; 的名称例如， [ **CLIPOBJ\_cEnumStart** ](https://msdn.microsoft.com/library/windows/hardware/ff539421)是[ **CLIPOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff539417)服务。
 
-**请注意**  服务例程中的第一个参数是指向用户对象的指针是用户对象上的方法，使用常用的 c + + 约定调用。 因此，在 c + + 编写的驱动程序可以作为方法访问服务例程。
+**请注意**  中的第一个参数是指向用户对象的指针的服务例程是对该用户对象，方法，使用常规调用C++约定。 因此，驱动程序编写的C++可以访问作为方法的服务例程。
 
  
 

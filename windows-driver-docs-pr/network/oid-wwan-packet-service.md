@@ -7,11 +7,11 @@ keywords: -从 Windows Vista 开始 OID_WWAN_PACKET_SERVICE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 8150c4c70c7669b19256212929081eb95eb90a7b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354763"
 ---
 # <a name="oidwwanpacketservice"></a>OID\_WWAN\_PACKET\_SERVICE
 
@@ -37,7 +37,7 @@ OID\_WWAN\_数据包\_服务用来指示微型端口驱动程序为基于 GSM �
 
 之前已达到数据包服务状态，MB 服务应继续上下文激活*WwanPacketServiceStateAttached*。
 
-### <a name="windows-10-version-1903"></a>Windows 10，版本 1903
+### <a name="windows-10-version-1903"></a>Windows 10 版本 1903
 
 在 Windows 10，版本 1903年开始支持此 OID 的新修订版本 2。 该扩展使宿主能够查询中的调制解调器当前操作系统 5g 中的频率范围。
 

@@ -1,6 +1,6 @@
 ---
-title: 处理设备强化 Irp
-description: 处理设备强化 Irp
+title: 处理设备通电 IRP
+description: 处理设备通电 IRP
 ms.assetid: 8fcfd324-97f9-4fd0-8fa1-87685c6b5ec3
 keywords:
 - 设置 power Irp WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db661a11878c38fbac46d1f972afaf3ee6969900
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359516"
 ---
-# <a name="handling-device-power-up-irps"></a>处理设备强化 Irp
+# <a name="handling-device-power-up-irps"></a>处理设备通电 IRP
 
 
 

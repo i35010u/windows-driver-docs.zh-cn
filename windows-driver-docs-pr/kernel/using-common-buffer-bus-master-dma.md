@@ -1,6 +1,6 @@
 ---
-title: 使用常见缓冲区总线 Master DMA
-description: 使用常见缓冲区总线 Master DMA
+title: 使用公用缓冲区总线主控 DMA
+description: 使用公用缓冲区总线主控 DMA
 ms.assetid: 55b5d819-e257-4863-b02a-5eeb83f72c65
 keywords:
 - 连续 DMA WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eee81671cc1e0125112803c23cfc76109a2377ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361102"
 ---
-# <a name="using-common-buffer-bus-master-dma"></a>使用常见缓冲区总线 Master DMA
+# <a name="using-common-buffer-bus-master-dma"></a>使用公用缓冲区总线主控 DMA
 
 
 

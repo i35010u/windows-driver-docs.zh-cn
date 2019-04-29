@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a924f3a9ca76e7601e3f13788f21f611a143a20a
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361517"
 ---
 # <a name="bug-check-0x3c-interruptunwindattempted"></a>Bug 检查 0x3C：中断\_展开\_已尝试
 

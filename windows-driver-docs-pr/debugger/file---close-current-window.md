@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db29a79467e8abc5a3b1721642632c2480eff3f3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361633"
 ---
-# <a name="file--close-current-window"></a>文件 |关闭当前窗口
+# <a name="file--close-current-window"></a>文件 | 关闭当前窗口
 
 
 ## <span id="ddk_file_close_current_window_dbg"></span><span id="DDK_FILE_CLOSE_CURRENT_WINDOW_DBG"></span>

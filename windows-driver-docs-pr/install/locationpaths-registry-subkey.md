@@ -5,11 +5,11 @@ ms.assetid: d34ba7f4-97d2-4e63-a820-436c0336c584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62970aff742d93ad3f4410ace59a506726a84a8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356941"
 ---
 # <a name="locationpaths-registry-subkey"></a>LocationPaths 注册表子项
 

@@ -5,11 +5,11 @@ ms.assetid: 91d92878-fd6d-4403-ae48-ab4d41680c88
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccdb40e5ed17ea87a3f01c4809f03cecf8c110c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364911"
 ---
 # <a name="kspropsetiddvdsubpic"></a>KSPROPSETID\_DvdSubPic
 

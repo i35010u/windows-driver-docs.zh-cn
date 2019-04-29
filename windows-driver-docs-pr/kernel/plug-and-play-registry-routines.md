@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffa464523400ac527775ae1a350c74a45749e4cb
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369249"
 ---
 # <a name="plug-and-play-registry-routines"></a>即插即用注册表例程
 

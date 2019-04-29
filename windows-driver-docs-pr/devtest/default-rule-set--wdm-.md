@@ -1,17 +1,17 @@
 ---
-title: 默认规则设置 (WDM)
+title: 默认规则集 (WDM)
 description: 默认规则集 (Default.sdv) 指定建议的规则分析您的驱动程序时要使用的集。
 ms.assetid: F03BEEDE-ED6E-4202-9FF5-74A098702E12
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 37a9a812f9cd7edfce41593a45d2843cc5437726
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358949"
 ---
-# <a name="default-rule-set-wdm"></a>默认规则设置 (WDM)
+# <a name="default-rule-set-wdm"></a>默认规则集 (WDM)
 
 
 默认规则集 (Default.sdv) 指定建议的规则分析您的驱动程序时要使用的集。

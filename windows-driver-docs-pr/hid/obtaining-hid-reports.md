@@ -1,6 +1,6 @@
 ---
-title: 获取 HID 报表
-description: 获取 HID 报表
+title: 获取 HID 报告
+description: 获取 HID 报告
 ms.assetid: b6312dce-39af-4fff-b17d-4a50b9ab823b
 keywords:
 - 报告 WDK HID，获取
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03787890708afd9b235206e6ede3b937ba96139a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372991"
 ---
-# <a name="obtaining-hid-reports"></a>获取 HID 报表
+# <a name="obtaining-hid-reports"></a>获取 HID 报告
 
 
 

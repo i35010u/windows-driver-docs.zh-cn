@@ -5,11 +5,11 @@ ms.assetid: BB1046EE-8780-46ED-8CEB-63110643D325
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06c6dffc2bc630b40207d25fac8db7e2e545dad8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365359"
 ---
 # <a name="ps2-i8042prt-driver"></a>PS/2 (i8042prt) 驱动程序
 

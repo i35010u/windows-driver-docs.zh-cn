@@ -5,18 +5,18 @@ ms.assetid: 7AD2F8DD-8428-4C30-A3B0-B6678986DCCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 478f985390705c6744c7bd2c1cb747a2f81cbee1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355442"
 ---
 # <a name="how-to-determine-if-a-custom-wdtf-simple-io-action-plug-in-is-required-for-your-device"></a>如何确定自定义 WDTF 简单 I/O 操作插件是否需要为你的设备
 
 
 如果已配置为使用 Visual Studio 测试的远程计算机，可以运行一个实用程序测试，以便显示所有具有 WDTF 简单 I/O 插件的设备。该测试还返回不具有 WDTF 简单 I/O 支持的测试计算机上的设备的列表。 如果不支持你的设备，则可以创建一个 Visual Studio 中使用**WDTF 简单 I/O 操作插件**模板，请参阅[如何为你的设备使用 WDTF 简单 I/O 操作插件自定义 I/O](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)。
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>系统必备
 
 -   在测试计算机上安装待测试的设备。
 -   是测试签名，并且在测试计算机上安装的驱动程序包。 若要验证您的驱动程序正确安装，请参阅如何测试驱动程序包。
@@ -59,8 +59,8 @@ WDTF_TEST                 : INFO  :      Generic volume (G:) STORAGE\VOLUME\_??_
 ```
 
 ## <a name="related-topics"></a>相关主题
-[如何为你的设备使用 WDTF 简单 I/O 操作插件自定义 I/O](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)  
-[提供 WDTF 简单 I/O 插件](provided-wdtf-simpleio-plug-ins.md)  
+[How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)（如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O）  
+[Provided WDTF Simple I/O plug-ins](provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）  
 
 
 

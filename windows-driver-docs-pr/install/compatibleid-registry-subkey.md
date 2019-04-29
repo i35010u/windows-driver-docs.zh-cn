@@ -5,11 +5,11 @@ ms.assetid: 0111b013-d559-47bb-9cc8-d3930661a0a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cfb020c44d30f13303b8df5c7206c688ae519ec
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361156"
 ---
 # <a name="compatibleid-registry-subkey"></a>CompatibleID 注册表子项
 

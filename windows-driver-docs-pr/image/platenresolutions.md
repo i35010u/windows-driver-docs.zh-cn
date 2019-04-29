@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a70e40e26d8475d4b6631e6fb2e76dc2f44f45d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360640"
 ---
 # <a name="platenresolutions-element"></a>PlatenResolutions 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56555746"
 </wscn:PlatenResolutions>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -86,7 +86,7 @@ ms.locfileid: "56555746"
 
 扫描设备支持宽度子元素内的所有可能的宽度和高度子元素内支持扫描设备的所有可能高度应列出 WSD 扫描服务。 所有的宽度和高度值都是独立于彼此，和大多数设备将支持这些配对中的任意组合[ **ScanTicket** ](scanticket.md)元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Height**](height.md)

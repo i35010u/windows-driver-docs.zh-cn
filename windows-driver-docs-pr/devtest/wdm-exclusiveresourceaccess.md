@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 09fcfbe63fb7dc78b280ef5e91a5bf94f14d5a8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363385"
 ---
 # <a name="exclusiveresourceaccess-rule-wdm"></a>ExclusiveResourceAccess 规则 (wdm)
 

@@ -1,5 +1,5 @@
 ---
-title: 查看和编辑在 WinDbg 中的寄存器
+title: 在 WinDbg 中查看和编辑寄存器
 description: 在 WinDbg 中，您可以查看和编辑寄存器，通过输入命令、 通过使用寄存器窗口中，或通过使用监视窗口。
 ms.assetid: bd7ced3b-7f71-4ea5-a45b-38339dc3e87c
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 434e682405af1bff8054c49c5e6c915040a5bfd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353655"
 ---
-# <a name="viewing-and-editing-registers-in-windbg"></a>查看和编辑在 WinDbg 中的寄存器
+# <a name="viewing-and-editing-registers-in-windbg"></a>在 WinDbg 中查看和编辑寄存器
 
 
 寄存器是位于在 CPU 的小易失性内存单位。 许多寄存器专用于特定用途，并可用于用户模式应用程序使用的其他寄存器。 基于 x86 和基于 x64 的处理器在有可用的寄存器的不同集合。 在每个处理器寄存器的详细信息，请参阅[处理器体系结构](processor-architecture.md)。

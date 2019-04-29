@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6ed66a0f3def21454639270783f7b0c8940c82
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361595"
 ---
 # <a name="bug-check-0x1db-ipiwatchdogtimeout"></a>Bug 检查 0x1DB：IPI\_监视器\_超时
 
