@@ -5,11 +5,11 @@ ms.assetid: D78EB9E6-584A-419C-B320-8962CDCC966E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ba0b83a438b54e28d34ca3a8c7b7b6ea7e5e359
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323844"
 ---
 # <a name="3d-manufacturing-keywords-overview"></a>3D 制造关键字概述
 

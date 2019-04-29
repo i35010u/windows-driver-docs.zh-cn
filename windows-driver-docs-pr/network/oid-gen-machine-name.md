@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MACHINE_NAME 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b08f79c86d00efd9930443c1ae8229b14ae7487f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358776"
 ---
 # <a name="oidgenmachinename"></a>OID\_GEN\_MACHINE\_NAME
 
@@ -51,13 +51,13 @@ NDIS 设置 OID\_GEN\_机\_微型端口驱动程序完成初始化后一次命�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)

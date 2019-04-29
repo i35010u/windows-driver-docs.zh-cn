@@ -5,11 +5,11 @@ ms.assetid: 648570eb-d01e-4034-9566-c5f9fa1990e5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc1305e9f21962e2f5d05fb54c0b004a3746877
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323798"
 ---
 # <a name="handling-monitor-configurations"></a>处理监视器配置
 

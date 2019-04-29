@@ -5,11 +5,11 @@ ms.assetid: DAD08E7F-13F9-4648-A24C-DD9FBA6D490F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2124558087b5d39520be84093f3b91c2343f7d4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356249"
 ---
 # <a name="context-allocation"></a>上下文分配
 

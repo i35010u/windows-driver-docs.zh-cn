@@ -1,6 +1,6 @@
 ---
-title: ISDN 和交换的 56k 摄影
-description: ISDN 和交换的 56k 摄影
+title: ISDN 和交换式 56K 分帧
+description: ISDN 和交换式 56K 分帧
 ms.assetid: e0532ded-c429-4f3a-b3c9-fd8ccc6b1b65
 keywords:
 - 数据包分帧 WDK WAN，ISDN 组帧
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3bf24405b5c50b20f7fd91d8231f4dc95974094
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353773"
 ---
-# <a name="isdn-and-switched-56k-framing"></a>ISDN 和交换的 56k 摄影
+# <a name="isdn-and-switched-56k-framing"></a>ISDN 和交换式 56K 分帧
 
 
 

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d901145be270faa0dcaa753c784527b250483aa5
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324713"
 ---
 # <a name="bug-check-0x99-invalidregionorsegment"></a>Bug 检查 0x99：无效\_地区\_或\_段
 

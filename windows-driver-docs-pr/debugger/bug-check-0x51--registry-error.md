@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 990877a9d7f1fc69e24de6ef7cf9cec115750cbf
-ms.sourcegitcommit: 403dbca9d5d8f092d6a06edeb21bf887445ccf35
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59540503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363545"
 ---
 # <a name="bug-check-0x51-registryerror"></a>Bug 检查 0x51：注册表\_错误
 

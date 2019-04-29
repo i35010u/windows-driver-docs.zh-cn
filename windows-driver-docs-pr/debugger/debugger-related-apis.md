@@ -1,6 +1,6 @@
 ---
-title: 与调试器相关的 Api
-description: 与调试器相关的 Api
+title: 调试器相关的 API
+description: 调试器相关的 API
 ms.assetid: 46a14b0d-8fad-4ab1-9661-d19fa5ed3817
 keywords:
 - 与调试器相关的 api
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1d5101d095829c3a09d899792d608434a98f0da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324664"
 ---
-# <a name="debugger-related-apis"></a>与调试器相关的 Api
+# <a name="debugger-related-apis"></a>调试器相关的 API
 
 
 ## <span id="ddk_debugger_related_apis_dbg"></span><span id="DDK_DEBUGGER_RELATED_APIS_DBG"></span>

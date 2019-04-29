@@ -5,11 +5,11 @@ ms.assetid: bd1452b9-1926-4dd6-b94c-e44f07573266
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dec5bb51ed96c7f25369bb5f97389dc37bfc69de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352800"
 ---
 # <a name="wia-scanner-tree"></a>WIA 扫描仪树
 

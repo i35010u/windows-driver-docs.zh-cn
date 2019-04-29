@@ -1,16 +1,16 @@
 ---
-Description: Mapping Object Identifiers
-title: 将对象标识符映射
+Description: 映射对象标识符
+title: 映射对象标识符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d2edebc8fbd0ff7704cdb47c2d68d942d0f543
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324483"
 ---
-# <a name="mapping-object-identifiers"></a>将对象标识符映射
+# <a name="mapping-object-identifiers"></a>映射对象标识符
 
 
 映射函数**WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs**，处理到持久标识符的对象标识符的映射。 在 WPD 驱动程序模型中，对象标识符是为给定的设备会话才有效的标识符。 设备的所有会话是有效的永久标识符。

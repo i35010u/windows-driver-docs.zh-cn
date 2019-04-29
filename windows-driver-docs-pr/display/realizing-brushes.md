@@ -1,6 +1,6 @@
 ---
-title: 意识到画笔
-description: 意识到画笔
+title: 识别画笔
+description: 识别画笔
 ms.assetid: e6a7c008-50b2-4411-b8f8-99a3ca99e9f4
 keywords:
 - GDI WDK Windows 2000 显示模式
@@ -21,13 +21,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58708feb5e26ecd67154d88b0abf114e40bb4992
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351451"
 ---
-# <a name="realizing-brushes"></a>意识到画笔
+# <a name="realizing-brushes"></a>识别画笔
 
 
 ## <span id="ddk_realizing_brushes_gg"></span><span id="DDK_REALIZING_BRUSHES_GG"></span>

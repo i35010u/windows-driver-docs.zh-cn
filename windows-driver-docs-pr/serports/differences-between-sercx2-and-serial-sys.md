@@ -5,11 +5,11 @@ ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f514210c357c408f30be541422e3f9fb8a8a3034
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359697"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys 和 Serial.sys 之间的差异
 

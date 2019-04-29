@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 35ef78fbb475fc80fff515b32170c17ae84535d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323510"
 ---
 # <a name="avc-subunit-driver-debugging"></a>AV/C 子单元驱动程序调试
 
@@ -45,7 +45,7 @@ ms.locfileid: "56526568"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -86,7 +86,7 @@ ms.locfileid: "56526568"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -123,7 +123,7 @@ ms.locfileid: "56526568"
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -242,7 +242,7 @@ AV/C 类别会应用于与 AV/C 命令相关的所有输出以及潜在的相关
 <thead>
 <tr class="header">
 <th>含义</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

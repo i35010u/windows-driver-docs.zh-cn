@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 332293a5255408a07f1895ec68b316451733652e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323271"
 ---
 # <a name="dxgkddiupdatepagetable-callback-function"></a>DXGKDDI\_UPDATEPAGETABLE 回调函数
 
@@ -42,7 +42,7 @@ NTSTATUS DxgkDdiUpdatePageTable(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *hDevice*此参数保留供系统使用。
@@ -63,11 +63,11 @@ NTSTATUS DxgkDdiUpdatePageTable(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Dispmprt.h</td>
 </tr>
 <tr class="even">

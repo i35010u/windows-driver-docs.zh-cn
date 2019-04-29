@@ -5,11 +5,11 @@ ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d449dd4d6051b90abe5e05425df851f3ebc016a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358323"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort 微型端口驱动程序的注册表项
 
@@ -121,7 +121,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：255</p>
 <p>最长：如果在注册表中设置的 8</p></td>
 </tr>
@@ -160,7 +160,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：0xffffffff</p>
 <p>StorPort 时 0，使用默认值</p></td>
 </tr>
@@ -199,7 +199,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：0x00000000</p>
 <p>当 MinimumUCXAddress &gt;= MaximumUCXAddress-PAGE_SIZE、 StorPort 使用默认值。</p></td>
 </tr>
@@ -223,7 +223,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>UncachedExtAlignment</strong></td>
 </tr>
 <tr class="even">
@@ -238,7 +238,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：0</p>
 <p>最低：3</p>
 <p>最长：16</p></td>
@@ -278,7 +278,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：1000</p>
 <p>最低：16</p>
 <p>最长：255</p></td>
@@ -312,7 +312,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&amp;lt;miniport name&gt;\Parameters</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：6, <strong>BusTypeFiber</strong></p>
 <p>最长：0x7f，更高版本的任何值被视为默认值。</p></td>
 </tr>
@@ -374,7 +374,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>IoLatencyCap</strong></td>
 </tr>
 <tr class="even">
@@ -414,7 +414,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>TotalSenseDataBytes</strong></td>
 </tr>
 <tr class="even">
@@ -453,7 +453,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>QueueFullWaitIoPercentage</strong></td>
 </tr>
 <tr class="even">
@@ -504,7 +504,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：250</p>
 <p>单位： 毫秒</p></td>
 </tr>
@@ -528,7 +528,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>BusyPauseTime</strong></td>
 </tr>
 <tr class="even">
@@ -578,7 +578,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：10</p></td>
 </tr>
 <tr class="odd">
@@ -614,7 +614,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Enum&amp;lt;instance path&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：0 禁用</p></td>
 </tr>
 <tr class="odd">
@@ -637,7 +637,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>DisableIdlePowerManagement</strong></td>
 </tr>
 <tr class="even">
@@ -650,7 +650,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\CurrentControlSet\Enum\SCSI&amp;lt;HardwareId&gt;&amp;lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：0 启用</p></td>
 </tr>
 <tr class="odd">
@@ -710,7 +710,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">“属性”</td>
+<td align="left">名称</td>
 <td align="left"><strong>DisableRuntimePowerManagement</strong></td>
 </tr>
 <tr class="even">
@@ -802,7 +802,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Enum&amp;lt;instance path&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>默认值： 已启用 （如果支持 D3Cold）</p></td>
 </tr>
 <tr class="odd">

@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_SEND_RESPONSE_ACTION_FRAME_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b16d065661a5391ffbb6767a7267e8ab901d3178
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361025"
 ---
 # <a name="ndisstatuswdiindicationsendresponseactionframecomplete"></a>NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成以指示完成[OID\_WDI\_任务\_发送\_响应\_操作\_帧](oid-wdi-task-send-response-action-frame.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -47,13 +47,13 @@ ms.locfileid: "56523519"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_TASK\_SEND\_RESPONSE\_ACTION\_FRAME](oid-wdi-task-send-response-action-frame.md)

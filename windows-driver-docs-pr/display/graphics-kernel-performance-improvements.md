@@ -5,11 +5,11 @@ ms.assetid: 8A2E1392-F0B4-4F5F-AFD9-DE8C6F3C2147
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec999bf2141e3683cd8cb206f236e6d41f140e64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323809"
 ---
 # <a name="graphics-kernel-performance-improvements"></a>图形内核性能改进
 

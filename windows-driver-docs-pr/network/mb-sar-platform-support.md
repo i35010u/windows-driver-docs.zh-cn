@@ -1,16 +1,16 @@
 ---
-title: MB 特别行政区平台支持
-description: MB 特别行政区平台支持
+title: MB SAR 平台支持
+description: MB SAR 平台支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d29378af0b76c3c3e664b75e82ad5e0c8e9313
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353757"
 ---
-# <a name="mb-sar-platform-support"></a>MB 特别行政区平台支持
+# <a name="mb-sar-platform-support"></a>MB SAR 平台支持
 
 ## <a name="overview"></a>概述
 
@@ -64,11 +64,11 @@ UUID Value = **68223D04-9F6C-4E0F-822D-28441FB72340**
 
 不适用。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
+| Command | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 不适用 |
 
 ### <a name="data-structures"></a>数据结构
@@ -81,7 +81,7 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SET_SAR_CONFIG 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_CONTROL_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。  如果 MBIM_MS_SAR_CONTROL_MODE 是集是设备控制的则操作系统将不能设置此字段。 |
@@ -93,21 +93,21 @@ InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零�
 
 MBIM_MS_SAR_CONTROL_MODE 指定如何控制特别行政区回退机制。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsSARControlModeDevice | 0 | 特别行政区退让机制直接控制通过调制解调器设备。 |
 | MBIMMsSARControlModeOS | 1 | 特别行政区退让机制是控制和管理的操作系统。 |
 
 MBIM_MS_SAR_BACKOFF_STATE 退避介绍特别行政区的状态。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsSARBackOffStatusDisabled | 0 | 返回特别行政区 off 中禁用了调制解调器。 |
 | MBIMMsSARBackOffStatusEnabled | 1 | 返回特别行政区 off 中启用了调制解调器。 |
 
 MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状态。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARAntennaIndex | UINT32 | 对应于天线指数**SARBackOffIndex**此表中的字段。 它对应于天线数，并为从左到 OEM 实现，以在设备上的每个天线的索引。 此值的任何索引无效。 如果此值设置为**0xFFFFFFFF**中*设置*命令， **SARBackOffIndex**应应用于所有天线。 如果此值设置为**0xFFFFFFFF**在响应中，它表明**SARBackOffIndex**应用于所有天线。 |
 | 4 | 4 | SARBAckOffIndex | UINT32 | 答： 退避对应于退避由 OEM 或调制解调器供应商定义的表的索引。 此表有单个带区和关联的退避参数。 |
@@ -116,7 +116,7 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SAR_CONFIG 结构。 MBIM_MS_SAR_CONFIG 指定特别行政区的配置。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。 |
@@ -127,7 +127,7 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 前面的表中使用以下 MBIM_MS_SAR_HARDWARE_WIFI_INTEGRATION 结构。 它指定是否在硬件级别集成的 Wi-fi 和移动电话。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsSARWifiHardwareIntegrated  | 0 | Wi-fi 和移动电话调制解调器特别行政区被集成到设备中。 |
 | MBIMMsSARWifiHardwareNotIntegrated | 1 | Wi-fi 和移动电话调制解调器特别行政区未集成到设备中。 |
@@ -171,11 +171,11 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 未经请求的事件包含 MBIM_MS_TRANSMISSION_STATUS_INFO 和活动的无线 (OTA) 通道到更改时发送。 例如，如果调制解调器开始上传数据包数据，它所需设置上行通道时它使用的网络数据通道，以便它可以上传有效负载。 这将触发该通知可提供给操作系统。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
+| Command | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
 | 响应 | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
 
 ### <a name="data-structures"></a>数据结构
@@ -188,14 +188,14 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 应在 InformationBuffer 中使用以下 MBIM_MS_SET_TRANSMISSION_STATUS 结构。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | HysteresisTimer | UINT32 | 调制解调器用于确定何时向主机发送 MBIMMsTransmissionStateInactive 滞后指标。 此值是连续否-发送活动 OFF 指标发送到主机之前，会看到调制解调器的计时器。 以秒为单位，范围从 1 秒到 5 秒，应设置此计时器。 |
 
 前面的表中使用以下 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 结构。 它指定是否禁用或启用调制解调器通道传输。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsTransmissionNotificationDisabled | 0 | 禁用调制解调器通道传输状态通知。 |
 | MBIMMsTransmissionNotificationEnabled | 1 | 启用调制解调器通道传输状态通知。 |
@@ -204,7 +204,7 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 以下 MBIM_MS_TRANSMISSION_STATUS_INFO 结构用于响应。
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | TransmissionStatus | MBIM_MS_TRANSMISSION_STATUS | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS 表。 这指示是否调制解调器具有 TX 流量每隔 5 秒。 |
@@ -212,7 +212,7 @@ MBIM_MS_SAR_CONFIG_STATE 介绍特别行政区退避算法的天线的可能状�
 
 前面的表中使用以下 MBIM_MS_TRANSMISSION_STATUS 结构。 它指示是否调制解调器有 TX 流量每隔 5 秒。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsTransmissionStateInactive | 0 | 调制解调器不主动传输了数据，而不传输的最后一个 HysteresisTimer 值任何连续失效。 |
 | MBIMMsTransmissionStateActive | 1 | 调制解调器已主动传输数据。 |

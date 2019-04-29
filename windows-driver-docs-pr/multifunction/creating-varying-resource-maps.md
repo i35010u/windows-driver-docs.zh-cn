@@ -1,19 +1,19 @@
 ---
-title: 创建不同的资源映射
-description: 创建不同的资源映射
+title: 创建可变资源映射
+description: 创建可变资源映射
 ms.assetid: bfe3a760-d8fe-4213-9bbe-2bad6927d8e2
 keywords:
 - 不同的资源映射 WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a02047076db951b88d87b4af4f4404c66ee2bcc6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323619"
 ---
-# <a name="creating-varying-resource-maps"></a>创建不同的资源映射
+# <a name="creating-varying-resource-maps"></a>创建可变资源映射
 
 
 

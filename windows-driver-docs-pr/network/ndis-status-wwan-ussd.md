@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WWAN_USSD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 27e7df1c4dc108fa526a45b7f9b3a9c034cf1dab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324877"
 ---
 # <a name="ndisstatuswwanussd"></a>NDIS\_状态\_WWAN\_USSD
 
@@ -30,17 +30,17 @@ ms.locfileid: "56541815"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持从 Windows 8 开始。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [NDIS\_WWAN\_USSD\_REQUEST](https://msdn.microsoft.com/library/windows/hardware/hh439846)

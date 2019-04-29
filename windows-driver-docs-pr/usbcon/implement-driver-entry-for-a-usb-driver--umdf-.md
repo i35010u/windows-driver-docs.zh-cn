@@ -1,14 +1,14 @@
 ---
-Description: Use the USB User-Mode Driver template provided with Microsoft Visual Studio to write a UMDF client driver.
+Description: 使用 Microsoft Visual Studio 提供的 USB 用户模式驱动程序模板可用于编写 UMDF 客户端驱动程序。
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a636c0ff23adc0c4682a4d8f80475273a6250875
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355481"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
@@ -17,11 +17,11 @@ ms.locfileid: "56544682"
 
 UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个框架对象必须实现[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)及其方法[ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)， [ **AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379)，并[**发行**](https://msdn.microsoft.com/library/windows/desktop/ms682317)，默认情况下。 **AddRef**并**发行**方法管理对象的生存期，因此，客户端驱动程序不需要维护的引用计数。 **QueryInterface**方法，客户端驱动程序与其他框架对象的接口指针获取 Windows 驱动程序框架 (WDF) 对象模型中。 Framework 对象执行复杂的驱动程序任务，并与 Windows 进行交互。 某些 framework 对象公开启用客户端驱动程序与框架进行交互的接口。
 
-UMDF 基于客户端驱动程序实现为进程内 COM 服务器 (DLL) 和 c + + 是写入 USB 设备的客户端驱动程序的首选的语言。 通常情况下，客户端驱动程序实现多个由框架公开的接口。 本主题是指一个回调类作为实现 framework 接口的客户端驱动程序定义类。 这些类进行实例化后，将生成的回调对象是与特定的框架对象合作。 这种合作关系使客户端驱动程序有机会对设备或报告的框架的系统相关事件进行响应。 每当 Windows 会通知框架，有关特定事件，框架将调用客户端驱动程序的回调，如果有可用。 否则，该框架将继续进行事件的默认处理。 模板代码定义驱动程序、 设备和队列回调 lasses。
+作为进程内 COM 服务器 (DLL) 实现 UMDF 基于客户端驱动程序和C++是用于编写 USB 设备的客户端驱动程序的首选的语言。 通常情况下，客户端驱动程序实现多个由框架公开的接口。 本主题是指一个回调类作为实现 framework 接口的客户端驱动程序定义类。 这些类进行实例化后，将生成的回调对象是与特定的框架对象合作。 这种合作关系使客户端驱动程序有机会对设备或报告的框架的系统相关事件进行响应。 每当 Windows 会通知框架，有关特定事件，框架将调用客户端驱动程序的回调，如果有可用。 否则，该框架将继续进行事件的默认处理。 模板代码定义驱动程序、 设备和队列回调 lasses。
 
 由模板生成的源代码的说明，请参阅[了解 USB 客户端驱动程序的 UMDF 模板代码](understanding-the-umdf-template-code-for-usb.md)。
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 有关开发、 调试和安装的用户模式驱动程序，需要两台计算机：
 

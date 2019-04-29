@@ -1,6 +1,6 @@
 ---
-title: 将每个 Stream 上下文与文件 Stream 相关联
-description: 将每个 Stream 上下文与文件 Stream 相关联
+title: 将按流上下文与文件流相关联
+description: 将按流上下文与文件流相关联
 ms.assetid: 99c93574-2ba6-417a-89a4-a5b9a350a8da
 keywords:
 - 筛选器驱动程序 WDK 文件系统中，每个流的上下文跟踪
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c2bd8e2f78a5f4ad35a1ef36d72696e700b70b1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322311"
 ---
-# <a name="associating-a-per-stream-context-with-a-file-stream"></a>将每个 Stream 上下文与文件 Stream 相关联
+# <a name="associating-a-per-stream-context-with-a-file-stream"></a>将按流上下文与文件流相关联
 
 
 ## <span id="ddk_associating_a_per_stream_context_with_a_file_stream_if"></span><span id="DDK_ASSOCIATING_A_PER_STREAM_CONTEXT_WITH_A_FILE_STREAM_IF"></span>

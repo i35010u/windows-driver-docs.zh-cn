@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM_EX 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c0f0b934035cbe6cfac6e9f2cb82f6ee5efb277
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324463"
 ---
 # <a name="oidgenphysicalmediumex"></a>OID\_GEN\_PHYSICAL\_MEDIUM\_EX
 
@@ -46,7 +46,7 @@ NDIS 支持 OID\_GEN\_物理\_MEDIUM\_EX OID 适用于支持较新的网络，�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.20 及更高版本。 未请求的微型端口驱动程序。 （请参见备注部分。）</p></td>
 </tr>
 <tr class="even">

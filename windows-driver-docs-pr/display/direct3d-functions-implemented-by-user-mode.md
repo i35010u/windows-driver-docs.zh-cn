@@ -1,17 +1,17 @@
 ---
-title: 由用户模式显示驱动程序实现的 Direct3D 函数
+title: 用户模式显示驱动程序实现的 Direct3D 函数
 description: 本主题介绍用户模式下显示为 Microsoft Direct3D 运行时，驱动程序实现并提供且可由操作系统调用的函数。
 ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 10/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 26affc22a77dfa2aabe4fe4da1344a271267a08b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358039"
 ---
-# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>由用户模式显示驱动程序实现的 Direct3D 函数
+# <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>用户模式显示驱动程序实现的 Direct3D 函数
 
 本主题介绍用户模式下显示为 Microsoft Direct3D 运行时，驱动程序实现并提供且可由操作系统调用的函数。
 
@@ -621,7 +621,7 @@ Direct3D 的运行时调用[CreateDevice](https://docs.microsoft.com/windows-har
 | D3DWDDM2_2DDI_DEVICEFUNCS                                             | D3DWDDM2_2DDI_SHADERCACHE_HASH                                         |
 | D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC                                    |                                                                        |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [支持 DXGI DDI](supporting-the-dxgi-ddi.md)
 

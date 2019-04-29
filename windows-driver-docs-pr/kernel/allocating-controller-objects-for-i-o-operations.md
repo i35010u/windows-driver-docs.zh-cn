@@ -1,6 +1,6 @@
 ---
-title: 对于 I/O 操作分配控制器对象
-description: 对于 I/O 操作分配控制器对象
+title: 为 I/O 操作分配控制器对象
+description: 为 I/O 操作分配控制器对象
 ms.assetid: 8a5e3741-f8ea-4e27-bb7f-6c20da1d618d
 keywords:
 - 控制器对象 WDK 内核，分配
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3b548c844942ef099a9dbcc761d7ba14529e34e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367874"
 ---
-# <a name="allocating-controller-objects-for-io-operations"></a>对于 I/O 操作分配控制器对象
+# <a name="allocating-controller-objects-for-io-operations"></a>为 I/O 操作分配控制器对象
 
 
 

@@ -10,16 +10,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 097de2d778e14d097a2ad748b6176bab282cebde
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322219"
 ---
 # <a name="writing-a-kernel-network-redirector"></a>编写内核网络重定向程序
 
 
-本部分讨论编写内核网络重定向程序时应考虑的重要问题。 讨论了以下主题：
+本部分讨论编写内核网络重定向程序时应考虑的重要问题。 论述了以下主题：
 
 [对 UNC 命名和 MUP 的支持](support-for-unc-naming-and-mup.md)
 

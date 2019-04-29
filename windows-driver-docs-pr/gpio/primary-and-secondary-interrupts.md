@@ -5,11 +5,11 @@ ms.assetid: 731B0E36-4480-4B69-931E-1F7B40B18911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00b906a6232ee9912c58c5c0c819e43f110c5044
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326120"
 ---
 # <a name="primary-and-secondary-interrupts"></a>主要和次要中断
 

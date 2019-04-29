@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9070054ed8cb0026d527e8b119dcbf4419d08c07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324412"
 ---
 # <a name="irpmjqueryvolumeinformation"></a>IRP\_MJ\_查询\_卷\_信息
 
@@ -56,7 +56,7 @@ FileFsVolumeInformation
 
 筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理查询卷信息请求的 IRP 堆栈位置中设置的信息：
@@ -156,7 +156,7 @@ FileFsVolumeFlagsInformation 类和关联[**文件\_FS\_卷\_信息**](https://m
 
 <a href="" id="------irpsp--parameters-queryvolume-length"></a> *IrpSp-&gt;Parameters.QueryVolume.Length*指向的缓冲区的长度，以字节为单位， *Irp-&gt;UserBuffer*。 返回时，此变量接收到的缓冲区写入的字节数。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件\_FS\_属性\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540251)

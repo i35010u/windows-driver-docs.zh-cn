@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbe8594a1691889c3595434e424f06f4c61e622e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323225"
 ---
 # <a name="gdi-user-objects"></a>GDI 用户对象
 
@@ -37,7 +37,7 @@ GDI 维护内部数据结构，但通过将它们作为向下传递到这些结�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">对象</th>
+<th align="left">Object</th>
 <th align="left">描述</th>
 </tr>
 </thead>

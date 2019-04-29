@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71f72e34a78a1aae2ca450e8a4fc96d902afba6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359866"
 ---
 # <a name="handling-a-guidtargetdevicequeryremove-event"></a>处理一个 GUID\_目标\_设备\_查询\_删除事件
 

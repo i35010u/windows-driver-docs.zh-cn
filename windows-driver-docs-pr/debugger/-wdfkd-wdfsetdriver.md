@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7e5457c64ab31256a4b5b2a9dc4947b5f41b9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323268"
 ---
 # <a name="wdfkdwdfsetdriver"></a>!wdfkd.wdfsetdriver
 

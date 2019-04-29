@@ -1,17 +1,17 @@
 ---
-title: 概述 NDIS 选择性挂起
-description: 概述 NDIS 选择性挂起
+title: NDIS 选择性挂起概述
+description: NDIS 选择性挂起概述
 ms.assetid: D23E103E-893E-4B42-8EFD-0524846EF45F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce566792bb1d769032c26658c0e788ee80b5fe7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355700"
 ---
-# <a name="overview-of-ndis-selective-suspend"></a>概述 NDIS 选择性挂起
+# <a name="overview-of-ndis-selective-suspend"></a>NDIS 选择性挂起概述
 
 
 从开始 NDIS 6.30，NDIS 选择性挂起接口允许通过转换到低功耗状态适配器挂起空闲的网络适配器的 NDIS。 这使系统可以减少 CPU 和功耗开销的适配器。

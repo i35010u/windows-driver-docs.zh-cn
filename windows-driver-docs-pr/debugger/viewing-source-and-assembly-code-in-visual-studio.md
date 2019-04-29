@@ -5,11 +5,11 @@ ms.assetid: C2E5BAA8-913A-4B0E-8ADF-E2758CCFEC84
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 637aaa7dcc91cdc3ed7bbf0a0d83c97170767913
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325929"
 ---
 # <a name="source-code-debugging-in-visual-studio"></a>在 Visual Studio 中调试源代码
 

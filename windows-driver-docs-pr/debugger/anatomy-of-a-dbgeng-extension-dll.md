@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24babd1fb7683107ab4858ef5a206d65e78a3351
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355394"
 ---
 # <a name="anatomy-of-a-dbgeng-extension-dll"></a>DbgEng 扩展 DLL 剖析
 
@@ -31,7 +31,7 @@ DbgEng 扩展 DLL 导出多个回调函数，其中一些可能是扩展命令�
 
 用于实现扩展命令的函数必须符合原型[ **PDEBUG\_扩展\_调用**](https://msdn.microsoft.com/library/windows/hardware/ff553378)。
 
-这些函数根据标准的 c + + 惯例，名为，不同之处在于不允许使用大写字母。 导出的函数名称和扩展命令名称完全相同，只不过扩展命令开始一个带有感叹号 （！）。 例如，您将 myextension.dll 加载到调试器，然后键入 **！ 堆栈**到调试器的命令窗口中，调试器将查找名为的导出函数**堆栈**myextension.dll 中。
+这些函数被命名为根据标准C++约定，但不允许该大写字母。 导出的函数名称和扩展命令名称完全相同，只不过扩展命令开始一个带有感叹号 （！）。 例如，您将 myextension.dll 加载到调试器，然后键入 **！ 堆栈**到调试器的命令窗口中，调试器将查找名为的导出函数**堆栈**myextension.dll 中。
 
 如果尚未加载 myextension.dll，或如果可以与其他扩展 Dll 中具有相同名称的其他扩展命令，您可以键入 **！ myextension.stack**到调试器的命令窗口，以指示扩展 DLL 和该 DLL 中的扩展命令。
 

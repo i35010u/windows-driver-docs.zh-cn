@@ -5,11 +5,11 @@ ms.assetid: 5CE5D2C3-F967-4318-B799-38CE8E8B15A6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed22b05a45fc5e440ba36f9ef99b9ef375335d52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324728"
 ---
 # <a name="runtime-parameters"></a>运行时参数
 

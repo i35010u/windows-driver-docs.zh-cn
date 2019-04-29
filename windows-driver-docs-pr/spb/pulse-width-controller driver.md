@@ -5,11 +5,11 @@ ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa980ceb8c5e2d9108c5763ee9bfee6d99331032
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352710"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>SoC 上 PWM 模块的 PWM 驱动程序
 提供访问脉冲的宽度调整 (PWM) 控制器属于 SoC 和 SoC 地址空间为内存映射，需要编写器的内核模式驱动程序。 该驱动程序必须注册的设备类接口的 PWM 控制器，以便 UWP 应用可以访问系统公开 PWM 设备通过 PWM WinRT Api Windows.Devices.Pwm 命名空间中定义。 

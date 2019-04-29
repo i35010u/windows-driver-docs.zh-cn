@@ -5,11 +5,11 @@ ms.assetid: F14E9811-B432-409B-B7AD-262C2DD76C25
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5258792f41cd95ad657126de2226c193a78b4f20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323285"
 ---
 # <a name="implementation-requirements-for-various-form-factors"></a>各种外形规格的实现需求
 

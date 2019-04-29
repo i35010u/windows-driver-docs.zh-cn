@@ -1,5 +1,5 @@
 ---
-title: ss （设置符号后缀）
+title: ss（设置符号后缀）
 description: Ss 命令设置或显示当前用于符号数值表达式中匹配的后缀值。
 ms.assetid: acf4cf2e-5b09-4d46-aa42-e539ee968685
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c230128657006ddbaa3d1504fe8c88515e6d6e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368079"
 ---
-# <a name="ss-set-symbol-suffix"></a>ss （设置符号后缀）
+# <a name="ss-set-symbol-suffix"></a>ss（设置符号后缀）
 
 
 **Ss**命令设置或显示当前用于符号数值表达式中匹配的后缀值。

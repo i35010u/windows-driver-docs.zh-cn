@@ -1,19 +1,19 @@
 ---
-title: 启用调试的 Win32 子系统
-description: 启用调试的 Win32 子系统
+title: 启用 Win32 子系统调试
+description: 启用 Win32 子系统调试
 ms.assetid: ea9d1c96-413e-42b7-a0c2-b114aa6de2a6
 keywords:
 - 启用调试的 Win32 子系统 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e49aa42cdb795a2eea5acd5241c764ad3521560
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323147"
 ---
-# <a name="enable-debugging-of-win32-subsystem"></a>启用调试的 Win32 子系统
+# <a name="enable-debugging-of-win32-subsystem"></a>启用 Win32 子系统调试
 
 
 ## <span id="ddk_enable_debugging_of_win32_subsystem_dtools"></span><span id="DDK_ENABLE_DEBUGGING_OF_WIN32_SUBSYSTEM_DTOOLS"></span>

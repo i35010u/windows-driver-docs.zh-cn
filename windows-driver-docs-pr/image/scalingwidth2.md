@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 042c342380510624166107a867d23d8d7f3a6cbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364380"
 ---
 # <a name="scalingwidth-element"></a>ScalingWidth 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56519434"
 </wscn:ScalingWidth>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -86,7 +86,7 @@ ms.locfileid: "56519434"
 
 **MinValue**并**MaxValue**必须是介于 1 到 1000，整数**MinValue**小于或等于**MaxValue**。 值为 100 表示扫描设备不应进行的扫描图像宽度调整。 至少，WSD 扫描服务必须支持值为 100。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**MaxValue**](maxvalue.md)

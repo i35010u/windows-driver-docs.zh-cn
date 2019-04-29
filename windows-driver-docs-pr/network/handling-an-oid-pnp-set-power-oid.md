@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b2f607ba5ed502cc18ba821076dd7ca6624089a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349719"
 ---
 # <a name="handling-an-oidpnpsetpower-oid"></a>处理 OID\_PNP\_设置\_POWER OID
 

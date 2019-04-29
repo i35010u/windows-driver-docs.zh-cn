@@ -1,17 +1,17 @@
 ---
-title: 受支持的扫描程序纸张大小
-description: 受支持的扫描程序纸张大小
+title: 支持的扫描仪纸张大小
+description: 支持的扫描仪纸张大小
 ms.assetid: c4437c38-b43a-433c-913a-d3de9bf74284
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 026bd09af83f5f147128dd7e68cce0def86571c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322277"
 ---
-# <a name="supported-scanner-paper-sizes"></a>受支持的扫描程序纸张大小
+# <a name="supported-scanner-paper-sizes"></a>支持的扫描仪纸张大小
 
 
 

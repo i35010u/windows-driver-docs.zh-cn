@@ -5,11 +5,11 @@ ms.assetid: EC1993FB-5219-4C0C-A76A-05937A461C5A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be3a7237ff0c2d98ba9193a3970ebe9f52bceb74
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323227"
 ---
 # <a name="allocated-altitudes"></a>分配的等级
 

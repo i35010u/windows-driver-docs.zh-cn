@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be9190ea105d99730974e2ad6140e5f96bad71a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356919"
 ---
 # <a name="communication-class-interface"></a>通信类接口
 
@@ -34,7 +34,7 @@ ms.locfileid: "56546342"
 <th align="left">偏移量 （字节）</th>
 <th align="left">字段</th>
 <th align="left">大小 （字节）</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

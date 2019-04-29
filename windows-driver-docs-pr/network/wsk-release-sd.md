@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WSK_RELEASE_SD 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e6b760af3a66ce7cf6b4f02c0fb43aa9edc91c43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356779"
 ---
 # <a name="wskreleasesd"></a>WSK\_RELEASE\_SD
 
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK\_释放\_SD 客户端控制操作以释放任何一�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +77,7 @@ WSK 应用程序使用 WSK\_释放\_SD 客户端控制操作以释放任何一�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

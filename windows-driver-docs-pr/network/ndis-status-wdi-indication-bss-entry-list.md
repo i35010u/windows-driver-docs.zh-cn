@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b9baa9f923b3b4b8064f8ddc28342088736e1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366403"
 ---
 # <a name="ndisstatuswdiindicationbssentrylist"></a>NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表以通知主机有关 BSS 条目的更新。 这是未经请求的指示，可以在任何时候发送。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -51,13 +51,13 @@ ms.locfileid: "56534657"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_WDI\_TASK\_SCAN](oid-wdi-task-scan.md)

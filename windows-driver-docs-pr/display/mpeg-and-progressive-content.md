@@ -1,6 +1,6 @@
 ---
-title: MPEG 和渐进式内容
-description: MPEG 和渐进式内容
+title: MPEG 和逐行扫描内容
+description: MPEG 和逐行扫描内容
 ms.assetid: 6973011a-dcee-4411-9382-8c0af2bd85b1
 keywords:
 - MPEG WDK 的视频端口扩展
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 867da7bac3ce569becb1388d4e8afcd9b4a90f7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323381"
 ---
-# <a name="mpeg-and-progressive-content"></a>MPEG 和渐进式内容
+# <a name="mpeg-and-progressive-content"></a>MPEG 和逐行扫描内容
 
 
 ## <span id="ddk_mpeg_and_progressive_content_gg"></span><span id="DDK_MPEG_AND_PROGRESSIVE_CONTENT_GG"></span>

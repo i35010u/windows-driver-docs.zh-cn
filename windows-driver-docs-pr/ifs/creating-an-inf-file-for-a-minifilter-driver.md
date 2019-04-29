@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90713fedfef6f76bb2c6eeaa2910bf9447fb9756
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370721"
 ---
 # <a name="creating-an-inf-file-for-a-minifilter-driver"></a>创建用于微筛选器驱动程序的 INF 文件
 
@@ -87,7 +87,7 @@ CatalogFile =
 <thead>
 <tr class="header">
 <th align="left">条目</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

@@ -1,21 +1,21 @@
 ---
-title: 特殊的池
-description: 特殊的池
+title: 特殊池
+description: 特殊池
 ms.assetid: 8904913d-78ed-4e5f-acef-3c21eeb87b8d
 keywords:
-- 特殊的池
+- 特殊池
 - 特殊的池概述
 - GFlags、 特殊的池
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0e21ba07f3506996d5ab113a70b32c6a949c813
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368093"
 ---
-# <a name="special-pool"></a>特殊的池
+# <a name="special-pool"></a>特殊池
 
 
 **特殊池**功能配置 Windows 请求内存分配保留的内存池中时内存分配了指定的池标记或指定的大小范围内。

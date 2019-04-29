@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 325fb4ca0c437e29f742ee6a9465ad8303fcd740
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322181"
 ---
 # <a name="guiddevinterfacedisplayadapter"></a>GUID_DEVINTERFACE_DISPLAY_ADAPTER
 
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://msdn.microsoft.com/li
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,13 +70,13 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://msdn.microsoft.com/li
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntddvdeo.h （包括 Ntddvdeo.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)

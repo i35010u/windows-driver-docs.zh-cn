@@ -1,17 +1,17 @@
 ---
-title: MS3DPrint 标准 G 代码驱动程序
+title: MS3DPrint 标准 G-Code 驱动程序
 description: MS3DPrint 标准 G 代码驱动程序实现的典型 Windows 8.1 或 Windows 10 驱动程序的浮点混合的 filament 制造 3D 打印机使用 G 代码运行，尤其是打开源打印机，包括那些从 RepRap 项目。
 ms.assetid: F5818F58-C705-458F-9806-3F840BF7EE01
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fa433689f8ccd56b7a494a019655a3995798a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324761"
 ---
-# <a name="ms3dprint-standard-g-code-driver"></a>MS3DPrint 标准 G 代码驱动程序
+# <a name="ms3dprint-standard-g-code-driver"></a>MS3DPrint 标准 G-Code 驱动程序
 
 
 MS3DPrint 标准 G 代码驱动程序实现的通用 Windows 8.1 或更高版本的驱动程序的浮点混合的 filament 制造 3D 打印机使用 G 代码运行，尤其是打开源打印机，其中包含派生自 RepRap 项目。
@@ -36,7 +36,7 @@ USB 驱动程序和切片器是处于积极开发阶段和实现和规范的部�
 
  
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 [驱动程序安装](driver-installation.md)

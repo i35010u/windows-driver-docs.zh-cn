@@ -1,17 +1,17 @@
 ---
-title: 声明用于 WDM 驱动程序函数的角色类型的函数
-description: 声明用于 WDM 驱动程序函数的角色类型的函数
+title: 使用 WDM 驱动程序的函数角色类型来声明函数
+description: 使用 WDM 驱动程序的函数角色类型来声明函数
 ms.assetid: 3260b53e-82be-4dbc-8ac5-d0e52de77f9d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eefd27d42e1d4d8619b2b75a3eba015e4a6d60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63341134"
 ---
-# <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>声明用于 WDM 驱动程序函数的角色类型的函数
+# <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>使用 WDM 驱动程序的函数角色类型来声明函数
 
 
 若要在分析 WDM 驱动程序时将 SDV 告知驱动程序的入口点，必须声明使用函数角色类型声明的函数。 中 wdm.h 中定义的函数角色类型。 在每个入口点*DriverEntry* WDM 驱动程序中的例程必须通过指定相应的角色类型声明。 角色类型是 WDM 驱动程序中的已识别的入口点相对应的预定义的 typedef。

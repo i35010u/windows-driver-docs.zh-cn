@@ -5,11 +5,11 @@ ms.assetid: 55ef8125-40d3-44f3-8520-cc3a0912c3d2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccead64857af5882fbe605e3c6c5d210aa25a6df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364591"
 ---
 # <a name="data-transfers"></a>数据传输
 

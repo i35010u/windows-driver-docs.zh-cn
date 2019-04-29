@@ -1,6 +1,6 @@
 ---
-title: 碎片化的 NET_BUFFER_LIST 结构
-description: 碎片化的 NET_BUFFER_LIST 结构
+title: 分段的 NET_BUFFER_LIST 结构
+description: 分段的 NET_BUFFER_LIST 结构
 ms.assetid: a72bc0cf-8c92-4c3e-ad10-710e5b93c74c
 keywords:
 - NET_BUFFER_LIST
@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3ae0737449e89f582b33bd74d589ce8bc84c4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323472"
 ---
 # <a name="fragmented-netbufferlist-structures"></a>分段 NET\_缓冲区\_列表结构
 

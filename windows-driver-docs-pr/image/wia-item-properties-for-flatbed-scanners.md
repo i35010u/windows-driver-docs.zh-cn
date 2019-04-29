@@ -1,17 +1,17 @@
 ---
-title: 对于平板扫描仪 WIA 项属性
-description: 对于平板扫描仪 WIA 项属性
+title: 平板扫描仪的 WIA 项属性
+description: 平板扫描仪的 WIA 项属性
 ms.assetid: 464549e5-8cdf-4e85-91a9-fa9a12f2a53b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ecaa5f6a34ce8538bdd3b6d954d5b98472f056
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352698"
 ---
-# <a name="wia-item-properties-for-flatbed-scanners"></a>对于平板扫描仪 WIA 项属性
+# <a name="wia-item-properties-for-flatbed-scanners"></a>平板扫描仪的 WIA 项属性
 
 
 

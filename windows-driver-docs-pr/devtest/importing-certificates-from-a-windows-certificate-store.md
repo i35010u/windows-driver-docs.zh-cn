@@ -1,17 +1,17 @@
 ---
-title: 从 Windows 证书存储中导入证书
-description: 从 Windows 证书存储中导入证书
+title: 从 Windows 证书存储导入证书
+description: 从 Windows 证书存储导入证书
 ms.assetid: abdf19c7-2cea-4af3-8a86-37fc4a9e7c3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 125d944c7888b59b867d3a14f4767bfe09ddd852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323166"
 ---
-# <a name="importing-certificates-from-a-windows-certificate-store"></a>从 Windows 证书存储中导入证书
+# <a name="importing-certificates-from-a-windows-certificate-store"></a>从 Windows 证书存储导入证书
 
 
 增强型存储证书管理工具可用于从专用证书存储在计算机中的证书导入到 IEEE 1667 合规 USB 存储设备。

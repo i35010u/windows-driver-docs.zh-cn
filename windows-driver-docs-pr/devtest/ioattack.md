@@ -5,11 +5,11 @@ ms.assetid: ae0eda5c-534e-44c2-a997-66fe1337ca9f
 ms.date: 07/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 75f298a6d03b2261bbe8a3d977e3f1240ca8321e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356523"
 ---
 # <a name="ioattack"></a>IoAttack
 

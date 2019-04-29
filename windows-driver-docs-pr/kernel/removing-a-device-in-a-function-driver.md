@@ -1,6 +1,6 @@
 ---
-title: 在功能驱动程序中删除设备
-description: 在功能驱动程序中删除设备
+title: 在函数驱动程序中删除设备
+description: 在函数驱动程序中删除设备
 ms.assetid: 46a75647-e72a-4194-be9d-070e3ac95650
 keywords:
 - 功能的驱动程序 WDK 即插即用
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e2d98736378c5535bf57e968b9cc3285e8c1943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324271"
 ---
-# <a name="removing-a-device-in-a-function-driver"></a>在功能驱动程序中删除设备
+# <a name="removing-a-device-in-a-function-driver"></a>在函数驱动程序中删除设备
 
 
 

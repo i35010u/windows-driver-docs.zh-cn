@@ -21,11 +21,11 @@ keywords:
 ms.date: 05/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cac00eb60b57dee3eb425bfa6ec86f8c25abd7c3
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360777"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
@@ -423,7 +423,7 @@ ms.locfileid: "57349558"
 <td align="left"><p>驱动程序的代码分析</p>
 <p><strong>WDK 工具：</strong>是</p></td>
 <td align="left"><p>代码分析工具包含在 Visual Studio。 安装 WDK 时，被添加特定于驱动程序的组件。</p></td>
-<td align="left"><p>静态验证工具，用于检测 C 和 c + + 编码错误。 此版本专门用于检测内核模式驱动程序中的错误。</p>
+<td align="left"><p>静态验证工具，用于检测 C 和C++编码错误。 此版本专门用于检测内核模式驱动程序中的错误。</p>
 <div class="alert">
 <strong>请注意</strong>  在以前版本的 WDK 中，此功能是 OACR 的一部分，也是可用作独立工具 PREfast for Drivers。 从 Visual Studio 2012 开始，该功能现已集成到 Visual Studio。
 </div>

@@ -1,23 +1,23 @@
 ---
-title: 确认 Oplock 分隔线
-description: 确认 Oplock 分隔线
+title: 确认 Oplock 突破
+description: 确认 Oplock 突破
 ms.assetid: ea5bcd1e-d22c-4f80-89e4-1a61e43959dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2aa2a988f24e33c145ad24d075f71f334751c7f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323229"
 ---
-# <a name="acknowledging-oplock-breaks"></a>确认 Oplock 分隔线
+# <a name="acknowledging-oplock-breaks"></a>确认 Oplock 突破
 
 
 ## <span id="oplock_break_conditions"></span><span id="OPLOCK_BREAK_CONDITIONS"></span>
 
 
-有不同类型的机会锁的所有者可以返回的确认。 类似于[授予请求](granting-oplocks.md)，作为文件系统控制代码发送这些确认 (即[FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)s)。 它们是：
+有不同类型的机会锁的所有者可以返回的确认。 类似于[授予请求](granting-oplocks.md)，作为文件系统控制代码发送这些确认 (即[FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)s)。 它们分别是：
 
 -   FSCTL\_OPLOCK\_中断\_确认
     -   此 FSCTL 指示 oplock 所有者已完成流同步，并且它们接受的级别 （级别 2 或无） 向其断开 oplock。

@@ -1,6 +1,6 @@
 ---
-title: 非基于 COM 的呈现插件
-description: 非基于 COM 的呈现插件
+title: 不是基于 COM 的渲染插件
+description: 不是基于 COM 的渲染插件
 ms.assetid: 435f9754-50be-4a4b-a5b4-b2bc8d66f034
 keywords:
 - 非基于 COM 的呈现插件 WDK 打印
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffd88eaaf16d9bd110a7792758a64c13bc6c32ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323632"
 ---
-# <a name="non-com-based-rendering-plug-ins"></a>非基于 COM 的呈现插件
+# <a name="non-com-based-rendering-plug-ins"></a>不是基于 COM 的渲染插件
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 执行的客户端的面向连接的操作
-description: 执行的客户端的面向连接的操作
+title: 客户端执行的面向连接的操作
+description: 客户端执行的面向连接的操作
 ms.assetid: 342f534e-d203-4823-a4d8-a8a51b7ff0bd
 keywords:
 - 面向连接的客户端 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c96f4bf462c572c5d47feeab75cf9fddf950c09c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357408"
 ---
-# <a name="connection-oriented-operations-performed-by-clients"></a>执行的客户端的面向连接的操作
+# <a name="connection-oriented-operations-performed-by-clients"></a>客户端执行的面向连接的操作
 
 
 

@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f97cf8905c6699ceaaad773ee83d78f28c934b88
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324482"
 ---
 # <a name="irpmjquerysecurity-and-irpmjsetsecurity"></a>IRP\_MJ\_查询\_安全性和 IRP\_MJ\_设置\_安全
 

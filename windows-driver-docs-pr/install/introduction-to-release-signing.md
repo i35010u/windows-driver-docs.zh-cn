@@ -1,17 +1,17 @@
 ---
-title: 版本签名简介
-description: 版本签名简介
+title: 发布签名简介
+description: 发布签名简介
 ms.assetid: 87583d0a-f7c9-49f0-953a-f51891260d75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa5257be05265c900a5047f786ecd9c173817d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364298"
 ---
-# <a name="introduction-to-release-signing"></a>版本签名简介
+# <a name="introduction-to-release-signing"></a>发布签名简介
 
 
 [驱动程序包](driver-packages.md)应为已发布签名原因如下：

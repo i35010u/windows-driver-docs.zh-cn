@@ -1,6 +1,6 @@
 ---
-title: 调度机制的工作队列
-description: 调度机制的工作队列
+title: 工作队列调度机制
+description: 工作队列调度机制
 ms.assetid: d4ce929f-2d84-4194-9afa-e00629594c36
 keywords:
 - RDBSS WDK 文件系统是如何工作队列调度
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 048e3de725fe96da64cc97e96bf208aa49cc6d5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322183"
 ---
-# <a name="work-queue-dispatching-mechanisms"></a>调度机制的工作队列
+# <a name="work-queue-dispatching-mechanisms"></a>工作队列调度机制
 
 
 ## <span id="ddk_work_queue_dispatching_mechanisms_if"></span><span id="DDK_WORK_QUEUE_DISPATCHING_MECHANISMS_IF"></span>

@@ -1,6 +1,6 @@
 ---
-title: 拆分碎片 IP 帧
-description: 拆分碎片 IP 帧
+title: 拆分碎片化 IP 帧
+description: 拆分碎片化 IP 帧
 ms.assetid: faee7ec8-a49e-4107-a83f-d97391d69b43
 keywords:
 - 以太网帧拆分 WDK 网络、 碎片 IP 帧
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8cb2b3c5cbe742aa30c0f4035dfe2a9234f5892
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369841"
 ---
-# <a name="splitting-fragmented-ip-frames"></a>拆分碎片 IP 帧
+# <a name="splitting-fragmented-ip-frames"></a>拆分碎片化 IP 帧
 
 
 

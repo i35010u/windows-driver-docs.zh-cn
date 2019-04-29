@@ -1,6 +1,6 @@
 ---
-title: 阻止 BDA 微型驱动程序的威胁
-description: 阻止 BDA 微型驱动程序的威胁
+title: 阻止 BDA 微型驱动程序威胁
+description: 阻止 BDA 微型驱动程序威胁
 ms.assetid: 090cd2fb-d35b-4c42-a90d-a0d567d4b93f
 keywords:
 - 广播驱动程序体系结构 WDK AVStream 安全性
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ccf41dca6a72fb46dfafd2cc0b0144cdf4c87a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362217"
 ---
-# <a name="preventing-bda-minidriver-threats"></a>阻止 BDA 微型驱动程序的威胁
+# <a name="preventing-bda-minidriver-threats"></a>阻止 BDA 微型驱动程序威胁
 
 
 

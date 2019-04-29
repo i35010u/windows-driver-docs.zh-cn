@@ -5,11 +5,11 @@ ms.assetid: 357DF3FB-2259-48D1-8597-6ABA27890237
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b33bcb2ea088c60a325f30e823333ff6dd79851
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323821"
 ---
 # <a name="3d-printing-sample-wsd-app"></a>3D 打印示例 WSD 应用
 

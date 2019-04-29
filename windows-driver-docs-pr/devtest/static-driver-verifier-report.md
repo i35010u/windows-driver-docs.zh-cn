@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier 报表
-description: Static Driver Verifier 报表
+title: 静态驱动程序验证程序报告
+description: 静态驱动程序验证程序报告
 ms.assetid: ba174e8e-683e-44b2-88c2-f55fbccae4d3
 keywords:
 - Static Driver Verifier WDK、 Static Driver Verifier 报表
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 244672db40244b90726d8bca2dee6a90ca7e7a95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365181"
 ---
-# <a name="static-driver-verifier-report"></a>Static Driver Verifier 报表
+# <a name="static-driver-verifier-report"></a>静态驱动程序验证程序报告
 
 
 静态驱动程序验证工具报表是一次验证结果的交互式显示。 若要调查的验证结果并确定失败 SDV 验证驱动程序中的路径，可以使用报表。

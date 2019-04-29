@@ -1,5 +1,5 @@
 ---
-title: 使用 16550 UART 界面配置即插即用的多功能串行设备
+title: 通过 16550 UART 接口配置 PnP 多功能串行设备
 description: Plug and Play 串行设备需要 16550 UART 兼容接口的多功能设备上的配置
 ms.assetid: 63588ac9-4c87-421d-8da3-3e950cbd466c
 keywords:
@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dce95ec1d57f8d591543b321a28a04b89402e84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324254"
 ---
 # <a name="configuration-of-plug-and-play-serial-device-on-a-multifunction-device-that-requires-a-16550-uart-compatible-interface"></a>Plug and Play 串行设备需要 16550 UART 兼容接口的多功能设备上的配置
 

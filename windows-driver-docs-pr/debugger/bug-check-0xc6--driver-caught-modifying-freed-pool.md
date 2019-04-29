@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ba18a6c3d20937abf6c64160285b63b9323283a6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324677"
 ---
 # <a name="bug-check-0xc6-drivercaughtmodifyingfreedpool"></a>Bug 检查 0xC6：驱动程序\_CAUGHT\_修改\_FREED\_池
 

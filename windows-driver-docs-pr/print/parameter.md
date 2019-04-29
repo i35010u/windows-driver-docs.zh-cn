@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 820b1985308399f83af8cb2b23b594e5763aebe2
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324243"
 ---
 # <a name="parameter-element"></a>parameter 元素
 

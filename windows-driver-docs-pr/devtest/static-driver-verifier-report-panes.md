@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier 报表窗格
-description: Static Driver Verifier 报表窗格
+title: 静态驱动程序验证程序报告窗格
+description: 静态驱动程序验证程序报告窗格
 ms.assetid: 12487bd0-70f6-4d97-b1a5-c0e5ea055698
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fa6d0409cba3340b523b4e928b2cd06f92dc5db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365169"
 ---
-# <a name="static-driver-verifier-report-panes"></a>Static Driver Verifier 报表窗格
+# <a name="static-driver-verifier-report-panes"></a>静态驱动程序验证程序报告窗格
 
 
 静态的驱动程序验证工具报告包含以下窗格：

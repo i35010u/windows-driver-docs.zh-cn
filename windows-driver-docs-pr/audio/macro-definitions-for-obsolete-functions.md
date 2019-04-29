@@ -5,11 +5,11 @@ ms.assetid: 3d69b089-4875-4860-b5eb-3b5edcf3fc89
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c08e5bec3f1460f48c08e00065062e8fe4f043d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332395"
 ---
 # <a name="macro-definitions-for-obsolete-functions"></a>已过时函数的宏定义
 

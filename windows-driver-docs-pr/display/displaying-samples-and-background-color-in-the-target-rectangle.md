@@ -11,13 +11,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 954b0540f29d0007988cfaef50f21084a0920b65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323777"
 ---
-# <a name="displaying-samples-and-background-color-in-the-target-rectangle"></a>显示示例和背景颜色的目标矩形中
+# <a name="displaying-samples-and-background-color-in-the-target-rectangle"></a>在目标矩形中显示样本和背景色
 
 
 ## <span id="ddk_displaying_samples_and_background_color_in_the_target_rectangle_gg"></span><span id="DDK_DISPLAYING_SAMPLES_AND_BACKGROUND_COLOR_IN_THE_TARGET_RECTANGLE_GG"></span>

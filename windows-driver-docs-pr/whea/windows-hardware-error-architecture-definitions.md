@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a9ec87b9597d0461ba3ea687e7c9a2423d24a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323260"
 ---
 # <a name="windows-hardware-error-architecture-definitions"></a>Windows 硬件错误体系结构定义
 

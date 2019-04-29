@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e810770a0e9ffa085e1d823ddfa9b2f4e2685c24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324237"
 ---
 # <a name="irpmjsetsecurity"></a>IRP\_MJ\_SET\_SECURITY
 
@@ -37,7 +37,7 @@ IRP\_MJ\_设置\_安全请求将发送的 I/O 管理器。 可以将发送此请
 
 筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理组安全信息请求的 IRP 堆栈位置中设置的信息：
@@ -95,7 +95,7 @@ IRP\_MJ\_设置\_安全请求将发送的 I/O 管理器。 可以将发送此请
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)

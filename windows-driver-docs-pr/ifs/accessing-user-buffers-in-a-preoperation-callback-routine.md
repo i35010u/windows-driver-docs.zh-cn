@@ -1,19 +1,19 @@
 ---
-title: 访问 Preoperation 回调例程中的用户缓冲区
-description: 访问 Preoperation 回调例程中的用户缓冲区
+title: 访问预操作回调例程中的用户缓冲区
+description: 访问预操作回调例程中的用户缓冲区
 ms.assetid: 16e6a9e0-3a92-471f-98e6-9a4e8eb7d4a6
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器，缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7c35fcc95ff83f74a42d07ff95c6b8860d57d8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323148"
 ---
-# <a name="accessing-user-buffers-in-a-preoperation-callback-routine"></a>访问 Preoperation 回调例程中的用户缓冲区
+# <a name="accessing-user-buffers-in-a-preoperation-callback-routine"></a>访问预操作回调例程中的用户缓冲区
 
 
 ## <span id="ddk_accessing_user_buffers_in_a_preoperation_callback_routine_if"></span><span id="DDK_ACCESSING_USER_BUFFERS_IN_A_PREOPERATION_CALLBACK_ROUTINE_IF"></span>

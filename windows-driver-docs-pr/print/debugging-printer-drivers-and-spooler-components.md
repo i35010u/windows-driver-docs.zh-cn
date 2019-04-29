@@ -5,11 +5,11 @@ ms.assetid: baa793b8-fda5-4ec2-b670-954abf809b4c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15aea0ec48d7108de1bbef4622c1beb93a8608c9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365531"
 ---
 # <a name="debugging-printer-drivers-and-spooler-components"></a>调试打印机驱动程序和后台处理程序组件
 

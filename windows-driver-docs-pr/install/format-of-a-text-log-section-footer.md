@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4268b3ca86fd006cdcf448837d5bacf43b8f7d9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322269"
 ---
 # <a name="format-of-a-text-log-section-footer"></a>文本日志部分页脚的格式
 

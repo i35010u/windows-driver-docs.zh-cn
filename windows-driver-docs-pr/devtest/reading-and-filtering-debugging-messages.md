@@ -19,11 +19,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07e170eb85e507cd893ed3b86dbdc23b3722f216
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323140"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>读取和筛选调试消息
 

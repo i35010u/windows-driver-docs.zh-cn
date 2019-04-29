@@ -5,11 +5,11 @@ ms.assetid: 1ac63d07-f85c-492b-9886-f40a19d7c0b2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7a76fd738869e78f5aad6e72a55b0fb000dcd68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323293"
 ---
 # <a name="sample-storport-miniport-driver-for-an-lsiu3-device"></a>LSI 示例 Storport 微型端口驱动程序\_U3 设备
 

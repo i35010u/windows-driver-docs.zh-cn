@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5b6008b6a9198d405473de9ad2f2704d0a62bda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323627"
 ---
 # <a name="kseventdynamicformatchange"></a>KSEVENT\_DYNAMIC\_FORMAT\_CHANGE
 
@@ -41,11 +41,11 @@ AVStream 硬件编解码器驱动程序生成 KSEVENT\_动态\_格式\_更改。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

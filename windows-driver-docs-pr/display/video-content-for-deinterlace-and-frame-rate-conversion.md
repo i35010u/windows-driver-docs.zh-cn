@@ -1,6 +1,6 @@
 ---
-title: 取消隔行扫描和帧速率转换的视频内容
-description: 取消隔行扫描和帧速率转换的视频内容
+title: 要进行反交错和帧速率转换的视频内容
+description: 要进行反交错和帧速率转换的视频内容
 ms.assetid: 627b394e-c2e1-4327-adaa-0c3436ba3d1a
 keywords:
 - 去隔行 WDK DirectX VA，接收到的视频内容
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bd9bbf34e0176d2f8fc38e42b1f32fd7b7b3ba6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365023"
 ---
-# <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>取消隔行扫描和帧速率转换的视频内容
+# <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>要进行反交错和帧速率转换的视频内容
 
 
 ## <span id="ddk_video_content_for_deinterlace_and_frame_rate_conversion_gg"></span><span id="DDK_VIDEO_CONTENT_FOR_DEINTERLACE_AND_FRAME_RATE_CONVERSION_GG"></span>
@@ -45,7 +45,7 @@ DXVA\_VideoDesc 结构，如下所示填充，指示要取消隔行扫描 720 x 
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -156,7 +156,7 @@ DXVA\_VideoDesc 结构填充如下所示，若要指示驱动程序可执行帧�
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

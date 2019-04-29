@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca0eea973a0ff33afc3cf50539b1a643ed51814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355852"
 ---
 # <a name="ksmethodbdagetchangestate"></a>KSMETHOD\_BDA\_获取\_更改\_状态
 
@@ -47,13 +47,13 @@ ms.locfileid: "56540817"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia.h （包括 Bdamedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA\_更改\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff556518)

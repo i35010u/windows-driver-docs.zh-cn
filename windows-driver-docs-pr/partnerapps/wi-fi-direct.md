@@ -5,11 +5,11 @@ ms.assetid: 52D09B1D-5832-48C9-B200-46B8DDC14BE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00a5c1f5a1bca8bde86b33a8b1089d9d34afe21f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357653"
 ---
 # <a name="wi-fi-direct"></a>WLAN Direct
 

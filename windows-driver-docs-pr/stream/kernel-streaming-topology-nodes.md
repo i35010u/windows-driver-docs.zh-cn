@@ -5,11 +5,11 @@ ms.assetid: 3e62200c-1dfa-4dde-8710-0ab8f01375de
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e28fb5edc30322000607c3aa708fa2dc33cdce4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365243"
 ---
 # <a name="kernel-streaming-topology-nodes"></a>内核流式处理拓扑节点
 

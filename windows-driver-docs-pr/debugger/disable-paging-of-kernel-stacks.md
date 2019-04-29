@@ -1,19 +1,19 @@
 ---
-title: 禁用分页的内核堆栈
-description: 禁用分页的内核堆栈
+title: 禁用内核堆栈分页
+description: 禁用内核堆栈分页
 ms.assetid: 3bf0ae20-4569-41de-9d7c-dd6a2790dac6
 keywords:
 - 禁用分页的内核堆栈 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d02e9a57d9950e8012149d4c080f9ca175879735
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324573"
 ---
-# <a name="disable-paging-of-kernel-stacks"></a>禁用分页的内核堆栈
+# <a name="disable-paging-of-kernel-stacks"></a>禁用内核堆栈分页
 
 
 ## <span id="ddk_disable_paging_of_kernel_stacks_dtools"></span><span id="DDK_DISABLE_PAGING_OF_KERNEL_STACKS_DTOOLS"></span>

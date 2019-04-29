@@ -5,11 +5,11 @@ ms.assetid: 3E7875E1-0810-4698-A5E1-7A4C6C366967
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acfe2ad3fbaf7a32d05485e33b6a05b0a419a8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324824"
 ---
 # <a name="spbaccelerometer-driver-cookbook"></a>SpbAccelerometer 驱动程序指南
 

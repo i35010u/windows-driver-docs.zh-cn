@@ -1,17 +1,17 @@
 ---
-title: V4 打印机驱动程序的安全注意事项
+title: V4 打印机驱动程序安全注意事项
 description: 除了常见的威胁，如提升权限、 欺骗性的设备或拦截式攻击，v4 打印机驱动程序还需要与 Internet Explorer 9 的低权限应用程序兼容。
 ms.assetid: 8A1508C1-4856-4E3C-8378-AC5FDD55D118
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cf2299bbcf43dd90a02a75ce4ab64059aa280b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324812"
 ---
-# <a name="v4-printer-driver-security-considerations"></a>V4 打印机驱动程序的安全注意事项
+# <a name="v4-printer-driver-security-considerations"></a>V4 打印机驱动程序安全注意事项
 
 
 除了常见的威胁，如提升权限、 欺骗性的设备或拦截式攻击，v4 打印机驱动程序还需要与 Internet Explorer 9 的低权限应用程序兼容。

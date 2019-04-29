@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_QUERY 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 06e8f6308dd07e453592c612a65f91189d913eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362051"
 ---
 # <a name="sioaddresslistquery"></a>SIO\_地址\_列表\_查询
 
@@ -86,11 +86,11 @@ WSK 应用程序调用时未指定指向 IRP **WskControlSocket**函数查询当
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ws2def.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

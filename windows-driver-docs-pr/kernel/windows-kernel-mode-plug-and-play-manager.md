@@ -1,17 +1,17 @@
 ---
-title: Windows 内核模式插管理器
-description: Windows 内核模式插管理器
+title: Windows 内核模式即插即用管理器
+description: Windows 内核模式即插即用管理器
 ms.assetid: 43d06dbe-da66-4103-8be3-f27ff075a1b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e18d7d041d8ab26f7914165a88f0fe2c904b716a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357521"
 ---
-# <a name="windows-kernel-mode-plug-and-play-manager"></a>Windows 内核模式插管理器
+# <a name="windows-kernel-mode-plug-and-play-manager"></a>Windows 内核模式即插即用管理器
 
 
 插即用 (PnP) 是硬件技术的组合，并且使能够识别设备时的 PC 的软件技术添加到系统。 使用的即插即用，系统配置可以使用很少或没有用户输入更改。 例如，接通 USB 拇指驱动器，Windows 可以检测拇指驱动器，并将其自动添加到文件系统。 但是，若要执行此操作，硬件必须遵循特定的要求，因此必须驱动程序。

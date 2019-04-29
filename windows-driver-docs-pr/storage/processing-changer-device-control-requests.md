@@ -1,6 +1,6 @@
 ---
-title: 处理换带机设备控制请求
-description: 处理换带机设备控制请求
+title: 处理更换器设备控制请求
+description: 处理更换器设备控制请求
 ms.assetid: 3ee275c7-f2e4-47db-bd4b-db5c0c8ad399
 keywords:
 - 更换器驱动程序 WDK 存储，请求处理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac5f163d74cb8a014f7b914186940a799db8d0d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366278"
 ---
-# <a name="processing-changer-device-control-requests"></a>处理换带机设备控制请求
+# <a name="processing-changer-device-control-requests"></a>处理更换器设备控制请求
 
 
 ## <span id="ddk_processing_changer_device_control_requests_kg"></span><span id="DDK_PROCESSING_CHANGER_DEVICE_CONTROL_REQUESTS_KG"></span>

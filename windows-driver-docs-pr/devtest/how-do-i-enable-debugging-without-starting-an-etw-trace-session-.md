@@ -5,11 +5,11 @@ ms.assetid: d0487973-c66a-4ede-bc94-2e7e2060ab54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 072381d0cf6574056d28cb08088db4b944dec515
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359473"
 ---
 # <a name="how-do-i-enable-debugging-without-starting-an-etw-trace-session"></a>如何在不启动 ETW 跟踪会话的情况下启用调试？
 

@@ -1,16 +1,16 @@
 ---
-title: Wi-fi 热点卸载体系结构
-description: Wi-fi 热点卸载体系结构
+title: Wi-Fi 热点卸载体系结构
+description: Wi-Fi 热点卸载体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28e848f5f4c92eb741c7dc023964d5952a2d9600
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365759"
 ---
-# <a name="wi-fi-hotspot-offloading-architecture"></a>Wi-fi 热点卸载体系结构
+# <a name="wi-fi-hotspot-offloading-architecture"></a>Wi-Fi 热点卸载体系结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
@@ -68,7 +68,7 @@ ms.locfileid: "56521058"
 
 至少一个插件配置时，仅显示热点用户界面。
 
-## <a name="example-automatic-connection-to-a-hotspot-network"></a>示例：自动连接到热点网络
+## <a name="example-automatic-connection-to-a-hotspot-network"></a>例如：自动连接到热点网络
 
 下面是非常高级的组件自动连接到热点网络期间发生的交互序列的描述：
 

@@ -5,11 +5,11 @@ ms.assetid: 48FF0A37-BBAF-49D1-9BDE-128AED00BEEF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ae6638618596c5fc88c1d222ec07f8593b41614
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324246"
 ---
 # <a name="exploring-the-driver-options-in-the-wizard"></a>浏览向导中的驱动程序选项
 

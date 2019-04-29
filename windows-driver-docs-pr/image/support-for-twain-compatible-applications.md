@@ -1,17 +1,17 @@
 ---
-title: TWAIN 兼容应用程序的支持
-description: TWAIN 兼容应用程序的支持
+title: 支持兼容 TWAIN 的应用程序
+description: 支持兼容 TWAIN 的应用程序
 ms.assetid: 8135178f-a432-4200-81c3-8e12112637f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f85504c59a7a4fec15c56901e971785ce8c582fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322297"
 ---
-# <a name="support-for-twain-compatible-applications"></a>TWAIN 兼容应用程序的支持
+# <a name="support-for-twain-compatible-applications"></a>支持兼容 TWAIN 的应用程序
 
 
 

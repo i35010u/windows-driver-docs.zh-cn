@@ -5,11 +5,11 @@ ms.assetid: 2cf17295-e3af-4109-bfdd-118aecf80bbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b29e25a911176defefcfde0d864fd332d91cfac8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322217"
 ---
 # <a name="still-image-scsi-io-structures"></a>静态图像 SCSI I/O 结构
 

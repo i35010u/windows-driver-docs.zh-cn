@@ -1,19 +1,19 @@
 ---
-title: 创建标准版资源映射
-description: 创建标准版资源映射
+title: 创建标准资源映射
+description: 创建标准资源映射
 ms.assetid: 97d95481-5290-41d3-a6e6-7cc142d4c2e8
 keywords:
 - 标准版资源映射 WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0610e483cd324a8a16b76442e4213599489cc656
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323535"
 ---
-# <a name="creating-standard-resource-maps"></a>创建标准版资源映射
+# <a name="creating-standard-resource-maps"></a>创建标准资源映射
 
 
 

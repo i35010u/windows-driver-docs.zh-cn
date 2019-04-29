@@ -5,11 +5,11 @@ ms.assetid: 135CA734-1C92-4EEA-81DC-96A6A68ABBE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6739599d1f22dffadb2906c10a3353fc29a37c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322126"
 ---
 # <a name="hybrid-forwarding"></a>混合转发
 

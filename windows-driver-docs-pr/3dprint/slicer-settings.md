@@ -5,11 +5,11 @@ ms.assetid: 9203AABB-48D9-47A6-A2B1-7A878BF82FD1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fba2c8daaad75fe8bd354aae08588a91d39e8f
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324703"
 ---
 # <a name="slicer-settings"></a>切片器设置
 

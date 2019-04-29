@@ -1,6 +1,6 @@
 ---
-title: 重新组合的 NET_BUFFER_LIST 结构
-description: 重新组合的 NET_BUFFER_LIST 结构
+title: 重新汇编的 NET_BUFFER_LIST 结构
+description: 重新汇编的 NET_BUFFER_LIST 结构
 ms.assetid: 0bfbfef3-c3ac-4add-b3b8-a4c3a96c8baa
 keywords:
 - NET_BUFFER_LIST
@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 037763cf9e1de621b14a2a122692be441e3aa268
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323570"
 ---
 # <a name="reassembled-netbufferlist-structures"></a>重新组合 NET\_缓冲区\_列表结构
 

@@ -1,14 +1,14 @@
 ---
-Description: This topic first describes the initial setup that is done by the software to enable U1 and U2 transitions, and then describes how these transitions occur in the hardware.
+Description: 本主题首先介绍的通过软件来启用 U1 和 U2 转换，并介绍如何在硬件发生这些转换的初始设置。
 title: U1 和 U2 转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e8cc5f049fcc6da78c0fb140f81e7bcece05522
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323837"
 ---
 # <a name="u1-and-u2-transitions"></a>U1 和 U2 转换
 
@@ -27,7 +27,7 @@ ms.locfileid: "56541478"
 
     **表 1。端口\_U1\_超时和端口\_U2\_超时值**
 
-    | 值   | 描述                                                                                                                                                                                                                  |
+    | ReplTest1   | 描述                                                                                                                                                                                                                  |
     |---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | 01H-FEH | DS 端口必须处于非活动状态一段时间后启动转换。 确切时间派生自的超时值。 端口必须接受转换，除非有挂起的流量由链接合作伙伴启动。 |
     | FFH     | DS 端口不能启动转换，但必须接受转换，除非有挂起的流量由链接合作伙伴启动。                                                                                    |
@@ -40,9 +40,9 @@ ms.locfileid: "56541478"
 
     **表 2。U1\_启用和 U2\_启用值**
 
-    | 值    | 描述                                                                                                                       |
+    | ReplTest1    | 描述                                                                                                                       |
     |----------|-----------------------------------------------------------------------------------------------------------------------------------|
-    | 已启用  | 美国端口可以启动转换，然后接受转换，如果设备策略允许由链接合作伙伴启动。 |
+    | Enabled  | 美国端口可以启动转换，然后接受转换，如果设备策略允许由链接合作伙伴启动。 |
     | Disabled | 美国端口不能启动转换，但可以接受转换由链接合作伙伴启动。                          |
 
      

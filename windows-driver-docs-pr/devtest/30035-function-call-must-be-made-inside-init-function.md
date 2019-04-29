@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C30035
 ms.openlocfilehash: 0ece0218f32a0e1e11dcaeae6f7055bce797890a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360781"
 ---
 # <a name="c30035"></a>C30035
 

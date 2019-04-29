@@ -1,6 +1,6 @@
 ---
-title: 安装换带机 Miniclass 驱动程序
-description: 安装换带机 Miniclass 驱动程序
+title: 安装更换器微型类驱动程序
+description: 安装更换器微型类驱动程序
 ms.assetid: 923e1128-bacc-450b-b250-bc666951965d
 keywords:
 - 更换器驱动程序 WDK 存储，miniclass 驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c95b2babd755e01bbe7d51bbd38d894b803669d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362281"
 ---
-# <a name="installing-changer-miniclass-drivers"></a>安装换带机 Miniclass 驱动程序
+# <a name="installing-changer-miniclass-drivers"></a>安装更换器微型类驱动程序
 
 
 ## <span id="ddk_installing_changer_miniclass_drivers_kg"></span><span id="DDK_INSTALLING_CHANGER_MINICLASS_DRIVERS_KG"></span>

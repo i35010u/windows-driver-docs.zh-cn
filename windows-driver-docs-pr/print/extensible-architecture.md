@@ -1,6 +1,6 @@
 ---
-title: 可扩展的体系结构
-description: 可扩展的体系结构
+title: 可扩展体系结构
+description: 可扩展体系结构
 ms.assetid: 48a9c3ea-282c-4d3c-83ca-dc7051fe5002
 keywords:
 - 直接使用 WDK XPSDrv
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 184f226d099afc373184770af53d2fb2cdde87a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324227"
 ---
-# <a name="extensible-architecture"></a>可扩展的体系结构
+# <a name="extensible-architecture"></a>可扩展体系结构
 
 
 整个体系结构的可扩展性，使你更轻松地以模块化方式添加区别性特性和功能。 XPS 打印路径中每个已升级的或新组件设计用于启用供应商可扩展性，按以下方式：

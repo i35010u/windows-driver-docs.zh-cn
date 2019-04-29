@@ -1,17 +1,17 @@
 ---
-title: 修改发出 I/O 请求的代码
-description: 修改发出 I/O 请求的代码
+title: 修改可发出 I/O 请求的代码
+description: 修改可发出 I/O 请求的代码
 ms.assetid: 39E4B6B2-45C8-42B7-811A-EEDCCCB056EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bcfaa8cc3ecf1303223c3f80df81fd2d94f7e0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325172"
 ---
-# <a name="revise-code-that-issues-io-requests"></a>修改发出 I/O 请求的代码
+# <a name="revise-code-that-issues-io-requests"></a>修改可发出 I/O 请求的代码
 
 
 WDF 定义多个驱动程序可用于创建和格式化 I/O 请求的方法。 下表总结了这些方法：

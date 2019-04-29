@@ -1,6 +1,6 @@
 ---
-title: Static Driver Verifier 引用
-description: Static Driver Verifier 引用
+title: 静态驱动程序验证程序参考
+description: 静态驱动程序验证程序参考
 ms.assetid: 94cdf0b8-d3e0-4720-a003-73e63367c38a
 keywords:
 - 静态驱动程序验证程序 WDK 引用
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f2811cf8a4af7c183cc6af57834142fbacfd92b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365157"
 ---
-# <a name="static-driver-verifier-reference"></a>Static Driver Verifier 引用
+# <a name="static-driver-verifier-reference"></a>静态驱动程序验证程序参考
 
 
 本部分包括：
@@ -30,7 +30,7 @@ ms.locfileid: "56533549"
 
 [Static Driver Verifier 错误消息](static-driver-verifier-error-messages.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [DDI 符合性规则](https://msdn.microsoft.com/library/windows/hardware/ff552840)

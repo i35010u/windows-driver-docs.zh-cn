@@ -1,19 +1,19 @@
 ---
-title: 更改用于调试 GPU 计划程序的行为
-description: 更改用于调试 GPU 计划程序的行为
+title: 更改用于调试的 GPU 计划程序的行为
+description: 更改用于调试的 GPU 计划程序的行为
 ms.assetid: 72eef7bf-b775-4e02-acc6-b745a41c616a
 keywords:
 - GPU 计划程序更改 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f27e02aeb61026ed4cf029dc42c6cac63abfe389
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363811"
 ---
-# <a name="changing-the-behavior-of-the-gpu-scheduler-for-debugging"></a>更改用于调试 GPU 计划程序的行为
+# <a name="changing-the-behavior-of-the-gpu-scheduler-for-debugging"></a>更改用于调试的 GPU 计划程序的行为
 
 
 为了帮助进行调试驱动程序，可以通过配置注册表更改的图形处理单元 (GPU) 计划程序的行为。

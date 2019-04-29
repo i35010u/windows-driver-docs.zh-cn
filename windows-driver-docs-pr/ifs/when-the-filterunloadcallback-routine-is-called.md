@@ -1,6 +1,6 @@
 ---
-title: 当调用 FilterUnloadCallback 例程
-description: 当调用 FilterUnloadCallback 例程
+title: 调用 FilterUnloadCallback 例程时
+description: 调用 FilterUnloadCallback 例程时
 ms.assetid: 22a3a73e-28be-4483-a7a6-73525e74503d
 keywords:
 - FilterUnloadCallback
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e94ef7593eb5bb12c84ab52d31a6a269120b4e8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322227"
 ---
-# <a name="when-the-filterunloadcallback-routine-is-called"></a>当调用 FilterUnloadCallback 例程
+# <a name="when-the-filterunloadcallback-routine-is-called"></a>调用 FilterUnloadCallback 例程时
 
 
 ## <span id="ddk_when_the_filterunloadcallback_routine_is_called_if"></span><span id="DDK_WHEN_THE_FILTERUNLOADCALLBACK_ROUTINE_IS_CALLED_IF"></span>

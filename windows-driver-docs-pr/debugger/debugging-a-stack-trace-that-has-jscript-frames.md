@@ -1,5 +1,5 @@
 ---
-title: 调试具有 JScript 帧的堆栈跟踪
+title: 调试包含 JScript 帧的堆栈跟踪
 description: JScript 堆栈转储创建和使用功能工作原理是收集 JScript 帧和拼接它们针对调试器物理帧。
 ms.assetid: A470809F-55AA-4A49-B181-EC8D22C84F31
 keywords:
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bdcca140685e6173392cd5fecc5ba0e60fd7621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324555"
 ---
-# <a name="debugging-a-stack-trace-that-has-jscript-frames"></a>调试具有 JScript 帧的堆栈跟踪
+# <a name="debugging-a-stack-trace-that-has-jscript-frames"></a>调试包含 JScript 帧的堆栈跟踪
 
 
 JScript 堆栈转储创建和使用功能工作原理是收集 JScript 帧和拼接它们针对调试器物理帧。 有时在 x86 平台、 堆栈跟踪不正确的调试器构造。

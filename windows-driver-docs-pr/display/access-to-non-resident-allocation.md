@@ -1,15 +1,15 @@
 ---
-title: 对非驻留分配的访问
+title: 访问非驻留分配
 description: GPU 访问不是常驻分配是非法的并会导致生成错误的应用程序中删除的设备。
 ms.assetid: 698ECD53-861A-4750-B33C-DF0611B87829
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2415c64fc6aa84939c8b1bfa337c1b1310b306b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323797"
 ---
 # <a name="span-iddisplayaccesstonon-residentallocationspanaccess-to-non-resident-allocation"></a><span id="display.access_to_non-resident_allocation"></span>对非驻留分配的访问
 

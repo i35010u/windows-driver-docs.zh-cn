@@ -1,6 +1,6 @@
 ---
-title: 使用后备链列表
-description: 使用后备链列表
+title: 使用后备列表
+description: 使用后备列表
 ms.assetid: 07a75b8b-04b9-48ea-bda4-53889dd661a9
 keywords:
 - 内存管理 WDK 内核旁路列表
@@ -15,13 +15,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0582df0a1cf5966ffdf2a620d0a613a527c68c56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364931"
 ---
-# <a name="using-lookaside-lists"></a>使用后备链列表
+# <a name="using-lookaside-lists"></a>使用后备列表
 
 
 

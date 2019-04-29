@@ -1,6 +1,6 @@
 ---
-title: 管理文件的名称
-description: 管理文件的名称
+title: 管理文件名称
+description: 管理文件名称
 ms.assetid: 390c3817-e306-4d20-9ec0-9d68ccc8ff1b
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，文件的名称
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e49472487be997520fac5bd3d98960ed81d8a48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357549"
 ---
-# <a name="managing-file-names"></a>管理文件的名称
+# <a name="managing-file-names"></a>管理文件名称
 
 
 筛选器管理器来减少你的旧的筛选器驱动程序以检索和管理文件的名称所需的工作。 筛选器管理器名称请求时，当前操作提供适当的格式中的引用计数结构中的名称： 规范化名称、 打开的名称或短名称。

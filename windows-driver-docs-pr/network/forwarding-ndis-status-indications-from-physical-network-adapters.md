@@ -5,11 +5,11 @@ ms.assetid: 6EE9BB96-FFAB-4844-9F74-43FB3F18FAB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb00a0579f21d7fc23cb8204174d4cc0693b3cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356923"
 ---
 # <a name="forwarding-ndis-status-indications-from-physical-network-adapters"></a>从物理网络适配器转发 NDIS 状态指示
 

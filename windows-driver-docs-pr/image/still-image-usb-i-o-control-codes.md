@@ -5,11 +5,11 @@ ms.assetid: 66a06a25-2fcb-4b14-85e2-485d2d4ac9d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af73ac8fd940d7222975b7d0d72225a8ecd9517
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322295"
 ---
 # <a name="still-image-usb-io-control-codes"></a>静态图像 USB I/O 控制代码
 

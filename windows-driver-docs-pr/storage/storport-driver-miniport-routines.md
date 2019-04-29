@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d2a41b99c22ddd6b189b42379926cdd58bf8416b
-ms.sourcegitcommit: 132f0c2d827982b808053ecd3b4d137a2883cca1
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56577636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322128"
 ---
 # <a name="storport-driver-miniport-routines"></a>Storport 驱动程序微型端口例程
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1263574f3266e452e0970eb90e095d1a453a2737
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356998"
 ---
 # <a name="inf-featurescore-directive"></a>INF FeatureScore 指令
 
@@ -59,7 +59,7 @@ FeatureScore=featurescore
 
 有关如何进行排名的驱动程序的详细信息，请参阅[如何 Windows Ranks Drivers （Windows Vista 和更高版本）](how-setup-ranks-drivers--windows-vista-and-later-.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [特征评分](feature-score--windows-vista-and-later-.md)

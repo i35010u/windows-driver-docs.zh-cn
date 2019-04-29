@@ -1,17 +1,17 @@
 ---
-title: 规划你的桌面 COSA/APN 数据库提交
-description: 规划你的桌面 COSA/APN 数据库提交
+title: 规划桌面 COSA/APN 数据库提交
+description: 规划桌面 COSA/APN 数据库提交
 ms.assetid: 7e974914-c3e5-409e-b0bf-28d6885585b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: adcb656798dfeea1df416e103396140003b76fc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363086"
 ---
-# <a name="planning-your-desktop-cosaapn-database-submission"></a>规划你的桌面 COSA/APN 数据库提交
+# <a name="planning-your-desktop-cosaapn-database-submission"></a>规划桌面 COSA/APN 数据库提交
 
 > [!IMPORTANT]
 > 从 Windows 10，版本 1703，开始 APN 数据库将替换为新格式称为 COSA。 Windows 8、 Windows 8.1 和 Windows 10 版本 1703年将继续使用 APN 数据库存在时 Windows 10 之前的版本，版本 1703年及更高版本使用 COSA。 有关 COSA 详细信息，请参阅[COSA 概述](cosa-overview.md)。

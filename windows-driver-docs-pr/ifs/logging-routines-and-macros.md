@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 686a8a93e2190d0a347746876f4862629ad4a7e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324348"
 ---
 # <a name="logging-routines-and-macros"></a>日志记录例程和宏
 

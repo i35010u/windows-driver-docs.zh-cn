@@ -5,11 +5,11 @@ ms.assetid: 60f1fd59-e760-4be4-8990-e49628b76d15
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e0244c82c232fd6d4f20b0b1973b7a7b3f1ffc7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323517"
 ---
 # <a name="avc-streaming-format-guids"></a>AV/C 流式处理格式 GUID
 

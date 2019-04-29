@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 256ad7a90f2bab282b98f16bb4f5e152e84aae98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324552"
 ---
 # <a name="device-node-status-flags"></a>设备节点状态标志
 

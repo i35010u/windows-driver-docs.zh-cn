@@ -5,11 +5,11 @@ ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de9fbe871c89b268ce541dd03816077cb55c8f3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323389"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>适用于 UWP 设备应用打印机扩展库概述
 
@@ -54,7 +54,7 @@ ms.locfileid: "56542736"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)

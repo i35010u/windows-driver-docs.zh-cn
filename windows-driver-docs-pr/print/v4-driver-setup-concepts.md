@@ -1,17 +1,17 @@
 ---
-title: V4 驱动程序安装程序概念
+title: V4 驱动程序安装的概念
 description: V4 打印驱动程序模型使用新的安装程序模型来改善用户体验并降低支持成本。
 ms.assetid: C1DF5496-14CF-4BF4-B85C-AF1A691C7AF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29bd4610f1957bf8fe27ceb848a07a22f4a1f2c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324845"
 ---
-# <a name="v4-driver-setup-concepts"></a>V4 驱动程序安装程序概念
+# <a name="v4-driver-setup-concepts"></a>V4 驱动程序安装的概念
 
 
 V4 打印驱动程序模型使用新的安装程序模型来改善用户体验并降低支持成本。

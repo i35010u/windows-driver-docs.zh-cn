@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1752592c8ecf49df4ed509df51d1e5e3f1a638f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323647"
 ---
 # <a name="creating-resource-maps-for-a-multifunction-device"></a>为多功能设备创建资源映射
 

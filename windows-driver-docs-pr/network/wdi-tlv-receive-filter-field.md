@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_FILTER_FIELD (0x65) 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 490317aa0447f931556460cdfa31347be2360250
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360169"
 ---
 # <a name="wditlvreceivefilterfield-0x65"></a>WDI\_TLV\_RECEIVE\_FILTER\_FIELD (0x65)
 

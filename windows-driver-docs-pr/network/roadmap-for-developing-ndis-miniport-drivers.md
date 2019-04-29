@@ -1,17 +1,17 @@
 ---
-title: 开发 NDIS 微型端口驱动程序的路线图
-description: 开发 NDIS 微型端口驱动程序的路线图
+title: NDIS 微型端口驱动程序开发路线图
+description: NDIS 微型端口驱动程序开发路线图
 ms.assetid: 7cb56c08-3578-49d7-a0aa-a89dc6b139ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 104b2bc044be9958ca1937ccb5f3a1b02bcfecfa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324478"
 ---
-# <a name="roadmap-for-developing-ndis-miniport-drivers"></a>开发 NDIS 微型端口驱动程序的路线图
+# <a name="roadmap-for-developing-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序开发路线图
 
 
 若要创建的网络驱动程序接口规范 (NDIS) 微端口驱动程序包，请执行以下步骤：
@@ -71,7 +71,7 @@ ms.locfileid: "56545237"
 
   [WAN 微型端口驱动程序](wan-miniport-drivers.md)
 
-  [可伸缩网络](https://msdn.microsoft.com/library/windows/hardware/ff570735)
+  [可缩放网络](https://msdn.microsoft.com/library/windows/hardware/ff570735)
 
 - 步骤 9：开发 （或端口），生成、 测试和调试您的 NDIS 驱动程序。
 

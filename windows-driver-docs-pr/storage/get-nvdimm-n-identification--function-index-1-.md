@@ -5,11 +5,11 @@ ms.assetid: 350E764D-634C-4C60-9C74-E26B01636C02
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e3398aa1e52831e03496f7f850715362bba5a2ec
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360915"
 ---
 # <a name="span-idstoragegetnvdimm-nidentificationfunctionindex1spanget-nvdimm-n-identification-function-index-1"></a><span id="storage.get_nvdimm-n_identification__function_index_1_"></span>获取 NVDIMM N 标识 （函数索引 1）
 

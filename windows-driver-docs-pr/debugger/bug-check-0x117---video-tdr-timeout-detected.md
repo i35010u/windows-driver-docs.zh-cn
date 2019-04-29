@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5da4bdadf296005f496d0957899df646e755e489
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358168"
 ---
 # <a name="bug-check-0x117-videotdrtimeoutdetected"></a>Bug 检查 0x117：VIDEO\_TDR\_TIMEOUT\_DETECTED
 

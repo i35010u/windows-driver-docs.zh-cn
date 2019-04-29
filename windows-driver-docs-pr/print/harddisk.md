@@ -5,11 +5,11 @@ ms.assetid: 88eadea0-54cb-4c19-90d2-9941b13b9303
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aff1b423946c6011954835c32aa4e1f8e83f56e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360535"
 ---
 # <a name="harddisk"></a>HardDisk
 

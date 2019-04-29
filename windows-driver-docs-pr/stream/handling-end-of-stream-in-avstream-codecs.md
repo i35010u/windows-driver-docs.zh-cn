@@ -1,6 +1,6 @@
 ---
-title: 处理 AVStream 编解码器中的 Stream 的末尾
-description: 处理 AVStream 编解码器中的 Stream 的末尾
+title: 处理 AVStream 编解码器中的流结尾
+description: 处理 AVStream 编解码器中的流结尾
 ms.assetid: ee57137b-999a-449f-9f9d-50bc19e07ba8
 keywords:
 - 处理流 WDK AVStream 结尾
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eeff1d7677e08e40fb00f431ea9df7b9a061d36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363529"
 ---
-# <a name="handling-end-of-stream-in-avstream-codecs"></a>处理 AVStream 编解码器中的 Stream 的末尾
+# <a name="handling-end-of-stream-in-avstream-codecs"></a>处理 AVStream 编解码器中的流结尾
 
 
 当 HW MFT 接收端流 (EOS) 标志设置的示例时，它会设置 KSSTREAM\_标头\_OPTIONSF\_中的 ENDOFSTREAM **OptionsFlag**隶属[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构，它对应于该示例。

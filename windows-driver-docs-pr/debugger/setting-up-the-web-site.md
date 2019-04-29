@@ -1,17 +1,17 @@
 ---
-title: 设置 Web 站点
-description: 设置 Web 站点
+title: 设置网站
+description: 设置网站
 ms.assetid: 9c719557-bca0-4c9c-9208-70e106d976f9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b31665742900d479fcd90231c7d4056a6ff9cd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368123"
 ---
-# <a name="setting-up-the-web-site"></a>设置 Web 站点
+# <a name="setting-up-the-web-site"></a>设置网站
 
 
 设置从其共享的源文件，并记下站点的根目录下的网站。 您的源是然后可从站点如：

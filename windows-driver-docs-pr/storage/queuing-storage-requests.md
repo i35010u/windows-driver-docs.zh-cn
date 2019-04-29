@@ -1,6 +1,6 @@
 ---
-title: 队列存储请求
-description: 队列存储请求
+title: 将存储请求排队
+description: 将存储请求排队
 ms.assetid: 077f7e4f-feb5-4a2e-b22b-b1d8d6871987
 keywords:
 - 外围设备 WDK 存储，排队的请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcde1f1ff09d4e2e4681e402a996f513a3bd00e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366456"
 ---
-# <a name="queuing-storage-requests"></a>队列存储请求
+# <a name="queuing-storage-requests"></a>将存储请求排队
 
 
 ## <span id="ddk_queueing_storage_requests_kg"></span><span id="DDK_QUEUEING_STORAGE_REQUESTS_KG"></span>

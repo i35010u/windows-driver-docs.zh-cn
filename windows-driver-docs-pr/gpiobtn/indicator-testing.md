@@ -1,17 +1,17 @@
 ---
-title: 测试指示器
+title: 指示器测试
 description: 本主题介绍常见指示器步骤过程和示例。
 ms.assetid: 8FD5728C-30E3-4998-A01D-80894BDB379A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5ea28fcbc8e85286083521fe4cf00cb8ddd5747b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323278"
 ---
-# <a name="indicator-testing"></a>测试指示器
+# <a name="indicator-testing"></a>指示器测试
 
 
 本主题介绍常见指示器步骤过程和示例。

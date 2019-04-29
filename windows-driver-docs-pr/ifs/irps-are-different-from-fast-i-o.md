@@ -1,6 +1,6 @@
 ---
-title: Irp 是不同于快速 I/O
-description: Irp 是不同于快速 I/O
+title: IRP 不同于快速 I/O
+description: IRP 不同于快速 I/O
 ms.assetid: 22b08da2-043e-4724-b8f1-90b337fa222c
 keywords:
 - Irp WDK 文件系统
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fdadd91334ed4dd2f75a1e1aa90c978b85787bf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324258"
 ---
-# <a name="irps-are-different-from-fast-io"></a>Irp 是不同于快速 I/O
+# <a name="irps-are-different-from-fast-io"></a>IRP 不同于快速 I/O
 
 
 ## <span id="ddk_irps_are_different_from_fast_io_if"></span><span id="DDK_IRPS_ARE_DIFFERENT_FROM_FAST_IO_IF"></span>

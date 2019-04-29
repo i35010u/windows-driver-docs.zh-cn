@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fd96a9cbdc562474ea758901e1ec2391ebb9a1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322147"
 ---
 # <a name="storport-driver-support-routines"></a>Storport 驱动程序支持例程
 

@@ -1,6 +1,6 @@
 ---
-title: 输入的缓冲区顺序规则
-description: 输入的缓冲区顺序规则
+title: 输入缓冲区顺序规则
+description: 输入缓冲区顺序规则
 ms.assetid: 2c588276-88c3-42e4-9f73-50a05e31c451
 keywords:
 - 输入缓冲区 WDK DirectX VA
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd66848fb10ff098da827566c1dd7e52e51f08ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365507"
 ---
-# <a name="input-buffer-order-rules"></a>输入的缓冲区顺序规则
+# <a name="input-buffer-order-rules"></a>输入缓冲区顺序规则
 
 
 ## <span id="ddk_input_buffer_order_rules_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_RULES_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: B2264CA8-64F9-4A20-AC55-46A0C48EDF3C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a105e855aecd5eecd238d2edafde8e9cb25ecb8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324705"
 ---
 # <a name="material-keywords"></a>材料关键字
 
@@ -48,7 +48,7 @@ ms.locfileid: "57464015"
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>值</p>
+<p><strong>子项：</strong>ReplTest1</p>
 <p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>值：</strong>JobMaterialCountText</p>
 <p><strong>描述:</strong>JobMaterialCountText，如果指定此属性，则必须包含一个正整数，用于标识此设备可用的材料的数目。</p></td>
@@ -375,7 +375,7 @@ Psk3d:Job3DRaft 关键字指定是否应包含此作业*筏*设备或驱动程�
 </thead>
 <tbody>
 <tr class="odd">
-<td>“属性”</td>
+<td>名称</td>
 <td>psk3d:Job3DRaft</td>
 </tr>
 <tr class="even">
@@ -490,7 +490,7 @@ Job3DRaftMaterial 初始化配置文件
 <tr class="even">
 <td>目录</td>
 <td><p>包含 1&lt;值&gt;子元素，按如下所示：</p>
-<p><strong>子项：</strong>ReplTest1</p>
+<p><strong>子项：</strong>值</p>
 <p><strong>xsi: type:</strong> xsd: qname</p>
 <p><strong>值：</strong>MaterialName</p>
 <p><strong>描述:</strong>MaterialName 必须引用标识为 psk3D:Job3DMaterials 属性子材料。</p></td>
@@ -597,7 +597,7 @@ Job3DRaftMaterial 初始化配置文件
 </thead>
 <tbody>
 <tr class="odd">
-<td>“属性”</td>
+<td>名称</td>
 <td><em>指定的供应商</em></td>
 </tr>
 <tr class="even">

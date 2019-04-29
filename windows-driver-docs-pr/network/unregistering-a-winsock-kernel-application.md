@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d64c54369f74b2227c0b796475ba8a99ecedc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324335"
 ---
 # <a name="unregistering-a-winsock-kernel-application"></a>取消注册 Winsock 内核应用程序
 

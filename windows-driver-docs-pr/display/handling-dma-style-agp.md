@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce2829665656167a0fcd2cd84f32eeb7e7ad67d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323727"
 ---
 # <a name="handling-dma-style-agp"></a>处理 DMA 样式 AGP
 

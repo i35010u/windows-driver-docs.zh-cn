@@ -5,11 +5,11 @@ ms.assetid: 84D0485E-084D-45D5-A9FA-EAE9198ADA65
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26c8f5bd2691b473e5dcc466823b398128356f8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354509"
 ---
 # <a name="storage-scenarios"></a>存储方案
 

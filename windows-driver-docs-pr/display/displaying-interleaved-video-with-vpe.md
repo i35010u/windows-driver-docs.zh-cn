@@ -1,6 +1,6 @@
 ---
-title: 显示与 VPE 交错的视频
-description: 显示与 VPE 交错的视频
+title: 使用 VPE 显示隔行扫描视频
+description: 使用 VPE 显示隔行扫描视频
 ms.assetid: f78ccefb-77e3-43a4-88ad-d98c69259da9
 keywords:
 - DirectX VPE 支持 WDK DirectDraw，显示交错的视频
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c9700a4898d1a602da3db71d0ca6b678b1959cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323783"
 ---
-# <a name="displaying-interleaved-video-with-vpe"></a>显示与 VPE 交错的视频
+# <a name="displaying-interleaved-video-with-vpe"></a>使用 VPE 显示隔行扫描视频
 
 
 ## <span id="ddk_displaying_interleaved_video_with_vpe_gg"></span><span id="DDK_DISPLAYING_INTERLEAVED_VIDEO_WITH_VPE_GG"></span>

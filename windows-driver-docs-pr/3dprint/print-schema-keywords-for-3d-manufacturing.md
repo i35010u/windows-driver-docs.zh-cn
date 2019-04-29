@@ -1,17 +1,17 @@
 ---
-title: 打印三维生产的架构关键字
+title: 3D 制造的打印架构关键字
 description: 3D 制造的打印架构关键字是打印架构规范的补充规范。
 ms.assetid: DC54C326-31AE-43C9-AF0D-A3A64DAEF1F2
 ms.date: 05/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b535c6ae5354e698d04fd245f748e2afbb3c8252
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324719"
 ---
-# <a name="print-schema-keywords-for-3d-manufacturing"></a>打印三维生产的架构关键字
+# <a name="print-schema-keywords-for-3d-manufacturing"></a>3D 制造的打印架构关键字
 
 
 3D 制造的打印架构关键字是一种补充到规范[打印架构规范](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)。 此规范需要了解的一组特定第 1 部分和该规范的第 3 部分中的打印架构规范中定义的约定。 此规范包含制造的打印架构规范的第 2 部分模拟 3D 打印架构关键字。 它描述了 XML 关键字的 3D 制造设备的开发人员用于打印架构的上下文中定义其设备的功能。

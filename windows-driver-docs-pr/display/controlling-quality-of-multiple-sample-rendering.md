@@ -1,6 +1,6 @@
 ---
-title: 控制多个示例呈现的质量
-description: 控制多个示例呈现的质量
+title: 控制多重采样渲染的质量
+description: 控制多重采样渲染的质量
 ms.assetid: 5a2f2d36-ab0d-4267-a921-c42621fa5d47
 keywords:
 - 多个示例呈现 WDK DirectX 9.0、 控制质量
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb0c5b0b32ed37d3747df78ed9ad16a61f491531
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323249"
 ---
-# <a name="controlling-quality-of-multiple-sample-rendering"></a>控制多个示例呈现的质量
+# <a name="controlling-quality-of-multiple-sample-rendering"></a>控制多重采样渲染的质量
 
 
 ## <span id="ddk_controlling_quality_of_multiple_sample_rendering_gg"></span><span id="DDK_CONTROLLING_QUALITY_OF_MULTIPLE_SAMPLE_RENDERING_GG"></span>

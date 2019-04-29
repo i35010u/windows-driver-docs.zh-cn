@@ -1,15 +1,15 @@
 ---
-title: 调试使用 CDB 的用户模式进程
+title: 使用 CDB 调试用户模式进程
 description: 可以使用 CDB 将附加到正在运行的进程或重新生成并附加到新进程。
 ms.assetid: 0C56F6B5-0FBC-45C9-8AB7-218C00F90521
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb91baee79002457419a060312d1dd06b1136db2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324565"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingcdbspandebugging-a-user-mode-process-using-cdb"></a><span id="debugger.debugging_a_user-mode_process_using_cdb"></span>调试使用 CDB 的用户模式进程
 

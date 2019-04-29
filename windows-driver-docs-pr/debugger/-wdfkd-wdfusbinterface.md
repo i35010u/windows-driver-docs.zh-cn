@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 048d1627bfc40b613da7b859c06b56543a548747
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323253"
 ---
 # <a name="wdfkdwdfusbinterface"></a>!wdfkd.wdfusbinterface
 

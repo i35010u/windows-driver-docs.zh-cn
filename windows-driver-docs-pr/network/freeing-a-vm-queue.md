@@ -1,17 +1,17 @@
 ---
-title: 释放虚拟机队列
-description: 释放虚拟机队列
+title: 释放 VM 队列
+description: 释放 VM 队列
 ms.assetid: 32679638-eeef-4e11-bf56-c96f047e4de7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57417c984633c4672b67817a9f4025ab360fbbc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323441"
 ---
-# <a name="freeing-a-vm-queue"></a>释放虚拟机队列
+# <a name="freeing-a-vm-queue"></a>释放 VM 队列
 
 
 

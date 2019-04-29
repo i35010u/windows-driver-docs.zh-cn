@@ -1,6 +1,6 @@
 ---
-title: 识别第一个优化请求
-description: 识别第一个优化请求
+title: 识别第一个调谐请求
+description: 识别第一个调谐请求
 ms.assetid: dc18a056-16f8-4b99-97e3-52c92464a2b2
 keywords:
 - 第一个优化请求 WDK 视频捕获
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c67f88d05cbdfc12d6427ebe32f88ae5365bd320
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365215"
 ---
-# <a name="recognizing-the-first-tuning-request"></a>识别第一个优化请求
+# <a name="recognizing-the-first-tuning-request"></a>识别第一个调谐请求
 
 
 某些调谐器需要围绕频率来获取有效的信号强度/PLL 信息，因此微型驱动程序可能需要识别何时回转*KsTvTune.ax*进行初始优化请求。

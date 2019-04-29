@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a114d62d61926242fca5152e9ae705f629c14b1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363159"
 ---
 # <a name="kspropertycameracontrolpanrelative"></a>KSPROPERTY\_CAMERACONTROL\_平移\_相对
 
@@ -70,7 +70,7 @@ KSPROPERTY\_CAMERACONTROL\_平移\_相对属性指定照相机的绕垂直轴的
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -115,7 +115,7 @@ KSPROPERTY\_CAMERACONTROL\_平移\_相对属性指定照相机的绕垂直轴的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">

@@ -1,6 +1,6 @@
 ---
-title: 扩展 Bidi 通信架构
-description: 扩展 Bidi 通信架构
+title: 扩展双向通信架构
+description: 扩展双向通信架构
 ms.assetid: b216a238-184e-4ebd-b9ef-227ff6bf4dbe
 keywords:
 - 双向通信架构 WDK 打印
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad135fd309d51f0719c05329c43bbeff5a56f573
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324234"
 ---
-# <a name="extending-the-bidi-communication-schema"></a>扩展 Bidi 通信架构
+# <a name="extending-the-bidi-communication-schema"></a>扩展双向通信架构
 
 
 可以通过使用 Bidi 扩展，这是定义新的架构的 XML 文件扩展 bidi 通信架构。 它应用于 Bidi 扩展框架，在 Windows Vista 和更高版本的 Windows 中可用的 XSD 标准中定义的构造。

@@ -1,17 +1,17 @@
 ---
-title: Windows Kernel-Mode Power Manager
-description: Windows Kernel-Mode Power Manager
+title: Windows 内核模式电源管理器
+description: Windows 内核模式电源管理器
 ms.assetid: 2d39e43a-63a6-4474-a1ed-c24b4526a3f5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 87760d4c79399b7807639c2a605cc90cf18a17a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357515"
 ---
-# <a name="windows-kernel-mode-power-manager"></a>Windows Kernel-Mode Power Manager
+# <a name="windows-kernel-mode-power-manager"></a>Windows 内核模式电源管理器
 
 
 Windows 使用电源管理技术来减少 Pc 的功率消耗常规播发和电池供电的便携式计算机特别。 例如，Windows 计算机可以置于睡眠或休眠状态。 复杂的电源管理系统的计算机设备发展，以便当计算机开始关闭的情况下，或转到更低的能耗，附加的设备，可以也关闭电源以正确的方式，以便不会丢失数据。 但这些设备需要一条警告的电源状态更改，它们可能还需要是告知等待，直到它们可以正确地关闭控制设备的通信循环的一部分。

@@ -5,11 +5,11 @@ ms.assetid: 48378f27-4c08-4931-9592-878a1a2b2556
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a791f97207085246cbc82549022fbb20f4b4b10f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357969"
 ---
 # <a name="direct3d-version-10-kernel-handles"></a>Direct3D 版本 10 内核句柄
 

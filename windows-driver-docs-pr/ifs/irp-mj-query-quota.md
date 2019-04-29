@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e357c69101e8cec982202ee73c664ad2b4274b47
-ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58319231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324328"
 ---
 # <a name="irpmjqueryquota"></a>IRP\_MJ\_查询\_配额
 

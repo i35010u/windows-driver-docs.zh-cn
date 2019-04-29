@@ -5,11 +5,11 @@ ms.assetid: 02157a88-fccd-4a23-a4ee-174755c8d3aa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cab56f84b9053530b82c669ca4457615d4cb6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323455"
 ---
 # <a name="feeder-scanner-architecture"></a>送纸器扫描仪体系结构
 

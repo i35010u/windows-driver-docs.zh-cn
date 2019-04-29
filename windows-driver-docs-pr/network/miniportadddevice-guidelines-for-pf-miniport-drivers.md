@@ -1,17 +1,17 @@
 ---
-title: MiniportAddDevice PF 微型端口驱动程序的指导原则
-description: MiniportAddDevice PF 微型端口驱动程序的指导原则
+title: PF 微型端口驱动程序的 MiniportAddDevice 指导原则
+description: PF 微型端口驱动程序的 MiniportAddDevice 指导原则
 ms.assetid: D67FDBA0-C020-4557-9199-B9FF6F91DE6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d3f86315c42456580a13f8bc893b8fd0e03c12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323621"
 ---
-# <a name="miniportadddevice-guidelines-for-pf-miniport-drivers"></a>MiniportAddDevice PF 微型端口驱动程序的指导原则
+# <a name="miniportadddevice-guidelines-for-pf-miniport-drivers"></a>PF 微型端口驱动程序的 MiniportAddDevice 指导原则
 
 
 本主题介绍进行写入的准则[ *MiniportAddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff559332)微型端口驱动程序的 PCI Express (PCIe) 物理函数 (PF) 的函数。 PF 是支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器的组件。

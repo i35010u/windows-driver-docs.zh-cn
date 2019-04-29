@@ -1,6 +1,6 @@
 ---
-title: 创建资源的要求列表
-description: 创建资源的要求列表
+title: 创建资源要求列表
+description: 创建资源要求列表
 ms.assetid: 1254aa21-c64b-4c62-93dc-6758cef382f9
 keywords:
 - 硬件资源 WDK KMDF，创建资源的要求列表
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc4c23ae0b003a09823d64b5d342afadc29f8e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358489"
 ---
-# <a name="creating-a-resource-requirements-list"></a>创建资源的要求列表
+# <a name="creating-a-resource-requirements-list"></a>创建资源要求列表
 
 
 当总线驱动程序检测到的子设备时，该驱动程序负责创建设备的资源要求列表。 在列表中的每个项是[逻辑配置](https://msdn.microsoft.com/library/windows/hardware/ff547012#ddk-logical-configurations-kg)设备。

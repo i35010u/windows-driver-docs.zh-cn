@@ -1,19 +1,19 @@
 ---
-title: 调试处理停滞
-description: 调试处理停滞
+title: 调试处理停滞问题
+description: 调试处理停滞问题
 ms.assetid: 9dff37ed-4843-4e85-8ab3-6a0a37a58c23
 keywords:
 - 内核调试，视频流停止，处理停止流式处理
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0051d7ae2a9f4aa5eddc1a7efe3b47bfdcef71d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324559"
 ---
-# <a name="debugging-a-processing-stall"></a>调试处理停滞
+# <a name="debugging-a-processing-stall"></a>调试处理停滞问题
 
 
 首先找到相关的 pin。 在假设的情况下，相关的视频捕获 pin 具有地址**8160DDE0**，因此，我们使用[ **！ ks.dump** ](-ks-dump.md)此地址的扩展命令，以获取更多详细信息：

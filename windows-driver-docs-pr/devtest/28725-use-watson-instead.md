@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 f1_keywords:
 - C28725
 ms.openlocfilehash: 467b727e7ffa20ea53e468898b5a302ecd5cd50d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323832"
 ---
 # <a name="c28725"></a>C28725
 

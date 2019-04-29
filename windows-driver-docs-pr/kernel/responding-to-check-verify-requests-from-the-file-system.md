@@ -1,6 +1,6 @@
 ---
-title: 响应来自文件系统的检查验证请求
-description: 响应来自文件系统的检查验证请求
+title: 响应来自文件系统的 Check-Verify 请求
+description: 响应来自文件系统的 Check-Verify 请求
 ms.assetid: 227e65d6-d746-4b16-978d-4d42be9aeb2c
 keywords:
 - 可移动媒体 WDK 内核检查验证请求
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fc426505fbccbd5d3fb650e44c61b51f2f5692e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324545"
 ---
-# <a name="responding-to-check-verify-requests-from-the-file-system"></a>响应来自文件系统的检查验证请求
+# <a name="responding-to-check-verify-requests-from-the-file-system"></a>响应来自文件系统的 Check-Verify 请求
 
 
 

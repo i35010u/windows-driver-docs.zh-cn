@@ -5,11 +5,11 @@ ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b602d001d8e617b2151e4060061eb1bd427ef8e3
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323719"
 ---
 # <a name="handling-errors"></a>处理错误
 

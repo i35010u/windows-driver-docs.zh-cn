@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7f603645d6b5586ae0076e653fffb960f0f6238
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324579"
 ---
 # <a name="fsctlisvolumedirty-control-code"></a>FSCTL\_IS\_卷\_脏控制代码
 
@@ -30,7 +30,7 @@ ms.locfileid: "56522372"
 
 若要执行此操作，微筛选器驱动程序调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)与以下参数和文件系统中，重定向程序和旧的文件系统筛选驱动程序调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 该卷的文件对象指针。 此参数必须表示打开已装载的文件系统卷的一个用户卷。 此参数是必需的不能**NULL**。
@@ -57,7 +57,7 @@ ms.locfileid: "56522372"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -130,13 +130,13 @@ ms.locfileid: "56522372"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h 或 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

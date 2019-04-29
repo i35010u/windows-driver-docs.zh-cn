@@ -1,5 +1,5 @@
 ---
-title: 设置调试 （内核模式和用户模式下）
+title: 设置调试（内核模式和用户模式）
 description: 有两种方法可以设置使用 Windows 调试器进行调试。
 ms.assetid: 3575B850-A0F9-4AAE-9432-E970D40069D2
 keywords:
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5da0b40de3c66b1d3711218749503bef2ce3ac2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356673"
 ---
-# <a name="setting-up-debugging-kernel-mode-and-user-mode"></a>设置调试 （内核模式和用户模式下）
+# <a name="setting-up-debugging-kernel-mode-and-user-mode"></a>设置调试（内核模式和用户模式）
 
 
 有两种方法可以设置使用 Windows 调试器进行调试。 可以使用 Microsoft Visual Studio （集成使用 Windows Driver Kit (WDK)），也可以手动执行安装程序。 设置内核模式调试后，可以使用 Visual Studio、 的 WinDbg 中或 KD 建立调试会话。 设置用户模式下调试后，可以使用 Visual Studio、 WinDbg、 CDB 或 NTSD 来建立调试会话。
@@ -27,7 +27,7 @@ ms.locfileid: "56542734"
 
  
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [内核模式调试手动设置](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)

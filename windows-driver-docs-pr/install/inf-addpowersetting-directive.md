@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7285dcf05973b87c886ce0a9db0a90d65f0d421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354642"
 ---
 # <a name="inf-addpowersetting-directive"></a>INF AddPowerSetting 指令
 
@@ -323,7 +323,7 @@ AC = 0
 DC = 1
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)

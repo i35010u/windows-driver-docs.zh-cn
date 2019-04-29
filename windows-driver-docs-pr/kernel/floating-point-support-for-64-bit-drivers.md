@@ -1,5 +1,5 @@
 ---
-title: 在 Windows 驱动程序中使用扩展的处理器功能
+title: 使用 Windows 驱动程序中扩展的处理器功能
 description: 使用扩展的处理器功能的 x86 和 x64 系统的 Windows 驱动程序必须包装对和调用之间 KeSaveExtendedProcessorState KeRestoreExtendedProcessorState 以避免在并发应用程序中的错误浮点计算的可能会使用寄存器。
 ms.assetid: a42e86cf-47a2-44ed-8bf1-7407633af8b7
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1f893e4917e3bb82e091ae372b017f7cf11f14f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359950"
 ---
-# <a name="using-extended-processor-features-in-windows-drivers"></a>在 Windows 驱动程序中使用扩展的处理器功能
+# <a name="using-extended-processor-features-in-windows-drivers"></a>使用 Windows 驱动程序中扩展的处理器功能
 
 
 **上次更新时间**

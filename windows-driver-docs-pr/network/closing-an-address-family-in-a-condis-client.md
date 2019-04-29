@@ -1,19 +1,19 @@
 ---
-title: 关闭的 CoNDIS 客户端中的地址族
-description: 关闭的 CoNDIS 客户端中的地址族
+title: 关闭 CoNDIS 客户端中的地址系列
+description: 关闭 CoNDIS 客户端中的地址系列
 ms.assetid: 06e8128a-f3da-48f2-a045-6c4be5f85889
 keywords:
 - 客户端关闭 AFs WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1ca0437d033078b39fcdec57387f4774fe7f549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356931"
 ---
-# <a name="closing-an-address-family-in-a-condis-client"></a>关闭的 CoNDIS 客户端中的地址族
+# <a name="closing-an-address-family-in-a-condis-client"></a>关闭 CoNDIS 客户端中的地址系列
 
 
 

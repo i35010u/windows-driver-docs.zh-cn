@@ -5,11 +5,11 @@ ms.assetid: E302BB21-582E-494E-9ADD-72703EF32446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe80c00537929b10bd7cd4d75d1bf2a5d065525
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322119"
 ---
 # <a name="interrupts-from-spb-connected-peripheral-devices"></a>来自 SPB 连接的外围设备的中断
 

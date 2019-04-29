@@ -1,17 +1,17 @@
 ---
-title: 处理客户端实现序列
+title: 处理客户端实现的序列
 description: 可选 EvtSpbControllerLock 和 EvtSpbControllerUnlock 事件回调函数执行互为补充的操作。
 ms.assetid: C1DED853-059D-481F-A524-E50772072018
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d391105da7f94c485b96594b946d16560ce12987
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356743"
 ---
-# <a name="handling-client-implemented-sequences"></a>处理客户端实现序列
+# <a name="handling-client-implemented-sequences"></a>处理客户端实现的序列
 
 
 可选[ *EvtSpbControllerLock* ](https://msdn.microsoft.com/library/windows/hardware/hh450814)并[ *EvtSpbControllerUnlock* ](https://msdn.microsoft.com/library/windows/hardware/hh450816)事件回调函数执行的补充操作。 *EvtSpbControllerLock*函数是一个处理程序[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)请求。 *EvtSpbControllerUnlock*函数是一个处理程序[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)请求。 客户端 （即，总线上外围设备的驱动程序） 将发送这些请求开始和结束[I/O 传输序列](https://msdn.microsoft.com/library/windows/hardware/hh450890)。 大多数存储控制器驱动程序不支持**IOCTL\_存储\_锁\_控制器**并**IOCTL\_存储\_解锁\_控制器**请求，因此，也不实现*EvtSpbControllerLock*并*EvtSpbControllerUnlock*函数。

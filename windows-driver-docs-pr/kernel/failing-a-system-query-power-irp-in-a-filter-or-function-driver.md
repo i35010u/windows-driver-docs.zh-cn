@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c453890a3f68b23cbf02d0ef7fd16fb9dd59684f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359991"
 ---
 # <a name="failing-a-system-query-power-irp-in-a-filter-or-function-driver"></a>使筛选器或函数驱动程序中的系统 Query-Power IRP 失败
 

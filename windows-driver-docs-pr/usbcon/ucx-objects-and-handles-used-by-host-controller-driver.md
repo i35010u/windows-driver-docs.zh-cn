@@ -1,16 +1,16 @@
 ---
-Description: UCX extends the WDF object functionality to define its own USB-specific UCX objects. UCX uses these objects for queuing requests to any underlying host controller driver.
-title: UCX 对象和主机控制器驱动程序使用的句柄
+Description: UCX 扩展了 WDF 对象功能来定义其自己特定于 USB 的 UCX 对象。 UCX 队列请求任何基础主机控制器驱动程序使用这些对象。
+title: 主控制器驱动程序使用的 UCX 对象和句柄
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43989c34cb5e345b3c082f8e9215a94bc3cf85e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355178"
 ---
-# <a name="ucx-objects-and-handles-used-by-a-host-controller-driver"></a>UCX 对象和主机控制器驱动程序使用的句柄
+# <a name="ucx-objects-and-handles-used-by-a-host-controller-driver"></a>主控制器驱动程序使用的 UCX 对象和句柄
 
 
 **摘要**
@@ -177,7 +177,7 @@ USB 集线器的处理功能控制请求。
 对象和相关联的队列的生存期由 UCX，并且该驱动程序必须删除对象。
 
 ## <a name="related-topics"></a>相关主题
-[开发 USB 主控制器的 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)  
+[为 USB 主控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)  
 
 
 

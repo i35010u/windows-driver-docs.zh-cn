@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 4c6e5c12a9c2d2d621c8fbd29d6f6c0956c2c390
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323433"
+---
 ## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源代码行为准则
 
 此项目已采用[Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。

@@ -1,6 +1,6 @@
 ---
-title: SAN 服务提供程序安装
-description: SAN 服务提供程序安装
+title: 安装 SAN 服务提供程序
+description: 安装 SAN 服务提供程序
 ms.assetid: 3a7fcacf-ef26-4a41-a991-230daf67accf
 keywords:
 - Windows 套接字直接 WDK、 安装组件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62a857e152a43f844dcf79ef7310d3f7ad69b220
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324900"
 ---
-# <a name="installing-a-san-service-provider"></a>SAN 服务提供程序安装
+# <a name="installing-a-san-service-provider"></a>安装 SAN 服务提供程序
 
 
 

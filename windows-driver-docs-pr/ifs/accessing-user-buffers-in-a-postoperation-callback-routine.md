@@ -1,19 +1,19 @@
 ---
-title: 访问 Postoperation 回调例程中的用户缓冲区
-description: 访问 Postoperation 回调例程中的用户缓冲区
+title: 访问后操作回调例程中的用户缓冲区
+description: 访问后操作回调例程中的用户缓冲区
 ms.assetid: a980f302-6fde-461e-8b11-313530aff350
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39741d70ed2e6e1aff05b67550911b7bf5588a11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323241"
 ---
-# <a name="accessing-user-buffers-in-a-postoperation-callback-routine"></a>访问 Postoperation 回调例程中的用户缓冲区
+# <a name="accessing-user-buffers-in-a-postoperation-callback-routine"></a>访问后操作回调例程中的用户缓冲区
 
 
 ## <span id="ddk_accessing_user_buffers_in_a_postoperation_callback_routine_if"></span><span id="DDK_ACCESSING_USER_BUFFERS_IN_A_POSTOPERATION_CALLBACK_ROUTINE_IF"></span>

@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc765998bf763ac189ab9ddd3618c2b64f30a22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324637"
 ---
 # <a name="debugging-environments"></a>调试环境
 
@@ -65,7 +65,7 @@ Microsoft Windows 调试器 (WinDbg) 是一个能够用户模式和内核模式�
 
 WinDbg 使用 Visual Studio 调试源代码级别调试符号格式。 它可以访问任何符号或变量从模块的 PDB 符号文件，并可以访问由与 COFF 符号文件 （如 Windows.dbg 文件） 编译的模块公开的任何公共函数的名称。
 
-WinDbg 可以查看源代码，设置断点，查看变量 （包括 c + + 对象）、 堆栈跟踪和内存。 其调试器命令窗口中，用户可以发出各种命令。
+WinDbg 可以查看源代码，设置断点、 查看变量 (包括C++对象)，堆栈跟踪和内存。 其调试器命令窗口中，用户可以发出各种命令。
 
 内核模式调试，WinDbg 通常需要两台计算机 （主机计算机和目标计算机）。 WinDbg 还支持用于用户模式和内核模式目标的各种远程调试选项。
 
@@ -106,7 +106,7 @@ ntsd parameters
 
 则可以重定向输入和输出进行 NTSD （或 CDB），以便它可以控制从内核调试程序 （Visual Studio、 的 WinDbg 中或 KD）。 如果没有控制台窗口将会出现在与 NTSD，则使用此技术。 从内核调试器控制 NTSD 是因此特别有用，因为它产生的使用将几乎没有负担放在包含目标应用程序的计算机的极轻型调试器。 此组合可以用于调试系统进程、 关闭和启动的后面阶段。 请参阅[控制用户模式下调试程序与内核调试程序](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)有关详细信息。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试](index.md)

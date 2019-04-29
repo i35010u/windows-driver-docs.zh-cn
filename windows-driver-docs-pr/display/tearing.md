@@ -1,6 +1,6 @@
 ---
-title: 撕裂现象
-description: 撕裂现象
+title: 解除
+description: 解除
 ms.assetid: b4c21592-cbdf-4dd6-9457-71d53b9f7b32
 keywords:
 - 消除 WDK DirectDraw
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3108ef2a8f3125ed4faf83f41fbefc56c7cf114f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362719"
 ---
-# <a name="tearing"></a>撕裂现象
+# <a name="tearing"></a>解除
 
 
 ## <span id="ddk_tearing_gg"></span><span id="DDK_TEARING_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 0bbd4842-72ad-445b-9f28-b28e8740f263
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d218bcb55ff87903036f287ec1a0e414a64e4e6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323392"
 ---
 # <a name="initialization-of-a-non-sim-locked-gprs-device-with-a-provisioned-context"></a>SIM 锁定 GPRS 设备预配的上下文使用的初始化
 

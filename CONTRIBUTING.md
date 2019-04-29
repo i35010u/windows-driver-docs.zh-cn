@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ee3457c572ff8bff7aab72ed613da0a4416729aa
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323245"
+---
 # <a name="contributing-to-windows-driver-documentation"></a>参与撰写 Windows 驱动程序文档
 
 此页介绍的 Windows 驱动程序文档的基本步骤。

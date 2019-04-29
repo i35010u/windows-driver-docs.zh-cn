@@ -1,19 +1,19 @@
 ---
-title: 禁用堆上免费 coalesce
-description: 禁用堆上免费 coalesce
+title: 释放时禁用堆合并
+description: 释放时禁用堆合并
 ms.assetid: 64a68fa2-9270-4b2d-9edc-d54370191dcb
 keywords:
 - 禁用堆 coalesce 上免费 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef5b8fd7ff3da4569029b3cbcbd46474ce3a6666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324604"
 ---
-# <a name="disable-heap-coalesce-on-free"></a>禁用堆上免费 coalesce
+# <a name="disable-heap-coalesce-on-free"></a>释放时禁用堆合并
 
 
 ## <span id="ddk_disable_heap_coalesce_on_free_dtools"></span><span id="DDK_DISABLE_HEAP_COALESCE_ON_FREE_DTOOLS"></span>

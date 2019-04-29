@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dbdfcad92d21b604f2ff0e2f252965c679f241c
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356425"
 ---
 # <a name="invalidreqaccess-rule-kmdf"></a>InvalidReqAccess 规则 (kmdf)
 

@@ -1,6 +1,6 @@
 ---
-title: 识别包的共享文件的打印驱动程序
-description: 识别包的共享文件的打印驱动程序
+title: 共享文件的包感知打印驱动程序
+description: 共享文件的包感知打印驱动程序
 ms.assetid: dcf4e7b4-f0f4-4644-9f5c-c01c1b6c4221
 keywords:
 - 识别包的打印驱动程序 WDK
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e63c3910ee2f3615d5bac7293b4faad227a8b47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324223"
 ---
-# <a name="package-aware-print-drivers-that-share-files"></a>识别包的共享文件的打印驱动程序
+# <a name="package-aware-print-drivers-that-share-files"></a>共享文件的包感知打印驱动程序
 
 
 如果多个打印驱动程序的包共享的驱动程序文件，必须进行共享的文件隔离到核心驱动程序。 例如，Unidrv 是许多打印驱动程序使用，文件的集合，因此 Unidrv 是核心驱动程序。

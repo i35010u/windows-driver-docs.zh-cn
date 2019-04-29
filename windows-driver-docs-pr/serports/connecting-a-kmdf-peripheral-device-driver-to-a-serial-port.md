@@ -5,11 +5,11 @@ ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f57862d4c09e57d3c92c30ce9640b2a7b1dcfddc
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324233"
 ---
 # <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>将 KMDF 外设驱动程序连接到串行端口
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e45210a271f6579a896f1aaf0b820ba66f0ae92c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324356"
 ---
 # <a name="irpmjflushbuffers"></a>IRP\_MJ\_刷新\_缓冲区
 
@@ -39,7 +39,7 @@ IRP\_MJ\_刷新\_缓冲区发送请求 I/O 管理器和其他操作系统组件�
 
 筛选器驱动程序应刷新到磁盘的任何重要数据或元数据与文件对象相关联，并在堆栈上传递此 IRP 到下一步低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置中处理刷新缓冲区请求中设置的信息：
@@ -58,7 +58,7 @@ IRP\_MJ\_刷新\_缓冲区发送请求 I/O 管理器和其他操作系统组件�
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 指定 IRP\_MJ\_刷新\_缓冲区。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcFlushCache**](https://msdn.microsoft.com/library/windows/hardware/ff539082)

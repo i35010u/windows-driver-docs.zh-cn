@@ -5,11 +5,11 @@ ms.assetid: 5653E920-A068-4EBA-869E-0E2D65118B33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d5ddaf7c41200581035754daa68b5c5d877491d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323781"
 ---
 # <a name="example-code-for-displaying-an-app-on-a-portrait-device"></a>用于在横屏设备上显示应用的代码示例
 

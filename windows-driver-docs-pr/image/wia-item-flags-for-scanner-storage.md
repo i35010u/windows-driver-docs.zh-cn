@@ -1,17 +1,17 @@
 ---
-title: 扫描程序存储标志 WIA 项
-description: 扫描程序存储标志 WIA 项
+title: 扫描仪存储的 WIA 项标志
+description: 扫描仪存储的 WIA 项标志
 ms.assetid: 493b7c4f-d36a-4447-92a3-34b42ef58397
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 075692e00073bdde61b002a8b8591d52445eb7fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352723"
 ---
-# <a name="wia-item-flags-for-scanner-storage"></a>扫描程序存储标志 WIA 项
+# <a name="wia-item-flags-for-scanner-storage"></a>扫描仪存储的 WIA 项标志
 
 
 本主题列出了根项目和存储扫描程序项树的子项目的必需和可选的 WIA 项标志。 WIA 项标志及其定义的完整列表，请参阅[ **WIA\_IPA\_项\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff551585)。

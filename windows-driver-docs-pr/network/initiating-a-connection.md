@@ -1,6 +1,6 @@
 ---
-title: 启动的连接
-description: 启动的连接
+title: 发起连接
+description: 发起连接
 ms.assetid: 5e5ab033-b01a-45e2-acd4-7ea8931a621d
 keywords:
 - SAN 连接安装 WDK，启动连接
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff266f71080f3b8cee150d6344405dffde130562
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324926"
 ---
-# <a name="initiating-a-connection"></a>启动的连接
+# <a name="initiating-a-connection"></a>发起连接
 
 
 Windows 套接字后交换机接收**WSPConnect**由应用程序，此开关启动的调用进行比较的连接请求的目标地址的 IP 子网的交换机的表中的地址与该 SAN 服务提供程序提供服务。 如果任一这些子网中包括此目标地址，调用该交换机[ **WSPSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff566319)并[ **WSPBind** ](https://msdn.microsoft.com/library/windows/hardware/ff566268)的函数相应的 SAN 服务提供商联系以创建和绑定套接字时，如中所述[创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)。 应用程序的连接的交换机进程请求使用 SAN 套接字。 如果连接请求的目标地址不是 SAN 子网或 SAN 服务提供程序无法创建和绑定套接字，该开关使用 TCP/IP 提供程序建立连接。

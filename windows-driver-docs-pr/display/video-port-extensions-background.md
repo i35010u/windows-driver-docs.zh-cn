@@ -1,6 +1,6 @@
 ---
-title: 视频端口扩展背景
-description: 视频端口扩展背景
+title: 视频端口扩展背景信息
+description: 视频端口扩展背景信息
 ms.assetid: 77bed8d3-4fe5-4159-88e9-d6565aea9117
 keywords:
 - 有关视频端口扩展的 DirectX VPE 支持 WDK DirectDraw
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 893d01ca1a6490c270c8825d43d4b67290f0fc9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365047"
 ---
-# <a name="video-port-extensions-background"></a>视频端口扩展背景
+# <a name="video-port-extensions-background"></a>视频端口扩展背景信息
 
 
 ## <span id="ddk_video_port_extensions_background_gg"></span><span id="DDK_VIDEO_PORT_EXTENSIONS_BACKGROUND_GG"></span>

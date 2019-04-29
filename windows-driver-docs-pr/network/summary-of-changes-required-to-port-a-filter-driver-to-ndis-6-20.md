@@ -1,6 +1,6 @@
 ---
-title: 若要移植到 NDIS 6.20 的筛选器驱动程序所需的更改的摘要
-description: 若要移植到 NDIS 6.20 的筛选器驱动程序所需的更改的摘要
+title: 将筛选器驱动程序移植到 NDIS 6.20 所要做出的更改摘要
+description: 将筛选器驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 ms.assetid: faf83399-b9ac-41b3-a891-0142ded422b3
 keywords:
 - NDIS 6.20 WDK，将筛选器驱动程序移植
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 333da3504df95acc12816b8e0b16396dd1bfe345
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366364"
 ---
-# <a name="summary-of-changes-required-to-port-a-filter-driver-to-ndis-620"></a>若要移植到 NDIS 6.20 的筛选器驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-a-filter-driver-to-ndis-620"></a>将筛选器驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
 
 

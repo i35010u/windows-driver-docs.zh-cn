@@ -1,6 +1,6 @@
 ---
-title: 协议驱动程序中处理即插即用事件通知
-description: 协议驱动程序中处理即插即用事件通知
+title: 处理协议驱动程序中的 PnP 事件通知
+description: 处理协议驱动程序中的 PnP 事件通知
 ms.assetid: 7c6c9bc5-37ce-49f4-8e39-5f51a266836a
 keywords:
 - 即插即用 WDK NDIS 协议
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a9478641ead2a01c402b12e4e549052b56ea40b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322274"
 ---
-# <a name="handling-pnp-event-notifications-in-a-protocol-driver"></a>协议驱动程序中处理即插即用事件通知
+# <a name="handling-pnp-event-notifications-in-a-protocol-driver"></a>处理协议驱动程序中的 PnP 事件通知
 
 
 

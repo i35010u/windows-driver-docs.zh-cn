@@ -1,6 +1,6 @@
 ---
-title: 设备的电源状态所需的支持
-description: 设备的电源状态所需的支持
+title: 设备电源状态所需的支持
+description: 设备电源状态所需的支持
 ms.assetid: f7218f2a-d4ad-4b9a-af90-057801e714a2
 keywords:
 - 连续 power WDK 内核
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49c132de9b1c4d382dea9c32fd2d29740655dbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324535"
 ---
-# <a name="required-support-for-device-power-states"></a>设备的电源状态所需的支持
+# <a name="required-support-for-device-power-states"></a>设备电源状态所需的支持
 
 
 

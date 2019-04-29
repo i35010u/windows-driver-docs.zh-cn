@@ -1,17 +1,17 @@
 ---
-title: WIA 驱动程序的文件系统访问
-description: WIA 驱动程序的文件系统访问
+title: WIA 驱动程序的文件系统访问权限
+description: WIA 驱动程序的文件系统访问权限
 ms.assetid: 7bdd116e-d58f-4c2e-a5ec-c9a8196cfd62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa59a3155f22784ff36607c8c5715ca041e50bd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323443"
 ---
-# <a name="file-system-access-for-wia-drivers"></a>WIA 驱动程序的文件系统访问
+# <a name="file-system-access-for-wia-drivers"></a>WIA 驱动程序的文件系统访问权限
 
 
 

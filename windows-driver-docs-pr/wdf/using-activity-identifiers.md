@@ -5,11 +5,11 @@ ms.assetid: 2B70953F-5192-4654-9506-6A84373D20B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f180ccd37ac7c5d12adc3cb820f9da59fdc7a77f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363478"
 ---
 # <a name="using-activity-identifiers"></a>使用活动标识符
 

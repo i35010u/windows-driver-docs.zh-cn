@@ -1,14 +1,14 @@
 ---
-Description: 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C/c + + WinUSB 模板。
+Description: 若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C /C++ WinUSB 模板。
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa5bbc2185d1e38b494f6e55315339480b7159af
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324528"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -18,9 +18,9 @@ ms.locfileid: "57349048"
 -   [安装程序 Api 函数](https://msdn.microsoft.com/library/windows/hardware/ff550855)
 -   [WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)
 
-若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C/c + + WinUSB 模板。 对于此模板中，您需要使用 Windows Driver Kit (WDK) （包含有关 Windows 调试工具) 和 Microsoft Visual Studio （专业版或旗舰版） 的集成的环境。 该模板可以用作起始点。
+若要编写与 USB 设备进行通信的 Windows 桌面应用的最简单方法是使用 C /C++ WinUSB 模板。 对于此模板中，您需要使用 Windows Driver Kit (WDK) （包含有关 Windows 调试工具) 和 Microsoft Visual Studio （专业版或旗舰版） 的集成的环境。 该模板可以用作起始点。
 
-## <a name="prerequisites"></a>必备组件
+## <a name="prerequisites"></a>先决条件
 
 
 -   若要设置集成的开发环境，首先安装 Microsoft Visual Studio Ultimate 2012 或 Microsoft Visual Studio Professional 2012，然后安装 WDK。 有关如何获取 Visual Studio 和 WDK 的信息，你可以在[此处](https://go.microsoft.com/fwlink/p/?linkid=239721)找到。
@@ -40,7 +40,7 @@ ms.locfileid: "57349048"
 
     ![visual studio 中的 winusb 模板](images/winusb-template.png)
 
-    Visual Studio 将创建两个项目和解决方案。 您可以看到解决方案、 两个项目，以及属于每个项目中的文件**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 （如果未显示“解决方案资源管理器”窗口，请从“视图”菜单中选择“解决方案资源管理器”。）该解决方案包含一个名为 USB Application1 和一个名为 USB Application1 包的驱动程序包项目的 c + + 应用程序项目。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。
+    Visual Studio 将创建两个项目和解决方案。 您可以看到解决方案、 两个项目，以及属于每个项目中的文件**解决方案资源管理器**窗口中，如以下屏幕截图中所示。 （如果未显示“解决方案资源管理器”窗口，请从“视图”菜单中选择“解决方案资源管理器”。）该解决方案包含C++应用程序项目中名为 USB Application1 和驱动程序程序包项目名为 USB Application1 包。 如果你想要查看应用程序源代码，你可以打开任何下显示的文件**源文件**。
 
     ![winusb 模板解决方案资源管理器](images/winusb-template1.png)
 

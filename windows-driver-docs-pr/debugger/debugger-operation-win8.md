@@ -1,17 +1,17 @@
 ---
-title: 调试程序操作
+title: 调试器操作
 description: 本部分介绍调试程序操作
 ms.assetid: 110551C5-DB1D-420E-BC26-F4CA7555C9CF
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d1d7da21b6c90001c309a17ff896ef3c79dc047
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324681"
 ---
-# <a name="debugger-operation"></a>调试程序操作
+# <a name="debugger-operation"></a>调试器操作
 
 
 本节内容：

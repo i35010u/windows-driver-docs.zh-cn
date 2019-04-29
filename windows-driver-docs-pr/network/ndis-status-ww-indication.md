@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WW_INDICATION 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccda98eb4325acc03c880a57cc1d0ec2070c312
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323449"
 ---
 # <a name="ndisstatuswwindication"></a>NDIS\_状态\_WW\_指示
 
@@ -33,17 +33,17 @@ NDIS\_状态\_WW\_指示状态是否相同[ **NDIS\_状态\_媒体\_特定\_指�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持 NDIS 6.0 及更高版本。 仅支持 Windows Vista 和 Windows XP 中的 NDIS 5.1 驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_媒体\_特定\_指示**](ndis-status-media-specific-indication.md)

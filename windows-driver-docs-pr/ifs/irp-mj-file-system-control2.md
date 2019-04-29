@@ -5,11 +5,11 @@ ms.assetid: 3651d9ed-6b6f-4b60-9dfa-1c5c0c78b1a1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 146acf363d8c9cc363a135f88ab98efb4a69532d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324318"
 ---
 # <a name="checking-the-oplock-state-of-irpmjfilesystemcontrol"></a>正在检查 IRP_MJ_FILE_SYSTEM_CONTROL Oplock 状态
 

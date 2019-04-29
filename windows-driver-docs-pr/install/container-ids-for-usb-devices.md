@@ -1,17 +1,17 @@
 ---
-title: USB 设备的容器 Id
-description: USB 设备的容器 Id
+title: USB 设备的容器 ID
+description: USB 设备的容器 ID
 ms.assetid: 9e04c85d-db59-4e5d-911e-7249e14c968e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd1284ecef4014f8d5d2ea9f1e165ab49c8e790f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323357"
 ---
-# <a name="container-ids-for-usb-devices"></a>USB 设备的容器 Id
+# <a name="container-ids-for-usb-devices"></a>USB 设备的容器 ID
 
 
 本部分讨论如何通用串行总线 (USB) 设备的容器 Id 生成，并包括以下主题：

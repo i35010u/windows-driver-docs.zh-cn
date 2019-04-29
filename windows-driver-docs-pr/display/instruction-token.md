@@ -1,17 +1,17 @@
 ---
-title: 指令令牌
-description: 指令令牌
+title: 指令标记
+description: 指令标记
 ms.assetid: bfeee1ad-aaf3-41d0-a667-15d22eccd1e9
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 91cbfeb2201b6c715617b2cbe5d6304476fe3f41
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368585"
 ---
-# <a name="instruction-token"></a>指令令牌
+# <a name="instruction-token"></a>指令标记
 
 
 ## <span id="ddk_instruction_token_gg"></span><span id="DDK_INSTRUCTION_TOKEN_GG"></span>

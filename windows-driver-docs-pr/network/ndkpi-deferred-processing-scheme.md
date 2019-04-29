@@ -5,11 +5,11 @@ ms.assetid: DA2D0FCA-D84B-4599-A560-8F87A0918D99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49365eafcb7d8b27aa033d67150e02c0242d2acf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353745"
 ---
 # <a name="ndkpi-deferred-processing-scheme"></a>NDKPI 延迟处理方案
 

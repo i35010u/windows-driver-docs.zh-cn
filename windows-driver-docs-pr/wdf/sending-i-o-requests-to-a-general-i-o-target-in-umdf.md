@@ -1,6 +1,6 @@
 ---
-title: 将 I/O 请求发送到 UMDF 中的常规 I/O 目标
-description: 将 I/O 请求发送到 UMDF 中的常规 I/O 目标
+title: 在 UMDF 中将 I/O 请求发送到常规 I/O 目标
+description: 在 UMDF 中将 I/O 请求发送到常规 I/O 目标
 ms.assetid: f373afa8-292a-47bb-af6f-5035287d1e8c
 keywords:
 - 常规 I/O 面向 WDK UMDF，I/O 将请求发送到
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96b59f816e17a9de00da4d77fc083b2ba16bc4a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325175"
 ---
-# <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>将 I/O 请求发送到 UMDF 中的常规 I/O 目标
+# <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>在 UMDF 中将 I/O 请求发送到常规 I/O 目标
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

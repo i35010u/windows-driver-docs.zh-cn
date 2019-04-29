@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeeecb7294e73222600df3762addb7b36ed55ce8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322166"
 ---
 # <a name="hspluginstartpostconnectauth-function"></a>HS\_插件\_启动\_POST\_CONNECT\_身份验证函数
 
@@ -73,7 +73,7 @@ ms.locfileid: "56566147"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">

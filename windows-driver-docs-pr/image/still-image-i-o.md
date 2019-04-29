@@ -1,17 +1,17 @@
 ---
-title: 静止图像 I/O
-description: 静止图像 I/O
+title: 静态图像 I/O
+description: 静态图像 I/O
 ms.assetid: 1dd23545-e13a-4a69-b9bc-e2305e4c2163
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 771432954ed606acc18ebac5be0b85450cf61fbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322185"
 ---
-# <a name="still-image-io"></a>静止图像 I/O
+# <a name="still-image-io"></a>静态图像 I/O
 
 
 

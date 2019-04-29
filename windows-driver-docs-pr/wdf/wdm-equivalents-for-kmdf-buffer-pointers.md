@@ -5,11 +5,11 @@ ms.assetid: 7923A3CA-479A-4C7D-B428-F57C9701906E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abb7431bfd12eab85ea1071b587fc94c019a1b0d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323428"
 ---
 # <a name="wdm-equivalents-for-wdf-buffer-pointers"></a>WDF 缓冲区指针的 WDM 等效项
 

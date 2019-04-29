@@ -1,6 +1,6 @@
 ---
-title: 视频存在网络术语
-description: 视频存在网络术语
+title: 视频呈现网络的术语
+description: 视频呈现网络的术语
 ms.assetid: a7a02522-de13-419f-8dc5-065943fd4645
 keywords:
 - 视频存在网络 WDK 显示中，术语
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d12c40803419d2f0e39ac3706bb35ecdac9dcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365091"
 ---
-# <a name="video-present-network-terminology"></a>视频存在网络术语
+# <a name="video-present-network-terminology"></a>视频呈现网络的术语
 
 
 VidPN manager 使用视频存在网络 (VidPN) 的概念来管理组的显示设备连接到显示适配器。 有关详细信息，请参阅[简介视频存在网络](introduction-to-video-present-networks.md)。

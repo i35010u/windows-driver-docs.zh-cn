@@ -5,11 +5,11 @@ ms.assetid: 68bfe15c-9be0-412e-a0d0-c2af13982377
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5e602576b32827b2e3e7ff8a04e461e88dbcace
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323505"
 ---
 # <a name="kspropsetidstream"></a>KSPROPSETID\_Stream
 

@@ -5,11 +5,11 @@ ms.assetid: 2b2e6a1b-7c2d-4f38-9407-a417b75daa6a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c6faa61189f36e60c0692bc99cf643a5b8fa4427
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367865"
 ---
 # <a name="sharing-processor-resources-during-startup-from-a-low-power-state"></a>在从低功耗状态启动期间共享处理器资源
 

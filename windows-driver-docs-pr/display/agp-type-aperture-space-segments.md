@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd9394c6548d497e3f467437b618217e3ceea79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356257"
 ---
 # <a name="agp-type-aperture-space-segments"></a>AGP 类型孔径空间段
 

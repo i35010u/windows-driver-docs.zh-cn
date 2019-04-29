@@ -1,17 +1,17 @@
 ---
-title: 将数据包转发到的 HYPER-V 可扩展交换机端口
-description: 将数据包转发到的 HYPER-V 可扩展交换机端口
+title: 将数据包转发到 Hyper-V 可扩展交换机端口
+description: 将数据包转发到 Hyper-V 可扩展交换机端口
 ms.assetid: C8DA9064-21EE-45F4-BE6D-D24851C5480B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c8e442f6952efd52db3152a61760e725ee0674ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356909"
 ---
-# <a name="forwarding-packets-to-hyper-v-extensible-switch-ports"></a>将数据包转发到的 HYPER-V 可扩展交换机端口
+# <a name="forwarding-packets-to-hyper-v-extensible-switch-ports"></a>将数据包转发到 Hyper-V 可扩展交换机端口
 
 
 此页介绍了如何转发扩展的 HYPER-V 可扩展交换机可以将数据包转发到一个或多个端口。 此类扩展也可向连接到可扩展交换机外部网络适配器的单个网络适配器转发数据包。

@@ -5,11 +5,11 @@ ms.assetid: a0875084-c093-4659-91b9-375450f65234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5b2eb7bf2c72f0e5e4e73c29f74050a19917ff3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362821"
 ---
 # <a name="supporting-ambient-light-sensors"></a>支持环境光线传感器
 

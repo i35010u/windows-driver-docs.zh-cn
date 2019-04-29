@@ -1,17 +1,17 @@
 ---
-title: 将一个 SPC 导入证书存储
-description: 将一个 SPC 导入证书存储
+title: 将 SPC 导入证书存储
+description: 将 SPC 导入证书存储
 ms.assetid: 4640b48c-e56f-4c6b-8943-f8b6fc3e37d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f60a60c92312a6fb79e66c12e04d80dcc1b81bf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323349"
 ---
-# <a name="importing-an-spc-into-a-certificate-store"></a>将一个 SPC 导入证书存储
+# <a name="importing-an-spc-into-a-certificate-store"></a>将 SPC 导入证书存储
 
 
 一次个人信息交换 (。*pfx*) 文件创建用于存储[软件发布者证书 (SPC)](software-publisher-certificate.md)及其专用和公共密钥， *.pfx*文件必须在导入个人证书存储签名的计算机。 有关详细信息 *.pfx*文件，请参阅[个人信息交换 (.pfx) 文件](personal-information-exchange---pfx--files.md)。

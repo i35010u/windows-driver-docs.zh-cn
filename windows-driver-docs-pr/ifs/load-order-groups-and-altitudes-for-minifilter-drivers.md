@@ -1,6 +1,6 @@
 ---
-title: 加载顺序组和海拔微筛选器驱动程序的地区
-description: 加载顺序组和海拔微筛选器驱动程序的地区
+title: 微筛选器驱动程序的加载顺序组和等级
+description: 微筛选器驱动程序的加载顺序组和等级
 ms.assetid: be8f18fe-c80b-44a3-b0c3-f2f630142180
 keywords:
 - 海拔的地区 WDK 文件系统微筛选器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bc4e23f35d2a518c5bf1e2b3a251b0d18edb6c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324353"
 ---
-# <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>加载顺序组和海拔微筛选器驱动程序的地区
+# <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>微筛选器驱动程序的加载顺序组和等级
 
 
 Windows 使用的文件系统筛选器驱动程序和微筛选器驱动程序在系统启动时加载一组专用的加载顺序组。

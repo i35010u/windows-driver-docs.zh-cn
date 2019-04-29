@@ -1,17 +1,17 @@
 ---
-title: 分区到银行引脚 GPIO 控制器
+title: 将 GPIO 控制器分区为管脚库
 description: 驱动程序开发人员可以，作为一个选项，分区到两个或多个银行的 GPIO 插针的通用 I/O (GPIO) 控制器设备。
 ms.assetid: D9425459-E052-48D8-A4F3-91387AE7059A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96149c3ce4182ea4a30ee71fa074adec2dcd5bbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326129"
 ---
-# <a name="partitioning-a-gpio-controller-into-banks-of-pins"></a>分区到银行引脚 GPIO 控制器
+# <a name="partitioning-a-gpio-controller-into-banks-of-pins"></a>将 GPIO 控制器分区为管脚库
 
 
 驱动程序开发人员可以，作为一个选项，分区到两个或多个银行的 GPIO 插针的通用 I/O (GPIO) 控制器设备。 例如，具有 64 GPIO 插针的 GPIO 控制器设备可以描述 GPIO 控制器驱动程序中，为两个银行，其中每个 32 GPIO 插针。 开发人员可以提供单个驱动程序管理的银行公会 GPIO 控制器设备，所有和此驱动程序通常使用一个设备对象来表示整个设备。 但是，部分或全部设备中银行可以独立于其他银行公会设备进行管理。

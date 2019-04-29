@@ -5,11 +5,11 @@ ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff1d2e9ab650b9ea94eff9ec5c17f7fbe459e0e3
-ms.sourcegitcommit: 3cdabbe0af52459e484e093a9e11da8f5312daf6
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58441923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358749"
 ---
 # <a name="get-request-and-response-schemas"></a>获取请求和响应架构
 

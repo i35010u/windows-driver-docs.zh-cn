@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e4eb3e1ccfc8ea9b976702ab3b00bbd6114bf3d
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358131"
 ---
 # <a name="bug-check-0x15b-workerthreadreturnedwithsystempagepriorityactive"></a>Bug 检查 0x15B：辅助角色\_线程\_返回\_WITH\_系统\_页\_优先级\_ACTIVE
 

@@ -1,6 +1,6 @@
 ---
-title: 对于 I/O 操作中访问用户缓冲区
-description: 对于 I/O 操作中访问用户缓冲区
+title: 访问 I/O 操作的用户缓冲区
+description: 访问 I/O 操作的用户缓冲区
 ms.assetid: 0f4334bf-eec9-4667-af02-537e3357d872
 keywords:
 - 缓冲区 WDK 文件系统微筛选器
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4be47d8817a10fea2477b0d51c37f9d8d80712d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323374"
 ---
-# <a name="accessing-the-user-buffers-for-an-io-operation"></a>对于 I/O 操作中访问用户缓冲区
+# <a name="accessing-the-user-buffers-for-an-io-operation"></a>访问 I/O 操作的用户缓冲区
 
 
 ## <span id="ddk_accessing_the_user_buffers_for_an_io_operation_if"></span><span id="DDK_ACCESSING_THE_USER_BUFFERS_FOR_AN_IO_OPERATION_IF"></span>

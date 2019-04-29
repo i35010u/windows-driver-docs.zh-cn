@@ -5,11 +5,11 @@ ms.assetid: cc47b4c9-fd1d-47c2-9af9-0b7f4a7a918a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d52e1c40e423ef11048e05427e44de9fcb735c2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357834"
 ---
 # <a name="enabling-support-for-debugging-device-installations"></a>启用对设备安装调试的支持
 

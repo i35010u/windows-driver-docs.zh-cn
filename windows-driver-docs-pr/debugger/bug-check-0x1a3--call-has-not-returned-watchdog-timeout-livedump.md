@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: da62f150f24bd103a6e1e23b9157156fc9c930a0
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362458"
 ---
 # <a name="bug-check-bug-check-0x1a3-callhasnotreturnedwatchdogtimeoutlivedump"></a>Bug 检查 Bug 检查 0x1A3:调用\_HAS\_不\_返回\_监视器\_超时\_LIVEDUMP 
 

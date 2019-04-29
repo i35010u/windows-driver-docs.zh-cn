@@ -1,6 +1,6 @@
 ---
-title: 处理系统的电源中的更改
-description: 处理系统的电源中的更改
+title: 处理系统电源的更改
+description: 处理系统电源的更改
 ms.assetid: 80e36a23-8a41-46f0-a7cb-0039c306a695
 keywords:
 - 电源更改 WDK 网络
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84e4a474671dcecb722adfc96fd800e4c4f93dd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349800"
 ---
-# <a name="handling-a-change-in-the-systems-power-source"></a>处理系统的电源中的更改
+# <a name="handling-a-change-in-the-systems-power-source"></a>处理系统电源的更改
 
 
 

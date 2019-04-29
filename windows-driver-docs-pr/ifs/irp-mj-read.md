@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf7a790767107a310c53e531f18477aedd587a2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324492"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -57,7 +57,7 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 
 筛选器驱动程序应执行任何所需的处理和，具体取决于筛选器的特性，处于已完成或失败 IRP 或将其传递到下一步低驱动程序堆栈上。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和 IRP 堆栈位置在处理读取的请求中包含的信息：
@@ -129,7 +129,7 @@ IRP\_MJ\_读取 I/O 管理器或文件系统驱动程序发送请求。 可以�
 
 文件系统舍入写入和读取最多的扇区大小的倍数的文件的末尾的基础的文件存储设备的操作。 在处理预读或预写操作时，筛选的分配，并且交换缓冲区需要舍入到的关联的设备的扇区大小的倍数的分配的缓冲区的大小。 如果未显示，请从基础文件系统传输数据的长度将超过分配的缓冲区的长度。 有关交换缓冲区的详细信息，请参阅[swapBuffers 微筛选器示例](https://go.microsoft.com/fwlink/p/?linkid=256055)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcMdlRead**](https://msdn.microsoft.com/library/windows/hardware/ff539159)

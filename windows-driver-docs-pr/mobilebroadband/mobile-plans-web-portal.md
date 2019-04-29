@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f6874f0c18083de57a31acc9499914b9fe2427ab
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355952"
 ---
 # <a name="mobile-plans-mobile-operator-web-portal"></a>移动计划移动运营商的 web 门户
 
