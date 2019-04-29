@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aaa800978ff03f38d81704879b0b3b3a51e31c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365389"
 ---
 # <a name="loading-the-notify-object-dll-and-class-object"></a>加载通知对象 DLL 和类对象
 

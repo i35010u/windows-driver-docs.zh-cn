@@ -1,6 +1,6 @@
 ---
-title: DDInstall 网络 INF 文件中的部分
-description: DDInstall 网络 INF 文件中的部分
+title: 网络 INF 文件中的 DDInstall 节
+description: 网络 INF 文件中的 DDInstall 节
 ms.assetid: f6621796-0d1f-4d96-9850-720718e7ac44
 keywords:
 - INF 文件 WDK 网络，DDInstall 部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce4968d47102e892fcc91b476044dfd0ab473c6c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358781"
 ---
-# <a name="ddinstall-section-in-a-network-inf-file"></a>DDInstall 网络 INF 文件中的部分
+# <a name="ddinstall-section-in-a-network-inf-file"></a>网络 INF 文件中的 DDInstall 节
 
 
 
@@ -133,7 +133,7 @@ Characteristics = 0x84; NCF_PHYSICAL, NCF_HAS_UI
 <thead>
 <tr class="header">
 <th align="left">BusType 条目</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

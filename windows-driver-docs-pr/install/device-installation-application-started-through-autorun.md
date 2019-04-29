@@ -1,17 +1,17 @@
 ---
-title: 通过自动运行启动的设备安装应用程序
-description: 通过自动运行启动的设备安装应用程序
+title: 通过 AutoRun 启动的设备安装应用程序
+description: 通过 AutoRun 启动的设备安装应用程序
 ms.assetid: 9b520d82-2293-4936-99fe-30bf6753ba9f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79431a2febc178fe9d8e59c135adfa01f4cdc464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357864"
 ---
-# <a name="device-installation-application-started-through-autorun"></a>通过自动运行启动的设备安装应用程序
+# <a name="device-installation-application-started-through-autorun"></a>通过 AutoRun 启动的设备安装应用程序
 
 
 此方法基于现有[软件的第一个安装](software-first-installation.md)方法来创建[硬件第一个安装](hardware-first-installation.md)方案。 此方法依赖于[ **INF HardwareId 指令**](inf-hardwareid-directive.md)，这 Windows Vista 和更高版本的 Windows 中受支持。

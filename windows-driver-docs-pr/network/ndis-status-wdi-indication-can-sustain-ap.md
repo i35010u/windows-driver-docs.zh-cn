@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_CAN_SUSTAIN_AP 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f63ca5d4382ee112fdb1af5197dca1d45a78dd1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366417"
 ---
 # <a name="ndisstatuswdiindicationcansustainap"></a>NDIS\_状态\_WDI\_指示\_可以\_SUSTAIN\_亚太
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_可以\_SUSTAIN\_AP 以指示该端口已准备好接收[OID\_WDI\_任务\_启动\_AP](oid-wdi-task-start-ap.md)后以前，该值指示请求[NDIS\_状态\_WDI\_指示\_停止\_亚太](ndis-status-wdi-indication-stop-ap.md)。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

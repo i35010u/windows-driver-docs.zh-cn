@@ -5,11 +5,11 @@ ms.assetid: a3742c51-b38e-4ac2-923d-3f48a561b04d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a73d4d0910fce1a10e8d7fbf2c68b6573e2bbc2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360899"
 ---
 # <a name="iscsi-wmi-classes"></a>iSCSI WMI 类
 

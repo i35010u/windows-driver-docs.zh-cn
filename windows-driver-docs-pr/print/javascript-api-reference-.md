@@ -5,11 +5,11 @@ ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f04f419ca1fbf2c6e8f1938264b6c5a6fa4cd0
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357249"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API 参考
 

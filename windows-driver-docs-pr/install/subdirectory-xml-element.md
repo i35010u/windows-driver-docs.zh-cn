@@ -1,6 +1,6 @@
 ---
-title: 子目录的 XML 元素
-description: 子目录的 XML 元素
+title: subDirectory XML 元素
+description: subDirectory XML 元素
 ms.assetid: 41f86668-148e-4d7c-89b8-e3c21efffd7b
 keywords:
 - 子目录 XML 元素设备和驱动程序安装
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 634a7241ce4a3a6095c03df7c9d29fc0a4ec2f63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369339"
 ---
-# <a name="subdirectory-xml-element"></a>子目录的 XML 元素
+# <a name="subdirectory-xml-element"></a>subDirectory XML 元素
 
 
 \[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
@@ -91,7 +91,7 @@ ms.locfileid: "56520837"
 </search>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**search**](search-xml-element.md)

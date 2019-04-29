@@ -1,19 +1,19 @@
 ---
-title: 在早期版本的 Windows XP 支持
-description: 在早期版本的 Windows XP 支持
+title: 早期 Windows 版本中的 XPS 支持
+description: 早期 Windows 版本中的 XPS 支持
 ms.assetid: e13b43f5-e926-404d-9f76-c2dfef6e0637
 keywords:
 - XPSDrv 的打印机驱动程序 WDK，早期 Windows 版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f4a85f89a820de51e585083c821a048df876f0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355128"
 ---
-# <a name="xps-support-in-earlier-versions-of-windows"></a>在早期版本的 Windows XP 支持
+# <a name="xps-support-in-earlier-versions-of-windows"></a>早期 Windows 版本中的 XPS 支持
 
 
 除 Windows Vista 中，在 Microsoft Windows Server 2003 和 Windows XP 通过 Microsoft WinFX 运行时组件 3.0 还支持基于 XPS 的技术。 XPS 打印将入点工作并输出使用这些操作系统的方案。

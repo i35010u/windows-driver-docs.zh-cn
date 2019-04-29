@@ -1,6 +1,6 @@
 ---
-title: 打开设备的硬件密钥
-description: 打开设备的硬件密钥
+title: 打开设备的硬件键
+description: 打开设备的硬件键
 ms.assetid: FED22F37-D09C-4207-8C2C-FB6484A8D19D
 keywords:
 - 硬件密钥 WDK 设备安装，打开
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07321f59c1d5d516edf98cf588e47d57044c0714
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365865"
 ---
-# <a name="opening-a-devices-hardware-key"></a>打开设备的硬件密钥
+# <a name="opening-a-devices-hardware-key"></a>打开设备的硬件键
 
 
 一个*硬件密钥*是特定于设备的注册表子项，其中包含有关设备的信息。 您必须直接打开设备的硬件密钥。 与任何注册表项，可能会更改的 Windows 不同版本之间的位置或这些项的格式。 

@@ -1,5 +1,5 @@
 ---
-title: al （列表别名）
+title: al（列出别名）
 description: Al 命令显示所有当前定义的用户命名别名的列表。
 ms.assetid: 40e20edb-4545-4c5a-bb56-61e00b064efc
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cac3302ab00f1c88cbf4a3e35d054b942ec36b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355005"
 ---
-# <a name="al-list-aliases"></a>al （列表别名）
+# <a name="al-list-aliases"></a>al（列出别名）
 
 
 **Al**命令显示所有当前定义的用户命名别名的列表。

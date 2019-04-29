@@ -1,17 +1,17 @@
 ---
-title: 扫描程序存储体系结构
-description: 扫描程序存储体系结构
+title: 扫描仪存储体系结构
+description: 扫描仪存储体系结构
 ms.assetid: 90b2367f-c611-47c6-bd60-4125bd7ca709
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f439a6f9e6a52806c4581b636fcdf3ed6cb5fb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370087"
 ---
-# <a name="scanner-storage-architecture"></a>扫描程序存储体系结构
+# <a name="scanner-storage-architecture"></a>扫描仪存储体系结构
 
 
 配备了一个或多个存储单元的扫描程序设备应实现至少一个根存储文件夹扫描程序项目 (WIA\_类别\_文件夹) 中其 WIA 项树来表示一个单独的存储单元或逻辑所有可用的存储单元的根。 在存储根项，可能有子文件夹项 (WIA\_类别\_文件夹)，表示单个存储单元 （如果此唯一的存储根项下映射所有存储单元） 或文件的存储单元上的文件夹和各个文件项 (WIA\_类别\_已完成\_文件)。

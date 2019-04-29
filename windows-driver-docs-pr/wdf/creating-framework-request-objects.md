@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04371c4af8287355560a00f666fb525f2330c356
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358689"
 ---
 # <a name="creating-framework-request-objects"></a>创建框架请求对象
 

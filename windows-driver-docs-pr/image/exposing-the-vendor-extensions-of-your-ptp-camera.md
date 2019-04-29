@@ -5,11 +5,11 @@ ms.assetid: b3a8b70b-c7ac-4e45-97bb-9b58e013100d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e8c38cb4457a99f093d5c0a2f973b8872459cc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373123"
 ---
 # <a name="exposing-the-vendor-extensions-of-your-ptp-camera"></a>公开 PTP 相机的供应商扩展
 

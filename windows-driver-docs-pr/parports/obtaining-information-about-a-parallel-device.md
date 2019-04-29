@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a0fcb9ddc2ca919d9591cd6834f07ae0b2e4e6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373547"
 ---
 # <a name="obtaining-information-about-a-parallel-device"></a>获取有关并行设备的信息
 

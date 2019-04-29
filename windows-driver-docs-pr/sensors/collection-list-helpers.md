@@ -5,11 +5,11 @@ ms.assetid: 9BE06FA6-A171-4760-9D3E-C0183F3C3EFA
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ab9ca2c16d5d79554bb004c382018b71ee5a561f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368879"
 ---
 # <a name="collection-list-helpers"></a>集合列表帮助程序
 

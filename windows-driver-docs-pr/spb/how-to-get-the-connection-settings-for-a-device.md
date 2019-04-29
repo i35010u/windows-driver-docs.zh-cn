@@ -5,11 +5,11 @@ ms.assetid: B614993A-0EA9-4B91-A336-80EEF9BE3E69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 337e1089e103bc67e2da9b8d4ba96e1746ae4814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356734"
 ---
 # <a name="how-to-get-the-connection-settings-for-a-device"></a>如何获取设备的连接设置
 

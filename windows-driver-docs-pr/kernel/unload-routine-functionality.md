@@ -1,19 +1,19 @@
 ---
-title: 卸载例程的功能
-description: 卸载例程的功能
+title: Unload 例程的功能
+description: Unload 例程的功能
 ms.assetid: a36b4687-df1d-498f-b9f3-d13ae2a9a3cd
 keywords:
 - 卸载例程 WDK 内核，功能
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f67e9d6499af2cd412fdf69508b7ce5613267d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355284"
 ---
-# <a name="unload-routine-functionality"></a>卸载例程的功能
+# <a name="unload-routine-functionality"></a>Unload 例程的功能
 
 
 

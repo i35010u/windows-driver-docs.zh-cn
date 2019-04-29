@@ -5,11 +5,11 @@ ms.assetid: F3ED56C2-56AF-44FA-9ED8-7A16F1711AC7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d51eff0565c82d4d4999b8cb3e6370b36230b678
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368875"
 ---
 # <a name="sensor-constants"></a>传感器常量
 

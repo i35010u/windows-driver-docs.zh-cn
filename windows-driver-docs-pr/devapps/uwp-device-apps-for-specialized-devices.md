@@ -1,20 +1,20 @@
 ---
-title: UWP 应用的内部设备的设备应用程序
-description: 本主题介绍了 UWP 的设备应用程序可以访问内部设备方法。
+title: 适用于内部设备的 UWP 设备应用
+description: 此主题介绍 UWP 设备应用访问内部设备的方式。
 ms.assetid: 864EDABF-C734-425D-A532-A01E545E4E51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7722bee32ecdcee22804d0bb9a1aa8ebc709826
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359509"
 ---
-# <a name="uwp-device-apps-for-internal-devices"></a>UWP 应用的内部设备的设备应用程序
+# <a name="uwp-device-apps-for-internal-devices"></a>适用于内部设备的 UWP 设备应用
 
 
-本主题介绍了 UWP 的设备应用程序可以访问内部设备方法。 *内部设备*是驻留在或集成在一起的 PC 机箱的设备。
+此主题介绍 UWP 设备应用访问内部设备的方式。 *内部设备*是驻留在或集成在一起的 PC 机箱的设备。
 
 **请注意**  本主题中提到的某些 Api 可用于访问外部设备过。 本主题专门重点介绍访问内部设备。 有关每个 API 的详细信息，请参阅[Windows API 参考](https://go.microsoft.com/fwlink/p/?LinkId=250938)。
 
@@ -80,7 +80,7 @@ Oem 或 Ihv 无法使用设备协议 Api 来访问其 （内部或外围设备�
 
 有关这些工作流的详细信息，请参阅[UWP 设备应用程序设计指南适用于 PC 的内部专用设备](https://go.microsoft.com/fwlink/p/?LinkId=306693)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [确定内部相机 （UWP 设备应用） 的位置](identifying-the-location-of-internal-cameras.md)

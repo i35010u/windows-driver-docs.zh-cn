@@ -1,6 +1,6 @@
 ---
-title: 广播驱动程序体系结构的驱动程序
-description: 广播驱动程序体系结构的驱动程序
+title: 广播驱动程序体系结构驱动程序
+description: 广播驱动程序体系结构驱动程序
 ms.assetid: 23597c6d-791c-45d4-a1cd-8c26d9d888fb
 keywords:
 - AVStream WDK 广播驱动程序体系结构
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce139392bcee71b791dda3991559e82cd35533c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390896"
 ---
-# <a name="broadcast-driver-architecture-drivers"></a>广播驱动程序体系结构的驱动程序
+# <a name="broadcast-driver-architecture-drivers"></a>广播驱动程序体系结构驱动程序
 
 
 

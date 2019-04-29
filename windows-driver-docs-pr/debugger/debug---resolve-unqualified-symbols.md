@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24679b1a2872e81170ab7bf14d93190a7ad9a513
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374860"
 ---
-# <a name="debug--resolve-unqualified-symbols"></a>调试 |解析不合格的符号
+# <a name="debug--resolve-unqualified-symbols"></a>调试 | 解决不符合要求的符号
 
 
 选择**解析非限定符号**上**调试**菜单用于解析不具有任何模块的前缀的符号。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b80a5c97766d360dafd2670c78cef7bf4418198
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360053"
 ---
 # <a name="inputmediasize-element"></a>InputMediaSize 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56519271"
 </wscn:InputMediaSize>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -86,7 +86,7 @@ ms.locfileid: "56519271"
 
 **宽度**元素包含在快速扫描方向，原始介质的宽度和**高度**元素包含的原始媒体中进行慢扫描方向的高度。 这两**宽度**并**高度**必须介于 1 到 2147483648 和为一个千分之几秒为单位 (1/1000) 的英寸为单位。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Height**](height.md)

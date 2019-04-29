@@ -15,11 +15,11 @@ keywords:
 ms.date: 07/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d43b51305430f823e7bba91990343e9e5f02c474
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356355"
 ---
 # <a name="overview-of-boot-options-in-efi"></a>EFI 中的启动选项概述
 

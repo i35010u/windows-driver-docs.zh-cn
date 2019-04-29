@@ -5,11 +5,11 @@ ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f7df66cfc6e9ff645171ad8563e0caf86daaf68f
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358936"
 ---
 # <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>有关日志中记录跟踪的即时跟踪记录器 (IFR)
 

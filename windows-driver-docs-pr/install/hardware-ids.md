@@ -5,11 +5,11 @@ ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6ed3809fd262637b30b31b515bc9d06457b804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360605"
 ---
 # <a name="hardware-id"></a>硬件 ID
 

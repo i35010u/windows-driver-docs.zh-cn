@@ -5,11 +5,11 @@ ms.assetid: 65677DE4-4C91-4E24-B9BC-0924619C7307
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a01ee2d466725d3ec9000de00af43ab85bec12ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359064"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingwindbgspandebugging-a-user-mode-process-using-windbg"></a><span id="debugger.debugging_a_user-mode_process_using_windbg"></span>调试使用 WinDbg 的用户模式进程
 

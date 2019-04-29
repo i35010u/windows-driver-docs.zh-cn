@@ -1,6 +1,6 @@
 ---
-title: 更轻松写入筛选器驱动程序
-description: 更轻松写入筛选器驱动程序
+title: 更易于编写的筛选器驱动程序
+description: 更易于编写的筛选器驱动程序
 ms.assetid: 77cb7a9a-f823-4dfa-a0fc-11c174f34250
 keywords:
 - 筛选器驱动程序 WDK 网络，编写筛选器驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e40f2c5695ab020939b1d2b844d679115d174077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372570"
 ---
-# <a name="easier-to-write-filter-drivers"></a>更轻松写入筛选器驱动程序
+# <a name="easier-to-write-filter-drivers"></a>更易于编写的筛选器驱动程序
 
 
 

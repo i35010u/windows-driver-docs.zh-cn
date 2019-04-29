@@ -1,6 +1,6 @@
 ---
-title: 更改表项 MSI X CPU 关联
-description: 更改表项 MSI X CPU 关联
+title: 更改 MSI-X 表项的 CPU 关联
+description: 更改 MSI-X 表项的 CPU 关联
 ms.assetid: 46ce91ad-76eb-4d05-af9d-a295c665640a
 keywords:
 - 网络、 MSI X 表条目 CPU 关联的 MSI X WDK
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b87b18846af7ecc52069ab012618e80898ca44b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353230"
 ---
-# <a name="changing-the-cpu-affinity-of-msi-x-table-entries"></a>更改表项 MSI X CPU 关联
+# <a name="changing-the-cpu-affinity-of-msi-x-table-entries"></a>更改 MSI-X 表项的 CPU 关联
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: D8B7E534-7CFC-45EC-93E9-4B046598D82B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9600d83828d16d36e3773a7e4e0d5120c5d531f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391875"
 ---
 # <a name="steps-in-porting"></a>移植步骤
 

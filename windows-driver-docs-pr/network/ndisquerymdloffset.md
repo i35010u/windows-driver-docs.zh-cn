@@ -7,11 +7,11 @@ keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NdisQueryMdlOffset 宏
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4ab915d2d096f3262904bb98d8256542aedfe6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392392"
 ---
 # <a name="ndisquerymdloffset-macro"></a>NdisQueryMdlOffset macro
 
@@ -29,7 +29,7 @@ VOID NdisQueryMdlOffset(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *\_Mdl*   
@@ -65,11 +65,11 @@ VOID NdisQueryMdlOffset(
 <td>桌面设备</td>
 </tr>
 <tr class="even">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.0 及更高版本。</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 <tr class="even">
@@ -83,7 +83,7 @@ VOID NdisQueryMdlOffset(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisQueryBufferOffset**](https://msdn.microsoft.com/library/windows/hardware/ff554411)

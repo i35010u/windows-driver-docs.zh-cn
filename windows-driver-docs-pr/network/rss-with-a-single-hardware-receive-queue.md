@@ -1,6 +1,6 @@
 ---
-title: 与单个硬件 RSS 接收队列
-description: 与单个硬件 RSS 接收队列
+title: 使用单个硬件接收队列的 RSS
+description: 使用单个硬件接收队列的 RSS
 ms.assetid: 835f5646-4514-4973-978a-9bab0777a66c
 keywords:
 - 接收方缩放 WDK 网络硬件队列
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f6ac453e65e8a3b992b6ef3d8521368308d929eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359783"
 ---
-# <a name="rss-with-a-single-hardware-receive-queue"></a>与单个硬件 RSS 接收队列
+# <a name="rss-with-a-single-hardware-receive-queue"></a>使用单个硬件接收队列的 RSS
 
 
 

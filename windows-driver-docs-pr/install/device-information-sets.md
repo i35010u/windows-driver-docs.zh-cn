@@ -1,6 +1,6 @@
 ---
-title: 设备信息设置
-description: 设备信息设置
+title: 设备信息集
+description: 设备信息集
 ms.assetid: 20539c63-10b1-408a-8c60-da444f54b64e
 keywords:
 - 设备信息元素 WDK 设备安装
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3cb7c60cea5fa761d67f1ee3693b275e661f121
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357802"
 ---
-# <a name="device-information-sets"></a>设备信息设置
+# <a name="device-information-sets"></a>设备信息集
 
 
 

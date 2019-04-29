@@ -5,11 +5,11 @@ ms.assetid: 4f673cd3-e23e-4267-920f-37618192a906
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1efaadcf5390aebbee4058872d28ca8325783a65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371788"
 ---
 # <a name="using-sdv-and-the-sample-drivers"></a>使用 SDV 和示例驱动程序
 

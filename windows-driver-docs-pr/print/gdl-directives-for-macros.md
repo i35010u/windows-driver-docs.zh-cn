@@ -1,6 +1,6 @@
 ---
-title: 宏的 GDL 指令
-description: 宏的 GDL 指令
+title: 用于宏的 GDL 指令
+description: 用于宏的 GDL 指令
 ms.assetid: b3bf8686-ccbb-4c57-a896-16c6db6f131d
 keywords:
 - 指令 WDK GDL，宏指令
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 281c204e37ce24637791c4b6ee702945ac791760
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392146"
 ---
-# <a name="gdl-directives-for-macros"></a>宏的 GDL 指令
+# <a name="gdl-directives-for-macros"></a>用于宏的 GDL 指令
 
 
 GDL 具有定义宏的指令。 引用对宏是展开的行中获取由分析器解释的条目。

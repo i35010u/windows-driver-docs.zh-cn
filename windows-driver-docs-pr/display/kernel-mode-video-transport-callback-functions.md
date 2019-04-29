@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f19634e6823db1d54eb6ff39b1d13e934783d68a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363097"
 ---
 # <a name="kernel-mode-video-transport-callback-functions"></a>内核模式视频传输回调函数
 

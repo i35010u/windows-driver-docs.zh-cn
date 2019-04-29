@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33da5a4d4cdc15be31aae2c7eb21593a941e8003
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374233"
 ---
 # <a name="connections-between-subunit-plugs-and-unit-plugs-within-one-avc-unit"></a>子单元插入和一个 AV/C 单位内的单元插入之间的连接
 

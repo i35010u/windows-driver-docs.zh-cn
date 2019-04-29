@@ -1,17 +1,17 @@
 ---
-title: 元数据重写数据驱动的测试示例
-description: 元数据重写数据驱动的测试示例
+title: 元数据覆盖数据驱动的测试示例
+description: 元数据覆盖数据驱动的测试示例
 ms.assetid: F39A556F-1816-4272-ABDE-62164AE09685
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ef422f67aeca894b264e45d4013127bbaefa4b82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355507"
 ---
-# <a name="metadata-overriding-data-driven-test-example"></a>元数据重写数据驱动的测试示例
+# <a name="metadata-overriding-data-driven-test-example"></a>元数据覆盖数据驱动的测试示例
 
 
 本部分介绍了数据驱动测试例举的操作的一些高级的功能。 如果仍是否涵盖了基础知识，您可能开始想[简单数据驱动的示例。](simple-data-driven-test-example.md)

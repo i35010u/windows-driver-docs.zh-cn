@@ -1,17 +1,17 @@
 ---
-title: 监视无提示的进程退出
+title: 监视静默进程退出
 description: 从 Windows 7 开始，您可以使用进程退出，无提示选项卡中 GFlags 输入想要监视无提示退出一个过程的名称。
 ms.assetid: 116B2053-7F48-48B4-AEAC-333B7D9C38C7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51fdb8ff6afeb4350210b88450b1ce6ffbb5863d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353608"
 ---
-# <a name="monitoring-silent-process-exit"></a>监视无提示的进程退出
+# <a name="monitoring-silent-process-exit"></a>监视静默进程退出
 
 
 从 Windows 7 开始，你可以使用**进程退出，无提示**GFlags 输入想要监视无提示退出一个过程的名称中的选项卡。
@@ -68,7 +68,7 @@ ms.locfileid: "56527059"
 
 **IgnoreSelfExits**注册表项具有以下值之一。
 
-| 值 | 含义                                                                    |
+| ReplTest1 | 含义                                                                    |
 |-------|----------------------------------------------------------------------------|
 | 0x0   | 检测和响应自终止和跨进程终止。 |
 | 0x1   | 忽略自终止。 检测和响应跨进程终止。  |

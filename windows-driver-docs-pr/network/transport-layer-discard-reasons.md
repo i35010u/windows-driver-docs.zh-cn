@@ -1,5 +1,5 @@
 ---
-title: 传输层的放弃原因
+title: 传输层丢弃原因
 description: 本部分描述了 Windows 筛选平台标注驱动程序的传输层放弃原因。
 ms.assetid: e2a9dcd1-87c6-4052-ae96-3a7994328dd0
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5008e6eb284ba76b671909b1e1a01aeed12fe001
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358381"
 ---
-# <a name="transport-layer-discard-reasons"></a>传输层的放弃原因
+# <a name="transport-layer-discard-reasons"></a>传输层丢弃原因
 
 标识符的数据将被放弃由一个传输层的可能原因如下所示。 这些标识符是 Fwpsk.h 中定义的 INET_DISCARD_REASON 枚举中的常量值。
 

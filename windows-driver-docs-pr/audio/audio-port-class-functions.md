@@ -5,11 +5,11 @@ ms.assetid: dc8f32e8-b01c-4f06-a32f-c08f76001f79
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 899fe1a89ca73f578b184892219020c68f99fd9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63331432"
 ---
 # <a name="audio-port-class-functions"></a>音频端口类函数
 

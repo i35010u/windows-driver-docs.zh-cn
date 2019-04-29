@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e467697d1e495fef1fb2553c5d3af67dde6daf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63328449"
 ---
 # <a name="writing-64-bit-audio-drivers"></a>编写 64 位音频驱动程序
 

@@ -1,5 +1,5 @@
 ---
-title: rdmsr (读取 MSR)
+title: rdmsr（读取 MSR）
 description: Rdmsr 命令读取模型特定注册 (MSR) 值从指定的地址。
 ms.assetid: 693f1be5-f215-4719-ae6f-30e367cefd77
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: be90d702d97c5eedd5b47254d33d873610264ca4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358548"
 ---
-# <a name="rdmsr-read-msr"></a>rdmsr (读取 MSR)
+# <a name="rdmsr-read-msr"></a>rdmsr（读取 MSR）
 
 
 **Rdmsr**命令读取[模型特定注册 (MSR)](other-data-spaces.md)值从指定的地址。

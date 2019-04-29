@@ -1,6 +1,6 @@
 ---
-title: Pin BDA 微型驱动程序的筛选器之间的连接
-description: Pin BDA 微型驱动程序的筛选器之间的连接
+title: 在 BDA 微型驱动程序筛选器的引脚之间进行连接
+description: 在 BDA 微型驱动程序筛选器的引脚之间进行连接
 ms.assetid: 549031f3-1501-43c0-b172-bc88613d7e61
 keywords:
 - 广播驱动程序体系结构 WDK AVStream，pin 数据范围
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e35c6ab3cd37933b211526363154c9dcbd544c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374191"
 ---
-# <a name="connecting-between-pins-of-filters-for-bda-minidrivers"></a>Pin BDA 微型驱动程序的筛选器之间的连接
+# <a name="connecting-between-pins-of-filters-for-bda-minidrivers"></a>在 BDA 微型驱动程序筛选器的引脚之间进行连接
 
 
 

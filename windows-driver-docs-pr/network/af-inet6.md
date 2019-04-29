@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET6 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c706e97e6072e23efbbf48b48b043f268ed782c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367813"
 ---
 # <a name="afinet6"></a>AF\_INET6
 
@@ -151,11 +151,11 @@ IPv6 支持以下的套接字类型和协议组合的每个 WSK[套接字类别]
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ws2def.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

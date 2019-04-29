@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9751ac62e4566f43177f6bb72c60bc34b178346f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360407"
 ---
-# <a name="file--save-workspace-to-file"></a>文件 |将工作区保存到文件
+# <a name="file--save-workspace-to-file"></a>文件 | 将工作区保存到文件
 
 
 ## <span id="ddk_file_save_workspace_to_file_dbg"></span><span id="DDK_FILE_SAVE_WORKSPACE_TO_FILE_DBG"></span>

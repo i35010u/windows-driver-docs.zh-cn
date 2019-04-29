@@ -1,17 +1,17 @@
 ---
-title: XpsAnalyzer Output
-description: XpsAnalyzer Output
+title: XpsAnalyzer 输出
+description: XpsAnalyzer 输出
 ms.assetid: eb9c024a-05fd-4dc8-a1bf-6164ee94f853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b293a46f5d79bd83ad5f5939230a356cb41ac1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358043"
 ---
-# <a name="xpsanalyzer-output"></a>XpsAnalyzer Output
+# <a name="xpsanalyzer-output"></a>XpsAnalyzer 输出
 
 
 下面是 XPS 分析报表的示例。 在此示例中，执行 XpsAnalyzer 工具，如下所示：
@@ -33,8 +33,8 @@ c:\\temp\\SampleXpsFile.xps
 <tbody>
 <tr class="odd">
 <td align="left"><p>规则</p></td>
-<td align="left"><p>值</p></td>
-<td align="left"><p>位置</p></td>
+<td align="left"><p>ReplTest1</p></td>
+<td align="left"><p>Location</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>CompressionOption</p></td>

@@ -5,11 +5,11 @@ ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87822a0c19665898549cab5f3ed6b984aa19377c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371572"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>使用内核模式性能计数器
 

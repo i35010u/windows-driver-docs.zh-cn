@@ -5,11 +5,11 @@ ms.assetid: 61A3AE1B-2256-4034-AE9F-86E6900D9093
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f17cc44c5827959cbe3c2fd1306cb16d672ef25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356641"
 ---
 # <a name="step-2-create-device-metadata-for-your-uwp-device-app"></a>步骤 2：创建 UWP 设备应用的设备元数据
 
@@ -84,12 +84,12 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 
 ## <a name="next-step"></a>下一步
 
-[步骤 3:向应用添加体验 ID](step-3--add-an-experience-id-to-the-app.md)
+[步骤 3：向应用添加体验 ID](step-3--add-an-experience-id-to-the-app.md)
 
 ## <a name="related-topics"></a>相关主题
 
 [构建 UWP 设备应用程序](the-workflow.md)
 
-[设备同步和 UWP 的设备应用程序的更新](device-sync-and-update-for-uwp-device-apps.md)
+[UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)
 
-[UWP 应用的内部设备的设备应用程序](uwp-device-apps-for-specialized-devices.md)
+[适用于内部设备的 UWP 设备应用](uwp-device-apps-for-specialized-devices.md)

@@ -1,6 +1,6 @@
 ---
-title: 创建 Stream
-description: 创建 Stream
+title: 创建流
+description: 创建流
 ms.assetid: 9984275f-7ead-4df2-aa98-a3b4e5e85ae0
 keywords:
 - Avcstrm.sys 流式处理筛选器驱动程序 WDK、 创建流
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e465d05ce37b2c9e15efe02d589a04983eae3d8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374173"
 ---
-# <a name="create-a-stream"></a>创建 Stream
+# <a name="create-a-stream"></a>创建流
 
 
 

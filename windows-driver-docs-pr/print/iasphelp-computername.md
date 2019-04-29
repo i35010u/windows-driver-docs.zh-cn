@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8f62d992c2123c5e3cbcb6df40c559ceba78a20
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392886"
 ---
 # <a name="iasphelpgetcomputername-method"></a>Iasphelp::get\_ComputerName 方法
 
@@ -40,7 +40,7 @@ HRESULT get_ComputerName(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *pVal* \[out\]  

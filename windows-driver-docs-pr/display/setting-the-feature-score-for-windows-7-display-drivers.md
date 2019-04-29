@@ -5,11 +5,11 @@ ms.assetid: 7b2cf25d-a88d-48e1-8d62-8c245c289566
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9148246fd84492b9a12f0ffe2e2d4e47f93ca185
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390442"
 ---
 # <a name="setting-the-feature-score-for-windows-7-display-drivers"></a>设置 Windows 7 显示驱动程序的功能评分
 

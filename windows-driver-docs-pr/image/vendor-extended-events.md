@@ -1,17 +1,17 @@
 ---
-title: 供应商扩展事件
-description: 供应商扩展事件
+title: 供应商扩展的事件
+description: 供应商扩展的事件
 ms.assetid: 00131b75-3b15-46f8-b4da-1e1593afb3c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56633f19d0b82b1f2a2db7d3078e1ead510555d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356127"
 ---
-# <a name="vendor-extended-events"></a>供应商扩展事件
+# <a name="vendor-extended-events"></a>供应商扩展的事件
 
 
 

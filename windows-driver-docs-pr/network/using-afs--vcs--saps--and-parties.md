@@ -1,6 +1,6 @@
 ---
-title: 使用 AFs、 VCs、 SAPs 和参与方
-description: 使用 AFs、 VCs、 SAPs 和参与方
+title: 使用 AF、VC、SAP 和参与方
+description: 使用 AF、VC、SAP 和参与方
 ms.assetid: 4bf736a9-1236-4322-85f0-5d3ab7b8c549
 keywords:
 - 面向连接的 NDIS WDK，创建的实体
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e1eec5a3be271ce55b994dd2d8d39e8d5643ed8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372169"
 ---
-# <a name="using-afs-vcs-saps-and-parties"></a>使用 AFs、 VCs、 SAPs 和参与方
+# <a name="using-afs-vcs-saps-and-parties"></a>使用 AF、VC、SAP 和参与方
 
 
 

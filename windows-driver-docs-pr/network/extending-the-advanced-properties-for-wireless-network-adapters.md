@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2797174ee824c477bae00bd0766a6c192e458925
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356907"
 ---
 # <a name="extending-the-advanced-properties-for-wireless-network-adapters"></a>扩展无线网络适配器的高级属性
 

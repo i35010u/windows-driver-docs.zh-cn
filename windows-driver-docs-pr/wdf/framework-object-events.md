@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 691ce0769e5cf35364a5e453ce02f4b2ed0326b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370992"
 ---
 # <a name="framework-object-events"></a>框架对象事件
 

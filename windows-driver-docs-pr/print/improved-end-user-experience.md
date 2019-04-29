@@ -1,6 +1,6 @@
 ---
-title: 改进了最终用户体验
-description: 改进了最终用户体验
+title: 改进的最终用户体验
+description: 改进的最终用户体验
 ms.assetid: d87062f2-2832-4443-b9f0-97e34f79c47f
 keywords:
 - 打印票证 WDK，XPSDrv
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b40d9aceb4d44ba1587f7a4d6f4eaefb69067aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392798"
 ---
-# <a name="improved-end-user-experience"></a>改进了最终用户体验
+# <a name="improved-end-user-experience"></a>改进的最终用户体验
 
 
 Windows Vista 引入了两个新技术以提高通信的设备功能和用户的意图：

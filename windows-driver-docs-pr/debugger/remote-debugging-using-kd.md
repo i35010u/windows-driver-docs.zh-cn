@@ -1,17 +1,17 @@
 ---
-title: 远程调试使用 KD
+title: 使用 KD 进行远程调试
 description: 远程调试涉及两个调试器运行在两个不同的位置。
 ms.assetid: 274CAB1D-DD3B-4ACD-919C-8B8C253BCE50
 ms.date: 05/03/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cb9663cd1b172140bb461d55cc2e1748645facb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353545"
 ---
-# <a name="remote-debugging-using-kd"></a>远程调试使用 KD
+# <a name="remote-debugging-using-kd"></a>使用 KD 进行远程调试
 
 
 远程调试涉及两个调试器运行在两个不同的位置。 调用调试器执行的调试*调试服务器*。 第二个调试器中，称为*调试客户端*，控制从远程位置的调试会话。 若要建立的远程会话，必须首先设置调试服务器并随后激活调试客户端。

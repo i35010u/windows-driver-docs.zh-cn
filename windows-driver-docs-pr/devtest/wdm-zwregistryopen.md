@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a61e568b5d3335a9f53741535f633026d59e065e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370781"
 ---
 # <a name="zwregistryopen-rule-wdm"></a>ZwRegistryOpen 规则 (wdm)
 
@@ -76,7 +76,7 @@ ms.locfileid: "56522202"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)

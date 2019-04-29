@@ -1,6 +1,6 @@
 ---
-title: 异步呈现
-description: 异步呈现
+title: 异步渲染
+description: 异步渲染
 ms.assetid: f291e416-aaee-4639-9410-6d01b3b02097
 keywords:
 - 显示器驱动程序 WDK Windows 2000，异步呈现
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37e3e8ba92f957b90f6db108180c8889ae674439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350327"
 ---
-# <a name="asynchronous-rendering"></a>异步呈现
+# <a name="asynchronous-rendering"></a>异步渲染
 
 
 ## <span id="ddk_asynchronous_rendering_gg"></span><span id="DDK_ASYNCHRONOUS_RENDERING_GG"></span>

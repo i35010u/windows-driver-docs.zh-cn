@@ -1,6 +1,6 @@
 ---
-title: 故障排除 GDL 分析
-description: 故障排除 GDL 分析
+title: 排查 GDL 分析问题
+description: 排查 GDL 分析问题
 ms.assetid: 8c678a2f-b15b-4693-9bed-0edec06b3485
 keywords:
 - GDL WDK 分析器
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8a060a271f712cce685299b3d6b81ce52592cf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392782"
 ---
-# <a name="troubleshooting-gdl-parsing"></a>故障排除 GDL 分析
+# <a name="troubleshooting-gdl-parsing"></a>排查 GDL 分析问题
 
 
 以下信息介绍了一些分析 GDL 文件时可能遇到的意外行为的原因。

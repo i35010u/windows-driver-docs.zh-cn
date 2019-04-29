@@ -5,11 +5,11 @@ ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a734a7c41b28019e0b59fe63ba4a5120e9ed1527
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374970"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 

@@ -1,6 +1,6 @@
 ---
-title: 类型的筛选器驱动程序
-description: 类型的筛选器驱动程序
+title: 筛选器驱动程序的类型
+description: 筛选器驱动程序的类型
 ms.assetid: d3a92f10-5f5c-4640-ae03-1bf4e17c45ac
 keywords:
 - 筛选器驱动程序 WDK 网络类型
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01b4d0f4da0394470a581c3cc164a951fbb306e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358280"
 ---
-# <a name="types-of-filter-drivers"></a>类型的筛选器驱动程序
+# <a name="types-of-filter-drivers"></a>筛选器驱动程序的类型
 
 
 

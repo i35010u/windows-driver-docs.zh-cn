@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c8b465ac667d458874a1fcd1346b06b5bd711c7
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356921"
 ---
 # <a name="communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface"></a>使用 IOemCellularModem 接口与 RIL 驱动程序进行通信
 

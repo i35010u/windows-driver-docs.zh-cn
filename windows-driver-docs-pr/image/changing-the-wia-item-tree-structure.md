@@ -5,11 +5,11 @@ ms.assetid: fa6c9d25-4435-43ee-a262-9e267b9a0a69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7fd29bf0cc83d36923e35c094a7218f5f88b89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373306"
 ---
 # <a name="changing-the-wia-item-tree-structure"></a>更改 WIA 项树状结构
 

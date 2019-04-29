@@ -1,17 +1,17 @@
 ---
-title: 针对设备属性页提供程序的一般要求
-description: 针对设备属性页提供程序的一般要求
+title: 设备属性页提供程序的常规要求
+description: 设备属性页提供程序的常规要求
 ms.assetid: 91e93679-8c0c-43e7-a7d9-72bd0a464406
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1d72eef250a6128c519ec3f4ea893dbe872307
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392510"
 ---
-# <a name="general-requirements-for-device-property-page-providers"></a>针对设备属性页提供程序的一般要求
+# <a name="general-requirements-for-device-property-page-providers"></a>设备属性页提供程序的常规要求
 
 
 若要创建设备属性页，提供程序必须遵循这些常规要求按顺序的属性页后，可以正常工作：

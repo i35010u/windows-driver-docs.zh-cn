@@ -1,17 +1,17 @@
 ---
-title: NDIS QoS 的标准化的 INF 关键字
-description: NDIS QoS 的标准化的 INF 关键字
+title: NDIS QoS 的标准化 INF 关键字
+description: NDIS QoS 的标准化 INF 关键字
 ms.assetid: 7967D633-850F-4707-9577-9262AEB1A597
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 236ea7fa353a460c774fc4786b96903d84289291
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345979"
 ---
-# <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 的标准化 INF 关键字
 
 
 标准化的 INF 关键字定义来启用或禁用微型端口驱动程序上对 NDIS 服务质量 (QoS) 的支持。
@@ -51,7 +51,7 @@ ms.locfileid: "56523199"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>

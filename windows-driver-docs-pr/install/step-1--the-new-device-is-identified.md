@@ -5,13 +5,13 @@ ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abf5b6914755652ac95a0d10532eb12067c1d3f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369395"
 ---
-# <a name="step-1-the-new-device-is-identified"></a>第 1 步：新设备标识
+# <a name="step-1-the-new-device-is-identified"></a>第 1 步：标识新设备
 
 
 新设备、 总线或中心驱动程序到安装了驱动程序之前它将设备连接分配[硬件标识符 (ID)](hardware-ids.md)到设备。 Windows 使用硬件 Id 来查找设备之间的最接近匹配和一个[驱动程序包](driver-packages.md)，其中包含设备的驱动程序。 有关硬件 Id 的详细信息，请参阅[设备标识字符串](device-identification-strings.md)。

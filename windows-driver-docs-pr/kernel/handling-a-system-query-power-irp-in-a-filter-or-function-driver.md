@@ -1,6 +1,6 @@
 ---
-title: 处理系统查询能耗 IRP 中一个筛选器或功能驱动程序
-description: 处理系统查询能耗 IRP 中一个筛选器或功能驱动程序
+title: 处理筛选器或函数驱动程序中的系统 Query-Power IRP
+description: 处理筛选器或函数驱动程序中的系统 Query-Power IRP
 ms.assetid: 81d921d5-6db8-4858-b86e-1484781faba5
 keywords:
 - 查询能耗 Irp WDK 电源管理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 691eeb9b34709a19c4405e40826b2f5fc348d915
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359833"
 ---
-# <a name="handling-a-system-query-power-irp-in-a-filter-or-function-driver"></a>处理系统查询能耗 IRP 中一个筛选器或功能驱动程序
+# <a name="handling-a-system-query-power-irp-in-a-filter-or-function-driver"></a>处理筛选器或函数驱动程序中的系统 Query-Power IRP
 
 
 

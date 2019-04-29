@@ -1,5 +1,5 @@
 ---
-title: INF DDInstall.Services 部分
+title: INF DDInstall.Services 节
 description: 每个每个模型 DDInstall.Services 部分包含一个或多个引用的 INF 文件中的其他 INF 编写器定义部分的 INF AddService 指令。
 ms.assetid: 30efb094-cc18-4c01-8851-4bc5dba1ae1d
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efb03b5b2f1243d6230941206526f119761f4861
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370584"
 ---
-# <a name="inf-ddinstallservices-section"></a>INF DDInstall.Services 部分
+# <a name="inf-ddinstallservices-section"></a>INF DDInstall.Services 节
 
 
 每个每个模型<em>DDInstall</em>**。服务**部分包含一个或多个[ **INF AddService 指令**](inf-addservice-directive.md)引用 INF 文件中的其他 INF 编写器定义部分。
@@ -138,7 +138,7 @@ ServiceBinary = %10%\system32\drivers\mssb16.sys
 
 请参阅[ **INF DDInstall.HW 部分**](inf-ddinstall-hw-section.md)的更多示例<em>DDInstall</em>**。服务**包含一些部分*服务安装*-引用的部分[ **AddService** ](inf-addservice-directive.md)指令。 这包括一个用于即插即用的筛选器驱动程序。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddService**](inf-addservice-directive.md)

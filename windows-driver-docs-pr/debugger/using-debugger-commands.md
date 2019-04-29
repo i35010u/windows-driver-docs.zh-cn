@@ -6,11 +6,11 @@ keywords: 命令、 调试器命令和元命令
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bf91529add011f250f17e483bc37311015597b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371631"
 ---
 # <a name="using-debugger-commands"></a>使用调试器命令
 

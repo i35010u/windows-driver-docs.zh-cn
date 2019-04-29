@@ -1,6 +1,6 @@
 ---
-title: 筛选器控件中 AVStream 的互斥体
-description: 筛选器控件中 AVStream 的互斥体
+title: AVStream 中的筛选器控件互斥
+description: AVStream 中的筛选器控件互斥
 ms.assetid: 402795a0-e567-4e7e-a7d8-b2ce29ffb8fd
 keywords:
 - 筛选器控件互斥体 WDK AVStream
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06a6af77bfa218d18fc6dab43c4f5c9b1d342d84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376107"
 ---
-# <a name="filter-control-mutex-in-avstream"></a>筛选器控件中 AVStream 的互斥体
+# <a name="filter-control-mutex-in-avstream"></a>AVStream 中的筛选器控件互斥
 
 
 

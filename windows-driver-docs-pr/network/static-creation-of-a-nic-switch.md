@@ -1,17 +1,17 @@
 ---
-title: 静态创建的 NIC 开关
-description: 静态创建的 NIC 开关
+title: NIC 交换机的静态创建
+description: NIC 交换机的静态创建
 ms.assetid: F325B1F8-7655-4044-AF04-32B434574082
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb2d551e4b89a5bfc90a687bbdb8872b0114e26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390626"
 ---
-# <a name="static-creation-of-a-nic-switch"></a>静态创建的 NIC 开关
+# <a name="static-creation-of-a-nic-switch"></a>NIC 交换机的静态创建
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须能够创建 NIC 交换机。 对于某些适配器，NIC 开关可以创建以静态方式调用的上下文中[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)。

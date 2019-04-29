@@ -1,6 +1,6 @@
 ---
-title: 功能的驱动程序
-description: 功能的驱动程序
+title: 函数驱动程序
+description: 函数驱动程序
 ms.assetid: a6ac329b-ffb0-4bd3-9d54-195fa025d532
 keywords:
 - 函数的 WDK WDM 驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17397b0c68258dc7db5e6dd86a5c285c7af9a4f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359945"
 ---
-# <a name="function-drivers"></a>功能的驱动程序
+# <a name="function-drivers"></a>函数驱动程序
 
 
 

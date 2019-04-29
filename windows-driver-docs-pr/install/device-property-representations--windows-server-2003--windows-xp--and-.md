@@ -1,19 +1,19 @@
 ---
 title: 设备属性表示形式 (Windows Server 2003，Windows XP)
-description: 设备属性表示形式 （Windows Server 2003、 Windows XP 和 Windows 2000）
+description: 设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
 ms.assetid: 124172d7-52a4-423c-a1fd-eec554f328d6
 keywords:
 - 设备属性 WDK 设备安装，表示形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6d874d6075034c3b18bc0fa0c5edf521488d5aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356115"
 ---
-# <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>设备属性表示形式 （Windows Server 2003、 Windows XP 和 Windows 2000）
+# <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
 
 
 不支持 Windows Server 2003、 Windows XP 和 Windows 2000[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)该 Windows Vista 和更高版本的 Windows 支持。 但是，大部分[系统定义的设备属性](https://msdn.microsoft.com/library/windows/hardware/ff553413)所包含统一的设备属性模型中具有相应的表示形式，这些早期版本的 Windows 支持。 在这些早期版本的 Windows 中，表示设备属性的方式，，种机制，用于访问属性，依赖于的组件类型和属性类型。 这些表示形式和机制包括：

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_TCP_RSC_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: fe48b97ade31b80a5e424b90d6358f3f1290f628
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354145"
 ---
 # <a name="oidtcprscstatistics"></a>OID\_TCP\_RSC\_统计信息
 
@@ -41,7 +41,7 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 RSC 服务必须支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>NDIS 6.30 和更高版本在 Windows 8 中的驱动程序支持。</p></td>
 </tr>
 <tr class="even">

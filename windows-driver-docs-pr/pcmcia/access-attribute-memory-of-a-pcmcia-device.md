@@ -1,6 +1,6 @@
 ---
-title: PCMCIA 设备的访问属性内存
-description: PCMCIA 设备的访问属性内存
+title: 访问 PCMCIA 设备的属性内存
+description: 访问 PCMCIA 设备的属性内存
 ms.assetid: 270b8821-6322-4694-83eb-de319197dd6a
 keywords:
 - PCMCIA WDK 总线，属性内存
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b083c2ef3c163e78b74e1e83705a4ec2d43c6d65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362475"
 ---
-# <a name="access-attribute-memory-of-a-pcmcia-device"></a>PCMCIA 设备的访问属性内存
+# <a name="access-attribute-memory-of-a-pcmcia-device"></a>访问 PCMCIA 设备的属性内存
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 驱动程序 SetupAPI 日志中的排名信息
-description: 驱动程序 SetupAPI 日志中的排名信息
+title: SetupAPI 日志中的驱动程序分级信息
+description: SetupAPI 日志中的驱动程序分级信息
 ms.assetid: 169a1963-3fb3-4254-9634-78034cda2924
 keywords:
 - SetupAPI 日志记录 WDK Windows Vista 中，驱动程序排名的信息
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a0583922123f50ba3b33c08e5f01eb5fe62402
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356020"
 ---
-# <a name="driver-rank-information-in-the-setupapi-log"></a>驱动程序 SetupAPI 日志中的排名信息
+# <a name="driver-rank-information-in-the-setupapi-log"></a>SetupAPI 日志中的驱动程序分级信息
 
 
 Windows 使用签名指示器来表示签名类型。 Windows 将在此信息保存[驱动程序存储区](driver-store.md)供内部使用的数据库。

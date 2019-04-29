@@ -1,6 +1,6 @@
 ---
-title: 将优先级分配给保护级别
-description: 将优先级分配给保护级别
+title: 将优先顺序分配到保护级别
+description: 将优先顺序分配到保护级别
 ms.assetid: 87a63d30-4aa2-4835-87bc-1acb062bde26
 keywords:
 - 保护级别 WDK 显示分配的优先级
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b55f594291ec36d8e6c400ce03aeb59994d001
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350321"
 ---
-# <a name="assigning-precedence-to-protection-levels"></a>将优先级分配给保护级别
+# <a name="assigning-precedence-to-protection-levels"></a>将优先顺序分配到保护级别
 
 
 优先级值分配给每个保护级别的每种保护类型。 这样一来，物理输出可以确定要使用如果两个或多个受保护的输出是与物理输出相关联，并且每个受保护的输出具有不同的保护级别的保护级别。

@@ -6,11 +6,11 @@ ms.assetid: 5ba110fc-1a12-4cbd-adc9-ef9441e257cb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23a9888c606525e9611a88f8fae4087c9ba0ceb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356679"
 ---
 # <a name="b"></a>B
 

@@ -1,6 +1,6 @@
 ---
-title: 远程调试通过 Remote.exe
-description: 远程调试通过 Remote.exe
+title: 通过 Remote.exe 进行远程调试
+description: 通过 Remote.exe 进行远程调试
 ms.assetid: 138cd409-bf89-498a-8c7c-74fca7c227d5
 keywords:
 - 远程调试通过 remote.exe
@@ -12,13 +12,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f54130ff1bcef0bd03a5867af2c6bd4a245f3d1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353566"
 ---
-# <a name="remote-debugging-through-remoteexe"></a>远程调试通过 Remote.exe
+# <a name="remote-debugging-through-remoteexe"></a>通过 Remote.exe 进行远程调试
 
 
 ## <span id="ddk_remote_debugging_through_remote_exe_dbg"></span><span id="DDK_REMOTE_DEBUGGING_THROUGH_REMOTE_EXE_DBG"></span>

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dd5b3e89fc08374cffc6b69831d39d803b934d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359665"
 ---
 # <a name="avstream-architecture-advanced-topics"></a>AVStream 体系结构：高级主题
 

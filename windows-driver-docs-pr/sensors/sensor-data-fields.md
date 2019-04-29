@@ -5,17 +5,17 @@ ms.assetid: E430AC59-34AC-4F8E-9A42-350C7A42BBA8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ac26975bef9eb3025021585d5d9902d8b646cd8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368871"
 ---
 # <a name="sensor-data-fields"></a>传感器数据字段
 
 *传感器数据字段*表示特定类型的传感器可以提供的信息。 在报告数据，值被认为是要包含在*数据字段*。 相关的数据字段的集合构成*数据报表*。 在 SENSOR_COLLECTION_LIST 结构一起打包数据报表。 数据的每个报表必须包含至少一个有效的数据字段和一个时间戳，标识创建了数据报表的时间。 由 PKEY_SensorData_Timestamp 属性键表示时间戳。 数据字段的示例包括 x、 y、 z 加速加速感应器值。 每个数据字段由**PROPERTYKEY**常量。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 |主题|描述|
 |---|---|

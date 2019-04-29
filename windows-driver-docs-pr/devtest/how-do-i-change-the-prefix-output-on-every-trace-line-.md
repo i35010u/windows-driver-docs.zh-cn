@@ -5,13 +5,13 @@ ms.assetid: be2b6207-79f5-4d71-a6a2-075f3078a873
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61becf5f3b8a75ee0541712cbc9a127ee8c7b462
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360389"
 ---
-# <a name="how-do-i-change-the-prefix-output-on-every-trace-line"></a>如何更改跟踪的每个行上的前缀输出？
+# <a name="how-do-i-change-the-prefix-output-on-every-trace-line"></a>如何更改每个跟踪行中的前缀输出？
 
 
 使用以下命令更改跟踪的每个行上的前缀输出：

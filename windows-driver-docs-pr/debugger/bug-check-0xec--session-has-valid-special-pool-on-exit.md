@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a5b9e9c2cf6e787dc757648ed9d26761cad59000
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373096"
 ---
 # <a name="bug-check-0xec-sessionhasvalidspecialpoolonexit"></a>Bug 检查 0xEC：会话\_HAS\_有效\_特殊\_池\_ON\_退出
 

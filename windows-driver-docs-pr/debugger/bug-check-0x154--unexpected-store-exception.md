@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe02a3fd21dc33c192073f46a822212ed16db36
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359560"
 ---
 # <a name="bug-check-0x154-unexpectedstoreexception"></a>Bug 检查 0x154：意外\_STORE\_异常
 

@@ -5,11 +5,11 @@ ms.assetid: c310829f-e102-4a96-aa3e-39136b8a641b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d0441ff7e12e6ada42b5d46d8836a22f929bf517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359943"
 ---
 # <a name="general-io-programming-techniques"></a>常规 I/O 编程技术
 

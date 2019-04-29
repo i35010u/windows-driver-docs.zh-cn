@@ -9,11 +9,11 @@ keywords:
 ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58761858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357167"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
 

@@ -1,6 +1,6 @@
 ---
-title: 常用属性页用户界面
-description: 常用属性页用户界面
+title: 通用属性页用户界面
+description: 通用属性页用户界面
 ms.assetid: 7af3435a-19e0-40a1-9f94-319d9d323856
 keywords:
 - 自定义 WDK、 通用的属性页用户界面的打印机驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d226892986346a3b3f1040d9a1a7b60a24a3e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353270"
 ---
-# <a name="common-property-sheet-user-interface"></a>常用属性页用户界面
+# <a name="common-property-sheet-user-interface"></a>通用属性页用户界面
 
 
 

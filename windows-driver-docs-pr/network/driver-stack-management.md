@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fe5bd1e91088a1f61d86930d0c426f58dac966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372667"
 ---
 # <a name="driver-stack-management"></a>驱动程序堆栈管理
 

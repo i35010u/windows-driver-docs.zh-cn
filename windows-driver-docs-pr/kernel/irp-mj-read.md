@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_READ Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: fee47dc083df75a8e15a89a55e9563c2274c4f9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368449"
 ---
 # <a name="irpmjread"></a>IRP\_MJ\_READ
 
@@ -60,13 +60,13 @@ ms.locfileid: "56544458"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)

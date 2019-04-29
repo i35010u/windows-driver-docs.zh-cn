@@ -1,6 +1,6 @@
 ---
-title: 系统提供并行的驱动程序的功能
-description: 系统提供并行的驱动程序的功能
+title: 系统提供的并行驱动程序的功能
+description: 系统提供的并行驱动程序的功能
 ms.assetid: 6d579a88-4608-4333-9789-e10c562fc644
 keywords:
 - 系统提供并行的驱动程序 WDK，有关系统提供并行的驱动程序
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46d98a154681c101233543d06cc2dd1194f1fa88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373544"
 ---
-# <a name="features-of-system-supplied-parallel-drivers"></a>系统提供并行的驱动程序的功能
+# <a name="features-of-system-supplied-parallel-drivers"></a>系统提供的并行驱动程序的功能
 
 
 
@@ -88,7 +88,7 @@ Windows 2000 包括以下驱动程序：
 
 [并行端口和设备简介](introduction-to-parallel-ports-and-devices.md)
 
-[供应商提供并行的驱动程序](vendor-supplied-parallel-drivers.md)
+[供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
 [系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

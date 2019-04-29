@@ -1,19 +1,19 @@
 ---
-title: 分析视频 Stream 停滞
-description: 分析视频 Stream 停滞
+title: 分析视频流停滞问题
+description: 分析视频流停滞问题
 ms.assetid: b53b7f4b-c82f-4dba-933c-ec72177e6990
 keywords:
 - 内核调试，视频流停止流式处理
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2080ff81d64f5367f571eacb6c01e9bb970321
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355429"
 ---
-# <a name="analyzing-a-video-stream-stall"></a>分析视频 Stream 停滞
+# <a name="analyzing-a-video-stream-stall"></a>分析视频流停滞问题
 
 
 本部分介绍如何分析视频流停滞。 引入了独立硬件供应商 (IHV) 驱动程序 bug 后，从 AVStream 微型驱动程序会生成所有示例输出。

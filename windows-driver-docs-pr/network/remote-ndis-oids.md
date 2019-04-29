@@ -1,17 +1,17 @@
 ---
-title: 远程 NDIS Oid
-description: 远程 NDIS Oid
+title: 远程 NDIS OID
+description: 远程 NDIS OID
 ms.assetid: c97592e8-f395-475e-8e6c-6366d1605075
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd4b9d252b537c96160a390220b8245d8ba92bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350842"
 ---
-# <a name="remote-ndis-oids"></a>远程 NDIS Oid
+# <a name="remote-ndis-oids"></a>远程 NDIS OID
 
 
 

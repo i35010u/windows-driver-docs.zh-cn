@@ -6,11 +6,11 @@ keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2, OID_GEN_RECEIVE_SCALE_PARAMETERS_
 ms.date: 10/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 687db15ca59a2480ba2cf2a0a100599b3552b549
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364199"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -59,7 +59,7 @@ ms.locfileid: "56568433"
 
 | | |
 | --- | --- |
-| 版本 | Windows 10 版本 1709 |
+| Version | Windows 10 版本 1709 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 56dde9f5e26f242ef54a2cb0d2805d7808661405
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369507"
 ---
 # <a name="wiaipaitemflags"></a>WIA\_IPA\_项\_标志
 
@@ -210,13 +210,13 @@ WIA 项标志是否与中相同*lObjectFlags*的参数[ **wiasCreateDrvItem** ](
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPA\_格式**](wia-ipa-format.md)

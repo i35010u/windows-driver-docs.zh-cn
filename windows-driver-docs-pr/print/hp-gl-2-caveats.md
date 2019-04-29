@@ -1,6 +1,6 @@
 ---
-title: HP/2 需要注意的问题
-description: HP/2 需要注意的问题
+title: HP-GL/2 注意事项
+description: HP-GL/2 注意事项
 ms.assetid: 201a894e-5d22-46f8-965d-0e5b88dc54d7
 keywords:
 - HP/2 单色 WDK Unidrv，其他注意事项
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48978b4c47b9e42d9dc1e07cb5bb06dffac3089e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360508"
 ---
-# <a name="hp-gl2-caveats"></a>HP/2 需要注意的问题
+# <a name="hp-gl2-caveats"></a>HP-GL/2 注意事项
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: 问： qq （退出）
+title: q、qq（退出）
 description: '问: 和 qq 命令结束调试会话。'
 ms.assetid: 94d35997-8b21-4d25-b2ae-4b2a78240153
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bfe9421c9da02d26bbbc58b3794de108c53093e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362383"
 ---
-# <a name="q-qq-quit"></a>问： qq （退出）
+# <a name="q-qq-quit"></a>q、qq（退出）
 
 
 **Q**并**qq**命令结束调试会话。 （在 CDB 和 KD 中，此命令还将退出调试器本身。 在 WinDbg 中，此命令返回调试器到休眠模式。）

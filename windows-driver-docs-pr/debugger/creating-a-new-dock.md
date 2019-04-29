@@ -1,6 +1,6 @@
 ---
-title: 创建新的停靠
-description: 创建新的停靠
+title: 创建新的停靠窗口
+description: 创建新的停靠窗口
 ms.assetid: 99cba4f9-4025-4684-920b-43c7147b5385
 keywords:
 - 创建一个新的停靠窗口停靠
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2a56a9a42fa1b9f0dec63ff1799fd2f26facb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375471"
 ---
-# <a name="creating-a-new-dock"></a>创建新的停靠
+# <a name="creating-a-new-dock"></a>创建新的停靠窗口
 
 
 ## <span id="ddk_creating_new_docks_dbg"></span><span id="DDK_CREATING_NEW_DOCKS_DBG"></span>

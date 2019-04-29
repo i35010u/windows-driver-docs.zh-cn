@@ -5,11 +5,11 @@ ms.assetid: 37614100-0a56-4a32-8e45-3161994e503a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3932c57925a4bd544bb20e6ef24f475e122dc5a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357787"
 ---
 # <a name="device-metadata-package-structure"></a>设备元数据包结构
 

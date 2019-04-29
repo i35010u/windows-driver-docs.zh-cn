@@ -1,6 +1,6 @@
 ---
-title: 验证对象句柄失败
-description: 验证对象句柄失败
+title: 无法验证对象句柄
+description: 无法验证对象句柄
 ms.assetid: 67d52ca8-4e86-4fe2-a541-f7a0e4040b93
 keywords:
 - 可靠性 WDK 内核对象句柄验证
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 198ace4aca05664a91f8244398fe2e3bc80c6ef5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359995"
 ---
-# <a name="failure-to-validate-object-handles"></a>验证对象句柄失败
+# <a name="failure-to-validate-object-handles"></a>无法验证对象句柄
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: b6b859cf-de30-4df0-bec1-0cd7d8c55ea6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b2441f9d33f9f594a618d3b4ad9858459255240
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356113"
 ---
 # <a name="deviceinfo-xml-document"></a>DeviceInfo XML 文档
 

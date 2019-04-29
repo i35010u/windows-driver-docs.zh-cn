@@ -5,13 +5,13 @@ ms.assetid: 9c77fea4-61d9-4bec-8d8d-35436d00c1ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ada6abf55e6f324785bf7b85aa862a64015b1e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373081"
 ---
-# <a name="example-simple-segmentation-filter"></a>示例：简单的分段的筛选器
+# <a name="example-simple-segmentation-filter"></a>例如：简单的分段筛选器
 
 
 

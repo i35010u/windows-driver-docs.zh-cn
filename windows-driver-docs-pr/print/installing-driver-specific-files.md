@@ -1,6 +1,6 @@
 ---
-title: 安装特定于驱动程序文件
-description: 安装特定于驱动程序文件
+title: 安装驱动程序特定的文件
+description: 安装驱动程序特定的文件
 ms.assetid: 19beaf89-c0c2-4706-8d25-12d76dc936d7
 keywords:
 - 点和打印 WDK，特定于驱动程序的文件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9ffb9ec2d7c3e6602887028dcde7af9e6a46128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366576"
 ---
-# <a name="installing-driver-specific-files"></a>安装特定于驱动程序文件
+# <a name="installing-driver-specific-files"></a>安装驱动程序特定的文件
 
 
 

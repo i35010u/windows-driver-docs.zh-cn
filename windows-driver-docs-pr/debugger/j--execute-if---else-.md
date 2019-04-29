@@ -1,5 +1,5 @@
 ---
-title: j (如果执行-其他)
+title: j（执行 If - Else）
 description: J 命令有条件地执行一个指定命令，具体取决于给定表达式的计算。
 ms.assetid: c6bb2415-e888-458b-8fb9-9d50b90cc531
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8030afbb9018c7063104c288c10ac46be94b6cc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367227"
 ---
-# <a name="j-execute-if---else"></a>j (如果执行-其他)
+# <a name="j-execute-if---else"></a>j（执行 If - Else）
 
 
 **J**命令有条件地执行一个指定命令，具体取决于给定表达式的计算。

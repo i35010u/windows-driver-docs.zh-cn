@@ -5,11 +5,11 @@ ms.assetid: befe7e36-cb42-48da-88b4-d8983876266f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 624fb0ee5f3755e4dcb115b5995fc92717c381eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364579"
 ---
 # <a name="developing-a-wia-scanner-driver"></a>开发 WIA 扫描仪驱动程序
 

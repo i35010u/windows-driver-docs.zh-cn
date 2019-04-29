@@ -5,11 +5,11 @@ ms.assetid: C5CF9665-9289-48EB-AA12-8881F812488A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2bbaeed3a565e8854074439b410d2cc17494fff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63348478"
 ---
 # <a name="file-share-smb-symbol-server"></a>文件共享 (SMB) 符号服务器
 
@@ -113,7 +113,7 @@ srv**\\MachineName\Symbols
 
 如果 DBGHELP\_HOMEDIR 变量未设置，DBGHELP\_HOMEDIR 默认为调试器可执行文件文件夹 (例如 c:\\Program Files\\Windows 工具包\\10.0\\调试器\\x86)，并使缓存以 c： 驱动器中发生\\Program Files\\Windows 工具包\\10.0\\调试器\\x86\\Sym.
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [符号存储区文件夹树](symbol-store-folder-tree.md)

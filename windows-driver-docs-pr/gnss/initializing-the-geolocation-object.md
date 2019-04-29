@@ -5,11 +5,11 @@ ms.assetid: 3803BD3B-9853-4AA4-A278-22F8D835B1ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d43e676a93ec298a0daf71b18820a6f70b72c18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371040"
 ---
 # <a name="initializing-the-geolocation-object"></a>初始化地理位置对象
 

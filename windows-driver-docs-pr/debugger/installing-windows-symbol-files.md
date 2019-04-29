@@ -8,11 +8,11 @@ keywords:
 ms.date: 03/26/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d2a2ec8db9b2230f4b5a2d62c0780bed6522c0f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371657"
 ---
 # <a name="installing-windows-symbol-files"></a>安装 Windows 符号文件
 

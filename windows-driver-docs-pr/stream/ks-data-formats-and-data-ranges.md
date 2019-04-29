@@ -1,6 +1,6 @@
 ---
-title: KS 数据格式和数据区域
-description: KS 数据格式和数据区域
+title: KS 数据格式和数据范围
+description: KS 数据格式和数据范围
 ms.assetid: 44b55a5a-ec58-4c1e-b780-e20829fe3edf
 keywords:
 - 流式处理数据格式 WDK 内核
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e62c95a50ff421fa10d9ce070096cb49b3d50df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362380"
 ---
-# <a name="ks-data-formats-and-data-ranges"></a>KS 数据格式和数据区域
+# <a name="ks-data-formats-and-data-ranges"></a>KS 数据格式和数据范围
 
 
 

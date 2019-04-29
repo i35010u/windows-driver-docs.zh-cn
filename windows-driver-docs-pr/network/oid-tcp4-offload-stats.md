@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f532fea0a04e142555135bb1b351224299158e71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63350903"
 ---
 # <a name="oidtcp4offloadstats"></a>OID_TCP4_OFFLOAD_STATS
 
@@ -25,6 +25,6 @@ OID_TCP4_OFFLOAD_STATS 一组响应，卸载目标应重置为零的所有卸载
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows Vista 及更高版本 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 

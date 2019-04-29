@@ -1,17 +1,17 @@
 ---
-title: 显示控件接口函数
-description: 显示控件接口函数
+title: 显示控制接口函数
+description: 显示控制接口函数
 ms.assetid: 3e0ecf09-9723-4550-a095-5102a2f4ee9d
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24a622515b32cfec645f0d9a08784a0f54059ad2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362155"
 ---
-# <a name="display-control-interface-functions"></a>显示控件接口函数
+# <a name="display-control-interface-functions"></a>显示控制接口函数
 
 
 ## <span id="ddk_display_control_interface_functions_gg"></span><span id="DDK_DISPLAY_CONTROL_INTERFACE_FUNCTIONS_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 118d9fd9-c499-4371-9084-a4368a78f5e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40fedbe775c3c9534646ecc45c71d85f2ef19cf7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355881"
 ---
 # <a name="filter-installation"></a>筛选器安装
 

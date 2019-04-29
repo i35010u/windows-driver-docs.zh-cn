@@ -1,17 +1,17 @@
 ---
-title: 安装映像处理筛选器
-description: 安装映像处理筛选器
+title: 安装图像处理筛选器
+description: 安装图像处理筛选器
 ms.assetid: bce6405f-0377-4e50-b898-28c6cdb962be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f33e27ca3c5341326922589674415fe017145b02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360035"
 ---
-# <a name="installing-an-image-processing-filter"></a>安装映像处理筛选器
+# <a name="installing-an-image-processing-filter"></a>安装图像处理筛选器
 
 
 

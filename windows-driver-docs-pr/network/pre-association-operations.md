@@ -1,6 +1,6 @@
 ---
-title: 预关联操作
-description: 预关联操作
+title: 关联前的操作
+description: 关联前的操作
 ms.assetid: fc9a8548-24f0-48f9-9e3f-ad85a90f91ed
 keywords:
 - IHV 扩展 DLL WDK 本机 802.11，预关联操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3fe7a1fcbf3cba2685f24f29495e1a188a3c1b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355208"
 ---
-# <a name="pre-association-operations"></a>预关联操作
+# <a name="pre-association-operations"></a>关联前的操作
 
 
 

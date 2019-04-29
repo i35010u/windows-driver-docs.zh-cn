@@ -5,11 +5,11 @@ ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358573"
 ---
 # <a name="v4-driver-manifest"></a>V4 驱动程序清单
 

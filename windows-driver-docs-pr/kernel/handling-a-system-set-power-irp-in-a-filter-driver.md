@@ -1,6 +1,6 @@
 ---
-title: 处理筛选器驱动程序中的系统集 Power IRP
-description: 处理筛选器驱动程序中的系统集 Power IRP
+title: 处理筛选器驱动程序中的系统 Set-Power IRP
+description: 处理筛选器驱动程序中的系统 Set-Power IRP
 ms.assetid: a6e364fc-f173-47ce-b36b-84f802cefcc3
 keywords:
 - 设置 power Irp WDK 电源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09deaada5b6f5abf5a9fb86935524aa6d5e0e385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359817"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-filter-driver"></a>处理筛选器驱动程序中的系统集 Power IRP
+# <a name="handling-a-system-set-power-irp-in-a-filter-driver"></a>处理筛选器驱动程序中的系统 Set-Power IRP
 
 
 

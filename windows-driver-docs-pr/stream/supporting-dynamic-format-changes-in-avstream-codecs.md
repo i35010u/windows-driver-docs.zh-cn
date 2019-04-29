@@ -1,6 +1,6 @@
 ---
-title: 在 AVStream 编解码器支持动态格式更改
-description: 在 AVStream 编解码器支持动态格式更改
+title: 在 AVStream 编解码器中支持动态格式更改
+description: 在 AVStream 编解码器中支持动态格式更改
 ms.assetid: ae222512-fd19-404a-aaf8-6fbfa2a3349e
 keywords:
 - 硬件编解码器支持 WDK AVStream，动态格式更改
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 030d22c07134ede6ea81131f30d783c3bbc452e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371839"
 ---
-# <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>在 AVStream 编解码器支持动态格式更改
+# <a name="supporting-dynamic-format-changes-in-avstream-codecs"></a>在 AVStream 编解码器中支持动态格式更改
 
 
 正在运行的媒体流动态格式更改时，系统提供 Devproxy 模块协商使用捕获的 pin 来确定是否将可接受新的格式。

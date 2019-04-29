@@ -5,11 +5,11 @@ ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b22a03616aa0b43a2d46979510f19787c23d50a
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361881"
 ---
 # <a name="windows-kernel-opaque-structures"></a>Windows 内核不透明结构
 

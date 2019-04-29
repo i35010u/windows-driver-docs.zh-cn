@@ -5,11 +5,11 @@ ms.assetid: 7fa03413-5b95-443f-9b0f-75d82d0e41cf
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e670d7a572555493412f1a6cf86775170750871
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372857"
 ---
 # <a name="trayname-inputbins"></a>\[TrayName\] (InputBins)
 

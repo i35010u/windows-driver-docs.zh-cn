@@ -5,11 +5,11 @@ ms.assetid: 8af2cbe7-f249-4e2f-940f-b50bc451cabe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e142e01a360afd94d1ba8cd088b9f76d45fe98b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363066"
 ---
 # <a name="inf-file-entries"></a>INF 文件条目
 

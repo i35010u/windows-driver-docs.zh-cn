@@ -1,17 +1,17 @@
 ---
-title: 远程调试使用 WinDbg
+title: 使用 WinDbg 进行远程调试
 description: 远程调试涉及两个调试器运行在两个不同的位置。
 ms.assetid: 3030CEE4-DF10-4F84-A32D-38613D7EE072
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c4ec56f7332a46adc31879859fcf0e0d1703438
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353601"
 ---
-# <a name="remote-debugging-using-windbg"></a>远程调试使用 WinDbg
+# <a name="remote-debugging-using-windbg"></a>使用 WinDbg 进行远程调试
 
 
 远程调试涉及两个调试器运行在两个不同的位置。 调用调试器执行的调试*调试服务器*。 第二个调试器中，称为*调试客户端*，控制从远程位置的调试会话。 若要建立的远程会话，必须首先设置调试服务器并随后激活调试客户端。
@@ -48,7 +48,7 @@ ms.locfileid: "56546608"
 
    其中*YourHostComputer*是您正在运行调试服务器的主机计算机的名称。
 
-   单击“确定” 。
+   单击 **“确定”**。
 
 ## <a name="span-idusingthecommandlinespanspan-idusingthecommandlinespanspan-idusingthecommandlinespanusing-the-command-line"></a><span id="Using_the_Command_Line"></span><span id="using_the_command_line"></span><span id="USING_THE_COMMAND_LINE"></span>使用命令行
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72197c07fe57f018fa4b485fd191cebdfbe2cce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368837"
 ---
 # <a name="sensor-driver-development-basics"></a>传感器驱动程序开发的基础知识
 

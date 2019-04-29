@@ -1,19 +1,19 @@
 ---
-title: 指定分配器组帧中 AVStream 编解码器
-description: 指定分配器组帧中 AVStream 编解码器
+title: 在 AVStream 编解码器中指定分配器组帧
+description: 在 AVStream 编解码器中指定分配器组帧
 ms.assetid: e5b042ae-9b9c-48e9-9f0c-449e205316a9
 keywords:
 - AVStream 硬件编解码器支持 WDK，指定分配器组帧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18555ff315f8d963aa5ec7290cc0c5a8f267cba8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360824"
 ---
-# <a name="specifying-allocator-framing-in-avstream-codecs"></a>指定分配器组帧中 AVStream 编解码器
+# <a name="specifying-allocator-framing-in-avstream-codecs"></a>在 AVStream 编解码器中指定分配器组帧
 
 
 通常情况下，KS pin 的分配器要求确定流式处理提供的 AVStream 的缓冲区的物理大小。

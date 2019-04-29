@@ -1,6 +1,6 @@
 ---
-title: Framework 对象生命周期
-description: Framework 对象生命周期
+title: 框架对象生命周期
+description: 框架对象生命周期
 ms.assetid: 33efc3a8-ac46-4626-ba0f-beb1eaa9ee47
 keywords:
 - framework 对象 WDK KMDF、 生命周期
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31db062268fc2f45dffd6fb0c1889bbbd4308df3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370889"
 ---
-# <a name="framework-object-life-cycle"></a>Framework 对象生命周期
+# <a name="framework-object-life-cycle"></a>框架对象生命周期
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 528e5eaa-aaeb-4e5b-a4b2-0f518fcd79ee
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cc015ae40f9b2db851ebc16b0749d8b5d39c5a9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360911"
 ---
 # <a name="eventtypesqualifiers"></a>事件\_类型\_限定符
 

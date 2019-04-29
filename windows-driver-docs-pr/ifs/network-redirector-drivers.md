@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ad1427840296cf3ac12fe5df7c7c9b052e019
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352801"
 ---
 # <a name="network-redirector-drivers"></a>网络重定向程序驱动程序
 

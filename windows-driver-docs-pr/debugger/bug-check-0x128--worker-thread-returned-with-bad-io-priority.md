@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 431e3f54f6bb397f0b25c72998720767c28ba614
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354701"
 ---
 # <a name="bug-check-0x128-workerthreadreturnedwithbadiopriority"></a>Bug 检查 0x128：辅助角色\_线程\_返回\_WITH\_错误\_IO\_优先级
 

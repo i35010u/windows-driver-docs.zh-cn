@@ -1,17 +1,17 @@
 ---
-title: 清除上虚拟端口的接收筛选器
-description: 清除上虚拟端口的接收筛选器
+title: 清除虚拟端口上的接收筛选器
+description: 清除虚拟端口上的接收筛选器
 ms.assetid: 8431322B-2BF0-4F82-AAAE-0E0396BBC857
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93e743a243aade14c147a8a7c8678c6e5cf1ea61
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353181"
 ---
-# <a name="clearing-a-receive-filter-on-a-virtual-port"></a>清除上虚拟端口的接收筛选器
+# <a name="clearing-a-receive-filter-on-a-virtual-port"></a>清除虚拟端口上的接收筛选器
 
 
 若要清除的 NIC 交换机上的虚拟端口 (VPort) 从接收筛选器，基础驱动程序发出的对象标识符 (OID) 组请求[OID\_接收\_筛选器\_清除\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569785). **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_接收\_筛选器\_清除\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567166)结构。

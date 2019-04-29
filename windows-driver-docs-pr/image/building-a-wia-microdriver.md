@@ -1,17 +1,17 @@
 ---
-title: 构建 WIA Microdriver
-description: 构建 WIA Microdriver
+title: 构建 WIA 微驱动程序
+description: 构建 WIA 微驱动程序
 ms.assetid: dcec3079-2844-4d87-b2e4-0c1850118192
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fe2bdb19ccc7141c2a32cf72b7305339d2207ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373320"
 ---
-# <a name="building-a-wia-microdriver"></a>构建 WIA Microdriver
+# <a name="building-a-wia-microdriver"></a>构建 WIA 微驱动程序
 
 
 
@@ -73,7 +73,7 @@ WIA 使用下表中所示的库文件。
 
 在生成环境中，WDK *Include*并*Lib*目录应在搜索路径中的第一个目录。 这可确保使用最新版本的标头和库文件。
 
-**请注意**  如果你想要随 Visual c + + 6.0 一起使用日志记录，生成 microdriver 时，启用日志记录*Wiafbdrv.dll*通过*Wialogcfg.exe*自带程序Windows Me 驱动程序开发工具包 (DDK)。 另外，检查以确保 microdriver 名称是正确的 INF 文件。 在 INF，检查**DeviceData**部分，了解 MicroDriver ="YOURNAME。DLL"。
+**请注意**  如果你想要使用日志记录与 Visual C++ 6.0 生成 microdriver 时启用日志记录*Wiafbdrv.dll*通过*Wialogcfg.exe*程序提供与 Windows Me 驱动程序开发工具包 (DDK)。 另外，检查以确保 microdriver 名称是正确的 INF 文件。 在 INF，检查**DeviceData**部分，了解 MicroDriver ="YOURNAME。DLL"。
 
  
 

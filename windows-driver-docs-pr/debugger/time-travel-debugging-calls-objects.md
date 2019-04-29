@@ -4,11 +4,11 @@ description: 本部分中描述的调用模型与时间旅行调试相关联的�
 ms.date: 09/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9300b2b472ac0a354f9e0a08f1c1f7c5d914a8de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366189"
 ---
 # <a name="ttd-calls-objects"></a>TTD 调用对象
 ## <a name="description"></a>描述
@@ -33,7 +33,7 @@ ms.locfileid: "56562801"
 
 ## <a name="children"></a>Children
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | Parameters[] | 包含参数的数组传递给函数。 根据函数的类型签名的元素数而异。 |
 | TimeStart | 一个[位置对象](time-travel-debugging-position-objects.md)，它描述调用的开始处的位置。 |

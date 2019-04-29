@@ -5,11 +5,11 @@ ms.assetid: d322aeda-a753-4616-8a35-1a5ae5a37cf2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d7e1150aebabf4d8cd0d705666bd3c90edb6b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360055"
 ---
 # <a name="irp-based-io-operations-that-obey-device-object-flags"></a>基于 IRP 的 I/O 操作，遵循设备对象标志
 

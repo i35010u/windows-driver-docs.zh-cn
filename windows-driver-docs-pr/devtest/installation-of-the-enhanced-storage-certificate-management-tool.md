@@ -1,17 +1,17 @@
 ---
-title: 增强的存储证书管理工具的安装
-description: 增强的存储证书管理工具的安装
+title: 安装增强的存储证书管理工具
+description: 安装增强的存储证书管理工具
 ms.assetid: 1494a911-73a4-4a8c-a29d-aecb65c846dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c07f5baa2d88d3cd9ecd4453195721fc6f6947f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360767"
 ---
-# <a name="installation-of-the-enhanced-storage-certificate-management-tool"></a>增强的存储证书管理工具的安装
+# <a name="installation-of-the-enhanced-storage-certificate-management-tool"></a>安装增强的存储证书管理工具
 
 
 增强型存储证书管理工具是可用于运行 Windows 7 和更高版本的 Windows 的基于 x86、 基于 Itanium 和基于 x64 的计算机。 若要在计算机上安装增强存储证书管理工具，请完成以下步骤：

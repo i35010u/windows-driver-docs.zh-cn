@@ -1,17 +1,17 @@
 ---
-title: 用户模式下存储外围设备驱动程序的硬件资源
+title: 用户模式 SPB 外设驱动程序的硬件资源
 description: 代码示例外围设备上存储的 UMDF 驱动程序，并获取的硬件资源。
 ms.assetid: 4D240011-1F4E-4C1E-8258-A2CF44BD3F06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84ee90c56c37454e4892811d638f94a90a0fbf1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356723"
 ---
-# <a name="hardware-resources-for-user-mode-spb-peripheral-drivers"></a>用户模式下存储外围设备驱动程序的硬件资源
+# <a name="hardware-resources-for-user-mode-spb-peripheral-drivers"></a>用户模式 SPB 外设驱动程序的硬件资源
 
 
 此主题演示中的代码示例如何[用户模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff560442)外围设备上的 (UMDF) 驱动程序[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储） 获取其运行所需的硬件资源设备。 这些资源中包含的是驱动程序使用建立的逻辑连接到设备的信息。 其他资源可能包括中断，以及一个或多个 GPIO 输入或输出插针。 (GPIO 引脚是已配置为输入或输出; 有关详细信息的通用 I/O 控制器设备上的 pin，请参阅[GPIO 控制器驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh439512)。)与不同的是内存映射的设备，与存储连接的外围设备不需要的系统内存地址将映射到其寄存器的块。

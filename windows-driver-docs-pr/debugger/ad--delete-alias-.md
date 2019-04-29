@@ -1,5 +1,5 @@
 ---
-title: ad （删除别名）
+title: ad（删除别名）
 description: Ad 命令从别名列表中删除别名。
 ms.assetid: 8ff223b6-5cfb-4d87-b45f-ad9bd51faf7f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e22b13edd36c4d97ed2a932e8e646b54972781bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354703"
 ---
-# <a name="ad-delete-alias"></a>ad （删除别名）
+# <a name="ad-delete-alias"></a>ad（删除别名）
 
 
 **Ad**命令从别名列表中删除别名。

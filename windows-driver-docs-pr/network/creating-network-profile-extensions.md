@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7bc1f7f5e30e379989a65a118946c6dc609000f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357275"
 ---
 # <a name="creating-network-profile-extensions"></a>创建网络配置文件扩展
 

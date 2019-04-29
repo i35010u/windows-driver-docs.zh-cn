@@ -5,11 +5,11 @@ ms.assetid: 9c485981-e9f8-420d-9a87-d298b55356c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9b1df40309d1743642e0f27b87d0871e992b7a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357875"
 ---
 # <a name="childlocationpaths-registry-subkey"></a>ChildLocationPaths 注册表子项
 

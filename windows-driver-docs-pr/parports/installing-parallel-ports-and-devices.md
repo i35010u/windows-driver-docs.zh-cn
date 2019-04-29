@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd482e101f68dcfe832754afe2bc0f312fb08aad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373566"
 ---
 # <a name="installing-parallel-ports-and-devices"></a>安装并行端口和设备
 
@@ -34,7 +34,7 @@ ms.locfileid: "56521112"
 
 [ParallelPorts 和设备简介](introduction-to-parallel-ports-and-devices.md)
 
-[系统提供并行的驱动程序](system-supplied-parallel-drivers.md)
+[系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
 [系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
 

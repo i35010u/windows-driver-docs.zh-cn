@@ -1,6 +1,6 @@
 ---
-title: 基于范围的雾
-description: 基于范围的雾
+title: 基于范围的雾化
+description: 基于范围的雾化
 ms.assetid: 6410dd21-bb9d-4985-a765-03898d9b5d0b
 keywords:
 - 基于范围的雾 WDK Direct3D
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a2b0df3d84dfebcdd68f0bd4d0492f0dde1be63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356284"
 ---
-# <a name="range-based-fog"></a>基于范围的雾
+# <a name="range-based-fog"></a>基于范围的雾化
 
 
 ## <span id="ddk_range_based_fog_gg"></span><span id="DDK_RANGE_BASED_FOG_GG"></span>

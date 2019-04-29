@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv4ARP 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b0d4692c2177801f6eec6d5a4f1725b510e560c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362779"
 ---
 # <a name="wditlvpmprotocoloffloadipv4arp"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP
 
@@ -58,7 +58,7 @@ WDI\_TLV\_PM\_协议\_卸载\_IPv4ARP 是 TLV 包含 IPv4 ARP 协议卸载参数
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

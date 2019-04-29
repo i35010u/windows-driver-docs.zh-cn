@@ -5,11 +5,11 @@ ms.assetid: 24D4854E-BBD7-46A9-8FEF-EF13D2968E6B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c63fe404637e0b0a1c3568c00d0b6ae910810ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375919"
 ---
 # <a name="support-for-64kb-pages"></a>64KB 页面支持
 

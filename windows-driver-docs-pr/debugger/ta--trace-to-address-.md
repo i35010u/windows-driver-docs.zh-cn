@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fda2fbf6e537c8b88a0fb9349da4a942791ec88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368011"
 ---
 # <a name="ta-trace-to-address"></a>ta（跟踪到地址）
 

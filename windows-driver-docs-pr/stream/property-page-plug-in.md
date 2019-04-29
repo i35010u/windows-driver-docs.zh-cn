@@ -1,6 +1,6 @@
 ---
-title: 插件的属性页
-description: 插件的属性页
+title: 属性页插件
+description: 属性页插件
 ms.assetid: cf5f5861-1670-413c-9c42-c1b6eb6d719a
 keywords:
 - 内核流式处理代理 WDK AVStream，属性页
@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca2464ee8b40dfb68b434d02b0f09d2f1ef60666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362209"
 ---
-# <a name="property-page-plug-in"></a>插件的属性页
+# <a name="property-page-plug-in"></a>属性页插件
 
 
 可以通过编写为 KS 代理插件的属性页提供设备属性的用户界面。 本主题说明如何编写此类的插件。 首先，注册您的对象，如中所述[注册 KS 代理插件](registering-ks-proxy-plug-ins.md)。
 
-接下来，声明你的筛选器的工厂模板。 工厂模板是一个 c + + 类，其中包含的类工厂的信息。
+接下来，声明你的筛选器的工厂模板。 工厂模板是C++类，该类包含的类工厂的信息。
 
 在您的 DLL，声明一个全局数组[CFactoryTemplate](https://go.microsoft.com/fwlink/p/?linkid=106450)对象、 一个用于每个筛选器或 DLL 中的 COM 组件。 如果只有一个属性页，创建只有一个对象数组中。
 

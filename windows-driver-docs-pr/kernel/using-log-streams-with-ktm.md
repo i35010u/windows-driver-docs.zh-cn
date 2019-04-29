@@ -1,6 +1,6 @@
 ---
-title: 日志流使用 KTM
-description: 日志流使用 KTM
+title: 将日志流与 KTM 配合使用
+description: 将日志流与 KTM 配合使用
 ms.assetid: d7ad0e16-d1f2-4c41-b647-95b5445c2708
 keywords:
 - 日志流 WDK KTM
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82766d30354f7dfe0b511da7d8fc790b87b9188c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364927"
 ---
-# <a name="using-log-streams-with-ktm"></a>日志流使用 KTM
+# <a name="using-log-streams-with-ktm"></a>将日志流与 KTM 配合使用
 
 
 基于 KTM 的事务处理系统 (TPSs) 应记录事务活动通过使用[公用日志文件系统](using-common-log-file-system.md)(CLFS)。 KTM 创建事务管理器的每个对象的日志流。 每个资源管理器应创建其自己的日志流。

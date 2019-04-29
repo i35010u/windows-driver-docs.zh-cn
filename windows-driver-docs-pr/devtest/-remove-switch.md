@@ -1,5 +1,5 @@
 ---
-title: / 删除交换机
+title: /Remove 开关
 description: 增强型存储证书管理工具的 /Remove 开关从身份验证接收器证书 (ASC) 存储在 IEEE 1667 合规 USB 存储设备中删除指定的证书。请注意到生成的 IEEE 1667 合规 USB 存储设备的当前连接到计算机的卷名称的列表、 命令提示符下键入 EhStorCertMgrCmd /List，然后按 Enter。
 ms.assetid: c74fe7c3-264e-4bbd-9036-b5a254b3ba5b
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fed0152a0c2205763ab058072da62f7162b4758
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361723"
 ---
-# <a name="remove-switch"></a>/ 删除交换机
+# <a name="remove-switch"></a>/Remove 开关
 
 
 **/Remove**增强存储证书管理工具的开关从身份验证接收器证书 (ASC) 存储在 IEEE 1667 合规 USB 存储设备中删除指定的证书。

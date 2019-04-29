@@ -1,6 +1,6 @@
 ---
-title: 安装多协议的 WAN NIC
-description: 安装多协议的 WAN NIC
+title: 安装多协议 WAN NIC
+description: 安装多协议 WAN NIC
 ms.assetid: 7000040c-8a26-496d-ae26-580aace68160
 keywords:
 - 添加注册表部分 WDK 网络、 多协议 WAN NIC
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4054c796f9a0e268a98a7d735c442eb50139305
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324908"
 ---
-# <a name="installing-a-multiprotocol-wan-nic"></a>安装多协议的 WAN NIC
+# <a name="installing-a-multiprotocol-wan-nic"></a>安装多协议 WAN NIC
 
 
 

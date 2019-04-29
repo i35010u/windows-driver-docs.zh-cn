@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c17133f8c4d4e6b88fb858314e915faf970e79f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356343"
 ---
 # <a name="option-file-examples"></a>选项文件示例
 

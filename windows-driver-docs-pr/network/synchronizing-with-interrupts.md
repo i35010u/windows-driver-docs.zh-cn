@@ -1,6 +1,6 @@
 ---
-title: 中断与同步
-description: 中断与同步
+title: 与中断同步
+description: 与中断同步
 ms.assetid: f201acfa-98e4-4373-ba63-b6c814810f99
 keywords:
 - 中断 WDK 网络同步
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 882679d108e07f7ba1e00a36ffc5e525a57e2921
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362544"
 ---
-# <a name="synchronizing-with-interrupts"></a>中断与同步
+# <a name="synchronizing-with-interrupts"></a>与中断同步
 
 
 

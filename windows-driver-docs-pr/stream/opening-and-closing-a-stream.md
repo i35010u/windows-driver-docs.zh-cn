@@ -1,6 +1,6 @@
 ---
-title: 打开和关闭 Stream
-description: 打开和关闭 Stream
+title: 打开和关闭流
+description: 打开和关闭流
 ms.assetid: a4895e99-ab2e-482e-b89f-04b01177ec03
 keywords:
 - 视频捕获 WDK AVStream，打开流
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9004de0fb5108653c7e532679c5bde7954cb3da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372359"
 ---
-# <a name="opening-and-closing-a-stream"></a>打开和关闭 Stream
+# <a name="opening-and-closing-a-stream"></a>打开和关闭流
 
 
 Stream 类接口发送[ **SRB\_打开\_流**](https://msdn.microsoft.com/library/windows/hardware/ff568191)到 Stream 类微型驱动程序的请求，以使用所选的视频格式打开一个流。 信息传入 SRB\_打开\_流包含要在打开的流和指向指针的索引[ **KS\_VIDEOINFOHEADER** ](https://msdn.microsoft.com/library/windows/hardware/ff567700)结构。 流索引对应的数组中的流的索引[ **KS\_DATARANGE\_视频**](https://msdn.microsoft.com/library/windows/hardware/ff567628)返回的响应早期微型驱动程序的结构[**SRB\_获取\_流\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff568173)请求。 有关详细信息，了解如何处理 SRB\_获取\_流\_信息，请参阅[Stream 类别](stream-categories.md)。

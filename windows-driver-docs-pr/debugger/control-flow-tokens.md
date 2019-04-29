@@ -1,6 +1,6 @@
 ---
-title: 控制流令牌
-description: 控制流令牌
+title: 控制流标记
+description: 控制流标记
 ms.assetid: c38852aa-3dfe-4f70-9ef4-8c86e4a8334d
 keywords:
 - 脚本文件，控制流令牌
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a52a84a2f0c1dd81b3955cbc7a268069b9fac6c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375036"
 ---
-# <a name="control-flow-tokens"></a>控制流令牌
+# <a name="control-flow-tokens"></a>控制流标记
 
 
 ## <span id="ddk_control_flow_tokens_dbg"></span><span id="DDK_CONTROL_FLOW_TOKENS_DBG"></span>
@@ -23,7 +23,7 @@ ms.locfileid: "56519720"
 
 可以使用*控制流令牌*创建条件执行和执行循环内的调试器命令程序。
 
-控制流令牌类似于 C 和 c + +，其对应的具有以下常规异常：
+控制流令牌的行为类似于 C 中的对应项和C++，但以下常规例外：
 
 -   即使只有一个此类命令，必须将每个命令块的大括号，有条件地或重复执行。 例如，不能省略以下命令中的大括号。
 

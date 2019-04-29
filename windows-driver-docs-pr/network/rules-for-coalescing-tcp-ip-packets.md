@@ -5,13 +5,13 @@ ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b65e9adced45cbd7a55ca24bbb84ce24005905b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359751"
 ---
-# <a name="rules-for-coalescing-tcpip-segments"></a>规则合并 TCP/IP 段
+# <a name="rules-for-coalescing-tcpip-segments"></a>合并 TCP/IP 段的规则
 
 
 本部分将定义时接收段合并 (RSC) 指定的规则-支持的微型端口驱动程序必须合并给定的 TCP 连接的段。 如果违反了任何规则，则会生成异常，并且微型端口驱动程序必须中止段的合并。

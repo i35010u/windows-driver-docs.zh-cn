@@ -1,6 +1,6 @@
 ---
-title: 若要配置 DEP 和 PAE 的引导参数
-description: 若要配置 DEP 和 PAE 的引导参数
+title: 用于配置 DEP 和 PAE 的启动参数
+description: 用于配置 DEP 和 PAE 的启动参数
 ms.assetid: cb8b6298-e679-4ca3-8b94-4f0c6af23a3f
 keywords:
 - 引导参数 WDK
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c3596cbb5b4a27a270c4f8cb0efba16e1899b58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359047"
 ---
-# <a name="boot-parameters-to-configure-dep-and-pae"></a>若要配置 DEP 和 PAE 的引导参数
+# <a name="boot-parameters-to-configure-dep-and-pae"></a>用于配置 DEP 和 PAE 的启动参数
 
 
 本主题说明如何使用引导参数来启用、 禁用和配置支持这些功能的操作系统上的数据执行保护 (DEP) 和物理地址扩展 (PAE)。

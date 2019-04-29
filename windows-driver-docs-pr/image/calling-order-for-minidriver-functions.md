@@ -1,17 +1,17 @@
 ---
-title: 调用微型驱动程序函数顺序
-description: 调用微型驱动程序函数顺序
+title: 微型驱动程序函数的调用顺序
+description: 微型驱动程序函数的调用顺序
 ms.assetid: 0e51d29c-964d-44d5-86be-095601286f94
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31bd38f8d3139dc32cf1b2c7b8f4adceed7e968b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373353"
 ---
-# <a name="calling-order-for-minidriver-functions"></a>调用微型驱动程序函数顺序
+# <a name="calling-order-for-minidriver-functions"></a>微型驱动程序函数的调用顺序
 
 
 

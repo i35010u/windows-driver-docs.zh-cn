@@ -11,11 +11,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a46eb6a8bab5fb69584bb7c983c499ea3d4783
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375106"
 ---
 # <a name="choosing-the-32-bit-or-64-bit-debugging-tools"></a>选择 32 位或 64 位调试工具
 
@@ -42,7 +42,7 @@ ms.locfileid: "56554760"
 
 -   如果你正在调试的单独的目标计算机运行的实时的 32 位用户模式代码，使用 32 位调试工具。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试](index.md)

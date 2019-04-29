@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d771d56198e631190a08c5cd5a5505c599947385
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355746"
 ---
 # <a name="cmprobphantom"></a>CM_PROB_PHANTOM
 

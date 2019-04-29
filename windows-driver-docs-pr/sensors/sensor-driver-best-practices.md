@@ -5,11 +5,11 @@ ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 08bbeaf79f0cb6e91fc0ee847df4b1211c8644bc
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368855"
 ---
 # <a name="sensor-driver-best-practices"></a>传感器驱动程序的最佳做法
 

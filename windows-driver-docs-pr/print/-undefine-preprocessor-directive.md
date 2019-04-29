@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 182639dbe6432a355349c51b5a24eb8782dfd4a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372917"
 ---
 # <a name="undefine-preprocessor-directive"></a>\#取消定义预处理器指令
 

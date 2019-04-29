@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 087c3fa63652333ffd9057aea7fa14bb2ecad99c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370548"
 ---
 # <a name="sioquerywfpconnectionredirectrecords-control-code"></a>SIO\_查询\_WFP\_连接\_重定向\_记录控制代码
 

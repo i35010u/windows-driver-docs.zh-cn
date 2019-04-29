@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c2135a1787f055ac9ddda708fd080544fffa153
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354191"
 ---
 # <a name="switching-desktops-responding-to-drvassertmode"></a>切换桌面：响应 DrvAssertMode
 

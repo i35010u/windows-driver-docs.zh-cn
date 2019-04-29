@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d984c939ed015fb5e1638385257e3f07c7b9de
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358315"
 ---
 # <a name="receiving-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字接收数据
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1c46404759531fd809ee04b6625891b2b611debe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365840"
 ---
 # <a name="kscategoryencoder"></a>KSCATEGORY_ENCODER
 
@@ -70,7 +70,7 @@ KS 设备的驱动程序注册 KSCATEGORY_ENCODER 向操作系统指示设备支
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista、 Windows Server 2003、 Windows XP Service Pack 1 (SP1) 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

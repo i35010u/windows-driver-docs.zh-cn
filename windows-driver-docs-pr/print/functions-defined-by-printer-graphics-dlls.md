@@ -1,6 +1,6 @@
 ---
-title: 打印机图形 Dll 所定义的函数
-description: 打印机图形 Dll 所定义的函数
+title: 打印机图形 DLL 定义的函数
+description: 打印机图形 DLL 定义的函数
 ms.assetid: b0c9ce45-76c4-4058-af3f-7b9d230bcf94
 keywords:
 - 打印机图形 DLL WDK，函数
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4811b065aa86d603bf9f649cb69222bc5a4bcd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363346"
 ---
-# <a name="functions-defined-by-printer-graphics-dlls"></a>打印机图形 Dll 所定义的函数
+# <a name="functions-defined-by-printer-graphics-dlls"></a>打印机图形 DLL 定义的函数
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: AddDevice 例程在函数或筛选器驱动程序
-description: AddDevice 例程在函数或筛选器驱动程序
+title: 函数或筛选器驱动程序中的 AddDevice 例程
+description: 函数或筛选器驱动程序中的 AddDevice 例程
 ms.assetid: 0a095c17-2295-46df-9908-f306f7fe9f67
 keywords:
 - 函数的驱动程序 WDK 内核
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e81268fadb1224f7c747c621b5643bb3daba98a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365834"
 ---
-# <a name="adddevice-routines-in-function-or-filter-drivers"></a>AddDevice 例程在函数或筛选器驱动程序
+# <a name="adddevice-routines-in-function-or-filter-drivers"></a>函数或筛选器驱动程序中的 AddDevice 例程
 
 
 

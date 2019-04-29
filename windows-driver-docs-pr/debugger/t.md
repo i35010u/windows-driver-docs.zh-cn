@@ -6,11 +6,11 @@ ms.assetid: e17a63eb-a002-4e72-86a9-8176bf5f75d0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14a99d4f305995a58d77697db3c8792b3b8a894c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368025"
 ---
 # <a name="t"></a>T
 

@@ -5,13 +5,13 @@ ms.assetid: 9f974482-e19d-4bcc-a884-4425741aa465
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf79c687a7131fbd90790ebff82bff137459d31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360390"
 ---
-# <a name="how-do-i-debug-tracing-failures"></a>如何调试跟踪故障？
+# <a name="how-do-i-debug-tracing-failures"></a>如何调试跟踪错误？
 
 
 若要调试问题的跟踪检测驱动程序，如跟踪消息的未显示在跟踪日志文件中，即使启用了提供程序，添加**WppDebug**对源代码的宏定义。

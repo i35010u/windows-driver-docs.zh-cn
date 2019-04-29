@@ -1,17 +1,17 @@
 ---
-title: DriverEntry PF 微型端口驱动程序的指导原则
-description: DriverEntry PF 微型端口驱动程序的指导原则
+title: PF 微型端口驱动程序的 DriverEntry 指导原则
+description: PF 微型端口驱动程序的 DriverEntry 指导原则
 ms.assetid: 6F885379-41EC-411E-8909-4DF48042849A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fed229f0560c68aa6052116c210254e4323cfc86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372661"
 ---
-# <a name="driverentry-guidelines-for-pf-miniport-drivers"></a>DriverEntry PF 微型端口驱动程序的指导原则
+# <a name="driverentry-guidelines-for-pf-miniport-drivers"></a>PF 微型端口驱动程序的 DriverEntry 指导原则
 
 
 本主题介绍进行写入的准则[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548818)微型端口驱动程序的 PCI Express (PCIe) 物理函数 (PF) 的函数。 PF 是支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器的组件。

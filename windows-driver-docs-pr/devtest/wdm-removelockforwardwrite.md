@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d397df90327b92f6bc8539d64bd888a4493a4672
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358217"
 ---
 # <a name="removelockforwardwrite-rule-wdm"></a>RemoveLockForwardWrite 规则 (wdm)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56521293"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)

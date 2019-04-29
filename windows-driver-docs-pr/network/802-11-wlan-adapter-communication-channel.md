@@ -1,6 +1,6 @@
 ---
-title: 802.11 WLAN 适配器通信通道
-description: 802.11 WLAN 适配器通信通道
+title: 802.11 WLAN 适配器信道
+description: 802.11 WLAN 适配器信道
 ms.assetid: 6a4b07a5-3a0a-41cb-a5cf-74d44fb38192
 keywords:
 - 适配器 WDK 802.11 WLAN，通信通道
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b97fcba7663f46a53304ad506375428e7195ac8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367929"
 ---
-# <a name="80211-wlan-adapter-communication-channel"></a>802.11 WLAN 适配器通信通道
+# <a name="80211-wlan-adapter-communication-channel"></a>802.11 WLAN 适配器信道
 
 
 

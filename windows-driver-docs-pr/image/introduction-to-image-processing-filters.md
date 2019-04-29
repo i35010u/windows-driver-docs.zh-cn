@@ -5,11 +5,11 @@ ms.assetid: 59fc1bc1-c783-43df-9778-ea4306f6dd50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22cc0c7372512dbf7339029b162a070a6e4a486f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358885"
 ---
 # <a name="introduction-to-image-processing-filters"></a>图像处理筛选器简介
 

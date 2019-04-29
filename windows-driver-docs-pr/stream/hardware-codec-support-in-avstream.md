@@ -1,6 +1,6 @@
 ---
-title: 硬件中 AVStream 编解码器支持
-description: 硬件中 AVStream 编解码器支持
+title: AVStream 中的硬件编解码器支持
+description: AVStream 中的硬件编解码器支持
 ms.assetid: 19ffd906-e198-4ede-b132-45e53431603c
 keywords:
 - AVStream WDK，硬件编解码器支持
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7908decf3f5e5355277d3e27eac4fd0f1011cf4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363601"
 ---
-# <a name="hardware-codec-support-in-avstream"></a>硬件中 AVStream 编解码器支持
+# <a name="hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持
 
 
 在 Windows 7 和更高版本的 Windows 中，基于 AVStream 的媒体设备可以显示为用户模式应用程序的媒体基础转换 (MFT) 筛选器。

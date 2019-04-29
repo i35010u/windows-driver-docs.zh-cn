@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DEVICE_FILTER_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 9124439f9d88e64a2d5a2f19cc6a42209c99f814
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366567"
 ---
 # <a name="wditlvp2pdevicefilterlist"></a>WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST
 
@@ -55,7 +55,7 @@ WDI\_TLV\_P2P\_设备\_筛选器\_列表是包含一系列 Wi-Fi Direct 设备 T
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
-title: 流式处理媒体示例
-description: 流式处理媒体示例
+title: 流媒体示例
+description: 流媒体示例
 ms.assetid: 797763a6-cd13-4d76-8ddb-75d812a8dde3
 keywords:
 - 流式处理媒体示例 WDK
@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f559224f9dcd5b2d2097eb01ab355bdf3fda4b72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359633"
 ---
-# <a name="streaming-media-samples"></a>流式处理媒体示例
+# <a name="streaming-media-samples"></a>流媒体示例
 
 
 ### <a href="" id="streaming-media-samples"></a>
 
-从 Windows 10 开始[Windows 驱动程序示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=616507)是 GitHub 上提供。
+从 Windows 10 开始，GitHub 上提供了 [Windows 驱动程序示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=616507)。
 
 [Windows 8 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616509)并[Windows 8.1 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)可以从下载[Windows 硬件开发人员中心](https://go.microsoft.com/fwlink/p/?LinkId=616506)。
 

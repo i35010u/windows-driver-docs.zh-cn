@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 91a246f2734fc1d4d118ef26015a2ae4eaa79d1a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358001"
 ---
 # <a name="cdromclassguid"></a>CdRomClassGuid
 
@@ -41,17 +41,17 @@ CdRomClassGuid 是已过时标识符[设备接口类](https://msdn.microsoft.com
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_CDROM。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)

@@ -1,6 +1,6 @@
 ---
-title: Windows 2000 显示器驱动程序模型 (XDDM) 设计指南
-description: Windows 2000 显示器驱动程序模型 (XDDM) 设计指南
+title: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
+description: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
 ms.assetid: 24cb232b-e289-45c8-8d55-42614a4dfd54
 keywords:
 - 显示设备 WDK
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9215569fd9aedb45b36a8246a7c21f89d1cd8b72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391132"
 ---
-# <a name="windows-2000-display-driver-model-xddm-design-guide"></a>Windows 2000 显示器驱动程序模型 (XDDM) 设计指南
+# <a name="windows-2000-display-driver-model-xddm-design-guide"></a>Windows 2000 显示驱动程序模型 (XDDM) 设计指南
 
 
 ## <span id="ddk_windows_2000_display_driver_model_gg"></span><span id="DDK_WINDOWS_2000_DISPLAY_DRIVER_MODEL_GG"></span>

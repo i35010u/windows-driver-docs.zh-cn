@@ -1,14 +1,14 @@
 ---
-Description: XHCIWMI is a tool for diagnostic purposes. This tool only runs on Windows 8 and gathers information when the device is attached to an xHCI port and Windows loads the Microsoft USB 3.0 driver stack.
+Description: XHCIWMI 是一个工具用于诊断目的。 此工具仅在 Windows 8 上运行并收集信息时与设备附加到 xHCI 端口和 Windows 加载 Microsoft USB 3.0 驱动程序堆栈。
 title: USB XHCIWMI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 546e4c461c116ad532ab55c7fe6869ea81f455a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356688"
 ---
 # <a name="usb-xhciwmi"></a>USB XHCIWMI
 

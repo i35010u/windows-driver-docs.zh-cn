@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_QUERY_INFORMATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: a9f7260d59759bf5640425cef6724c34c2c30710
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368442"
 ---
 # <a name="irpmjqueryinformation"></a>IRP\_MJ\_QUERY\_INFORMATION
 

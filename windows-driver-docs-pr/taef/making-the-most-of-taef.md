@@ -5,11 +5,11 @@ ms.assetid: DCB06C5A-DF2C-4e1c-A297-C9AA5496D162
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bd97d7aca5a8888e413b1e5f0bab13f0c2d6db8
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355515"
 ---
 # <a name="making-the-most-of-taef"></a>充分利用 TAEF
 
@@ -21,7 +21,7 @@ ms.locfileid: "57349552"
 
 在程序集级别的设置和清理方法 (也称为*装置*)，每次 DLL 执行获取运行一次。 同样在类级别设置和清理方法获取每个类一次运行。 测试级别设置和清理方法是相同的类中的所有测试和每个测试类中一次之前和之后调用。
 
-可能仅有一个程序集级别的安装程序和每个程序集清理方法、 一个类级别设置和清理方法，每个类和每个类的一个测试设置和清理方法。 请注意，类设置和清理方法是在托管代码中，静态的但不是静态 c + + 代码中。
+可能仅有一个程序集级别的安装程序和每个程序集清理方法、 一个类级别设置和清理方法，每个类和每个类的一个测试设置和清理方法。 请注意，类设置和清理方法是在托管代码中，静态的但不是静态的C++代码。
 
 如果启用了异常终止执行进行的任何方法 （默认情况下），第一个失败的验证调用。 如果已显式禁用基于异常的验证调用 （请参阅创作的详细信息的测试中的验证部分），将需要具有显式条件语句，以验证调用失败后控制的控制流。
 

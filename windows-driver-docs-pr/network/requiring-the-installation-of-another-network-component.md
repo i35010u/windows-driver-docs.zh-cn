@@ -1,6 +1,6 @@
 ---
-title: 需安装另一个网络组件
-description: 需安装另一个网络组件
+title: 要求安装另一个网络组件
+description: 要求安装另一个网络组件
 ms.assetid: 30e6db7f-46f4-414f-a485-051b007f0eb6
 keywords:
 - 添加注册表部分 WDK 网络连接、 组件依赖项
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d5f02db5864cf9d3798f4021eee5a7e1c1094f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358393"
 ---
-# <a name="requiring-the-installation-of-another-network-component"></a>需安装另一个网络组件
+# <a name="requiring-the-installation-of-another-network-component"></a>要求安装另一个网络组件
 
 
 

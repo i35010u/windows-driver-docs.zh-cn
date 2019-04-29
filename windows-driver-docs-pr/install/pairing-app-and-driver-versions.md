@@ -5,11 +5,11 @@ ms.assetid: 50f981bb-e17b-4454-88f9-46b09eb05509
 ms.date: 08/24/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f31245dd44ee9597907614accdb956592fa84b1
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363344"
 ---
 # <a name="pairing-a-driver-with-a-universal-windows-platform-uwp-app"></a>将驱动程序与通用 Windows 平台 (UWP) 应用配对
 

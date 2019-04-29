@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a78aae240bd690a6507e3a3ad9ec555d99f2f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369222"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>取消 IRP 时要考虑的要点
 

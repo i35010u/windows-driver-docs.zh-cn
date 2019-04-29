@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f8f617c539af8c4ded01ddb4ea916c0cc7253f2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355993"
 ---
 # <a name="guiddeviceprocessor"></a>GUID_DEVICE_PROCESSOR
 
@@ -33,7 +33,7 @@ GUID_DEVICE_PROCESSOR[设备接口类](https://msdn.microsoft.com/library/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -68,7 +68,7 @@ GUID_DEVICE_PROCESSOR[设备接口类](https://msdn.microsoft.com/library/window
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Poclass.h （包括 Poclass.h）</td>
 </tr>
 </tbody>

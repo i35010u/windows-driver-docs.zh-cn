@@ -1,6 +1,6 @@
 ---
-title: 语言 XML 元素
-description: 语言 XML 元素
+title: language XML 元素
+description: language XML 元素
 ms.assetid: 1fc6a3b4-379e-4fd3-b526-c4193e9e84c5
 keywords:
 - 语言 XML 元素设备和驱动程序安装
@@ -13,13 +13,13 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9b2c28fc664e93ae4f4218153477459d5daffd56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356947"
 ---
-# <a name="language-xml-element"></a>语言 XML 元素
+# <a name="language-xml-element"></a>language XML 元素
 
 
 \[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
@@ -119,7 +119,7 @@ DPInst 还使用此图标添加到的项**程序和功能**控制面板中。 �
 
 如果**dpinstTitle**元素未指定，DPInst 显示默认的欢迎页上显示的默认标题栏文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinstTitle**](dpinsttitle-xml-element.md)

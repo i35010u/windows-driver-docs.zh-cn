@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8107024dc1c0215a94a4a606062b6a7ed2c1cd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370065"
 ---
 # <a name="scannerlocation-element"></a>ScannerLocation 元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "56525160"
 </wscn:ScannerLocation xml:lang="...">
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 <table>
@@ -46,7 +46,7 @@ ms.locfileid: "56525160"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -108,6 +108,6 @@ ms.locfileid: "56525160"
 </wscn:ScannerLocation>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ScannerDescription**](scannerdescription.md)

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a8e26cffb01fc59273548eaf3f455b4b0e8fd368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365856"
 ---
 # <a name="diftroubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -116,7 +116,7 @@ DIF_TROUBLESHOOTER，没有默认处理程序，但操作系统提供了默认�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>支持 Windows Server 2003、 Windows XP 和 Microsoft Windows 2000 中。</p></td>
 </tr>
 <tr class="even">

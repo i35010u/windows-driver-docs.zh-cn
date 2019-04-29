@@ -5,11 +5,11 @@ ms.assetid: 99b9f180-018b-47c4-ab8d-dc037e3f637a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e250621e82cef9d7ae5362c2d9db530c15816c40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373185"
 ---
 # <a name="esctwainprivatesupportedcaps-escape-code"></a>ESC\_TWAIN\_专用\_支持\_CAPS 转义代码
 

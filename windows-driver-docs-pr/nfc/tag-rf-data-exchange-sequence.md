@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 810a3b407d4dbd914bbce43f4a730d08e1bee880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373626"
 ---
 # <a name="tag-rf-data-exchange-sequence"></a>标记 RF 数据交换序列
 

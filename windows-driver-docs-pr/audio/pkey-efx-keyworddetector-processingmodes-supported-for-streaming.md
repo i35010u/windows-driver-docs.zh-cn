@@ -5,11 +5,11 @@ ms.assetid: 517B7321-5726-4ADB-9FCD-82776B143FF9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30079680ad9364c52d3b73013262806bc1cfc532
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63332149"
 ---
 # <a name="pkeyefxkeyworddetectorprocessingmodessupportedforstreaming"></a>PKEY\_EFX\_KeywordDetector\_ProcessingModes\_Supported\_For\_Streaming
 
@@ -36,7 +36,7 @@ PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99
 HKR,FX\0,%PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [媒体类 INF 扩展](media-class-inf-extensions.md)

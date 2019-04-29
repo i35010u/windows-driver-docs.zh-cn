@@ -5,11 +5,11 @@ ms.assetid: 2684A93A-40C2-49DA-925D-2BAACA9F8CD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e820d0fc55766f0bf410c49d9e858dc9f7555690
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372890"
 ---
 # <a name="overview-of-virtual-function-initialization-and-teardown"></a>有关初始化和解除虚拟功能的概述
 

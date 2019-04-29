@@ -8,11 +8,11 @@ keywords:
 ms.date: 12/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a88d7928de2e519f2bb7bdc11462053aa29b5a64
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355849"
 ---
 # <a name="general-storage-io-control-codes"></a>常规存储 I/O 控制代码
 

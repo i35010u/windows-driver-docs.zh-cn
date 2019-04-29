@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14311a13add007c681bbf34f69c934f4162755a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354829"
 ---
 # <a name="printer-connected-to-an-infrared-port"></a>连接到红外端口的打印机
 

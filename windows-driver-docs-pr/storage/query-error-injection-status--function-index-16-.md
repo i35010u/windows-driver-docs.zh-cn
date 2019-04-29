@@ -1,17 +1,17 @@
 ---
-title: 查询错误注入状态 （函数索引 16）
+title: 查询错误注入状态（功能索引 16）
 description: 此函数返回 NVDIMM N 错误注入的状态。
 ms.assetid: 7CE07551-666F-4E07-8115-806F6256B595
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1f12342d3466f019ff23a431496bb4c4f86b77af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366267"
 ---
-# <a name="query-error-injection-status-function-index-16"></a>查询错误注入状态 （函数索引 16）
+# <a name="query-error-injection-status-function-index-16"></a>查询错误注入状态（功能索引 16）
 
 
 此函数返回 NVDIMM N 错误注入的状态。 该平台可以选择仅启用在特定情况下，错误注入，例如用户配置的 BIOS 设置后。
@@ -61,7 +61,7 @@ ms.locfileid: "56519228"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [注入错误 （函数索引 17）](inject-error--function-index-17-.md)

@@ -1,6 +1,6 @@
 ---
-title: 缓存的已注册的内存
-description: 缓存的已注册的内存
+title: 缓存已注册的内存
+description: 缓存已注册的内存
 ms.assetid: e1040f6a-6e65-462a-a79a-5d05d36787b0
 keywords:
 - SAN 连接安装 WDK，缓存已注册的内存
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a0f85cef0e19d4dd2fe97cd85e733723e016665
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367681"
 ---
-# <a name="caching-registered-memory"></a>缓存的已注册的内存
+# <a name="caching-registered-memory"></a>缓存已注册的内存
 
 
 
@@ -43,7 +43,7 @@ SAN 服务提供商应缓存并发布以下列表中所述为本地访问公开�
 
 5.  关闭本地 SAN 套接字与远程对等方之间的连接之前，SAN 服务提供商应释放任何缓存的缓冲区。
 
-**请注意**  代理驱动程序必须使用**尝试 / except**机制的访问受保护的用户模式缓冲区通过调用代码周围**MmSecureVirtualMemory**到防止操作系统崩溃。 有关代理驱动程序如何保护和释放缓冲区的详细信息，请参阅[保护和虚拟地址的释放所有权](securing-and-releasing-ownership-of-virtual-addresses.md)。 有关详细信息**试用 / 除外**，请参阅 Visual c + + 文档。 璝惠**VirtualFree**，请参阅 Microsoft Windows SDK 文档。
+**请注意**  代理驱动程序必须使用**尝试 / except**机制的访问受保护的用户模式缓冲区通过调用代码周围**MmSecureVirtualMemory**到防止操作系统崩溃。 有关代理驱动程序如何保护和释放缓冲区的详细信息，请参阅[保护和虚拟地址的释放所有权](securing-and-releasing-ownership-of-virtual-addresses.md)。 有关详细信息**试用 / 除外**，请参阅视觉对象C++文档。 璝惠**VirtualFree**，请参阅 Microsoft Windows SDK 文档。
 
  
 

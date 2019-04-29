@@ -1,17 +1,17 @@
 ---
-title: 获取当前设置的 WOL 模式
-description: 获取当前设置的 WOL 模式
+title: 获取当前的 WOL 模式设置
+description: 获取当前的 WOL 模式设置
 ms.assetid: 113ea75a-83d8-41aa-b61c-711ef90bccca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea292475114e3a8d5e21eca322fb7f02c8e7bb96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324273"
 ---
-# <a name="obtaining-the-current-settings-of-wol-patterns"></a>获取当前设置的 WOL 模式
+# <a name="obtaining-the-current-settings-of-wol-patterns"></a>获取当前的 WOL 模式设置
 
 
 

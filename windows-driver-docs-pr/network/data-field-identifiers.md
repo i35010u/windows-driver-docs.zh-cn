@@ -1,5 +1,5 @@
 ---
-title: 数据字段的标识符
+title: 数据字段标识符
 description: 本部分介绍 Windows 筛选平台标注驱动程序的数据字段标识符。
 ms.assetid: 6e617ef4-807b-4564-8b95-b289edfee8d2
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 197da2051e3dac8a84863ff617b4782f72857891
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372697"
 ---
-# <a name="data-field-identifiers"></a>数据字段的标识符
+# <a name="data-field-identifiers"></a>数据字段标识符
 
 运行时筛选层是与数据字段的标识符相关联。 这些标识符表示一的组声明为中 Fwpsk.h FWPS_FIELDS_XXX 枚举的常量值。
 

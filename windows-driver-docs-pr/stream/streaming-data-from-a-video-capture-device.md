@@ -1,6 +1,6 @@
 ---
-title: 流式数据视频捕获设备
-description: 流式数据视频捕获设备
+title: 来自视频捕获设备的流式处理数据
+description: 来自视频捕获设备的流式处理数据
 ms.assetid: c83aae8e-70a7-4d65-a888-00a7c21eebdd
 keywords:
 - 视频捕获 WDK AVStream 中的流数据
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95652e3ac4c28d3018411dfe46770f68b84830af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374047"
 ---
-# <a name="streaming-data-from-a-video-capture-device"></a>流式数据视频捕获设备
+# <a name="streaming-data-from-a-video-capture-device"></a>来自视频捕获设备的流式处理数据
 
 
 视频流组成加盖时间戳和数字化视频和相关信息，如垂直遮蔽的间隔 (VBI) 数据和时间码。 流可以暂停、 启动，并且独立于另一个已停止。 Stream 示例都是时间戳与 100 毫微秒解析时钟。

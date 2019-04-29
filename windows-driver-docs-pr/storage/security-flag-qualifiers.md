@@ -5,11 +5,11 @@ ms.assetid: d5b4c3a6-1e05-497a-a0a6-be7908e61fec
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a7dfeebe177b90fbf5a0814b278b33e1d471f571
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356715"
 ---
 # <a name="securityflagqualifiers"></a>安全\_标志\_限定符
 

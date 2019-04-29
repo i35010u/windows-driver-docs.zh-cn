@@ -1,6 +1,6 @@
 ---
-title: 处理存储类驱动程序中的即插即用开始
-description: 处理存储类驱动程序中的即插即用开始
+title: 处理存储类驱动程序中的 PnP 启动
+description: 处理存储类驱动程序中的 PnP 启动
 ms.assetid: 8d4ccd09-c5d2-4c9b-b94d-e22c916f0043
 keywords:
 - 存储类驱动程序 WDK，即插即用
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d420f1e8ca295153276abf0ebfd891e25235d105
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390899"
 ---
-# <a name="handling-pnp-start-in-a-storage-class-driver"></a>处理存储类驱动程序中的即插即用开始
+# <a name="handling-pnp-start-in-a-storage-class-driver"></a>处理存储类驱动程序中的 PnP 启动
 
 
 ## <span id="ddk_handling_pnp_start_in_a_storage_class_driver_kg"></span><span id="DDK_HANDLING_PNP_START_IN_A_STORAGE_CLASS_DRIVER_KG"></span>

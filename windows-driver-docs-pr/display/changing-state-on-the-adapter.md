@@ -1,6 +1,6 @@
 ---
-title: 更改在适配器上的状态
-description: 更改在适配器上的状态
+title: 更改适配器上的状态
+description: 更改适配器上的状态
 ms.assetid: bf503a42-ac32-4d68-9ad9-afec69c5fe2a
 keywords:
 - 视频适配器状态更改 WDK 微型端口
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a21732236d92de7125427ce57d136032fb7616e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363833"
 ---
-# <a name="changing-state-on-the-adapter"></a>更改在适配器上的状态
+# <a name="changing-state-on-the-adapter"></a>更改适配器上的状态
 
 
 ## <span id="ddk_changing_state_on_the_adapter_gg"></span><span id="DDK_CHANGING_STATE_ON_THE_ADAPTER_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: DirectDraw 图面指针
-description: DirectDraw 图面指针
+title: 指向 DirectDraw 图面的指针
+description: 指向 DirectDraw 图面的指针
 ms.assetid: 5d7c8b22-d2d3-4e40-b7b2-7277e051812c
 keywords:
 - 上下文 WDK Direct3D，DirectDraw 图面指针
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8486c612054cf5e7f54bbf659bc173f57f9663e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352213"
 ---
-# <a name="pointers-to-directdraw-surfaces"></a>DirectDraw 图面指针
+# <a name="pointers-to-directdraw-surfaces"></a>指向 DirectDraw 图面的指针
 
 
 ## <span id="ddk_pointers_to_directdraw_surfaces_gg"></span><span id="DDK_POINTERS_TO_DIRECTDRAW_SURFACES_GG"></span>

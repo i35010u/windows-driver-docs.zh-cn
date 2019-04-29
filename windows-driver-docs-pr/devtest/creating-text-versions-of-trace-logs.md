@@ -1,6 +1,6 @@
 ---
-title: 创建文本版本的跟踪日志
-description: 创建文本版本的跟踪日志
+title: 创建跟踪日志的文本版本
+description: 创建跟踪日志的文本版本
 ms.assetid: 15d15da3-e381-4b5f-81f2-300aa87e11db
 keywords:
 - TraceView WDK 文本版本跟踪日志
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb57c669a68a71656e5e7cb1a40ac6ffa517d60d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356635"
 ---
-# <a name="creating-text-versions-of-trace-logs"></a>创建文本版本的跟踪日志
+# <a name="creating-text-versions-of-trace-logs"></a>创建跟踪日志的文本版本
 
 
 在跟踪日志会话过程中生成的跟踪消息保存在[跟踪日志](trace-log.md)，这是用于高效地存储跟踪消息量很大的二进制文件。 TraceView 有几个便利的方法，用于创建这些文件的用户可读版本。

@@ -1,17 +1,17 @@
 ---
-title: 有关传感器驱动程序事件
-description: 有关传感器驱动程序事件
+title: 关于传感器驱动程序事件
+description: 关于传感器驱动程序事件
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e8a832ca852e627707af3ccc03b4ee285dcd1613
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360936"
 ---
-# <a name="about-sensor-driver-events"></a>有关传感器驱动程序事件
+# <a name="about-sensor-driver-events"></a>关于传感器驱动程序事件
 
 
 应用程序可以从以下两种方式的传感器接收的信息： 通过请求特定的属性或数据字段同步，或以异步方式，通过由传感器驱动程序引发的事件订阅。

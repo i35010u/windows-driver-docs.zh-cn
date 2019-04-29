@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eb565c3a05ac16fff0eb3ca6ddfd30138ef3271f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353541"
 ---
 # <a name="power-up-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx 客户端驱动程序的启动顺序
 

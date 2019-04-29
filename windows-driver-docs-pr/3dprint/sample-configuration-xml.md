@@ -4,11 +4,11 @@ description: 使用本主题中的示例配置 XML 开发你的设备的配置�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ca0656fcbb960050c5f5a63f2c723ac36429edd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324711"
 ---
 # <a name="sample-configuration-xml"></a>示例配置 XML
 

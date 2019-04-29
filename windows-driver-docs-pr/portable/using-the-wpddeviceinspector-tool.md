@@ -1,21 +1,21 @@
 ---
-Description: Using the WpdDeviceInspector Tool
+Description: 使用 WpdDeviceInspector 工具
 title: 使用 WpdDeviceInspector 工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aedc1f270b6995fb19b34d74e0b798763f7361b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370455"
 ---
 # <a name="using-the-wpddeviceinspector-tool"></a>使用 WpdDeviceInspector 工具
 
 
 WpdDeviceInspector 工具是一个控制台应用程序的全面的 HTML 报告。 此报告描述了下表中列出的三种类别的设备和驱动程序信息。
 
-| 类别                 | 描述                                                                                              |
+| Category                 | 描述                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------|
 | 安装信息 | 指定由 Windows 安装程序使用的设备和驱动程序数据。                                  |
 | 设备功能      | 标识命令、 对象、 内容类型、 格式和设备支持的事件。       |

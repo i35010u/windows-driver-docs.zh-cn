@@ -1,6 +1,6 @@
 ---
-title: 添加驱动程序时考虑的要点
-description: 添加驱动程序时考虑的要点
+title: 添加驱动程序时要考虑的要点
+description: 添加驱动程序时要考虑的要点
 ms.assetid: bcbaa842-03b6-4311-9b93-1a4af165020b
 keywords:
 - WDM 驱动程序 WDK 内核配置
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49c29a60fd6065c5bdd2048c69c24a273f168eb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369221"
 ---
-# <a name="points-to-consider-when-adding-drivers"></a>添加驱动程序时考虑的要点
+# <a name="points-to-consider-when-adding-drivers"></a>添加驱动程序时要考虑的要点
 
 
 

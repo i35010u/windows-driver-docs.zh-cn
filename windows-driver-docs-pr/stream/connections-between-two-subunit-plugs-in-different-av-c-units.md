@@ -1,6 +1,6 @@
 ---
-title: 两个不同的 AV C 单元中的子单元插入之间的连接
-description: 两个不同的 AV C 单元中的子单元插入之间的连接
+title: 在不同 AV/C 单元中的两个子单元插头之间的连接
+description: 在不同 AV/C 单元中的两个子单元插头之间的连接
 ms.assetid: 20d209b3-2516-4913-9f31-b14afddb78fb
 keywords:
 - 连接 WDK AV/C
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cca8650152be9426efe116983dc958ac08dcf6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374251"
 ---
-# <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>两个不同的 AV C 单元中的子单元插入之间的连接
+# <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个子单元插头之间的连接
 
 
 方案 5 和 6 表示为子单元不同单元中的一个单元中子单元之间的连接。 这些类型的连接需要**信号源**并**输入选择**CCM 命令。

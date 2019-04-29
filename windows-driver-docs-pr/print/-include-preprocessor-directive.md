@@ -1,6 +1,6 @@
 ---
-title: '#包括预处理器指令'
-description: '#包括预处理器指令'
+title: '#包含预处理器指令'
+description: '#包含预处理器指令'
 ms.assetid: 6c3e4de7-2007-4a1a-bdb0-fd5b2b64f489
 keywords:
 - 预处理器指令 WDK GDL，关键字
@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18d374b689ea256bc5636daffbcc3fc3c0337488
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372897"
 ---
 # <a name="include-preprocessor-directive"></a>\#包括预处理器指令
 

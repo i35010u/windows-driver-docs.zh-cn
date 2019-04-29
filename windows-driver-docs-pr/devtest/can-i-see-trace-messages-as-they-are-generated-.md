@@ -5,13 +5,13 @@ ms.assetid: 21d8606b-5693-4f50-81f9-c5c3a65c0550
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e60b1b65a224878517ef50ff70c9dddb7b316f4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375378"
 ---
-# <a name="can-i-see-trace-messages-as-they-are-generated"></a>生成可以查看跟踪消息？
+# <a name="can-i-see-trace-messages-as-they-are-generated"></a>是否可以看到生成的跟踪消息？
 
 
 是。 若要查看的跟踪消息生成，使用中的实时跟踪会话选项[TraceView](traceview.md)， [Tracelog](tracelog.md)，或[Tracefmt](tracefmt.md)。 这些工具包括在工具\\跟踪\\&lt;*平台*&gt;子目录的 Microsoft Windows Driver Kit (WDK)，其中&lt; *平台*&gt;是 i386、 amd64 或 ia64。
@@ -40,7 +40,7 @@ ms.locfileid: "56545367"
 
     你可以选择其他选项以指定[跟踪标志](trace-flags.md)并[跟踪级别](trace-level.md)，或自定义跟踪会话。
 
-9.  单击“完成” 。
+9.  单击 **“完成”**。
 
 有关详细信息，请在 TraceView 上,**帮助**菜单上，单击**帮助主题**。
 

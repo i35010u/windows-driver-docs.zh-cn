@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 699d78e8a7223a1bb6c1d3bd5c52b3045430ccbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367101"
 ---
 # <a name="activejobs-element"></a>ActiveJobs 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56541397"
 </wscn:ActiveJobs>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -89,7 +89,7 @@ ms.locfileid: "56541397"
 
 客户端可以询问有关的活动作业通过列表[ **GetActiveJobsRequest** ](getactivejobsrequest.md)操作。 WSD 扫描服务返回的列表中[ **GetActiveJobsResponse** ](getactivejobsresponse.md)操作元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetActiveJobsRequest**](getactivejobsrequest.md)

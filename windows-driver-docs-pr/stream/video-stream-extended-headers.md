@@ -1,6 +1,6 @@
 ---
-title: 视频 Stream 扩展标头
-description: 视频 Stream 扩展标头
+title: 视频流扩展标头
+description: 视频流扩展标头
 ms.assetid: 6540026c-a41a-49e2-a41f-fe64106408f5
 keywords:
 - 视频捕获 WDK AVStream，扩展标头
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 175cdf1e81deccbfb9c2222a1d069c2e87e24072
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359607"
 ---
-# <a name="video-stream-extended-headers"></a>视频 Stream 扩展标头
+# <a name="video-stream-extended-headers"></a>视频流扩展标头
 
 
 视频捕获微型驱动程序在其输出流中使用扩展标头提供的流和当前的框架内容的辅助信息。 例如，图像流标头提供有关当前的帧数、 丢弃的帧和字段极性标志数的信息。 为每个帧已完成，微型驱动程序填充有关捕获的帧的辅助信息的扩展标头中。

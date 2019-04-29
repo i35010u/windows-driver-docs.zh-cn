@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f9c1e02583436ac3af9d0feaca0a121455c93c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354538"
 ---
 # <a name="storage-miniport-drivers"></a>存储器微型端口驱动程序
 

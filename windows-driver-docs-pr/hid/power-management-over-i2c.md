@@ -5,11 +5,11 @@ ms.assetid: 00FE1248-683F-48FE-8422-E51E88224955
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 189880af31591b6eca1642bac8ab3ab536a1371c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372987"
 ---
 # <a name="power-management"></a>电源管理
 

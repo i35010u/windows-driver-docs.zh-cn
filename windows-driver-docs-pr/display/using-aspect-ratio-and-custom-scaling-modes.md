@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb3cbc649a3df2b2bdab04b14f6072914344d439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361219"
 ---
 # <a name="using-aspect-ratio-and-custom-scaling-modes"></a>使用纵横比和自定义缩放模式
 

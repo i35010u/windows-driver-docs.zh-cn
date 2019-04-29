@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe0bd9f33aab2e45be2b17230cc9da9e03ebe1a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324603"
 ---
 # <a name="fsctlispathnamevalid-control-code"></a>FSCTL\_IS\_PATHNAME\_有效控制代码
 
@@ -30,7 +30,7 @@ ms.locfileid: "56525435"
 
 若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 不使用。
@@ -68,7 +68,7 @@ ms.locfileid: "56525435"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h 或 Fltkernel.h）</td>
 </tr>
 </tbody>

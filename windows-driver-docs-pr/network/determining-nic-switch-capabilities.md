@@ -5,11 +5,11 @@ ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 990104d4b1d07ef6bdb8e1f4b3933c4316457bee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364222"
 ---
 # <a name="determining-nic-switch-capabilities"></a>确定 NIC 交换机功能
 

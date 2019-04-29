@@ -1,6 +1,6 @@
 ---
-title: 部分打印提供商的概述
-description: 部分打印提供商的概述
+title: 不完整打印提供程序的概述
+description: 不完整打印提供程序的概述
 ms.assetid: 622f99e3-d4a5-42f0-ab71-4d256e0ea02c
 keywords:
 - 打印提供程序 WDK，部分打印提供商
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4115664165373c56a771180dad0187f65636830
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362743"
 ---
-# <a name="overview-of-partial-print-providers"></a>部分打印提供商的概述
+# <a name="overview-of-partial-print-providers"></a>不完整打印提供程序的概述
 
 
 

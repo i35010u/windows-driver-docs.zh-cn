@@ -5,11 +5,11 @@ ms.assetid: f3c6ae83-d50f-49c8-a851-763f191f1932
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c7d765eef00b29bc36c20fb68337b9d90104d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371841"
 ---
 # <a name="kspropsetidbdapincontrol"></a>KSPROPSETID\_BdaPinControl
 
@@ -35,7 +35,7 @@ BDA 筛选器的每个 pin 工厂应支持设置此属性。 如果 BDA 微型�
 
 此属性中的属性设置旋转中心点返回的信息。 通常情况下，筛选器的 pin 不需要截获任何这些属性。 BDA 支持库提供了**BdaPropertyGetPinControl**默认函数来处理此属性组。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**BdaCreatePin**](https://msdn.microsoft.com/library/windows/hardware/ff556445)， [ **BdaInitFilter**](https://msdn.microsoft.com/library/windows/hardware/ff556464)， [ **BdaPropertyGetPinControl**](https://msdn.microsoft.com/library/windows/hardware/ff556483)， [KSMETHODSETID\_BdaDeviceConfiguration](ksmethodsetid-bdadeviceconfiguration.md)
 

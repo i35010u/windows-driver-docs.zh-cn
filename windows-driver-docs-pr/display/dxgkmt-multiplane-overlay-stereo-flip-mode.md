@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 93be0f79d9b13d4a599535dde514736bc518f9c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370820"
 ---
 # <a name="dxgkmtmultiplaneoverlaystereoflipmode-enumeration"></a>DXGKMT\_MULTIPLANE\_覆盖\_立体声\_翻转\_模式枚举
 
@@ -64,7 +64,7 @@ typedef enum _DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">D3dkmthk.h</td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: 1e50afe1-7103-45c4-8f58-a08d51423b22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a57b769eb0180cf591e65e48f57f07683c1cc93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358141"
 ---
 # <a name="direct3d-version-10-runtime-and-driver-handles"></a>Direct3D 版本 10 运行时和驱动程序句柄
 

@@ -1,15 +1,15 @@
 ---
-title: YUV RGB 数据范围转换
+title: YUV-RGB 数据范围转换
 ms.assetid: 0A439686-0BAE-4E4D-AA23-06A6EF72C4B3
 description: 预期的视频转换行为对输入的数据范围的影响
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c6022ff07872ee15099e8d4f96674eed88ec540b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371473"
 ---
 # <a name="span-iddisplayyuv-rgbdatarangeconversionsspanyuv-rgb-data-range-conversions"></a><span id="display.yuv-rgb_data_range_conversions"></span>YUV RGB 数据范围转换
 
@@ -67,9 +67,9 @@ ms.locfileid: "56542960"
 <tr class="odd">
 <td align="left">0-255</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
 <td align="left">YUV</td>
 <td align="left">0-255</td>
@@ -78,9 +78,9 @@ ms.locfileid: "56542960"
 <tr class="even">
 <td align="left">16-235</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
 <td align="left">YUV</td>
 <td align="left">16-235</td>
@@ -89,9 +89,9 @@ ms.locfileid: "56542960"
 <tr class="odd">
 <td align="left">16-235</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
 <td align="left">YUV</td>
 <td align="left">0-255</td>
@@ -100,9 +100,9 @@ ms.locfileid: "56542960"
 <tr class="even">
 <td align="left">0-255</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
 <td align="left">YUV</td>
 <td align="left">16-235</td>
@@ -112,8 +112,8 @@ ms.locfileid: "56542960"
 <td align="left">0-255</td>
 <td align="left">RGB</td>
 <td align="left">0</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
 <td align="left">YUV</td>
 <td align="left">16-235</td>
@@ -123,8 +123,8 @@ ms.locfileid: "56542960"
 <td align="left">0-255</td>
 <td align="left">RGB</td>
 <td align="left">0</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
 <td align="left">YUV</td>
 <td align="left">0-255</td>
@@ -133,10 +133,10 @@ ms.locfileid: "56542960"
 <tr class="odd">
 <td align="left">16-235</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">1</td>
 <td align="left">0</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">RGB</td>
 <td align="left">0-255</td>
 <td align="left">YUVtoRGB</td>
@@ -144,10 +144,10 @@ ms.locfileid: "56542960"
 <tr class="even">
 <td align="left">0-255</td>
 <td align="left">YUV</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">2</td>
 <td align="left">0</td>
-<td align="left">不适用</td>
+<td align="left">不可用</td>
 <td align="left">RGB</td>
 <td align="left">0-255</td>
 <td align="left">YUVtoRGB</td>

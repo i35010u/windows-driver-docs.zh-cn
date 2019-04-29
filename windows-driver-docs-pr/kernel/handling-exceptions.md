@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3fc196616a9d610349f7f3660d2f70576ad135
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359469"
 ---
 # <a name="handling-exceptions"></a>处理异常
 
@@ -86,7 +86,7 @@ try {
 
 对用户模式缓冲区的内存访问也会导致访问冲突。 有关详细信息，请参阅[中引用用户空间地址错误](errors-in-referencing-user-space-addresses.md)。
 
-请注意，结构化的异常处理不同于 c + + 异常。 内核不支持 c + + 异常。
+请注意，不同于结构化的异常处理C++异常。 内核不支持C++异常。
 
 有关结构化异常处理的详细信息，请参阅 Microsoft Windows SDK 和 Visual Studio 文档。
 

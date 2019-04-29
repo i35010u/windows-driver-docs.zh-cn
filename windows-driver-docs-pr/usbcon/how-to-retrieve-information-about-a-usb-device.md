@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the USB hardware verifier tool (USB3HWVerifierAnalyzer.exe) that is used for testing and debugging specific hardware events.
+Description: 本主题介绍用于测试和调试特定硬件事件的 USB 硬件验证程序工具 (USB3HWVerifierAnalyzer.exe)。
 title: USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8b410e79dc93cdd79d55a89e97169ae127acd78
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366184"
 ---
 # <a name="usb-hardware-verifier-usb3hwverifieranalyzerexe"></a>USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 
@@ -56,7 +56,7 @@ USB 硬件验证工具是附带可用于下载 MUTT 软件包[MUTT 软件包中�
    </colgroup>
    <thead>
    <tr class="header">
-   <th>选项</th>
+   <th>Option</th>
    <th>描述</th>
    </tr>
    </thead>

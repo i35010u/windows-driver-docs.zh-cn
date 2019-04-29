@@ -1,5 +1,5 @@
 ---
-title: 如，作为 （集别名）
+title: as、aS（设置别名）
 description: As 和命令定义新的别名或重新定义现有。
 ms.assetid: 6e42122b-5a18-403b-a19a-1346bea8da12
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fc6fe184b81ddf621165be258a5c529c13bd40fe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354695"
 ---
-# <a name="as-as-set-alias"></a>如，作为 （集别名）
+# <a name="as-as-set-alias"></a>as、aS（设置别名）
 
 
 **作为**并**作为**命令定义新的别名或重新定义现有。

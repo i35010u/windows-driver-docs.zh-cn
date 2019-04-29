@@ -1,19 +1,19 @@
 ---
-title: 描述 AVStream 编解码器中的扩展的示例信息
-description: 描述 AVStream 编解码器中的扩展的示例信息
+title: 描述 AVStream 编解码器中的扩展示例信息
+description: 描述 AVStream 编解码器中的扩展示例信息
 ms.assetid: 04447525-78f5-4c77-9a41-4e6e4729f729
 keywords:
 - AVStream 硬件编解码器支持 WDK，扩展的示例信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76148fe0ae5617f948b271213e8e87b0c7218552
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374083"
 ---
-# <a name="describing-extended-sample-information-in-avstream-codecs"></a>描述 AVStream 编解码器中的扩展的示例信息
+# <a name="describing-extended-sample-information-in-avstream-codecs"></a>描述 AVStream 编解码器中的扩展示例信息
 
 
 解码器筛选器可以在扩展中找到扩展的示例信息[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构[ **KS\_帧\_INFO**](https://msdn.microsoft.com/library/windows/hardware/ff567645)，后者按照 KSSTREAM\_在内存中的标头。

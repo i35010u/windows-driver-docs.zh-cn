@@ -1,6 +1,6 @@
 ---
-title: 动态更改允许驱动程序加速程序
-description: 动态更改允许驱动程序加速程序
+title: 允许的驱动程序加速的动态更改
+description: 允许的驱动程序加速的动态更改
 ms.assetid: a80bb755-f4ff-4d5d-aff1-28f8262061ae
 keywords:
 - 加速级别 WDK Windows 2000 显示
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dc372788775254e965fa3c38e8a80f5cda4ab37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63327940"
 ---
-# <a name="dynamic-change-of-permitted-driver-accelerations"></a>动态更改允许驱动程序加速程序
+# <a name="dynamic-change-of-permitted-driver-accelerations"></a>允许的驱动程序加速的动态更改
 
 
 ## <span id="ddk_dynamic_change_of_permitted_driver_accelerations_gg"></span><span id="DDK_DYNAMIC_CHANGE_OF_PERMITTED_DRIVER_ACCELERATIONS_GG"></span>
@@ -32,7 +32,7 @@ ms.locfileid: "56545303"
 <thead>
 <tr class="header">
 <th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

@@ -1,14 +1,14 @@
 ---
-Description: Defining the Service Objects
+Description: 定义服务对象
 title: 定义服务对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 965836fb50baeb873f8f5edee9be2c618fc5cdcd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370631"
 ---
 # <a name="defining-the-service-objects"></a>定义服务对象
 
@@ -17,7 +17,7 @@ WPD，在设备上的逻辑实体都称为对象。 对象可以表示设备的�
 
 WpdHelloWorldDriver 支持下表中所示的对象。
 
-| 对象  | 描述                                                                                                       |
+| Object  | 描述                                                                                                       |
 |---------|-------------------------------------------------------------------------------------------------------------------|
 | 设备  | 包含描述性属性，如固件版本、 型号和友好名称的根对象。 |
 | 存储 | 一个对象，公开属性，如存储容量、 文件系统类型和可用的字节数。         |
@@ -28,7 +28,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
 
 类似于 WpdHelloWorldDriver，WpdServiceSampleDriver 继续以支持存储对象。 但是，因为该示例不支持文件夹或文件 （为简单起见），我们删除这些对象，并且它们替换为对应于联系人的单个对象。 下表列出了新的驱动程序支持的对象。
 
-| 对象   | 描述                                                                                                            |
+| Object   | 描述                                                                                                            |
 |----------|------------------------------------------------------------------------------------------------------------------------|
 | 设备   | 包含描述性属性，如固件版本、 型号和友好名称的根对象。      |
 | 存储  | 一个对象，公开属性，如存储容量、 文件系统类型和可用的字节数。              |
@@ -86,7 +86,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
     }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

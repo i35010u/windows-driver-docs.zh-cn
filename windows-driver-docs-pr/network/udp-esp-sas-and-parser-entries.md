@@ -1,6 +1,6 @@
 ---
-title: UDP ESP SAs 和分析器条目
-description: UDP ESP SAs 和分析器条目
+title: UDP-ESP SA 和分析器项
+description: UDP-ESP SA 和分析器项
 ms.assetid: 1682b077-07ba-4b2e-9c01-fd7662f3f189
 keywords:
 - UDP 封装的 ESP 数据包 WDK IPsec 卸载、 分析器条目
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a5d655628e902bccdd434081706651c56f5cc88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358255"
 ---
-# <a name="udp-esp-sas-and-parser-entries"></a>UDP ESP SAs 和分析器条目
+# <a name="udp-esp-sas-and-parser-entries"></a>UDP-ESP SA 和分析器项
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

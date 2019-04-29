@@ -1,21 +1,21 @@
 ---
-title: NDIS 常规统计信息 Oid
+title: NDIS 常规统计信息 OID
 description: 本部分介绍所有 NDIS 驱动程序的常规统计的信息 Oid
 keywords:
-- NDIS 常规统计信息 Oid
+- NDIS 常规统计信息 OID
 - WDK NDIS 常规统计信息 Oid
 - WDK 常规统计信息 Oid
 ms.assetid: 364BEF6E-489C-427A-9ACC-D18F29F22B0F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a6b69fb0666debcc5a2b7700e3483970e7b3309
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392918"
 ---
-# <a name="ndis-general-statistics-oids"></a>NDIS 常规统计信息 Oid
+# <a name="ndis-general-statistics-oids"></a>NDIS 常规统计信息 OID
 
 驱动程序应响应具有完整信息的 OID，以便该驱动程序的操作系统和应用程序使用来监视网络状态所需的信息可以提供响应的安全问题，统计信息的查询并诊断问题。 如果统计信息计数器在硬件中，该驱动程序应读取的相应统计信息值从硬件每次查询统计信息 OID。
 

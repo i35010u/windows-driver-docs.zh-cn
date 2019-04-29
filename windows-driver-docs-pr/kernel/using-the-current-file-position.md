@@ -1,6 +1,6 @@
 ---
-title: 使用当前的文件位置
-description: 使用当前的文件位置
+title: 使用当前文件位置
+description: 使用当前文件位置
 ms.assetid: d342d973-8fff-4d00-a275-114012c17727
 keywords:
 - 文件 WDK 内核
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d1fc467973915a96aa87b646c0784561f1423c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372363"
 ---
-# <a name="using-the-current-file-position"></a>使用当前的文件位置
+# <a name="using-the-current-file-position"></a>使用当前文件位置
 
 
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 781e954139ec90a2085b75c49b9e27855f6ead1b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365922"
 ---
 # <a name="rename-and-hard-link-processing"></a>重命名和硬链接处理
 

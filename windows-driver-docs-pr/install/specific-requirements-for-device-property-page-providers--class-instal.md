@@ -1,6 +1,6 @@
 ---
 title: 设备属性页提供程序 （共同安装程序） 的要求
-description: 设备属性页提供程序 （共同安装程序） 的特定要求
+description: 设备属性页提供程序（辅助安装程序）的特定要求
 ms.assetid: b57beaed-5e5f-499e-b973-532f33b7fb99
 keywords:
 - 设备属性页 WDK 设备安装，DIF_ADDPROPERTYPAGE_ADVANCED
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de9a6772f71692a9c07f00bc20f66f74c804410f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369429"
 ---
-# <a name="specific-requirements-for-device-property-page-providers-co-installers"></a>设备属性页提供程序 （共同安装程序） 的特定要求
+# <a name="specific-requirements-for-device-property-page-providers-co-installers"></a>设备属性页提供程序（辅助安装程序）的特定要求
 
 
 

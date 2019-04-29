@@ -6,11 +6,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: aba68fd37f6ab19b942e0d99603743c56cb64183
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371463"
 ---
 # <a name="span-iddisplaymiracastuser-modedrivertaskstosupportmiracastwirelessdisplaysspanmiracast-user-mode-driver-tasks-to-support-miracast-wireless-displays"></a><span id="display.miracast_user-mode_driver_tasks_to_support_miracast_wireless_displays"></span>Miracast 用户模式驱动程序任务，以支持 Miracast 无线显示
 

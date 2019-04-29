@@ -1,17 +1,17 @@
 ---
-title: 何时使用此技术
-description: 何时使用此技术
+title: 何时使用此方法
+description: 何时使用此方法
 ms.assetid: 40c9e2aa-35a3-4169-8305-bddc199a5c98
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9db617441839193c6421a604adadd7795f3d9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325849"
 ---
-# <a name="when-to-use-this-technique"></a>何时使用此技术
+# <a name="when-to-use-this-technique"></a>何时使用此方法
 
 
 ## <span id="ddk_opening_a_crash_dump_dbg"></span><span id="DDK_OPENING_A_CRASH_DUMP_DBG"></span>

@@ -1,6 +1,6 @@
 ---
-title: 创建并初始化通知对象的实例
-description: 创建并初始化通知对象的实例
+title: 创建和初始化通知对象的实例
+description: 创建和初始化通知对象的实例
 ms.assetid: 933d24cc-d1a0-4768-9bba-4c78150a84da
 keywords:
 - 通知对象 WDK 网络的实例
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5351a760b864d31f3a655af0638b097379eb05fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357345"
 ---
-# <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>创建并初始化通知对象的实例
+# <a name="creating-and-initializing-an-instance-of-a-notify-object"></a>创建和初始化通知对象的实例
 
 
 

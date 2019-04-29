@@ -5,11 +5,11 @@ ms.assetid: C11F1FD7-DA41-4A72-A0EB-97C1D79ECC21
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c8474d0a48fdf5f5982507dade65b0dcc24f67
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356527"
 ---
 # <a name="irpprocessing-rule-set-wdm"></a>IrpProcessing 规则集 (WDM)
 

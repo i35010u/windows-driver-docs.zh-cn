@@ -5,11 +5,11 @@ ms.assetid: 1BF1568D-A889-4158-9C6D-160D9B06F0DE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c7a951663dde43d2e8bd185b56f2867b9a36288
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368811"
 ---
 # <a name="sensor-properties"></a>传感器属性
 
@@ -18,7 +18,7 @@ ms.locfileid: "56554546"
 
 每个属性表示由*属性键*，用于标识的属性类别和属性标识符的 GUID 值。 本主题包含有关属性的合作伙伴可用于标识其传感器驱动程序的信息。
 
-### <a name="in-this-section"></a>本部分内容
+### <a name="in-this-section"></a>本节内容
 
 |主题|描述|
 |---|---|

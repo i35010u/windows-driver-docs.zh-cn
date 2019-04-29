@@ -1,6 +1,6 @@
 ---
-title: 快速互斥锁和受保护的互斥锁
-description: 快速互斥锁和受保护的互斥锁
+title: 快速互斥锁和受保护互斥锁
+description: 快速互斥锁和受保护互斥锁
 ms.assetid: 8c8014bf-6b81-4039-ae93-d4cedd6d6fed
 keywords:
 - 同步 WDK 内核，快速 mutex
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 212263c52417da6fcbe0ba80ffb3e8b347c59d82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359969"
 ---
-# <a name="fast-mutexes-and-guarded-mutexes"></a>快速互斥锁和受保护的互斥锁
+# <a name="fast-mutexes-and-guarded-mutexes"></a>快速互斥锁和受保护互斥锁
 
 
 从 Windows 2000 开始，可以使用驱动程序*快速 mutex*如果他们需要在 IRQL 运行的代码的开销较低的形式的互斥&lt;= APC\_级别。 快速的互斥体可以保护一次只有一个线程必须输入的代码路径。 若要输入的受保护的代码路径，该线程*获取*互斥体。 如果另一个线程已获取互斥体，直到释放互斥体挂起当前线程的执行。 若要退出受保护的代码路径，该线程*释放*互斥体。

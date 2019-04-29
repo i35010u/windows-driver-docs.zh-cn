@@ -1,6 +1,6 @@
 ---
-title: 在延迟上下文上的映射
-description: 在延迟上下文上的映射
+title: 延迟上下文中的映射
+description: 延迟上下文中的映射
 ms.assetid: 29c44639-ea5e-4255-8e8c-f6d5e3af0dfb
 keywords:
 - Direct3D 11 WDK Windows 7 显示版本，延迟的上下文映射
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ac25dd17ef160c9352011c6c21154f0d3791a52
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373913"
 ---
-# <a name="mapping-on-deferred-contexts"></a>在延迟上下文上的映射
+# <a name="mapping-on-deferred-contexts"></a>延迟上下文中的映射
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

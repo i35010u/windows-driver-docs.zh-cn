@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e1edcda4fb38125be9439c4aea1351e13aa2cc38
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357924"
 ---
 # <a name="cmcreaterangelist"></a>CM_Create_Range_List
 

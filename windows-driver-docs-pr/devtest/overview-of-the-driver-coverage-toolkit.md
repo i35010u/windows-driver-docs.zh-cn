@@ -1,19 +1,19 @@
 ---
-title: 驱动程序覆盖范围 Toolkit 概述
-description: 驱动程序覆盖范围 Toolkit 概述
+title: 驱动程序覆盖范围工具包概述
+description: 驱动程序覆盖范围工具包概述
 ms.assetid: eead0c9a-fc26-4777-b19a-e97b898e28a2
 keywords:
 - 驱动程序覆盖范围工具包 WDK，有关驱动程序覆盖范围工具包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e7262b7b1d0aaa7bc5244fb7c7d795f0dfb5f72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356338"
 ---
-# <a name="overview-of-the-driver-coverage-toolkit"></a>驱动程序覆盖范围 Toolkit 概述
+# <a name="overview-of-the-driver-coverage-toolkit"></a>驱动程序覆盖范围工具包概述
 
 
 **请注意**  的驱动程序覆盖范围工具包不再需要在 Windows 10 中，安装程序不再包含在 WDK 中。 若要执行此处所述在 Windows 10 中的任务，请改用[Driver Verifier](driver-verifier.md)并[IRP 日志记录](irp-logging.md)。

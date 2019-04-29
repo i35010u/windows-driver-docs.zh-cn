@@ -1,17 +1,17 @@
 ---
-title: 移植到 NDIS 6.30 NDIS 6.x 驱动程序
+title: 将 NDIS 6.x 驱动程序移植到 NDIS 6.30
 description: 本部分介绍到 NDIS 6.30 端口 NDIS 6.x 驱动程序的要求。
 ms.assetid: 3120C82A-94FF-48F0-8191-CF0C63535113
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 653f83ee653585ee0f7325ade45995ce59ad846d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358729"
 ---
-# <a name="porting-ndis-6x-drivers-to-ndis-630"></a>移植到 NDIS 6.30 NDIS 6.x 驱动程序
+# <a name="porting-ndis-6x-drivers-to-ndis-630"></a>将 NDIS 6.x 驱动程序移植到 NDIS 6.30
 
 
 本部分介绍到 NDIS 6.30 端口 NDIS 6.x 驱动程序的要求。

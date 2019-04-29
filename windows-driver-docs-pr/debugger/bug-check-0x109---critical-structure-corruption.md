@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 63906a57ba37e6a487bfa250164978ff70173cd8
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357619"
 ---
 # <a name="bug-check-0x109-criticalstructurecorruption"></a>Bug 检查 0x109：关键\_结构\_损坏
 

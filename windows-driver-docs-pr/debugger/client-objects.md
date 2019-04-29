@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6861c3e060420c1b66be6c8f11c7571d37c3a04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375090"
 ---
 # <a name="client-objects"></a>客户端对象
 

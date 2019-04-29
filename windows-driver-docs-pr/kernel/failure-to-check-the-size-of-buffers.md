@@ -1,6 +1,6 @@
 ---
-title: 未能检查缓冲区的大小
-description: 未能检查缓冲区的大小
+title: 无法检查缓冲区大小
+description: 无法检查缓冲区大小
 ms.assetid: e9d9a5d9-19a5-4a1d-95f9-df2021c51c41
 keywords:
 - 缓冲区大小 WDK 内核
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2673d535c8b2d123e5fa6c53f8c9eaeac8583a2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359998"
 ---
-# <a name="failure-to-check-the-size-of-buffers"></a>未能检查缓冲区的大小
+# <a name="failure-to-check-the-size-of-buffers"></a>无法检查缓冲区大小
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 6872594a-35f8-4fbf-b764-22b286fb940c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48e61e6bfa1e72abd3cc25effeee6841e96f1820
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368992"
 ---
 # <a name="ndis-vmq-live-migration-support"></a>NDIS VMQ 实时迁移支持
 

@@ -5,11 +5,11 @@ ms.assetid: b201e365-60d8-4c3b-a9cf-4bbaa318337f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a42aa3a5ddbe5ba30916fc12190a7d9bc18c7862
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363049"
 ---
 # <a name="wia-item-categories"></a>WIA 项类别
 

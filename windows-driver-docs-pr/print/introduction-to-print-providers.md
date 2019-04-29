@@ -1,6 +1,6 @@
 ---
-title: 若要打印提供程序的简介
-description: 若要打印提供程序的简介
+title: 打印提供程序简介
+description: 打印提供程序简介
 ms.assetid: a0e5e8c8-7af4-4715-9036-64ae851b307d
 keywords:
 - 有关打印提供程序的打印提供商 WDK，
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e43c86a73678fe6841147b08f883826224914990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355662"
 ---
-# <a name="introduction-to-print-providers"></a>若要打印提供程序的简介
+# <a name="introduction-to-print-providers"></a>打印提供程序简介
 
 > [!WARNING]
 > 从 Windows 10 开始，已弃用的 Api 支持第三方打印提供程序。 Microsoft 不建议到第三方打印提供商的任何投资。 此外，在 Windows 8 和更高版本的 v4 打印驱动程序模型是可用的产品，第三方打印提供商不可能创建，或管理使用 v4 打印驱动程序的队列。

@@ -5,11 +5,11 @@ ms.assetid: 7b09ffc6-0f69-4710-988b-4952823da72e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe68a2d10fd1fc68fb79a7c4e819471540cb028d
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323689"
 ---
 # <a name="softwareinfo-xml-schema-definition"></a>SoftwareInfo XML 架构定义
 

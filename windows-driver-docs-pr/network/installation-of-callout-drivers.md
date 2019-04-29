@@ -1,6 +1,6 @@
 ---
-title: 安装的标注驱动程序
-description: 安装的标注驱动程序
+title: 标注驱动程序的安装
+description: 标注驱动程序的安装
 ms.assetid: 3baefd81-04bc-4a34-b4cd-afa544308a90
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，安装
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12200ae5547499daf0dfc284ccf50df25da619b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324931"
 ---
-# <a name="installation-of-callout-drivers"></a>安装的标注驱动程序
+# <a name="installation-of-callout-drivers"></a>标注驱动程序的安装
 
 
 可以通过右键单击驱动程序的安装信息文件 (INF) 文件并选择安装的标注驱动程序**安装**从显示的弹出菜单。

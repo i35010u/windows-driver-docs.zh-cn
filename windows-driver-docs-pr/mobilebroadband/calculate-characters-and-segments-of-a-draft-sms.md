@@ -1,17 +1,17 @@
 ---
-title: 计算字符和草稿 SMS 的段
-description: 计算字符和草稿 SMS 的段
+title: 计算短信草稿的字符数和段数
+description: 计算短信草稿的字符数和段数
 ms.assetid: abbec0b0-dfa8-43e9-8b48-e99680d56b42
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d1966765bfc301892594d3f87ea859f8ba894d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392983"
 ---
-# <a name="calculate-characters-and-segments-of-a-draft-sms"></a>计算字符和草稿 SMS 的段
+# <a name="calculate-characters-and-segments-of-a-draft-sms"></a>计算短信草稿的字符数和段数
 
 
 移动宽带短信平台的短信组合期间提供的函数来估计的剩余字符数和使用 （在多个部分组成的消息） 段数。
@@ -32,7 +32,7 @@ id('remainingCharsCount').innerText = messageLength.charactersPerSegment - messa
 id('messageSegmentsCount').innerText = messageLength.segmentCount;
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用文本模式界面发送短信](send-sms-by-using-the-text-mode-interface.md)

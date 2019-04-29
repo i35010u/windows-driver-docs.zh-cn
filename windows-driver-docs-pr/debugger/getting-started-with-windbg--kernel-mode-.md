@@ -5,11 +5,11 @@ ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c119aa1994b53ce79b7983bbee559455084b464
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362183"
 ---
 # <a name="span-iddebuggergettingstartedwithwindbgkernel-modespangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>开始使用 WinDbg （内核模式）
 
@@ -415,16 +415,16 @@ Windows 调试器支持这些类型的电缆，用于调试的：
 -   [!drvobj](https://go.microsoft.com/fwlink/p?linkid=399246)
 -   [qd （Quit 和分离）](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开始使用 WinDbg （用户模式）](getting-started-with-windbg.md)
+[Getting Started with WinDbg (User-Mode)](getting-started-with-windbg.md)（WinDbg 入门（用户模式））
 
 [内核模式调试手动设置](https://go.microsoft.com/fwlink/p?linkid=272138)
 
 [调试程序操作](https://go.microsoft.com/fwlink/p?linkid=399247)
 
-[调试技术](https://go.microsoft.com/fwlink/p?linkid=399248)
+[调试方法](https://go.microsoft.com/fwlink/p?linkid=399248)
 
 [（WinDbg、 KD、 CDB、 NTSD） 的 Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)
 

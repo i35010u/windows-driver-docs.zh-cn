@@ -5,11 +5,11 @@ ms.assetid: 449c0c08-c995-4e23-a770-a567bd48966c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53b58623168024c0eaa228d543b3f64393416cb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361901"
 ---
 # <a name="installing-a-new-bus-driver"></a>安装新总线驱动程序
 

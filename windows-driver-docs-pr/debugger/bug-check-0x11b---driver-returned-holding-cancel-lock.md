@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 645ff1f64e4ca9637f93b8493170db1724351021
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358160"
 ---
 # <a name="bug-check-0x11b-driverreturnedholdingcancellock"></a>Bug 检查 0x11B：驱动程序\_退回\_持有\_取消\_锁
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_PHYSICAL_MEDIUM 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5627c37f1bef00ea906d4fa5f46f932898a6604b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371065"
 ---
 # <a name="oidgenphysicalmedium"></a>OID\_GEN\_PHYSICAL\_MEDIUM
 
@@ -88,17 +88,17 @@ NDIS 支持 OID\_GEN\_物理\_支持较新的网络，即使这些网络传输�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和 6.1 中受支持。 NDIS 6.20 和更高版本，使用<a href="oid-gen-physical-medium-ex.md" data-raw-source="[OID_GEN_PHYSICAL_MEDIUM_EX](oid-gen-physical-medium-ex.md)">OID_GEN_PHYSICAL_MEDIUM_EX</a>相反。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_GEN\_媒体\_支持](oid-gen-media-supported.md)

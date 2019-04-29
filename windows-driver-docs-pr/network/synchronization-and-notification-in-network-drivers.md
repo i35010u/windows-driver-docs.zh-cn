@@ -1,6 +1,6 @@
 ---
-title: 同步和网络驱动程序中的通知
-description: 同步和网络驱动程序中的通知
+title: 网络驱动程序中的同步和通知
+description: 网络驱动程序中的同步和通知
 ms.assetid: 9fd9306f-5431-485f-9d6b-f7d6f25ea1ce
 keywords:
 - 同步对 WDK 网络资源的访问
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 419fb53f0e53eecb6441c148ad975dcb70622c32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362551"
 ---
-# <a name="synchronization-and-notification-in-network-drivers"></a>同步和网络驱动程序中的通知
+# <a name="synchronization-and-notification-in-network-drivers"></a>网络驱动程序中的同步和通知
 
 
 

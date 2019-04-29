@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c1e2f23df73d851c46713190d66076fc804f90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391285"
 ---
 # <a name="markqueryrelations-rule-wdm"></a>MarkQueryRelations 规则 (wdm)
 
@@ -56,7 +56,7 @@ ms.locfileid: "56523007"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoAcquireRemoveLock**](https://msdn.microsoft.com/library/windows/hardware/ff548204)

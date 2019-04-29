@@ -1,6 +1,6 @@
 ---
-title: 控制进程和线程在 WinDbg 中
-description: 控制进程和线程在 WinDbg 中
+title: 在 WinDbg 中控制进程和线程
+description: 在 WinDbg 中控制进程和线程
 ms.assetid: d4755889-9a65-4e81-b3a3-e0bbc6324d3e
 keywords:
 - 调试信息窗口、 进程和线程窗口
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee0b3de8d15f9fa23b2c7c754efbcf7716f5e14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362406"
 ---
-# <a name="controlling-processes-and-threads-in-windbg"></a>控制进程和线程在 WinDbg 中
+# <a name="controlling-processes-and-threads-in-windbg"></a>在 WinDbg 中控制进程和线程
 
 
 ## <span id="ddk_processes_and_threads_window_dbg"></span><span id="DDK_PROCESSES_AND_THREADS_WINDOW_DBG"></span>

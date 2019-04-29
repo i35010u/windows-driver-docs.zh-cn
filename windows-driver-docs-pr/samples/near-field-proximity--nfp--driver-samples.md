@@ -1,17 +1,17 @@
 ---
-title: 附近字段邻近 (NFP) 驱动程序示例
+title: 近场邻近感应 (NFP) 驱动程序示例
 description: NFP 驱动程序示例，此目录中的提供了用于编写你的设备的自定义驱动程序的起点。
 ms.assetid: 0AE9A015-A18E-4E2A-A477-C5EAAA2FBD3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da8535b0e020d1c131ca4e850659296049f24997
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359015"
 ---
-# <a name="near-field-proximity-nfp-driver-samples"></a>附近字段邻近 (NFP) 驱动程序示例
+# <a name="near-field-proximity-nfp-driver-samples"></a>近场邻近感应 (NFP) 驱动程序示例
 
 
 此目录中的驱动程序示例提供了用于编写你的设备的自定义驱动程序的起点。

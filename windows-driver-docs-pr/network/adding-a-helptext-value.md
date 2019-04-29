@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0573a425ae6b2f68cff26c78b40c2f5fbaa18be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367852"
 ---
 # <a name="adding-a-helptext-value"></a>添加 HelpText 值
 

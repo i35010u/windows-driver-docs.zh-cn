@@ -1,6 +1,6 @@
 ---
-title: 类型的 NDIS 端口
-description: 类型的 NDIS 端口
+title: NDIS 端口的类型
+description: NDIS 端口的类型
 ms.assetid: a77ceb1b-d4b9-4a42-aa5b-685295722fa3
 keywords:
 - 端口 WDK NDIS，类型
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50afb12241b115c8a95bdc4778e8d6a06dd5d977
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358273"
 ---
-# <a name="types-of-ndis-ports"></a>类型的 NDIS 端口
+# <a name="types-of-ndis-ports"></a>NDIS 端口的类型
 
 
 

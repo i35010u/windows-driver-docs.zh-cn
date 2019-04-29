@@ -6,11 +6,11 @@ keywords: ADPlus，转储文件、 adplus.vbs，Autodump +
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d816855efe231e1b5324cccbfcfed5775d009c2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354699"
 ---
 # <a name="adplus"></a>ADPlus
 
@@ -27,7 +27,7 @@ ADPlus 纳入[有关 Windows 调试工具](index.md)。
 
 有关 ADPlus V7.0 文档，查看有关 Windows 调试工具 adplus.doc 安装文件夹中。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试工具中包含的工具](extra-tools.md)

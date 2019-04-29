@@ -1,6 +1,6 @@
 ---
-title: 使用微型驱动程序中的多个 GPD 文件
-description: 使用微型驱动程序中的多个 GPD 文件
+title: 在微型驱动程序中使用多个 GPD 文件
+description: 在微型驱动程序中使用多个 GPD 文件
 ms.assetid: 2ec08b46-a286-4af8-a5d4-e0306f731b3f
 keywords:
 - GPD 文件 WDK Unidrv，多个
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8527a64aa417c2409ad31cf78e843dc61127bf31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374241"
 ---
-# <a name="using-multiple-gpd-files-in-a-minidriver"></a>使用微型驱动程序中的多个 GPD 文件
+# <a name="using-multiple-gpd-files-in-a-minidriver"></a>在微型驱动程序中使用多个 GPD 文件
 
 
 

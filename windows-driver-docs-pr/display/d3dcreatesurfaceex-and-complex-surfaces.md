@@ -1,6 +1,6 @@
 ---
-title: D3dCreateSurfaceEx 和复杂的图面
-description: D3dCreateSurfaceEx 和复杂的图面
+title: D3dCreateSurfaceEx 和复杂图面
+description: D3dCreateSurfaceEx 和复杂图面
 ms.assetid: aabe01bd-a7b8-4533-970e-4e1e49ba6596
 keywords:
 - 上下文 WDK Direct3D D3dCreateSurfaceEx
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12d29059a8a4300dc447ae2a59257bf7389823e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372771"
 ---
-# <a name="d3dcreatesurfaceex-and-complex-surfaces"></a>D3dCreateSurfaceEx 和复杂的图面
+# <a name="d3dcreatesurfaceex-and-complex-surfaces"></a>D3dCreateSurfaceEx 和复杂图面
 
 
 ## <span id="ddk_d3dcreatesurfaceex_and_complex_surfaces_gg"></span><span id="DDK_D3DCREATESURFACEEX_AND_COMPLEX_SURFACES_GG"></span>

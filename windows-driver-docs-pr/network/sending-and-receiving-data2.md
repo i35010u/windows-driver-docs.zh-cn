@@ -1,19 +1,19 @@
 ---
-title: 发送和接收数据的 CoNDIS 中
-description: 发送和接收数据的 CoNDIS 中
+title: 在 CoNDIS 中发送和接收数据
+description: 在 CoNDIS 中发送和接收数据
 ms.assetid: aad7ccf9-0eaa-4327-b048-268d12593a70
 keywords:
 - 虚拟连接 WDK 的 CoNDIS，数据传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 242b9228d72472cd2d07fe18b8f2141c21fc64a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366259"
 ---
-# <a name="sending-and-receiving-data-in-condis"></a>发送和接收数据的 CoNDIS 中
+# <a name="sending-and-receiving-data-in-condis"></a>在 CoNDIS 中发送和接收数据
 
 
 

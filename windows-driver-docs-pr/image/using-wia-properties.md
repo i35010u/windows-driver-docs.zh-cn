@@ -5,11 +5,11 @@ ms.assetid: a1bc114c-d547-486f-9b34-5ff0bab4d94b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 206257b316bbf767180e5af81ee5ba3a157197bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63322221"
 ---
 # <a name="using-wia-properties"></a>使用 WIA 属性
 

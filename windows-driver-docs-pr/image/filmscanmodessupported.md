@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf2472a14dbbe96338899781382c13924754b89e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358049"
 ---
 # <a name="filmscanmodessupported-element"></a>FilmScanModesSupported 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56545291"
 </wscn:FilmScanModesSupported>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -81,7 +81,7 @@ ms.locfileid: "56545291"
 
 **FilmScanModesSupported**元素包含一个或多个[ **FilmScanModeValue** ](filmscanmodevalue.md)子元素。 每个**FilmScanModeValue**元素标识电影扫描选项支持的电影胶片公开类型。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Film**](film.md)

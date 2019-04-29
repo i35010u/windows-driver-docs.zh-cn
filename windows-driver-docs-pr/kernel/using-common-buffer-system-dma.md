@@ -1,6 +1,6 @@
 ---
-title: 使用常见缓冲区系统 DMA
-description: 使用常见缓冲区系统 DMA
+title: 使用公用缓冲区系统 DMA
+description: 使用公用缓冲区系统 DMA
 ms.assetid: ee060aa4-2db4-4bd2-b107-b71acced97fd
 keywords:
 - 系统 DMA WDK 内核，常见的缓冲区
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9aa962faedfdd8fed147bc5910be06237729b95e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361085"
 ---
-# <a name="using-common-buffer-system-dma"></a>使用常见缓冲区系统 DMA
+# <a name="using-common-buffer-system-dma"></a>使用公用缓冲区系统 DMA
 
 
 

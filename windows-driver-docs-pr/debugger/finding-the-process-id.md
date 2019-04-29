@@ -10,11 +10,11 @@ keywords:
 ms.date: 01/18/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2add0a5362e6f9bbadf0fdddbc464c7cda144d02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371667"
 ---
 # <a name="finding-the-process-id"></a>查找进程 ID
 

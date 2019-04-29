@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e6ff4784d704e6f805c69f9d113f353fee03e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372133"
 ---
 # <a name="using-ndis-61-data-structures"></a>使用 NDIS 6.1 数据结构
 

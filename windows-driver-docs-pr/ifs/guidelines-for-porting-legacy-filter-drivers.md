@@ -1,6 +1,6 @@
 ---
-title: 对于移植旧筛选器驱动程序的指导原则
-description: 对于移植旧筛选器驱动程序的指导原则
+title: 旧筛选器驱动程序移植指南
+description: 旧筛选器驱动程序移植指南
 ms.assetid: 6dd9637e-e9b3-4434-996c-c3f8ce6584c4
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，将旧驱动程序移植
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05c0fa4298b205552d18ba98dff3a6d283491de0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370136"
 ---
-# <a name="guidelines-for-porting-legacy-filter-drivers"></a>对于移植旧筛选器驱动程序的指导原则
+# <a name="guidelines-for-porting-legacy-filter-drivers"></a>旧筛选器驱动程序移植指南
 
 
 ## <span id="ddk_when_the_filterunloadcallback_routine_is_called_if"></span><span id="DDK_WHEN_THE_FILTERUNLOADCALLBACK_ROUTINE_IS_CALLED_IF"></span>

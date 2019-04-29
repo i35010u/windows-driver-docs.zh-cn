@@ -1,17 +1,17 @@
 ---
-title: 若要筛选错误代码的宏示例
-description: 若要筛选错误代码的宏示例
+title: 用于筛选错误代码的宏示例
+description: 用于筛选错误代码的宏示例
 ms.assetid: 68aa0a75-82c7-4dd9-8f8f-eca5de6ea102
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f2f6ccd212cfcefbfb4c36956a4b51ac8a9a167
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373914"
 ---
-# <a name="macro-example-to-filter-error-codes"></a>若要筛选错误代码的宏示例
+# <a name="macro-example-to-filter-error-codes"></a>用于筛选错误代码的宏示例
 
 > [!IMPORTANT]  
 > WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。

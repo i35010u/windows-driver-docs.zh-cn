@@ -1,17 +1,17 @@
 ---
-title: 创作中的测试C#
-description: 创作中的测试C#
+title: 使用 C# 创作测试
+description: 使用 C# 创作测试
 ms.assetid: 4DD1D673-FEAF-44a4-8BAD-0E55318DC64B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cb66992ef2f12ed5e6f9993827bc33e5edb76dbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361803"
 ---
-# <a name="authoring-tests-in-c"></a>创作中的测试C#
+# <a name="authoring-tests-in-c"></a>使用 C# 创作测试
 
 
 以下示例所示C#.cs 文件具有一个简单的单个测试类该 demostratesC#测试标记。 （请注意此示例中是 demonstrational 仅用于目的，因此它不会编译或运行。）
@@ -85,7 +85,7 @@ C#测试标记还支持完整范围的设置和清理方法。
 
 带有静态方法\[AssemblyInitialize\]属性集类的任何其他方法之前运行并执行程序集级别初始化 (行 10)。 因此，这里有一个程序集清理方法，使用静态方法\[AssemblyCleanup\]属性在所有其他方法完成 (行 18) 后运行的设置。
 
-同样，存在类和测试设置和清理方法。 （请参阅行 24、 32、 38、 44）不同于 c + + 类在托管代码中的设置和清理方法必须为静态。
+同样，存在类和测试设置和清理方法。 （请参阅行 24、 32、 38、 44）不同于在C++，在托管代码中的类设置和清理方法必须是静态的。
 
 TAEFC#测试标记支持测试、 类和模块的属性。
 

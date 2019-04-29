@@ -1,5 +1,5 @@
 ---
-title: dt （显示类型）
+title: dt（显示类型）
 description: Dt 命令显示有关本地变量、 全局变量或数据类型的信息。 这可以显示关于简单数据类型，以及结构和联合的信息。
 ms.assetid: 82aba13e-6604-46ca-b3e5-bb865ecf3f1f
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ee88b52ddfe5a3d843d7c82d89cf69afc795bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370873"
 ---
-# <a name="dt-display-type"></a>dt （显示类型）
+# <a name="dt-display-type"></a>dt（显示类型）
 
 
 **Dt**命令显示有关本地变量、 全局变量或数据类型的信息。 这可以显示关于简单数据类型，以及结构和联合的信息。
@@ -56,7 +56,7 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -124,7 +124,7 @@ dt -h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>

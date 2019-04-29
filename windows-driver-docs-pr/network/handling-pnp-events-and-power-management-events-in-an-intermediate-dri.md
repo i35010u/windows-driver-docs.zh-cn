@@ -1,6 +1,6 @@
 ---
-title: 处理即插即用事件和中间驱动程序中的电源管理事件
-description: 处理即插即用事件和中间驱动程序中的电源管理事件
+title: 在中间驱动程序中处理 PnP 事件和电源管理事件
+description: 在中间驱动程序中处理 PnP 事件和电源管理事件
 ms.assetid: 0b4cf76f-a31d-4cf6-8486-090393404af9
 keywords:
 - 中间驱动程序 WDK 网络事件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3818224c408160c34a8f3b2af0999276ebb4ffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325751"
 ---
-# <a name="handling-pnp-events-and-power-management-events-in-an-intermediate-driver"></a>处理即插即用事件和中间驱动程序中的电源管理事件
+# <a name="handling-pnp-events-and-power-management-events-in-an-intermediate-driver"></a>在中间驱动程序中处理 PnP 事件和电源管理事件
 
 
 

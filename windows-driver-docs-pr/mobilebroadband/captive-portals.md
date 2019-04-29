@@ -1,17 +1,17 @@
 ---
-title: 强制门户网站
-description: 强制门户网站
+title: 强制网络门户
+description: 强制网络门户
 ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a014465c600787e2c878dd17a3c572607a338128
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392977"
 ---
-# <a name="captive-portals"></a>强制门户网站
+# <a name="captive-portals"></a>强制网络门户
 
 
 大多数热点实现客户交互使用强制网络门户，它是在其中的所有客户端 HTTP 请求将重定向到提供商的网站的受限的网络连接。 然后操作员的条款和条件，即表示同意，提示用户输入付款信息，或输入凭据以验证之前支付排列方式，可以 web 站点。
@@ -73,7 +73,7 @@ Windows 8、 Windows 8.1 和 Windows 10 体验专为触摸优先。 这将扩展
 
 Windows 8、 Windows 8.1 和 Windows 10 的最丰富的体验是使用移动宽带应用。 不能允许对强制网络门户中，通过 Microsoft Store 中只有一个应用的访问，因此不能在用户获取 Internet 连接之前安装该应用。 但是，用户进行身份验证后，请考虑将它们定向到 Microsoft Store 安装你的移动宽带应用。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [热点身份验证方法](hotspot-authentication-methods.md)

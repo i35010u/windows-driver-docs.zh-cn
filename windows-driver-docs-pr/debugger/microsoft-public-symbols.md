@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/26/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f53f44ee1628fddd1bdd00c05b5ca05642af32a0
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59362914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372340"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 

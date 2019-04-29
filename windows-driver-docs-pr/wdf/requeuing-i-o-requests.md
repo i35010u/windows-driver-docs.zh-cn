@@ -1,6 +1,6 @@
 ---
-title: 排队 I/O 请求
-description: 排队 I/O 请求
+title: 将 I/O 请求重新排队
+description: 将 I/O 请求重新排队
 ms.assetid: b509959c-b2ab-4f04-9c08-5c5e90726b73
 keywords:
 - I/O 请求 WDK KMDF，排队
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7971188e2320f3c9c830be575e14b404e6a5a25a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63325208"
 ---
-# <a name="requeuing-io-requests"></a>排队 I/O 请求
+# <a name="requeuing-io-requests"></a>将 I/O 请求重新排队
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: ba （中断的访问权限）
+title: ba（访问时中断）
 description: Ba 命令设置处理器断点 （通常称为，不太准确地说，数据断点）。 访问指定的内存时，会触发此断点。
 ms.assetid: 0d39d883-363e-421b-a1b8-08bf2d216724
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b47a8b7ca128f12293ad5a63c2d46e8ffb567d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355386"
 ---
-# <a name="ba-break-on-access"></a>ba （中断的访问权限）
+# <a name="ba-break-on-access"></a>ba（访问时中断）
 
 
 **Ba**命令设置处理器断点 (通常称为，小于准确地说，*数据断点*)。 访问指定的内存时，会触发此断点。
@@ -55,7 +55,7 @@ ba[ID] Access Size [Options] [Address [Passes]] ["CommandString"]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">操作</th>
 </tr>
 </thead>

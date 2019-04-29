@@ -5,11 +5,11 @@ ms.assetid: A08EA9B0-E1D6-47AE-BD89-C43D7D817DAF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40cca5ae13c929345f9409de21fcdf0a0043b125
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371033"
 ---
 # <a name="installing-the-geolocation-driver-sample"></a>安装地理位置驱动程序示例
 

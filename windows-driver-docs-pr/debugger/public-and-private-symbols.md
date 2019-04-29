@@ -15,11 +15,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aac67a9dad14bc4d34712c74c29861144592aff8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362389"
 ---
 # <a name="public-and-private-symbols"></a>公共和专用符号
 
@@ -72,7 +72,7 @@ ms.locfileid: "56576703"
 
 换而言之，公共符号数据可以认为的两种方式中的私有符号数据的子集： 它包含一个较短列表的项，并且它也包含有关每个项更少信息。 例如，公共符号数据不完全包括本地变量。 每个本地变量包含仅在私有符号数据中，使用其地址、 数据类型和作用域。 函数，但是，将包含私有符号数据和公共符号表中，但私有符号数据包括函数名称、 地址、 FPO 记录、 输入的参数名称和类型和输出类型，包括公共符号表只是函数名称、 地址和 FPO 记录。
 
-没有私有符号数据和公共符号表之间的另一个差异。 许多公共符号表中的项具有的名称*修饰*与前缀、 后缀，或两者。 C 编译器、 c + + 编译器和 MASM 组装器会添加这些修饰。 典型的前缀包含下划线或字符串的一系列**\_ \_imp\_** （指定导入的函数）。 典型的后缀包含一个或多个 at 符号 ( **@** ) 后接地址或其他标识字符串。 链接器使用这些修饰来消除歧义符号，因为很可能是该函数名称或全局变量名无法重复多个不同的模块。 这些修饰是公共符号表是专用的符号数据的子集的一般规则的例外。
+没有私有符号数据和公共符号表之间的另一个差异。 许多公共符号表中的项具有的名称*修饰*与前缀、 后缀，或两者。 这些修饰添加由 C 编译器，C++编译器和 MASM 组装器。 典型的前缀包含下划线或字符串的一系列**\_ \_imp\_** （指定导入的函数）。 典型的后缀包含一个或多个 at 符号 ( **@** ) 后接地址或其他标识字符串。 链接器使用这些修饰来消除歧义符号，因为很可能是该函数名称或全局变量名无法重复多个不同的模块。 这些修饰是公共符号表是专用的符号数据的子集的一般规则的例外。
 
 ### <a name="span-idfullsymbolfilesandstrippedsymbolfilesspanspan-idfullsymbolfilesandstrippedsymbolfilesspanfull-symbol-files-and-stripped-symbol-files"></a><span id="full_symbol_files_and_stripped_symbol_files"></span><span id="FULL_SYMBOL_FILES_AND_STRIPPED_SYMBOL_FILES"></span>完整的符号文件和去除的符号文件
 

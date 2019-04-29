@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 984d3f8101b2f6f00c3a7a42013f62cce5407e22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357519"
 ---
 # <a name="inf-addreg-directive"></a>INF AddReg 指令
 
@@ -301,7 +301,7 @@ HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll"
 HKR,,TypesSupported,0x00010001,7 
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)

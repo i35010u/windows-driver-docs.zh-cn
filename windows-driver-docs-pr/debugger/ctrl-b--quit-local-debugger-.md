@@ -1,5 +1,5 @@
 ---
-title: CTRL + B （Quit 本地调试器）
+title: CTRL+B（退出本地调试器）
 description: CTRL + B 密钥会导致调试器突然终止。 这不会结束远程调试会话。
 ms.assetid: f70f4c40-244f-4abf-982f-d738800ac621
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fa104f8e74e3cbf1e6caf6580588f09d9586ea0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374967"
 ---
-# <a name="ctrlb-quit-local-debugger"></a>CTRL + B （Quit 本地调试器）
+# <a name="ctrlb-quit-local-debugger"></a>CTRL+B（退出本地调试器）
 
 
 CTRL + B 密钥会导致调试器突然终止。 这不会结束远程调试会话。

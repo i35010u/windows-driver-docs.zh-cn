@@ -1,17 +1,17 @@
 ---
-title: Dual SIM
-description: Dual SIM
+title: SIM 双卡
+description: SIM 双卡
 ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba7b3aa144a62d7465ecffcaa45f61d209f5d703
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372717"
 ---
-# <a name="dual-sim"></a>Dual SIM
+# <a name="dual-sim"></a>SIM 双卡
 
 
 Windows Phone 8.1 及更高版本支持双 SIM 双 Active (DSDA) 和双 SIM 双待机状态 (DSDS)。 DSDA 允许语音呼叫和短信这两个行上同时。 DSDS 允许注册这两个行，并调用可从任意一条线收到/进行。 但是，只有一个行可以是在任何给定时间语音呼叫。 有关 DSDA 和 DSDS，数据被限制为只有一个行。

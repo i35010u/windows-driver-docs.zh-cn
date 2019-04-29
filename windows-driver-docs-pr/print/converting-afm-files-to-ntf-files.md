@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85f56bc39fdb6c712edb85abd0a97a54c0dbe48d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365682"
 ---
 # <a name="converting-afm-files-to-ntf-files"></a>将 AFM 文件转换为 NTF 文件
 

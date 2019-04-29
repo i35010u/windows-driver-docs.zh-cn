@@ -1,6 +1,6 @@
 ---
-title: 驱动程序排名示例
-description: 驱动程序排名示例
+title: 驱动程序分级示例
+description: 驱动程序分级示例
 ms.assetid: 20fe0f63-5d6c-4617-b5df-b2adb941f257
 keywords:
 - 驱动程序级别范围 WDK 设备安装
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c87ab0ba7bd37ab336afc6eca445a44aea595a28
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356017"
 ---
-# <a name="driver-rank-example"></a>驱动程序排名示例
+# <a name="driver-rank-example"></a>驱动程序分级示例
 
 
 请考虑具有以下的列表的设备[设备标识字符串](device-identification-strings.md)，其中 HwID_*N*和 CID_*N*名称表示实际[硬件Id](hardware-ids.md)并[兼容 Id](compatible-ids.md):

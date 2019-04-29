@@ -1,6 +1,6 @@
 ---
-title: 由 COPP 加密基元
-description: 由 COPP 加密基元
+title: COPP 使用的加密基元
+description: COPP 使用的加密基元
 ms.assetid: a14f6f4c-75fd-41a3-93f8-86c9908a2343
 keywords:
 - 复制保护 WDK COPP，加密
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81c95ae5a9ecde73889c686ab64c7880957c931f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371489"
 ---
-# <a name="cryptographic-primitives-used-by-copp"></a>由 COPP 加密基元
+# <a name="cryptographic-primitives-used-by-copp"></a>COPP 使用的加密基元
 
 
 ## <span id="ddk_cryptographic_primitives_used_by_copp_gg"></span><span id="DDK_CRYPTOGRAPHIC_PRIMITIVES_USED_BY_COPP_GG"></span>

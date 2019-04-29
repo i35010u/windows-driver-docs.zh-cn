@@ -1,17 +1,17 @@
 ---
-title: 检索设备的关系
-description: 检索设备的关系
+title: 检索设备关系
+description: 检索设备关系
 ms.assetid: 2b0ead69-1fda-4024-a7c2-d6350060b5fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f51fbb5d270610e2cbc83ffcdfb36e8ac788de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363341"
 ---
-# <a name="retrieving-device-relations"></a>检索设备的关系
+# <a name="retrieving-device-relations"></a>检索设备关系
 
 
 在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括[设备的关系属性](https://msdn.microsoft.com/library/windows/hardware/ff541498)。 统一的设备属性模型使用[属性键](property-keys.md)来表示这些属性。

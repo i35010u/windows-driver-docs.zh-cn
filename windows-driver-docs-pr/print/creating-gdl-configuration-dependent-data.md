@@ -1,6 +1,6 @@
 ---
-title: 创建 GDL 依赖于配置的数据
-description: 创建 GDL 依赖于配置的数据
+title: 创建 GDL 配置相关的数据
+description: 创建 GDL 配置相关的数据
 ms.assetid: 5b00903c-a637-4f83-96b8-92fe850d309e
 keywords:
 - GDL WDK 配置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9fd2f7d1ffc03a87164a47776dc77830b6db3d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365573"
 ---
-# <a name="creating-gdl-configuration-dependent-data"></a>创建 GDL 依赖于配置的数据
+# <a name="creating-gdl-configuration-dependent-data"></a>创建 GDL 配置相关的数据
 
 
 GDL 语言，可定义其值取决于一个或多个参数的数据。 GDL 客户端不需要知道数据的参数集的依赖性或甚至不知道的数据取决于参数。 GDL 客户端需要知道仅要分配给每个参数的值，然后 GDL 将构造快照，以便所有数据都适用于指定的参数值。

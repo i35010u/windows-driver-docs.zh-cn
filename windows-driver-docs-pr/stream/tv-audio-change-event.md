@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c796d58c8b53e7b789211ee8279cf29ef365fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324343"
 ---
 # <a name="tv-audio-change-event"></a>电视音频更改事件
 

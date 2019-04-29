@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373577"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi direct 配对实现
 
@@ -63,7 +63,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 
 在按照这些示例用例，NFC 类型 2 标记用作演示示例。 如果需要使用不同的 NFC 标记类型，必须根据该标记定义正确封装 NDEF 消息。
 
-| 字段                 | 值                                            | 描述                                                               |
+| 字段                 | ReplTest1                                            | 描述                                                               |
 |-----------------------|--------------------------------------------------|---------------------------------------------------------------------------|
 | TNF                   | 0x02                                             | 遵循类型字段的格式。 媒体类型 RFC 2046 中定义。 |
 | 在任务栏的搜索框中键入                  | 'application/vnd.ms-windows.wfd.oob'             | 我们为此方案中定义新类型字符串。                              |
@@ -127,11 +127,11 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 
 ### <a name="oob-header-attribute-format"></a>OOB 标头属性格式
 
-| 字段名称        | 大小 （八进制） | 值    | 描述                                                                                                    |
+| 字段名称        | 大小 （八进制） | ReplTest1    | 描述                                                                                                    |
 |-------------------|---------------|----------|----------------------------------------------------------------------------------------------------------------|
 | 总数据长度 | 2             | 变量 | 整个 OOB 数据 Blob （包括标头） 的长度。                                                             |
 | 长度            | 2             | 变量 | OOB 标头中的以下字段的长度。                                                                  |
-| 版本           | 1             | 0x10     | 标识此 P2P OOB 记录的版本值。                                                          |
+| Version           | 1             | 0x10     | 标识此 P2P OOB 记录的版本值。                                                          |
 | OOB 类型          | 1             | 变量 | 标识的 OOB 事务类型的值。 中定义的特定值*OOB 事务类型*表。 |
 | OUI               | 0 或 3        | 变量 | 特定于供应商 OUI。 这是一个可选值。 必须仅在供应商特定 OOB 类型时存在。         |
 | OUI 类型          | 0 或 1        | 变量 | 特定于供应商的类型。 这是一个可选值。 必须仅在供应商特定 OOB 类型时存在。        |
@@ -307,7 +307,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 
 ### <a name="oob-configuration-timeout-attribute-format"></a>OOB 配置超时属性格式
 
-| 字段名称                     | 大小 （八进制） | 值   | 描述                                                                                                                                                        |
+| 字段名称                     | 大小 （八进制） | ReplTest1   | 描述                                                                                                                                                        |
 |--------------------------------|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                   | 1             | 5       | 标识 P2P OOB 属性的类型。 中定义的特定值*P2P OOB 属性*表。                                                            |
 | 长度                         | 2             | 1       | 该属性中的以下字段的长度。                                                                                                                   |
@@ -329,7 +329,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 <thead>
 <tr class="header">
 <th align="left">字段名称</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">长度值</th>
 <th align="left">描述</th>
 </tr>

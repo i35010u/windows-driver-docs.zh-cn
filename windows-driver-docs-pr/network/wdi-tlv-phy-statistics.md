@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fe7efbc022fef9047a97f7bb2bd7bc54a6d089
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392872"
 ---
 # <a name="wditlvphystatistics"></a>WDI\_TLV\_PHY\_统计信息
 
@@ -145,7 +145,7 @@ WDI\_TLV\_PHY\_统计信息是包含每个物理统计信息的 TLV [OID\_WDI\_�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

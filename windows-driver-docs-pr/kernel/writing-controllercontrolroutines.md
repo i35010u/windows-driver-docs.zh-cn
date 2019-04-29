@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcec280f64accb304c28a3b0eee798b30f99d235
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355997"
 ---
 # <a name="writing-controllercontrol-routines"></a>编写 ControllerControl 例程
 

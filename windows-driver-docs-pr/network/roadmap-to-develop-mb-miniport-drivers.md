@@ -1,17 +1,17 @@
 ---
-title: 路线图开发 MB 微型端口驱动程序
-description: 路线图开发 MB 微型端口驱动程序
+title: MB 微型端口驱动程序开发路线图
+description: MB 微型端口驱动程序开发路线图
 ms.assetid: 3ef6e899-22dc-4293-80cc-d786b03c6b29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ae53553c3e1db0fea64a0cfde20c56485f631e35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359116"
 ---
-# <a name="roadmap-to-develop-mb-miniport-drivers"></a>路线图开发 MB 微型端口驱动程序
+# <a name="roadmap-to-develop-mb-miniport-drivers"></a>MB 微型端口驱动程序开发路线图
 
 
 若要创建 MB 微型端口驱动程序，请执行以下步骤：

@@ -1,6 +1,6 @@
 ---
-title: 共同安装程序界面
-description: 共同安装程序界面
+title: 辅助安装程序界面
+description: 辅助安装程序界面
 ms.assetid: affcf2a5-5dbb-49bd-916c-bc99302b5bd8
 keywords:
 - 共同安装程序 WDK 设备安装，接口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b82a56a3952f71ef8ff024cb81f22034521525b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357049"
 ---
-# <a name="co-installer-interface"></a>共同安装程序界面
+# <a name="co-installer-interface"></a>辅助安装程序界面
 
 
 Co-安装程序的接口包含已导出的入口点函数和关联的数据结构。

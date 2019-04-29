@@ -1,6 +1,6 @@
 ---
-title: INF 文件的常规语法规则
-description: INF 文件的常规语法规则
+title: INF 文件常规语法规则
+description: INF 文件常规语法规则
 ms.assetid: ba11a229-d0d3-4217-bcf8-9aada2f159aa
 keywords:
 - INF 文件 WDK 设备安装，常规语法规则
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d8214ecb9d35997fc7da45cf0314ba9b2c03bd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392518"
 ---
-# <a name="general-syntax-rules-for-inf-files"></a>INF 文件的常规语法规则
+# <a name="general-syntax-rules-for-inf-files"></a>INF 文件常规语法规则
 
 
 

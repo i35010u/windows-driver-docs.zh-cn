@@ -1,19 +1,19 @@
 ---
-title: 压缩解码集的图片
-description: 压缩解码集的图片
+title: 压缩图片解码集
+description: 压缩图片解码集
 ms.assetid: 7d6e2050-663e-4370-a210-1d319cfbde6d
 keywords:
 - 压缩解码集 WDK DirectX VA 的图片
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d556a2cb35dd002155f0d74dbbce0f90d04c322e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362479"
 ---
-# <a name="compressed-picture-decoding-set"></a>压缩解码集的图片
+# <a name="compressed-picture-decoding-set"></a>压缩图片解码集
 
 
 ## <span id="ddk_compressed_picture_decoding_set_gg"></span><span id="DDK_COMPRESSED_PICTURE_DECODING_SET_GG"></span>

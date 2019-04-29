@@ -1,6 +1,6 @@
 ---
-title: 枚举的总线上的设备
-description: 枚举的总线上的设备
+title: 枚举总线上的设备
+description: 枚举总线上的设备
 ms.assetid: 5731db82-2bc8-4a8d-98f1-3977845f572c
 keywords:
 - 即插即用 WDK KMDF，总线枚举
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4952b68f29f3b0ce539255941764b63861182c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369793"
 ---
-# <a name="enumerating-the-devices-on-a-bus"></a>枚举的总线上的设备
+# <a name="enumerating-the-devices-on-a-bus"></a>枚举总线上的设备
 
 
 *总线枚举*是确定哪些子设备连接到父设备的操作。 父设备通常是总线适配器，但它也可以支持多个函数，如声卡的步骤，为其每个函数需要一组单独的驱动程序的设备。

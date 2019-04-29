@@ -1,5 +1,5 @@
 ---
-title: 并行端口 I/O 请求的特定于设备的操作
+title: 针对并行端口的 I/O 请求的特定于设备的操作
 description: 文档的并行端口 I/O 请求的特定于设备的操作
 keywords:
 - WDK 的并行端口
@@ -8,13 +8,13 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4a93a0019b61b5f9df628a94a59f8f19eeeb4a21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373526"
 ---
-# <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>并行端口 I/O 请求的特定于设备的操作
+# <a name="device-specific-operations-for-io-requests-for-parallel-ports"></a>针对并行端口的 I/O 请求的特定于设备的操作
 本主题介绍的并行端口 I/O 请求的以下特定于设备的操作：
 
 * [IRP_MJ_CREATE](#irp_mj_create)

@@ -5,11 +5,11 @@ ms.assetid: 6d5d8cb6-7bdf-488b-8fcd-7c6e78c4fb24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d8224e35ab0430119228e0b90fa5c0fa27cc3ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372459"
 ---
 # <a name="enumerating-filters-on-a-vmq"></a>枚举 VMQ 上的筛选器
 

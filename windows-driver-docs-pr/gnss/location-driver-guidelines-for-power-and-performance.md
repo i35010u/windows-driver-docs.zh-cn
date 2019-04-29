@@ -1,17 +1,17 @@
 ---
-title: 能力和性能的位置驱动程序指南
+title: 位置驱动程序功率和性能指南
 description: 以下各节介绍准则以确保您位置的驱动程序，以节约能源并有效地提供数据。
 ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbf754176ec9cacb224eae7ccd8c883bda638cf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371043"
 ---
-# <a name="location-driver-guidelines-for-power-and-performance"></a>能力和性能的位置驱动程序指南
+# <a name="location-driver-guidelines-for-power-and-performance"></a>位置驱动程序功率和性能指南
 
 
 以下各节介绍准则以确保您位置的驱动程序，以节约能源并有效地提供数据。
@@ -34,7 +34,7 @@ ms.locfileid: "56533683"
 |---------------|-------------|------------------|-------------------|------------|---------------|-------------|
 | 输入        |             |                  |                   | 输出    |               |             |
 | 客户端存在 | 无线电收发器状态 | CRI              | 位置报告 | ASIC 状态 | 传感器状态  | 电源状态 |
-| 否            | Any         | Any              | Any               | 关闭        | 不适用           | D3          |
+| 否            | Any         | Any              | Any               | 关闭        | 不可用           | D3          |
 | 是           | 开          | &lt;= 120 秒 | 否                | 开         | 初始化  | D0          |
 | 是           | 开          | &lt;= 120 秒 | 是               | 开         | 就绪         | D0          |
 | 是           | 关闭         | Any              | Any               | 关闭        | 未推出 | D3          |

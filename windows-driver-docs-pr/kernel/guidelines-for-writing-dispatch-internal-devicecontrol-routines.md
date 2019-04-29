@@ -1,6 +1,6 @@
 ---
-title: 编写调度 （内部） DeviceControl 例程准则
-description: 编写调度 （内部） DeviceControl 例程准则
+title: 有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
+description: 有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
 ms.assetid: e64ab28e-2904-41c2-a262-405bc129b9bb
 keywords:
 - 调度例程 WDK 内核，DispatchDeviceControl 例程
@@ -14,13 +14,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 588966e1a0767a9201345d00cf6205d833bd9e51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359879"
 ---
-# <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>编写调度 （内部） DeviceControl 例程准则
+# <a name="guidelines-for-writing-dispatchinternaldevicecontrol-routines"></a>有关编写 Dispatch(Internal)DeviceControl 例程的指导原则
 
 
 
@@ -42,7 +42,7 @@ ms.locfileid: "56526599"
         status = STATUS_XXX;
 ```
 
-或者
+或
 ```cpp
     if (Irp->Parameters.DeviceIoControl.OutputBufferLength < 
             (sizeof(IOCTL_SPECIFIC_STRUCTURE))) { 

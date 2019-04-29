@@ -1,14 +1,14 @@
 ---
-Description: The WpdHelloWorldDriver Sample
+Description: WpdHelloWorldDriver 示例
 title: WpdHelloWorldDriver 示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c180f73c536bc0f40d2553e22665016de754a3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373085"
 ---
 # <a name="the-wpdhelloworlddriver-sample"></a>WpdHelloWorldDriver 示例
 
@@ -48,10 +48,10 @@ ms.locfileid: "56524854"
 
 该驱动程序支持公开三个只读属性的文件夹对象。 下表中列出了这些属性，其类型和它们的值。
 
-| 属性名                            | 属性类型 | 值              |
+| 属性名                            | 属性类型 | ReplTest1              |
 |------------------------------------------|---------------|--------------------|
-| WPD\_对象\_日期\_已修改              | 日期          | 2006/6/26 5:0:0.0  |
-| WPD\_对象\_日期\_已创建               | 日期          | 2006/1/25 12:0:0.0 |
+| WPD\_对象\_日期\_已修改              | date          | 2006/6/26 5:0:0.0  |
+| WPD\_对象\_日期\_已创建               | date          | 2006/1/25 12:0:0.0 |
 | WPD\_OBJECT\_ORIGINAL\_FILE\_NAME\_VALUE | 字符串        | 文档          |
 
  
@@ -60,8 +60,8 @@ ms.locfileid: "56524854"
 
 | 属性名                     | 属性类型 | 值              |
 |-----------------------------------|---------------|--------------------|
-| WPD\_对象\_日期\_已修改       | 日期          | 2006/6/26 5:0:0.0  |
-| WPD\_对象\_日期\_已创建        | 日期          | 2006/1/25 12:0:0.0 |
+| WPD\_对象\_日期\_已修改       | date          | 2006/6/26 5:0:0.0  |
+| WPD\_对象\_日期\_已创建        | date          | 2006/1/25 12:0:0.0 |
 | WPD\_对象\_原始\_文件\_名称 | 字符串        | Readme.txt         |
 
  
@@ -70,7 +70,7 @@ ms.locfileid: "56524854"
 
 |                                     |               |                 |
 |-------------------------------------|---------------|-----------------|
-| 属性名                       | 属性类型 | 值           |
+| 属性名                       | 属性类型 | ReplTest1           |
 | WPD\_对象\_ID                     | 字符串        | 特定于的对象 |
 | WPD\_OBJECT\_PERSISTENT\_UNIQUE\_ID | 字符串        | 特定于的对象 |
 | WPD\_对象\_父\_ID             | 字符串        | 特定于的对象 |

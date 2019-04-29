@@ -1,6 +1,6 @@
 ---
-title: 类型的标注
-description: 类型的标注
+title: 标注类型
+description: 标注类型
 ms.assetid: d9539403-7657-4e95-8791-309673d1207d
 keywords:
 - 挂起数据包 WDK Windows 筛选平台
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1475cbd66408c86560e29ff5fb3fbfe8097668
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358377"
 ---
-# <a name="types-of-callouts"></a>类型的标注
+# <a name="types-of-callouts"></a>标注类型
 
 
 可使用 WFP 标注的以下类型：

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 768d0ea10108f11fda5aa334d696ed9d501190be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63323132"
 ---
 # <a name="elements-of-a-debugger-command-program"></a>调试器命令程序的元素
 
@@ -35,7 +35,7 @@ ms.locfileid: "56543940"
 
  
 
-通常情况下，应使用调试器命令程序内的 MASM 语法。 如果您不得不使用 c + + 元素 （例如，指定的结构或类成员），可以使用 **@@c+ + （)** 令牌以切换到该子句的 c + + 语法。
+通常情况下，应使用调试器命令程序内的 MASM 语法。 当您必须使用C++元素 （例如，指定的结构或类成员），可以使用 **@@c+ + （)** 令牌以切换到C++该子句的语法。
 
 **$Scmp**， **$sicmp**，并 **$spat** MASM 语法中的字符串运算符是特别有用。 有关这些运算符的详细信息，请参阅[MASM 数字和运算符](masm-numbers-and-operators.md)。
 

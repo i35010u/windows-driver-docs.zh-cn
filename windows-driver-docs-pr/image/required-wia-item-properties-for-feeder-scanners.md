@@ -1,17 +1,17 @@
 ---
-title: 送纸器扫描程序的所需的 WIA 项目属性
-description: 送纸器扫描程序的所需的 WIA 项目属性
+title: 送纸器扫描仪的必需 WIA 项属性
+description: 送纸器扫描仪的必需 WIA 项属性
 ms.assetid: f9868f05-3c1f-4042-9820-9c1c38af3432
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fc7461b14e5b7be301910ceafe97aa4776da724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375843"
 ---
-# <a name="required-wia-item-properties-for-feeder-scanners"></a>送纸器扫描程序的所需的 WIA 项目属性
+# <a name="required-wia-item-properties-for-feeder-scanners"></a>送纸器扫描仪的必需 WIA 项属性
 
 
 

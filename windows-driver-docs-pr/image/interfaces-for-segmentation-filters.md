@@ -1,17 +1,17 @@
 ---
-title: 分段的筛选器的接口
-description: 分段的筛选器的接口
+title: 分段筛选器的接口
+description: 分段筛选器的接口
 ms.assetid: 428f6fce-d76c-4485-aa92-39f2b608160d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e033ca9312ea22e0eff8b874f85504ea551b005b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358900"
 ---
-# <a name="interfaces-for-segmentation-filters"></a>分段的筛选器的接口
+# <a name="interfaces-for-segmentation-filters"></a>分段筛选器的接口
 
 
 

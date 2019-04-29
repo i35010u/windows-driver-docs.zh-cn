@@ -4,11 +4,11 @@ title: 示例驱动程序安装程序信息 (.inf) 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b24563cf737fa71dc3594efb68d8aa0f9825263a
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375213"
 ---
 # <a name="the-sample-driver-setup-information-inf-file"></a>示例驱动程序安装程序信息 (.inf) 文件
 
@@ -138,7 +138,7 @@ WpdHelloWorldDriver 项目包含名为的安装程序信息 (.inf) 文件*WpdHel
 <p><code>StartType=3</code></p></td>
 </tr>
 <tr class="even">
-<td align="left">版本</td>
+<td align="left">Version</td>
 <td align="left">类参数</td>
 <td align="left">此参数是必需的。 必须设置为"WPD"。
 <p>例如：</p>
@@ -146,7 +146,7 @@ WpdHelloWorldDriver 项目包含名为的安装程序信息 (.inf) 文件*WpdHel
 Class=WPD</code></pre></td>
 </tr>
 <tr class="odd">
-<td align="left">版本</td>
+<td align="left">Version</td>
 <td align="left">ClassGuid 参数</td>
 <td align="left">此参数是必需的。 必须设置为有效的 GUID。
 <p>例如：</p>

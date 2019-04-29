@@ -1,6 +1,6 @@
 ---
-title: 启用系统事件的审核日志
-description: 启用系统事件的审核日志
+title: 启用系统事件审核日志
+description: 启用系统事件审核日志
 ms.assetid: a4206f06-0c81-407e-80aa-4f6b08cb2a70
 keywords:
 - 详细日志记录 WDK 驱动程序签名
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17628840a7d2bc6d7bda4d9399fa82b1c02fb4fa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357760"
 ---
-# <a name="enabling-the-system-event-audit-log"></a>启用系统事件的审核日志
+# <a name="enabling-the-system-event-audit-log"></a>启用系统事件审核日志
 
 
 本主题包括下列信息：

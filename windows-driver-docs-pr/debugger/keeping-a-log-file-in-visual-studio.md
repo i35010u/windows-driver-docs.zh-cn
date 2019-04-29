@@ -5,11 +5,11 @@ ms.assetid: 6A7588D0-A477-4BE9-874F-3AFB52561903
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d87a58ba5c3cee9b6aa35633a8e578e3bfa0dffa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367193"
 ---
 # <a name="keeping-a-log-file-in-visual-studio"></a>在 Visual Studio 中保存日志文件
 

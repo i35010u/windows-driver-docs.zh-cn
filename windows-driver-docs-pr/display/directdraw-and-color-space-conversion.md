@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c69d786d137f5f7e0559539afa9e31c9ff581e77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358259"
 ---
 # <a name="directdraw-and-color-space-conversion"></a>DirectDraw 和色彩空间转换
 

@@ -1,17 +1,17 @@
 ---
-title: 常规 WIA 实用工具函数
-description: 常规 WIA 实用工具函数
+title: 常规 WIA 实用程序函数
+description: 常规 WIA 实用程序函数
 ms.assetid: 235c07a1-4903-4df6-b29f-0ecc342782b4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ffaaeb0e6fc1ae22cb7db396663ebb908269f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357663"
 ---
-# <a name="general-wia-utility-functions"></a>常规 WIA 实用工具函数
+# <a name="general-wia-utility-functions"></a>常规 WIA 实用程序函数
 
 
 

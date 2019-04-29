@@ -3,11 +3,11 @@ title: 调试器数据模型C++接口概述
 description: 本主题提供了调试器的数据模型的概述C++接口，以便扩展和自定义调试器的功能。
 ms.date: 04/09/2019
 ms.openlocfilehash: de9859083d6ede03b0f9cd6a82e0beeca961eda4
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375022"
 ---
 # <a name="debugger-data-model-c-overview"></a>调试器数据模型 C++ 概述
 

@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cca1fcf72c7d18e8658557ea9bd498de08f35d9
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355379"
 ---
 # <a name="conditionally-required-graphics-driver-functions"></a>在不同的条件下需要的图形驱动程序函数
 

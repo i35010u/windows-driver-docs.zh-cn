@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WSK_TDI_DEVICENAME_MAPPING 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 626198cc16d0a30a644485fcf8e486cc31e48c36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375253"
 ---
 # <a name="wsktdidevicenamemapping"></a>WSK\_TDI\_DEVICENAME\_MAPPING
 
@@ -83,11 +83,11 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端管理操作要映�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

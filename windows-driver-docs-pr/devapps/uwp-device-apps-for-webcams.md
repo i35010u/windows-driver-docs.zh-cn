@@ -1,22 +1,22 @@
 ---
-title: 用于相机的 UWP 设备应用程序
-description: 本部分介绍用于相机的 UWP 设备应用程序。
+title: 适用于相机的 UWP 设备应用
+description: 此部分介绍相机的 UWP 设备应用。
 ms.assetid: 6CF13679-BCF3-443C-A864-4BBC54B8DA1C
 ms.date: 09/14/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24feda30bbe41eba2021a02bda768b76200ef53b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359486"
 ---
-# <a name="uwp-device-apps-for-cameras"></a>用于相机的 UWP 设备应用程序
+# <a name="uwp-device-apps-for-cameras"></a>适用于相机的 UWP 设备应用
 
 
-本部分介绍用于相机的 UWP 设备应用程序。 设备应用程序可以突出显示自定义的相机设置和特殊的照相机效果通过照相机的特殊的功能。
+此部分介绍相机的 UWP 设备应用。 设备应用程序可以突出显示自定义的相机设置和特殊的照相机效果通过照相机的特殊的功能。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 | 主题 | 描述 |

@@ -1,6 +1,6 @@
 ---
-title: 传递 Power Irp
-description: 传递 Power Irp
+title: 传递电源 IRP
+description: 传递电源 IRP
 ms.assetid: 01473eb0-ae60-4a95-9ae7-97b2b982d3d1
 keywords:
 - power Irp WDK 内核传递
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f50fbb9803173cbd9b173c08fa26e00abf84741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369314"
 ---
-# <a name="passing-power-irps"></a>传递 Power Irp
+# <a name="passing-power-irps"></a>传递电源 IRP
 
 
 

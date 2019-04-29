@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 796d967d1aded1feb3c405ec775012841c0d1b14
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360121"
 ---
 # <a name="kspropertygmratematch"></a>KSPROPERTY\_GM\_RATEMATCH
 
@@ -34,7 +34,7 @@ KSPROPERTY\_GM\_RATEMATCH 属性当前不支持。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持。</p></td>
 </tr>
 </tbody>

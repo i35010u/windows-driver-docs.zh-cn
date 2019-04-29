@@ -1,6 +1,6 @@
 ---
-title: 使用筛选器引擎注册标注
-description: 使用筛选器引擎注册标注
+title: 将标注注册到筛选器引擎
+description: 将标注注册到筛选器引擎
 ms.assetid: a5bade33-e3d1-4e1d-8503-51485097046e
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，初始化
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb8d789bb064798dff30d65a0be8da8385f35d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364062"
 ---
-# <a name="registering-callouts-with-the-filter-engine"></a>使用筛选器引擎注册标注
+# <a name="registering-callouts-with-the-filter-engine"></a>将标注注册到筛选器引擎
 
 
 标注驱动程序已创建了一个设备对象后，它可以向筛选器引擎中注册其标注。 标注驱动程序可以注册其标注筛选器引擎在任何时候，即使筛选器引擎当前未运行。 要使用筛选器引擎注册一个标注，标注驱动程序调用[ **FwpsCalloutRegister0** ](https://msdn.microsoft.com/library/windows/hardware/ff551140)函数。 例如：

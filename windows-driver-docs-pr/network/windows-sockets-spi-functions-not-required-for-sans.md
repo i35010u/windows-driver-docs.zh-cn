@@ -1,6 +1,6 @@
 ---
-title: Windows 套接字 SPI 函数无需进行 San
-description: Windows 套接字 SPI 函数无需进行 San
+title: SAN 不需要的 Windows Sockets SPI 函数
+description: SAN 不需要的 Windows Sockets SPI 函数
 ms.assetid: 995ff59e-8ee4-4468-914d-47c14d804c38
 keywords:
 - SAN 服务提供商 WDK，不是必需的函数
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81b8690c37dda4cdb43b38827073aeae97a46421
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365679"
 ---
-# <a name="windows-sockets-spi-functions-not-required-for-sans"></a>Windows 套接字 SPI 函数无需进行 San
+# <a name="windows-sockets-spi-functions-not-required-for-sans"></a>SAN 不需要的 Windows Sockets SPI 函数
 
 
 

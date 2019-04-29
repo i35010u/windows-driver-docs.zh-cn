@@ -1,14 +1,14 @@
 ---
-Description: Defining the Service Properties
+Description: 定义服务属性
 title: 定义服务属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf751e8e7964db8eaa19a7d680561350d305521c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370506"
 ---
 # <a name="defining-the-service-properties"></a>定义服务属性
 
@@ -110,7 +110,7 @@ const PropertyAttributeInfo g_SupportedServiceProperties[] =
 
 设置服务属性**GetValue**同一模块中找到的方法。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

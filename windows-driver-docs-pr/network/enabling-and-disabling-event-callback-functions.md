@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 093182ac87234a111f9268a78e33053c5e4beb14
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372553"
 ---
 # <a name="enabling-and-disabling-event-callback-functions"></a>启用和禁用事件回调函数
 

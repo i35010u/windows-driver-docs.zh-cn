@@ -1,6 +1,6 @@
 ---
-title: 从早期版本的 Microsoft Windows 的差异
-description: 从早期版本的 Microsoft Windows 的差异
+title: 与早期版本的 Microsoft Windows 的差异
+description: 与早期版本的 Microsoft Windows 的差异
 ms.assetid: 9c30c5c6-27a7-424e-b5f0-ab625eed4b8a
 keywords:
 - Windows 硬件错误体系结构 WDK，早期 Windows 版本
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad3b9310580adb6a1c8d09ba3f7e7bb2c7d009b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354533"
 ---
-# <a name="differences-from-previous-versions-of-microsoft-windows"></a>从早期版本的 Microsoft Windows 的差异
+# <a name="differences-from-previous-versions-of-microsoft-windows"></a>与早期版本的 Microsoft Windows 的差异
 
 
 以下列表总结了 Windows 硬件错误体系结构 (WHEA) 和硬件中的错误处理的 Windows Vista 之前的 Microsoft Windows 版本之间的差异。

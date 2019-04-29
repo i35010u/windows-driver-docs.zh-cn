@@ -1,6 +1,6 @@
 ---
-title: 即插即用驱动程序设计指南
-description: 即插即用驱动程序设计指南
+title: PnP 驱动程序设计指导原则
+description: PnP 驱动程序设计指导原则
 ms.assetid: 4e4a6a8e-3c7f-4561-bbe1-a8c06fe22d0a
 keywords:
 - 即插即用 WDK 内核，设计指南
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 368f95f7c62af38a3bcd99033c160b66cffb1382
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369235"
 ---
-# <a name="pnp-driver-design-guidelines"></a>即插即用驱动程序设计指南
+# <a name="pnp-driver-design-guidelines"></a>PnP 驱动程序设计指导原则
 
 
 

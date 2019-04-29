@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5fdbbce1fe442ce58242070df49a5ca3f766302
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366741"
 ---
 # <a name="option-selection-command"></a>选项选择命令
 

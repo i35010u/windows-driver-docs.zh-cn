@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e4f39df367abe202238d55e76af1b4fa2ab68c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356910"
 ---
 # <a name="miscellaneous-ndis-functions"></a>其他 NDIS 函数
 

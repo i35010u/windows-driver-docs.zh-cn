@@ -1,6 +1,6 @@
 ---
-title: 正在保存能源的 VSync 控制
-description: 正在保存能源的 VSync 控制
+title: 节能与 VSync 控制
+description: 节能与 VSync 控制
 ms.assetid: d7ee7461-0d2a-4103-9225-57ca10a75a7a
 keywords:
 - 显示器驱动程序模型 WDK Windows Vista，节约了能源
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d614b49dc71f5f222cd07af4454b9ab66e64db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351453"
 ---
-# <a name="saving-energy-with-vsync-control"></a>正在保存能源的 VSync 控制
+# <a name="saving-energy-with-vsync-control"></a>节能与 VSync 控制
 
 
 若要保存的计算机上的电源，内核模式显示驱动程序可以减少发生的 VSync 监视器刷新中断的数量。

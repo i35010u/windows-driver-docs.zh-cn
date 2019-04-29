@@ -1,6 +1,6 @@
 ---
-title: 处理集 Power 请求
-description: 处理集 Power 请求
+title: 处理设置电源请求
+description: 处理设置电源请求
 ms.assetid: c69d4a9b-009a-4320-8e20-32a9cf9113bf
 keywords:
 - 设置 power 请求 WDK NDIS 中间
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ebb5ea14ebecd3b9562cb769c3555edaddc0f966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63349752"
 ---
-# <a name="handling-a-set-power-request"></a>处理集 Power 请求
+# <a name="handling-a-set-power-request"></a>处理设置电源请求
 
 
 

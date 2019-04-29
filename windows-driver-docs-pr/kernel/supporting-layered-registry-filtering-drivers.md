@@ -1,6 +1,6 @@
 ---
-title: 支持分层的注册表筛选驱动程序
-description: 支持分层的注册表筛选驱动程序
+title: 支持分层注册表筛选驱动程序
+description: 支持分层注册表筛选驱动程序
 ms.assetid: 5adeecdb-c26e-4502-87b4-bfb02a4aaba8
 keywords:
 - 筛选注册表调用 WDK 内核，分层
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10f6a5f86e4ba8807194fbce1748c5943aec5fee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358795"
 ---
-# <a name="supporting-layered-registry-filtering-drivers"></a>支持分层的注册表筛选驱动程序
+# <a name="supporting-layered-registry-filtering-drivers"></a>支持分层注册表筛选驱动程序
 
 
 Windows Vista 和更高版本的操作系统版本支持筛选驱动程序的注册表的分层的的堆栈。 堆栈中的每个驱动程序可参与通过注册筛选注册表操作[ *RegistryCallback* ](https://msdn.microsoft.com/library/windows/hardware/ff560903)例程。 筛选驱动程序的每个注册表分配*海拔高度*，并且驱动程序可以注册一个*RegistryCallback*例程的每个海拔高度。 当您的驱动程序调用[ **CmRegisterCallbackEx**](https://msdn.microsoft.com/library/windows/hardware/ff541921)，驱动程序指定其海拔高度。 有关海拔的地区的详细信息，请参阅[加载顺序组和海拔微筛选器驱动程序的地区](https://msdn.microsoft.com/library/windows/hardware/ff549689)。

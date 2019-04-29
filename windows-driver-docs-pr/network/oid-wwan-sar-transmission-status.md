@@ -6,11 +6,11 @@ ms.date: 08/20/2018
 keywords: -OID_WWAN_SAR_TRANSMISSION_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d286f4955b0cd93aca25eb52c21771128a7a7c7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368487"
 ---
 # <a name="oidwwansartransmissionstatus"></a>OID_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -30,10 +30,10 @@ OID_WWAN_SAR_TRANSMISSION_STATUS 启用或禁用通知从移动宽带 (MB) 上�
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1703 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB 特别行政区平台支持](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support)
 
