@@ -1,17 +1,17 @@
 ---
-title: 指定计算机的硬件 Id
-description: 指定计算机的硬件 Id
+title: 指定计算机的硬件 ID
+description: 指定计算机的硬件 ID
 ms.assetid: af0dbfc4-747c-4e16-a3ed-678df0e07757
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d72d987afa5f0358d16a766f13ffe77ab2791149
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369427"
 ---
-#  <a name="specifying-hardware-ids-for-a-computer"></a>指定计算机的硬件 Id
+#  <a name="specifying-hardware-ids-for-a-computer"></a>指定计算机的硬件 ID
 
 设备和打印机会将计算机作为识别[设备容器](container-ids.md)。 因此，计算机可以被标识设备元数据包中使用[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114)指定一个唯一的 XML 元素[硬件 ID](hardware-ids.md)值。  此硬件 ID 值的 （有时称为计算机硬件 ID 或 CHID） 的计算机可以指定系统管理 BIOS (SMBIOS) 字段中数据的组合。
 
@@ -19,7 +19,7 @@ ms.locfileid: "56554303"
 
 ComputerHardwareIds 工具生成一组基于系统的系统管理 BIOS (SMBIOS) 中的字段中的信息的计算机的硬件 Id。 下表描述了这些 SMBIOS 字段。
 
-|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|描述|
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|ReplTest1|描述|
 |--- |--- |--- |--- |--- |--- |--- |
 |制造商|系统信息(类型 1)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定计算机制造商的名称。|
 |系列|系统信息(类型 1)|2.4+|1Ah|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定特定的计算机所属的系列。  一系列是指一组类似但不从硬件或软件的角度来看完全相同的计算机。  通常一系列组成不同的计算机模型，有不同的配置和定价的点。 同一系列中的计算机通常具有相似的品牌和外观特点。|

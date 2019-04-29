@@ -1,6 +1,6 @@
 ---
-title: 适用于 IEEE 1394 设备同步的同步选项
-description: 适用于 IEEE 1394 设备同步的同步选项
+title: IEEE 1394 设备的常时等量同步选项
+description: IEEE 1394 设备的常时等量同步选项
 ms.assetid: 27137890-09e7-45d5-b268-7e93c943b489
 keywords:
 - 同步 I/O WDK IEEE 1394 总线同步
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5199a6544b01148e52bbc8990077b9023356b91e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371003"
 ---
-# <a name="isochronous-synchronization-options-for-ieee-1394-devices"></a>适用于 IEEE 1394 设备同步的同步选项
+# <a name="isochronous-synchronization-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量同步选项
 
 
 

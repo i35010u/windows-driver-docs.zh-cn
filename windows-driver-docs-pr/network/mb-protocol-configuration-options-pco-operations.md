@@ -7,11 +7,11 @@ keywords:
 ms.date: 09/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f149f51566190780a910ce6e876cf7ee420b8b66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367827"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
@@ -87,11 +87,11 @@ Service UUID = **3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf**
 
 未经请求的事件包含 MBIM_PCO_VALUE 和新 PCO 值到达的激活连接时发送。
 
-#### <a name="parameters"></a>参数
+#### <a name="parameters"></a>Parameters
 
 |  | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | 不适用 | MBIM_PCO_VALUE | 不适用 |
+| Command | 不适用 | MBIM_PCO_VALUE | 不适用 |
 | 响应 | 不适用 | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
 
 #### <a name="data-structures"></a>数据结构
@@ -105,7 +105,7 @@ Service UUID = **3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf**
 
 ##### <a name="mbimpcovalue"></a>MBIM_PCO_VALUE
 
-| 偏移量 | 尺寸 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SessionId | UINT32 | 在查询中的 SessionId 指示哪些 IP 数据流 PCO 值是由函数返回。 |
 | 4 | 4 | PcoDataSize | UINT32 | 从 0 到 256 的 PcoData，长度。 此值将为在查询中的 0。 |

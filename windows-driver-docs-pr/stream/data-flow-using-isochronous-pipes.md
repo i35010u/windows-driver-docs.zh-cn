@@ -1,6 +1,6 @@
 ---
-title: 数据流中使用等时管道
-description: 数据流中使用等时管道
+title: 使用常时等量管道的数据流
+description: 使用常时等量管道的数据流
 ms.assetid: a66f4191-53ce-4ca2-aae7-8fb24a1a9a16
 keywords:
 - 等时管道 WDK USBCAMD2
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d88d01b372ea8c9a73794786fe88e322bca03748
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374125"
 ---
-# <a name="data-flow-using-isochronous-pipes"></a>数据流中使用等时管道
+# <a name="data-flow-using-isochronous-pipes"></a>使用常时等量管道的数据流
 
 
 
