@@ -5,11 +5,11 @@ ms.assetid: a1caedb8-18ab-4810-ac46-691925df250e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5f5b6b6e139ed6eacb8df1b1712b909ecdbeb7ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380651"
 ---
 # <a name="encryptiontypesqualifiers"></a>加密\_类型\_限定符
 

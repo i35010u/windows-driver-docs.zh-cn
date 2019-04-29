@@ -1,17 +1,17 @@
 ---
-title: 高级的双工能力文档送纸器
-description: 高级的双工能力文档送纸器
+title: 支持高级双工的文档送纸器
+description: 支持高级双工的文档送纸器
 ms.assetid: 05b91864-7573-4d99-8a03-701d6cdd650b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04351c8218656b32e8f059c368aa63978890b6e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367099"
 ---
-# <a name="advanced-duplex-capable-document-feeder"></a>高级的双工能力文档送纸器
+# <a name="advanced-duplex-capable-document-feeder"></a>支持高级双工的文档送纸器
 
 
 

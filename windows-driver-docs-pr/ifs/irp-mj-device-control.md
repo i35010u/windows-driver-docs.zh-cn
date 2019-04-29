@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 221de9718e477bca9a5bde35cee8d23045e4ebd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379705"
 ---
 # <a name="irpmjdevicecontrol"></a>IRP\_MJ\_DEVICE\_CONTROL
 
@@ -37,7 +37,7 @@ IRP\_MJ\_设备\_控制请求发送的 I/O 管理器和其他操作系统组件�
 
 筛选器驱动程序应执行任何所需的处理和，具体取决于筛选器的特性，完成 IRP 或在堆栈上传递给下一个较低驱动程序。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)给定 IRP，若要获取一个指向其自己的[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理设备控制请求的 IRP 堆栈位置中设置的信息：
@@ -82,7 +82,7 @@ IOCTL 函数代码要传递到设备驱动程序为目标设备。
 <a href="" id="irpsp--parameters-deviceiocontrol-type3inputbuffer"></a>*IrpSp-&gt;Parameters.DeviceIoControl.Type3InputBuffer*  
 输入的缓冲区的使用方法的内核模式下请求\_NEITHER。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)

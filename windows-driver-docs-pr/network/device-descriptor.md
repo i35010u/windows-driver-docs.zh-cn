@@ -5,11 +5,11 @@ ms.assetid: 5c533053-6a4e-4c28-a87d-562791298d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3720bfadfd468f2e2a040f5dbfaabbf54b168d62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364197"
 ---
 # <a name="device-descriptor"></a>设备描述符
 
@@ -29,9 +29,9 @@ ms.locfileid: "56543729"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

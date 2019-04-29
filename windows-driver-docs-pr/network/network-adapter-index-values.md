@@ -5,11 +5,11 @@ ms.assetid: 969333DA-0282-474B-8D56-72CD623C5329
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8dc48fc0d213413b7b031e0193af78cb7a91c4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369857"
 ---
 # <a name="network-adapter-index-values"></a>网络适配器索引值
 

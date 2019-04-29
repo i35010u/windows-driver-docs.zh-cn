@@ -1,6 +1,6 @@
 ---
-title: 安装测试签名驱动程序包
-description: 安装测试签名驱动程序包
+title: 安装已进行测试签名的驱动程序包
+description: 安装已进行测试签名的驱动程序包
 ms.assetid: 6abbe51c-0fdf-465f-b1f2-d48e593a4f0e
 keywords:
 - 测试签名驱动程序 WDK，安装测试签名驱动程序包
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec819f268b48609a7d1529d033da5857f1d06349
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360029"
 ---
-# <a name="installing-test-signed-driver-packages"></a>安装测试签名驱动程序包
+# <a name="installing-test-signed-driver-packages"></a>安装已进行测试签名的驱动程序包
 
 
 从 Windows Vista，测试签名开始[驱动程序包](driver-packages.md)应安装并加载无需用户交互，如果满足以下条件：

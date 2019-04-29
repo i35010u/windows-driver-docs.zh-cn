@@ -5,11 +5,11 @@ ms.assetid: e2b9f985-be57-49a9-b546-5cc74b0b061b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7740b1257ec8f697061bf34d15fa5480496d459
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373128"
 ---
 # <a name="event-commands"></a>事件命令
 

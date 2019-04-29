@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7908f944c2963d06457925f344c4f3456f2bb3ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382092"
 ---
 # <a name="srbclosedeviceinstance"></a>SRB\_关闭\_设备\_实例
 

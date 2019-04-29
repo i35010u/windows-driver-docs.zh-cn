@@ -1,5 +1,5 @@
 ---
-title: z （执行时）
+title: z（执行 While）
 description: 给定的条件为 true 时，z 命令执行的命令。
 ms.assetid: 075dc012-68c2-4172-9d37-57bc8358297c
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 24447078209a4c97c2d359c9ccf1b3c9c1974d93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381896"
 ---
-# <a name="z-execute-while"></a>z （执行时）
+# <a name="z-execute-while"></a>z（执行 While）
 
 
 **Z**命令在给定的条件为 true 时执行的命令。
@@ -98,7 +98,7 @@ Command ; [Processor] z( Expression )
 0:000> reax=eax+1; rebx=ebx+1; z((eax<8)|(ebx<8)); recx=ecx+1
 ```
 
-下面的示例使用 c + + 表达式语法，并使用伪寄存器**美元 t0**作为循环变量。
+下面的示例使用C++表达式语法，并使用伪寄存器**美元 t0**作为循环变量。
 
 ```dbgcmd
 0:000> .expr /s c++

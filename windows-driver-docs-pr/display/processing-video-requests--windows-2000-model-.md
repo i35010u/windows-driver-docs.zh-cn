@@ -1,6 +1,6 @@
 ---
-title: 处理视频请求 （Windows 2000 模式）
-description: 处理视频请求 （Windows 2000 模式）
+title: 处理视频请求（Windows 2000 模型）
+description: 处理视频请求（Windows 2000 模型）
 ms.assetid: 86b3037e-2d18-46b0-8b02-c66be65a4001
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 中，处理请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c377d2f24d2361c64604aa6b17b9d334f13242f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383868"
 ---
-# <a name="processing-video-requests-windows-2000-model"></a>处理视频请求 （Windows 2000 模式）
+# <a name="processing-video-requests-windows-2000-model"></a>处理视频请求（Windows 2000 模型）
 
 
 ## <span id="ddk_processing_video_requests_windows_2000_model__gg"></span><span id="DDK_PROCESSING_VIDEO_REQUESTS_WINDOWS_2000_MODEL__GG"></span>

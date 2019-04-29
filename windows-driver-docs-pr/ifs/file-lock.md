@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a744b35346b16758aecb7754b375c4c2caa880f3
-ms.sourcegitcommit: e0953a7183f19937fefe1f62253c4b629926cd53
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59671434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383838"
 ---
 # <a name="filelock-structure"></a>文件\_锁结构
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b178d08fc6616c6b81d860a97e8587f0bf600347
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379441"
 ---
 # <a name="retrieving-the-opm-ddi"></a>检索 OPM DDI
 
@@ -32,7 +32,7 @@ ms.locfileid: "56525716"
    <tr class="header">
    <th align="left">成员名称</th>
    <th align="left">成员类型</th>
-   <th align="left">值</th>
+   <th align="left">ReplTest1</th>
    </tr>
    </thead>
    <tbody>
@@ -53,7 +53,7 @@ ms.locfileid: "56525716"
    <td align="left"><p>DXGK_OPM_INTERFACE_VERSION_1</p></td>
    </tr>
    <tr class="even">
-   <td align="left"><p><strong>接口</strong></p></td>
+   <td align="left"><p><strong>Interface</strong></p></td>
    <td align="left"><p>PINTERFACE</p></td>
    <td align="left"><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff561986" data-raw-source="[&lt;strong&gt;DXGK_OPM_INTERFACE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561986)"> <strong>DXGK_OPM_INTERFACE</strong> </a>结构</p></td>
    </tr>

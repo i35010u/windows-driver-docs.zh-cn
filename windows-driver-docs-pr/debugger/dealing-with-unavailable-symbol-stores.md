@@ -1,19 +1,19 @@
 ---
-title: 处理不可用的符号存储区
-description: 处理不可用的符号存储区
+title: 处理不可用的符号存储
+description: 处理不可用的符号存储
 ms.assetid: 42e3518b-b139-49cd-96cc-ea31f6df7964
 keywords:
 - SymProxy，不可用的存储
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 838b9e52c1bb27d61bb4a250201fe58face94809
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374913"
 ---
-# <a name="dealing-with-unavailable-symbol-stores"></a>处理不可用的符号存储区
+# <a name="dealing-with-unavailable-symbol-stores"></a>处理不可用的符号存储
 
 
 如果其中一个符号存储 SymSrv 被配置为获取文件从故障或不可，结果可以是为每个文件请求从客户端长时间等待。 当从 SymProxy 调用 SymSrv 时，可以通过设置 SymSrv 停止尝试访问应用商店相关避免大部分这些等待。 当参与此功能时，SymSrv 停止尝试将存储用于一段时间后在设定的间隔期间可以体验指定的数量的超时从相同的存储区。 通过在.ini 文件或注册表中，可以控制这些变量的值。

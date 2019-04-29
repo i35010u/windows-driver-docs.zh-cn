@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_READ_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bb3a95a97e2de5a3c139b7485f9f930da15ec02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381413"
 ---
 # <a name="irpmnreadconfig"></a>IRP\_MN\_READ\_CONFIG
 

@@ -1,5 +1,5 @@
 ---
-title: 确定该发送程序终止主机进程的原因
+title: 确定反射器终止主机进程的原因
 description: 本主题介绍如何分析该发送程序终止驱动程序主机进程 (WUDFHost.exe) 的原因。
 ms.assetid: c80b117b-597a-494a-bc28-5a918d2a9279
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af7e4207a514cc7d45b4f24db1a627d301e03c45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383756"
 ---
-# <a name="determining-why-the-reflector-terminated-the-host-process"></a>确定该发送程序终止主机进程的原因
+# <a name="determining-why-the-reflector-terminated-the-host-process"></a>确定反射器终止主机进程的原因
 
 
 本主题介绍如何分析该发送程序终止驱动程序主机进程 (WUDFHost.exe) 的原因。

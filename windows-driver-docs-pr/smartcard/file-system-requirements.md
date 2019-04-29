@@ -5,11 +5,11 @@ ms.assetid: 2C363978-3C98-4838-8C55-F804D2C75BEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bec3acad4a88463a2cc1c85cd2cd7f84a41579e1
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360143"
 ---
 # <a name="file-system-requirements"></a>文件系统要求
 

@@ -5,11 +5,11 @@ ms.assetid: ed15b56b-0b63-4983-a4ff-df379a2b9de9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03af7c0b82ee5d37f7d1b0702cb2fa47f7ccddc0
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379635"
 ---
 # <a name="providing-an-istiusd-interface"></a>提供了 IStiUSD 界面
 

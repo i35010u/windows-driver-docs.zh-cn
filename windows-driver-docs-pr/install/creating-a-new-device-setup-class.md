@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d80bc77f27e8d774e8bf844721cd1f9dcbd15105
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364341"
 ---
 # <a name="creating-a-new-device-setup-class"></a>创建新的设备安装程序类
 

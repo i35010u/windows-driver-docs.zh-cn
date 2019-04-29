@@ -1,6 +1,6 @@
 ---
-title: 计算点 Sprite 的大小
-description: 计算点 Sprite 的大小
+title: 计算点精灵的大小
+description: 计算点精灵的大小
 ms.assetid: f92ea8c6-f330-4625-873f-70c773c86334
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，点 sprite
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86a96206888332e65105b63963a3bf69f17a2ede
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372944"
 ---
-# <a name="computing-the-size-of-point-sprites"></a>计算点 Sprite 的大小
+# <a name="computing-the-size-of-point-sprites"></a>计算点精灵的大小
 
 
 ## <span id="ddk_computing_the_size_of_point_sprites_gg"></span><span id="DDK_COMPUTING_THE_SIZE_OF_POINT_SPRITES_GG"></span>

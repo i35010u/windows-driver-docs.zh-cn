@@ -5,11 +5,11 @@ ms.assetid: F7C23715-FFA7-43D3-A420-892236A8AF8F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1db6cd6f65710c4697159ee33a84e654d32abbec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369247"
 ---
 # <a name="platform-extension-plug-ins-peps"></a>平台扩展插件 (PEP)
 

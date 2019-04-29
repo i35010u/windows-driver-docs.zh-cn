@@ -1,6 +1,6 @@
 ---
-title: 调试显示器驱动程序
-description: 调试显示器驱动程序
+title: 调试显示驱动程序
+description: 调试显示驱动程序
 ms.assetid: 5ff9efbc-f0e0-4fe4-8138-43d80bfdeca6
 keywords:
 - 显示驱动程序 WDK Windows 2000 中，调试
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be1e54bd8520b1b138bf448fc0c0a1660bd7605c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383289"
 ---
-# <a name="debugging-display-drivers"></a>调试显示器驱动程序
+# <a name="debugging-display-drivers"></a>调试显示驱动程序
 
 
 ## <span id="ddk_debugging_display_drivers_gg"></span><span id="DDK_DEBUGGING_DISPLAY_DRIVERS_GG"></span>

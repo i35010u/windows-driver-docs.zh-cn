@@ -1,6 +1,6 @@
 ---
-title: 常规 x 64 INF 信息
-description: 常规 x 64 INF 信息
+title: 常规 x64 INF 信息
+description: 常规 x64 INF 信息
 ms.assetid: a1a96e8f-74d3-403d-994a-b21436d166d2
 keywords:
 - INF 文件 WDK 显示，64 位
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6460ae99f513dcf006f491efa871019739276a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366333"
 ---
-# <a name="general-x64-inf-information"></a>常规 x 64 INF 信息
+# <a name="general-x64-inf-information"></a>常规 x64 INF 信息
 
 
 以下特定于 x64 的信息才可进行加载运行 64 位 Windows Vista 及更高版本的显示器驱动程序的 INF 文件：

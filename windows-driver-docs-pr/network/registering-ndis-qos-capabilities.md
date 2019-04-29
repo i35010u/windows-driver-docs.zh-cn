@@ -5,11 +5,11 @@ ms.assetid: 03D70079-37A4-4FAA-BF18-ACED3A9E8267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 50632ad1dfc185fa50afb961b97a10d672f5fc0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373857"
 ---
 # <a name="registering-ndis-qos-capabilities"></a>注册 NDIS QoS 功能
 

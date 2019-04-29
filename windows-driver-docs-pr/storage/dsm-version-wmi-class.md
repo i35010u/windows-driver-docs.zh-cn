@@ -5,11 +5,11 @@ ms.assetid: 79239921-169d-496d-a52b-f4b6b0cb0c80
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 51db53f70e3bd6d6e60a68c32b7c81ce0cc23ff1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380653"
 ---
 # <a name="dsmversion-wmi-class"></a>DSM\_版本 WMI 类
 

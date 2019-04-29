@@ -1,19 +1,19 @@
 ---
-title: 查询直接从用户模式下的微型端口驱动程序
-description: 查询直接从用户模式下的微型端口驱动程序
+title: 直接从用户模式查询微型端口驱动程序
+description: 直接从用户模式查询微型端口驱动程序
 ms.assetid: e0d153bf-0e50-47bc-b4e2-10f04c532b99
 keywords:
 - 用户模式驱动程序查询 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: defd016d20795ee0fcd45a388394588ef863e3d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366381"
 ---
-# <a name="querying-a-miniport-driver-directly-from-user-mode"></a>查询直接从用户模式下的微型端口驱动程序
+# <a name="querying-a-miniport-driver-directly-from-user-mode"></a>直接从用户模式查询微型端口驱动程序
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 创建和使用驱动程序创建文件对象
-description: 创建和使用驱动程序创建文件对象
+title: 创建和使用驱动程序创建的文件对象
+description: 创建和使用驱动程序创建的文件对象
 ms.assetid: 84b677b4-fddf-4f06-9ea6-e4642c3f1b2d
 keywords:
 - 驱动程序创建文件对象 WDK UMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca6e7a6e717d78b4c938b0fc056188874f40d59
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358481"
 ---
-# <a name="creating-and-using-driver-created-file-objects"></a>创建和使用驱动程序创建文件对象
+# <a name="creating-and-using-driver-created-file-objects"></a>创建和使用驱动程序创建的文件对象
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4806687df618466f0faa28602f007f15ca55f98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365983"
 ---
 # <a name="the-srctool-utility"></a>SrcTool 实用工具
 

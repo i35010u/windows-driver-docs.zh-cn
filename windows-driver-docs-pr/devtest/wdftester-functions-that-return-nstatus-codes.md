@@ -1,17 +1,17 @@
 ---
-title: 返回 NSTATUS 代码 KMDF 函数
-description: 返回 NSTATUS 代码 KMDF 函数
+title: 返回 NSTATUS 代码的 KMDF 函数
+description: 返回 NSTATUS 代码的 KMDF 函数
 ms.assetid: 0edd35c0-2357-4502-8c59-36b16cf7f294
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df14fede11fdf33d609439c4479f42dd0eef8b26
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378589"
 ---
-# <a name="kmdf-functions-that-return-nstatus-codes"></a>返回 NSTATUS 代码 KMDF 函数
+# <a name="kmdf-functions-that-return-nstatus-codes"></a>返回 NSTATUS 代码的 KMDF 函数
 
 
 下面是返回 NTSTATUS 代码 KMDF DDIs 的列表。 任何这些 DDIs 无法除以下两个失败：**WdfRequestReuse**并**WdfWaitLockAcquire**。

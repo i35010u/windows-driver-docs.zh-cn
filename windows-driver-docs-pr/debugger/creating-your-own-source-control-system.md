@@ -1,6 +1,6 @@
 ---
-title: 创建源代码管理系统
-description: 创建源代码管理系统
+title: 创建自己的源代码管理系统
+description: 创建自己的源代码管理系统
 ms.assetid: 86492545-fc94-40ee-b22d-26fa2b0fbcc8
 keywords:
 - 源服务器、 HTTP 站点
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09c645663bc3fb568d10aa11932974d95817b144
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375447"
 ---
-# <a name="creating-your-own-source-control-system"></a>创建源代码管理系统
+# <a name="creating-your-own-source-control-system"></a>创建自己的源代码管理系统
 
 
 本部分中，可了解如何准备检测脚本，以便 SrcSrv 可以集成到生成或版本控制系统。 实现是依赖于随 SrcSrv 的语言规范版本。

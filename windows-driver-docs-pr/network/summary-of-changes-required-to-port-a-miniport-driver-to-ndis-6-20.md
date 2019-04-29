@@ -1,6 +1,6 @@
 ---
 title: 若要移植到 NDIS 6.20 的微型端口驱动程序的更改摘要
-description: 若要移植到 NDIS 6.20 的微型端口驱动程序所需的更改的摘要
+description: 将微型端口驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 ms.assetid: e52137ac-5333-4b62-8e26-686196d8ca78
 keywords:
 - NDIS 6.20 WDK，移植微型端口驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04461247d1e2de053a49944bee8437e27c2b413f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366361"
 ---
-# <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-620"></a>若要移植到 NDIS 6.20 的微型端口驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-a-miniport-driver-to-ndis-620"></a>将微型端口驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
 
 

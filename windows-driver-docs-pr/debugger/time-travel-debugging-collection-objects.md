@@ -4,11 +4,11 @@ description: 本部分介绍与时间旅行调试关联的范围模型对象。
 ms.date: 09/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe3301d049ad5b63e77b2da117332b2d3b680d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379148"
 ---
 > [!NOTE]
 > 本主题中的信息是初定版。 更新的信息将在文档中的更高版本的版本中提供。 
@@ -21,7 +21,7 @@ ms.locfileid: "56541240"
 ## <a name="children"></a>Children
 
 
-| 对象 | 描述 |
+| Object | 描述 |
 | --- | --- |
 | MinPosition | 一个[位置对象](time-travel-debugging-position-objects.md)，它描述与范围相关的最早位置。 |
 
@@ -63,7 +63,7 @@ ms.locfileid: "56541240"
 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
 

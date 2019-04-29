@@ -5,11 +5,11 @@ ms.assetid: 3e9f3214-3120-41f6-bb06-7ace4f243c5f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5e5b6ba355102d7a7e45ec6f421370f307cbd486
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382741"
 ---
 # <a name="msiscsirequesttimestatistics-wmi-class"></a>MSiSCSI\_RequestTimeStatistics WMI 类
 

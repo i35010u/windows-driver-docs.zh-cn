@@ -1,6 +1,6 @@
 ---
-title: 从键盘强制系统崩溃
-description: 从键盘强制系统崩溃
+title: 通过键盘强制系统崩溃
+description: 通过键盘强制系统崩溃
 ms.assetid: 0c3ec6f3-d233-46e4-b599-1a0f89318ed2
 keywords:
 - 启动过程中，从键盘导致系统崩溃
@@ -14,13 +14,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 728380861030e3add4703505836eeb7ecbd807be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371701"
 ---
-# <a name="forcing-a-system-crash-from-the-keyboard"></a>从键盘强制系统崩溃
+# <a name="forcing-a-system-crash-from-the-keyboard"></a>通过键盘强制系统崩溃
 
 
 ## <span id="ddk_forcing_a_system_crash_from_the_keyboard_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_KEYBOARD_DBG"></span>
@@ -94,7 +94,7 @@ ms.locfileid: "56525299"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">使用键盘快捷方式序列中的第一个键</th>
 </tr>
 </thead>

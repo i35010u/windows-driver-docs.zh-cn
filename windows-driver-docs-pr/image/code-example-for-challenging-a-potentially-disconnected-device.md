@@ -5,11 +5,11 @@ ms.assetid: 74633481-229f-4074-a84e-cc515eaaacd0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 31638e6a26d664fb817ddd76228d915811329eb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373214"
 ---
 # <a name="code-example-for-challenging-a-potentially-disconnected-device"></a>演示如何质询可能已断开连接的设备的代码示例
 

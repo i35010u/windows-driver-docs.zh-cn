@@ -5,11 +5,11 @@ ms.assetid: 4FB3AFEF-1560-4683-9D57-3029DAA50FE8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6509dfafa53e69d2b6d429a945f6d0a6c3c316bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369239"
 ---
 # <a name="platform-performance-thresholds"></a>平台性能阈值
 

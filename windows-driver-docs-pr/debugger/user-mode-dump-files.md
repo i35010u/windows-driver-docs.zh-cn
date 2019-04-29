@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e96f53806931cfc846ef7167e204a23dc6d12
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367979"
 ---
 # <a name="user-mode-dump-files"></a>用户模式转储文件
 

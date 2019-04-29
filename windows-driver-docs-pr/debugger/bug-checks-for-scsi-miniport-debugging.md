@@ -1,19 +1,19 @@
 ---
-title: 错误检查的 SCSI 微型端口调试
-description: 错误检查的 SCSI 微型端口调试
+title: 用于 SCSI 微型端口调试的 Bug 检查
+description: 用于 SCSI 微型端口调试的 Bug 检查
 ms.assetid: 9a517096-f708-452b-83f6-e7d4f0d41ac3
 keywords:
 - 调试时，bug 检查 SCSI 微型端口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23de7d56bfd920a681e740b3808325461ed05e1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374001"
 ---
-# <a name="bug-checks-for-scsi-miniport-debugging"></a>错误检查的 SCSI 微型端口调试
+# <a name="bug-checks-for-scsi-miniport-debugging"></a>用于 SCSI 微型端口调试的 Bug 检查
 
 
 有两个主要在调试 SCSI 微型端口驱动程序的过程中出现的 bug 检查： bug 检查 0x77 (内核\_堆栈\_页内\_错误) 和 bug 检查 0x7A (内核\_数据\_页内\_错误）。 其参数的完整详细信息，请参阅[ **Bug 检查 0x77** ](bug-check-0x77--kernel-stack-inpage-error.md)并[ **Bug 检查 0x7A**](bug-check-0x7a--kernel-data-inpage-error.md)。

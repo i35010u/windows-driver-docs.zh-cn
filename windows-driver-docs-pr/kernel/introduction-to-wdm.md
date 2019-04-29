@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dfaae90d1641d9def7fb833ba2e1166fd75c71c6
-ms.sourcegitcommit: 6df760d981c019f160e1a0ba91fc0ea576db3278
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60159036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383797"
 ---
 # <a name="introduction-to-wdm"></a>WDM 简介
 

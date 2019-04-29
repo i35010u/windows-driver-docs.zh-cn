@@ -1,19 +1,19 @@
 ---
-title: NetAdapterCx limitations
-description: NetAdapterCx limitations
+title: NetAdapterCx 限制
+description: NetAdapterCx 限制
 ms.assetid: 2333F2D9-A369-4124-9365-ABC49E8B5595
 keywords:
 - 网络适配器 WDF 类扩展限制，NetAdapterCx 限制，NetCx 限制
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21146fe5f8dc5301b1d2e07807f0328d69a9848d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375344"
 ---
-# <a name="netadaptercx-limitations"></a>NetAdapterCx limitations
+# <a name="netadaptercx-limitations"></a>NetAdapterCx 限制
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

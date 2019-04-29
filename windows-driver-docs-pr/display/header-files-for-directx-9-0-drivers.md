@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cedd7365d61a9808853e33458d38baee90a57f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377958"
 ---
 # <a name="header-files-for-directx-90-drivers"></a>DirectX 9.0 驱动程序的标头文件
 

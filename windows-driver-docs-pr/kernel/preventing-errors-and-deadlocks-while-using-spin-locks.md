@@ -1,6 +1,6 @@
 ---
-title: 防止错误和死锁，而使用数值调节钮锁定
-description: 防止错误和死锁，而使用数值调节钮锁定
+title: 使用自旋锁时防止错误和死锁
+description: 使用自旋锁时防止错误和死锁
 ms.assetid: 1df563e6-7ad2-4684-9778-ffa1b845ac31
 keywords:
 - 死锁 WDK 内核
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eedd8ec0e6d377870830c91723588da17b1e36ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369131"
 ---
-# <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>防止错误和死锁，而使用数值调节钮锁定
+# <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用自旋锁时防止错误和死锁
 
 
 

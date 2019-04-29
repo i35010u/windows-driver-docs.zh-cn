@@ -5,11 +5,11 @@ ms.assetid: CE6CEC2C-5E8E-40aa-A5D3-0062D6F82EFE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 51048cfe66858aef208bc094026869dbcadd975b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383035"
 ---
 # <a name="user-mode-monitor"></a>用户模式监视器
 
@@ -71,7 +71,7 @@ ms.locfileid: "57464037"
 | 应用程序挂起                     | LogError (LogError)                           |
 | 异常中断指令          | LogError                                      |
 | 中断指令异常继续 | 忽略                                        |
-| C + + EH 异常                     | LogError (LogError)                           |
+| C++EH 异常                     | LogError (LogError)                           |
 | CLR 异常                        | LogError (LogError)                           |
 | CLR 通知异常           | LogError （忽略）                             |
 | 控制 LogError 异常           | LogError                                      |
@@ -96,7 +96,7 @@ ms.locfileid: "57464037"
 | 堆栈缓冲区溢出                | LogError (LogError)                           |
 | 堆栈溢出                       | LogError (LogError)                           |
 | 验证器停止                        | LogError (LogError)                           |
-| Visual c + + 异常                 | 忽略 （忽略）                               |
+| VisualC++异常                 | 忽略 （忽略）                               |
 | 唤醒调试器                        | LogError (LogError)                           |
 | WOW64 断点                     | LogError （忽略）                             |
 | WOW64 单步执行异常          | LogError （忽略）                             |

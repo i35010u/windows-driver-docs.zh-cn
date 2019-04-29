@@ -5,11 +5,11 @@ ms.assetid: 2F493F35-0D6D-4D23-A5CD-FA3990B3EAB5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61d149da086570c01036e74de20ddf7296fc9d87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372247"
 ---
 # <a name="querying-and-changing-nvgre-task-offload-state"></a>查询和更改 NVGRE 任务卸载状态
 

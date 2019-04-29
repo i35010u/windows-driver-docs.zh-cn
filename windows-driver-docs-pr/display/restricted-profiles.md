@@ -1,6 +1,6 @@
 ---
-title: 受限制的配置文件
-description: 受限制的配置文件
+title: 受限制配置文件
+description: 受限制配置文件
 ms.assetid: 043d5867-d761-47eb-99de-5022a9ee6e7f
 keywords:
 - DirectX 视频加速 WDK Windows 2000 显示，受限制的配置文件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e249c64ed3790771ff1aa2860c32a2332e8a0b87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378518"
 ---
-# <a name="restricted-profiles"></a>受限制的配置文件
+# <a name="restricted-profiles"></a>受限制配置文件
 
 
 ## <span id="ddk_restricted_profiles_gg"></span><span id="DDK_RESTRICTED_PROFILES_GG"></span>

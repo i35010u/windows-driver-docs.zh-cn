@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd6786c9d4b66663d91758ebfa7bd8a46e60399
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372346"
 ---
 # <a name="bug-check-0xe7-invalidfloatingpointstate"></a>Bug 检查 0xE7：无效\_浮动\_点\_状态
 

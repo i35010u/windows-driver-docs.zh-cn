@@ -5,11 +5,11 @@ ms.assetid: 39BD7413-48A5-4199-BA8E-D2A77E4D23F1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e51c35d47e1bd4590fb18515f183bf40ff530755
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368232"
 ---
 # <a name="usb-30-data-structures"></a>USB 3.0 数据结构
 
@@ -65,7 +65,7 @@ USB 3.0 主机控制器驱动程序是 USB 3.0 核心驱动程序堆栈的一部
 
 终结点上下文结构包含单个终结点的上下文信息。 它还具有**取消排队**并**排入队列**成员，用于跟踪位置 TRBs 已使用的硬件和软件还会添加 TRBs 的位置。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [USB 调试 Windows 8 中的创新](https://go.microsoft.com/fwlink/p/?LinkID=249153)

@@ -1,6 +1,6 @@
 ---
-title: 无线网络配置文件的扩展属性
-description: 无线网络配置文件的扩展属性
+title: 扩展无线网络配置文件的属性
+description: 扩展无线网络配置文件的属性
 ms.assetid: c98266b5-3841-4dfa-b274-5c1ef16bfef6
 keywords:
 - IHV UI 扩展 DLL WDK 本机 802.11，网络配置文件扩展
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e053ab00c146956b6e66f347ae4b8228c3ebc0ad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386246"
 ---
-# <a name="extending-the-properties-for-wireless-network-profiles"></a>无线网络配置文件的扩展属性
+# <a name="extending-the-properties-for-wireless-network-profiles"></a>扩展无线网络配置文件的属性
 
 
 

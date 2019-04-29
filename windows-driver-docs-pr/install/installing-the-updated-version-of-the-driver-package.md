@@ -1,17 +1,17 @@
 ---
-title: 安装驱动程序包的更新的版本
-description: 安装驱动程序包的更新的版本
+title: 安装驱动程序包的已更新版本
+description: 安装驱动程序包的已更新版本
 ms.assetid: c2138956-a036-410d-b34e-b7b6efbcbace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b88fdee7713ffa0602708b0215462654cc98b852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366539"
 ---
-# <a name="installing-the-updated-version-of-the-driver-package"></a>安装驱动程序包的更新的版本
+# <a name="installing-the-updated-version-of-the-driver-package"></a>安装驱动程序包的已更新版本
 
 
 检查完[同样将 Windows 配置为排名驱动程序签名](configuring-windows-to-rank-driver-signatures-equally.md)，可以在目标系统上安装收件箱驱动程序的专用版本。 若要安装专用生成，请完成以下步骤：

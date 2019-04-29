@@ -1,6 +1,6 @@
 ---
-title: 调试中断 Storm
-description: 调试中断 Storm
+title: 调试中断风暴
+description: 调试中断风暴
 ms.assetid: b863cb9c-dce0-4572-b0ed-6f7d3a6ba472
 keywords:
 - 挂起的 Irp
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d78ad3206adb2f283c924098b620ce818e19dc0b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377197"
 ---
-# <a name="debugging-an-interrupt-storm"></a>调试中断 Storm
+# <a name="debugging-an-interrupt-storm"></a>调试中断风暴
 
 
 ## <span id="ddk_debugging_pending_irps_dbg"></span><span id="DDK_DEBUGGING_PENDING_IRPS_DBG"></span>

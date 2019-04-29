@@ -1,17 +1,17 @@
 ---
-title: 用户启动的反馈-重现模式
+title: 用户发起的反馈 - 再现模式
 description: 本主题介绍 IHV 跟踪 WDI 驱动程序中的日志记录用户启动反馈重现的模式。
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 48331866a493beda962b0d9334ec5c57c544697f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362503"
 ---
-# <a name="user-initiated-feedback---repro-mode"></a>用户启动的反馈-重现模式
+# <a name="user-initiated-feedback---repro-mode"></a>用户发起的反馈 - 再现模式
 
 用户启动反馈 (UIF) 重现模式允许系统以收集更详细日志记录时用户重现 bug。 如 UIF 正常模式下，这也可以通过使用 IHV 定义 ETW 提供程序创建新的 WMI 日志记录会话。 重现模式完成后，详细日志收集并发送给 Microsoft 进行分析。 没有用于启用或禁用详细固件日志 IHV 扩展点。 重现日志用于更多详细信息，以便能够跟踪客户有问题的原因。 因此，重现模式日志的日志文件大小设置为最大大小为 10 MB。 IHV 应使用 ETW 提供程序标志/级别/关键字值的更详细的设置。
 

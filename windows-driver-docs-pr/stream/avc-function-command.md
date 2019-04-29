@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 551b3d61fe01e73cb890033b0c053df2c459d211
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369800"
 ---
 # <a name="avcfunctioncommand"></a>AVC\_函数\_命令
 
@@ -163,7 +163,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 这必须在调用在 IRQL = 被动\_级别。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC\_函数**](https://msdn.microsoft.com/library/windows/hardware/ff554145)， [ **AvcCommandType**](https://msdn.microsoft.com/library/windows/hardware/ff554099)， [ **AvcResponseCode**](https://msdn.microsoft.com/library/windows/hardware/ff554105)， [**AVC\_函数\_查找\_对等方\_执行**](avc-function-find-peer-do.md)， [ **AVC\_函数\_对等\_做\_列表**](avc-function-peer-do-list.md)， [ **AVC\_函数\_GET\_子单元\_信息**](avc-function-get-subunit-info.md)
 

@@ -1,6 +1,6 @@
 ---
-title: Microsoft PostScript Printer Driver
-description: Microsoft PostScript Printer Driver
+title: Microsoft PostScript 打印机驱动程序
+description: Microsoft PostScript 打印机驱动程序
 ms.assetid: 1c67d20c-ada6-42fd-a882-61e12b72611f
 keywords:
 - 打印机驱动程序 WDK、 PostScript 的打印机驱动程序
@@ -9,13 +9,13 @@ keywords:
 ms.date: 01/30/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: b66013b4d263c4386070bd6467d4bb0ce5e98acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374507"
 ---
-# <a name="microsoft-postscript-printer-driver"></a>Microsoft PostScript Printer Driver
+# <a name="microsoft-postscript-printer-driver"></a>Microsoft PostScript 打印机驱动程序
 
 PostScript 打印机驱动程序 (Pscript) 是 PostScript 打印机的 Microsoft 标准的打印机驱动程序。
 

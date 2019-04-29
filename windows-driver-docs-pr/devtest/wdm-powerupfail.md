@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0108043d9eb4e54d675ebcc1db60febed08f9186
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370785"
 ---
 # <a name="powerupfail-rule-wdm"></a>PowerUpFail 规则 (wdm)
 
@@ -56,7 +56,7 @@ PowerUpFail 规则指定 FDO 或 FIDO 驱动程序不会失败 IRP\_MN\_设置\_
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520)

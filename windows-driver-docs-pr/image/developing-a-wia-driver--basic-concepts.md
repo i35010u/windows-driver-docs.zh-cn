@@ -5,11 +5,11 @@ ms.assetid: 1d931e7a-3c58-4b64-8850-22375b10d0a4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3007164e0f7ed0e142943c10dd6492179b92c228
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373097"
 ---
 # <a name="developing-a-wia-driver-basic-concepts"></a>开发 WIA 驱动程序：基本概念
 

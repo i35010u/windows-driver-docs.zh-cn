@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17264b2db9d8bd40913b3a6b02e58eca16097874
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377076"
 ---
 # <a name="format-of-a-text-log-section-body"></a>文本日志部分正文的格式
 

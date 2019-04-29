@@ -1,17 +1,17 @@
 ---
-title: 访问设备接口的类属性
-description: 访问设备接口的类属性
+title: 访问设备接口类属性
+description: 访问设备接口类属性
 ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be0d5781dd6bc6e41865396f8a4d53815db0055
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373884"
 ---
-# <a name="accessing-device-interface-class-properties"></a>访问设备接口的类属性
+# <a name="accessing-device-interface-class-properties"></a>访问设备接口类属性
 
 
 在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包含设备接口类属性描述设备接口类的特征。 统一的设备属性模型使用[属性键](property-keys.md)来表示这些属性。

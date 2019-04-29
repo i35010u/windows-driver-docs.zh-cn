@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d18d425c8c46df374646f0568f89bce6069909e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362711"
 ---
 # <a name="storage-filter-drivers-iocompletion-routines"></a>存储筛选器驱动程序的 IoCompletion 例程
 

@@ -1,20 +1,20 @@
 ---
-title: 小内存转储
-description: 小内存转储
+title: 小规模内存转储
+description: 小规模内存转储
 ms.assetid: bc502411-5366-49d3-b650-9dddda286934
 keywords:
 - 转储文件，小内存转储
-- 小内存转储
+- 小规模内存转储
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e7d9533432a68881b66c4ae9f99d18d8c7bfaff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368439"
 ---
-# <a name="small-memory-dump"></a>小内存转储
+# <a name="small-memory-dump"></a>小规模内存转储
 
 
 ## <span id="ddk_small_memory_dump_dbg"></span><span id="DDK_SMALL_MEMORY_DUMP_DBG"></span>
@@ -52,7 +52,7 @@ ms.locfileid: "56523679"
 
 如果将第二个进行错误检查，并创建第二个小内存转储文件，将保留以前的文件。 每个其他文件都有不同的名称，其中包含在文件名中编码在发生崩溃的日期。 例如，mini022900 01.dmp 是在 2000 年 2 月 29 日上生成的第一个内存转储文件。 所有小内存转储文件的列表保存在目录 %systemroot%\\小型转储。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [类型的内核模式转储文件](varieties-of-kernel-mode-dump-files.md)

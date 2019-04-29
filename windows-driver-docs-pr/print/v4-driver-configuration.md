@@ -5,11 +5,11 @@ ms.assetid: 1EAF1322-43A6-4DB5-B059-721FBF640B77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46b2494a0a4893b06aa0c3291a3ee1d161d43c2c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358574"
 ---
 # <a name="v4-printer-driver-configuration"></a>V4 打印机驱动程序配置
 

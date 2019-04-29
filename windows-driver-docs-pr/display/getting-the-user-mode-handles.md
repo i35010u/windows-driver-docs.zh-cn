@@ -1,6 +1,6 @@
 ---
-title: 获取用户模式下句柄
-description: 获取用户模式下句柄
+title: 获取用户模式句柄
+description: 获取用户模式句柄
 ms.assetid: b241bf00-1adb-4ab0-a00e-e922bdc9eee5
 keywords:
 - 绘制内核模式视频传输 WDK DirectDraw，用户模式下处理
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 018d2000150c8305a3673b483a7d120e25455ad3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379482"
 ---
-# <a name="getting-the-user-mode-handles"></a>获取用户模式下句柄
+# <a name="getting-the-user-mode-handles"></a>获取用户模式句柄
 
 
 ## <span id="ddk_getting_the_user_mode_handles_gg"></span><span id="DDK_GETTING_THE_USER_MODE_HANDLES_GG"></span>

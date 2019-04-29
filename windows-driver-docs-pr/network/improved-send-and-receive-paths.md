@@ -1,6 +1,6 @@
 ---
-title: 改进了发送和接收路径
-description: 改进了发送和接收路径
+title: 改进的发送和接收路径
+description: 改进的发送和接收路径
 ms.assetid: 7edecb49-576f-4058-92e8-39f14268a130
 keywords:
 - NDIS WDK、 发送和接收数据
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b3abde686105c8f92a86c9068e75647d1ad58e86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363157"
 ---
-# <a name="improved-send-and-receive-paths"></a>改进了发送和接收路径
+# <a name="improved-send-and-receive-paths"></a>改进的发送和接收路径
 
 
 

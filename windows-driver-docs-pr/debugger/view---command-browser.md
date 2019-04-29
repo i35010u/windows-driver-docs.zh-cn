@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33631748463699a8160627b4e6373d684246f3bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381068"
 ---
-# <a name="view--command-browser"></a>视图 |命令浏览器
+# <a name="view--command-browser"></a>视图 | 命令浏览器
 
 
 单击**命令浏览器**上**视图**菜单打开[命令浏览器窗口](command-browser-window.md)。 如果此窗口已打开，变为活动状态。

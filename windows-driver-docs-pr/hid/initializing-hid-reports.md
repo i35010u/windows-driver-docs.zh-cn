@@ -1,6 +1,6 @@
 ---
-title: 初始化 HID 报表
-description: 初始化 HID 报表
+title: 初始化 HID 报告
+description: 初始化 HID 报告
 ms.assetid: 14229315-3928-4421-a8d8-c3f7837bf1c3
 keywords:
 - HID 报告 WDK，初始化
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f424e6fab021ced41e0bf829be151ebf43ccb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364658"
 ---
-# <a name="initializing-hid-reports"></a>初始化 HID 报表
+# <a name="initializing-hid-reports"></a>初始化 HID 报告
 
 
 

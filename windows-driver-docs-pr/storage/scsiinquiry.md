@@ -5,11 +5,11 @@ ms.assetid: a4f6f21c-b096-4a2f-a207-e8618682e780
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b24b93de32537b036a63c274c8123d30fec53906
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378113"
 ---
 # <a name="scsiinquiry"></a>ScsiInquiry
 

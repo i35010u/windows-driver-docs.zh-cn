@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b8f53ab841e1f5df28f3ba6ca45ad5c175d41815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366961"
 ---
 # <a name="wiadpsusername"></a>WIA\_DPS\_USER\_NAME
 
@@ -42,11 +42,11 @@ WIA\_DPS\_用户\_WIA 驱动程序的根项的 NAME 属性允许驱动程序以�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统上可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

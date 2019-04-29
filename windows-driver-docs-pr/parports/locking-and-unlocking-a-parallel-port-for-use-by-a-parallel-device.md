@@ -1,6 +1,6 @@
 ---
 title: 锁定和解锁并行端口
-description: 锁定和解锁并行端口以供并行设备
+description: 锁定和解锁供并行设备使用的并行端口
 ms.assetid: dbfa962e-9de8-4a9c-b962-24b53c41f35d
 keywords:
 - 并行设备 WDK，端口锁定/解锁
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cef7f6c2e1e07b3077695d49892fb3c3cfdeeb68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373536"
 ---
-# <a name="locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device"></a>锁定和解锁并行端口以供并行设备
+# <a name="locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device"></a>锁定和解锁供并行设备使用的并行端口
 
 
 

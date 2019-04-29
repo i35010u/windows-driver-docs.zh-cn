@@ -5,11 +5,11 @@ ms.assetid: 79B4B0B7-32AB-4AE4-ACD2-CE17C93573BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f2c7905c31b1ed1b406e8fd3f353f3bf922a45e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382898"
 ---
 # <a name="setting-the-parameters-of-a-nic-switch"></a>设置 NIC 交换机的参数
 

@@ -1,17 +1,17 @@
 ---
-title: 支持在多个组件的设备上的空闲状态的电源关闭
-description: 支持在多个组件的设备上的空闲状态的电源关闭
+title: 支持多组件设备空闲时关闭电源
+description: 支持多组件设备空闲时关闭电源
 ms.assetid: 81C80E30-DAF4-4EE4-AA29-AB40A6827C26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 984e23f2e2a2fc9d15d4e7b7e4105d12fb1df166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379459"
 ---
-# <a name="supporting-idle-power-down-on-multiple-component-devices"></a>支持在多个组件的设备上的空闲状态的电源关闭
+# <a name="supporting-idle-power-down-on-multiple-component-devices"></a>支持多组件设备空闲时关闭电源
 
 
 \[仅适用于 KMDF\]

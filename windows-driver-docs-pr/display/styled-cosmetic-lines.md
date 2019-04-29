@@ -1,6 +1,6 @@
 ---
-title: 设置修饰的行的样式
-description: 设置修饰的行的样式
+title: 带样式的装饰线条
+description: 带样式的装饰线条
 ms.assetid: 07e72190-7c8e-471e-9851-ccc037312c5c
 keywords:
 - 行 WDK GDI 样式外观
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff6006683ce59cfb0f38598a6fe3f0d9984fd20b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375991"
 ---
-# <a name="styled-cosmetic-lines"></a>设置修饰的行的样式
+# <a name="styled-cosmetic-lines"></a>带样式的装饰线条
 
 
 ## <span id="ddk_styled_cosmetic_lines_gg"></span><span id="DDK_STYLED_COSMETIC_LINES_GG"></span>

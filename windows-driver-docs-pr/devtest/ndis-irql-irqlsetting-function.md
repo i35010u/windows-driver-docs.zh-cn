@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 35bc1330fdafa1ee9d089b19157d45a2fdf18043
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370885"
 ---
 # <a name="irqlirqlsettingfunction-rule-ndis"></a>Irql\_IrqlSetting\_函数规则 (ndis)
 
@@ -59,7 +59,7 @@ Irql\_IrqlSetting\_函数规则指定必须在正确的 IRQL 级别上名为 NDI
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NDIS\_LOWER\_IRQL**](https://msdn.microsoft.com/library/windows/hardware/ff565882)

@@ -5,11 +5,11 @@ ms.assetid: e293757e-de4b-4669-a6c4-a57fff157cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c31bc322f1d13a0df31179eec2459c63e64a1bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380155"
 ---
 # <a name="handling-the-hotspot-authentication-event"></a>处理热点身份验证事件
 
@@ -102,7 +102,7 @@ Windows 从网络断开连接，并不会重新中当前用户会话的连接。
 
 在前台打开应用的请求不能保证成功。 HotspotAuthentication 事件可能是因为自动连接计算机处于连接待机状态。 仅当计算机不再连接待机、 已解锁，又仍连接到无线网络时，启动应用程序。 因为这会延迟 Internet 访问权限，直到用户解锁计算机，可以自动生成的凭据时，应避免此状态。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WISPr 身份验证](wispr-authentication.md)

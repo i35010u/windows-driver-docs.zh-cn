@@ -5,11 +5,11 @@ ms.assetid: 15ee51f8-1904-43ee-8bc2-311688c860e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f502ed9ae1bd56d222bd9a36cbe33826598203f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373897"
 ---
 # <a name="accessing-device-instance-spdrpxxx-properties"></a>访问设备实例 SPDRP_Xxx 属性
 

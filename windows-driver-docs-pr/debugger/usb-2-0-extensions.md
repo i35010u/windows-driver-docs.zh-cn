@@ -5,11 +5,11 @@ ms.assetid: 42A78738-CE0D-42EA-9E3D-04CDC2060266
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b506fe76da4e30b53a5c220b3b2d0e5a85caafa2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367991"
 ---
 # <a name="usb-20-extensions"></a>USB 2.0 扩展
 
@@ -34,7 +34,7 @@ USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设
 
 若要开始调试一个 USB 2.0 的问题，请输入[ **！ usb2tree** ](-usbkd-usb2tree.md)命令。 **！ Usb2tree**命令显示命令和可用于调查主机控制器、 中心、 端口、 设备、 端点和 USB 2.0 树的其他元素的地址的列表。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [**!usbkd.usbhelp**](-usbkd-usbhelp.md)
@@ -94,7 +94,7 @@ USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设
 -   [**!usbkd.usbusb2tt**](-usbkd-usbusb2tt.md)
 -   [**!usbkd.usbver**](-usbkd-usbver.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [USB 3.0 扩展](usb-3-extensions.md)

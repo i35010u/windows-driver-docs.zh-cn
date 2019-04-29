@@ -5,11 +5,11 @@ ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382697"
 ---
 # <a name="pwrtest-info-scenario"></a>PwrTest 信息方案
 

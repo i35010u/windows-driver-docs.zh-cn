@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 387850c5e7a7baab4af22e4e4dd2ddcfdec59fa4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370607"
 ---
 # <a name="wiaipsdocumenthandlingselect"></a>WIA\_IPS\_文档\_处理\_选择
 
@@ -46,7 +46,7 @@ WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -113,7 +113,7 @@ WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -153,17 +153,17 @@ WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中可用。 对于 Windows XP 中，使用相同的 WIA_DPS_DOCUMENT_HANDLING_SELECT 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)

@@ -5,11 +5,11 @@ ms.assetid: 55730446-7c8b-4c9d-9473-f9bb6edd603e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e0f1f0345f884a35d8ba3b0aca73636769a1fcda
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377490"
 ---
 # <a name="iscsiredirectportalinfo-wmi-class"></a>ISCSI\_RedirectPortalInfo WMI 类
 

@@ -1,19 +1,19 @@
 ---
-title: 标识服务器线程从调用方
-description: 标识服务器线程从调用方
+title: 识别服务器线程中的调用方
+description: 识别服务器线程中的调用方
 ms.assetid: d19dc242-1043-4e61-9fcb-eadac0ab63c8
 keywords:
 - RPC 调试、 标识调用方
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ecea5be6fff755074eebc25c1fc64dcf56af8dc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381038"
 ---
-# <a name="identifying-the-caller-from-the-server-thread"></a>标识服务器线程从调用方
+# <a name="identifying-the-caller-from-the-server-thread"></a>识别服务器线程中的调用方
 
 
 ## <span id="ddk_identifying_the_caller_from_the_server_thread_dbg"></span><span id="DDK_IDENTIFYING_THE_CALLER_FROM_THE_SERVER_THREAD_DBG"></span>

@@ -1,17 +1,17 @@
 ---
-title: 访问 Storport I/O 模型中的分散/收集列表
-description: 访问 Storport I/O 模型中的分散/收集列表
+title: 访问 Storport I/O 模型中的分散/聚合列表
+description: 访问 Storport I/O 模型中的分散/聚合列表
 ms.assetid: db05ac58-3317-44b2-9550-e4520537955f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48b9036521c3fa8f0bfb4d30f2ac1ac9fcc8a10b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382749"
 ---
-# <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>访问 Storport I/O 模型中的分散/收集列表
+# <a name="access-to-scattergather-lists-in-the-storport-io-model"></a>访问 Storport I/O 模型中的分散/聚合列表
 
 
 ## <span id="ddk_access_to_scatter_gather_lists_in_the_storport_i_o_model_kg"></span><span id="DDK_ACCESS_TO_SCATTER_GATHER_LISTS_IN_THE_STORPORT_I_O_MODEL_KG"></span>

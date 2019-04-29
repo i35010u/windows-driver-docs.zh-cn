@@ -5,11 +5,11 @@ ms.assetid: 19e8e431-00fd-462b-bb01-e41e0a7b7f6d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba9e9beda61e831ad8b905d89f8ce7fd53d571ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363809"
 ---
 # <a name="eventsetidcrossbar"></a>EVENTSETID\_纵横制
 

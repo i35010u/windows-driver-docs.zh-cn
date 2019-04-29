@@ -1,17 +1,17 @@
 ---
-title: 智能卡微型驱动程序
-description: 智能卡微型驱动程序
+title: 智能卡微型驱动器
+description: 智能卡微型驱动器
 ms.assetid: BE24E8C3-663A-47A3-B30C-CBB0AEF89E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fb20231b804bdb47e4228c078562c730e7220aaa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382559"
 ---
-# <a name="smart-card-minidrivers"></a>智能卡微型驱动程序
+# <a name="smart-card-minidrivers"></a>智能卡微型驱动器
 
 
 智能卡微型驱动程序通过封装的大多数复杂的加密操作卡微型驱动程序开发人员提供更简单的替代开发旧的加密服务提供程序 (CSP)。

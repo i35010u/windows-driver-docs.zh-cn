@@ -1,6 +1,6 @@
 ---
-title: '#其他条件预处理器指令'
-description: '#其他条件预处理器指令'
+title: '#Else 条件预处理器指令'
+description: '#Else 条件预处理器指令'
 ms.assetid: 3a8ddc60-1db9-4db0-9e55-405c88b84849
 keywords:
 - 预处理器指令 WDK GDL，条件指令
@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025aacc4ba5b9a4ffca3a0a20adb2d5ad0fef58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385795"
 ---
 # <a name="else-conditional-preprocessor-directive"></a>\#其他条件预处理器指令
 

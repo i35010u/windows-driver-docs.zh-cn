@@ -1,17 +1,17 @@
 ---
-title: 静止图像的设备安装程序
-description: 静止图像的设备安装程序
+title: 静态图像设备安装程序
+description: 静态图像设备安装程序
 ms.assetid: e0ea31de-063a-49a4-922f-62edb774ac76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 145eb0cf8ad6c5e439f1ae95c56c05b5b4cb3862
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383716"
 ---
-# <a name="still-image-device-installers"></a>静止图像的设备安装程序
+# <a name="still-image-device-installers"></a>静态图像设备安装程序
 
 
 

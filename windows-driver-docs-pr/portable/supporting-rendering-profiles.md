@@ -1,14 +1,14 @@
 ---
-Description: Supporting Rendering Profiles
+Description: 支持呈现配置文件
 title: 支持呈现配置文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f63bf4649bc0e378f0784a6e4a51c63f13c0b47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380845"
 ---
 # <a name="supporting-rendering-profiles"></a>支持呈现配置文件
 

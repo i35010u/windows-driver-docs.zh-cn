@@ -4,17 +4,17 @@ description: 文件系统命名空间提供的属性和方法，用于操作文�
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d73b2b61c9846aaadcafe089b5d98fe7d8371812
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374923"
 ---
 > [!IMPORTANT]
 >  此接口处于活跃开发阶段，并将更改。
 >
 # <a name="the-filesystem-namespace"></a>文件系统 Namespace
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 文件系统命名空间提供的属性和方法，用于操作文件系统。 这可以用于从 JavaScript 支持调试器扩展所需的文件读取或写入。
 
 ## <a name="sample"></a>示例

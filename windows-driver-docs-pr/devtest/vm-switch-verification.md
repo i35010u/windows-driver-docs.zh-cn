@@ -5,11 +5,11 @@ ms.assetid: 629C0C70-D6C6-4977-A36B-6BD6EEC14FE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09b546a57395c9d861b1244b292024e1532ac38f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380474"
 ---
 # <a name="vm-switch-verification"></a>VM 交换机验证
 

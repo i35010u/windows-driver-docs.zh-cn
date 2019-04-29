@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a5850f59eebf1d7f3492c2f3ff74a9d44e9673c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372699"
 ---
 # <a name="guiddevicesysbutton"></a>GUID_DEVICE_SYS_BUTTON
 
@@ -33,7 +33,7 @@ GUID_DEVICE_SYS_BUTTON[设备接口类](https://msdn.microsoft.com/library/windo
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">特性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ PS/2 式键盘和鼠标设备的信息，请参阅[非 HIDClass 键盘和鼠标�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Poclass.h （包括 Poclass.h）</td>
 </tr>
 </tbody>

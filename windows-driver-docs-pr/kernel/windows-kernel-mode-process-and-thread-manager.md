@@ -5,11 +5,11 @@ ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7eb171169fa476b5c0c74a53f3e9ff7c6d2695f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357470"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows 内核模式进程和线程管理器
 

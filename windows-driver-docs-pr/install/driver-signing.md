@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 351e07fd5704f84ad3a85f0bb6cf1d9952c978da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372952"
 ---
 # <a name="driver-signing"></a>驱动程序签名
 
@@ -26,7 +26,7 @@ ms.locfileid: "56540600"
 
 内核模式驱动程序二进制文件嵌入操作系统早于 Windows 10 可能不会加载，或可能会在系统发生崩溃导致 Windows 10 上的第三方证书供应商的双 （SHA1 和 SHA2） 证书签名。 若要解决此问题，请安装[KB 3081436](https://support.microsoft.com/kb/3081436)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [数字签名的驱动程序安装的概述](overview-of-digital-signatures-for-driver-installation.md)

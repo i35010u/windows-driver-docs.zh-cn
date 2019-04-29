@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e176180aedf8b6c96d0551b95fc8c9d4bf4313f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370949"
 ---
 # <a name="bug-check-0xc0000218-statuscannotloadregistryfile"></a>Bug 检查 0xC0000218：状态\_无法\_负载\_注册表\_文件
 

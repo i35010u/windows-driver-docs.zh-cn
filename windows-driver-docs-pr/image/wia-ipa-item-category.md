@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87869a9f37bb50b1ff3688ae0b92f946c7b0fb67
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369504"
 ---
 # <a name="wiaipaitemcategory"></a>WIA\_IPA\_项\_类别
 
@@ -314,7 +314,7 @@ Imprinting 类别的可编程数据源项，它代表 imprinting 和认可，并
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">

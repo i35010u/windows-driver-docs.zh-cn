@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1a7e66214cbb91b2adb545285e2ad0fcfa5e449
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380726"
 ---
 # <a name="interface-to-the-native-80211-8021x-module"></a>与本机 802.11 802.1X 模块对接
 

@@ -1,5 +1,5 @@
 ---
-title: 确定驱动程序是否泄漏 Framework 对象
+title: 确定驱动程序是否泄漏框架对象
 description: 本主题介绍如何查找未释放引用导致的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 版本 1 和 2 的驱动程序。
 ms.assetid: 617cc678-e0db-4d2f-9d19-34b6cedad234
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a302cc2cee7500b39622a2fb58a791eee969b0cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384583"
 ---
-# <a name="determining-if-a-driver-leaks-framework-objects"></a>确定驱动程序是否泄漏 Framework 对象
+# <a name="determining-if-a-driver-leaks-framework-objects"></a>确定驱动程序是否泄漏框架对象
 
 
 本主题介绍如何查找未释放引用导致的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 版本 1 和 2 的驱动程序。

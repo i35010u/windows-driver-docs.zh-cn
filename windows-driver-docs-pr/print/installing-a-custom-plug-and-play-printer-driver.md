@@ -1,19 +1,19 @@
 ---
-title: 安装自定义即插即用打印机驱动程序
-description: 安装自定义即插即用打印机驱动程序
+title: 安装自定义的即插即用打印机驱动程序
+description: 安装自定义的即插即用打印机驱动程序
 ms.assetid: 0269afbe-c7d1-4227-ad77-b921852d6a0c
 keywords:
 - 自定义打印机驱动程序 WDK，插
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3124b506928018a113461baae3bb1b197431bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362755"
 ---
-# <a name="installing-a-custom-plug-and-play-printer-driver"></a>安装自定义即插即用打印机驱动程序
+# <a name="installing-a-custom-plug-and-play-printer-driver"></a>安装自定义的即插即用打印机驱动程序
 
 
 

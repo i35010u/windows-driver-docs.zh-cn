@@ -1,17 +1,17 @@
 ---
-title: 属性表扩展插件
-description: 属性表扩展插件
+title: 属性表扩展
+description: 属性表扩展
 ms.assetid: 36254759-882c-45af-92df-e0769b65ec55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63e01c1fdbfacf01b6a39036b6131655f71e910e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379639"
 ---
-# <a name="property-sheet-extensions"></a>属性表扩展插件
+# <a name="property-sheet-extensions"></a>属性表扩展
 
 
 

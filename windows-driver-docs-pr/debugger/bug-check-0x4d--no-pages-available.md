@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 062a3525bce8a9a3de5ccbb385760a2b9fc0ccf8
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59904019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363469"
 ---
 # <a name="bug-check-0x4d-nopagesavailable"></a>Bug 检查 0x4D：否\_页面\_可用
 

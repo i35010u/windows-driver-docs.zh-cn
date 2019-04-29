@@ -1,6 +1,6 @@
 ---
-title: 安装适用于打印机类型页
-description: 安装适用于打印机类型页
+title: 安装打印机类型的页面
+description: 安装打印机类型的页面
 ms.assetid: 6c878612-d490-4791-a284-c48f1db0cde8
 keywords:
 - 安装自定义打印网页 WDK
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d0e18e5b38f8469feecd934b0f6620a7b69ec0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366791"
 ---
-# <a name="installing-pages-for-a-printer-type"></a>安装适用于打印机类型页
+# <a name="installing-pages-for-a-printer-type"></a>安装打印机类型的页面
 
 
 

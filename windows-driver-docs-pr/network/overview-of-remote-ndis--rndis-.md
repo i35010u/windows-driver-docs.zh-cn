@@ -1,6 +1,6 @@
 ---
-title: 远程 NDIS (RNDIS) 的概述
-description: 远程 NDIS (RNDIS) 的概述
+title: 远程 NDIS (RNDIS) 概述
+description: 远程 NDIS (RNDIS) 概述
 ms.assetid: 03da539d-9613-4454-8f79-514e76767af6
 keywords:
 - 远程 NDIS WDK 网络、 体系结构
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcc0748f952439cf1de6b2b8380a855f9d2b7b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376985"
 ---
-# <a name="overview-of-remote-ndis-rndis"></a>远程 NDIS (RNDIS) 的概述
+# <a name="overview-of-remote-ndis-rndis"></a>远程 NDIS (RNDIS) 概述
 
 
 

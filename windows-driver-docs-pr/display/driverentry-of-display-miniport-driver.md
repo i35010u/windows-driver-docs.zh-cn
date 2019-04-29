@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 16f7b2c43dc21a2cf24a0cde9349b926a20805c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361254"
 ---
 # <a name="driverentry-of-display-miniport-driver-function"></a>DriverEntry 的显示微型端口驱动程序函数
 
@@ -172,7 +172,7 @@ NTSTATUS DriverEntry(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="odd">

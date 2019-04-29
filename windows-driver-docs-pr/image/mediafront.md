@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22cf7082d4a2693be3830c7962fcb8a3b09b337f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380350"
 ---
 # <a name="mediafront-element"></a>MediaFront 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56534410"
 </wscn:MediaFront>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -87,7 +87,7 @@ ms.locfileid: "56534410"
 
 如果**MediaFront**元素不包含[ **ScanRegion** ](scanregion.md)元素，WSD 扫描服务应使用 0，作为偏移量的宽度和高度[**InputMediaSize**](inputmediasize.md)，如果给定。 如果**ScanRegion**缺少和**InputMediaSize**未指定或不能由扫描设备，你可以确定实现。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ColorProcessing**](colorprocessing.md)

@@ -5,11 +5,11 @@ ms.assetid: aec4e4b3-d207-4319-a134-29b4a773c3a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b637f489d35a4e62032a6150fcffe358fac2cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383783"
 ---
 # <a name="design-account-balance-and-usage-info-in-a-mobile-broadband-app"></a>设计移动宽带应用中的帐户余额和使用情况信息
 

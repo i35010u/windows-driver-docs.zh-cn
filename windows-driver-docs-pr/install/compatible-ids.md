@@ -5,11 +5,11 @@ ms.assetid: 3d20b43a-9e2b-4a8d-9a1a-eb9217233405
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca1396eab5f1f442f791a7bf8323771823c96079
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361159"
 ---
 # <a name="compatible-id"></a>兼容 ID
 

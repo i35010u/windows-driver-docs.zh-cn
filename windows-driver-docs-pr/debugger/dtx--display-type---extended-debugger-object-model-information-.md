@@ -1,5 +1,5 @@
 ---
-title: dtx （显示类型的扩展的调试器对象模型信息）
+title: dtx（显示类型 - 扩展的调试器对象模型信息）
 description: Dtx 命令显示使用调试器对象模型的扩展符号类型信息。 Dtx 命令为类似于 dt （显示类型） 命令。
 ms.assetid: 758D752E-65A0-4F1D-BB56-06E4ECEC6D48
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 148b1f9be720fcdfa9fbe669c64778803b49659f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370860"
 ---
 # <a name="span-iddebuggerdtxdisplaytype-extendeddebuggerobjectmodelinformationspandtx-display-type---extended-debugger-object-model-information"></a><span id="debugger.dtx__display_type_-_extended_debugger_object_model_information_"></span>dtx （显示类型的扩展的调试器对象模型信息）
 

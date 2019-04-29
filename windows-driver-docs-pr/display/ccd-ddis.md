@@ -1,6 +1,6 @@
 ---
-title: CCD DDIs
-description: CCD DDIs
+title: CCD DDI
+description: CCD DDI
 ms.assetid: dde0e0b0-d6d0-4ca7-ae7e-427a650c080f
 keywords:
 - 微型端口驱动程序 WDK 显示，请连接和配置显示 (CCD)
@@ -9,13 +9,13 @@ keywords:
 ms.date: 10/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd3a062c98a5413a3d0610374269e71285520b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366217"
 ---
-# <a name="ccd-ddis"></a>CCD DDIs
+# <a name="ccd-ddis"></a>CCD DDI
 
 
 与 Windows 7 中引入的连接和配置显示 (CCD) 功能提供了改进的显示微型端口驱动程序控件的显示设备。 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3028dc3472eb3cd74a87e6c9e2812a9a77b57297
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373303"
 ---
 # <a name="canceljobrequest-element"></a>CancelJobRequest 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56520149"
 </wscn:CancelJobRequest>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -84,7 +84,7 @@ WSD 扫描服务应移动到指定的作业**正在终止**状态的作业是否
 
 -   **ClientErrorJobIdNotFound**
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CancelJobResponse**](canceljobresponse.md)

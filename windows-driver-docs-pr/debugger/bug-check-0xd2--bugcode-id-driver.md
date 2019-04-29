@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e10195a2a799df88bb46967355a0b4a373a3948
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372179"
 ---
 # <a name="bug-check-0xd2-bugcodeiddriver"></a>Bug 检查 0xD2：BUGCODE\_ID\_驱动程序
 

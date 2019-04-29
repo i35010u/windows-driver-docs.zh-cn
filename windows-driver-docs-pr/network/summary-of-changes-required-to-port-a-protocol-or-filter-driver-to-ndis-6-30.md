@@ -5,11 +5,11 @@ ms.assetid: 1C6CB2E1-C129-4F3B-AF7D-357580BEE7F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfab77acb90427560709423227f8076ea5adfdd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376946"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-630"></a>将协议或筛选器驱动程序移植到 NDIS 6.30 所要做出的更改摘要
 

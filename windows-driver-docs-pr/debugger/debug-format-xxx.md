@@ -12,11 +12,11 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.openlocfilehash: 429a2f8164504b133bb7e02beb60fff5ff012413
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371713"
 ---
 # <a name="debugformatxxx"></a>调试\_格式\_XXX
 
@@ -26,7 +26,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 
 <table>
 <tr>
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 <tr>

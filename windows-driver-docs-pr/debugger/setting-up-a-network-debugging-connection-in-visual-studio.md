@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 45860732ff14a4b2186d3282b9c4efe2c4bb6872
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381936"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-network-cable-in-visual-studio"></a>在 Visual Studio 中设置通过网线进行的内核模式调试
 

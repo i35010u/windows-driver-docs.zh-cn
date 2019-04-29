@@ -5,11 +5,11 @@ ms.assetid: 1F9C5E7D-5488-47C1-BEDC-D7C640F57511
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b3d5c65096ff8d3915181024f845591022ee038
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364187"
 ---
 # <a name="determining-the-nvgre-task-offload-capabilities-of-a-network-adapter"></a>确定网络适配器的 NVGRE 任务卸载功能
 

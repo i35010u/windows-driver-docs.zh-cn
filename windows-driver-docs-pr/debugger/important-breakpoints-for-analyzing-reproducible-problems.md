@@ -1,19 +1,19 @@
 ---
-title: 重要断点以进行分析可重现问题
-description: 重要断点以进行分析可重现问题
+title: 用于分析可再现问题的重要断点
+description: 用于分析可再现问题的重要断点
 ms.assetid: 3f501bbe-990a-4f46-ba88-c1fc4b73537f
 keywords:
 - SCSI 微型端口调试、 断点和可重现问题
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9f4247798cf2e43288c956ddff66749fb06bf2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371658"
 ---
-# <a name="important-breakpoints-for-analyzing-reproducible-problems"></a>重要断点以进行分析可重现问题
+# <a name="important-breakpoints-for-analyzing-reproducible-problems"></a>用于分析可再现问题的重要断点
 
 
 ## <span id="ddk_device_manager_problem_codes_dbg"></span><span id="DDK_DEVICE_MANAGER_PROBLEM_CODES_DBG"></span>

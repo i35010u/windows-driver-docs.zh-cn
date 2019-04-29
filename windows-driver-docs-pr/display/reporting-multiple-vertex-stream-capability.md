@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d229a5b39a2e40b82d048c0f2b60c27349e3317
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383265"
 ---
 # <a name="reporting-multiple-vertex-stream-capability"></a>报告多个顶点流功能
 

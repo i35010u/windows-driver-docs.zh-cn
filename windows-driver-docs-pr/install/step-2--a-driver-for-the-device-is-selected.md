@@ -5,11 +5,11 @@ ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45dcb8b103765de7969092f6d8f802494c9a3234
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369385"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 

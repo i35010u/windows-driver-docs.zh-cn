@@ -18,11 +18,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d7271f72d0ea0d010a4c8a15549f99dbdfd8f91e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371205"
 ---
 # <a name="iprinterbidischemaelementbiditype-method"></a>IPrinterBidiSchemaElement::BidiType 方法
 
@@ -37,7 +37,7 @@ HRESULT BidiType(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *pType* \[out, retval\]  
@@ -62,13 +62,13 @@ HRESULT BidiType(
 <td>桌面设备</td>
 </tr>
 <tr class="even">
-<td><p>版本</p></td>
-<td><p>Windows 8 及更高版本</p></td>
+<td><p>Version</p></td>
+<td><p>Windows 8 及更高版本</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**IPrinterBidiSchemaElement**](iprinterbidischemaelement-interface.md)
 

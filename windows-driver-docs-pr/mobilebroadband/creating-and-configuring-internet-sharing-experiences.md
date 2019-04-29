@@ -5,11 +5,11 @@ ms.assetid: 11906ee4-68f5-4be6-a3ab-6af3253c8a11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a02012ea3e6f7b39908a02d6a35df8adc099c3c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383774"
 ---
 # <a name="creating-and-configuring-internet-sharing-experiences"></a>创建和配置 Internet 共享体验
 

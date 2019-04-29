@@ -5,11 +5,11 @@ ms.assetid: 9B9A01FD-AA15-4C30-B19D-2F6451014EAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 553532e917a0132afde5ef726696dc0d88af0076
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385711"
 ---
 # <a name="wdm-irps-and-wdf-event-callback-functions"></a>WDM IRP 和 WDF 事件回调函数
 

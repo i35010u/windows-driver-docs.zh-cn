@@ -5,11 +5,11 @@ description: 对内部交换缓冲区以减少 GPU 处理负载的改进
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64bff6e8c3e9b7187e3ebf9daa0fe395b855533c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383923"
 ---
 # <a name="present-overhead-improvements"></a>存在开销改进
 

@@ -4,11 +4,11 @@ title: 支持的属性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a93b0e31aa3a7d511ff134de60fa21c76307e36
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362457"
 ---
 # <a name="supported-property-retrieval"></a>支持的属性检索
 

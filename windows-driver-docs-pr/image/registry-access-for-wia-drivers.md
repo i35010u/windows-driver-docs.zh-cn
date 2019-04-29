@@ -5,11 +5,11 @@ ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d83eff681187d392c1b1a9f79c43278d2b0efe24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379608"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA 驱动程序的注册表访问权限
 

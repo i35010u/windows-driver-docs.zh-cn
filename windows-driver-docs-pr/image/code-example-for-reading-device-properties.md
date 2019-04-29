@@ -5,11 +5,11 @@ ms.assetid: 9ff3f30d-fd1c-4241-a068-1af2160e9296
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b6e556d692e62151b5f5f09f94ceb355073b6c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373231"
 ---
 # <a name="code-example-for-reading-device-properties"></a>演示如何读取设备属性的代码示例
 

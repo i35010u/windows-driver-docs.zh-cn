@@ -1,17 +1,17 @@
 ---
-title: iSCSI WMI 类，管理发起程序、 端口、 会话和连接
-description: iSCSI WMI 类，管理发起程序、 端口、 会话和连接
+title: 用于管理发起程序、端口、会话和连接的 iSCSI WMI 类
+description: 用于管理发起程序、端口、会话和连接的 iSCSI WMI 类
 ms.assetid: 83584b7a-3513-4180-a41b-9dd9b68a2123
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 735dcea9771fe8617987c2ec047f148d7d4179f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360910"
 ---
-# <a name="iscsi-wmi-classes-that-manage-initiators-ports-sessions-and-connections"></a>iSCSI WMI 类，管理发起程序、 端口、 会话和连接
+# <a name="iscsi-wmi-classes-that-manage-initiators-ports-sessions-and-connections"></a>用于管理发起程序、端口、会话和连接的 iSCSI WMI 类
 
 
 ## <span id="ddk_iscsi_wmi_classes_that_define_the_interface_between_the_iscsi_disc"></span><span id="DDK_ISCSI_WMI_CLASSES_THAT_DEFINE_THE_INTERFACE_BETWEEN_THE_ISCSI_DISC"></span>

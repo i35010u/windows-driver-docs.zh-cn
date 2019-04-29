@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_PNP Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: eeaf4ba1c289f3fa4aaa84bc14f9f0f758a7c6b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368483"
 ---
 # <a name="irpmjpnp"></a>IRP\_MJ\_PNP
 
@@ -48,13 +48,13 @@ PnP 管理器将发送**IRP\_MJ\_PNP**枚举、 资源重新平衡，以及任�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)

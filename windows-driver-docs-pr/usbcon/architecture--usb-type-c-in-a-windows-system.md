@@ -1,14 +1,14 @@
 ---
-Description: Describes a typical hardware design of a USB Type-C system and the Microsoft-provided drivers that support the hardware components.
+Description: 介绍了典型的硬件设计 USB C 类型系统和支持的硬件组件的 Microsoft 提供驱动程序。
 title: Windows 系统的 USB 类型 C 设计的体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 452d5f4a91800fb38471f1bd792905e4644d3b5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376424"
 ---
 # <a name="architecture-usb-type-c-design-for-a-windows-system"></a>体系结构：Windows 系统的 USB 类型 C 设计
 
@@ -25,7 +25,7 @@ ms.locfileid: "56525832"
 
 **Windows 版本**
 
--   Windows 10 桌面版 （主页、 专业版、 企业版和教育版）
+-   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 -   Windows 10 移动版
 
 介绍了典型的硬件设计 USB C 类型系统和支持的硬件组件的 Microsoft 提供驱动程序。
@@ -81,7 +81,7 @@ ms.locfileid: "56525832"
 
 -   **电池驱动程序**
 
-    在类驱动程序定义的系统中的电池的整体功能和与电源管理器进行交互。 Miniclass 驱动程序处理特定于设备的功能，例如添加和删除电池，以及跟踪的其容量和费用。 Miniclass 驱动程序将导出的类驱动程序调用以获取有关它控制的设备的信息的例程。
+    类驱动程序定义系统中电池的整体功能，并与电源管理器进行交互。 Miniclass 驱动程序处理特定于设备的功能，例如添加和删除电池，以及跟踪的其容量和费用。 Miniclass 驱动程序将导出的类驱动程序调用以获取有关它控制的设备的信息的例程。
 
  
 

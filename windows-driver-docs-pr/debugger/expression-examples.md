@@ -5,15 +5,15 @@ ms.assetid: a4915678-a83f-48f1-8b29-50cf530f9246
 keywords:
 - 表达式示例
 - MASM 表达式示例
-- C + + 表达式示例
+- C++表达式示例
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed6c9a91302443231dfda10146aee8c4e9fba2f8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379743"
 ---
 # <a name="expression-examples"></a>表达式示例
 
@@ -21,11 +21,11 @@ ms.locfileid: "56541398"
 ## <span id="ddk_expression_examples_dbg"></span><span id="DDK_EXPRESSION_EXAMPLES_DBG"></span>
 
 
-本主题包含各种命令中使用的 MASM 和 c + + 表达式的示例。
+本主题包含示例的 MASM 和C++的各种命令中使用的表达式。
 
-此帮助文档的所有其他部分使用 MASM 表达式语法示例中，（除非另有说明）。 C + + 表达式语法用于处理结构和变量，非常有用，但它并不很好地分析调试器命令的参数。
+此帮助文档的所有其他部分使用 MASM 表达式语法示例中，（除非另有说明）。 C++表达式语法用于处理结构和变量，非常有用，但它并不很好地分析调试器命令的参数。
 
-如果要实现常规目的使用调试器命令，或使用调试器扩展，您应该设置为默认语法的 MASM 表达式语法。 如果你必须拥有特定的参数来使用 c + + 表达式语法，使用 **@ @ （)** 语法。
+如果要实现常规目的使用调试器命令，或使用调试器扩展，您应该设置为默认语法的 MASM 表达式语法。 如果您必须拥有特定的参数，以使用C++表达式语法中，使用 **@ @ （)** 语法。
 
 ### <a name="span-idconditionalbreakpointsspanspan-idconditionalbreakpointsspanconditional-breakpoints"></a><span id="conditional_breakpoints"></span><span id="CONDITIONAL_BREAKPOINTS"></span>条件断点
 
@@ -45,13 +45,13 @@ ms.locfileid: "56541398"
 0:000> ? ecx*(eax>ebx) + 7*(eax<ebx) + 3*(eax=ebx) 
 ```
 
-在 c + + 语法中， **@** 符号指示寄存器，双等号 （= =） 是比较运算符，代码必须显式强制转换为 bool **int**。因此，在 c + + 语法中前, 一个命令将以下。
+在C++语法中， **@** 符号指示寄存器，双等号 （= =） 是比较运算符，代码必须显式强制转换为 bool **int**。因此，在C++语法前, 一个命令将成为以下。
 
 ```dbgcmd
 0:000> ?? @ecx*(int)(@eax>@ebx) + 7*(int)(@eax<@ebx) + 3*(int)(@eax==@ebx) 
 ```
 
-### <a name="span-idcexpressionexamplesspanspan-idcexpressionexamplesspanc-expression-examples"></a><span id="c___expression_examples"></span><span id="C___EXPRESSION_EXAMPLES"></span>C + + 表达式示例
+### <a name="span-idcexpressionexamplesspanspan-idcexpressionexamplesspanc-expression-examples"></a><span id="c___expression_examples"></span><span id="C___EXPRESSION_EXAMPLES"></span>C++表达式示例
 
 如果**myInt**是一个 ULONG32 值，如果使用的 MASM 表达式计算器，以下两个示例显示的值**MyInt**。
 
@@ -68,13 +68,13 @@ ms.locfileid: "56541398"
 
 ### <a name="span-idmixedexpressionexamplesspanspan-idmixedexpressionexamplesspanmixed-expression-examples"></a><span id="mixed_expression_examples"></span><span id="MIXED_EXPRESSION_EXAMPLES"></span>混合的表达式示例
 
-在 c + + 表达式中，不能使用源行表达式。 下面的示例使用 **@ @ （)** 嵌套 MASM 表达式中的 c + + 表达式的语法。 此示例设置**MyPtr**等于 Myfile.c 文件的第 43 行的地址。
+不能使用源行中的表达式C++表达式。 下面的示例使用 **@ @ （)** 语法嵌套内的 MASM 表达式C++表达式。 此示例设置**MyPtr**等于 Myfile.c 文件的第 43 行的地址。
 
 ```dbgcmd
 0:000> ?? MyPtr = @@( `myfile.c:43` )
 ```
 
-下面的示例设置为 MASM 的默认表达式计算器，然后评估*Expression2*作为 c + + 表达式和评估*Expression1*并*Expression3*作为 MASM 表达式。
+下面的示例设置为 MASM 的默认表达式计算器，然后评估*Expression2*作为C++表达式，并评估*Expression1*并*Expression3*作为 MASM 表达式。
 
 ```dbgcmd
 0:000> .expr /s masm 
@@ -90,7 +90,7 @@ ms.locfileid: "56541398"
 
 ### <a name="span-idstructuresspanspan-idstructuresspanstructures"></a><span id="structures"></span><span id="STRUCTURES"></span>结构
 
-C + + 表达式计算器将强制转换为相应类型的伪寄存器。 例如， **$teb**强制转换为 TEB\*。 下面的示例显示进程 id。
+C++表达式计算器将强制转换为相应类型的伪寄存器。 例如， **$teb**强制转换为 TEB\*。 下面的示例显示进程 id。
 
 ```dbgcmd
 kd> ??  @$teb->ClientId.UniqueProcess 

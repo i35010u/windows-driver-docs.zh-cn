@@ -1,17 +1,17 @@
 ---
-title: 动态创建的 NIC 开关
-description: 动态创建的 NIC 开关
+title: NIC 交换机的动态创建
+description: NIC 交换机的动态创建
 ms.assetid: 16B2D94A-AF30-434F-8F14-2F535501A52F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eeb05d7d6481c23cc43df34bb7f43645e66a8bf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372641"
 ---
-# <a name="dynamic-creation-of-a-nic-switch"></a>动态创建的 NIC 开关
+# <a name="dynamic-creation-of-a-nic-switch"></a>NIC 交换机的动态创建
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须能够创建 NIC 交换机。 对于某些适配器，NIC 开关可动态创建微型端口驱动程序已从调用返回后[ *MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)。

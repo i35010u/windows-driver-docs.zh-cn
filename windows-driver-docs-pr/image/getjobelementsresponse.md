@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f702c3e0b8182ca84ff0317de778fd02a22f0c2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357000"
 ---
 # <a name="getjobelementsresponse-element"></a>GetJobElementsResponse element
 
@@ -33,7 +33,7 @@ ms.locfileid: "56521765"
 </wscn:GetJobElementsResponse>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -112,7 +112,7 @@ WSD 扫描服务必须支持**GetJobElementsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GetJobElementsRequest**](getjobelementsrequest.md)

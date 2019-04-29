@@ -5,18 +5,18 @@ ms.assetid: 6557A741-C49F-456B-B285-DE6D171DDCEE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 90c6e93119e5230ac4cabbb3a1e8255c8e990ed1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380469"
 ---
 # <a name="warning-rule-set-storport"></a>警告规则集 (Storport)
 
 
 使用这些规则来验证您的驱动程序可以正确地处理 Irp，各种上下文中，如下所示，Microsoft 建议的最佳实践。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

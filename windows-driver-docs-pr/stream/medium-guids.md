@@ -1,6 +1,6 @@
 ---
-title: 中等 Guid
-description: 中等 Guid
+title: 媒体 GUID
+description: 媒体 GUID
 ms.assetid: 4209952c-0ba5-4359-b612-91529a0a46f1
 keywords:
 - 视频捕获 WDK AVStream，介质
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 48aeccc7edc9c8bf9d85d8cdaa9645fdd5b8d481
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370228"
 ---
-# <a name="medium-guids"></a>中等 Guid
+# <a name="medium-guids"></a>媒体 GUID
 
 
 微型驱动程序必须能够支持多个设备。 此外，因为电视/广播调谐器、 电视音频、 纵横制和视频捕获组件分为不同的内核流式处理筛选器，方法是进行正确上描述这些组件之间的拓扑的硬件连接所需设备，以及为多个设备上。 例如，两个生成，但未在运行筛选器关系图的支持 FM 收音机和电视捕获必须能够共存。 微型驱动程序使用媒体来提供这些方案。 此外，筛选器关系图构建应用程序，如*关系图编辑*，筛选器关系图构造期间使用介质，以确保一台设备的筛选器正确连接到另一台设备的筛选器。 例如，一台设备的调谐器筛选器不应连接到另一台设备的纵横制筛选器。

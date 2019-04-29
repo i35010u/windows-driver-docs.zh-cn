@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f4b318399ffa6c6d89e69d569b50653c6e6423
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370773"
 ---
 # <a name="cross-platform-direct3d-driver-development"></a>跨平台 Direct3D 驱动程序开发
 

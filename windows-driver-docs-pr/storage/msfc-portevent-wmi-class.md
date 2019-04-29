@@ -5,11 +5,11 @@ ms.assetid: 38b8e358-b118-4a0c-ac47-2f257d0ed1bf
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a954b65264cf0f08b6835615cecde9a3fc5fa840
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386575"
 ---
 # <a name="msfcportevent-wmi-class"></a>MSFC\_PortEvent WMI 类
 

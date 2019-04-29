@@ -4,18 +4,18 @@ description: NFP 消息订阅
 ms.assetid: ECE9C495-978F-4BD7-95BC-B68432F9B81E
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9ae0834d88925b73d13a7da1a910c9573c071e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378710"
 ---
 # <a name="nfp-message-subscriptions"></a>NFP 消息订阅
 

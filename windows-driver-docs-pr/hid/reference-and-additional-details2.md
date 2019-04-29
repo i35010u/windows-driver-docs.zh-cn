@@ -5,11 +5,11 @@ ms.assetid: 2F2A0331-BC7C-4E53-BFE4-467FCCAE433C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de72ad6a8a1ad63934031f7fd368867a42e31a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360352"
 ---
 # <a name="resources-for-hid-over-i2c"></a>基于 I2C 的 HID 的资源
 

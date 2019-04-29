@@ -1,6 +1,6 @@
 ---
-title: 确定是否已将调试器附加
-description: 确定是否已将调试器附加
+title: 确定是否已附加调试器
+description: 确定是否已附加调试器
 ms.assetid: b40482c4-7186-4632-b1d9-3c91a415b7c8
 keywords:
 - 调试代码 WDK 时，附加调试器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 953678bebd10bba2bec6dfbe31f3a5f8e960abf3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382978"
 ---
-# <a name="determining-if-a-debugger-is-attached"></a>确定是否已将调试器附加
+# <a name="determining-if-a-debugger-is-attached"></a>确定是否已附加调试器
 
 
 ## <span id="ddk_determining_if_a_debugger_is_attached_tools"></span><span id="DDK_DETERMINING_IF_A_DEBUGGER_IS_ATTACHED_TOOLS"></span>

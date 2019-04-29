@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e930e458cc336e1d5da77b088bf242b0bc98d68
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372873"
 ---
 # <a name="building-a-netadaptercx-client-driver"></a>生成 NetAdapterCx 客户端驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "56575879"
 使用以下步骤在 Visual Studio 中创建新的 NetAdapter 客户端驱动程序：
 
 1. 打开 Microsoft Visual Studio。 在文件菜单上依次选择**新建 > 项目**。
-2. 在中**新建项目 > 模板 > Visual c + + > Windows 驱动程序 > WDF**对话框中，选择**内核模式驱动程序 (KMDF) 模板**。
+2. 在中**新建项目 > 模板 > Visual C++ > Windows 驱动程序 > WDF**对话框中，选择**内核模式驱动程序 (KMDF) 模板**。
 3. 若要打开驱动程序属性页对话框中，选择**项目 > 属性**。
 4. 在中**配置属性 > 驱动程序设置 > 网络适配器驱动程序**对话框中，选择**链接至网络适配器类扩展**下拉列表中并将设置为**是**.
 5. 在中**配置属性 > 驱动程序设置 > 网络适配器驱动程序**对话框中，选择**网络适配器的主要版本**和**网络适配器的次要版本**.

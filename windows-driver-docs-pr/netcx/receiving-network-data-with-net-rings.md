@@ -8,13 +8,13 @@ ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 4d01bdddbbf40a4ad1e7d1f687160f762a42b10c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369991"
 ---
-# <a name="receiving-network-data-with-net-rings"></a>使用 net 环接收网络数据
+# <a name="receiving-network-data-with-net-rings"></a>使用网环接收网络数据
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

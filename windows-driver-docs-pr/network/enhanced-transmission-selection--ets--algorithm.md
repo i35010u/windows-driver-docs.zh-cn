@@ -5,11 +5,11 @@ ms.assetid: 952ECB1E-96AD-4717-8E49-68558E7E9AD4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ebf9b784f149a063d3b82698f196264cf21944
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372455"
 ---
 # <a name="enhanced-transmission-selection-ets-algorithm"></a>增强的传输选择 (ETS) 算法
 

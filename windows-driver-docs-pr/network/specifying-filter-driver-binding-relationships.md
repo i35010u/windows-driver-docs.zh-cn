@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c5bf6bad865d6bc039f032f1dba208f9da0c8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385422"
 ---
 # <a name="specifying-filter-driver-binding-relationships"></a>指定筛选器驱动程序绑定关系
 

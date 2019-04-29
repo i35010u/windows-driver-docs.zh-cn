@@ -1,6 +1,6 @@
 ---
-title: 同步 I/O 的 IEEE 1394 设备
-description: 同步 I/O 的 IEEE 1394 设备
+title: IEEE 1394 设备的常时等量 I/O
+description: IEEE 1394 设备的常时等量 I/O
 ms.assetid: fc544776-af45-40e2-9699-7dcc50275d1e
 keywords:
 - IEEE 1394 WDK 总线，同步 I/O
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f51c6ed708badb260aa34d715aa89ccc11df8a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371031"
 ---
-# <a name="isochronous-io-for-ieee-1394-devices"></a>同步 I/O 的 IEEE 1394 设备
+# <a name="isochronous-io-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量 I/O
 
 
 

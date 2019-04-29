@@ -1,14 +1,14 @@
 ---
-Description: Interfaces on a composite USB device can be grouped in collections or represent one USB function individually.
+Description: 复合的 USB 设备上的接口可以在集合中分组或分别表示一个 USB 函数。
 title: 枚举 USB 复合设备上的接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cbf80573b7a1b02012e13216d1215a8bf6b90e30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383021"
 ---
 # <a name="enumeration-of-interfaces-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口
 

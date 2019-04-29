@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11e8190515e51182546dda1c6013d0b551940fb3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371239"
 ---
 # <a name="contenttypevalue-element"></a>ContentTypeValue 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56522657"
 </wscn:ContentTypeValue>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -109,7 +109,7 @@ ms.locfileid: "56522657"
 
 您都可以扩展和子集的允许的值为此元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ContentTypesSupported**](contenttypessupported.md)

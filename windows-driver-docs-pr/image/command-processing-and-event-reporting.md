@@ -5,11 +5,11 @@ ms.assetid: f51c082d-1be5-4f34-b7a6-82235e8c14f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6108b7eb1bd8616de735dcbb8ebb89090fb089bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373195"
 ---
 # <a name="command-processing-and-event-reporting"></a>命令处理和事件报告
 

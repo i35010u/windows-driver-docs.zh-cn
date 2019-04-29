@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 17c1ad9b1ddd7ca89471d0fd8e95753bb0962619
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386415"
 ---
-# <a name="view--windbg-command-line"></a>视图 |WinDbg 命令行
+# <a name="view--windbg-command-line"></a>视图 | WinDbg 命令行
 
 
 ## <span id="ddk_view_windbg_command_line_dbg"></span><span id="DDK_VIEW_WINDBG_COMMAND_LINE_DBG"></span>

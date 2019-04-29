@@ -7,11 +7,11 @@ keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE 网络
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 3154bb247695748503a912aea42cc8d66ace21ac
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384635"
 ---
 # <a name="ndisstatuswwanuiccrecordresponse"></a>NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE
 
@@ -25,7 +25,7 @@ ms.locfileid: "59905254"
 
 |   |   |
 | --- | --- |
-| Version | Windows 10，版本 1903 |
+| Version | Windows 10 版本 1903 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

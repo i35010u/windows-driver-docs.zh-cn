@@ -5,11 +5,11 @@ ms.assetid: FD204F24-0336-4A54-992C-ACF46565D8D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dbc589320da8a58a13eea02299398db9e8b2f28
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377878"
 ---
 # <a name="wdi-tlv-parser-interface-overview"></a>WDI TLV 分析器接口概述
 

@@ -1,6 +1,6 @@
 ---
-title: USB 视频类扩展单位的简介
-description: USB 视频类扩展单位的简介
+title: USB 视频类扩展单元简介
+description: USB 视频类扩展单元简介
 ms.assetid: a46feb97-771e-4efd-872e-4a4b0fb3b705
 keywords:
 - 有关扩展单位的扩展单位 WDK USB 视频类，
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1005fec76ae91e9ced9a876c2d8321f0821f553
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371128"
 ---
-# <a name="introduction-to-usb-video-class-extension-units"></a>USB 视频类扩展单位的简介
+# <a name="introduction-to-usb-video-class-extension-units"></a>USB 视频类扩展单元简介
 
 
 *USB 视频类*规范定义了一种机制来扩展功能的设备，以及符合该规范的扩展单位的行为。 独立硬件供应商 (Ihv) 可以增强其设备的值加上出现的功能规范中所述的更高版本。

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_OFFLOAD_REJECTED 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a40d53d133bf2adc2e2515b8a208f0efdea3621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362968"
 ---
 # <a name="ndisstatuspmoffloadrejected"></a>NDIS\_状态\_PM\_卸载\_已拒绝
 
@@ -45,7 +45,7 @@ WiFi 驱动程序可能会缓存本地协议卸载请求。 当驱动程序处�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.20 及更高版本。</p></td>
 </tr>
 <tr class="even">

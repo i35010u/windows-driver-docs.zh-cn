@@ -1,19 +1,19 @@
 ---
-title: 威胁建模，驱动程序
-description: 驱动程序编写人员和架构师应进行威胁建模的任何驱动程序的设计过程的组成部分。 本文提供有关创建威胁模型对于 Microsoft Windows 系列操作系统的驱动程序的指南。
+title: 驱动程序的威胁建模
+description: 驱动程序编写者和架构师在任何驱动程序的设计过程中都应当进行威胁建模。 本文提供有关创建威胁模型对于 Microsoft Windows 系列操作系统的驱动程序的指南。
 ms.assetid: 77FB242E-A07C-4298-80ED-866F8D80118C
 ms.date: 06/27/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b4a5479671ebb9a7cd00bada0b60450895891de5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371478"
 ---
-# <a name="threat-modeling-for-drivers"></a>威胁建模，驱动程序
+# <a name="threat-modeling-for-drivers"></a>驱动程序的威胁建模
 
-驱动程序编写人员和架构师应进行威胁建模的任何驱动程序的设计过程的组成部分。 本主题提供有关创建威胁模型对于 Windows 驱动程序的指南。
+驱动程序编写者和架构师在任何驱动程序的设计过程中都应当进行威胁建模。 本主题提供有关创建威胁模型对于 Windows 驱动程序的指南。
 
 安全性应是任何驱动程序的基本设计点。 任何成功的产品是目标。 如果要为 Windows 编写驱动程序，您必须假定，一段时间，在某处，有人将尝试使用您的驱动程序危及系统安全。
 
@@ -167,7 +167,7 @@ ms.locfileid: "56522954"
 <tr class="header">
 <th align="left">易受攻击的点</th>
 <th align="left">潜在的威胁 (STRIDE)</th>
-<th align="left">方案</th>
+<th align="left">应用场景</th>
 </tr>
 </thead>
 <tbody>

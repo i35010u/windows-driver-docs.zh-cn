@@ -1,17 +1,17 @@
 ---
 title: 访问共同安装程序的设备安装程序类的新注册表条目值
-description: 访问设备安装程序类共同安装程序注册表项的值
+description: 访问设备安装程序类的辅助安装程序注册表项值
 ms.assetid: 731d29df-6fdd-4f25-9758-d7306fef7ec0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a0578e7d243cc62d2c0fb6515e22590a109a6f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366565"
 ---
-# <a name="accessing-the-co-installers-registry-entry-value-of-a-device-setup-class"></a>访问设备安装程序类共同安装程序注册表项的值
+# <a name="accessing-the-co-installers-registry-entry-value-of-a-device-setup-class"></a>访问设备安装程序类的辅助安装程序注册表项值
 
 
 在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括[设备安装程序类属性](accessing-device-setup-class-properties.md)表示的共同安装程序类安装。 统一的设备属性模型使用[ **DEVPKEY_DeviceClass_ClassCoInstallers**](https://msdn.microsoft.com/library/windows/hardware/ff542264) [属性键](property-keys.md)来表示此属性。

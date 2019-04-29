@@ -1,6 +1,6 @@
 ---
-title: 编写 Preoperation 回调例程
-description: 编写 Preoperation 回调例程
+title: 编写预操作回调例程
+description: 编写预操作回调例程
 ms.assetid: 3f863c44-152e-43c9-8ef5-ec426986a3fe
 keywords:
 - preoperation 回调例程 WDK 文件系统微筛选器、 编写
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d29454c4f456bace594ecb11a55d83cc008731
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377650"
 ---
-# <a name="writing-preoperation-callback-routines"></a>编写 Preoperation 回调例程
+# <a name="writing-preoperation-callback-routines"></a>编写预操作回调例程
 
 
 ## <span id="ddk_writing_preoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_CALLBACK_ROUTINES_IF"></span>

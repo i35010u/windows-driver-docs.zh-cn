@@ -5,11 +5,11 @@ ms.assetid: b76fcf53-cd75-4e85-a7a2-00a69cc82a97
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d9a3993bfffed8d4437df2cff7d5e419e04abd73
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370405"
 ---
 # <a name="unidrv-keywords"></a>Unidrv 关键字
 

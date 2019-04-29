@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 008bd282a92f17262aefff3400068796acb708fe
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59238800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361709"
 ---
 # <a name="bug-check-0x1dc-dmacommonbuffervectorerror"></a>Bug 检查 0x1DC：DMA\_常见\_缓冲区\_向量\_错误
 

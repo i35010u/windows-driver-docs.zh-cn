@@ -1,17 +1,17 @@
 ---
-title: 该驱动程序可以移植和位置
+title: 可以移植的具体驱动程序以及移植位置
 description: 本主题介绍哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF)，以及如何决定是否要移植到内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF)。
 ms.assetid: 53E34B9C-8C0A-4F15-951B-7AB133DE0C5A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3ac883eb29b1aac4d7069bba0db51c7c3a719c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385707"
 ---
-# <a name="which-drivers-can-be-ported-and-where"></a>该驱动程序可以移植和位置
+# <a name="which-drivers-can-be-ported-and-where"></a>可以移植的具体驱动程序以及移植位置
 
 
 本主题介绍哪些 WDM 驱动程序可以移植到 Windows 驱动程序框架 (WDF)，以及如何决定是否要移植到内核模式驱动程序框架 (KMDF) 或用户模式驱动程序框架 (UMDF)。
@@ -45,7 +45,7 @@ KMDF 可用于创建运行 Windows 2000 及更高版本的驱动程序。 可以
 ## <a name="related-topics"></a>相关主题
 
 
-[开始使用 UMDF](https://msdn.microsoft.com/library/windows/hardware/dn384105)
+[UMDF 入门](https://msdn.microsoft.com/library/windows/hardware/dn384105)
 
 [KMDF 版本历史记录](kmdf-version-history.md)
 

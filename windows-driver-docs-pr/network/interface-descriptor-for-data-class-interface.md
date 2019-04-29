@@ -5,11 +5,11 @@ ms.assetid: 258dde6f-952a-4b92-8b76-e26da1b51480
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 782aba0d7660460ebff07cd6370d545c1a7ccc8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380721"
 ---
 # <a name="interface-descriptor-for-data-class-interface"></a>数据类接口的接口描述符
 
@@ -29,9 +29,9 @@ ms.locfileid: "56554691"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
+<th align="left">大小</th>
 <th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

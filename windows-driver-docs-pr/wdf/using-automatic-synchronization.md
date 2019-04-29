@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e74574b2b899ce051eb80aa22a6c62809f1b514e
-ms.sourcegitcommit: d028d25310ce028a3935bebf564d8092716903d3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57254294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365524"
 ---
 # <a name="using-automatic-synchronization"></a>使用自动同步
 

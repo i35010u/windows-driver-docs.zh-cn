@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de81d764a826b987923bbdb0c980725ec8f45d3c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361739"
 ---
 # <a name="iasphelpcalcjobeta-method"></a>Iasphelp::CalcJobETA 方法
 
@@ -38,7 +38,7 @@ ms.locfileid: "56554692"
 HRESULT CalcJobETA();
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 此方法没有任何参数。
@@ -117,7 +117,7 @@ objPrinter.CalcJobETA
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp::JobCompletionMinute**](iasphelp-jobcompletionminute.md)
 

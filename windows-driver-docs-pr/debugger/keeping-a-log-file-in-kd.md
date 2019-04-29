@@ -1,17 +1,17 @@
 ---
-title: 将日志文件保留在 KD
-description: 将日志文件保留在 KD
+title: 在 KD 中保存日志文件
+description: 在 KD 中保存日志文件
 ms.assetid: 8A260D7F-5E05-4DD0-9CDF-56D3A0C4C2B6
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a6f4641943421c938b4e9cf9088c91688d89d7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367196"
 ---
-# <a name="keeping-a-log-file-in-kd"></a>将日志文件保留在 KD
+# <a name="keeping-a-log-file-in-kd"></a>在 KD 中保存日志文件
 
 
 ## <span id="ddk_keeping_a_log_file_dbg"></span><span id="DDK_KEEPING_A_LOG_FILE_DBG"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: af5f25f15372845c46293af3f925175633df1a69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378967"
 ---
 # <a name="removepersistententry-function"></a>RemovePersistentEntry 函数
 
@@ -37,7 +37,7 @@ void RemovePersistentEntry(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *PortWWN*   
@@ -73,7 +73,7 @@ void RemovePersistentEntry(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
 </tr>
 </tbody>

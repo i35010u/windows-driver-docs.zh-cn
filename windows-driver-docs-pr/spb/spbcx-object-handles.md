@@ -4,11 +4,11 @@ description: 本主题介绍存储 framework 扩展 (SpbCx) 库定义的对象�
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 89ff2985adbc199650000ce27741c71928dfd94a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368176"
 ---
 # <a name="spbcx-object-handles"></a>SpbCx 对象句柄
 本主题介绍存储 framework 扩展 (SpbCx) 库定义的对象句柄。 

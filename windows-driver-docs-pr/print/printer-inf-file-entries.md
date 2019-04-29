@@ -1,6 +1,6 @@
 ---
-title: 打印机 INF 文件条目
-description: 打印机 INF 文件条目
+title: 打印机 INF 文件项
+description: 打印机 INF 文件项
 ms.assetid: 897072bb-e481-4c8d-a2bf-57b19c69ac0e
 keywords:
 - INF 文件 WDK 打印，条目
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29398cffcde34e28002c3d7e3a4a034afb5dcd8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367604"
 ---
-# <a name="printer-inf-file-entries"></a>打印机 INF 文件条目
+# <a name="printer-inf-file-entries"></a>打印机 INF 文件项
 
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "56554780"
 
 -   结构成员 Ntprint.dll 将在其中放置指向条目值的指针。
 
-| INF 文件条目       |值|默认值 （如果不指定项）|结构成员 |
+| INF 文件条目       |ReplTest1|默认值 （如果不指定项）|结构成员 |
 |----------------------|-----|-------------|-----------------------------------------|
 | ConfigFile           | 驱动程序的名称[打印机接口 DLL](printer-interface-dll.md)。 | 指定 DriverFile 的值。 | **pConfigFile**驱动程序的成员\_信息\_3 结构 （Windows SDK 文档中所述） |
 | DataFile             | 驱动程序的关联的数据文件，如 PPD 文件的名称。 | 驱动程序的 INF 文件中的节名称。 | **pDataFile**驱动程序的成员\_信息\_3 结构 |

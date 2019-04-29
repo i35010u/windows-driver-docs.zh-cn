@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08db35a4fddd3b4d74eeeb6acc57f33ed031bcaf
-ms.sourcegitcommit: 78bbc162dcf6eb5816afbfa8ac546722bb98c6c8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377925"
 ---
 # <a name="overview-of-windows-components"></a>Windows 组件概述
 

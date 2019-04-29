@@ -1,19 +1,19 @@
 ---
-title: 分配非分页的显示内存
-description: 分配非分页的显示内存
+title: 分配非分页显示内存
+description: 分配非分页显示内存
 ms.assetid: 6a8523e7-3955-4289-b131-52556ba3e631
 keywords:
 - 非分页的显示内存 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 95ec52f08d2c2adb49bc2adb84fe4b9d43c27be3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380106"
 ---
-# <a name="allocating-nonpaged-display-memory"></a>分配非分页的显示内存
+# <a name="allocating-nonpaged-display-memory"></a>分配非分页显示内存
 
 
 ## <span id="ddk_allocating_nonpaged_display_memory_gg"></span><span id="DDK_ALLOCATING_NONPAGED_DISPLAY_MEMORY_GG"></span>

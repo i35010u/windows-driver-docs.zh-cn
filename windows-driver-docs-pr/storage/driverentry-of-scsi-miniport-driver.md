@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 57dc75fa879d3ec79e5471104064cf387e8990b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384836"
 ---
 # <a name="driverentry-of-scsi-miniport-driver-routine"></a>DriverEntry 的 SCSI 微型端口驱动程序例程
 

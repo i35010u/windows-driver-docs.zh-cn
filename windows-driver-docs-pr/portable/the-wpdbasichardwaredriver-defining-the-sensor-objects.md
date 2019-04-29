@@ -4,11 +4,11 @@ title: 定义传感器对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 092e2a6207fee203b9af46854db5e3031ddc852d
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378207"
 ---
 # <a name="defining-the-sensor-objects"></a>定义传感器对象
 
@@ -17,7 +17,7 @@ ms.locfileid: "57348781"
 
 WpdHelloWorldDriver 支持下表中所示的对象。
 
-| 对象  | 描述                                                                                                                |
+| Object  | 描述                                                                                                                |
 |---------|----------------------------------------------------------------------------------------------------------------------------|
 | 设备  | 包含描述性属性，例如根对象、 固件版本、 模型和友好名称。 |
 | 存储 | 公开一些属性，例如对象、 存储容量、 文件系统类型和可用的字节数。         |
@@ -28,7 +28,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
 
 存储、 文件夹或文件对象不支持示例传感器，因为 WpdBasicHardwareDriver 未实现这些对象。 相反，每个传感器类型表示由单个对象。 下表列出了 WpdBasicHardwareDriver 支持的对象。
 
-| 对象       | 描述                                                                                                                                |
+| Object       | 描述                                                                                                                                |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | 设备       | 包含描述性属性，例如根对象、 固件版本、 模型和友好名称。                 |
 | TempHumidity | 读取的温度和湿度读取，以及可编辑的更新间隔属性将显示一个功能对象。 |

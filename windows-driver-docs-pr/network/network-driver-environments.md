@@ -1,6 +1,6 @@
 ---
-title: 驱动程序的网络环境
-description: 驱动程序的网络环境
+title: 网络驱动程序环境
+description: 网络驱动程序环境
 ms.assetid: 5336bdc5-bf91-473a-a97d-f06b27eae5d0
 keywords:
 - 网络驱动程序 WDK，驱动程序的环境
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f11a253ddde0c33e9f822b5913a2dd6b7f054fb5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365736"
 ---
-# <a name="network-driver-environments"></a>驱动程序的网络环境
+# <a name="network-driver-environments"></a>网络驱动程序环境
 
 
 

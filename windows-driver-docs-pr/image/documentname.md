@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e62b401098c43f8a516d950f3d020a50c1ca1a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364539"
 ---
 # <a name="documentname-element"></a>文档名元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56526773"
 </wscn:DocumentName>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -72,7 +72,7 @@ ms.locfileid: "56526773"
 
 WSD 扫描服务必须提供一个值，以将文档存储在客户端上。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DocumentDescription**](documentdescription.md)

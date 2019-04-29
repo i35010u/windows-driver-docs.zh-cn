@@ -1,6 +1,6 @@
 ---
-title: 显示 （Windows 2000 模式） 的简介
-description: 显示 （Windows 2000 模式） 的简介
+title: 显示（Windows 2000 模型）简介
+description: 显示（Windows 2000 模型）简介
 ms.assetid: c1083cce-2113-4286-88aa-9b3bd5157027
 keywords:
 - 显示有关显示器驱动程序模型的驱动程序模型 WDK Windows 2000
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fbb77b8167001d514f96d68db0a5f73f44eb724
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362117"
 ---
-# <a name="introduction-to-display-windows-2000-model"></a>显示 （Windows 2000 模式） 的简介
+# <a name="introduction-to-display-windows-2000-model"></a>显示（Windows 2000 模型）简介
 
 
 ## <span id="ddk_introduction_to_display_windows_2000_model__gg"></span><span id="DDK_INTRODUCTION_TO_DISPLAY_WINDOWS_2000_MODEL__GG"></span>

@@ -1,17 +1,17 @@
 ---
-title: 访问 PCI 配置空间的虚拟函数
-description: 访问 PCI 配置空间的虚拟函数
+title: 访问虚拟功能的 PCI 配置空间
+description: 访问虚拟功能的 PCI 配置空间
 ms.assetid: 727E6FC5-F61F-4CB0-B6EB-9B372F2C59E1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 529a8dcfd23614f9edf881302cb5209b6f9644ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367950"
 ---
-# <a name="accessing-the-pci-configuration-space-of-a-virtual-function"></a>访问 PCI 配置空间的虚拟函数
+# <a name="accessing-the-pci-configuration-space-of-a-virtual-function"></a>访问虚拟功能的 PCI 配置空间
 
 
 本部分介绍从 PCI 配置空间 PCI Express (PCIe) 虚函数 (VFs) 的访问的数据的指导原则。 VFs 是支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器的硬件功能。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e13042af3e6889852b9000fdd8ffe32e24358bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377277"
 ---
 # <a name="oid8023multicastlist"></a>OID\_802\_3\_多播\_列表
 
@@ -57,13 +57,13 @@ NDIS 处理 OID\_802\_3\_多播\_列表查询的微型端口驱动程序，以�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID\_802\_3\_ADD\_MULTICAST\_ADDRESS](oid-802-3-add-multicast-address.md)

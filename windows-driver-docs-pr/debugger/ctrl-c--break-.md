@@ -1,5 +1,5 @@
 ---
-title: CTRL + C （断开）
+title: CTRL+C（中断）
 description: CTRL + C 键进入调试器，停止目标应用程序或目标计算机，并取消调试器命令。
 ms.assetid: ee9df6d7-4a40-4006-90df-478e06899e3a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 82745fadf91909aad4b85c6760f3012a3eab3b4e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374422"
 ---
-# <a name="ctrlc-break"></a>CTRL + C （断开）
+# <a name="ctrlc-break"></a>CTRL+C（中断）
 
 
 CTRL + C 键进入调试器，停止目标应用程序或目标计算机，并取消调试器命令。

@@ -5,11 +5,11 @@ ms.assetid: 48999DF6-3AC2-4DEA-8ABC-C427237B31E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72c16f8406c3c834d5b15bb9991a531d81945752
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370917"
 ---
 # <a name="developer-guidelines"></a>开发人员指南
 
@@ -92,7 +92,7 @@ ms.locfileid: "56543710"
 <tr class="header">
 <th align="left">函数名称</th>
 <th align="left">必需</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

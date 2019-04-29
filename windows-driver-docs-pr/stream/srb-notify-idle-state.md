@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8532033ea5d2988db5ebb212efc5a31bcd75115f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379947"
 ---
 # <a name="srbnotifyidlestate"></a>SRB\_通知\_空闲\_状态
 
@@ -45,7 +45,7 @@ SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序�
 
 当流类驱动程序发送 SRB\_通知\_IDLE\_状态请求，微型驱动程序将接收到调用[ *StrMiniReceiveDevicePacket*](https://msdn.microsoft.com/library/windows/hardware/ff568463)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB\_GET\_DEVICE\_PROPERTY**](srb-get-device-property.md)

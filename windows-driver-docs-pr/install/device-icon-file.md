@@ -5,11 +5,11 @@ ms.assetid: bd1272d5-f673-4138-887d-94653cf41829
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf745b5da276f786d08c1ed102f3835d755981f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362059"
 ---
 # <a name="device-icon-file"></a>设备图标文件
 

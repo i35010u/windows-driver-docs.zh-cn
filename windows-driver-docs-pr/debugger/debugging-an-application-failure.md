@@ -1,19 +1,19 @@
 ---
-title: 调试应用程序故障
-description: 调试应用程序故障
+title: 调试应用程序错误
+description: 调试应用程序错误
 ms.assetid: c4118acb-2566-441a-8481-dee4bfdb03ba
 keywords:
 - 应用程序故障
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fcf7d0401c12c06b8556f8d0e2b2048cf3aaefe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377202"
 ---
-# <a name="debugging-an-application-failure"></a>调试应用程序故障
+# <a name="debugging-an-application-failure"></a>调试应用程序错误
 
 
 ## <span id="ddk_debugging_an_application_failure_dbg"></span><span id="DDK_DEBUGGING_AN_APPLICATION_FAILURE_DBG"></span>

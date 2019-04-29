@@ -1,6 +1,6 @@
 ---
-title: 注册语法
-description: 注册语法
+title: 寄存器语法
+description: 寄存器语法
 ms.assetid: 64a566b1-c10b-4329-947c-af69904a21f8
 keywords:
 - 表达式寄存器
@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79b4dfeea0548d23d0ca17bb31850bbf35a22478
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370205"
 ---
-# <a name="register-syntax"></a>注册语法
+# <a name="register-syntax"></a>寄存器语法
 
 
 ## <span id="ddk_register_syntax_dbg"></span><span id="DDK_REGISTER_SYNTAX_DBG"></span>
@@ -29,9 +29,9 @@ ms.locfileid: "56523632"
 
 如果使用 MASM 表达式语法，则可以省略某些非常常见的注册时注册。 在基于 x86 的系统中，则可以省略的符号开头**eax**， **ebx**， **ecx**， **edx**， **esi**， **edi**， **ebp**， **eip**，以及**推崇**注册。 但是，如果指定了不太常见的寄存器，而无需 at 符号，调试器首先尝试将解释为十六进制数字的文本。 如果文本包含非十六进制字符，在调试器下一步将文本解释为一个符号。 最后，如果调试器未找到符号匹配项，调试器会将文本解释为寄存器。
 
-如果您使用的 c + + 表达式语法，at 符号始终是必需的。
+如果使用的C++表达式语法，at 符号始终是必需的。
 
-[ **R （寄存器）** ](r--registers-.md)命令是此规则的例外。 调试器始终将其第一个参数解释为寄存器。 (在登录不要求或不允许。)如果没有为第二个参数**r**命令时，它根据默认表达式语法进行解释。 如果默认表达式语法是 c + +，您必须使用以下命令复制**ebx**中注册**eax**注册。
+[ **R （寄存器）** ](r--registers-.md)命令是此规则的例外。 调试器始终将其第一个参数解释为寄存器。 (在登录不要求或不允许。)如果没有为第二个参数**r**命令时，它根据默认表达式语法进行解释。 如果默认表达式语法是C++，必须使用以下命令将复制**ebx**注册到**eax**注册。
 
 ```dbgcmd
 0:000> r eax = @ebx

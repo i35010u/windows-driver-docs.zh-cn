@@ -1,6 +1,6 @@
 ---
-title: 要求和限制适用于 IPsec 卸载
-description: 要求和限制适用于 IPsec 卸载
+title: 适用于 IPsec 卸载的要求和限制
+description: 适用于 IPsec 卸载的要求和限制
 ms.assetid: c016d6dd-f760-4340-8d56-9bd69e4fe84e
 keywords:
 - ESP 保护数据包 WDK IPsec 卸载、 要求
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d739bf72342434c1b6e8e2cd97273f191d5b97e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376968"
 ---
-# <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>要求和限制适用于 IPsec 卸载
+# <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>适用于 IPsec 卸载的要求和限制
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

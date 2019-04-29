@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a3307002c9315605924a70c2837265ad0af3a6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364461"
 ---
 # <a name="elementchanges-element"></a>ElementChanges 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56522290"
 </wscn:ElementChanges>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -87,7 +87,7 @@ ms.locfileid: "56522290"
 
 WSD 扫描服务必须包括**ElementChanges**元素时它将生成[ **ScannerElementsChangeEvent** ](scannerelementschangeevent.md)元素。 每个子元素**ElementChanges**必须包含所有必需的子元素。 如果返回的 XML 中缺少可选元素，WSD 扫描服务表示向客户端中，该服务不再支持该元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DefaultScanTicket**](defaultscanticket.md)

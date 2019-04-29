@@ -1,6 +1,6 @@
 ---
-title: 了解的 Static Driver Verifier
-description: 了解的 Static Driver Verifier
+title: 了解静态驱动程序验证程序
+description: 了解静态驱动程序验证程序
 ms.assetid: 519e3314-2fea-4acd-8c0d-954a57e257ba
 keywords:
 - WDK，关于 Static Driver Verifier 的 static Driver Verifier
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c95e67345779c9b5e003319e50cd8b2b4e79cec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384716"
 ---
-# <a name="understanding-static-driver-verifier"></a>了解的 Static Driver Verifier
+# <a name="understanding-static-driver-verifier"></a>了解静态驱动程序验证程序
 
 
 若要编写符合 Windows 驱动程序模型 (WDM) 或内核模式驱动程序框架 (KMDF)、 NDIS 或 Storport 的可靠驱动程序，必须具备专业知识并了解该驱动程序与 I/O 管理器交互的方式。 测试这些驱动程序是同样棘手。

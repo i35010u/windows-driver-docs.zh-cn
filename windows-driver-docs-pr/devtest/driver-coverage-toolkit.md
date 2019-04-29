@@ -5,11 +5,11 @@ ms.assetid: b35ca87e-9ec7-4e25-89ce-0e7c121f6445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5facc6b1d8962aad294e99983f4a6372bfd407ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380615"
 ---
 # <a name="driver-coverage-toolkit"></a>驱动程序覆盖范围工具包
 

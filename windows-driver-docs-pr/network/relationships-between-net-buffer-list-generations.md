@@ -1,6 +1,6 @@
 ---
-title: NET_BUFFER_LIST 代之间的关系
-description: NET_BUFFER_LIST 代之间的关系
+title: NET_BUFFER_LIST 代系之间的关系
+description: NET_BUFFER_LIST 代系之间的关系
 ms.assetid: 37b3b08d-4656-47bc-b656-a03f208e4311
 keywords:
 - NET_BUFFER_LIST
@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 048ac090b239589ba34dc838e9042efac04e22fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373803"
 ---
 # <a name="relationships-between-netbufferlist-generations"></a>NET 之间的关系\_缓冲区\_列表代
 

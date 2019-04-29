@@ -5,11 +5,11 @@ ms.assetid: D605D63F-0EBF-44C0-8ADE-729F2DE48487
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 288613b89e600cce387432ebec7656a054fedb1f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386546"
 ---
 # <a name="msfcvirtualfibreportattributes-wmi-class"></a>MSFC\_VirtualFibrePortAttributes WMI 类
 

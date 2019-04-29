@@ -5,11 +5,11 @@ ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64dcc2012b2f19d98d683e7cf138c994dd5a1f5a
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361145"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>设备和驱动程序安装路线图
 

@@ -5,11 +5,11 @@ ms.assetid: 1E9BC335-BB62-415B-B242-D63672A4E406
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ade849ed2c05e014f0b8c9ca380c7efbeecd520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365742"
 ---
 # <a name="overview-of-receive-segment-coalescing"></a>接收段合并概述
 

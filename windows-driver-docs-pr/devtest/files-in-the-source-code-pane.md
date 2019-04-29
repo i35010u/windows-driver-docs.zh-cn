@@ -1,6 +1,6 @@
 ---
-title: 源的代码窗格中的文件
-description: 源的代码窗格中的文件
+title: 源代码窗格中的文件
+description: 源代码窗格中的文件
 ms.assetid: 1bc248be-cdc8-4e6c-9eca-da2943daaf58
 keywords:
 - 静态驱动程序验证工具报表 WDK，源代码窗格
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f18aed8e785ac522b5c42e8d2f1148f4e8fa55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378817"
 ---
-# <a name="files-in-the-source-code-pane"></a>源的代码窗格中的文件
+# <a name="files-in-the-source-code-pane"></a>源代码窗格中的文件
 
 
 文件显示在**源代码**窗格仅时导致或检测的规则冲突中涉及它们所包含的代码。 因此，不同的文件在不同的规则冲突的窗口中显示相同的驱动程序。

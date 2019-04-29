@@ -9,11 +9,11 @@ keywords:
 ms.date: 03/12/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e47fd16f420e3464a6cc1420aab93b94f8e8534a
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375583"
 ---
 # <a name="configuring-the-registry"></a>配置注册表
 

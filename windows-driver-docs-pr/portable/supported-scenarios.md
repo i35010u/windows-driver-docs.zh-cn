@@ -1,14 +1,14 @@
 ---
-Description: Supported Scenarios
+Description: 支持的方案
 title: 支持的方案
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1464cc6eb3bc4b10b66ed900a61a328efaa4647
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380858"
 ---
 # <a name="supported-scenarios"></a>支持的方案
 
@@ -37,7 +37,7 @@ WPD 提供必要的基础结构进行标准化的应用程序和连接到运行 
 
 WPD 基础结构提供高度可扩展的设备的表示形式和控制机制。 这使垂直解决方案提供商使用 WPD 应用程序编程接口 (API) 来创建标准化 WPD 外部设置的增强型的用户体验。 此示例包括设备、 固件更新和设备 （适用于远程支持） 的诊断程序附带的供应商提供软件套件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)

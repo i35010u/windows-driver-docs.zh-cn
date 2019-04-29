@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 925ce2225b19e0b3c22d72ebf992bf19da9a4804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379574"
 ---
 # <a name="direct-oid-request-interface-in-ndis-61"></a>NDIS 6.1 中的直接 OID 请求接口
 

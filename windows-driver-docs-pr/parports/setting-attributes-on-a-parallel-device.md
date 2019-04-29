@@ -1,6 +1,6 @@
 ---
-title: 并行的设备上设置属性
-description: 并行的设备上设置属性
+title: 在并行设备上设置属性
+description: 在并行设备上设置属性
 ms.assetid: 10df9a1b-99ec-46b1-b515-10fb20fe2aed
 keywords:
 - 并行设备 WDK，属性
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0d430a405c113f99b0ad4c307e88464ef490da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370941"
 ---
-# <a name="setting-attributes-on-a-parallel-device"></a>并行的设备上设置属性
+# <a name="setting-attributes-on-a-parallel-device"></a>在并行设备上设置属性
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 堆管理 AGP
-description: 堆管理 AGP
+title: 管理 AGP 堆
+description: 管理 AGP 堆
 ms.assetid: edeed3bc-c107-4286-9d5a-7fdef89cc4e1
 keywords:
 - 堆 WDK DirectDraw
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49054ed927054834d35b11682c854b2eccb2db0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380405"
 ---
-# <a name="managing-agp-heaps"></a>堆管理 AGP
+# <a name="managing-agp-heaps"></a>管理 AGP 堆
 
 
 ## <span id="ddk_managing_agp_heaps_gg"></span><span id="DDK_MANAGING_AGP_HEAPS_GG"></span>

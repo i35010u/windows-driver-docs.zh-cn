@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_HD_SPLIT_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b593f58e8f3b110ece32602633eccd773de2540c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381330"
 ---
 # <a name="oidgenhdsplitparameters"></a>OID\_GEN\_HD\_拆分\_参数
 
@@ -36,7 +36,7 @@ NDIS 将向此 OID 微型端口驱动程序仅当标头数据拆分已启用与�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.1 及更高版本。</p></td>
 </tr>
 <tr class="even">

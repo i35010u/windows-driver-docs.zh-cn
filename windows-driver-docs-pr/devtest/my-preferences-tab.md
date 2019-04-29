@@ -5,11 +5,11 @@ ms.assetid: 6f37fd6b-c60c-4d59-94fb-0dc7d3ff6f0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9245ab93209855704044f20a277a47ea3acb1fbe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363127"
 ---
 # <a name="my-preferences-tab"></a>我的首选项选项卡
 

@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380689"
 ---
 # <a name="pcd-source-file-format"></a>PCD 源文件格式
 

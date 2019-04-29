@@ -1,14 +1,14 @@
 ---
-Description: How a USB multi-function device, called a composite driver, registers and unregisters the composite device with the underlying USB driver stack.
+Description: 如何 USB 多功能设备，称为复合驱动程序，注册和注销的复合设备与基础的 USB 驱动程序堆栈。
 title: 如何注册的复合设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72e092c6de69302762c0caec881974a95038bd4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378846"
 ---
 # <a name="how-to-register-a-composite-device"></a>如何注册的复合设备
 
@@ -26,7 +26,7 @@ USB 3.0 规范定义了*函数挂起和远程唤醒功能*，使各个函数进�
 
 通常情况下复合驱动程序发送注册请求中的驱动程序 AddDevice 或启动设备例程来处理[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749). 因此，复合的驱动程序释放的资源，如停止设备的驱动程序的卸载例程中注册为分配 ([**IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)) 或删除设备例程 ([**IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738))。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 在发送前注册请求，请确保：
 

@@ -5,18 +5,18 @@ ms.assetid: AC4C214A-63C6-48C8-BA57-6DAE9E93BED9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2dfde081641921b512e572b3fe5a6b1c64fdcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365475"
 ---
 # <a name="wddm-12-installation-scenarios"></a>WDDM 1.2 安装方案
 
 
 Windows 8 安装图形驱动程序行为旨在确保，只要有可能，我们的客户获得的经过测试和针对 Windows 8 认证的图形驱动程序。 此部分所述的规则定义此行为。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>在本部分中
+## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>

@@ -5,11 +5,11 @@ ms.assetid: 6382fdf6-109a-430a-b6b5-322d3eebc4a1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b52a61d4c7eb3065d71edd94b347fdb219b3be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373119"
 ---
 # <a name="retrieving-a-device-instance-identifier"></a>检索设备实例标识符
 

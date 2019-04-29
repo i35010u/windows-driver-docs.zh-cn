@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_LINK_SPEED_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a43927435161ab2e5a4737b1db3ae7450681188
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375684"
 ---
 # <a name="ndisstatuslinkspeedchange"></a>NDIS\_状态\_链接\_速度\_更改
 
@@ -35,17 +35,17 @@ NDIS 5。*x*或更早的微型端口驱动程序提供的 DWORD 类型值*Status
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不受支持 NDIS 6.0 及更高版本 (使用<a href="ndis-status-link-state.md" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](ndis-status-link-state.md)"> <strong>NDIS_STATUS_LINK_STATE</strong> </a>相反)。 仅支持 Windows Vista 和 Windows XP 中的 NDIS 5.1 驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_STATUS\_LINK\_STATE**](ndis-status-link-state.md)

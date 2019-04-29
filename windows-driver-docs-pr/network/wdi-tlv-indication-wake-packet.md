@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_PACKET 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c9cd776a34dfc3d845ea1c71bb8fb120d22f10a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382859"
 ---
 # <a name="wditlvindicationwakepacket"></a>WDI\_TLV\_指示\_唤醒\_数据包
 

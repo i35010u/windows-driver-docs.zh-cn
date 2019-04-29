@@ -5,11 +5,11 @@ ms.assetid: AC2A0060-45B9-45ff-87ED-69842F9A567D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76874e5c8a6c67f1a3ad8b1ff282bc665c86469d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374003"
 ---
 # <a name="test-isolation"></a>测试隔离
 

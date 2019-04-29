@@ -5,11 +5,11 @@ ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
 ms.date: 04/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e5e27226292aefcf50508285021f5adaa5bdbf4e
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367223"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript 调试器示例脚本
 

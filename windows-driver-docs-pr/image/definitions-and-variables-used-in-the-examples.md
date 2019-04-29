@@ -1,17 +1,17 @@
 ---
-title: 定义和示例中所用的变量
-description: 定义和示例中所用的变量
+title: 在示例中使用的定义和变量
+description: 在示例中使用的定义和变量
 ms.assetid: 55dd0618-2171-406b-a22a-437412c77cbc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 142e5d678d5e0460ec79ab893052173cc9fa7127
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364581"
 ---
-# <a name="definitions-and-variables-used-in-the-examples"></a>定义和示例中所用的变量
+# <a name="definitions-and-variables-used-in-the-examples"></a>在示例中使用的定义和变量
 
 > [!IMPORTANT]  
 > WSD 占领功能已弃用，将在 2018年中删除所有与 WSD 占领相关文档。

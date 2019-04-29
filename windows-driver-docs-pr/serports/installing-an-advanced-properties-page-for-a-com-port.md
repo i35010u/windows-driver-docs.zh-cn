@@ -1,6 +1,6 @@
 ---
-title: 安装 COM 端口的高级的属性页
-description: 安装 COM 端口的高级的属性页
+title: 安装 COM 端口的高级属性页
+description: 安装 COM 端口的高级属性页
 ms.assetid: 056fd245-a9d2-4a10-9e92-fe75e51f6770
 keywords:
 - 高级的 COM 端口属性页上的 WDK 串行设备
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e86144ee1d2565be45ca0140acd8d61037e7c615
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370923"
 ---
-# <a name="installing-an-advanced-properties-page-for-a-com-port"></a>安装 COM 端口的高级的属性页
+# <a name="installing-an-advanced-properties-page-for-a-com-port"></a>安装 COM 端口的高级属性页
 
 
 

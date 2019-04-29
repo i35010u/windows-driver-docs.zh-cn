@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 883f368ed0da138f079f9657697f22ebc094f254
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361751"
 ---
 # <a name="wditlvindicationwakereason"></a>WDI\_TLV\_指示\_唤醒\_原因
 
@@ -39,7 +39,7 @@ UINT32 大小 （以字节为单位）。
 
 有效唤醒原因的值为：
 
-| 唤醒原因                                       | 值  | 描述                                                                                                          |
+| 唤醒原因                                       | ReplTest1  | 描述                                                                                                          |
 |---------------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------|
 | WDI\_唤醒\_原因\_代码\_数据包                   | 0x0001 | 接收的数据包与唤醒模式匹配。                                                                          |
 | WDI\_唤醒\_原因\_代码\_媒体\_断开连接        | 0x0002 | 媒体断开连接。                                                                                                 |
@@ -73,7 +73,7 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

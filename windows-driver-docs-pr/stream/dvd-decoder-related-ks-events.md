@@ -1,6 +1,6 @@
 ---
-title: DVD 解码器相关 KS 事件
-description: DVD 解码器相关 KS 事件
+title: 与 DVD 解码器相关的 KS 事件
+description: 与 DVD 解码器相关的 KS 事件
 ms.assetid: 19fd2c88-72f4-4742-8c96-74be250dd59d
 keywords:
 - DVD 解码器微型驱动程序 WDK，KS 事件
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 276342417ba8ab8697c83eec3a4304c0c5035bb7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363914"
 ---
-# <a name="dvd-decoder-related-ks-events"></a>DVD 解码器相关 KS 事件
+# <a name="dvd-decoder-related-ks-events"></a>与 DVD 解码器相关的 KS 事件
 
 
 

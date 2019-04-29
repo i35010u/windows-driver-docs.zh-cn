@@ -6,11 +6,11 @@ keywords: 调试、 调试，控制目标，崩溃目标计算机，重启目标
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c176e7ba0f1e27535df92ddbc041ab384878384a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375039"
 ---
 # <a name="crashing-and-rebooting-the-target-computer"></a>使目标计算机崩溃和重新启动目标计算机
 

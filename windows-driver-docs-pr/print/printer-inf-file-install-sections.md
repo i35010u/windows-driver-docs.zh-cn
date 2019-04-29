@@ -1,6 +1,6 @@
 ---
-title: 打印机 INF 文件安装的部分
-description: 打印机 INF 文件安装的部分
+title: 打印机 INF 文件的 Install 节
+description: 打印机 INF 文件的 Install 节
 ms.assetid: fb544271-1f0f-4bbd-b0a7-88dc89cc8186
 keywords:
 - INF 文件 WDK 打印，请安装部分
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7da8881e8ab5afe26ecb3bd5fc1a2416f5b41b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362301"
 ---
-# <a name="printer-inf-file-install-sections"></a>打印机 INF 文件安装的部分
+# <a name="printer-inf-file-install-sections"></a>打印机 INF 文件的 Install 节
 
 
 

@@ -1,15 +1,15 @@
 ---
-title: 驱动程序开发人员的 Windows 安全模型
+title: 适用于驱动程序开发人员的 Windows 安全模型
 description: Windows 安全模型是主要基于每个对象的权限，只有少量的系统范围的权限。
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e1d01bdc20dc36d5f01c9c9135f74296cea7ccc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371412"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -254,7 +254,7 @@ WDM 驱动程序与 I/O 管理器不执行对的命名空间的安全检查，�
 -   请参阅[驱动程序安全核对清单](driver-security-checklist.md)为其他驱动程序的安全建议。
 
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)
 

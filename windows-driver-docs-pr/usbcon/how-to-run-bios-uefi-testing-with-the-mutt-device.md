@@ -1,14 +1,14 @@
 ---
-Description: BIOS/UEFI testing validates USB boot and handoff of the controller to the operating system.
+Description: BIOS/UEFI 测试验证 USB 启动，并且切换到操作系统的控制器。
 title: 对 MUTT 设备进行 BIOS/UEFI 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 624a3ab4d1873b409dad699d68b2ea4232e1408e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366068"
 ---
 # <a name="biosuefi-testing-with-the-mutt-devices"></a>对 MUTT 设备进行 BIOS/UEFI 测试
 

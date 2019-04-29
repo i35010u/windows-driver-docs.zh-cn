@@ -1,6 +1,6 @@
 ---
-title: 等时侦听的 IEEE 1394 设备的选项
-description: 等时侦听的 IEEE 1394 设备的选项
+title: IEEE 1394 设备的常时等量侦听选项
+description: IEEE 1394 设备的常时等量侦听选项
 ms.assetid: a369b7f0-be85-49f0-bb09-d07cbd3d3558
 keywords:
 - 同步 I/O WDK IEEE 1394 总线，侦听选项
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f3a23f2d45c6d8b7f24114b059ef599cc3901c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371007"
 ---
-# <a name="isochronous-listen-options-for-ieee-1394-devices"></a>等时侦听的 IEEE 1394 设备的选项
+# <a name="isochronous-listen-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量侦听选项
 
 
 

@@ -7,11 +7,11 @@ keywords:
 - IRP_MJ_SET_INFORMATION Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d9f09dae2974297c39c5b901eff114f38906e7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368438"
 ---
 # <a name="irpmjsetinformation"></a>IRP\_MJ\_SET\_INFORMATION
 
@@ -54,13 +54,13 @@ ms.locfileid: "56541973"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ZwSetInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567096)

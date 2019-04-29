@@ -1,6 +1,6 @@
 ---
-title: 从调试器强制系统崩溃
-description: 从调试器强制系统崩溃
+title: 通过调试器强制系统崩溃
+description: 通过调试器强制系统崩溃
 ms.assetid: 7d7d9b07-00a3-4f87-8eb9-01b3f2fa312f
 keywords:
 - 在系统发生崩溃，导致从调试器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6cb6b4a90323a247a652f8f6b4c1567206f68a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371654"
 ---
-# <a name="forcing-a-system-crash-from-the-debugger"></a>从调试器强制系统崩溃
+# <a name="forcing-a-system-crash-from-the-debugger"></a>通过调试器强制系统崩溃
 
 
 ## <span id="ddk_forcing_a_system_crash_from_the_debugger_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_DEBUGGER_DBG"></span>

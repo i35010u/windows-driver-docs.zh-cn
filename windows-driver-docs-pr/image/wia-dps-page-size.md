@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa377ae400a9a5da4a0ba92fe68c4eb649f6848a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380943"
 ---
 # <a name="wiadpspagesize"></a>WIA\_DPS\_PAGE\_SIZE
 
@@ -49,7 +49,7 @@ WIA\_DPS\_页\_SIZE 属性包含当前选定要扫描的页的大小。
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -127,7 +127,7 @@ WIA_DPS_PAGE_SIZE = WIA_PAGE_CUSTOM WIA_DPS_PAGE_HEIGHT = 10000 WIA_DPS_PAGE_WID
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PAGE_SIZE 属性。</p></td>
 </tr>
 <tr class="even">

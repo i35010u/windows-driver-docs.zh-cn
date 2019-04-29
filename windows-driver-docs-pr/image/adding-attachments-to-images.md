@@ -1,17 +1,17 @@
 ---
-title: 将附件添加到映像
-description: 将附件添加到映像
+title: 将附件添加到图像
+description: 将附件添加到图像
 ms.assetid: 704f541b-b98c-44a8-bb19-5d5d0d1eab78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8946c0775106ea6b0436b767a4cdcc0acf629b31
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367117"
 ---
-# <a name="adding-attachments-to-images"></a>将附件添加到映像
+# <a name="adding-attachments-to-images"></a>将附件添加到图像
 
 
 

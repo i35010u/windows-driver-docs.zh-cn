@@ -5,11 +5,11 @@ ms.assetid: 09325037-F9A4-45C8-97E0-8FCA7D42A120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c48c44856961ddf2b5cc7ee8abddda0289b13344
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361809"
 ---
 # <a name="using-virtual-switch-filtering"></a>使用虚拟交换机筛选
 

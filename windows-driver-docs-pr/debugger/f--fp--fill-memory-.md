@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 26cc71ffeb8e555fae92b5408a3adf823cb96cca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375400"
 ---
 # <a name="f-fp-fill-memory"></a>f、fp（填充内存）
 
@@ -94,7 +94,7 @@ fp [MemoryType] PhysicalRange Pattern
 
 数字值将被解释为当前基数 （16、 10 或 8） 中的数字。 若要更改默认基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令。 可以通过指定重写默认基数**0x**前缀 （十六进制） **0n**前缀 （十进制） **0t**前缀 （八进制） 或**0y**前缀 （二进制）。
 
-**请注意**  默认基数以不同方式行为时正在使用 c + + 表达式。 有关详细信息，请参阅[评估表达式](evaluating-expressions.md)主题。
+**请注意**  的默认基数以不同方式行为时C++使用表达式。 有关详细信息，请参阅[评估表达式](evaluating-expressions.md)主题。
 
  
 

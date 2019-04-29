@@ -5,11 +5,11 @@ ms.assetid: 29374BBE-D1DF-48C0-80A9-96CBAC6D8A22
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cafc618b0bc94497f96267a22e46636b088ae932
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380467"
 ---
 # <a name="warning-rule-set-wdm"></a>警告规则集 (WDM)
 

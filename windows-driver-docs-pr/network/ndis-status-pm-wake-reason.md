@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PM_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e713e87cc13c2114fe10d4223f17b18779876463
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362883"
 ---
 # <a name="ndisstatuspmwakereason"></a>NDIS\_状态\_PM\_唤醒\_原因
 
@@ -39,17 +39,17 @@ ms.locfileid: "56524783"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持在 NDIS 6.30 和更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

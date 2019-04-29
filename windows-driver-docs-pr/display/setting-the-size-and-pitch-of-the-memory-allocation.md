@@ -1,6 +1,6 @@
 ---
-title: 设置大小和内存分配的间距
-description: 设置大小和内存分配的间距
+title: 设置内存分配的大小和间距
+description: 设置内存分配的大小和间距
 ms.assetid: babd331f-7aec-4aee-aef9-7c10b98f9181
 keywords:
 - 内存分配 WDK 显示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb189d800a37b48433c19afd339334ec72d12d98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383858"
 ---
-# <a name="setting-the-size-and-pitch-of-the-memory-allocation"></a>设置大小和内存分配的间距
+# <a name="setting-the-size-and-pitch-of-the-memory-allocation"></a>设置内存分配的大小和间距
 
 
 ## <span id="ddk_introduction_to_command_and_dma_buffers_gg"></span><span id="DDK_INTRODUCTION_TO_COMMAND_AND_DMA_BUFFERS_GG"></span>

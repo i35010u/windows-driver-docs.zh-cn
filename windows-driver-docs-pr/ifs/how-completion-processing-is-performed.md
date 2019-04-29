@@ -1,19 +1,19 @@
 ---
-title: 完成处理的执行方式
-description: 完成处理的执行方式
+title: 如何执行完成处理
+description: 如何执行完成处理
 ms.assetid: 5741c226-9781-4d9a-b6dd-d8ecc17c4c6f
 keywords:
 - IRP 完成例程 WDK 文件系统，处理阶段
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6016144ede00ebe471928c0bacd3681d82350d6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370129"
 ---
-# <a name="how-completion-processing-is-performed"></a>完成处理的执行方式
+# <a name="how-completion-processing-is-performed"></a>如何执行完成处理
 
 
 ## <span id="ddk_how_completion_processing_is_performed_if"></span><span id="DDK_HOW_COMPLETION_PROCESSING_IS_PERFORMED_IF"></span>

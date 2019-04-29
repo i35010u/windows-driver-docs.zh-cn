@@ -1,6 +1,6 @@
 ---
-title: 注册的 WAN 地址系列
-description: 注册的 WAN 地址系列
+title: 注册 WAN 地址系列
+description: 注册 WAN 地址系列
 ms.assetid: 31443e99-24d8-4276-8345-004b0eeb05d7
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络，TAPI 地址系列
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cfa400020fcd2640786a3af4930420e9d78938
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373795"
 ---
-# <a name="registering-the-wan-address-family"></a>注册的 WAN 地址系列
+# <a name="registering-the-wan-address-family"></a>注册 WAN 地址系列
 
 
 

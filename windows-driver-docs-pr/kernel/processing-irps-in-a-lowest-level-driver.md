@@ -1,6 +1,6 @@
 ---
-title: 处理 Irp 到最低级别的驱动程序
-description: 处理 Irp 到最低级别的驱动程序
+title: 在最低级驱动程序中处理 IRP
+description: 在最低级驱动程序中处理 IRP
 ms.assetid: 9b8c2586-d47b-49ab-bf65-a298af36304c
 keywords:
 - Irp WDK 内核，处理示例
@@ -18,13 +18,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f84b214c3b902f42bb27b2263c53eafe1c42376a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369127"
 ---
-# <a name="processing-irps-in-a-lowest-level-driver"></a>处理 Irp 到最低级别的驱动程序
+# <a name="processing-irps-in-a-lowest-level-driver"></a>在最低级驱动程序中处理 IRP
 
 
 

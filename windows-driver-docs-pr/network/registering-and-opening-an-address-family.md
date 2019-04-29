@@ -1,6 +1,6 @@
 ---
-title: 注册并打开地址系列
-description: 注册并打开地址系列
+title: 注册和打开地址系列
+description: 注册和打开地址系列
 ms.assetid: 2249adf9-2876-4442-be94-1a966d3f1c88
 keywords:
 - 地址系列 WDK 网络
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a20ebfb56bf93b080030a160c825baedfa86de
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364120"
 ---
-# <a name="registering-and-opening-an-address-family"></a>注册并打开地址系列
+# <a name="registering-and-opening-an-address-family"></a>注册和打开地址系列
 
 
 

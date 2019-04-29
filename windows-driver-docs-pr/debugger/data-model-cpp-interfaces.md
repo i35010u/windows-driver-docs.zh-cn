@@ -1,31 +1,31 @@
 ---
 title: 调试器数据模型 C++ 接口
-description: 本主题介绍如何使用调试器数据模型 c + + 接口来扩展和自定义调试器的功能。
+description: 本主题介绍如何使用调试器数据模型C++接口，以便扩展和自定义调试器的功能。
 ms.date: 10/08/2018
 ms.openlocfilehash: 831e11ba8d5bcb28bd7842a9653dfff4205aafe7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374377"
 ---
 # <a name="debugger-data-model-c-interfaces"></a>调试器数据模型 C++ 接口 
 
-本主题提供了和如何使用调试器数据模型 c + + 接口来扩展和自定义调试器的功能的概述。
+本主题提供了简要介绍了如何使用调试器数据模型和C++接口，以便扩展和自定义调试器的功能。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -33,7 +33,7 @@ ms.locfileid: "56564038"
 
 本主题包含以下部分：
 
-[调试器数据模型 c + + 主机接口](#hostinterface)
+[调试器数据模型C++承载接口](#hostinterface)
 
 [访问数据模型](#accessdatamodel)
 
@@ -41,7 +41,7 @@ ms.locfileid: "56564038"
 
 ---
 
-## <a name="span-idhostinterfacespan-debugger-data-model-c-host-interfaces"></a><span id="hostinterface"></span> 调试器数据模型 c + + 主机接口
+## <a name="span-idhostinterfacespan-debugger-data-model-c-host-interfaces"></a><span id="hostinterface"></span> 调试器数据模型C++承载接口
 
 **调试器数据模型主机**
 
@@ -66,7 +66,7 @@ IDebugHostSymbols | 核心接口，它提供了对访问和符号的解决方法
 IDebugHostSymbol / IDebugHostSymbol2  | 表示任何类型的单个符号。 特定符号是此接口的派生。
 IDebugHostModule | 表示在进程内加载的模块。 这是一种符号。
 IDebugHostType / IDebugHostType2  | 表示本机/语言类型。
-IDebugHostConstant  | 表示符号化信息中的一个常数 (例如： c + + 中的非类型模板参数)
+IDebugHostConstant  | 表示符号化信息中的一个常数 (例如： 中的非类型模板参数C++)
 IDebugHostField  | 表示结构或类中的字段。
 IDebugHostData | 表示在模块中的数据 （已在结构或类会 IDebugHostField 的这）
 IDebugHostBaseClass | 表示一个基类。
@@ -195,11 +195,11 @@ DECLARE_INTERFACE_(IDebugHostEvaluator2, IDebugHostEvaluator)
 
 [EvaluateExpression](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator-evaluateexpression)
 
-EvaluateExpression 方法允许请求调试主机来评估一种语言 (例如：C + +） 表达式并返回该表达式计算的结果值装箱为 IModelObject。 该方法的此特定变体仅允许语言构造。 任何其他功能是不存在的语言的调试主机的表达式计算器中的显示 (例如：LINQ 查询方法） 已关闭以进行评估。 
+EvaluateExpression 方法允许请求调试主机来评估一种语言 (例如：C++) 表达式并返回该表达式计算的结果值装箱为 IModelObject。 该方法的此特定变体仅允许语言构造。 任何其他功能是不存在的语言的调试主机的表达式计算器中的显示 (例如：LINQ 查询方法） 已关闭以进行评估。 
 
 [EvaluateExtendedExpression](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostevaluator-evaluateextendedexpression)
 
-EvaluateExtendedExpression 方法具有 EvaluateExpression 方法相似，只不过它将转换上其他非语言功能特定的调试主机选择要添加到其表达式计算器。 对于为 Windows 调试工具，例如，这使匿名类型、 LINQ 查询、 模块限定符，格式说明符和其他非-C/c + + 功能。 
+EvaluateExtendedExpression 方法具有 EvaluateExpression 方法相似，只不过它将转换上其他非语言功能特定的调试主机选择要添加到其表达式计算器。 对于为 Windows 调试工具，例如，这使匿名类型、 LINQ 查询、 模块限定符，格式说明符和其他非 C /C++功能。 
 
 
 **IDebugHostEvaluator2**
@@ -274,7 +274,7 @@ IDebugHostSymbols  | 核心接口，它提供了对访问和符号的解决方�
 IDebugHostSymbol / IDebugHostSymbol2  | 表示任何类型的单个符号。 特定符号是此接口的派生。
 IDebugHostModule  | 表示在进程内加载的模块。 这是一种符号。
 IDebugHostType / IDebugHostType2  | 表示本机/语言类型。
-IDebugHostConstant  | 表示符号化信息中的一个常数 (例如： c + + 中的非类型模板参数)
+IDebugHostConstant  | 表示符号化信息中的一个常数 (例如： 中的非类型模板参数C++)
 IDebugHostField | 表示结构或类中的字段。
 IDebugHostData | 表示在模块中的数据 （已在结构或类会 IDebugHostField 的这）
 IDebugHostBaseClass  | 表示一个基类。
@@ -321,7 +321,7 @@ CreateModuleSignature 方法创建可以用于匹配一组特定模块 （可选
 
 [CreateTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-createtypesignature)
 
-CreateTypeSignature 方法创建可以用于通过将包含模块和类型名称匹配的一组具体类型的签名。 类型名称的签名字符串的格式是特定于正在调试的语言 （和调试主机）。 C/c + + 的签名字符串等效于 NatVis 类型规范。 签名字符串，即是类型名称的通配符 (指定为 *) 允许使用模板自变量。 
+CreateTypeSignature 方法创建可以用于通过将包含模块和类型名称匹配的一组具体类型的签名。 类型名称的签名字符串的格式是特定于正在调试的语言 （和调试主机）。 对于 C /C++，签名字符串等效于 NatVis 类型规范。 签名字符串，即是类型名称的通配符 (指定为 *) 允许使用模板自变量。 
 
 [CreateTypeSignatureForModuleRange](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-createtypesignatureformodulerange)
 
@@ -342,7 +342,7 @@ FindModuleByLocation 方法将仔细查看给定的主机上下文并确定哪�
 
 [GetMostDerivedObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbols-getmostderivedobject)
 
-GetMostDerivedObject 将使用调试器的类型系统以确定其静态类型中的对象的运行时类型。 此方法将仅使用符号化信息和试探法可用在类型系统层上才能执行此分析。 此类信息可能包括 c + + RTTI （运行时类型信息） 或分析的虚函数表的对象的形状。 它不包括等 IModelObject 首选的运行时类型的概念。 如果分析找不到运行时类型，或找不到运行时类型传递给该方法的静态类型不同，可能会传递的输入的位置和类型。该方法不会出于这些原因失败。 
+GetMostDerivedObject 将使用调试器的类型系统以确定其静态类型中的对象的运行时类型。 此方法将仅使用符号化信息和试探法可用在类型系统层上才能执行此分析。 此类信息可能包括C++（运行时类型信息） 的 RTTI 或形状的对象的虚函数表的分析。 它不包括等 IModelObject 首选的运行时类型的概念。 如果分析找不到运行时类型，或找不到运行时类型传递给该方法的静态类型不同，可能会传递的输入的位置和类型。该方法不会出于这些原因失败。 
 
 
 
@@ -390,7 +390,7 @@ GetContext 方法返回的符号是有效的上下文。 而这将代表等存�
 
 [EnumerateChildren](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostsymbol-enumeratechildren)
 
-EnumerateChildren 方法返回的将枚举给定符号的所有子级的枚举器。 对于 c + + 类型，例如，基类、 字段中，成员函数和 like 是类型符号的所有被视为的子级。 
+EnumerateChildren 方法返回的将枚举给定符号的所有子级的枚举器。 有关C++类型，例如，基本类、 字段、 成员函数和 like 是所有被视为的子级的类型符号。 
 
 
 **模块接口：IDebugHostModule**
@@ -508,7 +508,7 @@ GetTypeKind 方法将返回哪种符号引用的类型 （指针，数组中，�
 
 [GetSize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getsize)
 
-GetSize 方法返回类型的大小 （就像一个已经做 sizeof(type) c + + 中的）。 
+GetSize 方法返回类型的大小 (像一个最初执行 sizeof(type) C++)。 
 
 [GetBaseType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getbasetype)
 
@@ -639,7 +639,7 @@ GetFunctionReturnType 方法将返回该函数的返回类型。
 
 [GetFunctionParameterTypeCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctionparametertypecount)
 
-GetFunctionParameterTypeCount 方法将返回该函数采用的参数数目。 请注意 C/c + + 省略号基于变量自变量标记不会被视为此计数中。 必须通过 GetFunctionVarArgsKind 方法来检测此类存在。 这将仅包括前省略号参数。 
+GetFunctionParameterTypeCount 方法将返回该函数采用的参数数目。 请注意，C /C++此计数中不考虑基于省略号变量自变量标记。 必须通过 GetFunctionVarArgsKind 方法来检测此类存在。 这将仅包括前省略号参数。 
 
 [GetFunctionParameterTypeAt](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughosttype-getfunctionparametertypeat)
 
@@ -900,14 +900,14 @@ MoreSpecific | 一个签名或类型是比其他更具体。 通常情况下，�
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)

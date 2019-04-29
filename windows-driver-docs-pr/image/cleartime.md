@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e746ab7ee87f023eeb3ad4c3b42308c776cb8680
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373227"
 ---
 # <a name="cleartime-element"></a>ClearTime 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56540424"
 </wscn:ClearTime>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -72,7 +72,7 @@ ms.locfileid: "56540424"
 
 在指定的时间取决于扫描程序的内部时钟。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ConditionHistoryEntry**](conditionhistoryentry.md)

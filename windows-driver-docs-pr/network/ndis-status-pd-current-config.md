@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_PD_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4151d69824add438e64b1f853479d5cb6da00f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362887"
 ---
 # <a name="ndisstatuspdcurrentconfig"></a>NDIS\_状态\_PD\_当前\_配置
 
@@ -48,13 +48,13 @@ ms.locfileid: "56524781"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)

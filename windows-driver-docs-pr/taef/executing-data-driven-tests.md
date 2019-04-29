@@ -5,11 +5,11 @@ ms.assetid: E8E7A66A-6E39-442d-A195-AE4633B817FE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 745cc31388aa42be04e880c8e21e483d49b5a545
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378094"
 ---
 # <a name="span-idtaefexecutingdata-driventestsspanexecuting-data-driven-tests"></a><span id="taef.executing_data-driven_tests"></span>执行数据驱动的测试
 

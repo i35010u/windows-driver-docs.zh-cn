@@ -1,19 +1,19 @@
 ---
-title: 创建你自己的提供程序模块
-description: 创建你自己的提供程序模块
+title: 创建自己的提供程序模块
+description: 创建自己的提供程序模块
 ms.assetid: 4282d375-bcf0-478f-bb2f-a43dc50b09e3
 keywords:
 - 版本控制系统，提供程序的模块
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a0ce3602ab4c46980e6892efdd539395a45059d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374961"
 ---
-# <a name="creating-your-own-provider-module"></a>创建你自己的提供程序模块
+# <a name="creating-your-own-provider-module"></a>创建自己的提供程序模块
 
 
 一般情况下，若要创建你自己的提供程序模块，必须实现以下接口集。

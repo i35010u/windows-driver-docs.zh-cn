@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c96538916fe15fe76ebb5840f2cf9d950b6f7c1
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371759"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>Bug 检查 0xD4：SYSTEM\_SCAN\_AT\_RAISED\_IRQL\_CAUGHT\_IMPROPER\_DRIVER\_UNLOAD
 

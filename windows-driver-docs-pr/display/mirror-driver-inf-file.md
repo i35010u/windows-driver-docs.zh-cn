@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf6452d7c973296727d4ea8958037ee620d77e2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371641"
 ---
 # <a name="mirror-driver-inf-file"></a>镜像驱动程序 INF 文件
 

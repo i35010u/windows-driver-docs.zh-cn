@@ -8,11 +8,11 @@ ms.date: 03/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: ac43797904bb5bce69b5bd28b21f0a181b55928c
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367609"
 ---
 # <a name="mb-uicc-application-and-file-system-access"></a>MB UICC 应用程序和文件系统访问权限
 
@@ -203,7 +203,7 @@ MBIM_COMMAND_MSG InformationBuffer 作为 MBIM_UICC_FILE_PATH 结构包含 EF �
 
 上述 MBIM_UICC_FILE_STATUS 结构中使用 MBIM_UICC_FILE_TYPE 枚举。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMUiccFileTypeUnknown | 0 | 文件类型未知。 |
 | MBIMUiccFileTypeWorkingEf | 1 | 使用 EF。 |
@@ -226,7 +226,7 @@ MBIM_COMMAND_MSG InformationBuffer 作为 MBIM_UICC_FILE_PATH 结构包含 EF �
 
 上述 MBIM_UICC_FILE_STATUS 结构中使用 MBIM_PIN_TYPE_EX 枚举。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMPinTypeNone | 0 | 没有 PIN 正在等待输入。 |
 | MBIMPinTypeCustom | 1 | PIN 类型是自定义类型并无其他固定类型的此枚举中列出。 |

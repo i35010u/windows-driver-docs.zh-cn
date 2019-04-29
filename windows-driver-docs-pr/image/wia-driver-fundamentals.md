@@ -5,11 +5,11 @@ ms.assetid: 374388eb-ca2e-47da-aa0a-d90fdd00c665
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3229f4da9a99fec046271e9d65262bac39f24ee7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366863"
 ---
 # <a name="wia-driver-fundamentals"></a>WIA 驱动程序基础知识
 

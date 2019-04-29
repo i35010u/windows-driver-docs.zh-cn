@@ -1,19 +1,19 @@
 ---
-title: 获取 RPC 单元格的信息
-description: 获取 RPC 单元格的信息
+title: 获取 RPC 单元信息
+description: 获取 RPC 单元信息
 ms.assetid: 7dd5e77e-914d-4b00-90c5-92705eebf436
 keywords:
 - RPC 单元信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fb6b3e72b260371fc342fa6e6738b3b2d8301f2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380235"
 ---
-# <a name="get-rpc-cell-information"></a>获取 RPC 单元格的信息
+# <a name="get-rpc-cell-information"></a>获取 RPC 单元信息
 
 
 ## <span id="ddk_get_rpc_cell_information_dbg"></span><span id="DDK_GET_RPC_CELL_INFORMATION_DBG"></span>

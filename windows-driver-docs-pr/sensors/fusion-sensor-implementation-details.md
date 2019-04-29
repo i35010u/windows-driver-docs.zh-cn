@@ -5,11 +5,11 @@ ms.assetid: B53D76AC-127C-4B5A-B908-A647D2B3F164
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d4cb172bf7ab859f69c9f752f655a7d2ec1617f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366541"
 ---
 # <a name="fusion-sensor-implementation-details"></a>合成传感器实现详细信息
 

@@ -1,17 +1,17 @@
 ---
-title: Static Driver Verifier 错误代码
+title: 静态驱动程序验证程序错误代码
 description: 下表列出了错误代码的 Static Driver Verifier 可能会返回，并可能的其中建议解决问题的方法。
 ms.assetid: AB644106-EB4A-448F-9DA3-D208A38B31F5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: df0e5232033360497d000913ee13e4313c4bfb12
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369733"
 ---
-# <a name="static-driver-verifier-error-codes"></a>Static Driver Verifier 错误代码
+# <a name="static-driver-verifier-error-codes"></a>静态驱动程序验证程序错误代码
 
 
 下表列出了 Static Driver Verifier 从 GUI，运行时间和位置可能，建议用于解决问题的方法可能返回的错误代码。  从命令行运行时不会出现这些代码。

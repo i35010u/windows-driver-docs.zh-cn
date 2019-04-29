@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a25facb7c24f75e26e1c4cb028fe4debb7653b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370553"
 ---
 # <a name="protocol-driver-reset-operations"></a>协议驱动程序重置操作
 

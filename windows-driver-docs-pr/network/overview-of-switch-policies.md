@@ -5,11 +5,11 @@ ms.assetid: DB9368CE-96D4-48C9-AE18-601EE4A09001
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de8a6e03b8b3b9607ec440675ac56e009267d4ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372851"
 ---
 # <a name="overview-of-switch-policies"></a>交换机策略概述
 

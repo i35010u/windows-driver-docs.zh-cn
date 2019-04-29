@@ -5,11 +5,11 @@ ms.assetid: 6B94CAF1-D998-4EAF-8ABB-80A21193B50F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8906f30a46eff14f77d13550247ab845328a007
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379995"
 ---
 # <a name="discovery-process"></a>发现过程
 
@@ -73,7 +73,7 @@ ms.locfileid: "56544336"
 
 下表列出了由发现过程所使用的文件。
 
-| 命令 | 指令 (INS) 值 |
+| Command | 指令 (INS) 值 |
 |---------|-------------------------|
 | MF      | 0x3F00                  |
 | EF.ATR  | 0x2F01                  |
@@ -82,7 +82,7 @@ ms.locfileid: "56544336"
 
 下表列出了不同的发现进程使用的命令。
 
-| 命令      | 指令 (INS) 值 |
+| Command      | 指令 (INS) 值 |
 |--------------|-------------------------|
 | 选择       | 0xA4                    |
 | 获取数据     | 0xCA                    |

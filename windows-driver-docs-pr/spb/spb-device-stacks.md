@@ -1,17 +1,17 @@
 ---
-title: 存储设备堆栈
+title: SPB 设备堆栈
 description: Acpi.sys 存储上创建的是 PDO 外围设备。
 ms.assetid: 21AB67A2-AA3C-4998-A532-78D6F6F76244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c17f477138ca7c750134f133f6fe8e37688258
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373387"
 ---
-# <a name="spb-device-stacks"></a>存储设备堆栈
+# <a name="spb-device-stacks"></a>SPB 设备堆栈
 
 
 Windows 驱动程序模型完全分离开来控制外围设备 （例如，温度传感器） 的驱动程序组件的总线上管理来回传输数据和控制信息的总线控制器的驱动程序组件外围设备。 这种分离使连接到外围设备的硬件供应商[简单的外围总线](https://msdn.microsoft.com/library/windows/hardware/hh450903)（存储） 编写各种总线控制器、 总线类型和硬件平台的控制设备的驱动程序。 同样，存储控制器的硬件供应商可以为此可以启用连接到各种外围设备的控制器编写一个驱动程序。

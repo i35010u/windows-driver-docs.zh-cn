@@ -5,11 +5,11 @@ ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7b63e9fccf0ae0c00c01f1c2fe5cecdfbe429f
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369447"
 ---
 # <a name="porting-code-from-setupapi-to-cfgmgr32"></a>将代码从 SetupApi 移植到 CfgMgr32
 

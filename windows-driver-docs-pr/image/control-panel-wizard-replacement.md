@@ -5,11 +5,11 @@ ms.assetid: d4a418b6-a9f9-41c4-99a9-20992abe80e9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2846a1ad9d6d07224ef53210c52947557eead4b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368559"
 ---
 # <a name="control-panel-wizard-replacement"></a>控件面板向导替换
 

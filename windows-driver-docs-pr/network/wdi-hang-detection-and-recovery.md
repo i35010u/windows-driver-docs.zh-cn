@@ -5,11 +5,11 @@ ms.assetid: 89133252-C08C-4ADC-A5EE-E46A91909337
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbce550fe7744e921d732085f37a0a7abe5fcaa7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367527"
 ---
 # <a name="hang-detection-and-recovery"></a>挂起检测和恢复
 
@@ -27,7 +27,7 @@ M3 M4 任务挂起超时为 30 秒，或可配置基于任务。
 
 这些是为命令的最大上限并处理所花时间超过此时间被视为错误。 应该就是，在操作 （无 CPU 压力） 正常模式下，大多数任务和属性完成显著低于上面指定的超时。 与每个任务/属性指定这些值。 适配器应确保它不具有将导致超过这些执行时间的等待。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 [UE 挂起检测和恢复流](wdi-ue-hang-detection-and-recovery-flow.md)
 [UE 挂起检测： 步骤 1-14](wdi-ue-hang-detection--step-1-to-step-14.md)

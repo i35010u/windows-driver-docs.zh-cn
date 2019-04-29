@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 15132e04dd58c0c7de3a2329b04dc31240f8ee7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366531"
 ---
 # <a name="ndisstatuswdiindicationapassociationrequestreceived"></a>NDIS\_STATUS\_WDI\_INDICATION\_AP\_ASSOCIATION\_REQUEST\_RECEIVED
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_AP\_关联\_请求\_接收时间以指示已 Wi-fi 关联请求帧接收到的操作 Wi-Fi Direct 组所有者。 主机可能会发出[OID\_WDI\_任务\_发送\_AP\_关联\_响应](oid-wdi-task-send-ap-association-response.md)此请求。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 
@@ -51,7 +51,7 @@ ms.locfileid: "56541809"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

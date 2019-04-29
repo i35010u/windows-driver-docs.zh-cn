@@ -1,17 +1,17 @@
 ---
-title: 添加和删除唤醒 LAN 模式
-description: 添加和删除唤醒 LAN 模式
+title: 添加和删除 LAN 唤醒模式
+description: 添加和删除 LAN 唤醒模式
 ms.assetid: 87e16ba6-0974-4921-b846-97d105e5dd30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee69a94fce480a52fe0538dc37cf6ff9b0d13479
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367765"
 ---
-# <a name="adding-and-deleting-wake-on-lan-patterns"></a>添加和删除唤醒 LAN 模式
+# <a name="adding-and-deleting-wake-on-lan-patterns"></a>添加和删除 LAN 唤醒模式
 
 
 

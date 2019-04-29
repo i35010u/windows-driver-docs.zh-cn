@@ -1,6 +1,6 @@
 ---
-title: 压缩的纹理图面
-description: 压缩的纹理图面
+title: 压缩纹理图面
+description: 压缩纹理图面
 ms.assetid: 72096a2a-5a4b-4800-bd99-6d403c54889d
 keywords:
 - 绘制压缩纹理 WDK DirectDraw 有关压缩的纹理图面
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 337c54f5856085967ce86b6b567369a881eba7d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362157"
 ---
-# <a name="compressed-texture-surfaces"></a>压缩的纹理图面
+# <a name="compressed-texture-surfaces"></a>压缩纹理图面
 
 
 ## <span id="ddk_compressed_texture_surfaces_gg"></span><span id="DDK_COMPRESSED_TEXTURE_SURFACES_GG"></span>
@@ -53,7 +53,7 @@ ms.locfileid: "56541208"
 <tr class="odd">
 <td align="left"><p>DXT1</p></td>
 <td align="left"><p>不透明 / 一位 alpha</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DXT2</p></td>

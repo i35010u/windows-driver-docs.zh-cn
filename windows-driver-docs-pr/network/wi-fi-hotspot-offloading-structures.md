@@ -1,17 +1,17 @@
 ---
-title: 卸载结构的 Wi-fi 热点
-description: 卸载结构的 Wi-fi 热点
+title: Wi-Fi 热点卸载结构
+description: Wi-Fi 热点卸载结构
 ms.assetid: 7ec80296-1ac9-48df-a250-6fd856c57901
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fe098d8f5a42877a01068d91b4fc5d7c39940b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378727"
 ---
-# <a name="wi-fi-hotspot-offloading-structures"></a>卸载结构的 Wi-fi 热点
+# <a name="wi-fi-hotspot-offloading-structures"></a>Wi-Fi 热点卸载结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 

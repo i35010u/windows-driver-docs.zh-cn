@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b355f108a24f36aebfd85dfd466411359a4a5848
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378636"
 ---
 # <a name="nfp-device-driver-requirements"></a>NFP 设备驱动程序要求
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6445fd83745dfaa98e2b52ab5f3692da18fbe87d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382046"
 ---
 # <a name="rpc-state-information-internals"></a>RPC 状态信息的内部结构
 

@@ -1,6 +1,6 @@
 ---
-title: 等待/唤醒操作的概述
-description: 等待/唤醒操作的概述
+title: 等待/唤醒操作概述
+description: 等待/唤醒操作概述
 ms.assetid: 63453f7e-f656-4efc-bb44-9e2cb0232270
 keywords:
 - 电源管理 WDK 内核，唤醒功能
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c57b4c8047d9747a476e0fd8d34bdfb2757b42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360217"
 ---
-# <a name="overview-of-waitwake-operation"></a>等待/唤醒操作的概述
+# <a name="overview-of-waitwake-operation"></a>等待/唤醒操作概述
 
 
 

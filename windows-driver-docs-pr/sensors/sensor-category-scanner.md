@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: eb25e6437e2c5408b77880a108d13f29699cb48c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370428"
 ---
 # <a name="sensorcategoryscanner"></a>传感器\_类别\_扫描程序
 
@@ -105,11 +105,11 @@ ms.locfileid: "56547662"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Sensors.h</td>
 </tr>
 </tbody>

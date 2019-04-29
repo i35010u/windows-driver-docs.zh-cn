@@ -1,6 +1,6 @@
 ---
-title: 对于 SAN 复制套接字处理
-description: 对于 SAN 复制套接字处理
+title: 复制 SAN 的套接字句柄
+description: 复制 SAN 的套接字句柄
 ms.assetid: d8e8cb6d-fcdb-4121-9a44-a2bc884ab620
 keywords:
 - Windows 套接字直接 WDK，套接字句柄
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bafb3c2242cbb22fe1508399400f1c7a6fe50f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372642"
 ---
-# <a name="duplicating-socket-handles-for-a-san"></a>对于 SAN 复制套接字处理
+# <a name="duplicating-socket-handles-for-a-san"></a>复制 SAN 的套接字句柄
 
 
 

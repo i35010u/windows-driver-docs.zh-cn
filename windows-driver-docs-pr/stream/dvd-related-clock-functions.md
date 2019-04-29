@@ -1,6 +1,6 @@
 ---
-title: DVD 相关时钟函数
-description: DVD 相关时钟函数
+title: 与 DVD 相关的时钟函数
+description: 与 DVD 相关的时钟函数
 ms.assetid: 495f25dc-cd79-4f7f-acbc-b8b271269fb3
 keywords:
 - DVD 解码器微型驱动程序 WDK，主时钟
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f11e19af62d483e943fae8ef1f6d41a91e09b159
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363827"
 ---
-# <a name="dvd-related-clock-functions"></a>DVD 相关时钟函数
+# <a name="dvd-related-clock-functions"></a>与 DVD 相关的时钟函数
 
 
 

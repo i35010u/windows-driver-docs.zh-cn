@@ -1,17 +1,17 @@
 ---
-title: 确定接收的筛选功能
-description: 确定接收的筛选功能
+title: 确定接收筛选功能
+description: 确定接收筛选功能
 ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6281a8616ad8579220460d4c22404cb5519d3fd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364218"
 ---
-# <a name="determining-receive-filtering-capabilities"></a>确定接收的筛选功能
+# <a name="determining-receive-filtering-capabilities"></a>确定接收筛选功能
 
 
 本主题介绍如何 NDIS 和基础驱动程序确定支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器的接收筛选功能。 本主题包含下列信息：

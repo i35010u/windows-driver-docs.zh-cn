@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a9aa4b8b9235a9522a1d4e985ef7a5d5176dfda
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374054"
 ---
 # <a name="differences-between-uvc-10-and-uvc-11"></a>UVC 1.0 与 UVC 1.1 之间的差异
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 72033a9acd362cc10e77814e659e3b8ef8a92d8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362895"
 ---
 # <a name="wditlvpmprotocoloffload80211rsnrekey"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY
 
@@ -54,7 +54,7 @@ WDI\_TLV\_PM\_协议\_卸载\_80211RSN\_重新生成密钥是包含 RSN 重新�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

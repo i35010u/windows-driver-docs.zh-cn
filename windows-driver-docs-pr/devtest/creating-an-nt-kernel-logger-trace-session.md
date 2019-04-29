@@ -1,6 +1,6 @@
 ---
-title: NT 内核记录器跟踪会话的创建
-description: NT 内核记录器跟踪会话的创建
+title: 创建 NT 内核记录器跟踪会话
+description: 创建 NT 内核记录器跟踪会话
 ms.assetid: 606156b9-8ad9-4510-9929-4f0e3b7a3134
 keywords:
 - 跟踪会话 WDK，NT 内核记录器
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 977319c35e40e713e6cbe02cc4b569d1aeee0369
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380971"
 ---
-# <a name="creating-an-nt-kernel-logger-trace-session"></a>NT 内核记录器跟踪会话的创建
+# <a name="creating-an-nt-kernel-logger-trace-session"></a>创建 NT 内核记录器跟踪会话
 
 ## <span id="ddk_create_a_real_time_nt_kernel_logger_trace_session_tools"></span><span id="DDK_CREATE_A_REAL_TIME_NT_KERNEL_LOGGER_TRACE_SESSION_TOOLS"></span>
 
@@ -43,7 +43,7 @@ ms.locfileid: "56543719"
 
 9.  [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)，如果所需的。
 
-10. 单击“完成” 。
+10. 单击 **“完成”**。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

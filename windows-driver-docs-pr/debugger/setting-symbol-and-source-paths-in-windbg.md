@@ -5,11 +5,11 @@ ms.assetid: 8EA2509E-0B47-4D28-B934-F1F58F5CFC45
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c945c4d6df1ac25b7be7aaeca7a77d4d25b2c97b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381945"
 ---
 # <a name="setting-symbol-and-executable-image-paths-in-windbg"></a>在 WinDbg 中设置符号和可执行映像路径
 

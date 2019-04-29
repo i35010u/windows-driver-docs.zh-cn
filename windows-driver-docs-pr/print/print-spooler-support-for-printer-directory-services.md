@@ -1,6 +1,6 @@
 ---
-title: 打印后台处理程序支持的打印机目录服务
-description: 打印后台处理程序支持的打印机目录服务
+title: 打印机目录服务的打印后台处理程序支持
+description: 打印机目录服务的打印后台处理程序支持
 ms.assetid: 23cd73a5-8628-4471-a6c6-e056536fcc75
 keywords:
 - 目录服务 WDK 打印机
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 170dc2f1756fbea5763d073cd001bed8bc3013e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372077"
 ---
-# <a name="print-spooler-support-for-printer-directory-services"></a>打印后台处理程序支持的打印机目录服务
+# <a name="print-spooler-support-for-printer-directory-services"></a>打印机目录服务的打印后台处理程序支持
 
 
 

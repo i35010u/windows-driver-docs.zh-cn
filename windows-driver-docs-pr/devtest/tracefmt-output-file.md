@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98132e51949b9c29b8affce8bc458fb4db42a04d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373107"
 ---
 # <a name="tracefmt-output-file"></a>Tracefmt 输出文件
 

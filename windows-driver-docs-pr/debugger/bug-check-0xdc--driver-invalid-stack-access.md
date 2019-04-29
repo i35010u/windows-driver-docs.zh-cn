@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4de119c176eb596b8cb46ee498a952e4b335b2
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371752"
 ---
 # <a name="bug-check-0xdc-driverinvalidstackaccess"></a>Bug 检查 0xDC：驱动程序\_无效\_堆栈\_访问
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_DEVICE_SERVICE_PARAMS_GUID 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a07ccc43724f11b6d29c2c7bb29f8bc313f2f0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365371"
 ---
 # <a name="wditlvdeviceserviceparamsguid"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_GUID
 

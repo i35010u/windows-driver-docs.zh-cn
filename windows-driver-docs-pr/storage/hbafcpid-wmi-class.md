@@ -5,11 +5,11 @@ ms.assetid: 6b0d0f79-a7a8-4341-955b-2c3068936a1d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a11b0843b31e1d804c6e9ab47a0d26da778ede40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383096"
 ---
 # <a name="hbafcpid-wmi-class"></a>HBAFCPID WMI 类
 

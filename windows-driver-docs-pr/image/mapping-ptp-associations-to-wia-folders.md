@@ -5,11 +5,11 @@ ms.assetid: 81de26fd-1f93-4018-a628-ad0b0d7468ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f6a5f9d49f3f00532de84626825da128ff4033a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380393"
 ---
 # <a name="mapping-ptp-associations-to-wia-folders"></a>将 PTP 关联映射到 WIA 文件夹
 

@@ -1,17 +1,17 @@
 ---
-title: 读取类型化的数据 （函数索引 29）
+title: 读取类型化数据（功能索引 29）
 description: 此函数读取类型化的块数据区域内的 32 字节块。
 ms.assetid: 67B13EBA-F751-4E85-9143-1C331C405B85
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: afad7c003f75a3bd33c4e5c37f4f48e7403c1ebb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366359"
 ---
-# <a name="read-typed-data-function-index-29"></a>读取类型化的数据 （函数索引 29）
+# <a name="read-typed-data-function-index-29"></a>读取类型化数据（功能索引 29）
 
 
 此函数读取类型化的块数据区域内的 32 字节块。 此功能，需要使用特定于供应商的寄存器的方案。 它还用于调试。
@@ -107,7 +107,7 @@ ms.locfileid: "56520958"
 
 平台应使用类型化块数据寄存器来实现此函数。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [写入类型化的数据 （函数索引 30）](write-typed-data--function-index-30-.md)

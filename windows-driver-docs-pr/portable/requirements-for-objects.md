@@ -1,14 +1,14 @@
 ---
-Description: Requirements for Objects
+Description: 对于对象的要求
 title: 对于对象的要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ae8f6f73b76d70aac555b1d197dfa6f3dbec8f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376226"
 ---
 # <a name="requirements-for-objects"></a>对于对象的要求
 
@@ -151,7 +151,7 @@ WPD 定义以下内容类型 （作为 GUID 值）。 供应商可以通过提�
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)

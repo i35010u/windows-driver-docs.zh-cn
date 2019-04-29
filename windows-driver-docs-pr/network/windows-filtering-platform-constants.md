@@ -7,17 +7,17 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be3a90276b772aa9130e2ec567d41e76d6cd6399
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378713"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows 筛选平台常量
 
 本部分介绍在 Windows 筛选平台标注驱动程序中使用的常量。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 [内置标注标识符](built-in-callout-identifiers.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 接收方缩放的支持
-description: 接收方缩放的支持
+title: 接收端缩放支持
+description: 接收端缩放支持
 ms.assetid: db0d8178-ae6c-4513-9c8c-f10615d1bbce
 keywords:
 - 可缩放网络 WDK
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7dfbc32f26760f9febe475b0ecd52067a122e9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372218"
 ---
-# <a name="receive-side-scaling-support"></a>接收方缩放的支持
+# <a name="receive-side-scaling-support"></a>接收端缩放支持
 
 
 

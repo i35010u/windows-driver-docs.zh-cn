@@ -1,5 +1,5 @@
 ---
-title: CTRL + A （切换波特率）
+title: CTRL+A（切换波特率）
 description: CTRL + A 键用于切换在内核调试连接中使用的波特率。
 ms.assetid: 77a95ca1-073c-480a-abda-f484adbc1d23
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d31a1e41d2efe29af5f2feb2f73ad88605250b9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375418"
 ---
-# <a name="ctrla-toggle-baud-rate"></a>CTRL + A （切换波特率）
+# <a name="ctrla-toggle-baud-rate"></a>CTRL+A（切换波特率）
 
 
 CTRL + A 键用于切换在内核调试连接中使用的波特率。

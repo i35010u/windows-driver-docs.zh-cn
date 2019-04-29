@@ -1,6 +1,6 @@
 ---
-title: 在开发和测试期间安装未签名的驱动程序
-description: 在开发和测试期间安装未签名的驱动程序
+title: 在开发和测试期间安装未签名驱动程序
+description: 在开发和测试期间安装未签名驱动程序
 ms.assetid: b7b08d5a-40cf-498f-8645-6b02d803f62f
 keywords:
 - 驱动程序签名 WDK，未签名驱动程序
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03d34534f308fc97938ac456eb8948f95ab250e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358801"
 ---
-# <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名的驱动程序
+# <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
 
 默认情况下，64 位版本的 Windows Vista 和更高版本的 Windows 将加载的内核模式驱动程序仅当内核可以验证驱动程序签名。 但是，在早期驱动程序开发期间以及非自动测试到已禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用加载时强制实施有效的驱动程序签名。 但是，若要完全自动执行测试的情况下插即用 (PnP) 安装的驱动程序[编录文件](catalog-files.md)必须签名的驱动程序。 签名驱动程序是必需的因为 Windows Vista 和更高版本的 Windows 显示驱动程序签名需要系统管理员进行授权的驱动程序安装的未签名驱动程序的对话框中，这可能会导致无需任何用户从安装驱动程序以及使用该设备的必要权限。 不能在 Windows Vista 和更高版本的 Windows 上禁用此即插即用驱动程序安装行为。

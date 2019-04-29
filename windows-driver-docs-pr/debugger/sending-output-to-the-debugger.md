@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f36b17bc543213ccb01cb8f985d4be42e8086b5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381980"
 ---
 # <a name="sending-output-to-the-debugger"></a>将输出发送到调试器
 

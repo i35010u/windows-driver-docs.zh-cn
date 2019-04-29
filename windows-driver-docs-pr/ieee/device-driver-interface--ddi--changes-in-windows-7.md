@@ -5,11 +5,11 @@ ms.assetid: 5473C6AC-284C-41B1-AA67-75696BE96C24
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 890f70f01b1d2950d256b67585cd14d00f376938
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376691"
 ---
 # <a name="device-driver-interface-ddi-changes-in-windows-7"></a>Windows 7 中的设备驱动程序接口 (DDI) 更改
 
@@ -60,7 +60,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 下表介绍每种新的受支持的速度的最大异步负载大小。
 
-| Flag                       | 值 | 描述 |
+| Flag                       | ReplTest1 | 描述 |
 |----------------------------|-------|-------------|
 | 异步\_有效负载\_800\_速率  | 4096  | 800 Mb/s    |
 | 异步\_有效负载\_1600年\_速率 | 4096  | 160 Mb/s    |
@@ -68,7 +68,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 下表介绍每种新的受支持的速度的速度标志。
 
-| Flag               | ReplTest1 | 描述 |
+| Flag               | 值 | 描述 |
 |--------------------|-------|-------------|
 | 速度\_标志\_800  | 0x08  | 800 Mb/s    |
 | SPEED\_FLAGS\_1600 | 0x10  | 160 Mb/s    |
@@ -76,7 +76,7 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 
 下表介绍每种新的受支持的速度的速度代码值。
 
-| Flag              | 值 | 描述 |
+| Flag              | ReplTest1 | 描述 |
 |-------------------|-------|-------------|
 | SCODE\_800\_RATE  | 3     | 800 Mb/s    |
 | SCODE\_1600\_RATE | 4     | 160 Mb/s    |

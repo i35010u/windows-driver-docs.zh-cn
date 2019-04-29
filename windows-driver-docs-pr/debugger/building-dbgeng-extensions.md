@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9ee79cf61232803594e082f269360753a24d63
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58845529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373978"
 ---
 # <a name="building-dbgeng-extensions"></a>生成 DbgEng 扩展
 

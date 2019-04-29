@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc4226ba0cc1db8c5e69397a47b2e082d843aa0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365739"
 ---
 # <a name="network-driver-programming-considerations"></a>网络驱动程序编程注意事项
 

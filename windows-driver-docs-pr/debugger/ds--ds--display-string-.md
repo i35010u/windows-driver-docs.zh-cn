@@ -1,5 +1,5 @@
 ---
-title: ds，dS （显示字符串）
+title: ds、dS（显示字符串）
 description: Ds 和 dS 命令显示字符串、 ANSI_STRING 或 UNICODE_STRING 结构。
 ms.assetid: cb05e89c-6c83-476b-a577-a6aeefd8cdd6
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: a03159b71e8194b825ffb1df2f40c32ba20d8eaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377762"
 ---
-# <a name="ds-ds-display-string"></a>ds，dS （显示字符串）
+# <a name="ds-ds-display-string"></a>ds、dS（显示字符串）
 
 
 **Ds**并**dS**命令将显示一个字符串，ANSI\_字符串或 UNICODE\_字符串*结构*。 

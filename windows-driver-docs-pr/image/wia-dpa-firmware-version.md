@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c45d4def779bb7aa475b870172113ab9575e7696
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382307"
 ---
 # <a name="wiadpafirmwareversion"></a>WIA\_DPA\_固件\_版本
 
@@ -50,7 +50,7 @@ WIA\_DPA\_固件\_属性包含设备固件版本的版本。 微型驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

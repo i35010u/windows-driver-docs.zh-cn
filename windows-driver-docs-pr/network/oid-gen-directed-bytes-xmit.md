@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_BYTES_XMIT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a20994beb849636491f4fe02725c0866f6ed8c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368927"
 ---
 # <a name="oidgendirectedbytesxmit"></a>OID\_GEN\_定向\_字节\_XMIT
 

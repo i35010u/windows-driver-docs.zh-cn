@@ -1,5 +1,5 @@
 ---
-title: 常见 WSD 扫描服务操作的错误代码
+title: 常见 WSD 扫描服务操作错误代码
 description: 本主题列出了是普遍适用于所有 WSD 扫描服务操作的错误代码。
 ms.assetid: 138c29ff-5b2f-4145-95b0-4a9e8489bb37
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f6c8c42831599b340ca4f26a96ac9777fc3dfb9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373219"
 ---
-# <a name="common-wsd-scan-service-operation-error-codes"></a>常见 WSD 扫描服务操作的错误代码
+# <a name="common-wsd-scan-service-operation-error-codes"></a>常见 WSD 扫描服务操作错误代码
 
 
 本主题列出了是普遍适用于所有 WSD 扫描服务操作的错误代码。 如果操作会导致多个错误，扫描服务应返回最具体的错误。

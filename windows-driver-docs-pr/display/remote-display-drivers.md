@@ -1,17 +1,17 @@
 ---
-title: 远程显示器驱动程序
+title: 远程显示驱动程序
 description: 远程显示器驱动程序基于 Windows 2000 镜像驱动程序模型，用于在远程会话中呈现到桌面。
 ms.assetid: 249528D3-B5F1-41D8-86BF-B9DC623FB480
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bd8ff555fc190468902e2b35c285e64eaf91578
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378437"
 ---
-# <a name="remote-display-drivers"></a>远程显示器驱动程序
+# <a name="remote-display-drivers"></a>远程显示驱动程序
 
 
 一个*远程显示器驱动程序*基于 Windows 2000[镜像驱动程序](mirror-drivers.md)模型和用于呈现到桌面的远程会话中。

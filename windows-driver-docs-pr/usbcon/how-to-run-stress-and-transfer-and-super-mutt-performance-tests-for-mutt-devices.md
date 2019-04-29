@@ -1,16 +1,16 @@
 ---
-Description: How to run stress and transfer and Super MUTT performance tests.
-title: 如何运行压力和传输性能测试的 MUTT 设备
+Description: 如何运行压力和传输和超级 MUTT 性能测试。
+title: 如何对 MUTT 设备运行压力和传输性能测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d254c6e79297fa8ede9d4d7718afda88e3f03296
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366040"
 ---
-# <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>如何运行压力和传输性能测试的 MUTT 设备
+# <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>如何对 MUTT 设备运行压力和传输性能测试
 
 
 了解如何运行压力和传输和超级 MUTT 性能测试。

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_WFD_ASSOCIATION_STATUS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 658ded9e9d7d508fc23c6b0b8c1398f5d85e765d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381293"
 ---
 # <a name="wditlvwfdassociationstatus"></a>WDI\_TLV\_WFD\_关联\_状态
 
@@ -55,7 +55,7 @@ WDI\_TLV\_WFD\_关联\_状态是 TLV，其中包含要关联请求被拒绝时�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efaac3e83ff8d8a8a5b05100282260c8299a778
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367007"
 ---
 # <a name="wiadpsshowpreviewcontrol"></a>WIA\_DPS\_显示\_预览\_控件
 
@@ -77,17 +77,17 @@ WIA\_DPS\_显示\_预览\_控件属性可帮助控制无法预览的设备。 �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>使用 Microsoft Windows XP 可用。 适用于 Windows Vista 和更高版本，使用 WIA_IPS_SHOW_PREVIEW_CONTROL 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA\_IPS\_显示\_预览\_控件**](wia-ips-show-preview-control.md)

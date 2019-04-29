@@ -1,19 +1,19 @@
 ---
-title: 普通表单的宏块控制命令结构
-description: 普通表单的宏块控制命令结构
+title: 宏块控制命令结构的通用格式
+description: 宏块控制命令结构的通用格式
 ms.assetid: 44009238-0a8e-4018-9b50-06729640f5e4
 keywords:
 - 宏块 WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cb8d6a9bd201341c4d06c19ebdbf2ae65fc3af6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373412"
 ---
-# <a name="generic-form-of-macroblock-control-command-structures"></a>普通表单的宏块控制命令结构
+# <a name="generic-form-of-macroblock-control-command-structures"></a>宏块控制命令结构的通用格式
 
 
 ## <span id="ddk_generic_form_of_macroblock_control_command_structures_gg"></span><span id="DDK_GENERIC_FORM_OF_MACROBLOCK_CONTROL_COMMAND_STRUCTURES_GG"></span>

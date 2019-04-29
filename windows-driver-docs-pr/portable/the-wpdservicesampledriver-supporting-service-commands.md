@@ -1,14 +1,14 @@
 ---
-Description: Supporting the Service Commands
+Description: 支持服务命令
 title: 支持服务命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fba5e4e3e40acfd1fb9a82ea930678f248972c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370698"
 ---
 # <a name="supporting-the-service-commands"></a>支持服务命令
 
@@ -26,7 +26,7 @@ WPD 发出服务命令，当应用程序调用 WPD API 支持的服务接口中�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">说明/处理程序</th>
 </tr>
 </thead>
@@ -72,7 +72,7 @@ WPD 应用程序使用的方法中找到**IPortableDeviceServiceCapabilities**�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">说明/处理程序</th>
 </tr>
 </thead>
@@ -188,7 +188,7 @@ WPD API 中，当应用程序调用这两种方法之一时，反过来，发出
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

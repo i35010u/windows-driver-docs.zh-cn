@@ -5,11 +5,11 @@ ms.assetid: 164eeab3-1e4a-46de-99db-28b8f63593a4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 25de71792686b2927acc5253190bd144db5109d3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380935"
 ---
 # <a name="wia-functions-for-debugging"></a>用于调试的 WIA 函数
 

@@ -5,11 +5,11 @@ ms.assetid: 4555ab3c-5bfa-458e-bb22-3fdaedbf3bca
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66f5416abf3a2de4630731874af7e88db3a209be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383520"
 ---
 # <a name="language-specification-2"></a>语言规范 2
 

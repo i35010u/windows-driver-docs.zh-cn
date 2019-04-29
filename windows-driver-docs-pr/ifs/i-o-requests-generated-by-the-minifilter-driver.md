@@ -1,6 +1,6 @@
 ---
-title: 生成由微筛选器驱动程序的 I/O 请求
-description: 生成由微筛选器驱动程序的 I/O 请求
+title: 由微筛选器驱动程序生成的 I/O 请求
+description: 由微筛选器驱动程序生成的 I/O 请求
 ms.assetid: cf06dcb9-58e2-4341-8229-8f172f37c176
 keywords:
 - 筛选器管理器 WDK 文件系统微筛选器，生成的驱动程序的 I/O 请求
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cee420f417f842a34155f79361d96329b68c03a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379059"
 ---
-# <a name="io-requests-generated-by-the-minifilter-driver"></a>生成由微筛选器驱动程序的 I/O 请求
+# <a name="io-requests-generated-by-the-minifilter-driver"></a>由微筛选器驱动程序生成的 I/O 请求
 
 
 微筛选器驱动程序可以生成并发送基于 IRP 的 I/O 请求，从一个微筛选器驱动程序自己的实例或另一个卷上的当前卷。 仅通过微筛选器驱动程序实例和旧的筛选器驱动程序附加在下方指定的实例，以及文件系统，则出现生成的 I/O。 这解决了与旧的筛选器驱动程序模型中的 I/O 请求生成的旧的筛选器驱动程序必须经过从最顶层的驱动程序开始在整个文件系统堆栈中的递归 I/O 相关的许多问题。

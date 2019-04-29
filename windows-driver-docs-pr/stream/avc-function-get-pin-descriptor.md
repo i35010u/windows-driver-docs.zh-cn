@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f72b8c9b1a6cbfdbd8da0ca5fdbb52e77463ea0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359001"
 ---
 # <a name="avcfunctiongetpindescriptor"></a>AVC\_函数\_获取\_PIN\_描述符
 

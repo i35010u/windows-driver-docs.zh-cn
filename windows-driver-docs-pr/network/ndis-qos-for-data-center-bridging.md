@@ -5,11 +5,11 @@ ms.assetid: 777988E8-D45E-49A7-B607-5E1218B27B54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bba7c1f26eb76cb0ed74c9edd2106302eb15c0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378263"
 ---
 # <a name="ndis-qos-for-data-center-bridging"></a>数据中心桥接的 NDIS QoS
 

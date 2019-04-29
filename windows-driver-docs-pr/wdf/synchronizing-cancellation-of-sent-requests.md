@@ -1,6 +1,6 @@
 ---
-title: 同步发送的请求取消
-description: 同步发送的请求取消
+title: 将取消已发送请求的操作同步
+description: 将取消已发送请求的操作同步
 ms.assetid: e7ec65c9-bc7b-46ea-853d-3e23b1763666
 keywords:
 - 请求处理 WDK KMDF、 取消请求
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 39880b129b9f812fb276c6d19ec4404f6e40e8be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376389"
 ---
-# <a name="synchronizing-cancellation-of-sent-requests"></a>同步发送的请求取消
+# <a name="synchronizing-cancellation-of-sent-requests"></a>将取消已发送请求的操作同步
 
 
 该驱动程序时驱动程序将尝试取消 I/O 请求它已转发给 I/O 目标，必须确保它可以通过有效的请求句柄[ **WdfRequestCancelSentRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff549941)方法。 请求句柄将变为无效如果 I/O 目标完成请求，因为在驱动程序[ *CompletionRoutine* ](https://msdn.microsoft.com/library/windows/hardware/ff540745)回调函数将调用[ **WdfRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff549945) （它会尝试删除请求对象）。

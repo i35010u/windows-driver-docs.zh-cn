@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: cb17e0ddfa8d3d12f92a5045046120fbc8386729
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361515"
 ---
 # <a name="bug-check-0x35-nomoreirpstacklocations"></a>Bug 检查 0x35：否\_更多\_IRP\_堆栈\_位置
 

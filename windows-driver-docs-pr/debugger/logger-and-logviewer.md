@@ -1,6 +1,6 @@
 ---
-title: 记录器和日志查看器
-description: 记录器和日志查看器
+title: 记录器和 LogViewer
+description: 记录器和 LogViewer
 ms.assetid: 10f2d006-6ebc-4098-a401-afc6351ff3dd
 keywords:
 - 记录器
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cf8f18888ce05c72e1ba5587d17ac7ed207df2fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383329"
 ---
-# <a name="logger-and-logviewer"></a>记录器和日志查看器
+# <a name="logger-and-logviewer"></a>记录器和 LogViewer
 
 
 ## <span id="ddk_logger_and_logviewer_dtoolq"></span><span id="DDK_LOGGER_AND_LOGVIEWER_DTOOLQ"></span>
@@ -27,7 +27,7 @@ ms.locfileid: "56521046"
 
 记录器和日志查看器包含在[有关 Windows 调试工具](index.md)。
 
-## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>在本部分中
+## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>本部分中的内容
 
 
 [Logger](logger.md)
@@ -36,7 +36,7 @@ ms.locfileid: "56521046"
 
 [记录器清单](the-logger-manifest.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试工具中包含的工具](extra-tools.md)

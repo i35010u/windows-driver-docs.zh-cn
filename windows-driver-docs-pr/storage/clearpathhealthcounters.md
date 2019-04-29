@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bf3dafd907adb31d354a6fd7bb3a0fdc43fa538c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360928"
 ---
 # <a name="clearpathhealthcounters-function"></a>ClearPathHealthCounters 函数
 
@@ -35,7 +35,7 @@ void ClearPathHealthCounters(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *PathID*   
@@ -65,7 +65,7 @@ void ClearPathHealthCounters(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">MPIOwmi.h （包括 MPIOwmi.h）</td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: 738a87e2-9c74-4215-85dc-ec793f10ce05
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d322ccde483705f32bac6354274f8be6fe762af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367008"
 ---
 # <a name="wia-ddi-interfaces"></a>WIA DDI 接口
 

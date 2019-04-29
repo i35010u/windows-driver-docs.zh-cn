@@ -1,17 +1,17 @@
 ---
-title: 使用驱动程序存储区
+title: 使用驱动程序存储
 description: V4 打印驱动程序在驱动程序存储区，直接执行和增强的点和打印不会下载整个驱动程序包到客户端计算机，所以务必要注意在本部分中的最佳实践。
 ms.assetid: 71199500-ECAD-46A8-8A9B-533DDB9783B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3467ec9e67003b21fc79a0c6f6aa84fdbee00f5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370598"
 ---
-# <a name="working-with-the-driver-store"></a>使用驱动程序存储区
+# <a name="working-with-the-driver-store"></a>使用驱动程序存储
 
 
 V4 打印驱动程序在驱动程序存储区，直接执行和增强的点和打印不会下载整个驱动程序包到客户端计算机，所以务必要注意在本部分中的最佳实践。

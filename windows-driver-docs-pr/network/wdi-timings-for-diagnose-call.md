@@ -5,11 +5,11 @@ ms.assetid: A21687FE-1398-4722-89E3-BFB511AA48E3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45cb96f597367a22feb673b10e4843e8e9adbd70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356859"
 ---
 # <a name="timings-for-diagnose-call"></a>诊断调用的计时
 

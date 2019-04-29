@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00bb1b44085a441f0c79fbaf9478a73b46612466
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370334"
 ---
 # <a name="fsrtlexitfilesystem-function"></a>FsRtlExitFileSystem 函数
 
@@ -35,7 +35,7 @@ VOID FsRtlExitFileSystem(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 **   
@@ -73,7 +73,7 @@ VOID FsRtlExitFileSystem(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h）</td>
 </tr>
 <tr class="odd">
@@ -83,7 +83,7 @@ VOID FsRtlExitFileSystem(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExAcquireFastMutex**](https://msdn.microsoft.com/library/windows/hardware/ff544337)

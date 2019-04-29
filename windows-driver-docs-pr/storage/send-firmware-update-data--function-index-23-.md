@@ -1,17 +1,17 @@
 ---
-title: 发送固件更新数据 （函数索引 23）
+title: 发送固件更新数据（功能索引 23）
 description: 此函数将固件数据发送到设备。
 ms.assetid: 3F28C89B-040A-407B-B780-96D6767DC5C7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 03fa586e262c45e0e1f80c141bd3fb7732de7827
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372356"
 ---
-# <a name="send-firmware-update-data-function-index-23"></a>发送固件更新数据 （函数索引 23）
+# <a name="send-firmware-update-data-function-index-23"></a>发送固件更新数据（功能索引 23）
 
 
 此函数将固件数据发送到设备。
@@ -110,7 +110,7 @@ ms.locfileid: "56543665"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启动固件更新 （函数索引 22）](start-firmware-update--function-index-22-.md)

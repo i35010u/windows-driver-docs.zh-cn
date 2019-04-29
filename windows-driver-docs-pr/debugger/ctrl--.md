@@ -1,5 +1,5 @@
 ---
-title: CTRL + \ （调试当前调试器）
+title: CTRL+\（调试当前调试器）
 description: CTRL + \ 键组合启动 CDB; 的新实例此新调试器将当前的调试器作为其目标。
 ms.assetid: c0c63af5-712c-47b6-8811-81e441ddb3df
 keywords:
@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f377f5f248a0ea1d0a623f71b011d3dba8d7dc4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374977"
 ---
 # <a name="ctrl-debug-current-debugger"></a>CTRL +\\ （调试当前调试器）
 

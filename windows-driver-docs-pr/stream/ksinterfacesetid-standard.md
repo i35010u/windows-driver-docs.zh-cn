@@ -5,11 +5,11 @@ ms.assetid: f921ffba-04dd-4900-8825-5b3486009bca
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 825df9218a5aeabfeaad80d4132688a38830cf9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368696"
 ---
 # <a name="ksinterfacesetidstandard"></a>KSINTERFACESETID\_标准
 

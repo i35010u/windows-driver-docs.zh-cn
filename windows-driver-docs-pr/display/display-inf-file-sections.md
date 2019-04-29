@@ -1,6 +1,6 @@
 ---
-title: 显示 INF 文件的部分
-description: 显示 INF 文件的部分
+title: 显示 INF 文件节
+description: 显示 INF 文件节
 ms.assetid: 2075a10f-a504-4bdc-8112-9c583c5084bb
 keywords:
 - 旁带寻址 WDK Windows 2000 显示
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dad82914b5609af854bdf82d05f037219a045681
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382933"
 ---
-# <a name="display-inf-file-sections"></a>显示 INF 文件的部分
+# <a name="display-inf-file-sections"></a>显示 INF 文件节
 
 
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
@@ -130,7 +130,7 @@ Microsoft Windows XP 和早期版本的操作系统不删除**CapabilityOverride
 <thead>
 <tr class="header">
 <th align="left">Flag</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

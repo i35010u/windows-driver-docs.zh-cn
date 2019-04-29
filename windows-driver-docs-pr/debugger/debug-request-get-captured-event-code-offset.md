@@ -13,18 +13,18 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6567bbb3032dbcea06789b507221ad555f2b418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369787"
 ---
 # <a name="debugrequestgetcapturedeventcodeoffset"></a>调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量
 
 
 调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量[**请求**](request.md)操作返回当前事件的指令指针。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 不使用。

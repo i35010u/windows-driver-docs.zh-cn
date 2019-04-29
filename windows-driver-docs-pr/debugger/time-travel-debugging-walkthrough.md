@@ -1,20 +1,20 @@
 ---
-title: 时间旅行调试-示例应用程序演练
-description: 本部分包含一个小型的 c + + 应用的演练。
+title: 时光穿越调试 - 示例应用演练
+description: 本部分包含一个较小的演练操作C++应用程序。
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e6156cc4ca85c58dfc909d3494d1df61a934a22
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364837"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
 
-#  <a name="time-travel-debugging---sample-app-walkthrough"></a>时间旅行调试-示例应用程序演练
+#  <a name="time-travel-debugging---sample-app-walkthrough"></a>时光穿越调试 - 示例应用演练
 
-此实验室中引入了时间旅行调试 (TTD)，使用小型示例程序和代码缺陷。 TTD 用于调试、 标识和根造成问题。 虽然很容易地找到此小程序中的问题，可以在更复杂的代码使用常规过程。 此常规步骤可以总结如下。
+此实验室中引入了时间旅行调试 (TTD)，使用小型示例程序和代码缺陷。 TTD 用于调试、识别问题及分析其根本原因。 虽然很容易地找到此小程序中的问题，可以在更复杂的代码使用常规过程。 此常规步骤可以总结如下。
 
 1. 捕获失败的程序的旅行时间跟踪。
 2. 使用[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)命令查找存储在录制中的异常事件。 
@@ -46,7 +46,7 @@ ms.locfileid: "56543825"
 你将需要以下软件才能将无法完成该实验。
 
 -   在 WinDbg 预览。 有关安装 WinDbg 预览版的信息，请参阅[WinDbg 预览版的安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)
--   Visual Studio 生成的示例 c + + 代码。 
+-   若要生成示例的 visual StudioC++代码。 
 
 实验室有以下三个部分。
 
@@ -61,7 +61,7 @@ ms.locfileid: "56543825"
 
 **在 Visual Studio 中创建示例应用**
 
-1.  在 Microsoft Visual Studio 中，单击**文件** &gt; **新建** &gt; **项目/解决方案...** ，然后单击视觉对象**c + +** 模板。 
+1.  在 Microsoft Visual Studio 中，单击**文件** &gt; **新建** &gt; **项目/解决方案...** ，然后单击视觉对象**C++** 模板。 
     
     选择 Win32 控制台应用程序。
 
@@ -102,11 +102,11 @@ ms.locfileid: "56543825"
     }
     ```
 
-4.  在 Visual Studio 中，单击**项目** &gt; **DisplayGreeting 属性**。 然后单击**C/c + +** 并**代码生成**。
+4.  在 Visual Studio 中，单击**项目** &gt; **DisplayGreeting 属性**。 然后单击**C /C++** 并**代码生成**。
 
     设置以下属性。
 
-    | 设置              |  值                        |
+    | 设置              |  ReplTest1                        |
     |----------------------|-------------------------------|
     | 安全检查       | 禁用安全检查 (/ GS-) |
     | 基本运行时检查 |  默认                      |
@@ -367,7 +367,7 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -714,7 +714,7 @@ ba <access> <size> <address> {options}
 
 ---
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
 

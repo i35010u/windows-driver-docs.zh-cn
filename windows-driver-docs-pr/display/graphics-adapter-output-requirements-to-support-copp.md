@@ -1,6 +1,6 @@
 ---
-title: 支持 COPP 的图形适配器输出要求
-description: 支持 COPP 的图形适配器输出要求
+title: 支持 COPP 所要满足的图形适配器输出要求
+description: 支持 COPP 所要满足的图形适配器输出要求
 ms.assetid: e557487d-dba5-4185-9c35-da3185c291f6
 keywords:
 - 复制保护 WDK COPP，图形适配器输出要求
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b440160a9fa2af80796c0b0db8b777b3db862ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374609"
 ---
-# <a name="graphics-adapter-output-requirements-to-support-copp"></a>支持 COPP 的图形适配器输出要求
+# <a name="graphics-adapter-output-requirements-to-support-copp"></a>支持 COPP 所要满足的图形适配器输出要求
 
 
 ## <span id="ddk_display_adapter_output_requirements_to_support_copp_gg"></span><span id="DDK_DISPLAY_ADAPTER_OUTPUT_REQUIREMENTS_TO_SUPPORT_COPP_GG"></span>

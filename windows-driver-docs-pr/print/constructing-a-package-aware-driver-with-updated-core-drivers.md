@@ -1,17 +1,17 @@
 ---
-title: 构造一个识别包的驱动程序与更新的核心驱动程序
-description: 构造一个识别包的驱动程序与更新的核心驱动程序
+title: 使用更新的核心驱动程序构造包感知驱动程序
+description: 使用更新的核心驱动程序构造包感知驱动程序
 ms.assetid: 801ac83c-a04a-4a3f-81a9-24010a390ee5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e998d1c7793f524b846f5b3318765023fedcdb45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383161"
 ---
-# <a name="constructing-a-package-aware-driver-with-updated-core-drivers"></a>构造一个识别包的驱动程序与更新的核心驱动程序
+# <a name="constructing-a-package-aware-driver-with-updated-core-drivers"></a>使用更新的核心驱动程序构造包感知驱动程序
 
 
 识别包的驱动程序可确保所有的包中的驱动程序组件进行配置用于点--打印操作过程。 指向并打印，Windows 用户而无需提供磁盘或其他安装媒体创建到远程打印机的连接。 相反，打印服务器会自动将打印驱动程序包下载到客户端。 有关详细信息，请参阅[指向并打印与驱动程序包](point-and-print-with-driver-packages.md)。

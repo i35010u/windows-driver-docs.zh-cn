@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de5dd0f6baaf4238dbb80a0f86ee35613b384985
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372177"
 ---
 # <a name="bug-check-0xd0-drivercorruptedmmpool"></a>Bug 检查 0xD0：驱动程序\_损坏\_MMPOOL
 

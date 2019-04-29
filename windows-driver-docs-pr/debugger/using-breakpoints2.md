@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0937c06b35e2c1ec52629958fd9acf194d8a2a04
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371695"
 ---
 # <a name="using-breakpoints-with-the-debugger-engine-api"></a>调试器引擎 API 中使用断点
 

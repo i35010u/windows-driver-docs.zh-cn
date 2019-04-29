@@ -5,11 +5,11 @@ ms.assetid: 4B8C63DD-4B8D-40AB-A6DF-0466343E7E45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: caf0ed463cac22996d937819191284260f95e8e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367628"
 ---
 # <a name="mb-union-function-descriptors"></a>MB 联合功能描述符
 

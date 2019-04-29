@@ -1,6 +1,6 @@
 ---
-title: 同时呈现到多个目标
-description: 同时呈现到多个目标
+title: 同时渲染到多个目标
+description: 同时渲染到多个目标
 ms.assetid: 72c56ea6-d5da-420a-91f4-c7fa09daf67e
 keywords:
 - 呈现多个目标 WDK DirectX 9.0
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 274a1282a81fdcaef07cde5fc8f3871ee8ef4a6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379841"
 ---
-# <a name="rendering-to-multiple-targets-simultaneously"></a>同时呈现到多个目标
+# <a name="rendering-to-multiple-targets-simultaneously"></a>同时渲染到多个目标
 
 
 ## <span id="ddk_rendering_to_multiple_targets_simultaneously_gg"></span><span id="DDK_RENDERING_TO_MULTIPLE_TARGETS_SIMULTANEOUSLY_GG"></span>

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9fc5f79e9a754f0b1e0e68f6345c1addb5a4037
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367857"
 ---
 # <a name="adding-a-component"></a>添加组件
 

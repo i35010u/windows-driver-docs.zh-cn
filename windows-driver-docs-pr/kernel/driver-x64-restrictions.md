@@ -5,11 +5,11 @@ ms.assetid: 717ca559-93aa-48d6-8347-bfdf223f1aa4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c16389945a5b6b96fcc2b87c7cf73b92ce730289
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372702"
 ---
 # <a name="driver-x64-restrictions"></a>x64 驱动程序的限制
 
@@ -30,7 +30,7 @@ ms.locfileid: "56568287"
 
 有关修改内核代码和数据结构的详细信息，请参阅[针对基于 x64 的系统的修补策略](https://go.microsoft.com/fwlink/p/?linkid=50719)白皮书并[64-Bit 修补常见问题解答](https://go.microsoft.com/fwlink/p/?linkid=69534)。
 
-有关使用 64 位编译器的编程的常规信息，请参阅[64 位 Visual c + + 编程](https://go.microsoft.com/fwlink/p/?linkid=165521)。
+有关使用 64 位编译器的编程的常规信息，请参阅[64 位编程与视觉对象C++ ](https://go.microsoft.com/fwlink/p/?linkid=165521)。
 
  
 

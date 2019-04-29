@@ -15,11 +15,11 @@ api_type:
 ms.date: 12/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e6976f513c795a58600894cf8a3cc483bcbdcc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380807"
 ---
 # <a name="kspropertypinproposedataformat"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT
 

@@ -1,6 +1,6 @@
 ---
-title: 驻留在硬件中的字体
-description: 驻留在硬件中的字体
+title: 硬件中的字体
+description: 硬件中的字体
 ms.assetid: 359735c2-bfa3-4c32-82a5-1d455c4eacb1
 keywords:
 - 打印机字体说明 WDK Unidrv，驻留在硬件中的字体
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c43bb2017697472d74065064bb9e57fbc258063
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360533"
 ---
-# <a name="hardware-resident-fonts"></a>驻留在硬件中的字体
+# <a name="hardware-resident-fonts"></a>硬件中的字体
 
 
 

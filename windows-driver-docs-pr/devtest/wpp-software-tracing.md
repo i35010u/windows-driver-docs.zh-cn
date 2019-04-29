@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f72f3818d7ef207f0edb0681b2adc37401326bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379104"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -70,7 +70,7 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 
 -   安装驱动程序或组件。 启动跟踪会话，并记录跟踪消息。 使用工具进行软件跟踪，例如[TraceView](traceview.md)， [Tracelog](tracelog.md)， [Tracefmt](tracefmt.md)，以及[Tracepdb](tracepdb.md)配置、 启动和停止跟踪会话还可以显示和筛选跟踪消息。 这些工具包括 Windows Driver Kit (WDK) 中。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [添加 WPP 软件跟踪对 Windows 驱动程序](adding-wpp-software-tracing-to-a-windows-driver.md)

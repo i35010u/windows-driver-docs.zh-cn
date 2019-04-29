@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: d35629ef83e832fa147661431be722ed065d9195
-ms.sourcegitcommit: 55dfaaca86e07bef7c41fe601e67cbba1b56ef15
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58505149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374417"
 ---
 # <a name="ctrlf-break-to-kd"></a>CTRL+F（中断到 KD）
 

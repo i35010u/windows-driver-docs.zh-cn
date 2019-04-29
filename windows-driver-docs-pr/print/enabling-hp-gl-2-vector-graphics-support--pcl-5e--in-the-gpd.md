@@ -1,6 +1,6 @@
 ---
-title: HP/2 矢量图形中启用支持 (PCL 5e) GPD
-description: HP/2 矢量图形中启用支持 (PCL 5e) GPD
+title: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
+description: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
 ms.assetid: 2ca5a2fe-4c37-4b7f-bd9b-d41240f8843f
 keywords:
 - HP/2 单色 WDK Unidrv，从而启用支持
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04530d80df3245667c5d904e0c741d4b5a453a8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378643"
 ---
-# <a name="enabling-hp-gl2-vector-graphics-support-pcl-5e-in-the-gpd"></a>HP/2 矢量图形中启用支持 (PCL 5e) GPD
+# <a name="enabling-hp-gl2-vector-graphics-support-pcl-5e-in-the-gpd"></a>在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
 
 
 

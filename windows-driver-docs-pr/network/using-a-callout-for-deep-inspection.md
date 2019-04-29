@@ -1,6 +1,6 @@
 ---
-title: 使用适用于深度检测标注
-description: 使用适用于深度检测标注
+title: 使用标注进行深度检测
+description: 使用标注进行深度检测
 ms.assetid: 464c74ae-5e37-41f1-b305-ef57039b28ba
 keywords:
 - 分类标注 WDK Windows 筛选平台，深度检测
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75f7d44ec5fa7ba6292037a71e687a792f0abfd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372183"
 ---
-# <a name="using-a-callout-for-deep-inspection"></a>使用适用于深度检测标注
+# <a name="using-a-callout-for-deep-inspection"></a>使用标注进行深度检测
 
 
 标注何时执行深度检测，其[classifyFn](https://msdn.microsoft.com/library/windows/hardware/ff544887)标注函数可以检查固定的数据字段、 元数据字段和传递给它的任何原始数据包数据的任意组合，以及已被任何相关数据与筛选器或数据相关联的上下文中存储流。

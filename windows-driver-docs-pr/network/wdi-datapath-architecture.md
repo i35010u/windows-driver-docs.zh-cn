@@ -5,11 +5,11 @@ ms.assetid: 22684939-A8B5-4687-B1BC-B3A27B2540A2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d6347f13056b75468b057c92000875b7d4af487
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367531"
 ---
 # <a name="wdi-datapath-architecture"></a>WDI 数据路径体系结构
 

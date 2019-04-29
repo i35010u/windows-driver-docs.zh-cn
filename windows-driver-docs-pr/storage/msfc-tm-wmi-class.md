@@ -5,11 +5,11 @@ ms.assetid: c81b9b2a-6381-4ff9-a579-bee53ac8678d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 10f520f15b3e776ef6b40073a971359c5d22b391
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386544"
 ---
 # <a name="msfctm-wmi-class"></a>MSFC\_TM WMI 类
 

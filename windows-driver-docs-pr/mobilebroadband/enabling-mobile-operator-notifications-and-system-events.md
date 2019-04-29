@@ -5,11 +5,11 @@ ms.assetid: 988bafcc-ad8e-446d-9336-85c19cf05577
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e16f59242649b95b7eb19ca129babf43569b7bd4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380224"
 ---
 # <a name="enabling-mobile-operator-notifications-and-system-events"></a>启用移动运营商通知和系统事件
 
@@ -41,7 +41,7 @@ Windows 10 提供了可以使应用程序磁贴保持最新即使应用已挂起
 
 一般情况下，背景事件作为简单的触发点和不应发出信号处理量很大。 在这种情况下，为每个应用的配额将放置在允许的背景事件的处理时间。 提供由网络运算符 API 的后台事件包括[MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)事件并[HotspotAuthentication](handling-the-hotspot-authentication-event.md)事件，会将 Windows 作为关键事件处理。 与常规背景事件相比，后台工作项与相关联**MobileOperatorNotification**并**HotspotAuthentication**事件运行而不考虑事件的每个实例尽管每个后台工作项实例受到处理时间配额的处理时间配额。 应该限制后台事件处理程序中的处理和推迟到移动宽带应用更大的处理。
 
-## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>在本部分中
+## <a name="span-idinthissectionspanspan-idinthissectionspanspan-idinthissectionspanin-this-section"></a><span id="In_this_section"></span><span id="in_this_section"></span><span id="IN_THIS_SECTION"></span>本部分中的内容
 
 
 -   [开发用于处理 MobileOperatorNotification 事件的应用](develop-an-app-to-handle-the-mobileoperatornotification-event.md)

@@ -1,19 +1,19 @@
 ---
-title: 使用 Repeater
-description: 使用 Repeater
+title: 使用中继器
+description: 使用中继器
 ms.assetid: c6904b6d-f28b-4494-95d0-9e6fc3dc10f3
 keywords:
 - repeater，使用 repeater
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bd5f3757abab3dcbfeb266cb73749107ecf4c18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367971"
 ---
-# <a name="using-a-repeater"></a>使用 Repeater
+# <a name="using-a-repeater"></a>使用中继器
 
 
 ## <span id="ddk_using_a_repeater_dbg"></span><span id="DDK_USING_A_REPEATER_DBG"></span>

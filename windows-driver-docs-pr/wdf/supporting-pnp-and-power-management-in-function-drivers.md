@@ -1,6 +1,6 @@
 ---
-title: 支持功能的驱动程序中的 PnP 和电源管理
-description: 支持功能的驱动程序中的 PnP 和电源管理
+title: 支持在功能驱动程序中进行 PnP 和电源管理
+description: 支持在功能驱动程序中进行 PnP 和电源管理
 ms.assetid: 487d4a69-a8a8-406c-8572-688388deabe3
 keywords:
 - 即插即用 WDK KMDF，功能的驱动程序
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3097fd14a14bafcf9f618984b6f8e9b5ad404c48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363967"
 ---
-# <a name="supporting-pnp-and-power-management-in-function-drivers"></a>支持功能的驱动程序中的 PnP 和电源管理
+# <a name="supporting-pnp-and-power-management-in-function-drivers"></a>支持在功能驱动程序中进行 PnP 和电源管理
 
 
 *函数的驱动程序*控制设备的操作，因此它们访问的设备硬件。 这些驱动程序必须支持的即插即用和电源管理操作，并通常注册多个事件回调函数时它们[创建设备对象](creating-a-framework-device-object.md)。

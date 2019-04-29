@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 297fb89ccc37a7d2fc34f9bf40e7026941410085
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363692"
 ---
 # <a name="user-control-of-device-idle-and-wake-behavior"></a>设备空闲和唤醒行为的用户控件
 

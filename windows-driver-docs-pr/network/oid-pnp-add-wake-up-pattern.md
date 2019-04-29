@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ADD_WAKE_UP_PATTERN 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d0868a29a7ad7afd80af101b6a335f197fffd184
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382196"
 ---
 # <a name="oidpnpaddwakeuppattern"></a>OID\_PNP\_ADD\_WAKE\_UP\_PATTERN
 
@@ -46,7 +46,7 @@ OID\_PNP\_添加\_唤醒\_向上\_模式 OID 由发送协议驱动程序微型�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>NDIS 6.0 和 NDIS 6.1 支持。 NDIS 6.20 和更高版本，使用<a href="oid-pm-add-wol-pattern.md" data-raw-source="[OID_PM_ADD_WOL_PATTERN](oid-pm-add-wol-pattern.md)">OID_PM_ADD_WOL_PATTERN</a>相反。</p></td>
 </tr>
 <tr class="even">

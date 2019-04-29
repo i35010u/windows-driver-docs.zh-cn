@@ -5,11 +5,11 @@ ms.assetid: 0d17cfa8-f200-4d87-a2cb-cfd8dbc24e1e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6da0a66408ede46f7e7adb6756df8b0d03abaf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379675"
 ---
 # <a name="multipage-istream-transfers"></a>多页 IStream 传输
 

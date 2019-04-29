@@ -1,19 +1,19 @@
 ---
-title: 对于专有 802.1 X 安全方法扩展 UI
-description: 对于专有 802.1 X 安全方法扩展 UI
+title: 扩展专有 802.1X 安全方法的 UI
+description: 扩展专有 802.1X 安全方法的 UI
 ms.assetid: 3307179f-f30b-4234-a64d-4e771ac8673e
 keywords:
 - 专有 802.1x 安全 WDK IHV UI 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0bffd10830fa26ec8e4cd31437a3d3b91143f48
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386241"
 ---
-# <a name="extending-the-ui-for-proprietary-8021x-security-methods"></a>对于专有 802.1 X 安全方法扩展 UI
+# <a name="extending-the-ui-for-proprietary-8021x-security-methods"></a>扩展专有 802.1X 安全方法的 UI
 
 
 

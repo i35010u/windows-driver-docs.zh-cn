@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3029c27c35aa3f8f09e7df6951acc413f3dda16a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374493"
 ---
 # <a name="registry-entries-for-scsi-miniport-drivers"></a>SCSI 微型端口驱动程序的注册表项
 

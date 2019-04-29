@@ -4,11 +4,11 @@ title: 分配和构建 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f928ac9a8d769e60d98867db4bb0dd6ccfd377e
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381073"
 ---
 # <a name="allocating-and-building-urbs"></a>分配和构建 URB
 

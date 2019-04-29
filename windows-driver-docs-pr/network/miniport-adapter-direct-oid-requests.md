@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb6e42d4d5d722722174264794c7303b095a5706
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372443"
 ---
 # <a name="miniport-adapter-direct-oid-requests"></a>微型端口适配器直接 OID 请求
 

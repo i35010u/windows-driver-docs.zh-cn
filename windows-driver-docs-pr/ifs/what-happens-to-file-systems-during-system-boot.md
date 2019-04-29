@@ -23,11 +23,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b0759d077296c64b60efd885dc9b1f70bdd6da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379351"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>文件系统在系统启动期间会发生什么情况
 

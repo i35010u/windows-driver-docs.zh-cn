@@ -5,11 +5,11 @@ ms.assetid: 3DB30155-8DBE-4AE9-A0CC-8089DC255E32
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6201e6ab3671aad57b0df150c075eef11b0075e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368883"
 ---
 # <a name="sensor-ddsi-callbacks"></a>传感器 DDSI 回调
 

@@ -5,11 +5,11 @@ ms.assetid: 74fbaa7c-f058-4b17-b278-3dea0faf4431
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 10ab2b05085bac6de7c2f17190bbc46cb1de072e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367092"
 ---
 # <a name="adding-interrupt-event-support"></a>添加中断事件支持
 

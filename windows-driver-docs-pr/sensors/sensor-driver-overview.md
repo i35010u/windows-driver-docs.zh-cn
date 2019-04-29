@@ -5,11 +5,11 @@ ms.assetid: 242378b1-e26e-4f05-9bea-211e32d4a13c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 211510ac61278bad682095350f0d2e8f43748cb4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368815"
 ---
 # <a name="sensor-driver-overview"></a>传感器驱动程序概述
 

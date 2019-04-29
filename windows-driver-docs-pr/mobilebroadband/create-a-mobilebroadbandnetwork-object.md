@@ -5,11 +5,11 @@ ms.assetid: b69c72dc-56cd-4358-9eae-3859705488ea
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7781b7f9693d7fd401202dcaf0467badddb7a40
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383780"
 ---
 # <a name="create-a-mobilebroadbandnetwork-object"></a>创建 MobileBroadbandNetwork 对象
 
@@ -31,7 +31,7 @@ else
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)

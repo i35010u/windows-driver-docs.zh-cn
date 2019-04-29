@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5875e0ad98b27392f1bc8ab8d55a57d02d1b458c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361295"
 ---
 # <a name="attachments-scenarios"></a>附件方案
 

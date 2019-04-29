@@ -1,6 +1,6 @@
 ---
-title: 处理存储微型端口驱动程序中的 WMI Srb
-description: 处理存储微型端口驱动程序中的 WMI Srb
+title: 处理存储器微型端口驱动程序中的 WMI SRB
+description: 处理存储器微型端口驱动程序中的 WMI SRB
 ms.assetid: 92b78611-7e6f-4d77-9133-635df96584f0
 keywords:
 - 存储微型端口驱动程序 WDK，WMI Srb
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fde44f7cd85051cd993054daa3bb3629508af880
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383110"
 ---
-# <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>处理存储微型端口驱动程序中的 WMI Srb
+# <a name="handling-wmi-srbs-in-storage-miniport-drivers"></a>处理存储器微型端口驱动程序中的 WMI SRB
 
 
 ## <span id="ddk_handling_wmi_srbs_in_storage_miniport_drivers_kg"></span><span id="DDK_HANDLING_WMI_SRBS_IN_STORAGE_MINIPORT_DRIVERS_KG"></span>

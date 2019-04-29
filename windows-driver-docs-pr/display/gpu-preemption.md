@@ -5,11 +5,11 @@ ms.assetid: 9382786E-2E1E-408F-A9E9-04EEEA1CC34A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f9a82d289cf09ab3eddea7d73813308d82b1721
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379475"
 ---
 # <a name="gpu-preemption"></a>GPU 抢占
 
@@ -27,7 +27,7 @@ ms.locfileid: "56542293"
 <td align="left">1.2</td>
 </tr>
 <tr class="even">
-<td align="left">最低 Windows 版本</td>
+<td align="left">最大 Windows 版本</td>
 <td align="left">8</td>
 </tr>
 <tr class="odd">

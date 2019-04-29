@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 209c46de89254fe0c83d27d162374ee52016db64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365920"
 ---
 # <a name="wiadipdevname"></a>WIA\_DIP\_DEV\_NAME
 
@@ -50,7 +50,7 @@ WIA\_DIP\_开发人员\_NAME 属性包含设备的名称。 WIA 服务创建并�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

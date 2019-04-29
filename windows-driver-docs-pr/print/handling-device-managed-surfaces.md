@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11ef3cdd7232649b0c3f5ad1a70e77c471db6ed2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360559"
 ---
 # <a name="handling-device-managed-surfaces"></a>处理设备管理的图面
 

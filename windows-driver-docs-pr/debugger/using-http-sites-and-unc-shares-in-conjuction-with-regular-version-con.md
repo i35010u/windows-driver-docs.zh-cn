@@ -5,11 +5,11 @@ ms.assetid: 1b045a00-45e7-47e8-9447-7d94f70253fe
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0332d15c5fc349d86c63882fa5e84a4a90d8ef63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378797"
 ---
 # <a name="using-http-sites-and-unc-shares-in-conjuction-with-regular-version-control"></a>结合常规版本控制使用 HTTP 站点和 UNC 共享
 

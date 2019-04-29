@@ -5,11 +5,11 @@ ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e778c54a6077bb306f1b0b2ec6dfe29b93296a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380287"
 ---
 # <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>开发用于处理 MobileOperatorNotification 事件的应用
 
@@ -20,11 +20,11 @@ ms.locfileid: "56524151"
 
 -   [步骤 1：后台任务协定声明](#stepone)
 
--   [步骤 2:后台任务处理程序](#steptwo)
+-   [步骤 2：后台任务处理程序](#steptwo)
 
--   [步骤 3:处理激活事件](#stepthree)
+-   [步骤 3：处理激活事件](#stepthree)
 
--   [步骤 4:处理后台任务完成处理程序](#stepfour)
+-   [步骤 4：处理后台任务完成处理程序](#stepfour)
 
 -   [疑难解答](#ts)
 
@@ -608,7 +608,7 @@ function CompleteHandler(task) {
 })();
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)

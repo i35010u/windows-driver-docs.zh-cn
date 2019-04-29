@@ -5,11 +5,11 @@ ms.assetid: 8f3d61cc-1aee-4f2d-82c3-1bd357c8e771
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3877e0754708debee4223a925a6678616dfe01e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360695"
 ---
 # <a name="platen-configuration-elements"></a>辊配置元素
 

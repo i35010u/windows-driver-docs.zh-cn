@@ -5,11 +5,11 @@ ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 007e804eb65b6713ae015c6ae16a506bbedc5ed6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366208"
 ---
 # <a name="overriding-monitor-edids-with-an-inf"></a>重写使用 INF 监视器 EDIDs
 

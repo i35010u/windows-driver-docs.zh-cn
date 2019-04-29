@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_HARDWARE_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: de190f8dd238d047a9ccc9653321edd9b439df5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381347"
 ---
 # <a name="oidgenhardwarestatus"></a>OID\_GEN\_硬件\_状态
 
@@ -64,7 +64,7 @@ OID\_GEN\_硬件\_状态 OID 作为以下 NDIS 之一指定基础 NIC 的新的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>

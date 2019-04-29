@@ -1,6 +1,6 @@
 ---
-title: 安装自定义打印网页
-description: 安装自定义打印网页
+title: 安装自定义的打印网页
+description: 安装自定义的打印网页
 ms.assetid: 8a50e7ea-0e91-476f-86cb-935329b76f91
 keywords:
 - 安装驱动程序 WDK 打印机，网页
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 476a2c45d6d3fd6bbb00694dc21c3ea355bb30d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366811"
 ---
-# <a name="installing-customized-print-web-pages"></a>安装自定义打印网页
+# <a name="installing-customized-print-web-pages"></a>安装自定义的打印网页
 
 
 

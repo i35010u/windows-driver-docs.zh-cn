@@ -5,16 +5,16 @@ ms.assetid: 7193C30B-B9F0-488E-B1C6-4C5C4F29BA50
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01c8c347a2be23a026915d9d8dbd2335a62739e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368361"
 ---
 # <a name="wdi-tlv-generatorparser"></a>WDI TLV 生成器/分析器
 
 
-TLV 生成器，并且分析器共享的库允许 IHV 驱动程序以正确地分析 TLVs 为强类型化的 C/c + + 结构，或与之相反的结构中生成的 TLV 字节 blob。 它还处理版本控制语义，因此 IHV 不需要为。
+TLV 生成器，并且分析器共享的库允许 IHV 驱动程序将正确解析 TLVs 为强类型化的 C /C++结构，或与之相反的结构中生成的 TLV 字节 blob。 它还处理版本控制语义，因此 IHV 不需要为。
 
 本节内容：
 

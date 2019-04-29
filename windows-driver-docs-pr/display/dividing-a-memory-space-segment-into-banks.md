@@ -1,6 +1,6 @@
 ---
-title: 将内存空间段划分为银行
-description: 将内存空间段划分为银行
+title: 将内存空间段分割成内存库
+description: 将内存空间段分割成内存库
 ms.assetid: 7fdbe511-ae92-44c2-9651-51b3ead11425
 keywords:
 - 内存段 WDK 显示银行
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 46ff8dffa2daa21d4336d1e313ffbbd2f9aaafc0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377717"
 ---
-# <a name="dividing-a-memory-space-segment-into-banks"></a>将内存空间段划分为银行
+# <a name="dividing-a-memory-space-segment-into-banks"></a>将内存空间段分割成内存库
 
 
 ## <span id="ddk_dividing_a_memory_space_segment_into_banks_gg"></span><span id="DDK_DIVIDING_A_MEMORY_SPACE_SEGMENT_INTO_BANKS_GG"></span>

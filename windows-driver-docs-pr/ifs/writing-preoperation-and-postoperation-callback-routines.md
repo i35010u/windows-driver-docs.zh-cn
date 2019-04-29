@@ -17,11 +17,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7bd355067810fbcee2feeb6c07aac0da43e48d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367115"
 ---
 # <a name="writing-preoperation-and-postoperation-callback-routines"></a>编写预操作和后操作回调例程
 

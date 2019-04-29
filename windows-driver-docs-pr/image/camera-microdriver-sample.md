@@ -1,17 +1,17 @@
 ---
-title: 相机 Microdriver 示例
-description: 相机 Microdriver 示例
+title: 相机微驱动程序示例
+description: 相机微驱动程序示例
 ms.assetid: a3aa0cf1-9954-4556-8dae-512a12864dfe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d488e2d83c1d9e710e0fdd6d882a554df740405
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373318"
 ---
-# <a name="camera-microdriver-sample"></a>相机 Microdriver 示例
+# <a name="camera-microdriver-sample"></a>相机微驱动程序示例
 
 
 

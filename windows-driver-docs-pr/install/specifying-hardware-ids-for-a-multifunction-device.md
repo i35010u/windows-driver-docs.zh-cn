@@ -5,11 +5,11 @@ ms.assetid: e45f7564-89a7-49c0-8011-69e5da3d5651
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 161f74f805aa5e326f3822e223f1239ee0241ce0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369443"
 ---
 # <a name="specifying-hardware-ids-for-a-multifunction-device"></a>指定多功能设备的硬件 ID
 

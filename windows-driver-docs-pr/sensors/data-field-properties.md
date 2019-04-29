@@ -5,11 +5,11 @@ ms.assetid: A7FA02AA-7B7B-45B4-A432-4B4ED69CB19C
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9797282dafe6f2db5b2a8408b963d783781ac16c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378575"
 ---
 # <a name="data-field-properties"></a>数据字段属性
 

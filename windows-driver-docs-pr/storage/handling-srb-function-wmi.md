@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f634b9e5ee38111c3dcd885b6b9c1cd2addf3c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383115"
 ---
 # <a name="handling-srbfunctionwmi"></a>处理 SRB\_函数\_WMI
 

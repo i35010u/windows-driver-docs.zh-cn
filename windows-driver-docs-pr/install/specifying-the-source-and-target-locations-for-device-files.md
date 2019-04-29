@@ -5,11 +5,11 @@ ms.assetid: e44961e2-e9fb-43d3-aeb9-a625021e56e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59d25c19b848862a069ff4f8cd13d9649db4fd58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369405"
 ---
 # <a name="specifying-the-source-and-target-locations-for-device-files"></a>指定设备文件的源和目标位置
 

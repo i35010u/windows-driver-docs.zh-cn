@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c66fd4bb9650e9e26eb6e4a5d0aeff86da6c949
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373404"
 ---
 # <a name="r-registers"></a>r（寄存器）
 
@@ -207,7 +207,7 @@ r.
 <thead>
 <tr class="header">
 <th align="left">位</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -319,7 +319,7 @@ r.
 0:000> r xmm0:16ub, xmm1:d 
 ```
 
-如果当前的语法是 c + +，则必须在前面的寄存器 at 符号 (**@**)。 因此，您可以使用以下命令复制**ebx**中注册**eax**注册。
+如果当前的语法是C++，则必须在前面的寄存器 at 符号 (**@**)。 因此，您可以使用以下命令复制**ebx**中注册**eax**注册。
 
 ```dbgcmd
 0:000> r eax = @ebx

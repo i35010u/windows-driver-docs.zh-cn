@@ -1,6 +1,6 @@
 ---
-title: 数据格式和数据区域，流式处理微型驱动程序中
-description: 数据格式和数据区域，流式处理微型驱动程序中
+title: 流式处理微型驱动程序中的数据格式和数据范围
+description: 流式处理微型驱动程序中的数据格式和数据范围
 ms.assetid: ea3aa4af-0c8c-429e-b399-0a196eadc5ef
 keywords:
 - Stream.sys 类驱动程序 WDK Windows 2000 内核、 数据格式和范围
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89bdb0bd059a423f875b074209d3cd602c6c4fe7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374102"
 ---
-# <a name="data-formats-and-data-ranges-in-streaming-minidrivers"></a>数据格式和数据区域，流式处理微型驱动程序中
+# <a name="data-formats-and-data-ranges-in-streaming-minidrivers"></a>流式处理微型驱动程序中的数据格式和数据范围
 
 
 

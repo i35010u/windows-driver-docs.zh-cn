@@ -1,5 +1,5 @@
 ---
-title: 查看和编辑在 WinDbg 中的本地变量
+title: 在 WinDbg 中查看和编辑局部变量
 description: 在 WinDbg 中，输入命令，使用局部变量窗口中，或使用监视窗口可以查看本地变量。
 ms.assetid: 9d816df7-2b20-4be3-90d7-7a11b0f30238
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4a637edb0b15d7246758585ac172feb6d221def
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383468"
 ---
-# <a name="viewing-and-editing-local-variables-in-windbg"></a>查看和编辑在 WinDbg 中的本地变量
+# <a name="viewing-and-editing-local-variables-in-windbg"></a>在 WinDbg 中查看和编辑局部变量
 
 
 在 WinDbg 中，输入命令，使用局部变量窗口中，或使用监视窗口可以查看本地变量。
@@ -47,7 +47,7 @@ ms.locfileid: "56519478"
 
 -   **值**列显示每个变量的当前值。
 
-    -   若要为变量输入新值，双击当前值并键入新值，或编辑旧值。 （剪切、 复制和粘贴命令是可用来进行编辑。）您可以键入任何[c + + 表达式](c---numbers-and-operators.md)。
+    -   若要为变量输入新值，双击当前值并键入新值，或编辑旧值。 （剪切、 复制和粘贴命令是可用来进行编辑。）您可以键入任何[C++表达式](c---numbers-and-operators.md)。
     -   若要保存新值，请按 ENTER。
     -   若要放弃的新值，请按 ESC。
     -   如果键入无效的值，按 ENTER 键时，将重新出现的旧值。

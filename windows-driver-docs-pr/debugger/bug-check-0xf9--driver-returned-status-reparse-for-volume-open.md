@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b6063b1e6bfdc2596eab0648631761f08cbf14b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367303"
 ---
 # <a name="bug-check-0xf9-driverreturnedstatusreparseforvolumeopen"></a>Bug 检查 0xF9：驱动程序\_退回\_状态\_重新分析\_有关\_卷\_打开
 

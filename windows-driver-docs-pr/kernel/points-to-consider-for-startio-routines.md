@@ -7,11 +7,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20d3f2c89c84fa1fcef0289b5337a92c0c447bba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369223"
 ---
 # <a name="points-to-consider-for-startio-routines"></a>要考虑 StartIo 例程的事项
 

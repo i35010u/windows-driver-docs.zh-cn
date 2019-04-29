@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_CHANGE_SINGLE_ITEM 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: eb1267e8ccece7310cd1d3627068cac41b230418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369282"
 ---
 # <a name="irpmnchangesingleitem"></a>IRP\_MN\_更改\_单个\_项
 

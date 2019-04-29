@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7bae4b2e03d1253c6162b6c83efe435a2c7a18
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366238"
 ---
 # <a name="introduction-to-io-targets"></a>I/O 目标简介
 

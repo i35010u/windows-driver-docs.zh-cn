@@ -5,11 +5,11 @@ ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ca8ce8bb8392726042b2727072d6e8d7ab2e9526
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366325"
 ---
 # <a name="option-attributes-for-all-features"></a>所有功能的选项属性
 

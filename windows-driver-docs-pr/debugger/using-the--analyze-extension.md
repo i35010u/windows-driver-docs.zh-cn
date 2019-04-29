@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24547e89ed4a3a7c09fb8c43e0645fddd34dac6c
-ms.sourcegitcommit: c340d6058fa3ea6407d0041de80482b88f623a90
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59534157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378473"
 ---
 # <a name="using-the-analyze-extension"></a>使用 !analyze 扩展
 

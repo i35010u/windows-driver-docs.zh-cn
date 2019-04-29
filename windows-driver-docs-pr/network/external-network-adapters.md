@@ -5,11 +5,11 @@ ms.assetid: 4029437C-97EA-4F21-A3F0-3B29DC650233
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0be2ec56d6a62996590d1cde869781622c2d692
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360203"
 ---
 # <a name="external-network-adapters"></a>外部网络适配器
 

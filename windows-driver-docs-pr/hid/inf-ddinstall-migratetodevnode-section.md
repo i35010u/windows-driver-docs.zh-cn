@@ -1,6 +1,6 @@
 ---
-title: INF DDInstall.MigrateToDevNode 部分
-description: INF DDInstall.MigrateToDevNode 部分
+title: INF DDInstall.MigrateToDevNode 节
+description: INF DDInstall.MigrateToDevNode 节
 ms.assetid: a4edbc9e-a2d0-4012-aca9-0b357939a881
 keywords:
 - INF 文件 WDK 非 HID 键盘/鼠标
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b60af77d117b1b7c9c21923a982da6f25cef7be9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364679"
 ---
-# <a name="inf-ddinstallmigratetodevnode-section"></a>INF DDInstall.MigrateToDevNode 部分
+# <a name="inf-ddinstallmigratetodevnode-section"></a>INF DDInstall.MigrateToDevNode 节
 
 
 

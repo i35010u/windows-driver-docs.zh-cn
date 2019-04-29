@@ -1,6 +1,6 @@
 ---
-title: 获取和设置 Stream 状态
-description: 获取和设置 Stream 状态
+title: 获取和设置流状态
+description: 获取和设置流状态
 ms.assetid: e2fde528-d0cf-4ffe-945a-8672b76db61f
 keywords:
 - Avcstrm.sys 流式处理筛选器驱动程序 WDK，流状态
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 914adb45fbc1fbcc7564abad60c63adb49a403f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372391"
 ---
-# <a name="get-and-set-the-stream-state"></a>获取和设置 Stream 状态
+# <a name="get-and-set-the-stream-state"></a>获取和设置流状态
 
 
 

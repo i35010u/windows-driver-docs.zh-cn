@@ -4,11 +4,11 @@ description: 提供有关实现自定义媒体源帧服务器体系结构中的�
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 825540b9854f2431017c8ce86772ec7119f406b1
-ms.sourcegitcommit: 68bfa1f69229b7ac29d0e98f049734f5bc566a30
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58187470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372386"
 ---
 # <a name="frame-server-custom-media-source"></a>Frame Server 自定义媒体源 
 

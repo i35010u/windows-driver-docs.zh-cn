@@ -1,6 +1,6 @@
 ---
-title: 显示器驱动程序的图形 DDI 函数
-description: 显示器驱动程序的图形 DDI 函数
+title: 显示驱动程序的图形 DDI 函数
+description: 显示驱动程序的图形 DDI 函数
 ms.assetid: 9edd06bd-7aac-4015-864d-b08f3e3a79fd
 keywords:
 - 显示驱动程序 WDK Windows 2000 中，图形
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a70805ffca90452973707c91398aad21403694c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374605"
 ---
-# <a name="graphics-ddi-functions-for-display-drivers"></a>显示器驱动程序的图形 DDI 函数
+# <a name="graphics-ddi-functions-for-display-drivers"></a>显示驱动程序的图形 DDI 函数
 
 
 ## <span id="ddk_graphics_ddi_functions_for_display_drivers_gg"></span><span id="DDK_GRAPHICS_DDI_FUNCTIONS_FOR_DISPLAY_DRIVERS_GG"></span>

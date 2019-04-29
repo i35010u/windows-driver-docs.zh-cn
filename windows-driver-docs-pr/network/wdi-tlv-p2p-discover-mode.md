@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_DISCOVER_MODE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 28f98a50800e27ccf65d7df12c9e7c70de50bf99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362490"
 ---
 # <a name="wditlvp2pdiscovermode"></a>WDI\_TLV\_P2P\_DISCOVER\_模式
 
@@ -60,7 +60,7 @@ WDI\_TLV\_P2P\_DISCOVER\_模式是包含 Wi-Fi Direct 发现模式信息 TLV [OI
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

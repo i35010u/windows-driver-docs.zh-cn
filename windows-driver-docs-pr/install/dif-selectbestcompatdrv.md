@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 2c9b98c6cf2bb598f7b577a0a0208747fc23b4c9
-ms.sourcegitcommit: f133a551833ea10d27356663e8687f87d5401358
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56582791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366063"
 ---
 # <a name="difselectbestcompatdrv"></a>DIF_SELECTBESTCOMPATDRV
 
@@ -139,7 +139,7 @@ DIF_SELECTBESTCOMPATDRV 请求可让安装程序选择最适合的驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
 </tr>
 <tr class="even">

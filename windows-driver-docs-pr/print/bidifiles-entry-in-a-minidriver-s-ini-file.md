@@ -1,6 +1,6 @@
 ---
-title: BidiFiles 微型驱动程序的 INI 文件中的条目
-description: BidiFiles 微型驱动程序的 INI 文件中的条目
+title: 微型驱动程序 INI 文件中的 BidiFiles 项
+description: 微型驱动程序 INI 文件中的 BidiFiles 项
 ms.assetid: 953a29d2-f778-410e-bc8a-a09e294f2473
 keywords:
 - BidiFiles 部分
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f3eacbaaada4df272c7b6e079d2acb2afe3e4b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376584"
 ---
-# <a name="bidifiles-entry-in-a-minidrivers-ini-file"></a>BidiFiles 微型驱动程序的 INI 文件中的条目
+# <a name="bidifiles-entry-in-a-minidrivers-ini-file"></a>微型驱动程序 INI 文件中的 BidiFiles 项
 
 
 打印机微型驱动程序通信，通过特定于微型驱动程序的 INI 文件到端口监视器 bidi 扩展文件的信息。 端口监视器使用此信息在端口初始化过程中。

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 54cfb8cfd1e270816293b1d1db7a4a8a7132985a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377543"
 ---
 # <a name="roadmap-for-developing-ndis-drivers"></a>NDIS 驱动程序开发路线图
 
