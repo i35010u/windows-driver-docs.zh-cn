@@ -5,11 +5,11 @@ ms.assetid: 7c3e5b7e-aed9-4d82-91d9-e0c7b8f5ddf6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fe97654f5c4723d16951d88b9901c10af1a4b5d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383100"
 ---
 # <a name="hbafc3mgmtinfo-wmi-class"></a>HBAFC3MgmtInfo WMI 类
 

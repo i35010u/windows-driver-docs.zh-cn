@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 54a269203a867f81b2c65eb2e57b330d3a47732a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381409"
 ---
 # <a name="irpmnremovedevice"></a>IRP\_MN\_REMOVE\_DEVICE
 

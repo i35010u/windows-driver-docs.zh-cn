@@ -5,11 +5,11 @@ ms.assetid: 95ab50a0-8310-4b21-a986-9d3e924038d8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: d746d9ede482f6842b8ba4e15c399315d404eb19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383102"
 ---
 # <a name="hba-wmi-classes"></a>HBA WMI 类
 

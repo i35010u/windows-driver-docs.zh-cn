@@ -1,19 +1,19 @@
 ---
-title: 在调试器中运行的程序
-description: 在调试器中运行的程序
+title: 在调试器中运行程序
+description: 在调试器中运行程序
 ms.assetid: e34b9560-33a2-47ed-83eb-84712b65a7f0
 keywords:
 - GFlags、 在调试器中运行的程序
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59f2c31404bf960eaf6bf2110aa5bad874f33a00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382064"
 ---
-# <a name="running-a-program-in-a-debugger"></a>在调试器中运行的程序
+# <a name="running-a-program-in-a-debugger"></a>在调试器中运行程序
 
 
 ## <span id="ddk_running_a_program_in_a_debugger_dtools"></span><span id="DDK_RUNNING_A_PROGRAM_IN_A_DEBUGGER_DTOOLS"></span>

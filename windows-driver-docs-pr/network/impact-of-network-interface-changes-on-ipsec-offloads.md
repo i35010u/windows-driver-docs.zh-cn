@@ -1,6 +1,6 @@
 ---
-title: IPsec 上的网络接口更改的影响将卸载
-description: IPsec 上的网络接口更改的影响将卸载
+title: 网络接口更改对 IPsec 卸载造成的影响
+description: 网络接口更改对 IPsec 卸载造成的影响
 ms.assetid: 7d1b2bf9-31a9-4fc4-92f3-dc7b5e0277e3
 keywords:
 - WDK IPsec 卸载受保护的 ESP 数据包，路由接口更改
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f1cf47899771da66129c4cc04ab47da01b242e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383651"
 ---
-# <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>IPsec 上的网络接口更改的影响将卸载
+# <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>网络接口更改对 IPsec 卸载造成的影响
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

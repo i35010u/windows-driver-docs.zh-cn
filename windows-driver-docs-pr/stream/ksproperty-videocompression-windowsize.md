@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e21e98ae322c3ec27db64ceae9211b7ae6c98002
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385173"
 ---
 # <a name="kspropertyvideocompressionwindowsize"></a>KSPROPERTY\_VIDEOCOMPRESSION\_窗口大小
 
@@ -82,13 +82,13 @@ KSPROPERTY\_VIDEOCOMPRESSION\_窗口大小属性控制描述平均帧大小的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)

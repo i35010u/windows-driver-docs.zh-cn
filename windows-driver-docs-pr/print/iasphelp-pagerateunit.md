@@ -21,11 +21,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: acbf199ce49bb180b2640134d7e8f09c46be1fab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386622"
 ---
 # <a name="iasphelpgetpagerateunit-method"></a>Iasphelp::get\_PageRateUnit 方法
 
@@ -40,7 +40,7 @@ HRESULT get_PageRateUnit(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *pVal* \[out\]  
@@ -141,7 +141,7 @@ PtrPageRate = objPrinter.PageRateUnit
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp::PageRate**](iasphelp-pagerate.md)
 

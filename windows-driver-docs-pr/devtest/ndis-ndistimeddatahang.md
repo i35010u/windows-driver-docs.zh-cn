@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 960fa64c4f64193f69eddf09c9f69e3eae97dd9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382974"
 ---
 # <a name="ndistimeddatahang-rule-ndis"></a>NdisTimedDataHang 规则 (ndis)
 
@@ -57,7 +57,7 @@ ms.locfileid: "56523002"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**MiniportSendNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff559440)

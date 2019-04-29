@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bfc9cc2f7bcd19ca4153922a915c895cc09b5e33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383261"
 ---
 # <a name="reporting-pure-device-capability"></a>报告单纯设备功能
 

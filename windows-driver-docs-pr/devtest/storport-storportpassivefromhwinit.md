@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: c2ee865d1d049e14ccaab7fb750f6a0470f19c53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386390"
 ---
 # <a name="storportpassivefromhwinit-rule-storport"></a>StorPortPassiveFromHwInit 规则 (storport)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56543674"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**StorPortEnablePassiveInitialization**](https://msdn.microsoft.com/library/windows/hardware/ff567056)

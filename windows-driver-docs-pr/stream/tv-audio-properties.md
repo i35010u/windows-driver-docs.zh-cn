@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87d32c39cd14bc972af783e01f7cafe325e9d677
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382503"
 ---
 # <a name="tv-audio-properties"></a>电视音频属性
 

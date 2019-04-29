@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4eddd123c4b2db1d7ef04d841dced68ed813d82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383853"
 ---
 # <a name="elevation-of-privilege"></a>特权提升
 

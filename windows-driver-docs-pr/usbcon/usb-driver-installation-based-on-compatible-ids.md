@@ -1,14 +1,14 @@
 ---
-Description: Microsoft-provided in-box driver (Usbser.sys) for your Communications and CDC Control device.
+Description: Microsoft 提供内置设备驱动程序 (Usbser.sys) 通信和 CDC 控制。
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fff60502b51bf4e670f5d3e92c6044a6e338611d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385064"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 

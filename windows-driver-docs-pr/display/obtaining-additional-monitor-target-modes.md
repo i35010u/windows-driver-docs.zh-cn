@@ -1,19 +1,19 @@
 ---
-title: 获取辅助监视器目标模式
-description: 获取辅助监视器目标模式
+title: 获取其他监视目标模式
+description: 获取其他监视目标模式
 ms.assetid: fc0e2d43-8fc2-4757-ba77-f72a01e04343
 keywords:
 - 监视目标模式 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b674b83ada8a0f5ddb9101f9016ab9ae34c1bd9f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384002"
 ---
-# <a name="obtaining-additional-monitor-target-modes"></a>获取辅助监视器目标模式
+# <a name="obtaining-additional-monitor-target-modes"></a>获取其他监视目标模式
 
 
 从 Windows 7 开始，新的监视器界面不可用， [ **DXGK\_监视器\_接口\_V2**](https://msdn.microsoft.com/library/windows/hardware/ff561968)。 它提供了两个其他函数，不是在原始[ **DXGK\_监视器\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff561949)接口：
@@ -160,7 +160,7 @@ ms.locfileid: "56524980"
 
 
  
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [确定是否 VidPN 显示适配器上受支持](determining-whether-a-vidpn-is-supported-on-a-display-adapter.md)
 

@@ -1,17 +1,17 @@
 ---
-title: NIC 开关
-description: NIC 开关
+title: NIC 交换机
+description: NIC 交换机
 ms.assetid: 7681DBB2-6645-4B06-9D95-64E7FD379029
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e010a225adcdd610b42d8f523d2e848a4b79362
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380588"
 ---
-# <a name="nic-switches"></a>NIC 开关
+# <a name="nic-switches"></a>NIC 交换机
 
 
 支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器必须实现之间的物理端口在适配器上和内部网络流量都转发的硬件桥梁[虚拟端口 (VPorts)](virtual-ports--vports-.md)。 此桥称为*NIC 交换机*并在下图中所示。

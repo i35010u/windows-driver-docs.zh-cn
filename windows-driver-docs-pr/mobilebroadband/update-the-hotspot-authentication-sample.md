@@ -5,11 +5,11 @@ ms.assetid: 68ebcdee-7b21-4177-b032-ba725ad2aee4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e9e74240085dcd4e327499732cdd3a0f129f5bc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383760"
 ---
 # <a name="update-the-hotspot-authentication-sample"></a>更新热点身份验证示例
 

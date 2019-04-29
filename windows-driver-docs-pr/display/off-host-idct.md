@@ -1,6 +1,6 @@
 ---
-title: 关闭主机 IDCT
-description: 关闭主机 IDCT
+title: 主机外 IDCT
+description: 主机外 IDCT
 ms.assetid: 31797487-0c4e-4b8c-801e-f545bd60cc6d
 keywords:
 - 宏块 WDK DirectX va，因此 IDCT
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f05277f80d8d86a26702a8f089ab695acec40f87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383999"
 ---
-# <a name="off-host-idct"></a>关闭主机 IDCT
+# <a name="off-host-idct"></a>主机外 IDCT
 
 
 ## <span id="_off_host_idct"></span><span id="_OFF_HOST_IDCT"></span>

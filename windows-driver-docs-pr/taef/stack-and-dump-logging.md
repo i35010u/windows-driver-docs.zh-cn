@@ -5,11 +5,11 @@ ms.assetid: 5FE6AA76-5299-4d5d-9154-6DB34D93EECB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58aeb88821a8ea4ba02dab7f41906a6fc84eeecb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386489"
 ---
 # <a name="stack-and-dump-logging"></a>堆栈和转储日志记录
 
@@ -47,7 +47,7 @@ HRESULT hr = Debug::SaveDump(MiniDumpFormat::WriteCab | MiniDumpFormat::WriteCab
 
 可选的堆栈类型参数指定应包含的堆栈跟踪。 如果省略了可选参数，则使用默认设置。
 
-示例：
+例如：
 
 ```cpp
 NoThrowString stackText;

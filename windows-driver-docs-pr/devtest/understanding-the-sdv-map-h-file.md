@@ -1,19 +1,19 @@
 ---
-title: 了解 Sdv map.h 文件
-description: 了解 Sdv map.h 文件
+title: 了解 Sdv-map.h 文件
+description: 了解 Sdv-map.h 文件
 ms.assetid: 2ad3d94d-3991-414b-ae1c-27a07c10839f
 keywords:
 - 有关 Sdv map.h 的 Sdv map.h WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0db80cf0bfa5d1389258c4760999607dd5b54242
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384702"
 ---
-# <a name="understanding-the-sdv-maph-file"></a>了解 Sdv map.h 文件
+# <a name="understanding-the-sdv-maph-file"></a>了解 Sdv-map.h 文件
 
 
 之前验证驱动程序，SDV 扫描驱动程序的源代码和驱动程序的源目录中创建的 Sdv map.h 文件。 应检查并验证您的驱动程序之前批准此标头文件。

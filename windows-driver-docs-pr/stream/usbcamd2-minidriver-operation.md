@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f94f562f0c91c5d50fe3eb2847fa7a9717637bd
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384144"
 ---
 # <a name="usbcamd2-minidriver-operation"></a>USBCAMD2 微型驱动程序操作
 

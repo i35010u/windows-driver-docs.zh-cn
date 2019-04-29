@@ -5,11 +5,11 @@ ms.assetid: 53BAC457-BB6A-44a8-AD8D-3B621F41A245
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43e45ed79f1bb9c33ade51578d80b83751308555
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383043"
 ---
 # <a name="assembly-config-files"></a>程序集配置文件
 

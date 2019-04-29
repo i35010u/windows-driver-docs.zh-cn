@@ -1,6 +1,6 @@
 ---
-title: 为常见缓冲区系统 DMA 分配适配器通道
-description: 为常见缓冲区系统 DMA 分配适配器通道
+title: 为公用缓冲区系统 DMA 分配适配器通道
+description: 为公用缓冲区系统 DMA 分配适配器通道
 ms.assetid: 3b426b5e-e555-458c-8e16-0d59a7cb9bd6
 keywords:
 - 分配适配器通道
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5efb04bf7a49f1c2b10e02069f860222b491bd43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386263"
 ---
-# <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>为常见缓冲区系统 DMA 分配适配器通道
+# <a name="allocating-an-adapter-channel-for-common-buffer-system-dma"></a>为公用缓冲区系统 DMA 分配适配器通道
 
 
 

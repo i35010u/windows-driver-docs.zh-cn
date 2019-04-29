@@ -1,6 +1,6 @@
 ---
-title: GDI 调色板的支持
-description: GDI 调色板的支持
+title: 调色板的 GDI 支持
+description: 调色板的 GDI 支持
 ms.assetid: 8c6ebf1e-6c83-45d9-bf83-f0684d28fc32
 keywords:
 - DrvEnablePDEV
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 557fd160d48b8c6972b4a7b7c647bf0aa1e33294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384564"
 ---
-# <a name="gdi-support-for-palettes"></a>GDI 调色板的支持
+# <a name="gdi-support-for-palettes"></a>调色板的 GDI 支持
 
 
 ## <span id="ddk_gdi_support_for_palettes_gg"></span><span id="DDK_GDI_SUPPORT_FOR_PALETTES_GG"></span>

@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 269e7fdb33ea8cd91275fd17cc777e096d19c608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385645"
 ---
 # <a name="the-redirected-drive-buffering-subsystem"></a>重定向的驱动器缓冲子系统
 

@@ -1,6 +1,6 @@
 ---
-title: 接收指示标头数据拆分
-description: 接收指示标头数据拆分
+title: 标头数据拆分的接收指示
+description: 标头数据拆分的接收指示
 ms.assetid: 76abeac8-ca6e-40b1-a46e-83ae90d9192e
 keywords:
 - 标头数据拆分 WDK，接收指示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f80b5080b65240207389376940298bc170913ca3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385010"
 ---
-# <a name="receive-indications-with-header-data-split"></a>接收指示标头数据拆分
+# <a name="receive-indications-with-header-data-split"></a>标头数据拆分的接收指示
 
 
 

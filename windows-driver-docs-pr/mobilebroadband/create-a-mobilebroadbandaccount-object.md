@@ -5,11 +5,11 @@ ms.assetid: 631e885f-67bb-4c30-a82f-352c23cc973a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 584c976f068c81442206641b065a29c022d10526
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383781"
 ---
 # <a name="create-a-mobilebroadbandaccount-object"></a>创建 MobileBroadbandAccount 对象
 
@@ -44,7 +44,7 @@ var myNetworkAccountObject = Windows.Networking.NetworkOperators.MobileBroadband
 
 如果检测不到任何网络硬件，或者如果网络硬件不具有可访问 SIM，可以出现此问题。 确定返回的集合为空的确切原因的简单方法是查看 WWAN 日志。 你已收集日志后，搜索文本日志文件包含文本的条目**AvailableNetworkAccountIds**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)

@@ -1,6 +1,6 @@
 ---
-title: 在中间的驱动程序或筛选器驱动程序中支持 RSS
-description: 在中间的驱动程序或筛选器驱动程序中支持 RSS
+title: 在中间驱动程序或筛选器驱动程序中支持 RSS
+description: 在中间驱动程序或筛选器驱动程序中支持 RSS
 ms.assetid: 5e1bfbb0-0b7a-4a9d-a228-4089f7208880
 keywords:
 - 接收方缩放 WDK 网络连接、 中间驱动程序
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43374f491a5540a6dfc23e609effca7fc8f8e621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384216"
 ---
-# <a name="supporting-rss-in-intermediate-drivers-or-filter-drivers"></a>在中间的驱动程序或筛选器驱动程序中支持 RSS
+# <a name="supporting-rss-in-intermediate-drivers-or-filter-drivers"></a>在中间驱动程序或筛选器驱动程序中支持 RSS
 
 
 

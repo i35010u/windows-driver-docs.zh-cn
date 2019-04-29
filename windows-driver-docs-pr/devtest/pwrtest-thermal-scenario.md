@@ -1,17 +1,17 @@
 ---
-title: PwrTest 温度方案
+title: PwrTest 热量方案
 description: PwrTest 热量方案监视 ACPI 温度区信息和统计信息。
 ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92add792882c0a50b7697b1976181fbf2e2a10c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380959"
 ---
-# <a name="pwrtest-thermal-scenario"></a>PwrTest 温度方案
+# <a name="pwrtest-thermal-scenario"></a>PwrTest 热量方案
 
 
 PwrTest 热量方案监视 ACPI 温度区信息和统计信息。 报告过热区域和温度变化的系统上仅支持此方案。
@@ -180,7 +180,7 @@ pwrtest /thermal  /t:30 /temp:f
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

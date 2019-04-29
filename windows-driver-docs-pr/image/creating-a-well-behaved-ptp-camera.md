@@ -1,17 +1,17 @@
 ---
-title: 创建表现良好 PTP 照相机
-description: 创建表现良好 PTP 照相机
+title: 创建表现良好的 PTP 相机
+description: 创建表现良好的 PTP 相机
 ms.assetid: 5d36a973-c4ff-4da7-9626-f358f801b592
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4fa28e21e589f3f774577b7529bd23926b4904a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386318"
 ---
-# <a name="creating-a-well-behaved-ptp-camera"></a>创建表现良好 PTP 照相机
+# <a name="creating-a-well-behaved-ptp-camera"></a>创建表现良好的 PTP 相机
 
 
 

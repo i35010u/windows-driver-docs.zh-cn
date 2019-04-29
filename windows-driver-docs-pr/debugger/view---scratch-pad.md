@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 08cad4cade5595c0451974c30d02e5cd71b70dc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386434"
 ---
-# <a name="view--scratch-pad"></a>视图 |草稿板
+# <a name="view--scratch-pad"></a>视图 | 暂存器
 
 
 ## <span id="ddk_view_scratch_pad_dbg"></span><span id="DDK_VIEW_SCRATCH_PAD_DBG"></span>

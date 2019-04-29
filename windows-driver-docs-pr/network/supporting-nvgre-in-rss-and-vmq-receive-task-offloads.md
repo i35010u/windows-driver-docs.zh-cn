@@ -1,17 +1,17 @@
 ---
-title: 支持 NVGRE 在 RSS 和 VMQ 接收任务卸载
+title: 在 RSS 和 VMQ 接收任务卸载中支持 NVGRE
 description: 本部分介绍支持 NVGRE RSS 和 VMQ 接收任务卸载
 ms.assetid: 42660D55-31C0-4101-9EA1-159EBB76B019
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f0bf5311665b7a7a362b314d28ebe698f2c0dc9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534510"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384218"
 ---
-# <a name="supporting-nvgre-in-rss-and-vmq-receive-task-offloads"></a>支持 NVGRE 在 RSS 和 VMQ 接收任务卸载
+# <a name="supporting-nvgre-in-rss-and-vmq-receive-task-offloads"></a>在 RSS 和 VMQ 接收任务卸载中支持 NVGRE
 
 
 NDIS 6.30 (Windows Server 2012) 引入了[网络虚拟化使用通用路由封装 (NVGRE)](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)。 NDIS 微型端口驱动程序和 Nic，可以执行[接收方伸缩](receive-scaling.md)(RSS) 和[虚拟机队列 (VMQ)](virtual-machine-queue--vmq-.md)接收卸载应执行此操作的方式支持 NVGRE 的任务。

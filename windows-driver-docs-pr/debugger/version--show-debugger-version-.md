@@ -1,5 +1,5 @@
 ---
-title: 版本 （显示调试器版本）
+title: version（显示调试器版本）
 description: 版本命令显示调试器和所有已加载的扩展 Dll 的版本信息。
 ms.assetid: 51819d56-c24f-41f2-9090-5787e24ea773
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ab081d7851337dd356c45254b8db9e517d431d9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386430"
 ---
-# <a name="version-show-debugger-version"></a>版本 （显示调试器版本）
+# <a name="version-show-debugger-version"></a>version（显示调试器版本）
 
 
 **版本**命令显示有关调试程序和所有已加载的扩展 Dll 的版本信息。 此命令还显示目标计算机的操作系统的当前版本。

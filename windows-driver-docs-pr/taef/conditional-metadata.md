@@ -5,11 +5,11 @@ ms.assetid: A1C223AB-E9BB-480e-B9ED-75989FD34479
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f484fc7dcc6bb42489311c1f305b52c88d8455b
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385069"
 ---
 # <a name="conditional-metadata"></a>条件元数据
 

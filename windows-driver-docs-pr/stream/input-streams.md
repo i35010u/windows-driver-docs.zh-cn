@@ -1,6 +1,6 @@
 ---
-title: 输入的流
-description: 输入的流
+title: 输入流
+description: 输入流
 ms.assetid: 0aa378d8-e7e2-4555-b541-dd1ed77b4a12
 keywords:
 - 输入的流的 WDK DVD 解码器
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0740694167f9aea25a7bc31b7f08d8c9ae7024a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386528"
 ---
-# <a name="input-streams"></a>输入的流
+# <a name="input-streams"></a>输入流
 
 
 
@@ -39,8 +39,8 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -78,8 +78,8 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -119,8 +119,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -154,8 +154,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -195,8 +195,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -236,8 +236,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>值</th>
+<th>特性</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>

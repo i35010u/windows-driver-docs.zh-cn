@@ -1,20 +1,20 @@
 ---
 title: 规范和资源
-description: 若要使用 Microsoft Windows 操作系统中，智能卡中的智能卡支持读取器和卡应与 ICCs 和个人计算机系统的互操作性规范兼容。
+description: 若要使用 Microsoft Windows 操作系统中的智能卡支持，智能卡读卡器和卡应当符合 ICC 和个人电脑系统的互操作性规范。
 ms.assetid: 2987B55B-0A2E-405D-B497-2EB7FB0E458D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f038f7186a400f69d7a22e82843e5f1c5b5dd46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382542"
 ---
 # <a name="specifications-and-resources"></a>规范和资源
 
 
-若要使用 Microsoft Windows 操作系统中，智能卡中的智能卡支持读取器和卡应与 ICCs 和个人计算机系统的互操作性规范兼容。 智能卡读卡器和设备驱动程序还应是插即用兼容。
+若要使用 Microsoft Windows 操作系统中的智能卡支持，智能卡读卡器和卡应当符合 ICC 和个人电脑系统的互操作性规范。 智能卡读卡器和设备驱动程序还应当符合即插即用标准。
 
 ## <a name="span-idsmartcardreaderspanspan-idsmartcardreaderspanspan-idsmartcardreaderspansmart-card-reader"></a><span id="Smart_Card_Reader"></span><span id="smart_card_reader"></span><span id="SMART_CARD_READER"></span>智能卡读卡器
 

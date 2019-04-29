@@ -1,17 +1,17 @@
 ---
-title: 获取最后一个备份的信息 （函数索引 4）
+title: 获取上次备份信息（功能索引 4）
 description: 此函数返回有关已保存的映像的信息。
 ms.assetid: F73A763B-4A4A-4CAB-AA62-AFA79849884B
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 76b0e061c53f230e4ba6905a81d69226236bcd30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386616"
 ---
-# <a name="get-last-backup-information-function-index-4"></a>获取最后一个备份的信息 （函数索引 4）
+# <a name="get-last-backup-information-function-index-4"></a>获取上次备份信息（功能索引 4）
 
 
 此函数返回有关已保存的映像的信息。
@@ -77,7 +77,7 @@ ms.locfileid: "56547487"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

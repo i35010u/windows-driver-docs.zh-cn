@@ -1,5 +1,5 @@
 ---
-title: Net 环和 net 环迭代器
+title: 网环和网环迭代器
 description: 本主题介绍 net 环和 net 环迭代器。
 ms.assetid: 8A56AA21-264C-4C1A-887E-92C9071E8AB8
 keywords:
@@ -8,13 +8,13 @@ ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: de9f3d4f766d77c2aa80b909794307592e40b925
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384554"
 ---
-# <a name="net-rings-and-net-ring-iterators"></a>Net 环和 net 环迭代器
+# <a name="net-rings-and-net-ring-iterators"></a>网环和网环迭代器
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 

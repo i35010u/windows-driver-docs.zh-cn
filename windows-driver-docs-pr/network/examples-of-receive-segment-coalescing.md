@@ -1,17 +1,17 @@
 ---
-title: 示例接收段合并
+title: 接收段合并的示例
 description: 本部分使用的段按顺序接收和处理单个延缓的过程调用 (DPC) 中的示例演示了合并的算法。
 ms.assetid: BC4C3216-683B-4E86-B2DF-F75FFCA7DACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abf61775d1421eaf92e4d26954cc00786198881d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385495"
 ---
-# <a name="examples-of-receive-segment-coalescing"></a>示例接收段合并
+# <a name="examples-of-receive-segment-coalescing"></a>接收段合并的示例
 
 
 本部分使用的段按顺序接收和处理单个延缓的过程调用 (DPC) 中的示例演示了合并的算法。
@@ -99,7 +99,7 @@ ms.locfileid: "56544333"
 
 SCU。WND = 131070，并基于此值更新校验和。
 
-## <a name="example-4-piggybacked-acks-mixed-with-data-segments"></a>示例 4:数据段的非法携带的确认混合
+## <a name="example-4-piggybacked-acks-mixed-with-data-segments"></a>示例 4：数据段的非法携带的确认混合
 
 
 ### <a name="segment-description"></a>段说明

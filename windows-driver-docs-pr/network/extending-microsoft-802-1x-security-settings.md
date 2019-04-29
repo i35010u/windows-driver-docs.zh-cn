@@ -1,6 +1,6 @@
 ---
-title: 安全设置扩展 Microsoft 802.1x
-description: 安全设置扩展 Microsoft 802.1x
+title: 扩展 Microsoft 802.1X 安全设置
+description: 扩展 Microsoft 802.1X 安全设置
 ms.assetid: 08227a84-3e61-409d-b08a-e2a9cf02be44
 keywords:
 - IHV UI 扩展 DLL WDK 本机 802.11，802.1 X 安全设置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19d18c5153d192aac90bd6a0eb4e3b01c5dee616
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385483"
 ---
-# <a name="extending-microsoft-8021x-security-settings"></a>安全设置扩展 Microsoft 802.1x
+# <a name="extending-microsoft-8021x-security-settings"></a>扩展 Microsoft 802.1X 安全设置
 
 
 

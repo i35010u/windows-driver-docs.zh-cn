@@ -9,11 +9,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 9ed759ad3b03575026bff05c1889c680511bf666
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384397"
 ---
 # <a name="setting-button-state-by-specifying-its-usage"></a>通过指定其使用情况设置按钮状态
 

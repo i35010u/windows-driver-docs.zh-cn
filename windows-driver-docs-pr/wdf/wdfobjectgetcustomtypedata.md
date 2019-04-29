@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d51725eb8d1740c10024987ddba5cb15c7f9e9c6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385738"
 ---
 # <a name="wdfobjectgetcustomtypedata-macro"></a>WdfObjectGetCustomTypeData macro
 
@@ -30,7 +30,7 @@ PULONG WdfObjectGetCustomTypeData(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *处理*\[中\]  
@@ -71,13 +71,13 @@ Framework 对象的句柄。
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject.h （包括 Wdf.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)

@@ -1,17 +1,17 @@
 ---
-title: 使用网站的预配 Windows
-description: 使用网站的预配 Windows
+title: 使用网站预配 Windows
+description: 使用网站预配 Windows
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43e96b241107438e23351ae83d379711efd49f30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383653"
 ---
-# <a name="provisioning-windows-using-a-website"></a>使用网站的预配 Windows
+# <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
 
 本主题介绍如何使用网站让客户购买和设置移动宽带计划运行的 Windows 8、 Windows 8.1 或 Windows 10 的计算机上。

@@ -5,11 +5,11 @@ ms.assetid: 7648F789-85D5-4247-90DD-2EAA43543483
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dd1b8c31c7a80c9f1efdc12cfc69d0b9cb84365
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383742"
 ---
 # <a name="writing-an-analysis-extension-plugin-to-extend-analyze"></a>分析扩展插件写入扩展 ！ 分析
 

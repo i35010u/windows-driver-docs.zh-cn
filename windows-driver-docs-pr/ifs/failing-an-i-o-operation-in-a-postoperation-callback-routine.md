@@ -1,6 +1,6 @@
 ---
-title: 失败的 I/O 操作中 Postoperation 回调例程
-description: 失败的 I/O 操作中 Postoperation 回调例程
+title: 在后操作回调例程中让 I/O 操作失败
+description: 在后操作回调例程中让 I/O 操作失败
 ms.assetid: 45897bca-1573-42c5-ad00-3198b7362d9e
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，失败的操作
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f83823796137d940872f2759d5d6e40f3559eadd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383841"
 ---
-# <a name="failing-an-io-operation-in-a-postoperation-callback-routine"></a>失败的 I/O 操作中 Postoperation 回调例程
+# <a name="failing-an-io-operation-in-a-postoperation-callback-routine"></a>在后操作回调例程中让 I/O 操作失败
 
 
 ## <span id="ddk_failing_an_io_operation_in_a_postoperation_callback_routine_if"></span><span id="DDK_FAILING_AN_IO_OPERATION_IN_A_POSTOPERATION_CALLBACK_ROUTINE_IF"></span>

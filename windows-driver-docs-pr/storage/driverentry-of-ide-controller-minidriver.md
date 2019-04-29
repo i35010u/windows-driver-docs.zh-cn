@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4a62edaf8cce48213db00d6110d825b839330a64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384838"
 ---
 # <a name="driverentry-of-ide-controller-minidriver-function"></a>DriverEntry 的 IDE 控制器微型驱动程序函数
 
@@ -36,7 +36,7 @@ NTSTATUS DriverEntry(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *DriverObject* \[in\]  
@@ -71,7 +71,7 @@ IDE 控制器微型驱动程序的**DriverEntry**例程必须调用[ **PciIdeXIn
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ide.h （包括 Ide.h）</td>
 </tr>
 <tr class="odd">

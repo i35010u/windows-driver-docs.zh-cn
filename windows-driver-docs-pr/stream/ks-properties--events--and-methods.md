@@ -1,6 +1,6 @@
 ---
-title: KS 属性、 事件和方法
-description: KS 属性、 事件和方法
+title: KS 属性、事件和方法
+description: KS 属性、事件和方法
 ms.assetid: 933bbe81-92d8-4bcc-b935-9ae929464ca1
 keywords:
 - 内核流式处理 WDK，属性
@@ -18,13 +18,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be71c7dd505e9376bbd18199b8a012a3c35a89d4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382115"
 ---
-# <a name="ks-properties-events-and-methods"></a>KS 属性、 事件和方法
+# <a name="ks-properties-events-and-methods"></a>KS 属性、事件和方法
 
 
 
@@ -40,7 +40,7 @@ ms.locfileid: "56521843"
 
     在一组中，在功能上类似的操作组合在一起。 每个属性、 事件或方法集是由 GUID 标识。 Microsoft 为标准的特定于技术的操作定义 Guid。 微型驱动程序可以定义其自己的自定义操作的 Guid。
 
--   **标识符**
+-   **Identifier**
 
     每个操作被指定的集内的 ID 号。
 

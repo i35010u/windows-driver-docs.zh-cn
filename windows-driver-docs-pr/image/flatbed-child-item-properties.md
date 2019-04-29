@@ -1,17 +1,17 @@
 ---
-title: 平板子项目属性
-description: 平板子项目属性
+title: 平板子项属性
+description: 平板子项属性
 ms.assetid: ad13e4a2-0c5c-43a5-ab83-fc2ef65b4467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8a836adc9605365629c9ca18331bbf8bee79ee2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384658"
 ---
-# <a name="flatbed-child-item-properties"></a>平板子项目属性
+# <a name="flatbed-child-item-properties"></a>平板子项属性
 
 
 支持以下 WIA 属性所需的 WIA 平板扫描仪项的子项：

@@ -5,11 +5,11 @@ ms.assetid: 94993523-D0D7-441E-B95C-417800840BAC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8b59e31e8c09007a36a9a8004e3bcd07612efe4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380908"
 ---
 # <a name="ndkpi-object-lifetime-requirements"></a>NDKPI 对象生存期要求
 
@@ -52,7 +52,7 @@ NDK 使用者通过该对象调用 NDK 提供程序的创建函数启动的 NDK 
 
  
 
-## <a name="example-consumer-provider-interaction"></a>示例：使用者提供程序交互
+## <a name="example-consumer-provider-interaction"></a>例如：使用者提供程序交互
 
 
 请考虑以下方案：

@@ -1,5 +1,5 @@
 ---
-title: 打印机 Bidi 接口
+title: 打印机双向接口
 description: 描述打印机的 V4 打印驱动程序的双向 (Bidi) 的通信接口。
 MSHAttr:
 - PreferredSiteName:MSDN
@@ -8,13 +8,13 @@ ms.assetid: AFFBA568-7756-4D33-9E14-83A3373A4DC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cd96b263b442bac531f533495f7a363b42ea85a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383153"
 ---
-# <a name="printer-bidi-interfaces"></a>打印机 Bidi 接口
+# <a name="printer-bidi-interfaces"></a>打印机双向接口
 
 这些接口使 V4 打印驱动程序模型建立和维护与 USB 打印机的双向通信。 这些接口才可通过在打印后台处理程序中运行的 JavaScript 代码访问。 
 

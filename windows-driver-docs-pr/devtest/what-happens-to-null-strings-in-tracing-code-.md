@@ -5,11 +5,11 @@ ms.assetid: a2226cbd-28cf-48eb-b129-5c4d12eb2564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07a917abc0a5ebbf24b6cc6883ad523bee12ada7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386387"
 ---
 # <a name="what-happens-to-null-strings-in-tracing-code"></a>跟踪代码中的 NULL 字符串会发生什么情况？
 

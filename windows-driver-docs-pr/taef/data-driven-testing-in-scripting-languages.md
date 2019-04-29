@@ -1,15 +1,15 @@
 ---
-title: 数据驱动的测试中的脚本语言
-description: 数据驱动的测试中的脚本语言
+title: 使用脚本语言创作数据驱动的测试
+description: 使用脚本语言创作数据驱动的测试
 ms.assetid: CF60C594-8877-4f09-AF82-9F4CA27123C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 782808f9c7d86008e84b524312ddbfcd1024658a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385065"
 ---
 # <a name="span-idtaefdata-driventestinginscriptinglanguagesspandata-driven-testing-in-scripting-languages"></a><span id="taef.data-driven_testing_in_scripting_languages"></span>数据驱动的测试中的脚本语言
 

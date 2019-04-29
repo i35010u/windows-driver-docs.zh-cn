@@ -1,6 +1,6 @@
 ---
-title: DirectShow 筛选器添加到 Stream 类微型驱动程序通信
-description: DirectShow 筛选器添加到 Stream 类微型驱动程序通信
+title: 用于流式传输类微型驱动程序通信的 DirectShow 筛选器
+description: 用于流式传输类微型驱动程序通信的 DirectShow 筛选器
 ms.assetid: d2122827-758c-4557-b2fd-8774179b5da4
 keywords:
 - 筛选图形配置 WDK 视频捕获，DirectShow
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c79b4b9634630f6a4972f8733373989808512576
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384745"
 ---
-# <a name="directshow-filter-to-stream-class-minidriver-communication"></a>DirectShow 筛选器添加到 Stream 类微型驱动程序通信
+# <a name="directshow-filter-to-stream-class-minidriver-communication"></a>用于流式传输类微型驱动程序通信的 DirectShow 筛选器
 
 
 用户模式下 DirectShow 筛选器与视频捕获微型驱动程序使用 Win32 API 交互**DeviceIoControl**函数调用。 这些调用的 Stream 类接口转换为流请求块 (Srb)，然后发送到的视频捕获微型驱动程序处理。 有两种类别的 Srb:Srb 用于常规设备级别的控件，并会影响单个流 Srb。 每个类别主要 Srb 表所示。

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ENABLE_WAKE_UP 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e76de77a6cf2ed43f1e81e373b63076bce577185
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384634"
 ---
 # <a name="oidpnpenablewakeup"></a>OID\_PNP\_启用\_唤醒\_向上
 
@@ -55,7 +55,7 @@ NDIS 不会立即启用协议驱动程序指定的唤醒功能。 相反，NDIS 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 NDIS 6.0 和 6.1 中受支持。 有关 NDIS 6.20 和更高版本，使用<a href="oid-pm-parameters.md" data-raw-source="[OID_PM_PARAMETERS](oid-pm-parameters.md)">OID_PM_PARAMETERS</a>相反)。</p></td>
 </tr>
 <tr class="even">

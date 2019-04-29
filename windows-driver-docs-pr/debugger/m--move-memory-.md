@@ -1,5 +1,5 @@
 ---
-title: m （移动内存）
+title: m（移动内存）
 description: M 命令将从一个位置的内存的内容复制到另一个。 不要混淆此命令使用 ~ m （恢复线程） 命令。
 ms.assetid: afcac933-6bba-4566-ae07-bb9110f851d2
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 837478b76e8307f050d9e4e9a6a0064acef5e74a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383307"
 ---
-# <a name="m-move-memory"></a>m （移动内存）
+# <a name="m-move-memory"></a>m（移动内存）
 
 
 **M**命令将内存中的内容从一个位置复制到另一个。

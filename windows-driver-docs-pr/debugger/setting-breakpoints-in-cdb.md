@@ -5,11 +5,11 @@ ms.assetid: 7FCD6540-6593-42CB-A148-8974F25F3886
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04bc4a4ee5d9a3a0c51d562a147a36a6f1621006
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381963"
 ---
 # <a name="setting-breakpoints-in-cdb"></a>在 CDB 中设置断点
 

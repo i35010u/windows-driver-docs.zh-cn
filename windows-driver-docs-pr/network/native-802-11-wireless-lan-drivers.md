@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 34698a6b1c228ed4152a6fb7ea6d3e1f961e4990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383612"
 ---
 # <a name="native-80211-wireless-lan-drivers"></a>本机 802.11 无线 LAN 驱动程序
 

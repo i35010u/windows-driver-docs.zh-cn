@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db61dd470f7d506a94ed0242544809ae0f89bcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383253"
 ---
 # <a name="reporting-support-for-32-bit-indices"></a>报告 32 位索引支持
 

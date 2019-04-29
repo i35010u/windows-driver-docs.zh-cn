@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf15ccce5b96267ded0dce6f0cd73e40c18f957a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383580"
 ---
 # <a name="com-interfaces-for-ui-plug-ins"></a>UI 插件的 COM 接口
 

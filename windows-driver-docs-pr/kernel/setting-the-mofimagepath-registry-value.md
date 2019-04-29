@@ -1,6 +1,6 @@
 ---
-title: MofImagePath 注册表值设置
-description: MofImagePath 注册表值设置
+title: 设置 MofImagePath 注册表值
+description: 设置 MofImagePath 注册表值
 ms.assetid: b8c43cd3-d4f4-4f1e-b692-8005d845d64a
 keywords:
 - WMI WDK 内核，发布架构
@@ -11,13 +11,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a8f020e3d1cadaa02f5a7e4a2c3213482b0ac90
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385497"
 ---
-# <a name="setting-the-mofimagepath-registry-value"></a>MofImagePath 注册表值设置
+# <a name="setting-the-mofimagepath-registry-value"></a>设置 MofImagePath 注册表值
 
 
 

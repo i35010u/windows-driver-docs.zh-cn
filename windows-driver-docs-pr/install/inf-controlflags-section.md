@@ -1,5 +1,5 @@
 ---
-title: INF ControlFlags Section
+title: INF ControlFlags 节
 description: ControlFlags 部分标识为其 Windows 应采取某些唯一在安装过程中的设备。
 ms.assetid: 529060b6-ee4b-49a8-b723-5eda47e9f561
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f52af6a0d8677d494ec80d865041c326ba3a6f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383817"
 ---
-# <a name="inf-controlflags-section"></a>INF ControlFlags Section
+# <a name="inf-controlflags-section"></a>INF ControlFlags 节
 
 
 **请注意**  如果要构建一个通用或移动设备的驱动程序包，此部分无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
@@ -162,7 +162,7 @@ InteractiveInstall = \
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)

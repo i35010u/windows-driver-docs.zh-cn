@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c72c415bcdf1a5651968b26392ad11a3d68346a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384660"
 ---
 # <a name="using-an-inf-file-to-install-a-file-system-filter-driver"></a>使用 INF 文件安装文件系统筛选器驱动程序
 

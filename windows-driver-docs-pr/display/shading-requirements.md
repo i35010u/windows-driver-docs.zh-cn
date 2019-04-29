@@ -1,6 +1,6 @@
 ---
-title: 明暗度要求
-description: 明暗度要求
+title: 着色要求
+description: 着色要求
 ms.assetid: 6c4f3dee-a955-4140-8b64-e9289094f530
 keywords:
 - 明暗度 WDK Direct3D
@@ -17,13 +17,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5d4c8dfbcc11e7d0f6d8e1cd5cec489dcc8767a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382337"
 ---
-# <a name="shading-requirements"></a>明暗度要求
+# <a name="shading-requirements"></a>着色要求
 
 
 ## <span id="ddk_shading_requirements_gg"></span><span id="DDK_SHADING_REQUIREMENTS_GG"></span>

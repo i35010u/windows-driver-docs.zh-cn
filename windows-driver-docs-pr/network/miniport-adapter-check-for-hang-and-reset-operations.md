@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab54d733f705f88d83236b54f95e319bff288635
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384522"
 ---
 # <a name="miniport-adapter-check-for-hang-and-reset-operations"></a>微型端口适配器挂起检查和重置操作
 

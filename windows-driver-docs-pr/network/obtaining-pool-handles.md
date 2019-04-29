@@ -1,6 +1,6 @@
 ---
-title: 获取池处理
-description: 获取池处理
+title: 获取池句柄
+description: 获取池句柄
 ms.assetid: 752b0d64-2ca3-4dc0-a6cd-642e96af1f8f
 keywords:
 - 池处理 WDK 网络
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ec469bd5831a1901880dc2db55483d0362284a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380715"
 ---
-# <a name="obtaining-pool-handles"></a>获取池处理
+# <a name="obtaining-pool-handles"></a>获取池句柄
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: 386110f8-504c-4617-b8ae-557ea504d41d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 8a218a2bd275d1000a6729ec2f2023e11f636e42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383045"
 ---
 # <a name="mpiotimerscounters-wmi-class"></a>MPIO\_计时器\_计数器 WMI 类
 

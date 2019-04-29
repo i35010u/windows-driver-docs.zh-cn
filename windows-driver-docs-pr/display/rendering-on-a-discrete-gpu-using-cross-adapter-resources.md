@@ -1,15 +1,15 @@
 ---
-title: 使用跨适配器资源是分立的 GPU 上呈现
+title: 使用跨适配器资源在独立的 GPU 中进行渲染
 description: 从 Windows 8.1，是分立的 GPU 使用跨适配器资源为目标但不支持拉伸或颜色转换的位块传输 (bitblt) 或存在操作。操作系统请求用户模式下的资源显示驱动程序来执行 bitblt 或存在到操作和 from.integrated GPU 纹理作为桌面窗口管理器 (DWM) 组合期间使用跨适配器资源。GDI 硬件加速呈现器目标。主显示器。不是作为呈现器目标的三维操作。
 ms.assetid: 88CE2D2F-BBD8-4CE4-9183-BBFB0659990E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91990d20e5d0f1b8781285a50ca026416f0da7b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386370"
 ---
 # <a name="span-iddisplayrenderingonadiscretegpuusingcross-adapterresourcesspanrendering-on-a-discrete-gpu-using-cross-adapter-resources"></a><span id="display.rendering_on_a_discrete_gpu_using_cross-adapter_resources"></span>使用跨适配器资源是分立的 GPU 上呈现
 

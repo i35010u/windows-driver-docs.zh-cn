@@ -1,17 +1,17 @@
 ---
-title: 传感器类别、 类型和数据字段
-description: 传感器类别、 类型和数据字段
+title: 传感器类别、类型和数据字段
+description: 传感器类别、类型和数据字段
 ms.assetid: fd154fb7-afc0-4937-be0c-07b37a5912dc
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ef9d60403ca51242b6720ce6bf87397c1f6627
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381101"
 ---
-# <a name="sensor-categories-types-and-data-fields"></a>传感器类别、 类型和数据字段
+# <a name="sensor-categories-types-and-data-fields"></a>传感器类别、类型和数据字段
 
 
 传感器平台定义了以下类别传感器。 下面的主题包括有关相关的传感器类型和数据字段的信息。

@@ -5,11 +5,11 @@ ms.assetid: B1B48ED9-10F1-45F2-AA7C-270B637B5A36
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d34c941d4e2db744e01fc54965591ac0912350e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383621"
 ---
 # <a name="implementing-an-ndis-630-driver"></a>实现 NDIS 6.30 驱动程序
 

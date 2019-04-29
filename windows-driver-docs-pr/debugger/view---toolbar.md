@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f177045df2b1d93e781f48b3419a0fa86896e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386417"
 ---
-# <a name="view--toolbar"></a>视图 |工具栏
+# <a name="view--toolbar"></a>视图 | 工具栏
 
 
 ## <span id="ddk_view_toolbar_dbg"></span><span id="DDK_VIEW_TOOLBAR_DBG"></span>

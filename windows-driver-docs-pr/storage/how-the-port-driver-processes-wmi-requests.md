@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ea9f9bb0f6507048ee21111a68fb669b7431125
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383089"
 ---
 # <a name="how-the-port-driver-processes-wmi-requests"></a>端口驱动程序如何处理 WMI 请求
 

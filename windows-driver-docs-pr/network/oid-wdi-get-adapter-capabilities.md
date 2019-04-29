@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_ADAPTER_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e07449f00f60059f7f87ed18d7abe6da846e8c2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384629"
 ---
 # <a name="oidwdigetadaptercapabilities"></a>OID\_WDI\_获取\_适配器\_功能
 
@@ -165,7 +165,7 @@ OID\_WDI\_获取\_适配器\_功能是一个只读属性，在初始化期间发
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

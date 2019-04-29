@@ -1,6 +1,6 @@
 ---
-title: 一个多 ID 映射
-description: 一个多 ID 映射
+title: 一对多 ID 映射
+description: 一对多 ID 映射
 ms.assetid: 395d3f20-7410-496b-9ec3-1052cd731ae3
 keywords:
 - 映射网络组件 Id
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f00afe01ebf2b07208652a2eda65b56505901805
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384230"
 ---
-# <a name="one-to-many-id-mapping"></a>一个多 ID 映射
+# <a name="one-to-many-id-mapping"></a>一对多 ID 映射
 
 
 

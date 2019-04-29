@@ -5,11 +5,11 @@ ms.assetid: 4e6ed725-2384-429b-be1e-027b7784e95b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 452fe864df1f7dd7d2fa1f72e89025f1f39ac36a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383764"
 ---
 # <a name="unlock-a-device"></a>解锁设备
 
@@ -40,7 +40,7 @@ ms.locfileid: "56534220"
 
 10. 侦听**解锁**或**解除阻止**使用结果[ **IMbnPinEvents** ](https://msdn.microsoft.com/library/windows/desktop/dd323110)注册，以了解操作是否成功。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)

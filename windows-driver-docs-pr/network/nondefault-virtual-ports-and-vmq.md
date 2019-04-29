@@ -5,11 +5,11 @@ ms.assetid: 5F6F5378-2CA7-491D-953C-6F98B855B51A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec46ddaf4577aa4e549f6dfa199a39150ba502df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384520"
 ---
 # <a name="nondefault-virtual-ports-and-vmq"></a>非默认虚拟端口和 VMQ
 

@@ -1,5 +1,5 @@
 ---
-title: 你 (反汇编实模式下 BIOS)
+title: ur（取消汇编实际模式 BIOS）
 description: 你的命令显示指定的 16 位实模式代码程序集转换。
 ms.assetid: 7ea3421a-3841-47ea-ab40-99d10516bb14
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 5922e23340d416f45f37fa88917f8e20afe7322e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383750"
 ---
-# <a name="ur-unassemble-real-mode-bios"></a>你 (反汇编实模式下 BIOS)
+# <a name="ur-unassemble-real-mode-bios"></a>ur（取消汇编实际模式 BIOS）
 
 
 **你**命令显示指定的 16 位实模式代码程序集转换。
