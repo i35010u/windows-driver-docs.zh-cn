@@ -1,5 +1,5 @@
 ---
-title: 正在搜索 KD 连接服务器
+title: 搜索 KD 连接服务器
 description: 可以使用 KD 或 CDB-QR 命令行选项来获取网络服务器运行的可用 KD 连接服务器的列表。
 ms.assetid: 24ff0e2f-d40a-4f52-91ef-e766b9387a8a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b6b1e0f630ea6c62633b081006ea59d199cf0168
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382003"
 ---
-# <a name="searching-for-kd-connection-servers"></a>正在搜索 KD 连接服务器
+# <a name="searching-for-kd-connection-servers"></a>搜索 KD 连接服务器
 
 
 可以使用 KD 或与 CDB **-QR**命令行选项来获取网络服务器运行的可用 KD 连接服务器的列表。

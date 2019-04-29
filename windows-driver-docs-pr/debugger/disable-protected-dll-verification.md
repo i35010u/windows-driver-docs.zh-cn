@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a55ea3f776d73ebf9afa1c25d5698bee5db3d048
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358551"
 ---
 # <a name="disable-protected-dll-verification"></a>禁用受保护的 DLL 验证
 

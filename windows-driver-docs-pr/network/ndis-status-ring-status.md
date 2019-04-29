@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_RING_STATUS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f3b2fecb835899e7f057453351ed3df87a71972
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63353264"
 ---
 # <a name="ndisstatusringstatus"></a>NDIS\_状态\_环\_状态
 
@@ -43,17 +43,17 @@ NDIS\_环\_信号\_丢失
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>不支持 NDIS 6.0 驱动程序或 NDIS 5.1 在 Windows Vista 或 Windows XP 中的驱动程序。 支持 NDIS 4.x 驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateStatus**](https://msdn.microsoft.com/library/windows/hardware/ff553538)

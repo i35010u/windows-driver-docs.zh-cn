@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 80efb09843561eb4b3d4bf360fc79980f1053346
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357627"
 ---
 # <a name="bp-bu-bm-set-breakpoint"></a>bp、bu、bm（设置断点）
 
@@ -176,7 +176,7 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 可以使用时指定数据地址而不是程序地址**bp**或 bm/a 命令。 但是，即使指定的数据位置，这些命令将创建软件断点、 不处理器断点。 如果软件断点放置在程序数据，而不是可执行代码中，它可能会导致数据损坏。 因此您应使用这些命令的数据位置仅当确定该存储中存储为可执行代码而不是程序数据，将使用位置的内存。 否则，应使用[ **ba （中断的访问权限）** ](ba--break-on-access-.md)命令。 有关更多详细信息，请参阅[处理器断点 (ba 断点)](processor-breakpoints---ba-breakpoints-.md)。
 
-有关如何在更复杂的语法中，指定的位置上设置断点，如 c + + 公共类或一个任意文本字符串，其中包含的成员有其他限制字符，详细信息，请参阅[断点语法](breakpoint-syntax.md)。
+有关如何指定更复杂的语法，例如的成员的位置上设置断点的详细信息C++公共类，或一个任意文本字符串，其中包含不允许的字符，请参阅[断点语法](breakpoint-syntax.md)。
 
 如果包含一个逻辑源行跨多个物理行，语句或调用的最后一个物理行上设置断点。 如果调试器无法在请求的位置设置断点，它将断点放在下一个允许的位置。
 

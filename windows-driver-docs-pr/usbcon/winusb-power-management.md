@@ -1,14 +1,14 @@
 ---
-Description: WinUSB Power Management
+Description: WinUSB 电源管理
 title: WinUSB 电源管理
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: d4c57bfa041744eba9129e67c1097f4da5a0be0e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389144"
 ---
 # <a name="winusb-power-management"></a>WinUSB 电源管理
 

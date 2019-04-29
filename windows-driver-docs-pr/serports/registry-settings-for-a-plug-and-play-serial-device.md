@@ -1,6 +1,6 @@
 ---
-title: Plug and Play 串行设备的注册表设置
-description: Plug and Play 串行设备的注册表设置
+title: 用于即插即用串行设备的注册表设置
+description: 用于即插即用串行设备的注册表设置
 ms.assetid: 57bd090a-20fe-41c6-b730-0479f6ae0982
 keywords:
 - 串行驱动程序 WDK，插设备
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e60723543d8165daf522242b232913250b8ea986
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382552"
 ---
-# <a name="registry-settings-for-a-plug-and-play-serial-device"></a>Plug and Play 串行设备的注册表设置
+# <a name="registry-settings-for-a-plug-and-play-serial-device"></a>用于即插即用串行设备的注册表设置
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 组合任务的类型将卸载
-description: 组合任务的类型将卸载
+title: 组合任务卸载的类型
+description: 组合任务卸载的类型
 ms.assetid: 33f8ba3c-09ab-4041-9641-d4207b98c8b7
 keywords:
 - 任务卸载，WDK TCP/IP 传输，组合卸载类型
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b387f5092c4abfda70725a7e134df39950d7f978
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356924"
 ---
-# <a name="combining-types-of-task-offloads"></a>组合任务的类型将卸载
+# <a name="combining-types-of-task-offloads"></a>组合任务卸载的类型
 
 
 

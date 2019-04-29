@@ -1,17 +1,17 @@
 ---
-title: WDDM 1.2 最佳实践
+title: WDDM 1.2 最佳做法
 description: 为了提供最佳体验在 Windows 8 和更高版本，Windows 会利用图形硬件与 Windows 显示器驱动程序模型 (WDDM) 1.2 或更高版本驱动程序配对。 本部分汇总了最佳实践。
 ms.assetid: 130C66F0-1ACE-4C6E-AE16-AEFCD4847312
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5779f57d3a346fd6cb0e0c9df562cea5c769d75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391191"
 ---
-# <a name="wddm-12-best-practices"></a>WDDM 1.2 最佳实践
+# <a name="wddm-12-best-practices"></a>WDDM 1.2 最佳做法
 
 
 为了提供最佳体验在 Windows 8 和更高版本，Windows 会利用图形硬件与 Windows 显示器驱动程序模型 (WDDM) 1.2 或更高版本驱动程序配对。 本部分汇总了最佳实践。

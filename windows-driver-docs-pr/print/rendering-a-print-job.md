@@ -1,6 +1,6 @@
 ---
-title: 呈现打印作业
-description: 呈现打印作业
+title: 渲染打印作业
+description: 渲染打印作业
 ms.assetid: 78967839-b518-41c0-8825-b00f8b8560e6
 keywords:
 - 打印机图形 DLL WDK，呈现打印作业
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d3741a69d816548e56914f5446b6166999022548
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382598"
 ---
-# <a name="rendering-a-print-job"></a>呈现打印作业
+# <a name="rendering-a-print-job"></a>渲染打印作业
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: MSI X 预先注册
-description: MSI X 预先注册
+title: MSI-X 预先注册
+description: MSI-X 预先注册
 ms.assetid: 93a09ebd-8a50-4c96-a926-54bb4686a618
 keywords:
 - MSI X WDK 网络、 资源要求 filter 函数
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf46946b8d5258894f1b6aca5093d41a06c4af65
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382639"
 ---
-# <a name="msi-x-pre-registration"></a>MSI X 预先注册
+# <a name="msi-x-pre-registration"></a>MSI-X 预先注册
 
 
 

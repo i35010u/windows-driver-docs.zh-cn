@@ -1,6 +1,6 @@
 ---
-title: 锁定的可分页代码或数据
-description: 锁定的可分页代码或数据
+title: 锁定可分页代码或数据
+description: 锁定可分页代码或数据
 ms.assetid: b99b6af3-b4b1-4fd6-ac73-27c1068183a4
 keywords:
 - 锁定的代码或数据的可分页的驱动程序 WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e6f93d8e998f3abdf99cfbfec14edcdba6fc7e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381363"
 ---
-# <a name="locking-pageable-code-or-data"></a>锁定的可分页代码或数据
+# <a name="locking-pageable-code-or-data"></a>锁定可分页代码或数据
 
 
 

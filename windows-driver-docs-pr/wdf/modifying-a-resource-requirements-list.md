@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 065df4ec43703467b19c8ce6fd714d103c18e002
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390132"
 ---
 # <a name="modifying-a-resource-requirements-list"></a>修改资源要求列表
 

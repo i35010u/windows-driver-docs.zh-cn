@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: edc0960b74e48a1d4428250ed87754950a8a1d37
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389313"
 ---
 # <a name="kspropertybdarftunerpolarity"></a>KSPROPERTY\_BDA\_RF\_调谐器\_极性
 

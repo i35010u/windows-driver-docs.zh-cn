@@ -5,11 +5,11 @@ ms.assetid: 8974F615-B979-4EF0-9E24-3AEA375516E4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 940065904057cfda61566b11eff4548cdaa8f8be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326087"
 ---
 # <a name="convertible-testing"></a>变形测试
 

@@ -1,6 +1,6 @@
 ---
-title: 调试故障的驱动程序卸载
-description: 调试故障的驱动程序卸载
+title: 调试失败的驱动程序卸载
+description: 调试失败的驱动程序卸载
 ms.assetid: df4b6082-8236-4a7f-80f4-6c33dc8e887a
 keywords:
 - 驱动程序卸载失败
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87184ea0f1a34ae27942ee82b30c9cd73ba9019f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63324607"
 ---
-# <a name="debugging-a-failed-driver-unload"></a>调试故障的驱动程序卸载
+# <a name="debugging-a-failed-driver-unload"></a>调试失败的驱动程序卸载
 
 
 ## <span id="ddk_debugging_a_failed_driver_unload_dbg"></span><span id="DDK_DEBUGGING_A_FAILED_DRIVER_UNLOAD_DBG"></span>

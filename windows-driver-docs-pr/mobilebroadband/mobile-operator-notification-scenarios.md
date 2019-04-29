@@ -5,11 +5,11 @@ ms.assetid: 3749d9ab-3dff-4216-a23b-0e75c04d9a22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e3f15beb3013c2628437c57a1c38464a75a1d9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391972"
 ---
 # <a name="mobile-operator-notification-scenarios"></a>移动运营商通知方案
 
@@ -105,7 +105,7 @@ DUSM 跟踪用户的帐户或帐户，包括预付费的数据计划的计划到
 
 某些 Mno 或 Mvno 不支持 Internet 共享功能上的其网络或它们需要在设置共享 Internet 连接之前权利检查。 Windows 提供了必要的控件，以确保 Windows 设备符合网络策略。 如果移动运营商已设置[AllowTethering](allowtethering.md)元素**EntitlementCheckRequired**在服务元数据包，系统会触发[MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)事件。 移动宽带应用程序然后与网络服务，以检查用户可以使用 Internet 共享功能和响应系统通信。 如果允许用户使用该功能，Internet 共享将成功启动，否则用户将会显示默认错误消息或移动运营商定义的消息。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)

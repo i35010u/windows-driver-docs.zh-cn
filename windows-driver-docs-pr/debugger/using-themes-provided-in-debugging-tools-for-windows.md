@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8469e0ad441e7f3c67763e4a5d9330f11c475aa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390575"
 ---
 # <a name="using-themes-provided-in-debugging-tools-for-windows"></a>使用 Windows 调试工具中提供的主题
 

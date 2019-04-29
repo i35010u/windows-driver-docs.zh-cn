@@ -1,5 +1,5 @@
 ---
-title: lm （列出已加载的模块）
+title: lm（列出已加载的模块）
 description: Lm 命令显示指定加载的模块。 输出包括状态和模块的路径。
 ms.assetid: ee2283bd-4d3f-4e30-8b32-e286a415bb3a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 803d08868069781f43eec4c951818d80fafaec2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383393"
 ---
-# <a name="lm-list-loaded-modules"></a>lm （列出已加载的模块）
+# <a name="lm-list-loaded-modules"></a>lm（列出已加载的模块）
 
 
 **Lm**命令显示指定加载的模块。 输出包括状态和模块的路径。
@@ -91,7 +91,7 @@ lm Options [a Address] [m Pattern | M Pattern]
 
  
 
-<span id="_______M_______Pattern______"></span><span id="_______m_______pattern______"></span><span id="_______M_______PATTERN______"></span> M*模式*   
+<span id="_______M_______Pattern______"></span><span id="_______m_______pattern______"></span><span id="_______M_______PATTERN______"></span> m*模式*   
 指定映像路径必须与匹配的模式。 模式可以包含各种通配符和说明符。 此信息的语法的详细信息，请参阅[字符串通配符语法](string-wildcard-syntax.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e151eaf0f6c8b22fc1eedf919444dde30525d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354343"
 ---
 # <a name="spinlockrelease-rule-ndis"></a>SpinLockRelease 规则 (ndis)
 
@@ -54,7 +54,7 @@ SpinLockRelease 规则指定一个驱动程序必须释放自旋锁 ([**NdisRele
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**NdisAcquireSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff560699)

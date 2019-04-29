@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f95c29dc67c6215d43effa346b96ec29dbe6f36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391914"
 ---
 # <a name="interaction-with-the-smart-card-driver-library"></a>与智能卡驱动程序库的交互
 

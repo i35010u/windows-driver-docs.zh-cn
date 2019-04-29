@@ -1,16 +1,16 @@
 ---
-Description: The USB role-switch driver and its client driver that handle the role-switching capability of a dual-role controller.
-title: 启动 USB 类型 C Windows 系统双角色控制器
+Description: USB 角色切换驱动程序和其处理双角色控制器的角色切换功能的客户端驱动程序。
+title: 为 USB 类型 C Windows 系统启动双角色控制器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f71dd96b1c325a0f8427b34ec930b0d9267831e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383041"
 ---
-# <a name="bring-up-the-dual-role-controller-for-a-usb-type-c-windows-system"></a>启动 USB 类型 C Windows 系统双角色控制器
+# <a name="bring-up-the-dual-role-controller-for-a-usb-type-c-windows-system"></a>为 USB 类型 C Windows 系统启动双角色控制器
 
 
 **摘要**
@@ -27,7 +27,7 @@ ms.locfileid: "56534574"
 
 **重要的 Api**
 
--   [编程参考的 USB 双角色控制器驱动程序](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+-   [USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)（USB 双角色控制器驱动程序编程参考）
 
 USB 角色切换驱动程序 (URS) 是一套 WDF 类扩展和处理双角色控制器的角色切换功能及其客户端驱动程序。 如果您的系统具有双重角色控制器，则可以切换具体取决于连接到系统的 USB 类型 C 连接器合作伙伴端口设备系统的角色。 这样，如有线停靠感兴趣的情况。
 
@@ -61,7 +61,7 @@ USB 角色切换驱动程序 (URS) 是一套 WDF 类扩展和处理双角色控�
 
 -   如果您的系统使用自定义控制器，编写在角色切换客户端驱动程序。 有关详细信息，请参阅：
 
-    [编程参考的 USB 双角色控制器驱动程序](https://msdn.microsoft.com/library/windows/hardware/mt628026)
+    [USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)（USB 双角色控制器驱动程序编程参考）
 
 ## <a name="related-topics"></a>相关主题
 [USB 双角色驱动程序堆栈体系结构](usb-dual-role-driver-stack-architecture.md)  

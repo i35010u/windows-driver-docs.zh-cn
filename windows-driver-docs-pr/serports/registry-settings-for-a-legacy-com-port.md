@@ -1,6 +1,6 @@
 ---
-title: 传统 COM 端口的注册表设置
-description: 传统 COM 端口的注册表设置
+title: 用于旧版 COM 端口的注册表设置
+description: 用于旧版 COM 端口的注册表设置
 ms.assetid: 043ac1f5-eeb1-4828-8417-b3c6d76b4322
 keywords:
 - 串行驱动程序 WDK、 COM 端口
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f74c82f59edc994e65027b175553c367e064af8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382550"
 ---
-# <a name="registry-settings-for-a-legacy-com-port"></a>传统 COM 端口的注册表设置
+# <a name="registry-settings-for-a-legacy-com-port"></a>用于旧版 COM 端口的注册表设置
 
 
 

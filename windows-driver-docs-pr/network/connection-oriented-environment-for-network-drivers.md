@@ -1,6 +1,6 @@
 ---
-title: 面向连接的网络驱动程序的环境
-description: 面向连接的网络驱动程序的环境
+title: 网络驱动程序的面向连接的环境
+description: 网络驱动程序的面向连接的环境
 ms.assetid: 71c7961c-3db6-4ef8-aa77-93a629219de0
 keywords:
 - 面向连接的环境 WDK 网络
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee0d4ae466769123b4bc2f5ef1896ab3b69375e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357457"
 ---
-# <a name="connection-oriented-environment-for-network-drivers"></a>面向连接的网络驱动程序的环境
+# <a name="connection-oriented-environment-for-network-drivers"></a>网络驱动程序的面向连接的环境
 
 
 

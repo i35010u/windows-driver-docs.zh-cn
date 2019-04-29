@@ -5,11 +5,11 @@ ms.assetid: 895F1B13-4F2D-4B6B-A3CE-60A8AC9EE7B0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ad64fa2cd12d9b0dadcb63d034e9c09dc7109f5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382752"
 ---
 # <a name="dsm-interface-for-byte-addressable-energy-backed-function-class-function-interface-1"></a>\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）
 
@@ -135,7 +135,7 @@ ms.locfileid: "56547004"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [存储驱动程序设计指南](https://go.microsoft.com/fwlink/p/?LinkId=798409)

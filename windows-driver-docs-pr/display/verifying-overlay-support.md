@@ -1,6 +1,6 @@
 ---
-title: 验证覆盖的支持
-description: 验证覆盖的支持
+title: 验证覆盖支持
+description: 验证覆盖支持
 ms.assetid: cbc3f2c4-a22a-48dd-9a3e-9611aa8dd3c6
 keywords:
 - 验证覆盖支持 WDK Windows 7 显示
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98f8c50c4495560154deb1a048dd5a2bdfbf6c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390799"
 ---
-# <a name="verifying-overlay-support"></a>验证覆盖的支持
+# <a name="verifying-overlay-support"></a>验证覆盖支持
 
 
 本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。

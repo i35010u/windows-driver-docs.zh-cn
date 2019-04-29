@@ -5,11 +5,11 @@ ms.assetid: 2FD485E5-E2F9-4B21-A777-ABA9693B1223
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49fdbc21dac128aa40c307f0f3a2580f578e1d73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382863"
 ---
 # <a name="wdi-tlv-generatorparser-special-members"></a>WDI TLV 生成器/分析器特殊成员
 
@@ -43,7 +43,7 @@ if (status == NDIS_STATUS_SUCCESS)
 ## <a name="array-members"></a>数组成员
 
 
-相同类型的多个子级时出现在同一父级 (例如，&lt;容器 /&gt;的*isCollection*属性)，分析器和生成器使用的特殊结构来表示数组：ArrayOfElements。 对于 c + + 客户端，这是一个强类型化的模板结构与清理析构语义。 对于 C 客户端 （例如 ArrayOfElementsOfUINT8） 创建显式命名的结构。 但是，这些结构不会自动清理因为 C 不支持析构函数，因此必须小心以免引入内存泄漏的 C Api 的用户 （或重复释放）。
+相同类型的多个子级时出现在同一父级 (例如，&lt;容器 /&gt;的*isCollection*属性)，分析器和生成器使用的特殊结构来表示数组：ArrayOfElements。 有关C++客户端，这是一个强类型化的模板结构与清理析构语义。 对于 C 客户端 （例如 ArrayOfElementsOfUINT8） 创建显式命名的结构。 但是，这些结构不会自动清理因为 C 不支持析构函数，因此必须小心以免引入内存泄漏的 C Api 的用户 （或重复释放）。
 
 有两个重要字段 ArrayOfElements 中：**ElementCount**并**pElements**。 **ElementCount**是数组中元素的计数。 **pElements**是 C 样式数组的元素。 元素可以循环访问此示例中所示。
 

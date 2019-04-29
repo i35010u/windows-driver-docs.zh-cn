@@ -1,6 +1,6 @@
 ---
-title: 打印票证的组织
-description: 打印票证的组织
+title: 打印票证组织
+description: 打印票证组织
 ms.assetid: 3e30eb53-2f62-469d-a27c-dc256df37126
 keywords:
 - 打印票证 WDK，组织
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68b09ffbce4403a74450f5a276bfe8e638c4c9d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351904"
 ---
-# <a name="print-ticket-organization"></a>打印票证的组织
+# <a name="print-ticket-organization"></a>打印票证组织
 
 
 PrintTicket 文档可以包含应用于文档的不同部分的命令。 打印票证文档可以包含以下按照其特异性排序的内容级别之一：

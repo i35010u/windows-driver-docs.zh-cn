@@ -5,11 +5,11 @@ ms.assetid: 2845cfa9-a85c-45d4-a962-8f409e96ccec
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 16d392d236ace5d20a6a59964e86471095e78221
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383570"
 ---
 # <a name="reportdiscoveredtargets2"></a>ReportDiscoveredTargets2
 

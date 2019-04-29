@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SLOT_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 19e0ebe37bbed5dee1d598060a7f5b029216b739
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392400"
 ---
 # <a name="oidwwanslotinfo"></a>OID\_WWAN\_槽\_信息
 
@@ -48,7 +48,7 @@ OID\_WWAN\_槽\_信息检索指定的 UICC 槽中，在其中的卡的高级聚�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10，版本 1703</p></td>
 </tr>
 <tr class="even">

@@ -18,11 +18,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 094f310af56bfc9f1495a4433bb481ce5e126e5d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383541"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 

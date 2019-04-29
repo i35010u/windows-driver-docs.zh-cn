@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2af1c6b4306b919504ec2aec70a5c1a9a28e03d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355435"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file"></a>分析内核模式转储文件
 

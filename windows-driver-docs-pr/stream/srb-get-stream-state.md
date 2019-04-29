@@ -5,11 +5,11 @@ ms.assetid: ea868e5e-0724-4064-bccb-85d5b6e93d89
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 225d2f870d2d5ccb7f0c1d94a73d73964ac211c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390862"
 ---
 # <a name="srbgetstreamstate"></a>SRB\_GET\_STREAM\_STATE
 

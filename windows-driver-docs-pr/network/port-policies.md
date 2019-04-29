@@ -5,11 +5,11 @@ ms.assetid: F23B4A2F-4E33-4A8F-AF57-E4805DE48C15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 118764141b119e89ab1325bf1423000901fff1e8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358825"
 ---
 # <a name="port-policies"></a>端口策略
 

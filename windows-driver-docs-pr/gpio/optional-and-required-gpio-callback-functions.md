@@ -1,17 +1,17 @@
 ---
-title: 可选和必需 GPIO 回调函数
+title: 可选和必需的 GPIO 回调函数
 description: 通用 I/O (GPIO) 控制器驱动程序调用 GPIO_CLX_RegisterClient 方法以将注册为 GPIO 框架扩展 (GpioClx) 的客户端。
 ms.assetid: 2F126431-13AB-4E3F-9E5E-56DC7D9AF024
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3478695dca8a1b3e9c13c2e5b0cb2f8eaebc9793
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326127"
 ---
-# <a name="optional-and-required-gpio-callback-functions"></a>可选和必需 GPIO 回调函数
+# <a name="optional-and-required-gpio-callback-functions"></a>可选和必需的 GPIO 回调函数
 
 
 通用 I/O (GPIO) 控制器驱动程序调用[ **GPIO\_CLX\_RegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/hh439490)方法将注册为 GPIO 框架扩展 (GpioClx) 的客户端。 在此调用，驱动程序将注册数据包传递给 GpioClx 指定由驱动程序实现的事件回调函数的列表。 GpioClx 调用这些回调函数来配置 GPIO 控制器硬件、 执行 I/O 操作和管理中断。 GpioClx 需要 GPIO 控制器驱动程序，以实现特定的回调函数，但支持其他回调函数是可选的。

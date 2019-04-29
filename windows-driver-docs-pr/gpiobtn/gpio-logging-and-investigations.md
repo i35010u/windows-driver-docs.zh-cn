@@ -5,11 +5,11 @@ ms.assetid: 998BF6BC-D931-4555-A8BC-F860DFA9A18F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: b01e4045b0c8e7f2a2acaf32bbf6ad289968430a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63326085"
 ---
 # <a name="gpio-logging-and-investigations"></a>GPIO 日志记录和调查
 

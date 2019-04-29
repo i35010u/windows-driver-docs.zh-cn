@@ -1,6 +1,6 @@
 ---
-title: 线程处理和同步的第一个级别
-description: 线程处理和同步的第一个级别
+title: 线程和同步第一级别
+description: 线程和同步第一级别
 ms.assetid: 9fce6a18-2a66-4518-b05b-e85bdaa3951f
 keywords:
 - 线程处理 WDK 显示，首先级别
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac8e9c989ca46fcfd84b15c3ec2e414bdd6f63eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389844"
 ---
-# <a name="threading-and-synchronization-first-level"></a>线程处理和同步的第一个级别
+# <a name="threading-and-synchronization-first-level"></a>线程和同步第一级别
 
 
 Windows 显示驱动程序模型 (WDDM) 对显示微型端口驱动程序的线程处理的第一个级别下所做的调用和同步到以下 nonreentrancy 类进行分类。 没有可重入性允许特定的类中。 也就是说，只有一个线程可以输入特定的类; 中的驱动程序但是，调用从多个类和[零级](threading-and-synchronization-zero-level.md)可以同时输入调用。

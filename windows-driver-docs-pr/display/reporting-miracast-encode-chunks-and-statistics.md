@@ -1,17 +1,17 @@
 ---
-title: 报告 Miracast 区块和统计信息进行编码
+title: 报告 Miracast 编码区块和统计信息
 description: 显示硬件可以处理通过 Miracast 无线显示链接发送通过将帧拆分成多个部分，每个视频帧或编码的区块。
 ms.assetid: E1CE637F-42ED-4BEB-A2FF-04B4B88469DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b9770ebb7be1d5e2ff1a4af05051baafd522074
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383267"
 ---
-# <a name="reporting-miracast-encode-chunks-and-statistics"></a>报告 Miracast 区块和统计信息进行编码
+# <a name="reporting-miracast-encode-chunks-and-statistics"></a>报告 Miracast 编码区块和统计信息
 
 
 显示硬件可以处理通过 Miracast 无线显示链接发送通过将帧拆分成多个部分，每个视频帧或*编码的区块*。 每个区块具有从帧数和框架部分 （或扇区） 号生成一个唯一的块 ID。 必须将与相同的桌面框架更新每个区块分配相同的帧数。

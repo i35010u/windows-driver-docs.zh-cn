@@ -5,11 +5,11 @@ ms.assetid: 08277c76-4fa5-46d0-8c86-4bc0e060fa9c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8514f5555bfa1d5a013b360a5cd8bf5c65dd43d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389226"
 ---
 # <a name="kspropsetidbdanulltransform"></a>KSPROPSETID\_BdaNullTransform
 

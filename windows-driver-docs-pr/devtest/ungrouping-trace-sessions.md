@@ -1,6 +1,6 @@
 ---
-title: 取消组合跟踪会话
-description: 取消组合跟踪会话
+title: 将跟踪会话取消分组
+description: 将跟踪会话取消分组
 ms.assetid: 8ff4d692-85c9-4282-8046-a54170fd9dbc
 keywords:
 - 分组跟踪会话
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b126683d4114b38fcf4baa5a71c2a58e4d6f36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63351782"
 ---
-# <a name="ungrouping-trace-sessions"></a>取消组合跟踪会话
+# <a name="ungrouping-trace-sessions"></a>将跟踪会话取消分组
 
 
 若要取消分组的跟踪会话组：

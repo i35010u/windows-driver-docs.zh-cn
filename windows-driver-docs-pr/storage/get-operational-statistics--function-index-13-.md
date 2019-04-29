@@ -5,11 +5,11 @@ ms.assetid: D396F42E-9B11-46D7-8D9C-FE00B4998DEC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 64ea77f95e832d288c8f30a60b7c3ec31f11299f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383151"
 ---
 # <a name="get-operational-statistics-function-index-13"></a>获取操作统计信息（功能索引 13）
 

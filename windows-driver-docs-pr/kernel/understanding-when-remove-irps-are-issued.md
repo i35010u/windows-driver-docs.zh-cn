@@ -1,6 +1,6 @@
 ---
-title: 了解何时删除 Irp 颁发
-description: 了解何时删除 Irp 颁发
+title: 了解删除 IRP 的命令是何时发出的
+description: 了解删除 IRP 的命令是何时发出的
 ms.assetid: e92e30ce-ca0d-4f00-b54a-778bafba15b3
 keywords:
 - 删除 Irp WDK 即插即用
@@ -9,13 +9,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e3d658f24a3a803057f393bcc410621083a79bd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355308"
 ---
-# <a name="understanding-when-remove-irps-are-issued"></a>了解何时删除 Irp 颁发
+# <a name="understanding-when-remove-irps-are-issued"></a>了解删除 IRP 的命令是何时发出的
 
 
 

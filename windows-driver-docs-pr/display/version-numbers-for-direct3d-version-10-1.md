@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f58e30c1cda2a80c6fce69b519451a8eae862e7f
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390779"
 ---
 # <a name="version-numbers-for-direct3d-version-101"></a>Direct3D 版本 10.1 的版本号
 

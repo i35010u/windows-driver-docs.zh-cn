@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c1ced8e7305e8c15daa07fd1032ed51eaef4043c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63354282"
 ---
 # <a name="clipping-transformed-vertices"></a>裁剪已转换的顶点
 

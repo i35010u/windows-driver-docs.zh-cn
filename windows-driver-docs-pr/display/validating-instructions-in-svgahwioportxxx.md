@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f71dff7bcd3a1b74c179e7c6f479525d88d60a32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390805"
 ---
 # <a name="validating-instructions-in-svgahwioportxxx"></a>验证 SvgaHwIoPortXxx 中的指令
 

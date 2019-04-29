@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fa40a2c8bdd34d6573c04bb4d38698ee7294e9e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380802"
 ---
 # <a name="kspropertypreferredcapturesurface"></a>KSPROPERTY\_PREFERRED\_捕获\_图面
 
@@ -79,13 +79,13 @@ KSPROPERTY\_PREFERRED\_捕获\_面返回状态\_成功以指示已成功完成�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h （包括 Ksmedia.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**捕获\_内存\_分配\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff557647)

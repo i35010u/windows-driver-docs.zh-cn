@@ -6,11 +6,11 @@ ms.assetid: f2778853-ddc8-4118-aa58-9df6dab53b7a
 ms.date: 12/13/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: de2faa4012f6c103ce4a36b64c7b9c35f69d3995
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391554"
 ---
 # <a name="testing-system-scenarios"></a>测试系统方案
 

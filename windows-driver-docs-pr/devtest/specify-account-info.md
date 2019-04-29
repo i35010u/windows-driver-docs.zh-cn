@@ -1,19 +1,19 @@
 ---
-title: 在移动宽带元数据创建向导中指定帐户信息
-description: 在移动宽带元数据创建向导中指定帐户信息
+title: 在移动宽带元数据创作向导中指定帐户信息
+description: 在移动宽带元数据创作向导中指定帐户信息
 ms.assetid: FFE19760-360F-482C-BBD8-7068D2DD34E5
 keywords:
-- 在移动宽带元数据创建向导中指定帐户信息
+- 在移动宽带元数据创作向导中指定帐户信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cbd84da67bdcfc55a60463002a23e1cead8768e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63358923"
 ---
-# <a name="specify-account-information-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创建向导中指定帐户信息
+# <a name="specify-account-information-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中指定帐户信息
 
 
 若要指定你的移动宽带帐户信息，请填写以下可选字段上**帐户**选项卡：

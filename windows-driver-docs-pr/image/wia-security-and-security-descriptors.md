@@ -5,11 +5,11 @@ ms.assetid: 2919f3fc-1eb5-4801-a589-ae3000320763
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 010e7f0231a43ba1249a4a4fc829b858c76e219a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63352713"
 ---
 # <a name="wia-security-and-security-descriptors"></a>WIA 安全和安全描述符
 

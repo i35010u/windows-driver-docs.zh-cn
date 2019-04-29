@@ -1,17 +1,17 @@
 ---
-title: 智能卡即插
-description: 智能卡即插
+title: 智能卡即插即用
+description: 智能卡即插即用
 ms.assetid: AE65A450-62A4-4774-A935-B7CB4301CCF4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f2e345399fd9a7b0e885b2bb3bf7979198543d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382544"
 ---
-# <a name="smart-card-plug-and-play"></a>智能卡即插
+# <a name="smart-card-plug-and-play"></a>智能卡即插即用
 
 
 ## <a name="span-idpairingprocessspanspan-idpairingprocessspanspan-idpairingprocessspan-pairing-process"></a><span id="_Pairing_Process"></span><span id="_pairing_process"></span><span id="_PAIRING_PROCESS"></span> 配对过程

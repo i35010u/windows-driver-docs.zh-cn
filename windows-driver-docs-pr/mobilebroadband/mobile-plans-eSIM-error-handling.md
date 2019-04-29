@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f79b394aa64da93fdf4dba0e0fc9fb62cd20cbc6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63357701"
 ---
 # <a name="mobile-plans-esim-download-error-handling"></a>移动计划 esim 卡下载错误处理
 

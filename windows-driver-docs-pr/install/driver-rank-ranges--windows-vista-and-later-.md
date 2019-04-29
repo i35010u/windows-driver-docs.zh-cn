@@ -1,6 +1,6 @@
 ---
-title: 驱动程序级别范围
-description: 驱动程序级别范围
+title: 驱动程序分级范围
+description: 驱动程序分级范围
 ms.assetid: ea822171-c1f3-49b4-ae63-3300728666f0
 keywords:
 - 驱动程序级别范围 WDK 设备安装
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae40fb83399ff1a8b68f2347d54b6d392dc1d77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63356009"
 ---
-# <a name="driver-rank-ranges"></a>驱动程序级别范围
+# <a name="driver-rank-ranges"></a>驱动程序分级范围
 
 
 驱动程序级别的格式设置为 0x*SSGGTHHH*，其中值 0x*SS*000000 是[签名分数](signature-score--windows-vista-and-later-.md)，值 0x00*GG*0000 是[功能分数](feature-score--windows-vista-and-later-.md)，和 0x0000 值*THHH*是[标识符分数](identifier-score--windows-vista-and-later-.md)。
