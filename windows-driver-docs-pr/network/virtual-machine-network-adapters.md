@@ -5,11 +5,11 @@ ms.assetid: 8A2A708C-AB43-4D9F-A7CB-2AC4438BCD54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 55f23ed8e66b1946cb9b310982f7d8c06a5d55e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378241"
 ---
 # <a name="virtual-machine-network-adapters"></a>虚拟机网络适配器
 

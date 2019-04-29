@@ -1,17 +1,17 @@
 ---
-title: 磁条阅读器驱动程序示例
+title: 磁条读取器驱动程序示例
 description: 此示例演示如何为磁条阅读器创建通用驱动程序，旨在用于创建新的驱动程序的模板。
 ms.assetid: 92A8C116-F71F-4A74-A453-44C14297BCDD
 ms.date: 09/07/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 529796f950e95f8f19ba8d11af8abd527f1e5c4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386654"
 ---
-# <a name="magnetic-stripe-reader-driver-sample"></a>磁条阅读器驱动程序示例
+# <a name="magnetic-stripe-reader-driver-sample"></a>磁条读取器驱动程序示例
 
 磁条读取器驱动程序示例演示如何为磁条阅读器创建通用驱动程序，旨在用作创建新的驱动程序的模板。 此示例使用用户模式驱动程序框架 (UMDF) 2.0，并演示了基本功能，如声明进行独占访问设备。 可以编译示例驱动程序，并且将其部署到 x86、amd64 和 ARM 平台。
 

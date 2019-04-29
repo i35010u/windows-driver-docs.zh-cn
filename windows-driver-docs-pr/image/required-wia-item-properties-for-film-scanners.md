@@ -1,17 +1,17 @@
 ---
-title: 电影扫描仪的所需的 WIA 项目属性
-description: 电影扫描仪的所需的 WIA 项目属性
+title: 底片扫描仪的必需 WIA 项属性
+description: 底片扫描仪的必需 WIA 项属性
 ms.assetid: f87e1bfc-6d85-4aba-a2ad-e491f997a3ae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cda555c85ee31138b6f6cf4e5365dd486e933251
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375847"
 ---
-# <a name="required-wia-item-properties-for-film-scanners"></a>电影扫描仪的所需的 WIA 项目属性
+# <a name="required-wia-item-properties-for-film-scanners"></a>底片扫描仪的必需 WIA 项属性
 
 
 

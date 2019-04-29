@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 805319c2f22f45cdb573498407b84d4670ee35e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377655"
 ---
 # <a name="fltparameters-for-irpmjnetworkqueryopen-union"></a>FLT\_IRP 的参数\_MJ\_网络\_查询\_打开的并集
 
@@ -76,13 +76,13 @@ IRP\_MJ\_网络\_查询\_打开是一个快速的 I/O 操作。 它是 FastIoQue
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FILE\_NETWORK\_OPEN\_INFORMATION**](https://msdn.microsoft.com/library/windows/hardware/ff545822)

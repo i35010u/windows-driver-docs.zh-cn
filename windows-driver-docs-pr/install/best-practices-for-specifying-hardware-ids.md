@@ -1,17 +1,17 @@
 ---
-title: 指定硬件 Id 的最佳实践
-description: 指定硬件 Id 的最佳实践
+title: 指定硬件 ID 的最佳做法
+description: 指定硬件 ID 的最佳做法
 ms.assetid: 95dcf1b1-b2cd-473f-9660-a91fda20ffc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e4d0487a3f14a456896014a30802902dbddf939
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378377"
 ---
-# <a name="best-practices-for-specifying-hardware-ids"></a>指定硬件 Id 的最佳实践
+# <a name="best-practices-for-specifying-hardware-ids"></a>指定硬件 ID 的最佳做法
 
 
 [ **HardwareIDList** ](https://msdn.microsoft.com/library/windows/hardware/ff546121)元素指定设备的一个或多个硬件标识字符串。 指定每个字符串[ **HardwareID** ](https://msdn.microsoft.com/library/windows/hardware/ff546114) XML 元素。 操作系统首先查询其标识字符串的设备，然后加载具有设备元数据包**HardwareID**与此字符串匹配的值。

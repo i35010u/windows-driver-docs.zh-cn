@@ -1,5 +1,5 @@
 ---
-title: 确定应用程序请求无法完成
+title: 确定应用程序请求无法完成的原因
 description: 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用 Wudfext.dll 调试器扩展来确定应用程序请求无法完成。
 ms.assetid: 33a09277-1e00-4f91-b2ab-b2541091628f
 keywords:
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bba49a3e241cc54caab7fd4de1f7f4d4caa7f824
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383758"
 ---
-# <a name="determining-why-an-application-request-does-not-complete"></a>确定应用程序请求无法完成
+# <a name="determining-why-an-application-request-does-not-complete"></a>确定应用程序请求无法完成的原因
 
 
 本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用 Wudfext.dll 调试器扩展来确定应用程序请求无法完成。

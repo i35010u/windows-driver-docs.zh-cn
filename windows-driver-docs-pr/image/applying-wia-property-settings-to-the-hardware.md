@@ -1,17 +1,17 @@
 ---
-title: 将 WIA 属性设置应用于硬件
-description: 将 WIA 属性设置应用于硬件
+title: 将 WIA 属性设置应用到硬件
+description: 将 WIA 属性设置应用到硬件
 ms.assetid: adb85f77-1814-427b-8b75-0bfce4c8ca06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 67fda89e59039903db39b9c63feae35747fb96ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373340"
 ---
-# <a name="applying-wia-property-settings-to-the-hardware"></a>将 WIA 属性设置应用于硬件
+# <a name="applying-wia-property-settings-to-the-hardware"></a>将 WIA 属性设置应用到硬件
 
 
 

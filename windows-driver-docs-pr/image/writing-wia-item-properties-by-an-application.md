@@ -5,11 +5,11 @@ ms.assetid: 728f3f73-4815-4d79-ac02-227de7ae9bb7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3592726679f78059b441a0f6b2af1a6ffca3b70a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380221"
 ---
 # <a name="writing-wia-item-properties-by-an-application"></a>通过应用程序写入 WIA 项属性
 

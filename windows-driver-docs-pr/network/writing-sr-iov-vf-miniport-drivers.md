@@ -1,17 +1,17 @@
 ---
-title: 编写的 SR-IOV VF 微型端口驱动程序
-description: 编写的 SR-IOV VF 微型端口驱动程序
+title: 编写 SR-IOV VF 微型端口驱动程序
+description: 编写 SR-IOV VF 微型端口驱动程序
 ms.assetid: 15CA65DD-AAAB-4EDA-8743-8A3E63E50190
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b19c6952f39e872b34600d985013593df70732
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379757"
 ---
-# <a name="writing-sr-iov-vf-miniport-drivers"></a>编写的 SR-IOV VF 微型端口驱动程序
+# <a name="writing-sr-iov-vf-miniport-drivers"></a>编写 SR-IOV VF 微型端口驱动程序
 
 
 本部分介绍的要求和准则编写的 PCI Express (PCIe) 虚拟函数 (VF) 的单根 I/O 虚拟化 (SR-IOV) 网络适配器的 NDIS 微型端口驱动程序。

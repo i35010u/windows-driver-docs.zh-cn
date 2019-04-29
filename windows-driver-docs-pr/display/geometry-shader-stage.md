@@ -5,11 +5,11 @@ ms.assetid: 390eb917-3289-4b6e-be23-8db24cdd2bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 610ca6d40780e6e3ace34877efd6d99ecc5cdc50
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379487"
 ---
 # <a name="geometry-shader-stage"></a>几何着色器阶段
 

@@ -5,11 +5,11 @@ ms.assetid: EB73E2B2-B34E-4DC1-807A-4990A54E6E8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa183949986475444c3cded4944b598d231c40f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382493"
 ---
 # <a name="usb-h264-video-cameras-support"></a>USB H.264 视频摄像机支持
 

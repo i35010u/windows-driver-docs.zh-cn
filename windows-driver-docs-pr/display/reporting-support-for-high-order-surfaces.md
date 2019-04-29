@@ -1,6 +1,6 @@
 ---
-title: 对于高顺序图面报告支持
-description: 对于高顺序图面报告支持
+title: 报告高阶图面的支持
+description: 报告高阶图面的支持
 ms.assetid: cf214ed7-2c06-4dc6-8c73-c2a3f51332ab
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，请报告支持的高顺序应用层
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 633b7d35177d76c9092c8eef1e4bc0f0aff0c120
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383249"
 ---
-# <a name="reporting-support-for-high-order-surfaces"></a>对于高顺序图面报告支持
+# <a name="reporting-support-for-high-order-surfaces"></a>报告高阶图面的支持
 
 
 ## <span id="ddk_reporting_support_for_high_order_surfaces_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_HIGH_ORDER_SURFACES_GG"></span>

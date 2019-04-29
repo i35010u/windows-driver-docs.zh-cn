@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b62ec344425f8dfd6a0c86ba945908d46ad385e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376051"
 ---
 # <a name="irqlexfree2-rule-wdm"></a>IrqlExFree2 规则 (wdm)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56524778"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**ExAllocatePoolWithTagPriority**](https://msdn.microsoft.com/library/windows/hardware/ff544523)

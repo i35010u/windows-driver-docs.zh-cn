@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69ea83b352eedca2c4f1bab3f02e6c415b2824b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383241"
 ---
 # <a name="reporting-support-for-scissor-rectangle"></a>报告裁切矩形支持
 

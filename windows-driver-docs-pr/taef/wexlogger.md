@@ -5,11 +5,11 @@ ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4270d21d5b4ca1313e50d54c97a355cd3b9c179f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383025"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -26,7 +26,7 @@ WexLogger 为日志记录的跨越本机代码，托管的代码和脚本提供�
 
 对于 TAEF 内运行的测试用例，没有任何记录器初始化需要由测试的作者。 您可以立即开始使用 Log API 公开的语言，创作中的测试。
 
-在本机 c + + 代码中，它将如下所示：
+本机C++代码，它将如下所示：
 
 ```cpp
 using namespace WEX::Logging;
@@ -65,11 +65,11 @@ log.Comment("Render succeeded");
 ## <a name="wexlogger-api"></a>WexLogger API
 
 
-**下面是可用的本机 c + + 日志方法列表。**
+**下面是本机的列表C++记录可用方法。**
 
 有相应的版本可供托管的代码和脚本。
 
-| 本机 c + + 日志方法                                                                                                              | 功能                                                                                                                                                                                |
+| 本机C++登录方法                                                                                                              | 功能                                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Assert(const wchar\_t\* pszAssert)                                                                                                  | 记录测试断言。                                                                                                                                                                           |
 | Assert(const wchar\_t\* pszAssert, const wchar\_t\* pszContext)                                                                     | 与上下文记录测试 assert。                                                                                                                                                             |
@@ -106,11 +106,11 @@ log.Comment("Render succeeded");
 
 
 
-**注意：**"上下文"是一个额外的字符串，你可以选择提供与**WexLogger** API 调用，以提供更多上下文或详细信息。 例如，你可以选择始终传入"ImageComparator"作为您的上下文时产生任何**WexLogger** ImageComparator 类方法的 API 调用。
+**注意：** "上下文"是一个额外的字符串，你可以选择提供与**WexLogger** API 调用，以提供更多上下文或详细信息。 例如，你可以选择始终传入"ImageComparator"作为您的上下文时产生任何**WexLogger** ImageComparator 类方法的 API 调用。
 
-下面是本机 c + + 的可能有效值**TestResults::Result**枚举。 有相应的版本可供托管的代码和脚本。
+下面是本机可能有效的值C++ **TestResults::Result**枚举。 有相应的版本可供托管的代码和脚本。
 
-| 本机 c + + TestResults::Result 枚举 | 功能        |
+| 本机C++TestResults::Result 枚举 | 功能        |
 |--------------------------------------------|----------------------|
 | 传递                                     | 测试已通过      |
 | NotRun                                     | 不运行测试 |
@@ -120,9 +120,9 @@ log.Comment("Render succeeded");
 
 
 
-**下面是可用的本机 c + + LogContoller 方法列表：**
+**下面是本机的列表C++LogContoller 方法可用：**
 
-| 本机 c + + LogController 方法                                                                       | 功能                                                                                                                                                                                                                                                                                                   |
+| 本机C++LogController 方法                                                                       | 功能                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 静态 HRESULT InitializeLogging()                                                                     | 初始化日志记录功能。                                                                                                                                                                                                                                                                               |
 | 静态 HRESULT InitializeLogging(WexLoggerErrorCallback pfnErrorCallback)                              | 初始化日志记录功能，并指定你想要使用的内部记录器错误通知的 WexLoggerErrorCallback 函数。                                                                                                                                                               |
@@ -134,15 +134,15 @@ log.Comment("Render succeeded");
 
 
 
-**注意：** 请参阅 c + + 错误处理部分下面的详细信息**WexLoggerErrorCallback**机制以及如何使用外部 TAEF 框架。
+**注意：** 请参阅C++的错误处理下面一节的详细信息**WexLoggerErrorCallback**机制以及如何使用外部 TAEF 框架。
 
 **注意：** 它只是用来使用时调用 InitializeLogging/FinalizeLogging **WexLogger**之外 TAEF 框架作为 TAEF 已处理了处理日志记录初始化/完成。
 
 **注意：** 不需要初始化/完成日志记录功能时使用**WexLogger**从脚本。
 
-**下面是可用的本机 c + + RemoteLogContoller 方法列表：**
+**下面是本机的列表C++RemoteLogContoller 方法可用：**
 
-| 本机 c + + RemoteLogController 方法                                                                             | 功能                                                                                                                                                                                                |
+| 本机C++RemoteLogController 方法                                                                             | 功能                                                                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 静态 HRESULT GenerateConnectionData(WEX::Common::NoThrowString& connectionData)                                  | 生成必须父和子进程中使用，以允许子进程，以便返回到父进程的连接数据。                                                          |
 | 静态 HRESULT GenerateConnectionData(const wchar\_t\* pszMachineName, WEX::Common::NoThrowString& connectionData) | 启动远程计算机上的子进程时使用。 生成必须父和子进程中使用，以允许子进程，以便返回到父进程的连接数据。 |
@@ -322,13 +322,13 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
 存在三种方法来生成通过 WTT 日志**WexLogger**。 所有这些要求**WttLog.dll**是存在于运行目录，或在你的路径。
 
 -   如果运行的在实验室中，使用 wtt 客户端安装，则会自动为您生成 wtt 日志。 这是由于 WexLogger 看起来应仅存在于实验室环境中的两个环境变量存在：WttTaskGuid 和 WTTRunWorkingDir。 如果这两项存在，会自动启用 wtt 日志记录。
--   如果实验室环境外部运行 TAEF 内，请将在命令提示符下 /enablewttlogging 传递给测试用例。 示例：
+-   如果实验室环境外部运行 TAEF 内，请将在命令提示符下 /enablewttlogging 传递给测试用例。 例如：
 
     ``` syntax
     te my.test.dll /enablewttlogging
     ```
 
--   如果您正在使用 WexLogger framework 外部的 TAEF，并且你未在实验室环境中运行，必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量包含此选项在调用之前**LogController::InitializeLogging()**。 示例：
+-   如果您正在使用 WexLogger framework 外部的 TAEF，并且你未在实验室环境中运行，必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量包含此选项在调用之前**LogController::InitializeLogging()**。 例如：
     ```cpp
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging");
     LogController.InitializeLogging();
@@ -378,7 +378,7 @@ WexLogger 提供的功能的一个或更多的子进程来记录回单个父进�
 ## <a name="logger-dependencies"></a>记录器的依赖项
 
 
-本机 c + + 记录器 (**Wex.Logger.dll**) 依赖于**Wex.Common.dll**并**Wex.Communication.dll**。
+本机C++记录器 (**Wex.Logger.dll**) 取决于**Wex.Common.dll**并**Wex.Communication.dll**。
 
 托管的记录器 (**Wex.Logger.Interop.dll**) 依赖于**Wex.Logger.dll**， **Wex.Common.dll**和**Wex.Communication.dll**.
 
@@ -403,7 +403,7 @@ te my.test.dll /screencaptureonerror /stacktraceonerror
 
 通过一个或多个已启用这些选项，您将收到额外输出每次调用日志:: Error()。
 
-注意：如果您正在使用 WexLogger TAEF 框架之外，则必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量来包含这些选项然后再调用**LogController::InitializeLogging()**。 示例：
+注意：如果您正在使用 WexLogger TAEF 框架之外，则必须设置 **&lt;YOUR\_进程\_名称&gt;\_CMD**环境变量来包含这些选项然后再调用**LogController::InitializeLogging()**。 例如：
 
 ```cpp
 Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/screencaptureonerror /minidumponerror /stacktraceonerror");
@@ -415,7 +415,7 @@ Environment.SetEnvironmentVariable("consoleapplication4_cmd", "/screencaptureone
 LogController.InitializeLogging();
 ```
 
-## <a name="c-error-handling"></a>C + + 错误处理
+## <a name="c-error-handling"></a>C++错误处理
 
 
 若要屏蔽的不必检查每个日志 API 调用的返回值的测试用例作者，WexLogger 报告意外的错误状态通过使用可选的回调机制;**WexLoggerErrorCallback**函数。 后的 initializaiton **WexLogger** (通过**LogController::InitializeLogging()**)，客户端可以选择指定**WexLoggerErrorCallback**时调用函数在出现意外的错误条件**WexLogger**。 **WexLoggerErrorCallback**函数必须使用以下签名：

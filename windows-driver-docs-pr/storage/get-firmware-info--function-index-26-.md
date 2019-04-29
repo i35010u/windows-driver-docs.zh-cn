@@ -1,17 +1,17 @@
 ---
-title: 获取固件信息 （函数索引 26）
+title: 获取固件信息（功能索引 26）
 description: 此函数检索有关固件映像槽的信息。
 ms.assetid: ABE67651-6351-4D8E-BCFF-0488D2A34DC5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 131dd2bfe35d3abb3164943835ebe578b8982f58
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379213"
 ---
-# <a name="get-firmware-info-function-index-26"></a>获取固件信息 （函数索引 26）
+# <a name="get-firmware-info-function-index-26"></a>获取固件信息（功能索引 26）
 
 
 此函数检索有关固件映像槽的信息。 调用[获取 NVDIMM N 标识 (函数索引 1)](get-nvdimm-n-identification--function-index-1-.md)来检索当前的槽数。
@@ -90,7 +90,7 @@ ms.locfileid: "56547488"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启动固件更新 （函数索引 22）](start-firmware-update--function-index-22-.md)

@@ -5,11 +5,11 @@ ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2832acc46db365c425315e4b92f6dcdd51d6dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378497"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>访问 WER 报表中的 UMDF 元数据
 
@@ -68,7 +68,7 @@ Sig[8].Value=USB\VID_0547&PID_1002&REV_0000
 <thead>
 <tr class="header">
 <th align="left">索引</th>
-<th align="left">“属性”</th>
+<th align="left">名称</th>
 <th align="left">值</th>
 </tr>
 </thead>
@@ -186,7 +186,7 @@ WdfComponentMax</code>
 <thead>
 <tr class="header">
 <th align="left">索引</th>
-<th align="left">“属性”</th>
+<th align="left">名称</th>
 <th align="left">值</th>
 </tr>
 </thead>
@@ -269,7 +269,7 @@ WdfComponentMax</code>
 <thead>
 <tr class="header">
 <th align="left">索引</th>
-<th align="left">“属性”</th>
+<th align="left">名称</th>
 <th align="left">值</th>
 </tr>
 </thead>
@@ -286,7 +286,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">类别</td>
+<td align="left">Category</td>
 <td align="left"><p>此字段包含以下值之一：</p>
 <ul>
 <li>内部</li>
@@ -303,7 +303,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">4</td>
-<td align="left">位置</td>
+<td align="left">Location</td>
 <td align="left">仅限内部使用。</td>
 </tr>
 <tr class="even">

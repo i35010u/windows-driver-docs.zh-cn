@@ -1,19 +1,19 @@
 ---
-title: 实现 6.20 NDIS 驱动程序
-description: 实现 6.20 NDIS 驱动程序
+title: 实现 NDIS 6.20 驱动程序
+description: 实现 NDIS 6.20 驱动程序
 ms.assetid: 6c6f83ff-2a6f-4e5d-acc0-70835429312d
 keywords:
 - NDIS 6.20 WDK，实现一个驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c911117c3c51f89408cfc357e960b78711a564f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383625"
 ---
-# <a name="implementing-an-ndis-620-driver"></a>实现 6.20 NDIS 驱动程序
+# <a name="implementing-an-ndis-620-driver"></a>实现 NDIS 6.20 驱动程序
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: KS Pin
-description: KS Pin
+title: KS 引脚
+description: KS 引脚
 ms.assetid: 04d0d17b-c326-417d-b2e8-58b33420455a
 keywords:
 - pin WDK 内核流式处理
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b33065b11f048d781b815f8d6add44bf08889018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380117"
 ---
-# <a name="ks-pins"></a>KS Pin
+# <a name="ks-pins"></a>KS 引脚
 
 
 

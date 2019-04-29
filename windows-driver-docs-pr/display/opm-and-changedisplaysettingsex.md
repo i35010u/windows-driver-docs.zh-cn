@@ -5,11 +5,11 @@ ms.assetid: 973a8481-4d9a-4272-9138-666c6e41ad89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a6fc517b9264785635963dcf5ec839874fce350
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379859"
 ---
 # <a name="opm-and-changedisplaysettingsex"></a>OPM 和 ChangeDisplaySettingsEx
 

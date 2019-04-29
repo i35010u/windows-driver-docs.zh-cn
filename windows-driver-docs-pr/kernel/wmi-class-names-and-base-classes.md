@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ff351f5606a65786c69fb4b635229e30dd5c581
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380927"
 ---
 # <a name="wmi-class-names-and-base-classes"></a>WMI 类名和基类
 

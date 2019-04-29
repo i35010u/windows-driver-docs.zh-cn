@@ -1,6 +1,6 @@
 ---
-title: 报告的 NIC LSOV1 TCP 数据包分段功能
-description: 报告的 NIC LSOV1 TCP 数据包分段功能
+title: 报告 NIC 的 LSOV1 TCP 数据包分段功能
+description: 报告 NIC 的 LSOV1 TCP 数据包分段功能
 ms.assetid: 976f5943-a50e-413b-8520-e280b04122f9
 keywords:
 - LSOV1 WDK 网络
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5af5c69dbc43f8718d44bbc68743ceb19f4a756f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380880"
 ---
-# <a name="reporting-a-nics-lsov1-tcp-packet-segmentation-capabilities"></a>报告的 NIC LSOV1 TCP 数据包分段功能
+# <a name="reporting-a-nics-lsov1-tcp-packet-segmentation-capabilities"></a>报告 NIC 的 LSOV1 TCP 数据包分段功能
 
 
 

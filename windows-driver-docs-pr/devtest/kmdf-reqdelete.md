@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 86c8e0b0e66490b82936c30e4a7873dc01e1392b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384105"
 ---
 # <a name="reqdelete-rule-kmdf"></a>ReqDelete 规则 (kmdf)
 
@@ -58,7 +58,7 @@ ms.locfileid: "56543725"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**WdfObjectDelete**](https://msdn.microsoft.com/library/windows/hardware/ff548734)

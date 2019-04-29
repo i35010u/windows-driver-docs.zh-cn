@@ -1,18 +1,18 @@
 ---
-title: 什么是 HID 中的新增功能
+title: HID 中的新增功能
 description: 本主题总结了新功能和改进的人机接口设备 (HID) 在 Windows 10。
 Search.SourceType: Video
 ms.assetid: AA8590B4-AAEA-4D41-972F-38149CE328E2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a267b4477edf11779e36af9533e0d1976e83de7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376719"
 ---
-# <a name="whats-new-in-hid"></a>什么是 HID 中的新增功能
+# <a name="whats-new-in-hid"></a>HID 中的新增功能
 
 
 本主题总结了新功能和改进的人机接口设备 (HID) 在 Windows 10。
@@ -40,7 +40,7 @@ ms.locfileid: "56520812"
 
 -   [HID 的按钮驱动程序](buttons.md)
 
--   [在 Windows 中受支持的 HID 客户端](hid-clients-supported-in-windows.md)
+-   [Windows 中支持的 HID 客户端](hid-clients-supported-in-windows.md)
 
 ## <a name="hid-over-ic"></a>HID Over I²C
 

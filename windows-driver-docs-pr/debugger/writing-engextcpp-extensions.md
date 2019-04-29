@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0afc5ef5c44130258a540645b65d5033817dabf9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379884"
 ---
 # <a name="writing-engextcpp-extensions"></a>编写 EngExtCpp 扩展
 
@@ -19,7 +19,7 @@ ms.locfileid: "56546999"
 ## <span id="ddk_writing_dbgeng_extension_code_dbx"></span><span id="DDK_WRITING_DBGENG_EXTENSION_CODE_DBX"></span>
 
 
-EngExtCpp 扩展插件库可以包含任何标准的 c + + 代码。 它还可以包含出现在 engextcpp.h 和 dbgeng.h 标头文件，除了在 wdbgexts.h 标头文件中出现的 C 函数的 c + + 接口。 将包含从 engextcpp.h dbgeng.h 和 wdbgexts.h。
+EngExtCpp 扩展插件库可以包含的任何标准C++代码。 它还包括C++会显示在 engextcpp.h 和 dbgeng.h 标头文件，此外在 wdbgexts.h 标头文件中出现 C 函数的接口。 将包含从 engextcpp.h dbgeng.h 和 wdbgexts.h。
 
 可以扩展命令中使用的 dbgeng.h 中接口的完整列表，请参阅[调试器引擎参考](https://msdn.microsoft.com/library/windows/hardware/ff540540)。
 

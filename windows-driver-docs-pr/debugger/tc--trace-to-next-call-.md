@@ -1,5 +1,5 @@
 ---
-title: tc (到下一步调用 Trace)
+title: tc（跟踪到下一个调用）
 description: Tc 命令执行程序，直到达到调用指令。
 ms.assetid: cdeb448e-1032-46b1-a791-2fb84005fce4
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 07903ab0a6f5919677f608241afa61431a928093
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380487"
 ---
-# <a name="tc-trace-to-next-call"></a>tc (到下一步调用 Trace)
+# <a name="tc-trace-to-next-call"></a>tc（跟踪到下一个调用）
 
 
 **Tc**命令执行程序，直到达到调用指令。

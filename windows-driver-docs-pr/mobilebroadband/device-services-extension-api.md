@@ -5,11 +5,11 @@ ms.assetid: e1539ae1-78fd-4d79-81bf-4030e69e191c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d31db3adff55b008392fcbf834a115b33026129
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380270"
 ---
 # <a name="device-services-extension-api"></a>设备服务扩展 API
 
@@ -32,7 +32,7 @@ Windows 无线平台支持以下应用函数的 Api:
 
 -   注册"未经请求的"设备事件从特定设备服务
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的列表](list-of-mobile-broadband-windows-runtime-apis.md)

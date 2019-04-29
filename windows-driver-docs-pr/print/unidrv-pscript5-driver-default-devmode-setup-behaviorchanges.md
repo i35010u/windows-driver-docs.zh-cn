@@ -5,11 +5,11 @@ ms.assetid: 9760d527-0205-477b-bc16-d6aa65b1eaf7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41780d5fd3b6640f209e476b7ba31d3cb55324e8
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380015"
 ---
 # <a name="unidrvpscript5-driver-default-devmode-setup-behavior-changes"></a>Unidrv/PScript5 驱动程序的默认 DEVMODE 设置行为更改
 

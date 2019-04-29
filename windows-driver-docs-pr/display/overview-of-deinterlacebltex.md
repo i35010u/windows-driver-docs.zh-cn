@@ -1,6 +1,6 @@
 ---
-title: DeinterlaceBltEx 的概述
-description: DeinterlaceBltEx 的概述
+title: DeinterlaceBltEx 概述
+description: DeinterlaceBltEx 概述
 ms.assetid: ff487508-eb04-4d4d-9057-ed2d9ea273e0
 keywords:
 - DeinterlaceBltEx，有关 DeinterlaceBltEx
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 461f99398f6bc2efc32cc7cdc201236ae80262c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383985"
 ---
-# <a name="overview-of-deinterlacebltex"></a>DeinterlaceBltEx 的概述
+# <a name="overview-of-deinterlacebltex"></a>DeinterlaceBltEx 概述
 
 
 ## <span id="ddk_overview_of_deinterlacebltex_gg"></span><span id="DDK_OVERVIEW_OF_DEINTERLACEBLTEX_GG"></span>

@@ -5,11 +5,11 @@ ms.assetid: 26c329d0-0d9c-4d24-bbe4-ebb7d7b36a89
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cff2fa5b9c4476b8e7fe21b552503dcdd9545093
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383057"
 ---
 # <a name="mpiopathhealthinfo-wmi-class"></a>MPIO\_路径\_运行状况\_信息 WMI 类
 

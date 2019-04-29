@@ -1,6 +1,6 @@
 ---
-title: 网络 INF 文件中的部分
-description: 网络 INF 文件中的部分
+title: 网络 INF 文件中的节
+description: 网络 INF 文件中的节
 ms.assetid: 6d78fd1e-b53c-493c-a8cd-889242fd6589
 keywords:
 - INF 文件 WDK 网络部分
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b181b5ff050ab6ba5949c416cc27a52886d4d502
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386160"
 ---
-# <a name="sections-in-a-network-inf-file"></a>网络 INF 文件中的部分
+# <a name="sections-in-a-network-inf-file"></a>网络 INF 文件中的节
 
 
 本部分包括：

@@ -1,14 +1,14 @@
 ---
-Description: Frequently asked questions for OEMs who want to build Windows systems with USB Type-C connectors.
+Description: 想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 的常见问题。
 title: 常见问题-Windows 系统上的 USB C 型连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: de24442fd628eee893fce57e08deac76308fa89b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383017"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 

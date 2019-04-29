@@ -1,6 +1,6 @@
 ---
-title: 监视器类功能驱动程序
-description: 监视器类功能驱动程序
+title: 监视类函数驱动程序
+description: 监视类函数驱动程序
 ms.assetid: d16c3dcc-2fbf-4579-8962-1b89e6e7b347
 keywords:
 - 多个监视器 WDK
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a46c032183e55f26c665f3e3bd40c2e6553e55a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376763"
 ---
-# <a name="monitor-class-function-driver"></a>监视器类功能驱动程序
+# <a name="monitor-class-function-driver"></a>监视类函数驱动程序
 
 
 ## <span id="ddk_monitor_class_function_driver_gg"></span><span id="DDK_MONITOR_CLASS_FUNCTION_DRIVER_GG"></span>

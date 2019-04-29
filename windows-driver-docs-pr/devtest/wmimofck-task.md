@@ -5,11 +5,11 @@ ms.assetid: 33C5C079-510F-4BD3-AEF1-F152E88E45C2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29295c3d39d4c87b1b0bc5a4cd0345d1bc8bca2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379124"
 ---
 # <a name="wmimofck-task"></a>Wmimofck 任务
 
@@ -193,7 +193,7 @@ Wmimofck.exe –h"b.h" b.bmf
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [使用 Wmimofck.exe](https://msdn.microsoft.com/library/windows/hardware/ff565588)

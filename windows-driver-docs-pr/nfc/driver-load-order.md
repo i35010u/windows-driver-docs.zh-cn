@@ -4,18 +4,18 @@ description: ACPI 创建用于表示 NFCC，即插即用设备节点时针对 NF
 ms.assetid: 8094B525-A4A1-42D2-8D1F-4B32D77418E3
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1b3305bec5c9b69d4e846306244be1cc42261eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375232"
 ---
 # <a name="nfc-driver-load-order"></a>NFC 驱动程序加载顺序
 

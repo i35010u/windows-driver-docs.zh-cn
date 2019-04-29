@@ -1,6 +1,6 @@
 ---
-title: Directshow 缓存 Pin 信息
-description: Directshow 缓存 Pin 信息
+title: 缓存 DirectShow 的引脚信息
+description: 缓存 DirectShow 的引脚信息
 ms.assetid: 1e6a973b-32d2-4ac2-9cd6-f4d3c329cecf
 keywords:
 - pin 数据缓存 WDK BDA
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f215ce1a0a39092dc180dc1e5390dd7a5a1a6f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370267"
 ---
-# <a name="caching-pin-information-for-directshow"></a>Directshow 缓存 Pin 信息
+# <a name="caching-pin-information-for-directshow"></a>缓存 DirectShow 的引脚信息
 
 
 

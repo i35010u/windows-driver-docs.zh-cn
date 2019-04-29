@@ -1,6 +1,6 @@
 ---
-title: 显示网络连接向导中的自定义 UI 页
-description: 显示网络连接向导中的自定义 UI 页
+title: 在网络连接向导中显示自定义 UI 页
+description: 在网络连接向导中显示自定义 UI 页
 ms.assetid: 102f142a-91d1-4b55-a111-15a297c03e23
 keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，网络连接向导
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71b3a0d2d8c408567fe0b734dbc49f1178a5f3db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379561"
 ---
-# <a name="displaying-custom-ui-pages-within-the-network-connection-wizard"></a>显示网络连接向导中的自定义 UI 页
+# <a name="displaying-custom-ui-pages-within-the-network-connection-wizard"></a>在网络连接向导中显示自定义 UI 页
 
 
 

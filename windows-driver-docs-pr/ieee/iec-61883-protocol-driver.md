@@ -1,6 +1,6 @@
 ---
-title: IEC-61883 Protocol Driver
-description: IEC-61883 Protocol Driver
+title: IEC-61883 协议驱动程序
+description: IEC-61883 协议驱动程序
 ms.assetid: d1e639f0-a22f-4005-86a7-fdbfe509265b
 keywords:
 - IEC 61883 客户端驱动程序 WDK IEEE 1394 总线
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 60953d981c9fd0e52b2552e782dd62bd23748d35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376676"
 ---
-# <a name="iec-61883-protocol-driver"></a>IEC-61883 Protocol Driver
+# <a name="iec-61883-protocol-driver"></a>IEC-61883 协议驱动程序
 
 
 

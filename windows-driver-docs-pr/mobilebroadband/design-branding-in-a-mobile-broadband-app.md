@@ -5,11 +5,11 @@ ms.assetid: 0badd121-ce1d-4be2-a9f0-e062631c00c8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aabf396ccd21a73b8c0ae0ed4f47d89160e2b02
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383804"
 ---
 # <a name="design-branding-in-a-mobile-broadband-app"></a>设计移动宽带应用中的品牌
 
@@ -82,7 +82,7 @@ UWP 应用建议的品牌中通过以下方式为：
 
 -   [与其他 Windows 组件集成，移动宽带应用](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设计用户体验的移动宽带应用程序](designing-the-user-experience-of-a-mobile-broadband-app.md)

@@ -5,11 +5,11 @@ ms.assetid: 59e2c077-c6f5-4965-891b-4601623ca47b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d32b49806477a1b3dcf10cb6bccd73b20a4421cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380184"
 ---
 # <a name="windows-98-core-components"></a>Windows 98 核心组件
 

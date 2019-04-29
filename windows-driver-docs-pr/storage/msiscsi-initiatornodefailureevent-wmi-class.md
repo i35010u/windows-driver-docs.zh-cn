@@ -5,11 +5,11 @@ ms.assetid: 2e542667-4da8-447b-b625-2cd27d52da61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 66639c294f1eaf5b7b055c9496ce909eea4dd435
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382530"
 ---
 # <a name="msiscsiinitiatornodefailureevent-wmi-class"></a>MSiSCSI\_InitiatorNodeFailureEvent WMI 类
 

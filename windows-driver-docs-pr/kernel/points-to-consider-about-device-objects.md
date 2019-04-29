@@ -1,19 +1,19 @@
 ---
-title: 有关设备对象应考虑事项
-description: 有关设备对象应考虑事项
+title: 有关设备对象的要点
+description: 有关设备对象的要点
 ms.assetid: 4c54340b-3b4c-4c67-b28d-fac769e4feb7
 keywords:
 - 设备对象 WDK 内核，设计注意事项
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2a91f5c25628340f2fb93350e7fa02ec504aec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369231"
 ---
-# <a name="points-to-consider-about-device-objects"></a>有关设备对象应考虑事项
+# <a name="points-to-consider-about-device-objects"></a>有关设备对象的要点
 
 
 

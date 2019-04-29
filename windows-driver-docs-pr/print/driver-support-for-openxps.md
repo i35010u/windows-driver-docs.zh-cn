@@ -5,11 +5,11 @@ ms.assetid: 9BC9787E-A54D-4A11-B256-57BE5D206404
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15b3d16238e3ad8da131a4748e0487acc07006df
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379161"
 ---
 # <a name="driver-support-for-openxps"></a>OpenXPS 的驱动程序支持
 
@@ -121,7 +121,7 @@ XpsFormat = XPS,OpenXPS
 
 **驱动程序清单：存部分**。 V4 打印驱动程序清单的存部分提供了用于扩展**文件保存**对话框由 PORTPROMPT： 端口。 (PORTPROMPT： 应使用替代文件： 在 Windows 8.1，因为 PORTPROMPT： 将允许用户访问他们有权访问的即使在低权限模式下运行应用程序的所有文件位置。)存节中的项与相关联 DriverRender 节中的项的索引。
 
-示例：
+例如：
 
 ```Manifest
 [FileSave]

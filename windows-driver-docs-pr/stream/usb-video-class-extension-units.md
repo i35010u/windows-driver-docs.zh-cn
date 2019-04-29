@@ -1,6 +1,6 @@
 ---
-title: USB 视频类扩展单位
-description: USB 视频类扩展单位
+title: USB 视频类扩展单元
+description: USB 视频类扩展单元
 ms.assetid: 91addb52-4681-4f3d-bdd8-bf64f4917fc9
 keywords:
 - USB 视频类驱动程序 WDK AVStream，扩展单位
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 604a0bed62f32ff21c708878f69ef8e4e8211369
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378513"
 ---
-# <a name="usb-video-class-extension-units"></a>USB 视频类扩展单位
+# <a name="usb-video-class-extension-units"></a>USB 视频类扩展单元
 
 
 本部分提供了用于编写用户模式下插件来扩展 USB 视频类设备的指导原则。 通过使用用户模式插件，可以以标准方式公开为 COM 应用程序编程接口 (API) 的扩展的设备功能。

@@ -1,17 +1,17 @@
 ---
-title: 获取供应商日志页 （函数索引 15）
+title: 获取供应商日志页（功能索引 15）
 description: 此函数返回供应商日志页。
 ms.assetid: 71BFFD91-FAC2-473C-B453-B54578FAE1A0
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: fb7295c7219c8e9927807f639ea57abac8290b5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383147"
 ---
-# <a name="get-vendor-log-page-function-index-15"></a>获取供应商日志页 （函数索引 15）
+# <a name="get-vendor-log-page-function-index-15"></a>获取供应商日志页（功能索引 15）
 
 
 此函数返回供应商日志页。 调用[获取供应商日志页大小 (函数索引 14)](get-vendor-log-page-size--function-index-14-.md)若要获取的页大小。
@@ -59,7 +59,7 @@ ms.locfileid: "56541317"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [获取供应商日志页大小 （函数索引 14）](get-vendor-log-page-size--function-index-14-.md)

@@ -1,17 +1,17 @@
 ---
-title: 创建推送模型识别应用程序
-description: 创建推送模型识别应用程序
+title: 创建推送模型感知应用程序
+description: 创建推送模型感知应用程序
 ms.assetid: 0f554b2c-0217-4109-8ef6-99c5400dfed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f80031cc9d7a1f132dbdcd854dedfe30e142a43
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386309"
 ---
-# <a name="creating-push-model-aware-applications"></a>创建推送模型识别应用程序
+# <a name="creating-push-model-aware-applications"></a>创建推送模型感知应用程序
 
 
 

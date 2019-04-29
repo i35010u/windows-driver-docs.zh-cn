@@ -1,17 +1,17 @@
 ---
-title: 运行默认完成安装操作
-description: 运行默认完成安装操作
+title: 运行默认的 Finish-Install 操作
+description: 运行默认的 Finish-Install 操作
 ms.assetid: a66d418e-9a66-4c11-854d-6e597ffa01f7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e30028e3f394b7bb508846638e905a9ef3a91bb0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382918"
 ---
-# <a name="running-the-default-finish-install-action"></a>运行默认完成安装操作
+# <a name="running-the-default-finish-install-action"></a>运行默认的 Finish-Install 操作
 
 
 在 Windows 7 中，默认值完成安装操作提供的系统提供[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)函数。

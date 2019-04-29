@@ -5,13 +5,13 @@ ms.assetid: 5E6759E3-3AF8-4427-BDD0-DB64B3D480A1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 35bfdd62da933142cabb4fe4e05f60074be83887
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380291"
 ---
-# <a name="multiple-binary-opt-in-poolnxoptinauto"></a>多个二进制参加：POOL\_NX\_OPTIN\_AUTO
+# <a name="multiple-binary-opt-in-poolnxoptinauto"></a>启用多个二进制文件：POOL\_NX\_OPTIN\_AUTO
 
 
 如果您的硬件供应商提供不同的驱动程序二进制文件的不同版本的 Windows，您可以使用池中\_NX\_OPTIN\_自动选择机制。 对 Windows 8 和 Windows 驱动程序支持的每个早期版本，此移植帮助生成单独的驱动程序二进制文件。

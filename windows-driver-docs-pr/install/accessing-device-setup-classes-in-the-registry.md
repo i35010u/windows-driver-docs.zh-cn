@@ -5,11 +5,11 @@ ms.assetid: 4532FE45-B08E-45f8-9A4A-3B32AE1424FA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc07b3b4895afa52197ce61ecddcdc4519e2b83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382282"
 ---
 # <a name="accessing-device-setup-classes-in-the-registry"></a>访问注册表中的设备安装程序类
 

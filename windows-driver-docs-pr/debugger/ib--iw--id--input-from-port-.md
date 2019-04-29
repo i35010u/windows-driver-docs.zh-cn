@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b7e5a6658f9bcb46e0e5e3616e3f7ef3c3a56f4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381034"
 ---
 # <a name="ib-iw-id-input-from-port"></a>ib、iw、id（从端口输入）
 

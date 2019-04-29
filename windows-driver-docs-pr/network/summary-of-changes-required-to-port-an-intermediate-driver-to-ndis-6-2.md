@@ -1,6 +1,6 @@
 ---
 title: 若要移植到 NDIS 6.20 的中间驱动程序的更改摘要
-description: 若要移植到 NDIS 6.20 的中间驱动程序所需的更改的摘要
+description: 将中间驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 ms.assetid: 1ed2b2f6-f337-4aaa-9ce8-90adf7d05722
 keywords:
 - NDIS 6.20 WDK，移植中间驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: db041a9df84df68357d18217f1434f69465e2ce9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376944"
 ---
-# <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-620"></a>若要移植到 NDIS 6.20 的中间驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-620"></a>将中间驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
 
 

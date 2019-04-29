@@ -5,11 +5,11 @@ ms.assetid: 22333d78-f78f-4031-a9f3-50b43ec746b6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd016a303f82016e5c9ba9453223c15585675717
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385181"
 ---
 # <a name="gpdppd-based-feature-description-changes"></a>基于 GPD/PPD 的功能说明更改
 

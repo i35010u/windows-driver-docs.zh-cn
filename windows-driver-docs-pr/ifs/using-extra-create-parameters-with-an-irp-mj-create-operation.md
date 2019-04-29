@@ -1,15 +1,15 @@
 ---
-title: 使用额外使用 IRP_MJ_CREATE 操作创建参数
-description: 使用额外使用 IRP_MJ_CREATE 操作创建参数
+title: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
+description: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
 ms.assetid: e32aeec6-1a0a-4d21-8358-89d9fc0a15eb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d41a8d53a8146611820408666cbf34634042a8db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379423"
 ---
 # <a name="using-extra-create-parameters-with-an-irpmjcreate-operation"></a>使用额外创建的参数与 IRP\_MJ\_创建操作
 

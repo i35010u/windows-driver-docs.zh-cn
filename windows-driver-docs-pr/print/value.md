@@ -1,5 +1,5 @@
 ---
-title: 值 (WSD)
+title: Value (WSD)
 description: WSD 值构造可以双向通信使用扩展架构从特定架构元素中检索数据的查询。
 ms.assetid: 8930e012-88ee-44ff-9abc-a15367f04ca3
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dda2e223f51cf507b07411db7d51d8f227255d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376457"
 ---
-# <a name="value-wsd"></a>值 (WSD)
+# <a name="value-wsd"></a>Value (WSD)
 
 
 WSD`Value`构造可以进行扩展使用从 Web 服务接口中的特定架构元素中检索数据的查询的双向通信架构。
@@ -25,7 +25,7 @@ WSD`Value`构造可以进行扩展使用从 Web 服务接口中的特定架构�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

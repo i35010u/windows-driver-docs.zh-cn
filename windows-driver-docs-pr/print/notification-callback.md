@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45e2a91ba3ad89ffd19c554853cf15ad49c68c46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382850"
 ---
 # <a name="notification-callback"></a>通知回调
 
@@ -23,7 +23,7 @@ ms.locfileid: "56522778"
 
 
 
-任何打印组件或侦听感兴趣接收通知的应用程序必须提供公开的对象[IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)接口。 接口继承自**IUnknown** ，以便客户端的后台处理程序通知机制可以实现 COM 或 c + + 对象。
+任何打印组件或侦听感兴趣接收通知的应用程序必须提供公开的对象[IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)接口。 接口继承自**IUnknown** ，以便客户端的后台处理程序通知机制可以实现或者 COM 或C++对象。
 
 侦听应用程序必须提供一个指向**IPrintAsyncNotifyCallback**接口时它会注册以接收通知。 通知发件人必须提供一个指向**IPrintAsyncNotifyCallback**如果感兴趣的响应，还会创建一个双向通道的接口。
 

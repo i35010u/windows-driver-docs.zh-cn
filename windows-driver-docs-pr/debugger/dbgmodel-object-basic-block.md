@@ -4,17 +4,17 @@ description: 基本块是代码的区域 （通常） 一个入口点和一个�
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c121f4969b21474dc301d6488dabaf166691f1cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376078"
 ---
 # <a name="basic-block-objects"></a>基本块对象 
 ## <a name="summary"></a>总结
 基本块是代码的区域 （通常） 一个入口点和一个退出点。 [拆装器](dbgmodel-object-disassembler.md)的 DisassembleBlocks 和 DisassembleFunction 方法都返回基本块的集合。 DisassembleBlocks 方法执行基本块的简单分析，并可能会导致多个入口点的块。 DisassembleFunction 将执行在单个条目和单个出口的基本块中生成的函数的完整流分析。
 ## <a name="object-properties"></a>对象属性
-|“属性”|描述|
+|名称|描述|
 |--- |--- |
 |StartAddress|基本块的起始地址。|
 |EndAddress|基本块的结束地址。 块定义的半开集 [*StartAddress*， *EndAddress*)。|

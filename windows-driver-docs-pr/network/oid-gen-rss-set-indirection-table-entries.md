@@ -6,11 +6,11 @@ keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES, OID_GEN_RSS_SET_INDIRECTION
 ms.date: 10/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b90bc6a0728d5b257fb1b5fe638d62ecb748b21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381349"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
@@ -99,7 +99,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序被预期行为，
 
 | | |
 | --- | --- |
-| 版本 | Windows 10 版本 1709 |
+| Version | Windows 10 版本 1709 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

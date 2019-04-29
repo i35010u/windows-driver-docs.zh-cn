@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23f857b23a017d99b4640668d821dcb5bfd1c4f0
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379019"
 ---
 # <a name="using-getoptionattribute"></a>使用 GetOptionAttribute
 

@@ -5,11 +5,11 @@ ms.assetid: A7973588-5AED-494E-92CA-D5EFB2C7950A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e1a96c82c7ce74f3d9d36b4eff463ff11978b018
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380597"
 ---
 # <a name="networkdirect-disconnect-scheme"></a>NetworkDirect 断开连接方案
 

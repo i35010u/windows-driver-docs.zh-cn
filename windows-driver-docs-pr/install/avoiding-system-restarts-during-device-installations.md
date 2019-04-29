@@ -5,11 +5,11 @@ ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 004d3f794cea8e65df1fa7abe9c3ee403914f847
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380347"
 ---
 # <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>在设备安装和驱动程序更新期间避免系统重启
 

@@ -1,5 +1,5 @@
 ---
-title: dds，dps，dqs （显示单词和符号）
+title: dds、dps、dqs（显示单词和符号）
 description: Dds、 分发点和 dqs 命令显示给定范围中的内存内容。 此内存被假定为一系列符号表中的地址。
 ms.assetid: 5a3ed1c4-723a-4902-bfbf-d4a44d2cd0b5
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e6754c4089f04672bfae8b65825e4a8923ab5b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373379"
 ---
-# <a name="dds-dps-dqs-display-words-and-symbols"></a>dds，dps，dqs （显示单词和符号）
+# <a name="dds-dps-dqs-display-words-and-symbols"></a>dds、dps、dqs（显示单词和符号）
 
 
 **Dds**， **dps**，并**dqs**命令显示给定范围中的内存内容。 此内存被假定为一系列符号表中的地址。 还显示相应的符号。

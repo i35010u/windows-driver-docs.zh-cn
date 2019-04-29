@@ -1,14 +1,14 @@
 ---
-Description: Driver Capabilities
+Description: 驱动程序功能
 title: 驱动程序功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5616504930a48c3c1f0dfc72deb75ee432e8d460
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378233"
 ---
 # <a name="driver-capabilities"></a>驱动程序功能
 

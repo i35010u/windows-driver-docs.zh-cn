@@ -5,11 +5,11 @@ ms.assetid: E5C18352-B05B-42BF-B5B8-12ABA0E6131C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b2ae5606fdff07fc29b8d8bd8ac0d1a80f60232
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375375"
 ---
 # <a name="capture-and-view-tracelogging-data"></a>捕获和查看 TraceLogging 数据
 
@@ -25,7 +25,7 @@ ms.locfileid: "56525482"
 
 
 
-### <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+### <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 WPR 和 WPA 工具必须与链接针对 TraceLogging 版本兼容。 如果无法捕获，或者对事件进行解码，则可能是因为工具不匹配和不兼容。
 

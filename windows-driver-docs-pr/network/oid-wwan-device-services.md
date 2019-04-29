@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_SERVICES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: bac260ee93b094bb894b90efc76a5899021b0872
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386671"
 ---
 # <a name="oidwwandeviceservices"></a>OID\_WWAN\_DEVICE\_SERVICES
 
@@ -31,7 +31,7 @@ OID\_WWAN\_设备\_服务返回的微型端口驱动程序支持的设备服务�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
 </tr>
 <tr class="even">

@@ -1,6 +1,6 @@
 ---
-title: 枚举子设备的显示适配器
-description: 枚举子设备的显示适配器
+title: 枚举显示适配器的子设备
+description: 枚举显示适配器的子设备
 ms.assetid: 3bec2117-aef4-41fc-b88a-0081c7c9fe3d
 keywords:
 - 视频存在网络 WDK 显示，显示适配器子设备
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 829713c12927b7a9d544f107f8902d78a42c1868
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377659"
 ---
-# <a name="enumerating-child-devices-of-a-display-adapter"></a>枚举子设备的显示适配器
+# <a name="enumerating-child-devices-of-a-display-adapter"></a>枚举显示适配器的子设备
 
 
 以下系列步骤描述了显示端口驱动程序、 显示微型端口驱动程序和视频存在的网络 (VidPN) 管理器在初始化时，若要枚举的显示适配器的子设备的协作方式。

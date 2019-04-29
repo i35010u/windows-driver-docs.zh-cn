@@ -1,17 +1,17 @@
 ---
-title: 获取供应商日志页大小 （函数索引 14）
+title: 获取供应商日志页大小（功能索引 14）
 description: 此函数返回的供应商大小日志页，以便让主机知道它需要分配读取日志页的供应商的缓冲区的大小。
 ms.assetid: 24211D67-1D36-4711-B87B-C99546E206FC
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 772c34ded9f25f64eea11d6a06e0f626b02ff557
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383145"
 ---
-# <a name="get-vendor-log-page-size-function-index-14"></a>获取供应商日志页大小 （函数索引 14）
+# <a name="get-vendor-log-page-size-function-index-14"></a>获取供应商日志页大小（功能索引 14）
 
 
 此函数返回的供应商大小日志页，以便让主机知道它需要分配读取日志页的供应商的缓冲区的大小。
@@ -64,7 +64,7 @@ ms.locfileid: "56542980"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [获取供应商日志页 （函数索引 15）](get-vendor-log-page--function-index-15-.md)

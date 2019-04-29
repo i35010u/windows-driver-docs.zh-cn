@@ -1,6 +1,6 @@
 ---
-title: 生成 MIP 映射纹理的子级别
-description: 生成 MIP 映射纹理的子级别
+title: 生成 MIP 贴图纹理的子级别
+description: 生成 MIP 贴图纹理的子级别
 ms.assetid: fbfb0d1b-468d-4e7f-865e-bdc7d19f5516
 keywords:
 - MIP 映射纹理 WDK DirectX 9.0 中，生成子级别
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d51be4c4595834d7d458c3ec9ca57f8735b0988
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373423"
 ---
-# <a name="generating-sublevels-of-mip-map-textures"></a>生成 MIP 映射纹理的子级别
+# <a name="generating-sublevels-of-mip-map-textures"></a>生成 MIP 贴图纹理的子级别
 
 
 ## <span id="ddk_generating_sublevels_of_mip_map_textures_gg"></span><span id="DDK_GENERATING_SUBLEVELS_OF_MIP_MAP_TEXTURES_GG"></span>

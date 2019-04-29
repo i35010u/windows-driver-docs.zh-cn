@@ -1,17 +1,17 @@
 ---
 title: 查询虚拟函数的 PCI 供应商和设备 Id
-description: 虚拟函数的查询的 PCI 供应商和设备标识符
+description: 查询虚拟功能的 PCI 供应商和设备标识符
 ms.assetid: A2FB0A35-A89B-4028-92BA-E75739B080FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dedd919337da585e7a4f63f7a10da63f9f75eda9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380578"
 ---
-# <a name="querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function"></a>虚拟函数的查询的 PCI 供应商和设备标识符
+# <a name="querying-the-pci-vendor-and-device-identifiers-for-a-virtual-function"></a>查询虚拟功能的 PCI 供应商和设备标识符
 
 **请注意**此方法只能由过量的 HYPER-V 父分区在管理操作系统中运行的驱动程序。
 

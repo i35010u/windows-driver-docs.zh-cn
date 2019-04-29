@@ -1,6 +1,6 @@
 ---
-title: 处理 WMI Irp DispatchSystemControl 例程中
-description: 处理 WMI Irp DispatchSystemControl 例程中
+title: 处理 DispatchSystemControl 例程中的 WMI IRP
+description: 处理 DispatchSystemControl 例程中的 WMI IRP
 ms.assetid: 9f1fc209-ee32-4270-87e5-e360ca5eca17
 keywords:
 - WMI WDK 内核请求
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7950eb98c32d6c937ae998349ecbc7f14144cfcc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381365"
 ---
-# <a name="processing-wmi-irps-in-a-dispatchsystemcontrol-routine"></a>处理 WMI Irp DispatchSystemControl 例程中
+# <a name="processing-wmi-irps-in-a-dispatchsystemcontrol-routine"></a>处理 DispatchSystemControl 例程中的 WMI IRP
 
 
 

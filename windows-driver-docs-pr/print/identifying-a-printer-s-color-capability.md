@@ -1,6 +1,6 @@
 ---
-title: 用于标识打印机的颜色功能
-description: 用于标识打印机的颜色功能
+title: 识别打印机的颜色功能
+description: 识别打印机的颜色功能
 ms.assetid: 24abf76d-c0f9-440e-b825-8b39ea9ab807
 keywords:
 - 打印机接口 DLL WDK，颜色功能支持
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 85344b81de44a0e82d1c9e4b5f80e96544b8c307
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380836"
 ---
-# <a name="identifying-a-printers-color-capability"></a>用于标识打印机的颜色功能
+# <a name="identifying-a-printers-color-capability"></a>识别打印机的颜色功能
 
 
 

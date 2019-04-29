@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_ABORT_TASK 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e72ddd10a06ce1e40583d7dd25fa9af9ef5e4760
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384628"
 ---
 # <a name="oidwdiaborttask"></a>OID\_WDI\_ABORT\_TASK
 
@@ -75,7 +75,7 @@ OID\_WDI\_中止\_任务是向下发送取消挂起的任务特定的属性。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Dot11wdi.h</td>
 </tr>
 </tbody>

@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 1252f2fa12cd227c3c860ced7444488f4af9ee4b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383586"
 ---
 # <a name="oidwditaskp2pdiscover"></a>OID\_WDI\_TASK\_P2P\_DISCOVER
 

@@ -6,13 +6,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: cca9037dfd98b8420c6156c416e45c9b306d372c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375871"
 ---
-# <a name="windows-8-in-box-graphics-drivers-treated-as-generic-drivers"></a>Windows 8 中框图形驱动程序视为通用驱动程序
+# <a name="windows-8-in-box-graphics-drivers-treated-as-generic-drivers"></a>将 Windows 8 现成图形驱动程序视为通用驱动程序
 
 
 在此方案中，Windows 8 中框图形驱动程序，包括 MS 基本显示驱动程序 (MSBDD)，全都被视为等通用驱动程序通过 Windows 和 Windows Update。

@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c6501b3e4fe8e33f7fd356c78042a4daaafe077
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379747"
 ---
 # <a name="filter-centric-processing"></a>以筛选器为中心的处理
 

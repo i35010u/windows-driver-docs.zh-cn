@@ -1,17 +1,17 @@
 ---
-title: 所需的 Direct3D 9 功能
+title: 必需的 Direct3D 9 功能
 ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: 为用户模式驱动程序以访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 74dabea61ced318c1f29ddc90c9851ae954a5439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383225"
 ---
-# <a name="required-direct3d-9-capabilities"></a>所需的 Direct3D 9 功能
+# <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
 
 应用程序完全访问 Microsoft Direct3D 版本 9 的功能\_1，9\_2 和 9\_3，用户模式驱动程序必须公开某些硬件功能。 这些功能都表示方面[ **D3DCAPS9** ](https://msdn.microsoft.com/library/windows/desktop/bb172513)返回的用户模式驱动程序的结构[ *GetCaps* ](https://msdn.microsoft.com/library/windows/hardware/ff566762)函数。 若要指示支持的功能，该驱动程序必须设置的这些成员**D3DCAPS9**到按位 OR，所有相应的标志值：

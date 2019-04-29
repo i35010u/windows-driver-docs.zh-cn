@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b0dad3bd79b415aaf73248d1a8d5717557972a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384223"
 ---
 # <a name="oids-for-connection-oriented-call-managers-and-clients"></a>面向连接的呼叫管理程序和客户端的 OID
 
@@ -19,7 +19,7 @@ ms.locfileid: "56576731"
 
 在此表中，M 指示 OID 是必需的而 O 则指示它是可选的。
 
-| 长度 | 查询 | 设置 | “属性” |
+| 长度 | 查询 | 设置 | 名称 |
 | --- | --- | --- | --- |
 | 变化不定 |   | O | [OID_CO_ADD_ADDRESS](oid-co-add-address.md) |
 | 变化不定 |   | O | [OID_CO_ADD_PVC](oid-co-add-pvc.md) |

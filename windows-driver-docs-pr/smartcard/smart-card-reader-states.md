@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75d8c9a777c878d8cdf682cfbe964bb47e2d58c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382537"
 ---
 # <a name="smart-card-reader-states"></a>智能卡读卡器状态
 

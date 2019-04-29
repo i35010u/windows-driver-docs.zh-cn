@@ -1,6 +1,6 @@
 ---
-title: 确保安全的 IRQL 在执行完成处理
-description: 确保安全的 IRQL 在执行完成处理
+title: 确保在安全的 IRQL 上执行完成处理
+description: 确保在安全的 IRQL 上执行完成处理
 ms.assetid: 54487fba-2ced-4bcd-afa6-d56b351aa7d6
 keywords:
 - postoperation 回调例程 WDK 文件系统微筛选器，完成处理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bf0c57b99da30b28ceb26a822e07cf87d6637606
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383854"
 ---
-# <a name="ensuring-that-completion-processing-is-performed-at-safe-irql"></a>确保安全的 IRQL 在执行完成处理
+# <a name="ensuring-that-completion-processing-is-performed-at-safe-irql"></a>确保在安全的 IRQL 上执行完成处理
 
 
 ## <span id="ddk_ensuring_that_completion_processing_is_performed_at_safe_irql_if"></span><span id="DDK_ENSURING_THAT_COMPLETION_PROCESSING_IS_PERFORMED_AT_SAFE_IRQL_IF"></span>

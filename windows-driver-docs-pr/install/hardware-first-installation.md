@@ -1,6 +1,6 @@
 ---
-title: 第一个的硬件安装
-description: 第一个的硬件安装
+title: 硬件优先安装
+description: 硬件优先安装
 ms.assetid: 42e47250-3600-4479-8e49-483c7470935d
 keywords:
 - 安装应用程序 WDK，第一个的硬件安装
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ccfdd1bb1bb1092567c56d4c7da2ea0cd1dba70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383665"
 ---
-# <a name="hardware-first-installation"></a>第一个的硬件安装
+# <a name="hardware-first-installation"></a>硬件优先安装
 
 
 硬件第一个安装涉及到通过插入新的硬件设备到系统触发的设备驱动程序安装。 在这种情况下，你[驱动程序包](driver-packages.md)的设备不在系统中已预安装了。

@@ -5,11 +5,11 @@ ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: daf3b932db347aaf732742a032c88deeb39dab9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382122"
 ---
 # <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>创建一个传感器的永久唯一标识符
 

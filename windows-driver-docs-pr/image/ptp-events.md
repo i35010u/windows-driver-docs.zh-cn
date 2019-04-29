@@ -5,11 +5,11 @@ ms.assetid: 69bbe1e1-46e7-4615-93ff-ecd640e7d56b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d90dec6990c76709d3f447c22de13859ee799815
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379619"
 ---
 # <a name="ptp-events"></a>PTP 事件
 

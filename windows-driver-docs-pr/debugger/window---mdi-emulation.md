@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 61b0cf15127ca39bc058dd833a8181664e3b0d8f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386414"
 ---
-# <a name="window--mdi-emulation"></a>窗口 |MDI 仿真
+# <a name="window--mdi-emulation"></a>窗口 | MDI 模拟
 
 
 选择**MDI 仿真**上**窗口**菜单使 WinDbg 来模拟窗口化的多文档界面 (MDI) 样式。 这种类型的窗口化不同于停靠模式，因为所有窗口都浮动，但在框架窗口内限制都浮动窗口。 引入了停靠模式之前，此行为来模拟 WinDbg 的行为。

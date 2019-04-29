@@ -1,17 +1,17 @@
 ---
-title: 具有 Id 相同，但不同的名称的映射 WIA 属性
-description: 具有 Id 相同，但不同的名称的映射 WIA 属性
+title: 映射 ID 相同但名称不同的 WIA 属性
+description: 映射 ID 相同但名称不同的 WIA 属性
 ms.assetid: 0321db59-74a1-4294-bbaf-ec0b9317464b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12b5e4b21bc58c97c2e04130ceb3181e6f0719f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380361"
 ---
-# <a name="mapping-wia-properties-with-the-same-ids-but-different-names"></a>具有 Id 相同，但不同的名称的映射 WIA 属性
+# <a name="mapping-wia-properties-with-the-same-ids-but-different-names"></a>映射 ID 相同但名称不同的 WIA 属性
 
 
 没有具有相同的属性 Id 与 Windows Vista 的对应不同的属性名称，但 Windows XP 属性。 下面是这些 Windows XP 根属性以及它们在 Windows Vista 中将转换为的平板和送纸器 (ADF) 属性表。

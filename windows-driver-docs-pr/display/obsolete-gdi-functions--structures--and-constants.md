@@ -1,6 +1,6 @@
 ---
-title: 已过时的 GDI 函数、 结构和常量
-description: 已过时的 GDI 函数、 结构和常量
+title: 已过时的 GDI 函数、结构和常量
+description: 已过时的 GDI 函数、结构和常量
 ms.assetid: 99ab0960-4a0e-4313-a32d-7b48b9c4bf6c
 keywords:
 - 显示 GDI WDK Windows 2000 中，已过时的引用
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 415a03e9bb5b0c8911ee09369a6f9bbc33804355
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384044"
 ---
-# <a name="obsolete-gdi-functions-structures-and-constants"></a>已过时的 GDI 函数、 结构和常量
+# <a name="obsolete-gdi-functions-structures-and-constants"></a>已过时的 GDI 函数、结构和常量
 
 
 ## <span id="ddk_obsolete_gdi_functions_structures_and_constants_gg"></span><span id="DDK_OBSOLETE_GDI_FUNCTIONS_STRUCTURES_AND_CONSTANTS_GG"></span>

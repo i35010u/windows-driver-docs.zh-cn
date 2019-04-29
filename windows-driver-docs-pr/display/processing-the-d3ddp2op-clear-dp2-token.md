@@ -1,6 +1,6 @@
 ---
-title: 处理 D3DDP2OP_CLEAR DP2 令牌
-description: 处理 D3DDP2OP_CLEAR DP2 令牌
+title: 处理 D3DDP2OP_CLEAR DP2 标记
+description: 处理 D3DDP2OP_CLEAR DP2 标记
 ms.assetid: ec027f44-bdd5-4d5a-8c47-1ac6a0c1cb6e
 keywords:
 - DirectX 8.0 版本显示说明 WDK Windows 2000，纯设备 D3DDP2OP_CLEAR DP2 令牌处理
@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b29b010e9b38d0a5a5ecd3d29dae392b80dea11
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383888"
 ---
 # <a name="processing-the-d3ddp2opclear-dp2-token"></a>处理 D3DDP2OP\_清除 DP2 令牌
 

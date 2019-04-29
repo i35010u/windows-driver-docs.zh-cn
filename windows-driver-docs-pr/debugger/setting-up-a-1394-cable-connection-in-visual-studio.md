@@ -5,11 +5,11 @@ ms.assetid: 07784500-83F1-4927-998F-7CEEEADAA2B0
 ms.date: 04/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fdba3fb40ce68c9fca9640221560a15b4239f4a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381952"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 1394 线缆进行的内核模式调试
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_802_3_ADD_MULTICAST_ADDRESS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ba8b1e689d3ce2ce190a0967ae58f29dd428ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377281"
 ---
 # <a name="oid8023addmulticastaddress"></a>OID\_802\_3\_添加\_多播\_地址
 

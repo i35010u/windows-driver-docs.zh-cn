@@ -1,17 +1,17 @@
 ---
-title: 禁用 HYPER-V 可扩展交换机扩展
-description: 禁用 HYPER-V 可扩展交换机扩展
+title: 禁用 Hyper-V 可扩展交换机扩展
+description: 禁用 Hyper-V 可扩展交换机扩展
 ms.assetid: 3BE5A53E-3F74-4B99-B504-5D7F090343E5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b24381583612412642f2566e274f192b1497874b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379569"
 ---
-# <a name="disabling-hyper-v-extensible-switch-extensions"></a>禁用 HYPER-V 可扩展交换机扩展
+# <a name="disabling-hyper-v-extensible-switch-extensions"></a>禁用 Hyper-V 可扩展交换机扩展
 
 
 [Disable-vmswitchextension](https://technet.microsoft.com/library/hh848545.aspx) PowerShell cmdlet 可禁用可扩展交换机的特定实例中的扩展。

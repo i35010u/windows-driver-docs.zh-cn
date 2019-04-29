@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b7ee7af0e2306b9e27cd1964ee98a02b7e63799
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382782"
 ---
 # <a name="notification-channel"></a>通知通道
 
@@ -63,7 +63,7 @@ Spoolss.lib 提供此功能，使端口监视器可以打开通道。 可以调�
 
 **IPrintAsyncNotifyChannel**接口标识一个通道，并用于将通知发送并关闭通道。 当打印组件调用**CreatePrintAsyncNotifyChannel**函数来提供公开的对象创建一个通知通道，后台处理程序服务响应**IPrintAsyncNotifyChannel**接口。
 
-此接口继承自**IUnknown**接口，以便客户端的后台处理程序通知机制可以实现 COM 或 c + + 对象。 在下面的代码示例中的接口声明显示了此继承：
+此接口继承自**IUnknown**接口，以便客户端的后台处理程序通知机制可以实现或者 COM 或C++对象。 在下面的代码示例中的接口声明显示了此继承：
 
 ```cpp
 #define INTERFACE IPrintAsyncNotifyChannel

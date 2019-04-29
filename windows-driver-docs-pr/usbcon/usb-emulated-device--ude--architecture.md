@@ -1,14 +1,14 @@
 ---
-Description: The section describes architecture of USB Device Emulation(UDE) that emulates the behavior of a USB host controller and a connected device.
+Description: 本节介绍模拟 USB 主控制器的行为的 USB 设备 Emulation(UDE) 和连接的设备的体系结构。
 title: USB 设备仿真 (UDE) 的体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 737b1f29ef5d9006c5f3b70ae090e15d33d88a8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385803"
 ---
 # <a name="architecture-usb-device-emulation-ude"></a>体系结构：USB 设备模拟 (UDE)
 

@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 050059ea570a22973e415e8d4bfcfc6b398d47ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383850"
 ---
-# <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>示例：向下传递 IRP，而无需设置完成例程
+# <a name="example-passing-the-irp-down-without-setting-a-completion-routine"></a>例如：向下传递 IRP，不需设置完成例程
 
 
 ## <span id="ddk_example_passing_the_irp_down_without_setting_a_completion_routine_"></span><span id="DDK_EXAMPLE_PASSING_THE_IRP_DOWN_WITHOUT_SETTING_A_COMPLETION_ROUTINE_"></span>

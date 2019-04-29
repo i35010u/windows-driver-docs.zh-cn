@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c2c1e5e9c10adff45a1d86c6aaf55a69096676a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380495"
 ---
 # <a name="n-set-number-base"></a>n（设置数字基）
 
@@ -43,7 +43,7 @@ n [Radix]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -54,7 +54,7 @@ n [Radix]
 </tr>
 <tr class="even">
 <td align="left"><p>10</p></td>
-<td align="left"><p>十进制</p></td>
+<td align="left"><p>Decimal</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>16</p></td>
@@ -95,7 +95,7 @@ n [Radix]
 <a name="remarks"></a>备注
 -------
 
-输入和输出的 MASM 表达式会影响当前的基数。 它不会影响输入或输出的 c + + 表达式。 有关这些表达式的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
+输入和输出的 MASM 表达式会影响当前的基数。 它不影响的输入或输出的C++表达式。 有关这些表达式的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
 
 启动调试器时，默认基数设置为 16。
 

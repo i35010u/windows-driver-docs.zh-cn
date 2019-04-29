@@ -1,17 +1,17 @@
 ---
-title: PTP 对象映射到 WIA 项
-description: PTP 对象映射到 WIA 项
+title: 将 PTP 对象映射到 WIA 项
+description: 将 PTP 对象映射到 WIA 项
 ms.assetid: 3ee88c09-7f36-403a-ae7b-41d08c11c52f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 96901a278a42459a96629486aec6f8dd0b0ab8bc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380381"
 ---
-# <a name="mapping-ptp-objects-to-wia-items"></a>PTP 对象映射到 WIA 项
+# <a name="mapping-ptp-objects-to-wia-items"></a>将 PTP 对象映射到 WIA 项
 
 
 

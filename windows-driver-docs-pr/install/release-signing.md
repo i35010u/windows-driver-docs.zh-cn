@@ -5,11 +5,11 @@ ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ccf11cd9c23287cef6b1bdd7a7e130420d21665f
-ms.sourcegitcommit: c7fd0b78f613ffa76ae9f2c00fdc9fa77574269b
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57665794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379359"
 ---
 # <a name="release-signing"></a>发布签名
 

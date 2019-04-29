@@ -1,6 +1,6 @@
 ---
-title: 使用 PIO 直接 I/O
-description: 使用 PIO 直接 I/O
+title: 将直接 I/O 与 PIO 配合使用
+description: 将直接 I/O 与 PIO 配合使用
 ms.assetid: 84d36567-c8c6-4576-91a0-829c8819de4d
 keywords:
 - 直接 I/O WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3565137cd214292717595d8d32c5f932648b46
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383209"
 ---
-# <a name="using-direct-io-with-pio"></a>使用 PIO 直接 I/O
+# <a name="using-direct-io-with-pio"></a>将直接 I/O 与 PIO 配合使用
 
 
 

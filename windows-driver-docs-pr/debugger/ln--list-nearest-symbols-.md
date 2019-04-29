@@ -1,5 +1,5 @@
 ---
-title: ln （列出最近的符号）
+title: ln（列出最接近的符号）
 description: Ln 命令显示的符号处或附近的给定的地址。
 ms.assetid: ff01ace7-398a-4e32-9d58-00873eca3201
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: ded9b73fb0ab3adcddd7f754eb367fe2f8dc0ec2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383391"
 ---
-# <a name="ln-list-nearest-symbols"></a>ln （列出最近的符号）
+# <a name="ln-list-nearest-symbols"></a>ln（列出最接近的符号）
 
 
 **Ln**命令显示的符号处或附近的给定的地址。

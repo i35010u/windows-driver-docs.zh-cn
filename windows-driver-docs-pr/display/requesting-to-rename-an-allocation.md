@@ -1,6 +1,6 @@
 ---
-title: 若要重命名一个分配的请求
-description: 若要重命名一个分配的请求
+title: 请求重命名分配
+description: 请求重命名分配
 ms.assetid: f22e19ba-9ff3-4aa1-a3f0-103f67ea7c60
 keywords:
 - 命令缓冲区 WDK 显示分配重命名
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c04a5b8d554b360919776b269c4a75a89a020173
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383227"
 ---
-# <a name="requesting-to-rename-an-allocation"></a>若要重命名一个分配的请求
+# <a name="requesting-to-rename-an-allocation"></a>请求重命名分配
 
 
 用户模式显示驱动程序应请求视频内存管理器重命名应用程序指示放弃图面的内容作为请求以锁定的图面 （例如，顶点缓冲区） 的一部分时图面与相关联的分配。 Microsoft Direct3D 运行时将传递**放弃**位域标志以指示它不再需要当前图面的内容。 该驱动程序可以请求的视频内存管理器分配新的分配，以处理锁定请求，如果保存图面的内容的当前分配处于繁忙状态，而不是当前分配之前停止应用程序线程进入空闲状态。

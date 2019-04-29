@@ -5,11 +5,11 @@ ms.assetid: 074da2ff-bc60-48a9-b2ff-83f070bd5351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: caccf6323e26f54f18298efe760928a48680b337
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386323"
 ---
 # <a name="creating-a-hello-world-wia-minidriver"></a>创建 Hello World WIA 微型驱动程序
 

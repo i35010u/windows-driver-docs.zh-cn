@@ -6,11 +6,11 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: b0b77118c1b22b9a07b66f7cb2c40a5e730e4bdb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380967"
 ---
 # <a name="pwrtest-scenarios"></a>PwrTest 方案
 

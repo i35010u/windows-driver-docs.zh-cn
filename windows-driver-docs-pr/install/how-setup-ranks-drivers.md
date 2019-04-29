@@ -5,11 +5,11 @@ ms.assetid: af072edb-5682-4787-b139-386269df1355
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 201327367c58d74d039673206f58780caa205e05
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386268"
 ---
 # <a name="how-windows-ranks-drivers"></a>Windows 如何对驱动程序分级
 

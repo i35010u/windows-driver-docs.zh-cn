@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_SNONCE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 345aea9325f87a44fe52477219371bc61fa047c8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382891"
 ---
 # <a name="wditlvftsnonce"></a>WDI\_TLV\_FT\_SNONCE
 

@@ -1,14 +1,14 @@
 ---
-Description: Enumeration of USB Composite Devices
+Description: 枚举的复合的 USB 设备
 title: 枚举的复合的 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b38f5fbe18724afd558c7af665eac0c8aee3af5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383019"
 ---
 # <a name="enumeration-of-usb-composite-devices"></a>枚举的复合的 USB 设备
 

@@ -5,11 +5,11 @@ ms.assetid: 458E9BA6-6FA0-4FEF-93A0-062C9E11D21F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dcca62c84df3552034f3240a783ca4e7a10e977d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385039"
 ---
 # <a name="opening-a-dump-file-using-kd"></a>使用 KD 打开转储文件
 

@@ -1,6 +1,6 @@
 ---
-title: Win32 API 对打印功能的支持
-description: Win32 API 对打印功能的支持
+title: 打印功能的 Win32 API 支持
+description: 打印功能的 Win32 API 支持
 ms.assetid: 1b40cc3e-c6f6-460f-b514-4ef3a001f563
 keywords:
 - 打印功能 WDK，Win32 API 支持
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64eb5da6ffefe35026a6d716d490326d9b7aa7dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370512"
 ---
-# <a name="win32-api-support-for-print-capabilities"></a>Win32 API 对打印功能的支持
+# <a name="win32-api-support-for-print-capabilities"></a>打印功能的 Win32 API 支持
 
 
 Windows Vista 打印子系统提供了兼容性支持，允许 Windows Presentation Foundation (WPF) 应用程序使用基于 GDI 的打印驱动程序并使 Microsoft 基于 Win32 的应用程序可以使用 XPSDrv 打印驱动程序。 此兼容性提供通过软件填充程序的一个层。 填充程序是转换对数据执行操作，以便否则互操作不兼容的软件的软件模块。 下图显示了此实现用于打印功能的数据路径。

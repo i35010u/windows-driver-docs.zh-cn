@@ -1,6 +1,6 @@
 ---
-title: 微型驱动程序提供半色调
-description: 微型驱动程序提供半色调
+title: 微型驱动程序提供的半色调
+description: 微型驱动程序提供的半色调
 ms.assetid: 15af499a-c541-4d61-ace3-5a211574674c
 keywords:
 - 微型驱动程序提供半色调 WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4439ad68f41c64474c25cc4a683a1f49da921b94
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380165"
 ---
-# <a name="minidriver-supplied-halftoning"></a>微型驱动程序提供半色调
+# <a name="minidriver-supplied-halftoning"></a>微型驱动程序提供的半色调
 
 
 

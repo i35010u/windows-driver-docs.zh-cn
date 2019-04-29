@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 880f7590436f8d9ea448ee5488cf2e324b00c0bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384840"
 ---
 # <a name="driverentry-of-changer-miniclass-drivers-routine"></a>换带机 Miniclass 驱动的 DriverEntry 例程
 
@@ -36,7 +36,7 @@ NTSTATUS DriverEntry(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *Argument1* \[中\]  
@@ -71,7 +71,7 @@ Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassIni
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Mcd.h （包括 Mcd.h）</td>
 </tr>
 <tr class="odd">

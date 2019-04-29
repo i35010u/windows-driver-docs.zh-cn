@@ -1,19 +1,19 @@
 ---
-title: 早期的关键部分事件创建
-description: 早期的关键部分事件创建
+title: 提前创建关键节事件
+description: 提前创建关键节事件
 ms.assetid: a9453e6d-7566-4226-a950-d32d6192f8ac
 keywords:
 - 早期的关键部分事件创建 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b6d9cfcae920046584bf2decab62f48649ed7a77
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378635"
 ---
-# <a name="early-critical-section-event-creation"></a>早期的关键部分事件创建
+# <a name="early-critical-section-event-creation"></a>提前创建关键节事件
 
 
 ## <span id="ddk_early_critical_section_event_creation_dtools"></span><span id="DDK_EARLY_CRITICAL_SECTION_EVENT_CREATION_DTOOLS"></span>

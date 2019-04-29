@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d5f01490e2e88445e036c1849949588d9208ab
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380253"
 ---
 # <a name="plug-and-play-ids-for-printer-inf-files"></a>打印机 INF 文件的即插即用 ID
 

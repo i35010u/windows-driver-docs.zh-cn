@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cdf0225cb619a87db386adb6140a3472e80edfae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372441"
 ---
 # <a name="oidgenstatistics"></a>OID\_常规\_统计信息
 

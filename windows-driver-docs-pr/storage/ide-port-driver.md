@@ -5,11 +5,11 @@ ms.assetid: 8e292680-6fa7-4f6b-b4ec-6f0f0d795d03
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: efa9dacd5faa39a346baac25e80b70ac8a7fcded
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383069"
 ---
 # <a name="ide-port-driver"></a>IDE 端口驱动程序
 **请注意**ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://msdn.microsoft.com/windows/hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。

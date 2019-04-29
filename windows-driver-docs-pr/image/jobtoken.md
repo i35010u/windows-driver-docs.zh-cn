@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d022c3307f292691c292c1a5eeea8e10178172d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384546"
 ---
 # <a name="jobtoken-element"></a>JobToken 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56519751"
 </wscn:JobToken>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -75,7 +75,7 @@ ms.locfileid: "56519751"
 
 **JobToken**元素搭配[ **JobId** ](jobid.md)元素来唯一地表示特定扫描作业。 **JobToken**传递给扫描设备[ **RetrieveImageRequest** ](retrieveimagerequest.md)操作元素以启用该设备以验证扫描请求者实际创建扫描作业。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CreateScanJobResponse**](createscanjobresponse.md)

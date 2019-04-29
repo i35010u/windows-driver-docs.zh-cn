@@ -5,11 +5,11 @@ ms.assetid: d6069c8c-1da1-4930-b75d-efcee9691e6b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 435491675ec8952ff6652c7a7bd2a07226740517
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375099"
 ---
 # <a name="choosing-the-best-method"></a>选择最佳方法
 

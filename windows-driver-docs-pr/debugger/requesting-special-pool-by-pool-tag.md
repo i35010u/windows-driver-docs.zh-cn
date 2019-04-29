@@ -1,17 +1,17 @@
 ---
-title: 请求特殊标记，池的池
-description: 请求特殊标记，池的池
+title: 按池标记请求特殊池
+description: 按池标记请求特殊池
 ms.assetid: 201eb8a5-b38b-4625-853d-448488214e52
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc71c56b19d726ab0d558f8fad0b413bd039e95a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382121"
 ---
-# <a name="requesting-special-pool-by-pool-tag"></a>请求特殊标记，池的池
+# <a name="requesting-special-pool-by-pool-tag"></a>按池标记请求特殊池
 
 
 ## <span id="ddk_requesting_special_pool_for_allocations_with_a_specified_pool_tag_"></span><span id="DDK_REQUESTING_SPECIAL_POOL_FOR_ALLOCATIONS_WITH_A_SPECIFIED_POOL_TAG_"></span>

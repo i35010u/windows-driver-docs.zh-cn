@@ -1,17 +1,17 @@
 ---
-title: 自定义和自动页面大小
-description: 自定义和自动页面大小
+title: 自定义的和自动设置的页面大小
+description: 自定义的和自动设置的页面大小
 ms.assetid: a1f5f78d-fc05-4a7e-9d19-c7f40302b85f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fb0cd46e813e9ec615b51805ee36316a5cb7ef2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386306"
 ---
-# <a name="custom-and-auto-page-sizes"></a>自定义和自动页面大小
+# <a name="custom-and-auto-page-sizes"></a>自定义的和自动设置的页面大小
 
 
 应用程序可以设置页面大小通过自动检测扫描仪或通过自定义值。 应用程序使用的方法由[ **WIA\_IPS\_页\_大小**](https://msdn.microsoft.com/library/windows/hardware/ff552634)属性，可以采用值 WIA\_页\_自动或 WIA\_页\_自定义。

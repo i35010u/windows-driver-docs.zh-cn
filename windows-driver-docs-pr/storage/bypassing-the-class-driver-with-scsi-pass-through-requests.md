@@ -5,11 +5,11 @@ ms.assetid: 7f26e0bc-f01b-4430-aa9f-0f684fdbc2ec
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c13629f602bccf1784f857ece563dd159ffb50d8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380193"
 ---
 # <a name="bypassing-the-class-driver-with-scsi-pass-through-requests"></a>通过 SCSI 传递请求绕过类驱动程序
 

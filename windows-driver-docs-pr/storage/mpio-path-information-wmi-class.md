@@ -5,11 +5,11 @@ ms.assetid: fd6311c5-2d98-4a3a-beb9-54f3a84be8eb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 22acc36bca41dcb6173b5551c6ae7dffc5fb267c
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383055"
 ---
 # <a name="mpiopathinformation-wmi-class"></a>MPIO\_路径\_信息 WMI 类
 

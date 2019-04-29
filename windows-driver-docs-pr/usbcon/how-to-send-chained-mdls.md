@@ -1,16 +1,16 @@
 ---
-Description: In this topic, you will learn about the chained MDLs capability in the USB driver stack, and how a client driver can send a transfer buffer as a chain of MDL structure.
-title: 如何发送链接 MDLs
+Description: 在本主题中，您将学习有关 USB 驱动程序堆栈，以及客户端驱动程序如何作为 MDL 结构链发送的传输缓冲区中的链接 MDLs 功能。
+title: 如何发送链接的 MDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e9ffe07dbb30ff43144ace3f621dd55ae766265
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384587"
 ---
-# <a name="how-to-send-chained-mdls"></a>如何发送链接 MDLs
+# <a name="how-to-send-chained-mdls"></a>如何发送链接的 MDL
 
 
 在本主题中，您将学习有关 USB 驱动程序堆栈，并且如何客户端驱动程序可以发送的传输缓冲区作为链中的链接 MDLs 功能[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)结构。
@@ -23,7 +23,7 @@ ms.locfileid: "56533659"
 
 若要使用链接的 MDLs，客户端驱动程序必须检测是否基础的 USB 驱动程序堆栈，加载的 Windows，支持功能，然后生成 MDLs 链中正确的顺序。
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 大容量等时，才支持连锁的 MDL 功能并将传输中断。 查询链接 MDL 功能之前，请确保您的客户端驱动程序具有与 USB 驱动程序堆栈的驱动程序的注册的 USBD 句柄。 若要创建 USBD 句柄，请调用[ **USBD\_CreateHandle**](https://msdn.microsoft.com/library/windows/hardware/hh406241)。通常情况下，客户端驱动程序创建 USBD 句柄中的其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。
 

@@ -1,17 +1,17 @@
 ---
-title: 对于 Windows 调试工具与相关的工具
+title: 与 Windows 调试工具相关的工具
 description: 本部分描述与调试相关但不是包括有关 Windows 调试工具包中的工具。
 ms.assetid: A121BF0C-53BF-48E0-9000-3BDA255FD884
 ms.date: 02/22/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eae584ca47cd113b26eb7550c8c0ff08590aa1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380795"
 ---
-# <a name="tools-related-to-debugging-tools-for-windows"></a>对于 Windows 调试工具与相关的工具
+# <a name="tools-related-to-debugging-tools-for-windows"></a>与 Windows 调试工具相关的工具
 
 
 本部分描述与调试相关但不是包括有关 Windows 调试工具包中的工具。
@@ -22,12 +22,12 @@ ms.locfileid: "56546447"
 <span id="Windows_Error_Reporting"></span><span id="windows_error_reporting"></span><span id="WINDOWS_ERROR_REPORTING"></span>[Windows 错误报告](windows-error-reporting.md)  
 你可以配置 Windows 错误报告 (WER) 编写用户模式转储文件时在用户模式代码中发生的异常和其他错误。 WER 包含在 Windows Vista 和更高版本的 Windows。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Windows 调试工具中包含的工具](extra-tools.md)
 
-[有关 Windows 调试工具](index.md)
+[Windows 调试工具](index.md)
 
  
 

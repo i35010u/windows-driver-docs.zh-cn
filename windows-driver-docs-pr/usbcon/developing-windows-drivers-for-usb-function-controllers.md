@@ -1,16 +1,16 @@
 ---
-Description: Developing Windows drivers for USB function controllers
-title: 开发 USB 函数控制器的 Windows 驱动的程序
+Description: 为 USB 功能控制器开发 Windows 驱动程序
+title: 为 USB 功能控制器开发 Windows 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5faa24489846098974992a4bbbe906f11fbc063
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377439"
 ---
-# <a name="developing-windows-drivers-for-usb-function-controllers"></a>开发 USB 函数控制器的 Windows 驱动的程序
+# <a name="developing-windows-drivers-for-usb-function-controllers"></a>为 USB 功能控制器开发 Windows 驱动程序
 
 
 <table>
@@ -48,7 +48,7 @@ ms.locfileid: "56526544"
 </ul></td>
 <td><p><strong>UFX 的体系结构</strong></p>
 <p>熟悉 Microsoft 提供的 USB 驱动程序堆栈：</p>
-<a href="usb-device-side-drivers-in-windows.md" data-raw-source="[USB device-side drivers in Windows](usb-device-side-drivers-in-windows.md)">在 Windows 中的 USB 设备端驱动程序</a>
+<a href="usb-device-side-drivers-in-windows.md" data-raw-source="[USB device-side drivers in Windows](usb-device-side-drivers-in-windows.md)">Windows 中的 USB 设备端驱动程序</a>
 <p><strong>熟悉 UFX 对象和句柄</strong></p>
 <p>UFX 扩展了 WDF 对象功能来定义其自己特定于 USB 的 UCX 对象。 WDF 对象的更多详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff544249" data-raw-source="[Introduction to Framework Objects](https://msdn.microsoft.com/library/windows/hardware/ff544249)">Framework 对象简介</a>。</p>
 <p>对于队列请求，UFX 使用特定于 USB 的对象。 有关详细信息<a href="ufx-objects-and-handles-used-by-a-usb-function-controller.md" data-raw-source="[UFX objects and handles used by a USB function client driver](ufx-objects-and-handles-used-by-a-usb-function-controller.md)">UFX 对象并处理 USB 函数客户端驱动程序使用的</a>。</p>

@@ -16,11 +16,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c5f095ea49fc39b62bee5a87f7006a0aec1ba0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382648"
 ---
 # <a name="reading-data-records-from-a-clfs-stream"></a>从 CLFS 流读取数据记录
 
@@ -53,7 +53,7 @@ ms.locfileid: "56562103"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ ms.locfileid: "56562103"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

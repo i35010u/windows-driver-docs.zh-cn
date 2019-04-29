@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -OID_GEN_ADMIN_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5323c785ee3688a7803c69c2d6c40dace8babdfe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380699"
 ---
 # <a name="oidgenadminstatus"></a>OID\_GEN\_管理员\_状态
 
@@ -44,13 +44,13 @@ ms.locfileid: "56548288"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NET\_IF\_ADMIN\_STATUS**](https://msdn.microsoft.com/library/windows/hardware/ff568740)

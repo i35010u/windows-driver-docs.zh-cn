@@ -1,6 +1,6 @@
 ---
-title: 文件的 Log 函数
-description: 文件的 Log 函数
+title: 文件日志函数
+description: 文件日志函数
 ms.assetid: 7d9fe4c9-834f-4dcc-a216-dc6a98ee2fd3
 keywords:
 - 安装程序 Api 函数 WDK，日志文件
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 675e7593dbd47703b7881ca9320bf4aea8f7d7bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378743"
 ---
-# <a name="file-log-functions"></a>文件的 Log 函数
+# <a name="file-log-functions"></a>文件日志函数
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: F3868AF4-545F-4B8E-8655-5AAD888C4B40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec536bee0a57597da45cb2b1482a15e23f458ec6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368767"
 ---
 # <a name="interlocked-operations-in-storport-miniport-drivers"></a>Storport 微型端口驱动程序中的互锁的操作
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fe270ca2f7e6fd79e87f418914becf893ec2c94d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376092"
 ---
 # <a name="dbgsrv-command-line-options"></a>DbgSrv 命令行选项
 

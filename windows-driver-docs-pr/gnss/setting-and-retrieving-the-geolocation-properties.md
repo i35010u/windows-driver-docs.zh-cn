@@ -1,17 +1,17 @@
 ---
-title: 设置和检索的地理位置属性
+title: 设置和检索地理位置属性
 description: 当应用程序检索特定属性值时，示例驱动程序中调用相应的属性检索方法。
 ms.assetid: 576C610E-180A-44A0-9637-5C18341F3777
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2154b2fdabdd09c3f450b5e4132181669201dfd5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386330"
 ---
-# <a name="setting-and-retrieving-the-geolocation-properties"></a>设置和检索的地理位置属性
+# <a name="setting-and-retrieving-the-geolocation-properties"></a>设置和检索地理位置属性
 
 > [!IMPORTANT] 
 > 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。

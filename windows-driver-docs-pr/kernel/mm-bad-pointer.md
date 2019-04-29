@@ -5,11 +5,11 @@ ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cc92a84d8af5cf9d5b9752633e34c1ebdbf49dbc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380247"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 

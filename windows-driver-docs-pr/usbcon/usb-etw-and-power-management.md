@@ -1,14 +1,14 @@
 ---
-Description: This topic provides a brief overview about using ETW to examine USB selective suspend state and identifying system energy efficiency problems by using the Windows PowerCfg utility.
+Description: 本主题提供了一条简短大致了解使用 ETW 来检查 USB 选择性挂起状态和使用 Windows PowerCfg 实用程序确定系统能源效率问题。
 title: USB ETW 和电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5272a329a7c42a29921e40e2d5196e78b8d2b0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376393"
 ---
 # <a name="usb-etw-and-power-management"></a>USB ETW 和电源管理
 

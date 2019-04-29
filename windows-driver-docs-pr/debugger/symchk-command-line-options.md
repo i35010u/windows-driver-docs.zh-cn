@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: af4639590b1e434e15273f978c192112d78096c8
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379741"
 ---
 # <a name="symchk-command-line-options"></a>SymChk 命令行选项
 
@@ -138,7 +138,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -197,7 +197,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -228,7 +228,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -259,7 +259,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>
@@ -282,7 +282,7 @@ SymChk 将检查每个路径，而在一次检查所有路径不是单独。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">效果</th>
 </tr>
 </thead>

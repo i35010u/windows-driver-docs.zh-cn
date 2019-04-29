@@ -1,14 +1,14 @@
 ---
-Description: The MUTT software package contains several tools to be used with MUTT devices. The suite of tools include firmware upgrade application, driver installation package, and applications that send transfers to the device.
+Description: MUTT 软件包包含几个工具与 MUTT 设备一起使用。 工具套件包括固件升级应用程序、 驱动程序安装包和应用程序发送到设备的传输。
 title: MUTT 软件包中的工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f3f3455ee8f9f9db1e66b9b04dc009b602d38d8
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379945"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT 软件包中的工具
 

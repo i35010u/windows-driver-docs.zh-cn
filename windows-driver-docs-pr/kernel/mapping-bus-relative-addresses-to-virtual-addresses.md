@@ -1,6 +1,6 @@
 ---
-title: 总线相对地址映射到的虚拟地址
-description: 总线相对地址映射到的虚拟地址
+title: 将总线相对地址映射到虚拟地址
+description: 将总线相对地址映射到虚拟地址
 ms.assetid: 16496465-8a30-4250-9d64-afd36a788ae2
 keywords:
 - 虚拟地址空间映射 WDK 内核
@@ -13,13 +13,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1be4cccfe25e460b11fd231636bc49b52ca46c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380372"
 ---
-# <a name="mapping-bus-relative-addresses-to-virtual-addresses"></a>总线相对地址映射到的虚拟地址
+# <a name="mapping-bus-relative-addresses-to-virtual-addresses"></a>将总线相对地址映射到虚拟地址
 
 
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 86d7278e1ba02999b0d433f7d8481a997fb3a1b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378028"
 ---
 # <a name="header-files-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的标头文件
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b2afa93e9891c9e07c03c7af905a7f72064a19ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385709"
 ---
 # <a name="l-l--set-source-options"></a>l+、l-（设置源选项）
 

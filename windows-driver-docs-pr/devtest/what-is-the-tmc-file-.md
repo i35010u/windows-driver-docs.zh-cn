@@ -5,11 +5,11 @@ ms.assetid: 5927d6be-93af-4ab2-bdc1-387fabc9c5ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dc08066c02bae9e03673e22cb02916cbf7d2065
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379135"
 ---
 # <a name="what-is-the-tmc-file"></a>什么是 TMC 文件？
 

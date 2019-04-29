@@ -16,11 +16,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 017ade31acfa4d9ac4460ae8d410b637efe78b25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385586"
 ---
 # <a name="cmgethardwareprofileinfoex"></a>CM_Get_Hardware_Profile_Info_Ex
 

@@ -1,19 +1,19 @@
 ---
-title: 描述您的服务中移动宽带元数据创建向导
-description: 描述您的服务中移动宽带元数据创建向导
+title: 在移动宽带元数据创作向导中描述服务
+description: 在移动宽带元数据创作向导中描述服务
 ms.assetid: 0FA4945C-3CD9-4106-BC47-F89CEF168FDC
 keywords:
-- 描述您的服务中移动宽带元数据创建向导
+- 在移动宽带元数据创作向导中描述服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43acb44648a034a99032b208671806a142e3fb35
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382983"
 ---
-# <a name="describe-your-service-in-the-mobile-broadband-metadata-authoring-wizard"></a>描述您的服务中移动宽带元数据创建向导
+# <a name="describe-your-service-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中描述服务
 
 有关您在 Windows 中，例如型号和制造商的服务，可以提供描述性信息。
 

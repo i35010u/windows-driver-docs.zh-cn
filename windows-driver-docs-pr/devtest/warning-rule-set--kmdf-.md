@@ -5,11 +5,11 @@ ms.assetid: 0C012253-9FBD-4B5C-9A93-AF72405EF3E4
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f11bda3a6388212451d5335b75a078b83ebca9a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380473"
 ---
 # <a name="warning-rule-set-kmdf"></a>警告规则集 (KMDF)
 

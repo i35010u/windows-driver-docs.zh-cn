@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a27cc2cc42768583993ce8c338e7b65834b68f4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383689"
 ---
 # <a name="wiadipdriverversion"></a>WIA\_DIP\_驱动程序\_版本
 
@@ -59,11 +59,11 @@ WIA\_DIP\_驱动程序\_属性包含 WIA 微型驱动程序的当前 DLL 版本�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Microsoft Windows XP 和更高版本操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

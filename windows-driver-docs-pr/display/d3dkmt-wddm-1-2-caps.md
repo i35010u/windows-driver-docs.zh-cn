@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6694172357f1e9ca3a0423819e9312347bf54af8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382942"
 ---
 # <a name="d3dkmtwddm12caps-structure"></a>D3DKMT\_WDDM\_1\_2\_CAPS 结构
 
@@ -98,7 +98,7 @@ typedef struct _D3DKMT_WDDM_1_2_CAPS {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">D3dkmdt.h （包括 D3dkmdt.h）</td>
 </tr>
 </tbody>

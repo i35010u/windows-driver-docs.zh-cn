@@ -1,6 +1,6 @@
 ---
-title: 处理中的微型端口适配器 OID 请求
-description: 处理中的微型端口适配器 OID 请求
+title: 处理微型端口适配器中的 OID 请求
+description: 处理微型端口适配器中的 OID 请求
 ms.assetid: 0819ef06-5715-4814-a1ed-ddc757728ec4
 keywords:
 - 微型端口驱动程序 WDK 网络、 OID 请求
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d35af0dd923aaa5c3e4d4cd6103b56a2d4aa5333
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379057"
 ---
-# <a name="handling-oid-requests-in-a-miniport-adapter"></a>处理中的微型端口适配器 OID 请求
+# <a name="handling-oid-requests-in-a-miniport-adapter"></a>处理微型端口适配器中的 OID 请求
 
 
 

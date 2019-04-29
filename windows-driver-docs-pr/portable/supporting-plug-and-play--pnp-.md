@@ -1,14 +1,14 @@
 ---
-Description: The User Mode Driver Framework (UMDF) requires that drivers support the IPnpCallback interface for Plug and Play (PnP) operations and the IPnpCallbackSelfManagedIo interface for power-management operations.
+Description: 用户模式驱动程序框架 (UMDF) 要求驱动程序支持插即用 (PnP) 操作的 IPnpCallback 接口和 IPnpCallbackSelfManagedIo 接口的电源管理操作。
 title: 支持插即用 (PnP) 和电源管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97331a23642518e39c10a218d19cdb1e85116bf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380854"
 ---
 # <a name="supporting-plug-and-play-pnp-and-power-management"></a>支持插即用 (PnP) 和电源管理
 
@@ -23,7 +23,7 @@ WpdBasicHardwareDriver 示例是一个例外。 此驱动程序支持实际硬�
 
 如果您的驱动程序支持的硬件，您将想要添加的一个，或这两个接口的支持。 即插即用的完整说明和用户模式设备驱动程序中的电源管理，请参阅[PnP 和电源管理方案，在 UMDF](https://msdn.microsoft.com/library/windows/hardware/ff560452)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**IPnpCallback**](https://msdn.microsoft.com/library/windows/hardware/ff556762)

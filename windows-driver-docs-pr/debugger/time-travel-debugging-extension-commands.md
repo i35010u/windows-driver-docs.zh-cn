@@ -4,11 +4,11 @@ description: 本部分介绍如何使用时间旅行调试器扩展命令。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e46b66c7beb256c32a62c49617d65d5a0fe09c5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378479"
 ---
 #  <a name="time-travel-debugging-extension-commands"></a>调试扩展命令按时间顺序查看
 

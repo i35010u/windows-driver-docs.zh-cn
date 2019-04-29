@@ -1,14 +1,14 @@
 ---
-Description: This topic provides information about registry settings that configure the way Usbccgp.sys selects a USB configuration.
+Description: 本主题提供 Usbccgp.sys 选择 USB 配置注册表设置配置的方式的信息。
 title: 配置 Usbccgp.sys，选择非默认 USB 配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 45009bca190ff1fc97611511e6282af18781436a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379511"
 ---
 # <a name="configuring-usbccgpsys-to-select-a-non-default-usb-configuration"></a>配置 Usbccgp.sys，选择非默认 USB 配置
 
@@ -22,7 +22,7 @@ USB 复合设备包含的单个 USB 设备中的多个函数 （功能的设备�
 
 但是，在 Windows Vista 和更高版本的 Windows 中，可以添加以下注册表值，以指定要选择的配置：
 
-| 注册表项               | 在任务栏的搜索框中键入       | 值                                                                                                          | 默认值 |
+| 注册表项               | 在任务栏的搜索框中键入       | ReplTest1                                                                                                          | 默认值 |
 |----------------------------|------------|----------------------------------------------------------------------------------------------------------------|---------------|
 | OriginalConfigurationValue | REG\_DWORD | USB 配置索引。 Usbccgp.sys 使用 OriginalConfigurationValue 首先选择配置请求。 | 0             |
 | AltConfigurationValue      | REG\_DWORD | 要与 OriginalConfigurationValue 选择配置请求失败时使用的配置索引。      | 0             |

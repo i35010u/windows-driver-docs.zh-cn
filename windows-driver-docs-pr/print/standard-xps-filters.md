@@ -5,11 +5,11 @@ ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a20e14a5ae9b49553276a46b64b1b27766fe16f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375209"
 ---
 # <a name="standard-xps-filters"></a>标准 XPS 筛选器
 

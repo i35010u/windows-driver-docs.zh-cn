@@ -13,11 +13,11 @@ api_type:
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1589aa5303b74952d2d4327155091a6a76093a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368813"
 ---
 # <a name="sensor-icon-constants"></a>传感器图标常量
 
@@ -37,7 +37,7 @@ ms.locfileid: "56554450"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>通用</p></td>
+<td><p>泛型</p></td>
 <td><p>1000</p></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ ms.locfileid: "56554450"
 <td><p>1008</p></td>
 </tr>
 <tr class="even">
-<td><p>位置</p></td>
+<td><p>Location</p></td>
 <td><p>1009</p></td>
 </tr>
 <tr class="odd">
@@ -131,7 +131,7 @@ ms.locfileid: "56554450"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 中可用</p></td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@ ms.assetid: 4337a619-58aa-4ad2-8873-6cbf5d84d074
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b4ead4614d0640f0ecd41a0b11d4884ecc4ec3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386364"
 ---
 # <a name="what-is-the-performance-cost-of-software-tracing"></a>软件跟踪的性价比如何？
 

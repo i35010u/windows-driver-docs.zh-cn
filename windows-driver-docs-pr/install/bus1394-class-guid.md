@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: a1a0655553e33af83f35f10fb583f071ee0cd219
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378465"
 ---
 # <a name="bus1394classguid"></a>BUS1394_CLASS_GUID
 
@@ -72,7 +72,7 @@ WDK 示例包括[1394api 示例](https://msdn.microsoft.com/library/windows/hard
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

@@ -1,14 +1,14 @@
 ---
-Description: Describes the USB connector manager (UCM) that manages a USB Type-C connector and the expected behavior of a connector driver.
+Description: 介绍管理 USB 类型 C 连接器和连接器驱动程序的预期的行为的 USB 连接器管理器 (UCM)。
 title: 编写 USB 类型 C 连接器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 98120b794c42334977fbe6f8bbadb18f2adddf32
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377475"
 ---
 # <a name="write-a-usb-type-c-connector-driver"></a>编写 USB 类型 C 连接器驱动程序
 
@@ -395,7 +395,7 @@ UCM 类扩展可能会收到请求更改的连接器的数据或电源方向。 
 
 
 ## <a name="related-topics"></a>相关主题
-[开发 USB 类型 C 连接器的 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)  
+[为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)  
 
 
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea7e974fe7e4540f222dbde024353c6a58b9087d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375581"
 ---
 # <a name="configuring-object-reference-tracing"></a>配置对象引用跟踪
 

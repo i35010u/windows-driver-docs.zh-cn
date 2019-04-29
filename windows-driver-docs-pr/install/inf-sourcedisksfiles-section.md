@@ -1,5 +1,5 @@
 ---
-title: INF SourceDisksFiles 部分
+title: INF SourceDisksFiles 节
 description: SourceDisksFiles 节名称源代码文件、 安装磁盘和安装过程中使用的目录路径。
 ms.assetid: 4a20b2e7-3371-47c1-8f51-bcc7af044382
 keywords:
@@ -13,13 +13,13 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 410a84f32309842a2437d6c6fdd9572dd5b28b01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380218"
 ---
-# <a name="inf-sourcedisksfiles-section"></a>INF SourceDisksFiles 部分
+# <a name="inf-sourcedisksfiles-section"></a>INF SourceDisksFiles 节
 
 
 **SourceDisksFiles**部分名称在安装过程中使用的源文件，标识包含这些文件的安装磁盘并提供的目录路径，如果有包含在分布磁盘上单个文件。
@@ -90,7 +90,7 @@ aha154x.sys = 1,\x86 ; on distribution disk 1, in subdir \WinNT\x86
 ; ...
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CopyFiles,**](inf-copyfiles-directive.md)

@@ -5,11 +5,11 @@ ms.assetid: 5cfdbf1b-b856-4a0c-9f56-3879482819aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7713713e19ee43bb0f47a149c08456ad850f22f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379347"
 ---
 # <a name="windows-kernel-mode-hal-library"></a>Windows 内核模式 HAL 库
 

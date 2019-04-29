@@ -1,6 +1,6 @@
 ---
-title: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000
-description: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000
+title: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
+description: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
 ms.assetid: a55192c6-3de4-4433-8825-3393f2bce04a
 keywords:
 - 微型端口驱动程序 WDK Windows 2000 多个 Windows 版本中，将转换的 Windows NT 4.0 驱动程序
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76a5f6f5630961afe00a0c31195eb865cfb3abcb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384510"
 ---
-# <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000
+# <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
 
 
 ## <span id="ddk_converting_a_windows_nt_4_0_miniport_driver_to_windows_2000_gg"></span><span id="DDK_CONVERTING_A_WINDOWS_NT_4_0_MINIPORT_DRIVER_TO_WINDOWS_2000_GG"></span>

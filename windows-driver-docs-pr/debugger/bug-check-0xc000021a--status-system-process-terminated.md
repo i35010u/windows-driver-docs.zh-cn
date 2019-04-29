@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b19f8db5152c9fdb7a8265216ce8148c7e73330d
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370891"
 ---
 # <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>Bug 检查 0xC000021A：状态\_系统\_进程\_已终止
 

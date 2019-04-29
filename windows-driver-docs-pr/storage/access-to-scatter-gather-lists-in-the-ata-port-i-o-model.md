@@ -1,6 +1,6 @@
 ---
-title: 访问 ATA 端口 I/O 模型中的分散/收集列表
-description: 访问 ATA 端口 I/O 模型中的分散/收集列表
+title: 访问 ATA 端口 I/O 模型中的分散/聚合列表
+description: 访问 ATA 端口 I/O 模型中的分散/聚合列表
 ms.assetid: 56221602-9588-47f2-acd9-a11bd5ce02d9
 keywords:
 - ATA 端口驱动程序 WDK，散播-聚集列表
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6531a47bdfd9654114d47cf578b37a99464d2d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382747"
 ---
-# <a name="access-to-scattergather-lists-in-the-ata-port-io-model"></a>访问 ATA 端口 I/O 模型中的分散/收集列表
+# <a name="access-to-scattergather-lists-in-the-ata-port-io-model"></a>访问 ATA 端口 I/O 模型中的分散/聚合列表
 
 
 ## <span id="ddk_access_to_scatter_gather_lists_in_the_ata_port_i_o_model_kg"></span><span id="DDK_ACCESS_TO_SCATTER_GATHER_LISTS_IN_THE_ATA_PORT_I_O_MODEL_KG"></span>

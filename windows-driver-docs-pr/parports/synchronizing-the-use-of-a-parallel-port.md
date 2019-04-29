@@ -1,6 +1,6 @@
 ---
-title: 同步使用并行端口
-description: 同步使用并行端口
+title: 同步并行端口的使用
+description: 同步并行端口的使用
 ms.assetid: ea3a1998-9e31-4047-9193-6b402db222c9
 keywords:
 - 并行端口 WDK，同步
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec8c80c9b261b793a240d40d82ccfacd18bb2698
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371073"
 ---
-# <a name="synchronizing-the-use-of-a-parallel-port"></a>同步使用并行端口
+# <a name="synchronizing-the-use-of-a-parallel-port"></a>同步并行端口的使用
 
 
 

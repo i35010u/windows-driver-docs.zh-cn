@@ -1,17 +1,17 @@
 ---
-title: 在 MITT UART 测试
+title: MITT 中的 UART 测试
 description: MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动程序的测试。 MITT 板 UART 接口充当 UART 环回设备。
 ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee233cd76caccb9d34192b8ed56404ba6767f4b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382780"
 ---
-# <a name="uart-tests-in-mitt"></a>在 MITT UART 测试
+# <a name="uart-tests-in-mitt"></a>MITT 中的 UART 测试
 
 
 **上次更新时间**

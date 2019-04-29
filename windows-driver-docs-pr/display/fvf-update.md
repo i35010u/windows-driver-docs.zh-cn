@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 842af6b95b24364acd77dc15f8e66fa20ddf60cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377989"
 ---
 # <a name="fvf-update"></a>FVF 更新
 
@@ -40,11 +40,11 @@ FVF 代码最初定义 DirectX 6.0 现在支持在 DirectX 7.0 中的纹理坐�
  
 </div>
 模式</th>
-<th align="left">十进制
+<th align="left">Decimal
 <div>
  
 </div>
-值</th>
+ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

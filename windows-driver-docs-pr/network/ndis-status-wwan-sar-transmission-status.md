@@ -6,11 +6,11 @@ ms.date: 08/20/2018
 keywords: -NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8250b6494324f0f13f1eb838ed3d39ca27c637
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372210"
 ---
 # <a name="ndisstatuswwansartransmissionstatus"></a>NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -24,7 +24,7 @@ ms.locfileid: "56565000"
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1703 |
+| Version | Windows 10 版本 1703 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 
 ## <a name="see-also"></a>请参阅

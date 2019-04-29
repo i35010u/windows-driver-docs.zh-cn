@@ -5,11 +5,11 @@ ms.assetid: 0F375ED7-CB20-4F32-8ECE-4822D7787327
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6464ee4e0c5a2f7820382b710cd230b1a1caa990
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385324"
 ---
 # <a name="wi-fi-device-model-and-objects"></a>Wi-fi 设备模型和对象
 

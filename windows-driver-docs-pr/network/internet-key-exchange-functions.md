@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/07/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b67173175b6e885c05071e2d021b47b9677f89b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380605"
 ---
 # <a name="internet-key-exchange-functions"></a>Internet 密钥交换函数
 

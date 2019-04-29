@@ -5,11 +5,11 @@ ms.assetid: 59a001c8-3723-4549-80ed-28ea8901dd87
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81edac6dd3a68e03b663b95b3d77a4a5fb422fee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377283"
 ---
 # <a name="data-out-endpoint-descriptor"></a>数据输出终结点描述符
 
@@ -29,9 +29,9 @@ ms.locfileid: "56524664"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

@@ -1,6 +1,6 @@
 ---
-title: 管理内存部分
-description: 管理内存部分
+title: 管理内存节
+description: 管理内存节
 ms.assetid: 620ba31d-596f-493a-b97f-65a27d50cc9a
 keywords:
 - 内存部分 WDK 内核
@@ -10,13 +10,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c3559f5843513e606a591fec39a037a9d4515a5c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380262"
 ---
-# <a name="managing-memory-sections"></a>管理内存部分
+# <a name="managing-memory-sections"></a>管理内存节
 
 
 

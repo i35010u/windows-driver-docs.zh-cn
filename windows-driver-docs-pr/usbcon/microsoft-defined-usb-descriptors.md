@@ -1,16 +1,16 @@
 ---
-Description: Microsoft provides a set of proprietary device classes and USB descriptors, which are called Microsoft OS Descriptors (MODs).
-title: Microsoft 操作系统描述符的 USB 设备
+Description: Microsoft 提供了一套专有设备类和 USB 描述符，它称为 Microsoft OS 描述符 （模式）。
+title: 针对 USB 设备的 Microsoft OS 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d08d4c9850338fc9e23ca57c2f61d3864fd513e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379933"
 ---
-# <a name="microsoft-os-descriptors-for-usb-devices"></a>Microsoft 操作系统描述符的 USB 设备
+# <a name="microsoft-os-descriptors-for-usb-devices"></a>针对 USB 设备的 Microsoft OS 描述符
 
 
 **摘要**

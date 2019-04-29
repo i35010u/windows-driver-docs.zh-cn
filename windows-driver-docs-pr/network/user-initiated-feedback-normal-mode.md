@@ -1,17 +1,17 @@
 ---
-title: 用户启动的反馈-正常模式
+title: 用户发起的反馈 - 正常模式
 description: 本主题介绍 IHV 跟踪 WDI 驱动程序中的日志记录与标准用户启动反馈的模式。
 ms.assetid: 723732A3-4B24-4FE5-B338-B8443F287FDE
 ms.date: 06/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d27dd6793cc76611243ba7a6745e3f05d49be3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384994"
 ---
-# <a name="user-initiated-feedback---normal-mode"></a>用户启动的反馈-正常模式
+# <a name="user-initiated-feedback---normal-mode"></a>用户发起的反馈 - 正常模式
 
 在正常用户启动反馈 (UIF) 方案中，用户体验问题的 Wi-fi 和提交反馈报表。 此报表收集的 Wi-fi 子系统，包括 Wi-fi WMI 自动记录器、 网络统计信息等的快照。若要收集 IHV 特定的日志，Microsoft 提供了与没有初始的 ETW 提供程序的 WMI 自动记录器会话。 每个 IHV 将他们的 ETW 提供程序由 Microsoft 提供的 WMI 自动记录器会话注册表项之下。 当提交 UIF 报表时，IHV 自动-记录器 ETL 收集并发送给 Microsoft 进行分析。 此日志文件实现使用一个循环缓冲区，以及相当有限大小 (\<= 1 MB)。 在此日志文件中保存的事件应适当地通过标志/级别/关键字来确保至少 30 分钟的日志事件始终保存在过去受到限制。
 

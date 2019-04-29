@@ -1,5 +1,5 @@
 ---
-title: 值 (TCP/IP)
+title: Value (TCP/IP)
 description: TCP/IP 值构造可以双向通信使用扩展架构从特定的 MIB 对象检索数据的查询。
 ms.assetid: 46b24830-10a1-405b-9c12-b5804f76d668
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f48c5e71e3f3779efee4c1641841ff04009acae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376443"
 ---
-# <a name="value-tcpip"></a>值 (TCP/IP)
+# <a name="value-tcpip"></a>Value (TCP/IP)
 
 
 TCP/IP`Value`构造可以扩展从特定的 MIB 对象检索数据的查询的双向通信架构。 `Value` Tcpbidi.xsd 中定义构造。
@@ -25,7 +25,7 @@ TCP/IP`Value`构造可以扩展从特定的 MIB 对象检索数据的查询的�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

@@ -5,11 +5,11 @@ ms.assetid: EB553449-9460-403D-8ED2-343048C4B38C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a264380ac31820651232bd8ea018243ff99e117f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379495"
 ---
 # <a name="ndiswifi-verification"></a>NDIS/WIFI 验证
 

@@ -5,11 +5,11 @@ ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 9299bf0a565c4765c1cfe506c6e4fdc513cd0a08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378417"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 
@@ -170,7 +170,7 @@ typedef enum _DXGIDRIVERMODELVERSION
 
 ## <a name="graphics-inf-requirements"></a>图形 INF 要求
 
-WDDM 2.1 图形驱动程序具有不同的 INF 要求相比 WDDM 2.0 或以前的驱动程序。 它们是：
+WDDM 2.1 图形驱动程序具有不同的 INF 要求相比 WDDM 2.0 或以前的驱动程序。 这些是：
 
 1. WDDM 2.1 必须具有相同的功能评分的 WDDM 2.0 图形驱动程序 (D1)。
 

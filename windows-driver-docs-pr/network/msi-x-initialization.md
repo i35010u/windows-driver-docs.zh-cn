@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2a26a6f0fc848fc6a5e8cf82271d0eaba7af62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382641"
 ---
 # <a name="msi-x-initialization"></a>MSI-X 初始化
 

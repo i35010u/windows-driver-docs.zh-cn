@@ -1,14 +1,14 @@
 ---
-Description: Before using MUTT devices, you must prepare the test system.
+Description: 在使用之前 MUTT 设备，必须准备的测试系统。
 title: 如何准备测试系统以运行 MUTT 测试工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e7c60595a621275c95fa98fc9d448e0a2f5e116
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379938"
 ---
 # <a name="how-to-prepare-the-test-system-to-run-mutt-test-tools"></a>如何准备测试系统以运行 MUTT 测试工具
 

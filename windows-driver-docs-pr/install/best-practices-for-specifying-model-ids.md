@@ -1,17 +1,17 @@
 ---
-title: 用于指定模型 Id 的最佳实践
-description: 用于指定模型 Id 的最佳实践
+title: 指定模型 ID 的最佳做法
+description: 指定模型 ID 的最佳做法
 ms.assetid: ed0cdfb4-1de8-4b4f-8bab-7c5e06cf96f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 242e032b547c35560831e7859299d82987d34b83
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380319"
 ---
-# <a name="best-practices-for-specifying-model-ids"></a>用于指定模型 Id 的最佳实践
+# <a name="best-practices-for-specifying-model-ids"></a>指定模型 ID 的最佳做法
 
 
 模型 Id 基于物理设备的业务定义或股票保留单位 (SKU)。 每个模型 ID 必须是唯一的所有品牌和型号的物理设备。

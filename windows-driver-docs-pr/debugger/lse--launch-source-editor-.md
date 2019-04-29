@@ -1,5 +1,5 @@
 ---
-title: lse （启动源编辑器）
+title: lse（启动源编辑器）
 description: Lse 命令将打开用于当前源文件的编辑器。
 ms.assetid: 2f66b5c3-1cd6-4641-8dea-5e3a11c87db0
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: de740909aff1b6575cbec845a74e75ff2a053f89
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383317"
 ---
-# <a name="lse-launch-source-editor"></a>lse （启动源编辑器）
+# <a name="lse-launch-source-editor"></a>lse（启动源编辑器）
 
 
 **Lse**命令将打开用于当前源文件的编辑器。

@@ -1,16 +1,16 @@
 ---
-Description: This section introduces you to high-level concepts and tasks for host driver development.
+Description: 本部分介绍高级概念和任务的主机驱动程序开发。
 title: USB 主机控制器扩展 (UCX) 的体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d53d333bc749b6a99394d55ec9adac3eed17d617
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383031"
 ---
-# <a name="architecture-usb-host-controller-extension-ucx"></a>体系结构：USB 主机控制器扩展 (UCX)
+# <a name="architecture-usb-host-controller-extension-ucx"></a>体系结构：USB 主控制器扩展 (UCX)
 
 
 本部分介绍高级概念和任务的主机驱动程序开发。 如果你正在编写新的主机与 Microsoft 提供的 USB 主控制器扩展驱动程序 (Ucx01000.sys) 控制器驱动程序进行通信，部分适用于您。

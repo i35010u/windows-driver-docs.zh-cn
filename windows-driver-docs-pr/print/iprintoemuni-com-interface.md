@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c0ee8a3113ca2e0360a61fe091c08f532f16932
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384214"
 ---
 # <a name="iprintoemuni-com-interface"></a>IPrintOemUni COM 接口
 

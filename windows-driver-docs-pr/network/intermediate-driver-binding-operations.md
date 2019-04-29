@@ -5,11 +5,11 @@ ms.assetid: 129a744c-d4d4-4741-9812-e76087c585fc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f7d9c30b1d75b611caf4f3e4e1f2686b3f76c53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377887"
 ---
 # <a name="intermediate-driver-binding-operations"></a>中间驱动程序绑定操作
 

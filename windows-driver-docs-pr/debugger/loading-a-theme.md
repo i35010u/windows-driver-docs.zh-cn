@@ -1,19 +1,19 @@
 ---
-title: 正在加载主题
-description: 正在加载主题
+title: 加载主题
+description: 加载主题
 ms.assetid: 375b7365-6526-4282-893e-91b58a14c31f
 keywords:
 - 正在加载的主题
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87ea987d8f75448fcd40c483e2a9b9e84be203b1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383337"
 ---
-# <a name="loading-a-theme"></a>正在加载主题
+# <a name="loading-a-theme"></a>加载主题
 
 
 之前加载一个主题，我们建议您清除所有工作区数据。 可以通过三种方式执行此操作：

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6396d63a2992d6c90449ca8253303ce0dddadec7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376678"
 ---
 # <a name="iec-61883-client-drivers"></a>IEC-61883 客户端驱动程序
 

@@ -5,11 +5,11 @@ ms.assetid: 4bf286c5-faa9-4b9a-8fb1-a7190223e590
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90137dd85fbcddb5fa2e7bdf70624bd2d7f9dd00
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386371"
 ---
 # <a name="what-is-an-autologger"></a>什么是自动记录器？
 

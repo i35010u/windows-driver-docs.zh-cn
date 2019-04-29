@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ca93425375b610ad3eaa5c77da7916b4df5e20b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373931"
 ---
 # <a name="wiadpsdocumenthandlingstatus"></a>WIA\_DPS\_文档\_处理\_状态
 
@@ -49,7 +49,7 @@ WIA\_DPS\_文档\_处理\_STATUS 属性包含的扫描程序的已安装的平�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -179,7 +179,7 @@ WIA\_DPS\_文档\_处理\_STATUS 属性包含的扫描程序的已安装的平�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_HD_SPLIT_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 7661e83c5b901833562007b6777d79a67330e1db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381331"
 ---
 # <a name="oidgenhdsplitcurrentconfig"></a>OID\_GEN\_HD\_拆分\_当前\_配置
 
@@ -34,17 +34,17 @@ NDIS 代表微型端口驱动程序处理此 OID。 NDIS 维护当前的标头�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.1 及更高版本。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_HD\_拆分\_当前\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff565696)

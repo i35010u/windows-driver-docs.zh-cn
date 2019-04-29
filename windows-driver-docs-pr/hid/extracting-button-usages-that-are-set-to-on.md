@@ -10,11 +10,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f67b1fec41f5311b45a065f715c5a8b18996b687
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378807"
 ---
 # <a name="extracting-button-usages-that-are-set-to-on"></a>提取设置为 ON 的按钮用途
 

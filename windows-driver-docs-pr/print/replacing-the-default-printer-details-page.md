@@ -1,6 +1,6 @@
 ---
-title: 替换为默认打印机的详细信息页
-description: 替换为默认打印机的详细信息页
+title: 替换默认的打印机详细信息页
+description: 替换默认的打印机详细信息页
 ms.assetid: 451f442b-a882-4540-82dd-e96dab5e7619
 keywords:
 - 自定义打印网页 WDK，替换默认页
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa10d88c203be24a246eb7937bc1a0bad70308cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382576"
 ---
-# <a name="replacing-the-default-printer-details-page"></a>替换为默认打印机的详细信息页
+# <a name="replacing-the-default-printer-details-page"></a>替换默认的打印机详细信息页
 
 
 

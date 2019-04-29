@@ -1,6 +1,6 @@
 ---
-title: x86 说明
-description: x86 说明
+title: x86 指令
+description: x86 指令
 ms.assetid: 237796d5-ef82-4eab-8d56-3191b3e63597
 keywords:
 - x86 处理器，说明
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2310fd4e39c0c1072df7099c58c35bdc808cf2be
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381897"
 ---
-# <a name="x86-instructions"></a>x86 说明
+# <a name="x86-instructions"></a>x86 指令
 
 
 ## <span id="ddk_x86_instructions_dbg"></span><span id="DDK_X86_INSTRUCTIONS_DBG"></span>
@@ -212,7 +212,7 @@ X86 处理器，说明是可变的因此拆装向后是一个在模式匹配中�
 
  
 
-C/c + + 编译器不使用**输入**指令。 (**输入**指令用于在 Algol 或 Pascal 等语言中实现嵌套的过程。)
+C /C++编译器不使用**输入**指令。 (**输入**指令用于在 Algol 或 Pascal 等语言中实现嵌套的过程。)
 
 **离开**指令是等效于：
 

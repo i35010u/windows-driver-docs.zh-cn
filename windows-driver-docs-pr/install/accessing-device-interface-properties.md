@@ -5,11 +5,11 @@ ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dcc5dead79529f0fe8dacc4e40fdc7a4e56516c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382928"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>访问 Windows Vista 之前的设备接口属性
 

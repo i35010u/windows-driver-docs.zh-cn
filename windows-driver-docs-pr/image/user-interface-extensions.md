@@ -5,11 +5,11 @@ ms.assetid: 06212343-4742-4dea-b750-0e9505695419
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a455217d8d6976e33ddebec412719c924a2c4dfc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383696"
 ---
 # <a name="user-interface-extensions"></a>用户界面扩展
 

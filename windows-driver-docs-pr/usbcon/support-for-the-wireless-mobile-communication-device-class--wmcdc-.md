@@ -1,14 +1,14 @@
 ---
-Description: Support for the Wireless Mobile Communication Device Class
+Description: 对无线移动通信设备类的支持
 title: 对无线移动通信设备类的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1402c9bbfafbba24753cf76539ee406b1c00bfb1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379928"
 ---
 # <a name="support-for-the-wireless-mobile-communication-device-class"></a>对无线移动通信设备类的支持
 

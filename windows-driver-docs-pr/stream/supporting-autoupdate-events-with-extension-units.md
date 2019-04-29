@@ -1,6 +1,6 @@
 ---
-title: 支持扩展单位的自动更新事件
-description: 支持扩展单位的自动更新事件
+title: 支持扩展单元的自动更新事件
+description: 支持扩展单元的自动更新事件
 ms.assetid: 3dc75f48-adc7-4443-8090-2e61b3306798
 keywords:
 - 自动更新事件 WDK USB 视频类
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 904f7662fe10907f6dc2e11a250abf3e7a48b2c7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378516"
 ---
-# <a name="supporting-autoupdate-events-with-extension-units"></a>支持扩展单位的自动更新事件
+# <a name="supporting-autoupdate-events-with-extension-units"></a>支持扩展单元的自动更新事件
 
 
 本主题包含演示如何支持自动更新事件的示例代码。

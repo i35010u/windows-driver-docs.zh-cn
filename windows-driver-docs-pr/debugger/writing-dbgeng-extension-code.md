@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4936a6b6284daff51b251cb9a8123beadab94dd2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383738"
 ---
 # <a name="writing-dbgeng-extension-code"></a>编写 DbgEng 扩展代码
 
@@ -19,7 +19,7 @@ ms.locfileid: "56522727"
 ## <span id="ddk_writing_dbgeng_extension_code_dbx"></span><span id="DDK_WRITING_DBGENG_EXTENSION_CODE_DBX"></span>
 
 
-[DbgEng 扩展](debugger-engine-and-extension-apis.md)命令可以包含任何标准的 c + + 代码。 它们还可以包括显示在 dbgeng.h 标头文件中，除了在 wdbgexts.h 标头文件中出现的 C 函数的 c + + 接口。
+[DbgEng 扩展](debugger-engine-and-extension-apis.md)命令可以包含的任何标准C++代码。 此外可以包括C++出现在 dbgeng.h 标头文件，此外在 wdbgexts.h 标头文件中出现 C 函数的接口。
 
 如果你想要使用从 wdbgexts.h 函数，则需要定义 KDEXT\_wdbgexts.h 之前包含 64 位。 例如：
 

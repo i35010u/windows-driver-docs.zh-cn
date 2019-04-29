@@ -1,6 +1,6 @@
 ---
-title: 获取 Preparsed 的数据
-description: 获取 Preparsed 的数据
+title: 获取预分析的数据
+description: 获取预分析的数据
 ms.assetid: 7a2bdbd1-a970-421f-bbaa-40fe589bb49a
 keywords:
 - WDK HID，preparsed 数据集合
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 089101113e7099787f7d36d760cc79fb96ced77a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372958"
 ---
-# <a name="obtaining-preparsed-data"></a>获取 Preparsed 的数据
+# <a name="obtaining-preparsed-data"></a>获取预分析的数据
 
 
 

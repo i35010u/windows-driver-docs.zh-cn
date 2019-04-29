@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5687bf16b7330076ec81802772c02f9110f16a72
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381985"
 ---
 # <a name="conditional-breakpoints-in-windbg-and-other-windows-debuggers"></a>WinDbg 和其他 Windows 调试器中的条件断点
 
@@ -51,7 +51,7 @@ ms.locfileid: "56540848"
 
 -   当命中断点、 直引号中的命令 ( **"** ) 执行。 在此示例中，此命令是[ **j （执行如果-其他）** ](j--execute-if---else-.md)命令或[**如果**](-if.md)令牌，在括号中测试表达式。
 
--   在源应用程序， **MyVar**是一个整数。 如果您使用的 c + + 表达式语法**MyVar**解释为整数。 但是，在此示例中 （和默认调试程序配置中），使用 MASM 表达式语法。 在 MASM 表达式中， **MyVar**视为一个地址。 因此，您需要使用**poi**要对其取消引用运算符。 (如果您的变量实际上是 C 指针，您将需要取消引用指针它两次--例如， **poi(poi(MyPtr))**。)**0n**前缀指定此数字是小数。 有关语法的详细信息，请参阅[MASM 数字和运算符](masm-numbers-and-operators.md)。
+-   在源应用程序， **MyVar**是一个整数。 如果使用的C++表达式语法**MyVar**解释为整数。 但是，在此示例中 （和默认调试程序配置中），使用 MASM 表达式语法。 在 MASM 表达式中， **MyVar**视为一个地址。 因此，您需要使用**poi**要对其取消引用运算符。 (如果您的变量实际上是 C 指针，您将需要取消引用指针它两次--例如， **poi(poi(MyPtr))**。)**0n**前缀指定此数字是小数。 有关语法的详细信息，请参阅[MASM 数字和运算符](masm-numbers-and-operators.md)。
 
 -   中括号的表达式后跟用单引号括起来的两个命令 ( **'** ) 用于**j**命令和大括号 ( {} ) 为 **。 如果**令牌。 如果表达式为 true，则执行这些命令的第一个。 在此示例中，没有第一个命令，因此命令执行将结束并使用调试器控件仍将保留。 如果在括号中的表达式为 false，将执行第二个命令。 第二个命令几乎始终应[ **gc （从条件性断点转）** ](gc--go-from-conditional-breakpoint-.md)命令，因为此命令会导致执行相同的方式在该断点之前出现的恢复已命中 （单步执行跟踪，或无执行）。
 

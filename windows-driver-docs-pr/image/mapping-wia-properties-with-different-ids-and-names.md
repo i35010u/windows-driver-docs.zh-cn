@@ -5,11 +5,11 @@ ms.assetid: e3a352fc-c817-466e-bd04-0ec8b029d500
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6373f74f0fb71a04845a2d73678bc10935f8106
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380375"
 ---
 # <a name="mapping-wia-properties-with-different-ids-and-names"></a>映射具有不同 ID 和名称的 WIA 属性
 

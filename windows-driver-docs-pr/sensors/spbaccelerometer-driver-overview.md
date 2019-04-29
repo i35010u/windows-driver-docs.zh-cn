@@ -5,11 +5,11 @@ ms.assetid: 355C753D-E5E3-4F8B-B16F-45EFA1E741F3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bfc90e8722d974ac3cd9094771fb1638b46947c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380009"
 ---
 # <a name="spbaccelerometer-driver-overview"></a>SpbAccelerometer 驱动程序概述
 

@@ -4,23 +4,23 @@ description: 附近的现场邻近设计指南
 ms.assetid: D039E7DE-BE10-4C40-A52C-696BC80DC2F9
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ed01d9592cf0cb358c60da604dd79af89a6d72c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378639"
 ---
 # <a name="near-field-proximity-design-guide"></a>附近的现场邻近设计指南
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 <table>

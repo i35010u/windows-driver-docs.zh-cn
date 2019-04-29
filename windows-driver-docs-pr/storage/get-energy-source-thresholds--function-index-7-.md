@@ -1,17 +1,17 @@
 ---
-title: 获取能源源阈值 （函数索引 7）
+title: 获取能量源阈值（功能索引 7）
 description: 此函数返回的如果命中或超过，表示与能源源 (ES) 有问题的警告和错误阈值。
 ms.assetid: 12B7D7CF-DB65-42A5-9831-F0D85BED2574
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f2dad016b5e1db55de9e96a17dbcc697ab70e1b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380121"
 ---
-# <a name="get-energy-source-thresholds-function-index-7"></a>获取能源源阈值 （函数索引 7）
+# <a name="get-energy-source-thresholds-function-index-7"></a>获取能量源阈值（功能索引 7）
 
 
 此函数返回的如果命中或超过，表示与能源源 (ES) 有问题的警告和错误阈值。 如果 ES 是主机托管和平台不支持的阈值，此函数可返回的故障状态。
@@ -85,7 +85,7 @@ ms.locfileid: "56526536"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [设置能量源生存期警告阈值 （函数索引 8）](set-energy-source-lifetime-warning-threshold--function-index-8-.md)

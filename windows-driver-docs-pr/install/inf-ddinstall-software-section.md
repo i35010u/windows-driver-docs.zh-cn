@@ -1,16 +1,16 @@
 ---
-title: INF DDInstall.Software 部分
+title: INF DDInstall.Software 节
 description: DDInstall.Software 部分包含一个或多个引用的软件组件 INF 文件中的其他 INF 编写器定义部分的 INF AddSoftware 指令。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 834120ca5ae4fc2c96f1e0f7ea0d30ffafe36340
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370675"
 ---
-# <a name="inf-ddinstallsoftware-section"></a>INF DDInstall.Software 部分
+# <a name="inf-ddinstallsoftware-section"></a>INF DDInstall.Software 节
 
 每个每个模型*DDInstall*。**软件**部分包含一个或多个[ **INF AddSoftware 指令**](inf-addsoftware-directive.md)引用的软件组件 INF 文件中的其他 INF 编写器定义部分。  本部分被支持 Windows 10 版本 1703年及更高版本。
 
@@ -57,7 +57,7 @@ SoftwareArguments = <<DeviceInstanceID>>
 SoftwareVersion = 1.0.0.0
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [使用组件 INF 文件](using-a-component-inf-file.md)。
 

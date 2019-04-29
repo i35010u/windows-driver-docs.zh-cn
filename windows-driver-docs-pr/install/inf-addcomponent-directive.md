@@ -4,11 +4,11 @@ description: AddComponent 指令会创建下当前设备的软件组件设备。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 71e769c511b985f28a6a9494331e45edfaead520
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383203"
 ---
 # <a name="inf-addcomponent-directive"></a>INF AddComponent 指令
 

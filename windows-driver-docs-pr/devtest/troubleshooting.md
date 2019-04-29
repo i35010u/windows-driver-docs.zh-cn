@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0121ffa85d2c0886a7195a95dc930cd6f32f223
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384731"
 ---
 # <a name="troubleshooting-the-metadata-authoring-wizards"></a>排查元数据创作向导的问题
 
@@ -29,7 +29,7 @@ ms.locfileid: "57464331"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">工具</td>
+<td align="left">Tool</td>
 <td align="left">屏幕</td>
 <td align="left">错误消息</td>
 <td align="left">分辨率</td>

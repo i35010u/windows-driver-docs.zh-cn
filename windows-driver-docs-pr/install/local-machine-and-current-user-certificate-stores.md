@@ -5,11 +5,11 @@ ms.assetid: b7362f2e-c8ff-42e4-9edc-df4b9967df29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d36a1347d7728dd19230cfd3d5d2fd5a18379006
-ms.sourcegitcommit: 23dc00b066687b068836d617e3355d7970301c7c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56582899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385552"
 ---
 # <a name="local-machine-and-current-user-certificate-stores"></a>本地计算机和当前用户证书存储
 

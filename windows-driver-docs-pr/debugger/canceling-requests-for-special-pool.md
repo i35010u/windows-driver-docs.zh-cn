@@ -1,17 +1,17 @@
 ---
-title: 为特殊池取消请求
-description: 为特殊池取消请求
+title: 取消针对特殊池的请求
+description: 取消针对特殊池的请求
 ms.assetid: fb18cb15-33ee-4e6d-856e-70c4ffbf8383
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d19940f4cc708eb9421d8641aa75554ba92c273
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375146"
 ---
-# <a name="canceling-requests-for-special-pool"></a>为特殊池取消请求
+# <a name="canceling-requests-for-special-pool"></a>取消针对特殊池的请求
 
 
 ## <span id="ddk_canceling_requests_for_special_pool_dtools"></span><span id="DDK_CANCELING_REQUESTS_FOR_SPECIAL_POOL_DTOOLS"></span>

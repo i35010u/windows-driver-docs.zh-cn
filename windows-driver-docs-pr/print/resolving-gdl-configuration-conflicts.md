@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d73673105fbd89d939c89d5da54db30f942a801
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382568"
 ---
 # <a name="resolving-gdl-configuration-conflicts"></a>解决 GDL 配置冲突
 

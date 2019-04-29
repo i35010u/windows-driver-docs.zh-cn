@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f49981c4fb3826ecac1f3627ececc12a23f4621f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383987"
 ---
 # <a name="overlay-ddi-programming-considerations"></a>覆盖 DDI 编程注意事项
 

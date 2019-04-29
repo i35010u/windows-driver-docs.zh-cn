@@ -5,11 +5,11 @@ ms.assetid: 6EF92E34-7BC9-465E-B05D-2BCB29165A18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a2c8b90af05caab82984ea70c062f5d3e682ab3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378960"
 ---
 # <a name="wlan-universal-windows-driver-model"></a>WLAN 通用 Windows 驱动程序模型
 

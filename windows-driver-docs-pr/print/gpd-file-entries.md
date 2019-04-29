@@ -1,6 +1,6 @@
 ---
-title: GPD 文件条目
-description: GPD 文件条目
+title: GPD 文件项
+description: GPD 文件项
 ms.assetid: b563e7b5-8b04-4757-877e-c2b856817d39
 keywords:
 - GPD 文件 WDK Unidrv，条目
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f86e48c849dedbdfb3de39651f3ecd823d032c36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385198"
 ---
-# <a name="gpd-file-entries"></a>GPD 文件条目
+# <a name="gpd-file-entries"></a>GPD 文件项
 
 
 
@@ -31,7 +31,7 @@ GPD 文件组成，使用 GPD 语言说明的项的每个光栅打印机的特�
 
 [注释和已忽略的块](comments-and-ignored-blocks.md)
 
-[Macros](macros.md)
+[宏](macros.md)
 
 [预处理器指令](preprocessor-directives.md)
 

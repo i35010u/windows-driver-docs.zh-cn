@@ -5,16 +5,16 @@ ms.assetid: 8A344BF7-932E-4404-9B3E-E7D3C33722C3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1a49a55ebbb1c918e011a724f64f90a9c48092
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382867"
 ---
 # <a name="wdi-tlv-generator-interface-overview"></a>WDI TLV 生成器接口概述
 
 
-## <a name="c-overloaded-function-model"></a>C + + 重载的函数模型
+## <a name="c-overloaded-function-model"></a>C++重载的函数模型
 
 
 在此模型中，将只有一个函数调用来从您的数据结构生成 TLV 字节数组。
@@ -47,7 +47,7 @@ ndisStatus = Generate(
 ## <a name="c-style-function-model"></a>C 样式函数模型
 
 
-在此模型中，每个顶级消息的特定生成例程或结构，因为 C 不支持重载函数。 否则，它的行为与 c + + 模型相同。
+在此模型中，每个顶级消息的特定生成例程或结构，因为 C 不支持重载函数。 否则，它的行为相同C++模型。
 
 ```c
 ndisStatus = GenerateWdiGetAdapterCapabilities(
@@ -58,7 +58,7 @@ ndisStatus = GenerateWdiGetAdapterCapabilities(
     &pOutput);
 ```
 
-完成 TLV 字节数组，调用返回作为 c + + 模型相同的方式释放的内存。
+当完成 TLV 字节数组时，返回的调用来释放内存的方式相同C++模型。
 
 ```c
     FreeGenerated(pOutput);

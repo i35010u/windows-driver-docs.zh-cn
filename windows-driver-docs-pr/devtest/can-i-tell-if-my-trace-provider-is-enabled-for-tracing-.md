@@ -5,11 +5,11 @@ ms.assetid: 8cc4e364-a0bc-4ef3-af3c-c08f3183b548
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c101336fe38d88594ef84a79fc61f79730fce9a9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375381"
 ---
 # <a name="can-i-tell-if-my-trace-provider-is-enabled-for-tracing"></a>能否判断是否为跟踪启用了跟踪提供程序？
 

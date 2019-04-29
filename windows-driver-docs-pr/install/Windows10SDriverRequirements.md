@@ -3,11 +3,11 @@ title: Windows 10 S 模式驱动程序要求
 ms.date: 05/05/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd9a2f9fce6b3146f0ad3c49f9a71fe8b02b541d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375753"
 ---
 # <a name="windows-10-in-s-mode-driver-requirements"></a>Windows 10 S 模式驱动程序要求
 

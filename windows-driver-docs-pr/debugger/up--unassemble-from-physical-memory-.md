@@ -1,5 +1,5 @@
 ---
-title: 向上 （从物理内存的反汇编）
+title: up（从物理内存取消汇编）
 description: 最命令显示指定的程序代码程序集转换物理内存中。
 ms.assetid: 4db66566-b7b8-4f1e-9492-b4b78016b45a
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bceebc2d2b5969f9d5631bbab5e5740882220b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383748"
 ---
-# <a name="up-unassemble-from-physical-memory"></a>向上 （从物理内存的反汇编）
+# <a name="up-unassemble-from-physical-memory"></a>up（从物理内存取消汇编）
 
 
 **向上**命令显示指定的程序代码程序集转换的物理内存中。

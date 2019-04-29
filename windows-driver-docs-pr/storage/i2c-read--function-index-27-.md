@@ -1,17 +1,17 @@
 ---
-title: I2C 读取 （函数索引 27）
+title: I2C 读取（功能索引 27）
 description: 此函数读取 Inter-Integrated 线路 (I2C) 注册。
 ms.assetid: 64D8999D-2E10-4836-9C17-7D809D9527BD
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 00585e1794fa558c54ba1e4eefdfb03a42abd294
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383061"
 ---
-# <a name="i2c-read-function-index-27"></a>I2C 读取 （函数索引 27）
+# <a name="i2c-read-function-index-27"></a>I2C 读取（功能索引 27）
 
 
 此函数读取 Inter-Integrated 线路 (I2C) 注册。 此功能，需要使用特定于供应商的寄存器的方案。 它还用于调试。
@@ -38,7 +38,7 @@ ms.locfileid: "56522553"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>页面</strong></td>
+<td align="left"><strong>页</strong></td>
 <td align="left">1</td>
 <td align="left">0</td>
 <td align="left"><p>I2C 注册所在的页。</p></td>
@@ -92,7 +92,7 @@ ms.locfileid: "56522553"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [I2C 写入 （函数索引 28）](i2c-write--function-index-28-.md)

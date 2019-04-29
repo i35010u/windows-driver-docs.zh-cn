@@ -1,16 +1,16 @@
 ---
-Description: The client driver can participate in the policy decisions for USB Type-C connectors.
-title: 写入 USB 类型 C 策略管理器客户端驱动程序
+Description: 客户端驱动程序可以参与 USB 类型 C 连接器的策略决策。
+title: 编写 USB 类型 C 策略管理器客户端驱动程序
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: cd587e74ed4541f06974a0b4fda43f740315677b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378895"
 ---
-# <a name="write-a-usb-type-c-policy-manager-client-driver"></a>写入 USB 类型 C 策略管理器客户端驱动程序
+# <a name="write-a-usb-type-c-policy-manager-client-driver"></a>编写 USB 类型 C 策略管理器客户端驱动程序
 
 提供 Microsoft USB 类型 C 策略管理器监视 USB 类型 C 连接器的活动。 Windows，版本 1809，引入了一组编程接口，可用于编写到策略管理器中的客户端驱动程序 (称为_PM 客户端驱动程序_本主题中)。 客户端驱动程序可以参与 USB 类型 C 连接器的策略决策。 此设置后，你可以选择要写入的内核模式导出驱动程序或用户模式驱动程序。
 
@@ -64,7 +64,7 @@ PM Api 中声明[Usbpmapi.h](https://docs.microsoft.com/windows-hardware/drivers
 1. 客户端驱动程序调用[ **UsbPm_Deregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbpmapi/nf-usbpmapi-usbpm_register)驱动程序不再需要的任何通知。
 2. 策略管理器将客户端句柄注册标记为取消注册并不会调用**EVT_USBPM_EVENT_CALLBACK**回调。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [编写 USB 类型 C 连接器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/bring-up-a-usb-type-c-connector-on-a-windows-system)
 

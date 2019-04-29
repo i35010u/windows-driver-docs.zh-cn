@@ -5,11 +5,11 @@ ms.assetid: f5d761b9-866e-4948-978e-e95f8aed8b21
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ac79b379f2c1ea9221070f250af9a1b8d44cd84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380161"
 ---
 # <a name="tools-included-in-debugging-tools-for-windows"></a>Windows 调试工具中包含的工具
 
@@ -102,7 +102,7 @@ ms.locfileid: "56521570"
 
 调试工具的 64 位操作系统安装的默认安装目录为 c:\\Program Files (x86)\\Windows 工具包\\10\\调试器\\。 如果有 32 位操作系统，可以找到在 c: Windows Kits 文件夹\\程序文件。 若要确定是否应使用 32 位或 64 位工具，请参阅[选择 32 位或 64 位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [对于 Windows 调试工具与相关的工具](tools-related-to-debugging-tools-for-windows.md)

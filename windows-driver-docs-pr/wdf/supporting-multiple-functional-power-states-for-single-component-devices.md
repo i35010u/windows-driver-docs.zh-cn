@@ -5,13 +5,13 @@ ms.assetid: C7EFD71F-E101-4160-9703-E1DBD507698C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d80be51b55472043230f8b75db5cce6a8f6dcaa5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379447"
 ---
-# <a name="supporting-single-component-devices-with-single-or-multiple-functional-power-states"></a>支持具有单个或多个功能的电源状态的单个组件设备
+# <a name="supporting-single-component-devices-with-single-or-multiple-functional-power-states"></a>支持单组件设备呈现单个或多个功能性电源状态
 
 
 单组件设备的 KMDF 驱动程序可以定义一个或多个组件的功能的电源状态和注册组件的 Fx 状态发生更改时，电源管理框架 (PoFx) 调用的回调函数或其活动/空闲条件更改。 从 UMDF 2.0 版开始，单组件设备的 UMDF 驱动程序可以定义单个功能电源状态 (F0)。

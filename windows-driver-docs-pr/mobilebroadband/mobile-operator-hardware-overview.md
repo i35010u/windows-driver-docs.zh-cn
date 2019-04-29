@@ -5,11 +5,11 @@ ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d289b6c88db6b2b3d276978c763dc891b7fc62b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386260"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 

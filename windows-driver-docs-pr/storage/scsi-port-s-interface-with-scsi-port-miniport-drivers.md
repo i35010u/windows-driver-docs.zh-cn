@@ -1,17 +1,17 @@
 ---
-title: SCSI 端口 SCSI 端口微型端口驱动程序接口
-description: SCSI 端口 SCSI 端口微型端口驱动程序接口
+title: SCSI 端口的可以与 SCSI 端口微型端口驱动程序交互的接口
+description: SCSI 端口的可以与 SCSI 端口微型端口驱动程序交互的接口
 ms.assetid: e6bd9861-5b89-40cc-92ab-0d23f18ba805
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7397064af53122863dc652116ef793160370c47e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378173"
 ---
-# <a name="scsi-ports-interface-with-scsi-port-miniport-drivers"></a>SCSI 端口 SCSI 端口微型端口驱动程序接口
+# <a name="scsi-ports-interface-with-scsi-port-miniport-drivers"></a>SCSI 端口的可以与 SCSI 端口微型端口驱动程序交互的接口
 
 
 ## <span id="ddk_scsi_port_s_interface_with_scsi_port_miniport_drivers_kg"></span><span id="DDK_SCSI_PORT_S_INTERFACE_WITH_SCSI_PORT_MINIPORT_DRIVERS_KG"></span>

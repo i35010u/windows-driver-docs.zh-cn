@@ -5,11 +5,11 @@ ms.assetid: 270e62dd-590c-4495-be22-002957932031
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62153e4f19e8a5e49e8e36d2c8ff3b121646c9bd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383709"
 ---
 # <a name="twain-compatibility"></a>TWAIN 兼容性
 

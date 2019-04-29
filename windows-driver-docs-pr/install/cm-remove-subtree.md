@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3a6f754c9e8abc27a22e83588ea14eadcffe54cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377113"
 ---
 # <a name="cmremovesubtree"></a>CM_Remove_SubTree
 

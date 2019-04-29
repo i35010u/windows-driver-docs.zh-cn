@@ -1,6 +1,6 @@
 ---
-title: PC 卡和卡驱动程序的设计最佳实践
-description: PC 卡和卡驱动程序的设计最佳实践
+title: 电脑卡和卡驱动程序的设计最佳做法
+description: 电脑卡和卡驱动程序的设计最佳做法
 ms.assetid: c3f31757-4063-4c68-ae19-1d8af98f81bc
 keywords:
 - IRQ 路由 WDK PCMCIA 总线
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07762164ed7788d85650fa500e75be8e8ae38d5f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378283"
 ---
-# <a name="best-practices-for-the-design-of-pc-cards-and-card-drivers"></a>PC 卡和卡驱动程序的设计最佳实践
+# <a name="best-practices-for-the-design-of-pc-cards-and-card-drivers"></a>电脑卡和卡驱动程序的设计最佳做法
 
 
 

@@ -5,11 +5,11 @@ ms.assetid: a2a31627-a453-4776-b4f2-13660e4ad7a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b2eb2a60a0f7fbd989a02a1a4393c3fabd3e63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376455"
 ---
 # <a name="using-updated-core-print-drivers"></a>使用更新的核心打印驱动程序
 
@@ -34,7 +34,7 @@ Windows 存储作为一个完整的单元，每个驱动程序包，并从打印
 
 本部分介绍如何构造具有更新的核心驱动程序文件依赖项包识别驱动程序以及如何确保安装的制造商提供的包识别驱动程序时，安装了更新的核心驱动程序包。
 
-讨论了以下主题：
+论述了以下主题：
 
 [构造一个识别包的驱动程序与更新的核心驱动程序](constructing-a-package-aware-driver-with-updated-core-drivers.md)
 

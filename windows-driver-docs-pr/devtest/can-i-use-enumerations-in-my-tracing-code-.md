@@ -5,13 +5,13 @@ ms.assetid: c42ab1ad-6b8f-458f-ba29-e3553095c853
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 098abf6d7e5374b7e165beb3b82f59bf1ead41b4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375409"
 ---
-# <a name="can-i-use-enumerations-in-my-tracing-code"></a>可以在我的跟踪代码中使用枚举？
+# <a name="can-i-use-enumerations-in-my-tracing-code"></a>是否可以在跟踪代码中使用枚举？
 
 
 枚举可用于跟踪消息，而不是显示用户必须进行解码的整数值中显示有意义的术语。

@@ -1,6 +1,6 @@
 ---
-title: GDI 公用服务
-description: GDI 公用服务
+title: GDI 实用工具服务
+description: GDI 实用工具服务
 ms.assetid: 4ceec90d-5be2-4b79-87b3-1fdb6b0aea6b
 keywords:
 - GDI WDK Windows 2000 显示，实用程序服务
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a27e105c9544f9692427e654c7b2ddd73e53507c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374611"
 ---
-# <a name="gdi-utility-services"></a>GDI 公用服务
+# <a name="gdi-utility-services"></a>GDI 实用工具服务
 
 
 ## <span id="ddk_gdi_utility_services_gg"></span><span id="DDK_GDI_UTILITY_SERVICES_GG"></span>

@@ -1,6 +1,6 @@
 ---
-title: 特定于 WAN 的 CoNDIS WAN 驱动程序功能
-description: 特定于 WAN 的 CoNDIS WAN 驱动程序功能
+title: CoNDIS WAN 驱动程序的 WAN 特定功能
+description: CoNDIS WAN 驱动程序的 WAN 特定功能
 ms.assetid: c4e8e0ae-7dd5-4c4e-900a-b1f7e5eecb16
 keywords:
 - CoNDIS WAN 的驱动程序 WDK 网络，与非 WAN CoNDIS 驱动程序
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3de90c84344d699449cf7a8689001c260e9e7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380568"
 ---
-# <a name="wan-specific-capabilities-of-condis-wan-drivers"></a>特定于 WAN 的 CoNDIS WAN 驱动程序功能
+# <a name="wan-specific-capabilities-of-condis-wan-drivers"></a>CoNDIS WAN 驱动程序的 WAN 特定功能
 
 
 

@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: c4d8ac62c0214d12143051e1bfcb0e5edb024787
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385555"
 ---
 # <a name="cmintersectrangelist"></a>CM_Intersect_Range_List
 

@@ -8,18 +8,18 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c91723b8c9b9548b184fb6bd9bca2111efb62a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378830"
 ---
 # <a name="filter-rule-elements"></a>筛选器规则元素
 
 
 以下列表介绍您可以修改的筛选规则中的元素**管理筛选器**对话框：
 
-<span id="Description"></span><span id="description"></span><span id="DESCRIPTION"></span>**说明**  
+<span id="Description"></span><span id="description"></span><span id="DESCRIPTION"></span>**Description**  
 描述规则的用户定义的文本字符串。 键入任何有助于识别该规则的短语。
 
 <span id="Column"></span><span id="column"></span><span id="COLUMN"></span>**列**  

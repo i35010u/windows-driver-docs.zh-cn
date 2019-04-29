@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 23f1bd2a72969df318fec2fb3df1f2550fd82cf6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384623"
 ---
 # <a name="oidwdigetbssentrylist"></a>OID\_WDI\_GET\_BSS\_ENTRY\_LIST
 

@@ -1,20 +1,20 @@
 ---
-title: 完全内存转储
-description: 完全内存转储
+title: 完整内存转储
+description: 完整内存转储
 ms.assetid: ccc4d22a-89af-4c7d-a982-f77c682cd001
 keywords:
 - 转储文件中，完全内存转储
-- 完全内存转储
+- 完整内存转储
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab8af3de383a4830d162bb0368b22392cced4c79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375073"
 ---
-# <a name="complete-memory-dump"></a>完全内存转储
+# <a name="complete-memory-dump"></a>完整内存转储
 
 
 ## <span id="ddk_complete_memory_dump_dbg"></span><span id="DDK_COMPLETE_MEMORY_DUMP_DBG"></span>
@@ -30,7 +30,7 @@ ms.locfileid: "56522410"
 
 如果第二个 bug 检查发生，并且创建另一个完全内存转储 （以后或内核内存转储） 时，将覆盖以前的文件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [类型的内核模式转储文件](varieties-of-kernel-mode-dump-files.md)

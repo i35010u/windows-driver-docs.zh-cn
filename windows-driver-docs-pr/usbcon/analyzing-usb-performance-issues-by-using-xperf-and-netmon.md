@@ -1,14 +1,14 @@
 ---
-Description: This topic provides information about how to view the timeline of events captured in a USB ETW log.
+Description: 本主题提供有关如何查看 USB ETW 日志中捕获的事件的时间线的信息。
 title: 使用 Xperf 和 Netmon 分析 USB 性能问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12f14a2fc092b8055d6062247aad1e4f3836cd88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375173"
 ---
 # <a name="analyzing-usb-performance-issues-by-using-xperf-and-netmon"></a>使用 Xperf 和 Netmon 分析 USB 性能问题
 

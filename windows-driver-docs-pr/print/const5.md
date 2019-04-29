@@ -1,5 +1,5 @@
 ---
-title: 常量 (WSD)
+title: Const (WSD)
 description: Web Services for Devices (WSD) Const 构造定义数据类型和值，必须返回该值。
 ms.assetid: e9bcf007-0117-48a9-9873-a9bbc5702e29
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a1c26fa8413e64461e7c61bf4ae068521a482e3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384502"
 ---
-# <a name="const-wsd"></a>常量 (WSD)
+# <a name="const-wsd"></a>Const (WSD)
 
 
 Web Services for Devices (WSD) Const 构造定义数据类型和值，必须返回该值。 常量用于不更改值中的元素。 Const 构造 WsdBidi.xsd 中定义。
@@ -25,7 +25,7 @@ Web Services for Devices (WSD) Const 构造定义数据类型和值，必须返�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

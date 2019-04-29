@@ -1,17 +1,17 @@
 ---
-title: 提供和回收更改
+title: 供应和回收更改
 description: Windows 显示器驱动程序模型 (WDDM) v2 是正在放宽要求产品/服务和回收。
 ms.assetid: 1A987708-DE73-4998-B5F9-03A9D502205A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a3a0e7f72c6fec26bc232e13ca9803df7c48ba
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383995"
 ---
-# <a name="offer-and-reclaim-changes"></a>提供和回收更改
+# <a name="offer-and-reclaim-changes"></a>供应和回收更改
 
 
 对于 Windows 显示器驱动程序模型 (WDDM) v2，规定*产品/服务*和*回收*正在放宽了。 用户模式驱动程序不再需要使用产品/服务，并在内部分配上回收。 空闲/已挂起应用程序将使用的驱动程序内部资源消除**剪裁**Microsoft DirectX 11.1 中引入的 API。

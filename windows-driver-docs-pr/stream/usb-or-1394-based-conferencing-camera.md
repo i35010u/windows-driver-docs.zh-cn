@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c27a43b7473144cdd7440471dd12bd805f3f536a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382504"
 ---
 # <a name="usb-or-1394-based-conferencing-camera"></a>基于 USB 或 1394 的会议摄像机
 

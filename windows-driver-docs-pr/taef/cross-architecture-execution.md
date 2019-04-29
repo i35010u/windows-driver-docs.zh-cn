@@ -5,18 +5,18 @@ ms.assetid: 6E7F53A0-7C6A-4063-8300-31E1853EDD04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e3bfad7f506ff4882566553bf70a0b1171e542
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385074"
 ---
 # <a name="cross-architecture-execution"></a>跨体系结构执行
 
 
 TAEF 支持从不同的体系结构具有相同命令行-运行测试的功能，提供运行测试的操作系统支持它们。 这意味着，-例如-x64*和*x86 测试 (在 x64 操作系统) 可以使用单个 te.exe 命令行执行。
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>系统必备组件
+## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 若要运行测试的不同体系结构与 te.exe 本身，该体系结构的 TAEF 二进制文件需要可供 te.exe。 目标体系结构可以是任意的：

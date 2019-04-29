@@ -1,17 +1,17 @@
 ---
-title: 用于打开属性存储的代码示例
-description: 用于打开属性存储的代码示例
+title: 演示如何打开属性存储的代码示例
+description: 演示如何打开属性存储的代码示例
 ms.assetid: 4d63ea52-f3f5-4af7-ad6f-0bbd57b76c52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8089fd1fb13593362c4cff35ddaa9427125ce3b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373233"
 ---
-# <a name="code-example-for-opening-a-property-store"></a>用于打开属性存储的代码示例
+# <a name="code-example-for-opening-a-property-store"></a>演示如何打开属性存储的代码示例
 
 
 下面的代码示例显示如何打开当前函数实例对象的属性存储区。 获取当前函数实例对象的过程所述[获取函数实例对象](obtaining-a-function-instance-object.md)。

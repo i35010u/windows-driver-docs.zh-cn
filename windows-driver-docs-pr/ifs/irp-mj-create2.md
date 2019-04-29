@@ -5,11 +5,11 @@ ms.assetid: 30684025-9da0-4f4c-a850-ab0390bef091
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 883d03a15f8c0f8eb2a1773d4cf955d32d406b03
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379699"
 ---
 # <a name="checking-the-oplock-state-of-an-irpmjcreate-operation"></a>正在检查 IRP_MJ_CREATE 操作 Oplock 状态
 

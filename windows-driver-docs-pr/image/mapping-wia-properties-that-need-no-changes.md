@@ -1,17 +1,17 @@
 ---
-title: 不需要进行任何更改的 WIA 属性映射
-description: 不需要进行任何更改的 WIA 属性映射
+title: 映射不需更改的 WIA 属性
+description: 映射不需更改的 WIA 属性
 ms.assetid: ceb0fe83-9803-4ba5-9a9f-7c722389db0b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 319052c912bc371b7742a1b88e0a91b9e8022621
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380371"
 ---
-# <a name="mapping-wia-properties-that-need-no-changes"></a>不需要进行任何更改的 WIA 属性映射
+# <a name="mapping-wia-properties-that-need-no-changes"></a>映射不需更改的 WIA 属性
 
 
 没有具有相同的属性 Id 和属性名称与 Windows Vista 的 Windows XP 属性。 这些属性将转换与相应 Windows XP 上下文仅限选定内容;没有任何其他更改。 下面是这些 Windows XP 根属性以及它们在 Windows Vista 中将转换为的平板和送纸器 (ADF) 属性表。

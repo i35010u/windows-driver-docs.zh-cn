@@ -5,11 +5,11 @@ ms.assetid: c84e2814-69ba-4cd0-ba11-1b035ccdfbde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c66929c7f9dda7dd000bbf2f5347a7004ba85ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378388"
 ---
 # <a name="designing-the-user-experience-of-a-mobile-broadband-app"></a>设计移动宽带应用的用户体验
 

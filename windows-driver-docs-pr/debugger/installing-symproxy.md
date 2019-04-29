@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/12/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 378343416a1cc61c49b4353a97794154ccd58f0e
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371646"
 ---
 # <a name="installing-symproxy"></a>安装 SymProxy
 

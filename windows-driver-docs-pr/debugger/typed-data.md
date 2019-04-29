@@ -1,17 +1,17 @@
 ---
-title: 类型化的数据
-description: 类型化的数据
+title: 类型化数据
+description: 类型化数据
 ms.assetid: 44a84dfd-03f8-4d7b-8d71-e4b3ee23d105
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f38b61e3b831d78c869943d4e02077c8f9c3f01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380779"
 ---
-# <a name="typed-data"></a>类型化的数据
+# <a name="typed-data"></a>类型化数据
 
 
 EngExtCpp 扩展框架提供了一些类，以帮助操作目标的内存。 [ **ExtRemoteData** ](https://msdn.microsoft.com/library/windows/hardware/ff544003)类描述了一小段目标的内存。 如果此内存的类型已知的因此将它称为*类型的数据*进行了说明[ **ExtRemoteTyped** ](https://msdn.microsoft.com/library/windows/hardware/ff544162)对象。

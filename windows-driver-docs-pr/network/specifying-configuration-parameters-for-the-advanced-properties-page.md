@@ -1,6 +1,6 @@
 ---
 title: 指定高级属性页的配置参数
-description: 指定的高级的属性页配置参数
+description: 指定高级属性页的配置参数
 ms.assetid: 9c243edb-f667-4244-8de2-8335fac43220
 keywords:
 - 添加注册表部分网络 WDK，高级的属性页上配置
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 23871adec26ce24496924927c391ed62cdeebdce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385475"
 ---
-# <a name="specifying-configuration-parameters-for-the-advanced-properties-page"></a>指定的高级的属性页配置参数
+# <a name="specifying-configuration-parameters-for-the-advanced-properties-page"></a>指定高级属性页的配置参数
 
 > [!NOTE]
 > 在 Windows 10，版本 1703 之前, 驱动程序升级和 Windows 更新可能导致更改为驱动程序以前已在中定义的 INF 值**高级**属性页。

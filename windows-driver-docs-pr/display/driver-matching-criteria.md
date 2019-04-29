@@ -5,11 +5,11 @@ ms.assetid: C41549AE-3FE0-44E8-9D45-1ED1124D010B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e9d1cdf1aa92f3a285cf05c956994011f4953d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380099"
 ---
 # <a name="driver-matching-criteria"></a>驱动程序匹配条件
 

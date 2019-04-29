@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f5af08f8007d15b2dfe477def41abcf4864fc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375901"
 ---
 # <a name="supporting-command-lists"></a>支持命令列表
 

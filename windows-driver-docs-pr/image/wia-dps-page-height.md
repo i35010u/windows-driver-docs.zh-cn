@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a589ca1199be8449996903ab155a35f5f771cbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377939"
 ---
 # <a name="wiadpspageheight"></a>WIA\_DPS\_页\_高度
 
@@ -52,7 +52,7 @@ WIA\_DPS\_页面\_高度必须提供英寸为单位，它等效于报告的像�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PAGE_HEIGHT 属性。</p></td>
 </tr>
 <tr class="even">

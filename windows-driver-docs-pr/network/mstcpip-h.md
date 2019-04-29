@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c99f090869e37b6bede8673ddbc7c13749707562
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382635"
 ---
 # <a name="mstcpiph"></a>Mstcpip.h
 
@@ -19,7 +19,7 @@ ms.locfileid: "56522361"
 
 Mstcpip.h 标头包含 Microsoft 专用扩展核心 Winsock 定义的定义。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 * [SIO_LOOPBACK_FAST_PATH 控制代码](sio-loopback-fast-path.md)
 * [SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制代码](sio-query-wfp-connection-redirect-context.md)

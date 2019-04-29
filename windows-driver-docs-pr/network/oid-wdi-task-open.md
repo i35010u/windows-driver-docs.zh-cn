@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 23ec5cdaeb22bb08623cd47c9f313ba3830ad434
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383588"
 ---
 # <a name="oidwditaskopen"></a>OID\_WDI\_任务\_打开
 

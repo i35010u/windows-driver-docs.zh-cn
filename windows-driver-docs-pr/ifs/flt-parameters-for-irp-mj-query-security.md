@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f22e34f84a446b3e922a3568e18de85cfcba25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379839"
 ---
 # <a name="fltparameters-for-irpmjquerysecurity-union"></a>FLT\_IRP 的参数\_MJ\_查询\_安全联合
 
@@ -114,13 +114,13 @@ IRP\_MJ\_查询\_安全是一个基于 IRP 的操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件\_流\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540364)

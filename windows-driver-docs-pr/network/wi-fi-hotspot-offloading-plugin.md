@@ -1,16 +1,16 @@
 ---
-title: 卸载插件的 Wi-fi 热点
-description: 卸载插件的 Wi-fi 热点
+title: Wi-Fi 热点卸载插件
+description: Wi-Fi 热点卸载插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 819f145063563487cdbef6fcd212c0761aa59ad7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379165"
 ---
-# <a name="wi-fi-hotspot-offloading-plugin"></a>卸载插件的 Wi-fi 热点
+# <a name="wi-fi-hotspot-offloading-plugin"></a>Wi-Fi 热点卸载插件
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 

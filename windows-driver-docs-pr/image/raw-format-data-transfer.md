@@ -1,17 +1,17 @@
 ---
-title: 原始格式的数据传输
-description: 原始格式的数据传输
+title: 原始格式数据传输
+description: 原始格式数据传输
 ms.assetid: 8541b5ce-fd55-47b0-9687-162fb2b4e6aa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2066fca36d6ab0d4306a246858186c8d8cdcc99f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379617"
 ---
-# <a name="raw-format-data-transfer"></a>原始格式的数据传输
+# <a name="raw-format-data-transfer"></a>原始格式数据传输
 
 WIA 支持对数据传输的原始格式。 WIA 传输的原始格式的优点是它支持扫描头的完整功能。
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a3cfcac0ecd2fedb768c79e997c2d4e06fa4b0f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379713"
 ---
 # <a name="irpmjcleanup"></a>IRP\_MJ\_CLEANUP
 
@@ -47,7 +47,7 @@ ms.locfileid: "56540927"
 
 筛选器驱动程序编写人员应注意，还与不同[ **IoCreateStreamFileObject**](https://msdn.microsoft.com/library/windows/hardware/ff548296)， [ **IoCreateStreamFileObjectLite** ](https://msdn.microsoft.com/library/windows/hardware/ff548306)不导致 IRP\_MJ\_清除请求发送到文件系统驱动程序堆栈。 出于此原因，因为文件系统通常创建流文件对象以外的 IRP 其他操作的副作用\_MJ\_创建，很难可靠地检测到流文件对象创建的筛选器驱动程序。 因此筛选器驱动程序应该会收到 IRP\_MJ\_关闭请求对于以前不可见的文件对象。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>Parameters
 
 
 文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理清除请求的 IRP 堆栈位置中设置的信息：
@@ -70,7 +70,7 @@ IRP\_同步\_API
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction* IRP 指定\_MJ\_清理。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)

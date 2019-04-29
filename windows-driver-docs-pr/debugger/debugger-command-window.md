@@ -1,18 +1,18 @@
 ---
-title: 在 WinDbg 中输入的调试器命令
+title: 在 WinDbg 中输入调试器命令
 description: 在 WinDbg 中使用调试器命令窗口输入调试器命令
 ms.assetid: 4d839170-efaf-43d5-a81c-ac3b9c33586c
 keywords: 调试信息 windows 命令窗口中，WinDbg
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abe50b414433ac31028a55e6ea0ee2c49092c817
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376904"
 ---
-# <a name="entering-debugger-commands-in-windbg"></a>在 WinDbg 中输入的调试器命令
+# <a name="entering-debugger-commands-in-windbg"></a>在 WinDbg 中输入调试器命令
 
 
 ## <span id="ddk_debugger_command_window_dbg"></span><span id="DDK_DEBUGGER_COMMAND_WINDOW_DBG"></span>

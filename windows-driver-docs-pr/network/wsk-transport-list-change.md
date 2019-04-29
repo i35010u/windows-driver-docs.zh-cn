@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WSK_TRANSPORT_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f5a9e6657e6d1d4d58956ad99695e0da5370bb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375230"
 ---
 # <a name="wsktransportlistchange"></a>WSK\_传输\_列表\_更改
 
@@ -77,11 +77,11 @@ IRP 是此客户端控制操作所必需的。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wsk.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

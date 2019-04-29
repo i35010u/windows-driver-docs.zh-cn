@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a862b13160c7f079c6b82584d01d60b30e6c075
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378109"
 ---
 # <a name="introduction-to-dma-in-windows-driver-framework"></a>Windows 驱动程序框架中的 DMA 简介
 

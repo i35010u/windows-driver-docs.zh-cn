@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ee959c01e9d4070aee4042ccc7951e53a19292f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378463"
 ---
 # <a name="inf-manufacturer-section"></a>INF Manufacturer 节
 
@@ -59,7 +59,7 @@ manufacturer-name |
 <a href="" id="targetosversion"></a>*TargetOSVersion*  
 指定一个或多个目标操作系统版本与哪些各种 INF***模型***可以使用部分。 Windows 选择 INF***模型***与执行它的操作系统版本最匹配的部分。
 
-**注意**：在上述 c + + 代码中，多个 TargetOSVersions 列出了一个条目。  这是添加多个 TargetOSVersions 的正确方法。  无法代表每个目标作为一个单独的条目。  请参阅下面的示例 3 中的相关的信息。
+**注意**：在C++上面的代码，在一个条目中列出了多个 TargetOSVersions。  这是添加多个 TargetOSVersions 的正确方法。  无法代表每个目标作为一个单独的条目。  请参阅下面的示例 3 中的相关的信息。
 
 
 有关的说明*TargetOSVersion*修饰，请参阅以下**备注**部分。

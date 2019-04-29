@@ -1,6 +1,6 @@
 ---
-title: Stream 指针
-description: Stream 指针
+title: 流指针
+description: 流指针
 ms.assetid: 4bac68a0-34d2-431a-9ed9-8a42751a736f
 keywords:
 - 流指针 WDK AVStream
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f918d3e2c6c8772c85f9e00bda063dd7f221bfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378529"
 ---
-# <a name="stream-pointers"></a>Stream 指针
+# <a name="stream-pointers"></a>流指针
 
 
 

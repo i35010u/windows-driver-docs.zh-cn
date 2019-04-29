@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WAN_CO_LINKPARAMS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 996bfab89bfb5debd7fd1429c9fafb6a3d244354
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380916"
 ---
 # <a name="ndisstatuswancolinkparams"></a>NDIS\_状态\_WAN\_共同\_LINKPARAMS
 
@@ -35,17 +35,17 @@ NDIS\_状态\_WAN\_共同\_片段状态指示已更改的 CoNDIS 微型端口适
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)

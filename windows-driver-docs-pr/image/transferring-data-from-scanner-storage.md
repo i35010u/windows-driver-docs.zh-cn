@@ -5,11 +5,11 @@ ms.assetid: 6fc9c825-509c-4c18-a859-e1f5504879b8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ce69d59e36bd43e2c8d0d4d9d777332266e439
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383712"
 ---
 # <a name="transferring-data-from-scanner-storage"></a>从扫描仪存储传输数据
 

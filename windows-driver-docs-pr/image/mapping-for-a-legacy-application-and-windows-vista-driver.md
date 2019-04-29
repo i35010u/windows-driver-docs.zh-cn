@@ -1,17 +1,17 @@
 ---
-title: 旧版应用程序和 Windows Vista 驱动程序映射
-description: 旧版应用程序和 Windows Vista 驱动程序映射
+title: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
+description: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c7c711bb93cfd9d1b33f55ed46aa2a49f4fb4a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380386"
 ---
-# <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>旧版应用程序和 Windows Vista 驱动程序映射
+# <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>适用于旧版应用程序和 Windows Vista 驱动程序的映射
 
 
 本部分介绍如何 Windows Vista 传输消息和数据流映射到旧传输消息和数据流的旧版应用程序需要能够与 Windows Vista 驱动程序时。

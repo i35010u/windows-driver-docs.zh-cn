@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 62709710baab35ac23cd373343db9b95f27a7003
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382960"
 ---
 # <a name="d3dddiopenallocationinfo2-structure"></a>D3DDDI\_OPENALLOCATIONINFO2 结构
 
@@ -70,7 +70,7 @@ typedef struct _D3DDDI_OPENALLOCATIONINFO2 {
 <td align="left"><p>Windows Server 2008</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">D3dukmdt.h （包括 D3dukmdt.h 或 D3dkmddi.h）</td>
 </tr>
 </tbody>

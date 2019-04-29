@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 463b13e77e3ed54609b1c733f9b18593c28d93c7
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379871"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -282,10 +282,10 @@ verifier /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">十进制</th>
+<th align="left">Decimal</th>
 <th align="left">十六进制</th>
 <th align="left">标准设置</th>
-<th align="left">选项</th>
+<th align="left">Option</th>
 </tr>
 </thead>
 <tbody>
@@ -449,9 +449,9 @@ verifier /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">十进制</th>
+<th align="left">Decimal</th>
 <th align="left">十六进制</th>
-<th align="left">选项</th>
+<th align="left">Option</th>
 </tr>
 </thead>
 <tbody>
@@ -519,7 +519,7 @@ verifier /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -543,7 +543,7 @@ verifier /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -591,7 +591,7 @@ verifier /?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">选项</th>
+<th align="left">Option</th>
 <th align="left">描述</th>
 </tr>
 </thead>

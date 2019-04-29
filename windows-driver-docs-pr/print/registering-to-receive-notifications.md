@@ -13,11 +13,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98b168fd0117921d70f043e25039663628f4d3da
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382592"
 ---
 # <a name="registering-to-receive-notifications"></a>注册以接收通知
 

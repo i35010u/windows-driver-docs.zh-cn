@@ -5,11 +5,11 @@ ms.assetid: EBB95A11-14EF-4BF5-BE90-DB99624554CD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 82939a3021ab3d670e8365b8f99f5533e2f39ced
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386245"
 ---
 # <a name="mobile-broadband-device-firmware-update"></a>移动宽带设备固件更新
 

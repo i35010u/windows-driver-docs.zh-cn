@@ -1,6 +1,6 @@
 ---
-title: 自定义的打印机端口监视器
-description: 自定义的打印机端口监视器
+title: 自定义打印机端口监视器
+description: 自定义打印机端口监视器
 ms.assetid: e5d4166a-2593-43fd-b476-c54642e2d099
 keywords:
 - 在框中自动配置支持 WDK 打印机，自定义打印机端口监视器
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07ac1ee03c461ea2a8931e5e827e3b113fb2c3e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373485"
 ---
-# <a name="customizing-the-printer-port-monitors"></a>自定义的打印机端口监视器
+# <a name="customizing-the-printer-port-monitors"></a>自定义打印机端口监视器
 
 
 您可以定义具有超越标准功能的打印设备的新架构[bidi 通信架构](bidirectional-communication-schema.md)通过自定义标准 TCP/IP 或 Devices (WSD) 端口监视器随一起提供的 Web 服务Windows Vista。 必须创建 bidi 扩展文件，对该驱动程序定义特定的新架构的 XML 文件。 安装该驱动程序时，安装此扩展文件。 TCP/IP 或 WSD 端口监视器识别出该扩展文件，该监视器加载文件，然后可以使用其他 bidi 架构。

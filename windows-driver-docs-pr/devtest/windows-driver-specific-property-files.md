@@ -1,15 +1,15 @@
 ---
-title: Windows 驱动程序特定属性文件
+title: Windows 驱动程序特定的属性文件
 description: 驱动程序属性页将 MSBuild 用于生成任何驱动程序项目的工具的所有默认设置。
 ms.assetid: 696EE510-266B-457A-B74E-491D7804B833
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c5c533f07d452e2fdba722b40a6bf1f8607773
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379141"
 ---
 # <a name="span-iddevtestwindowsdriver-specificpropertyfilesspanwindows-driver-specific-property-files"></a><span id="devtest.windows_driver-specific_property_files"></span>Windows 驱动程序特定属性文件
 

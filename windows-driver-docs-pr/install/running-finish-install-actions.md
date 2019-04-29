@@ -1,17 +1,17 @@
 ---
-title: 正在运行完成安装操作
-description: 正在运行完成安装操作
+title: 运行 Finish-Install 操作
+description: 运行 Finish-Install 操作
 ms.assetid: 9a5f8e7c-ba11-4a2a-82dd-32cd91c3cc39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a58a9d0632844ab29a684701175fce5845e3ac57
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383663"
 ---
-# <a name="running-finish-install-actions"></a>正在运行完成安装操作
+# <a name="running-finish-install-actions"></a>运行 Finish-Install 操作
 
 
 在 Windows 8 和更高版本的 Windows 中，完成安装操作也不会自动运行设备安装的一部分。 使用包括完成安装操作的驱动程序安装设备时，完成安装操作将不会自动运行。 相反，Windows 将提示用户与"完成安装设备软件"在通知区域中或 Windows 操作中心中。 安装设备软件需要管理员权限。 如果安装失败，该软件必须提示用户再次尝试安装。 安装应附带驱动程序的支持软件仍可以使用完成安装操作，但它将不会自动安装。

@@ -1,17 +1,17 @@
 ---
-title: 对于原始格式传输属性验证
-description: 对于原始格式传输属性验证
+title: 进行原始格式传输所需的属性验证
+description: 进行原始格式传输所需的属性验证
 ms.assetid: ad58f94e-d59e-4d04-be27-cc87f89f3d76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5aa60825d0339c62c13640eb9c57126f8350d4c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379633"
 ---
-# <a name="property-validation-for-raw-format-transfers"></a>对于原始格式传输属性验证
+# <a name="property-validation-for-raw-format-transfers"></a>进行原始格式传输所需的属性验证
 
 
 驱动程序必须验证之前的原始格式的数据传输的 WIA 属性设置。 必须按如下所示设置 WIA 属性：

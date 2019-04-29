@@ -5,11 +5,11 @@ ms.assetid: 25490320-8d6b-4c5a-a585-4f628ea72393
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77ed3adba063aad446afb0a47a36f6a798ff0b95
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383132"
 ---
 # <a name="handling-srbfunctionpnp"></a>处理 SRB\_函数\_PNP
 

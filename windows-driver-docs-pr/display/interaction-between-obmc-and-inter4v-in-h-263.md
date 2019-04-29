@@ -1,19 +1,19 @@
 ---
-title: OBMC 和在 H.263 INTER4V 之间的交互
-description: OBMC 和在 H.263 INTER4V 之间的交互
+title: H.263 中 OBMC 与 INTER4V 之间的交互
+description: H.263 中 OBMC 与 INTER4V 之间的交互
 ms.assetid: 096c723d-ec16-49f7-acaa-62ed228338c3
 keywords:
 - 宏块 WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 40cf3a96a51a07948e032c63f4c00448f6232acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381872"
 ---
-# <a name="interaction-between-obmc-and-inter4v-in-h263"></a>OBMC 和在 H.263 INTER4V 之间的交互
+# <a name="interaction-between-obmc-and-inter4v-in-h263"></a>H.263 中 OBMC 与 INTER4V 之间的交互
 
 
 ## <span id="ddk_interaction_between_obmc_and_inter4v_in_h_263_gg"></span><span id="DDK_INTERACTION_BETWEEN_OBMC_AND_INTER4V_IN_H_263_GG"></span>

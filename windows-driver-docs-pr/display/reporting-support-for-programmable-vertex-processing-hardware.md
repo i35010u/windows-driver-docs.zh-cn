@@ -1,5 +1,5 @@
 ---
-title: 报告对可编程顶点着色器硬件的支持
+title: 报告可编程顶点着色器硬件的支持
 description: DirectX 8.0 级别驱动程序的可编程顶点着色器硬件报表技术支持，它必须将 D3DCAPS8 结构 VertexShaderVersion 字段设置为有效的、 非零的顶点着色器版本数。
 ms.assetid: c77dae52-ed7c-4385-b085-df3e16e53c5e
 keywords:
@@ -9,13 +9,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: fb39770b2db051e885ff52ba41be1b5149f45fd3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383242"
 ---
-# <a name="reporting-support-for-programmable-vertex-shader-hardware"></a>报告对可编程顶点着色器硬件的支持
+# <a name="reporting-support-for-programmable-vertex-shader-hardware"></a>报告可编程顶点着色器硬件的支持
 
 它必须设置为可编程顶点着色器硬件报表支持的 DirectX 8.0 级别驱动程序**VertexShaderVersion** D3DCAPS8 结构为有效的、 非零的顶点着色器版本数的字段。 **VertexShaderVersion**是一个 dword 值，其中最重要的词必须具有值 0xFFFE 和最不重要的 word 保存的实际版本数量。 该单词的最低有效字节持有的次版本号，最高有效字节包含主版本号。 由于此 DWORD 的格式很复杂，该驱动程序必须设置的值**VertexShaderVersion**使用宏 D3DVS\_版本中定义*d3d8types.h*。 例如，以下代码段集**VertexShaderVersion**以指示对 1.0 级别功能的支持。
 

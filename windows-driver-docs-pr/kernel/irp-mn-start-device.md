@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_START_DEVICE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9e11350d5677f252c1a84ac90eaaf71039733b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381401"
 ---
 # <a name="irpmnstartdevice"></a>IRP\_MN\_START\_DEVICE
 
@@ -76,13 +76,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP\_MN\_STOP\_DEVICE**](irp-mn-stop-device.md)

@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: dafe5098a2b5df92624df586c3833351e58bd2d7
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372774"
 ---
 # <a name="bug-check-0xe8-invalidcanceloffileopen"></a>Bug 检查 0xE8：无效\_取消\_OF\_文件\_打开
 

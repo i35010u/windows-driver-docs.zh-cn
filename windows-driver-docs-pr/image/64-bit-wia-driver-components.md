@@ -5,11 +5,11 @@ ms.assetid: c5951977-1ac9-4ef3-9427-f964cab9725e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 87d60c7fc1328e2b64db9ff1b566a7f94eac89d5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377611"
 ---
 # <a name="64-bit-wia-driver-components"></a>64 位 WIA 驱动程序组件
 

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e09d4dac20f63abe2fc1d752a62114730331ac3e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379813"
 ---
 # <a name="initializing-a-header-data-split-provider"></a>初始化标头数据拆分提供程序
 

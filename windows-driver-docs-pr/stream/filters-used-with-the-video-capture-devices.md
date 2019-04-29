@@ -1,6 +1,6 @@
 ---
-title: 使用视频捕获设备使用的筛选器
-description: 使用视频捕获设备使用的筛选器
+title: 与视频捕获设备配合使用的筛选器
+description: 与视频捕获设备配合使用的筛选器
 ms.assetid: 797f855d-5c6f-45bc-8b4a-f03543fa196d
 keywords:
 - 筛选图形配置 WDK 视频捕获，DirectShow
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4224abfd47a8a248c4633c6e8ddeadd2d98bb11f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376099"
 ---
-# <a name="filters-used-with-the-video-capture-devices"></a>使用视频捕获设备使用的筛选器
+# <a name="filters-used-with-the-video-capture-devices"></a>与视频捕获设备配合使用的筛选器
 
 
 Microsoft DirectShow 是视频捕获微型驱动程序的常见客户端。 用户模式下 DirectShow 筛选器公开视频捕获微型驱动程序对用户模式应用程序中包含的功能。

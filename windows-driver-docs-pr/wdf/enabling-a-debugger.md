@@ -1,6 +1,6 @@
 ---
-title: 如何启用调试 UMDF 驱动程序
-description: 如何启用调试 UMDF 驱动程序
+title: 如何启用对 UMDF 驱动程序的调试
+description: 如何启用对 UMDF 驱动程序的调试
 ms.assetid: ea37eb7b-09fa-4c8d-aff7-273b07bc0007
 keywords:
 - 调试器 WDK UMDF
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c692d332d7b19367b62fc27e289f77bfff28e69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379500"
 ---
-# <a name="how-to-enable-debugging-of-a-umdf-driver"></a>如何启用调试 UMDF 驱动程序
+# <a name="how-to-enable-debugging-of-a-umdf-driver"></a>如何启用对 UMDF 驱动程序的调试
 
 
 以下配置可用于调试的用户模式驱动程序框架 (UMDF) 驱动程序。 所有配置涉及都到两台计算机、 主机和目标。 在运行 Microsoft Visual Studio 和 Windows Driver Kit (WDK) 以生成该驱动程序的主机计算机上，然后安装并测试您的驱动程序在目标计算机上。
@@ -75,7 +75,7 @@ Visual Studio 部署时使用此技术的 UMDF 驱动程序，开启*UMDF 调试
 
 因为驱动程序初始化发生后不久 WUDFHost 加载，不能手动附加要调试初始化代码的时间。 相反，您可以设置注册表值会导致主机进程要等待的秒在主机初始化或驱动程序加载时某些数。 此延迟可以让用户有时间将 WinDbg 附加到正确的 WUDFHost 过程实例。
 
-请执行下列步骤：
+请执行以下步骤：
 
 1.  在目标计算机上注册表中，设置**HostProcessDbgBreakOnStart**或**HostProcessDbgBreakOnDriverLoad**到一定数量的秒和重新启动。
 2.  在目标计算机上以管理员身份打开 WinDbg。

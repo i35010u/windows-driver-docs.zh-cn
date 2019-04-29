@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the WDF-provided continuous reader object. The procedures in this topic provide step-by-step instructions about how to configure the object and use it to read data from a USB pipe.
+Description: 本主题介绍 WDF 提供持续的读取器对象。 本主题中的过程提供有关如何配置对象并使用它从 USB 管道读取数据的分步说明。
 title: 如何使用连续读取器从 USB 管道读取数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1189bc0a691e605083181a55538c1d76a2970d6f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373458"
 ---
 # <a name="how-to-use-the-continuous-reader-for-reading-data-from-a-usb-pipe"></a>如何使用连续读取器从 USB 管道读取数据
 
@@ -29,7 +29,7 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
 -   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 客户端驱动程序可以使用连续读取器之前，请确保满足这些要求：
 

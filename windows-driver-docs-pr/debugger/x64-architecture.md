@@ -9,11 +9,11 @@ keywords:
 ms.date: 03/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c0b3f92c2864a6d855d545934d7d35439d1653ce
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381912"
 ---
 # <a name="x64-architecture"></a>x64 体系结构
 
@@ -164,7 +164,7 @@ X64 处理器还提供了多个的浮点寄存器集：
 
 ### <a name="span-idcallingconventionsspanspan-idcallingconventionsspanspan-idcallingconventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>调用约定
 
-与不同的是 x86，C/c + + 编译器仅在 x64 上支持一个调用约定。 此调用约定在 x64 上充分利用可用的寄存器增加：
+与不同的是 x86，C /C++编译器仅支持在 x64 上一个调用约定。 此调用约定在 x64 上充分利用可用的寄存器增加：
 
 -   前四个整数或指针参数中传递**rcx**， **rdx**， **r8**，以及**r9**注册。
 
@@ -180,7 +180,7 @@ X64 处理器还提供了多个的浮点寄存器集：
 
 -   **rbx**， **rbp**， **rdi**， **rsi**， **r12**-**r15**将非易失性.
 
-C + + 调用约定是非常相似：**这**指针作为隐式的第一个参数传递。 接下来三个参数将传入寄存器，而其余部分传递到堆栈上。
+调用约定C++非常类似：**这**指针作为隐式的第一个参数传递。 接下来三个参数将传入寄存器，而其余部分传递到堆栈上。
 
 ### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>寻址模式
 

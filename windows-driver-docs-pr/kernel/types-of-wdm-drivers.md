@@ -16,11 +16,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b81d7cf1f0f7d31e9674d39a47a23439d20f8f7c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377021"
 ---
 # <a name="types-of-wdm-drivers"></a>WDM 驱动程序的类型
 
@@ -60,7 +60,7 @@ ms.locfileid: "56534384"
 
 下面的主题介绍三种常规类型的 WDM 驱动程序 — 总线驱动程序，功能的驱动程序，筛选器驱动程序 — 在详细信息。 此外包括是使用示例 USB 驱动程序的 WDM 驱动程序分层的示例。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [总线驱动程序](bus-drivers.md)

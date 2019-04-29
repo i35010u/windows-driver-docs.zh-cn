@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 139c31e579d9ef321025f9e7a962125d1c5acc4d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380293"
 ---
 # <a name="multiplexed-clfs-logs"></a>多路复用 CLFS 日志
 

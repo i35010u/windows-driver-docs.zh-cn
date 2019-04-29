@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 93ae2bf6f1f7e2acfa5837a38ab0d154580b271e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380765"
 ---
-# <a name="window--close-all-source-windows"></a>窗口 |关闭所有源 Windows
+# <a name="window--close-all-source-windows"></a>窗口 | 关闭所有源窗口
 
 
 ## <span id="ddk_window_close_all_source_windows_dbg"></span><span id="DDK_WINDOW_CLOSE_ALL_SOURCE_WINDOWS_DBG"></span>

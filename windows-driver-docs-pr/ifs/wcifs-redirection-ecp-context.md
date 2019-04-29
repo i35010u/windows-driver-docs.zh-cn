@@ -16,11 +16,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c61818f522849d9738d622feee193944ff2faa
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379383"
 ---
 # <a name="wcifsredirectionecpcontext-structure"></a>WCIFS\_重定向\_ECP\_上下文结构
 
@@ -55,7 +55,7 @@ typedef struct _WCIFS_REDIRECTION_ECP_CONTEXT {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -109,7 +109,7 @@ typedef struct _WCIFS_REDIRECTION_ECP_CONTEXT {
 <td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h</td>
 </tr>
 </tbody>

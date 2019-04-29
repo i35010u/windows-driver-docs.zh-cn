@@ -1,6 +1,6 @@
 ---
-title: DirectX 8.0 驱动程序的最小功能要求
-description: DirectX 8.0 驱动程序的最小功能要求
+title: DirectX 8.0 驱动程序的最低功能要求
+description: DirectX 8.0 驱动程序的最低功能要求
 ms.assetid: 8c939013-516c-4048-8de5-e95529891ac9
 keywords:
 - DirectX 8.0 发行说明 WDK Windows 2000 显示，请报告功能
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1368535cadc96b5c9b00561c1449426c2a501189
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385027"
 ---
-# <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的最小功能要求
+# <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的最低功能要求
 
 
 ## <span id="ddk_minimum_capability_requirements_for_directx_8_0_drivers_gg"></span><span id="DDK_MINIMUM_CAPABILITY_REQUIREMENTS_FOR_DIRECTX_8_0_DRIVERS_GG"></span>

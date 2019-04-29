@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_WRITE_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bb1da29df64250ee92f5f00d1edce07afa2b871
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381395"
 ---
 # <a name="irpmnwriteconfig"></a>IRP\_MN\_WRITE\_CONFIG
 
@@ -107,13 +107,13 @@ ULONG Length
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP\_MN\_查询\_接口**](irp-mn-query-interface.md)

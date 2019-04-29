@@ -1,17 +1,17 @@
 ---
-title: IWiaMiniDrvCallBack COM Interface
-description: IWiaMiniDrvCallBack COM Interface
+title: IWiaMiniDrvCallBack COM 接口
+description: IWiaMiniDrvCallBack COM 接口
 ms.assetid: a535d718-e34f-4cd0-9137-83d28d0b8e9c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ac6cf3725190c975b8fbe2db49f26b08b6dacb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381651"
 ---
-# <a name="iwiaminidrvcallback-com-interface"></a>IWiaMiniDrvCallBack COM Interface
+# <a name="iwiaminidrvcallback-com-interface"></a>IWiaMiniDrvCallBack COM 接口
 
 
 

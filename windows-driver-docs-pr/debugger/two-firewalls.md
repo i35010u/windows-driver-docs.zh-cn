@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c79f520a6a6d767a660fd20c2d4b382eb7b9b9a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380781"
 ---
 # <a name="two-firewalls"></a>两个防火墙
 

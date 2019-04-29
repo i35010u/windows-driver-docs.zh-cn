@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d10ce9df44cef5b42d05f81ef48cc3667eeee9c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384807"
 ---
 # <a name="avc-device-identifiers"></a>AV/C 设备标识符
 

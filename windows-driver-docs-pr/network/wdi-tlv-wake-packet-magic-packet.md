@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_MAGIC_PACKET 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f62b79a89d92e1158ffa8d21b71e96adafbed13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382135"
 ---
 # <a name="wditlvwakepacketmagicpacket"></a>WDI\_TLV\_唤醒\_数据包\_MAGIC\_数据包
 

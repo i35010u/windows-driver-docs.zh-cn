@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 00135aa3af9c79964fcdfa14622421b3a256598e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380893"
 ---
 # <a name="oidreceivefilterclearfilter"></a>OID\_RECEIVE\_FILTER\_CLEAR\_FILTER
 
@@ -123,7 +123,7 @@ NDIS 返回此请求的以下状态代码之一：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.20 及更高版本。</p></td>
 </tr>
 <tr class="even">

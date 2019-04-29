@@ -1,17 +1,17 @@
 ---
-title: WIA 平板扫描仪兼容性的 Windows XP 和 Windows Me
-description: WIA 平板扫描仪兼容性的 Windows XP 和 Windows Me
+title: Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
+description: Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
 ms.assetid: fc3424fa-3898-4f6a-a611-f81d97db8b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d4665903ce1cc4e878167bfc801ce702b2ccbe8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380945"
 ---
-# <a name="wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me"></a>WIA 平板扫描仪兼容性的 Windows XP 和 Windows Me
+# <a name="wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
 
 
 

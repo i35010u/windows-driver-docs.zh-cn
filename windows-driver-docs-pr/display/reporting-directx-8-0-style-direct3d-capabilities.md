@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bb0be0d01506d78f4ff97483d6a485d651862434
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383273"
 ---
 # <a name="reporting-directx-80-style-direct3d-capabilities"></a>报告 DirectX 8.0 样式 Direct3D 功能
 

@@ -1,6 +1,6 @@
 ---
-title: 替换为驱动程序所提供的属性表页
-description: 替换为驱动程序所提供的属性表页
+title: 替换驱动程序提供的属性表页
+description: 替换驱动程序提供的属性表页
 ms.assetid: b7f79841-f82c-4a60-9c2f-58772a65a5eb
 keywords:
 - 用户界面插件 WDK 打印，属性表页
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7bc30e52dcbfc099bd0ebc754cfa33c99055ed
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382577"
 ---
-# <a name="replacing-driver-supplied-property-sheet-pages"></a>替换为驱动程序所提供的属性表页
+# <a name="replacing-driver-supplied-property-sheet-pages"></a>替换驱动程序提供的属性表页
 
 
 

@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af4ac82973bd3a997b75de802ed315e6fc2edf5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384155"
 ---
 # <a name="codec-merit-validation"></a>编解码器优点验证
 

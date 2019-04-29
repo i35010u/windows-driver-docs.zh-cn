@@ -1,17 +1,17 @@
 ---
-title: 将数据上载到设备
-description: 将数据上载到设备
+title: 将数据上传到设备
+description: 将数据上传到设备
 ms.assetid: 50fc5f56-3758-4151-9748-dd88544006f1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c4360ef2d67d65fb65d7cc23399b63cee95fb8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383706"
 ---
-# <a name="uploading-data-to-a-device"></a>将数据上载到设备
+# <a name="uploading-data-to-a-device"></a>将数据上传到设备
 
 
 若要将数据传输到设备应用程序中，必须使用**IWiaTransfer::Upload**方法。 该应用程序提供数据流，将其用作数据源而不是目标。 同样，驱动程序调用**IStream::Read**而不是**IStream::Write**中上传这种情况。

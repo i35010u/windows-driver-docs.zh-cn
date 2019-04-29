@@ -1,6 +1,6 @@
 ---
-title: GDL HexSubStrings
-description: GDL HexSubStrings
+title: GDL 十六进制子字符串
+description: GDL 十六进制子字符串
 ms.assetid: 7451fd1f-a765-486a-bd90-bc01eac2c388
 keywords:
 - 构造 WDK GDL，字符串
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 403becf4763b4a4fcd9eb0446c2fd97e44b0146d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372131"
 ---
-# <a name="gdl-hexsubstrings"></a>GDL HexSubStrings
+# <a name="gdl-hexsubstrings"></a>GDL 十六进制子字符串
 
 
 一个*HexSubString*是一种方法来表示带引号的字符串中的非可显示字符。 HexSubString 引入的小于号 (&lt;) 并且已被终止的大于号 (&gt;)。

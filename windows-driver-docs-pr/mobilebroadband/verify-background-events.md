@@ -5,11 +5,11 @@ ms.assetid: c840f555-2e09-409d-9d4f-4d9e8bd8d5a5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 032a0a6056235b9a55faceee0137ee00f0d071c5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386249"
 ---
 # <a name="verify-background-events"></a>验证后台事件
 
@@ -32,7 +32,7 @@ ms.locfileid: "56533262"
 
 -   **访问被拒绝**在某些情况下，你的应用将会收到背景事件，但可能无法检索身份验证尝试的详细信息。 在这种情况下，背景事件应完全停止越早越好。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [热点身份验证应用入门](get-started-with-a-hotspot-authentication-app.md)

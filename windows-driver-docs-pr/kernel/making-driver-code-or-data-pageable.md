@@ -8,11 +8,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f03445b66b962193a64deb4e7522c884f05ea2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378739"
 ---
 # <a name="making-driver-code-or-data-pageable"></a>使驱动程序代码或数据可分页
 

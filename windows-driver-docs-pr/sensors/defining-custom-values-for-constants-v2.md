@@ -5,11 +5,11 @@ ms.assetid: 53534391-4251-4AB6-9D3C-AE0BC624465A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a251b9a542ddd7f0871ac92455c108b14c0a2a66
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377851"
 ---
 # <a name="defining-custom-values-for-sensor-constants"></a>定义自定义值的传感器常量
 

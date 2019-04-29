@@ -8,11 +8,11 @@ keywords:
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 695c46e35e34d38083b4c95cedecfff1026ed6d6
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382882"
 ---
 # <a name="wditlvftmtargetbssentry"></a>WDI_TLV_FTM_TARGET_BSS_ENTRY
 
@@ -46,6 +46,6 @@ ms.locfileid: "59905250"
 
 |   |   |
 | --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
+| 最低受支持的客户端 | Windows 10 版本 1903 |
 | 最低受支持的服务器 | Windows Server 2016 |
 | Header | Wditypes.hpp |

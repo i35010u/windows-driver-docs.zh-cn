@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 586e4baf835cec41de8f0b28d00f90707ed76910
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63377096"
 ---
 # <a name="floppyclassguid"></a>FloppyClassGuid
 
@@ -41,7 +41,7 @@ FloppyClassGuid 是已过时标识符[设备接口类](https://msdn.microsoft.co
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_FLOPPY。</p></td>
 </tr>
 <tr class="even">

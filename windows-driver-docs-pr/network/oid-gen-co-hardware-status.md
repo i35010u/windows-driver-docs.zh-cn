@@ -7,11 +7,11 @@ keywords:
 ms.date: 11/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e66f46a34e7f8afc5ac138ac7dfa0a3fcd5f0b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379219"
 ---
 # <a name="oidgencohardwarestatus"></a>OID_GEN_CO_HARDWARE_STATUS
 
@@ -36,6 +36,6 @@ OID_GEN_CO_HARDWARE_STATUS OID 指定的基础 NIC 的新的硬件状态作为�
 
 | | |
 | --- | --- |
-| 版本 | Windows Vista 及更高版本 |
+| Version | Windows Vista 及更高版本 |
 | Header | Ntddndis.h （包括 Ndis.h） |
 

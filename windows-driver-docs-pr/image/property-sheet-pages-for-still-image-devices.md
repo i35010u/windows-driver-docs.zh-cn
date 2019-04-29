@@ -5,11 +5,11 @@ ms.assetid: ef77e57d-f791-4afa-8d51-67e78b60cf57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c459ae18b2b3ae6788c1e5462516d7eb6189e8e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379641"
 ---
 # <a name="property-sheet-pages-for-still-image-devices"></a>静态图像设备的属性表页面
 

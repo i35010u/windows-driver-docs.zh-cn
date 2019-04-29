@@ -1,6 +1,6 @@
 ---
-title: 提供用于视频解码的功能
-description: 提供用于视频解码的功能
+title: 提供视频解码功能
+description: 提供视频解码功能
 ms.assetid: bffcc0da-7b1a-4f70-98f5-4841c8df9f12
 keywords:
 - 视频解码 WDK DirectX VA，功能提供每个请求类型
@@ -16,13 +16,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ed25b655066e33c770f76b278498be1fe4da608
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383866"
 ---
-# <a name="providing-capabilities-for-video-decoding"></a>提供用于视频解码的功能
+# <a name="providing-capabilities-for-video-decoding"></a>提供视频解码功能
 
 
 当其[ **GetCaps** ](https://msdn.microsoft.com/library/windows/hardware/ff566762)调用函数，用户模式显示驱动程序提供以下功能的视频解码基于请求类型 (中指定**类型**的成员[ **D3DDDIARG\_GETCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff543148)结构*GetCaps*函数的*pData*参数指向):

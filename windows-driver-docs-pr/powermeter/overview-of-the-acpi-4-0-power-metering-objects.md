@@ -1,6 +1,6 @@
 ---
-title: ACPI 概述 4.0 Power 计数对象
-description: ACPI 概述 4.0 Power 计数对象
+title: ACPI 4.0 功率计量对象概述
+description: ACPI 4.0 功率计量对象概述
 ms.assetid: 91488b88-bbdc-40e9-9095-2ea3fb7d69ad
 keywords:
 - Power 计量和预算 WDK，ACPI 4.0 power 计数对象
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f03bd14336c5fddca298b6f7775ef8114bf4d161
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381260"
 ---
-# <a name="overview-of-the-acpi-40-power-metering-objects"></a>ACPI 概述 4.0 Power 计数对象
+# <a name="overview-of-the-acpi-40-power-metering-objects"></a>ACPI 4.0 功率计量对象概述
 
 
 ACPI Power 计量接口 (PMI) 公开 power 计量和预算提供 WDM PMI 接口的驱动程序的硬件平台的功能。

@@ -1,6 +1,6 @@
 ---
-title: 报表的宽度和高度压缩的纹理图面
-description: 报表的宽度和高度压缩的纹理图面
+title: 报告压缩纹理图面的宽度和高度
+description: 报告压缩纹理图面的宽度和高度
 ms.assetid: 262262b6-9fef-4f28-beec-373f78a10f8f
 keywords:
 - WDK DirectDraw，压缩的纹理的图面
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f89d4c4e5d2657aa251776eb7d405d3235a42cd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383236"
 ---
-# <a name="reporting-width-and-height-of-compressed-texture-surfaces"></a>报表的宽度和高度压缩的纹理图面
+# <a name="reporting-width-and-height-of-compressed-texture-surfaces"></a>报告压缩纹理图面的宽度和高度
 
 
 ## <span id="ddk_reporting_width_and_height_of_compressed_texture_surfaces_gg"></span><span id="DDK_REPORTING_WIDTH_AND_HEIGHT_OF_COMPRESSED_TEXTURE_SURFACES_GG"></span>

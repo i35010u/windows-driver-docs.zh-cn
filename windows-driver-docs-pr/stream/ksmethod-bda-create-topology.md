@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f8bb4847cc97e0e890dd627d408a891d0bf2759
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382094"
 ---
 # <a name="ksmethodbdacreatetopology"></a>KSMETHOD\_BDA\_创建\_拓扑
 

@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the steps for issuing a select-interface request to activate an alternate setting in a USB interface.
+Description: 本主题介绍发出选择接口请求以激活一项备用设置 USB 接口中的步骤。
 title: 如何在 USB 界面中选择备用设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fa8746c5b091a12aa15bd2a24855d529a60e34ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379514"
 ---
 # <a name="how-to-select-an-alternate-setting-in-a-usb-interface"></a>如何在 USB 界面中选择备用设置
 
@@ -37,7 +37,7 @@ Windows Driver Foundation (WDF) 提供了中的方法[内核模式驱动程序�
 -   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 
-### <a name="prerequisites"></a>必备组件
+### <a name="prerequisites"></a>先决条件
 
 客户端驱动程序可以选择一项备用设置之前，请确保满足这些要求：
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a812bd7b11c7f1118ec14a7f2a934ba0c09b56
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380693"
 ---
 # <a name="wditlvpmprotocolrsnoffloadkeys"></a>WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
 
@@ -33,4 +33,4 @@ WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是 TLV，其中包含当前配置的 Rsn E
 | --- | --- |
 | 最低受支持的客户端 | Windows 10 版本 1803 |
 | 最低受支持的服务器 | Windows Server 2016 |
-| 标头 | Wditypes.hpp |
+| Header | Wditypes.hpp |

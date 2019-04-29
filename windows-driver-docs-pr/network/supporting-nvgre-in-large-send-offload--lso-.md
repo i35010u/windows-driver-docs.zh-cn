@@ -5,11 +5,11 @@ ms.assetid: 1EB1B8C2-85C1-4256-BE96-C8B9F1D222B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 833c4ca772178774ad31b040effd5e41183400fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384220"
 ---
 # <a name="supporting-nvgre-in-large-send-offload-lso"></a>在大规模发送卸载 (LSO) 中支持 NVGRE
 

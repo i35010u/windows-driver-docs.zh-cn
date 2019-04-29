@@ -1,6 +1,6 @@
 ---
-title: 包含多个处理器安全
-description: 包含多个处理器安全
+title: 多处理器防护
+description: 多处理器防护
 ms.assetid: 58c51f3e-98c4-4aa0-ad4d-cd9225f78141
 keywords:
 - 多处理器安全 WDK 内核
@@ -18,13 +18,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8985ac00d69fcadda8a7b2fb05e57068d9061494
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380288"
 ---
-# <a name="multiprocessor-safe"></a>包含多个处理器安全
+# <a name="multiprocessor-safe"></a>多处理器防护
 
 
 

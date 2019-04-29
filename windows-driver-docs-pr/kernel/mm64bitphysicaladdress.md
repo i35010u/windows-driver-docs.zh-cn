@@ -5,11 +5,11 @@ ms.assetid: 1ea5c4e3-ed70-449c-a49e-b1e3c892e981
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: ecaf5b20ac14617420e08e38dad895a204a1bfc5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380325"
 ---
 # <a name="windows-kernel-global-variables"></a>Windows 内核全局变量
 

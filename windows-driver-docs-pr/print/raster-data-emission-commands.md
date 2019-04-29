@@ -1,6 +1,6 @@
 ---
-title: 光栅数据发出命令
-description: 光栅数据发出命令
+title: 光栅数据发射命令
+description: 光栅数据发射命令
 ms.assetid: 31a25de3-f66b-4cf0-90ea-988d75838f68
 keywords:
 - 数据发出光栅打印命令 WDK Unidrv
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fd12851f90f20be054259775302005204fe20981
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372419"
 ---
-# <a name="raster-data-emission-commands"></a>光栅数据发出命令
+# <a name="raster-data-emission-commands"></a>光栅数据发射命令
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "56521889"
 </colgroup>
 <thead>
 <tr class="header">
-<th>命令</th>
+<th>Command</th>
 <th>描述</th>
 <th>备注</th>
 </tr>

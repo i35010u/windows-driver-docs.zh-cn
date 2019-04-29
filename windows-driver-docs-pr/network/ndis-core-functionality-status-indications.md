@@ -9,11 +9,11 @@ ms.assetid: 6C4BC99E-38D0-4529-89CC-B526F9842E17
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ade2eb90bca81bb4e672a46b4fc2442d7cb3a604
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383598"
 ---
 # <a name="ndis-core-functionality-status-indications"></a>NDIS 核心功能状态指示
 

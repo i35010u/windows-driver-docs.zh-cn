@@ -1,6 +1,6 @@
 ---
-title: IViewHelper 克隆视图 COM 对象的要求
-description: IViewHelper 克隆视图 COM 对象的要求
+title: IViewHelper Clone-View COM 对象的要求
+description: IViewHelper Clone-View COM 对象的要求
 ms.assetid: ef599874-64c5-480e-a7bc-666ababd4d08
 keywords:
 - TMM WDK 显示，IViewHelper 要求
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 267be0ccb6be5e6621f173aa7c2b7fe453548bef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383215"
 ---
-# <a name="requirements-of-an-iviewhelper-clone-view-com-object"></a>IViewHelper 克隆视图 COM 对象的要求
+# <a name="requirements-of-an-iviewhelper-clone-view-com-object"></a>IViewHelper Clone-View COM 对象的要求
 
 
 硬件供应商的克隆视图[IViewHelper](https://msdn.microsoft.com/library/windows/hardware/ff568164) COM 接口对象必须满足以下要求：

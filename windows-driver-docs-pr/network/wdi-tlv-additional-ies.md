@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_ADDITIONAL_IES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b9435f3958ae96bf91457b629d5ab9e80c9e5e21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380561"
 ---
 # <a name="wditlvadditionalies"></a>WDI\_TLV\_ADDITIONAL\_IES
 

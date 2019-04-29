@@ -1,6 +1,6 @@
 ---
-title: 已检验的版本检查
-description: 已检验的版本检查
+title: 已检验版本检查哪些项目
+description: 已检验版本检查哪些项目
 ms.assetid: c60e3957-fe95-4c47-a674-1ca6ad7d26ac
 keywords:
 - 检查内部版本号 WDK，执行检查
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14593ef729ca87ea7f76713f9923f11e4ddc85a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379120"
 ---
-# <a name="what-the-checked-build-checks"></a>已检验的版本检查
+# <a name="what-the-checked-build-checks"></a>已检验版本检查哪些项目
 
 
 ## <span id="ddk_what_the_checked_build_checks_tools"></span><span id="DDK_WHAT_THE_CHECKED_BUILD_CHECKS_TOOLS"></span>

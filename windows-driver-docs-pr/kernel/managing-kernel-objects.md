@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3883195353e59c1ed62819b03ed5af3dfb673d6b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380279"
 ---
 # <a name="managing-kernel-objects"></a>管理内核对象
 
@@ -45,7 +45,7 @@ Windows 对象管理器控件*对象*是内核模式下操作系统的一部分�
 
 -   部分对象。 (请参阅[部分对象和视图](section-objects-and-views.md)。)
 
-内核模式的对象，可以使用对象管理器操作合作关系中的对象，而不损坏操作系统需要的对象的部分。 此原则称为*封装*，而是一个面向对象的编程的核心概念。 (因为内核模式的对象不提供的面向对象的其他方面，内核模式编程通常称为[*基于对象的*](object-based.md)。)内核模式的对象不遵循 c + + 或 com。 Microsoft 中的对象相同的规则
+内核模式的对象，可以使用对象管理器操作合作关系中的对象，而不损坏操作系统需要的对象的部分。 此原则称为*封装*，而是一个面向对象的编程的核心概念。 (因为内核模式的对象不提供的面向对象的其他方面，内核模式编程通常称为[*基于对象的*](object-based.md)。)内核模式的对象不遵循相同的规则中的对象C++或 Microsoft com。
 
 可以通过指针引用内核模式对象。 对象可能包含的对象名称。 有关对象名称的详细信息，请参阅[对象名称](object-names.md)。
 

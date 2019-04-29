@@ -1,17 +1,17 @@
 ---
-title: 启用对 Direct3D 版本 10 DDI 的支持
-description: 启用对 Direct3D 版本 10 DDI 的支持
+title: 启用 Direct3D 版本 10 DDI 的支持
+description: 启用 Direct3D 版本 10 DDI 的支持
 ms.assetid: ccbfecd2-8609-4e59-ac43-911f57af7980
 ms.date: 10/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e2d6a58a784ea894eec8bfb506c36b74c90966
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379484"
 ---
-# <a name="enabling-support-for-the-direct3d-version-10-ddi"></a>启用对 Direct3D 版本 10 DDI 的支持
+# <a name="enabling-support-for-the-direct3d-version-10-ddi"></a>启用 Direct3D 版本 10 DDI 的支持
 
 
 若要启用支持的 10 个 DDI、 INF 文件的用户模式显示驱动程序 DLL 的版本安装了显示器驱动程序的图形设备必须列出无论 DLL 的名称的 Direct3D 版本 10 DDI 中存在相同 DLL 作为[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/direct3d-functions-implemented-by-user-mode#direct3d-version-9-functions)或在单独的 DLL 中。

@@ -1,6 +1,6 @@
 ---
-title: 报告对 DeinterlaceBltEx 的支持
-description: 报告对 DeinterlaceBltEx 的支持
+title: 报告 DeinterlaceBltEx 支持
+description: 报告 DeinterlaceBltEx 支持
 ms.assetid: 9cf8d05c-ef59-44a4-a377-66282e7888d5
 keywords:
 - DeinterlaceBltEx，报告
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6081399bb60914df9e97e41fe4405121f9d44bb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383250"
 ---
-# <a name="reporting-support-for-deinterlacebltex"></a>报告对 DeinterlaceBltEx 的支持
+# <a name="reporting-support-for-deinterlacebltex"></a>报告 DeinterlaceBltEx 支持
 
 
 **本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**

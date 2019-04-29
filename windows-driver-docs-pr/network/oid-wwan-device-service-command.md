@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_COMMAND 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 593b6589e023d77367618f960d38a2a3eecd2151
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386675"
 ---
 # <a name="oidwwandeviceservicecommand"></a>OID\_WWAN\_设备\_服务\_命令
 
@@ -33,7 +33,7 @@ OID\_WWAN\_设备\_服务\_命令允许微型端口驱动程序来实现供应�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
 </tr>
 <tr class="even">

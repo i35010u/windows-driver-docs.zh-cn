@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_KEEPALIVE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6dc1c84d48b2c0daae9e315c8703ed45cbcffb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373777"
 ---
 # <a name="sokeepalive"></a>因此\_KEEPALIVE
 
@@ -82,7 +82,7 @@ SO 的状态\_KEEPALIVE 套接字选项用于确定是否在面向连接的套�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -146,11 +146,11 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ws2def.h （包括 Wsk.h）</td>
 </tr>
 </tbody>

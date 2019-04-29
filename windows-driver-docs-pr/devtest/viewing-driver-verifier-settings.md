@@ -1,6 +1,6 @@
 ---
-title: 查看驱动程序验证器设置
-description: 查看驱动程序验证器设置
+title: 查看驱动程序验证程序设置
+description: 查看驱动程序验证程序设置
 ms.assetid: 2dd5f1b4-5c78-459c-8b73-c8d511f8a22b
 keywords:
 - 驱动程序验证程序 WDK，查看设置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 113971bef0be1169081c2dda7d2485dab1d43f5a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379868"
 ---
-# <a name="viewing-driver-verifier-settings"></a>查看驱动程序验证器设置
+# <a name="viewing-driver-verifier-settings"></a>查看驱动程序验证程序设置
 
 
 ## <span id="ddk_viewing_driver_verifier_settings_tools"></span><span id="DDK_VIEWING_DRIVER_VERIFIER_SETTINGS_TOOLS"></span>

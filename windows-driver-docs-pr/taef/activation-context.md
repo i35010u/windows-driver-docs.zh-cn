@@ -5,11 +5,11 @@ ms.assetid: 76584379-2AEF-47e0-B14E-C7698903658F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3388671e65c10e205114934ddb1c2fbb26ce0505
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555950"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380501"
 ---
 # <a name="activation-context"></a>激活上下文
 

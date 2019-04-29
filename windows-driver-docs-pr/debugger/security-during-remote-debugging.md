@@ -1,6 +1,6 @@
 ---
-title: 远程调试过程中的安全性
-description: 远程调试过程中的安全性
+title: 远程调试期间的安全性
+description: 远程调试期间的安全性
 ms.assetid: 55e570d2-b005-4c09-ac8f-0632233a64bd
 keywords:
 - 安全注意事项，远程调试
@@ -10,13 +10,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0ac7750e8e69100b9ac45c24d4dc21f3ffd64e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381991"
 ---
-# <a name="security-during-remote-debugging"></a>远程调试过程中的安全性
+# <a name="security-during-remote-debugging"></a>远程调试期间的安全性
 
 
 ## <span id="ddk_security_during_remote_debugging_dbg"></span><span id="DDK_SECURITY_DURING_REMOTE_DEBUGGING_DBG"></span>

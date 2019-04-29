@@ -5,11 +5,11 @@ ms.assetid: BFB38805-D2D3-40D2-B336-127B3B84141D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1096273ecc33287e464d7ebc1af71797adc1386
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380215"
 ---
 # <a name="minidriver-version-507-features"></a>微型驱动程序版本 5.07 功能
 

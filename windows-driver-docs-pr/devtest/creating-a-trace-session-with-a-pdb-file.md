@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d08ac7b33e8fcc72ee185f9ff7ad9d96e40d481
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63381012"
 ---
 # <a name="creating-a-trace-session-with-a-pdb-file"></a>使用 PDB 文件创建跟踪会话
 
@@ -43,7 +43,7 @@ ms.locfileid: "56533929"
 
 9.  [设置高级跟踪会话选项](setting-advanced-trace-session-options.md)，如果所需的。
 
-10. 单击“完成” 。
+10. 单击 **“完成”**。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_COALESCING_FILTER_MATCH_COUNT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ea499ff0229bae2e18017c3468b98d8c47b11322
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380555"
 ---
 # <a name="wditlvcoalescingfiltermatchcount"></a>WDI\_TLV\_COALESCING\_筛选器\_匹配\_计数
 

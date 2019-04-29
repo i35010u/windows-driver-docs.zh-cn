@@ -5,11 +5,11 @@ ms.assetid: ee4a0d3f-028b-4d25-badf-393198da3191
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: f6ef9c94919c85c636fd1296d93c9240c55766ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378098"
 ---
 # <a name="scsireadcapacity"></a>ScsiReadCapacity
 

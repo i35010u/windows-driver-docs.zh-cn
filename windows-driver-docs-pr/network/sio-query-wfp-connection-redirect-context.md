@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a8bfb1206a1e16d26f55487b8db5e94ea82f65bb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370549"
 ---
 # <a name="sioquerywfpconnectionredirectcontext-control-code"></a>SIO\_查询\_WFP\_连接\_重定向\_上下文控制代码
 
@@ -113,7 +113,7 @@ Winsock 客户端必须释放分配的缓冲区，直到 IRP 完成 WSK 子系�
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -123,7 +123,7 @@ Winsock 客户端必须释放分配的缓冲区，直到 IRP 完成 WSK 子系�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [使用绑定或连接重定向](https://msdn.microsoft.com/library/windows/hardware/ff571005)

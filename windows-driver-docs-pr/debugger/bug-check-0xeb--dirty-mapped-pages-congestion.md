@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: edfdb453ecba8934ed8bdc9e97da6886abc64b51
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373115"
 ---
 # <a name="bug-check-0xeb-dirtymappedpagescongestion"></a>Bug 检查 0xEB：脏\_映射\_页面\_拥塞
 

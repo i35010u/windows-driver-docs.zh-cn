@@ -5,11 +5,11 @@ ms.assetid: 28473b3b-2b88-4abc-81b5-9a6a7f8166e3
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 70a07917f4065bad385ff2966d676ddf6a111c7a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380321"
 ---
 # <a name="mssmhbaportlun-wmi-class"></a>MS\_SMHBA\_PORTLUN WMI 类
 

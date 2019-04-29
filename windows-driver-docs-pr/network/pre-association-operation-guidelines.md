@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 863d3eadbcd0a9f03037c7380952bf1ac7445e09
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380075"
 ---
 # <a name="pre-association-operation-guidelines"></a>关联前的操作指导原则
 

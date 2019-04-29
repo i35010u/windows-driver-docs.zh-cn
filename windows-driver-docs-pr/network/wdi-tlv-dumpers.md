@@ -1,17 +1,17 @@
 ---
-title: WDI TLV dumpers
+title: WDI TLV 转储器
 description: 分析器生成器库有例程来解码为跟踪语句的 TLV 字节数组。
 ms.assetid: 4F8B53E5-1F51-4119-AC06-7A710340E4A4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cee50be2223923c03fa3ebcd1874dd9152f150a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380870"
 ---
-# <a name="wdi-tlv-dumpers"></a>WDI TLV dumpers
+# <a name="wdi-tlv-dumpers"></a>WDI TLV 转储器
 
 
 分析器生成器库有例程来解码为跟踪语句的 TLV 字节数组。

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a2680d79b405c41a4c6c9f03f42ebb6319e58ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380550"
 ---
 # <a name="setting-and-clearing-a-communication-mode-for-a-parallel-device"></a>设置和清除并行设备的通信模式
 

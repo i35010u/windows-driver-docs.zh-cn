@@ -1,14 +1,14 @@
 ---
-Description: Supporting Client Contexts
+Description: 支持客户端上下文
 title: 支持客户端上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b227917f936a9f0a0136e786b06b4bd91ea39c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380852"
 ---
 # <a name="supporting-client-contexts"></a>支持客户端上下文
 
@@ -59,7 +59,7 @@ Windows 便携式设备 (WPD) 驱动程序提供了应用程序和物理设备�
 
 实现示例**IQueueCleanup**回调是 WpdWudfSampleDriver 驱动程序**CQueue::OnCleanup**方法。 此方法检索存储在 IWDFObject 对象 ContextMap (在此情况下，实例从 IWDFFile **OnCreateFile**) 并释放已分配的内存，包括 ContextMap 保存的对象。 若要避免内存泄漏，请确保正确清理，和 （如果适用） 递减引用计数对象。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

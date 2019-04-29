@@ -1,5 +1,5 @@
 ---
-title: 内核模式下支持 OpenGL 可安装的客户端驱动程序
+title: OpenGL 可安装客户端驱动程序的内核模式支持
 description: 提供内核模式下支持 OpenGL 可安装的客户端驱动程序
 ms.assetid: 1871594a-ca4d-4a3c-bf12-bbf80fecefe9
 keywords:
@@ -11,13 +11,13 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 0d524ad18cc360797ba4978f76838121a521314e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383862"
 ---
-# <a name="kernel-mode-support-to-the-opengl-installable-client-driver"></a>内核模式下支持 OpenGL 可安装的客户端驱动程序
+# <a name="kernel-mode-support-to-the-opengl-installable-client-driver"></a>OpenGL 可安装客户端驱动程序的内核模式支持
 
 
 OpenGL 可安装的客户端驱动程序 (ICD) 可以获得相同级别的调用作为内核模式服务的支持[Direct3D 用户模式显示驱动程序](initializing-communication-with-the-direct3d-user-mode-display-driver.md)。 但是，而获得对回调函数，例如 Microsoft Direct3D 运行时通过内核模式服务访问权限通过提供不是**pAdapterCallbacks**的成员[ **D3DDDIARG\_OPENADAPTER** ](https://msdn.microsoft.com/library/windows/hardware/ff543226)结构并**pCallbacks**的成员[ **D3DDDIARG\_CREATEDEVICE** ](https://msdn.microsoft.com/library/windows/hardware/ff542931)结构，OpenGL ICD 必须加载 Gdi32.dll 和初始化使用[OpenGL 的内核的模式下访问函数](https://msdn.microsoft.com/library/windows/hardware/ff568606)如下面的代码示例中所示。 此代码不实现[Windows 8 中 OpenGL 的增强功能](supporting-opengl-enhancements.md)。
