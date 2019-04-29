@@ -11,11 +11,11 @@ keywords:
 ms.date: 03/13/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 534c208507ed2c07e233984b3a159fac8fc82854
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380108"
 ---
 # <a name="extracting-information-from-a-dump-file"></a>从转储文件中提取信息
 

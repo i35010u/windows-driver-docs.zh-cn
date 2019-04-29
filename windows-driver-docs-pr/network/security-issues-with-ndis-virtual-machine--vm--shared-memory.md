@@ -1,17 +1,17 @@
 ---
-title: 使用 NDIS 虚拟机 (VM) 的安全问题共享内存
-description: 使用 NDIS 虚拟机 (VM) 的安全问题共享内存
+title: NDIS 虚拟机 (VM) 共享内存的安全问题
+description: NDIS 虚拟机 (VM) 共享内存的安全问题
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7abc25dca98a2e04cd61dfe692e4ebf1d4854d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366159"
 ---
-# <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>使用 NDIS 虚拟机 (VM) 的安全问题共享内存
+# <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 虚拟机 (VM) 共享内存的安全问题
 
 
 

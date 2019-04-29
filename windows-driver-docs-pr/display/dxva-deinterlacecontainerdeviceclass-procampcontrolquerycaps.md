@@ -18,11 +18,11 @@ ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: f95f36d60efeebdd5657274e745b9c96c8dec8f2
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363106"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps 方法
 
@@ -66,7 +66,7 @@ HRESULT ProcAmpControlQueryCaps(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

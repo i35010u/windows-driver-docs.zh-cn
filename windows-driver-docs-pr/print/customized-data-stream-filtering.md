@@ -1,6 +1,6 @@
 ---
-title: 自定义数据 Stream 筛选
-description: 自定义数据 Stream 筛选
+title: 自定义的数据流筛选
+description: 自定义的数据流筛选
 ms.assetid: 768d4b95-4d8d-4460-9a8c-c80785f7f799
 keywords:
 - Unidrv，流筛选数据
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e7a6c4f2681062f9f3cbb76b03765c8ace093e1d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365551"
 ---
-# <a name="customized-data-stream-filtering"></a>自定义数据 Stream 筛选
+# <a name="customized-data-stream-filtering"></a>自定义的数据流筛选
 
 
 

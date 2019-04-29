@@ -1,14 +1,14 @@
 ---
-Description: PROPERTYKEYs and GUIDs in Windows Portable Devices
+Description: Windows 便携设备中的 PROPERTYKEY 和 GUID
 title: Windows 便携设备中的 PROPERTYKEY 和 GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ba408fa498b0e543d8de61c16571e77d86ee9c69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376231"
 ---
 # <a name="propertykeys-and-guids-in-windows-portable-devices"></a>Windows 便携设备中的 PROPERTYKEY 和 GUID
 

@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a7307efaafc572d15d892c08df3b43b7e75f25
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384579"
 ---
 # <a name="irqliopassive1-rule-wdm"></a>IrqlIoPassive1 规则 (wdm)
 
@@ -86,7 +86,7 @@ ms.locfileid: "56546093"
 
  
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoAttachDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548294)

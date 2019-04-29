@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 562064e1ce3ad47671f1e7956287a049818ee1ca
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63361523"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 

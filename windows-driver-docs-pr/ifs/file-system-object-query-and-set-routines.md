@@ -1,6 +1,6 @@
 ---
-title: 文件系统对象查询和 Set 例程
-description: 文件系统对象查询和 Set 例程
+title: 文件系统对象查询和设置例程
+description: 文件系统对象查询和设置例程
 ms.assetid: 34b97a6e-a155-443c-94dd-4d8f1fc4b430
 keywords:
 - 最小重定向程序 WDK，查询操作
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a85652432f7a6328ce169e8a0726bcfb4ce8d21d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383840"
 ---
-# <a name="file-system-object-query-and-set-routines"></a>文件系统对象查询和 Set 例程
+# <a name="file-system-object-query-and-set-routines"></a>文件系统对象查询和设置例程
 
 
 数可以通过网络微型重定向的例程用于查询和设置的系统对象的文件上的操作。 RDBSS 发出大部分这些调用以响应接收 IRP 查询或文件对象上设置的信息。 存在 RDBSS 接收 IRP 和 MRx 之间直接的对应关系查询或设置 RDBSS 调用的操作。

@@ -1,14 +1,14 @@
 ---
-Description: This topic provides information about steps you can try when a data transfer to a USB pipe fails. The mechanisms described in this topic cover abort, reset, and cycle port operations on bulk, interrupt, and isochronous pipes.
+Description: 本主题提供有关步骤的信息可以尝试在数据传输到 USB 管道时失败。 本主题涵盖中所述的机制中止，重置，并循环大容量、 中断，并等时管道上的端口操作。
 title: 如何从 USB 管道错误中恢复
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8934d75986713bb65f32e461d388326a12304b9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364737"
 ---
 # <a name="how-to-recover-from-usb-pipe-errors"></a>如何从 USB 管道错误中恢复
 
@@ -51,7 +51,7 @@ USB 客户端驱动程序通过将控件传输发送到默认终结点; 与其�
 
 -   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>系统必备
 
 -   客户端驱动程序必须已创建的 framework USB 目标设备对象。
 

@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_BLOCK_SIZE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: f320cf7bebb06e6a861c9835cee573b1024f0edf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367533"
 ---
 # <a name="oidgenreceiveblocksize"></a>OID\_GEN\_RECEIVE\_BLOCK\_SIZE
 

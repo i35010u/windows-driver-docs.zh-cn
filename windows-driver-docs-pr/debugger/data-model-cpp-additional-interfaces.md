@@ -1,33 +1,33 @@
 ---
-title: 调试器数据模型 c + + 其他接口
-description: 本主题介绍与调试器的 c + + 数据模型，如元数据、 概念和对象的枚举相关联的其他接口。
+title: 调试器数据模型 C++ 的其他接口
+description: 本主题介绍与调试器相关联的其他接口C++数据模型，如元数据、 概念和对象的枚举。
 ms.date: 10/05/2018
 ms.openlocfilehash: 3c0a9f9f11accd8d78a90b110cfae38d77257412
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374963"
 ---
-# <a name="debugger-data-model-c-additional-interfaces"></a>调试器数据模型 c + + 其他接口
+# <a name="debugger-data-model-c-additional-interfaces"></a>调试器数据模型 C++ 的其他接口
 
-本主题介绍一些与调试器的 c + + 数据模型，如元数据、 概念和对象的枚举相关联的其他接口。
+本主题介绍一些与调试器相关联的其他接口C++数据模型，如元数据、 概念和对象的枚举。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
 ---
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -135,7 +135,7 @@ DECLARE_INTERFACE_(IKeyEnumerator, IUnknown)
 GetNext 方法都将枚举数向前移动，并返回该枚举中的位置处的键。
 
 
-**IRawEnumerator:枚举 （C/c + +） 的本机或基础语言构造**
+**IRawEnumerator:本机或基础语言的枚举 (C /C++) 构造**
 
 IRawEnumerator 接口是 （通过值或引用） 对象的表示的调试目标的地址空间中的本机结构中的所有本机/语言构造的枚举的单个接口。 接口定义，如下所示： 
 
@@ -158,17 +158,17 @@ GetNext 方法都将枚举数向前移动，并返回该位置的枚举中的本
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 

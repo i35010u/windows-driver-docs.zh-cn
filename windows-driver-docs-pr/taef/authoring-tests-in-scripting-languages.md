@@ -5,16 +5,16 @@ ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385156"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
 
-除了 c + + 和C#，TAEF 支持创作脚本语言中的测试。
+除了C++和C#、 TAEF 支持创作脚本语言中的测试。
 
 创建脚本组件使用支持脚本编写 Microsoft COM 接口的任何脚本语言。 脚本语言支持这些接口包括 JScript、 Microsoft Visual Basic Scripting Edition (VBScript)、 PERLScript、 PScript、 Ruby 和 Python。
 

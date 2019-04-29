@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 038d564ad4f6055164d63f4af1cf0921493c8553
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366989"
 ---
 # <a name="wiadpspreview"></a>WIA\_DPS\_预览
 
@@ -75,7 +75,7 @@ WIA\_DPS\_预览属性指示设备的预览模式。 应用程序设置此属性
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>适用于 Microsoft Windows XP。 适用于 Windows Vista 及更高版本，使用相同的 WIA_IPS_PREVIEW 属性。</p></td>
 </tr>
 <tr class="even">

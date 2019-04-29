@@ -1,5 +1,5 @@
 ---
-title: sq （设置安静模式）
+title: sq（设置安静模式）
 description: Sq 命令打开或关闭安静模式。
 ms.assetid: db8a266c-e2e5-4de7-8154-993a78585f04
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ff1ee435585c99cb0bb2f7df467d2a011b3b07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368077"
 ---
-# <a name="sq-set-quiet-mode"></a>sq （设置安静模式）
+# <a name="sq-set-quiet-mode"></a>sq（设置安静模式）
 
 
 **Sq**命令会启用安静模式下打开或关闭。

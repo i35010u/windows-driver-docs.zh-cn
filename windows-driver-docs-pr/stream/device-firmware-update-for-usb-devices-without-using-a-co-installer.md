@@ -4,11 +4,11 @@ description: 概述了更新而无需辅助安装程序的 USB 设备固件的�
 ms.date: 11/15/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ad53b257200cd14db227111a6cf7ed0767b2acf2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374107"
 ---
 # <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>设备固件更新的 USB 设备而无需使用共同安装程序
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f31b8c5a1022a5ed0498f65b9f277068e59ea4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362768"
 ---
 # <a name="installation-constraints"></a>安装约束
 

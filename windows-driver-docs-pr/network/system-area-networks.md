@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d792c2c4a6809b794b8e41a84c03ad01a915bf13
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362543"
 ---
 # <a name="system-area-networks"></a>系统区域网络
 

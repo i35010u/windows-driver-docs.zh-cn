@@ -5,11 +5,11 @@ ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c3b835a15c6fd02855bf69f1e81344f6b6b7c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376993"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>测试桌面 COSA/APN 数据库提交
 

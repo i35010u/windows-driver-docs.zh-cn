@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eacb0221c65ec0afd4ce56364612bed3fd9aba0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378827"
 ---
-# <a name="example-9-customizing-the-trace-log-file"></a>示例 9:自定义跟踪日志文件
+# <a name="example-9-customizing-the-trace-log-file"></a>示例 9：自定义跟踪日志文件
 
 
 ## <span id="ddk_customizing_the_trace_log_file_tools"></span><span id="DDK_CUSTOMIZING_THE_TRACE_LOG_FILE_TOOLS"></span>

@@ -5,11 +5,11 @@ ms.assetid: 70440de2-0554-4f5b-9ce4-fe060d3077a4
 ms.date: 07/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a010fe08a18d18d9e98c3d7f3c0c7b1821b5b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367095"
 ---
 # <a name="adding-ui-to-a-wia-minidriver"></a>将 UI 添加到 WIA 微型驱动程序
 

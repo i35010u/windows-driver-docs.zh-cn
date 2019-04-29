@@ -5,11 +5,11 @@ ms.assetid: c4d83e2f-5cc4-4bdf-bdb5-c468c9fb49c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d565761c43e5f836faa6477604ce6e9dbf79cefe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56561922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380203"
 ---
 # <a name="get-started-with-a-hotspot-authentication-app"></a>热点身份验证应用入门
 

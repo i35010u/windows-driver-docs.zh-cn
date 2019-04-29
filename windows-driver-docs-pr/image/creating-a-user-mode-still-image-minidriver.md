@@ -1,17 +1,17 @@
 ---
-title: 创建用户模式下仍映像微型驱动程序
-description: 创建用户模式下仍映像微型驱动程序
+title: 创建用户模式静态图像微型驱动程序
+description: 创建用户模式静态图像微型驱动程序
 ms.assetid: 94fdbeba-5b4a-4b66-b381-ec362b6d38c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 068de4dc8ed2378faa264b569d8f39e5714a5455
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386320"
 ---
-# <a name="creating-a-user-mode-still-image-minidriver"></a>创建用户模式下仍映像微型驱动程序
+# <a name="creating-a-user-mode-still-image-minidriver"></a>创建用户模式静态图像微型驱动程序
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 无头系统的提供支持
+title: 无头系统支持
 description: Windows 8 支持启动而无需任何图形硬件。
 ms.assetid: 6351F6F9-6666-4040-A82A-3813ACCE8DEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 522b2b4c9efc7792de9edc840d69f9c0a7bd09b2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375902"
 ---
-# <a name="support-for-headless-systems"></a>无头系统的提供支持
+# <a name="support-for-headless-systems"></a>无头系统支持
 
 
 Windows 8 支持启动而无需任何图形硬件。 使用存根 （stub） 显示输出，如果没有显示设备找不到完成此操作。 此存根 （stub） 显示作为部件的现成 Microsoft 基本显示驱动程序 (MSBDD) 实现。

@@ -5,11 +5,11 @@ ms.assetid: efdb5ecb-3abc-4dfd-8087-7f4f3a938cf2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6343d495b0ed5f5b2803f6a81c61ed1c2b5240d
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372887"
 ---
 # <a name="trayname-outputbins"></a>\[TrayName\] (OutputBins)
 

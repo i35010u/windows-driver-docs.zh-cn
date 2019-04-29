@@ -1,6 +1,6 @@
 ---
-title: Bidi 扩展插件示例的 TCP/IP 端口监视器
-description: Bidi 扩展插件示例的 TCP/IP 端口监视器
+title: TCP/IP 端口监视器的双向扩展示例
+description: TCP/IP 端口监视器的双向扩展示例
 ms.assetid: 76454b0c-0e02-4372-97ed-2401a785cef8
 keywords:
 - bidi 扩展文件 WDK 打印机自动配置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dbcadbc5803c82c622f728ebbf3e390b8c602b3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379265"
 ---
-# <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>Bidi 扩展插件示例的 TCP/IP 端口监视器
+# <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP 端口监视器的双向扩展示例
 
 
 下面的代码示例是为标准 TCP/IP 端口监视器扩展 bidi 通信架构的示例 XML 文件。

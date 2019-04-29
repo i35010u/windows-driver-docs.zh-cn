@@ -14,11 +14,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 504dc2d81b4247a535c576c08bf7a3590ede1343
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367332"
 ---
 # <a name="bug-check-0x76-processhaslockedpages"></a>Bug 检查 0x76：进程\_HAS\_已锁定\_页
 

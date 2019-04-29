@@ -1,6 +1,6 @@
 ---
-title: GDL 架构 Attribute 元素
-description: GDL 架构 Attribute 元素
+title: GDL 架构属性元素
+description: GDL 架构属性元素
 ms.assetid: b46c0c6c-28af-4121-9182-65dc23b0ce7d
 keywords:
 - GDL WDK 元素
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ff08d7b1f570dc8f52d67260c996251feeac2f71
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380167"
 ---
-# <a name="gdl-schema-attribute-element"></a>GDL 架构 Attribute 元素
+# <a name="gdl-schema-attribute-element"></a>GDL 架构属性元素
 
 
 所有的数据类型&lt;GDL\_特性&gt;根据每个实例使用指定元素**xsi: type**。 属性没有特定的数据类型定义指定的泛型属性元素的实例 (&lt;GDL\_UntypedAtt&gt;)，这是在架构中定义 GDL 生成，如下所示：

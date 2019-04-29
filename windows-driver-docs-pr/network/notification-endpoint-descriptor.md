@@ -5,11 +5,11 @@ ms.assetid: de15c698-a4a6-49f9-9faf-b9a64fe8b1c2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f6fd0fac0e2b012cb3216f5ea03eb5b6efa646
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384518"
 ---
 # <a name="notification-endpoint-descriptor"></a>通知终结点描述符
 
@@ -29,9 +29,9 @@ ms.locfileid: "56555936"
 <tr class="header">
 <th align="left">偏移量</th>
 <th align="left">字段</th>
-<th align="left">尺寸</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">大小</th>
+<th align="left">ReplTest1</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

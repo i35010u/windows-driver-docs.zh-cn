@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: fa50f4a4698824200407038302c1b916ae12fd15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374937"
 ---
 # <a name="d-da-db-dc-dd-dd-df-dp-dq-du-dw-display-memory"></a>d、 da、 db、 dc、 dd、 dD、 df、 dp、 dq、 du，dw （显示内存）
 
@@ -76,7 +76,7 @@ d [Options] [Range]
 
 此命令采用以下形式存在。 第二个字符**dd**， **dD**， **dw**，以及**dW**命令是区分大小写，如第三个字符的**dyb**并**dyd**命令。
 
-|命令|显示|
+|Command|显示|
 |--- |--- |
 |d|这与最新的 d 命令相同的格式显示数据。 如果没有以前的 d 命令已发出，d 具有与数据库相同的效果。 请注意，d 重复以 d 开头的最新命令。 这包括 dda、 ddp、 ddu、 dpa、 dpp、 dpu、 dqa、 dqp、 dqu、 dds、 dps、 dqs、 ds、 dS、 dg、 dl、 dt，和 dv，以及在此页上显示命令。 如果给定 d 后的参数不合适，可能会导致错误。|
 |da|ASCII 字符。 每行显示最多 48 个字符。 第一个 null 字节或之前已显示范围中的所有字符，将继续显示。 所有非打印字符，如回车符和换行符，显示为句点 （.）。|

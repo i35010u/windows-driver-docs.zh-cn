@@ -23,11 +23,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0005ceda8efe8fa4fa8d47c2b2e80a0395c0ed7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384186"
 ---
 # <a name="isnmpgetlist-method"></a>ISNMP::GetList 方法
 
@@ -43,7 +43,7 @@ HRESULT GetList(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *varList* \[in\]  
@@ -118,12 +118,12 @@ OIDValueArray = objSNMP.GetList (OIDArray)
 <td>桌面设备</td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Olesnmp.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ISNMP::Open**](isnmp-open.md)

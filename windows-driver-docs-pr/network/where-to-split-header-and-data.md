@@ -1,6 +1,6 @@
 ---
-title: 拆分标头和数据的位置
-description: 拆分标头和数据的位置
+title: 在何处拆分标头和数据
+description: 在何处拆分标头和数据
 ms.assetid: e302fcc1-5088-4f64-b454-5f20c69c0626
 keywords:
 - 标头数据拆分 WDK，拆分的位置
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7288e9b056e0e569fb4980b877965cef30e8987d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365725"
 ---
-# <a name="where-to-split-header-and-data"></a>拆分标头和数据的位置
+# <a name="where-to-split-header-and-data"></a>在何处拆分标头和数据
 
 
 

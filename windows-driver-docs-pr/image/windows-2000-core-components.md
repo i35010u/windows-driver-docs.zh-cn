@@ -5,11 +5,11 @@ ms.assetid: e3c560e8-ad75-4187-84c2-f918a201d10e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 489f9319b02f4e881fca4e315d040df0a860e53e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380227"
 ---
 # <a name="windows-2000-core-components"></a>Windows 2000 核心组件
 

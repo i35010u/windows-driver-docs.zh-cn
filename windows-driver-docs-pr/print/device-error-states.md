@@ -1,6 +1,6 @@
 ---
-title: 设备的错误状态
-description: 设备的错误状态
+title: 设备错误状态
+description: 设备错误状态
 ms.assetid: 7d0fee11-0fdf-4490-88d0-fb074cbf4082
 keywords:
 - 错误状态 WDK 打印机
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b1975fe02c6bad443df880c74c494d01e284943
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363603"
 ---
-# <a name="device-error-states"></a>设备的错误状态
+# <a name="device-error-states"></a>设备错误状态
 
 
 打印设备和其驱动程序从用户可能会遇到任何错误状态应正常恢复。 它是所有设备的可能的错误状态的测试相关。 请确保设备通知的每个错误状态，用户和设备取消操作，将恢复，并从每个错误状态重新启动。 首次设置错误状态，并验证正确的错误状态的通知用户。

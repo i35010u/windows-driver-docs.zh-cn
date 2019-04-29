@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_COALESCING_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c7d1434689d85916a941568db6b644998891b623
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360178"
 ---
 # <a name="wditlvreceivecoalescingcapabilities"></a>WDI\_TLV\_接收\_COALESCING\_功能
 

@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 1d0092b8d38ab0e70baac21e2c72fc44f0b16263
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380741"
 ---
 # <a name="difnewdevicewizardpreselect"></a>DIF_NEWDEVICEWIZARD_PRESELECT
 
@@ -111,17 +111,17 @@ DIF_NEWDEVICEWIZARD_PRESELECT 请求可让安装程序提供向用户显示 Wind
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Setupapi.h （包括 Setupapi.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_PREANALYZE**](dif-newdevicewizard-preanalyze.md)

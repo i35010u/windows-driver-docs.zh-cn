@@ -1,17 +1,17 @@
 ---
-title: Wi-fi 热点卸载常量
+title: Wi-Fi 热点卸载常量
 description: 本部分介绍的 Wi-fi 热点卸载框架定义的常量。
 ms.assetid: F09DCB81-C9FF-493B-AE8F-97DE441A4BC3
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c692c307188c4574bc592470b5cb36331ac8877a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365699"
 ---
-# <a name="wi-fi-hotspot-offloading-constants"></a>Wi-fi 热点卸载常量
+# <a name="wi-fi-hotspot-offloading-constants"></a>Wi-Fi 热点卸载常量
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
@@ -137,17 +137,17 @@ ms.locfileid: "56519053"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [卸载引用的 Wi-fi 热点](wi-fi-hotspot-offloading-reference.md)

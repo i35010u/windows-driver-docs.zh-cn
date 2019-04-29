@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e33ea0dcd0bbbc74635ecec5d54575d3c2355336
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364398"
 ---
 # <a name="scalingheight-element"></a>ScalingHeight 元素
 
@@ -35,7 +35,7 @@ ms.locfileid: "56533551"
 </wscn:ScalingHeight wscn:Override=""                    wscn:UsedDefault="">
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 <table>
@@ -47,7 +47,7 @@ ms.locfileid: "56533551"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -111,7 +111,7 @@ WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**S
 
 你可以部分为此元素允许的值。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DocumentFinalParameters**](documentfinalparameters.md)

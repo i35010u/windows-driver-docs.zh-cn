@@ -1,20 +1,20 @@
 ---
-title: 满足 UWP 设备应用程序
+title: 初识 UWP 设备应用
 description: 本主题提供的功能，使 UWP 设备应用唯一不同于常规的 UWP 应用的功能的概述。
 ms.assetid: 395745E6-7A97-4B26-A82C-0729E7B999C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3227bcab091c9ba6c7584e12546f661abb47eb42
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370234"
 ---
-# <a name="meet-uwp-device-apps"></a>满足 UWP 设备应用程序
+# <a name="meet-uwp-device-apps"></a>初识 UWP 设备应用
 
 
-设备制造商可以创建用作其设备的配套的 UWP 设备应用程序。 设备应用程序可以使用外围或内部设备的功能的完整范围，并且可以执行特权的操作，例如固件更新。 本主题提供的功能，使 UWP 设备应用唯一不同于常规的 UWP 应用的功能的概述。
+设备制造商可以创建用作设备配套的 UWP 设备应用。 设备应用程序可以使用外围或内部设备的功能的完整范围，并且可以执行特权的操作，例如固件更新。 本主题提供的功能，使 UWP 设备应用唯一不同于常规的 UWP 应用的功能的概述。
 
 **请注意**  各项功能是可选的。 单个设备应用程序不需要使用所有这些。 所有这些功能都需要设备元数据。
 
@@ -88,16 +88,16 @@ Oem 和组件供应商可以开发 UWP 应用的内部到 PC 的设备的设备�
 
 有关自动安装的详细信息，请参阅[自动安装的打印机和相机](auto-install-for-uwp-device-apps.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [构建 UWP 设备应用程序](the-workflow.md)
 
-[适用于 UWP 设备应用的自动安装](auto-install-for-uwp-device-apps.md)
+[UWP 设备应用的自动安装](auto-install-for-uwp-device-apps.md)
 
-[适用于 UWP 设备应用的自动播放](autoplay-for-uwp-device-apps.md)
+[UWP 设备应用的自动播放](autoplay-for-uwp-device-apps.md)
 
-[设备同步和 UWP 的设备应用程序的更新](device-sync-and-update-for-uwp-device-apps.md)
+[UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)
 
  
 

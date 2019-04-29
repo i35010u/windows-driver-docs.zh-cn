@@ -5,11 +5,11 @@ ms.assetid: 1E9C0198-8C74-4966-A401-329723B5A933
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 809ac9a50cceb7405f25a3319253addb0114db8a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383049"
 ---
 # <a name="test-modes"></a>测试模式
 

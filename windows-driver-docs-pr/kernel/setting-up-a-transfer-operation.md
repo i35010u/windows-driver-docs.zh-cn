@@ -1,6 +1,6 @@
 ---
-title: 设置传输操作中
-description: 设置传输操作中
+title: 设置传输操作
+description: 设置传输操作
 ms.assetid: cabac16d-b946-4b96-af2c-5fd0a0d848da
 keywords:
 - 主总线 DMA WDK 内核
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dbeb0007d2c637a21dd0968f9d4c8c880fb86e96
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541630"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385529"
 ---
-# <a name="setting-up-a-transfer-operation"></a>设置传输操作中
+# <a name="setting-up-a-transfer-operation"></a>设置传输操作
 
 
 

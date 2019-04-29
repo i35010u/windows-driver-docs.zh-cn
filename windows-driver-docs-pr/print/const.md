@@ -1,5 +1,5 @@
 ---
-title: 常量 (TCP/IP)
+title: Const (TCP/IP)
 description: TCP/IP Const 构造定义数据类型和值，必须返回该值。
 ms.assetid: a0ede11d-ada4-4dc4-87a4-68c96635c0fd
 keywords:
@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b11d920fea90128b47768c9b4cd6450ea77b3089
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384504"
 ---
-# <a name="const-tcpip"></a>常量 (TCP/IP)
+# <a name="const-tcpip"></a>Const (TCP/IP)
 
 
 TCP/IP Const 构造定义数据类型和值，必须返回该值。 常量用于不更改值中的元素。 Const 构造 Tcpbidi.xsd 中定义。
@@ -25,7 +25,7 @@ TCP/IP Const 构造定义数据类型和值，必须返回该值。 常量用于
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

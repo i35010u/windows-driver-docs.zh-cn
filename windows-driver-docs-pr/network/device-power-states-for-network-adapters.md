@@ -1,6 +1,6 @@
 ---
-title: 适用于网络适配器的设备的电源状态
-description: 适用于网络适配器的设备的电源状态
+title: 网络适配器的设备电源状态
+description: 网络适配器的设备电源状态
 ms.assetid: 969aadc9-e797-4a07-9714-8c2c5a6357da
 keywords:
 - Nic WDK 网络、 电源状态
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d05eb24845eea55e44ebc3900835fcab9282229
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364181"
 ---
-# <a name="device-power-states-for-network-adapters"></a>适用于网络适配器的设备的电源状态
+# <a name="device-power-states-for-network-adapters"></a>网络适配器的设备电源状态
 
 
 

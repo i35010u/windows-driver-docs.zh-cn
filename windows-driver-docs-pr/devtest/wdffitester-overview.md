@@ -5,11 +5,11 @@ ms.assetid: 87acefcd-8db3-4b1e-972a-13fba629d52d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 77e944cccb0c5abbcf3f88f3fffb2e33f3e8e1a1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372782"
 ---
 # <a name="wdffitester-overview"></a>WdfFiTester 概述
 
@@ -38,7 +38,7 @@ KMDF 函数返回的返回代码然后再继续检查 NTSTATUS 代码和驱动�
 
 对于每个已配置为故障注入的 DDI，WdfFiTester 工具返回状态的 NTSTATUS 代码\_未成功。 该驱动程序应处理失败。
 
-由于该工具使用 WMI 接口，你可以从脚本 （vbscript 或 jscript） 或任何其他用户模式应用程序运行它 (C、 c + +，或C#)，可以调用 WMI。
+由于该工具使用 WMI 接口，你可以从脚本 （vbscript 或 jscript） 或任何其他用户模式应用程序运行它 (C， C++，或C#)，可以调用 WMI。
 
 除了其他操作，与该工具的 WMI 接口即可的 DDIs 的函数调用的特定 KMDF 驱动程序，并正在等待 WMI 事件激发每次 DDI 故障注入成功完成的列表。
 

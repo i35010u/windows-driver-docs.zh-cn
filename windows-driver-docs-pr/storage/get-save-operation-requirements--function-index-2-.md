@@ -5,11 +5,11 @@ ms.assetid: 502DAF89-F390-40A4-846C-C3B4DF3E505D
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 73350bb78925e11a1507e19e25c5cea67f174e0f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383148"
 ---
 # <a name="get-save-operation-requirements-function-index-2"></a>获取保存操作要求（功能索引 2）
 

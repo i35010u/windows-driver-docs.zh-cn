@@ -1,17 +1,17 @@
 ---
-title: 用于测试的易受攻击的 NDIS 驱动程序添加了的成本
-description: 用于测试的易受攻击的 NDIS 驱动程序添加了的成本
+title: 测试有漏洞 NDIS 驱动程序所增加的成本
+description: 测试有漏洞 NDIS 驱动程序所增加的成本
 ms.assetid: ee748650-92e6-4885-895e-c030cf33f315
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1862e368e5d07f16822cc85a71e8339461609649
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367789"
 ---
-# <a name="added-costs-for-testing-vulnerable-ndis-drivers"></a>用于测试的易受攻击的 NDIS 驱动程序添加了的成本
+# <a name="added-costs-for-testing-vulnerable-ndis-drivers"></a>测试有漏洞 NDIS 驱动程序所增加的成本
 
 
 

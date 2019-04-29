@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fdf117dc5ee231a7bf17e2ef2f2e2dd179ceed2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385250"
 ---
 # <a name="wditlvospowermanagementfeatures"></a>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES
 
@@ -39,4 +39,4 @@ WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是 TLV，其中包含操作系统电源管
 | --- | --- |
 | 最低受支持的客户端 | Windows 10 版本 1803 |
 | 最低受支持的服务器 | Windows Server 2016 |
-| 标头 | Wditypes.hpp |
+| Header | Wditypes.hpp |

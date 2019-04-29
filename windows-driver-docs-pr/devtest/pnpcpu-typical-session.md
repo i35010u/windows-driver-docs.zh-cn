@@ -5,11 +5,11 @@ ms.assetid: d0c1b6aa-fe23-4d01-aecf-897aba3672c9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b385dd4a84415d30c9178e0f88a62548ed63067a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365492"
 ---
 # <a name="pnpcpu-typical-session"></a>PNPCPU 典型会话
 

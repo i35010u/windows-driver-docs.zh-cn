@@ -1,19 +1,19 @@
 ---
-title: 全屏幕模式行为
-description: 全屏幕模式行为
+title: 全屏模式行为
+description: 全屏模式行为
 ms.assetid: 43e7fec0-4e4d-401c-80c7-3e0710313214
 keywords:
 - 全屏幕旋转 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 468ebbc7574205809a59e973cce23b1f37d0fe5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378055"
 ---
-# <a name="full-screen-mode-behavior"></a>全屏幕模式行为
+# <a name="full-screen-mode-behavior"></a>全屏模式行为
 
 
 用户模式显示驱动程序可以确定在全屏幕模式下是渲染设备：

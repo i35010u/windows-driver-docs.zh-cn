@@ -1,17 +1,17 @@
 ---
-title: 安装设备元数据包通过驱动程序包
-description: 安装设备元数据包通过驱动程序包
+title: 通过驱动程序包安装设备元数据包
+description: 通过驱动程序包安装设备元数据包
 ms.assetid: fd140583-d4f9-4817-8edc-5bc3c6a2a1d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 98af154c1b33bbc1f14dcad87642c9f6b6ba30b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369481"
 ---
-# <a name="installing-device-metadata-packages-through-a-driver-package"></a>安装设备元数据包通过驱动程序包
+# <a name="installing-device-metadata-packages-through-a-driver-package"></a>通过驱动程序包安装设备元数据包
 
 
 一个[驱动程序包](driver-packages.md)可以通过将其复制到安装设备元数据包[设备元数据存储区](device-metadata-store.md)。 这通过使用实现[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)内[ **DestinationDirs** ](inf-destinationdirs-section.md)和[ **DDInstall** ](inf-ddinstall-section.md)的部分[INF 文件](inf-files.md)驱动程序包。

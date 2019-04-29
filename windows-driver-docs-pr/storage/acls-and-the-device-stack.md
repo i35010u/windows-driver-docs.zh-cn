@@ -1,17 +1,17 @@
 ---
-title: Acl 和设备堆栈
-description: Acl 和设备堆栈
+title: ACL 和设备堆栈
+description: ACL 和设备堆栈
 ms.assetid: DAFC851D-E808-4588-86D2-E608584FD05B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cd6567b89243c3f685217e250e0a7678c89110cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382750"
 ---
-# <a name="acls-and-the-device-stack"></a>Acl 和设备堆栈
+# <a name="acls-and-the-device-stack"></a>ACL 和设备堆栈
 
 
 通过设置每个相应的接口的 Acl 控制对该卷和设备的访问权限。 确定设备接口上的 Acl:
@@ -64,7 +64,7 @@ ms.locfileid: "56554455"
 |----------|----------------------------------|
 | 属性 | SPDRP\_安全                  |
 | 值    | **安全\_描述符**         |
-| 尺寸     | **sizeof**(安全\_描述符) |
+| 大小     | **sizeof**(安全\_描述符) |
 
  
 

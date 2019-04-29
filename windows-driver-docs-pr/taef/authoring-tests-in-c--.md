@@ -1,20 +1,20 @@
 ---
-title: C + + 中创作测试
-description: C + + 中创作测试
+title: 使用 C + + 创作测试
+description: 使用 C + + 创作测试
 ms.assetid: ECADDDD6-5BD4-4c43-803F-47AE44467342
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 09279d214edab919394e26c6e4e1f541d3876dd8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372773"
 ---
-# <a name="authoring-tests-in-c"></a>C + + 中创作测试
+# <a name="authoring-tests-in-c"></a>使用 C + + 创作测试
 
 
-下面的代码示例显示了包含单个测试类具有两个测试方法的本机 c + + 文件。
+下面的代码示例显示了一个本机C++包含具有两个测试方法的单个测试类的文件。
 
 ```cpp
 1   #include "WexTestClass.h"
@@ -75,7 +75,7 @@ ms.locfileid: "56519094"
 
  
 
-## <a name="span-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanadvanced-authoring-tests-in-c"></a><span id="Advanced_Authoring_Tests_in_C__"></span><span id="advanced_authoring_tests_in_c__"></span><span id="ADVANCED_AUTHORING_TESTS_IN_C__"></span>C + + 中的高级创作测试
+## <a name="span-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanadvanced-authoring-tests-in-c"></a><span id="Advanced_Authoring_Tests_in_C__"></span><span id="advanced_authoring_tests_in_c__"></span><span id="ADVANCED_AUTHORING_TESTS_IN_C__"></span>中的高级创作测试C++
 
 
 下面的示例使用的设置和清理方法，并声明元数据以及在测试类和测试方法声明。 此示例还包含一个类 (**MetadataAndFixturesTests**) 具有两个测试方法。

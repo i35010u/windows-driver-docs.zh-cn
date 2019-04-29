@@ -1,17 +1,17 @@
 ---
-title: 描述使用 WIA 项 WIA 设备
-description: 描述使用 WIA 项 WIA 设备
+title: 使用 WIA 项描述 WIA 设备
+description: 使用 WIA 项描述 WIA 设备
 ms.assetid: d8149f78-e095-48f9-be79-ff115b25f14e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5df21a7249de123b39cb2a049a697ae09143be51
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63373207"
 ---
-# <a name="describing-a-wia-device-using-wia-items"></a>描述使用 WIA 项 WIA 设备
+# <a name="describing-a-wia-device-using-wia-items"></a>使用 WIA 项描述 WIA 设备
 
 
 

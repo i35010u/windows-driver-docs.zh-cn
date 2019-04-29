@@ -5,11 +5,11 @@ ms.assetid: BA2CC8F0-E337-4A5E-987F-1B40213F5983
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8ea71095c832d78c0f47e9dab8cb6e434169402
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366323"
 ---
 # <a name="power-framework-pofx-driver-samples"></a>Power 框架 (PoFx) 驱动程序示例
 

@@ -1,17 +1,17 @@
 ---
-title: 应用程序项目和驱动程序项
-description: 应用程序项目和驱动程序项
+title: 应用程序项和驱动程序项
+description: 应用程序项和驱动程序项
 ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4135db29b33359919bd2e911384bad9d852ce3d0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367066"
 ---
-# <a name="application-items-and-driver-items"></a>应用程序项目和驱动程序项
+# <a name="application-items-and-driver-items"></a>应用程序项和驱动程序项
 
 
 

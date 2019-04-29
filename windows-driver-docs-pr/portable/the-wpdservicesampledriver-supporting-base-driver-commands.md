@@ -1,14 +1,14 @@
 ---
-Description: Support for base-driver commands (WpdServiceSampleDriver)
+Description: 对基础驱动程序命令 (WpdServiceSampleDriver) 的支持
 title: 对基础驱动程序命令 (WpdServiceSampleDriver) 的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e97804a357b14431b945461821b1441da193c6a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370493"
 ---
 # <a name="support-for-base-driver-commands-wpdservicesampledriver"></a>对基础驱动程序命令 (WpdServiceSampleDriver) 的支持
 
@@ -21,13 +21,13 @@ ms.locfileid: "56522127"
 
 |                                                                       |                                      |                                                                                                                       |
 |-----------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| 命令                                                               | 处理程序                              | 描述                                                                                                           |
+| Command                                                               | 处理程序                              | 描述                                                                                                           |
 | WPD\_命令\_常见\_获取\_对象\_ID\_FROM\_的永久\_UNIQUE\_ID | OnGetOjectIDsFromPersistentUniqueIDs | 当应用程序尝试检索与给定的永久唯一标识符匹配的对象标识符时发出。 |
 | WPD\_命令\_常见\_保存\_客户端\_信息                       | OnSaveClientInfo                     | 当应用程序尝试打开到设备或服务的连接时发出。                                       |
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

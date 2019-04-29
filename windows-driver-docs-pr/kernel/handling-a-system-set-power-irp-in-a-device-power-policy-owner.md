@@ -1,6 +1,6 @@
 ---
-title: 处理设备电源策略所有者中的系统集 Power IRP
-description: 处理设备电源策略所有者中的系统集 Power IRP
+title: 处理设备电源策略所有者中的系统 Set-Power IRP
+description: 处理设备电源策略所有者中的系统 Set-Power IRP
 ms.assetid: f6206455-142b-4f3f-ae5a-d8e79386bce3
 keywords:
 - 设置 power Irp WDK 电源管理
@@ -8,13 +8,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8e8cb45d24f56a788d75a8c91cca222847fae21
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359828"
 ---
-# <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>处理设备电源策略所有者中的系统集 Power IRP
+# <a name="handling-a-system-set-power-irp-in-a-device-power-policy-owner"></a>处理设备电源策略所有者中的系统 Set-Power IRP
 
 
 

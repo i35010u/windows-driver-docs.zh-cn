@@ -1,23 +1,23 @@
 ---
-title: 调试器数据模型-指令对象
+title: 调试器数据模型 - 指令对象
 description: 指令对象描述单个机器指令。
 ms.date: 12/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e4513cbdb5235341d962f212ab46b9267decfb75
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376073"
 ---
 # <a name="instruction-objects"></a>指令的对象 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 指令的对象描述单个机器指令，并通过任一基于指令反汇编或作为内容的一部分返回[基本块](dbgmodel-object-basic-block.md)对象。 
 ## <a name="object-properties"></a>对象属性
 |名称|描述|
 |--- |--- |
 |地址|计算机指令的地址。|
-|属性|[指令属性](dbgmodel-object-instruction-attributes.md)对象描述有关指令的详细信息。|
+|特性|[指令属性](dbgmodel-object-instruction-attributes.md)对象描述有关指令的详细信息。|
 |CodeBytes|表示构成该机器指令的字节的字节数组。|
 |长度|在内存中的指令所采用的字节数。|
 |LiveVariables|一个[集合](dbgmodel-namespace-collections.md)的[实时变量](dbgmodel-object-live-variable.md)描述编译器优化器发出有关此特定位置的变量的数据的对象。|

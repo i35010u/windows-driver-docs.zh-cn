@@ -1,6 +1,6 @@
 ---
-title: 将转换为用于群集打印服务器的打印监视器
-description: 将转换为用于群集打印服务器的打印监视器
+title: 转换打印监视器以便与群集打印服务器配合使用
+description: 转换打印监视器以便与群集打印服务器配合使用
 ms.assetid: 6b374d61-bb2b-42a4-9609-3cde9b82bb2b
 keywords:
 - 打印监视器 WDK、 群集打印服务器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbb874569adeaf200cc00a20256ca711a4bd7e03
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365695"
 ---
-# <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>将转换为用于群集打印服务器的打印监视器
+# <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>转换打印监视器以便与群集打印服务器配合使用
 
 
 

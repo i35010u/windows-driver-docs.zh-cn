@@ -1,18 +1,18 @@
 ---
-title: Windows 显示器驱动程序模型 (WDDM) 的路线图
+title: Windows 显示驱动程序模型 (WDDM) 路线图
 description: 开发 Windows 显示器驱动程序模型 (WDDM) 驱动程序的路线图
 ms.assetid: 4f7ea2f4-ca2f-4b1d-97be-fb22e81c8080
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
 ms.openlocfilehash: 6a408c2930d801f0d8565eb3f6b35f2878ae4d3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385687"
 ---
-# <a name="roadmap-for-the-windows-display-driver-model-wddm"></a>Windows 显示器驱动程序模型 (WDDM) 的路线图
+# <a name="roadmap-for-the-windows-display-driver-model-wddm"></a>Windows 显示驱动程序模型 (WDDM) 路线图
 
 
 ![用于开发 wddm 的 wdk 路线图显示驱动程序](images/wdkroadmap-th.png)

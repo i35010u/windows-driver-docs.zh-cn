@@ -1,17 +1,17 @@
 ---
-title: 设备元数据将包安装到脱机 Windows 映像
-description: 设备元数据将包安装到脱机 Windows 映像
+title: 将设备元数据包安装到脱机 Windows 映像
+description: 将设备元数据包安装到脱机 Windows 映像
 ms.assetid: 53480324-951f-4c51-9b5b-051ce1a3b709
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8fa07b9c066b08e52724f052feec8087c3faf19
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366295"
 ---
-# <a name="installing-device-metadata-packages-to-an-offline-windows-image"></a>设备元数据将包安装到脱机 Windows 映像
+# <a name="installing-device-metadata-packages-to-an-offline-windows-image"></a>将设备元数据包安装到脱机 Windows 映像
 
 
 计算机 Oem 可以通过将包复制到本地设备元数据存储到脱机 Windows 映像添加设备元数据包。 此存储区是在以下位置：

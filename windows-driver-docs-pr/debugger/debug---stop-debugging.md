@@ -11,13 +11,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfe962e05de857a24f47cfa4199fd6aab807c081
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365533"
 ---
-# <a name="debug--stop-debugging"></a>调试 |停止调试
+# <a name="debug--stop-debugging"></a>调试 | 停止调试
 
 
 ## <span id="ddk_debug_stop_debugging_dbg"></span><span id="DDK_DEBUG_STOP_DEBUGGING_DBG"></span>

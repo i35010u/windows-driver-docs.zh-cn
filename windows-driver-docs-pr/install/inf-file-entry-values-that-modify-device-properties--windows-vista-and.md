@@ -5,11 +5,11 @@ ms.assetid: 5ce0875f-2687-42d9-b980-ed184b552a62
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4412180ff2ee00ed20e73490e409867b9eb15730
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379369"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties"></a>可修改设备属性的 INF 文件条目值
 

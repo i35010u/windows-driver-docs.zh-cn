@@ -11,15 +11,15 @@ ms.assetid: 286ab231-c215-45cc-b0da-97ec8adf2de1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 01fba7e9303d79ef2962788508a46eaec4e3c6ea
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382605"
 ---
 # <a name="iolecvt-automation-interface"></a>IOleCvt 自动化接口
 
-自动化界面**IOleCvt**对象启用 ASP Web 页后，可以执行各种从一种格式的字符串转换到另一个。 这些地方包括：
+自动化界面**IOleCvt**对象启用 ASP Web 页后，可以执行各种从一种格式的字符串转换到另一个。 这些问题包括：
 
 -   从 Unicode 到 ANSI 的转换
 

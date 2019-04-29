@@ -5,11 +5,11 @@ ms.assetid: 418328ef-09ab-40f5-989a-c592377e4b57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a2a67681b99e60b6cc66b3c849170a1de8b4b2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384646"
 ---
 # <a name="send-sms-by-using-the-text-mode-interface"></a>使用文本模式界面发送短信
 
@@ -26,7 +26,7 @@ ms.locfileid: "56520661"
 
 -   [Windows 会自动选择最佳字符编码](windows-automatically-selects-optimal-character-encoding.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [开发 SMS 应用程序](developing-sms-apps.md)

@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e0a3406d78d85bb7292fd2156194defa40ff97c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366138"
 ---
 # <a name="unloading-a-filter-driver"></a>卸载筛选器驱动程序
 

@@ -5,11 +5,11 @@ ms.assetid: 2a845adc-6965-420d-9e0a-20935d20577a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ab588415d95e9a5910679cb982c8297305f580f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363338"
 ---
 # <a name="retrieving-a-device-interface-property-value"></a>检索设备接口属性值
 

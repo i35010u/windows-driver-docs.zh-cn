@@ -5,11 +5,11 @@ ms.assetid: e9e03575-4afc-4635-966a-864240990f68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ffc5e280d2f72650912751fdea8a33d923afceb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379647"
 ---
 # <a name="optional-root-item-properties-for-wia-scanners"></a>WIA 扫描仪的可选根项属性
 

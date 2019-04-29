@@ -1,19 +1,19 @@
 ---
 title: 实现一个中间驱动程序 ProtocolNetPnPEvent 处理程序
-description: 在中间的驱动程序中实现 ProtocolNetPnPEvent 处理程序
+description: 在中间驱动程序中实现 ProtocolNetPnPEvent 处理程序
 ms.assetid: 1d0475c4-631d-4b8a-ab26-5b8b9425bfe6
 keywords:
 - ProtocolNetPnPEvent
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dcaedd6a66f67e40ae9db6907d637dcc54a548a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383645"
 ---
-# <a name="implementing-a-protocolnetpnpevent-handler-in-an-intermediate-driver"></a>在中间的驱动程序中实现 ProtocolNetPnPEvent 处理程序
+# <a name="implementing-a-protocolnetpnpevent-handler-in-an-intermediate-driver"></a>在中间驱动程序中实现 ProtocolNetPnPEvent 处理程序
 
 
 

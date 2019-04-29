@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -SIO_LOOPBACK_FAST_PATH 控制代码与 Windows Vista 一起启动的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 202a5925817abb81d7ce4b3df8f1b399222a9c16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370545"
 ---
 # <a name="sioloopbackfastpath-control-code"></a>SIO\_环回\_快速\_路径控制代码
 
@@ -131,7 +131,7 @@ WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskCont
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -141,7 +141,7 @@ WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskCont
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SIO\_LOOPBACK\_FAST\_PATH (SDK)**](https://msdn.microsoft.com/library/windows/desktop/jj841212)

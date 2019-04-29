@@ -1,6 +1,6 @@
 ---
-title: Video Processing for DirectX VA 2.0
-description: Video Processing for DirectX VA 2.0
+title: DirectX VA 2.0 的视频处理
+description: DirectX VA 2.0 的视频处理
 ms.assetid: 8b14fe56-54bd-4f27-9713-917a16cc39c7
 keywords:
 - DirectX 视频加速 WDK 显示视频处理
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d3b791974e1228c0565b116f48cb17082687db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365006"
 ---
-# <a name="video-processing-for-directx-va-20"></a>Video Processing for DirectX VA 2.0
+# <a name="video-processing-for-directx-va-20"></a>DirectX VA 2.0 的视频处理
 
 
 以下主题讨论 DirectX VA 2.0 视频处理：

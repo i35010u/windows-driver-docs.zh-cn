@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_SPEED_EX 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a24c28d3dccef45e726e29d0c68212effbb33963
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375689"
 ---
 # <a name="oidgenlinkspeedex"></a>OID\_GEN\_LINK\_SPEED\_EX
 
@@ -46,13 +46,13 @@ NDIS 使用此 OID 来查询的链接速度[NDIS 网络接口](https://msdn.micr
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS\_LINK\_SPEED**](https://msdn.microsoft.com/library/windows/hardware/ff565864)

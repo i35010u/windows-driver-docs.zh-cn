@@ -1,19 +1,19 @@
 ---
-title: 系统使用的 Windows 所打开的顶级集合
-description: 系统使用的 Windows 所打开的顶级集合
+title: Windows 打开的供系统使用的顶级集合
+description: Windows 打开的供系统使用的顶级集合
 ms.assetid: e489ce46-379e-4ba9-a0e3-5848b1f4a17b
 keywords:
 - WDK HID 顶级集合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f4c7794f4dada8b79d887a7b334539e40771f1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384356"
 ---
-# <a name="top-level-collections-opened-by-windows-for-system-use"></a>系统使用的 Windows 所打开的顶级集合
+# <a name="top-level-collections-opened-by-windows-for-system-use"></a>Windows 打开的供系统使用的顶级集合
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: 对命名 VCs 的支持
-description: 对命名 VCs 的支持
+title: 命名 VC 的支持
+description: 命名 VC 的支持
 ms.assetid: 797f737c-91e7-410b-91d5-5575d5b19e86
 keywords:
 - WMI WDK 网络、 虚拟连接
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b061c9832f77d1a9a7034a58b809d35a6e52afd0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548191"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368223"
 ---
-# <a name="support-for-named-vcs"></a>对命名 VCs 的支持
+# <a name="support-for-named-vcs"></a>命名 VC 的支持
 
 
 

@@ -1,17 +1,17 @@
 ---
-title: 为图像采集 Api 创建特定于设备的组件
-description: 为图像采集 Api 创建特定于设备的组件
+title: 为图像采集 API 创建特定于设备的组件
+description: 为图像采集 API 创建特定于设备的组件
 ms.assetid: c4906dec-6d34-47f5-abde-0513c4499a66
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 427b873b8a1ea84a1154e1eb5aef8ed44d72f13d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386312"
 ---
-# <a name="creating-device-specific-components-for-image-acquisition-apis"></a>为图像采集 Api 创建特定于设备的组件
+# <a name="creating-device-specific-components-for-image-acquisition-apis"></a>为图像采集 API 创建特定于设备的组件
 
 
 

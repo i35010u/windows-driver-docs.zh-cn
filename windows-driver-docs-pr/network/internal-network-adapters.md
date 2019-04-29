@@ -5,11 +5,11 @@ ms.assetid: 4E4B0EC9-8E4C-47FC-B608-EC6D18367A79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dbd371ab4a6b7599675e0afb1ccd6a5135d39a7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362918"
 ---
 # <a name="internal-network-adapters"></a>内部网络适配器
 

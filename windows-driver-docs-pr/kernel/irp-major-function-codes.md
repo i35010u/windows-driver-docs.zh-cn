@@ -5,11 +5,11 @@ ms.date: 08/12/2017
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
 ms.openlocfilehash: c42a08cb8dab6ce5102d0a0e485a0a991936ea62
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382913"
 ---
 # <a name="irp-major-function-codes"></a>IRP 主要函数代码
 

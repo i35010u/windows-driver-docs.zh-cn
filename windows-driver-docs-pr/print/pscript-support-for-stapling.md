@@ -1,6 +1,6 @@
 ---
-title: 装订 Pscript 支持
-description: 装订 Pscript 支持
+title: Pscript 装钉支持
+description: Pscript 装钉支持
 ms.assetid: 75fc11e1-5cd9-4e95-b062-989fe493fdb5
 keywords:
 - 微型驱动程序 WDK Pscript 装订
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69b6de9fd7c58fd6e8a94b1eea42017fc783c626
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359019"
 ---
-# <a name="pscript-support-for-stapling"></a>装订 Pscript 支持
+# <a name="pscript-support-for-stapling"></a>Pscript 装钉支持
 
 
 

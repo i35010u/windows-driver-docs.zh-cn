@@ -16,11 +16,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e74f8a20fe41acee0fa28176ca88d334d3e180af
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384496"
 ---
 # <a name="dxgkargmovepagedirectory-structure"></a>\_DXGKARG\_MOVEPAGEDIRECTORY 结构
 
@@ -60,7 +60,7 @@ typedef struct _DXGKARG_MOVEPAGEDIRECTORY {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

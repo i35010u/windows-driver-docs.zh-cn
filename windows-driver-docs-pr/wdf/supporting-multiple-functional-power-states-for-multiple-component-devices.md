@@ -1,17 +1,17 @@
 ---
 title: 多个组件设备、 一个或多个功能的电源状态
-description: 支持多个组件与一个或多个功能的电源状态的设备
+description: 支持多组件设备呈现单个或多个功能性电源状态
 ms.assetid: D601A0F6-A035-4161-879A-D495518E7EC6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d91b5bc63d0c7913db3bdd0c0fb106339fce3c3d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379453"
 ---
-# <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>支持多个组件与一个或多个功能的电源状态的设备
+# <a name="supporting-multiple-component-devices-with-single-or-multiple-functional-power-states"></a>支持多组件设备呈现单个或多个功能性电源状态
 
 
 \[仅适用于 KMDF\]

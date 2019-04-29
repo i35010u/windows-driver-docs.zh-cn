@@ -5,11 +5,11 @@ ms.assetid: 7c7617d4-22d6-48a8-b69c-dd0347f078dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d8b29e300f68146ad7daee89cff4eeb37094915
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367097"
 ---
 # <a name="adding-polling-event-support"></a>添加轮询事件支持
 

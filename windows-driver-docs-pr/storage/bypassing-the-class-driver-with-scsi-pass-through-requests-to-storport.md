@@ -5,11 +5,11 @@ ms.assetid: 1162a1e7-a4f8-446f-8106-527f9b916382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3247c818297208a8ca97d35c0a438dca791b9a81
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380123"
 ---
 # <a name="bypass-a-class-driver-with-scsi-pass-through-requests-to-storport"></a>绕过向 Storport SCSI 传递请求的类驱动程序
 

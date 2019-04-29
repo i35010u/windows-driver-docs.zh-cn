@@ -5,11 +5,11 @@ ms.assetid: 973294b5-0c4f-4056-ad28-62c58f10c232
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 347344b72f12e246ce633ec58f8f5cde5612d929
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375777"
 ---
 # <a name="network-cost-information-element"></a>网络成本信息元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56563188"
 <tr class="header">
 <th>字段名称</th>
 <th>大小 （八进制）</th>
-<th>值</th>
+<th>ReplTest1</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -88,7 +88,7 @@ ms.locfileid: "56563188"
 <thead>
 <tr class="header">
 <th>ReplTest1</th>
-<th>“属性”</th>
+<th>名称</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -123,7 +123,7 @@ ms.locfileid: "56563188"
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>名称</th>
 <th>描述</th>
 </tr>
@@ -164,7 +164,7 @@ ms.locfileid: "56563188"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>名称</th>
 <th>描述</th>
 </tr>

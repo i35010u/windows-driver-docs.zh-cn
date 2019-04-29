@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec7e98caba00db18d17045e9f7c6bed8ece5065a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366171"
 ---
 # <a name="power-management-for-windows-drivers"></a>Windows 驱动程序的电源管理
 
@@ -29,7 +29,7 @@ ms.locfileid: "56523636"
 
 在准备其设备进入低能耗模式和驱动程序收到通知后从电源管理器在其设备重新打开时，电源管理器指示驱动程序。 驱动程序是负责向电源管理器报告其电源功能。 驱动程序必须检测时他们的设备处于空闲状态 （和可以切换到低功耗模式下） 或依赖于此类检测的电源管理器的选项。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [电源管理简介](introduction-to-power-management.md)

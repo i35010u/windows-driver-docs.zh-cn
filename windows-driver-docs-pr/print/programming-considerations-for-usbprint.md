@@ -1,6 +1,6 @@
 ---
-title: USBPRINT 的编程注意事项
-description: USBPRINT 的编程注意事项
+title: USBPRINT 编程注意事项
+description: USBPRINT 编程注意事项
 ms.assetid: 351b3124-d584-4817-a5ce-09e16b54d41b
 keywords:
 - 打印机驱动程序 WDK USB
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9b8b486cdcdf913c02f57dc683c2486efd158b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376579"
 ---
-# <a name="programming-considerations-for-usbprint"></a>USBPRINT 的编程注意事项
+# <a name="programming-considerations-for-usbprint"></a>USBPRINT 编程注意事项
 
 
 

@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0884caa88b401c5536c82e5266cd86bab04359c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363771"
 ---
 # <a name="packet-indication-format"></a>数据包指示格式
 

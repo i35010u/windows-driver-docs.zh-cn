@@ -5,11 +5,11 @@ ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c39511243b80dd0b15a0cbfaae2cfdad6b31efe
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362286"
 ---
 # <a name="enumeration-properties"></a>枚举属性
 
@@ -32,7 +32,7 @@ ms.locfileid: "56545220"
 <th>属性键</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需/可选</th>
-<th><strong>描述</strong></th>
+<th><strong>说明</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -110,7 +110,7 @@ ms.locfileid: "56545220"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)

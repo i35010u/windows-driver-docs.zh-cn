@@ -1,17 +1,17 @@
 ---
-title: 确定一个 SPC 交叉证书
-description: 确定一个 SPC 交叉证书
+title: 确定 SPC 的交叉证书
+description: 确定 SPC 的交叉证书
 ms.assetid: e54c6c69-6b80-4a03-b4ff-e46d565a56d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ab1438a4a3849dac0d38c0346b8eaee526e71c4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368089"
 ---
-# <a name="determining-an-spcs-cross-certificate"></a>确定一个 SPC 交叉证书
+# <a name="determining-an-spcs-cross-certificate"></a>确定 SPC 的交叉证书
 
 
 除了从商业证书颁发机构 (CA) 获取软件发布者证书 (SPC)，必须获取交叉证书的 Microsoft 问题。 交叉证书用于验证颁发一个 SPC 的 CA 受信任的根颁发机构。 交叉证书和一个 SPC 所需的版本签名。

@@ -5,11 +5,11 @@ ms.assetid: eadbbaf5-3fe3-484f-b3f1-3d543ddc817f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 662846dc5874f362c4a26852ffc9b411212f44b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365379"
 ---
 # <a name="converter"></a>Converter
 
@@ -23,7 +23,7 @@ TCP/IP 转换器构造使您能够扩展[bidi 通信](bidirectional-communicatio
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -94,7 +94,7 @@ Counter64
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>特性</th>
 <th>描述</th>
 </tr>
 </thead>

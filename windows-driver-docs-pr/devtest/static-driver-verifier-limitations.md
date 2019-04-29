@@ -5,11 +5,11 @@ ms.assetid: ea00e00d-34ea-4403-8f3c-85893645b890
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 06c10f00a684dfeddfdca160ce5d255c9ac3060d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365203"
 ---
 # <a name="static-driver-verifier-limitations"></a>静态驱动程序验证程序的限制
 

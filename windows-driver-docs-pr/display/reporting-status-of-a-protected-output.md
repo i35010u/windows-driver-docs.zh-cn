@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b0af73f0c7a7b7ac6c2461cfcaf13c7e6da352
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383256"
 ---
 # <a name="reporting-status-of-a-protected-output"></a>报告受保护输出的状态
 

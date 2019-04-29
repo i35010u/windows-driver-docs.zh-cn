@@ -5,11 +5,11 @@ ms.assetid: 7BE3FC13-DEE1-41A2-9B4A-D04CF5D0FC9B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9727e824c63acc9b0ecde67e2e739d1ef15100b7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366699"
 ---
 # <a name="performance-in-network-adapters"></a>网络适配器中的性能
 

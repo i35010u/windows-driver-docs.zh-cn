@@ -1,6 +1,6 @@
 ---
-title: ISDN 适配器的指定 ISDN 键和值
-description: ISDN 适配器的指定 ISDN 键和值
+title: 指定 ISDN 适配器的 ISDN 键和值
+description: 指定 ISDN 适配器的 ISDN 键和值
 ms.assetid: ba2156c1-fb54-4e1e-b0ec-72aa2d950505
 keywords:
 - 添加注册表部分 WDK 网络、 ISDN 适配器
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84ccf565d14e9366e84bb020a0035f4cd426f2c3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385424"
 ---
-# <a name="specifying-isdn-keys-and-values-for-an-isdn-adapter"></a>ISDN 适配器的指定 ISDN 键和值
+# <a name="specifying-isdn-keys-and-values-for-an-isdn-adapter"></a>指定 ISDN 适配器的 ISDN 键和值
 
 
 
@@ -45,7 +45,7 @@ ms.locfileid: "56540694"
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Switch</th>
+    <th align="left">开关</th>
     <th align="left">描述</th>
     </tr>
     </thead>

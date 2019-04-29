@@ -6,11 +6,11 @@ ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_CURRENT_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac4d4f4033f6f4082f9aa5e44eb189bbf99b73
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368953"
 ---
 # <a name="oidgencurrentpacketfilter"></a>OID\_GEN\_当前\_数据包\_筛选器
 
@@ -189,13 +189,13 @@ SMT FDDI NIC 会收到的数据包。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ntddndis.h （包括 Ndis.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)

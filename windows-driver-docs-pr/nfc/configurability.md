@@ -4,18 +4,18 @@ description: 此主题 discuses 扩展性 NFC 客户端驱动程序，使客户�
 ms.assetid: 29C6C96E-9F20-4750-ABDD-103871B405FA
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 63bdc7235c1291bd1fe2259585712197717af45d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375217"
 ---
 # <a name="configurability"></a>可配置性
 

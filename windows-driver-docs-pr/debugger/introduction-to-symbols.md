@@ -5,11 +5,11 @@ ms.assetid: 3c896a1e-51db-4c98-a6f4-842c82bdeaef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0add09156805afac5b26fc1aa81c2856c2eb2087
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384506"
 ---
 # <a name="introduction-to-symbols"></a>符号简介
 

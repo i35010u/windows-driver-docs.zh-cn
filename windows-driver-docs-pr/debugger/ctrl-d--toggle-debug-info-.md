@@ -1,5 +1,5 @@
 ---
-title: CTRL + D （切换调试信息）
+title: CTRL+D（切换调试信息）
 description: CTRL + D 键切换调试器的内部信息流打开和关闭。 这用于在其中调试器无法正常通信的情况下重新开始通信。
 ms.assetid: fcc5d597-6a3f-4d6c-82f9-3624efb4f434
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3907900b3bdc971293c9aae752738d2c6445952d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374966"
 ---
-# <a name="ctrld-toggle-debug-info"></a>CTRL + D （切换调试信息）
+# <a name="ctrld-toggle-debug-info"></a>CTRL+D（切换调试信息）
 
 
 CTRL + D 键切换调试器的内部信息流打开和关闭。 这用于在其中调试器无法正常通信的情况下重新启动目标计算机和主机计算机之间的通信。

@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bd436a85f6532977bdda64bad6a7d5411ff9eb30
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365385"
 ---
 # <a name="implementing-dynamic-mof-data"></a>实现动态 MOF 数据
 

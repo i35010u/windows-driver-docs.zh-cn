@@ -5,11 +5,11 @@ ms.assetid: 7fe48a4b-25d2-4e2c-9c26-a425928947ce
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6e645c8f2454b9afe5190806172a5f1c8ac01db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370743"
 ---
 # <a name="marking-sources-as-removable"></a>将源标记为可移动
 

@@ -5,11 +5,11 @@ ms.assetid: f8adb58e-389e-4411-bbc0-3f74bba691df
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3095866b0e682d6ec00aaf7a9bf7f4aa65eb5c60
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364366"
 ---
 # <a name="scanner-configuration-elements"></a>扫描仪配置元素
 

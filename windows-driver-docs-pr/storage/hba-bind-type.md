@@ -5,11 +5,11 @@ ms.assetid: a5388574-f48a-4bdc-9ffe-408fa6de1eeb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 682959a9a7c1832667884ede58694b3611528741
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383106"
 ---
 # <a name="hbabindtype"></a>HBA\_绑定\_类型
 

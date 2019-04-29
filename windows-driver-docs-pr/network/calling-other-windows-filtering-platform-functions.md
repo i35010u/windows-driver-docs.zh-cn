@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b8ee9c6b24c69c0d8d0a43a5db24f8ac7a8f79
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379341"
 ---
 # <a name="calling-other-windows-filtering-platform-functions"></a>调用其他 Windows 筛选平台函数
 

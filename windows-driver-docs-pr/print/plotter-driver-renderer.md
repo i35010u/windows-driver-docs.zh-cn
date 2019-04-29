@@ -1,6 +1,6 @@
 ---
-title: 绘图器驱动程序呈现器
-description: 绘图器驱动程序呈现器
+title: 绘图仪驱动程序渲染器
+description: 绘图仪驱动程序渲染器
 ms.assetid: 54aac978-6344-41b3-97ea-e78816fb94dc
 keywords:
 - 绘图器驱动程序 WDK 打印，呈现器
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53553fab1f200eaab54c48e03da6c2b26e1cf324
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386618"
 ---
-# <a name="plotter-driver-renderer"></a>绘图器驱动程序呈现器
+# <a name="plotter-driver-renderer"></a>绘图仪驱动程序渲染器
 
 
 

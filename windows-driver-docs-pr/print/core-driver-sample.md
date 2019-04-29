@@ -5,11 +5,11 @@ ms.assetid: cd46ea6a-7d21-4a4c-b21a-f9db3b47e3b4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ec150004d9ead458d33d8f32508051128192a8cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365594"
 ---
 # <a name="core-driver-sample"></a>核心驱动程序示例
 

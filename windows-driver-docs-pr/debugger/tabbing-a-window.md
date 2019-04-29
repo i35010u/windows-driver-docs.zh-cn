@@ -1,6 +1,6 @@
 ---
-title: Tab 键切换一个窗口
-description: Tab 键切换一个窗口
+title: 以标签页形式合并窗口
+description: 以标签页形式合并窗口
 ms.assetid: 4fff713b-ce76-42a6-91f7-9ae8f2acaafd
 keywords:
 - 调试信息窗口，选项卡式窗口
@@ -8,13 +8,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb64ed0fa7393ff505ef063f5b77500cf23d20d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383011"
 ---
-# <a name="tabbing-a-window"></a>Tab 键切换一个窗口
+# <a name="tabbing-a-window"></a>以标签页形式合并窗口
 
 
 Tab 键切换浮动或停靠窗口，请将其拖动另一个停靠窗口的顶部。 拖动鼠标指针的窗口已停靠窗口的中心之上，然后松开鼠标按钮。 拖动的窗口以选项卡式的窗口集合联接已停靠窗口。

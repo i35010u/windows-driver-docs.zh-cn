@@ -13,11 +13,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 21ea8c4f5714d95833c43ed65bea650063c1dc1c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364967"
 ---
 # <a name="icon-xml-element"></a>icon XML 元素
 

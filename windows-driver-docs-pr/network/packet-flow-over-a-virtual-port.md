@@ -1,17 +1,17 @@
 ---
-title: 通过虚拟端口的数据包流
-description: 通过虚拟端口的数据包流
+title: 基于虚拟端口的数据包流
+description: 基于虚拟端口的数据包流
 ms.assetid: 1E4B1987-3288-4082-B8A8-0F275C61597F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a9119c8a97dd4203612d211d2674ff91bcfb55fc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363781"
 ---
-# <a name="packet-flow-over-a-virtual-port"></a>通过虚拟端口的数据包流
+# <a name="packet-flow-over-a-virtual-port"></a>基于虚拟端口的数据包流
 
 
 默认 NIC 切换为支持单个根 I/O 虚拟化 (SR-IOV) 接口的网络适配器的一个组件。 该开关始终将默认虚拟端口 (VPort) 附加到 PCI Express (PCIe) 物理函数 (PF)。 此开关可以将一个或多个非默认 VPorts 附加到 PF. 有关详细信息，请参阅[创建虚拟端口](creating-a-virtual-port.md)。

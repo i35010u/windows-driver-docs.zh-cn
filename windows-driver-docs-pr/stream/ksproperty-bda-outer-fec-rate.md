@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8892fd127673bdf4ae7ee78b7d42317ad68577
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360861"
 ---
 # <a name="kspropertybdaouterfecrate"></a>KSPROPERTY\_BDA\_OUTER\_FEC\_RATE
 

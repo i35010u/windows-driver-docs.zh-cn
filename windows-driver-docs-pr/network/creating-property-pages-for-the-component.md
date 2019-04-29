@@ -1,6 +1,6 @@
 ---
-title: 为组件创建属性页
-description: 为组件创建属性页
+title: 创建组件的属性页
+description: 创建组件的属性页
 ms.assetid: f353844f-56f4-42cd-8f7d-2fa87f469d3c
 keywords:
 - 通知对象 WDK 网络，属性页
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 296014c79cadb493ef68cc0b0d01224323c8dcc1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366161"
 ---
-# <a name="creating-property-pages-for-the-component"></a>为组件创建属性页
+# <a name="creating-property-pages-for-the-component"></a>创建组件的属性页
 
 
 

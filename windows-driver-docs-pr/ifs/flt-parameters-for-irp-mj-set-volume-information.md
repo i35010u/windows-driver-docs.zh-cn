@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7347b0c3c48f36ef975e0941fe6f80286dd224
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367912"
 ---
 # <a name="fltparameters-for-irpmjsetvolumeinformation-union"></a>FLT\_IRP 的参数\_MJ\_设置\_卷\_信息并集
 
@@ -62,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -104,13 +104,13 @@ IRP\_MJ\_设置\_卷\_信息是基于 IRP 的操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件\_FS\_控制\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff540258)

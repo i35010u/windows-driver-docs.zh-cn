@@ -6,11 +6,11 @@ ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c1b00724a44e8af2514d54a4d8d9c0104a51771f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369884"
 ---
 # <a name="ndisstatuswwannetworkblacklist"></a>NDIS_STATUS_WWAN_NETWORK_BLACKLIST
 
@@ -24,10 +24,10 @@ ms.locfileid: "56555941"
 
 |   |   |
 | --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1703 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB 网络方块列表操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
 

@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: decc3b9c8065ff4b5f7e697b0b0d632a4c8bfcc8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367871"
 ---
 # <a name="allocating-an-ndis-port"></a>分配 NDIS 端口
 

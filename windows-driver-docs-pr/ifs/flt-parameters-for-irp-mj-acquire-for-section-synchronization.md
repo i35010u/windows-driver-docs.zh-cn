@@ -17,11 +17,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af83db238aa83ab081c913ce0f81de390e631495
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365079"
 ---
 # <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT\_IRP 的参数\_MJ\_ACQUIRE\_有关\_部分\_同步并集
 
@@ -86,17 +86,17 @@ IRP\_MJ\_ACQUIRE\_有关\_部分\_同步是文件系统 (FSFilter) 回调操作�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows XP 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

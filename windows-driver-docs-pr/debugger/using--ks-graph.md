@@ -7,13 +7,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6be6966026bc039c0ffbf3706da9c247b305f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367975"
 ---
-# <a name="using-ksgraph"></a>使用 ！ ks.graph
+# <a name="using-ksgraph"></a>使用 !ks.graph
 
 
 [ **！ Ks.graph** ](-ks-graph.md)命令是一个流式处理扩展插件模块的内核中功能最强大的扩展命令。 此命令显示整个关系图的图片在内核模式下从任何给定的起始点。

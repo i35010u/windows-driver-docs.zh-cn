@@ -1,19 +1,19 @@
 ---
-title: 安装 AVStream 基于硬件的编解码器驱动程序
-description: 安装 AVStream 基于硬件的编解码器驱动程序
+title: 安装基于 AVStream 的硬件编解码器驱动程序
+description: 安装基于 AVStream 的硬件编解码器驱动程序
 ms.assetid: 7b3bbff7-c8e7-47ea-a455-66f01a552e3b
 keywords:
 - 硬件编解码器支持 WDK AVStream，安装驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dff4b47ff25c9ac37e7f1c15521ccbbf480d1102
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63386499"
 ---
-# <a name="installing-an-avstream-based-hardware-codec-driver"></a>安装 AVStream 基于硬件的编解码器驱动程序
+# <a name="installing-an-avstream-based-hardware-codec-driver"></a>安装基于 AVStream 的硬件编解码器驱动程序
 
 
 具有硬件支持的编解码器的基于 AVStream 驱动程序应提供类似于其他 AVStream 微型驱动程序的 INF 文件。 但是，有两个硬件供应商可以包括便于特定驱动程序行为的特定条目：

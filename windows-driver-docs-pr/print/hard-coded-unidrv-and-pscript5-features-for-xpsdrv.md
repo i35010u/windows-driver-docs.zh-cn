@@ -5,11 +5,11 @@ ms.assetid: d2922bc4-83d7-40da-adee-15c0810f2321
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d9ed9ac627a98959a5d91e35afd9e3ded26c6f9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63360539"
 ---
 # <a name="hard-coded-unidrv-and-pscript5-features-for-xpsdrv"></a>XPSDrv 的硬编码 UniDrv 和 PScript5 功能
 

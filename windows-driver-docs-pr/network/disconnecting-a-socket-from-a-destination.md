@@ -12,11 +12,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a43c1dffa9b5222398253992ff99d32d173ed7cd
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379570"
 ---
 # <a name="disconnecting-a-socket-from-a-destination"></a>断开套接字与目标的连接
 

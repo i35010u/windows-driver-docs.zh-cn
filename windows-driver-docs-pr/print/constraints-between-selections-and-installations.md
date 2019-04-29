@@ -1,6 +1,6 @@
 ---
-title: 选择和安装之间的约束
-description: 选择和安装之间的约束
+title: 选择与安装之间的约束
+description: 选择与安装之间的约束
 ms.assetid: abb6004f-daae-4f28-b36c-102d0b8c9f55
 keywords:
 - 安装 WDK Unidrv 约束
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e09254f2efed71de895b90b2393deeece3761e2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383162"
 ---
-# <a name="constraints-between-selections-and-installations"></a>选择和安装之间的约束
+# <a name="constraints-between-selections-and-installations"></a>选择与安装之间的约束
 
 
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a67243a4c387317b5d5b60bab28915d27b52221d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363223"
 ---
 # <a name="inf-updateinis-directive"></a>INF UpdateInis 指令
 
@@ -87,7 +87,7 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -1,6 +1,6 @@
 ---
-title: 导入内核模式安全的字符串函数
-description: 导入内核模式安全的字符串函数
+title: 导入内核模式安全字符串函数
+description: 导入内核模式安全字符串函数
 ms.assetid: f1cee7e0-151b-4e03-bf4d-400f328083fa
 keywords:
 - 导入安全的字符串函数
@@ -12,13 +12,13 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 21e11c0e1275bb629dba89a6ddc32622f53ee0b0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384259"
 ---
-# <a name="importing-kernel-mode-safe-string-functions"></a>导入内核模式安全的字符串函数
+# <a name="importing-kernel-mode-safe-string-functions"></a>导入内核模式安全字符串函数
 
 
 

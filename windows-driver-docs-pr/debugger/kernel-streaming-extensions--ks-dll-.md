@@ -1,6 +1,6 @@
 ---
-title: 流式处理扩展插件 (Ks.dll) 的内核
-description: 流式处理扩展插件 (Ks.dll) 的内核
+title: 内核流扩展 (Ks.dll)
+description: 内核流扩展 (Ks.dll)
 ms.assetid: ad25aac3-0052-47b6-a9b6-064f781473e9
 keywords:
 - 内核调试，扩展 (ks.dll) 流式处理
@@ -9,13 +9,13 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 424c33614620e371c8a379d667b5177bc4198e8b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367189"
 ---
-# <a name="kernel-streaming-extensions-ksdll"></a>流式处理扩展插件 (Ks.dll) 的内核
+# <a name="kernel-streaming-extensions-ksdll"></a>内核流扩展 (Ks.dll)
 
 
 可以 Ks.dll 中找到可用于调试内核流式处理驱动程序和 AVStream 驱动程序的扩展命令。

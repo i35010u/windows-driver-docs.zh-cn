@@ -5,11 +5,11 @@ ms.assetid: FDDD2320-E853-45a8-9820-12FB16365B9C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c65d90e3dc148cef086aadbe67a89bff47e7a234
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385072"
 ---
 # <a name="cross-machine-execution"></a>跨计算机执行
 

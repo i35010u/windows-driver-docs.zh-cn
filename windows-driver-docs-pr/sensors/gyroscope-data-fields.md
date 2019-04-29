@@ -5,11 +5,11 @@ ms.assetid: A8F8EC33-B6B4-4CA3-8A45-5760F18116D3
 ms.date: 01/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c68fbd7b53e76cb6044a09a5f5c877b535a3cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366517"
 ---
 # <a name="gyroscope-data-fields"></a>陀螺仪数据字段
 
@@ -57,7 +57,7 @@ ms.locfileid: "56556125"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)

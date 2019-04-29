@@ -1,17 +1,17 @@
 ---
-title: 安装新的设备安装程序类的总线
-description: 安装新的设备安装程序类的总线
+title: 为总线安装新的设备安装程序类
+description: 为总线安装新的设备安装程序类
 ms.assetid: a94899b6-02e0-4181-bb14-5552806a8c9e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 663fb8f1155aaa98c567d3d98673192d1927aee9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364975"
 ---
-# <a name="installing-a-new-device-setup-class-for-a-bus"></a>安装新的设备安装程序类的总线
+# <a name="installing-a-new-device-setup-class-for-a-bus"></a>为总线安装新的设备安装程序类
 
 
 如果新总线支持的功能有很大区别属于现有的设备提供的功能的设备[设备安装程序类](device-setup-classes.md)，应安装新的设备安装程序类为总线。 有关可帮助您确定是否要安装新的设备安装程序类的详细信息，请参阅[创建新的设备安装程序类](creating-a-new-device-setup-class.md)。

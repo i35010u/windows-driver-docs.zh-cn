@@ -5,11 +5,11 @@ ms.assetid: 59ce747a-bb5e-4e8c-ab4a-d3f4432f17e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 214f4fc6fdf73cb1eddb8c9fda3c6c3c1b217c5e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367035"
 ---
 # <a name="reporting-device-online-status"></a>报告设备联机状态
 

@@ -5,11 +5,11 @@ ms.assetid: 5ee9d1ab-cc6f-4262-b2b0-e8b0b0c0c1d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ff0a3a43aec6a585a67c4a44a74ce05d7ce734c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380170"
 ---
 # <a name="establish-temporary-network-connectivity"></a>建立临时网络连接
 
@@ -30,7 +30,7 @@ ms.locfileid: "56519090"
 
 使用返回的连接尝试结果[ **IMbnConnectionEvents::OnConnectComplete** ](https://msdn.microsoft.com/library/windows/desktop/dd430376)方法。 若要断开连接完成后，请调用[ **IMbnConnection::Disconnect** ](https://msdn.microsoft.com/library/windows/desktop/dd430401)方法。 通过使用返回状态[ **IMbnConnectionEvents::OnDisconnectComplete**](https://msdn.microsoft.com/library/windows/desktop/dd430378)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)

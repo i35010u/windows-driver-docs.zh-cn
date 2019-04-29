@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5d1ea9041b1d4d5fee011516c1f2a1e5a61ea9
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370858"
 ---
 # <a name="gflags-command-overview"></a>GFlags 命令概述
 

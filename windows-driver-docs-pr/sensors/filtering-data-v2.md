@@ -19,11 +19,11 @@ keywords:
 ms.date: 07/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a691901336418a7cc14645cddbae7fc810df1832
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362292"
 ---
 # <a name="filtering-data"></a>筛选数据
 
@@ -59,8 +59,8 @@ ms.locfileid: "56546798"
 | 活动检测        | 5000                                 |
 | 环境光线传感器      | 1000                                 |
 | 气压计                 | 1000                                 |
-| 自定义传感器             | 不适用                                  |
-| Geomagnetic 方向   | 100                                  |
+| 自定义传感器             | 不可用                                  |
+| 地磁方向   | 100                                  |
 | 重力向量            | 100                                  |
 | 陀螺测试仪                 | 100                                  |
 | 线性加速感应器      | 100                                  |
@@ -82,8 +82,8 @@ ms.locfileid: "56546798"
 | 活动检测        | 0 （无订阅的活动）             |
 | 环境光线传感器      | 25 %lux 更改                         |
 | 气压计                 | 0.001 栏                              |
-| 自定义传感器             | 不适用                                    |
-| Geomagnetic 方向   | 10.0 度                           |
+| 自定义传感器             | 不可用                                    |
+| 地磁方向   | 10.0 度                           |
 | 重力向量            | 10.0 度                           |
 | 陀螺测试仪                 | 0.50 度 / 秒                |
 | 线性加速感应器      | 0.02 G                                 |
@@ -132,7 +132,7 @@ ms.locfileid: "56546798"
 
 传感器，除外，下面所述的传感器必须报告读取在每个电子 CRI，如果类扩展设置的所有传感器 CS 值为 0 的一个示例。
 
-### <a name="exceptions"></a>例外
+### <a name="exceptions"></a>Exceptions
 
 * 如果 PKEY_SensorData_SubscribedActivityStates 设置为 0，活动检测传感器必须未报告任何活动的更改。 相反，传感器类扩展会将 PKEY_SensorData_ActivityStream 体时需要流到传感器。
 * 接近传感器和简单设备方向不支持流式处理。

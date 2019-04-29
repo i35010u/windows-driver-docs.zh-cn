@@ -5,11 +5,11 @@ ms.assetid: b7c3c934-5b31-48da-9fb0-98007267711b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d6ed1fe40e0511e1fcde416be0907067678eef15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380633"
 ---
 # <a name="kspropsetidbdaautodemodulate"></a>KSPROPSETID\_BdaAutodemodulate
 

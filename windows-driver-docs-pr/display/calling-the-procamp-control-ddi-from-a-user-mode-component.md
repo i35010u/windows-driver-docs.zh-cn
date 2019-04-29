@@ -1,6 +1,6 @@
 ---
-title: 从用户模式组件调用 ProcAmp 控件 DDI
-description: 从用户模式组件调用 ProcAmp 控件 DDI
+title: 从用户模式组件调用 ProcAmp 控制 DDI
+description: 从用户模式组件调用 ProcAmp 控制 DDI
 ms.assetid: 1e4e19bb-eb4b-4db6-8947-429a1a414e4a
 keywords:
 - 调用 ProcAmp 控件 DDI WDK DirectX VA
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6fd20cf863b0e7bac842b1ec421b149891ee44
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385704"
 ---
-# <a name="calling-the-procamp-control-ddi-from-a-user-mode-component"></a>从用户模式组件调用 ProcAmp 控件 DDI
+# <a name="calling-the-procamp-control-ddi-from-a-user-mode-component"></a>从用户模式组件调用 ProcAmp 控制 DDI
 
 
 ## <span id="ddk_calling_the_procamp_control_ddi_from_a_user_mode_component_gg"></span><span id="DDK_CALLING_THE_PROCAMP_CONTROL_DDI_FROM_A_USER_MODE_COMPONENT_GG"></span>

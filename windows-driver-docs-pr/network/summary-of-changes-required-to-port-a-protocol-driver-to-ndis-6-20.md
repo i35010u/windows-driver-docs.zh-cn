@@ -1,6 +1,6 @@
 ---
 title: 若要移植到 NDIS 6.20 协议驱动程序的更改摘要
-description: 若要移植到 NDIS 6.20 协议驱动程序所需的更改的摘要
+description: 将协议驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 ms.assetid: d47b29a5-3385-4023-b94c-5cfbc225f48a
 keywords:
 - NDIS 6.20 WDK，移植协议驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: deed1d77b98591e6be28971a09e706d601647c9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366355"
 ---
-# <a name="summary-of-changes-required-to-port-a-protocol-driver-to-ndis-620"></a>若要移植到 NDIS 6.20 协议驱动程序所需的更改的摘要
+# <a name="summary-of-changes-required-to-port-a-protocol-driver-to-ndis-620"></a>将协议驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
 
 

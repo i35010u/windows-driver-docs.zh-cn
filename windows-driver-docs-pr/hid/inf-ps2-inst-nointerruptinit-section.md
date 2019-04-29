@@ -1,6 +1,6 @@
 ---
-title: INF PS2_Inst.NoInterruptInit 部分
-description: INF PS2_Inst.NoInterruptInit 部分
+title: INF PS2_Inst.NoInterruptInit 节
+description: INF PS2_Inst.NoInterruptInit 节
 ms.assetid: e84cc7fc-8b17-4119-84f9-12ac888c68aa
 keywords:
 - INF 文件 WDK 非 HID 键盘/鼠标
@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d699a4005cd977665b74bb4eb293ecf337548bb8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364681"
 ---
 # <a name="inf-ps2instnointerruptinit-section"></a>INF PS2\_Inst.NoInterruptInit 部分
 

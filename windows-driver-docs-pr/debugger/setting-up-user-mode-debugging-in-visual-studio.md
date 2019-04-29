@@ -5,11 +5,11 @@ ms.assetid: D36220DF-1ACB-4D8B-BC4C-1A6FCB54CA15
 ms.date: 05/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca46bafc45a4a507148ccbf049c2d5caef408e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368116"
 ---
 # <a name="span-iddebuggersettingupuser-modedebugginginvisualstudiospansetting-up-user-mode-debugging-in-visual-studio"></a><span id="debugger.setting_up_user-mode_debugging_in_visual_studio"></span>设置 Visual Studio 中的用户模式下调试
 

@@ -1,19 +1,19 @@
 ---
-title: 安全模式下的功能
-description: 安全模式下的功能
+title: 安全模式的功能
+description: 安全模式的功能
 ms.assetid: bf40d018-7804-47df-9064-fb6f86da4b33
 keywords:
 - 安全模式，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d19327f671ac067d8703d8f454b6d4c0b0e3898
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379735"
 ---
-# <a name="features-of-secure-mode"></a>安全模式下的功能
+# <a name="features-of-secure-mode"></a>安全模式的功能
 
 
 ## <span id="ddk_features_of_secure_mode_dbg"></span><span id="DDK_FEATURES_OF_SECURE_MODE_DBG"></span>

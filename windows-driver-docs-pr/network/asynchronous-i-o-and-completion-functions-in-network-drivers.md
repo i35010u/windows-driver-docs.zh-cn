@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f8e16103302ba5670474f4b895a37088f559c2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56569101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367786"
 ---
 # <a name="asynchronous-io-and-completion-functions-in-network-drivers"></a>网络驱动程序中的异步 I/O 和 Completion 函数
 

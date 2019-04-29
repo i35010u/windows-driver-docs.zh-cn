@@ -1,19 +1,19 @@
 ---
-title: Stream 检查
-description: Stream 检查
+title: 流检查
+description: 流检查
 ms.assetid: 77e152bf-cb6b-4845-9a5e-9c37281f23f1
 keywords:
 - 流检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 417c41cd9c9c736c166c369d61d5579cc0677b64
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366367"
 ---
-# <a name="stream-inspection"></a>Stream 检查
+# <a name="stream-inspection"></a>流检查
 
 
 ## <a name="inline-stream-inspection"></a>内联 Stream 检查

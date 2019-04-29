@@ -7,11 +7,11 @@ keywords:
 ms.date: 07/31/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c0e258c385af2e7dcce00d736219fca8895140dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372573"
 ---
 # <a name="ehsnetworkstate-enumeration"></a>eHS\_网络\_状态枚举
 
@@ -57,11 +57,11 @@ typedef enum _eHS_NETWORK_STATE {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
 </tr>
 </tbody>

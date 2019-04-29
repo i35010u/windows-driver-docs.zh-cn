@@ -1,16 +1,16 @@
 ---
-Description: The MUTT Connection Exerciser Type-C (USB Type-C ConnEx) hardware board is a custom shield for the Arduino board.
-title: 测试与 USB 类型 C ConnEx USB C 类型系统
+Description: MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino 开发板的自定义防护罩。
+title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bd672f37af43f807d9b178112bef18671d4fc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380047"
 ---
-# <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>测试与 USB 类型 C ConnEx USB C 类型系统
+# <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
 
 **摘要**
@@ -120,7 +120,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 
 以下是特定于 USB 类型 C ConnEx 中 MUTT 软件包的工具
 
-| 工具                          | 描述                                                                                          |
+| Tool                          | 描述                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------------|
 | [ConnExUtil.exe](#connexutil) | 命令行工具来执行 USB 类型 C ConnEx 功能。                                             |
 | [CxLoop.cmd](#cxloop)         | 连接和断开连接的每个端口一次。                                                             |
@@ -131,7 +131,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 
 有关所有其他工具的信息，请参阅[MUTT 软件包中的工具](mutt-software-package.md)。
 
-## <a name="get-started"></a>获取已启动...
+## <a name="get-started"></a>入门...
 
 
 按照以下过程来设置测试环境。
@@ -146,7 +146,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 
     如果 USB 类型 C ConnEx 而未进入已组装，然后继续步骤 1。 如果你 USB 类型 C ConnEx 经过组装，然后转到步骤 2。
 
-    **谨慎**![警告：](images/caution.png)因为球瓶轻松弯曲必须谨慎地执行此步骤。  
+    **谨慎**![警告：](images/caution.png)因为球瓶轻松弯曲必须谨慎地执行此步骤。
 
 
 
@@ -173,7 +173,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 3.  使用 USB 类型 C ConnEx 固件更新微型控制器。
     -   打开提升的命令提示符窗口。
     -   导航到 MUTT 软件包，如 c： 的位置\\Program Files (x86)\\USBTest\\*&lt;arch&gt;*。
-    -   运行以下命令：
+    -   运行下面的命令：
 
         **MuttUtil.exe – UpdateTabFirmware**
 
@@ -220,7 +220,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 <thead>
 <tr class="header">
 <th>用例</th>
-<th>选项</th>
+<th>Option</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -589,7 +589,7 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
 以下功能测试可适用的 USB 类型-C 来提高传统 USB 方案。
 
-| 测试用例                                | 描述                                                                                                                  | 类别             |
+| 测试用例                                | 描述                                                                                                                  | Category             |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------------------|
 | [系统启动](type.md#ft2)              | 确认该产品未影响正常的系统启动。                                                               | 系统，停靠，设备 |
 | [系统电源转换](type.md#ft3) | 测试是否转换系统的能力，从低功率状态唤醒功能不受影响的产品。 | 系统，停靠，设备 |
@@ -599,7 +599,7 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
 以下的压力测试可以改编自 SuperMUTT 测试文档，以展开 USB 方案。
 
-| 测试用例                                | 描述                                                     | 类别             |
+| 测试用例                                | 描述                                                     | Category             |
 |------------------------------------------|-----------------------------------------------------------------|----------------------|
 | [系统电源转换](type.md#st1) | 测试产品后执行重复的系统电源事件的可靠性。 | 系统，停靠，设备 |
 | [传输事件](type.md#st2)          | 生成多个传输和连接事件。              | 系统，停靠，设备 |

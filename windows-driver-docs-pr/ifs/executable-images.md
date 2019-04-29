@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ac55025cb80e76c4f9a0acae0d2e53bd3ac74f93
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383844"
 ---
 # <a name="executable-images"></a>可执行映像
 

@@ -1,6 +1,6 @@
 ---
-title: 到全局记录器会话日志记录
-description: 到全局记录器会话日志记录
+title: 记录到全局记录器会话
+description: 记录到全局记录器会话
 ms.assetid: 48dfe101-b083-4d70-b85f-2e115f7e1dfa
 keywords:
 - 在启动 WDK 期间跟踪，全局记录器跟踪会话
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9c5e05575b85cc4502697a4423e98cf51f092d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383732"
 ---
-# <a name="logging-to-the-global-logger-session"></a>到全局记录器会话日志记录
+# <a name="logging-to-the-global-logger-session"></a>记录到全局记录器会话
 
 
 你可以在系统启动期间由配置驱动程序以记录到跟踪驱动程序或其他跟踪提供程序的操作[全局记录器跟踪会话](global-logger-trace-session.md)，在系统启动期间运行的跟踪会话。 该驱动程序必须进行检测的软件跟踪。

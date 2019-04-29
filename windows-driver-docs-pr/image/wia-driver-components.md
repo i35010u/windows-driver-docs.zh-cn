@@ -5,11 +5,11 @@ ms.assetid: 2c854945-2eda-4f4c-9cf6-5525e6e237ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d81e8d335eeaef389dd4d0770e6e96ab908097e1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366979"
 ---
 # <a name="wia-driver-components"></a>WIA 驱动程序组件
 

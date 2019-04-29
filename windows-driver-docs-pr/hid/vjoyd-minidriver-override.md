@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7121ec7f010308e588cfed6a580301ee6f5e0de5
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376725"
 ---
 # <a name="vjoyd-minidriver-override"></a>VJoyD 微型驱动程序重写
 
@@ -43,8 +43,8 @@ ms.locfileid: "57464173"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“属性”</th>
-<th>ReplTest1</th>
+<th>名称</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

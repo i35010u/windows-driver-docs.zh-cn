@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84fba54f75adecaa81bab881d8790e3a63c377
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63370914"
 ---
 # <a name="interface-handler-plug-in"></a>接口处理程序插件
 

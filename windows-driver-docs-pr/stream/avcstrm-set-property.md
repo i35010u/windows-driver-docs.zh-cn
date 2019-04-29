@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcb6ad0e38c902a6910f54f85f01a623b547f418
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364073"
 ---
 # <a name="avcstrmsetproperty"></a>AVCSTRM\_SET\_PROPERTY
 

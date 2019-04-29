@@ -1,17 +1,17 @@
 ---
-title: 802.3 统计信息 Oid
-description: 802.3 统计信息 Oid
+title: 802.3 统计信息 OID
+description: 802.3 统计信息 OID
 ms.assetid: bd9b3cff-d71b-4afc-b806-41229ef98e34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ab1fb942917d74073b0e66988f6c93c89e0f4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368001"
 ---
-# <a name="8023-statistic-oids"></a>802.3 统计信息 Oid
+# <a name="8023-statistic-oids"></a>802.3 统计信息 OID
 
 
 

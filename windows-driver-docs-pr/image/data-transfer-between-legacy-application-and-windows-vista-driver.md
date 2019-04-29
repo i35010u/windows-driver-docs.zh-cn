@@ -1,17 +1,17 @@
 ---
-title: 旧版应用程序和 Windows Vista 驱动程序之间传输数据
-description: 旧版应用程序和 Windows Vista 驱动程序之间传输数据
+title: 在旧版应用程序和 Windows Vista 驱动程序之间进行的数据传输
+description: 在旧版应用程序和 Windows Vista 驱动程序之间进行的数据传输
 ms.assetid: 83817277-3526-4f64-8e7c-7e02c8cd77bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a1bafeee84f848d10500ce24baab0b6bf8f52009
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379844"
 ---
-# <a name="data-transfer-between-legacy-application-and-windows-vista-driver"></a>旧版应用程序和 Windows Vista 驱动程序之间传输数据
+# <a name="data-transfer-between-legacy-application-and-windows-vista-driver"></a>在旧版应用程序和 Windows Vista 驱动程序之间进行的数据传输
 
 
 兼容性层必须确保，将始终调用驱动程序的图像处理筛选器，并且旧的应用程序，不显式支持**LocalService**帐户仍将能够执行数据传输。 **LocalService**帐户，可在 Microsoft Windows XP 和更高版本操作系统上。

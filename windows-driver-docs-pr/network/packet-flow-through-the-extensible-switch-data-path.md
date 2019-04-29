@@ -1,17 +1,17 @@
 ---
-title: 通过可扩展交换机数据路径的数据包流
-description: 通过可扩展交换机数据路径的数据包流
+title: 通过可扩展交换机数据路径传输的数据包流
+description: 通过可扩展交换机数据路径传输的数据包流
 ms.assetid: 9236CE95-F959-445F-849F-14377EE91D19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e74665598e19624152a1cc72075e5c5a6c57dd53
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363817"
 ---
-# <a name="packet-flow-through-the-extensible-switch-data-path"></a>通过可扩展交换机数据路径的数据包流
+# <a name="packet-flow-through-the-extensible-switch-data-path"></a>通过可扩展交换机数据路径传输的数据包流
 
 
 本主题介绍如何数据包将移到或从可扩展的交换机端口通过 HYPER-V 可扩展交换机数据路径。

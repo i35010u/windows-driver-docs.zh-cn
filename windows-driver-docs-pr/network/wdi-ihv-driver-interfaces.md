@@ -5,11 +5,11 @@ ms.assetid: B4528C70-9FE4-4E00-9D0B-8832CCEC982E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cd10bc2af08445689c1ffd96bda3598b567c13a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63385626"
 ---
 # <a name="wdi-ihv-driver-interfaces"></a>WDI IHV 驱动程序接口
 

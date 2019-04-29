@@ -1,6 +1,6 @@
 ---
-title: 日志记录清单的概述
-description: 日志记录清单的概述
+title: 日志记录清单概述
+description: 日志记录清单概述
 ms.assetid: abf550c5-6b70-4043-b2e9-d3dc5096cc4e
 keywords:
 - 日志查看器，清单
@@ -8,19 +8,19 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eea59260a5928503ff0e670758c24d5983bbf9b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366458"
 ---
-# <a name="overview-of-the-logging-manifest"></a>日志记录清单的概述
+# <a name="overview-of-the-logging-manifest"></a>日志记录清单概述
 
 
 ## <span id="ddk_overview_of_the_logging_manifest_dtoolq"></span><span id="DDK_OVERVIEW_OF_THE_LOGGING_MANIFEST_DTOOLQ"></span>
 
 
-日志记录清单是定义的函数和拦截和记录的 COM 接口的"标头"文件组。 这些不是 true 的 c + + 标头文件--它们显式声明信息的略有不同格式所需记录器。
+日志记录清单是定义的函数和拦截和记录的 COM 接口的"标头"文件组。 这些不是，则返回 trueC++标头文件，它们是显式声明所需的记录器的信息的略有不同格式。
 
 例如，清单格式的功能包括以下功能：
 

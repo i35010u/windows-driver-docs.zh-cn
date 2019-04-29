@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 745807c96a29eb281e946647eaf044054e839315
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378027"
 ---
 # <a name="ccistheredirtyloggedpages-routine"></a>CcIsThereDirtyLoggedPages 例程
 
@@ -36,7 +36,7 @@ BOOLEAN CcIsThereDirtyLoggedPages(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *DeviceObject* \[中\]  
@@ -71,11 +71,11 @@ BOOLEAN CcIsThereDirtyLoggedPages(
 <td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 8 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h 或 FltKernel.h）</td>
 </tr>
 <tr class="even">
@@ -93,7 +93,7 @@ BOOLEAN CcIsThereDirtyLoggedPages(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CcFlushCache**](https://msdn.microsoft.com/library/windows/hardware/ff539082)

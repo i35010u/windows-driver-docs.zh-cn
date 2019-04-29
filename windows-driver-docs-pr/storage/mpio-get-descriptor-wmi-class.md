@@ -5,11 +5,11 @@ ms.assetid: 6d48c0b5-c20f-4017-aae5-0b00fa5de18d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: bfa511e242532c031319c895e8e807cc9bf94b33
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383063"
 ---
 # <a name="mpiogetdescriptor-wmi-class"></a>MPIO\_获取\_描述符 WMI 类
 

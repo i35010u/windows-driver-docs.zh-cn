@@ -5,11 +5,11 @@ ms.assetid: B964CF3F-ACDB-41ED-8962-B7DDB957D7D3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e01ecc15c40dd9d9e6eeca1fd6cbc3f259026cc2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371533"
 ---
 # <a name="wdk-and-visual-studio-build-environment"></a>WDK 和 Visual Studio 生成环境
 

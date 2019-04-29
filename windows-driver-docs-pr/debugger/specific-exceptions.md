@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 68c797365bdc3e99e10e587d294c72d5207cd843
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63368085"
 ---
 # <a name="specific-exceptions"></a>特定异常
 
@@ -60,7 +60,7 @@ ms.locfileid: "56526178"
 </tr>
 <tr class="odd">
 <td align="left"><p>STATUS_CPP_EH_EXCEPTION</p></td>
-<td align="left"><p>C + + 异常处理异常</p></td>
+<td align="left"><p>C++异常处理异常</p></td>
 <td align="left"><p>0xE06D7363</p></td>
 </tr>
 <tr class="even">

@@ -7,11 +7,11 @@ keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_GO_NEGOTIATION_CONFIRMATION_INFO 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 14acd2c2a81ab3abb1b01f9f0cd287b3b4e269cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362485"
 ---
 # <a name="wditlvp2pgonegotiationconfirmationinfo"></a>WDI\_TLV\_P2P\_转\_协商\_确认\_信息
 
@@ -57,7 +57,7 @@ WDI\_TLV\_P2P\_转\_协商\_确认\_信息是包含 Wi-Fi Direct 转协商确认
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

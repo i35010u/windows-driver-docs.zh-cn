@@ -1,14 +1,14 @@
 ---
-Description: This topic discusses static streams capability and explains how a USB client driver can open and close streams in a bulk endpoint of a USB 3.0 device.
+Description: 本主题讨论了静态流功能并说明如何打开和关闭的流，大容量的 USB 3.0 设备终结点中 USB 客户端驱动程序。
 title: 如何打开和关闭 USB 大容量终结点中的静态流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e14aba7a384634b31fec0e4635c981c5005834d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63363579"
 ---
 # <a name="how-to-open-and-close-static-streams-in-a-usb-bulk-endpoint"></a>如何打开和关闭 USB 大容量终结点中的静态流
 
@@ -29,7 +29,7 @@ ms.locfileid: "56562672"
 
 本主题包含标记为一些说明**WDM 驱动程序**。 这些说明描述了 WDM 基于 USB 的客户端驱动程序，想要发送流请求的例程。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 客户端驱动程序可以打开或关闭流之前，必须具有该驱动程序：
 

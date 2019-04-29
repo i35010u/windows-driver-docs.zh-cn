@@ -1,6 +1,6 @@
 ---
-title: 安装自定义驱动程序组件
-description: 安装自定义驱动程序组件
+title: 安装自定义的驱动程序组件
+description: 安装自定义的驱动程序组件
 ms.assetid: 88f189bd-97f5-4bc6-ba3e-3d9da18e2102
 keywords:
 - 自定义 WDK、 安装组件的打印机驱动程序
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c23c770664e571cf2a75e5e2b274e4e070cf54a5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366832"
 ---
-# <a name="installing-customized-driver-components"></a>安装自定义驱动程序组件
+# <a name="installing-customized-driver-components"></a>安装自定义的驱动程序组件
 
 
 

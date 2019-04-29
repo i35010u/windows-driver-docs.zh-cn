@@ -5,11 +5,11 @@ ms.assetid: ad00e6ed-adfa-4888-9386-51f937a278d8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 96badd06cbd1ec2fb4f135ae9828f6978ffd828c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56548074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63359669"
 ---
 # <a name="iscsipersistentlogin-wmi-class"></a>ISCSI\_持久\_登录 WMI 类
 

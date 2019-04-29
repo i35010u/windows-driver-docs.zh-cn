@@ -1,19 +1,19 @@
 ---
-title: 初始化之间的差异
-description: 初始化之间的差异
+title: 初始化的差异
+description: 初始化的差异
 ms.assetid: 1b19e30d-3c10-4b97-9bb4-3233f7f2a195
 keywords:
 - 初始化面向连接的协议
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e52663f3f90e3f7c6da25ae1a1d99f0d72f413
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63379578"
 ---
-# <a name="differences-in-initialization"></a>初始化之间的差异
+# <a name="differences-in-initialization"></a>初始化的差异
 
 
 

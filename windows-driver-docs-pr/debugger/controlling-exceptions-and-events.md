@@ -12,11 +12,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3006c8f18c409208c55e4dad83d33f5f437c88f0
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63375533"
 ---
 # <a name="controlling-exceptions-and-events"></a>控制异常和事件
 
@@ -228,7 +228,7 @@ Microsoft Windows 操作系统时允许调试器来处理异常，应用程序�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>eh</strong></p></td>
-<td align="left"><p>C + + EH 异常</p></td>
+<td align="left"><p>C++EH 异常</p></td>
 <td align="left"><p>第二次中断</p></td>
 </tr>
 <tr class="odd">
@@ -333,7 +333,7 @@ Microsoft Windows 操作系统时允许调试器来处理异常，应用程序�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>vcpp</strong></p></td>
-<td align="left"><p>特殊的 Visual c + + 异常</p></td>
+<td align="left"><p>特殊的视觉对象C++异常</p></td>
 <td align="left"><p>忽略</p></td>
 </tr>
 <tr class="odd">

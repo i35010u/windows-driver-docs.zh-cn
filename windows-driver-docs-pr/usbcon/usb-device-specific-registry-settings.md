@@ -1,14 +1,14 @@
 ---
-Description: This topic describes the device-specific registry entries.
+Description: 本主题介绍特定于设备的注册表项。
 title: USB 设备注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8308e45f36a8261a2787ebbfed7160745f2e3a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63384524"
 ---
 # <a name="usb-device-registry-entries"></a>USB 设备注册表项
 

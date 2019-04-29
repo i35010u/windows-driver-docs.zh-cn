@@ -1,19 +1,19 @@
 ---
-title: 设置断点时需要执行的风险
-description: 设置断点时需要执行的风险
+title: 设置断点造成的风险
+description: 设置断点造成的风险
 ms.assetid: 92c1007b-f871-48e9-a215-4d36ed1371ea
 keywords:
 - 断点风险
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 566bca02caa9e5fa55b5657b057696a14e5838a3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63382076"
 ---
-# <a name="risks-entailed-when-setting-breakpoints"></a>设置断点时需要执行的风险
+# <a name="risks-entailed-when-setting-breakpoints"></a>设置断点造成的风险
 
 
 当您设置[断点](using-breakpoints.md)通过指定内存地址或符号加上偏移量，您必须将此断点的中间指令放。

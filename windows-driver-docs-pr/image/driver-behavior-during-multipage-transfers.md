@@ -5,11 +5,11 @@ ms.assetid: ecf0428b-c11c-49ff-9aa3-322e55dbca07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c5d0fd08773bbf980c24bbc4469fc622cf746ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364514"
 ---
 # <a name="driver-behavior-during-multipage-transfers"></a>在多页传输过程中的驱动程序行为
 

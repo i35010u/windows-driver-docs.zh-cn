@@ -1,6 +1,6 @@
 ---
-title: INF PS2_Inst.NoInterruptInit.Bioses 部分
-description: INF PS2_Inst.NoInterruptInit.Bioses 部分
+title: INF PS2_Inst.NoInterruptInit.Bioses 节
+description: INF PS2_Inst.NoInterruptInit.Bioses 节
 ms.assetid: 2bf1dc0f-00b6-4f4a-99f0-e9843fe6e66b
 keywords:
 - INF 文件 WDK 非 HID 键盘/鼠标
@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c36898c220502cac53e641a2b47225d719393a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364688"
 ---
 # <a name="inf-ps2instnointerruptinitbioses-section"></a>INF PS2\_Inst.NoInterruptInit.Bioses 部分
 

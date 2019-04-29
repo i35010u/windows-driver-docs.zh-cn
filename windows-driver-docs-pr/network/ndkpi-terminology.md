@@ -5,11 +5,11 @@ ms.assetid: 740A78B3-B7AD-4A8C-8097-D49B39BC9F47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 609cf7e422c81a3d25b8e6f7a5f585116e11bd7b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63380907"
 ---
 # <a name="ndkpi-terminology"></a>NDKPI 术语
 
@@ -30,7 +30,7 @@ NDKPI 文档使用以下术语来描述 NDK 提供程序和使用者。
 ## <a name="provider-function"></a>提供程序函数
 
 
-NDK 对象的函数调度表中一个 NDKPI 函数。 提供程序函数由 NDK 提供程序实现，由 NDK 使用者调用。 提供程序的所有函数的第一个参数都有一个指针指向在其上运行的对象。 此指针是类似于 c + + 中的"this"指针。 此指针始终显式传递时由使用者向提供程序函数。
+NDK 对象的函数调度表中一个 NDKPI 函数。 提供程序函数由 NDK 提供程序实现，由 NDK 使用者调用。 提供程序的所有函数的第一个参数都有一个指针指向在其上运行的对象。 此指针是类似于中的"this"指针C++。 此指针始终显式传递时由使用者向提供程序函数。
 
 ## <a name="consumer-callback"></a>使用者回调
 

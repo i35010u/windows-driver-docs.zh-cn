@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: abe90400bf7ce104e2b574f9404b102ac119acad
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367081"
 ---
 # <a name="adfresolutions-element"></a>ADFResolutions 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56534263"
 </wscn:ADFResolutions>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -91,7 +91,7 @@ ms.locfileid: "56534263"
 
 WSD 扫描服务应列出扫描设备支持中的所有可能的宽度**宽度**子元素和扫描设备支持中的所有可能高度**高度**子元素。 所有**宽度**并**高度**的值为独立于彼此，和大多数设备将支持这些配对中的任意组合[ **ScanTicket**](scanticket.md)元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ADFBack**](adfback.md)

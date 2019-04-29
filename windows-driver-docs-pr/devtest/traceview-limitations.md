@@ -1,19 +1,19 @@
 ---
-title: TraceView 限制
-description: TraceView 限制
+title: TraceView 的限制
+description: TraceView 的限制
 ms.assetid: 946d7c69-7c6a-4bab-8fa5-fc21dcf85ddb
 keywords:
 - TraceView WDK 限制
 ms.date: 09/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 852cc78489f444d45429c8176bccfabc45e07368
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63369623"
 ---
-# <a name="traceview-limitations"></a>TraceView 限制
+# <a name="traceview-limitations"></a>TraceView 的限制
 
 
 本主题介绍 TraceView 的限制。

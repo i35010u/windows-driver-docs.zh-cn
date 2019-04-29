@@ -1,17 +1,17 @@
 ---
-title: 启用将转换为 D3cold
+title: 启用到 D3cold 的转换
 description: 所有版本的 Windows 中都启用设备在计算机处于睡眠状态 （在一个系统低功耗状态 S1 到 S4） 时，要 D3cold。
 ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 13ce1874616b11a35323b9acce5b247bdaee4f2d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63362016"
 ---
-# <a name="enabling-transitions-to-d3cold"></a>启用将转换为 D3cold
+# <a name="enabling-transitions-to-d3cold"></a>启用到 D3cold 的转换
 
 
 所有版本的 Windows 中都启用设备在计算机处于睡眠状态 （在一个系统低功耗状态 S1 到 S4） 时，要 D3cold。 在计算机退出 S0 之前，功能的驱动程序、 总线驱动程序和筛选器驱动程序协同工作以将设备移到 D3hot。 当计算机进入低功耗 Sx 状态时，此转换具有将设备从 D3hot 移动到 D3cold 的副作用。

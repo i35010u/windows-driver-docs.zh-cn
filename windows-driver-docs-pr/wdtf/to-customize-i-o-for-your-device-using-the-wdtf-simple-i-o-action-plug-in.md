@@ -5,18 +5,18 @@ ms.assetid: 96BC880B-79DC-4CB1-BD79-87B0A4717634
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 284247bde18720594753b2cd323aa25818fd6832
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63367451"
 ---
 # <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>如何使用 WDTF 简单 I/O 操作插件为你的设备自定义 I/O
 
 
-若要从设备基础测试和测试您可能需要编写使用 Visual Studio 测试模板获取最大效益，应通过一个简单的 I/O 插件支持你的设备。 若要查看你的设备类型是否受支持并确定是否有用于测试的特定要求，请参阅[提供 WDTF 简单 I/O 插件](provided-wdtf-simpleio-plug-ins.md)。如果不支持你的设备，你可以创建插件在 Microsoft Visual Studio 中使用**WDTF 简单 I/O 操作插件**模板。
+若要从设备基础测试和测试您可能需要编写使用 Visual Studio 测试模板获取最大效益，应通过一个简单的 I/O 插件支持你的设备。 若要了解设备类型是否受支持以及确定是否有特定的测试要求，请参阅[提供的 WDTF 简单 I/O 插件](provided-wdtf-simpleio-plug-ins.md)。如果不支持你的设备，你可以创建插件在 Microsoft Visual Studio 中使用**WDTF 简单 I/O 操作插件**模板。
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 -   在测试计算机上安装待测试的设备。
 -   是测试签名，并且在测试计算机上安装的驱动程序包。 若要验证您的驱动程序是否正确安装，请参阅[如何测试驱动程序包](https://msdn.microsoft.com/windows-drivers/develop/test_a_driver_package)。
@@ -28,7 +28,7 @@ ms.locfileid: "56526244"
 ### <a href="" id="create-a-project-for-a-wdtf-simple-i-o-action-plug-in-"></a>步骤 1:为 WDTF 简单 I/O 操作插件创建项目
 
 1. 从**文件**菜单中，单击**新建&gt;项目**。
-2. 从列表中已安装模板**新的项目**对话框中，选择**Visual c + + &gt; Windows 驱动程序&gt;测试&gt;WDTF 简单 I/O 操作插件**。
+2. 从列表中已安装模板**新的项目**对话框中，选择**Visual C++ &gt; Windows 驱动程序&gt;测试&gt;WDTF 简单 I/O 操作插件**.
 3. 提供简单的 I/O 项目和位置的名称 （或使用默认值）。
 4. 项目模板生成的 Visual Studio 解决方案。 该解决方案包含需要创建一个简单的 I/O 设备插件的所有文件。 文件的名称采用以下形式 WDTF<em>&lt;项目&gt;</em>SimpleIoAction\*。 简单的 I/O 项目的默认名称是设备类型。
 5. 该模板将创建一个 WDTF 相当简单的 I/O 操作接口，用于你的项目。 接口对 IWDTFTarget2 接口的实例。
@@ -148,9 +148,9 @@ ms.locfileid: "56526244"
 4. 若要卸载简单的 I/O 操作插件，请运行名为测试**取消注册 WDTF**<em>&lt;项目&gt;</em>**SimpleIOAction.DLL**上测试计算机。 你可以验证已通过运行卸载插件**显示了 WDTF 简单 I/O 插件设备**测试。
 
 ## <a name="related-topics"></a>相关主题
-[测试创作和执行框架 (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)  
+[测试授权和执行框架 (TAEF)](https://msdn.microsoft.com/library/windows/hardware/hh439725)  
 [如何确定自定义 WDTF 简单 I/O 操作插件是否需要为你的设备](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)  
-[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)  
+[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)  
 
 
 

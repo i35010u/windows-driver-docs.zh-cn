@@ -7,11 +7,11 @@ keywords:
 ms.date: 08/17/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 133267fea9d3a6f0280132d134f014729c97a6ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63383183"
 ---
 # <a name="oidwwanuiccreset"></a>OID_WWAN_UICC_RESET
 
@@ -29,10 +29,10 @@ OID_WWAN_UICC_RESET 是发送到调制解调器微型端口适配器来重置 UI
 
 | | |
 | --- | --- |
-| 版本 | Windows 10 版本 1709 |
-| 标头 | Ntddndis.h （包括 Ndis.h） |
+| Version | Windows 10 版本 1709 |
+| Header | Ntddndis.h （包括 Ndis.h） |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS_WWAN_UICC_RESET_INFO](https://msdn.microsoft.com/library/windows/hardware/9CBAFC44-187A-41ED-9405-1208167AC75D)
 

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a09785e727e2d1e16102b94ddac5b301b3f66cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63364385"
 ---
 # <a name="scandestination-element"></a>ScanDestination 元素
 
@@ -33,7 +33,7 @@ ms.locfileid: "56540879"
 </wscn:ScanDestination>
 ```
 
-<a name="attributes"></a>属性
+<a name="attributes"></a>特性
 ----------
 
 没有特性。
@@ -84,7 +84,7 @@ ms.locfileid: "56540879"
 
 客户端包括一个或多个**ScanDestination**中的元素**ScanDestinations**时创建的订阅发送的元素。 WSD 扫描服务使用中提供的信息**ScanDestination**以创建相应[ **ScanAvailableEvent** ](scanavailableevent.md)事件元素。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClientContext**](clientcontext.md)

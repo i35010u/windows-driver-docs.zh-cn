@@ -1,17 +1,17 @@
 ---
-title: OEM 在 Windows 10 内置相机应用程序的设置指南
+title: 适用于 OEM 的 Windows 10 内置相机应用设置指南
 description: 适用于 Windows 10 新的内置相机应用程序旨在很好地配合各种硬件平台支持的 Windows 而无需由 OEM 任何配置。
 ms.assetid: 567D2083-9837-44A6-97FB-AD0C9B9EB067
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88056937684d00ff2a0fa5c66c32c86a06d9b67d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63372381"
 ---
-# <a name="oem-guidance-on-settings-for-the-windows-10-in-box-camera-app"></a>OEM 在 Windows 10 内置相机应用程序的设置指南
+# <a name="oem-guidance-on-settings-for-the-windows-10-in-box-camera-app"></a>适用于 OEM 的 Windows 10 内置相机应用设置指南
 
 
 适用于 Windows 10 新的内置相机应用程序旨在很好地配合各种硬件平台支持的 Windows 而无需由 OEM 任何配置。 相机应用程序设计以确定播发的设备硬件，然后选择适当的默认值和用户的可用选项的设置。

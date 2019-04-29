@@ -5,11 +5,11 @@ ms.assetid: B7E52112-E049-42E2-9BB3-311EB0D1C577
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92bdd378eca7398e7d00e5c9ae6484dc20f400e5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63365783"
 ---
 # <a name="network-direct-kernel-provider-interface-ndkpi"></a>网络直接内核提供程序接口 (NDKPI)
 
