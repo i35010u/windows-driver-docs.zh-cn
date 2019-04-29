@@ -1,17 +1,17 @@
 ---
-title: 页大小和方向
-description: 页大小和方向
+title: 页面大小和方向
+description: 页面大小和方向
 ms.assetid: f744a00c-8614-4488-9a29-d193a0c4268f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eb14620afd918ce89f50fc0c9843f8fa92fe2d08
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392621"
 ---
-# <a name="page-size-and-orientation"></a>页大小和方向
+# <a name="page-size-and-orientation"></a>页面大小和方向
 
 
 扫描程序设置页大小和方向是相互关联。 同时确定将扫描的页的大小。

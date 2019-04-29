@@ -7,18 +7,18 @@ keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_EVENT 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e938600e5c196788fd8831bb9c086b754df27e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390723"
 ---
 # <a name="ndisstatuswdiindicationihvevent"></a>NDIS\_状态\_WDI\_指示\_IHV\_事件
 
 
 微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_IHV\_事件将传递给 IHV 扩展性模块 IHV 特定信息。
 
-| 对象 |
+| Object |
 |--------|
 | 端口   |
 

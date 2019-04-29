@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 90645355c6c97c356aeda9796e869e0527672bcf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391982"
 ---
 # <a name="providing-device-property-pages"></a>提供设备属性页
 

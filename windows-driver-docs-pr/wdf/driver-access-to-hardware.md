@@ -1,6 +1,6 @@
 ---
-title: 对硬件的驱动程序访问权限
-description: 对硬件的驱动程序访问权限
+title: 驱动程序对硬件的访问
+description: 驱动程序对硬件的访问
 ms.assetid: 66743284-6cdd-467e-b3b4-3d588cd296a5
 keywords:
 - 即插即用 WDK KMDF，硬件访问
@@ -15,13 +15,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bcef70cb291c05c242dda3bc4721dc558047b931
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391356"
 ---
-# <a name="driver-access-to-hardware"></a>对硬件的驱动程序访问权限
+# <a name="driver-access-to-hardware"></a>驱动程序对硬件的访问
 
 
 下表列出了所有 framework 设备对象定义，按字母顺序的事件回调函数。 下表显示了您的驱动程序可以访问的硬件的回调函数的 WDFDEVICE 句柄表示的回调函数。 您可以访问硬件，因为设备处于其工作 (D0) 状态。

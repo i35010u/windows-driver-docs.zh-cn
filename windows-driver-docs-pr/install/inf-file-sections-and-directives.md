@@ -1,6 +1,6 @@
 ---
-title: INF 文件的部分和指令
-description: INF 文件的部分和指令
+title: INF 文件的节和指令
+description: INF 文件的节和指令
 ms.assetid: 22183cd8-fbea-423d-86e0-485579a95b66
 keywords:
 - INF 文件部分 WDK 引用
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d97f6ae5c389f8bff9ddc0d36b7f516c1cd7abf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391988"
 ---
-# <a name="inf-file-sections-and-directives"></a>INF 文件的部分和指令
+# <a name="inf-file-sections-and-directives"></a>INF 文件的节和指令
 
 
 

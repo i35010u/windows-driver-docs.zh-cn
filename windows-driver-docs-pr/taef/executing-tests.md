@@ -5,11 +5,11 @@ ms.assetid: 421FD558-01D0-484d-B4F6-274A5C1BC62E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15f0b6ed1c194bb020e43d527a43b074f7b3e013
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391373"
 ---
 # <a name="executing-tests"></a>执行测试
 

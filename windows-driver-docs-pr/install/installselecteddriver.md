@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: e47d1c83babe694ba9e3a99fe0dd5aa11c026338
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390292"
 ---
 # <a name="installselecteddriver-function"></a>InstallSelectedDriver 函数
 
@@ -39,7 +39,7 @@ BOOL WINAPI InstallSelectedDriver(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *hwndParent* \[in\]  
@@ -132,11 +132,11 @@ BOOL WINAPI InstallSelectedDriver(
 <td align="left">桌面设备</td>
 </tr>
 <tr class="even">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">无 ( <strong>InstallSelectedDriver</strong>函数未在公共标头文件中定义。 有关详细信息，请参阅<strong>备注</strong>部分。 )</td>
 </tr>
 <tr class="even">
@@ -150,7 +150,7 @@ BOOL WINAPI InstallSelectedDriver(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DiInstallDevice**](https://msdn.microsoft.com/library/windows/hardware/ff544710)

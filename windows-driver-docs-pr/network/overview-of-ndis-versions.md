@@ -1,6 +1,6 @@
 ---
-title: NDIS 版本的概述
-description: NDIS 版本的概述
+title: NDIS 版本概述
+description: NDIS 版本概述
 ms.assetid: 6ecd4040-2831-4238-8080-97edc6a7c3ba
 keywords:
 - 网络驱动程序 WDK、 NDIS 版本
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5703d774c508228078baa642befbb9a2b163dd4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391027"
 ---
-# <a name="overview-of-ndis-versions"></a>NDIS 版本的概述
+# <a name="overview-of-ndis-versions"></a>NDIS 版本概述
 
 如果你正在编写多个版本的 Microsoft Windows 的 NDIS 驱动程序，请确保你使用的功能支持每个 Windows 版本上。 每个版本 NDIS 中添加新功能。 其他功能变得过时和更高版本的 NDIS 版本已删除。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56540573"
 |  |  | 添加这些功能： <ul><li>[**MiniportSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff550524)</li><li>[**ProtocolReceivePacket**](https://msdn.microsoft.com/library/windows/hardware/ff563251)</li><li>[**MiniportAllocateComplete**](https://msdn.microsoft.com/library/windows/hardware/ff549352)</li></ul> |
 | Windows NT 4.0 SP3 | 使用更新后的 NDIS 标头和库的 Windows NT DDK | 4.1 | X | X | X |
 | Windows 2000 | Windows 2000 DDK | 5.0 | X | X | X |
-|  |  | 添加了对支持： <ul><li>与 Windows 95/98/我兼容新 INF 文件格式</li><li>Plug and Play 和电源管理</li><li>WMI</li><li>LBFO</li><li>散播-聚集 DMA 支持反序列化的微型端口驱动程序</li></ul> |
+|  |  | 添加了对支持： <ul><li>与 Windows 95/98/我兼容新 INF 文件格式</li><li>即插即用和电源管理</li><li>WMI</li><li>LBFO</li><li>散播-聚集 DMA 支持反序列化的微型端口驱动程序</li></ul> |
 | Windows XP | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721) | 5.1 | X | X | X |
 |  |  | 添加了对支持： <ul><li>[**MiniportCancelSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff549359)</li><li>[**MiniportPnPEventNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550487)</li><li>[**MiniportShutdown**](https://msdn.microsoft.com/library/windows/hardware/ff550533)</li><li>[**NdisCancelSendPackets**](https://msdn.microsoft.com/library/windows/hardware/ff550821)</li><li>[**NdisCopyFromPacketToPacketSafe**](https://msdn.microsoft.com/library/windows/hardware/ff551071)</li><li>[**NdisGeneratePartialCancelId**](https://msdn.microsoft.com/library/windows/hardware/ff562623)</li><li>[**NdisGetFirstBufferFromPacketSafe**](https://msdn.microsoft.com/library/windows/hardware/ff552066)</li><li>[**NdisGetPoolFromPacket**](https://msdn.microsoft.com/library/windows/hardware/ff552090)</li><li>[**NdisGetSharedDataAlignment**](https://msdn.microsoft.com/library/windows/hardware/ff562671)</li><li>[**NdisIMGetCurrentPacketStack**](https://msdn.microsoft.com/library/windows/hardware/ff552155)</li><li>[**NdisIMNotifyPnPEvent**](https://msdn.microsoft.com/library/windows/hardware/ff552203)</li><li>[**NdisQueryPendingIOCount**](https://msdn.microsoft.com/library/windows/hardware/ff554456)</li><li>[**NDIS\_获取\_数据包\_取消\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff556988)</li><li>[**NDIS\_设置\_数据包\_取消\_ID**](https://msdn.microsoft.com/library/windows/hardware/ff557195)</li><li>[OID\_GEN\_MACHINE\_NAME](https://msdn.microsoft.com/library/windows/hardware/ff569596)</li><li>新的微型端口驱动程序特性标志</li><li>64 位的统计计数器</li><li>远程 NDIS</li><li>散播-聚集支持序列化和反序列化微型端口驱动程序</li><li>堆叠的中间驱动程序的数据包</li><li>VLAN 标记</li><li>卸载 UDP 封装 ESP 数据包 (仅 Windows Server 2003) 的处理</li><li>Wi-fi 保护访问 (WPA) 在 Windows XP SP1</li></ul> |
 |  |  | 已删除的支持： <ul><li>完整 Mac 驱动程序</li><li>NDIS 3.0 协议</li><li>**NdisQueryMapRegisterCount**</li><li>EISA 总线</li></ul> |
@@ -54,12 +54,12 @@ ms.locfileid: "56540573"
 |  |  | 向后兼容性和不支持在 NDIS 6.0 驱动程序中的过时功能有关的信息，请参阅[NDIS 6.0 向后兼容性](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-6-0-backward-compatibility)。 |
 | Windows Vista Service pack 1 (SP1) 和 Windows Server 2008 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.1 | X | X | X |
 |  |  | NDIS 6.1 功能有关的信息，请参阅[简介 NDIS 6.1](introduction-to-ndis-6-1.md)。 |
-| Windows 7 和 Windows Server 2008 R2 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.20 | X | X | X |
+| Windows 7 和 Windows Server 2008 R2 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.20 | X | X | X |
 |  |  | NDIS 6.20 功能有关的信息，请参阅[简介 NDIS 6.20](introduction-to-ndis-6-20.md)。 |
 |  |  | 向后兼容性和不支持在 NDIS 6.20 驱动程序中的过时功能有关的信息，请参阅[NDIS 6.20 向后兼容性](ndis-6-20-backward-compatibility.md)。 |
-| Windows 8 和 Windows Server 2012 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.30 | X | X | X |
+| Windows 8 和 Windows Server 2012 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.30 | X | X | X |
 |  |  | NDIS 6.30 功能有关的信息，请参阅[简介 NDIS 6.30](introduction-to-ndis-6-30.md)。 |
-| Windows 8.1 和 Windows Server 2012 R2 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.40 | X | X | X |
+| Windows 8.1 和 Windows Server 2012 R2 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.40 | X | X | X |
 |  |  | NDIS 6.40 功能有关的信息，请参阅[简介 NDIS 6.40](introduction-to-ndis-6-40.md)。 |
 | Windows 10 版本 1507 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.50 | X | X | X |
 |   |   | 有关 NDIS 6.50 功能的详细信息，请参阅[简介 NDIS 6.50](introduction-to-ndis-6-50.md)。 | 

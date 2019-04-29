@@ -1,6 +1,6 @@
 ---
 title: 设计微型端口回调例程来处理 WMI 类
-description: 设计处理 WMI 类的数据字段的微型端口驱动程序回调例程
+description: 设计可以通过数据字段处理 WMI 类的微型端口驱动程序回调例程
 ms.assetid: 6e08f9c1-e541-4e5f-8c99-f81d5793cc21
 keywords:
 - WMI Srb WDK 存储，设计回调例程
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f5498f1a765e6cfff252c7a3afa2e36d2ffdb3ec
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392744"
 ---
-# <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-data-fields"></a>设计处理 WMI 类的数据字段的微型端口驱动程序回调例程
+# <a name="designing-a-miniport-driver-callback-routine-that-handles-wmi-classes-with-data-fields"></a>设计可以通过数据字段处理 WMI 类的微型端口驱动程序回调例程
 
 
 ## <span id="ddk_designing_a_miniport_driver_callback_routine_that_handles_wmi_clas"></span><span id="DDK_DESIGNING_A_MINIPORT_DRIVER_CALLBACK_ROUTINE_THAT_HANDLES_WMI_CLAS"></span>

@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a09fae56d34b7259a6fc8a423c7adfe32d7606
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392563"
 ---
 # <a name="wiadpcpowermode"></a>WIA\_DPC\_电源\_模式
 
@@ -49,7 +49,7 @@ WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -77,7 +77,7 @@ WIA\_DPC\_电源\_模式属性定义摄像机设备的当前电源。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
 </tr>
 <tr class="even">

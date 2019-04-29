@@ -15,11 +15,11 @@ api_type:
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c0ea78370d3b2975c3ee8e934067c79a27d8098
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392030"
 ---
 # <a name="dxgksegmentdescriptor2-structure"></a>DXGK\_SEGMENTDESCRIPTOR2 结构
 
@@ -62,7 +62,7 @@ typedef struct _DXGK_SEGMENTDESCRIPTOR2 {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">

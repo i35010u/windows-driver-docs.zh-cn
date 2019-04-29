@@ -5,11 +5,11 @@ ms.assetid: 74CE1912-8D1D-417E-8B29-36B2AB0253EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 908b3fe9a66ae0b216d6c1c4f8312d0e19f4189a
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392692"
 ---
 # <a name="tracewpp-task"></a>TraceWPP 任务
 

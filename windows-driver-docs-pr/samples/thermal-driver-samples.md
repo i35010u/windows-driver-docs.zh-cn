@@ -5,11 +5,11 @@ ms.assetid: FACF0FB6-8D43-4CFA-A255-EA302957A329
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ed9f4d0d9db06dffedea30c683f810509de4179
-ms.sourcegitcommit: 56599ec634b3a731f2d13dff686be3b7b95390e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58419536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392119"
 ---
 # <a name="thermal-driver-samples"></a>热感驱动程序示例
 

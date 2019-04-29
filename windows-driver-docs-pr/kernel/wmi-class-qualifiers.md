@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ebbe1965c85dee13af57a4e2817ae7930df8845
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393014"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI 类限定符
 

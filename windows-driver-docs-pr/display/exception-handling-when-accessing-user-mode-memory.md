@@ -1,6 +1,6 @@
 ---
-title: 访问用户模式内存时的异常处理
-description: 访问用户模式内存时的异常处理
+title: 访问用户模式内存时处理异常
+description: 访问用户模式内存时处理异常
 ms.assetid: 44ed69a0-da0e-4335-9128-a78a83ea80dd
 keywords:
 - 用户模式内存 WDK Windows 2000 显示
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a55b57c829e91642c3abcdb3b93ff5369d2a935
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391249"
 ---
-# <a name="exception-handling-when-accessing-user-mode-memory"></a>访问用户模式内存时的异常处理
+# <a name="exception-handling-when-accessing-user-mode-memory"></a>访问用户模式内存时处理异常
 
 
 ## <span id="ddk_exception_handling_when_accessing_user_mode_memory_gg"></span><span id="DDK_EXCEPTION_HANDLING_WHEN_ACCESSING_USER_MODE_MEMORY_GG"></span>
@@ -40,7 +40,7 @@ ms.locfileid: "56524359"
 
 -   驱动程序位块传输或访问已分配的用户内存系统纹理。
 
-显示驱动程序可以使用**试用 / 除外**机制来实现异常处理。 有关详细信息**试用 / 除外**，请参阅 Microsoft Visual c + + 文档。
+显示驱动程序可以使用**试用 / 除外**机制来实现异常处理。 有关详细信息**试用 / 除外**，请参阅 Microsoft VisualC++文档。
 
 下面的代码示例演示如何使用该驱动程序**试用 / 除外**机制因访问无效的内存而出错时引发异常。
 

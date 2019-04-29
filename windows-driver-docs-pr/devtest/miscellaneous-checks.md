@@ -1,6 +1,6 @@
 ---
-title: 杂项检查
-description: 杂项检查
+title: 其他检查
+description: 其他检查
 ms.assetid: 4d7b14ae-5a3a-49b4-9678-6527cbacc4d4
 keywords:
 - 杂项检查选项 WDK Driver Verifier
@@ -9,13 +9,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b151f493ec60ab921f3c675ff3e5b0def93c86dc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391336"
 ---
-# <a name="miscellaneous-checks"></a>杂项检查
+# <a name="miscellaneous-checks"></a>其他检查
 
 
 驱动程序验证程序的杂项检查选项可监视会导致驱动程序或系统崩溃，如释放内存仍包含活动内核对象的常见错误的驱动程序。

@@ -13,11 +13,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97833e2dae3f018a93f95e17e1d6684273034f2b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393019"
 ---
 # <a name="fsctlfindfilesbysid-control-code"></a>FSCTL\_查找\_文件\_BY\_SID 控制代码
 
@@ -26,7 +26,7 @@ FSCTL\_查找\_文件\_BY\_SID 控件代码目录中搜索的文件的创建者�
 
 若要执行此操作，微筛选器驱动程序调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)与以下参数和文件系统中，重定向程序和旧的文件系统筛选驱动程序调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
-**参数**
+**Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
 [**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 要搜索的目录文件对象指针。 此参数是必需的不能**NULL**。
@@ -92,7 +92,7 @@ typedef struct _FIND_BY_SID_OUTPUT {
 
 当[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)过程**FSCTL\_查找\_文件\_BY\_SID**控制代码，这些例程检查每个文件和目录的卷上。 即使要搜索的目录是非常小，此操作可能很慢，如果有多个文件的卷上。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)

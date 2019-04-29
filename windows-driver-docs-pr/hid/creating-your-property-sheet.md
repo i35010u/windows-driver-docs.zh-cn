@@ -12,11 +12,11 @@ keywords:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 4e1204fcafa9c1bc61f0a41ca6ee26c7c26661d9
-ms.sourcegitcommit: c4dc4a78ea33537bd47fc7fb666cfd0718d302e4
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58349260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390336"
 ---
 # <a name="creating-your-property-sheet"></a>创建属性表
 

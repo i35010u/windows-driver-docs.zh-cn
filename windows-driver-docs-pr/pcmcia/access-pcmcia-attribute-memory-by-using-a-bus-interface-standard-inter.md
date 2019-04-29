@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c89c86a41547e892e94ec5452fa7be9ad7a60cd6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391585"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-businterfacestandard-interface"></a>通过使用总线访问 PCMCIA 属性内存\_接口\_标准接口
 

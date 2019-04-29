@@ -10,11 +10,11 @@ keywords:
 ms.date: 02/01/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 595dda1f86ca1a69a9cd40f9dab06b2f1e7b25a6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390659"
 ---
 # <a name="standardized-inf-keywords-for-rss"></a>RSS 的标准化 INF 关键字
 
@@ -77,7 +77,7 @@ RSS 接口支持[标准化 INF 关键字](standardized-inf-keywords-for-network-
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>RSSProfile</strong></p></td>

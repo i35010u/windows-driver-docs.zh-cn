@@ -5,11 +5,11 @@ ms.assetid: 0239547F-EF29-45e0-BACF-ED0F6C07DB99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16a0ee06c32bdc2d28ccc8f4186e8b8181bff24c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391371"
 ---
 # <a name="debugging-taef-tests"></a>调试 TAEF 测试
 

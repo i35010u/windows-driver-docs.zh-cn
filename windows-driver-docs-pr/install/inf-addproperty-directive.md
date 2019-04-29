@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3af574a8deeac086922eca11a811b8e717d1ca7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390750"
 ---
 # <a name="inf-addproperty-directive"></a>INF AddProperty 指令
 
@@ -147,7 +147,7 @@ DeviceModel,,,,"Sample Device Model Name"
 {c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e}, 2, 18,, "String value for property 1"
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DelProperty**](inf-delproperty-directive.md)

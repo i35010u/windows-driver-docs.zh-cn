@@ -1,6 +1,6 @@
 ---
-title: 属性页的回调函数
-description: 属性页的回调函数
+title: 属性页回调函数
+description: 属性页回调函数
 ms.assetid: 3f4d7247-2a12-4889-9fc0-a28f58046c7b
 keywords:
 - 设备属性页 WDK 设备安装，回调函数
@@ -12,13 +12,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 073d60910095ba829a0d348d28cb48bf80104164
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391984"
 ---
-# <a name="property-page-callback-function"></a>属性页的回调函数
+# <a name="property-page-callback-function"></a>属性页回调函数
 
 
 

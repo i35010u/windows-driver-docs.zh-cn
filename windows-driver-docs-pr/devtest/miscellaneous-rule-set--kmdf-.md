@@ -5,11 +5,11 @@ ms.assetid: B8F9FBE1-ED27-47EC-ACFC-8BD354A5E72D
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 14ec67b8e46ea7e7d8676a0c8e79499df0222fbd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391334"
 ---
 # <a name="miscellaneous-rule-set-kmdf"></a>其他规则集 (KMDF)
 

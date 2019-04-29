@@ -1,17 +1,17 @@
 ---
-title: BDA Pin 名称 Guid
-description: BDA Pin 名称 Guid
+title: BDA 引脚名称 GUID
+description: BDA 引脚名称 GUID
 ms.assetid: 098e4c49-13dd-4c9a-8ce4-06b99b7c5fa3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2eb03d509e2755604b5c0ec3b6519afe32053a8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392720"
 ---
-# <a name="bda-pin-name-guids"></a>BDA Pin 名称 Guid
+# <a name="bda-pin-name-guids"></a>BDA 引脚名称 GUID
 
 
 ## <span id="ddk_bda_pin_name_guids_ks"></span><span id="DDK_BDA_PIN_NAME_GUIDS_KS"></span>

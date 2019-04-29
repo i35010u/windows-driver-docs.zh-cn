@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 03845bea026b74a8ace7c98b56fc407a32f34e3f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392435"
 ---
 # <a name="handling-overlapped-io-operations"></a>处理重叠的 I/O 操作
 

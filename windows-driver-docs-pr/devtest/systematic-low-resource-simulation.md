@@ -1,17 +1,17 @@
 ---
-title: 系统资源不足模拟
+title: 系统性资源不足模拟
 description: 系统资源不足模拟选项注入资源故障。 内核模式驱动程序中。
 ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 44c11500c180357cff2c74e6aba614a6bbcc8d55
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391303"
 ---
-# <a name="systematic-low-resources-simulation"></a>系统资源不足模拟
+# <a name="systematic-low-resources-simulation"></a>系统性资源不足模拟
 
 
 系统资源不足模拟选项注入资源故障。 内核模式驱动程序中。 此选项已侵入驱动程序的错误处理路径。 一直很难测试这些路径。 系统资源不足模拟选项以可预测的方式，使它找到可重现问题注入资源故障。 错误路径可轻松地重现，因为它也便于验证这些问题的修补程序。

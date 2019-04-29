@@ -5,11 +5,11 @@ ms.assetid: D9667238-FD2E-44DE-920F-FA4CF3365D93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c99b01f4560326b4bf393172166ba3bbe38f0c99
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391023"
 ---
 # <a name="overview-of-network-direct-kernel-provider-interface-ndkpi"></a>网络直接内核提供程序接口 (NDKPI) 概述
 

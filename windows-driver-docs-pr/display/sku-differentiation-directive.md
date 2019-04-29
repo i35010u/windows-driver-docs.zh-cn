@@ -1,17 +1,17 @@
 ---
-title: SKU 差异化指令
+title: SKU 差分指令
 description: 使用 Windows Server 2008 和 Windows Vista SP1，在框中显示驱动程序 Inf 已修改为包括一个新值，表示为仅客户端，这意味着将驱动程序将不在服务器 Sku 的 Windows 上安装的驱动程序。
 ms.assetid: 9E31BD57-41B6-40DF-AF27-8EAC66BDFE09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed938bf022119b792b43c78f51e82fcf18668717
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56556063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391231"
 ---
-# <a name="sku-differentiation-directive"></a>SKU 差异化指令
+# <a name="sku-differentiation-directive"></a>SKU 差分指令
 
 
 使用 Windows Server 2008 和 Windows Vista SP1 中，框中显示驱动程序 Inf 已修改为包括一个新值，表示作为驱动程序*客户端仅*，驱动程序将不在服务器 Sku 的 Windows 安装的含义。 此指令时在 Windows 8 中的所有显示器驱动程序的要求。

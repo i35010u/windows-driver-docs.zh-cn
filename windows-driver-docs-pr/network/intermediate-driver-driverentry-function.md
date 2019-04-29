@@ -1,6 +1,6 @@
 ---
-title: DriverEntry 中间驱动程序函数
-description: DriverEntry 中间驱动程序函数
+title: 中间驱动程序 DriverEntry 函数
+description: 中间驱动程序 DriverEntry 函数
 ms.assetid: 85b4d5c0-8ec9-41a9-a34e-578a85d411e3
 keywords:
 - 中间驱动程序 WDK 网络入口点
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4073c7d612756bdbd4535979deb59795089dfced
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391660"
 ---
-# <a name="intermediate-driver-driverentry-function"></a>DriverEntry 中间驱动程序函数
+# <a name="intermediate-driver-driverentry-function"></a>中间驱动程序 DriverEntry 函数
 
 
 

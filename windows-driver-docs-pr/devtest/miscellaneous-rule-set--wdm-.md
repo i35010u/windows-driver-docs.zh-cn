@@ -5,11 +5,11 @@ ms.assetid: 50E8BFFE-AC38-4023-9FFB-DC53B749A603
 ms.date: 05/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 781d2de676f2a2137db9e130b4843a7699038790
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391330"
 ---
 # <a name="miscellaneous-rule-set-wdm"></a>其他规则集 (WDM)
 

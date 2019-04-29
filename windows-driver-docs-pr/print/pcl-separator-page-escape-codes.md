@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ef63ceb12b1f08b9367797206a9581d27463917
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390925"
 ---
 # <a name="pcl-separator-page-escape-codes"></a>PCL 分隔符页转义代码
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 49e8abfe5a1cffe684580cc30607f967abf28ebd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391575"
 ---
 # <a name="access-pcmcia-attribute-memory-through-a-permanent-memory-window"></a>通过永久内存窗口访问 PCMCIA 属性内存
 

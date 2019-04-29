@@ -5,11 +5,11 @@ ms.assetid: bcb17631-a13c-416c-ac10-97f6c0d12cb0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 33ffa41e6fb1f2c640a12038201e649217a4ee36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391041"
 ---
 # <a name="provisioning-api"></a>预配 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "56545109"
 
 有关预配 API 的详细信息，请参阅[ **ProvisioningAgent 类**](https://msdn.microsoft.com/library/windows/apps/br207397)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [移动宽带 Windows 运行时 Api 的列表](list-of-mobile-broadband-windows-runtime-apis.md)

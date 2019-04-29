@@ -1,17 +1,17 @@
 ---
-title: 热点身份验证的预配
-description: 热点身份验证的预配
+title: 针对热点身份验证的预配
+description: 针对热点身份验证的预配
 ms.assetid: bfb4e1ec-9887-4b25-bfcc-be642b1a0101
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c7c4492aa45e671f3ab9edc36c43169f2463bb01
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391039"
 ---
-# <a name="provisioning-for-hotspot-authentication"></a>热点身份验证的预配
+# <a name="provisioning-for-hotspot-authentication"></a>针对热点身份验证的预配
 
 
 热点身份验证过程中参与的应用，它必须先创建一个或多个配置文件的 Wi-fi 热点。 这是通过使用中所述的预配代理接口[使用元数据来配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)。 作用点必须使用开放式身份验证，并且必须包括**HotspotProfile**元素。 以下预配文件示例演示如何将 SSID 与您的应用程序相关联：
@@ -101,7 +101,7 @@ ms.locfileid: "56546652"
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WISPr 身份验证](wispr-authentication.md)

@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c69bed1aa124a6f777eb7e66108593d2b53939cc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391632"
 ---
 # <a name="restarting-a-driver-stack"></a>重启驱动程序堆栈
 

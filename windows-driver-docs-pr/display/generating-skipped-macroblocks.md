@@ -1,6 +1,6 @@
 ---
-title: 生成已跳过块效应
-description: 生成已跳过块效应
+title: 生成已跳过的宏块
+description: 生成已跳过的宏块
 ms.assetid: 98ea004b-347d-4299-a23c-da0a9d0e844f
 keywords:
 - 宏块 WDK DirectX va，因此已跳过块效应
@@ -8,13 +8,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 28852808309a5fbda66c7f7d546b710ebe033601
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391252"
 ---
-# <a name="generating-skipped-macroblocks"></a>生成已跳过块效应
+# <a name="generating-skipped-macroblocks"></a>生成已跳过的宏块
 
 
 ## <span id="ddk_generating_skipped_macroblocks_gg"></span><span id="DDK_GENERATING_SKIPPED_MACROBLOCKS_GG"></span>
@@ -118,7 +118,7 @@ ms.locfileid: "56540498"
 <p><em>MBskipsFollowing</em> = 0</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>第三</p></td>
+<td align="left"><p>第三个</p></td>
 <td align="left"><p><strong>wMBaddress</strong> = 2</p>
 <p><em>MBskipsFollowing</em> = 0</p></td>
 </tr>

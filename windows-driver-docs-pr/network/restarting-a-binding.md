@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a402c34d3e06fe85a89952d94487e4a771a8185d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391636"
 ---
 # <a name="restarting-a-binding"></a>重启绑定
 

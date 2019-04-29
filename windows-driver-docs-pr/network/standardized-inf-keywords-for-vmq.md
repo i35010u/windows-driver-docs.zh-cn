@@ -1,17 +1,17 @@
 ---
-title: VMQ 的标准化的 INF 关键字
-description: VMQ 的标准化的 INF 关键字
+title: VMQ 的标准化 INF 关键字
+description: VMQ 的标准化 INF 关键字
 ms.assetid: 5DA92019-D2E0-41D9-9C31-94E464B824BA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f017ffae2aa165dc383e15467d8aae8bafae36
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390655"
 ---
-# <a name="standardized-inf-keywords-for-vmq"></a>VMQ 的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-vmq"></a>VMQ 的标准化 INF 关键字
 
 
 以下的标准化的 INF 关键字定义来启用或禁用对虚拟机队列 (VMQ) 功能的网络适配器的支持。
@@ -47,7 +47,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -62,7 +62,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>VMQLookaheadSplit</strong></p></td>
@@ -80,7 +80,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>VMQVlanFiltering</strong></p></td>
@@ -92,7 +92,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>RssOrVmqPreference</strong></p></td>
@@ -198,24 +198,24 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="odd">
 <td align="left"><p>1</p></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>VMQ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>无</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0，或在注册表中不存在</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>1</p></td>
 <td align="left"><p>RSS</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0，或在注册表中不存在</p></td>
-<td align="left"><p>不适用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>无</p></td>
 </tr>
@@ -242,7 +242,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -275,7 +275,7 @@ VMQ 标准化 INF 关键字是枚举的关键字。 下表介绍可能的 INF �
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>

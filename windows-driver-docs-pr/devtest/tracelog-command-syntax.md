@@ -13,11 +13,11 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3010002b73323b6f086d1e486ef633fa54481180
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391814"
 ---
 # <a name="tracelog-command-syntax"></a>Tracelog 命令语法
 
@@ -231,7 +231,7 @@ Tracelog 有命令 （或操作） 的启动、 停止和控制[跟踪会话](tr
 
 指定[跟踪标志](trace-flags.md)有关[提供程序](trace-provider.md)跟踪会话中。 标志值确定跟踪提供程序生成的事件。
 
-*标志*表示十进制或十六进制格式中的跟踪提供程序中定义的标志值。 默认值为 0 从通过 0xFF000000 0x01000000 的值被保留供将来使用。
+*标志*表示十进制或十六进制格式中的跟踪提供程序中定义的标志值。 默认值为 0。 从通过 0xFF000000 0x01000000 的值被保留供将来使用。
 
 标志值的含义是单独定义的每个跟踪提供程序。 通常情况下，标志表示越来越详细的报告级别。
 
@@ -309,7 +309,7 @@ guid2;matchanykeyword;level
 <span id="_______-level________n______"></span><span id="_______-LEVEL________N______"></span> **-level** *n*   
 指定[跟踪级别](trace-level.md)中跟踪会话提供程序。 级别确定跟踪提供程序生成的事件。
 
-*级别*表示十进制或十六进制格式的级别值。 默认值为 0
+*级别*表示十进制或十六进制格式的级别值。 默认值为 0。
 
 级别值的含义是单独定义的每个跟踪提供程序。 通常情况下，跟踪级别表示 （信息、 警告或错误） 事件的严重性。
 

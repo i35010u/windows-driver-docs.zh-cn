@@ -4,11 +4,11 @@ title: WinUSB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab0ae35ab57fdbea90f6b7c4a143b3c36b161cfc
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392727"
 ---
 # <a name="winusb-device"></a>WinUSB 设备
 

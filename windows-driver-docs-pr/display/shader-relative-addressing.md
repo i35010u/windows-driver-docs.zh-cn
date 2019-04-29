@@ -5,11 +5,11 @@ ms.assetid: 7f936b56-cd41-4df5-8fc0-b8a7332ca7fa
 ms.date: 01/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 95b5df1eb45f01a58777b0e691d699c04d0fbede
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63389983"
 ---
 # <a name="shader-relative-addressing"></a>着色器相对寻址
 

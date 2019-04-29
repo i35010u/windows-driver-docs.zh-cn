@@ -5,11 +5,11 @@ ms.assetid: ca981f38-8f3b-48cc-969f-ce53b85bba20
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 84d834e8c8efed50820882e959de43ad5e77a662
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393016"
 ---
 # <a name="windows-kernel-mode-wmi-library"></a>Windows 内核模式 WMI 库
 

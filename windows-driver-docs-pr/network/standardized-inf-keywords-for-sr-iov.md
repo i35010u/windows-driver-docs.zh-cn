@@ -5,11 +5,11 @@ ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 30ded98185cdf605cd64a1b93c7717508d9994c1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390661"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 的标准化 INF 关键字
 
@@ -87,7 +87,7 @@ SR-IOV 标准化的 INF 关键字是枚举的关键字和以下表所述。 此�
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>SriovPreferred</strong></p></td>

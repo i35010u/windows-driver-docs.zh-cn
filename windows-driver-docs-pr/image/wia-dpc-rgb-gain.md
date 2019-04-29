@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a3536a8f14dd75103352bfb170d1f471603b54
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392561"
 ---
 # <a name="wiadpcrgbgain"></a>WIA\_DPC\_RGB\_GAIN
 
@@ -50,11 +50,11 @@ WIA\_DPC\_RGB\_提升属性进行分析，如下所示：*R*:*G*:*B*。 *R*表�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

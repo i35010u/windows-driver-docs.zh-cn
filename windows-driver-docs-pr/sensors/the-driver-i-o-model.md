@@ -5,11 +5,11 @@ ms.assetid: 69368837-0599-497F-883C-608DFE014C7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e8e2498ca01c37a773782b4b74af4f3ca554cfd
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392125"
 ---
 # <a name="the-driver-io-model"></a>驱动程序 I/O 模型
 
@@ -20,7 +20,7 @@ ms.locfileid: "56525080"
 
 ![io 关系图](images/io.png)
 
-## <a name="simple-peripheral-bus-spb"></a>简单的外围总线 （存储）
+## <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
 Windows 8.1 支持简化了开发和实现存储控制器驱动程序的类扩展的窗体中的存储组件。 一般情况下，该组件提供如下功能：

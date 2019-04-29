@@ -8,11 +8,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e20d6bb441d7afb1452eaf3bf5e0852e2b56d8ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391037"
 ---
 # <a name="configuring-an-inf-file-for-a-modifying-filter-driver"></a>配置修改筛选器驱动程序的 INF 文件
 

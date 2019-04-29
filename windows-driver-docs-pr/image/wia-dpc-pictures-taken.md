@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ee85cebe7ba0701a13f9f527cb34ab7a0d37d7ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392565"
 ---
 # <a name="wiadpcpicturestaken"></a>WIA\_DPC\_图片\_录
 
@@ -45,11 +45,11 @@ WIA\_DPC\_图片\_录属性包含的照相机已采取的照片的数量。 WIA 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows Vista 和更高版本操作系统中已过时，并应不再使用。 但是，此属性仍定义 Windows Vista 中与应用程序和用于 Windows Server 2003、 Windows XP 和早期版本的 Windows 设备的兼容性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef.h （包括 Wiadef.h）</td>
 </tr>
 </tbody>

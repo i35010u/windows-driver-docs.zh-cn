@@ -1,19 +1,19 @@
 ---
-title: WAN 的 CoNDIS 是更加灵活
-description: WAN 的 CoNDIS 是更加灵活
+title: CoNDIS WAN 更灵活
+description: CoNDIS WAN 更灵活
 ms.assetid: 01f4d5cc-3ecc-4d2f-bc19-67b8d0fda52f
 keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络权益
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f6747502d3fbbcb2df0042f3523addd5fad2d92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56555040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391034"
 ---
-# <a name="condis-wan-is-more-flexible"></a>WAN 的 CoNDIS 是更加灵活
+# <a name="condis-wan-is-more-flexible"></a>CoNDIS WAN 更灵活
 
 
 

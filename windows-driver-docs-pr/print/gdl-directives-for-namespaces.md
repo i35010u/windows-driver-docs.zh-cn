@@ -1,6 +1,6 @@
 ---
-title: 命名空间的 GDL 指令
-description: 命名空间的 GDL 指令
+title: 用于命名空间的 GDL 指令
+description: 用于命名空间的 GDL 指令
 ms.assetid: 8927291e-60d8-4a7b-9393-8650c142227d
 keywords:
 - 指令 WDK GDL，命名空间指令
@@ -13,13 +13,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8997f210d49426d0f2f028892bedca6fdb4ccc84
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392145"
 ---
-# <a name="gdl-directives-for-namespaces"></a>命名空间的 GDL 指令
+# <a name="gdl-directives-for-namespaces"></a>用于命名空间的 GDL 指令
 
 
 GDL 具有建立可以由多个 GDL 源文件共享的对象的命名空间的指令。

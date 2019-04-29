@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a29f2a7cb3e2e3072bb642cf4be5e4492d126ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391351"
 ---
 # <a name="forwarding-io-requests"></a>转发 I/O 请求
 

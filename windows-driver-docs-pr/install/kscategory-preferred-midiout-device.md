@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: cf5f52954b2c6ab4238743ecda60728b98a5def3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390745"
 ---
 # <a name="kscategorypreferredmidioutdevice"></a>KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
 
@@ -68,7 +68,7 @@ KSCATEGORY_PREFERRED_MIDIOUT_DEVICE[设备接口类](https://msdn.microsoft.com/
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>版本</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>在 Windows Server 2003、 Windows XP、 Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">

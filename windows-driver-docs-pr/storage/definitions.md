@@ -5,11 +5,11 @@ ms.assetid: 904b7dd3-472d-4286-81c1-2af1109e2139
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c043d0f4f095dccf25c714c34f17e553cc5a70
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57464325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392750"
 ---
 # <a name="definitions"></a>定义
 

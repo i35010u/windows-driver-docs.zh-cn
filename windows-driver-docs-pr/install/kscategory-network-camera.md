@@ -16,11 +16,11 @@ ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.custom: 19H1
 ms.openlocfilehash: d22c7bb4426c77a3223fa8bd27f287417ca88e44
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390743"
 ---
 # <a name="kscategorynetworkcamera"></a>KSCATEGORY_NETWORK_CAMERA
 

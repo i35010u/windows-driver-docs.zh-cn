@@ -1,17 +1,17 @@
 ---
-title: BDA 筛选器类别 Guid
-description: BDA 筛选器类别 Guid
+title: BDA 筛选器类别 GUID
+description: BDA 筛选器类别 GUID
 ms.assetid: fbd4bf91-8309-423a-97ea-7e4f90cd3b68
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8feeb6b1474182003404b8d411fc2cc7673f1d6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392723"
 ---
-# <a name="bda-filter-category-guids"></a>BDA 筛选器类别 Guid
+# <a name="bda-filter-category-guids"></a>BDA 筛选器类别 GUID
 
 
 ## <span id="ddk_bda_filter_category_guids_ks"></span><span id="DDK_BDA_FILTER_CATEGORY_GUIDS_KS"></span>

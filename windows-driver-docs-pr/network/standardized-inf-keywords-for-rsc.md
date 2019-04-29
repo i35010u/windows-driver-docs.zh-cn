@@ -1,6 +1,6 @@
 ---
-title: RSC 的标准化的 INF 关键字
-description: RSC 的标准化的 INF 关键字
+title: RSC 的标准化 INF 关键字
+description: RSC 的标准化 INF 关键字
 ms.assetid: 7418E02F-FD5A-4E58-AAA5-3055B98ED264
 keywords:
 - 接收方合并 WDK 网络标准化 INF 关键字
@@ -10,13 +10,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 79485aa6f41f1160026353f2b399ad134e8bedfb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390657"
 ---
-# <a name="standardized-inf-keywords-for-rsc"></a>RSC 的标准化的 INF 关键字
+# <a name="standardized-inf-keywords-for-rsc"></a>RSC 的标准化 INF 关键字
 
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "56526464"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>RscIPv6</strong></p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "56526464"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>

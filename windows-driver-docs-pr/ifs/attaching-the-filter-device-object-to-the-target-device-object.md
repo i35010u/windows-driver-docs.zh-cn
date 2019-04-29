@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 14508938f7f8ad7a09123fe5d8c78631a7f664ef
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56546848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393038"
 ---
 # <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>将筛选设备对象附加到目标设备对象
 

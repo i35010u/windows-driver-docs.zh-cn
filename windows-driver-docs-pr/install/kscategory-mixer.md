@@ -15,11 +15,11 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 04b65ef0d7e0ef8b8e80c7fb8c0ae0643f13ca92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390742"
 ---
 # <a name="kscategorymixer"></a>KSCATEGORY_MIXER
 

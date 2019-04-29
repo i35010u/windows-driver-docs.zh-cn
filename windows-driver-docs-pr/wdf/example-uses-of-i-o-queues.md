@@ -1,6 +1,6 @@
 ---
-title: 示例使用的 I/O 队列
-description: 示例使用的 I/O 队列
+title: I/O 队列的示例使用
+description: I/O 队列的示例使用
 ms.assetid: 13b09254-ce0a-4c7d-bdb1-d28ec094a266
 keywords:
 - I/O 队列 WDK KMDF，示例
@@ -24,13 +24,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3539c02c7fd9a2f20d43049ba8f9a7f5a5238b2f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534216"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391358"
 ---
-# <a name="example-uses-of-io-queues"></a>示例使用的 I/O 队列
+# <a name="example-uses-of-io-queues"></a>I/O 队列的示例使用
 
 
 

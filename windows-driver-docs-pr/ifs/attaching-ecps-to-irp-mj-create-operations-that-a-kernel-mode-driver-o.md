@@ -5,11 +5,11 @@ ms.assetid: 87daa861-b0d5-4877-bf16-fad120108de6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c9dcefe4fd0ed16d9e5a29dab94d72ead78cf602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63393040"
 ---
 # <a name="attaching-ecps-to-irpmjcreate-operations-that-a-kernel-mode-driver-originated"></a>将 ECPs 附加到 IRP\_MJ\_内核模式驱动程序产生的创建操作
 

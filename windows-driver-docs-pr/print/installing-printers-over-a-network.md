@@ -1,6 +1,6 @@
 ---
-title: 从网络上安装打印机
-description: 从网络上安装打印机
+title: 通过网络安装打印机
+description: 通过网络安装打印机
 ms.assetid: 217fcc1f-0193-4b7f-882c-23b39d676670
 keywords:
 - 通过网络安装驱动程序 WDK 打印机
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e526fba40c629aec687b90df8678cbbc0433b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56520143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63390926"
 ---
-# <a name="installing-printers-over-a-network"></a>从网络上安装打印机
+# <a name="installing-printers-over-a-network"></a>通过网络安装打印机
 
 
 本部分包括以下主题：

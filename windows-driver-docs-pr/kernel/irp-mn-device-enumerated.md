@@ -7,11 +7,11 @@ keywords:
 - IRP_MN_DEVICE_ENUMERATED Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bbc6f730d711860a950e02ca25a34044d260c15
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56533614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391978"
 ---
 # <a name="irpmndeviceenumerated"></a>IRP\_MN\_DEVICE\_ENUMERATED
 
@@ -61,17 +61,17 @@ PnP 管理器之前通过 GUID 通知用户模式下发送此 IRP\_设备\_枚�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [Plug and Play 次要 Irp](plug-and-play-minor-irps.md)

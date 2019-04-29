@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b4de7df17be95da7aa3f4efcd5d757ab4b00359
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391256"
 ---
-# <a name="420-video-pixel-formats"></a>4:2:0 视频的像素格式
+# <a name="420-video-pixel-formats"></a>4:2:0 视频像素格式
 
 
 ## <span id="ddk_4_2_0_video_pixel_formats_gg"></span><span id="DDK_4_2_0_VIDEO_PIXEL_FORMATS_GG"></span>
@@ -25,7 +25,7 @@ ms.locfileid: "56519956"
 
 要解码压缩的 4:2:0 视频，请使用其中一个的以下未压缩的像素格式。
 
-| **像素格式** | **描述** | 
+| **像素格式** | **说明** | 
 |:--|:--|
 | YUY2 | 如中所述[4:2:2 视频像素格式](vscode-resource://c:/drivers/drivers/windows-driver-docs-pr/display/4-2-2-video-pixel-formats.md)，不同之处在于两个行的输出 Cb 和 Cr 示例生成每个实际行，共 4 步： 2:0 Cb 和 Cr 示例。 每个对输出行的第二行是通常在第一行的重复或求平均值对的第一行中的第一个行的下一步对示例的示例生成。 | 
 | UYVY | 如中所述[4:2:2 视频像素格式](vscode-resource://c:/drivers/drivers/windows-driver-docs-pr/display/4-2-2-video-pixel-formats.md)，不同之处在于两个行的输出 Cb 和 Cr 示例生成每个实际行，共 4 步： 2:0 Cb 和 Cr 示例。 每个对输出行的第二行是通常在第一行的重复或求平均值对的第一行中的第一个行的下一步对示例的示例生成。 | 

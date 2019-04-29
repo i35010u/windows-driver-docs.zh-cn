@@ -1,17 +1,17 @@
 ---
-title: DirectDraw 驱动程序基础知识
-description: DirectDraw 驱动程序基础知识
+title: DirectDraw 驱动程序基础功能
+description: DirectDraw 驱动程序基础功能
 ms.assetid: 45cf2d9a-3365-4ff4-b4d6-ee57cc763351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a30723e4f9bbd4b8897ce5ef15c95f5aa5db9fbb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392065"
 ---
-# <a name="directdraw-driver-fundamentals"></a>DirectDraw 驱动程序基础知识
+# <a name="directdraw-driver-fundamentals"></a>DirectDraw 驱动程序基础功能
 
 
 ## <span id="ddk_directdraw_driver_fundamentals_gg"></span><span id="DDK_DIRECTDRAW_DRIVER_FUNDAMENTALS_GG"></span>

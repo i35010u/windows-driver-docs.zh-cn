@@ -1,5 +1,5 @@
 ---
-title: 跟踪的池
+title: 池跟踪
 description: 跟踪的池监视器驱动程序进行的内存分配。
 ms.assetid: 5b8aa775-d908-4a7a-b54f-6c63ac1ebd13
 keywords:
@@ -11,13 +11,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8562a9c8ebbc6523376b0c5e64df317b19c8c1e7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56526226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392079"
 ---
-# <a name="pool-tracking"></a>跟踪的池
+# <a name="pool-tracking"></a>池跟踪
 
 
 跟踪的池监视器驱动程序进行的内存分配。 在驱动程序被卸载时，驱动程序验证程序可确保已释放的驱动程序所做的所有分配。

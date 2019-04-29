@@ -15,11 +15,11 @@ api_type:
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9abd44005006ee6e2e937571cea4d3bdf73d6786
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391753"
 ---
 # <a name="fsctlrequestoplocklevel2-control-code"></a>FSCTL\_请求\_OPLOCK\_级别\_2 控制代码
 
@@ -30,7 +30,7 @@ ms.locfileid: "56519303"
 
 有关详细信息，有关伺机锁定和大约**FSCTL\_请求\_OPLOCK\_级别\_2**控制代码，请参阅 Microsoft Windows SDK 文档。
 
-**参数**
+**Parameters**
 
 <a href="" id="oplock"></a>*Oplock*  
 该文件的不透明 oplock 对象指针。
@@ -90,13 +90,13 @@ ms.locfileid: "56519303"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ntifs.h （包括 Ntifs.h 或 Fltkernel.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)

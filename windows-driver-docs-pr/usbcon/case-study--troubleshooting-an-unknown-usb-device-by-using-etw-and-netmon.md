@@ -4,11 +4,11 @@ title: 案例研究-未知的 USB 设备进行故障排除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a9909ed6a0ab9fbc506ad3bca3bf5a3fcfaa0e4
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392132"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 

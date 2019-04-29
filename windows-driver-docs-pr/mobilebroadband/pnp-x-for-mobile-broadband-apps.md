@@ -1,17 +1,17 @@
 ---
-title: 移动宽带应用程序 PnP X
-description: 移动宽带应用程序 PnP X
+title: 适合移动宽带应用的 PnP-X
+description: 适合移动宽带应用的 PnP-X
 ms.assetid: f8f4756e-00b6-4778-9d67-73653865cf54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4602f5bdd02598c4084c00c9b4eeb58c3d2038b8
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63391043"
 ---
-# <a name="pnp-x-for-mobile-broadband-apps"></a>移动宽带应用程序 PnP X
+# <a name="pnp-x-for-mobile-broadband-apps"></a>适合移动宽带应用的 PnP-X
 
 
 ## <a name="span-idappinstallationspanspan-idappinstallationspanspan-idappinstallationspanapp-installation"></a><span id="App_installation"></span><span id="app_installation"></span><span id="APP_INSTALLATION"></span>应用安装
@@ -28,7 +28,7 @@ ms.locfileid: "56522433"
 
 虽然应用不具有移动宽带应用相同的特权 Api 的访问，但它可以与设备通信通过网络检索相应的信息，如果设备公开此信息。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [通信通道](communication-channels.md)

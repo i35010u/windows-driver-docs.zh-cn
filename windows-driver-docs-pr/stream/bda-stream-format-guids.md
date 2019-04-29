@@ -5,11 +5,11 @@ ms.assetid: 216fb02c-b49b-4b9f-b7a5-220c718fb202
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 29af6951e89db2d2d99b90f858280fe6d73226e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56563614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392708"
 ---
 # <a name="bda-stream-format-guids"></a>BDA 流格式 GUID
 

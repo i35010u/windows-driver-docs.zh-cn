@@ -1,17 +1,17 @@
 ---
-title: 跟踪和 WDF 驱动程序的诊断能力
+title: WDF 驱动程序的跟踪和诊断能力
 description: 本白皮书讨论如何实现 Windows Driver Foundation (WDF) 驱动程序中使用 Windows 软件跟踪预处理器 (WPP) 的事件跟踪。
 ms.assetid: C89A218F-3E73-4D3E-8F53-5D52E97711EF
 ms.date: 07/09/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ccf50f665a9025c01bfbc5f9cb3657a578c0110
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63392701"
 ---
-# <a name="tracing-and-diagnosability-for-wdf-drivers"></a>跟踪和 WDF 驱动程序的诊断能力
+# <a name="tracing-and-diagnosability-for-wdf-drivers"></a>WDF 驱动程序的跟踪和诊断能力
 
 
 **上次更新时间：**
