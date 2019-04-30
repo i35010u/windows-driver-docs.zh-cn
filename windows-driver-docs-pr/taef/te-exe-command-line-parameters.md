@@ -5,11 +5,11 @@ ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fbc6d04e11e82734dd00eac0ed24269f8d93fae5
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
-ms.translationtype: MT
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374039"
 ---
 # <a name="teexe-command-options"></a>Te.exe 命令选项
 

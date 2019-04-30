@@ -5,11 +5,11 @@ ms.assetid: A95FC176-B3A1-4bbf-833E-411CDE73C571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b871461fc606870f35813b86e56c734c5a634603
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63374037"
 ---
 # <a name="standard-test-metadata"></a>标准测试元数据
 
@@ -168,7 +168,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 
 可能使用的以下元数据在将来-请不要使用它。
 
--   用户
+-   “用户”
 -   IntegrityLevel
 -   Timeout
 -   HostType

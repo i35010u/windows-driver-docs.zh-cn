@@ -4,9 +4,9 @@ author: EliotSeattle
 description: 用于编写使用 NFC 类扩展的 NFC 功能驱动程序的快速入门指南。
 keywords:
 - NFC
-- 附近通信
+- 近场通信
 - 近程
-- 邻近附近
+- 近场邻近感应
 - NFP
 - CX
 ms.author: eliotgra
@@ -16,11 +16,11 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
 ms.openlocfilehash: 7fab3eb7b3e5d420717f88a7deab73b9687bdc9d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56544247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63378883"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
@@ -29,7 +29,7 @@ ms.locfileid: "56544247"
 > [!NOTE]
 > 在其实现中使用类扩展驱动程序的驱动程序被称为客户端驱动程序。 也就是说，客户端的类扩展驱动程序。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 * NFC 控制器的固件必须实现 NFC 论坛[NFC 控制器接口 (NCI)](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/)协议。
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) （或更高版本）。
@@ -50,7 +50,7 @@ GitHub 上提供了此代码示例的完整版本：[NFC CX 客户端驱动程�
 
 1. 在 Visual Studio 中，创建一个新"用户模式驱动程序，为空 (UMDF V2)"项目。
 
-    上**文件**菜单，依次指向**新建**，然后单击**项目**。 在中**Visual c + +** 节点下**Windows 驱动程序**，单击**WDF**，然后单击**用户模式驱动程序，为空 (UMDF V2)**
+    在 **“文件”** 菜单上，指向 **“新建”**，然后单击 “项目”。 在中**可视化C++** 节点下**Windows 驱动程序**，单击**WDF**，然后单击**用户模式驱动程序，为空 (UMDF V2)**
 
     ![image](images/quick-start-new-project.png)
 

@@ -1,5 +1,5 @@
 ---
-title: .srcfix，.lsrcfix （使用源服务器）
+title: .srcfix、.lsrcfix（使用源服务器）
 description: .Srcfix 和.lsrcfix 命令自动设置的源路径，以指示将使用源服务器。
 ms.assetid: e4cc3031-7990-4339-9dc2-f2c5a219a771
 keywords:
@@ -13,13 +13,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5710055ed6656452b2cb2278c11f8e7baaa12f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56540792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63338814"
 ---
-# <a name="srcfix-lsrcfix-use-source-server"></a>.srcfix，.lsrcfix （使用源服务器）
+# <a name="srcfix-lsrcfix-use-source-server"></a>.srcfix、.lsrcfix（使用源服务器）
 
 
 **.Srcfix**并 **.lsrcfix**命令自动设置的源路径，以指示将使用源服务器。

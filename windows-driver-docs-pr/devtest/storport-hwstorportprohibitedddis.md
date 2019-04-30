@@ -13,11 +13,11 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.openlocfilehash: 0682732c7c361707fc300c5f1b70f543c0f70acc
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56554661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63345763"
 ---
 # <a name="hwstorportprohibitedddis-rule-storport"></a>HwStorPortProhibitedDDIs 规则 (storport)
 
@@ -54,7 +54,7 @@ ms.locfileid: "56554661"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用于
+<a name="applies-to"></a>适用对象
 ----------
 
 [**IoReadPartitionTable**](https://msdn.microsoft.com/library/windows/hardware/ff561452)

@@ -5,11 +5,11 @@ ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 04/02/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 18c3e78adf67644de5cdfd8c434cf36d4ba78739
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59003638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63371455"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 

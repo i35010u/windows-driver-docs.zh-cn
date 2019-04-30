@@ -1,32 +1,32 @@
 ---
-title: 调试器数据模型 c + + 概念
-description: 本主题介绍调试器 c + + 数据模型中的概念。
+title: 调试器数据模型 C++ 的概念
+description: 本主题介绍在调试器中的概念C++数据模型。
 ms.date: 10/04/2018
 ms.openlocfilehash: f29334ea8b034f05000b97d2a232ec5c0a250503
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376118"
 ---
-# <a name="debugger-data-model-c-concepts"></a>调试器数据模型 c + + 概念
+# <a name="debugger-data-model-c-concepts"></a>调试器数据模型 C++ 的概念
 
-本主题介绍调试器 c + + 数据模型中的概念。
+本主题介绍在调试器中的概念C++数据模型。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -133,7 +133,7 @@ IIterableConcept 的[GetIterator](https://docs.microsoft.com/windows-hardware/dr
 
 IModelIterator 的[重置](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodeliterator-reset)
 
-返回从可迭代的概念的迭代器上的重置方法将迭代器的位置还原至时的状态 （在之前的第一个元素） 首次创建迭代器。 虽然强烈建议该迭代器的支持重置方法，也不需要。 一个迭代器，可以是等效的 c + + 输入迭代器，仅允许向前迭代一次传递。 在这种情况下，重置方法可能会因 E_NOTIMPL。 
+返回从可迭代的概念的迭代器上的重置方法将迭代器的位置还原至时的状态 （在之前的第一个元素） 首次创建迭代器。 虽然强烈建议该迭代器的支持重置方法，也不需要。 一个迭代器，可以是等效的C++输入迭代器，仅允许向前迭代一次传递。 在这种情况下，重置方法可能会因 E_NOTIMPL。 
 
 IModelIterator 的[GetNext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-imodeliterator-getnext)
 
@@ -155,7 +155,7 @@ DECLARE_INTERFACE_(IIndexableConcept, IUnknown)
 }
 ```
 
-使用索引器 （和其交互作用于迭代器） 的示例如下所示。 此示例循环访问可编制索引的容器的内容，并使用索引器以返回到刚返回的值。 功能上无用写入该操作时，它演示了这些接口的交互方式。 请注意，下面的示例不应对内存分配失败。 它假定引发新 （这可能是一个不佳的假设，具体取决于环境中的代码存在-数据模型的 COM 方法不能具有 c + + 异常转义）： 
+使用索引器 （和其交互作用于迭代器） 的示例如下所示。 此示例循环访问可编制索引的容器的内容，并使用索引器以返回到刚返回的值。 功能上无用写入该操作时，它演示了这些接口的交互方式。 请注意，下面的示例不应对内存分配失败。 它假定引发新 (这可能会根据环境中存在代码--数据模型的 COM 方法不能有一个不佳假设C++异常转义): 
 
 ```cpp
 ComPtr<IModelObject> spObject;
@@ -241,7 +241,7 @@ SetAt 方法尝试将值设置在从索引对象中的特定 N 维索引。 必�
 
 **首选的运行时类型概念：IPreferredRuntimeTypeConcept**
 
-调试主机可以通过查询来尝试确定真正的运行时类型的符号化信息中找到的静态类型中的对象。 此转换可能基于完全准确的信息 (例如：C + + RTTI) 也可能基于强启发式方法，如在对象中的任何虚拟函数表的形状。 某些对象，但是，不能将从转换静态运行时类型因为它们不适合于调试主机的试探法 (例如： 它们不具有 RTTI 或虚函数表)。 在这种情况下，对象的数据模型可以选择重写默认行为，并声明，它才知道更多对象的"运行时类型"不是它能够了解调试主机。 这是通过首选的运行时类型概念和 IPreferredRuntimeTypeConcept 接口的支持。 
+调试主机可以通过查询来尝试确定真正的运行时类型的符号化信息中找到的静态类型中的对象。 此转换可能基于完全准确的信息 (例如：C++RTTI) 也可能基于强启发式方法，如在对象中的任何虚拟函数表的形状。 某些对象，但是，不能将从转换静态运行时类型因为它们不适合于调试主机的试探法 (例如： 它们不具有 RTTI 或虚函数表)。 在这种情况下，对象的数据模型可以选择重写默认行为，并声明，它才知道更多对象的"运行时类型"不是它能够了解调试主机。 这是通过首选的运行时类型概念和 IPreferredRuntimeTypeConcept 接口的支持。 
 
 IPreferredRuntimeTypeConcept 接口声明，如下所示： 
 
@@ -327,19 +327,19 @@ IDynamicConceptProviderConcept's [NotifyDestruct](https://docs.microsoft.com/win
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 
  

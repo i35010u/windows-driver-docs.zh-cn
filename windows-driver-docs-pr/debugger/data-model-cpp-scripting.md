@@ -1,31 +1,31 @@
 ---
-title: C + + 编写脚本的调试程序数据模型
-description: 本主题介绍如何使用调试器数据模型 c + + 编写脚本来支持自动化与调试器引擎。
+title: 调试器数据模型 C++ 脚本
+description: 本主题介绍如何使用调试器数据模型C++脚本来支持自动化与调试器引擎。
 ms.date: 10/08/2018
 ms.openlocfilehash: 7860ee5a0f36c9f03eadc028f0c92cc10fc99e16
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56523027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63376089"
 ---
-# <a name="debugger-data-model-c-scripting"></a>C + + 编写脚本的调试程序数据模型
+# <a name="debugger-data-model-c-scripting"></a>调试器数据模型 C++ 脚本
 
-本主题介绍如何使用调试器数据模型 c + + 调试器数据模型 c + + 编写脚本来支持自动化与调试器引擎使用脚本。
+本主题介绍如何使用调试器数据模型C++调试器的数据模型C++脚本来支持自动化与调试器引擎使用脚本。
 
-本主题是一系列用于描述可从 c + +、 如何使用它们来构建基于 c + + 调试器扩展，以及如何使访问接口的一部分使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从 c + + 数据模型扩展插件。
+本主题是一系列用于描述可从访问接口的一部分C++，如何使用它们来生成C++调试器扩展，以及如何使基于使用的数据模型的其他构造 (例如：JavaScript 或 NatVis） 从C++数据模型扩展。
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
 
 ---
 
@@ -35,11 +35,11 @@ ms.locfileid: "56523027"
 
 [调试器数据模型中的脚本管理](#scriptmanangement)
 
-[调试器数据模型 c + + 主机接口用于脚本编写](#hostinterfacesscript)
+[调试器数据模型C++用于脚本编写承载接口](#hostinterfacesscript)
 
-[调试器数据模型 c + + 脚本接口](#scriptinterface)
+[调试器数据模型C++脚本接口](#scriptinterface)
 
-[调试器数据模型 c + + 脚本调试接口](#debugscript)
+[调试器数据模型C++编写的脚本调试接口](#debugscript)
 
 ---
 
@@ -114,7 +114,7 @@ GetNext 方法将移动枚举数前移一个元素，并返回位于该元素的
 
 
 
-## <a name="span-idhostinterfacesscript-debugger-data-model-c-host-interfaces-for-scripting"></a><span id="hostinterfacesscript"> 调试器数据模型 c + + 主机接口用于脚本编写
+## <a name="span-idhostinterfacesscript-debugger-data-model-c-host-interfaces-for-scripting"></a><span id="hostinterfacesscript"> 调试器数据模型C++用于脚本编写承载接口
 
 **在脚本中的主机的角色**
 
@@ -123,7 +123,7 @@ GetNext 方法将移动枚举数前移一个元素，并返回位于该元素的
 接口 | 描述
 |---------|------------|
 IDebugHostScriptHost | 一个接口，这指示调试主机能够参加脚本编写环境。 此接口允许通知的放置位置对象的脚本引擎的上下文创建。
-IDataModelScriptHostContext | 主机接口，用来通过脚本提供程序作为容器的脚本的内容。 如何脚本图面以外的操作，对其执行到调试器应用程序的对象模型的内容是由特定的调试主机。 此接口允许脚本提供程序，以获取有关在何处放置其内容的信息。 请参阅[数据模型 c + + 脚本接口](#scriptinterface)本主题中的详细信息的更高版本。
+IDataModelScriptHostContext | 主机接口，用来通过脚本提供程序作为容器的脚本的内容。 如何脚本图面以外的操作，对其执行到调试器应用程序的对象模型的内容是由特定的调试主机。 此接口允许脚本提供程序，以获取有关在何处放置其内容的信息。 请参阅[数据模型C++脚本接口](#scriptinterface)本主题中的详细信息的更高版本。
 
 
 **调试主机的脚本主机：IDebugHostScriptHost**
@@ -141,10 +141,10 @@ DECLARE_INTERFACE_(IDebugHostScriptHost, IUnknown)
 
 [CreateContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nf-dbgmodel-idebughostscripthost-createcontext)
 
-要创建新的上下文要在其中放置脚本的内容的脚本提供程序被调用 CreateContext 方法。 此类上下文表示由 IDataModelScriptHostContext 接口上的数据模型 c + + 脚本接口页详细信息中所述。 
+要创建新的上下文要在其中放置脚本的内容的脚本提供程序被调用 CreateContext 方法。 此类上下文表示由 IDataModelScriptHostContext 接口在数据模型上进行了详细说明C++编写脚本的接口页。 
 
 
-## <a name="span-idscriptinterface-debugger-data-model-c-scripting-interfaces"></a><span id="scriptinterface"> 调试器数据模型 c + + 脚本接口
+## <a name="span-idscriptinterface-debugger-data-model-c-scripting-interfaces"></a><span id="scriptinterface"> 调试器数据模型C++脚本接口
 
 **脚本和脚本接口**
 
@@ -396,7 +396,7 @@ EnumerateValues 方法枚举名称和值将绑定针对根据 BindValue 方法�
 EnumerateReferences 方法枚举一组的名称和对其的引用将绑定针对根据 BindReference 方法的规则的对象。 与不同 EnumerateKeys、 EnumerateValues 和 IModelObject 后者可能会返回多个名称使用相同的值 （适用于基类、 父模型等） 上的类似方法，此枚举器将仅返回特定的一组与将绑定的名称BindValue 和 BindReference。 不允许有重复的名称。 请注意，枚举通过比调用 IModelObject 方法的名称联编程序对象的明显更高成本。 
 
 
-## <a name="span-iddebugscript-debugger-data-model-c-script-debugging-interfaces"></a><span id="debugscript"> 调试器数据模型 c + + 脚本调试接口
+## <a name="span-iddebugscript-debugger-data-model-c-script-debugging-interfaces"></a><span id="debugscript"> 调试器数据模型C++编写的脚本调试接口
 
 数据模型中的脚本提供程序的基础结构还提供了有关调试脚本的概念。 任何想要公开与调试主机承载的数据模型的调试器应用程序的调试功能的脚本可以通过让实现除了 IDataModelScript 界面 IDataModelScriptDebug 接口的可调试脚本来实现。 该脚本此接口存在对基础结构指示它是可调试。 
 
@@ -666,16 +666,16 @@ GetNext 方法将枚举数向前移动到下一个要枚举的断点，并返回
 
 ---
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试程序数据模型 c + + 概述](data-model-cpp-overview.md)
+[调试器数据模型C++概述](data-model-cpp-overview.md)
 
-[调试器数据模型 c + + 接口](data-model-cpp-interfaces.md)
+[调试器数据模型C++接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型 c + + 对象](data-model-cpp-objects.md)
+[调试器数据模型C++对象](data-model-cpp-objects.md)
 
-[调试器数据模型 c + + 其他接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型C++的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型 c + + 概念](data-model-cpp-concepts.md)
+[调试器数据模型C++概念](data-model-cpp-concepts.md)
 
-[C + + 编写脚本的调试程序数据模型](data-model-cpp-scripting.md)
+[调试器数据模型C++脚本](data-model-cpp-scripting.md)
