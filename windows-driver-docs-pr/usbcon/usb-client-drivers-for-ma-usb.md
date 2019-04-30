@@ -1,16 +1,16 @@
 ---
-Description: USB device driver that sends MA-USB packets.
-title: USB 媒体无关 (MA USB) 的客户端驱动程序
+Description: USB 发送 MA USB 数据包的设备驱动程序。
+title: 不区分媒体的 (MA-USB) 协议的客户端驱动程序
 ms.date: 09/26/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 572dcf688633987f3b14b9fae2da9cf889a8c82e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63355052"
 ---
-# <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>USB 媒体无关 (MA USB) 的客户端驱动程序
+# <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>不区分媒体的 (MA-USB) 协议的客户端驱动程序
 
 在 Windows 10 版本 1709，USB 驱动程序堆栈可以通过非 USB 物理媒体，如 Wi-fi 发送 USB 数据包，通过使用媒体不可知的 USB (MA USB) 协议。 现有 USB 客户端驱动程序所需的更改是最小的方式设计的新功能。 更改该设置包含有关传输的其他信息：
 
@@ -99,7 +99,7 @@ REG_MULTI_SZ:"EndpointPriorities" =
 "1,1,*,BULK_OUT,0,VOICE",  // First BULK OUT endpoint in interface 1, configuration 1, all alternate settings has VOICE priority. 
 "2,1,0,BULK_OUT,1,INTERACTIVE"” // BULK OUT endpoint in configuration 2, interface 1, alt setting 1 has INTERACTIVE priority.
 ```
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 [WdfUsbTargetDeviceCreateUrb](https://msdn.microsoft.com/library/windows/hardware/hh439423)
 
 [USBD_UrbAllocate](https://msdn.microsoft.com/library/windows/hardware/hh406250)

@@ -5,11 +5,11 @@ ms.assetid: BB1E35B4-8691-4B0C-9D6C-9A7D1ADFAB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 37806f8c74e01be0133a54946e5616b64dfb6462
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63366211"
 ---
 # <a name="graphics-inf-requirements-in-wddm-12"></a>WDDM 1.2 中的图形 INF 要求
 
