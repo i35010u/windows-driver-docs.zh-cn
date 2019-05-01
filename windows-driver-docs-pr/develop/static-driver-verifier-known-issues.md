@@ -7,12 +7,12 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: af801bca7a6732555e4c3327eb8b97d0ed6742aa
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.openlocfilehash: ab6e38dc576599d695e9efdacc267c73a35f909a
+ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57830242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "63344138"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静态驱动程序验证程序已知问题
 
