@@ -13,7 +13,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be80268e6a106f6e9118d3d1274137288d6c8c10
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56542658"
@@ -32,7 +32,7 @@ INF 文件还可用于替代监视器扩展显示标识数据 (EDID)。 请参�
 
 ### <a name="span-idsourcedisksfilessectionspanspan-idsourcedisksfilessectionspanspan-idsourcedisksfilessectionspansourcedisksfiles-section"></a><span id="SourceDisksFiles_Section"></span><span id="sourcedisksfiles_section"></span><span id="SOURCEDISKSFILES_SECTION"></span>SourceDisksFiles 部分
 
-必须在监视安装过程中复制的文件应置于**\[SourceDisksFiles\]** 部分。 下面的示例标识。*icm*分发磁盘 1 上的文件。
+必须在监视安装过程中复制的文件应置于 **\[SourceDisksFiles\]** 部分。 下面的示例标识。*icm*分发磁盘 1 上的文件。
 
 ```inf
 [SourceDisksFiles]

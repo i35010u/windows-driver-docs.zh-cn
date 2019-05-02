@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 69cbfe374c5bc881741a320f52e74cfea00ed2fa
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56533541"
@@ -26,7 +26,7 @@ ms.locfileid: "56533541"
 2.  将从以前的驱动程序的源代码和标头文件复制到新的项目。
 3.  更新标头文件。 对于 UMDF，包括 Windows.h。 对于 KMDF，包括 Ntddk.h。 Wdf.h 是普遍适用于 KMDF 和 UMDF，因此将其包含在这两种类型的驱动程序。
 
-    （可选） 使用**\_内核\_模式**预处理器宏有条件地添加正确的系统标头：
+    （可选） 使用 **\_内核\_模式** 预处理器宏有条件地添加正确的系统标头：
 
     ```cpp
     #ifndef _KERNEL_MODE
@@ -44,7 +44,7 @@ ms.locfileid: "56533541"
     #include <wdf.h> 
     ```
 
-4.  更新要删除或有条件地编译的源代码 (使用**\_内核\_模式**宏) 中的目标驱动程序模型不支持任何功能。 例如：
+4.  更新要删除或有条件地编译的源代码 (使用 **\_内核\_模式** 宏) 中的目标驱动程序模型不支持任何功能。 例如：
 
     -   如果您的驱动程序使用 WPP 跟踪，请更新[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)宏。 此宏将在用户模式和内核模式下的不同参数。
         ```cpp
