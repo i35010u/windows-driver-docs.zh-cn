@@ -47,7 +47,7 @@ ms.locfileid: "56521261"
 
   驱动程序必须为中值的只读访问权限 **\\设备参数** 子项，并且不能访问 **\\设备参数\\WDF** 或 **\\设备参数\\WUDF**。
 
-  使用统一的设备属性模型创建的属性值存储在**\\属性**子项，请在硬件密钥下。
+  使用统一的设备属性模型创建的属性值存储在 **\\属性** 子项，请在硬件密钥下。
 
   若要访问这些属性，驱动程序调用[ **IWDFUnifiedPropertyStoreFactory::RetrieveUnifiedDevicePropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/hh451406)获取属性存储区接口。 然后，可以使用该驱动程序[ **IWDFUnifiedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/hh451399)界面，用于修改和检索设备属性的当前设置。
 
