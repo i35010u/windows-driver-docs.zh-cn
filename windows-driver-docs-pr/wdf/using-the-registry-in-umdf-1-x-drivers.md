@@ -14,7 +14,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1692fe57bbe69e84c36f58c573537d1da93eb55a
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56521261"
@@ -34,7 +34,7 @@ ms.locfileid: "56521261"
 
   您的驱动程序可以检索和修改某些下的硬件密钥的属性值。 存储的值的位置取决于用于对其进行访问的方法。
 
-  使用 PropertyStore 方法创建的属性值存储在**\\设备参数**子项，请在硬件密钥下。 若要访问这些属性，您的驱动程序调用以下方法来获取属性存储区接口之一。
+  使用 PropertyStore 方法创建的属性值存储在 **\\设备参数** 子项，请在硬件密钥下。 若要访问这些属性，您的驱动程序调用以下方法来获取属性存储区接口之一。
 
   <a href="" id="iwdfdevice--retrievedevicepropertystore"></a>[**IWDFDevice::RetrieveDevicePropertyStore**](https://msdn.microsoft.com/library/windows/hardware/ff558842)  
   获取指向的指针[ **IWDFNamedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/ff560164)接口。
@@ -43,9 +43,9 @@ ms.locfileid: "56521261"
   获取指向的指针[ **IWDFNamedPropertyStore** ](https://msdn.microsoft.com/library/windows/hardware/ff560164)接口。
 
   <a href="" id="iwdfpropertystorefactory--retrievedevicepropertystore"></a>[**IWDFPropertyStoreFactory::RetrieveDevicePropertyStore**](https://msdn.microsoft.com/library/windows/hardware/ff560228)  
-  获取指向的指针[ **IWDFNamedPropertyStore2** ](https://msdn.microsoft.com/library/windows/hardware/ff560168)接口。 可以使用*SubkeyPath*参数来指定驱动程序创建的子项中的值，如**\\设备参数\\**<em>DriverServiceName\\子项</em>。
+  获取指向的指针[ **IWDFNamedPropertyStore2** ](https://msdn.microsoft.com/library/windows/hardware/ff560168)接口。 可以使用*SubkeyPath*参数来指定驱动程序创建的子项中的值，如 **\\设备参数\\** <em>DriverServiceName\\子项</em>。
 
-  驱动程序必须为中值的只读访问权限**\\设备参数**子项，并且不能访问**\\设备参数\\WDF**或**\\设备参数\\WUDF**。
+  驱动程序必须为中值的只读访问权限 **\\设备参数** 子项，并且不能访问 **\\设备参数\\WDF** 或 **\\设备参数\\WUDF**。
 
   使用统一的设备属性模型创建的属性值存储在**\\属性**子项，请在硬件密钥下。
 
