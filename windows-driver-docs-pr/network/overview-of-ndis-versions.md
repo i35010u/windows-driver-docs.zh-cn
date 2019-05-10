@@ -7,14 +7,14 @@ keywords:
 - NDIS WDK，网络驱动程序中的版本
 - 向后兼容性 WDK 网络
 - 兼容性 WDK 网络
-ms.date: 04/20/2017
+ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5703d774c508228078baa642befbb9a2b163dd4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c15cbac0343e4dd952e0d8fd9b56cbb947545927
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391027"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106454"
 ---
 # <a name="overview-of-ndis-versions"></a>NDIS 版本概述
 
@@ -74,3 +74,5 @@ ms.locfileid: "63391027"
 |   |   | 有关 NDIS 6.81 功能的详细信息，请参阅[简介 NDIS 6.81](introduction-to-ndis-6-81.md)。 |
 | Windows 10 版本 1809 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.82 | X | X | X |
 |   |   | 有关 NDIS 6.82 功能的详细信息，请参阅[简介 NDIS 6.82](introduction-to-ndis-6-82.md)。 |
+| Windows 10 版本 1903 | 请参阅[下载 Windows 硬件开发工具包](https://go.microsoft.com/fwlink/p/?linkid=239721)。 | 6.83 | X | X | X |
+|   |   | 有关 NDIS 6.83 功能的详细信息，请参阅[简介 NDIS 6.83](introduction-to-ndis-6-83.md)。 |

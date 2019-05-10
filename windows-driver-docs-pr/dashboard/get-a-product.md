@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cb2601222e0f4c0a41db339f9f7fcbffd52c836a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 300911a67291a97388d59eda07710de58210d22e
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518506"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106402"
 ---
 # <a name="get-a-product"></a>获取产品
 
@@ -60,35 +60,40 @@ Authorization: Bearer <your access token>
 
 ```json
 {
-  "id": 9007199267351834,
-  "sharedProductId": 1152921504606971100,
-  "links": [
-    {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/9007199267351834",
-      "rel": "self",
-      "method": "GET"
-    },
-    {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/9007199267351834/submissions",
-      "rel": "get_submissions",
-      "method": "GET"
-    }
-  ],
-  "isCommitted": true,
-  "isExtensionInf": false, "_comment": "This field is deprecated and moved to submission resource",
-  "deviceMetadataIds": [],
-  "deviceType": "notSet",
-  "isTestSign": false,
-  "isFlightSign": false,  
-  "marketingNames": [],
-  "productName": "NewDriverHacked",
-  "selectedProductTypes": {},
-  "requestedSignatures": [
-    "WINDOWS_v100_X64_TH1_FULL",
-    "WINDOWS_v63_X64"
-  ],
-  "additionalAttributes": {},
-  "testHarness": "hlk"
+    "id": 9007199267351834,
+    "sharedProductId": 1152921504606971255,
+    "links": [
+        {
+            "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834",
+            "rel": "self",
+            "method": "GET"
+        },
+        {
+            "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
+            "rel": "get_submissions",
+            "method": "GET"
+        }
+    ],
+    "isCommitted": true,
+    "isExtensionInf": false,
+    "originType": "author",
+    "sourceProductId": 0,
+    "sourcePublisherId": 0,
+    "isRetpolineCompiled": false,
+    "message": "",
+    "deviceMetadataIds": [],
+    "deviceType": "notSet",
+    "isTestSign": false,
+    "isFlightSign": false,
+    "marketingNames": [],
+    "productName": "NewDriverHacked",
+    "selectedProductTypes": {},
+    "requestedSignatures": [
+        "WINDOWS_v100_X64_TH1_FULL",
+        "WINDOWS_v63_X64"
+    ],
+    "additionalAttributes": {},
+    "testHarness": "hlk"
 }
 ```
 

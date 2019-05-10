@@ -18,12 +18,12 @@ keywords:
 - 状态转换会延迟 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6bb4590a1fa97a27dc4ea9bb834bc793e31f0b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2faaebfb81910add8e59229db8b83e5da9f52564
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388133"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106376"
 ---
 # <a name="device-low-power-states"></a>设备低功耗状态
 
@@ -89,7 +89,7 @@ D2 中的设备可能能够请求唤醒。 若要提供有关此状态是否可�
 
 D3 是最低功率设备低功耗状态。 所有设备都必须都支持此状态。
 
-从 Windows 8 开始，操作系统将 D3 细分为两个单独且完全不同子状态的状态，D3hot 和 D3cold。 早期版本的 Windows 定义 D3 状态，但不是 D3hot 和 D3cold substates。 但是，所有版本的[PCI 总线电源管理接口规范](http://www.pcisig.com/specifications/conventional/)定义单独 D3hot 和 D3cold 子状态和版本 4 及更高版本的[高级配置和电源接口规范](https://go.microsoft.com/fwlink/p/?linkid=57185)定义 D3hot 和 D3cold substates。
+从 Windows 8 开始，操作系统将 D3 细分为两个单独且完全不同子状态的状态，D3hot 和 D3cold。 早期版本的 Windows 定义 D3 状态，但不是 D3hot 和 D3cold substates。 但是，所有版本的[PCI 总线电源管理接口规范](https://www.pcisig.com/specifications/conventional/)定义单独 D3hot 和 D3cold 子状态和版本 4 及更高版本的[高级配置和电源接口规范](https://go.microsoft.com/fwlink/p/?linkid=57185)定义 D3hot 和 D3cold substates。
 
 虽然 Windows 8 之前的 Windows 版本没有显式定义 D3 D3hot 和 D3cold 子状态，但这些子状态存在隐式在这些早期版本的 Windows。 设备是隐式的 D3hot 子状态在中，如果设备处于显式 D3 状态，并且计算机处于 S0 系统电源状态。 D3hot，在设备连接到电源源 （尽管该设备可能配置为绘制低当前），并且可以检测到总线上设备的状态。 设备是隐式中的 D3cold 子状态中，如果它是显式 D3 状态，并且计算机处于低功耗 Sx 状态 （S0 以外的状态）。 在此隐式 D3cold 子状态，设备可能会收到最新，滴送但设备和计算机在有效地关闭之前发生唤醒事件时。
 

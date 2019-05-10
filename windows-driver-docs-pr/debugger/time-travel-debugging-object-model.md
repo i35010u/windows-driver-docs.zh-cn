@@ -3,12 +3,12 @@ title: 时光穿越调试 - 时光穿越调试对象简介
 description: 本部分介绍如何使用将数据模型与查询时传输跟踪。
 ms.date: 04/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dda35dc8ce9f7da77c0abeb06446969feb97c98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be0e207ee0588cc4e4c13fbb173d8c37b44e6a75
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369777"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106399"
 ---
 ![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
 
@@ -301,9 +301,9 @@ FFFFFFFFFFFFFFFE:0 的地址指示跟踪的末尾。
 
 
 
-### <a name="querying-for-all-of-the-errors-in-the-trace"></a>在跟踪中的错误的所有查询
+### <a name="querying-for-all-of-the-error-checks-in-the-trace"></a>在跟踪中查询所有错误都检查
 
-使用此命令通过错误计数按所有在跟踪中的错误进行排序。
+使用此命令通过在跟踪中的错误检查的所有按错误计数进行排序。
 
 ```dbgcmd
 0:000> dx -g @$cursession.TTD.Calls("kernelbase!GetLastError").Where( x=> x.ReturnValue != 0).GroupBy(x => x.ReturnValue).Select(x => new { ErrorNumber = x.First().ReturnValue, ErrorCount = x.Count()}).OrderByDescending(p => p.ErrorCount),d

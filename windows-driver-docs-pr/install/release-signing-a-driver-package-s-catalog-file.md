@@ -4,12 +4,12 @@ description: 对驱动程序包的目录文件进行发布签名
 ms.assetid: 8bfedf24-403a-406e-993d-5ab8cc790f60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1790c394107945fd7778ec1ea377ce13453aaf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45ec20288bdc953b544fc313f6f0655a1607dd56
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338629"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106375"
 ---
 # <a name="release-signing-a-driver-packages-catalog-file"></a>对驱动程序包的目录文件进行发布签名
 
@@ -33,7 +33,7 @@ SignTool 还可以向数字签名添加时间戳。 时间戳就可以确定创�
 对版本签名*tstamd64.cat*目录文件，请运行以下命令行：
 
 ```cpp
-Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
 ```
 
 其中：
@@ -41,6 +41,8 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 -   **符号**命令将配置为指定的目录文件进行签名的 SignTool *tstamd64.cat*。
 
 -   **/V**选项启用详细的操作，在其中 SignTool 显示成功执行消息和警告消息。
+
+-   **/Fd**选项指定要用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
 -   **/Ac**选项指定包含交叉证书的文件的名称 (*MSCV VSClass3.cer*) 从 CA 获取。 如果交叉证书不在当前目录中，使用的完整路径名称。
 
