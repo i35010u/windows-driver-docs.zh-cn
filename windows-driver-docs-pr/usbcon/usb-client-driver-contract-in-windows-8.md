@@ -3,12 +3,12 @@ Description: 本主题介绍用于分配、 生成和发送到 Windows 8 附带�
 title: 最佳做法-使用 URBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 496f0017819bfb9743948da82c41ae27eb91b235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 283f411c2d4d79f1d0a823b18e87869ca169793a
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355059"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405089"
 ---
 # <a name="best-practices-using-urbs"></a>最佳做法：使用 URB
 
@@ -21,8 +21,8 @@ Windows 8 中包含新的 USB 驱动程序堆栈，以支持通用串行总线 (
 
 有关 USBD\_客户端\_协定\_版本\_602 版客户端驱动程序，USB 驱动程序堆栈假定客户端驱动程序符合以下规则集：
 
--   [不发送使用过期或无效的管道句柄的 I/O 请求](#do-not-send-i-o-requests-by-using-stale-or-invalid-pipe-handles)
--   [通过在 Windows 8 中调用的分配例程分配 URBs](#allocate-urbs-by-calling-allocation-routines-in-windows-8)
+-   [不发送使用过期或无效的管道句柄的 I/O 请求](#do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles)
+-   [通过在 Windows 8 中调用的分配例程分配 URBs](#allocate-urbs-by-calling-allocation-routines-in-windows8)
 -   [不要重复使用与挂起的请求相关联的 active URBs](#do-not-reuse-active-urbs-associated-with-pending-requests)
 -   [使用轮询时间不大于 8 的高速和 SuperSpeed 同步传输](#do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers)
 -   [请确保每个框架的数据包数的倍数的同步数据包数](#make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame)

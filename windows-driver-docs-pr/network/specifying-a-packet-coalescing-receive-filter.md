@@ -4,12 +4,12 @@ description: 指定数据包合并接收筛选器
 ms.assetid: 0369A63D-4CDE-448A-8472-EEEB7B859B8D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384e3acaeecaf2f7730dd854ee4e352f964bfe67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c99bc33c991caa0b41f681991fb0870e729da4d
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355211"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405281"
 ---
 # <a name="specifying-a-packet-coalescing-receive-filter"></a>指定数据包合并接收筛选器
 
@@ -24,11 +24,11 @@ ms.locfileid: "63355211"
 
 -   [ **NDIS\_接收\_筛选器\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567181) ndis 指定的参数的结构接收筛选器。
 
-    有关如何初始化此结构的详细信息，请参阅[指定一个接收筛选器](#specifying-receive-filter)。
+    有关如何初始化此结构的详细信息，请参阅[指定一个接收筛选器](#specifying-a-receive-filter)。
 
 -   一个数组[ **NDIS\_接收\_筛选器\_字段\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567169)结构指定的筛选器测试条件中的字段网络数据包标头。
 
-    有关如何初始化这些结构的详细信息，请参阅[指定标头字段测试](#specifying-header-field-test)。
+    有关如何初始化这些结构的详细信息，请参阅[指定标头字段测试](#specifying-header-field-tests)。
 
 ## <a name="specifying-a-receive-filter"></a>指定接收筛选器
 

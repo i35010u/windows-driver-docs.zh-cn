@@ -1,16 +1,19 @@
 - name: 移动宽带
   href: index.md
 - name: 概述
-  href: overview-b-mb.md
   items:
+    - name: 概述
+      href: overview-b-mb.md
     - name: 移动宽带概述
       href: overview-of-mobile-broadband.md
     - name: 移动宽带 WinRT API 概述
-      href: mobile-broadband-winrt-api-overview.md
       items:
+        - name: 移动宽带 WinRT API 概述
+          href: mobile-broadband-winrt-api-overview.md
         - name: 移动宽带 Windows 运行时 API 的列表
-          href: list-of-mobile-broadband-windows-runtime-apis.md
           items:
+            - name: 移动宽带 Windows 运行时 API 的列表
+              href: list-of-mobile-broadband-windows-runtime-apis.md
             - name: 连接配置文件 API
               href: connection-profile-api.md
             - name: 设备服务扩展 API
@@ -26,8 +29,9 @@
             - name: USSD API
               href: ussd-api.md
         - name: 移动宽带 Windows 运行时 API 的常见任务
-          href: common-tasks-for-mobile-broadband-windows-runtime-apis.md
           items:
+            - name: 移动宽带 Windows 运行时 API 的常见任务
+              href: common-tasks-for-mobile-broadband-windows-runtime-apis.md
             - name: 创建 MobileBroadbandAccount 对象
               href: create-a-mobilebroadbandaccount-object.md
             - name: 创建 MobileBroadbandDeviceInformation 对象
@@ -63,8 +67,9 @@
             - name: 解锁设备
               href: unlock-a-device.md
         - name: 使用移动宽带 Windows 运行时 API 的最佳做法
-          href: best-practices-for-using-mobile-broadband-windows-runtime-api.md
           items:
+            - name: 使用移动宽带 Windows 运行时 API 的最佳做法
+              href: best-practices-for-using-mobile-broadband-windows-runtime-api.md
             - name: 处理帐户到达和删除事件的最佳做法
               href: best-practices-for-handling-account-arrival-and-removal-events.md
             - name: 连接到移动宽带网络的最佳做法
@@ -72,36 +77,43 @@
     - name: 移动运营商硬件概述
       href: mobile-operator-hardware-overview.md
 - name: 使用元数据配置移动宽带体验
-  href: using-metadata-to-configure-mobile-broadband-experiences.md
   items:
+    - name: 使用元数据配置移动宽带体验
+      href: using-metadata-to-configure-mobile-broadband-experiences.md
     - name: 帐户预配
       href: account-provisioning.md
     - name: COSA/APN 数据库
-      href: cosa-apn-database.md
       items:
+        - name: COSA/APN 数据库
+          href: cosa-apn-database.md
         - name: APN 架构定义
           href: apn-schema-definition.md
         - name: APN 元素
-          href: apn-elements.md
           items:
+            - name: APN 元素
+              href: apn-elements.md
             - name: OperatorList
-              href: operatorlist.md
               items:
+                - name: OperatorList
+                  href: operatorlist.md
                 - name: 运算符
                   href: operator.md
             - name: HardwareIdList（APN 元素）
-              href: hardwareidlist-apnxml.md
               items:
+                - name: HardwareIdList（APN 元素）
+                  href: hardwareidlist-apnxml.md
                 - name: HardwareId（APN 元素）
                   href: hardwareid-apnxml.md
             - name: ConnectionInfoList
-              href: connectioninfolist.md
               items:
+                - name: ConnectionInfoList
+                  href: connectioninfolist.md
                 - name: ConnectionInfo
                   href: connectioninfo.md
             - name: TrustedCertificateList
-              href: trustedcertificatelist.md
               items:
+                - name: TrustedCertificateList
+                  href: trustedcertificatelist.md
                 - name: TrustedCertificate（APN 元素）
                   href: trustedcertificate-apnxml.md
             - name: APN 示例
@@ -111,11 +123,13 @@
         - name: APN 数据库概述
           href: apn-database-overview.md
         - name: COSA/APN 数据库提交
-          href: cosa-apn-database-submission.md
           items:
+            - name: COSA/APN 数据库提交
+              href: cosa-apn-database-submission.md
             - name: 规划桌面 COSA/APN 数据库提交
-              href: planning-your-desktop-cosa-apn-database-submission.md
               items:
+                - name: 规划桌面 COSA/APN 数据库提交
+                  href: planning-your-desktop-cosa-apn-database-submission.md
                 - name: 桌面 COSA/APN 数据库设置
                   href: desktop-cosa-apn-database-settings.md
             - name: 测试桌面 COSA/APN 数据库提交
@@ -123,8 +137,9 @@
             - name: 提交桌面 COSA/APN 数据库更新
               href: submitting-the-desktop-cosa-apn-database-update.md
     - name: 服务元数据
-      href: service-metadata.md
       items:
+        - name: 服务元数据
+          href: service-metadata.md
         - name: 适用于 MVNO 的传送体验
           href: delivering-experiences-for-mvnos.md
         - name: 创建服务元数据的开发人员指南
@@ -132,16 +147,19 @@
         - name: 服务标识符所有权更新
           href: service-identifier-ownership-updates.md
         - name: 服务元数据包架构参考
-          href: service-metadata-package-schema-reference.md
           items:
+            - name: 服务元数据包架构参考
+              href: service-metadata-package-schema-reference.md
             - name: MobileBroadbandInfo XML 架构
-              href: mobilebroadbandinfo-xml-schema.md
               items:
+                - name: MobileBroadbandInfo XML 架构
+                  href: mobilebroadbandinfo-xml-schema.md
                 - name: MobileBroadbandInfo XML 架构定义
                   href: mobilebroadbandinfo-xml-schema-definition.md
                 - name: MobileBroadbandInfo XML 元素
-                  href: mobilebroadbandinfo-xml-elements.md
                   items:
+                    - name: MobileBroadbandInfo XML 元素
+                      href: mobilebroadbandinfo-xml-elements.md
                     - name: MobileBroadbandInfo
                       href: mobilebroadbandinfo.md
                     - name: NetworkConfiguration
@@ -157,8 +175,9 @@
                     - name: AllowTethering
                       href: allowtethering.md
                 - name: ProvisioningEngine
-                  href: provisioningengine.md
                   items:
+                    - name: ProvisioningEngine
+                      href: provisioningengine.md
                     - name: TrustedCertificates
                       href: trustedcertificates.md
                     - name: TrustedCertificate (MobileBroadbandInfo)
@@ -170,13 +189,15 @@
                 - name: MobileBroadbandInfo XML 示例
                   href: mobilebroadbandinfo-xml-example.md
             - name: PackageInfo XML 架构
-              href: packageinfo-xml-schema.md
               items:
+                - name: PackageInfo XML 架构
+                  href: packageinfo-xml-schema.md
                 - name: PackageInfo XML 架构定义
                   href: packageinfo-xml-schema-definition.md
                 - name: PackageInfo XML 元素
-                  href: packageinfo-xml-elements.md
                   items:
+                    - name: PackageInfo XML 元素
+                      href: packageinfo-xml-elements.md
                     - name: PackageInfo
                       href: packageinfo.md
                     - name: MetadataKey
@@ -212,20 +233,23 @@
                     - name: 版本
                       href: version.md
                 - name: PackageInfo XML 数据类型
-                  href: packageinfo-xml-data-types.md
                   items:
+                    - name: PackageInfo XML 数据类型
+                      href: packageinfo-xml-data-types.md
                     - name: GUIDType
                       href: guidtype-packageinfo.md
                 - name: PackageInfo XML 示例
                   href: packageinfo-xml-example.md
             - name: ServiceInfo XML 架构
-              href: serviceinfo-xml-schema.md
               items:
+                - name: ServiceInfo XML 架构
+                  href: serviceinfo-xml-schema.md
                 - name: ServiceInfo XML 架构定义
                   href: serviceinfo-xml-schema-definition.md
                 - name: ServiceInfo XML 元素
-                  href: serviceinfo-xml-elements.md
                   items:
+                    - name: ServiceInfo XML 元素
+                      href: serviceinfo-xml-elements.md
                     - name: ServiceInfo
                       href: serviceinfo.md
                     - name: ServiceCategoryList
@@ -247,20 +271,23 @@
                     - name: ServiceSpecificExtension
                       href: servicespecificextension.md
                 - name: ServiceInfo XML 数据类型
-                  href: serviceinfo-xml-data-types.md
                   items:
+                    - name: ServiceInfo XML 数据类型
+                      href: serviceinfo-xml-data-types.md
                     - name: GUIDType
                       href: guidtype-serviceinfo.md
                 - name: ServiceInfo XML 示例
                   href: serviceinfo-xml-example.md
             - name: SoftwareInfo XML 架构
-              href: softwareinfo-xml-schema.md
               items:
+                - name: SoftwareInfo XML 架构
+                  href: softwareinfo-xml-schema.md
                 - name: SoftwareInfo XML 架构定义
                   href: softwareinfo-xml-schema-definition.md
                 - name: SoftwareInfo XML 元素
-                  href: softwareinfo-xml-elements.md
                   items:
+                    - name: SoftwareInfo XML 元素
+                      href: softwareinfo-xml-elements.md
                     - name: SoftwareInfo
                       href: softwareinfo.md
                     - name: DeviceCompanionApplications
@@ -286,13 +313,15 @@
                 - name: SoftwareInfo XML 示例
                   href: softwareinfo-xml-example.md
             - name: WindowsInfo XML 架构
-              href: windowsinfo-xml-schema.md
               items:
+                - name: WindowsInfo XML 架构
+                  href: windowsinfo-xml-schema.md
                 - name: WindowsInfo XML 架构定义
                   href: windowsinfo-xml-schema-definition.md
                 - name: WindowsInfo XML 元素
-                  href: windowsinfo-xml-elements.md
                   items:
+                    - name: WindowsInfo XML 元素
+                      href: windowsinfo-xml-elements.md
                     - name: WindowsInfo
                       href: windowsinfo.md
                     - name: ShowDeviceInDisconnectedState
@@ -322,14 +351,17 @@
         - name: 使用 mbidgenerator.exe 生成硬件 ID
           href: using-mbidgeneratorexe-to-generate-hardware-ids.md
 - name: 移动运营商方案
-  href: mobile-operator-scenarios-b-mb.md
   items:
+    - name: 移动运营商方案
+      href: mobile-operator-scenarios-b-mb.md
     - name: 移动套餐
-      href: mobile-plans.md
       items:
+        - name: 移动套餐
+          href: mobile-plans.md
         - name: 移动套餐用例
-          href: mobile-plans-use-cases.md
           items:
+            - name: 移动套餐用例
+              href: mobile-plans-use-cases.md
             - name: 移动运营商 Web 门户
               href: mobile-plans-web-portal.md
             - name: 回调通知
@@ -351,8 +383,9 @@
     - name: 使用多个 PDP 上下文开发应用
       href: developing-apps-using-multiple-pdp-contexts.md
     - name: 开发短信应用
-      href: developing-sms-apps.md
       items:
+        - name: 开发短信应用
+          href: developing-sms-apps.md
         - name: 短信设备存储限制
           href: sms-device-storage-limits.md
         - name: 枚举短信设备
@@ -366,8 +399,9 @@
         - name: 使用自定义字符集发送短信
           href: send-sms-by-using-custom-character-sets.md
         - name: 使用文本模式界面发送短信
-          href: send-sms-by-using-the-text-mode-interface.md
           items:
+            - name: 使用文本模式界面发送短信
+              href: send-sms-by-using-the-text-mode-interface.md
             - name: 计算短信草稿的字符数和段数
               href: calculate-characters-and-segments-of-a-draft-sms.md
             - name: 指定移动电话号码
@@ -379,18 +413,21 @@
         - name: 设置短信声明
           href: set-sms-declarations.md
     - name: 使用便携式热点设备启用移动宽带体验
-      href: enabling-mobile-broadband-experiences-using-portable-hotspot-devices.md
       items:
+        - name: 使用便携式热点设备启用移动宽带体验
+          href: enabling-mobile-broadband-experiences-using-portable-hotspot-devices.md
         - name: 通信通道
-          href: communication-channels.md
           items:
+            - name: 通信通道
+              href: communication-channels.md
             - name: 网络成本信息元素
               href: network-cost-information-element.md
             - name: 适合移动宽带应用的 PnP-X
               href: pnp-x-for-mobile-broadband-apps.md
     - name: 启用移动运营商通知和系统事件
-      href: enabling-mobile-operator-notifications-and-system-events.md
       items:
+        - name: 启用移动运营商通知和系统事件
+          href: enabling-mobile-operator-notifications-and-system-events.md
         - name: 开发用于处理 MobileOperatorNotification 事件的应用
           href: develop-an-app-to-handle-the-mobileoperatornotification-event.md
         - name: 移动运营商通知事件技术详细信息
@@ -398,11 +435,13 @@
         - name: 移动运营商通知方案
           href: mobile-operator-notification-scenarios.md
     - name: 将 Windows 与无线热点集成
-      href: integrating-windows-with-wireless-hotspots.md
       items:
+        - name: 将 Windows 与无线热点集成
+          href: integrating-windows-with-wireless-hotspots.md
         - name: 热点身份验证应用入门
-          href: get-started-with-a-hotspot-authentication-app.md
           items:
+            - name: 热点身份验证应用入门
+              href: get-started-with-a-hotspot-authentication-app.md
             - name: 查看热点身份验证示例
               href: review-the-hotspot-authentication-sample.md
             - name: 更新热点身份验证示例
@@ -410,13 +449,15 @@
             - name: 验证后台事件
               href: verify-background-events.md
         - name: 热点身份验证方法
-          href: hotspot-authentication-methods.md
           items:
+            - name: 热点身份验证方法
+              href: hotspot-authentication-methods.md
             - name: 强制网络门户
               href: captive-portals.md
             - name: WISPr 身份验证
-              href: wispr-authentication.md
               items:
+                - name: WISPr 身份验证
+                  href: wispr-authentication.md
                 - name: 针对热点身份验证的预配
                   href: provisioning-for-hotspot-authentication.md
                 - name: 处理大量的 SSID
@@ -430,11 +471,13 @@
     - name: 了解和配置 Windows 连接管理器
       href: understanding-and-configuring-windows-connection-manager.md
     - name: UWP 移动宽带应用
-      href: UWP-mobile-broadband-apps.md
       items:
+        - name: UWP 移动宽带应用
+          href: UWP-mobile-broadband-apps.md
         - name: 移动宽带应用方案
-          href: mobile-broadband-app-scenarios.md
           items:
+            - name: 移动宽带应用方案
+              href: mobile-broadband-app-scenarios.md
             - name: 帐户管理
               href: account-management.md
             - name: 应用启动
@@ -452,8 +495,9 @@
             - name: 高级服务
               href: premium-services.md
         - name: 设计移动宽带应用的用户体验
-          href: designing-the-user-experience-of-a-mobile-broadband-app.md
           items:
+            - name: 设计移动宽带应用的用户体验
+              href: designing-the-user-experience-of-a-mobile-broadband-app.md
             - name: 设计移动宽带应用的登陆页面
               href: design-the-landing-page-of-a-mobile-broadband-app.md
             - name: 设计移动宽带应用中的品牌

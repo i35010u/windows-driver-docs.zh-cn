@@ -3,21 +3,21 @@ title: Hdpi.h 宏
 description: Hdpi.h 标头中包含的宏。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3dbbc0c8d237e3b1cc9d5b6e787bcd79db03bd3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5559dff7a571e2e5b857a3a6f7f29e1ee06c4aef
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388906"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405101"
 ---
 # <a name="hdpih-macros"></a>Hdpi.h 宏
 
 Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
 
-* [**HidP\_GetButtons**](#HidPGetButtons)
-* [**HidP\_GetButtonsEx**](#HidPGetButtonsEx)
-* [**HidP\_SetButtons**](#HidPSetButtons)
-* [**HidP\_UnsetButtons**](#HidPUnsetButtons)
+* [**HidP\_GetButtons**](#hidp_getbuttons)
+* [**HidP\_GetButtonsEx**](#hidp_getbuttonsex)
+* [**HidP\_SetButtons**](#hidp_setbuttons)
+* [**HidP\_UnsetButtons**](#hidp_unsetbuttons)
 
 
 ##  <a name="hidpgetbuttons"></a>HidP\_GetButtons

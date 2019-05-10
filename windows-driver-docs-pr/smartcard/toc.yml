@@ -1,11 +1,13 @@
 - name: 设计指南
-  href: index.md
   items:
+    - name: 设计指南
+      href: index.md
     - name: 智能卡驱动程序环境
       href: smart-card-driver-environment.md
     - name: 智能卡读卡器驱动程序中的 IOCTL 请求管理
-      href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
       items:
+        - name: 智能卡读卡器驱动程序中的 IOCTL 请求管理
+          href: management-of-ioctl-requests-in-a-smart-card-reader-driver.md
         - name: 智能卡驱动程序库
           href: smart-card-driver-library.md
         - name: 与智能卡驱动程序库的交互
@@ -17,13 +19,15 @@
     - name: WDM 读卡器驱动程序
       href: wdm-reader-driver.md
     - name: 智能卡微型驱动器
-      href: smart-card-minidrivers.md
       items:
+        - name: 智能卡微型驱动器
+          href: smart-card-minidrivers.md
         - name: 智能卡微型驱动器概述
           href: smart-card-minidriver-overview.md
         - name: 智能卡微型驱动器版本
-          href: smart-card-minidriver-versions.md
           items:
+            - name: 智能卡微型驱动器版本
+              href: smart-card-minidriver-versions.md
             - name: 微型驱动程序版本 7.07 功能
               href: minidriver-version-7-07-features.md
             - name: 微型驱动程序版本 7.06 功能

@@ -3,12 +3,12 @@ Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e021cffe443cab922140fab6d5c5c32af6460d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6f66484e9ae50d7bcead05619b729f403c0c046
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355100"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405086"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
@@ -21,13 +21,13 @@ Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱�
 
 ![usb 2.0 和 3.0 驱动程序堆栈的体系结构的框图](images/usb-driver-stack-3.png)
 
--   [USB 3.0 驱动程序堆栈](#usb-3-0-driver-stack)
-    -   [USB 3.0 主机控制器驱动程序 (Usbxhci.sys)](#usb-3-0-host-controller-driver--usbxhci-sys)
-    -   [USB 主机控制器扩展 (Ucx01000.sys)](#usb-host-controller-extension--ucx01000-sys)
-    -   [USB 集线器驱动程序 (Usbhub3.sys)](#usb-hub-driver-usbhub3-sys)
--   [USB 2.0 驱动程序堆栈](#usb-2-0-driver-stack)
--   [USB 常见类泛型父驱动程序 (Usbccgp.sys)](#usb-common-class-generic-parent-driver--usbccgp-sys--)
--   [WinUSB (Winusb.sys)](#winusb-winusb-sys)
+-   [USB 3.0 驱动程序堆栈](#usb-30-driver-stack)
+    -   [USB 3.0 主机控制器驱动程序 (Usbxhci.sys)](#usb-30-host-controller-driver-usbxhcisys)
+    -   [USB 主机控制器扩展 (Ucx01000.sys)](#-usb-host-controller-extension-ucx01000sys)
+    -   [USB 集线器驱动程序 (Usbhub3.sys)](#usb-hub-driver-usbhub3sys)
+-   [USB 2.0 驱动程序堆栈](#usb-20-driver-stack)
+-   [USB 常见类泛型父驱动程序 (Usbccgp.sys)](#usb-common-class-generic-parent-driver-usbccgpsys)
+-   [WinUSB (Winusb.sys)](#winusb-winusbsys)
 -   [USB 客户端驱动程序](#usb-client-driver)
 -   [客户端驱动程序的帮助程序库](#helper-libraries-for-client-drivers)
 -   [相关的主题](#related-topics)
