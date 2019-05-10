@@ -4,12 +4,12 @@ description: 微筛选器等级请求
 ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 310b6abb180422126f89f0cdb9a27d946f2fd047
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e04b07a95c8f7946baafe256f32261c713bbb4ae
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384285"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106368"
 ---
 # <a name="minifilter-altitude-request"></a>微筛选器等级请求
 
@@ -18,6 +18,8 @@ ms.locfileid: "63384285"
 若要请求微筛选器海拔高度标识符，对 ASCII 文本电子邮件中发送电子邮件[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)与该主题："微筛选器海拔高度请求"。 电子邮件的正文必须包含以下字段和相应的信息。
 
 然后，此筛选器的海拔高度将通过电子邮件发送回指定联系人的电子邮件地址。
+
+您还可以发送电子邮件至[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)更新与现有海拔地区相关联的信息。
 
 <table>
 <colgroup>

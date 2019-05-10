@@ -4,12 +4,12 @@ description: 通过嵌入式签名对驱动程序进行发布签名
 ms.assetid: ffea2479-83ee-4d94-a5e6-73ecea9fc17d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3a5211765376f79d059820454d2f7747b3256a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28d9032c9dbc09a1a3663c9d05046966c0f8df2a
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371068"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106369"
 ---
 # <a name="release-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行发布签名
 
@@ -35,7 +35,7 @@ ms.locfileid: "63371068"
 对测试签名*toaster.sys*文件，请运行以下命令行：
 
 ```cpp
-Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
+Signtool sign /v /fd sha256 /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http://timestamp.verisign.com/scripts/timstamp.dll amd64\toaster.sys
 ```
 
 其中：
@@ -43,6 +43,8 @@ Signtool sign /v /ac MSCV-VSClass3.cer /s MyPersonalStore /n contoso.com /t http
 -   **符号**命令将配置指定的内核模式二进制文件，进行签名的 SignTool *amd64\\toaster.sys*。
 
 -   **/V**选项启用详细的操作，在其中 SignTool 显示成功执行消息和警告消息。
+
+-   **/Fd**选项指定要用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
 -   **/Ac**选项指定包含交叉证书的文件的名称 (*MSCV VSClass3.cer*) 从 CA 获取。 如果交叉证书不在当前目录中，使用的完整路径名称。
 

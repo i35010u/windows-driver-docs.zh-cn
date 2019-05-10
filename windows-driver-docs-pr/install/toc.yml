@@ -1,2120 +1,1954 @@
 - name: 设备和驱动程序安装
   href: index.md
+- name: 设备和驱动程序安装路线图
+  href: roadmap-for-device-and-driver-installation--windows-vista-and-later-.md
+- name: 概述
   items:
-    - name: 设备和驱动程序安装路线图
-      href: roadmap-for-device-and-driver-installation--windows-vista-and-later-.md
     - name: 设备和驱动程序安装概述
       href: overview-of-device-and-driver-installation.md
+    - name: Windows 如何安装设备
       items:
-        - name: Windows 如何安装设备
-          href: how-windows-installs-devices.md
-          items:
-            - name: 第 1 步：标识新设备
-              href: step-1--the-new-device-is-identified.md
-            - name: 步骤 2：选择设备的驱动程序
-              href: step-2--a-driver-for-the-device-is-selected.md
-            - name: '步骤 3:安装设备的驱动程序'
-              href: step-3--the-driver-for-the-device-is-installed.md
+        - name: 第 1 步：标识新设备
+          href: step-1--the-new-device-is-identified.md
+        - name: 步骤 2：选择设备的驱动程序
+          href: step-2--a-driver-for-the-device-is-selected.md
+        - name: '步骤 3:安装设备的驱动程序'
+          href: step-3--the-driver-for-the-device-is-installed.md
+    - name: 组件数
+      items:
         - name: 系统提供的设备安装组件
           href: system-provided-device-installation-components.md
-          items:
-            - name: 即插即用管理器
-              href: pnp-manager.md
-            - name: 驱动程序存储
-              href: driver-store.md
+        - name: 即插即用管理器
+          href: pnp-manager.md
+        - name: 驱动程序存储
+          href: driver-store.md
         - name: 供应商提供的设备安装组件
           href: vendor-provided-device-installation-components.md
+    - name: 安装文件
+      items:
         - name: 设备安装文件
           href: device-installation-files.md
-          items:
-            - name: 设备安装文件示例
-              href: sample-device-installation-files.md
-        - name: 设备安装类型
-          href: device-installation-types.md
-        - name: Windows 如何选择驱动程序
-          href: how-setup-selects-drivers.md
-          items:
-            - name: 驱动程序选择过程概述
-              href: overview-of-the-driver-selection-process.md
-            - name: Windows 搜索驱动程序的位置
-              href: where-setup-searches-for-drivers.md
-            - name: Windows 如何对驱动程序分级
-              href: how-setup-ranks-drivers.md
-              items:
-                - name: Windows 如何对驱动程序分级
-                  href: how-setup-ranks-drivers--windows-vista-and-later-.md
-                  items:
-                    - name: 签名类别和驱动程序安装
-                      href: signature-categories-and-driver-installation.md
-                    - name: 签名分数
-                      href: signature-score--windows-vista-and-later-.md
-                      items:
-                        - name: LowerLogoVersion
-                          href: lowerlogoversion.md
-                    - name: 功能分数
-                      href: feature-score--windows-vista-and-later-.md
-                    - name: 标识符分数
-                      href: identifier-score--windows-vista-and-later-.md
-                    - name: 驱动程序分级范围
-                      href: driver-rank-ranges--windows-vista-and-later-.md
-                    - name: 驱动程序分级示例
-                      href: driver-rank-example--windows-vista-and-later-.md
-                    - name: SetupAPI 日志中的驱动程序分级信息
-                      href: driver-rank-information-in-the-setupapi-log.md
-            - name: AllSignersEqual 组策略
-              href: allsignersequal-group-policy--windows-vista-and-later-.md
-    - name: 设备和驱动程序安装基本主题
-      href: device-and-driver-installation-fundamental-topics.md
+        - name: 设备安装文件示例
+          href: sample-device-installation-files.md
+    - name: 设备安装类型
+      href: device-installation-types.md
+    - name: Windows 如何选择驱动程序
       items:
-        - name: 驱动程序包
+        - name: 驱动程序选择过程概述
+          href: overview-of-the-driver-selection-process.md
+        - name: Windows 搜索驱动程序的位置
+          href: where-setup-searches-for-drivers.md
+    - name: Windows 如何对驱动程序分级
+      items:
+        - name: Windows 如何对驱动程序分级
+          href: how-setup-ranks-drivers--windows-vista-and-later-.md
+        - name: 签名类别和驱动程序安装
+          href: signature-categories-and-driver-installation.md
+        - name: 签名分数
+          href: signature-score--windows-vista-and-later-.md
+        - name: LowerLogoVersion
+          href: lowerlogoversion.md
+        - name: 功能分数
+          href: feature-score--windows-vista-and-later-.md
+        - name: 标识符分数
+          href: identifier-score--windows-vista-and-later-.md
+        - name: 驱动程序分级范围
+          href: driver-rank-ranges--windows-vista-and-later-.md
+        - name: 驱动程序分级示例
+          href: driver-rank-example--windows-vista-and-later-.md
+        - name: SetupAPI 日志中的驱动程序分级信息
+          href: driver-rank-information-in-the-setupapi-log.md
+        - name: AllSignersEqual 组策略
+          href: allsignersequal-group-policy--windows-vista-and-later-.md
+- name: 概念
+  items:
+    - name: 驱动程序包
+      items:
+        - name: 驱动程序包概述
           href: driver-packages.md
-          items:
-            - name: 驱动程序包的组件
-              href: components-of-a-driver-package.md
-            - name: 安装组件概述
-              href: installation-component-overview.md
-            - name: 提供 INF 文件
-              href: supplying-an-inf-file.md
-        - name: INF 文件
-          href: inf-files.md
-          items:
-            - name: INF 文件概述
-              href: overview-of-inf-files.md
-              items:
-                - name: 查看 INF 文件
-                  href: looking-at-an-inf-file.md
-                - name: 使用通用 INF 文件
-                  href: using-a-universal-inf-file.md
-                - name: 使用扩展 INF 文件
-                  href: using-an-extension-inf-file.md
-                - name: 使用 Windows 更新更新设备固件
-                  href: updating-device-firmware-using-windows-update.md
-                - name: INF 节摘要
-                  href: summary-of-inf-sections.md
-                - name: INF 指令摘要
-                  href: summary-of-inf-directives.md
-                - name: INF 文件常规指南
-                  href: general-guidelines-for-inf-files.md
-                - name: INF 文件常规语法规则
-                  href: general-syntax-rules-for-inf-files.md
-                - name: 指定设备文件的源和目标位置
-                  href: specifying-the-source-and-target-locations-for-device-files.md
-                  items:
-                    - name: INF 文件的源媒体
-                      href: source-media-for-inf-files.md
-                    - name: INF 文件的目标媒体
-                      href: target-media-for-inf-files.md
-                    - name: 复制 INF 文件
-                      href: copying-inf-files.md
-                - name: 创建适用于多个平台和操作系统的 INF 文件
-                  href: creating-inf-files-for-multiple-platforms-and-operating-systems.md
-                  items:
-                    - name: INF 文件平台扩展和基于 x64 的系统
-                      href: inf-file-platform-extensions-and-x64-based-systems.md
-                    - name: INF 文件平台扩展和基于 x86 的系统
-                      href: inf-file-platform-extensions-and-x86-based-systems.md
-                    - name: 跨平台 INF 文件
-                      href: cross-platform-inf-files.md
-                    - name: 将平台扩展与其他节名称扩展相结合
-                      href: combining-platform-extensions-with-other-section-name-extensions.md
-                - name: 将平台扩展与操作系统版本相结合
-                  href: combining-platform-extensions-with-operating-system-versions.md
-                  items:
-                    - name: 适用于一个或多个目标操作系统的示例 INF 模型部分
-                      href: sample-inf-models-sections-for-one-or-more-target-operating-system.md
-                    - name: 只适用于一个目标操作系统的示例 INF 模型部分
-                      href: sample-inf-models-sections-for-only-one-target-operating-system.md
-                    - name: 适合在多个 Windows 版本上进行设备安装的示例 INF 文件
-                      href: sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md
-                - name: 创建国际 INF 文件
-                  href: creating-international-inf-files.md
-                - name: 指定驱动程序加载顺序
-                  href: specifying-driver-load-order.md
-                - name: 使用 Dirids
-                  href: using-dirids.md
-            - name: 从设备安装应用程序访问 INF 文件
-              href: accessing-inf-files-from-a-setup-application.md
-              items:
-                - name: 打开和关闭 INF 文件
-                  href: opening-and-closing-an-inf-file.md
-                - name: 从 INF 文件中检索信息
-                  href: retrieving-information-from-an-inf-file.md
-            - name: 为 Shell 和自动播放提供供应商图标
-              href: providing-vendor-icons-for-the-shell-and-autoplay.md
+        - name: 驱动程序包的组件
+          href: components-of-a-driver-package.md
+        - name: 安装组件概述
+          href: installation-component-overview.md
+        - name: 提供 INF 文件
+          href: supplying-an-inf-file.md
+    - name: INF 文件
+      items:
+        - name: INF 文件概述
+          href: overview-of-inf-files.md
+        - name: 查看 INF 文件
+          href: looking-at-an-inf-file.md
+        - name: 使用通用 INF 文件
+          href: using-a-universal-inf-file.md
+        - name: 使用扩展 INF 文件
+          href: using-an-extension-inf-file.md
+        - name: 使用 Windows 更新更新设备固件
+          href: updating-device-firmware-using-windows-update.md
+        - name: INF 节摘要
+          href: summary-of-inf-sections.md
+        - name: INF 指令摘要
+          href: summary-of-inf-directives.md
+        - name: INF 文件常规指南
+          href: general-guidelines-for-inf-files.md
+        - name: INF 文件常规语法规则
+          href: general-syntax-rules-for-inf-files.md
+        - name: 指定设备文件的源和目标位置
+          href: specifying-the-source-and-target-locations-for-device-files.md
+        - name: INF 文件的源媒体
+          href: source-media-for-inf-files.md
+        - name: INF 文件的目标媒体
+          href: target-media-for-inf-files.md
+        - name: 复制 INF 文件
+          href: copying-inf-files.md
+        - name: 创建适用于多个平台和操作系统的 INF 文件
+          href: creating-inf-files-for-multiple-platforms-and-operating-systems.md
+        - name: INF 文件平台扩展和基于 x64 的系统
+          href: inf-file-platform-extensions-and-x64-based-systems.md
+        - name: INF 文件平台扩展和基于 x86 的系统
+          href: inf-file-platform-extensions-and-x86-based-systems.md
+        - name: 跨平台 INF 文件
+          href: cross-platform-inf-files.md
+        - name: 将平台扩展与其他节名称扩展相结合
+          href: combining-platform-extensions-with-other-section-name-extensions.md
+        - name: 将平台扩展与操作系统版本相结合
+          href: combining-platform-extensions-with-operating-system-versions.md
+        - name: 适用于一个或多个目标操作系统的示例 INF 模型部分
+          href: sample-inf-models-sections-for-one-or-more-target-operating-system.md
+        - name: 只适用于一个目标操作系统的示例 INF 模型部分
+          href: sample-inf-models-sections-for-only-one-target-operating-system.md
+        - name: 适合在多个 Windows 版本上进行设备安装的示例 INF 文件
+          href: sample-inf-file-for-device-installation-on-multiple-versions-of-windows.md
+        - name: 创建国际 INF 文件
+          href: creating-international-inf-files.md
+        - name: 指定驱动程序加载顺序
+          href: specifying-driver-load-order.md
+        - name: 使用 Dirids
+          href: using-dirids.md
+        - name: 从设备安装应用程序访问 INF 文件
+          href: accessing-inf-files-from-a-setup-application.md
+        - name: 打开和关闭 INF 文件
+          href: opening-and-closing-an-inf-file.md
+        - name: 从 INF 文件中检索信息
+          href: retrieving-information-from-an-inf-file.md
+        - name: 为 Shell 和自动播放提供供应商图标
+          href: providing-vendor-icons-for-the-shell-and-autoplay.md
+    - name: 驱动程序签名
+      items:
         - name: 驱动程序签名
           href: driver-signing.md
-          items:
-            - name: 适用于驱动程序安装的数字签名概述
-              href: overview-of-digital-signatures-for-driver-installation.md
-              items:
-                - name: 数字签名
-                  href: digital-signatures.md
-                  items:
-                    - name: 验证码数字签名
-                      href: authenticode.md
-                    - name: 目录文件和数字签名
-                      href: catalog-files.md
-                    - name: 驱动程序文件中嵌入的签名
-                      href: embedded-signatures-in-a-driver-file.md
-                    - name: 数字签名和即插即用设备安装
-                      href: digital-signatures-and-pnp-device-installation.md
-                      items:
-                        - name: 数字签名和即插即用设备安装
-                          href: digital-signatures-and-pnp-device-installation--windows-vista-and-late.md
-                - name: 数字证书
-                  href: digital-certificates.md
-                  items:
-                    - name: 证书存储
-                      href: certificate-stores.md
-                      items:
-                        - name: 本地计算机和当前用户证书存储
-                          href: local-machine-and-current-user-certificate-stores.md
-                        - name: 受信任的根证书颁发机构证书存储
-                          href: trusted-root-certification-authorities-certificate-store.md
-                        - name: 受信任的发布者证书存储
-                          href: trusted-publishers-certificate-store.md
-                - name: 内核模式代码签名策略
-                  href: kernel-mode-code-signing-policy--windows-vista-and-later-.md
-            - name: Windows 10 S 模式驱动程序要求
-              href: Windows10SDriverRequirements.md
-            - name: 管理签名过程
-              href: managing-the-signing-process.md
-              items:
-                - name: 选择适当的签名类型
-                  href: selecting-the-appropriate-signature-type.md
-                  items:
-                    - name: 内核模式代码签名要求
-                      href: kernel-mode-code-signing-requirements--windows-vista-and-later-.md
-                    - name: 即插即用设备安装签名要求
-                      href: pnp-device-installation-signing-requirements--windows-vista-and-later-.md
-                    - name: 对第三方 CSP 进行验证码签名
-                      href: authenticode-signing-of-csps.md
-                - name: 管理数字签名或代码签名密钥
-                  href: managing-the-digital-signature-or-code-signing-keys.md
-                - name: 用于内核模式代码签名的交叉证书
-                  href: cross-certificates-for-kernel-mode-code-signing.md
-            - name: 在开发和测试期间签署驱动程序
-              href: signing-drivers-during-development-and-test.md
-              items:
-                - name: 测试签名简介
-                  href: introduction-to-test-signing.md
-                - name: 如何对驱动程序包进行测试签名
-                  href: how-to-test-sign-a-driver-package.md
-                  items:
-                    - name: 创建测试证书
-                      href: creating-test-certificates.md
-                    - name: 查看测试证书
-                      href: viewing-test-certificates.md
-                    - name: 创建用于对驱动程序包进行测试签名的目录文件
-                      href: creating-a-catalog-file-for-test-signing-a-driver-package.md
-                      items:
-                        - name: 使用 Inf2Cat 创建目录文件
-                          href: using-inf2cat-to-create-a-catalog-file.md
-                        - name: 使用 MakeCat 创建目录文件
-                          href: using-makecat-to-create-a-catalog-file.md
-                    - name: 对驱动程序包的目录文件进行测试签名
-                      href: test-signing-a-driver-package-s-catalog-file.md
-                    - name: 通过嵌入式签名对驱动程序进行测试签名
-                      href: test-signing-a-driver-through-an-embedded-signature.md
-                    - name: 配置支持测试签名的测试计算机
-                      href: configuring-the-test-computer-to-support-test-signing.md
-                      items:
-                        - name: TESTSIGNING 启动配置选项
-                          href: the-testsigning-boot-configuration-option.md
-                        - name: 启用代码完整性事件日志记录和系统审核
-                          href: enabling-code-integrity-event-logging-and-system-auditing.md
-                    - name: 安装测试证书
-                      href: installing-test-certificates.md
-                    - name: 验证测试签名
-                      href: verifying-the-test-signature.md
-                    - name: 在测试计算机上安装进行了测试签名的驱动程序包
-                      href: installing-a-test-signed-driver-package-on-the-test-computer.md
-                      items:
-                        - name: 使用 DevCon 工具安装驱动程序包
-                          href: using-the-devcon-tool-to-install-a-driver-package.md
-                - name: WHQL 测试签名计划
-                  href: whql-test-signature-program.md
-                - name: 测试证书
-                  href: test-certificates.md
-                  items:
-                    - name: MakeCert 测试证书
-                      href: makecert-test-certificate.md
-                    - name: 商业测试证书
-                      href: commercial-test-certificate.md
-                    - name: 企业 CA 测试证书
-                      href: enterprise-ca-test-certificate.md
-                - name: 对驱动程序包进行测试签名
-                  href: test-signing-driver-packages.md
-                  items:
-                    - name: 对驱动程序文件进行测试签名
-                      href: test-signing-a-driver-file.md
-                    - name: 验证已进行测试签名的驱动程序文件的签名
-                      href: verifying-the-signature-of-a-test-signed-driver-file.md
-                    - name: 为已进行测试签名的驱动程序包创建目录文件
-                      href: creating-a-catalog-file-for-a-test-signed-driver-package.md
-                    - name: 对目录文件进行测试签名
-                      href: test-signing-a-catalog-file.md
-                    - name: 验证已进行测试签名的目录文件的签名
-                      href: verifying-the-signature-of-a-test-signed-catalog-file.md
-                - name: 安装已进行测试签名的驱动程序包
-                  href: installing-test-signed-driver-packages.md
-                  items:
-                    - name: 在测试计算机上安装测试证书
-                      href: installing-a-test-certificate-on-a-test-computer.md
-                      items:
-                        - name: 使用 CertMgr 在测试计算机上安装测试证书
-                          href: using-certmgr-to-install-test-certificates-on-a-test-computer.md
-                        - name: 使用默认域策略部署测试证书
-                          href: deploying-a-test-certificate-by-using-the-default-domain-policy.md
-                    - name: 安装适用于非 PnP 驱动程序且已进行测试签名的目录文件
-                      href: installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md
-                      items:
-                        - name: 使用 CryptCATAdminAddCatalog 安装目录文件
-                          href: installing-a-catalog-file-by-using-cryptcatadminaddcatalog.md
-                        - name: 使用 SignTool 安装目录文件
-                          href: installing-a-catalog-file-by-using-signtool.md
-                - name: 在开发和测试期间安装未签名驱动程序
-                  href: installing-an-unsigned-driver-during-development-and-test.md
-            - name: 为驱动程序签名以便公开发布
-              href: signing-drivers-for-public-release.md
-              items:
-                - name: 为驱动程序签名以便公开发布
-                  href: signing-drivers-for-public-release--windows-vista-and-later-.md
-                  items:
-                    - name: 发布签名简介
-                      href: introduction-to-release-signing.md
-                    - name: 如何对驱动程序包进行发布签名
-                      href: how-to-release-sign-a-driver-package.md
-                      items:
-                        - name: 获取软件发行者证书 (SPC)
-                          href: obtaining-a-software-publisher-certificate--spc-.md
-                          items:
-                            - name: 个人信息交换 (.pfx) 文件
-                              href: personal-information-exchange---pfx--files.md
-                            - name: 将 SPC 导入证书存储
-                              href: importing-an-spc-into-a-certificate-store.md
-                            - name: 确定 SPC 的交叉证书
-                              href: determining-an-spc-s-cross-certificate.md
-                        - name: 创建用于对驱动程序包进行发布签名的目录文件
-                          href: creating-a-catalog-file-for-release-signing-a-driver-package.md
-                        - name: 对驱动程序包的目录文件进行发布签名
-                          href: release-signing-a-driver-package-s-catalog-file.md
-                        - name: 通过嵌入式签名对驱动程序进行发布签名
-                          href: release-signing-a-driver-through-an-embedded-signature.md
-                        - name: 验证发布签名
-                          href: verifying-the-release-signature.md
-                        - name: 配置支持发布签名的计算机
-                          href: configuring-a-computer-to-support-release-signing.md
-                        - name: 安装进行了发布签名的驱动程序包
-                          href: installing-a-release-signed-driver-package.md
-                    - name: WHQL 发布签名
-                      href: whql-release-signature.md
-                    - name: 发布证书
-                      href: release-certificates.md
-                      items:
-                        - name: 软件发行者证书
-                          href: software-publisher-certificate.md
-                        - name: 商业发布证书
-                          href: commercial-release-certificate.md
-                    - name: 对驱动程序包进行发布签名
-                      href: release-signing-driver-packages.md
-                      items:
-                        - name: 对驱动程序文件进行发布签名
-                          href: release-signing-a-driver-file.md
-                        - name: 验证已进行发布签名的驱动程序文件的签名
-                          href: verifying-the-signature-of-a-release-signed-driver-file.md
-                        - name: '为 PnP 驱动程序包创建目录文件 '
-                          href: creating-a-catalog-file-for-a-pnp-driver-package.md
-                        - name: 使用 SPC 对目录文件进行签名
-                          href: signing-a-catalog-file-with-an-spc.md
-                        - name: 验证目录文件的 SPC 签名
-                          href: verifying-the-spc-signature-of-a-catalog-file.md
-                        - name: 使用商业发布证书对目录文件进行签名
-                          href: signing-a-catalog-file-with-a-commercial-release-certificate.md
-                        - name: 验证通过商业发布证书签名的目录文件的签名
-                          href: verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-relea.md
-                        - name: 为非 PnP 驱动程序包创建目录文件
-                          href: creating-a-catalog-file-for-a-non-pnp-driver-package.md
-                        - name: 安装适用于非 PnP 驱动程序且已进行发布签名的目录文件
-                          href: installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md
-            - name: 排查已签名驱动程序包的安装和加载问题
-              href: troubleshooting-install-and-load-problems-with-signed-driver-packages.md
-              items:
-                - name: 检测驱动程序加载错误
-                  href: detecting-driver-load-errors.md
-                - name: 代码完整性诊断系统日志事件
-                  href: code-integrity-diagnostic-system-log-events.md
-                  items:
-                    - name: 查看代码完整性事件
-                      href: viewing-code-integrity-events.md
-                    - name: 启用系统事件审核日志
-                      href: enabling-the-system-event-audit-log.md
-                    - name: 代码完整性事件日志消息
-                      href: code-integrity-event-log-messages.md
-                - name: SetupAPI 设备安装日志条目
-                  href: setupapi-device-installation-log-entries.md
+        - name: 数字签名
+          href: digital-signatures.md
+        - name: 验证码数字签名
+          href: authenticode.md
+        - name: 目录文件和数字签名
+          href: catalog-files.md
+        - name: 驱动程序文件中嵌入的签名
+          href: embedded-signatures-in-a-driver-file.md
+        - name: 数字签名和即插即用设备安装
+          href: digital-signatures-and-pnp-device-installation--windows-vista-and-late.md
+        - name: 数字证书
+          href: digital-certificates.md
+        - name: 证书存储
+          href: certificate-stores.md
+        - name: 本地计算机和当前用户证书存储
+          href: local-machine-and-current-user-certificate-stores.md
+        - name: 受信任的根证书颁发机构证书存储
+          href: trusted-root-certification-authorities-certificate-store.md
+        - name: 受信任的发布者证书存储
+          href: trusted-publishers-certificate-store.md
+        - name: 内核模式代码签名策略
+          href: kernel-mode-code-signing-policy--windows-vista-and-later-.md
+        - name: Windows 10 S 模式驱动程序要求
+          href: Windows10SDriverRequirements.md
+        - name: 管理签名过程
+          href: managing-the-signing-process.md
+        - name: 内核模式代码签名要求
+          href: kernel-mode-code-signing-requirements--windows-vista-and-later-.md
+        - name: 即插即用设备安装签名要求
+          href: pnp-device-installation-signing-requirements--windows-vista-and-later-.md
+        - name: 对第三方 CSP 进行验证码签名
+          href: authenticode-signing-of-csps.md
+        - name: 管理数字签名或代码签名密钥
+          href: managing-the-digital-signature-or-code-signing-keys.md
+        - name: 用于内核模式代码签名的交叉证书
+          href: cross-certificates-for-kernel-mode-code-signing.md
+        - name: 测试签名简介
+          href: introduction-to-test-signing.md
+        - name: 如何对驱动程序包进行测试签名
+          href: how-to-test-sign-a-driver-package.md
+        - name: 创建测试证书
+          href: creating-test-certificates.md
+        - name: 查看测试证书
+          href: viewing-test-certificates.md
+        - name: 创建用于对驱动程序包进行测试签名的目录文件
+          href: creating-a-catalog-file-for-test-signing-a-driver-package.md
+        - name: 使用 Inf2Cat 创建目录文件
+          href: using-inf2cat-to-create-a-catalog-file.md
+        - name: 使用 MakeCat 创建目录文件
+          href: using-makecat-to-create-a-catalog-file.md
+        - name: 对驱动程序包的目录文件进行测试签名
+          href: test-signing-a-driver-package-s-catalog-file.md
+        - name: 通过嵌入式签名对驱动程序进行测试签名
+          href: test-signing-a-driver-through-an-embedded-signature.md
+        - name: 配置支持测试签名的测试计算机
+          href: configuring-the-test-computer-to-support-test-signing.md
+        - name: TESTSIGNING 启动配置选项
+          href: the-testsigning-boot-configuration-option.md
+        - name: 启用代码完整性事件日志记录和系统审核
+          href: enabling-code-integrity-event-logging-and-system-auditing.md
+        - name: 安装测试证书
+          href: installing-test-certificates.md
+        - name: 验证测试签名
+          href: verifying-the-test-signature.md
+        - name: 在测试计算机上安装进行了测试签名的驱动程序包
+          href: installing-a-test-signed-driver-package-on-the-test-computer.md
+        - name: 使用 DevCon 工具安装驱动程序包
+          href: using-the-devcon-tool-to-install-a-driver-package.md
+        - name: WHQL 测试签名计划
+          href: whql-test-signature-program.md
+        - name: MakeCert 测试证书
+          href: makecert-test-certificate.md
+        - name: 商业测试证书
+          href: commercial-test-certificate.md
+        - name: 企业 CA 测试证书
+          href: enterprise-ca-test-certificate.md
+        - name: 对驱动程序包进行测试签名
+          href: test-signing-driver-packages.md
+        - name: 对驱动程序文件进行测试签名
+          href: test-signing-a-driver-file.md
+        - name: 验证已进行测试签名的驱动程序文件的签名
+          href: verifying-the-signature-of-a-test-signed-driver-file.md
+        - name: 为已进行测试签名的驱动程序包创建目录文件
+          href: creating-a-catalog-file-for-a-test-signed-driver-package.md
+        - name: 对目录文件进行测试签名
+          href: test-signing-a-catalog-file.md
+        - name: 验证已进行测试签名的目录文件的签名
+          href: verifying-the-signature-of-a-test-signed-catalog-file.md
+        - name: 安装已进行测试签名的驱动程序包
+          href: installing-test-signed-driver-packages.md
+        - name: 在测试计算机上安装测试证书
+          href: installing-a-test-certificate-on-a-test-computer.md
+        - name: 使用 CertMgr 在测试计算机上安装测试证书
+          href: using-certmgr-to-install-test-certificates-on-a-test-computer.md
+        - name: 使用默认域策略部署测试证书
+          href: deploying-a-test-certificate-by-using-the-default-domain-policy.md
+        - name: 安装适用于非 PnP 驱动程序且已进行测试签名的目录文件
+          href: installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md
+        - name: 使用 CryptCATAdminAddCatalog 安装目录文件
+          href: installing-a-catalog-file-by-using-cryptcatadminaddcatalog.md
+        - name: 使用 SignTool 安装目录文件
+          href: installing-a-catalog-file-by-using-signtool.md
+        - name: 在开发和测试期间安装未签名驱动程序
+          href: installing-an-unsigned-driver-during-development-and-test.md
+        - name: 为驱动程序签名以便公开发布
+          href: signing-drivers-for-public-release--windows-vista-and-later-.md
+        - name: 发布签名简介
+          href: introduction-to-release-signing.md
+        - name: 如何对驱动程序包进行发布签名
+          href: how-to-release-sign-a-driver-package.md
+        - name: 获取软件发行者证书 (SPC)
+          href: obtaining-a-software-publisher-certificate--spc-.md
+        - name: 个人信息交换 (.pfx) 文件
+          href: personal-information-exchange---pfx--files.md
+        - name: 将 SPC 导入证书存储
+          href: importing-an-spc-into-a-certificate-store.md
+        - name: 确定 SPC 的交叉证书
+          href: determining-an-spc-s-cross-certificate.md
+        - name: 创建用于对驱动程序包进行发布签名的目录文件
+          href: creating-a-catalog-file-for-release-signing-a-driver-package.md
+        - name: 对驱动程序包的目录文件进行发布签名
+          href: release-signing-a-driver-package-s-catalog-file.md
+        - name: 通过嵌入式签名对驱动程序进行发布签名
+          href: release-signing-a-driver-through-an-embedded-signature.md
+        - name: 验证发布签名
+          href: verifying-the-release-signature.md
+        - name: 配置支持发布签名的计算机
+          href: configuring-a-computer-to-support-release-signing.md
+        - name: 安装进行了发布签名的驱动程序包
+          href: installing-a-release-signed-driver-package.md
+        - name: WHQL 发布签名
+          href: whql-release-signature.md
+        - name: 发布证书
+          href: release-certificates.md
+        - name: 软件发行者证书
+          href: software-publisher-certificate.md
+        - name: 商业发布证书
+          href: commercial-release-certificate.md
+        - name: 对驱动程序包进行发布签名
+          href: release-signing-driver-packages.md
+        - name: 对驱动程序文件进行发布签名
+          href: release-signing-a-driver-file.md
+        - name: 验证已进行发布签名的驱动程序文件的签名
+          href: verifying-the-signature-of-a-release-signed-driver-file.md
+        - name: '为 PnP 驱动程序包创建目录文件 '
+          href: creating-a-catalog-file-for-a-pnp-driver-package.md
+        - name: 使用 SPC 对目录文件进行签名
+          href: signing-a-catalog-file-with-an-spc.md
+        - name: 验证目录文件的 SPC 签名
+          href: verifying-the-spc-signature-of-a-catalog-file.md
+        - name: 使用商业发布证书对目录文件进行签名
+          href: signing-a-catalog-file-with-a-commercial-release-certificate.md
+        - name: 验证通过商业发布证书签名的目录文件的签名
+          href: verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-relea.md
+        - name: 为非 PnP 驱动程序包创建目录文件
+          href: creating-a-catalog-file-for-a-non-pnp-driver-package.md
+        - name: 安装适用于非 PnP 驱动程序且已进行发布签名的目录文件
+          href: installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md
+        - name: 检测驱动程序加载错误
+          href: detecting-driver-load-errors.md
+        - name: 代码完整性诊断系统日志事件
+          href: code-integrity-diagnostic-system-log-events.md
+        - name: 查看代码完整性事件
+          href: viewing-code-integrity-events.md
+        - name: 启用系统事件审核日志
+          href: enabling-the-system-event-audit-log.md
+        - name: 代码完整性事件日志消息
+          href: code-integrity-event-log-messages.md
+        - name: SetupAPI 设备安装日志条目
+          href: setupapi-device-installation-log-entries.md
         - name: Windows 驱动程序签名教程
           href: windows-driver-signing-tutorial.md
-          items:
-            - name: 测试签名
-              href: test-signing.md
-            - name: 发布签名
-              href: release-signing.md
-            - name: 排查驱动程序签名安装问题
-              href: troubleshooting-driver-signing-installation.md
-            - name: 相关主题和附录
-              href: related-topics-and-appendices.md
-              items:
-                - name: 附录 1：强制在内核调试模式下进行内核模式签名验证
-                  href: appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md
-                - name: 附录 2：使用 Visual Studio 签署驱动程序
-                  href: appendix-2--signing-drivers-with-visual-studio.md
-                - name: 附录 3：启用代码完整性事件日志记录和系统审核
-                  href: appendix-3--enable-code-integrity-event-logging-and-system-auditing.md
-                - name: 附录 4：驱动程序签名问题
-                  href: appendix-4--driver-signing-issues.md
-        - name: 设备元数据包
-          href: device-metadata-packages.md
-          items:
-            - name: 设备元数据包概述
-              href: overview-of-device-metadata-packages.md
-            - name: 设备元数据系统概述
-              href: overview-of-the-device-metadata-system.md
-              items:
-                - name: Windows 元数据和 Internet 服务
-                  href: windows-metadata-and-internet-services.md
-                - name: 设备元数据检索客户端
-                  href: device-metadata-retrieval-client.md
-                - name: 设备元数据存储
-                  href: device-metadata-store.md
-                - name: '设备元数据缓存 '
-                  href: device-metadata-cache.md
-            - name: 设备元数据包结构
-              href: device-metadata-package-components.md
-              items:
-                - name: PackageInfo XML 文档
-                  href: packageinfo-xml-document.md
-                - name: DeviceInfo XML 文档
-                  href: deviceinfo-xml-document.md
-                  items:
-                    - name: 设备图标文件
-                      href: device-icon-file.md
-                - name: WindowsInfo XML 文档
-                  href: windowsinfo-xml-document.md
-                - name: SoftwareInfo XML 文档
-                  href: softwareinfo-xml-document.md
-            - name: 构建设备元数据包
-              href: building-device-metadata-packages.md
-            - name: 安装设备元数据包
-              href: installing-device-metadata-packages.md
-              items:
-                - name: 将设备元数据包安装到脱机 Windows 映像
-                  href: installing-device-metadata-packages-to-an-offline-windows-image.md
-                - name: 从 WMIS 安装设备元数据包
-                  href: installing-device-metadata-packages-from-wmis.md
-                - name: 通过应用程序安装设备元数据包
-                  href: installing-device-metadata-packages-through-an-application.md
-                - name: 通过驱动程序包安装设备元数据包
-                  href: installing-device-metadata-packages-through-a-driver-package.md
-                - name: 手动添加设备元数据包
-                  href: manually-adding-device-metadata-packages.md
-            - name: DMRC 如何选择设备元数据包
-              href: how-the-dmrc-selects-a-device-metadata-package.md
-              items:
-                - name: DMRC 如何确定何时搜索 WMIS 服务器
-                  href: how-the-dmrc-determines-when-to-search-the-wmis-server.md
-            - name: 调试设备元数据包
-              href: debugging-device-metadata-packages.md
-              items:
-                - name: 使用事件查看器调试设备元数据包
-                  href: debugging-device-metadata-packages-by-using-event-viewer.md
-                - name: 使用问题报告调试设备元数据包
-                  href: debugging-device-metadata-packages-by-using-problem-reports.md
-                - name: 设备元数据错误代码
-                  href: device-metadata-error-codes.md
-            - name: 开发设备元数据包的最佳做法
-              href: best-practices-for-developing-device-metadata-packages.md
-              items:
-                - name: 指定硬件 ID 的最佳做法
-                  href: best-practices-for-specifying-hardware-ids.md
-                  items:
-                    - name: 指定蓝牙设备的硬件 ID
-                      href: specifying-hardware-ids-for-a-bluetooth-device.md
-                    - name: 指定计算机的硬件 ID
-                      href: specifying-hardware-ids-for-a-computer.md
-                    - name: 指定多功能设备的硬件 ID
-                      href: specifying-hardware-ids-for-a-multifunction-device.md
-                - name: 指定模型 ID 的最佳做法
-                  href: best-practices-for-specifying-model-ids.md
-                - name: 测试设备元数据包的下载的最佳做法
-                  href: best-practices-for-testing-the-download-of-device-metadata-packages.md
-        - name: 设备和驱动程序安装软件
-          href: device-and-driver-installation-software.md
-          items:
-            - name: 设备和驱动程序安装软件工具
-              href: device-and-driver-installation-software-tools.md
-              items:
-                - name: SetupAPI
-                  href: setupapi.md
-                  items:
-                    - name: 使用常规设置函数
-                      href: using-general-setup-functions.md
-                      items:
-                        - name: INF 文件处理函数
-                          href: inf-file-processing-functions.md
-                        - name: 磁盘提示和错误处理函数
-                          href: disk-prompting-and-error-handling-functions.md
-                        - name: 文件排队函数
-                          href: file-queuing-functions.md
-                        - name: 默认的队列回调常规函数
-                          href: default-queue-callback-routine-functions.md
-                        - name: Cabinet 文件函数
-                          href: cabinet-file-function.md
-                        - name: 磁盘空间列表函数
-                          href: disk-space-list-functions.md
-                        - name: MRU 源列表函数
-                          href: mru-source-list-functions.md
-                        - name: 文件日志函数
-                          href: file-log-functions.md
-                        - name: 用户界面函数
-                          href: user-interface-functions.md
-                        - name: SetupAPI 日志记录函数
-                          href: setupapi-logging-functions.md
-                    - name: 使用设备安装函数
-                      href: using-device-installation-functions.md
-                    - name: 典型的 SetupAPI 用法
-                      href: typical-setupapi-usage.md
-                      items:
-                        - name: 基本安装操作
-                          href: basic-installation-operations.md
-                        - name: 可简化驱动程序安装的 SetupAPI 函数
-                          href: setupapi-functions-that-simplify-driver-installation.md
-                        - name: 使用 SetupAPI 验证驱动程序验证码签名
-                          href: using-setupapi-to-verify-driver-authenticode-signatures.md
-                        - name: 确定设备的父设备
-                          href: determining-the-parent-of-a-device.md
-                          items:
-                            - name: 在设备树中获取某个设备的父设备
-                              href: obtaining-the-parent-of-a-device-in-the-device-tree.md
-                            - name: 确定虚幻设备的父设备
-                              href: determining-the-parent-of-a-nonpresent-device.md
-                        - name: 获取已安装 INF 文件的原始源路径
-                          href: obtaining-the-original-source-path-of-an-installed-inf-file.md
-                    - name: SetupAPI 使用指南
-                      href: guidelines-for-using-setupapi.md
-                - name: DIFx 指南
-                  href: difx-guidelines.md
-            - name: 设备和驱动程序安装软件组件
-              href: device-and-driver-installation-software-components.md
-              items:
-                - name: 编写辅助安装程序
-                  href: writing-a-co-installer.md
-                  items:
-                    - name: 辅助安装程序操作
-                      href: co-installer-operation.md
-                    - name: 辅助安装程序界面
-                      href: co-installer-interface.md
-                    - name: 辅助安装程序功能
-                      href: co-installer-functionality.md
-                    - name: 处理 DIF 代码
-                      href: handling-dif-codes.md
-                    - name: 注册辅助安装程序
-                      href: registering-a-co-installer.md
-                      items:
-                        - name: 注册特定于设备的辅助安装程序
-                          href: registering-a-device-specific-co-installer.md
-                        - name: 注册类辅助安装程序
-                          href: registering-a-class-co-installer.md
-                - name: 调用默认 DIF 代码处理程序
-                  href: calling-the-default-dif-code-handlers.md
-                - name: Finish-Install 操作
-                  href: finish-install-actions--windows-vista-and-later-.md
-                  items:
-                    - name: Finish-Install 操作概述
-                      href: overview-of-finish-install-actions.md
-                    - name: 如何处理 Finish-Install 操作
-                      href: how-finish-install-actions-are-processed.md
-                      items:
-                        - name: 将设备标记为需执行 Finish-Install 操作
-                          href: setting-the-configflag-finishinstall-action-device-configuration-flag.md
-                        - name: 运行 Finish-Install 操作
-                          href: running-finish-install-actions.md
-                        - name: 运行默认的 Finish-Install 操作
-                          href: running-the-default-finish-install-action.md
-                    - name: 实施 Finish-Install 操作
-                      href: implementing-finish-install-actions.md
-                      items:
-                        - name: 实施 Finish-Install 操作的指南
-                          href: guidelines-for-implementing-finish-install-actions.md
-                        - name: 代码示例：类安装程序中的 Finish-Install 操作
-                          href: code-example--finish-install-actions-in-a-class-installer.md
-                        - name: 代码示例：辅助安装程序中的 Finish-Install 操作
-                          href: code-example--finish-install-actions-in-a-co-installer.md
-                - name: 提供设备属性页
-                  href: providing-device-property-pages.md
-                  items:
-                    - name: 设备属性页概述
-                      href: overview-of-device-property-pages.md
-                      items:
-                        - name: 设备属性页的显示方式
-                          href: how-device-property-pages-are-displayed.md
-                        - name: 设备属性页提供程序的类型
-                          href: types-of-device-property-page-providers.md
-                    - name: 设备属性页提供程序的常规要求
-                      href: general-requirements-for-device-property-page-providers.md
-                      items:
-                        - name: 创建自定义属性页
-                          href: creating-custom-property-pages.md
-                        - name: 属性页回调函数
-                          href: property-page-callback-function.md
-                        - name: 处理属性页的 Windows 消息
-                          href: handling-windows-messages-for-property-pages.md
-                        - name: 自定义属性页示例
-                          href: sample-custom-property-page.md
-                    - name: 设备属性页提供程序（辅助安装程序）的特定要求
-                      href: specific-requirements-for-device-property-page-providers--class-instal.md
-                    - name: 设备属性页提供程序（属性页扩展 DLL）的特定要求
-                      href: specific-requirements-for-device-property-page-providers--property-pag.md
-                    - name: 调用设备属性对话框
-                      href: invoking-a-device-properties-dialog-box.md
-                      items:
-                        - name: 在安装应用程序中以编程方式调用设备属性对话框
-                          href: invoking-a-device-properties-dialog-box-programmatically-in-an-install.md
-                        - name: 从命令行提示符调用设备属性对话框
-                          href: invoking-a-device-properties-dialog-box-from-a-command-line-prompt.md
-                        - name: DeviceProperties_RunDLL 函数原型
-                          href: deviceproperties-rundll-function-prototype.md
-                - name: 编写设备安装应用程序
-                  href: writing-a-device-installation-application.md
-                  items:
-                    - name: 设备安装应用程序编写指南
-                      href: guidelines-for-writing-device-installation-applications.md
-                      items:
-                        - name: 安装特定于设备的应用程序
-                          href: installing-device-specific-applications.md
-                          items:
-                            - name: 以硬件优先原则安装特定于设备的应用程序
-                              href: hardware-first-installation-of-device-specific-applications.md
-                              items:
-                                - name: 不包含在驱动程序包中的设备安装应用程序
-                                  href: device-installation-application-not-included-in-the-driver-package.md
-                                - name: 包含在驱动程序包中的设备安装应用程序
-                                  href: device-installation-application-that-is-included-in-the-driver-package.md
-                                - name: 通过 AutoRun 启动的设备安装应用程序
-                                  href: device-installation-application-started-through-autorun.md
-                                - name: 通过辅助安装程序启动设备安装应用程序的指南
-                                  href: guidelines-for-starting-device-installation-applications-through-co-in.md
-                        - name: 预加载驱动程序包
-                          href: preloading-driver-packages.md
-                        - name: 预安装驱动程序包
-                          href: preinstalling-driver-packages.md
-                    - name: 硬件优先安装
-                      href: hardware-first-installation.md
-                      items:
-                        - name: 安装随机驱动程序或预安装的驱动程序
-                          href: installing-an-in-box-driver-or-a-preinstalled-driver.md
-                    - name: 软件优先安装
-                      href: software-first-installation.md
-                      items:
-                        - name: 检查正在进行的安装
-                          href: checking-for-in-progress-installations.md
-                        - name: 确定设备是否已插入
-                          href: determining-whether-a-device-is-plugged-in.md
+        - name: 测试签名
+          href: test-signing.md
+        - name: 发布签名
+          href: release-signing.md
+        - name: 排查驱动程序签名安装问题
+          href: troubleshooting-driver-signing-installation.md
+        - name: 附录 1：强制在内核调试模式下进行内核模式签名验证
+          href: appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md
+        - name: 附录 2：使用 Visual Studio 签署驱动程序
+          href: appendix-2--signing-drivers-with-visual-studio.md
+        - name: 附录 3：启用代码完整性事件日志记录和系统审核
+          href: appendix-3--enable-code-integrity-event-logging-and-system-auditing.md
+        - name: 附录 4：驱动程序签名问题
+          href: appendix-4--driver-signing-issues.md
+    - name: 设备元数据包
+      items:
+        - name: 设备元数据包概述
+          href: overview-of-device-metadata-packages.md
+        - name: Windows 元数据和 Internet 服务
+          href: windows-metadata-and-internet-services.md
+        - name: 设备元数据检索客户端
+          href: device-metadata-retrieval-client.md
+        - name: 设备元数据存储
+          href: device-metadata-store.md
+        - name: '设备元数据缓存 '
+          href: device-metadata-cache.md
+        - name: 设备元数据包结构
+          href: device-metadata-package-components.md
+        - name: PackageInfo XML 文档
+          href: packageinfo-xml-document.md
+        - name: DeviceInfo XML 文档
+          href: deviceinfo-xml-document.md
+        - name: 设备图标文件
+          href: device-icon-file.md
+        - name: WindowsInfo XML 文档
+          href: windowsinfo-xml-document.md
+        - name: SoftwareInfo XML 文档
+          href: softwareinfo-xml-document.md
+        - name: 构建设备元数据包
+          href: building-device-metadata-packages.md
+        - name: 将设备元数据包安装到脱机 Windows 映像
+          href: installing-device-metadata-packages-to-an-offline-windows-image.md
+        - name: 从 WMIS 安装设备元数据包
+          href: installing-device-metadata-packages-from-wmis.md
+        - name: 通过应用程序安装设备元数据包
+          href: installing-device-metadata-packages-through-an-application.md
+        - name: 通过驱动程序包安装设备元数据包
+          href: installing-device-metadata-packages-through-a-driver-package.md
+        - name: 手动添加设备元数据包
+          href: manually-adding-device-metadata-packages.md
+        - name: DMRC 如何选择设备元数据包
+          href: how-the-dmrc-selects-a-device-metadata-package.md
+        - name: DMRC 如何确定何时搜索 WMIS 服务器
+          href: how-the-dmrc-determines-when-to-search-the-wmis-server.md
+        - name: 使用事件查看器调试设备元数据包
+          href: debugging-device-metadata-packages-by-using-event-viewer.md
+        - name: 使用问题报告调试设备元数据包
+          href: debugging-device-metadata-packages-by-using-problem-reports.md
+        - name: 设备元数据错误代码
+          href: device-metadata-error-codes.md
+        - name: 指定硬件 ID 的最佳做法
+          href: best-practices-for-specifying-hardware-ids.md
+        - name: 指定蓝牙设备的硬件 ID
+          href: specifying-hardware-ids-for-a-bluetooth-device.md
+        - name: 指定计算机的硬件 ID
+          href: specifying-hardware-ids-for-a-computer.md
+        - name: 指定多功能设备的硬件 ID
+          href: specifying-hardware-ids-for-a-multifunction-device.md
+        - name: 指定模型 ID 的最佳做法
+          href: best-practices-for-specifying-model-ids.md
+        - name: 测试设备元数据包的下载的最佳做法
+          href: best-practices-for-testing-the-download-of-device-metadata-packages.md
+    - name: 设备和驱动程序安装软件
+      items:
+        - name: SetupAPI
+          href: setupapi.md
+        - name: 使用常规设置函数
+          href: using-general-setup-functions.md
+        - name: INF 文件处理函数
+          href: inf-file-processing-functions.md
+        - name: 磁盘提示和错误处理函数
+          href: disk-prompting-and-error-handling-functions.md
+        - name: 文件排队函数
+          href: file-queuing-functions.md
+        - name: 默认的队列回调常规函数
+          href: default-queue-callback-routine-functions.md
+        - name: Cabinet 文件函数
+          href: cabinet-file-function.md
+        - name: 磁盘空间列表函数
+          href: disk-space-list-functions.md
+        - name: MRU 源列表函数
+          href: mru-source-list-functions.md
+        - name: 文件日志函数
+          href: file-log-functions.md
+        - name: 用户界面函数
+          href: user-interface-functions.md
+        - name: SetupAPI 日志记录函数
+          href: setupapi-logging-functions.md
+        - name: 使用设备安装函数
+          href: using-device-installation-functions.md
+        - name: 基本安装操作
+          href: basic-installation-operations.md
+        - name: 可简化驱动程序安装的 SetupAPI 函数
+          href: setupapi-functions-that-simplify-driver-installation.md
+        - name: 使用 SetupAPI 验证驱动程序验证码签名
+          href: using-setupapi-to-verify-driver-authenticode-signatures.md
+        - name: 确定设备的父设备
+          href: determining-the-parent-of-a-device.md
+        - name: 在设备树中获取某个设备的父设备
+          href: obtaining-the-parent-of-a-device-in-the-device-tree.md
+        - name: 确定虚幻设备的父设备
+          href: determining-the-parent-of-a-nonpresent-device.md
+        - name: 获取已安装 INF 文件的原始源路径
+          href: obtaining-the-original-source-path-of-an-installed-inf-file.md
+        - name: SetupAPI 使用指南
+          href: guidelines-for-using-setupapi.md
+        - name: DIFx 指南
+          href: difx-guidelines.md
+        - name: 设备和驱动程序安装软件组件
+          href: device-and-driver-installation-software-components.md
+        - name: 编写辅助安装程序
+          href: writing-a-co-installer.md
+        - name: 辅助安装程序操作
+          href: co-installer-operation.md
+        - name: 辅助安装程序界面
+          href: co-installer-interface.md
+        - name: 辅助安装程序功能
+          href: co-installer-functionality.md
+        - name: 处理 DIF 代码
+          href: handling-dif-codes.md
+        - name: 注册辅助安装程序
+          href: registering-a-co-installer.md
+        - name: 注册特定于设备的辅助安装程序
+          href: registering-a-device-specific-co-installer.md
+        - name: 注册类辅助安装程序
+          href: registering-a-class-co-installer.md
+        - name: 调用默认 DIF 代码处理程序
+          href: calling-the-default-dif-code-handlers.md
+        - name: Finish-Install 操作
+          href: finish-install-actions--windows-vista-and-later-.md
+        - name: Finish-Install 操作概述
+          href: overview-of-finish-install-actions.md
+        - name: 如何处理 Finish-Install 操作
+          href: how-finish-install-actions-are-processed.md
+        - name: 将设备标记为需执行 Finish-Install 操作
+          href: setting-the-configflag-finishinstall-action-device-configuration-flag.md
+        - name: 运行 Finish-Install 操作
+          href: running-finish-install-actions.md
+        - name: 运行默认的 Finish-Install 操作
+          href: running-the-default-finish-install-action.md
+        - name: 实施 Finish-Install 操作
+          href: implementing-finish-install-actions.md
+        - name: 实施 Finish-Install 操作的指南
+          href: guidelines-for-implementing-finish-install-actions.md
+        - name: 代码示例：类安装程序中的 Finish-Install 操作
+          href: code-example--finish-install-actions-in-a-class-installer.md
+        - name: 代码示例：辅助安装程序中的 Finish-Install 操作
+          href: code-example--finish-install-actions-in-a-co-installer.md
+        - name: 设备属性页概述
+          href: overview-of-device-property-pages.md
+        - name: 设备属性页的显示方式
+          href: how-device-property-pages-are-displayed.md
+        - name: 设备属性页提供程序的类型
+          href: types-of-device-property-page-providers.md
+        - name: 设备属性页提供程序的常规要求
+          href: general-requirements-for-device-property-page-providers.md
+        - name: 创建自定义属性页
+          href: creating-custom-property-pages.md
+        - name: 属性页回调函数
+          href: property-page-callback-function.md
+        - name: 处理属性页的 Windows 消息
+          href: handling-windows-messages-for-property-pages.md
+        - name: 自定义属性页示例
+          href: sample-custom-property-page.md
+        - name: 设备属性页提供程序（辅助安装程序）的特定要求
+          href: specific-requirements-for-device-property-page-providers--class-instal.md
+        - name: 设备属性页提供程序（属性页扩展 DLL）的特定要求
+          href: specific-requirements-for-device-property-page-providers--property-pag.md
+        - name: 调用设备属性对话框
+          href: invoking-a-device-properties-dialog-box.md
+        - name: 在安装应用程序中以编程方式调用设备属性对话框
+          href: invoking-a-device-properties-dialog-box-programmatically-in-an-install.md
+        - name: 从命令行提示符调用设备属性对话框
+          href: invoking-a-device-properties-dialog-box-from-a-command-line-prompt.md
+        - name: DeviceProperties_RunDLL 函数原型
+          href: deviceproperties-rundll-function-prototype.md
+        - name: 编写设备安装应用程序
+          href: writing-a-device-installation-application.md
+        - name: 设备安装应用程序编写指南
+          href: guidelines-for-writing-device-installation-applications.md
+        - name: 安装特定于设备的应用程序
+          href: installing-device-specific-applications.md
+        - name: 不包含在驱动程序包中的设备安装应用程序
+          href: device-installation-application-not-included-in-the-driver-package.md
+        - name: 包含在驱动程序包中的设备安装应用程序
+          href: device-installation-application-that-is-included-in-the-driver-package.md
+        - name: 通过 AutoRun 启动的设备安装应用程序
+          href: device-installation-application-started-through-autorun.md
+        - name: 通过辅助安装程序启动设备安装应用程序的指南
+          href: guidelines-for-starting-device-installation-applications-through-co-in.md
+        - name: 预加载驱动程序包
+          href: preloading-driver-packages.md
+        - name: 预安装驱动程序包
+          href: preinstalling-driver-packages.md
+        - name: 硬件优先安装
+          href: hardware-first-installation.md
+        - name: 安装随机驱动程序或预安装的驱动程序
+          href: installing-an-in-box-driver-or-a-preinstalled-driver.md
+        - name: 软件优先安装
+          href: software-first-installation.md
+        - name: 检查正在进行的安装
+          href: checking-for-in-progress-installations.md
+        - name: 确定设备是否已插入
+          href: determining-whether-a-device-is-plugged-in.md
         - name: 卸载设备和驱动程序包
           href: uninstalling-devices-and-driver-packages.md
-          items:
-            - name: 如何卸载设备和驱动程序包
-              href: how-devices-and-driver-packages-are-uninstalled.md
-            - name: 使用设备管理器卸载设备和驱动程序包
-              href: using-device-manager-to-uninstall-devices-and-driver-packages.md
-            - name: 使用 SetupAPI 卸载设备和驱动程序包
-              href: using-setupapi-to-uninstall-devices-and-driver-packages.md
-        - name: 更新驱动程序文件
-          href: updating-driver-files.md
-    - name: 设备和驱动程序安装高级主题
-      href: device-and-driver-installation-advanced-topics.md
+        - name: 如何卸载设备和驱动程序包
+          href: how-devices-and-driver-packages-are-uninstalled.md
+        - name: 使用设备管理器卸载设备和驱动程序包
+          href: using-device-manager-to-uninstall-devices-and-driver-packages.md
+        - name: 使用 SetupAPI 卸载设备和驱动程序包
+          href: using-setupapi-to-uninstall-devices-and-driver-packages.md
+    - name: 更新驱动程序文件
+      href: updating-driver-files.md
+    - name: 创建安全的设备安装
+      href: creating-secure-device-installations.md
+    - name: 使用组件 INF 文件
+      href: using-a-component-inf-file.md
+    - name: 将驱动程序与通用 Windows 平台 (UWP) 应用配对
+      href: pairing-app-and-driver-versions.md
+    - name: 设备标识
       items:
-        - name: 创建安全的设备安装
-          href: creating-secure-device-installations.md
-        - name: 使用组件 INF 文件
-          href: using-a-component-inf-file.md
-        - name: 将驱动程序与通用 Windows 平台 (UWP) 应用配对
-          href: pairing-app-and-driver-versions.md
-        - name: 设备标识和属性
-          href: device-identification-and-properties.md
+        - name: 设备标识字符串
+          href: device-identification-strings.md
+        - name: 即插即用 ID - PNPID 请求
+          href: plug-and-play-id---pnpid-request.md
+        - name: 设备 ID
+          href: device-ids.md
+        - name: 硬件 ID
+          href: hardware-ids.md
+        - name: 兼容 ID
+          href: compatible-ids.md
+        - name: 实例 ID
+          href: instance-ids.md
+        - name: 设备实例 ID
+          href: device-instance-ids.md
+        - name: 容器 ID
+          href: container-ids.md
+        - name: 容器 ID 概述
+          href: overview-of-container-ids.md
+        - name: 如何生成容器 ID
+          href: how-container-ids-are-generated.md
+        - name: 从特定于总线的唯一 ID 生成的容器 ID
+          href: container-ids-generated-from-a-bus-specific-unique-id.md
+        - name: 如何为 USB 设备分配容器 ID
+          href: how-usb-devices-are-assigned-container-ids.md
+        - name: 使用 ACPI 配置计算机上的 USB 端口
+          href: using-acpi-to-configure-usb-ports-on-a-computer.md
+        - name: 支持 USB 设备上的容器 ID 的最佳做法
+          href: best-practices-for-supporting-container-ids-on-usb-devices.md
+        - name: 使用 Microsoft OS ContainerID 描述符
+          href: using-microsoft-os-containerid-descriptors.md
+        - name: 将 USB 可移动功能用于设备容器分组
+          href: using-the-usb-removable-capability-for-device-container-grouping.md
+        - name: 避免设备容器冲突
+          href: avoiding-device-container-conflicts.md
+        - name: 蓝牙设备的容器 ID
+          href: container-ids-for-bluetooth-devices.md
+        - name: PnP-X 设备的容器 ID
+          href: container-ids-for-pnp-x-devices.md
+        - name: DPWS 设备的容器 ID
+          href: container-ids-for-dpws-devices.md
+        - name: UPnP 设备的容器 ID
+          href: container-ids-for-upnp-devices.md
+        - name: 1394 设备的容器 ID
+          href: container-ids-for-1394-devices.md
+        - name: eSATA 设备的容器 ID
+          href: container-ids-for-esata-devices.md
+        - name: PCI Express 设备的容器 ID
+          href: container-ids-for-pci-express-devices.md
+        - name: 通过可移动设备功能生成的容器 ID
+          href: container-ids-generated-from-the-removable-device-capability.md
+        - name: 可移动设备功能概述
+          href: overview-of-the-removable-device-capability.md
+        - name: 如何通过可移动设备功能生成容器 ID
+          href: how-container-ids-are-generated-from-the-removable-device-capability.md
+        - name: 通过可移动设备功能重写生成的容器 ID
+          href: container-ids-generated-from-a-removable-device-capability-override.md
+        - name: 将 ACPI 用于设备容器分组
+          href: using-acpi-for-device-container-grouping.md
+        - name: 验证容器 ID 的实现
+          href: verifying-the-implementation-of-container-ids.md
+        - name: 排查容器 ID 实现问题
+          href: troubleshooting-the-implementation-of-container-ids.md
+        - name: 通用标识符
+          href: generic-identifiers.md
+        - name: PCI 设备的标识符
+          href: identifiers-for-pci-devices.md
+        - name: SCSI 设备的标识符
+          href: identifiers-for-scsi-devices.md
+        - name: IDE 设备的标识符
+          href: identifiers-for-ide-devices.md
+        - name: PCMCIA 设备的标识符
+          href: identifiers-for-pcmcia-devices.md
+        - name: ISAPNP 设备的标识符
+          href: identifiers-for-isapnp-devices.md
+        - name: 1394 设备的标识符
+          href: identifiers-for-1394-devices.md
+        - name: 安全数字 (SD) 设备的标识符
+          href: identifiers-for-secure-digital--sd--devices.md
+        - name: USB 设备的标识符
+          href: identifiers-for-usb-devices.md
+        - name: 标准 USB 标识符
+          href: standard-usb-identifiers.md
+        - name: USBSTOR.SYS 生成的标识符
+          href: identifiers-generated-by-usbstor-sys.md
+        - name: USBPRINT.SYS 生成的标识符
+          href: identifiers-generated-by-usbprint-sys.md
+    - name: 设备类
+      items:
+        - name: 设备安装程序类概述
+          href: overview-of-device-setup-classes.md
+        - name: 创建新的设备安装程序类
+          href: creating-a-new-device-setup-class.md
+        - name: 设备接口类概述
+          href: overview-of-device-interface-classes.md
+        - name: 注册设备接口类
+          href: registering-a-device-interface-class.md
+        - name: 启用和禁用设备接口实例
+          href: enabling-and-disabling-a-device-interface-instance.md
+        - name: 使用设备接口
+          href: using-a-device-interface.md
+        - name: 注册获取设备接口到达和设备删除通知
+          href: registering-for-notification-of-device-interface-arrival-and-device-removal.md
+        - name: 安装程序类与接口类
+          href: setup-classes-versus-interface-classes.md
+        - name: 设备信息集
+          href: device-information-sets.md
+    - name: 设备属性
+      items:
+        - name: 设备属性概述
+          href: device-properties.md
+        - name: 统一模型（Windows Vista 及更高版本）
           items:
-            - name: 设备标识
-              href: device-identification.md
+            - name: 统一的设备属性模型
+              href: unified-device-property-model--windows-vista-and-later-.md
+            - name: 系统定义的设备属性
+              href: system-defined-device-properties2.md
+            - name: 创建自定义设备属性
+              href: creating-custom-device-properties.md
+            - name: 属性键
+              href: property-keys.md
+            - name: 属性数据类型标识符
+              href: property-data-type-identifiers.md
+            - name: 属性值要求
+              href: property-value-requirements.md
+            - name: 属性和相关的系统定义项
+              href: properties-and-related-system-defined-items.md
+            - name: 可修改设备属性的 INF 文件条目值
+              href: inf-file-entry-values-that-modify-device-properties--windows-vista-and.md
+            - name: SetupAPI
               items:
-                - name: 设备标识字符串
-                  href: device-identification-strings.md
-                  items:
-                    - name: 即插即用 ID - PNPID 请求
-                      href: plug-and-play-id---pnpid-request.md
-                    - name: 设备 ID
-                      href: device-ids.md
-                    - name: 硬件 ID
-                      href: hardware-ids.md
-                    - name: 兼容 ID
-                      href: compatible-ids.md
-                    - name: 实例 ID
-                      href: instance-ids.md
-                    - name: 设备实例 ID
-                      href: device-instance-ids.md
-                    - name: 容器 ID
-                      href: container-ids.md
-                      items:
-                        - name: 容器 ID 概述
-                          href: overview-of-container-ids.md
-                        - name: 如何生成容器 ID
-                          href: how-container-ids-are-generated.md
-                          items:
-                            - name: 从特定于总线的唯一 ID 生成的容器 ID
-                              href: container-ids-generated-from-a-bus-specific-unique-id.md
-                              items:
-                                - name: USB 设备的容器 ID
-                                  href: container-ids-for-usb-devices.md
-                                  items:
-                                    - name: 如何为 USB 设备分配容器 ID
-                                      href: how-usb-devices-are-assigned-container-ids.md
-                                    - name: 使用 ACPI 配置计算机上的 USB 端口
-                                      href: using-acpi-to-configure-usb-ports-on-a-computer.md
-                                    - name: 支持 USB 设备上的容器 ID 的最佳做法
-                                      href: best-practices-for-supporting-container-ids-on-usb-devices.md
-                                      items:
-                                        - name: 使用 Microsoft OS ContainerID 描述符
-                                          href: using-microsoft-os-containerid-descriptors.md
-                                        - name: 将 USB 可移动功能用于设备容器分组
-                                          href: using-the-usb-removable-capability-for-device-container-grouping.md
-                                        - name: 避免设备容器冲突
-                                          href: avoiding-device-container-conflicts.md
-                                - name: 蓝牙设备的容器 ID
-                                  href: container-ids-for-bluetooth-devices.md
-                                - name: PnP-X 设备的容器 ID
-                                  href: container-ids-for-pnp-x-devices.md
-                                  items:
-                                    - name: DPWS 设备的容器 ID
-                                      href: container-ids-for-dpws-devices.md
-                                    - name: UPnP 设备的容器 ID
-                                      href: container-ids-for-upnp-devices.md
-                                - name: 1394 设备的容器 ID
-                                  href: container-ids-for-1394-devices.md
-                                - name: eSATA 设备的容器 ID
-                                  href: container-ids-for-esata-devices.md
-                                - name: PCI Express 设备的容器 ID
-                                  href: container-ids-for-pci-express-devices.md
-                            - name: 通过可移动设备功能生成的容器 ID
-                              href: container-ids-generated-from-the-removable-device-capability.md
-                              items:
-                                - name: 可移动设备功能概述
-                                  href: overview-of-the-removable-device-capability.md
-                                - name: 如何通过可移动设备功能生成容器 ID
-                                  href: how-container-ids-are-generated-from-the-removable-device-capability.md
-                            - name: 通过可移动设备功能重写生成的容器 ID
-                              href: container-ids-generated-from-a-removable-device-capability-override.md
-                            - name: 将 ACPI 用于设备容器分组
-                              href: using-acpi-for-device-container-grouping.md
-                        - name: 验证容器 ID 的实现
-                          href: verifying-the-implementation-of-container-ids.md
-                        - name: 排查容器 ID 实现问题
-                          href: troubleshooting-the-implementation-of-container-ids.md
-                    - name: 设备标识符格式
-                      href: device-identifier-formats.md
-                      items:
-                        - name: 通用标识符
-                          href: generic-identifiers.md
-                        - name: PCI 设备的标识符
-                          href: identifiers-for-pci-devices.md
-                        - name: SCSI 设备的标识符
-                          href: identifiers-for-scsi-devices.md
-                        - name: IDE 设备的标识符
-                          href: identifiers-for-ide-devices.md
-                        - name: PCMCIA 设备的标识符
-                          href: identifiers-for-pcmcia-devices.md
-                        - name: ISAPNP 设备的标识符
-                          href: identifiers-for-isapnp-devices.md
-                        - name: 1394 设备的标识符
-                          href: identifiers-for-1394-devices.md
-                        - name: 安全数字 (SD) 设备的标识符
-                          href: identifiers-for-secure-digital--sd--devices.md
-                        - name: USB 设备的标识符
-                          href: identifiers-for-usb-devices.md
-                          items:
-                            - name: 标准 USB 标识符
-                              href: standard-usb-identifiers.md
-                            - name: 特殊 USB 标识符
-                              href: special-usb-identifiers.md
-                              items:
-                                - name: USBSTOR.SYS 生成的标识符
-                                  href: identifiers-generated-by-usbstor-sys.md
-                                - name: USBPRINT.SYS 生成的标识符
-                                  href: identifiers-generated-by-usbprint-sys.md
-                - name: 设备类
-                  href: device-classes.md
-                  items:
-                    - name: 设备安装程序类
-                      href: device-setup-classes.md
-                      items:
-                        - name: 设备安装程序类概述
-                          href: overview-of-device-setup-classes.md
-                        - name: 创建新的设备安装程序类
-                          href: creating-a-new-device-setup-class.md
-                    - name: 设备接口类
-                      href: device-interface-classes.md
-                      items:
-                        - name: 设备接口类概述
-                          href: overview-of-device-interface-classes.md
-                        - name: 注册设备接口类
-                          href: registering-a-device-interface-class.md
-                        - name: 启用和禁用设备接口实例
-                          href: enabling-and-disabling-a-device-interface-instance.md
-                        - name: 使用设备接口
-                          href: using-a-device-interface.md
-                        - name: 注册获取设备接口到达和设备删除通知
-                          href: registering-for-notification-of-device-interface-arrival-and-device-removal.md
-                    - name: 安装程序类与接口类
-                      href: setup-classes-versus-interface-classes.md
-                    - name: 设备信息集
-                      href: device-information-sets.md
-            - name: 设备属性
-              href: device-properties.md
-              items:
-                - name: 统一的设备属性模型
-                  href: unified-device-property-model--windows-vista-and-later-.md
-                  items:
-                    - name: 系统定义的设备属性
-                      href: system-defined-device-properties2.md
-                    - name: 创建自定义设备属性
-                      href: creating-custom-device-properties.md
-                    - name: 属性键
-                      href: property-keys.md
-                    - name: 属性数据类型标识符
-                      href: property-data-type-identifiers.md
-                    - name: 属性值要求
-                      href: property-value-requirements.md
-                    - name: 属性和相关的系统定义项
-                      href: properties-and-related-system-defined-items.md
-                    - name: 可修改设备属性的 INF 文件条目值
-                      href: inf-file-entry-values-that-modify-device-properties--windows-vista-and.md
-                    - name: 使用 SetupAPI 访问设备属性
-                      href: using-setupapi-to-access-device-properties--windows-vista-and-later-.md
-                      items:
-                        - name: 访问设备实例属性
-                          href: accessing-device-instance-properties--windows-vista-and-later-.md
-                          items:
-                            - name: 确定为设备实例设置哪些属性
-                              href: determining-which-properties-are-set-for-a-device-instance.md
-                            - name: 检索设备实例属性值
-                              href: retrieving-a-device-instance-property-value.md
-                            - name: 设置设备实例属性值
-                              href: setting-a-device-instance-property-value.md
-                        - name: 访问设备类属性
-                          href: accessing-device-class-properties--windows-vista-and-later-.md
-                          items:
-                            - name: 确定为设备类设置哪些属性
-                              href: determining-which-properties-are-set-for-a-device-class.md
-                            - name: 检索设备类属性值
-                              href: retrieving-a-device-class-property-value.md
-                            - name: 设置设备类属性值
-                              href: setting-a-device-class-property-value.md
-                        - name: 访问设备接口属性
-                          href: accessing-device-interface-properties--windows-vista-and-later-.md
-                          items:
-                            - name: 确定为设备接口设置哪些属性
-                              href: determining-which-properties-are-set-for-a-device-interface.md
-                            - name: 检索设备接口属性值
-                              href: retrieving-a-device-interface-property-value.md
-                            - name: 设置设备接口属性值
-                              href: setting-a-device-interface-property-value.md
-                    - name: 使用 INF AddProperty 指令和 INF DelProperty 指令
-                      href: using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md
-                - name: 设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
-                  href: device-property-representations--windows-server-2003--windows-xp--and-.md
-                  items:
-                    - name: 可修改设备属性的 INF 文件条目值
-                      href: inf-file-entry-values-that-modify-device-properties.md
-                    - name: 使用 SetupAPI 和 Configuration Manager 访问设备属性
-                      href: using-setupapi-and-configuration-manager-to-access-device-properties.md
-                      items:
-                        - name: 访问设备实例 SPDRP_Xxx 属性
-                          href: accessing-device-instance-spdrp-xxx-properties.md
-                        - name: 检索设备实例标识符
-                          href: retrieving-a-device-instance-identifier.md
-                        - name: 访问设备驱动程序属性
-                          href: accessing-device-driver-properties.md
-                        - name: 检索设备实例的状态和问题代码
-                          href: retrieving-the-status-and-problem-code-for-a-device-instance.md
-                        - name: 检索设备关系
-                          href: retrieving-device-relations.md
-                        - name: 访问设备安装程序类属性
-                          href: accessing-device-setup-class-properties.md
-                          items:
-                            - name: 检索 SPCRP_Xxx 属性
-                              href: retrieving-spcrp-xxx-properties.md
-                            - name: 设置 SPCRP_Xxx 属性
-                              href: setting-spcrp-xxx-properties.md
-                            - name: 访问设备安装程序类的友好名称和类名称
-                              href: accessing-the-friendly-name-and-class-name-of-a-device-setup-class.md
-                            - name: 访问设备安装程序类的图标属性
-                              href: accessing-icon-properties-of-a-device-setup-class.md
-                            - name: 访问类注册表项下的注册表项值
-                              href: accessing-registry-entry-values-under-the-class-registry-key.md
-                            - name: 访问设备安装程序类的辅助安装程序注册表项值
-                              href: accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla.md
-                        - name: 访问设备接口类属性
-                          href: accessing-device-interface-class-properties.md
-                        - name: 访问设备接口属性
-                          href: accessing-device-interface-properties.md
-                        - name: 访问自定义设备属性
-                          href: accessing-custom-device-properties.md
+                - name: 使用 SetupAPI 访问设备属性
+                  href: using-setupapi-to-access-device-properties--windows-vista-and-later-.md
+                - name: 访问设备实例属性
+                  href: accessing-device-instance-properties--windows-vista-and-later-.md
+                - name: 确定为设备实例设置哪些属性
+                  href: determining-which-properties-are-set-for-a-device-instance.md
+                - name: 检索设备实例属性值
+                  href: retrieving-a-device-instance-property-value.md
+                - name: 设置设备实例属性值
+                  href: setting-a-device-instance-property-value.md
+                - name: 访问设备类属性
+                  href: accessing-device-class-properties--windows-vista-and-later-.md
+                - name: 确定为设备类设置哪些属性
+                  href: determining-which-properties-are-set-for-a-device-class.md
+                - name: 检索设备类属性值
+                  href: retrieving-a-device-class-property-value.md
+                - name: 设置设备类属性值
+                  href: setting-a-device-class-property-value.md
+                - name: 访问设备接口属性
+                  href: accessing-device-interface-properties--windows-vista-and-later-.md
+                - name: 确定为设备接口设置哪些属性
+                  href: determining-which-properties-are-set-for-a-device-interface.md
+                - name: 检索设备接口属性值
+                  href: retrieving-a-device-interface-property-value.md
+                - name: 设置设备接口属性值
+                  href: setting-a-device-interface-property-value.md
+                - name: 使用 INF AddProperty 指令和 INF DelProperty 指令
+                  href: using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md
+        - name: 设备属性模型（Windows Server 2003、Windows XP 和 Windows 2000）
+          items:
+            - name: 设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
+              href: device-property-representations--windows-server-2003--windows-xp--and-.md
+            - name: 可修改设备属性的 INF 文件条目值
+              href: inf-file-entry-values-that-modify-device-properties.md
+            - name: 使用 SetupAPI 和 Configuration Manager 访问设备属性
+              href: using-setupapi-and-configuration-manager-to-access-device-properties.md
+            - name: 访问设备实例 SPDRP_Xxx 属性
+              href: accessing-device-instance-spdrp-xxx-properties.md
+            - name: 检索设备实例标识符
+              href: retrieving-a-device-instance-identifier.md
+            - name: 访问设备驱动程序属性
+              href: accessing-device-driver-properties.md
+            - name: 检索设备实例的状态和问题代码
+              href: retrieving-the-status-and-problem-code-for-a-device-instance.md
+            - name: 检索设备关系
+              href: retrieving-device-relations.md
+            - name: 访问设备安装程序类属性
+              href: accessing-device-setup-class-properties.md
+            - name: 检索 SPCRP_Xxx 属性
+              href: retrieving-spcrp-xxx-properties.md
+            - name: 设置 SPCRP_Xxx 属性
+              href: setting-spcrp-xxx-properties.md
+            - name: 访问设备安装程序类的友好名称和类名称
+              href: accessing-the-friendly-name-and-class-name-of-a-device-setup-class.md
+            - name: 访问设备安装程序类的图标属性
+              href: accessing-icon-properties-of-a-device-setup-class.md
+            - name: 访问类注册表项下的注册表项值
+              href: accessing-registry-entry-values-under-the-class-registry-key.md
+            - name: 访问设备安装程序类的辅助安装程序注册表项值
+              href: accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla.md
+            - name: 访问设备接口类属性
+              href: accessing-device-interface-class-properties.md
+            - name: 访问设备接口属性
+              href: accessing-device-interface-properties.md
+            - name: 访问自定义设备属性
+              href: accessing-custom-device-properties.md
+    - name: 系统重启
+      items:
         - name: 设备安装和系统重启
           href: device-installations-and-system-restarts.md
-          items:
-            - name: 设备安装过程中避免系统重启
-              href: avoiding-system-restarts-during-device-installations.md
-            - name: 设备安装过程中开始系统重启
-              href: initiating-system-restarts-during-device-installations.md
+        - name: 设备安装过程中避免系统重启
+          href: avoiding-system-restarts-during-device-installations.md
+        - name: 设备安装过程中开始系统重启
+          href: initiating-system-restarts-during-device-installations.md
         - name: 64 位系统上的设备安装
           href: device-installations-on-64-bit-systems.md
-        - name: 具有特殊安装要求的驱动程序
-          href: drivers-with-special-installation-requirements.md
-          items:
-            - name: 安装引导启动驱动程序
-              href: installing-a-boot-start-driver.md
-            - name: 安装筛选器驱动程序
-              href: installing-a-filter-driver.md
-            - name: 安装 Null 驱动程序
-              href: installing-a-null-driver.md
-            - name: 安装新总线驱动程序
-              href: installing-a-new-bus-driver.md
-              items:
-                - name: 使用自定义硬件 ID 和兼容 ID
-                  href: using-custom-hardware-ids-and-compatible-ids.md
-                - name: 为总线安装新的设备安装程序类
-                  href: installing-a-new-device-setup-class-for-a-bus.md
-            - name: 安装随机驱动程序的专用版本
-              href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
-              items:
-                - name: 安装随机驱动程序的专用版本概述
-                  href: overview-of-installing-private-builds-of-in-box-drivers.md
-                - name: 创建随机驱动程序的专用版本
-                  href: creating-a-private-build-of-an-in-box-driver.md
-                - name: 将 Windows 配置为对驱动程序签名进行平等的分级
-                  href: configuring-windows-to-rank-driver-signatures-equally.md
-                - name: 安装驱动程序包的已更新版本
-                  href: installing-the-updated-version-of-the-driver-package.md
-        - name: 设备和驱动程序的注册表树和项
-          href: registry-trees-and-keys.md
-          items:
-            - name: 设备和驱动程序的注册表树
-              href: overview-of-registry-trees-and-keys.md
-              items:
-                - name: 'HKLM\SYSTEM\CurrentControlSet\Services 注册表树 '
-                  href: hklm-system-currentcontrolset-services-registry-tree.md
-                - name: HKLM\SYSTEM\CurrentControlSet\Control 注册表树
-                  href: hklm-system-currentcontrolset-control-registry-tree.md
-                - name: HKLM\SYSTEM\CurrentControlSet\Enum 注册表树
-                  href: hklm-system-currentcontrolset-enum-registry-tree.md
-                - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles 注册表树
-                  href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
-            - name: RunOnce 注册表项
-              href: runonce-registry-key.md
-            - name: DeviceOverrides 注册表项
-              href: deviceoverrides-registry-key.md
-              items:
-                - name: HardwareID 注册表子项
-                  href: hardwareid-registry-subkey.md
-                - name: CompatibleID 注册表子项
-                  href: compatibleid-registry-subkey.md
-                - name: LocationPaths 注册表子项
-                  href: locationpaths-registry-subkey.md
-                - name: ChildLocationPaths 注册表子项
-                  href: childlocationpaths-registry-subkey.md
-                - name: LocationPath 注册表子项
-                  href: locationpath-registry-subkey.md
-                - name: '* 注册表子项'
-                  href: '--registry-subkey.md'
-        - name: 排查设备和驱动程序安装问题
-          href: troubleshooting-device-and-driver-installations.md
-          items:
-            - name: 适合设备和驱动程序制造商的设备管理器
-              href: using-device-manager.md
-              items:
-                - name: 设备管理器错误消息
-                  href: device-manager-error-messages.md
-                  items:
-                    - name: CM_PROB_NOT_CONFIGURED
-                      href: cm-prob-not-configured.md
-                    - name: CM_PROB_OUT_OF_MEMORY
-                      href: cm-prob-out-of-memory.md
-                    - name: CM_PROB_INVALID_DATA
-                      href: cm-prob-invalid-data.md
-                    - name: CM_PROB_FAILED_START
-                      href: cm-prob-failed-start.md
-                    - name: CM_PROB_NORMAL_CONFLICT
-                      href: cm-prob-normal-conflict.md
-                    - name: CM_PROB_NEED_RESTART
-                      href: cm-prob-need-restart.md
-                    - name: CM_PROB_PARTIAL_LOG_CONF
-                      href: cm-prob-partial-log-conf.md
-                    - name: CM_PROB_REINSTALL
-                      href: cm-prob-reinstall.md
-                    - name: CM_PROB_REGISTRY
-                      href: cm-prob-registry.md
-                    - name: CM_PROB_WILL_BE_REMOVED
-                      href: cm-prob-will-be-removed.md
-                    - name: CM_PROB_DISABLED
-                      href: cm-prob-disabled.md
-                    - name: CM_PROB_DEVICE_NOT_THERE
-                      href: cm-prob-device-not-there.md
-                    - name: CM_PROB_FAILED_INSTALL
-                      href: cm-prob-failed-install.md
-                    - name: CM_PROB_HARDWARE_DISABLED
-                      href: cm-prob-hardware-disabled.md
-                    - name: CM_PROB_FAILED_ADD
-                      href: cm-prob-failed-add.md
-                    - name: CM_PROB_DISABLED_SERVICE
-                      href: cm-prob-disabled-service.md
-                    - name: CM_PROB_TRANSLATION_FAILED
-                      href: cm-prob-translation-failed.md
-                    - name: CM_PROB_NO_SOFTCONFIG
-                      href: cm-prob-no-softconfig.md
-                    - name: CM_PROB_BIOS_TABLE
-                      href: cm-prob-bios-table.md
-                    - name: CM_PROB_IRQ_TRANSLATION_FAILED
-                      href: cm-prob-irq-translation-failed.md
-                    - name: CM_PROB_FAILED_DRIVER_ENTRY
-                      href: cm-prob-failed-driver-entry.md
-                    - name: CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
-                      href: cm-prob-driver-failed-prior-unload.md
-                    - name: CM_PROB_DRIVER_FAILED_LOAD
-                      href: cm-prob-driver-failed-load.md
-                    - name: CM_PROB_DRIVER_SERVICE_KEY_INVALID
-                      href: cm-prob-driver-service-key-invalid.md
-                    - name: CM_PROB_LEGACY_SERVICE_NO_DEVICES
-                      href: cm-prob-legacy-service-no-devices.md
-                    - name: CM_PROB_DUPLICATE_DEVICE
-                      href: cm-prob-duplicate-device.md
-                    - name: CM_PROB_FAILED_POST_START
-                      href: cm-prob-failed-post-start.md
-                    - name: CM_PROB_HALTED
-                      href: cm-prob-halted.md
-                    - name: CM_PROB_PHANTOM
-                      href: cm-prob-phantom.md
-                    - name: CM_PROB_SYSTEM_SHUTDOWN
-                      href: cm-prob-system-shutdown.md
-                    - name: CM_PROB_HELD_FOR_EJECT
-                      href: cm-prob-held-for-eject.md
-                    - name: CM_PROB_DRIVER_BLOCKED
-                      href: cm-prob-driver-blocked.md
-                    - name: CM_PROB_REGISTRY_TOO_LARGE
-                      href: cm-prob-registry-too-large.md
-                    - name: CM_PROB_SETPROPERTIES_FAILED
-                      href: cm-prob-setproperties-failed.md
-                    - name: CM_PROB_WAITING_ON_DEPENDENCY
-                      href: cm-prob-waiting-on-dependency.md
-                    - name: CM_PROB_UNSIGNED_DRIVER
-                      href: cm-prob-unsigned-driver.md
-                    - name: CM_PROB_USED_BY_DEBUGGER
-                      href: cm-prob-used-by-debugger.md
-                    - name: CM_PROB_DEVICE_RESET
-                      href: cm-prob-device-reset.md
-                - name: “设备管理器详细信息”选项卡
-                  href: device-manager-details-tab.md
-                - name: 查看隐藏的设备
-                  href: viewing-hidden-devices.md
-            - name: SetupAPI 日志记录
-              href: setupapi-logging--windows-vista-and-later-.md
-              items:
-                - name: SetupAPI 文本日志
-                  href: setupapi-text-logs.md
-                  items:
-                    - name: 文本日志标头的格式
-                      href: format-of-a-text-log-header.md
-                    - name: 文本日志部分的格式
-                      href: format-of-a-text-log-section.md
-                      items:
-                        - name: 文本日志部分标头的格式
-                          href: format-of-a-text-log-section-header.md
-                        - name: 文本日志部分正文的格式
-                          href: format-of-a-text-log-section-body.md
-                        - name: 文本日志部分页脚的格式
-                          href: format-of-a-text-log-section-footer.md
-                    - name: 不是文本日志部分的日志条目的格式
-                      href: format-of-log-entries-that-are-not-part-of-a-text-log-section.md
-                - name: SetupAPI 日志记录注册表设置
-                  href: setupapi-logging-registry-settings.md
-                  items:
-                    - name: 设置文本日志的事件级别
-                      href: setting-the-event-level-for-a-text-log.md
-                    - name: 启用文本日志的事件类别
-                      href: enabling-event-categories-for-a-text-log.md
-                    - name: 设置文本日志的目录路径
-                      href: setting-the-directory-path-of-the-text-logs.md
-                - name: 使用 SetupAPI 日志记录函数
-                  href: using-the-setupapi-logging-functions.md
-                  items:
-                    - name: 在文本日志中写入日志条目
-                      href: writing-log-entries-in-a-text-log.md
-                      items:
-                        - name: 调用 SetupWriteTextLog
-                          href: calling-setupwritetextlog.md
-                          items:
-                            - name: 写入信息日志条目
-                              href: writing-an-information-log-entry.md
-                            - name: 写入错误或警告日志条目
-                              href: writing-an-error-or-warning-log-entry.md
-                        - name: 调用 SetupWriteTextLogError
-                          href: calling-setupwritetextlogerror.md
-                        - name: 调用 SetupWriteTextLogInfLine
-                          href: calling-setupwritetextloginfline.md
-                    - name: 写入缩进日志条目
-                      href: writing-indented-log-entries.md
-                    - name: 日志令牌
-                      href: log-tokens.md
-                    - name: 设置和获取线程的日志标记
-                      href: setting-and-getting-a-log-token-for-a-thread.md
-            - name: SetupAPI 日志记录（Windows Server 2003、Windows XP 和 Windows 2000）
-              href: setupapi-logging--windows-server-2003--windows-xp--and-windows-2000-.md
-              items:
-                - name: 设置 SetupAPI 日志记录级别
-                  href: setting-setupapi-logging-levels.md
-                - name: 解释示例 SetupAPI 日志文件
-                  href: interpreting-a-sample-setupapi-log-file.md
-            - name: 调试设备安装
-              href: debugging-device-installations--windows-vista-and-later-.md
-              items:
-                - name: 启用对设备安装调试的支持
-                  href: enabling-support-for-debugging-device-installations.md
-                - name: 使用用户模式调试程序调试设备安装
-                  href: debugging-device-installations-with-a-user-mode-debugger.md
-                - name: 使用内核调试程序 (KD) 调试设备安装
-                  href: debugging-device-installations-with-the-kernel-debugger--kd-.md
-    - name: 设备和驱动程序安装最佳做法
-      href: best-practices-for-device-installation.md
+- name: 注册表
+  items:
+    - name: 注册表树和键
+      href: registry-trees-and-keys.md
+    - name: 设备和驱动程序的注册表树
+      href: overview-of-registry-trees-and-keys.md
+    - name: 'HKLM\SYSTEM\CurrentControlSet\Services 注册表树 '
+      href: hklm-system-currentcontrolset-services-registry-tree.md
+    - name: HKLM\SYSTEM\CurrentControlSet\Control 注册表树
+      href: hklm-system-currentcontrolset-control-registry-tree.md
+    - name: HKLM\SYSTEM\CurrentControlSet\Enum 注册表树
+      href: hklm-system-currentcontrolset-enum-registry-tree.md
+    - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles 注册表树
+      href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
+    - name: RunOnce 注册表项
+      href: runonce-registry-key.md
+    - name: DeviceOverrides 注册表项
+      href: deviceoverrides-registry-key.md
+    - name: HardwareID 注册表子项
+      href: hardwareid-registry-subkey.md
+    - name: CompatibleID 注册表子项
+      href: compatibleid-registry-subkey.md
+    - name: LocationPaths 注册表子项
+      href: locationpaths-registry-subkey.md
+    - name: ChildLocationPaths 注册表子项
+      href: childlocationpaths-registry-subkey.md
+    - name: LocationPath 注册表子项
+      href: locationpath-registry-subkey.md
+    - name: '* 注册表子项'
+      href: '--registry-subkey.md'
+- name: 疑难解答
+  items:
+    - name: 排查设备和驱动程序安装问题
+      href: troubleshooting-device-and-driver-installations.md
+    - name: 适合设备和驱动程序制造商的设备管理器
+      href: using-device-manager.md
+    - name: 设备管理器错误消息
+      href: device-manager-error-messages.md
+    - name: CM_PROB_NOT_CONFIGURED
+      href: cm-prob-not-configured.md
+    - name: CM_PROB_OUT_OF_MEMORY
+      href: cm-prob-out-of-memory.md
+    - name: CM_PROB_INVALID_DATA
+      href: cm-prob-invalid-data.md
+    - name: CM_PROB_FAILED_START
+      href: cm-prob-failed-start.md
+    - name: CM_PROB_NORMAL_CONFLICT
+      href: cm-prob-normal-conflict.md
+    - name: CM_PROB_NEED_RESTART
+      href: cm-prob-need-restart.md
+    - name: CM_PROB_PARTIAL_LOG_CONF
+      href: cm-prob-partial-log-conf.md
+    - name: CM_PROB_REINSTALL
+      href: cm-prob-reinstall.md
+    - name: CM_PROB_REGISTRY
+      href: cm-prob-registry.md
+    - name: CM_PROB_WILL_BE_REMOVED
+      href: cm-prob-will-be-removed.md
+    - name: CM_PROB_DISABLED
+      href: cm-prob-disabled.md
+    - name: CM_PROB_DEVICE_NOT_THERE
+      href: cm-prob-device-not-there.md
+    - name: CM_PROB_FAILED_INSTALL
+      href: cm-prob-failed-install.md
+    - name: CM_PROB_HARDWARE_DISABLED
+      href: cm-prob-hardware-disabled.md
+    - name: CM_PROB_FAILED_ADD
+      href: cm-prob-failed-add.md
+    - name: CM_PROB_DISABLED_SERVICE
+      href: cm-prob-disabled-service.md
+    - name: CM_PROB_TRANSLATION_FAILED
+      href: cm-prob-translation-failed.md
+    - name: CM_PROB_NO_SOFTCONFIG
+      href: cm-prob-no-softconfig.md
+    - name: CM_PROB_BIOS_TABLE
+      href: cm-prob-bios-table.md
+    - name: CM_PROB_IRQ_TRANSLATION_FAILED
+      href: cm-prob-irq-translation-failed.md
+    - name: CM_PROB_FAILED_DRIVER_ENTRY
+      href: cm-prob-failed-driver-entry.md
+    - name: CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
+      href: cm-prob-driver-failed-prior-unload.md
+    - name: CM_PROB_DRIVER_FAILED_LOAD
+      href: cm-prob-driver-failed-load.md
+    - name: CM_PROB_DRIVER_SERVICE_KEY_INVALID
+      href: cm-prob-driver-service-key-invalid.md
+    - name: CM_PROB_LEGACY_SERVICE_NO_DEVICES
+      href: cm-prob-legacy-service-no-devices.md
+    - name: CM_PROB_DUPLICATE_DEVICE
+      href: cm-prob-duplicate-device.md
+    - name: CM_PROB_FAILED_POST_START
+      href: cm-prob-failed-post-start.md
+    - name: CM_PROB_HALTED
+      href: cm-prob-halted.md
+    - name: CM_PROB_PHANTOM
+      href: cm-prob-phantom.md
+    - name: CM_PROB_SYSTEM_SHUTDOWN
+      href: cm-prob-system-shutdown.md
+    - name: CM_PROB_HELD_FOR_EJECT
+      href: cm-prob-held-for-eject.md
+    - name: CM_PROB_DRIVER_BLOCKED
+      href: cm-prob-driver-blocked.md
+    - name: CM_PROB_REGISTRY_TOO_LARGE
+      href: cm-prob-registry-too-large.md
+    - name: CM_PROB_SETPROPERTIES_FAILED
+      href: cm-prob-setproperties-failed.md
+    - name: CM_PROB_WAITING_ON_DEPENDENCY
+      href: cm-prob-waiting-on-dependency.md
+    - name: CM_PROB_UNSIGNED_DRIVER
+      href: cm-prob-unsigned-driver.md
+    - name: CM_PROB_USED_BY_DEBUGGER
+      href: cm-prob-used-by-debugger.md
+    - name: CM_PROB_DEVICE_RESET
+      href: cm-prob-device-reset.md
+    - name: “设备管理器详细信息”选项卡
+      href: device-manager-details-tab.md
+    - name: 查看隐藏的设备
+      href: viewing-hidden-devices.md
+    - name: SetupAPI 日志记录
+      href: setupapi-logging--windows-vista-and-later-.md
+    - name: SetupAPI 文本日志
+      href: setupapi-text-logs.md
+    - name: 文本日志标头的格式
+      href: format-of-a-text-log-header.md
+    - name: 文本日志部分的格式
+      href: format-of-a-text-log-section.md
+    - name: 文本日志部分标头的格式
+      href: format-of-a-text-log-section-header.md
+    - name: 文本日志部分正文的格式
+      href: format-of-a-text-log-section-body.md
+    - name: 文本日志部分页脚的格式
+      href: format-of-a-text-log-section-footer.md
+    - name: 不是文本日志部分的日志条目的格式
+      href: format-of-log-entries-that-are-not-part-of-a-text-log-section.md
+    - name: SetupAPI 日志记录注册表设置
+      href: setupapi-logging-registry-settings.md
+    - name: 设置文本日志的事件级别
+      href: setting-the-event-level-for-a-text-log.md
+    - name: 启用文本日志的事件类别
+      href: enabling-event-categories-for-a-text-log.md
+    - name: 设置文本日志的目录路径
+      href: setting-the-directory-path-of-the-text-logs.md
+    - name: 使用 SetupAPI 日志记录函数
+      href: using-the-setupapi-logging-functions.md
+    - name: 在文本日志中写入日志条目
+      href: writing-log-entries-in-a-text-log.md
+    - name: 调用 SetupWriteTextLog
+      href: calling-setupwritetextlog.md
+    - name: 写入信息日志条目
+      href: writing-an-information-log-entry.md
+    - name: 写入错误或警告日志条目
+      href: writing-an-error-or-warning-log-entry.md
+    - name: 调用 SetupWriteTextLogError
+      href: calling-setupwritetextlogerror.md
+    - name: 调用 SetupWriteTextLogInfLine
+      href: calling-setupwritetextloginfline.md
+    - name: 写入缩进日志条目
+      href: writing-indented-log-entries.md
+    - name: 日志令牌
+      href: log-tokens.md
+    - name: 设置和获取线程的日志标记
+      href: setting-and-getting-a-log-token-for-a-thread.md
+    - name: SetupAPI 日志记录
       items:
-        - name: 访问和修改设备属性
-          href: accessing-and-modifying-device-properties.md
-          items:
-            - name: 访问设备属性
-              href: accessing-device-properties.md
-            - name: 修改设备属性的规则
-              href: modifying-device-properties.md
-        - name: 访问和修改文件
-          href: accessing-and-modifying-files.md
-        - name: 访问和修改注册表值
-          href: accessing-and-modifying-registry-values.md
-          items:
-            - name: 安全地访问注册表项
-              href: accessing-registry-keys-safely.md
-            - name: 访问软件和硬件键
-              href: accessing-software-and-hardware-keys.md
-              items:
-                - name: 打开设备的硬件键
-                  href: opening-a-device-s-hardware-key.md
-                - name: 打开设备的软件键
-                  href: opening-a-device-s-software-key.md
-                - name: 修改设备的软件键中的注册表值
-                  href: modifying-registry-values-in-a-device-s-software-key-.md
-            - name: 访问注册表中的设备安装程序类
-              href: accessing-device-setup-classes-in-the-registry.md
-              items:
-                - name: 枚举已安装的设备安装程序类
-                  href: enumerating-installed-device-setup-classes.md
-                - name: 打开设备安装程序类的注册表项
-                  href: opening-registry-keys-for-a-device-setup-class.md
-                - name: 打开安装程序类中所有设备的软件键
-                  href: opening-software-keys-for-all-devices-in-a-setup-class.md
-            - name: 访问注册表中的设备接口
-              href: accessing-device-interface-classes-in-the-registry.md
-              items:
-                - name: 枚举已安装的设备接口
-                  href: enumerating-installed-device-interface-classes.md
-                - name: 访问已安装设备接口的属性
-                  href: accessing-the-properties-of-installed-device-interface-classes.md
-            - name: 通过类安装程序和辅助安装程序访问注册表
-              href: accessing-the-registry-by-class-installers-and-co-installers.md
-              items:
-                - name: 通过类安装程序和辅助安装程序修改注册表项
-                  href: modifying-registry-keys-by-class-installers-and-co-installers.md
-                - name: 通过类安装程序和辅助安装程序修改注册表值
-                  href: modifying-registry-values-by-class-installers-and-co-installers.md
-            - name: 删除设备的注册表项
-              href: deleting-the-registry-keys-of-a-device.md
-        - name: 调用 SetupAPI 函数
-          href: calling-setupapi-functions.md
-        - name: 枚举已安装的设备
-          href: enumerating-installed-devices.md
-        - name: 设备和驱动程序安装常规指南
-          href: general-guidelines-for-device-and-driver-installation.md
-        - name: 将代码从 SetupApi 移植到 CfgMgr32
-          href: porting-from-setupapi-to-cfgmgr32.md
-        - name: 编写类安装程序和辅助安装程序
-          href: writing-class-installers-and-co-installers.md
-        - name: 编写 INF 文件
-          href: writing-inf-files.md
-    - name: 提前启动反恶意软件
+        - name: SetupAPI 日志记录（Windows Server 2003、Windows XP 和 Windows 2000）
+          href: setupapi-logging--windows-server-2003--windows-xp--and-windows-2000-.md
+        - name: 设置 SetupAPI 日志记录级别
+          href: setting-setupapi-logging-levels.md
+        - name: 解释示例 SetupAPI 日志文件
+          href: interpreting-a-sample-setupapi-log-file.md
+    - name: 调试
+      items:
+        - name: 调试设备安装
+          href: debugging-device-installations--windows-vista-and-later-.md
+        - name: 启用对设备安装调试的支持
+          href: enabling-support-for-debugging-device-installations.md
+        - name: 使用用户模式调试程序调试设备安装
+          href: debugging-device-installations-with-a-user-mode-debugger.md
+        - name: 使用内核调试程序 (KD) 调试设备安装
+          href: debugging-device-installations-with-the-kernel-debugger--kd-.md
+- name: 最佳方案
+  items:
+    - name: 访问设备属性
+      href: accessing-device-properties.md
+    - name: 修改设备属性的规则
+      href: modifying-device-properties.md
+    - name: 访问和修改文件
+      href: accessing-and-modifying-files.md
+    - name: 安全地访问注册表项
+      href: accessing-registry-keys-safely.md
+    - name: 打开设备的硬件键
+      href: opening-a-device-s-hardware-key.md
+    - name: 打开设备的软件键
+      href: opening-a-device-s-software-key.md
+    - name: 修改设备的软件键中的注册表值
+      href: modifying-registry-values-in-a-device-s-software-key-.md
+    - name: 枚举已安装的设备安装程序类
+      href: enumerating-installed-device-setup-classes.md
+    - name: 打开设备安装程序类的注册表项
+      href: opening-registry-keys-for-a-device-setup-class.md
+    - name: 打开安装程序类中所有设备的软件键
+      href: opening-software-keys-for-all-devices-in-a-setup-class.md
+    - name: 枚举已安装的设备接口
+      href: enumerating-installed-device-interface-classes.md
+    - name: 访问已安装设备接口的属性
+      href: accessing-the-properties-of-installed-device-interface-classes.md
+    - name: 通过类安装程序和辅助安装程序修改注册表项
+      href: modifying-registry-keys-by-class-installers-and-co-installers.md
+    - name: 通过类安装程序和辅助安装程序修改注册表值
+      href: modifying-registry-values-by-class-installers-and-co-installers.md
+    - name: 删除设备的注册表项
+      href: deleting-the-registry-keys-of-a-device.md
+    - name: 调用 SetupAPI 函数
+      href: calling-setupapi-functions.md
+    - name: 枚举已安装的设备
+      href: enumerating-installed-devices.md
+    - name: 设备和驱动程序安装常规指南
+      href: general-guidelines-for-device-and-driver-installation.md
+    - name: 将代码从 SetupApi 移植到 CfgMgr32
+      href: porting-from-setupapi-to-cfgmgr32.md
+    - name: 编写类安装程序和辅助安装程序
+      href: writing-class-installers-and-co-installers.md
+    - name: 编写 INF 文件
+      href: writing-inf-files.md
+    - name: 安装引导启动驱动程序
+      href: installing-a-boot-start-driver.md
+    - name: 安装筛选器驱动程序
+      href: installing-a-filter-driver.md
+    - name: 安装 Null 驱动程序
+      href: installing-a-null-driver.md
+    - name: 安装新总线驱动程序
+      href: installing-a-new-bus-driver.md
+    - name: 使用自定义硬件 ID 和兼容 ID
+      href: using-custom-hardware-ids-and-compatible-ids.md
+    - name: 为总线安装新的设备安装程序类
+      href: installing-a-new-device-setup-class-for-a-bus.md
+    - name: 安装随机驱动程序的专用版本
+      href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
+    - name: 安装随机驱动程序的专用版本概述
+      href: overview-of-installing-private-builds-of-in-box-drivers.md
+    - name: 创建随机驱动程序的专用版本
+      href: creating-a-private-build-of-an-in-box-driver.md
+    - name: 将 Windows 配置为对驱动程序签名进行平等的分级
+      href: configuring-windows-to-rank-driver-signatures-equally.md
+    - name: 安装驱动程序包的已更新版本
+      href: installing-the-updated-version-of-the-driver-package.md
+- name: 提前启动反恶意软件
+  items:
+    - name: 提前启动反恶意软件的概述
       href: early-launch-antimalware.md
-      items:
-        - name: ELAM 先决条件
-          href: elam-prerequisites.md
-        - name: ELAM 驱动程序要求
-          href: elam-driver-requirements.md
-        - name: ELAM 驱动程序提交
-          href: elam-driver-submission.md
-    - name: INF 文件的节和指令
-      href: inf-file-sections-and-directives.md
-      items:
-        - name: INF 节
-          href: inf-sections.md
-          items:
-            - name: INF ClassInstall32 节
-              href: inf-classinstall32-section.md
-            - name: INF ClassInstall32.Services 节
-              href: inf-classinstall32-services-section.md
-            - name: INF ControlFlags 节
-              href: inf-controlflags-section.md
-            - name: INF DDInstall 节
-              href: inf-ddinstall-section.md
-            - name: INF DDInstall.CoInstallers 节
-              href: inf-ddinstall-coinstallers-section.md
-            - name: INF DDInstall.Components 节
-              href: inf-ddinstall-components-section.md
-            - name: INF DDInstall.Events 节
-              href: inf-ddinstall-events-section.md
-            - name: INF DDInstall.FactDef 节
-              href: inf-ddinstall-factdef-section.md
-            - name: INF DDInstall.HW 节
-              href: inf-ddinstall-hw-section.md
-            - name: INF DDInstall.Interfaces 节
-              href: inf-ddinstall-interfaces-section.md
-            - name: INF DDInstall.LogConfigOverride 节
-              href: inf-ddinstall-logconfigoverride-section.md
-            - name: INF DDInstall.Services 节
-              href: inf-ddinstall-services-section.md
-            - name: INF DDInstall.Software 节
-              href: inf-ddinstall-software-section.md
-            - name: INF DDInstall.WMI 节
-              href: inf-ddinstall-wmi-section.md
-            - name: INF DefaultInstall 节
-              href: inf-defaultinstall-section.md
-            - name: INF DefaultInstall.Services 节
-              href: inf-defaultinstall-services-section.md
-            - name: INF DestinationDirs 节
-              href: inf-destinationdirs-section.md
-            - name: INF InterfaceInstall32 节
-              href: inf-interfaceinstall32-section.md
-            - name: INF Manufacturer 节
-              href: inf-manufacturer-section.md
-            - name: INF Models 节
-              href: inf-models-section.md
-            - name: INF SignatureAttributes 节
-              href: inf-signatureattributes-section.md
-            - name: INF SourceDisksFiles 节
-              href: inf-sourcedisksfiles-section.md
-            - name: INF SourceDisksNames 节
-              href: inf-sourcedisksnames-section.md
-            - name: INF Strings 节
-              href: inf-strings-section.md
-            - name: INF Version 节
-              href: inf-version-section.md
-        - name: INF 指令
-          href: inf-directives.md
-          items:
-            - name: INF AddComponent 指令
-              href: inf-addcomponent-directive.md
-            - name: INF AddEventProvider 指令
-              href: inf-addeventprovider-directive.md
-            - name: INF AddInterface 指令
-              href: inf-addinterface-directive.md
-            - name: INF AddPowerSetting 指令
-              href: inf-addpowersetting-directive.md
-            - name: INF AddProperty 指令
-              href: inf-addproperty-directive.md
-            - name: INF AddReg 指令
-              href: inf-addreg-directive.md
-            - name: INF AddService 指令
-              href: inf-addservice-directive.md
-            - name: INF AddSoftware 指令
-              href: inf-addsoftware-directive.md
-            - name: INF BitReg 指令
-              href: inf-bitreg-directive.md
-            - name: INF CopyFiles 指令
-              href: inf-copyfiles-directive.md
-            - name: INF CopyINF 指令
-              href: inf-copyinf-directive.md
-            - name: INF DelFiles 指令
-              href: inf-delfiles-directive.md
-            - name: INF DelProperty 指令
-              href: inf-delproperty-directive.md
-            - name: INF DelReg 指令
-              href: inf-delreg-directive.md
-            - name: INF DelService 指令
-              href: inf-delservice-directive.md
-            - name: INF DriverVer 指令
-              href: inf-driverver-directive.md
-            - name: INF FeatureScore 指令
-              href: inf-featurescore-directive.md
-            - name: INF HardwareId 指令
-              href: inf-hardwareid-directive.md
-            - name: INF Ini2Reg 指令
-              href: inf-ini2reg-directive.md
-            - name: INF LogConfig 指令
-              href: inf-logconfig-directive.md
-            - name: INF ProfileItems 指令
-              href: inf-profileitems-directive.md
-            - name: INF Reboot 指令
-              href: inf-reboot-directive.md
-            - name: INF RegisterDlls 指令
-              href: inf-registerdlls-directive.md
-            - name: INF RenFiles 指令
-              href: inf-renfiles-directive.md
-            - name: INF UnregisterDlls 指令
-              href: inf-unregisterdlls-directive.md
-            - name: INF UpdateIniFields 指令
-              href: inf-updateinifields-directive.md
-            - name: INF UpdateInis 指令
-              href: inf-updateinis-directive.md
-    - name: 设备和驱动程序安装参考
-      href: install-reference.md
-      items:
-        - name: BUS1394_CLASS_GUID
-          href: bus1394-class-guid.md
-        - name: 'CdChangerClassGuid '
-          href: cdchangerclassguid.md
-        - name: CdRomClassGuid
-          href: cdromclassguid.md
-        - name: CM_Add_Range
-          href: cm-add-range.md
-        - name: CM_Create_DevNode
-          href: cm-create-devnode.md
-        - name: CM_Create_DevNode_Ex
-          href: cm-create-devnode-ex.md
-        - name: CM_Create_Range_List
-          href: cm-create-range-list.md
-        - name: CM_Delete_Class_Key_Ex
-          href: cm-delete-class-key-ex.md
-        - name: CM_Delete_DevNode_Key_Ex
-          href: cm-delete-devnode-key-ex.md
-        - name: CM_Delete_Range
-          href: cm-delete-range.md
-        - name: CM_Detect_Resource_Conflict
-          href: cm-detect-resource-conflict.md
-        - name: CM_Detect_Resource_Conflict_Ex
-          href: cm-detect-resource-conflict-ex.md
-        - name: CM_Disable_DevNode_Ex
-          href: cm-disable-devnode-ex.md
-        - name: CM_Dup_Range_List
-          href: cm-dup-range-list.md
-        - name: CM_Enable_DevNode_Ex
-          href: cm-enable-devnode-ex.md
-        - name: CM_Find_Range
-          href: cm-find-range.md
-        - name: CM_First_Range
-          href: cm-first-range.md
-        - name: CM_Free_Range_List
-          href: cm-free-range-list.md
-        - name: CM_Get_Class_Key_Name
-          href: cm-get-class-key-name.md
-        - name: CM_Get_Class_Key_Name_Ex
-          href: cm-get-class-key-name-ex.md
-        - name: CM_Get_Class_Name
-          href: cm-get-class-name.md
-        - name: CM_Get_Class_Name_Ex
-          href: cm-get-class-name-ex.md
-        - name: CM_Get_Device_Interface_Alias_Ex
-          href: cm-get-device-interface-alias-ex.md
-        - name: CM_Get_Device_Interface_List_Ex
-          href: cm-get-device-interface-list-ex.md
-        - name: CM_Get_Device_Interface_List_Size_Ex
-          href: cm-get-device-interface-list-size-ex.md
-        - name: CM_Get_DevNode_Custom_Property
-          href: cm-get-devnode-custom-property.md
-        - name: CM_Get_DevNode_Custom_Property_Ex
-          href: cm-get-devnode-custom-property-ex.md
-        - name: CM_Get_DevNode_Registry_Property_Ex
-          href: cm-get-devnode-registry-property-ex.md
-        - name: CM_Get_Global_State
-          href: cm-get-global-state.md
-        - name: CM_Get_Global_State_Ex
-          href: cm-get-global-state-ex.md
-        - name: CM_Get_Hardware_Profile_Info
-          href: cm-get-hardware-profile-info.md
-        - name: CM_Get_Hardware_Profile_Info_Ex
-          href: cm-get-hardware-profile-info-ex.md
-        - name: CM_Intersect_Range_List
-          href: cm-intersect-range-list.md
-        - name: CM_Invert_Range_List
-          href: cm-invert-range-list.md
-        - name: CM_Merge_Range_List
-          href: cm-merge-range-list.md
-        - name: CM_Move_DevNode
-          href: cm-move-devnode.md
-        - name: CM_Move_DevNode_Ex
-          href: cm-move-devnode-ex.md
-        - name: CM_Next_Range
-          href: cm-next-range.md
-        - name: CM_Open_Class_Key_Ex
-          href: cm-open-class-key-ex.md
-        - name: CM_Open_DevNode_Key_Ex
-          href: cm-open-devnode-key-ex.md
-        - name: CM_Query_Arbitrator_Free_Data
-          href: cm-query-arbitrator-free-data.md
-        - name: CM_Query_Arbitrator_Free_Data_Ex
-          href: cm-query-arbitrator-free-data-ex.md
-        - name: CM_Query_Arbitrator_Free_Size
-          href: cm-query-arbitrator-free-size.md
-        - name: CM_Query_Arbitrator_Free_Size_Ex
-          href: cm-query-arbitrator-free-size-ex.md
-        - name: CM_Query_Remove_SubTree
-          href: cm-query-remove-subtree.md
-        - name: CM_Query_Remove_SubTree_Ex
-          href: cm-query-remove-subtree-ex.md
-        - name: CM_Register_Device_Driver
-          href: cm-register-device-driver.md
-        - name: CM_Register_Device_Driver_Ex
-          href: cm-register-device-driver-ex.md
-        - name: CM_Register_Device_Interface
-          href: cm-register-device-interface.md
-        - name: CM_Register_Device_Interface_Ex
-          href: cm-register-device-interface-ex.md
-        - name: CM_Remove_SubTree
-          href: cm-remove-subtree.md
-        - name: CM_Remove_SubTree_Ex
-          href: cm-remove-subtree-ex.md
-        - name: CM_Run_Detection
-          href: cm-run-detection.md
-        - name: CM_Run_Detection_Ex
-          href: cm-run-detection-ex.md
-        - name: CM_Set_DevNode_Registry_Property_Ex
-          href: cm-set-devnode-registry-property-ex.md
-        - name: CM_Set_HW_Prof
-          href: cm-set-hw-prof.md
-        - name: CM_Set_HW_Prof_Ex
-          href: cm-set-hw-prof-ex.md
-        - name: CM_Set_HW_Prof_Flags
-          href: cm-set-hw-prof-flags.md
-        - name: CM_Set_HW_Prof_Flags_Ex
-          href: cm-set-hw-prof-flags-ex.md
-        - name: CM_Setup_DevNode_Ex
-          href: cm-setup-devnode-ex.md
-        - name: CM_Test_Range_Available
-          href: cm-test-range-available.md
-        - name: CM_Uninstall_DevNode_Ex
-          href: cm-uninstall-devnode-ex.md
-        - name: CM_Unregister_Device_Interface
-          href: cm-unregister-device-interface.md
-        - name: CM_Unregister_Device_Interface_Ex
-          href: cm-unregister-device-interface-ex.md
-        - name: CM_WaitNoPendingInstallEvents
-          href: cm-waitnopendinginstallevents.md
-        - name: TxtSetup.oem 文件的 Config.DriverKey 节
-          href: config-driverkey-section-of-a-txtsetup-oem-file.md
-        - name: TxtSetup.oem 文件的 Defaults 节
-          href: defaults-section-of-a-txtsetup-oem-file.md
-        - name: DEFINE_DEVPROPKEY
-          href: define-devpropkey.md
-        - name: deleteBinaries XML 元素
-          href: deletebinaries-xml-element.md
-        - name: DEVPKEY_Device_Address
-          href: devpkey-device-address.md
-        - name: DEVPKEY_Device_BaseContainerId
-          href: devpkey-device-basecontainerid.md
-        - name: DEVPKEY_Device_BusNumber
-          href: devpkey-device-busnumber.md
-        - name: DEVPKEY_Device_BusRelations
-          href: devpkey-device-busrelations.md
-        - name: DEVPKEY_Device_BusReportedDeviceDesc
-          href: devpkey-device-busreporteddevicedesc.md
-        - name: DEVPKEY_Device_BusTypeGuid
-          href: devpkey-device-bustypeguid.md
-        - name: DEVPKEY_Device_Capabilities
-          href: devpkey-device-capabilities.md
-        - name: DEVPKEY_Device_Characteristics
-          href: devpkey-device-characteristics.md
-        - name: DEVPKEY_Device_Children
-          href: devpkey-device-children.md
-        - name: DEVPKEY_Device_Class
-          href: devpkey-device-class.md
-        - name: DEVPKEY_Device_ClassGuid
-          href: devpkey-device-classguid.md
-        - name: DEVPKEY_Device_CompatibleIds
-          href: devpkey-device-compatibleids.md
-        - name: DEVPKEY_Device_ConfigFlags
-          href: devpkey-device-configflags.md
-        - name: DEVPKEY_Device_ContainerId
-          href: devpkey-device-containerid.md
-        - name: DEVPKEY_Device_DeviceDesc
-          href: devpkey-device-devicedesc.md
-        - name: DEVPKEY_Device_DevNodeStatus
-          href: devpkey-device-devnodestatus.md
-        - name: DEVPKEY_Device_DevType
-          href: devpkey-device-devtype.md
-        - name: DEVPKEY_Device_DHP_Rebalance_Policy
-          href: devpkey-device-dhp-rebalance-policy.md
-        - name: DEVPKEY_Device_Driver
-          href: devpkey-device-driver.md
-        - name: DEVPKEY_Device_DriverCoInstallers
-          href: devpkey-device-drivercoinstallers.md
-        - name: DEVPKEY_Device_DriverDate
-          href: devpkey-device-driverdate.md
-        - name: DEVPKEY_Device_DriverDesc
-          href: devpkey-device-driverdesc.md
-        - name: DEVPKEY_Device_DriverInfPath
-          href: devpkey-device-driverinfpath.md
-        - name: DEVPKEY_Device_DriverInfSection
-          href: devpkey-device-driverinfsection.md
-        - name: DEVPKEY_Device_DriverInfSectionExt
-          href: devpkey-device-driverinfsectionext.md
-        - name: DEVPKEY_Device_DriverLogoLevel
-          href: devpkey-device-driverlogolevel.md
-        - name: DEVPKEY_Device_DriverPropPageProvider
-          href: devpkey-device-driverproppageprovider.md
-        - name: DEVPKEY_Device_DriverProvider
-          href: devpkey-device-driverprovider.md
-        - name: DEVPKEY_Device_DriverRank
-          href: devpkey-device-driverrank.md
-        - name: DEVPKEY_Device_DriverVersion
-          href: devpkey-device-driverversion.md
-        - name: DEVPKEY_Device_EjectionRelations
-          href: devpkey-device-ejectionrelations.md
-        - name: DEVPKEY_Device_EnumeratorName
-          href: devpkey-device-enumeratorname.md
-        - name: DEVPKEY_Device_Exclusive
-          href: devpkey-device-exclusive.md
-        - name: DEVPKEY_Device_FirstInstallDate
-          href: devpkey-device-firstinstalldate.md
-        - name: DEVPKEY_Device_FriendlyName
-          href: devpkey-device-friendlyname.md
-        - name: DEVPKEY_Device_GenericDriverInstalled
-          href: devpkey-device-genericdriverinstalled.md
-        - name: DEVPKEY_Device_HardwareIds
-          href: devpkey-device-hardwareids.md
-        - name: DEVPKEY_Device_InstallDate
-          href: devpkey-device-installdate.md
-        - name: DEVPKEY_Device_InstallState
-          href: devpkey-device-installstate.md
-        - name: DEVPKEY_Device_InstanceId
-          href: devpkey-device-instanceid.md
-        - name: DEVPKEY_Device_Legacy
-          href: devpkey-device-legacy.md
-        - name: DEVPKEY_Device_LegacyBusType
-          href: devpkey-device-legacybustype.md
-        - name: DEVPKEY_Device_LocationInfo
-          href: devpkey-device-locationinfo.md
-        - name: DEVPKEY_Device_LocationPaths
-          href: devpkey-device-locationpaths.md
-        - name: DEVPKEY_Device_LowerFilters
-          href: devpkey-device-lowerfilters.md
-        - name: DEVPKEY_Device_Manufacturer
-          href: devpkey-device-manufacturer.md
-        - name: DEVPKEY_Device_MatchingDeviceId
-          href: devpkey-device-matchingdeviceid.md
-        - name: DEVPKEY_Device_ModelId
-          href: devpkey-device-modelid.md
-        - name: DEVPKEY_Device_NoConnectSound
-          href: devpkey-device-noconnectsound.md
-        - name: DEVPKEY_Device_Parent
-          href: devpkey-device-parent.md
-        - name: DEVPKEY_Device_PDOName
-          href: devpkey-device-pdoname.md
-        - name: DEVPKEY_Device_PhysicalDeviceLocation
-          href: devpkey-device-physicaldevicelocation.md
-        - name: DEVPKEY_Device_PowerData
-          href: devpkey-device-powerdata.md
-        - name: 'DEVPKEY_Device_PowerRelations '
-          href: devpkey-device-powerrelations.md
-        - name: DEVPKEY_Device_ProblemCode
-          href: devpkey-device-problemcode.md
-        - name: DEVPKEY_Device_RemovalPolicy
-          href: devpkey-device-removalpolicy.md
-        - name: DEVPKEY_Device_RemovalPolicyDefault
-          href: devpkey-device-removalpolicydefault.md
-        - name: DEVPKEY_Device_RemovalPolicyOverride
-          href: devpkey-device-removalpolicyoverride.md
-        - name: DEVPKEY_Device_RemovalRelations
-          href: devpkey-device-removalrelations.md
-        - name: DEVPKEY_Device_Reported
-          href: devpkey-device-reported.md
-        - name: DEVPKEY_Device_ResourcePickerExceptions
-          href: devpkey-device-resourcepickerexceptions.md
-        - name: DEVPKEY_Device_ResourcePickerTags
-          href: devpkey-device-resourcepickertags.md
-        - name: DEVPKEY_Device_SafeRemovalRequired
-          href: devpkey-device-saferemovalrequired.md
-        - name: DEVPKEY_Device_SafeRemovalRequiredOverride
-          href: devpkey-device-saferemovalrequiredoverride.md
-        - name: DEVPKEY_Device_Security
-          href: devpkey-device-security.md
-        - name: DEVPKEY_Device_SecuritySDS
-          href: devpkey-device-securitysds.md
-        - name: DEVPKEY_Device_Service
-          href: devpkey-device-service.md
-        - name: DEVPKEY_Device_SessionId
-          href: devpkey-device-sessionid.md
-        - name: DEVPKEY_Device_Siblings
-          href: devpkey-device-siblings.md
-        - name: DEVPKEY_Device_UINumber
-          href: devpkey-device-uinumber.md
-        - name: DEVPKEY_Device_UINumberDescFormat
-          href: devpkey-device-uinumberdescformat.md
-        - name: DEVPKEY_Device_UpperFilters
-          href: devpkey-device-upperfilters.md
-        - name: DEVPKEY_DeviceClass_Characteristics
-          href: devpkey-deviceclass-characteristics.md
-        - name: DEVPKEY_DeviceClass_ClassCoInstallers
-          href: devpkey-deviceclass-classcoinstallers.md
-        - name: DEVPKEY_DeviceClass_ClassInstaller
-          href: devpkey-deviceclass-classinstaller.md
-        - name: DEVPKEY_DeviceClass_ClassName
-          href: devpkey-deviceclass-classname.md
-        - name: DEVPKEY_DeviceClass_DefaultService
-          href: devpkey-deviceclass-defaultservice.md
-        - name: DEVPKEY_DeviceClass_DevType
-          href: devpkey-deviceclass-devtype.md
-        - name: DEVPKEY_DeviceClass_DHPRebalanceOptOut
-          href: devpkey-deviceclass-dhprebalanceoptout.md
-        - name: DEVPKEY_DeviceClass_Exclusive
-          href: devpkey-deviceclass-exclusive.md
-        - name: DEVPKEY_DeviceClass_Icon
-          href: devpkey-deviceclass-icon.md
-        - name: DEVPKEY_DeviceClass_IconPath
-          href: devpkey-deviceclass-iconpath.md
-        - name: DEVPKEY_DeviceClass_LowerFilters
-          href: devpkey-deviceclass-lowerfilters.md
-        - name: DEVPKEY_DeviceClass_Name
-          href: devpkey-deviceclass-name.md
-        - name: DEVPKEY_DeviceClass_NoDisplayClass
-          href: devpkey-deviceclass-nodisplayclass.md
-        - name: DEVPKEY_DeviceClass_NoInstallClass
-          href: devpkey-deviceclass-noinstallclass.md
-        - name: DEVPKEY_DeviceClass_NoUseClass
-          href: devpkey-deviceclass-nouseclass.md
-        - name: DEVPKEY_DeviceClass_PropPageProvider
-          href: devpkey-deviceclass-proppageprovider.md
-        - name: DEVPKEY_DeviceClass_Security
-          href: devpkey-deviceclass-security.md
-        - name: DEVPKEY_DeviceClass_SecuritySDS
-          href: devpkey-deviceclass-securitysds.md
-        - name: DEVPKEY_DeviceClass_SilentInstall
-          href: devpkey-deviceclass-silentinstall.md
-        - name: DEVPKEY_DeviceClass_UpperFilters
-          href: devpkey-deviceclass-upperfilters.md
-        - name: DEVPKEY_DeviceDisplay_Category
-          href: devpkey-devicedisplay-category.md
-        - name: DEVPKEY_DeviceInterface_ClassGuid
-          href: devpkey-deviceinterface-classguid.md
-        - name: DEVPKEY_DeviceInterface_DefaultInterface
-          href: devpkey-deviceinterface-defaultinterface.md
-        - name: DEVPKEY_DeviceInterface_Enabled
-          href: devpkey-deviceinterface-enabled.md
-        - name: DEVPKEY_DeviceInterface_FriendlyName
-          href: devpkey-deviceinterface-friendlyname.md
-        - name: DEVPKEY_DeviceInterface_Restricted
-          href: devpkey-deviceinterface-restricted.md
-        - name: DEVPKEY_DrvPkg_BrandingIcon
-          href: devpkey-drvpkg-brandingicon.md
-        - name: DEVPKEY_DrvPkg_DetailedDescription
-          href: devpkey-drvpkg-detaileddescription.md
-        - name: DEVPKEY_DrvPkg_DocumentationLink
-          href: devpkey-drvpkg-documentationlink.md
-        - name: DEVPKEY_DrvPkg_Icon
-          href: devpkey-drvpkg-icon.md
-        - name: DEVPKEY_DrvPkg_Model
-          href: devpkey-drvpkg-model.md
-        - name: DEVPKEY_DrvPkg_VendorWebSite
-          href: devpkey-drvpkg-vendorwebsite.md
-        - name: DEVPKEY_NAME（设备实例）
-          href: devpkey-name--device-instance-.md
-        - name: DEVPKEY_NAME（设备接口）
-          href: devpkey-name--device-interface-.md
-        - name: DEVPKEY_NAME（设备安装程序类）
-          href: devpkey-name--device-setup-class-.md
-        - name: DEVPKEY_Numa_Proximity_Domain
-          href: devpkey-numa-proximity-domain.md
-        - name: DEVPRIVATE_DES
-          href: devprivate-des.md
-        - name: DEVPRIVATE_RANGE
-          href: devprivate-range.md
-        - name: DEVPRIVATE_RESOURCE
-          href: devprivate-resource.md
-        - name: DEVPROP_MASK_TYPE
-          href: devprop-mask-type.md
-        - name: DEVPROP_MASK_TYPEMOD
-          href: devprop-mask-typemod.md
-        - name: DEVPROP_TYPE_BINARY
-          href: devprop-type-binary.md
-        - name: DEVPROP_TYPE_BOOLEAN
-          href: devprop-type-boolean.md
-        - name: DEVPROP_TYPE_BYTE
-          href: devprop-type-byte.md
-        - name: DEVPROP_TYPE_CURRENCY
-          href: devprop-type-currency.md
-        - name: DEVPROP_TYPE_DATE
-          href: devprop-type-date.md
-        - name: DEVPROP_TYPE_DECIMAL
-          href: devprop-type-decimal.md
-        - name: DEVPROP_TYPE_DEVPROPKEY
-          href: devprop-type-devpropkey.md
-        - name: DEVPROP_TYPE_DEVPROPTYPE
-          href: devprop-type-devproptype.md
-        - name: DEVPROP_TYPE_DOUBLE
-          href: devprop-type-double.md
-        - name: DEVPROP_TYPE_EMPTY
-          href: devprop-type-empty.md
-        - name: DEVPROP_TYPE_ERROR
-          href: devprop-type-error.md
-        - name: DEVPROP_TYPE_FILETIME
-          href: devprop-type-filetime.md
-        - name: DEVPROP_TYPE_FLOAT
-          href: devprop-type-float.md
-        - name: DEVPROP_TYPE_GUID
-          href: devprop-type-guid.md
-        - name: DEVPROP_TYPE_INT16
-          href: devprop-type-int16.md
-        - name: DEVPROP_TYPE_INT32
-          href: devprop-type-int32.md
-        - name: DEVPROP_TYPE_INT64
-          href: devprop-type-int64.md
-        - name: DEVPROP_TYPE_NTSTATUS
-          href: devprop-type-ntstatus.md
-        - name: DEVPROP_TYPE_NULL
-          href: devprop-type-null.md
-        - name: DEVPROP_TYPE_SBYTE
-          href: devprop-type-sbyte.md
-        - name: DEVPROP_TYPE_SECURITY_DESCRIPTOR
-          href: devprop-type-security-descriptor.md
-        - name: DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING
-          href: devprop-type-security-descriptor-string.md
-        - name: DEVPROP_TYPE_STRING
-          href: devprop-type-string.md
-        - name: DEVPROP_TYPE_STRING_INDIRECT
-          href: devprop-type-string-indirect.md
-        - name: DEVPROP_TYPE_STRING_LIST
-          href: devprop-type-string-list.md
-        - name: DEVPROP_TYPE_UINT16
-          href: devprop-type-uint16.md
-        - name: DEVPROP_TYPE_UINT32
-          href: devprop-type-uint32.md
-        - name: DEVPROP_TYPE_UINT64
-          href: devprop-type-uint64.md
-        - name: DEVPROP_TYPEMOD_ARRAY
-          href: devprop-typemod-array.md
-        - name: DEVPROP_TYPEMOD_LIST
-          href: devprop-typemod-list.md
-        - name: DEVPROPKEY
-          href: devpropkey.md
-        - name: DIF_ADDPROPERTYPAGE_ADVANCED
-          href: dif-addpropertypage-advanced.md
-        - name: DIF_ADDPROPERTYPAGE_BASIC
-          href: dif-addpropertypage-basic.md
-        - name: DIF_ALLOW_INSTALL
-          href: dif-allow-install.md
-        - name: DIF_ASSIGNRESOURCES
-          href: dif-assignresources.md
-        - name: DIF_CALCDISKSPACE
-          href: dif-calcdiskspace.md
-        - name: DIF_DESTROYPRIVATEDATA
-          href: dif-destroyprivatedata.md
-        - name: DIF_DESTROYWIZARDDATA
-          href: dif-destroywizarddata.md
-        - name: DIF_DETECT
-          href: dif-detect.md
-        - name: DIF_DETECTCANCEL
-          href: dif-detectcancel.md
-        - name: DIF_DETECTVERIFY
-          href: dif-detectverify.md
-        - name: DIF_ENABLECLASS
-          href: dif-enableclass.md
-        - name: DIF_FINISHINSTALL_ACTION
-          href: dif-finishinstall-action.md
-        - name: DIF_FIRSTTIMESETUP
-          href: dif-firsttimesetup.md
-        - name: DIF_FOUNDDEVICE
-          href: dif-founddevice.md
-        - name: DIF_INSTALLCLASSDRIVERS
-          href: dif-installclassdrivers.md
-        - name: DIF_INSTALLDEVICE
-          href: dif-installdevice.md
-        - name: DIF_INSTALLDEVICEFILES
-          href: dif-installdevicefiles.md
-        - name: DIF_INSTALLINTERFACES
-          href: dif-installinterfaces.md
-        - name: DIF_INSTALLWIZARD
-          href: dif-installwizard.md
-        - name: DIF_MOVEDEVICE
-          href: dif-movedevice.md
-        - name: DIF_NEWDEVICEWIZARD_FINISHINSTALL
-          href: dif-newdevicewizard-finishinstall.md
-        - name: DIF_NEWDEVICEWIZARD_POSTANALYZE
-          href: dif-newdevicewizard-postanalyze.md
-        - name: DIF_NEWDEVICEWIZARD_PREANALYZE
-          href: dif-newdevicewizard-preanalyze.md
-        - name: DIF_NEWDEVICEWIZARD_PRESELECT
-          href: dif-newdevicewizard-preselect.md
-        - name: DIF_NEWDEVICEWIZARD_SELECT
-          href: dif-newdevicewizard-select.md
-        - name: DIF_POWERMESSAGEWAKE
-          href: dif-powermessagewake.md
-        - name: DIF_PROPERTIES
-          href: dif-properties.md
-        - name: DIF_PROPERTYCHANGE
-          href: dif-propertychange.md
-        - name: DIF_REGISTER_COINSTALLERS
-          href: dif-register-coinstallers.md
-        - name: DIF_REGISTERDEVICE
-          href: dif-registerdevice.md
-        - name: DIF_REMOVE
-          href: dif-remove.md
-        - name: DIF_SELECTBESTCOMPATDRV
-          href: dif-selectbestcompatdrv.md
-        - name: DIF_SELECTCLASSDRIVERS
-          href: dif-selectclassdrivers.md
-        - name: DIF_SELECTDEVICE
-          href: dif-selectdevice.md
-        - name: DIF_TROUBLESHOOTER
-          href: dif-troubleshooter.md
-        - name: DIF_UNREMOVE
-          href: dif-unremove.md
-        - name: DIF_UPDATEDRIVER_UI
-          href: dif-updatedriver-ui.md
-        - name: DIF_VALIDATECLASSDRIVERS
-          href: dif-validateclassdrivers.md
-        - name: DIF_VALIDATEDRIVER
-          href: dif-validatedriver.md
-        - name: DiskClassGuid
-          href: diskclassguid.md
-        - name: TxtSetup.oem 文件的 Disks 节
-          href: disks-section-of-a-txtsetup-oem-file.md
-        - name: dpinst XML 元素
-          href: dpinst-xml-element.md
-        - name: dpinstTitle XML 元素
-          href: dpinsttitle-xml-element.md
-        - name: enableNotListedLanguages XML 元素
-          href: enablenotlistedlanguages-xml-element.md
-        - name: eula XML 元素
-          href: eula-xml-element.md
-        - name: eulaHeaderTitle XML 元素
-          href: eulaheadertitle-xml-element.md
-        - name: eulaNoButton XML 元素
-          href: eulanobutton-xml-element.md
-        - name: eulaYesButton XML 元素
-          href: eulayesbutton-xml-element.md
-        - name: TxtSetup.oem 文件的 Files.HwComponent.ID 节
-          href: files-hwcomponent-id-section-of-a-txtsetup-oem-file.md
-        - name: finishText XML 元素
-          href: finishtext-xml-element.md
-        - name: finishTitle XML 元素
-          href: finishtitle-xml-element.md
-        - name: FloppyClassGuid
-          href: floppyclassguid.md
-        - name: forceIfDriverIsNotBetter XML 元素
-          href: forceifdriverisnotbetter-xml-element.md
-        - name: group XML 元素
-          href: group-xml-element.md
-        - name: GUID_61883_CLASS
-          href: guid-61883-class.md
-        - name: GUID_AVC_CLASS
-          href: guid-avc-class.md
-        - name: GUID_BTHPORT_DEVICE_INTERFACE
-          href: guid-bthport-device-interface.md
-        - name: GUID_CLASS_COMPORT
-          href: guid-class-comport.md
-        - name: GUID_CLASS_INPUT
-          href: guid-class-input.md
-        - name: GUID_CLASS_KEYBOARD
-          href: guid-class-keyboard.md
-        - name: GUID_CLASS_MODEM
-          href: guid-class-modem.md
-        - name: GUID_CLASS_MOUSE
-          href: guid-class-mouse.md
-        - name: GUID_CLASS_USB_DEVICE
-          href: guid-class-usb-device.md
-        - name: GUID_CLASS_USB_HOST_CONTROLLER
-          href: guid-class-usb-host-controller.md
-        - name: GUID_CLASS_USBHUB
-          href: guid-class-usbhub.md
-        - name: GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
-          href: guid-device-applicationlaunch-button.md
-        - name: GUID_DEVICE_BATTERY
-          href: guid-device-battery.md
-        - name: GUID_DEVICE_LID
-          href: guid-device-lid.md
-        - name: GUID_DEVICE_MEMORY
-          href: guid-device-memory.md
-        - name: GUID_DEVICE_MESSAGE_INDICATOR
-          href: guid-device-message-indicator.md
-        - name: GUID_DEVICE_PROCESSOR
-          href: guid-device-processor.md
-        - name: GUID_DEVICE_SYS_BUTTON
-          href: guid-device-sys-button.md
-        - name: GUID_DEVICE_THERMAL_ZONE
-          href: guid-device-thermal-zone.md
-        - name: GUID_DEVINTERFACE_BRIGHTNESS
-          href: guid-devinterface-brightness.md
-        - name: 'GUID_DEVINTERFACE_CDCHANGER '
-          href: guid-devinterface-cdchanger.md
-        - name: GUID_DEVINTERFACE_CDROM
-          href: guid-devinterface-cdrom.md
-        - name: GUID_DEVINTERFACE_COMPORT
-          href: guid-devinterface-comport.md
-        - name: GUID_DEVINTERFACE_DISK
-          href: guid-devinterface-disk.md
-        - name: GUID_DEVINTERFACE_DISPLAY_ADAPTER
-          href: guid-devinterface-display-adapter.md
-        - name: GUID_DEVINTERFACE_FLOPPY
-          href: guid-devinterface-floppy.md
-        - name: GUID_DEVINTERFACE_HID
-          href: guid-devinterface-hid.md
-        - name: GUID_DEVINTERFACE_I2C
-          href: guid-devinterface-i2c.md
-        - name: GUID_DEVINTERFACE_IMAGE
-          href: guid-devinterface-image.md
-        - name: GUID_DEVINTERFACE_KEYBOARD
-          href: guid-devinterface-keyboard.md
-        - name: GUID_DEVINTERFACE_MEDIUMCHANGER
-          href: guid-devinterface-mediumchanger.md
-        - name: GUID_DEVINTERFACE_MODEM
-          href: guid-devinterface-modem.md
-        - name: GUID_DEVINTERFACE_MONITOR
-          href: guid-devinterface-monitor.md
-        - name: GUID_DEVINTERFACE_MOUSE
-          href: guid-devinterface-mouse.md
-        - name: GUID_DEVINTERFACE_NET
-          href: guid-devinterface-net.md
-        - name: GUID_DEVINTERFACE_OPM
-          href: guid-devinterface-opm.md
-        - name: GUID_DEVINTERFACE_PARALLEL
-          href: guid-devinterface-parallel.md
-        - name: GUID_DEVINTERFACE_PARCLASS
-          href: guid-devinterface-parclass.md
-        - name: GUID_DEVINTERFACE_PARTITION
-          href: guid-devinterface-partition.md
-        - name: GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
-          href: guid-devinterface-serenum-bus-enumerator.md
-        - name: GUID_DEVINTERFACE_SIDESHOW
-          href: guid-devinterface-sideshow.md
-        - name: GUID_DEVINTERFACE_STORAGEPORT
-          href: guid-devinterface-storageport.md
-        - name: 'GUID_DEVINTERFACE_TAPE '
-          href: guid-devinterface-tape.md
-        - name: GUID_DEVINTERFACE_USB_DEVICE
-          href: guid-devinterface-usb-device.md
-        - name: GUID_DEVINTERFACE_USB_HOST_CONTROLLER
-          href: guid-devinterface-usb-host-controller.md
-        - name: GUID_DEVINTERFACE_USB_HUB
-          href: guid-devinterface-usb-hub.md
-        - name: GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
-          href: guid-devinterface-video-output-arrival.md
-        - name: GUID_DEVINTERFACE_VOLUME
-          href: guid-devinterface-volume.md
-        - name: GUID_DEVINTERFACE_WPD
-          href: guid-devinterface-wpd.md
-        - name: GUID_DEVINTERFACE_WPD_PRIVATE
-          href: guid-devinterface-wpd-private.md
-        - name: GUID_DEVINTERFACE_WRITEONCEDISK
-          href: guid-devinterface-writeoncedisk.md
-        - name: GUID_DISPLAY_ADAPTER_INTERFACE
-          href: guid-display-adapter-interface.md
-        - name: GUID_DISPLAY_DEVICE_ARRIVAL
-          href: guid-display-device-arrival.md
-        - name: GUID_IO_VOLUME_DEVICE_INTERFACE
-          href: guid-io-volume-device-interface.md
-        - name: GUID_PARALLEL_DEVICE
-          href: guid-parallel-device.md
-        - name: GUID_PARCLASS_DEVICE
-          href: guid-parclass-device.md
-        - name: GUID_SERENUM_BUS_ENUMERATOR
-          href: guid-serenum-bus-enumerator.md
-        - name: GUID_VIRTUAL_AVC_CLASS
-          href: guid-virtual-avc-class.md
-        - name: TxtSetup.oem 文件的 HardwareIds.scsi.ID 节
-          href: hardwareids-scsi-id-section-of-a-txtsetup-oem-file.md
-        - name: headerPath XML 元素
-          href: headerpath-xml-element.md
-        - name: TxtSetup.oem 文件的 HwComponent 节
-          href: hwcomponent-section-of-a-txtsetup-oem-file.md
-        - name: icon XML 元素
-          href: icon-xml-element.md
-        - name: installAllOrNone XML 元素
-          href: installallornone-xml-element.md
-        - name: installHeaderTitle XML 元素
-          href: installheadertitle-xml-element.md
-        - name: InstallSelectedDriver
-          href: installselecteddriver.md
-        - name: 'KSCATEGORY_ACOUSTIC_ECHO_CANCEL '
-          href: kscategory-acoustic-echo-cancel.md
-        - name: KSCATEGORY_AUDIO
-          href: kscategory-audio.md
-        - name: KSCATEGORY_AUDIO_DEVICE
-          href: kscategory-audio-device.md
-        - name: KSCATEGORY_AUDIO_GFX
-          href: kscategory-audio-gfx.md
-        - name: KSCATEGORY_AUDIO_SPLITTER
-          href: kscategory-audio-splitter.md
-        - name: KSCATEGORY_BDA_IP_SINK
-          href: kscategory-bda-ip-sink.md
-        - name: KSCATEGORY_BDA_NETWORK_EPG
-          href: kscategory-bda-network-epg.md
-        - name: KSCATEGORY_BDA_NETWORK_PROVIDER
-          href: kscategory-bda-network-provider.md
-        - name: KSCATEGORY_BDA_NETWORK_TUNER
-          href: kscategory-bda-network-tuner.md
-        - name: KSCATEGORY_BDA_RECEIVER_COMPONENT
-          href: kscategory-bda-receiver-component.md
-        - name: KSCATEGORY_BDA_TRANSPORT_INFORMATION
-          href: kscategory-bda-transport-information.md
-        - name: 'KSCATEGORY_BRIDGE '
-          href: kscategory-bridge.md
-        - name: KSCATEGORY_CAPTURE
-          href: kscategory-capture.md
-        - name: KSCATEGORY_CLOCK
-          href: kscategory-clock.md
-        - name: 'KSCATEGORY_COMMUNICATIONSTRANSFORM '
-          href: kscategory-communicationstransform.md
-        - name: KSCATEGORY_CROSSBAR
-          href: kscategory-crossbar.md
-        - name: KSCATEGORY_DATACOMPRESSOR
-          href: kscategory-datacompressor.md
-        - name: KSCATEGORY_DATADECOMPRESSOR
-          href: kscategory-datadecompressor.md
-        - name: KSCATEGORY_DATATRANSFORM
-          href: kscategory-datatransform.md
-        - name: 'KSCATEGORY_DRM_DESCRAMBLE '
-          href: kscategory-drm-descramble.md
-        - name: 'KSCATEGORY_ENCODER '
-          href: kscategory-encoder.md
-        - name: KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
-          href: kscategory-escalante-platform-driver.md
-        - name: 'KSCATEGORY_FILESYSTEM '
-          href: kscategory-filesystem.md
-        - name: KSCATEGORY_INTERFACETRANSFORM
-          href: kscategory-interfacetransform.md
-        - name: 'KSCATEGORY_MEDIUMTRANSFORM '
-          href: kscategory-mediumtransform.md
-        - name: KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
-          href: kscategory-microphone-array-processor.md
-        - name: KSCATEGORY_MIXER
-          href: kscategory-mixer.md
-        - name: 'KSCATEGORY_MULTIPLEXER '
-          href: kscategory-multiplexer.md
-        - name: KSCATEGORY_NETWORK
-          href: kscategory-network.md
-        - name: KSCATEGORY_NETWORK_CAMERA
-          href: kscategory-network-camera.md
-        - name: KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
-          href: kscategory-preferred-midiout-device.md
-        - name: KSCATEGORY_PREFERRED_WAVEIN_DEVICE
-          href: kscategory-preferred-wavein-device.md
-        - name: KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
-          href: kscategory-preferred-waveout-device.md
-        - name: KSCATEGORY_PROXY
-          href: kscategory-proxy.md
-        - name: KSCATEGORY_QUALITY
-          href: kscategory-quality.md
-        - name: 'KSCATEGORY_REALTIME '
-          href: kscategory-realtime.md
-        - name: KSCATEGORY_RENDER
-          href: kscategory-render.md
-        - name: KSCATEGORY_SENSOR_CAMERA
-          href: kscategory-sensor-camera.md
-        - name: KSCATEGORY_SPLITTER
-          href: kscategory-splitter.md
-        - name: 'KSCATEGORY_SYNTHESIZER '
-          href: kscategory-synthesizer.md
-        - name: KSCATEGORY_SYSAUDIO
-          href: kscategory-sysaudio.md
-        - name: KSCATEGORY_TEXT
-          href: kscategory-text.md
-        - name: KSCATEGORY_TOPOLOGY
-          href: kscategory-topology.md
-        - name: KSCATEGORY_TVAUDIO
-          href: kscategory-tvaudio.md
-        - name: KSCATEGORY_TVTUNER
-          href: kscategory-tvtuner.md
-        - name: KSCATEGORY_VBICODEC
-          href: kscategory-vbicodec.md
-        - name: KSCATEGORY_VIDEO
-          href: kscategory-video.md
-        - name: KSCATEGORY_VIDEO_CAMERA
-          href: kscategory-video-camera.md
-        - name: KSCATEGORY_VIRTUAL
-          href: kscategory-virtual.md
-        - name: KSCATEGORY_VPMUX
-          href: kscategory-vpmux.md
-        - name: KSCATEGORY_WDMAUD
-          href: kscategory-wdmaud.md
-        - name: KSMFT_CATEGORY_AUDIO_DECODER
-          href: ksmft-category-audio-decoder.md
-        - name: KSMFT_CATEGORY_AUDIO_EFFECT
-          href: ksmft-category-audio-effect.md
-        - name: KSMFT_CATEGORY_AUDIO_ENCODER
-          href: ksmft-category-audio-encoder.md
-        - name: KSMFT_CATEGORY_DEMULTIPLEXER
-          href: ksmft-category-demultiplexer.md
-        - name: KSMFT_CATEGORY_MULTIPLEXER
-          href: ksmft-category-multiplexer.md
-        - name: KSMFT_CATEGORY_OTHER
-          href: ksmft-category-other.md
-        - name: KSMFT_CATEGORY_VIDEO_DECODER
-          href: ksmft-category-video-decoder.md
-        - name: KSMFT_CATEGORY_VIDEO_EFFECT
-          href: ksmft-category-video-effect.md
-        - name: KSMFT_CATEGORY_VIDEO_ENCODER
-          href: ksmft-category-video-encoder.md
-        - name: KSMFT_CATEGORY_VIDEO_PROCESSOR
-          href: ksmft-category-video-processor.md
-        - name: language XML 元素
-          href: language-xml-element.md
-        - name: legacyMode XML 元素
-          href: legacymode-xml-element.md
-        - name: 'MediumChangerClassGuid '
-          href: mediumchangerclassguid.md
-        - name: MOUNTDEV_MOUNTED_DEVICE_GUID
-          href: mountdev-mounted-device-guid.md
-        - name: package XML 元素
-          href: package-xml-element.md
-        - name: 'PartitionClassGuid '
-          href: partitionclassguid.md
-        - name: promptIfDriverIsNotBetter XML 元素
-          href: promptifdriverisnotbetter-xml-element.md
-        - name: quietInstall XML 元素
-          href: quietinstall-xml-element.md
-        - name: scanHardware XML 元素
-          href: scanhardware-xml-element.md
-        - name: search XML 元素
-          href: search-xml-element.md
-        - name: SetupDiGetWizardPage
-          href: setupdigetwizardpage.md
-        - name: SetupDiMoveDuplicateDevice
-          href: setupdimoveduplicatedevice.md
-        - name: SP_ENABLECLASS_PARAMS
-          href: sp-enableclass-params.md
-        - name: SP_INSTALLWIZARD_DATA
-          href: sp-installwizard-data.md
-        - name: SP_MOVEDEV_PARAMS
-          href: sp-movedev-params.md
-        - name: 'StoragePortClassGuid '
-          href: storageportclassguid.md
-        - name: subDirectory XML 元素
-          href: subdirectory-xml-element.md
-        - name: suppressAddRemovePrograms XML 元素
-          href: suppressaddremoveprograms-xml-element.md
-        - name: suppressWizard XML 元素
-          href: suppresswizard-xml-element.md
-        - name: 为供应商提供的系统定义的设备安装程序类
-          href: system-defined-device-setup-classes-available-to-vendors.md
-        - name: 保留给系统使用的系统定义的设备安装程序类
-          href: system-defined-device-setup-classes-reserved-for-system-use.md
-        - name: 'TapeClassGuid '
-          href: tapeclassguid.md
-        - name: 'VolumeClassGuid '
-          href: volumeclassguid.md
-        - name: watermarkPath XML 元素
-          href: watermarkpath-xml-element.md
-        - name: welcomeIntro XML 元素
-          href: welcomeintro-xml-element.md
-        - name: welcomeTitle XML 元素
-          href: welcometitle-xml-element.md
-        - name: 'WriteOnceDiskClassGuid '
-          href: writeoncediskclassguid.md
+    - name: ELAM 先决条件
+      href: elam-prerequisites.md
+    - name: ELAM 驱动程序要求
+      href: elam-driver-requirements.md
+    - name: ELAM 驱动程序提交
+      href: elam-driver-submission.md
+- name: INF 节
+  items:
+    - name: INF ClassInstall32 节
+      href: inf-classinstall32-section.md
+    - name: INF ClassInstall32.Services 节
+      href: inf-classinstall32-services-section.md
+    - name: INF ControlFlags 节
+      href: inf-controlflags-section.md
+    - name: INF DDInstall 节
+      href: inf-ddinstall-section.md
+    - name: INF DDInstall.CoInstallers 节
+      href: inf-ddinstall-coinstallers-section.md
+    - name: INF DDInstall.Components 节
+      href: inf-ddinstall-components-section.md
+    - name: INF DDInstall.Events 节
+      href: inf-ddinstall-events-section.md
+    - name: INF DDInstall.FactDef 节
+      href: inf-ddinstall-factdef-section.md
+    - name: INF DDInstall.HW 节
+      href: inf-ddinstall-hw-section.md
+    - name: INF DDInstall.Interfaces 节
+      href: inf-ddinstall-interfaces-section.md
+    - name: INF DDInstall.LogConfigOverride 节
+      href: inf-ddinstall-logconfigoverride-section.md
+    - name: INF DDInstall.Services 节
+      href: inf-ddinstall-services-section.md
+    - name: INF DDInstall.Software 节
+      href: inf-ddinstall-software-section.md
+    - name: INF DDInstall.WMI 节
+      href: inf-ddinstall-wmi-section.md
+    - name: INF DefaultInstall 节
+      href: inf-defaultinstall-section.md
+    - name: INF DefaultInstall.Services 节
+      href: inf-defaultinstall-services-section.md
+    - name: INF DestinationDirs 节
+      href: inf-destinationdirs-section.md
+    - name: INF InterfaceInstall32 节
+      href: inf-interfaceinstall32-section.md
+    - name: INF Manufacturer 节
+      href: inf-manufacturer-section.md
+    - name: INF Models 节
+      href: inf-models-section.md
+    - name: INF SignatureAttributes 节
+      href: inf-signatureattributes-section.md
+    - name: INF SourceDisksFiles 节
+      href: inf-sourcedisksfiles-section.md
+    - name: INF SourceDisksNames 节
+      href: inf-sourcedisksnames-section.md
+    - name: INF Strings 节
+      href: inf-strings-section.md
+    - name: INF Version 节
+      href: inf-version-section.md
+- name: INF 指令
+  items:
+    - name: INF AddComponent 指令
+      href: inf-addcomponent-directive.md
+    - name: INF AddEventProvider 指令
+      href: inf-addeventprovider-directive.md
+    - name: INF AddInterface 指令
+      href: inf-addinterface-directive.md
+    - name: INF AddPowerSetting 指令
+      href: inf-addpowersetting-directive.md
+    - name: INF AddProperty 指令
+      href: inf-addproperty-directive.md
+    - name: INF AddReg 指令
+      href: inf-addreg-directive.md
+    - name: INF AddService 指令
+      href: inf-addservice-directive.md
+    - name: INF AddSoftware 指令
+      href: inf-addsoftware-directive.md
+    - name: INF BitReg 指令
+      href: inf-bitreg-directive.md
+    - name: INF CopyFiles 指令
+      href: inf-copyfiles-directive.md
+    - name: INF CopyINF 指令
+      href: inf-copyinf-directive.md
+    - name: INF DelFiles 指令
+      href: inf-delfiles-directive.md
+    - name: INF DelProperty 指令
+      href: inf-delproperty-directive.md
+    - name: INF DelReg 指令
+      href: inf-delreg-directive.md
+    - name: INF DelService 指令
+      href: inf-delservice-directive.md
+    - name: INF DriverVer 指令
+      href: inf-driverver-directive.md
+    - name: INF FeatureScore 指令
+      href: inf-featurescore-directive.md
+    - name: INF HardwareId 指令
+      href: inf-hardwareid-directive.md
+    - name: INF Ini2Reg 指令
+      href: inf-ini2reg-directive.md
+    - name: INF LogConfig 指令
+      href: inf-logconfig-directive.md
+    - name: INF ProfileItems 指令
+      href: inf-profileitems-directive.md
+    - name: INF Reboot 指令
+      href: inf-reboot-directive.md
+    - name: INF RegisterDlls 指令
+      href: inf-registerdlls-directive.md
+    - name: INF RenFiles 指令
+      href: inf-renfiles-directive.md
+    - name: INF UnregisterDlls 指令
+      href: inf-unregisterdlls-directive.md
+    - name: INF UpdateIniFields 指令
+      href: inf-updateinifields-directive.md
+    - name: INF UpdateInis 指令
+      href: inf-updateinis-directive.md
+- name: 参考
+  items:
+    - name: BUS1394_CLASS_GUID
+      href: bus1394-class-guid.md
+    - name: 'CdChangerClassGuid '
+      href: cdchangerclassguid.md
+    - name: CdRomClassGuid
+      href: cdromclassguid.md
+    - name: CM_Add_Range
+      href: cm-add-range.md
+    - name: CM_Create_DevNode
+      href: cm-create-devnode.md
+    - name: CM_Create_DevNode_Ex
+      href: cm-create-devnode-ex.md
+    - name: CM_Create_Range_List
+      href: cm-create-range-list.md
+    - name: CM_Delete_Class_Key_Ex
+      href: cm-delete-class-key-ex.md
+    - name: CM_Delete_DevNode_Key_Ex
+      href: cm-delete-devnode-key-ex.md
+    - name: CM_Delete_Range
+      href: cm-delete-range.md
+    - name: CM_Detect_Resource_Conflict
+      href: cm-detect-resource-conflict.md
+    - name: CM_Detect_Resource_Conflict_Ex
+      href: cm-detect-resource-conflict-ex.md
+    - name: CM_Disable_DevNode_Ex
+      href: cm-disable-devnode-ex.md
+    - name: CM_Dup_Range_List
+      href: cm-dup-range-list.md
+    - name: CM_Enable_DevNode_Ex
+      href: cm-enable-devnode-ex.md
+    - name: CM_Find_Range
+      href: cm-find-range.md
+    - name: CM_First_Range
+      href: cm-first-range.md
+    - name: CM_Free_Range_List
+      href: cm-free-range-list.md
+    - name: CM_Get_Class_Key_Name
+      href: cm-get-class-key-name.md
+    - name: CM_Get_Class_Key_Name_Ex
+      href: cm-get-class-key-name-ex.md
+    - name: CM_Get_Class_Name
+      href: cm-get-class-name.md
+    - name: CM_Get_Class_Name_Ex
+      href: cm-get-class-name-ex.md
+    - name: CM_Get_Device_Interface_Alias_Ex
+      href: cm-get-device-interface-alias-ex.md
+    - name: CM_Get_Device_Interface_List_Ex
+      href: cm-get-device-interface-list-ex.md
+    - name: CM_Get_Device_Interface_List_Size_Ex
+      href: cm-get-device-interface-list-size-ex.md
+    - name: CM_Get_DevNode_Custom_Property
+      href: cm-get-devnode-custom-property.md
+    - name: CM_Get_DevNode_Custom_Property_Ex
+      href: cm-get-devnode-custom-property-ex.md
+    - name: CM_Get_DevNode_Registry_Property_Ex
+      href: cm-get-devnode-registry-property-ex.md
+    - name: CM_Get_Global_State
+      href: cm-get-global-state.md
+    - name: CM_Get_Global_State_Ex
+      href: cm-get-global-state-ex.md
+    - name: CM_Get_Hardware_Profile_Info
+      href: cm-get-hardware-profile-info.md
+    - name: CM_Get_Hardware_Profile_Info_Ex
+      href: cm-get-hardware-profile-info-ex.md
+    - name: CM_Intersect_Range_List
+      href: cm-intersect-range-list.md
+    - name: CM_Invert_Range_List
+      href: cm-invert-range-list.md
+    - name: CM_Merge_Range_List
+      href: cm-merge-range-list.md
+    - name: CM_Move_DevNode
+      href: cm-move-devnode.md
+    - name: CM_Move_DevNode_Ex
+      href: cm-move-devnode-ex.md
+    - name: CM_Next_Range
+      href: cm-next-range.md
+    - name: CM_Open_Class_Key_Ex
+      href: cm-open-class-key-ex.md
+    - name: CM_Open_DevNode_Key_Ex
+      href: cm-open-devnode-key-ex.md
+    - name: CM_Query_Arbitrator_Free_Data
+      href: cm-query-arbitrator-free-data.md
+    - name: CM_Query_Arbitrator_Free_Data_Ex
+      href: cm-query-arbitrator-free-data-ex.md
+    - name: CM_Query_Arbitrator_Free_Size
+      href: cm-query-arbitrator-free-size.md
+    - name: CM_Query_Arbitrator_Free_Size_Ex
+      href: cm-query-arbitrator-free-size-ex.md
+    - name: CM_Query_Remove_SubTree
+      href: cm-query-remove-subtree.md
+    - name: CM_Query_Remove_SubTree_Ex
+      href: cm-query-remove-subtree-ex.md
+    - name: CM_Register_Device_Driver
+      href: cm-register-device-driver.md
+    - name: CM_Register_Device_Driver_Ex
+      href: cm-register-device-driver-ex.md
+    - name: CM_Register_Device_Interface
+      href: cm-register-device-interface.md
+    - name: CM_Register_Device_Interface_Ex
+      href: cm-register-device-interface-ex.md
+    - name: CM_Remove_SubTree
+      href: cm-remove-subtree.md
+    - name: CM_Remove_SubTree_Ex
+      href: cm-remove-subtree-ex.md
+    - name: CM_Run_Detection
+      href: cm-run-detection.md
+    - name: CM_Run_Detection_Ex
+      href: cm-run-detection-ex.md
+    - name: CM_Set_DevNode_Registry_Property_Ex
+      href: cm-set-devnode-registry-property-ex.md
+    - name: CM_Set_HW_Prof
+      href: cm-set-hw-prof.md
+    - name: CM_Set_HW_Prof_Ex
+      href: cm-set-hw-prof-ex.md
+    - name: CM_Set_HW_Prof_Flags
+      href: cm-set-hw-prof-flags.md
+    - name: CM_Set_HW_Prof_Flags_Ex
+      href: cm-set-hw-prof-flags-ex.md
+    - name: CM_Setup_DevNode_Ex
+      href: cm-setup-devnode-ex.md
+    - name: CM_Test_Range_Available
+      href: cm-test-range-available.md
+    - name: CM_Uninstall_DevNode_Ex
+      href: cm-uninstall-devnode-ex.md
+    - name: CM_Unregister_Device_Interface
+      href: cm-unregister-device-interface.md
+    - name: CM_Unregister_Device_Interface_Ex
+      href: cm-unregister-device-interface-ex.md
+    - name: CM_WaitNoPendingInstallEvents
+      href: cm-waitnopendinginstallevents.md
+    - name: TxtSetup.oem 文件的 Config.DriverKey 节
+      href: config-driverkey-section-of-a-txtsetup-oem-file.md
+    - name: TxtSetup.oem 文件的 Defaults 节
+      href: defaults-section-of-a-txtsetup-oem-file.md
+    - name: DEFINE_DEVPROPKEY
+      href: define-devpropkey.md
+    - name: deleteBinaries XML 元素
+      href: deletebinaries-xml-element.md
+    - name: DEVPKEY_Device_Address
+      href: devpkey-device-address.md
+    - name: DEVPKEY_Device_BaseContainerId
+      href: devpkey-device-basecontainerid.md
+    - name: DEVPKEY_Device_BusNumber
+      href: devpkey-device-busnumber.md
+    - name: DEVPKEY_Device_BusRelations
+      href: devpkey-device-busrelations.md
+    - name: DEVPKEY_Device_BusReportedDeviceDesc
+      href: devpkey-device-busreporteddevicedesc.md
+    - name: DEVPKEY_Device_BusTypeGuid
+      href: devpkey-device-bustypeguid.md
+    - name: DEVPKEY_Device_Capabilities
+      href: devpkey-device-capabilities.md
+    - name: DEVPKEY_Device_Characteristics
+      href: devpkey-device-characteristics.md
+    - name: DEVPKEY_Device_Children
+      href: devpkey-device-children.md
+    - name: DEVPKEY_Device_Class
+      href: devpkey-device-class.md
+    - name: DEVPKEY_Device_ClassGuid
+      href: devpkey-device-classguid.md
+    - name: DEVPKEY_Device_CompatibleIds
+      href: devpkey-device-compatibleids.md
+    - name: DEVPKEY_Device_ConfigFlags
+      href: devpkey-device-configflags.md
+    - name: DEVPKEY_Device_ContainerId
+      href: devpkey-device-containerid.md
+    - name: DEVPKEY_Device_DeviceDesc
+      href: devpkey-device-devicedesc.md
+    - name: DEVPKEY_Device_DevNodeStatus
+      href: devpkey-device-devnodestatus.md
+    - name: DEVPKEY_Device_DevType
+      href: devpkey-device-devtype.md
+    - name: DEVPKEY_Device_DHP_Rebalance_Policy
+      href: devpkey-device-dhp-rebalance-policy.md
+    - name: DEVPKEY_Device_Driver
+      href: devpkey-device-driver.md
+    - name: DEVPKEY_Device_DriverCoInstallers
+      href: devpkey-device-drivercoinstallers.md
+    - name: DEVPKEY_Device_DriverDate
+      href: devpkey-device-driverdate.md
+    - name: DEVPKEY_Device_DriverDesc
+      href: devpkey-device-driverdesc.md
+    - name: DEVPKEY_Device_DriverInfPath
+      href: devpkey-device-driverinfpath.md
+    - name: DEVPKEY_Device_DriverInfSection
+      href: devpkey-device-driverinfsection.md
+    - name: DEVPKEY_Device_DriverInfSectionExt
+      href: devpkey-device-driverinfsectionext.md
+    - name: DEVPKEY_Device_DriverLogoLevel
+      href: devpkey-device-driverlogolevel.md
+    - name: DEVPKEY_Device_DriverPropPageProvider
+      href: devpkey-device-driverproppageprovider.md
+    - name: DEVPKEY_Device_DriverProvider
+      href: devpkey-device-driverprovider.md
+    - name: DEVPKEY_Device_DriverRank
+      href: devpkey-device-driverrank.md
+    - name: DEVPKEY_Device_DriverVersion
+      href: devpkey-device-driverversion.md
+    - name: DEVPKEY_Device_EjectionRelations
+      href: devpkey-device-ejectionrelations.md
+    - name: DEVPKEY_Device_EnumeratorName
+      href: devpkey-device-enumeratorname.md
+    - name: DEVPKEY_Device_Exclusive
+      href: devpkey-device-exclusive.md
+    - name: DEVPKEY_Device_FirstInstallDate
+      href: devpkey-device-firstinstalldate.md
+    - name: DEVPKEY_Device_FriendlyName
+      href: devpkey-device-friendlyname.md
+    - name: DEVPKEY_Device_GenericDriverInstalled
+      href: devpkey-device-genericdriverinstalled.md
+    - name: DEVPKEY_Device_HardwareIds
+      href: devpkey-device-hardwareids.md
+    - name: DEVPKEY_Device_InstallDate
+      href: devpkey-device-installdate.md
+    - name: DEVPKEY_Device_InstallState
+      href: devpkey-device-installstate.md
+    - name: DEVPKEY_Device_InstanceId
+      href: devpkey-device-instanceid.md
+    - name: DEVPKEY_Device_Legacy
+      href: devpkey-device-legacy.md
+    - name: DEVPKEY_Device_LegacyBusType
+      href: devpkey-device-legacybustype.md
+    - name: DEVPKEY_Device_LocationInfo
+      href: devpkey-device-locationinfo.md
+    - name: DEVPKEY_Device_LocationPaths
+      href: devpkey-device-locationpaths.md
+    - name: DEVPKEY_Device_LowerFilters
+      href: devpkey-device-lowerfilters.md
+    - name: DEVPKEY_Device_Manufacturer
+      href: devpkey-device-manufacturer.md
+    - name: DEVPKEY_Device_MatchingDeviceId
+      href: devpkey-device-matchingdeviceid.md
+    - name: DEVPKEY_Device_ModelId
+      href: devpkey-device-modelid.md
+    - name: DEVPKEY_Device_NoConnectSound
+      href: devpkey-device-noconnectsound.md
+    - name: DEVPKEY_Device_Parent
+      href: devpkey-device-parent.md
+    - name: DEVPKEY_Device_PDOName
+      href: devpkey-device-pdoname.md
+    - name: DEVPKEY_Device_PhysicalDeviceLocation
+      href: devpkey-device-physicaldevicelocation.md
+    - name: DEVPKEY_Device_PowerData
+      href: devpkey-device-powerdata.md
+    - name: 'DEVPKEY_Device_PowerRelations '
+      href: devpkey-device-powerrelations.md
+    - name: DEVPKEY_Device_ProblemCode
+      href: devpkey-device-problemcode.md
+    - name: DEVPKEY_Device_RemovalPolicy
+      href: devpkey-device-removalpolicy.md
+    - name: DEVPKEY_Device_RemovalPolicyDefault
+      href: devpkey-device-removalpolicydefault.md
+    - name: DEVPKEY_Device_RemovalPolicyOverride
+      href: devpkey-device-removalpolicyoverride.md
+    - name: DEVPKEY_Device_RemovalRelations
+      href: devpkey-device-removalrelations.md
+    - name: DEVPKEY_Device_Reported
+      href: devpkey-device-reported.md
+    - name: DEVPKEY_Device_ResourcePickerExceptions
+      href: devpkey-device-resourcepickerexceptions.md
+    - name: DEVPKEY_Device_ResourcePickerTags
+      href: devpkey-device-resourcepickertags.md
+    - name: DEVPKEY_Device_SafeRemovalRequired
+      href: devpkey-device-saferemovalrequired.md
+    - name: DEVPKEY_Device_SafeRemovalRequiredOverride
+      href: devpkey-device-saferemovalrequiredoverride.md
+    - name: DEVPKEY_Device_Security
+      href: devpkey-device-security.md
+    - name: DEVPKEY_Device_SecuritySDS
+      href: devpkey-device-securitysds.md
+    - name: DEVPKEY_Device_Service
+      href: devpkey-device-service.md
+    - name: DEVPKEY_Device_SessionId
+      href: devpkey-device-sessionid.md
+    - name: DEVPKEY_Device_Siblings
+      href: devpkey-device-siblings.md
+    - name: DEVPKEY_Device_UINumber
+      href: devpkey-device-uinumber.md
+    - name: DEVPKEY_Device_UINumberDescFormat
+      href: devpkey-device-uinumberdescformat.md
+    - name: DEVPKEY_Device_UpperFilters
+      href: devpkey-device-upperfilters.md
+    - name: DEVPKEY_DeviceClass_Characteristics
+      href: devpkey-deviceclass-characteristics.md
+    - name: DEVPKEY_DeviceClass_ClassCoInstallers
+      href: devpkey-deviceclass-classcoinstallers.md
+    - name: DEVPKEY_DeviceClass_ClassInstaller
+      href: devpkey-deviceclass-classinstaller.md
+    - name: DEVPKEY_DeviceClass_ClassName
+      href: devpkey-deviceclass-classname.md
+    - name: DEVPKEY_DeviceClass_DefaultService
+      href: devpkey-deviceclass-defaultservice.md
+    - name: DEVPKEY_DeviceClass_DevType
+      href: devpkey-deviceclass-devtype.md
+    - name: DEVPKEY_DeviceClass_DHPRebalanceOptOut
+      href: devpkey-deviceclass-dhprebalanceoptout.md
+    - name: DEVPKEY_DeviceClass_Exclusive
+      href: devpkey-deviceclass-exclusive.md
+    - name: DEVPKEY_DeviceClass_Icon
+      href: devpkey-deviceclass-icon.md
+    - name: DEVPKEY_DeviceClass_IconPath
+      href: devpkey-deviceclass-iconpath.md
+    - name: DEVPKEY_DeviceClass_LowerFilters
+      href: devpkey-deviceclass-lowerfilters.md
+    - name: DEVPKEY_DeviceClass_Name
+      href: devpkey-deviceclass-name.md
+    - name: DEVPKEY_DeviceClass_NoDisplayClass
+      href: devpkey-deviceclass-nodisplayclass.md
+    - name: DEVPKEY_DeviceClass_NoInstallClass
+      href: devpkey-deviceclass-noinstallclass.md
+    - name: DEVPKEY_DeviceClass_NoUseClass
+      href: devpkey-deviceclass-nouseclass.md
+    - name: DEVPKEY_DeviceClass_PropPageProvider
+      href: devpkey-deviceclass-proppageprovider.md
+    - name: DEVPKEY_DeviceClass_Security
+      href: devpkey-deviceclass-security.md
+    - name: DEVPKEY_DeviceClass_SecuritySDS
+      href: devpkey-deviceclass-securitysds.md
+    - name: DEVPKEY_DeviceClass_SilentInstall
+      href: devpkey-deviceclass-silentinstall.md
+    - name: DEVPKEY_DeviceClass_UpperFilters
+      href: devpkey-deviceclass-upperfilters.md
+    - name: DEVPKEY_DeviceDisplay_Category
+      href: devpkey-devicedisplay-category.md
+    - name: DEVPKEY_DeviceInterface_ClassGuid
+      href: devpkey-deviceinterface-classguid.md
+    - name: DEVPKEY_DeviceInterface_DefaultInterface
+      href: devpkey-deviceinterface-defaultinterface.md
+    - name: DEVPKEY_DeviceInterface_Enabled
+      href: devpkey-deviceinterface-enabled.md
+    - name: DEVPKEY_DeviceInterface_FriendlyName
+      href: devpkey-deviceinterface-friendlyname.md
+    - name: DEVPKEY_DeviceInterface_Restricted
+      href: devpkey-deviceinterface-restricted.md
+    - name: DEVPKEY_DrvPkg_BrandingIcon
+      href: devpkey-drvpkg-brandingicon.md
+    - name: DEVPKEY_DrvPkg_DetailedDescription
+      href: devpkey-drvpkg-detaileddescription.md
+    - name: DEVPKEY_DrvPkg_DocumentationLink
+      href: devpkey-drvpkg-documentationlink.md
+    - name: DEVPKEY_DrvPkg_Icon
+      href: devpkey-drvpkg-icon.md
+    - name: DEVPKEY_DrvPkg_Model
+      href: devpkey-drvpkg-model.md
+    - name: DEVPKEY_DrvPkg_VendorWebSite
+      href: devpkey-drvpkg-vendorwebsite.md
+    - name: DEVPKEY_NAME（设备实例）
+      href: devpkey-name--device-instance-.md
+    - name: DEVPKEY_NAME（设备接口）
+      href: devpkey-name--device-interface-.md
+    - name: DEVPKEY_NAME（设备安装程序类）
+      href: devpkey-name--device-setup-class-.md
+    - name: DEVPKEY_Numa_Proximity_Domain
+      href: devpkey-numa-proximity-domain.md
+    - name: DEVPRIVATE_DES
+      href: devprivate-des.md
+    - name: DEVPRIVATE_RANGE
+      href: devprivate-range.md
+    - name: DEVPRIVATE_RESOURCE
+      href: devprivate-resource.md
+    - name: DEVPROP_MASK_TYPE
+      href: devprop-mask-type.md
+    - name: DEVPROP_MASK_TYPEMOD
+      href: devprop-mask-typemod.md
+    - name: DEVPROP_TYPE_BINARY
+      href: devprop-type-binary.md
+    - name: DEVPROP_TYPE_BOOLEAN
+      href: devprop-type-boolean.md
+    - name: DEVPROP_TYPE_BYTE
+      href: devprop-type-byte.md
+    - name: DEVPROP_TYPE_CURRENCY
+      href: devprop-type-currency.md
+    - name: DEVPROP_TYPE_DATE
+      href: devprop-type-date.md
+    - name: DEVPROP_TYPE_DECIMAL
+      href: devprop-type-decimal.md
+    - name: DEVPROP_TYPE_DEVPROPKEY
+      href: devprop-type-devpropkey.md
+    - name: DEVPROP_TYPE_DEVPROPTYPE
+      href: devprop-type-devproptype.md
+    - name: DEVPROP_TYPE_DOUBLE
+      href: devprop-type-double.md
+    - name: DEVPROP_TYPE_EMPTY
+      href: devprop-type-empty.md
+    - name: DEVPROP_TYPE_ERROR
+      href: devprop-type-error.md
+    - name: DEVPROP_TYPE_FILETIME
+      href: devprop-type-filetime.md
+    - name: DEVPROP_TYPE_FLOAT
+      href: devprop-type-float.md
+    - name: DEVPROP_TYPE_GUID
+      href: devprop-type-guid.md
+    - name: DEVPROP_TYPE_INT16
+      href: devprop-type-int16.md
+    - name: DEVPROP_TYPE_INT32
+      href: devprop-type-int32.md
+    - name: DEVPROP_TYPE_INT64
+      href: devprop-type-int64.md
+    - name: DEVPROP_TYPE_NTSTATUS
+      href: devprop-type-ntstatus.md
+    - name: DEVPROP_TYPE_NULL
+      href: devprop-type-null.md
+    - name: DEVPROP_TYPE_SBYTE
+      href: devprop-type-sbyte.md
+    - name: DEVPROP_TYPE_SECURITY_DESCRIPTOR
+      href: devprop-type-security-descriptor.md
+    - name: DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING
+      href: devprop-type-security-descriptor-string.md
+    - name: DEVPROP_TYPE_STRING
+      href: devprop-type-string.md
+    - name: DEVPROP_TYPE_STRING_INDIRECT
+      href: devprop-type-string-indirect.md
+    - name: DEVPROP_TYPE_STRING_LIST
+      href: devprop-type-string-list.md
+    - name: DEVPROP_TYPE_UINT16
+      href: devprop-type-uint16.md
+    - name: DEVPROP_TYPE_UINT32
+      href: devprop-type-uint32.md
+    - name: DEVPROP_TYPE_UINT64
+      href: devprop-type-uint64.md
+    - name: DEVPROP_TYPEMOD_ARRAY
+      href: devprop-typemod-array.md
+    - name: DEVPROP_TYPEMOD_LIST
+      href: devprop-typemod-list.md
+    - name: DEVPROPKEY
+      href: devpropkey.md
+    - name: DIF_ADDPROPERTYPAGE_ADVANCED
+      href: dif-addpropertypage-advanced.md
+    - name: DIF_ADDPROPERTYPAGE_BASIC
+      href: dif-addpropertypage-basic.md
+    - name: DIF_ALLOW_INSTALL
+      href: dif-allow-install.md
+    - name: DIF_ASSIGNRESOURCES
+      href: dif-assignresources.md
+    - name: DIF_CALCDISKSPACE
+      href: dif-calcdiskspace.md
+    - name: DIF_DESTROYPRIVATEDATA
+      href: dif-destroyprivatedata.md
+    - name: DIF_DESTROYWIZARDDATA
+      href: dif-destroywizarddata.md
+    - name: DIF_DETECT
+      href: dif-detect.md
+    - name: DIF_DETECTCANCEL
+      href: dif-detectcancel.md
+    - name: DIF_DETECTVERIFY
+      href: dif-detectverify.md
+    - name: DIF_ENABLECLASS
+      href: dif-enableclass.md
+    - name: DIF_FINISHINSTALL_ACTION
+      href: dif-finishinstall-action.md
+    - name: DIF_FIRSTTIMESETUP
+      href: dif-firsttimesetup.md
+    - name: DIF_FOUNDDEVICE
+      href: dif-founddevice.md
+    - name: DIF_INSTALLCLASSDRIVERS
+      href: dif-installclassdrivers.md
+    - name: DIF_INSTALLDEVICE
+      href: dif-installdevice.md
+    - name: DIF_INSTALLDEVICEFILES
+      href: dif-installdevicefiles.md
+    - name: DIF_INSTALLINTERFACES
+      href: dif-installinterfaces.md
+    - name: DIF_INSTALLWIZARD
+      href: dif-installwizard.md
+    - name: DIF_MOVEDEVICE
+      href: dif-movedevice.md
+    - name: DIF_NEWDEVICEWIZARD_FINISHINSTALL
+      href: dif-newdevicewizard-finishinstall.md
+    - name: DIF_NEWDEVICEWIZARD_POSTANALYZE
+      href: dif-newdevicewizard-postanalyze.md
+    - name: DIF_NEWDEVICEWIZARD_PREANALYZE
+      href: dif-newdevicewizard-preanalyze.md
+    - name: DIF_NEWDEVICEWIZARD_PRESELECT
+      href: dif-newdevicewizard-preselect.md
+    - name: DIF_NEWDEVICEWIZARD_SELECT
+      href: dif-newdevicewizard-select.md
+    - name: DIF_POWERMESSAGEWAKE
+      href: dif-powermessagewake.md
+    - name: DIF_PROPERTIES
+      href: dif-properties.md
+    - name: DIF_PROPERTYCHANGE
+      href: dif-propertychange.md
+    - name: DIF_REGISTER_COINSTALLERS
+      href: dif-register-coinstallers.md
+    - name: DIF_REGISTERDEVICE
+      href: dif-registerdevice.md
+    - name: DIF_REMOVE
+      href: dif-remove.md
+    - name: DIF_SELECTBESTCOMPATDRV
+      href: dif-selectbestcompatdrv.md
+    - name: DIF_SELECTCLASSDRIVERS
+      href: dif-selectclassdrivers.md
+    - name: DIF_SELECTDEVICE
+      href: dif-selectdevice.md
+    - name: DIF_TROUBLESHOOTER
+      href: dif-troubleshooter.md
+    - name: DIF_UNREMOVE
+      href: dif-unremove.md
+    - name: DIF_UPDATEDRIVER_UI
+      href: dif-updatedriver-ui.md
+    - name: DIF_VALIDATECLASSDRIVERS
+      href: dif-validateclassdrivers.md
+    - name: DIF_VALIDATEDRIVER
+      href: dif-validatedriver.md
+    - name: DiskClassGuid
+      href: diskclassguid.md
+    - name: TxtSetup.oem 文件的 Disks 节
+      href: disks-section-of-a-txtsetup-oem-file.md
+    - name: dpinst XML 元素
+      href: dpinst-xml-element.md
+    - name: dpinstTitle XML 元素
+      href: dpinsttitle-xml-element.md
+    - name: enableNotListedLanguages XML 元素
+      href: enablenotlistedlanguages-xml-element.md
+    - name: eula XML 元素
+      href: eula-xml-element.md
+    - name: eulaHeaderTitle XML 元素
+      href: eulaheadertitle-xml-element.md
+    - name: eulaNoButton XML 元素
+      href: eulanobutton-xml-element.md
+    - name: eulaYesButton XML 元素
+      href: eulayesbutton-xml-element.md
+    - name: TxtSetup.oem 文件的 Files.HwComponent.ID 节
+      href: files-hwcomponent-id-section-of-a-txtsetup-oem-file.md
+    - name: finishText XML 元素
+      href: finishtext-xml-element.md
+    - name: finishTitle XML 元素
+      href: finishtitle-xml-element.md
+    - name: FloppyClassGuid
+      href: floppyclassguid.md
+    - name: forceIfDriverIsNotBetter XML 元素
+      href: forceifdriverisnotbetter-xml-element.md
+    - name: group XML 元素
+      href: group-xml-element.md
+    - name: GUID_61883_CLASS
+      href: guid-61883-class.md
+    - name: GUID_AVC_CLASS
+      href: guid-avc-class.md
+    - name: GUID_BTHPORT_DEVICE_INTERFACE
+      href: guid-bthport-device-interface.md
+    - name: GUID_CLASS_COMPORT
+      href: guid-class-comport.md
+    - name: GUID_CLASS_INPUT
+      href: guid-class-input.md
+    - name: GUID_CLASS_KEYBOARD
+      href: guid-class-keyboard.md
+    - name: GUID_CLASS_MODEM
+      href: guid-class-modem.md
+    - name: GUID_CLASS_MOUSE
+      href: guid-class-mouse.md
+    - name: GUID_CLASS_USB_DEVICE
+      href: guid-class-usb-device.md
+    - name: GUID_CLASS_USB_HOST_CONTROLLER
+      href: guid-class-usb-host-controller.md
+    - name: GUID_CLASS_USBHUB
+      href: guid-class-usbhub.md
+    - name: GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
+      href: guid-device-applicationlaunch-button.md
+    - name: GUID_DEVICE_BATTERY
+      href: guid-device-battery.md
+    - name: GUID_DEVICE_LID
+      href: guid-device-lid.md
+    - name: GUID_DEVICE_MEMORY
+      href: guid-device-memory.md
+    - name: GUID_DEVICE_MESSAGE_INDICATOR
+      href: guid-device-message-indicator.md
+    - name: GUID_DEVICE_PROCESSOR
+      href: guid-device-processor.md
+    - name: GUID_DEVICE_SYS_BUTTON
+      href: guid-device-sys-button.md
+    - name: GUID_DEVICE_THERMAL_ZONE
+      href: guid-device-thermal-zone.md
+    - name: GUID_DEVINTERFACE_BRIGHTNESS
+      href: guid-devinterface-brightness.md
+    - name: 'GUID_DEVINTERFACE_CDCHANGER '
+      href: guid-devinterface-cdchanger.md
+    - name: GUID_DEVINTERFACE_CDROM
+      href: guid-devinterface-cdrom.md
+    - name: GUID_DEVINTERFACE_COMPORT
+      href: guid-devinterface-comport.md
+    - name: GUID_DEVINTERFACE_DISK
+      href: guid-devinterface-disk.md
+    - name: GUID_DEVINTERFACE_DISPLAY_ADAPTER
+      href: guid-devinterface-display-adapter.md
+    - name: GUID_DEVINTERFACE_FLOPPY
+      href: guid-devinterface-floppy.md
+    - name: GUID_DEVINTERFACE_HID
+      href: guid-devinterface-hid.md
+    - name: GUID_DEVINTERFACE_I2C
+      href: guid-devinterface-i2c.md
+    - name: GUID_DEVINTERFACE_IMAGE
+      href: guid-devinterface-image.md
+    - name: GUID_DEVINTERFACE_KEYBOARD
+      href: guid-devinterface-keyboard.md
+    - name: GUID_DEVINTERFACE_MEDIUMCHANGER
+      href: guid-devinterface-mediumchanger.md
+    - name: GUID_DEVINTERFACE_MODEM
+      href: guid-devinterface-modem.md
+    - name: GUID_DEVINTERFACE_MONITOR
+      href: guid-devinterface-monitor.md
+    - name: GUID_DEVINTERFACE_MOUSE
+      href: guid-devinterface-mouse.md
+    - name: GUID_DEVINTERFACE_NET
+      href: guid-devinterface-net.md
+    - name: GUID_DEVINTERFACE_OPM
+      href: guid-devinterface-opm.md
+    - name: GUID_DEVINTERFACE_PARALLEL
+      href: guid-devinterface-parallel.md
+    - name: GUID_DEVINTERFACE_PARCLASS
+      href: guid-devinterface-parclass.md
+    - name: GUID_DEVINTERFACE_PARTITION
+      href: guid-devinterface-partition.md
+    - name: GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
+      href: guid-devinterface-serenum-bus-enumerator.md
+    - name: GUID_DEVINTERFACE_SIDESHOW
+      href: guid-devinterface-sideshow.md
+    - name: GUID_DEVINTERFACE_STORAGEPORT
+      href: guid-devinterface-storageport.md
+    - name: 'GUID_DEVINTERFACE_TAPE '
+      href: guid-devinterface-tape.md
+    - name: GUID_DEVINTERFACE_USB_DEVICE
+      href: guid-devinterface-usb-device.md
+    - name: GUID_DEVINTERFACE_USB_HOST_CONTROLLER
+      href: guid-devinterface-usb-host-controller.md
+    - name: GUID_DEVINTERFACE_USB_HUB
+      href: guid-devinterface-usb-hub.md
+    - name: GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
+      href: guid-devinterface-video-output-arrival.md
+    - name: GUID_DEVINTERFACE_VOLUME
+      href: guid-devinterface-volume.md
+    - name: GUID_DEVINTERFACE_WPD
+      href: guid-devinterface-wpd.md
+    - name: GUID_DEVINTERFACE_WPD_PRIVATE
+      href: guid-devinterface-wpd-private.md
+    - name: GUID_DEVINTERFACE_WRITEONCEDISK
+      href: guid-devinterface-writeoncedisk.md
+    - name: GUID_DISPLAY_ADAPTER_INTERFACE
+      href: guid-display-adapter-interface.md
+    - name: GUID_DISPLAY_DEVICE_ARRIVAL
+      href: guid-display-device-arrival.md
+    - name: GUID_IO_VOLUME_DEVICE_INTERFACE
+      href: guid-io-volume-device-interface.md
+    - name: GUID_PARALLEL_DEVICE
+      href: guid-parallel-device.md
+    - name: GUID_PARCLASS_DEVICE
+      href: guid-parclass-device.md
+    - name: GUID_SERENUM_BUS_ENUMERATOR
+      href: guid-serenum-bus-enumerator.md
+    - name: GUID_VIRTUAL_AVC_CLASS
+      href: guid-virtual-avc-class.md
+    - name: TxtSetup.oem 文件的 HardwareIds.scsi.ID 节
+      href: hardwareids-scsi-id-section-of-a-txtsetup-oem-file.md
+    - name: headerPath XML 元素
+      href: headerpath-xml-element.md
+    - name: TxtSetup.oem 文件的 HwComponent 节
+      href: hwcomponent-section-of-a-txtsetup-oem-file.md
+    - name: icon XML 元素
+      href: icon-xml-element.md
+    - name: installAllOrNone XML 元素
+      href: installallornone-xml-element.md
+    - name: installHeaderTitle XML 元素
+      href: installheadertitle-xml-element.md
+    - name: InstallSelectedDriver
+      href: installselecteddriver.md
+    - name: 'KSCATEGORY_ACOUSTIC_ECHO_CANCEL '
+      href: kscategory-acoustic-echo-cancel.md
+    - name: KSCATEGORY_AUDIO
+      href: kscategory-audio.md
+    - name: KSCATEGORY_AUDIO_DEVICE
+      href: kscategory-audio-device.md
+    - name: KSCATEGORY_AUDIO_GFX
+      href: kscategory-audio-gfx.md
+    - name: KSCATEGORY_AUDIO_SPLITTER
+      href: kscategory-audio-splitter.md
+    - name: KSCATEGORY_BDA_IP_SINK
+      href: kscategory-bda-ip-sink.md
+    - name: KSCATEGORY_BDA_NETWORK_EPG
+      href: kscategory-bda-network-epg.md
+    - name: KSCATEGORY_BDA_NETWORK_PROVIDER
+      href: kscategory-bda-network-provider.md
+    - name: KSCATEGORY_BDA_NETWORK_TUNER
+      href: kscategory-bda-network-tuner.md
+    - name: KSCATEGORY_BDA_RECEIVER_COMPONENT
+      href: kscategory-bda-receiver-component.md
+    - name: KSCATEGORY_BDA_TRANSPORT_INFORMATION
+      href: kscategory-bda-transport-information.md
+    - name: 'KSCATEGORY_BRIDGE '
+      href: kscategory-bridge.md
+    - name: KSCATEGORY_CAPTURE
+      href: kscategory-capture.md
+    - name: KSCATEGORY_CLOCK
+      href: kscategory-clock.md
+    - name: 'KSCATEGORY_COMMUNICATIONSTRANSFORM '
+      href: kscategory-communicationstransform.md
+    - name: KSCATEGORY_CROSSBAR
+      href: kscategory-crossbar.md
+    - name: KSCATEGORY_DATACOMPRESSOR
+      href: kscategory-datacompressor.md
+    - name: KSCATEGORY_DATADECOMPRESSOR
+      href: kscategory-datadecompressor.md
+    - name: KSCATEGORY_DATATRANSFORM
+      href: kscategory-datatransform.md
+    - name: 'KSCATEGORY_DRM_DESCRAMBLE '
+      href: kscategory-drm-descramble.md
+    - name: 'KSCATEGORY_ENCODER '
+      href: kscategory-encoder.md
+    - name: KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
+      href: kscategory-escalante-platform-driver.md
+    - name: 'KSCATEGORY_FILESYSTEM '
+      href: kscategory-filesystem.md
+    - name: KSCATEGORY_INTERFACETRANSFORM
+      href: kscategory-interfacetransform.md
+    - name: 'KSCATEGORY_MEDIUMTRANSFORM '
+      href: kscategory-mediumtransform.md
+    - name: KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
+      href: kscategory-microphone-array-processor.md
+    - name: KSCATEGORY_MIXER
+      href: kscategory-mixer.md
+    - name: 'KSCATEGORY_MULTIPLEXER '
+      href: kscategory-multiplexer.md
+    - name: KSCATEGORY_NETWORK
+      href: kscategory-network.md
+    - name: KSCATEGORY_NETWORK_CAMERA
+      href: kscategory-network-camera.md
+    - name: KSCATEGORY_PREFERRED_MIDIOUT_DEVICE
+      href: kscategory-preferred-midiout-device.md
+    - name: KSCATEGORY_PREFERRED_WAVEIN_DEVICE
+      href: kscategory-preferred-wavein-device.md
+    - name: KSCATEGORY_PREFERRED_WAVEOUT_DEVICE
+      href: kscategory-preferred-waveout-device.md
+    - name: KSCATEGORY_PROXY
+      href: kscategory-proxy.md
+    - name: KSCATEGORY_QUALITY
+      href: kscategory-quality.md
+    - name: 'KSCATEGORY_REALTIME '
+      href: kscategory-realtime.md
+    - name: KSCATEGORY_RENDER
+      href: kscategory-render.md
+    - name: KSCATEGORY_SENSOR_CAMERA
+      href: kscategory-sensor-camera.md
+    - name: KSCATEGORY_SPLITTER
+      href: kscategory-splitter.md
+    - name: 'KSCATEGORY_SYNTHESIZER '
+      href: kscategory-synthesizer.md
+    - name: KSCATEGORY_SYSAUDIO
+      href: kscategory-sysaudio.md
+    - name: KSCATEGORY_TEXT
+      href: kscategory-text.md
+    - name: KSCATEGORY_TOPOLOGY
+      href: kscategory-topology.md
+    - name: KSCATEGORY_TVAUDIO
+      href: kscategory-tvaudio.md
+    - name: KSCATEGORY_TVTUNER
+      href: kscategory-tvtuner.md
+    - name: KSCATEGORY_VBICODEC
+      href: kscategory-vbicodec.md
+    - name: KSCATEGORY_VIDEO
+      href: kscategory-video.md
+    - name: KSCATEGORY_VIDEO_CAMERA
+      href: kscategory-video-camera.md
+    - name: KSCATEGORY_VIRTUAL
+      href: kscategory-virtual.md
+    - name: KSCATEGORY_VPMUX
+      href: kscategory-vpmux.md
+    - name: KSCATEGORY_WDMAUD
+      href: kscategory-wdmaud.md
+    - name: KSMFT_CATEGORY_AUDIO_DECODER
+      href: ksmft-category-audio-decoder.md
+    - name: KSMFT_CATEGORY_AUDIO_EFFECT
+      href: ksmft-category-audio-effect.md
+    - name: KSMFT_CATEGORY_AUDIO_ENCODER
+      href: ksmft-category-audio-encoder.md
+    - name: KSMFT_CATEGORY_DEMULTIPLEXER
+      href: ksmft-category-demultiplexer.md
+    - name: KSMFT_CATEGORY_MULTIPLEXER
+      href: ksmft-category-multiplexer.md
+    - name: KSMFT_CATEGORY_OTHER
+      href: ksmft-category-other.md
+    - name: KSMFT_CATEGORY_VIDEO_DECODER
+      href: ksmft-category-video-decoder.md
+    - name: KSMFT_CATEGORY_VIDEO_EFFECT
+      href: ksmft-category-video-effect.md
+    - name: KSMFT_CATEGORY_VIDEO_ENCODER
+      href: ksmft-category-video-encoder.md
+    - name: KSMFT_CATEGORY_VIDEO_PROCESSOR
+      href: ksmft-category-video-processor.md
+    - name: language XML 元素
+      href: language-xml-element.md
+    - name: legacyMode XML 元素
+      href: legacymode-xml-element.md
+    - name: 'MediumChangerClassGuid '
+      href: mediumchangerclassguid.md
+    - name: MOUNTDEV_MOUNTED_DEVICE_GUID
+      href: mountdev-mounted-device-guid.md
+    - name: package XML 元素
+      href: package-xml-element.md
+    - name: 'PartitionClassGuid '
+      href: partitionclassguid.md
+    - name: promptIfDriverIsNotBetter XML 元素
+      href: promptifdriverisnotbetter-xml-element.md
+    - name: quietInstall XML 元素
+      href: quietinstall-xml-element.md
+    - name: scanHardware XML 元素
+      href: scanhardware-xml-element.md
+    - name: search XML 元素
+      href: search-xml-element.md
+    - name: SetupDiGetWizardPage
+      href: setupdigetwizardpage.md
+    - name: SetupDiMoveDuplicateDevice
+      href: setupdimoveduplicatedevice.md
+    - name: SP_ENABLECLASS_PARAMS
+      href: sp-enableclass-params.md
+    - name: SP_INSTALLWIZARD_DATA
+      href: sp-installwizard-data.md
+    - name: SP_MOVEDEV_PARAMS
+      href: sp-movedev-params.md
+    - name: 'StoragePortClassGuid '
+      href: storageportclassguid.md
+    - name: subDirectory XML 元素
+      href: subdirectory-xml-element.md
+    - name: suppressAddRemovePrograms XML 元素
+      href: suppressaddremoveprograms-xml-element.md
+    - name: suppressWizard XML 元素
+      href: suppresswizard-xml-element.md
+    - name: 为供应商提供的系统定义的设备安装程序类
+      href: system-defined-device-setup-classes-available-to-vendors.md
+    - name: 保留给系统使用的系统定义的设备安装程序类
+      href: system-defined-device-setup-classes-reserved-for-system-use.md
+    - name: 'TapeClassGuid '
+      href: tapeclassguid.md
+    - name: 'VolumeClassGuid '
+      href: volumeclassguid.md
+    - name: watermarkPath XML 元素
+      href: watermarkpath-xml-element.md
+    - name: welcomeIntro XML 元素
+      href: welcomeintro-xml-element.md
+    - name: welcomeTitle XML 元素
+      href: welcometitle-xml-element.md
+    - name: 'WriteOnceDiskClassGuid '
+      href: writeoncediskclassguid.md

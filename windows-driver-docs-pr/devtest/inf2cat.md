@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80739fb9c8226b4c35c4799f7881a9586bb47dc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 718ae1c3a1d815ac4ad1d05cba01493b4df7ca3b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360769"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405113"
 ---
 # <a name="inf2cat"></a>Inf2Cat
 
@@ -51,6 +51,25 @@ Inf2Cat 工具位于 Program Files\\Windows 工具包\\8.0\\bin\\x86 或 Program
 
 |Windows 版本|版本标识符|
 |--- |--- |
+|Windows 10 x86 19 H 1 版本|10_19H1_X86|
+|Windows 10 x64 19 H 1 版本|10_19H1_X64|
+|Windows 10 ARM64 19 H 1 版本|10_19H1_ARM64|
+|Windows 10 x86 RS5 Edition|10_RS5_X86|
+|Windows 10 x64 RS5 Edition|10_RS5_X64|
+|Windows 10 ARM64 RS5 版|10_RS5_ARM64|
+|Windows Server RS5 x64 Edition|ServerRS5_X64|
+|Windows Server RS5 ARM64 Edition|ServerRS5_ARM64|
+|Windows 10 x86 版 RS4 Edition|10_RS4_X86|
+|Windows 10 x64 版 RS4 Edition|10_RS4_X64|
+|Windows 10 ARM64 RS4 版|10_RS4_ARM64|
+|Windows 10 x86 RS3 Edition|10_RS3_X86|
+|Windows 10 x64 RS3 Edition|10_RS3_X64|
+|Windows 10 ARM64 RS3 版|10_RS3_ARM64|
+|Windows 10 x86 RS2 Edition|10_RS2_X86|
+|Windows 10 x64 RS2 Edition|10_RS2_X64|
+|Windows 10 x86 RS1 Edition|10_AU_X86|
+|Windows 10 x64 RS1 Edition|10_AU_X64|
+|Windows Server 2016 x64 Edition|SERVER2016_X64|
 |Windows 10 x86 Edition|10_X86|
 |Windows 10 x64 Edition|10_X64|
 |Windows Server 2016|Server10_X64|
@@ -70,6 +89,13 @@ Inf2Cat 工具位于 Program Files\\Windows 工具包\\8.0\\bin\\x86 或 Program
 |Windows Server 2008 x64 Edition|Server2008_X64|
 |Windows Server 2008 Itanium Edition|Server2008_IA64|
 |Windows Server 2008 x86 Edition|Server2008_X86|
+|Windows Vista x64 Edition|Vista_X64|
+|Windows Vista x86 Edition|Vista_X86|
+|Windows XP x64 Edition|XP_X64|
+|Windows XP x86 Edition|XP_X86|
+|Windows Server 2003 x64 Edition|Server2003_X64|
+|Windows Server 2003 Itanium Edition|Server2003_IA64|
+|Windows Server 2003 x86 Edition|Server2003_X86|
 
 > [!NOTE]
 > 从 Windows Server 2008 R2 开始，Windows server 操作系统将不再支持基于 x86 的平台。
