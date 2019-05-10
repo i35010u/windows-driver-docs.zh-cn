@@ -3,12 +3,12 @@ Description: 了解有关客户端的基于 KMDF 的 USB 驱动程序的源代�
 title: USB 客户端驱动程序代码结构 (KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 739708ddef79aca1fba280b640b61615cb5da598
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7e56f8d8a4aedaafeec4343419fd918a6879e67
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355151"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405084"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>了解 USB 客户端驱动程序代码结构 (KMDF)
 
@@ -17,9 +17,9 @@ ms.locfileid: "63355151"
 
 以下各节提供有关模板代码的信息。
 
--   [驱动程序源代码](#driver)
--   [设备的源代码](#device)
--   [队列的源代码](#queue)
+-   [驱动程序源代码](#driver-source-code)
+-   [设备的源代码](#device-source-code)
+-   [队列的源代码](#queue-source-code)
 -   [相关的主题](#related-topics)
 
 有关生成 KMDF 模板代码的说明，请参阅[如何编写第一个 USB 客户端驱动程序 (KMDF)](tutorial--write-your-first-usb-client-driver--kmdf-.md)。
@@ -291,7 +291,7 @@ MyUSBDriver_CreateDevice(
         之后[ **WdfDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff545926)调用完成后，客户端驱动程序将收到新的 framework 设备对象，它存储设备的框架所分配的内存块的指针的句柄上下文。 客户端驱动程序可以立即获得一个指向设备上下文通过调用**WdfObjectGet\_设备\_上下文**宏。
 
 -   通过调用注册的客户端驱动程序的设备接口的 GUID [ **WdfDeviceCreateDeviceInterface** ](https://msdn.microsoft.com/library/windows/hardware/ff545935)方法。 应用程序能够通过使用此 GUID 与驱动程序。 在标题中，声明的 GUID 常量 public.h。
--   设置到设备的 I/O 传输队列。 模板代码定义 MyUSBDriver\_QueueInitialize，设置队列，其中讨论了一个帮助器例程[排队源代码](#queue)部分。
+-   设置到设备的 I/O 传输队列。 模板代码定义 MyUSBDriver\_QueueInitialize，设置队列，其中讨论了一个帮助器例程[排队源代码](#queue-source-code)部分。
 
 ## <a name="device-source-code"></a>设备的源代码
 

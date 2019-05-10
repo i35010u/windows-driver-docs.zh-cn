@@ -3,12 +3,12 @@ Description: 设备描述符包含有关 USB 设备作为一个整体的信息�
 title: USB 设备描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc586d3575f648784d45b99544e029d0d3af7c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07b95f16db27690c9221eae598a5ca8b2e2519f4
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331631"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405059"
 ---
 # <a name="usb-device-descriptors"></a>USB 设备描述符
 
@@ -21,7 +21,7 @@ ms.locfileid: "63331631"
 
 获得通过控制传输的设备描述符。 在传输中的请求类型是获取描述符和接收方是设备。 客户端驱动程序可以启动该传输中通过两种方式： 使用框架 USB 目标设备对象或发送的请求信息 URB。
 
--   [获取设备描述符](#getting--the-device-descriptor)
+-   [获取设备描述符](#getting-the-device-descriptor)
 -   [示例设备描述符](#sample-device-descriptor)
 
 ## <a name="getting-the-device-descriptor"></a>获取设备描述符

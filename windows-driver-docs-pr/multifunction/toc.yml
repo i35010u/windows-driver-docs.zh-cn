@@ -1,9 +1,11 @@
 - name: 多功能设备驱动程序设计指南
-  href: index.md
   items:
+    - name: 多功能设备驱动程序设计指南
+      href: index.md
     - name: 支持多功能电脑卡设备
-      href: supporting-multifunction-pc-card-devices.md
       items:
+        - name: 支持多功能电脑卡设备
+          href: supporting-multifunction-pc-card-devices.md
         - name: 支持符合多功能标准的电脑卡
           href: supporting-pc-cards-that-conform-to-the-multifunction-standard.md
         - name: 支持具有不完整配置寄存器地址的电脑卡
@@ -17,8 +19,9 @@
     - name: 使用系统提供的多功能总线驱动程序
       href: using-the-system-supplied-multifunction-bus-driver.md
     - name: 为多功能设备创建资源映射
-      href: creating-resource-maps-for-a-multifunction-device.md
       items:
+        - name: 为多功能设备创建资源映射
+          href: creating-resource-maps-for-a-multifunction-device.md
         - name: 创建标准资源映射
           href: creating-standard-resource-maps.md
         - name: 创建可变资源映射

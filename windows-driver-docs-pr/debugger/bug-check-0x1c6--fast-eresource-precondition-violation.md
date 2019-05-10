@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e37240bf8b0339b69aad892f395b007fa0a3ef58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d54794ef44e811c5bb6b696f6a6d5f3f00f6f88e
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361684"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501561"
 ---
 # <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6：快速\_ERESOURCE\_不满足前提条件\_冲突
 
@@ -128,6 +128,8 @@ ms.locfileid: "63361684"
 
 当前线程正在执行对快速资源例程的无效调用。
 
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 ## <a name="see-also"></a>请参阅
 ----------

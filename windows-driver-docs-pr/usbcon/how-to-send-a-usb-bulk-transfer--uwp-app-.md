@@ -3,27 +3,14 @@ Description: 了解有关 USB 大容量传输以及如何启动 UWP 应用中所
 title: 如何将发送 USB 大容量传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1912e02c55ab98b462982c929600b9e8a1203595
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ddd592c1e597d57ee53793df23234f803a75a18
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366036"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405093"
 ---
 # <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>如何将发送 USB 大容量传输请求（UWP 应用）
-
-
-**摘要**
-
--   从大容量管道进行读取
--   编写出管道大容量
--   修改大容量管道策略
-
-**重要的 Api**
-
--   **UsbBulkInPipe UsbBulkOutPipe**
--   **DataReader DataWriter**
--   **UsbReadOptions UsbWriteOptions**
 
 在本主题中，您将了解 USB 大容量传输，以及如何启动 UWP 应用中所使用的 USB 设备进行通信的传输请求。
 
@@ -35,32 +22,63 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 
 您的应用程序还可以通过设置某些策略标志来修改管道的行为。 例如对于读取请求，可以设置一个标志，在管道上的停止条件，会自动清除。 有关这些标志的信息，请参阅[ **UsbReadOptions** ](https://msdn.microsoft.com/library/windows/apps/dn278430)并[ **UsbWriteOptions**](https://msdn.microsoft.com/library/windows/apps/dn278464)。
 
-## <a name="before-you-start"></a>开始之前...
+## <a name="before-you-start"></a>开始之前
 
-
--   则必须打开设备并获得[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象。 读取[如何连接到 USB 设备 （UWP 应用）](how-to-connect-to-a-usb-device--uwp-app-.md)。
--   可以看到在 CustomUsbDeviceAccess 示例中，Scenario4 本主题中所示的完整代码\_BulkPipes 文件。
+* 则必须打开设备并获得[ **UsbDevice** ](https://msdn.microsoft.com/library/windows/apps/dn263883)对象。 读取[如何连接到 USB 设备 （UWP 应用）](how-to-connect-to-a-usb-device--uwp-app-.md)。
+* 您所见本主题中所示的完整代码[CustomUsbDeviceAccess 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)，Scenario4\_BulkPipes 文件。
 
 ## <a name="step-1-get-the-bulk-pipe-object"></a>第 1 步：获取大容量的管道对象
 
-
 若要启动传输请求，必须获取对大容量的管道对象的引用 ([**UsbBulkOutPipe** ](https://msdn.microsoft.com/library/windows/apps/dn297647)或[ **UsbBulkInPipe**](https://msdn.microsoft.com/library/windows/apps/dn297573))。 通过枚举的所有接口的所有设置，可以获取管道。 但是，对于数据传输必须仅使用管道的活动设置。 如果管道对象为 null，如果关联的终结点不在活动的设置。
 
-如果想要...使用此属性的值将数据发送到大容量管道，获取对的引用[ **UsbBulkOutPipe**](https://msdn.microsoft.com/library/windows/apps/dn297647)。
-[**UsbDevice.DefaultInterface.BulkOutPipes\[n\]**  ](https://msdn.microsoft.com/library/windows/apps/dn264288)如果设备配置公开一个 USB 接口。
-[**UsbDevice.Configuration.UsbInterfaces\[m\]。BulkOutPipes\[n\]**  ](https://msdn.microsoft.com/library/windows/apps/dn264288)用于枚举出通过管道传入设备支持的多个接口的大容量。
-[**UsbInterface.InterfaceSettings\[m\]。BulkOutEndpoints \[n\]。管道**](https://msdn.microsoft.com/library/windows/apps/dn278424)用于枚举出管道由在接口中的设置定义大容量。
-[**UsbEndpointDescriptor.AsBulkOutEndpointDescriptor.Pipe** ](https://msdn.microsoft.com/library/windows/apps/dn278424)的输出终结点在大容量的终结点描述符，从中获取管道对象。
-从大容量管道接收数据，可以获取[ **UsbBulkInPipe** ](https://msdn.microsoft.com/library/windows/apps/dn297573)对象[ **UsbDevice.DefaultInterface.BulkInPipes\[n\]** ](https://msdn.microsoft.com/library/windows/apps/dn264287)如果设备配置公开一个 USB 接口。
-[**UsbDevice.Configuration.UsbInterfaces\[m\]。BulkInPipes\[n\]**  ](https://msdn.microsoft.com/library/windows/apps/dn264287)用于枚举大容量中通过管道传入设备支持的多个接口。
-[**UsbInterface.InterfaceSettings\[m\]。BulkInEndpoints \[n\]。管道**](https://msdn.microsoft.com/library/windows/apps/dn297567)用于枚举大容量在管道定义的接口中的设置。
-[**UsbEndpointDescriptor.AsBulkInEndpointDescriptor.Pipe** ](https://msdn.microsoft.com/library/windows/apps/dn297567)的大容量 IN 终结点的终结点描述符，从中获取管道对象。
-
+<table>
+  <thead>
+    <tr>
+      <th>如果想要...</th>
+      <th>使用此属性的值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <tr>
+      <td rowspan="5">将数据发送到大容量管道、 获取对的引用<a href="https://msdn.microsoft.com/library/windows/apps/dn297647"> <strong>UsbBulkOutPipe</strong></a>。</td>
+      </tr>
+      <tr>
+      <td><a href="https://msdn.microsoft.com/library/windows/apps/dn264288"><strong>UsbDevice.DefaultInterface.BulkOutPipes[n]</strong> </a>如果设备配置公开一个 USB 接口。</td>
+      </tr>
+      <tr>
+      <td><a href="https://msdn.microsoft.com/library/windows/apps/dn264288"><strong>UsbDevice.Configuration.UsbInterfaces[m]。[N] BulkOutPipes</strong></a>) 用于枚举出通过管道传入设备支持的多个接口的大容量。</td>
+      </tr>
+       <td><a href="https://msdn.microsoft.com/library/windows/apps/dn278424"><strong>UsbInterface.InterfaceSettings\[m\]。BulkOutEndpoints [n]。管道</strong></a>用于枚举出管道由在接口中的设置定义大容量。</td>
+      </tr>
+      <tr>
+      <td><a href="https://msdn.microsoft.com/library/windows/apps/dn278424"><strong>UsbEndpointDescriptor.AsBulkOutEndpointDescriptor.Pipe</strong> </a>的输出终结点在大容量的终结点描述符，从中获取管道对象。
+      </td>
+      </tr>
+    </tr>
+    <tr>
+      <tr>
+        <td rowspan="5">从大容量管道接收数据，可以获取<a href="https://msdn.microsoft.com/library/windows/apps/dn297573"> <strong>UsbBulkInPipe</strong> </a>对象</td>
+      </tr>
+       <tr>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn264287"><strong>UsbDevice.DefaultInterface.BulkInPipes[n]</strong> </a>如果设备配置公开一个 USB 接口。</td>
+       </tr>
+       <tr>
+       <td><a href="https://msdn.microsoft.com/library/windows/apps/dn264287"><strong>UsbDevice.Configuration.UsbInterfaces[m]。[N] BulkInPipes</strong> </a>用于枚举大容量中通过管道传入设备支持的多个接口。</td>
+       </tr>
+       <tr>
+       <td><a href="https://msdn.microsoft.com/library/windows/apps/dn297567"><strong>UsbInterface.InterfaceSettings[m]。BulkInEndpoints [n]。管道</strong></a>用于枚举大容量在管道定义的接口中的设置。</td>
+       </tr>
+       <tr>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn297567"><strong>UsbEndpointDescriptor.AsBulkInEndpointDescriptor.Pipe</strong> </a>的大容量 IN 终结点的终结点描述符，从中获取管道对象。</td>
+      </tr>
+    </tr>
+  </tbody>
+</table>
 
 注意： 应为活动设置中，或需要 null 检查。
 
 ## <a name="step-2-configure-the-bulk-pipe-optional"></a>步骤 2：配置大容量管道 （可选）
-
 
 可以修改行为的读取或写入操作，通过检索到的大容量管道上设置某些标志。
 
@@ -81,7 +99,7 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 <tr class="odd">
 <td><p>自动清除终结点上的任何错误条件而无需停止数据流</p></td>
 <td><strong>AutoClearStall</strong>
-<p>有关详细信息，请参阅<a href="#stall" data-raw-source="[Clearing stall conditions](#stall)">清除停滞条件</a>。 此标志适用于读取和写入传输。</p></td>
+<p>有关详细信息，请参阅<a href="#clearing-stall-conditions">清除停滞条件</a>。 此标志适用于读取和写入传输。</p></td>
 </tr>
 <tr class="even">
 <td><p>将多个读取的请求发送的最大效率。 通过绕过错误检查来提高性能。</p></td>
@@ -110,25 +128,21 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 </tbody>
 </table>
 
-
-
 ## <a name="step-3-set-up-the-data-stream"></a>步骤 3:设置数据流
-
 
 由设备发送大容量数据，如大容量管道上的输入流中所示收到数据。 下面是获取输入的流的步骤：
 
-1.  获取通过获取对输入流的引用[ **UsbBulkInPipe.InputStream** ](https://msdn.microsoft.com/library/windows/apps/dn297601)属性。
-2.  创建[ **DataReader** ](https://msdn.microsoft.com/library/windows/apps/br208119)对象指定输入的流中[ **DataReader 构造函数**](https://msdn.microsoft.com/library/windows/apps/br208130)。
+1. 获取通过获取对输入流的引用[ **UsbBulkInPipe.InputStream** ](https://msdn.microsoft.com/library/windows/apps/dn297601)属性。
+2. 创建[ **DataReader** ](https://msdn.microsoft.com/library/windows/apps/br208119)对象指定输入的流中[ **DataReader 构造函数**](https://msdn.microsoft.com/library/windows/apps/br208130)。
 
 若要将数据写入到设备，应用必须在大容量管道上写入到输出流。 以下是准备的输出流的步骤：
 
-1.  通过获取获取到输出流的引用[ **UsbBulkOutPipe.OutputStream** ](https://msdn.microsoft.com/library/windows/apps/dn297669)属性。
-2.  创建[ **DataWriter** ](https://msdn.microsoft.com/library/windows/apps/br208154)对象指定输出流中的[ **DataWriter** ](https://msdn.microsoft.com/library/windows/apps/br208167)构造函数。
-3.  填充与输出流关联的数据缓冲区。
-4.  具体取决于数据类型，传输将数据写入到输出流通过调用[ **DataWriter 方法**](https://msdn.microsoft.com/library/windows/apps/br208167)，如[ **WriteBytes**](https://msdn.microsoft.com/library/windows/apps/br208179)。
+1. 通过获取获取到输出流的引用[ **UsbBulkOutPipe.OutputStream** ](https://msdn.microsoft.com/library/windows/apps/dn297669)属性。
+2. 创建[ **DataWriter** ](https://msdn.microsoft.com/library/windows/apps/br208154)对象指定输出流中的[ **DataWriter** ](https://msdn.microsoft.com/library/windows/apps/br208167)构造函数。
+3. 填充与输出流关联的数据缓冲区。
+4. 具体取决于数据类型，传输将数据写入到输出流通过调用[ **DataWriter 方法**](https://msdn.microsoft.com/library/windows/apps/br208167)，如[ **WriteBytes**](https://msdn.microsoft.com/library/windows/apps/br208179)。
 
 ## <a name="step-4-start-an-asynchronous-transfer-operation"></a>步骤 4：启动异步传输操作
-
 
 大容量传输都是通过异步操作启动。
 
@@ -138,11 +152,9 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 
 ## <a name="step-5-get-results-of-the-read-transfer-operation"></a>步骤 5：获取读取的传输操作的结果
 
-
 异步数据操作完成后，可以获取读取或写入从任务对象的字节数。 对于读取操作，调用[ **DataReader 方法**](https://msdn.microsoft.com/library/windows/apps/br208119)，如[ **ReadBytes**](https://msdn.microsoft.com/library/windows/apps/br208139)，以从输入流读取数据。
 
 ## <a name="clearing-stall-conditions"></a>清除停滞条件
-
 
 有时，应用程序可能会遇到失败的数据传输。 故障的转移可能导致在终结点上的停止条件。 只要终结点已停止，不能写入或读取数据。 若要继续与数据传输，应用必须清除关联管道上的停止条件。
 
@@ -152,12 +164,9 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
 
 **请注意**停滞条件并不表示空的终结点。 如果终结点中没有数据，在传输完成，但长度为零字节。
 
-
-
 对于读取操作，可能需要在开始新的转移请求之前清除挂起的管道中的数据。 若要执行此操作，调用[ **UsbBulkInPipe.FlushBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff551975)方法。
 
 ## <a name="usb-bulk-transfer-code-example"></a>USB 大容量传输的代码示例
-
 
 此代码示例演示如何向管道写入的大容量。 该示例将数据发送到 OUT 上的默认接口的管道的第一个大容量。 它会配置管道以将长度为零的数据包传输结束时发送。 传输完成后，显示的字节数。
 
@@ -223,11 +232,3 @@ USB 全速、 高速度、 和 SuperSpeed 设备可以支持大容量终结点�
         }
     }
 ```
-
-
-
-
-
-
-
-

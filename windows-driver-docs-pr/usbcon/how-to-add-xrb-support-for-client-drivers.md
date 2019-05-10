@@ -3,31 +3,22 @@ Description: 本主题介绍 USB 客户端驱动程序如何使用 Windows 驱�
 title: 分配和构建 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f928ac9a8d769e60d98867db4bb0dd6ccfd377e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d09e3df17b36199ecae09fd6ffcaaaf7a19d763e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381073"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405049"
 ---
 # <a name="allocating-and-building-urbs"></a>分配和构建 URB
 
-
-本主题介绍 USB 客户端驱动程序如何使用 Windows 驱动程序模型 (WDM) 驱动程序例程来分配和设置 URB 格式之前将请求发送到由 Microsoft 提供的 USB 驱动程序堆栈。
+USB 客户端驱动程序可以使用 Windows 驱动程序模型 (WDM) 驱动程序例程来分配和设置 URB 格式之前将请求发送到由 Microsoft 提供的 USB 驱动程序堆栈。
 
 客户端驱动程序使用 URB 包中的 USB 驱动程序堆栈的较低的驱动程序将处理请求所需的所有信息。 在 Windows 操作系统，URB 中所述[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构。
 
 Microsoft 可提供大量[USB 客户端驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#client)。 使用这些例程，USB 客户端驱动程序可以生成 URB 为特定的指定操作的请求，并将其转发下 USB 堆栈。 如果您愿意，您可以设计您的客户端驱动程序支持的操作，而无需构建自己的 URB 请求调用库例程。
 
-本主题包含以下各节：
-
--   [在 Windows 7 及更早版本的 URB 分配](#urb-allocation-in-windows-7-and-earlier)
--   [Windows 8 中 URB 分配](#urb-allocation-in-windows-8)
--   [URB 例程迁移](#urb-routine-migration)
--   [相关的主题](#related-topics)
-
 ## <a name="urb-allocation-in-windows7-and-earlier"></a>在 Windows 7 及更早版本的 URB 分配
-
 
 若要使用 Windows Driver Kit (WDK) 中包含的 Windows 7 和 Windows 的早期版本的例程发送 USB 请求，客户端驱动程序通常会分配并填充[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构，关联**URB**与新的 IRP，并将其发送到 USB 驱动程序堆栈 IRP 的结构。
 
@@ -41,7 +32,6 @@ USB 请求完成后，客户端驱动程序必须释放[ **URB** ](https://msdn.
 
 ## <a name="urb-allocation-in-windows8"></a>Windows 8 中 URB 分配
 
-
 Windows 8 的 WDK 提供了一个新的静态库，Usbdex.lib，可以将导出的分配、 格式设置，并释放 URBs 例程。 此外，还有一种将 URB 与 IRP 相关联的新方法。 新的例程可由面向 Windows Vista 和更高版本的 Windows 客户端驱动程序调用。
 
 运行 Windows Vista 及更高版本的客户端驱动程序必须使用新的例程，以使基础的 USB 驱动程序堆栈可以利用某些性能和可靠性的改进。 这些改进适用于 Windows 8，以支持 USB 3.0 设备和主机控制器中引入新的 USB 驱动程序堆栈。 对于 USB 2.0 主机控制器，Windows 将加载早期版本的驱动程序堆栈不支持的改进。 而不考虑基础驱动程序堆栈的版本或在主机控制器支持的协议版本，您必须始终调用新 URB 例程。
@@ -50,12 +40,12 @@ Windows 8 的 WDK 提供了一个新的静态库，Usbdex.lib，可以将导出�
 
 以下例程是适用于 Windows 8 的 WDK。 这些例程 Usbdlib.h 中定义。
 
--   [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
--   [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
--   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
--   [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
+* [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
+* [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
+* [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
+* [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
+* [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
+* [**USBD\_AssignUrbToIoStackLocation**](https://msdn.microsoft.com/library/windows/hardware/hh406228)
 
 上面的列表中的分配例程返回到新指针[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923) USB 驱动程序堆栈分配的结构。 具体取决于版本的 Windows，通过加载 USB 驱动程序堆栈**URB**结构可以搭配一个不透明*URB 上下文*。 URB 上下文是信息的 URB 有关块。 不能查看 URB 标头; 的内容信息旨在供在内部 USB 驱动程序堆栈来提高 URB 跟踪和处理。 URB 上下文*仅*由 for Windows 8 的 USB 驱动程序堆栈。
 如果 URB 上下文不可用，USB 驱动程序堆栈将使用它来使 URB 处理更安全更有效。 例如，USB 驱动程序堆栈必须确保客户端驱动程序不会不提交 URB，然后尝试重复使用该相同 URB 之前已完成第一个请求。 若要检测这种错误，USB 驱动程序堆栈 URB 上下文中存储状态信息。 不包含状态信息，需要比较与当前正在进行的所有 URBs 传入 URB USB 驱动程序堆栈。 当客户端驱动程序会尝试释放 URB USB 驱动程序堆栈也使用的状态信息。 释放 URB 前, USB 驱动程序堆栈验证以确保 URB 未挂起状态。
@@ -63,7 +53,6 @@ Windows 8 的 WDK 提供了一个新的静态库，Usbdex.lib，可以将导出�
 URB 上下文提供了正式的机制，用于存储额外 URB 信息。 使用 URB 上下文是为所需或存储的额外信息的保留成员中分配额外的内存比更可取[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构。 USB 驱动程序堆栈分配 URBs 和其关联的 URB 上下文中，非分页池，以便在将来如果需要更大 URB 上下文，唯一需要进行调整将池分配的大小。
 
 ## <a name="urb-routine-migration"></a>URB 例程迁移
-
 
 下表总结了 URB 例程中的更改。
 
@@ -116,10 +105,6 @@ URB 上下文提供了正式的机制，用于存储额外 URB 信息。 使用 
 </tbody>
 </table>
 
- 
-
 ## <a name="related-topics"></a>相关主题
+
 [将请求发送到 USB 设备](communicating-with-a-usb-device.md)  
-
-
-

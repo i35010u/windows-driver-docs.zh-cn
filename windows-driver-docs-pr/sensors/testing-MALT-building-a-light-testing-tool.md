@@ -5,12 +5,12 @@ description: 本主题提供有关如何使用 MALT （Microsoft 环境光工具
 ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 81f5d4866cc3244a94a1094ec8fb5a01b21471f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 489b5a3a7496a6c211d4673c98a285818c88d61b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345177"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405259"
 ---
 # <a name="building-a-light-testing-tool-malt"></a>构建测试工具 (MALT) 的光
 
@@ -34,7 +34,7 @@ ms.locfileid: "63345177"
 * [数字模拟转换器 (DAC) 到](https://www.microchip.com/wwwproducts/en/MCP4821)
 * 2 [Ambient 光传感器 （例如 TI OPT3001 或更高）](https://www.ti.com/product/OPT3001)
 * 2[颜色传感器](https://www.digikey.com/product-detail/en/ams/TCS34727FN/TCS34727FNCT-ND/3737677)
-* [浅机箱](#light-enclosure)
+* [浅机箱](#step-1---assemble-light-enclosure)
 
 ## <a name="instructions"></a>说明
 

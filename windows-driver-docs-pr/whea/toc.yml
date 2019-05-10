@@ -1,23 +1,27 @@
 - name: WHEA 设计指南
-  href: index.md
   items:
+    - name: WHEA 设计指南
+      href: index.md
     - name: Windows 硬件错误体系结构简介
       href: introduction-to-the-windows-hardware-error-architecture.md
     - name: Windows 硬件错误体系结构的新信息
-      href: new-information-for-windows-hardware-error-architecture.md
       items:
+        - name: Windows 硬件错误体系结构的新信息
+          href: new-information-for-windows-hardware-error-architecture.md
         - name: Windows Server 2008 和 Windows Vista SP1 的 WHEA 更改
           href: whea-changes-for-windows-server-2008-and-windows-vista-sp1.md
         - name: Windows 7 的 WHEA 更改
-          href: whea-changes-for-windows-7.md
           items:
+            - name: Windows 7 的 WHEA 更改
+              href: whea-changes-for-windows-7.md
             - name: 重命名的 WHEA 数据类型
               href: renamed-whea-data-types.md
     - name: Windows 硬件错误体系结构定义
       href: windows-hardware-error-architecture-definitions.md
     - name: Windows 硬件错误体系结构概述
-      href: windows-hardware-error-architecture-overview.md
       items:
+        - name: Windows 硬件错误体系结构概述
+          href: windows-hardware-error-architecture-overview.md
         - name: 硬件错误和错误源
           href: hardware-errors-and-error-sources.md
         - name: Microsoft Windows 和系统固件之间的关系
@@ -31,34 +35,39 @@
         - name: 错误记录持久性机制
           href: error-record-persistence-mechanism.md
         - name: 预计故障分析 (PFA)
-          href: predictive-failure-analysis--pfa-.md
           items:
+            - name: 预计故障分析 (PFA)
+              href: predictive-failure-analysis--pfa-.md
             - name: WHEA 策略设置
               href: whea-pfa-registry-settings.md
             - name: 由 WHEA 执行的 PFA
-              href: pfa-performed-by-whea.md
               items:
+                - name: 由 WHEA 执行的 PFA
+                  href: pfa-performed-by-whea.md
                 - name: WHEA 如何在 ECC 内存上执行 PFA
                   href: how-whea-performs-pfa-on-ecc-memory.md
             - name: 由 PSHED 插件执行的 PFA
               href: pfa-performed-by-a-pshed-plug-in.md
             - name: PFA 结果的持久性
-              href: persistence-of-pfa-results.md
               items:
+                - name: PFA 结果的持久性
+                  href: persistence-of-pfa-results.md
                 - name: 如何管理 PFA 内存列表
                   href: how-to-manage-the-pfa-memory-list.md
         - name: 与早期版本的 Microsoft Windows 的差异
           href: differences-from-previous-versions-of-microsoft-windows.md
     - name: 特定于平台的硬件错误驱动程序插件
-      href: platform-specific-hardware-error-driver-plug-ins2.md
       items:
+        - name: 特定于平台的硬件错误驱动程序插件
+          href: platform-specific-hardware-error-driver-plug-ins2.md
         - name: 用于开发 PSHED 插件的路线图
           href: roadmap-for-developing-pshed-plug-ins.md
         - name: PSHED 插件简介
           href: introduction-to-pshed-plug-ins.md
         - name: 功能区域
-          href: functional-areas.md
           items:
+            - name: 功能区域
+              href: functional-areas.md
             - name: 错误源发现
               href: error-source-discovery.md
             - name: 错误源控件
@@ -72,8 +81,9 @@
             - name: 错误注入
               href: error-injection.md
         - name: PSHED 插件操作
-          href: pshed-plug-in-operations.md
           items:
+            - name: PSHED 插件操作
+              href: pshed-plug-in-operations.md
             - name: 注册 PSHED 插件
               href: registering-a-pshed-plug-in.md
             - name: 参与错误源发现
@@ -93,8 +103,9 @@
         - name: 构建 PSHED 插件
           href: building-a-pshed-plug-in.md
         - name: PSHED 插件安装
-          href: pshed-plug-in-installation.md
           items:
+            - name: PSHED 插件安装
+              href: pshed-plug-in-installation.md
             - name: PSHED 插件的 INF 文件
               href: inf-files-for-pshed-plug-ins.md
             - name: 安装 PSHED 插件
@@ -102,13 +113,15 @@
             - name: 限定和分发 PSHED 插件
               href: qualifying-and-distributing-pshed-plug-ins.md
     - name: Windows 硬件错误体系结构感知型用户模式应用程序
-      href: windows-hardware-error-architecture-aware-user-mode-applications.md
       items:
+        - name: Windows 硬件错误体系结构感知型用户模式应用程序
+          href: windows-hardware-error-architecture-aware-user-mode-applications.md
         - name: WHEA 感知型用户模式应用程序简介
           href: introduction-to-whea-aware-user-mode-applications.md
         - name: WHEA 硬件错误事件处理应用程序
-          href: whea-hardware-error-event-processing-applications.md
           items:
+            - name: WHEA 硬件错误事件处理应用程序
+              href: whea-hardware-error-event-processing-applications.md
             - name: WHEA 硬件错误事件
               href: whea-hardware-error-events.md
             - name: 查询系统事件日志中的硬件错误事件
@@ -116,13 +129,15 @@
             - name: 注册获取硬件错误事件通知
               href: registering-for-notification-of-hardware-error-events.md
         - name: WHEA 管理应用程序
-          href: whea-management-applications.md
           items:
+            - name: WHEA 管理应用程序
+              href: whea-management-applications.md
             - name: WHEA 管理应用程序简介
               href: introduction-to-whea-management-applications.md
             - name: WHEA 管理操作
-              href: whea-management-operations.md
               items:
+                - name: WHEA 管理操作
+                  href: whea-management-operations.md
                 - name: 获取所有错误源的错误源信息
                   href: getting-error-source-information-for-all-error-sources.md
                 - name: 获取特定错误源的错误源信息

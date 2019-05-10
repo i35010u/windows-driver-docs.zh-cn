@@ -4,12 +4,12 @@ description: 停止 PF 微型端口驱动程序
 ms.assetid: E3F6B78E-6938-459B-883E-5DA0BB1D73C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43dba8bda1cc62e6f1cf7ed277ca022f84c94e1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f56451e5dc62aa4d0b6327f5457f6a247e609d72
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349829"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405139"
 ---
 # <a name="halting-a-pf-miniport-driver"></a>停止 PF 微型端口驱动程序
 
@@ -20,9 +20,9 @@ ms.locfileid: "63349829"
 
 本主题包含下列信息：
 
--   [NDIS 和过量驱动程序之前的操作执行*MiniportHaltEx*称为](#overlying-drivers)
+-   [NDIS 和过量驱动程序之前的操作执行*MiniportHaltEx*称为](#actions-performed-by-ndis-and-overlying-drivers-before-miniporthaltex-is-called)
 
--   [通过 PF 微型端口驱动程序时的操作执行*MiniportHaltEx*称为](#miniport-driver)
+-   [通过 PF 微型端口驱动程序时的操作执行*MiniportHaltEx*称为](#actions-performed-by-the-pf-miniport-driver-when-miniporthaltex-is-called)
 
 ## <a name="actions-performed-by-ndis-and-overlying-drivers-before-miniporthaltex-is-called"></a>NDIS 和过量驱动程序之前的操作执行*MiniportHaltEx*称为
 

@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile 计划回调通知，移动计划实现的移动运营商
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e59e43bb970484ef4d1a344ec941847e052346b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c9a39b36e1035aab6053c148c8a9cab6cae8e21
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357722"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405125"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回调通知
 
@@ -60,7 +60,7 @@ function NotifyMobilePlans() { 
 }
 ```
 
-请参阅[购买元数据属性](#Purchase-Metadata-Properties-details)puchaseMetadata 对象有关的详细信息。
+请参阅[购买元数据属性](#purchase-metadata-properties-details)puchaseMetadata 对象有关的详细信息。
 
 ### <a name="listening-for-network-registration-changes"></a>侦听网络注册更改
 
@@ -190,7 +190,7 @@ function finishPurchaseWithDownload() {
 }
 ```
 
-请参阅[购买元数据属性](#Purchase-Metadata-Properties-details)puchaseMetadata 对象有关的详细信息。
+请参阅[购买元数据属性](#purchase-metadata-properties-details)puchaseMetadata 对象有关的详细信息。
 
 ## <a name="adding-balance"></a>添加余额
 
@@ -217,7 +217,7 @@ function finishPurchaseWithBalanceAddition() {
     }
 ```
 
-请参阅[购买元数据属性](#Purchase-Metadata-Properties-details)有关详细信息`puchaseMetadata`对象。
+请参阅[购买元数据属性](#purchase-metadata-properties-details)有关详细信息`puchaseMetadata`对象。
 
 ## <a name="canceling-purchase-flow"></a>取消购买流
 
@@ -243,7 +243,7 @@ function finishPurchaseWithCancellation() {
     }
 ```
 
-请参阅[购买元数据属性](#Purchase-Metadata-Properties-details)有关详细信息`puchaseMetadata`对象。
+请参阅[购买元数据属性](#purchase-metadata-properties-details)有关详细信息`puchaseMetadata`对象。
 
 ## <a name="purchase-metadata-properties-details"></a>购买元数据属性的详细信息
 
