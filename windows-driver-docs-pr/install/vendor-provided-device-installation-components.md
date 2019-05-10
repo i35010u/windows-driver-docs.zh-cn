@@ -4,12 +4,12 @@ description: 供应商提供的设备安装组件
 ms.assetid: d86bdf75-9726-4b44-8753-7e9c19e88a61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fa6b7aa475aae900ec78004268c82625ff6ff5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd9ccabaafab72081086a69b9bcee7b834eaf6a4
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339324"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455016"
 ---
 # <a name="vendor-provided-device-installation-components"></a>供应商提供的设备安装组件
 
@@ -19,7 +19,7 @@ ms.locfileid: "63339324"
 <a href="" id="driver-package"></a>驱动程序包  
 一个[驱动程序包](driver-packages.md)必须为你的设备以支持在 Windows 下提供的所有软件组件都组成。 这些组件包括：
 
--   [INF 文件](inf-files.md)，提供了有关设备和安装驱动程序。 有关详细信息，请参阅[创建一个 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff538378)。
+-   [INF 文件](overview-of-inf-files.md)，提供了有关设备和安装驱动程序。 有关详细信息，请参阅[创建一个 INF 文件](https://msdn.microsoft.com/library/windows/hardware/ff538378)。
 
 -   一个[编录文件](catalog-files.md)，其中包含的数字签名[驱动程序包](driver-packages.md)。 有关详细信息，请参阅[数字签名](digital-signatures.md)。
 

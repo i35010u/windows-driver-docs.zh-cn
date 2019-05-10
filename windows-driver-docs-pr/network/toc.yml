@@ -1,13 +1,15 @@
 - name: 网络驱动程序设计指南
   href: index.md
 - name: 网络驱动程序简介
-  href: introduction-to-network-drivers.md
   items:
+    - name: 网络驱动程序简介
+      href: introduction-to-network-drivers.md
     - name: NDIS 驱动程序开发路线图
       href: roadmap-for-developing-ndis-drivers.md
     - name: 使用网络驱动程序设计指南
-      href: using-the-network-driver-design-guide.md
       items:
+        - name: 使用网络驱动程序设计指南
+          href: using-the-network-driver-design-guide.md
         - name: 了解微型端口驱动程序
           href: learning-about-miniport-drivers.md
         - name: 了解协议驱动程序
@@ -17,13 +19,15 @@
         - name: 了解中间驱动程序
           href: learning-about-intermediate-drivers.md
     - name: 内核模式驱动程序的网络体系结构
-      href: network-architecture-for-kernel-mode-drivers.md
       items:
+        - name: 内核模式驱动程序的网络体系结构
+          href: network-architecture-for-kernel-mode-drivers.md
         - name: Windows 网络体系结构和 OSI 模型
           href: windows-network-architecture-and-the-osi-model.md
         - name: NDIS 驱动程序类型
-          href: ndis-drivers.md
           items:
+            - name: NDIS 驱动程序类型
+              href: ndis-drivers.md
             - name: 微型端口驱动程序
               href: ndis-miniport-drivers2.md
             - name: 协议驱动程序
@@ -33,15 +37,17 @@
             - name: 中间驱动程序
               href: ndis-intermediate-drivers.md
         - name: 网络驱动程序环境
-          href: network-driver-environments.md
           items:
+            - name: 网络驱动程序环境
+              href: network-driver-environments.md
             - name: 网络驱动程序的无连接环境
               href: connectionless-environment-for-network-drivers.md
             - name: 网络驱动程序的面向连接的环境
               href: connection-oriented-environment-for-network-drivers.md
     - name: 网络驱动程序编程注意事项
-      href: network-driver-programming-considerations.md
       items:
+        - name: 网络驱动程序编程注意事项
+          href: network-driver-programming-considerations.md
         - name: 网络驱动程序中的性能
           href: performance-in-network-drivers.md
         - name: 网络适配器中的性能
@@ -63,8 +69,9 @@
         - name: 网络驱动程序的安全问题
           href: security-issues-for-network-drivers.md
     - name: 驱动程序堆栈管理
-      href: driver-stack-management.md
       items:
+        - name: 驱动程序堆栈管理
+          href: driver-stack-management.md
         - name: NDIS 驱动程序堆栈
           href: ndis-driver-stack.md
         - name: 微型端口驱动程序的适配器状态
@@ -74,8 +81,9 @@
         - name: 筛选器驱动程序的模块状态
           href: module-states-of-a-filter-driver.md
         - name: NDIS 堆栈操作
-          href: ndis-stack-operations.md
           items:
+            - name: NDIS 堆栈操作
+              href: ndis-stack-operations.md
             - name: 启动驱动程序堆栈
               href: starting-a-driver-stack.md
             - name: 停止驱动程序堆栈
@@ -87,11 +95,13 @@
             - name: 修改正在运行的驱动程序堆栈
               href: modifying-a-running-driver-stack.md
     - name: NET_BUFFER 体系结构
-      href: net-buffer-architecture.md
       items:
+        - name: NET_BUFFER 体系结构
+          href: net-buffer-architecture.md
         - name: 网络数据结构
-          href: network-data-structures.md
           items:
+            - name: 网络数据结构
+              href: network-data-structures.md
             - name: NET_BUFFER 结构
               href: net-buffer-structure.md
             - name: NET_BUFFER_LIST 结构
@@ -99,8 +109,9 @@
             - name: NET_BUFFER_LIST_CONTEXT 结构
               href: net-buffer-list-context-structure.md
         - name: 重新处理和前进操作
-          href: retreat-and-advance-operations.md
           items:
+            - name: 重新处理和前进操作
+              href: retreat-and-advance-operations.md
             - name: 重新处理操作
               href: retreat-operations.md
             - name: 前进操作
@@ -110,8 +121,9 @@
         - name: 调度 IRQL 跟踪
           href: dispatch-irql-tracking.md
         - name: 发送和接收操作
-          href: send-and-receive-operations.md
           items:
+            - name: 发送和接收操作
+              href: send-and-receive-operations.md
             - name: 发送网络数据
               href: sending-network-data.md
             - name: 取消发送操作
@@ -121,15 +133,17 @@
             - name: 环回 NDIS 数据包
               href: looping-back-ndis-packets.md
         - name: 以太网发送和接收操作
-          href: ethernet-send-and-receive-operations.md
           items:
+            - name: 以太网发送和接收操作
+              href: ethernet-send-and-receive-operations.md
             - name: 发送以太网帧
               href: sending-ethernet-frames.md
             - name: 指示已接收以太网帧
               href: indicating-received-ethernet-frames.md
         - name: 派生的 NET_BUFFER_LIST 结构
-          href: derived-net-buffer-list-structures.md
           items:
+            - name: 派生的 NET_BUFFER_LIST 结构
+              href: derived-net-buffer-list-structures.md
             - name: NET_BUFFER_LIST 代系之间的关系
               href: relationships-between-net-buffer-list-generations.md
             - name: 克隆的 NET_BUFFER_LIST 结构
@@ -141,13 +155,15 @@
     - name: NDIS PDPI 简介
       href: introduction-to-ndis-pdpi.md
 - name: NDIS 版本指南
-  href: ndis-version-guide.md
   items:
+    - name: NDIS 版本指南
+      href: ndis-version-guide.md
     - name: NDIS 版本概述
       href: overview-of-ndis-versions.md
     - name: NDIS 6.0 和更高版本简介
-      href: introductions-to-ndis-6-0-and-later.md
       items:
+        - name: NDIS 6.0 和更高版本简介
+          href: introductions-to-ndis-6-0-and-later.md
         - name: NDIS 6.83 简介
           href: introduction-to-ndis-6-83.md
         - name: NDIS 6.82 简介
@@ -155,11 +171,13 @@
         - name: NDIS 6.81 简介
           href: introduction-to-ndis-6-81.md
         - name: NDIS 6.80 简介
-          href: introduction-to-ndis-6-80.md
           items:
+            - name: NDIS 6.80 简介
+              href: introduction-to-ndis-6-80.md
             - name: NDIS 6.80 中的同步 OID 请求接口
-              href: synchronous-oid-request-interface-in-ndis-6-80.md
               items:
+                - name: NDIS 6.80 中的同步 OID 请求接口
+                  href: synchronous-oid-request-interface-in-ndis-6-80.md
                 - name: 用于处理常规或直接 OID 请求的示例样板
                   href: example-boilerplate-for-handling-regular-or-direct-oid-requests.md
                 - name: 用于发出常规 OID 请求的示例样板
@@ -173,8 +191,9 @@
         - name: NDIS 6.50 简介
           href: introduction-to-ndis-6-50.md
         - name: NDIS 6.40 简介
-          href: introduction-to-ndis-6-40.md
           items:
+            - name: NDIS 6.40 简介
+              href: introduction-to-ndis-6-40.md
             - name: 实现 NDIS 6.40 驱动程序
               href: implementing-an-ndis-6-40-driver.md
             - name: 使用 NDIS 6.40 数据结构
@@ -182,8 +201,9 @@
             - name: 编译 NDIS 6.40 驱动程序
               href: compiling-an-ndis-6-40-driver.md
         - name: NDIS 6.30 简介
-          href: introduction-to-ndis-6-30.md
           items:
+            - name: NDIS 6.30 简介
+              href: introduction-to-ndis-6-30.md
             - name: NDIS 6.30 中的虚拟化网络增强
               href: virtualized-networking-enhancements-in-ndis-6-30.md
             - name: NDIS 6.30 中的电源管理增强
@@ -201,8 +221,9 @@
             - name: 编译 NDIS 6.30 驱动程序
               href: compiling-an-ndis-6-30-driver.md
         - name: NDIS 6.20 简介
-          href: introduction-to-ndis-6-20.md
           items:
+            - name: NDIS 6.20 简介
+              href: introduction-to-ndis-6-20.md
             - name: NDIS 6.20 中的电源管理增强
               href: power-management-enhancements-in-ndis-6-20.md
             - name: NDIS 6.20 中的虚拟机队列 (VMQ)
@@ -220,8 +241,9 @@
             - name: 编译 NDIS 6.20 驱动程序
               href: compiling-an-ndis-6-20-driver.md
         - name: NDIS 6.1 简介
-          href: introduction-to-ndis-6-1.md
           items:
+            - name: NDIS 6.1 简介
+              href: introduction-to-ndis-6-1.md
             - name: NDIS 6.1 中的标头数据拆分
               href: header-data-split-in-ndis-6-1.md
             - name: NDIS 6.1 中的直接 OID 请求接口
@@ -237,13 +259,15 @@
             - name: 编译 NDIS 6.1 驱动程序
               href: compiling-an-ndis-6-1-driver.md
         - name: NDIS 6.0 简介
-          href: introduction-to-ndis-6-0.md
           items:
+            - name: NDIS 6.0 简介
+              href: introduction-to-ndis-6-0.md
             - name: NDIS 6.0 设计目标
               href: ndis-6-0-design-objectives.md
             - name: 增强的性能和可伸缩性
-              href: enhanced-performance-and-scalability.md
               items:
+                - name: 增强的性能和可伸缩性
+                  href: enhanced-performance-and-scalability.md
                 - name: NET_BUFFER 数据打包
                   href: net-buffer-data-packaging.md
                 - name: 改进的发送和接收路径
@@ -259,8 +283,9 @@
                 - name: 完全 TCP 卸载
                   href: full-tcp-offload.md
             - name: 简化的驱动程序模型
-              href: simplified-driver-model.md
               items:
+                - name: 简化的驱动程序模型
+                  href: simplified-driver-model.md
                 - name: 更轻松的初始化
                   href: easier-initialization.md
                 - name: 版本受控的接口
@@ -272,8 +297,9 @@
                 - name: 更易于编写的筛选器驱动程序
                   href: easier-to-write-filter-drivers.md
     - name: 指定 NDIS 版本信息
-      href: specifying-ndis-version-information.md
       items:
+        - name: 指定 NDIS 版本信息
+          href: specifying-ndis-version-information.md
         - name: 标头版本的 NDIS 支持概述
           href: overview-of-ndis-support-for-header-versions.md
         - name: NDIS 驱动程序的版本信息要求
@@ -285,8 +311,9 @@
         - name: WMI 的 NDIS 对象版本问题
           href: ndis-object-version-issues-for-wmi.md
     - name: 将 NDIS 版本移植到更高的 NDIS 驱动程序
-      href: porting-ndis-drivers-to-newer-ndis-versions.md
       items:
+        - name: 将 NDIS 版本移植到更高的 NDIS 驱动程序
+          href: porting-ndis-drivers-to-newer-ndis-versions.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.83
           href: porting-ndis-6-x-drivers-to-ndis-6-83.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.82
@@ -304,8 +331,9 @@
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.40
           href: porting-ndis-6-x-drivers-to-ndis-6-40.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.30
-          href: porting-ndis-6-x-drivers-to-ndis-6-30.md
           items:
+            - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.30
+              href: porting-ndis-6-x-drivers-to-ndis-6-30.md
             - name: NDIS 6.30 后向兼容性
               href: ndis-6-30-backward-compatibility.md
             - name: 将微型端口驱动程序移植到 NDIS 6.30 所要做出的更改摘要
@@ -315,8 +343,9 @@
             - name: 将中间驱动程序移植到 NDIS 6.30 所要做出的更改摘要
               href: summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-6-30.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.20
-          href: porting-ndis-6-x-drivers-to-ndis-6-20.md
           items:
+            - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.20
+              href: porting-ndis-6-x-drivers-to-ndis-6-20.md
             - name: NDIS 6.20 后向兼容性
               href: ndis-6-20-backward-compatibility.md
             - name: 将 NDIS 6.20 更新到 NDIS 6.1 的功能
@@ -332,19 +361,23 @@
             - name: 将中间驱动程序移植到 NDIS 6.20 所要做出的更改摘要
               href: summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-6-2.md
 - name: NDIS 核心功能
-  href: ndis-core-functionality2.md
   items:
+    - name: NDIS 核心功能
+      href: ndis-core-functionality2.md
     - name: NDIS 微型端口驱动程序
-      href: ndis-miniport-drivers.md
       items:
+        - name: NDIS 微型端口驱动程序
+          href: ndis-miniport-drivers.md
         - name: NDIS 微型端口驱动程序开发路线图
           href: roadmap-for-developing-ndis-miniport-drivers.md
         - name: NDIS 微型端口驱动程序简介
-          href: introduction-to-ndis-miniport-drivers.md
           items:
+            - name: NDIS 微型端口驱动程序简介
+              href: introduction-to-ndis-miniport-drivers.md
             - name: NDIS 微型端口驱动程序的类型
-              href: types-of-ndis-miniport-drivers.md
               items:
+                - name: NDIS 微型端口驱动程序的类型
+                  href: types-of-ndis-miniport-drivers.md
                 - name: 反序列化的 NDIS 微型端口驱动程序
                   href: deserialized-ndis-miniport-drivers.md
                 - name: 序列化的 NDIS 微型端口驱动程序
@@ -356,8 +389,9 @@
             - name: 网络接口卡支持
               href: network-interface-card-support.md
             - name: 微型端口驱动程序代码的重要功能
-              href: important-features-of-miniport-driver-code.md
               items:
+                - name: 微型端口驱动程序代码的重要功能
+                  href: important-features-of-miniport-driver-code.md
                 - name: MiniportXxx 函数
                   href: miniportxxx-functions.md
                 - name: 链接到 NDIS 库
@@ -371,8 +405,9 @@
             - name: 示例 NDIS 微型端口驱动程序
               href: sample-ndis-miniport-drivers.md
         - name: 编写 NDIS 微型端口驱动程序
-          href: writing-ndis-miniport-drivers.md
           items:
+            - name: 编写 NDIS 微型端口驱动程序
+              href: writing-ndis-miniport-drivers.md
             - name: 初始化微型端口驱动程序
               href: initializing-a-miniport-driver.md
             - name: 卸载微型端口驱动程序
@@ -384,8 +419,9 @@
             - name: 停止微型端口适配器
               href: halting-a-miniport-adapter.md
             - name: 启动和暂停微型端口适配器
-              href: starting-and-pausing-a-miniport-adapter.md
               items:
+                - name: 启动和暂停微型端口适配器
+                  href: starting-and-pausing-a-miniport-adapter.md
                 - name: 启动适配器
                   href: starting-an-adapter.md
                 - name: 暂停适配器
@@ -393,8 +429,9 @@
             - name: 配置可选的微型端口驱动程序服务
               href: configuring-optional-miniport-driver-services.md
             - name: 微型端口驱动程序发送和接收操作
-              href: miniport-driver-send-and-receive-operations.md
               items:
+                - name: 微型端口驱动程序发送和接收操作
+                  href: miniport-driver-send-and-receive-operations.md
                 - name: 微型端口驱动程序缓冲区管理
                   href: miniport-driver-buffer-management.md
                 - name: 从微型端口驱动程序发送数据
@@ -404,8 +441,9 @@
                 - name: 指示已从微型端口驱动程序收到数据
                   href: indicating-received-data-from-a-miniport-driver.md
             - name: 管理中断
-              href: managing-interrupts.md
               items:
+                - name: 管理中断
+                  href: managing-interrupts.md
                 - name: 注册和取消注册中断
                   href: registering-and-deregistering-interrupts.md
                 - name: 处理中断
@@ -415,8 +453,9 @@
                 - name: 中断调解
                   href: interrupt-moderation.md
             - name: 微型端口适配器 OID 请求
-              href: miniport-adapter-oid-requests.md
               items:
+                - name: 微型端口适配器 OID 请求
+                  href: miniport-adapter-oid-requests.md
                 - name: 微型端口适配器 OID 请求序列化
                   href: miniport-adapter-oid-request-serialization.md
                 - name: 处理微型端口适配器中的 OID 请求
@@ -434,13 +473,15 @@
             - name: 微型端口适配器关闭
               href: miniport-adapter-shutdown.md
         - name: 获取和设置 WMI 的微型端口驱动程序信息与 NDIS 支持
-          href: obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md
           items:
+            - name: 获取和设置 WMI 的微型端口驱动程序信息与 NDIS 支持
+              href: obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md
             - name: NDIS 管理信息和 OID
               href: ndis-management-information-and-oids.md
             - name: 查询微型端口驱动程序信息
-              href: querying-miniport-driver-information.md
               items:
+                - name: 查询微型端口驱动程序信息
+                  href: querying-miniport-driver-information.md
                 - name: 查询无连接微型端口驱动程序
                   href: querying-a-connectionless-miniport-driver.md
                 - name: 查询面向连接的微型端口驱动程序
@@ -450,8 +491,9 @@
                 - name: 查询 64 位统计信息 OID
                   href: querying-64-bit-statistics-oids.md
             - name: 设置微型端口驱动程序信息
-              href: setting-miniport-driver-information.md
               items:
+                - name: 设置微型端口驱动程序信息
+                  href: setting-miniport-driver-information.md
                 - name: 设置无连接微型端口驱动程序的信息
                   href: setting-information-for-a-connectionless-miniport-driver.md
                 - name: 设置面向连接的微型端口驱动程序的信息
@@ -463,8 +505,9 @@
             - name: 指示连接状态
               href: indicating-connection-status.md
             - name: WMI 的 NDIS 支持
-              href: ndis-support-for-wmi.md
               items:
+                - name: WMI 的 NDIS 支持
+                  href: ndis-support-for-wmi.md
                 - name: 在 WMI 中注册和取消注册 NDIS 微型端口驱动程序
                   href: registration-and-deregistration-of-ndis-miniport-drivers-with-wmi.md
                 - name: 将 GUID 映射到 OID 和微型端口驱动程序状态
@@ -474,22 +517,25 @@
                 - name: NDIS 支持的 WMI 操作
                   href: ndis-supported-wmi-operations.md
                 - name: 标准 WMI OID 和状态指示
-                  href: standard-wmi-oids-and-status-indications.md
                   items:
+                    - name: 标准 WMI OID 和状态指示
+                      href: standard-wmi-oids-and-status-indications.md
                     - name: 已注册到 WMI 的标准微型端口驱动程序 OID
                       href: standard-miniport-driver-oids-registered-with-wmi.md
                     - name: 已注册到 WMI 的标准微型端口驱动程序状态指示
                       href: standard-miniport-driver-status-indications-registered-with-wmi.md
                 - name: 自定义的 OID 和状态指示
-                  href: customized-oids-and-status-indications.md
                   items:
+                    - name: 自定义的 OID 和状态指示
+                      href: customized-oids-and-status-indications.md
                     - name: 填充 NDIS_GUID 结构
                       href: filling-in-an-ndis-guid-structure.md
                     - name: 包含 MOF 文件
                       href: including-a-mof-file.md
                 - name: NDIS WMI GUID
-                  href: ndis-wmi-guids.md
                   items:
+                    - name: NDIS WMI GUID
+                      href: ndis-wmi-guids.md
                     - name: GUID_NDIS_STATUS_LINK_STATE
                       href: guid-ndis-status-link-state.md
                     - name: GUID_NDIS_STATUS_OPER_STATUS
@@ -531,11 +577,13 @@
                     - name: GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
                       href: guid-ndis-status-offload-hw-capabilities.md
         - name: NDIS MSI-X
-          href: ndis-msi-x.md
           items:
+            - name: NDIS MSI-X
+              href: ndis-msi-x.md
             - name: MSI-X 初始化
-              href: msi-x-initialization.md
               items:
+                - name: MSI-X 初始化
+                  href: msi-x-initialization.md
                 - name: MSI-X 预先注册
                   href: msi-x-pre-registration.md
                 - name: MSI-X 资源筛选
@@ -551,8 +599,9 @@
         - name: NDIS 分散/聚合 DMA
           href: ndis-scatter-gather-dma.md
         - name: NDIS 微型端口驱动程序的即插即用
-          href: plug-and-play-for-ndis-miniport-drivers.md
           items:
+            - name: NDIS 微型端口驱动程序的即插即用
+              href: plug-and-play-for-ndis-miniport-drivers.md
             - name: 导出 MiniportDevicePnPEventNotify 函数
               href: exporting-a-miniportdevicepnpeventnotify-function.md
             - name: 处理 NIC 意外删除
@@ -560,8 +609,9 @@
             - name: 处理系统电源的更改
               href: handling-a-change-in-the-system-s-power-source.md
             - name: 即插即用事件的 NDIS 处理
-              href: ndis-processing-of-plug-and-play-events.md
               items:
+                - name: 即插即用事件的 NDIS 处理
+                  href: ndis-processing-of-plug-and-play-events.md
                 - name: 添加 NIC
                   href: adding-a-nic.md
                 - name: 启动 NIC
@@ -571,22 +621,25 @@
                 - name: 移除 NIC
                   href: removing-a-nic.md
                 - name: 处理 NIC 意外删除
-                  href: processing-the-surprise-removal-of-a-nic.md
                   items:
+                    - name: 处理 NIC 意外删除
+                      href: processing-the-surprise-removal-of-a-nic.md
                     - name: 处理 NIC 意外删除 (Windows Vista)
                       href: processing-the-surprise-removal-of-a-nic--windows-vista-.md
                     - name: 处理 NIC 意外删除（Windows 7 和更高版本）
                       href: processing-the-surprise-removal-of-a-nic--windows-7-and-later-versions-.md
         - name: 微型端口驱动程序重置和停止函数
-          href: reset--halt--and-shutdown-functions.md
           items:
+            - name: 微型端口驱动程序重置和停止函数
+              href: reset--halt--and-shutdown-functions.md
             - name: 微型端口驱动程序硬件重置
               href: hardware-reset.md
             - name: 微型端口驱动程序停止处理程序
               href: halt-handler.md
         - name: 包含 WDM 下接口的微型端口驱动程序
-          href: miniport-drivers-with-a-wdm-lower-interface.md
           items:
+            - name: 包含 WDM 下接口的微型端口驱动程序
+              href: miniport-drivers-with-a-wdm-lower-interface.md
             - name: 包含 WDM 下边缘的微型端口驱动程序
               href: miniport-driver-with-a-wdm-lower-edge.md
             - name: 注册 WDM 下边缘的微型端口驱动程序函数
@@ -604,11 +657,13 @@
             - name: 安装 NDIS-WDM 微型端口驱动程序
               href: installing-ndis-wdm-miniport-drivers.md
         - name: WAN 微型端口驱动程序
-          href: wan-miniport-drivers.md
           items:
+            - name: WAN 微型端口驱动程序
+              href: wan-miniport-drivers.md
             - name: 选择 WAN 驱动程序模型
-              href: choosing-a-wan-driver-model.md
               items:
+                - name: 选择 WAN 驱动程序模型
+                  href: choosing-a-wan-driver-model.md
                 - name: CoNDIS WAN 更灵活
                   href: condis-wan-is-more-flexible.md
                 - name: CoNDIS WAN 更简单
@@ -618,8 +673,9 @@
                 - name: 适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
                   href: other-ndis-features-available-to-condis-wan-drivers.md
             - name: WAN 体系结构概述
-              href: overview-of-the-wan-architecture.md
               items:
+                - name: WAN 体系结构概述
+                  href: overview-of-the-wan-architecture.md
                 - name: RAS 体系结构概述
                   href: ras-architecture-overview.md
                 - name: NDISWAN 概述
@@ -631,8 +687,9 @@
                 - name: NDPROXY 概述
                   href: ndproxy-overview.md
             - name: 实现 CoNDIS WAN 微型端口驱动程序
-              href: implementing-condis-wan-miniport-drivers.md
               items:
+                - name: 实现 CoNDIS WAN 微型端口驱动程序
+                  href: implementing-condis-wan-miniport-drivers.md
                 - name: CoNDIS WAN 驱动程序的 WAN 特定功能
                   href: wan-specific-capabilities-of-condis-wan-drivers.md
                 - name: 注册 CoNDIS WAN 驱动程序
@@ -650,8 +707,9 @@
                 - name: 指示 CoNDIS WAN 微型端口驱动程序状态
                   href: indicating-condis-wan-miniport-driver-status.md
             - name: 支持电话服务的 CoNDIS WAN 操作
-              href: condis-wan-operations-that-support-telephonic-services.md
               items:
+                - name: 支持电话服务的 CoNDIS WAN 操作
+                  href: condis-wan-operations-that-support-telephonic-services.md
                 - name: CoNDIS TAPI 注册
                   href: condis-tapi-registration.md
                 - name: CoNDIS TAPI 初始化
@@ -663,8 +721,9 @@
                 - name: CoNDIS TAPI 关闭
                   href: condis-tapi-shutdown.md
                 - name: 语音流的呼叫管理程序要求
-                  href: call-manager-requirements-for-voice-streaming.md
                   items:
+                    - name: 语音流的呼叫管理程序要求
+                      href: call-manager-requirements-for-voice-streaming.md
                     - name: 响应 OID_CO_TAPI_LINE_CAPS 查询
                       href: responding-to-an-oid-co-tapi-line-caps-query.md
                     - name: 指定呼出通话的参数
@@ -674,8 +733,9 @@
                 - name: 用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展
                   href: non-wan-specific-extensions-to-support-telephonic-services-over-connec.md
             - name: WAN 数据包分帧
-              href: wan-packet-framing.md
               items:
+                - name: WAN 数据包分帧
+                  href: wan-packet-framing.md
                 - name: 异步分帧
                   href: asynchronous-framing.md
                 - name: ISDN 和交换式 56K 分帧
@@ -683,8 +743,9 @@
             - name: WAN 微型端口驱动程序生成参数
               href: wan-miniport-driver-build-parameters.md
         - name: 网络设备的标准化 INF 关键字
-          href: standardized-inf-keywords-for-network-devices.md
           items:
+            - name: 网络设备的标准化 INF 关键字
+              href: standardized-inf-keywords-for-network-devices.md
             - name: 枚举关键字
               href: enumeration-keywords.md
             - name: 可编辑的关键字
@@ -692,15 +753,17 @@
             - name: 不在用户界面中显示的关键字
               href: keywords-not-displayed-in-the-user-interface.md
     - name: NDIS 协议驱动程序
-      href: ndis-protocol-drivers.md
       items:
+        - name: NDIS 协议驱动程序
+          href: ndis-protocol-drivers.md
         - name: NDIS 协议驱动程序的开发路线图
           href: roadmap-for-developing-ndis-protocol-drivers.md
         - name: NDIS 协议驱动程序简介
           href: introduction-to-ndis-protocol-drivers.md
         - name: 编写 NDIS 协议驱动程序
-          href: writing-ndis-protocol-drivers.md
           items:
+            - name: 编写 NDIS 协议驱动程序
+              href: writing-ndis-protocol-drivers.md
             - name: 初始化协议驱动程序
               href: initializing-a-protocol-driver.md
             - name: 协议绑定状态和操作
@@ -710,8 +773,9 @@
             - name: 从适配器取消绑定
               href: unbinding-from-an-adapter.md
             - name: 启动和暂停绑定
-              href: starting-and-pausing-a-binding.md
               items:
+                - name: 启动和暂停绑定
+                  href: starting-and-pausing-a-binding.md
                 - name: 重启绑定
                   href: restarting-a-binding.md
                 - name: 暂停绑定
@@ -719,8 +783,9 @@
             - name: 配置可选的协议驱动程序服务
               href: configuring-optional-protocol-driver-services.md
             - name: 协议驱动程序发送和接收操作
-              href: protocol-driver-send-and-receive-operations.md
               items:
+                - name: 协议驱动程序发送和接收操作
+                  href: protocol-driver-send-and-receive-operations.md
                 - name: 协议驱动程序缓冲区管理
                   href: protocol-driver-buffer-management.md
                 - name: 从协议驱动程序发送数据
@@ -728,8 +793,9 @@
                 - name: 在协议驱动程序中接收数据
                   href: receiving-data-in-protocol-drivers.md
             - name: 协议驱动程序 OID 请求
-              href: protocol-driver-oid-requests.md
               items:
+                - name: 协议驱动程序 OID 请求
+                  href: protocol-driver-oid-requests.md
                 - name: 从 NDIS 协议驱动程序生成 OID 请求
                   href: generating-oid-requests-from-an-ndis-protocol-driver.md
                 - name: 协议驱动程序直接 OID 请求
@@ -743,8 +809,9 @@
         - name: NDIS 协议驱动程序安装
           href: ndis-protocol-driver-installation.md
         - name: 协议驱动程序设计概念
-          href: protocol-driver-design-concepts.md
           items:
+            - name: 协议驱动程序设计概念
+              href: protocol-driver-design-concepts.md
             - name: 协议驱动程序中的可分页和可丢弃代码
               href: pageable-and-discardable-code-in-a-protocol-driver.md
             - name: 协议驱动程序重置操作
@@ -758,13 +825,15 @@
             - name: 协议驱动程序中的状态指示
               href: status-indications-in-a-protocol-driver.md
     - name: NDIS 筛选器驱动程序
-      href: ndis-filter-drivers2.md
       items:
+        - name: NDIS 筛选器驱动程序
+          href: ndis-filter-drivers2.md
         - name: NDIS 筛选器驱动程序开发路线图
           href: roadmap-for-developing-ndis-filter-drivers.md
         - name: NDIS 筛选器驱动程序简介
-          href: introduction-to-ndis-filter-drivers.md
           items:
+            - name: NDIS 筛选器驱动程序简介
+              href: introduction-to-ndis-filter-drivers.md
             - name: 筛选器驱动程序的特征
               href: filter-driver-characteristics.md
             - name: 筛选器驱动程序服务
@@ -774,8 +843,9 @@
             - name: 必需的筛选器驱动程序
               href: mandatory-filter-drivers.md
         - name: 编写 NDIS 筛选器驱动程序
-          href: writing-ndis-filter-drivers.md
           items:
+            - name: 编写 NDIS 筛选器驱动程序
+              href: writing-ndis-filter-drivers.md
             - name: 初始化筛选器驱动程序
               href: initializing-a-filter-driver.md
             - name: 卸载筛选器驱动程序
@@ -787,8 +857,9 @@
             - name: 分离筛选器模块
               href: detaching-a-filter-module.md
             - name: 启动和暂停筛选器模块
-              href: starting-and-pausing-a-filter-module.md
               items:
+                - name: 启动和暂停筛选器模块
+                  href: starting-and-pausing-a-filter-module.md
                 - name: 启动筛选器模块
                   href: starting-a-filter-module.md
                 - name: 暂停筛选器模块
@@ -798,8 +869,9 @@
             - name: 配置可选的筛选器驱动程序服务
               href: configuring-optional-filter-driver-services.md
             - name: 筛选器模块发送和接收操作
-              href: filter-module-send-and-receive-operations.md
               items:
+                - name: 筛选器模块发送和接收操作
+                  href: filter-module-send-and-receive-operations.md
                 - name: 筛选器驱动程序缓冲区管理
                   href: filter-driver-buffer-management.md
                 - name: 从筛选器驱动程序发送数据
@@ -809,8 +881,9 @@
                 - name: 在筛选器驱动程序中接收数据
                   href: receiving-data-in-a-filter-driver.md
             - name: 筛选器模块 OID 请求
-              href: filter-module-oid-requests.md
               items:
+                - name: 筛选器模块 OID 请求
+                  href: filter-module-oid-requests.md
                 - name: 在 NDIS 筛选器驱动程序中筛选 OID 请求
                   href: filtering-oid-requests-in-an-ndis-filter-driver.md
                 - name: 从 NDIS 筛选器驱动程序生成 OID 请求
@@ -824,13 +897,15 @@
             - name: 筛选器模块状态指示
               href: filter-module-status-indications.md
         - name: NDIS 筛选器驱动程序安装
-          href: ndis-filter-driver-installation.md
           items:
+            - name: NDIS 筛选器驱动程序安装
+              href: ndis-filter-driver-installation.md
             - name: 指定筛选器驱动程序绑定关系
               href: specifying-filter-driver-binding-relationships.md
             - name: 筛选器驱动程序的 INF 文件设置
-              href: inf-file-settings-for-filter-drivers.md
               items:
+                - name: 筛选器驱动程序的 INF 文件设置
+                  href: inf-file-settings-for-filter-drivers.md
                 - name: 配置监视筛选器驱动程序的 INF 文件
                   href: configuring-an-inf-file-for-a-monitoring-filter-driver.md
                 - name: 配置修改筛选器驱动程序的 INF 文件
@@ -838,20 +913,23 @@
             - name: 访问筛选器驱动程序的配置信息
               href: accessing-configuration-information-for-a-filter-driver.md
     - name: NDIS 中间驱动程序
-      href: ndis-intermediate-drivers2.md
       items:
+        - name: NDIS 中间驱动程序
+          href: ndis-intermediate-drivers2.md
         - name: NDIS 中间驱动程序的开发路线图
           href: roadmap-for-developing-ndis-intermediate-drivers.md
         - name: NDIS 中间驱动程序简介
-          href: introduction-to-ndis-intermediate-drivers.md
           items:
+            - name: NDIS 中间驱动程序简介
+              href: introduction-to-ndis-intermediate-drivers.md
             - name: NDIS 筛选器中间驱动程序
               href: ndis-filter-intermediate-drivers.md
             - name: NDIS MUX 中间驱动程序
               href: ndis-mux-intermediate-drivers.md
         - name: 编写 NDIS 中间驱动程序
-          href: writing-ndis-intermediate-drivers.md
           items:
+            - name: 编写 NDIS 中间驱动程序
+              href: writing-ndis-intermediate-drivers.md
             - name: 初始化中间驱动程序
               href: initializing-an-intermediate-driver.md
             - name: 初始化微型端口中间驱动程序
@@ -863,11 +941,13 @@
             - name: 停止虚拟微型端口
               href: halting-a-virtual-miniport.md
         - name: 中间驱动程序设计概念
-          href: intermediate-driver-design-concepts.md
           items:
+            - name: 中间驱动程序设计概念
+              href: intermediate-driver-design-concepts.md
             - name: 中间驱动程序 DriverEntry 函数
-              href: intermediate-driver-driverentry-function.md
               items:
+                - name: 中间驱动程序 DriverEntry 函数
+                  href: intermediate-driver-driverentry-function.md
                 - name: 注册为 NDIS 中间驱动程序
                   href: registering-as-an-ndis-intermediate-driver.md
                 - name: 将中间驱动程序注册为微型端口驱动程序
@@ -875,8 +955,9 @@
                 - name: 将中间驱动程序注册为协议
                   href: registering-an-intermediate-driver-as-a-protocol.md
             - name: 中间驱动程序中的动态绑定
-              href: dynamic-binding-in-an-intermediate-driver.md
               items:
+                - name: 中间驱动程序中的动态绑定
+                  href: dynamic-binding-in-an-intermediate-driver.md
                 - name: 中间驱动程序绑定操作
                   href: intermediate-driver-binding-operations.md
                 - name: 打开中间驱动程序下面的适配器
@@ -886,8 +967,9 @@
                 - name: 中间驱动程序取消绑定操作
                   href: intermediate-driver-unbinding-operations.md
             - name: 中间驱动程序查询和设置操作
-              href: intermediate-driver-query-and-set-operations.md
               items:
+                - name: 中间驱动程序查询和设置操作
+                  href: intermediate-driver-query-and-set-operations.md
                 - name: 从中间驱动程序发出设置和查询请求
                   href: issuing-set-and-query-requests-from-an-intermediate-driver.md
                 - name: 在中间驱动程序中响应设置和查询请求
@@ -895,8 +977,9 @@
             - name: 中间驱动程序网络数据管理
               href: intermediate-driver-network-data-management.md
             - name: 在中间驱动程序中接收数据
-              href: receiving-data-in-an-intermediate-driver.md
               items:
+                - name: 在中间驱动程序中接收数据
+                  href: receiving-data-in-an-intermediate-driver.md
                 - name: 在包含无连接下边缘的中间驱动程序中接收数据
                   href: receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-e.md
                 - name: 在包含面向连接的下边缘的中间驱动程序中接收数据
@@ -906,8 +989,9 @@
             - name: 通过中间驱动程序传输网络数据
               href: transmitting-network-data-through-an-intermediate-driver.md
             - name: 在中间驱动程序中处理 PnP 事件和电源管理事件
-              href: handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md
               items:
+                - name: 在中间驱动程序中处理 PnP 事件和电源管理事件
+                  href: handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md
                 - name: 初始化中间驱动程序以处理 PnP 和电源管理事件
                   href: initializing-intermediate-drivers-to-handle-pnp-and-power-management-events.md
                 - name: 处理 OID_PNP_Xxx 查询和设置请求
@@ -921,8 +1005,9 @@
             - name: 中间驱动程序中的状态指示
               href: status-indications-in-an-intermediate-driver.md
         - name: 安装中间驱动程序
-          href: installing-an-intermediate-driver.md
           items:
+            - name: 安装中间驱动程序
+              href: installing-an-intermediate-driver.md
             - name: 中间驱动程序 UpperRange 和 LowerRange INF 文件项
               href: intermediate-driver-upperrange-and-lowerrange-inf-file-entries.md
             - name: MUX 中间驱动程序安装
@@ -930,13 +1015,15 @@
             - name: 中间驱动程序通知对象
               href: intermediate-driver-notify-object.md
     - name: 面向连接的 NDIS
-      href: connection-oriented-ndis.md
       items:
+        - name: 面向连接的 NDIS
+          href: connection-oriented-ndis.md
         - name: 面向连接的环境
           href: connection-oriented-environment.md
         - name: 使用 AF、VC、SAP 和参与方
-          href: using-afs--vcs--saps--and-parties.md
           items:
+            - name: 使用 AF、VC、SAP 和参与方
+              href: using-afs--vcs--saps--and-parties.md
             - name: 地址系列
               href: address-families.md
             - name: 虚拟连接
@@ -948,8 +1035,9 @@
         - name: 服务质量
           href: quality-of-service.md
         - name: MCM 驱动程序与呼叫管理程序
-          href: mcm-drivers-vs--call-managers.md
           items:
+            - name: MCM 驱动程序与呼叫管理程序
+              href: mcm-drivers-vs--call-managers.md
             - name: 初始化的差异
               href: differences-in-initialization.md
             - name: NdisXxx 函数调用的差异
@@ -959,8 +1047,9 @@
         - name: 面向连接的计时功能
           href: connection-oriented-timing-features.md
         - name: CoNDIS 注册
-          href: condis-registration.md
           items:
+            - name: CoNDIS 注册
+              href: condis-registration.md
             - name: CoNDIS 微型端口驱动程序注册
               href: condis-miniport-driver-registration.md
             - name: CoNDIS 客户端注册
@@ -970,11 +1059,13 @@
             - name: CoNDIS MCM 注册
               href: condis-mcm-registration.md
         - name: 面向连接的操作
-          href: connection-oriented-operations.md
           items:
+            - name: 面向连接的操作
+              href: connection-oriented-operations.md
             - name: 面向连接的操作摘要
-              href: summary-of-connection-oriented-operations.md
               items:
+                - name: 面向连接的操作摘要
+                  href: summary-of-connection-oriented-operations.md
                 - name: 客户端执行的面向连接的操作
                   href: connection-oriented-operations-performed-by-clients.md
                 - name: 呼叫管理程序执行的面向连接的操作
@@ -982,8 +1073,9 @@
                 - name: 微型端口驱动程序执行的面向连接的操作
                   href: connection-oriented-operations-performed-by-miniport-drivers.md
             - name: 针对地址系列和 SAP 的操作
-              href: operations-on-address-families-and-saps.md
               items:
+                - name: 针对地址系列和 SAP 的操作
+                  href: operations-on-address-families-and-saps.md
                 - name: 注册和打开地址系列
                   href: registering-and-opening-an-address-family.md
                 - name: 注册 SAP
@@ -991,15 +1083,17 @@
                 - name: 取消注册 SAP
                   href: deregistering-a-sap.md
                 - name: 关闭地址系列
-                  href: closing-an-address-family.md
                   items:
+                    - name: 关闭地址系列
+                      href: closing-an-address-family.md
                     - name: 关闭 CoNDIS 呼叫管理程序或 MCM
                       href: closing-a-condis-call-manager-or-mcm.md
                     - name: 关闭 CoNDIS 客户端中的地址系列
                       href: closing-an-address-family-in-a-condis-client.md
             - name: 针对 VC 的操作
-              href: operations-on-vcs.md
               items:
+                - name: 针对 VC 的操作
+                  href: operations-on-vcs.md
                 - name: 创建 VC
                   href: creating-a-vc.md
                 - name: 激活 VC
@@ -1009,22 +1103,25 @@
                 - name: 删除 VC
                   href: deleting-a-vc.md
             - name: 设置呼叫
-              href: setting-up-a-call.md
               items:
+                - name: 设置呼叫
+                  href: setting-up-a-call.md
                 - name: 呼叫
                   href: making-a-call.md
                 - name: 指示来电
                   href: indicating-an-incoming-call.md
             - name: 更改活动 VC 的 QoS
-              href: changing-the-qos-of-an-active-vc.md
               items:
+                - name: 更改活动 VC 的 QoS
+                  href: changing-the-qos-of-an-active-vc.md
                 - name: 客户端发出的更改呼叫参数请求
                   href: client-initiated-request-to-change-call-parameters.md
                 - name: 传入的更改呼叫参数请求
                   href: incoming-request-to-change-call-parameters.md
             - name: 添加和删除参与方
-              href: adding-and-dropping-parties.md
               items:
+                - name: 添加和删除参与方
+                  href: adding-and-dropping-parties.md
                 - name: 将参与方添加到多点呼叫
                   href: adding-a-party-to-a-multipoint-call.md
                 - name: 从多点呼叫中删除参与方
@@ -1032,25 +1129,29 @@
                 - name: 传入的从多点呼叫中删除参与方请求
                   href: incoming-request-to-drop-a-party-from-a-multipoint-call.md
             - name: 在 CoNDIS 中发送和接收数据
-              href: sending-and-receiving-data2.md
               items:
+                - name: 在 CoNDIS 中发送和接收数据
+                  href: sending-and-receiving-data2.md
                 - name: 从 CoNDIS 驱动程序发送 NET_BUFFER 结构
                   href: sending-net-buffer-structures-from-condis-drivers.md
                 - name: 在 CoNDIS 驱动程序中接收 NET_BUFFER 结构
                   href: receiving-net-buffer-structures-in-condis-drivers.md
             - name: 放弃呼叫
-              href: tearing-down-a-call.md
               items:
+                - name: 放弃呼叫
+                  href: tearing-down-a-call.md
                 - name: 客户端发起的结束呼叫请求
                   href: client-initiated-request-to-close-a-call.md
                 - name: 传入的结束呼叫请求
                   href: incoming-request-to-close-a-call.md
             - name: 获取和设置信息
-              href: obtaining-and-setting-information.md
               items:
+                - name: 获取和设置信息
+                  href: obtaining-and-setting-information.md
                 - name: 查询或设置信息
-                  href: querying-or-setting-information.md
                   items:
+                    - name: 查询或设置信息
+                      href: querying-or-setting-information.md
                     - name: CoNDIS 微型端口驱动程序 OID 请求
                       href: condis-miniport-driver-oid-requests.md
                     - name: CoNDIS 协议驱动程序 OID 请求
@@ -1058,8 +1159,9 @@
                     - name: CoNDIS MCM OID 请求
                       href: condis-mcm-oid-requests.md
                 - name: 指示微型端口驱动程序状态
-                  href: indicating-miniport-driver-status.md
                   items:
+                    - name: 指示微型端口驱动程序状态
+                      href: indicating-miniport-driver-status.md
                     - name: CoNDIS 微型端口驱动程序状态指示
                       href: condis-miniport-driver-status-indications.md
                     - name: 处理 CoNDIS 协议驱动程序中的状态指示
@@ -1067,11 +1169,13 @@
             - name: Reset
               href: reset.md
     - name: NDIS 网络接口
-      href: ndis-network-interfaces2.md
       items:
+        - name: NDIS 网络接口
+          href: ndis-network-interfaces2.md
         - name: NDIS 网络接口概述
-          href: overview-of-ndis-network-interfaces.md
           items:
+            - name: NDIS 网络接口概述
+              href: overview-of-ndis-network-interfaces.md
             - name: NDIS 网络接口服务
               href: ndis-network-interface-services.md
             - name: NDIS 网络接口体系结构
@@ -1083,15 +1187,17 @@
         - name: 注册为接口提供程序
           href: registering-as-an-interface-provider.md
         - name: 管理 NDIS 网络接口
-          href: managing-ndis-network-interfaces.md
           items:
+            - name: 管理 NDIS 网络接口
+              href: managing-ndis-network-interfaces.md
             - name: NET_LUID 值
               href: net-luid-value.md
             - name: 使用 NET_LUID 索引
               href: using-a-net-luid-index.md
             - name: 注册网络接口
-              href: registering-a-network-interface.md
               items:
+                - name: 注册网络接口
+                  href: registering-a-network-interface.md
                 - name: 分配接口索引
                   href: allocating-an-interface-index.md
                 - name: 网络接口信息
@@ -1105,8 +1211,9 @@
             - name: 维护网络接口堆栈
               href: maintaining-a-network-interface-stack.md
         - name: 在 NDIS 接口提供程序中处理 OID 查询和设置请求
-          href: handling-oid-query-and-set-requests-in-an-ndis-interface-provider.md
           items:
+            - name: 在 NDIS 接口提供程序中处理 OID 查询和设置请求
+              href: handling-oid-query-and-set-requests-in-an-ndis-interface-provider.md
             - name: 处理接口对象查询请求
               href: handling-an-interface-object-query-request.md
             - name: 处理接口对象设置请求
@@ -1114,8 +1221,9 @@
         - name: 将 NDIS 网络接口映射到 NDIS OID
           href: mapping-of-ndis-network-interfaces-to-ndis-oids.md
         - name: NDIS MDL 接口
-          href: ndis-mdl-interface.md
           items:
+            - name: NDIS MDL 接口
+              href: ndis-mdl-interface.md
             - name: NDIS_MDL_LINKAGE
               href: ndis-mdl-linkage.md
             - name: NDIS_MDL_TO_SPAN_PAGES
@@ -1129,11 +1237,13 @@
             - name: NdisQueryMdlOffset
               href: ndisquerymdloffset.md
     - name: NDIS 端口
-      href: ndis-ports.md
       items:
+        - name: NDIS 端口
+          href: ndis-ports.md
         - name: NDIS 端口概述
-          href: overview-of-ndis-ports.md
           items:
+            - name: NDIS 端口概述
+              href: overview-of-ndis-ports.md
             - name: 标识 NDIS 端口
               href: identifying-an-ndis-port.md
             - name: 默认 NDIS 端口
@@ -1149,13 +1259,15 @@
         - name: 激活 NDIS 端口
           href: activating-an-ndis-port.md
         - name: 管理 NDIS 端口
-          href: managing-an-ndis-port.md
           items:
+            - name: 管理 NDIS 端口
+              href: managing-an-ndis-port.md
             - name: NDIS 端口发送和接收操作
               href: ndis-port-send-and-receive-operations.md
             - name: NDIS 端口 OID 请求
-              href: ndis-port-oid-requests.md
               items:
+                - name: NDIS 端口 OID 请求
+                  href: ndis-port-oid-requests.md
                 - name: 枚举端口
                   href: enumerating-ports.md
                 - name: 查询端口状态
@@ -1165,8 +1277,9 @@
             - name: 处理 NDIS 端口状态指示
               href: handling-ndis-ports-status-indications.md
             - name: 处理 NDIS 端口 PnP 事件通知
-              href: handling-ndis-ports-pnp-event-notifications.md
               items:
+                - name: 处理 NDIS 端口 PnP 事件通知
+                  href: handling-ndis-ports-pnp-event-notifications.md
                 - name: 处理端口激活 PnP 事件
                   href: handling-the-port-activation-pnp-event.md
                 - name: 处理端口停用 PnP 事件
@@ -1176,17 +1289,21 @@
         - name: 创建 NDIS 端口的 NDIS 接口
           href: creating-ndis-interfaces-for-ndis-ports.md
     - name: NDIS 电源管理
-      href: ndis-power-management.md
       items:
+        - name: NDIS 电源管理
+          href: ndis-power-management.md
         - name: 电源管理 (NDIS 6.30)
-          href: power-management--ndis-6-30-.md
           items:
+            - name: 电源管理 (NDIS 6.30)
+              href: power-management--ndis-6-30-.md
             - name: NDIS 数据包合并
-              href: ndis-packet-coalescing.md
               items:
+                - name: NDIS 数据包合并
+                  href: ndis-packet-coalescing.md
                 - name: 数据包合并概述
-                  href: overview-of-packet-coalescing.md
                   items:
+                    - name: 数据包合并概述
+                      href: overview-of-packet-coalescing.md
                     - name: 数据包合并接收筛选器
                       href: packet-coalescing-receive-filters.md
                 - name: 报告数据包合并功能
@@ -1194,8 +1311,9 @@
                 - name: 查询数据包合并功能
                   href: querying-packet-coalescing-capabilities.md
                 - name: 管理数据包合并接收筛选器
-                  href: managing-packet-coalescing-receive-filters.md
                   items:
+                    - name: 管理数据包合并接收筛选器
+                      href: managing-packet-coalescing-receive-filters.md
                     - name: 有关管理数据包合并接收筛选器的指导
                       href: guidelines-for-managing-packet-coalescing-receive-filters.md
                     - name: 指定数据包合并接收筛选器
@@ -1215,8 +1333,9 @@
                 - name: 数据包合并的标准化 INF 关键字
                   href: standardized-inf-keywords-for-packet-coalescing.md
             - name: NDIS 选择性挂起
-              href: ndis-selective-suspend.md
               items:
+                - name: NDIS 选择性挂起
+                  href: ndis-selective-suspend.md
                 - name: NDIS 选择性挂起概述
                   href: overview-of-ndis-selective-suspend.md
                 - name: 报告 NDIS 选择性挂起功能
@@ -1224,8 +1343,9 @@
                 - name: 注册 NDIS 选择性挂起处理程序函数
                   href: registering-ndis-selective-suspend-handler-functions.md
                 - name: NDIS 选择性挂起空闲通知
-                  href: ndis-selective-suspend-idle-notifications.md
                   items:
+                    - name: NDIS 选择性挂起空闲通知
+                      href: ndis-selective-suspend-idle-notifications.md
                     - name: NDIS 如何检测空闲的网络适配器
                       href: how-ndis-detects-idle-network-adapters.md
                     - name: 处理 NDIS 选择性挂起空闲通知
@@ -1237,8 +1357,9 @@
                 - name: NDIS 选择性挂起的标准化 INF 关键字
                   href: standardized-inf-keywords-for-ndis-selective-suspend.md
                 - name: NDIS 选择性挂起实施指导
-                  href: ndis-selective-suspend-implementation-guidelines.md
                   items:
+                    - name: NDIS 选择性挂起实施指导
+                      href: ndis-selective-suspend-implementation-guidelines.md
                     - name: 管理 NDIS 选择性挂起的 IRP 资源
                       href: managing-irp-resources-for-ndis-selective-suspend.md
                     - name: 实现 MiniportIdleNotification 处理程序函数
@@ -1250,8 +1371,9 @@
                     - name: 实现 USB 空闲请求 IRP 完成例程
                       href: implementing-a-usb-idle-request-irp-completion-routine.md
             - name: NDIS 唤醒原因状态指示
-              href: ndis-wake-reason-status-indications.md
               items:
+                - name: NDIS 唤醒原因状态指示
+                  href: ndis-wake-reason-status-indications.md
                 - name: NDIS 唤醒原因状态指示概述
                   href: overview-of-ndis-wake-reason-statue-indications.md
                 - name: 报告唤醒原因状态指示功能
@@ -1259,11 +1381,13 @@
                 - name: 发出 NDIS 唤醒原因状态指示
                   href: issuing-ndis-wake-reason-indications.md
         - name: 电源管理 (NDIS 6.20)
-          href: power-management--ndis-6-20-.md
           items:
+            - name: 电源管理 (NDIS 6.20)
+              href: power-management--ndis-6-20-.md
             - name: NDIS 电源管理概述
-              href: ndis-power-management-overview.md
               items:
+                - name: NDIS 电源管理概述
+                  href: ndis-power-management-overview.md
                 - name: NDIS 6.20 中的 WOL 方法
                   href: wol-methods-in-ndis-6-20.md
                 - name: NDIS 电源管理的 WOL 模式
@@ -1291,8 +1415,9 @@
             - name: 介质断开连接时降低功耗
               href: low-power-on-media-disconnect.md
             - name: 电源管理状态指示
-              href: power-management-status-indications.md
               items:
+                - name: 电源管理状态指示
+                  href: power-management-status-indications.md
                 - name: NDIS_STATUS_PM_CAPABILITIES_CHANGE
                   href: ndis-status-pm-capabilities-change.md
                 - name: NDIS_STATUS_PM_HARDWARE_CAPABILITIES
@@ -1302,15 +1427,17 @@
                 - name: NDIS_STATUS_PM_WOL_PATTERN_REJECTED
                   href: ndis-status-pm-wol-pattern-rejected.md
         - name: 电源管理（NDIS 6.0 和 NDIS 6.1）
-          href: power-management--ndis-6-0-and-ndis-6-1-.md
           items:
+            - name: 电源管理（NDIS 6.0 和 NDIS 6.1）
+              href: power-management--ndis-6-0-and-ndis-6-1-.md
             - name: 电源管理的必需和可选 OID
               href: required-and-optional-oids-for-power-management.md
             - name: 网络适配器的设备电源状态
               href: device-power-states-for-network-adapters.md
             - name: 网络唤醒事件
-              href: network-wake-up-events.md
               items:
+                - name: 网络唤醒事件
+                  href: network-wake-up-events.md
                 - name: 启用唤醒事件
                   href: enabling-wake-up-events.md
                 - name: 处理唤醒事件
@@ -1318,8 +1445,9 @@
             - name: 处理 OID_PNP_QUERY_POWER OID
               href: handling-an-oid-pnp-query-power-oid.md
             - name: 处理 OID_PNP_SET_POWER OID
-              href: handling-an-oid-pnp-set-power-oid.md
               items:
+                - name: 处理 OID_PNP_SET_POWER OID
+                  href: handling-an-oid-pnp-set-power-oid.md
                 - name: 转换到睡眠状态
                   href: transitioning-to-a-sleeping-state.md
                 - name: 转换到工作状态
@@ -1333,16 +1461,19 @@
             - name: 避免 NDIS 电源管理问题
               href: avoiding-ndis-power-management-problems.md
     - name: 数据中心桥接的 NDIS QoS
-      href: ndis-qos-for-data-center-bridging.md
       items:
+        - name: 数据中心桥接的 NDIS QoS
+          href: ndis-qos-for-data-center-bridging.md
         - name: 数据中心桥接概述
           href: overview-of-data-center-bridging.md
         - name: 数据中心桥接的 NDIS QoS 概述
-          href: overview-of-ndis-qos-for-data-center-bridging.md
           items:
+            - name: 数据中心桥接的 NDIS QoS 概述
+              href: overview-of-ndis-qos-for-data-center-bridging.md
             - name: 数据中心桥接的 NDIS QoS 体系结构
-              href: ndis-qos-architecture-for-data-center-bridging.md
               items:
+                - name: 数据中心桥接的 NDIS QoS 体系结构
+                  href: ndis-qos-architecture-for-data-center-bridging.md
                 - name: 系统提供的 DCB 组件
                   href: system-provided-dcb-components.md
                 - name: 供应商提供的 DCB 组件
@@ -1350,11 +1481,13 @@
             - name: 数据中心桥接的 NDIS QoS 要求
               href: ndis-qos-requirements-for-data-center-bridging.md
             - name: NDIS QoS 流量类
-              href: ndis-qos-traffic-classes.md
               items:
+                - name: NDIS QoS 流量类
+                  href: ndis-qos-traffic-classes.md
                 - name: 优先级和流控制
-                  href: priority-levels-and-flow-control.md
                   items:
+                    - name: 优先级和流控制
+                      href: priority-levels-and-flow-control.md
                     - name: IEEE 802.1p 优先级
                       href: ieee-802-1p-priority-levels.md
                     - name: 基于优先级的流控制 (PFC)
@@ -1364,8 +1497,9 @@
                 - name: 严格优先级算法
                   href: strict-priority-algorithm.md
                 - name: 增强的传输选择 (ETS) 算法
-                  href: enhanced-transmission-selection--ets--algorithm.md
                   items:
+                    - name: 增强的传输选择 (ETS) 算法
+                      href: enhanced-transmission-selection--ets--algorithm.md
                     - name: 流量类优先级分配
                       href: traffic-class-priority-assignment.md
                     - name: 带宽分配
@@ -1373,15 +1507,17 @@
             - name: NDIS QoS 流量分类
               href: ndis-qos-traffic-classifications.md
         - name: 管理 NDIS QoS 功能
-          href: managing-ndis-qos-capabilities.md
           items:
+            - name: 管理 NDIS QoS 功能
+              href: managing-ndis-qos-capabilities.md
             - name: 注册 NDIS QoS 功能
               href: registering-ndis-qos-capabilities.md
             - name: 查询 NDIS QoS 功能
               href: querying-ndis-qos-capabilities.md
         - name: 管理 NDIS QoS 参数
-          href: managing-ndis-qos--parameters.md
           items:
+            - name: 管理 NDIS QoS 参数
+              href: managing-ndis-qos--parameters.md
             - name: NDIS QoS 参数概述
               href: overview-of-ndis-qos-parameters.md
             - name: 管理本地 DCBX 意愿状态
@@ -1395,8 +1531,9 @@
             - name: 查询 NDIS QoS 参数
               href: querying-ndis-qos-parameters.md
             - name: 指示 NDIS QoS 参数状态
-              href: indicating-ndis-qos-parameter-status.md
               items:
+                - name: 指示 NDIS QoS 参数状态
+                  href: indicating-ndis-qos-parameter-status.md
                 - name: 指示对 NDIS QoS 操作参数的更改
                   href: indicating-changes-to-the-operational-ndis-qos-parameters.md
                 - name: 指示对远程 NDIS QoS 参数的更改
@@ -1404,8 +1541,9 @@
         - name: NDIS QoS 的标准化 INF 关键字
           href: standardized-inf-keywords-for-ndis-qos.md
     - name: NDIS 计时器服务
-      href: ndis-timer-services2.md
       items:
+        - name: NDIS 计时器服务
+          href: ndis-timer-services2.md
         - name: 初始化 NDIS 计时器
           href: initializing-ndis-timers.md
         - name: 设置和清除计时器
@@ -1413,8 +1551,9 @@
         - name: 服务计时器
           href: servicing-timers.md
     - name: 其他 NDIS 函数
-      href: miscellaneous-ndis-functions.md
       items:
+        - name: 其他 NDIS 函数
+          href: miscellaneous-ndis-functions.md
         - name: NDIS 配置函数
           href: ndis-configuration-functions.md
         - name: NDIS 对象
@@ -1422,18 +1561,21 @@
         - name: NDIS I/O 工作项
           href: ndis-i-o-work-items.md
     - name: 安装和升级网络组件
-      href: installing-and-upgrading-network-components.md
       items:
+        - name: 安装和升级网络组件
+          href: installing-and-upgrading-network-components.md
         - name: 网络组件的安装过程
-          href: installing-network-components2.md
           items:
+            - name: 网络组件的安装过程
+              href: installing-network-components2.md
             - name: 用于网络组件安装的组件和文件
               href: components-and-files-used-for-network-component-installation.md
             - name: 创建网络 INF 文件
               href: creating-network-inf-files.md
             - name: 网络 INF 文件中的节
-              href: sections-in-a-network-inf-file.md
               items:
+                - name: 网络 INF 文件中的节
+                  href: sections-in-a-network-inf-file.md
                 - name: 网络 INF 文件中的 Version 节
                   href: version-section-in-a-network-inf-file.md
                 - name: 网络 INF 文件中的 Models 节
@@ -1445,8 +1587,9 @@
                 - name: 网络 INF 文件中的 ControlFlags 节
                   href: controlflags-section-in-a-network-inf-file.md
                 - name: 网络 INF 文件中的 Add-registry-sections
-                  href: add-registry-sections-in-a-network-inf-file.md
                   items:
+                    - name: 网络 INF 文件中的 Add-registry-sections
+                      href: add-registry-sections-in-a-network-inf-file.md
                     - name: 设置静态参数
                       href: setting-static-parameters.md
                     - name: 指定 WAN 适配器的 WAN 终结点
@@ -1478,8 +1621,9 @@
                 - name: 网络 INF 文件中的 DDInstall.Services 节
                   href: ddinstall-services-section-in-a-network-inf-file.md
                 - name: 网络 INF 文件中的 NetworkProvider 和 PrintProvider 节
-                  href: networkprovider-and-printprovider-sections-in-a-network-inf-file.md
                   items:
+                    - name: 网络 INF 文件中的 NetworkProvider 和 PrintProvider 节
+                      href: networkprovider-and-printprovider-sections-in-a-network-inf-file.md
                     - name: 包含 NetworkProvider 节
                       href: including-a-networkprovider-section.md
                     - name: 包含 PrintProvider 节
@@ -1487,8 +1631,9 @@
                 - name: 网络 INF 文件中的 Winsock 节
                   href: winsock-sections-in-a-network-inf-file.md
             - name: 网络组件的安装要求
-              href: installation-requirements-for-network-components.md
               items:
+                - name: 网络组件的安装要求
+                  href: installation-requirements-for-network-components.md
                 - name: 网络适配器的安装要求
                   href: installation-requirements-for-network-adapters.md
                 - name: 网络协议的安装要求
@@ -1504,11 +1649,13 @@
                 - name: 网络服务的安装要求
                   href: installation-requirements-for-network-services.md
         - name: 网络组件的通知对象
-          href: notify-objects-for-network-components.md
           items:
+            - name: 网络组件的通知对象
+              href: notify-objects-for-network-components.md
             - name: 关于通知对象
-              href: about-notify-objects.md
               items:
+                - name: 关于通知对象
+                  href: about-notify-objects.md
                 - name: 通知对象示意图
                   href: notify-object-diagram.md
                 - name: 处理通知
@@ -1524,8 +1671,9 @@
                 - name: 配置网络
                   href: configuring-the-network.md
             - name: 创建通知对象
-              href: creating-a-notify-object.md
               items:
+                - name: 创建通知对象
+                  href: creating-a-notify-object.md
                 - name: 加载通知对象 DLL 和类对象
                   href: loading-the-notify-object-dll-and-class-object.md
                 - name: 定义通知类
@@ -1539,8 +1687,9 @@
                 - name: 设置上下文以显示属性
                   href: setting-context-to-display-properties.md
                 - name: 评估对网络配置所做的更改
-                  href: evaluating-changes-to-network-configuration.md
                   items:
+                    - name: 评估对网络配置所做的更改
+                      href: evaluating-changes-to-network-configuration.md
                     - name: 添加组件
                       href: adding-a-component.md
                     - name: 更改组件的绑定
@@ -1552,16 +1701,19 @@
                 - name: 检索网络配置接口指针
                   href: retrieving-network-configuration-interface-pointers.md
         - name: 网络组件的升级过程
-          href: upgrading-network-components.md
           items:
+            - name: 网络组件的升级过程
+              href: upgrading-network-components.md
             - name: 自定义网络升级过程
-              href: customizing-the-network-upgrade-process.md
               items:
+                - name: 自定义网络升级过程
+                  href: customizing-the-network-upgrade-process.md
                 - name: 创建 Netupg.inf 文件
                   href: creating-a-netupg-inf-file.md
             - name: 网络升级过程
-              href: the-network-upgrade-process.md
               items:
+                - name: 网络升级过程
+                  href: the-network-upgrade-process.md
                 - name: 网络升级过程的 Winnt32 阶段
                   href: winnt32-phase-of-the-network-upgrade-process.md
                 - name: 网络升级过程的文本模式阶段
@@ -1571,11 +1723,13 @@
             - name: 编写网络迁移 DLL
               href: writing-a-network-migration-dll.md
             - name: 创建 Netmap.inf 文件
-              href: creating-a-netmap-inf-file.md
               items:
+                - name: 创建 Netmap.inf 文件
+                  href: creating-a-netmap-inf-file.md
                 - name: Netmap.inf 文件中的映射 ID
-                  href: mapping-ids-in-a-netmap-inf-file.md
                   items:
+                    - name: Netmap.inf 文件中的映射 ID
+                      href: mapping-ids-in-a-netmap-inf-file.md
                     - name: 一对一 ID 映射
                       href: one-to-one-id-mapping.md
                     - name: 一对多 ID 映射
@@ -1585,18 +1739,21 @@
                 - name: 在 Netmap.inf 文件中指定备用帮助消息文件
                   href: specifying-alternative-help-message-files-in-a-netmap-inf-file.md
             - name: 测试网络组件的升级
-              href: testing-the-upgrade-of-network-components.md
               items:
+                - name: 测试网络组件的升级
+                  href: testing-the-upgrade-of-network-components.md
                 - name: 设置测试系统
                   href: setting-up-the-test-system.md
                 - name: 运行升级测试并检查结果
-                  href: running-the-upgrade-test-and-examining-the-results.md
                   items:
+                    - name: 运行升级测试并检查结果
+                      href: running-the-upgrade-test-and-examining-the-results.md
                     - name: 检查应答文件
                       href: examining-the-answerfile.md
     - name: NDIS 核心功能 OID
-      href: ndis-core-functionality-oids.md
       items:
+        - name: NDIS 核心功能 OID
+          href: ndis-core-functionality-oids.md
         - name: NDIS 常规统计信息 OID
           href: ndis-general-statistics-oids.md
         - name: NDIS 网络接口 OID
@@ -1606,8 +1763,9 @@
         - name: 以太网统计信息 OID
           href: ethernet-statistics-oids.md
         - name: 面向连接的 OID
-          href: connection-oriented-oids.md
           items:
+            - name: 面向连接的 OID
+              href: connection-oriented-oids.md
             - name: 面向连接的微型端口驱动程序的常规操作 OID
               href: general-operational-oids-for-connection-oriented-miniport-drivers.md
             - name: 面向连接的微型端口驱动程序的常规统计信息 OID
@@ -1617,11 +1775,13 @@
             - name: 面向连接的 NDIS 的 TAPI 扩展 OID
               href: tapi-extension-oids-for-connection-oriented-ndis.md
     - name: NDIS 核心功能状态指示
-      href: ndis-core-functionality-status-indications.md
       items:
+        - name: NDIS 核心功能状态指示
+          href: ndis-core-functionality-status-indications.md
         - name: NDIS 常规状态指示
-          href: ndis-general-status-indications.md
           items:
+            - name: NDIS 常规状态指示
+              href: ndis-general-status-indications.md
             - name: NDIS_STATUS_MEDIA_CONNECT
               href: ndis-status-media-connect.md
             - name: NDIS_STATUS_MEDIA_DISCONNECT
@@ -1647,27 +1807,31 @@
             - name: NDIS_STATUS_PACKET_FILTER
               href: ndis-status-packet-filter.md
         - name: 接收筛选器状态指示
-          href: receive-filter-status-indications.md
           items:
+            - name: 接收筛选器状态指示
+              href: receive-filter-status-indications.md
             - name: NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES
               href: ndis-status-receive-filter-current-capabilities.md
             - name: NDIS_STATUS_RECEIVE_FILTER_HARDWARE_CAPABILITIES
               href: ndis-status-receive-filter-hardware-capabilities.md
         - name: NDIS QoS 状态指示
-          href: ndis-qos-status-indications.md
           items:
+            - name: NDIS QoS 状态指示
+              href: ndis-qos-status-indications.md
             - name: NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
               href: ndis-status-qos-operational-parameters-change.md
             - name: NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE
               href: ndis-status-qos-remote-parameters-change.md
         - name: NDIS 唤醒原因状态指示
-          href: ndis-wake-reason-status-indications-ref.md
           items:
+            - name: NDIS 唤醒原因状态指示
+              href: ndis-wake-reason-status-indications-ref.md
             - name: NDIS_STATUS_PM_WAKE_REASON
               href: ndis-status-pm-wake-reason.md
         - name: NDIS WAN 状态指示
-          href: ndis-wan-status-indications.md
           items:
+            - name: NDIS WAN 状态指示
+              href: ndis-wan-status-indications.md
             - name: NDIS_STATUS_WAN_LINE_UP
               href: ndis-status-wan-line-up.md
             - name: NDIS_STATUS_WAN_LINE_DOWN
@@ -1687,14 +1851,17 @@
             - name: NDIS_STATUS_WAN_CO_MTULINKPARAMS
               href: ndis-status-wan-co-mtulinkparams.md
 - name: 可缩放网络
-  href: scalable-networking2.md
   items:
+    - name: 可缩放网络
+      href: scalable-networking2.md
     - name: 标头数据拆分
-      href: header-data-split.md
       items:
+        - name: 标头数据拆分
+          href: header-data-split.md
         - name: 标头数据拆分概述
-          href: header-data-split-overview.md
           items:
+            - name: 标头数据拆分概述
+              href: header-data-split-overview.md
             - name: 标头数据拆分体系结构
               href: header-data-split-architecture.md
             - name: 在何处拆分标头和数据
@@ -1704,15 +1871,17 @@
             - name: 标头数据拆分的最低支持要求
               href: minimum-requirements-for-supporting-header-data-split.md
             - name: 标头数据拆分状态指示
-              href: header-data-split-status-indications.md
               items:
+                - name: 标头数据拆分状态指示
+                  href: header-data-split-status-indications.md
                 - name: NDIS_STATUS_HD_SPLIT_CURRENT_CONFIG
                   href: ndis-status-hd-split-current-config.md
         - name: 初始化标头数据拆分提供程序
           href: initializing-a-header-data-split-provider.md
         - name: 拆分以太网帧
-          href: splitting-ethernet-frames.md
           items:
+            - name: 拆分以太网帧
+              href: splitting-ethernet-frames.md
             - name: 拆分 IPv4 帧
               href: splitting-ipv4-frames.md
             - name: 拆分 IPv6 帧
@@ -1726,15 +1895,17 @@
             - name: 在 UDP 有效负载中拆分帧
               href: splitting-frames-at-the-udp-payload.md
             - name: 拆分除 TCP 和 UDP 以外的帧
-              href: splitting-frames-other-than-tcp-and-udp.md
               items:
+                - name: 拆分除 TCP 和 UDP 以外的帧
+                  href: splitting-frames-other-than-tcp-and-udp.md
                 - name: 拆分 ICMP 帧和其他上层协议帧
                   href: splitting-icmp-frames-and-other-upper-layer-protocol-frames.md
                 - name: 拆分 IPsec 帧
                   href: splitting-ipsec-frames.md
         - name: 标头数据拆分的接收指示
-          href: receive-indications-with-header-data-split.md
           items:
+            - name: 标头数据拆分的接收指示
+              href: receive-indications-with-header-data-split.md
             - name: 分配标头缓冲区
               href: allocating-the-header-buffer.md
             - name: 为数据缓冲区分配回填
@@ -1742,8 +1913,9 @@
             - name: 设置 NET_BUFFER_LIST 信息
               href: setting-net-buffer-list-information.md
         - name: 标头数据拆分管理和配置
-          href: header-data-split-administration-and-configuration.md
           items:
+            - name: 标头数据拆分管理和配置
+              href: header-data-split-administration-and-configuration.md
             - name: 设置当前的标头数据拆分配置
               href: setting-the-current-header-data-split-configuration.md
             - name: 获取当前的标头数据拆分配置
@@ -1755,8 +1927,9 @@
         - name: 在协议驱动程序和筛选器驱动程序中支持标头数据拆分
           href: supporting-header-data-split-in-protocol-driver-and-filter-drivers.md
     - name: 网络直接内核提供程序接口 (NDKPI)
-      href: network-direct-kernel-programming-interface--ndkpi-.md
       items:
+        - name: 网络直接内核提供程序接口 (NDKPI)
+          href: network-direct-kernel-programming-interface--ndkpi-.md
         - name: 网络直接内核提供程序接口 (NDKPI) 概述
           href: overview-of-network-direct-kernel-provider-interface--ndkpi-.md
         - name: NDKPI 术语
@@ -1786,8 +1959,9 @@
         - name: NDKPI 延迟处理方案
           href: ndkpi-deferred-processing-scheme.md
     - name: 使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化
-      href: network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md
       items:
+        - name: 使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化
+          href: network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md
         - name: 有关使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化的概述
           href: overview-of-network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md
         - name: 在大规模发送卸载 (LSO) 中支持 NVGRE
@@ -1805,11 +1979,13 @@
         - name: NVGRE 任务卸载的标准化 INF 关键字
           href: standardized-inf-keywords-for-nvgre-task-offload.md
     - name: Receive Segment Coalescing (RSC)
-      href: receive-segment-coalescing--rsc-.md
       items:
+        - name: Receive Segment Coalescing (RSC)
+          href: receive-segment-coalescing--rsc-.md
         - name: 接收段合并概述
-          href: overview-of-receive-segment-coalescing.md
           items:
+            - name: 接收段合并概述
+              href: overview-of-receive-segment-coalescing.md
             - name: 合并 TCP/IP 段的规则
               href: rules-for-coalescing-tcp-ip-packets.md
             - name: 更新合并段的 IP 标头
@@ -1821,8 +1997,9 @@
             - name: 终止合并的异常条件
               href: exception-conditions-that-terminate-coalescing.md
         - name: 编写 RSC 驱动程序
-          href: writing-rsc-drivers.md
           items:
+            - name: 编写 RSC 驱动程序
+              href: writing-rsc-drivers.md
             - name: 确定网络适配器的 RSC 功能
               href: determining-the-rsc-capabilities-of-a-network-adapter.md
             - name: 查询和更改 RSC 状态
@@ -1832,8 +2009,9 @@
             - name: RSC 驱动程序的编程注意事项
               href: programming-considerations-for-rsc-drivers.md
     - name: 接收方缩放
-      href: ndis-receive-side-scaling2.md
       items:
+        - name: 接收方缩放
+          href: ndis-receive-side-scaling2.md
         - name: 接收端缩放简介
           href: introduction-to-receive-side-scaling.md
         - name: 接收端缩放版本 2 (RSSv2)
@@ -1855,8 +2033,9 @@
         - name: RSS 配置
           href: rss-configuration.md
         - name: 设置 RSS CPU 配置
-          href: setting-the-rss-cpu-configuration.md
           items:
+            - name: 设置 RSS CPU 配置
+              href: setting-the-rss-cpu-configuration.md
             - name: 保留应用程序的处理器
               href: reserving-processors-for-applications.md
             - name: 设置 RSS 处理器数目
@@ -1868,15 +2047,17 @@
         - name: 在中间驱动程序或筛选器驱动程序中支持 RSS
           href: supporting-rss-in-intermediate-drivers-or-filter-drivers.md
     - name: TCP/IP 卸载
-      href: tcp-ip-offload.md
       items:
+        - name: TCP/IP 卸载
+          href: tcp-ip-offload.md
         - name: 访问 TCP/IP 卸载 NET_BUFFER_LIST 信息
           href: accessing-tcp-ip-offload-net-buffer-list-information.md
         - name: 使用 TCP/IP 卸载管理员界面
           href: using-the-tcp-ip-offload-administrator-interface.md
         - name: 支持卸载的微型端口驱动程序安全指导原则
-          href: security-guidelines-for-offload-capable-miniport-drivers.md
           items:
+            - name: 支持卸载的微型端口驱动程序安全指导原则
+              href: security-guidelines-for-offload-capable-miniport-drivers.md
             - name: 在 NDIS 驱动程序中的安全漏洞攻击
               href: vulnerability-to-security-attacks-in-ndis-drivers.md
             - name: NDIS 驱动程序中的性能下降和拒绝服务攻击
@@ -1886,11 +2067,13 @@
             - name: NDIS 驱动程序的安全清单
               href: security-checklist-for-ndis-drivers.md
         - name: TCP/IP 任务卸载
-          href: task-offload.md
           items:
+            - name: TCP/IP 任务卸载
+              href: task-offload.md
             - name: 确定任务卸载功能
-              href: determining-task-offload-capabilities.md
               items:
+                - name: 确定任务卸载功能
+                  href: determining-task-offload-capabilities.md
                 - name: 报告 NIC 的校验和功能
                   href: reporting-a-nic-s-checksum-capabilities.md
                 - name: 报告 NIC 的 LSOV1 TCP 数据包分段功能
@@ -1910,11 +2093,13 @@
             - name: 卸载校验和任务
               href: offloading-checksum-tasks.md
             - name: IPsec 卸载版本 1
-              href: ipsec-offload-version-1.md
               items:
+                - name: IPsec 卸载版本 1
+                  href: ipsec-offload-version-1.md
                 - name: 卸载 ESP 和 AH 保护的数据包的处理
-                  href: offloading-the-processing-of-esp-protected-and-ah-protected-packets.md
                   items:
+                    - name: 卸载 ESP 和 AH 保护的数据包的处理
+                      href: offloading-the-processing-of-esp-protected-and-ah-protected-packets.md
                     - name: 对 IPsec 进行后台读取
                       href: background-reading-on-ipsec.md
                     - name: 适用于 IPsec 卸载的要求和限制
@@ -1930,8 +2115,9 @@
                     - name: 网络接口更改对 IPsec 卸载造成的影响
                       href: impact-of-network-interface-changes-on-ipsec-offloads.md
                 - name: 卸载 UDP 封装的 ESP 数据包的处理
-                  href: offloading-the-processing-of-udp-encapsulated-esp-packets.md
                   items:
+                    - name: 卸载 UDP 封装的 ESP 数据包的处理
+                      href: offloading-the-processing-of-udp-encapsulated-esp-packets.md
                     - name: 对 UDP 封装的 ESP 数据包进行后台读取
                       href: background-reading-on-udp-encapsulation-of-esp-packets.md
                     - name: 使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
@@ -1945,8 +2131,9 @@
                     - name: 处理 UDP 封装的 ESP 数据包
                       href: processing-udp-encapsulated-esp-packets.md
             - name: IPsec 卸载版本 2
-              href: ipsec-offload-version-2.md
               items:
+                - name: IPsec 卸载版本 2
+                  href: ipsec-offload-version-2.md
                 - name: IPsec 卸载版本 2 简介
                   href: introduction-to-ipsec-offload-version-2.md
                 - name: 报告 NIC 的 IPsec 卸载版本 2 功能
@@ -1962,8 +2149,9 @@
             - name: 卸载大型 TCP 数据包的段
               href: offloading-the-segmentation-of-large-tcp-packets.md
         - name: 连接卸载
-          href: connection-offload.md
           items:
+            - name: 连接卸载
+              href: connection-offload.md
             - name: 确定连接卸载功能
               href: determining-connection-offload-capabilities.md
             - name: 报告 NIC 的连接卸载功能
@@ -1979,8 +2167,9 @@
         - name: 任务卸载 OID
           href: task-offload-oids.md
         - name: NDIS TCP/IP 卸载状态指示
-          href: ndis-tcp-ip-offload-status-indications.md
           items:
+            - name: NDIS TCP/IP 卸载状态指示
+              href: ndis-tcp-ip-offload-status-indications.md
             - name: NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
               href: ndis-status-task-offload-current-config.md
             - name: NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES
@@ -1990,23 +2179,27 @@
             - name: NDIS_STATUS_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES
               href: ndis-status-tcp-connection-offload-hardware-capabilities.md
         - name: PacketDirect 提供程序接口 (PDPI) 状态指示
-          href: packetdirect-provider-interface--pdpi--status-indications.md
           items:
+            - name: PacketDirect 提供程序接口 (PDPI) 状态指示
+              href: packetdirect-provider-interface--pdpi--status-indications.md
             - name: NDIS_STATUS_PD_CURRENT_CONFIG
               href: ndis-status-pd-current-config.md
 - name: 虚拟化网络
-  href: virtualized-networking.md
   items:
+    - name: 虚拟化网络
+      href: virtualized-networking.md
     - name: 虚拟化网络的概念和术语
       href: virtualized-networking-concepts-and-terms.md
     - name: 虚拟化网络概述
-      href: overview-of-virtualized-networking.md
       items:
+        - name: 虚拟化网络概述
+          href: overview-of-virtualized-networking.md
         - name: Hyper-V 概述
           href: overview-of-hyper-v.md
         - name: Hyper-V 中的虚拟化网络接口
-          href: virtualized-networking-interfaces-in-hyper-v.md
           items:
+            - name: Hyper-V 中的虚拟化网络接口
+              href: virtualized-networking-interfaces-in-hyper-v.md
             - name: 单根 I/O 虚拟化 (SR-IOV) 接口
               href: single-root-i-o-virtualization--sr-iov--interface.md
             - name: 虚拟机队列 (VMQ) 接口
@@ -2016,14 +2209,17 @@
         - name: NDIS 虚拟化网络环境中的潜在性能瓶颈
           href: potential-performance-bottlenecks-in-an-ndis-virtualized-networking-environment.md
     - name: 单根 I/O 虚拟化 (SR-IOV)
-      href: single-root-i-o-virtualization--sr-iov-.md
       items:
+        - name: 单根 I/O 虚拟化 (SR-IOV)
+          href: single-root-i-o-virtualization--sr-iov-.md
         - name: 单根 I/O 虚拟化 (SR-IOV) 概述
-          href: overview-of-single-root-i-o-virtualization--sr-iov-.md
           items:
+            - name: 单根 I/O 虚拟化 (SR-IOV) 概述
+              href: overview-of-single-root-i-o-virtualization--sr-iov-.md
             - name: SR-IOV 体系结构
-              href: sr-iov-architecture.md
               items:
+                - name: SR-IOV 体系结构
+                  href: sr-iov-architecture.md
                 - name: SR-IOV 物理功能 (PF)
                   href: sr-iov-physical-function--pf-.md
                 - name: SR-IOV 虚拟功能 (VF)
@@ -2033,8 +2229,9 @@
                 - name: 虚拟端口 (VPort)
                   href: virtual-ports--vports-.md
             - name: SR-IOV 数据路径
-              href: sr-iov-data-paths.md
               items:
+                - name: SR-IOV 数据路径
+                  href: sr-iov-data-paths.md
                 - name: SR-IOV 数据路径概述
                   href: overview-of-sr-iov-data-paths.md
                 - name: SR-IOV VF 数据路径
@@ -2044,11 +2241,13 @@
                 - name: SR-IOV VF 故障转移和实时迁移支持
                   href: sr-iov-vf-failover-and-live-migration-support.md
         - name: 编写 SR-IOV PF 微型端口驱动程序
-          href: writing-sr-iov-pf-miniport-drivers.md
           items:
+            - name: 编写 SR-IOV PF 微型端口驱动程序
+              href: writing-sr-iov-pf-miniport-drivers.md
             - name: 初始化 PF 微型端口驱动程序
-              href: initializing-a-pf-miniport-driver.md
               items:
+                - name: 初始化 PF 微型端口驱动程序
+                  href: initializing-a-pf-miniport-driver.md
                 - name: 确定 SR-IOV 功能
                   href: determining-sr-iov-capabilities.md
                 - name: 确定 NIC 交换机功能
@@ -2056,8 +2255,9 @@
                 - name: 确定接收筛选功能
                   href: determining-receive-filtering-capabilities.md
                 - name: PF 微型端口驱动程序的初始化序列
-                  href: initialization-sequence-for-pf-miniport-drivers.md
                   items:
+                    - name: PF 微型端口驱动程序的初始化序列
+                      href: initialization-sequence-for-pf-miniport-drivers.md
                     - name: PF 微型端口驱动程序的 DriverEntry 指导原则
                       href: driverentry-guidelines-for-pf-miniport-drivers.md
                     - name: PF 微型端口驱动程序的 MiniportAddDevice 指导原则
@@ -2065,11 +2265,13 @@
                     - name: PF 微型端口驱动程序的 MiniportInitializeEx 指导原则
                       href: miniportinitializeex-guidelines-for-pf-miniport-drivers.md
             - name: 管理 NIC 交换机
-              href: managing-nic-switches.md
               items:
+                - name: 管理 NIC 交换机
+                  href: managing-nic-switches.md
                 - name: 创建 NIC 交换机
-                  href: creating-a-nic-switch.md
                   items:
+                    - name: 创建 NIC 交换机
+                      href: creating-a-nic-switch.md
                     - name: NIC 交换机的静态创建
                       href: static-creation-of-a-nic-switch.md
                     - name: NIC 交换机的动态创建
@@ -2085,8 +2287,9 @@
                 - name: 设置 NIC 交换机的参数
                   href: setting-the-parameters-of-a-nic-switch.md
             - name: 管理虚拟端口
-              href: managing-virtual-ports.md
               items:
+                - name: 管理虚拟端口
+                  href: managing-virtual-ports.md
                 - name: 创建虚拟端口
                   href: creating-a-virtual-port.md
                 - name: 删除虚拟端口
@@ -2098,8 +2301,9 @@
                 - name: 设置虚拟端口的参数
                   href: setting-the-parameters-of-a-virtual-port.md
                 - name: 管理虚拟端口的接收筛选器
-                  href: managing-receive-filters-for-a-virtual-port.md
                   items:
+                    - name: 管理虚拟端口的接收筛选器
+                      href: managing-receive-filters-for-a-virtual-port.md
                     - name: 在虚拟端口上设置接收筛选器
                       href: setting-a-receive-filter-on-a-virtual-port.md
                     - name: 清除虚拟端口上的接收筛选器
@@ -2115,25 +2319,29 @@
                 - name: 非默认虚拟端口和 VMQ
                   href: nondefault-virtual-ports-and-vmq.md
             - name: 管理虚拟功能
-              href: managing-virtual-functions.md
               items:
+                - name: 管理虚拟功能
+                  href: managing-virtual-functions.md
                 - name: 有关初始化和解除虚拟功能的概述
-                  href: overview-of-virtual-function-initialization-and-teardown.md
                   items:
+                    - name: 有关初始化和解除虚拟功能的概述
+                      href: overview-of-virtual-function-initialization-and-teardown.md
                     - name: 虚拟功能初始化序列
                       href: virtual-function-initialization-sequence.md
                     - name: 虚拟功能解除序列
                       href: virtual-function-teardown-sequence.md
                 - name: 为虚拟功能分配资源
-                  href: allocating-resources-for-a-virtual-function.md
                   items:
+                    - name: 为虚拟功能分配资源
+                      href: allocating-resources-for-a-virtual-function.md
                     - name: 发出 OID_NIC_SWITCH_ALLOCATE_VF 请求
                       href: issuing-oid-nic-switch-allocate-vf-requests.md
                     - name: 处理 OID_NIC_SWITCH_ALLOCATE_VF 请求
                       href: handling-oid-nic-switch-allocate-vf-requests.md
                 - name: 为虚拟功能释放资源
-                  href: freeing-resources-for-a-virtual-function.md
                   items:
+                    - name: 为虚拟功能释放资源
+                      href: freeing-resources-for-a-virtual-function.md
                     - name: 发出 OID_NIC_SWITCH_FREE_VF 请求
                       href: issuing-oid-nic-switch-free-vf-requests.md
                     - name: 处理 OID_NIC_SWITCH_FREE_VF 请求
@@ -2143,8 +2351,9 @@
                 - name: 查询虚拟功能的参数
                   href: querying-the-parameters-of-a-virtual-function.md
                 - name: 访问虚拟功能的 PCI 配置空间
-                  href: accessing-the-pci-configuration-space-of-a-virtual-function.md
                   items:
+                    - name: 访问虚拟功能的 PCI 配置空间
+                      href: accessing-the-pci-configuration-space-of-a-virtual-function.md
                     - name: 查询虚拟功能的 PCI 配置空间
                       href: querying-the-pci-configuration-space-for-a-virtual-function.md
                     - name: 查询虚拟功能的 PCI 供应商和设备标识符
@@ -2160,8 +2369,9 @@
             - name: 停止 PF 微型端口驱动程序
               href: halting-a-pf-miniport-driver.md
             - name: PF 微型端口驱动程序的 INF 要求
-              href: inf-requirements-for-pf-miniport-drivers.md
               items:
+                - name: PF 微型端口驱动程序的 INF 要求
+                  href: inf-requirements-for-pf-miniport-drivers.md
                 - name: SR-IOV 的标准化 INF 关键字
                   href: standardized-inf-keywords-for-sr-iov.md
                 - name: PF 微型端口驱动程序的 INF DDInstall.HW 节
@@ -2169,8 +2379,9 @@
                 - name: 处理 SR-IOV、VMQ 和 RSS 标准化 INF 关键字
                   href: handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md
         - name: 编写 SR-IOV VF 微型端口驱动程序
-          href: writing-sr-iov-vf-miniport-drivers.md
           items:
+            - name: 编写 SR-IOV VF 微型端口驱动程序
+              href: writing-sr-iov-vf-miniport-drivers.md
             - name: 初始化 VF 微型端口驱动程序
               href: initializing-a-vf-miniport-driver.md
             - name: 停止 VF 微型端口驱动程序
@@ -2178,8 +2389,9 @@
             - name: VF 微型端口驱动程序的 INF 要求
               href: inf-requirements-for-vf-miniport-drivers.md
         - name: SR-IOV PF/VF 反向通道通信
-          href: sr-iov-pf-vf-backchannel-communication.md
           items:
+            - name: SR-IOV PF/VF 反向通道通信
+              href: sr-iov-pf-vf-backchannel-communication.md
             - name: 从 VF 微型端口驱动程序进行反向通道通信
               href: backchannel-communication-from-a-vf-miniport-driver.md
             - name: 从 PF 微型端口驱动程序进行反向通道通信
@@ -2187,21 +2399,25 @@
         - name: SR-IOV OID
           href: sr-iov-oids.md
         - name: SR-IOV 状态指示
-          href: sr-iov-status-indications.md
           items:
+            - name: SR-IOV 状态指示
+              href: sr-iov-status-indications.md
             - name: NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES
               href: ndis-status-nic-switch-current-capabilities.md
             - name: NDIS_STATUS_NIC_SWITCH_HARDWARE_CAPABILITIES
               href: ndis-status-nic-switch-hardware-capabilities.md
     - name: 虚拟机队列 (VMQ)
-      href: virtual-machine-queue--vmq-.md
       items:
+        - name: 虚拟机队列 (VMQ)
+          href: virtual-machine-queue--vmq-.md
         - name: 虚拟机队列体系结构
-          href: virtual-machine-queue-architecture.md
           items:
+            - name: 虚拟机队列体系结构
+              href: virtual-machine-queue-architecture.md
             - name: NDIS 虚拟机队列 (VMQ) 简介
-              href: introduction-to-ndis-virtual-machine-queue--vmq-.md
               items:
+                - name: NDIS 虚拟机队列 (VMQ) 简介
+                  href: introduction-to-ndis-virtual-machine-queue--vmq-.md
                 - name: VMQ 组件
                   href: vmq-components.md
                 - name: VMQ 接收队列
@@ -2215,11 +2431,13 @@
             - name: NDIS 虚拟机队列状态
               href: ndis-virtual-machine-queue-states.md
         - name: 编写 VMQ 驱动程序
-          href: writing-vmq-drivers.md
           items:
+            - name: 编写 VMQ 驱动程序
+              href: writing-vmq-drivers.md
             - name: VMQ 驱动程序配置
-              href: vmq-driver-configuration.md
               items:
+                - name: VMQ 驱动程序配置
+                  href: vmq-driver-configuration.md
                 - name: 确定微型端口适配器的 VMQ 功能
                   href: determining-the-vmq-capabilities-of-a-network-adapter.md
                 - name: VMQ 的标准化 INF 关键字
@@ -2229,8 +2447,9 @@
             - name: VMQ 中断要求
               href: vmq-interrupt-requirements.md
             - name: 分配和释放 VM 队列
-              href: allocating-and-freeing-vm-queues.md
               items:
+                - name: 分配和释放 VM 队列
+                  href: allocating-and-freeing-vm-queues.md
                 - name: 分配 VM 队列
                   href: allocating-a-vm-queue.md
                 - name: 释放 VM 队列
@@ -2240,8 +2459,9 @@
                 - name: 枚举分配的队列
                   href: enumerating-the-allocated-queues.md
             - name: 设置和清除 VMQ 筛选器
-              href: setting-and-clearing-vmq-filters.md
               items:
+                - name: 设置和清除 VMQ 筛选器
+                  href: setting-and-clearing-vmq-filters.md
                 - name: 设置 VMQ 筛选器
                   href: setting-a-vmq-filter.md
                 - name: 清除 VMQ 筛选器
@@ -2251,8 +2471,9 @@
             - name: 获取和更新 VM 队列参数
               href: obtaining-and-updating-vm-queue-parameters.md
             - name: VMQ 发送和接收操作
-              href: vmq-send-and-receive-operations.md
               items:
+                - name: VMQ 发送和接收操作
+                  href: vmq-send-and-receive-operations.md
                 - name: VMQ 筛选器操作
                   href: vmq-filter-operations.md
                 - name: 接收缓冲区中的共享内存
@@ -2264,21 +2485,25 @@
             - name: 获取 VMQ 信息
               href: obtaining-vmq-information.md
     - name: Hyper-V 可扩展交换机
-      href: hyper-v-extensible-switch.md
       items:
+        - name: Hyper-V 可扩展交换机
+          href: hyper-v-extensible-switch.md
         - name: 开始编写 Hyper-V 可扩展交换机扩展
           href: getting-started-writing-a-hyper-v-extensible-switch-extension.md
         - name: Hyper-V 可扩展交换机概述
           href: overview-of-the-hyper-v-extensible-switch.md
         - name: Hyper-V 可扩展交换机体系结构
-          href: hyper-v-extensible-switch-architecture.md
           items:
+            - name: Hyper-V 可扩展交换机体系结构
+              href: hyper-v-extensible-switch-architecture.md
             - name: Hyper-V 可扩展交换机的组件
-              href: hyper-v-extensible-switch-components.md
               items:
+                - name: Hyper-V 可扩展交换机的组件
+                  href: hyper-v-extensible-switch-components.md
                 - name: Hyper-V 可扩展交换机扩展
-                  href: hyper-v-extensible-switch-extensions.md
                   items:
+                    - name: Hyper-V 可扩展交换机扩展
+                      href: hyper-v-extensible-switch-extensions.md
                     - name: 捕获扩展
                       href: capturing-extensions.md
                     - name: 筛选扩展
@@ -2290,8 +2515,9 @@
                     - name: 混合转发
                       href: hybrid-forwarding.md
                 - name: Hyper-V 可扩展交换机端口
-                  href: hyper-v-extensible-switch-ports.md
                   items:
+                    - name: Hyper-V 可扩展交换机端口
+                      href: hyper-v-extensible-switch-ports.md
                     - name: Hyper-V 可扩展交换机端口概述
                       href: overview-of-hyper-v-extensible-switch-ports.md
                     - name: 验证端口
@@ -2299,8 +2525,9 @@
                     - name: 操作端口
                       href: operational-ports.md
                 - name: Hyper-V 可扩展交换机网络适配器
-                  href: hyper-v-extensible-switch-network-adapters.md
                   items:
+                    - name: Hyper-V 可扩展交换机网络适配器
+                      href: hyper-v-extensible-switch-network-adapters.md
                     - name: Hyper-V 可扩展交换机网络适配器概述
                       href: overview-of-hyper-v-extensible-switch-network-adapters.md
                     - name: 外部网络适配器
@@ -2316,18 +2543,21 @@
                 - name: Hyper-V 可扩展交换机端口和网络适配器状态
                   href: hyper-v-extensible-switch-port-and-network-adapter-states.md
             - name: Hyper-V 可扩展交换机数据路径
-              href: hyper-v-extensible-switch-data-path.md
               items:
+                - name: Hyper-V 可扩展交换机数据路径
+                  href: hyper-v-extensible-switch-data-path.md
                 - name: Hyper-V 可扩展交换机数据路径概述
-                  href: overview-of-the-hyper-v-extensible-switch-data-path.md
                   items:
+                    - name: Hyper-V 可扩展交换机数据路径概述
+                      href: overview-of-the-hyper-v-extensible-switch-data-path.md
                     - name: 通过可扩展交换机数据路径传输的数据包流
                       href: packet-flow-through-the-extensible-switch-data-path.md
                     - name: 可扩展交换机数据路径的数据包管理指导原则
                       href: packet-management-guidelines-for-the-extensible-switch-data-path.md
                 - name: Hyper-V 可扩展交换机转发上下文
-                  href: hyper-v-extensible-switch-forwarding-context.md
                   items:
+                    - name: Hyper-V 可扩展交换机转发上下文
+                      href: hyper-v-extensible-switch-forwarding-context.md
                     - name: Hyper-V 可扩展交换机转发上下文数据类型
                       href: hyper-v-extensible-switch-forwarding-context-data-types.md
                     - name: 管理 Hyper-V 可扩展交换机转发上下文
@@ -2335,41 +2565,47 @@
                 - name: Hyper-V 可扩展交换机发送和接收标志
                   href: hyper-v-extensible-switch-send-and-receive-flags.md
             - name: Hyper-V 可扩展交换机控制路径
-              href: hyper-v-extensible-switch-control-path.md
               items:
+                - name: Hyper-V 可扩展交换机控制路径
+                  href: hyper-v-extensible-switch-control-path.md
                 - name: OID 请求的 Hyper-V 可扩展交换机控制路径
                   href: hyper-v-extensible-switch-control-path-for-oid-requests.md
                 - name: NDIS 状态指示的 Hyper-V 可扩展交换机控制路径
                   href: hyper-v-extensible-switch-control-path-for-ndis-status-indications.md
             - name: Hyper-V 可扩展交换机策略
-              href: hyper-v-extensible-switch-policies.md
               items:
+                - name: Hyper-V 可扩展交换机策略
+                  href: hyper-v-extensible-switch-policies.md
                 - name: Hyper-V 可扩展交换机策略概述
                   href: overview-of-hyper-v-extensible-switch-policies.md
                 - name: 端口策略
-                  href: port-policies.md
                   items:
+                    - name: 端口策略
+                      href: port-policies.md
                     - name: 端口策略概述
                       href: overview-of-port-policies.md
                     - name: 自定义端口属性定义和注册
                       href: custom-port-property-definition-and-registration.md
                 - name: 交换机策略
-                  href: switch-policies.md
                   items:
+                    - name: 交换机策略
+                      href: switch-policies.md
                     - name: 交换机策略概述
                       href: overview-of-switch-policies.md
                     - name: 自定义交换机属性定义和注册
                       href: custom-switch-property-definition-and-registration.md
             - name: Hyper-V 可扩展交换机功能状态信息
-              href: hyper-v-extensible-switch-feature-status-information.md
               items:
+                - name: Hyper-V 可扩展交换机功能状态信息
+                  href: hyper-v-extensible-switch-feature-status-information.md
                 - name: 自定义端口功能状态
                   href: custom-port-feature-status.md
                 - name: 自定义交换机功能状态
                   href: custom-switch-feature-status.md
             - name: Hyper-V 可扩展交换机保存和还原操作
-              href: hyper-v-extensible-switch-save-and-restore-operations.md
               items:
+                - name: Hyper-V 可扩展交换机保存和还原操作
+                  href: hyper-v-extensible-switch-save-and-restore-operations.md
                 - name: Hyper-V 可扩展交换机保存操作
                   href: hyper-v-extensible-switch-save-operations.md
                 - name: Hyper-V 可扩展交换机还原操作
@@ -2377,11 +2613,13 @@
                 - name: Hyper-V 可扩展交换机实时迁移支持
                   href: hyper-v-extensible-switch-live-migration-support.md
         - name: 编写 Hyper-V 可扩展交换机扩展
-          href: writing-hyper-v-extensible-switch-extensions.md
           items:
+            - name: 编写 Hyper-V 可扩展交换机扩展
+              href: writing-hyper-v-extensible-switch-extensions.md
             - name: Hyper-V 可扩展交换机发送和接收操作
-              href: hyper-v-extensible-switch-send-and-receive-operations.md
               items:
+                - name: Hyper-V 可扩展交换机发送和接收操作
+                  href: hyper-v-extensible-switch-send-and-receive-operations.md
                 - name: 发起数据包流量
                   href: originating-packet-traffic.md
                 - name: 克隆数据包流量
@@ -2389,8 +2627,9 @@
                 - name: 将数据包转发到 Hyper-V 可扩展交换机端口
                   href: forwarding-packets-to-hyper-v-extensible-switch-ports.md
             - name: Hyper-V 可扩展交换机 OID 请求
-              href: hyper-v-extensible-switch-oid-requests.md
               items:
+                - name: Hyper-V 可扩展交换机 OID 请求
+                  href: hyper-v-extensible-switch-oid-requests.md
                 - name: 查询 Hyper-V 可扩展交换机配置
                   href: querying-the-hyper-v-extensible-switch-configuration.md
                 - name: 接收有关 Hyper-V 可扩展交换机配置更改的 OID 请求
@@ -2398,18 +2637,21 @@
                 - name: 从 Hyper-V 子分区转发 OID 请求
                   href: forwarding-oid-requests-from-a-hyper-v-child-partition.md
             - name: 管理 Hyper-V 可扩展交换机源和目标端口数据
-              href: managing-hyper-v-extensible-switch-source-and-destination-port-data.md
               items:
+                - name: 管理 Hyper-V 可扩展交换机源和目标端口数据
+                  href: managing-hyper-v-extensible-switch-source-and-destination-port-data.md
                 - name: 管理 Hyper-V 可扩展交换机源端口数据
-                  href: managing-hyper-v-extensible-switch-source-port-data.md
                   items:
+                    - name: 管理 Hyper-V 可扩展交换机源端口数据
+                      href: managing-hyper-v-extensible-switch-source-port-data.md
                     - name: 查询数据包的可扩展交换机源端口数据
                       href: querying-a-packet-s-extensible-switch-source-port-data.md
                     - name: 修改数据包的可扩展交换机源端口数据
                       href: modifying-a-packet-s-extensible-switch-source-port-data.md
                 - name: 管理 Hyper-V 可扩展交换机目标端口数据
-                  href: managing-hyper-v-extensible-switch-destination-port-data.md
                   items:
+                    - name: 管理 Hyper-V 可扩展交换机目标端口数据
+                      href: managing-hyper-v-extensible-switch-destination-port-data.md
                     - name: 查询数据包的可扩展交换机目标端口数据
                       href: querying-a-packet-s-extensible-switch-destination-port-data.md
                     - name: 将可扩展交换机目标端口数据添加到数据包
@@ -2417,15 +2659,17 @@
                     - name: 排除将数据包传送到可扩展交换机目标端口
                       href: excluding-packet-delivery-to-extensible-switch-destination-ports.md
             - name: 管理 Hyper-V 可扩展交换机策略
-              href: managing-hyper-v-extensible-switch-extensibility-policies.md
               items:
+                - name: 管理 Hyper-V 可扩展交换机策略
+                  href: managing-hyper-v-extensible-switch-extensibility-policies.md
                 - name: 管理端口策略
                   href: managing-port-policies.md
                 - name: 管理交换机策略
                   href: managing-switch-policies.md
             - name: 管理 Hyper-V 可扩展交换机功能状态信息
-              href: managing-hyper-v-extensible-switch-feature-status-information.md
               items:
+                - name: 管理 Hyper-V 可扩展交换机功能状态信息
+                  href: managing-hyper-v-extensible-switch-feature-status-information.md
                 - name: 管理自定义端口功能状态信息
                   href: managing-custom-port-feature-status-information.md
                 - name: 管理自定义交换机功能状态信息
@@ -2433,36 +2677,41 @@
             - name: 管理 Hyper-V 可扩展交换机运行时数据
               href: managing-hyper-v-extensible-switch-run-time-data.md
             - name: 管理物理网络适配器
-              href: managing-physical-network-adapters.md
               items:
+                - name: 管理物理网络适配器
+                  href: managing-physical-network-adapters.md
                 - name: 管理物理网络适配器连接状态
                   href: managing-physical-network-adapter-connection-status.md
                 - name: 将数据包转发到物理网络适配器
                   href: forwarding-packets-to-physical-network-adapters.md
                 - name: 管理发往物理网络适配器的 OID 请求
-                  href: managing-oid-requests-to-physical-network-adapters.md
                   items:
+                    - name: 管理发往物理网络适配器的 OID 请求
+                      href: managing-oid-requests-to-physical-network-adapters.md
                     - name: 将 OID 请求转发到物理网络适配器
                       href: forwarding-oid-requests-to-physical-network-adapters.md
                     - name: 管理发往物理网络适配器的硬件卸载 OID 请求
                       href: managing-hardware-offload-oid-requests-to-physical-network-adapters.md
                 - name: 管理物理网络适配器发出的 NDIS 状态指示
-                  href: managing-ndis-status-indications-from-physical-network-adapters.md
                   items:
+                    - name: 管理物理网络适配器发出的 NDIS 状态指示
+                      href: managing-ndis-status-indications-from-physical-network-adapters.md
                     - name: 从物理网络适配器转发 NDIS 状态指示
                       href: forwarding-ndis-status-indications-from-physical-network-adapters.md
                     - name: 从物理网络适配器发起 NDIS 状态指示
                       href: originating-ndis-status-indications-from-physical-network-adapters.md
         - name: 安装 Hyper-V 可扩展交换机扩展
-          href: installing-hyper-v-extensible-switch-extensions.md
           items:
+            - name: 安装 Hyper-V 可扩展交换机扩展
+              href: installing-hyper-v-extensible-switch-extensions.md
             - name: Hyper-V 可扩展交换机扩展的 INF 要求
               href: inf-requirements-for-hyper-v-extensions.md
             - name: 扩展驱动程序 MSI 打包要求
               href: extension-driver-msi-packaging-requirements.md
             - name: 管理已安装的 Hyper-V 可扩展交换机扩展
-              href: managing-installed-hyper-v-extensions.md
               items:
+                - name: 管理已安装的 Hyper-V 可扩展交换机扩展
+                  href: managing-installed-hyper-v-extensions.md
                 - name: 枚举 Hyper-V 可扩展交换机实例
                   href: enumerating-hyper-v-extensibility-switch-instances.md
                 - name: 枚举 Hyper-V 可扩展交换机扩展
@@ -2476,15 +2725,17 @@
         - name: Hyper-V 可扩展交换机 OID
           href: hyper-v-extensible-switch-oids.md
         - name: Hyper-V 可扩展交换机状态指示
-          href: hyper-v-extensible-switch-status-indications.md
           items:
+            - name: Hyper-V 可扩展交换机状态指示
+              href: hyper-v-extensible-switch-status-indications.md
             - name: NDIS_STATUS_SWITCH_NIC_STATUS
               href: ndis-status-switch-nic-status.md
             - name: NDIS_STATUS_SWITCH_PORT_REMOVE_VF
               href: ndis-status-switch-port-remove-vf.md
         - name: VMQ 状态指示
-          href: virtual-machine-queue-status-indications.md
           items:
+            - name: VMQ 状态指示
+              href: virtual-machine-queue-status-indications.md
             - name: NDIS_STATUS_ISOLATION_PARAMETERS_CHANGE
               href: ndis-status-isolation-parameters-change.md
             - name: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
@@ -2492,46 +2743,53 @@
             - name: NDIS_STATUS_RECEIVE_QUEUE_STATE
               href: ndis-status-receive-queue-state.md
 - name: 无线联网
-  href: wireless-networking2.md
   items:
+    - name: 无线联网
+      href: wireless-networking2.md
     - name: WLAN 通用 Windows 驱动程序模型
       href: wifi-universal-driver-model.md
     - name: 手机网络体系结构和实现
-      href: cellular-architecture-and-driver-model.md
       items:
+        - name: 手机网络体系结构和实现
+          href: cellular-architecture-and-driver-model.md
         - name: SIM 双卡
           href: dual-sim.md
         - name: SIM 锁定
           href: sim-lock.md
         - name: SIM 工具包
-          href: sim-toolkit.md
           items:
+            - name: SIM 工具包
+              href: sim-toolkit.md
             - name: SIM 工具包命令
               href: sim-toolkit-commands.md
             - name: 用于启动 SIM 工具包的保留 URI
               href: reserved-uri-to-launch-sim-toolkit.md
         - name: 手机网络 COM API 设计指南
-          href: cellular-com-api-design-guide.md
           items:
+            - name: 手机网络 COM API 设计指南
+              href: cellular-com-api-design-guide.md
             - name: 手机网络 COM API 功能
               href: cellular-com-api-capabilities.md
             - name: 使用 IOemCellularModem 接口与 RIL 驱动程序通信
               href: communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface.md
     - name: 移动宽带 (MB) 设计指南
-      href: mobile-broadband--mb--design-guide.md
       items:
+        - name: 移动宽带 (MB) 设计指南
+          href: mobile-broadband--mb--design-guide.md
         - name: MB 微型端口驱动程序开发路线图
           href: roadmap-to-develop-mb-miniport-drivers.md
         - name: MB 接口模型
-          href: mb-interface-model.md
           items:
+            - name: MB 接口模型
+              href: mb-interface-model.md
             - name: MB 接口术语
               href: mb-interface-terms.md
             - name: MB 联合功能描述符
               href: mb-union-function-descriptors.md
             - name: MB 标识变换
-              href: mb-identity-morphing.md
               items:
+                - name: MB 标识变换
+                  href: mb-identity-morphing.md
                 - name: MB 标识变换解决方案概述
                   href: mb-identity-morphing-solution-overview.md
                 - name: MB 标识变换解决方案详细信息
@@ -2539,8 +2797,9 @@
             - name: MB 接口模型补充
               href: mb-interface-model-supplement.md
         - name: MB 接口概述
-          href: mb-interface-overview.md
           items:
+            - name: MB 接口概述
+              href: mb-interface-overview.md
             - name: MB/NDIS 6.20 接口概述
               href: mb---ndis-6-20-interfacing-overview.md
             - name: MB 数据模型
@@ -2564,8 +2823,9 @@
             - name: MB 微型端口驱动程序性能要求
               href: mb-miniport-driver-performance-requirements.md
         - name: MB 操作流程图
-          href: mb-operation-flowcharts.md
           items:
+            - name: MB 操作流程图
+              href: mb-operation-flowcharts.md
             - name: MB 微型端口驱动程序初始化
               href: mb-miniport-driver-initialization.md
             - name: 初始化使用预配上下文的非 SIM 锁定 GPRS 设备
@@ -2631,8 +2891,9 @@
         - name: MB 重置和恢复
           items:
             - name: MB 基于设备的重置和恢复
-              href: mb-device-based-reset-and-recovery.md
               items:
+                - name: MB 基于设备的重置和恢复
+                  href: mb-device-based-reset-and-recovery.md
                 - name: MB 挂起检测
                   href: mb-hang-detection.md
             - name: MB 调制解调器重置操作
@@ -2652,8 +2913,9 @@
         - name: MB eSIM MBIM 就绪状态指导
           href: mb-esim-mbim-ready-state-guidance.md
         - name: MB NDIS 状态通知
-          href: mb-ndis-status-notifications.md
           items:
+            - name: MB NDIS 状态通知
+              href: mb-ndis-status-notifications.md
             - name: NDIS_STATUS_WWAN_AUTH_RESPONSE
               href: ndis-status-wwan-auth-response.md
             - name: NDIS_STATUS_WWAN_BASE_STATIONS_INFO
@@ -2767,8 +3029,9 @@
             - name: NDIS_STATUS_WWAN_VISIBLE_PROVIDERS
               href: ndis-status-wwan-visible-providers.md
         - name: MB 补充文档
-          href: supplemental-mb-documentation.md
           items:
+            - name: MB 补充文档
+              href: supplemental-mb-documentation.md
             - name: HOST 关闭设备服务
               href: host-shutdown-device-service.md
             - name: 有关实施多模多载波 MB 设备的 IHV 指导
@@ -2780,18 +3043,21 @@
             - name: USB 设备的移动宽带实施指南
               href: mobile-broadband-implementation-guidelines-for-usb-devices.md
     - name: WLAN 功能信息
-      href: wlan-feature-information.md
       items:
+        - name: WLAN 功能信息
+          href: wlan-feature-information.md
         - name: 使用 802.11k、802.11v 和 802.11r 的快速漫游
           href: fast-roaming-with-802-11k--802-11v--and-802-11r.md
     - name: WDI 微型端口驱动程序设计指南
-      href: wdi-miniport-driver-design-guide.md
       items:
+        - name: WDI 微型端口驱动程序设计指南
+          href: wdi-miniport-driver-design-guide.md
         - name: WDI 通信模型、同步和中止
           href: wdi-communication-model.md
         - name: WDI 挂起检测和恢复
-          href: wdi-hang-detection-and-recovery.md
           items:
+            - name: WDI 挂起检测和恢复
+              href: wdi-hang-detection-and-recovery.md
             - name: WDI UE 挂起检测和恢复流
               href: wdi-ue-hang-detection-and-recovery-flow.md
             - name: WDI UE 挂起检测：步骤 1-14
@@ -2813,8 +3079,9 @@
         - name: WDI 任务命令优先级和现有状态
           href: wdi-task-command-priority-and-existing-state.md
         - name: WDI 数据传输
-          href: wdi-data-transfer.md
           items:
+            - name: WDI 数据传输
+              href: wdi-data-transfer.md
             - name: WDI 接收操作和卸载
               href: wdi-receive-operations-and-offloads.md
             - name: WDI 传输操作和卸载
@@ -2830,8 +3097,9 @@
             - name: WDI 数据路径操作顺序图
               href: wdi-datapath-operation-sequence-diagrams.md
         - name: WDI 模型的 IHV 组件
-          href: wdi-ihv-component-model.md
           items:
+            - name: WDI 模型的 IHV 组件
+              href: wdi-ihv-component-model.md
             - name: WDI IHV 驱动程序接口
               href: wdi-ihv-driver-interfaces.md
             - name: WDI NDIS 接口限制
@@ -2845,8 +3113,9 @@
             - name: WDI 非 TLV 版本控制
               href: wdi-non-tlv-versioning.md
             - name: 用户使用 IHV 跟踪日志记录发起的反馈
-              href: user-initiated-feedback-with-ihv-trace-logging.md
               items:
+                - name: 用户使用 IHV 跟踪日志记录发起的反馈
+                  href: user-initiated-feedback-with-ihv-trace-logging.md
                 - name: 日志记录方案
                   href: logging-scenarios.md
                 - name: 用户发起的反馈 - 正常模式
@@ -2854,8 +3123,9 @@
                 - name: 用户发起的反馈 - 再现模式
                   href: user-initiated-feedback-repro-mode.md
         - name: WDI TLV 生成器/分析器
-          href: wdi-tlv-generator-parser.md
           items:
+            - name: WDI TLV 生成器/分析器
+              href: wdi-tlv-generator-parser.md
             - name: WDI TLV 分析器接口概述
               href: wdi-tlv-parser-interface-overview.md
             - name: WDI TLV 生成器接口概述
@@ -2873,8 +3143,9 @@
             - name: WDI TLV 转储器
               href: wdi-tlv-dumpers.md
         - name: WDI TLV
-          href: wdi-miniport-driver-tlvs.md
           items:
+            - name: WDI TLV
+              href: wdi-miniport-driver-tlvs.md
             - name: WDI_TLV_ACCESS_NETWORK_TYPE
               href: wdi-tlv-access-network-type.md
             - name: WDI_TLV_ACTION_FRAME_BODY
@@ -3528,8 +3799,9 @@
             - name: WDI_TLV_WFD_ASSOCIATION_STATUS
               href: wdi-tlv-wfd-association-status.md
         - name: WDI USB 选择性挂起
-          href: wdi-usb-selective-suspend.md
           items:
+            - name: WDI USB 选择性挂起
+              href: wdi-usb-selective-suspend.md
             - name: WDI NDIS 空闲检测
               href: wdi-ndis-idle-detection.md
             - name: WDI 和 WLAN 选择性挂起功能
@@ -3543,8 +3815,9 @@
             - name: WDI USB 远程唤醒序列
               href: wdi-usb-remote-wake-sequence.md
         - name: WDI 设计指南
-          href: wdi-design-guide.md
           items:
+            - name: WDI 设计指南
+              href: wdi-design-guide.md
             - name: WDI 低延迟连接质量
               href: wdi-low-latency-connection-quality.md
             - name: WDI 扩展通道切换通告 (ECSA)
@@ -3554,8 +3827,9 @@
             - name: 开发和验证可重置恢复的 WDI 驱动程序
               href: wdi-develop-and-validate-wdi-drivers-for-reset-recovery.md
         - name: WDI 任务 OID
-          href: wdi-miniport-driver-task-oids.md
           items:
+            - name: WDI 任务 OID
+              href: wdi-miniport-driver-task-oids.md
             - name: OID_WDI_TASK_CHANGE_OPERATION_MODE
               href: oid-wdi-task-change-operation-mode.md
             - name: OID_WDI_TASK_CLOSE
@@ -3599,8 +3873,9 @@
             - name: OID_WDI_TASK_STOP_AP
               href: oid-wdi-task-stop-ap.md
         - name: WDI 属性 OID
-          href: wdi-miniport-driver-property-oids.md
           items:
+            - name: WDI 属性 OID
+              href: wdi-miniport-driver-property-oids.md
             - name: OID_WDI_ABORT_TASK
               href: oid-wdi-abort-task.md
             - name: OID_WDI_GET_ADAPTER_CAPABILITIES
@@ -3680,8 +3955,9 @@
             - name: OID_WDI_TCP_RSC_STATISTICS
               href: oid-wdi-tcp-rsc-statistics.md
         - name: WDI 状态指示
-          href: wdi-miniport-driver-status-indications.md
           items:
+            - name: WDI 状态指示
+              href: wdi-miniport-driver-status-indications.md
             - name: NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED
               href: ndis-status-wdi-indication-action-frame-received.md
             - name: NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED
@@ -3775,8 +4051,9 @@
             - name: NDIS_STATUS_WDI_INDICATION_WAKE_REASON
               href: ndis-status-wdi-indication-wake-reason.md
         - name: 其他 WDI 数据类型
-          href: other-wdi-data-types.md
           items:
+            - name: 其他 WDI 数据类型
+              href: other-wdi-data-types.md
             - name: WDI_BAND_ID
               href: wdi-band-id.md
             - name: WDI_CHANNEL_NUMBER
@@ -3798,15 +4075,17 @@
         - name: WDI 文档更改历史记录
           href: wdi-doc-change-history.md
     - name: 本机 802.11 IHV 扩展
-      href: native-802-11-ihv-extensions.md
       items:
+        - name: 本机 802.11 IHV 扩展
+          href: native-802-11-ihv-extensions.md
         - name: IHV 可扩展性概述
           href: overview-of-ihv-extensibility.md
         - name: 安装本机 802.11 IHV 扩展
           href: installing-native-802-11-ihv-extensions.md
         - name: 本机 802.11 IHV 扩展 DLL
-          href: native-802-11-ihv-extensions-dll4.md
           items:
+            - name: 本机 802.11 IHV 扩展 DLL
+              href: native-802-11-ihv-extensions-dll4.md
             - name: 本机 802.11 IHV 扩展 DLL 概述
               href: native-802-11-ihv-extensions-dll-overview.md
             - name: 本机 802.11 IHV 可扩展性函数
@@ -3816,15 +4095,17 @@
             - name: 本机 802.11 IHV 扩展 DLL 实现指导原则
               href: native-802-11-ihv-extensions-dll-implementation-guidelines.md
             - name: DLL 启动/停止操作
-              href: dll-start-stop-operations.md
               items:
+                - name: DLL 启动/停止操作
+                  href: dll-start-stop-operations.md
                 - name: DLL 启动操作
                   href: dll-start-operations.md
                 - name: DLL 停止操作
                   href: dll-stop-operations.md
             - name: 802.11 WLAN 适配器管理
-              href: 802-11-wlan-adapter-management.md
               items:
+                - name: 802.11 WLAN 适配器管理
+                  href: 802-11-wlan-adapter-management.md
                 - name: 802.11 WLAN 适配器抵达
                   href: 802-11-wlan-adapter-arrival.md
                 - name: 802.11 WLAN 适配器移除
@@ -3834,8 +4115,9 @@
                 - name: 802.11 WLAN 适配器信道
                   href: 802-11-wlan-adapter-communication-channel.md
             - name: 网络配置文件管理
-              href: network-profile-management.md
               items:
+                - name: 网络配置文件管理
+                  href: network-profile-management.md
                 - name: 网络配置文件概述
                   href: network-profile-overview.md
                 - name: 创建网络配置文件扩展
@@ -3843,22 +4125,25 @@
                 - name: 验证网络配置文件扩展
                   href: validating-network-profile-extensions.md
             - name: 与用户交互
-              href: interaction-with-the-user.md
               items:
+                - name: 与用户交互
+                  href: interaction-with-the-user.md
                 - name: 请求用户交互
                   href: requesting-user-interaction.md
                 - name: 处理会话更改
                   href: processing-session-changes.md
             - name: 关联前的操作
-              href: pre-association-operations.md
               items:
+                - name: 关联前的操作
+                  href: pre-association-operations.md
                 - name: 关联前的操作概述
                   href: pre-association-operation-overview.md
                 - name: 关联前的操作指导原则
                   href: pre-association-operation-guidelines.md
             - name: 关联后的操作
-              href: post-association-operations.md
               items:
+                - name: 关联后的操作
+                  href: post-association-operations.md
                 - name: 执行关联后的操作
                   href: performing-a-post-association-operation.md
                 - name: 停止关联后的操作
@@ -3866,8 +4151,9 @@
                 - name: 与本机 802.11 802.1X 模块对接
                   href: interface-to-the-native-802-11-802-1x-module.md
             - name: 本机 802.11 IHV 扩展发送和接收操作
-              href: send-and-receive-operations3.md
               items:
+                - name: 本机 802.11 IHV 扩展发送和接收操作
+                  href: send-and-receive-operations3.md
                 - name: IEEE EtherType 处理
                   href: ieee-ethertype-handling.md
                 - name: 发送操作
@@ -3875,8 +4161,9 @@
                 - name: 接收操作
                   href: receive-operations.md
             - name: 通知操作
-              href: notification-operations.md
               items:
+                - name: 通知操作
+                  href: notification-operations.md
                 - name: 发送通知
                   href: sending-notifications.md
                 - name: 接收通知
@@ -3884,8 +4171,9 @@
             - name: 虚拟工作站
               href: virtual-station.md
         - name: 本机 802.11 IHV UI 扩展 DLL
-          href: native-802-11-ihv-ui-extensions-dll2.md
           items:
+            - name: 本机 802.11 IHV UI 扩展 DLL
+              href: native-802-11-ihv-ui-extensions-dll2.md
             - name: Windows SDK 参考
               href: windows-sdk-references.md
             - name: 本机 802.11 IHV UI 扩展 DLL 概述
@@ -3893,11 +4181,13 @@
             - name: 本机 802.11 IHV UI 扩展 COM 接口
               href: native-802-11-ihv-ui-extensions-com-interfaces.md
             - name: 扩展无线网络配置文件的属性
-              href: extending-the-properties-for-wireless-network-profiles.md
               items:
+                - name: 扩展无线网络配置文件的属性
+                  href: extending-the-properties-for-wireless-network-profiles.md
                 - name: 扩展无线连接属性
-                  href: extending-wireless-connection-properties.md
                   items:
+                    - name: 扩展无线连接属性
+                      href: extending-wireless-connection-properties.md
                     - name: 扩展无线安全属性
                       href: extending-wireless-security-properties.md
                     - name: 扩展 Microsoft 802.1X 安全设置
@@ -3909,8 +4199,9 @@
             - name: 扩展无线网络适配器的高级属性
               href: extending-the-advanced-properties-for-wireless-network-adapters.md
             - name: 处理自定义 UI 显示请求
-              href: handling-requests-for-the-display-of-a-custom-ui.md
               items:
+                - name: 处理自定义 UI 显示请求
+                  href: handling-requests-for-the-display-of-a-custom-ui.md
                 - name: 请求显示自定义 UI
                   href: requesting-the-display-of-a-custom-ui.md
                 - name: 查询自定义 UI 的显示
@@ -3922,25 +4213,29 @@
                 - name: 访问配置文件和上下文数据
                   href: accessing-profile-and-context-data.md
     - name: Wi-Fi 热点卸载指南
-      href: wi-fi-hotspot-offloading-guide.md
       items:
+        - name: Wi-Fi 热点卸载指南
+          href: wi-fi-hotspot-offloading-guide.md
         - name: Wi-Fi 热点卸载体系结构
           href: wi-fi-hotspot-offloading-architecture.md
         - name: Wi-Fi 热点卸载插件
           href: wi-fi-hotspot-offloading-plugin.md
         - name: Wi-Fi 发现服务
-          href: wi-fi-discovery-service.md
           items:
+            - name: Wi-Fi 发现服务
+              href: wi-fi-discovery-service.md
             - name: Wi-Fi 热点数据提交格式
               href: wi-fi-hotspot-data-submission-format.md
         - name: Wi-Fi 热点卸载参考
-          href: wi-fi-hotspot-offloading-reference.md
           items:
+            - name: Wi-Fi 热点卸载参考
+              href: wi-fi-hotspot-offloading-reference.md
             - name: Wi-Fi 热点卸载常量
               href: wi-fi-hotspot-offloading-constants.md
             - name: Wi-Fi 热点卸载结构
-              href: wi-fi-hotspot-offloading-structures.md
               items:
+                - name: Wi-Fi 热点卸载结构
+                  href: wi-fi-hotspot-offloading-structures.md
                 - name: HOTSPOT_HOST_HANDLERS
                   href: hotspot-host-handlers.md
                 - name: HOTSPOT_PLUGIN_APIS
@@ -3970,8 +4265,9 @@
                 - name: HS_SIM_IDENTITY
                   href: hs-sim-identity.md
             - name: Wi-Fi 热点卸载函数
-              href: wi-fi-hotspot-offloading-functions.md
               items:
+                - name: Wi-Fi 热点卸载函数
+                  href: wi-fi-hotspot-offloading-functions.md
                 - name: HSPluginGetVersion
                   href: hsplugingetversion.md
                 - name: HSPluginInitPlugin
@@ -4013,8 +4309,9 @@
                 - name: HS_HOST_UPDATE_CONFIGURATION_COMPLETION
                   href: hs-host-update-configuration-completion.md
             - name: Wi-Fi 热点卸载枚举
-              href: wi-fi-hotspot-offloading-enumerations.md
               items:
+                - name: Wi-Fi 热点卸载枚举
+                  href: wi-fi-hotspot-offloading-enumerations.md
                 - name: eHS_AUTHENTICATION_RESULT
                   href: ehs-authentication-result.md
                 - name: eHS_NETWORK_STATE
@@ -4024,13 +4321,15 @@
                 - name: eHS_UPDATE_RESULT
                   href: ehs-update-result.md
 - name: 网络模块注册机构
-  href: network-module-registrar2.md
   items:
+    - name: 网络模块注册机构
+      href: network-module-registrar2.md
     - name: 网络模块注册机构简介
       href: introduction-to-the-network-module-registrar.md
     - name: 网络模块注册机构定义
-      href: nmr-definitions.md
       items:
+        - name: 网络模块注册机构定义
+          href: nmr-definitions.md
         - name: 网络模块
           href: network-module.md
         - name: 提供程序模块
@@ -4040,15 +4339,17 @@
         - name: 网络编程接口
           href: network-programming-interface.md
     - name: 体系结构概述
-      href: architecture-overview.md
       items:
+        - name: 体系结构概述
+          href: architecture-overview.md
         - name: 网络模块附加
           href: network-module-attachment.md
         - name: 网络模块分离
           href: network-module-detachment.md
     - name: 客户端模块操作
-      href: client-module-operations.md
       items:
+        - name: 客户端模块操作
+          href: client-module-operations.md
         - name: 初始化和注册客户端模块
           href: initializing-and-registering-a-client-module.md
         - name: 将客户端模块附加到提供程序模块
@@ -4060,8 +4361,9 @@
         - name: 卸载客户端模块
           href: unloading-a-client-module.md
     - name: 提供程序模块操作
-      href: provider-module-operations.md
       items:
+        - name: 提供程序模块操作
+          href: provider-module-operations.md
         - name: 初始化和注册提供程序模块
           href: initializing-and-registering-a-provider-module.md
         - name: 将提供程序模块附加到客户端模块
@@ -4075,15 +4377,17 @@
     - name: 编程注意事项
       href: programming-considerations.md
 - name: Winsock 内核
-  href: winsock-kernel4.md
   items:
+    - name: Winsock 内核
+      href: winsock-kernel4.md
     - name: 使用 Winsock 内核的网络驱动程序开发路线图
       href: roadmap-for-developing-network-drivers-with-winsock-kernel.md
     - name: Winsock 内核简介
       href: introduction-to-winsock-kernel.md
     - name: Winsock 内核概述
-      href: winsock-kernel-overview.md
       items:
+        - name: Winsock 内核概述
+          href: winsock-kernel-overview.md
         - name: Winsock 内核体系结构
           href: winsock-kernel-architecture.md
         - name: Winsock 内核对象
@@ -4101,8 +4405,9 @@
         - name: 将 IRP 与 Winsock 内核函数配合使用
           href: using-irps-with-winsock-kernel-functions.md
     - name: Winsock 内核操作
-      href: winsock-kernel-operations.md
       items:
+        - name: Winsock 内核操作
+          href: winsock-kernel-operations.md
         - name: 注册 Winsock 内核应用程序
           href: registering-a-winsock-kernel-application.md
         - name: 针对客户端对象执行控制操作
@@ -4120,8 +4425,9 @@
         - name: 与目标建立连接
           href: establishing-a-connection-with-a-destination.md
         - name: 通过 WSK 套接字发送和接收数据
-          href: sending-and-receiving-data.md
           items:
+            - name: 通过 WSK 套接字发送和接收数据
+              href: sending-and-receiving-data.md
             - name: 通过数据报套接字发送数据
               href: sending-data-over-a-datagram-socket.md
             - name: 通过数据报套接字接收数据
@@ -4141,8 +4447,9 @@
         - name: 解析主机名和 IP 地址
           href: resolving-host-names-and-ip-addresses.md
         - name: WSK 客户端控制操作
-          href: wsk-client-control-operations.md
           items:
+            - name: WSK 客户端控制操作
+              href: wsk-client-control-operations.md
             - name: WSK_CACHE_SD
               href: wsk-cache-sd.md
             - name: WSK_RELEASE_SD
@@ -4158,8 +4465,9 @@
             - name: WSK_TRANSPORT_LIST_QUERY
               href: wsk-transport-list-query.md
         - name: WSK 套接字 IOCTL 操作
-          href: wsk-socket-ioctl-operations.md
           items:
+            - name: WSK 套接字 IOCTL 操作
+              href: wsk-socket-ioctl-operations.md
             - name: SIO_WSK_QUERY_IDEAL_SEND_BACKLOG
               href: sio-wsk-query-ideal-send-backlog.md
             - name: SIO_WSK_QUERY_INSPECT_ID
@@ -4175,20 +4483,23 @@
             - name: SIO_WSK_SET_TCP_SILENT_MODE
               href: sio-wsk-set-tcp-silent-mode.md
         - name: WSK 套接字选项
-          href: wsk-socket-options.md
           items:
+            - name: WSK 套接字选项
+              href: wsk-socket-options.md
             - name: SO_WSK_EVENT_CALLBACK
               href: so-wsk-event-callback.md
             - name: SO_WSK_SECURITY
               href: so-wsk-security.md
         - name: WSK 数据类型
-          href: wsk-data-types.md
           items:
+            - name: WSK 数据类型
+              href: wsk-data-types.md
             - name: WSK_CLIENT
               href: wsk-client.md
     - name: Winsock 内核编程注意事项
-      href: winsock-kernel-programming-considerations.md
       items:
+        - name: Winsock 内核编程注意事项
+          href: winsock-kernel-programming-considerations.md
         - name: 将 TDI 驱动程序移植到 Winsock 内核
           href: porting-tdi-drivers-to-winsock-kernel.md
         - name: 共享传输地址
@@ -4196,8 +4507,9 @@
         - name: 使用 TDI 传输
           href: using-tdi-transports.md
         - name: 使用 NMR 注册和取消注册 WSK
-          href: using-nmr-for-wsk-registration-and-unregistration.md
           items:
+            - name: 使用 NMR 注册和取消注册 WSK
+              href: using-nmr-for-wsk-registration-and-unregistration.md
             - name: 初始化 NMR 数据结构
               href: initializing-nmr-data-structures.md
             - name: 将 WSK 客户端附加到 WSK 子系统
@@ -4205,20 +4517,23 @@
             - name: 取消注册和卸载 WSK 客户端
               href: unregistering-and-unloading-the-wsk-client.md
 - name: IP 帮助程序
-  href: ip-helper.md
   items:
+    - name: IP 帮助程序
+      href: ip-helper.md
     - name: 包含 IP 帮助程序的标头文件
       href: including-header-files-for-ip-helper.md
 - name: Windows 筛选平台标注驱动程序
-  href: windows-filtering-platform-callout-drivers2.md
   items:
+    - name: Windows 筛选平台标注驱动程序
+      href: windows-filtering-platform-callout-drivers2.md
     - name: WFP 标注驱动程序开发路线图
       href: roadmap-for-developing-wfp-callout-drivers.md
     - name: Windows 筛选平台标注驱动程序简介
       href: introduction-to-windows-filtering-platform-callout-drivers.md
     - name: WFP 的新信息
-      href: new-information-for-wfp.md
       items:
+        - name: WFP 的新信息
+          href: new-information-for-wfp.md
         - name: Windows 8 的 WFP 更改
           href: wfp-changes-for-windows-8.md
         - name: Windows 7 的 WFP 更改
@@ -4226,8 +4541,9 @@
         - name: Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
           href: wfp-changes-for-windows-vista-sp1-and-windows-server-2008.md
     - name: Windows 筛选平台标注驱动程序定义
-      href: wfp-callout-drivers-definitions.md
       items:
+        - name: Windows 筛选平台标注驱动程序定义
+          href: wfp-callout-drivers-definitions.md
         - name: 标注
           href: callout.md
         - name: 标注驱动程序
@@ -4243,11 +4559,13 @@
     - name: Windows 筛选平台体系结构概述
       href: windows-filtering-platform-architecture-overview.md
     - name: 标注驱动程序操作
-      href: callout-driver-operations.md
       items:
+        - name: 标注驱动程序操作
+          href: callout-driver-operations.md
         - name: 初始化标注驱动程序
-          href: initializing-a-callout-driver.md
           items:
+            - name: 初始化标注驱动程序
+              href: initializing-a-callout-driver.md
             - name: 指定卸载函数
               href: specifying-an-unload-function.md
             - name: 创建设备对象
@@ -4257,15 +4575,17 @@
         - name: 处理通知标注
           href: processing-notify-callouts.md
         - name: 处理分类标注
-          href: processing-classify-callouts.md
           items:
+            - name: 处理分类标注
+              href: processing-classify-callouts.md
             - name: 使用标注进行深度检测
               href: using-a-callout-for-deep-inspection.md
             - name: 使用标注进行流数据深度检测
               href: using-a-callout-for-deep-inspection-of-stream-data.md
             - name: 检查数据包和流数据
-              href: inspecting-packet-and-stream-data.md
               items:
+                - name: 检查数据包和流数据
+                  href: inspecting-packet-and-stream-data.md
                 - name: 数据包检查点
                   href: packet-inspection-points.md
                 - name: WFP 层要求和限制
@@ -4305,8 +4625,9 @@
         - name: 卸载标注驱动程序
           href: unloading-a-callout-driver.md
     - name: 标注驱动程序安装
-      href: callout-driver-installation.md
       items:
+        - name: 标注驱动程序安装
+          href: callout-driver-installation.md
         - name: 标注驱动程序的 INF 文件
           href: inf-files-for-callout-drivers.md
         - name: 标注驱动程序的安装
@@ -4320,27 +4641,31 @@
     - name: 开发 IPsec 兼容的标注驱动程序
       href: developing-ipsec-compatible-callout-drivers.md
     - name: 调用其他 Windows 筛选平台函数
-      href: calling-other-windows-filtering-platform-functions.md
       items:
+        - name: 调用其他 Windows 筛选平台函数
+          href: calling-other-windows-filtering-platform-functions.md
         - name: 与筛选器引擎建立会话
           href: opening-a-session-to-the-filter-engine.md
         - name: 关闭与筛选器引擎建立的会话
           href: closing-a-session-to-the-filter-engine.md
     - name: Windows 筛选平台常量
-      href: windows-filtering-platform-constants.md
       items:
+        - name: Windows 筛选平台常量
+          href: windows-filtering-platform-constants.md
         - name: 内置的标注标识符
           href: built-in-callout-identifiers.md
         - name: 筛选层标识符
-          href: filtering-layer-identifiers.md
           items:
+            - name: 筛选层标识符
+              href: filtering-layer-identifiers.md
             - name: 管理筛选层标识符
               href: management-filtering-layer-identifiers.md
             - name: 运行时筛选层标识符
               href: run-time-filtering-layer-identifiers.md
         - name: 筛选条件
-          href: filtering-conditions.md
           items:
+            - name: 筛选条件
+              href: filtering-conditions.md
             - name: 筛选条件标识符
               href: filtering-condition-identifiers.md
             - name: 筛选条件标志
@@ -4352,8 +4677,9 @@
             - name: 每个筛选层可用的筛选条件
               href: filtering-conditions-available-at-each-filtering-layer.md
         - name: 元数据字段
-          href: metadata-fields.md
           items:
+            - name: 元数据字段
+              href: metadata-fields.md
             - name: 元数据字段标识符
               href: metadata-field-identifiers.md
             - name: 元数据字段 L2 标识符
@@ -4365,8 +4691,9 @@
         - name: 数据偏移位置
           href: data-offset-positions.md
         - name: 丢弃原因标识符
-          href: discard-reason-identifiers.md
           items:
+            - name: 丢弃原因标识符
+              href: discard-reason-identifiers.md
             - name: 一般性丢弃原因
               href: general-discard-reasons.md
             - name: 网络层丢弃原因
@@ -4374,8 +4701,9 @@
             - name: 传输层丢弃原因
               href: transport-layer-discard-reasons.md
     - name: 其他 Windows 筛选平台函数
-      href: other-windows-filtering-platform-functions.md
       items:
+        - name: 其他 Windows 筛选平台函数
+          href: other-windows-filtering-platform-functions.md
         - name: WFP 用户模式管理函数
           href: wfp-user-mode-management-functions.md
         - name: Internet 密钥交换函数
@@ -4383,11 +4711,13 @@
         - name: IPsec 函数
           href: ipsec-functions.md
 - name: 系统区域网络
-  href: system-area-networks.md
   items:
+    - name: 系统区域网络
+      href: system-area-networks.md
     - name: 支持系统区域网络
-      href: supporting-system-area-networks.md
       items:
+        - name: 支持系统区域网络
+          href: supporting-system-area-networks.md
         - name: 系统区域网络简介
           href: introduction-to-system-area-networks.md
         - name: 将 SAN 与 Windows Sockets 应用程序配合使用
@@ -4397,30 +4727,35 @@
         - name: 虚拟接口体系结构和 SAN 支持
           href: virtual-interface-architecture-and-support-for-san.md
     - name: Windows Sockets Direct
-      href: windows-sockets-direct.md
       items:
+        - name: Windows Sockets Direct
+          href: windows-sockets-direct.md
         - name: Windows Sockets Direct 体系结构
           href: windows-sockets-direct-architecture.md
         - name: Windows Sockets Direct 组件操作
-          href: windows-sockets-direct-component-operation.md
           items:
+            - name: Windows Sockets Direct 组件操作
+              href: windows-sockets-direct-component-operation.md
             - name: 安装 Windows Sockets Direct 组件
-              href: installing-windows-sockets-direct-components.md
               items:
+                - name: 安装 Windows Sockets Direct 组件
+                  href: installing-windows-sockets-direct-components.md
                 - name: 安装 Windows Sockets 交换机
                   href: installing-the-windows-sockets-switch.md
                 - name: 安装 SAN 服务提供程序
                   href: installing-a-san-service-provider.md
             - name: 初始化 SAN 的用法
-              href: initializing-the-use-of-a-san.md
               items:
+                - name: 初始化 SAN 的用法
+                  href: initializing-the-use-of-a-san.md
                 - name: 初始化 SAN 服务提供程序
                   href: initializing-a-san-service-provider.md
                 - name: 接收和转换 NIC 地址
                   href: receiving-and-translating-nic-addresses.md
             - name: 设置 SAN 连接
-              href: setting-up-a-san-connection.md
               items:
+                - name: 设置 SAN 连接
+                  href: setting-up-a-san-connection.md
                 - name: 创建和绑定 SAN 套接字
                   href: creating-and-binding-san-sockets.md
                 - name: 发起连接
@@ -4434,8 +4769,9 @@
                 - name: 缓存已注册的内存
                   href: caching-registered-memory.md
             - name: 在 SAN 上传输数据
-              href: transferring-data-on-a-san.md
               items:
+                - name: 在 SAN 上传输数据
+                  href: transferring-data-on-a-san.md
                 - name: 使用会话协议
                   href: using-session-protocol.md
                 - name: 在 SAN 上发送紧急数据
@@ -4445,8 +4781,9 @@
             - name: 在 SAN 上同步操作
               href: synchronizing-operations-on-a-san.md
             - name: 关闭 SAN 的使用
-              href: shutting-down-the-use-of-a-san.md
               items:
+                - name: 关闭 SAN 的使用
+                  href: shutting-down-the-use-of-a-san.md
                 - name: 关闭 SAN 连接
                   href: shutting-down-a-san-connection.md
                 - name: 关闭 SAN 套接字
@@ -4462,8 +4799,9 @@
             - name: 处理 Microsoft Windows Sockets 扩展
               href: handling-microsoft-extensions-to-windows-sockets.md
         - name: 创建 SAN 的服务提供程序
-          href: creating-a-service-provider-for-a-san.md
           items:
+            - name: 创建 SAN 的服务提供程序
+              href: creating-a-service-provider-for-a-san.md
             - name: SAN 所需的 Windows Sockets SPI 函数
               href: windows-sockets-spi-functions-required-for-sans.md
             - name: SAN 不需要的 Windows Sockets SPI 函数
@@ -4471,8 +4809,9 @@
             - name: 适用于 SAN 的 Windows Sockets SPI 扩展
               href: windows-sockets-spi-extensions-for-sans.md
         - name: 为 SAN 服务提供程序创建代理驱动程序
-          href: creating-a-proxy-driver-for-a-san-service-provider.md
           items:
+            - name: 为 SAN 服务提供程序创建代理驱动程序
+              href: creating-a-proxy-driver-for-a-san-service-provider.md
             - name: 初始化和卸载 SAN 代理驱动程序
               href: initializing-and-unloading-a-san-proxy-driver.md
             - name: 为 SAN 代理驱动程序分配和释放内存
@@ -4486,11 +4825,13 @@
             - name: 实现 SAN 服务提供程序的 IOCTL
               href: implementing-ioctls-for-a-san-service-provider.md
 - name: 远程 NDIS (RNDIS)
-  href: remote-ndis--rndis-2.md
   items:
+    - name: 远程 NDIS (RNDIS)
+      href: remote-ndis--rndis-2.md
     - name: 远程 NDIS (RNDIS) 概述
-      href: overview-of-remote-ndis--rndis-.md
       items:
+        - name: 远程 NDIS (RNDIS) 概述
+          href: overview-of-remote-ndis--rndis-.md
         - name: 远程 NDIS 的优势
           href: benefits-of-remote-ndis.md
         - name: 远程 NDIS 的概念和定义
@@ -4506,11 +4847,13 @@
         - name: 远程 NDIS 设备的类型
           href: types-of-remote-ndis-devices.md
     - name: 远程 NDIS 通信
-      href: remote-ndis-communication.md
       items:
+        - name: 远程 NDIS 通信
+          href: remote-ndis-communication.md
         - name: 远程 NDIS 控制消息
-          href: remote-ndis-control-messages.md
           items:
+            - name: 远程 NDIS 控制消息
+              href: remote-ndis-control-messages.md
             - name: REMOTE_NDIS_INITIALIZE_MSG
               href: remote-ndis-initialize-msg.md
             - name: REMOTE_NDIS_INITIALIZE_CMPLT
@@ -4536,8 +4879,9 @@
             - name: REMOTE_NDIS_KEEPALIVE_CMPLT
               href: remote-ndis-keepalive-cmplt.md
         - name: 远程 NDIS 数据消息
-          href: remote-ndis-data-message.md
           items:
+            - name: 远程 NDIS 数据消息
+              href: remote-ndis-data-message.md
             - name: REMOTE_NDIS_PACKET_MSG
               href: remote-ndis-packet-msg.md
             - name: 多数据包消息
@@ -4547,8 +4891,9 @@
         - name: 无连接 (802.3) 初始化序列示例
           href: example-connectionless--802-3--initialization-sequence.md
         - name: 远程 NDIS OID
-          href: remote-ndis-oids.md
           items:
+            - name: 远程 NDIS OID
+              href: remote-ndis-oids.md
             - name: 常规 OID
               href: general-oids2.md
             - name: 常规统计信息 OID
@@ -4566,13 +4911,15 @@
         - name: 状态值
           href: status-values.md
     - name: 远程 NDIS 到 USB 的映射
-      href: remote-ndis-to-usb-mapping.md
       items:
+        - name: 远程 NDIS 到 USB 的映射
+          href: remote-ndis-to-usb-mapping.md
         - name: 概述
           href: overview.md
         - name: USB 级初始化
-          href: usb-level-initialization.md
           items:
+            - name: USB 级初始化
+              href: usb-level-initialization.md
             - name: USB 设备描述符
               href: usb-device-descriptor.md
             - name: USB 配置描述符
@@ -4586,8 +4933,9 @@
         - name: '控制通道特征 '
           href: control-channel-characteristics.md
         - name: 数据通道特征
-          href: data-channel-characteristics.md
           items:
+            - name: 数据通道特征
+              href: data-channel-characteristics.md
             - name: USB 短数据包
               href: usb-short-packets.md
             - name: 流控制
@@ -4597,8 +4945,9 @@
         - name: 计时器常量
           href: timer-constants.md
         - name: USB 802.3 设备示例
-          href: usb-802-3-device-sample.md
           items:
+            - name: USB 802.3 设备示例
+              href: usb-802-3-device-sample.md
             - name: 设备描述符
               href: device-descriptor.md
             - name: 配置描述符
@@ -4614,11 +4963,13 @@
             - name: 数据输出终结点描述符
               href: data-out-endpoint-descriptor.md
 - name: 网络驱动程序的内核模式 SDK 主题
-  href: kernel-mode-sdk-topics-for-network-drivers.md
   items:
+    - name: 网络驱动程序的内核模式 SDK 主题
+      href: kernel-mode-sdk-topics-for-network-drivers.md
     - name: Mstcpip.h
-      href: mstcpip-h.md
       items:
+        - name: Mstcpip.h
+          href: mstcpip-h.md
         - name: SIO_LOOPBACK_FAST_PATH 控制代码
           href: sio-loopback-fast-path.md
         - name: SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制代码
@@ -4628,8 +4979,9 @@
         - name: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 控制代码
           href: sio-set-wfp-connection-redirect-records.md
     - name: Ntddndis.h
-      href: ntddndis-h.md
       items:
+        - name: Ntddndis.h
+          href: ntddndis-h.md
         - name: GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
           href: guid-ndis-gen-pci-device-custom-properties.md
         - name: OID_802_3_ADD_MULTICAST_ADDRESS
@@ -5311,8 +5663,9 @@
         - name: OID_WWAN_VISIBLE_PROVIDERS
           href: oid-wwan-visible-providers.md
     - name: Ws2def.h
-      href: ws2def-h.md
       items:
+        - name: Ws2def.h
+          href: ws2def-h.md
         - name: AF_INET
           href: af-inet.md
         - name: AF_INET6
@@ -5334,8 +5687,9 @@
         - name: SO_REUSEADDR
           href: so-reuseaddr.md
 - name: 旧版网络驱动程序
-  href: previous-versions-of-network-drivers.md
   items:
+    - name: 旧版网络驱动程序
+      href: previous-versions-of-network-drivers.md
     - name: Windows Vista 以前的网络驱动程序
       href: network-drivers-prior-to-windows-vista.md
     - name: 本机 802.11 无线 LAN 驱动程序
