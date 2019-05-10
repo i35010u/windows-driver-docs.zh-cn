@@ -1,6 +1,7 @@
 - name: 音频驱动程序设计指南
-  href: index.md
   items:
+    - name: 音频驱动程序设计指南
+      href: index.md
     - name: Windows 10：音频的新增功能
       href: windows-threshold--what-s-new-for-audio.md
     - name: Windows 音频体系结构
@@ -10,8 +11,9 @@
     - name: 自定义音频驱动程序类型决策树
       href: custom-audio-driver-type-decision-tree.md
 - name: WDM 音频驱动程序概述
-  href: getting-started-with-wdm-audio-drivers.md
   items:
+    - name: WDM 音频驱动程序概述
+      href: getting-started-with-wdm-audio-drivers.md
     - name: 音频的通用 Windows 驱动程序
       href: audio-universal-drivers.md
     - name: 通用音频体系结构
@@ -25,11 +27,13 @@
     - name: 指定引脚数据范围
       href: specifying-pin-data-ranges.md
 - name: WDM 音频体系结构：基本概念
-  href: wdm-audio-architecture--basic-concepts.md
   items:
+    - name: WDM 音频体系结构：基本概念
+      href: wdm-audio-architecture--basic-concepts.md
     - name: WDM 音频驱动程序简介
-      href: introduction-to-wdm-audio-drivers.md
       items:
+        - name: WDM 音频驱动程序简介
+          href: introduction-to-wdm-audio-drivers.md
         - name: WDM 音频驱动程序的基本功能
           href: basic-functions-of-a-wdm-audio-driver.md
         - name: 供应商音频驱动程序选项
@@ -41,8 +45,9 @@
         - name: KsStudio 实用程序
           href: ksstudio-utility.md
     - name: 音频筛选器、引脚和节点
-      href: audio-filters--pins--and-nodes.md
       items:
+        - name: 音频筛选器、引脚和节点
+          href: audio-filters--pins--and-nodes.md
         - name: 音频筛选器
           href: audio-filters.md
         - name: 筛选器工厂
@@ -60,8 +65,9 @@
         - name: 拓扑筛选器
           href: topology-filters.md
     - name: 音频终结点、属性和事件
-      href: audio-endpoints--properties-and-events.md
       items:
+        - name: 音频终结点、属性和事件
+          href: audio-endpoints--properties-and-events.md
         - name: 音频属性请求
           href: audio-property-requests.md
         - name: 筛选器、引脚和节点属性
@@ -87,8 +93,9 @@
         - name: 插孔说明属性
           href: jack-description-property.md
         - name: 麦克风阵列几何属性
-          href: microphone-array-geometry-property.md
           items:
+            - name: 麦克风阵列几何属性
+              href: microphone-array-geometry-property.md
             - name: 麦克风阵列几何描述符格式
               href: microphone-array-geometry-descriptor-format.md
             - name: 修改的适用于 MSVAD Micarray 的 INF
@@ -96,8 +103,9 @@
         - name: 硬件事件
           href: hardware-events.md
     - name: 音频数据格式和数据范围
-      href: audio-data-formats-and-data-ranges.md
       items:
+        - name: 音频数据格式和数据范围
+          href: audio-data-formats-and-data-ranges.md
         - name: 音频数据格式
           href: audio-data-formats.md
         - name: 音频数据范围
@@ -105,8 +113,9 @@
         - name: 可扩展的波形格式描述符
           href: extensible-wave-format-descriptors.md
         - name: 适用于家庭影院系统的多声道格式
-          href: multichannel-formats-for-home-theater-systems.md
           items:
+            - name: 适用于家庭影院系统的多声道格式
+              href: multichannel-formats-for-home-theater-systems.md
             - name: 声道掩码
               href: channel-mask.md
             - name: 将流格式映射到扬声器配置
@@ -114,8 +123,9 @@
             - name: 标头文件更改
               href: header-file-changes.md
         - name: 音频数据格式和数据范围的示例
-          href: examples-of-audio-data-formats-and-data-ranges.md
           items:
+            - name: 音频数据格式和数据范围的示例
+              href: examples-of-audio-data-formats-and-data-ranges.md
             - name: 模拟音频流数据范围
               href: analog-audio-stream-data-range.md
             - name: DirectMusic 流数据格式
@@ -143,8 +153,9 @@
             - name: PCM 高位深度流数据范围
               href: pcm-high-bitdepth-stream-data-range.md
     - name: 数字版权管理
-      href: digital-rights-management.md
       items:
+        - name: 数字版权管理
+          href: digital-rights-management.md
         - name: DRM 概述
           href: drm-overview.md
         - name: 内容 ID 和内容权限
@@ -158,11 +169,13 @@
         - name: DRM 函数和接口
           href: drm-functions-and-interfaces.md
 - name: WDM 音频体系结构：高级主题
-  href: wdm-audio-architecture--advanced-topics.md
   items:
+    - name: WDM 音频体系结构：高级主题
+      href: wdm-audio-architecture--advanced-topics.md
     - name: 数据交集处理程序
-      href: data-intersection-handlers.md
       items:
+        - name: 数据交集处理程序
+          href: data-intersection-handlers.md
         - name: 数据交集
           href: data-intersection.md
         - name: 默认数据交集处理程序
@@ -180,8 +193,9 @@
         - name: 数据范围属性
           href: data-range-properties.md
     - name: 动态音频子设备
-      href: dynamic-audio-subdevices.md
       items:
+        - name: 动态音频子设备
+          href: dynamic-audio-subdevices.md
         - name: 管理动态拓扑
           href: managing-dynamic-topologies.md
         - name: 针对动态子设备的驱动程序支持
@@ -189,15 +203,17 @@
         - name: 针对动态音频子设备的插孔说明
           href: jack-descriptions-for-dynamic-audio-subdevices.md
     - name: 多功能音频设备
-      href: multifunction-audio-devices.md
       items:
+        - name: 多功能音频设备
+          href: multifunction-audio-devices.md
         - name: 多个音频子设备
           href: multiple-audio-subdevices.md
         - name: 多功能设备限制
           href: multifunction-device-limits.md
     - name: 支持非 PCM 波形格式
-      href: supporting-non-pcm-wave-formats.md
       items:
+        - name: 支持非 PCM 波形格式
+          href: supporting-non-pcm-wave-formats.md
         - name: 非 PCM 支持的背景
           href: background-of-non-pcm-support.md
         - name: 非 PCM 引脚工厂的要求
@@ -221,11 +237,13 @@
         - name: 对非 PCM 格式的 USB 音频支持
           href: usb-audio-support-for-non-pcm-formats.md
     - name: 高清音频 DDI
-      href: high-definition-audio-ddi.md
       items:
+        - name: 高清音频 DDI
+          href: high-definition-audio-ddi.md
         - name: HD 音频和 UAA
-          href: hd-audio-and-uaa.md
           items:
+            - name: HD 音频和 UAA
+              href: hd-audio-and-uaa.md
             - name: Intel 的 HD 音频体系结构
               href: intel-s-hd-audio-architecture.md
             - name: 针对 HD 音频体系结构的 UAA 扩展
@@ -237,8 +255,9 @@
             - name: 将谓词与 HD 音频编解码器通信
               href: communicating-verbs-with-the-hd-audio-codec.md
         - name: 编程指南
-          href: programming-guidelines.md
           items:
+            - name: 编程指南
+              href: programming-guidelines.md
             - name: HD 音频 DDI 版本之间的差异
               href: differences-between-the-hd-audio-ddi-versions.md
             - name: 同步和异步编解码器命令
@@ -246,8 +265,9 @@
             - name: 时钟和链接位置寄存器
               href: wall-clock-and-link-position-registers.md
             - name: 硬件资源管理
-              href: hardware-resource-management.md
               items:
+                - name: 硬件资源管理
+                  href: hardware-resource-management.md
                 - name: 分配 DMA 引擎
                   href: allocating-dma-engines.md
                 - name: 分配链路带宽
@@ -261,8 +281,9 @@
             - name: 数据复制和缓存策略
               href: data-copying-and-caching-policy.md
             - name: 查询 HD 音频 DDI
-              href: querying-for-an-hd-audio-ddi.md
               items:
+                - name: 查询 HD 音频 DDI
+                  href: querying-for-an-hd-audio-ddi.md
                 - name: 获取 HDAUDIO_BUS_INTERFACE DDI 对象
                   href: obtaining-an-hdaudio-bus-interface-ddi-object.md
                 - name: 获取 HDAUDIO_BUS_INTERFACE_V2 DDI 对象
@@ -270,11 +291,13 @@
                 - name: 获取 HDAUDIO_BUS_INTERFACE_BDL DDI 对象
                   href: obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md
 - name: 不同版本的 Windows 中的 WDM 音频支持
-  href: wdm-audio-support-in-different-versions-of-windows.md
   items:
+    - name: 不同版本的 Windows 中的 WDM 音频支持
+      href: wdm-audio-support-in-different-versions-of-windows.md
     - name: 实现音频模块通信
-      href: implementing-audio-module-communication.md
       items:
+        - name: 实现音频模块通信
+          href: implementing-audio-module-communication.md
         - name: 配置和查询音频设备模块
           href: configure-and-query-audiodevicemodules.md
     - name: 低延迟音频
@@ -286,13 +309,15 @@
     - name: 音频硬件资源管理
       href: audio-hardware-resource-management.md
     - name: 音频驱动程序的蓝牙旁路指南
-      href: bluetooth-bypass-guidelines-for-audio-drivers.md
       items:
+        - name: 音频驱动程序的蓝牙旁路指南
+          href: bluetooth-bypass-guidelines-for-audio-drivers.md
         - name: Windows 蓝牙主控制器接口 (HCI) 体系结构概述
           href: btth-architectural-overview.md
         - name: 操作理论
-          href: theory-of-operation.md
           items:
+            - name: 操作理论
+              href: theory-of-operation.md
             - name: HFP 设备启动
               href: startup.md
             - name: HFP 设备连接
@@ -308,8 +333,9 @@
         - name: 蓝牙旁路 DDI 参考
           href: bluetooth-bypass-ddi-reference.md
         - name: 相关的设计指南
-          href: related-design-guidelines.md
           items:
+            - name: 相关的设计指南
+              href: related-design-guidelines.md
             - name: 设置属性和注册表值
               href: setting-properties-and-registry-values.md
             - name: 设置友好名称，注册 APO
@@ -317,25 +343,29 @@
             - name: 获取 HF 设备的蓝牙地址
               href: obtaining-bluetooth-address-of-hf-device.md
     - name: 硬件卸载的音频的处理
-      href: hardware-offloaded-audio-processing.md
       items:
+        - name: 硬件卸载的音频的处理
+          href: hardware-offloaded-audio-processing.md
         - name: 体系结构概述
           href: architectural-overview.md
         - name: 已卸载音频的驱动程序实现
-          href: driver-implementation-for-offloaded-audio.md
           items:
+            - name: 已卸载音频的驱动程序实现
+              href: driver-implementation-for-offloaded-audio.md
             - name: 实现概述
               href: implementation-overview.md
             - name: 驱动程序实现详细信息
-              href: driver-implementation-details.md
               items:
+                - name: 驱动程序实现详细信息
+                  href: driver-implementation-details.md
                 - name: 用于已卸载音频的处理的帮助程序接口
                   href: helper-interfaces-for-offloaded-audio-processing.md
                 - name: 已卸载音频的故障报告
                   href: glitch-reporting-for-offloaded-audio.md
         - name: 针对 SoC 的 PortCls 电源管理更新
-          href: portcls-power-management-updates-for-soc.md
           items:
+            - name: 针对 SoC 的 PortCls 电源管理更新
+              href: portcls-power-management-updates-for-soc.md
             - name: PortCls 注册表电源设置
               href: portcls-registry-power-settings.md
             - name: 选择加入即时空闲超时
@@ -345,18 +375,21 @@
             - name: PortCls D3 退出延迟要求
               href: portcls-d3-exit-latency-requirement.md
     - name: WDM 音频平台差异
-      href: wdm-audio-platform-differences.md
       items:
+        - name: WDM 音频平台差异
+          href: wdm-audio-platform-differences.md
         - name: Windows Vista 对 WDM 音频的支持
           href: windows-vista-support-for-wdm-audio.md
     - name: WDM 音频组件
-      href: wdm-audio-components.md
       items:
+        - name: WDM 音频组件
+          href: wdm-audio-components.md
         - name: 用户模式 WDM 音频组件
           href: user-mode-wdm-audio-components.md
         - name: 内核模式 WDM 音频组件
-          href: kernel-mode-wdm-audio-components.md
           items:
+            - name: 内核模式 WDM 音频组件
+              href: kernel-mode-wdm-audio-components.md
             - name: USB 音频类系统驱动程序 (Usbaudio.sys)
               href: usb-audio-class-system-driver--usbaudio-sys-.md
         - name: Wave 和 DirectSound 组件
@@ -366,8 +399,9 @@
         - name: 虚拟音频设备
           href: virtual-audio-devices.md
     - name: 典型的音频配置
-      href: typical-audio-configurations.md
       items:
+        - name: 典型的音频配置
+          href: typical-audio-configurations.md
         - name: 呈现和捕获 Wave 内容
           href: rendering-and-capturing-wave-content.md
         - name: 呈现和捕获 MIDI 内容
@@ -379,8 +413,9 @@
         - name: 使用 DirectSound 软件和硬件缓冲区呈现 Wave 内容
           href: rendering-wave-content-using-directsound-software-and-hardware-buffers.md
     - name: 控制 Wave 输出延迟的因素
-      href: factors-governing-wave-output-latency.md
       items:
+        - name: 控制 Wave 输出延迟的因素
+          href: factors-governing-wave-output-latency.md
         - name: WaveCyclic 延迟
           href: wavecyclic-latency.md
         - name: WavePci 延迟
@@ -394,8 +429,9 @@
     - name: 动态格式更改
       href: dynamic-format-change.md
 - name: Windows 音频处理对象
-  href: windows-audio-processing-objects.md
   items:
+    - name: Windows 音频处理对象
+      href: windows-audio-processing-objects.md
     - name: 音频处理对象体系结构
       href: audio-processing-object-architecture.md
     - name: 实现音频处理对象
@@ -405,8 +441,9 @@
     - name: 实现硬件卸载的 APO 效果
       href: implementing-hardware-offloaded-apo-effects.md
     - name: Windows 默认 APO
-      href: windows-default-apos.md
       items:
+        - name: Windows 默认 APO
+          href: windows-default-apos.md
         - name: 低音增强
           href: bass-boost.md
         - name: 低音管理
@@ -428,26 +465,31 @@
         - name: 耳机的虚拟化环绕声
           href: virtualized-surround-sound-over-headphones.md
 - name: 音频微型端口驱动程序
-  href: audio-miniport-drivers.md
   items:
+    - name: 音频微型端口驱动程序
+      href: audio-miniport-drivers.md
     - name: 端口类简介
-      href: introduction-to-port-class.md
       items:
+        - name: 端口类简介
+          href: introduction-to-port-class.md
         - name: 实现特定于功能的接口
           href: implementation-of-function-specific-interfaces.md
         - name: 操作系统提供的 PortCls 支持
           href: portcls-support-by-operating-system.md
     - name: 支持某个设备
-      href: supporting-a-device.md
       items:
+        - name: 支持某个设备
+          href: supporting-a-device.md
         - name: WaveRT 端口驱动程序
-          href: wavert-port-driver.md
           items:
+            - name: WaveRT 端口驱动程序
+              href: wavert-port-driver.md
             - name: WaveRT 端口驱动程序简介
               href: introducing-the-wavert-port-driver.md
             - name: 了解 WaveRT 端口驱动程序
-              href: understanding-the-wavert-port-driver.md
               items:
+                - name: 了解 WaveRT 端口驱动程序
+                  href: understanding-the-wavert-port-driver.md
                 - name: 播放期间的流延迟
                   href: stream-latency-during-playback.md
                 - name: 录制期间的流延迟
@@ -459,8 +501,9 @@
         - name: Dmu 端口驱动程序
           href: dmus-port-driver.md
     - name: 适配器驱动程序构造
-      href: adapter-driver-construction.md
       items:
+        - name: 适配器驱动程序构造
+          href: adapter-driver-construction.md
         - name: 启动顺序
           href: startup-sequence.md
         - name: 创建子设备
@@ -468,8 +511,9 @@
     - name: 按操作系统划分的微型端口驱动程序类型
       href: miniport-driver-types-by-operating-system.md
     - name: 内核中的 COM
-      href: com-in-the-kernel.md
       items:
+        - name: 内核中的 COM
+          href: com-in-the-kernel.md
         - name: 适用于微型端口驱动程序的函数表
           href: function-tables-for-miniport-drivers.md
         - name: 创建音频驱动程序对象
@@ -477,11 +521,13 @@
         - name: COM 对象的引用计数约定
           href: reference-counting-conventions-for-com-objects.md
     - name: 微型端口接口
-      href: miniport-interfaces.md
       items:
+        - name: 微型端口接口
+          href: miniport-interfaces.md
         - name: WaveRT 微型端口驱动程序
-          href: wavert-miniport-driver.md
           items:
+            - name: WaveRT 微型端口驱动程序
+              href: wavert-miniport-driver.md
             - name: 开发 WaveRT 微型端口驱动程序
               href: developing-a-wavert-miniport-driver.md
         - name: 拓扑微型端口驱动程序
@@ -491,15 +537,17 @@
         - name: DMus 微型端口驱动程序
           href: dmus-miniport-driver.md
     - name: 安装端口类音频适配器
-      href: installing-a-port-class-audio-adapter.md
       items:
+        - name: 安装端口类音频适配器
+          href: installing-a-port-class-audio-adapter.md
         - name: 指定音频适配器的版本信息
           href: specifying-version-information-for-an-audio-adapter.md
         - name: 为音频适配器安装设备接口
           href: installing-device-interfaces-for-an-audio-adapter.md
         - name: 为音频适配器安装核心系统组件
-          href: installing-core-system-components-for-an-audio-adapter.md
           items:
+            - name: 为音频适配器安装核心系统组件
+              href: installing-core-system-components-for-an-audio-adapter.md
             - name: 在 Windows 中安装
               href: installing-in-windows.md
         - name: 为音频适配器安装 Windows 多媒体系统支持
@@ -513,8 +561,9 @@
         - name: 向控制面板添加新的数字格式
           href: adding-new-digital-formats-to-control-panel.md
         - name: 音频适配器的其他安装问题
-          href: miscellaneous-installation-issues-for-an-audio-adapter.md
           items:
+            - name: 音频适配器的其他安装问题
+              href: miscellaneous-installation-issues-for-an-audio-adapter.md
             - name: 默认的音频音量设置
               href: default-audio-volume-settings.md
             - name: 软件音量控制支持
@@ -532,8 +581,9 @@
             - name: 检索设备安装程序信息
               href: retrieving-device-setup-information.md
     - name: 端口驱动程序帮助程序对象
-      href: port-driver-helper-objects.md
       items:
+        - name: 端口驱动程序帮助程序对象
+          href: port-driver-helper-objects.md
         - name: DMA 通道对象
           href: dma-channel-objects.md
         - name: 注册表项对象
@@ -545,8 +595,9 @@
         - name: 中断同步对象
           href: interrupt-sync-objects.md
     - name: 音频设备的电源管理
-      href: power-management-for-audio-devices.md
       items:
+        - name: 音频设备的电源管理
+          href: power-management-for-audio-devices.md
         - name: 实现 IAdapterPowerManagement
           href: implementing-iadapterpowermanagement.md
         - name: 实现 IPowerNotify
@@ -554,8 +605,9 @@
         - name: 音频设备类不活动计时器实现
           href: audio-device-class-inactivity-timer-implementation.md
     - name: 音频驱动程序的版本号
-      href: version-numbers-for-audio-drivers.md
       items:
+        - name: 音频驱动程序的版本号
+          href: version-numbers-for-audio-drivers.md
         - name: 内部和外部版本号
           href: internal-and-external-version-numbers.md
         - name: INF Driver-Version 条目
@@ -563,8 +615,9 @@
         - name: DirectX 文件版本号
           href: directx-file-version-numbers.md
     - name: 音频驱动程序的其他实现问题
-      href: other-implementation-issues-for-audio-drivers.md
       items:
+        - name: 音频驱动程序的其他实现问题
+          href: other-implementation-issues-for-audio-drivers.md
         - name: 编写 64 位音频驱动程序
           href: writing-64-bit-audio-drivers.md
         - name: 访问 PCI 配置空间
@@ -572,15 +625,17 @@
         - name: 为 PortCls 音频驱动程序实现 PnP 再平衡
           href: implement-pnp-rebalance-for-portcls-audio-drivers.md
 - name: 旧的音频接口
-  href: legacy-audio-interfaces.md
   items:
+    - name: 旧的音频接口
+      href: legacy-audio-interfaces.md
     - name: WavePci 端口驱动程序
       href: wavepci-port-driver.md
     - name: WavePci 微型端口驱动程序
       href: wavepci-miniport-driver.md
     - name: WavePci 设备的实现问题
-      href: implementation-issues-for-wavepci-devices.md
       items:
+        - name: WavePci 设备的实现问题
+          href: implementation-issues-for-wavepci-devices.md
         - name: WavePci 设备的硬件要求
           href: hardware-requirements-for-wavepci-devices.md
         - name: WavePci 微型端口驱动程序的性能问题
@@ -592,11 +647,13 @@
     - name: WaveCyclic 微型端口驱动程序
       href: wavecyclic-miniport-driver.md
     - name: 针对 DirectSound 的驱动程序支持
-      href: driver-support-for-directsound.md
       items:
+        - name: 针对 DirectSound 的驱动程序支持
+          href: driver-support-for-directsound.md
         - name: WDM 音频中的 DirectSound 硬件加速
-          href: directsound-hardware-acceleration-in-wdm-audio.md
           items:
+            - name: WDM 音频中的 DirectSound 硬件加速
+              href: directsound-hardware-acceleration-in-wdm-audio.md
             - name: DirectSound 硬件加速概述
               href: overview-of-directsound-hardware-acceleration.md
             - name: 支持在 WDM 音频中进行 2D DirectSound 加速
@@ -614,8 +671,9 @@
             - name: 预提取偏移量
               href: prefetch-offsets.md
         - name: DirectSound Speaker-Configuration 设置
-          href: directsound-speaker-configuration-settings.md
           items:
+            - name: DirectSound Speaker-Configuration 设置
+              href: directsound-speaker-configuration-settings.md
             - name: 转换 Speaker-Configuration 请求
               href: translating-speaker-configuration-requests.md
             - name: 应用 Speaker-Configuration 设置
@@ -627,23 +685,27 @@
             - name: DSSPEAKER_DIRECTOUT 扬声器配置
               href: dsspeaker-directout-speaker-configuration.md
         - name: DirectSound 捕获效果
-          href: directsound-capture-effects.md
           items:
+            - name: DirectSound 捕获效果
+              href: directsound-capture-effects.md
             - name: 公开硬件加速捕获效果
               href: exposing-hardware-accelerated-capture-effects.md
             - name: AEC 系统筛选器
               href: aec-system-filter.md
     - name: 针对 DirectMusic 的驱动程序支持
-      href: driver-support-for-directmusic.md
       items:
+        - name: 针对 DirectMusic 的驱动程序支持
+          href: driver-support-for-directmusic.md
         - name: DirectMusic DDI 概述
-          href: directmusic-ddi-overview.md
           items:
+            - name: DirectMusic DDI 概述
+              href: directmusic-ddi-overview.md
             - name: 用户模式与内核模式
               href: user-mode-versus-kernel-mode.md
         - name: 用户模式下的自定义呈现
-          href: custom-rendering-in-user-mode.md
           items:
+            - name: 用户模式下的自定义呈现
+              href: custom-rendering-in-user-mode.md
             - name: 合成器和 Wave 接收器
               href: synthesizers-and-wave-sinks.md
             - name: IDirectMusicSynth 和 IDirectMusicSynthSink
@@ -651,8 +713,9 @@
             - name: MIDI 到 Wave
               href: midi-to-wave.md
             - name: 合成器计时
-              href: synthesizer-timing.md
               items:
+                - name: 合成器计时
+                  href: synthesizer-timing.md
                 - name: 合成器延迟
                   href: synthesizer-latency.md
                 - name: 带时间戳的事件
@@ -664,18 +727,21 @@
             - name: 注册合成器
               href: registering-your-synthesizer.md
         - name: 内核模式硬件加速 DDI
-          href: kernel-mode-hardware-acceleration-ddi.md
           items:
+            - name: 内核模式硬件加速 DDI
+              href: kernel-mode-hardware-acceleration-ddi.md
             - name: DirectMusic WDM 内核流式处理后台
               href: directmusic-wdm-kernel-streaming-background.md
             - name: 合成器微型端口驱动程序概述
               href: synthesizer-miniport-driver-overview.md
             - name: DirectMusic 微型端口驱动程序接口
-              href: directmusic-miniport-driver-interface.md
               items:
+                - name: DirectMusic 微型端口驱动程序接口
+                  href: directmusic-miniport-driver-interface.md
                 - name: MIDI 传输
-                  href: midi-transport.md
                   items:
+                    - name: MIDI 传输
+                      href: midi-transport.md
                     - name: IMXF 接口
                       href: imxf-interfaces.md
                     - name: 分配器
@@ -697,11 +763,13 @@
             - name: 对 DirectMusic 属性的支持
               href: support-for-directmusic-properties.md
     - name: 针对旧音频接口的驱动程序支持
-      href: driver-support-for-legacy-audio-interfaces.md
       items:
+        - name: 针对旧音频接口的驱动程序支持
+          href: driver-support-for-legacy-audio-interfaces.md
         - name: 从内核流式处理拓扑到音频混音器 API 的转换
-          href: kernel-streaming-topology-to-audio-mixer-api-translation.md
           items:
+            - name: 从内核流式处理拓扑到音频混音器 API 的转换
+              href: kernel-streaming-topology-to-audio-mixer-api-translation.md
             - name: 拓扑引脚
               href: topology-pins.md
             - name: 拓扑节点
@@ -713,13 +781,15 @@
             - name: 公开筛选器拓扑
               href: exposing-filter-topology.md
         - name: 针对旧版 Windows 多媒体 API 的 WDM 音频扩展
-          href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
           items:
+            - name: 针对旧版 Windows 多媒体 API 的 WDM 音频扩展
+              href: wdm-audio-extensions-to-legacy-windows-multimedia-apis.md
             - name: 从 WDM 音频驱动程序扩展的功能
               href: extended-capabilities-from-a-wdm-audio-driver.md
         - name: 系统截获的设备消息
-          href: system-intercepted-device-messages.md
           items:
+            - name: 系统截获的设备消息
+              href: system-intercepted-device-messages.md
             - name: 访问首选的设备 ID
               href: accessing-the-preferred-device-id.md
             - name: 首选的语音通信设备 ID
@@ -729,13 +799,15 @@
             - name: 音乐技术 GUID
               href: music-technology-guids.md
 - name: 音频设备 DDI 参考概述
-  href: portal-audio-ref.md
   items:
+    - name: 音频设备 DDI 参考概述
+      href: portal-audio-ref.md
     - name: 音频驱动程序枚举
       href: audio-drivers-enumerations.md
     - name: 音频驱动程序属性集
-      href: audio-drivers-property-sets.md
       items:
+        - name: 音频驱动程序属性集
+          href: audio-drivers-property-sets.md
         - name: KSPROPSETID_AC3
           href: kspropsetid-ac3.md
         - name: KSPROPSETID_Acoustic_Echo_Cancel
@@ -749,8 +821,9 @@
         - name: KSPROPSETID_AudioGfx
           href: kspropsetid-audiogfx.md
         - name: KSPROPSETID_AudioModule
-          href: kspropsetid-audiomodule.md
           items:
+            - name: KSPROPSETID_AudioModule
+              href: kspropsetid-audiomodule.md
             - name: KSPROPERTY_AUDIOMODULE_COMMAND
               href: ksproperty-audiomodule-command.md
             - name: KSPROPERTY_AUDIOMODULE_DESCRIPTORS
@@ -768,8 +841,9 @@
         - name: KSPROPSETID_DrmAudioStream
           href: kspropsetid-drmaudiostream.md
         - name: KSPROPSETID_FMRXControl
-          href: kspropsetid-fmrxcontrol.md
           items:
+            - name: KSPROPSETID_FMRXControl
+              href: kspropsetid-fmrxcontrol.md
             - name: KSPROPERTY_FMRX_STATE
               href: ksproperty-fmrx-state.md
         - name: KSPROPSETID_FMRXTopology
@@ -803,8 +877,9 @@
         - name: KSPROPSETID_TopologyNode
           href: kspropsetid-topologynode.md
     - name: 音频驱动程序事件集
-      href: audio-drivers-event-sets.md
       items:
+        - name: 音频驱动程序事件集
+          href: audio-drivers-event-sets.md
         - name: KSEVENTSETID_AudioControlChange
           href: kseventsetid-audiocontrolchange.md
         - name: KSEVENTSETID_LoopedStreaming
@@ -814,13 +889,15 @@
         - name: KSEVENTSETID_SoundDetector
           href: kseventsetid-sounddetector.md
         - name: KSEVENTSETID_VolumeLimit
-          href: kseventsetid-volumelimit.md
           items:
+            - name: KSEVENTSETID_VolumeLimit
+              href: kseventsetid-volumelimit.md
             - name: KSEVENT_VOLUMELIMIT_CHANGED
               href: ksevent-volumelimit-changed.md
     - name: 音频拓扑节点
-      href: audio-topology-nodes.md
       items:
+        - name: 音频拓扑节点
+          href: audio-topology-nodes.md
         - name: KSNODETYPE_3D_EFFECTS
           href: ksnodetype-3d-effects.md
         - name: KSNODETYPE_ACOUSTIC_ECHO_CANCEL
@@ -896,8 +973,9 @@
     - name: 音频驱动程序结构
       href: audio-drivers-structures.md
     - name: 音频驱动程序接口
-      href: audio-drivers-interfaces.md
       items:
+        - name: 音频驱动程序接口
+          href: audio-drivers-interfaces.md
         - name: IAudioSystemEffects
           href: iaudiosystemeffects.md
         - name: IAudioSystemEffects2
@@ -905,15 +983,17 @@
         - name: IKeywordDetectorOemAdapter
           href: ikeyworddetectoroemadapter.md
     - name: 蓝牙 HFP DDI 参考
-      href: bluetooth-hfp-ddi-reference.md
       items:
+        - name: 蓝牙 HFP DDI 参考
+          href: bluetooth-hfp-ddi-reference.md
         - name: 蓝牙 HFP DDI 结构
           href: bluetooth-hfp-ddi-structures.md
         - name: 蓝牙 HFP DDI IOCTL
           href: bluetooth-hfp-ddi-ioctls.md
     - name: 高清音频 DDI 参考
-      href: high-definition-audio-ddi-reference.md
       items:
+        - name: 高清音频 DDI 参考
+          href: high-definition-audio-ddi-reference.md
         - name: HD 音频 DDI 例程
           href: hd-audio-ddi-routines.md
         - name: HD 音频 DDI 结构
@@ -927,8 +1007,9 @@
     - name: 旧版音频设备消息
       href: legacy-audio-device-messages.md
     - name: 音频 INF 文件设置
-      href: media-class-inf-extensions.md
       items:
+        - name: 音频 INF 文件设置
+          href: media-class-inf-extensions.md
         - name: SetupPreferredAudioDevices
           href: setuppreferredaudiodevices.md
         - name: PKEY_APO_SWFallback_ProcessingModes
@@ -996,8 +1077,9 @@
         - name: UsePositionLock
           href: usepositionlock.md
     - name: 端口类音频驱动程序参考
-      href: port-class-audio-driver-reference.md
       items:
+        - name: 端口类音频驱动程序参考
+          href: port-class-audio-driver-reference.md
         - name: 音频端口类函数
           href: audio-port-class-functions.md
         - name: 音频帮助程序对象接口
@@ -1015,22 +1097,25 @@
         - name: 音频电源管理界面
           href: audio-power-management-interfaces.md
         - name: 已过时函数的宏定义
-          href: macro-definitions-for-obsolete-functions.md
           items:
+            - name: 已过时函数的宏定义
+              href: macro-definitions-for-obsolete-functions.md
             - name: 已过时端口类函数
               href: obsolete-port-class-functions.md
             - name: 已过时内核模式驱动程序支持函数
               href: obsolete-kernel-mode-driver-support-functions.md
     - name: Ks.h
-      href: ks-h.md
       items:
+        - name: Ks.h
+          href: ks-h.md
         - name: KSEVENT_PINCAPS_FORMATCHANGE
           href: ksevent-pincaps-formatchange.md
         - name: KSEVENT_PINCAPS_JACKINFOCHANGE
           href: ksevent-pincaps-jackinfochange.md
     - name: Ksmedia.h
-      href: ksmedia-h.md
       items:
+        - name: Ksmedia.h
+          href: ksmedia-h.md
         - name: KSEVENT_CONTROL_CHANGE
           href: ksevent-control-change.md
         - name: KSEVENT_LOOPEDSTREAMING_POSITION

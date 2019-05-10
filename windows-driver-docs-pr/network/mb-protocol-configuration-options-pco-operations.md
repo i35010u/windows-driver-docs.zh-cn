@@ -6,12 +6,12 @@ keywords:
 - MB PCO 选项，移动宽带 PCO 选项 MB 协议配置选项、 移动宽带协议配置选项，WDK 网络驱动程序、 MBB 微型端口驱动程序
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f149f51566190780a910ce6e876cf7ee420b8b66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d29fffd17776b8ed5e278b3c52c24bec49e627c
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367827"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405176"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
@@ -98,7 +98,7 @@ Service UUID = **3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf**
 
 ##### <a name="mbimpcotype"></a>MBIM_PCO_TYPE
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMPcoTypeComplete | 0 | 指定完整的 PCO 结构将向上传递，如从网络接收和标头真实地反映了在 PCO 结构八位字节 3 3GPP TS24.008 规范中定义的协议。 |
 | MBIMPcoTypePartial | 1 | 指定调制解调器将只传递了 PCO 结构，它从网络接收的子集。 标头匹配 PCO 结构定义中 3GPP TS24.008 规范，但可能不是有效的八位位组 3 的"配置协议"。 |
@@ -109,7 +109,7 @@ Service UUID = **3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf**
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SessionId | UINT32 | 在查询中的 SessionId 指示哪些 IP 数据流 PCO 值是由函数返回。 |
 | 4 | 4 | PcoDataSize | UINT32 | 从 0 到 256 的 PcoData，长度。 此值将为在查询中的 0。 |
-| 8 | 4 | PcoDataType | UINT32 | PCO 数据类型。 有关详细信息，请参阅[MBIM_PCO_TYPE](#mbimpcotype)。 |
+| 8 | 4 | PcoDataType | UINT32 | PCO 数据类型。 有关详细信息，请参阅[MBIM_PCO_TYPE](#mbim_pco_type)。 |
 | 12 | | PcoDataBuffer | DATABUFFER | 3GPP TS24.008 规范中 PCO 结构。 |
 
 #### <a name="status-codes"></a>状态代码

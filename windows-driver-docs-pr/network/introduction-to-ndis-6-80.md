@@ -4,12 +4,12 @@ description: 本部分介绍 NDIS 6.80，并介绍了从 NDIS 6.70 的更改。 
 ms.assetid: 5E6E12BF-DE34-4CDD-84BB-7708A59134E9
 ms.date: 07/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85aa0c719bfcf42a74057d332a1c203ed8352e4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 210f5f2bc0a7f1de558b15bbb662d66bacd01c16
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349463"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405226"
 ---
 # <a name="introduction-to-ndis-680"></a>NDIS 6.80 简介
 
@@ -43,7 +43,7 @@ NDIS 6.80 驱动程序必须遵循在中定义的要求[实现的 NDIS 6.30 驱�
 
 - NDIS 6.80 驱动程序必须报告正确的 NDIS 版本时它会向 NDIS 注册。
 
-   您必须更新的主版本号和次 NDIS 版本编号 NDIS_Xxx_DRIVER_CHARACTERISTICS 结构中以支持 NDIS 6.80。 MajorNdisVersion 成员必须包含 6 和 MinorNdisVersion 成员必须包含 80。 此要求可适用于微型端口、 协议和筛选器驱动程序。 您还必须更新编译器的版本信息 (请参阅[编译的 NDIS 6.80 驱动程序](#compiling-an-ndis-670-driver))。
+   您必须更新的主版本号和次 NDIS 版本编号 NDIS_Xxx_DRIVER_CHARACTERISTICS 结构中以支持 NDIS 6.80。 MajorNdisVersion 成员必须包含 6 和 MinorNdisVersion 成员必须包含 80。 此要求可适用于微型端口、 协议和筛选器驱动程序。 您还必须更新编译器的版本信息 (请参阅[编译的 NDIS 6.80 驱动程序](#compiling-an-ndis-680-driver))。
 
 ## <a name="compiling-an-ndis-680-driver"></a>编译 NDIS 6.80 驱动程序
 

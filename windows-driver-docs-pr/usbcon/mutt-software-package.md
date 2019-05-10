@@ -3,12 +3,12 @@ Description: MUTT 软件包包含几个工具与 MUTT 设备一起使用。 工�
 title: MUTT 软件包中的工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f3f3455ee8f9f9db1e66b9b04dc009b602d38d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd9488de20bff07db101f10c8e443a35f349537f
+ms.sourcegitcommit: 952c17357bd2dd91a4caad42313a063951317697
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379945"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65515037"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT 软件包中的工具
 
@@ -30,13 +30,18 @@ MUTT 软件包包含几个工具可与[MUTT 设备](microsoft-usb-test-tool--mut
 
 Microsoft USB 测试工具 (MUTT) 软件程序包中包含硬件测试工程师，若要测试其 USB 控制器或中心与 Microsoft USB 驱动程序堆栈的互操作性测试的工具。 包含的文档提供了不同类型的 MUTT 硬件的简要概述，并建议的控制器、 中心、 设备和 BIOS/UEFI 测试拓扑。 文档还包含有关如何运行测试、 跟踪事件中 USB 驱动程序堆栈，并捕获内核调试程序中的信息的过程信息。
 
-文件名： mutt2_9.msi
+文件名： mutt2_93.msi
 
-7.3 MB
+9.1 MB
 
 [![下载 mutt 软件包](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)
 
 ## <a name="version-updates"></a>版本更新
+
+更改版本 2.9.3
+
+- 修复驱动程序签名问题
+- 包括 ARM64 测试工具
 
 更改用于版本 2.9
 

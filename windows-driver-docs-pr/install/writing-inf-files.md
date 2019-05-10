@@ -7,17 +7,17 @@ keywords:
 - 写入 WDK 设备安装的 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 983ff61588d3c7ed2f98254ba771042109e28d1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69af3e79706a60680d768479c113e2a19adc6988
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339158"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456435"
 ---
 # <a name="writing-inf-files"></a>编写 INF 文件
 
 
-当你编写[INF 文件](inf-files.md)为你[驱动程序包](driver-packages.md)，应遵循以下准则：
+当你编写[INF 文件](overview-of-inf-files.md)为你[驱动程序包](driver-packages.md)，应遵循以下准则：
 
 -   INF 文件必须使用有效的结构和语法将驱动程序在包验证检查在安装过程的开始处。
 

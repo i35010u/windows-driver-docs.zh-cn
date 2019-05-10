@@ -3,19 +3,19 @@ Description: 本主题提供有关 USB 批量传输的简要概述。
 title: 如何将发送 USB 大容量传输请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab6e0a844f762270b63e644c8cf7805e1c3136dc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d0a1be3bc36a3ed265f5f2fda0513f696a12d9b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355112"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405082"
 ---
 # <a name="how-to-send-usb-bulk-transfer-requests"></a>如何将发送 USB 大容量传输请求
 
 
 本主题提供有关 USB 批量传输的简要概述。 它还提供有关如何对客户端驱动程序可以发送和接收来自设备的大容量数据的分步说明。
 
--   [有关大容量终结点](#ddk-usb-bulk-and-interrupt-transfer-kg)
+-   [有关大容量终结点](#about-bulk-endpoints)
 -   [大容量事务](#bulk-transactions)
 -   [USB 大容量传输客户端驱动程序任务](#usb-client-driver-tasks-for-a-bulk-transfer)
 -   [大容量传输请求示例](#bulk-transfer-request-example)
@@ -121,7 +121,7 @@ I/O 管理器接收请求，创建 I/O 请求数据包 (IRP)，并将其转发�
 
 如果不使用流，可以使用 KMDF 定义方法来发送请求，如下面的过程中所述：
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保您知道此信息：
 

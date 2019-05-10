@@ -1,19 +1,23 @@
 - name: Windows 便携设备
-  href: index.md
   items:
+    - name: Windows 便携设备
+      href: index.md
     - name: WPD 中的新增功能
       href: what-s-new-in-wpd.md
     - name: WPD 设计指南
-      href: wpd-design-guide.md
       items:
+        - name: WPD 设计指南
+          href: wpd-design-guide.md
         - name: WPD 驱动程序
-          href: wpd-drivers.md
           items:
+            - name: WPD 驱动程序
+              href: wpd-drivers.md
             - name: 要求
               href: requirements.md
         - name: WPD 驱动程序概述
-          href: wpd-drivers-overview.md
           items:
+            - name: WPD 驱动程序概述
+              href: wpd-drivers-overview.md
             - name: 支持的方案
               href: supported-scenarios.md
             - name: WPD 和早期技术
@@ -39,11 +43,13 @@
             - name: 对于对象的要求
               href: requirements-for-objects.md
     - name: WPD 编程指南
-      href: wpd-programming-guide.md
       items:
+        - name: WPD 编程指南
+          href: wpd-programming-guide.md
         - name: WPD 驱动程序开发工具
-          href: familiarizing-yourself-with-the-sample-driver.md
           items:
+            - name: WPD 驱动程序开发工具
+              href: familiarizing-yourself-with-the-sample-driver.md
             - name: 使用 WpdInfo 工具
               href: using-the-wpdinfo-tool.md
             - name: 使用 WpdDeviceInspector 工具
@@ -51,16 +57,19 @@
             - name: 使用网络监视器工具
               href: using-the-netmon-tool.md
         - name: WPD 驱动程序示例
-          href: the-wpd-driver-samples.md
           items:
+            - name: WPD 驱动程序示例
+              href: the-wpd-driver-samples.md
             - name: WpdHelloWorldDriver 示例
-              href: the-sample-driver-architecture.md
               items:
+                - name: WpdHelloWorldDriver 示例
+                  href: the-sample-driver-architecture.md
                 - name: 安装 WpdHelloWorldDriver 示例
                   href: the-wpdhelloworlddriver-installation.md
                 - name: 示例驱动程序安装程序信息 (.inf) 文件
-                  href: the-sample-driver-setup-information---inf--file.md
                   items:
+                    - name: 示例驱动程序安装程序信息 (.inf) 文件
+                      href: the-sample-driver-setup-information---inf--file.md
                     - name: 支持自动播放
                       href: supporting-autoplay.md
                 - name: MTP 安装程序信息 (.inf) 文件
@@ -70,23 +79,27 @@
                 - name: COM 组件文件
                   href: the-com-component-files.md
                 - name: Windows 驱动程序框架文件
-                  href: the-windows-driver-foundation-files.md
                   items:
+                    - name: Windows 驱动程序框架文件
+                      href: the-windows-driver-foundation-files.md
                     - name: 处理即插即用和电源管理事件
                       href: handling-plug-and-play-and-power-management-events.md
                     - name: 处理入口和出口点
                       href: handling-the-entry-and-exit-points.md
                     - name: 处理设备控制和文件创建
-                      href: handling-device-control-and-file-creation.md
                       items:
+                        - name: 处理设备控制和文件创建
+                          href: handling-device-control-and-file-creation.md
                         - name: 处理访问控制
                           href: handling-access-control.md
                 - name: Windows 便携设备文件
-                  href: the-windows-portable-device-files.md
                   items:
+                    - name: Windows 便携设备文件
+                      href: the-windows-portable-device-files.md
                     - name: 基础驱动程序
-                      href: the-base-driver.md
                       items:
+                        - name: 基础驱动程序
+                          href: the-base-driver.md
                         - name: 初始化驱动程序
                           href: initializing-the-driver.md
                         - name: 消息传送功能
@@ -94,8 +107,9 @@
                         - name: 映射对象标识符
                           href: mapping-object-identifiers.md
                     - name: 驱动程序功能
-                      href: driver-capabilities.md
                       items:
+                        - name: 驱动程序功能
+                          href: driver-capabilities.md
                         - name: 命令-选项检索
                           href: command-option-retrieval.md
                         - name: 固定的属性-特性检索
@@ -115,8 +129,9 @@
                     - name: 对象枚举
                       href: object-enumeration.md
                     - name: 属性支持
-                      href: property-support.md
                       items:
+                        - name: 属性支持
+                          href: property-support.md
                         - name: 属性删除
                           href: property-deletion.md
                         - name: 属性-特性检索
@@ -128,8 +143,9 @@
                         - name: 设置属性值
                           href: setting-property-values.md
                     - name: 资源
-                      href: resources.md
                       items:
+                        - name: 资源
+                          href: resources.md
                         - name: 检索支持的资源的列表
                           href: retrieving-a-list-of-supported-resources.md
                         - name: 检索资源特性
@@ -141,8 +157,9 @@
                         - name: 关闭资源
                           href: closing-a-resource.md
             - name: WpdBasicHardwareDriver 示例
-              href: the-wpdbasichardwaredriver-sample.md
               items:
+                - name: WpdBasicHardwareDriver 示例
+                  href: the-wpdbasichardwaredriver-sample.md
                 - name: 安装示例驱动程序
                   href: the-wpdbasichardwaredriver-installation.md
                 - name: WpdBasicHardwareDriver 协议
@@ -156,8 +173,9 @@
                 - name: 支持 I/O
                   href: the-wpdbasichardwaredriver-supporting-io.md
                 - name: 支持 WPD 基础结构
-                  href: the-wpdbasichardwaredriver-supporting-wpd-infrastructure.md
                   items:
+                    - name: 支持 WPD 基础结构
+                      href: the-wpdbasichardwaredriver-supporting-wpd-infrastructure.md
                     - name: 支持属性命令
                       href: the-wpdbasichardwaredriver-supporting-wpd-property-commands.md
                     - name: 支持属性范围特性
@@ -173,8 +191,9 @@
                 - name: 测试和调试示例驱动程序
                   href: the-wpdbasichardwaredriver-testing-and-debugging.md
             - name: WpdServiceSampleDriver 示例
-              href: the-wpdservicesampledriver-sample.md
               items:
+                - name: WpdServiceSampleDriver 示例
+                  href: the-wpdservicesampledriver-sample.md
                 - name: 安装 WpdServiceSampleDriver 示例
                   href: the-wpdservicesampledriver-installation.md
                 - name: 定义服务对象
@@ -182,8 +201,9 @@
                 - name: 定义服务属性
                   href: the-wpdservicesampledriver-property-definitions.md
                 - name: 支持 WPD 基础结构
-                  href: the-wpdservicesampledriver-supporting-wpd-infrastructure.md
                   items:
+                    - name: 支持 WPD 基础结构
+                      href: the-wpdservicesampledriver-supporting-wpd-infrastructure.md
                     - name: 支持服务命令
                       href: the-wpdservicesampledriver-supporting-service-commands.md
                     - name: 支持属性命令
@@ -197,15 +217,17 @@
                 - name: 限定服务事件的范围
                   href: the-wpdservicesampledriver-scoping-service-events.md
             - name: WpdMultiTransportDriver 示例
-              href: the-wpdmultitransportdriver-sample.md
               items:
+                - name: WpdMultiTransportDriver 示例
+                  href: the-wpdmultitransportdriver-sample.md
                 - name: 安装 WpdMultiTransportDriver 示例
                   href: the-wpdmultitransportdriver-installation.md
                 - name: MultiTransport 设备支持
                   href: the-wpdmultitransportdriver-sample-device-arrival.md
         - name: 高级任务
-          href: advanced-tasks.md
           items:
+            - name: 高级任务
+              href: advanced-tasks.md
             - name: WpdWudfSampleDriver 示例
               href: the-wpdwudfsampledriver-sample.md
             - name: 安装 WpdWudfSampleDriver 示例

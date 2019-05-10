@@ -1,6 +1,7 @@
 - name: PCI 驱动程序编程指南
-  href: index.md
   items:
+    - name: PCI 驱动程序编程指南
+      href: index.md
     - name: PCI 电源管理和设备驱动程序
       href: pci-power-management-and-device-drivers.md
     - name: 在 Windows 中启用 PCI Express 原生控制

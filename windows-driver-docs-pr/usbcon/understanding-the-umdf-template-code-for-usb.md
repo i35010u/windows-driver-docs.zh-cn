@@ -3,12 +3,12 @@ Description: 了解如何基于 UMDF 的 USB 客户端驱动程序的源代码�
 title: USB 客户端驱动程序代码结构 (UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 159efb50d5b561a413cff0767fc1c72c2aeb828b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a40fc017f0d1c04e52e15a148375955bf9a6d03d
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355093"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405076"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>了解 USB 客户端驱动程序代码结构 (UMDF)
 
@@ -17,10 +17,10 @@ ms.locfileid: "63355093"
 
 有关生成 UMDF 模板代码的说明，请参阅[如何编写第一个 USB 客户端驱动程序 (UMDF)](implement-driver-entry-for-a-usb-driver--umdf-.md)。 这些部分介绍上述模板代码：
 
--   [驱动程序回调源代码](#driver)
--   [设备回调源代码](#device)
--   [队列的源代码](#queue)
--   [驱动程序条目的源代码](#driver-entry)
+-   [驱动程序回调源代码](#driver-callback-source-code)
+-   [设备回调源代码](#device-callback-source-code)
+-   [队列的源代码](#queue-source-code)
+-   [驱动程序条目的源代码](#driver-entry-source-code)
 
 在讨论之前的模板代码的详细信息，让我们看看标头文件 (Internal.h) UMDF 驱动程序开发相关的一些声明。
 
@@ -177,7 +177,7 @@ OBJECT_ENTRY_AUTO(CLSID_Driver, CMyDriver)
 
 驱动程序回调必须是 COM 类，这意味着它必须实现[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)和相关的方法。 在模板代码中，ATL 类 CComObjectRootEx 和包含 CComCoClass **IUnknown**方法。
 
-Windows 实例化宿主进程后，框架将创建的驱动程序对象。 若要执行此操作，框架将创建的驱动程序回调类并调用驱动程序实现的实例[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760) (中所述[驱动程序条目源代码](#driver-entry)部分)，并获取客户端驱动程序[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)接口指针。 该调用 framework 驱动程序对象向注册的驱动程序回调对象。 注册成功后，框架在发生特定驱动程序特定事件时调用客户端驱动程序的实现。 第一种方法，该框架将调用[ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)方法。 在客户端驱动程序的实现中的**IDriverEntry::OnInitialize**，客户端驱动程序可以分配全局驱动程序资源。 必须在释放这些资源[ **IDriverEntry::OnDeinitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)它正在准备卸载客户端驱动程序之前由框架调用。 模板代码提供的最小实现**OnInitialize**并**OnDeinitialize**方法。
+Windows 实例化宿主进程后，框架将创建的驱动程序对象。 若要执行此操作，框架将创建的驱动程序回调类并调用驱动程序实现的实例[ **DllGetClassObject** ](https://msdn.microsoft.com/library/windows/desktop/ms680760) (中所述[驱动程序条目源代码](#driver-entry-source-code)部分)，并获取客户端驱动程序[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)接口指针。 该调用 framework 驱动程序对象向注册的驱动程序回调对象。 注册成功后，框架在发生特定驱动程序特定事件时调用客户端驱动程序的实现。 第一种方法，该框架将调用[ **IDriverEntry::OnInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_oninitialize)方法。 在客户端驱动程序的实现中的**IDriverEntry::OnInitialize**，客户端驱动程序可以分配全局驱动程序资源。 必须在释放这些资源[ **IDriverEntry::OnDeinitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeinitialize)它正在准备卸载客户端驱动程序之前由框架调用。 模板代码提供的最小实现**OnInitialize**并**OnDeinitialize**方法。
 
 最重要的方法[ **IDriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff554885)是[ **IDriverEntry::OnDeviceAdd**](https://msdn.microsoft.com/library/windows/hardware/ff554885_ondeviceadd)。 框架创建框架设备对象 （在下一节中讨论） 之前，它会调用驱动程序的**IDriverEntry::OnDeviceAdd**实现。 调用方法时，框架将传递[ **IWDFDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff558893)指向驱动程序对象和一个[ **IWDFDeviceInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff556965)指针。 客户端驱动程序可以调用**IWDFDeviceInitialize**方法指定某些配置选项。
 

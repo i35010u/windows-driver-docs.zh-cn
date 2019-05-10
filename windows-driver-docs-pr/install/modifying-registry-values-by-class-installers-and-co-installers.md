@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c20c1316b068fdf49bcdb536c9110aced8ab6a07
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 1230f334bcc8a17c0f6510210c1e8b52fb0f193c
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568670"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456373"
 ---
 # <a name="modifying-registry-values-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表值
 
@@ -36,7 +36,7 @@ ms.locfileid: "56568670"
 
 -   安装程序类和共同安装程序可以修改的值[RunOnce 注册表项](runonce-registry-key.md)。 但是，此值必须包含的仅调用*Rundll32.exe*。
 
-    安装程序类和共同安装程序必须遵循有关如何使用限制[RunOnce 注册表项](runonce-registry-key.md)中[INF 文件](inf-files.md)。 具体而言，此注册表项必须是仅用于枚举通过使用软件设备枚举器 (SWENUM) 的仅限软件的设备的安装。
+    安装程序类和共同安装程序必须遵循有关如何使用限制[RunOnce 注册表项](runonce-registry-key.md)中[INF 文件](overview-of-inf-files.md)。 具体而言，此注册表项必须是仅用于枚举通过使用软件设备枚举器 (SWENUM) 的仅限软件的设备的安装。
 
 -   安装程序类和共同安装程序可以修改**CoInstallers32**并**EnumPropPages32**中设备的注册表值*软件密钥*时安装程序处理[ **DIF_REGISTER_COINSTALLERS** ](https://msdn.microsoft.com/library/windows/hardware/ff543715)请求。
 

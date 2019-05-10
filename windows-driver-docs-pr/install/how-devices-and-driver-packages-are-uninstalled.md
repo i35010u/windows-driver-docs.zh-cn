@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d21ef6faa45c67ae5b653853317a8c770fe22e5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88a634c3d6d47ca5a66da123bc38b606c15f0ae8
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325807"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456429"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -52,7 +52,7 @@ ms.locfileid: "63325807"
 
 ### <a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
 
-这会卸载与相关联的文件操作删除[驱动程序包](driver-packages.md)从[驱动程序存储区](driver-store.md)和从 PnP 管理器的内部数据库中删除关联的元数据。 此操作还会删除[INF 文件](inf-files.md)，这是与该驱动程序包，从系统 INF 目录相关联。
+这会卸载与相关联的文件操作删除[驱动程序包](driver-packages.md)从[驱动程序存储区](driver-store.md)和从 PnP 管理器的内部数据库中删除关联的元数据。 此操作还会删除[INF 文件](overview-of-inf-files.md)，这是与该驱动程序包，从系统 INF 目录相关联。
 
 已从驱动程序存储区中删除驱动程序包后，就不再可用于在设备上安装。 必须重新加载并安装到驱动程序包[驱动程序存储区](driver-store.md)从原始源，例如光学媒体、 网络共享或 Windows 更新。
 

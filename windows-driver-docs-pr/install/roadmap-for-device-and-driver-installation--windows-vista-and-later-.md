@@ -4,12 +4,12 @@ description: 设备和驱动程序安装路线图
 ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64dcc2012b2f19d98d683e7cf138c994dd5a1f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ab39fa9f7044955ab36c9a84167b3977b8030d7
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361145"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456426"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>设备和驱动程序安装路线图
 
@@ -34,7 +34,7 @@ ms.locfileid: "63361145"
 
     INF 文件包含的信息和设备设置的系统提供[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)使用来安装你[驱动程序包](driver-packages.md)，如设备以及任何驱动程序特定于设备的应用程序。
 
-    有关详细信息，请参阅[INF 文件](inf-files.md)。
+    有关详细信息，请参阅[INF 文件](overview-of-inf-files.md)。
 
 -   步骤 4：创建你的设备和驱动程序的驱动程序包。
 

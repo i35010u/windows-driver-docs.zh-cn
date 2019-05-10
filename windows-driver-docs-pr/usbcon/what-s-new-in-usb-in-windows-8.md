@@ -3,28 +3,28 @@ Description: 本主题总结了新功能和 Windows 8 中的通用串行总线 (
 title: Windows 8-什么是 USB 的新增功能
 ms.date: 05/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 904d32f55ec988f23007672197298820c3643ff1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 252462c9f33b45dc6155595776366a2454da52d0
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389193"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405055"
 ---
 # <a name="windows8-whats-new-for-usb"></a>Windows 8：USB 的新增功能
 
 
 本主题总结了新功能和 Windows 8 中的通用串行总线 (USB) 客户端驱动程序的改进。
 
--   [新的驱动程序堆栈的 USB 3.0 设备](#new-driver-stack-for-usb-3-0-devices)
+-   [新的驱动程序堆栈的 USB 3.0 设备](#new-driver-stack-for-usb-30-devices)
 -   [支持的新堆栈功能](#features-supported-by-the-new-stack)
 -   [USB 客户端驱动程序的客户端约定版本](#client-contract-version-for-usb-client-drivers)
 -   [用于分配和构建 URBs 新例程](#new-routines-for-allocating-and-building-urbs)
--   [新的用户模式 I/O 控件请求的 USB 3.0 集线器](#new-user-mode-i-o-control-requests-for-usb-3-0-hubs)
+-   [新的用户模式 I/O 控件请求的 USB 3.0 集线器](#new-user-mode-io-control-requests-for-usb-30-hubs)
 -   [新的兼容 WinUSB ID](#new-compatible-id-for-winusb)
--   [USB 客户端驱动程序的新 Visual Studio 模板 *(\*Beta 针对新功能)*](#new-visual-studio-templates-for-usb-client-drivers---new-for-beta-)
+-   [USB 客户端驱动程序的新 Visual Studio 模板 *(\*Beta 针对新功能)*](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
 -   [UASP 驱动程序](#uasp-driver)
 -   [启动支持](#boot-support)
--   [增强的调试和诊断功能](#enhanced-debugging-and-diagnostic-capabilities-----)
+-   [增强的调试和诊断功能](#enhanced-debugging-and-diagnostic-capabilities)
 -   [新的特定于 USB 的失败消息在设备管理器](#new-usb-specific-failure-messages-in-device-manager)
 
 有关常规 USB 中新功能的信息，请参阅[USB 驱动程序的新建](https://msdn.microsoft.com/library/windows/hardware/hh451212)。

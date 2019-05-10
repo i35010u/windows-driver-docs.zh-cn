@@ -1,13 +1,15 @@
 - name: Windows 调试工具（WinDbg、KD、CDB、NTSD）
   href: index.md
 - name: 下载 Windows 调试工具 - WinDbg
-  href: debugger-download-tools.md
   items:
+    - name: 下载 Windows 调试工具 - WinDbg
+      href: debugger-download-tools.md
     - name: 下载用于调试的 Windows 符号包
       href: debugger-download-symbols.md
 - name: Windows 调试入门
-  href: getting-started-with-windows-debugging.md
   items:
+    - name: Windows 调试入门
+      href: getting-started-with-windows-debugging.md
     - name: WinDbg 入门（用户模式）
       href: getting-started-with-windbg.md
     - name: WinDbg 入门（内核模式）
@@ -17,11 +19,13 @@
     - name: 调试环境
       href: debuggers-in-the-debugging-tools-for-windows-package.md
     - name: 设置调试（内核模式和用户模式）
-      href: getting-set-up-for-debugging.md
       items:
+        - name: 设置调试（内核模式和用户模式）
+          href: getting-set-up-for-debugging.md
         - name: 设置内核模式调试
-          href: setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md
           items:
+            - name: 设置内核模式调试
+              href: setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md
             - name: 自动设置 KDNET 网络内核调试
               href: setting-up-a-network-debugging-connection-automatically.md
             - name: 手动设置 KDNET 网络内核调试
@@ -57,8 +61,9 @@
     - name: 调试驱动程序 - 分步实验（Sysvad 内核模式）
       href: debug-universal-drivers--kernel-mode-.md
 - name: 使用 WinDbg 预览版进行调试
-  href: debugging-using-windbg-preview.md
   items:
+    - name: 使用 WinDbg 预览版进行调试
+      href: debugging-using-windbg-preview.md
     - name: WinDbg 预览版 - 新增功能
       href: windbg-what-is-new-preview.md
     - name: WinDbg 预览版 - 安装
@@ -86,8 +91,9 @@
     - name: WinDbg 预览版 – 脚本
       href: windbg-scripting-preview.md
     - name: 时光穿越调试 - 概述
-      href: time-travel-debugging-overview.md
       items:
+        - name: 时光穿越调试 - 概述
+          href: time-travel-debugging-overview.md
         - name: 时光穿越调试 - 记录
           href: time-travel-debugging-record.md
         - name: 时光穿越调试 - 重放跟踪
@@ -99,8 +105,9 @@
         - name: 时光穿越调试 - 导航命令
           href: time-travel-debugging-navigation-commands.md
         - name: 时光穿越调试 - 扩展命令
-          href: time-travel-debugging-extension-commands.md
           items:
+            - name: 时光穿越调试 - 扩展命令
+              href: time-travel-debugging-extension-commands.md
             - name: 时光穿越调试 - !tt（时光穿越）
               href: time-travel-debugging-extension-tt.md
             - name: 时光穿越调试 - !index（时光穿越）
@@ -110,8 +117,9 @@
         - name: 时光穿越调试 - 示例应用演练
           href: time-travel-debugging-walkthrough.md
         - name: 时光穿越调试 - 时光穿越调试对象简介
-          href: time-travel-debugging-object-model.md
           items:
+            - name: 时光穿越调试 - 时光穿越调试对象简介
+              href: time-travel-debugging-object-model.md
             - name: 时光穿越调试 - 调用对象
               href: time-travel-debugging-calls-objects.md
             - name: 时光穿越调试 - 堆对象
@@ -131,20 +139,23 @@
         - name: 时光穿越调试 - JavaScript 自动化
           href: time-travel-debugging-javascript-automation.md
 - name: 调试资源
-  href: debugging-resources.md
   items:
+    - name: 调试资源
+      href: debugging-resources.md
     - name: Windows 调试工具：Windows 10 的新增功能
       href: debugging-tools-for-windows--new-for-windows-10.md
     - name: Windows 调试工具中包含的工具
-      href: extra-tools.md
       items:
+        - name: Windows 调试工具中包含的工具
+          href: extra-tools.md
         - name: ADPlus
           href: adplus.md
         - name: DumpChk
           href: dumpchk.md
         - name: GFlags
-          href: gflags.md
           items:
+            - name: GFlags
+              href: gflags.md
             - name: GFlags 概述
               href: gflags-overview.md
             - name: GFlags 详细信息
@@ -158,8 +169,9 @@
             - name: 监视静默进程退出
               href: registry-entries-for-silent-process-exit.md
             - name: 全局标志对话框
-              href: global-flags-dialog-box.md
               items:
+                - name: 全局标志对话框
+                  href: global-flags-dialog-box.md
                 - name: 打开对话框
                   href: opening-the-dialog-box.md
                 - name: 设置和清除系统范围的标志
@@ -175,8 +187,9 @@
                 - name: 在调试器中运行程序
                   href: running-a-program-in-a-debugger.md
                 - name: 配置特殊池
-                  href: configuring-special-pool.md
                   items:
+                    - name: 配置特殊池
+                      href: configuring-special-pool.md
                     - name: 按池标记请求特殊池
                       href: requesting-special-pool-by-pool-tag.md
                     - name: 按分配大小请求特殊池
@@ -188,8 +201,9 @@
                 - name: 配置对象引用跟踪
                   href: configuring-object-reference-tracing.md
             - name: 全局标志参考
-              href: global-flag-reference.md
               items:
+                - name: 全局标志参考
+                  href: global-flag-reference.md
                 - name: 缓冲区 DbgPrint 输出
                   href: buffer-dbgprint-output.md
                 - name: 创建内核模式堆栈跟踪数据库
@@ -261,8 +275,9 @@
                 - name: 出现未经处理的用户模式异常时停止
                   href: stop-on-unhandled-user-mode-exception.md
             - name: GFlags 示例
-              href: gflags-examples.md
               items:
+                - name: GFlags 示例
+                  href: gflags-examples.md
                 - name: 示例 1：显示全局标志
                   href: example-1---displaying-global-flags.md
                 - name: 示例 2：使用标志缩写设置标志
@@ -296,11 +311,13 @@
         - name: 终止工具
           href: kill-tool.md
         - name: 记录器和 LogViewer
-          href: logger-and-logviewer.md
           items:
+            - name: 记录器和 LogViewer
+              href: logger-and-logviewer.md
             - name: 记录器
-              href: logger.md
               items:
+                - name: 记录器
+                  href: logger.md
                 - name: 使用调试器和 Logexts.dll
                   href: using-the-debugger-and-logexts-dll.md
                 - name: 使用 Logger.exe
@@ -308,8 +325,9 @@
                 - name: 记录器的局限性和限制
                   href: logger-restrictions-and-limitations.md
             - name: LogViewer
-              href: logviewer.md
               items:
+                - name: LogViewer
+                  href: logviewer.md
                 - name: 阅读 LogViewer 显示内容
                   href: reading-the-logviewer-display.md
                 - name: 筛选 LogViewer 函数列表
@@ -317,8 +335,9 @@
                 - name: 将 LogViewer 文件导出为文本
                   href: exporting-logviewer-files-to-text.md
             - name: 记录器清单
-              href: the-logger-manifest.md
               items:
+                - name: 记录器清单
+                  href: the-logger-manifest.md
                 - name: 日志记录清单概述
                   href: overview-of-the-logging-manifest.md
                 - name: 清单文件的位置
@@ -328,13 +347,15 @@
         - name: PLMDebug
           href: plmdebug.md
         - name: 远程工具
-          href: remote-tool.md
           items:
+            - name: 远程工具
+              href: remote-tool.md
             - name: 远程工具的概念
               href: remote-tool-concepts.md
             - name: 远程工具命令
-              href: remote-tool-commands.md
               items:
+                - name: 远程工具命令
+                  href: remote-tool-commands.md
                 - name: 远程服务器语法
                   href: remote-server-syntax.md
                 - name: 远程客户端语法
@@ -346,20 +367,23 @@
             - name: 远程工具示例
               href: remote-tool-examples.md
         - name: TList
-          href: tlist.md
           items:
+            - name: TList
+              href: tlist.md
             - name: TList 命令
               href: tlist-commands.md
             - name: TList 示例
               href: tlist-examples.md
         - name: UMDH
-          href: umdh.md
           items:
+            - name: UMDH
+              href: umdh.md
             - name: 准备使用 UMDH
               href: preparing-to-use-umdh.md
             - name: UMDH 命令
-              href: umdh-commands.md
               items:
+                - name: UMDH 命令
+                  href: umdh-commands.md
                 - name: 分析正在运行的进程
                   href: analyze-a-running-process.md
                 - name: 分析 UMDH 日志
@@ -371,27 +395,31 @@
         - name: USBView
           href: usbview.md
     - name: 与 Windows 调试工具相关的工具
-      href: tools-related-to-debugging-tools-for-windows.md
       items:
+        - name: 与 Windows 调试工具相关的工具
+          href: tools-related-to-debugging-tools-for-windows.md
         - name: 应用程序验证工具
           href: application-verifier.md
         - name: Windows 错误报告
           href: windows-error-reporting.md
     - name: 源代码
-      href: source-code.md
       items:
+        - name: 源代码
+          href: source-code.md
         - name: 源路径
           href: source-path.md
         - name: 使用源服务器
           href: using-a-source-server.md
         - name: SrcSrv
-          href: srcsrv.md
           items:
+            - name: SrcSrv
+              href: srcsrv.md
             - name: 使用 SrcSrv
               href: using-srcsrv.md
             - name: 源索引
-              href: source-indexing.md
               items:
+                - name: 源索引
+                  href: source-indexing.md
                 - name: Srcsrv.ini 文件
                   href: the-srcsrv-ini-file.md
                 - name: Ssindex.cmd 脚本
@@ -403,8 +431,9 @@
                 - name: VSSDump 工具
                   href: the-vssdump-tool.md
             - name: 源代码管理系统
-              href: source-control-systems.md
               items:
+                - name: 源代码管理系统
+                  href: source-control-systems.md
                 - name: 使用 Visual SourceSafe
                   href: using-visual-sourcesafe.md
                 - name: 使用 Visual SourceSafe 进行调试
@@ -412,8 +441,9 @@
                 - name: 使用 CVS
                   href: using-cvs.md
                 - name: 使用其他源代码管理系统
-                  href: using-other-source-control-systems.md
                   items:
+                    - name: 使用其他源代码管理系统
+                      href: using-other-source-control-systems.md
                     - name: 创建自己的提供程序模块
                       href: creating-your-own-provider-module.md
                     - name: 创建自己的源代码管理系统
@@ -423,8 +453,9 @@
                     - name: 语言规范 2
                       href: language-specification-2.md
             - name: HTTP 站点和 UNC 共享
-              href: http-sites-and-unc-shares.md
               items:
+                - name: HTTP 站点和 UNC 共享
+                  href: http-sites-and-unc-shares.md
                 - name: 设置网站
                   href: setting-up-the-web-site.md
                 - name: 提取源文件
@@ -436,13 +467,15 @@
                 - name: 结合常规版本控制使用 HTTP 站点和 UNC 共享
                   href: using-http-sites-and-unc-shares-in-conjuction-with-regular-version-con.md
     - name: 安全注意事项
-      href: security-considerations.md
       items:
+        - name: 安全注意事项
+          href: security-considerations.md
         - name: 调试特权
           href: debug-privilege.md
         - name: 安全漏洞
-          href: security-vulnerabilities.md
           items:
+            - name: 安全漏洞
+              href: security-vulnerabilities.md
             - name: 内核模式调试期间的安全性
               href: security-during-kernel-mode-debugging.md
             - name: 用户模式调试期间的安全性
@@ -452,18 +485,21 @@
             - name: 远程调试期间的安全性
               href: security-during-remote-debugging.md
         - name: 安全模式
-          href: secure-mode.md
           items:
+            - name: 安全模式
+              href: secure-mode.md
             - name: 安全模式的功能
               href: features-of-secure-mode.md
             - name: 激活安全模式
               href: activating-secure-mode.md
     - name: 处理器体系结构
-      href: processor-architecture.md
       items:
+        - name: 处理器体系结构
+          href: processor-architecture.md
         - name: x86 处理器
-          href: the-x86-processor.md
           items:
+            - name: x86 处理器
+              href: the-x86-processor.md
             - name: x86 体系结构
               href: x86-architecture.md
             - name: x86 指令
@@ -471,8 +507,9 @@
             - name: 带批注的 x86 反汇编
               href: annotated-x86-disassembly.md
         - name: x64 处理器
-          href: the-x64-processor.md
           items:
+            - name: x64 处理器
+              href: the-x64-processor.md
             - name: x64 体系结构
               href: x64-architecture.md
             - name: x64 指令
@@ -480,13 +517,15 @@
             - name: 带批注的 x64 反汇编
               href: annotated-x64-disassembly.md
     - name: 调试器引擎和扩展 API
-      href: debugger-engine-and-extension-apis.md
       items:
+        - name: 调试器引擎和扩展 API
+          href: debugger-engine-and-extension-apis.md
         - name: 调试器引擎简介
           href: introduction.md
         - name: 调试器引擎概述
-          href: debugger-engine-overview.md
           items:
+            - name: 调试器引擎概述
+              href: debugger-engine-overview.md
             - name: 调试会话和执行模型
               href: debugging-session-and-execution-model.md
             - name: 客户端对象
@@ -508,14 +547,17 @@
             - name: 线程和进程
               href: threads-and-processes.md
         - name: 使用调试器引擎 API
-          href: using-the-debugger-engine-api.md
           items:
+            - name: 使用调试器引擎 API
+              href: using-the-debugger-engine-api.md
             - name: 调试器引擎 API 概述
-              href: debugger-engine-api-overview.md
               items:
+                - name: 调试器引擎 API 概述
+                  href: debugger-engine-api-overview.md
                 - name: 与引擎交互
-                  href: interacting-with-the-engine.md
                   items:
+                    - name: 与引擎交互
+                      href: interacting-with-the-engine.md
                     - name: 使用客户端对象
                       href: using-client-objects.md
                     - name: 使用回调对象
@@ -523,22 +565,25 @@
                 - name: 使用输入和输出
                   href: using-input-and-output.md
                 - name: 监视事件
-                  href: monitoring-events.md
                   items:
+                    - name: 监视事件
+                      href: monitoring-events.md
                     - name: 事件筛选器
                       href: event-filters.md
                     - name: 事件信息
                       href: event-information.md
                 - name: 使用断点
-                  href: using-breakpoints2.md
                   items:
+                    - name: 使用断点
+                      href: using-breakpoints2.md
                     - name: 设置断点
                       href: setting-breakpoints.md
                     - name: 控制断点标志和参数
                       href: controlling-breakpoint-flags-and-parameters.md
                 - name: 内存访问
-                  href: memory-access.md
                   items:
+                    - name: 内存访问
+                      href: memory-access.md
                     - name: 虚拟和物理内存
                       href: virtual-and-physical-memory.md
                     - name: 寄存器
@@ -550,8 +595,9 @@
                 - name: 控制线程和进程
                   href: controlling-threads-and-processes.md
                 - name: 使用符号
-                  href: using-symbols.md
                   items:
+                    - name: 使用符号
+                      href: using-symbols.md
                     - name: 模块
                       href: modules.md
                     - name: 类型
@@ -561,8 +607,9 @@
                 - name: 使用源文件
                   href: using-source-files.md
                 - name: 连接到目标
-                  href: connecting-to-targets.md
                   items:
+                    - name: 连接到目标
+                      href: connecting-to-targets.md
                     - name: 实时用户模式目标
                       href: live-user-mode-targets.md
                     - name: 实时内核模式目标
@@ -580,11 +627,13 @@
                 - name: 汇编和反汇编指令
                   href: assembling-and-disassembling-instructions.md
         - name: 编写 DbgEng 扩展
-          href: writing-dbgeng-extensions.md
           items:
+            - name: 编写 DbgEng 扩展
+              href: writing-dbgeng-extensions.md
             - name: DbgEng 扩展设计指南
-              href: dbgeng-extension-design-guide.md
               items:
+                - name: DbgEng 扩展设计指南
+                  href: dbgeng-extension-design-guide.md
                 - name: DbgEng 扩展 DLL 剖析
                   href: anatomy-of-a-dbgeng-extension-dll.md
                 - name: 使用客户端和引擎
@@ -594,11 +643,13 @@
                 - name: 生成 DbgEng 扩展
                   href: building-dbgeng-extensions.md
         - name: EngExtCpp 扩展
-          href: engextcpp-extensions.md
           items:
+            - name: EngExtCpp 扩展
+              href: engextcpp-extensions.md
             - name: EngExtCpp 扩展设计指南
-              href: engextcpp-extension-design-guide.md
               items:
+                - name: EngExtCpp 扩展设计指南
+                  href: engextcpp-extension-design-guide.md
                 - name: EngExtCpp 扩展库
                   href: engextcpp-extension-libraries.md
                 - name: 客户端对象和引擎
@@ -612,11 +663,13 @@
                 - name: 类型化数据
                   href: typed-data.md
         - name: 编写 WdbgExts 扩展
-          href: writing-wdbgexts-extensions.md
           items:
+            - name: 编写 WdbgExts 扩展
+              href: writing-wdbgexts-extensions.md
             - name: WdbgExts 扩展设计指南
-              href: wdbgexts-extension-design-guide.md
               items:
+                - name: WdbgExts 扩展设计指南
+                  href: wdbgexts-extension-design-guide.md
                 - name: WdbgExts 扩展 API 概述
                   href: wdbgexts-extension-api-overview.md
                 - name: 32 位指针和 64 位指针
@@ -626,8 +679,9 @@
                 - name: 使用 DECLARE_API 宏
                   href: using-the-declare-api-macro.md
                 - name: 编写 WdbgExts 扩展代码
-                  href: writing-wdbgexts-extension-code.md
                   items:
+                    - name: 编写 WdbgExts 扩展代码
+                      href: writing-wdbgexts-extension-code.md
                     - name: WdbgExts 输入和输出
                       href: wdbgexts-input-and-output.md
                     - name: WdbgExts 内存访问
@@ -641,8 +695,9 @@
                 - name: 生成 WdbgExts 扩展
                   href: building-wdbgexts-extensions.md
         - name: 编写自定义分析调试器扩展
-          href: writing-custom-analysis-debugger-extensions.md
           items:
+            - name: 编写自定义分析调试器扩展
+              href: writing-custom-analysis-debugger-extensions.md
             - name: 编写分析扩展插件以扩展 !analyze
               href: writing-an-analysis-extension-to-extend--analyze.md
             - name: 分析扩展插件的元数据文件
@@ -654,15 +709,17 @@
     - name: 调试引擎接口
       href: client-com-interfaces.md
     - name: 调试器引擎参考
-      href: debugger-engine-reference.md
       items:
+        - name: 调试器引擎参考
+          href: debugger-engine-reference.md
         - name: DebugBaseEventCallbacks
           href: debugbaseeventcallbacks.md
         - name: DebugBaseEventCallbacksWide
           href: debugbaseeventcallbackswide.md
         - name: 调试 API 常量
-          href: debug-api-constants.md
           items:
+            - name: 调试 API 常量
+              href: debug-api-constants.md
             - name: DBG_ASMOPT_XXX
               href: debug-asmopt-xxx.md
             - name: DBG_ATTACH_XXX
@@ -696,8 +753,9 @@
         - name: HRESULT 值
           href: hresult-values.md
         - name: 请求
-          href: request.md
           items:
+            - name: 请求
+              href: request.md
             - name: DEBUG_REQUEST_SOURCE_PATH_HAS_SOURCE_SERVER
               href: debug-request-source-path-has-source-server.md
             - name: DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT
@@ -721,8 +779,9 @@
             - name: DEBUG_REQUEST_READ_CAPTURED_EVENT_CODE_STREAM
               href: debug-request-read-captured-event-code-stream.md
             - name: DEBUG_REQUEST_EXT_TYPED_DATA_ANSI
-              href: debug-request-ext-typed-data-ansi.md
               items:
+                - name: DEBUG_REQUEST_EXT_TYPED_DATA_ANSI
+                  href: debug-request-ext-typed-data-ansi.md
                 - name: EXT_TDOP_COPY
                   href: ext-tdop-copy.md
                 - name: EXT_TDOP_RELEASE
@@ -770,8 +829,9 @@
     - name: 使用 DML 自定义调试器输出
       href: customizing-debugger-output-using-dml.md
     - name: JavaScript 调试器脚本
-      href: javascript-debugger-scripting.md
       items:
+        - name: JavaScript 调试器脚本
+          href: javascript-debugger-scripting.md
         - name: JavaScript 调试器示例脚本
           href: javascript-debugger-example-scripts.md
         - name: JavaScript 扩展中的本机调试器对象
@@ -783,8 +843,9 @@
     - name: 调试器数据模型函数别名
       href: debugger-data-model-function-aliases.md
     - name: 调试器数据模型 C++ 概述
-      href: data-model-cpp-overview.md
       items:
+        - name: 调试器数据模型 C++ 概述
+          href: data-model-cpp-overview.md
         - name: 调试器数据模型 C++ 接口
           href: data-model-cpp-interfaces.md
         - name: 调试器数据模型 C++ 对象
@@ -796,8 +857,9 @@
         - name: 调试器数据模型 C++ 脚本
           href: data-model-cpp-scripting.md
     - name: 调试器数据模型 - 代码命名空间
-      href: dbgmodel-namespace-code.md
       items:
+        - name: 调试器数据模型 - 代码命名空间
+          href: dbgmodel-namespace-code.md
         - name: 调试器数据模型 - 拆装器对象
           href: dbgmodel-object-disassembler.md
         - name: 调试器数据模型 - 基本块对象
@@ -821,8 +883,9 @@
     - name: 调试器数据模型 - 集合命名空间
       href: dbgmodel-namespace-collections.md
     - name: 调试器数据模型 - 文件系统命名空间
-      href: dbgmodel-namespace-file-system.md
       items:
+        - name: 调试器数据模型 - 文件系统命名空间
+          href: dbgmodel-namespace-file-system.md
         - name: 调试器数据模型 - 目录对象
           href: dbgmodel-object-directory.md
         - name: 调试器数据模型 - 文件对象
@@ -832,8 +895,9 @@
         - name: 调试器数据模型 - 文本写入器对象
           href: dbgmodel-object-text-writer.md
     - name: 术语表
-      href: glossary.md
       items:
+        - name: 术语表
+          href: glossary.md
         - name: A
           href: a.md
         - name: B
@@ -875,11 +939,13 @@
         - name: W
           href: w.md
 - name: 调试器操作
-  href: debugger-operation-win8.md
   items:
+    - name: 调试器操作
+      href: debugger-operation-win8.md
     - name: 使用 WinDbg 进行调试
-      href: debugging-using-windbg.md
       items:
+        - name: 使用 WinDbg 进行调试
+          href: debugging-using-windbg.md
         - name: 使用 WinDbg 调试用户模式进程
           href: debugging-a-user-mode-process-using-windbg.md
         - name: 使用 WinDbg 调试 UWP 应用
@@ -925,8 +991,9 @@
         - name: 使用暂存器
           href: scratch-pad.md
     - name: 使用 KD 和 NTKD 进行调试
-      href: debugging-using-kd-and-ntkd.md
       items:
+        - name: 使用 KD 和 NTKD 进行调试
+          href: debugging-using-kd-and-ntkd.md
         - name: 使用 KD 打开转储文件
           href: opening-a-crash-dump-file-using-kd.md
         - name: 使用 KD 进行实时内核模式调试
@@ -950,8 +1017,9 @@
         - name: 在 KD 中保存日志文件
           href: keeping-a-log-file-in-kd.md
     - name: 使用 CDB 和 NTSD 进行调试
-      href: debugging-using-cdb-and-ntsd.md
       items:
+        - name: 使用 CDB 和 NTSD 进行调试
+          href: debugging-using-cdb-and-ntsd.md
         - name: 使用 CDB 调试用户模式进程
           href: debugging-a-user-mode-process-using-cdb.md
         - name: 使用 CDB 打开转储文件
@@ -979,8 +1047,9 @@
     - name: 启用事后调试
       href: enabling-postmortem-debugging.md
     - name: 使用调试器命令窗口
-      href: the-debugger-command-window.md
       items:
+        - name: 使用调试器命令窗口
+          href: the-debugger-command-window.md
         - name: 使用调试器命令
           href: using-debugger-commands.md
         - name: 计算表达式
@@ -992,8 +1061,9 @@
         - name: 使用脚本文件
           href: using-script-files.md
         - name: 使用调试器命令程序
-          href: using-debugger-command-programs.md
           items:
+            - name: 使用调试器命令程序
+              href: using-debugger-command-programs.md
             - name: 调试器命令程序的元素
               href: elements-of-a-debugger-command-program.md
             - name: 控制流标记
@@ -1003,11 +1073,13 @@
             - name: 调试器命令程序示例
               href: debugger-command-program-examples.md
     - name: 使用 WinDbg 图形界面
-      href: windbg-graphical-interface.md
       items:
+        - name: 使用 WinDbg 图形界面
+          href: windbg-graphical-interface.md
         - name: 使用调试信息窗口
-          href: using-debugging-information-windows.md
           items:
+            - name: 使用调试信息窗口
+              href: using-debugging-information-windows.md
             - name: 打开窗口
               href: opening-a-window.md
             - name: 关闭窗口
@@ -1021,8 +1093,9 @@
             - name: 更改文本属性
               href: changing-text-properties.md
             - name: 定位窗口
-              href: positioning-the-windows.md
               items:
+                - name: 定位窗口
+                  href: positioning-the-windows.md
                 - name: 使用浮动和停靠窗口进行调试
                   href: debugging-with-floating-and-docked-windows.md
                 - name: 停靠窗口
@@ -1038,15 +1111,17 @@
                 - name: 排列窗口
                   href: arranging-windows.md
         - name: 使用工作区
-          href: using-workspaces.md
           items:
+            - name: 使用工作区
+              href: using-workspaces.md
             - name: 创建和打开工作区
               href: creating-and-opening-a-workspace.md
             - name: 工作区内容
               href: workspace-contents.md
             - name: 使用和自定义 WinDbg 主题
-              href: using-and-customizing-windbg-themes.md
               items:
+                - name: 使用和自定义 WinDbg 主题
+                  href: using-and-customizing-windbg-themes.md
                 - name: 加载主题
                   href: loading-a-theme.md
                 - name: 自定义主题
@@ -1058,8 +1133,9 @@
         - name: 使用帮助文档
           href: using-the-help-documentation.md
     - name: 使用调试器扩展
-      href: debugger-extensions.md
       items:
+        - name: 使用调试器扩展
+          href: debugger-extensions.md
         - name: 加载调试器扩展 Dll
           href: loading-debugger-extension-dlls.md
         - name: 使用调试器扩展命令
@@ -1067,13 +1143,15 @@
         - name: 编写新的调试器扩展
           href: writing-new-debugger-extensions.md
     - name: 远程调试
-      href: remote-debugging.md
       items:
+        - name: 远程调试
+          href: remote-debugging.md
         - name: 选择最佳的远程调试方法
           href: choosing-the-best-remote-debugging-method.md
         - name: 通过调试器进行远程调试
-          href: remote-debugging-through-the-debugger.md
           items:
+            - name: 通过调试器进行远程调试
+              href: remote-debugging-through-the-debugger.md
             - name: 激活调试服务器
               href: activating-a-debugging-server.md
             - name: 搜索调试服务器
@@ -1085,8 +1163,9 @@
             - name: 控制远程调试会话
               href: controlling-a-remote-debugging-session.md
         - name: 通过内核调试程序控制用户模式调试程序
-          href: controlling-the-user-mode-debugger-from-the-kernel-debugger.md
           items:
+            - name: 通过内核调试程序控制用户模式调试程序
+              href: controlling-the-user-mode-debugger-from-the-kernel-debugger.md
             - name: 启动调试会话
               href: starting-the-debugging-session.md
             - name: 切换模式
@@ -1096,8 +1175,9 @@
             - name: 将此方法与远程调试结合使用
               href: combining-this-method-with-remote-debugging.md
         - name: 通过 Remote.exe 进行远程调试
-          href: remote-debugging-through-remote-exe.md
           items:
+            - name: 通过 Remote.exe 进行远程调试
+              href: remote-debugging-through-remote-exe.md
             - name: Remote.exe 实用工具
               href: the-remote-exe-utility.md
             - name: 启动 Remote.exe 会话
@@ -1105,8 +1185,9 @@
             - name: Remote.exe 批处理文件
               href: remote-exe-batch-files.md
         - name: 进程服务器（用户模式）
-          href: process-servers--user-mode-.md
           items:
+            - name: 进程服务器（用户模式）
+              href: process-servers--user-mode-.md
             - name: 激活进程服务器
               href: activating-a-process-server.md
             - name: 搜索进程服务器
@@ -1118,8 +1199,9 @@
             - name: 控制进程服务器会话
               href: controlling-a-process-server-session.md
         - name: KD 连接服务器（内核模式）
-          href: kd-connection-servers--kernel-mode-.md
           items:
+            - name: KD 连接服务器（内核模式）
+              href: kd-connection-servers--kernel-mode-.md
             - name: 激活 KD 连接服务器
               href: activating-a-kd-connection-server.md
             - name: 搜索 KD 连接服务器
@@ -1131,8 +1213,9 @@
             - name: 控制 KD 连接服务器会话
               href: controlling-a-kd-connection-server-session.md
         - name: 中继器
-          href: repeaters.md
           items:
+            - name: 中继器
+              href: repeaters.md
             - name: 激活中继器
               href: activating-a-repeater.md
             - name: 使用中继器
@@ -1140,8 +1223,9 @@
             - name: 中继器示例
               href: repeater-examples.md
         - name: 高级远程调试方案
-          href: advanced-remote-debugging-scenarios.md
           items:
+            - name: 高级远程调试方案
+              href: advanced-remote-debugging-scenarios.md
             - name: 在多台计算机上调试目标
               href: debugging-targets-on-multiple-computers.md
             - name: 中间的符号
@@ -1151,11 +1235,13 @@
         - name: 在工作组计算机上进行远程调试
           href: remote-debugging-on-workgroup-computers.md
     - name: 调试旧版 Windows
-      href: debugging-previous-versions-of-windows.md
       items:
+        - name: 调试旧版 Windows
+          href: debugging-previous-versions-of-windows.md
         - name: Windows 调试工具：新增功能
-          href: debugging-tools-for-windows--what-s-new.md
           items:
+            - name: Windows 调试工具：新增功能
+              href: debugging-tools-for-windows--what-s-new.md
             - name: Windows 调试工具：Windows 8.1 的新增功能
               href: debugging-tools-for-windows--new-for-windows-8-1.md
             - name: Windows 调试工具：Windows 8 的新增功能
@@ -1167,8 +1253,9 @@
         - name: 使用 Visual Studio 进行调试
           href: debugging-using-visual-studio.md
         - name: 在 Visual Studio 中设置用户模式调试
-          href: setting-up-user-mode-debugging-in-visual-studio.md
           items:
+            - name: 在 Visual Studio 中设置用户模式调试
+              href: setting-up-user-mode-debugging-in-visual-studio.md
             - name: 使用 Visual Studio 调试用户模式进程
               href: debugging-a-user-mode-process-using-visual-studio.md
             - name: 使用 Visual Studio 打开转储文件
@@ -1198,8 +1285,9 @@
             - name: 在 Visual Studio 中保存日志文件
               href: keeping-a-log-file-in-visual-studio.md
         - name: 在 Visual Studio 中设置内核模式调试
-          href: setting-up-kernel-mode-debugging-in-visual-studio.md
           items:
+            - name: 在 Visual Studio 中设置内核模式调试
+              href: setting-up-kernel-mode-debugging-in-visual-studio.md
             - name: 在 Visual Studio 中设置通过网线进行的内核模式调试
               href: setting-up-a-network-debugging-connection-in-visual-studio.md
             - name: 在 Visual Studio 中设置通过 1394 线缆进行的内核模式调试
@@ -1215,14 +1303,17 @@
             - name: 在 Visual Studio 中设置虚拟机的内核模式调试
               href: setting-up-a-connection-to-a-virtual-machine-in-visual-studio.md
 - name: 调试方法
-  href: debugging-techniques.md
   items:
+    - name: 调试方法
+      href: debugging-techniques.md
     - name: 标准调试方法
-      href: standard-debugging-techniques.md
       items:
+        - name: 标准调试方法
+          href: standard-debugging-techniques.md
         - name: 使用断点
-          href: using-breakpoints.md
           items:
+            - name: 使用断点
+              href: using-breakpoints.md
             - name: 断点控制方法
               href: methods-of-controlling-breakpoints.md
             - name: 断点语法
@@ -1242,8 +1333,9 @@
             - name: 一直执行到出现指定的状态为止
               href: executing-until-a-specified-state-is-reached.md
         - name: 读取和写入内存
-          href: reading-and-writing-memory.md
           items:
+            - name: 读取和写入内存
+              href: reading-and-writing-memory.md
             - name: 按虚拟地址访问内存
               href: accessing-memory-by-virtual-address.md
             - name: 按物理地址访问内存
@@ -1297,13 +1389,15 @@
         - name: 与目标计算机同步
           href: synchronizing-with-the-target-computer.md
         - name: 查找内存泄漏
-          href: finding-a-memory-leak.md
           items:
+            - name: 查找内存泄漏
+              href: finding-a-memory-leak.md
             - name: 确定是否存在泄漏
               href: determining-whether-a-leak-exists.md
             - name: 查找内核模式内存泄漏
-              href: finding-a-kernel-mode-memory-leak.md
               items:
+                - name: 查找内核模式内存泄漏
+                  href: finding-a-kernel-mode-memory-leak.md
                 - name: 使用 PoolMon 查找内核模式内存泄漏
                   href: using-poolmon-to-find-a-kernel-mode-memory-leak.md
                 - name: 使用内核调试程序查找内核模式内存泄漏
@@ -1311,22 +1405,25 @@
                 - name: 使用驱动程序验证程序查找内核模式内存泄漏
                   href: using-driver-verifier-to-find-a-kernel-mode-memory-leak.md
             - name: 查找用户模式内存泄漏
-              href: finding-a-user-mode-memory-leak.md
               items:
+                - name: 查找用户模式内存泄漏
+                  href: finding-a-user-mode-memory-leak.md
                 - name: 使用性能监视器查找用户模式内存泄漏
                   href: using-performance-monitor-to-find-a-user-mode-memory-leak.md
                 - name: 使用 UMDH 查找用户模式内存泄漏
                   href: using-umdh-to-find-a-user-mode-memory-leak.md
         - name: 调试超时
-          href: debugging-a-time-out.md
           items:
+            - name: 调试超时
+              href: debugging-a-time-out.md
             - name: 资源超时
               href: resource-time-outs.md
             - name: 关键节超时
               href: critical-section-time-outs.md
         - name: 调试已停止的系统
-          href: debugging-a-stalled-system.md
           items:
+            - name: 调试已停止的系统
+              href: debugging-a-stalled-system.md
             - name: 查找失败的进程
               href: finding-the-failed-process.md
             - name: 调试中断风暴
@@ -1352,8 +1449,9 @@
         - name: 映射驱动程序文件
           href: mapping-driver-files.md
         - name: 来自目标的消息
-          href: messages-from-the-target.md
           items:
+            - name: 来自目标的消息
+              href: messages-from-the-target.md
             - name: 突入调试器
               href: breaking-into-the-debugger.md
             - name: 将输出发送到调试器
@@ -1363,8 +1461,9 @@
             - name: 确定是否已附加调试器
               href: determining-if-a-debugger-is-attached.md
     - name: 专业调试方法
-      href: specialized-debugging-techniques.md
       items:
+        - name: 专业调试方法
+          href: specialized-debugging-techniques.md
         - name: 调试 ARM64
           href: debugging-arm64.md
         - name: Windows 运行时调试
@@ -1394,15 +1493,17 @@
         - name: 指定模块和函数所有者
           href: specifying-module-and-function-owners.md
         - name: RPC 调试
-          href: rpc-debugging.md
           items:
+            - name: RPC 调试
+              href: rpc-debugging.md
             - name: RPC 调试概述
               href: overview-of-rpc-debugging.md
             - name: 启用 RPC 状态信息
               href: enabling-rpc-state-information.md
             - name: 显示 RPC 状态信息
-              href: displaying-rpc-state-information.md
               items:
+                - name: 显示 RPC 状态信息
+                  href: displaying-rpc-state-information.md
                 - name: 使用 RPC 调试器扩展
                   href: using-the-rpc-debugger-extensions.md
                 - name: 使用 DbgRpc 工具
@@ -1418,8 +1519,9 @@
                 - name: 获取 RPC 客户端调用信息
                   href: get-rpc-client-call-information.md
             - name: 常用 RPC 调试方法
-              href: common-rpc-debugging-techniques.md
               items:
+                - name: 常用 RPC 调试方法
+                  href: common-rpc-debugging-techniques.md
                 - name: 分析调用阻塞问题
                   href: analyzing-a-stuck-call-problem.md
                 - name: 跟踪服务器进程中的争用
@@ -1431,11 +1533,13 @@
             - name: RPC 状态信息的内部结构
               href: rpc-state-information-internals.md
         - name: ACPI 调试
-          href: acpi-debugging.md
           items:
+            - name: ACPI 调试
+              href: acpi-debugging.md
             - name: AMLI 调试器
-              href: the-amli-debugger.md
               items:
+                - name: AMLI 调试器
+                  href: the-amli-debugger.md
                 - name: AMLI 调试器简介
                   href: introduction-to-the-amli-debugger.md
                 - name: 设置 AML 调试会话
@@ -1451,25 +1555,29 @@
             - name: 其他 ACPI 调试扩展
               href: other-acpi-debugging-extensions.md
         - name: NDIS 调试
-          href: ndis-debugging.md
           items:
+            - name: NDIS 调试
+              href: ndis-debugging.md
             - name: NDIS 调试概述
               href: overview-of-ndis-debugging.md
             - name: 准备 NDIS 调试
               href: preparing-for-ndis-debugging.md
             - name: 启用 NDIS 调试跟踪
-              href: enabling-ndis-debug-tracing.md
               items:
+                - name: 启用 NDIS 调试跟踪
+                  href: enabling-ndis-debug-tracing.md
                 - name: 通过设置注册表值启用 NDIS 调试跟踪
                   href: enabling-ndis-debug-tracing-by-setting-registry-values.md
         - name: 内核流调试
-          href: kernel-streaming-debugging.md
           items:
+            - name: 内核流调试
+              href: kernel-streaming-debugging.md
             - name: 内核流调试概述
               href: overview-of-kernel-streaming-debugging.md
             - name: 分析视频流停滞问题
-              href: analyzing-a-video-stream-stall.md
               items:
+                - name: 分析视频流停滞问题
+                  href: analyzing-a-video-stream-stall.md
                 - name: 确定视频流停滞的原因
                   href: determining-the-cause-of-a-video-stream-stall.md
                 - name: 调试处理停滞问题
@@ -1487,8 +1595,9 @@
             - name: 使用 !ks.graph
               href: using--ks-graph.md
         - name: SCSI 微型端口调试
-          href: scsi-miniport-debugging.md
           items:
+            - name: SCSI 微型端口调试
+              href: scsi-miniport-debugging.md
             - name: SCSI 微型端口调试概述
               href: overview-of-scsi-miniport-debugging.md
             - name: 用于调试 SCSI 微型端口驱动程序的扩展
@@ -1500,8 +1609,9 @@
             - name: 用于分析可再现问题的重要断点
               href: important-breakpoints-for-analyzing-reproducible-problems.md
         - name: 即插即用调试
-          href: plug-and-play-debugging.md
           items:
+            - name: 即插即用调试
+              href: plug-and-play-debugging.md
             - name: 用于调试即插即用驱动程序的扩展
               href: extensions-for-debugging-plug-and-play-drivers.md
             - name: 确定设备的状态
@@ -1513,8 +1623,9 @@
             - name: 检查资源冲突
               href: checking-for-resource-conflicts.md
         - name: 调试服务应用程序
-          href: debugging-a-service-application.md
           items:
+            - name: 调试服务应用程序
+              href: debugging-a-service-application.md
             - name: 选择最佳方法
               href: choosing-the-best-method.md
             - name: 准备调试服务应用程序
@@ -1524,11 +1635,13 @@
             - name: 手动调试服务应用程序
               href: debugging-the-service-application-manually.md
 - name: Windows 调试符号（WinDbg、KD、CDB、NTSD）
-  href: symbols.md
   items:
+    - name: Windows 调试符号（WinDbg、KD、CDB、NTSD）
+      href: symbols.md
     - name: 符号简介
-      href: introduction-to-symbols.md
       items:
+        - name: 符号简介
+          href: introduction-to-symbols.md
         - name: Windows 调试器的符号路径
           href: symbol-path.md
         - name: 符号和符号文件
@@ -1536,18 +1649,21 @@
         - name: 公共和专用符号
           href: public-and-private-symbols.md
     - name: 访问调试符号
-      href: accessing-symbols-for-debugging.md
       items:
+        - name: 访问调试符号
+          href: accessing-symbols-for-debugging.md
         - name: 安装 Windows 符号文件
           href: installing-windows-symbol-files.md
         - name: 符号存储和符号服务器
-          href: symbol-stores-and-symbol-servers.md
           items:
+            - name: 符号存储和符号服务器
+              href: symbol-stores-and-symbol-servers.md
             - name: 使用符号服务器
               href: using-a-symbol-server.md
             - name: SymSrv
-              href: symsrv.md
               items:
+                - name: SymSrv
+                  href: symsrv.md
                 - name: Microsoft 公共符号服务器
                   href: microsoft-public-symbols.md
                 - name: SymSrv 的高级用法
@@ -1561,8 +1677,9 @@
             - name: 符号存储文件夹树
               href: symbol-store-folder-tree.md
             - name: SymProxy
-              href: symproxy.md
               items:
+                - name: SymProxy
+                  href: symproxy.md
                 - name: 安装 SymProxy
                   href: installing-symproxy.md
                 - name: 配置注册表
@@ -1590,8 +1707,9 @@
         - name: 避免调试器搜索不需要的符号
           href: avoiding-debugger-searches-for-unneeded-symbols.md
     - name: SymStore
-      href: symstore.md
       items:
+        - name: SymStore
+          href: symstore.md
         - name: SymStore 事务
           href: symstore-transactions.md
         - name: 文件系统参考和符号文件
@@ -1601,8 +1719,9 @@
         - name: 符号存储格式
           href: symbol-storage-format.md
     - name: 调试器如何识别符号
-      href: how-the-debugger-recognizes-symbols.md
       items:
+        - name: 调试器如何识别符号
+          href: how-the-debugger-recognizes-symbols.md
         - name: 符号语法和符号匹配
           href: symbol-syntax-and-symbol-matching.md
         - name: 符号选项
@@ -1610,8 +1729,9 @@
         - name: 符号状态缩写
           href: symbol-status-abbreviations.md
     - name: 调试时的符号问题
-      href: symbol-problems-while-debugging.md
       items:
+        - name: 调试时的符号问题
+          href: symbol-problems-while-debugging.md
         - name: 验证符号
           href: verifying-symbols.md
         - name: 匹配符号名称
@@ -1627,15 +1747,17 @@
         - name: Windows 更新的脱机符号
           href: symbols-windows-update.md
     - name: AgeStore
-      href: agestore.md
       items:
+        - name: AgeStore
+          href: agestore.md
         - name: 使用 AgeStore
           href: using-agestore.md
         - name: AgeStore 命令行选项
           href: agestore-command-line-options.md
     - name: DBH
-      href: dbh.md
       items:
+        - name: DBH
+          href: dbh.md
         - name: 使用 DBH
           href: using-dbh.md
         - name: 其他 DBH 示例
@@ -1645,8 +1767,9 @@
         - name: DBH 命令
           href: dbh-commands.md
     - name: PDBCopy
-      href: pdbcopy.md
       items:
+        - name: PDBCopy
+          href: pdbcopy.md
         - name: 使用 PDBCopy
           href: using-pdbcopy.md
         - name: 选择要删除的公共符号
@@ -1654,8 +1777,9 @@
         - name: PDBCopy 命令行选项
           href: pdbcopy-command-line-options.md
     - name: SymChk
-      href: symchk.md
       items:
+        - name: SymChk
+          href: symchk.md
         - name: 使用 SymChk
           href: using-symchk.md
         - name: 将清单文件与 SymChk 配合使用
@@ -1663,14 +1787,17 @@
         - name: SymChk 命令行选项
           href: symchk-command-line-options.md
 - name: 使用 Windows 调试器 (WinDbg) 进行故障转储分析
-  href: crash-dump-files.md
   items:
+    - name: 使用 Windows 调试器 (WinDbg) 进行故障转储分析
+      href: crash-dump-files.md
     - name: 内核模式转储文件
-      href: kernel-mode-dump-files.md
       items:
+        - name: 内核模式转储文件
+          href: kernel-mode-dump-files.md
         - name: 内核模式转储文件的种类
-          href: varieties-of-kernel-mode-dump-files.md
           items:
+            - name: 内核模式转储文件的种类
+              href: varieties-of-kernel-mode-dump-files.md
             - name: 完整内存转储
               href: complete-memory-dump.md
             - name: 内核内存转储
@@ -1682,13 +1809,15 @@
             - name: 活动内存转储
               href: active-memory-dump.md
         - name: 创建内核模式转储文件
-          href: creating-a-kernel-mode-dump-file.md
           items:
+            - name: 创建内核模式转储文件
+              href: creating-a-kernel-mode-dump-file.md
             - name: 启用内核模式转储文件
               href: enabling-a-kernel-mode-dump-file.md
             - name: 强制系统崩溃
-              href: forcing-a-system-crash.md
               items:
+                - name: 强制系统崩溃
+                  href: forcing-a-system-crash.md
                 - name: 通过调试器强制系统崩溃
                   href: forcing-a-system-crash-from-the-debugger.md
                 - name: 通过键盘强制系统崩溃
@@ -1698,8 +1827,9 @@
             - name: 验证是否已创建内核模式转储文件
               href: verifying-the-creation-of-a-kernel-mode-dump-file.md
         - name: 分析内核模式转储文件
-          href: analyzing-a-kernel-mode-dump-file.md
           items:
+            - name: 分析内核模式转储文件
+              href: analyzing-a-kernel-mode-dump-file.md
             - name: 使用 KD 分析内核模式转储文件
               href: analyzing-a-kernel-mode-dump-file-with-kd.md
             - name: 使用 WinDbg 分析内核模式转储文件
@@ -1707,8 +1837,9 @@
             - name: 使用 KAnalyze 分析内核模式转储文件
               href: analyzing-a-kernel-mode-dump-file-with-kanalyze.md
     - name: 用户模式转储文件
-      href: user-mode-dump-files.md
       items:
+        - name: 用户模式转储文件
+          href: user-mode-dump-files.md
         - name: 分析用户模式转储文件
           href: analyzing-a-user-mode-dump-file.md
     - name: 从转储文件中提取信息
@@ -1718,15 +1849,17 @@
     - name: 调试 OCA 小型转储文件
       href: debugging-oca-minidump-files.md
 - name: Bug 检查（蓝屏）
-  href: bug-checks--blue-screens-.md
   items:
+    - name: Bug 检查（蓝屏）
+      href: bug-checks--blue-screens-.md
     - name: 有关蓝屏的一般提示
       href: general-troubleshooting-tips.md
     - name: 蓝屏数据
       href: blue-screen-data.md
     - name: Bug 检查代码参考
-      href: bug-check-code-reference2.md
       items:
+        - name: Bug 检查代码参考
+          href: bug-check-code-reference2.md
         - name: Bug 检查 0x1：APC_INDEX_MISMATCH
           href: bug-check-0x1--apc-index-mismatch.md
         - name: Bug 检查 0x2：DEVICE_QUEUE_NOT_BUSY
@@ -2538,11 +2671,13 @@
         - name: Bug 检查 0xDEADDEAD：MANUALLY_INITIATED_CRASH1
           href: bug-check-0xdeaddead--manually-initiated-crash1.md
 - name: 调试器参考
-  href: debugger-reference.md
   items:
+    - name: 调试器参考
+      href: debugger-reference.md
     - name: 命令行选项
-      href: command-line-options.md
       items:
+        - name: 命令行选项
+          href: command-line-options.md
         - name: CDB 命令行选项
           href: cdb-command-line-options.md
         - name: KD 命令行选项
@@ -2562,21 +2697,25 @@
         - name: SymStore 命令行选项
           href: symstore-command-line-options.md
     - name: 环境变量
-      href: environment-variables.md
       items:
+        - name: 环境变量
+          href: environment-variables.md
         - name: 常规环境变量
           href: general-environment-variables.md
         - name: 内核模式环境变量
           href: kernel-mode-environment-variables.md
     - name: 调试器命令
-      href: debugger-commands.md
       items:
+        - name: 调试器命令
+          href: debugger-commands.md
         - name: 语法规则
-          href: syntax-rules.md
           items:
+            - name: 语法规则
+              href: syntax-rules.md
             - name: 数字表达式语法
-              href: numerical-expression-syntax.md
               items:
+                - name: 数字表达式语法
+                  href: numerical-expression-syntax.md
                 - name: MASM 数字和运算符
                   href: masm-numbers-and-operators.md
                 - name: C++ 数字和运算符
@@ -2606,8 +2745,9 @@
             - name: 多处理器语法
               href: multiprocessor-syntax.md
         - name: 命令标记
-          href: command-tokens.md
           items:
+            - name: 命令标记
+              href: command-tokens.md
             - name: ;（命令分隔符）
               href: '----command-separator-.md'
             - name: '{ }（块分隔符）'
@@ -2645,8 +2785,9 @@
             - name: .while
               href: '-while.md'
         - name: 命令
-          href: commands.md
           items:
+            - name: 命令
+              href: commands.md
             - name: ENTER（重复上一条命令）
               href: enter--repeat-last-command-.md
             - name: $<、$><、$$<、$$><、$$ >a<（运行脚本文件）
@@ -2848,8 +2989,9 @@
             - name: z（执行 While）
               href: z--execute-while-.md
         - name: 元命令
-          href: meta-commands.md
           items:
+            - name: 元命令
+              href: meta-commands.md
             - name: .abandon（丢弃进程）
               href: '-abandon--abandon-process-.md'
             - name: .allow_exec_cmds（允许执行命令）
@@ -3163,8 +3305,9 @@
             - name: .wtitle（设置窗口标题）
               href: '-wtitle--set-window-title-.md'
         - name: 控制键
-          href: control-keys.md
           items:
+            - name: 控制键
+              href: control-keys.md
             - name: CTRL+\（调试当前调试器）
               href: ctrl--.md
             - name: CTRL+ALT+\（调试当前调试器）
@@ -3190,8 +3333,9 @@
             - name: CTRL+W（显示调试器版本）
               href: ctrl-w--show-debugger-version-.md
         - name: 常规扩展命令
-          href: general-extensions.md
           items:
+            - name: 常规扩展命令
+              href: general-extensions.md
             - name: '!acl'
               href: '-acl.md'
             - name: '!address'
@@ -3327,8 +3471,9 @@
             - name: '!winrterr'
               href: '-winrterr.md'
         - name: 内核模式扩展命令
-          href: kernel-mode-extensions.md
           items:
+            - name: 内核模式扩展命令
+              href: kernel-mode-extensions.md
             - name: '!ahcache'
               href: '-ahcache.md'
             - name: '!alignmentfaults'
@@ -3704,8 +3849,9 @@
             - name: '!zombies'
               href: '-zombies.md'
         - name: 用户模式扩展命令
-          href: user-mode-extensions.md
           items:
+            - name: 用户模式扩展命令
+              href: user-mode-extensions.md
             - name: '!avrf'
               href: '-avrf.md'
             - name: '!critsec'
@@ -3737,11 +3883,13 @@
             - name: '!vprot'
               href: '-vprot.md'
         - name: 专业扩展命令
-          href: specialized-extensions.md
           items:
+            - name: 专业扩展命令
+              href: specialized-extensions.md
             - name: 存储内核调试程序扩展
-              href: storage-kernel-debugger-extensions.md
               items:
+                - name: 存储内核调试程序扩展
+                  href: storage-kernel-debugger-extensions.md
                 - name: '!storagekd.storadapter'
                   href: '-storagekd-storadapter.md'
                 - name: '!storagekd.storclass'
@@ -3759,8 +3907,9 @@
                 - name: '!storagekd.storunit'
                   href: '-storagekd-storunit.md'
             - name: 蓝牙扩展 (Bthkd.dll)
-              href: bluetooh-extensions--bthkd-dll-.md
               items:
+                - name: 蓝牙扩展 (Bthkd.dll)
+                  href: bluetooh-extensions--bthkd-dll-.md
                 - name: '!bthkd.bthdevinfo'
                   href: '-bthkd-bthdevinfo.md'
                 - name: '!bthkd.bthenuminfo'
@@ -3796,8 +3945,9 @@
                 - name: '!bthkd.sdpstream'
                   href: '-bthkd-sdpstream.md'
             - name: GPIO 扩展
-              href: gpio-extensions.md
               items:
+                - name: GPIO 扩展
+                  href: gpio-extensions.md
                 - name: '!gpiokd.help'
                   href: '-gpiokd-help.md'
                 - name: '!gpiokd.bankinfo'
@@ -3813,8 +3963,9 @@
                 - name: '!gpiokd.pintable'
                   href: '-gpiokd-pintable.md'
             - name: USB 3.0 扩展
-              href: usb-3-extensions.md
               items:
+                - name: USB 3.0 扩展
+                  href: usb-3-extensions.md
                 - name: USB 3.0 数据结构
                   href: usb-3-0-data-structures.md
                 - name: '!usb3kd.help'
@@ -3870,8 +4021,9 @@
                 - name: '!usb3kd.xhci_transferring'
                   href: '-usb3kd-xhci-transferring.md'
             - name: USB 2.0 调试器扩展
-              href: usb-2-0-extensions.md
               items:
+                - name: USB 2.0 调试器扩展
+                  href: usb-2-0-extensions.md
                 - name: '!usbkd.usbhelp'
                   href: '-usbkd-usbhelp.md'
                 - name: '!usbkd._ehcidd'
@@ -3985,8 +4137,9 @@
                 - name: '!usbkd.usbver'
                   href: '-usbkd-usbver.md'
             - name: RCDRKD 扩展
-              href: rcdrkd-extensions.md
               items:
+                - name: RCDRKD 扩展
+                  href: rcdrkd-extensions.md
                 - name: '!rcdrkd.rcdrhelp'
                   href: '-rcdrkd-rcdrhelp.md'
                 - name: '!rcdrkd.rcdrcrashdump'
@@ -4006,8 +4159,9 @@
                 - name: '!rcdrkd.rcdrtraceprtdebug'
                   href: '-rcdrkd-rcdrtraceprtdebug.md'
             - name: HID 扩展
-              href: hid-extensions.md
               items:
+                - name: HID 扩展
+                  href: hid-extensions.md
                 - name: '!hidkd.help'
                   href: '-hidkd-help.md'
                 - name: '!hidkd.hidfdo'
@@ -4021,8 +4175,9 @@
                 - name: '!hidkd.hidrd'
                   href: '-hidkd-hidrd.md'
             - name: 记录器扩展 (Logexts.dll)
-              href: logger-extensions--logexts-dll-.md
               items:
+                - name: 记录器扩展 (Logexts.dll)
+                  href: logger-extensions--logexts-dll-.md
                 - name: '!logexts.help'
                   href: '-logexts-help.md'
                 - name: '!logexts.logb'
@@ -4040,8 +4195,9 @@
                 - name: '!logexts.logo'
                   href: '-logexts-logo.md'
             - name: NDIS 扩展 (Ndiskd.dll)
-              href: ndis-extensions--ndiskd-dll-.md
               items:
+                - name: NDIS 扩展 (Ndiskd.dll)
+                  href: ndis-extensions--ndiskd-dll-.md
                 - name: '!ndiskd.help'
                   href: '-ndiskd-help.md'
                 - name: '!ndiskd.netadapter'
@@ -4127,8 +4283,9 @@
                 - name: '!ndiskd.netreport'
                   href: '-ndiskd-netreport.md'
             - name: RPC 扩展 (Rpcexts.dll)
-              href: rpc-extensions--rpcexts-dll-.md
               items:
+                - name: RPC 扩展 (Rpcexts.dll)
+                  href: rpc-extensions--rpcexts-dll-.md
                 - name: '!rpcexts.checkrpcsym'
                   href: '-rpcexts-checkrpcsym.md'
                 - name: '!rpcexts.eeinfo'
@@ -4154,8 +4311,9 @@
                 - name: '!rpcexts.thread'
                   href: '-rpcexts-thread.md'
             - name: ACPI 扩展（Acpikd.dll 和 Kdexts.dll）
-              href: acpi-extensions--acpikd-dll-and-kdexts-dll-.md
               items:
+                - name: ACPI 扩展（Acpikd.dll 和 Kdexts.dll）
+                  href: acpi-extensions--acpikd-dll-and-kdexts-dll-.md
                 - name: '!acpicache'
                   href: '-acpicache.md'
                 - name: '!acpiinf'
@@ -4215,13 +4373,15 @@
                 - name: '!rsdt'
                   href: '-rsdt.md'
             - name: 图形驱动程序扩展 (Gdikdx.dll)
-              href: graphics-driver-extensions--gdikdx-dll-.md
               items:
+                - name: 图形驱动程序扩展 (Gdikdx.dll)
+                  href: graphics-driver-extensions--gdikdx-dll-.md
                 - name: '!gdikdx.verifier'
                   href: '-gdikdx-verifier.md'
             - name: 内核流扩展 (Ks.dll)
-              href: kernel-streaming-extensions--ks-dll-.md
               items:
+                - name: 内核流扩展 (Ks.dll)
+                  href: kernel-streaming-extensions--ks-dll-.md
                 - name: '!ks.help'
                   href: '-ks-help.md'
                 - name: '!ks.kshelp'
@@ -4273,8 +4433,9 @@
                 - name: '!ks.topology'
                   href: '-ks-topology.md'
             - name: SCSI 微型端口扩展（Scsikd.dll 和 Minipkd.dll）
-              href: scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md
               items:
+                - name: SCSI 微型端口扩展（Scsikd.dll 和 Minipkd.dll）
+                  href: scsi-miniport-extensions--scsikd-dll-and-minipkd-dll-.md
                 - name: '!scsikd.help'
                   href: '-scsikd-help.md'
                 - name: '!scsikd.classext'
@@ -4300,8 +4461,9 @@
                 - name: '!minipkd.srb'
                   href: '-minipkd-srb.md'
             - name: Windows 驱动程序框架扩展 (Wdfkd.dll)
-              href: kernel-mode-driver-framework-extensions--wdfkd-dll-.md
               items:
+                - name: Windows 驱动程序框架扩展 (Wdfkd.dll)
+                  href: kernel-mode-driver-framework-extensions--wdfkd-dll-.md
                 - name: '!wdfkd.help'
                   href: '-wdfkd-help.md'
                 - name: '!wdfkd.wdfchildlist'
@@ -4403,8 +4565,9 @@
                 - name: '!wdfkd.wdfwmi'
                   href: '-wdfkd-wdfwmi.md'
             - name: 用户模式驱动程序框架扩展 (Wudfext.dll)
-              href: user-mode-driver-framework-extensions--wudfext-dll-.md
               items:
+                - name: 用户模式驱动程序框架扩展 (Wudfext.dll)
+                  href: user-mode-driver-framework-extensions--wudfext-dll-.md
                 - name: '!wudfext.help'
                   href: '-wudfext-help.md'
                 - name: '!wudfext.umdevstack'
@@ -4448,8 +4611,9 @@
                 - name: '!wudfext.wudfusbtarget'
                   href: '-wudfext-wudfusbtarget.md'
             - name: WMI 跟踪扩展 (Wmitrace.dll)
-              href: wmi-tracing-extensions--wmitrace-dll-.md
               items:
+                - name: WMI 跟踪扩展 (Wmitrace.dll)
+                  href: wmi-tracing-extensions--wmitrace-dll-.md
                 - name: '!wmitrace.disable'
                   href: '-wmitrace-disable.md'
                 - name: '!wmitrace.dumpmini'
@@ -4491,8 +4655,9 @@
             - name: SieExtPub.dll
               href: sieextpub-dll.md
     - name: 调试器相关的 API
-      href: debugger-related-apis.md
       items:
+        - name: 调试器相关的 API
+          href: debugger-related-apis.md
         - name: 符号服务器 API
           href: symbol-server-api.md
         - name: dbgeng.h 标头文件
@@ -4500,8 +4665,9 @@
         - name: wdbgexts.h 标头文件
           href: the-wdbgexts-h-header-file.md
     - name: 调试器错误和警告消息
-      href: debugger-error-and-warning-messages.md
       items:
+        - name: 调试器错误和警告消息
+          href: debugger-error-and-warning-messages.md
         - name: 'dbgerr001:PEB 已移出页面'
           href: dbgerr001--peb-is-paged-out.md
         - name: 'dbgerr002:错误的指针'
@@ -4517,11 +4683,13 @@
         - name: 没有可用的标头信息
           href: no-header-information-available.md
     - name: WinDbg 图形界面功能
-      href: windbg-graphical-interface-features.md
       items:
+        - name: WinDbg 图形界面功能
+          href: windbg-graphical-interface-features.md
         - name: 文件菜单
-          href: file-menu.md
           items:
+            - name: 文件菜单
+              href: file-menu.md
             - name: 文件 | 打开源文件
               href: file---open-source-file.md
             - name: 文件 | 关闭当前窗口
@@ -4567,8 +4735,9 @@
             - name: 文件 | 退出
               href: file---exit.md
         - name: 编辑菜单
-          href: edit-menu.md
           items:
+            - name: 编辑菜单
+              href: edit-menu.md
             - name: 编辑 | 剪切
               href: edit---cut.md
             - name: 编辑 | 复制
@@ -4604,8 +4773,9 @@
             - name: 编辑 | 打开/关闭日志文件
               href: edit---open-close-log-file.md
         - name: 视图菜单
-          href: view-menu.md
           items:
+            - name: 视图菜单
+              href: view-menu.md
             - name: 视图 | 命令
               href: view---command.md
             - name: 视图 | 监视
@@ -4643,8 +4813,9 @@
             - name: 视图 | WinDbg 命令行
               href: view---windbg-command-line.md
         - name: 调试菜单
-          href: debug-menu.md
           items:
+            - name: 调试菜单
+              href: debug-menu.md
             - name: 调试 | 转到
               href: debug---go.md
             - name: 调试 | 转到未经处理的异常
@@ -4682,8 +4853,9 @@
             - name: 调试 | 内核连接 | 重新同步
               href: debug---kernel-connection---resynchronize.md
         - name: 窗口菜单
-          href: window-menu.md
           items:
+            - name: 窗口菜单
+              href: window-menu.md
             - name: 窗口 | 关闭所有源窗口
               href: window---close-all-source-windows.md
             - name: 窗口 | 关闭所有错误窗口
@@ -4701,8 +4873,9 @@
             - name: 打开的窗口列表
               href: list-of-open-windows.md
         - name: 帮助菜单
-          href: help-menu.md
           items:
+            - name: 帮助菜单
+              href: help-menu.md
             - name: 帮助 | 内容
               href: help---contents.md
             - name: 帮助 | 索引

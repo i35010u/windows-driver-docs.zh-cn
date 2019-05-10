@@ -1,9 +1,11 @@
 - name: 简单外设总线 (SPB) 驱动程序设计指南
-  href: index.md
   items:
+    - name: 简单外设总线 (SPB) 驱动程序设计指南
+      href: index.md
     - name: SPB 控制器驱动程序
-      href: spb-controller-drivers.md
       items:
+        - name: SPB 控制器驱动程序
+          href: spb-controller-drivers.md
         - name: SPB 框架扩展 (SpbCx)
           href: spb-framework-extension.md
         - name: SpbCx 接口
@@ -23,8 +25,9 @@
         - name: SpbCx 对象句柄
           href: spbcx-object-handles.md
     - name: SPB 外围设备驱动程序
-      href: spb-peripheral-device-drivers.md
       items:
+        - name: SPB 外围设备驱动程序
+          href: spb-peripheral-device-drivers.md
         - name: 使用 SPB I/O 请求接口
           href: using-the-spb-i-o-request-interface.md
         - name: SPB 连接的外围设备的连接 ID
@@ -44,8 +47,9 @@
         - name: SPB 连接锁
           href: spb-connection-locks.md
     - name: 使用多接口测试工具 (MITT) 进行测试
-      href: testing-with-multi-interface-test-tool--mitt-.md
       items:
+        - name: 使用多接口测试工具 (MITT) 进行测试
+          href: testing-with-multi-interface-test-tool--mitt-.md
         - name: 使用 MITT 购买硬件
           href: multi-interface-test-tool--mitt--.md
         - name: MITT 入门

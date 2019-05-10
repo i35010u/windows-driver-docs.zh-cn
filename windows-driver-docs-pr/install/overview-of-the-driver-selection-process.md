@@ -4,12 +4,12 @@ description: 驱动程序选择过程概述
 ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d154e17f867200696eb190a175b257daa70058
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fef4436d078e4fccb7d62e9968867e8bc8c4011
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388303"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456370"
 ---
 # <a name="overview-of-the-driver-selection-process"></a>驱动程序选择过程概述
 
@@ -22,7 +22,7 @@ Windows 表示驱动程序，因为*驱动程序节点*，其中包括的设备�
 
 Windows 搜索中的设备类型相匹配的驱动程序的特定位置。 驱动程序与设备相匹配，如果满足以下条件：
 
--   Plug and Play (PnP) 之一[设备标识字符串](device-identification-strings.md)，为其报告由总线驱动程序的设备与设备标识字符串中的匹配[ **INF*模型*部分**](inf-models-section.md)驱动程序的条目[INF 文件](inf-files.md)。
+-   Plug and Play (PnP) 之一[设备标识字符串](device-identification-strings.md)，为其报告由总线驱动程序的设备与设备标识字符串中的匹配[ **INF*模型*部分**](inf-models-section.md)驱动程序的条目[INF 文件](overview-of-inf-files.md)。
 
 -   如果匹配的设备标识字符串中[ **INF*模型*部分**](inf-models-section.md)条目指定*TargetOSVersion*修饰，修饰匹配设备已安装的操作系统版本。
 
@@ -60,7 +60,7 @@ Windows 创建的所有匹配的驱动程序列表，并为每个驱动程序分
 
 Windows 选择作为设备的最佳匹配项的排名值最小的驱动程序。
 
-但是，如果有多个同样排名的驱动程序的设备的最佳匹配项，Windows 使用驱动程序的日期和版本选择的驱动程序。 通过指定驱动程序的日期和版本[ **INF DriverVer 指令**](inf-driverver-directive.md)中的驱动程序包含[INF 文件](inf-files.md)。
+但是，如果有多个同样排名的驱动程序的设备的最佳匹配项，Windows 使用驱动程序的日期和版本选择的驱动程序。 通过指定驱动程序的日期和版本[ **INF DriverVer 指令**](inf-driverver-directive.md)中的驱动程序包含[INF 文件](overview-of-inf-files.md)。
 
 Windows 使用以下条件来选择设备驱动程序：
 

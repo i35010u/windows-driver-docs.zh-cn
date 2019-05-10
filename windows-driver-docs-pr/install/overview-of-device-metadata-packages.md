@@ -6,15 +6,16 @@ keywords:
 - 设备元数据打包有关 WDK，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da21eb1f1c56ae933d181b5db01f1732a7d5f437
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f3e9eb2dcf56fbb8bbce45941c82674e8b6b15
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330247"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456418"
 ---
 # <a name="overview-of-device-metadata-packages"></a>设备元数据包概述
 
+从 Windows 7 开始，设备元数据包包含表示设备和其硬件功能的属性的 XML 文档。 设备和打印机用户界面为用户基于设备的元数据的包中的 XML 文档上显示特定于设备的信息。
 
 多个 XML 文档，包括设备元数据包和每个文档指定设备的属性的各种组件。
 

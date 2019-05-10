@@ -746,36 +746,210 @@
           href: initiating-system-restarts-during-device-installations.md
         - name: 64 位系统上的设备安装
           href: device-installations-on-64-bit-systems.md
-- name: 注册表
+    - name: 注册表
+      items:
+        - name: 注册表树和键
+          href: registry-trees-and-keys.md
+        - name: 设备和驱动程序的注册表树
+          href: overview-of-registry-trees-and-keys.md
+        - name: 'HKLM\SYSTEM\CurrentControlSet\Services 注册表树 '
+          href: hklm-system-currentcontrolset-services-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\Control 注册表树
+          href: hklm-system-currentcontrolset-control-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\Enum 注册表树
+          href: hklm-system-currentcontrolset-enum-registry-tree.md
+        - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles 注册表树
+          href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
+        - name: RunOnce 注册表项
+          href: runonce-registry-key.md
+        - name: DeviceOverrides 注册表项
+          href: deviceoverrides-registry-key.md
+        - name: HardwareID 注册表子项
+          href: hardwareid-registry-subkey.md
+        - name: CompatibleID 注册表子项
+          href: compatibleid-registry-subkey.md
+        - name: LocationPaths 注册表子项
+          href: locationpaths-registry-subkey.md
+        - name: ChildLocationPaths 注册表子项
+          href: childlocationpaths-registry-subkey.md
+        - name: LocationPath 注册表子项
+          href: locationpath-registry-subkey.md
+        - name: '* 注册表子项'
+          href: '--registry-subkey.md'
+- name: INF 节
   items:
-    - name: 注册表树和键
-      href: registry-trees-and-keys.md
-    - name: 设备和驱动程序的注册表树
-      href: overview-of-registry-trees-and-keys.md
-    - name: 'HKLM\SYSTEM\CurrentControlSet\Services 注册表树 '
-      href: hklm-system-currentcontrolset-services-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\Control 注册表树
-      href: hklm-system-currentcontrolset-control-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\Enum 注册表树
-      href: hklm-system-currentcontrolset-enum-registry-tree.md
-    - name: HKLM\SYSTEM\CurrentControlSet\HardwareProfiles 注册表树
-      href: hklm-system-currentcontrolset-hardwareprofiles-registry-tree.md
-    - name: RunOnce 注册表项
-      href: runonce-registry-key.md
-    - name: DeviceOverrides 注册表项
-      href: deviceoverrides-registry-key.md
-    - name: HardwareID 注册表子项
-      href: hardwareid-registry-subkey.md
-    - name: CompatibleID 注册表子项
-      href: compatibleid-registry-subkey.md
-    - name: LocationPaths 注册表子项
-      href: locationpaths-registry-subkey.md
-    - name: ChildLocationPaths 注册表子项
-      href: childlocationpaths-registry-subkey.md
-    - name: LocationPath 注册表子项
-      href: locationpath-registry-subkey.md
-    - name: '* 注册表子项'
-      href: '--registry-subkey.md'
+    - name: INF ClassInstall32 节
+      href: inf-classinstall32-section.md
+    - name: INF ClassInstall32.Services 节
+      href: inf-classinstall32-services-section.md
+    - name: INF ControlFlags 节
+      href: inf-controlflags-section.md
+    - name: INF DDInstall 节
+      href: inf-ddinstall-section.md
+    - name: INF DDInstall.CoInstallers 节
+      href: inf-ddinstall-coinstallers-section.md
+    - name: INF DDInstall.Components 节
+      href: inf-ddinstall-components-section.md
+    - name: INF DDInstall.Events 节
+      href: inf-ddinstall-events-section.md
+    - name: INF DDInstall.FactDef 节
+      href: inf-ddinstall-factdef-section.md
+    - name: INF DDInstall.HW 节
+      href: inf-ddinstall-hw-section.md
+    - name: INF DDInstall.Interfaces 节
+      href: inf-ddinstall-interfaces-section.md
+    - name: INF DDInstall.LogConfigOverride 节
+      href: inf-ddinstall-logconfigoverride-section.md
+    - name: INF DDInstall.Services 节
+      href: inf-ddinstall-services-section.md
+    - name: INF DDInstall.Software 节
+      href: inf-ddinstall-software-section.md
+    - name: INF DDInstall.WMI 节
+      href: inf-ddinstall-wmi-section.md
+    - name: INF DefaultInstall 节
+      href: inf-defaultinstall-section.md
+    - name: INF DefaultInstall.Services 节
+      href: inf-defaultinstall-services-section.md
+    - name: INF DestinationDirs 节
+      href: inf-destinationdirs-section.md
+    - name: INF InterfaceInstall32 节
+      href: inf-interfaceinstall32-section.md
+    - name: INF Manufacturer 节
+      href: inf-manufacturer-section.md
+    - name: INF Models 节
+      href: inf-models-section.md
+    - name: INF SignatureAttributes 节
+      href: inf-signatureattributes-section.md
+    - name: INF SourceDisksFiles 节
+      href: inf-sourcedisksfiles-section.md
+    - name: INF SourceDisksNames 节
+      href: inf-sourcedisksnames-section.md
+    - name: INF Strings 节
+      href: inf-strings-section.md
+    - name: INF Version 节
+      href: inf-version-section.md
+- name: INF 指令
+  items:
+    - name: INF AddComponent 指令
+      href: inf-addcomponent-directive.md
+    - name: INF AddEventProvider 指令
+      href: inf-addeventprovider-directive.md
+    - name: INF AddInterface 指令
+      href: inf-addinterface-directive.md
+    - name: INF AddPowerSetting 指令
+      href: inf-addpowersetting-directive.md
+    - name: INF AddProperty 指令
+      href: inf-addproperty-directive.md
+    - name: INF AddReg 指令
+      href: inf-addreg-directive.md
+    - name: INF AddService 指令
+      href: inf-addservice-directive.md
+    - name: INF AddSoftware 指令
+      href: inf-addsoftware-directive.md
+    - name: INF BitReg 指令
+      href: inf-bitreg-directive.md
+    - name: INF CopyFiles 指令
+      href: inf-copyfiles-directive.md
+    - name: INF CopyINF 指令
+      href: inf-copyinf-directive.md
+    - name: INF DelFiles 指令
+      href: inf-delfiles-directive.md
+    - name: INF DelProperty 指令
+      href: inf-delproperty-directive.md
+    - name: INF DelReg 指令
+      href: inf-delreg-directive.md
+    - name: INF DelService 指令
+      href: inf-delservice-directive.md
+    - name: INF DriverVer 指令
+      href: inf-driverver-directive.md
+    - name: INF FeatureScore 指令
+      href: inf-featurescore-directive.md
+    - name: INF HardwareId 指令
+      href: inf-hardwareid-directive.md
+    - name: INF Ini2Reg 指令
+      href: inf-ini2reg-directive.md
+    - name: INF LogConfig 指令
+      href: inf-logconfig-directive.md
+    - name: INF ProfileItems 指令
+      href: inf-profileitems-directive.md
+    - name: INF Reboot 指令
+      href: inf-reboot-directive.md
+    - name: INF RegisterDlls 指令
+      href: inf-registerdlls-directive.md
+    - name: INF RenFiles 指令
+      href: inf-renfiles-directive.md
+    - name: INF UnregisterDlls 指令
+      href: inf-unregisterdlls-directive.md
+    - name: INF UpdateIniFields 指令
+      href: inf-updateinifields-directive.md
+    - name: INF UpdateInis 指令
+      href: inf-updateinis-directive.md
+- name: 最佳方案
+  items:
+    - name: 访问设备属性
+      href: accessing-device-properties.md
+    - name: 修改设备属性的规则
+      href: modifying-device-properties.md
+    - name: 访问和修改文件
+      href: accessing-and-modifying-files.md
+    - name: 安全地访问注册表项
+      href: accessing-registry-keys-safely.md
+    - name: 打开设备的硬件键
+      href: opening-a-device-s-hardware-key.md
+    - name: 打开设备的软件键
+      href: opening-a-device-s-software-key.md
+    - name: 修改设备的软件键中的注册表值
+      href: modifying-registry-values-in-a-device-s-software-key-.md
+    - name: 枚举已安装的设备安装程序类
+      href: enumerating-installed-device-setup-classes.md
+    - name: 打开设备安装程序类的注册表项
+      href: opening-registry-keys-for-a-device-setup-class.md
+    - name: 打开安装程序类中所有设备的软件键
+      href: opening-software-keys-for-all-devices-in-a-setup-class.md
+    - name: 枚举已安装的设备接口
+      href: enumerating-installed-device-interface-classes.md
+    - name: 访问已安装设备接口的属性
+      href: accessing-the-properties-of-installed-device-interface-classes.md
+    - name: 通过类安装程序和辅助安装程序修改注册表项
+      href: modifying-registry-keys-by-class-installers-and-co-installers.md
+    - name: 通过类安装程序和辅助安装程序修改注册表值
+      href: modifying-registry-values-by-class-installers-and-co-installers.md
+    - name: 删除设备的注册表项
+      href: deleting-the-registry-keys-of-a-device.md
+    - name: 调用 SetupAPI 函数
+      href: calling-setupapi-functions.md
+    - name: 枚举已安装的设备
+      href: enumerating-installed-devices.md
+    - name: 设备和驱动程序安装常规指南
+      href: general-guidelines-for-device-and-driver-installation.md
+    - name: 将代码从 SetupApi 移植到 CfgMgr32
+      href: porting-from-setupapi-to-cfgmgr32.md
+    - name: 编写类安装程序和辅助安装程序
+      href: writing-class-installers-and-co-installers.md
+    - name: 编写 INF 文件
+      href: writing-inf-files.md
+    - name: 安装引导启动驱动程序
+      href: installing-a-boot-start-driver.md
+    - name: 安装筛选器驱动程序
+      href: installing-a-filter-driver.md
+    - name: 安装 Null 驱动程序
+      href: installing-a-null-driver.md
+    - name: 安装新总线驱动程序
+      href: installing-a-new-bus-driver.md
+    - name: 使用自定义硬件 ID 和兼容 ID
+      href: using-custom-hardware-ids-and-compatible-ids.md
+    - name: 为总线安装新的设备安装程序类
+      href: installing-a-new-device-setup-class-for-a-bus.md
+    - name: 安装随机驱动程序的专用版本
+      href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
+    - name: 安装随机驱动程序的专用版本概述
+      href: overview-of-installing-private-builds-of-in-box-drivers.md
+    - name: 创建随机驱动程序的专用版本
+      href: creating-a-private-build-of-an-in-box-driver.md
+    - name: 将 Windows 配置为对驱动程序签名进行平等的分级
+      href: configuring-windows-to-rank-driver-signatures-equally.md
+    - name: 安装驱动程序包的已更新版本
+      href: installing-the-updated-version-of-the-driver-package.md
 - name: 疑难解答
   items:
     - name: 排查设备和驱动程序安装问题
@@ -926,72 +1100,6 @@
           href: debugging-device-installations-with-a-user-mode-debugger.md
         - name: 使用内核调试程序 (KD) 调试设备安装
           href: debugging-device-installations-with-the-kernel-debugger--kd-.md
-- name: 最佳方案
-  items:
-    - name: 访问设备属性
-      href: accessing-device-properties.md
-    - name: 修改设备属性的规则
-      href: modifying-device-properties.md
-    - name: 访问和修改文件
-      href: accessing-and-modifying-files.md
-    - name: 安全地访问注册表项
-      href: accessing-registry-keys-safely.md
-    - name: 打开设备的硬件键
-      href: opening-a-device-s-hardware-key.md
-    - name: 打开设备的软件键
-      href: opening-a-device-s-software-key.md
-    - name: 修改设备的软件键中的注册表值
-      href: modifying-registry-values-in-a-device-s-software-key-.md
-    - name: 枚举已安装的设备安装程序类
-      href: enumerating-installed-device-setup-classes.md
-    - name: 打开设备安装程序类的注册表项
-      href: opening-registry-keys-for-a-device-setup-class.md
-    - name: 打开安装程序类中所有设备的软件键
-      href: opening-software-keys-for-all-devices-in-a-setup-class.md
-    - name: 枚举已安装的设备接口
-      href: enumerating-installed-device-interface-classes.md
-    - name: 访问已安装设备接口的属性
-      href: accessing-the-properties-of-installed-device-interface-classes.md
-    - name: 通过类安装程序和辅助安装程序修改注册表项
-      href: modifying-registry-keys-by-class-installers-and-co-installers.md
-    - name: 通过类安装程序和辅助安装程序修改注册表值
-      href: modifying-registry-values-by-class-installers-and-co-installers.md
-    - name: 删除设备的注册表项
-      href: deleting-the-registry-keys-of-a-device.md
-    - name: 调用 SetupAPI 函数
-      href: calling-setupapi-functions.md
-    - name: 枚举已安装的设备
-      href: enumerating-installed-devices.md
-    - name: 设备和驱动程序安装常规指南
-      href: general-guidelines-for-device-and-driver-installation.md
-    - name: 将代码从 SetupApi 移植到 CfgMgr32
-      href: porting-from-setupapi-to-cfgmgr32.md
-    - name: 编写类安装程序和辅助安装程序
-      href: writing-class-installers-and-co-installers.md
-    - name: 编写 INF 文件
-      href: writing-inf-files.md
-    - name: 安装引导启动驱动程序
-      href: installing-a-boot-start-driver.md
-    - name: 安装筛选器驱动程序
-      href: installing-a-filter-driver.md
-    - name: 安装 Null 驱动程序
-      href: installing-a-null-driver.md
-    - name: 安装新总线驱动程序
-      href: installing-a-new-bus-driver.md
-    - name: 使用自定义硬件 ID 和兼容 ID
-      href: using-custom-hardware-ids-and-compatible-ids.md
-    - name: 为总线安装新的设备安装程序类
-      href: installing-a-new-device-setup-class-for-a-bus.md
-    - name: 安装随机驱动程序的专用版本
-      href: installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md
-    - name: 安装随机驱动程序的专用版本概述
-      href: overview-of-installing-private-builds-of-in-box-drivers.md
-    - name: 创建随机驱动程序的专用版本
-      href: creating-a-private-build-of-an-in-box-driver.md
-    - name: 将 Windows 配置为对驱动程序签名进行平等的分级
-      href: configuring-windows-to-rank-driver-signatures-equally.md
-    - name: 安装驱动程序包的已更新版本
-      href: installing-the-updated-version-of-the-driver-package.md
 - name: 提前启动反恶意软件
   items:
     - name: 提前启动反恶意软件的概述
@@ -1002,114 +1110,6 @@
       href: elam-driver-requirements.md
     - name: ELAM 驱动程序提交
       href: elam-driver-submission.md
-- name: INF 节
-  items:
-    - name: INF ClassInstall32 节
-      href: inf-classinstall32-section.md
-    - name: INF ClassInstall32.Services 节
-      href: inf-classinstall32-services-section.md
-    - name: INF ControlFlags 节
-      href: inf-controlflags-section.md
-    - name: INF DDInstall 节
-      href: inf-ddinstall-section.md
-    - name: INF DDInstall.CoInstallers 节
-      href: inf-ddinstall-coinstallers-section.md
-    - name: INF DDInstall.Components 节
-      href: inf-ddinstall-components-section.md
-    - name: INF DDInstall.Events 节
-      href: inf-ddinstall-events-section.md
-    - name: INF DDInstall.FactDef 节
-      href: inf-ddinstall-factdef-section.md
-    - name: INF DDInstall.HW 节
-      href: inf-ddinstall-hw-section.md
-    - name: INF DDInstall.Interfaces 节
-      href: inf-ddinstall-interfaces-section.md
-    - name: INF DDInstall.LogConfigOverride 节
-      href: inf-ddinstall-logconfigoverride-section.md
-    - name: INF DDInstall.Services 节
-      href: inf-ddinstall-services-section.md
-    - name: INF DDInstall.Software 节
-      href: inf-ddinstall-software-section.md
-    - name: INF DDInstall.WMI 节
-      href: inf-ddinstall-wmi-section.md
-    - name: INF DefaultInstall 节
-      href: inf-defaultinstall-section.md
-    - name: INF DefaultInstall.Services 节
-      href: inf-defaultinstall-services-section.md
-    - name: INF DestinationDirs 节
-      href: inf-destinationdirs-section.md
-    - name: INF InterfaceInstall32 节
-      href: inf-interfaceinstall32-section.md
-    - name: INF Manufacturer 节
-      href: inf-manufacturer-section.md
-    - name: INF Models 节
-      href: inf-models-section.md
-    - name: INF SignatureAttributes 节
-      href: inf-signatureattributes-section.md
-    - name: INF SourceDisksFiles 节
-      href: inf-sourcedisksfiles-section.md
-    - name: INF SourceDisksNames 节
-      href: inf-sourcedisksnames-section.md
-    - name: INF Strings 节
-      href: inf-strings-section.md
-    - name: INF Version 节
-      href: inf-version-section.md
-- name: INF 指令
-  items:
-    - name: INF AddComponent 指令
-      href: inf-addcomponent-directive.md
-    - name: INF AddEventProvider 指令
-      href: inf-addeventprovider-directive.md
-    - name: INF AddInterface 指令
-      href: inf-addinterface-directive.md
-    - name: INF AddPowerSetting 指令
-      href: inf-addpowersetting-directive.md
-    - name: INF AddProperty 指令
-      href: inf-addproperty-directive.md
-    - name: INF AddReg 指令
-      href: inf-addreg-directive.md
-    - name: INF AddService 指令
-      href: inf-addservice-directive.md
-    - name: INF AddSoftware 指令
-      href: inf-addsoftware-directive.md
-    - name: INF BitReg 指令
-      href: inf-bitreg-directive.md
-    - name: INF CopyFiles 指令
-      href: inf-copyfiles-directive.md
-    - name: INF CopyINF 指令
-      href: inf-copyinf-directive.md
-    - name: INF DelFiles 指令
-      href: inf-delfiles-directive.md
-    - name: INF DelProperty 指令
-      href: inf-delproperty-directive.md
-    - name: INF DelReg 指令
-      href: inf-delreg-directive.md
-    - name: INF DelService 指令
-      href: inf-delservice-directive.md
-    - name: INF DriverVer 指令
-      href: inf-driverver-directive.md
-    - name: INF FeatureScore 指令
-      href: inf-featurescore-directive.md
-    - name: INF HardwareId 指令
-      href: inf-hardwareid-directive.md
-    - name: INF Ini2Reg 指令
-      href: inf-ini2reg-directive.md
-    - name: INF LogConfig 指令
-      href: inf-logconfig-directive.md
-    - name: INF ProfileItems 指令
-      href: inf-profileitems-directive.md
-    - name: INF Reboot 指令
-      href: inf-reboot-directive.md
-    - name: INF RegisterDlls 指令
-      href: inf-registerdlls-directive.md
-    - name: INF RenFiles 指令
-      href: inf-renfiles-directive.md
-    - name: INF UnregisterDlls 指令
-      href: inf-unregisterdlls-directive.md
-    - name: INF UpdateIniFields 指令
-      href: inf-updateinifields-directive.md
-    - name: INF UpdateInis 指令
-      href: inf-updateinis-directive.md
 - name: 参考
   items:
     - name: BUS1394_CLASS_GUID

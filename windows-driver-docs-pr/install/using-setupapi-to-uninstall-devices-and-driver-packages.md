@@ -4,12 +4,12 @@ description: 使用 SetupAPI 卸载设备和驱动程序包
 ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f460b6b4ff6229bfc8a55e127388669f6a84f16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87e155d3ce7fe2be80c8487ec8b6e9c1c58f5a7b
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339398"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455124"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>使用 SetupAPI 卸载设备和驱动程序包
 
@@ -42,7 +42,7 @@ ms.locfileid: "63339398"
 
 ### <a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
 
-从 Windows XP 开始，设备安装应用程序可以调用[SetupUninstallOEMInf](https://go.microsoft.com/fwlink/p/?linkid=169503)函数来删除指定[INF 文件](inf-files.md)从系统 INF 文件目录。
+从 Windows XP 开始，设备安装应用程序可以调用[SetupUninstallOEMInf](https://go.microsoft.com/fwlink/p/?linkid=169503)函数来删除指定[INF 文件](overview-of-inf-files.md)从系统 INF 文件目录。
 
 从 Windows Vista 开始，此函数还会删除[驱动程序包](driver-packages.md)，其中包含指定的 INF 文件，从[驱动程序存储区](driver-store.md)。
 

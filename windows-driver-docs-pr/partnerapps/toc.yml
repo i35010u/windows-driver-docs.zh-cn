@@ -1,6 +1,7 @@
 - name: 合作伙伴应用开发
-  href: index.md
   items:
+    - name: 合作伙伴应用开发
+      href: index.md
     - name: 后台任务和自定义触发器
       href: background-tasks-and-oem-triggers.md
     - name: 涉及分配的访问权限的展台应用：最佳做法

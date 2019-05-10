@@ -1,16 +1,19 @@
 - name: 并行设备设计指南
-  href: index.md
   items:
+    - name: 并行设备设计指南
+      href: index.md
     - name: 并行端口和设备简介
-      href: introduction-to-parallel-ports-and-devices.md
       items:
+        - name: 并行端口和设备简介
+          href: introduction-to-parallel-ports-and-devices.md
         - name: 并行端口的物理配置
           href: physical-configuration-of-parallel-ports.md
         - name: 连接到并行端口的设备的物理配置
           href: physical-configuration-of-devices-attached-to-a-parallel-port.md
     - name: 系统提供的并行驱动程序
-      href: system-supplied-parallel-drivers.md
       items:
+        - name: 系统提供的并行驱动程序
+          href: system-supplied-parallel-drivers.md
         - name: 系统提供的并行驱动程序的功能
           href: features-of-system-supplied-parallel-drivers.md
         - name: 并行端口和设备的设备堆栈
@@ -20,13 +23,15 @@
         - name: 对并行端口和设备的 IOCTL 和回调支持
           href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
     - name: 供应商提供的并行驱动程序
-      href: vendor-supplied-parallel-drivers.md
       items:
+        - name: 供应商提供的并行驱动程序
+          href: vendor-supplied-parallel-drivers.md
         - name: 对供应商提供的并行驱动程序的要求
           href: requirements-for-vendor-supplied-parallel-drivers.md
         - name: 打开并行端口
-          href: operating-a-parallel-port.md
           items:
+            - name: 打开并行端口
+              href: operating-a-parallel-port.md
             - name: 创建和启动并行端口
               href: creating-and-starting-a-parallel-port.md
             - name: 打开和关闭并行端口
@@ -44,8 +49,9 @@
             - name: 将中断服务例程连接到并行端口
               href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
         - name: 打开连接到并行端口的并行设备
-          href: operating-a-parallel-device-attached-to-a-parallel-port.md
           items:
+            - name: 打开连接到并行端口的并行设备
+              href: operating-a-parallel-device-attached-to-a-parallel-port.md
             - name: 打开和使用并行设备
               href: opening-and-using-a-parallel-device.md
             - name: 连接到并行设备

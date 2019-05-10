@@ -3,12 +3,12 @@ Description: 本主题介绍控制传输和如何客户端驱动程序应将控�
 title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c5c7310e1e6ddac12e13049916d1dac618098a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af468cb6a9960169bedc56e37253691ac01f8b3b
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331684"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405081"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
@@ -24,7 +24,7 @@ ms.locfileid: "63331684"
 -   [必备条件](#prerequisites)
 -   [Microsoft 定义的方法，用于发送控制传输请求](#microsoft-defined-methods-for-sending-control-transfer-requests)
 -   [如何发送供应商命令-KMDF 控制传输](#how-to-send-a-control-transfer-for-vendor-commands---kmdf)
--   [如何将发送 GET 控制传输\_状态-UMDF](#how-to-send-a-control-transfer-for-get-status---umdf)
+-   [如何将发送 GET 控制传输\_状态-UMDF](#how-to-send-a-control-transfer-for-get_status---umdf)
 
 ## <a name="about-the-default-endpoint"></a>有关默认终结点
 

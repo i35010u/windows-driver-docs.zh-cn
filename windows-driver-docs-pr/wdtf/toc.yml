@@ -1,11 +1,13 @@
 - name: WDTF 设计指南
-  href: index.md
   items:
+    - name: WDTF 设计指南
+      href: index.md
     - name: WDTF 快速入门
       href: wdtf-quick-start-.md
     - name: 为你的设备编写 WDTF SimpleIO 插件
-      href: writing-a-wdtf-simpleio-plug-in-for-your-device.md
       items:
+        - name: 为你的设备编写 WDTF SimpleIO 插件
+          href: writing-a-wdtf-simpleio-plug-in-for-your-device.md
         - name: 如何确定设备是否需要自定义 WDTF 简单 I/O 操作插件
           href: test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md
         - name: 如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O
@@ -13,13 +15,15 @@
         - name: 提供的 WDTF SimpleIO 插件
           href: provided-wdtf-simpleio-plug-ins.md
     - name: 使用 WDTF 编写测试
-      href: writing-tests-with-wdtf.md
       items:
+        - name: 使用 WDTF 编写测试
+          href: writing-tests-with-wdtf.md
         - name: 简单数据评估语言概述
           href: simple-data-evaluation-language-overview.md
         - name: 创建 WDTF 方案
-          href: creating-wdtf-scenarios.md
           items:
+            - name: 创建 WDTF 方案
+              href: creating-wdtf-scenarios.md
             - name: 示例 WDTF 方案
               href: sample-wdtf-scenarios.md
         - name: 控制目标
@@ -27,11 +31,13 @@
         - name: 操作接口
           href: action-interfaces.md
     - name: 会审基于 WDTF 的测试
-      href: triaging-wdtf-based-tests.md
       items:
+        - name: 会审基于 WDTF 的测试
+          href: triaging-wdtf-based-tests.md
         - name: WDTF 对象日志记录
-          href: logging-and-tracing.md
           items:
+            - name: WDTF 对象日志记录
+              href: logging-and-tracing.md
             - name: WDTF 对象名称标记
               href: wdtf-object-name-tags.md
         - name: 启用和查看 WDTF 跟踪
@@ -39,14 +45,16 @@
         - name: 对运行基于 WDTF 的测试时出现的问题进行诊断
           href: diagnosing-problems-running-wdtf-based-tests.md
     - name: WDTF 体系结构和概述
-      href: wdtf-overview.md
       items:
+        - name: WDTF 体系结构和概述
+          href: wdtf-overview.md
         - name: WDTF 体系结构
           href: wdtf-architecture.md
         - name: WDTF 运行时库
           href: wdtf-runtime-library.md
         - name: 扩展框架
-          href: extending-the-framework.md
           items:
+            - name: 扩展框架
+              href: extending-the-framework.md
             - name: COM 接口设计技能
               href: com-interface-design-skills.md

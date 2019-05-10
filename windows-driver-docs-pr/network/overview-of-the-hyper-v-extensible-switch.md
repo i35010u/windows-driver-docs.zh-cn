@@ -4,12 +4,12 @@ description: 本部分概述的 HYPER-V 可扩展交换机
 ms.assetid: 78181C72-FBFD-4860-A664-C297997D780F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ef4da2acff5012ec9f058c1f29aaa7bc1eb4ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 580a23ec1d8cb1622c0e6c47bad2a9723a29e059
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373008"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405172"
 ---
 # <a name="overview-of-the-hyper-v-extensible-switch"></a>Hyper-V 可扩展交换机概述
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373008"
 Windows Server 2012 引入的 HYPER-V 可扩展交换机 （也称为 HYPER-V 虚拟交换机），这是在 HYPER-V 父分区的管理操作系统中运行的虚拟以太网交换机。 此页包含以下主题：
 
 -   [背景读取](#background-reading)
--   [类型的 HYPER-V 可扩展交换机和网络适配器](#types-of-hyper-v--extensible-switches-and-network-adapters)
+-   [类型的 HYPER-V 可扩展交换机和网络适配器](#types-of-hyper-v-extensible-switches-and-network-adapters)
 -   [类型的可扩展交换机扩展](#types-of-extensible-switch-extensions)
 -   [HYPER-V 可扩展交换机体系结构关系图](#hyper-v-extensible-switch-architectural-diagrams)
 

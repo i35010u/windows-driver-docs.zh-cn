@@ -4,12 +4,12 @@ description: 取消 NDIS 选择性挂起空闲通知
 ms.assetid: 14C19F15-9D0E-4F37-942C-7F7AFE1EBA0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 887127920a4a04574994d82744b50570db3c1a4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2e1af43772fb39748f1c720b7c2091aab8d12ff
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351977"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405118"
 ---
 # <a name="canceling-the-ndis-selective-suspend-idle-notification"></a>取消 NDIS 选择性挂起空闲通知
 
@@ -76,7 +76,7 @@ NDIS 和微型端口驱动程序时 NDIS 取消的空闲通知由于唤醒信号
 
 1.  总线驱动程序完成[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)转换到低功耗状态适配器之前的 NDIS 颁发。 通过完成 IRP，总线驱动程序通知 NDIS 网络适配器已生成唤醒信号。
 
-2.  NDIS 调用[ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)处理程序函数以启动取消空闲通知的操作。 在此操作中涉及的步骤都相同中所述[取消由于过量驱动程序活动的空闲通知](#cancel-due-to-driver-activity)。
+2.  NDIS 调用[ *MiniportCancelIdleNotification* ](https://msdn.microsoft.com/library/windows/hardware/hh464088)处理程序函数以启动取消空闲通知的操作。 在此操作中涉及的步骤都相同中所述[取消由于过量驱动程序活动的空闲通知](#canceling-the-idle-notification-because-of-overlying-driver-activity)。
 
 例如下, 图显示了当 NDIS 取消的空闲通知由于通过 USB 网络适配器来发出信号的唤醒事件时所涉及的步骤。
 

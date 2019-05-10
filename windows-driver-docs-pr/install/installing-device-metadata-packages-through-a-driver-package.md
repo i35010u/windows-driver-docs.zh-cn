@@ -4,17 +4,17 @@ description: 通过驱动程序包安装设备元数据包
 ms.assetid: fd140583-d4f9-4817-8edc-5bc3c6a2a1d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98af154c1b33bbc1f14dcad87642c9f6b6ba30b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32a1fe740a5bcfdc9876a75cd49479b1910a72fa
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369481"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65455795"
 ---
 # <a name="installing-device-metadata-packages-through-a-driver-package"></a>通过驱动程序包安装设备元数据包
 
 
-一个[驱动程序包](driver-packages.md)可以通过将其复制到安装设备元数据包[设备元数据存储区](device-metadata-store.md)。 这通过使用实现[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)内[ **DestinationDirs** ](inf-destinationdirs-section.md)和[ **DDInstall** ](inf-ddinstall-section.md)的部分[INF 文件](inf-files.md)驱动程序包。
+一个[驱动程序包](driver-packages.md)可以通过将其复制到安装设备元数据包[设备元数据存储区](device-metadata-store.md)。 这通过使用实现[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)内[ **DestinationDirs** ](inf-destinationdirs-section.md)和[ **DDInstall** ](inf-ddinstall-section.md)的部分[INF 文件](overview-of-inf-files.md)驱动程序包。
 
 **请注意**我们强烈建议您从 WMIS 服务器而不是通过驱动程序包安装设备元数据包。 有关详细信息，请参阅[WMIS 从安装设备元数据包](installing-device-metadata-packages-from-wmis.md)。
 

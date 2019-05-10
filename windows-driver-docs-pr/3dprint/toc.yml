@@ -1,13 +1,15 @@
 - name: 3D 打印机驱动程序设计指南
-  href: index.md
   items:
+    - name: 3D 打印机驱动程序设计指南
+      href: index.md
     - name: 3D 打印合作伙伴加入指南
       href: 3d-partner-onboarding-guide.md
     - name: 3D 打印机的 Microsoft 标准驱动程序
       href: microsoft-standard-driver-for-3d-printers-.md
     - name: MS3DPrint 标准 G-Code 驱动程序
-      href: ms3dprint-standard-g-code-driver.md
       items:
+        - name: MS3DPrint 标准 G-Code 驱动程序
+          href: ms3dprint-standard-g-code-driver.md
         - name: 驱动程序安装
           href: driver-installation.md
         - name: 配置设备
@@ -19,8 +21,9 @@
     - name: 3D 打印机自定义 USB 接口支持
       href: 3d-printer-custom-usb-interface.md
     - name: 3D 打印示例 WSD 应用
-      href: 3d-printing-sample-wsd-app.md
       items:
+        - name: 3D 打印示例 WSD 应用
+          href: 3d-printing-sample-wsd-app.md
         - name: 安装驱动程序和示例应用
           href: install-the-driver-and-sample-app.md
         - name: 将文件打印到 WSD 示例
@@ -30,8 +33,9 @@
     - name: 在设备上启用 WSPrint 2.0
       href: enabling-wsprint-on-a-device.md
     - name: 3D 制造的打印架构关键字
-      href: print-schema-keywords-for-3d-manufacturing.md
       items:
+        - name: 3D 制造的打印架构关键字
+          href: print-schema-keywords-for-3d-manufacturing.md
         - name: 3D 制造关键字概述
           href: 3d-manufacturing-keywords-overview.md
         - name: 设备控制关键字

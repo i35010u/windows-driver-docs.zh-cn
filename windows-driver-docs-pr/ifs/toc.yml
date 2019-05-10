@@ -1,17 +1,21 @@
 - name: 可安装的文件系统驱动程序设计指南
-  href: index.md
   items:
+    - name: 可安装的文件系统驱动程序设计指南
+      href: index.md
     - name: 文件系统驱动程序
-      href: file-system-drivers.md
       items:
+        - name: 文件系统驱动程序
+          href: file-system-drivers.md
         - name: 安装文件系统驱动程序
-          href: installing-a-file-system-driver.md
           items:
+            - name: 安装文件系统驱动程序
+              href: installing-a-file-system-driver.md
             - name: 为文件系统驱动程序创建 INF 文件
               href: creating-an-inf-file-for-a-file-system-driver.md
         - name: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
-          href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
           items:
+            - name: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
+              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
             - name: 将 ECP 附加到产生内核模式驱动程序的 IRP_MJ_CREATE 操作
               href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
             - name: 在文件系统筛选器驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
@@ -21,18 +25,21 @@
             - name: 系统定义的 ECP
               href: system-defined-ecps.md
     - name: 文件系统筛选器驱动程序
-      href: file-system-filter-drivers.md
       items:
+        - name: 文件系统筛选器驱动程序
+          href: file-system-filter-drivers.md
         - name: 文件系统基础知识
-          href: file-system-fundamentals.md
           items:
+            - name: 文件系统基础知识
+              href: file-system-fundamentals.md
             - name: 什么决定何时加载驱动程序
               href: what-determines-when-a-driver-is-loaded.md
             - name: 文件系统在系统启动期间会发生什么情况
               href: what-happens-to-file-systems-during-system-boot.md
             - name: 存储设备堆栈、存储卷和文件系统堆栈
-              href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
               items:
+                - name: 存储设备堆栈、存储卷和文件系统堆栈
+                  href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
                 - name: 存储设备堆栈
                   href: storage-device-stacks.md
                 - name: 存储卷
@@ -40,27 +47,31 @@
                 - name: 文件系统堆栈
                   href: file-system-stacks.md
             - name: 装载卷
-              href: mounting-a-volume.md
               items:
+                - name: 装载卷
+                  href: mounting-a-volume.md
                 - name: 如何装载卷
                   href: how-the-volume-is-mounted.md
                 - name: 卷装载示例
                   href: volume-mount-example.md
         - name: 文件系统筛选器驱动程序简介
-          href: introduction-to-file-system-filter-drivers.md
           items:
+            - name: 文件系统筛选器驱动程序简介
+              href: introduction-to-file-system-filter-drivers.md
             - name: 什么是文件系统筛选器驱动程序？
               href: what-is-a-file-system-filter-driver-.md
             - name: 文件系统筛选器驱动程序不是设备驱动程序
-              href: file-system-filter-drivers-are-not-device-drivers.md
               items:
+                - name: 文件系统筛选器驱动程序不是设备驱动程序
+                  href: file-system-filter-drivers-are-not-device-drivers.md
                 - name: 文件系统筛选器驱动程序与设备驱动程序的类似程度如何
                   href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
                 - name: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
                   href: how-file-system-filter-drivers-are-different-from-device-drivers.md
             - name: 安装文件系统筛选器驱动程序
-              href: installing-a-file-system-filter-driver.md
               items:
+                - name: 安装文件系统筛选器驱动程序
+                  href: installing-a-file-system-filter-driver.md
                 - name: 为文件系统筛选器驱动程序创建 INF 文件
                   href: creating-an-inf-file-for-a-file-system-filter-driver.md
                 - name: '文件系统筛选器驱动程序的加载顺序组 '
@@ -72,8 +83,9 @@
                 - name: 使用 INF 文件卸载文件系统筛选器驱动程序
                   href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
             - name: 初始化文件系统筛选器驱动程序
-              href: initializing-a-file-system-filter-driver.md
               items:
+                - name: 初始化文件系统筛选器驱动程序
+                  href: initializing-a-file-system-filter-driver.md
                 - name: 创建控制设备对象
                   href: creating-the-control-device-object.md
                 - name: 注册 IRP 调度例程
@@ -91,8 +103,9 @@
                 - name: 返回状态
                   href: returning-status.md
             - name: 将筛选器附加到文件系统或卷
-              href: attaching-a-filter-to-a-file-system-or-volume.md
               items:
+                - name: 将筛选器附加到文件系统或卷
+                  href: attaching-a-filter-to-a-file-system-or-volume.md
                 - name: 创建筛选器设备对象
                   href: creating-the-filter-device-object.md
                 - name: 将筛选设备对象附加到目标设备对象
@@ -104,13 +117,15 @@
                 - name: 清除 DO_DEVICE_INITIALIZING 标志
                   href: clearing-the-do-device-initializing-flag.md
         - name: 筛选 IRP 和快速 I/O
-          href: filtering-irps-and-fast-i-o.md
           items:
+            - name: 筛选 IRP 和快速 I/O
+              href: filtering-irps-and-fast-i-o.md
             - name: IRP 不同于快速 I/O
               href: irps-are-different-from-fast-i-o.md
             - name: 文件系统筛选器驱动程序使用的设备对象的类型
-              href: types-of-device-objects-used-by-file-system-filter-drivers.md
               items:
+                - name: 文件系统筛选器驱动程序使用的设备对象的类型
+                  href: types-of-device-objects-used-by-file-system-filter-drivers.md
                 - name: 筛选器驱动程序的控制设备对象
                   href: the-filter-driver-s-control-device-object.md
                 - name: 附加到文件系统的筛选器设备对象
@@ -118,8 +133,9 @@
                 - name: 附加到卷的筛选器设备对象
                   href: filter-device-object-attached-to-a-volume.md
         - name: 编写 IRP 调度例程
-          href: writing-irp-dispatch-routines.md
           items:
+            - name: 编写 IRP 调度例程
+              href: writing-irp-dispatch-routines.md
             - name: 完成 IRP
               href: completing-the-irp.md
             - name: 将 IRP 向下传递到较低级别的驱动程序
@@ -133,8 +149,9 @@
             - name: 调度例程 IRQL 和线程上下文
               href: dispatch-routine-irql-and-thread-context.md
         - name: 使用 IRP 完成例程
-          href: using-irp-completion-routines.md
           items:
+            - name: 使用 IRP 完成例程
+              href: using-irp-completion-routines.md
             - name: 如何执行完成处理
               href: how-completion-processing-is-performed.md
             - name: 检查 PendingReturned 标志
@@ -146,13 +163,15 @@
             - name: 完成例程的约束
               href: constraints-on-completion-routines.md
         - name: 跟踪旧文件系统筛选器驱动程序中的按流上下文
-          href: tracking-per-stream-context-in-a-legacy-file-system-filter-driver.md
           items:
+            - name: 跟踪旧文件系统筛选器驱动程序中的按流上下文
+              href: tracking-per-stream-context-in-a-legacy-file-system-filter-driver.md
             - name: 文件流、流上下文和按流上下文
               href: file-streams--stream-contexts--and-per-stream-contexts.md
             - name: 创建和使用按流上下文结构
-              href: creating-and-using-per-stream-context-structures.md
               items:
+                - name: 创建和使用按流上下文结构
+                  href: creating-and-using-per-stream-context-structures.md
                 - name: 创建按流上下文
                   href: creating-a-per-stream-context.md
                 - name: 将按流上下文与文件流相关联
@@ -164,18 +183,21 @@
         - name: 阻止旧版文件系统筛选器驱动程序
           href: blocking-file-system-filter-drivers.md
     - name: 文件系统微筛选器驱动程序
-      href: file-system-minifilter-drivers.md
       items:
+        - name: 文件系统微筛选器驱动程序
+          href: file-system-minifilter-drivers.md
         - name: 筛选器管理器和微筛选器驱动程序体系结构
-          href: filter-manager-and-minifilter-driver-architecture.md
           items:
+            - name: 筛选器管理器和微筛选器驱动程序体系结构
+              href: filter-manager-and-minifilter-driver-architecture.md
             - name: 筛选器管理器概念
               href: filter-manager-concepts.md
             - name: 筛选器管理器模型的优势
               href: advantages-of-the-filter-manager-model.md
             - name: 筛选器管理器对微筛选器驱动程序的支持
-              href: filter-manager-support-for-minifilter-drivers.md
               items:
+                - name: 筛选器管理器对微筛选器驱动程序的支持
+                  href: filter-manager-support-for-minifilter-drivers.md
                 - name: 加载和卸载
                   href: loading-and-unloading.md
                 - name: 处理 I/O 操作
@@ -201,8 +223,9 @@
             - name: 旧筛选器驱动程序移植指南
               href: guidelines-for-porting-legacy-filter-drivers.md
         - name: 安装微筛选器驱动程序
-          href: installing-a-minifilter-driver.md
           items:
+            - name: 安装微筛选器驱动程序
+              href: installing-a-minifilter-driver.md
             - name: 创建用于微筛选器驱动程序的 INF 文件
               href: creating-an-inf-file-for-a-minifilter-driver.md
             - name: 微筛选器驱动程序的加载顺序组和等级
@@ -214,8 +237,9 @@
             - name: 重新分析点标记请求
               href: reparse-point-tag-request.md
         - name: 编写微筛选器驱动程序的 DriverEntry 例程
-          href: writing-a-driverentry-routine-for-a-minifilter-driver.md
           items:
+            - name: 编写微筛选器驱动程序的 DriverEntry 例程
+              href: writing-a-driverentry-routine-for-a-minifilter-driver.md
             - name: 注册微筛选器驱动程序
               href: registering-the-minifilter-driver.md
             - name: 启动筛选
@@ -223,13 +247,15 @@
             - name: 从微筛选器 DriverEntry 例程返回状态
               href: returning-status-from-a-minifilter-driverentry-routine.md
         - name: 为微筛选器驱动程序编写 FilterUnloadCallback 例程
-          href: writing-a-filterunloadcallback-routine-for-a-minifilter-driver.md
           items:
+            - name: 为微筛选器驱动程序编写 FilterUnloadCallback 例程
+              href: writing-a-filterunloadcallback-routine-for-a-minifilter-driver.md
             - name: 调用 FilterUnloadCallback 例程时
               href: when-the-filterunloadcallback-routine-is-called.md
             - name: 编写 FilterUnloadCallback 例程
-              href: writing-a-filterunloadcallback-routine.md
               items:
+                - name: 编写 FilterUnloadCallback 例程
+                  href: writing-a-filterunloadcallback-routine.md
                 - name: 关闭通信服务器端口
                   href: closing-the-communication-server-port.md
                 - name: 取消注册微筛选器
@@ -239,18 +265,21 @@
                 - name: 从 FilterUnloadCallback 例程返回状态
                   href: returning-status-from-a-filterunloadcallback-routine.md
         - name: 编写预操作和后操作回调例程
-          href: writing-preoperation-and-postoperation-callback-routines.md
           items:
+            - name: 编写预操作和后操作回调例程
+              href: writing-preoperation-and-postoperation-callback-routines.md
             - name: 注册预操作和后操作回调例程
               href: registering-preoperation-and-postoperation-callback-routines.md
             - name: 筛选微筛选器驱动程序中的 I/O 操作
               href: filtering-i-o-operations-in-a-minifilter-driver.md
             - name: 编写预操作回调例程
-              href: writing-preoperation-callback-routines.md
               items:
+                - name: 编写预操作回调例程
+                  href: writing-preoperation-callback-routines.md
                 - name: 沿微筛选器驱动程序实例堆栈向下传递 I/O 操作
-                  href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                   items:
+                    - name: 沿微筛选器驱动程序实例堆栈向下传递 I/O 操作
+                      href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                     - name: 返回 FLT_PREOP_SUCCESS_WITH_CALLBACK
                       href: returning-flt-preop-success-with-callback.md
                     - name: 返回 FLT_PREOP_SUCCESS_NO_CALLBACK
@@ -264,11 +293,13 @@
                 - name: 在预操作回调例程中挂起 I/O 操作
                   href: pending-an-i-o-operation-in-a-preoperation-callback-routine.md
             - name: 编写后操作回调例程
-              href: writing-postoperation-callback-routines.md
               items:
+                - name: 编写后操作回调例程
+                  href: writing-postoperation-callback-routines.md
                 - name: 执行 I/O 操作的完成处理
-                  href: performing-completion-processing-for-an-i-o-operation.md
                   items:
+                    - name: 执行 I/O 操作的完成处理
+                      href: performing-completion-processing-for-an-i-o-operation.md
                     - name: 确保在安全的 IRQL 上执行完成处理
                       href: ensuring-that-completion-processing-is-performed-at-safe-irql.md
                 - name: 在后操作回调例程中挂起 I/O 操作
@@ -278,8 +309,9 @@
             - name: 修改 I/O 操作的参数
               href: modifying-the-parameters-for-an-i-o-operation.md
             - name: 确定 I/O 操作的缓冲方法
-              href: determining-the-buffering-method-for-an-i-o-operation.md
               items:
+                - name: 确定 I/O 操作的缓冲方法
+                  href: determining-the-buffering-method-for-an-i-o-operation.md
                 - name: 操作，可以是基于 IRP 的操作或快速的 I/O 操作
                   href: operations-that-can-be-irp-based-or-fast-i-o.md
                 - name: 基于 IRP 的 I/O 操作，遵循设备对象标志
@@ -293,15 +325,17 @@
                 - name: 基于 IRP 的 I/O 操作，没有缓冲区
                   href: irp-based-i-o-operations-that-have-no-buffers.md
             - name: 访问 I/O 操作的用户缓冲区
-              href: accessing-the-user-buffers-for-an-i-o-operation.md
               items:
+                - name: 访问 I/O 操作的用户缓冲区
+                  href: accessing-the-user-buffers-for-an-i-o-operation.md
                 - name: 访问预操作回调例程中的用户缓冲区
                   href: accessing-user-buffers-in-a-preoperation-callback-routine.md
                 - name: 访问后操作回调例程中的用户缓冲区
                   href: accessing-user-buffers-in-a-postoperation-callback-routine.md
         - name: 管理微筛选器驱动程序中的上下文
-          href: managing-contexts-in-a-minifilter-driver.md
           items:
+            - name: 管理微筛选器驱动程序中的上下文
+              href: managing-contexts-in-a-minifilter-driver.md
             - name: 注册上下文类型
               href: registering-context-types.md
             - name: 创建上下文
@@ -323,24 +357,29 @@
             - name: 最佳方案
               href: best-practices.md
     - name: 网络重定向程序驱动程序
-      href: network-redirector-drivers.md
       items:
+        - name: 网络重定向程序驱动程序
+          href: network-redirector-drivers.md
         - name: 远程文件系统简介
-          href: introduction-to-remote-file-systems.md
           items:
+            - name: 远程文件系统简介
+              href: introduction-to-remote-file-systems.md
             - name: 远程文件系统的组件
               href: components-of-a-remote-file-system.md
         - name: 网络重定向程序简介
-          href: introduction-to-network-redirectors.md
           items:
+            - name: 网络重定向程序简介
+              href: introduction-to-network-redirectors.md
             - name: 什么是网络重定向程序？
-              href: what-is-a-network-redirector-.md
               items:
+                - name: 什么是网络重定向程序？
+                  href: what-is-a-network-redirector-.md
                 - name: 网络重定向程序的基本体系结构
                   href: basic-architecture-of-a-network-redirector.md
             - name: 内核模式网络重定向程序驱动程序
-              href: the-kernel-mode-network-redirector-driver.md
               items:
+                - name: 内核模式网络重定向程序驱动程序
+                  href: the-kernel-mode-network-redirector-driver.md
                 - name: 网络重定向程序的设计和性能
                   href: network-redirector-design-and-performance.md
                 - name: Windows NT 中的网络重定向程序设计
@@ -350,15 +389,17 @@
                 - name: 重定向的驱动器缓冲子系统
                   href: the-redirected-drive-buffering-subsystem.md
                 - name: Oplock 语义
-                  href: oplock-semantics.md
                   items:
+                    - name: Oplock 语义
+                      href: oplock-semantics.md
                     - name: 概述
                       href: overview.md
                     - name: 授予 Oplock
                       href: granting-oplocks.md
                     - name: 破坏 Oplock
-                      href: breaking-oplocks.md
                       items:
+                        - name: 破坏 Oplock
+                          href: breaking-oplocks.md
                         - name: IRP_MJ_CREATE
                           href: irp-mj-create2.md
                         - name: IRP_MJ_READ
@@ -376,11 +417,13 @@
                     - name: 确认 Oplock 突破
                       href: acknowledging-oplock-breaks.md
         - name: 内核网络重定向程序驱动程序组件
-          href: kernel-network-redirector-driver-components.md
           items:
+            - name: 内核网络重定向程序驱动程序组件
+              href: kernel-network-redirector-driver-components.md
             - name: RDBSS 驱动程序和库
-              href: the-rdbss-driver-and-library.md
               items:
+                - name: RDBSS 驱动程序和库
+                  href: the-rdbss-driver-and-library.md
                 - name: RDBSS 提供的例程
                   href: routines-provided-by-rdbss.md
                 - name: RDBSS 定义的宏
@@ -402,8 +445,9 @@
                 - name: RX_CONTEXT 和 IRP 管理
                   href: rx-context-and-irp-management.md
                 - name: 连接和文件结构管理
-                  href: connection-and-file-structure-management.md
                   items:
+                    - name: 连接和文件结构管理
+                      href: connection-and-file-structure-management.md
                     - name: SRV_CALL 结构
                       href: the-srv-call-structure.md
                     - name: NET_ROOT 结构
@@ -437,8 +481,9 @@
                 - name: 连接引擎管理
                   href: connection-engine-management.md
             - name: 内核网络微型重定向程序驱动程序
-              href: the-kernel-network-mini-redirector-driver.md
               items:
+                - name: 内核网络微型重定向程序驱动程序
+                  href: the-kernel-network-mini-redirector-driver.md
                 - name: 由内核网络微型重定向程序实现的例程
                   href: routines-implemented-by-the-kernel-network-mini-redirector.md
                 - name: 不是由 RDBSS 使用的例程
@@ -456,8 +501,9 @@
                 - name: 杂项网络微型重定向程序例程
                   href: miscellaneous-network-mini-redirector-routines.md
         - name: 编写内核网络重定向程序
-          href: writing-a-kernel-network-redirector.md
           items:
+            - name: 编写内核网络重定向程序
+              href: writing-a-kernel-network-redirector.md
             - name: 支持 UNC 命名和 MUP
               href: support-for-unc-naming-and-mup.md
             - name: MUP 和 DFS 交互
@@ -469,18 +515,21 @@
             - name: 网络重定向程序和文件系统进程
               href: network-redirectors-and-the-file-system-process.md
     - name: 文件系统的安全注意事项
-      href: security-considerations-for-file-systems.md
       items:
+        - name: 文件系统的安全注意事项
+          href: security-considerations-for-file-systems.md
         - name: 文件系统安全简介
           href: introduction-to-file-systems-security.md
         - name: 常规的驱动程序安全问题
-          href: general-driver-security-issues.md
           items:
+            - name: 常规的驱动程序安全问题
+              href: general-driver-security-issues.md
             - name: 什么是驱动程序安全性
               href: what-is-driver-security.md
             - name: 使用安全威胁模型进行设计
-              href: designing-with-security-threat-models.md
               items:
+                - name: 使用安全威胁模型进行设计
+                  href: designing-with-security-threat-models.md
                 - name: 欺骗身份
                   href: spoofing-identity.md
                 - name: 篡改数据
@@ -494,8 +543,9 @@
                 - name: 特权提升
                   href: elevation-of-privilege.md
             - name: 实现文件系统，尽量减少安全威胁
-              href: implementing-file-systems-to-minimize-security-threats.md
               items:
+                - name: 实现文件系统，尽量减少安全威胁
+                  href: implementing-file-systems-to-minimize-security-threats.md
                 - name: 缓冲区处理
                   href: buffer-handling.md
                 - name: 身份验证和标识
@@ -507,11 +557,13 @@
             - name: 安全测试
               href: testing-for-security.md
         - name: 文件系统的安全功能
-          href: security-features-for-file-systems.md
           items:
+            - name: 文件系统的安全功能
+              href: security-features-for-file-systems.md
             - name: 安全描述符
-              href: security-descriptors.md
               items:
+                - name: 安全描述符
+                  href: security-descriptors.md
                 - name: 安全标识符
                   href: security-identifier.md
                 - name: 访问掩码
@@ -527,11 +579,13 @@
             - name: 内核扩展属性
               href: kernel-extended-attributes.md
         - name: 文件系统安全问题
-          href: file-system-security-issues.md
           items:
+            - name: 文件系统安全问题
+              href: file-system-security-issues.md
             - name: 语义模型检查
-              href: semantic-model-checks.md
               items:
+                - name: 语义模型检查
+                  href: semantic-model-checks.md
                 - name: 创建处理
                   href: create-processing.md
                 - name: 关闭时删除
@@ -549,13 +603,15 @@
                 - name: 媒体验证
                   href: media-validation.md
             - name: 安全检查
-              href: security-checks.md
               items:
+                - name: 安全检查
+                  href: security-checks.md
                 - name: 将安全描述符应用到设备对象上
                   href: applying-security-descriptors-on-the-device-object.md
                 - name: IRP_MJ_CREATE 调度例程
-                  href: irp-mj-create-dispatch-routine.md
                   items:
+                    - name: IRP_MJ_CREATE 调度例程
+                      href: irp-mj-create-dispatch-routine.md
                     - name: 检查 IRP_MJ_CREATE 上的遍历特权
                       href: checking-for-traverse-privilege-on-irp-mj-create.md
                     - name: 检查 IRP_MJ_CREATE 上的其他特殊情况
@@ -581,8 +637,9 @@
                 - name: 进程和线程终止问题
                   href: process-and-thread-termination-issues.md
         - name: 文件系统筛选器驱动程序的安全注意事项
-          href: security-considerations-for-file-system-filter-drivers.md
           items:
+            - name: 文件系统筛选器驱动程序的安全注意事项
+              href: security-considerations-for-file-system-filter-drivers.md
             - name: 文件系统筛选器驱动程序中的代理操作
               href: proxy-operations-in-file-system-filter-drivers.md
             - name: 文件系统筛选器驱动程序中的模拟
@@ -594,8 +651,9 @@
             - name: 文件系统筛选器驱动程序中的重新分析点
               href: reparse-points-in-a-file-system-filter-driver.md
     - name: 杂项信息
-      href: miscellaneous-information.md
       items:
+        - name: 杂项信息
+          href: miscellaneous-information.md
         - name: 用于 Windows 容器的防病毒优化
           href: anti-virus-optimization-for-windows-containers.md
         - name: 卸载的数据传输
@@ -605,8 +663,9 @@
         - name: 了解具有重复卷名称的卷枚举
           href: understanding-volume-enumerations-with-duplicate-volume-names.md
     - name: 参考
-      href: ifs-reference.md
       items:
+        - name: 参考
+          href: ifs-reference.md
         - name: CcIsThereDirtyLoggedPages
           href: ccistheredirtyloggedpages.md
         - name: CcSetLogHandleForFileEx
@@ -614,8 +673,9 @@
         - name: CcSetLoggedDataThreshold
           href: ccsetloggeddatathreshold.md
         - name: CcSetReadAheadGranularityEx
-          href: ccsetreadaheadgranularityex.md
           items:
+            - name: CcSetReadAheadGranularityEx
+              href: ccsetreadaheadgranularityex.md
             - name: READ_AHEAD_PARAMETERS
               href: read-ahead-parameters.md
         - name: CcUnmapFileOffsetFromSystemCache

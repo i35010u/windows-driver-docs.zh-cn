@@ -1,6 +1,7 @@
 - name: HID 驱动程序
-  href: index.md
   items:
+    - name: HID 驱动程序
+      href: index.md
     - name: HID 中的新增功能
       href: what-s-new-in-hid.md
     - name: HID 概念简介
@@ -12,13 +13,15 @@
     - name: Windows 中支持的 HID 传输方式
       href: hid-transports-supported-in-windows.md
     - name: HID 客户端
-      href: hid-clients.md
       items:
+        - name: HID 客户端
+          href: hid-clients.md
         - name: HID 用法
           href: hid-usages.md
         - name: HID 集合
-          href: hid-collections.md
           items:
+            - name: HID 集合
+              href: hid-collections.md
             - name: 顶级集合
               href: top-level-collections.md
             - name: Windows 打开的供系统使用的顶级集合
@@ -36,8 +39,9 @@
             - name: 数据索引
               href: data-indices.md
         - name: 打开 HID 集合
-          href: opening-hid-collections.md
           items:
+            - name: 打开 HID 集合
+              href: opening-hid-collections.md
             - name: 找到并打开 HID 集合
               href: finding-and-opening-a-hid-collection.md
             - name: HID 客户端驱动程序
@@ -49,8 +53,9 @@
             - name: 获取集合信息
               href: obtaining-collection-information.md
         - name: 处理 HID 报告
-          href: handling-hid-reports.md
           items:
+            - name: 处理 HID 报告
+              href: handling-hid-reports.md
             - name: 初始化 HID 报告
               href: initializing-hid-reports.md
             - name: 获取 HID 报告
@@ -76,8 +81,9 @@
         - name: 显示器亮度控制
           href: display-brightness-control.md
     - name: HID 传输
-      href: hid-transports.md
       items:
+        - name: HID 传输
+          href: hid-transports.md
         - name: ACPI 按钮设备
           href: acpi-button-device.md
         - name: HID 按钮驱动程序
@@ -85,8 +91,9 @@
         - name: 虚拟 HID 框架 (VHF)
           href: virtual-hid-framework--vhf-.md
         - name: 传输微型驱动程序
-          href: transport-minidrivers.md
           items:
+            - name: 传输微型驱动程序
+              href: transport-minidrivers.md
             - name: 将微型驱动程序绑定到 HID 类
               href: binding-minidrivers-to-the-hid-class.md
             - name: 微型驱动程序和 HID 类驱动程序
@@ -94,8 +101,9 @@
             - name: 平板电脑的微型驱动程序要求
               href: minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows.md
         - name: 基于 USB 的 HID
-          href: hid-over-usb.md
           items:
+            - name: 基于 USB 的 HID
+              href: hid-over-usb.md
             - name: 基于 USB 的 HID 的体系结构
               href: architecture-and-overview-for-usb.md
             - name: 即插即用支持
@@ -107,8 +115,9 @@
             - name: 基于 USB 的 HID 的资源
               href: reference-and-additional-details.md
         - name: 基于 I2C 的 HID
-          href: hid-over-i2c-guide.md
           items:
+            - name: 基于 I2C 的 HID
+              href: hid-over-i2c-guide.md
             - name: 体系结构和概述
               href: architecture-and-overview.md
             - name: 即插即用支持和电源管理
@@ -122,8 +131,9 @@
             - name: 基于 I2C 的 HID 的资源
               href: reference-and-additional-details2.md
     - name: 非 HID 旧设备
-      href: non-hid-legacy-devices.md
       items:
+        - name: 非 HID 旧设备
+          href: non-hid-legacy-devices.md
         - name: 键盘和鼠标类驱动程序
           href: keyboard-and-mouse-class-drivers.md
         - name: PS/2 (i8042prt) 驱动程序
@@ -131,8 +141,9 @@
         - name: 第三方筛选器驱动程序
           href: 3rd-party-filter-drivers.md
         - name: OS 驱动程序安装
-          href: os-driver-installation.md
           items:
+            - name: OS 驱动程序安装
+              href: os-driver-installation.md
             - name: INF DDInstall.MigrateToDevNode 节
               href: inf-ddinstall-migratetodevnode-section.md
             - name: INF SharedDriver 条目
@@ -142,11 +153,13 @@
             - name: INF PS2_Inst.NoInterruptInit 节
               href: inf-ps2-inst-nointerruptinit-section.md
         - name: DirectInput
-          href: directinput.md
           items:
+            - name: DirectInput
+              href: directinput.md
             - name: 游戏杆支持
-              href: joystick-support.md
               items:
+                - name: 游戏杆支持
+                  href: joystick-support.md
                 - name: 游戏杆驱动程序模型
                   href: joystick-driver-model.md
                 - name: 微型驱动程序提供的回调

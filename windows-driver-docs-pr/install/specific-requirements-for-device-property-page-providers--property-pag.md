@@ -4,12 +4,12 @@ description: 设备属性页提供程序（属性页扩展 DLL）的特定要求
 ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ef7180f4854a12bfbe45fe6f7d8ee95501dc62
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d09863264bb4d0ba64ef1b562efa31cea9eb094
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369431"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456423"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>设备属性页提供程序（属性页扩展 DLL）的特定要求
 
@@ -26,7 +26,7 @@ ms.locfileid: "63369431"
 
 ### <a name="installing-a-device-property-page"></a>安装设备属性页
 
-使用中的以下指令安装 DLL 的属性页扩展[INF 文件](inf-files.md)的[驱动程序包](driver-packages.md):
+使用中的以下指令安装 DLL 的属性页扩展[INF 文件](overview-of-inf-files.md)的[驱动程序包](driver-packages.md):
 
 1.  使用*添加注册表部分*，这由指定[ **INF AddReg 指令**](inf-addreg-directive.md)中[ **INF *DDInstall*一节**](inf-ddinstall-section.md)，以添加**EnumPropPages32**的设备条目。 **EnumPropPages32**项指定以下[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)值：
 

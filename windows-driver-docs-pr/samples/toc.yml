@@ -1,6 +1,7 @@
 - name: Windows 驱动程序示例
-  href: index.md
   items:
+    - name: Windows 驱动程序示例
+      href: index.md
     - name: 音频驱动程序示例
       href: audio-driver-samples.md
     - name: AVStream 驱动程序示例

@@ -4,12 +4,12 @@ description: 指示对远程 NDIS QoS 参数的更改
 ms.assetid: E09EBF25-96B6-417F-9538-D0BEBE5B9E19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e0875d66834c76750e75b0025cf5c1a35f462b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03f5b0d9184551e83da99acfae59de2b859cbfc4
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327753"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405220"
 ---
 # <a name="indicating-changes-to-the-remote-ndis-qos-parameters"></a>指示对远程 NDIS QoS 参数的更改
 
@@ -55,7 +55,7 @@ ms.locfileid: "63327753"
 
     例如，微型端口驱动程序设置的相应**NDIS\_QOS\_参数\_*Xxx*\_CHANGED**标志中**标志**其中包含的数据自以前颁发的微型端口驱动程序以来已更改这些成员的成员[ **NDIS\_状态\_QOS\_远程\_参数\_更改**](https://msdn.microsoft.com/library/windows/hardware/hh439812)状态指示。
 
-    有关如何设置的详细信息**标志**成员，请参阅[设置的指导原则**标志**成员](#flags)。
+    有关如何设置的详细信息**标志**成员，请参阅[设置的指导原则**标志**成员](#guidelines-for-setting-the-flags-member)。
 
 3.  微型端口驱动程序初始化[ **NDIS\_QOS\_分类\_元素**](https://msdn.microsoft.com/library/windows/hardware/hh451631)远程 NDIS QoS 中的每个流量分类的结构参数。 驱动程序会添加这些元素的末尾[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)缓冲区中的结构。
 

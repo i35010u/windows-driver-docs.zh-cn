@@ -4,12 +4,12 @@ description: 枚举虚拟端口上的接收筛选器
 ms.assetid: E809B7A3-256B-4351-8A60-D80D4A86EFDB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bdd5da9bdcd3045ed71ac6662128f65f07a269
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7977ac9721aef98a99219854cbc45ad6b485857
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353015"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405121"
 ---
 # <a name="enumerating-receive-filters-on-a-virtual-port"></a>枚举虚拟端口上的接收筛选器
 
@@ -21,11 +21,11 @@ ms.locfileid: "63353015"
 
 -   枚举 VPort 的接收筛选器的参数。
 
-    有关详细信息，请参阅[枚举接收筛选器](#enumerate)。
+    有关详细信息，请参阅[枚举接收筛选器](#enumerating-receive-filters)。
 
 -   查询特定的接收筛选器的参数。
 
-    有关详细信息，请参阅[查询一个特定的接收筛选器](#query)。
+    有关详细信息，请参阅[查询一个特定的接收筛选器](#querying-a-specific-receive-filter)。
 
 有关如何创建 VPort 的详细信息，请参阅[创建虚拟端口](creating-a-virtual-port.md)。
 

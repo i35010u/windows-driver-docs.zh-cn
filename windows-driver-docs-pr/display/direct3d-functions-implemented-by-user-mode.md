@@ -4,12 +4,12 @@ description: 本主题介绍用户模式下显示为 Microsoft Direct3D 运行�
 ms.assetid: 6A9D0944-261D-4CAD-AD1B-601369D2FD68
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 26affc22a77dfa2aabe4fe4da1344a271267a08b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1ad657fbf8c4b16f2a05bfd38b70ec1fb4675cc
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358039"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405107"
 ---
 # <a name="direct3d-functions-implemented-by-user-mode-display-drivers"></a>用户模式显示驱动程序实现的 Direct3D 函数
 
@@ -285,7 +285,7 @@ Direct3D 的运行时调用[CreateDevice](https://docs.microsoft.com/windows-har
 
 ## <a name="direct3d-version-11-state-functions"></a>Direct3D 11 版状态函数
 
-本部分介绍 Microsoft Direct3D 11.0 版运行时添加的用户模式显示驱动程序状态函数。 否则，用户模式下的其余部分显示驱动程序状态函数，请参见[Direct3D 版本 10 状态函数](#direct3d-version-10-state-functions)并[Direct3D 版本 10.1 状态函数](#direct3d-version-10-1-state-functions)。
+本部分介绍 Microsoft Direct3D 11.0 版运行时添加的用户模式显示驱动程序状态函数。 否则，用户模式下的其余部分显示驱动程序状态函数，请参见[Direct3D 版本 10 状态函数](#direct3d-version-10-state-functions)并[Direct3D 版本 10.1 状态函数](#direct3d-version-101-state-functions)。
 
 用户模式显示驱动程序 DLL 导出[OpenAdapter10_2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)函数，并提供指向特定于适配器的函数的成员通过[D3D10_2DDI_ADAPTERFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ns-d3d10umddi-d3d10_2ddi_adapterfuncs)结构时运行时调用 OpenAdapter10_2。
 

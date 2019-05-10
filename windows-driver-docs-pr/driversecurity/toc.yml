@@ -1,6 +1,7 @@
 - name: 驱动程序安全指南
-  href: index.md
   items:
+    - name: 驱动程序安全指南
+      href: index.md
     - name: 驱动程序安全清单
       href: driver-security-checklist.md
     - name: 驱动程序的威胁建模

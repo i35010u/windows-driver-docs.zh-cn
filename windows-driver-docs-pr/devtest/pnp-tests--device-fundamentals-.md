@@ -4,12 +4,12 @@ description: PnP 设备基础测试强制驱动程序来处理几乎所有 PnP I
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a7d773b8c5111dd7577db676e4f09aa8e0b688
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27b170a9b1e0db4666b7afe370e3b23f435e7384
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356305"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405110"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP 测试（设备基础功能）
 
@@ -302,7 +302,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 
 [如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)
 
-[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers/develop/how-to-select-and-configure-the-device-fundamental-tests)
 
 [设备基础功能测试](device-fundamentals-tests.md)
 

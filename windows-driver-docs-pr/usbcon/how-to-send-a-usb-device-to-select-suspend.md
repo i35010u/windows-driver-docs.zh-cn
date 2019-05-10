@@ -3,21 +3,21 @@ Description: 本主题介绍 USB 客户端驱动程序验证工具功能，客�
 title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116c3ff841ae540bf82faf01e6de4f0201090633
-ms.sourcegitcommit: 4c67665bf7cd4fd3599ff0751a3b0427d119937c
+ms.openlocfilehash: 9ad54348fd0c397e4a5fccca64cd86dea7fadefe
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59554069"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405042"
 ---
 # <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
 
 本主题介绍 USB 客户端驱动程序验证工具功能，客户端驱动程序来测试某些失败的情况下的 USB 3.0 驱动程序堆栈。
 
--   [USB 客户端驱动程序验证工具是什么](#what-is--the-usb-client-driver-verifier)
+-   [USB 客户端驱动程序验证工具是什么](#what-is-the-usb-client-driver-verifier)
 -   [如何启用 USB 客户端驱动程序验证工具](#how-to-enable-the-usb-client-driver-verifier)
--   [USB 客户端驱动程序验证程序的配置设置](#configuration--settings-for-the-usb-client-driver-verifier)
+-   [USB 客户端驱动程序验证程序的配置设置](#configuration-settings-for-the-usb-client-driver-verifier)
 
 ## <a name="what-is-the-usb-client-driver-verifier"></a>USB 客户端驱动程序验证工具是什么
 

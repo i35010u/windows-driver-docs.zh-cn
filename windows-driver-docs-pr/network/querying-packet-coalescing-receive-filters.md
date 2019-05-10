@@ -4,12 +4,12 @@ description: 查询数据包合并接收筛选器
 ms.assetid: D0B41718-37B9-4FB4-BA10-20765F836214
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a91050334c16928f908ed9b1139bf03c95e7af8a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0186e48cff7dce0a37729729a20d7aba9d8adbf
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339992"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405287"
 ---
 # <a name="querying-packet-coalescing-receive-filters"></a>查询数据包合并接收筛选器
 
@@ -19,9 +19,9 @@ ms.locfileid: "63339992"
 
 基础驱动程序和应用程序可以查询数据包合并接收通过执行以下操作下载到微型端口驱动程序的筛选器：
 
--   通过发出 OID 方法请求的请求的微型端口驱动程序上的接收筛选器的枚举的列表[OID\_接收\_筛选器\_枚举\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569787)。 有关详细信息，请参阅[枚举微型端口驱动程序上的接收筛选器](#enumerating)。
+-   通过发出 OID 方法请求的请求的微型端口驱动程序上的接收筛选器的枚举的列表[OID\_接收\_筛选器\_枚举\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569787)。 有关详细信息，请参阅[枚举微型端口驱动程序上的接收筛选器](#enumerating-the-receive-filters-on-a-miniport-driver)。
 
--   通过发出 OID 方法请求的请求微型端口驱动程序上的接收筛选器的测试条件参数[OID\_接收\_筛选器\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569792)。 有关详细信息，请参阅[查询微型端口驱动程序上的接收筛选器](#querying)
+-   通过发出 OID 方法请求的请求微型端口驱动程序上的接收筛选器的测试条件参数[OID\_接收\_筛选器\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569792)。 有关详细信息，请参阅[查询微型端口驱动程序上的接收筛选器](#querying-the-parameters-of-a-receive-filters-on-a-miniport-driver)
 
 NDIS 句柄[OID\_接收\_筛选器\_枚举\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569787)并[OID\_接收\_筛选器\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569792)方法 OID 请求微型端口驱动程序。 NDIS 从它来自数据的内部缓存中获取信息[OID\_接收\_筛选器\_设置\_筛选器](https://msdn.microsoft.com/library/windows/hardware/ff569795)OID 请求。
 
