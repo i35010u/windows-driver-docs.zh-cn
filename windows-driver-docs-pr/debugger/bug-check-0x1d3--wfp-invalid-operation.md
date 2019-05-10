@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a23a6d8964b66011ab9855aa59bde47305c1e860
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: 7f03d89fdc91e77388418b182ac7200817091ff3
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239674"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106384"
 ---
 # <a name="bug-check-bug-check-0x1d3-wfpinvalidoperation"></a>Bug 检查 Bug 检查 0x1D3:WFP_INVALID_OPERATION 
 
@@ -25,9 +25,7 @@ ms.locfileid: "59239674"
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
 
 
-WFP_INVALID_OPERATION bug 检查具有 0x000001D3 值。 
-
-Windows 筛选平台标注执行无效操作。
+WFP_INVALID_OPERATION bug 检查具有 0x000001D3 值。 这指示 Windows 筛选平台标注执行无效操作。
 
 ## <a name="wfpinvalidoperation-parameters"></a>WFP\_无效\_操作参数
 
@@ -49,7 +47,9 @@ Windows 筛选平台标注执行无效操作。
 
   4-保留。
 
- 
+
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
 
  
 

@@ -4,12 +4,12 @@ description: 非 DX Api 必须与驱动程序和内核更直接交互，因此�
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 04/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eed3c747bb5ff1228d1841cfad59fad9b89b219c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a101d1891100403bf633882856ccb3b00a531d26
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327545"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106414"
 ---
 # <a name="container-support-for-non-dx-apis"></a>容器支持非 DX Api
 
@@ -29,3 +29,12 @@ Windows 10 添加了一些功能，显著影响非 DX Api，以及它们依赖�
 DXGI 返回通过其 LUID [IDXGIAdapter::GetDesc](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiadapter-getdesc)。
 
 尽可能，可能会不同基于支持的确切设备接受任意数量的通用驱动程序设计原则。
+
+## <a name="wdk-dependency"></a>WDK 依赖关系
+
+许多先前提到的方法和类型是 WDK，用于生成驱动程序中以独占方式可用。
+这是 Microsoft 的标头，组织中令人遗憾监督，因为非 DX Api 之前无法依赖于只是 Windows SDK。
+如果它是太繁重的非 DX Api 包括 WDK 或本地化的运行时或加载程序组件到 WDK 依赖项，然后 Microsoft 不提供 DX API 项目的权限来有效地 sever WDK 依赖关系。
+通过使用 Microsoft 的公共文档，并创建二进制文件兼容的类型和函数声明到自己的项目，可以被切断 WDK 依赖关系。
+这些 typenames 不能与 Microsoft，用于避免名称冲突，如果其他人有意利用 DX API 项目 WDK 的相同。
+

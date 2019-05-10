@@ -148,6 +148,8 @@
     - name: NDIS 6.0 和更高版本简介
       href: introductions-to-ndis-6-0-and-later.md
       items:
+        - name: NDIS 6.83 简介
+          href: introduction-to-ndis-6-83.md
         - name: NDIS 6.82 简介
           href: introduction-to-ndis-6-82.md
         - name: NDIS 6.81 简介
@@ -285,6 +287,8 @@
     - name: 将 NDIS 版本移植到更高的 NDIS 驱动程序
       href: porting-ndis-drivers-to-newer-ndis-versions.md
       items:
+        - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.83
+          href: porting-ndis-6-x-drivers-to-ndis-6-83.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.82
           href: porting-ndis-6-x-drivers-to-ndis-6-82.md
         - name: 将 NDIS 6.x 驱动程序移植到 NDIS 6.81
