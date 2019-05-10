@@ -4,12 +4,12 @@ description: 是设备的电源策略所有者 (PPO) 的驱动程序会启用设
 ms.assetid: 5A6CB076-7D97-48EC-B2BF-3204CD093B3E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7ef2bd833e64f36a418ce1053bb6025f8d980cb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1dbcd8e09bdf314140ab810ccd2eabdba6c2b33e
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388246"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106434"
 ---
 # <a name="d3cold-capabilities-of-a-device"></a>设备的 D3cold 功能
 
@@ -18,7 +18,7 @@ ms.locfileid: "63388246"
 
 Plug and Play (PnP) 设备的操作系统通常从父总线驱动程序获取 D3cold 功能的设备信息。
 
-例如，如果设备已附加到 PCI 或 PCI Express 总线，设备的 PCI 配置空间包含 Power 管理注册块，用于指示设备的功能。 此块中的功能标志指定设备的电源状态从该设备可以发出信号电源管理事件或 PME （唤醒事件 PCI 词）。 这些状态可能包括 D3hot 和 D3cold。 有关 PCI 电源管理的详细信息，请参阅[PCI 总线电源管理接口规范](http://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)。
+例如，如果设备已附加到 PCI 或 PCI Express 总线，设备的 PCI 配置空间包含 Power 管理注册块，用于指示设备的功能。 此块中的功能标志指定设备的电源状态从该设备可以发出信号电源管理事件或 PME （唤醒事件 PCI 词）。 这些状态可能包括 D3hot 和 D3cold。 有关 PCI 电源管理的详细信息，请参阅[PCI 总线电源管理接口规范](https://www.pcisig.com/specifications/conventional/pci_bus_power_management_interface/)。
 
 如果设备必须能够从进入任何低功耗 Dx 状态信号发生唤醒事件，则设备不应进入 D3cold 除非设备、 父总线控制器和硬件平台支持从 D3cold 信号发生唤醒事件。
 

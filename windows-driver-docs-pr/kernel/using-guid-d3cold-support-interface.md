@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，驱动程序可以调用例程，以确定�
 ms.assetid: 525637E8-B16F-4038-A78D-A47064E36449
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe495fb84c75ba0d70ab695e73bb3cb617aa7839
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3cfce822c019cb076c6b3ba7133286eee66a4677
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387400"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106364"
 ---
 # <a name="using-the-guidd3coldsupportinterface-driver-interface"></a>使用 GUID\_D3COLD\_支持\_接口驱动程序接口
 
@@ -45,7 +45,7 @@ Needs = PciD3ColdSupported
 
 但是，最佳做法是，驱动程序不应假定的中的信息**DeviceWake**方法是对所指示的状态以外的其他任何系统电源状态有效**SystemWake**。 对于某些设备，设备可以从其指示发生唤醒事件的最低 Dx 状态会根据计算机是否处于工作状态 S0 或处于低功耗状态 （S1、 S2、 S3 或 S4） 而有所不同。 对于其他设备，设备连接到总线可以在实际应用时在计算机处于 S0，但设备不能处理唤醒信号。 仅*GetIdleWakeInfo*例程可以准确地描述这些设备的设备唤醒功能。
 
-例如， [PCI Express Base 3.0 规范](http://www.pcisig.com/specifications/pciexpress/specifications/)定义两个单独的机制，以指示唤醒事件 — PCI Express 链接 （总线） 处于打开状态，且链接处于关闭状态时使用的其他时，使用一种机制。 打开该链接时，设备会发送一串 PM\_PME 事务层数据包 (TLPs) 发出信号，设备应将从低功耗 Dx 状态变为 D0。 链接处于关闭状态，当设备请求是否链接会打开，使设备能够发送 PM\_PME TLPs。 若要请求该链接会打开，该设备，或者断言其唤醒\#信号 （适用于更常见的设备外观造型） 或使用"引导"机制 （不太常见）。
+例如， [PCI Express Base 3.0 规范](https://www.pcisig.com/specifications/pciexpress/specifications/)定义两个单独的机制，以指示唤醒事件 — PCI Express 链接 （总线） 处于打开状态，且链接处于关闭状态时使用的其他时，使用一种机制。 打开该链接时，设备会发送一串 PM\_PME 事务层数据包 (TLPs) 发出信号，设备应将从低功耗 Dx 状态变为 D0。 链接处于关闭状态，当设备请求是否链接会打开，使设备能够发送 PM\_PME TLPs。 若要请求该链接会打开，该设备，或者断言其唤醒\#信号 （适用于更常见的设备外观造型） 或使用"引导"机制 （不太常见）。
 
 PCI Express 规范要求从 D3cold 播发到信号电源管理事件 (PMEs) 的功能的所有设备都实现这两种设备唤醒机制，但驱动程序开发人员可能需要启用未正确执行的设备实现这些机制。
 

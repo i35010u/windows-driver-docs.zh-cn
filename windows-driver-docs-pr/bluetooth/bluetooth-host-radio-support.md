@@ -4,19 +4,19 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e03f6b403d7dd73869326dc0d9fa2b69e3934c66
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc48d59059ad5eb2aa090b1444e26585545c58fa
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328297"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106359"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
 以下列表提供了 Bluetooth 无线电支持问与答：
 
 - [在 Windows 中受支持的蓝牙主控制器](#bluetooth-host-controllers-supported-in-windows)
-- [强制 Bluetooth 堆栈加载如果 Windows 不能匹配设备 ID (Windows Vista)](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-(windows-vista))
+- [强制 Bluetooth 堆栈加载如果 Windows 不能匹配设备 ID (Windows Vista)](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista)
 - [如何确保 Bluetooth 无线电收发器在 Windows Vista 中的内置支持](#how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista)
 - [第三方 INF 文件是否应使用了 Microsoft 定义的类 GUID](#whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid)
 - [为什么控件面板蓝牙应用程序在 Windows 7 中缺少](#why-the-control-panel-bluetooth-application-is-missing-in-windows-7)
@@ -26,7 +26,7 @@ ms.locfileid: "63328297"
 - [供应商提供的配置文件的 Windows 支持](#windows-support-for-vendor-supplied-profiles)
 - [蓝牙配置文件和默认情况下启用的协议](#bluetooth-profiles-and-protocols-that-are-enabled-by-default)
 - [组策略可以如何阻止蓝牙单选安装](#how-group-policy-can-block-bluetooth-radio-installation)
-- [如何更改发布的 Windows 8 和 Windows 8.1 的设备 ID 配置文件记录](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-8.1)
+- [如何更改发布的 Windows 8 和 Windows 8.1 的设备 ID 配置文件记录](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81)
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>在 Windows 中受支持的蓝牙主控制器
 

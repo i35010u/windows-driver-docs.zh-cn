@@ -2,19 +2,21 @@
 title: NDIS 6.0 和更高版本简介
 description: 本部分介绍每个版本的 NDIS 6.X，从 NDIS 6.0 开始
 ms.assetid: 4DEB69E1-8843-4E42-A01B-9932A42226BA
-ms.date: 06/01/2017
+ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b37097f7de00f223765a31cc105ee19ff2ea28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbbef1bb030c0f718e75dc97c4262a592511eedb
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327675"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106362"
 ---
 # <a name="introductions-to-ndis-60-and-later"></a>NDIS 6.0 和更高版本简介
 
 本部分介绍每个版本的 NDIS 6。*X*，从 NDIS 6.0 开始。
 
+- [NDIS 6.83 简介](introduction-to-ndis-6-83.md)
+- [NDIS 6.82 简介](introduction-to-ndis-6-82.md)
 - [NDIS 6.81 简介](introduction-to-ndis-6-81.md)
 - [NDIS 6.80 简介](introduction-to-ndis-6-80.md)
 - [NDIS 6.70 简介](introduction-to-ndis-6-70.md)
@@ -25,4 +27,3 @@ ms.locfileid: "63327675"
 - [NDIS 6.20 简介](introduction-to-ndis-6-20.md)
 - [NDIS 6.1 简介](introduction-to-ndis-6-1.md)
 - [NDIS 6.0 简介](introduction-to-ndis-6-0.md)
-

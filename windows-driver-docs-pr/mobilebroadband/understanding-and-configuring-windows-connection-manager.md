@@ -2,14 +2,14 @@
 title: 了解和配置 Windows 连接管理器
 description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
-ms.date: 01/07/2019
+ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7203fb01847ce67f6913b25b7209b3fb70a6c0ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edb62d851633340fe858b8fd5627654e5edea613
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383767"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106358"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
@@ -18,9 +18,8 @@ ms.locfileid: "63383767"
 
 自动连接管理，Windows 8 中引入做出连接决策通过查看以太网、 Wi-fi 和移动宽带接口。 这些决策潜在客户为自动连接和断开连接的 Wi-fi 和移动宽带接口上的操作。
 
-**请注意**   Windows 响应以太网连接，但不会自动管理以太网连接。
-
- 
+> [!NOTE]
+> Windows 响应以太网连接，但不会自动管理以太网连接。
 
 本主题介绍 Windows 自动如何管理物理无线连接，而不考虑这些连接：
 
@@ -30,12 +29,17 @@ ms.locfileid: "63383767"
 
 ## <a name="span-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanspan-idconnectionmanagementpoliciesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>连接管理策略
 
-
 Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略。 这些策略在 Windows 用户界面中不公开但可以通过使用配置[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API 或组策略。
 
 ### <a name="span-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanspan-idminimizesimultaneousconnectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>最大程度减少同时连接
 
-使用配置此策略**fMinimizeConnections**组策略。 它是默认情况下，适用于 Windows 8、 Windows 8.1 和 Windows 10 上。 如果禁用此策略，则行为将类似于 Windows 7 中的每个接口连接到最适合的网络在范围内，而不考虑其他接口的连接状态。
+使用配置此策略**fMinimizeConnections**组策略。 它是默认情况下，适用于 Windows 8、 Windows 8.1 和 Windows 10 上。
+
+#### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10，版本 1809 之前, 的 Windows 版本生成 17763.404
+
+在 Windows 8、 Windows 8.1 和 Windows 10，版本 1809年、 生成 17763.404 之前, 的 Windows 10 版本的此策略是一个布尔值，可以使用组策略进行修改或[WcmSetProperty](https://msdn.microsoft.com/library/windows/desktop/hh437602.aspx) API。
+
+如果禁用此策略，则行为将类似于 Windows 7 中的每个接口连接到最适合的网络在范围内，而不考虑其他接口的连接状态。
 
 如果启用此策略，Windows 将尝试维护的最小提供最佳的可用连接级别的并发连接数。 Windows 维护以下网络的连接：
 
@@ -48,6 +52,26 @@ Windows 8、 Windows 8.1 和 Windows 10 包括许多控制连接管理的策略�
 -   与 Active Directory 域，如果电脑已加入域的优先级最高的连接
 
 剩余的所有网络软件的断开都连接下, 一节中所述。 这用于评估可用的网络未连接的。 Windows 将连接到从中它会立即软-断开连接的新网络。
+
+#### <a name="windows-10-version-1809-build-17763404-and-later"></a>Windows 10，版本 1809年、 生成 17763.404 及更高版本
+
+在 Windows 10，版本 1809年、 生成 17763.404 及更高版本，此值是一个枚举，才可通过组策略。
+
+此策略设置确定一台计算机可以有多个连接到 Internet，Windows 域，或者对二者同时。 如果允许多个连接，该策略则决定如何路由网络流量。
+
+如果将此策略设置为**0**，一台计算机可以有同时连接到 Internet，Windows 域，或者对二者同时。 可以通过任何连接，包括移动电话网络连接或按流量计费的网络路由 Internet 流量。 这是以前*禁用*Windows 10，版本 1809，生成 17663.404 之前的 Windows 版本中的此策略设置的状态。 此选项是第一家 Windows 8 中提供。
+
+如果将此策略设置为**1**，任何新的自动 Internet 连接被阻止，当计算机有至少一个有效的 Internet 连接到网络的首选类型。 优先顺序如下所示：
+
+1. Ethernet
+2. WLAN
+3. 手机网络
+
+连接后，将始终首选以太网。 用户可以仍手动连接到任何网络。 这是以前*已启用*Windows 10，版本 1809，生成 17763.404 之前的 Windows 版本中的此策略设置的状态。 此选项是第一家 Windows 8 中提供。
+
+如果此策略设置设置为**2**，则行为是类似于当该它设置为**1**。 但是，如果移动电话网络数据连接不可用，该连接将始终保持连接的服务，需要移动电话网络连接。 当用户连接到 VLAN 或以太网连接时，没有任何 Internet 流量是通过移动电话网络连接路由。 此选项也是首次在 Windows 10，版本 1703年中提供。
+
+如果此策略设置设置为**3**，则行为是类似于当设置为**2**。 但是，如果没有以太网连接，Windows 不允许用户手动连接到 WLAN。 WLAN 只能连接 （自动或手动） 时没有以太网连接。
 
 ### <a name="span-idsoftdisconnectspanspan-idsoftdisconnectspanspan-idsoftdisconnectspansoft-disconnect"></a><span id="Soft_disconnect"></span><span id="soft_disconnect"></span><span id="SOFT_DISCONNECT"></span>软断开连接
 

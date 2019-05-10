@@ -1,17 +1,17 @@
 ---
-title: 惊讶唤醒
+title: 意外唤醒
 description: 惊讶唤醒是到 D0 的意外的转换。
 ms.assetid: 07D3EC05-A1C9-40C5-90FC-E25B5A66B064
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 220e7e134bcda31dcabadd7acbc7b3760bbd5f8e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ec9d19a1c3fab877172cad9e90b703b38ba2e9b8
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543593"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106426"
 ---
-# <a name="surprise-wake-up"></a>惊讶唤醒
+# <a name="surprise-wake-up"></a>意外唤醒
 
 
 惊讶唤醒是到 D0 的意外的转换。 设备进入 D3cold 后，它可能会惊讶唤醒遇到产生了负面影响在相同的电源线上的另一台设备的驱动程序从 D3cold 到 D0 请求转换时的情况。 第一台设备的驱动程序必须接收通知的惊讶唤醒，以防止设备在未初始化的 D0 状态中保留。
@@ -20,7 +20,7 @@ ms.locfileid: "56543593"
 
 需要此电源状态更改的唯一设备驱动程序是已请求更改的驱动程序。 其他设备的驱动程序必须接收此更改的通知，以便它们可以正确地初始化其设备，以便在 D0 操作。 可以接收此通知的驱动程序应启用输入 D3cold 其设备。 否则，该驱动程序不会知道当设备进入 D0。
 
-启用设备后，它将进入默认情况下，未初始化的硬件状态。 例如， [PCI Express Base 3.0 规范](http://www.pcisig.com/specifications/pciexpress/specifications/)定义*D0 未初始化的*设备进入当它首次接收电源状态。 此状态的定义是特定于 PCI 和 PCI Express 的设备，但连接到其他总线的设备的设计时它们开启，输入类似硬件状态。
+启用设备后，它将进入默认情况下，未初始化的硬件状态。 例如， [PCI Express Base 3.0 规范](https://www.pcisig.com/specifications/pciexpress/specifications/)定义*D0 未初始化的*设备进入当它首次接收电源状态。 此状态的定义是特定于 PCI 和 PCI Express 的设备，但连接到其他总线的设备的设计时它们开启，输入类似硬件状态。
 
 对于实现多个函数的 PCI 或 PCI Express 设备，这些设备函数可能共享相同的电源线。 但是，每个函数可能具有单独的驱动程序，这些函数的驱动程序不太可能直接相互通信。 当这些函数之一的驱动程序请求到 D0 D3cold 电源状态更改时，其他函数的驱动程序不希望此更改。 这些其他函数接收电源，其驱动程序必须收到通知，以便他们可以配置要在 D0 中正常运行的函数。
 

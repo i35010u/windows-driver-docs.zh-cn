@@ -4,12 +4,12 @@ description: 通过嵌入式签名对驱动程序进行测试签名
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934e373a83a897d71b607c0996e4c482b0317223
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d516a8129fcd14ea0f2709506bdd1ba63f6edd2
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339568"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106365"
 ---
 # <a name="test-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行测试签名
 
@@ -33,7 +33,7 @@ ms.locfileid: "63339568"
 对测试签名*toaster.sys*文件，请运行以下命令行：
 
 ```cpp
-Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timestamp.dll amd64\toaster.sys
+Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timestamp.dll amd64\toaster.sys
 ```
 
 其中：
@@ -41,6 +41,8 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 -   **登录**命令配置指定的目录文件进行签名的 SignTool tstamd64.cat。
 
 -   **/V**选项启用详细的操作，在其中 SignTool 显示成功执行消息和警告消息。
+
+-   **/Fd**选项指定要用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
 -   **/S**选项指定的证书存储区的名称 (*PrivateCertStore)* 包含的测试证书。
 

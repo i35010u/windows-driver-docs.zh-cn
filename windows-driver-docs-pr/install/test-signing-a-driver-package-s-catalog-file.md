@@ -4,12 +4,12 @@ description: 对驱动程序包的目录文件进行测试签名
 ms.assetid: 8cc54f57-bac3-45a1-b780-48626943b446
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b571acb71206973608a8a9ecb051abc3f70fbfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91b4fee78c3552591c2c88c0c3d7d54ebbafc6f8
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339574"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106436"
 ---
 # <a name="test-signing-a-driver-packages-catalog-file"></a>对驱动程序包的目录文件进行测试签名
 
@@ -31,7 +31,7 @@ SignTool 还可以向数字签名添加时间戳。 时间戳，您可以确定�
 对测试签名*tstamd64.cat*目录文件，请运行以下命令行：
 
 ```cpp
-Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
+Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.verisign.com/scripts/timstamp.dll tstamd64.cat
 ```
 
 其中：
@@ -39,6 +39,8 @@ Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.ve
 -   **登录**命令配置指定的目录文件进行签名的 SignTool tstamd64.cat。
 
 -   **/V**选项启用详细的操作，在其中 SignTool 显示成功执行消息和警告消息。
+
+-   **/Fd**选项指定要用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
 -   **/S**选项指定的证书存储区的名称 (*PrivateCertStore)* 包含的测试证书。
 
