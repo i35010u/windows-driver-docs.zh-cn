@@ -1,8 +1,9 @@
 - name: 设计指南
   href: index.md
 - name: Windows 显示驱动程序模型 (WDDM) 设计指南
-  href: windows-vista-display-driver-model-design-guide.md
   items:
+    - name: Windows 显示驱动程序模型 (WDDM) 设计指南
+      href: windows-vista-display-driver-model-design-guide.md
     - name: Windows 显示驱动程序模型 (WDDM) 路线图
       href: roadmap-for-developing-drivers-for-the-windows-vista-display-driver-mo.md
     - name: Windows 10 显示驱动程序（WDDM 2.0 和更高版本）的新增功能
@@ -16,14 +17,17 @@
     - name: WDDM 2.1 功能
       href: wddm-2-1-features.md
     - name: WDDM 2.0 和 Windows 10
-      href: wddm-2-0-and-windows-10.md
       items:
+        - name: WDDM 2.0 和 Windows 10
+          href: wddm-2-0-and-windows-10.md
         - name: WDDM 2.0 中的 GPU 虚拟内存
-          href: gpu-virtual-memory-in-wddm-2-0.md
           items:
+            - name: WDDM 2.0 中的 GPU 虚拟内存
+              href: gpu-virtual-memory-in-wddm-2-0.md
             - name: GpuMmu 模型
-              href: gpummu-model.md
               items:
+                - name: GpuMmu 模型
+                  href: gpummu-model.md
                 - name: GPU 段
                   href: gpu-segments.md
                 - name: GPU 虚拟地址
@@ -55,8 +59,9 @@
             - name: IoMmu 模型
               href: iommu-model.md
         - name: WDDM 2.0 中的驱动程序驻留
-          href: driver-residency-in-wddm-2-0.md
           items:
+            - name: WDDM 2.0 中的驱动程序驻留
+              href: driver-residency-in-wddm-2-0.md
             - name: 驻留概述
               href: residency-overview.md
             - name: 分配用法跟踪
@@ -70,13 +75,15 @@
         - name: 上下文监视
           href: context-monitoring.md
     - name: WDDM 1.2 和 Windows 8
-      href: wddm-in-windows-8.md
       items:
+        - name: WDDM 1.2 和 Windows 8
+          href: wddm-in-windows-8.md
         - name: WDDM 1.2 功能
           href: wddm-v1-2-features.md
         - name: 显示基础结构的发展
-          href: advances-to-the-display-infrastructure.md
           items:
+            - name: 显示基础结构的发展
+              href: advances-to-the-display-infrastructure.md
             - name: 显示设备的容器 ID 支持
               href: container-id-support-for-displays-.md
             - name: Microsoft 基本显示驱动程序
@@ -86,8 +93,9 @@
             - name: 无头系统支持
               href: support-for-headless-systems.md
         - name: WDDM 1.2 中的 Direct3D 功能和要求
-          href: direct3d-features-and-requirements.md
           items:
+            - name: WDDM 1.2 中的 Direct3D 功能和要求
+              href: direct3d-features-and-requirements.md
             - name: Windows 8 中的 DirectX 功能改进
               href: directx-feature-improvements-in-windows-8.md
             - name: Windows 8 中的 Direct3D 软件要求
@@ -95,8 +103,9 @@
             - name: 硬件要求
               href: hardware-requirements.md
         - name: WDDM 1.2 中的图形 INF 要求
-          href: graphics-inf-requirements.md
           items:
+            - name: WDDM 1.2 中的图形 INF 要求
+              href: graphics-inf-requirements.md
             - name: Windows 8 中已更新的功能评分指令
               href: updated-feature-score-directive.md
             - name: 驱动程序匹配条件
@@ -128,8 +137,9 @@
             - name: 显示驱动程序 DLL 的文件版本格式
               href: driver-dll-for-display-adapter-or-chipset-has-properly-formatted-file-version.md
         - name: WDDM 1.2 安装方案
-          href: installation-scenarios.md
           items:
+            - name: WDDM 1.2 安装方案
+              href: installation-scenarios.md
             - name: 首选的 Windows 8 现成图形驱动程序
               href: windows-8-in-box-graphics-driver-preferred-.md
             - name: 将 Windows 8 现成图形驱动程序视为通用驱动程序
@@ -139,8 +149,9 @@
             - name: Windows 8 不支持 XDDM 驱动程序
               href: xddm-drivers--not-supported-for-windows-8-.md
         - name: WDDM 1.2 驱动程序实施指导原则
-          href: wddm-v1-2-driver-enforcement-guidelines.md
           items:
+            - name: WDDM 1.2 驱动程序实施指导原则
+              href: wddm-v1-2-driver-enforcement-guidelines.md
             - name: WDDM 1.2 驱动程序实施
               href: wddm-v1-2-driver-enforcement.md
             - name: WDDM 驱动程序和功能上限
@@ -148,8 +159,9 @@
             - name: WDDM 1.2 最佳做法
               href: wddm-v1-2-best-practices.md
     - name: Windows 显示驱动程序模型 (WDDM) 简介
-      href: introduction-to-the-windows-vista-and-later-display-driver-model.md
       items:
+        - name: Windows 显示驱动程序模型 (WDDM) 简介
+          href: introduction-to-the-windows-vista-and-later-display-driver-model.md
         - name: Windows 显示驱动程序模型 (WDDM) 体系结构
           href: windows-vista-and-later-display-driver-model-architecture.md
         - name: Windows 显示驱动程序模型 (WDDM) 的优势
@@ -159,8 +171,9 @@
         - name: Windows 显示驱动程序模型 (WDDM) 操作流
           href: windows-vista-and-later-display-driver-model-operation-flow.md
     - name: 显示微型端口和用户模式显示驱动程序的安装要求
-      href: installing-display-miniport-and-user-mode-display-drivers.md
       items:
+        - name: 显示微型端口和用户模式显示驱动程序的安装要求
+          href: installing-display-miniport-and-user-mode-display-drivers.md
         - name: 设置驱动程序控制标志
           href: setting-the-driver-control-flags.md
         - name: 添加软件注册表设置
@@ -190,8 +203,9 @@
         - name: 覆盖监视 EDID
           href: overriding-monitor-edids.md
     - name: 针对 Windows 7 和更高版本优化的显示驱动程序的安装要求
-      href: installing-display-drivers-optimized-for-windows-7-and-later.md
       items:
+        - name: 针对 Windows 7 和更高版本优化的显示驱动程序的安装要求
+          href: installing-display-drivers-optimized-for-windows-7-and-later.md
         - name: 设置 Windows 7 显示驱动程序的功能评分
           href: setting-the-feature-score-for-windows-7-display-drivers.md
         - name: 将信息追加到 Windows 7 显示驱动程序友好名称
@@ -201,8 +215,9 @@
         - name: 以 Unicode 格式编码 Windows 7 显示驱动程序 INF 文件
           href: encoding-windows-7-display-driver-inf-files-in-unicode.md
     - name: 初始化显示微型端口和用户模式显示驱动程序
-      href: initializing-display-miniport-and-user-mode-display-drivers.md
       items:
+        - name: 初始化显示微型端口和用户模式显示驱动程序
+          href: initializing-display-miniport-and-user-mode-display-drivers.md
         - name: WDDM 1.2 和更高版本中的即插即用 (PnP)
           href: plug-and-play--pnp--start-and-stop-cases.md
         - name: 在 WDDM 1.2 和更高版本中提供无缝状态转换
@@ -222,18 +237,21 @@
         - name: OpenGL 可安装客户端驱动程序的内核模式支持
           href: providing-kernel-mode-support-to-the-opengl-installable-client-driver.md
     - name: WDDM 线程和同步模型
-      href: windows-vista-display-driver-threading-and-synchronization-model.md
       items:
+        - name: WDDM 线程和同步模型
+          href: windows-vista-display-driver-threading-and-synchronization-model.md
         - name: 显示微型端口驱动程序的线程和同步模型
-          href: threading-and-synchronization-model-of-display-miniport-driver.md
           items:
+            - name: 显示微型端口驱动程序的线程和同步模型
+              href: threading-and-synchronization-model-of-display-miniport-driver.md
             - name: 线程和同步第三级别
               href: threading-and-synchronization-third-level.md
             - name: 线程和同步第二级别
               href: threading-and-synchronization-second-level.md
             - name: 线程和同步第一级别
-              href: threading-and-synchronization-first-level.md
               items:
+                - name: 线程和同步第一级别
+                  href: threading-and-synchronization-first-level.md
                 - name: 指针类
                   href: pointer-class.md
                 - name: GPU 计划程序类
@@ -253,16 +271,19 @@
         - name: 用户模式显示驱动程序的线程模型
           href: threading-model-of-user-mode-display-driver.md
     - name: 视频内存管理和 GPU 计划
-      href: video-memory-management-and-gpu-scheduling.md
       items:
+        - name: 视频内存管理和 GPU 计划
+          href: video-memory-management-and-gpu-scheduling.md
         - name: 处理内存段
-          href: handling-memory-segments.md
           items:
+            - name: 处理内存段
+              href: handling-memory-segments.md
             - name: 使用内存段描述 GPU 地址空间
               href: using-memory-segments-to-describe-the-gpu-address-space.md
             - name: 配置内存段类型
-              href: configuring-memory-segment-types.md
               items:
+                - name: 配置内存段类型
+                  href: configuring-memory-segment-types.md
                 - name: 线性内存空间段
                   href: linear-memory-space-segments.md
                 - name: 线性孔径空间段
@@ -278,8 +299,9 @@
             - name: 创建分配时指定段
               href: specifying-segments-when-creating-allocations.md
             - name: 报告图形内存
-              href: reporting-graphics-memory.md
               items:
+                - name: 报告图形内存
+                  href: reporting-graphics-memory.md
                 - name: 计算图形内存
                   href: calculating-graphics-memory.md
                 - name: 图形内存报告示例
@@ -287,8 +309,9 @@
                 - name: 检索图形内存数字
                   href: retrieving-graphics-memory-numbers.md
         - name: 处理命令和 DMA 缓冲区
-          href: handling-command-and-dma-buffers.md
           items:
+            - name: 处理命令和 DMA 缓冲区
+              href: handling-command-and-dma-buffers.md
             - name: 命令和 DMA 缓冲区简介
               href: introduction-to-command-and-dma-buffers.md
             - name: 使用有保证的协定 DMA 缓冲区模型
@@ -306,8 +329,9 @@
             - name: 准备 DMA 缓冲区
               href: preparing-dma-buffers.md
         - name: GDI 硬件加速
-          href: gdi-hardware-acceleration.md
           items:
+            - name: GDI 硬件加速
+              href: gdi-hardware-acceleration.md
             - name: 设置内存分配的大小和间距
               href: setting-the-size-and-pitch-of-the-memory-allocation.md
             - name: 初始化和 DMA 缓冲区创建
@@ -331,8 +355,9 @@
         - name: WDDM 1.3 中开始做出的呈现开销改进
           href: present-overhead-improvements.md
     - name: 用户模式显示驱动程序
-      href: user-mode-display-drivers.md
       items:
+        - name: 用户模式显示驱动程序
+          href: user-mode-display-drivers.md
         - name: 返回从运行时函数收到的错误代码
           href: returning-error-codes-received-from-runtime-functions.md
         - name: 处理 E_INVALIDARG 返回值
@@ -350,11 +375,13 @@
         - name: 处理多个锁
           href: handling-multiple-locks.md
         - name: DirectX 视频加速 2.0
-          href: directx-video-acceleration-2-0.md
           items:
+            - name: DirectX 视频加速 2.0
+              href: directx-video-acceleration-2-0.md
             - name: DirectX VA 2.0 的视频解码加速
-              href: video-decode-acceleration-for-directx-va-2-0.md
               items:
+                - name: DirectX VA 2.0 的视频解码加速
+                  href: video-decode-acceleration-for-directx-va-2-0.md
                 - name: 提供视频解码功能
                   href: providing-capabilities-for-video-decoding.md
                 - name: 创建视频解码设备
@@ -366,8 +393,9 @@
                 - name: 同步视频解码操作
                   href: synchronizing-video-decode-operations.md
             - name: DirectX VA 2.0 的视频处理
-              href: video-processing-for-directx-va-2-0.md
               items:
+                - name: DirectX VA 2.0 的视频处理
+                  href: video-processing-for-directx-va-2-0.md
                 - name: 提供视频处理功能
                   href: providing-capabilities-for-video-processing.md
                 - name: 创建视频处理设备
@@ -377,22 +405,25 @@
                 - name: 处理视频帧
                   href: processing-video-frames.md
             - name: DirectX VA 2.0 的扩展支持
-              href: extended-support-for-directx-va-2-0.md
               items:
+                - name: DirectX VA 2.0 的扩展支持
+                  href: extended-support-for-directx-va-2-0.md
                 - name: 提供 DirectX VA 2.0 扩展模式的功能
                   href: providing-capabilities-for-directx-va-2-0-extension-modes.md
                 - name: 创建和使用 DirectX VA 2.0 扩展设备
                   href: creating-and-using-a-directx-va-2-0-extension-device.md
         - name: 支持 Direct3D 版本 10
-          href: supporting-direct3d-version-10.md
           items:
+            - name: 支持 Direct3D 版本 10
+              href: supporting-direct3d-version-10.md
             - name: 启用 Direct3D 版本 10 DDI 的支持
               href: enabling-support-for-the-direct3d-version-10-ddi.md
             - name: 初始化与 Direct3D 版本 10 DDI 之间的通信
               href: initializing-communication-with-the-direct3d-version-10-ddi.md
             - name: 渲染管道
-              href: rendering-pipeline.md
               items:
+                - name: 渲染管道
+                  href: rendering-pipeline.md
                 - name: 输入装配器阶段
                   href: input-assembler-stage.md
                 - name: 顶点着色器阶段
@@ -410,8 +441,9 @@
             - name: 使用状态刷新回调函数
               href: using-the-state-refresh-callback-functions.md
             - name: 使用 Direct3D 版本 10 句柄
-              href: using-direct3d-version-10-handles.md
               items:
+                - name: 使用 Direct3D 版本 10 句柄
+                  href: using-direct3d-version-10-handles.md
                 - name: Direct3D 版本 10 运行时和驱动程序句柄
                   href: direct3d-version-10-runtime-and-driver-handles.md
                 - name: Direct3D 版本 10 内核句柄
@@ -423,8 +455,9 @@
             - name: 以追溯方式要求自由线程 CalcPrivate DDI
               href: retroactively-requiring-free-threaded-calcprivate-ddis.md
             - name: DirectX 图形基础结构 DDI
-              href: directx-graphics-infrastructure-ddi.md
               items:
+                - name: DirectX 图形基础结构 DDI
+                  href: directx-graphics-infrastructure-ddi.md
                 - name: 支持 DXGI DDI
                   href: supporting-the-dxgi-ddi.md
                 - name: DirectX 图形内核子系统
@@ -436,18 +469,21 @@
                 - name: 在注册表中设置 DXGI 信息
                   href: setting-dxgi-information-in-the-registry.md
         - name: 支持 Direct3D 版本 10.1
-          href: supporting-direct3d-version-10-1.md
           items:
+            - name: 支持 Direct3D 版本 10.1
+              href: supporting-direct3d-version-10-1.md
             - name: Direct3D 版本 10.1 的版本号
               href: version-numbers-for-direct3d-version-10-1.md
             - name: 支持扩展格式感知
-              href: supporting-extended-format-awareness.md
               items:
+                - name: 支持扩展格式感知
+                  href: supporting-extended-format-awareness.md
                 - name: 版本发现支持
                   href: version-discovery-support.md
                 - name: 扩展格式的详细信息
-                  href: details-of-the-extended-format.md
                   items:
+                    - name: 扩展格式的详细信息
+                      href: details-of-the-extended-format.md
                     - name: XR 布局
                       href: xr-layout.md
                     - name: XR 格式 Alpha 内容
@@ -473,8 +509,9 @@
                 - name: Direct3D 版本 9 驱动程序的 DDI 更改
                   href: ddi-changes-for-direct3d-version-9-drivers.md
         - name: 支持 Direct3D 版本 11
-          href: supporting-direct3d-version-11.md
           items:
+            - name: 支持 Direct3D 版本 11
+              href: supporting-direct3d-version-11.md
             - name: 启用 Direct3D 版本 11 DDI 的支持
               href: enabling-support-for-the-direct3d-version-11-ddi.md
             - name: 初始化与 Direct3D 版本 11 DDI 之间的通信
@@ -486,8 +523,9 @@
             - name: 在 Direct3D 10 基础上的更改
               href: changes-from-direct3d-10.md
             - name: 支持延迟上下文
-              href: supporting-deferred-contexts.md
               items:
+                - name: 支持延迟上下文
+                  href: supporting-deferred-contexts.md
                 - name: 延迟上下文简介
                   href: introduction-to-deferred-contexts.md
                 - name: 排除延迟上下文的 DDI 函数
@@ -503,34 +541,39 @@
             - name: Direct3D 11 视频播放改进
               href: d3d11-video-playback-improvements.md
         - name: 处理高清视频
-          href: processing-high-definition-video.md
           items:
+            - name: 处理高清视频
+              href: processing-high-definition-video.md
             - name: DXVA-HD DDI
               href: dxva-hd-ddi.md
             - name: DXVA-HD DDI 编程注意事项
               href: dxva-hd-ddi-programming-considerations.md
             - name: Windows 8.1 中的 YUV 格式范围
-              href: yuv-format-ranges.md
               items:
+                - name: Windows 8.1 中的 YUV 格式范围
+                  href: yuv-format-ranges.md
                 - name: YUV-RGB 数据范围转换
                   href: yuv-rgb-data-range-conversions.md
         - name: 保护视频内容
-          href: protecting-video-content.md
           items:
+            - name: 保护视频内容
+              href: protecting-video-content.md
             - name: 内容保护 DDI
               href: content-protection-ddi.md
             - name: 将加密会话与 DirectX 视频加速器 2.0 解码器配合使用
               href: using-crypto-session-with-directx-video-accelerator-2-0-decoder.md
         - name: 验证覆盖支持
-          href: verifying-overlay-support.md
           items:
+            - name: 验证覆盖支持
+              href: verifying-overlay-support.md
             - name: 覆盖 DDI
               href: overlay-ddi.md
             - name: 覆盖 DDI 编程注意事项
               href: overlay-ddi-programming-considerations.md
         - name: 多平面覆盖支持
-          href: multiplane-overlay-support.md
           items:
+            - name: 多平面覆盖支持
+              href: multiplane-overlay-support.md
             - name: 多平面覆盖硬件要求
               href: multiplane-overlay-hardware-requirements.md
             - name: 创建多平面覆盖资源
@@ -540,8 +583,9 @@
         - name: 平铺资源支持
           href: tiled-resource-support.md
         - name: 在混合系统中使用跨适配器资源
-          href: using-cross-adapter-resources-in-a-hybrid-system.md
           items:
+            - name: 在混合系统中使用跨适配器资源
+              href: using-cross-adapter-resources-in-a-hybrid-system.md
             - name: 验证混合系统配置
               href: validating-a-hybrid-system-configuration.md
             - name: 使用跨适配器资源在独立的 GPU 中进行渲染
@@ -557,20 +601,23 @@
         - name: 用户模式显示驱动程序实现的 Direct3D 函数
           href: direct3d-functions-implemented-by-user-mode.md
     - name: 监视驱动程序
-      href: monitor-drivers.md
       items:
+        - name: 监视驱动程序
+          href: monitor-drivers.md
         - name: 监视类函数驱动程序
           href: monitor-class-function-driver.md
         - name: 监视筛选器驱动程序
           href: monitor-filter-drivers.md
     - name: HMD 和专用监视器
-      href: specialized-monitors.md
       items:
+        - name: HMD 和专用监视器
+          href: specialized-monitors.md
         - name: HMD 和专用监视器的 EDID 扩展
           href: specialized-monitors-edid-extension.md
     - name: 多个监视器和视频呈现网络
-      href: multiple-monitors-and-video-present-networks.md
       items:
+        - name: 多个监视器和视频呈现网络
+          href: multiple-monitors-and-video-present-networks.md
         - name: 视频呈现网络的术语
           href: video-present-network-terminology.md
         - name: 视频呈现网络简介
@@ -588,13 +635,15 @@
         - name: 确定显示适配器的 VidPN 支持
           href: determining-whether-a-vidpn-is-supported-on-a-display-adapter.md
     - name: 间接显示驱动程序模型概述
-      href: indirect-display-driver-model-overview.md
       items:
+        - name: 间接显示驱动程序模型概述
+          href: indirect-display-driver-model-overview.md
         - name: IddCx 对象
           href: iddcx-objects.md
     - name: Windows 显示驱动程序模型 (WDDM) 中的任务
-      href: tasks-in-the-windows-vista-display-driver-model.md
       items:
+        - name: Windows 显示驱动程序模型 (WDDM) 中的任务
+          href: tasks-in-the-windows-vista-display-driver-model.md
         - name: 请求和使用图面内存
           href: requesting-and-using-surface-memory.md
         - name: 为资源指定内存类型
@@ -608,8 +657,9 @@
         - name: 注册硬件信息
           href: registering-hardware-information.md
     - name: Windows 显示驱动程序模型 (WDDM) 的调试提示
-      href: debugging-tips-for-the-windows-vista-display-driver-model.md
       items:
+        - name: Windows 显示驱动程序模型 (WDDM) 的调试提示
+          href: debugging-tips-for-the-windows-vista-display-driver-model.md
         - name: 安装已检查的二进制文件
           href: installing-checked-binaries.md
         - name: 更改用于调试的 GPU 计划程序的行为
@@ -627,8 +677,9 @@
         - name: 在 GPU 上进行 XPS 光栅化
           href: xps-rasterization-on-the-gpu.md
         - name: 超时检测和恢复
-          href: timeout-detection-and-recovery.md
           items:
+            - name: 超时检测和恢复
+              href: timeout-detection-and-recovery.md
             - name: 限制重复性 GPU 挂起和恢复
               href: limiting-repetitive-gpu-hangs-and-recoveries.md
             - name: TDR 错误消息
@@ -638,11 +689,13 @@
             - name: Windows 8 中的 TDR 更改
               href: tdr-changes-in-windows-8.md
     - name: 有关 Windows 显示驱动程序模型 (WDDM) 的提示和要求
-      href: implementation-tips-and-requirements-for-the-windows-vista-display-dri.md
       items:
+        - name: 有关 Windows 显示驱动程序模型 (WDDM) 的提示和要求
+          href: implementation-tips-and-requirements-for-the-windows-vista-display-dri.md
         - name: Direct3D 功能级别的硬件支持
-          href: hardware-support-for-direct3d-feature-levels.md
           items:
+            - name: Direct3D 功能级别的硬件支持
+              href: hardware-support-for-direct3d-feature-levels.md
             - name: 必需的 Direct3D 9 功能
               href: required-direct3d-9-capabilities.md
             - name: 必需的 DXGI 格式
@@ -664,8 +717,9 @@
         - name: 支持视频捕获和其他子设备
           href: supporting-video-capture-and-other-child-devices.md
         - name: 支持旋转
-          href: supporting-rotation.md
           items:
+            - name: 支持旋转
+              href: supporting-rotation.md
             - name: 在显示微型端口驱动程序中支持旋转
               href: supporting-rotation-in-a-display-miniport-driver.md
             - name: 优化的屏幕旋转支持
@@ -673,8 +727,9 @@
             - name: 支持独立于路径的旋转
               href: supporting-path-independent-rotation.md
             - name: 在用户模式显示驱动程序中支持旋转
-              href: supporting-rotation-in-a-user-mode-display-driver.md
               items:
+                - name: 在用户模式显示驱动程序中支持旋转
+                  href: supporting-rotation-in-a-user-mode-display-driver.md
                 - name: 窗口模式行为
                   href: windowed-mode-behavior.md
                 - name: 全屏模式行为
@@ -692,8 +747,9 @@
         - name: 立体 3D
           href: stereoscopic-3d.md
         - name: 支持输出保护管理器
-          href: supporting-output-protection-manager.md
           items:
+            - name: 支持输出保护管理器
+              href: supporting-output-protection-manager.md
             - name: OPM 术语
               href: opm-terminology.md
             - name: OPM 功能
@@ -705,8 +761,9 @@
             - name: 使用 OPM DDI
               href: using-the-opm-ddi.md
             - name: 使用 OPM 处理保护级别
-              href: handling-protection-levels-with-opm.md
               items:
+                - name: 使用 OPM 处理保护级别
+                  href: handling-protection-levels-with-opm.md
                 - name: 将优先顺序分配到保护级别
                   href: assigning-precedence-to-protection-levels.md
                 - name: 确定物理输出的保护级别
@@ -718,8 +775,9 @@
             - name: 检索有关受保护输出的 COPP 兼容信息
               href: retrieving-copp-compatible-information-about-a-protected-output.md
             - name: 配置受保护输出
-              href: configuring-a-protected-output.md
               items:
+                - name: 配置受保护输出
+                  href: configuring-a-protected-output.md
                 - name: 设置受保护输出的保护级别
                   href: setting-the-protection-level-for-a-protected-output.md
                 - name: 为视频信号配置保护
@@ -729,8 +787,9 @@
             - name: 报告受保护输出的状态
               href: reporting-status-of-a-protected-output.md
             - name: OPM 实施提示和要求
-              href: implementation-tips-and-requirements-for-opm.md
               items:
+                - name: OPM 实施提示和要求
+                  href: implementation-tips-and-requirements-for-opm.md
                 - name: OPM 和 ChangeDisplaySettingsEx
                   href: opm-and-changedisplaysettingsex.md
                 - name: OPM 和显示模式
@@ -738,8 +797,9 @@
                 - name: CGMS-A 标准
                   href: cgms-a-standards.md
         - name: 支持暂用多监视器管理器
-          href: supporting-transient-multi-monitor-manager.md
           items:
+            - name: 支持暂用多监视器管理器
+              href: supporting-transient-multi-monitor-manager.md
             - name: TMM 术语
               href: tmm-terminology.md
             - name: IViewHelper Clone-View COM 对象的要求
@@ -747,8 +807,9 @@
             - name: 使用 IViewHelper Clone-View COM 对象
               href: using-an-iviewhelper-clone-view-com-object.md
             - name: 处理监视器配置
-              href: handling-monitor-configurations.md
               items:
+                - name: 处理监视器配置
+                  href: handling-monitor-configurations.md
                 - name: 处理双监视器配置
                   href: handling-two-monitor-configurations.md
                 - name: 处理现有的监视器配置
@@ -756,11 +817,13 @@
             - name: 确定平台是移动平台还是桌面平台
               href: determining-whether-a-platform-is-mobile-or-desktop.md
         - name: 连接和配置显示
-          href: connecting-and-configuring-displays.md
           items:
+            - name: 连接和配置显示
+              href: connecting-and-configuring-displays.md
             - name: CCD 概念
-              href: ccd-concepts.md
               items:
+                - name: CCD 概念
+                  href: ccd-concepts.md
                 - name: 强制的目标与连接的目标
                   href: forced-versus-connected-targets.md
                 - name: 路径优先顺序
@@ -772,11 +835,13 @@
                 - name: 缩放桌面图像
                   href: scaling-the-desktop-image.md
             - name: CCD API
-              href: ccd-apis.md
               items:
+                - name: CCD API
+                  href: ccd-apis.md
                 - name: CCD 摘要和方案
-                  href: ccd-summaries-and-scenarios.md
                   items:
+                    - name: CCD 摘要和方案
+                      href: ccd-summaries-and-scenarios.md
                     - name: QueryDisplayConfig 摘要和方案
                       href: querydisplayconfig-summary-and-scenarios.md
                     - name: GetDisplayConfigBufferSizes 摘要和方案
@@ -790,8 +855,9 @@
                 - name: CCD 示例代码
                   href: ccd-example-code.md
             - name: CCD DDI
-              href: ccd-ddis.md
               items:
+                - name: CCD DDI
+                  href: ccd-ddis.md
                 - name: 获取其他监视目标模式
                   href: obtaining-additional-monitor-target-modes.md
                 - name: 使用纵横比和自定义缩放模式
@@ -805,8 +871,9 @@
             - name: 用于在横屏设备上显示应用的代码示例
               href: displaying-app-on-portrait-device.md
         - name: 无线显示 (Miracast)
-          href: wireless-displays--miracast-.md
           items:
+            - name: 无线显示 (Miracast)
+              href: wireless-displays--miracast-.md
             - name: 用于支持 Miracast 无线显示的 WDDM 显示微型端口驱动程序任务
               href: wddm-display-miniport-driver-tasks-to-support-miracast-wireless-displays.md
             - name: 用于支持 Miracast 无线显示的 Miracast 用户模式驱动程序任务
@@ -816,20 +883,23 @@
             - name: 对 Miracast 目标调用 DisplayConfig 函数
               href: calling-displayconfig-functions-for-a-miracast-target.md
         - name: Direct3D 着色器代码
-          href: direct3d-shader-codes.md
           items:
+            - name: Direct3D 着色器代码
+              href: direct3d-shader-codes.md
             - name: 着色器相对寻址
               href: shader-relative-addressing.md
             - name: 着色器代码格式
-              href: shader-code-format.md
               items:
+                - name: 着色器代码格式
+                  href: shader-code-format.md
                 - name: DCL 指令格式
                   href: dcl-instruction.md
                 - name: SINCOS 指令格式
                   href: sincos-instruction.md
             - name: 着色器代码标记
-              href: shader-code-tokens.md
               items:
+                - name: 着色器代码标记
+                  href: shader-code-tokens.md
                 - name: 注释标记
                   href: comment-token.md
                 - name: 目标参数标记
@@ -849,11 +919,13 @@
         - name: 空闲状态和活动电源的 GPU 电源管理
           href: gpu-power-management-of-idle-and-active-power.md
     - name: 保留供系统使用
-      href: reserved-for-system-use.md
       items:
+        - name: 保留供系统使用
+          href: reserved-for-system-use.md
         - name: D3dkmddi.h - 保留
-          href: d3dkmddi-h---reserved.md
           items:
+            - name: D3dkmddi.h - 保留
+              href: d3dkmddi-h---reserved.md
             - name: _DXGK_ALLOCATIONGROUPDESCRIPTOR
               href: dxgk-allocationgroupdescriptor.md
             - name: _DXGK_ALLOCATIONGROUPOUT
@@ -911,8 +983,9 @@
             - name: DXGKDDISETPOWERPSTATE
               href: dxgkddisetpowerpstate.md
         - name: D3dkmdt.h - 保留
-          href: d3dkmdt-h---reserved.md
           items:
+            - name: D3dkmdt.h - 保留
+              href: d3dkmdt-h---reserved.md
             - name: D3DKMT_WDDM_1_2_CAPS
               href: d3dkmt-wddm-1-2-caps.md
             - name: D3DKMT_WDDM_1_3_CAPS
@@ -922,13 +995,15 @@
             - name: DXGKMDT_OPM_CONNECTOR_TYPE
               href: dxgkmdt-opm-connector-type.md
         - name: D3dukmdt.h - 保留
-          href: d3dukmdt-h---reserved.md
           items:
+            - name: D3dukmdt.h - 保留
+              href: d3dukmdt-h---reserved.md
             - name: D3DDDI_OPENALLOCATIONINFO2
               href: d3dddi-openallocationinfo2.md
         - name: D3dkmthk.h - 保留
-          href: d3dkmthk-h---reserved.md
           items:
+            - name: D3dkmthk.h - 保留
+              href: d3dkmthk-h---reserved.md
             - name: D3DKMT_CREATE_OUTPUTDUPL
               href: d3dkmt-create-outputdupl.md
             - name: D3DKMT_DESTROY_OUTPUTDUPL
@@ -984,8 +1059,9 @@
             - name: OUTPUTDUPL_CONTEXT_DEBUG_STATUS
               href: outputdupl-context-debug-status.md
         - name: D3dumddi.h - 保留
-          href: d3dumddi-h---reserved.md
           items:
+            - name: D3dumddi.h - 保留
+              href: d3dumddi-h---reserved.md
             - name: D3DDDI_CHECK_MULTIPLANE_OVERLAY_SUPPORT_PLANE_INFO
               href: d3dddi-check-multiplane-overlay-support-plane-info.md
             - name: D3DDDI_MULTIPLANE_OVERLAY_FILTER
@@ -995,8 +1071,9 @@
             - name: D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE
               href: d3dddi-multiplane-overlay-filter-type.md
         - name: Dispmprt.h - 保留
-          href: dispmprt-h---reserved.md
           items:
+            - name: Dispmprt.h - 保留
+              href: dispmprt-h---reserved.md
             - name: DXGKARG_SYSTEM_DISPLAY_ENABLE_FLAGS
               href: dxgkarg-system-display-enable-flags.md
             - name: DXGKDDI_CREATEALLOCATION2
@@ -1012,21 +1089,25 @@
             - name: DXGKDDI_UPDATEPAGETABLE
               href: dxgkddiupdatepagetable.md
         - name: Dxgiddi.h - 保留
-          href: dxgiddi-h---reserved.md
           items:
+            - name: Dxgiddi.h - 保留
+              href: dxgiddi-h---reserved.md
             - name: DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_CAPS
               href: dxgi-ddi-multiplane-overlay-stereo-caps.md
 - name: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
-  href: windows-2000-display-driver-model-design-guide.md
   items:
+    - name: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
+      href: windows-2000-display-driver-model-design-guide.md
     - name: Windows 2000 显示驱动程序模型 (XDDM) 路线图
       href: roadmap-for-developing-drivers-for-the-windows-2000-display-driver-mod.md
     - name: 显示（Windows 2000 模型）简介
-      href: introduction-to-display--windows-2000-model-.md
       items:
+        - name: 显示（Windows 2000 模型）简介
+          href: introduction-to-display--windows-2000-model-.md
         - name: Windows 2000 显示体系结构
-          href: windows-2000-display-architecture.md
           items:
+            - name: Windows 2000 显示体系结构
+              href: windows-2000-display-architecture.md
             - name: Windows 2000 显示驱动程序的责任
               href: windows-2000-display-driver-responsibilities.md
             - name: Windows 2000 视频微型端口驱动程序的责任
@@ -1034,8 +1115,9 @@
         - name: 常规设计和实施策略
           href: general-design-and-implementation-strategies.md
         - name: 访问图形适配器
-          href: accessing-the-graphics-adapter.md
           items:
+            - name: 访问图形适配器
+              href: accessing-the-graphics-adapter.md
             - name: 将 IOCTL 传送到视频微型端口驱动程序
               href: communicating-ioctls-to-the-video-miniport-driver.md
             - name: 访问帧缓冲区和硬件寄存器
@@ -1043,8 +1125,9 @@
         - name: 快速用户切换
           href: fast-user-switching.md
         - name: 创建图形 INF 文件
-          href: creating-graphics-inf-files.md
           items:
+            - name: 创建图形 INF 文件
+              href: creating-graphics-inf-files.md
             - name: INF GeneralConfigData 节
               href: inf-generalconfigdata-section.md
             - name: 显示 INF 文件节
@@ -1052,8 +1135,9 @@
             - name: 监视 INF 文件节
               href: monitor-inf-file-sections.md
         - name: 显示/视频微型端口驱动程序的测试要求
-          href: compatibility-testing-requirements-for-display-and-video-miniport-driv.md
           items:
+            - name: 显示/视频微型端口驱动程序的测试要求
+              href: compatibility-testing-requirements-for-display-and-video-miniport-driv.md
             - name: INF 和安装要求
               href: inf-and-installation-requirements.md
             - name: 视频微型端口驱动程序和显示驱动程序要求（Windows 2000 模型）
@@ -1061,11 +1145,13 @@
             - name: 控制面板要求
               href: control-panel-requirements.md
     - name: 显示驱动程序（Windows 2000 模型）
-      href: display-drivers--windows-2000-model-.md
       items:
+        - name: 显示驱动程序（Windows 2000 模型）
+          href: display-drivers--windows-2000-model-.md
         - name: 显示驱动程序的图形 DDI 函数
-          href: graphics-ddi-functions-for-display-drivers.md
           items:
+            - name: 显示驱动程序的图形 DDI 函数
+              href: graphics-ddi-functions-for-display-drivers.md
             - name: 必需的显示驱动程序函数
               href: required-display-driver-functions.md
             - name: 在不同条件下需要的显示驱动程序函数
@@ -1079,8 +1165,9 @@
         - name: 显示驱动程序的同步问题
           href: synchronization-issues-for-display-drivers.md
         - name: 调试显示驱动程序
-          href: debugging-display-drivers.md
           items:
+            - name: 调试显示驱动程序
+              href: debugging-display-drivers.md
             - name: 禁用 EA 恢复
               href: disabling-ea-recovery.md
             - name: 测试显示驱动程序时禁用监视计时器
@@ -1088,8 +1175,9 @@
             - name: 显示硬件加速滑块
               href: display-hardware-acceleration-slider.md
         - name: 桌面管理
-          href: desktop-management.md
           items:
+            - name: 桌面管理
+              href: desktop-management.md
             - name: 切换桌面：响应 DrvAssertMode
               href: switching-desktops--responding-to-drvassertmode.md
             - name: 返回显示模式：DrvGetModes
@@ -1097,11 +1185,13 @@
             - name: 支持多个 PDEV
               href: supporting-multiple-pdevs.md
         - name: 指针控件
-          href: pointer-control.md
           items:
+            - name: 指针控件
+              href: pointer-control.md
             - name: 指针绘制
-              href: pointer-drawing.md
               items:
+                - name: 指针绘制
+                  href: pointer-drawing.md
                 - name: 绘制单色指针
                   href: drawing-monochrome-pointers.md
                 - name: 绘制彩色指针
@@ -1111,8 +1201,9 @@
             - name: 移动指针：DrvMovePointer
               href: moving-the-pointer--drvmovepointer.md
         - name: 显示控制接口函数
-          href: display-control-interface-functions.md
           items:
+            - name: 显示控制接口函数
+              href: display-control-interface-functions.md
             - name: DCIBeginAccess
               href: dcibeginaccess.md
             - name: DCICloseProvider
@@ -1152,8 +1243,9 @@
         - name: 显示驱动程序中的特效
           href: special-effects-in-display-drivers.md
         - name: 显示颜色管理
-          href: color-management-for-displays.md
           items:
+            - name: 显示颜色管理
+              href: color-management-for-displays.md
             - name: 监视配置文件
               href: monitor-profiles.md
         - name: DirectDraw 和 GDI
@@ -1173,8 +1265,9 @@
         - name: 对显示驱动程序禁用超时恢复
           href: disabling-timeout-recovery-for-display-drivers.md
         - name: 镜像驱动程序
-          href: mirror-drivers.md
           items:
+            - name: 镜像驱动程序
+              href: mirror-drivers.md
             - name: 远程显示驱动程序
               href: remote-display-drivers.md
             - name: 视频端口 DDI 支持
@@ -1184,33 +1277,39 @@
             - name: 镜像驱动程序安装
               href: mirror-driver-installation.md
         - name: 显示驱动程序测试工具
-          href: display-driver-testing-tools.md
           items:
+            - name: 显示驱动程序测试工具
+              href: display-driver-testing-tools.md
             - name: NewDisp：显示驱动程序的动态重新加载
               href: newdisp--dynamic-reload-of-a-display-driver.md
             - name: 允许的驱动程序加速的动态更改
               href: dynamic-change-of-permitted-driver-accelerations.md
     - name: DirectDraw
-      href: directdraw.md
       items:
+        - name: DirectDraw
+          href: directdraw.md
         - name: 关于 DirectDraw
-          href: about-directdraw.md
           items:
+            - name: 关于 DirectDraw
+              href: about-directdraw.md
             - name: DirectDraw 体系结构
               href: directdraw-architecture.md
             - name: DirectDraw 驱动程序
-              href: the-directdraw-driver.md
               items:
+                - name: DirectDraw 驱动程序
+                  href: the-directdraw-driver.md
                 - name: 使用 DirectDraw 驱动程序的前几个步骤
                   href: first-steps-for-directdraw-drivers.md
             - name: 硬件仿真层
               href: hardware-emulation-layer.md
         - name: DirectDraw 驱动程序基础功能
-          href: directdraw-driver-fundamentals.md
           items:
+            - name: DirectDraw 驱动程序基础功能
+              href: directdraw-driver-fundamentals.md
             - name: DirectDraw 图面
-              href: directdraw-surfaces.md
               items:
+                - name: DirectDraw 图面
+                  href: directdraw-surfaces.md
                 - name: 复杂图面和附件
                   href: complex-surfaces-and-attachments.md
                 - name: 创建和销毁 DirectDraw 图面
@@ -1220,13 +1319,15 @@
                 - name: 丢失驱动程序管理的纹理
                   href: losing-driver-managed-textures.md
             - name: 显示内存
-              href: display-memory.md
               items:
+                - name: 显示内存
+                  href: display-memory.md
                 - name: 内存堆分配
                   href: memory-heap-allocation.md
             - name: 内存配置
-              href: memory-configurations.md
               items:
+                - name: 内存配置
+                  href: memory-configurations.md
                 - name: 线性内存分配
                   href: linear-memory-allocation.md
                 - name: 矩形内存分配
@@ -1234,8 +1335,9 @@
                 - name: 混合内存分配
                   href: mixed-memory-allocation.md
             - name: 交替
-              href: flipping.md
               items:
+                - name: 交替
+                  href: flipping.md
                 - name: 解除
                   href: tearing.md
                 - name: 三重缓冲
@@ -1251,8 +1353,9 @@
                 - name: 交替到 GDI 图面
                   href: flipping-to-the-gdi-surface.md
             - name: 位图传送
-              href: blitting.md
               items:
+                - name: 位图传送
+                  href: blitting.md
                 - name: 透明 Blt
                   href: transparent-blt.md
                 - name: 剪辑列表
@@ -1270,24 +1373,29 @@
             - name: DirectDraw 的返回值
               href: return-values-for-directdraw.md
         - name: DirectDraw 驱动程序初始化
-          href: directdraw-driver-initialization.md
           items:
+            - name: DirectDraw 驱动程序初始化
+              href: directdraw-driver-initialization.md
             - name: Windows 2000 驱动程序初始化
-              href: windows-2000-driver-initialization.md
               items:
+                - name: Windows 2000 驱动程序初始化
+                  href: windows-2000-driver-initialization.md
                 - name: 使用 DrvEnableDirectDraw 的 DirectDraw 回调支持
                   href: directdraw-callback-support-using-drvenabledirectdraw.md
                 - name: 使用 DdGetDriverInfo 的 DirectDraw 和 Direct3D 回调支持
                   href: directdraw-and-direct3d-callback-support-using-ddgetdriverinfo.md
         - name: DirectX 的视频端口扩展
-          href: video-port-extensions-to-directx.md
           items:
+            - name: DirectX 的视频端口扩展
+              href: video-port-extensions-to-directx.md
             - name: 视频端口扩展背景信息
-              href: video-port-extensions-background.md
               items:
+                - name: 视频端口扩展背景信息
+                  href: video-port-extensions-background.md
                 - name: 在隔行扫描和 Proscan 监视器上显示视频
-                  href: displaying-video-on-interlaced-and-proscan-monitors.md
                   items:
+                    - name: 在隔行扫描和 Proscan 监视器上显示视频
+                      href: displaying-video-on-interlaced-and-proscan-monitors.md
                     - name: NTSC 和隔行扫描数据
                       href: ntsc-and-interlaced-data.md
                     - name: NTSC/PAL 转换
@@ -1297,8 +1405,9 @@
                     - name: 逐行扫描监视器和隔行扫描数据
                       href: progressive-scan-monitors-and-interleaved-data.md
                 - name: 使用 VPE 显示隔行扫描视频
-                  href: displaying-interleaved-video-with-vpe.md
                   items:
+                    - name: 使用 VPE 显示隔行扫描视频
+                      href: displaying-interleaved-video-with-vpe.md
                     - name: Bob 方法
                       href: bob-method.md
                     - name: Weave 方法
@@ -1308,8 +1417,9 @@
                 - name: DirectDraw API 和驱动程序中的 VPE 函数
                   href: vpe-functions-in-directdraw-api-and-driver.md
             - name: DirectX VPE 初始化
-              href: directx-vpe-initialization.md
               items:
+                - name: DirectX VPE 初始化
+                  href: directx-vpe-initialization.md
                 - name: VPE 回调函数
                   href: vpe-callback-functions.md
             - name: 用于支持内核模式视频传输的 DirectDraw 接口
@@ -1317,8 +1427,9 @@
         - name: 颜色控制初始化
           href: color-control-initialization.md
         - name: AGP 支持
-          href: agp-support.md
           items:
+            - name: AGP 支持
+              href: agp-support.md
             - name: 非本地显示内存的标志支持
               href: flagging-support-for-nonlocal-display-memory.md
             - name: 指定非本地显示内存堆
@@ -1330,8 +1441,9 @@
             - name: 将非本地显示内存中的纹理重新排序
               href: reordering-textures-in-nonlocal-display-memory.md
             - name: 处理 DMA 样式 AGP
-              href: handling-dma-style-agp.md
               items:
+                - name: 处理 DMA 样式 AGP
+                  href: handling-dma-style-agp.md
                 - name: DMA 模型非本地显示内存的标志支持
                   href: flagging-support-for-dma-model-nonlocal-display-memory.md
                 - name: 报告非本地显示内存的 DirectDraw 功能
@@ -1341,21 +1453,25 @@
             - name: 管理 AGP 堆
               href: managing-agp-heaps.md
         - name: 内核模式视频传输
-          href: kernel-mode-video-transport.md
           items:
+            - name: 内核模式视频传输
+              href: kernel-mode-video-transport.md
             - name: VPE 和内核模式视频传输体系结构
               href: vpe-and-kernel-mode-video-transport-architecture.md
             - name: 使用内核模式视频传输
-              href: using-kernel-mode-video-transport.md
               items:
+                - name: 使用内核模式视频传输
+                  href: using-kernel-mode-video-transport.md
                 - name: 获取用户模式句柄
                   href: getting-the-user-mode-handles.md
             - name: 使用 DxApi 接口
-              href: using-the-dxapi-interface.md
               items:
+                - name: 使用 DxApi 接口
+                  href: using-the-dxapi-interface.md
                 - name: Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
-                  href: dxapi-miniport-driver-functions-for-windows-2000-and-later.md
                   items:
+                    - name: Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
+                      href: dxapi-miniport-driver-functions-for-windows-2000-and-later.md
                     - name: DxApi 微型端口驱动程序初始化
                       href: dxapi-miniport-driver-initialization.md
                     - name: 内核模式视频传输回调函数
@@ -1365,15 +1481,17 @@
                     - name: 视频 VBI 捕获
                       href: video-vbi-capture.md
         - name: 扩展图面对齐
-          href: extended-surface-alignment.md
           items:
+            - name: 扩展图面对齐
+              href: extended-surface-alignment.md
             - name: 回顾旧式对齐方法
               href: review-of-the-older-alignment-method.md
             - name: 使用扩展图面对齐
               href: using-extended-surface-alignment.md
         - name: 扩展图面功能
-          href: extended-surface-capabilities.md
           items:
+            - name: 扩展图面功能
+              href: extended-surface-capabilities.md
             - name: 扩展图面功能标志
               href: extended-surface-capability-flags.md
             - name: 公开扩展图面功能
@@ -1383,8 +1501,9 @@
             - name: 扩展图面描述结构
               href: extended-surface-description-structure.md
         - name: 压缩纹理图面
-          href: compressed-texture-surfaces.md
           items:
+            - name: 压缩纹理图面
+              href: compressed-texture-surfaces.md
             - name: 枚举 DXT 格式
               href: enumerating-dxt-formats.md
             - name: 创建压缩纹理图面
@@ -1398,20 +1517,23 @@
             - name: DirectX 压缩 VolumeTexture 格式
               href: directx-compressed-volumetexture-formats.md
         - name: 压缩视频解码
-          href: compressed-video-decoding.md
           items:
+            - name: 压缩视频解码
+              href: compressed-video-decoding.md
             - name: 运动补偿
               href: motion-compensation.md
             - name: 运动补偿回调
               href: motion-compensation-callbacks.md
     - name: Direct3D DDI
-      href: direct3d.md
       items:
+        - name: Direct3D DDI
+          href: direct3d.md
         - name: 跨平台 Direct3D 驱动程序开发
           href: cross-platform-direct3d-driver-development.md
         - name: Direct3D 实施要求
-          href: direct3d-implementation-requirements.md
           items:
+            - name: Direct3D 实施要求
+              href: direct3d-implementation-requirements.md
             - name: 渲染目标要求
               href: render-target-requirements.md
             - name: 点、线条和三角形填充要求
@@ -1421,13 +1543,15 @@
             - name: 纹理要求
               href: texturing-requirements.md
         - name: Direct3D 驱动程序 DDI
-          href: direct3d-driver-ddi.md
           items:
+            - name: Direct3D 驱动程序 DDI
+              href: direct3d-driver-ddi.md
             - name: 用于支持 Direct3D 的驱动程序函数
               href: driver-functions-to-support-direct3d.md
             - name: 轻量 MIP 贴图的 CPixel 支持方法
-              href: cpixel-support-methods-for-lightweight-mip-maps.md
               items:
+                - name: 轻量 MIP 贴图的 CPixel 支持方法
+                  href: cpixel-support-methods-for-lightweight-mip-maps.md
                 - name: 'CPixel::ComputeSurfaceSize'
                   href: cpixel-computesurfacesize.md
                 - name: 'CPixel::ComputeVolumeSize'
@@ -1443,8 +1567,9 @@
                 - name: 'CPixel::ComputeSurfaceOffset'
                   href: cpixel-computesurfaceoffset.md
             - name: 操作代码处理
-              href: operation-code-handling.md
               items:
+                - name: 操作代码处理
+                  href: operation-code-handling.md
                 - name: 命令流
                   href: command-stream.md
                 - name: 改进操作处理的性能
@@ -1456,8 +1581,9 @@
         - name: Direct3D 驱动程序初始化
           href: direct3d-driver-initialization.md
         - name: Direct3D 上下文管理
-          href: direct3d-context-management.md
           items:
+            - name: Direct3D 上下文管理
+              href: direct3d-context-management.md
             - name: 创建和销毁上下文
               href: creating-and-destroying-a-context.md
             - name: 维护上下文中的状态
@@ -1469,8 +1595,9 @@
             - name: 指向 DirectDraw 图面的指针
               href: pointers-to-directdraw-surfaces.md
             - name: D3dCreateSurfaceEx 句柄
-              href: d3dcreatesurfaceex-handles.md
               items:
+                - name: D3dCreateSurfaceEx 句柄
+                  href: d3dcreatesurfaceex-handles.md
                 - name: D3dCreateSurfaceEx 和后备图面
                   href: d3dcreatesurfaceex-and-backing-surfaces.md
                 - name: D3dCreateSurfaceEx 和复杂图面
@@ -1486,11 +1613,13 @@
                 - name: 丢失的图面、图面句柄和上下文
                   href: lost-surfaces--surface-handles--and-contexts.md
         - name: Direct3D 纹理管理
-          href: direct3d-texture-management.md
           items:
+            - name: Direct3D 纹理管理
+              href: direct3d-texture-management.md
             - name: 多个纹理
-              href: multiple-textures.md
               items:
+                - name: 多个纹理
+                  href: multiple-textures.md
                 - name: 纹理阶段
                   href: texture-stages.md
                 - name: 处理纹理阶段
@@ -1512,11 +1641,13 @@
             - name: 驱动程序管理的资源
               href: driver-managed-resources.md
         - name: 基元绘制和状态更改
-          href: primitive-drawing-and-state-changes.md
           items:
+            - name: 基元绘制和状态更改
+              href: primitive-drawing-and-state-changes.md
             - name: 命令和顶点缓冲区
-              href: command-and-vertex-buffers.md
               items:
+                - name: 命令和顶点缓冲区
+                  href: command-and-vertex-buffers.md
                 - name: 命令和顶点缓冲区分配
                   href: command-and-vertex-buffer-allocation.md
             - name: Direct3D 命令缓冲区
@@ -1528,16 +1659,19 @@
             - name: 设置线条模式重复次数
               href: setting-the-number-of-line-pattern-repetitions.md
         - name: FVF（灵活顶点格式）
-          href: fvf--flexible-vertex-format-.md
           items:
+            - name: FVF（灵活顶点格式）
+              href: fvf--flexible-vertex-format-.md
             - name: 确定顶点缓冲区数据格式
               href: determining-the-vertex-buffer-data-format.md
         - name: 高级 Direct3D 驱动程序主题
-          href: advanced-direct3d-driver-topics.md
           items:
+            - name: 高级 Direct3D 驱动程序主题
+              href: advanced-direct3d-driver-topics.md
             - name: 优化的纹理
-              href: optimized-textures.md
               items:
+                - name: 优化的纹理
+                  href: optimized-textures.md
                 - name: 优化的纹理 API
                   href: optimized-texture-api.md
             - name: 模具平面
@@ -1547,8 +1681,9 @@
             - name: 范围调整
               href: extents-adjustment.md
             - name: W 缓冲
-              href: w-buffering.md
               items:
+                - name: W 缓冲
+                  href: w-buffering.md
                 - name: W 缓冲 API
                   href: w-buffering-api.md
                 - name: W 缓冲 DDI
@@ -1556,11 +1691,13 @@
             - name: 凹凸贴图
               href: bump-mapping.md
             - name: 硬件转换和照明
-              href: hardware-transform-and-lighting.md
               items:
+                - name: 硬件转换和照明
+                  href: hardware-transform-and-lighting.md
                 - name: 顶点混合
-                  href: vertex-blending.md
                   items:
+                    - name: 顶点混合
+                      href: vertex-blending.md
                     - name: 多矩阵顶点混合
                       href: multimatrix-vertex-blending.md
                     - name: 多矩阵顶点混合算法
@@ -1576,13 +1713,15 @@
                 - name: 纹理坐标转换
                   href: texture-coordinate-transformations.md
                 - name: 立体环境贴图支持
-                  href: cube-environment-map-support.md
                   items:
+                    - name: 立体环境贴图支持
+                      href: cube-environment-map-support.md
                     - name: 使用标准漫射光的环境贴图
                       href: integration-of-environment-mapping-with-standard-diffuse-lighting.md
                 - name: '顶点和像素雾化 '
-                  href: vertex-and-pixel-fogging.md
                   items:
+                    - name: '顶点和像素雾化 '
+                      href: vertex-and-pixel-fogging.md
                     - name: 顶点雾化
                       href: vertex-fog.md
                     - name: 像素雾化
@@ -1590,8 +1729,9 @@
                     - name: 基于范围的雾化
                       href: range-based-fog.md
         - name: DirectX 7.0 发行说明
-          href: directx-7-0-release-notes.md
           items:
+            - name: DirectX 7.0 发行说明
+              href: directx-7-0-release-notes.md
             - name: FVF 更新
               href: fvf-update.md
             - name: 光栅器更新
@@ -1599,11 +1739,13 @@
             - name: MIP 贴图图面创建更新
               href: mip-map-surface-creation-update.md
         - name: DirectX 8.0 发行说明
-          href: directx-8-0-release-notes.md
           items:
+            - name: DirectX 8.0 发行说明
+              href: directx-8-0-release-notes.md
             - name: DirectX 8.0 驱动程序的标头文件
-              href: header-files-for-directx-8-0-drivers.md
               items:
+                - name: DirectX 8.0 驱动程序的标头文件
+                  href: header-files-for-directx-8-0-drivers.md
                 - name: DIRECT3D_VERSION
                   href: direct3d-version.md
             - name: DirectX 8.0 DDI 最低支持要求
@@ -1611,8 +1753,9 @@
             - name: 支持 GetDriverInfo2
               href: supporting-getdriverinfo2.md
             - name: 报告 DirectX 8.0 样式 Direct3D 功能
-              href: reporting-directx-8-0-style-direct3d-capabilities.md
               items:
+                - name: 报告 DirectX 8.0 样式 Direct3D 功能
+                  href: reporting-directx-8-0-style-direct3d-capabilities.md
                 - name: DirectX 8.0 驱动程序的最低功能要求
                   href: minimum-capability-requirements-for-directx-8-0-drivers.md
                 - name: 报告对视频内存顶点和索引缓冲区的支持
@@ -1620,15 +1763,17 @@
                 - name: 设置呈现交换间隔
                   href: setting-presentation-swap-intervals.md
             - name: 纹理格式列表
-              href: the-texture-format-list.md
               items:
+                - name: 纹理格式列表
+                  href: the-texture-format-list.md
                 - name: 格式操作
                   href: format-operations.md
                 - name: 将图面设为 FOURCC 格式
                   href: surface-formats-as-fourccs.md
             - name: 多个顶点流
-              href: multiple-vertex-streams.md
               items:
+                - name: 多个顶点流
+                  href: multiple-vertex-streams.md
                 - name: 报告多个顶点流功能
                   href: reporting-multiple-vertex-stream-capability.md
                 - name: 流零
@@ -1636,18 +1781,21 @@
                 - name: 流和顶点缓冲区绑定通知
                   href: notification-of-stream-and-vertex-buffer-binding.md
             - name: 顶点和索引缓冲区
-              href: vertex-and-index-buffers.md
               items:
+                - name: 顶点和索引缓冲区
+                  href: vertex-and-index-buffers.md
                 - name: 索引缓冲区
-                  href: index-buffers.md
                   items:
+                    - name: 索引缓冲区
+                      href: index-buffers.md
                     - name: 报告 32 位索引支持
                       href: reporting-support-for-32-bit-indices.md
                     - name: 设置当前索引缓冲区
                       href: setting-the-current-index-buffer.md
                 - name: 顶点缓冲区
-                  href: vertex-buffers.md
                   items:
+                    - name: 顶点缓冲区
+                      href: vertex-buffers.md
                     - name: 顶点缓冲区回调和 Windows 2000
                       href: vertex-buffer-callbacks-and-windows-2000.md
                     - name: Windows 2000 上的顶点缓冲区创建处理
@@ -1657,13 +1805,15 @@
                     - name: 在 Windows 2000 上处理重命名
                       href: handling-renaming-on-windows-2000.md
             - name: 新的 DP2 流绘图标记
-              href: new-dp2-stream-drawing-tokens.md
               items:
+                - name: 新的 DP2 流绘图标记
+                  href: new-dp2-stream-drawing-tokens.md
                 - name: 在 DP2 流中复制顶点和索引缓冲区
                   href: copying-vertex-and-index-buffers-in-the-dp2-stream.md
             - name: 点精灵
-              href: point-sprites.md
               items:
+                - name: 点精灵
+                  href: point-sprites.md
                 - name: 报告点精灵支持
                   href: reporting-support-for-point-sprites.md
                 - name: 计算点精灵的大小
@@ -1671,8 +1821,9 @@
                 - name: 渲染点精灵
                   href: rendering-point-sprites.md
             - name: 体积纹理
-              href: volume-textures.md
               items:
+                - name: 体积纹理
+                  href: volume-textures.md
                 - name: 报告体积纹理支持
                   href: reporting-support-for-volume-textures.md
                 - name: 处理体积纹理的创建
@@ -1682,8 +1833,9 @@
                 - name: 锁定体积纹理的子体积
                   href: locking-a-subvolume-of-a-volume-texture.md
             - name: 呈现
-              href: presentation.md
               items:
+                - name: 呈现
+                  href: presentation.md
                 - name: 新的 DDSCAPS2 标志
                   href: new-ddscaps2-flags.md
                 - name: 呈现和 GetBltStatus
@@ -1693,21 +1845,25 @@
             - name: 光标
               href: cursors.md
             - name: Direct3D 着色器
-              href: direct3d-shaders.md
               items:
+                - name: Direct3D 着色器
+                  href: direct3d-shaders.md
                 - name: 顶点着色器
-                  href: vertex-shaders.md
                   items:
+                    - name: 顶点着色器
+                      href: vertex-shaders.md
                     - name: 报告可编程顶点着色器硬件的支持
                       href: reporting-support-for-programmable-vertex-processing-hardware.md
                 - name: 像素着色器
-                  href: pixel-shaders.md
                   items:
+                    - name: 像素着色器
+                      href: pixel-shaders.md
                     - name: 报告可编程像素着色器硬件的支持
                       href: reporting-support-for-programmable-pixel-processing-hardware.md
             - name: 高阶图面
-              href: high-order-surfaces.md
               items:
+                - name: 高阶图面
+                  href: high-order-surfaces.md
                 - name: 报告高阶图面的支持
                   href: reporting-support-for-high-order-surfaces.md
                 - name: 高阶图面 DP2 流绘图标记
@@ -1715,8 +1871,9 @@
                 - name: 高阶图面渲染状态
                   href: high-order-surface-render-states.md
             - name: 多重采样渲染
-              href: multisample-rendering.md
               items:
+                - name: 多重采样渲染
+                  href: multisample-rendering.md
                 - name: 报告多重采样支持
                   href: reporting-multisample-support.md
                 - name: 通过 StretchBlt 提供多重采样支持
@@ -1728,8 +1885,9 @@
                 - name: 控制多重采样
                   href: controlling-multisampling.md
             - name: 单纯设备
-              href: pure-devices.md
               items:
+                - name: 单纯设备
+                  href: pure-devices.md
                 - name: 报告单纯设备功能
                   href: reporting-pure-device-capability.md
                 - name: 状态块记录和单纯设备
@@ -1743,30 +1901,35 @@
             - name: Windows 2000 的 GDI 事件服务
               href: gdi-event-services-in-windows-2000.md
         - name: DirectX 9.0 发行说明
-          href: directx-9-0-release-notes.md
           items:
+            - name: DirectX 9.0 发行说明
+              href: directx-9-0-release-notes.md
             - name: DirectX 9.0 驱动程序的标头文件
               href: header-files-for-directx-9-0-drivers.md
             - name: 所需的 DirectX 9.0 驱动程序支持
-              href: required-directx-9-0-driver-support.md
               items:
+                - name: 所需的 DirectX 9.0 驱动程序支持
+                  href: required-directx-9-0-driver-support.md
                 - name: 支持二维操作
-                  href: supporting-two-dimensional-operations.md
                   items:
+                    - name: 支持二维操作
+                      href: supporting-two-dimensional-operations.md
                     - name: 报告使用图面格式执行 2D 操作的支持
                       href: reporting-support-for-2d-operations-using-surface-formats.md
                     - name: 使用 DXVA 执行 2D 操作
                       href: using-dxva-with-2d-operations.md
                 - name: 支持动态资源
-                  href: supporting-dynamic-resources.md
                   items:
+                    - name: 支持动态资源
+                      href: supporting-dynamic-resources.md
                     - name: 动态顶点和索引缓冲区
                       href: dynamic-vertex-and-index-buffers.md
                     - name: 动态纹理
                       href: dynamic-textures.md
                 - name: 支持顶点着色器声明
-                  href: supporting-vertex-shader-declarations.md
                   items:
+                    - name: 支持顶点着色器声明
+                      href: supporting-vertex-shader-declarations.md
                     - name: 隔离顶点着色器的声明和代码
                       href: separating-declarations-and-code-for-vertex-shaders.md
                     - name: 支持流中具有相同偏移量的顶点元素
@@ -1774,22 +1937,25 @@
                     - name: 处理顶点元素
                       href: handling-vertex-elements.md
                 - name: 支持流偏移量
-                  href: supporting-stream-offsets.md
                   items:
+                    - name: 支持流偏移量
+                      href: supporting-stream-offsets.md
                     - name: 报告流偏移量支持
                       href: reporting-support-for-stream-offsets.md
                 - name: 报告 UBYTE4 顶点元素支持
                   href: reporting-support-of-ubyte4-vertex-element.md
                 - name: 支持用于设置渲染器目标的命令
-                  href: supporting-commands-for-setting-render-target.md
                   items:
+                    - name: 支持用于设置渲染器目标的命令
+                      href: supporting-commands-for-setting-render-target.md
                     - name: 设置多个渲染器目标和深度模具
                       href: setting-multiple-render-targets-and-depth-stencils.md
                     - name: 验证渲染器目标的有效性
                       href: verifying-validity-of-render-target.md
                 - name: 设置裁切矩形
-                  href: setting-scissor-rectangle.md
                   items:
+                    - name: 设置裁切矩形
+                      href: setting-scissor-rectangle.md
                     - name: 报告裁切矩形支持
                       href: reporting-support-for-scissor-rectangle.md
                 - name: DirectX 版本通知
@@ -1797,8 +1963,9 @@
                 - name: 报告 DDI 版本
                   href: reporting-ddi-version.md
                 - name: 支持异步查询操作
-                  href: supporting-asynchronous-query-operations.md
                   items:
+                    - name: 支持异步查询操作
+                      href: supporting-asynchronous-query-operations.md
                     - name: 验证查询类型支持
                       href: verifying-support-of-query-types.md
                     - name: 处理异步查询
@@ -1810,18 +1977,21 @@
             - name: 建议的 DirectX 9.0 驱动程序支持
               href: recommended-directx-9-0-driver-support.md
             - name: 可选的 DirectX 9.0 驱动程序支持
-              href: optional-directx-9-0-driver-support.md
               items:
+                - name: 可选的 DirectX 9.0 驱动程序支持
+                  href: optional-directx-9-0-driver-support.md
                 - name: 控制多重采样渲染
-                  href: controlling-multiple-sample-rendering.md
                   items:
+                    - name: 控制多重采样渲染
+                      href: controlling-multiple-sample-rendering.md
                     - name: 控制多重采样渲染的质量
                       href: controlling-quality-of-multiple-sample-rendering.md
                     - name: 动态控制多重采样渲染
                       href: dynamically-controlling-multiple-sample-rendering.md
                 - name: 支持非标准显示模式
-                  href: supporting-nonstandard-display-modes.md
                   items:
+                    - name: 支持非标准显示模式
+                      href: supporting-nonstandard-display-modes.md
                     - name: 枚举扩展格式
                       href: enumerating-extended-formats.md
                     - name: 在标准与非标准模式之间切换
@@ -1829,8 +1999,9 @@
                     - name: 处理非标准显示模式
                       href: handling-nonstandard-display-modes.md
                 - name: 支持多头硬件
-                  href: supporting-multiple-head-hardware.md
                   items:
+                    - name: 支持多头硬件
+                      href: supporting-multiple-head-hardware.md
                     - name: 识别适配器组和提供功能
                       href: identifying-adapter-group-and-providing-capabilities.md
                     - name: 创建头
@@ -1846,8 +2017,9 @@
                     - name: 使用多个多头适配器
                       href: using-multiple-multiple-head-adapters.md
                 - name: 管理 MIP 贴图纹理
-                  href: managing-mip-map-textures.md
                   items:
+                    - name: 管理 MIP 贴图纹理
+                      href: managing-mip-map-textures.md
                     - name: 处理轻量 MIP 贴图纹理
                       href: handling-lightweight-mip-map-textures.md
                     - name: 获取轻量 MIP 贴图纹理的子级别
@@ -1855,8 +2027,9 @@
                     - name: 生成 MIP 贴图纹理的子级别
                       href: generating-sublevels-of-mip-map-textures.md
                 - name: 处理灰度校正
-                  href: handling-gamma-correction.md
                   items:
+                    - name: 处理灰度校正
+                      href: handling-gamma-correction.md
                     - name: 标记灰度和线性转换的格式
                       href: marking-formats-for-gamma-and-linear-conversion.md
                     - name: 针对交换链执行灰度校正
@@ -1864,8 +2037,9 @@
                 - name: 支持拉伸位图传送操作
                   href: supporting-stretch-blit-operations.md
                 - name: 同时渲染到多个目标
-                  href: rendering-to-multiple-targets-simultaneously.md
                   items:
+                    - name: 同时渲染到多个目标
+                      href: rendering-to-multiple-targets-simultaneously.md
                     - name: 多个渲染器目标的必需功能
                       href: required-features-for-multiple-render-targets.md
                     - name: 多个渲染器目标的可选功能
@@ -1883,22 +2057,25 @@
                 - name: 支持着色器 3 的其他指令槽
                   href: supporting-additional-instruction-slots-for-shader-3.md
                 - name: 报告着色器版本的功能
-                  href: reporting-capabilities-for-shader-versions.md
                   items:
+                    - name: 报告着色器版本的功能
+                      href: reporting-capabilities-for-shader-versions.md
                     - name: 报告着色器 2 支持功能
                       href: reporting-capabilities-for-shader-2-support.md
                     - name: 报告着色器 3 支持功能
                       href: reporting-capabilities-for-shader-3-support.md
             - name: Windows DDK 的更新
-              href: updates-for-windows-ddk.md
               items:
+                - name: Windows DDK 的更新
+                  href: updates-for-windows-ddk.md
                 - name: 分配非分页显示内存
                   href: allocating-nonpaged-display-memory.md
                 - name: 视频微型端口驱动程序中 Bug 检查数据的最大大小
                   href: specifying-maximum-size-of-bug-check-data-in-a-video-miniport-driver.md
             - name: 早期 DirectX DDK 版本的更新
-              href: updates-for-earlier-directx-ddk-versions.md
               items:
+                - name: 早期 DirectX DDK 版本的更新
+                  href: updates-for-earlier-directx-ddk-versions.md
                 - name: 按像素将 Z 缓冲区升级到 32 位
                   href: promoting-z-buffers-to-32-bits-per-pixel.md
                 - name: 销毁与 Direct3D 上下文关联的对象
@@ -1908,21 +2085,25 @@
                 - name: 顶点声明中的默认纹理坐标
                   href: supplying-default-values-for-texture-coordinates-in-vertex-declaration.md
     - name: DirectX 视频加速
-      href: directx-video-acceleration.md
       items:
+        - name: DirectX 视频加速
+          href: directx-video-acceleration.md
         - name: DirectX VA 简介
-          href: introduction-to-directx-va.md
           items:
+            - name: DirectX VA 简介
+              href: introduction-to-directx-va.md
             - name: 当前标准的实施
-              href: implementation-of-current-standards.md
               items:
+                - name: 当前标准的实施
+                  href: implementation-of-current-standards.md
                 - name: ITU-T H.261
                   href: itu-t-h-261.md
                 - name: MPEG-1
                   href: mpeg-1.md
                 - name: MPEG-2 (H.262)
-                  href: mpeg-2--h-262-.md
                   items:
+                    - name: MPEG-2 (H.262)
+                      href: mpeg-2--h-262-.md
                     - name: 帧结构化图片
                       href: frame-structured-pictures.md
                     - name: 场结构化图片
@@ -1938,16 +2119,19 @@
             - name: DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
               href: directx-va-relationship-to-iamvideoaccelerator-api-and-motion-compensa.md
         - name: 视频解码
-          href: video-decoding.md
           items:
+            - name: 视频解码
+              href: video-decoding.md
             - name: 帧缓冲区组织
               href: frame-buffer-organization.md
             - name: 解码器阶段
-              href: decoder-stages.md
               items:
+                - name: 解码器阶段
+                  href: decoder-stages.md
                 - name: 运动补偿预测
-                  href: motion-compensated-prediction.md
                   items:
+                    - name: 运动补偿预测
+                      href: motion-compensated-prediction.md
                     - name: 宏块预测
                       href: macroblock-prediction.md
                     - name: '宏块分区 '
@@ -1955,22 +2139,25 @@
                     - name: 预测平面
                       href: prediction-planes.md
         - name: 反交错和帧速率转换
-          href: deinterlacing-and-frame-rate-conversion.md
           items:
+            - name: 反交错和帧速率转换
+              href: deinterlacing-and-frame-rate-conversion.md
             - name: 反交错模式
               href: deinterlace-modes.md
             - name: 帧速率转换模式
               href: frame-rate-conversion-modes.md
             - name: Bob 反交错
-              href: bob-deinterlacing.md
               items:
+                - name: Bob 反交错
+                  href: bob-deinterlacing.md
                 - name: Bob 反交错机制
                   href: bob-deinterlacing-mechanics.md
                 - name: Bob 反交错算法
                   href: bob-deinterlacing-algorithm.md
             - name: 将反交错 DDI 映射到 DirectDraw 和 DirectX VA
-              href: mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md
               items:
+                - name: 将反交错 DDI 映射到 DirectDraw 和 DirectX VA
+                  href: mapping-the-deinterlace-ddi-to-directdraw-and-directx-va.md
                 - name: 用于反交错的反交错容器设备
                   href: deinterlace-container-device-for-deinterlacing.md
                 - name: 从用户模式组件调用反交错 DDI
@@ -1980,8 +2167,9 @@
             - name: 64 位操作系统上的反交错
               href: deinterlacing-on-64-bit-operating-systems.md
             - name: 合并反交错和视频子流合成内容
-              href: combining-deinterlacing-and-video-substream-compositing.md
               items:
+                - name: 合并反交错和视频子流合成内容
+                  href: combining-deinterlacing-and-video-substream-compositing.md
                 - name: DeinterlaceBltEx 概述
                   href: overview-of-deinterlacebltex.md
                 - name: 报告 DeinterlaceBltEx 支持
@@ -1991,8 +2179,9 @@
                 - name: 针对视频子流和目标图面的操作
                   href: supporting-operations-on-video-substream-and-destination-surfaces.md
                 - name: 在目标矩形中显示样本和背景色
-                  href: displaying-samples-and-background-color-in-the-target-rectangle.md
                   items:
+                    - name: 在目标矩形中显示样本和背景色
+                      href: displaying-samples-and-background-color-in-the-target-rectangle.md
                     - name: '在 4:3 目标图面中显示 16:9 视频'
                       href: displaying-16-9-video-within-a-4-3-destination-surface.md
                     - name: 将纵横比不同的视频流和子流合并
@@ -2000,15 +2189,17 @@
                     - name: 将高度和宽度不同的两个流合并
                       href: combining-two-streams-with-different-heights-and-widths.md
                 - name: 处理子矩形
-                  href: processing-subrectangles.md
                   items:
+                    - name: 处理子矩形
+                      href: processing-subrectangles.md
                     - name: 在不拉伸的情况下处理子矩形
                       href: processing-subrectangles-without-stretching.md
                     - name: 拉伸子矩形
                       href: stretching-subrectangles.md
                 - name: 输入缓冲区顺序
-                  href: input-buffer-order.md
                   items:
+                    - name: 输入缓冲区顺序
+                      href: input-buffer-order.md
                     - name: 输入缓冲区顺序规则
                       href: input-buffer-order-rules.md
                     - name: 输入缓冲区顺序示例 1
@@ -2028,15 +2219,17 @@
             - name: 反交错的示例函数
               href: sample-functions-for-deinterlacing.md
         - name: ProcAmp 控制处理
-          href: procamp-control-processing.md
           items:
+            - name: ProcAmp 控制处理
+              href: procamp-control-processing.md
             - name: 在 8 位 YUV 色彩空间中进行处理
               href: processing-in-the-8-bit-yuv-color-space.md
             - name: VMR 视频处理
               href: vmr-video-processing.md
             - name: 将 ProcAmp 控制 DDI 映射到 DirectDraw 和 DirectX VA
-              href: mapping-the-procamp-control-ddi-to-directdraw-and-directx-va.md
               items:
+                - name: 将 ProcAmp 控制 DDI 映射到 DirectDraw 和 DirectX VA
+                  href: mapping-the-procamp-control-ddi-to-directdraw-and-directx-va.md
                 - name: 用于 ProcAmp 控制的反交错容器设备
                   href: deinterlace-container-device-for-procamp-control.md
                 - name: 从用户模式组件调用 ProcAmp 控制 DDI
@@ -2046,16 +2239,19 @@
             - name: ProcAmp 控制的示例函数
               href: sample-functions-for-procamp-control.md
         - name: COPP 处理
-          href: copp-processing.md
           items:
+            - name: COPP 处理
+              href: copp-processing.md
             - name: COPP 简介
-              href: introduction-to-copp.md
               items:
+                - name: COPP 简介
+                  href: introduction-to-copp.md
                 - name: COPP 使用的加密基元
                   href: cryptographic-primitives-used-by-copp.md
                 - name: 通过安全通道进行通信
-                  href: communicating-through-a-secure-channel.md
                   items:
+                    - name: 通过安全通道进行通信
+                      href: communicating-through-a-secure-channel.md
                     - name: 经过身份验证的密钥交换
                       href: authenticated-key-exchange.md
                     - name: 命令安全性和真实性
@@ -2065,8 +2261,9 @@
                 - name: 支持 COPP 所要满足的图形适配器输出要求
                   href: graphics-adapter-output-requirements-to-support-copp.md
             - name: 将 COPP DDI 映射到 DirectDraw 和 DirectX VA
-              href: mapping-the-copp-ddi-to-directdraw-and-directx-va.md
               items:
+                - name: 将 COPP DDI 映射到 DirectDraw 和 DirectX VA
+                  href: mapping-the-copp-ddi-to-directdraw-and-directx-va.md
                 - name: DirectX VA COPP 设备
                   href: directx-va-copp-device.md
                 - name: 从用户模式组件调用 COPP DDI
@@ -2074,8 +2271,9 @@
                 - name: 从显示驱动程序调用 COPP DDI
                   href: calling-the-copp-ddi-from-the-display-driver.md
             - name: COPP 的示例函数
-              href: sample-functions-for-copp.md
               items:
+                - name: COPP 的示例函数
+                  href: sample-functions-for-copp.md
                 - name: COPPOpenVideoSession 函数
                   href: coppopenvideosession.md
                 - name: COPPGetCertificateLength 函数
@@ -2093,8 +2291,9 @@
             - name: 从 COPP 函数返回错误代码
               href: returning-error-codes-from-copp-functions.md
             - name: 执行 COPP 操作
-              href: performing-copp-operations.md
               items:
+                - name: 执行 COPP 操作
+                  href: performing-copp-operations.md
                 - name: 启动受保护的视频会话
                   href: starting-a-protected-video-session.md
                 - name: 处理保护级别
@@ -2102,8 +2301,9 @@
                 - name: 处理 COPP 设备丢失
                   href: handling-the-loss-of-a-copp-device.md
                 - name: COPP 命令
-                  href: copp-commands.md
                   items:
+                    - name: COPP 命令
+                      href: copp-commands.md
                     - name: 设置保护级别
                       href: setting-the-protection-level.md
                     - name: 指示如何保护信号
@@ -2113,8 +2313,9 @@
                 - name: COPP 状态事件
                   href: copp-status-events.md
             - name: COPP 实施提示和要求
-              href: implementation-tips-and-requirements-for-copp.md
               items:
+                - name: COPP 实施提示和要求
+                  href: implementation-tips-and-requirements-for-copp.md
                 - name: COPP 和多监视器支持
                   href: copp-and-multiple-monitor-support.md
                 - name: COPP 和 ChangeDisplaySettingsEx
@@ -2122,8 +2323,9 @@
                 - name: COPP 和显示模式
                   href: copp-and-display-modes.md
             - name: DirectX 视频加速 I/O 控制代码
-              href: directx-video-acceleration-i-o-control-codes.md
               items:
+                - name: DirectX 视频加速 I/O 控制代码
+                  href: directx-video-acceleration-i-o-control-codes.md
                 - name: IOCTL_COPP_GetCertificateLength
                   href: ioctl-copp-getcertificatelength.md
                 - name: IOCTL_COPP_KeyExchange
@@ -2135,14 +2337,17 @@
                 - name: IOCTL_COPP_Status
                   href: ioctl-copp-status.md
         - name: DirectX VA 设备的示例代码
-          href: example-code-for-directx-va-devices.md
           items:
+            - name: DirectX VA 设备的示例代码
+              href: example-code-for-directx-va-devices.md
             - name: 运动补偿代码模板
-              href: motion-compensation-code-template.md
               items:
+                - name: 运动补偿代码模板
+                  href: motion-compensation-code-template.md
                 - name: 定义 DirectX VA 设备类
-                  href: defining-directx-va-device-classes.md
                   items:
+                    - name: 定义 DirectX VA 设备类
+                      href: defining-directx-va-device-classes.md
                     - name: 定义反交错容器设备类
                       href: defining-the-deinterlace-container-device-class.md
                     - name: 定义 ProcAmp 控制设备类
@@ -2164,8 +2369,9 @@
                 - name: 删除 DirectX VA 设备对象的实例
                   href: deleting-instances-of-directx-va-device-objects.md
                 - name: 反交错 DDI
-                  href: deinterlace-ddi.md
                   items:
+                    - name: 反交错 DDI
+                      href: deinterlace-ddi.md
                     - name: 'DXVA_DeinterlaceContainerDeviceClass::DeinterlaceQueryAvailableModes'
                       href: dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md
                     - name: 'DXVA_DeinterlaceContainerDeviceClass::DeinterlaceQueryModeCaps'
@@ -2179,8 +2385,9 @@
                     - name: 'DXVA_DeinterlaceBobDeviceClass::DeinterlaceCloseStream'
                       href: dxva-deinterlacebobdeviceclass-deinterlaceclosestream.md
                 - name: ProcAmp 控制 DDI
-                  href: procamp-control-ddi.md
                   items:
+                    - name: ProcAmp 控制 DDI
+                      href: procamp-control-ddi.md
                     - name: 'DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps'
                       href: dxva-deinterlacecontainerdeviceclass-procampcontrolquerycaps.md
                     - name: 'DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange'
@@ -2192,8 +2399,9 @@
                     - name: 'DXVA_ProcAmpControlDeviceClass::ProcAmpControlCloseStream'
                       href: dxva-procampcontroldeviceclass-procampcontrolclosestream.md
             - name: COPP 视频微型端口驱动程序模板
-              href: copp-video-miniport-driver-template.md
               items:
+                - name: COPP 视频微型端口驱动程序模板
+                  href: copp-video-miniport-driver-template.md
                 - name: COPP 设备定义模板代码
                   href: copp-device-definition-template-code.md
                 - name: COPP 视频微型端口驱动程序 IOCTL 模板代码
@@ -2217,16 +2425,19 @@
             - name: 显示微型端口驱动程序的驱动程序入口
               href: driverentry-of-display-miniport-driver.md
         - name: DirectX VA 数据流管理
-          href: directx-va-data-flow-management.md
           items:
+            - name: DirectX VA 数据流管理
+              href: directx-va-data-flow-management.md
             - name: 加密支持
               href: encryption-support.md
             - name: 设置 DirectX VA 解码
-              href: setting-up-directx-va-decoding.md
               items:
+                - name: 设置 DirectX VA 解码
+                  href: setting-up-directx-va-decoding.md
                 - name: bDXVA_Func 变量
-                  href: bdxva-func-variable.md
                   items:
+                    - name: bDXVA_Func 变量
+                      href: bdxva-func-variable.md
                     - name: DXVA_ConfigQueryOrReplyFlag 和 DXVA_ConfigQueryorReplyFunc 变量
                       href: dxva-configqueryorreplyflag-and-dxva-configqueryorreplyfunc-variables.md
             - name: 探测和锁定配置
@@ -2234,28 +2445,33 @@
             - name: 缓冲区说明列表
               href: buffer-description-list.md
             - name: 序列要求
-              href: sequence-requirements.md
               items:
+                - name: 序列要求
+                  href: sequence-requirements.md
                 - name: 使用四个未压缩的图面进行解码
                   href: using-four-uncompressed-surfaces-for-decoding.md
                 - name: 使用五个或更多个未压缩的图面进行解码
                   href: using-five-or-more-uncompressed-surfaces-for-decoding.md
         - name: DirectX VA 操作
-          href: directx-va-operations.md
           items:
+            - name: DirectX VA 操作
+              href: directx-va-operations.md
             - name: 压缩图片解码
-              href: compressed-picture-decoding.md
               items:
+                - name: 压缩图片解码
+                  href: compressed-picture-decoding.md
                 - name: 未压缩视频的像素格式
-                  href: pixel-formats-for-uncompressed-video.md
                   items:
+                    - name: 未压缩视频的像素格式
+                      href: pixel-formats-for-uncompressed-video.md
                     - name: '4:2:2 视频像素格式'
                       href: 4-2-2-video-pixel-formats.md
                     - name: '4:2:0 视频像素格式'
                       href: 4-2-0-video-pixel-formats.md
                 - name: 面向宏块的图片解码
-                  href: macroblock-oriented-picture-decoding.md
                   items:
+                    - name: 面向宏块的图片解码
+                      href: macroblock-oriented-picture-decoding.md
                     - name: 宏块控制命令
                       href: macroblock-control-commands.md
                     - name: 动作矢量
@@ -2293,8 +2509,9 @@
                 - name: 主机外 VLD 位流解码操作
                   href: off-host-vld-bitstream-decoding-operation.md
             - name: Alpha 混合数据加载
-              href: alpha-blend-data-loading.md
               items:
+                - name: Alpha 混合数据加载
+                  href: alpha-blend-data-loading.md
                 - name: 加载 AYUV Alpha 混合图面
                   href: loading-an-ayuv-alpha-blending-surface.md
                 - name: 加载 DPXD Alpha 混合图面
@@ -2304,8 +2521,9 @@
                 - name: 加载 DCCMD 数据
                   href: loading-dccmd-data.md
             - name: Alpha 混合组合
-              href: alpha-blend-combination.md
               items:
+                - name: Alpha 混合组合
+                  href: alpha-blend-combination.md
                 - name: MPEG-2 平移扫描示例
                   href: mpeg-2-pan-scan-example.md
                 - name: '16:9 画面中的 DVD 4:3 平移扫描示例'
@@ -2321,11 +2539,13 @@
             - name: 画面重新采样控制
               href: picture-resampling-control.md
         - name: 定义加速器功能
-          href: defining-accelerator-capabilities.md
           items:
+            - name: 定义加速器功能
+              href: defining-accelerator-capabilities.md
             - name: 受限制配置文件
-              href: restricted-profiles.md
               items:
+                - name: 受限制配置文件
+                  href: restricted-profiles.md
                 - name: H261_A
                   href: h261-a.md
                 - name: 'H261_B '
@@ -2355,8 +2575,9 @@
                 - name: WMV8_A、WMV8_B、WMV9_A、WMV9_B 和 WMV9_C
                   href: wmv8-a--wmv8-b--wmv9-a--wmv9-b--and-wmv9-c.md
                 - name: 最低互操作性配置集
-                  href: minimal-interoperability-configuration-sets.md
                   items:
+                    - name: 最低互操作性配置集
+                      href: minimal-interoperability-configuration-sets.md
                     - name: 压缩图片解码集
                       href: compressed-picture-decoding-set.md
                     - name: 第一个图片解码配置
@@ -2386,8 +2607,9 @@
                     - name: Alpha 混合组合集
                       href: alpha-blend-combination-set.md
     - name: Windows 2000 显示驱动程序模型中的视频微型端口驱动程序
-      href: video-miniport-drivers-in-the-windows-2000-display-driver-model.md
       items:
+        - name: Windows 2000 显示驱动程序模型中的视频微型端口驱动程序
+          href: video-miniport-drivers-in-the-windows-2000-display-driver-model.md
         - name: 视频微型端口驱动程序标头文件（Windows 2000 模型）
           href: video-miniport-driver-header-files--windows-2000-model-.md
         - name: 视频微型端口驱动程序要求（Windows 2000 模型）
@@ -2395,11 +2617,13 @@
         - name: 图形体系结构中的视频微型端口驱动程序（Windows 2000 模型）
           href: video-miniport-driver-within-the-graphics-architecture--windows-2000-m.md
         - name: 视频微型端口驱动程序初始化（Windows 2000 模型）
-          href: video-miniport-driver-initialization--windows-2000-model-.md
           items:
+            - name: 视频微型端口驱动程序初始化（Windows 2000 模型）
+              href: video-miniport-driver-initialization--windows-2000-model-.md
             - name: '启动视频微型端口驱动程序的设备 '
-              href: starting-the-device-of-the-video-miniport-driver.md
               items:
+                - name: '启动视频微型端口驱动程序的设备 '
+                  href: starting-the-device-of-the-video-miniport-driver.md
                 - name: 设置视频适配器访问范围
                   href: setting-up-video-adapter-access-ranges.md
                 - name: 在注册表中设置硬件信息
@@ -2417,8 +2641,9 @@
         - name: 视频微型端口驱动程序中的事件（Windows 2000 模型）
           href: events-in-video-miniport-drivers--windows-2000-model-.md
         - name: 处理视频请求（Windows 2000 模型）
-          href: processing-video-requests--windows-2000-model-.md
           items:
+            - name: 处理视频请求（Windows 2000 模型）
+              href: processing-video-requests--windows-2000-model-.md
             - name: 系统定义的 IOCTL_VIDEO_XXX 请求
               href: system-defined-ioctl-video-xxx-requests.md
             - name: 个人定义的显示微型端口驱动程序 IOCTL_VIDEO_XXX 请求
@@ -2432,8 +2657,9 @@
         - name: Bug 检查回调的视频端口驱动程序支持
           href: video-port-driver-support-for-bug-check-callbacks.md
         - name: 显示适配器的子设备（Windows 2000 模型）
-          href: child-devices-of-the-display-adapter--windows-2000-model-.md
           items:
+            - name: 显示适配器的子设备（Windows 2000 模型）
+              href: child-devices-of-the-display-adapter--windows-2000-model-.md
             - name: '检测子设备 '
               href: detecting-child-devices.md
             - name: 与子设备的驱动程序通信
@@ -2443,8 +2669,9 @@
         - name: 显示适配器的 I2C 总线和子设备
           href: i2c-bus-and-child-devices-of-the-display-adapter.md
         - name: 视频微型端口驱动程序中的中断
-          href: interrupts-in-video-miniport-drivers.md
           items:
+            - name: 视频微型端口驱动程序中的中断
+              href: interrupts-in-video-miniport-drivers.md
             - name: 实现 HwVidSynchronizeExecutionCallback 例程
               href: when-to-implement-a-hwvidsynchronizeexecutioncallback-routine.md
         - name: 视频微型端口驱动程序中的计时器
@@ -2454,8 +2681,9 @@
         - name: 在视频微型端口驱动程序中重置适配器
           href: resetting-the-adapter-in-video-miniport-drivers.md
         - name: 视频微型端口驱动程序中的总线主控 DMA
-          href: bus-master-dma-in-video-miniport-drivers.md
           items:
+            - name: 视频微型端口驱动程序中的总线主控 DMA
+              href: bus-master-dma-in-video-miniport-drivers.md
             - name: 基于数据包的总线主控 DMA
               href: packet-based-bus-master-dma.md
             - name: 公用缓冲区总线主控 DMA
@@ -2469,13 +2697,15 @@
         - name: DualView 高级实施详细信息
           href: dualview-advanced-implementation-details.md
         - name: 视频微型端口驱动程序中的电视连接器和复制保护支持
-          href: tv-connector-and-copy-protection-support-in-video-miniport-drivers.md
           items:
+            - name: 视频微型端口驱动程序中的电视连接器和复制保护支持
+              href: tv-connector-and-copy-protection-support-in-video-miniport-drivers.md
             - name: 查询电视连接器和复制保护硬件
               href: querying-tv-connector-and-copy-protection-hardware.md
             - name: 设置电视连接器和复制保护硬件
-              href: setting-tv-connector-and-copy-protection-hardware.md
               items:
+                - name: 设置电视连接器和复制保护硬件
+                  href: setting-tv-connector-and-copy-protection-hardware.md
                 - name: 设置复制保护硬件
                   href: setting-copy-protection-hardware.md
                 - name: 多会话复制保护
@@ -2483,8 +2713,9 @@
         - name: 视频微型端口驱动程序中的镜像驱动程序支持（Windows 2000 模型）
           href: mirror-driver-support-in-video-miniport-drivers--windows-2000-model-.md
         - name: VGA 兼容的视频微型端口驱动程序（Windows 2000 模型）
-          href: vga-compatible-video-miniport-drivers--windows-2000-model-.md
           items:
+            - name: VGA 兼容的视频微型端口驱动程序（Windows 2000 模型）
+              href: vga-compatible-video-miniport-drivers--windows-2000-model-.md
             - name: 基于 x86 的计算机中的开窗 VDM
               href: windowed-vdms-in-x86-based-machines.md
             - name: 基于 x86 的计算机中的全屏 VDM
@@ -2496,15 +2727,17 @@
             - name: VGA 兼容的微型端口驱动程序的 HwVidStartIO
               href: vga-compatible-miniport-driver-s-hwvidstartio.md
         - name: 多个 Windows 版本中的视频微型端口驱动程序（Windows 2000 模型）
-          href: video-miniport-drivers-on-multiple-windows-versions--windows-2000-mode.md
           items:
+            - name: 多个 Windows 版本中的视频微型端口驱动程序（Windows 2000 模型）
+              href: video-miniport-drivers-on-multiple-windows-versions--windows-2000-mode.md
             - name: 将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
               href: converting-a-windows-nt-4-0-miniport-driver-to-windows-2000.md
             - name: 使用 VideoPortGetProcAddress
               href: using-videoportgetprocaddress.md
     - name: 有关 Windows 2000 显示驱动程序模型的提示和要求
-      href: implementation-tips-and-requirements-for-the-windows-2000-display-driv.md
       items:
+        - name: 有关 Windows 2000 显示驱动程序模型的提示和要求
+          href: implementation-tips-and-requirements-for-the-windows-2000-display-driv.md
         - name: 访问用户模式内存时处理异常
           href: exception-handling-when-accessing-user-mode-memory.md
         - name: 显示驱动程序的版本号
@@ -2512,16 +2745,19 @@
         - name: 处理可移动子设备
           href: handling-removable-child-devices.md
     - name: GDI
-      href: gdi.md
       items:
+        - name: GDI
+          href: gdi.md
         - name: 图形系统概述
           href: graphics-system-overview.md
         - name: 使用图形 DDI
-          href: using-the-graphics-ddi.md
           items:
+            - name: 使用图形 DDI
+              href: using-the-graphics-ddi.md
             - name: 图形驱动程序函数
-              href: graphics-driver-functions.md
               items:
+                - name: 图形驱动程序函数
+                  href: graphics-driver-functions.md
                 - name: 必需的图形驱动程序函数
                   href: required-graphics-driver-functions.md
                 - name: 在不同的条件下需要的图形驱动程序函数
@@ -2529,8 +2765,9 @@
                 - name: 可选的图形驱动程序函数
                   href: optional-graphics-driver-functions.md
             - name: 支持初始化和终止函数
-              href: supporting-initialization-and-termination-functions.md
               items:
+                - name: 支持初始化和终止函数
+                  href: supporting-initialization-and-termination-functions.md
                 - name: 驱动程序初始化和清理
                   href: driver-initialization-and-cleanup.md
                 - name: PDEV 初始化和清理
@@ -2542,11 +2779,13 @@
             - name: 创建设备相关的位图
               href: creating-device-dependent-bitmaps.md
             - name: 支持图形输出
-              href: supporting-graphics-output.md
               items:
+                - name: 支持图形输出
+                  href: supporting-graphics-output.md
                 - name: 绘制线条和曲线
-                  href: drawing-lines-and-curves.md
                   items:
+                    - name: 绘制线条和曲线
+                      href: drawing-lines-and-curves.md
                     - name: 装饰线条
                       href: cosmetic-lines.md
                     - name: 几何宽线条
@@ -2556,8 +2795,9 @@
                     - name: 贝塞尔曲线
                       href: bezier-curves.md
                 - name: 绘制和填充路径
-                  href: drawing-and-filling-paths.md
                   items:
+                    - name: 绘制和填充路径
+                      href: drawing-and-filling-paths.md
                     - name: 路径填充模式
                       href: path-fill-modes.md
                     - name: 填充区域（封闭路径）
@@ -2569,18 +2809,21 @@
                 - name: 图像颜色管理
                   href: image-color-management.md
             - name: 支持图形 DDI 颜色和模式函数
-              href: supporting-graphics-ddi-color-and-pattern-functions.md
               items:
+                - name: 支持图形 DDI 颜色和模式函数
+                  href: supporting-graphics-ddi-color-and-pattern-functions.md
                 - name: 管理调色板
                   href: managing-palettes.md
                 - name: 识别画笔
                   href: realizing-brushes.md
             - name: 支持图形 DDI 字体和文本函数
-              href: supporting-graphics-ddi-font-and-text-functions.md
               items:
+                - name: 支持图形 DDI 字体和文本函数
+                  href: supporting-graphics-ddi-font-and-text-functions.md
                 - name: 管理和优化字体
-                  href: managing-and-optimizing-fonts.md
                   items:
+                    - name: 管理和优化字体
+                      href: managing-and-optimizing-fonts.md
                     - name: 字体规格函数
                       href: font-metric-functions.md
                     - name: 字体驱动程序函数
@@ -2594,16 +2837,19 @@
             - name: 已过时的图形 DDI 函数
               href: obsolete-graphics-ddi-functions.md
         - name: 图形驱动程序的 GDI 支持
-          href: gdi-support-for-graphics-drivers.md
           items:
+            - name: 图形驱动程序的 GDI 支持
+              href: gdi-support-for-graphics-drivers.md
             - name: 从驱动程序角度理解 GDI
-              href: gdi-from-the-driver-s-perspective.md
               items:
+                - name: 从驱动程序角度理解 GDI
+                  href: gdi-from-the-driver-s-perspective.md
                 - name: 用作应用程序图形语言的 GDI
                   href: gdi-as-a-graphics-language-for-applications.md
                 - name: 用作渲染引擎的 GDI
-                  href: gdi-as-a-rendering-engine.md
                   items:
+                    - name: 用作渲染引擎的 GDI
+                      href: gdi-as-a-rendering-engine.md
                     - name: GDI 管理的位图
                       href: gdi-managed-bitmaps.md
                     - name: GDI 管理的线条和曲线
@@ -2617,11 +2863,13 @@
                     - name: 将每像素 8 位半色调索引转换为墨位
                       href: translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md
             - name: GDI/驱动程序的工作划分
-              href: gdi-driver-division-of-labor.md
               items:
+                - name: GDI/驱动程序的工作划分
+                  href: gdi-driver-division-of-labor.md
                 - name: GDI 与驱动程序的通信
-                  href: gdi-communication-with-the-driver.md
                   items:
+                    - name: GDI 与驱动程序的通信
+                      href: gdi-communication-with-the-driver.md
                     - name: GDI 用户对象
                       href: gdi-user-objects.md
                     - name: GDI 服务例程
@@ -2629,8 +2877,9 @@
                 - name: PDEV 协商
                   href: pdev-negotiation.md
                 - name: 图面协商
-                  href: surface-negotiation.md
                   items:
+                    - name: 图面协商
+                      href: surface-negotiation.md
                     - name: 图面坐标
                       href: surface-coordinates.md
                     - name: DC 原点
@@ -2644,8 +2893,9 @@
                     - name: 挂钩与转移
                       href: hooking-versus-punting.md
             - name: GDI 支持服务
-              href: gdi-support-services.md
               items:
+                - name: GDI 支持服务
+                  href: gdi-support-services.md
                 - name: 图面的 GDI 支持
                   href: gdi-support-for-surfaces.md
                 - name: 调色板的 GDI 支持

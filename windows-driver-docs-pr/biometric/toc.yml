@@ -1,6 +1,7 @@
 - name: 生物识别设计指南
-  href: index.md
   items:
+    - name: 生物识别设计指南
+      href: index.md
     - name: 生物识别驱动程序入门
       href: getting-started-with-biometric-drivers.md
     - name: 开发生物识别驱动程序的路线图

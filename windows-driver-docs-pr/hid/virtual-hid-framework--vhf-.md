@@ -4,12 +4,12 @@ description: 了解如何对操作系统编写的 HID 源驱动程序报告 HID 
 ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92286f38db7ec35cd94b6f64f2ab7ac8fdd4a539
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e04451937e840831fc224da9740e1dbd53bc15b0
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376733"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405099"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID Framework (VHF) 编写的 HID 源驱动程序
 
@@ -119,7 +119,7 @@ VHF 调用有这些 Ioctl HID 源驱动程序实现事件回调函数：
 
 -   [**IOCTL\_HID\_读取\_报表**](https://msdn.microsoft.com/library/windows/hardware/ff541172)
 
-    如果该驱动程序想要提交缓冲区获取 HID 输入报告时的句柄缓冲策略，它必须实现[ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135)并指定一个指针，在**EvtVhfAsyncOperationGetInputReport**成员。 有关详细信息，请参阅[提交 HID 输入报告](#submit)。
+    如果该驱动程序想要提交缓冲区获取 HID 输入报告时的句柄缓冲策略，它必须实现[ *EvtVhfReadyForNextReadReport* ](https://msdn.microsoft.com/library/windows/hardware/dn897135)并指定一个指针，在**EvtVhfAsyncOperationGetInputReport**成员。 有关详细信息，请参阅[提交 HID 输入报告](#submit-the-hid-input-report)。
 
 -   [**IOCTL\_HID\_获取\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff541103)或[ **IOCTL\_HID\_设置\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff541184)
 

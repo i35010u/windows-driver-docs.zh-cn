@@ -4,23 +4,23 @@ description: NDIS 选择性挂起的标准化 INF 关键字
 ms.assetid: A45EE23D-1C60-4DA4-82A5-89DB5CE48E21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe9ba1c7f75ea7c462996ea276a140a9e9f0175
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02d0600974ce3ac2af10344d13adb8049244d0bf
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345970"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405279"
 ---
 # <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>NDIS 选择性挂起的标准化 INF 关键字
 
 
 以下的标准化的 INF 关键字定义以启用、 禁用和配置参数的 NDIS 选择性挂起微型端口驱动程序：
 
-[**\*SelectiveSuspend** INF 关键字](#selectivesuspend-keyword)
+[**\*SelectiveSuspend** INF 关键字](#selectivesuspend-inf-keyword)
 
-[**\*SSIdleTimeout** INF 关键字](#ssidletimeout-keyword)
+[**\*SSIdleTimeout** INF 关键字](#ssidletimeout-inf-keyword)
 
-[**\*SSIdleTimeoutScreenOff** INF 关键字](#ssidletimeoutscreenoff-keyword)
+[**\*SSIdleTimeoutScreenOff** INF 关键字](#ssidletimeoutscreenoff-inf-keyword)
 
 
 有关标准化 INF 关键字的详细信息，请参阅[为网络设备的标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md)。

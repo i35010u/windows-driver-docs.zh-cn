@@ -1,8 +1,9 @@
-- name: 开发、测试以及部署驱动程序
+- name: 开发驱动程序
   href: index.md
-- name: 通用驱动程序入门
-  href: getting-started-with-universal-drivers.md
+- name: 通用驱动程序
   items:
+    - name: 通用驱动程序入门
+      href: getting-started-with-universal-drivers.md
     - name: 生成通用 Windows 驱动程序
       href: building-a-universal-driver.md
     - name: 验证通用驱动程序
@@ -17,22 +18,22 @@
       href: windows-10-editions-for-universal-drivers.md
     - name: 适用于 Windows 10 的驱动程序融合模型
       href: driver-model-convergence.md
-- name: 创建新设备功能驱动程序
-  href: creating-a-new-driver.md
-- name: 创建新的筛选器驱动程序
-  href: creating-a-new-filter-driver.md
+- name: 生成驱动程序
   items:
+    - name: 创建新设备功能驱动程序
+      href: creating-a-new-driver.md
+    - name: 创建新的筛选器驱动程序
+      href: creating-a-new-filter-driver.md
     - name: 设备筛选器驱动程序排序
       href: device-filter-driver-ordering.md
-- name: 创建新的软件驱动程序
-  href: creating-a-new-software-driver.md
-- name: 创建新的基元驱动程序
-  href: creating-a-primitive-driver.md
-- name: 从现有源文件创建驱动程序
-  href: creating-a-driver-from-existing-source-files.md
-- name: 使用 WDK 生成驱动程序
-  href: building-a-driver.md
-  items:
+    - name: 创建新的软件驱动程序
+      href: creating-a-new-software-driver.md
+    - name: 创建新的基元驱动程序
+      href: creating-a-primitive-driver.md
+    - name: 从现有源文件创建驱动程序
+      href: creating-a-driver-from-existing-source-files.md
+    - name: 使用 WDK 生成驱动程序
+      href: building-a-driver.md
     - name: 为不同版本的 Windows 生成驱动程序
       href: building-drivers-for-different-versions-of-windows.md
     - name: 使用 WDK 生成 ARM64 驱动程序
@@ -55,25 +56,26 @@
       href: mof-compiler-properties-for-driver-projects.md
     - name: 驱动程序项目的 Stampinf 属性
       href: stampinf-properties-for-driver-projects.md
-- name: 将 WDK 8.1 项目转换为 WDK 10
-  href: converting-wdk-8-1-projects-to-wdk-10.md
-- name: 使用代码分析和验证工具分析驱动程序
-  href: analyzing-driver-quality-by-using-code-analysis-tools.md
-- name: 准备一台用于手动部署驱动程序的计算机
-  href: preparing-a-computer-for-manual-driver-deployment.md
-- name: 预配计算机时会出现什么情况 (WDK 8.1)
-  href: what-happens-when-you-provision-a-computer--wdk-8-1-.md
-- name: 预配计算机时会出现什么情况 (WDK 8.0)
-  href: what-happens-when-you-provision-a-computer--wdk-8-0-.md
-- name: 驱动程序部署、测试和调试配置故障排除
-  href: troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md
-- name: 创建驱动程序包
-  href: creating-a-driver-package.md
-- name: 创建设备元数据包
-  href: creating-a-device-metadata-package.md
+    - name: 将 WDK 8.1 项目转换为 WDK 10
+      href: converting-wdk-8-1-projects-to-wdk-10.md
+    - name: 使用代码分析和验证工具分析驱动程序
+      href: analyzing-driver-quality-by-using-code-analysis-tools.md
+    - name: 准备一台用于手动部署驱动程序的计算机
+      href: preparing-a-computer-for-manual-driver-deployment.md
+    - name: 预配计算机时会出现什么情况 (WDK 8.1)
+      href: what-happens-when-you-provision-a-computer--wdk-8-1-.md
+    - name: 预配计算机时会出现什么情况 (WDK 8.0)
+      href: what-happens-when-you-provision-a-computer--wdk-8-0-.md
+    - name: 驱动程序部署、测试和调试配置故障排除
+      href: troubleshooting-configuration-of-driver-deployment--testing-and-debugging.md
+    - name: 创建驱动程序包
+      href: creating-a-driver-package.md
+    - name: 创建设备元数据包
+      href: creating-a-device-metadata-package.md
 - name: 为驱动程序签名
-  href: signing-a-driver.md
   items:
+    - name: 为驱动程序签名
+      href: signing-a-driver.md
     - name: 对内核驱动程序进行证明签名以便公开发布
       href: attestation-signing-a-kernel-driver-for-public-release.md
     - name: 在开发和测试期间为驱动程序签名
@@ -82,9 +84,10 @@
       href: signing-a-driver-for-public-release.md
     - name: 驱动程序签名属性
       href: driver-signing-properties.md
-- name: 将驱动程序部署到测试计算机
-  href: deploying-a-driver-to-a-test-computer.md
+- name: 部署驱动程序
   items:
+    - name: 将驱动程序部署到测试计算机
+      href: deploying-a-driver-to-a-test-computer.md
     - name: 驱动程序包项目的部署属性
       href: deployment-properties-for-driver-projects.md
     - name: 驱动程序包项目的驱动程序验证程序属性
@@ -102,38 +105,38 @@
 - name: 调试驱动程序
   href: debugging-a-driver.md
 - name: 测试驱动程序
-  href: testing-a-driver.md
   items:
+    - name: 测试驱动程序
+      href: testing-a-driver.md
     - name: 开发期间测试驱动程序的相关技巧
       href: strategies-for-testing-drivers-during-development.md
     - name: 如何使用 Visual Studio 在运行时测试驱动程序
       href: testing-a-driver-at-runtime.md
-      items:
-        - name: 如何在 WDK 8.1 中运行 HCK 测试套件
-          href: run-the-hck-test-suites-in-the-wdk.md
-        - name: 如何选择和配置设备基础功能测试
-          href: how-to-select-and-configure-the-device-fundamental-tests.md
-        - name: 如何测试驱动程序包
-          href: test-a-driver-package.md
-        - name: 如何读取驱动程序测试结果日志
-          href: read-the-driver-test-results-log.md
-        - name: 如何在运行时通过命令提示符测试驱动程序
-          href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-        - name: 使用 WDK 进行设备基础功能测试的故障排除
-          href: troubleshooting-the-device-fundamental-tests.md
+    - name: 如何在 WDK 8.1 中运行 HCK 测试套件
+      href: run-the-hck-test-suites-in-the-wdk.md
+    - name: 如何选择和配置设备基础功能测试
+      href: how-to-select-and-configure-the-device-fundamental-tests.md
+    - name: 如何测试驱动程序包
+      href: test-a-driver-package.md
+    - name: 如何读取驱动程序测试结果日志
+      href: read-the-driver-test-results-log.md
+    - name: 如何在运行时通过命令提示符测试驱动程序
+      href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
+    - name: 使用 WDK 进行设备基础功能测试的故障排除
+      href: troubleshooting-the-device-fundamental-tests.md
     - name: 如何使用“驱动程序测试”模板编写驱动程序测试
       href: how-to-write-a-driver-test-.md
-      items:
-        - name: 如何添加测试元数据
-          href: to-add-test-metadata.md
-- name: 创建驱动程序验证日志
-  href: creating-a-driver-verification-log.md
+    - name: 如何添加测试元数据
+      href: to-add-test-metadata.md
+    - name: 静态驱动程序验证程序已知问题 - Windows 10 2018 年 10 月更新（版本 1809）
+      href: static-driver-verifier-known-issues.md
+- name: 日志记录
   items:
+    - name: 创建驱动程序验证日志
+      href: creating-a-driver-verification-log.md
     - name: 为代码分析工具创建日志文件
       href: creating-a-log-file-for-the-code-analysis-tool.md
     - name: 为静态驱动程序验证程序创建日志文件
       href: creating-a-log-file-for-static-driver-verifier.md
-    - name: 静态驱动程序验证程序已知问题 - Windows 10 2018 年 10 月更新（版本 1809）
-      href: static-driver-verifier-known-issues.md
 - name: 分发驱动程序包
   href: distributing-a-driver-package-win8.md

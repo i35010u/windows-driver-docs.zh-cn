@@ -4,21 +4,21 @@ description: 确定 NIC 交换机功能
 ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 990104d4b1d07ef6bdb8e1f4b3933c4316457bee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1ae1af4bdf1c5e8dc112e024b1bf3b5cc5e4d8e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364222"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405151"
 ---
 # <a name="determining-nic-switch-capabilities"></a>确定 NIC 交换机功能
 
 
 本主题介绍 NDIS 和基础驱动程序如何确定 NIC 切换支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器的功能。 本主题包含下列信息：
 
-[报告期间的 NIC 交换机功能*MiniportInitializeEx*](#report)
+[报告期间的 NIC 交换机功能*MiniportInitializeEx*](#reporting-nic-switch-capabilities-during-miniportinitializeex)
 
-[查询 NIC 交换机功能的基础驱动程序](#query)
+[查询 NIC 交换机功能的基础驱动程序](#querying-nic-switch-capabilities-by-overlying-drivers)
 
 **请注意**  仅微型端口驱动程序为 PCI Express (PCIe) 物理函数 (PF) 的 SR-IOV 网络适配器可以报告 NIC 交换机功能。 PCIe 虚函数 (VFs) 的微型端口驱动程序必须报告 NIC 切换 SR-IOV 适配器功能。
 

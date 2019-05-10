@@ -1,29 +1,35 @@
 - name: 串行控制器驱动程序设计指南
-  href: index.md
   items:
+    - name: 串行控制器驱动程序设计指南
+      href: index.md
     - name: 串行控制器驱动程序概述
-      href: serial-drivers-overview.md
       items:
+        - name: 串行控制器驱动程序概述
+          href: serial-drivers-overview.md
         - name: 串行 I/O 请求接口
-          href: serial-i-o-request-interface.md
           items:
+            - name: 串行 I/O 请求接口
+              href: serial-i-o-request-interface.md
             - name: SerCx I/O 控制请求
               href: sercx-io-control-requests.md
         - name: SerCx2.sys 和 Serial.sys 之间的差异
           href: differences-between-sercx2-and-serial-sys.md
     - name: 使用串行框架扩展版本 2 (SerCx2)
-      href: using-version-2-of-the-serial-framework-extension.md
       items:
+        - name: 使用串行框架扩展版本 2 (SerCx2)
+          href: using-version-2-of-the-serial-framework-extension.md
         - name: SerCx2 体系结构概述
           href: sercx2-architectural-overview.md
         - name: SerCx2 串行控制器驱动程序设计
-          href: serial-controller-driver-design-for-sercx2.md
           items:
+            - name: SerCx2 串行控制器驱动程序设计
+              href: serial-controller-driver-design-for-sercx2.md
             - name: 基于 SerCx2 的串行控制器驱动程序的功能
               href: features-of-sercx2-based-serial-controller-drivers.md
             - name: SerCx2 I/O 事务
-              href: sercx2-i-o-transactions.md
               items:
+                - name: SerCx2 I/O 事务
+                  href: sercx2-i-o-transactions.md
                 - name: SerCx2 I/O 事务概述
                   href: overview-of-sercx2-i-o-transactions.md
                 - name: SerCx2 PIO-Receive 事务
@@ -39,13 +45,15 @@
                 - name: SerCx2 Custom-Transmit 事务
                   href: sercx2-custom-transmit-transactions.md
         - name: 访问 SerCx2 托管串行端口上的设备
-          href: accessing-a-device-on-a-sercx2-managed-serial-port.md
           items:
+            - name: 访问 SerCx2 托管串行端口上的设备
+              href: accessing-a-device-on-a-sercx2-managed-serial-port.md
             - name: SerCx2 托管串行端口上的设备的外设驱动程序
               href: peripheral-drivers-for-devices-on-sercx2-managed-serial-ports.md
             - name: 打开 SerCx2 托管串行端口
-              href: opening-a-sercx2-managed-serial-port.md
               items:
+                - name: 打开 SerCx2 托管串行端口
+                  href: opening-a-sercx2-managed-serial-port.md
                 - name: 串行连接的外围设备的连接 ID
                   href: connection-ids-for-serially-connected-peripheral-devices.md
                 - name: 将 UMDF 外设驱动程序连接到串行端口
@@ -59,13 +67,15 @@
         - name: SerCx2 对象句柄
           href: sercx2-object-handles.md
     - name: 使用 Serial.sys 和 Serenum.sys
-      href: using-serial-sys-and-serenum-sys.md
       items:
+        - name: 使用 Serial.sys 和 Serenum.sys
+          href: using-serial-sys-and-serenum-sys.md
         - name: 串行和 Serenum 的功能
           href: features-of-serial-and-serenum.md
         - name: 串行设备和驱动程序的配置
-          href: configuration-of-serial-devices-and-drivers.md
           items:
+            - name: 串行设备和驱动程序的配置
+              href: configuration-of-serial-devices-and-drivers.md
             - name: COM 端口的配置
               href: configuration-of-com-ports.md
             - name: 非 Pnp 设备到 RS-232 端口的配置
@@ -77,8 +87,9 @@
             - name: '通过 16550 UART 接口配置 PnP 多功能串行设备 '
               href: configuration-of-plug-and-play-serial-device-on-a-multifunction-device.md
         - name: Serenum 和串行的操作
-          href: operation-of-serenum-and-serial.md
           items:
+            - name: Serenum 和串行的操作
+              href: operation-of-serenum-and-serial.md
             - name: 对 I/O 请求进行 Serenum 筛选
               href: serenum-filtering-of-i-o-requests.md
             - name: 枚举 Serenum 设备
@@ -106,8 +117,9 @@
             - name: 确定调试程序使用哪个 COM 端口
               href: determining-which-com-port-a-debugger-uses.md
         - name: 用于串行的注册表设置
-          href: registry-settings-for-serial.md
           items:
+            - name: 用于串行的注册表设置
+              href: registry-settings-for-serial.md
             - name: 用于串行服务的注册表设置
               href: registry-settings-for-the-serial-service.md
             - name: 用于即插即用串行设备的注册表设置
@@ -119,11 +131,13 @@
         - name: COM 端口数据库
           href: com-port-database.md
         - name: 安装串行设备
-          href: installing-serial-devices.md
           items:
+            - name: 安装串行设备
+              href: installing-serial-devices.md
             - name: 安装串行端口和 COM 端口
-              href: installing-serial-ports-and-com-ports.md
               items:
+                - name: 安装串行端口和 COM 端口
+                  href: installing-serial-ports-and-com-ports.md
                 - name: 安装即插即用串行端口和 COM 端口
                   href: installing-plug-and-play-serial-ports-and-com-ports.md
                 - name: 安装旧版 COM 端口

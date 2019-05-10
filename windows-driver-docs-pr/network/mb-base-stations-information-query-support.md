@@ -6,12 +6,12 @@ keywords:
 - MB 基站配合信息查询中，移动宽带基站配合信息查询
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c45183d230038702507d0e135bc7deec4352ee3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c11eb0217aadc3e82916e6d95600a37f57705dc
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343464"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405229"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB 基站信息查询支持
 
@@ -52,11 +52,11 @@ MBIM_BASE_STATIONS_INFO_REQ 结构应为查询使用在 InformationBuffer 中。
 
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | MaxGSMCount | 大小 | 中的 GSM 网络测量报告返回 GSM 相邻单元格的最大项数[MBIM_GSM_NMR](#mbimgsmnmr)。 默认的容量为 15。 |
-| 4 | 4 | MaxUMTSCount | 大小 | UMTS 测量结果列表中返回的 UMTS 相邻单元格的最大项数[MBIM_UMTS_MRL](#mbimumtsmrl)。 默认的容量为 15。 |
-| 8 | 4 | MaxTDSCDMACount | 大小 | TDSCDMA 测量结果列表中返回的 TDSCDMA 相邻单元格的最大项数[MBIM_TDSCDMA_MRL](#mbimtdscdmamrl)。 默认的容量为 15。 |
-| 12 | 4 | MaxLTECount | 大小 | 在 LTE 测量结果列表中返回的 LTE 相邻单元格的最大项数[MBIM_LTE_MRL](#mbimltemrl)。 默认的容量为 15。 |
-| 16 | 4 | MaxCDMACount | 大小 | CDMA 测量结果列表中返回 CDMA 单元格的最大项数[MBIM_CDMA_MRL](#mbimcdmamrl)。 此列表包括为提供服务和相邻单元格。 默认的容量为 12。 |
+| 0 | 4 | MaxGSMCount | 大小 | 中的 GSM 网络测量报告返回 GSM 相邻单元格的最大项数[MBIM_GSM_NMR](#mbim_gsm_nmr)。 默认的容量为 15。 |
+| 4 | 4 | MaxUMTSCount | 大小 | UMTS 测量结果列表中返回的 UMTS 相邻单元格的最大项数[MBIM_UMTS_MRL](#mbim_umts_mrl)。 默认的容量为 15。 |
+| 8 | 4 | MaxTDSCDMACount | 大小 | TDSCDMA 测量结果列表中返回的 TDSCDMA 相邻单元格的最大项数[MBIM_TDSCDMA_MRL](#mbim_tdscdma_mrl)。 默认的容量为 15。 |
+| 12 | 4 | MaxLTECount | 大小 | 在 LTE 测量结果列表中返回的 LTE 相邻单元格的最大项数[MBIM_LTE_MRL](#mbim_lte_mrl)。 默认的容量为 15。 |
+| 16 | 4 | MaxCDMACount | 大小 | CDMA 测量结果列表中返回 CDMA 单元格的最大项数[MBIM_CDMA_MRL](#mbim_cdma_mrl)。 此列表包括为提供服务和相邻单元格。 默认的容量为 12。 |
 
 ### <a name="set"></a>设置
 
@@ -74,23 +74,23 @@ MBIM_BASE_STATIONS_INFO 结构包含关于服务和相邻的基站的信息。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SystemType | MBIM_DATA_CLASS | 指示单元格的信息对于哪些服务是有效的系统类型 （或类型）。 此成员是一个或多个系统类型 MBIM_DATA_CLASS 中定义的位掩码。 |
 | 4 | 4 | GSMServingCellOffset | 偏移量 | 以字节为单位，计算从此结构的开头到包含 GSM 提供单元格的信息的缓冲区偏移量。 为单元格的技术不 GSM 时，此成员可以为 NULL。 |
-| 8 | 4 | GSMServingCellSize | SIZE(0-44) | 大小 （字节），用于[MBIM_GSM_SERVING_CELL_INFO](#mbimgsmservingcellinfo)。 |
+| 8 | 4 | GSMServingCellSize | SIZE(0-44) | 大小 （字节），用于[MBIM_GSM_SERVING_CELL_INFO](#mbim_gsm_serving_cell_info)。 |
 | 12 | 4 | UMTSServingCellOffset | 偏移量 | 以字节为单位，计算从此结构的开头到包含 UMTS 提供单元格的信息的缓冲区偏移量。 为单元格提供服务的技术不 UMTS 时，此成员可以为 NULL。 |
-| 16 | 4 | UMTSServingCellSize | SIZE(0-60) | 大小 （字节），用于[MBIM_UMTS_SERVING_CELL_INFO](#mbimumtsservingcellinfo)。 |
+| 16 | 4 | UMTSServingCellSize | SIZE(0-60) | 大小 （字节），用于[MBIM_UMTS_SERVING_CELL_INFO](#mbim_umts_serving_cell_info)。 |
 | 20 | 4 | TDSCDMAServingCellOffset | 偏移量 | 以字节为单位，计算从此结构的开头到包含 TDSCDMA 提供单元格的信息的缓冲区偏移量。 为单元格提供服务的技术不 TDSCDMA 时，此成员可以为 NULL。 |
-| 24 | 4 | TDSCDMAServingCellSize | SIZE(0-48) | 大小 （字节），用于[MBIM_TDSCDMA_SERVING_CELL_INFO](#mbimtdscdmaservingcellinfo)。 |
+| 24 | 4 | TDSCDMAServingCellSize | SIZE(0-48) | 大小 （字节），用于[MBIM_TDSCDMA_SERVING_CELL_INFO](#mbim_tdscdma_serving_cell_info)。 |
 | 28 | 4 | LTEServingCellOffset | 偏移量 | 以字节为单位，计算从此结构的开头到包含 LTE 提供单元格的信息的缓冲区偏移量。 为单元格提供服务的技术不 LTE 时，此成员可以为 NULL。 |
-| 32 | 4 | LTEServingCellSize | SIZE(0-48) | 大小 （字节），用于[MBIM_LTE_SERVING_CELL_INFO](#mbimlteservingcellinfo)。 |
+| 32 | 4 | LTEServingCellSize | SIZE(0-48) | 大小 （字节），用于[MBIM_LTE_SERVING_CELL_INFO](#mbim_lte_serving_cell_info)。 |
 | 36 | 4 | GSMNmrOffset | 偏移量 | 以字节为单位，计算从此结构的开头到包含 GSM 网络测量报表的缓冲区偏移量。 没有 GSM 相邻网络返回度量报表中时，此成员可以为 NULL。 |
-| 40 | 4 | GSMNmrSize | 大小 | 总大小 （字节） 包含的格式的 GSM 网络测量报表的缓冲区[MBIM_GSM_NMR](#mbimgsmnmr)。 |
+| 40 | 4 | GSMNmrSize | 大小 | 总大小 （字节） 包含的格式的 GSM 网络测量报表的缓冲区[MBIM_GSM_NMR](#mbim_gsm_nmr)。 |
 | 44 | 4 | UMTSMrlOffset | 偏移量 | 此结构的开头的偏移量以字节为单位计算的缓冲区包含 UMTS 测量结果列表。 没有 UMTS 相邻网络返回度量报表中时，此成员可以为 NULL。 |
-| 48 | 4 | UMTSMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 UMTS 测量结果列表中的格式[MBIM_UMTS_MRL](#mbimumtsmrl)。 |
+| 48 | 4 | UMTSMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 UMTS 测量结果列表中的格式[MBIM_UMTS_MRL](#mbim_umts_mrl)。 |
 | 52 | 4 | TDSCDMAMrlOffset | 偏移量 | 此结构的开头的偏移量以字节为单位计算的缓冲区包含 TDSCDMA 测量结果列表。 没有 TDSCDMA 相邻网络返回度量报表中时，此成员可以为 NULL。 |
-| 56 | 4 | TDSCDMAMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 TDSCDMA 测量结果列表中的格式[MBIM_TDSCDMA_MRL](#mbimtdscdmamrl)。 |
+| 56 | 4 | TDSCDMAMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 TDSCDMA 测量结果列表中的格式[MBIM_TDSCDMA_MRL](#mbim_tdscdma_mrl)。 |
 | 60 | 4 | LTEMrlOffset | 偏移量 | 此结构的开头的偏移量以字节为单位计算的缓冲区包含 LTE 测量结果列表。 没有 LTE 相邻网络返回度量报表中时，此成员可以为 NULL。 |
-| 64 | 4 | LTEMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 LTE 测量结果列表中的格式[MBIM_LTE_MRL](#mbimltemrl)。 |
+| 64 | 4 | LTEMrlSize | 大小 | 总大小，以字节为单位的缓冲区，其中包含 LTE 测量结果列表中的格式[MBIM_LTE_MRL](#mbim_lte_mrl)。 |
 | 68 | 4 | CDMAMrlOffset | 偏移量 | 此结构的开头的偏移量以字节为单位计算的缓冲区包含 CDMA 测量结果列表。 没有 CDMA 相邻网络返回度量报表中时，此成员可以为 NULL。 |
-| 72 | 4 | CDMAMrlSize | 大小 | 总大小，以字节为单位，包含 CDMA 的缓冲区的测量结果列表中的格式[MBIM_CDMA_MRL](#mbimcdmamrl)。 |
+| 72 | 4 | CDMAMrlSize | 大小 | 总大小，以字节为单位，包含 CDMA 的缓冲区的测量结果列表中的格式[MBIM_CDMA_MRL](#mbim_cdma_mrl)。 |
 | 76 |   | DataBuffer | DATABUFFER | 包含的数据缓冲区*GSMServingCell*， *UMTSServingCell*， *TDSCDMAServingCell*， *LTEServingCell*， *GSMNmr*， *UMTSMrl*， *TDSCDMAMrl*， *LTEMrl*，并*CDMAMrl*。 |
 
 #### <a name="gsm-cell-data-structures"></a>GSM 单元格数据结构
@@ -118,7 +118,7 @@ MBIM_GSM_NMR 结构包含相邻单元格内 GSM 网络度量报表 (NMR)。
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 NMR 条目的计数。 |
-| 4 |   | DataBuffer | DATABUFFER | NMR 的数组，记录每个记录指定为[MBIM_GSM_NMR_INFO](#mbimgsmnmrinfo)结构。 |
+| 4 |   | DataBuffer | DATABUFFER | NMR 的数组，记录每个记录指定为[MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info)结构。 |
 
 ##### <a name="mbimgsmnmrinfo"></a>MBIM_GSM_NMR_INFO
 
@@ -164,7 +164,7 @@ MBIM_UMTS_MRL 结构包含 UMTS 的相邻单元格的测量的结果列表 (MRL)
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_UMTS_MRL_INFO](#mbimumtsmrlinfo)结构。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info)结构。 |
 
 ##### <a name="mbimumtsmrlinfo"></a>MBIM_UMTS_MRL_INFO
 
@@ -209,7 +209,7 @@ MBIM_TDSCDMA_MRL 结构包含 TDSCDMA 的相邻单元格的测量的结果列表
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_TDSCDMA_MRL_INFO](#mbimtdscdmamrlinfo)结构。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info)结构。 |
 
 ##### <a name="mbimtdscdmamrlinfo"></a>MBIM_TDSCDMA_MRL_INFO
 
@@ -254,7 +254,7 @@ MBIM_LTE_MRL 结构包含 LTE 的相邻单元格的测量的结果列表 (MRL)�
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_LTE_MRL_INFO](#mbimltemrlinfo)结构。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info)结构。 |
 
 ##### <a name="mbimltemrlinfo"></a>MBIM_LTE_MRL_INFO
 
@@ -281,7 +281,7 @@ MBIM_CDMA_MRL 结构包含为提供服务和相邻 CDMA 单元格的测量的结
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
-| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_CDMA_MRL_INFO](#mbimcdmamrlinfo)结构。 |
+| 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info)结构。 |
 
 ##### <a name="mbimcdmamrlinfo"></a>MBIM_CDMA_MRL_INFO
 
@@ -331,7 +331,7 @@ MBIM_CDMA_MRL_INFO 数据结构专为 CDMA2000 网络类型。 在同一时间�
 
 ### <a name="query"></a>查询
 
-不使用 MBIM_COMMAND_MSG InformationBuffer。 包含的 MBIM_COMMAND_DONE InformationBuffer [MBIM_LOCATION_INFO](#mbimlocationinfo)结构。
+不使用 MBIM_COMMAND_MSG InformationBuffer。 包含的 MBIM_COMMAND_DONE InformationBuffer [MBIM_LOCATION_INFO](#mbim_location_info)结构。
 
 ### <a name="set"></a>设置
 

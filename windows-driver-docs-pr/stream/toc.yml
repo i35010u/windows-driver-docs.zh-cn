@@ -15,8 +15,9 @@
 - name: 通用相机驱动程序的相机类 INF 文件设置
   href: camera-driver-inf-file-class-setting.md
 - name: USB 视频类 (UVC) 驱动程序实现清单
-  href: uvc-driver-implementation-checklist.md
   items:
+    - name: USB 视频类 (UVC) 驱动程序实现清单
+      href: uvc-driver-implementation-checklist.md
     - name: 设备 MFT 设计指南
       href: dmft-design.md
     - name: UVC 中的红外流支持
@@ -26,18 +27,21 @@
 - name: 相机设备方向
   href: camera-device-orientation.md
 - name: AVStream 微型驱动程序设计指南
-  href: avstream-minidrivers-design-guide.md
   items:
+    - name: AVStream 微型驱动程序设计指南
+      href: avstream-minidrivers-design-guide.md
     - name: Windows 8.1 的新 AVStream 接口
       href: new-avstream-interfaces-for-windows-8-1.md
     - name: Windows 8 的新 AVStream 接口
       href: new-windows-8-ddis.md
     - name: 编写 AVStream 微型驱动程序
-      href: writing-an-avstream-minidriver.md
       items:
+        - name: 编写 AVStream 微型驱动程序
+          href: writing-an-avstream-minidriver.md
         - name: AVStream 简介
-          href: introduction-to-avstream.md
           items:
+            - name: AVStream 简介
+              href: introduction-to-avstream.md
             - name: AVStream 概述
               href: avstream-overview.md
             - name: AVStream 标头
@@ -65,8 +69,9 @@
         - name: AVStream 测试和调试
           href: avstream-testing-and-debugging.md
         - name: 为硬件编写 AVStream 微型驱动程序
-          href: writing-avstream-minidrivers-for-hardware.md
           items:
+            - name: 为硬件编写 AVStream 微型驱动程序
+              href: writing-avstream-minidrivers-for-hardware.md
             - name: AVStream DMA 服务
               href: avstream-dma-services.md
             - name: AVStream 中基于数据包的 DMA
@@ -76,8 +81,9 @@
             - name: 在 64 位 AVStream 驱动程序中支持 DMA
               href: supporting-dma-in-64-bit-avstream-drivers.md
         - name: AVStream 体系结构：高级主题
-          href: avstream-architecture--advanced-topics.md
           items:
+            - name: AVStream 体系结构：高级主题
+              href: avstream-architecture--advanced-topics.md
             - name: AVStream 中的电源和状态更改
               href: power-and-state-changes-in-avstream.md
             - name: 对象包
@@ -97,8 +103,9 @@
             - name: 将 AVStream 与内核流式处理代理模块配合使用
               href: using-avstream-with-the-kernel-streaming-proxy-module.md
             - name: 流指针
-              href: stream-pointers.md
               items:
+                - name: 流指针
+                  href: stream-pointers.md
                 - name: 流指针简介
                   href: introduction-to-stream-pointers.md
                 - name: 前导和尾随边缘流指针
@@ -114,8 +121,9 @@
                 - name: 流指针计时器
                   href: stream-pointer-timers.md
             - name: AVStream 中的互斥
-              href: mutexes-in-avstream.md
               items:
+                - name: AVStream 中的互斥
+                  href: mutexes-in-avstream.md
                 - name: AVStream 中的设备互斥
                   href: device-mutex-in-avstream.md
                 - name: AVStream 中的筛选器控件互斥
@@ -125,8 +133,9 @@
             - name: AVStream 时钟
               href: avstream-clocks.md
     - name: 使用 AVStream 将视频捕获到 VRAM
-      href: capturing-video-to-vram-using-avstream.md
       items:
+        - name: 使用 AVStream 将视频捕获到 VRAM
+          href: capturing-video-to-vram-using-avstream.md
         - name: 'AVStream 中的 VRAM 捕获概述 '
           href: overview-of-vram-capture-in-avstream.md
         - name: VRAM 捕获属性
@@ -136,16 +145,19 @@
         - name: 将 VRAM 捕获支持添加到现有的 AVStream 驱动程序
           href: adding-vram-capture-support-to-existing-avstream-drivers.md
     - name: 广播驱动程序体系结构驱动程序
-      href: broadcast-driver-architecture-drivers2.md
       items:
+        - name: 广播驱动程序体系结构驱动程序
+          href: broadcast-driver-architecture-drivers2.md
         - name: 广播接收器拓扑
-          href: broadcast-receiver-topology.md
           items:
+            - name: 广播接收器拓扑
+              href: broadcast-receiver-topology.md
             - name: 功能拓扑
               href: functional-topology.md
             - name: 控制节点、筛选器和硬件
-              href: control-nodes--filters-and-hardware.md
               items:
+                - name: 控制节点、筛选器和硬件
+                  href: control-nodes--filters-and-hardware.md
                 - name: 控制节点
                   href: control-nodes.md
                 - name: 合并筛选器中的节点
@@ -157,8 +169,9 @@
             - name: 常见控制节点和筛选器
               href: common-control-nodes-and-filters.md
         - name: 广播驱动程序体系结构微型驱动程序
-          href: broadcast-driver-architecture-minidrivers.md
           items:
+            - name: 广播驱动程序体系结构微型驱动程序
+              href: broadcast-driver-architecture-minidrivers.md
             - name: 初始化 BDA 微型驱动程序
               href: initializing-a-bda-minidriver.md
             - name: 启动 BDA 微型驱动程序
@@ -170,8 +183,9 @@
             - name: 初始化 BDA 筛选器
               href: initializing-a-bda-filter.md
             - name: 使用 BDA 属性和方法集
-              href: using-bda-property-and-method-sets.md
               items:
+                - name: 使用 BDA 属性和方法集
+                  href: using-bda-property-and-method-sets.md
                 - name: 确定 BDA 设备拓扑
                   href: determining-bda-device-topology.md
                 - name: 映射连接拓扑
@@ -187,8 +201,9 @@
             - name: 缓存 DirectShow 的引脚信息
               href: caching-pin-information-for-directshow.md
             - name: 保护 BDA 微型驱动程序
-              href: securing-a-bda-minidriver.md
               items:
+                - name: 保护 BDA 微型驱动程序
+                  href: securing-a-bda-minidriver.md
                 - name: 引入对 BDA 微型驱动程序的威胁
                   href: introducing-threats-to-a-bda-minidriver.md
                 - name: 阻止 BDA 微型驱动程序威胁
@@ -198,15 +213,17 @@
         - name: 示例 BDA 驱动程序
           href: sample-bda-drivers.md
         - name: 生成和测试 BDA 驱动程序
-          href: building-and-testing-bda-drivers.md
           items:
+            - name: 生成和测试 BDA 驱动程序
+              href: building-and-testing-bda-drivers.md
             - name: 生成 BDA 驱动程序
               href: building-bda-drivers.md
             - name: 使用 BDA 筛选器测试 BDA 驱动程序
               href: testing-bda-drivers-using-bda-filters.md
     - name: 编码器设备
-      href: encoder-devices.md
       items:
+        - name: 编码器设备
+          href: encoder-devices.md
         - name: 编码器实现和支持
           href: encoder-implementation-and-support.md
         - name: 编码器代码示例
@@ -214,21 +231,25 @@
         - name: 编码器安装和注册
           href: encoder-installation-and-registration.md
     - name: AV/C 客户端驱动程序
-      href: av-c-client-drivers2.md
       items:
+        - name: AV/C 客户端驱动程序
+          href: av-c-client-drivers2.md
         - name: AV/C 概述
-          href: av-c-overview.md
           items:
+            - name: AV/C 概述
+              href: av-c-overview.md
             - name: AV/C 驱动程序堆栈
-              href: av-c-driver-stacks.md
               items:
+                - name: AV/C 驱动程序堆栈
+                  href: av-c-driver-stacks.md
                 - name: 对等子单元驱动程序堆栈
                   href: peer-subunit-driver-stack.md
                 - name: 虚拟子单元驱动程序堆栈
                   href: virtual-subunit-driver-stack.md
             - name: AV/C 设备标识符
-              href: av-c-device-identifiers.md
               items:
+                - name: AV/C 设备标识符
+                  href: av-c-device-identifiers.md
                 - name: 对等子单元设备标识符
                   href: peer-subunit-device-identifiers.md
                 - name: 虚拟子单元设备标识符
@@ -238,8 +259,9 @@
             - name: AV/C 子单元插头连接和格式管理
               href: av-c-subunit-plug-connection-and-format-management.md
             - name: AV/C 连接方案
-              href: av-c-connection-scenarios.md
               items:
+                - name: AV/C 连接方案
+                  href: av-c-connection-scenarios.md
                 - name: 在一个 AV/C 单元中的子单元插头和单元插头之间的连接
                   href: connections-between-subunit-plugs-and-unit-plugs-within-one-av-c-unit.md
                 - name: 在一个 AV/C 单元中的两个子单元插头之间的连接
@@ -251,8 +273,9 @@
             - name: AV/C 子单元驱动程序调试
               href: av-c-subunit-driver-debugging.md
         - name: 使用 Avc.sys
-          href: using-avc-sys.md
           items:
+            - name: 使用 Avc.sys
+              href: using-avc-sys.md
             - name: 生成和发送 AV/C 命令
               href: building-and-sending-an-av-c-command.md
             - name: 初始化子单元驱动程序并建立引脚连接
@@ -260,15 +283,17 @@
             - name: 虚拟子单元驱动程序说明
               href: virtual-subunit-driver-notes.md
         - name: AV/C 流式处理概述
-          href: av-c-streaming-overview.md
           items:
+            - name: AV/C 流式处理概述
+              href: av-c-streaming-overview.md
             - name: AV/C 流式处理驱动程序堆栈
               href: av-c-streaming-driver-stack.md
             - name: AV/C 流式处理 INF 示例
               href: av-c-streaming-inf-example.md
         - name: 使用 Avcstrm.sys
-          href: using-avcstrm-sys.md
           items:
+            - name: 使用 Avcstrm.sys
+              href: using-avcstrm-sys.md
             - name: 创建流
               href: create-a-stream.md
             - name: 提交数据缓冲区
@@ -280,8 +305,9 @@
             - name: 中止流
               href: abort-a-stream.md
     - name: USB 视频类驱动程序
-      href: usb-video-class-driver.md
       items:
+        - name: USB 视频类驱动程序
+          href: usb-video-class-driver.md
         - name: USB 视频类驱动程序概述
           href: usb-video-class-driver-overview.md
         - name: USB 视频类驱动程序堆栈
@@ -295,8 +321,9 @@
         - name: USB H.264 视频摄像机支持
           href: usb-h-264-video-cameras-support.md
         - name: USB 视频类扩展单元
-          href: usb-video-class-extension-units.md
           items:
+            - name: USB 视频类扩展单元
+              href: usb-video-class-extension-units.md
             - name: USB 视频类扩展单元简介
               href: introduction-to-usb-video-class-extension-units.md
             - name: USB 视频类扩展单元的设备要求
@@ -304,8 +331,9 @@
             - name: 扩展单元插件体系结构
               href: extension-unit-plug-in-architecture.md
             - name: UVC 扩展单元代码示例
-              href: uvc-extension-unit-code-samples.md
               items:
+                - name: UVC 扩展单元代码示例
+                  href: uvc-extension-unit-code-samples.md
                 - name: 生成扩展单元示例控件
                   href: building-the-extension-unit-sample-control.md
                 - name: UVC 扩展单元的示例接口
@@ -325,14 +353,17 @@
     - name: AVStream 示例
       href: avstream-samples.md
     - name: 视频捕获设备
-      href: video-capture-devices.md
       items:
+        - name: 视频捕获设备
+          href: video-capture-devices.md
         - name: 视频捕获概述
-          href: video-capture-overview.md
           items:
+            - name: 视频捕获概述
+              href: video-capture-overview.md
             - name: 来自视频捕获设备的流式处理数据
-              href: streaming-data-from-a-video-capture-device.md
               items:
+                - name: 来自视频捕获设备的流式处理数据
+                  href: streaming-data-from-a-video-capture-device.md
                 - name: 指定流格式
                   href: specifying-stream-formats.md
                 - name: 时间戳
@@ -340,13 +371,15 @@
                 - name: 视频流扩展标头
                   href: video-stream-extended-headers.md
             - name: 媒体和类别
-              href: mediums-and-categories.md
               items:
+                - name: 媒体和类别
+                  href: mediums-and-categories.md
                 - name: 媒体 GUID
                   href: medium-guids.md
                 - name: 流类别
-                  href: stream-categories.md
                   items:
+                    - name: 流类别
+                      href: stream-categories.md
                     - name: 捕获、预览和静态类别
                       href: capture--preview--and-still-category.md
                     - name: VBI 类别
@@ -366,16 +399,19 @@
                     - name: 时间码类别
                       href: timecode-category.md
             - name: 支持使用调谐器的视频捕获设备
-              href: supporting-video-capture-devices-with-tuners.md
               items:
+                - name: 支持使用调谐器的视频捕获设备
+                  href: supporting-video-capture-devices-with-tuners.md
                 - name: 使用无线电调谐器的视频捕获设备
-                  href: video-capture-devices-with-radio-tuners.md
                   items:
+                    - name: 使用无线电调谐器的视频捕获设备
+                      href: video-capture-devices-with-radio-tuners.md
                     - name: 识别第一个调谐请求
                       href: recognizing-the-first-tuning-request.md
                 - name: 扫描到可调谐信号
-                  href: scanning-to-tunable-signals.md
                   items:
+                    - name: 扫描到可调谐信号
+                      href: scanning-to-tunable-signals.md
                     - name: 硬件辅助的扫描算法
                       href: hardware-assisted-scanning-algorithm.md
                     - name: 事件机制和流
@@ -383,8 +419,9 @@
                 - name: 检测调谐器标准
                   href: detecting-tuner-standards.md
             - name: 筛选器关系图示例
-              href: filter-graph-examples.md
               items:
+                - name: 筛选器关系图示例
+                  href: filter-graph-examples.md
                 - name: 基于 USB 或 1394 的会议摄像机
                   href: usb-or-1394-based-conferencing-camera.md
                 - name: 带捕获按钮的基于 USB 的摄像机
@@ -398,8 +435,9 @@
                 - name: 用于流式传输类微型驱动程序通信的 DirectShow 筛选器
                   href: directshow-filter-to-stream-class-minidriver-communication.md
             - name: 视频捕获属性集
-              href: video-capture-property-sets.md
               items:
+                - name: 视频捕获属性集
+                  href: video-capture-property-sets.md
                 - name: 分配器属性
                   href: allocator-properties.md
                 - name: 调谐器属性
@@ -417,8 +455,9 @@
                 - name: 视频解码器属性
                   href: video-decoder-properties.md
                 - name: 相机控件属性
-                  href: camera-control-properties.md
                   items:
+                    - name: 相机控件属性
+                      href: camera-control-properties.md
                     - name: 扩展的相机控件属性
                       href: extended-camera-control-properties.md
                     - name: 如何实现扩展的相机控件属性
@@ -440,8 +479,9 @@
                 - name: 自定义属性集和接口
                   href: custom-property-sets-and-interfaces.md
             - name: 视频捕获事件集
-              href: video-capture-event-sets.md
               items:
+                - name: 视频捕获事件集
+                  href: video-capture-event-sets.md
                 - name: 调谐器事件
                   href: tuner-events.md
                 - name: 视频解码器更改事件
@@ -453,8 +493,9 @@
                 - name: 视频捕获事件
                   href: video-capture-events.md
         - name: 实现视频捕获支持
-          href: implementing-video-capture-support.md
           items:
+            - name: 实现视频捕获支持
+              href: implementing-video-capture-support.md
             - name: 注册到流类接口
               href: registering-with-the-stream-class-interface.md
             - name: 选择流格式
@@ -468,8 +509,9 @@
             - name: 捕获视频
               href: capturing-video.md
     - name: AVStream 中的硬件编解码器支持
-      href: hardware-codec-support-in-avstream.md
       items:
+        - name: AVStream 中的硬件编解码器支持
+          href: hardware-codec-support-in-avstream.md
         - name: AVStream 中的硬件编解码器支持入门
           href: getting-started-with-hardware-codec-support-in-avstream.md
         - name: 在 AVStream 编解码器中处理数据类型协商
@@ -491,16 +533,19 @@
         - name: 安装基于 AVStream 的硬件编解码器驱动程序
           href: installing-an-avstream-based-hardware-codec-driver.md
         - name: 验证和认证硬件编解码器
-          href: validating-and-certifying-hardware-codecs.md
           items:
+            - name: 验证和认证硬件编解码器
+              href: validating-and-certifying-hardware-codecs.md
             - name: 编解码器优点验证
               href: codec-merit-validation.md
 - name: Windows 2000 内核流式处理模型设计指南
-  href: windows-2000-kernel-streaming-model-design-guide.md
   items:
+    - name: Windows 2000 内核流式处理模型设计指南
+      href: windows-2000-kernel-streaming-model-design-guide.md
     - name: 流微型驱动程序
-      href: streaming-minidrivers2.md
       items:
+        - name: 流微型驱动程序
+          href: streaming-minidrivers2.md
         - name: 类驱动程序和微型驱动程序定义
           href: class-driver-and-minidriver-definitions.md
         - name: 流类和微型驱动程序接口
@@ -536,15 +581,17 @@
         - name: 流类调试
           href: stream-class-debugging.md
     - name: USBCAMD 微型驱动程序库
-      href: usbcamd-minidriver-library.md
       items:
+        - name: USBCAMD 微型驱动程序库
+          href: usbcamd-minidriver-library.md
         - name: USBCAMD2 相机配置
           href: usbcamd2-camera-configurations.md
         - name: USBCAMD2 功能
           href: usbcamd2-features.md
         - name: USBCAMD2 微型驱动程序操作
-          href: usbcamd2-minidriver-operation.md
           items:
+            - name: USBCAMD2 微型驱动程序操作
+              href: usbcamd2-minidriver-operation.md
             - name: 获取 USBCAMD2 功能
               href: acquiring-usbcamd2-features.md
             - name: 使用常时等量管道的数据流
@@ -552,11 +599,13 @@
             - name: 通过 USB 相机捕获静态帧
               href: capturing-still-frames-from-a-usb-camera.md
     - name: DVD 解码器微型驱动程序
-      href: dvd-decoder-minidrivers2.md
       items:
+        - name: DVD 解码器微型驱动程序
+          href: dvd-decoder-minidrivers2.md
         - name: Windows 中的 DVD 解码器支持
-          href: dvd-decoder-support-in-windows.md
           items:
+            - name: Windows 中的 DVD 解码器支持
+              href: dvd-decoder-support-in-windows.md
             - name: 基于硬件的 DVD 解码
               href: hardware-based-dvd-decoding.md
             - name: 基于软件的 DVD 解码
@@ -566,8 +615,9 @@
             - name: 与 DVD 解码器相关的 KS 事件
               href: dvd-decoder-related-ks-events.md
         - name: DVD 数据流
-          href: dvd-data-streams.md
           items:
+            - name: DVD 数据流
+              href: dvd-data-streams.md
             - name: 输入流
               href: input-streams.md
             - name: 输出流
@@ -581,8 +631,9 @@
             - name: 同一硬件上的多个数据流
               href: multiple-data-streams-on-the-same-hardware.md
         - name: DVD 版权保护
-          href: dvd-copyright-protection.md
           items:
+            - name: DVD 版权保护
+              href: dvd-copyright-protection.md
             - name: 实施版权保护
               href: copyright-protection-implementation.md
             - name: 将密钥交换与数据流同步
@@ -592,18 +643,21 @@
         - name: DVD 区域化
           href: dvd-regionalization.md
         - name: 主时钟
-          href: master-clock.md
           items:
+            - name: 主时钟
+              href: master-clock.md
             - name: 与 DVD 解码器相关的时钟事件
               href: dvd-decoder-related-clock-events.md
             - name: 与 DVD 相关的时钟函数
               href: dvd-related-clock-functions.md
     - name: 内核流式处理
-      href: kernel-streaming.md
       items:
+        - name: 内核流式处理
+          href: kernel-streaming.md
         - name: KS 微型驱动程序体系结构
-          href: ks-minidriver-architecture.md
           items:
+            - name: KS 微型驱动程序体系结构
+              href: ks-minidriver-architecture.md
             - name: KS 筛选器
               href: ks-filters.md
             - name: KS 引脚
@@ -617,8 +671,9 @@
             - name: 质量管理
               href: quality-management.md
         - name: KS 属性、事件和方法
-          href: ks-properties--events--and-methods.md
           items:
+            - name: KS 属性、事件和方法
+              href: ks-properties--events--and-methods.md
             - name: KS 属性
               href: ks-properties.md
             - name: KS 事件
@@ -626,15 +681,17 @@
             - name: KS 方法
               href: ks-methods.md
         - name: KS 时钟
-          href: ks-clocks.md
           items:
+            - name: KS 时钟
+              href: ks-clocks.md
             - name: 主时钟
               href: master-clocks.md
             - name: 默认时钟
               href: default-clocks.md
         - name: KS 分配器
-          href: ks-allocators.md
           items:
+            - name: KS 分配器
+              href: ks-allocators.md
             - name: 默认分配器
               href: default-allocators.md
             - name: 特定于筛选器的分配器
@@ -642,8 +699,9 @@
             - name: 分配方案
               href: allocation-schemes.md
 - name: 内核流式处理代理插件设计指南
-  href: kernel-streaming-proxy-plug-ins-design-guide.md
   items:
+    - name: 内核流式处理代理插件设计指南
+      href: kernel-streaming-proxy-plug-ins-design-guide.md
     - name: 注册 KS 代理插件
       href: registering-ks-proxy-plug-ins.md
     - name: 接口处理程序插件
@@ -661,11 +719,13 @@
 - name: 相机驱动程序启动指南
   href: windows-hello-camera-driver-bring-up-guide.md
 - name: 适用于 Windows 10 的通用相机驱动程序模型
-  href: windows-10-technical-preview-camera-drivers-design-guide.md
   items:
+    - name: 适用于 Windows 10 的通用相机驱动程序模型
+      href: windows-10-technical-preview-camera-drivers-design-guide.md
     - name: 适用于 Windows 10 的全新相机驱动程序接口
-      href: windows-10-technical-preview-camera-drivers-reference.md
       items:
+        - name: 适用于 Windows 10 的全新相机驱动程序接口
+          href: windows-10-technical-preview-camera-drivers-reference.md
         - name: 适用于 Windows 10 的全新相机驱动程序控件
           href: camera-driver-controls.md
         - name: 适用于 Windows 10 的全新相机驱动程序枚举
@@ -675,11 +735,13 @@
         - name: 适用于 Windows 10 的全新相机驱动程序结构
           href: camera-driver-structures.md
 - name: AVStream 属性集
-  href: avstream-property-sets.md
   items:
+    - name: AVStream 属性集
+      href: avstream-property-sets.md
     - name: KSPROPSETID_Clock
-      href: kspropsetid-clock.md
       items:
+        - name: KSPROPSETID_Clock
+          href: kspropsetid-clock.md
         - name: KSPROPERTY_CLOCK_CORRELATEDPHYSICALTIME
           href: ksproperty-clock-correlatedphysicaltime.md
         - name: KSPROPERTY_CLOCK_CORRELATEDTIME
@@ -695,8 +757,9 @@
         - name: KSPROPERTY_CLOCK_TIME
           href: ksproperty-clock-time.md
     - name: KSPROPSETID_Connection
-      href: kspropsetid-connection.md
       items:
+        - name: KSPROPSETID_Connection
+          href: kspropsetid-connection.md
         - name: KSPROPERTY_CONNECTION_ALLOCATORFRAMING
           href: ksproperty-connection-allocatorframing.md
         - name: KSPROPERTY_CONNECTION_ALLOCATORFRAMING_EX
@@ -714,13 +777,15 @@
         - name: KSPROPERTY_CONNECTION_STATE
           href: ksproperty-connection-state.md
     - name: KSPROPSETID_General
-      href: kspropsetid-general.md
       items:
+        - name: KSPROPSETID_General
+          href: kspropsetid-general.md
         - name: KSPROPERTY_GENERAL_COMPONENTID
           href: ksproperty-general-componentid.md
     - name: KSPROPSETID_GM
-      href: kspropsetid-gm.md
       items:
+        - name: KSPROPSETID_GM
+          href: kspropsetid-gm.md
         - name: KSPROPERTY_GM_GRAPHMANAGER
           href: ksproperty-gm-graphmanager.md
         - name: KSPROPERTY_GM_TIMESTAMP_CLOCK
@@ -730,8 +795,9 @@
         - name: KSPROPERTY_GM_RENDER_CLOCK
           href: ksproperty-gm-render-clock.md
     - name: KSPROPSETID_MediaSeeking
-      href: kspropsetid-mediaseeking.md
       items:
+        - name: KSPROPSETID_MediaSeeking
+          href: kspropsetid-mediaseeking.md
         - name: KSPROPERTY_MEDIASEEKING_CAPABILITIES
           href: ksproperty-mediaseeking-capabilities.md
         - name: KSPROPERTY_MEDIASEEKING_FORMATS
@@ -753,8 +819,9 @@
         - name: KSPROPERTY_MEDIASEEKING_CONVERTTIMEFORMAT
           href: ksproperty-mediaseeking-converttimeformat.md
     - name: KSPROPSETID_Pin
-      href: kspropsetid-pin.md
       items:
+        - name: KSPROPSETID_Pin
+          href: kspropsetid-pin.md
         - name: KSPROPERTY_PIN_CATEGORY
           href: ksproperty-pin-category.md
         - name: KSPROPERTY_PIN_CINSTANCES
@@ -788,15 +855,17 @@
         - name: KSPROPERTY_PIN_PROPOSEDATAFORMAT2
           href: ksproperty-pin-proposedataformat2.md
     - name: KSPROPSETID_Quality
-      href: kspropsetid-quality.md
       items:
+        - name: KSPROPSETID_Quality
+          href: kspropsetid-quality.md
         - name: KSPROPERTY_QUALITY_ERROR
           href: ksproperty-quality-error.md
         - name: KSPROPERTY_QUALITY_REPORT
           href: ksproperty-quality-report.md
     - name: KSPROPSETID_Stream
-      href: kspropsetid-stream.md
       items:
+        - name: KSPROPSETID_Stream
+          href: kspropsetid-stream.md
         - name: KSPROPERTY_STREAM_ALLOCATOR
           href: ksproperty-stream-allocator.md
         - name: KSPROPERTY_STREAM_QUALITY
@@ -820,20 +889,23 @@
         - name: KSPROPERTY_STREAM_PIPE_ID
           href: ksproperty-stream-pipe-id.md
     - name: KSPROPSETID_StreamAllocator
-      href: kspropsetid-streamallocator.md
       items:
+        - name: KSPROPSETID_StreamAllocator
+          href: kspropsetid-streamallocator.md
         - name: KSPROPERTY_STREAMALLOCATOR_FUNCTIONTABLE
           href: ksproperty-streamallocator-functiontable.md
         - name: KSPROPERTY_STREAMALLOCATOR_STATUS
           href: ksproperty-streamallocator-status.md
     - name: KSPROPSETID_StreamInterface
-      href: kspropsetid-streaminterface.md
       items:
+        - name: KSPROPSETID_StreamInterface
+          href: kspropsetid-streaminterface.md
         - name: KSPROPERTY_STREAMINTERFACE_HEADERSIZE
           href: ksproperty-streaminterface-headersize.md
     - name: KSPROPSETID_Topology
-      href: kspropsetid-topology.md
       items:
+        - name: KSPROPSETID_Topology
+          href: kspropsetid-topology.md
         - name: KSPROPERTY_TOPOLOGY_CATEGORIES
           href: ksproperty-topology-categories.md
         - name: KSPROPERTY_TOPOLOGY_CONNECTIONS
@@ -843,8 +915,9 @@
         - name: KSPROPERTY_TOPOLOGY_NODES
           href: ksproperty-topology-nodes.md
     - name: KSPROPSETID_VramCapture
-      href: kspropsetid-vramcapture.md
       items:
+        - name: KSPROPSETID_VramCapture
+          href: kspropsetid-vramcapture.md
         - name: KSPROPERTY_DISPLAY_ADAPTER_GUID
           href: ksproperty-display-adapter-guid.md
         - name: KSPROPERTY_PREFERRED_CAPTURE_SURFACE
@@ -854,18 +927,21 @@
         - name: KSPROPERTY_MAP_CAPTURE_HANDLE_TO_VRAM_ADDRESS
           href: ksproperty-map-capture-handle-to-vram-address.md
 - name: 广播驱动程序体系结构属性、事件和方法集
-  href: broadcast-driver-architecture-property--event--and-method-sets.md
   items:
+    - name: 广播驱动程序体系结构属性、事件和方法集
+      href: broadcast-driver-architecture-property--event--and-method-sets.md
     - name: KSPROPSETID_BdaAutodemodulate
-      href: kspropsetid-bdaautodemodulate.md
       items:
+        - name: KSPROPSETID_BdaAutodemodulate
+          href: kspropsetid-bdaautodemodulate.md
         - name: KSPROPERTY_BDA_AUTODEMODULATE_START
           href: ksproperty-bda-autodemodulate-start.md
         - name: KSPROPERTY_BDA_AUTODEMODULATE_STOP
           href: ksproperty-bda-autodemodulate-stop.md
     - name: KSPROPSETID_BdaCA
-      href: kspropsetid-bdaca.md
       items:
+        - name: KSPROPSETID_BdaCA
+          href: kspropsetid-bdaca.md
         - name: KSPROPERTY_BDA_CA_MODULE_STATUS
           href: ksproperty-bda-ca-module-status.md
         - name: KSPROPERTY_BDA_CA_MODULE_UI
@@ -879,8 +955,9 @@
         - name: KSPROPERTY_BDA_ECM_MAP_STATUS
           href: ksproperty-bda-ecm-map-status.md
     - name: KSEVENTSETID_BdaCAEvent
-      href: kseventsetid-bdacaevent.md
       items:
+        - name: KSEVENTSETID_BdaCAEvent
+          href: kseventsetid-bdacaevent.md
         - name: KSEVENT_BDA_CA_MODULE_STATUS_CHANGED
           href: ksevent-bda-ca-module-status-changed.md
         - name: KSEVENT_BDA_CA_MODULE_UI_REQUESTED
@@ -890,8 +967,9 @@
         - name: KSEVENT_BDA_PROGRAM_FLOW_STATUS_CHANGED
           href: ksevent-bda-program-flow-status-changed.md
     - name: KSMETHODSETID_BdaChangeSync
-      href: ksmethodsetid-bdachangesync.md
       items:
+        - name: KSMETHODSETID_BdaChangeSync
+          href: ksmethodsetid-bdachangesync.md
         - name: KSMETHOD_BDA_CHECK_CHANGES
           href: ksmethod-bda-check-changes.md
         - name: KSMETHOD_BDA_COMMIT_CHANGES
@@ -901,8 +979,9 @@
         - name: KSMETHOD_BDA_START_CHANGES
           href: ksmethod-bda-start-changes.md
     - name: KSMETHODSETID_BdaDeviceConfiguration
-      href: ksmethodsetid-bdadeviceconfiguration.md
       items:
+        - name: KSMETHODSETID_BdaDeviceConfiguration
+          href: ksmethodsetid-bdadeviceconfiguration.md
         - name: KSMETHOD_BDA_CREATE_PIN_FACTORY
           href: ksmethod-bda-create-pin-factory.md
         - name: KSMETHOD_BDA_CREATE_TOPOLOGY
@@ -910,8 +989,9 @@
         - name: KSMETHOD_BDA_DELETE_PIN_FACTORY
           href: ksmethod-bda-delete-pin-factory.md
     - name: KSPROPSETID_BdaDigitalDemodulator
-      href: kspropsetid-bdadigitaldemodulator.md
       items:
+        - name: KSPROPSETID_BdaDigitalDemodulator
+          href: kspropsetid-bdadigitaldemodulator.md
         - name: KSPROPERTY_BDA_GUARD_INTERVAL
           href: ksproperty-bda-guard-interval.md
         - name: KSPROPERTY_BDA_INNER_FEC_RATE
@@ -931,8 +1011,9 @@
         - name: KSPROPERTY_BDA_TRANSMISSION_MODE
           href: ksproperty-bda-transmission-mode.md
     - name: KSPROPSETID_BdaFrequencyFilter
-      href: kspropsetid-bdafrequencyfilter.md
       items:
+        - name: KSPROPSETID_BdaFrequencyFilter
+          href: kspropsetid-bdafrequencyfilter.md
         - name: KSPROPERTY_BDA_RF_TUNER_BANDWIDTH
           href: ksproperty-bda-rf-tuner-bandwidth.md
         - name: KSPROPERTY_BDA_RF_TUNER_FREQUENCY
@@ -946,8 +1027,9 @@
         - name: KSPROPERTY_BDA_RF_TUNER_TRANSPONDER
           href: ksproperty-bda-rf-tuner-transponder.md
     - name: KSPROPSETID_BdaLNBInfo
-      href: kspropsetid-bdalnbinfo.md
       items:
+        - name: KSPROPSETID_BdaLNBInfo
+          href: kspropsetid-bdalnbinfo.md
         - name: KSPROPERTY_BDA_LNB_LOF_HIGH_BAND
           href: ksproperty-bda-lnb-lof-high-band.md
         - name: KSPROPERTY_BDA_LNB_LOF_LOW_BAND
@@ -955,15 +1037,17 @@
         - name: KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY
           href: ksproperty-bda-lnb-switch-frequency.md
     - name: KSPROPSETID_BdaNullTransform
-      href: kspropsetid-bdanulltransform.md
       items:
+        - name: KSPROPSETID_BdaNullTransform
+          href: kspropsetid-bdanulltransform.md
         - name: KSPROPERTY_BDA_NULL_TRANSFORM_START
           href: ksproperty-bda-null-transform-start.md
         - name: KSPROPERTY_BDA_NULL_TRANSFORM_STOP
           href: ksproperty-bda-null-transform-stop.md
     - name: KSPROPSETID_BdaPIDFilter
-      href: kspropsetid-bdapidfilter.md
       items:
+        - name: KSPROPSETID_BdaPIDFilter
+          href: kspropsetid-bdapidfilter.md
         - name: KSPROPERTY_BDA_PIDFILTER_LIST_PIDS
           href: ksproperty-bda-pidfilter-list-pids.md
         - name: KSPROPERTY_BDA_PIDFILTER_MAP_PIDS
@@ -971,22 +1055,25 @@
         - name: KSPROPERTY_BDA_PIDFILTER_UNMAP_PIDS
           href: ksproperty-bda-pidfilter-unmap-pids.md
     - name: KSPROPSETID_BdaPinControl
-      href: kspropsetid-bdapincontrol.md
       items:
+        - name: KSPROPSETID_BdaPinControl
+          href: kspropsetid-bdapincontrol.md
         - name: KSPROPERTY_BDA_PIN_ID
           href: ksproperty-bda-pin-id.md
         - name: KSPROPERTY_BDA_PIN_TYPE
           href: ksproperty-bda-pin-type.md
     - name: KSEVENTSETID_BdaPinEvent
-      href: kseventsetid-bdapinevent.md
       items:
+        - name: KSEVENTSETID_BdaPinEvent
+          href: kseventsetid-bdapinevent.md
         - name: KSEVENT_BDA_PIN_CONNECTED
           href: ksevent-bda-pin-connected.md
         - name: KSEVENT_BDA_PIN_DISCONNECTED
           href: ksevent-bda-pin-disconnected.md
     - name: KSPROPSETID_BdaSignalStats
-      href: kspropsetid-bdasignalstats.md
       items:
+        - name: KSPROPSETID_BdaSignalStats
+          href: kspropsetid-bdasignalstats.md
         - name: KSPROPERTY_BDA_SIGNAL_LOCK_CAPS
           href: ksproperty-bda-signal-lock-caps.md
         - name: KSPROPERTY_BDA_SIGNAL_LOCK_TYPE
@@ -1002,13 +1089,15 @@
         - name: KSPROPERTY_BDA_SAMPLE_TIME
           href: ksproperty-bda-sample-time.md
     - name: KSPROPSETID_BdaTableSection
-      href: kspropsetid-bdatablesection.md
       items:
+        - name: KSPROPSETID_BdaTableSection
+          href: kspropsetid-bdatablesection.md
         - name: KSPROPERTY_BDA_TABLE_SECTION
           href: ksproperty-bda-table-section.md
     - name: KSPROPSETID_BdaTopology
-      href: kspropsetid-bdatopology.md
       items:
+        - name: KSPROPSETID_BdaTopology
+          href: kspropsetid-bdatopology.md
         - name: KSPROPERTY_BDA_CONTROLLING_PIN_ID
           href: ksproperty-bda-controlling-pin-id.md
         - name: KSPROPERTY_BDA_NODE_DESCRIPTORS
@@ -1026,15 +1115,17 @@
         - name: KSPROPERTY_BDA_TEMPLATE_CONNECTIONS
           href: ksproperty-bda-template-connections.md
     - name: KSPROPSETID_BdaVoidTransform
-      href: kspropsetid-bdavoidtransform.md
       items:
+        - name: KSPROPSETID_BdaVoidTransform
+          href: kspropsetid-bdavoidtransform.md
         - name: KSPROPERTY_BDA_VOID_TRANSFORM_START
           href: ksproperty-bda-void-transform-start.md
         - name: KSPROPERTY_BDA_VOID_TRANSFORM_STOP
           href: ksproperty-bda-void-transform-stop.md
 - name: 广播驱动程序体系结构常量
-  href: broadcast-driver-architecture-constants.md
   items:
+    - name: 广播驱动程序体系结构常量
+      href: broadcast-driver-architecture-constants.md
     - name: BDA 筛选器类别 GUID
       href: bda-filter-category-guids.md
     - name: BDA 节点类别 GUID
@@ -1046,8 +1137,9 @@
     - name: 广播网络类型 GUID
       href: broadcast-network-type-guids.md
 - name: 编码器属性集
-  href: encoder-property-sets.md
   items:
+    - name: 编码器属性集
+      href: encoder-property-sets.md
     - name: CODECAPI_VIDEO_ENCODER
       href: codecapi-video-encoder.md
     - name: CODECAPI_AUDIO_ENCODER
@@ -1067,13 +1159,15 @@
     - name: ENCAPIPARAM_PEAK_BITRATE
       href: encapiparam-peak-bitrate.md
 - name: 编码器事件
-  href: encoder-events.md
   items:
+    - name: 编码器事件
+      href: encoder-events.md
     - name: CODECAPI_CHANGELISTS
       href: codecapi-changelists.md
 - name: AV/C 协议驱动程序函数代码
-  href: av-c-protocol-driver-function-codes.md
   items:
+    - name: AV/C 协议驱动程序函数代码
+      href: av-c-protocol-driver-function-codes.md
     - name: AVC_FUNCTION_COMMAND
       href: avc-function-command.md
     - name: AVC_FUNCTION_GET_PIN_COUNT
@@ -1105,8 +1199,9 @@
     - name: AVC_FUNCTION_GET_SUBUNIT_INFO
       href: avc-function-get-subunit-info.md
 - name: AV/C 流式处理协议驱动程序函数代码
-  href: av-c-streaming-protocol-driver-function-codes.md
   items:
+    - name: AV/C 流式处理协议驱动程序函数代码
+      href: av-c-streaming-protocol-driver-function-codes.md
     - name: AVCSTRM_READ
       href: avcstrm-read.md
     - name: AVCSTRM_WRITE
@@ -1126,16 +1221,19 @@
     - name: AVCSTRM_SET_PROPERTY
       href: avcstrm-set-property.md
 - name: AV/C 流式处理常量
-  href: av-c-streaming-constants.md
   items:
+    - name: AV/C 流式处理常量
+      href: av-c-streaming-constants.md
     - name: AV/C 流式处理格式 GUID
       href: av-c-streaming-format-guids.md
 - name: 视频捕获微型驱动程序属性集
-  href: video-capture-minidriver-property-sets.md
   items:
+    - name: 视频捕获微型驱动程序属性集
+      href: video-capture-minidriver-property-sets.md
     - name: PROPSETID_ALLOCATOR_CONTROL
-      href: propsetid-allocator-control.md
       items:
+        - name: PROPSETID_ALLOCATOR_CONTROL
+          href: propsetid-allocator-control.md
         - name: KSPROPERTY_ALLOCATOR_CONTROL_HONOR_COUNT
           href: ksproperty-allocator-control-honor-count.md
         - name: KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE
@@ -1145,8 +1243,9 @@
         - name: KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE
           href: ksproperty-allocator-control-capture-interleave.md
     - name: PROPSETID_EXT_DEVICE
-      href: propsetid-ext-device.md
       items:
+        - name: PROPSETID_EXT_DEVICE
+          href: propsetid-ext-device.md
         - name: KSPROPERTY_EXTDEVICE_ID
           href: ksproperty-extdevice-id.md
         - name: KSPROPERTY_EXTDEVICE_VERSION
@@ -1158,8 +1257,9 @@
         - name: KSPROPERTY_EXTDEVICE_CAPABILITIES
           href: ksproperty-extdevice-capabilities.md
     - name: PROPSETID_EXT_TRANSPORT
-      href: propsetid-ext-transport.md
       items:
+        - name: PROPSETID_EXT_TRANSPORT
+          href: propsetid-ext-transport.md
         - name: KSPROPERTY_EXTXPORT_CAPABILITIES
           href: ksproperty-extxport-capabilities.md
         - name: KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE
@@ -1183,8 +1283,9 @@
         - name: KSPROPERTY_RAW_AVC_CMD
           href: ksproperty-raw-avc-cmd.md
     - name: PROPSETID_TIMECODE_READER
-      href: propsetid-timecode-reader.md
       items:
+        - name: PROPSETID_TIMECODE_READER
+          href: propsetid-timecode-reader.md
         - name: KSPROPERTY_TIMECODE_READER
           href: ksproperty-timecode-reader.md
         - name: KSPROPERTY_ATN_READER
@@ -1192,8 +1293,9 @@
         - name: KSPROPERTY_RTC_READER
           href: ksproperty-rtc-reader.md
     - name: PROPSETID_TUNER
-      href: propsetid-tuner.md
       items:
+        - name: PROPSETID_TUNER
+          href: propsetid-tuner.md
         - name: KSPROPERTY_TUNER_CAPS
           href: ksproperty-tuner-caps.md
         - name: KSPROPERTY_TUNER_FREQUENCY
@@ -1219,8 +1321,9 @@
         - name: KSPROPERTY_TUNER_IF_MEDIUM
           href: ksproperty-tuner-if-medium.md
     - name: PROPSETID_VIDCAP_CAMERACONTROL
-      href: propsetid-vidcap-cameracontrol.md
       items:
+        - name: PROPSETID_VIDCAP_CAMERACONTROL
+          href: propsetid-vidcap-cameracontrol.md
         - name: KSPROPERTY_CAMERACONTROL_EXPOSURE
           href: ksproperty-cameracontrol-exposure.md
         - name: KSPROPERTY_CAMERACONTROL_FOCUS
@@ -1262,8 +1365,9 @@
         - name: KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY
           href: ksproperty-cameracontrol-auto-exposure-priority.md
     - name: KSPROPERTYSETID_ExtendedCameraControl
-      href: kspropertysetid-extendedcameracontrol.md
       items:
+        - name: KSPROPERTYSETID_ExtendedCameraControl
+          href: kspropertysetid-extendedcameracontrol.md
         - name: KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE
           href: ksproperty-cameracontrol-extended-photomode.md
         - name: KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOFRAMERATE
@@ -1353,8 +1457,9 @@
         - name: KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_SET
           href: ksproperty-cameracontrol-perframesetting-set.md
     - name: PROPSETID_VIDCAP_CROSSBAR
-      href: propsetid-vidcap-crossbar.md
       items:
+        - name: PROPSETID_VIDCAP_CROSSBAR
+          href: propsetid-vidcap-crossbar.md
         - name: KSPROPERTY_CROSSBAR_CAN_ROUTE
           href: ksproperty-crossbar-can-route.md
         - name: KSPROPERTY_CROSSBAR_CAPS
@@ -1364,18 +1469,21 @@
         - name: KSPROPERTY_CROSSBAR_ROUTE
           href: ksproperty-crossbar-route.md
     - name: PROPSETID_VIDCAP_DROPPEDFRAMES
-      href: propsetid-vidcap-droppedframes.md
       items:
+        - name: PROPSETID_VIDCAP_DROPPEDFRAMES
+          href: propsetid-vidcap-droppedframes.md
         - name: KSPROPERTY_DROPPEDFRAMES_CURRENT
           href: ksproperty-droppedframes-current.md
     - name: PROPSETID_VIDCAP_EXTENSION_UNIT
-      href: propsetid-vidcap-extension-unit.md
       items:
+        - name: PROPSETID_VIDCAP_EXTENSION_UNIT
+          href: propsetid-vidcap-extension-unit.md
         - name: KSPROPERTY_EXTENSION_UNIT_INFO
           href: ksproperty-extension-unit-info.md
     - name: PROPSETID_VIDCAP_TVAUDIO
-      href: propsetid-vidcap-tvaudio.md
       items:
+        - name: PROPSETID_VIDCAP_TVAUDIO
+          href: propsetid-vidcap-tvaudio.md
         - name: KSPROPERTY_TVAUDIO_CAPS
           href: ksproperty-tvaudio-caps.md
         - name: KSPROPERTY_TVAUDIO_CURRENTLY_AVAILABLE_MODES
@@ -1383,15 +1491,17 @@
         - name: KSPROPERTY_TVAUDIO_MODE
           href: ksproperty-tvaudio-mode.md
     - name: PROPSETID_VIDCAP_SELECTOR
-      href: propsetid-vidcap-selector.md
       items:
+        - name: PROPSETID_VIDCAP_SELECTOR
+          href: propsetid-vidcap-selector.md
         - name: KSPROPERTY_SELECTOR_SOURCE_NODE_ID
           href: ksproperty-selector-source-node-id.md
         - name: KSPROPERTY_NUM_SOURCES
           href: ksproperty-num-sources.md
     - name: PROPSETID_VIDCAP_VIDEOCOMPRESSION
-      href: propsetid-vidcap-videocompression.md
       items:
+        - name: PROPSETID_VIDCAP_VIDEOCOMPRESSION
+          href: propsetid-vidcap-videocompression.md
         - name: KSPROPERTY_VIDEOCOMPRESSION_GETINFO
           href: ksproperty-videocompression-getinfo.md
         - name: KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE
@@ -1407,8 +1517,9 @@
         - name: KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE
           href: ksproperty-videocompression-windowsize.md
     - name: PROPSETID_VIDCAP_VIDEOCONTROL
-      href: propsetid-vidcap-videocontrol.md
       items:
+        - name: PROPSETID_VIDCAP_VIDEOCONTROL
+          href: propsetid-vidcap-videocontrol.md
         - name: KSPROPERTY_VIDEOCONTROL_CAPS
           href: ksproperty-videocontrol-caps.md
         - name: KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE
@@ -1418,8 +1529,9 @@
         - name: KSPROPERTY_VIDEOCONTROL_MODE
           href: ksproperty-videocontrol-mode.md
     - name: PROPSETID_VIDCAP_VIDEODECODER
-      href: propsetid-vidcap-videodecoder.md
       items:
+        - name: PROPSETID_VIDCAP_VIDEODECODER
+          href: propsetid-vidcap-videodecoder.md
         - name: KSPROPERTY_VIDEODECODER_CAPS
           href: ksproperty-videodecoder-caps.md
         - name: KSPROPERTY_VIDEODECODER_STANDARD
@@ -1431,8 +1543,9 @@
         - name: KSPROPERTY_VIDEODECODER_VCR_TIMING
           href: ksproperty-videodecoder-vcr-timing.md
     - name: PROPSETID_VIDCAP_VIDEOPROCAMP
-      href: propsetid-vidcap-videoprocamp.md
       items:
+        - name: PROPSETID_VIDCAP_VIDEOPROCAMP
+          href: propsetid-vidcap-videoprocamp.md
         - name: KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION
           href: ksproperty-videoprocamp-backlight-compensation.md
         - name: KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS
@@ -1470,47 +1583,55 @@
     - name: KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE_PROPERTY
       href: ksproperty-cameracontrol-video-stabilization-mode-property.md
 - name: 视频捕获微型驱动程序事件集
-  href: video-capture-minidriver-event-sets.md
   items:
+    - name: 视频捕获微型驱动程序事件集
+      href: video-capture-minidriver-event-sets.md
     - name: EVENTSETID_TUNER
-      href: eventsetid-tuner.md
       items:
+        - name: EVENTSETID_TUNER
+          href: eventsetid-tuner.md
         - name: KSEVENT_TUNER_CHANGED
           href: ksevent-tuner-changed.md
         - name: KSEVENT_TUNER_INITIATE_SCAN
           href: ksevent-tuner-initiate-scan.md
     - name: EVENTSETID_VIDEODECODER
-      href: eventsetid-videodecoder.md
       items:
+        - name: EVENTSETID_VIDEODECODER
+          href: eventsetid-videodecoder.md
         - name: KSEVENT_VIDEODECODER_CHANGED
           href: ksevent-videodecoder-changed.md
     - name: EVENTSETID_CROSSBAR
-      href: eventsetid-crossbar.md
       items:
+        - name: EVENTSETID_CROSSBAR
+          href: eventsetid-crossbar.md
         - name: KSEVENT_CROSSBAR_CHANGED
           href: ksevent-crossbar-changed.md
     - name: KSEVENTSETID_CameraAsyncControl
-      href: kseventsetid-cameraasynccontrol.md
       items:
+        - name: KSEVENTSETID_CameraAsyncControl
+          href: kseventsetid-cameraasynccontrol.md
         - name: KSEVENT_CAMERACONTROL_FOCUS
           href: ksevent-cameracontrol-focus.md
         - name: KSEVENT_CAMERACONTROL_ZOOM
           href: ksevent-cameracontrol-zoom.md
     - name: KSEVENTSETID_Device
-      href: kseventsetid-device.md
       items:
+        - name: KSEVENTSETID_Device
+          href: kseventsetid-device.md
         - name: KSEVENT_DEVICE_LOST
           href: ksevent-device-lost.md
         - name: KSEVENT_DEVICE_PREEMPTED
           href: ksevent-device-preempted.md
     - name: KSEVENTSETID_VIDCAP_TVAUDIO
-      href: kseventsetid-vidcap-tvaudio.md
       items:
+        - name: KSEVENTSETID_VIDCAP_TVAUDIO
+          href: kseventsetid-vidcap-tvaudio.md
         - name: KSEVENT_TVAUDIO_CHANGED
           href: ksevent-tvaudio-changed.md
     - name: KSEVENTSETID_VIDCAPNotify
-      href: kseventsetid-vidcapnotify.md
       items:
+        - name: KSEVENTSETID_VIDCAPNotify
+          href: kseventsetid-vidcapnotify.md
         - name: KSEVENT_VIDCAPTOSTI_EXT_TRIGGER
           href: ksevent-vidcaptosti-ext-trigger.md
         - name: KSEVENT_VIDCAP_AUTO_UPDATE
@@ -1518,13 +1639,15 @@
         - name: KSEVENT_VIDCAP_SEARCH
           href: ksevent-vidcap-search.md
     - name: KSEVENTSETID_VolumeLimit
-      href: kseventsetid-volumelimit.md
       items:
+        - name: KSEVENTSETID_VolumeLimit
+          href: kseventsetid-volumelimit.md
         - name: KSEVENT_VOLUMELIMIT_CHANGED
           href: ksevent-volumelimit-changed.md
 - name: 设备转换管理器事件
-  href: device-mft-events.md
   items:
+    - name: 设备转换管理器事件
+      href: device-mft-events.md
     - name: METransformFlushInputStream
       href: metransformflushinputstream.md
     - name: METransformHaveOutput
@@ -1534,8 +1657,9 @@
     - name: METransformNeedInput
       href: metransformneedinput.md
 - name: 内核流式处理拓扑节点
-  href: kernel-streaming-topology-nodes.md
   items:
+    - name: 内核流式处理拓扑节点
+      href: kernel-streaming-topology-nodes.md
     - name: KSNODETYPE_VIDEO_STREAMING
       href: ksnodetype-video-streaming.md
     - name: KSNODETYPE_VIDEO_INPUT_TERMINAL
@@ -1553,11 +1677,13 @@
     - name: KSNODETYPE_VIDEO_OUTPUT_MTT
       href: ksnodetype-video-output-mtt.md
 - name: 内核流式处理接口集
-  href: kernel-streaming-interface-sets.md
   items:
+    - name: 内核流式处理接口集
+      href: kernel-streaming-interface-sets.md
     - name: KSINTERFACESETID_Media
-      href: ksinterfacesetid-media.md
       items:
+        - name: KSINTERFACESETID_Media
+          href: ksinterfacesetid-media.md
         - name: KSINTERFACE_MEDIA_MUSIC
           href: ksinterface-media-music.md
         - name: KSINTERFACE_MEDIA_WAVE_BUFFERED
@@ -1565,8 +1691,9 @@
         - name: KSINTERFACE_MEDIA_WAVE_QUEUED
           href: ksinterface-media-wave-queued.md
     - name: KSINTERFACESETID_Standard
-      href: ksinterfacesetid-standard.md
       items:
+        - name: KSINTERFACESETID_Standard
+          href: ksinterfacesetid-standard.md
         - name: KSINTERFACE_STANDARD_STREAMING
           href: ksinterface-standard-streaming.md
         - name: KSINTERFACE_STANDARD_LOOPED_STREAMING
@@ -1574,18 +1701,21 @@
         - name: KSINTERFACE_STANDARD_CONTROL
           href: ksinterface-standard-control.md
 - name: 内核流式处理事件集
-  href: kernel-streaming-event-sets.md
   items:
+    - name: 内核流式处理事件集
+      href: kernel-streaming-event-sets.md
     - name: KSEVENTSETID_Clock
-      href: kseventsetid-clock.md
       items:
+        - name: KSEVENTSETID_Clock
+          href: kseventsetid-clock.md
         - name: KSEVENT_CLOCK_INTERVAL_MARK
           href: ksevent-clock-interval-mark.md
         - name: KSEVENT_CLOCK_POSITION_MARK
           href: ksevent-clock-position-mark.md
     - name: KSEVENTSETID_Connection
-      href: kseventsetid-connection.md
       items:
+        - name: KSEVENTSETID_Connection
+          href: kseventsetid-connection.md
         - name: KSEVENT_CONNECTION_POSITIONUPDATE
           href: ksevent-connection-positionupdate.md
         - name: KSEVENT_CONNECTION_DATADISCONTINUITY
@@ -1597,33 +1727,39 @@
         - name: KSEVENT_CONNECTION_ENDOFSTREAM
           href: ksevent-connection-endofstream.md
     - name: KSEVENTSETID_DynamicFormatChange
-      href: kseventsetid-dynamicformatchange.md
       items:
+        - name: KSEVENTSETID_DynamicFormatChange
+          href: kseventsetid-dynamicformatchange.md
         - name: KSEVENT_DYNAMIC_FORMAT_CHANGE
           href: ksevent-dynamic-format-change.md
     - name: KSEVENTSETID_StreamAllocator
-      href: kseventsetid-streamallocator.md
       items:
+        - name: KSEVENTSETID_StreamAllocator
+          href: kseventsetid-streamallocator.md
         - name: KSEVENT_STREAMALLOCATOR_INTERNAL_FREEFRAME
           href: ksevent-streamallocator-internal-freeframe.md
         - name: KSEVENT_STREAMALLOCATOR_FREEFRAME
           href: ksevent-streamallocator-freeframe.md
 - name: 内核流式处理方法集
-  href: kernel-streaming-method-sets.md
   items:
+    - name: 内核流式处理方法集
+      href: kernel-streaming-method-sets.md
     - name: KSMETHODSETID_StreamAllocator
-      href: ksmethodsetid-streamallocator.md
       items:
+        - name: KSMETHODSETID_StreamAllocator
+          href: ksmethodsetid-streamallocator.md
         - name: KSMETHOD_STREAMALLOCATOR_ALLOC
           href: ksmethod-streamallocator-alloc.md
         - name: KSMETHOD_STREAMALLOCATOR_FREE
           href: ksmethod-streamallocator-free.md
 - name: 流式处理类 SRB 参考
-  href: stream-class-srb-reference.md
   items:
+    - name: 流式处理类 SRB 参考
+      href: stream-class-srb-reference.md
     - name: 特定于设备的命令代码
-      href: device-specific-command-codes.md
       items:
+        - name: 特定于设备的命令代码
+          href: device-specific-command-codes.md
         - name: SRB_CHANGE_POWER_STATE
           href: srb-change-power-state.md
         - name: SRB_CLOSE_DEVICE_INSTANCE
@@ -1657,8 +1793,9 @@
         - name: SRB_UNKNOWN_DEVICE_COMMAND
           href: srb-unknown-device-command.md
     - name: 特定于流的命令代码
-      href: stream-specific-command-codes.md
       items:
+        - name: 特定于流的命令代码
+          href: stream-specific-command-codes.md
         - name: SRB_CLOSE_MASTER_CLOCK
           href: srb-close-master-clock.md
         - name: SRB_GET_DATA_FORMAT
@@ -1690,18 +1827,21 @@
         - name: SRB_WRITE_DATA
           href: srb-write-data.md
 - name: DVD 解码器微型驱动程序属性集
-  href: dvd-decoder-minidriver-property-sets.md
   items:
+    - name: DVD 解码器微型驱动程序属性集
+      href: dvd-decoder-minidriver-property-sets.md
     - name: KSPROPSETID_AudioDecoderOut
-      href: kspropsetid-audiodecoderout.md
       items:
+        - name: KSPROPSETID_AudioDecoderOut
+          href: kspropsetid-audiodecoderout.md
         - name: KSPROPERTY_AUDDECOUT_MODES
           href: ksproperty-auddecout-modes.md
         - name: KSPROPERTY_AUDDECOUT_CUR_MODE
           href: ksproperty-auddecout-cur-mode.md
     - name: KSPROPSETID_DvdSubPic
-      href: kspropsetid-dvdsubpic.md
       items:
+        - name: KSPROPSETID_DvdSubPic
+          href: kspropsetid-dvdsubpic.md
         - name: KSPROPERTY_DVDSUBPIC_PALETTE
           href: ksproperty-dvdsubpic-palette.md
         - name: KSPROPERTY_DVDSUBPIC_HLI
@@ -1709,8 +1849,9 @@
         - name: KSPROPERTY_DVDSUBPIC_COMPOSIT_ON
           href: ksproperty-dvdsubpic-composit-on.md
     - name: KSPROPSETID_CopyProt
-      href: kspropsetid-copyprot.md
       items:
+        - name: KSPROPSETID_CopyProt
+          href: kspropsetid-copyprot.md
         - name: KSPROPERTY_DVDCOPY_CHLG_KEY
           href: ksproperty-dvdcopy-chlg-key.md
         - name: KSPROPERTY_DVDCOPY_DVD_KEY1
@@ -1728,8 +1869,9 @@
         - name: KSPROPERTY_DVDCOPY_DISC_KEY
           href: ksproperty-dvdcopy-disc-key.md
     - name: KSPROPSETID_TSRateChange
-      href: kspropsetid-tsratechange.md
       items:
+        - name: KSPROPSETID_TSRateChange
+          href: kspropsetid-tsratechange.md
         - name: KS_AM_RATE_SimpleRateChange
           href: ks-am-rate-simpleratechange.md
         - name: KS_AM_RATE_ExactRateChange
@@ -1739,8 +1881,9 @@
         - name: KS_AM_RATE_Step
           href: ks-am-rate-step.md
     - name: KSPROPSETID_VPConfig and KSPROPSETID_VPVBIConfig
-      href: kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig.md
       items:
+        - name: KSPROPSETID_VPConfig and KSPROPSETID_VPVBIConfig
+          href: kspropsetid-vpconfig-and-kspropsetid-vpvbiconfig.md
         - name: KSPROPERTY_VPCONFIG_NUMCONNECTINFO
           href: ksproperty-vpconfig-numconnectinfo.md
         - name: KSPROPERTY_VPCONFIG_GETCONNECTINFO
@@ -1772,8 +1915,9 @@
         - name: KSPROPERTY_VPCONFIG_SURFACEPARAMS
           href: ksproperty-vpconfig-surfaceparams.md
     - name: KSPROPSETID_Wave
-      href: kspropsetid-wave.md
       items:
+        - name: KSPROPSETID_Wave
+          href: kspropsetid-wave.md
         - name: KSPROPERTY_WAVE_COMPATIBLE_CAPABILITIES
           href: ksproperty-wave-compatible-capabilities.md
         - name: KSPROPERTY_WAVE_INPUT_CAPABILITIES
@@ -1789,11 +1933,13 @@
         - name: KSPROPERTY_WAVE_PAN
           href: ksproperty-wave-pan.md
 - name: DVD 解码器微型驱动程序事件集
-  href: dvd-decoder-minidriver-event-sets.md
   items:
+    - name: DVD 解码器微型驱动程序事件集
+      href: dvd-decoder-minidriver-event-sets.md
     - name: KSEVENTSETID_VPNotify
-      href: kseventsetid-vpnotify.md
       items:
+        - name: KSEVENTSETID_VPNotify
+          href: kseventsetid-vpnotify.md
         - name: KSEVENT_VPNOTIFY_FORMATCHANGE
           href: ksevent-vpnotify-formatchange.md
 - name: COM 接口

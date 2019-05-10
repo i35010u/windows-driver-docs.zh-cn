@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 999354b922a7e0cffe60da453e506a5fd685e303
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d776f4cfe87895c1fed04cc1ff3138e34fb48ed
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347861"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501546"
 ---
 # <a name="bug-check-0x1000007e-systemthreadexceptionnothandledm"></a>Bug 检查 0x1000007E：系统\_线程\_异常\_不\_HANDLED\_M
 
@@ -30,7 +30,8 @@ Bug 检查 0x1000007E 具有相同的含义和作为参数[ **bug 检查 0x7E** 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
 
-
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
  
 
  

@@ -4,12 +4,12 @@ description: 实施 Finish-Install 操作的指南
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 968e752fa905d35eaf7c7479ff4cff59e8995807
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd317066a43e196ed7c1fd3d5d91fe0778109148
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342749"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456431"
 ---
 # <a name="guidelines-for-implementing-finish-install-actions"></a>实施 Finish-Install 操作的指南
 
@@ -56,7 +56,7 @@ ms.locfileid: "63342749"
 
      
 
--   在注册实现完成安装操作的安装程序之前，必须包括并安装运行完成安装操作所需的所有文件[ **CopyFiles 指令**](inf-copyfiles-directive.md)的[INF 文件](inf-files.md)设备。 这是必需的以便将文件放在安装过程中可访问的位置由安装程序。
+-   在注册实现完成安装操作的安装程序之前，必须包括并安装运行完成安装操作所需的所有文件[ **CopyFiles 指令**](inf-copyfiles-directive.md)的[INF 文件](overview-of-inf-files.md)设备。 这是必需的以便将文件放在安装过程中可访问的位置由安装程序。
 
     有关设备或类共同安装程序的注册要求的详细信息，请参阅[注册类共同安装程序](registering-a-class-co-installer.md)。
 

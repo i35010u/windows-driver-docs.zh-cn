@@ -3,12 +3,12 @@ Description: 本主题介绍如何 UMDF 函数驱动程序支持 USB 选择性�
 title: 在 USB UMDF 驱动程序的选择性挂起
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8103a70187fdac429671a5b6296edd8e314cfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 228dd12f2e7a2b5fe70a3924ef07d9ed2cddf9e5
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331079"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405079"
 ---
 # <a name="selective-suspend-in-usb-umdf-drivers"></a>在 USB UMDF 驱动程序的选择性挂起
 
@@ -131,7 +131,7 @@ hr = m_FxDevice->AssignS0IdleSettings( IdleUsbSelectiveSuspend,
                                 WdfUseDefault);                                                                                                   
 ```
 
-如果设备硬件可以生成唤醒信号，UMDF 驱动程序还可以从 S1、 S2 或 S3 支持系统唤醒。 有关详细信息，请参阅[UMDF 驱动程序中唤醒系统](#systemwake)。
+如果设备硬件可以生成唤醒信号，UMDF 驱动程序还可以从 S1、 S2 或 S3 支持系统唤醒。 有关详细信息，请参阅[UMDF 驱动程序中唤醒系统](#system-wake-in-a-umdf-driver)。
 
 ## <a name="supporting-usb-selective-suspend-in-a-non-ppo-umdf-driver"></a>PPO UMDF 驱动程序中支持 USB 选择性挂起
 
@@ -142,7 +142,7 @@ hr = m_FxDevice->AssignS0IdleSettings( IdleUsbSelectiveSuspend,
 
 当 WinUSB.sys 确定设备处于空闲状态时，它将发送挂起内核模式设备堆栈的下层设备的请求。 总线驱动程序更改为适当的硬件的状态。 如果所有设备的端口上的函数已被挂起，该端口将都进入 USB 选择性挂起状态。
 
-如果设备被挂起时，I/O 请求到达时在 WinUSB.sys，WinUSB.sys 恢复设备操作，如果设备还必须启动为请求提供服务。 UMDF 驱动程序不需要任何代码来恢复该设备，而系统仍然处于 S0。 如果设备硬件可以生成唤醒信号，UMDF 驱动程序还可以从 S1、 S2 或 S3 支持系统唤醒。 有关详细信息，请参阅[UMDF 驱动程序中唤醒系统](#systemwake)。
+如果设备被挂起时，I/O 请求到达时在 WinUSB.sys，WinUSB.sys 恢复设备操作，如果设备还必须启动为请求提供服务。 UMDF 驱动程序不需要任何代码来恢复该设备，而系统仍然处于 S0。 如果设备硬件可以生成唤醒信号，UMDF 驱动程序还可以从 S1、 S2 或 S3 支持系统唤醒。 有关详细信息，请参阅[UMDF 驱动程序中唤醒系统](#system-wake-in-a-umdf-driver)。
 
 不是 PPO 可以支持选择性的 UMDF 驱动程序挂起通过采用以下两个步骤：
 

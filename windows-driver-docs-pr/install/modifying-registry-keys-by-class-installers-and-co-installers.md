@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab7836c01266cc19a03b133642ba39dbd44545f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f50e266d0ed560a23fa4521bfe4ef8bc293e4740
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378400"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456436"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表项
 
@@ -24,7 +24,7 @@ ms.locfileid: "63378400"
 
  
 
-在某些情况下除外*类的安装程序*并*共同安装程序*不应使用标准注册表函数来创建、 更改或删除注册表项。 在大多数情况下，修改注册表项应仅使用指令都将置于[INF 文件](inf-files.md)。 这些指令的详细信息，请参阅[INF 指令摘要](summary-of-inf-directives.md)。
+在某些情况下除外*类的安装程序*并*共同安装程序*不应使用标准注册表函数来创建、 更改或删除注册表项。 在大多数情况下，修改注册表项应仅使用指令都将置于[INF 文件](overview-of-inf-files.md)。 这些指令的详细信息，请参阅[INF 指令摘要](summary-of-inf-directives.md)。
 
 以下是此规则的例外情况：
 

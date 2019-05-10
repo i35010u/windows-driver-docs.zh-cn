@@ -1,9 +1,11 @@
 - name: POS 设备驱动程序设计指南
-  href: index.md
   items:
+    - name: POS 设备驱动程序设计指南
+      href: index.md
     - name: POS 驱动程序示例
-      href: driver-samples.md
       items:
+        - name: POS 驱动程序示例
+          href: driver-samples.md
         - name: 条形码扫描仪驱动程序示例
           href: barcode-scanner-driver.md
         - name: 磁条读取器驱动程序示例
@@ -11,8 +13,9 @@
     - name: 条形码扫描仪蓝牙服务 UUID
       href: barcode-scanner-bluetooth-service-uuids.md
     - name: 条形码扫描仪事件
-      href: barcode-scanner-events.md
       items:
+        - name: 条形码扫描仪事件
+          href: barcode-scanner-events.md
         - name: BarcodeScannerDataReceived
           href: barcodescannerdatareceived.md
         - name: BarcodeScannerErrorOccurred
@@ -24,15 +27,17 @@
         - name: BarcodeScannerTriggerReleased
           href: barcodescannertriggerreleased.md
     - name: 磁条读取器事件
-      href: magnetic-stripe-reader-events.md
       items:
+        - name: 磁条读取器事件
+          href: magnetic-stripe-reader-events.md
         - name: MagneticStripeReaderDataReceived
           href: magneticstripereaderdatareceived.md
         - name: MagneticStripeReaderErrorOccured
           href: magneticstripereadererroroccured.md
     - name: POS 事件
-      href: pos-events.md
       items:
+        - name: POS 事件
+          href: pos-events.md
         - name: ReleaseDeviceRequested
           href: releasedevicerequested.md
         - name: StatusUpdated

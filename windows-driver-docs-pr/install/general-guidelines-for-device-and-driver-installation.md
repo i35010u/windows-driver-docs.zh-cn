@@ -7,12 +7,12 @@ keywords:
 - 驱动程序安装 WDK，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0932ff8a78ebeac39edfc7bac798efe4807114c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eac1b34604f753d7f228c8b45d1ba70f03ebf7f7
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392514"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456360"
 ---
 # <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装常规指南
 
@@ -23,7 +23,7 @@ ms.locfileid: "63392514"
 
 -   不会自动重新启动系统或要求用户在执行此操作，除非绝对必要。
 
--   始终使用[INF 文件](inf-files.md)设备安装的。 请确保所有的 INF 文件格式正确，并使用正确的语法。
+-   始终使用[INF 文件](overview-of-inf-files.md)设备安装的。 请确保所有的 INF 文件格式正确，并使用正确的语法。
 
 -   安装; 完成后将保留在系统上的 INF 文件不要删除这些文件。 不仅设备或驱动程序是首次安装时，而且还在一个驱动程序的用户请求更新通过设备管理器中，使用 INF 文件。
 

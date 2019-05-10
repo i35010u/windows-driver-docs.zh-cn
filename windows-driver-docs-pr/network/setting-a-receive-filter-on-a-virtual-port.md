@@ -4,12 +4,12 @@ description: 在虚拟端口上设置接收筛选器
 ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be2c6633368f628e4b3dbfacbdcfd336785c9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50fd4d697706b1d4dfc80878dfa079de80d31d11
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346714"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405283"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>在虚拟端口上设置接收筛选器
 
@@ -18,13 +18,13 @@ ms.locfileid: "63346714"
 
 本主题包含下列信息：
 
-[设置 VPort 接收筛选器](#set)
+[设置 VPort 接收筛选器](#setting-a-receive-filter-on-a-vport)
 
-[使用 NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_UNTAGGED\_或\_零标志](#flag)
+[使用 NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_UNTAGGED\_或\_零标志](#using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag)
 
-[使用筛选器标识符](#filter-id)
+[使用筛选器标识符](#using-the-filter-identifier)
 
-[处理接收 VPort 上的筛选器](#handle)
+[处理接收 VPort 上的筛选器](#handling-receive-filters-on-a-vport)
 
 有关如何创建 VPort 的详细信息，请参阅[创建虚拟端口](creating-a-virtual-port.md)。
 

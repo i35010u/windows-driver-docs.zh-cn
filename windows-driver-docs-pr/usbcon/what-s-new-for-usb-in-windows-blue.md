@@ -3,24 +3,24 @@ Description: 以下是新功能和改进的通用串行总线 (USB) 在 Windows 
 title: Windows 8.1-什么是 USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7c846902fe660db70227bde70c3a06577e803d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca226ef7f1e1d9e50eb70faedd3b9046cef86a1c
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389191"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405293"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
 
 以下是新功能和改进的通用串行总线 (USB) 在 Windows 8.1。
 
--   [有关开发 UWP 应用的 Windows 运行时 USB API](#usb-sdk)
--   [Microsoft OS 2.0 描述符的改进了的设备枚举](#microsoft-os-2-0-descriptors-for-improved-device-enumeration)
--   [对 WinUSB 等时支持](#usb-wdk)
+-   [有关开发 UWP 应用的 Windows 运行时 USB API](#windows-runtime-usb-api-for-developing-uwp-apps)
+-   [Microsoft OS 2.0 描述符的改进了的设备枚举](#microsoft-os-20-descriptors-for-improved-device-enumerations)
+-   [对 WinUSB 等时支持](#isochronous-support-for-winusb)
 -   [USB 驱动程序堆栈改进](#usb-driver-stack-improvements)
 -   [USB 测试硬件认证包 (HCK) 中](#usb-tests-in-the-hardware-certification-kit-hck)
--   [改进了的 USB 的诊断工具和调试器扩展](#improved-usb-diagnostic-tools-and-debugger-extensions-)
+-   [改进了的 USB 的诊断工具和调试器扩展](#improved-usb-diagnostic-tools-and-debugger-extensions)
 -   [相关的主题](#related-topics)
 
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>有关开发 UWP 应用的 Windows 运行时 USB API

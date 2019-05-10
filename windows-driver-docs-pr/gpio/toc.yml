@@ -1,18 +1,21 @@
 - name: 通用 I/O (GPIO) 驱动程序设计指南
-  href: index.md
   items:
+    - name: 通用 I/O (GPIO) 驱动程序设计指南
+      href: index.md
     - name: GPIO 驱动程序支持概述
       href: gpio-driver-support-overview.md
     - name: GpioClx I/O 和中断接口
       href: gpioclx-i-o-and-interrupt-interfaces.md
     - name: 基于 GPIO 的硬件资源
-      href: gpio-based-hardware-resources.md
       items:
+        - name: 基于 GPIO 的硬件资源
+          href: gpio-based-hardware-resources.md
         - name: 将 KMDF 驱动程序连接到 GPIO I/O 管脚
           href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
     - name: GPIO 中断
-      href: gpio-interrupts.md
       items:
+        - name: GPIO 中断
+          href: gpio-interrupts.md
         - name: 主要和次要中断
           href: primary-and-secondary-interrupts.md
         - name: 基于 GPIO 的中断资源
@@ -28,8 +31,9 @@
         - name: GPIO 中断掩码
           href: gpio-interrupt-masks.md
     - name: GpioClx DDI
-      href: gpioclx-ddi.md
       items:
+        - name: GpioClx DDI
+          href: gpioclx-ddi.md
         - name: GpioClx DDI 中的驱动程序支持方法
           href: driver-support-methods-in-the-gpioclx-ddi.md
         - name: 可选和必需的 GPIO 回调函数

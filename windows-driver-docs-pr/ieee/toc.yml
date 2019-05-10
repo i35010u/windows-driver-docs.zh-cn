@@ -1,11 +1,13 @@
 - name: IEEE 1394 总线驱动程序
-  href: index.md
   items:
+    - name: IEEE 1394 总线驱动程序
+      href: index.md
     - name: IEEE 1394 驱动程序堆栈
       href: the-ieee-1394-driver-stack.md
     - name: Windows 7 中的 IEEE 1394 总线驱动程序
-      href: ieee-1394-bus-driver-in-windows-7.md
       items:
+        - name: Windows 7 中的 IEEE 1394 总线驱动程序
+          href: ieee-1394-bus-driver-in-windows-7.md
         - name: Windows 7 中的设备驱动程序接口 (DDI) 更改
           href: device-driver-interface--ddi--changes-in-windows-7.md
         - name: 修改 IEEE 1394 总线驱动程序的默认行为
@@ -19,15 +21,17 @@
     - name: 1394 桥
       href: 1394-bridges.md
     - name: IEEE 1394 设备的异步 I/O
-      href: asynchronous-i-o-for-ieee-1394-devices.md
       items:
+        - name: IEEE 1394 设备的异步 I/O
+          href: asynchronous-i-o-for-ieee-1394-devices.md
         - name: 在 IEEE 1394 总线上发送异步 I/O 请求数据包
           href: sending-asynchronous-i-o-request-packets-on-the-ieee-1394-bus.md
         - name: 在 IEEE 1394 总线上接收异步 I/O 请求数据包
           href: receiving-asynchronous-i-o-request-packets-on-the-ieee-1394-bus.md
     - name: IEEE 1394 设备的常时等量 I/O
-      href: isochronous-i-o-for-ieee-1394-devices.md
       items:
+        - name: IEEE 1394 设备的常时等量 I/O
+          href: isochronous-i-o-for-ieee-1394-devices.md
         - name: 设置 IEEE 1394 设备的常时等量传输
           href: setting-up-isochronous-transfer-for-ieee-1394-devices.md
         - name: 缓冲 IEEE 1394 设备的常时等量 DMA 传输
@@ -41,8 +45,9 @@
         - name: 完成常时等量数据传输
           href: completing-an-isochronous-data-transfer.md
     - name: IEEE 1394 硬件仿真驱动程序
-      href: ieee-1394-hardware-emulation-drivers.md
       items:
+        - name: IEEE 1394 硬件仿真驱动程序
+          href: ieee-1394-hardware-emulation-drivers.md
         - name: 创建 IEEE 1394 虚拟设备
           href: creating-ieee-1394-virtual-devices.md
         - name: 删除 IEEE 1394 虚拟设备
@@ -52,8 +57,9 @@
     - name: 1394 示例和诊断工具
       href: 1394-samples-and-diagnostic-tools.md
     - name: IEC-61883 客户端驱动程序
-      href: iec-61883-client-drivers.md
       items:
+        - name: IEC-61883 客户端驱动程序
+          href: iec-61883-client-drivers.md
         - name: IEC-61883 协议驱动程序
           href: iec-61883-protocol-driver.md
         - name: 客户端驱动程序堆栈中的 IEC-61883 协议驱动程序

@@ -3,12 +3,12 @@ Description: MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插�
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1bd672f37af43f807d9b178112bef18671d4fc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b7f79121f9f6e8ff04c1dd632b6eb09670b6f0e
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380047"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405091"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
@@ -122,7 +122,7 @@ MUTT 连接试验程序类型-C (USB 类型 C ConnEx) 硬件转插板是 arduino
 
 | Tool                          | 描述                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------------|
-| [ConnExUtil.exe](#connexutil) | 命令行工具来执行 USB 类型 C ConnEx 功能。                                             |
+| [ConnExUtil.exe](#connexutilexe) | 命令行工具来执行 USB 类型 C ConnEx 功能。                                             |
 | [CxLoop.cmd](#cxloop)         | 连接和断开连接的每个端口一次。                                                             |
 | [CxStress.cmd](#cxstress)     | 随机的压力脚本。                                                                            |
 | [CxPower.cmd](#cxpower)       | 一段时间内捕获 power 数据 （电压和电流），并将输出发送到 CSV 文件。 |
@@ -388,26 +388,26 @@ do (
 
 USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和压力测试 (ST)。 每个测试部分描述了测试用例，并标识适用于测试的类别。 产品必须来测试整个相应的类别。 某些测试用例包含指向相关提示和技巧的其他信息。 本部分侧重于 USB 类型 C 功能和体验。 USB 类型-C 解决方案可能会包含其他 USB 组件，如 USB 集线器或 USB 控制器。 这两个 USB 中介绍了详细的测试信息的 USB 集线器和控制器-如果的[xHCI 互操作性测试过程](https://go.microsoft.com/fwlink/p/?LinkId=623257)和 Windows 硬件认证工具包。
 
-这些测试用例基于 ConnExUtil 命令和示例脚本[脚本，用于控制 USB 类型 C ConnEx 板](#scripts)。 测试用例的脚本，请参阅。 自定义所需的测试方案的脚本。
+这些测试用例基于 ConnExUtil 命令和示例脚本[脚本，用于控制 USB 类型 C ConnEx 板](#scripts-for-controlling-the-usb-type-c-connex-board)。 测试用例的脚本，请参阅。 自定义所需的测试方案的脚本。
 
-<a href="" id="device-enumeration"></a>[设备枚举](#ft1)  
+<a href="" id="device-enumeration"></a>[设备枚举](#ft-case-1-device-enumeration)  
 确认设备枚举的核心方面都是功能。
 
-<a href="" id="alternate-mode-negotiation"></a>[备用模式协商](#ft2)  
+<a href="" id="alternate-mode-negotiation"></a>[备用模式协商](#ft-case-2-alternate-mode-negotiation)  
 确认受支持的其他模式。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#ft3)  
+<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#ft-case-3-charging-and-power-delivery-pd)  
 确认充电与 USB 类型。
 
-<a href="" id="role-swap"></a>[角色切换](#ft4)  
+<a href="" id="role-swap"></a>[角色切换](#ft-case-4-role-swap)  
 确认角色交换。
 
 压力测试部分说明压力和边缘的情况下，这段时间内测试设备稳定性的过程。 压力测试，则需要自定义设备 (该 SuperMUTT) 旧 USB 验证 (非 USB 类型 C)。 可以使用即将发布的 USB 类型 C 测试设备实现进一步的测试和自动化。
 
-<a href="" id="device-enumeration"></a>[设备枚举](#st1)  
+<a href="" id="device-enumeration"></a>[设备枚举](#st-case-1-device-enumeration)  
 确认设备枚举的核心方面都是功能。
 
-<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#st2)  
+<a href="" id="charging-and-power-delivery--pd-"></a>[计费和电源传递 (PD)](#st-case-2-charging-and-power-delivery-pd)  
 确认充电与 USB 类型。
 
 ## <a name="ft-case-1-device-enumeration"></a>FT 案例 1:设备枚举
@@ -415,7 +415,7 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
 ![ft 案例 1： 设备枚举](images/ft1.png)
 
-| 端口   | 设备                                                                              |
+| Port   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT。                                                                                |
 | **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
@@ -433,14 +433,14 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
 7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="ft-case-2-alternate-mode-negotiation"></a>FT 案例 2:备用模式协商
 
 
 ![ft 案例 2： 备用模式协商](images/ft2.png)
 
-| 端口   | 设备                                                                              |
+| Port   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT。                                                                                |
 | **J2** | DisplayPort 到 USB 类型 C 硬件保护装置。                                                   |
@@ -458,14 +458,14 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 6.  在提升的命令提示符处，运行 CXLOOP。CMD 脚本。 脚本暂停时，确认新激活的外围设备可正常运行。
 7.  反向 USB 类型 C 电缆的方向，并重复步骤 5-7。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="ft-case-3-charging-and-power-delivery-pd"></a>FT 案例 3:计费和电源传递 (PD)
 
 
 ![ft 案例 3： 充电和电源传递 (pd)](images/ft3.png)
 
-| 端口   | 设备               |
+| Port   | 设备               |
 |--------|----------------------|
 | **J1** | SUT。                 |
 | **J2** | 无。                |
@@ -496,14 +496,14 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
     确认设备接收当前。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="ft-case-4-role-swap"></a>FT 情况 4:角色切换
 
 
 ![ft 用例 4： 角色交换](images/ft4.png)
 
-| 端口   | 设备                                                                              |
+| Port   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT。                                                                                |
 | **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
@@ -526,14 +526,14 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
 9.  执行必要的步骤来交换数据角色并确认每个系统的当前角色已更改。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="st-case-1-device-enumeration"></a>ST 案例 1:设备枚举
 
 
 ![st 案例 1： 设备枚举](images/ft1.png)
 
-| 端口   | 设备                                                                              |
+| Port   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT。                                                                                |
 | **J2** | 通过使用 USB 类型 C 电缆连接的 USB 类型 C 端口的 PC。              |
@@ -552,16 +552,16 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
     通过按 Ctrl-c。 终止脚本
 
-7.  执行步骤中所述[FT 案例 1:设备枚举](#ft1)。
+7.  执行步骤中所述[FT 案例 1:设备枚举](#ft-case-1-device-enumeration)。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="st-case-2-charging-and-power-delivery-pd"></a>ST 案例 2:计费和电源传递 (PD)
 
 
 ![st 案例 2： 充电和电源传递 (pd)](images/ft3.png)
 
-| 端口   | 设备               |
+| Port   | 设备               |
 |--------|----------------------|
 | **J1** | SUT。                 |
 | **J2** | 无。                |
@@ -580,9 +580,9 @@ USB 类型 C 互操作性测试过程分为两个部分： 功能测试 (FT) 和
 
     通过按 Ctrl-c。 终止脚本
 
-7.  执行步骤中所述[FT 案例 3:计费和电源传递 (PD)](#ft3)。
+7.  执行步骤中所述[FT 案例 3:计费和电源传递 (PD)](#ft-case-3-charging-and-power-delivery-pd)。
 
-配置与步骤 2-4 相关映像，请参阅[开始...](#config).
+配置与步骤 2-4 相关映像，请参阅[开始...](#get-started).
 
 ## <a name="additional-test-resources"></a>其他测试资源
 

@@ -3,12 +3,12 @@ Description: 如果要生成一个新系统，建议使用本主题中的测试�
 title: 建议用于系统开发的 USB 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22770ad4938e8c30b30e4595fdd9b8d97504d93d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4519642815ef34c141be5497c1373fe2f033ca4
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354728"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501772"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>建议用于系统开发的 USB 测试
 
@@ -148,7 +148,7 @@ ms.locfileid: "63354728"
 
 系统 3 （如果停靠支持）
 
--   运行测试的列出[系统集成阶段](#stage2)停靠的系统上。
+-   运行测试的列出[系统集成阶段](#stage-2system-integration)停靠的系统上。
 
 <table>
 <colgroup>
@@ -164,7 +164,7 @@ ms.locfileid: "63354728"
 <tbody>
 <tr class="odd">
 <td><p>系统 1</p>
-<p>请参阅<a href="#stage1" data-raw-source="[system bring-up topology](#stage1)">系统启动拓扑</a>。</p>
+<p>请参阅<a href="#stage-1system-bring-up" data-raw-source="[system bring-up topology](#stage-1system-bring-up)">系统启动拓扑</a>。</p>
 <p><strong>设备驱动程序：  </strong>SuperMUTT 设备必须具有 Usbtcd.sys 作为设备驱动程序。 运行此命令：</p>
 <p><code>muttutil -updatedriver usbtcd.inf</code></p>
 <p>系统 2</p>
@@ -179,7 +179,7 @@ ms.locfileid: "63354728"
 </ol>
 <img src="images/xhci-superspeedhub-hub-daisy.png" alt="System tuning topology" />
 <p>系统 3 （如果停靠支持）</p>
-<p>请参阅<a href="#stage2" data-raw-source="[system integration stage](#stage2)">系统集成阶段</a>。</p></td>
+<p>请参阅<a href="#stage-2system-integration" data-raw-source="[system integration stage](#stage-2system-integration)">系统集成阶段</a>。</p></td>
 <td><p>系统 1</p>
 <ol>
 <li>上<strong>选定内容</strong>选项卡上，单击<strong>设备管理器</strong>。</li>
@@ -209,7 +209,7 @@ ms.locfileid: "63354728"
 </ol>
 <p>系统 3</p>
 <ul>
-<li><p>与相同<a href="#stage2" data-raw-source="[system integration topology](#stage2)">系统集成拓扑</a>。</p></li>
+<li><p>与相同<a href="#stage-2system-integration" data-raw-source="[system integration topology](#stage-2system-integration)">系统集成拓扑</a>。</p></li>
 </ul></td>
 </tr>
 </tbody>

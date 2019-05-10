@@ -4,48 +4,48 @@ description: TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和�
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c5e5160eeec348b8e3c7392257cfe2d78e9e6d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7333a5f37d2b9c419daa513d0f2a19f6446fc824
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385834"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405277"
 ---
 # <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV 分析器生成器/XML 语义
 
 
 TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行分组 （结构）。 本主题介绍的 XML 语法。
 
--   [`<message />`](#-message---)
+-   [`<message />`](#message-)
     -   [属性](#attributes)
     -   [Content](#content)
     -   [示例](#example)
--   [`<containerRef />`](#-containerref---)
+-   [`<containerRef />`](#containerref-)
     -   [属性](#attributes)
     -   [Content](#content)
     -   [示例](#example)
--   [`<containers />`](#-containers---)
--   [`<container />`](#-container---)
+-   [`<containers />`](#containers-)
+-   [`<container />`](#container-)
     -   [属性](#attributes)
     -   [内容](#contents)
     -   [示例](#example)
--   [`<groupRef />`](#-groupref---)
+-   [`<groupRef />`](#groupref-)
     -   [属性](#attributes)
     -   [Content](#content)
     -   [示例](#examples)
--   [`    <namedType />`](#--namedtype---)
+-   [`    <namedType />`](#namedtype-)
     -   [属性](#attributes)
     -   [Content](#content)
     -   [示例](#example)
--   [`<aggregateContainer />`](#-aggregatecontainer---)
+-   [`<aggregateContainer />`](#aggregatecontainer-)
     -   [属性](#attributes)
     -   [Content](#content)
     -   [示例](#example)
--   [`<propertyGroups />`](#-propertygroups---)
--   [基元字段类型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types---bool----uint8----uint16----uint32----int8----int16----int32---)
+-   [`<propertyGroups />`](#propertygroups-)
+-   [基元字段类型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
     -   [属性](#attributes)
     -   [内容](#contents)
--   [`<propertyGroup />`](#-propertygroup---)
+-   [`<propertyGroup />`](#propertygroup-)
     -   [属性](#attributes)
     -   [内容](#contents)
     -   [示例](#example)

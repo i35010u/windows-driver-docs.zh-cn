@@ -4,12 +4,12 @@ description: 选择该设备的步骤 2 驱动程序
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45dcb8b103765de7969092f6d8f802494c9a3234
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e00a50a7836c30a7b4a86359c8603664ad9162e
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369385"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456424"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "63369385"
 
 ### <a href="" id="searching-for-the-driver"></a>搜索驱动程序包
 
-使用[硬件标识符 (ID)](hardware-ids.md)总线或中心驱动程序，Windows 搜索报告[驱动程序包](driver-packages.md)与设备相匹配。 驱动程序包与设备相匹配，如果硬件 ID 相匹配的硬件 ID 或[兼容 ID](compatible-ids.md)中[ **INF*模型*部分**](inf-models-section.md)的条目驱动程序包[INF 文件](inf-files.md)。
+使用[硬件标识符 (ID)](hardware-ids.md)总线或中心驱动程序，Windows 搜索报告[驱动程序包](driver-packages.md)与设备相匹配。 驱动程序包与设备相匹配，如果硬件 ID 相匹配的硬件 ID 或[兼容 ID](compatible-ids.md)中[ **INF*模型*部分**](inf-models-section.md)的条目驱动程序包[INF 文件](overview-of-inf-files.md)。
 
 具体取决于操作系统版本，Windows 搜索匹配的以下表中所述的不同位置中的驱动程序包。
 
@@ -97,7 +97,7 @@ ms.locfileid: "63369385"
 
     -   是否进行数字签名的驱动程序。 从 Windows Vista 开始，Windows 始终选择签名的驱动程序而不是未签名的驱动程序，而不考虑其他选择条件。 有关数字签名的驱动程序的详细信息，请参阅[驱动程序签名](driver-signing.md)。
 
-    -   驱动程序日期和版本，其中由指定的日期和版本[ **INF DriverVer 指令**](inf-driverver-directive.md)驱动程序包中包含的[INF 文件](inf-files.md)。
+    -   驱动程序日期和版本，其中由指定的日期和版本[ **INF DriverVer 指令**](inf-driverver-directive.md)驱动程序包中包含的[INF 文件](overview-of-inf-files.md)。
 
 一旦 Windows，已选中设备的驱动程序，Windows 安装驱动程序，如中所述[步骤 3:安装设备的驱动程序](step-3--the-driver-for-the-device-is-installed.md)。
 

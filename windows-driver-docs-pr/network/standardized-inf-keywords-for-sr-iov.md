@@ -4,12 +4,12 @@ description: SR-IOV 的标准化 INF 关键字
 ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ded98185cdf605cd64a1b93c7717508d9994c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d672152a3d05be03d22b4bee5635aa24a6dfacb
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390661"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405274"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 的标准化 INF 关键字
 
@@ -18,9 +18,9 @@ ms.locfileid: "63390661"
 
 以下各节所述的 SR-IOV INF 关键字：
 
-[启用或禁用 SR-IOV 支持的标准化的 INF 关键字](#sr-iov)
+[启用或禁用 SR-IOV 支持的标准化的 INF 关键字](#standardized-inf-keywords-for-enabling-or-disabling-sr-iov-support)
 
-[默认 NIC 交换机的配置的标准化的 INF 关键字](#nic-switch)
+[默认 NIC 交换机的配置的标准化的 INF 关键字](#standardized-inf-keywords-for-configuration-of-the-default-nic-switch)
 
 ## <a name="standardized-inf-keywords-for-enabling-or-disabling-sr-iov-support"></a>启用或禁用 SR-IOV 支持的标准化的 INF 关键字
 

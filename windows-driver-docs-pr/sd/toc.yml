@@ -1,6 +1,7 @@
 - name: SD 总线驱动程序设计指南
-  href: index.md
   items:
+    - name: SD 总线驱动程序设计指南
+      href: index.md
     - name: SD 卡驱动程序堆栈
       href: sd-card-driver-stack.md
     - name: 打开、初始化和关闭 SD 卡总线接口

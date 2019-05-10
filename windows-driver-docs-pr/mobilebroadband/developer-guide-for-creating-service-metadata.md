@@ -4,12 +4,12 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d85a2cb9294c11c91d0e8235e3c23f6c2670f166
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 09df5432075549f14093fbeda9005d5faab7f774
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56577400"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405169"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
@@ -109,7 +109,7 @@ ms.locfileid: "56577400"
 
 -   [2-创建服务元数据包](#2-create-the-service-metadata-package)
 
--   [3-插入存储区清单文件到 Microsoft Store 设备应用](#3-insert-the-store-manifest-file-into-the-uwp-device-app)
+-   [3-插入存储区清单文件到 Microsoft Store 设备应用](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
 
 -   [4-测试服务元数据包](#4-test-the-service-metadata-package)
 
