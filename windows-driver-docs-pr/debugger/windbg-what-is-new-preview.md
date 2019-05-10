@@ -6,22 +6,40 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d640af21f723a4ea58a2bf83bc2286cb83a31b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: ff41adbef91d70e3a9c6952cc381148512c8f210
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903703"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106411"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
 本主题提供在 WinDbg 预览调试器中新增的信息。
 
+## <a name="10190418001"></a>1.0.1904.18001
+
+**修复了 SymSetDiaSession 错误**-我们已将报告一个错误，导致在某些情况下启动的 WinDbg 预览版的一段时间。 有几个外部应用程序尝试之前将其加载到我们的进程注入 DbgHelp 的版本。 其中一些与缺少的功能，这会导致此错误，当我们尝试使用这些功能时使用 DbgHelp 版本。 我们已为此添加修补程序，仍有其中发生的情况下将跟踪。
+
+**字体控件**-我们添加了用于控制字体和字体大小设置。 有两个不同的设置，一个用于文本窗口 (mono 夹角 windows 反汇编、 源、 命令和等)，一个用于工具窗口 （局部变量、 堆栈等）。 仍然是我们将在将来更新这些选项，不会影响的几个方面。
+
+**突出显示改进**-持久的突出显示命令窗口将中的文本现在还在源和说明窗口中的突出显示文本。
+
+**源加载改进**-我们已将更改如何加载源文件的工作原理。 以前在打开源文件时，如运行其他命令的引擎操作不是可能或不可预测。 我们已更改加载发生以启用提高了并行度和更可靠的源打开操作取消。
+
+其他的更改和 bug 修复：
+* 添加到源窗口的上下文菜单中"转到反汇编"。
+* 添加一个复选框以在反汇编窗口中的"沿用当前指令"。
+* 修复了导致命令窗口中执行慢输出大量文本时的 bug。
+* 更改过的页面向上和向下箭头键来执行类似于 Visual Studio 的页。
+* 当在源窗口中打开 ASM 文件它现在将具有基本注释、 字符串和指令突出显示
+
+
 ## <a name="10181212001"></a>1.0.1812.12001
 
 此版本包含这些更新。
 
-**调试器数据模型C++标头**-新增了一个C++标头，DbgModel.h，用于扩展调试程序数据的 Windows SDK 的一部分包含模型通过C++。 你可以找到详细信息中的[调试程序数据模型C++概述](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包括将一些更多的"API style"功能添加到可以访问通过 dx 命令、 JavaScript 和新 DbgModel.h 标头的调试程序数据模型的新扩展。 此扩展扩展数据模型以包括通过，程序集和代码来执行有关的知识[Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)命名空间，并通过本地文件系统[Debugger.Utility.FileSystem命名空间](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)。
+**调试器数据模型C++标头**-新增了一个C++标头，DbgModel.h，用于扩展调试程序数据的 Windows SDK 的一部分包含模型通过C++。 你可以找到详细信息中的[调试程序数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包括将一些更多的"API style"功能添加到可以访问通过 dx 命令、 JavaScript 和新 DbgModel.h 标头的调试程序数据模型的新扩展。 此扩展扩展数据模型以包括通过，程序集和代码来执行有关的知识[Debugger.Utility.Code](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)命名空间，并通过本地文件系统[Debugger.Utility.FileSystem命名空间](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)。
 
 **综合类型扩展**使用此新的 API 扩展，我们的新样本上有 GitHub 存储库此处- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义结构和联合标头中定义的综合类型信息。 Dx 命令中，通过内存可查看结构化如同具有包含这些类型的类型信息的 PDB。
 

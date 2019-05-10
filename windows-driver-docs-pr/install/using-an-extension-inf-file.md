@@ -4,12 +4,12 @@ description: 从 Windows 10 开始，你可以扩展驱动程序程序包 INF �
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aecaba727d928106b0a1dfc642b01f61e59485ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ecc7c5e7ba5a54900598a6c82f88d3790839cc9
+ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339485"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106372"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -227,65 +227,7 @@ OsrFx2.ExtensionDesc = "OsrFx2 DCHU Device Extension"
 REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
-
-## <a name="example-3-using-an-extension-inf-to-install-a-filter-driver"></a>示例 3：使用扩展 INF 安装筛选器驱动程序
-
-扩展 INF 还可用于安装设备，它使用系统提供的设备驱动程序的筛选器驱动程序。 扩展 INF 指定设备的硬件 ID，并提供服务和筛选器驱动程序设置。
-
-下面的代码段演示如何使用扩展 INF 安装筛选器驱动程序。
-
-```cpp
-[Version]
-Signature   = "$WINDOWS NT$"
-Class       = Extension
-ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
-Provider    = %CONTOSO%
-ExtensionId = {zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz} ; replace with your own GUID
-DriverVer   = 05/28/2013,1.0.0.0
-CatalogFile = delta.cat
-
-[Manufacturer]
-%CONTOSO% = DeviceExtensions,NTx86
-
-[DeviceExtensions.NTx86]
-%Device.ExtensionDesc% = DeviceExtension_Install,PCI\VEN_XXXX&DEV_XXXX&SUBSYS_XXXXXXXX&REV_XXXX
-
-[DeviceExtension_Install]
-CopyFiles = Filter_CopyFiles
-
-[DeviceExtension_Install.HW]
-AddReg = DeviceExtensionFilter_AddReg
-
-[DeviceExtensionFilter_AddReg]
-HKR,,"UpperFilters",0x00010008,"fltsample" 
-
-[DeviceExtension_Install.Services]
-AddService = fltsample,,FilterService_Install
-
-[FilterService_Install]
-DisplayName   = %FilterSample.ServiceDesc%
-ServiceType   = 1   ; SERVICE_KERNEL_DRIVER
-StartType     = 3   ; SERVICE_DEMAND_START
-ErrorControl  = 1   ; SERVICE_ERROR_NORMAL
-ServiceBinary = %12%\fltsample.sys
-
-[Filter_CopyFiles]
-fltsample.sys
-
-[SourceDisksFiles]
-fltsample.sys = 1
-
-[SourceDisksNames]
-1 = Disk
-
-[DestinationDirs]
-Filter_CopyFiles = 12
-
-[Strings]
-CONTOSO                  = "Contoso"
-Device.ExtensionDesc     = "Sample Extension Device"
-FilterSample.ServiceDesc = "Sample Upper Filter"
-```
+若要使用扩展 INF 安装筛选器驱动程序，请参阅[本页](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)，详细介绍如何正确注册使用扩展 INF 的筛选器驱动程序
 
 ##  <a name="submitting-an-extension-inf-for-certification"></a>提交认证的扩展 INF
 
