@@ -4,12 +4,12 @@ description: 步骤 1 的新设备标识
 ms.assetid: e0df70ca-cea3-44a1-b5ff-407f72a216f9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf5b6914755652ac95a0d10532eb12067c1d3f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc6e4eb71e34531b042c9c4307245618d595585c
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369395"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456372"
 ---
 # <a name="step-1-the-new-device-is-identified"></a>第 1 步：标识新设备
 
@@ -21,9 +21,9 @@ ms.locfileid: "63369395"
 -   总线特定的前缀，如 PCI\\或 USB\\。
 -   该设备，如供应商、 型号和修订版本标识符的特定于供应商的标识符。 这些标识符内的硬件 ID 的格式也是特定于总线驱动程序。
 
-独立硬件供应商 (IHV) 还可以定义一个或多个[兼容 Id](compatible-ids.md)设备。 兼容 Id 有相同的硬件 Id; 的格式但是，它们通常比硬件 Id 更通用，并且不需要特定制造商或型号信息。 Windows 使用这些标识符来选择[驱动程序包](driver-packages.md)设备如果操作系统找不到匹配的驱动程序包的设备的硬件 id。 Ihv 指定一个或多个兼容的驱动程序包中的设备 Id [INF 文件](inf-files.md)。
+独立硬件供应商 (IHV) 还可以定义一个或多个[兼容 Id](compatible-ids.md)设备。 兼容 Id 有相同的硬件 Id; 的格式但是，它们通常比硬件 Id 更通用，并且不需要特定制造商或型号信息。 Windows 使用这些标识符来选择[驱动程序包](driver-packages.md)设备如果操作系统找不到匹配的驱动程序包的设备的硬件 id。 Ihv 指定一个或多个兼容的驱动程序包中的设备 Id [INF 文件](overview-of-inf-files.md)。
 
-Windows 使用硬件 Id 和兼容 Id 搜索[驱动程序包](driver-packages.md)设备。 查找匹配的驱动程序包的设备通过设备的硬件 Id 和兼容 Id 对这些 Id 的包中指定的比较[INF 文件](inf-files.md)。
+Windows 使用硬件 Id 和兼容 Id 搜索[驱动程序包](driver-packages.md)设备。 查找匹配的驱动程序包的设备通过设备的硬件 Id 和兼容 Id 对这些 Id 的包中指定的比较[INF 文件](overview-of-inf-files.md)。
 
 例如，当用户插入到的端口连接到计算机的 USB 集线器的无线局域网 (WLAN) 适配器，则执行以下步骤：
 

@@ -3,12 +3,12 @@ Description: 选择用于开发的 USB 客户端驱动程序，充当设备的�
 title: 选择用于开发的 USB 驱动程序的驱动程序模型
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e7f84cfe9b766beb4a0cd7c59d8089f8dd19e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a548bff389696d1bb369e7d62c7851db6e1b23d3
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389173"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405295"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>选择用于开发 USB 客户端驱动程序的驱动程序模型
 
@@ -28,7 +28,7 @@ USB 设备制造商通常必须提供应用程序访问设备的功能的方法�
 编写自定义驱动程序到设备的要求是最灵活的方式来提供对 USB 设备的访问。 但是，实现一个驱动程序需要大量工作。 该驱动程序必须执行复杂的任务，如驱动程序初始化新的设备时检测到，电源管理、 I/O 操作，在意外删除、 状态管理和清理时删除该设备。 选择要编写驱动程序之前，请提出以下问题：
 
 -   [您可以使用由 Microsoft 提供的驱动程序？](#can-you-use-a-microsoft-provided-driver)
--   [如果您编写 USB 客户端驱动程序，哪些驱动程序模型是最佳的？](#if-you--write-a-usb-client-driver--which-driver-model-is-best-)
+-   [如果您编写 USB 客户端驱动程序，哪些驱动程序模型是最佳的？](#if-you-write-a-usb-client-driver-which-driver-model-is-best)
 
 ## <a name="can-you-use-a-microsoft-provided-driver"></a>您可以使用由 Microsoft 提供的驱动程序？
 

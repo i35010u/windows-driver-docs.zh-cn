@@ -3,12 +3,12 @@ Description: 介绍 USB 设备 Emulation(UDE) 类扩展和客户端驱动程序�
 title: 编写 UDE 客户端驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 33419b91aa06d9e88c4faee51350b657b176914d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c532625e600f807b83d44844dd0ba55f8e094f28
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389108"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501759"
 ---
 # <a name="write-a-ude-client-driver"></a>编写 UDE 客户端驱动程序
 
@@ -374,7 +374,7 @@ Controller_EvtControllerQueryUsbCapability(
    - [*EVT\_UDECX\_USB\_DEVICE\_SET\_FUNCTION\_SUSPEND\_AND\_WAKE*](https://msdn.microsoft.com/library/windows/hardware/mt595915)
 
 3. 调用[ **UdecxUsbDeviceInitSetSpeed** ](https://msdn.microsoft.com/library/windows/hardware/mt627971)若要设置 USB 设备的速度以及设备、 USB 2.0 或 SuperSpeed 设备的类型。
-4. 调用[ **UdecxUsbDeviceInitSetEndpointsType** ](https://msdn.microsoft.com/library/windows/hardware/mt627970)指定终结点设备支持的类型： 简单或动态。 如果客户端驱动程序中选择创建简单终结点，该驱动程序必须在插入设备之前创建终结点的所有对象。 每个接口，设备必须具有只有一个配置和只有一种接口设置。 在动态终结点的情况下，驱动程序可以创建在终结点接收时插入该设备之后，任何时候[ *EVT\_UDECX\_USB\_设备\_的终结点\_配置*](https://msdn.microsoft.com/library/windows/hardware/mt595913)事件回调。 请参阅[创建动态终结点](#dynamic)。
+4. 调用[ **UdecxUsbDeviceInitSetEndpointsType** ](https://msdn.microsoft.com/library/windows/hardware/mt627970)指定终结点设备支持的类型： 简单或动态。 如果客户端驱动程序中选择创建简单终结点，该驱动程序必须在插入设备之前创建终结点的所有对象。 每个接口，设备必须具有只有一个配置和只有一种接口设置。 在动态终结点的情况下，驱动程序可以创建在终结点接收时插入该设备之后，任何时候[ *EVT\_UDECX\_USB\_设备\_的终结点\_配置*](https://msdn.microsoft.com/library/windows/hardware/mt595913)事件回调。 请参阅[创建动态终结点](#create-dynamic-endpoints)。
 5. 调用任何一种方法来将必要的描述符添加到设备。
 
    - [**UdecxUsbDeviceInitAddDescriptor**](https://msdn.microsoft.com/library/windows/hardware/mt627964)
@@ -399,7 +399,7 @@ Controller_EvtControllerQueryUsbCapability(
      但是，接口，特定于类或供应商定义描述符的请求，UDE 类扩展将其转发到客户端驱动程序。 该驱动程序必须处理这些 GET\_描述符请求。
 
 6. 调用[ **UdecxUsbDeviceCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt595959)创建 UDE 设备对象并检索 UDECXUSBDEVICE 句柄。
-7. 通过调用创建静态终结点[ **UdecxUsbEndpointCreate**](https://msdn.microsoft.com/library/windows/hardware/mt627983)。 请参阅[创建静态终结点](#static)。
+7. 通过调用创建静态终结点[ **UdecxUsbEndpointCreate**](https://msdn.microsoft.com/library/windows/hardware/mt627983)。 请参阅[创建简单终结点](#create-simple-endpoints)。
 8. 调用[ **UdecxUsbDevicePlugIn** ](https://msdn.microsoft.com/library/windows/hardware/mt627975)以指示 UDE 类扩展到附加设备，并可接收终结点上的 I/O 请求。 此调用后，此类扩展还可以调用终结点和 USB 设备上的回调函数。
     **请注意**USB 设备需要在运行时中删除，如果客户端驱动程序可以调用[ **UdecxUsbDevicePlugOutAndDelete**](https://msdn.microsoft.com/library/windows/hardware/mt627977)。 如果要使用的设备驱动程序，它必须创建它通过调用[ **UdecxUsbDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/mt595959)。
 
@@ -714,7 +714,7 @@ exit:
 [*EVT\_UDECX\_USB\_DEVICE\_ENDPOINTS\_CONFIGURE*](https://msdn.microsoft.com/library/windows/hardware/mt595913)  
 客户端驱动程序通过选择一项备用设置、 禁用当前的终结点，或添加动态终结点更改配置。
 
-客户端驱动程序在其调用期间注册上述回调[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)。 请参阅创建[虚拟 USB 设备](#device)。
+客户端驱动程序在其调用期间注册上述回调[ **UdecxUsbDeviceInitSetStateChangeCallbacks**](https://msdn.microsoft.com/library/windows/hardware/mt627972)。 请参阅创建[虚拟 USB 设备](#create-a-virtual-usb-device)。
 此机制允许客户端驱动程序，以动态更改的 USB 配置和设备上的接口设置。 例如，当需要终结点对象，或必须发布现有终结点对象，则类扩展将调用[ *EVT\_UDECX\_USB\_设备\_的终结点\_配置*](https://msdn.microsoft.com/library/windows/hardware/mt595913)。
 
 下面是序列的客户端驱动程序在其中创建它的实现的回调函数中的终结点对象的 UDECXUSBENDPOINT 句柄的摘要。

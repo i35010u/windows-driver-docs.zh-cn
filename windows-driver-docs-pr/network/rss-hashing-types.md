@@ -8,12 +8,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 268a3e52cd8185554b1b151fa871413d9b406a77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5365252ae6ad977928ff26e5fc3baf59fe3e1ec2
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372184"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405284"
 ---
 # <a name="rss-hashing-types"></a>RSS 哈希类型
 
@@ -49,12 +49,12 @@ NIC 必须支持从 IPv4 设置的组合之一。 其他设置和组合是可选
 
 在 IPv4 集中的有效的哈希类型组合包括：
 
-- [NDIS_HASH_IPV4](#ndishashipv4)
-- [NDIS_HASH_TCP_IPV4](#ndishashtcpipv4)
-- [NDIS_HASH_UDP_IPV4](#ndishashudpipv4)
-- [NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4](#ndishashtcpipv4--ndishashipv4)
-- [NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndishashudpipv4--ndishashipv4)
-- [NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndishashtcpipv4--ndishashudpipv4--ndishashipv4)
+- [NDIS_HASH_IPV4](#ndis_hash_ipv4)
+- [NDIS_HASH_TCP_IPV4](#ndis_hash_tcp_ipv4)
+- [NDIS_HASH_UDP_IPV4](#ndis_hash_udp_ipv4)
+- [NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_tcp_ipv4--ndis_hash_ipv4)
+- [NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_udp_ipv4--ndis_hash_ipv4)
+- [NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_tcp_ipv4--ndis_hash_udp_ipv4--ndis_hash_ipv4)
 
 ### <a name="ndishashipv4"></a>NDIS_HASH_IPV4  
 
@@ -108,12 +108,12 @@ NIC 应针对以下字段计算的哈希值：
 
 在 IPv6 集中的有效的哈希类型组合包括：
 
-- [NDIS_HASH_IPV6](#ndishashipv6)
-- [NDIS_HASH_TCP_IPV6](#ndishashtcpipv6)
-- [NDIS_HASH_UDP_IPV6](#ndishashudpipv6)
-- [NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6](#ndishashtcpipv6--ndishashipv6)
-- [NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndishashudpipv6--ndishashipv6)
-- [NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndishashtcpipv6--ndishashudpipv6--ndishashipv6)
+- [NDIS_HASH_IPV6](#ndis_hash_ipv6)
+- [NDIS_HASH_TCP_IPV6](#ndis_hash_tcp_ipv6)
+- [NDIS_HASH_UDP_IPV6](#ndis_hash_udp_ipv6)
+- [NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_ipv6)
+- [NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_udp_ipv6--ndis_hash_ipv6)
+- [NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6)
 
 ### <a name="ndishashipv6"></a>NDIS_HASH_IPV6
 
@@ -160,12 +160,12 @@ NIC 应针对以下字段计算的哈希值：
 
 使用扩展标头集 IPv6 中的有效组合包括：
 
-- [NDIS_HASH_IPV6_EX](#ndishashipv6ex)
-- [NDIS_HASH_TCP_IPV6_EX](#ndishashtcpipv6ex)
-- [NDIS_HASH_UDP_IPV6_EX](#ndishashudpipv6ex)
-- [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndishashtcpipv6ex--ndishashipv6ex)
-- [NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndishashudpipv6ex--ndishashipv6ex)
-- [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndishashtcpipv6ex--ndishashudpipv6ex--ndishashipv6ex)
+- [NDIS_HASH_IPV6_EX](#ndis_hash_ipv6_ex)
+- [NDIS_HASH_TCP_IPV6_EX](#ndis_hash_tcp_ipv6_ex)
+- [NDIS_HASH_UDP_IPV6_EX](#ndis_hash_udp_ipv6_ex)
+- [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_tcp_ipv6_ex--ndis_hash_ipv6_ex)
+- [NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
+- [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_tcp_ipv6_ex--ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
 
 ### <a name="ndishashipv6ex"></a>NDIS_HASH_IPV6_EX  
 

@@ -1,13 +1,15 @@
 - name: 测试授权和执行框架 (TAEF)
-  href: index.md
   items:
+    - name: 测试授权和执行框架 (TAEF)
+      href: index.md
     - name: 入门
       href: getting-started.md
     - name: Te.Service
       href: te-service.md
     - name: 创作测试
-      href: authoring-tests.md
       items:
+        - name: 创作测试
+          href: authoring-tests.md
         - name: 使用 C + + 创作测试
           href: authoring-tests-in-c--.md
         - name: '使用 C# 创作测试'
@@ -41,8 +43,9 @@
         - name: DeploymentItem 元数据
           href: deploymentitem-metadata.md
     - name: 数据驱动的测试
-      href: data-driven-testing.md
       items:
+        - name: 数据驱动的测试
+          href: data-driven-testing.md
         - name: 使用脚本语言创作数据驱动的测试
           href: data-driven-testing-in-scripting-languages.md
         - name: 表数据源
@@ -68,8 +71,9 @@
         - name: 多个数据源
           href: multiple-datasources.md
     - name: 执行测试
-      href: executing-tests.md
       items:
+        - name: 执行测试
+          href: executing-tests.md
         - name: 执行测试概述
           href: overview-of-executing-tests.md
         - name: Te.exe 命令选项
@@ -85,8 +89,9 @@
         - name: 并行
           href: parallel.md
         - name: 运行方式
-          href: runas.md
           items:
+            - name: 运行方式
+              href: runas.md
             - name: RunAs Elevated
               href: runas-elevated.md
             - name: RunAs LowIL

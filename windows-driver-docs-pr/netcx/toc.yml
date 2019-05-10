@@ -1,6 +1,7 @@
 - name: 网络适配器 WDF 类扩展 (NetAdapterCx)
-  href: index.md
   items:
+    - name: 网络适配器 WDF 类扩展 (NetAdapterCx)
+      href: index.md
     - name: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
       href: porting-ndis-miniport-drivers-to-netadaptercx.md
     - name: 生成 NetAdapterCx 客户端驱动程序
@@ -8,8 +9,9 @@
     - name: NetAdapterCx 客户端驱动程序的 INF 文件
       href: inf-files-for-netadaptercx-client-drivers.md
     - name: 管理 NetAdapterCx 中对象的生存期
-      href: managing-the-lifetime-of-objects-in-netadaptercx.md
       items:
+        - name: 管理 NetAdapterCx 中对象的生存期
+          href: managing-the-lifetime-of-objects-in-netadaptercx.md
         - name: NetAdapterCx 对象的摘要
           href: summary-of-netadaptercx-objects.md
         - name: 设备和适配器初始化
@@ -25,8 +27,9 @@
     - name: 调试 NetAdapterCx 客户端驱动程序
       href: debugging-a-netadaptercx-client-driver.md
     - name: 传输网络数据
-      href: transferring-network-data.md
       items:
+        - name: 传输网络数据
+          href: transferring-network-data.md
         - name: 数据包描述符和扩展
           href: packet-descriptors-and-extensions.md
         - name: NetAdapterCx 硬件卸载
@@ -36,8 +39,9 @@
         - name: 网络数据缓冲区管理
           href: network-data-buffer-management.md
         - name: 网环和网环迭代器
-          href: net-rings-and-net-ring-iterators.md
           items:
+            - name: 网环和网环迭代器
+              href: net-rings-and-net-ring-iterators.md
             - name: 使用网环发送网络数据
               href: sending-network-data-with-net-rings.md
             - name: 使用网环接收网络数据
@@ -53,7 +57,8 @@
     - name: NetAdapterCx 限制
       href: netadaptercx-limitations.md
     - name: 移动宽带 (MBB) WDF 类扩展 (MBBCx)
-      href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
       items:
+        - name: 移动宽带 (MBB) WDF 类扩展 (MBBCx)
+          href: mobile-broadband-mbb-wdf-class-extension-mbbcx.md
         - name: 编写 MBBCx 客户端驱动程序
           href: writing-an-MBBcx-client-driver.md

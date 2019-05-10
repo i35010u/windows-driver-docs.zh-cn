@@ -3,8 +3,9 @@
 - name: 驱动程序开发中的新增功能
   href: what-s-new-in-driver-development.md
 - name: 下载 Windows 驱动程序工具包 (WDK)
-  href: download-the-wdk.md
   items:
+    - name: 下载 Windows 驱动程序工具包 (WDK)
+      href: download-the-wdk.md
     - name: 安装预览版 WDK
       href: installing-preview-versions-wdk.md
     - name: 其他 WDK 下载
@@ -28,8 +29,9 @@
 - name: Windows 应用商店设备应用
   href: devapps/index.md
 - name: 设备和驱动程序技术
-  href: device-and-driver-technologies.md
   items:
+    - name: 设备和驱动程序技术
+      href: device-and-driver-technologies.md
     - name: 3D 打印设备
       href: 3dprint/index.md
     - name: ACPI

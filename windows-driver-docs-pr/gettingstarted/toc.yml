@@ -1,6 +1,7 @@
 - name: Windows 驱动程序入门
-  href: index.md
   items:
+    - name: Windows 驱动程序入门
+      href: index.md
     - name: 什么是驱动程序？
       href: what-is-a-driver-.md
     - name: 是否需要编写驱动程序？
@@ -8,8 +9,9 @@
     - name: 选择驱动程序模型
       href: choosing-a-driver-model.md
     - name: 编写你的第一个驱动程序
-      href: writing-your-first-driver.md
       items:
+        - name: 编写你的第一个驱动程序
+          href: writing-your-first-driver.md
         - name: 基于模板编写通用 Windows 驱动程序 (UMDF 2)
           href: writing-a-umdf-driver-based-on-a-template.md
         - name: 编写通用 Hello World 驱动程序 (KMDF)
@@ -23,8 +25,9 @@
     - name: 预配计算机以便进行驱动程序部署和测试 (WDK 10)
       href: provision-a-target-computer-wdk-8-1.md
     - name: 适用于所有驱动程序开发人员的概念
-      href: null
       items:
+        - name: 适用于所有驱动程序开发人员的概念
+          href: null
         - name: 用户模式和内核模式
           href: user-mode-and-kernel-mode.md
         - name: 虚拟地址空间

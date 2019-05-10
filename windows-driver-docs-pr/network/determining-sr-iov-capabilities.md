@@ -4,21 +4,21 @@ description: 确定 SR-IOV 功能
 ms.assetid: 61895987-2469-471E-BB29-FF1CDD2869DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc33088464d31588e6cde641f6758e7441413610
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd615551adebc690260c26396726d81d12fd9316
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364200"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405145"
 ---
 # <a name="determining-sr-iov-capabilities"></a>确定 SR-IOV 功能
 
 
 本主题介绍如何 NDIS 和过量驱动程序确定网络适配器的单根 I/O 虚拟化 (SR-IOV) 功能。 本主题包含下列信息：
 
-[报告期间的 SR-IOV 功能*MiniportInitializeEx*](#report)
+[报告期间的 SR-IOV 功能*MiniportInitializeEx*](#reporting-sr-iov-capabilities-during-miniportinitializeex)
 
-[查询的 SR-IOV 功能的基础驱动程序](#query)
+[查询的 SR-IOV 功能的基础驱动程序](#querying-sr-iov-capabilities-by-overlying-drivers)
 
 ## <a name="reporting-sr-iov-capabilities-during-miniportinitializeex"></a>报告期间的 SR-IOV 功能*MiniportInitializeEx*
 

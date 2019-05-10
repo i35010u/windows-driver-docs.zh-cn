@@ -7,12 +7,12 @@ keywords:
 ms.date: 04/17/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f368387b043a16ee52a9735f7f3fb760ece86cb1
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
-ms.translationtype: HT
+ms.openlocfilehash: ba3d6259dd36ac31e7b2d930c11fe2581063966b
+ms.sourcegitcommit: fb1383cab980eb3d755cd67aa2d6634087cd7b7a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405219"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501568"
 ---
 # <a name="mb-5g-data-class-support"></a>MB 5G 数据类支持
 
@@ -167,7 +167,7 @@ MBB 驱动程序支持 MBIM Microsoft 扩展 2.0 或更高，MBIM_CID_VERSION �
 
 如果设备支持这两个新的数据类，则应设置两个位。
 
-### <a name="mbimdataclass"></a>MBIM_DATA_CLASS
+## <a name="mbimdataclass"></a>MBIM_DATA_CLASS
 
 | 类型 | 掩码 |
 | --- | --- |
@@ -285,7 +285,7 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
 
 以下枚举用作上述 MBIM_PACKET_SERVICE_INFO_V2 结构中的值。
 
-| 在任务栏的搜索框中键入 | 值 | 描述|
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述|
 | --- | --- | --- |
 | MBIMFrequencyRangeUnknown | 0 | 如果系统类型不 5g。 |
 | MBIMFrequencyRange1 | 1 | 中的频率范围 1 (FR1) [3GPP TS 38.101 1](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3283) (Sub-6 G)。 |
@@ -484,7 +484,7 @@ Set 命令的信息是中所述[MBIM 规范修订版本 1.0](https://www.usb.org
         <td>4</td>
         <td>SystemType</td>
         <td>MBIM_DATA_CLASS</td>
-        <td>指示信号的状态信息的有效的系统类型。 此成员是一种类型的位掩码中定义<a href="#mbimdataclass">MBIM_DATA_CLASS</a>。</td>
+        <td>指示信号的状态信息的有效的系统类型。 此成员是一种类型的位掩码中定义<a href="#mbim_data_class">MBIM_DATA_CLASS</a>。</td>
     </tr>
 </table>
 

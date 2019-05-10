@@ -4,12 +4,12 @@ description: 指示对 NDIS QoS 操作参数的更改
 ms.assetid: BAE99C83-2732-4216-BC49-23F541AA3F10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe6d26aa23d4ea493b3b90344be1107460bcc953
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fae81558d4bc033af10ae31453ae371db0b4646
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327755"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405225"
 ---
 # <a name="indicating-changes-to-the-operational-ndis-qos-parameters"></a>指示对 NDIS QoS 操作参数的更改
 
@@ -65,7 +65,7 @@ ms.locfileid: "63327755"
 
     **请注意**设置**NDIS\_QOS\_参数\_*Xxx*\_CHANGED**标志是可选的。 NDIS 始终假定的成员[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)是最新的即使它们没有改变的上一个[ **NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**](https://msdn.microsoft.com/library/windows/hardware/hh439810)状态指示。
 
-    有关如何设置的详细信息**标志**成员，请参阅[设置的指导原则**标志**成员](#flags)。
+    有关如何设置的详细信息**标志**成员，请参阅[设置的指导原则**标志**成员](#guidelines-for-setting-the-flags-member)。
 
 3.  微型端口驱动程序初始化[ **NDIS\_QOS\_分类\_元素**](https://msdn.microsoft.com/library/windows/hardware/hh451631)操作的 NDIS QoS 中的每个流量分类的结构参数。 驱动程序会添加这些元素的末尾[ **NDIS\_QOS\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451640)缓冲区中的结构。
 

@@ -1,9 +1,11 @@
 - name: 通用串行总线 (USB)
-  href: index.md
   items:
+    - name: 通用串行总线 (USB)
+      href: index.md
     - name: 不同版本的 Windows 中的 USB 新增功能
-      href: new-for-usb-in-different-versions-of-windows.md
       items:
+        - name: 不同版本的 Windows 中的 USB 新增功能
+          href: new-for-usb-in-different-versions-of-windows.md
         - name: Windows 10：USB 的新增功能
           href: windows-10--what-s-new-for-usb.md
         - name: Windows 8.1：USB 的新增功能
@@ -11,8 +13,9 @@
         - name: "Windows\_8：USB 的新增功能"
           href: what-s-new-in-usb-in-windows-8.md
     - name: 适用于所有 USB 开发人员的概念
-      href: usb-concepts-for-all-developers.md
       items:
+        - name: 适用于所有 USB 开发人员的概念
+          href: usb-concepts-for-all-developers.md
         - name: USB 设备布局
           href: usb-device-layout.md
         - name: 标准 USB 描述符
@@ -22,15 +25,17 @@
         - name: Windows 中的 USB - 常见问题解答
           href: usb-faq--introductory-level.md
     - name: 为 Windows 构建 USB 设备
-      href: building-usb-devices-for-windows.md
       items:
+        - name: 为 Windows 构建 USB 设备
+          href: building-usb-devices-for-windows.md
         - name: 针对 USB 设备的 Microsoft OS 描述符
           href: microsoft-defined-usb-descriptors.md
         - name: Windows 中的 USB ContainerID
           href: usb-containerids-in-windows.md
         - name: 链接 USB 3.0 硬件中的电源管理
-          href: link-power-management-in-usb-3-0-hardware.md
           items:
+            - name: 链接 USB 3.0 硬件中的电源管理
+              href: link-power-management-in-usb-3-0-hardware.md
             - name: USB 2.0 端口的限制机制
               href: limitations-of-usb-2-0-mechanism.md
             - name: USB 3.0 LPM 机制
@@ -48,11 +53,13 @@
     - name: Windows 中的 USB 设备端驱动程序
       href: usb-device-side-drivers-in-windows.md
     - name: 为 USB 设备开发 Windows 应用程序
-      href: developing-windows-applications-that-communicate-with-a-usb-device.md
       items:
+        - name: 为 USB 设备开发 Windows 应用程序
+          href: developing-windows-applications-that-communicate-with-a-usb-device.md
         - name: USB 设备的 UWP 应用
-          href: writing-usb-device-companion-apps-for-microsoft-store.md
           items:
+            - name: USB 设备的 UWP 应用
+              href: writing-usb-device-companion-apps-for-microsoft-store.md
             - name: 与 USB 设备通信，从开始到完成（UWP 应用）
               href: talking-to-usb-devices-start-to-finish.md
             - name: 如何将 USB 设备功能添加到应用部件清单
@@ -70,8 +77,9 @@
             - name: 如何选择 USB 接口设置（UWP 应用）
               href: how-to-select-a-usb-interface-setting--UWP-app-.md
         - name: USB 设备的 Windows 桌面应用
-          href: windows-desktop-app-for-a-usb-device.md
           items:
+            - name: USB 设备的 Windows 桌面应用
+              href: windows-desktop-app-for-a-usb-device.md
             - name: 编写基于 WinUSB 模板的 Windows 桌面应用
               href: how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md
             - name: 如何通过 WinUSB 函数访问 USB 设备
@@ -83,11 +91,13 @@
             - name: WinUSB 电源管理
               href: winusb-power-management.md
     - name: 为 USB 设备开发 Windows 客户端驱动程序
-      href: usb-driver-development-guide.md
       items:
+        - name: 为 USB 设备开发 Windows 客户端驱动程序
+          href: usb-driver-development-guide.md
         - name: USB 客户端驱动程序开发入门
-          href: getting-started-with-usb-client-driver-development.md
           items:
+            - name: USB 客户端驱动程序开发入门
+              href: getting-started-with-usb-client-driver-development.md
             - name: 选择用于开发 USB 客户端驱动程序的驱动程序模型
               href: winusb-considerations.md
             - name: USB 客户端驱动程序的常见任务
@@ -97,18 +107,21 @@
             - name: USB 驱动程序示例
               href: usb-driver-samples-in-wdk.md
         - name: 如何编写第一个 USB 客户端驱动程序 (KMDF)
-          href: tutorial--write-your-first-usb-client-driver--kmdf-.md
           items:
+            - name: 如何编写第一个 USB 客户端驱动程序 (KMDF)
+              href: tutorial--write-your-first-usb-client-driver--kmdf-.md
             - name: 了解 USB 客户端驱动程序代码结构 (KMDF)
               href: understanding-the-kmdf-template-code-for-usb.md
         - name: 如何编写第一个 USB 客户端驱动程序 (UMDF)
-          href: implement-driver-entry-for-a-usb-driver--umdf-.md
           items:
+            - name: 如何编写第一个 USB 客户端驱动程序 (UMDF)
+              href: implement-driver-entry-for-a-usb-driver--umdf-.md
             - name: 了解 USB 客户端驱动程序代码结构 (UMDF)
               href: understanding-the-umdf-template-code-for-usb.md
         - name: 关于 USB 请求块 (URB)
-          href: communicating-with-a-usb-device.md
           items:
+            - name: 关于 USB 请求块 (URB)
+              href: communicating-with-a-usb-device.md
             - name: 分配和构建 URB
               href: how-to-add-xrb-support-for-client-drivers.md
             - name: 如何提交 URB
@@ -116,8 +129,9 @@
             - name: 最佳做法：使用 URB
               href: usb-client-driver-contract-in-windows-8.md
         - name: USB 描述符
-          href: usb-descriptors.md
           items:
+            - name: USB 描述符
+              href: usb-descriptors.md
             - name: USB 设备描述符
               href: usb-device-descriptors.md
             - name: USB 配置描述符
@@ -127,8 +141,9 @@
             - name: USB 接口关联描述符
               href: usb-interface-association-descriptor.md
         - name: 选择 USB 驱动程序中的 USB 配置
-          href: configuring-usb-devices.md
           items:
+            - name: 选择 USB 驱动程序中的 USB 配置
+              href: configuring-usb-devices.md
             - name: 如何选择 USB 设备的配置
               href: how-to-select-a-configuration-for-a-usb-device.md
             - name: 如何在 USB 界面中选择备用设置
@@ -136,8 +151,9 @@
             - name: 配置 Usbccgp.sys，选择非默认 USB 配置
               href: selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md
         - name: 在 USB 客户端驱动程序中发送 USB 数据传输
-          href: usb-device-i-o.md
           items:
+            - name: 在 USB 客户端驱动程序中发送 USB 数据传输
+              href: usb-device-i-o.md
             - name: 如何发送 USB 控制传输
               href: usb-control-transfer.md
             - name: 如何枚举 USB 管道
@@ -159,13 +175,15 @@
             - name: USB 带宽分配
               href: usb-bandwidth-allocation.md
         - name: 在 USB 客户端驱动程序中实施电源管理
-          href: usb-power-management.md
           items:
+            - name: 在 USB 客户端驱动程序中实施电源管理
+              href: usb-power-management.md
             - name: USB 设备电源状态
               href: comparing-usb-device-states-to-wdm-device-states.md
             - name: USB 驱动程序 (WDF) 中的选择性挂起
-              href: selective-suspend-in-usb-drivers-wdf.md
               items:
+                - name: USB 驱动程序 (WDF) 中的选择性挂起
+                  href: selective-suspend-in-usb-drivers-wdf.md
                 - name: UMDF 驱动程序中的选择性挂起
                   href: selective-suspend-in-umdf-drivers.md
                 - name: USB KMDF 功能驱动程序中的选择性挂起
@@ -181,8 +199,9 @@
         - name: 查询总线驱动程序接口
           href: querying-for-usb-interfaces.md
     - name: 为 USB 主控制器开发 Windows 驱动程序
-      href: developing-windows-drivers-for-usb-host-controllers.md
       items:
+        - name: 为 USB 主控制器开发 Windows 驱动程序
+          href: developing-windows-drivers-for-usb-host-controllers.md
         - name: 体系结构：USB 主控制器扩展 (UCX)
           href: get-started-with-host-controller-driver-development.md
         - name: 主控制器驱动程序使用的 UCX 对象和句柄
@@ -194,15 +213,17 @@
         - name: 在 USB 主控制器驱动程序中配置 USB 终结点
           href: configuring-usb-endpoints-in-a-host-controller-driver.md
     - name: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序
-      href: developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md
       items:
+        - name: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序
+          href: developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md
         - name: 体系结构：USB 设备模拟 (UDE)
           href: usb-emulated-device--ude--architecture.md
         - name: 编写 UDE 客户端驱动程序
           href: writing-a-ude-client-driver.md
     - name: 为 USB 功能控制器开发 Windows 驱动程序
-      href: developing-windows-drivers-for-usb-function-controllers.md
       items:
+        - name: 为 USB 功能控制器开发 Windows 驱动程序
+          href: developing-windows-drivers-for-usb-function-controllers.md
         - name: 适用于功能控制器驱动程序的 USB 注册表设置
           href: usb-registry-settings-for-a-function-controller-driver.md
         - name: 编写 USB 功能控制器客户端驱动程序
@@ -214,8 +235,9 @@
         - name: 从用户模式服务与 GenericUSBFn.sys 通信
           href: user-mode-services-ufx.md
     - name: Windows 对 USB 类型 C 连接器的支持
-      href: oem-tasks-for-bringing-up-a-usb-typec.md
       items:
+        - name: Windows 对 USB 类型 C 连接器的支持
+          href: oem-tasks-for-bringing-up-a-usb-typec.md
         - name: 硬件设计：USB 类型 C 系统
           href: hardware-design-of-a-usb-type-c-system.md
         - name: USB 类型 C 系统的 OEM 任务
@@ -225,8 +247,9 @@
         - name: 常见问题解答：Windows 系统上的 USB 类型 C 连接器
           href: faq--usb-type-c-connector-on-a-windows-system.md
         - name: 为 USB 类型 C 连接器开发 Windows 驱动程序
-          href: developing-windows-drivers-for-usb-type-c-connectors.md
           items:
+            - name: 为 USB 类型 C 连接器开发 Windows 驱动程序
+              href: developing-windows-drivers-for-usb-type-c-connectors.md
             - name: 体系结构：Windows 系统的 USB 类型 C 设计
               href: architecture--usb-type-c-in-a-windows-system.md
             - name: 在 USB 类型 C Windows 系统上启动功能控制器
@@ -242,8 +265,9 @@
             - name: 编写 UCSI 客户端驱动程序
               href: write-a-ucsi-driver.md
     - name: Windows 的 USB 事件跟踪
-      href: usb-event-tracing-for-windows.md
       items:
+        - name: Windows 的 USB 事件跟踪
+          href: usb-event-tracing-for-windows.md
         - name: 使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
           href: capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md
         - name: 如何使用 Logman 捕获 USB 事件跟踪
@@ -251,8 +275,9 @@
         - name: 使用 USB ETW 跟踪中的活动 ID GUID
           href: using-usb-etw.md
         - name: Netmon 中的 USB ETW 跟踪
-          href: viewing-etw-traces-in-netmon.md
           items:
+            - name: Netmon 中的 USB ETW 跟踪
+              href: viewing-etw-traces-in-netmon.md
             - name: 如何安装 Netmon 和 USB ETW 分析程序
               href: how-to-install-netmon-and-the-netmon-usb-parser.md
             - name: 如何在 Netmon 中查看 USB ETW 跟踪
@@ -262,8 +287,9 @@
             - name: 案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
               href: case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md
         - name: 将 Xperf 与 USB ETW 配合使用
-          href: using-xperf-with-usb-etw.md
           items:
+            - name: 将 Xperf 与 USB ETW 配合使用
+              href: using-xperf-with-usb-etw.md
             - name: 在 Xperf 中查看 USB 事件跟踪
               href: viewing-a-usb-event-trace-in-xperf.md
             - name: 使用 Xperf 和 Netmon 分析 USB 性能问题
@@ -271,16 +297,19 @@
         - name: USB ETW 和电源管理
           href: usb-etw-and-power-management.md
     - name: 在 Windows 中测试 USB 硬件、驱动程序和应用程序
-      href: usb-driver-testing-guide.md
       items:
+        - name: 在 Windows 中测试 USB 硬件、驱动程序和应用程序
+          href: usb-driver-testing-guide.md
         - name: Microsoft USB 测试工具 (MUTT) 设备
-          href: microsoft-usb-test-tool--mutt--devices.md
           items:
+            - name: Microsoft USB 测试工具 (MUTT) 设备
+              href: microsoft-usb-test-tool--mutt--devices.md
             - name: MUTT 软件包中的工具
               href: mutt-software-package.md
         - name: USB 测试工具
-          href: usb-test-tools.md
           items:
+            - name: USB 测试工具
+              href: usb-test-tools.md
             - name: MuttUtil
               href: muttutil.md
             - name: USB 客户端驱动程序验证程序
@@ -314,8 +343,9 @@
         - name: 使用 MUTT 设备测试 USB 设备
           href: tools-in-the-package.md
         - name: 针对 USB 的 Windows 硬件认证工具包测试
-          href: windows-hardware-certification-kit-tests-for-usb.md
           items:
+            - name: 针对 USB 的 Windows 硬件认证工具包测试
+              href: windows-hardware-certification-kit-tests-for-usb.md
             - name: 建议用于系统开发的 USB 测试
               href: usb-tests-for-system-development.md
             - name: USB-IF 认证测试
@@ -323,8 +353,9 @@
             - name: Windows HCK 中的 USB 测试的常见故障
               href: common-failures-for-usb-tests-in-the-windows-hck.md
     - name: Microsoft 提供的 USB 驱动程序
-      href: system-supplied-usb-drivers.md
       items:
+        - name: Microsoft 提供的 USB 驱动程序
+          href: system-supplied-usb-drivers.md
         - name: 包含在 Windows 中的 USB 设备类驱动程序
           href: supported-usb-classes.md
         - name: USB 串行驱动程序 (Usbser.sys)
@@ -334,8 +365,9 @@
         - name: USB 设备注册表项
           href: usb-device-specific-registry-settings.md
         - name: USB 常规父驱动程序 (Usbccgp.sys)
-          href: usb-common-class-generic-parent-driver.md
           items:
+            - name: USB 常规父驱动程序 (Usbccgp.sys)
+              href: usb-common-class-generic-parent-driver.md
             - name: 枚举 USB 复合设备
               href: enumeration-of-the-composite-parent-device.md
             - name: 复合 USB 设备上的描述符
@@ -343,15 +375,17 @@
             - name: 枚举 USB 复合设备上的接口
               href: enumeration-of-interfaces-not-grouped-in-collections.md
             - name: 枚举 USB 复合设备上的接口集合
-              href: support-for-interface-collections.md
               items:
+                - name: 枚举 USB 复合设备上的接口集合
+                  href: support-for-interface-collections.md
                 - name: 对无线移动通信设备类的支持
                   href: support-for-the-wireless-mobile-communication-device-class--wmcdc-.md
             - name: Usbccgp.sys 中的内容安全功能
               href: content-security-features-in-the-composite-client-generic-parent-drive.md
         - name: WinUSB (Winusb.sys)
-          href: winusb.md
           items:
+            - name: WinUSB (Winusb.sys)
+              href: winusb.md
             - name: WinUSB 体系结构和模块
               href: winusb-architecture.md
             - name: WinUSB (Winusb.sys) 安装

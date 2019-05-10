@@ -4,21 +4,21 @@ description: 确定接收筛选功能
 ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6281a8616ad8579220460d4c22404cb5519d3fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cc3ec7bbea2f7695ac98ceacb5b795d45066b21
+ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364218"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405146"
 ---
 # <a name="determining-receive-filtering-capabilities"></a>确定接收筛选功能
 
 
 本主题介绍如何 NDIS 和基础驱动程序确定支持单个根 I/O 虚拟化 (SR-IOV) 的网络适配器的接收筛选功能。 本主题包含下列信息：
 
-[报告接收过程的筛选功能*MiniportInitializeEx*](#report)
+[报告接收过程的筛选功能*MiniportInitializeEx*](#reporting-receive-filtering-capabilities-during-miniportinitializeex)
 
-[查询通过过量驱动程序接收的筛选功能](#query)
+[查询通过过量驱动程序接收的筛选功能](#querying-receive-filtering-capabilities-by-overlying-drivers)
 
 **请注意**  只有微型端口驱动程序的可报告 PCI Express (PCIe) 物理函数 (PF) 的 SR-IOV 网络适配器的接收筛选功能。 PCIe 虚函数 (VFs) 的微型端口驱动程序必须报告筛选功能的 SR-IOV 适配器的接收。
 

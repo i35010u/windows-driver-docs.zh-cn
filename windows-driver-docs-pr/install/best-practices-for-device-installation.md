@@ -7,19 +7,19 @@ keywords:
 - 驱动程序安装 WDK，最佳做法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fbd97abaca78189a1b02479772a1b8d2dde97dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 237bfd304b358f3d46f1cf0d7d456453e36fc85e
+ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387226"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65456365"
 ---
 # <a name="best-practices-for-device-and-driver-installation"></a>设备和驱动程序安装最佳做法
 
 
 本部分提供的指导原则的组件[驱动程序包](driver-packages.md)必须遵循有关设备和驱动程序安装成功。 这些组件包括：
 
--   [INF 文件](inf-files.md)
+-   [INF 文件](overview-of-inf-files.md)
 
 以下主题中讨论了这些准则：
 
