@@ -4,12 +4,12 @@ description: 内存缓冲区生命周期
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa982e9b3612562a0e22700df672e9ffaf6be436
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b33b3589b85adda19af69ec000e63499c7de84a6
+ms.sourcegitcommit: e753fdd987a1bdbc4383704e18c2d81235fe9e05
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390166"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65171947"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
@@ -28,8 +28,8 @@ ms.locfileid: "63390166"
 
 请考虑以下使用方案：
 
--   方案 1：[驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它](#scenario-1-driver-receives-an-i-o-request-from-kmdf-handles-it-and-completes-it)。
--   方案 2：[驱动程序收到来自 KMDF 的 I/O 请求并将其转发到 I/O 目标](#scenario-2-driver-receives-an-i-o-request-from-kmdf-and-forwards-it-to-an-i-o-target)。
+-   方案 1：[驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)。
+-   方案 2：[驱动程序收到来自 KMDF 的 I/O 请求并将其转发到 I/O 目标](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)。
 -   方案 3：[驱动程序将发出使用一个现有的内存对象的 I/O 请求](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)。
 -   方案 4:[驱动程序将发出 I/O 请求使用新的内存对象。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
 -   方案 5:[驱动程序将重新使用它创建一个请求对象。](#scenario-5-driver-reuses-a-request-object-that-it-created)

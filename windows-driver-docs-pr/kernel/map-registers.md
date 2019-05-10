@@ -15,12 +15,12 @@ keywords:
 - 内存管理 WDK 内核，地址映射
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a1495e62568731b0ea889775431531942ba1fc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a347125d5db29dd5acbe881fd6a65a48f9830785
+ms.sourcegitcommit: e753fdd987a1bdbc4383704e18c2d81235fe9e05
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380254"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65171961"
 ---
 # <a name="map-registers"></a>映射寄存器
 
@@ -64,7 +64,7 @@ HAL 必须设置为各种 DMA 的设备和不同的计算机上的 I/O 总线支
 
 -   每个映射寄存器和 MDL 中的每个虚拟条目最多映射 DMA 传输操作中的数据的完整物理页。
 
--   每个映射注册和 MDL 中的每个虚拟条目可能会小于一整页数据的映射。 例如，MDL 中的初始虚拟项可以将映射到某一偏移量从物理页边界，如前面所示在[物理、 逻辑和虚拟地址映射](#physical-logical-and-virtual-address-mappings)图。
+-   每个映射注册和 MDL 中的每个虚拟条目可能会小于一整页数据的映射。 例如，MDL 中的初始虚拟项可以将映射到某一偏移量从物理页边界，如前面所示在**物理、 逻辑和虚拟地址映射**图。
 
 -   每个映射寄存器和 MDL 中的每个虚拟数据项映射，在最小值、 1 个字节。
 
