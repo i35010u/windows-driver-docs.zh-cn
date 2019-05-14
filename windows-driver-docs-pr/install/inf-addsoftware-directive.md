@@ -3,12 +3,12 @@ title: INF AddSoftware 指令
 description: AddSoftware 指令介绍独立软件的安装。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 19d093ba078d3dba4ecbf03694ec0e47f2803d3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c757b95faf9047b1d06f66f79197d72f8a90b87
+ms.sourcegitcommit: 7e0ac000726f8e79d9eb8b9991a2c698f9472507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379465"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65531267"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware 指令
 
@@ -62,7 +62,8 @@ SoftwareType=type-code
 [SoftwareID=pfn://x.y.z]
 ```
 
-**SoftwareType**项是必需的。  如果**SoftwareType**设置为 1， **SoftwareBinary**并**SoftwareVersion**也是必需的但自变量和标志是可选的。 如果**SoftwareType**设置为 2， **SoftwareID**是必需的并且是可选的标志。
+>[!NOTE]
+>请参阅[ **SoftwareType** ](#software-install-section-softwaretype)节条目和值的约束有关的信息。
 
 使用安装任何软件**AddSoftware**必须以无提示方式 （或安静模式） 安装。 换而言之，没有用户界面可以向用户显示在安装过程中。
 
@@ -71,13 +72,19 @@ SoftwareType=type-code
 * 如果使用 MSI 安装程序，设置[添加/删除程序](https://msdn.microsoft.com/library/windows/desktop/aa368032)应用程序的 Windows 安装程序包中的条目。
 * 如果您使用的自定义 EXE 安装全局的注册表文件状态 （而不是补充本地设备设置），使用[卸载注册表项](https://msdn.microsoft.com/library/windows/desktop/aa372105)。 
 
-## <a name="software-install-section-entries-and-values"></a>软件安装节条目和值
+## <a name="software-install-section-softwaretype"></a>[software-install-section]:SoftwareType
 
-**SoftwareType**=*type-code*
+`SoftwareType={type-code}`
 
-指定软件安装类型。
+**SoftwareType**指定软件安装类型和是必的填项。
 
-如果值为 1 指示关联的软件的 MSI 或 EXE 的二进制文件。  当设置此值时， **SoftwareBinary**项也是必需的。  Windows 10 s。 不支持的值为 1 从 Windows 10 1709年版开始，值为 2 表示关联的软件的 Microsoft Store 的链接。  仅为没有图形用户界面的特定于设备的软件使用的值为 1。  如果您有包含图形元素的特定于设备的应用程序，它应来自 Microsoft Store 中，并且驱动程序应引用它使用**SoftwareType** 2。
+如果值为 1 指示关联的软件的 MSI 或 EXE 的二进制文件。  当设置此值时， **SoftwareBinary**项也是必需的。  Windows 10 s。 不支持的值为 1  
+
+如果**SoftwareType**设置为 1， **SoftwareBinary**并**SoftwareVersion**也是必需的但**SoftwareArguments**并标记 （在**AddSoftware**指令) 都是可选的。 
+
+从 Windows 10 1709年版开始，值为 2 表示关联的软件的 Microsoft Store 的链接。  仅为没有图形用户界面的特定于设备的软件使用的值为 1。  如果您有包含图形元素的特定于设备的应用程序，它应来自 Microsoft Store 中，并且驱动程序应引用它使用**SoftwareType** 2。
+
+如果**SoftwareType**设置为 2， **SoftwareID**是必需的并标记 (在**AddSoftware**指令) 都是可选的。 如果**SoftwareType**设置为 2， **SoftwareBinary**并**SoftwareVersion**不使用。
 
 >[!NOTE]
 >在使用类型 2 的 AddSoftware 指令，它不需要利用组件 INF。  指令可在任何 INF 成功。  键入 1，一个 AddSoftware 指令但是，必须使用从组件 INF。
@@ -86,11 +93,13 @@ SoftwareType=type-code
 相反，使用以下选项之一来预安装 Windows 10 的 OEM 映像中的应用：
 
 * 若要预安装 Win32 应用程序，启动到审核模式，再安装应用。 有关详细信息，请参阅[审核模式概述](https://docs.microsoft.com/windows-hardware/manufacture/desktop/audit-mode-overview)。
-* 若要预安装的 Microsoft Store (UWP) 应用，请参阅[Preinstallable 适用于桌面设备应用](https://docs.microsoft.com/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)。
+* 若要预安装的 Microsoft Store (UWP) 应用，请参阅[Preinstallable 适用于桌面版设备的应用程序](https://docs.microsoft.com/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)
 
 有关配对的驱动程序有一个通用 Windows 平台 (UWP) 应用程序的信息，请参阅[配对使用通用 Windows 平台 (UWP) 应用程序的驱动程序](pairing-app-and-driver-versions.md)和[硬件支持应用程序 (HSA):适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。
 
-**SoftwareBinary**=*filename*
+## <a name="software-install-section-softwarebinary"></a>[software-install-section]:SoftwareBinary
+
+`SoftwareBinary={filename}`
 
 指定可执行文件的路径。  系统会生成如下所示的命令行：
 
@@ -100,7 +109,12 @@ SoftwareType=type-code
 
 如果使用此项，则必须添加可执行文件到 DriverStore 通过指定[INF CopyFiles 指令](inf-copyfiles-directive.md)与**DestinationDirs**值 13。
 
-**SoftwareArguments**=*argument1[, argument2[, … argumentN]]*
+>[!NOTE]
+>请参阅[ **SoftwareType** ](#software-install-section-softwaretype)了解约束**SoftwareBinary**条目和值。
+
+## <a name="software-install-section-softwarearguments"></a>[software-install-section]:SoftwareArguments
+
+`SoftwareArguments={argument1[, argument2[, … argumentN]]}`
 
 指定要追加到命令行的特定于扩展插件参数。  可以指定系统只需传递到生成的命令行的命令行参数。  此外可以指定名为的特殊字符串*运行时上下文变量*。  当指定运行时上下文变量时，系统将其转换为特定于设备的值追加到生成的命令行之前。  您可以混合和匹配文本字符串的参数和运行时上下文变量。  支持的运行时上下文变量包括：
 
@@ -135,15 +149,26 @@ SoftwareType=type-code
 
 `<DriverStorePath>\ContosoControlPanel.exe arg1 PCI\VEN_0000&DEV_0001&SUBSYS_00000000&REV_00\0123 arg2`
 
-**SoftwareVersion**=*w.x.y.z*
+>[!NOTE]
+>请参阅[ **SoftwareType** ](#software-install-section-softwaretype)了解约束**SoftwareArguments**条目和值。
+
+## <a name="software-install-section-softwareversion"></a>[software-install-section]:SoftwareVersion
+
+`SoftwareVersion={w.x.y.z}`
 
 指定的软件版本。  每个值不应超过 65535。  当系统遇到重复**SoftwareName**，它会检查**SoftwareVersion**针对以前**SoftwareVersion**。  如果超出该时间后，Windows 将运行的软件。
 
-**SoftwareID**=*x.y.z*
+>[!NOTE]
+>请参阅[ **SoftwareType** ](#software-install-section-softwaretype)了解约束**SoftwareVersion**条目和值。
+
+## <a name="software-install-section-softwareid"></a>[software-install-section]:SoftwareID
+
+`SoftwareID={x.y.z}`
 
 指定 Microsoft Store 标识符和标识符类型。  目前，支持仅包系列名称 (PFN)。  使用 PFN 引用使用窗体的通用 Windows 平台 (UWP) 应用`pfn://<x.y.z>`。
 
-<!--add link to related page in UWP docs once it is available-->
+>[!NOTE]
+>请参阅[ **SoftwareType** ](#software-install-section-softwaretype)了解约束**SoftwareID**条目和值。
 
 ## <a name="see-also"></a>请参阅
 

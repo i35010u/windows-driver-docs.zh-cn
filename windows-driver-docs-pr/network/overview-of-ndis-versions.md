@@ -23,7 +23,7 @@ ms.locfileid: "65106454"
 这组设计指南文档针对的是 Windows Vista 和更高版本操作系统和 NDIS 6.0 和更高版本的驱动程序。 对于早期的 Windows 和 NDIS 版本的文档都包含在先前版本的文档。 有关 Windows XP 和 NDIS 5.1 文档，请参阅[Windows 2000 和 Windows XP 的网络设计指南](https://msdn.microsoft.com/library/windows/hardware/ff565849)。
 
 > [!NOTE]
-> 驱动程序可以通过调用查询的 NDIS 版本[ **NdisReadConfiguration** ](https://msdn.microsoft.com/library/windows/hardware/ff564511)函数与*关键字*参数设置为**NdisVersion**. 
+> 驱动程序可以通过调用查询的 NDIS 版本 [**NdisReadConfiguration**](https://msdn.microsoft.com/library/windows/hardware/ff564511) 函数与 *关键字* 参数设置为 **NdisVersion**. 
 
 下表中描述 Windows 操作系统、 Microsoft Windows Driver Kit (WDK)，和驱动程序开发工具包 (DDK) 版本支持 NDIS 版本，以及对在 NDIS 版本之间的主要 NDIS 功能的支持。
 
