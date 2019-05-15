@@ -192,7 +192,7 @@
           href: test-signing-a-driver-through-an-embedded-signature.md
         - name: 配置支持测试签名的测试计算机
           href: configuring-the-test-computer-to-support-test-signing.md
-        - name: TESTSIGNING 启动配置选项
+        - name: 允许加载已进行测试签名的驱动程序
           href: the-testsigning-boot-configuration-option.md
         - name: 启用代码完整性事件日志记录和系统审核
           href: enabling-code-integrity-event-logging-and-system-auditing.md
