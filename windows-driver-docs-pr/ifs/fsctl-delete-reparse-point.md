@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca180759bd88b7dbec296a60cdfcdb2c3504c93d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8cd7ecd75473633dbfd13fbae040fcd76e4c8288
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568384"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701995"
 ---
 # <a name="fsctldeletereparsepoint-control-code"></a>FSCTL\_删除\_重新分析\_点控制代码
 
@@ -44,7 +44,7 @@ FSCTL\_删除\_重新分析\_点控制代码从指定的文件或目录中删除
 指向[**重新分析\_GUID\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552014)或[**重新分析\_数据\_缓冲区** ](https://msdn.microsoft.com/library/windows/hardware/ff552012)结构。 中指定的标签**ReparseTag**此结构的成员必须与要删除的重新分析点的标记匹配并**ReparseDataLength**成员必须为零。 此外，如果重新分析点是第三方 (非 Microsoft) 重新分析点，GUID 中指定**ReparseGuid**成员的重分析\_GUID\_数据\_缓冲区结构必须匹配GUID 的重新分析点删除。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-大小 （字节），指向的缓冲区**InputBuffer**参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须是完全**sizeof**(重新分析\_GUID\_数据\_缓冲区\_标头\_大小)。 进行重新分析\_数据\_缓冲区结构，此值必须是完全**sizeof**(重新分析\_数据\_缓冲区\_标头\_大小)。
+大小 （字节），指向的缓冲区**InputBuffer**参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须是完全重新分析\_GUID\_数据\_缓冲区\_标头\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须是完全重新分析\_数据\_缓冲区\_标头\_大小。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 不用于此操作;设置为**NULL**。

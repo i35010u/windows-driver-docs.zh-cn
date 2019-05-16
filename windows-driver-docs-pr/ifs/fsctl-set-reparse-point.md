@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccdcc4a149f0c0ecc7d32123242a89dc998b5fbf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 6182a2c5cced1b80dcaa4e22884105a352f58407
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575749"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701991"
 ---
 # <a name="fsctlsetreparsepoint-control-code"></a>FSCTL\_设置\_重新分析\_点控制代码
 
@@ -44,7 +44,7 @@ FSCTL\_设置\_重新分析\_点控制代码设置重分析点上的文件或目
 指向调用方分配[**重新分析\_GUID\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552014)或[**重新分析\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552012)结构，其中包含重新分析点数据。 如果正在修改现有的重分析点，该标记中指定**ReparseTag**此结构的成员必须与要修改的重新分析点标记匹配。 此外，如果重新分析点是第三方 (非 Microsoft) 重新分析点，GUID 中指定**ReparseGuid**结构中的成员是重新分析\_GUID\_数据\_缓冲区结构必须匹配要修改的重新分析点的 GUID。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-大小 （字节），指向的缓冲区*InputBuffer*参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须是至少**sizeof**(重新分析\_GUID\_数据\_缓冲区\_标头\_大小)，以及用户定义的数据，和它的大小必须小于或等于最大\_重新分析\_数据\_缓冲区\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须是至少**sizeof**(重新分析\_数据\_缓冲区\_标头\_大小)，加上的大小用户定义的数据，并且它必须是小于或等于最大\_重新分析\_数据\_缓冲区\_大小。
+大小 （字节），指向的缓冲区*InputBuffer*参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须至少重新分析\_GUID\_数据\_缓冲区\_标头\_大小，加上其大小用户定义的数据，并且它必须是小于或等于最大\_重新分析\_数据\_缓冲区\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须至少重新分析\_数据\_缓冲区\_标头\_plus 的用户定义的数据大小的大小，并且它必须是小于或等于最大值\_重新分析\_数据\_缓冲区\_大小。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
 不用于此操作;设置为**NULL**。

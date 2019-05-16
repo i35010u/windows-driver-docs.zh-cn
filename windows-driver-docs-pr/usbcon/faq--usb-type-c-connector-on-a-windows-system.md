@@ -3,29 +3,27 @@ Description: 想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 
 title: 常见问题-Windows 系统上的 USB C 型连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 348dbf3f3cb81c05fea4ae6421de1b7d575d86b8
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 29dd5566fa7e28b5fc6669a5202e51d444aed2fe
+ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405051"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65711966"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
-
-**上次更新时间**-2016 年 12 月
 
 **Windows 版本**:
 
 * Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 * Windows 10 移动版
 
-想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 的常见问题。
+针对想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 的讨论的常见点。
 
 * [USB 类型 C 连接器功能](#usb-type-c-connector-features)
 * [备用模式需要进行协商，如分发点 2 道 vs 操作系统输入。DP 4-lane](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
 * [预操作系统与类型 C PD 收费](#pre-os-charging-with-type-c-and-pd)
 * [若要启用扩展方案，如连续体的 USB 主机时收费电话](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
-* [Windows 10 移动版支持 USB 布告栏设备](#windows-10-mobile-support-of-usb-billboard-devices)
+* [Windows 10 移动版支持 USB 布告栏设备](#windows10-mobile-support-of-usb-billboard-devices)
 * [在早期版本的 Windows 上支持 USB 类型-C](#support-for-usb-type-c-on-earlier-versions-of-windows)
 * [在早期版本的 Windows 支持 UCSI](#ucsi-support-on-earlier-versions-of-windows)
 * [如何测试 UCSI 的实现](#how-to-test-an-implementation-of-ucsi)
@@ -33,9 +31,9 @@ ms.locfileid: "65405051"
 * [非 PD 端口连接到 PD 提供程序并不是 PD 提供程序的系统的 PD 使用者](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
 * [连接到不支持这些功能的 PC 的闪电、 SuperMHL 或 PCI express](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
 * [支持和 MTP 通过 USB 类型-C 在 Windows 中的限制](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
-* [如何向下游设备和中心建立连接和通信与 USB 连接器管理器 (UCM)](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm-)
+* [如何向下游设备和中心建立连接和通信与 USB 连接器管理器 (UCM)](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
 * [USB 类型 C MUTT HLK 测试要求](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU](#microsoft-support-for-P2P-data-transfer-between-the-same-windows-10-sku)
+* [Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU](#microsoft-support-for-p2p-data-transfer-between-the-same-windows-10-sku)
 * [UCM 类扩展 (UcmCx) 通信使用 PMIC 或电池驱动程序来获取或设置充电状态](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
 * [HLK 支持 USB 类型-C](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)
@@ -168,11 +166,11 @@ USB 类型 C 连接器系统软件接口 (UCSI) 规范介绍 USB 类型 C 连接
 
 Microsoft 提供了与 Windows，UcmUcsi.sys，实现功能规范所定义的现成驱动程序。 此驱动程序适用于具有嵌入式控制器的系统。
 
-## <a name="test-a-ucsi-implementation-running-on-windows10"></a>测试 Windows 10 上运行的 UCSI 实现
+## <a name="test-a-ucsi-implementation-running-on-windows-10"></a>测试 Windows 10 上运行的 UCSI 实现
 
 我们建议在 Windows HLK 适用于 Windows 10 中运行 USB 测试。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
 
-## <a name="test-a-ucmcx-client-driver-on-windows10"></a>测试 Windows 10 上的 UCMCx 客户端驱动程序
+## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>测试 Windows 10 上的 UCMCx 客户端驱动程序
 
 我们建议在 Windows HLK 适用于 Windows 10 中运行 USB 测试。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
 

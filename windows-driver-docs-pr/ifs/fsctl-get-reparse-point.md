@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c935357f6ce270037409c71e57e3324945098f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 111e15e4314029c9457da58a3a7cddb1b894e91b
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327893"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701987"
 ---
 # <a name="fsctlgetreparsepoint-control-code"></a>FSCTL\_获取\_重新分析\_点控制代码
 
@@ -51,7 +51,7 @@ FSCTL\_获取\_重新分析\_点控制代码会检索与指定的文件或目录
 指向调用方分配[**重新分析\_GUID\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552014)或[**重新分析\_数据\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff552012)接收重分析点数据的结构。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-大小 （字节），指向的缓冲区*OutputBuffer*参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须是至少**sizeof**(重新分析\_GUID\_数据\_缓冲区\_标头\_大小)，以及预期的用户定义数据，和它的大小必须小于或等于最大\_重新分析\_数据\_缓冲区\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须是至少**sizeof**(重新分析\_数据\_缓冲区\_标头\_大小)，加上的大小预期的用户定义数据，并且它必须是小于或等于最大\_重新分析\_数据\_缓冲区\_大小。
+大小 （字节），指向的缓冲区*OutputBuffer*参数。 进行重新分析\_GUID\_数据\_缓冲区结构，此值必须至少重新分析\_GUID\_数据\_缓冲区\_标头\_大小，加上其大小预期的用户定义数据，并且它必须是小于或等于最大\_重新分析\_数据\_缓冲区\_大小。 进行重新分析\_数据\_缓冲区结构，此值必须至少重新分析\_数据\_缓冲区\_标头\_大小以及预期用户定义数据的大小和它必须小于或等于最大\_重新分析\_数据\_缓冲区\_大小。
 
 <a name="status-block"></a>状态块
 ------------

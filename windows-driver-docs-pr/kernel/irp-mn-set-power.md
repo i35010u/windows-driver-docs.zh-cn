@@ -6,12 +6,12 @@ ms.assetid: 1294183a-bd0b-4ead-bd64-669d5b3725ce
 keywords:
 - IRP_MN_SET_POWER Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 220924dd1997ca425f5173b2b90d507560ecf496
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d7d96b1385ab7df2029a0b8a63d820ce119303b
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381404"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701989"
 ---
 # <a name="irpmnsetpower"></a>IRP\_MN\_SET\_POWER
 
@@ -49,6 +49,22 @@ ms.locfileid: "63381404"
 
 从 Windows Vista 开始**Parameters.Power.SystemPowerStateContext**成员是一个只读部分不透明[**系统\_POWER\_状态\_上下文**](https://msdn.microsoft.com/library/windows/hardware/jj835780)结构，其中包含有关计算机的以前的系统电源状态的信息。 如果**Parameters.Power.Type**是**SystemPowerState**并**Parameters.Power.State**是**PowerSystemWorking**，两个标志位在此结构指示快速启动或唤醒从休眠是否导致计算机进入 S0 （工作） 系统状态。 有关详细信息，请参阅[快速区分从唤醒从休眠状态的启动](https://msdn.microsoft.com/library/windows/hardware/jj835779)。
 
+下表显示的内容**IRP_MN_SET_POWER。Parameters.Power。{状态 |ShutdownType}** 并**CurrentSystemState**， **TargetSystemState**，并且**EffectiveSystemState**位域中的[ **SYSTEM_POWER_STATE_CONTEXT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_system_power_state_context)结构对于每个系统电源转换。  每一行表示一个**IRP_MN_SET_POWER**。
+
+|转换|状态|关闭类型|当前系统状态|目标系统状态|有效的系统状态|备注|
+|--- |--- |--- |--- |--- |--- |--- |
+|对进入睡眠状态...|S3|睡眠|S0|S3|S3||
+|...唤醒|S0|睡眠|S3|S0|S0||
+|为混合睡眠...|S4|休眠|S0|S3|S4|与休眠文件 (快速 S4) 进入睡眠状态|
+|...唤醒|S0|睡眠|S3|S0|S0||
+|...Wake/PwrLost|S0|睡眠|S4|S0|S0||
+|为休眠状态...|S4|休眠|S0|S4|S4|||
+|...唤醒|S0|睡眠|S4|S0|S0||
+|为混合关闭...|S4|休眠|S0|S5|S4|关闭应用，用户已注销像关闭 （休眠引导）|
+|...快速启动|S0|睡眠|S4|S0|S0||
+|关闭到...|S5|关闭/重置/关闭|S0|S5|S5||
+|...系统启动||||||启动无 S IRP|
+
 ## <a name="output-parameters"></a>输出参数
 
 
@@ -71,6 +87,8 @@ ms.locfileid: "63381404"
 -   若要通知的系统电源状态更改的驱动程序
 
 -   若要更改其电源管理器正在执行空闲检测设备的电源状态
+
+-   以一个驱动程序失败后再次确认当前的系统状态**IRP\_MN\_查询\_POWER**系统电源状态的请求。  有关详细信息，请参阅[ **IRP_MN_QUERY_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power#operation)。
 
 拥有设备的电源策略的驱动程序发送**IRP\_MN\_设置\_POWER**若要更改其设备的电源状态。
 
