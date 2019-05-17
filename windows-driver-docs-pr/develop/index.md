@@ -11,12 +11,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 26b7d994d9a027bf20cdc6f322899ae03d1cf381
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b89f67ab77281bd37d424dbb2bca5cfb7f8b2c03
+ms.sourcegitcommit: 276a3aef2d4463bbe653d30ed55d7bab20000aa6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344140"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65814905"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序
 
@@ -40,5 +40,16 @@ Visual Studio 环境提供适用于以下项的模板：
 
 本部分的主题介绍了如何使用 Visual Studio 执行驱动程序开发、部署和测试中涉及的各任务。
 
+## <a name="additional-videos"></a>其他视频
+
+除了上面的视频之外，你还将在 Windows 驱动程序文档中的以下页面上找到视频：
+
+* [调试驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/debugging-a-driver)
+* [HID 中的新增功能](https://docs.microsoft.com/windows-hardware/drivers/hid/what-s-new-in-hid)
+* [使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪](https://docs.microsoft.com/windows-hardware/drivers/usbcon/capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-)
+* [将 Windows Performance Toolkit (WPT) 与 WDF 配合使用](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-windows-performance-toolkit--wpt--with-wdf)
+* [视频：在没有调试程序的情况下访问驱动程序 IFR 日志](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--accessing-driver-ifr-logs-without-a-debugger)
+* [视频：使用 WDF 源代码调试驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/video--debugging-your-driver-with-wdf-source-code)
+* [视频：调试 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/videos--debugging-umdf-drivers)
 
 
