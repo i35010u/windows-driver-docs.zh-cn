@@ -3,12 +3,12 @@ Description: 想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 
 title: 常见问题-Windows 系统上的 USB C 型连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29dd5566fa7e28b5fc6669a5202e51d444aed2fe
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: 9fad2532569b47489fc502097aa4991f94a29368
+ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711966"
+ms.locfileid: "65760598"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 
@@ -33,7 +33,7 @@ ms.locfileid: "65711966"
 * [支持和 MTP 通过 USB 类型-C 在 Windows 中的限制](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
 * [如何向下游设备和中心建立连接和通信与 USB 连接器管理器 (UCM)](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
 * [USB 类型 C MUTT HLK 测试要求](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU](#microsoft-support-for-p2p-data-transfer-between-the-same-windows-10-sku)
+* [Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
 * [UCM 类扩展 (UcmCx) 通信使用 PMIC 或电池驱动程序来获取或设置充电状态](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
 * [HLK 支持 USB 类型-C](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)

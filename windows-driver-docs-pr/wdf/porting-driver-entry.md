@@ -4,12 +4,12 @@ description: 移植 DriverEntry
 ms.assetid: E880A45A-136C-480E-BE66-B61558F98227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ad70d5533efdea8210a74ad3bf6923c4f9c7490
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dd941bc36d8d09cff1fd5b3c9a6d55001c787ad
+ms.sourcegitcommit: ead145093395141164ec18a4764b19472ea9ff4b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390107"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65760600"
 ---
 # <a name="porting-driverentry"></a>移植 DriverEntry
 
@@ -23,13 +23,15 @@ DriverEntry(
     IN PUNICODE_STRING RegistryPath
     )
 {
+    WDF_DRIVER_CONFIG config;
+
     WDF_DRIVER_CONFIG_INIT( &config,
                               ToasterEvtDeviceAdd );
     status = WdfDriverCreate(
-                 DriverObject
-                 RegistryPath
-                 WDF_NO_OBJECT_ATTRIBUTES
-                 &config
+                 DriverObject,
+                 RegistryPath,
+                 WDF_NO_OBJECT_ATTRIBUTES,
+                 &config,
                  WDF_NO_HANDLE
              );
 
