@@ -4,12 +4,12 @@ description: 尽管的收件箱 Sercx2.sys 和 Serial.sys 驱动程序组件这�
 ms.assetid: 62FA69BB-FE04-4B5E-96CC-13764ED83AE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f514210c357c408f30be541422e3f9fb8a8a3034
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b93bd0130c72035a10f339bf0411d18db436be60
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359697"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836331"
 ---
 # <a name="differences-between-sercx2sys-and-serialsys"></a>SerCx2.sys 和 Serial.sys 之间的差异
 
@@ -42,7 +42,6 @@ Sercx2.sys 是灵活 DMA 支持。 完全支持使用系统 DMA 的复杂数据�
 
 ## <a name="other-differences"></a>其他差异
 
-
 由 Serial.sys 控制的 COM 端口分配的设备名称。 在用户模式应用程序可以打开此端口的名称，并将 I/O 请求直接发送到端口。
 
 与此相反，由 SerCx2.sys 和串行控制器驱动程序控制的串行端口未命名。 拥有永久连接到端口外围设备的驱动程序收到特殊标识符 (称为[*连接 ID*](connection-ids-for-serially-connected-peripheral-devices.md)) 驱动程序使用打开的端口。 通常情况下，仅此外围设备的驱动程序可以直接向该端口发送的 I/O 请求。 需要可配置的端口，或将数据通过端口传输的应用程序将 I/O 请求发送到外围设备驱动程序。 然后，充当中介，该驱动程序的端口的发送相应的 I/O 请求。
@@ -54,11 +53,3 @@ Sercx2.sys 和其关联的串行控制器驱动程序启用运行时[电源管�
 另一个区别是，Serial.sys 实现软件流控制，但 Sercx2.sys 却没有。 Serial.sys 和 Sercx2.sys 支持硬件流控制使用*发送的请求*(RTS) 和*清除以发送*(CTS) 信号。 有关流控制的详细信息，请参阅[**串行\_HANDFLOW**](https://msdn.microsoft.com/library/windows/hardware/jj680685)。
 
 最后一个区别是 Serial.sys 可以与 Serenum.sys，配合工作，但 Sercx2.sys 不能。 Serenum.sys 是枚举设备连接到串行端口的筛选器驱动程序。 有关详细信息，请参阅[枚举 Serenum 设备](enumerating-serenum-devices.md)。
-
- 
-
- 
-
-
-
-

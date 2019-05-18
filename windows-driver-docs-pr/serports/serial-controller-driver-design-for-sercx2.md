@@ -4,20 +4,18 @@ description: 若要管理串行控制器，你编写执行特定于硬件的任�
 ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f33404a8980827e4d79736ca4ea7e35045c358ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d779d10981a7e62ad6ccb47ddbabc9643567949a
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387961"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836334"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 串行控制器驱动程序设计
-
 
 若要管理串行控制器，你编写执行特定于硬件的任务，并与 SerCx2 进行通信的串行控制器驱动程序。 从 Windows 8.1 开始，SerCx2 是系统提供的组件，它处理许多通用串行控制器的这些处理任务。 这些任务包括管理超时值以及处理读取和写入串行控制器的客户端发送的请求。
 
 ## <a name="in-this-section"></a>本节内容
-
 
 <table>
 <colgroup>
@@ -41,13 +39,3 @@ ms.locfileid: "63387961"
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

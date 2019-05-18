@@ -4,15 +4,14 @@ description: 外围设备 SerCx2 托管的串行端口上的 UMDF 驱动程序�
 ms.assetid: 75FC5E79-59E9-4C07-9119-A4FE81CC318E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87dec0cb81cf16e100621063c2eb6ad4738d2c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ae94aa1db3908bcb976e1efb55efe6b27b37a9c
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324217"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836336"
 ---
 # <a name="connecting-a-umdf-peripheral-driver-to-a-serial-port"></a>将 UMDF 外设驱动程序连接到串行端口
-
 
 外围设备 SerCx2 托管的串行端口上的 UMDF 驱动程序需要特定硬件资源操作设备。 这些资源中包含的是该驱动程序必须打开的逻辑连接到串行端口的信息。 其他资源可能包括中断，以及一个或多个 GPIO 输入或输出插针。
 
@@ -22,7 +21,7 @@ ms.locfileid: "63324217"
 
 若要启用 UMDF 外围设备驱动程序以接收其资源的列表中的连接 Id，请安装该驱动程序的 INF 文件必须包含以下指令中其 WDF 特定**DDInstall**部分：
 
-**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**有关此指令的详细信息，请参阅[INF 文件中指定 WDF 指令](https://msdn.microsoft.com/library/windows/hardware/ff560526)。 使用此指令的 INX 文件 （用来生成相应的 INF 文件） 的示例，请参阅[SpbAccelerometer 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)。
+**UmdfDirectHardwareAccess = AllowDirectHardwareAccess**有关此指令的详细信息，请参阅[INF 文件中指定 WDF 指令](https://msdn.microsoft.com/library/windows/hardware/ff560526)。 使用此指令的 INX 文件 （用来生成相应的 INF 文件） 的示例，请参阅在 SpbAccelerometer [WDK 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)。
 
 下面的代码示例演示如何在驱动程序**OnPrepareHardware**方法获取的连接 ID *pWdfResourcesTranslated*参数。
 
@@ -226,11 +225,3 @@ if (fSynchronous || FAILED(hres))
 4.  `fSynchronous`变量是**TRUE**如果 I/O 控制并且该请求是同步发送**FALSE**它是否以异步方式发送。 `pCallback`变量是指向以前创建的指针[ **IRequestCallbackRequestCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556904)接口。 如果请求是要以异步方式调用发送[ **IWDFIoRequest::SetCompletionCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff559153)方法注册此接口。 更高版本， [ **IRequestCallbackRequestCompletion::OnCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556905)调用方法来请求以异步方式完成时通知该驱动程序。
 5.  **发送**方法将格式化的写入请求发送到串行连接的外围设备。 `Flags`变量指示写入请求是要以同步方式还是以异步方式发送。
 6.  如果同步发送请求[ **IWDFIoRequest::DeleteWdfObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560210)方法将删除指向这两个 I/O 请求对象`pWdfIoRequest`和子对象指向`pInputMemory`. **IWDFIoRequest**接口继承此方法从[ **IWDFObject** ](https://msdn.microsoft.com/library/windows/hardware/ff560200)接口。 如果发送请求以异步方式调用**DeleteWdfObject**方法应在驱动程序的更高版本，发生**OnCompletion**方法。
-
- 
-
- 
-
-
-
-

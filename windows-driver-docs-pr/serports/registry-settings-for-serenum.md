@@ -9,18 +9,14 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 128249a1ec0591190b4c2763a05edda3f8663484
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57b5b0f1f4182122b2196cf086662023816799d8
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379006"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836341"
 ---
 # <a name="registry-settings-for-serenum"></a>用于 Serenum 的注册表设置
-
-
-
-
 
 本主题介绍 Serenum 使用 RS-232 端口在 Microsoft Windows 2000 及更高版本的项值。
 
@@ -33,7 +29,7 @@ ms.locfileid: "63379006"
 指定的端口的名称。 Serenum 读取此值。 为支持**标识符**条目值仅为与某些旧的 PCMCIA 设备兼容性而提供。 利用**标识符**条目值已过时，不应与在 Windows 2000 和更高版本的驱动程序实现。 Serenum 返回端口名称，以响应 IOCTL\_SERENUM\_获取\_端口\_名称请求。
 
 <a href="" id="skipenumerations--reg-dword-"></a>**SkipEnumerations** (REG\_DWORD)  
-在 Windows XP 及更高版本，此项值控制当 Serenum 枚举响应中的端口[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)征求**BusRelations**。 Windows 2000 不支持此项值。
+在 Windows XP 及更高版本，此项值控制当 Serenum 枚举响应中的端口[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)征求**BusRelations**。 
 
 每次系统将生成一个串行端口设备堆栈时，设置 Serenum*枚举模式*它使用枚举一个端口。 端口的设备堆栈，Serenum 的初始化过程[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程中读取的端口**SkipEnumerations**条目值，并将作为枚举模式设置下表中所述。
 
@@ -70,14 +66,4 @@ ms.locfileid: "63379006"
 </tbody>
 </table>
 
- 
-
 例如，如果一个串行端口**SkipEnumerations**项值设置为 3 时系统将生成端口设备堆栈，Serenum 将跳过前三个**BusRelations**它为端口收到的请求。 只要端口保持启用状态，Serenum 随后将以正常方式枚举该端口。
-
- 
-
- 
-
-
-
-

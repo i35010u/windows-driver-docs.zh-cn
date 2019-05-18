@@ -7,12 +7,12 @@ keywords:
 - 串行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b9ba0c34bb19e59fe41022be7e525f09b6a28bad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2cd3cf6246510d4f061e930c1725910c0ea08b64
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327493"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836296"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍以下串行 IRP 主要函数代码：
@@ -90,8 +90,8 @@ IRP_MJ_DEVICE_CONTROL 请求的操作串行端口。
 * 获取和设置寄存器
 * 获取和设置运行模式
 
-有关支持序列的设备控制请求的说明，请参阅[串行设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff547466)。
-
+有关支持序列的设备控制请求的说明，请参阅[ntddser.h](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddser/)标头。
+ 
 ### <a name="input-parameters"></a>输入参数
 特定请求
 
@@ -151,7 +151,7 @@ STATUS_PENDING
 * 获取和重置基本设置
 * 控制等待/唤醒操作
 
-内部设备控制请求的说明，请参阅[串行内部设备控制请求](https://msdn.microsoft.com/library/windows/hardware/ff547480)。
+内部设备控制请求的说明，请参阅[ntddser.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/)标头。
 
 ### <a name="input-parameters"></a>输入参数
 特定请求

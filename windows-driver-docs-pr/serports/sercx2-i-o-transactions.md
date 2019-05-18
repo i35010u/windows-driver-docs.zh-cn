@@ -4,20 +4,18 @@ description: SerCx2 简化了 (IRP_MJ_READ) 读取和写入 (IRP_MJ_WRITE) 串�
 ms.assetid: C1B3F059-A445-4224-8316-DBF194CE6A80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c6d54870ac9a93ece45d465619404cc88add825
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 798636c4e9b921baba1c52bceafdc2852b1b930b
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387991"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836327"
 ---
 # <a name="sercx2-io-transactions"></a>SerCx2 I/O 事务
-
 
 SerCx2 简化了读取的处理 ([**IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) 和写入 ([**IRP\_MJ\_写**](https://msdn.microsoft.com/library/windows/hardware/ff546904)) 串行控制器驱动程序的请求。 读取或写入请求的响应，SerCx2 向串行控制器驱动程序发出一个或多个 I/O 事务。 从驱动程序的角度来看，每个事务是一种简单和完成 I/O 操作。
 
 ## <a name="in-this-section"></a>本节内容
-
 
 <table>
 <colgroup>
@@ -61,13 +59,3 @@ SerCx2 简化了读取的处理 ([**IRP\_MJ\_读取**](https://msdn.microsoft.co
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

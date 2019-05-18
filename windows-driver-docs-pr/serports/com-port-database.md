@@ -15,12 +15,12 @@ keywords:
 - 数据库 WDK COM 端口数据库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3a09f0d0b8450c87283006f0c79d0c9ea46d36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a8a6f7962b6204a1f26a427b68ae7323b14d44d
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345049"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836340"
 ---
 # <a name="com-port-database"></a>COM 端口数据库
 
@@ -29,16 +29,24 @@ ms.locfileid: "63345049"
 有关支持的 COM 端口数据库的例程的信息，请参阅 COMPort 数据库支持例程：
 
 [ComDBClaimNextFreePort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimnextfreeport)
+
 [ComDBClaimPort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclaimport)
+
 [ComDBClose](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbclose)
+
 [ComDBGetCurrentPortUsage](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbgetcurrentportusage)
+
 [ComDBOpen](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbopen)
+
 [ComDBReleasePort](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbreleaseport)
+
 [ComDBResizeDatabase](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-comdbresizedatabase)
 
 另请参阅下面的例程：
 
-[SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)，这是安装的 COM 端口的高级的属性页的系统提供的例程[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-类型提供一个可选的供应商提供的例程由调用的对话框**SerialDisplayAdvancedSettings**
+[SerialDisplayAdvancedSettings](https://docs.microsoft.com/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings)，这是系统提供的例程，用于安装的 COM 端口的高级的属性页
+
+[PPORT_ADVANCED_DIALOG](https://msdn.microsoft.com/library/windows/hardware/ff546956(v=vs.85).aspx)-键入例程，它提供一个可选的供应商提供的对话框框，其中由调用**SerialDisplayAdvancedSettings**
 
 若要在安装程序中调用这些例程，链接到安装程序*msports.lib*，提供与 Windows Driver Kit (WDK)。
 
@@ -70,7 +78,7 @@ COM 端口数据库包含一个元素的数组，其中每个指示是否正在�
 
 - [**ComDBClaimPort**](https://msdn.microsoft.com/library/windows/hardware/ff546472)，它会尝试声明特定的端口号。
 
-C*laiming* COM 端口号 COM 端口数据库中的记录为"使用中"的端口号。
+*声明*COM 端口号 COM 端口数据库中的记录为"使用中"的端口号。
 
 客户端通过调用来释放端口号[ **ComDBReleasePort** ](https://msdn.microsoft.com/library/windows/hardware/ff546477)例程。
 

@@ -4,15 +4,14 @@ description: 串行控制器 （或 UART） 通常包括接收先进先出。
 ms.assetid: 36522E60-3616-4431-8C8C-3EAC4A6E4422
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffa65fdddff4119e56a0c909444463c41f27b2fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2b04560779bc8d8007c32d7a39f3413ccaf608e
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331108"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836344"
 ---
 # <a name="reading-data-from-a-sercx2-managed-serial-port"></a>从 SerCx2 托管串行端口读取数据
-
 
 串行控制器 （或 UART） 通常包括接收先进先出。 此 FIFO 提供了硬件控制从外围设备连接到串行端口接收的数据缓冲。 若要从接收 FIFO 读取数据，此设备的外围设备驱动程序发送读取 ([**IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff546883)) 到串行端口的请求。
 
@@ -22,12 +21,11 @@ ms.locfileid: "63331108"
 
 **此页上**
 
--   [使用异步读取的请求](#using-asynchronous-read-requests)
--   [间隔超时详细信息](#interval-time-out-details)
--   [流控制详细信息](#flow-control-details)
+- [使用异步读取的请求](#using-asynchronous-read-requests)
+- [间隔超时详细信息](#interval-time-out-details)
+- [流控制详细信息](#flow-control-details)
 
 ## <a name="using-asynchronous-read-requests"></a>使用异步读取的请求
-
 
 为了避免不正确的操作和可能造成数据丢失，外围设备驱动程序负责从串行控制器中读取数据的方式及时接收先进先出。 通常情况下，接收数据之前，外围设备驱动程序的异步读取的请求的未来数据到达预期的串行端口将从发送到外围设备。 此读取 SerCx2 I/O 队列中挂起的请求保持，直到数据可从接收 FIFO 读取。
 
@@ -57,13 +55,5 @@ ms.locfileid: "63331108"
 
 如果外围设备驱动程序将使用**IOCTL\_串行\_设置\_HANDFLOW**请求启用硬件流控制，该驱动程序应在设置以下标志**序列\_HANDFLOW**此请求中的结构：
 
--   SERIAL\_CTS\_握手中的标志**ControlHandShake**结构中的成员。 此标志可使串行端口使用的流控制接收操作。
--   SERIAL\_RTS\_控件和 SERIAL\_RTS\_握手标志中**FlowReplace**成员。 这些标志启用要使用的流控制的串行端口的传输操作。
-
- 
-
- 
-
-
-
-
+- SERIAL\_CTS\_握手中的标志**ControlHandShake**结构中的成员。 此标志可使串行端口使用的流控制接收操作。
+- SERIAL\_RTS\_控件和 SERIAL\_RTS\_握手标志中**FlowReplace**成员。 这些标志启用要使用的流控制的串行端口的传输操作。

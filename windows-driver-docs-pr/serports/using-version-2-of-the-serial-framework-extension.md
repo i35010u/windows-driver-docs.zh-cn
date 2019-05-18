@@ -4,26 +4,22 @@ description: 您可以编写一起使用版本 2 的串行框架扩展 (SerCx2) 
 ms.assetid: 192C25B2-936B-40D3-A0EA-5D02A234506E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edd2fcb19a17310534bbdd4759451fe45dfc479c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abcb0d14bc56a4e617fb91eab30ce92f0c0d3502
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322118"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836238"
 ---
 # <a name="using-version-2-of-the-serial-framework-extension-sercx2"></a>使用串行框架扩展版本 2 (SerCx2)
 
-
 您可以编写一起使用版本 2 的串行框架扩展 (SerCx2) 来管理串行控制器的串行控制器驱动程序。 此外可以编写用于连接到由 SerCx2 联合管理的串行控制器上的端口的外围设备的外围设备驱动程序和串行控制器驱动程序。 此外围设备的驱动程序将使用[串行 I/O 请求接口](serial-i-o-request-interface.md)传输设备数据。 扩展基于串行控制器驱动程序处理串行控制器的所有特定于硬件的任务，但使用 SerCx2 来执行许多常见到所有的串行控制器的系统任务。 SerCx2 是从 Windows 8.1 的系统提供的组件。
 
-**请注意**  SerCx2 替换第 1 版 Windows 8 中引入了串行 framework 扩展 (SerCx)。 旨在仅在 Windows 8.1 和更高版本的 Windows 中运行的新串行控制器驱动程序应编写为使用[SerCx2 DDI](https://msdn.microsoft.com/library/windows/hardware/dn265349)而不是[SerCx DDI](https://msdn.microsoft.com/library/windows/hardware/dn265348)。 但是，Windows 8.1 和更高版本的 Windows 支持使用 SerCx DDI 的现有串行控制器驱动程序。
-
- 
+**请注意**  SerCx2 替换第 1 版 Windows 8 中引入了串行 framework 扩展 (SerCx)。 旨在仅在 Windows 8.1 和更高版本的 Windows 中运行的新串行控制器驱动程序应编写为使用而不是 SerCx DDIs SerCx2 DDIs。 但是，Windows 8.1 和更高版本的 Windows 支持使用 SerCx DDI 的现有串行控制器驱动程序。
 
 串行控制器是 16550 通用异步接收器/转换器 (UART) 或兼容的设备。 有关详细信息，请参阅[串行控制器驱动程序概述](serial-drivers-overview.md)。
 
 ## <a name="in-this-section"></a>本节内容
-
 
 <table>
 <colgroup>
@@ -51,13 +47,3 @@ ms.locfileid: "63322118"
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

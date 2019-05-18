@@ -4,15 +4,14 @@ description: 如果编写用于连接到串行端口由 SerCx2 管理的外围�
 ms.assetid: 9A688552-DFAF-48A1-935D-70C3B13F30EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a7e22bef2608daf2719213a74a4ec4b37502876
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49e7c94c7a1dac15d1561e0cc81c9d1d4c2093dd
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327555"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836301"
 ---
 # <a name="connection-ids-for-serially-connected-peripheral-devices"></a>串行连接的外围设备的连接 ID
-
 
 SerCx2 管理永久连接到外围设备的串行端口。 这些物理连接固定的因为它们可以在硬件平台的 ACPI 固件中所述。 如果编写用于连接到串行端口由 SerCx2 管理的外围设备的驱动程序，包括驱动程序收到的硬件资源的列表*连接 ID*封装设备连接信息从平台固件中。
 
@@ -25,16 +24,11 @@ PnP 管理器会分配连接的 ID 来表示此外围设备的连接参数。 Pn
 连接 Id 用于打开逻辑连接到串行连接的外围设备的 UMDF 和 KMDF 驱动程序的代码示例，请参阅以下主题：
 
 [连接到串行端口的外设的 UMDF 驱动程序](connecting-a-umdf-peripheral-device-driver-to-a-serial-port.md)
-[KMDF 外围设备驱动程序连接到串行端口](connecting-a-kmdf-peripheral-device-driver-to-a-serial-port.md)打开到外围设备的串行端口上的连接的客户端具有对独占访问权限直到关闭的连接端口。 另一个客户端试图打开第二个连接到同一个端口无法正常工作。
+
+[连接到串行端口 KMDF 外围设备驱动程序](connecting-a-kmdf-peripheral-device-driver-to-a-serial-port.md)
+
+打开到外围设备的串行端口上的连接的客户端具有独占访问权限端口，直到关闭的连接。 另一个客户端试图打开第二个连接到同一个端口无法正常工作。
 
 打开串行端口之后, 客户端应假定端口处于未知或未定义状态。 客户端将负责配置端口，这样就可供使用。
 
 若要配置的串行端口的操作，客户端发送 I/O 控制 (IOCTL) 请求到串行控制器。 通常情况下，客户端发送[ **IOCTL\_串行\_应用\_默认\_CONFIGURATION** ](https://msdn.microsoft.com/library/windows/hardware/hh406621)到控制器的请求，以将端口设置为其默认配置。 如有必要，客户端可以发送其他串行 Ioctl 重写一个或多个默认配置设置。 例如，Windows 定义串行 Ioctl 将波特率、 流控制参数、 线条控制设置和超时值更改为读取和写入请求。 有关支持的 SerCx2 串行 Ioctl 的列表，请参阅[串行 I/O 请求接口](serial-i-o-request-interface.md)。
-
- 
-
- 
-
-
-
-

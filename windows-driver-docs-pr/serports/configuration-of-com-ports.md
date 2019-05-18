@@ -7,18 +7,14 @@ keywords:
 - 串行设备 WDK、 COM 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d215b97c9397fb8f2d12fdf73ffc5b368acab9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77f94f917f6b9e3606675a560edae0318ceb1ad1
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345008"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836337"
 ---
 # <a name="configuration-of-com-ports"></a>COM 端口的配置
-
-
-
-
 
 从 Windows 2000 开始，COM 端口是一种串行端口符合以下附加要求：
 
@@ -31,11 +27,3 @@ ms.locfileid: "63345008"
 默认情况下，类安装程序的端口的组合操作[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)和串行函数驱动程序将设备配置为 COM 端口。
 
 端口类安装程序和序列如何创建一个 COM 端口的 COM 端口设备接口的信息，请参阅[外部命名的 COM 端口](external-naming-of-com-ports.md)。
-
- 
-
- 
-
-
-
-

@@ -6,18 +6,14 @@ keywords:
 - 串行设备 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd3d60da623fc86acc632d56fdefc16d66b00aef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b0e7356d629c1f72f76f93304a7b1b8ea9481606
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331143"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836357"
 ---
 # <a name="installing-serial-devices"></a>安装串行设备
-
-
-
-
 
 本部分包括有关安装串行设备的以下主题：
 
@@ -34,11 +30,3 @@ ms.locfileid: "63331143"
 有关安装设备的常规信息，请参阅[设备安装设计指南](https://msdn.microsoft.com/library/windows/hardware/ff541156)部分。
 
 有关串行设备的详细信息，请参阅[串行设备和驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff547451)。
-
- 
-
- 
-
-
-
-

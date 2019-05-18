@@ -4,12 +4,12 @@ description: 外围设备 SerCx2 托管的串行端口上的 KMDF 驱动程序�
 ms.assetid: EDE62C5E-3563-42EE-884E-DF473CD724A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f57862d4c09e57d3c92c30ce9640b2a7b1dcfddc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 970cc05ef233cbdee6ba25c1f13316ef3fe18345
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324233"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836318"
 ---
 # <a name="connecting-a-kmdf-peripheral-driver-to-a-serial-port"></a>将 KMDF 外设驱动程序连接到串行端口
 
@@ -111,7 +111,7 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-在前面的代码示例中， **DECLARE\_UNICODE\_字符串\_大小**宏创建的一个初始化声明[ **UNICODE\_字符串**](https://msdn.microsoft.com/library/windows/hardware/ff564879)名为变量`szDeviceName`具有缓冲区足够大以包含资源中心使用的格式中的设备路径名称。 Ntdef.h 标头文件中定义此宏。 **资源\_中心\_路径\_大小**常量设备路径名称中指定的字节数。 **资源\_中心\_创建\_路径\_FROM\_ID**宏生成的设备路径名称从连接 id。 **资源\_集线器\_路径\_大小**并**资源\_中心\_创建\_路径\_FROM\_ID**是Reshub.h 标头文件中定义。
+在前面的代码示例中， **DECLARE\_UNICODE\_字符串\_大小**宏创建的一个初始化声明**UNICODE\_字符串**变量名为`szDeviceName`具有缓冲区足够大以包含资源中心使用的格式中的设备路径名称。 Ntdef.h 标头文件中定义此宏。 **资源\_中心\_路径\_大小**常量设备路径名称中指定的字节数。 **资源\_中心\_创建\_路径\_FROM\_ID**宏生成的设备路径名称从连接 id。 **资源\_集线器\_路径\_大小**并**资源\_中心\_创建\_路径\_FROM\_ID**是Reshub.h 标头文件中定义。
 
 下面的代码示例使用的设备路径名称来打开文件句柄 (名为`SerialIoTarget`) 到串行连接的外围设备。
 

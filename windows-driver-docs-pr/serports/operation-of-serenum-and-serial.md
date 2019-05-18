@@ -12,18 +12,14 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c8db2faeeada5f76c39429fad50a1cab12c5c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64ddc6f95f6950807b5d18eb0b05d07814da8adf
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331121"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836346"
 ---
 # <a name="operation-of-serenum-and-serial"></a>Serenum 和串行的操作
-
-
-
-
 
 本部分包括有关操作系统 Serenum 和序列的以下主题：
 
@@ -55,18 +51,10 @@ ms.locfileid: "63331121"
 
 有关操作系统 Serenum 和序列的详细信息，请参阅以下资源：
 
--   [Serenum 驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff547040)
+- [ntddser header](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/0)
 
--   [串行驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/ff547476)
+- [串行端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_serports/)
 
--   示例中的代码\\src\\内核\\串行和\\src\\内核\\serenum 目录中 Windows Driver Kit (WDK)
+- 示例中的代码\\src\\内核\\串行和\\src\\内核\\serenum 目录中 Windows Driver Kit (WDK) https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum
 
--   支持的 Microsoft Windows SDK 中的 Windows 基本服务的通信资源
-
- 
-
- 
-
-
-
-
+- 支持的 Microsoft Windows SDK 中的 Windows 基本服务的通信资源

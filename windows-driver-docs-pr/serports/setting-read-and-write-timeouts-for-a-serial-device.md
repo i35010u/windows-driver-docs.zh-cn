@@ -10,18 +10,14 @@ keywords:
 - 写入 WDK 串行设备的超时值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7576f6bda821226044325bd87028643a413f907c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bcd54563491a8ea7d9cbb4593ee168f38adb54f
+ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324230"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65836281"
 ---
 # <a name="setting-read-and-write-timeouts-for-a-serial-device"></a>设置串行设备的读取和写入超时
-
-
-
-
 
 可以使用客户端[ **IOCTL\_串行\_设置\_超时**](https://msdn.microsoft.com/library/windows/hardware/ff546772)设置超时值的系统提供 Serial.sys 驱动程序用于读取和写入请求请求数。 Serial.sys 继续传输字节，直到传输请求的字节数或发生超时事件。
 
@@ -31,14 +27,6 @@ Serial.sys 中的超时操作是符合的用户模式下操作[COM 端口](confi
 
 有关读取和写入超时的详细信息，请参阅：
 
--   [**串行\_超时**](https://msdn.microsoft.com/library/windows/hardware/hh439614) Ntddser.h 标头文件中 Windows Driver Kit (WDK) 中的结构。
+- [**串行\_超时**](https://msdn.microsoft.com/library/windows/hardware/hh439614) Ntddser.h 标头文件中 Windows Driver Kit (WDK) 中的结构。
 
--   [ **SetCommTimeouts** ](https://msdn.microsoft.com/library/windows/desktop/aa363437)函数和[ **COMMTIMEOUTS** ](https://msdn.microsoft.com/library/windows/desktop/aa363190) Windows 基本服务支持的结构Windows SDK。
-
- 
-
- 
-
-
-
-
+- [ **SetCommTimeouts** ](https://msdn.microsoft.com/library/windows/desktop/aa363437)函数和[ **COMMTIMEOUTS** ](https://msdn.microsoft.com/library/windows/desktop/aa363190) Windows 基本服务支持的结构Windows SDK。

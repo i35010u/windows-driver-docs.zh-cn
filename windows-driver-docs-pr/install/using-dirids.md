@@ -9,12 +9,12 @@ keywords:
 - 目录 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e977273eaca5dc17251a24b73451bce303047e5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef026ea881e2e5a2f130c8b99832cd9a1df69bdb
+ms.sourcegitcommit: cab03f9f6b1143a29be74a894e917b26762a42ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339420"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852350"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -222,11 +222,11 @@ ms.locfileid: "63339420"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16425</strong></p></td>
-<td align="left"><p><em>%SystemRoot%\system32</em> （适用于 Windows (WOW64) 运行在 Windows 下的 Microsoft Win32 用户模式应用程序）</p></td>
+<td align="left"><p><em>%SystemRoot%\SysWOW64</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16426</strong></p></td>
-<td align="left"><p><em>程序文件</em>（适用于 Win32 的 WOW64 下运行的用户模式应用程序）</p></td>
+<td align="left"><p><em>%ProgramFiles(x86)%</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16427</strong></p></td>
@@ -234,7 +234,7 @@ ms.locfileid: "63339420"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16428</strong></p></td>
-<td align="left"><p><em>程序 Files\Common</em> （适用于 Win32 的 WOW64 下运行的用户模式应用程序）</p></td>
+<td align="left"><p><em>%ProgramFiles(x86)%\Common</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16429</strong></p></td>
