@@ -2,9 +2,9 @@
   items:
     - name: 串行控制器驱动程序设计指南
       href: index.md
-    - name: 串行控制器驱动程序概述
+    - name: 串行控制器驱动程序
       items:
-        - name: 串行控制器驱动程序概述
+        - name: 串行控制器驱动程序
           href: serial-drivers-overview.md
         - name: 串行 I/O 请求接口
           items:
