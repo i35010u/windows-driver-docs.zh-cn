@@ -10,12 +10,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: aaca04abe62b2fe578eebd4e307cbce31ecec1d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59443b939b3fcb1d12aa4f3c2bc78e1ea389f409
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378499"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875096"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -42,6 +42,8 @@ ms.locfileid: "63378499"
 
 
 可以使用 Microsoft Visual Studio 2017 中使用 Windows Driver Kit (WDK) 来构建运行 Windows 7 及更高版本的驱动程序。
+
+确定哪个版本的 WDF 若要使用的帮助，请参阅[应使用哪个框架版本？](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)。
 
 用于 Windows 10 中的 UMDF 驱动程序的新功能的信息，请参阅[What's New for WDF 驱动程序](index.md)。
 

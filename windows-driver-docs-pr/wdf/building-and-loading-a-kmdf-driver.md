@@ -14,28 +14,34 @@ keywords:
 - 生成实用工具 WDK、 KMDF
 - KMDF 驱动程序 WDK KMDF，构建
 - KMDF 驱动程序 WDK KMDF，加载
-ms.date: 04/20/2017
+ms.date: 05/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d70338ba8c3834b803fad13de109cea49061ca98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcc04ad4692da02dd413c3189083b314c06f81de
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362707"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875089"
 ---
 # <a name="building-and-loading-a-wdf-driver"></a>生成和加载 WDF 驱动程序
 
 
-本主题介绍如何在 Visual Studio 中选择目标操作系统和驱动程序项目的 framework 版本。 它还介绍了共同安装程序以及如何确定是否应驱动程序包中包括此组件。
+本主题介绍如何在 Visual Studio 中选择目标操作系统和驱动程序项目的 framework 版本。
+
+若要确定是否需要的驱动程序包中包含可再发行框架组件，请参阅[可再发行框架组件](installation-components-for-kmdf-drivers.md)。
+
 
 ## <a name="which-framework-version-should-i-use"></a>应使用哪个框架版本？
 
+*   若要针对 Windows XP，请使用 WDF 1.9 或更早版本。
+*   若要针对 Windows Vista、 Windows 7 或 Windows 8，使用 WDF 1.11 或更早版本。
+*   到目标 Windows 8.1 中，使用 1.13 或更早版本，KMDF 或 UMDF 1.x 中或 UMDF 2.0。
+*   到目标 Windows 10 版本 1507年、 使用 1.15 或更早版本，KMDF 或 UMDF 1.x 中或 UMDF 2.15 或更早版本。
 
-如果您的驱动程序需要仅在 Windows 8.1 上运行，请使用内核模式驱动程序框架 (KMDF) 版本 1.13 或用户模式驱动程序框架 (UMDF) 2.0 版。
+有关 KMDF 和 UMDF 版本的详细信息，请参阅[KMDF 版本历史记录](kmdf-version-history.md)并[UMDF 版本历史记录](umdf-version-history.md)。
 
-如果您的驱动程序必须在操作系统中工作，早于 Windows 8.1，我们建议你使用 KMDF 或 UMDF 版本 1.11。
-
-可以使用 Windows Driver Kit (WDK) 随 Windows 8.1 为生成 KMDF 1.9、 1.11，和 1.13 驱动程序，以及 UMDF 1.9 1.11，和 2.0 的驱动程序。
+* [KMDF 版本历史记录](kmdf-version-history.md)
+* [UMDF 版本历史记录](umdf-version-history.md)
 
 ## <a name="how-do-i-set-the-versions-in-visual-studio"></a>如何将版本设置 Visual Studio 中？
 
@@ -44,19 +50,15 @@ ms.locfileid: "63362707"
 
 否则，请执行以下步骤：
 
--   更改**项目配置**中设置**Configuration Manager**为适当的值 (如**Win7 调试**)。
--   更改 KMDF\_版本\_一些服务障碍或 UMDF\_版本\_中的次要值[驱动程序模型设置](https://msdn.microsoft.com/windows-drivers/develop/driver_model_settings_properties_for_driver_projects)为适当的值 （如 11)。
+-   右键单击解决方案并选择**Configuration Manager**。  设置**项目配置**到所需的值 (例如**调试**)。
+-   右键单击驱动程序项目，然后选择**属性**。  打开**配置属性-> 驱动程序设置-> 驱动程序模型**。  更改**KMDF 版本次要 （目标版本）** 或**UMDF 版本次要 （目标版本）** 中的值[驱动程序模型设置](../develop/driver-model-settings-properties-for-driver-projects.md)到所需的值。  有关信息**KMDF 版本次要 （最低要求）** 并**UMDF 版本次要 （最低要求）**，请参阅[指定最小所需](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows#specifying-minimum-required)。
+
+可以使用 Windows Driver Kit (WDK) 随 Windows 10 构建 KMDF 1.9 1.29 驱动程序，以及 UMDF 1.9 2.29 驱动程序。
 
 有关 KMDF 和 UMDF 版本的详细信息，请参阅[KMDF 版本历史记录](kmdf-version-history.md)并[UMDF 版本历史记录](umdf-version-history.md)。
 
-## <a name="when-do-i-need-to-include-a-co-installer-or-msu-in-my-driver-package"></a>何时需要我的驱动程序包中包括的共同安装程序或.msu？
-
-
-如果生成了驱动程序的 Windows 8.1 使用 KMDF 1.13 或 UMDF 2.0，您不需要在 INF 文件中包含共同安装程序、 自定义安装程序或引用。
-
-如果您的驱动程序必须在操作系统中工作，早于 Windows 8.1，我们建议你使用 KMDF 或 UMDF 版本 1.11 和驱动程序包中包括 Microsoft 提供 framework 更新。
-
-Framework 更新，使其可以运行使用更高版本的 framework 版本而不是包含在操作系统构建的驱动程序。 例如，在 Windows 8 中包含 KMDF 1.11。 但可以在 Windows Vista 或 Windows 7 上运行一个 KMDF 1.11 的驱动程序。 您可以执行此操作之前，但是，您必须确保 KMDF 1.11 框架库取代了早期版本的操作系统中包括的框架库 (在这种情况下，KMDF 1.7 和 KMDF 1.9 分别)。 执行此操作的重新分发的 Microsoft 提供共同安装程序或.msu 文件与驱动程序包。
+* [KMDF 版本历史记录](kmdf-version-history.md)
+* [UMDF 版本历史记录](umdf-version-history.md)
 
 ## <a name="linking-and-loading"></a>链接和加载
 
@@ -66,12 +68,4 @@ Framework 更新，使其可以运行使用更高版本的 framework 版本而�
 存根 （stub） 文件包含一个特殊的入口点例程：**FxDriverEntry**。 MSBuild 设置存根 （stub） 的**FxDriverEntry**例程作为基于框架的驱动程序的初始入口点。
 
 当操作系统加载基于 framework 的驱动程序时，它还会加载存根 （stub） 文件和库的加载程序。 接下来，系统将调用存根 （stub） 文件**FxDriverEntry**例程。 然后，此例程调用加载程序。 加载程序将确定框架库，该驱动程序要求，然后加载正确的版本[版本的库](framework-library-versioning.md)作为内核模式服务 （如果尚未加载）。 最后，库调用的驱动程序[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff540807)例程。
-
- 
-
- 
-
-
-
-
 

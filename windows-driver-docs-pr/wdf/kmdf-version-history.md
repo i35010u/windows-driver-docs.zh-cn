@@ -9,12 +9,12 @@ keywords:
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 358d5eb53fc4005f17577f79c2644b2074423ae4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b965b716facb8a1b4d2eaa19fe3bee29a8af4138
+ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390185"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65875099"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -42,6 +42,8 @@ ms.locfileid: "63390185"
 |1.0|仅下载|无|Windows XP 及更高版本|
 
 可以使用 Microsoft Visual Studio 2017 中使用 Windows Driver Kit (WDK) 来构建运行 Windows 7 及更高版本的驱动程序。
+
+确定哪个版本的 WDF 若要使用的帮助，请参阅[应使用哪个框架版本？](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)。
 
 回调的完整列表和方法，以及哪个框架和它们适用于版本，请参阅[WDF 回调摘要和方法](https://msdn.microsoft.com/library/windows/hardware/dn265591)。
 
