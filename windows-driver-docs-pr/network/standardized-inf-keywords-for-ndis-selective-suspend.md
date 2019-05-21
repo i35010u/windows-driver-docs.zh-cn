@@ -34,7 +34,7 @@ ms.locfileid: "65405279"
 
  
 
- **\*SelectiveSuspend** INF 关键字是一个枚举的关键字。 下表描述了可能 INF 条目 **\*SelectiveSuspend** INF 关键字。 此表中的列描述枚举关键字的以下属性：
+**\*SelectiveSuspend** INF 关键字是一个枚举的关键字。 下表描述了可能 INF 条目 **\*SelectiveSuspend** INF 关键字。 此表中的列描述枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
 必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表**NDI\\params\\** 关键网络适配器。
