@@ -4,22 +4,19 @@ description: 移动运营商方案
 ms.assetid: 68ebee74-9c34-489d-9a88-02493ac3b5fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a10b9bab713e497d5f01e7a6b1faf6a2f92eda
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64726b5a3c57666465bc9b439b025c84e4c03f10
+ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522165"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940371"
 ---
 # <a name="mobile-operator-scenarios"></a>移动运营商方案
 
 
 使用在本部分文档来帮助您了解有关不同移动运营商方案。
 
--   移动计划
-
-    - [促销内容](mobile-plans-promotional-content.md)
-    - [异步执行](mobile-plans-asynchronous-fulfillment.md)
+-   [移动计划](mobile-plans.md)
 
 -   [创建和配置 Internet 共享体验](creating-and-configuring-internet-sharing-experiences.md)
 

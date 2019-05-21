@@ -8,12 +8,12 @@ keywords:
 - ECHO
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8900b9f6098ccf2c560d21b4cf941c484ff089c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abc15862af891762dc6c244b1f8f7767f2705386
+ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357167"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940378"
 ---
 # <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
 
@@ -460,7 +460,7 @@ f. 重新启动目标计算机。
 
 导航到 WDK 安装中的工具文件夹并找到 DevCon 工具。 例如，在以下文件夹中查看：
 
-*C:\\Program Files (x86)\\Windows 工具包\\10.0\\工具\\x64\\devcon.exe*内置的驱动程序包的目标上创建一个文件夹 (例如， *C:\\EchoDriver*)。 从主计算机上的前面所述的内置驱动程序复制的所有文件并将其保存到目标计算机创建的文件夹。
+*C:\\Program Files (x86)\\Windows 工具包\\10\\工具\\x64\\devcon.exe*内置的驱动程序包的目标上创建一个文件夹 (例如， *C:\\EchoDriver*)。 从主计算机上的前面所述的内置驱动程序复制的所有文件并将其保存到目标计算机创建的文件夹。
 
 在主机系统上找到.cer 证书，而是在包含内置的驱动程序文件的文件夹中的主机计算机上的同一文件夹中。 在目标计算机上，右键单击该证书文件，然后单击**安装**，然后按照提示安装测试证书。
 
