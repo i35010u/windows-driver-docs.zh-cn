@@ -3,12 +3,12 @@ Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f66484e9ae50d7bcead05619b729f403c0c046
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e6d918c195446084dd181b2fe5482ea380e50e9a
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405086"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969593"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
@@ -37,13 +37,13 @@ Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱�
 
 USB 3.0 堆栈是 Windows 8 中的新增功能。 Microsoft 使用内核模式驱动程序框架 (KMDF) 接口来创建新的驱动程序。 KMDF 驱动程序模型可以降低复杂性并提高了稳定性。
 
-### <a href="" id="usb-3-0-host-controller-driver--usbxhci-sys"></a>USB 3.0 主机控制器驱动程序 (Usbxhci.sys)
+### <a href="" id="usb-3-0-host-controller-driver-usbxhcisys"></a>USB 3.0 主机控制器驱动程序 (Usbxhci.sys)
 
 XHCI 驱动程序是 USB 3.0 主机控制器驱动程序。 XHCI 驱动程序的责任包括初始化 MMIO 寄存器和 xHCI 控制器硬件的主机基于内存的数据结构映射传输到传输请求的块，从较高层驱动程序请求和提交将请求发送到硬件。 完成后传输，驱动程序处理从硬件传输完成事件并将事件驱动程序堆栈中向上传播。 它还可以控制 xHCI 控制器设备槽和终结点上下文。
 
 XHCI 驱动程序是 Windows 8 中的新增功能并不是扩展了早期版本的操作系统中提供的 eHCI 微型端口驱动程序。 新的驱动程序通过使用内核模式驱动程序框架 (KMDF) 接口编写，并为所有控制器电源管理和即插即用事件使用 KMDF。 Windows 加载 xHCI 驱动程序作为函数设备对象 (FDO) 在主控制器设备堆栈中。
 
-### <a href="" id="-usb-host-controller-extension--ucx01000-sys--"></a> USB 主机控制器扩展 (Ucx01000.sys)
+### <a href="" id="-usb-host-controller-extension-ucx01000sys"></a> USB 主机控制器扩展 (Ucx01000.sys)
 
 USB 主控制器扩展驱动程序 （KMDF 的扩展） 为基础的类特定于主机控制器驱动程序，如 xHCI 驱动程序的新扩展。 新的驱动程序是可扩展的旨在支持其他类型的预期在将来开发的主控制器驱动程序。 中心驱动程序的常见抽象的接口提供对主机控制器驱动程序，队列请求的通用机制和重写某些所选的函数用作 USB 主机控制器扩展。 所有 I/O 请求由上部的驱动程序覆盖范围都启动主机控制器扩展驱动程序之前 xHCI 驱动程序。 收到的 I/O 请求时，主机控制器扩展验证请求，然后将请求转发到与目标终结点关联的正确 KMDF 队列。 XHCI 驱动程序，当准备好进行处理，请求从队列中检索。 USB 主控制器扩展驱动程序的任务是：
 
@@ -52,7 +52,7 @@ USB 主控制器扩展驱动程序 （KMDF 的扩展） 为基础的类特定于
 -   管理和控制与主机控制器相关联的根中心的操作。
 -   客户端驱动程序，可配置的实现功能，如链接 MDLs、 流和等等。
 
-### <a href="" id="usb-hub-driver-usbhub3-sys"></a>USB 集线器驱动程序 (Usbhub3.sys)
+### <a href="" id="usb-hub-driver-usbhub3sys"></a>USB 集线器驱动程序 (Usbhub3.sys)
 
 新的中心驱动程序，在 3.0 版的设备的 USB 驱动程序堆栈使用 KMDF 驱动程序模型。 中心驱动程序主要执行以下任务：
 

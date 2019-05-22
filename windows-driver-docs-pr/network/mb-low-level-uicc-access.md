@@ -7,12 +7,12 @@ keywords:
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 335dac6a140dad329d35b83e79080c598e253840
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: fbfa6884a96307a0cee5d809f14d98f13efbc8eb
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405222"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969591"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低级别 UICC 访问
 
@@ -302,14 +302,14 @@ MBIM_MS_SET_UICC_APDU 结构使用以下 MBIM_MS_UICC_SECURE_MESSAGING 和 MBIM_
 
 ##### <a name="mbimmsuiccsecuremessaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 在任务栏的搜索框中键入 | 值 | 描述 |
 | --- | --- | --- |
 | MBIMMsUiccSecureMessagingNone | 0 | 没有安全消息传送。 |
 | MBIMMsUiccSecureMessagingNoHdrAuth | 1 | 安全消息传送，未经过身份验证的命令标头。 |
 
 ##### <a name="mbimmsuiccclassbytetype"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
 | --- | --- | --- |
 | MBIMMsUiccInterindustry | 0 | ISO 7816 4 中的第一个 interindustry 定义根据定义。 |
 | MBIMMsUiccExtended | 1 | ETSI 102 221 中的扩展定义根据定义。 |
@@ -437,7 +437,7 @@ MBIM_SET_MS_UICC_RESET 结构包含指定主机的传递操作。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)。 |
 
-#### <a name="mbimmsuiccpassthroughaction"></a>MBIM_MS_UICC_PASSTHROUGH_ACTION
+#### < a 名称 = >"MBIM_MS_UICC_PASSTHROUGH_ACTION"</a> MBIM_MS_UICC_PASSTHROUGH_ACTION
 
 MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义 MBIM 函数传递操作，主机可以指定的类型。
 
@@ -456,11 +456,11 @@ MBIM_MS_UICC_RESET_INFO 结构包含 MBIM 函数的传递状态。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)。 |
 
-#### <a name="mbimmsuiccpassthroughstatus"></a>MBIM_MS_UICC_PASSTHROUGH_STATUS
+#### < a 名称 = >"MBIM_MS_UICC_PASSTHROUGH_STATUS"</a> MBIM_MS_UICC_PASSTHROUGH_STATUS
 
 MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义主机的传递状态 MBIM 函数指定的类型。
 
-| 类型 | ReplTest1 |
+| 类型 | 值 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisabled | 0 |
 | MBIMMsUiccPassThroughEnabled | 1 |

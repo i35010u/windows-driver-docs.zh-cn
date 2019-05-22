@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6182a2c5cced1b80dcaa4e22884105a352f58407
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.openlocfilehash: 41632fed9b18d2a399753e975463219542dbca94
+ms.sourcegitcommit: 998c5840ce92a50ae42127101e4ecc19a5e362c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65701991"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65996957"
 ---
 # <a name="fsctlsetreparsepoint-control-code"></a>FSCTL\_设置\_重新分析\_点控制代码
 
@@ -75,7 +75,7 @@ FSCTL\_设置\_重新分析\_点控制代码设置重分析点上的文件或目
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_EAS_NOT_SUPPORTED</strong></p></td>
-<td align="left"><p>无法对包含扩展的属性的文件设置重分析点。 这是一个错误代码。</p></td>
+<td align="left"><p>如果此请求是在事务中，无法对文件设置重分析点。 这是一个错误代码。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_IO_REPARSE_DATA_INVALID</strong></p></td>

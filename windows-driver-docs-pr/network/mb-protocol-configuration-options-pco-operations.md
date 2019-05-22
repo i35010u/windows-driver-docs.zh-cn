@@ -6,12 +6,12 @@ keywords:
 - MB PCO 选项，移动宽带 PCO 选项 MB 协议配置选项、 移动宽带协议配置选项，WDK 网络驱动程序、 MBB 微型端口驱动程序
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d29fffd17776b8ed5e278b3c52c24bec49e627c
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: c83cb2dd99ed63b21b0f6b99d35506c87eba3814
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405176"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969595"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项 (PCO) 操作
 
@@ -103,7 +103,7 @@ Service UUID = **3d01dcc5-fef5-4d05-0d3a-bef7058e9aaf**
 | MBIMPcoTypeComplete | 0 | 指定完整的 PCO 结构将向上传递，如从网络接收和标头真实地反映了在 PCO 结构八位字节 3 3GPP TS24.008 规范中定义的协议。 |
 | MBIMPcoTypePartial | 1 | 指定调制解调器将只传递了 PCO 结构，它从网络接收的子集。 标头匹配 PCO 结构定义中 3GPP TS24.008 规范，但可能不是有效的八位位组 3 的"配置协议"。 |
 
-##### <a name="mbimpcovalue"></a>MBIM_PCO_VALUE
+##### <a name="MBIM_PCO_TYPE"></a>MBIM-PCO-TYPE
 
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |

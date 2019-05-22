@@ -3,12 +3,12 @@ Description: 本主题介绍控制传输和如何客户端驱动程序应将控�
 title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af468cb6a9960169bedc56e37253691ac01f8b3b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: d7ae93ba4ef0000daf1cedfaa0f56bf09b108381
+ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405081"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969598"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
@@ -193,7 +193,7 @@ ms.locfileid: "65405081"
 
     通过将合并的数据包映射到的设备描述符 (请参阅表 9-8) 结构，我们可以看到这些字段和值：
 
-    | 字段                  | 大小 | 值  | 描述                                                                       |
+    | 字段                  | 大小 | ReplTest1  | 描述                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | 设备描述符，它是 18 个字节的长度。                               |
     | **bDescriptorType**    | 1    | 0x01   | 描述符类型是设备。                                                    |
@@ -231,7 +231,7 @@ ms.locfileid: "65405081"
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [WinUSB](winusb.md)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 
 客户端驱动程序可以枚举管道之前，请确保满足这些要求：
@@ -648,7 +648,7 @@ VOID  GetFirmwareVersion(
 }  
 ```
 
-## <a name="how-to-send-a-control-transfer-for-getstatus---umdf"></a>如何将发送 GET 控制传输\_状态-UMDF
+##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>如何将发送 GET 控制传输\_状态-UMDF
 
 
 此过程说明如何客户端驱动程序可以发送 GET 控制传输\_状态命令。 请求的接收方是设备，并请求获取信息以位为单位 D1 D0。 有关详细信息，请参阅 USB 规范中的图 9-4。
