@@ -14,7 +14,7 @@ ms.locfileid: "63391287"
 # <a name="version-section-directives"></a>\[版本\]部分指令
 
 
-本主题介绍*\[版本\]* 部分 INF 中的指令。
+本主题介绍 *\[版本\]* 部分 INF 中的指令。
 
 收件箱的所有驱动程序不能引用 Layout.inf 文件。
 

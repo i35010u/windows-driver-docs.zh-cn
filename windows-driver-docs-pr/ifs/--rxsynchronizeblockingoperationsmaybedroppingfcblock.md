@@ -82,7 +82,7 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 <a name="remarks"></a>备注
 -------
 
- **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**例程会同步到相同的工作队列的阻塞 I/O 请求。 使用 RDBSS  **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**内部同步名为管道操作。 工作队列是引用文件对象关联的扩展插件 (FOBX) 使用的队列**pFcb** RX 成员\_指向上下文结构*RxContext*。
+**\_\_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock** 例程会同步到相同的工作队列的阻塞 I/O 请求。 使用 RDBSS  **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**内部同步名为管道操作。 工作队列是引用文件对象关联的扩展插件 (FOBX) 使用的队列**pFcb** RX 成员\_指向上下文结构*RxContext*。
 
 可以使用网络微型重定向 **\_ \_RxSynchronizeBlockingOperationsMaybeDroppingFcbLock**来同步对单独的队列是由网络微型重定向维护操作。
 
@@ -139,7 +139,7 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 
 [**RxResumeBlockedOperations\_Serially**](https://msdn.microsoft.com/library/windows/hardware/ff554701)
 
-[**\_\_RxSynchronizeBlockingOperations**](https://msdn.microsoft.com/library/windows/hardware/ff557377)
+[ **\_\_RxSynchronizeBlockingOperations**](https://msdn.microsoft.com/library/windows/hardware/ff557377)
 
  
 

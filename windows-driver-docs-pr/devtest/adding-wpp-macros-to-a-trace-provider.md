@@ -33,7 +33,7 @@ ms.locfileid: "63332057"
 
 -   一个[WPP\_控制\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff556186)定义每个源文件包含其他 WPP 宏指令。
 
-    此定义指定驱动程序的控件 GUID 和驱动程序定义的跟踪标志名称。 定义必须添加到源代码文件之前**\#包括**语句包括文件的跟踪消息标头文件。
+    此定义指定驱动程序的控件 GUID 和驱动程序定义的跟踪标志名称。 定义必须添加到源代码文件之前 **\#包括** 语句包括文件的跟踪消息标头文件。
 
 -   一个[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)宏调用驱动程序的源代码。
 
