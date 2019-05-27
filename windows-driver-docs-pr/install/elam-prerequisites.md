@@ -19,7 +19,7 @@ ms.locfileid: "63346158"
 ## <a name="antimalware-vendor-participation-requirements"></a>反恶意软件供应商参与要求
 
 
-Microsoft 要求早期启动反恶意软件供应商是的成员 **[Microsoft 病毒倡议 (MVI)](https://www.microsoft.com/wdsi/alliances/virus-initiative)**。 此成员资格可确保供应商信誉正行业 active 反恶意软件社区参与者。 如果你不 MVI 计划的成员，并且认为自己需要的 ELAM 的使用，请联系我们**[ mvi@microsoft.com ](mailto:mvi@microsoft.com)** 有关其他信息。
+Microsoft 要求早期启动反恶意软件供应商是的成员 **[Microsoft 病毒倡议 (MVI)](https://www.microsoft.com/wdsi/alliances/virus-initiative)**。 此成员资格可确保供应商信誉正行业 active 反恶意软件社区参与者。 如果你不 MVI 计划的成员，并且认为自己需要的 ELAM 的使用，请联系我们 **[mvi@microsoft.com](mailto:mvi@microsoft.com)** 有关其他信息。
 
 
 ## <a name="windows-hardware-quality-lab-whql-submission"></a>Windows 硬件质量实验室 (WHQL) 提交

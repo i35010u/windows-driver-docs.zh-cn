@@ -92,9 +92,9 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 此项是可选的。 安装设备的首选的方法是以忽略此项，并允许 Windows 在可能的情况的受信任的系统线程上下文中安装该设备。 但是，如果设备绝对需要登录的用户安装时的设备，设备 INF 中包括此项。
 
 <a href="" id="requestadditionalsoftware"></a>**RequestAdditionalSoftware**  
-指定的所有 (如果**\\*** 指定) 或指定的设备列表可能需要比什么通过安装其他软件[驱动程序包](driver-packages.md)设备。 例如， **RequestAdditionalSoftware**条目可以用来安装新的或更新驱动程序包中未包括的特定于设备的软件。
+指定的所有 (如果 **\\**\* 指定) 或指定的设备列表可能需要比什么通过安装其他软件[驱动程序包](driver-packages.md)设备。 例如， **RequestAdditionalSoftware**条目可以用来安装新的或更新驱动程序包中未包括的特定于设备的软件。
 
-**请注意**如果**\\*** 未指定，则通过指定每个设备**RequestAdditionalSoftware**内必须定义入口[ **INF模型部分**](inf-models-section.md)。
+**请注意**如果 **\\**\* 未指定，则通过指定每个设备 **RequestAdditionalSoftware**内必须定义入口 [**INF模型部分**](inf-models-section.md)。
 
  
 
