@@ -4,12 +4,12 @@ description: 在虚拟端口上设置接收筛选器
 ms.assetid: F0137D59-1701-4DFC-BB30-27E477FC0706
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50fd4d697706b1d4dfc80878dfa079de80d31d11
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e4a148d029ee513459de3a3cabf5f58d3625056f
+ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405283"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213092"
 ---
 # <a name="setting-a-receive-filter-on-a-virtual-port"></a>在虚拟端口上设置接收筛选器
 
@@ -69,7 +69,7 @@ ms.locfileid: "65405283"
 
 通过 OID 方法请求成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_接收\_筛选器\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567181)结构与新的筛选器标识符。
 
-## <a name="using-the-ndisreceivefilterfieldmacheadervlanuntaggedorzero-flag"></a>使用 NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_UNTAGGED\_或\_零标志
+## <a name="using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag"></a>使用 NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_UNTAGGED\_或\_零标志
 
 
 **标志**的成员[ **NDIS\_接收\_筛选器\_字段\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567169)结构指定为接收筛选器执行的操作。 以下几点适用于**NDIS\_接收\_筛选器\_域\_MAC\_标头\_VLAN\_UNTAGGED\_或\_零**标志：

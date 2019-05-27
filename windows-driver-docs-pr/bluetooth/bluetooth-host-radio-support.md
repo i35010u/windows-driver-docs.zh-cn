@@ -4,12 +4,12 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc48d59059ad5eb2aa090b1444e26585545c58fa
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: f2241d0c80f733b78272780dd114b48acb6d5549
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106359"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051640"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
@@ -106,31 +106,9 @@ Windows 8.1、 Windows 8、 Windows 7 和 Windows Vista 支持供应商提供蓝
 |{00001124-0000-1000-8000-00805f9b34fb}|HID|
 |{00001126-0000-1000-8000-00805f9b34fb}|HCRP|
 
-### <a name="windows-xp-bluetooth-profiles"></a>Windows XP 蓝牙配置文件
+### <a name="windows-bluetooth-profiles"></a>Windows 蓝牙配置文件
 
-下表列出了不受支持的蓝牙配置文件和协议。 请注意，在此上下文中，"不受支持"意味着 Windows 不会不会自动生成 PDO 或 devnode 或显示添加新的硬件向导。 因此，一些内置配置文件和协议处理，就好像它们是不受支持。 例如，SDP 是一种现成协议的蓝牙服务 id，但不需要 PDO。 SDP 协议因此标记为 Bth.inf 中不受支持，以避免在 PDO 创建
-
-|服务 ID|在框|描述|
-|----|----|----|
-|{0000110a-0000-1000-8000-00805f9b34fb}|否|音频源|
-|{0000110c-0000-1000-8000-00805f9b34fb}|否|AV 远程目标|
-|{00001001-0000-1000-8000-00805f9b34fb}|否|浏览组服务|
-|{00001111-0000-1000-8000-00805f9b34fb}|否|传真服务|
-|{0000111f-0000-1000-8000-00805f9b34fb}|否|Handsfree 音频网关|
-|{00001112-0000-1000-8000-00805f9b34fb}|否|耳机音频网关|
-|{00001104-0000-1000-8000-00805f9b34fb}|否|红外移动通信 (IRMC) 同步服务|
-|{00001107-0000-1000-8000-00805f9b34fb}|否|IRMC 同步命令|
-|{00001106-0000-1000-8000-00805f9b34fb}|是|Obex 文件传输|
-|{00001105-0000-1000-8000-00805f9b34fb}|是|对象推送|
-|{00001117-0000-1000-8000-00805f9b34fb}|否|平移组临时网络 (GN)|
-|{00001116-0000-1000-8000-00805f9b34fb}|否|平移网络接入点 (NAP)|
-|{00001115-0000-1000-8000-00805f9b34fb}|是|平移 U|
-|{0000112e-0000-1000-8000-00805f9b34fb}|否|电话薄客户端设备 (PCE) 服务|
-|{0000112f-0000-1000-8000-00805f9b34fb}|否|通讯簿服务器设备 (PSE) 服务|
-|{00001200-0000-1000-8000-00805f9b34fb}|是|即插即用服务|
-|{00001002-0000-1000-8000-00805f9b34fb}|否|公共浏览组服务|
-|{00001000-0000-1000-8000-00805f9b34fb}|是|SDP|
-|{0000112d-0000-1000-8000-00805f9b34fb}|否|Sim 访问|
+对于已启用蓝牙的设备或附件以使用您正在运行 Windows 10 的 PC，设备需要使用其中一个受支持蓝牙配置文件。 请参阅在的最新列表[支持蓝牙配置文件](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)。
 
 如果 Ihv 不希望 Windows 自动生成一个为其设备的 PDO，他们可以将服务 GUID 添加到不受支持的服务列表。 有关示例，请参阅 Bth.inf。
 

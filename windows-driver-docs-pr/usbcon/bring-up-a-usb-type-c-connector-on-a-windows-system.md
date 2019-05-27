@@ -3,12 +3,12 @@ Description: 介绍管理 USB 类型 C 连接器和连接器驱动程序的预�
 title: 编写 USB 类型 C 连接器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3258c50cd531c78b2559688a6c1454441c489863
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: fcba2f204ae3c005ded4ce346fb3602b7fe55ccc
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711971"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051646"
 ---
 # <a name="write-a-usb-type-c-connector-driver"></a>编写 USB 类型 C 连接器驱动程序
 
@@ -16,29 +16,29 @@ ms.locfileid: "65711971"
 
 * 如果您的 USB 类型 C 硬件具有处理 power 传递 (PD) 状态机的功能。 否则，请考虑编写 USB 类型 C 端口控制器驱动程序。 有关详细信息，请参阅[写入 USB 类型 C 端口控制器驱动程序](write-a-usb-type-c-port-controller-driver.md)。
 
-* 如果您的硬件不具有嵌入式的控制器。 否则，会加载 Microsoft 提供的现成驱动程序 UcmUcsi.sys。 (请参阅[UCSI 驱动程序](ucsi.md)) 的 ACPI 传输或[编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)对于非 ACPI 传输。 
+* 如果您的硬件不具有嵌入式的控制器。 否则，会加载 Microsoft 提供的现成驱动程序 UcmUcsi.sys。 (请参阅[UCSI 驱动程序](ucsi.md)) 的 ACPI 传输或[编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)对于非 ACPI 传输。
 
-**摘要**:
+## <a name="summary"></a>总结
 
 * UCM 对象使用的类扩展和客户端驱动程序
 * UCM 类扩展提供服务
 * 客户端驱动程序的预期的行为
 
-**正式规范**:
+### <a name="official-specifications"></a>正式规范
 
 * [USB 3.1 和 USB 类型 C 规范](https://go.microsoft.com/fwlink/p/?LinkId=699515)
 * [USB 供电](https://go.microsoft.com/fwlink/p/?LinkID=623310)
 
-**适用于：**:
+### <a name="applies-to"></a>适用对象
 
 * Windows 10
 
-**WDF 版本**:
+### <a name="wdf-version"></a>WDF 版本
 
 * KMDF 版本 1.15
 * UMDF 2.15 版本
 
-**重要的 API**：
+## <a name="important-apis"></a>重要的 API
 
 * [编程参考的 USB 类型 C 连接器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
 
@@ -57,7 +57,7 @@ UCM 旨在通过使用 WDF 类扩展客户端驱动程序模型。 类扩展 (Uc
   * 存根 （stub） 库中，(UcmCxstub.lib)。 库将转换所做的客户端驱动程序的调用，并将其传递到 UcmCx。
   * 标头文件，UcmCx.h。
 
-  您可以编写一个 UCM 客户端驱动程序，在用户模式或内核模式下运行。 与 UMDF 2.x 库; 对于用户模式下，绑定适用于内核模式很 KMDF 1.15。 编程接口是相同的任何一种模式。
+    您可以编写一个 UCM 客户端驱动程序，在用户模式或内核模式下运行。 与 UMDF 2.x 库; 对于用户模式下，绑定适用于内核模式很 KMDF 1.15。 编程接口是相同的任何一种模式。
 
     ![ucm 的 visual studio 配置](images/ucm-vs.png)
 
@@ -117,20 +117,20 @@ UCM 连接器对象 (UCMCONNECTOR) 表示 USB 类型 C 连接器，并且是 UCM
 
 2. 初始化为指定参数中的 USB 类型 C connector [ **UCM\_连接器\_TYPEC\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/mt187930)结构。 这包括运行模式的连接器，它是面向下游的端口，面向上游的端口，或者是双角色是否支持。 在电源连接器时，它还指定 USB 类型 C 当前级别。 可以设计 USB 类型 C 连接器，以便其行为与 3.5mm 音频插孔。 如果硬件支持的功能，必须相应地初始化连接器对象。
 
-    在结构中，还必须注册用于处理数据角色的客户端驱动程序的回调函数。
+   在结构中，还必须注册用于处理数据角色的客户端驱动程序的回调函数。
 
-    此回调函数是与连接器对象，该调用 UCM 类扩展的对象相关联。 此函数必须由客户端驱动程序实现。
+   此回调函数是与连接器对象，该调用 UCM 类扩展的对象相关联。 此函数必须由客户端驱动程序实现。
 
-    [*EVT\_UCM\_CONNECTOR\_SET\_DATA\_ROLE*](https://msdn.microsoft.com/library/windows/hardware/mt187818)  
+   [*EVT\_UCM\_CONNECTOR\_SET\_DATA\_ROLE*](https://msdn.microsoft.com/library/windows/hardware/mt187818)  
     交换到指定角色时附加到合作伙伴连接器的连接器的数据角色。
 
 3. 如果客户端驱动程序的目标是支持 PD 的即处理的连接器的 Power 交付 2.0 硬件实现，还必须初始化[ **UCM\_连接器\_PD\_配置**](https://msdn.microsoft.com/library/windows/hardware/mt187924)结构，它指定 PD 初始化参数。 这包括电源、 流连接器是否 power 接收器或源。
 
-    在结构中，还必须注册用于处理 power 角色的客户端驱动程序的回调函数。
+   在结构中，还必须注册用于处理 power 角色的客户端驱动程序的回调函数。
 
-    此回调函数是与连接器对象，该调用 UCM 类扩展的对象相关联。 此函数必须由客户端驱动程序实现。
+   此回调函数是与连接器对象，该调用 UCM 类扩展的对象相关联。 此函数必须由客户端驱动程序实现。
 
-    [*EVT\_UCM\_CONNECTOR\_SET\_POWER\_ROLE*](https://msdn.microsoft.com/library/windows/hardware/mt187819)  
+   [*EVT\_UCM\_CONNECTOR\_SET\_POWER\_ROLE*](https://msdn.microsoft.com/library/windows/hardware/mt187819)  
     将连接器的 power 角色设置为指定的角色附加到合作伙伴连接器时。
 
 4. 调用[ **UcmConnectorCreate** ](https://msdn.microsoft.com/library/windows/hardware/mt187909)和检索连接器的 UCMCONNECTOR 句柄。 请确保客户端驱动程序已通过调用创建 framework 设备对象后调用此方法[ **WdfDeviceCreate**](https://msdn.microsoft.com/library/windows/hardware/ff545926)。 此调用的合适位置可以是驱动程序的[ **EVT_WDF_DEVICE_PREPARE_HARDWARE** ](https://msdn.microsoft.com/library/windows/hardware/ff540880)或[ **EVT_WDF_DEVICE_D0_ENTRY**](https://msdn.microsoft.com/library/windows/hardware/ff540848)。
@@ -284,11 +284,11 @@ UCM 类扩展也会通知 USB 角色切换驱动程序 (URS)。 URS 根据伙伴
 
 * [**UcmConnectorDataDirectionChanged**](https://msdn.microsoft.com/library/windows/hardware/mt187910)
 
-    调用此方法后 PD DR\_处理交换消息。 此调用后，操作系统向 URS 消除现有角色驱动程序并加载驱动程序，为新角色报告的新角色。
+  调用此方法后 PD DR\_处理交换消息。 此调用后，操作系统向 URS 消除现有角色驱动程序并加载驱动程序，为新角色报告的新角色。
 
 * [**UcmConnectorPowerDirectionChanged**](https://msdn.microsoft.com/library/windows/hardware/mt187914)
 
-    PD 拉取请求后，调用此方法\_处理交换消息。 PR 后\_交换，需要重新协商 PD 协定。 客户端驱动程序必须通过调用中所述的方法来报告该 PD 合同谈判[步骤 4](#4-report-the-new-negotiated-pd-contract)。
+  PD 拉取请求后，调用此方法\_处理交换消息。 PR 后\_交换，需要重新协商 PD 协定。 客户端驱动程序必须通过调用中所述的方法来报告该 PD 合同谈判[步骤 4](#4-report-the-new-negotiated-pd-contract)。
 
 ## <a name="7-implement-callback-functions-to-handle-power-and-data-role-swap-requests"></a>7.实现回调函数来处理能力和数据角色交换请求
 
@@ -298,7 +298,7 @@ UCM 类扩展可能会收到请求更改的连接器的数据或电源方向。 
 
 * [*EVT\_UCM\_CONNECTOR\_SET\_DATA\_ROLE*](https://msdn.microsoft.com/library/windows/hardware/mt187818)
 
-    在回调实现中，客户端驱动程序应为：
+  在回调实现中，客户端驱动程序应为：
 
   1. 发送 PD DR\_到端口合作伙伴交换消息。
   2. 调用[ **UcmConnectorDataDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187910)通知成功或未成功完成的消息序列的类扩展。
@@ -328,8 +328,8 @@ UCM 类扩展可能会收到请求更改的连接器的数据或电源方向。 
 
     在回调实现中，客户端驱动程序应为：
 
-    1. 发送 PD PR\_到端口合作伙伴交换消息。
-    2. 调用[ **UcmConnectorPowerDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187914)通知成功或未成功完成的消息序列的类扩展。
+  1. 发送 PD PR\_到端口合作伙伴交换消息。
+  2. 调用[ **UcmConnectorPowerDirectionChanged** ](https://msdn.microsoft.com/library/windows/hardware/mt187914)通知成功或未成功完成的消息序列的类扩展。
 
     ```cpp
     EVT_UCM_CONNECTOR_SET_POWER_ROLE     EvtSetPowerRole;  

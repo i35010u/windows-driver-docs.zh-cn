@@ -3,12 +3,12 @@ title: Hdpi.h 宏
 description: Hdpi.h 标头中包含的宏。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5559dff7a571e2e5b857a3a6f7f29e1ee06c4aef
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 78785ddc04e1c43c8a1510a7257a0b7a3af1794a
+ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405101"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213089"
 ---
 # <a name="hdpih-macros"></a>Hdpi.h 宏
 
@@ -20,7 +20,7 @@ Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
 * [**HidP\_UnsetButtons**](#hidp_unsetbuttons)
 
 
-##  <a name="hidpgetbuttons"></a>HidP\_GetButtons
+##  <a name="hidp_getbuttons"></a>HidP\_GetButtons
 
 
 **HidP\_GetButtons**宏是的助记键别名[ **HidP\_GetUsages** ](https://msdn.microsoft.com/library/windows/hardware/ff539742)例程。
@@ -30,7 +30,7 @@ Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
         HidP_GetUsages(Rty, UPa, LCo, ULi, ULe, Ppd, Rep, RLe)
 ```
 
-##  <a name="hidpgetbuttonsex"></a>HidP\_GetButtonsEx
+##  <a name="hidp_getbuttonsex"></a>HidP\_GetButtonsEx
 
 
 **HidP\_GetButtonsEx**宏是一个助记键别名[ **HidP\_GetUsagesEx** ](https://msdn.microsoft.com/library/windows/hardware/ff539745)例程。
@@ -41,7 +41,7 @@ Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
 ```
 
 
-##  <a name="hidpsetbuttons"></a>HidP\_SetButtons
+##  <a name="hidp_setbuttons"></a>HidP\_SetButtons
 
 
 **HidP\_SetButtons**宏是的助记键别名[ **HidP\_SetUsages** ](https://msdn.microsoft.com/library/windows/hardware/ff539792)例程。
@@ -51,7 +51,7 @@ Hdpi.h 标头文件包含几个宏。 本主题介绍以下宏：
         HidP_SetUsages(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle)
 ```
 
-##  <a name="hidpunsetbuttons"></a>HidP\_UnsetButtons
+##  <a name="hidp_unsetbuttons"></a>HidP\_UnsetButtons
 
 
 **HidP\_UnsetButtons**宏是的助记键别名[ **HidP\_UnsetUsages** ](https://msdn.microsoft.com/library/windows/hardware/ff539819)例程。

@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 829f01e45313f91d82fbf6dda7ff4c593f7e304e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c7c76a18706ffebe56c74d189e4c9a3297c1c42
+ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344837"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66035121"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>Driver Verifier 选项和规则类
 
@@ -64,7 +64,7 @@ ms.locfileid: "63344837"
 | DDI 符合性检查 （其他） | 20 |
 | 内核同步延迟模糊处理 | 24 |
 | VM 交换机验证 | 25 |
-| 代码完整性检查 | 22 |
+| 代码完整性检查 | 26 |
 
 ## <a name="optional-feature-and-rule-class-descriptions"></a>可选的功能和规则类描述 
 

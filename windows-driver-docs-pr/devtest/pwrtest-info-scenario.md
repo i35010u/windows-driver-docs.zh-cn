@@ -4,12 +4,12 @@ description: PwrTest 信息方案捕获和记录从各种类别的当前系统�
 ms.assetid: 1d13d1dd-eb8d-434a-b994-e747a86f3457
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad34aa2d7ebb5e520be61fea1505fbe7a2fddfe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70d3d0534fe905a83648c6101631bab55169f347
+ms.sourcegitcommit: 179f9119b6c7888ea18281f6d5d11d62ac45b58d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382697"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66035119"
 ---
 # <a name="pwrtest-info-scenario"></a>PwrTest 信息方案
 
@@ -74,11 +74,11 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 
  
 
-<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*|**a**|**\\***}  
+<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*\|**a**\|**\\**\*}  
 
 指定的逻辑处理器编号 **/info:ppm / info: ppmidle**，或 **/info:ppmperf**选项。
 
-<span id="a_or__"></span><span id="A_OR__"></span>或 **\\***  
+<span id="a_or__"></span><span id="A_OR__"></span>或 **\\**\*  
 指定所有逻辑处理器 （默认值）。
 
 <span id="_w_yn"></span><span id="_W_YN"></span>**/w:**{**y**|**n**}  

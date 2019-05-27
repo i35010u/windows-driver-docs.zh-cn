@@ -4,12 +4,12 @@ description: 从 Windows 10 开始，你可以扩展驱动程序程序包 INF �
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecc7c5e7ba5a54900598a6c82f88d3790839cc9
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 83b5d99db73c0f2ba82cbc8cbda66875f58d79ac
+ms.sourcegitcommit: 1de5a464a908f77a1f68fcd52ac33852e9419589
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106372"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66220061"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -81,6 +81,9 @@ ms.locfileid: "65106372"
 请注意，只能使用组织**ExtensionID**它拥有。  注册扩展 ID 的信息，请参阅[管理 Windows 硬件开发人员中心仪表板中的硬件提交](../dashboard/manage-your-hardware-submissions.md)。     
 
 3.  如果要更新的扩展 INF，保留**ExtensionId**相同，增量版本或日期 （或两者） 指定为[ **DriverVer** ](inf-driverver-directive.md)指令。 为给定**ExtensionId**值，即插即用选择最高 INF **DriverVer**。
+
+>[!NOTE]
+> 如果您的扩展插件 INF 面向 Windows 10 S，请参阅[S 模式驱动程序要求在 Windows 10](https://docs.microsoft.com/windows-hardware/drivers/install/windows10sdriverrequirements)有关驱动程序安装该版本的 Windows 上的信息。
 
 4.  在中[ **INF 模型部分**](inf-models-section.md)，指定一个或多个硬件和兼容 Id 相匹配的目标设备。  请注意，这些硬件和兼容 Id 不需要基 INF 相匹配。  通常情况下，扩展 INF 列出比基本 INF，目的是为了进一步专门化的特定驱动程序配置一个更具体的硬件 ID。  例如，基本 INF 可能使用两部分 PCI 硬件 ID，而扩展 INF 中指定由四部分组成的 PCI 硬件 ID，如下所示：
     

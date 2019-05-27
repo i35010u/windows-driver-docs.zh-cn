@@ -4,12 +4,12 @@ description: 移动运营商方案
 ms.assetid: 68ebee74-9c34-489d-9a88-02493ac3b5fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64726b5a3c57666465bc9b439b025c84e4c03f10
-ms.sourcegitcommit: e3cf7d69c13846f3e7ece2b6178ecec23b9854ae
+ms.openlocfilehash: c87117b077dd00c533d163696bedfaa58a9ab0b1
+ms.sourcegitcommit: 6152f92c5d2bc7c8db08dd0fdbc0146f88e8413b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940371"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66224501"
 ---
 # <a name="mobile-operator-scenarios"></a>移动运营商方案
 
@@ -17,6 +17,8 @@ ms.locfileid: "65940371"
 使用在本部分文档来帮助您了解有关不同移动运营商方案。
 
 -   [移动计划](mobile-plans.md)
+
+-   [在 Windows 上的移动运营商的 esim 卡管理](esim-management-on-windows-for-mobile-operators-and-oems.md)
 
 -   [创建和配置 Internet 共享体验](creating-and-configuring-internet-sharing-experiences.md)
 

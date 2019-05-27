@@ -7,91 +7,39 @@ keywords:
 - 内存池监视器 WDK，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5171528fd8506c333c02338b5b4144d037778489
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de486ea2c5533242c67d882b2148702c0af2f9fc
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327014"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051638"
 ---
 # <a name="poolmon-display"></a>PoolMon 显示
 
-
-## <span id="ddk_poolmon_display_tools"></span><span id="DDK_POOLMON_DISPLAY_TOOLS"></span>
-
-
 Poolmon 可在命令窗口中显示有关池的内存分配数据的列。 使用箭头键、 PAGE UP 和 PAGE DOWN 键滚动浏览数据。
 
-**请注意**  若要查看整个 PoolMon 显示，命令提示符窗口大小必须为至少 80 个字符宽 (宽度 = 80) 和高至少 53 行 (高度 = 53); 和命令提示符窗口缓冲区必须至少 500 个字符宽 （宽度= 500） 和高至少 2000年行 (高度 = 2000年)。 否则，显示可能会被截断。
-
- 
+>[!NOTE]
+>若要查看整个 PoolMon 显示，命令提示符窗口大小必须为至少 80 个字符宽 (宽度 = 80) 和高至少 53 行 (高度 = 53);和命令提示符窗口缓冲区必须至少 500 个字符宽 (宽度 = 500) 和高至少 2000年行 (高度 = 2000年)。 否则，显示可能会被截断。
 
 下表介绍 PoolMon 显示中的列。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">列名称</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><strong>Tag</strong></p></td>
-<td align="left"><p>4 字节标记分配给池分配。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>Type</strong></p></td>
-<td align="left"><p>内存分配是否在分页或非分页字节数。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>分配</strong></p></td>
-<td align="left"><p>分配数。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>( )</strong></p></td>
-<td align="left"><p>自上次更新后的分配数中的变化。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>释放</strong></p></td>
-<td align="left"><p>可用操作的数目。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>( )</strong></p></td>
-<td align="left"><p>自上次更新后的分配数中的变化。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>Diff</strong></p></td>
-<td align="left"><p>可用操作的数量减的分配数。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>字节数</strong></p></td>
-<td align="left"><p>以字节为单位使用的分配的大小。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>( )</strong></p></td>
-<td align="left"><p>自上次更新后的分配大小变化。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>每个分配</strong></p></td>
-<td align="left"><p>值的字节数除以的值的比较。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>Mapped_Driver</strong></p></td>
-<td align="left"><p>本地驱动程序 (<strong>/c</strong>) 和其他常用的驱动程序和系统组件 (<strong>/g</strong>) 分配的池标记值。 会显示此列，只能使用<strong>/c</strong>或<strong>/g</strong>参数。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|列名称|描述|
+|----|----|
+|**Tag**|4 字节标记分配给池分配。|
+|**Type**|内存分配是否在分页或非分页字节数。|
+|**分配**|分配数。|
+|**( )**|自上次更新后的分配数中的变化。|
+|**释放**|可用操作的数目。|
+|**( )**|自上次更新后的分配数中的变化。|
+|**Diff**|可用操作的数量减的分配数。|
+|**字节数**|以字节为单位使用的分配的大小。|
+|**( )**|自上次更新后的分配大小变化。|
+|**每个分配**|值的字节数除以的值的比较。|
+|**Mapped_Driver**|本地驱动程序 (**/c**) 和其他常用的驱动程序和系统组件 (**/g**) 分配的池标记值。 会显示此列，只能使用 **/c**或 **/g**参数。|
 
 以下示例 PoolMon 输出按分配数。 (若要排序你显示这种方式，请启动与 PoolMon **/a**参数。)
 
-```
+```command
  Memory:  260620K Avail:   96364K  PageFlts:     0   InRam Krnl: 1916K P:17856K
  Commit: 203500K Limit: 640916K Peak: 260632K            Pool N: 8332K P:27220K
  System pool information
@@ -107,23 +55,14 @@ Poolmon 可在命令窗口中显示有关池的内存分配数据的列。 使�
  SePa Nonp     680348 (   0)    680321 (   0)       27    3656 (     0)    135
 ```
 
-### <a name="span-idupdateratespanspan-idupdateratespanspan-idupdateratespanupdate-rate"></a><span id="Update_Rate"></span><span id="update_rate"></span><span id="UPDATE_RATE"></span>更新的速率
+## <a name="update-rate"></a>更新的速率
 
-PoolMon 更新其显示每隔 5 秒。 不能更改的更新频率。
+PoolMon 更新其显示每隔 5 秒。 您不能以编程方式更改的更新频率。 如果 PoolMon 运行中的窗口具有焦点，但是，可以通过单击一些键，强制 PoolMon 结果的刷新。 **CTRL**并**ALT**，例如，强制进行刷新; 但是，**打印屏幕**却没有。
 
-### <a name="span-idaccumulatedvaluesspanspan-idaccumulatedvaluesspanspan-idaccumulatedvaluesspanaccumulated-values"></a><span id="Accumulated_Values"></span><span id="accumulated_values"></span><span id="ACCUMULATED_VALUES"></span>累计的值
+## <a name="accumulated-values"></a>累计的值
 
 Poolmon 可显示的数据是收集和计算的 Windows，只要启用了池标记。 分配、 可用操作和使用字节数的值所经历的 Windows 启动时，会累积并单调增加，直到重新启动 Windows。 如果驱动程序或组件已启动已启动 Windows 后，从驱动程序或组件启动和重置仅当驱动程序或系统重新启动时的最后一个时间聚合值。
 
-### <a name="span-idinterpretingtagvaluesspanspan-idinterpretingtagvaluesspanspan-idinterpretingtagvaluesspaninterpreting-tag-values"></a><span id="Interpreting_Tag_Values"></span><span id="interpreting_tag_values"></span><span id="INTERPRETING_TAG_VALUES"></span>解释标记值
+## <a name="interpreting-tag-values"></a>解释标记值
 
 所有池内存分配都有标记，但是它们却不是所有特性的标记值。 池分配具有特性标记的值时分配的内存的驱动程序使用设置标记值的内存[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)或[ **ExAllocatePoolWithQuotaTag**](https://msdn.microsoft.com/library/windows/hardware/ff544513)。 如果该驱动程序不会分配某个标记值 ([**ExAllocatePool**](https://msdn.microsoft.com/library/windows/hardware/ff544501)， [ **ExAllocatePoolWithQuota**](https://msdn.microsoft.com/library/windows/hardware/ff544506))，Windows 仍会创建一个标记，但它无分配默认标记值。 因此，无法区分从其他池分配的该驱动程序分配的统计信息。
-
- 
-
- 
-
-
-
-
-

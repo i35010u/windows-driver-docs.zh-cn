@@ -3,16 +3,16 @@ Description: 此部分提供的 USB 外围设备制造商的链接。
 title: 为 Windows 构建 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb4d087ade56cf04d742123ccd5227b33e82390
-ms.sourcegitcommit: 9f518e2951765a41be61aea21f808e3046be6e32
+ms.openlocfilehash: eb488088da80399a6d7d1e3d82fa1a978a70f5c2
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65711967"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051643"
 ---
 # <a name="building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备
 
-**摘要**:
+## <a name="summary"></a>总结
 
 * USB 设备构建者的资源
 

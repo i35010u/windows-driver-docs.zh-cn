@@ -3,12 +3,12 @@ Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d918c195446084dd181b2fe5482ea380e50e9a
-ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
+ms.openlocfilehash: 1389627291b454441dcbd5deeffbe60f6eb0675f
+ms.sourcegitcommit: 2fcfb772bb7f5ee565c9512a79444f57d58de9e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969593"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213095"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
@@ -37,7 +37,7 @@ Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱�
 
 USB 3.0 堆栈是 Windows 8 中的新增功能。 Microsoft 使用内核模式驱动程序框架 (KMDF) 接口来创建新的驱动程序。 KMDF 驱动程序模型可以降低复杂性并提高了稳定性。
 
-### <a href="" id="usb-3-0-host-controller-driver-usbxhcisys"></a>USB 3.0 主机控制器驱动程序 (Usbxhci.sys)
+### <a href="" id="usb-30-host-controller-driver-usbxhcisys"></a>USB 3.0 主机控制器驱动程序 (Usbxhci.sys)
 
 XHCI 驱动程序是 USB 3.0 主机控制器驱动程序。 XHCI 驱动程序的责任包括初始化 MMIO 寄存器和 xHCI 控制器硬件的主机基于内存的数据结构映射传输到传输请求的块，从较高层驱动程序请求和提交将请求发送到硬件。 完成后传输，驱动程序处理从硬件传输完成事件并将事件驱动程序堆栈中向上传播。 它还可以控制 xHCI 控制器设备槽和终结点上下文。
 

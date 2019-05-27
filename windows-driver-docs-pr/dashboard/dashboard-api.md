@@ -4,12 +4,12 @@ description: “Microsoft 硬件 API”以编程方式在组织的合作伙伴�
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1840caeb7848ce576d2ecb8a23647231ee0524
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 9a378280a820df31b1885a7655fad7d72ae4ba53
+ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518188"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65701738"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
 
@@ -82,18 +82,24 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以在“Microsoft 硬件 API”中调用方法。 该 API 包括许多分组到各个方案中的方法。 若要创建或更新提交，一般需在“Microsoft 硬件 API”中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
-| 方案 | 描述 |
+| 应用场景 | 描述 |
 |:--|:--|
 | Drivers | 获取、创建和更新向你的合作伙伴中心帐户注册的驱动程序。 有关这些方法的详细信息，请参阅以下文章：<ul><li>[获取产品数据](get-product-data.md)</li><li>[管理产品提交](manage-product-submissions.md)</li><li>[获取发货标签数据](get-shipping-labels.md)</li><li>[管理发货标签](manage-shipping-labels.md)</li></ul>|
 
 ## <a name="code-examples"></a>代码示例
 
-以下示例提供了演示如何使用“Microsoft 硬件 API”的详细代码：
+下面的示例提供了详细说明如何使用 Microsoft 硬件 API 以及由 Microsoft Surface 和设备团队创建的完整端到端预构建解决方案的代码：
 
 * [C# 示例](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
 
+[图面开发人员中心管理器工具 (GitHub)](https://github.com/Microsoft/SDCM)
+
 ## <a name="additional-help"></a>其他帮助
 
 如果你对“Microsoft Store 提交 API”有疑问，或需要获取有关使用此 API 来管理提交的帮助，请访问[支持页面](https://developer.microsoft.com/dashboard/account/help?returnUri=https://developer.microsoft.com/dashboard/hardware)并请求帮助。
+
+## <a name="related-topics"></a>相关主题
+
+[什么是 Azure Active Directory？](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)

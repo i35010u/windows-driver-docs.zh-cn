@@ -8,12 +8,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5365252ae6ad977928ff26e5fc3baf59fe3e1ec2
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: f778eb4ac07b861cff4f06026d4f42fa3438d4f4
+ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405284"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051645"
 ---
 # <a name="rss-hashing-types"></a>RSS 哈希类型
 
@@ -56,7 +56,7 @@ NIC 必须支持从 IPv4 设置的组合之一。 其他设置和组合是可选
 - [NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_udp_ipv4--ndis_hash_ipv4)
 - [NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4](#ndis_hash_tcp_ipv4--ndis_hash_udp_ipv4--ndis_hash_ipv4)
 
-### <a name="ndishashipv4"></a>NDIS_HASH_IPV4  
+### <a name="ndis_hash_ipv4"></a> NDIS_HASH_IPV4  
 
 如果设置此标志仅，NIC 应针对以下 IPv4 标头字段计算的哈希值：
 
@@ -66,7 +66,7 @@ NIC 必须支持从 IPv4 设置的组合之一。 其他设置和组合是可选
 >[!NOTE]
 > 如果 NIC 收到的数据包，IP 和 TCP 标头，NDIS_HASH_TCP_IPV4 不始终应。 对于碎片 IP 数据包时，必须使用 NDIS_HASH_IPV4。 这包括其中包含 IP 和 TCP 标头的第一个片段。
 
-### <a name="ndishashtcpipv4"></a>NDIS_HASH_TCP_IPV4
+### <a name="ndis_hash_tcp_ipv4"></a> NDIS_HASH_TCP_IPV4
 
 如果设置此标志仅，NIC 应分析接收到的数据来标识包含 TCP 段的 IPv4 数据包。
 
@@ -79,7 +79,7 @@ NIC 应针对以下字段计算的哈希值：
 - 源 TCP 端口
 - 目标 TCP 端口
 
-### <a name="ndishashudpipv4"></a>NDIS_HASH_UDP_IPV4
+### <a name= "ndis_hash_udp_ipv4"></a> NDIS_HASH_UDP_IPV4
 
 如果设置此标志仅，NIC 应分析接收到的数据来标识包含 UDP 数据报的 IPv4 数据包。
 
@@ -92,15 +92,15 @@ NIC 应针对以下字段计算的哈希值：
 - UDP 源端口
 - 目标 UDP 端口
 
-### <a name="ndishashtcpipv4--ndishashipv4"></a>NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_tcp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_TCP_IPV4 | NDIS_HASH_IPV4
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_TCP_IPV4 用例。 但是，如果数据包不包含 TCP 标头，NIC 应计算 NDIS_HASH_IPV4 情况下为指定的哈希值。
 
-### <a name="ndishashudpipv4--ndishashipv4"></a>NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_udp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_UDP_IPV4 用例。 但是，如果数据包不包含 UDP 标头，NIC 应计算 NDIS_HASH_IPV4 情况下为指定的哈希值。
 
-### <a name="ndishashtcpipv4--ndishashudpipv4--ndishashipv4"></a>NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
+### <a name="ndis_hash_tcp_ipv4--ndis_hash_udp_ipv4--ndis_hash_ipv4"></a> NDIS_HASH_TCP_IPV4 | NDIS_HASH_UDP_IPV4 | NDIS_HASH_IPV4
 
 如果设置此标志组合，NIC 应执行哈希计算指定的传输数据包中。 但是，如果数据包不包含 TCP 或 UDP 标头，NIC 应计算 NDIS_HASH_IPV4 情况下为指定的哈希值。
 
@@ -108,21 +108,21 @@ NIC 应针对以下字段计算的哈希值：
 
 在 IPv6 集中的有效的哈希类型组合包括：
 
-- [NDIS_HASH_IPV6](#ndis_hash_ipv6)
+- [NDIS_HASH_IPV6](#ndis-hash-ipv6)
 - [NDIS_HASH_TCP_IPV6](#ndis_hash_tcp_ipv6)
 - [NDIS_HASH_UDP_IPV6](#ndis_hash_udp_ipv6)
 - [NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_ipv6)
 - [NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_udp_ipv6--ndis_hash_ipv6)
 - [NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6](#ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6)
 
-### <a name="ndishashipv6"></a>NDIS_HASH_IPV6
+### <a name="ndis-hash-ipv6"></a> NDIS\_HASH\_IPV6
 
 如果设置此标志仅，NIC 应针对以下字段计算哈希：
 
 - Source-IPv6-Address
 - Destination-IPv6-Address
 
-### <a name="ndishashtcpipv6"></a>NDIS_HASH_TCP_IPV6
+### <a name="ndis_hash_tcp_ipv6"></a> NDIS_HASH_TCP_IPV6
 
 如果设置此标志仅，NIC 应分析接收到的数据来标识包含 TCP 段的 IPv6 数据包。 NIC 必须识别并跳过在包中存在任何 IPv6 扩展标头。 如果 NIC 不能跳过任何 IPv6 扩展标头，它应计算的哈希值。
 
@@ -133,7 +133,7 @@ NIC 应针对以下字段计算的哈希值：
 - 源 TCP 端口
 - 目标 TCP 端口
 
-### <a name="ndishashudpipv6"></a>NDIS_HASH_UDP_IPV6
+### <a name="ndis_hash_udp_ipv6"></a> NDIS_HASH_UDP_IPV6
 
 如果设置此标志仅，NIC 应分析接收的数据，以识别 IPv6 数据包包含 UDP 数据报。 NIC 必须识别并跳过在包中存在任何 IPv6 扩展标头。 如果 NIC 不能跳过任何 IPv6 扩展标头，它应计算的哈希值。
 
@@ -144,15 +144,15 @@ NIC 应针对以下字段计算的哈希值：
 - UDP 源端口
 - 目标 UDP 端口
 
-### <a name="ndishashtcpipv6--ndishashipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_tcp_ipv6--ndis_hash_ipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_IPV6
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_TCP_IPV6 用例。 但是，如果数据包不包含 TCP 标头，NIC 应计算 NDIS_HASH_IPV6 情况下为指定的哈希。
 
-### <a name="ndishashudpipv6--ndishashipv6"></a>NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_UDP_IPV6 用例。 但是，如果数据包不包含 UDP 标头，NIC 应计算 NDIS_HASH_IPV6 情况下为指定的哈希。
 
-### <a name="ndishashtcpipv6--ndishashudpipv6--ndishashipv6"></a>NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
+### <a name="ndis_hash_tcp_ipv6--ndis_hash_udp_ipv6--ndis_hash_ipv6"></a> NDIS_HASH_TCP_IPV6 | NDIS_HASH_UDP_IPV6 | NDIS_HASH_IPV6
 
 如果设置此标志组合，NIC 应执行哈希计算指定的传输数据包中。 但是，如果数据包不包含 TCP 或 UDP 标头，NIC 应计算 NDIS_HASH_IPV6 用例中所指定的哈希值。
 
@@ -167,14 +167,14 @@ NIC 应针对以下字段计算的哈希值：
 - [NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
 - [NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX](#ndis_hash_tcp_ipv6_ex--ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex)
 
-### <a name="ndishashipv6ex"></a>NDIS_HASH_IPV6_EX  
+### <a name="ndis_hash_ipv6_ex"></a> NDIS_HASH_IPV6_EX  
 
 如果设置此标志仅，NIC 应针对以下字段计算哈希：
 
 - 从 IPv6 目标选项标头中的家庭地址选项的家庭地址。 如果扩展标头不存在，使用源 IPv6 地址。
 - 路由的标头的类型 2 从关联的扩展标头中包含的 IPv6 地址。 如果扩展标头不存在，则使用目标 IPv6 地址。
 
-### <a name="ndishashtcpipv6ex"></a>NDIS_HASH_TCP_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX
 
 如果设置此标志仅，NIC 应针对以下字段计算哈希：
 
@@ -183,7 +183,7 @@ NIC 应针对以下字段计算的哈希值：
 - 源 TCP 端口
 - 目标 TCP 端口
 
-### <a name="ndishashudpipv6ex"></a>NDIS_HASH_UDP_IPV6_EX
+### <a name="ndis_hash_udp_ipv6_ex"></a> NDIS_HASH_UDP_IPV6_EX
 
 如果设置此标志仅，NIC 应针对以下字段计算哈希：
 
@@ -192,28 +192,19 @@ NIC 应针对以下字段计算的哈希值：
 - UDP 源端口
 - 目标 UDP 端口
 
-### <a name="ndishashtcpipv6ex--ndishashipv6ex"></a>NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_TCP_IPV6_EX 用例。 但是，如果数据包不包含 TCP 标头，NIC 应计算 NDIS_HASH_IPV6_EX 情况下为指定的哈希。
 
-### <a name="ndishashudpipv6ex--ndishashipv6ex"></a>NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 如果设置此标志组合，NIC 应执行指定的哈希计算 NDIS_HASH_UDP_IPV6_EX 用例。 但是，如果数据包不包含 UDP 标头，NIC 应计算 NDIS_HASH_IPV6_EX 情况下为指定的哈希。
 
-### <a name="ndishashtcpipv6ex--ndishashudpipv6ex--ndishashipv6ex"></a>NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
+### <a name="ndis_hash_tcp_ipv6_ex--ndis_hash_udp_ipv6_ex--ndis_hash_ipv6_ex"></a> NDIS_HASH_TCP_IPV6_EX | NDIS_HASH_UDP_IPV6_EX | NDIS_HASH_IPV6_EX
 
 如果设置此标志组合，NIC 应执行的数据包传输由指定的哈希计算。 但是，如果数据包不包含 TCP 或 UDP 标头，NIC 应计算 NDIS_HASH_IPV6_EX 情况下为指定的哈希。
 
 > [!NOTE]
-> 如果微型端口驱动程序报告 NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX 和/或 NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX 功能的 nic，NIC 必须计算哈希值 （通过 IPv6 扩展标头中的字段） 根据 IPv6 扩展哈希类型协议驱动程序设置。 NIC 可以扩展哈希类型或常规哈希类型存储为其计算哈希值的 IPv6 数据包 NET_BUFFER_LIST 结构中。 
+> 如果微型端口驱动程序报告 NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX 和/或 NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX 功能的 nic，NIC 必须计算哈希值 （通过 IPv6 扩展标头中的字段） 根据 IPv6 扩展哈希类型协议驱动程序设置。 NIC 可以扩展哈希类型或常规哈希类型存储为其计算哈希值的 IPv6 数据包 NET_BUFFER_LIST 结构中。
 
 微型端口驱动程序设置中的哈希类型[ **NET_BUFFER_LIST** ](https://msdn.microsoft.com/library/windows/hardware/ff568388)之前，该值指示接收到的数据结构。 有关详细信息，请参阅[接收数据，该值指示 RSS](indicating-rss-receive-data.md)。
-
- 
-
- 
-
-
-
-
-

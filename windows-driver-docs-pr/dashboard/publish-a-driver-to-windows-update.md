@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd83434e6fcf2a73148e00b4b999a9db7815ed8d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: f991824cba8ebda7fdd053c89776b6f2cd2458db
+ms.sourcegitcommit: 998c5840ce92a50ae42127101e4ecc19a5e362c6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518268"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65996961"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 
@@ -50,16 +50,10 @@ ms.locfileid: "56518268"
    </div></td>
    </tr>
    <tr class="even">
-   <td><p><strong>发布日期</strong></p></td>
-   <td><p>指定希望驱动程序何时在 Windows 更新上可供下载。</p>
-   <p>如果要使驱动程序在通过认证后立即发布，请选择<strong>通过认证后立即发布驱动程序</strong>。</p>
-   <p>如果不希望驱动程序在特定日期之前发布，请选择“不早于”，然后指定日期。</p></td>
-   </tr>
-   <tr class="odd">
    <td><p><strong>指定合作伙伴（如果有），使其获得对此请求的可见性</strong></p></td>
    <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/mt786462" data-raw-source="[Publish a driver on behalf of a partner](https://msdn.microsoft.com/library/windows/hardware/mt786462)">代表合作伙伴发布驱动程序</a>。</p></td>
    </tr>
-   <tr class="even">
+   <tr class="odd">
    <td><p><strong>驱动程序推广</strong></p></td>
    <td><p>默认情况下，Windows 更新上的驱动程序标记为可选。 这意味着，仅在设备尚未安装驱动程序时才交付驱动程序。 这些选项允许你替代默认行为，但需要额外 Microsoft 评估。</p>
    <p>选择“在 Windows 升级期间自动交付和安装此驱动程序”推广驱动程序，使其可用于动态更新。</p>
