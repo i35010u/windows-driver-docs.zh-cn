@@ -139,7 +139,7 @@ NTSTATUS __RxSynchronizeBlockingOperationsMaybeDroppingFcbLock(
 
 [**RxResumeBlockedOperations\_Serially**](https://msdn.microsoft.com/library/windows/hardware/ff554701)
 
-[ **\_\_RxSynchronizeBlockingOperations**](https://msdn.microsoft.com/library/windows/hardware/ff557377)
+**[\_\_RxSynchronizeBlockingOperations](https://msdn.microsoft.com/library/windows/hardware/ff557377)**
 
  
 

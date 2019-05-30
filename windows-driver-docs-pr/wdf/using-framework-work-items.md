@@ -7,12 +7,12 @@ keywords:
 - 队列 WDK KMDF，framework 工作项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab60d2b4898e02bea4557196b228fd660854245f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c73fcb2496a8a4843b502b49b6d38743c9a87fda
+ms.sourcegitcommit: 9580c6e32d820e1c6672b2b788c4fabdefa2910c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327257"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308458"
 ---
 # <a name="using-framework-work-items"></a>使用框架工作项
 
@@ -94,7 +94,13 @@ ms.locfileid: "63327257"
 
 几个的驱动程序可能需要调用[ **WdfWorkItemFlush** ](https://msdn.microsoft.com/library/windows/hardware/ff551204)若要刷新工作项队列中的各自的工作项。 有关的示例用法**WdfWorkItemFlush**，请参阅该方法的参考页。
 
- 
+如果该驱动程序调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)上未完成的工作项，结果取决于工作项的状态：
+
+|工作项状态|结果|
+|-|-|
+|创建但未排入队列|立即清除工作项。|
+|排入队列|调用到[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)等待，直到工作项完成执行，然后清理工作项|
+|执行|如果该驱动程序调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)中[ *EvtWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem) （在同一个线程）， [ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)立即返回。 一次[ *EvtWorkItem* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)完成之后，工作项将清理。  否则为[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)等待 EvtWorkItem 来完成。|
 
  
 

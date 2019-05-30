@@ -25,7 +25,7 @@ ms.locfileid: "63331181"
 
 在安装的串行端口，端口类安装程序将执行以下任务：
 
-1. 选择 COM 端口号，并设置端口名称**PortName**条目下设备的硬件密钥的值。 端口名称采用格式 COM<em>&lt;n&gt;</em>，其中*&lt;n&gt;* 是端口号。 如果序列创建的串行端口的 COM 端口接口时，序列将使用的值**PortName**作为 COM 端口的符号链接名称。
+1. 选择 COM 端口号，并设置端口名称**PortName**条目下设备的硬件密钥的值。 端口名称采用格式 COM<em>&lt;n&gt;</em>，其中 *&lt;n&gt;* 是端口号。 如果序列创建的串行端口的 COM 端口接口时，序列将使用的值**PortName**作为 COM 端口的符号链接名称。
 
 2. 显示默认属性页对话框中，这样用户就可以选择的端口设置。 有关如何安装自定义属性页的信息，请参阅[安装 COM 端口的高级属性页](installing-an-advanced-properties-page-for-a-com-port.md)。
 

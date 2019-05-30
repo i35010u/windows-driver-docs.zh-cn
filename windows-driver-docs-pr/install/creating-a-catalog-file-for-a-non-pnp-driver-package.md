@@ -20,13 +20,13 @@ ms.locfileid: "63344335"
 
  
 
-若要创建一个目录文件，您必须首先手动创建目录定义文件 (。*。cdf*)，用于说明目录标头属性和文件条目。 创建此文件后，可以运行[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具创建目录文件
+若要创建一个目录文件，您必须首先手动创建目录定义文件 (。 *。cdf*)，用于说明目录标头属性和文件条目。 创建此文件后，可以运行[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具创建目录文件
 
 ### <a name="creating-a-catalog-file"></a>创建编录文件
 
 若要创建非 PnP 驱动程序包的目录文件，请执行以下步骤：
 
-1.  使用文本编辑器创建。*.cdf*列出的名称的文件[编录文件](catalog-files.md)要创建的属性，以及要在目录文件中列出的文件的名称。
+1.  使用文本编辑器创建。 *.cdf*列出的名称的文件[编录文件](catalog-files.md)要创建的属性，以及要在目录文件中列出的文件的名称。
 
 2.  使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)命令行工具创建目录文件。 有关 MakeCat 工具的详细信息，请参阅[使用 MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086)网站。
 
@@ -34,11 +34,11 @@ ms.locfileid: "63344335"
 
 ### <a name="overview-of-the-makecat-tool"></a>MakeCat 工具概述
 
-MakeCat 工具执行以下处理时。*.cdf*文件：
+MakeCat 工具执行以下处理时。 *.cdf*文件：
 
--   验证的特性[编录文件](catalog-files.md)由定义。*。cdf*文件，并将属性添加到目录文件。
+-   验证的特性[编录文件](catalog-files.md)由定义。 *。cdf*文件，并将属性添加到目录文件。
 
--   验证每个文件中列出的属性。*.cdf*文件，并将属性添加到目录文件。
+-   验证每个文件中列出的属性。 *.cdf*文件，并将属性添加到目录文件。
 
 -   生成加密哈希，或*指纹*，每个列出的文件。
 
@@ -107,10 +107,10 @@ OSAttr 属性指定的目标 Windows 版本的签名需求与兼容[驱动程序
      
 
 <a href="" id="-hash-file1-file1"></a>&lt;hash&gt;File1=File1  
-指定文件 File1 通过目录文件引用它的引用标记。 该值*&lt;哈希&gt;File1*正在文件的加密哈希，该标记会导致或*指纹*。
+指定文件 File1 通过目录文件引用它的引用标记。 该值 *&lt;哈希&gt;File1*正在文件的加密哈希，该标记会导致或 *指纹*。
 
 <a href="" id="-hash-file1-file2"></a>&lt;哈希&gt;File1 = File2  
-指定的文件，文件 2，这通过目录文件引用一个引用标记。 该值*&lt;哈希&gt;File2*导致正在文件的指纹的标记。
+指定的文件，文件 2，这通过目录文件引用一个引用标记。 该值 *&lt;哈希&gt;File2* 导致正在文件的指纹的标记。
 
 下面的示例演示如何生成[编录文件](catalog-files.md)， *Good.cat，* 从相应的目录定义文件*好...cdf*。 将保存 Makecat *Good.cat*在同一文件夹中其中*File1*和*File2*所在。
 

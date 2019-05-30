@@ -24,7 +24,7 @@ ms.locfileid: "63327330"
 
 **请注意**  如果版本的 Windows 操作系统早于 Windows Vista 上运行 TraceView，必须将 Dbghelp.dll 文件复制到为 TraceView 可执行文件，TraceView.exe 相同的子目录。 
 
-默认情况下，TraceView.exe 位于在工具\\*&lt;平台&gt;* 子目录的 Windows Driver Kit (WDK) 中，其中*&lt;平台&gt;* 是 i386、 amd64 或 ia64。 Dbghelp.dll 已安装，默认情况下，在\\bin\\x86 子目录。
+默认情况下，TraceView.exe 位于在工具\\ *&lt;平台&gt;* 子目录的 Windows Driver Kit (WDK) 中，其中 *&lt;平台&gt;* 是 i386、 amd64 或 ia64。 Dbghelp.dll 已安装，默认情况下，在\\bin\\x86 子目录。
 
  
 

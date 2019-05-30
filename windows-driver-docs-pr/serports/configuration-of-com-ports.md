@@ -22,7 +22,7 @@ ms.locfileid: "65836337"
 
 - 使用 Ntddser.h 中定义的 16550 UART 兼容接口运行 COM 端口。
 
-- 若要确保兼容的大多数应用程序访问 COM 端口，应分配使用标准命名约定的符号链接名称"COM<em>&lt;n&gt;</em>"，其中*&lt;n&gt;* 是 COM 端口号 (例如 COM1)。 如果你使用 COM<em>&lt;n&gt;</em> 名称，你必须获取 COM 端口号*&lt;n&gt;* 从[COM 端口数据库](com-port-database.md). COM 端口号应仅用于 COM<em>&lt;n&gt;</em> 名称。
+- 若要确保兼容的大多数应用程序访问 COM 端口，应分配使用标准命名约定的符号链接名称"COM<em>&lt;n&gt;</em>"，其中 *&lt;n&gt;* 是 COM 端口号 (例如 COM1)。 如果你使用 COM<em>&lt;n&gt;</em> 名称，你必须获取 COM 端口号 *&lt;n&gt;* 从[COM 端口数据库](com-port-database.md). COM 端口号应仅用于 COM<em>&lt;n&gt;</em> 名称。
 
 默认情况下，类安装程序的端口的组合操作[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)和串行函数驱动程序将设备配置为 COM 端口。
 

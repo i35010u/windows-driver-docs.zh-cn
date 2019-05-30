@@ -140,7 +140,7 @@ ExpirationDate=mm/dd/yy
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-必须为证书规范文件中的第一个条目**\[证书\]** 标签。
+必须为证书规范文件中的第一个条目 **\[证书\]** 标签。
 
 为证书指定的项区分大小写，但可以按任意顺序指定。
 

@@ -30,9 +30,9 @@ ms.locfileid: "63369460"
 
     例如，如果包的区域设置为 EN-US，应用程序必须创建*EN-US*如果子目录当前不存在时，设备元数据存储区的路径下的子目录。
 
-2.  将设备元数据包复制到适当*&lt;区域设置&gt;* 中的子目录[设备元数据存储区](device-metadata-store.md)。
+2.  将设备元数据包复制到适当 *&lt;区域设置&gt;* 中的子目录[设备元数据存储区](device-metadata-store.md)。
 
-    **请注意**如果您使用[CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)函数将复制的设备元数据包，请指定完整路径名称，其中包括相应*&lt;区域设置&gt;* 子目录。 通过执行此操作，请[CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)如果它们不存在本地计算机上创建您的包相关联的子目录。
+    **请注意**如果您使用[CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)函数将复制的设备元数据包，请指定完整路径名称，其中包括相应 *&lt;区域设置&gt;* 子目录。 通过执行此操作，请[CopyFile]( https://go.microsoft.com/fwlink/p/?linkid=189596)如果它们不存在本地计算机上创建您的包相关联的子目录。
 
 
 

@@ -92,7 +92,7 @@ ms.locfileid: "63338918"
 <span id="_______hashindex_______HiveAddress_HashKey______"></span><span id="_______hashindex_______hiveaddress_hashkey______"></span><span id="_______HASHINDEX_______HIVEADDRESS_HASHKEY______"></span> **hashindex** **** \[*HiveAddress*\] **** *HashKey*   
 计算哈希键的哈希索引条目。 *HiveAddress*指定 hive 的地址。 *HashKey*指定的键。
 
-**请注意***HiveAddress*是必需的如果目标计算机正在运行 Windows 7 或更高版本。
+**请注意** *HiveAddress*是必需的如果目标计算机正在运行 Windows 7 或更高版本。
 
 
 
