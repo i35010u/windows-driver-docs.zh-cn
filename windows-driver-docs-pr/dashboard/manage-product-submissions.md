@@ -1,17 +1,15 @@
 ---
 title: 管理产品提交
 description: 管理产品的硬件仪表板提交，并让 Microsoft 对产品签名
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: edc9890d75162c3f677ca4e7e5d87e14154c5f56
-ms.sourcegitcommit: 84db0d274b32d5f066735cf61f4a6f155cc3f024
+ms.openlocfilehash: d6438ed3d56dceea65e90d42753aa4954d90f3b2
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66185128"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400871"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交
 
@@ -75,7 +73,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
     https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}
     ```
 
-    若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived 更改为 commitCompleted；如果请求中存在错误，此值应该更改为 commitFailed。 如果存在错误，*error* 字段将包含有关错误的更多详细信息。
+    若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived  更改为 commitCompleted  ；如果请求中存在错误，此值应该更改为 commitFailed  。 如果存在错误，*error* 字段将包含有关错误的更多详细信息。
 
    >[!NOTE]
    >有关每隔 10 分钟主要搜索页面刷新。 若要创建它们，请查看所有结果，请单击 **（全部） 驱动程序列表页**，在顶部**驱动程序**合作伙伴中心页。 尽管页面需要花费一些时间来处理并加载如果提交的很多，但时进行负载应列出成功和不成功提交。 有关详细信息，请参阅[找到硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)。

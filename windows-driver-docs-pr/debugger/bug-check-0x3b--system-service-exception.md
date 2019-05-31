@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 562064e1ce3ad47671f1e7956287a049818ee1ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 262eddf19ad6b6ee154ac84569f4e60858459b6f
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361523"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400868"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -81,7 +81,7 @@ ms.locfileid: "63361523"
 
 **若要调试此问题：** 
 
-使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。 此外可以导致此停止代码在代码中设置断点并单步前进到出错的代码尝试。 使用[u，ub，uu （反汇编）]()命令来查看程序集的程序代码。
+使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。 此外可以导致此停止代码在代码中设置断点并单步前进到出错的代码尝试。 使用[u，ub，uu （反汇编）]()命令来查看程序集的程序代码。
 
 
 [ **！ 分析**](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
@@ -103,7 +103,7 @@ Arg4: 0000000000000000, zero.
 
 [分析具有 WinDbg 的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。 可以使用调试器 dx 命令来显示此- `dx KiBugCheckDriver`。
+如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。 可以使用调试器[ **dx （显示调试器对象模型表达式）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)命令来显示此- `dx KiBugCheckDriver`。
 
 使用[！ 错误](-error.md)扩展名，即可在参数 1 中显示有关异常代码的信息。
 

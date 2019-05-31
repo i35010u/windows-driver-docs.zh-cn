@@ -7,12 +7,12 @@ keywords:
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b4837f9f6efc742c4f29aa4e87bb731b8fd6a2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e333cab00c1557e43fc78299fc079280a945fef
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345384"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400856"
 ---
 # <a name="technique-2-using-iois32bitprocess"></a>方法 2：使用 IoIs32bitProcess
 
@@ -34,7 +34,7 @@ BOOLEAN
 下面的代码示例演示如何使用**IoIs32bitProcess**:
 
 ```cpp
-typedef void * POINTER_32 PVOID32;
+typedef UINT32 POINTER_32 PVOID32;
 
 typedef struct _IOCTL_PARAMETERS
 {

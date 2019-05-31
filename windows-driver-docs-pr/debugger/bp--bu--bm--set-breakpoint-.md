@@ -4,7 +4,7 @@ description: 最佳实践、 bu、 和 bm 命令设置一个或多个软件断�
 ms.assetid: 77d095fe-06d1-4842-ad49-8420ab4d5d72
 keywords:
 - 最佳实践，bu，bm （设置断点） Windows 调试
-ms.date: 05/23/2017
+ms.date: 05/28/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80efb09843561eb4b3d4bf360fc79980f1053346
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e65f7a39b444c6c0c1a73ad7acd5b4d889fc39ee
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357627"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394277"
 ---
 # <a name="bp-bu-bm-set-breakpoint"></a>bp、bu、bm（设置断点）
 
@@ -53,39 +53,60 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 当你使用*ID*命令时，请不要键入该命令之间有空格 (**bp**或**bu**) 和 ID 号。
 
-*ID*参数始终是可选的。 如果未指定*ID*，调试器使用的第一个可用的断点号。 在内核模式下，您可以设置只有 32 断点。 在用户模式下，可以设置任意数量的断点。 在任一情况下，没有任何限制的值*ID*数。 如果将括*ID*用方括号括起来 (**\[\]**)， *ID*可以包含任何表达式。 有关语法的详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
+*ID*参数始终是可选的。 如果未指定*ID*，调试器使用的第一个可用的断点号。 在内核模式下，您可以设置只有 32 断点。 在用户模式下，可以设置任意数量的断点。 在任一情况下，没有任何限制的值*ID*数。 如果将括*ID*用方括号括起来 ( **\[\]** )， *ID*可以包含任何表达式。 有关语法的详细信息，请参阅[数值表达式语法](numerical-expression-syntax.md)。
 
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
 指定断点的选项。 所示，可以指定任意数量的以下选项，除非：
 
-<span id="_1"></span>**/1**  
+<span id="_1"></span> **/1**  
 创建"单稳"断点。 触发此断点后，它是从断点列表中删除。
 
-<span id="_f_PredNum"></span><span id="_f_prednum"></span><span id="_F_PREDNUM"></span>**/f** *PredNum*  
+<span id="_f_PredNum"></span><span id="_f_prednum"></span><span id="_F_PREDNUM"></span> **/f** *PredNum*  
 （基于 Itanium 的仅限用户仅模式）指定的谓词的数字。 断点都与相应的谓词寄存器。 (例如， **bp /f 4** *地址*设置的前提是使用断点**p4**谓词寄存器。)
 
-<span id="_p_EProcess"></span><span id="_p_eprocess"></span><span id="_P_EPROCESS"></span>**/p** *EProcess*  
+<span id="_p_EProcess"></span><span id="_p_eprocess"></span><span id="_P_EPROCESS"></span> **/p** *EProcess*  
 （仅内核模式）指定与此断点关联的进程。 *EProcess*应为 EPROCESS 结构，不 PID 的实际地址。 仅当遇到此进程的上下文中触发断点。
 
-<span id="_t_EThread"></span><span id="_t_ethread"></span><span id="_T_ETHREAD"></span>**/t** *EThread*  
+<span id="_t_EThread"></span><span id="_t_ethread"></span><span id="_T_ETHREAD"></span> **/t** *EThread*  
 （仅内核模式）指定与此断点关联的线程。 *EThread*应的实际地址 ETHREAD 结构，不是线程 id。 仅当遇到此线程的上下文中触发断点。 如果您使用 **/p** *EProcess*并 **/t** *EThread*，可以按任意顺序输入它们。
 
-<span id="_c_MaxCallStackDepth"></span><span id="_c_maxcallstackdepth"></span><span id="_C_MAXCALLSTACKDEPTH"></span>**/c** *MaxCallStackDepth*  
+<span id="_c_MaxCallStackDepth"></span><span id="_c_maxcallstackdepth"></span><span id="_C_MAXCALLSTACKDEPTH"></span> **/c** *MaxCallStackDepth*  
 仅当调用堆栈深度为时激活该断点小于*MaxCallStackDepth*。 不能使用此选项一起使用 **/C**。
 
-<span id="_C_MinCallStackDepth"></span><span id="_c_mincallstackdepth"></span><span id="_C_MINCALLSTACKDEPTH"></span>**/C** *MinCallStackDepth*  
+<span id="_C_MinCallStackDepth"></span><span id="_c_mincallstackdepth"></span><span id="_C_MINCALLSTACKDEPTH"></span> **/C** *MinCallStackDepth*  
 仅当调用堆栈深度大于激活断点*MinCallStackDepth*。 不能使用此选项一起使用 **/c**。
 
-<span id="_a"></span><span id="_A"></span>**/a**  
+<span id="_a"></span><span id="_A"></span> **/a**  
 (有关**bm**仅) 上的所有指定的位置中，设置断点，不管它们是在数据空间或代码空间。 数据上的断点可能会导致程序失败，因为使用此选项仅在已知安全的位置上。
 
-<span id="_d"></span><span id="_D"></span>**/d**  
+<span id="_d"></span><span id="_D"></span> **/d**  
 (有关**bm**仅) 将断点位置转换为地址。 因此，如果移动代码，这些断点会保留在相同的地址，而不是被设置为根据*SymbolPattern*。 使用 **/d**以避免重新计算对断点的更改，当加载或卸载模块。
 
-<span id="__"></span>**/(**  
+<span id="__"></span> **/(**  
 (有关**bm**仅) 包括在符号中的参数列表信息字符串*SymbolString*定义。
 
-此功能，可对具有相同名称但不同的参数列表的重载函数设置断点。 例如，bm / (myFunc 上设置断点**myFunc(int a)** 并**myFunc(char a)**。 无需"/ (", 设置一个断点**myFunc**失败，因为它并不表示该**myFunc**断点适用于函数。
+此功能，可对具有相同名称但不同的参数列表的重载函数设置断点。 例如，bm / (myFunc 上设置断点**myFunc(int a)** 并**myFunc(char a)** 。 无需"/ (", 设置一个断点**myFunc**失败，因为它并不表示该**myFunc**断点适用于函数。
+
+<span id="_______dxObjectExpression______"></span><span id="_______dxObjectExpression______"></span><span id="_______DXOBJECTEXPRESSION______"></span> **/w dx 对象表达式**设置条件断点基于 dx 对象表达式返回的布尔值。 参数是一个数据模型 (dx) 表达式的计算结果为 true (与匹配条件 – 中断) 或 false (不匹配条件 – 不会中断)。
+
+此示例设置条件断点基于 localVariable 的值。
+
+```dbgcmd
+bp /w "localVariable == 4" mymodule!myfunction
+```
+
+此示例演示如何使用 JavaScript 设置断点。
+
+```dbgcmd
+bp /w "@$scriptContents.myFunc(localVariable)" @rip
+```
+
+调试器对象的详细信息，请参阅[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)。
+
+> [!NOTE] 
+> /W 选项是实验性，需要最新版本的调试器。 
+
+
 
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
 指定在其中设置断点的指令的第一个字节。 如果省略*地址*，使用当前指令指针。 有关语法的详细信息，请参阅[地址和地址范围语法](address-and-address-range-syntax.md)。
@@ -95,14 +116,14 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 默认情况下，断点处于活动状态的应用程序执行包含断点位置的代码的第一个时间。 此默认情况下是值的等效**1**有关*传递*。 若要激活该断点仅在程序执行的代码在至少一次后，输入值**2**或详细信息。 例如，值**2**激活断点执行的代码的第二个时间。
 
-此参数创建一个计数器，它将减少在每次通过代码。 若要查看的初始和当前值*Pass*计数器的信息，使用[ **bl （断点列表）**](bl--breakpoint-list-.md)。
+此参数创建一个计数器，它将减少在每次通过代码。 若要查看的初始和当前值*Pass*计数器的信息，使用[ **bl （断点列表）** ](bl--breakpoint-list-.md)。
 
 *Pass*计数器是递减仅当应用程序*执行*过去的响应中的断点[ **g （转向）** ](g--go-.md)命令。 该计数器如果逐句通过代码或跟踪过去它不会减少。 当*Pass*计数器达到**1**，您可以仅通过清除和重置断点重置它。
 
 <span id="_______CommandString______"></span><span id="_______commandstring______"></span><span id="_______COMMANDSTRING______"></span> *CommandString*   
 指定断点是每次执行的命令的列表中遇到指定的次数。 必须将*CommandString*在引号中的参数。 使用分号分隔多个命令。
 
-调试器中的命令*CommandString*可以包括参数。 可以使用标准的 C-控制字符 (如 **\\n**并 **\\"**)。 包含在第二级别引号中的分号 (**\\"**) 被解释为属于嵌入带引号的字符串。
+调试器中的命令*CommandString*可以包括参数。 可以使用标准的 C-控制字符 (如 **\\n**并 **\\"** )。 包含在第二级别引号中的分号 ( **\\"** ) 被解释为属于嵌入带引号的字符串。
 
 *CommandString*到达断点时该应用程序时，才会执行命令*执行*响应[ **g （转向）** ](g--go-.md)命令。 如果您要单步执行代码或跟踪忽略这一点，不会执行命令。
 
@@ -110,6 +131,8 @@ bm [Options] SymbolPattern [Passes] ["CommandString"]
 
 <span id="_______SymbolPattern______"></span><span id="_______symbolpattern______"></span><span id="_______SYMBOLPATTERN______"></span> *SymbolPattern*   
 指定一种模式。 调试器会尝试以匹配此模式与现有的符号并且将在所有模式匹配项上设置断点。 *SymbolPattern*可以包含各种通配符和说明符。 有关此语法的详细信息，请参阅[字符串通配符语法](string-wildcard-syntax.md)。 要与符号匹配这些字符，因为匹配时不区分大小写，并在单个前导下划线 (\_) 表示任意数量的前导下划线。
+
+
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 

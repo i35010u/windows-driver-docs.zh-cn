@@ -1,21 +1,19 @@
 ---
 title: 获取产品数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到开发人员中心帐户的硬件产品的数据。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b1c3c7b756f570bd1775d874988cf38b6827f092
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 1d0bec1665bc8cd7883502ceb7e5fa6f2916d308
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518510"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400876"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
-使用 Microsoft 硬件 API 中的以下方法可获取注册到开发人员中心帐户的硬件产品的数据。 有关 Microsoft 硬件 API 的简介，包括关于使用 API 的先决条件的简介，请参阅[使用 API 管理硬件提交](dashboard-api.md)。
+使用  Microsoft 硬件 API 中的以下方法可获取注册到开发人员中心帐户的硬件产品的数据。 有关 Microsoft 硬件 API 的简介，包括关于使用 API 的先决条件的简介，请参阅[使用 API 管理硬件提交](dashboard-api.md)。
 
 ```cpp
 https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
@@ -30,7 +28,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions`|[获取产品的所有提交的数据](get-all-submissions.md)|
 |GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions/{submissionId}`|[获取产品的特定提交的数据](get-a-submission.md)|
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
@@ -87,7 +85,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| ID | Long | 产品的专用产品 ID |
+| Id | Long | 产品的专用产品 ID |
 | sharedProductId | Long | 产品的共享产品 ID |
 | 链接 | 对象数组 | 有关更多详细信息，请参阅[链接对象](#link-object) |
 | isCommitted | 布尔 | 指示产品是否至少有一个确认的提交  |
@@ -100,9 +98,9 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | productName | 字符串 | 在创建期间指定的驱动程序的名称 |
 | selectedProductTypes | 字典  | 均为字符串的键值对。 <ul><li>**键**表示操作系统系列代码。 有关操作系统系列代码的列表，请参阅[操作系统系列代码列表](#list-of-operating-system-family-codes)。</li><li>**值**表示产品的类型。 有关产品类型的列表，请参阅[产品类型](#list-of-product-types)。</li></ul>|
 | requestedSignatures | 字符串数组 | 产品通过认证的操作系统签名的列表。 有关所有操作系统的列表，请参阅[操作系统代码列表](#list-of-operating-system-codes)  |
-| additionalAttributes | 对象 | 有关更多详细信息，请参阅[附加属性对象](#additional-attribute-object)。 |
-| testHarness | 字符串 | 已提交的程序包的类型。 可能的值为 <ul><li>hlk<li>hck</li><li>attestation</li><li>notset</li></ul>|
-| announcementDate | 日期/时间 | 产品将包含在 Windows Server Catalog 中的日期 |
+| additionalAttributes | Object | 有关更多详细信息，请参阅[附加属性对象](#additional-attribute-object)。 |
+| testHarness | string | 已提交的程序包的类型。 可能的值为 <ul><li>hlk<li>hck</li><li>attestation</li><li>notset</li></ul>|
+| announcementDate | DATETIME | 产品将包含在 Windows Server Catalog 中的日期 |
 
 ### <a name="submission-resource"></a>提交资源
 
@@ -137,11 +135,11 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| ID | 长整型 | 提交的 ID |
+| Id | 长整型 | 提交的 ID |
 | Productid | 长整型 | 与此提交关联的专用产品 ID |
 | 链接 | 对象数组 | 有关更多详细信息，请参阅[链接对象](#link-object) |
-| 名称 | 字符串 | 提交的名称 |
-| 在任务栏的搜索框中键入 | 字符串 | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
+| 名称 | string | 提交的名称 |
+| 在任务栏的搜索框中键入 | string | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
 | isExtensionInf | 布尔 | 指示提交是否为扩展驱动程序 |
 | isUniversal | 布尔 | 指示提交是否通过通用 API 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
 | isDeclarativeInf | 布尔 | 指示提交是否通过声明性 INVerif 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
@@ -164,8 +162,8 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| currentStep | 字符串 | 此实体的整个工作流中的当前步骤名称。 <br>对于引入/程序包提交，可能的值为（括号中的内容为说明）：<ul><li>packageInfoValidation（验证程序包元数据和内容）</li><li>preparation（准备好程序包以便进行处理）</li><li>scanning（扫描程序包内容中是否有恶意软件）</li><li>validation（验证测试结果）</li><li>catalogCreation（为程序包创建安全目录）</li><li>manualReview（进行手动审查）</li><li>signing（对二进制文件签名）</li><li>finalizeIngestion（完成引入并获取可以下载或发布的签名文件）</li></ul>|
-| 状态 | 字符串 | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
+| currentStep | string | 此实体的整个工作流中的当前步骤名称。 <br>对于引入/程序包提交，可能的值为（括号中的内容为说明）：<ul><li>packageInfoValidation（验证程序包元数据和内容  ）</li><li>preparation（准备好程序包以便进行处理  ）</li><li>scanning（扫描程序包内容中是否有恶意软件  ）</li><li>validation（验证测试结果  ）</li><li>catalogCreation（为程序包创建安全目录  ）</li><li>manualReview（进行手动审查  ）</li><li>signing（对二进制文件签名  ）</li><li>finalizeIngestion（完成引入并获取可以下载或发布的签名文件  ）</li></ul>|
+| 状态 | string | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
 | Messages | 数组 | 一个字符串数组，用于提供有关当前步骤的消息（尤其是在失败的情况下） |
 
 ### <a name="download-object"></a>下载对象
@@ -198,10 +196,10 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| 项目 | 数组 | 下载类型和每种类型的 URL 的数组。 有关详细信息，请参阅下文 |
-| 在任务栏的搜索框中键入 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的 Shell</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
+| 项 | 数组 | 下载类型和每种类型的 URL 的数组。 有关详细信息，请参阅下文 |
+| 在任务栏的搜索框中键入 | string | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的 Shell</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
 | Messages | 数组 | 一个字符串数组，用于提供有关可下载文件的消息 |
 
 ### <a name="link-object"></a>链接对象
@@ -218,11 +216,11 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | Href | 字符串 | 通过 API 访问资源的 URL |
 | Rel | 字符串 | 资源的类型。 可能的值为：<ul><li>self - 链接指向自身</li><li>next_link - 链接指向通常用于分页的下一个资源</li><li>get_submissions - 链接指向产品的所有提交</li><li>commit_submission - 链接指向提交的确认 </li><li>update_submission - 链接指向提交的更新 </li><li>update_shippinglabel - 链接指向发货标签的更新  </li><li>driverMetadata - 链接指向用于下载驱动程序元数据的文件。 有关更多详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。</li></ul>|
-| 方法 | 字符串 | 调用 URL 时要使用的 http 方法的类型。 可能的值为<ul><li>GET</li><li>POST</li><li>修补程序</li></ul>|
+| 方法 | 字符串 | 调用 URL 时要使用的 http 方法的类型。 可能的值为<ul><li>GET</li><li>发布</li><li>修补程序</li></ul>|
 
 ### <a name="additional-attribute-object"></a>附加属性对象
 
@@ -230,54 +228,54 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="storagecontroller-object"></a>StorageController 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| biosVersion | 字符串 | ROM Bios 版本 |
-| firmwareVersion | 字符串 | 固件版本 |
-| driverVersion | 字符串 | 驱动程序版本 |
-| driverName | 字符串 | 驱动程序名称 |
-| deviceVersion | 字符串 | 设备版本 |
-| chipsetName | 字符串 | 芯片组名称 |
-| usedProprietary | 布尔值 | 通过专用驱动程序支持的多路径。 如果为 true，则 proprietaryName 和 proprietaryVersion 是必需项 |
-| proprietaryName | 字符串 | 多路径软件名称 |
-| proprietaryVersion | 字符串 | 多路径软件版本 |
-| usedMicrosoft | 布尔值 | 通过特定于设备的模块支持的 Microsoft MPIO。 如果为 true，则 microsoftName 和 microsoftVersion 是必需项 |
-| microsoftName | 字符串 | 多路径软件名称 |
-| microsoftVersion | 字符串 | 多路径软件版本 |
-| usedBootSupport | 布尔值 | 启动支持 |
-| usedBetterBoot | 布尔值 | 支持启动 >2.2TB。  如果为 true，则支持的 UEFI 版本和支持的 ACPI 版本是必需项 |
-| uefiVersion | 字符串 | 支持的 UEFI 版本 |
-| acpiVersion | 字符串 | 支持的 ACPI 版本 |
-| supportsSector4K512E | 布尔值 | 支持 4K/512e 扇区大小 |
-| supportsSector4K4K | 布尔值 | 支持 4K/4K 扇区大小 |
-| supportsDifferential | 布尔值 | 差分（高压差分） |
+| biosVersion | string | ROM Bios 版本 |
+| firmwareVersion | string | 固件版本 |
+| driverVersion | string | 驱动程序版本 |
+| driverName | string | 驱动程序名称 |
+| deviceVersion | string | 设备版本 |
+| chipsetName | string | 芯片组名称 |
+| usedProprietary | boolean | 通过专用驱动程序支持的多路径。 如果为 true，则 proprietaryName 和 proprietaryVersion 是必需项 |
+| proprietaryName | string | 多路径软件名称 |
+| proprietaryVersion | string | 多路径软件版本 |
+| usedMicrosoft | boolean | 通过特定于设备的模块支持的 Microsoft MPIO。 如果为 true，则 microsoftName 和 microsoftVersion 是必需项 |
+| microsoftName | string | 多路径软件名称 |
+| microsoftVersion | string | 多路径软件版本 |
+| usedBootSupport | boolean | 启动支持 |
+| usedBetterBoot | boolean | 支持启动 >2.2TB。  如果为 true，则支持的 UEFI 版本和支持的 ACPI 版本是必需项 |
+| uefiVersion | string | 支持的 UEFI 版本 |
+| acpiVersion | string | 支持的 ACPI 版本 |
+| supportsSector4K512E | boolean | 支持 4K/512e 扇区大小 |
+| supportsSector4K4K | boolean | 支持 4K/4K 扇区大小 |
+| supportsDifferential | boolean | 差分（高压差分） |
 
 #### <a name="raidcontroller-object"></a>RaidController 对象
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| firmwareVersion | 字符串 | 固件版本 |
-| filterVersion | 字符串 | 驱动程序版本 |
-| driverVersion | 字符串 | 筛选器版本 |
-| usedProprietary | 布尔值 | 通过专用驱动程序支持的多路径。 如果为 true，则 proprietaryName 和 proprietaryVersion 是必需项 |
-| proprietaryName | 字符串 | 多路径软件名称 |
-| proprietaryVersion | 字符串 | 多路径软件版本 |
-| usedMicrosoft | 布尔值 | 通过特定于设备的模块支持的 Microsoft MPIO。 如果为 true，则 microsoftName 和 microsoftVersion 是必需项 |
-| microsoftName | 字符串 | 多路径软件名称 |
-| microsoftVersion | 字符串 | 多路径软件版本 |
-| isThirdPartyNeeded | 布尔值 | 进行连接所需的第三方非 Microsoft 驱动程序 |
-| isSES | 布尔值 | SES (SCSI Enclosure Services)。 指示是否包含 SES。 SCSI 是连接系统设备的服务总线的标准术语，最初是指 Small Computer System Interface（小型计算机系统接口）。 SES 是 SCSI Enclosure Services 的简称。 |
-| isSAFTE | 布尔值 | SAF-TE（ANBll 规范）。 指示是否包含 SAF-TE。 ANBll 是一项行业规范。 SAF-TE 是 SCSI Accessed Fault Tolerant Enclosures 的简称。 SCSI 是连接系统设备的服务总线的标准术语，最初是指 Small Computer System Interface（小型计算机系统接口）。 |
-| additionalInfo | 字符串 | 其他信息 |
+| firmwareVersion | string | 固件版本 |
+| filterVersion | string | 驱动程序版本 |
+| driverVersion | string | 筛选器版本 |
+| usedProprietary | boolean | 通过专用驱动程序支持的多路径。 如果为 true，则 proprietaryName 和 proprietaryVersion 是必需项 |
+| proprietaryName | string | 多路径软件名称 |
+| proprietaryVersion | string | 多路径软件版本 |
+| usedMicrosoft | boolean | 通过特定于设备的模块支持的 Microsoft MPIO。 如果为 true，则 microsoftName 和 microsoftVersion 是必需项 |
+| microsoftName | string | 多路径软件名称 |
+| microsoftVersion | string | 多路径软件版本 |
+| isThirdPartyNeeded | boolean | 进行连接所需的第三方非 Microsoft 驱动程序 |
+| isSES | boolean | SES (SCSI Enclosure Services)。 指示是否包含 SES。 SCSI 是连接系统设备的服务总线的标准术语，最初是指 Small Computer System Interface（小型计算机系统接口）。 SES 是 SCSI Enclosure Services 的简称。 |
+| isSAFTE | boolean | SAF-TE（ANBll 规范）。 指示是否包含 SAF-TE。 ANBll 是一项行业规范。 SAF-TE 是 SCSI Accessed Fault Tolerant Enclosures 的简称。 SCSI 是连接系统设备的服务总线的标准术语，最初是指 Small Computer System Interface（小型计算机系统接口）。 |
+| additionalInfo | string | 其他信息 |
 
 #### <a name="svvp-object"></a>SVVP 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| productVersion | 字符串 | 产品版本 |
-| supportLink | 字符串 | 支持 URL |
-| guestOs | 字符串 | 来宾操作系统。 可能的值为：<ul><li>Windows Server 2008</li><li>Windows Server 2008 Release 2</li><li>Windows Server 2012</li><li>Windows Server 2012 R2 </li></ul>|
-| processorArchitecture | 字符串 | 硬件处理器体系结构。 可能的值为：<ul><li>Xeon</li><li>Opteron</li><li>Itanium 2</li></ul>|
+| productVersion | string | 产品版本 |
+| supportLink | string | 支持 URL |
+| guestOs | string | 来宾操作系统。 可能的值为：<ul><li>Windows Server 2008</li><li>Windows Server 2008 Release 2</li><li>Windows Server 2012</li><li>Windows Server 2012 R2 </li></ul>|
+| processorArchitecture | string | 硬件处理器体系结构。 可能的值为：<ul><li>Xeon</li><li>Opteron</li><li>Itanium 2</li></ul>|
 | maxProcessors | 整数 | 虚拟机中的最大处理器数 |
 | maxMemory | 整数 | 虚拟机中的最大内存（以 GB 为单位） |
 
@@ -493,6 +491,6 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | RequestInvalidForCurrentState | 不能为收件箱或系统类型创建“发布”发货标签。 只能共享发货标签。 | 在收件箱驱动程序或系统上创建 Windows 更新发货标签时返回此项。 |
 | RequestInvalidForCurrentState | 提交尚未做好创建发货标签的准备。 请过一段时间后重试。 | 如果在创建发货标签时不需等待准备或预先处理完成，则返回此项。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

@@ -4,7 +4,7 @@ description: Dx 命令显示C++表达式中使用 NatVis 扩展模型。 Dx 命�
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
 - dx （显示调试器对象模型表达式） Windows 调试
-ms.date: 01/18/2019
+ms.date: 05/28/2019
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 619990863697246463e2df375700ba15c15c1c5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65d63e3469b6e18f58eebcbbe245f81364156828
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339755"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394279"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
@@ -47,10 +47,10 @@ dx [{-?}|{-h}]
 -   左键的单击采用该列，并解压后生成它自己的表。 您会看到原始行以及扩展的列的子级。
 -   右键单击提供"展开到网格"采用列并将其返回到当前表添加为正确的大多数列。
 
-<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**   
+<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**    
 显示为一个网格，并将网格单元格的大小限制为指定的数 (\#) 字符。
 
-<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**   
+<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**    
 显示容器延续 (跳过\#容器中的元素)。此选项通常用于自定义输出自动化方案，并提供一个"..."在列表底部的继续符元素。
 
 <span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
@@ -60,9 +60,9 @@ dx [{-?}|{-h}]
 显示详细信息，包括方法和其他非典型的对象。
 
 <span id="_______-r_______"></span><span id="_______-R_______"></span> **-r**<em>\#</em>   
-以递归方式显示子 （字段） 最多*\#* 级别。 如果*\#* 是未指定，1，递归级别是默认值。
+以递归方式显示子 （字段） 最多 *\#* 级别。 如果 *\#* 是未指定，1，递归级别是默认值。
 
-<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;,FormatSpecifier&gt;\]**   
+<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;,FormatSpecifier&gt;\]**    
 使用任何下列格式说明符来修改默认的呈现。
 
 |                         |                                                                                          |
@@ -84,13 +84,14 @@ dx [{-?}|{-h}]
 | ,\[&lt;expression&gt;\] | 指定作为表达式的长度的指针/数组/容器&lt;表达式&gt;           |
 | nd                     | 不到对象的派生 (runtype) 类型。 仅显示静态值          |
 
-
-
-<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** {**-?**}   
+<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** { **-?** }   
 显示命令行帮助。
 
-<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** {**-h**}   
+<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** { **-h**}   
 显示可在调试器中的对象的帮助。
+
+<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span> **dx** { **-id**}   
+仅限 Microsoft 内部使用。 用于跟踪命令输出中的数据模型链接。
 
 ## <a name="command-line-usage-example"></a>命令行用法示例
 

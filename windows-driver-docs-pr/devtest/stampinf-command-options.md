@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e0df9663746f1d1555ba23e5b59d35fb188907
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 762cfeac2a7e723a7cc02c0fb3f672677e0006fc
+ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387912"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394272"
 ---
 # <a name="stampinf-command-options"></a>Stampinf 命令选项
 
@@ -47,7 +47,7 @@ Stampinf -f filename
 指定要在其中放置 [**INF DriverVer 指令**](https://msdn.microsoft.com/library/windows/hardware/ff547394)的 INF 部分。 此指令所在的默认位置是 [**INF Version 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。
 
 <span id="_______-d_________date_____"></span><span id="_______-D_________DATE_____"></span> **-d** \[ *date* |  **\\** <em>\]  
-指定在编写的日期 [</em>*INF DriverVer 指令*<em>](<https://msdn.microsoft.com/library/windows/hardware/ff547394>)。为日期格式是*月</em>/* 日期 */* 年 * (例如， **-d 2011 年 10 月 20 日**)。
+指定在编写的日期 [</em>*INF DriverVer 指令*<em>](https://msdn.microsoft.com/library/windows/hardware/ff547394)。为日期格式是*月</em>/* 日期 */* 年 * (例如， **-d 2011 年 10 月 20 日**)。
 
 若要使用当前日期，请指定一个星号 (\*) 使用此参数。
 

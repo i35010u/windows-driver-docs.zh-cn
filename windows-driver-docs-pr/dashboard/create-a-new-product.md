@@ -1,25 +1,23 @@
 ---
 title: 创建新产品
 description: 在 Microsoft 硬件 API 中使用此方法创建新的硬件产品。
-author: balapv
-ms.author: balapv
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cadfdb9b109e0e651e6213a6fa668f1929a26eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: c2670f07b4b726167c21a4299553a54fae81184a
+ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518086"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400873"
 ---
 # <a name="create-a-new-product"></a>创建新产品
 
 在 Microsoft 硬件 API 中使用此方法创建新的硬件产品。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 
@@ -27,15 +25,15 @@ ms.locfileid: "56518086"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` |
+| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` |
 
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
-| accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
+| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| accept | string | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -133,6 +131,6 @@ Authorization: Bearer <your access token>
 
 有关详细信息，请参阅[错误代码](get-product-data.md#error-codes)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
