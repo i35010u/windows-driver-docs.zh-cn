@@ -7,12 +7,12 @@ keywords:
 - 队列 WDK KMDF，framework 工作项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c73fcb2496a8a4843b502b49b6d38743c9a87fda
-ms.sourcegitcommit: 9580c6e32d820e1c6672b2b788c4fabdefa2910c
+ms.openlocfilehash: ebb0d2d4f8baff859eb51d03c33af0d05fc0a444
+ms.sourcegitcommit: 422bef7571ddd78fad4633804db03bd8abd4a776
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308458"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431604"
 ---
 # <a name="using-framework-work-items"></a>使用框架工作项
 
@@ -48,7 +48,9 @@ ms.locfileid: "66308458"
 
     驱动程序调用[ **WdfWorkItemEnqueue**](https://msdn.microsoft.com/library/windows/hardware/ff551203)，这将驱动程序的工作项添加到工作项队列。
 
-当您的驱动程序调用[ **WdfWorkItemCreate**](https://msdn.microsoft.com/library/windows/hardware/ff551201)，它必须提供一个框架设备对象或 framework 队列对象的句柄。 当系统中删除该对象时，它还会删除与对象关联的任何现有工作项。
+当您的驱动程序调用[ **WdfWorkItemCreate**](https://msdn.microsoft.com/library/windows/hardware/ff551201)，它必须提供一个框架设备对象或 framework 队列对象的句柄。 当系统中删除该对象时，它还会删除与对象关联的任何现有工作项。 将释放工作项对象和其关联的工作项回调将先于父对象清理[ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)调用回调。
+
+有关框架对象层次结构的清理规则的详细信息，请参阅[Framework 对象生命周期](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)。
 
 ### <a href="" id="ddk-using-the-work-item-callback-function-df"></a>使用工作项回调函数
 

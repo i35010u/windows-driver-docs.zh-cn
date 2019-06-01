@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 94981e59cd11e152cd201aaab1b4032290fac0f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 582372622a1a80939e219a601da84da0cd97c54c
+ms.sourcegitcommit: f3825d59bb69429e892a088061bd014a65e0d161
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348235"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452396"
 ---
 # <a name="guidclassusbdevice"></a>GUID_CLASS_USB_DEVICE
 
@@ -50,6 +50,10 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 </tr>
 </tbody>
 </table>
+
+## <a name="remarks"></a>备注
+
+以前，此标识符是依赖于`Usbioctl.h`。  请注意，现在需要包括`Usbiodef.h`相反。
 
 ## <a name="see-also"></a>请参阅
 

@@ -4,14 +4,14 @@ description: 本主题介绍移动运算符可以实现的基本用户用例。
 ms.assetid: 24050B13-4A1A-466F-974B-40B34EDB16DC
 keywords:
 - Windows Mobile 计划用户情况下，移动计划实现的移动运营商
-ms.date: 03/25/2019
+ms.date: 05/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8119bb90eb86a6849307020b60cfccab973f0983
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b0a674a3a6eff97546b1d3168c59dc1f06d1a86
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357737"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455220"
 ---
 # <a name="mobile-plans-use-cases"></a>移动套餐用例
 
@@ -27,9 +27,9 @@ ms.locfileid: "63357737"
 
 1. 实现[计划移动 web 门户](mobile-plans-web-portal.md#web-service-api-used-for-esim)。
 2. 实现一种方法让控件返回到计划移动应用。
-   1. [内联配置文件传递](mobile-plans-callback-notifications.md#inline-profile-delivery)。 如果 esim 卡配置文件是 SM 中立即可用，则实现此回调的 DP + 服务器和设备可以将附加到移动电话网络立即。
+   1. [即时 esim 卡配置文件下载](mobile-plans-callback-notifications.md#immediate-esim-profile-download-and-activation)。 如果 esim 卡配置文件是 SM 中立即可用，则实现此回调的 DP + 服务器和设备可以将附加到移动电话网络立即。
    2. [异步连接](mobile-plans-callback-notifications.md#asynchronous-connectivity)。 如果 esim 卡配置文件是 SM 中立即可用，则实现此回调的 DP + 服务器，但该设备需要等待一段时间之前将附加到移动电话网络。
-   3. **异步的配置文件下载**。 如果 esim 卡配置文件是在你 SM 中可用，则实现此回调的 DP + 服务器一段时间和设备后能够立即连接到移动电话网络。
+   3. [延迟 esim 卡配置文件下载](mobile-plans-callback-notifications.md#deferred-esim-profile-download-and-activation)。 如果 esim 卡配置文件是在你 SM 中可用，则实现此回调的 DP + 服务器一段时间和设备后能够立即连接到移动电话网络。
 3. [处理 esim 卡下载错误](mobile-plans-eSIM-error-handling.md)。 （可选）
 4. 定义[基本的设备体验](mobile-plans-device-experience.md#basic-device-experience)。
 5. 提供[计划移动服务配置](mobile-plans-service-configuration.md)信息。

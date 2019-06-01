@@ -4,14 +4,14 @@ description: 本主题介绍了计划移动应用支持通知回调
 ms.assetid: A3CE0B7D-80C5-4A98-8615-250A3C760B85
 keywords:
 - Windows Mobile 计划回调通知，移动计划实现的移动运营商
-ms.date: 03/25/2019
+ms.date: 05/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c9a39b36e1035aab6053c148c8a9cab6cae8e21
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 5d93561092bac4024e8c537b7af5f6e22cfe7f9c
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405125"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455228"
 ---
 # <a name="mobile-plans-callback-notifications"></a>移动计划回调通知
 
@@ -29,35 +29,39 @@ MO 门户支持的事务包括但不限于以下：
 > [!NOTE]
 > 从主机中定义应返回此回调[服务配置](mobile-plans-service-configuration.md)。
 
-## <a name="inline-profile-delivery"></a>内联配置文件交付
+## <a name="immediate-esim-profile-download-and-activation"></a>即时 esim 卡配置文件下载和激活
 
 下图显示了移动计划程序如何支持而无需控制离开 MODirect 门户下载配置文件的高级别流。
 
-![移动计划内联配置文件下载序列图](images/dynamo_inline_profile_flow.png)
+![移动计划内联配置文件下载序列图](images/mobile_plans_inline_profile_flow.png)
 
-在门户的配置文件下载、 安装和激活发生准备就绪 MO 直接门户时，应调用`MobilePlansInlineProfile.notifyInlineProfileDownload`。
+这是的演变[内联配置文件传递](mobile-plans-legacy-callback-notifications.md#inline-profile-delivery)，其现已记录的旧文档页中。
 
-### <a name="mobileplansinlineprofilenotifyinlineprofiledownload"></a>MobilePlansInlineProfile.notifyInlineProfileDownload
+### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode"></a>MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData, activationCode)
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
 | purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
-| activationCode | 字符串 | 正在下载 esim 卡配置文件激活代码。 配置文件的 ICCID 推断从配置文件元数据。 |
+| activationCode | 字符串 | 激活代码，以用于下载 esim 卡配置文件
 
-以下 Javascript 函数显示要通知的内联配置文件下载的应用程序的 API 的示例应开始。
+| 返回值的类型 | 描述 |
+| --- | --- |
+| MobilePlansOperationContext | 具有标识符添加到与此唯一下载操作的匹配的对象。
+
+开始下载 esim 卡配置文件的过程。 在调用后立即将控制权返回到 MO 门户中。 要显示顶部的通知的窗体中的月门户上的配置文件下载的进度，将显示用户界面。 MO 门户可以继续在此过程中导航
+
+以下 Javascript 函数显示要通知的应用程序的配置文件下载应该开始的 api 示例
 
 ```Javascript
-function NotifyMobilePlans() { 
-    var purchaseMetaData = MobilePlans.createPurchaseMetaData(); 
-    purchaseMetaData.userAccount = MobilePlansUserAccount.new; 
-    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new; 
-    purchaseMetaData.lineType = MobilePlansLineType.new; 
-    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete; 
-    purchaseMetaData.planName = "My Plan"; 
-    MobilePlansInlineProfileDownload.registrationChangedScript = "onRegistrationChanged";
-    MobilePlansInlineProfileDownload.profileActivationCompleteScript = "onActivationComplete";
-    MobilePlansInlineProfileDownload.notifyInlineProfileDownload(purchaseMetaData , "1$smdp.address$matchingID"); 
-}
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID");
 ```
 
 请参阅[购买元数据属性](#purchase-metadata-properties-details)puchaseMetadata 对象有关的详细信息。
@@ -160,13 +164,84 @@ function onActivationComplete(activationArgs) {
 }
 ```
 
+## <a name="deferred-esim-profile-download-and-activation"></a>延迟 esim 卡配置文件下载和激活
+
+下图显示了如何移动计划程序支持延迟的下载的 esim 卡配置文件而无需离开 MODirect 门户的控件的高级别流。
+
+![移动计划延迟的配置文件下载序列图](images/mobile_plans_delay_profile_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifyprofiledownloadpurchasemetadata-activationcode-downloaddelay"></a>MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData, activationCode, downloadDelay)
+
+| 参数名称 | 在任务栏的搜索框中键入 | 描述 |
+| --- | --- | -- |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| activationCode | 字符串 | 激活代码或 SM-DP + 配置文件所在的地址
+| downloadDelay | uint | 要尝试下载 esim 卡配置文件之前等待的分钟数
+
+| 返回值的类型 | 描述 |
+| --- | --- |
+| MobilePlansOperationContext | 具有标识符添加到与此唯一下载操作的匹配的对象。
+
+在调用后立即将控制权返回到 MO 门户中。 将显示用户界面，以通知用户，将安装一个配置文件。 之后`downloadDelay`分钟发生，通知将显示给用户，邀请他们以开始下载配置文件的过程。
+
+以下 Javascript 函数显示 API 以通知应用程序应以延迟的配置文件下载的示例
+
+```Javascript
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID", 15);
+```
+
+请参阅[购买元数据属性](#purchase-metadata-properties-details)puchaseMetadata 对象有关的详细信息。
+
+请参阅[侦听网络注册更改](#listening-for-network-registration-changes)上面一节。
+
+请参阅[侦听的配置文件激活](#listening-for-profile-activation)上面一节。
+
+## <a name="cancel-esim-profile-download"></a>取消 esim 卡配置文件下载
+
+到目前为止，这适用于[延迟 esim 卡配置文件下载](#deferred-eSIM-profile-download-and-activation)方案中，但它无法用于将来的用户的情况。
+
+下图显示了如何移动计划程序而无需离开 MODirect 门户控件支持取消的 esim 卡配置文件下载的高级别流。
+
+![移动计划取消 esim 卡配置文件下载序列图](images/mobile_plans_cancel_profile_download_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifyoperationcancelmobileplansoperationcontext"></a>MobilePlansInlineOperations.notifyOperationCancel(MobilePlansOperationContext)
+
+| 参数名称 | 在任务栏的搜索框中键入 | 描述 |
+| --- | --- | -- |
+| operationContext | Object | 此对象包含唯一标识的上一个操作的信息 |
+
+再向用户显示 toast 通知，告知他们，下载已准备好开始，可以取消此操作。
+
+以下 Javascript 函数显示要取消的异步操作的 API 的示例。
+
+```Javascript
+var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.registrationChangedScript = "onRegistrationChanged";
+    MobilePlansInlineOperations.profileActivationCompleteScript = "onActivationComplete";
+    var op = MobilePlansInlineOperations.notifyProfileDownload(purchaseMetaData , "1$smdp.address$matchingID", 15);
+    MobilePlansInlineOperations.notifyOperationCancel(op);
+```
+
 ## <a name="asynchronous-connectivity"></a>异步连接
 
 下图显示了有关如何移动计划程序支持延迟的连接高级别流。
 
 ![移动计划延迟的连接序列图](images/dynamo_async_connectivity_flow.png)
 
-用户已成功完成购买，需要从移动运营商 MO 直接门户的配置文件下载后，门户将通知计划移动应用程序，它应触发延迟的连接流使用`MobilePlans.notifyPurchaseWithProfileDownload`API。 
+用户已成功完成购买，需要从移动运营商 MO 直接门户的配置文件下载后，门户将通知计划移动应用程序，它应触发延迟的连接流使用`MobilePlans.notifyPurchaseWithProfileDownload`API。
 
 ### <a name="mobileplansnotifypurchasewithprofiledownload"></a>MobilePlans.notifyPurchaseWithProfileDownload
 
@@ -194,27 +269,73 @@ function finishPurchaseWithDownload() {
 
 ## <a name="adding-balance"></a>添加余额
 
-当用户完成购买 MO 直接门户中的通过将更多的数据添加到他们的帐户 （由于用户 esim 卡上使用当前配置文件需要进行任何配置文件下载） 时，应调用 MO 门户`MobilePlans.notifyBalanceAddition`API 将控制权返回给移动计划应用程序。
+当用户通过将更多的数据添加到其帐户完成购买 MO 直接门户中的时，应调用 MO 门户`MobilePlansInlineOperations.notifyBalanceAddition`API 将控制权返回给计划移动应用。 这可用于*物理 SIM*或*esim 卡配置文件*其中已安装在设备中。
 
-### <a name="mobileplansnotifybalanceaddition"></a>MobilePlans.notifyBalanceAddition
+下图显示了如何移动计划程序支持添加均衡的高级别流。
+
+![移动计划添加 balancesequence 关系图](images/mobile_plans_add_balance_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata"></a>MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData)
 
 | 参数名称 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | -- |
 | purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
-| iccid | 字符串 | 向其分配数据 ICCID。 如果此 ICCID 未处于活动状态，计划移动应用激活相应的配置文件。|
 
-下面的 Javascript 函数显示示例的 API 来通知用户已完成使用配置文件的购买的应用程序已可用，但不是一定是活动，esim 卡上。
+| 返回值的类型 | 描述 |
+| --- | --- |
+| MobilePlansOperationContext | 具有标识符添加到与此唯一下载操作的匹配的对象。
 
- ```Javascript
-function finishPurchaseWithBalanceAddition() {
-        var metadata = MobilePlans.createPurchaseMetaData();
-        metadata.userAccount = MobilePlansUserAccount.new;
-        metadata.purchaseInstrument = MobilePlansPurchaseInstrument.none;
-        metadata.moDirectStatus = MobilePlansMoDirectStatus.complete;
-        metadata.line = MobilePlansLineType.new;
-        metadata.planName = "2GB Monthly";
-        MobilePlans.notifyBalanceAddition(metadata, "89000000000000000000");
-    }
+MO 时月想要向给定帐户添加余额，应调用`MobilePlansInlineOperations.notifyBalanceAddition`API。
+
+以下 Javascript 函数显示 API 来通知已余额添加该应用程序的示例。
+
+```Javascript
+function NotifyMobilePlans() {
+    var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData);
+}
+```
+
+请参阅[购买元数据属性](#purchase-metadata-properties-details)有关详细信息`puchaseMetadata`对象。
+
+## <a name="adding-balance-and-activate-esim-profile"></a>添加余额和激活 esim 卡配置文件
+
+当用户通过将更多的数据添加到其帐户完成购买 MO 直接门户中的时，应调用 MO 门户`MobilePlansInlineOperations.notifyBalanceAddition`API 将控制权返回给计划移动应用。 这可用于*esim 卡配置文件*其中已安装在设备中。 ICCID 参数指示应激活的 esim 卡配置文件。
+
+下图显示了如何移动计划程序支持添加与 iccid 信息均衡的高级别流。
+
+![移动计划添加 balancesequence 关系图](images/mobile_plans_add_balance_iccid_flow.png)
+
+### <a name="mobileplansinlineoperationsnotifybalanceadditionpurchasemetadata-iccid"></a>MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData, iccid)
+
+| 参数名称 | 在任务栏的搜索框中键入 | 描述 |
+| --- | --- | -- |
+| purchaseMetadata | Object | 此对象包含有关用户的购买的元数据。 这包括有关用户帐户、 采购方法或检测的详细信息、 详细信息，如果用户添加一个新行，并且用户购买的计划的名称。 所有这些用于报告。 |
+| iccid | 字符串 | 这应设为活动状态后的余额添加 ICCID
+
+| 返回值的类型 | 描述 |
+| --- | --- |
+| MobilePlansOperationContext | 具有标识符添加到与此唯一下载操作的匹配的对象。
+
+如果已知的配置文件的 ICCID，还可以对非活动配置文件进行的余额添加。 使用`MobilePlansInlineOperations.notifyBalanceAddition`与 ICCID 将通知的余额添加计划移动以及使移动计划切换到与提供的 ICCID 相对应的配置文件的活动配置文件。
+
+以下 Javascript 函数显示 API 来通知已余额添加该应用程序的示例。
+
+```Javascript
+function NotifyMobilePlans() {
+    var purchaseMetaData = MobilePlans.createPurchaseMetaData();
+    purchaseMetaData.userAccount = MobilePlansUserAccount.new;
+    purchaseMetaData.purchaseInstrument = MobilePlansPurchaseInstrument.new;
+    purchaseMetaData.lineType = MobilePlansLineType.new;
+    purchaseMetaData.modirectStatus = MobilePlansMoDirectStatus.complete;
+    purchaseMetaData.planName = "My Plan";
+    MobilePlansInlineOperations.notifyBalanceAddition(purchaseMetaData, "8900000000000000001");
+}
 ```
 
 请参阅[购买元数据属性](#purchase-metadata-properties-details)有关详细信息`puchaseMetadata`对象。
@@ -259,69 +380,4 @@ function finishPurchaseWithCancellation() {
 
 ## <a name="legacy-callback-notifications"></a>旧的回调通知
 
-> [!NOTE]
-> 本部分可作为仅参考资料。 尽管在计划移动应用中支持此通知，则建议并不是在新移动计划实现中实现它。
-
-应使用以下语法使用 JavaScript 发送到计划移动应用的通知：
-
-```javascript
-DataMart.notifyPurchaseResult(notificationPayload);
-```
-
-Esim 卡通知有效负载的示例如下所示：
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"New\",\"purchaseInstrument\":\"New\",\"line\":\"New\",\"moDirectStatus\":\"Complete\",\"planName\":\"MyPlan\"}";
-notificationPayload.success = true;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.activationCode = '1$trl.prod.ondemandconnectivity.com$JO46UQDI07IKQDGG';
-notificationPayload.iccid = '8988247000101997790';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-物理 SIM 通知有效负载的示例如下所示：
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"New\",\"purchaseInstrument\":\"New\",\"line\":\"New\",\"moDirectStatus\":\"Complete\",\"planName\":\"MyPlan\"}";
-notificationPayload.success = true;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.iccid = '8988247000101997790';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-Esim 卡，其中用户放弃不成功的事务的情况下个月门户通知有效负载的示例如下所示。 若要实现适用于特定实现的所有情况下，请参阅后面的示例表。
-
-```javascript
-let notificationPayload = new Object();
-notificationPayload.ver = '1';
-notificationPayload.purchaseResult = "{\"userAccount\":\"Bailed\",\"purchaseInstrument\":\"None\",\"line\":\"None\",\"moDirectStatus\":\"None\",\"planName\":\"\"}";
-notificationPayload.success = false;
-notificationPayload.transactionId = 'MSFT_ecf5a4d6-024c-46c3-8fcd-2c1f0deed572';
-notificationPayload.activationCode = '';
-notificationPayload.iccid = '';
-
-DataMart.notifyPurchaseResult(JSON.stringify(notificationPayload));
-```
-
-从其发送通知的月门户 URI 必须是中的安全*https*协议。 您可以指定该主机，但不是一定是未来保留一定的灵活性的完整路径。 
-
-下表介绍通知的 JSON 有效负载中的每个字段：
-
-| JSON 字段         | 在任务栏的搜索框中键入    | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 示例                                |
-| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| success            | 布尔 | **True**如果用户购买 MO 直接计划。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `“success”:true`                     |
-| iccid              | 字符串  | 对于 esim 卡，这指示 ICCID 客户端必须用于使用月直接购买的计划。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `iccid:”8988247000100297655”`        |
-| activationCode     | 字符串  | 要检索的 esim 卡配置文件的激活代码。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `“ActivationCode”`                   |
-| transactionId      | 字符串  | MO 门户收到作为查询参数时在门户启动的事务 ID。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `transctionId= rRi8OzhI3EiR02nm.2.0.1` |
-| purchaseResult     | 字符串  | 包含与 MO 门户的用户交互的详细信息。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                        |
-| userAccount        | 枚举    | 此字段为必需字段。 <p>可能值：</p><ul><li>新建：指示用户已创建了新的用户帐户。</li><li>现有:指示用户记录的现有用户帐户。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul>                                                                                                                                                                                                                                                                                                                 | `“userAccount”:”New”`              |
-| purchaseInstrument | 枚举    | 此字段为必需字段。 <p>可能值：</p><ul><li>新建：指示用户使用新的一种付款方式。</li><li>现有:指示用户使用已在文件的现有付款方法。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul>                                                                                                                                                                                                                                                                                                             | `“purchaseInstrument”:”New”`       |
-| 行               | 枚举    | 此字段为必需字段。 <p>可能值：</p><ul><li>新建：指示 SIM 卡已添加的用户帐户。</li><li>现有:指示是否传输的现有行到设备。</li><li>他：指示用户已在此步骤中的采购流程结束。</li><li>None:指示用户未到达此步骤。</li></ul>                                                                                                                                                                                                                                                                                                                     | `“line”:”New”`                     |
-| moDirectStatus     | 枚举    | 此字段为必需字段。 <p>可能值：</p><ul><li>完成：指示用户已成功完成购买。</li><li>服务错误：表示用户无法完成购买由于月服务错误。</li><li>InvalidSIM:表示传递给在门户 ICCID 时不正确。</li><li>LogOnFailed:表示用户无法登录到 MO 门户。</li><li>PurchaseFailed:指示在购买由于计费错误而失败。</li><li>ClientError:指示无效的参数已传递到门户。</li><li>None:指示用户已结束而无需特定错误的事务。</li></ul> | `“moDirectStatus”:”Complete”`      |
-| planName           | 字符串  | 对于成功的事务，此字段不能为空，并且必须提供一个描述性的计划名称。 对于失败的事务，此字段必须是空字符串。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `“planName”:”prepaid_3GperMonth”`  |
+请参阅其中记录所有旧的回调的特定页[此处](mobile-plans-legacy-callback-notifications.md)

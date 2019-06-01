@@ -6,12 +6,12 @@ keywords:
 - Windows Mobile 计划集成，移动计划集成的移动运营商
 ms.date: 03/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7fb09cf1195713a35843206dd5557bab689797
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2bad4f681ac4ca4f8488f04a9317bc2d5dd6fbb
+ms.sourcegitcommit: 335096107bfc92718d9ba809527214113c993da7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357687"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455213"
 ---
 # <a name="mobile-plans-integration"></a>移动计划集成
 
@@ -73,4 +73,4 @@ ms.locfileid: "63357687"
 | --- | --- | --- | --- |
 | GetBalance | 96% | 1 | 3 |
 
-在测试运行期间预期的成功率是：99.9%. 在获得此成功率，MO API 将准备好移动计划生产服务中启用。
+在测试运行期间预期的成功率是：**99.9%** 和平均延迟：**400ms**。 在获得此成功率，MO API 将准备好移动计划生产服务中启用。

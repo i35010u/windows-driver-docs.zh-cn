@@ -3,12 +3,12 @@ Description: 介绍 USB 函数堆栈的体系结构。
 title: Windows 中的 USB 设备端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55390287dc7d81316f9eabc306fe97d5e28b47c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be3e28b468e2ceeb434ca9d6a28e42d50667318
+ms.sourcegitcommit: f3825d59bb69429e892a088061bd014a65e0d161
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384512"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452393"
 ---
 # <a name="usb-device-side-drivers-in-windows"></a>Windows 中的 USB 设备端驱动程序
 
@@ -28,7 +28,7 @@ ms.locfileid: "63384512"
 
 **应用程序和服务**
 
--   用户模式下的所有请求都发送到由 Microsoft 提供的内核模式类驱动程序 GenericUSBFn.sys。 您可以通过发送与 GenericUSBFn.sys 创建进行通信的用户模式服务[这些 I/O 控制代码 (Ioctl)](https://msdn.microsoft.com/library/windows/hardware/mt188014)，和驱动程序处理与 USB 函数驱动程序的内核模式通信。
+- 用户模式下的所有请求都发送到由 Microsoft 提供的内核模式类驱动程序 GenericUSBFn.sys。 您可以通过发送 I/O 控制代码 (Ioctl) 中定义与 GenericUSBFn.sys 创建进行通信的用户模式服务[genericusbfnioctl.h](https://docs.microsoft.com/windows/desktop/api/genericusbfnioctl/)。 有关这些 Ioctl 的详细信息请参阅[GenericUSBFn.sys 与从用户模式服务通信](https://docs.microsoft.com/windows-hardware/drivers/usbcon/user-mode-services-ufx)
 
 **USB 函数类驱动程序**
 
