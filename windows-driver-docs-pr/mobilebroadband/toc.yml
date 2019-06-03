@@ -378,6 +378,9 @@
           href: mobile-plans-launch.md
         - name: 附录
           href: mobile-plans-appendix.md
+          items:
+            - name: 传统回调通知
+              href: mobile-plans-legacy-callback-notifications.md
     - name: 用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
       href: esim-management-on-windows-for-mobile-operators-and-oems.md
     - name: 创建和配置 Internet 共享体验
