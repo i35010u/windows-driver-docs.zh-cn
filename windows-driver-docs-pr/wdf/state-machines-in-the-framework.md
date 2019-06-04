@@ -15,19 +15,22 @@ keywords:
 - 电源策略 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 405bddd263bb3b8f1aa8d7ca94f3f29e285d5fb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce09ece00bf70351ab95a528bb236209cc96849d
+ms.sourcegitcommit: 39c0b7e84e5087447493507a478b870c7a834446
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325123"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66458843"
 ---
 # <a name="state-machines-in-the-framework"></a>框架中的状态计算机
 
 
 若要跟踪的每个设备的状态，框架将使用即插即用的状态机、 电源状态机和电源策略状态机。 框架将创建每个设备都插入到系统每个状态机的实例。
 
-很少的驱动程序需要注意的设备的状态机的状态。 但是，对于确实需要了解此信息的驱动程序，framework 提供接口的两个的集：
+>[!NOTE]
+>此功能是仅供 Microsoft 内部使用。
+
+对于确实需要了解此信息的驱动程序，framework 提供了两个集的接口：
 
 -   一组驱动程序所提供事件回调函数。
 

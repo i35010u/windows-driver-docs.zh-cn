@@ -8,12 +8,12 @@ keywords:
 - 分段的大型 TCP 数据包 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7a386de570abd90929988ae3fdf142b339e844
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414d19e080ea4eaa979697d9041109ec0745776b
+ms.sourcegitcommit: e6ce5358b12818e0bfad6f202e63bfc887d9d224
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359559"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482766"
 ---
 # <a name="offloading-the-segmentation-of-large-tcp-packets"></a>卸载大型 TCP 数据包的段
 
@@ -47,7 +47,7 @@ TCP/IP 传输将卸载仅这些大型 TCP 数据包，满足以下条件：
 
 -   更新与关联的大数据包分段信息[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。 此信息很[ **NDIS\_TCP\_LARGE\_发送\_卸载\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567882)结构，它是的一部分**NET\_缓冲区\_列表**与关联的信息**NET\_缓冲区\_列表**结构。 有关详细信息**NET\_缓冲区\_列表**信息，请参阅[访问 TCP/IP 卸载 NET\_缓冲区\_列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。 TCP/IP 传输集**MSS**到最大段大小 (MSS) 的值。
 
--   数据包的 IP 标头的总长度字段中写入大型 TCP 数据包的总长度。 总长度包括 IP 标头的长度、 如果它们存在的 IP 选项的长度、 TCP 标头的长度，如果它们不存在，TCP 选项的长度和 TCP 有效负载的长度。
+- 为 LSOv1，写入数据包的 IP 标头的总长度字段大型 TCP 数据包的总长度。 总长度包括 IP 标头的长度、 如果它们存在的 IP 选项的长度、 TCP 标头的长度，如果它们不存在，TCP 选项的长度和 TCP 有效负载的长度。 为 LSOv2，将数据包的 IP 标头的总长度字段设置为 0。 微型端口驱动程序应确定来自 NET_BUFFER_LIST 结构中的第一个 NET_BUFFER 结构的长度的数据包的长度。
 
 -   计算 1 的补数的总和 TCP pseudoheader 并将此总和写入到 TCP 标头的校验和字段。 TCP/IP 传输计算补数总和 pseudoheader 中的以下字段：源 IP 地址、 目标 IP 地址和协议。 1 的补数的总和通过 TCP/IP 传输提供 pseudoheader 为 NIC 提供了在计算每个数据包的 NIC 派生自大型 TCP 数据包而无需检查 IP 标头的实际 TCP 校验和最早开始时间。 请注意，可以规定，源 IP 地址、 目标 IP 地址、 协议和 TCP 长度通过计算伪标头校验和。 （TCP 长度为 TCP 标头的长度再加上 TCP 有效负载的长度。 TCP 长度不包括。 伪标头的长度）但是，由于基础的微型端口驱动程序和 NIC 会向下传递通过 TCP/IP 传输大数据包从生成的 TCP 段，则传输协议将不知道的每个 TCP 段的 TCP 有效负载大小以及因此不能包含 TCP 长度以伪标头。 相反，如下所述，NIC 将扩展提供的 TCP/IP 传输以覆盖每个生成的 TCP 段的 TCP 长度的伪标头校验和。
 
