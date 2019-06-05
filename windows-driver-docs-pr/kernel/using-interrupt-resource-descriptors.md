@@ -4,12 +4,12 @@ description: 使用中断资源描述符
 ms.assetid: 0e9aa9a1-c1aa-42e1-9c0b-a91a2424ad1a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 62cc50fc73edce4420f6d11eda97fee8cd1cd1ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 809bebef0b0b3652cf2f274dcb8717d9fa942681
+ms.sourcegitcommit: 71c90354f7e2d88498e28f74fb1b34748edf82ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364951"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491758"
 ---
 # <a name="using-interrupt-resource-descriptors"></a>使用中断资源描述符
 
@@ -24,7 +24,7 @@ ms.locfileid: "63364951"
 
 一旦设备，包括中断消息的所有硬件资源都分配插管理器会将发送**IRP\_MN\_启动\_设备**向驱动程序的请求。 此请求提供的两个列表[ **CM\_分部\_资源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541977)结构，分别对应于原始和已翻译资源。 对于中断消息，即插即用管理器提供一个与每个已分配的内存地址结构**类型** = **CmResourceTypeInterrupt**和**标志**= CM\_资源\_中断\_LATCHED |CM\_资源\_中断\_消息。
 
-请注意，使用 MSI 时，该驱动程序只接收一个中断资源描述符，因为所有消息都共享同一地址。 **MessageCount**的成员**u.InterruptMessage.Raw**可用于确定分配的消息数。 当使用 MSI X，驱动程序将接收每个中断消息的单独的资源描述符。
+请注意，使用 MSI 时，该驱动程序只接收一个中断资源描述符，因为所有消息都共享同一地址。 **MessageCount**的成员**u.MessageInterrupt.Raw**可用于确定分配的消息数。 当使用 MSI X，驱动程序将接收每个中断消息的单独的资源描述符。
 
 在 Windows 8 中，操作系统不支持资源请求超过 2048 个中断消息，每个设备函数。 在 Windows 7 和 Windows Vista 中，操作系统不支持的每个设备函数的多个 910 中断消息资源请求。 如果设备驱动程序超出此限制，则设备可能无法启动。 若要启用在包含多个逻辑处理器的计算机中运行的驱动程序，该驱动程序应避免请求每个处理器的多个中断。
 

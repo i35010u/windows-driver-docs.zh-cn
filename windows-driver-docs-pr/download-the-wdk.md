@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 92dfee5d72fee1bc49c97ba99b7a5182d1a9201a
-ms.sourcegitcommit: a0da18a4c5c636c4980e8ed77c6879e617299580
+ms.openlocfilehash: 2b8512d6eecdafe700d710356ca221acaa2b6815
+ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66373155"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66686949"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -36,11 +36,17 @@ WDK 用于开发、测试和部署 Windows 驱动程序。 下面提供了 WDK �
 * [下载 Visual Studio Professional 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=16)
 * [下载 Visual Studio Enterprise 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=16)
 
-安装 Visual Studio 时，选择“使用 C++ 的桌面开发”  工作负载。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”  窗格中。
+在安装 Visual Studio 2019，选择**使用的桌面开发C++** 工作负荷。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”  窗格中。 但是，WDK 适用于 Windows 10，版本 1903年兼容的 sdk 版本目前不默认 SDK。 若要选择正确的 SDK:
+
+* 在中**Visual Studio 安装程序**，然后在**工作负荷**选项卡上，在**安装详细信息**，展开**通用 Windows 平台开发**.
+* 下**可选**，选择**Windows 10 预览 SDK (10.0.18362.0)** 。
+* 继续安装。
+
+如果已安装的 Visual Studio 2019，您可以使用安装 Windows 10 预览 SDK (10.0.18362.0)**修改**Visual Studio 安装中的按钮。
 
 对于 ARM/ARM64 驱动程序开发，选择“单个组件”  ，然后在“编译器、生成工具和运行时”  下方，选择“适用于 ARM/ARM64 的 Visual C++ 编译器和库”  。
 
-对于每个体系结构，你想要生成的驱动程序，请安装 Spectre 缓解的库通过单个组件-> 编译器、 生成工具，并运行时-> MSVC v142-VS 2019 c + x64/x86 Spectre 缓解库 (v14.21)。 
+对于每个体系结构，你想要生成的驱动程序，请安装 Spectre 缓解的库通过单个组件-> 编译器、 生成工具，并运行时-> MSVC v142-VS 2019 c + x64/x86 Spectre 缓解库 (v14.21)。
 
 ### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1903"></a>![“下载”图标](images/download-install.png) 步骤 2：安装 WDK 适用于 Windows 10，版本 1903
 

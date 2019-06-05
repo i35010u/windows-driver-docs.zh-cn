@@ -4,12 +4,12 @@ description: 支持 Network Direct 内核 (NDK) 的微型端口驱动程序的 I
 ms.assetid: 1399CEB8-82A5-4F91-833E-66FC5A5663C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c32d8905eeebde5745aa1d6af054a38d1751784c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 39664bd7126518774e80a9e75ce8d71ad39d6557
+ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327715"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66686945"
 ---
 # <a name="inf-requirements-for-ndkpi"></a>NDKPI 的 INF 要求
 
@@ -35,8 +35,8 @@ ms.locfileid: "63327715"
     ```
 
 -   INF 文件必须指定 **\*NetworkDirectTechnology**关键字值，如下所示。 安装该驱动程序后，管理员可以更新 **\*NetworkDirectTechnology**中的关键字值**高级**适配器属性页。 枚举是互斥的这意味着选择某一 NetworkDirectTechnology 值排除其他所有。  这允许为平台定义严格设备行为。  
--   适用于设备的同时，支持多个传输协议**设备默认**允许设备特定的行为，如重试/回退到多个传输。
 -   设备必须 express 支持的传输。  传输值是标识符映射到 WDK **NDK_RDMA_TECHNOLOGY**。  重新定义标识符被禁止。
+-   具有多个并发的传输协议的设备的行为是未定义。  设备**必须**指定传输类型。
 
     **请注意**中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
@@ -44,7 +44,6 @@ ms.locfileid: "63327715"
     HKR, Ndi\Params\*NetworkDirectTechnology,        ParamDesc,  0,  "NetworkDirect Technology"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Default,    0,  "0"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Type,       0,  "enum"
-    HKR, Ndi\Params\*NetworkDirectTechnology\enum,   0,          0,  "Device Default"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   1,          0,  "iWARP"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   2,          0,  "InfiniBand"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   3,          0,  "RoCE"

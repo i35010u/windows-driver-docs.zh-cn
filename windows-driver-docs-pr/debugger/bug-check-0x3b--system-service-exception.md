@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 262eddf19ad6b6ee154ac84569f4e60858459b6f
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.openlocfilehash: ca0c17cfccd665eb7f2d9af5ebcf0c6749303361
+ms.sourcegitcommit: 5523bbb8b8bbeaabee8243ff8efc206aeebae5ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400868"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515934"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -72,9 +72,15 @@ ms.locfileid: "66400868"
 
 其中一个参数中返回的异常信息被列入[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)，也可在 ntstatus.h 文件位于 Windows 驱动程序工具包 inc 目录中。 
 
-一个可能的异常值是 0xC0000005:状态\_访问\_冲突 
+常见的异常代码包括：
 
-这意味着内存访问冲突发生。 
+-   0x80000003:状态\_断点
+
+    没有内核调试器已附加到系统时出现断点或断言。
+
+-   0xC0000005:状态\_访问\_冲突
+
+    出现内存访问冲突。 （检查错误的参数 4 是驱动程序尝试访问的地址。）
 
 <a name="resolution"></a>分辨率
 ----------
