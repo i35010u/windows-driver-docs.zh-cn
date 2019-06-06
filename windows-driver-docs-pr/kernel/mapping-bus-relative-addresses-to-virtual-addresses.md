@@ -12,12 +12,12 @@ keywords:
 - 总线相对内存空间 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1be4cccfe25e460b11fd231636bc49b52ca46c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0059597bf2b3c96bf58ffeb24605ca8d36959da0
+ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380372"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719954"
 ---
 # <a name="mapping-bus-relative-addresses-to-virtual-addresses"></a>将总线相对地址映射到虚拟地址
 
@@ -47,10 +47,10 @@ ms.locfileid: "63380372"
 
 当驱动程序收到[ **IRP\_MN\_停止\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551755)或[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738) PnP 管理器中，从请求它必须通过调用释放映射[ **MmUnmapIoSpace** ](https://msdn.microsoft.com/library/windows/hardware/ff556387)类似循环中。 该驱动程序还应调用**MmUnmapIoSpace**如果必须故障**IRP\_MN\_启动\_设备**请求。
 
-原始资源类型指示驱动程序应调用哪个 HAL 访问例程 (<strong>读取\_注册\_* XXX</strong><em>，* * 编写\_注册\_</em>XXX <strong><em>， 读取\_端口\_* XXX</strong><em>，* * 编写\_端口\_</em>XXX * * *)。 大多数驱动程序不需要检查原始资源列表，以确定哪个例程使用，因为驱动程序本身请求的资源或驱动程序编写器知道所需考虑设备硬件的特性的类型。
+原始资源类型指示驱动程序应调用哪个 HAL 访问例程 (**READ_REGISTER_* XXX * * *，**WRITE_REGISTER_* XXX * * *，**READ_PORT_* XXX * * *，**WRITE_PORT_* XXX * * *)。 大多数驱动程序不需要检查原始资源列表，以确定哪个例程使用，因为驱动程序本身请求的资源或驱动程序编写器知道所需考虑设备硬件的特性的类型。
 
-在 I/O 空间中的资源 (**CmResourceTypePort**， **CmResourceTypeInterrupt**， **CmResourceTypeDma**)，该驱动程序应使用所返回的低阶 32 位物理地址来访问设备的资源，例如，通过 HAL 的读取和写入<strong>读取\_注册\_* XXX</strong><em>，**编写\_注册\_</em>XXX<strong><em>， 读取\_端口\_* XXX</strong><em>，和**编写\_端口\_</em>XXX*** 例程。
-
+ 在 I/O 空间中的资源 (**CmResourceTypePort**， **CmResourceTypeInterrupt**， **CmResourceTypeDma**)，该驱动程序应使用所返回的低阶 32 位物理地址来访问设备的资源，例如，通过 HAL 的读取和写入 **READ_REGISTER_* XXX * * *，**WRITE_REGISTER_* XXX * * *，**READ_PORT_* XXX * * *， **WRITE_PORT_ * XXX*** 例程。
+ 
  
 
  

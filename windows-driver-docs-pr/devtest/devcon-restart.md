@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 555d22fd0f02365c3cdb373912a2629b7d65b979
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42d2599dd3437b17f6d09acdbf7e6c14b3f6f305
+ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347026"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719959"
 ---
 # <a name="devcon-restart"></a>DevCon Restart
 
@@ -34,11 +34,11 @@ ms.locfileid: "63347026"
 <span id="________r______"></span><span id="________R______"></span> **/r**   
 条件性重新启动。 完成操作，仅当必须重新启动，以使更改生效后，会重新启动系统。
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 表示在计算机上的所有设备。
 
 <span id="_______ID______"></span><span id="_______id______"></span> *ID*   
-指定全部或部分硬件 ID、 兼容 ID 或设备的设备实例 ID。 在指定多个 Id 时，键入一个空格之间每个 id。 包含一个 & 字符的 Id (**&**) 必须括在引号中。
+指定全部或部分硬件 ID、 兼容 ID 或设备的设备实例 ID。 在指定多个 Id 时，键入一个空格之间每个 id。 包含一个 & 字符的 Id ( **&** ) 必须括在引号中。
 
 以下特殊字符修改 ID 参数。
 
@@ -72,7 +72,8 @@ ms.locfileid: "63347026"
 
 
 
-<span id="________class______"></span><span id="________CLASS______"></span> **=**<em>类</em>指定设备的设备安装程序类。 等号 (**=**) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** _class_   
+指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 此外可以指定硬件 Id、 兼容 Id、 设备实例 Id 或类名称后面的 ID 模式。 键入每个 ID 或模式之间有空格。 DevCon 匹配指定的 Id 的类中查找设备。
 
