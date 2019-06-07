@@ -20,7 +20,7 @@
               href: create-a-new-hardware-logo-submission.md
             - name: Winqual 提交工具 (winqual.exe)
               href: winqual-submission-tool--winqualexe-.md
-        - name: 'ID 定义 '
+        - name: ID 定义
           href: id-definitions.md
         - name: 对内核驱动程序进行证明签名以便公开发布
           href: attestation-signing-a-kernel-driver-for-public-release.md
@@ -56,6 +56,8 @@
           href: limit-driver-distribution.md
         - name: 发布测试分发
           href: publishing-for-test-distribution.md
+        - name: 为驱动程序分发逐渐推出
+          href: gradual-rollout.md
     - name: 硬件仪表板 API
       items:
         - name: 硬件仪表板 API
