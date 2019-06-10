@@ -9,12 +9,12 @@ keywords:
 - 条件编译 WDK 调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d7fddd58f0f6660af7e8ef44960367963ce962
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75a628fedf983e1a4f9fbb094cc99b28e9cf0a2d
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343095"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815102"
 ---
 # <a name="conditional-compilation-and-the-build-environment"></a>条件编译和生成环境
 
@@ -36,7 +36,7 @@ ms.locfileid: "63343095"
 
  
 
-有关使用 Visual Studio 和 MSBuild 创建发布和调试版本的驱动程序的详细信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)并[WDK 和 Visual Studio 构建环境](wdk-and-visual-studio-build-environment.md)。
+有关使用 Visual Studio 和 MSBuild 创建发布和调试版本的驱动程序的详细信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)并[WDK 和 Visual Studio 构建环境](wdk-and-visual-studio-build-environment.md)。
 
  
 

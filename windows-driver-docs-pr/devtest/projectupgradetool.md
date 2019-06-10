@@ -1,15 +1,15 @@
 ---
 title: ProjectUpgradeTool
-description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (*.vcxproj) 和解决方案文件 (*.sln)，适用于 Windows 8 创建使用 Windows Driver Kit (WDK) 和升级其可用于 Windows 8.1 的 WDK 和Microsoft Visual Studio 2013。
+description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 ( *.vcxproj) 和解决方案文件 (* .sln)，适用于 Windows 8 创建使用 Windows Driver Kit (WDK) 和升级其可用于 Windows 8.1 的 WDK 和Microsoft Visual Studio 2013。
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2c4d12bd3c55ba6ec0a1f531e781415e8eff06
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f349aa2f788b5960d2b777d8be2d843f656584b
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327325"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815084"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
@@ -218,7 +218,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[生成驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)
+[生成驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)
 
 [WDK 和 Visual Studio 生成环境](wdk-and-visual-studio-build-environment.md)
 

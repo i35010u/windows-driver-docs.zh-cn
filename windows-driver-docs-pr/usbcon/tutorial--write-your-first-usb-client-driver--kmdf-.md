@@ -1,23 +1,23 @@
 ---
-Description: 本主题中你将使用随 Microsoft Visual Studio Professional 2012 一起提供的 USB 内核模式驱动程序模板编写简单的内核模式驱动程序框架 (KMDF) 的基于客户端驱动程序。
+Description: 本主题中你将使用随 Microsoft Visual Studio Professional 2019 提供 USB 内核模式驱动程序模板编写简单的内核模式驱动程序框架 (KMDF) 的基于客户端驱动程序。
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f0dc7337526e0736a6b9adb850e86e386a0a8ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65fd69e5353ca9fd179d388c38768de7292dcd5d
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379905"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815065"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 
 
-本主题中将使用**USB 内核模式驱动程序**提供与 Microsoft Visual Studio Professional 2012 编写简单的内核模式驱动程序框架 (KMDF) 模板-基于客户端驱动程序。 生成并安装客户端驱动程序之后, 您将查看中的客户端驱动程序**设备管理器**并在调试器中查看驱动程序输出。
+本主题中将使用**USB 内核模式驱动程序**提供与 Microsoft Visual Studio Professional 2019 编写简单的内核模式驱动程序框架 (KMDF) 模板-基于客户端驱动程序。 生成并安装客户端驱动程序之后, 您将查看中的客户端驱动程序**设备管理器**并在调试器中查看驱动程序输出。
 
 由模板生成的源代码的说明，请参阅[了解 USB 客户端驱动程序的 KMDF 模板代码](understanding-the-kmdf-template-code-for-usb.md)。
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>系统必备
 
 有关开发、 调试和安装的内核模式驱动程序，需要两台计算机：
 
@@ -28,7 +28,7 @@ ms.locfileid: "63379905"
 
 **软件要求**
 
--   在主计算机承载你的开发环境，并具有 Visual Studio Professional 2012。
+-   在主计算机承载你的开发环境，并具有 Visual Studio Professional 2019。
 -   主机计算机包含 Windows 8 的最新的 Windows Driver Kit (WDK)。 该工具包包括标头、 库、 工具、 文档和开发，所需的调试工具生成和调试 KMDF 驱动程序。 若要获取最新版本的 WDK，请参阅[下载 Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 -   在主计算机具有最新版本的 Windows 调试工具。 可以从 WDK 中获取最新版本也可以[下载和为 Windows 中安装调试的工具](https://msdn.microsoft.com/windows/hardware/gg463009.aspx)。
 -   在目标计算机正在运行 Windows Vista 或更高版本的 Windows。
@@ -53,25 +53,29 @@ ms.locfileid: "63379905"
 <a name="instructions"></a>说明
 ------------
 
-### <a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2012---usb-driver-template"></a>步骤 1:通过使用 Visual Studio Professional 2012 USB 驱动程序模板生成 KMDF 驱动程序代码
+### <a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2019---usb-driver-template"></a>步骤 1:通过使用 Visual Studio Professional 2019 USB 驱动程序模板生成 KMDF 驱动程序代码
 
 有关生成 KMDF 驱动程序代码的说明，请参阅中的步骤[编写 KMDF 驱动程序基于模板](https://msdn.microsoft.com/library/windows/hardware/hh439654)。
 
-**对于特定于 USB 的代码，选择以下选项在 Visual Studio Professional 2012**
+**对于特定于 USB 的代码，选择以下选项在 Visual Studio Professional 2019**
 
-1.  在中**新的项目**对话框中，在左窗格中，选择**USB。**
-2.  在中间窗格中，选择**USB 内核模式驱动程序**。
+1.  在中**新的项目**对话框中，在搜索框中，在顶部，类型**USB。**
+2.  在中间窗格中，选择**内核模式驱动程序、 USB (KMDF)** 。
+3.  单击“下一步”  。
+4.  输入项目名称，选择保存位置，然后单击**创建**。
 
-下面的屏幕截图所示**新的项目**对话框**USB 内核模式驱动程序**模板。
+以下屏幕截图显示**新的项目**对话框**USB 内核模式驱动程序**模板。
 
-![visual studio 新项目选项](images/kmdf-tmpl.png)
+![visual studio 新项目选项](images/kmdf-template-visual-studio-2019.png)
+
+![visual studio 新项目选项第二个屏幕](images/kmdf-template-visual-studio-2019-2.png)
 
 本主题假定 Visual Studio 项目的名称为"MyUSBDriver\_"。 它包含以下文件：
 
 | 文件                      | 描述                                                                                                          |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------|
 | Public.h                   | 提供的与 USB 设备进行通信的客户端驱动程序和用户应用程序共享的常见声明。 |
-| *&lt;项目名称&gt;*.inf | 包含在目标计算机上安装客户端驱动程序所需的信息。                                   |
+| *&lt;项目名称&gt;* .inf | 包含在目标计算机上安装客户端驱动程序所需的信息。                                   |
 | Trace.h                    | 声明跟踪函数和宏。                                                                               |
 | Driver.h;Driver.c         | 声明和定义驱动程序入口点和事件回调例程。                                                |
 | Device.h;Device.c         | 声明和定义用于准备-硬件事件的事件回调例程。                                          |
@@ -103,18 +107,18 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
 **若要构建您的驱动程序**
 
-1.  在 Visual Studio Professional 2012 中打开驱动程序项目或解决方案
+1.  在 Visual Studio Professional 2019 中打开驱动程序项目或解决方案
 2.  右键单击该解决方案中的**解决方案资源管理器**，然后选择**Configuration Manager**。
 3.  从**Configuration Manager**，选择**活动解决方案配置**(例如， **Windows 8 调试**或**Windows 8 版本**) 和**活动解决方案平台**(例如，Win32) 对应于你感兴趣的生成的类型。
 4.  从**构建**菜单上，单击**生成解决方案**。
 
-有关详细信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+有关详细信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>步骤 4:将计算机配置为进行测试和调试
 
 若要测试和调试驱动程序，请在主计算机和目标计算机上的驱动程序上运行调试器。 到目前为止，已在主计算机上使用 Visual Studio 以生成驱动程序。 接下来需要配置目标计算机。 若要配置目标计算机，请按照中的说明[预配的计算机的驱动程序部署和测试](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
 
-### <a href="" id="enable-tracing-for-kernel-debugging"></a>步骤 5:启用内核调试跟踪
+### <a href="" id="enable-tracing-for-kernel-debugging"> </a>步骤 5:启用内核调试跟踪
 
 模板代码包含几条跟踪消息 (TraceEvents)，可以帮助您跟踪函数调用。 所有函数的源代码中都包含标记的入口和出口的例程的跟踪消息。 对于错误，跟踪消息包含错误代码和有意义的字符串。 为您的驱动程序项目启用了 WPP 跟踪，因为在生成过程中创建的 PDB 符号文件包含跟踪的消息格式的说明。 如果配置 WPP 跟踪的主机和目标计算机，您的驱动程序可以将跟踪消息发送到一个文件或调试器。
 
@@ -122,7 +126,7 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
 1. 通过提取跟踪的消息格式中的 PDB 符号文件的说明创建跟踪消息格式 (TMF) 文件。
 
-   Tracepdb.exe 可用于创建 TMF 文件。 该工具位于<em>&lt;安装文件夹&gt;</em>Windows 工具包\\8.0\\bin\\*&lt;体系结构&gt;* WDK 的文件夹。 以下命令创建的驱动程序项目的 TMF 文件。
+   Tracepdb.exe 可用于创建 TMF 文件。 该工具位于<em>&lt;安装文件夹&gt;</em>Windows 工具包\\8.0\\bin\\ *&lt;体系结构&gt;* WDK 的文件夹。 以下命令创建的驱动程序项目的 TMF 文件。
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
@@ -139,17 +143,17 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
        验证加载调试程序扩展。
 
-   3.  **！ wmitrace.searchpath + * * *&lt;TMF 文件位置&gt;*
+   3.  * *！ wmitrace.searchpath + * * *&lt;TMF 文件位置&gt;*
 
        将 TMF 文件的位置添加到调试器扩展的搜索路径。
 
        输出类似于下面这样：
 
-       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE;c:\drivers\tmf'`
+       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE;c:\drivers\tmf'`
 
 **若要配置目标计算机中的 WPP 跟踪**
 
-1. 请确保在目标计算机上具有跟踪日志工具。 该工具位于<em>&lt;安装\_文件夹&gt;</em>Windows 工具包\\8.0\\工具\\*&lt;arch&gt;*  WDK 的文件夹。 有关详细信息，请参阅[ **Tracelog 命令语法**](https://msdn.microsoft.com/library/windows/hardware/ff553012)。
+1. 请确保在目标计算机上具有跟踪日志工具。 该工具位于<em>&lt;安装\_文件夹&gt;</em>Windows 工具包\\8.0\\工具\\ *&lt;arch&gt;*  WDK 的文件夹。 有关详细信息，请参阅[ **Tracelog 命令语法**](https://msdn.microsoft.com/library/windows/hardware/ff553012)。
 2. 打开**命令窗口**并以管理员身份运行。
 3. 键入下列命令：
 
@@ -157,7 +161,7 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
    该命令启动名为 MyTrace 跟踪会话。
 
-   **Guid**参数指定的跟踪提供程序，这是客户端驱动程序的 GUID。 在 Visual Studio Professional 2012 项目中，可以从 Trace.h 获取 GUID。 作为另一个选项，可以键入以下命令，并在.guid 文件中指定的 GUID。 该文件包含连字符格式的 GUID:
+   **Guid**参数指定的跟踪提供程序，这是客户端驱动程序的 GUID。 在 Visual Studio Professional 2019 项目中，可以从 Trace.h 获取 GUID。 作为另一个选项，可以键入以下命令，并在.guid 文件中指定的 GUID。 该文件包含连字符格式的 GUID:
 
    **tracelog-启动 MyTrace-guid c:\\驱动程序\\Provider.guid-标志 0xFFFF-级别 7 rt kd**
 
@@ -172,14 +176,14 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 3. 检查启用部署，并选中导入到驱动程序存储区。
 4. 有关**远程计算机名称**，指定目标计算机的名称。
 5. 选择**安装并验证**。
-6. 单击“确定”。
+6. 单击“确定”  。
 7. 在**调试**菜单上，选择**开始调试**或按键盘上的 **F5**。
 
 **请注意**  不要*不*指定在设备的硬件 ID**硬件 ID 的驱动程序更新**。 必须仅在您的驱动程序的信息 (INF) 文件中指定的硬件 ID。
 
  
 
-有关将驱动程序部署到 Visual Studio Professional 2012 中的目标系统的详细信息，请参阅[部署到测试计算机的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)。
+有关部署到目标系统中 Visual Studio Professional 2019 驱动程序的详细信息，请参阅[部署到测试计算机的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/deploying_a_driver_to_a_test_computer)。
 
 您还可以手动安装该驱动程序在目标计算机上使用设备管理器。 如果你想要在命令提示符下安装驱动程序，提供了这些实用程序：
 
@@ -187,7 +191,7 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
     此工具附带于 Windows。 处于 Windows\\System32。 此实用程序可用于将驱动程序添加到驱动程序存储区。
 
-    ``` syntax
+    ```cmd
     C:\>pnputil /a m:\MyDriver_.inf
     Microsoft PnP Utility
 
@@ -202,7 +206,7 @@ INF 文件中可以提供信息，例如制造商和提供程序名称，设备�
 
     此工具附带了 WDK。 可以使用它来安装和更新驱动程序。
 
-    ``` syntax
+    ```cmd
     devcon update c:\windows\inf\MyDriver_.inf USB\VID_0547&PID_1002\5&34B08D76&0&6
     ```
 
@@ -232,7 +236,4 @@ Visual Studio 将首先显示正在**输出**窗口。 然后它将打开**调�
 
 ## <a name="related-topics"></a>相关主题
 [了解 USB 客户端驱动程序的 KMDF 模板代码](understanding-the-kmdf-template-code-for-usb.md)  
-[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
-
-
-
+[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)

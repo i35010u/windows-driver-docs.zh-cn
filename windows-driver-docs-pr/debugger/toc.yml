@@ -398,8 +398,6 @@
       items:
         - name: 与 Windows 调试工具相关的工具
           href: tools-related-to-debugging-tools-for-windows.md
-        - name: 应用程序验证工具
-          href: application-verifier.md
         - name: Windows 错误报告
           href: windows-error-reporting.md
     - name: 源代码

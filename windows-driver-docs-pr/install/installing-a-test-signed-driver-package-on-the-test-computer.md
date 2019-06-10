@@ -4,12 +4,12 @@ description: 在测试计算机上安装进行了测试签名的驱动程序包
 ms.assetid: d825acb6-d1de-4fc5-bde2-ea27bd706f61
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 470068734445ea3c7d9c1b7248da56f9966c3814
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 500a7f993c3b978e0d9b979ba079d803ecf831e9
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352045"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815093"
 ---
 # <a name="installing-a-test-signed-driver-package-on-the-test-computer"></a>在测试计算机上安装进行了测试签名的驱动程序包
 
@@ -28,7 +28,7 @@ ms.locfileid: "63352045"
 
 请按照以下步骤生成并测试登录*ToastPkg*示例驱动程序包：
 
-1.  在签名的计算机上生成*ToastPkg*示例驱动程序包的内核模式二进制文件。 有关如何生成驱动程序的详细信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+1.  在签名的计算机上生成*ToastPkg*示例驱动程序包的内核模式二进制文件。 有关如何生成驱动程序的详细信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
 2.  签名的计算机上创建*Contoso.com(Test)* 证书中所述[创建测试证书](creating-test-certificates.md)。
 

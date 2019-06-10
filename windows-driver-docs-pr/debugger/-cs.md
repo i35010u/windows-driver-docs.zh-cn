@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f50f65fd8f710b6457e259d458d8aca995f0b394
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d93c1dcfd4111aa57a977b2befb99f1da4b197c8
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336874"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813552"
 ---
 # <a name="cs"></a>!cs
 
@@ -45,7 +45,7 @@ ms.locfileid: "63336874"
 *EndAddress*   | 指定要搜索的关键节的地址范围的结束。
 **-d**    | 显示与 DebugInfo 相关联的关键部分。
 *InfoAddress*   | 指定 DebugInfo 的地址。
-**-t**    | 显示关键部分树。 可以使用之前 **-t**选项，你必须激活[应用程序验证工具](application-verifier.md)目标进程然后选择**检查锁使用**选项。
+**-t**    | 显示关键部分树。 可以使用之前 **-t**选项，你必须激活[应用程序验证工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)目标进程然后选择**检查锁使用**选项。
 *TreeAddress*    | 指定的关键部分树的根的地址。 如果省略此参数或指定为零，调试器会显示当前进程的关键部分树。
 **-?**    | 显示此扩展中的一些帮助文本[调试器命令窗口](debugger-command-window.md)。
 

@@ -4,12 +4,12 @@ description: 开发生物识别驱动程序的路线图
 ms.assetid: 8ed13c75-86d1-4ac0-9f44-05162521b915
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b021560320ab68f7a1fc7399c150171c712a58a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89c406689c78f3c4b9d3d9a50941bb13510d0b42
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328375"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815089"
 ---
 # <a name="roadmap-for-developing-biometric-drivers"></a>开发生物识别驱动程序的路线图
 
@@ -40,7 +40,7 @@ ms.locfileid: "63328375"
 
 -   步骤 5：了解有关 Windows 驱动程序生成、 测试和调试的进程和工具。
 
-    构建一个驱动程序不同于生成在用户模式应用程序。 有关信息请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。 有关如何生成基于 framework 的驱动程序的信息，请参阅[生成和基于 Framework 的驱动程序加载](https://msdn.microsoft.com/library/windows/hardware/ff540730)。
+    构建一个驱动程序不同于生成在用户模式应用程序。 有关信息请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。 有关如何生成基于 framework 的驱动程序的信息，请参阅[生成和基于 Framework 的驱动程序加载](https://msdn.microsoft.com/library/windows/hardware/ff540730)。
 
 -   步骤 6：做出有关生物识别驱动程序的设计决策。
 

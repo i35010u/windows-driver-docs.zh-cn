@@ -9,15 +9,14 @@ keywords:
 - 驱动程序验证 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25afa7c27fc60ff7ddb7ac9aba00461c71213cb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66c952e904309e7eb119d7a51e037ad1247107f8
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339739"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813583"
 ---
 # <a name="tools-for-verifying-drivers"></a>用于验证驱动程序的工具
-
 
 Windows Driver Kit (WDK) 包括几个非常全面的工具，旨在帮助您检测并解决在开发过程中的驱动程序代码中的错误。 其中的许多工具可以早早地用于开发过程，这个时候它们最重要，可以为你节省最多的时间和精力。
 
@@ -52,12 +51,3 @@ Windows Driver Kit (WDK) 包括几个非常全面的工具，旨在帮助您检�
 ### <a name="span-idothertoolsspanspan-idothertoolsspanother-tools"></a><span id="other_tools"></span><span id="OTHER_TOOLS"></span>其他工具
 
 如果可以访问与其他代码或驱动程序验证工具 （从其他源），我们建议你使用这些除了 WDK 中的工具。 请务必使用[Code Analysis for Drivers](code-analysis-for-drivers.md)， [Static Driver Verifier](static-driver-verifier.md)，并[Driver Verifier](driver-verifier.md)由于他们的 Windows 驱动程序，但每个工具的特定知识看起来在不同的方式中的代码，因此可帮助你查找并修复不同类型的问题。
-
- 
-
- 
-
-
-
-
-

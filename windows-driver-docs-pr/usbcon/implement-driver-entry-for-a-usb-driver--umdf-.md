@@ -1,23 +1,23 @@
 ---
 Description: 使用 Microsoft Visual Studio 提供的 USB 用户模式驱动程序模板可用于编写 UMDF 客户端驱动程序。
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
-ms.date: 04/20/2017
+ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a636c0ff23adc0c4682a4d8f80475273a6250875
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b6dc3fa4802deb3a028aef7545cae6ee5e7c9cad
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355481"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815101"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
 
-本主题中将使用**USB 用户模式驱动程序**提供使用 Microsoft Visual Studio 2012 编写用户模式驱动程序框架 (UMDF) 模板-基于客户端驱动程序。 生成并安装客户端驱动程序之后, 您将查看中的客户端驱动程序**设备管理器**并在调试器中查看驱动程序输出。
+本主题中将使用**USB 用户模式驱动程序**提供与 Microsoft Visual Studio 2019 编写用户模式驱动程序框架 (UMDF) 模板-基于客户端驱动程序。 生成并安装客户端驱动程序之后, 您将查看中的客户端驱动程序**设备管理器**并在调试器中查看驱动程序输出。
 
 UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个框架对象必须实现[ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)及其方法[ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)， [ **AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379)，并[**发行**](https://msdn.microsoft.com/library/windows/desktop/ms682317)，默认情况下。 **AddRef**并**发行**方法管理对象的生存期，因此，客户端驱动程序不需要维护的引用计数。 **QueryInterface**方法，客户端驱动程序与其他框架对象的接口指针获取 Windows 驱动程序框架 (WDF) 对象模型中。 Framework 对象执行复杂的驱动程序任务，并与 Windows 进行交互。 某些 framework 对象公开启用客户端驱动程序与框架进行交互的接口。
 
-作为进程内 COM 服务器 (DLL) 实现 UMDF 基于客户端驱动程序和C++是用于编写 USB 设备的客户端驱动程序的首选的语言。 通常情况下，客户端驱动程序实现多个由框架公开的接口。 本主题是指一个回调类作为实现 framework 接口的客户端驱动程序定义类。 这些类进行实例化后，将生成的回调对象是与特定的框架对象合作。 这种合作关系使客户端驱动程序有机会对设备或报告的框架的系统相关事件进行响应。 每当 Windows 会通知框架，有关特定事件，框架将调用客户端驱动程序的回调，如果有可用。 否则，该框架将继续进行事件的默认处理。 模板代码定义驱动程序、 设备和队列回调 lasses。
+作为进程内 COM 服务器 (DLL) 实现 UMDF 基于客户端驱动程序和C++是用于编写 USB 设备的客户端驱动程序的首选的语言。 通常情况下，客户端驱动程序实现多个由框架公开的接口。 本主题是指一个回调类作为实现 framework 接口的客户端驱动程序定义类。 这些类进行实例化后，将生成的回调对象是与特定的框架对象合作。 这种合作关系使客户端驱动程序有机会对设备或报告的框架的系统相关事件进行响应。 每当 Windows 会通知框架，有关特定事件，框架将调用客户端驱动程序的回调，如果有可用。 否则，该框架将继续进行事件的默认处理。 模板代码定义驱动程序、 设备和队列回调类。
 
 由模板生成的源代码的说明，请参阅[了解 USB 客户端驱动程序的 UMDF 模板代码](understanding-the-umdf-template-code-for-usb.md)。
 
@@ -26,7 +26,7 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 有关开发、 调试和安装的用户模式驱动程序，需要两台计算机：
 
 -   运行 Windows 7 或更高版本的 Windows 操作系统的主机计算机。 在主计算机是开发环境中，可以编写和调试您的驱动程序。
--   想要测试您的驱动程序，例如，Windows 8 上运行的操作系统版本的目标计算机。 目标计算机具有你想要调试的用户模式驱动程序和一个调试器。
+-   想要测试您的驱动程序，例如，Windows 10，版本 1903年上运行的操作系统版本的目标计算机。 目标计算机具有你想要调试的用户模式驱动程序和一个调试器。
 
 在某些情况下，在主机和目标计算机运行相同版本的 Windows，您可以只需一台运行 Windows 7 或更高版本的 Windows 计算机。 本主题假定你使用的开发、 调试和安装用户模式驱动程序的两个计算机。
 
@@ -34,8 +34,8 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 
 **软件要求**
 
--   在主计算机具有 Visual Studio 2012。
--   主机计算机包含 Windows 8 的最新的 Windows Driver Kit (WDK)。
+-   在主计算机具有 Visual Studio 2019。
+-   在主计算机具有最新的 Windows Driver Kit (WDK) 适用于 Windows 10，版本 1903年。
 
     该工具包包括标头、 库、 工具、 文档和开发，所需的调试工具生成和调试 USB 客户端驱动程序。 可以获取最新版本从 WDK[如何获取 WDK](https://go.microsoft.com/fwlink/p/?linkid=617585)。
 
@@ -59,18 +59,22 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 <a name="instructions"></a>说明
 ------------
 
-### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2012-usb-driver-template"></a>步骤 1:通过使用 Visual Studio 2012 USB 驱动程序模板生成 UMDF 驱动程序代码
+### <a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2019-usb-driver-template"></a>步骤 1:通过使用 Visual Studio 2019 USB 驱动程序模板生成 UMDF 驱动程序代码
 
 <a href="" id="generate"></a> 有关生成 UMDF 驱动程序代码的说明，请参阅[编写 UMDF 驱动程序基于模板](https://msdn.microsoft.com/library/windows/hardware/hh439659)。
 
-**对于特定于 USB 的代码，选择以下选项在 Visual Studio 2012**
+**对于特定于 USB 的代码，选择以下选项在 Visual Studio 2019**
 
-1.  在中**新的项目**对话框中，在左窗格中，找到并选择**USB。**
-2.  在中间窗格中，选择**USB 用户模式驱动程序**。
+1.  在中**新的项目**对话框中，在搜索框中，在顶部，类型**USB。**
+2.  在中间窗格中，选择**用户模式驱动程序，USB (UMDF V2)** 。
+3.  单击“下一步”  。
+4.  输入项目名称，选择保存位置，然后单击**创建**。
 
-下面的屏幕截图所示**新的项目**对话框**USB 用户模式驱动程序**模板。
+以下屏幕截图显示**新的项目**对话框**USB 用户模式驱动程序**模板。
 
-![visual studio 新项目选项](images/umdf-tmpl.png)
+![visual studio 新项目选项](images/umdf-template-visual-studio-2019.png)
+
+![visual studio 新项目选项第二个屏幕](images/umdf-template-visual-studio-2019-2.png)
 
 本主题假定项目的名称为"MyUSBDriver\_UMDF\_"。 它包含以下文件：
 
@@ -81,7 +85,7 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 | IoQueue.h;IoQueue.c       | 声明和定义实现一个回调类[ **IQueueCallbackDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556852)接口。 类定义由 framework 队列对象调用的方法。 此类的目的是检索在框架中排队的 I/O 请求。                                                                                                                               |
 | internal.h                 | 提供的与 USB 设备进行通信的客户端驱动程序和用户应用程序共享的常见声明。 它还声明跟踪函数和宏。                                                                                                                                                                                                                                                                          |
 | Dllsup.cpp                 | 包含驱动程序模块的入口点的实现。                                                                                                                                                                                                                                                                                                                                                                              |
-| *&lt;项目名称&gt;*.inf | 在目标计算机上安装客户端驱动程序所需的 INF 文件。                                                                                                                                                                                                                                                                                                                                                               |
+| *&lt;项目名称&gt;* .inf | 在目标计算机上安装客户端驱动程序所需的 INF 文件。                                                                                                                                                                                                                                                                                                                                                               |
 | Exports.def                | DEF 文件导出入口点的驱动程序模块的函数名称。                                                                                                                                                                                                                                                                                                                                                                    |
 
  
@@ -118,12 +122,12 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 `HKR,,CoInstallers32,0x00010008,"WinUsbCoinstaller2.dll"`
 
 - WudfCoinstaller.dll （配置共同安装程序）
-- WUDFUpdate\_*&lt;版本&gt;*.dll （可再发行组件共同安装程序）
+- WUDFUpdate\_ *&lt;版本&gt;* .dll （可再发行组件共同安装程序）
 - Wdfcoinstaller<em>&lt;版本&gt;</em>.dll （对于 KMDF 共同安装程序）
 - Winusbcoinstaller2.dll （（共同安装程序为 Winusb.sys）
 - MyUSBDriver\_UMDF\_.dll （客户端驱动程序模块）
 
-如果 INF AddReg 指令引用 UMDF 可再发行组件共同安装程序 (WUDFUpdate\_*&lt;版本&gt;*.dll)，您必须进行配置辅助安装程序 （的引用WUDFCoInstaller.dll)。 引用 INF 中的这两个共同安装程序将导致安装错误。
+如果 INF AddReg 指令引用 UMDF 可再发行组件共同安装程序 (WUDFUpdate\_ *&lt;版本&gt;* .dll)，您必须进行配置辅助安装程序 （的引用WUDFCoInstaller.dll)。 引用 INF 中的这两个共同安装程序将导致安装错误。
 
 所有基于 UMDF 的 USB 客户端驱动程序需要两个由 Microsoft 提供的驱动程序： 反射和 WinUSB。
 
@@ -142,18 +146,20 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 <a href="" id="build"></a>
 **若要构建您的驱动程序**
 
-1.  在 Visual Studio 2012 中打开驱动程序项目或解决方案。
+1.  在 Visual Studio 2019 中打开驱动程序项目或解决方案。
 2.  右键单击该解决方案中的**解决方案资源管理器**，然后选择**Configuration Manager**。
-3.  从**Configuration Manager**，选择你**活动解决方案配置**(例如， **Windows 8 调试**或**Windows 8 版本**) 和您**活动解决方案平台**(例如，Win32) 对应于你感兴趣的生成的类型。
+3.  从**Configuration Manager**，选择你**活动解决方案配置**(例如，**调试**或**版本**) 和你**活动解决方案平台**(例如， **Win32**) 对应于你感兴趣的生成的类型。
+4.  验证你的设备接口的 GUID 准确在整个项目。 
+    - 设备接口的 GUID Trace.h 中定义并从引用`MyUSBDriverUMDFCreateDevice`Device.c 中。 在创建你的项目具有名称"MyUSBDriver\_UMDF\_"，Visual Studio 2019 定义设备接口的 GUID with 名称`GUID_DEVINTERFACE_MyUSBDriver_UMDF_`，但调用`WdfDeviceCreateDeviceInterface`with 不正确的参数"GUID_DEVINTERFACE_MyUSBDriverUMDF"。 不正确的参数替换 Trace.h 以确保该驱动程序正确生成中定义的名称。 
 4.  从**构建**菜单上，单击**生成解决方案**。
 
-有关详细信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+有关详细信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
 ### <a href="" id="configure-a-computer-for-testing-and-debugging"></a>步骤 4:将计算机配置为进行测试和调试
 
 若要测试和调试驱动程序，请在主计算机和目标计算机上的驱动程序上运行调试器。 到目前为止，已在主计算机上使用 Visual Studio 以生成驱动程序。 接下来需要配置目标计算机。 若要配置目标计算机，请按照中的说明[预配的计算机的驱动程序部署和测试](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
 
-### <a href="" id="enable-tracing-for-kernel-debugging"></a>步骤 5:启用内核调试跟踪
+### <a href="" id="enable-tracing-for-kernel-debugging"> </a>步骤 5:启用内核调试跟踪
 
 模板代码包含几条跟踪消息 (TraceEvents)，可以帮助您跟踪函数调用。 所有函数的源代码中都包含标记的入口和出口的例程的跟踪消息。 对于错误，跟踪消息包含错误代码和有意义的字符串。 为您的驱动程序项目启用了 WPP 跟踪，因为在生成过程中创建的 PDB 符号文件包含跟踪的消息格式的说明。 如果配置 WPP 跟踪的主机和目标计算机，您的驱动程序可以将跟踪消息发送到一个文件或调试器。
 
@@ -161,7 +167,7 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 
 1. 通过提取跟踪的消息格式中的 PDB 符号文件的说明创建跟踪消息格式 (TMF) 文件。
 
-   Tracepdb.exe 可用于创建 TMF 文件。 该工具位于<em>&lt;安装文件夹&gt;</em>Windows 工具包\\8.0\\bin\\*&lt;体系结构&gt;* WDK 的文件夹。 以下命令创建的驱动程序项目的 TMF 文件。
+   Tracepdb.exe 可用于创建 TMF 文件。 该工具位于<em>&lt;安装文件夹&gt;</em>Windows 工具包\\10\\bin\\ *&lt;体系结构&gt;* WDK 的文件夹。 以下命令创建的驱动程序项目的 TMF 文件。
 
    **tracepdb -f \[PDBFiles\] -p \[TMFDirectory\]**
 
@@ -178,17 +184,17 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 
        验证加载调试程序扩展。
 
-   3.  **！ wmitrace.searchpath + * * *&lt;TMF 文件位置&gt;*
+   3.  * *！ wmitrace.searchpath + * * *&lt;TMF 文件位置&gt;*
 
        将 TMF 文件的位置添加到调试器扩展的搜索路径。
 
        输出类似于下面这样：
 
-       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE;c:\drivers\tmf'`
+       `Trace Format search path is: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE;c:\drivers\tmf'`
 
 **若要配置目标计算机中的 WPP 跟踪**
 
-1. 请确保在目标计算机上具有跟踪日志工具。 该工具位于<em>&lt;安装\_文件夹&gt;</em>Windows 工具包\\8.0\\工具\\*&lt;arch&gt;*  WDK 的文件夹。 有关详细信息，请参阅[ **Tracelog 命令语法**](https://msdn.microsoft.com/library/windows/hardware/ff553012)。
+1. 请确保在目标计算机上具有跟踪日志工具。 该工具位于<em>&lt;安装\_文件夹&gt;</em>Windows 工具包\\10\\工具\\ *&lt;arch&gt;*  WDK 的文件夹。 有关详细信息，请参阅[ **Tracelog 命令语法**](https://msdn.microsoft.com/library/windows/hardware/ff553012)。
 2. 打开**命令窗口**并以管理员身份运行。
 3. 键入下列命令：
 
@@ -196,7 +202,7 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 
    该命令启动名为 MyTrace 跟踪会话。
 
-   **Guid**参数指定的跟踪提供程序，这是客户端驱动程序的 GUID。 Microsoft Visual Studio Professional 2012 项目中，可以从 Trace.h 获取 GUID。 作为另一个选项，可以键入以下命令，并在.guid 文件中指定的 GUID。 该文件包含连字符格式的 GUID:
+   **Guid**参数指定的跟踪提供程序，这是客户端驱动程序的 GUID。 在 Visual Studio 2019 项目中，可以从 Trace.h 获取 GUID。 作为另一个选项，可以键入以下命令，并在.guid 文件中指定的 GUID。 该文件包含连字符格式的 GUID:
 
    **tracelog-启动 MyTrace-guid c:\\驱动程序\\Provider.guid-标志 0xFFFF-级别 7 rt kd**
 
@@ -211,7 +217,7 @@ UMDF （称为本主题中的框架） 基于组件对象模型 (COM)。 每个�
 3. 检查启用部署，并选中导入到驱动程序存储区。
 4. 有关**远程计算机名称**，指定目标计算机的名称。
 5. 选择**安装并验证**。
-6. 单击“确定”。
+6. 单击“确定”  。
 7. 在**调试**菜单上，选择**开始调试**或按键盘上的 **F5**。
 
 **请注意**  不要*不*指定在设备的硬件 ID**硬件 ID 的驱动程序更新**。 必须仅在您的驱动程序的信息 (INF) 文件中指定的硬件 ID。

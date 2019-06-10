@@ -4,12 +4,12 @@ description: 若要使用 WPP 软件跟踪在跟踪提供程序，如内核模�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1b0455babda8c17dd18757aa68e6a771ccda64
-ms.sourcegitcommit: e123b8b69473c0ebc0383ef722452866bf6662d3
+ms.openlocfilehash: b5fcdabb83c8e664de60bef7382c8b9a6ccba2de
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394275"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815085"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -493,7 +493,7 @@ WDK 提供了对支持[WPP 预处理器](wpp-preprocessor.md)，以便可以运�
 2.  在项目属性页中，单击**配置属性**然后单击**WPP 跟踪**。
 3.  下**常规**，请设置**运行 WPP**选项设置为**是**。
 4.  下**命令行**，添加自定义跟踪行为的任何其他选项。 有关可以添加的内容的信息，请参见[WPP 预处理器](wpp-preprocessor.md)。
-5.  生成项目或解决方案的目标配置和平台。 请参阅[构建的驱动程序有 WDK](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+5.  生成项目或解决方案的目标配置和平台。 请参阅[构建的驱动程序有 WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
 有关生成过程的信息，请参阅[TraceWPP 任务](tracewpp-task.md)并[WDK 和 Visual Studio 构建环境](wdk-and-visual-studio-build-environment.md)。
 

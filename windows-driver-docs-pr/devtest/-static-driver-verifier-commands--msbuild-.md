@@ -4,12 +4,12 @@ description: 与 Static Driver Verifier 一起使用的命令
 ms.assetid: F0663631-AD7B-4BFE-8E07-7BB2FFC72911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8c956588adc855333659e8978ead5156ff09636
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4840a3f5138fd6b8212e89681a37717af4d8d0fe
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361451"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815095"
 ---
 #  <a name="static-driver-verifier-commands-msbuild"></a>静态驱动程序验证程序命令 (MSBuild)
 
@@ -22,7 +22,7 @@ ms.locfileid: "63361451"
 msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration /p:Platform=platform     
 ```
 
-必须选择发布配置 (例如， **/p:Configuration ="Windows 7 Release"**)。 有关支持的发布配置的列表，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。 平台如何能够**Win32** （适用于 x86) 或**x64** (例如， **/p:Platform = Win32**)。
+必须选择发布配置 (例如， **/p:Configuration ="Windows 7 Release"** )。 有关支持的发布配置的列表，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。 平台如何能够**Win32** （适用于 x86) 或**x64** (例如， **/p:Platform = Win32**)。
 
 **请注意**请务必检查您的计算机的电源管理计划，以确保计算机不会进入睡眠状态在分析过程。
 
@@ -38,7 +38,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 
 有关详细信息，请参阅[准备你的源代码](using-static-driver-verifier-to-find-defects-in-drivers.md#preparing_your_source_code)。
 
-<span id="________check_Rule____Rule_..._"></span><span id="________check_rule____rule_..._"></span><span id="________CHECK_RULE____RULE_..._"></span> **/check:**<em>规则</em> | *规则*，...  
+<span id="________check_Rule____Rule_..._"></span><span id="________check_rule____rule_..._"></span><span id="________CHECK_RULE____RULE_..._"></span> **/check:** <em>规则</em> | *规则*，...  
 使用指定的规则启动验证。 可以用逗号分隔每个规则来指定多个规则。 运行 **/check:** 命令并指定驱动程序的 Visual Studio 项目文件 (\*.vcxproj)。
 
 *规则*是其中一个的名称[规则](static-driver-verifier-rule.md)或包含通配符的规则名称模式 (\*) 来表示一个或多个字符。 单独使用通配符字符时，(\*) 表示所有规则。
@@ -46,7 +46,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 <span id="________check_rulelist.sdv______"></span><span id="________CHECK_RULELIST.SDV______"></span> **/check:*RuleList*.sdv**   
 使用指定的规则列表文件中的规则启动验证。 可以列出与此参数只能有一个文件。 在规则列表文件中，每一行可以是一个规则的名称，也可以是通配符 (\*)，它表示所有 SDV 规则。  运行 **/check:*RuleList*.sdv**命令并指定驱动程序的 Visual Studio 项目文件 (\*.vcxproj)。
 
-<em>RuleList</em>**.sdv**的是完全限定的路径和文件名[规则列表文件](static-driver-verifier-rule-list-file.md)。 该文件必须具有 **.sdv**文件扩展名。 除非文件为本地目录中，路径是必需的。 如果路径或文件名称包含空格，必须将<em>RuleList。</em>**sdv**引号引起来。
+<em>RuleList</em> **.sdv**的是完全限定的路径和文件名[规则列表文件](static-driver-verifier-rule-list-file.md)。 该文件必须具有 **.sdv**文件扩展名。 除非文件为本地目录中，路径是必需的。 如果路径或文件名称包含空格，必须将<em>RuleList。</em>**sdv**引号引起来。
 
 如果指定 **/check:** 选项而无需指定规则，SDV 为驱动程序模型设置的默认规则使用运行。
 
@@ -73,7 +73,7 @@ msbuild /t:sdv /p:Inputs="Parameters" ProjectFile /p:Configuration=configuration
 
 一个 **/clean**命令不会删除 Sdv map.h 文件中，如果已批准的标志设置为 Sdv map.h 文件中，则返回 true (已批准 = true)。 SDV 然后可以使用此文件进行验证。
 
-<span id="_______________"></span> **/?**   
+<span id="_______________"></span> **/?**    
 SDV 命令显示使用情况。 使用此参数的命令，无需在生成环境窗口中运行。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释

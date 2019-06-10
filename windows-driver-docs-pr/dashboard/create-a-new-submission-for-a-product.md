@@ -6,18 +6,18 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e5c4520be5e8e9af49016807bcf337bf850b958
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: a68793cda9761a1982f69f1da62e329a6e3a0b73
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518356"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813579"
 ---
 # <a name="create-a-new-submission-for-a-product"></a>为产品创建新的提交
 
 在 Microsoft 硬件 API 中使用此方法为产品创建新的提交。 使用此方法之前，请确保已创建了新产品。 有关详细信息，请参阅[创建新产品](create-a-new-product.md)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
 
@@ -27,14 +27,14 @@ ms.locfileid: "56518356"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
+| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
 
 
 此方法中的 productId 是提交所适用于的产品。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
     "items": [
       {
         "type": "initialPackage",
-        "url": "https://ingestionpackagesint1.blob.core.windows.net/ingestion/38c19eaf-7377-4834-893c-28d5791f7896?sv=2017-04-17&sr=b&sig=SlD5j5e067oA4Y3hdk1sPW3UycTSUVlIp80WbWvj4A8%3D&se=2018-03-20T05:00:14Z&sp=rwl"
+        "url": "https://ingestionpackages.blob.core.windows.net/ingestion/38c19eaf-7377-4834-893c-28d5791f7896?sv=2017-04-17&sr=b&sig=SlD5j5e067oA4Y3hdk1sPW3UycTSUVlIp80WbWvj4A8%3D&se=2018-03-20T05:00:14Z&sp=rwl"
       }
     ],
     "messages": []
@@ -112,6 +112,6 @@ Authorization: Bearer <your access token>
 
 有关详细信息，请参阅[错误代码](get-product-data.md#error-codes)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

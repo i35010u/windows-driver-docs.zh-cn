@@ -6,18 +6,18 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b55e7b3cd77d39ec6d6ca39646b63068361a4af
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
-ms.translationtype: HT
+ms.openlocfilehash: c3eed99484bce4192f398221dd408e01c717ab85
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106385"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813574"
 ---
 # <a name="get-all-products"></a>获取所有产品
 
 使用 Microsoft 硬件 API 中的此方法检索注册到 Windows 开发人员中心帐户的所有产品的数据。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
 
@@ -31,10 +31,10 @@ ms.locfileid: "65106385"
 
 ### <a name="request-header"></a>请求头
 
-|标头|在任务栏的搜索框中键入|描述|
+|Header|在任务栏的搜索框中键入|描述|
 |--|--|--|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
-|accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
+|授权|string|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|accept|string|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -65,12 +65,12 @@ Authorization: Bearer <your access token>
             "sharedProductId": 1152921504606971255,
             "links": [
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834",
                     "rel": "self",
                     "method": "GET"
                 },
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351834/submissions",
                     "rel": "get_submissions",
                     "method": "GET"
                 }
@@ -101,12 +101,12 @@ Authorization: Bearer <your access token>
             "sharedProductId": 1152921504606971256,
             "links": [
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351835",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351835",
                     "rel": "self",
                     "method": "GET"
                 },
                 {
-                    "href": "https://hardwareapi-int.microsoft.com/api/v1/hardware/products/9007199267351835/submissions",
+                    "href": "https://hardwareapi.microsoft.com/api/v1/hardware/products/9007199267351835/submissions",
                     "rel": "get_submissions",
                     "method": "GET"
                 }
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | value | 数组 | 一个对象数组，其中包含注册到你帐户的每个产品的相关信息。 有关每个对象中的数据的详细信息，请参阅[产品资源](get-product-data.md#product-resource)。 |
 | links | 数组 | 一个对象数组，其中包含有关包含实体的有用链接。 有关更多详细信息，请参阅[链接对象](get-product-data.md#link-object)  |
@@ -155,6 +155,6 @@ Authorization: Bearer <your access token>
 
 有关详细信息，请参阅[错误代码](get-product-data.md#error-codes)。 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

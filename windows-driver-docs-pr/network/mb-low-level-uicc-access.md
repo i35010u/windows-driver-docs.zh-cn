@@ -7,12 +7,12 @@ keywords:
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fbfa6884a96307a0cee5d809f14d98f13efbc8eb
-ms.sourcegitcommit: e2a800aac318317b8f7c9748ab19a5354d3ec4c9
+ms.openlocfilehash: e31353e294746506f6470973eb368d8d1336feaa
+ms.sourcegitcommit: 970845120208f29b874066f2b8b7e97078088013
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969591"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66806829"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低级别 UICC 访问
 
@@ -437,7 +437,7 @@ MBIM_SET_MS_UICC_RESET 结构包含指定主机的传递操作。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)。 |
 
-#### < a 名称 = >"MBIM_MS_UICC_PASSTHROUGH_ACTION"</a> MBIM_MS_UICC_PASSTHROUGH_ACTION
+#### <a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
 
 MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义 MBIM 函数传递操作，主机可以指定的类型。
 
@@ -456,11 +456,11 @@ MBIM_MS_UICC_RESET_INFO 结构包含 MBIM 函数的传递状态。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)。 |
 
-#### < a 名称 = >"MBIM_MS_UICC_PASSTHROUGH_STATUS"</a> MBIM_MS_UICC_PASSTHROUGH_STATUS
+#### <a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
 
 MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义主机的传递状态 MBIM 函数指定的类型。
 
-| 类型 | 值 |
+| 类型 | ReplTest1 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisabled | 0 |
 | MBIMMsUiccPassThroughEnabled | 1 |

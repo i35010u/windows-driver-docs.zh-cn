@@ -6,12 +6,12 @@ keywords:
 - 启用应用程序验证器 （全局标志）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aba4d70f1af3baef15733bd92db42ddb3d85d14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0e9aa47c3832d6a49f8501fb277568954faf932
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325103"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813589"
 ---
 # <a name="enable-application-verifier"></a>启用应用程序验证工具
 
@@ -50,13 +50,4 @@ ms.locfileid: "63325103"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-此标志可使只有最基本的检测功能。 若要可靠地测试用户模式应用程序，请使用应用程序验证器 (appverif.exe)。 有关详细信息，请参阅[应用程序验证工具](application-verifier.md)。
-
- 
-
- 
-
-
-
-
-
+此标志可使只有最基本的检测功能。 若要可靠地测试用户模式应用程序，请使用应用程序验证器 (appverif.exe)。 有关详细信息，请参阅[应用程序验证工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)。

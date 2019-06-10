@@ -7,12 +7,12 @@ keywords:
 - 静态验证工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feeee25ed8dd8687a68f75c730e6e86a27a3542a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60636066498fc7ae0017544d044ab50e8920647f
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347603"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813586"
 ---
 # <a name="survey-of-verification-tools"></a>验证工具调查
 
@@ -47,7 +47,7 @@ ms.locfileid: "63347603"
     -   **内存泄漏。** 驱动程序验证程序跟踪所做的驱动程序的内存分配的并确保该驱动程序被卸载之前, 释放内存。
     -   **需要很长时间以完成或取消的 I/O 操作。** 驱动程序验证程序可以测试用于响应状态的驱动程序的逻辑\_PENDING 返回值从[ **IoCallDriver**](https://msdn.microsoft.com/library/windows/hardware/ff548336)。
     -   **DDI 符合性检查。** （可从 Windows 8 开始）驱动程序验证器应用一组检查驱动程序和操作系统的内核接口之间的正确交互的设备驱动程序接口 (DDI) 规则。 这些规则对应于在分析驱动程序源代码中使用 Static Driver Verifier 的规则。 如果驱动程序验证工具发现错误时启用 DDI 符合性检查，运行[Static Driver Verifier](static-driver-verifier.md)和选择的相同规则，导致该错误。 Static Driver Verifier 可帮助您的驱动程序源代码中找到缺陷的原因。
--   [应用程序验证工具](application-verifier.md)是一个用于用户模式应用程序和驱动程序以 C 编写的动态验证工具 /C++。 它不会验证托管的代码。 应用程序验证程序不包含在 WDK 中，但可以下载并安装它从[Microsoft 下载中心网站](https://go.microsoft.com/fwlink/p/?linkid=11573)。
+-   [应用程序验证工具](application-verifier.md)是一个用于用户模式应用程序和驱动程序以 C 编写的动态验证工具 /C++。 它不会验证托管的代码。 应用程序验证程序不包含在 WDK 中，但可以下载并安装它从[Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=11573)。
 
  
 

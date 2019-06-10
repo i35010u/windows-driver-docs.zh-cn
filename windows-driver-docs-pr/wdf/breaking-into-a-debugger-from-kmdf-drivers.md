@@ -7,12 +7,12 @@ keywords:
 - 中断到调试器 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7afbfcffa7b84d9464fbe292a193653e3597d9c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5afbf30ce121d9da9f2b6073cf5764dafd6ac3a
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330868"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815114"
 ---
 # <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>从 KMDF 驱动程序突入调试程序
 
@@ -33,7 +33,7 @@ ms.locfileid: "63330868"
 
 WDFVERIFY 和验证代码\_IS\_IRQL\_被动\_级别宏包含在您的驱动程序时生成您的版本或调试配置中的驱动程序 (称为免费构建环境或已检验的版本环境在 Windows 7 及更早版本）。 仅当您构建您的驱动程序中的调试配置时，驱动程序中包含的断言和 ASSERTMSG 宏代码。
 
-有关项目配置的详细信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+有关项目配置的详细信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
  
 

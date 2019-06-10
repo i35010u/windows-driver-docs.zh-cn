@@ -1,19 +1,19 @@
 ---
 Description: 了解如何基于 UMDF 的 USB 客户端驱动程序的源代码。
 title: USB 客户端驱动程序代码结构 (UMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a40fc017f0d1c04e52e15a148375955bf9a6d03d
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: e12fc7464e54cde537320794d4b5c2a5f5c31907
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405076"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815108"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>了解 USB 客户端驱动程序代码结构 (UMDF)
 
 
-本主题中您将了解 UMDF 基于 USB 客户端驱动程序的源代码。 由生成的代码示例**USB 用户模式驱动程序**Microsoft Visual Studio 2012 中包含的模板。 模板代码使用活动模板库 (ATL) 生成的 COM 基础结构。 ATL 和有关客户端驱动程序中的 COM 实现的详细信息不在此处讨论。
+本主题中您将了解 UMDF 基于 USB 客户端驱动程序的源代码。 由生成的代码示例**USB 用户模式驱动程序**Microsoft Visual Studio 2019 中包含的模板。 模板代码使用活动模板库 (ATL) 生成的 COM 基础结构。 ATL 和有关客户端驱动程序中的 COM 实现的详细信息不在此处讨论。
 
 有关生成 UMDF 模板代码的说明，请参阅[如何编写第一个 USB 客户端驱动程序 (UMDF)](implement-driver-entry-for-a-usb-driver--umdf-.md)。 这些部分介绍上述模板代码：
 

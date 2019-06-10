@@ -10,12 +10,12 @@ keywords:
 - 示例驱动程序 WDK KMDF
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b97d06d14caccce7ecab1425d1a95ffcd2313d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae5b17e143aa3db86f410df40c130337065ff8bc
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325152"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815090"
 ---
 # <a name="sample-kmdf-drivers"></a>示例 KMDF 驱动程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "63325152"
 
 
 
-生成示例的信息，请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)。
+生成示例的信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
 <a href="" id="echo"></a>ECHO 演示如何使用 framework 的队列和请求对象，并自动同步。
 

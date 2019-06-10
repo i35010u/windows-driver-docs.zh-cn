@@ -1,19 +1,19 @@
 ---
 Description: 了解有关客户端的基于 KMDF 的 USB 驱动程序的源代码。
 title: USB 客户端驱动程序代码结构 (KMDF)
-ms.date: 04/20/2017
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e56f8d8a4aedaafeec4343419fd918a6879e67
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: bd70173383d613def89ed10567e892846485e5ce
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405084"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815116"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>了解 USB 客户端驱动程序代码结构 (KMDF)
 
 
-在本主题中，您将学习如何 aKMDF 基于 USB 客户端驱动程序的源代码。 由生成的代码示例**USB 用户模式驱动程序**Microsoft Visual Studio 2012 中包含的模板。
+在本主题中，您将学习如何 aKMDF 基于 USB 客户端驱动程序的源代码。 由生成的代码示例**USB 用户模式驱动程序**Microsoft Visual Studio 2019 中包含的模板。
 
 以下各节提供有关模板代码的信息。
 

@@ -4,12 +4,12 @@ description: Storport 微型端口驱动程序开发路线图
 ms.assetid: 43a8f1ee-b2d3-4f97-b7e5-d59790ca6754
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d84cab27320605a441ad26690264ba75178e3959
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31263393982446e8717c703a08c2d973c779c0ec
+ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384176"
+ms.lasthandoff: 06/08/2019
+ms.locfileid: "66815106"
 ---
 # <a name="roadmap-for-developing-storport-miniport-drivers"></a>Storport 微型端口驱动程序开发路线图
 
@@ -42,13 +42,13 @@ ms.locfileid: "63384176"
 
 7.  **开发、 生成、 测试和调试 storport 微型端口驱动程序。**
 
-    请参阅[构建一个驱动程序](https://msdn.microsoft.com/windows-drivers/develop/building_a_driver)，[测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)，并[调试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/debugging_a_driver)有关迭代构建、 测试和调试信息。 此过程将有助于确保您构建适用的驱动程序。
+    请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)，[测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver)，并[调试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/debugging_a_driver)有关迭代构建、 测试和调试信息。 此过程将有助于确保您构建适用的驱动程序。
 
 8.  **创建 storport 微型端口驱动程序的驱动程序包。**
 
     有关详细信息，请参阅[创建驱动程序包](https://msdn.microsoft.com/windows-drivers/develop/creating_a_driver_package)。
 
-9.  **签名和分发 storport 微型端口****驱动程序。**
+9.  **签名和分发 storport 微型端口** **驱动程序。**
 
     最后一步是 （可选） 签名并分发驱动程序。 如果您的驱动程序满足 Windows 硬件认证为定义的质量标准，您可以通过 Microsoft Windows Update 计划分发。 有关详细信息，请参阅[分发驱动程序包](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)。
 

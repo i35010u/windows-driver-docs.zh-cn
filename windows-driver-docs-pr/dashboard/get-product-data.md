@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d0bec1665bc8cd7883502ceb7e5fa6f2916d308
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
+ms.openlocfilehash: 8681d5544a66298e9e51bb35ffb57f6de68bae48
+ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400876"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813566"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -28,7 +28,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions`|[获取产品的所有提交的数据](get-all-submissions.md)|
 |GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions/{submissionId}`|[获取产品的特定提交的数据](get-a-submission.md)|
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
@@ -160,7 +160,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | currentStep | string | 此实体的整个工作流中的当前步骤名称。 <br>对于引入/程序包提交，可能的值为（括号中的内容为说明）：<ul><li>packageInfoValidation（验证程序包元数据和内容  ）</li><li>preparation（准备好程序包以便进行处理  ）</li><li>scanning（扫描程序包内容中是否有恶意软件  ）</li><li>validation（验证测试结果  ）</li><li>catalogCreation（为程序包创建安全目录  ）</li><li>manualReview（进行手动审查  ）</li><li>signing（对二进制文件签名  ）</li><li>finalizeIngestion（完成引入并获取可以下载或发布的签名文件  ）</li></ul>|
 | 状态 | string | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
@@ -175,15 +175,15 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
   "items": [
     {
       "type": "initialPackage",
-      "url": "https://ingestionpackagesint1.blob.core.windows.net/ingestion/dc55b8c6-a01c-40b6-b815-cac8bc08812a?sv=2016-05-31&sr=b&sig=ipjW3RsVC75lZrcEZRh9JmTX89L4gTIKkxwqv9F8Axs%3D&se=2018-03-12T15:32:10Z&sp=rl"
+      "url": "https://ingestionpackages.blob.core.windows.net/ingestion/dc55b8c6-a01c-40b6-b815-cac8bc08812a?sv=2016-05-31&sr=b&sig=ipjW3RsVC75lZrcEZRh9JmTX89L4gTIKkxwqv9F8Axs%3D&se=2018-03-12T15:32:10Z&sp=rl"
     },
     {
       "type": "derivedPackage",
-      "url": "https://ingestionpackagesint1.blob.core.windows.net/ingestion/6bd77dbf-a851-46d2-b703-29ea4efae006?sv=2016-05-31&sr=b&sig=O5XQf%2FzMbI2FFt5WwSUJWL1JbWY4JXXPRkCKAnX7IRs%3D&se=2018-03-12T15:32:10Z&sp=rl&rscd=attachment%3B filename%3DShell_1152921504621441930.hlkx"
+      "url": "https://ingestionpackages.blob.core.windows.net/ingestion/6bd77dbf-a851-46d2-b703-29ea4efae006?sv=2016-05-31&sr=b&sig=O5XQf%2FzMbI2FFt5WwSUJWL1JbWY4JXXPRkCKAnX7IRs%3D&se=2018-03-12T15:32:10Z&sp=rl&rscd=attachment%3B filename%3DShell_1152921504621441930.hlkx"
     },
     {
       "type": "signedPackage",
-      "url": "https://ingestionpackagesint1.blob.core.windows.net/ingestion/0b83a294-c1d1-4136-82a1-dd52f51841e3?sv=2016-05-31&sr=b&sig=zTfxKJmaTwpbFol%2FpAKG0QuXJTTxm5aZ0F2wQQI8whc%3D&se=2018-03-12T15:32:10Z&sp=rl"
+      "url": "https://ingestionpackages.blob.core.windows.net/ingestion/0b83a294-c1d1-4136-82a1-dd52f51841e3?sv=2016-05-31&sr=b&sig=zTfxKJmaTwpbFol%2FpAKG0QuXJTTxm5aZ0F2wQQI8whc%3D&se=2018-03-12T15:32:10Z&sp=rl"
     },
     {
       "type": "certificationReport",
@@ -228,7 +228,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="storagecontroller-object"></a>StorageController 对象
 
-| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | biosVersion | string | ROM Bios 版本 |
 | firmwareVersion | string | 固件版本 |
@@ -252,7 +252,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="raidcontroller-object"></a>RaidController 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | firmwareVersion | string | 固件版本 |
 | filterVersion | string | 驱动程序版本 |
