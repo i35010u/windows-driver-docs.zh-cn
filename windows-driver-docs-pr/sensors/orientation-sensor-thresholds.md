@@ -4,12 +4,12 @@ description: 本主题提供有关方向信息传感器的阈值。
 ms.assetid: BC7B76C3-F6D3-48FC-AA22-A91519A0A0D8
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 197be6f9e5bf76ba634d3d58a14bf747badc9b1e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6c2bdd28e3ad84ffd6cfe166b0b216786f79c93
+ms.sourcegitcommit: 85b989c149403210f2c7b892e045d037580432e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330099"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825047"
 ---
 # <a name="orientation-sensor-thresholds"></a>方向传感器阈值
 
@@ -34,8 +34,9 @@ ms.locfileid: "63330099"
 
 方向传感器驱动程序必须始终报告一个示例读取传感器类扩展调用后立即[EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)回调而不考虑的阈值。 此示例称为嘿 *初始示例读取*。
 
-方向传感器驱动程序必须报告读取至传感器类扩展，满足各自的阈值时的示例：
+方向传感器驱动程序必须报告读取至传感器类扩展，满足各自的阈值时的示例。
 
+如果该驱动程序支持任何以下其他可选 datafields，然后测量每个轴的读数，必须公开相应轴的阈值：
 * PKEY_SensorData_LinearAccelerationX_Gs
 * PKEY_SensorData_LinearAccelerationY_Gs
 * PKEY_SensorData_LinearAccelerationZ_Gs
@@ -43,7 +44,7 @@ ms.locfileid: "63330099"
 * PKEY_SensorData_CorrectedAngularVelocityY_DegreesPerSecond
 * PKEY_SensorData_CorrectedAngularVelocityZ_DegreesPerSecond
 
-每个阈值必须测量每个轴。 驱动程序因此必须调用 SensorsCxSensorDataReady 每当阈值条件满足任何一个轴上。
+驱动程序因此必须调用 SensorsCxSensorDataReady 每当阈值条件满足任何一个轴上。
 
 ## <a name="related-topics"></a>相关主题
 

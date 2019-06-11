@@ -7,12 +7,12 @@ keywords:
 - 串行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2cd3cf6246510d4f061e930c1725910c0ea08b64
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 6b6a8c1009475f155469ee2e19d7bb0e4ce890b4
+ms.sourcegitcommit: 82892955346f3ee6f92150381f4151dd595d2e51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836296"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822103"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍以下串行 IRP 主要函数代码：
@@ -31,7 +31,7 @@ ms.locfileid: "65836296"
 
 标头：Wdm.h 中 （包括 wdm.h 中或 Ntddk.h）
 
-##  <a name="irpmjcreate"></a>IRP_MJ_CREATE
+##  <a name="IRP_MJ_CREATE"></a> IRP_MJ_CREATE
 [IRP_MJ_CREATE](https://msdn.microsoft.com/library/windows/hardware/ff550729)请求打开串行设备。
 
 ### <a name="when-sent"></a>发送时间
@@ -80,7 +80,7 @@ STATUS_SHARED_IRQ_BUSY
 ### <a name="operation"></a>操作
 必须打开串行设备，然后才能使用。 串行设备是独占的设备;只有一个文件可以是开放的端口上在任何给定时间。
 
-##  <a name="irpmjdevicecontrol"></a>IRP_MJ_DEVICE_CONTROL
+##  <a name="IRP_MJ_DEVICE_CONTROL"></a> IRP_MJ_DEVICE_CONTROL
 IRP_MJ_DEVICE_CONTROL 请求的操作串行端口。
 
 ### <a name="when-sent"></a>发送时间
@@ -104,7 +104,7 @@ IRP_MJ_DEVICE_CONTROL 请求的操作串行端口。
 ### <a name="operation"></a>操作
 特定请求
 
-##  <a name="irpmjflushbuffers"></a>IRP_MJ_FLUSH_BUFFERS
+##  <a name="IRP_MJ_FLUSH_BUFFERS"></a> IRP_MJ_FLUSH_BUFFERS
 [IRP_MJ_FLUSH_BUFFER](https://msdn.microsoft.com/library/windows/hardware/ff550760)请求刷新的串行设备内部写入缓冲区。
 
 ### <a name="when-sent"></a>发送时间
@@ -142,7 +142,7 @@ STATUS_PENDING
 串行队列并开始处理写入和刷新在其中接收请求的顺序中的请求。 序列完成刷新请求之后它将调用, **IoCompleteRequest**进行的所有写入它之前刷新请求接收的请求。 *但是，完成刷新请求并不表示设备堆栈中其他驱动程序的所有先前启动的写入请求都已完成。* 例如，筛选器驱动程序可能仍在处理写入请求。 客户端必须检查客户端尝试释放或重复使用的写入请求的 IRP 之前由设备堆栈中的所有驱动程序完成写入请求。
 
 
-##  <a name="irpmjinternaldevicecontrol"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
+##  <a name="IRP_MJ_INTERNAL_DEVICE_CONTROL"></a> IRP_MJ_INTERNAL_DEVICE_CONTROL
 [IRP_MJ_INTERNAL_DEVICE_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550766)请求串行设备上设置内部操作模式。
 
 ### <a name="when-sent"></a>发送时间
@@ -166,7 +166,7 @@ STATUS_PENDING
 特定请求
 
 
-##   <a name="irpmjpnp"></a>IRP_MJ_PNP
+##  <a name="IRP_MJ_PNP"></a> IRP_MJ_PNP
 [IRP_MJ_PNP](https://msdn.microsoft.com/library/windows/hardware/ff550772)请求支持插。 
 
 ### <a name="when-sent"></a>发送时间
@@ -214,7 +214,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 
 有关泛型的插请求操作的说明，请参阅[即插即用和播放次要 Irp](https://msdn.microsoft.com/library/windows/hardware/ff558807)。
 
-##  <a name="irpmjpower"></a>IRP_MJ_POWER
+##  <a name="IRP_MJ_POWER"></a> IRP_MJ_POWER
 [IRP_MJ_POWER](https://msdn.microsoft.com/library/windows/hardware/ff550784)控制电源管理的请求。
 
 ### <a name="when-sent"></a>发送时间
@@ -242,7 +242,7 @@ IRP_MN_FILTER_RESOURCE_REQUIREMENTS
 有关泛型这些请求的操作的详细信息，请参阅[规则处理 Power Irp](https://msdn.microsoft.com/library/windows/hardware/ff563629)。
 
 
-##  <a name="irpmjqueryinformation"></a>IRP_MJ_QUERY_INFORMATION
+##  <a name="IRP_MJ_QUERY_INFORMATION"></a> IRP_MJ_QUERY_INFORMATION
 [IRP_MJ_QUERY_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550788)请求查询是串行设备的最终文件信息。 
 
 ### <a name="when-sent"></a>发送时间
@@ -289,7 +289,7 @@ STATUS_PENDING
 标准文件信息始终设置为零或**FALSE**根据。 位置信息始终设置为零。
 
 
-##  <a name="irpmjread"></a>IRP_MJ_READ
+##  <a name="IRP_MJ_READ"></a> IRP_MJ_READ
 一个[IRP_MJ_READ](https://msdn.microsoft.com/library/windows/hardware/ff550794)请求将数据从串行设备传输到客户端。
 
 ### <a name="when-sent"></a>发送时间
@@ -333,7 +333,7 @@ STATUS_TIMEOUT
 有关详细信息大约读取和写入超时，请参阅[设置读取和写入串行设备超时](https://msdn.microsoft.com/library/windows/hardware/ff547486)。
 
 
-##  <a name="irpmjsetinformation"></a>IRP_MJ_SET_INFORMATION
+##  <a name="IRP_MJ_SET_INFORMATION"></a> IRP_MJ_SET_INFORMATION
 [IRP_MJ_SET_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/ff550807)请求设置串行设备有关的文件尾信息。
 
 ### <a name="when-sent"></a>发送时间
@@ -375,7 +375,7 @@ STATUS_PENDING
 序列支持类型的请求**FileEndOfFileInformation**并**FileAllocationInformation**。 但是，序列不实际设置文件的信息。 文件结尾位置始终设置为零。
 
 
-##  <a name="irpmjsystemcontrol"></a>IRP_MJ_SYSTEM_CONTROL
+##  <a name="IRP_MJ_SYSTEM_CONTROL"></a> IRP_MJ_SYSTEM_CONTROL
 [IRP_MJ_SYSTEM_CONTROL](https://msdn.microsoft.com/library/windows/hardware/ff550813)请求支持 WMI 请求。
 
 ### <a name="when-sent"></a>发送时间
@@ -433,7 +433,7 @@ STATUS_WMI_GUID_NOT_FOUND
 
 串行设备的 WMI 名称是项值的值**PortName**设备插注册表项下。
 
-##  <a name="irpmjwrite"></a>IRP_MJ_WRITE
+##  <a name="IRP_MJ_WRITE"></a> IRP_MJ_WRITE
 [IRP_MJ_WRITE](https://msdn.microsoft.com/library/windows/hardware/ff550819)请求将数据从客户端传输到串行设备。
 
 ### <a name="when-sent"></a>发送时间
