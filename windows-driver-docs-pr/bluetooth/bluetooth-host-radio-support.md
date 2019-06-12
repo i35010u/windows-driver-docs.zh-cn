@@ -4,29 +4,16 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机单选支持问题和解答的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2241d0c80f733b78272780dd114b48acb6d5549
-ms.sourcegitcommit: bb482ef6935e171674c6a99bb499668c0f62ca24
+ms.openlocfilehash: 5ccf6d42cd0738171c8b53a7f2dcecb6888003be
+ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051640"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66840861"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
-以下列表提供了 Bluetooth 无线电支持问与答：
-
-- [在 Windows 中受支持的蓝牙主控制器](#bluetooth-host-controllers-supported-in-windows)
-- [强制 Bluetooth 堆栈加载如果 Windows 不能匹配设备 ID (Windows Vista)](#forcing-the-bluetooth-stack-to-load-if-windows-cannot-match-the-device-id-windows-vista)
-- [如何确保 Bluetooth 无线电收发器在 Windows Vista 中的内置支持](#how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista)
-- [第三方 INF 文件是否应使用了 Microsoft 定义的类 GUID](#whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid)
-- [为什么控件面板蓝牙应用程序在 Windows 7 中缺少](#why-the-control-panel-bluetooth-application-is-missing-in-windows-7)
-- [为什么蓝牙图标不出现在任务栏中](#why-the-bluetooth-icon-does-not-appear-in-the-taskbar)
-- [Windows 支持蓝牙单选固件更新](#windows-support-for-bluetooth-radio-firmware-updates)
-- [Windows 支持的特定于供应商的传递命令](#windows-support-for-vendor-specific-pass-through-commands)
-- [供应商提供的配置文件的 Windows 支持](#windows-support-for-vendor-supplied-profiles)
-- [蓝牙配置文件和默认情况下启用的协议](#bluetooth-profiles-and-protocols-that-are-enabled-by-default)
-- [组策略可以如何阻止蓝牙单选安装](#how-group-policy-can-block-bluetooth-radio-installation)
-- [如何更改发布的 Windows 8 和 Windows 8.1 的设备 ID 配置文件记录](#how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81)
+本主题提供有关蓝牙无线支持的典型问题的答案。
 
 ## <a name="bluetooth-host-controllers-supported-in-windows"></a>在 Windows 中受支持的蓝牙主控制器
 
@@ -36,11 +23,11 @@ ms.locfileid: "66051640"
 
 新的蓝牙无线可能不匹配任何设备中随 Windows 蓝牙 INF (Bth.inf) 的 Id。 这会阻止 Windows 加载设备的蓝牙堆栈。 Ihv 应确保其单选可使用本机 Bluetooth 堆栈中的以下方法之一：
 
-- 创建引用 Bth.inf 单选 INF。 蓝牙无线的特定于供应商的 INF 文件的示例，请参阅[附录 b:在 Windows Vista 中使用的 INF 文件供应商提供的示例](bluetooth-faq--appendix-b.md)。
-- 在指定适当的兼容和 subcompatible id。 设备固件中存储扩展的兼容 ID 操作系统描述符 有关的信息扩展兼容 ID 操作系统描述符，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)。
-- 强制加载的 Bluetooth 堆栈
+* 创建引用 Bth.inf 单选 INF。 蓝牙无线的特定于供应商的 INF 文件的示例，请参阅[附录 b:在 Windows Vista 中使用的 INF 文件供应商提供的示例](bluetooth-faq--appendix-b.md)。
+* 在指定适当的兼容和 subcompatible id。 设备固件中存储扩展的兼容 ID 操作系统描述符 有关的信息扩展兼容 ID 操作系统描述符，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)。
+* 强制加载的 Bluetooth 堆栈
 
-以下过程概括介绍了如何使用设备管理器来强制加载新单选 Bluetooth 堆栈：
+以下过程使用设备管理器强制加载新单选 Bluetooth 堆栈：
 
 1. 运行控件面板设备管理器应用程序并识别蓝牙无线上的设备列表。
 2. 若要运行更新驱动程序软件向导，右键单击 Bluetooth 无线电项，然后选择**更新驱动程序软件**。
@@ -48,31 +35,31 @@ ms.locfileid: "66051640"
 
 此过程的详细说明，请参阅[附录 a:如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序](bluetooth-faq--appendix-a.md)。
 
-## <a name="how-to-ensure-in-box-support-for-bluetooth-radios-in-windows-vista"></a>如何确保 Bluetooth 无线电收发器在 Windows Vista 中的内置支持
+## <a name="ensure-in-box-support-for-bluetooth-radios"></a>确保 Bluetooth 无线电收发器的内置支持
 
 Ihv 应执行以下步骤，确保在 Windows 上其 Bluetooth 无线电收发器拥有在 box 支持部门：
 
-- 请确保单选支持扩展的兼容 ID 操作系统功能描述符。 有关详细信息，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=617154)。
-- 获得 Windows 认证计划批准 Bluetooth 无线电硬件和关联的 INF 文件。 蓝牙无线的特定于供应商的 INF 文件的示例，请参阅[附录 b:在 Windows Vista 中使用的 INF 文件供应商提供的示例](bluetooth-faq--appendix-b.md)。
-- 使用合作伙伴中心可通过 Windows Update 提供的 INF 文件
+* 请确保单选支持扩展的兼容 ID 操作系统功能描述符。 有关详细信息，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=617154)。
+* 获得 Windows 认证计划批准 Bluetooth 无线电硬件和关联的 INF 文件。 蓝牙无线的特定于供应商的 INF 文件的示例，请参阅[附录 b:在 Windows Vista 中使用的 INF 文件供应商提供的示例](bluetooth-faq--appendix-b.md)。
+* 使用合作伙伴中心可通过 Windows Update 提供的 INF 文件
 
-不再可以现成 Bth.inf 文件适用于 Windows Vista 中添加的无线电收发器。
+不再可以将无线收发器添加到框中 Bth.inf 文件。
 
-## <a name="whether-third-party-inf-files-should-use-the-microsoft-defined-class-guid"></a>第三方 INF 文件是否应使用了 Microsoft 定义的类 GUID
+## <a name="should-third-party-inf-files-use-the-microsoft-defined-class-guid"></a>第三方 INF 文件应使用 Microsoft 定义的类 GUID
 
 Ihv 应仅在引用中框蓝牙 INF 文件 (Bth.inf) 这些 INF 文件中的蓝牙设备使用 Microsoft 定义的类的全局唯一标识符 (GUID) ({e0cbf06c cd8b 4647 bb8a 263b43f0f974})。 这意味着设备使用的本机 Windows 共同安装程序、 服务和通知区域图标。 实现其自己的蓝牙驱动的 Ihv 必须创建特定于供应商类 GUID，并使用 WLK 测试工具来确保堆栈符合未分类的 Windows 认证计划。
 
-## <a name="why-the-control-panel-bluetooth-application-is-missing-in-windows-7"></a>为什么控件面板蓝牙应用程序在 Windows 7 中缺少
+## <a name="why-the-control-panel-bluetooth-application-is-missing"></a>为何缺少控件面板蓝牙应用程序
 
-在 Windows 7 中，控件面板蓝牙应用程序已合并到设备和打印机。 因此，调整 Bluetooth 无线电设置、 管理蓝牙设备，以及添加新蓝牙设备可以仅从设备和打印机中。
+控件面板蓝牙应用程序已合并到设备和打印机。 因此，调整 Bluetooth 无线电设置、 管理蓝牙设备，以及添加新蓝牙设备可以仅从设备和打印机中。
 
-## <a name="why-the-bluetooth-icon-does-not-appear-in-the-taskbar"></a>为什么蓝牙图标不出现在任务栏中
+## <a name="why-the-bluetooth-icon-might-not-appear-in-the-taskbar"></a>为什么蓝牙图标可能不会显示在任务栏中
 
 如果蓝牙图标不出现在任务栏，则可能是由于一个或多个原因如下：
 
-- 蓝牙无线功能处于关闭状态。
-- 蓝牙无线处于仿真模式
-- 在中**蓝牙设置**对话框中，**在通知区域中显示的蓝牙图标**未选中复选框
+* 蓝牙无线功能处于关闭状态。
+* 蓝牙无线处于仿真模式。
+* 在中**蓝牙设置**对话框中，**在通知区域中显示的蓝牙图标**未选中复选框。
 
 ## <a name="windows-support-for-bluetooth-radio-firmware-updates"></a>Windows 支持蓝牙单选固件更新
 
@@ -80,11 +67,11 @@ Ihv 应仅在引用中框蓝牙 INF 文件 (Bth.inf) 这些 INF 文件中的蓝�
 
 ## <a name="windows-support-for-vendor-specific-pass-through-commands"></a>Windows 支持的特定于供应商的传递命令
 
-Windows 8.1、 Windows 8、 Windows 7 和 Windows Vista SP2 包括支持特定于供应商的传递命令。 这些内核模式接口记录在 WDK 中。
+Windows 包括对特定于供应商的传递命令的支持。 这些内核模式接口记录在 WDK 中。
 
 ## <a name="windows-support-for-vendor-supplied-profiles"></a>供应商提供的配置文件的 Windows 支持
 
-Windows 8.1、 Windows 8、 Windows 7 和 Windows Vista 支持供应商提供蓝牙配置文件。 但是，Windows XP 不支持。 在框 INF 文件 (Bth.inf) 中包含已由蓝牙 SIG 标准化这些配置文件的 Guid。
+Windows 支持供应商提供蓝牙配置文件。 在框 INF 文件 (Bth.inf) 中包含已由蓝牙 SIG 标准化这些配置文件的 Guid。
 
 当用户与计算机蓝牙设备配对时，会将设备的配置文件与 Bth.inf 中列出的配置文件进行比较。 如果设备配置文件与这些配置文件之一不匹配，则用户将收到一个对话框，要求他们提供相应的供应商的软件。
 
@@ -92,7 +79,7 @@ Windows 8.1、 Windows 8、 Windows 7 和 Windows Vista 支持供应商提供蓝
 
 ## <a name="bluetooth-profiles-and-protocols-that-are-enabled-by-default"></a>蓝牙配置文件和默认情况下启用的协议
 
-他是 Windows 附带的蓝牙驱动某些蓝牙配置文件的提供的内置支持。 供应商必须实现所需的服务以支持任何其他蓝牙配置文件，如最多为 USB 和 PCI。 Windows 可以使用默认情况下启用蓝牙配置文件，称为支持的配置文件-若要生成的物理设备对象 (PDOs)。 这样，需要启用该配置文件的驱动程序的默认加载。 可以通过查看下的 SupportedServices 和 UnsupportedServices 值标识注册表中支持的配置文件**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\Bthport\\参数**密钥。
+蓝牙驱动 Windows 中包含某些蓝牙配置文件的提供的内置支持。 供应商必须实现所需的服务以支持任何其他蓝牙配置文件，如最多为 USB 和 PCI。 Windows 可以使用默认情况下启用蓝牙配置文件，称为支持的配置文件-若要生成的物理设备对象 (PDOs)。 这样，需要启用该配置文件的驱动程序的默认加载。 可以通过查看下的 SupportedServices 和 UnsupportedServices 值标识注册表中支持的配置文件**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\Bthport\\参数**密钥。
 
 > [!NOTE]
 > 仅安装了 Bluetooth 的设备后，Bthport 密钥添加到注册表。
@@ -123,11 +110,11 @@ USB\\类\_（对于基于 USB 的无线电收发器） E0 MS\_BTHX\_BTHMINI （�
 > [!NOTE]
 > 如果已安装，这不会删除蓝牙驱动程序支持。 此外，此策略需要将应用到预安装映像。
 
-## <a name="how-to-change-the-device-id-profile-record-published-by-windows-8-and-windows-81"></a>如何更改发布的 Windows 8 和 Windows 8.1 的设备 ID 配置文件记录
+## <a name="how-to-change-the-device-id-profile-record-published-by-windows"></a>如何更改发布的 Windows 的设备 ID 配置文件记录
 
 设备 ID 配置文件定义可用于提供到远程设备的标识信息的 SDP 记录。 以前和当前 Windows 版本具有用于发布到配对的设备上的设备 ID 记录为泛型蓝牙服务提供特定于设备的硬件 Id。
 
-从 Windows 8 开始，Windows 还会发布本地的设备 ID 记录到远程的蓝牙设备 Windows 8 设备进行标识。 Oem 可以更好地识别其特定的 Windows 8 设备可调整的默认值。 这些值定义如 HKLM 下的以下表中所示\\系统\\CCS\\services\\BTHPORT\\Parameters 注册表项：
+Windows 还会发布本地的设备 ID 记录到远程的蓝牙设备 Windows 设备进行标识。 Oem 可以更好地识别其特定的 Windows 设备可调整的默认值。 这些值定义如 HKLM 下的以下表中所示\\系统\\CCS\\services\\BTHPORT\\Parameters 注册表项：
 
 <table>
 <colgroup>

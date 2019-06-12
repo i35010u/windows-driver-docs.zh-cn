@@ -19,7 +19,7 @@ ms.locfileid: "63354942"
 
 有几种方法在调试器中指定地址。
 
-地址是始终*虚拟地址*，只是当文档专门指示另一个类型的地址。 在用户模式下，调试器将解释虚拟地址的页面目录根据[当前进程](controlling-processes-and-threads.md)。 在内核模式下，调试器将解释根据进程的页面目录的虚拟地址的[进程上下文](changing-contexts.md#process-context)指定。 您还可以直接设置*用户模式地址上下文*。 有关用户模式地址上下文的详细信息，请参阅[ **.context （设置用户模式地址上下文）**](-context--set-user-mode-address-context-.md)。
+地址是始终*虚拟地址*，只是当文档专门指示另一个类型的地址。 在用户模式下，调试器将解释虚拟地址的页面目录根据[当前进程](controlling-processes-and-threads.md)。 在内核模式下，调试器将解释根据进程的页面目录的虚拟地址的[进程上下文](changing-contexts.md#process-context)指定。 您还可以直接设置*用户模式地址上下文*。 有关用户模式地址上下文的详细信息，请参阅[ **.context （设置用户模式地址上下文）** ](-context--set-user-mode-address-context-.md)。
 
 ### <a name="span-idaddressmodesandsegmentsupportspanspan-idaddressmodesandsegmentsupportspanaddress-modes-and-segment-support"></a><span id="address_modes_and_segment_support"></span><span id="ADDRESS_MODES_AND_SEGMENT_SUPPORT"></span>地址模式和线段支持
 

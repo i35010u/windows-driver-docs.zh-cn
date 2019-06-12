@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b42334d8726a9139214122d3b5d5fbed867171e2
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56547961"
@@ -108,7 +108,7 @@ ms.locfileid: "56547961"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
--   区域设置元素可以是*&lt;语言&gt;*-*&lt;区域&gt;* （如 EN-US) 或 *&lt;语言&gt;* （例如 EN)。 如果*&lt;语言&gt;* ，则包将应用于所有*&lt;语言&gt;* 区域设置。 例如，EN 适用于 EN-US，EN-b.
+-   区域设置元素可以是 *&lt;语言&gt;* - *&lt;区域&gt;* （如 EN-US) 或 *&lt;语言&gt;* （例如 EN)。 如果 *&lt;语言&gt;* ，则包将应用于所有 *&lt;语言&gt;* 区域设置。 例如，EN 适用于 EN-US，EN-b.
 
 -   若要指定的默认值为当前区域设置的计算机的元数据包，设置**默认**归于**true** (1)。
 

@@ -138,7 +138,7 @@ modbase :  1000000
   index : 2ab  
 ```
 
-这会显示该符号的修饰的名是**\_ MyFunction1@4**。
+这会显示该符号的修饰的名是 **\_ MyFunction1@4** 。
 
 ### <a name="span-iddecodingsymboldecorationsspanspan-iddecodingsymboldecorationsspandecoding-symbol-decorations"></a><span id="decoding_symbol_decorations"></span><span id="DECODING_SYMBOL_DECORATIONS"></span>解码符号修饰
 
@@ -172,7 +172,7 @@ dbh: undec ?_set_new_handler@@YAP6AHI@ZP6AHI@Z@Z
 int (__cdecl*__cdecl _set_new_handler(int (__cdecl*)(unsigned int)))(unsigned int) 
 ```
 
-**Undec**命令不显示有关初始下划线，前缀信息 **\_ \_imp\_**，空格或尾随"**@**<em>地址</em>"效果，它们通常位于附加到函数名称。
+**Undec**命令不显示有关初始下划线，前缀信息 **\_ \_imp\_** ，空格或尾随" **@** <em>地址</em>"效果，它们通常位于附加到函数名称。
 
 可以使用**undec**命令与任何字符串，而不仅仅是当前加载的模块中的符号的名称。
 
