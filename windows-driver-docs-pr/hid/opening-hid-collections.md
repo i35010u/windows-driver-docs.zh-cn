@@ -31,11 +31,11 @@ HID 客户端可以运行在以下模式：
 
 - 调用 CreateFile 打开 HID 集合上的文件。
 
-- 调用**HidD\_**<em>Xxx</em> HID 支持例程，获取 HID 集合[preparsed 数据](preparsed-data.md)和 HID 集合有关的信息。
+- 调用**HidD\_** <em>Xxx</em> HID 支持例程，获取 HID 集合[preparsed 数据](preparsed-data.md)和 HID 集合有关的信息。
 
 - 调用读取输入的报告 ReadFile 和 WriteFile 发送输出报告。
 
-- 调用**HidP\_**<em>Xxx</em> HID 支持例程来解释 HID 报表。
+- 调用**HidP\_** <em>Xxx</em> HID 支持例程来解释 HID 报表。
 
 一般情况下，内核模式驱动程序执行以下任务：
 
@@ -49,7 +49,7 @@ HID 客户端可以运行在以下模式：
 
 - 使用[ **IRP\_MJ\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff550794)请求以便读取输入的报表和[ **IRP\_MJ\_编写**](https://msdn.microsoft.com/library/windows/hardware/ff550819)发送输出的报表的请求
 
-- 调用**HidP\_**<em>Xxx</em> HID 支持例程来解释 HID 报表
+- 调用**HidP\_** <em>Xxx</em> HID 支持例程来解释 HID 报表
 
 有关运行 HID 集合的详细信息，请参阅：
 

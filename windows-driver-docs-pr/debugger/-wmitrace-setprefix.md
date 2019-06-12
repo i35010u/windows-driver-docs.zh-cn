@@ -32,8 +32,8 @@ ms.locfileid: "63348045"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
 
 
-<span id="______________"></span> **+**   
-将导致*PrefixVariables*为 apended 到跟踪消息前缀。 如果**+** 未使用令牌，则*PrefixVariables*替换现有的跟踪消息前缀。
+<span id="______________"></span> **+**    
+将导致*PrefixVariables*为 apended 到跟踪消息前缀。 如果 **+** 未使用令牌，则*PrefixVariables*替换现有的跟踪消息前缀。
 
 <span id="_______PrefixVariables______"></span><span id="_______prefixvariables______"></span><span id="_______PREFIXVARIABLES______"></span> *PrefixVariables*   
 指定的格式和数据中跟踪消息前缀的变量集。

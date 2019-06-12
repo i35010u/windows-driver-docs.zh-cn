@@ -31,7 +31,7 @@ Windows 软件开发工具包 (SDK) 10 也是必需的但这 Microsoft Visual St
 从 Windows 10 开始，Windows 驱动程序示例是 GitHub 上提供，可以从下载[Windows 驱动程序示例存储库项目页](https://go.microsoft.com/fwlink/p/?LinkId=616507)。
 
 1.  下载**Windows 驱动程序示例 master.zip**从[GitHub](https://go.microsoft.com/fwlink/p/?LinkID=623296)。 此文件包含所有的 Windows 驱动程序示例。
-2.  提取**Windows 驱动程序示例 master.zip**到开发计算机上所选的位置。 此位置将作为称为*&lt;示例\_根&gt;* 这篇文章的其余所有部分。
+2.  提取**Windows 驱动程序示例 master.zip**到开发计算机上所选的位置。 此位置将作为称为 *&lt;示例\_根&gt;* 这篇文章的其余所有部分。
 
 ## <a name="open-the-driver-solution-in-visual-studio"></a>在 Visual Studio 中打开驱动程序解决方案
 

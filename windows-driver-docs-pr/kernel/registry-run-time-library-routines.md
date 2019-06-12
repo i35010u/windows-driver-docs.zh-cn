@@ -24,7 +24,7 @@ ms.locfileid: "63338441"
 
 若要操作的注册表项，驱动程序可以调用**Rtl*Xxx*注册表 * Xxx*** 例程，提供较简单的接口比**Zw*Xxx*密钥**例程。 这样做时，该驱动程序不需要打开和关闭句柄;相反，该驱动程序是指密钥的名称。
 
-您传递*RelativeTo*并*路径*到每个参数**Rtl*Xxx*注册表 * Xxx*** 例程。 如果*RelativeTo*是 RTL\_注册表\_绝对的*路径*指定的密钥，开头的完整路径**\\注册表**根。 如果*RelativeTo*是 RTL\_注册表\_处理，*路径*实际上开放句柄。 其他 RTL\_注册表\_*XXX*值*RelativeTo*指定的键; 在这些情况下，常见的根的路径*路径*指定相对于该根的路径。 例如，RTL\_注册表\_用户需要*路径*是相对于当前用户的注册表设置。 (此值相当于指定 HKEY\_当前\_用户模式应用程序中的用户。)有关说明所有 RTL\_注册表\_*XXX*值，请参阅[ **RtlCheckRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff561754)。
+您传递*RelativeTo*并*路径*到每个参数**Rtl*Xxx*注册表 * Xxx*** 例程。 如果*RelativeTo*是 RTL\_注册表\_绝对的*路径*指定的密钥，开头的完整路径 **\\注册表**根。 如果*RelativeTo*是 RTL\_注册表\_处理，*路径*实际上开放句柄。 其他 RTL\_注册表\_*XXX*值*RelativeTo*指定的键; 在这些情况下，常见的根的路径*路径*指定相对于该根的路径。 例如，RTL\_注册表\_用户需要*路径*是相对于当前用户的注册表设置。 (此值相当于指定 HKEY\_当前\_用户模式应用程序中的用户。)有关说明所有 RTL\_注册表\_*XXX*值，请参阅[ **RtlCheckRegistryKey**](https://msdn.microsoft.com/library/windows/hardware/ff561754)。
 
 下表列出了驱动程序可以通过调用执行的操作**Rtl*Xxx*注册表 * Xxx*** 例程。
 
@@ -65,7 +65,7 @@ ms.locfileid: "63338441"
 
  
 
-下面的代码示例演示了如何设置*ValueName*有关**\\注册表\\机\\系统\\**<em>KeyName</em> ULONG 值为 0xFF。 比较此示例中的对应一个[注册表项对象例程](registry-key-object-routines.md)部分。
+下面的代码示例演示了如何设置*ValueName*有关 **\\注册表\\机\\系统\\** <em>KeyName</em> ULONG 值为 0xFF。 比较此示例中的对应一个[注册表项对象例程](registry-key-object-routines.md)部分。
 
 ```cpp
 NTSTATUS status;

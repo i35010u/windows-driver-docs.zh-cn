@@ -27,7 +27,7 @@ ms.locfileid: "63330646"
 
 -   *级别 2 的 I/O 验证*I/O 验证选择 Windows XP 及更高版本时将始终处于活动。 在 Windows 2000 中，可以将 I/O 验证配置为包括这两个级别，或只需 1 级测试。
 
-**另请参阅：**[增强的 I/O 验证](enhanced-i-o-verification.md)在 Windows 7 和更高版本的 Windows 操作系统中，增强的 I/O 验证时，将自动激活选择的 I/O 验证。 它不可用或有必要以选择它作为单独的选项。
+**另请参阅：** [增强的 I/O 验证](enhanced-i-o-verification.md)在 Windows 7 和更高版本的 Windows 操作系统中，增强的 I/O 验证时，将自动激活选择的 I/O 验证。 它不可用或有必要以选择它作为单独的选项。
 
 ### <a name="span-idlevel1ioverificationspanspan-idlevel1ioverificationspanlevel-1-io-verification"></a><span id="level_1_i_o_verification"></span><span id="LEVEL_1_I_O_VERIFICATION"></span>级别 1 I/O 验证
 
@@ -63,7 +63,7 @@ I/O 验证第 2 级错误都显示在不同的方式： 在蓝色屏幕上，在
 
 在蓝色屏幕上，这些错误进行说明的消息**IO 系统验证错误**和字符串 **WDM 驱动程序错误 * * * XXX*，其中*XXX*是 I/O 错误代码。
 
-在崩溃转储文件中，大多数错误进行说明的消息**检测错误 0xC9 (驱动程序\_VERIFIER\_IOMANAGER\_冲突)**，以及 I/O 错误代码。 在这种情况下，I/O 错误代码显示为 bug 检查 0xC9 的第一个参数。 其余部分所述的消息**Bug 检查 0xC4 (驱动程序\_VERIFIER\_检测到\_冲突)**，以及驱动程序验证程序错误代码。 在这种情况下，驱动程序验证程序错误代码显示为 bug 检查 0xC4 的第一个参数。
+在崩溃转储文件中，大多数错误进行说明的消息**检测错误 0xC9 (驱动程序\_VERIFIER\_IOMANAGER\_冲突)** ，以及 I/O 错误代码。 在这种情况下，I/O 错误代码显示为 bug 检查 0xC9 的第一个参数。 其余部分所述的消息**Bug 检查 0xC4 (驱动程序\_VERIFIER\_检测到\_冲突)** ，以及驱动程序验证程序错误代码。 在这种情况下，驱动程序验证程序错误代码显示为 bug 检查 0xC4 的第一个参数。
 
 在内核调试器 （KD 或 WinDbg） 中，这些错误记录的消息**WDM 驱动程序错误**和说明性文本字符串。 当内核调试程序处于活动状态时，则可以忽略第 2 级错误并继续执行系统操作。 （这是不可能与任何其他 bug 检查。）
 
@@ -107,7 +107,7 @@ I/O 验证选项启动 Windows 7 中，检查以下驱动程序错误：
 
 -   **在命令行中。**
 
-    在命令行中，由表示 I/O 验证选项**位 4 (0x10)**。 若要激活的 I/O 验证，使用 0x10 标志值，或将 0x10 添加到标志值。 例如：
+    在命令行中，由表示 I/O 验证选项**位 4 (0x10)** 。 若要激活的 I/O 验证，使用 0x10 标志值，或将 0x10 添加到标志值。 例如：
 
     ```
     verifier /flags 0x10 /driver MyDriver.sys

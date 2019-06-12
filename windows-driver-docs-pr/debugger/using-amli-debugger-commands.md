@@ -135,7 +135,7 @@ ms.locfileid: "63383745"
 
 **跟踪**命令控制 AML 解释器的跟踪模式设置。 如果不带任何参数使用此命令，将显示当前的跟踪模式设置。
 
-**trace \[trigon|trigoff\] \[level=**<em>Level</em>**\] \[add=**<em>TPStrings</em>**\] \[zap=**<em>TPNumbers</em>**\]**
+**trace \[trigon|trigoff\] \[level=** <em>Level</em> **\] \[add=** <em>TPStrings</em> **\] \[zap=** <em>TPNumbers</em> **\]**
 
 <span id="trigon"></span><span id="TRIGON"></span>**trigon**  
 激活跟踪触发器模式。
@@ -183,7 +183,7 @@ ms.locfileid: "63383745"
 
 这些命令具有相同的效果与标准内核调试器内存命令;它们被复制在轻松访问 AMLI 调试器。
 
-**d\[b | w | d |\] \[ \[l =**<em>长度</em>**\] \[** *方法* **|  \[ %% \]**<em>地址</em> **\] \]**
+**d\[b | w | d |\] \[ \[l =** <em>长度</em> **\] \[** *方法* **|  \[ %% \]** <em>地址</em> **\] \]**
 
 **电子\[ %% \]** <em>解决 Datalist</em>
 
@@ -206,7 +206,7 @@ ms.locfileid: "63383745"
 指定完整路径和方法的名称。 显示将在此方法的内存位置的开始处启动。
 
 <span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*Address*  
-指定将开始读取或写入的内存地址。 如果地址前缀为两个百分号 (**%%**)，它被解释为物理地址。 否则，它被解释为一个虚拟地址。
+指定将开始读取或写入的内存地址。 如果地址前缀为两个百分号 ( **%%** )，它被解释为物理地址。 否则，它被解释为一个虚拟地址。
 
 <span id="DataList"></span><span id="datalist"></span><span id="DATALIST"></span>*DataList*  
 指定要写入到内存的数据。 在列表中的每个项可以是一个十六进制字节或字符串。 使用字符串时，它必须括在引号中。 应由空格分隔多个项。
@@ -239,7 +239,7 @@ ms.locfileid: "63383745"
 
 此命令显示 AMLI 调试器命令的帮助文本。
 
-**？\[**<em>命令</em>**\]**
+**？\[** <em>命令</em> **\]**
 
 <span id="Command"></span><span id="command"></span><span id="COMMAND"></span>*命令*  
 指定要为其显示帮助的命令。 如果省略此属性，将显示所有 AMLI 调试器命令和 AMLI 调试器扩展的列表。

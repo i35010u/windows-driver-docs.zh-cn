@@ -35,7 +35,7 @@ USB 设备可以支持中断终结点，以便它可以发送或接收的数据�
 
     获取该信息通过获取**间隔**终结点描述符的值 (请参阅[ **UsbInterruptOutEndpointDescriptor.Interval** ](https://msdn.microsoft.com/library/windows/apps/dn278422)或[ **UsbInterruptInEndpointDescriptor.Interval**](https://msdn.microsoft.com/library/windows/apps/dn278411))。 值表示何种频率发送到或从总线上每个帧中的设备接收数据。
 
-    **请注意****间隔**属性不是**bInterval** （USB 规范中定义） 的值。
+    **请注意** **间隔**属性不是**bInterval** （USB 规范中定义） 的值。
 
     值表示何种频率数据到或从设备传输。 例如，对于高速度设备，如果**间隔**125 微秒为单位，每 125 微秒为单位传输数据。 如果**间隔**为 1000年毫秒，则传输的数据每隔一毫秒。
 

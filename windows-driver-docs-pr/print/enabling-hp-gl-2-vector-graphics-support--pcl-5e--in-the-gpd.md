@@ -22,7 +22,7 @@ ms.locfileid: "63378643"
 
 若要启用 Windows XP 上的 HP/2 向量支持，必须执行两项操作：
 
-1.  设置**\*个性**归于个性\_HPGL2。
+1.  设置 **\*个性**归于个性\_HPGL2。
 
 2.  定义具有 HPGL2MODE 选项的 GraphicsMode 自定义的功能。 若要提供光栅图形支持，包括 RASTERMODE 选项。
 

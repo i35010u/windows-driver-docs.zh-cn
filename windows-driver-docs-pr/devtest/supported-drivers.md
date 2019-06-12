@@ -51,7 +51,7 @@ SDV 是能够验证驱动程序具有以下特征：
 
 - 已根据中的建议编写一个卸载例程[编写卸载例程](https://msdn.microsoft.com/library/windows/hardware/ff566400)。
 
-- 声明使用中所述的函数角色类型声明的每个调度函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关 WDM 角色类型信息和**\_调度\_类型\_(**<em>类型</em>**)** 批注，请参阅[函数用于 WDM 驱动程序函数的角色类型声明](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
+- 声明使用中所述的函数角色类型声明的每个调度函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关 WDM 角色类型信息和 **\_调度\_类型\_(** <em>类型</em> **)** 批注，请参阅[函数用于 WDM 驱动程序函数的角色类型声明](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
 若要验证 KMDF 驱动程序的 SDV，为驱动程序必须：
 
@@ -89,7 +89,7 @@ SDV[验证引擎](verification-engine.md)驱动程序或库代码时使用 SDV �
 
 -   库使用.def 文件重命名一个导出的函数和外部名称是库中的另一个静态函数的名称相同。
 
-如果驱动程序代码或库代码包括以下这些元素，SDV 尝试验证该驱动程序或处理库，但会得到**不支持功能 (NSF)**。 SDV 结果有关的详细信息，请参阅[解释静态驱动程序验证工具结果](interpreting-static-driver-verifier-results.md)。
+如果驱动程序代码或库代码包括以下这些元素，SDV 尝试验证该驱动程序或处理库，但会得到**不支持功能 (NSF)** 。 SDV 结果有关的详细信息，请参阅[解释静态驱动程序验证工具结果](interpreting-static-driver-verifier-results.md)。
 
  
 

@@ -23,7 +23,7 @@ PwrTest 信息方案捕获和记录从各种类别的当前系统电源信息。
 pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?] 
 ```
 
-<span id="_info_option"></span><span id="_INFO_OPTION"></span>**/info:**<em>option</em>  
+<span id="_info_option"></span><span id="_INFO_OPTION"></span> **/info:** <em>option</em>  
 
 <table>
 <colgroup>
@@ -74,14 +74,14 @@ pwrtest /info:option [/p:{n|a|*}] [/w:n]  [/?]
 
  
 
-<span id="_p_na_"></span><span id="_P_NA_"></span>**/p:**{*n*\|**a**\|**\\**\*}  
+<span id="_p_na_"></span><span id="_P_NA_"></span> **/p:** {*n*\|**a**\| **\\** \*}  
 
 指定的逻辑处理器编号 **/info:ppm / info: ppmidle**，或 **/info:ppmperf**选项。
 
-<span id="a_or__"></span><span id="A_OR__"></span>或 **\\**\*  
+<span id="a_or__"></span><span id="A_OR__"></span>  或 **\\** \*  
 指定所有逻辑处理器 （默认值）。
 
-<span id="_w_yn"></span><span id="_W_YN"></span>**/w:**{**y**|**n**}  
+<span id="_w_yn"></span><span id="_W_YN"></span> **/w:** {**y**|**n**}  
 在数秒内等待 PPM 断开事件指定的时间 （默认值为 10 秒）。
 
 **示例**

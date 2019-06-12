@@ -221,33 +221,33 @@ be682d48 77e63660 00000000 00000000 00000000 ntkrnlmp!KiSystemService+0xc9
 
 下面的命令和扩展可能会很有用跟踪符号问题：
 
-<span id="lm__List_Loaded_Modules_"></span><span id="lm__list_loaded_modules_"></span><span id="LM__LIST_LOADED_MODULES_"></span>[**lm （列出已加载的模块）**](lm--list-loaded-modules-.md)  
+<span id="lm__List_Loaded_Modules_"></span><span id="lm__list_loaded_modules_"></span><span id="LM__LIST_LOADED_MODULES_"></span>[**lm （列出已加载的模块）** ](lm--list-loaded-modules-.md)  
 列出所有模块并在这些模块中提供的所有符号加载状态。
 
-<span id="_dh_image-header-base"></span><span id="_DH_IMAGE-HEADER-BASE"></span>[**！ dh 映像标头基**](-dh.md)  
+<span id="_dh_image-header-base"></span><span id="_DH_IMAGE-HEADER-BASE"></span>[ **！ dh 映像标头基**](-dh.md)  
 显示加载的映像开始标头信息*映像标头基*。
 
-<span id=".RELOAD__N"></span>[**.reload /n**](-reload--reload-module-.md)  
+<span id=".RELOAD__N"></span>[ **.reload /n**](-reload--reload-module-.md)  
 重新加载所有内核符号。
 
-<span id=".reload__image-name_"></span><span id=".RELOAD__IMAGE-NAME_"></span>[**.reload \[image-name\]**](-reload--reload-module-.md)  
+<span id=".reload__image-name_"></span><span id=".RELOAD__IMAGE-NAME_"></span>[ **.reload \[image-name\]** ](-reload--reload-module-.md)  
 （CDB 或仅 WinDbg）重新加载符号的图像*映像名称*。 如果没有*映像名称*指定时，重新加载所有映像的符号。 （它是必需的符号路径发生更改后重新加载符号。）
 
-<span id="_sym_noisy"></span><span id="_SYM_NOISY"></span>[**！ 干扰性的符号**](-sym.md)  
+<span id="_sym_noisy"></span><span id="_SYM_NOISY"></span>[ **！ 干扰性的符号**](-sym.md)  
 开启详细模式进行符号加载。 这可以用于获取有关模块的加载的信息。 请参阅[设置符号选项](symbol-options.md)有关详细信息。
 
-<span id=".sympath__new-symbol-path_"></span><span id=".SYMPATH__NEW-SYMBOL-PATH_"></span>[**.sympath \[new-symbol-path\]**](-sympath--set-symbol-path-.md)  
+<span id=".sympath__new-symbol-path_"></span><span id=".SYMPATH__NEW-SYMBOL-PATH_"></span>[ **.sympath \[new-symbol-path\]** ](-sympath--set-symbol-path-.md)  
 设置新的符号路径，或显示当前符号路径。 请参阅[符号路径](symbol-path.md)有关详细信息。
 
 如果内核符号是正确的但如果没有收到完整的堆栈，以下命令可能也很有用：
 
-<span id="X___"></span><span id="x___"></span>[**X \*!**](x--examine-symbols-.md)  
+<span id="X___"></span><span id="x___"></span>[**X \*!** ](x--examine-symbols-.md)  
 这将列出当前具有加载符号的模块。 这是内核符号是正确的情况下很有用。
 
-<span id=".RELOAD__USER"></span>[**.reload /user**](-reload--reload-module-.md)  
+<span id=".RELOAD__USER"></span>[ **.reload /user**](-reload--reload-module-.md)  
 这将尝试重新加载用户模式下的所有符号。 执行内核调试，如果一个进程运行时，已加载符号，并会破坏更高版本出现在另一个进程中时，需要此项。 在这种情况下，除非执行此命令将不加载从新的进程的用户模式符号。
 
-<span id="X_wdmaud__start_"></span><span id="x_wdmaud__start_"></span><span id="X_WDMAUD__START_"></span>[**X wdmaud ！\*开始\\***](x--examine-symbols-.md)  
+<span id="X_wdmaud__start_"></span><span id="x_wdmaud__start_"></span><span id="X_WDMAUD__START_"></span>[**X wdmaud ！\*开始\\** *](x--examine-symbols-.md)  
 此命令将列出中的符号**wdmaud**模块名称中包含"start"字符串。 这具有的优势在于它会强制重新加载中的所有符号**wdmaud**，但只在其中显示具有"start"。 （这意味着较短的列表，但由于始终使用"开始"，在其中某些符号，将某些负载已发生的验证。）
 
 用于验证符号一个其他有用的技巧 unassembling 代码。 大多数函数开头添加、 sub 或推送操作使用基指针 (**ebp**) 或堆栈指针 (**esp**或**sp**)。 请尝试 unassembling ([**U 函数**](u--unassemble-.md)) 的某些函数 （从偏移量为零） 到堆栈上验证符号。
@@ -264,7 +264,7 @@ be682d48 77e63660 00000000 00000000 00000000 ntkrnlmp!KiSystemService+0xc9
 
 -   如果它们不分散到正确的目录的符号树.dll 和.sys 文件具有相同名称 （例如 − mga64.sys 和 mga64.dll） 会将调试器相混淆。
 
--   内核调试程序都不喜欢生成符号文件替换为私有符号文件。 双精度复选符号路径，执行 **.reload * * * 文件名*表现不正常的符号。 [ **！ Dll** ](-dlls.md)命令有时会很有用。
+-   内核调试程序都不喜欢生成符号文件替换为私有符号文件。 双精度复选符号路径，执行 * *.reload * * * 文件名*表现不正常的符号。 [ **！ Dll** ](-dlls.md)命令有时会很有用。
 
 ### <a name="span-idquestionsandmisconceptionsspanspan-idquestionsandmisconceptionsspanquestions-and-misconceptions"></a><span id="questions_and_misconceptions"></span><span id="QUESTIONS_AND_MISCONCEPTIONS"></span>疑问和误解
 

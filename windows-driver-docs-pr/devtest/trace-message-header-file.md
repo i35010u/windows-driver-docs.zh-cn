@@ -22,7 +22,7 @@ ms.locfileid: "63354624"
 
 WPP TMH 文件会自动生成编译时[跟踪提供程序](trace-provider.md)包括 WPP 宏。 TMH 文件作为源文件，但扩展名为.tmh 具有相同的名称。 WPP 将文件保存在与源文件相同的目录中。
 
-当将 WPP 宏添加到源代码时，还必须添加**\#包括**指令将生成 WPP TMH 文件。 Include 语句采用以下格式：
+当将 WPP 宏添加到源代码时，还必须添加 **\#包括**指令将生成 WPP TMH 文件。 Include 语句采用以下格式：
 
 ```
 #include SourceFileName.tmh

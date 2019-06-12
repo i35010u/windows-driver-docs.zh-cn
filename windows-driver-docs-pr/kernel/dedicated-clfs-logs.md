@@ -27,7 +27,7 @@ ms.locfileid: "63388226"
 
 若要创建专用的日志，请执行以下步骤。
 
-1.  调用[ **ClfsCreateLogFile** ](https://msdn.microsoft.com/library/windows/hardware/ff540792)若要获取的指针[**日志\_文件\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff554316)结构。 设置*puszLogFileName*对窗体的字符串的参数"日志：*&lt;日志名称&gt;*"其中*&lt;日志名称&gt;* 是基础文件系统上的有效路径。 例如，如果您设置*puszLogFileName*到"日志： c:\\ClfsLogs\\myLog"，将在 c： 驱动器中创建为底的对数文件 myLog.blf\\ClfsLogs 目录。 在 c:\\ClfsLogs 目录也将用作更高版本添加到日志的容器的默认位置。
+1.  调用[ **ClfsCreateLogFile** ](https://msdn.microsoft.com/library/windows/hardware/ff540792)若要获取的指针[**日志\_文件\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff554316)结构。 设置*puszLogFileName*对窗体的字符串的参数"日志： *&lt;日志名称&gt;* "其中 *&lt;日志名称&gt;* 是基础文件系统上的有效路径。 例如，如果您设置*puszLogFileName*到"日志： c:\\ClfsLogs\\myLog"，将在 c： 驱动器中创建为底的对数文件 myLog.blf\\ClfsLogs 目录。 在 c:\\ClfsLogs 目录也将用作更高版本添加到日志的容器的默认位置。
 
     **请注意**它是传入的字符串的形式*puszLogFileName* ，它确定是否 CLFS 创建专用或多路日志。 如果字符串包含双冒号 （:）完成后的日志名称，然后 CLFS 创建多路的日志。 此处，提供的示例在"日志： c\\ClfsLogs\\myLog"有没有双冒号，因此 CLFS 创建专用的日志。
 

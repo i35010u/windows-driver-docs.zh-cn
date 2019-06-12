@@ -140,7 +140,7 @@ ms.locfileid: "63368093"
 
  
 
-在具有任何处理器的计算机，可以使用星号 ( **\\***) 或 0x2A (十进制 42) 若要在系统上配置的所有内存分配的特殊池功能。
+在具有任何处理器的计算机，可以使用星号 ( **\\** *) 或 0x2A (十进制 42) 若要在系统上配置的所有内存分配的特殊池功能。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

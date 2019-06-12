@@ -104,13 +104,13 @@ SRCSRV: end ------------------------------------------------
 
 所有文本是原义解释，除了文本括在百分号 （%）。 括在百分号中的文本被视为要递归式解析的变量名称，除非它是一个以下函数：
 
-<span id="_fnvar___"></span><span id="_FNVAR___"></span>**%fnvar%()**  
+<span id="_fnvar___"></span><span id="_FNVAR___"></span> **%fnvar%()**  
 参数文本框应包含在百分号并被视为变量会得到解决。
 
-<span id="_fnbksl___"></span><span id="_FNBKSL___"></span>**%fnbksl%()**  
+<span id="_fnbksl___"></span><span id="_FNBKSL___"></span> **%fnbksl%()**  
 在参数文本框中的所有正斜杠 （/） 应替换为反斜杠 (\)。
 
-<span id="_fnfile___"></span><span id="_FNFILE___"></span>**%fnfile%()**  
+<span id="_fnfile___"></span><span id="_FNFILE___"></span> **%fnfile%()**  
 参数文本框中的所有路径信息应会都剥除，保留的文件名。
 
 \[Ini\]的数据块部分包含介绍的要求的变量。 索引的脚本可以将任意数量的变量添加到此部分。 下面是一些示例：

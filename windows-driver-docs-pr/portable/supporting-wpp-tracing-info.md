@@ -36,7 +36,7 @@ WpdHelloWorldDriver、 WpdWudfSampleDriver 和 WpdMultiTransportDriver 记录错
 2.  更新*Stdafx.h*使用 WPP 宏，稍后在本主题中描述了这些文件。
 3.  将运行添加\_WPP 指令到您的驱动程序的源代码文件。
 4.  添加到您的驱动程序的 DllMain 方法 WPP 初始化和清理例程。
-5.  对于每个驱动程序源文件，请添加*\#包括&lt;filename&gt;.tmh*现有包含语句之后。
+5.  对于每个驱动程序源文件，请添加 *\#包括&lt;filename&gt;.tmh*现有包含语句之后。
 6.  重新生成您的驱动程序。 因为替换为复选\_HR 函数与具有相同的签名等效 WPP 宏，无需更改任何使用的代码检查\_HR。
 
 WPP 预处理器进程*Stdafx.h*对于跟踪宏，并为每个生成的跟踪消息标头 (tmh) 文件。Obj 文件夹中的 CPP 文件。

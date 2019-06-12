@@ -6,7 +6,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 362c60743ed9db0252e7e42da1f871ba1e530af9
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56545502"
@@ -76,7 +76,7 @@ ms.locfileid: "56545502"
 40 </Data>
 ```
 
-检查**值**标记和**数组**上面的示例中的属性。 首先，您必须显式指定类型为**大小**并**颜色**参数，并指定这些参数是数组，通过设置**数组**属性 **，则返回 true**。 然后指定在其值**&lt;值&gt;...&lt;/值&gt;** 标记。 可以有任意多个&lt;值&gt;标记可以根据需要指定任意数量的给定的行的参数数组中的值。
+检查**值**标记和**数组**上面的示例中的属性。 首先，您必须显式指定类型为**大小**并**颜色**参数，并指定这些参数是数组，通过设置**数组**属性 **，则返回 true**。 然后指定在其值 **&lt;值&gt;...&lt;/值&gt;** 标记。 可以有任意多个&lt;值&gt;标记可以根据需要指定任意数量的给定的行的参数数组中的值。
 
 请注意 9、 10、 30 和 33 上面的 XML 示例中的行。 这些条目是单个值的数组元素。 换而言之，**可以指定单个值的数组元素中直接&lt;参数&gt;标记，而无需额外&lt;值&gt;标记。** 此外，**即使行中的参数具有只有一个值，它仍被视为一个元素的数组和无法否则检索。**
 
@@ -106,7 +106,7 @@ ms.locfileid: "56545502"
 16 } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-可以通过调用获取数组的长度**GetSize** ，并可以通过使用运算符获取的特定元素**\[ \]**。
+可以通过调用获取数组的长度**GetSize** ，并可以通过使用运算符获取的特定元素 **\[ \]** 。
 
 下一步的示例演示如何在代码中使用这些函数。 本机的示例中的 cpp 文件，请考虑：
 
@@ -208,7 +208,7 @@ ms.locfileid: "56545502"
        </Row>
 ```
 
-在这种情况下，尝试检索**大小**succeessfully 返回类型的空数组**System.Int32\[\]**。
+在这种情况下，尝试检索**大小**succeessfully 返回类型的空数组**System.Int32\[\]** 。
 
 ## <a name="span-idexecutionspanspan-idexecutionspanspan-idexecutionspanexecution"></a><span id="Execution"></span><span id="execution"></span><span id="EXECUTION"></span>执行
 

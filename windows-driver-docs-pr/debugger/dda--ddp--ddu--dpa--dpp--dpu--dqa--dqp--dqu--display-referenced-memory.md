@@ -42,19 +42,19 @@ dpu [Options] [Range]
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *选项*   
 指定一个或多个显示选项。 任何下列选项可以包含，只不过最多只有一个 **/p** \*选项，可以指定：
 
-<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>**/c***Width*  
+<span id="_cWidth"></span><span id="_cwidth"></span><span id="_CWIDTH"></span>* */c***Width*  
 指定要在显示中使用列的数。 如果省略，默认列数取决于显示类型。 由于这些命令显示指针的方式，是通常最好使用默认值为只有一个数据列。
 
-<span id="_p"></span><span id="_P"></span>**/p**  
+<span id="_p"></span><span id="_P"></span> **/p**  
 （仅内核模式）使用的显示器的物理内存地址。 指定的范围*范围*来自物理内存而不是虚拟内存。
 
-<span id="_p_c_"></span><span id="_P_C_"></span>**/p\[c\]**  
+<span id="_p_c_"></span><span id="_P_C_"></span> **/p\[c\]**  
 （仅内核模式）与相同 **/p**，只不过将读取内存缓存。 用方括号括起**c**必须包含。
 
-<span id="_p_uc_"></span><span id="_P_UC_"></span>**/p\[uc\]**  
+<span id="_p_uc_"></span><span id="_P_UC_"></span> **/p\[uc\]**  
 （仅内核模式）与相同 **/p**，只不过将读取未缓存的内存。 用方括号括起**uc**必须包含。
 
-<span id="_p_wc_"></span><span id="_P_WC_"></span>**/p\[wc\]**  
+<span id="_p_wc_"></span><span id="_P_WC_"></span> **/p\[wc\]**  
 （仅内核模式）与相同 **/p**，只不过将读写组合内存。 用方括号括起**wc**必须包含。
 
 <span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *Range*   

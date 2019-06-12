@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 7a669b152c2a3570e9eee86d817a7529b09aa2a6
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56522153"

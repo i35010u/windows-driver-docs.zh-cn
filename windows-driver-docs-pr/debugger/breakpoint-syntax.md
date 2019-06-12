@@ -53,7 +53,7 @@ ms.locfileid: "63347860"
 
 ### <a name="span-idbreakpointsusingcomplicatedtextspanspan-idbreakpointsusingcomplicatedtextspanbreakpoints-using-complicated-text"></a><span id="breakpoints_using_complicated_text"></span><span id="BREAKPOINTS_USING_COMPLICATED_TEXT"></span>使用复杂的文本的断点
 
-若要在复杂的函数，包括包含空格，和的成员函数上设置断点C++公共类中，将表达式括在括号中。 例如，使用**最佳实践 （??MyPublic)** 或**最佳实践 （new 运算符）**。
+若要在复杂的函数，包括包含空格，和的成员函数上设置断点C++公共类中，将表达式括在括号中。 例如，使用**最佳实践 （??MyPublic)** 或**最佳实践 （new 运算符）** 。
 
 更灵活方法是使用 @ ！"字符"语法。 这是使你可以提供的符号解析的任意文本 MASM 计算器中是一种特殊转义。 必须以开头的三个符号 @ ！" 引号 （"） 开头和结尾。 而无需此语法中，您不能使用空格，尖括号 (&lt;， &gt;)，或在 MASM 计算器中的符号名称中的其他特殊字符。 此语法是以独占方式的名称，并不是参数。 模板和重载都需要此引号表示法的符号的主要来源。 您还可以设置**bu**命令通过使用 @ ！"字符"语法，如以下代码示例所示。
 
@@ -65,7 +65,7 @@ ms.locfileid: "63347860"
 
 此转义语法是更适用于C++（例如，重载运算符） 而不是 C 因为没有在 C 中的任何空格 （或特殊字符） 函数名称。 但是，此语法也很重要的托管代码大量由于大量使用.NET Framework 中的重载。
 
-中的任意文本上设置断点C++语法，使用<strong>bu @@c+ + (</strong><em>文本</em>**)** 为C++-兼容的符号。
+中的任意文本上设置断点C++语法，使用<strong>bu @@c+ + (</strong><em>文本</em> **)** 为C++-兼容的符号。
 
 ### <a name="span-idbreakpointsinscriptsspanspan-idbreakpointsinscriptsspanbreakpoints-in-scripts"></a><span id="breakpoints_in_scripts"></span><span id="BREAKPOINTS_IN_SCRIPTS"></span>在脚本中的断点
 
@@ -85,7 +85,7 @@ b?[@$t0]
 
 ### <a name="span-idbreakpointpseudoregistersspanspan-idbreakpointpseudoregistersspanbreakpoint-pseudo-registers"></a><span id="breakpoint_pseudo_registers"></span><span id="BREAKPOINT_PSEUDO_REGISTERS"></span>断点伪寄存器
 
-如果你想要在表达式中的断点地址是指，则可以使用[伪寄存器](pseudo-register-syntax.md)使用 **$bp * * * 数*语法，其中*数*是断点 id。 有关此语法的详细信息，请参阅伪寄存器语法。
+如果你想要在表达式中的断点地址是指，则可以使用[伪寄存器](pseudo-register-syntax.md)使用 * *$bp *** 数*语法，其中*数*是断点 id。 有关此语法的详细信息，请参阅伪寄存器语法。
 
  
 

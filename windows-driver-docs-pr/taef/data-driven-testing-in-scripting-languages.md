@@ -209,7 +209,7 @@ ms.locfileid: "63385065"
 
 在上面的示例中，第 6 和 60 行声明和实例化**TestData**对象，它允许对数据的数据驱动测试的访问。
 
-**&lt;TestMethodProperty&gt;** 并**&lt;TestClassProperty&gt;** 标记是定义的行**DataSource**对于测试或类。 在 VBSampleTests **TestOne**已[WMI 查询](wmi-data-source.md)作为其**数据源**。 参数**标签**并**标题**可供**TestOne 的**安装程序、 清理和测试方法。 在同一类中， **TestTwo**已[多个数据源](multiple-datasources.md)定义。 第一个是[基于表的数据源](table-data-source.md)，第二个是基于同一个 WMI**数据源**作为**TestOne**。
+**&lt;TestMethodProperty&gt;** 并 **&lt;TestClassProperty&gt;** 标记是定义的行**DataSource**对于测试或类。 在 VBSampleTests **TestOne**已[WMI 查询](wmi-data-source.md)作为其**数据源**。 参数**标签**并**标题**可供**TestOne 的**安装程序、 清理和测试方法。 在同一类中， **TestTwo**已[多个数据源](multiple-datasources.md)定义。 第一个是[基于表的数据源](table-data-source.md)，第二个是基于同一个 WMI**数据源**作为**TestOne**。
 
 TAEF 生成的每个参数集的组合扩展**数据源**属性。 一个参数集是可用于每个测试方法调用。 如果 WMI 查询返回四个组的结果 (Win32\_卷) 和基于表中有三个行**数据源**， **TestOne**将执行四次-一次与每个 Win32\_WMI 查询返回的卷。 但是， **TestTwo**执行 12 (4 X 3) 的每个组合 Win32 时间\_卷数据和表指定的行。 也有关联的设置和清理方法可用的数据。
 
@@ -279,7 +279,7 @@ Test Authoring and Execution Framework v.R10 Build 6.1.6939.0 For x86
 
 **/Listproperties** TAEF 调用测试方法显示选项**VBSampleTests::TestOne** 7 次-一次每个 Win32\_卷。 对于每个调用 TAEF 追加一个隐式*索引*到测试方法以区分每个调用。 此外可以查看数据和元数据可用于测试方法的每个调用。
 
-使用中的信息 **/listproperties**选项，可用于基于数据值的选择查询或要获得更细致的索引值控制这些测试执行的调用。 下面的示例演示如何运行仅调用标题所在**e:\\**:
+使用中的信息 **/listproperties**选项，可用于基于数据值的选择查询或要获得更细致的索引值控制这些测试执行的调用。 下面的示例演示如何运行仅调用标题所在**e:\\** :
 
 ``` syntax
 te Examples\DataDrivenTest.wsc /select:"@Name='VBSampleTests::TestOne*' and @Data:Caption='E:\'"

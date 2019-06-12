@@ -59,9 +59,9 @@ ms.locfileid: "63324261"
     -   调用[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)如果它调用的下一步低驱动程序的文件对象的指针与[ **IoGetDeviceObjectPointer** ](https://msdn.microsoft.com/library/windows/hardware/ff549198)和 this 指针存储在扩展名为设备或控制器。
     -   调用[ **IoDetachDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff549087)具有较低的驱动程序的设备对象，如果它调用的指针[ **IoAttachDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548294)或[ **IoAttachDeviceToDeviceStack** ](https://msdn.microsoft.com/library/windows/hardware/ff548300)和 this 指针存储在扩展名为设备或控制器。
 
-5.  免费的硬件资源的**DriverEntry**或*重新初始化*例程声明的驱动程序的物理设备，如果有，注册表项下**\\注册表\\机器\\硬件\\ResourceMap**树。
+5.  免费的硬件资源的**DriverEntry**或*重新初始化*例程声明的驱动程序的物理设备，如果有，注册表项下 **\\注册表\\机器\\硬件\\ResourceMap**树。
 
-6.  删除其设备的任何名称， **DriverEntry**或*重新初始化*注册表中存储的例程**\\注册表...\\DeviceMap**树，以及。
+6.  删除其设备的任何名称， **DriverEntry**或*重新初始化*注册表中存储的例程 **\\注册表...\\DeviceMap**树，以及。
 
 驱动程序已发布了设备、 系统和硬件资源后，它可以删除其设备和控制器的对象，如以下部分中所述。
 

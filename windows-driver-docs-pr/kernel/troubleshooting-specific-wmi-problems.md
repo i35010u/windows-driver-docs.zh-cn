@@ -32,7 +32,7 @@ ms.locfileid: "63377035"
 
 5.  检查[WMI WDM 提供程序日志](general-techniques-for-testing-wmi-driver-support.md#ddk-wmi-wdm-provider-log-kg)的错误。
 
-6.  使用[Mofcomp](compiling-a-driver-s-mof-file.md)重新编译和重新加载您 MOF 的文本文件。 例如，命令**mofcomp-N： 根/wmi driver.mof**将尝试重新编译并重新加载 driver.mof 文件中的所有 MOF 数据。 检查以查看哪些错误消息 Mofcomp mofcomp.log 中生成。 (请注意，如果你的 MOF 文件使用预处理器指令，如**\#定义**，将需要使用已预处理的 MOF 文件中，而不是原始源代码文件。
+6.  使用[Mofcomp](compiling-a-driver-s-mof-file.md)重新编译和重新加载您 MOF 的文本文件。 例如，命令**mofcomp-N： 根/wmi driver.mof**将尝试重新编译并重新加载 driver.mof 文件中的所有 MOF 数据。 检查以查看哪些错误消息 Mofcomp mofcomp.log 中生成。 (请注意，如果你的 MOF 文件使用预处理器指令，如 **\#定义**，将需要使用已预处理的 MOF 文件中，而不是原始源代码文件。
 
     **警告**  如果此操作成功，它实际上注册新的 WMI 类数据与系统。 将需要删除这些类 （例如，使用 Wbemtest，） 来测试是否正确读取驱动程序的 MOF 数据。
 

@@ -32,11 +32,11 @@ ms.locfileid: "63347237"
 ## <a name="span-idddkwmitracesearchpathdbgspanspan-idddkwmitracesearchpathdbgspanparameters"></a><span id="ddk__wmitrace_searchpath_dbg"></span><span id="DDK__WMITRACE_SEARCHPATH_DBG"></span>参数
 
 
-<span id="______________"></span> **+**   
+<span id="______________"></span> **+**    
 将导致*TMFPath*要追加到现有的搜索路径。 如果加号 （+） 未使用令牌，则*TMFPath*替换现有的搜索路径。
 
 <span id="_______TMFPath______"></span><span id="_______tmfpath______"></span><span id="_______TMFPATH______"></span> *TMFPath*   
-调试程序应在其中查找跟踪消息格式文件的目录路径。 不支持包含空格的路径。 如果包含多个路径，它们应由分号隔开，并将整个字符串应括在引号中。 如果该路径是在引号中，必须转义字符前面的反斜杠字符 ( `"c:\\debuggers;c:\\debuggers2"` )。 当**+** 使用令牌，则*TMFPath*将以分号结束之间现有和新的路径; 自动插入追加到现有的路径，但是，如果**+** 使用令牌时，不能使用引号引起来。
+调试程序应在其中查找跟踪消息格式文件的目录路径。 不支持包含空格的路径。 如果包含多个路径，它们应由分号隔开，并将整个字符串应括在引号中。 如果该路径是在引号中，必须转义字符前面的反斜杠字符 ( `"c:\\debuggers;c:\\debuggers2"` )。 当 **+** 使用令牌，则*TMFPath*将以分号结束之间现有和新的路径; 自动插入追加到现有的路径，但是，如果 **+** 使用令牌时，不能使用引号引起来。
 
 <span id="_____________"></span>   
 

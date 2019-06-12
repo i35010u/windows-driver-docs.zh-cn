@@ -29,7 +29,7 @@ ms.locfileid: "63330412"
 
 4. 为您的驱动程序中键入一个名称**名称**字段中，然后依次**确定**。 例如，可以键入*MyV4PrintDriver*。
 
-5. 在中**创建 v4 打印驱动程序向导**下**呈现类型选择的驱动程序：**，单击**V4 打印驱动程序和自定义呈现的筛选器 （仅接受 XPS）**。
+5. 在中**创建 v4 打印驱动程序向导**下**呈现类型选择的驱动程序：** ，单击**V4 打印驱动程序和自定义呈现的筛选器 （仅接受 XPS）** 。
 
 6. 保留所有其他选项保留为其默认设置，然后单击**下一步**。
 
@@ -86,9 +86,9 @@ INF 文件的前两行是驱动程序包的版权声明。
 ; INF file for the Fabrikam 1234 print driver
 ```
 
-#### <a name="2-verfy-the-version-section-is-correct"></a>2.验证程序**\[版本\]** 部分是否正确
+#### <a name="2-verfy-the-version-section-is-correct"></a>2.验证程序 **\[版本\]** 部分是否正确
 
-查找行包含**\[版本\]**。
+查找行包含 **\[版本\]** 。
 
 - 检查并确保您看到以下行：
 
@@ -101,9 +101,9 @@ INF 文件的前两行是驱动程序包的版权声明。
     **Signature**="$WINDOWS NT$"
     ```
 
-#### <a name="3-configure-the-sourcediskfiles-section"></a>3.配置**\[SourceDiskFiles\]** 部分
+#### <a name="3-configure-the-sourcediskfiles-section"></a>3.配置 **\[SourceDiskFiles\]** 部分
 
-查找行包含 **\[SourceDiskFiles\]**。
+查找行包含 **\[SourceDiskFiles\]** 。
 
 下面键入以下行：
 
@@ -114,9 +114,9 @@ MyV4PrintDriverRenderFilter-PipelineConfig.xml=1
 MyV4PrintDriverRenderFilter.dll=1
 ```
 
-#### <a name="4-configure-the-driverfiles-section"></a>4.配置**\[DriverFiles\]** 部分
+#### <a name="4-configure-the-driverfiles-section"></a>4.配置 **\[DriverFiles\]** 部分
 
-查找行包含 **\[DriverFiles\]**。
+查找行包含 **\[DriverFiles\]** 。
 
 下面键入以下行：
 
@@ -127,9 +127,9 @@ MyV4PrintDriverRenderFilter-PipelineConfig.xml
 MyV4PrintDriverRenderFilter.dll
 ```
 
-#### <a name="5-configure-the-standardntarch-section"></a>5.配置**\[Standard.NT$ARCH$\]** 部分
+#### <a name="5-configure-the-standardntarch-section"></a>5.配置 **\[Standard.NT$ARCH$\]** 部分
 
-查找行包含 **\[Standard.NT$ARCH$\]**。
+查找行包含 **\[Standard.NT$ARCH$\]** 。
 
 本部分中引用每个模型 INF 安装的部分。 例如，如果您的打印机的模型为 Fabrikam 1234，然后您键入以下：
 
@@ -144,13 +144,13 @@ MyV4PrintDriverRenderFilter.dll
 
 单击**驱动程序文件**，然后在**属性**窗口中查找的值在*唯一标识符*字段。 这是驱动程序 ID (GUID)。 突出显示它，并将其复制
 
-在 INF 文件中，在**\[Standard.NT$ARCH$\]** 部分中，键入以下行：
+在 INF 文件中，在 **\[Standard.NT$ARCH$\]** 部分中，键入以下行：
 
 ```cpp
 "Fabrikam 1234"=DriverInstall,
 ```
 
-并将逗号，后面粘贴你在上一步中复制的 GUID。 已完成**\[Standard.NT$ARCH$\]** 部分应如下所示：
+并将逗号，后面粘贴你在上一步中复制的 GUID。 已完成 **\[Standard.NT$ARCH$\]** 部分应如下所示：
 
 ```cpp
 "Fabrikam 1234"=DriverInstall, {GUID}
@@ -158,9 +158,9 @@ MyV4PrintDriverRenderFilter.dll
 "Fabrikam 1234"=DriverInstall, WSDPRINT\Fabrikam1234
 ```
 
-#### <a name="7-configure-the-strings-section"></a>7.配置**\[字符串\]** 部分
+#### <a name="7-configure-the-strings-section"></a>7.配置 **\[字符串\]** 部分
 
-查找行包含**\[字符串\]**。
+查找行包含 **\[字符串\]** 。
 
 下面将为您的定义*ManufacturerName*字符串。 替换字符&lt;制造商名称&gt;提供目标打印机的制造商的名称，并删除其余行包含你公司的名称;TODO:
 
@@ -239,7 +239,7 @@ DiskName="MyV4PrintDriver Installation Disk"
     - 导航到项目目录。
     - 向下导航中，向*MyV4PrintDriver 呈现筛选器*目录。
     - 选择文件 MyV4PrintDriverRenderFilter PipelineConfig.xml，然后按**打开**。
-    - 单击 **“确定”**。
+    - 单击 **“确定”** 。
 
 ### <a name="add-a-reference-to-the-render-filter-to-the-driver-package"></a>将对呈现器筛选器的引用添加到驱动程序包 
 
@@ -260,7 +260,7 @@ DiskName="MyV4PrintDriver Installation Disk"
     - 选中**部署前删除以前的驱动程序版本**。
     - 选择**安装/重新安装并验证**，然后选择**默认打印机驱动程序包安装任务**从下拉列表框。
     - 键入的名称中的驱动程序**可选参数**（不带任何括住名称） 字段。
-    - 单击 **“确定”**。
+    - 单击 **“确定”** 。
 
 ### <a name="configure-driver-signing"></a>配置驱动程序签名
 
@@ -276,11 +276,11 @@ DiskName="MyV4PrintDriver Installation Disk"
 
 6. 单击**TimeStampServer**，然后从下拉列表框中选择 Verisign。
 
-7. 单击 **“确定”**。
+7. 单击 **“确定”** 。
 
 ### <a name="build-and-deploy-the-driver"></a>生成和部署驱动程序
 
-1. 在解决方案资源管理器中右键单击*解决方案 MyV4PrintDriver （2 个项目）*，然后单击**生成解决方案**。
+1. 在解决方案资源管理器中右键单击*解决方案 MyV4PrintDriver （2 个项目）* ，然后单击**生成解决方案**。
 
 2. 生成过程完成后将自动安装该驱动程序。 请确保在输出窗口中没有任何错误。
 

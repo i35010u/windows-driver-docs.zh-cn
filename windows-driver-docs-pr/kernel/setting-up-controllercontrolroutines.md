@@ -27,7 +27,7 @@ ms.locfileid: "63391089"
 
 2.  保存*ControllerObject*返回指针**IoCreateController**，通常在每个设备对象，表示控制的硬件的物理或逻辑设备的设备扩展中由控制器对象。
 
-3.  设置和/或初始化的驱动程序确定内容 * ControllerObject ***-&gt;ControllerExtension**。
+3.  设置和/或初始化的驱动程序确定内容 * ControllerObject * **-&gt;ControllerExtension**。
 
 返回*ControllerObject*指针、 驱动程序的入口点*ControllerControl*例程*DeviceObject*指针来表示的目标设备当前的 IRP，和一个*上下文*指向已设置了一个区域*ControllerControl*例程必须对驱动程序的调用中传递[ **IoAllocateController**](https://msdn.microsoft.com/library/windows/hardware/ff548224)。 通常情况下，驱动程序的[ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)的区域设置例程*上下文*调用之前**IoAllocateController**。
 

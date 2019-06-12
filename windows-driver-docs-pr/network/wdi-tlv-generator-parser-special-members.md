@@ -17,7 +17,7 @@ ms.locfileid: "63382863"
 ## <a name="optional-members"></a>可选的成员
 
 
-对于具有可选子 TLV 成员任何 TLV，父级具有名为的一个字段**可选**。 在该字段中，没有名为每个可选子的一个布尔字段 ***&lt;子\_名称&gt;*\_IsPresent**，其设置为 TRUE 分析器如果子级在现在和 FALSE 其他方面。 同样，如果它应该位于 TLV 字节流，且 FALSE 否则，则为 TRUE Api 预期需要该字段的代。
+对于具有可选子 TLV 成员任何 TLV，父级具有名为的一个字段**可选**。 在该字段中，没有名为每个可选子的一个布尔字段 * **&lt;子\_名称&gt;*\_IsPresent**，其设置为 TRUE 分析器如果子级在现在和 FALSE 其他方面。 同样，如果它应该位于 TLV 字节流，且 FALSE 否则，则为 TRUE Api 预期需要该字段的代。
 
 ```C++
 WDI_SET_FIRMWARE_CONFIGURATION_PARAMETERS fwConfig = { 0 };

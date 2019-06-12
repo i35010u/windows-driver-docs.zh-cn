@@ -39,7 +39,7 @@ NDIS 使用 D3 上的断开连接在这些情况下的功能：
 
 微型端口驱动程序报表 D3 上的在初始化期间断开连接的功能。 详细了解 reporting D3 断开连接时功能，请参阅[报告电源管理功能](reporting-power-management-capabilities.md)。
 
- **\*DeviceSleepOnDisconnect**标准 INF 文件关键字指定设备已启用还是禁用对 D3 的支持上断开连接。 有关此 INF 关键字的详细信息，请参阅[电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
+**\*DeviceSleepOnDisconnect**标准 INF 文件关键字指定设备已启用还是禁用对 D3 的支持上断开连接。 有关此 INF 关键字的详细信息，请参阅[电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
 
 在初始化期间，支持 D3 上的断开的连接必须报告其中它可以支持的功能，以通知媒体的操作系统最低功率级别微型端口驱动程序连接事件。 微型端口驱动程序报告中的电源级别**MinLinkChangeWakeUp**的成员[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构。 例如，微型端口驱动程序可以报告**NdisDeviceStateD3**。
 

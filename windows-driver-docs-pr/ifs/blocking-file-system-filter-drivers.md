@@ -115,9 +115,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 
 1.  通过右键单击打开提升的命令提示符**cmd.exe**图标，单击**以管理员身份运行**。
 2.  类型： `fltmc filters`
-3.  查找旧版的驱动程序，它们具有**帧**的值**&lt;旧&gt;**。
+3.  查找旧版的驱动程序，它们具有**帧**的值 **&lt;旧&gt;** 。
 
-在此示例中，旧的文件系统的筛选器驱动程序，名为 AVLegacy 和 EncryptionLegacy，标有**&lt;旧&gt;** 框架值。 不具有文件系统驱动程序名为 AVMiniFilter **&lt;旧版&gt;** 帧的值，因为它是一个微筛选器驱动程序 （它未直接附加到文件系统堆栈，并使用筛选器管理器）。
+在此示例中，旧的文件系统的筛选器驱动程序，名为 AVLegacy 和 EncryptionLegacy，标有 **&lt;旧&gt;** 框架值。 不具有文件系统驱动程序名为 AVMiniFilter **&lt;旧版&gt;** 帧的值，因为它是一个微筛选器驱动程序 （它未直接附加到文件系统堆栈，并使用筛选器管理器）。
 
 ``` syntax
 C:\Windows\system32>fltmc filters

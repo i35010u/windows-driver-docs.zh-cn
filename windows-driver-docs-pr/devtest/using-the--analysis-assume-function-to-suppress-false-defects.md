@@ -24,7 +24,7 @@ __analysis_assume( expression )
 
 其中*表达式*可以是任何表达式的计算结果为假定**true**。
 
-SDV 时使用此函数，假设条件表示由*表达式*是**true**点位置 **\_ \_analysis\_假定**函数显示。  **\_ \_Analysis\_假定**函数只能使用由静态分析工具。 编译器将忽略该函数。
+SDV 时使用此函数，假设条件表示由*表达式*是**true**点位置 **\_ \_analysis\_假定**函数显示。 **\_ \_Analysis\_假定**函数只能使用由静态分析工具。 编译器将忽略该函数。
 
 如果您使用 **\_ \_analysis\_假定**，这一点至关重要，您确信可以在进行的假设的有效性。 如果事实证明，您的假设**false**，现在或在将来，你无法将禁止显示，则返回 true 的缺陷。 我们建议你始终向您说明为什么要使用的代码添加注释 **\_ \_analysis\_假定**函数。 如果您不能编写假设的原因，不要禁止显示缺陷。
 
@@ -141,7 +141,7 @@ There are only 6 possible IOCTLs for IoControlCode; each case is covered in the 
 }
 ```
 
-有关如何使用的另一个示例 **\_ \_analysis\_假定**，请参阅示例代码中使用[Using \_ \_sdv\_保存\_请求和\_ \_sdv\_检索\_延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)。 该示例演示如何使用 **\_ \_sdv\_保存\_请求**并 **\_ \_sdv\_检索\_请求**的 Dpc （工作项、 计时器等）。  **\_ \_Analysis\_假定**函数用于禁止显示 false，否则可能会导致的缺陷。
+有关如何使用的另一个示例 **\_ \_analysis\_假定**，请参阅示例代码中使用[Using \_ \_sdv\_保存\_请求和\_ \_sdv\_检索\_延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)。 该示例演示如何使用 **\_ \_sdv\_保存\_请求**并 **\_ \_sdv\_检索\_请求**的 Dpc （工作项、 计时器等）。 **\_ \_Analysis\_假定**函数用于禁止显示 false，否则可能会导致的缺陷。
 
  
 

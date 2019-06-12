@@ -69,15 +69,15 @@ kd -?
 <span id="_______-bonc______"></span><span id="_______-BONC______"></span> **-bonc**   
 如果指定此选项，则调试器将在会话开始时立即中断到目标。 连接到可能不当前分解为目标的调试服务器时，这是特别有用。
 
-<span id="_______-c__command_______"></span><span id="_______-C__COMMAND_______"></span> **-c "**<em>command</em>**"**   
+<span id="_______-c__command_______"></span><span id="_______-C__COMMAND_______"></span> **-c "** <em>command</em> **"**    
 指定要在启动时运行的初始调试器命令。 此命令必须用引号括起来。 可以用分号分隔多个命令。 (如果有很长的命令列表，可能会更容易将其放在一个脚本，然后使用 **-c**选项与[  **$ &lt;，$&gt;&lt;，$&gt; &lt;，$$&gt; &lt; （运行脚本文件）** ](-----------------------a---run-script-file-.md)命令。)
 
 如果要开始调试客户端，此命令必须适用于调试服务器中。 特定于客户端的命令，如 **.lsrcpath**，不允许。
 
-<span id="_______-cf__filename_______"></span><span id="_______-CF__FILENAME_______"></span> **-cf "**<em>filename</em>**"**   
+<span id="_______-cf__filename_______"></span><span id="_______-CF__FILENAME_______"></span> **-cf "** <em>filename</em> **"**    
 指定的路径和脚本文件的名称。 启动调试器时，就立即执行此脚本文件。 如果*文件名*包含的空格，则必须用引号引起来。 如果省略路径，则假定当前目录。 如果不使用-cf 选项，则在当前目录中的文件 ntsd.ini 用作脚本文件。 如果该文件不存在，会发生任何错误。 有关详细信息，请参阅[使用脚本文件](using-script-files.md)。
 
-<span id="_______-cfr__filename_______"></span><span id="_______-CFR__FILENAME_______"></span> **-cfr "**<em>filename</em>**"**   
+<span id="_______-cfr__filename_______"></span><span id="_______-CFR__FILENAME_______"></span> **-cfr "** <em>filename</em> **"**    
 指定的路径和脚本文件的名称。 在启动调试器，并随时重新启动目标执行此脚本文件。 如果*文件名*包含的空格，则必须用引号引起来。 如果省略路径，则假定当前目录。 如果该文件不存在，会发生任何错误。 有关详细信息，请参阅[使用脚本文件](using-script-files.md)。
 
 <span id="_______-clines________lines______"></span><span id="_______-CLINES________LINES______"></span> **-clines** *lines*   
@@ -86,7 +86,7 @@ kd -?
 <span id="_______-d______"></span><span id="_______-D______"></span> **-d**   
 在重新启动后，调试器将中断到目标计算机加载了内核模块。 (此中断是早于从中断 **-b**选项。)请参阅[崩溃和重新启动目标计算机](crashing-and-rebooting-the-target-computer.md)为详细信息和更改此状态的其他方法。
 
-<span id="_______-ee__masm_c___"></span><span id="_______-EE__MASM_C___"></span> **-ee** {**masm**|**c++**}  
+<span id="_______-ee__masm_c___"></span><span id="_______-EE__MASM_C___"></span> **-ee** {**masm**|**c++** }  
 设置默认表达式计算器。 如果**masm**指定，则将使用 MASM 表达式语法。 如果**c + +** 指定，则C++将使用表达式语法。 如果 **-ee**省略选项，MASM 表达式语法将用作默认值。 请参阅[评估表达式](evaluating-expressions.md)有关详细信息。
 
 <span id="_______-failinc______"></span><span id="_______-FAILINC______"></span> **-failinc**   
@@ -138,7 +138,7 @@ kd -?
 禁止所有 **.shell**命令。 此禁止将持续的时间运行调试器，即使开始新的调试会话。 有关详细信息，以及禁用 shell 命令的其他方法，请参阅[使用 Shell 命令](using-shell-commands.md)。
 
 <span id="_______-QR_______Server______"></span><span id="_______-qr_______server______"></span><span id="_______-QR_______SERVER______"></span> **-QR** *Server*   
-列出在指定的网络服务器上运行的所有调试服务器。 双反斜杠 (**\\\\**) 前面*Server*是可选的。 请参阅[**搜索调试服务器**](searching-for-debugging-servers.md)有关详细信息。
+列出在指定的网络服务器上运行的所有调试服务器。 双反斜杠 ( **\\\\** ) 前面*Server*是可选的。 请参阅[**搜索调试服务器**](searching-for-debugging-servers.md)有关详细信息。
 
 **-QR**参数必须不能与任何其他参数。 此命令将实际上不会启动 KD。
 
@@ -157,7 +157,7 @@ kd -?
 <span id="_______-ses______"></span><span id="_______-SES______"></span> **-ses**   
 使调试器执行的所有符号文件严格评估，并忽略任何可疑的符号。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_EXACT\_符号](symbol-options.md#symopt-exact-symbols)。
 
-<span id="_______-sflags_0xNumber"></span><span id="_______-sflags_0xnumber"></span><span id="_______-SFLAGS_0XNUMBER"></span> **-sflags 0 x * * * 数*  
+<span id="_______-sflags_0xNumber"></span><span id="_______-sflags_0xnumber"></span><span id="_______-SFLAGS_0XNUMBER"></span> * *-sflags 0 x * * * 数*  
 一次性设置所有的符号处理程序选项。 *数*应能带有前缀的十六进制数**0x** -而无需十进制**0x**允许，则允许而符号选项是二进制的标志，因此建议十六进制。 应谨慎，使用此选项，因为它将替代所有符号处理程序默认值。 有关详细信息，请参阅[设置符号选项](symbol-options.md)。
 
 <span id="_______-sicv______"></span><span id="_______-SICV______"></span> **-sicv**   
@@ -173,7 +173,7 @@ kd -?
 禁用自动符号加载的非限定名称。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_否\_UNQUALIFIED\_加载](symbol-options.md#symopt-no-unqualified-loads)。
 
 <span id="_______-srcpath_______SourcePath______"></span><span id="_______-srcpath_______sourcepath______"></span><span id="_______-SRCPATH_______SOURCEPATH______"></span> **-srcpath** *SourcePath*   
-指定源文件搜索路径。 用分号分隔多个路径 (**;**)。 如果路径包含空格，应括在引号中。 有关详细信息，以及更改此路径的其他方法，请参阅[源路径](source-path.md)。
+指定源文件搜索路径。 用分号分隔多个路径 ( **;** )。 如果路径包含空格，应括在引号中。 有关详细信息，以及更改此路径的其他方法，请参阅[源路径](source-path.md)。
 
 <span id="_______-sup______"></span><span id="_______-SUP______"></span> **-sup**   
 导致要在每个符号搜索期间搜索公共符号表的符号处理程序。 有关详细信息和控制这的其他方法，请参阅[SYMOPT\_自动\_PUBLICS](symbol-options.md#symopt-auto-publics)。
@@ -237,7 +237,7 @@ kd -?
 使调试器时首次出现异常，而不是让应用程序或模块引发异常的异常处理中断。 (与相同 **-b**，除了初始**eb nt ！NtGlobalFlag 9; g**命令。)
 
 <span id="_______-y_______SymbolPath______"></span><span id="_______-y_______symbolpath______"></span><span id="_______-Y_______SYMBOLPATH______"></span> **-y** *SymbolPath*   
-指定符号搜索路径。 用分号分隔多个路径 (**;**)。 如果路径包含空格，应括在引号中。 有关详细信息，以及更改此路径的其他方法，请参阅[符号路径](symbol-path.md)。
+指定符号搜索路径。 用分号分隔多个路径 ( **;** )。 如果路径包含空格，应括在引号中。 有关详细信息，以及更改此路径的其他方法，请参阅[符号路径](symbol-path.md)。
 
 <span id="_______-z_______DumpFile______"></span><span id="_______-z_______dumpfile______"></span><span id="_______-Z_______DUMPFILE______"></span> **-z** *DumpFile*   
 指定要调试的崩溃转储文件的名称。 如果路径和文件名称包含空格，这必须用引号括起来。 可以通过包含多个同时打开多个转储文件**z**选项，每个后跟一个不同*DumpFile*值。 有关详细信息，请参阅[分析 KD 具有的内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-kd.md)。
@@ -245,7 +245,7 @@ kd -?
 <span id="_______-zp_______PageFile______"></span><span id="_______-zp_______pagefile______"></span><span id="_______-ZP_______PAGEFILE______"></span> **-zp** *PageFile*   
 指定修改的页面文件的名称。 如果您正在调试转储文件，并且想要使用，这很有用[ **.pagein （内存中的页）** ](-pagein--page-in-memory-.md)命令。 不能使用 **-zp**与标准的 Windows 页面文件，可以使用只有专门修改页面文件。
 
-<span id="_______-_______"></span> **-?**   
+<span id="_______-_______"></span> **-?**    
 显示命令行帮助文本。
 
 KD 会自动检测目标运行时所在的平台。 不需要 KD 命令行上指定目标。 较早的语法 (使用名称*I386KD*或*IA64KD*) 已过时。

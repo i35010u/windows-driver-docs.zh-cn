@@ -24,7 +24,7 @@ ms.locfileid: "63340357"
 
 **DeferredRequestCompleted**规则指定是否驱动程序的默认 I/O 队列向显示的 I/O 请求未完成回调函数中，但以供将来处理延迟，必须完成该请求以延迟处理回调函数，除非请求将转发并传递到框架，或者[ **WdfRequestStopAcknowledge** ](https://msdn.microsoft.com/library/windows/hardware/ff550033)调用方法。
 
-**DeferredRequestCompleted**规则需要识别使用延迟的请求 **\_ \_sdv\_保存\_请求**和**\_ \_sdv\_检索\_请求**宏。 有关如何使用这些宏的信息，请参阅[Using \_ \_sdv\_保存\_请求并\_ \_sdv\_检索\_为请求延迟过程调用](https://msdn.microsoft.com/library/windows/hardware/ff556071)。 不满足前提条件规则**AliasWithinTimerDpc**检查是否存在这些宏。
+**DeferredRequestCompleted**规则需要识别使用延迟的请求 **\_ \_sdv\_保存\_请求**和 **\_ \_sdv\_检索\_请求**宏。 有关如何使用这些宏的信息，请参阅[Using \_ \_sdv\_保存\_请求并\_ \_sdv\_检索\_为请求延迟过程调用](https://msdn.microsoft.com/library/windows/hardware/ff556071)。 不满足前提条件规则**AliasWithinTimerDpc**检查是否存在这些宏。
 
 在退出之前从 I/O 请求回调函数，除在以下情况下，必须完成的请求提供给通过队列回调函数之一的驱动程序的默认队列和延迟:
 

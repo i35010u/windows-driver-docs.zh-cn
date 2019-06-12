@@ -74,13 +74,13 @@ ms.locfileid: "63380377"
 
 -   应用必须具有与之关联，设备元数据或服务元数据包和必须以列出[PrivilegedApplications](privilegedapplications.md) SoftwareInfo.xml 文件在包内的 XML 元素。 包没有为专用于该应用程序;就可以为任何特定的 UWP 应用以多个包的 PrivilegedApplications 元素中列出。 该包必须与保持活动状态的至少一次在计算机的移动宽带设备的服务提供程序相关联，以便已安装。
 
--   应用程序的 appxmanifest 文件需要**&lt;DeviceCapability&gt;** 条目移动宽带帐户 API。 您可以执行此操作通过将下面的 XML 元素添加为的子**&lt;功能&gt;** 应用程序的 appxmanifest 文件中的元素：
+-   应用程序的 appxmanifest 文件需要 **&lt;DeviceCapability&gt;** 条目移动宽带帐户 API。 您可以执行此操作通过将下面的 XML 元素添加为的子 **&lt;功能&gt;** 应用程序的 appxmanifest 文件中的元素：
 
     ``` syntax
     <DeviceCapability Name="BFCD56F7-3943-457F-A312-2E19BB6DC648" />
     ```
 
-    有关详细信息**&lt;功能&gt;** 元素中，请参阅[应用程序清单文件适用于 Windows 8 的](https://msdn.microsoft.com/library/windows/apps/ff769509.aspx)。
+    有关详细信息 **&lt;功能&gt;** 元素中，请参阅[应用程序清单文件适用于 Windows 8 的](https://msdn.microsoft.com/library/windows/apps/ff769509.aspx)。
 
 **请注意**  不 UWP 应用 （例如，Microsoft Win32 服务或桌面应用程序） 的应用程序可以无限制地访问移动宽带帐户 API。 这是因为这些应用程序可以使用现有 Win32 和组件对象模型 (COM) Api 获取到移动宽带网络的完全访问权限。 不能从 UWP 应用使用这些 Api。
 

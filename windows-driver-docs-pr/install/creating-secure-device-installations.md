@@ -53,15 +53,15 @@ ms.locfileid: "63392001"
 
 若要指定属于 WDM 设备安装程序类的单个设备的安全描述符，请使用[ **INF AddReg 指令**](inf-addreg-directive.md)内[ **INF DDInstall.HW 部分**](inf-ddinstall-hw-section.md)的设备的 INF 文件。 **AddReg**指令必须指向*添加注册表部分*设置的值**DeviceType**并**安全**注册表项. 这些注册表值指定匹配的所有设备的安全描述符[硬件 ID](hardware-ids.md)或[兼容 Id](compatible-ids.md)指定由关联[ **INF 模型部分**](inf-models-section.md).
 
-默认情况下，系统将应用的设备设置为打开表示设备的设备对象的请求的安全描述符 (例如，若要打开其 NT 设备名称是该设备的请求*\\设备\\DeviceName*)。
+默认情况下，系统将应用的设备设置为打开表示设备的设备对象的请求的安全描述符 (例如，若要打开其 NT 设备名称是该设备的请求 *\\设备\\DeviceName*)。
 
-但是，系统不会不默认情况下应用设置的设备对打开的设备，命名空间中的某个对象的请求的设备命名空间，包括其名称采用以下形式的所有对象的安全描述符*\\设备\\DeviceName\\ObjectName*。 若要确保相同的安全设置应用以打开设备的命名空间中的对象的请求，设置设备的 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全的设备访问的详细信息，请参阅[控制设备 Namespace 访问 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff542068)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff563818)。
+但是，系统不会不默认情况下应用设置的设备对打开的设备，命名空间中的某个对象的请求的设备命名空间，包括其名称采用以下形式的所有对象的安全描述符 *\\设备\\DeviceName\\ObjectName*。 若要确保相同的安全设置应用以打开设备的命名空间中的对象的请求，设置设备的 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全的设备访问的详细信息，请参阅[控制设备 Namespace 访问 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff542068)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff563818)。
 
 PnP 管理器在后它会调用驱动程序的设备对象上设置安全值[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。 通过调用创建一个物理设备对象 (PDO) 时，某些 WDM 驱动程序可以指定特定于设备的安全描述符[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)。 有关详细信息，请参阅[保护设备对象](https://msdn.microsoft.com/library/windows/hardware/ff563688)。
 
 ### <a name="security-settings-for-driver-files"></a>驱动程序文件的安全设置
 
-通过使用复制文件时[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)，则可以指定*文件列表部分*。**安全**部分。 本部分中指定的复制的所有文件的安全描述符**CopyFiles**指令。 但是，供应商无需指定驱动程序文件的安全描述符如果安装的目标是一个系统的子目录 *%systemroot%*。 (有关这些子目录的详细信息，请参阅[使用 Dirids](using-dirids.md)。)系统提供了默认安全描述符的这些子目录，并默认描述符不应被替代。
+通过使用复制文件时[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)，则可以指定*文件列表部分*。**安全**部分。 本部分中指定的复制的所有文件的安全描述符**CopyFiles**指令。 但是，供应商无需指定驱动程序文件的安全描述符如果安装的目标是一个系统的子目录 *%systemroot%* 。 (有关这些子目录的详细信息，请参阅[使用 Dirids](using-dirids.md)。)系统提供了默认安全描述符的这些子目录，并默认描述符不应被替代。
 
 ### <a name="security-settings-for-driver-services"></a>驱动程序服务的安全设置
 

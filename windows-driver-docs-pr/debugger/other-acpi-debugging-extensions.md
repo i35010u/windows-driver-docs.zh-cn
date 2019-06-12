@@ -21,27 +21,27 @@ ms.locfileid: "63330961"
 
 以下扩展命令可用于调试问题的高级配置和电源接口 (ACPI) BIOS:
 
--   [**！ acpicache** ](-acpicache.md)显示的所有 ACPI 表由硬件应用程序层 (HAL) 缓存
+-   [ **！ acpicache** ](-acpicache.md)显示的所有 ACPI 表由硬件应用程序层 (HAL) 缓存
 
--   [**！ acpiinf** ](-acpiinf.md)的 ACPI 配置上显示的信息
+-   [ **！ acpiinf** ](-acpiinf.md)的 ACPI 配置上显示的信息
 
--   [**！ acpiirqarb** ](-acpiirqarb.md)显示 ACPI IRQ 仲裁器结构的内容
+-   [ **！ acpiirqarb** ](-acpiirqarb.md)显示 ACPI IRQ 仲裁器结构的内容
 
--   [**！ facs** ](-facs.md)显示固件 ACPI 控件结构
+-   [ **！ facs** ](-facs.md)显示固件 ACPI 控件结构
 
--   [**！ fadt** ](-fadt.md)显示固定的 ACPI 描述表
+-   [ **！ fadt** ](-fadt.md)显示固定的 ACPI 描述表
 
--   [**！ mapic** ](-mapic.md)显示 ACPI 多个 APIC 表
+-   [ **！ mapic** ](-mapic.md)显示 ACPI 多个 APIC 表
 
--   [**！ nsobj** ](-nsobj.md)显示 ACPI 命名空间对象
+-   [ **！ nsobj** ](-nsobj.md)显示 ACPI 命名空间对象
 
--   [**！ nstree** ](-nstree.md)显示 ACPI 命名空间树的部分
+-   [ **！ nstree** ](-nstree.md)显示 ACPI 命名空间树的部分
 
--   [**！ rsdt** ](-rsdt.md)显示 ACPI 根系统描述表
+-   [ **！ rsdt** ](-rsdt.md)显示 ACPI 根系统描述表
 
 ACPI 相关扩展的完整列表，请参阅[ **！ acpikd.help**](-acpikd-help.md)。
 
-有关详细信息 **！ amli * * * xxx*扩展，请参阅[AMLI 调试器](the-amli-debugger.md)。
+有关详细信息 * *！ amli * * * xxx*扩展，请参阅[AMLI 调试器](the-amli-debugger.md)。
 
  
 

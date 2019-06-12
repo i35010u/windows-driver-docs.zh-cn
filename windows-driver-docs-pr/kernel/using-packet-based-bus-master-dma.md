@@ -35,7 +35,7 @@ ms.locfileid: "63391073"
 
 -   [**FreeMapRegisters** ](https://msdn.microsoft.com/library/windows/hardware/ff546513)只要完成所有当前 IRP DMA 操作，因为所有请求的数据已经全部传输，或者因为驱动程序必须失败，因为设备 IRP 或总线 I/O 错误
 
-所返回的适配器对象指针[ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)为必需参数**AllocateAdapterChannel**， **MapTransfer****FlushAdapterBuffers**，并**FreeMapRegisters**。 请注意在 Windows 2000 之前的 Windows NT 版本，可以传递总线母版设备**NULL**适配器对象指针，指向**MapTransfer**并**FlushAdapterBuffers**。 在 Windows 2000 和更高版本，驱动程序可以不再会执行此操作。
+所返回的适配器对象指针[ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)为必需参数**AllocateAdapterChannel**， **MapTransfer** **FlushAdapterBuffers**，并**FreeMapRegisters**。 请注意在 Windows 2000 之前的 Windows NT 版本，可以传递总线母版设备**NULL**适配器对象指针，指向**MapTransfer**并**FlushAdapterBuffers**。 在 Windows 2000 和更高版本，驱动程序可以不再会执行此操作。
 
 **KeFlushIoBuffers**并**MmGetMdlVirtualAddress**需要指向在 MDL **Irp-&gt;MdlAddress**。
 

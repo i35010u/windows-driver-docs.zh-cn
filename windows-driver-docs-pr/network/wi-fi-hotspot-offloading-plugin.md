@@ -158,7 +158,7 @@ L2 连接完成后，热点插件主机调用此函数来通知插件以开始�
 
 ### <a name="the-plugin-dll-file"></a>插件 DLL 文件
 
-必须签名 DLL 文件，并将其置于下**Programs\HotspotHost\\**<*ProviderName*>，其中 <*ProviderName*> 是DLL 提供程序名称。 
+必须签名 DLL 文件，并将其置于下**Programs\HotspotHost\\** <*ProviderName*>，其中 <*ProviderName*> 是DLL 提供程序名称。 
 
 有关对 DLL 进行签名的信息，请参阅[二进制文件和包签名](https://msdn.microsoft.com/library/windows/hardware/dn789217)。 
 

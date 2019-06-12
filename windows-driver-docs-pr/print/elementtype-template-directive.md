@@ -16,7 +16,7 @@ ms.locfileid: "63327579"
 # <a name="elementtype-template-directive"></a>ElementType 模板指令
 
 
- **\*ElementType**指令在模板中定义的元素，使用的数据类型。
+**\*ElementType**指令在模板中定义的元素，使用的数据类型。
 
  
 

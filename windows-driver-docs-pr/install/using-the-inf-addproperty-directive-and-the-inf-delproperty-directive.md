@@ -34,13 +34,13 @@ ms.locfileid: "63339392"
 
 若要修改的属性值，包括 INF **AddProperty**指令中安装的设备实例、 设备安装程序类、 设备接口类或设备接口的部分。 **AddProperty**指令引用一个或多个*添加属性节*包含指定属性的条目如何修改该属性，并且使用要修改的属性的值。 格式**AddProperty**指令是按如下所示：
 
-**AddProperty=**<em>add-property-section</em>\[**,**<em>add-property-section</em>\] ...
+**AddProperty=** <em>add-property-section</em>\[ **,** <em>add-property-section</em>\] ...
 
 添加属性部分中的每行指定一个属性。 下图显示指定属性信息的两个可能的行格式。 显示的第一个行格式按名称指定的属性。 此格式可以仅可用于 DEVPKEY_DrvPkg_*Xxx*属性。 第二个行格式指定的属性类别和相应的属性标识符的属性[属性键](property-keys.md)。 此第二种格式可用于指定系统定义的属性或[自定义设备属性](creating-custom-device-properties.md)。
 
-**\[**<em>添加属性部分</em>**\]**
-<em>属性名称</em>**、、、\[**<em>标志</em> ** \]，**<em>值</em>
- **{**<em>属性类别 guid</em>**}，**<em>属性 pid</em>**，**<em>类型</em>**，\[**<em>标志</em> ** \]，**<em>值</em>条目的值提供以下：
+**\[** <em>添加属性部分</em> **\]** 
+<em>属性名称</em> **、、、\[** <em>标志</em> ** \]，** <em>值</em>
+ **{** <em>属性类别 guid</em> **}，** <em>属性 pid</em> **，** <em>类型</em> **，\[** <em>标志</em> ** \]，** <em>值</em>条目的值提供以下：
 
 <a href="" id="property-name"></a>*property-name*  
 名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_DrvPkg_VendorWebSite** ](https://msdn.microsoft.com/library/windows/hardware/ff543527)属性。
@@ -79,12 +79,12 @@ DeviceModel,,,,"Sample Device Model Name"
 
 **DelProperty**指令具有以下格式：
 
-**DelProperty=**<em>del-property-section</em>\[**,**<em>del-property-section</em>\] ...
+**DelProperty=** <em>del-property-section</em>\[ **,** <em>del-property-section</em>\] ...
 
 中的每一行*del 属性部分*指定一个属性。 下图显示指定属性信息的两个可能的行格式。 显示的第一个行格式按名称指定的属性。 此格式可以仅可用于 DEVPKEY_DrvPkg_*Xxx*属性。 第二个行格式指定的属性类别和相应的属性标识符的属性[属性键](property-keys.md)。 第二种格式可用于指定系统定义的属性或[自定义设备属性](creating-custom-device-properties.md)。
 
-**\[**<em>del 属性部分</em>**\]**
-*属性名称* \[ **、** *标志* \[ **，**<em>值</em>\] \] **{**<em>属性类别 guid</em>**}，** *属性 pid* \[ **，** *标志* \[ **，**<em>值</em>\] \]条目的值提供以下：
+**\[** <em>del 属性部分</em> **\]** 
+*属性名称* \[ **、** *标志* \[ **，** <em>值</em>\] \] **{** <em>属性类别 guid</em> **}，** *属性 pid* \[ **，** *标志* \[ **，** <em>值</em>\] \]条目的值提供以下：
 
 <a href="" id="property-name"></a>*property-name*  
 名称标识 DEVPKEY_DrvPkg_*Xxx*属性。 例如， **DeviceModel**，表示[ **DEVPKEY_DrvPkg_Model** ](https://msdn.microsoft.com/library/windows/hardware/ff543523)属性，或者**DeviceVendorWebSite**，它表示[ **DEVPKEY_Device_FriendlyName** ](https://msdn.microsoft.com/library/windows/hardware/ff542502)属性。

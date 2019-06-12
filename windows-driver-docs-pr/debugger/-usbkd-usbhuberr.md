@@ -81,7 +81,7 @@ ExceptionList: !usblist ffffe000011f8498, EL [Empty]
 ...
 ```
 
-在上面的输出，`ffffe000011f8498`是例外列表的地址。 如果异常列表不为空，它将包含的地址**\_中心\_异常\_记录**结构。
+在上面的输出，`ffffe000011f8498`是例外列表的地址。 如果异常列表不为空，它将包含的地址 **\_中心\_异常\_记录**结构。
 
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅

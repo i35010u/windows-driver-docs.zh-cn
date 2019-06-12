@@ -22,7 +22,7 @@ ms.locfileid: "63355575"
 
 Storport 微型端口驱动程序接口旨在为类似于 SCSI 端口微型端口驱动程序接口尽可能情况下，为了简化修改的 SCSI 端口微型端口驱动程序才能正常使用 Storport 驱动程序。 为了使使用 Storport SCSI 端口微型端口驱动程序，必须执行以下基本步骤：
 
-1.  所有实例都更改**\#包括** &lt; *scsi.h* &gt;指令与**\#包括** &lt; *storport.h* &gt;指令。
+1.  所有实例都更改 **\#包括** &lt; *scsi.h* &gt;指令与 **\#包括** &lt; *storport.h* &gt;指令。
 
     如果这两个*scsi.h*并*storport.h*标头将包含的文件，将发生编译时错误。
 

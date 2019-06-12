@@ -30,7 +30,7 @@ ms.locfileid: "63391830"
 
     -   在相同菜单上，将**扫描配置数据**包含你的跟踪信息，例如 Trace.h 的文件。
 
-2.  在调用 WPP 宏每个源代码文件中添加**\#包括**标识的指令[跟踪消息标头 (TMH) 文件](https://msdn.microsoft.com/library/windows/hardware/ff553926)。 文件名称的格式必须&lt;*驱动程序的源的文件名*&gt;**.tmh**。
+2.  在调用 WPP 宏每个源代码文件中添加 **\#包括**标识的指令[跟踪消息标头 (TMH) 文件](https://msdn.microsoft.com/library/windows/hardware/ff553926)。 文件名称的格式必须&lt;*驱动程序的源的文件名*&gt; **.tmh**。
 
     例如，如果您的驱动程序由两个源文件组成，称为*MyDriver1.c*并*MyDriver2.c*，然后*MyDriver1.c*必须包含：
 
@@ -121,7 +121,7 @@ ms.locfileid: "63391830"
 **实时调试 UMDF 驱动程序**
 
 1.  使用[ **！ wdfkd.wdfldr** ](https://msdn.microsoft.com/library/windows/hardware/ff565803)扩展以显示有关当前动态绑定到 WDF 驱动程序的信息。 查找您的用户模式驱动程序。 输入相关联的主机进程。
-2.  类型 **！ wdfkd.wdflogdump**  *&lt;YourDriverName.dll&gt; &lt;标志&gt;* ，其中*&lt;标志&gt;* 是：
+2.  类型 **！ wdfkd.wdflogdump**  *&lt;YourDriverName.dll&gt; &lt;标志&gt;* ，其中 *&lt;标志&gt;* 是：
 
     -   0x1-合并框架和驱动程序日志
     -   0x2-驱动程序日志
@@ -132,7 +132,7 @@ ms.locfileid: "63391830"
 **在 UMDF 驱动程序出现故障后查看即时跟踪录制器日志**
 
 1. 从的 WinDbg 中，选择**文件-&gt;打开崩溃转储**，并指定你想要调试的小型转储文件。
-2. 类型[ **！ wdfkd.wdfcrashdump  *&lt;YourDriverName.dll&gt; &lt;的驱动程序主机进程 ID&gt; &lt;选项&gt;*** ](https://msdn.microsoft.com/library/windows/hardware/ff565682)，其中*&lt;选项&gt;* 是：
+2. 类型[ **！ wdfkd.wdfcrashdump  *&lt;YourDriverName.dll&gt; &lt;的驱动程序主机进程 ID&gt; &lt;选项&gt;* ** ](https://msdn.microsoft.com/library/windows/hardware/ff565682)，其中 *&lt;选项&gt;* 是：
 
    -   0x1-合并框架和驱动程序日志
    -   0x2-驱动程序日志

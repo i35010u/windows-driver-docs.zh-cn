@@ -24,7 +24,7 @@ ms.locfileid: "63341069"
 
 从 Windows Vista 开始，管理员可以使用注册表设置中断的关联策略。
 
-管理员可以设置下的以下条目**\\中断管理\\关联策略**注册表项：
+管理员可以设置下的以下条目 **\\中断管理\\关联策略**注册表项：
 
 -   **DevicePolicy**是 REG\_DWORD 值，该值指定的关联策略。 每个可能的设置对应于[ **IRQ\_设备\_策略**](https://msdn.microsoft.com/library/windows/hardware/ff551783)值。
 

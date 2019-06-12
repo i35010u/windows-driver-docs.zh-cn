@@ -29,11 +29,11 @@ ms.locfileid: "63359205"
 
 -   *参数*-&gt;**FullySpecified.ServiceRoutine**指向*InterruptService*例程，同时*参数* - &gt; **FullySpecified**。**ServiceContext**指定系统将作为传递的值*ServiceContext*参数*InterruptService*。 该驱动程序可以使用此传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
 
--   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 ***-&gt;FullySpecified.InterruptObject**。 **IoConnectInterruptEx**例程将此变量设置为指向中断的中断对象后者可以时要使用[删除 ISR](removing-an-isr.md)。
+-   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 * **-&gt;FullySpecified.InterruptObject**。 **IoConnectInterruptEx**例程将此变量设置为指向中断的中断对象后者可以时要使用[删除 ISR](removing-an-isr.md)。
 
 -   驱动程序可以选择指定在旋转锁*参数 * * *-&gt;FullySpecified.SpinLock** ISR 与同步时要使用的系统 大多数驱动程序可以只需指定**NULL**启用系统分配旋转锁代表该驱动程序。 有关与 ISR 同步的详细信息，请参阅[对设备数据的同步访问](synchronizing-access-to-device-data.md)。
 
-该驱动程序必须指定中断的键属性中的其他成员 * 参数 ***-&gt;FullySpecified**。 系统提供的数组中所需的信息[ **CM\_分部\_资源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541977)结构会在发送时[**IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP 到驱动程序。
+该驱动程序必须指定中断的键属性中的其他成员 * 参数 * **-&gt;FullySpecified**。 系统提供的数组中所需的信息[ **CM\_分部\_资源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541977)结构会在发送时[**IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP 到驱动程序。
 
 系统提供的每个中断**CM\_分部\_资源\_描述符**结构**类型**成员等于**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，清除它。
 

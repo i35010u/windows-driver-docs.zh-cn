@@ -28,7 +28,7 @@ ms.locfileid: "63382552"
 以下注册表设置将设备插注册表项下。
 
 <a href="" id="portname--reg-sz-"></a>**PortName** (REG\_SZ)  
-指定的设备的名称。 设备的名称通常是 COM<em>&lt;n&gt;，</em>其中*&lt;n&gt;* 是从安装程序获取 COM 端口号[COM端口数据库](com-port-database.md)。 但是，设备可以设置为任何非 NULL 字符串。 如果设备被配置为[COM 端口](configuration-of-com-ports.md)，序列使用的端口名称来创建设备的符号链接名称。 默认值**PortName**为空字符串。
+指定的设备的名称。 设备的名称通常是 COM<em>&lt;n&gt;，</em>其中 *&lt;n&gt;* 是从安装程序获取 COM 端口号[COM端口数据库](com-port-database.md)。 但是，设备可以设置为任何非 NULL 字符串。 如果设备被配置为[COM 端口](configuration-of-com-ports.md)，序列使用的端口名称来创建设备的符号链接名称。 默认值**PortName**为空字符串。
 
 <a href="" id="identifier--reg-sz-"></a>**标识符**(REG\_SZ)  
 指定的设备的名称。 为支持**标识符**条目值，提供与某些旧的 PCMCIA 设备的兼容性。 利用**标识符**已过时，不能与 Microsoft Windows 2000 和更高版本的驱动程序。 有关说明，请参阅**PortName**条目值。

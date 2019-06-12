@@ -39,9 +39,9 @@ VOID NdisQueryMdl(
 *\_VirtualAddress*   
 指向在其中此宏将返回由 MDL 描述的虚拟地址范围的基本虚拟地址的调用方提供的变量的指针。 可以是虚拟的基址**NULL**这两个原因如下：
 
--   系统资源很低或已耗尽和*\_优先级*参数设置为**LowPagePriority**或**NormalPagePriority**。
+-   系统资源很低或已耗尽和 *\_优先级*参数设置为**LowPagePriority**或**NormalPagePriority**。
 
--   系统资源耗尽和*\_优先级*参数设置为**HighPagePriority**。
+-   系统资源耗尽和 *\_优先级*参数设置为**HighPagePriority**。
 
 *\_Length*   
 指向在其中此宏将返回由 MDL 描述的虚拟地址范围的长度，以字节为单位，调用方提供的变量的指针。

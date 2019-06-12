@@ -35,7 +35,7 @@ ms.locfileid: "63323156"
 指定的用户模式下 IRP 的地址。 可以使用[ **！ wdfkd.wdfumirps** ](-wdfkd-wdfumirps.md)以获取 UM Irp 中的地址[隐式过程](controlling-threads-and-processes.md)。
 
 <span id="_______FileObject______"></span><span id="_______fileobject______"></span><span id="_______FILEOBJECT______"></span> *FileObject*   
-指定的地址**\_文件\_对象**结构。 有关如何获取此地址的信息，请参阅备注。
+指定的地址 **\_文件\_对象**结构。 有关如何获取此地址的信息，请参阅备注。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -60,8 +60,8 @@ UMDF 2
 若要使用此命令，请执行以下步骤：
 
 1.  请输入以下命令，将仅地址传递用户模式下 IRP。 该命令将显示一个句柄。
-2.  传递显示的句柄[ **！ 处理**](-handle.md)命令。 中的输出 **！ 处理**，找到的地址**\_文件\_对象**结构。
-3.  输入以下命令，将传递用户模式下 IRP 的地址和地址都**\_文件\_对象**结构。
+2.  传递显示的句柄[ **！ 处理**](-handle.md)命令。 中的输出 **！ 处理**，找到的地址 **\_文件\_对象**结构。
+3.  输入以下命令，将传递用户模式下 IRP 的地址和地址都 **\_文件\_对象**结构。
 
  
 

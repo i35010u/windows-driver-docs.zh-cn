@@ -42,7 +42,7 @@ TEST_METHOD_PROPERTY(L"DataSource[@TestCaseLevel='High']", L"Pict:FullDataSet.mo
 ## <a name="span-iddefaultspanspan-iddefaultspandefault-values"></a><span id="default"></span><span id="DEFAULT"></span>默认值
 
 
-当你想要添加元数据，仅当该特定的元数据名称的任何其他条件计算不结果为 true 时，可以将与元数据名称附加*\[默认\]*。
+当你想要添加元数据，仅当该特定的元数据名称的任何其他条件计算不结果为 true 时，可以将与元数据名称附加 *\[默认\]* 。
 
 ```cpp
 TEST_METHOD_PROPERTY(L"DataSource", L"Pict:MyTest.model")

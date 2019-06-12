@@ -28,7 +28,7 @@ ms.locfileid: "63352064"
 
 1.  创建[**对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)结构，并将其初始化通过调用[ **InitializeObjectAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff547804)。 指定要作为操作的密钥名称*ObjectName*参数**InitializeObjectAttributes**。
 
-    如果传递**NULL**作为*RootDirectory*参数**InitializeObjectAttributes**， *ObjectName*必须是完整路径注册表项，开头**\\注册表**。 否则为*RootDirectory*必须是开放句柄注册表项，并*ObjectName*是相对于该注册表项的路径。
+    如果传递**NULL**作为*RootDirectory*参数**InitializeObjectAttributes**， *ObjectName*必须是完整路径注册表项，开头 **\\注册表**。 否则为*RootDirectory*必须是开放句柄注册表项，并*ObjectName*是相对于该注册表项的路径。
 
 2.  通过调用打开的键对象的句柄[ **ZwCreateKey** ](https://msdn.microsoft.com/library/windows/hardware/ff566425)或[ **ZwOpenKey**](https://msdn.microsoft.com/library/windows/hardware/ff567014)，并将传递**对象\_属性**到它的结构。 如果尚不存在密钥， **ZwCreateKey**将创建密钥，而**ZwOpenKey**将返回状态\_对象\_名称\_不\_找到。
 

@@ -196,7 +196,7 @@ Partnerimp.dll 是合作伙伴的已发布的 Microsoft 接口实现。 DLL 与�
 </PrintDeviceCapabilities>
 ```
 
-对于不具有载入显示和按钮，以允许用户与打印开头的设备进行交互的 3D 打印机，我们大使返回使用合适的用户提示消息集的 PDC xml 中所示**psdk3dx:userPrompt**. 这是为了防止从一个现有基于新打印。 自定义状态消息*&lt;psk3dx:customStatus&gt;* 用于切片期间显示的任何消息。
+对于不具有载入显示和按钮，以允许用户与打印开头的设备进行交互的 3D 打印机，我们大使返回使用合适的用户提示消息集的 PDC xml 中所示**psdk3dx:userPrompt**. 这是为了防止从一个现有基于新打印。 自定义状态消息 *&lt;psk3dx:customStatus&gt;* 用于切片期间显示的任何消息。
 
 ### <a name="hresult-cleanuplpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT Cleanup(LPCWSTR pPrinterName, LPCWSTR pPortName, DWORD dwJobId, LPVOID\* ppPartnerData)
 

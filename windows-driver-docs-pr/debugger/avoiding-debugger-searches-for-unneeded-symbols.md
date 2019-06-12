@@ -48,7 +48,7 @@ ms.locfileid: "63354398"
 ## <a name="span-idwhatshouldyoudospanspan-idwhatshouldyoudospanspan-idwhatshouldyoudospanwhat-should-you-do"></a><span id="What_should_you_do__"></span><span id="what_should_you_do__"></span><span id="WHAT_SHOULD_YOU_DO__"></span>您该怎么办？
 
 
--   若要加快搜索符号，请使用断点和只要有可能的调试器命令中的限定的名称。 如果想要查看从一个已知的模块的符号，限定使用模块名称;如果您不知道该符号的位置，，使用非限定的名称。 对于本地变量和函数参数，使用**$** 用作模块名称 (例如， *$！MyVar*)。
+-   若要加快搜索符号，请使用断点和只要有可能的调试器命令中的限定的名称。 如果想要查看从一个已知的模块的符号，限定使用模块名称;如果您不知道该符号的位置，，使用非限定的名称。 对于本地变量和函数参数，使用 **$** 用作模块名称 (例如， *$！MyVar*)。
 -   若要诊断的原因的慢速符号加载，激活干扰符号加载 (**SYMOPT\_调试**) 通过使用 **-n**命令行选项或如果调试器已在运行，通过使用 **.symopt + 0x80000000**或 **！ 符号干扰**调试器扩展命令。
 -   若要防止调试器搜索中卸载的模块的符号，激活**SYMOPT\_否\_UNQUALIFIED\_加载**通过 **-snul**命令行选项或者，如果调试器已在运行，通过使用 **.symopt + 0x100**。
 -   若要显式加载所需的调试会话的模块，使用调试器命令如 **.reload**或**ld**。

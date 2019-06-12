@@ -27,7 +27,7 @@ ms.locfileid: "63341218"
 
 此外，如果端口驱动程序提供访问范围的值， *HwScsiFindAdapter*不能使用*HwContext*参数。 此类访问范围值通常伴随指示插环境的其他配置信息。 在此类环境中， *HwScsiFindAdapter*微型端口驱动程序后调用[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff552654)例程返回，因此*HwContext*指针将不再有效。 可以安全地使用唯一的驱动程序的接收端口驱动程序从零访问范围值然后，执行受支持的 Hba 自己扫描*HwContext*指针。
 
-如果输入[**端口\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff563900)不包含配置信息以外，以前由中的微型端口驱动程序提供[ **HW\_初始化\_数据 (SCSI)**](https://msdn.microsoft.com/library/windows/hardware/ff557456)， *HwScsiFindAdapter*可以使用返回值[ **ScsiPortGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff564624)或者，如果有必要，请将微型端口驱动程序定义的默认值为**AccessRanges**元素**BusInterruptLevel**或**BusInterruptVector**， **DmaChannel**或**DmaPort**如果 HBA 使用系统 DMA，和**InitiatorBusId**。
+如果输入[**端口\_配置\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff563900)不包含配置信息以外，以前由中的微型端口驱动程序提供[ **HW\_初始化\_数据 (SCSI)** ](https://msdn.microsoft.com/library/windows/hardware/ff557456)， *HwScsiFindAdapter*可以使用返回值[ **ScsiPortGetBusData** ](https://msdn.microsoft.com/library/windows/hardware/ff564624)或者，如果有必要，请将微型端口驱动程序定义的默认值为**AccessRanges**元素**BusInterruptLevel**或**BusInterruptVector**， **DmaChannel**或**DmaPort**如果 HBA 使用系统 DMA，和**InitiatorBusId**。
 
 *HwScsiFindAdapter*必须调用[ **ScsiPortValidateRange** ](https://msdn.microsoft.com/library/windows/hardware/ff564761)若要检查是否可以安全地使用这种微型端口驱动程序提供访问范围*之前*它将访问总线上的 HBA。 如果**ScsiPortValidateRange**返回**TRUE**，微型端口驱动程序可以调用[ **ScsiPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff564629)要映射的范围，并使用返回对的调用中的逻辑地址 **ScsiPortRead * * * Xxx*和/或 **ScsiPortWrite * * * Xxx*以确定它在 I/O 总线上是否都支持 HBA。 如果**ScsiPortValidateRange**返回**FALSE**，微型端口驱动程序必须尝试映射，并使用这些总线相对访问范围值。
 

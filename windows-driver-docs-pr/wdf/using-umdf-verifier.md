@@ -22,7 +22,7 @@ UMDF Verifier 到 UMDF 驱动程序代码中将导致失败*bug 检查*主机进
 
 -   创建内存转储文件，并将该文件保存到计算机的日志文件目录 (例如，%windir%\\System32\\LogFiles\\WUDF\\*Xxx*.dmp)。
 
-    **请注意**  UMDF 2.15 从开始，日志目录是 *%programdata%*\\Microsoft\\WDF。
+    **请注意**  UMDF 2.15 从开始，日志目录是 *%programdata%* \\Microsoft\\WDF。
 
      
 
@@ -55,7 +55,7 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 
 若要确定是否启用 UMDF 验证工具，设置断点的位置后驱动程序调用[ **WdfDriverCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547175) ，并使用[ **！ wdfdriverinfo**](https://msdn.microsoft.com/library/windows/hardware/ff565724)调试器扩展命令：
 
-**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;* **** **0x1**
+**!wdfkd.wdfdriverinfo** *&lt;your drivername&gt;*  **** **0x1**
 
 有关调试器扩展命令的详细信息，请参阅[基于框架的驱动程序的调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 

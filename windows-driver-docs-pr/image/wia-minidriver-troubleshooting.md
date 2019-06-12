@@ -17,7 +17,7 @@ ms.locfileid: "63343774"
 
 
 
-默认情况下，WIA 服务将记录错误到名为的文件*wiadebug.log*中**%** <em>windir</em> **%** 目录。 WIA 服务放入此文件中的信息可以在驱动程序开发过程是很有帮助。 下面的示例描述了典型的问题，并演示如何在中的信息*wiadebug.log*文件可用于查找问题的解决方案。
+默认情况下，WIA 服务将记录错误到名为的文件*wiadebug.log*中 **%** <em>windir</em> **%** 目录。 WIA 服务放入此文件中的信息可以在驱动程序开发过程是很有帮助。 下面的示例描述了典型的问题，并演示如何在中的信息*wiadebug.log*文件可用于查找问题的解决方案。
 
 开发人员编写的应用程序来测试正在开发的扫描程序驱动程序。 作为测试之一，开发人员尝试设置的扫描程序以每英寸点数 (dpi) 为 1200，但此操作会生成错误的通知。 查看 Wiadebug.log 文件显示如下信息：
 
@@ -52,7 +52,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 
 在注册表中的条目由控制日志记录级别。 对于 WIA，此密钥驻留在：
 
-**HKLM\\System\\CurrentControlSet\\Control\\StillImage\\Debug\\**<em>MODULE\_NAME</em>**\\DebugFlags**
+**HKLM\\System\\CurrentControlSet\\Control\\StillImage\\Debug\\** <em>MODULE\_NAME</em> **\\DebugFlags**
 
 在此示例中，模块\_名称是相应的二进制模块的名称。 对于 WIA 服务，这是*wiaservc.dll*。 中的值**设调试标志**控制日志记录级别。 下表中指定了三种设置：
 

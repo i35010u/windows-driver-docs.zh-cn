@@ -13,7 +13,7 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42529a7cd318f4110ce683eb3c0a96399e6d6f21
 ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/31/2019
 ms.locfileid: "56555339"
@@ -72,9 +72,9 @@ ms.locfileid: "56555339"
 
 ### <a name="filter-pipeline-property-bag"></a>筛选器管道属性包
 
-此外可以使用配置模块*筛选器管道属性包*来存储数据，或将信息传递给筛选器管道。 若要配置服务使用公开的属性包，配置模块必须导出**DrvPopulateFilterServices**方法。 此外，筛选器管道配置文件必须包括**&lt;FilterServiceProvider&gt;** 元素为每个服务。 提供程序模块必须实现和导出**DllCanUnloadNow**函数。 通常情况下，这些提供程序发布的属性包中的 COM 接口。 使用这些接口时，该提供程序必须保持加载。
+此外可以使用配置模块*筛选器管道属性包*来存储数据，或将信息传递给筛选器管道。 若要配置服务使用公开的属性包，配置模块必须导出**DrvPopulateFilterServices**方法。 此外，筛选器管道配置文件必须包括 **&lt;FilterServiceProvider&gt;** 元素为每个服务。 提供程序模块必须实现和导出**DllCanUnloadNow**函数。 通常情况下，这些提供程序发布的属性包中的 COM 接口。 使用这些接口时，该提供程序必须保持加载。
 
-另一个元素，  **&lt;OptionalFilterServiceProvider&gt;**，允许管理器以在服务提供程序 dll 不可用时继续打印作业的管道。 单个筛选器必须在没有可选的服务提供程序的情况下定义它们的行为。 否则为如果**&lt;FilterServiceProvider&gt;** 使用并且不能加载了 dll，作业将失败。 **&lt;OptionalFilterServiceProvider&gt;** 元素支持在 Windows 7 及更高版本。
+另一个元素，  **&lt;OptionalFilterServiceProvider&gt;** ，允许管理器以在服务提供程序 dll 不可用时继续打印作业的管道。 单个筛选器必须在没有可选的服务提供程序的情况下定义它们的行为。 否则为如果 **&lt;FilterServiceProvider&gt;** 使用并且不能加载了 dll，作业将失败。 **&lt;OptionalFilterServiceProvider&gt;** 元素支持在 Windows 7 及更高版本。
 
 下面的代码示例演示**DrvPopulateFilterServices**函数：
 
@@ -87,7 +87,7 @@ DrvPopulateFilterServices(
 
 有关上述函数的详细信息，请参阅[ **DrvPopulateFilterServices**](https://msdn.microsoft.com/library/windows/hardware/hh768268)。
 
-下面的代码示例显示的 XML 语法**&lt;FilterServiceProvider&gt;** 筛选器管道配置文件中的元素：
+下面的代码示例显示的 XML 语法 **&lt;FilterServiceProvider&gt;** 筛选器管道配置文件中的元素：
 
 ```xml
 <Filters>
@@ -101,7 +101,7 @@ DrvPopulateFilterServices(
 
 *交错*指 FixedPage 文档部件以及如何流式传输 XPS 文档的单独的资源部分。 筛选器管道在管道中的 XPS 文档接口创建的第一个筛选器的 XPS 文档对象模型，将无法再遵循交错 XPS 假脱机文件的顺序。 但是，使用 XPS 文档界面在管道中的最后一个筛选器可以在序列化 XPS 内容时要使用的管道的筛选器配置文件中指定交错的顺序。 选择最符合输出设备或输出文件的交错顺序可以提高后续文档处理的性能。
 
-以下示例筛选器是已修改，以便显示如何使用交错选项前面的示例筛选器配置文件的摘录。 虽然此示例演示这两个交错选项用于演示目的，真正的筛选器配置文件具有只有一个**&lt;Interleaving&gt;** 筛选器定义中的元素：
+以下示例筛选器是已修改，以便显示如何使用交错选项前面的示例筛选器配置文件的摘录。 虽然此示例演示这两个交错选项用于演示目的，真正的筛选器配置文件具有只有一个 **&lt;Interleaving&gt;** 筛选器定义中的元素：
 
 ```xml
     <Filter     dll="XDNUp.dll"

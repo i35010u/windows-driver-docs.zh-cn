@@ -78,10 +78,10 @@ dc2wmiparser [/f File] [/t Time]
 
 参数具有以下含义：
 
-<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> **/f***File*  
+<span id="_________fFile"></span><span id="_________ffile"></span><span id="_________FFILE"></span> * */f***File*  
 指定完整路径和要写入的日志文件的文件名。 将相对于当前目录中提取的相对路径。 如果省略此属性，将使用当前目录中的文件名称 dc2verifier.act。
 
-<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span>**/t***Time*  
+<span id="_tTime"></span><span id="_ttime"></span><span id="_TTIME"></span>* */t***Time*  
 指定的时间，以分钟为单位 DC2WMIParser 将继续运行。 如果*时间*等于零，DC2WMIParser 将记录已存储驱动程序验证程序的所有 WMI IRP 信息，然后退出。 如果*时间*设置为正值，DC2WMIParser 将继续以运行适用于指定长度的时间，存储的新信息到达时。 默认值为 0。
 
 ### <a name="span-idformatofdc2wmiparserlogfilesspanspan-idformatofdc2wmiparserlogfilesspanformat-of-dc2wmiparser-log-files"></a><span id="format_of_dc2wmiparser_log_files"></span><span id="FORMAT_OF_DC2WMIPARSER_LOG_FILES"></span>DC2WMIParser 日志文件的格式

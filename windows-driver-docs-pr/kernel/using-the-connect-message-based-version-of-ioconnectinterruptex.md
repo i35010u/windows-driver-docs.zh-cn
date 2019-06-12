@@ -25,7 +25,7 @@ ms.locfileid: "63372302"
 
 -   *参数 * * *-&gt;MessageBased.MessageServiceRoutine** 指向[ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)例程，同时*参数 * * *-&gt;MessageBased.ServiceContext** 指定系统将作为传递的值*ServiceContext*参数*InterruptMessageService*。 该驱动程序可以使用此传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
 
--   该驱动程序还可以指定回退*InterruptMessageService*例程中*参数 ***-&gt;MessageBased.FallBackServiceRoutine**。如果设备具有基于行的中断，但没有收到消息信号中断，系统将改为注册*InterruptMessageService*例程，以服务的基于线条的中断。在这种情况下，系统将传递*参数 * * *-&gt;MessageBased.ServiceContext** 作为*ServiceContext*参数[ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)。 **IoConnectInterruptEx**更新*参数 * * *-&gt;版本** 到 CONNECT\_行\_根据是否已注册的回退例程。
+-   该驱动程序还可以指定回退*InterruptMessageService*例程中*参数 * **-&gt;MessageBased.FallBackServiceRoutine**。如果设备具有基于行的中断，但没有收到消息信号中断，系统将改为注册*InterruptMessageService*例程，以服务的基于线条的中断。在这种情况下，系统将传递*参数 * * *-&gt;MessageBased.ServiceContext** 作为*ServiceContext*参数[ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)。 **IoConnectInterruptEx**更新*参数 * * *-&gt;版本** 到 CONNECT\_行\_根据是否已注册的回退例程。
 
 -   *参数 * * *-&gt;MessageBased.ConnectionContext** 指向一个变量来接收指向任一[ **IO\_中断\_消息\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff550576) (对于*InterruptMessageService*) 结构或[ **KINTERRUPT** ](https://msdn.microsoft.com/library/windows/hardware/ff554237)结构 (为*InterruptService*). 该驱动程序可以使用收到的指针来删除 ISR 有关详细信息，请参阅[删除 ISR](removing-an-isr.md)。
 

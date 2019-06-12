@@ -16,7 +16,7 @@ ms.locfileid: "63342263"
 # <a name="arraylabel-template-directive"></a>ArrayLabel 模板指令
 
 
- **\*ArrayLabel**指令在模板中定义的标签的数组。
+**\*ArrayLabel**指令在模板中定义的标签的数组。
 
  
 

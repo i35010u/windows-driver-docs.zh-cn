@@ -72,10 +72,10 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
- *&lt;USB 客户端驱动程序验证工具设置&gt;* 注册表条目采用 DWORD 值。
+*&lt;USB 客户端驱动程序验证工具设置&gt;* 注册表条目采用 DWORD 值。
 如果您添加、 修改或删除任何设置，必须重新枚举系统以应用设置的设备。
 
-此表显示了可能的值为 *&lt;USB 客户端驱动程序验证工具设置&gt;*。 设置适用于下指定的客户端驱动程序**services**密钥。
+此表显示了可能的值为 *&lt;USB 客户端驱动程序验证工具设置&gt;* 。 设置适用于下指定的客户端驱动程序**services**密钥。
 
 <table>
 <colgroup>

@@ -36,7 +36,7 @@ I/O 管理器创建*驱动程序对象*每个驱动程序已安装并加载。 �
 
 ![说明驱动程序对象的关系图](images/24drvobj.png)
 
-I/O 管理器定义的驱动程序对象类型，并使用驱动程序对象来注册并跟踪有关加载的映像的驱动程序的信息。 请注意，调度入口点 (**DDDispatch * * * Xxx*通过**DDDispatch * **Yyy*) 中的驱动程序对象相对应的主要功能代码 (** IRP\_MJ\_* XXX * * *) 在 I/O 堆栈位置的 Irp 传递。
+I/O 管理器定义的驱动程序对象类型，并使用驱动程序对象来注册并跟踪有关加载的映像的驱动程序的信息。 请注意，调度入口点 ( **DDDispatch * * * Xxx*通过**DDDispatch * **Yyy*) 中的驱动程序对象相对应的主要功能代码 (** IRP\_MJ\_* XXX * * *) 在 I/O 堆栈位置的 Irp 传递。
 
 I/O 管理器首先将每个 IRP 传送给驱动程序所提供的调度例程。 最低级别驱动程序的调度例程通常调用 I/O 支持例程 ([**IoStartPacket**](https://msdn.microsoft.com/library/windows/hardware/ff550370)) 来排队 （或传递） 具有有效的参数，驱动程序的每个 IRP [ *StartIo* ](https://msdn.microsoft.com/library/windows/hardware/ff563858)例程。 *StartIo*例程启动特定设备上请求的 I/O 操作。 更高级别的驱动程序通常不具有*StartIo*例程，但它们可以。
 

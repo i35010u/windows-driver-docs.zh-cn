@@ -32,7 +32,7 @@ ms.locfileid: "63334110"
 
 
 <span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-地址**\_设备\_对象**结构。
+地址 **\_设备\_对象**结构。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 

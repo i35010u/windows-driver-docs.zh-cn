@@ -230,8 +230,8 @@ ms.locfileid: "63387263"
 
 2. **%Custompagesize**仅当满足以下条件的所有三个支持驱动程序功能：
     1. PPD 文件包含 **\*CustomPageSize**功能。
-    2.  **\*PPD Adobe**关键字的值大于或等于 4.3，或 **\*UseHWMargin**:**False**指定指示在滚动送纸的设备。
-    3.  **\*PageSize** PPD 功能当前所选的选项是 CustomPageSize。
+    2. **\*PPD Adobe**关键字的值大于或等于 4.3，或 **\*UseHWMargin**:**False**指定指示在滚动送纸的设备。
+    3. **\*PageSize** PPD 功能当前所选的选项是 CustomPageSize。
 
 3. 仅当已启用后台处理程序 EMF 后台处理时，才支持此功能。
 
@@ -253,7 +253,7 @@ ms.locfileid: "63387263"
     当支持"手册"选项，则设置 **%pagepersheet**到"手册"驱动程序功能可能会导致以下更改：
 
     1. 如果 **%metafilespooling**驱动程序功能为"False"，它将重置为"True"。
-    2. 如果**\*双工**PPD 功能设置为无**\*双工**功能将重置为第一个非单纯形选项 PPD 文件中定义。
+    2. 如果 **\*双工**PPD 功能设置为无 **\*双工**功能将重置为第一个非单纯形选项 PPD 文件中定义。
 
 6. 中的格式指定"EPS"(内嵌的 PostScript)，除了 **%outputformat**驱动程序功能根据以下两个特征进行分类：
     1. 是输出 PostScript 代码独立于页面顺序？

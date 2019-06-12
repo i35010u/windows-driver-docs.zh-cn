@@ -85,7 +85,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ....
 ```
 
-在上面的输出`ffffe000021bf000`是地址**\_中心\_端口\_数据**结构。 传递到此地址 **！ usbhubpd**。
+在上面的输出`ffffe000021bf000`是地址 **\_中心\_端口\_数据**结构。 传递到此地址 **！ usbhubpd**。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubpd ffffe000021bf000

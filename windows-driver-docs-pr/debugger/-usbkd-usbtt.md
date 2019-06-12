@@ -53,7 +53,7 @@ Usbkd.dll
 
 在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)若要获取的地址`GlobalTtListHead`。 传递到该地址[ **！ usbkd.usblist**](-usbkd-usblist.md)，随后会显示的地址**\_事务\_转换器**结构。
+单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://msdn.microsoft.com/library/windows/hardware/dn367072)若要获取的地址`GlobalTtListHead`。 传递到该地址[ **！ usbkd.usblist**](-usbkd-usblist.md)，随后会显示的地址 **\_事务\_转换器**结构。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 

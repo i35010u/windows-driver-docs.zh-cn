@@ -73,7 +73,7 @@ mod*!functionC=Person7
 Followup:  Person3
 ```
 
-根据该文件，"Person3"拥有**module2 ！ functionB**，并"Person4"拥有**module2 ！ funct\\**<em>。这两个这些字符串匹配的参数传递给 **！ 所有者</em>*，因此使用更完整的匹配项。
+根据该文件，"Person3"拥有**module2 ！ functionB**，并"Person4"拥有**module2 ！ funct\\** <em>。这两个这些字符串匹配的参数传递给 * *！ 所有者</em>* ，因此使用更完整的匹配项。
 
 ### <a name="span-idtriageiniandanalyzespanspan-idtriageiniandanalyzespan-triageini-and-analyze"></a><span id="triage_ini_and__analyze"></span><span id="TRIAGE_INI_AND__ANALYZE"></span> Triage.ini 和 ！ 分析
 
@@ -89,7 +89,7 @@ Followup:  Person3
 
 假设为第二个帧**module3 ！ anotherFunction**。 调试器 does 看到的条目**module3**，为没有匹配项，但**anotherFunction**此模块中。 接下来，调试器将继续执行到第三个帧。
 
-假设为第三个帧**module2 ！ functionC**。 调试器首先查找完全匹配，但不是存在此类匹配。 调试器然后修剪函数名称，并发现**module2 ！ funct\\*** Triage.ini 中。 此匹配结束搜索，因为调试器确定所有者是"Person4"。
+假设为第三个帧**module2 ！ functionC**。 调试器首先查找完全匹配，但不是存在此类匹配。 调试器然后修剪函数名称，并发现**module2 ！ funct\\** * Triage.ini 中。 此匹配结束搜索，因为调试器确定所有者是"Person4"。
 
 调试器就会显示类似于下面的示例的输出。
 
@@ -109,13 +109,13 @@ Followup: Person4
 ---------
 ```
 
-更完整的匹配项优先于较短的匹配项。 但是，与匹配的模块名称是始终优先于函数名称匹配。 如果**module2 ！ funct\\*** 尚未在 Triage.ini 文件中，调试器将所选**module2 ！\\*** 作为匹配项。 如果这两个**module2 ！ funct\\*** 和**module2 ！\\*** 已删除**mod\*！ functionC**已选择。
+更完整的匹配项优先于较短的匹配项。 但是，与匹配的模块名称是始终优先于函数名称匹配。 如果**module2 ！ funct\\** * 尚未在 Triage.ini 文件中，调试器将所选**module2 ！\\** * 作为匹配项。 如果这两个**module2 ！ funct\\** * 和**module2 ！\\** * 已删除**mod\*！ functionC**已选择。
 
 ### <a name="span-idspecialtriageinisyntaxspanspan-idspecialtriageinisyntaxspanspecial-triageini-syntax"></a><span id="special_triage_ini_syntax"></span><span id="SPECIAL_TRIAGE_INI_SYNTAX"></span>特殊 Triage.ini 语法
 
-如果省略了感叹号和函数名称或添加 **！\\*** 后的模块名称，该模块中的所有函数来都指示。 如果还分别指定此模块内的某个函数，则更精确的规范优先。
+如果省略了感叹号和函数名称或添加 **！\\** * 后的模块名称，该模块中的所有函数来都指示。 如果还分别指定此模块内的某个函数，则更精确的规范优先。
 
-如果"default"用作模块名称或函数名称，它相当于通配符字符。 例如， **nt ！\\*** 相同**nt ！ 默认**，和**默认**等同于 * *\*！\\***.
+如果"default"用作模块名称或函数名称，它相当于通配符字符。 例如， **nt ！\\** * 相同**nt ！ 默认**，和**默认**等同于 * *\*！\\***.
 
 如果进行了匹配项，但该单词**忽略**显示右侧的等号 （=），调试器会继续到堆栈中的下一帧。
 

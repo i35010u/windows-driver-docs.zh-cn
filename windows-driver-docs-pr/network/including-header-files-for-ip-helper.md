@@ -17,7 +17,7 @@ ms.locfileid: "63327779"
 # <a name="including-header-files-for-ip-helper"></a>包含 IP 帮助程序的标头文件
 
 
-使用内核模式 IP 帮助程序函数、 MIB 结构和 Netioapi.h 中声明的枚举的驱动程序代码必须具有**\#包括**语句按以下顺序。
+使用内核模式 IP 帮助程序函数、 MIB 结构和 Netioapi.h 中声明的枚举的驱动程序代码必须具有 **\#包括**语句按以下顺序。
 
 ```C++
 #include <ntddk.h>

@@ -32,8 +32,8 @@ ms.locfileid: "63338814"
 ## <a name="span-idddkmetausesourceserverdbgspanspan-idddkmetausesourceserverdbgspanparameters"></a><span id="ddk_meta_use_source_server_dbg"></span><span id="DDK_META_USE_SOURCE_SERVER_DBG"></span>参数
 
 
-<span id="______________"></span> **+**   
-使现有的源路径，会予以保留，并 **; srv\\*** 若要追加到末尾。 如果**+** 是未使用，将替换现有的源路径。
+<span id="______________"></span> **+**    
+使现有的源路径，会予以保留，并 **; srv\\** * 若要追加到末尾。 如果 **+** 是未使用，将替换现有的源路径。
 
 <span id="_______Paths______"></span><span id="_______paths______"></span><span id="_______PATHS______"></span> *Paths*   
 指定一个或多个附加路径; 要追加到新的源路径的末尾。

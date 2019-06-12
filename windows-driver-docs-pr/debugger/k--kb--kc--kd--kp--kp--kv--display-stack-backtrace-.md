@@ -22,7 +22,7 @@ ms.locfileid: "63367231"
 # <a name="k-kb-kc-kd-kp-kp-kv-display-stack-backtrace"></a>k、kb、kc、kd、kp、kP、kv（显示堆栈回溯）
 
 
-<strong>K*\\</strong>** 命令将显示给定线程，以及相关信息的堆栈帧...
+<strong>K *\\</strong>* * 命令将显示给定线程，以及相关信息的堆栈帧...
 
 用户模式下，x86 处理器
 

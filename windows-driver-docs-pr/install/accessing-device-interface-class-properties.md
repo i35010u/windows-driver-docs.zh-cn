@@ -34,7 +34,7 @@ Windows Server 2003、 Windows XP 和 Windows 2000 还支持大部分设备接�
 
 -   设置*ClassGuid*到表示要为其检索默认接口的设备接口类的 GUID。
 
--   设置 * 枚举器 ***NULL**。
+-   设置 * 枚举器  **NULL** 。
 
 -   设置*hwndParent*到**NULL**。
 

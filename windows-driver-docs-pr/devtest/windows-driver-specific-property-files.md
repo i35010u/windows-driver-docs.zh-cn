@@ -22,13 +22,13 @@ ms.locfileid: "63379141"
 
  
 
-<span id="__WDKContentRoot_"></span><span id="__wdkcontentroot_"></span><span id="__WDKCONTENTROOT_"></span>**$(WDKContentRoot)**  
-默认情况下，为在注册表中定义 WDKContentRoot: <strong>$(注册表： HKEY\_本地\_机\\软件\\Microsoft\\Windows 工具包\\WDK@WDKContentRoot)</strong>它指向 **%programfiles%\\Windows 工具包\\*版本 * * *。
+<span id="__WDKContentRoot_"></span><span id="__wdkcontentroot_"></span><span id="__WDKCONTENTROOT_"></span> **$(WDKContentRoot)**  
+默认情况下，为在注册表中定义 WDKContentRoot: <strong>$(注册表： HKEY\_本地\_机\\软件\\Microsoft\\Windows 工具包\\WDK@WDKContentRoot)</strong>它指向 * *%programfiles%\\Windows 工具包\\* 版本 * * *。
 
 $(WDKContentRoot)\\生成将有生成扩展插件是为生成驱动程序所需的所有核心。
 
 <span id="WindowsDriver.Default.props"></span><span id="windowsdriver.default.props"></span><span id="WINDOWSDRIVER.DEFAULT.PROPS"></span>**WindowsDriver.Default.props**  
-定义使用的任何驱动程序的版本控制常量。 例如，  **&lt; \_NT\_目标\_版本\_WIN7&gt;0x0601&lt;/\_NT\_目标\_版本\_WIN7&gt;**。
+定义使用的任何驱动程序的版本控制常量。 例如，  **&lt; \_NT\_目标\_版本\_WIN7&gt;0x0601&lt;/\_NT\_目标\_版本\_WIN7&gt;** 。
 
 <span id="WindowsDriver.Common.props"></span><span id="windowsdriver.common.props"></span><span id="WINDOWSDRIVER.COMMON.PROPS"></span>**WindowsDriver.Common.props**  
 生成所有驱动程序的内核模式和用户模式下所需的常见设置。
@@ -46,19 +46,19 @@ $(WDKContentRoot)\\生成将有生成扩展插件是为生成驱动程序所需�
 此属性文件导入特定的内核模式驱动程序类型属性文件 (例如，WindowsDriver.8.1.KernelMode.KMDF.props)
 
 <span id="WindowsDriver.KernelMode.KMDF.props"></span><span id="windowsdriver.kernelmode.kmdf.props"></span><span id="WINDOWSDRIVER.KERNELMODE.KMDF.PROPS"></span>**WindowsDriver.KernelMode.KMDF.props**  
-这些属性设置包含需要应用仅当要构建 KMDF 驱动程序时的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**KMDF**，如下面的示例：*&lt;DriverType&gt;KMDF&lt;/DriverType&gt;*
+这些属性设置包含需要应用仅当要构建 KMDF 驱动程序时的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**KMDF**，如下面的示例： *&lt;DriverType&gt;KMDF&lt;/DriverType&gt;*
 
 <span id="WindowsDriver.KernelMode.Wdm.props"></span><span id="windowsdriver.kernelmode.wdm.props"></span><span id="WINDOWSDRIVER.KERNELMODE.WDM.PROPS"></span>**WindowsDriver.KernelMode.Wdm.props**  
-这些属性设置包含需要仅在生成 WDM 驱动程序时应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**WDM**，如下面的示例：*&lt;DriverType&gt;wdm&lt;/DriverType&gt;*。
+这些属性设置包含需要仅在生成 WDM 驱动程序时应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**WDM**，如下面的示例： *&lt;DriverType&gt;wdm&lt;/DriverType&gt;* 。
 
 <span id="WindowsDriver.KernelMode.Gdidriver.props"></span><span id="windowsdriver.kernelmode.gdidriver.props"></span><span id="WINDOWSDRIVER.KERNELMODE.GDIDRIVER.PROPS"></span>**WindowsDriver.KernelMode.Gdidriver.props**  
-这些属性设置包含需要仅在生成 GDI 驱动程序时应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**Gdidriver**，如下面的示例：*&lt;DriverType&gt;Gdidriver&lt;/DriverType&gt;*。
+这些属性设置包含需要仅在生成 GDI 驱动程序时应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**Gdidriver**，如下面的示例： *&lt;DriverType&gt;Gdidriver&lt;/DriverType&gt;* 。
 
 <span id="WindowsDriver.KernelMode.ExportDriver.props"></span><span id="windowsdriver.kernelmode.exportdriver.props"></span><span id="WINDOWSDRIVER.KERNELMODE.EXPORTDRIVER.PROPS"></span>**WindowsDriver.KernelMode.ExportDriver.props**  
-这些属性设置包含需要时才应用正在生成导出驱动程序的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**ExportDriver**，如下面的示例：*&lt;DriverType&gt;ExportDriver&lt;/DriverType&gt;*。
+这些属性设置包含需要时才应用正在生成导出驱动程序的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**ExportDriver**，如下面的示例： *&lt;DriverType&gt;ExportDriver&lt;/DriverType&gt;* 。
 
 <span id="WindowsDriver.KernelMode.Miniport.props"></span><span id="windowsdriver.kernelmode.miniport.props"></span><span id="WINDOWSDRIVER.KERNELMODE.MINIPORT.PROPS"></span>**WindowsDriver.KernelMode.Miniport.props**  
-这些属性设置是生成微型端口驱动程序时必须应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定驱动程序类型为**微型端口**，如下面的示例：*&lt;DriverType&gt;微型端口&lt;/DriverType&gt;*。
+这些属性设置是生成微型端口驱动程序时必须应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定驱动程序类型为**微型端口**，如下面的示例： *&lt;DriverType&gt;微型端口&lt;/DriverType&gt;* 。
 
 <span id="WindowsDriver.LateEvaluation.props_"></span><span id="windowsdriver.lateevaluation.props_"></span><span id="WINDOWSDRIVER.LATEEVALUATION.PROPS_"></span>**WindowsDriver.LateEvaluation.props**   
 仅限内部使用。 不要编辑或使用。
@@ -70,7 +70,7 @@ $(WDKContentRoot)\\生成将有生成扩展插件是为生成驱动程序所需�
 这些属性设置是生成仅任何用户模式驱动程序所需的常见设置。 换而言之，不适用于这些内核模式驱动程序和应用程序的设置。
 
 <span id="WindowsDriver.UserMode.UMDF"></span><span id="windowsdriver.usermode.umdf"></span><span id="WINDOWSDRIVER.USERMODE.UMDF"></span>**WindowsDriver.UserMode.UMDF**  
-这些属性设置是生成 UMDF 驱动程序时必须应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**UMDF**，如下面的示例：*&lt;DriverType&gt;UMDF&lt;/DriverType&gt;*。
+这些属性设置是生成 UMDF 驱动程序时必须应用的特殊设置。 使用 MSBuild **$(DriverType)** 属性指定的驱动程序类型**UMDF**，如下面的示例： *&lt;DriverType&gt;UMDF&lt;/DriverType&gt;* 。
 
  
 

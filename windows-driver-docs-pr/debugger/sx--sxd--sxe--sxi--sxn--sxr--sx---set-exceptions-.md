@@ -37,10 +37,10 @@ sxr
 ## <a name="span-idddkcmdsetexceptionsdbgspanspan-idddkcmdsetexceptionsdbgspanparameters"></a><span id="ddk_cmd_set_exceptions_dbg"></span><span id="DDK_CMD_SET_EXCEPTIONS_DBG"></span>参数
 
 
-<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span>**-c "**<em>Cmd1</em>**"**  
+<span id="-c__Cmd1_"></span><span id="-c__cmd1_"></span><span id="-C__CMD1_"></span> **-c "** <em>Cmd1</em> **"**  
 指定在出现异常或事件时执行的命令。 第一次的机会来处理此异常发生，而不考虑此异常是否进入调试器时执行此命令。 必须将*Cmd1*引号引起来的字符串。 此字符串可以包含多个命令，之间用分号分隔。 -C 和带引号的命令字符串之间的空间是可选的。
 
-<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span>**-c2"**<em>Cmd2</em>**"**  
+<span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span> **-c2"** <em>Cmd2</em> **"**  
 指定如果异常或事件发生，并且不处理第一次机会上执行的命令。 第二次机会来处理此异常发生，而不考虑此异常是否进入调试器时执行此命令。 必须将*Cmd2*引号引起来的字符串。 此字符串可以包含多个命令，之间用分号分隔。 空间-c2 之间和带引号的命令字符串是可选的。
 
 <span id="_______-h______"></span><span id="_______-H______"></span> **-h**   
@@ -52,7 +52,7 @@ sxr
 <span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span> *事件*   
 指定命令作用的事件。 这些事件由短缩写标识。 有关事件的列表，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
 
-<span id="______________"></span> **\\***   
+<span id="______________"></span> **\\** *   
 影响的不否则显式命名的所有异常**sx**。 显式命名的异常的列表，请参阅[控制异常和事件](controlling-exceptions-and-events.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境

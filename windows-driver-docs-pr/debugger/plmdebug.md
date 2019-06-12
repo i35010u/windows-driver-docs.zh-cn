@@ -82,10 +82,10 @@ plmdebug /activateBgTaskTaskId
 <span id="________disableDebug_Package"></span><span id="________disabledebug_package"></span><span id="________DISABLEDEBUG_PACKAGE"></span> **/disableDebug** *Package*  
 递减调试引用计数的包。
 
-<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span> **/enumerateBgTasks***Package*  
+<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span> * */enumerateBgTasks***Package*  
 枚举包的后台任务 id。
 
-<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span> **/activateBgTask***TaskId*  
+<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span> * */activateBgTask***TaskId*  
 激活后台任务。 请注意，可使用 PLMDebug 激活并不是所有后台任务。
 
 <a name="remarks"></a>备注

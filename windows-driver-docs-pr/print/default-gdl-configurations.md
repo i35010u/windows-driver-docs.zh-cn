@@ -21,7 +21,7 @@ ms.locfileid: "63384954"
 # <a name="default-gdl-configurations"></a>默认的 GDL 配置
 
 
-如果客户端不具有任何特定的配置，它可以请求创建并返回通过调用默认配置的分析器**GetDefaultConfig()**。 分析器通过将默认值分配给每个参数创建的默认配置。 通过使用指定的默认值 **\*DefaultOption**指令。  **\*DefaultOption**指令为的子入口**\*功能**构造。 **\*DefaultOption**应指定为其值将出现在其中一个构造标记之一**\*选项**构造。 有关详细信息 **\*DefaultOption**， **\*功能**，以及**\*选项**，请参阅[GDL指令的配置](gdl-directives-for-configurations.md)
+如果客户端不具有任何特定的配置，它可以请求创建并返回通过调用默认配置的分析器**GetDefaultConfig()** 。 分析器通过将默认值分配给每个参数创建的默认配置。 通过使用指定的默认值 **\*DefaultOption**指令。 **\*DefaultOption**指令为的子入口 **\*功能**构造。 **\*DefaultOption**应指定为其值将出现在其中一个构造标记之一 **\*选项**构造。 有关详细信息 **\*DefaultOption**， **\*功能**，以及 **\*选项**，请参阅[GDL指令的配置](gdl-directives-for-configurations.md)
 
 例如，假定天气参数的默认值是 Sunny。 然后，可以使用下面的代码示例来定义默认值。
 
@@ -34,7 +34,7 @@ ms.locfileid: "63384954"
 }
 ```
 
-如果 **\*DefaultOption**指令缺失，分析器将假定的第一个**\*选项**是默认值。
+如果 **\*DefaultOption**指令缺失，分析器将假定的第一个 **\*选项**是默认值。
 
 此外可以[更改默认 GDL 配置](changing-the-default-gdl-configuration.md)。
 

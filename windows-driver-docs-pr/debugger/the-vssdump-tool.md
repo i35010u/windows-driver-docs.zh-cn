@@ -29,7 +29,7 @@ ms.locfileid: "63366201"
 
 SSIndex 接受允许您从任何位置运行该脚本还可以单独指定源文件和.pdb 文件的位置的参数。 这会十分有用，如果源保存在从.pdb 文件输出的另一个位置。 例如：
 
-**ssindex.cmd -server=vss -source=c:\\**<em>source</em> **-symbols=c:\\**<em>outputdir</em>
+**ssindex.cmd -server=vss -source=c:\\** <em>source</em> **-symbols=c:\\** <em>outputdir</em>
 
 此外可以使用环境变量来指定这些目录。 使用？ 或-?? 有关详细信息的命令行选项。
 
@@ -72,34 +72,34 @@ VSSDump 还可独立诊断源索引期间遇到的问题。 语法是按如下�
 
 *选项*可以是下列选项中的任意组合。
 
-<span id="-a"></span><span id="-A"></span>**-a**  
+<span id="-a"></span><span id="-A"></span> **-a**  
 将导致所有项目，以进行搜索，而不是限制到当前项目。 此选项不能使用与 **-p**选项。
 
-<span id="-p_ProjectName"></span><span id="-p_projectname"></span><span id="-P_PROJECTNAME"></span>**-p** *ProjectName*  
+<span id="-p_ProjectName"></span><span id="-p_projectname"></span><span id="-P_PROJECTNAME"></span> **-p** *ProjectName*  
 将导致*VSSDump*以将其搜索限制到指定的项目*ProjectName*。 如果此选项不存在，则使用当前项目。 此选项不能使用与 **-a**选项。
 
-<span id="-d_RootDirectory"></span><span id="-d_rootdirectory"></span><span id="-D_ROOTDIRECTORY"></span>**-d** *RootDirectory*  
+<span id="-d_RootDirectory"></span><span id="-d_rootdirectory"></span><span id="-D_ROOTDIRECTORY"></span> **-d** *RootDirectory*  
 将导致*VSSDump*以将其搜索限制为指定的根目录*RootDirectory*。 如果没有此选项，则使用当前目录。
 
-<span id="-l_Label"></span><span id="-l_label"></span><span id="-L_LABEL"></span>**-l** *Label*  
+<span id="-l_Label"></span><span id="-l_label"></span><span id="-L_LABEL"></span> **-l** *Label*  
 将导致*VSSDump*若要列出带有标签与匹配指定的那些文件*标签*。
 
 <span id="VSSDump-v_SharePath"></span><span id="vssdump-v_sharepath"></span><span id="VSSDUMP-V_SHAREPATH"></span>*VSSDump***-v** *SharePath*  
 指定虚拟 SourceSafe 数据库的位置位于*SharePath*。 此选项可重写 SSDIR 环境变量中指定的路径。
 
-<span id="-r"></span><span id="-R"></span>**-r**  
+<span id="-r"></span><span id="-R"></span> **-r**  
 将导致*VSSDump*搜索子目录以递归方式。
 
-<span id="-f"></span><span id="-F"></span>**-f**  
+<span id="-f"></span><span id="-F"></span> **-f**  
 将导致*VSSDump*到列表而不列出文件本身包含源文件的目录。
 
-<span id="-i"></span><span id="-I"></span>**-i**  
+<span id="-i"></span><span id="-I"></span> **-i**  
 将导致*VSSDump*以忽略当前目录，并列出整个项目。 此选项不能使用与 **-r**。
 
-<span id="-s"></span><span id="-S"></span>**-s**  
+<span id="-s"></span><span id="-S"></span> **-s**  
 将导致*VSSDump*输出格式设置为用于脚本文件。
 
-<span id="-c"></span><span id="-C"></span>**-c**  
+<span id="-c"></span><span id="-C"></span> **-c**  
 将导致*VSSDump*以显示虚拟 SourceSafe 配置信息。
 
 

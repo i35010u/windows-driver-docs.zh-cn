@@ -478,7 +478,7 @@ function CompleteHandler(task) {
 
 如果收到的短信被检测为不运营商通知，请验证管理帐户预配的元数据中的短信通知的自定义筛选规则。 有关预配的元数据的详细信息，请参阅[帐户预配](account-provisioning.md)。
 
-具体而言，如果帐户预配的元数据指定发件人的电话号码，验证的数字格式指定与匹配的接收的消息中通过使用 SMS Api。 若要验证这正确匹配，暂时更改到的模式**\[ ^ \] \\*** 来匹配来自该发件人的所有消息。
+具体而言，如果帐户预配的元数据指定发件人的电话号码，验证的数字格式指定与匹配的接收的消息中通过使用 SMS Api。 若要验证这正确匹配，暂时更改到的模式 **\[ ^ \] \\** * 来匹配来自该发件人的所有消息。
 
 ## <a name="span-idsampspanspan-idsampspansample-backgroundtaskjs-file"></a><span id="samp"></span><span id="SAMP"></span>示例 backgroundtask.js 文件
 
