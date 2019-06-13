@@ -10,12 +10,12 @@ keywords:
 - 签名 WDK，验证码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8363c07338a3b5098f4acc673a4883409d22c95b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40529ece337b1b32c1b3107204b933f3bb2f0eb1
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374579"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041374"
 ---
 # <a name="authenticode-digital-signatures"></a>验证码数字签名
 
@@ -30,9 +30,9 @@ ms.locfileid: "63374579"
 
 -   带有嵌入签名证书，签名过程中嵌入的驱动程序文件 nonexecution 一部分中的数字签名。 有关此过程的详细信息，请参阅[驱动程序文件中嵌入签名](embedded-signatures-in-a-driver-file.md)。
 
--   使用数字签名[编录文件](catalog-files.md)(*.cat*)，则签名过程需要在每个文件的内容从生成文件哈希值[驱动程序包](driver-packages.md)。 此哈希值包含在目录文件。 使用嵌入式签名然后签名的编录文件。 这样一来，目录文件是一种分离签名。
+-   使用数字签名[编录文件](catalog-files.md)( *.cat*)，则签名过程需要在每个文件的内容从生成文件哈希值[驱动程序包](driver-packages.md)。 此哈希值包含在目录文件。 使用嵌入式签名然后签名的编录文件。 这样一来，目录文件是一种分离签名。
 
-**请注意**  [硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)具有不同的设备类型的测试类别。 可以在找到的测试类别列表[认证测试引用](https://msdn.microsoft.com/library/windows/hardware/hh998741)。 如果此列表中包含的设备类型的测试类别，应获取软件发行者[WHQL 版本签名](whql-release-signature.md)有关[驱动程序包](driver-packages.md)但是，如果 HCK 不具有适用于的测试计划设备类型的软件发布者可以通过使用 Microsoft Authenticode 技术签名驱动程序包。 有关此过程的详细信息，请参阅[公开发布的版本的签名驱动程序](signing-drivers-for-public-release.md)。
+**请注意**  [硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)具有不同的设备类型的测试类别。 可以在找到的测试类别列表[HLK API 参考](https://docs.microsoft.com/windows-hardware/test/hlk/api/hlk-api-reference)。 如果此列表中包含的设备类型的测试类别，应获取软件发行者[WHQL 版本签名](whql-release-signature.md)有关[驱动程序包](driver-packages.md)但是，如果 HCK 不具有适用于的测试计划设备类型的软件发布者可以通过使用 Microsoft Authenticode 技术签名驱动程序包。 有关此过程的详细信息，请参阅[公开发布的版本的签名驱动程序](signing-drivers-for-public-release.md)。
 
  
 

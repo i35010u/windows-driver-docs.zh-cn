@@ -4,14 +4,14 @@ description: 介绍如何启用加载测试签名驱动程序使用 BCDEdit 工�
 ms.assetid: 4898595e-20c9-4607-aad7-792f7d1074e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7534761cda1bb838dded2a94f445cf373ada54
-ms.sourcegitcommit: 780c4086ed59331b96bb4f6b5939cf25b9608aed
+ms.openlocfilehash: dcab1f049a0ec4bf7e85b679aac723a593245338
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65561694"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041373"
 ---
-# <a name="enable-loading-of-test-signed-drivers"></a>启用加载的测试签名驱动程序
+# <a name="enable-loading-of-test-signed-drivers"></a>允许加载已进行测试签名的驱动程序
 
 默认情况下，Windows 不会加载测试签名的内核模式驱动程序。 若要更改此行为并启用测试签名的驱动程序加载，请使用启动配置数据编辑器，BCDEdit.exe，若要启用或禁用 TESTSIGNING，启动配置选项。 必须具有管理员权限才能启用此选项。
 
@@ -54,6 +54,9 @@ Bcdedit.exe -set TESTSIGNING OFF
 ## <a name="behavior-of-windows-when-loading-test-signed-code-is-enabled"></a>启用 Windows 加载测试签名代码时的行为
 
 启用加载测试签名的代码后，Windows 将执行以下操作：
+
+-   显示一个水印文本中的"测试模式"全部四个角的桌面，以提醒用户系统已启用测试签名。
+    **请注意**  从 Windows 7 开始，Windows 仅在桌面的右下角将显示此水印。
 
 -   显示以提醒用户系统已启用测试签名在桌面的左下角中的水印文本"测试模式"。
 

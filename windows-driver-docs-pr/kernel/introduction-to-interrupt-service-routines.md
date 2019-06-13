@@ -12,12 +12,12 @@ keywords:
 - InterruptMessageService
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d595cdac33579fa225695380362379b4a6e66e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9313c319a2811550fc67331c3381566b96da272a
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340975"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041368"
 ---
 # <a name="introduction-to-interrupt-service-routines"></a>中断服务例程简介
 
@@ -34,6 +34,7 @@ ms.locfileid: "63340975"
 
 -   该驱动程序可以注册[ *InterruptMessageService* ](https://msdn.microsoft.com/library/windows/hardware/ff547940)例程来处理消息信号中断。 系统将驱动程序提供的上下文值和中断消息的消息 ID 传递。
 
+有关注册设备的中断提供服务的 InterruptService 或 InterruptMessageService 例程的详细信息，请参阅[简介 Message-Signaled 中断](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts)。
  
 
  

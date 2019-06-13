@@ -6,12 +6,12 @@ keywords:
 - MB 基站配合信息查询中，移动宽带基站配合信息查询
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c11eb0217aadc3e82916e6d95600a37f57705dc
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 40fe784a7da6f45573c2ca3f7f0fcd0074b2e46e
+ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405229"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041367"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB 基站信息查询支持
 
@@ -23,7 +23,7 @@ ms.locfileid: "65405229"
 
 通过查询/响应操作检索服务和相邻单元参数。 本主题，以指示已更改的移动电话网络中的设备的位置中也定义通知。
 
-## <a name="mbimcidbasestationsinfo"></a>MBIM_CID_BASE_STATIONS_INFO
+## <a name="mbim_cid_base_stations_info"></a>MBIM_CID_BASE_STATIONS_INFO
 
 此命令检索有关调制解调器到已知的服务及相邻单元格的信息。
 
@@ -46,7 +46,7 @@ ms.locfileid: "65405229"
 
 MBIM_COMMAND_MSG InformationBuffer 包含 MBIM_BASE_STATIONS_INFO_REQ struture。 MBIM_COMMAND_DONE InformationBuffer 包含 MBIM_BASE_STATIONS_INFO 结构。
 
-#### <a name="mbimbasestationsinforeq"></a>MBIM_BASE_STATIONS_INFO_REQ
+#### <a name="mbim_base_stations_info_req"></a>MBIM_BASE_STATIONS_INFO_REQ
 
 MBIM_BASE_STATIONS_INFO_REQ 结构应为查询使用在 InformationBuffer 中。 它用于配置方面的单元格信息，如相邻单元格度量，若要在响应中发送的最大数目。 
 
@@ -66,7 +66,7 @@ MBIM_BASE_STATIONS_INFO_REQ 结构应为查询使用在 InformationBuffer 中。
 
 MBIM_BASE_STATIONS_INFO 结构应为响应在 MBIM_COMMAND_DONE InformationBuffer 中使用。
 
-#### <a name="mbimbasestationsinfo"></a>MBIM_BASE_STATIONS_INFO
+#### <a name="mbim_base_stations_info"></a>MBIM_BASE_STATIONS_INFO
 
 MBIM_BASE_STATIONS_INFO 结构包含关于服务和相邻的基站的信息。
 
@@ -95,7 +95,7 @@ MBIM_BASE_STATIONS_INFO 结构包含关于服务和相邻的基站的信息。
 
 #### <a name="gsm-cell-data-structures"></a>GSM 单元格数据结构
 
-##### <a name="mbimgsmservingcellinfo"></a>MBIM_GSM_SERVING_CELL_INFO
+##### <a name="mbim_gsm_serving_cell_info"></a>MBIM_GSM_SERVING_CELL_INFO
 
 MBIM_GSM_SERVING_CELL_INFO 结构包含 GSM 服务单元的相关信息。
 
@@ -111,7 +111,7 @@ MBIM_GSM_SERVING_CELL_INFO 结构包含 GSM 服务单元的相关信息。
 | 28 | 4 | RxLevel | UINT32 | 服务接收到的信号强度的单元格 （0 到 63 个） 其中 <p>`X = 0, if RSS < -110 dBm`</p><p>`X = 63, if RSS > -47 dBm`</p><p>`X = integer [RSS + 110], if -110 <= RSS <= -47`</p> 此信息不可用时，请使用 0xFFFFFFFF。 |
 | 32 |   | DataBuffer | DATABUFFER | 包含的数据缓冲区*ProviderId*。 |
 
-##### <a name="mbimgsmnmr"></a>MBIM_GSM_NMR
+##### <a name="mbim_gsm_nmr"></a>MBIM_GSM_NMR
 
 MBIM_GSM_NMR 结构包含相邻单元格内 GSM 网络度量报表 (NMR)。
 
@@ -120,7 +120,7 @@ MBIM_GSM_NMR 结构包含相邻单元格内 GSM 网络度量报表 (NMR)。
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 NMR 条目的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | NMR 的数组，记录每个记录指定为[MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info)结构。 |
 
-##### <a name="mbimgsmnmrinfo"></a>MBIM_GSM_NMR_INFO
+##### <a name="mbim_gsm_nmr_info"></a>MBIM_GSM_NMR_INFO
 
 MBIM_GSM_NMR_INFO 结构包含相邻 GSM 单元的相关信息。
 
@@ -137,7 +137,7 @@ MBIM_GSM_NMR_INFO 结构包含相邻 GSM 单元的相关信息。
 
 #### <a name="umts-cell-data-structures"></a>UMTS 单元格数据结构
 
-##### <a name="mbimumtsservingcellinfo"></a>MBIM_UMTS_SERVING_CELL_INFO
+##### <a name="mbim_umts_serving_cell_info"></a>MBIM_UMTS_SERVING_CELL_INFO
 
 MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 
@@ -157,7 +157,7 @@ MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 | 44 | 4 | PathLoss | UINT32 | 为单元格 (第 46 173) 路径丢失。 此信息不可用时，请使用 0xFFFFFFFF。 |
 | 48 |   | DataBuffer | DATABUFFER | 包含的数据缓冲区*ProviderId*。 |
 
-##### <a name="mbimumtsmrl"></a>MBIM_UMTS_MRL
+##### <a name="mbim_umts_mrl"></a>MBIM_UMTS_MRL
 
 MBIM_UMTS_MRL 结构包含 UMTS 的相邻单元格的测量的结果列表 (MRL)。
 
@@ -166,7 +166,7 @@ MBIM_UMTS_MRL 结构包含 UMTS 的相邻单元格的测量的结果列表 (MRL)
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info)结构。 |
 
-##### <a name="mbimumtsmrlinfo"></a>MBIM_UMTS_MRL_INFO
+##### <a name="mbim_umts_mrl_info"></a>MBIM_UMTS_MRL_INFO
 
 MBIM_UMTS_MRL_INFO 结构包含相邻 UMTS 单元的相关信息。
 
@@ -185,7 +185,7 @@ MBIM_UMTS_MRL_INFO 结构包含相邻 UMTS 单元的相关信息。
 
 #### <a name="tdscdma-cell-data-structures"></a>TDSCDMA 单元格数据结构
 
-##### <a name="mbimtdscdmaservingcellinfo"></a>MBIM_TDSCDMA_SERVING_CELL_INFO
+##### <a name="mbim_tdscdma_serving_cell_info"></a>MBIM_TDSCDMA_SERVING_CELL_INFO
 
 MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息。
 
@@ -202,7 +202,7 @@ MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息�
 | 32 | 4 | PathLoss | UINT32 | 为单元格 (第 46 158) 路径丢失。 此信息不可用时，请使用 0xFFFFFFFF。 |
 | 36 |   | DataBuffer | DATABUFFER | 包含的数据缓冲区*ProviderId*。 |
 
-##### <a name="mbimtdscdmamrl"></a>MBIM_TDSCDMA_MRL
+##### <a name="mbim_tdscdma_mrl"></a>MBIM_TDSCDMA_MRL
 
 MBIM_TDSCDMA_MRL 结构包含 TDSCDMA 的相邻单元格的测量的结果列表 (MRL)。
 
@@ -211,7 +211,7 @@ MBIM_TDSCDMA_MRL 结构包含 TDSCDMA 的相邻单元格的测量的结果列表
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info)结构。 |
 
-##### <a name="mbimtdscdmamrlinfo"></a>MBIM_TDSCDMA_MRL_INFO
+##### <a name="mbim_tdscdma_mrl_info"></a>MBIM_TDSCDMA_MRL_INFO
 
 MBIM_TDSCDMA_MRL_INFO 结构包含相邻 TDSCDMA 单元的相关信息。
 
@@ -230,7 +230,7 @@ MBIM_TDSCDMA_MRL_INFO 结构包含相邻 TDSCDMA 单元的相关信息。
 
 #### <a name="lte-cell-data-structures"></a>LTE 单元格数据结构
 
-##### <a name="mbimlteservingcellinfo"></a>MBIM_LTE_SERVING_CELL_INFO
+##### <a name="mbim_lte_serving_cell_info"></a>MBIM_LTE_SERVING_CELL_INFO
 
 MBIM_LTE_SERVING_CELL_INFO 结构包含 LTE 服务单元的相关信息。
 
@@ -247,7 +247,7 @@ MBIM_LTE_SERVING_CELL_INFO 结构包含 LTE 服务单元的相关信息。
 | 32 | 4 | TimingAdvance | UINT32 | 计时提前 (0-255)。 此信息不可用时，请使用 0xFFFFFFFF。 |
 | 36 |   | DataBuffer | DATABUFFER | 包含的数据缓冲区*ProviderId*。 |
 
-##### <a name="mbimltemrl"></a>MBIM_LTE_MRL
+##### <a name="mbim_lte_mrl"></a>MBIM_LTE_MRL
 
 MBIM_LTE_MRL 结构包含 LTE 的相邻单元格的测量的结果列表 (MRL)。
 
@@ -256,7 +256,7 @@ MBIM_LTE_MRL 结构包含 LTE 的相邻单元格的测量的结果列表 (MRL)�
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info)结构。 |
 
-##### <a name="mbimltemrlinfo"></a>MBIM_LTE_MRL_INFO
+##### <a name="mbim_lte_mrl_info"></a>MBIM_LTE_MRL_INFO
 
 MBIM_LTE_MRL_INFO 结构包含相邻 LTE 单元的相关信息。
 
@@ -274,7 +274,7 @@ MBIM_LTE_MRL_INFO 结构包含相邻 LTE 单元的相关信息。
 
 #### <a name="cdma-cell-data-structures"></a>CDMA 单元格数据结构
 
-##### <a name="mbimcdmamrl"></a>MBIM_CDMA_MRL
+##### <a name="mbim_cdma_mrl"></a>MBIM_CDMA_MRL
 
 MBIM_CDMA_MRL 结构包含为提供服务和相邻 CDMA 单元格的测量的结果列表 (MRL)。
 
@@ -283,7 +283,7 @@ MBIM_CDMA_MRL 结构包含为提供服务和相邻 CDMA 单元格的测量的结
 | 0 | 4 | ElementCount (EC) | UINT32 | 此元素的 MRL 条目的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 的数组，记录每个记录指定为[MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info)结构。 |
 
-##### <a name="mbimcdmamrlinfo"></a>MBIM_CDMA_MRL_INFO
+##### <a name="mbim_cdma_mrl_info"></a>MBIM_CDMA_MRL_INFO
 
 MBIM_CDMA_MRL_INFO 数据结构专为 CDMA2000 网络类型。 在同一时间可以有多个 CDMA2000 为单元格。 为提供服务的单元格和相邻单元格都将返回相同的列表中。 **ServingCellFlag**字段指示单元格是否为单元格。
 
@@ -307,7 +307,7 @@ MBIM_CDMA_MRL_INFO 数据结构专为 CDMA2000 网络类型。 在同一时间�
 
 此 CID 使用泛型状态代码 (请参阅使用的状态代码中的部分 9.4.5[公共标准，USB MBIM](https://go.microsoft.com/fwlink/p/?linkid=842064))。
 
-## <a name="mbimcidlocationinfostatus"></a>MBIM_CID_LOCATION_INFO_STATUS
+## <a name="mbim_cid_location_info_status"></a>MBIM_CID_LOCATION_INFO_STATUS
 
 此 CID 检索指示设备的位置的移动电话信息的状态。 它还可能用于位置信息发生更改时提供的未经请求的通知。
 
@@ -339,7 +339,7 @@ MBIM_CDMA_MRL_INFO 数据结构专为 CDMA2000 网络类型。 在同一时间�
 
 ### <a name="response"></a>响应
 
-#### <a name="mbimlocationinfo"></a>MBIM_LOCATION_INFO
+#### <a name="mbim_location_info"></a>MBIM_LOCATION_INFO
 
 | 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -357,7 +357,7 @@ MBIM_CDMA_MRL_INFO 数据结构专为 CDMA2000 网络类型。 在同一时间�
 
 此 CID 使用泛型状态代码 (请参阅使用的状态代码中的部分 9.4.5[公共标准，USB MBIM](https://go.microsoft.com/fwlink/p/?linkid=842064))。
 
-## <a name="oidwwanbasestationsinfo"></a>OID_WWAN_BASE_STATIONS_INFO
+## <a name="oid_wwan_base_stations_info"></a>OID_WWAN_BASE_STATIONS_INFO
 
 MBIM_CID_BASE_STATIONS_INFO NDIS 等效项是[OID_WWAN_BASE_STATIONS_INFO](oid-wwan-base-stations-info.md)。
 
