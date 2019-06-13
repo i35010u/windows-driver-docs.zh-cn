@@ -22,7 +22,7 @@ ms.locfileid: "63336541"
 # <a name="hh-open-html-help-file"></a>.hh（打开 HTML 帮助文件）
 
 
-**.Hh *** 命令将打开的 Windows 调试工具文档。
+**.Hh**  命令将打开的 Windows 调试工具文档。
 
 ```dbgcmd
 .hh [Text] 
