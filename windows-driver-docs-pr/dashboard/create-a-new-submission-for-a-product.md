@@ -7,17 +7,17 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a68793cda9761a1982f69f1da62e329a6e3a0b73
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813579"
 ---
 # <a name="create-a-new-submission-for-a-product"></a>为产品创建新的提交
 
 在 Microsoft 硬件 API 中使用此方法为产品创建新的提交。 使用此方法之前，请确保已创建了新产品。 有关详细信息，请参阅[创建新产品](create-a-new-product.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
 
@@ -27,14 +27,14 @@ ms.locfileid: "66813579"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
+| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
 
 
 此方法中的 productId 是提交所适用于的产品。
 
 ### <a name="request-header"></a>请求头
 
-| Header | 在任务栏的搜索框中键入 | 描述 |
+| 标头 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
@@ -112,6 +112,6 @@ Authorization: Bearer <your access token>
 
 有关详细信息，请参阅[错误代码](get-product-data.md#error-codes)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

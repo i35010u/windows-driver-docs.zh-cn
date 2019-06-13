@@ -6,11 +6,11 @@ ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1a9e9acd4d39e4940872d8bbf425e848e54a59
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463945"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337145"
 ---
 # <a name="manage-report-templates-and-scheduled-reports"></a>管理报告模板和计划报告
 
@@ -20,7 +20,7 @@ ms.locfileid: "57463945"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌|
+|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌 |
 |内容类型|字符串|Application/JSON|
 
 ## <a name="view-a-definition-of-a-report-template"></a>查看报告模板的定义

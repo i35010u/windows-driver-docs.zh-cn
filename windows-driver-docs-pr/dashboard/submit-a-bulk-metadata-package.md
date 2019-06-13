@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 234f587de393dad428b14041e3d25a55e56979cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518411"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334920"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
@@ -22,11 +22,11 @@ ms.locfileid: "56518411"
 
 1.  使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对批量元数据包进行签名。
 
-2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”。
+2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
-3.  在“设备元数据”下，单击“创建批量提交”。
+3.  在“设备元数据”  下，单击“创建批量提交”  。
 
-4.  浏览并选择你的新批量元数据包，然后单击“提交”。
+4.  浏览并选择你的新批量元数据包，然后单击“提交”  。
 
 ## <a name="span-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespancreating-a-bulk-submission-package"></a><span id="Creating_a_Bulk_Submission_Package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>创建批量提交程序包
 

@@ -5,11 +5,11 @@ ms.assetid: 7519235c-46c5-49aa-8b11-9e9ac5a51026
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2e02f689d670af6d22b1d5b95f3d6775096ee87
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518245"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371203"
 ---
 # <a name="writing-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 编写驱动程序
 

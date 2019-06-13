@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: a98d6fcf72cc8390aafe1a5afa5447e26284ece4
-ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66840856"
 ---
 # <a name="download-the-cab-file-for-a-windows-10-driver-error"></a>下载 Windows 10 驱动程序错误的 CAB 文件
@@ -32,7 +32,7 @@ ms.locfileid: "66840856"
 > [!NOTE]
 > 此方法仅可供属于[合作伙伴中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -52,16 +52,16 @@ ms.locfileid: "66840856"
 
 ### <a name="request-header"></a>请求头
 
-| Header        | 在任务栏的搜索框中键入   | 描述                                                                 |
+| 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 ### <a name="request-parameters"></a>请求参数
 
 | 参数        | 在任务栏的搜索框中键入   |  描述      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | string | 要为其检索错误数据的驱动程序的产品 ID 值。 |  是  |
-| cabIdHash | string | 要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
+| applicationId | 字符串 | 要为其检索错误数据的驱动程序的产品 ID 值。 |  是  |
+| cabIdHash | 字符串 | 要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
 
 ### <a name="request-example"></a>请求示例
 

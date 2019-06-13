@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 2b34be22c944b18f0c519941881dea2d7727d4b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518406"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335054"
 ---
 # <a name="get-a-shipping-label"></a>获取发货标签
 

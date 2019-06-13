@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ed716cdc15cfabf29d78a815ed220fa657ba4e
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560584"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334944"
 ---
 # <a name="publishing-restrictions"></a>发布限制
 
@@ -42,7 +42,7 @@ ms.locfileid: "57560584"
 </tr>
 <tr class="odd">
 <td><p>不带有总线枚举器的 HWID</p></td>
-<td><p>不适用</p></td>
+<td><p>N/A</p></td>
 </tr>
 <tr class="even">
 <td><p>无效的总线枚举器</p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "57560584"
 </tr>
 <tr class="odd">
 <td><p>蓝牙 HWID（带有服务 UUID，没有供应商 ID 或产品 ID）</p></td>
-<td><p>不适用</p></td>
+<td><p>N/A</p></td>
 </tr>
 <tr class="even">
 <td><p>无效的 PCI 供应商代码</p></td>

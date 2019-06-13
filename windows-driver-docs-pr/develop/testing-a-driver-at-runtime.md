@@ -5,11 +5,11 @@ description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41a4715c6841e38d5e76cc163c51cb6ad5d516b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518352"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344113"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序
 
@@ -47,17 +47,17 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 
 ### <a name="span-idselecttheteststorunonthetestcomputerwdk8andwdk81spanspan-idselecttheteststorunonthetestcomputerwdk8andwdk81spanspan-idselecttheteststorunonthetestcomputerwdk8andwdk81spanstep-3-select-the-tests-to-run-on-the-test-computer-wdk-8-and-wdk-81"></a><span id="Select_the_tests_to_run_on_the_test_computer__WDK_8_and_WDK_8.1_"></span><span id="select_the_tests_to_run_on_the_test_computer__wdk_8_and_wdk_8.1_"></span><span id="SELECT_THE_TESTS_TO_RUN_ON_THE_TEST_COMPUTER__WDK_8_AND_WDK_8.1_"></span>步骤 3：选择要在测试计算机上运行的测试（WDK 8 和 WDK 8.1）
 
-若要使不同测试目标上的驱动程序测试更加容易，应将测试安排为针对称为“测试组”的单元中的测试系统运行。 驱动程序测试组是你选择要在测试计算机上运行的测试的集合。 驱动程序测试组帮助你整理每个测试轮次的测试和测试结果。 可以将测试结果保存到单独的文件夹中。 你可以创建和管理测试组，更改传递到测试组中的测试的参数，并安排这些测试针对测试系统运行。
+若要使不同测试目标上的驱动程序测试更加容易，应将测试安排为针对称为“测试组”  的单元中的测试系统运行。 驱动程序测试组是你选择要在测试计算机上运行的测试的集合。 驱动程序测试组帮助你整理每个测试轮次的测试和测试结果。 可以将测试结果保存到单独的文件夹中。 你可以创建和管理测试组，更改传递到测试组中的测试的参数，并安排这些测试针对测试系统运行。
 
-1.  从“驱动程序”菜单中，单击“测试”，然后选择“测试组资源管理器”。
-2.  在“驱动程序测试组资源管理器”窗口中，单击“创建新测试组”按钮。 或者，在“驱动程序”菜单中单击“新建测试组”。
-3.  在你创建的组的“驱动程序测试组”窗口中，在“测试组名称”文本框内键入一个用来识别该组的名称。 默认名称是 Driver Test Group\_*nnnnn*，其中 *nnnnn* 表示测试组的编号
-4.  单击“添加/删除测试”。
-5.  在“添加或删除驱动程序测试”对话框中，你可以指定驱动程序测试类别和体系结构（所有、x86、x64、ARM）。 默认情况下会显示所有测试。 若要查看测试类别，单击“驱动程序测试类别”下拉列表中的文件夹。
+1.  从“驱动程序”  菜单中，单击“测试”  ，然后选择“测试组资源管理器”  。
+2.  在“驱动程序测试组资源管理器”  窗口中，单击“创建新测试组”  按钮。 或者，在“驱动程序”  菜单中单击“新建测试组”  。
+3.  在你创建的组的“驱动程序测试组”  窗口中，在“测试组名称”  文本框内键入一个用来识别该组的名称。 默认名称是 Driver Test Group\_*nnnnn*，其中 *nnnnn* 表示测试组的编号
+4.  单击“添加/删除测试”  。
+5.  在“添加或删除驱动程序测试”  对话框中，你可以指定驱动程序测试类别和体系结构（所有、x86、x64、ARM）。 默认情况下会显示所有测试。 若要查看测试类别，单击“驱动程序测试类别”下拉列表中的文件夹。
 
-    例如，在 WDK 8 中，选择 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 中使用的所有设备基础功能测试，单击“所有测试”、“认证”和“设备基础”。 有关测试的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
+    例如，在 WDK 8 中，选择 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 中使用的所有设备基础功能测试，单击“所有测试”  、“认证”  和“设备基础”  。 有关测试的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
 
-    在 WDK 8.1 中，设备基础功能测试位于“所有测试”、“HCK 测试”、“认证”和“设备基础”文件夹下。 在 WDK 8.1 中，驱动程序测试类别包括 HCK（基本）测试。 请参阅[如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)了解详细信息。
+    在 WDK 8.1 中，设备基础功能测试位于“所有测试”  、“HCK 测试”  、“认证”  和“设备基础”  文件夹下。 在 WDK 8.1 中，驱动程序测试类别包括 HCK（基本）测试。 请参阅[如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)了解详细信息。
 
 6.  请确保选择与目标测试计算机体系结构（x86、x64、ARM）匹配的测试。 使用**体系结构筛选器**来仅显示将在测试计算机上运行的那些测试。
 7.  单击 **&gt;&gt;** 添加选择的测试。
@@ -68,20 +68,20 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 
 例如，若要只为 USB 设备运行测试，请使用设备查询：class='usb'。 你可以更改测试组中每个测试参数的值。
 
-1.  你可以单击“驱动程序测试组”窗口中测试的名称，查看和编辑测试的所有运行时测试参数。 “驱动程序测试组”窗口提供对所选测试的说明，并且还提供对你选择的测试参数的说明。 有关设置测试参数的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
-2.  选择测试后，设置参数，并为组命名，然后单击“保存”。
+1.  你可以单击“驱动程序测试组”  窗口中测试的名称，查看和编辑测试的所有运行时测试参数。 “驱动程序测试组”  窗口提供对所选测试的说明，并且还提供对你选择的测试参数的说明。 有关设置测试参数的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
+2.  选择测试后，设置参数，并为组命名，然后单击“保存”  。
 
     保存测试组时，测试组将变为当前选择的测试组，测试组的名称将显示在“驱动程序测试”工具栏中。 你现在可以针对当前选择的远程测试计算机（同时显示在“驱动程序测试”工具栏中）运行测试。
 
 ### <a name="span-idbuildanddeploythedriverspanspan-idbuildanddeploythedriverspanspan-idbuildanddeploythedriverspanstep-5-build-and-deploy-the-driver"></a><span id="Build_and_deploy_the_driver"></span><span id="build_and_deploy_the_driver"></span><span id="BUILD_AND_DEPLOY_THE_DRIVER"></span>步骤 5：生成和部署驱动程序
 
--   从“生成”菜单中，单击“部署解决方案”。
+-   从“生成”  菜单中，单击“部署解决方案”  。
 
 有关在生成时自动部署驱动程序的信息，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 有关在测试计算机上自动设置驱动程序验证程序选项的信息，请参阅[驱动程序项目的驱动程序验证程序属性](driver-verifier-properties-for--driver-projects.md)。 你应始终在测试计算机上启用驱动程序验证程序。
 
 ### <a name="span-idrunthetestsonthetestcomputerspanspan-idrunthetestsonthetestcomputerspanspan-idrunthetestsonthetestcomputerspanstep-6-run-the-tests-on-the-test-computer"></a><span id="Run_the_tests_on_the_test_computer"></span><span id="run_the_tests_on_the_test_computer"></span><span id="RUN_THE_TESTS_ON_THE_TEST_COMPUTER"></span>步骤 6：在测试计算机上运行测试
 
--   从“驱动程序”菜单中，单击“测试”&gt;“运行测试”。 默认情况下，“运行”测试命令将运行当前所选测试组中的所有测试。
+-   从“驱动程序”  菜单中，单击“测试”&gt;“运行测试”。  默认情况下，“运行”测试命令将运行当前所选测试组中的所有测试。
 
 <a name="remarks"></a>备注
 -------

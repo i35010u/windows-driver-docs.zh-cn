@@ -5,15 +5,15 @@ description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b7d27748364c2e1afdb7eea3c18e472e2c38dd85
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518350"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344024"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-81"></a>预配计算机时会出现什么情况 (WDK 8.1)
 
-使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”或“预配测试计算机”。 有关预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.1 版预配目标计算机时发生的情况。
+使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.1 版预配目标计算机时发生的情况。
 
 ## <a name="span-idwhenyouprovisionacomputerwdk80spanspan-idwhenyouprovisionacomputerwdk80spanwhen-you-provision-a-computer-wdk-81"></a><span id="when_you_provision_a_computer_wdk_8_0"></span><span id="WHEN_YOU_PROVISION_A_COMPUTER_WDK_8_0"></span>预配计算机时 (WDK 8.1)
 
@@ -44,10 +44,10 @@ ms.locfileid: "56518350"
 
 预配目标计算机后，将无法完全删除预配。 但是，可以使用主计算机上的 Visual Studio 从目标计算机上删除大部分预配。 以下是操作步骤。
 
-1.  在主计算机上，在 Visual Studio 的“驱动程序”菜单中，选择“测试”&gt;“配置计算机”。
-2.  选择目标计算机的名称，然后单击“删除计算机”。
-3.  选择“删除预配并删除计算机”。 单击“下一步” 。
-4.  完成删除过程后，单击“完成”。
+1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
+2.  选择目标计算机的名称，然后单击“删除计算机”  。
+3.  选择“删除预配并删除计算机”  。 单击“下一步”  。
+4.  完成删除过程后，单击“完成”  。
 5.  从目标计算机中卸载 WDK 测试目标设置。
 
 ## <a name="span-idwhenyouremoveprovisioningwdk81spanspan-idwhenyouremoveprovisioningwdk81spanwhen-you-remove-provisioning-wdk-81"></a><span id="when_you_remove_provisioning__wdk_8.1_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.1_"></span>删除预配时 (WDK 8.1)

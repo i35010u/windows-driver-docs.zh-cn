@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 53e30bc9de4ae2b37eaee8c0a454660e167c689e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518529"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337266"
 ---
 # <a name="dashboard-administration"></a>仪表板管理
 

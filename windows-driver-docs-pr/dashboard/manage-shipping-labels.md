@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
 ms.openlocfilehash: 8a8681daed14aafba673a74e93795ad60b3372fb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518390"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337176"
 ---
 # <a name="manage-shipping-labels"></a>管理发货标签
 

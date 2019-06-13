@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6e9dab46eef01a358b95133672e6cb10008eeb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518467"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334954"
 ---
 # <a name="manage-device-metadata-experiences"></a>管理设备元数据体验
 
@@ -18,13 +18,13 @@ ms.locfileid: "56518467"
 
 ## <a name="managing-your-device-metadata-experiences"></a>管理设备元数据体验
 
-在“管理体验”页上，你可以添加、删除或提升（从预览到发布）选定体验中的设备元数据包。 你也可以将相同硬件 ID 或型号 ID 的包添加到同一体验（如果这些 ID 针对不同的区域设置）。
+在“管理体验”  页上，你可以添加、删除或提升（从预览到发布）选定体验中的设备元数据包。 你也可以将相同硬件 ID 或型号 ID 的包添加到同一体验（如果这些 ID 针对不同的区域设置）。
 
 ## <a name="to-filter-your-device-metadata-experiences"></a>筛选设备元数据体验
 
-1. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”。
+1. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
-2. 在窗口左侧，单击“设备元数据”，然后单击“管理体验”。
+2. 在窗口左侧，单击“设备元数据”  ，然后单击“管理体验”  。
 
 3. 此时将显示你或你的公司创建的所有体验。 单击列标题可更改列表的顺序。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56518467"
 
 1. 单击体验以查看详细信息。
 
-2. 在“体验信息”下查看信息，其中包括：
+2. 在“体验信息”  下查看信息，其中包括：
 
     <table>
     <colgroup>
@@ -82,7 +82,7 @@ ms.locfileid: "56518467"
     </tbody>
     </table>
 
-3. 在“元数据包”下，展开各个程序包以查看详细信息。 还可以下载实时包或准备发布的包。
+3. 在“元数据包”  下，展开各个程序包以查看详细信息。 还可以下载实时包或准备发布的包。
 
     >[!NOTE]
     >如果元数据包有错误，它将显示在此处。
@@ -136,21 +136,21 @@ ms.locfileid: "56518467"
 
 ## <a name="to-modify-your-device-metadata-experience"></a>修改设备元数据体验的步骤
 
-1. 若要发布预览程序包，请选择该程序包，然后单击“发布”。
+1. 若要发布预览程序包，请选择该程序包，然后单击“发布”  。
 
     >[!NOTE]
     >用户最长可能需要等待 48 小时后才能下载发布的文件。
 
-2. 若要从体验中删除某个程序包，请选择该程序包，然后单击“删除”。
+2. 若要从体验中删除某个程序包，请选择该程序包，然后单击“删除”  。
 
    >[!NOTE]
-   >你只能删除处于“实时”或“错误”状态的程序包。
+   >你只能删除处于“实时”  或“错误”  状态的程序包。
 
-3. 若要更新现有程序包，请选择该程序包、单击“删除”，然后创建并上载新程序包。
+3. 若要更新现有程序包，请选择该程序包、单击“删除”  ，然后创建并上载新程序包。
 
     有关创建新程序包的详细信息，请参阅[设备元数据创作向导](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal)，此向导位于 [Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)中。
 
-4. 若要添加新程序包，请在“添加更多元数据”下，浏览要添加的一个或多个文件、创建友好名称（如果需要），然后单击“提交”。
+4. 若要添加新程序包，请在“添加更多元数据”  下，浏览要添加的一个或多个文件、创建友好名称（如果需要），然后单击“提交”  。
 
     >[!NOTE]
     >你一共可以向体验中添加 50 个程序包。

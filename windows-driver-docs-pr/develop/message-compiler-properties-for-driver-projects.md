@@ -5,23 +5,23 @@ description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a125df236bbb43ecf4a73bb2b4861ba290b505f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518164"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344131"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
 
-设置[**消息编译器 (MC.exe)**](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
+设置[**消息编译器 (MC.exe)** ](https://msdn.microsoft.com/Library/Windows/Hardware/Aa385638) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
 
 例如，如果你使用 [Windows 事件跟踪 (ETW)](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545699) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
 
 ## <a name="span-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspanspan-idsettingmessagecompilerpropertiesfordriverprojectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的消息编译器属性
 
 
-1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”。
-2.  在驱动程序项目的属性页中，单击“配置属性”，然后单击“消息编译器”。
+1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
+2.  在驱动程序项目的属性页中，单击“配置属性”  ，然后单击“消息编译器”  。
 3.  设置项目属性。
 
 如果你将消息文本文件 (.mc) 或清单 (.man) 添加到解决方案，则此属性页可用。

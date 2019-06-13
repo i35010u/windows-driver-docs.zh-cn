@@ -5,11 +5,11 @@ description: 设置测试计算机上的 UMDF 验证程序的属性。 为测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9708097e195c7c8da785ae49e45008c20ed0d201
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518272"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344107"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 UMDF 验证程序属性
 
@@ -22,9 +22,9 @@ ms.locfileid: "56518272"
 ## <a name="span-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspanspan-idsettingumdfverifierpropertiesfordriverprojectsspansetting-umdf-verifier-properties-for-driver-projects"></a><span id="Setting_UMDF_Verifier_properties_for_driver_projects"></span><span id="setting_umdf_verifier_properties_for_driver_projects"></span><span id="SETTING_UMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的 UMDF 验证程序属性
 
 
-1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”。
-2.  在驱动程序包的属性页中，依次单击“配置属性”、“驱动程序安装”和“UMDF 验证程序”。
-3.  选择“部署 UMDF 验证程序”选项。 启用了此选项时（**是**），可以选择用来在测试计算机上验证 UMDF 驱动程序的 UMDF 验证程序选项。
+1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
+2.  在驱动程序包的属性页中，依次单击“配置属性”  、“驱动程序安装”  和“UMDF 验证程序”  。
+3.  选择“部署 UMDF 验证程序”  选项。 启用了此选项时（**是**），可以选择用来在测试计算机上验证 UMDF 驱动程序的 UMDF 验证程序选项。
 
 <table>
 <colgroup>

@@ -6,11 +6,11 @@ ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ee53663a4c58346043d79d386aea5162eed268b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518447"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334918"
 ---
 # <a name="sample-report-templates"></a>示例报告模板
 
@@ -26,10 +26,10 @@ ms.locfileid: "56518447"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>|
+|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌 |
 |内容类型|字符串|Application/JSON|
 
-## <a name="sample-1--show-all-available-columns-for-ihv-failure-details-for-the-last-7-days"></a>示例 1：显示过去 7 天的 IHV 失败详细信息的所有可用列
+## <a name="sample-1--show-all-available-columns-for-ihv-failure-details-for-the-last-7-days"></a>示例 1：显示过去 7 天的 IHV 失败  详细信息的所有可用列
 
 以下 API 请求有效负载列出了 IHV 失败报告中的所有可用列，并将 reportPeriod 设置为过去七天。
 
@@ -74,9 +74,9 @@ ms.locfileid: "56518447"
 }
 ```
 
-## <a name="sample-2-show-all-available-columns-for-oem-failure-details-for-the-last-7-days"></a>示例 2：显示过去 7 天的 OEM 失败详细信息的所有可用列
+## <a name="sample-2-show-all-available-columns-for-oem-failure-details-for-the-last-7-days"></a>示例 2：显示过去 7 天的 OEM 失败  详细信息的所有可用列
 
-以下 API 请求有效负载列出了 OEM 失败报告中的所有可用列，并将 reportPeriod 设置为过去七天。
+以下 API 请求有效负载列出了 OEM 失败  报告中的所有可用列，并将 reportPeriod 设置为过去七天。
 
 ```json
 {

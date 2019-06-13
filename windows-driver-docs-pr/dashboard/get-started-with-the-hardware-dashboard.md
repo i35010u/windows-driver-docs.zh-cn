@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6db5587ff09aaf946cc38d785d3e22ff311687
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560596"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337174"
 ---
 # <a name="get-started-with-the-hardware-dashboard-program"></a>硬件仪表板计划入门
 

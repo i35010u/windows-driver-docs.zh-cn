@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a928f221eef74eaec6a869729b8b0d930cc17e18
-ms.sourcegitcommit: 91db84a97ce13a851f500acd4af67aa0b0a05aa8
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58319235"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337422"
 ---
 # <a name="create-a-new-report-template"></a>创建新的报告模板
 
@@ -26,7 +26,7 @@ ms.locfileid: "58319235"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌|
+|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌 |
 |内容类型|字符串|Application/JSON|
 
 ## <a name="request-payload"></a>请求有效负载

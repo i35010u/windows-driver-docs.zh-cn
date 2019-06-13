@@ -5,16 +5,16 @@ ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 41d50497c8343d8ae5f7a54b77d97a86f06f0d2a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518306"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371330"
 ---
 # <a name="driver-stacks"></a>驱动程序堆栈
 
 
-发送到设备驱动程序的大部分请求都打包在 [I/O 请求数据包](i-o-request-packets.md) (IRP) 中。 每个设备都用设备节点表示，每个设备节点都有一个设备堆栈。 有关详细信息，请参阅[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。 若要将读、写或控制请求发送至某个设备，I/O 管理器会查找设备的设备节点，然后将 IRP 发送至该节点的设备堆栈。 有时，处理 I/O 请求的过程中会涉及到多个设备堆栈。 无论涉及了多少个设备堆栈，参与 I/O 请求的驱动程序整体序列称为请求的“驱动程序堆栈”。 我们还使用术语“驱动程序堆栈”来引用特定技术的分层驱动程序组。
+发送到设备驱动程序的大部分请求都打包在 [I/O 请求数据包](i-o-request-packets.md) (IRP) 中。 每个设备都用设备节点表示，每个设备节点都有一个设备堆栈。 有关详细信息，请参阅[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。 若要将读、写或控制请求发送至某个设备，I/O 管理器会查找设备的设备节点，然后将 IRP 发送至该节点的设备堆栈。 有时，处理 I/O 请求的过程中会涉及到多个设备堆栈。 无论涉及了多少个设备堆栈，参与 I/O 请求的驱动程序整体序列称为请求的“驱动程序堆栈”  。 我们还使用术语“驱动程序堆栈”  来引用特定技术的分层驱动程序组。
 
 ## <a name="span-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanspan-idiorequeststhatareprocessedbyseveraldevicestacksspanio-requests-that-are-processed-by-several-device-stacks"></a><span id="I_O_requests_that_are_processed_by_several_device_stacks"></span><span id="i_o_requests_that_are_processed_by_several_device_stacks"></span><span id="I_O_REQUESTS_THAT_ARE_PROCESSED_BY_SEVERAL_DEVICE_STACKS"></span>由多个设备堆栈处理的 I/O 请求
 
@@ -58,7 +58,7 @@ ms.locfileid: "56518306"
 
 ![一个示意图，其中显示了可能的 USB 核心框的技术驱动程序堆栈 ](images/technologystack01.png)
 
-显示特定技术或操作系统的特定组件或一部分的所有驱动程序的框图称为“技术驱动程序堆栈”。 通常，会为技术驱动程序堆栈命名，如 USB 核心驱动程序堆栈、存储堆栈、1394 驱动程序堆栈以及音频驱动程序堆栈。
+显示特定技术或操作系统的特定组件或一部分的所有驱动程序的框图称为“技术驱动程序堆栈”  。 通常，会为技术驱动程序堆栈命名，如 USB 核心驱动程序堆栈、存储堆栈、1394 驱动程序堆栈以及音频驱动程序堆栈。
 
 **注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](https://msdn.microsoft.com/library/windows/hardware/hh406256)。
 

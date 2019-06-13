@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe5d3951ff1d8cc17020dab8ae9a52ad0558c98
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518412"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334904"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
@@ -24,11 +24,11 @@ ms.locfileid: "56518412"
 
 1.  使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
 
-2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”。
+2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
-3.  在“设备元数据”下，单击“创建体验”（如果你希望提交新体验），或单击“管理体验”（如果你希望修改现有体验）。
+3.  在“设备元数据”  下，单击“创建体验”  （如果你希望提交新体验），或单击“管理体验”  （如果你希望修改现有体验）。
 
-4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”。
+4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
 
 ## <a name="span-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespanspan-idcreatingadevicemanifestsubmissionpackagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>创建设备清单提交程序包
 

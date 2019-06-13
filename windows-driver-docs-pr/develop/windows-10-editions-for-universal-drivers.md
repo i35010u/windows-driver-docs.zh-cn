@@ -5,21 +5,21 @@ description: 在 Microsoft 驱动程序参考页底部的“要求”块中，�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf53562619c2fff7f444a36373553cc7f5b6b70
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518456"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344040"
 ---
 # <a name="target-platform-on-driver-reference-pages"></a>驱动程序参考页的目标平台
 
-在 Microsoft 驱动程序参考页底部的“要求”块中，将看到一个称为“目标平台”的条目。 该行列出了页面将应用到的 Windows 版本。
+在 Microsoft 驱动程序参考页底部的“要求”块中，将看到一个称为“目标平台”  的条目。 该行列出了页面将应用到的 Windows 版本。
 
 以下是此类条目的示例：
 
 ![目标平台在“要求”块中设置为“通用”](images/TargetPlatform.png)
 
-在**目标平台**中指定的值将映射到可在 Visual Studio 中使用的值（在“配置属性”-&gt;“驱动程序设置”-&gt;“常规”下的“目标平台”属性中）。
+在**目标平台**中指定的值将映射到可在 Visual Studio 中使用的值（在“配置属性”-&gt;“驱动程序设置”-&gt;“常规”  下的“目标平台”  属性中）。
 
 以下是你可能看到的**目标平台**的值以及它们的含义：
 

@@ -5,10 +5,10 @@ description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 20842ec8fd3dd48672fe9ea1f7301739c36d00aa
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "57349144"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试

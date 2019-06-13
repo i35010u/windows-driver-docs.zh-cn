@@ -5,11 +5,11 @@ author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e22cf1f7bd128c0a60cd49fe1144b404c71b63
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518250"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344071"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>使用企业版 WDK 10
 

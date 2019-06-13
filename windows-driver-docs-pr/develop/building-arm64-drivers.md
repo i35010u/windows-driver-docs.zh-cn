@@ -4,11 +4,11 @@ description: 本主题介绍如何使用 Windows 驱动程序工具包 (WDK) 生
 ms.date: 01/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed6c60f9bba51e679797cc625ec4770f2150ede
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518119"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63353977"
 ---
 # <a name="building-arm64-drivers-with-the-wdk"></a>使用 WDK 生成 ARM64 驱动程序
 
@@ -17,10 +17,10 @@ ms.locfileid: "56518119"
 ## <a name="setup"></a>安装
 
 1. 下载 [Visual Studio 2017 预览版](https://www.visualstudio.com/vs/preview/)。  你需要的最低版本为 15.4.0 预览版 2.0。
-2. 在 Windows 开始菜单中，键入“Visual Studio 安装程序”。  然后在“工作负载”选项卡上，选择“使用 C++ 的桌面开发”。  
+2. 在 Windows 开始菜单中，键入“Visual Studio 安装程序”  。  然后在“工作负载”  选项卡上，选择“使用 C++ 的桌面开发”  。  
 ![从工作负载磁贴的 Windows 选项中选择“使用 C++ 的桌面开发”](images/VS-workloads.png)
 
-2. 在“单个组件”选项卡上，选择下列选项：
+2. 在“单个组件”  选项卡上，选择下列选项：
     *  **适用于 ARM 的 Visual C++ 编译器和库**
     *  **适用于 ARM64 的 Visual C++ 编译器和库**  
 ![选择要安装的 ARM 特定组件](images/VS-individual-components.png)
@@ -32,16 +32,16 @@ ms.locfileid: "56518119"
 ## <a name="building-an-arm64-driver-with-the-wdk"></a>使用 WDK 生成 ARM64 驱动程序
 
 1.  在 Visual Studio 中，打开一个驱动程序解决方案。  你可以使用自己的驱动程序解决方案，也可以使用 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中的驱动程序解决方案。
-2.  单击“解决方案”平台，然后选择“配置管理器”。  
+2.  单击“解决方案”平台，然后选择“配置管理器”  。  
 ![从顶部工具栏的第二个下拉列表中选择配置管理器](images/VS-config-mgr.png)
   
-3.  在“活动解决方案平台”下，选择“新建”。  
+3.  在“活动解决方案平台”  下，选择“新建”  。  
 ![在“活动解决方案平台”下拉列表中，选择“新建”](images/VS-active-solution-platform.png)
 
-4.  从“键入或选择新平台”中选择“ARM64”。  从 **Win32** 复制设置。  单击“确定”和“关闭”。  
+4.  从“键入或选择新平台”  中选择“ARM64”  。  从 **Win32** 复制设置。  单击“确定”  和“关闭”  。  
 ![从工具栏级别下拉列表中选择 ARM64 生成目标](images/VS-build-ARM64.png)
 
-5.  选择“ARM64”作为目标平台并重新生成。
+5.  选择“ARM64”  作为目标平台并重新生成。
 
 ## <a name="see-also"></a>另请参阅
 

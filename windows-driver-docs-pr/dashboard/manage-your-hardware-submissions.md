@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c2649bac3fe5edf312fa80683ba72d674e4e51b
-ms.sourcegitcommit: 3508ab1c06671ac52e446aa2556b53f978ef6d83
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59586379"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337129"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>在合作伙伴中心内管理硬件提交
 

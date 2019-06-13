@@ -5,11 +5,11 @@ description: 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518462"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344032"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 [本主题仅适用于桌面驱动程序，不适用通用驱动程序。]

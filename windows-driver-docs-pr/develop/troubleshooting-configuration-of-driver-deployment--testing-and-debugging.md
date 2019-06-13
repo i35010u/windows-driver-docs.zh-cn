@@ -5,11 +5,11 @@ description: 提供为驱动程序部署预配 Visual Studio 的故障排除技�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16a671c1b1143ad9247faa429daa85353857df4f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518292"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344079"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>驱动程序部署、测试和调试配置故障排除
 
@@ -38,7 +38,7 @@ ms.locfileid: "56518292"
 ## <a name="span-idconfigurecomputersmenucommandisinactivespanspan-idconfigurecomputersmenucommandisinactivespanconfigure-computers-menu-command-is-inactive"></a><span id="configure_computers_menu_command_is_inactive"></span><span id="CONFIGURE_COMPUTERS_MENU_COMMAND_IS_INACTIVE"></span>“配置计算机”菜单命令处于非活动状态
 
 
-首次启动 Microsoft Visual Studio 时，“驱动程序”菜单上的“测试”&gt;“配置计算机”命令可能处于非活动状态（灰显）。 如果等待大约 20 秒，之后再次单击“驱动程序”菜单，“测试”&gt;“配置计算机”命令将可用。
+首次启动 Microsoft Visual Studio 时，“驱动程序”  菜单上的“测试”&gt;“配置计算机”  命令可能处于非活动状态（灰显）。 如果等待大约 20 秒，之后再次单击“驱动程序”  菜单，“测试”&gt;“配置计算机”  命令将可用。
 
 ## <a name="span-idprovisioningfailsgeneraltipsspanspan-idprovisioningfailsgeneraltipsspanprovisioning-fails-general-tips"></a><span id="provisioning_fails_general_tips"></span><span id="PROVISIONING_FAILS_GENERAL_TIPS"></span>预配失败：一般技巧
 
@@ -56,13 +56,13 @@ Driver Test Computer Configuration 20121115130459167.log
 ## <a name="span-iddomainthenetworkpathwasnotfoundspanspan-iddomainthenetworkpathwasnotfoundspanprovisioning-fails-the-network-path-was-not-found"></a><span id="domain_the_network_path_was_not_found"></span><span id="DOMAIN_THE_NETWORK_PATH_WAS_NOT_FOUND"></span>预配失败：找不到网络路径
 
 
-开始预配目标计算机时，可能会看到一条消息：“找不到网络路径”。
+开始预配目标计算机时，可能会看到一条消息：“找不到网络路径”  。
 
-在目标计算机上，请确保你已打开“网络发现”，并且已为相应的网络配置文件打开了“文件和打印机共享”。 例如，如果主计算机和目标计算机加入了网络域，你必须为**域**网络配置文件打开“网络发现”和“文件和打印机共享”。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。
+在目标计算机上，请确保你已打开“网络发现”  ，并且已为相应的网络配置文件打开了“文件和打印机共享”  。 例如，如果主计算机和目标计算机加入了网络域，你必须为**域**网络配置文件打开“网络发现”和“文件和打印机共享”。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。
 
 请确保你可以从主计算机对目标计算机进行 ping 操作。 在主计算机上，打开“命令提示符”窗口，然后输入 **ping** *targetComputerName*，其中 *targetComputerName* 是目标计算机的名称。
 
-**注意**  在看到消息“找不到网络路径”之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到网络路径，并且预配的第一步已经成功。 事实上，网络路径并未找到，也没有任何预配部分成功。 例如，你可能会看到：
+**注意**  在看到消息“找不到网络路径”  之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到网络路径，并且预配的第一步已经成功。 事实上，网络路径并未找到，也没有任何预配部分成功。 例如，你可能会看到：
 
  
 
@@ -77,9 +77,9 @@ The network path was not found.
 ## <a name="span-iddomainthenetworknamecannotbefoundspanspan-iddomainthenetworknamecannotbefoundspanprovisioning-fails-the-network-name-cannot-be-found"></a><span id="domain_the_network_name_cannot_be_found"></span><span id="DOMAIN_THE_NETWORK_NAME_CANNOT_BE_FOUND"></span>预配失败：找不到网络名称
 
 
-开始预配目标计算机时，你可能会看到一条消息：“找不到网络名称”。 仔细检查目标计算机的名称。 如果最初输入的计算机名称不正确，请重新启动预配向导（“驱动程序”&gt;“测试”&gt;“配置计算机”）。 选择不正确的计算机名称，然后单击“下一步”。 在**计算机名称**中，输入正确的目标计算机名称，并完成向导。
+开始预配目标计算机时，你可能会看到一条消息：“找不到网络名称”  。 仔细检查目标计算机的名称。 如果最初输入的计算机名称不正确，请重新启动预配向导（“驱动程序”&gt;“测试”&gt;“配置计算机”）  。 选择不正确的计算机名称，然后单击“下一步”  。 在**计算机名称**中，输入正确的目标计算机名称，并完成向导。
 
-**注意**  在看到消息“找不到网络名称”之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到计算机名称，并且预配的第一步已经成功。 事实上，计算机名称并未找到，也没有任何预配部分成功。 例如，你可能会看到：
+**注意**  在看到消息“找不到网络名称”  之前，你可能会看到多条消息。 这些消息中的某些消息可能会使你认为已找到计算机名称，并且预配的第一步已经成功。 事实上，计算机名称并未找到，也没有任何预配部分成功。 例如，你可能会看到：
 
  
 
@@ -113,7 +113,7 @@ Enter your password to connect to: NonExistentComputer
 ## <a name="span-iddomaincouldnotaccessremotemachinespanspan-iddomaincouldnotaccessremotemachinespanprovisioning-fails-could-not-access-remote-machine"></a><span id="domain_could_not_access_remote_machine"></span><span id="DOMAIN_COULD_NOT_ACCESS_REMOTE_MACHINE"></span>预配失败：无法访问远程计算机
 
 
-开始预配目标计算机时，你可能会看到一条消息：“无法访问网络中的远程计算机‘computerName’”。 此消息可能由于多种原因显示。 请确认你的主计算机和目标计算机均加入同一个域或同一工作组。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。 请确认你输入了正确的目标计算机名称。 请确认已在目标计算机上启用了“网络发现”和“文件和打印共享”。
+开始预配目标计算机时，你可能会看到一条消息：“无法访问网络中的远程计算机‘computerName’”    。 此消息可能由于多种原因显示。 请确认你的主计算机和目标计算机均加入同一个域或同一工作组。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/Library/Windows/Hardware/Dn745909)。 请确认你输入了正确的目标计算机名称。 请确认已在目标计算机上启用了“网络发现”和“文件和打印共享”。
 
 ## <a name="debugger-breakpoints-are-not-triggered-for-kernel-mode-driver"></a>未为内核模式驱动程序触发调试程序断点
 

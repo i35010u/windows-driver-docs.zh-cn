@@ -6,15 +6,15 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
 ms.openlocfilehash: 7b66c22e03cf5b6b1568c0146093f37a2a5faacb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518454"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337293"
 ---
 # <a name="bug-management"></a>Bug 管理
 
-旧版 SysDev 仪表板上的“Bug 管理”已弃用并替换为 Microsoft Collaborate。 有关 Microsoft Collaborate 的更多信息，请访问 https://aka.ms/CollaborateDocs。
+旧版 SysDev 仪表板上的“Bug 管理”已弃用并替换为 Microsoft Collaborate。 有关 Microsoft Collaborate 的更多信息，请访问 https://aka.ms/CollaborateDocs 。
 
 
 

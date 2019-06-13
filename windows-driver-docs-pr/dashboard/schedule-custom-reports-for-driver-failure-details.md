@@ -6,11 +6,11 @@ ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c6eb348b8213a2b17617ecf413afca9c57aaf6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518149"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334922"
 ---
 # <a name="schedule-custom-reports-for-your-driver-failure-details"></a>计划自定义报告来提供驱动程序失败详细信息
 
@@ -23,7 +23,7 @@ ms.locfileid: "56518149"
 > - 这些方法公开了一组丰富的新维度，并支持回顾过去 90 天的数据。
 > - [Swagger](https://apidocs.microsoft.com/services/analyticsreportingapis) 中也提供了 API 文档
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 > [!IMPORTANT]
 > 必须完成[启用安全数据共享](enable-secure-data-sharing.md)中概述的要求。

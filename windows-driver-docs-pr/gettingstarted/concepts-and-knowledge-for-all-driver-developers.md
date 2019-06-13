@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42ec2df44588dff7f2a37f70f861720c46b5e267
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518081"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371359"
 ---
 # <a name="concepts-for-all-driver-developers"></a>适用于所有驱动程序开发人员的概念
 

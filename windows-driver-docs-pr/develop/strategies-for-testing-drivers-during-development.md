@@ -5,11 +5,11 @@ description: 应在何时开始测试？ 了解驱动程序的要求后，便可
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 796024d610c2b67aa9dc3e97a28cf6e85fea6c91
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518491"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63378628"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -42,7 +42,7 @@ ms.locfileid: "56518491"
 
 -   通过使用设备管理器查看有关驱动程序和设备的系统信息并通过参考 SetupAPI 日志来[解决设备安装](https://msdn.microsoft.com/Library/Windows/Hardware/Ff553489)问题。 SetupAPI 日志包含设备或驱动程序安装期间所发生的操作序列的相关信息。
 
-    使用 Visual Studio 和 WDK，将驱动程序部署到测试计算机时，可以测试驱动程序包的安装并解决相关问题，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 从[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)中选择“安装并验证”选项。 如果你选择此选项，并指定“默认驱动程序包安装任务(可能重新启动)”或“默认打印机驱动程序包安装任务(可能重新启动)”，则测试将读取驱动程序的 INF 文件并安装驱动程序。 然后，测试将验证该驱动程序是否已启动且正在运行。 完成后，测试将提供有关安装任务成功与否的详细信息。 结果显示在**驱动程序测试组资源管理器**中的“驱动程序测试组”&gt;“驱动程序安装”下。 任务名称为“默认驱动程序包安装任务”。
+    使用 Visual Studio 和 WDK，将驱动程序部署到测试计算机时，可以测试驱动程序包的安装并解决相关问题，请参阅[将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)。 从[驱动程序包项目的部署属性](deployment-properties-for-driver-projects.md)中选择“安装并验证”  选项。 如果你选择此选项，并指定“默认驱动程序包安装任务(可能重新启动)”  或“默认打印机驱动程序包安装任务(可能重新启动)”  ，则测试将读取驱动程序的 INF 文件并安装驱动程序。 然后，测试将验证该驱动程序是否已启动且正在运行。 完成后，测试将提供有关安装任务成功与否的详细信息。 结果显示在**驱动程序测试组资源管理器**中的“驱动程序测试组”&gt;“驱动程序安装”下。 任务名称为“默认驱动程序包安装任务”  。
 
 **如何在运行时测试驱动程序：**
 

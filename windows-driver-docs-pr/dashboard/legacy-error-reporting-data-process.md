@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 08/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d1e44beabcaac19d6fcc8e9d94f680b660430c0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518278"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337168"
 ---
 # <a name="driver-error-reporting-data-for-earlier-versions-of-windows"></a>早期版本的 Windows 的驱动程序错误报告数据
 

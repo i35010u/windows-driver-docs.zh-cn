@@ -11,11 +11,11 @@ ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c034286186c88f231f032c2de031c2780ff04eb3
-ms.sourcegitcommit: ece0a2affa08f1b6446368ede06040b3153aaae2
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56743462"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63339149"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 

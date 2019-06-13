@@ -5,11 +5,11 @@ ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 8be95023093318da17e9f84a643d181696b879c8
-ms.sourcegitcommit: 132f0c2d827982b808053ecd3b4d137a2883cca1
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "56518560"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344021"
 ---
 # <a name="device-and-driver-technologies"></a>设备和驱动程序技术
 

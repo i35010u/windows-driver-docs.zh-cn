@@ -5,11 +5,11 @@ description: 设置分析和验证计数器清单的 CTRPP 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e66c284106594c31d6499f929abb42f1129c5ca
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518280"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382540"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>驱动程序项目的计数器清单预处理器属性
 
@@ -18,8 +18,8 @@ ms.locfileid: "56518280"
 ## <a name="span-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspanspan-idsettingthecountersmanifestpreprocessorpropertiesfordriverprojectsspansetting-the-counters-manifest-preprocessor-properties-for-driver-projects"></a><span id="Setting_the_Counters_Manifest_Preprocessor_properties_for_driver_projects"></span><span id="setting_the_counters_manifest_preprocessor_properties_for_driver_projects"></span><span id="SETTING_THE_COUNTERS_MANIFEST_PREPROCESSOR_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的计数器清单预处理器属性
 
 
-1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”。
-2.  在驱动程序项目的属性页中，依次单击“配置属性”和“计数器清单预处理器属性”。
+1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
+2.  在驱动程序项目的属性页中，依次单击“配置属性”  和“计数器清单预处理器属性”  。
 3.  设置项目属性。
 
 如果你想要将此属性页添加到你的项目，以便可以在生成过程中运行 CTRPP 工具，请参阅 [WDK 和 Visual Studio 生成环境](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454286)和 [Ctrpp 任务](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454206)。

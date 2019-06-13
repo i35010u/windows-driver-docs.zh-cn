@@ -5,11 +5,11 @@ ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a6cf66d1d57bc66da2f732db121470f17240709b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518211"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335116"
 ---
 # <a name="driver-flighting"></a>驱动程序外部测试
 
@@ -44,7 +44,7 @@ ms.locfileid: "56518211"
 
 在将驱动程序提交到合作伙伴中心后，可以使用以下步骤推广驱动程序以进行外部测试：
 
-1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”和“属性”部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
+1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”  和“属性”  部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
 
 2. 按照如下所述，选择一个或多个驱动程序推广选项，以推广驱动程序进行外部测试：
 
@@ -76,7 +76,7 @@ ms.locfileid: "56518211"
 
 ## <a name="reasons-a-driver-may-be-rejected"></a>驱动程序可能会被拒绝的原因
 
-驱动程序遭拒有多种原因。 通常情况下，驱动程序遭拒是因驱动程序定位不当所致。 这包括：
+驱动程序遭拒有多种原因。 通常情况下，驱动程序遭拒是因驱动程序定位不当所致。 这些地方包括：
 
 - 既面向先前版本的 Windows，同时也面向 Windows 10。
 - 所面向的设备类可能具有你未能正确遵循的特定 CHID 面向要求。  某些设备类需要 CHID（如固件），其他类会禁止使用 CHID（如屏幕）。  请确保已正确输入你的信息。

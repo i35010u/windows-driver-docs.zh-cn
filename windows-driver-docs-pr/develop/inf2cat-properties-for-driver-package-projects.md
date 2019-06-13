@@ -5,11 +5,11 @@ description: 设置 Inf2Cat 工具的属性。 Inf2Cat 工具可用于为具有 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bd9988c392bf875e43bf5c87f094f2ef00befd9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518062"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344153"
 ---
 # <a name="inf2cat-properties-for-driver-package-projects"></a>驱动程序包项目的 Inf2Cat 属性
 
@@ -18,9 +18,9 @@ ms.locfileid: "56518062"
 ## <a name="span-idsettinginf2catpropertiesfordriverpackageprojectsspanspan-idsettinginf2catpropertiesfordriverpackageprojectsspanspan-idsettinginf2catpropertiesfordriverpackageprojectsspansetting-inf2cat-properties-for-driver-package-projects"></a><span id="Setting_Inf2Cat_properties_for_driver_package_projects"></span><span id="setting_inf2cat_properties_for_driver_package_projects"></span><span id="SETTING_INF2CAT_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>设置驱动程序包项目的 Inf2Cat 属性
 
 
-1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”。
-2.  在驱动程序包的属性页，单击“配置属性”，然后单击“Inf2Cat”。
-3.  选择“运行 Inf2Cat”选项。 此选项将在项目中的任何 INF 文件（例如 .inf、.inx 或 .inv 文件）上运行 [**Inf2Cat**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) 工具。
+1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
+2.  在驱动程序包的属性页，单击“配置属性”  ，然后单击“Inf2Cat”  。
+3.  选择“运行 Inf2Cat”  选项。 此选项将在项目中的任何 INF 文件（例如 .inf、.inx 或 .inv 文件）上运行 [**Inf2Cat**](https://msdn.microsoft.com/Library/Windows/Hardware/Ff547089) 工具。
 
 如果驱动程序包是通过 INF 文件安装，则可使用 Inf2Cat 工具来创建目录文件。 Inf2Cat 用于验证 INF 文件中引用的文件是否存在于程序包中。 若要将文件添加到程序包，请使用程序包项目和驱动程序项目的属性页。 有关详细信息，请参阅[创建驱动程序包](creating-a-driver-package.md)。
 

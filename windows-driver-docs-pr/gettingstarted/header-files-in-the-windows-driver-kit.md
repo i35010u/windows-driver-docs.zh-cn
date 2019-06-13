@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4968e2e0508c5dbd86687bd15b57d76321d9edc3
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518228"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371537"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows 驱动程序工具包中的头文件
 

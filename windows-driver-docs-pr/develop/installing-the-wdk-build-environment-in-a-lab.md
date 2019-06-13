@@ -5,11 +5,11 @@ description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Stu
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5072737d94c1546f29953147edbdf8b44304929d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518386"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344856"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>在实验室中安装 WDK 8.1 生成环境
 
@@ -25,9 +25,9 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 
 若要运行支持此功能的设置脚本，你需要提供 Visual Studio 和 WDK 安装文件的路径。 请务必保存这些文件（而不是安装它们）。
 
-1.  下载 [Visual Studio Professional 2013](https://go.microsoft.com/fwlink/p/?linkid=316548) 或 [Visual Studio Ultimate 2013](https://go.microsoft.com/fwlink/p/?linkid=316520)。 下载产品布局（例如，vs\_ultimate\_download.exe）。 当系统询问你是想要运行还是保存 vs\_ultimate\_download.exe 时，单击“运行”并选择下载选项，然后将下载路径指定为 **C:\\VSSetup**（这将简化后续步骤）。 单击“下载”将 DVD 布局的本地副本下载并安装到计算机上。
-2.  下载独立的 [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507)。 当系统询问你是想要运行还是保存 sdksetup.exe 时，单击“运行”，然后将下载位置指定为 **C:\\Kits\\SDK**。 单击“下一步”并按照说明下载独立的 SDK。
-3.  下载 [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353)。 当系统询问你是想要运行还是保存 wdksetup.exe 时，单击“运行”，然后将下载位置指定为 **C:\\Kits\\WDK**。 单击“下一步”并按照说明下载 WDK。 如果已在计算机上安装 WDK，则 web 安装程序将会告诉你计算机上安装的功能已处于最新状态。 若要下载 WDK 设置文件以便能够部署生成环境，请单击“下一步”并指定 **C:\\Kits\\WDK** 路径。
+1.  下载 [Visual Studio Professional 2013](https://go.microsoft.com/fwlink/p/?linkid=316548) 或 [Visual Studio Ultimate 2013](https://go.microsoft.com/fwlink/p/?linkid=316520)。 下载产品布局（例如，vs\_ultimate\_download.exe）。 当系统询问你是想要运行还是保存 vs\_ultimate\_download.exe 时，单击“运行”  并选择下载选项，然后将下载路径指定为 **C:\\VSSetup**（这将简化后续步骤）。 单击“下载”  将 DVD 布局的本地副本下载并安装到计算机上。
+2.  下载独立的 [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507)。 当系统询问你是想要运行还是保存 sdksetup.exe 时，单击“运行”  ，然后将下载位置指定为 **C:\\Kits\\SDK**。 单击“下一步”  并按照说明下载独立的 SDK。
+3.  下载 [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353)。 当系统询问你是想要运行还是保存 wdksetup.exe 时，单击“运行”  ，然后将下载位置指定为 **C:\\Kits\\WDK**。 单击“下一步”  并按照说明下载 WDK。 如果已在计算机上安装 WDK，则 web 安装程序将会告诉你计算机上安装的功能已处于最新状态。 若要下载 WDK 设置文件以便能够部署生成环境，请单击“下一步”  并指定 **C:\\Kits\\WDK** 路径。
 
 ## <a name="span-iddownloadscriptspanspan-iddownloadscriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.下载 BuildLabSupport 文件
 

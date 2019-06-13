@@ -6,11 +6,11 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 577e467d1248a0b8e734136e63c65b6645792e2c
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463819"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337318"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -24,9 +24,9 @@ ms.locfileid: "57463819"
 
 ## <a name="to-submit-a-file"></a>提交文件
 
-1. 登录到合作伙伴中心，然后选择“提交新硬件”。 这将加载提交创建向导。
+1. 登录到合作伙伴中心，然后选择“提交新硬件”  。 这将加载提交创建向导。
 
-2. 在“程序包和签名属性”部分，为你的驱动程序提交选择一个名称。 该名称可用于搜索和组织你的驱动程序提交。 注意：如果与其他公司共享你的驱动程序，他们会看到该名称。
+2. 在“程序包和签名属性”  部分，为你的驱动程序提交选择一个名称。 该名称可用于搜索和组织你的驱动程序提交。 注意：如果与其他公司共享你的驱动程序，他们会看到该名称。
 
 3. 拖放或浏览到想要提交的 **.hlkx/.hckx** 文件。 将开始上传该文件。
    ![显示驱动程序名称字段的屏幕截图](images/drivers-name.png)
@@ -41,7 +41,7 @@ ms.locfileid: "57463819"
 
    ![显示了驱动程序提交的可能认证和“完成”按钮的屏幕截图](images/additionalcertifications.png)
 
-8. 在“认证”部分，填写以下信息：
+8. 在“认证”  部分，填写以下信息：
 
    <table>
    <colgroup>
@@ -86,9 +86,9 @@ ms.locfileid: "57463819"
 
    ![显示认证部分的屏幕截图](images/drivers-certification.png)
 
-9. 选择“提交”。
+9. 选择“提交”。 
 
-10. “分发”部分用于将驱动程序发布到 Windows 更新。 有关如何使用**分发**部分的信息，请参阅[使用发货标签管理驱动程序分发](manage-driver-distribution-by-submission.md)。
+10. “分发”  部分用于将驱动程序发布到 Windows 更新。 有关如何使用**分发**部分的信息，请参阅[使用发货标签管理驱动程序分发](manage-driver-distribution-by-submission.md)。
 
 11. 可以通过页面顶部的进度跟踪器监视提交的进度。 所有步骤都显示绿色打勾标记后，表示提交已完成，你的组织会在仪表板标头中收到通知。
 

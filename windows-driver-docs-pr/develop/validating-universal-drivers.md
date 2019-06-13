@@ -5,11 +5,11 @@ description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
-ms.sourcegitcommit: 282e17efc5ff5bc4541e277d67567d37aa2d957b
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58563984"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344035"
 ---
 # <a name="validating-universal-windows-drivers"></a>验证通用 Windows 驱动程序
 
@@ -18,9 +18,9 @@ ms.locfileid: "58563984"
 ## <a name="span-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanrunning-apivalidator-in-visual-studio"></a><span id="Running_ApiValidator_in_Visual_Studio"></span><span id="running_apivalidator_in_visual_studio"></span><span id="RUNNING_APIVALIDATOR_IN_VISUAL_STUDIO"></span>在 Visual Studio 中运行 ApiValidator
 
 
-如果驱动程序项目的“目标平台”属性设置为“通用”，Visual Studio 将作为生成后步骤自动运行 ApiValidator。
+如果驱动程序项目的“目标平台”  属性设置为“通用”  ，Visual Studio 将作为生成后步骤自动运行 ApiValidator。
 
-若要查看 ApiValidator 显示的所有消息，请导航到“工具”&gt;“选项”&gt;“项目和解决方案”&gt;“生成并运行”，并将“MSBuild 项目生成输出详细级别”设置为“详细”。 从命令行生成时，请将开关 **/v:detailed** 或 **/v:diag** 添加到生成命令以提高详细级别。
+若要查看 ApiValidator 显示的所有消息，请导航到“工具”&gt;“选项”&gt;“项目和解决方案”&gt;“生成并运行”  ，并将“MSBuild 项目生成输出详细级别”  设置为“详细”  。 从命令行生成时，请将开关 **/v:detailed** 或 **/v:diag** 添加到生成命令以提高详细级别。
 
 对于 umdf2\_fx2 驱动程序示例，API 验证错误如下所示：
 
@@ -39,7 +39,7 @@ Error   10  error MSB3721: The command ""C:\Program Files (x86)\Windows Kits\10\
 
 ## <a name="fixing-validation-errors"></a>修复验证错误
 
-1.  如果已将旧的桌面 UMDF 驱动程序项目切换为“通用”，请确认在生成二进制文件时包括正确的库。 右键单击该项目，然后选择“属性”。 导航到“链接器”-&gt;“输入”。 **其他依赖项**应包含：
+1.  如果已将旧的桌面 UMDF 驱动程序项目切换为“通用”，请确认在生成二进制文件时包括正确的库。 右键单击该项目，然后选择“属性”。 导航到“链接器”-&gt;“输入”  。 **其他依赖项**应包含：
 
     ```cpp
     %AdditionalDependencies);$(SDK_LIB_PATH)\OneCoreUAP.lib
@@ -61,12 +61,12 @@ ApiValidation: NOT all binaries are Universal
 
 ## <a name="running-apivalidator-from-the-command-prompt"></a>从命令提示符运行 ApiValidator
 
-也可以从命令提示符运行 Apivalidator.exe。 在 WDK 安装中，导航到 C:\\Program Files (x86)\\Windows Kits\\10\\bin\\*&lt;arch&gt;*。
+也可以从命令提示符运行 Apivalidator.exe。 在 WDK 安装中，导航到 C:\\Program Files (x86)\\Windows Kits\\10\\bin\\ *&lt;arch&gt;* 。
 
 使用以下语法：
 
-**Apivalidator.exe** **-DriverPackagePath:**_&lt;驱动程序文件夹路径&gt;_  
- **-SupportedApiXmlFiles:**_&lt;包含通用驱动程序支持的 API 的 XML 文件的路径&gt;_
+**Apivalidator.exe** **-DriverPackagePath:** _&lt;驱动程序文件夹路径&gt;_  
+ **-SupportedApiXmlFiles:** _&lt;包含通用驱动程序支持的 API 的 XML 文件的路径&gt;_
 
 例如，若要验证 WDK 中的“活动”示例调用的 API，应首先在 Visual Studio 中生成示例。 然后，打开命令提示符并导航到包含工具的目录，例如，C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x64。 输入以下命令：
 
@@ -88,7 +88,7 @@ ApiValidator.exe: Warning: API QueryPerformanceCounter in kernel32.dll is not su
 ApiValidator.exe Driver located at C:\Program Files (x86)\Windows Kits\10\src\usb\umdf2_fx2\Debug is NOT a Universal Driver
 ```
 
-枚举通用 Windows 驱动程序的有效 API 的 XML 位于 C:\\Program Files (x86)\\Windows Kits\\10\\build\\universalDDIs\\*&lt;arch&gt;*。
+枚举通用 Windows 驱动程序的有效 API 的 XML 位于 C:\\Program Files (x86)\\Windows Kits\\10\\build\\universalDDIs\\ *&lt;arch&gt;* 。
 
 ## <a name="span-idtroubleshootingspanspan-idtroubleshootingspanspan-idtroubleshootingspantroubleshooting"></a><span id="Troubleshooting"></span><span id="troubleshooting"></span><span id="TROUBLESHOOTING"></span>故障排除
 
@@ -101,7 +101,7 @@ Error      1              error : AitStatic output file has incorrect format or 
 
 请使用此解决方法：
 
-1.  打开“项目”属性，导航到“常规”，将“输出目录”重命名为以下内容：
+1.  打开“项目”属性，导航到“常规”  ，将“输出目录”  重命名为以下内容：
 
     ```cpp
     $(SolutionDir)$(Platform)\$(ConfigurationName)\

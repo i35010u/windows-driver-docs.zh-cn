@@ -5,20 +5,20 @@ description: 创建驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e444b4248d228e87af2869e6b6433336718630e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518538"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382498"
 ---
 # <a name="creating-a-driver-package"></a>创建驱动程序包
 
 ## <a name="span-iddriverprojectsandpackagesspanspan-iddriverprojectsandpackagesspanspan-iddriverprojectsandpackagesspandriver-projects-and-packages"></a><span id="Driver_projects_and_packages"></span><span id="driver_projects_and_packages"></span><span id="DRIVER_PROJECTS_AND_PACKAGES"></span>驱动程序项目和包
 
 
-驱动程序项目是一个 Microsoft Visual Studio 项目，它生成驱动程序二进制文件（如 .sys 文件），并有可能生成驱动程序的 INF 文件。
+驱动程序项目  是一个 Microsoft Visual Studio 项目，它生成驱动程序二进制文件（如 .sys 文件），并有可能生成驱动程序的 INF 文件。
 
-驱动程序包是用于安装驱动程序的文件集合。 包中包括 INF 文件，以及该 INF 引用的文件和二进制文件。 Visual Studio 使用驱动程序包将驱动程序自动部署到远程目标并进行调试。
+驱动程序包  是用于安装驱动程序的文件集合。 包中包括 INF 文件，以及该 INF 引用的文件和二进制文件。 Visual Studio 使用驱动程序包将驱动程序自动部署到远程目标并进行调试。
 
 驱动程序包是一个单独项目，它从一个或多个项目（如驱动程序项目）收集输出。 驱动程序包项目在生成后即生成 Visual Studio 用于部署驱动程序的驱动程序包。
 
@@ -32,18 +32,18 @@ ms.locfileid: "56518538"
 ## <a name="span-idmanuallycreatingadriverpackagespanspan-idmanuallycreatingadriverpackagespanspan-idmanuallycreatingadriverpackagespanmanually-creating-a-driver-package"></a><span id="Manually_creating_a_driver_package"></span><span id="manually_creating_a_driver_package"></span><span id="MANUALLY_CREATING_A_DRIVER_PACKAGE"></span>手动创建驱动程序包
 
 
-如果解决方案没有驱动程序包，可以在 Visual Studio 中手动创建一个，方法是从“文件”菜单选择“新建”&gt;“项目”。 有关如何创建驱动程序包的示例，请参阅[编写第一个驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554811)。
+如果解决方案没有驱动程序包，可以在 Visual Studio 中手动创建一个，方法是从“文件”  菜单选择“新建”&gt;“项目”  。 有关如何创建驱动程序包的示例，请参阅[编写第一个驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554811)。
 
-若要为没有驱动程序包的现有解决方案手动创建一个新的驱动程序包，请使用“驱动程序安装包”模板。 选择“文件”->“新建”->“项目”。 然后从对话框中选择“Windows 驱动程序”&gt;“包”&gt;“驱动程序安装包”。 然后在“解决方案”下拉列表中，选择“添加到解决方案”，然后单击“确定”。
+若要为没有驱动程序包的现有解决方案手动创建一个新的驱动程序包，请使用“驱动程序安装包”模板。 选择“文件”->“新建”->“项目”  。 然后从对话框中选择“Windows 驱动程序”&gt;“包”&gt;“驱动程序安装包”  。 然后在“解决方案”  下拉列表中，选择“添加到解决方案”  ，然后单击“确定”  。
 
 ## <a name="span-idmodifyinganexistingdriverpackagespanspan-idmodifyinganexistingdriverpackagespanspan-idmodifyinganexistingdriverpackagespanmodifying-an-existing-driver-package"></a><span id="Modifying_an_existing_driver_package"></span><span id="modifying_an_existing_driver_package"></span><span id="MODIFYING_AN_EXISTING_DRIVER_PACKAGE"></span>修改现有的驱动程序包
 
 
 如果解决方案已包含驱动程序包，可以将其修改为引用解决方案中的其他项目。
 
-在“解决方案资源管理器”窗格中，打开驱动程序包项目，右键单击“引用”，选择“添加引用…”并选择要引用的项目。
+在“解决方案资源管理器”窗格中，打开驱动程序包项目，右键单击“引用”  ，选择“添加引用…”  并选择要引用的项目。
 
-若要删除对现有项目的引用，请右键单击不再需要引用的现有项目，并单击“删除”。
+若要删除对现有项目的引用，请右键单击不再需要引用的现有项目，并单击“删除”  。
 
 ![驱动程序包属性](images/VsDrvrPkgProps.png)
 
@@ -52,9 +52,9 @@ ms.locfileid: "56518538"
 
 可以将多个驱动程序及其包添加到解决方案。 与“修改现有驱动程序包”类似，可以创建新的驱动程序解决方案，或添加对现有解决方案的引用。 如果解决方案已包含驱动程序包，则可以将其修改为引用解决方案中的其他驱动程序项目。
 
-在“解决方案资源管理器”窗格中，打开驱动程序包项目，右键单击“引用”，选择“添加引用…”并选择要引用的项目。
+在“解决方案资源管理器”窗格中，打开驱动程序包项目，右键单击“引用”  ，选择“添加引用…”  并选择要引用的项目。
 
-若要删除对现有项目的引用，请右键单击不再需要引用的现有项目，并单击“删除”。
+若要删除对现有项目的引用，请右键单击不再需要引用的现有项目，并单击“删除”  。
 
 有关包含多个驱动程序的单个解决方案的示例，请参阅“Toaster 示例驱动程序”示例：![单个解决方案中的多个驱动程序](images/MultipleDriversSingleSolution.png)
 

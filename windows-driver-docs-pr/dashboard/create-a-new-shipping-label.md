@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: ab23c215ff9314138938d748f7d8792a714ec531
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518254"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335032"
 ---
 # <a name="create-a-new-shipping-label"></a>创建新的发货标签
 
@@ -18,7 +18,7 @@ ms.locfileid: "56518254"
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 

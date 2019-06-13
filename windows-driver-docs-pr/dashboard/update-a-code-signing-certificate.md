@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 11d35f1f576671440568259c0f0c42a886dd4f20
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560598"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337093"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
@@ -43,9 +43,9 @@ ms.locfileid: "57560598"
 
 2. **管理员**登录后，你可以使用此直接链接[为文件签名并将其上传](https://partner.microsoft.com/dashboard/account/CertificateUpload)，或按照以下步骤手动导航到该页。
 
-3. 单击右上角的齿轮图标，然后依次单击“开发人员设置”和左窗格中的“管理证书”。
+3. 单击右上角的齿轮图标，然后依次单击“开发人员设置”  和左窗格中的“管理证书”  。
 
-4. 单击“添加新证书”按钮，然后单击“下一步”按钮。  
+4. 单击“添加新证书”  按钮，然后单击“下一步”  按钮。  
 
 5. 下载 Signablefile.bin 并通过带有开关 **/fd sha256** 和相应 SHA-2 时间戳的 SignTool 使用公司的新数字证书为该文件签名。
 

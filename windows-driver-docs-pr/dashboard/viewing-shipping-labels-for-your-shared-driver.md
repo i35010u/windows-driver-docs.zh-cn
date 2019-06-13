@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c300d9742208ffac1914fbc3de14bddb2960cf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518367"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334890"
 ---
 # <a name="view-partner-shipping-labels-for-a-shared-driver"></a>查看共享驱动程序的合作伙伴发货标签
 
@@ -19,7 +19,7 @@ ms.locfileid: "56518367"
 
 1.  [查找硬件提交](manage-your-hardware-submissions.md)，该提交中包含共享驱动程序。
 
-2.  转到硬件提交的“分配”部分。 可查看此共享驱动程序的发货标签列表。
+2.  转到硬件提交的“分配”  部分。 可查看此共享驱动程序的发货标签列表。
 
     ![显示共享提交的发货标签的屏幕截图](images/publish-view-label.png)
 

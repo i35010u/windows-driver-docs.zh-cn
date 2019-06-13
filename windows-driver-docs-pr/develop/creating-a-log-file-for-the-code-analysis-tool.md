@@ -5,11 +5,11 @@ description: Windows Server 2012 硬件认证计划需要所有驱动程序在�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d2db498a7bb404435c02cdeb035ac7975b2c88
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518141"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382418"
 ---
 # <a name="creating-a-log-file-for-the-code-analysis-tool"></a>为代码分析工具创建日志文件
 
@@ -17,9 +17,9 @@ Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?link
 
 **对驱动程序运行代码分析**
 
-1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”作为“配置”，并选择“x64”作为“平台”。
-2.  从“分析”或“生成”菜单中，单击“对解决方案运行代码分析”。
-3.  如果发现错误或警告，请使用“代码分析报告”窗口调查错误产生的原因。 使用警告消息解决这些问题。 有关代码分析工具的详细信息，请参阅[如何为驱动程序运行代码分析](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)和[使用“代码分析”分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
+1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
+2.  从“分析”  或“生成”  菜单中，单击“对解决方案运行代码分析”  。
+3.  如果发现错误或警告，请使用“代码分析报告”  窗口调查错误产生的原因。 使用警告消息解决这些问题。 有关代码分析工具的详细信息，请参阅[如何为驱动程序运行代码分析](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)和[使用“代码分析”分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
 
 驱动程序的代码分析工具会将结果写入项目的生成配置和平台子目录中的文件 vc.nativecodeanalysis.all.xml，例如，\\Windows 8Release\\x64。
 

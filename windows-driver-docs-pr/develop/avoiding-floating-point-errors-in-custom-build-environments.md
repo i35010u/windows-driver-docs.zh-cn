@@ -5,11 +5,11 @@ description: 此信息主要面向开发人员和为 Windows 编译内核模式�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2f017367c211eb8020ea8ee3f29d29509467ee
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518133"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63359485"
 ---
 # <a name="avoiding-floating-point-errors-in-custom-build-environments"></a>避免自定义生成环境内出现浮点错误
 
@@ -18,7 +18,7 @@ ms.locfileid: "56518133"
 ## <a name="span-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanfloating-point-errors-can-cause-data-corruption-or-computer-crashes"></a><span id="Floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="FLOATING_POINT_ERRORS_CAN_CAUSE_DATA_CORRUPTION_OR_COMPUTER_CRASHES_"></span>浮点错误可能导致数据损坏或计算机故障
 
 
-如果不使用 WDK、Visual Studio 和为 Windows 驱动程序 (**WindowsKernelModeDriver8.0**) 推荐的平台工具集编译驱动程序，驱动程序可能无法正确管理浮点操作，即使驱动程序能够正确编译也是如此。
+如果不  使用 WDK、Visual Studio 和为 Windows 驱动程序 (**WindowsKernelModeDriver8.0**) 推荐的平台工具集编译驱动程序，驱动程序可能无法正确管理浮点操作，即使驱动程序能够正确编译也是如此。
 
 Visual Studio Professional 2012 VC++ 编译器通过设置 **/arch:sse2** 编译器选项发出使用 SSE2 指令集的代码。 从 Visual Studio Professional 2012 开始，这成为 x86 VC++ 编译器代码生成的默认选项。 具体来说，是默认值从 **/arch:ia32** 更改为 **/arch:sse2**。
 
@@ -40,7 +40,7 @@ msbuild myProject.vcxproj /p:PlatformToolset=WindowsKernelModeDriver8.0
 
 下面是根据你使用的开发环境类型建议的解决方案：
 
--   **Microsoft 工具集 (MSBuild)** - 无需操作。 使用 **WindowsKernelModeDriver8.0** 作为平台工具集，**/kernel** 将在适当时自动添加。
+-   **Microsoft 工具集 (MSBuild)** - 无需操作。 使用 **WindowsKernelModeDriver8.0** 作为平台工具集， **/kernel** 将在适当时自动添加。
 -   **Microsoft VC++ 编译器** - 添加 **/kernel** 标志以防止编译器发出 SSE2。
 -   **自定义工具/非 Microsoft 编译器** - 必须手动设置生成的二进制文件中使用的程序集指令。
 

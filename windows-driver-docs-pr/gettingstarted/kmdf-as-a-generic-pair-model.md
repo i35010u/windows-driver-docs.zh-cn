@@ -5,11 +5,11 @@ ms.assetid: C05E3017-0F1A-49D7-8EAD-0DC44351A39A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fb7c4c0d0c87db0ae03d092239b6ed0182098eb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518344"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371287"
 ---
 # <a name="kmdf-as-a-generic-driver-pair-model"></a>作为通用驱动程序对模型的 KMDF
 
@@ -37,7 +37,7 @@ ms.locfileid: "56518344"
 
 例如，USB 2.0 主控制器驱动程序有一个名为 usbehci.sys 的特定部分和一个名为 usbport.sys 的通用部分。 Usbehci.sys（称为 USB 2.0 微型端口驱动程序）的代码特定于 USB 2.0 主控制器。 Usbport.sys（称为 USB 端口驱动程序）的通用代码适用于 USB 2.0 和 USB 1.0。 驱动程序对（usbehci.sys，usbport.sys）合并形成用于 USB 2.0 主控制器的单个 WDM 驱动程序。
 
-在不同的设备技术中，（特定，通用）驱动程序对有不同的名称。 大部分设备特定的驱动程序都有前缀“微型”。 常规驱动程序通常称为“端口”或“类驱动程序”。 下面是（特定，通用）对的一些示例：
+在不同的设备技术中，（特定，通用）驱动程序对有不同的名称。 大部分设备特定的驱动程序都有前缀“微型”  。 常规驱动程序通常称为“端口”或“类驱动程序”。 下面是（特定，通用）对的一些示例：
 
 -   （屏幕微型端口驱动程序，屏幕端口驱动程序）
 -   （USB 微型端口驱动程序，USB 端口驱动程序）

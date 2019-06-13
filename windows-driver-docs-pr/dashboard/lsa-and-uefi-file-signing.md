@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
 ms.openlocfilehash: 10235b66c1578e56c70f106b2d1bec592764d512
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560586"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337181"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>文件签名 LSA 插件和 UEFI 固件
 
@@ -30,13 +30,13 @@ ms.locfileid: "57560586"
 
 ## <a name="creating-a-new-uefi-or-lsa-submission"></a>创建新 UEFI 或 LSA 提交
 
-1. 使用 Microsoft 帐户登录到仪表板，然后单击“硬件认证”。
+1. 使用 Microsoft 帐户登录到仪表板，然后单击“硬件认证”  。
 
-2. 在“文件签名服务”页上，单击“提交新 UEFI”或“提交新 LSA”。
+2. 在“文件签名服务”  页上，单击“提交新 UEFI”  或“提交新 LSA”  。
     > [!NOTE]
     > 在创建新的文件签名提交前，系统可能提示你签署法律协议。 请查看并签署协议以继续。 每个组织只需签署一次该协议。
 
-3. 在提交页上，上传要提交的 CAB 文件，然后单击“提交”。
+3. 在提交页上，上传要提交的 CAB 文件，然后单击“提交”  。
 
 4. 提交得到处理后，你将收到一条通知，其中包含提交 ID。
 

@@ -5,11 +5,11 @@ description: 测试驱动程序
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 476e61e300d808cfbfe9ffb8aa74ee7c2e001804
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518140"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344158"
 ---
 # <a name="testing-a-driver"></a>测试驱动程序
 

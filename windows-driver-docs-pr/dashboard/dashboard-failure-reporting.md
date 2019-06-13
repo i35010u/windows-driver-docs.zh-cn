@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 04/05/2018
 ms.openlocfilehash: 28bb769ea30b7a8f14e0f68a506f128671d21b24
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518301"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335040"
 ---
 # <a name="hardware-failure-reporting"></a>硬件故障报告
 

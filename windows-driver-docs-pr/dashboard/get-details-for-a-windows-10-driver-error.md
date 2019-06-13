@@ -7,11 +7,11 @@ ms.date: 08/28/2018
 keywords: windows 10, uwp, Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c252ef1f79a868a1ceb8e5668181e727b0cc6bf
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518543"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337231"
 ---
 # <a name="get-details-for-a-windows-10-driver-error"></a>获取 Windows 10 驱动程序错误的详细信息
 
@@ -53,7 +53,7 @@ ms.locfileid: "56518543"
 
 | 标头|在任务栏的搜索框中键入| 描述|
 |-----|-----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>  。 |
 
 ### <a name="request-parameters"></a>请求参数
 

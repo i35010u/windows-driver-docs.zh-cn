@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 2fc033ca64fded4d2cc8a3fe00082d1e3a635d92
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518443"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335030"
 ---
 # <a name="get-audience-data"></a>获取受众数据
 
@@ -20,7 +20,7 @@ ms.locfileid: "56518443"
 https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
 ```
 
-在使用这些方法之前，产品和提交必须已存在于你的开发人员中心帐户中。 若要创建或管理产品提交，请参阅[管理产品提交](manage-product-submissions.md)中的方法。
+在使用这些方法之前，产品和提交必须已存在于你的开发人员中心帐户中。 若要创建或管理产品的提交内容，请参阅[管理产品提交内容](manage-product-submissions.md)中的方法。
 
 |描述|方法|URI|
 |-|-|-|
@@ -68,7 +68,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
 
 |标头|在任务栏的搜索框中键入|描述|
 |--|--|--|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>  。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数

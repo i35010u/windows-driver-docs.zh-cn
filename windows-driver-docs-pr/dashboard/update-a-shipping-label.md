@@ -6,11 +6,11 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: e7f4c90ad508e7c2270621da289133375c5e98e0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518541"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334888"
 ---
 # <a name="update-a-shipping-label"></a>更新发货标签
 
@@ -28,7 +28,7 @@ ms.locfileid: "56518541"
 |:--|:--|
 | 修补程序 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}` |
 
-方法中的 productID、submissionID 和 shippingLabelId 表示要更新的产品、提交和发货标签。
+方法中的 productID  、submissionID  和 shippingLabelId  表示要更新的产品、提交和发货标签。
 
 ### <a name="request-header"></a>请求头
 
@@ -99,9 +99,9 @@ ms.locfileid: "56518541"
 
 需要注意的要点：
 
-* 更新 CHID 或 HardwareID 时，必须为“操作”提供值。
+* 更新 CHID 或 HardwareID 时，必须为“操作”  提供值。
 
-* “受众”是仅更新字段。 在此字段中提供值将覆盖以前的任何值。 将此值留空将删除上一个值。
+* “受众”  是仅更新字段。 在此字段中提供值将覆盖以前的任何值。 将此值留空将删除上一个值。
 
 * 若要了解如何获取组织的受众列表，请参阅[获取受众](get-audience-data.md)。
 

@@ -5,15 +5,15 @@ description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa3d8b39490757d3ec01d31670cca8a322f4894d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518126"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63391516"
 ---
 # <a name="driver-signing-properties"></a>驱动程序签名属性
 
-在“解决方案资源管理器”中选择项目时，“驱动程序签名”节点下的“属性”对话框将显示属性的两个部分：
+在“解决方案资源管理器”中选择项目时，“驱动程序签名”  节点下的“属性”  对话框将显示属性的两个部分：
 
 ## <a name="span-idundergeneralspanspan-idundergeneralspanspan-idundergeneralspanunder-general"></a><span id="Under_General_"></span><span id="under_general_"></span><span id="UNDER_GENERAL_"></span>在“常规”下：
 
@@ -27,12 +27,12 @@ ms.locfileid: "56518126"
 **测试证书**
 
 -   *空白* - 未选择测试证书（默认）。
--   **&lt;编辑…&gt;** - 选择将“签名模式”设置为“测试签名”时要使用的证书。
+-   **&lt;编辑…&gt;** - 选择将“签名模式”  设置为“测试签名”  时要使用的证书。
 
 **生产证书**
 
 -   *空白* - 未选择生产证书（默认）。
--   **&lt;编辑…&gt;** - 选择将“签名模式”设置为“生产签名”时要使用的证书。
+-   **&lt;编辑…&gt;** - 选择将“签名模式”  设置为“生产签名”  时要使用的证书。
 
 **TimeStampServer**
 

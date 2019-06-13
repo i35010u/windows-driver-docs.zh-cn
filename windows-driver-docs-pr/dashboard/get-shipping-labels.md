@@ -6,17 +6,17 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: eb126c73e1943540af6551a842ea34cf15a615ff
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518162"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337195"
 ---
 # <a name="get-shipping-label-data"></a>获取发货标签数据
 
 有关 Microsoft 硬件 API 的简介，包括关于使用 API 的先决条件的简介，请参阅[使用 API 管理硬件提交内容](dashboard-api.md)。
 
-使用 Microsoft 硬件 API 中的以下方法可获取注册到硬件开发人员中心帐户的硬件产品的发货标签。
+使用 Microsoft 硬件 API 中的以下方法可获取注册到硬件开发人员中心帐户的硬件产品的发货标签。 
 
 ```html
 https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/
@@ -132,7 +132,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 |workflowStatus|对象|此对象描述此发货标签的工作流状态。 有关更多详细信息，请参阅[发货标签工作流状态对象](#shipping-label-workflow-status-object)|
 |links|对象数组|有关详细信息，请参阅[链接对象](get-product-data.md#link-object)。|
 |name|字符串|发货标签的名称|
-|destination|字符串|指示发货标签的目标。 可能的值为（括号中为说明）： <ul><li>anotherPartner（此发货标签用于与其他合作伙伴共享提交内容）</li><li>windowsUpdate（此发货标签用于发布到 Windows 更新）</li><li>notSet</li></ul>|
+|destination|字符串|指示发货标签的目标。 可能的值为（括号中为说明）： <ul><li>anotherPartner（此发货标签用于与其他合作伙伴共享提交内容） </li><li>windowsUpdate（此发货标签用于发布到 Windows 更新） </li><li>notSet</li></ul>|
 
 ### <a name="publishing-specifications-object"></a>发布规范对象
 
@@ -268,8 +268,8 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 |hardwareIds|对象数组|有关详细信息，请参阅[硬件 ID 对象](#hardware-id-object)。|
 |chids|对象数组|有关详细信息，请参阅 [CHIDs 对象](#chids-object)。|
 |restrictedToAudiences|字符串数组|表示受众的字符串数组。 使用受众可将此项发布限制为采用特定配置的计算机。 例如，只会将测试受众传送到装有特定注册表项的客户端。 有关如何识别和管理适用于组织的受众的信息，请参阅[获取受众数据](get-audience-data.md)。|
-|inServicePublishInfo|对象|有关更多详细信息，请参阅[服务中发布信息对象](#in-service-publish-information-object)。 目标对象可以包含 inServicePublishInfo 或 coEngDriverPublishInfo，但不能同时包含两者。|
-|coEngDriverPublishInfo|对象|有关更多详细信息，请参阅[联合研发驱动程序发布信息对象](#co-engineering-driver-publish-information-object)。 目标对象可以包含 inServicePublishInfo 或 coEngDriverPublishInfo，但不能同时包含两者。|
+|inServicePublishInfo|对象|有关更多详细信息，请参阅[服务中发布信息对象](#in-service-publish-information-object)。 目标对象可以包含 inServicePublishInfo 或 coEngDriverPublishInfo，但不能同时包含两者。 |
+|coEngDriverPublishInfo|对象|有关更多详细信息，请参阅[联合研发驱动程序发布信息对象](#co-engineering-driver-publish-information-object)。 目标对象可以包含 inServicePublishInfo 或 coEngDriverPublishInfo，但不能同时包含两者。 |
 
 ### <a name="hardware-id-object"></a>硬件 ID 对象
 
@@ -292,7 +292,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 |infId|字符串|包含此硬件 ID 的 inf 文件的名称|
 |operatingSystemCode|字符串|适用于此特定硬件 ID - 体系结构组合的操作系统代码。 有关可能值，请参阅 [OS 代码列表](get-product-data.md#list-of-operating-system-codes)。|
 |pnpString|字符串|所针对的 PNP ID 或硬件 ID。|
-|distributionState|字符串|表示此硬件 ID 的当前目标状态。 可能的值为（括号中为说明）：<ul><li>pendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行）</li><li>pendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行）</li><li>added（已成功将此硬件 ID 添加为此发货标签中的目标）</li><li>notSet（未执行任何操作，或者未针对此硬件 ID 设置状态）</li></ul>|
+|distributionState|字符串|表示此硬件 ID 的当前目标状态。 可能的值为（括号中为说明）：<ul><li>pendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行） </li><li>pendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行） </li><li>added（已成功将此硬件 ID 添加为此发货标签中的目标） </li><li>notSet（未执行任何操作，或者未针对此硬件 ID 设置状态） </li></ul>|
 |action|字符串|此对象仅在更新/修补发货标签时才适用。 可能的值为： <ul><li>添加</li><li>删除</li></ul> |
 
 创建新的发货标签时，硬件 ID 对象应包含捆绑 ID、PNP ID、OS 代码和 INF 名称的有效组合。 若要获取提交内容（包）的这些属性的允许/有效组合，可以在获取提交内容的详细信息时，下载以链接形式提供的驱动程序元数据文件。 有关详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。
@@ -312,7 +312,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 |chid|GUID|需要针对的 CHID|
-|distributionState|字符串|表示此 CHID 的当前目标状态。 可能的值为（括号中为说明）：<ul><li>pendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行）</li><li>pendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行）</li><li>added（已成功将此硬件 ID 添加为此发货标签中的目标）</li><li>notSet（未执行任何操作，或者未针对此硬件 ID 设置状态）</li></ul>|
+|distributionState|字符串|表示此 CHID 的当前目标状态。 可能的值为（括号中为说明）：<ul><li>pendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行） </li><li>pendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行） </li><li>added（已成功将此硬件 ID 添加为此发货标签中的目标） </li><li>notSet（未执行任何操作，或者未针对此硬件 ID 设置状态） </li></ul>|
 |action|字符串|此对象仅在更新/修补发货标签时才适用。 可能的值为： <ul><li>添加</li><li>删除</li></ul> |
 
 ### <a name="in-service-publish-information-object"></a>服务中发布信息对象
@@ -330,13 +330,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
 |flooring|字符串|希望驱动程序只在列出的 Windows 10 操作系统或更高版本的操作系统上提供时，请使用此选项。 例如，选择 RS4 下限意味着只在运行 Windows 10 1803 (RS4) 和更高版本的系统提供此驱动程序。 可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS（在编写本文档时为 RS5）|
-|ceiling|字符串|对此功能的访问受到限制。 希望只为列出的操作系统或更低版本的系统提供某个驱动程序时，请使用此选项。 例如，在 Windows 10 1607 RS1 认证的驱动程序中选择 RS3 上限意味着，永远不会将驱动程序提供给运行 Windows 10 1803 (RS4) 或更高版本的系统。可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS（在编写本文档时为 RS5）|
+|ceiling|字符串|对此功能的访问受到限制。  希望只为列出的操作系统或更低版本的系统提供某个驱动程序时，请使用此选项。 例如，在 Windows 10 1607 RS1 认证的驱动程序中选择 RS3 上限意味着，永远不会将驱动程序提供给运行 Windows 10 1803 (RS4) 或更高版本的系统。可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS（在编写本文档时为 RS5）|
 
 有关这些值的详细信息，请参阅[按 Windows 版本限制驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/limit-driver-distribution)。
 
 ### <a name="co-engineering-driver-publish-information-object"></a>联合研发驱动程序发布信息对象
 
-此对象表示在为较新和未发布的 Windows 版本开发驱动程序时，按下限和上限定义的分发范围。 此对象仅适用于 Microsoft 联合研发合作伙伴。 下限表示驱动程序将分发到的最低 Windows 版本，而上限则表示最新版本。 添加下限和上限可以限制驱动程序的分发。 
+此对象表示在为较新和未发布的 Windows 版本开发驱动程序时，按下限和上限定义的分发范围。 此对象仅适用于 Microsoft 联合研发合作伙伴。  下限表示驱动程序将分发到的最低 Windows 版本，而上限则表示最新版本。 添加下限和上限可以限制驱动程序的分发。 
 ```json
 {
   "flooringBuildNumber": 17135,
@@ -368,7 +368,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/sub
 
 | 值 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| currentStep | 字符串 | 此实体的整个工作流中的当前步骤名称。 <br>对于发布到 Windows 更新的发货标签，可能的值为（括号中为说明）：<ul><li>Created（正在创建发货标签）</li><li>PreProcessShippingLabel（正在验证目标信息）</li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤）</li><li>PublishJobValidation（正在验证包引入/提交内容是否完整）</li><li>UpdateGeneration（正在生成 WU 的发布详细信息）</li><li>MicrosoftApproval（事务升级/正在进行外部测试）</li><li>Publishing（正在将发布详细信息推送到 WU）</li><li>FinalizePublishing（正在完成发布过程）</li></ul> 对于与其他合作伙伴共享的发货标签，可能的值为（括号中为说明）： <ul><li>Created（正在创建发货标签）</li><li>PreProcessShippingLabel（正在验证目标信息）</li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤）</li><li>PublishJobValidation（正在验证包引入/提交内容是否完整）</li><li>ProcessSharing（正在为接收方生成共享详细信息）</li><li>FinalizeSharing（正在完成共享过程）</li></ul>|
+| currentStep | 字符串 | 此实体的整个工作流中的当前步骤名称。 <br>对于发布到 Windows 更新的发货标签，可能的值为（括号中为说明）：<ul><li>Created（正在创建发货标签） </li><li>PreProcessShippingLabel（正在验证目标信息） </li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤） </li><li>PublishJobValidation（正在验证包引入/提交内容是否完整） </li><li>UpdateGeneration（正在生成 WU 的发布详细信息） </li><li>MicrosoftApproval（事务升级/正在进行外部测试） </li><li>Publishing（正在将发布详细信息推送到 WU） </li><li>FinalizePublishing（正在完成发布过程） </li></ul> 对于与其他合作伙伴共享的发货标签，可能的值为（括号中为说明）： <ul><li>Created（正在创建发货标签） </li><li>PreProcessShippingLabel（正在验证目标信息） </li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤） </li><li>PublishJobValidation（正在验证包引入/提交内容是否完整） </li><li>ProcessSharing（正在为接收方生成共享详细信息） </li><li>FinalizeSharing（正在完成共享过程） </li></ul>|
 | 状态 | 字符串 | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
 | Messages | 数组 | 一个字符串数组，用于提供有关当前步骤的消息（尤其是失败的情况下） |
 

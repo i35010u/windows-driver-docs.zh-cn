@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7be40057ddc31cb48a2e027068737a620c177e8c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518471"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337271"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>创建 LocaleInfo.xml 提交文件
 
@@ -27,7 +27,7 @@ LocaleInfo.xml 文档中的数据基于 LocaleInfo XML 架构（将在下面进�
 
 ### <a name="span-idlocaleinfoxmlschemanamespacespanspan-idlocaleinfoxmlschemanamespacespanspan-idlocaleinfoxmlschemanamespacespanlocaleinfo-xml-schema-namespace"></a><span id="LocaleInfo_XML_Schema_NameSpace"></span><span id="localeinfo_xml_schema_namespace"></span><span id="LOCALEINFO_XML_SCHEMA_NAMESPACE"></span>LocaleInfo XML 架构命名空间
 
-以下是 LocaleInfo XML 架构的命名空间：**http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/LocaleInfo**
+以下是 LocaleInfo XML 架构的命名空间： **http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/LocaleInfo**
 
 ### <a name="span-idoverviewoflocaleinfoxmlelementsattributesspanspan-idoverviewoflocaleinfoxmlelementsattributesspanspan-idoverviewoflocaleinfoxmlelementsattributesspanoverview-of-localeinfo-xml-elementsattributes"></a><span id="Overview_of_LocaleInfo_XML_Elements_Attributes"></span><span id="overview_of_localeinfo_xml_elements_attributes"></span><span id="OVERVIEW_OF_LOCALEINFO_XML_ELEMENTS_ATTRIBUTES"></span>LocaleInfo XML 元素/属性概述
 

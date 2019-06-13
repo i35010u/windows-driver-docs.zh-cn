@@ -5,11 +5,11 @@ ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6adf04958f07f0ed460c07a0c9c71091f23f54b4
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349904"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371365"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>是否需要编写驱动程序？
 

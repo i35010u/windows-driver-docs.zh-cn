@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 04083c0274c82db88d208e187ca08889e26b156d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518469"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335060"
 ---
 # <a name="creating-a-preview-package"></a>创建预览程序包
 
@@ -36,9 +36,9 @@ ms.locfileid: "56518469"
 
 1. 从合作伙伴中心使用 Microsoft 帐户登录仪表板。
 
-2. 在窗口左侧，单击“设备元数据”。
+2. 在窗口左侧，单击“设备元数据”  。
 
-3. 在“设备元数据”页的“管理预览密钥”下，输入符合以下准则的 PreviewKey：
+3. 在“设备元数据”  页的“管理预览密钥”  下，输入符合以下准则的 PreviewKey：
 
     - PreviewKey 必须包含 1 到 15 个字符。
 

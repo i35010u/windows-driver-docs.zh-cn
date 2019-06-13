@@ -5,11 +5,11 @@ description: 如果你在为不同版本的 Windows 编写驱动程序，以下�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b485699ff9a7e602ebe2e8d59c49ac7362174b8b
-ms.sourcegitcommit: d334150abe0b189faf33049908af7aab1458c13d
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57463938"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382487"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 生成驱动程序
 
@@ -41,7 +41,7 @@ ms.locfileid: "57463938"
 
     **使用 Visual Studio：**
 
-    使用记事本或其他文本编辑器打开驱动程序项目文件 (\*.vcxproj)。 在项目文件中，找到驱动程序支持的配置的 **&lt;PropertyGroup&gt;**，并添加以下行来重写默认的链接器选项：
+    使用记事本或其他文本编辑器打开驱动程序项目文件 (\*.vcxproj)。 在项目文件中，找到驱动程序支持的配置的 **&lt;PropertyGroup&gt;** ，并添加以下行来重写默认的链接器选项：
 
     <span codelanguage="XML"></span>
     <table>

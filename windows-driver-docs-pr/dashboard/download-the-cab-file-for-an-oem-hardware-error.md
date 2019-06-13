@@ -7,11 +7,11 @@ ms.date: 03/17/2017
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f48fcef5294e075858c62288c287a451f95fff0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518407"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335045"
 ---
 # <a name="download-the-cab-file-for-an-oem-hardware-error"></a>下载 OEM 硬件错误的 CAB 文件
 
@@ -37,7 +37,7 @@ ms.locfileid: "56518407"
 
 若要使用此方法，首先需要执行以下操作：
 
-- 如果尚未开始操作，请先完成 Microsoft Store 分析 API 的所有[先决条件](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services#prerequisites)。
+- 完成 Microsoft Store 分析 API 的所有[先决条件](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services#prerequisites)（如果尚未这样做）。
 
 - [获取 Azure AD 访问令牌](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -55,7 +55,7 @@ ms.locfileid: "56518407"
 
 | 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;token&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 ### <a name="request-parameters"></a>请求参数
 

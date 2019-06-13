@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 003844029e897ca13c806f0b5b78c903abbe09a0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518153"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337116"
 ---
 # <a name="manage-driver-distribution-with-shipping-labels"></a>使用发货标签管理驱动程序分发
 

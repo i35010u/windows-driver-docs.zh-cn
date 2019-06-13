@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 475b6ecc47d50f43cb7f9f47fb023c6c91a1881c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518438"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337150"
 ---
 # <a name="test-distribution-guidance-to-self-host-desktop-drivers"></a>自托管桌面驱动程序的测试分发指南
 
@@ -51,7 +51,7 @@ ms.locfileid: "56518438"
 1.  打开 Windows 注册表编辑器 (regedit.exe)
 2.  转到 HKLM\\Software\\Microsoft\\
 3.  创建子项 \\DriverFlighting\\Partner\\
-4.  在 \\Partner 子项下，创建名为“TargetRing”的字符串并键入“Drivers”作为值
+4.  在 \\Partner 子项下，创建名为“TargetRing”  的字符串并键入“Drivers”  作为值
 5.  确保你按如下所示内容进行了设置：
 
     ![显示 Windows 注册表编辑器中合作伙伴子项下创建的字符串的图像](images/registry-editor-drivers.png)
@@ -59,7 +59,7 @@ ms.locfileid: "56518438"
 6.  退出 Windows 注册表编辑器。 你不需要在做出此更改后重新启动计算机。
 7.  执行下列操作之一：
     -   运行 Windows 更新并检查更新。
-    -   在设备管理器中，右键单击目标设备并“更新设备软件”。
+    -   在设备管理器中，右键单击目标设备并“更新设备软件”  。
 8.  验证是否按照预期提供了测试驱动程序
 
     -   如果遇到问题，请联系客户服务和支持人员。
@@ -68,7 +68,7 @@ ms.locfileid: "56518438"
 
 ### <a name="span-idhowdoistopmypcfromreceivingtestdistributiondriversspanspan-idhowdoistopmypcfromreceivingtestdistributiondriversspanspan-idhowdoistopmypcfromreceivingtestdistributiondriversspanhow-do-i-stop-my-pc-from-receiving-test-distribution-drivers"></a><span id="How_do_I_stop_my_PC_from_receiving_test_distribution_drivers_"></span><span id="how_do_i_stop_my_pc_from_receiving_test_distribution_drivers_"></span><span id="HOW_DO_I_STOP_MY_PC_FROM_RECEIVING_TEST_DISTRIBUTION_DRIVERS_"></span>如何使我的电脑停止接收测试分发驱动程序？
 
-若要停止接收测试分发驱动程序，请删除你在先前部分中创建的“TargetRing”注册表数据值。 双击“Drivers”数据值将其删除，然后单击“确定”。 通过执行此操作，将不再向你的客户端系统提供预发布驱动程序。
+若要停止接收测试分发驱动程序，请删除你在先前部分中创建的“TargetRing”  注册表数据值。 双击“Drivers”  数据值将其删除，然后单击“确定”  。 通过执行此操作，将不再向你的客户端系统提供预发布驱动程序。
 
 **注意**  你的系统将继续从 Windows 更新接收所有生产驱动程序。
 
@@ -76,7 +76,7 @@ ms.locfileid: "56518438"
 
 1.  打开 Windows 注册表编辑器 (regedit.exe)
 2.  转到 HKLM\\Software\\Microsoft\\DriverFlighting\\Partner。 如果这些项不存在，则已完成操作，否则继续执行下一步。
-3.  在 \\Partner 子项下，删除“TargetRing”的数据值
+3.  在 \\Partner 子项下，删除“TargetRing”  的数据值
 4.  确保设置如下所示：
 
     ![显示 Windows 注册表编辑器中合作伙伴子项下已删除的字符串值的图像](images/registry-editor-no-drivers.png)

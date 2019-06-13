@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b9c2dec16322bd580133701ec7c2cf54c84d4a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518146"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337246"
 ---
 # <a name="download-failure-cabs"></a>下载失败的 Cab
 

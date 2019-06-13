@@ -5,11 +5,11 @@ ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b4d528c5f4cdf622221a79efcccc4c03b7c88c5b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518394"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371178"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 
@@ -22,7 +22,7 @@ ms.locfileid: "56518394"
 
 -   不同进程使用的虚拟地址彼此隔离。 一个进程中的代码无法更改正在由另一进程或操作系统使用的物理内存。
 
-进程可用的虚拟地址范围称为该进程的“虚拟地址空间”。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位进程，虚拟地址空间为 8 TB，范围从 0x000'00000000 至 0x7FF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”。
+进程可用的虚拟地址范围称为该进程的“虚拟地址空间”  。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位进程，虚拟地址空间为 8 TB，范围从 0x000'00000000 至 0x7FF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”  。
 
 此图说明了虚拟地址空间的一些重要功能。
 
@@ -33,7 +33,7 @@ ms.locfileid: "56518394"
 ## <a name="span-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanspan-iduserspaceandsystemspacespanuser-space-and-system-space"></a><span id="User_space_and_system_space"></span><span id="user_space_and_system_space"></span><span id="USER_SPACE_AND_SYSTEM_SPACE"></span>用户空间和系统空间
 
 
-诸如 Notepad.exe 和 MyApp.exe 的进程在用户模式下运行。 核心操作系统组件和多个驱动程序在更有特权的内核模式下运行。 有关处理器模式的详细信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。 每个用户模式进程都有其各自的专用虚拟地址空间，但在内核模式下运行的所有代码都共享称为“系统空间”的单个虚拟地址空间。 用户模式进程的虚拟地址空间称为“用户空间”。
+诸如 Notepad.exe 和 MyApp.exe 的进程在用户模式下运行。 核心操作系统组件和多个驱动程序在更有特权的内核模式下运行。 有关处理器模式的详细信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。 每个用户模式进程都有其各自的专用虚拟地址空间，但在内核模式下运行的所有代码都共享称为“系统空间”  的单个虚拟地址空间。 用户模式进程的虚拟地址空间称为“用户空间”  。
 
 在 32 位 Windows 中，可用的虚拟地址空间共计为 2^32 字节（4 GB）。 通常，较低的 2 GB 用于用户空间，较高的 2 GB 用于系统空间。
 

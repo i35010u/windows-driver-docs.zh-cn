@@ -5,18 +5,18 @@ ms.assetid: 49207485-AFDF-4E84-B39C-A14FC7E2CF60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a08581620dad4b82d279c93e26f1ad682e227d7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518198"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371299"
 ---
 # <a name="kmdf-extensions-and-driver-triples"></a>KMDF 扩展和三重驱动程序
 
 
 在本主题中，我们介绍内核模式驱动程序框架 (KMDF) 基于类的扩展。 在阅读本主题之前，应了解[微型驱动程序和驱动程序对](minidrivers-and-driver-pairs.md)和[作为通用驱动程序对模型的 KMDF](kmdf-as-a-generic-pair-model.md) 中介绍的理念。
 
-对于某些设备类，Microsoft 会提供 KMDF 扩展，这些扩展会进一步降低必须由 KMDF 驱动程序执行处理的量。 使用基于类的 KMDF 扩展的驱动程序有以下三个部分，我们将其称为“三重驱动程序”。
+对于某些设备类，Microsoft 会提供 KMDF 扩展，这些扩展会进一步降低必须由 KMDF 驱动程序执行处理的量。 使用基于类的 KMDF 扩展的驱动程序有以下三个部分，我们将其称为“三重驱动程序”  。
 
 -   框架，处理大部分驱动程序共同的任务
 -   基于类的框架扩展，处理特定于特殊类的设备的任务

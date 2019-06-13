@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e5f220bc220e5d7b750868e776f68fec313f0855
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518168"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334912"
 ---
 # <a name="submit-a-device-metadata-package-dashboard-help"></a>提交设备元数据包（仪表板帮助）
 
@@ -26,11 +26,11 @@ ms.locfileid: "56518168"
 
 1.  使用 [SignTool 工具](https://go.microsoft.com/fwlink/p/?LinkId=238330)对元数据包进行签名。
 
-2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”。
+2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
-3.  在“设备元数据”下，单击“创建体验”（如果你希望提交新体验），或单击“管理体验”（如果你希望修改现有体验）。
+3.  在“设备元数据”  下，单击“创建体验”  （如果你希望提交新体验），或单击“管理体验”  （如果你希望修改现有体验）。
 
-4.  浏览并选择你的新体验，然后单击“提交”。
+4.  浏览并选择你的新体验，然后单击“提交”  。
 
 有关详细信息，请参阅[创建设备元数据体验](https://msdn.microsoft.com/library/windows/hardware/br230794.aspx)或[管理设备元数据体验](https://msdn.microsoft.com/library/windows/hardware/br230797.aspx)。
 

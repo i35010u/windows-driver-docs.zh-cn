@@ -6,11 +6,11 @@ keywords: 筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d6807e13500558450dafd4be1f37989cc956c45
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518073"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382415"
 ---
 # <a name="creating-a-new-filter-driver"></a>创建新的筛选器驱动程序
 
@@ -29,20 +29,20 @@ ms.locfileid: "56518073"
 ## <a name="span-idcase1thedocumentationforyourtechnologyrecommendsumdfspanspan-idcase1thedocumentationforyourtechnologyrecommendsumdfspancase-1-the-documentation-for-your-technology-recommends-umdf"></a><span id="case_1__the_documentation_for_your_technology_recommends_umdf."></span><span id="CASE_1__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_RECOMMENDS_UMDF."></span>案例 1：你的技术的文档建议使用 UMDF。
 
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在“新建项目”对话框的左侧窗格中，找到并选择“Visual C++ | Windows 驱动程序 | WDF”。
-3.  在中间窗格中，选择“用户模式驱动程序(UMDF)”。
-4.  填写“名称”和“位置”框，然后单击“确定”。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439659)。
+1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2.  在“新建项目”对话框的左侧窗格中，找到并选择“Visual C++ | Windows 驱动程序 | WDF”  。
+3.  在中间窗格中，选择“用户模式驱动程序(UMDF)”  。
+4.  填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439659)。
     **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 UMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
 ## <a name="span-idcase2thedocumentationforyourtechnologyrecommendskmdfspanspan-idcase2thedocumentationforyourtechnologyrecommendskmdfspancase-2-the-documentation-for-your-technology-recommends-kmdf"></a><span id="case_2__the_documentation_for_your_technology_recommends_kmdf."></span><span id="CASE_2__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_RECOMMENDS_KMDF."></span>案例 2：你的技术的文档建议使用 KMDF。
 
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”。
-3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”。
-4.  填写“名称”和“位置”框，然后单击“确定”。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)。
+1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
+3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
+4.  填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)。
     **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
@@ -51,11 +51,11 @@ ms.locfileid: "56518073"
 
 如果你的设备技术具有特定的筛选器或微筛选器模型，请查看 Visual Studio 是否具有该模型的模板。
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在“新建项目”对话框的左侧窗格中，找到并选择“模板 | Visual C++ | Windows 驱动程序”。
-3.  浏览已安装模板列表，查看是否有你需要编写的筛选器类型的模板。 例如，可以选择“筛选器驱动程序: NDIS”模板（在**网络**下）。
-4.  如果 **Windows 驱动程序**下没有你的筛选器驱动程序类型的模板，请单击“联机”并浏览联机可用的模板。
-5.  如果你找到了你的筛选器驱动程序类型的模板，请选择该模板，填写“名称”和“位置”框，然后单击“确定”。
+1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2.  在“新建项目”对话框的左侧窗格中，找到并选择“模板 | Visual C++ | Windows 驱动程序”  。
+3.  浏览已安装模板列表，查看是否有你需要编写的筛选器类型的模板。 例如，可以选择“筛选器驱动程序:  NDIS”模板（在**网络**下）。
+4.  如果 **Windows 驱动程序**下没有你的筛选器驱动程序类型的模板，请单击“联机”  并浏览联机可用的模板。
+5.  如果你找到了你的筛选器驱动程序类型的模板，请选择该模板，填写“名称”  和“位置”  框，然后单击“确定”  。
 6.  此时，你的驱动程序项目可以实现筛选器驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。 请参阅你的技术的文档来了解你需要实现的功能。
 
 如果你的设备技术有特定的筛选器模型或微筛选器模型，并且你找不到你的筛选器驱动程序类型的模板，请参阅技术特定文档获取确定是使用 UMDF、KMDF 还是使用 WDM 的指导信息。
@@ -63,11 +63,11 @@ ms.locfileid: "56518073"
 ## <a name="span-idcase4thedocumentationforyourtechnologyrecommendswdmspanspan-idcase4thedocumentationforyourtechnologyrecommendswdmspancase-4-the-documentation-for-your-technology-recommends-wdm"></a><span id="case_4__the_documentation_for_your_technology_recommends_wdm."></span><span id="CASE_4__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_RECOMMENDS_WDM."></span>案例 4：你的技术的文档建议使用 WDM。
 
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在 Visual Studio 中的“新建项目”对话框中，在“Windows 驱动程序”下选择 **WDM**。
-3.  填写“名称”和“位置”框，然后单击“确定”。
-4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”。
-5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后单击“确定”。
+1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2.  在 Visual Studio 中的“新建项目”对话框中，在“Windows 驱动程序”  下选择 **WDM**。
+3.  填写“名称”  和“位置”  框，然后单击“确定”  。
+4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”  。
+5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”  ，为文件输入一个名称，然后单击“确定”  。
 
     **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
 6.  实现你的筛选器所需的功能。 在实现和组织功能时，你可能决定添加其他 .cpp 或 .c 文件。
@@ -76,8 +76,8 @@ ms.locfileid: "56518073"
 
 
 1.  确定 UMDF、KMDF 或 WDM 是否是最适合你的筛选器驱动程序的模型。 如需帮助，请参阅[选择驱动程序模型](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)。
-2.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-3.  在 Visual Studio 的“新建项目”对话框中，在“Windows 驱动程序”下，选择以下模板之一：
+2.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+3.  在 Visual Studio 的“新建项目”对话框中，在“Windows 驱动程序”  下，选择以下模板之一：
 
     -   **WDF | 用户模式驱动程序 (UMDF)**
     -   **WDF | 内核模式驱动程序 (KMDF)**

@@ -5,11 +5,11 @@ description: 使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) �
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0c0dab836b3efcc02eb65966ace87423c10d7f5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518210"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63379879"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>如何使用“驱动程序测试”模板编写驱动程序测试
 
@@ -20,40 +20,40 @@ ms.locfileid: "56518210"
 ## <a name="span-idtocustomizeadrivertestusingthedrivertesttemplateforcspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforcspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforcspanto-customize-a-driver-test-using-the-driver-test-template-for-c"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_C__"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_c__"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_C__"></span>使用 C++ 驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”菜单中，单击“新建”&gt;“项目”。
-2.  从“新建项目”对话框中的已安装模板列表中，选择“Visual C++”&gt;“Windows 驱动程序”&gt;“测试”。
-3.  选择“C++ Windows 驱动程序测试”。
+1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+2.  从“新建项目”  对话框中的已安装模板列表中，选择“Visual C++”&gt;“Windows 驱动程序”&gt;“测试”  。
+3.  选择“C++ Windows 驱动程序测试”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
-5.  从“Windows 驱动程序测试”对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的详细信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
+5.  从“Windows 驱动程序测试”  对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的详细信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
 6.  添加所需的测试元数据。 有关详细信息，请参阅[如何添加测试元数据](to-add-test-metadata.md)。
 7.  生成驱动程序测试。
 
 ## <a name="span-idtocustomizeadrivertestusingthedrivertesttemplateforcspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforcspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforcspanto-customize-a-driver-test-using-the-driver-test-template-for-c"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_C_"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_c_"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_C_"></span>使用 C\# 驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”菜单中，单击“新建”&gt;“项目”。
-2.  从“新建项目”对话框中的已安装模板列表中，选择“Visual C\#”&gt;“Windows 驱动程序”。
-3.  选择“C\# Windows 驱动程序测试”。
+1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+2.  从“新建项目”  对话框中的已安装模板列表中，选择“Visual C\#”&gt;“Windows 驱动程序”  。
+3.  选择“C\# Windows 驱动程序测试”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
-5.  从“Windows 驱动程序测试”对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
+5.  从“Windows 驱动程序测试”  对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
 6.  添加所需的测试元数据。 有关详细信息，请参阅[如何添加测试元数据](to-add-test-metadata.md)。
 7.  生成驱动程序测试。
 
 ## <a name="span-idtocustomizeadrivertestusingthedrivertesttemplateforscriptspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforscriptspanspan-idtocustomizeadrivertestusingthedrivertesttemplateforscriptspanto-customize-a-driver-test-using-the-driver-test-template-for-script"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_Script"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_script"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_SCRIPT"></span>使用脚本驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”菜单中，单击“新建”&gt;“项目”。
-2.  从“新建项目”对话框中的已安装模板列表中，选择“脚本”&gt;“Windows 驱动程序”。
-3.  选择“Windows 驱动程序测试脚本”。
+1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+2.  从“新建项目”  对话框中的已安装模板列表中，选择“脚本”&gt;“Windows 驱动程序”  。
+3.  选择“Windows 驱动程序测试脚本”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
-5.  从“Windows 驱动程序测试”对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
+5.  从“Windows 驱动程序测试”  对话框中，选择你想要包含的测试用例或选择空（空白）驱动程序测试。 有关测试用例的信息，请参阅 [Windows 驱动程序测试用例](#windows_driver_test_cases)。
 6.  添加所需的测试元数据。 有关详细信息，请参阅[如何添加测试元数据](to-add-test-metadata.md)。
 7.  生成驱动程序测试。
 
 ## <a name="span-idmakingthedrivertestsyoucreateavailablefordeploymentontestcomputersspanspan-idmakingthedrivertestsyoucreateavailablefordeploymentontestcomputersspanspan-idmakingthedrivertestsyoucreateavailablefordeploymentontestcomputersspanmaking-the-driver-tests-you-create-available-for-deployment-on-test-computers"></a><span id="Making_the_driver_tests_you_create_available_for_deployment_on_test_computers"></span><span id="making_the_driver_tests_you_create_available_for_deployment_on_test_computers"></span><span id="MAKING_THE_DRIVER_TESTS_YOU_CREATE_AVAILABLE_FOR_DEPLOYMENT_ON_TEST_COMPUTERS"></span>使你创建的驱动程序测试可部署到测试计算机上
 
 
-生成驱动程序测试时，新测试将可部署到测试计算机上。 默认情况下，你创建的测试将显示在测试类别“我的测试类别”中。 测试名称基于你选择的测试用例，其名称将类似于“我的即插即用意外删除测试”。 每次生成测试时，测试将被覆盖。 最后生成的测试可供在测试计算机上部署和运行。
+生成驱动程序测试时，新测试将可部署到测试计算机上。 默认情况下，你创建的测试将显示在测试类别“我的测试类别”  中。 测试名称基于你选择的测试用例，其名称将类似于“我的即插即用意外删除测试”  。 每次生成测试时，测试将被覆盖。 最后生成的测试可供在测试计算机上部署和运行。
 
 ## <a name="span-idwindowsdrivertestcasesspanspan-idwindowsdrivertestcasesspanwindows-driver-test-cases"></a><span id="windows_driver_test_cases"></span><span id="WINDOWS_DRIVER_TEST_CASES"></span>Windows 驱动程序测试用例
 

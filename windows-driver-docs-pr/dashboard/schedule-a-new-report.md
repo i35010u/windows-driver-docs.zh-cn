@@ -6,15 +6,15 @@ ms.author: shganesh
 ms.date: 09/01/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d7aa593bee432cb9a3732c8e0298af06e2f9ca0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518405"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337112"
 ---
 # <a name="schedule-a-new-report"></a>计划新报告
 
-成功创建报告模板并收到 templateID 后，请使用此方法设置频率并计划定期发送给你的报告。
+成功创建报告模板并收到 templateID  后，请使用此方法设置频率并计划定期发送给你的报告。
 
 ## <a name="request-syntax"></a>请求语法
 
@@ -26,7 +26,7 @@ ms.locfileid: "56518405"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>|
+|授权|字符串|必需。 采用 **Bearer** \<令牌\> 格式的 Azure AD 访问令牌 |
 |内容类型|字符串|Application/JSON|
 
 ## <a name="sample-request-payload"></a>示例请求有效负载

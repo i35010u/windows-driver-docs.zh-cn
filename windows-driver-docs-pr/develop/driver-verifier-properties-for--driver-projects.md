@@ -5,11 +5,11 @@ description: 驱动程序验证程序是一款运行时验证工具，用于提�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ea9673f00161fd2b6f0e2711e4649afa8e45f036
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518174"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63391520"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的驱动程序验证程序属性
 
@@ -20,9 +20,9 @@ ms.locfileid: "56518174"
 ## <a name="span-idsettingdriververifierpropertiesfordriverpackageprojectsspanspan-idsettingdriververifierpropertiesfordriverpackageprojectsspanspan-idsettingdriververifierpropertiesfordriverpackageprojectsspansetting-driver-verifier-properties-for-driver-package-projects"></a><span id="Setting_Driver_Verifier_properties_for_driver_package_projects"></span><span id="setting_driver_verifier_properties_for_driver_package_projects"></span><span id="SETTING_DRIVER_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>设置驱动程序包项目的驱动程序验证程序属性
 
 
-1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”。
-2.  在驱动程序包的属性页中，单击“配置属性”，单击“驱动程序安装”，然后单击“驱动程序验证程序”。
-3.  选择“启用驱动程序验证”选项。 选中此选项时，你可以选择要在测试计算机上验证的驱动程序并且还可以选择要使用的[驱动程序验证程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)选项。
+1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
+2.  在驱动程序包的属性页中，单击“配置属性”  ，单击“驱动程序安装”  ，然后单击“驱动程序验证程序”  。
+3.  选择“启用驱动程序验证”  选项。 选中此选项时，你可以选择要在测试计算机上验证的驱动程序并且还可以选择要使用的[驱动程序验证程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff545448)选项。
 
 ## <a name="span-idprojectconfigurationandplatformspanspan-idprojectconfigurationandplatformspanspan-idprojectconfigurationandplatformspanproject-configuration-and-platform"></a><span id="Project_Configuration_and_Platform"></span><span id="project_configuration_and_platform"></span><span id="PROJECT_CONFIGURATION_AND_PLATFORM"></span>项目配置和平台
 

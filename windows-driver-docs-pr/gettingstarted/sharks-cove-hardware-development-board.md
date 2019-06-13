@@ -5,11 +5,11 @@ ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 84f4305c71debf567516b5d5e6680214371a9eb2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518247"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371282"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
@@ -29,7 +29,7 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 
 此处提供的说明要求你运行 Windows 10、Windows 8.1 或 Windows 7。 如果运行的是 Windows 8，则这些说明不适用。
 
-如果运行的是 Windows 7，则需要安装 [PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) 和 [Windows 8.1 更新的 Windows 评估和部署工具包 (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721)。 然后，在“开始”菜单上，转到“所有程序”&gt;“Windows 工具包”&gt;“Windows ADK”&gt;“部署和映像工具环境”。 以管理员身份打开此命令提示符窗口。 在输入这些说明中给出的命令时，请使用此命令提示符窗口。
+如果运行的是 Windows 7，则需要安装 [PowerShell 4.0](https://go.microsoft.com/fwlink/p?linkid=507377) 和 [Windows 8.1 更新的 Windows 评估和部署工具包 (ADK)](https://go.microsoft.com/fwlink/p/?linkid=239721)。 然后，在“开始”  菜单上，转到“所有程序”  &gt;“Windows 工具包”&gt;“Windows ADK”&gt;“部署和映像工具环境”。 以管理员身份打开此命令提示符窗口。 在输入这些说明中给出的命令时，请使用此命令提示符窗口。
 
 ## <a name="span-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanspan-idstep1gettheboardandrelatedhardwarespanstep-1-get-the-board-and-related-hardware"></a><span id="Step_1__Get_the_board_and_related_hardware"></span><span id="step_1__get_the_board_and_related_hardware"></span><span id="STEP_1__GET_THE_BOARD_AND_RELATED_HARDWARE"></span>步骤 1：获取开发板和相关硬件
 
@@ -48,7 +48,7 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 ## <a name="span-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanspan-idstep2downloadkitsandtoolsspanstep-2-download-kits-and-tools"></a><span id="Step_2__Download_kits_and_tools"></span><span id="step_2__download_kits_and_tools"></span><span id="STEP_2__DOWNLOAD_KITS_AND_TOOLS"></span>步骤 2：下载工具包和工具
 
 
-一个驱动程序开发环境有两台计算机：主计算机和目标计算机。 目标计算机也称为“测试计算机”。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
+一个驱动程序开发环境有两台计算机：主计算机  和目标计算机  。 目标计算机也称为“测试计算机”  。 在主机上的 Microsoft Visual Studio 中开发和构建驱动程序。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 当测试和调试驱动程序时，驱动程序在目标计算机上运行。 在此情况下，Sharks Cove 板是目标计算机。
 
 若要开发 Sharks Cove 板的硬件和驱动程序，需要在主机上安装以下工具包和工具：
 
@@ -104,7 +104,7 @@ Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 示
 -   你同意 Windows Embedded 8.1 Industry Pro 的 Microsoft 评估软件许可条款（简称“评估软件许可条款”）的全部条款，以下条款除外：
     -   经过部分修正的评估软件许可条款 的 1.b. 部分（演示权限），如：
         -   你可能会出于一些合理必要的演示目的，通过使用软件（“演示设备”）向潜在客户演示或交付由你开发的可用于演示的 Windows Embedded 8.1 Industry Pro 设备。 可以向客户演示和交付演示设备，他们无需履行保密义务。
-    -   1.b. 部分中与 上述已修正部分不直接冲突的所有条款都将适用。
+    -   1\.b. 部分中与 上述已修正部分不直接冲突的所有条款都将适用。
 -   **使用该软件即表示你接受这些条款。** 如果不接受并且不遵守这些条款，则不得使用该软件或其功能。
 
 下载 [Windows Embedded 8.1 Industry (x86) Pro 评估版](https://go.microsoft.com/fwlink/p?linkid=403173)或 Windows Embedded 8.1 Industry Pro with Update (x86) - DVD。
@@ -128,13 +128,13 @@ Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 示
 -   Bootmgr.efi
 -   Setup.exe
 
-**注意**  如果运行的是 Windows 7，请右键单击 ISO 文件，然后选择“刻录磁盘映像”。 将映像刻录到可录制 DVD。 然后，将文件从 DVD 复制到 *Root*\\Setup。
+**注意**  如果运行的是 Windows 7，请右键单击 ISO 文件，然后选择“刻录磁盘映像”  。 将映像刻录到可录制 DVD。 然后，将文件从 DVD 复制到 *Root*\\Setup。
 
 
 
 在[此处](https://go.microsoft.com/fwlink/p?linkid=506954)获取 Sharks Cove 板支持包 (BSP)。 将该包中的所有文件都复制到 *Root*\\SharksCoveBsp 中。
 
-在[此处](https://go.microsoft.com/fwlink/p/?linkid=403174)获取 WDK 开发板加载项工具包。 打开“SourceCode”选项卡。单击“下载”（不是“下载”选项卡），获取工具包脚本。 打开 Scripts 文件夹，然后将以下两项复制到 *Root* 中。
+在[此处](https://go.microsoft.com/fwlink/p/?linkid=403174)获取 WDK 开发板加载项工具包。 打开“SourceCode”  选项卡。单击“下载”（不是“下载”选项卡），获取工具包脚本。  打开 Scripts 文件夹，然后将以下两项复制到 *Root* 中。
 
 -   Create-DevboardImage.ps1
 -   DevBoard 文件夹
@@ -182,7 +182,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 将该 U 盘插入连接到 Sharks Cove 板的集线器。 启动或重启 Sharks Cove 板时，请按住增大音量按钮。 增大音量按钮是开发板左侧的一组三个按钮中最顶端的按钮，如上图所示。 （如果开发板已启动，可以按住电源按钮几秒钟将其关闭。）当开发板启动时，将在屏幕上看到 EFI shell。
 
-**注意**  可能需要导航到 EFI Shell。 转到“引导管理器”&gt;“EFI Internal Shell”。
+**注意**  可能需要导航到 EFI Shell。 转到  “引导管理器”&gt;“EFI Internal Shell”。
 
 
 
@@ -190,7 +190,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 （在此处，我们将使用 **fs1**: 作为 U 盘的名称。）在 **Shell&gt;** 提示符下，输入以下命令：
 
-**fs1:**
+**fs1:** 
 **cd efi\\boot**
 **dir** 验证 bootia32.efi 是否在目录中。 输入此命令：
 
@@ -199,7 +199,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ## <a name="span-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanspan-idstep4provisionthesharkscoveboardfordriverdeploymentandtestingspanstep-4-provision-the-sharks-cove-board-for-driver-deployment-and-testing"></a><span id="Step_4__Provision_the_Sharks_Cove_board_for_driver_deployment_and_testing"></span><span id="step_4__provision_the_sharks_cove_board_for_driver_deployment_and_testing"></span><span id="STEP_4__PROVISION_THE_SHARKS_COVE_BOARD_FOR_DRIVER_DEPLOYMENT_AND_TESTING"></span>步骤 4：预配 Sharks Cove 板，以便进行驱动程序部署和测试
 
 
-预配是配置计算机以便进行自动驱动程序部署、测试和调试的过程。
+预配  是配置计算机以便进行自动驱动程序部署、测试和调试的过程。
 
 设置硬件，如下所示。
 
@@ -213,7 +213,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 -   [Setting up Kernel-Mode Debugging using Serial over USB in Visual Studio](https://go.microsoft.com/fwlink/p?linkid=400460)（在 Visual Studio 中使用 Serial over USB 设置内核模式调试）
 
-**注意**  在预配 Sharks Cove 板之前，需要禁用“安全启动”。 重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到“设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”设置为“禁用”。
+**注意**  在预配 Sharks Cove 板之前，需要禁用“安全启动”。 重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到  “设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”  设置为“禁用”  。
 
 
 
@@ -381,7 +381,7 @@ testsigning             Yes
 
     **bcdedit /set TESTSIGNING ON**
 
-2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到“设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”设置为“禁用”。
+2.  重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到  “设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”  设置为“禁用”  。
 3.  保存更改并继续启动到 Windows。
 
 
@@ -420,8 +420,8 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 准备好测试 Sharks Cove 板上的驱动程序时，请执行以下步骤：
 
-1.  在主机上的 Visual Studio 中，右键单击程序包项目，然后选择“属性”。 转到“驱动程序安装”&gt;“部署”。 选中“启用部署”和“部署前删除以前的驱动程序版本”。 对于“目标计算机名称”，请选择 Sharks Cove 板的名称。 选择“安装并验证”。
-2.  继续在属性页中转到“驱动程序签名”&gt;“常规”。 对于“签名模式”，请选择“测试签名”。 单击“确定” 。
+1.  在主机上的 Visual Studio 中，右键单击程序包项目，然后选择“属性”  。 转到  “驱动程序安装”&gt;“部署”。 选中“启用部署”  和“部署前删除以前的驱动程序版本”  。 对于“目标计算机名称”  ，请选择 Sharks Cove 板的名称。 选择“安装并验证”  。
+2.  继续在属性页中转到  “驱动程序签名”&gt;“常规”。 对于“签名模式”  ，请选择“测试签名”  。 单击“确定”  。
 3.  在驱动程序项目中，打开 INF 文件。 编辑硬件 ID，使其与在 SSDT 中创建的硬件 ID (\_HID) 匹配。 例如，假设将此 Device 条目置于 SSDT 中，
 
     ``` syntax
@@ -438,12 +438,12 @@ GpioInt(... "\\_SB.GPO2") {0x17}
     %KMDFDriver1.DeviceDesc%=KMDFDriver1_Device, ACPI\SpbAccelerometer
     ```
 
-4.  在 Visual Studio 的“调试”菜单上，选择“开始调试”。
-5.  Microsoft Visual Studio 首先在“输出”窗口中显示进度。 然后，它将打开“调试程序即时窗口”并继续显示进度。
+4.  在 Visual Studio 的“调试”  菜单上，选择“开始调试”  。
+5.  Microsoft Visual Studio 首先在“输出”  窗口中显示进度。 然后，它将打开“调试程序即时窗口”  并继续显示进度。
 
     等待至已在 Sharks Cove 板上部署、安装和加载驱动程序。 此操作可能需一到两分钟。
 
-6.  如果调试程序未自动强行进入，请从“调试”菜单中选择“全部中断”。 主计算机上的调试程序将强行进入目标计算机（内核模式）或 Wudfhost.exe (UMDF) 的正确实例。 在“调试程序即时窗口”中，会看到调试程序命令提示符。
+6.  如果调试程序未自动强行进入，请从“调试”  菜单中选择“全部中断”  。 主计算机上的调试程序将强行进入目标计算机（内核模式）或 Wudfhost.exe (UMDF) 的正确实例。 在“调试程序即时窗口”  中，会看到调试程序命令提示符。
 
 7.  若要查看已加载的模块，请输入 **lm**。 验证驱动程序是否出现在已加载模块的列表中。
 

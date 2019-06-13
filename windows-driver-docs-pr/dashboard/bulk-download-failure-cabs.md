@@ -6,11 +6,11 @@ ms.date: 09/01/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5afb3cf56642ec6a28827ee3d6df0afcd2b10874
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518512"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337283"
 ---
 # <a name="bulk-download-failure-cabs"></a>批量下载失败的 Cab
 
@@ -28,7 +28,7 @@ ms.locfileid: "56518512"
 
 |标头|在任务栏的搜索框中键入|描述|
 |----|----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>  。|
 
 ### <a name="request-parameters"></a>请求参数
 

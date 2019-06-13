@@ -7,17 +7,17 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: b173b2ed2c4d7e0a86e6e410ae99f95bccf32490
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813577"
 ---
 # <a name="get-a-product"></a>获取产品
 
 在 Microsoft 硬件 API 中使用此方法可检索注册到 Windows 开发人员中心帐户的特定产品的数据。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
@@ -31,10 +31,10 @@ ms.locfileid: "66813577"
 
 ### <a name="request-header"></a>请求头
 
-| Header | 在任务栏的搜索框中键入 | 描述 |
+| 标头 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| 授权 | string | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
-| accept | string | 可选。 指定内容的类型。 允许的值是“application/json” |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 
 ### <a name="request-parameters"></a>请求参数
@@ -101,6 +101,6 @@ Authorization: Bearer <your access token>
 
 有关详细信息，请参阅[错误代码](get-product-data.md#error-codes)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

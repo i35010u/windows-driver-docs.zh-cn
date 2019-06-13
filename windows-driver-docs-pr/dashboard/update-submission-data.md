@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c8bb7598480e7c98802afc8b42e4e5aa4ed65cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518132"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334886"
 ---
 # <a name="update-submission-data"></a>更新提交数据 
 

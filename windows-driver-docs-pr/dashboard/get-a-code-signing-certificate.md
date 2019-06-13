@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fe34a75d166e8e03999c93c9588233e94fb9801c
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57909202"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63335051"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -38,9 +38,9 @@ ms.locfileid: "57909202"
 
 - [购买 DigiCert EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393249)
 
-  1. 在“Sysdevs 的 DigiCert 代码签名证书”页上，单击“开始”。
+  1. 在“Sysdevs 的 DigiCert 代码签名证书”  页上，单击“开始”  。
 
-  2. 在“DigiCert 订单”页上（步骤 1）的“代码签名”部分中，单击“EV 代码签名证书”、填写其余的表单，然后单击“继续”。
+  2. 在“DigiCert 订单”  页上（步骤 1）的“代码签名”  部分中，单击“EV 代码签名证书”  、填写其余的表单，然后单击“继续”  。
 
   3. 按照 DigiCert 提供的说明购买证书。
 

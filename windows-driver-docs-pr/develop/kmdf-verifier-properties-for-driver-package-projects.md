@@ -5,11 +5,11 @@ description: 设置远程计算机上的 KMDF 验证程序的属性。  使用�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae1c204b9819dc9039de47a8af54396894b3159
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349770"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344133"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
 
@@ -20,9 +20,9 @@ ms.locfileid: "57349770"
 ## <a name="span-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspanspan-idsettingkmdfverifierpropertiesfordriverpackageprojectsspansetting-kmdf-verifier-properties-for-driver-package-projects"></a><span id="Setting_KMDF_Verifier_properties_for_driver_package_projects"></span><span id="setting_kmdf_verifier_properties_for_driver_package_projects"></span><span id="SETTING_KMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>设置驱动程序包项目的 KMDF 验证程序属性
 
 
-1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”。
-2.  在驱动程序包的属性页中，依次单击“配置属性”、“驱动程序安装”和“KMDF 验证程序”。
-3.  单击“启用 KMDF 验证程序”选项并选择“KMDF 验证程序始终启用”。 选择此选项时，可以为 KMDF 驱动程序配置框架验证选项。
+1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
+2.  在驱动程序包的属性页中，依次单击“配置属性”  、“驱动程序安装”  和“KMDF 验证程序”  。
+3.  单击“启用 KMDF 验证程序”  选项并选择“KMDF 验证程序始终启用”  。 选择此选项时，可以为 KMDF 驱动程序配置框架验证选项。
 
 <table>
 <colgroup>

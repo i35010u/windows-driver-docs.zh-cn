@@ -5,11 +5,11 @@ ms.assetid: 241AC0DF-4DE6-481A-BBDB-13F811686B40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 02e516ce3f920ed76e1ed591ba811347aaaeb9a4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518287"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371243"
 ---
 # <a name="windows-compatible-hardware-development-boards"></a>Windows 兼容硬件开发板
 

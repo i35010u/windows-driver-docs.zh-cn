@@ -5,11 +5,11 @@ description: 必须先签署所有在 64 位版本 Windows 上运行的驱动程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af4e7e65df105ae2951d5ad9165552efb68250db
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518066"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64368648"
 ---
 # <a name="signing-a-driver"></a>签署驱动程序
 

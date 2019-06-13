@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 672b085f6f02f096a01994d9fe598e21afba68d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337252"
 ---
 # <a name="download-the-cab-file-for-a-windows-7-or-windows-8x-driver-error"></a>下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件
 
@@ -55,7 +55,7 @@ ms.locfileid: "56518452"
 
 | 标头        | 在任务栏的搜索框中键入   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;token&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** *token*&lt;&gt;。 |
 
 ### <a name="request-parameters"></a>请求参数
 

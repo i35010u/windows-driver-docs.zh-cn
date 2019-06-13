@@ -5,11 +5,11 @@ description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 916cd55b2bf8656f92af022ff0b565985fa41963
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518425"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63327558"
 ---
 # <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>使用 Visual Studio 和 WDK 生成驱动程序
 
@@ -42,11 +42,11 @@ ms.locfileid: "56518425"
 
 1.  确保你的计算机上安装了相同版本的 SDK 和 WDK。
 2.  在 Visual Studio 中，打开驱动程序项目或解决方案。
-3.  在“解决方案资源管理器”中，右键单击该解决方案并选择“配置管理器”。
-4.  在“配置管理器”中，选择与你感兴趣的生成类型对应的**活动解决方案配置**（例如，**调试**或**发布**）和**活动解决方案平台**（例如，**Win32**）。
-5.  右键单击 Avshws 项目，然后选择“属性”。  导航到“驱动程序设置”>“常规”，设置“目标操作系统版本”和“目标平台”。
+3.  在“解决方案资源管理器”  中，右键单击该解决方案并选择“配置管理器”  。
+4.  在“配置管理器”  中，选择与你感兴趣的生成类型对应的**活动解决方案配置**（例如，**调试**或**发布**）和**活动解决方案平台**（例如，**Win32**）。
+5.  右键单击 Avshws 项目，然后选择“属性”  。  导航到“驱动程序设置”>“常规”  ，设置“目标操作系统版本”  和“目标平台”  。
 6.  配置驱动程序或驱动程序包的项目属性。 你可以为部署、驱动程序签名或其他任务设置属性。 有关详细信息，请参阅[配置驱动程序和驱动程序包的项目属性](#configure_project_props)。
-7.  从“生成”菜单中，单击“生成解决方案”(**Ctrl+Shift+B**)。
+7.  从“生成”  菜单中，单击“生成解决方案”  (**Ctrl+Shift+B**)。
 
 ## <a name="span-idbuildingadriverusingthecommandlinemsbuildspanspan-idbuildingadriverusingthecommandlinemsbuildspanbuilding-a-driver-using-the-command-line-msbuild"></a><span id="building_a_driver_using_the_command_line__msbuild_"></span><span id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></span>使用命令行 (MSBuild) 生成驱动程序
 
@@ -55,7 +55,7 @@ ms.locfileid: "56518425"
 
 **如何使用“Visual Studio 命令提示”窗口生成驱动程序**
 
-1.  打开“适用于 VS2015 的开发人员命令提示”窗口。
+1.  打开“适用于 VS2015 的开发人员命令提示”  窗口。
 
     在此窗口中，你可以通过指定项目 (.VcxProj) 或解决方案 (.Sln) 文件使用 MSBuild.exe 生成任何 Visual Studio 项目。
 
@@ -138,9 +138,9 @@ WDK 提供了大量的命令行工具，如 [Stampinf](https://msdn.microsoft.co
 
 **使用 Visual Studio 中的选项提高生成输出的详细级别**
 
-1.  单击“工具”&gt;“选项”。
-2.  单击“项目和解决方案”文件夹，然后单击“生成并运行”。
-3.  更改“MSBuild 项目生成输出详细级别”和“MSBuild 项目生成日志文件详细级别”选项。 默认情况下，这些选项设置为“最低”。
+1.  单击“工具”&gt;“选项”。  
+2.  单击“项目和解决方案”  文件夹，然后单击“生成并运行”  。
+3.  更改“MSBuild 项目生成输出详细级别”  和“MSBuild 项目生成日志文件详细级别”  选项。 默认情况下，这些选项设置为“最低”。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

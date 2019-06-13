@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1398e0480362f3be2ec85e9231e1a5d24a331c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518090"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337080"
 ---
 # <a name="update-product-data"></a>更新产品数据  
 使用 Microsoft 硬件 API 中的此方法可更新产品的详细信息。 使用此方法之前，请确保已创建了产品。 有关详细信息，请参阅[创建新产品](create-a-new-product.md)。 

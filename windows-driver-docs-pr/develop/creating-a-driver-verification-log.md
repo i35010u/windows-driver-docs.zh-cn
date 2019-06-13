@@ -5,11 +5,11 @@ description: Windows Server 2012 硬件认证计划需要所有驱动程序在�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8199e7671bc8cfc1790f3ba8ea59962f747d3967
-ms.sourcegitcommit: fac288eb2cceb6a7a8248ae0f8086553d1659b23
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56588958"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382426"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
@@ -21,8 +21,8 @@ Windows Server [硬件认证计划](https://docs.microsoft.com/en-us/windows-ha
 2.  对于驱动程序解决方案，请确保已选择版本配置作为解决方案配置，并选择 x64 作为解决方案平台。
 3.  运行[静态驱动程序验证程序](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552808)。 有关创建日志文件中的信息，请参阅[为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)和[使用静态驱动程序验证程序查找驱动程序中的缺陷](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454281)。
 4.  为驱动程序运行代码分析工具。 解决并修复发现的任何缺陷。 请参阅[为代码分析工具创建日志文件](creating-a-log-file-for-the-code-analysis-tool.md)和[如何为驱动程序运行代码分析](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454219)。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
-5.  创建驱动程序验证日志。 在“驱动程序”菜单中，单击“创建驱动程序验证日志…”。
-6.  确认检测到代码分析日志和静态驱动程序验证程序日志文件。 单击“创建”。
+5.  创建驱动程序验证日志。 在“驱动程序”  菜单中，单击“创建驱动程序验证日志…”  。
+6.  确认检测到代码分析日志和静态驱动程序验证程序日志文件。 单击“创建”  。
 
 驱动程序验证日志的文件扩展名为 .DVL.XML。 日志在项目文件夹中创建，例如，\\*myDriverProject*\\*myDriverName*.DVL.XML。
 

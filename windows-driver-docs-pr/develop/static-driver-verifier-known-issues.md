@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: ab6e38dc576599d695e9efdacc267c73a35f909a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "63344138"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静态驱动程序验证程序已知问题
@@ -84,11 +84,11 @@ ms.locfileid: "63344138"
 
 ## <a name="best-practice-use-visual-studio-2017-version-158"></a>最佳做法：使用 Visual Studio 2017 版本 15.8 
 
-默认情况下，代码分析不会自动在 Visual Studio 15.7 中生成驱动程序。  如果驱动程序依赖于所要生成的二进制文件，则可能会导致“输出”窗格中出现失败。  我们建议改用版本 15.8。
+默认情况下，代码分析不会自动在 Visual Studio 15.7 中生成驱动程序。  如果驱动程序依赖于所要生成的二进制文件，则可能会导致“输出”窗格中出现失败。   我们建议改用版本 15.8。
 
 ## <a name="dvl-generation-failure-after-removing-configuration-from-a-project"></a>从项目中删除配置后 DVL 生成失败
 
-主要症状：通过“配置管理器”窗口从项目中删除某个配置后，用户在选择“创建驱动程序验证日志”时看到以下消息：`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"`
+主要症状：通过“配置管理器”窗口从项目中删除某个配置后，用户在选择“创建驱动程序验证日志”时看到以下消息：`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"` 
 
 解决方法： 
 

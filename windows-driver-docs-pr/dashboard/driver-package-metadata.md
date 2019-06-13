@@ -6,15 +6,15 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: e3f4022d4715fc8d76b3c749df74db56ba5cf4d1
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518256"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337248"
 ---
 # <a name="driver-package-metadata"></a>驱动程序包元数据
 
-驱动程序元数据包是与提交关联的文件。 元数据包包含有关驱动程序包或捆绑包中每个 INF 文件的详细信息。 可以使用[获取提交](get-a-submission.md)方法下载此文件。 此文件在提交的[链接对象](get-product-data.md#link-object)中通过 rel - driverMetadata 提供。 
+驱动程序元数据包是与提交关联的文件。 元数据包包含有关驱动程序包或捆绑包中每个 INF 文件的详细信息。 可以使用[获取提交](get-a-submission.md)方法下载此文件。 此文件在提交的[链接对象](get-product-data.md#link-object)中通过 rel   - driverMetadata  提供。 
 
 ## <a name="driver-metadata-structure"></a>驱动程序元数据结构
 

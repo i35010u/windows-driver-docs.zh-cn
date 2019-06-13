@@ -5,11 +5,11 @@ description: Windows Server 2012 硬件认证计划需要所有驱动程序在�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4904b6c602593da7459a5393e0c97f61f9b553f0
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518206"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382421"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 
@@ -19,7 +19,7 @@ Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?link
 
 **为静态驱动程序验证程序创建日志文件**
 
-1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”作为“配置”，并选择“x64”作为“平台”。
+1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
 2.  如果已运行代码分析工具，请按照[运行静态驱动程序验证程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh454281#running_static_driver_verifier)中的以下说明操作。 有关使用 SDV 的详细信息，请参阅“使用静态驱动程序验证程序查找驱动程序中的缺陷”
 3.  如果 SDV 发现你的驱动程序中存在缺陷，请在“结果”窗格中单击该缺陷以查看导致违反规则的代码路径的跟踪。 修复在驱动程序中找到的任何缺陷并再次运行 SDV。
 

@@ -5,11 +5,11 @@ description: 代码分析和验证工具可以系统地分析源代码，从而�
 ms.date: 07/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b5de3389a80e5b9bd7c445164d519360fc7f424
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518110"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64368657"
 ---
 # <a name="analyzing-a-driver-using-code-analysis-and-verification-tools"></a>使用代码分析和验证工具分析驱动程序
 
@@ -37,7 +37,7 @@ WDK 的 Windows 8 版本为 Visual Studio 附带的 C/C++ 代码分析工具提�
 ## <a name="span-idstaticdriververifierspanspan-idstaticdriververifierspanspan-idstaticdriververifierspanstatic-driver-verifier"></a><span id="Static_Driver_Verifier"></span><span id="static_driver_verifier"></span><span id="STATIC_DRIVER_VERIFIER"></span>静态驱动程序验证程序
 
 
-静态驱动程序验证程序 (SDV) 是系统地分析 Windows 内核模式驱动程序的源代码的静态验证工具。 SDV 确定驱动程序是否与 Windows 操作系统内核正确交互。 SDV 可以从 Visual Studio 中的“驱动程序”菜单或从“Visual Studio 命令提示”窗口启动。
+静态驱动程序验证程序 (SDV) 是系统地分析 Windows 内核模式驱动程序的源代码的静态验证工具。 SDV 确定驱动程序是否与 Windows 操作系统内核正确交互。 SDV 可以从 Visual Studio 中的“驱动程序”  菜单或从“Visual Studio 命令提示”  窗口启动。
 
 **何时使用：** 在开发周期的早期阶段对正确编译的驱动程序运行静态驱动程序验证程序。 在开始测试周期之前，请先运行静态驱动程序验证程序。
 

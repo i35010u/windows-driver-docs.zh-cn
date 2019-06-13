@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: de83c5c7582af5633ace0273748e6663f93b4d55
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560610"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63334927"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>在合作伙伴中心使用扩展 INF
 
@@ -51,7 +51,7 @@ ms.locfileid: "57560610"
 
 #### <a name="extension-inf-package"></a>扩展 INF 包
 
-1. 使用上面的相同 HLK 结果，选择“程序包” > “替换驱动程序”
+1. 使用上面的相同 HLK 结果，选择“程序包”   >   “替换驱动程序”
 
     ![一个显示 HLK 中的“替换驱动程序”选项的图像](images/hlk-replace-driver.png)
 

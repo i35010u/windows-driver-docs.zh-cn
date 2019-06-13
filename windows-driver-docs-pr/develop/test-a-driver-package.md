@@ -5,11 +5,11 @@ description: 可以使用 Visual Studio 在测试计算机上部署和安装驱�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cfa6656c71d46ada73349f3cf0f5c56d30a425b6
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518291"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344112"
 ---
 # <a name="how-to-test-a-driver-package"></a>如何测试驱动程序包
 
@@ -28,11 +28,11 @@ ms.locfileid: "56518291"
 
 在配置和预配测试计算机后，可以配置驱动程序包项目，以让它自动部署和安装到测试计算机上。
 
-1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”中右键单击驱动程序项目，并选择“属性”。
-2.  在驱动程序的属性页中，依次单击“配置属性”、“驱动程序安装”和“部署”。
-3.  选择“启用部署”选项。 有关详细信息，请参阅[驱动程序项目的部署属性](deployment-properties-for-driver-projects.md)。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”中右键单击驱动程序项目，并选择“属性”  。
+2.  在驱动程序的属性页中，依次单击“配置属性”  、“驱动程序安装”  和“部署”  。
+3.  选择“启用部署”  选项。 有关详细信息，请参阅[驱动程序项目的部署属性](deployment-properties-for-driver-projects.md)。
 4.  选择已配置为**远程计算机**的测试计算机。
-5.  在“驱动程序安装选项”下，单击“安装并验证”，然后选择“默认驱动程序安装任务”。
+5.  在“驱动程序安装选项”  下，单击“安装并验证”  ，然后选择“默认驱动程序安装任务”  。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

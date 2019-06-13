@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fd8ef77dcaef8a3875441b7c6b83c3c633384d6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57350206"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371292"
 ---
 # <a name="write-your-first-driver"></a>编写第一个驱动程序
 

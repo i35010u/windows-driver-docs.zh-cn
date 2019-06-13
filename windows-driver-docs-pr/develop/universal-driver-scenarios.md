@@ -4,11 +4,11 @@ description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原�
 ms.date: 04/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 55ab2413f70f424fff93a4e4967c6b1063087f4c
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136126"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63344066"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案
 
@@ -234,7 +234,7 @@ AddReg = Example_DDInstall.AddReg
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
 
-而将其设置为设备接口状态的 INF 示例为： 
+演示如何将其设置为设备接口状态的 INF 示例则为： 
 
 ```cpp
 [ExampleDDInstall.Interfaces]
@@ -246,7 +246,7 @@ AddReg = Example_Add_Interface_Section.AddReg
 [Example_Add_Interface_Section.AddReg]
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
-以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，这些变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://msdn.microsoft.com/library/windows/desktop/ms724265) 来解析路径中的环境变量。 
+以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://msdn.microsoft.com/library/windows/desktop/ms724265) 来解析路径中的环境变量。 
 
 如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenfile) 之类的 API。 
 

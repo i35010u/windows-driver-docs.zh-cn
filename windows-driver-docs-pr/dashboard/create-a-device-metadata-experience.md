@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa44cd33141f2c57e83d430d87a73435d61a3ac
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518297"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337278"
 ---
 # <a name="create-a-device-metadata-experience"></a>创建设备元数据体验
 
@@ -28,9 +28,9 @@ devicemanifest-ms 文件是一个 .cab 文件，其中包含 devicemetadata-ms �
 
 1. 使用与此服务关联的 Microsoft 帐户从合作伙伴中心登录到仪表板。
 
-2. 在窗口左侧，单击“设备元数据”，然后单击“创建体验”。
+2. 在窗口左侧，单击“设备元数据”  ，然后单击“创建体验”  。
 
-3. 在“创建体验”页上，输入以下信息：
+3. 在“创建体验”  页上，输入以下信息：
 
    <table>
    <colgroup>
@@ -74,7 +74,7 @@ devicemanifest-ms 文件是一个 .cab 文件，其中包含 devicemetadata-ms �
 
      
 
-4. 单击“提交” 。
+4. 单击“提交”  。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

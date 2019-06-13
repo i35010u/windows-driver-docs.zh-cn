@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15707af8315979b394f9958d720adff480591651
-ms.sourcegitcommit: a58b4859254a651502e4329a6e521fe0fa11c7f2
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56518563"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337310"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -200,10 +200,10 @@ C:\Echo> SignTool verify /pa /ph /v /d Echo.Sys
 ```
 
 4. 若要确认驱动程序的 EKU，请完成以下步骤。
-a. 打开 Windows 资源管理器并找到二进制文件。 右键单击该文件并选择“属性”。
-b. 在“数字签名”选项卡上，选择“签名列表”中列出的项。
-c. 选择“详细信息”按钮，然后选择“查看证书”。
-d. 在“详细信息”选项卡上，选择“增强型密钥用法”字段。
+a. 打开 Windows 资源管理器并找到二进制文件。 右键单击该文件并选择“属性”  。
+b. 在“数字签名”  选项卡上，选择“签名列表”中列出的项。
+c. 选择“详细信息”  按钮，然后选择“查看证书”  。
+d. 在“详细信息”  选项卡上，选择“增强型密钥用法”  字段。
 当驱动程序由仪表板重新签名时，使用以下过程。
 
 - 附加 Microsoft SHA2 嵌入式签名。

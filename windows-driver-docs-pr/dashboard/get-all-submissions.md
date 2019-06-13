@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 49d48f879a96ce0cf498f234a64dd081a3b36e4b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518225"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63337224"
 ---
 # <a name="get-all-submissions"></a>获取所有提交
 
@@ -19,7 +19,7 @@ ms.locfileid: "56518225"
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 
