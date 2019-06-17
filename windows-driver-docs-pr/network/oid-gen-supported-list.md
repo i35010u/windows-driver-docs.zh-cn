@@ -5,12 +5,12 @@ ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 85295c8fdabfaacb1e8a8ea6c450f077079e95fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 263789fe3249bfd98b83a51fe1627351ed2d26ae
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387874"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148527"
 ---
 # <a name="oidgensupportedlist"></a>OID\_GEN\_支持\_列表
 
@@ -38,6 +38,8 @@ ms.locfileid: "63387874"
 -------
 
 NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 处理此 OID 微型端口驱动程序在初始化过程中提供的缓存值。
+
+若要在初始化期间指定的受支持的 Oid 列表，微型端口驱动程序设置**SupportedOidList**的成员[ **NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，并将传递到结构[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
 NDIS 将转发到使此查询的协议驱动程序提供的列表的子集。 即 NDIS 筛选任何受支持的统计信息 Oid 的列表，因为协议驱动程序永远不会使统计信息的查询。
 

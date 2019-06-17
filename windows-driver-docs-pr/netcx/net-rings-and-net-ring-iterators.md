@@ -7,12 +7,12 @@ keywords:
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: de9f3d4f766d77c2aa80b909794307592e40b925
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09a8b659455e676e46b1c8ca3d5f3daa36b534ca
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384554"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148531"
 ---
 # <a name="net-rings-and-net-ring-iterators"></a>网环和网环迭代器
 
@@ -53,6 +53,8 @@ NetAdapterCx 发到环形缓冲区的元素通过递增**EndIndex**。 客户端
 元素之间的索引值**NextIndex**并**EndIndex-1**非独占归客户端，但您尚未发布到的硬件。 如果**NextIndex**等于**BeginIndex**，客户端驱动程序不具有任何已完成的缓冲区将传输到操作系统。 如果**NextIndex**等于**EndIndex**，客户端驱动程序不具有任何缓冲区来发布到硬件。
 
 因为 net 环是循环，最终的索引值环绕缓冲区的末尾，再返回到开始。 NetAdapterCx 自动处理包装沿环的索引值，当客户端驱动程序调用适当的方法下, 一节中所述。
+
+有关管理 net 环中的元素的特定信息，请参阅[Net 环元素管理](net-ring-element-management.md)。
 
 ## <a name="net-ring-iterator-interface-overview"></a>Net 环迭代器接口概述
 

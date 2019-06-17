@@ -9,12 +9,12 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52811ed7c1c2b481f4b9ef43a588a3079f0aaa3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fddb468087e7068dace633c9f3d7a5df5a84b861
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387952"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67047043"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤
 
@@ -37,7 +37,11 @@ HSA 是四个 ("DCHU") 设计原则之一[通用 Windows 驱动程序](../develo
     * 功能名称 （必须是唯一的并且引用所有者）
     * 功能需要访问哪些资源？
     * 任何安全或隐私问题
+    * 将到合作伙伴处理数据的哪些事件？
+      * 将这些事件包括个人标识符，例如精确的用户的位置，密码，IP 地址，PUID、 设备 ID、 CID、 用户名和联系人数据）？
+      * 数据事件持续用户在设备上，或它发送到合作伙伴？
     * 哪些数据容量，即提供对访问权限？
+    * 为此功能的最终用户带来的好处是什么？
     * 包括 Microsoft Store 应用发布者 id。  若要获取该帐户，请 Microsoft Store 页上创建主干应用程序条目。 保留应用 PFN 的详细信息，请参阅[创建你的应用保留名称](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 
 2.  如果请求得到批准，Microsoft 的电子邮件返回唯一的自定义功能字符串名称，格式**CompanyName.capabilityName\_PublisherID**。

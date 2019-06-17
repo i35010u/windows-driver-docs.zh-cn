@@ -350,6 +350,8 @@
                       href: handling-srb-function-flush-and-srb-function-shutdown.md
                     - name: 处理 SRB_FUNCTION_IO_CONTROL
                       href: handling-srb-function-io-control.md
+                    - name: 处理 SRB_FUNCTION_PROTOCOL_COMMAND
+                      href: handling-srb-function-protocol-command.md
                     - name: 处理 SRB_FUNCTION_PNP
                       href: handling-srb-function-pnp.md
                     - name: 处理 SRB_FUNCTION_WMI

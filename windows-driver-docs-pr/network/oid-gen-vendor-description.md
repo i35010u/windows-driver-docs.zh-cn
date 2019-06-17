@@ -6,16 +6,16 @@ keywords:
 - OID_GEN_VENDOR_DESCRIPTION
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f05f3f98db1249806acbce4121283ca2cd6b24ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c0e0f347a107013ccf50c56f44276cda2c5faf7
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387900"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148526"
 ---
 # <a name="oidgenvendordescription"></a>OID_GEN_VENDOR_DESCRIPTION
 
-为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向描述网络接口控制器 (NIC) 的以 null 结尾的字符串。 
+为查询，OID_GEN_VENDOR_DESCRIPTION OID 指向描述网络接口控制器 (NIC) 的以 null 结尾的 Unicode 字符串。 
 
 不支持组的请求。
 

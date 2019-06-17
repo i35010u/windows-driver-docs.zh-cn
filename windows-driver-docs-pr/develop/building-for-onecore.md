@@ -5,11 +5,11 @@ description: 可以针对 Windows 10 之前的版本和 OneCore 版本生成单�
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0aefa62ad1fbf120ffb6b905c9aafbdb5b44f5ab
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518424"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382488"
 ---
 # <a name="building-for-onecore"></a>针对 OneCore 生成
 
@@ -29,7 +29,7 @@ ms.locfileid: "56518424"
 |`OneCoreUAP.lib`|Windows 7 及更高版本、Windows 10 的 UWP 版本（Desktop、IoT、HoloLens，但不包括 Nano Server）|
 
 >[!NOTE]
->若要更改 Visual Studio 中的链接器选项，请选择项目属性，然后导航至“链接器”->“输入”->“其他依赖项”。
+>若要更改 Visual Studio 中的链接器选项，请选择项目属性，然后导航至“链接器”->“输入”->“其他依赖项”  。
 
 Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore 版本（例如 Mobile 或 IoT）上返回运行时错误。
 

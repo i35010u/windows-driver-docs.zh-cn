@@ -8,12 +8,12 @@ keywords:
 - 受信任的根证书颁发机构证书存储区 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87c95dc9919eeae52a0ea904386afffeb6f3517e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdc4e2019f175e1e7c95748a3b5ab339651bbcd6
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339515"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148520"
 ---
 # <a name="trusted-root-certification-authorities-certificate-store"></a>受信任的根证书颁发机构证书存储
 
@@ -36,13 +36,15 @@ ms.locfileid: "63339515"
 
 **请注意**  驱动程序签名 PnP 管理器使用的验证策略需要是否以前已专用 CA 的根证书安装在本地计算机版本的根证书颁发机构证书存储区。 有关详细信息，请参阅[本地计算机和当前用户证书存储](local-machine-and-current-user-certificate-stores.md)。
 
- 
 
-证书存储区的详细信息，请参阅[驱动程序签名更改在 Windows 10，版本 1607年](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)并[驱动程序签名策略](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)。
 
- 
+有关驱动程序签名的详细信息，请参阅[驱动程序签名策略](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-)。
 
  
+
+ 
+
+
 
 
 

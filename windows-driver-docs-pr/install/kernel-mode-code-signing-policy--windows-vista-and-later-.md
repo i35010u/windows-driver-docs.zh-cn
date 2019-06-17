@@ -13,12 +13,12 @@ keywords:
 - 数据包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c63e24a9c9d3bd2aee437b5275ada89686708a8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f10b2686d411a2162b397f9392b47da67db5cbca
+ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346077"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148530"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -35,7 +35,7 @@ ms.locfileid: "63346077"
 * 安全启动是关闭在 BIOS 中。
 * 使用最终实体证书链接到受支持的交叉签名 CA 的 2015 年 7 月 29 之前颁发已签名的驱动程序。
 
-有关详细信息，请参阅[驱动程序在 Windows 10，版本 1607年中的签名更改](https://blogs.msdn.microsoft.com/windows_hardware_certification/2016/07/26/driver-signing-changes-in-windows-10-version-1607/)。
+若要防止系统无法正确启动，启动驱动程序将不会被阻止，但将通过程序兼容性助手将它们删除。
 
 ## <a name="signing-a-driver-for-client-versions-of-windows"></a>签名的 Windows 客户端版本的驱动程序
 
