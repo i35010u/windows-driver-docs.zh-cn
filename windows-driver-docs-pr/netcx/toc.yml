@@ -48,6 +48,8 @@
               href: receiving-network-data-with-net-rings.md
             - name: 使用网环取消网络数据
               href: canceling-network-data-with-net-rings.md
+            - name: 网环元素管理
+              href: net-ring-element-management.md
     - name: NetAdapterCx 接收方缩放 (RSS)
       href: netadaptercx-receive-side-scaling-rss-.md
     - name: 配置电源管理
