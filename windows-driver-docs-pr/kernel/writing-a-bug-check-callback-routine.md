@@ -56,7 +56,7 @@ Bug 检查回调例程不能：
 
 Bug 检查回调例程保证运行而不发生中断，因此不需要进行同步。 （如果 bug 检查例程使用的任何同步机制，系统将发生死锁。）
 
-驱动程序的 bug 检查回调例程可以安全地使用 **READ_PORT_* XXX * * *，**READ_REGISTER_* XXX * * *，**WRITE_PORT_* XXX * * *，并且**WRITE_REGISTER_ * XXX*** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)
+驱动程序的 bug 检查回调例程可以安全地使用 **READ_PORT_* XXX***, **READ_REGISTER_* XXX***, **WRITE_PORT_* XXX** *, 并且 **WRITE_REGISTER_*XXX*** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)
 
 ## <a name="using-bugcheckcallback"></a>使用 BugCheckCallback
 
