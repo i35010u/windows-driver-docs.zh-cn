@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 00f9dbd93e7ee1bd11c1c6d20c9cba097f9ee903
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 093fd0c73cb5589acbf918a7f7db3badc686bf29
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386500"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161475"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -110,7 +110,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <a href="http://channel9.msdn.com/Events/Build/2013/3-924a" data-raw-source="[UWP apps for USB devices](http://channel9.msdn.com/Events/Build/2013/3-924a)">用于 USB 设备的 UWP 应用</a>
 <a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T" data-raw-source="[Understanding USB 3.0 in Windows 8](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-256T)">了解 Windows 8 中的 USB 3.0</a>
 <a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T" data-raw-source="[Building great USB 3.0 devices](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-773T)">构建卓越的 USB 3.0 设备</a>
-<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, &amp; III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 中的 USB 调试创新（第 1、第 2 和第 3 部分）</a>
+<a href="http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P" data-raw-source="[USB Debugging Innovations in Windows 8 (Part I, II, & III)](http://channel9.msdn.com/events/BUILD/BUILD2011/HW-258P)">Windows 8 中的 USB 调试创新（第 1、第 2 和第 3 部分）</a>
 <p><strong>适合学习的 USB 硬件</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT 设备</a>
 <p>MUTT 和 SuperMUTT 设备以及伴随的软件包已集成到包含 USB 测试的 HCK 套件中。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。</p>
