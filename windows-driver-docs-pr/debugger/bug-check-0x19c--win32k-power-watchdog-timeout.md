@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e503919524a307e7d3105639641212a2b45ae55b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65dca129b435e15d8289e31d9c562c8d9b3719d2
+ms.sourcegitcommit: 187418c1a52a67efa533462eec760bab9b7f6957
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339750"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67192699"
 ---
 # <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>Bug 检查 0x19C：WIN32K\_电源\_监视器\_超时
 
@@ -86,8 +86,8 @@ WIN32K\_电源\_监视器\_超时错误检查的值为 0x0000019C。 这表示�
 </tbody>
 </table>
 
-
-
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 
 
