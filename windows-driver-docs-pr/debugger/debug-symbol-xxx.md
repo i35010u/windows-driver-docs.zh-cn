@@ -17,12 +17,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 504f796c6e0796315d4a5d5f87307f7b42fe9edb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b8b6f73487c4b654eb46f666a62b14dd7e87752
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374829"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161444"
 ---
 # <a name="debugsymbolxxx"></a>调试\_符号\_XXX
 
@@ -32,7 +32,7 @@ ms.locfileid: "63374829"
 标志符号的最低有效位-位在调试中找到\_符号\_扩展\_级别\_掩码--一个数字，表示符号组中的符号的展开深度的窗体。 子符号的深度始终是一个多个属于其父符号的深度。 例如，若要在变量中查找包含其标志符号的深度*标志*，使用以下语句：
 
 ```dbgcmd
-depth = flags &amp; DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
+depth = flags & DEBUG_SYMBOL_EXPANSION_LEVEL_MASK;
 ```
 
 符号标志的位集的其他部分可以包含以下位标志。

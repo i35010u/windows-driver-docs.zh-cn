@@ -4,12 +4,12 @@ description: NDIS QoS 的标准化 INF 关键字
 ms.assetid: 7967D633-850F-4707-9577-9262AEB1A597
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 236ea7fa353a460c774fc4786b96903d84289291
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8136b851c06ef8a01dd6099f042bafbcf9a39abd
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345979"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161502"
 ---
 # <a name="standardized-inf-keywords-for-ndis-qos"></a>NDIS QoS 的标准化 INF 关键字
 
@@ -18,14 +18,14 @@ ms.locfileid: "63345979"
 
 支持 NDIS QoS 的适配器的微型端口驱动程序的 INF 文件必须指定 **\*QOS**标准化 INF 关键字。 安装该驱动程序后，管理员可以更新 **\*QOS**中的关键字值**高级**适配器属性页。 有关高级属性的详细信息，请参阅[的高级属性页指定配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**  中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
+**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
  
 
- **\*QOS** INF 关键字是一个枚举的关键字。 下表描述了可能 INF 条目 **\*QOS** INF 关键字。 此表中的列描述枚举关键字的以下属性：
+**\*QOS** INF 关键字是一个枚举的关键字。 下表描述了可能 INF 条目 **\*QOS** INF 关键字。 此表中的列描述枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表**NDI\\params\\** 关键网络适配器。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 显示文本与 SubkeyName 相关联。
@@ -51,7 +51,7 @@ ms.locfileid: "63345979"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -119,14 +119,14 @@ ms.locfileid: "63345979"
 <tr class="header">
 <th align="left"><em>QOS 关键字设置</th>
 <th align="left"></em>PriorityVLANTag 关键字设置</th>
-<th align="left">* PriorityVLANTag 设置说明</th>
+<th align="left">\* PriorityVLANTag 设置说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">0 或不存在</td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>数据包优先级&amp;禁用 VLAN</p></td>
+<td align="left"><p>数据包优先级 （& a) 禁用 VLAN</p></td>
 </tr>
 <tr class="even">
 <td align="left">0 或不存在</td>

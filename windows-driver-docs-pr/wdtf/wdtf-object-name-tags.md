@@ -4,12 +4,12 @@ description: WDTF 对象日志记录中使用 WDTF OBJECT_NAME 标记。
 ms.assetid: 25C669DD-12D0-4C78-802F-CB8E26C4FD80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 924e82e1da7308838378d4d9426ac82b2a9a952c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a979d2a0af56d9d05eb87cd50f9ac8f12dba153e
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387932"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161555"
 ---
 # <a name="wdtf-object-name-tags"></a>WDTF 对象名称标记
 
@@ -154,7 +154,7 @@ WDTF_SYSTEM               : INFO  : Returning from Hibernate. Elapsed time (hh:m
 <td><p>WDTF_DRIVER_SETUP_DEVICE</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450938" data-raw-source="[&lt;strong&gt;IWDTFDriverSetupAction2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450938)"><strong>IWDTFDriverSetupAction2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>WDTF_DRIVER_SETUP_DEVICE  : INFO  :  - UpdateDriver()
-WDTF_DRIVER_SETUP_DEVICE  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&amp;DABA3FF&amp;2
+WDTF_DRIVER_SETUP_DEVICE  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&DABA3FF&2
 </code></pre></td>
 </tr>
 <tr class="odd">
@@ -170,7 +170,7 @@ WDTF_DRIVER_SETUP_DEVICE  : INFO  :          Target: TI EHCI controller ACPI\TXI
 <tr class="odd">
 <td><p>WDTF_EDT</p></td>
 <td><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450969" data-raw-source="[&lt;strong&gt;IWDTFEnhancedDeviceTestSupportAction2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450969)"><strong>IWDTFEnhancedDeviceTestSupportAction2</strong></a></p></td>
-<td><pre class="syntax" space="preserve"><code>WDTF_EDT                  : INFO  :  - Enable()<br/>WDTF_EDT                  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&amp;DABA3FF&amp;2 
+<td><pre class="syntax" space="preserve"><code>WDTF_EDT                  : INFO  :  - Enable()<br/>WDTF_EDT                  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&DABA3FF&2 
 WDTF_EDT                  : INFO  :          Result: System reboot required as device is not disableable  ( 80004005 ).
 
 WDTF_EDT                  : INFO  :  - Disable()<br/>WDTF_EDT                  : INFO  :          Target: OMAP4 Dual-Core ARM Cortex A9 ACPI\TEXAS_INSTRUMENTS_INC._-_ARM_FAMILY_7_MODEL_C09_REVISION_102\0</code></pre></td>

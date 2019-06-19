@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a2c35ee3b44319fbbc6e9447d1f9949c90e5a2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 83b7724619da6e0896a3592cc7b64e6d7758f8e6
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359466"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161511"
 ---
 # <a name="irqlexapclte3-rule-wdm"></a>IrqlExApcLte3 规则 (wdm)
 
@@ -62,14 +62,14 @@ DispatchRequest (
     NTSTATUS Status;
     ...
 
-    KeInitializeSpinLock(&amp;SpinLock);
+    KeInitializeSpinLock(&SpinLock);
 
     //
     // KeAcquireSpinLock sets IRQL to DISPATCH_LEVEL and the previous IRQL is 
     // written to OldIrql after the lock is acquired.
     //
 
-    KeAcquireSpinLock(&amp;SpinLock, &amp;OldIrql);
+    KeAcquireSpinLock(&SpinLock, &OldIrql);
     ...
 
     Status = ProcessRequest(DeviceRequest);
@@ -78,7 +78,7 @@ DispatchRequest (
     // KeReleaseSpinLock sets IRQL to the OldIrql returned by KeAcquireSpinLock.
     //
 
-    KeReleaseSpinLock(&amp;SpinLock, &amp;OldIrql);
+    KeReleaseSpinLock(&SpinLock, &OldIrql);
     ...
 }
 
@@ -98,13 +98,13 @@ ProcessRequest (
     //                   IRQL <= APC_LEVEL. 
     //
 
-    if(!ExAcquireSharedStarveExclusive(&amp;Resource, FALSE)) {
+    if(!ExAcquireSharedStarveExclusive(&Resource, FALSE)) {
         return STATUS_UNSUCCESSFUL;
     }
 
     ...
 
-    ExReleaseResourceLite(&amp;Resource);
+    ExReleaseResourceLite(&Resource);
     ...
     return Status;
 }

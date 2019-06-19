@@ -6,12 +6,12 @@ keywords:
 - WDFVERIFY 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2417852f088c947bffb0f7d121327782ce428c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 230397acb92ea67097f0d161a1a75ef0003a4521
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385732"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161403"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY 宏
 
@@ -55,7 +55,7 @@ WDFVERIFY 测试逻辑表达式。
 如果尝试重新使用 request 对象失败，下面的代码示例将进入调试器。
 
 ```cpp
-status = WdfRequestReuse(Request, &amp;params);
+status = WdfRequestReuse(Request, &params);
 WDFVERIFY(NT_SUCCESS(status));
 ```
 

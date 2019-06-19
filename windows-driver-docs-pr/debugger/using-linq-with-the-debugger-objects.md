@@ -5,12 +5,12 @@ keywords:
 - 将 LINQ 与调试器对象配合使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e3cbc22e4063fc75bd6358e6363d1f346243e78d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 401668d05f3f35c9bf1644699559fd25c01cfb27
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390538"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161417"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
@@ -661,7 +661,7 @@ dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.State <
 dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.DeviceNodeObject.Problem <operator> <problemCode>)
 ```
 
-例如，若要查看设备具有非零故障代码，以使用此命令。 这提供了类似的信息为"[**！ devnode** ](-devnode.md) 0 21"。
+例如，若要查看设备具有非零故障代码，以使用此命令。 这提供了类似的信息为"[ **！ devnode** ](-devnode.md) 0 21"。
 
 ```dbgcmd
 1: kd> dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.DeviceNodeObject.Problem != 0)
@@ -774,12 +774,12 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 <td align="left"><div class="code">
 
 <code>dbgcmd
-0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x10) != 0)
-@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x10) != 0)                
+0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x10) != 0)
+@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x10) != 0)                
     [0x0]            : SWD\PRINTENUM\{2F8DBBB6-F246-4D84-BB1D-AA8761353885}
     [0x1]            : SWD\PRINTENUM\{F210BC77-55A1-4FCA-AA80-013E2B408378}
     [0x2]            : SWD\PRINTENUM\{07940A8E-11F4-46C3-B714-7FF9B87738F8}
-    [0x3]            : DISPLAY\Default_Monitor\6&amp;1a097cd8&amp;0&amp;UID5527112 (monitor)</code>
+    [0x3]            : DISPLAY\Default_Monitor\6&1a097cd8&0&UID5527112 (monitor)</code>
 
 </div></td>
 </tr>
@@ -788,8 +788,8 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 <td align="left"><div class="code">
 
 <code>dbgcmd
-0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x40) != 0)
-@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x40) != 0)                
+0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x40) != 0)
+@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x40) != 0)                
     [0x0]            : HTREE\ROOT\0
     [0x1]            : ROOT\volmgr\0000 (volmgr)
     [0x2]            : ROOT\spaceport\0000 (spaceport)
@@ -802,8 +802,8 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 <td align="left"><div class="code">
 
 <code>dbgcmd
-0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x80) != 0)
-@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x80) != 0)                
+0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x80) != 0)
+@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x80) != 0)                
     [0x0]            : HTREE\ROOT\0
     [0x1]            : ROOT\volmgr\0000 (volmgr)
     [0x2]            : ROOT\spaceport\0000 (spaceport)
@@ -816,8 +816,8 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 <td align="left"><div class="code">
 
 <code>dbgcmd
-0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x100) != 0)
-@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x100) != 0)                
+0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x100) != 0)
+@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x100) != 0)                
     [0x0]            : HTREE\ROOT\0
     [0x1]            : SWD\MMDEVAPI\MicrosoftGSWavetableSynth
     [0x2]            : SWD\IP_TUNNEL_VBUS\IP_TUNNEL_DEVICE_ROOT
@@ -830,8 +830,8 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 <td align="left"><div class="code">
 
 <code>dbgcmd
-0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x200) != 0)
-@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags &amp; 0x200) != 0)                
+0: kd&gt; dx -r1 @$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x200) != 0)
+@$cursession.Devices.DeviceTree.Flatten(n =&gt; n.Children).Where(n =&gt; (n.DeviceNodeObject.CapabilityFlags & 0x200) != 0)                
     [0x0]            : SWD\MMDEVAPI\MicrosoftGSWavetableSynth
     [0x1]            : SWD\IP_TUNNEL_VBUS\IP_TUNNEL_DEVICE_ROOT
     [0x2]            : SWD\PRINTENUM\PrintQueues

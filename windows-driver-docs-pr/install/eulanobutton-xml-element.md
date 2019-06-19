@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c6c1a29f506568735776cf3481feb922ae680d87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 157fe441163e9f04717d801ca16a10c95f93add4
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360635"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161481"
 ---
 # <a name="eulanobutton-xml-element"></a>eulaNoButton XML 元素
 
@@ -74,7 +74,7 @@ ms.locfileid: "63360635"
   ...
   <language code="0x0409">
     ...
-    <eulaNoButton>I do n&amp;ot accept this EULA</eulaNoButton>
+    <eulaNoButton>I do n&ot accept this EULA</eulaNoButton>
     ...
   </language>
   ...

@@ -4,12 +4,12 @@ description: 本主题包含的代码示例切换标识的 Windows 按钮，向�
 ms.assetid: DB43A64C-66A0-43BD-A657-D4EE11159543
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9cec035e2cf84bbe8fd01c0281e1b8ba30ba6b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f355aa60dcea66d6567ac732cea6034a08af18e
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390408"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161458"
 ---
 # <a name="windows-button-sample-code"></a>Windows 按钮示例代码
 
@@ -28,7 +28,7 @@ int __cdecl InjectButtonPress(
     HWND hwnd;
     MSG msg;
 
-    DevicePath = GetDevicePath((LPGUID)&amp;GUID_GPIOBUTTONS_NOTIFY_INTERFACE);
+    DevicePath = GetDevicePath((LPGUID)&GUID_GPIOBUTTONS_NOTIFY_INTERFACE);
 
     FileHandle = CreateFile(DevicePath,
                             GENERIC_WRITE,
@@ -39,9 +39,9 @@ int __cdecl InjectButtonPress(
                             NULL);
    
     buffer = GPIO_BUTTON_WINDOWS; //using GPIOBUTTONS_BUTTON_TYPE enum defined above
-    WriteFile(FileHandle, &amp;buffer, sizeof(buffer), NULL, NULL); // send button down
+    WriteFile(FileHandle, &buffer, sizeof(buffer), NULL, NULL); // send button down
     buffer = GPIO_BUTTON_WINDOWS;
-    WriteFile(FileHandle, &amp;buffer, sizeof(buffer), NULL, NULL); // send button up
+    WriteFile(FileHandle, &buffer, sizeof(buffer), NULL, NULL); // send button up
 
     return 0;
 }

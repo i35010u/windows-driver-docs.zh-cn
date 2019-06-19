@@ -3,12 +3,12 @@ Description: 可以在集合中分组复合的 USB 设备上的接口。 USB 通
 title: 枚举 USB 复合设备上的接口集合
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 912d9a75ae21c48fc47ddf1a8c5d7a46527974b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: af034c0f2c593207a7dc926eeb99c3519b02e322
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324500"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161371"
 ---
 # <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合
 
@@ -273,7 +273,7 @@ CDC 和 WMCDC 控件模型部分介绍在 Microsoft Windows 操作系统中支�
 <td><p>从集合中的第一个接口，接口集合中的每个接口必须具有不同子类。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -286,14 +286,14 @@ CDC 和 WMCDC 控件模型部分介绍在 Microsoft Windows 操作系统中支�
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;MI_%02x</code></pre>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&MI_%02x
+USB\Vid_%04x&Pid_%04x&MI_%02x</code></pre>
 <p>硬件 Id 的音频的接口集合不包含接口类特定的信息。 有关硬件与音频接口集合关联的 Id 的格式设置的说明，请参阅<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">支持无线移动通信设备类</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_01&amp;SubClass_01&amp;Prot_00
-USB\Class_01&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_01&SubClass_01&Prot_00
+USB\Class_01&SubClass_01
 USB\Class_01</code></pre>
 <p>对于音频接口集合兼容 Id 的格式包含嵌入的接口类、 接口子类和协议有关的信息。 对于 CDC 或 WMCDC 设备上的音频的接口集合，接口类为 01，子类是 01，协议为 00。</p></td>
 </tr>
@@ -334,7 +334,7 @@ USB\Class_01</code></pre>
 <td><p>ACM (0X02)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>任何。</p></td>
 </tr>
 <tr class="odd">
@@ -347,15 +347,15 @@ USB\Class_01</code></pre>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_02&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_02
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_02&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_02</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_02&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_02
+USB\Vid_%04x&Pid_%04x&Cdc_02&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_02</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_02&amp;Prot_%02X
-USB\Class_02&amp;SubClass_02
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_02&Prot_%02X
+USB\Class_02&SubClass_02
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -395,7 +395,7 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 <td><p>ANCM (0x07)</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)</p></td>
 </tr>
 <tr class="odd">
@@ -408,15 +408,15 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07
+USB\Vid_%04x&Pid_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_07</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_07&amp;Prot_00
-USB\Class_02&amp;SubClass_07
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_07&Prot_00
+USB\Class_02&SubClass_07
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -458,7 +458,7 @@ USB CDC 常见 ISDN API (CAPI) 控件模型接口集合具有以下属性。
 <td><p>CAPI (0x05)</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)</p></td>
 </tr>
 <tr class="odd">
@@ -471,13 +471,13 @@ USB CDC 常见 ISDN API (CAPI) 控件模型接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_05&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_05</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_05&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_05</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_05&amp;Prot_00
-USB\Class_02&amp;SubClass_05</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_05&Prot_00
+USB\Class_02&SubClass_05</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>特殊处理</p></td>
@@ -516,7 +516,7 @@ USB CDC 直接行控制模型 (DLCM) 接口集合具有以下属性。
 <td><p>DLCM (0x01).</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -529,15 +529,15 @@ USB CDC 直接行控制模型 (DLCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_01
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_01</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_01
+USB\Vid_%04x&Pid_%04x&Cdc_01&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_01</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_01&amp;Prot_00
-USB\Class_02&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_01&Prot_00
+USB\Class_02&SubClass_01
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -577,7 +577,7 @@ USB CDC 以太网网络控制模型 (ENCM) 接口集合具有以下属性。
 <td><p>ENCM (0X06:SP)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -590,15 +590,15 @@ USB CDC 以太网网络控制模型 (ENCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_06&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_06
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_06&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_06</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_06&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_06
+USB\Vid_%04x&Pid_%04x&Cdc_06&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_06</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_06&amp;Prot_00
-USB\Class_02&amp;SubClass_06
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_06&Prot_00
+USB\Class_02&SubClass_06
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -638,7 +638,7 @@ USB CDC 多渠道 ISDN 控制模型 (MCCM) 接口集合具有以下属性。
 <td><p>MCCM (0x04)</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)</p></td>
 </tr>
 <tr class="odd">
@@ -651,15 +651,15 @@ USB CDC 多渠道 ISDN 控制模型 (MCCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_04
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_04</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_04
+USB\Vid_%04x&Pid_%04x&Cdc_04&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_04</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_04&amp;Prot_00
-USB\Class_02&amp;SubClass_04
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_04&Prot_00
+USB\Class_02&SubClass_04
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -700,7 +700,7 @@ USB CDC 电话控制模型 (TCM) 接口集合具有以下属性。
 <td><p>TCM (0X03)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>任何。</p></td>
 </tr>
 <tr class="odd">
@@ -713,15 +713,15 @@ USB CDC 电话控制模型 (TCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 ID</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_03&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_03
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_03</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_03&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_03
+USB\Vid_%04x&Pid_%04x&Cdc_03&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_03</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 ID</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_03&amp;Prot_%02X
-USB\Class_02&amp;SubClass_03
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_03&Prot_%02X
+USB\Class_02&SubClass_03
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -763,7 +763,7 @@ USB\Class_02</code></pre></td>
 <td><p>0x88</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)</p></td>
 </tr>
 <tr class="odd">
@@ -776,15 +776,15 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_88&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_88
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_88&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_88</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_88&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_88
+USB\Vid_%04x&Pid_%04x&Cdc_88&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_88</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_88&amp;Prot_00
-USB\Class_02&amp;SubClass_88
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_88&Prot_00
+USB\Class_02&SubClass_88
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -824,7 +824,7 @@ USB\Class_02</code></pre></td>
 <td><p>视频控件 (0x01)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -837,13 +837,13 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;MI_%02x</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&MI_%02x
+USB\Vid_%04x&Pid_%04x&MI_%02x</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_0E&amp;SubClass_01&amp;Prot_00
-USB\Class_0E&amp;SubClass_01
+<td><pre space="preserve"><code class="language-syntax">USB\Class_0E&SubClass_01&Prot_00
+USB\Class_0E&SubClass_01
 USB\Class_0E</code></pre></td>
 </tr>
 <tr class="odd">
@@ -887,7 +887,7 @@ USB\Class_0E</code></pre></td>
 <td><p>ACM (0X02)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>如果集合使用一个在命令设置协议，在兼容 Id 中嵌入的协议值是 0x01。 如果集合使用 WMCDC 规范描述的协议之一，在兼容 Id 中嵌入的协议值是 0x2 通过 0x06:sp 或 0xFE。</p></td>
 </tr>
 <tr class="odd">
@@ -900,15 +900,15 @@ USB\Class_0E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_Modem&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_Modem
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_Modem&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_Modem</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_Modem&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_Modem
+USB\Vid_%04x&Pid_%04x&Cdc_Modem&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_Modem</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_Modem&amp;Prot_%02X
-USB\Class_02&amp;SubClass_Modem
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_Modem&Prot_%02X
+USB\Class_02&SubClass_Modem
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -950,7 +950,7 @@ USB WMCDC 设备管理模型 (DMM) 接口集合具有以下属性。
 <td><p>DMM (0X09)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>任何。</p></td>
 </tr>
 <tr class="odd">
@@ -963,15 +963,15 @@ USB WMCDC 设备管理模型 (DMM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09
+USB\Vid_%04x&Pid_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_09</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_09&amp;Prot_%02X
-USB\Class_02&amp;SubClass_09
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_09&Prot_%02X
+USB\Class_02&SubClass_09
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1011,7 +1011,7 @@ USB WMCDC 移动直接行模型 (MDLM) 接口集合具有以下属性：
 <td><p>MDLM (0x0A)</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>Any</p></td>
 </tr>
 <tr class="odd">
@@ -1024,15 +1024,15 @@ USB WMCDC 移动直接行模型 (MDLM) 接口集合具有以下属性：
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0A&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0A
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0A&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0A</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0A&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0A
+USB\Vid_%04x&Pid_%04x&Cdc_0A&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_0A</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_0A&amp;Prot_%02X
-USB\Class_02&amp;SubClass_0A
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_0A&Prot_%02X
+USB\Class_02&SubClass_0A
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1074,7 +1074,7 @@ USB\Class_02</code></pre></td>
 <td><p>OBEX (0X0B)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -1087,15 +1087,15 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0B&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_0B
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0B&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_0B</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0B&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_0B
+USB\Vid_%04x&Pid_%04x&Cdc_0B&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_0B</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_0B&amp;Prot_00
-USB\Class_02&amp;SubClass_0B
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_0B&Prot_00
+USB\Class_02&SubClass_0B
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1137,7 +1137,7 @@ USB\Class_02</code></pre></td>
 <td><p>OBEX (0X0B)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -1150,14 +1150,14 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;WPD_OBEX&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;WPD_OBEX
-USB\Vid_%04x&amp;Pid_%04x&amp;WPD_OBEX&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;WPD_OBEX</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&WPD_OBEX&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&WPD_OBEX
+USB\Vid_%04x&Pid_%04x&WPD_OBEX&MI_%02x
+USB\Vid_%04x&Pid_%04x&WPD_OBEX</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;WPD_OBEX
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&WPD_OBEX
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
@@ -1199,7 +1199,7 @@ USB 泛型父驱动程序不会始终枚举无线手持控制模型 (WHCM) 接�
 <td><p>WHCM (0X08)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)。</p></td>
 </tr>
 <tr class="odd">
@@ -1212,15 +1212,15 @@ USB 泛型父驱动程序不会始终枚举无线手持控制模型 (WHCM) 接�
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_08&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_08
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_08&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_08</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_08&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_08
+USB\Vid_%04x&Pid_%04x&Cdc_08&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_08</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_08&amp;Prot_00
-USB\Class_02&amp;SubClass_08
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_08&Prot_00
+USB\Class_02&SubClass_08
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

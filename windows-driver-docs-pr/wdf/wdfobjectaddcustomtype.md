@@ -6,12 +6,12 @@ keywords:
 - WdfObjectAddCustomType 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e790b9e280ab8178cccf7760d95980afa370e09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93403b63cc319393ba087b3af0c1d7be89fb3cb0
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390833"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161565"
 ---
 # <a name="wdfobjectaddcustomtype-macro"></a>WdfObjectAddCustomType 宏
 
@@ -94,13 +94,13 @@ NTSTATUS                status;
 WDF_IO_QUEUE_CONFIG     queueConfig;
 WDFQUEUE                queue;  
 
-WDF_IO_QUEUE_CONFIG_INIT(&amp;queueConfig,   
+WDF_IO_QUEUE_CONFIG_INIT(&queueConfig,   
                          WdfIoQueueDispatchParallel);  
 
 status = WdfIoQueueCreate(device,  
-                          &amp;queueConfig,  
+                          &queueConfig,  
                           WDF_NO_OBJECT_ATTRIBUTES,  
-                          &amp;queue);  
+                          &queue);  
  
 if (!NT_SUCCESS(status)) {  
      TraceEvents(TRACE_LEVEL_ERROR, DBG_INFO,

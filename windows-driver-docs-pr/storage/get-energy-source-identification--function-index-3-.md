@@ -4,12 +4,12 @@ description: 此函数返回的标识信息有关能源源 (ES)，可以管理�
 ms.assetid: E1589FD0-5D03-42EF-8078-0AE53CFB1ACA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c76bff652d9cad466c66907bc26828a0395c435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62d534a7a193caec649217c7ba247fc37dbede12
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348060"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161491"
 ---
 # <a name="get-energy-source-identification-function-index-3"></a>获取能量源标识（功能索引 3）
 
@@ -58,13 +58,13 @@ ms.locfileid: "63348060"
 <td align="left">1</td>
 <td align="left">4</td>
 <td align="left"><p>有关该模块支持的能量源策略的信息。</p>
-<p>* 字节 0 – <em>ENERGY_SOURCE_POLICY</em> （0，0x14）</p></td>
+<p>\* 字节 0 – <em>ENERGY_SOURCE_POLICY</em> （0，0x14）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>设备管理 ES 标识</strong></td>
 <td align="left">11</td>
 <td align="left">5</td>
-<td align="left">&amp;gt; [!Note]<br/><p>&amp;g t;此字段包含有效的数据，仅当当前 ES 策略为设备管理 （即位设置 SET_ES_POLICY_STATUS （0，0x70） 2）。 对于所有其他 ES 策略，此字段应为 0。</p>
+<td align="left">&gt; [!Note]<br/><p>&gt;此字段包含有效的数据，仅当当前 ES 策略为设备管理 （即位设置 SET_ES_POLICY_STATUS （0，0x70） 2）。 对于所有其他 ES 策略，此字段应为 0。</p>
 
 <p>有关信息，请参阅 Device-Managed ES 标识。</p></td>
 </tr>
@@ -72,7 +72,7 @@ ms.locfileid: "63348060"
 <td align="left"><strong>主机托管 ES 标识</strong></td>
 <td align="left">3</td>
 <td align="left">16</td>
-<td align="left">&amp;gt; [!Note]<br/><p>&amp;g t;此字段包含有效的数据，仅当当前 ES 策略为管理的主机 （即位 3 SET_ES_POLICY_STATUS （0，0x70） 设置）。 对于所有其他 ES 策略，此字段应为 0。</p>
+<td align="left">&gt; [!Note]<br/><p>&gt;此字段包含有效的数据，仅当当前 ES 策略为管理的主机 （即位 3 SET_ES_POLICY_STATUS （0，0x70） 设置）。 对于所有其他 ES 策略，此字段应为 0。</p>
 
 <p>有关信息，请参阅 Host-Managed ES 标识。</p></td>
 </tr>

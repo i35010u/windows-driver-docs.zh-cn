@@ -7,12 +7,12 @@ keywords:
 - SDEL 查询
 ms.date: 11/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9381560e45cac35f9dc4005368d3590edf38be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf982a69e7e22088bb09eb8380ad5720c1800daf
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340236"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161547"
 ---
 # <a name="run-the-tests"></a>运行测试
 ## <a name="description-of-the-tests-and-configuration-file"></a>测试和配置文件的说明
@@ -212,7 +212,7 @@ HRESULT"0x80070057"意味着"E_INVALIDARG:一个或多个参数是无效的"。 
 ```
 这是 deviceid 修复该错误的格式正确的值：
 ```
-    <Parameter Name="SDEL">IsDevice AND deviceid='PCI\VEN_11AB&amp;DEV_2B38&amp;SUBSYS_045E0003&amp;REV_00\4&amp;91A2562&amp;0&amp;00E8'</Parameter>
+    <Parameter Name="SDEL">IsDevice AND deviceid='PCI\VEN_11AB&DEV_2B38&SUBSYS_045E0003&REV_00\4&91A2562&0&00E8'</Parameter>
 ```
 
 ### <a name="other-issues"></a>其他问题

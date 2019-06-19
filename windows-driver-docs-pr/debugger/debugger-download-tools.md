@@ -7,12 +7,12 @@ keywords:
 - 下载
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 478f32454966e96982a46ad4fafab2403362bafe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0cb53107af0e3721d5d71c1419eb0fe4c359363c
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368142"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161420"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载适用于 Windows 调试工具
 
@@ -38,7 +38,7 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 
 
 > [!TIP]
-> 如果已安装 Windows SDK，打开**设置**，导航到**应用&amp;功能**，选择**Windows 软件开发工具包**，然后单击**修改**若要更改安装以添加**对于 Windows 调试工具**。
+> 如果已安装 Windows SDK，打开**设置**，导航到**应用和功能**，选择**Windows 软件开发工具包**，然后单击**修改**若要更改安装以添加**有关 Windows 调试工具**。
 
 
 -------------------
@@ -46,7 +46,7 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 
 ## <a name="looking-for-the-debugging-tools-for-earlier-version-of-windows"></a>查找早期版本的 Windows 调试工具？
 
-若要下载适用于以前版本的 Windows 的调试器工具，下载 Windows SDK [Windows SDK 和仿真器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。 在安装向导中，选择“Windows 调试工具”，然后取消选择所有其他组件。
+若要下载适用于以前版本的 Windows 的调试器工具，下载 Windows SDK [Windows SDK 和仿真器存档](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)。 在安装向导中，选择“Windows 调试工具”  ，然后取消选择所有其他组件。
 
 
 ## <a name="looking-for-related-downloads"></a>查找相关下载？

@@ -8,12 +8,12 @@ keywords:
 - 对于处理 WDK Windows 筛选平台数据包层
 ms.date: 01/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e4db65596a45510cc9722fb025367ccef437bce2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2572a94f9889fe11afbd9803038817c922431593
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365684"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161405"
 ---
 # <a name="wfp-layer-requirements-and-restrictions"></a>WFP 层要求和限制
 
@@ -88,8 +88,8 @@ IP 数据包分段，指示仅对传入的路径，指示在此层上的三个�
 </tr>
 <tr class="even">
 <td align="left"><p>建立的流</p></td>
-<td align="left"><p>最后的 ACK (传入&amp;传出)</p></td>
-<td align="left"><p>第一个 UDP 数据包 (传入&amp;传出)</p></td>
+<td align="left"><p>最后的 ACK （传入和传出）</p></td>
+<td align="left"><p>第一个 UDP 数据包 （传入和传出）</p></td>
 </tr>
 </tbody>
 </table>

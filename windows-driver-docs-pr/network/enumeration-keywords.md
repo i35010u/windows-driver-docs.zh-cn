@@ -7,12 +7,12 @@ keywords:
 - 枚举关键字 WDK NDIS 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c76f4d1b82064fc51958ba96f0d62d4156eb416
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: c9f9af3bddfb3d8786db8da8b0b953f5dc84b9ce
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56525835"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161545"
 ---
 # <a name="enumeration-keywords"></a>枚举关键字
 
@@ -37,7 +37,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 常规枚举关键字是：
 
-<a href="" id="-speedduplex"></a>**\*SpeedDuplex**  
+<a href="" id="-speedduplex"></a> **\*SpeedDuplex**  
 速度和双工设备支持的设置。 设备 INF 文件应列出关联的设备支持的设置。 也就是说，如果对于以太网 10/100 设备可支持仅全双工模式下，，关联的 INF 文件中应不会列出千兆或更高的速度或半双工设置。
 
 已使用 0 到 10 的枚举值不专门定义速度值可能设置为直接以 mbps 为单位的值的数字。  指示值必须至少为 1,000 Mbps (1 Gbps) 及更高版本。  下面是用于直接指定速度的几个示例：
@@ -50,7 +50,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 | 50,000 | 50 Gbps |
 | 100,000 | 100 Gbps |
 
-<a href="" id="-flowcontrol"></a>**\*FlowControl**  
+<a href="" id="-flowcontrol"></a> **\*FlowControl**  
 控制在发送或接收路径为设备启用或禁用流的功能。
 
 **请注意**  以太网设备现在支持流控制和 LAN 的 Windows 8 内置驱动程序具有默认情况下启用的流控制。 当内核调试程序附加到这些 LAN 适配器之一时，NIC 将开始将流控制暂停帧推送到网络。 大多数网络交换机将通过暂时关闭的所有其他计算机连接到相同的中心的网络响应。 这是常见开发方案中，并且最终用户体验是不必要和难以进行诊断。
@@ -67,7 +67,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
  
 
-<a href="" id="-priorityvlantag"></a>**\*PriorityVLANTag**  
+<a href="" id="-priorityvlantag"></a> **\*PriorityVLANTag**  
 一个值，指示设备是否已启用或禁用插入 802.1Q 标记数据包优先级和虚拟 Lan (Vlan)。 此关键字不指示设备是启用还是禁用数据包优先级或 VLAN 标记。 相反，它介绍了以下任务：
 
 -   设备是否插入 802.1Q 标记发送操作期间
@@ -94,13 +94,13 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
  
 
-<a href="" id="-interruptmoderation"></a>**\*InterruptModeration**  
+<a href="" id="-interruptmoderation"></a> **\*InterruptModeration**  
 一个值，描述该设备是启用还是禁用中断裁决。 中断裁决算法是依赖于设备的。 设备制造商可以使用非标准化的关键字来支持算法设置。 有关中断裁决的详细信息，请参阅[中断裁决](interrupt-moderation.md)。
 
-<a href="" id="-rss"></a>**\*RSS**  
+<a href="" id="-rss"></a> **\*RSS**  
 一个值，描述该设备是启用还是禁用接收方缩放 (RSS)。 有关 RSS 的详细信息，请参阅[接收方伸缩](ndis-receive-side-scaling2.md)。
 
-<a href="" id="-headerdatasplit"></a>**\*HeaderDataSplit**  
+<a href="" id="-headerdatasplit"></a> **\*HeaderDataSplit**  
 一个值，描述该设备是启用还是禁用标头数据拆分。 标头数据拆分的详细信息，请参阅[标头数据拆分](header-data-split.md)。
 
 以下关键字是与连接卸载服务相关联：
@@ -154,7 +154,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 与之关联的显示文本**SubkeyName**。
 
 <a href="" id="value"></a>值  
-在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\**<em>SubkeyName</em>**\\**<em>值</em>。
+在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\** <em>SubkeyName</em> **\\** <em>值</em>。
 
 <a href="" id="enumdesc"></a>EnumDesc  
 与每个菜单中显示的值相关联的显示文本。
@@ -182,7 +182,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>SpeedDuplex</strong></p></td>
-<td align="left"><p>速度&amp;双工</p></td>
+<td align="left"><p>速度和双工</p></td>
 <td align="left"><p>0 （默认值）</p></td>
 <td align="left"><p>自动协商</p></td>
 </tr>
@@ -268,7 +268,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -278,9 +278,9 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PriorityVLANTag</strong></p></td>
-<td align="left"><p>数据包优先级&amp;VLAN</p></td>
+<td align="left"><p>数据包优先级和 VLAN</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>数据包优先级&amp;VLAN 已禁用</p></td>
+<td align="left"><p>数据包优先级和 VLAN 已禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -298,11 +298,11 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>数据包优先级&amp;已启用 VLAN</p></td>
+<td align="left"><p>数据包优先级 （& a) 已启用 VLAN</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>InterruptModeration</strong></p></td>
-<td align="left"><p>中断裁决</p></td>
+<td align="left"><p>中断调解</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>Disabled</p></td>
 </tr>
@@ -310,7 +310,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>RSS</strong></p></td>
@@ -322,7 +322,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>HeaderDataSplit</strong></p></td>
@@ -334,7 +334,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPConnectionOffloadIPv4</strong></p></td>
@@ -346,7 +346,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
@@ -358,7 +358,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPChecksumOffloadIPv4</strong></p></td>
@@ -382,7 +382,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
@@ -406,7 +406,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
@@ -430,7 +430,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
@@ -454,7 +454,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
@@ -478,7 +478,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
@@ -490,7 +490,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>LsoV2IPv4</strong></p></td>
@@ -502,7 +502,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV2IPv6</strong></p></td>
@@ -514,7 +514,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>已启用</p></td>
+<td align="left"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV1IPv4</strong></p></td>
@@ -538,7 +538,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
@@ -562,7 +562,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV2IPv4</strong></p></td>
@@ -586,7 +586,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv4</strong></p></td>

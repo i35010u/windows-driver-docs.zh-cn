@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee5026b0a0193e7ed1918e7837083a562d5d567d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ea5f1a2a2581ac5da3f8d0f66eef87aabf53764
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367596"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161525"
 ---
 # <a name="ksmethodstreamallocatorfree"></a>KSMETHOD\_STREAMALLOCATOR\_免费
 
@@ -36,12 +36,12 @@ Method.Flags = KSMETHOD_TYPE_READ;
 DeviceIoControl(
     AllocatorHandle,
     IOCTL_KS_METHOD,
-    &amp;Method,
+    &Method,
     sizeof(KSMETHOD),
-    &amp;Frame,
+    &Frame,
     sizeof( PVOID ),
-    &amp;BytesReturned,
-    &amp;Overlapped);
+    &BytesReturned,
+    &Overlapped);
 ```
 
  

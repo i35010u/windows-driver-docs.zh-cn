@@ -6,12 +6,12 @@ keywords:
 - WDF_DECLARE_CUSTOM_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c854288285992a6e451d02a4b3715411700a3e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7991faa73ee65b01b01ba19c219124f02d6c0d0b
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373445"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161568"
 ---
 # <a name="wdfdeclarecustomtype-macro"></a>WDF_DECLARE_CUSTOM_TYPE 宏
 
@@ -62,12 +62,12 @@ WDF_DECLARE_CUSTOM_TYPE(MY_CUSTOM_TYPE)
 WDFREQUEST Request;
 WDF_OBJECT_ATTRIBUTES MyRequestObjectAttributes;
 
-WDF_OBJECT_ATTRIBUTES_INIT(&amp;MyRequestObjectAttributes);
+WDF_OBJECT_ATTRIBUTES_INIT(&MyRequestObjectAttributes);
 
 status = WdfRequestCreate(
-                          &amp;MyRequestObjectAttributes
+                          &MyRequestObjectAttributes
                           NULL,
-                          &amp;Request
+                          &Request
                           );
 
 if (!NT_SUCCESS(status)) {

@@ -3,12 +3,12 @@ Description: CDC ATM 网络控制模型
 title: CDC ATM 网络控制模型
 ms.localizationpriority: medium
 ms.date: 01/07/2019
-ms.openlocfilehash: 3a33ceb4f0c6aefd9710382e6be216b8e96cf829
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 944b79021e43676cbdfa7992cb15876442f14cc5
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392103"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161365"
 ---
 # <a name="cdc-atm-networking-control-model"></a>CDC ATM 网络控制模型
 
@@ -40,7 +40,7 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 <td><p>ANCM (0x07)</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>无 (0x00)</p></td>
 </tr>
 <tr class="odd">
@@ -53,15 +53,15 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_07
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_07</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_07
+USB\Vid_%04x&Pid_%04x&Cdc_07&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_07</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_07&amp;Prot_00
-USB\Class_02&amp;SubClass_07
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_07&Prot_00
+USB\Class_02&SubClass_07
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

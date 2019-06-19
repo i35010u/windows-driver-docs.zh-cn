@@ -80,8 +80,8 @@ ms.locfileid: "63330658"
 ### <a name="to-customize-the-stacksize-limit-for-c6262"></a>若要自定义 C6262 stacksize 限制
 
 1. 在记事本或其他文本编辑器中，为内核模式驱动程序 （或组件） 中打开 Visual Studio 项目文件 (.vcxproj)。
-2. 添加一个新**\<ItemDefinitionGroup\>** 编译器 **\<ClCompile\>**。
-3. 添加**\<PREfastAdditionalOptions\>** 元素，并设置**stacksize\<字节\>**。 默认值是**stacksize1024**。
+2. 添加一个新 **\<ItemDefinitionGroup\>** 编译器 **\<ClCompile\>** 。
+3. 添加 **\<PREfastAdditionalOptions\>** 元素，并设置**stacksize\<字节\>** 。 默认值是**stacksize1024**。
 
 ```XML
      <ItemDefinitionGroup>

@@ -4,12 +4,12 @@ description: 地址和地址范围语法
 ms.assetid: 3d4f41f1-07ec-484d-a748-27fbbb9bd0b2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce680cc5b5fc66fe10dff5ca6b24844ed5653c04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c0854fe9a7abfdb574a2de3c04bbea3a70aaa69
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354942"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161413"
 ---
 # <a name="address-and-address-range-syntax"></a>地址和地址范围语法
 
@@ -45,7 +45,7 @@ ms.locfileid: "63354942"
 <td align="left"><p>32 位地址 （也 16 位选择器，指向 32 位段） 和 64 位系统上的 64 位地址。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&amp;</p></td>
+<td align="left"><p>&</p></td>
 <td align="left"><p>virtual 86</p></td>
 <td align="left"><p>实模式地址。 基于 x86 的仅。</p></td>
 </tr>
@@ -84,7 +84,7 @@ ms.locfileid: "63354942"
 <td align="left"><p>虚拟内存空间，含对应于当前的执行模式的类型中的绝对地址。 例如，如果当前的执行模式是 16 位，偏移量为 16 位。 如果执行模式是 32 位分段，偏移量为 32 位分段。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>&amp;</strong>[[段:]] 偏移量</p></td>
+<td align="left"><p><strong>&</strong>[[段:]] 偏移量</p></td>
 <td align="left"><p>实际地址。 基于 x86 和基于 x64 的。</p></td>
 </tr>
 <tr class="odd">

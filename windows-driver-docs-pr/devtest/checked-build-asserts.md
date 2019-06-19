@@ -8,12 +8,12 @@ keywords:
 - 错误 WDK 检查生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6834664e7ac21b81a19ccad8b7f6d3ded02b331
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b389a3ed5f0be1ebce5710c213d5e9464b873d98
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344000"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161493"
 ---
 # <a name="checked-build-asserts"></a>已检验版本 ASSERT
 
@@ -88,7 +88,7 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff548397" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff548397)"><strong>IoCreateDevice</strong></a></p></td>
-<td align="left"><p>ASSERT((DriverObject-&gt;Flags &amp; DRVO_UNLOAD_INVOKED) == 0)</p></td>
+<td align="left"><p>ASSERT((DriverObject-&gt;Flags & DRVO_UNLOAD_INVOKED) == 0)</p></td>
 <td align="left"><p>已创建一个设备对象，但创建它的驱动程序标记为要卸载。</p></td>
 </tr>
 <tr class="odd">
@@ -98,7 +98,7 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IoFreeIrp</strong></p></td>
-<td align="left"><p>ASSERT(IsListEmpty(&amp;(Irp)-&gt;ThreadListEntry))</p></td>
+<td align="left"><p>ASSERT(IsListEmpty(&(Irp)-&gt;ThreadListEntry))</p></td>
 <td align="left"><p>正在释放 IRP 仍位于线程的 IRP 列表，并因此仍在使用。</p></td>
 </tr>
 <tr class="odd">
@@ -113,7 +113,7 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IoReuseIrp</strong></p></td>
-<td align="left"><p>ASSERT(IsListEmpty(&amp;Irp-&gt;ThreadListEntry))</p></td>
+<td align="left"><p>ASSERT(IsListEmpty(&Irp-&gt;ThreadListEntry))</p></td>
 <td align="left"><p>重新使用 IRP 仍位于线程的 IRP 列表，并因此仍在使用。</p></td>
 </tr>
 <tr class="even">
@@ -158,17 +158,17 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>ASSERT (((ULONG)MemoryDescriptorList-&gt;ByteOffset &amp; ~(PAGE_SIZE - 1)) == 0)</p></td>
+<td align="left"><p>ASSERT (((ULONG)MemoryDescriptorList-&gt;ByteOffset & ~(PAGE_SIZE - 1)) == 0)</p></td>
 <td align="left"><p>MDL 中的第一页中的偏移量是&gt;= PAGE_SIZE; MDL 的格式不正确。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>断言 (((ULONG_PTR) MemoryDescriptorList-&gt;StartVa &amp; (PAGE_SIZE-1)) = = 0)</p></td>
+<td align="left"><p>断言 (((ULONG_PTR) MemoryDescriptorList-&gt;StartVa & (PAGE_SIZE-1)) = = 0)</p></td>
 <td align="left"><p>在 MDL 起始 VA 不对齐; 页MDL 结构不正确。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; (MDL_PAGES_LOCKED |MDL_MAPPED_TO_SYSTEM_VA |MDL_SOURCE_IS_NONPAGED_POOL |MDL_PARTIAL |MDL_IO_SPACE)) = = 0)</p></td>
+<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags & (MDL_PAGES_LOCKED |MDL_MAPPED_TO_SYSTEM_VA |MDL_SOURCE_IS_NONPAGED_POOL |MDL_PARTIAL |MDL_IO_SPACE)) = = 0)</p></td>
 <td align="left"><p>MDL 不是此函数调用的正确状态。</p></td>
 </tr>
 <tr class="odd">
@@ -183,17 +183,17 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff556381" data-raw-source="[&lt;strong&gt;MmUnlockPages&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556381)"><strong>MmUnlockPages</strong></a></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_PAGES_LOCKED) ！ = 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & MDL_PAGES_LOCKED) != 0)</p></td>
 <td align="left"><p>包含描述此 MDL 缓冲区的页未被锁定。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmUnlockPages</strong></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_SOURCE_IS_NONPAGED_POOL) = = 0)</p></td>
+<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags & MDL_SOURCE_IS_NONPAGED_POOL) = = 0)</p></td>
 <td align="left"><p>MDL 介绍从非分页缓冲池的缓冲区。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmUnlockPages</strong></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_PARTIAL) = = 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & MDL_PARTIAL) == 0)</p></td>
 <td align="left"><p>通过调用生成 MDL <strong>IoBuildPartialMdl</strong>。</p></td>
 </tr>
 <tr class="even">
@@ -223,7 +223,7 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmBuildMdlForNonPagedPool</strong></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; (MDL_PAGES_LOCKED |MDL_MAPPED_TO_SYSTEM_VA |MDL_SOURCE_IS_NONPAGED_POOL |MDL_PARTIAL)) = = 0)</p></td>
+<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags & (MDL_PAGES_LOCKED |MDL_MAPPED_TO_SYSTEM_VA |MDL_SOURCE_IS_NONPAGED_POOL |MDL_PARTIAL)) = = 0)</p></td>
 <td align="left"><p>MDL 不在此函数调用的正确状态</p></td>
 </tr>
 <tr class="even">
@@ -238,17 +238,17 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; MDL_MAPPED_TO_SYSTEM_VA) == 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & MDL_MAPPED_TO_SYSTEM_VA) == 0)</p></td>
 <td align="left"><p>描述此 MDL 缓冲区已映射到内核虚拟地址空间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags &amp; ( MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL_HAS_BEEN_MAPPED)) == 0)</p></td>
+<td align="left"><p>ASSERT ((MemoryDescriptorList-&gt;MdlFlags & ( MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL | MDL_PARTIAL_HAS_BEEN_MAPPED)) == 0)</p></td>
 <td align="left"><p>MDL 不是此函数调用的正确状态。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags &amp; (MDL_PAGES_LOCKED |MDL_PARTIAL)) ！ = 0)</p></td>
+<td align="left"><p>断言 ((MemoryDescriptorList-&gt;MdlFlags & (MDL_PAGES_LOCKED |MDL_PARTIAL)) ！ = 0)</p></td>
 <td align="left"><p>MDL 处于此操作的正确状态。</p></td>
 </tr>
 <tr class="odd">
@@ -268,7 +268,7 @@ ms.locfileid: "63344000"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmUnmapLockedPages</strong></p></td>
-<td align="left"><p>断言 (MemoryDescriptorList-&gt;MdlFlags &amp; MDL_MAPPED_TO_SYSTEM_VA)</p></td>
+<td align="left"><p>断言 (MemoryDescriptorList-&gt;MdlFlags & MDL_MAPPED_TO_SYSTEM_VA)</p></td>
 <td align="left"><p>传递给此函数可指定的基址指示内核虚拟地址空间中的地址，但这不同意在 MDL 缓冲区说明指定的参数。</p></td>
 </tr>
 <tr class="odd">

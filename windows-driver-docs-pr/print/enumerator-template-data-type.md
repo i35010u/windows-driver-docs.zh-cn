@@ -81,7 +81,7 @@ ms.locfileid: "63324266"
 *Color: GREEN
 ```
 
-并考虑 ACOLOR 模板声明**\*颜色**GDL 属性 **\*ValueType** ，指由模板颜色，下面的代码示例显示。
+并考虑 ACOLOR 模板声明 **\*颜色** GDL 属性 **\*ValueType** ，指由模板颜色，下面的代码示例显示。
 
 ```cpp
 *Template:  ACOLOR

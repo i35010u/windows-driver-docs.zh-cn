@@ -20,7 +20,7 @@ ms.locfileid: "63329930"
 
 -   调用[WPP\_INIT\_跟踪](https://msdn.microsoft.com/library/windows/hardware/ff556191)中的宏[DllMain](https://go.microsoft.com/fwlink/p/?linkid=179361)函数的 dll。
 
--   如果您的 DLL 用 C 编写的将添加**\#定义**语句**WPP\_OLDCC**到你的源代码。 将之前定义放**\#包括**语句[跟踪消息标头 (.tmh) 文件](trace-message-header-file.md)。 **WPP\_OLDCC**定义为仅为 C 代码。 不需要C++。
+-   如果您的 DLL 用 C 编写的将添加 **\#定义** 语句 **WPP\_OLDCC**到你的源代码。 将之前定义放 **\#包括**语句[跟踪消息标头 (.tmh) 文件](trace-message-header-file.md)。 **WPP\_OLDCC**定义为仅为 C 代码。 不需要C++。
 
     例如：
 

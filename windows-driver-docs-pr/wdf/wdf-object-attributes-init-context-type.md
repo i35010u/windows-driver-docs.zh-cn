@@ -6,12 +6,12 @@ keywords:
 - WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 805172577296774d3128f90c719d07b9ebd63d2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fd6ab18ff21862ec1c6c83dec12c0e705155fbd
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390836"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161563"
 ---
 # <a name="wdfobjectattributesinitcontexttype-macro"></a>WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
 
@@ -76,7 +76,7 @@ WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(WDM_NDIS_REQUEST, RequestGetMyContext);
 
 WDF_OBJECT_ATTRIBUTES  attributes;
 
-WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &amp;attributes, WDM_NDIS_REQUEST );
+WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 ```
 
 <a name="requirements"></a>要求

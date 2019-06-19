@@ -6,12 +6,12 @@ keywords:
 - WDF_PTR_ADD_OFFSET 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af84b12017ede07c9785dd21c357ddc84087faf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8fb5b6c997f120e2c75cd60417215f0ffa897da
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366468"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161567"
 ---
 # <a name="wdfptraddoffset-macro"></a>WDF_PTR_ADD_OFFSET 宏
 
@@ -64,8 +64,8 @@ PVOID WDF_PTR_ADD_OFFSET(
         status = WDF_WMI_BUFFER_APPEND_STRING(
             WDF_PTR_ADD_OFFSET(wnode, wnode->OffsetInstanceName),
             size,
-            &amp;deviceName,
-            &amp;length
+            &deviceName,
+            &length
             );
 
         //
@@ -81,8 +81,8 @@ PVOID WDF_PTR_ADD_OFFSET(
         WDF_WMI_BUFFER_APPEND_STRING(
             WDF_PTR_ADD_OFFSET(wnode,  wnode->DataBlockOffset),
             size,
-            &amp;modelName,
-            &amp;length
+            &modelName,
+            &length
             );
 ```
 

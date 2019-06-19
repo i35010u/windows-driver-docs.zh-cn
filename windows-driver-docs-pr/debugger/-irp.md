@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-请注意，驱动程序名称旁边的完成例程设置上该堆栈的位置，它由下面的行中的驱动程序设置。 在前面的示例中， **Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**由设置**\\文件系统\\Ntfs**。 **完成上下文**上文条目**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0 829e2ba8**，指示完成例程的地址作为上下文将传递给**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**。 从此我们可以看到的地址**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**是**847eeed0**，且被调用时将传递给此例程的上下文是**829e2ba8**.
+请注意，驱动程序名称旁边的完成例程设置上该堆栈的位置，它由下面的行中的驱动程序设置。 在前面的示例中， **Ntfs ！ NtfsMasterIrpSyncCompletionRoutine** 由设置 **\\文件系统\\Ntfs**。 **完成上下文**上文条目**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0 829e2ba8**，指示完成例程的地址作为上下文将传递给**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**。 从此我们可以看到的地址**Ntfs ！ NtfsMasterIrpSyncCompletionRoutine**是**847eeed0**，且被调用时将传递给此例程的上下文是**829e2ba8**.
 
 **IRP 主要函数代码**
 
@@ -515,9 +515,9 @@ SCSI 次要函数代码如下所示：
 
 [**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
 
-[**!irpfind**](-irpfind.md)
+[ **!irpfind**](-irpfind.md)
 
-[**!ioctldecode**](-ioctldecode.md)
+[ **!ioctldecode**](-ioctldecode.md)
 
  
 

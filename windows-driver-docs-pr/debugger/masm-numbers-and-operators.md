@@ -14,12 +14,12 @@ keywords:
 - 一元运算符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9890f3cae44d4c232876eb0cb4a498d400974e32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9cddbd0bba9cb6f60254aa16dd1648067d644be
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363420"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161455"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM 数字和运算符
 
@@ -57,7 +57,7 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 
 您始终可以使用括号替代优先顺序规则。
 
-如果 MASM 表达式的一部分括在括号中，并且两个 at 符号 （@ @） 出现在表达式之前，该表达式将解释根据[C++表达式规则](c---numbers-and-operators.md)。 无法添加这两个 at 符号和左括号之间有空格。 此外可以指定[表达式计算器](evaluating-expressions.md)通过使用 **@@c+ + （...）** 或 **@@masm（...）**.
+如果 MASM 表达式的一部分括在括号中，并且两个 at 符号 （@ @） 出现在表达式之前，该表达式将解释根据[C++表达式规则](c---numbers-and-operators.md)。 无法添加这两个 at 符号和左括号之间有空格。 此外可以指定[表达式计算器](evaluating-expressions.md)通过使用 **@@c+ + （...）** 或 **@@masm（...）** .
 
 当你执行算术运算时，MASM 表达式计算器将所有数字和符号视为 ULONG64 类型。
 
@@ -193,7 +193,7 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 <p>不等于</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>并</strong>(或&amp;)</p></td>
+<td align="left"><p><strong>和</strong>(或 &)</p></td>
 <td align="left"><p>位与</p></td>
 </tr>
 <tr class="even">

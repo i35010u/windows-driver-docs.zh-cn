@@ -6,12 +6,12 @@ keywords:
 - WDF_DECLARE_CONTEXT_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f2193b23abfdd8a60a670fc14b627fbf1faf919
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72fb9f6b1f6123cdc8f22dd1847d43e30b725626
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390858"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161571"
 ---
 # <a name="wdfdeclarecontexttype-macro"></a>WDF_DECLARE_CONTEXT_TYPE 宏
 
@@ -66,15 +66,15 @@ WDFREQUEST Request;
 WDF_OBJECT_ATTRIBUTES MyRequestObjectAttributes;
 PMY_REQUEST_CONTEXT pMyContext;
 
-WDF_OBJECT_ATTRIBUTES_INIT(&amp;MyRequestObjectAttributes);
+WDF_OBJECT_ATTRIBUTES_INIT(&MyRequestObjectAttributes);
 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
-                                       &amp;MyRequestObjectAttributes,
+                                       &MyRequestObjectAttributes,
                                        MY_REQUEST_CONTEXT
                                        );
 status = WdfRequestCreate(
-                          &amp;MyRequestObjectAttributes
+                          &MyRequestObjectAttributes
                           NULL,
-                          &amp;Request
+                          &Request
                           );
 if (!NT_SUCCESS(status)) {
     return status;

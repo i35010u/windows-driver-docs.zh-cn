@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e031668ed6abbc5bc50412c051ecc5cb0a8f523
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57c4979c6e7c9d2354b040346adcdc0d665404e8
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379509"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161536"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF 驱动程序例程的 DriverEntry
 
@@ -136,20 +136,20 @@ DriverEntry(
     // the cleanup callback function when it deletes the driver object,
     // before the driver is unloaded.
     //
-    WDF_OBJECT_ATTRIBUTES_INIT(&amp;attributes);
+    WDF_OBJECT_ATTRIBUTES_INIT(&attributes);
     attributes.EvtCleanupCallback = SerialEvtDriverContextCleanup;
 
     WDF_DRIVER_CONFIG_INIT(
-                           &amp;config,
+                           &config,
                            SerialEvtDeviceAdd
                            );
 
     status = WdfDriverCreate(
                              DriverObject,
                              RegistryPath,
-                             &amp;attributes,
-                             &amp;config,
-                             &amp;hDriver
+                             &attributes,
+                             &config,
+                             &hDriver
                              );
     if (!NT_SUCCESS(status)) {
         SerialDbgPrintEx(
@@ -171,7 +171,7 @@ DriverEntry(
     // controls, including whether or not to break on entry.
     //
     SerialGetConfigDefaults(
-                            &amp;driverDefaults,
+                            &driverDefaults,
                             hDriver
                             );
 

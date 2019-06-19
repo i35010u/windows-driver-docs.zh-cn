@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cdecfe40ea2386046e2900dd330cae69d2e977
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b04efab93fc641bc0f335b9afffea4c8e0dafa24
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360138"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161540"
 ---
 # <a name="kspropertyextensionunitinfo"></a>KSPROPERTY\_扩展\_单元\_信息
 
@@ -105,11 +105,11 @@ ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
     ExtensionProp.NodeId = m_dwNodeId;
 
     hr = m_pKsControl->KsProperty(
-        (PKSPROPERTY) &amp;ExtensionProp,
+        (PKSPROPERTY) &ExtensionProp,
         sizeof(ExtensionProp),
         NULL,
         0,
-        &amp;ulBytesReturned);
+        &ulBytesReturned);
 ```
 
 <a name="requirements"></a>要求

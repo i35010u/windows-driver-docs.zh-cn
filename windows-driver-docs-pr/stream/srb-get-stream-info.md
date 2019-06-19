@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddc77408d072ae8a02a987ed3fe043843002173a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 44f6041bd3c483cbb97c0287c9fa730bbdb43102
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390871"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161557"
 ---
 # <a name="srbgetstreaminfo"></a>SRB\_GET\_STREAM\_INFO
 
@@ -51,9 +51,9 @@ ms.locfileid: "63390871"
 
     ```cpp
      PHW_STREAM_HEADER pstrhdr =
-      (PHW_STREAM_HEADER)&amp;(pSrb->CommandData.StreamBuffer->StreamHeader);
+      (PHW_STREAM_HEADER)&(pSrb->CommandData.StreamBuffer->StreamHeader);
      PHW_STREAM_INFORMATION pstrinfo =
-      (PHW_STREAM_INFORMATION)&amp;(pSrb->CommandData.StreamBuffer->StreamInfo);
+      (PHW_STREAM_INFORMATION)&(pSrb->CommandData.StreamBuffer->StreamInfo);
      
     ```
 

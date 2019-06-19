@@ -4,12 +4,12 @@ description: 关于参数类型
 ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0983a97bc6a230501a9593a3d2baf25e336d6f5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99848cefd1ad8e9f2de5ffcb46483ee200d2c577
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360926"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161433"
 ---
 # <a name="about-sensor-parameter-types"></a>有关传感器参数类型
 
@@ -33,7 +33,7 @@ ms.locfileid: "63360926"
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
 <td><p>pClientFile</p></td>
-<td><p>此 UMDF COM 接口表示平台将与客户端应用程序相关联的文件对象。 尽管传感器方法调用始终提供此类型作为有效的接口指针，但它被旨在用作应用程序 ID。 包含指针的地址是可以识别客户端应用程序的唯一编号。 请注意，此值是不同于指针本身的地址。 不使用 address-of 运算符 (&amp;) 来检索 id。 使用指针本身。</p>
+<td><p>此 UMDF COM 接口表示平台将与客户端应用程序相关联的文件对象。 尽管传感器方法调用始终提供此类型作为有效的接口指针，但它被旨在用作应用程序 ID。 包含指针的地址是可以识别客户端应用程序的唯一编号。 请注意，此值是不同于指针本身的地址。 不使用 address-of 运算符 (&) 来检索 id。 使用指针本身。</p>
 <p>如果您选择用这个指针来访问基础对象，请记住最初，通过指针调用 AddRef，然后完成后调用 Release。</p></td>
 </tr>
 <tr class="even">

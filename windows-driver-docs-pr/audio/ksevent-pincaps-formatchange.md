@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18545ecda2fa9d84932ee0caa67db2407b637af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 702aff43ce9fd6b4da8eb939501d9299a85d0028
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333348"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161375"
 ---
 # <a name="kseventpincapsformatchange"></a>KSEVENT\_PINCAPS\_格式
 
@@ -64,7 +64,7 @@ ms.locfileid: "63333348"
 ```cpp
 static PCEVENT_ITEM FormatChangePinEvent[] = {
   {
-    &amp;KSEVENTSETID_PinCapsChange,
+    &KSEVENTSETID_PinCapsChange,
     KSEVENT_PINCAPS_FORMATCHANGE,
     KSEVENT_TYPE_ENABLE | KSEVENT_TYPE_BASICSUPPORT,
     MyEventHandler

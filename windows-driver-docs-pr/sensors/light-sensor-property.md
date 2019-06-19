@@ -4,12 +4,12 @@ description: 光线传感器属性键。
 ms.assetid: 87C58F14-E23D-4567-BBD5-AA42DF9371B0
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 57161a83aa5e8690f2861fffc3940622d93c44cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8986f013d292565106e2d60cbd6d6fce6334707d
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345173"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161573"
 ---
 # <a name="light-sensor-property"></a>光传感器属性
 
@@ -70,14 +70,14 @@ ms.locfileid: "63345173"
 // Sensor Properties
      if (NT_SUCCESS(Status))
      {
-         Status = InitSensorCollection(SENSOR_PROPERTIES_COUNT, &amp;m_pSensorProperties, SensorInstance);
+         Status = InitSensorCollection(SENSOR_PROPERTIES_COUNT, &m_pSensorProperties, SensorInstance);
          if (NT_SUCCESS(Status))
          {
                m_Interval = DEFAULT_ACCELEROMETER_REPORT_INTERVAL;
                ...
                ...
                m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Key = PKEY_Sensor_MinimumDataInterval_Ms;
-               InitPropVariantFromUInt32(ACCELEROMETER_MIN_REPORT_INTERVAL, &amp;(m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Value));
+               InitPropVariantFromUInt32(ACCELEROMETER_MIN_REPORT_INTERVAL, &(m_pSensorProperties->List[SENSOR_PROPERTY_MIN_DATA_INTERVAL].Value));
                ...
          }
     }

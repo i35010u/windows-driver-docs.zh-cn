@@ -15,12 +15,12 @@ keywords:
 - 并行的前缀解析 WDK 网络重定向程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d471ede1543438093cad0cb61592d8c9b502d8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b86dddd6c52d4b2fa9649604289c7cef540a1a4a
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344366"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161560"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>支持 UNC 命名和 MUP
 
@@ -126,7 +126,7 @@ typedef struct _QUERY_PATH_REQUEST {
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FilePathName</strong></p></td>
-<td align="left"><p>以非 NULL 结尾的 Unicode 字符串的窗体&amp;l t; 服务器&gt;&amp;l t; 共享&gt;&amp;l t; 路径&gt;。 通过指定的字符串，以字节为单位，长度<strong>PathNameLength</strong>成员。</p></td>
+<td align="left"><p>以非 NULL 结尾的 Unicode 字符串的窗体&lt;服务器&gt;&lt;共享&gt;&lt;路径&gt;。 通过指定的字符串，以字节为单位，长度<strong>PathNameLength</strong>成员。</p></td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +194,7 @@ IOCTL\_是否重定向\_查询\_路径请求应仅来自 MUP 和 IRP 的请求�
 
 任何旧的网络重定向程序 （不基于使用 RDBSS） 注册为与 MUP UNC 提供程序通过调用[ **FsRtlRegisterUncProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff547178)将收到 IOCTL\_是否重定向\_查询\_路径请求。
 
-一个网络微型重定向，该值指示支持 UNC 提供程序会收到此前缀声明，就好像 IRP\_MJ\_创建调用。 此创建请求是类似于用户模式**Createfile**调用与文件一起\_创建\_树\_连接标志上设置。 网络微型重定向不会与调用收到的前缀声明[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]**](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 前缀声明，将发送 RDBSS [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)并[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_内部的网络微型重定向和调用路径**MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径 IRP 将包含在 RX\_上下文结构传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
+一个网络微型重定向，该值指示支持 UNC 提供程序会收到此前缀声明，就好像 IRP\_MJ\_创建调用。 此创建请求是类似于用户模式**Createfile**调用与文件一起\_创建\_树\_连接标志上设置。 网络微型重定向不会与调用收到的前缀声明[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。 前缀声明，将发送 RDBSS [ **MRxCreateSrvCall** ](https://msdn.microsoft.com/library/windows/hardware/ff549864)网络微型重定向到的调用后跟对请求[ **MRxSrvCallWinnerNotify**](https://msdn.microsoft.com/library/windows/hardware/ff550824)并[ **MRxCreateVNetRoot**](https://msdn.microsoft.com/library/windows/hardware/ff549869)。 当网络微型重定向注册与 RDBSS 时，网络微型重定向的驱动程序调度表将被复制转移 RDBSS 为指向内部 RDBSS 入口点。 RDBSS 然后接收此 IOCTL\_是否重定向\_查询\_内部的网络微型重定向和调用路径**MRxCreateSrvCall**， **MRxSrvCallWinnerNotify**，并**MRxCreateVNetRoot**。 原始 IOCTL\_是否重定向\_查询\_路径 IRP 将包含在 RX\_上下文结构传递给**MRxCreateSrvCall**例程。 此外，RX 中的以下成员\_上下文传递给**MRxCreateSrvCall**将进行相应修改：
 
 **MajorFunction**成员设置为 IRP\_MJ\_创建即使原始 IRP 是 IRP\_MJ\_设备\_控件。
 

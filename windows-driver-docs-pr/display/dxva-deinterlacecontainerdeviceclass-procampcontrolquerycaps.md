@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: f95f36d60efeebdd5657274e745b9c96c8dec8f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 084a17ca78566a290b3f21631fb1483926b54981
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363106"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161578"
 ---
 # <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps 方法
 
@@ -66,7 +66,7 @@ HRESULT ProcAmpControlQueryCaps(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 </tr>
 </thead>
 <tbody>
@@ -109,7 +109,7 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps(
     )
 {
     // only the YUY2 and YV12 formats can be operated on
-    if (lpVideoDesc->d3dFormat != '2YUY' &amp;&amp;
+    if (lpVideoDesc->d3dFormat != '2YUY' &&
         lpVideoDesc->d3dFormat != '21VY') {
         return E_INVALIDARG;
     }

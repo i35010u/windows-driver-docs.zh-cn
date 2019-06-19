@@ -9,12 +9,12 @@ keywords:
 - 任务卸载，WDK TCP/IP 传输，禁用服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cceb9b5b163ebe8750402363c42a074edf202c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96d5c49b7248831820cf2944f15172c23056bf83
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373767"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161553"
 ---
 # <a name="using-registry-values-to-enable-and-disable-task-offloading"></a>使用注册表值启用和禁用任务卸载
 
@@ -28,37 +28,37 @@ ms.locfileid: "63373767"
 
 精细关键字定义，如下所示：
 
-<a href="" id="-ipchecksumoffloadipv4"></a>**\*IPChecksumOffloadIPv4**  
+<a href="" id="-ipchecksumoffloadipv4"></a> **\*IPChecksumOffloadIPv4**  
 介绍设备是启用还是禁用 IPv4 校验和计算。
 
-<a href="" id="-tcpchecksumoffloadipv4"></a>**\*TCPChecksumOffloadIPv4**  
+<a href="" id="-tcpchecksumoffloadipv4"></a> **\*TCPChecksumOffloadIPv4**  
 介绍设备是启用还是禁用通过 IPv4 数据包的 TCP 校验和计算。
 
-<a href="" id="-tcpchecksumoffloadipv6"></a>**\*TCPChecksumOffloadIPv6**  
+<a href="" id="-tcpchecksumoffloadipv6"></a> **\*TCPChecksumOffloadIPv6**  
 介绍设备是启用还是禁用通过 IPv6 数据包的 TCP 校验和计算。
 
-<a href="" id="-udpchecksumoffloadipv4"></a>**\*UDPChecksumOffloadIPv4**  
+<a href="" id="-udpchecksumoffloadipv4"></a> **\*UDPChecksumOffloadIPv4**  
 介绍设备是启用还是禁用通过 IPv4 数据包的 UDP 校验和计算。
 
-<a href="" id="-udpchecksumoffloadipv6"></a>**\*UDPChecksumOffloadIPv6**  
+<a href="" id="-udpchecksumoffloadipv6"></a> **\*UDPChecksumOffloadIPv6**  
 介绍设备是启用还是禁用通过 IPv6 数据包的 UDP 校验和计算。
 
-<a href="" id="-lsov1ipv4"></a>**\*LsoV1IPv4**  
+<a href="" id="-lsov1ipv4"></a> **\*LsoV1IPv4**  
 介绍设备是启用还是禁用的大型 TCP 数据包分段 IPv4 上的大量发送卸载版本 1 (LSOv1)。
 
-<a href="" id="-lsov2ipv4"></a>**\*LsoV2IPv4**  
+<a href="" id="-lsov2ipv4"></a> **\*LsoV2IPv4**  
 介绍设备是启用还是禁用的大型 TCP 数据包分段通过 IPv4 大量发送卸载版本 2 (LSOv2)。
 
-<a href="" id="-lsov2ipv6"></a>**\*LsoV2IPv6**  
+<a href="" id="-lsov2ipv6"></a> **\*LsoV2IPv6**  
 介绍设备是启用还是禁用的大型 TCP 数据包分段通过 IPv6 大量发送卸载版本 2 (LSOv2)。
 
-<a href="" id="-ipsecoffloadv1ipv4"></a>**\*IPsecOffloadV1IPv4**  
+<a href="" id="-ipsecoffloadv1ipv4"></a> **\*IPsecOffloadV1IPv4**  
 介绍设备是启用还是禁用 IPsec 标头的计算通过 IPv4。
 
-<a href="" id="-ipsecoffloadv2"></a>**\*IPsecOffloadV2**  
+<a href="" id="-ipsecoffloadv2"></a> **\*IPsecOffloadV2**  
 介绍设备是启用还是禁用 IPsec 卸载版本 2 (IPsecOV2)。 IPsecOV2 提供对其他加密算法、 IPv6 和与大量发送卸载版本 2 (LSOv2) 共存的支持。
 
-<a href="" id="-ipsecoffloadv2ipv4"></a>**\*IPsecOffloadV2IPv4**  
+<a href="" id="-ipsecoffloadv2ipv4"></a> **\*IPsecOffloadV2IPv4**  
 介绍设备是启用还是禁用 IPsecOV2 仅 IPv4。
 
 下表介绍可用于配置卸载服务的精细关键字。
@@ -74,7 +74,7 @@ ms.locfileid: "63373767"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -101,7 +101,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
@@ -125,7 +125,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
@@ -149,7 +149,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
@@ -173,7 +173,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
@@ -197,7 +197,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx &amp; Tx 启用</p></td>
+<td align="left"><p>Rx 和 Tx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
@@ -257,7 +257,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
@@ -281,7 +281,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*IPsecOffloadV2IPv4</strong></p></td>
@@ -305,7 +305,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头&amp;ESP 启用</p></td>
+<td align="left"><p>身份验证标头和 ESP 启用</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,10 +318,10 @@ ms.locfileid: "63373767"
 
 分组的关键字定义，如下所示：
 
-<a href="" id="-tcpudpchecksumoffloadipv4"></a>**\*TCPUDPChecksumOffloadIPv4**  
+<a href="" id="-tcpudpchecksumoffloadipv4"></a> **\*TCPUDPChecksumOffloadIPv4**  
 介绍设备是启用还是禁用 IPv4 上的 IP、 TCP 和 UDP 校验和计算。
 
-<a href="" id="-tcpudpchecksumoffloadipv6"></a>**\*TCPUDPChecksumOffloadIPv6**  
+<a href="" id="-tcpudpchecksumoffloadipv6"></a> **\*TCPUDPChecksumOffloadIPv6**  
 介绍设备是启用还是禁用 IPv6 上的 TCP 和 UDP 校验和计算。
 
 下表介绍可用于配置卸载服务分组的关键字。
@@ -337,7 +337,7 @@ ms.locfileid: "63373767"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -364,7 +364,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Tx &amp; Rx 启用</p></td>
+<td align="left"><p>Tx 和 Rx 启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv6</strong></p></td>
@@ -388,7 +388,7 @@ ms.locfileid: "63373767"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Tx &amp; Rx 启用</p></td>
+<td align="left"><p>Tx 和 Rx 启用</p></td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ description: 支持 Network Direct 内核 (NDK) 的微型端口驱动程序的 I
 ms.assetid: 1399CEB8-82A5-4F91-833E-66FC5A5663C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39664bd7126518774e80a9e75ce8d71ad39d6557
-ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
+ms.openlocfilehash: 9af6f2d4c554b07f8f9d454b37bfeab1c0cb1e69
+ms.sourcegitcommit: 791a4bb1463c8c623464a79daf0253396852fbbb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66686945"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67156964"
 ---
 # <a name="inf-requirements-for-ndkpi"></a>NDKPI 的 INF 要求
 
@@ -42,7 +42,7 @@ ms.locfileid: "66686945"
 
     ```INF
     HKR, Ndi\Params\*NetworkDirectTechnology,        ParamDesc,  0,  "NetworkDirect Technology"
-    HKR, Ndi\Params\*NetworkDirectTechnology,        Default,    0,  "0"
+    HKR, Ndi\Params\*NetworkDirectTechnology,        Default,    0,  "1"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Type,       0,  "enum"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   1,          0,  "iWARP"
     HKR, Ndi\Params\*NetworkDirectTechnology\enum,   2,          0,  "InfiniBand"

@@ -4,12 +4,12 @@ description: Windows Driver Kit (WDK) 利用 MSBuild 平台工具集功能提供
 ms.assetid: 9F585CA3-B863-408A-B785-2456460D6626
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db5d836e8cadfa735432e6073f08e90c0792a72d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d2202043bb1e980b08e066ae7125d43e4d46f6d4
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356307"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161551"
 ---
 # <a name="platform-toolset"></a>平台工具集
 
@@ -106,7 +106,7 @@ WDK 引入了名为此属性的新值**驱动程序**来生成内核模式驱动
 <tbody>
 <tr class="odd">
 <td align="left"><p>$ （vctargetspath)</p></td>
-<td align="left"><p>默认情况下，$ （vctargetspath） 定义在注册表中作为 $(MSBuildExtensionsPath)&lt;全身&gt;&lt;文件夹&gt;</em>&amp;l t;MSBUILDSYNTAXVERSION&gt;)</p>
+<td align="left"><p>默认情况下，$ （vctargetspath） 定义在注册表中作为 $(MSBuildExtensionsPath)&lt;全身&gt;&lt;文件夹&gt;</em>&lt;MSBUILDSYNTAXVERSION&gt;)</p>
 <p>在新的生成过程使用的相同平台的具有新语法，并且需要更高版本的 MSBuild 的情况下，是包含的版本号。</p>
 <p><em>&lt;文件夹&gt;</em>是<strong>Microsoft.Cpp</strong>文件夹-$(MSBuildExtensionsPath)\Microsoft.Cpp\4.0\v120。</p>
 <p>这称为<em>语法版本</em>而非<em>工具版本</em>。 它是第一个程序集版本<strong>Microsoft.Build.Engine</strong>支持的所有必要的语法。 <strong>Microsoft.Cpp</strong>指示 Visual Studio 将查找平台的唯一文件夹。</p></td>

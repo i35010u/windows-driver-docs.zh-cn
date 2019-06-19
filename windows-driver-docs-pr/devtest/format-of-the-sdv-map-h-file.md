@@ -35,7 +35,7 @@ Sdv map.h 文件列出了所有驱动程序及其相关联的回调函数和驱�
 #define fun_WDF_IO_QUEUE_IO_DEVICE_CONTROL EvtIoDeviceControl
 ```
 
-当 SDV 找到入口点时，它会创建**\#定义**指令采用以下格式：
+当 SDV 找到入口点时，它会创建 **\#定义**指令采用以下格式：
 
 ```
 #define fun_Function_RoleType EntryPoint

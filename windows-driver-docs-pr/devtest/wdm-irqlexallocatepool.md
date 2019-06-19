@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a611bacfb4707c0422febdf401f277640ed5d99
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca9ddc317c22b8d8a557a62ec3b5337023cb232f
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359439"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161519"
 ---
 # <a name="irqlexallocatepool-rule-wdm"></a>IrqlExAllocatePool 规则 (wdm)
 
@@ -50,14 +50,14 @@ DispatchRequest (
     NTSTATUS Status;
     ...
 
-    KeInitializeSpinLock(&amp;SpinLock);
+    KeInitializeSpinLock(&SpinLock);
 
     //
     // KeAcquireSpinLock sets IRQL to DISPATCH_LEVEL and the previous IRQL is 
     // written to OldIrql after the lock is acquired.
     //
 
-    KeAcquireSpinLock(&amp;SpinLock, &amp;OldIrql);
+    KeAcquireSpinLock(&SpinLock, &OldIrql);
     ...
 
     Status = ProcessRequest(DeviceRequest);
@@ -66,7 +66,7 @@ DispatchRequest (
     // KeReleaseSpinLock sets IRQL to the OldIrql returned by KeAcquireSpinLock.
     //
 
-    KeReleaseSpinLock(&amp;SpinLock, &amp;OldIrql);
+    KeReleaseSpinLock(&SpinLock, &OldIrql);
     ...
 }
 

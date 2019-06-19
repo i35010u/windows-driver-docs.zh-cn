@@ -4,12 +4,12 @@ description: 本部分提供有关新功能和增强功能在 Windows 显示驱�
 ms.assetid: 8757ADDD-EDCA-4C09-BB71-2ED925DB2E41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a2f5b024ef1228b4ccb2fdeb17664a6ffff41f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46a5481b6875026429565aaa1dd9066a2b013046
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391193"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161549"
 ---
 # <a name="wddm-12-and-windows-8"></a>WDDM 1.2 和 Windows 8
 
@@ -90,7 +90,7 @@ Windows 8 引入了新特性和功能要求图形驱动程序更改的数组。 
 <td align="left">WDDM 1.0
 <p>服务器和有限的 UMPC 上 XDDM</p></td>
 <td align="left">D3D9, D3D10</td>
-<td align="left">计划、 内存管理、 容错能力，D3D9 &amp; 10</td>
+<td align="left">计划、 内存管理、 容错能力，D3D9 和 10</td>
 </tr>
 <tr class="even">
 <td align="left">Windows Vista SP1 / Windows 7 客户端包</td>

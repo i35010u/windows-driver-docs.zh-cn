@@ -3,12 +3,12 @@ Description: WMCDC 设备管理模型
 title: WMCDC 设备管理模型
 ms.localizationpriority: medium
 ms.date: 01/07/2019
-ms.openlocfilehash: f5a884549c6e16184c8752637743a6ac8e6acddb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81849e1e2b1fa86332d264b106b6798b090050ab
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389117"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161583"
 ---
 # <a name="wmcdc-device-management-model"></a>WMCDC 设备管理模型
 
@@ -40,7 +40,7 @@ USB WMCDC 设备管理模型 (DMM) 接口集合具有以下属性。
 <td><p>DMM (0X09)。</p></td>
 </tr>
 <tr class="even">
-<td><p>协议</p></td>
+<td><p>Protocol</p></td>
 <td><p>任何。</p></td>
 </tr>
 <tr class="odd">
@@ -53,15 +53,15 @@ USB WMCDC 设备管理模型 (DMM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>硬件 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Rev_%04x&amp;Cdc_09
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09&amp;MI_%02x
-USB\Vid_%04x&amp;Pid_%04x&amp;Cdc_09</code></pre></td>
+<td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Rev_%04x&Cdc_09
+USB\Vid_%04x&Pid_%04x&Cdc_09&MI_%02x
+USB\Vid_%04x&Pid_%04x&Cdc_09</code></pre></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
-<td><pre space="preserve"><code class="language-syntax">USB\Class_02&amp;SubClass_09&amp;Prot_%02X
-USB\Class_02&amp;SubClass_09
+<td><pre space="preserve"><code class="language-syntax">USB\Class_02&SubClass_09&Prot_%02X
+USB\Class_02&SubClass_09
 USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">

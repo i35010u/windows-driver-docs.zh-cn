@@ -13,12 +13,12 @@ keywords:
 - 贴花纸 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bd7aa7c8eecb2bd3e102e5524694d62a8233c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609da6c6156e023b9350bac80dae361dfea11679
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376008"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161580"
 ---
 # <a name="stencil-planes"></a>模具平面
 
@@ -67,7 +67,7 @@ DirectX 6.0 和更高版本驱动程序仍应设置相应 DDBD\_*Xx*标记中**d
 <td align="left"><p>D3DRENDERSTATE_STENCILFUNC</p></td>
 <td align="left"><p>D3DCMPFUNC</p></td>
 <td align="left"><p>比较函数。 如果下面的表达式为 true，则测试通过：</p>
-<p>(ref&amp;掩码) 操作 (模具&amp;掩码) 其中<em>ref</em>是引用值<em>模具</em>模具缓冲区中的值并<em>掩码</em>是D3DRENDERSTATE_STENCILMASK 的值。</p></td>
+<p>（ref 和掩码）操作 （模具和掩码） 其中<em>ref</em>是引用值<em>模具</em>模具缓冲区中的值并<em>掩码</em>是 D3DRENDERSTATE_STENCILMASK 的值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DRENDERSTATE_STENCILREF</p></td>

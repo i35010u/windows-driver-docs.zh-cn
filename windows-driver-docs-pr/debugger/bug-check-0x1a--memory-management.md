@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf3dc1e16b8549aea68bea3566f783512b6117
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14c65d8fb3d41dda2ca8e681462272a997aea023
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362436"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161425"
 ---
 # <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A：内存\_管理
 
@@ -59,7 +59,7 @@ ms.locfileid: "63362436"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x403</p></td>
-<td align="left"><p>页表和 PFNs 不同步。 这可能是硬件错误，尤其是如果参数 3 &amp; 4 上仅有一个位存在差异。</p></td>
+<td align="left"><p>页表和 PFNs 不同步。 这可能是硬件错误，尤其是当参数 3 和 4 上仅有一个位存在差异。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x411</p></td>

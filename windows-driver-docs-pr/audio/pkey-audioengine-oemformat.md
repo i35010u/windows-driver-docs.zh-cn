@@ -4,12 +4,12 @@ description: PKEY\_AudioEngine\_OEMFormat
 ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5630075da3329f76ac160e0fce24516755c31f8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf545a3b8c51c5c7330403ddef91cc85aee01da0
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332211"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161391"
 ---
 # <a name="pkeyaudioengineoemformat"></a>PKEY\_AudioEngine\_OEMFormat
 
@@ -79,7 +79,7 @@ void PrintSerializedFormat(WAVEFORMATEX *pWfx)
 
     // Serialize the PROPVARIANT structure. The serialized byte stream
     // will eventually be written to the registry as REG_BINARY data.
-    hr = StgSerializePropVariant(&amp;var, &amp;pVal, &amp;cb);
+    hr = StgSerializePropVariant(&var, &pVal, &cb);
     if (SUCCEEDED(hr))
     {
         // Write the binary data to stdout. Format the output so you can
@@ -114,7 +114,7 @@ void main()
     wfx.dwChannelMask = 3;
     wfx.SubFormat = KSDATAFORMAT_SUBTYPE_PCM;
 
-    PrintSerializedFormat(&amp;wfx.Format);
+    PrintSerializedFormat(&wfx.Format);
 }
 ```
 

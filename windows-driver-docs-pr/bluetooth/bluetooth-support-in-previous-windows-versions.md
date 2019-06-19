@@ -4,12 +4,12 @@ description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ebaac30af197e506a8fd8f58887cffbe3bee5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61688024b9680eaedadce06558b647e1c9065dde
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328254"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161368"
 ---
 # <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前的 Windows 版本中的蓝牙版本和配置文件支持
 
@@ -59,7 +59,7 @@ Windows 支持不同版本的蓝牙规范取决于 Windows 版本中下, 表中�
 <th align="left">Windows 版本</th>
 <th align="left">版本 1.1</th>
 <th align="left">版本 2.0</th>
-<th align="left">2.0 版本带有 edr 规范<em></th>
+<th align="left">2\.0 版本带有 edr 规范<em></th>
 <th align="left">版本 2.1</th>
 <th align="left">版本 2.1 使用 edr 规范</th>
 <th align="left">版本 4.0</th>
@@ -208,7 +208,7 @@ Windows Vista 中含有 Bluetooth 堆栈和相关的软件的以下增强功能�
 </tr>
 <tr class="odd">
 <td align="left"><p>03F0</p></td>
-<td align="left"><p>011D&amp;Rev_0017</p></td>
+<td align="left"><p>011D&Rev_0017</p></td>
 <td align="left"><p>Hewlett Packard nc4200</p></td>
 </tr>
 <tr class="even">
@@ -238,7 +238,7 @@ Windows Vista 中含有 Bluetooth 堆栈和相关的软件的以下增强功能�
 </tr>
 <tr class="odd">
 <td align="left"><p>049F</p></td>
-<td align="left"><p>0086&amp;Rev_1393</p></td>
+<td align="left"><p>0086&Rev_1393</p></td>
 <td align="left"><p>Hewlett Packard nx7000</p></td>
 </tr>
 <tr class="even">
@@ -268,7 +268,7 @@ Windows Vista 中含有 Bluetooth 堆栈和相关的软件的以下增强功能�
 </tr>
 <tr class="odd">
 <td align="left"><p>0DB0</p></td>
-<td align="left"><p>6855&amp;Rev_2000</p></td>
+<td align="left"><p>6855&Rev_2000</p></td>
 <td align="left"><p>消息信号中断 (MSI) 蓝牙设备</p></td>
 </tr>
 <tr class="even">

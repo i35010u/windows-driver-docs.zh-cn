@@ -4,12 +4,12 @@ description: V4 打印驱动程序清单包含特定于打印机的安装程序�
 ms.assetid: 187A10B7-2AAC-46D9-998C-C8724D8E3862
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc09503d34bea29e78406eb34c5884e853f0ab25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 78dce61c66569d7c25282704c4cf3323506007df
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358573"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161538"
 ---
 # <a name="v4-driver-manifest"></a>V4 驱动程序清单
 
@@ -23,7 +23,7 @@ V4 打印驱动程序清单是包含所有特定于打印机的安装程序指�
 -   [DriverRender 部分](#driverrender-section)
 -   [存部分](#filesave-section)
 -   [PrinterExtensions 部分](#printerextensions-section)
--   [相关的主题](#related-topics)
+-   [相关主题](#related-topics)
 
 ## <a name="driverconfig-section"></a>DriverConfig 部分
 
@@ -148,7 +148,7 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>指定用户要获得一份打印机扩展应用程序的 URL。 在打印机共享中使用。</p></td>
 <td><p>无。</p></td>
 <td><p>PrinterExtensionUrl=</p>
-<p>"<a href="http://www.fabrikam.com/files/setup.exe&amp;quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&amp;quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
+<p>"<a href="http://www.fabrikam.com/files/setup.exe&quot" data-raw-source="http://www.fabrikam.com/files/setup.exe&quot">http://www.fabrikam.com/files/setup.exe&quot</a>;</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DevModeMap</strong></p>
@@ -176,8 +176,8 @@ PrintFax.Fax PrintFax.Printer PrintFax.Printer.3D PrintFax.Printer.File PrintFax
 <p>指定硬件 Id 相匹配要用于对 USB Bidi 通信的一个或多个设备接口的列表。</p></td>
 <td><p>无，但如果状态通过不是打印接口的 USB 接口执行此操作应仅支持。</p></td>
 <td><p>BidiUSBStatusInterface=</p>
-<p>”USB\vid_1234&amp;pid_1234”,</p>
-<p>”USB\vid_1234&amp;pid_4567”</p></td>
+<p>”USB\vid_1234&pid_1234”,</p>
+<p>”USB\vid_1234&pid_4567”</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UserPropertyBagScope</strong></p>

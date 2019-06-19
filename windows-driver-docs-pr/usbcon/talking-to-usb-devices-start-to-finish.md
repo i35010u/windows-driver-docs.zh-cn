@@ -3,12 +3,12 @@ Description: 在 Windows 8.1 中引入的 Windows 运行时 Api 用于编写允�
 title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba4c150128653fc2a724408bc1b70c6fb531871
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 431d3a959db81680f062ea57a4e1ee04d6c5d935
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379922"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161517"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -87,7 +87,7 @@ ms.locfileid: "63379922"
 <td><p>您可以从设备制造商获取该信息。</p>
 <ul>
 <li><p><strong>供应商和产品标识符</strong></p>
-<p>在设备管理器中，查看设备属性。 上<strong>详细信息</strong>选项卡上，查看<strong>硬件 Id</strong>属性值。 该值是这些两个标识符的组合。 例如，对于 SuperMUTT 设备<strong>硬件 Id</strong>是"USB\VID_045E&amp;PID_F001"; 供应商 ID 为"0x045E"，产品 ID 为"0xF001"。</p></li>
+<p>在设备管理器中，查看设备属性。 上<strong>详细信息</strong>选项卡上，查看<strong>硬件 Id</strong>属性值。 该值是这些两个标识符的组合。 例如，对于 SuperMUTT 设备<strong>硬件 Id</strong>是"USB\VID_045E & PID_F001"; 供应商 ID 为"0x045E"，产品 ID 为"0xF001"。</p></li>
 <li><strong>设备类、 子类和协议代码</strong></li>
 <li><strong>设备接口的 GUID</strong></li>
 </ul>

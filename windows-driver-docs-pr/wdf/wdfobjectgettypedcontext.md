@@ -6,12 +6,12 @@ keywords:
 - WdfObjectGetTypedContext macro
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64b9a86fff6d15e77189030c09a31ba47758aff8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a7da5dda6976c161246f119a8865a1ced002d4a
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385753"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161373"
 ---
 # <a name="wdfobjectgettypedcontext-macro"></a>WdfObjectGetTypedContext macro
 
@@ -72,15 +72,15 @@ WDFREQUEST Request;
 WDF_OBJECT_ATTRIBUTES MyRequestObjectAttributes;
 PMY_REQUEST_CONTEXT pMyContext;
 
-WDF_OBJECT_ATTRIBUTES_INIT(&amp;MyRequestObjectAttributes);
+WDF_OBJECT_ATTRIBUTES_INIT(&MyRequestObjectAttributes);
 WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE(
-                                       &amp;MyRequestObjectAttributes,
+                                       &MyRequestObjectAttributes,
                                        MY_REQUEST_CONTEXT
                                        );
 status = WdfRequestCreate(
-                          &amp;MyRequestObjectAttributes,
+                          &MyRequestObjectAttributes,
                           NULL,
-                          &amp;Request
+                          &Request
                           );
 
 if (!NT_SUCCESS(status)) {

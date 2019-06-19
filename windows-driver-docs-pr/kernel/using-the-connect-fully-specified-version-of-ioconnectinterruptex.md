@@ -11,12 +11,12 @@ keywords:
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32aa0c467d8df280816e7a8fbeb08eec8f71c3de
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e87ce7119c47166a0a70f02ec1f0f36f00e40b6b
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359205"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161463"
 ---
 # <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
 
@@ -70,8 +70,8 @@ ms.locfileid: "63359205"
 </tr>
 <tr class="even">
 <td><p><strong>InterruptMode</strong></p></td>
-<td><p><strong>标志</strong> &amp; CM_RESOURCE_INTERRUPT_LATCHED</p></td>
-<td><p><strong>标志</strong> &amp; CM_RESOURCE_INTERRUPT_LATCHED</p></td>
+<td><p><strong>标志</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
+<td><p><strong>标志</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ProcessorEnableMask</strong></p></td>

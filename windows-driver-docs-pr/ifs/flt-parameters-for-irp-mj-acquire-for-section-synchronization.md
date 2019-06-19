@@ -14,22 +14,20 @@ api_location:
 - fltkernel.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: af83db238aa83ab081c913ce0f81de390e631495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6edcc43a6644c853cd43170ea4858a6a95ccee6b
+ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365079"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67161575"
 ---
-# <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT\_IRP 的参数\_MJ\_ACQUIRE\_有关\_部分\_同步并集
+# <a name="fltparameters-for-irpmjacquireforsectionsynchronization-union"></a>FLT_PARAMETERS IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合
 
+使用以下联合组件时**MajorFunction**字段[ **FLT_IO_PARAMETER_BLOCK** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构，该操作是 IRP_MJ_ACQUIRE_FOR_SECTION_同步。
 
-使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff544638)结构，该操作是 IRP\_MJ\_ACQUIRE\_有关\_部分\_同步。
-
-<a name="syntax"></a>语法
-------
+## <a name="syntax"></a>语法
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
@@ -43,82 +41,50 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>成员
--------
+## <a name="members"></a>成员
 
-**SyncType**  
-* 指定请求的部分的同步的类型。 此参数必须为两个枚举值之一：
-  * **SyncTypeCreateSection**
-  * **SyncTypeOther**
+### <a name="synctype"></a>SyncType  
 
-**PageProtection**  
-* 指定为部分中请求的页保护类型。 必须为零**SyncType**是 SyncTypeOther。 否则，以下标记之一，可能需要与页面合并\_NOCACHE:
+请求的部分的同步的类型。 此参数设置为**SyncTypeCreateSection**如果要创建一个部分; 否则，它设置为**SyncTypeOther**。
 
-  * 页\_READONLY
+### <a name="pageprotection"></a>PageProtection
 
-  * 页\_READWRITE
+为部分中请求的页保护类型。 必须为零**SyncType**是 SyncTypeOther。 否则，此参数可以是下列标志，可能需要合并使用 PAGE_NOCACHE 之一：
 
-  * 页\_WRITECOPY
+| 值 | 含义 |
+| ----- | ------- |
+| PAGE_READONLY | 为只读或写入时复制的访问。 |
+| PAGE_READWRITE | 为只读的副本上写入或读/写访问。 |
+| PAGE_WRITECOPY | 为只读或写入时复制的访问。 等效于 PAGE_READONLY。 |
+| PAGE_EXECUTE | 用于执行访问。 |
 
-  * 页\_EXECUTE
+### <a name="outputinformation"></a>OutputInformation
 
-**OutputInformation**
-*  一个[ **FS_FILTER_SECTION_SYNC_OUTPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fs_filter_section_sync_output)结构，它指定描述正在创建的节的属性的信息。
+一个[ **FS_FILTER_SECTION_SYNC_OUTPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fs_filter_section_sync_output)结构，它指定描述正在创建的节的属性的信息。
 
 ## <a name="remarks"></a>备注
 
+[ **FLT_PARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters) IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的结构中包含的参数**AcquireForSectionSynchronization**表示的回调数据操作 ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 它包含在 FLT_IO_PARAMETER_BLOCK 结构。
 
-[ **FLT\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff544673)结构 IRP\_MJ\_采集\_为\_部分\_同步操作包含的参数**AcquireForSectionSynchronization**表示的回调数据操作 ([**FLT\_回调\_数据** ](https://msdn.microsoft.com/library/windows/hardware/ff544620)) 结构。 包含在 FLT\_IO\_参数\_块结构。
+IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 是文件系统 (FSFilter) 回调操作。
 
-IRP\_MJ\_ACQUIRE\_有关\_部分\_同步是文件系统 (FSFilter) 回调操作。
-
-如果的枚举的值**SyncType**成员设置为**SyncTypeOther** （零），文件系统微筛选器或旧版的筛选器驱动程序不能使此操作失败。 如果**SyncType**设置为**SyncTypeCreateSection**，允许文件系统微筛选器或旧版筛选器驱动程序失败，此时状态\_不足\_资源错误如果没有足够的内存来创建部分。
+如果的枚举的值**SyncType**成员设置为**SyncTypeOther**，文件系统微筛选器或旧版的筛选器驱动程序不能使此操作失败。 如果**SyncType**设置为**SyncTypeCreateSection**，允许文件系统微筛选器或旧版筛选器驱动程序如果不存在内存不足，无法创建 STATUS_INSUFFICIENT_RESOURCES 错误而失败部分。
 
 有关 FSFilter 回调操作的详细信息，请参阅引用条目[ **FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)。
 
 ## <a name="requirements"></a>要求
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows XP 和更高版本的 Windows 操作系统中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
-</tr>
-</tbody>
-</table>
+| | |
+| ------- | ------- |
+| Version | 在 Windows XP 和更高版本的 Windows 操作系统中可用。 |
+| Header    | Fltkernel.h （包括 Fltkernel.h） |
 
 ## <a name="see-also"></a>请参阅
 
+[**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_CALLBACK\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff544620)
+[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544645)
-
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://msdn.microsoft.com/library/windows/hardware/ff544648)
-
-[**FLT\_IS\_IRP\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff544654)
-
-[**FLT\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff544673)
-
-[**FsRtlRegisterFileSystemFilterCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff547172)
-
- 
-
- 
-
-
-
-
-
-
+[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)

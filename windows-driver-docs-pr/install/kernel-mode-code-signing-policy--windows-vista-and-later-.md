@@ -13,12 +13,12 @@ keywords:
 - 数据包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f10b2686d411a2162b397f9392b47da67db5cbca
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 8bdb37e22072617e6190035ab52f921be5ebbcc3
+ms.sourcegitcommit: 6a8675c349e6aba2a89a40b5f1451005bd5e1297
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148530"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169132"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -63,12 +63,12 @@ ms.locfileid: "67148530"
 
 请注意，安全引导不适用于 Windows Vista 和 Windows 7。
 
-|适用于：|Windows Vista，Windows 7;关闭 Windows 8 + 与安全启动|Windows 8 上的 Windows 8.1，Windows 10 版本 1507年和 1511 与安全启动|Windows 10，版本 1607年 + 与安全启动上|
-|--- |--- |--- |--- |
-|**体系结构：**|仅限 64 位、 所需的 32 位未签名|64 位、 32 位|64 位、 32 位|
-|**所需的签名：**|嵌入或编录文件|嵌入或编录文件|嵌入或编录文件|
-|**签名算法：**|SHA1|SHA1|SHA2 或 SHA1|
-|**证书：**|标准根信任的代码完整性|标准根信任的代码完整性|Microsoft 的根颁发机构 2010，Microsoft 根证书颁发机构，Microsoft 根证书颁发机构|
+|适用于：|Windows Vista，Windows 7;关闭 Windows 8 + 与安全启动|Windows 8，Windows 8.1，Windows 10 版本 1507、 1511 上安全启动|Windows 10，版本 1607、 1703、 1709 上安全启动|Windows 10 上的版本 1803年 + 与安全启动|
+|--- |--- |--- |--- |--- |
+|**体系结构：**|仅限 64 位、 所需的 32 位未签名|64 位、 32 位|64 位、 32 位|64 位、 32 位|
+|**所需的签名：**|嵌入或编录文件|嵌入或编录文件|嵌入或编录文件|嵌入或编录文件|
+|**签名算法：**|SHA1|SHA1|SHA2 或 SHA1|SHA2|
+|**证书：**|标准根信任的代码完整性|标准根信任的代码完整性|Microsoft 的根颁发机构 2010，Microsoft 根证书颁发机构，Microsoft 根证书颁发机构|Microsoft 的根颁发机构 2010，Microsoft 根证书颁发机构，Microsoft 根证书颁发机构|
 
 除了签名的驱动程序代码，还需要符合即插即用设备安装签名安装驱动程序的要求。  有关详细信息，请参阅[插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
