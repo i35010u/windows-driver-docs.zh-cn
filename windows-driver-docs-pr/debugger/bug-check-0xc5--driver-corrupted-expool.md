@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d10e36b99287a788b2e97c383201919b40a120cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 113612c470706a72ae3d53e15a51f0da6b4d86a4
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357023"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266385"
 ---
 # <a name="bug-check-0xc5-drivercorruptedexpool"></a>Bug 检查 0xC5：驱动程序\_损坏\_EXPOOL
 
@@ -76,11 +76,11 @@ ms.locfileid: "63357023"
 <a name="resolution"></a>分辨率
 ----------
 
-如果您最近安装了任何新的软件，检查以查看是否已正确安装。 检查更新的驱动程序制造商的网站上。
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 如果您最近安装了任何新的软件，检查以查看是否已正确安装。 检查更新的驱动程序制造商的网站上。
 
 若要调试此错误，使用驱动程序验证程序的特殊池选项。 如果该操作未显示导致该错误的驱动程序，使用全局标志实用工具启用特殊的池的池标记。
 
-有关特殊的池的信息，请查阅 Windows 驱动程序工具包的驱动程序验证程序部分。
+有关特殊的池的信息，请查阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier) Windows 驱动程序工具包的一部分。
 
  
 

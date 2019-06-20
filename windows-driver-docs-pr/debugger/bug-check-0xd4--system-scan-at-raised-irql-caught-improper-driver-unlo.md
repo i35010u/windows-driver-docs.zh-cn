@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c96538916fe15fe76ebb5840f2cf9d950b6f7c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf8d3e9137ccef55a9aad81a237f2bfbc6aa1295
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371759"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266386"
 ---
 # <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>Bug 检查 0xD4：SYSTEM\_SCAN\_AT\_RAISED\_IRQL\_CAUGHT\_IMPROPER\_DRIVER\_UNLOAD
 
@@ -76,9 +76,9 @@ ms.locfileid: "63371759"
 <a name="resolution"></a>分辨率
 ----------
 
-若要开始调试，请使用内核调试程序获取堆栈跟踪。 如果已确定导致该错误的驱动程序，激活驱动程序验证程序，并尝试复制此 bug。
+若要开始调试，请使用内核调试程序获取堆栈跟踪： [ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示 bug 检查有关的信息和可有助于确定根本原因，然后使用[**kb （显示堆栈回溯）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令来获取堆栈跟踪。 如果已确定导致该错误的驱动程序，激活驱动程序验证程序，并尝试复制此 bug。
 
-有关驱动程序验证程序的完整详细信息，请参阅 Windows 驱动程序工具包。
+有关完整详细信息[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)，请参阅 Windows 驱动程序工具包。
 
  
 

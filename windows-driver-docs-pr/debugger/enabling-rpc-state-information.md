@@ -6,12 +6,12 @@ keywords:
 - RPC 调试、 启用 RPC 的状态信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c3a5a9b29664527dec139283d56ef2ba31020d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97aebae1f0da23982586c28aa6a24bae28c33eb3
+ms.sourcegitcommit: 6c485b8f350dadc1b44d85cfd9fa49e5e5663406
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340593"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67266388"
 ---
 # <a name="enabling-rpc-state-information"></a>启用 RPC 状态信息
 
@@ -27,7 +27,7 @@ ms.locfileid: "63340593"
 
 收集**完整**状态信息非常详细的庞大。 它包括在收集的所有信息**Server**级别，此外，都包括客户端调用 (CCALL) 对象。 **完整**通常不需要状态信息。
 
-若要启用要在单个计算机上收集状态信息，请运行组策略编辑器 (Gpedit.msc)。 根据本地计算机策略中，导航到**计算机配置/管理模板/系统/远程过程调用**。 此节点下你将看到**RPC 故障排除状态信息**项。 当您编辑其属性时，你将看到五个可能状态：
+若要启用要在单个计算机上收集状态信息，请运行组策略编辑器 (Gpedit.msc)。 根据本地计算机策略中，导航到**计算机配置/管理模板/系统/远程过程调用**。 此节点下你将看到**维护 RPC 故障排除状态信息**项。 当您编辑其属性时，你将看到五个可能状态：
 
 <span id="None"></span><span id="none"></span><span id="NONE"></span>**无**  
 将不维护任何状态信息。 除非你的计算机遇到内存不足的情况，这不被建议。
