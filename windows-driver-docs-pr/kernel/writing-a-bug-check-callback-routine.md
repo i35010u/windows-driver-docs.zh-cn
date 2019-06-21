@@ -10,12 +10,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 42afe32e83bdb03b2fe35203552c0f378bed83c9
-ms.sourcegitcommit: e542212bb5e7aba06b9e005e9b63c438404d5643
+ms.openlocfilehash: cc5a9fafb7486a01c351df69c2cd083722cdc94e
+ms.sourcegitcommit: 06e09813b9921a98e95ee2379cb42ec4e0f316da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719956"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67278745"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>编写 Bug 检查原因回调例程
 
@@ -56,7 +56,7 @@ Bug 检查回调例程不能：
 
 Bug 检查回调例程保证运行而不发生中断，因此不需要进行同步。 （如果 bug 检查例程使用的任何同步机制，系统将发生死锁。）
 
-驱动程序的 bug 检查回调例程可以安全地使用 **READ_PORT_* XXX***, **READ_REGISTER_* XXX***, **WRITE_PORT_* XXX** *, 并且 **WRITE_REGISTER_*XXX*** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)
+可以安全地使用驱动程序的 bug 检查回调例程**读取\_端口\_<em>XXX</em>** ，**读取\_注册\_<em>XXX</em>** ，**编写\_端口\_<em>XXX</em>** ，以及**编写\_注册\_ <em>XXX</em>** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)
 
 ## <a name="using-bugcheckcallback"></a>使用 BugCheckCallback
 
