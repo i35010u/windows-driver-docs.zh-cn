@@ -4,7 +4,7 @@
       "docset_name": "drivers",
       "build_source_folder": "windows-driver-docs-pr",
       "build_output_subfolder": "drivers",
-      "locale": "zh-CN",
+      "locale": "zh-cn",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -30,11 +30,13 @@
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "resolve_user_profile_using_github": true,
-  "contribution_branch_mappings": {},
+  "contribution_branch_mappings": {
+	     "live-sxs": "live"
+  },
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.zh-CN",
+      "url": "https://github.com/Microsoft/templates.docs.msft.zh-cn",
       "branch": "master",
       "branch_mapping": {}
     },
