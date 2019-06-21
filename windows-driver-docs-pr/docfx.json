@@ -51,6 +51,12 @@
       }
     },
     "fileMetadata": {
+        "open_to_public_contributors": {
+           "/*.md": true,
+           "develop/**.md": true,
+           "gettingstarted/**.md": true,
+           "dashboard/**.md": true
+        },
       "author":
       {
         "**/3dprint/*.md": "barrygolden",
