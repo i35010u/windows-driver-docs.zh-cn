@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 552d80d27e769a7e1fcad9fe005a0a3824486586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e146ccd395c9954959f8c39f512e5944028d2066
+ms.sourcegitcommit: ad225cc9745be3ff0f08f9307306fd56aa4afb40
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367296"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67287249"
 ---
 # <a name="bug-check-0x92-updriveronmpsystem"></a>Bug 检查 0x92：UP\_DRIVER\_ON\_MP\_SYSTEM
 
@@ -71,8 +71,8 @@ ms.locfileid: "63367296"
 已加载的驱动程序，编译若要仅在单处理器计算机上运行，但具有多个活动处理器的多处理器系统上运行 Microsoft Windows 操作系统。
 
  
-
- 
+## <a name="resolution"></a>分辨率
+[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
 
 
 
