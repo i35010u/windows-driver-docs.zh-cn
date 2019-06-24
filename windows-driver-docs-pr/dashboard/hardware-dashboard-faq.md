@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abb0645cb401156a3349ebda8e0fb51ff83a88f0
-ms.sourcegitcommit: a678a339f09fbd56a3a6124c0fe86194fedb2ed0
+ms.openlocfilehash: 911a3dc086bb07f691ca1fd9bc41548952d22bbb
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57560602"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "65106398"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
@@ -18,7 +18,7 @@ ms.locfileid: "57560602"
 
 ## <a name="how-do-i-contact-partner-center-support"></a>如何联系合作伙伴中心支持部门？
 
-如果你在访问仪表板时遇到问题或需要仪表板支持，请在此处开具支持票证： https://developer.microsoft.com/windows/support。  依次选择“联系我们”、“仪表板问题”，然后从下拉列表中选择“硬件提交和签名(所有 OS 版本)”。
+如果你在访问仪表板时遇到问题或需要仪表板支持，请在此处开具支持票证： https://developer.microsoft.com/windows/support 。  依次选择“联系我们”  、“仪表板问题”  ，然后从下拉列表中选择“硬件提交和签名(所有 OS 版本)”  。  实时聊天和电子邮件支持时间为星期一至星期五上午 8 点到晚上 8 点（中部标准时间）。  电子邮件支持的初始响应 SLA 为 24-48 小时。
 
 ## <a name="can-i-associate-multiple-certificates-with-a-dashboard-account"></a>是否可以将多个证书与一个仪表板帐户关联在一起？
 
@@ -57,7 +57,7 @@ ms.locfileid: "57560602"
 
 ### <a name="how-to-get-a-single-cat-file-if-drivers-are-uniform-for-all-operating-systems"></a>如果驱动程序在所有操作系统中均相同，如何获取单个 cat 文件
 
-请在“程序包”选项卡上确保最终的程序包具有单个驱动程序文件夹，并且该驱动程序的属性包含你已测试过的所有操作系统。 有关详细信息，请参阅[演练：如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序](get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)。
+请在“程序包”  选项卡上确保最终的程序包具有单个驱动程序文件夹，并且该驱动程序的属性包含你已测试过的所有操作系统。 有关详细信息，请参阅[演练：如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序](get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)。
 
 ### <a name="im-unable-to-add-new-marketing-names-to-the-approved-submission"></a>无法将新的营销名称添加到已批准的提交
 
@@ -95,7 +95,7 @@ ms.locfileid: "57560602"
 1. 将当前的 .hckx/hlkx 文件重命名为 .zip。
 2. 解压缩到某个文件夹。
 3. 打开该文件夹。
-4. 选择所有项目，然后右键单击并选择“发送到压缩 zip 文件夹”。
+4. 选择所有项目，然后右键单击并选择“发送到压缩 zip 文件夹”  。
 5. 将新的 .zip 文件夹重命名为 .hckx/.hlkx。
 6. 上载新的 .hckx/.hlkx 文件。
 

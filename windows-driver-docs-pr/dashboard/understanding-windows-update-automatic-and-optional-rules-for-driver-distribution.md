@@ -5,10 +5,10 @@ ms.date: 05/28/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38052a3ea40526dd32913c7a395be865e3268ef6
-ms.sourcegitcommit: 8adfd1f93a21a50f920635c19cc9c8cd948211df
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66307868"
 ---
 # <a name="understanding-windows-update-automatic-and-optional-rules-for-driver-distribution"></a>了解适用于驱动程序分发的 Windows 更新自动和可选规则
@@ -28,10 +28,10 @@ ms.locfileid: "66307868"
 
 ## <a name="automatic-updates"></a>自动更新
 
-在计划的更新或当用户单击期间**检查更新**中**更新和安全**设置菜单中，Windows 更新将分发仅排名最高**自动驱动程序**适用于系统的设备。 **自动将驱动程序**是系统或提供收件箱驱动程序，它提供了基本的设备的功能。 Windows 更新将仅分发**可选**驱动程序在这些情况下如果：
+在计划的更新期间或在用户单击“更新与安全性”  设置菜单中的“检查更新”  时，Windows 更新将仅分发适用于系统设备的排名最高的**自动驱动程序**。 **自动驱动程序**是提供基本设备功能的系统驱动程序或自带的驱动程序。 如果存在以下情况，Windows 更新只会分发**可选的**驱动程序：
 
-* 设备驱动程序存储区 （"驱动程序未找到"） 中具有任何适用的驱动程序可用
-* 或者*如果仅本地可用的驱动程序是泛型*，也就是说，仅本地可用的驱动程序是一个系统提供的驱动程序，只提供基本的设备的功能。
+* 设备在驱动程序存储中没有任何适用的驱动程序（“未找到驱动程序”）
+* 或者，只有本地可用的驱动程序是通用的，即，只有本地可用的驱动程序是系统提供的驱动程序，该驱动程序只提供基本设备功能。 
 
 ## <a name="device-plug-in-plug-and-play"></a>设备插件（“即插即用”）
 
@@ -43,7 +43,7 @@ ms.locfileid: "66307868"
 
 当用户在设备管理器中搜索更新的驱动程序时，Windows 将尝试从 Windows 更新安装排名最高的驱动程序，无论它是被归类为**自动**还是**可选**.
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 下表汇总了上述信息。
 

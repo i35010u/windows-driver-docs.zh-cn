@@ -10,12 +10,12 @@ keywords:
 - BugCheckCallback
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5a9fafb7486a01c351df69c2cd083722cdc94e
-ms.sourcegitcommit: 06e09813b9921a98e95ee2379cb42ec4e0f316da
+ms.openlocfilehash: 2b8fb421a087deb3ebb957d6a05f40d9979d5afe
+ms.sourcegitcommit: a187f988537c1158ffdc1a2b2518f3ec04e7ef1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67278745"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322845"
 ---
 # <a name="writing-a-bug-check-reason-callback-routine"></a>编写 Bug 检查原因回调例程
 
@@ -25,17 +25,12 @@ ms.locfileid: "67278745"
 
 KBUGCHECK_REASON_CALLBACK_ROUTINE 可用来将辅助数据写入到崩溃转储文件。
  
-驱动程序可以实现 KBUGCHECK_REASON_CALLBACK_ROUTINE 将特定于驱动程序的数据页添加到故障转储文件。 驱动程序使用[ **KeRegisterBugCheckReasonCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)并[ **KeDeregisterBugCheckReasonCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)例程注册这三种*BugCheckXxxCallback*回调例程。
+驱动程序可以实现 KBUGCHECK_REASON_CALLBACK_ROUTINE 将特定于驱动程序的数据页添加到故障转储文件。 若要注册和删除回调，驱动程序，请使用下面的例程：
 
-[ *KBUGCHECK_CALLBACK_REASON 枚举*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)指定类型的调用后例程。
+* [**KeRegisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)
+* [**KeDeregisterBugCheckReasonCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterbugcheckcallback)
 
-通常使用以下类型的回调。
-
-**KbCallbackAddPages** -执行回调，以提供一个或多页时，系统将添加到在发生崩溃的主要部分的数据转储文件。 [ *KBUGCHECK_ADD_PAGES 结构*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_add_pages)描述的驱动程序提供的数据要 KbCallbackAddPages 回调例程写入崩溃转储文件的一个或多个页。 有关此类型的回调的详细信息，请参阅本主题中的"以常规形式实现 KbCallbackAddPages 回调"。
-
-**KbCallbackDumpIo** -执行回调，则每次写入转储文件的部分。 [KBUGCHECK_DUMP_IO 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_dump_io)用于描述上崩溃转储文件的 I/O 操作。 有关此类型的回调的详细信息，请参阅本主题中的"以常规形式实现 KbCallbackDumpIo 回调"。
-
-**KbCallbackSecondaryDumpData** -执行回调，则每次写入转储文件的部分。 [KBUGCHECK_SECONDARY_DUMP_DATA 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_kbugcheck_secondary_dump_data)结构描述要写入到崩溃转储文件中的驱动程序提供数据的部分。 有关此类型的回调的详细信息，请参阅本主题中的"以常规形式实现 KbCallbackSecondaryDumpData 回调"。
+[ *KBUGCHECK_CALLBACK_REASON 枚举*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_kbugcheck_callback_reason)指定类型的回调例程。
 
 有关 bug 检查数据的常规信息，请参阅[读取 Bug 检查回调数据](https://docs.microsoft.com/windows-hardware/drivers/debugger/reading-bug-check-callback-data)。
 
@@ -58,22 +53,15 @@ Bug 检查回调例程保证运行而不发生中断，因此不需要进行同�
 
 可以安全地使用驱动程序的 bug 检查回调例程**读取\_端口\_<em>XXX</em>** ，**读取\_注册\_<em>XXX</em>** ，**编写\_端口\_<em>XXX</em>** ，以及**编写\_注册\_ <em>XXX</em>** 例程与驱动程序的设备进行通信。 (有关这些例程的信息，请参阅[硬件抽象层例程](https://msdn.microsoft.com/library/windows/hardware/ff546644)。)
 
-## <a name="using-bugcheckcallback"></a>使用 BugCheckCallback
-
-在 Windows XP Service Pack 1 (SP1) 和 Windows Server 2003 之前, 的驱动程序可能还用于 BugCheckCallback 崩溃转储文件中存储数据： 系统写入崩溃转储文件，因此任何数据写入到的缓冲的之前调用每个 BugCheckCallback 例程传递给 BugCheckCallback 存储故障转储文件中。
-
-有关详细信息，请参阅[ *KBUGCHECK_CALLBACK_ROUTINE 回调函数*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_callback_routine)。
-
-
 ## <a name="implementing-kbcallbackaddpages-callback-routine"></a>实现 KbCallbackAddPages 回调例程
 
-内核模式驱动程序可以实现<i>KbCallbackAddPages</i>崩溃转储文件中添加的数据的一个或多个页的 bug 检查发生时的回调例程。 若要向操作系统注册此例程，该驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff553110">KeRegisterBugCheckReasonCallback</a>例程。 该驱动程序卸载之前，必须调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff552003">KeDeregisterBugCheckReasonCallback</a>例程，以删除注册。
+内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackAddPages</i>若要添加的数据的一个或多个页崩溃转储文件时出现的 bug 检查。 若要向操作系统注册此例程，该驱动程序调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff553110">KeRegisterBugCheckReasonCallback</a>例程。 该驱动程序卸载之前，必须调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff552003">KeDeregisterBugCheckReasonCallback</a>例程，以删除注册。
 
 从已注册的 Windows 8 开始<i>KbCallbackAddPages</i>期间调用例程<a href="https://msdn.microsoft.com/library/windows/hardware/ff551867">内核内存转储</a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff539190">完全内存转储</a>。 在早期版本的 Windows 中，已注册<i>KbCallbackAddPages</i>在内核内存转储，但不是在完全内存转储期间调用例程。 默认情况下，内核内存转储包括仅使用由 Windows 内核进行错误检查时，而完全内存转储则包括所有 Windows 使用的物理内存的物理页。 完全内存转储不，默认情况下，包括平台固件使用的物理内存。
 
 你<i>KbCallbackAddPages</i>例程可以提供特定于驱动程序的数据将添加到转储文件。 例如，对于内核内存转储，这些额外的数据可以包括物理页的未映射到虚拟内存中的系统地址范围，但已包含可帮助你调试您的驱动程序的信息。 <i>KbCallbackAddPages</i>例程可能会添加到转储文件 （任何驱动程序拥有物理页未映射或并将其映射到用户模式虚拟内存中的地址。
 
-Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例程来轮询数据将添加到故障转储文件的驱动程序。 每次调用将的连续数据的一个或多个页添加到故障转储文件。 一个<i>KbCallbackAddPages</i>例程可以提供虚拟地址或起始页的物理地址。 如果在调用期间提供多个页，则页面是在虚拟或物理内存中，根据起始地址是虚拟还是物理连续的。 若要提供非连续页<i>KbCallbackAddPages</i>例程可以设置一个标志， <b>KBUGCHECK_ADD_PAGES</b>结构，以指示它已附加数据，并必须再次调用。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff551839">KBUGCHECK_ADD_PAGES</a>。
+Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例程来轮询数据将添加到故障转储文件的驱动程序。 每次调用将的连续数据的一个或多个页添加到故障转储文件。 一个<i>KbCallbackAddPages</i>例程可以提供虚拟地址或起始页的物理地址。 如果在调用期间提供多个页，则页面是在虚拟或物理内存中，根据起始地址是虚拟还是物理连续的。 若要提供非连续页<i>KbCallbackAddPages</i>例程可以设置一个标志， <b>KBUGCHECK_ADD_PAGES</b>结构，以指示它已附加数据，并必须再次调用。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff551839">KBUGCHECK_ADD_PAGES</a>结构。
 
 与不同的是将数据追加到辅助崩溃转储区域，KbCallbackSecondaryDumpData 例程<i>KbCallbackAddPages</i>例程会向主崩溃转储区域中添加的数据页。 调试、 主崩溃期间转储数据比更容易访问辅助崩溃转储数据。
 
@@ -83,7 +71,7 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 ## <a name="implementing-a-kbcallbackdumpio-callback-routine"></a>实现 KbCallbackDumpIo 回调例程
 
-在驱动程序<i>KbCallbackDumpIo</i>数据写入到崩溃转储文件每次调用回调例程。 系统通过<i>ReasonSpecificData</i>参数、 写入的数据的说明。 <b>缓冲区</b>成员将指向当前数据，并<b>BufferLength</b>成员指定它的长度。 <b>类型</b>成员指示当前将要写入的数据，如转储文件标头信息、 内存状态或由驱动程序提供数据的类型。 有关的信息的可能类型的说明，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff551871">KBUGCHECK_DUMP_IO_TYPE</a>。
+内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackDumpIo</i>执行每个时间数据写入到的工作故障转储文件。 系统通过<i>ReasonSpecificData</i>参数、 写入的数据的说明。 <b>缓冲区</b>成员将指向当前数据，并<b>BufferLength</b>成员指定它的长度。 <b>类型</b>成员指示当前将要写入的数据，如转储文件标头信息、 内存状态或由驱动程序提供数据的类型。 有关的信息的可能类型的说明，请参阅<a href="https://msdn.microsoft.com/library/windows/hardware/ff551871">KBUGCHECK_DUMP_IO_TYPE</a>。
 
 系统可以编写崩溃转储文件，按顺序，或不按顺序。 如果系统正在写入崩溃转储文件按顺序，则<b>偏移量</b>的成员<i>ReasonSpecificData</i>为-1; 否则为<b>偏移量</b>设置为当前偏移量，在故障转储文件中的字节。
 
@@ -97,27 +85,18 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 
 ## <a name="implementing-kbcallbacksecondarydumpdata"></a>实现 KbCallbackSecondaryDumpData
 
-系统将使用<i>KbCallbackSecondaryDumpData</i>例程来轮询驱动程序的崩溃转储数据。
+内核模式驱动程序可以实现[ *KBUGCHECK_REASON_CALLBACK_ROUTINE* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)类型的回调函数<i>KbCallbackSecondaryDumpData</i>提供要追加到数据故障转储文件。
 
 系统组<b>InBuffer</b>， <b>InBufferLength</b>， <b>OutBuffer</b>，以及<b>MaximumAllowed</b>成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff551879">KBUGCHECK_SECONDARY_DUMP_DATA</a>结构的<i>ReasonSpecificData</i>指向。 <b>MaximumAllowed</b>成员指定的最大转储例程可以提供的数据量。
 
 值<b>OutBuffer</b>成员将确定系统是否正在请求的大小，驱动程序的转储数据或数据本身，按如下所示：
 
-<ul>
-<li>
-如果<b>OutBuffer</b> KBUGCHECK_SECONDARY_DUMP_DATA 成员是<b>NULL</b>，系统仅请求大小的信息。 <i>KbCallbackSecondaryDumpData</i>例程会填写<b>OutBuffer</b>并<b>OutBufferLength</b>成员。 
-</li>
-
-<li>
-如果<b>OutBuffer</b> KBUGCHECK_SECONDARY_DUMP_DATA 等于成员<b>InBuffer</b>成员，系统正在请求驱动程序的辅助转储数据。 <i>KbCallbackSecondaryDumpData</i>例程会填写<b>OutBuffer</b>并<b>OutBufferLength</b>成员，并将事件写入到指定的缓冲区数据<b>OutBuffer</b>。
-</li>
-</ul>
+* 如果<b>OutBuffer</b> KBUGCHECK_SECONDARY_DUMP_DATA 成员是<b>NULL</b>，系统仅请求大小的信息。 <i>KbCallbackSecondaryDumpData</i>例程会填写<b>OutBuffer</b>并<b>OutBufferLength</b>成员。 
+* 如果<b>OutBuffer</b> KBUGCHECK_SECONDARY_DUMP_DATA 等于成员<b>InBuffer</b>成员，系统正在请求驱动程序的辅助转储数据。 <i>KbCallbackSecondaryDumpData</i>例程会填写<b>OutBuffer</b>并<b>OutBufferLength</b>成员，并将事件写入到指定的缓冲区数据<b>OutBuffer</b>。
 
 <b>InBuffer</b> KBUGCHECK_SECONDARY_DUMP_DATA 成员指向的例程使用一个较小缓冲区。 <b>InBufferLength</b>成员指定缓冲区的大小。 如果要写入的数据量小于<b>InBufferLength</b>，回调例程可以使用此缓冲区来提供对系统的崩溃转储数据。 然后设置回调例程<b>OutBuffer</b>到<b>InBuffer</b>并<b>OutBufferLength</b>到实际写入缓冲区的数据量。
 
 必须编写的是比更大的数据量的驱动程序<b>InBufferLength</b>可以使用自己的缓冲区来提供的数据。 回调例程执行，并且必须驻留在驻留内存 （如非分页缓冲池） 之前，此缓冲区必须已分配。 然后设置回调例程<b>OutBuffer</b>指向驱动程序的缓冲区，并<b>OutBufferLength</b>缓冲区写入崩溃转储文件中的数据量。
-
-在 Windows XP 和 Windows Server 2003 中，如果<b>OutBuffer</b>是设置为指向驱动程序分配的缓冲区，缓冲区必须以在内存中的页对齐边界上。 否则，任何数据不写入辅助的数据区域的故障转储文件。 在 Windows Vista 和更高版本的 Windows 中，没有任何此类对齐要求。
 
 要写入到崩溃转储文件的数据的每个块的标记的值为<b>Guid</b>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff551879">KBUGCHECK_SECONDARY_DUMP_DATA</a>。 使用的 GUID 必须是唯一的驱动程序。 若要显示此 GUID 与对应的辅助转储数据，可以使用<b>.enumtag</b>命令或<b>IDebugDataSpaces3::ReadTagged</b>中调试器扩展的方法。 调试器和调试器扩展的信息，请参阅<a href="https://msdn.microsoft.com/938ef180-84de-442f-9b6c-1138c2fc8d5a">Windows 调试</a>。
 
@@ -128,46 +107,6 @@ Bug 检查时，操作系统将调用所有已注册<i>KbCallbackAddPages</i>例
 一个<i>KbCallbackSecondaryDumpData</i>例程受到严格限制在可执行的操作。 有关详细信息，请参阅本主题中的"Bug 检查回调例程限制"。
 
 
-#### <a name="callback-routine-examples"></a>回调例程示例
 
-若要定义的回调例程，必须首先提供标识的类型定义的回调例程的函数声明。 Windows 驱动程序提供一组回调函数类型。 声明使用回调函数的函数类型有助于<a href="https://msdn.microsoft.com/2F3549EF-B50F-455A-BDC7-1F67782B8DCA">Code Analysis for Drivers</a>， <a href="https://msdn.microsoft.com/74feeb16-387c-4796-987a-aff3fb79b556">Static Driver Verifier</a> (SDV) 和其他验证工具发现错误，而它是进行写入的要求用于 Windows 操作系统驱动程序。
-
-例如，若要定义<i>KbCallbackAddPages</i>名为的回调例程<code>MyKbCallbackAddPages</code>，使用 KBUGCHECK_REASON_CALLBACK_ROUTINE 类型，此代码示例中所示：
-
-<div class="code"><span codelanguage=""><table>
-<tr>
-<th></th>
-</tr>
-<tr>
-<td>
-<pre>KBUGCHECK_REASON_CALLBACK_ROUTINE MyBugCheckAddPagesCallback;</pre>
-</td>
-</tr>
-</table></span></div>
-然后，按如下所示实现回调例程：
-
-<div class="code"><span codelanguage=""><table>
-<tr>
-<th></th>
-</tr>
-<tr>
-<td>
-<pre>_Use_decl_annotations_
-VOID
-  MyBugCheckAddPagesCallback(
-    KBUGCHECK_CALLBACK_REASON  Reason,
-    struct _KBUGCHECK_REASON_CALLBACK_RECORD  *Record,
-    PVOID  ReasonSpecificData,
-    ULONG  ReasonSpecificDataLength 
-    )
-  {
-      // Function body
-  }</pre>
-</td>
-</tr>
-</table></span></div>
-Wdm.h 中标头文件中定义 KBUGCHECK_REASON_CALLBACK_ROUTINE 函数类型。 若要运行代码分析工具时，更准确地识别错误，请确保添加_Use_decl_annotations_批注相对于函数定义。 _Use_decl_annotations_批注确保在使用应用于 KBUGCHECK_REASON_CALLBACK_ROUTINE 函数类型标头文件中的批注。 有关函数声明的要求的详细信息，请参阅<a href="https://msdn.microsoft.com/3260b53e-82be-4dbc-8ac5-d0e52de77f9d">WDM 驱动程序中使用函数角色类型声明函数</a>。 璝惠_Use_decl_annotations_，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=286697">批注函数行为</a>。
-
-<div class="code"></div>
 
 

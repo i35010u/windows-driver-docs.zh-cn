@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afffd32b35b77560354b56e88d2a997394cbe9d
-ms.sourcegitcommit: 20d98fc309319a0363b32510c9081b0d1775de93
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66840862"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
@@ -19,9 +19,9 @@ ms.locfileid: "66840862"
 
 若要开始操作，请确保你已安装 [Microsoft Visual Studio 2015](https://go.microsoft.com/fwlink/p/?LinkId=698539) 和 [Windows 驱动程序工具包 (WDK) 10](https://go.microsoft.com/fwlink/p/?LinkId=733614)。
 
-当安装 WDK 时，需要包括 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
+安装 WDK 时，需要包括 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
 
-## <a name="create-and-build-a-driver-package"></a>创建和生成的驱动程序包
+## <a name="create-and-build-a-driver-package"></a>创建和生成驱动程序包
 
 1. 打开 Microsoft Visual Studio。 在“文件”  菜单上，选择“新建”&gt;“项目”  。 这将打开“新建项目”  对话框，如下所示。
 2. 在“新建项目”  对话框中，选择 **WDF**。
@@ -32,7 +32,7 @@ ms.locfileid: "66840862"
     > 在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。  
 
 5. 在“位置”  字段中，输入要在其中创建新项目的目录。
-6. 选中“创建解决方案的目录”  。 单击 **“确定”** 。
+6. 选中“创建解决方案的目录”  。 单击“确定”  。
 
     ![“新建项目”对话框的屏幕截图，显示选中的 WDF 和内核模式驱动程序](images/vs2015-kmdf-new-project.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "66840862"
 
 ## <a name="deploy-the-driver"></a>部署驱动程序
 
-通常，当你测试和调试驱动程序时，调试器和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”  ，运行驱动程序的计算机称为“目标计算机”  。 目标计算机也称为“测试计算机”  。 有关调试驱动程序的详细信息，请参阅 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
+通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”  ，运行驱动程序的计算机称为“目标计算机”  。 目标计算机也称为“测试计算机”  。 有关调试驱动程序的详细信息，请参阅 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
 
 到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，需要配置目标计算机。
 
@@ -69,7 +69,7 @@ ms.locfileid: "66840862"
 4. 在“KmdfDriver 包属性页”  窗口的左侧窗格中，转到“配置属性”&gt;“驱动程序安装”&gt;“部署”  。
 5. 选中“部署前删除以前的驱动程序版本”  。
 6. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在本练习中，我们使用名为 MyTestComputer 的计算机。
-7. 选择“硬件 ID 驱动程序更新”  ，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为“Root\\KmdfDriver”。 单击 **“确定”** 。
+7. 选择“硬件 ID 驱动程序更新”  ，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为“Root\\KmdfDriver”。 单击“确定”  。
 
     ![“kmdfdriver 包属性页”窗口的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-kmdfdriver-property-pages.png)
 
@@ -148,13 +148,13 @@ ms.locfileid: "66840862"
 
 ## <a name="using-the-driver-module-framework-dmf"></a>使用驱动程序模块框架 (DMF)
 
-[驱动程序模块 Framework (DMF)](https://github.com/Microsoft/DMF)是 WDF WDF 驱动程序开发人员为启用额外功能的扩展。 它可帮助开发人员编写更好和更快的 WDF 驱动程序的任何类型。
+[驱动程序模块 Framework (DMF)](https://github.com/Microsoft/DMF) 是 WDF 的一个扩展，可为 WDF 驱动程序开发人员提供额外的功能。 它可以帮助开发人员更快、更好地编写任何类型的 WDF 驱动程序。
 
-DMF 如一个框架，允许 WDF 对象创建名为 DMF 模块。 可以不同的驱动程序之间共享这些 DMF 模块的代码。 此外，DMF 捆绑包为我们的驱动程序和感觉我们开发了 DMF 模块的库将提供值到其他驱动程序开发人员。
+作为一个框架，DMF 可用于创建称作“DMF 模块”的 WDF 对象。 可以在不同的驱动程序之间共享这些 DMF 模块的代码。 此外，DMF 捆绑了为我们为驱动程序开发的 DMF 模块库，可为其他驱动程序开发人员提供价值。
 
-DMF 不会替换 WDF。 DMF 是与 WDF 一起使用的第二个框架。 开发人员仍利用 DMF 使用 WDF 和所有基元写入设备驱动程序。
+DMF 不会取代 WDF。 DMF 是与 WDF 搭配使用的另一个框架。 利用 DMF 的开发人员仍需使用 WDF 及其所有基元来编写设备驱动程序。
 
-有关详细信息，请参阅[驱动程序模块 Framework (DMF)](https://github.com/Microsoft/DMF)。
+有关详细信息，请参阅[驱动程序模块框架 (DMF)](https://github.com/Microsoft/DMF)。
 
 ## <a name="related-topics"></a>相关主题
 

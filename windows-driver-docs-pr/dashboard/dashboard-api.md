@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a378280a820df31b1885a7655fad7d72ae4ba53
-ms.sourcegitcommit: 0c364a5c4947fcfe815de5fb57237c3e36b3ae20
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65701738"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
 
-使用“Microsoft 硬件 API”以编程方式在组织的合作伙伴中心帐户中查询和创建硬件产品提交。 如果你的帐户管理多个产品，并且你想要自动执行并优化这些资源的提交过程，那么这些 API 非常有用。 这些 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用“Microsoft 硬件 API”  以编程方式在组织的合作伙伴中心帐户中查询和创建硬件产品提交。 如果你的帐户管理多个产品，并且你想要自动执行并优化这些资源的提交过程，那么这些 API 非常有用。 这些 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 以下步骤介绍了使用“Microsoft 硬件 API”的端到端过程：
 
 1. 这些 API 仅可供属于[合作伙伴中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户使用。
@@ -36,26 +36,26 @@ ms.locfileid: "65701738"
 
 必须先将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、检索该应用程序的租户 ID 和客户端 ID，然后生成一个密钥，此后才能使用“Microsoft 硬件 API”。 Azure AD 应用程序是指你想要从中调用“Microsoft 硬件 API”的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
-1. 在合作伙伴中心中，转到“帐户设置”、单击“管理用户”，然后[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center)。
-2. 在“管理用户”页面上，单击“添加 Azure AD 应用程序”、添加 Azure AD 应用程序（是指要用于访问你的合作伙伴中心帐户的提交的应用或服务），然后为其分配“管理者”角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的合作伙伴中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[将 Azure AD 应用程序添加到你的合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#azure-ad-applications)。
+1. 在合作伙伴中心中，转到“帐户设置”、单击“管理用户”，然后[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-dev-center)。  
+2. 在“管理用户”页面上，单击“添加 Azure AD 应用程序”、添加 Azure AD 应用程序（是指要用于访问你的合作伙伴中心帐户的提交的应用或服务），然后为其分配“管理者”角色。    如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的合作伙伴中心帐户。  如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。  有关详细信息，请参阅[将 Azure AD 应用程序添加到你的合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#azure-ad-applications)。
 
-3. 返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。
+3. 返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。   
 
-4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)。
+4. 单击“添加新密钥”  。 在接下来的屏幕上，记下“密钥”值。  在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)。
 
-5. 最后，请确保 AD 应用程序有管理和发布驱动程序提交所必需的角色。 首先，在合作伙伴中心中，在“设置”面板中，单击“用户”。
+5. 最后，请确保 AD 应用程序有管理和发布驱动程序提交所必需的角色。 首先，在合作伙伴中心中，在“设置”  面板中，单击“用户”  。
 
     ![一个显示了“设置”菜单上的“用户”选项的图像](images/settings-menu-users-option.png)
 
-    在“用户”页上，单击“Azure AD 应用程序”。
+    在“用户”页上，单击“Azure AD 应用程序”  。
 
     ![一个显示了“Azure AD 应用程序”选项卡的图像](images/azure-ad-applications-tab.png)
 
-    单击你关联的 Azure AD 应用程序的名称。 这将加载 Azure AD 应用程序详细信息页面。 在此页面上，在“角色”下，单击“硬件”。
+    单击你关联的 Azure AD 应用程序的名称。 这将加载 Azure AD 应用程序详细信息页面。 在此页面上，在“角色”  下，单击“硬件”  。
 
     ![一个显示了“角色”部分中的“硬件”选项卡的图像](images/hardware-tab-in-roles-section.png)
 
-    确保选中“驱动程序提交者”和“发货标签所有者”：
+    确保选中“驱动程序提交者”  和“发货标签所有者”  ：
 
     ![一个显示了“驱动程序提交者”和“发货标签所有者”复选框的图像](images/driver-submitter-and-shipping-label-owners-checkboxes.png)
 
@@ -82,19 +82,19 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以在“Microsoft 硬件 API”中调用方法。 该 API 包括许多分组到各个方案中的方法。 若要创建或更新提交，一般需在“Microsoft 硬件 API”中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
-| 应用场景 | 描述 |
+| 方案 | 描述 |
 |:--|:--|
 | Drivers | 获取、创建和更新向你的合作伙伴中心帐户注册的驱动程序。 有关这些方法的详细信息，请参阅以下文章：<ul><li>[获取产品数据](get-product-data.md)</li><li>[管理产品提交](manage-product-submissions.md)</li><li>[获取发货标签数据](get-shipping-labels.md)</li><li>[管理发货标签](manage-shipping-labels.md)</li></ul>|
 
 ## <a name="code-examples"></a>代码示例
 
-下面的示例提供了详细说明如何使用 Microsoft 硬件 API 以及由 Microsoft Surface 和设备团队创建的完整端到端预构建解决方案的代码：
+以下示例提供了详细的代码，演示如何结合 Microsoft Surface 和设备团队创建的完整端到端预生成解决方案使用 Microsoft 硬件 API：
 
 * [C# 示例](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
 
-[图面开发人员中心管理器工具 (GitHub)](https://github.com/Microsoft/SDCM)
+[Surface 开发人员中心管理器工具 (GitHub)](https://github.com/Microsoft/SDCM)
 
 ## <a name="additional-help"></a>其他帮助
 

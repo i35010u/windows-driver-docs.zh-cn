@@ -6,10 +6,10 @@ ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: f60441488e80443a78e6114285601c6cfe1c096b
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66813591"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
@@ -18,7 +18,7 @@ ms.locfileid: "66813591"
 
 下面列出了 Windows 10 中驱动程序开发的新增功能亮点。
 
-* [Windows 10，版本 1903 WDK 支持 Visual Studio 2019](#wdk-supports-visual-studio-2019)
+* [Windows 10 版本 1903 WDK 支持 Visual Studio 2019](#wdk-supports-visual-studio-2019)
 * [Windows 硬件开发人员中心仪表板](#windows-hardware-dev-center-dashboard)
 * [开放发布](#open-publishing)
 * [Windows 调试工具](#debugging-tools-for-windows)
@@ -47,7 +47,7 @@ ms.locfileid: "66813591"
 |      硬件通知    | ![不可用](minus.png)  |             ![不可用](minus.png)              |            ![不可用](minus.png)             | [![详细信息](checkmark.png)](#hardware-notifications-1709) |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |   人体学接口设备 (HID)    |    ![不可用](minus.png)    |     ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |      [![详细信息](checkmark.png)](#human-interface-device)       |
 |              内核          |   ![不可用](minus.png)  |      [![详细信息](checkmark.png)](#kernel-1809)       |     [![详细信息](checkmark.png)](#kernel-1803)      |         [![详细信息](checkmark.png)](#kernel-1709)         |     [![详细信息](checkmark.png)](#kernel-1703)      |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
-|             Location       |   ![不可用](minus.png)    |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |  [![详细信息](checkmark.png)](#location-1607)  |           [![详细信息](checkmark.png)](#location-1507)           |
+|             位置       |   ![不可用](minus.png)    |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |  [![详细信息](checkmark.png)](#location-1607)  |           [![详细信息](checkmark.png)](#location-1507)           |
 |         移动宽带    |    [![详细信息](checkmark.png)](#mobilebroadband-1903)  |  [![详细信息](checkmark.png)](#mobilebroadband-1809)  | [![详细信息](checkmark.png)](#mobilebroadband-1803) |    [![详细信息](checkmark.png)](#mobilebroadband-1709)     | [![详细信息](checkmark.png)](#mobilebroadband-1703) |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |     近场通信      |    ![不可用](minus.png)     |    ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |     [![详细信息](checkmark.png)](#near-field-communication)      |
 |            网络     |    [![详细信息](checkmark.png)](#networking-1903)    |    [![详细信息](checkmark.png)](#networking-1809)     |   [![详细信息](checkmark.png)](#networking-1803)    |       [![详细信息](checkmark.png)](#networking-1709)       |   [![详细信息](checkmark.png)](#networking-1703)    |          ![不可用](minus.png)          |          [![详细信息](checkmark.png)](#networking-1507)          |
@@ -69,29 +69,29 @@ ms.locfileid: "66813591"
 
 本部分提供 Windows 10 中驱动程序开发的新增功能亮点。
 
-### <a name="wdk-supports-visual-studio-2019"></a>WDK 支持 Visual Studio 2019
+### <a name="wdk-supports-visual-studio-2019"></a>WDK 支持 Visual Studio 2019。
 
-适用于 Windows 10，版本 1903，Windows Driver Kit (WDK) 已更新为支持 Visual Studio 2019 像以前一样[宣布](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)。 此版本的 WDK 但是不兼容使用 Visual Studio 2017，开发人员可以继续使用 Visual Studio 2017 使用以前版本的 WDK (版本 1709 通过找到 1809年[此处](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads))。 若要了解有关什么是新的 Visual Studio 2019 请查看的信息[此处](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)。
+适用于 Windows 10 版本 1903 的 Windows 驱动程序工具包 (WDK) 已更新，可以支持先前已[宣布](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)推出的 Visual Studio 2019。 但是，此 WDK 版本与 Visual Studio 2017 不兼容，开发人员可以通过旧版 WDK（在[此处](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads)可以找到版本 1709 至 1809）继续使用 Visual Studio 2017。 若要了解 Visual Studio 2019 的新增功能，请查看[此处](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)的信息。
 
-以下是几个项的 Windows 驱动程序开发人员将看到的 Visual Studio 2019 中的显著更改。
+下面是 Windows 驱动程序开发人员在 Visual Studio 2019 中可以看到的几处显著更改。
 
-#### <a name="wdk-gui-driver-menu-moved"></a>WDK GUI 驱动程序菜单移动
+#### <a name="wdk-gui-driver-menu-moved"></a>WDK GUI 驱动程序菜单已移动
 
-在 Visual Studio 2019 已移 WDK 驱动程序菜单，如下所示的扩展菜单下生存。
+在 Visual Studio 2019 中，WDK 驱动程序菜单已移到“扩展”菜单下，如下所示。
 
 ![Visual Studio 2019 菜单的屏幕截图](images/vs-2019-driver-menu.png)
 
-Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，如下所示。
+Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部菜单选项中，如下所示。
 
 ![Visual Studio 2017 菜单的屏幕截图](images/vs-2017-menu.png)
 
 #### <a name="driver-templates-discoverability"></a>驱动程序模板可发现性
 
-在 Visual Studio 2019 WDK 驱动程序模板可在项目类型，驱动程序下可发现。 驱动程序项目类型将显示在第一个正式的更新版本的 Visual Studio 2019。 在此之前的驱动程序模板可以发现通过在搜索菜单中搜索它们。
+在 Visual Studio 2019 中，可在“项目类型”>“驱动程序”下发现 WDK 驱动程序模板。 驱动程序项目类型将显示在 Visual Studio 2019 的第一个官方更新版本中。 到时，可以通过在搜索菜单中进行搜索，来发现驱动程序模板。
 
 ![Visual Studio 2019 驱动程序模板的屏幕截图](images/vs-2019-driver-template.png)
 
-在新项目下的 Visual Studio 2017 中以前找到 WDK 驱动程序模板 > Visual C++> Windows 驱动程序，如下所示。
+以前，在 Visual Studio 2017 中，可以在“新建项目”>“Visual C++”>“Windows 驱动程序”下找到 WDK 驱动程序模板，如下所示。
 
 ![Visual Studio 2017 驱动程序模板的屏幕截图](images/vs-2017-driver-template.png)
 
@@ -122,34 +122,34 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 
 本部分介绍 Windows 调试工具中的更改。
 
-#### <a name="debugging-in-windows-10-version-1903"></a>在 Windows 10，版本 1903年中进行调试
+#### <a name="debugging-in-windows-10-version-1903"></a>Windows 10 版本 1903 中的调试
 
-* 添加了新停止代码，以允许更好地跟踪对 Windows 操作系统中的唯一故障类型。 除了大量的 bug 检查对现有主题已展开并且更新。 有关详细信息，请参阅[Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)。
+* 添加了新的停止代码，以便更好地跟踪 Windows 操作系统中的独特故障类型。 此外，还补充并更新了大量现有的 bug 检查主题。 有关详细信息，请参阅 [Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)。
 
-* KDNET 主题，以提高易用性，例如在新的更新[设置向上 KDNET 网络内核调试自动](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)
+* 更新了 KDNET 主题（例如，在新文章[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)中）以提高易用性
 
-* IP V6 KDNET 支持更新。
+* 更新了 IP V6 KDNET 支持。
 
-* 新[JavaScript 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/javascript-debugger-scripting)主题
+* 新的 [JavaScript 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/javascript-debugger-scripting)主题
 
-#### <a name="debugging-in-windows-10-version-1809"></a>在 Windows 10，版本 1809年中进行调试
+#### <a name="debugging-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的调试
 
 * **新的调试器数据模型 API** – 现已推出一个新的面向对象的调试器数据模型接口，该接口可使用 dbgmodel.h 标头支持调试器自动化。 调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 可以在调试器的 dx 表达式计算器中以及从 JavaScript 扩展或 C++ 扩展访问写入到数据模型 API 的构造。 文档位置：[调试器数据模型 C++ 接口概述](debugger/data-model-cpp-overview.md)和 [dbgmodel.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/) 标头参考主题。
 
-* **IPv6** - 我们将在 KDNET 中添加对 IPv6 的支持。 为了给 IPv6 所需的较大标头留出空间，我们减少了数据包的有效负载大小。 因此，我们将会声明 KDNET 协议的新版本，使运行最新版调试器的主机电脑可用于调试仅支持 IPv4 的目标电脑。 没有在可用的版本的 WinDbg 预览版[ https://aka.ms/windbgpreview ](https://aka.ms/windbgpreview)支持 IPv6。 请关注“Windows 调试工具”博客来了解有关 KDNET IPv6 支持的最新信息，并参阅[手动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)了解更多详细信息。
+* **IPv6** - 我们将在 KDNET 中添加对 IPv6 的支持。 为了给 IPv6 所需的较大标头留出空间，我们减少了数据包的有效负载大小。 因此，我们将会声明 KDNET 协议的新版本，使运行最新版调试器的主机电脑可用于调试仅支持 IPv4 的目标电脑。 [https://aka.ms/windbgpreview](https://aka.ms/windbgpreview) 上提供了支持 IPv6 的 WinDbg 预览版。 请关注“Windows 调试工具”博客来了解有关 KDNET IPv6 支持的最新信息，并参阅[手动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)了解更多详细信息。
 
-#### <a name="debugging-in-windows-10-version-1803"></a>在 Windows 10，版本 1803年中进行调试
+#### <a name="debugging-in-windows-10-version-1803"></a>Windows 10 版本 1803 中的调试
 
 [WinDbg 预览版时光穿越调试 (TTD) 动手实验](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-walkthrough) - 此实验使用一个存在代码缺陷的示例小程序介绍时光穿越调试 (TTD)。 TTD 用于调试、识别问题及分析其根本原因。
 
-#### <a name="debugging-in-windows-10-version-1709"></a>在 Windows 10 版本 1709年中进行调试
+#### <a name="debugging-in-windows-10-version-1709"></a>Windows 10 版本 1709 中的调试
 
 下面是 Windows 10 版本 1709 中调试器的新内容集列表：
 
 * [使用 WinDbg 预览版进行调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-using-windbg-preview) - 预览下一代调试器。
 * [时光穿越调试 - 概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-overview) - 记录和重放过程的执行。
 
-#### <a name="debugging-in-windows-10-version-1703"></a>在 Windows 10，版本 1703年中进行调试
+#### <a name="debugging-in-windows-10-version-1703"></a>Windows 10 版本 1703 中的调试
 
 下表显示了 Windows 10 版本 1703 中调试器的更改：
 
@@ -159,11 +159,11 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 | [Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)中 40 个未经阐述的停止代码 | 对[配置 tools.ini](https://docs.microsoft.com/windows-hardware/drivers/debugger/configuring-tools-ini) 主题做了更新，在命令行调试器的 tools.ini 文件中添加了更多选项 |
 | [!ioctldecode 命令](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ioctldecode) | [dx（显示调试器对象模型扩展）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)命令中的新命令功能 |
 
-#### <a name="debugging-in-windows-10-version-1607"></a>在 Windows 10，版本 1607年中进行调试
+#### <a name="debugging-in-windows-10-version-1607"></a>Windows 10 版本 1607 中的调试
 
 在 Windows 10 版本 1607 中，调试器的更改包括有关[使用 WinDbg 调试 UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg)的新主题，并更新了 [Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)中 30 个查看次数最多的开发人员 Bug 检查主题。
 
-#### <a name="debugging-in-windows-10-version-1507"></a>在 Windows 10 版本 1507年中进行调试
+#### <a name="debugging-in-windows-10-version-1507"></a>Windows 10 版本 1507 中的调试
 
 下面是 Windows 10 版本 1507 中 Windows 调试器的新命令列表：
 
@@ -175,7 +175,7 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 在 Windows 10 版本 1809 中添加了以下内容：
 
 * [INF AddEventProvider 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addeventprovider-directive)
-* [INF DDInstall.Events 部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-events-section)
+* [INF DDInstall.Events 节](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-events-section)
 
 更新了以下内容：
 
@@ -194,9 +194,9 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 
 ### <a name="windows-driver-frameworks-wdf"></a>Windows 驱动程序框架 (WDF)
 
-#### <a name="wdf-in-windows-10-version-1903"></a>在 Windows 10，版本 1903 WDF
+#### <a name="wdf-in-windows-10-version-1903"></a>Windows 10 版本 1903 中的 WDF
 
-在 Windows 10，版本 1903，Windows 驱动程序框架 (WDF) 包括内核模式驱动程序框架 (KMDF) 1.29 版和用户模式驱动程序框架 (UMDF) 版本 2.29。
+在 Windows 10 版本 1903 中，Windows 驱动程序框架 (WDF) 包括内核模式驱动程序框架 (KMDF) 版本 1.29 和用户模式驱动程序框架 (UMDF) 版本 2.29。
 
 有关这些框架版本的功能的信息，请参阅 [Windows 10 中 WDF 驱动程序的新增功能](https://docs.microsoft.com/windows-hardware/drivers/wdf/)。
 若要了解在旧版 WDF 中添加了哪些功能，请参阅 [KMDF 版本历史记录](https://docs.microsoft.com/windows-hardware/drivers/wdf/kmdf-version-history)和 [UMDF 版本历史记录](https://docs.microsoft.com/windows-hardware/drivers/wdf/umdf-version-history)。
@@ -207,7 +207,7 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 
 [返回页首](#top)
 
-#### <a name="universal-drivers-in-windows-10-version-1809"></a>Windows 10，版本 1809年中的通用驱动程序
+#### <a name="universal-drivers-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的通用驱动程序
 
 从 Windows 10 版本 1809 开始，Windows 支持灵活链接，可让你使用单个二进制文件来以 OneCore 和桌面 SKU 为目标。
 若要启用灵活链接，请使用以下新的 SDK API：
@@ -218,11 +218,11 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 
 * [针对 OneCore 生成](https://docs.microsoft.com/windows-hardware/drivers/develop/building-for-onecore)
 
-#### <a name="universal-drivers-in-windows-10-version-1803"></a>Windows 10，版本 1803年中的通用驱动程序
+#### <a name="universal-drivers-in-windows-10-version-1803"></a>Windows 10 版本 1803 中的通用驱动程序
 
 在[通用驱动程序入门](develop/getting-started-with-universal-drivers.md)中查看有关通用驱动程序的最新建议。
 
-#### <a name="universal-drivers-in-windows-10-version-1709"></a>Windows 10 版本 1709年中的通用驱动程序
+#### <a name="universal-drivers-in-windows-10-version-1709"></a>Windows 10 版本 1709 中的通用驱动程序
 
 下面是 Windows 10 版本 1709 中通用驱动程序的新增功能列表：
 
@@ -262,14 +262,14 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部的菜单选项，�
 
 电源管理框架 (PoFx) 可让驱动程序为设备中的各个组件单独定义一个或多个可调整的性能状态集。 驱动程序可以使用性能状态来限制组件的工作负荷，以提供刚好足够的性能来满足工作负荷的当前需求。 有关详细信息，请参阅[组件级性能状态管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/component-level-performance-management)。
 
-Windows 10 版本 1903年包括对支持[定向电源管理框架 (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)。  相关的参考文档包括以下组件：
+Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)。  相关的参考文档包括：
 
 * [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-po_fx_device_v3)
 * [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_down_callback)
 * [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_up_callback)
-* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown)函数
+* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown) 函数
 
-有关对 DFx 进行测试的信息，请参阅以下页面：
+有关 DFx 测试的信息，请参阅以下页：
 
 * [定向 FX 单一设备测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
 * [定向 FX 系统验证测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
@@ -284,59 +284,59 @@ Windows 10 版本 1903年包括对支持[定向电源管理框架 (DFx)](https:/
 * [WppRecorderLogCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)（仅限 KMDF）
 * [WppRecorderDumpLiveDriverData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
 
-## <a name="whats-new-in-windows-10-version-1903-latest"></a>什么是 Windows 10，版本 1903年中的新增功能 （最新）
+## <a name="whats-new-in-windows-10-version-1903-latest"></a>Windows 10 版本 1903（最新版）中的新增功能
 
-本部分介绍新功能和更新的驱动程序开发在 Windows 10，版本 1903年 （Windows 10 年 4 月 2019年更新）。
+本部分介绍 Windows 10 版本 1903（Windows 10 2019 年 4 月更新）中驱动程序开发的新增功能和更新。
 
 [返回页首](#top)
 
 ### <a name="audio-1903"></a>音频
 
-下面是在 Windows 10，版本 1903年中新的和更新音频功能的列表：
+下面是 Windows 10 版本 1903 中新的和更新的音频功能列表：
 
-* 有关音频 OEM 适配器用于在新的语音激活新的参考主题[eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/eventdetectoroemadapter/)标头。
-* 新得字段音频信息： 
+* 有关在新的 [eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/eventdetectoroemadapter/) 标头中用于语音激活的音频 OEM 适配器的新参考主题。
+* 新的远场音频信息： 
     * [PKEY_Devices_AudioDevice_Microphone_IsFarField](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-devices-audiodevice-microphone-isfarfield)
     * [KSPROPSETID_InterleavedAudio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-interleavedaudio)
     * [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://review.docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)
     
-* 中的新 jack 说明信息[USB 音频 2.0 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)。
+* [USB 音频 2.0 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)中的新插孔说明信息。
 
 ### <a name="camera-1903"></a>相机
 
-新摄像头驱动程序文档以及 Windows 10，版本 1903年中新增功能包括：
+在 Windows 10 版本 1903 中添加的新相机驱动程序文档和功能包括：
 
-* 新[IR Torch](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-irtorchmode)扩展属性控件设置 IR 照相机的红外 torch 功率级别和占空比。
-* 新[KSCATEGORY_NETWORK_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-network-camera)设备。
-* 新的和更新[USB 视频类 (UVC) 1.5 扩展](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)以下控件选择器的文档：
+* 新的[红外闪光灯](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-irtorchmode)扩展属性控件，可以设置红外相机的红外闪光灯功率级和占空比。
+* 新的 [KSCATEGORY_NETWORK_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-network-camera) 设备。
+* 为以下控件选择器新编和更新了 [USB 视频类 (UVC) 1.5 扩展](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)文档：
   * MSXU_CONTROL_FACE_AUTHENTICATION
   * MSXU_CONTROL_METADATA
   * MSUX_CONTROL_IR_TORCH
 
 ### <a name="display-1903"></a>显示
 
-更新 Windows 10 中的显示驱动程序开发，版本 1903年包括以下：
+Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
-* **超级湿墨迹**添加了新 DDIs 以启用前台缓冲区呈现。 请参阅[D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags)并[PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
+* **超级湿墨**：添加了新的 DDI 以实现前端缓冲渲染。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
 
-* **明暗度变量速率**启用的呈现性能/电源以不同速率呈现的映像间分配。 请参阅[PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062)并[D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
+* **可变速率着色**：在不同的渲染图像中以不同的速率分配渲染性能/算力。 请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
 
-* **收集诊断信息**，操作系统就可以从包含这两个呈现和显示功能的图形适配器驱动程序中收集专用数据。 请参阅[DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
+* **收集诊断信息**：允许 OS 从包括渲染和显示功能的图形适配器的驱动程序中收集专用数据。 请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
 
-* **后台处理**允许用户模式驱动程序来表达所需的行为，并在运行时线程处理来控制/监视器它。 用户模式驱动程序将启动后台线程和分配为低的线程优先级作为可能的并且依赖于 NT 计划程序，以确保这些线程不会中断通常带成功的关键路径线程。 请参阅[PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
+* **后台处理**：允许用户模式驱动程序表达所需的线程行为，并允许运行时控制/监视此行为。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。 请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
 
-* **驱动程序热更新**减少服务器停机时间最大程度地时需要更新操作系统组件。 请参阅[DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate)并[DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
+* **驱动程序热更新**：需要更新 OS 组件时，尽量减少服务器停机时间。 请参阅 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) 和 [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
 
 ### <a name="networking-1903"></a>网络
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
-在 NetAdapter WDF 类扩展 (NetAdapterCx) 中，Net 环形缓冲区已替换为 Net 环，有新的接口，以便发送和接收网络数据使用 net 环迭代器。 下面是新主题的列表：
+在 NetAdapter WDF 类扩展 (NetAdapterCx) 中，网环缓冲区已由网环取代，后者提供新的接口用于通过网环迭代器发送和接收网络数据。 下面是新主题的列表：
 
-* [Net 环和 net 环迭代器](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-rings-and-net-ring-iterators)
-* [发送网络数据使用 net 环](https://docs.microsoft.com/windows-hardware/drivers/netcx/sending-network-data-with-net-rings)与说明了如何将数据发送一个新动画
-* [接收网络数据使用 net 环](https://docs.microsoft.com/windows-hardware/drivers/netcx/receiving-network-data-with-net-rings)与新的动画，说明了如何接收数据
-* [取消使用 net 环网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/canceling-network-data-with-net-rings)
+* [网环和网环迭代器](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-rings-and-net-ring-iterators)
+* [使用网环发送网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/sending-network-data-with-net-rings)，其中提供了演示如何发送数据的新动画
+* [使用网环接收网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/receiving-network-data-with-net-rings)，其中提供了演示如何接收数据的新动画
+* [使用网环取消网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/canceling-network-data-with-net-rings)
 
 支持此功能的新标头包括：
 
@@ -346,12 +346,12 @@ Windows 10 版本 1903年包括对支持[定向电源管理框架 (DFx)](https:/
 
 下面是 NetAdapterCx 内容更新的列表：
 
-* 默认的适配器以适配器的单一对象类型支持已删除对象。 已相应地更新的以下主题：
+* 已删除默认的适配器对象，改用单个适配器对象类型。 已相应地更新了以下主题：
 
   * [NetAdapterCx 对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-netadaptercx-objects)
   * [设备和适配器初始化](https://docs.microsoft.com/windows-hardware/drivers/netcx/device-and-adapter-initialization)
 
-* 已重新 DDIs 组织为新的标头的硬件卸载和数据包扩展：
+* 硬件卸载和数据包扩展 DDI 已重新组织为新标头：
 
   * [Checksum.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/index)
   * [Checksumtypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksumtypes/index)
@@ -361,57 +361,57 @@ Windows 10 版本 1903年包括对支持[定向电源管理框架 (DFx)](https:/
   * [Rsc.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsc/index)
   * [Rsctypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsctypes/index)
 
-* 基本网络数据结构、 数据包和片段，具有已更新，并放入新的标头：
+* 基本网络数据结构、数据包和段已更新，并已放入新标头：
 
   * [Packet.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/index)
   * [Fragment.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fragment/index)
 
-* 大幅改进[传输和接收队列](https://docs.microsoft.com/windows-hardware/drivers/netcx/transmit-and-receive-queues)主题，以包括回调示例和数据包队列的主要操作。
+* 大幅修改了[传输和接收队列](https://docs.microsoft.com/windows-hardware/drivers/netcx/transmit-and-receive-queues)主题，以包含回调示例和数据包队列的主要操作。
 
 #### <a name="mobile-operator-scenarios"></a>移动运营商方案
 
-移动运营商如何向 Windows 10 设备，通过移动计划应用程序上直接客户销售计划的新移动计划内容：
+编写了新的移动套餐内容，以方便移动运营商通过移动套餐应用直接在 Windows 10 设备上向客户销售套餐：
 
-* [移动计划](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
+* [移动套餐](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
 
 ### <a name="mobilebroadband-1903"></a>移动宽带
 
-到移动宽带 Windows 10，版本 1903年中添加了以下功能：
+以下功能已添加到 Windows 10 版本 1903 中的移动宽带：
 
-* 新[SIM 卡 (UICC) / 应用程序文件系统访问](https://docs.microsoft.com/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access)功能
-* 新[移动电话网络时间信息 (NITZ)](https://docs.microsoft.com/windows-hardware/drivers/network/mb-nitz-support)功能。
-* 新[调制解调器日志记录与 DSS](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)功能。
-* 新[5g 数据类支持](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)功能。
+* 新的 [SIM 卡 (UICC) 文件/应用程序系统访问](https://docs.microsoft.com/windows-hardware/drivers/network/mb-uicc-application-and-file-system-access)功能
+* 新的[手机网络时间信息 (NITZ)](https://docs.microsoft.com/windows-hardware/drivers/network/mb-nitz-support) 功能。
+* 新的[使用 DSS 进行调制解调器日志记录](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)功能。
+* 新的 [5G 数据类支持](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)功能。
 
 ### <a name="print-1903"></a>打印
 
-新的打印驱动程序文档以及 Windows 10，版本 1903年中新增功能包括：
+在 Windows 10 版本 1903 中添加的新打印驱动程序文档和功能包括：
 
-* 新的 USB 打印 Ioctl:
+* 新的 USB 打印 IOCTL：
 
   * [IOCTL_USBPRINT_GET_INTERFACE_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_interface_type)
   * [IOCTL_USBPRINT_GET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_protocol)
   * [IOCTL_USBPRINT_SET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_set_protocol)
 
-* 新**fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor)结构成员和更新的文档。
+* 新的 **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor) 结构成员和更新的文档。
 
 ### <a name="sensors-1903"></a>传感器
 
-Windows 10 中的传感器驱动程序开发中的新增功能，包括版本 1903年[MALT （Microsoft 环境光工具） 工具](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)用于测试和校准屏幕亮度。
+Windows 10 版本 1903 中传感器驱动程序开发的新功能包括用于测试和校准屏幕亮度的 [MALT（Microsoft 环境光照度工具）](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)。
 
-此外没有环境颜色 OEM 白皮书的更新。
+此外，还更新了环境色 OEM 白皮书。
 
 ### <a name="storage-1903"></a>存储
 
-在 Windows 10，版本 1903年中添加了以下存储功能：
+Windows 10 版本 1903 中添加了以下存储功能：
 
-* 新 Storport Api 中的 ETW 事件和平台 D3 的查询日志记录设备故障和硬件协议错误所需的行为
-* 若要设置的存储设备或适配器属性的新 API
-* 对于文件系统添加新 DDIs 可支持检索扩展的属性 (EA) 时的信息创建完成，从而使最小的筛选器更改 ECP 有效负载，若要更改更高版本的筛选器看到
+* 添加了新的 Storport API，用于在 ETW 事件中记录设备故障和硬件协议错误，以及查询平台 D3 所需的行为
+* 添加了新的 API 用于设置存储设备或适配器的属性
+* 对于文件系统，已添加新的 DDI 用于支持在创建完成时检索扩展属性 (EA) 信息，使微型筛选器能够改变 ECP 有效负载来更改更高级别的筛选器看到的结果
 
 ### <a name="windows-hardware-error-architecture-whea"></a>Windows 硬件错误体系结构 (WHEA)
 
-Windows 10 版本 1903年包括 WHEA 的简化的界面。  有关详细信息，请参阅以下页面：
+Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请参阅以下页：
 
 * [**WheaAddErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
 * [**WheaReportHwErrorDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
@@ -423,18 +423,18 @@ Windows 10 版本 1903年包括 WHEA 的简化的界面。  有关详细信息�
 
 ### <a name="wifi-1903"></a>Wi-Fi
 
-新的 wi-fi 驱动程序开发文档和功能包括：
+新的 Wi-Fi 驱动程序开发文档和功能包括：
 
-* 没问题计时度量 (FTM) 的新功能
-* 新[WPA3 SAE 身份验证](https://docs.microsoft.com/windows-hardware/drivers/network/wpa3-sae-authentication)功能
-* 新 Multiband 操作 (MBO) 支持，以提高企业方案中的漫游性能
-* 卸载支持的新信息报表
-* OID 命令、 NDIS 状态指示和 TLVs 这些新功能，请参阅[WDI 文档更改历史记录](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)
+* 新的精准时序测量(FTM) 功能
+* 新的 [WPA3-SAE 身份验证](https://docs.microsoft.com/windows-hardware/drivers/network/wpa3-sae-authentication)功能
+* 新的多频段操作 (MBO) 支持，可提高企业方案的漫游性能
+* 新的信标报告卸载支持
+* 有关这些新功能的 OID 命令、NDIS 状态指示和 TLV，请参阅 [WDI 文档更改历史记录](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)
 
-适用于 Windows 10，版本 1903年更新了以下主题：
+已更新 Windows 10 版本 1903 的以下主题：
 
-* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) -添加了对 WPA3 SAE 身份验证支持
-* [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame)并[OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-response-action-frame) -添加其他的传出点对点 (P2P) 操作帧验证
+* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) - 添加了对 WPA3-SAE 身份验证的支持
+* [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame) 和 [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-response-action-frame) - 对传出的点对点 (P2P) 动作帧添加了更多验证
 
 ## <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -822,7 +822,7 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 * ExGetFirmwareType 和 ExIsSoftBoot &ndash; 执行库支持例程。
 * [PsSetLoadImageNotifyRoutineEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetloadimagenotifyroutineex) &ndash; 针对所有可执行映像的扩展映像通知例程，包括其体系结构与操作系统本机体系结构不同的映像。
 * [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapmdl) &ndash; [内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)例程，用于将内存描述符列表 (MDL) 描述的物理页面映射到系统虚拟地址空间。
-* [PoFxSetTargetDripsDevicePowerState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; PoFx 例程，以通知 DRIPS 电源管理器的设备的目标设备电源状态。
+* [PoFxSetTargetDripsDevicePowerState ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; 一个 PoFx 例程，用于向电源管理器告知 DRIPS 的设备目标电源状态。
 * 下面是 [ZwSetInformationThread](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwsetinformationthread) 例程的与处理策略相关的新选项列表：
 
   * [PROCESS_MITIGATION_CHILD_PROCESS_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_process_mitigation_child_process_policy)
@@ -1151,7 +1151,7 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 
 ### <a name="storage-1507"></a>存储
 
-在 Windows 10 中，已添加新的特定于协议的接口以便允许应用与存储设备使用其本机设备协议交谈。 这些更新包括：
+在 Windows 10 中，已添加新的特定于协议的接口，使应用能够使用其本机设备协议来与存储设备通信。 这些更新包括：
 
 * 存储协议直通 &ndash; 更新的存储直通 IOCTL 接口支持较新的协议，包括非易失性快速存储器 (NVMe)。
 * 扩展的存储查询接口 &ndash; 扩展的存储查询接口可让应用程序查询协议相关的信息。

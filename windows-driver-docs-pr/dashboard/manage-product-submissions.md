@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d6438ed3d56dceea65e90d42753aa4954d90f3b2
-ms.sourcegitcommit: 102deacad36c96892cbbc39c02f41fe68e60470b
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66400871"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交
@@ -25,9 +25,9 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |:--|:--|:--|
 | GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}` | [获取某个特定产品的状态/数据](get-a-product.md)  |
 | GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}` |[获取产品的特定提交的状态/数据](get-a-submission.md)   |
-| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` | [创建新产品](create-a-new-product.md)   |
-| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/` | [为产品创建新的提交](create-a-new-submission-for-a-product.md)  |
-| 发布 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[确认产品提交](commit-a-product-submission.md)  |
+| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` | [创建新产品](create-a-new-product.md)   |
+| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/` | [为产品创建新的提交](create-a-new-submission-for-a-product.md)  |
+| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[确认产品提交](commit-a-product-submission.md)  |
 
 ## <a name="create-and-submit-a-product-for-signing"></a>创建并提交产品以进行签名
 
@@ -73,10 +73,10 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
     https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}
     ```
 
-    若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived  更改为 commitCompleted  ；如果请求中存在错误，此值应该更改为 commitFailed  。 如果存在错误，*error* 字段将包含有关错误的更多详细信息。
+    若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived  更改为 commitCompleted  ；如果请求中存在错误，此值应该更改为 commitFailed  。 如果存在错误，error  字段将包含有关错误的更多详细信息。
 
    >[!NOTE]
-   >有关每隔 10 分钟主要搜索页面刷新。 若要创建它们，请查看所有结果，请单击 **（全部） 驱动程序列表页**，在顶部**驱动程序**合作伙伴中心页。 尽管页面需要花费一些时间来处理并加载如果提交的很多，但时进行负载应列出成功和不成功提交。 有关详细信息，请参阅[找到硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)。
+   >“搜索”主页大约每隔 10 分钟刷新一次。 若要在创建时查看所有结果，请单击合作伙伴中心的“驱动程序”页顶部的“驱动程序列表页(全部)”。   如果提交了大量的请求，页面处理和加载需要花费一段时间，不过，在加载后，应会列出成功和失败的提交。 有关详细信息，请参阅[查找硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)。
 
 ## <a name="code-examples"></a>代码示例
 
@@ -92,6 +92,6 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 * [提交资源](get-product-data.md#submission-resource)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)

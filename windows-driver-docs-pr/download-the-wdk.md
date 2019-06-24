@@ -11,10 +11,10 @@ ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2b8512d6eecdafe700d710356ca221acaa2b6815
-ms.sourcegitcommit: 288c03841f90e6b03c98924a8d7cc44b5975b6f3
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66686949"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
@@ -26,7 +26,7 @@ WDK 用于开发、测试和部署 Windows 驱动程序。 下面提供了 WDK �
 * [了解驱动程序开发中的新增内容](what-s-new-in-driver-development.md)
 * [查看已知问题](https://go.microsoft.com/fwlink/?linkid=872986)
 
-## <a name="wdk-for-windows-10-version-1903"></a>WDK 适用于 Windows 10，版本 1903
+## <a name="wdk-for-windows-10-version-1903"></a>适用于 Windows 10 版本 1903 的 WDK
 
 ### <a name="download-iconimagesdownload-installpng-step-1-install-visual-studio-2019"></a>![“下载”图标](images/download-install.png) 第 1 步：安装 Visual Studio 2019
 
@@ -36,39 +36,39 @@ WDK 用于开发、测试和部署 Windows 驱动程序。 下面提供了 WDK �
 * [下载 Visual Studio Professional 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=16)
 * [下载 Visual Studio Enterprise 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=16)
 
-在安装 Visual Studio 2019，选择**使用的桌面开发C++** 工作负荷。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”  窗格中。 但是，WDK 适用于 Windows 10，版本 1903年兼容的 sdk 版本目前不默认 SDK。 若要选择正确的 SDK:
+安装 Visual Studio 2019 时，选择“使用 C++ 的桌面开发”  工作负荷。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”  窗格中。 但是，与适用于 Windows 10 版本 1903 的 WDK 兼容的 SDK 版本目前不是默认的 SDK。 若要选择正确的 SDK：
 
-* 在中**Visual Studio 安装程序**，然后在**工作负荷**选项卡上，在**安装详细信息**，展开**通用 Windows 平台开发**.
-* 下**可选**，选择**Windows 10 预览 SDK (10.0.18362.0)** 。
+* 在“Visual Studio 安装程序”中“工作负荷”选项卡上的“安装详细信息”下，展开“通用 Windows 平台开发”。    
+* 在“可选”下，选择“Windows 10 预览版 SDK (10.0.18362.0)”。  
 * 继续安装。
 
-如果已安装的 Visual Studio 2019，您可以使用安装 Windows 10 预览 SDK (10.0.18362.0)**修改**Visual Studio 安装中的按钮。
+如果已安装 Visual Studio 2019，则可以使用 Visual Studio 安装程序中的“修改”按钮安装 Windows 10 预览版 SDK (10.0.18362.0)。 
 
 对于 ARM/ARM64 驱动程序开发，选择“单个组件”  ，然后在“编译器、生成工具和运行时”  下方，选择“适用于 ARM/ARM64 的 Visual C++ 编译器和库”  。
 
-对于每个体系结构，你想要生成的驱动程序，请安装 Spectre 缓解的库通过单个组件-> 编译器、 生成工具，并运行时-> MSVC v142-VS 2019 c + x64/x86 Spectre 缓解库 (v14.21)。
+对于要为其生成驱动程序的每个体系结构，请通过“单个组件”->“编译器、生成工具和运行时”->“MSVC v142 - VS 2019 C+ x64/x86 Spectre-mitigated 库 (v14.21)”安装 Spectre mitigated 库。
 
-### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1903"></a>![“下载”图标](images/download-install.png) 步骤 2：安装 WDK 适用于 Windows 10，版本 1903
+### <a name="download-iconimagesdownload-installpng-step-2-install-wdk-for-windows-10-version-1903"></a>![“下载”图标](images/download-install.png) 步骤 2：安装适用于 Windows 10 版本 1903 的 WDK
 
-* [下载 WDK 适用于 Windows 10，版本 1903](https://go.microsoft.com/fwlink/?linkid=2085767)
+* [下载适用于 Windows 10 版本 1903 的 WDK](https://go.microsoft.com/fwlink/?linkid=2085767)
 
 从 1709 版本开始的新功能：默认情况下，安装 WDK 时将安装 WDK Visual Studio 扩展。 必须完成此操作，才能使 WDK VS 集成正常工作。
 
-## <a name="enterprise-wdk-for-windows-10-version-1903-ewdk"></a>企业 WDK 适用于 Windows 10，版本 1903 (EWDK)
+## <a name="enterprise-wdk-for-windows-10-version-1903-ewdk"></a>适用于 Windows 10 版本 1903 的企业版 WDK (EWDK)
 
-EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.0.0。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
+EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 1903 生成工具 16.0.0。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
 
 ### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools"></a>![“下载”图标](images/download-install.png) 包含 Visual Studio 生成工具的 EWDK
 
-* [下载 EWDK 适用于 Windows 10，版本 1903](https://developer.microsoft.com/windows/hardware/license-terms-EWDK-2)
+* [下载适用于 Windows 10 版本 1903 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK-2)
 
 ## <a name="additional-information"></a>其他信息
 
 ### <a name="release-notes-and-run-time-requirements"></a>发行说明和运行时要求
 
-WDK 需要 Visual Studio 中，有关详细信息的 Visual Studio 系统要求的详细信息，请查看[Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
+WDK 需要 Visual Studio，有关 Visual Studio 的系统要求的详细信息，请查看 [Visual Studio 1903 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
 
-EWDK 此外将什么.NET 的详细信息运行的请评审需要.NET 4.7.2 [.NET Framework 系统需求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。
+EWDK 还额外需要 .NET 4.7.2，有关 .NET 可以在哪些平台上运行的详细信息，请查看 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。
 
 你可以使用 WDK 开发适用于以下操作系统的驱动程序：
 

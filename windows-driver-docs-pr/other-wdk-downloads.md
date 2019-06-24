@@ -8,37 +8,38 @@ keywords:
 - WDK
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8606d350c16f66d35cc7bb9bb84886a396b07c
-ms.sourcegitcommit: 71938460f3d04caa4b4d6d0cee695db887ee35e8
+ms.custom: 19H1
+ms.openlocfilehash: 97ebdb06db555331f2a41700acddf4e76b0ad9d7
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136120"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63373554"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
-本主题介绍 Windows 驱动程序工具包 (WDK) 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要开发驱动程序，请使用可从[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
+本主题介绍 Windows 驱动程序工具包 (WDK) 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要开发驱动程序，请使用在[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 上提供下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
 
-Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows 驱动程序。 若要开发驱动程序，请使用可从[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
+Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows 驱动程序。 若要开发驱动程序，请使用在[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 上提供下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
 
 本主题介绍 WDK 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要使用这些早期的版本，必须*先*安装适用于目标平台的 Visual Studio 版本。
 
 ## <a name="step-1-install-visual-studio"></a>第 1 步：安装 Visual Studio
 
-我们在特定的 Visual Studio 版本中提供驱动程序开发支持。 若要开发特定 Windows 版本的驱动程序，必须使用下表中列出（并提供下载链接）的某个 Visual Studio 版本。
+支持开发特定 Visual Studio 版本的驱动程序。 若要开发特定 Windows 版本的驱动程序，必须使用在下表中标识（并提供下载链接）的某个 Visual Studio 版本。
 
 | Windows 目标版本      | Visual Studio 版本            |
 |--------------------------|----------------------------------------|
-| Windows 10 版本 1803 <br/>Windows 10 版本 1709 | [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
+| Windows 10 版本 1809 <br/>Windows 10 版本 1803 <br/>Windows 10 版本 1709 | [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
 | Windows 10 版本 1703 <br/>Windows 10 版本 1607 | [Visual Studio Express 2015 桌面版](https://go.microsoft.com/fwlink/?linkid=875331) <br/>[Visual Studio Community 2015](https://go.microsoft.com/fwlink/p/?LinkId=534599) <br/>[Visual Studio Professional 2015](https://go.microsoft.com/fwlink/p/?LinkId=619628) <br/>[Visual Studio Enterprise 2015](https://go.microsoft.com/fwlink/p/?LinkId=619629) |
 | Windows 8.1 更新 <br/>Windows 8.1 | [Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=875331) |
 | Windows 8                | [Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) <br/>[Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) |
 
-### <a name="configure-visual-studio-for-windows-10-versions-1709-and-1803"></a>配置适用于 Windows 10 版本 1709 和 1803 的 Visual Studio
+### <a name="configure-visual-studio-for-windows-10-versions-1709-1803-and-1809"></a>配置适用于 Windows 10 版本 1709、1803 和 1809 的 Visual Studio
 
-安装 Visual Studio 时，选择“使用 C++ 的桌面开发”工作负载。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”窗格中。
+安装 Visual Studio 时，选择“使用 C++ 的桌面开发”  工作负载。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”  窗格中。
 
-若要开发 ARM/ARM64 的驱动程序，请选择“单个组件”，然后在“编译器、生成工具和运行时”下选择“适用于 ARM/ARM64 的 Visual C++ 编译器和库”。
+若要开发 ARM/ARM64 的驱动程序，请选择“单个组件”  ，然后在“编译器、生成工具和运行时”  下选择“适用于 ARM/ARM64 的 Visual C++ 编译器和库”  。
 
 ### <a name="install-the-windows-sdk-to-target-windows-10-versions-1607-and-1703"></a>将 Windows SDK 安装到目标 Windows 10 版本 1607 和 1703
 
@@ -62,6 +63,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 | Windows 版本      | WDK 和相关下载                       |
 |--------------------------|-------------------------------------------------|
+| Windows 10 版本 1809 | [适用于 Windows 10 版本 1809 的 WDK](https://go.microsoft.com/fwlink/?linkid=2026156) |
 | Windows 10 版本 1803 | [适用于 Windows 10 版本 1803 的 WDK](https://go.microsoft.com/fwlink/?linkid=873060) |
 | Windows 10 版本 1709 | [适用于 Windows 10 版本 1709 的 WDK](https://go.microsoft.com/fwlink/p/?linkid=859232) |
 | Windows 10 版本 1703 | [适用于 Windows 10 版本 1703 的 WDK](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
@@ -72,15 +74,15 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 
 > [!IMPORTANT]
-> 如果先安装了适用于 Windows 10 版本 1703 的 WDK，然后又在同一个系统中安装了适用于 Windows 10 版本 1607 的 WDK，则可能会删除较早 WDK 版本的某些文件。 若要还原这些文件，请执行以下操作：
-> 1. 在“开始”菜单上，在搜索框中输入“应用和功能”，然后从结果中选择“应用和功能”。
-> 2. 在“应用和功能”列表中查找“Windows 驱动程序工具包 - Windows 10.0.15063.0”，然后选择该程序。
-> 3. 依次选择“修改”>“修复”，然后按照屏幕上的说明进行操作。
+> 如果在已安装适用于 Windows 10 版本 1607 的 WDK 的系统上安装了适用于 Windows 10 版本 1703 的 WDK，则可能会删除 WDK 早期版本的某些文件。 若要还原这些文件，请执行以下操作：
+> 1. 在“开始”菜单上，在搜索框中输入“应用和功能”  ，然后从结果中选择“应用和功能”  。
+> 2. 在“应用和功能”  列表中查找“Windows 驱动程序工具包 - Windows 10.0.15063.0”  ，然后选择该程序。
+> 3. 依次选择“修改”  >“修复”  ，然后按照屏幕上的说明进行操作。
 > 4. 此时这些文件将被还原。
 
 ## <a name="optional-install-the-ewdk"></a>可选：安装 EWDK
 
-企业版 WDK (EWDK) 是一种独立的自包含命令行环境，用于生成驱动程序和基本的 Win32 测试应用程序。 其中包括 Visual Studio 生成工具、SDK 和 WDK。 此环境不包含 Visual Studio 中可用的所有功能，例如集成开发环境 (IDE)。
+企业版 WDK (EWDK) 是一种独立的自包含命令行环境，用于生成驱动程序和基本的 Win32 测试应用程序。 其中包括 Visual Studio 生成工具、SDK 和 WDK。 此环境不包含在 Visual Studio 中可用的所有功能，例如集成开发环境 (IDE)。
 
 使用 EWDK 需要 .NET Framework 4.6.1。 若要详细了解哪些系统运行此版本的框架，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/en-us/dotnet/framework/get-started/system-requirements)。 如需用于下载 .NET Framework 的链接，请参阅[安装面向开发人员的 .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers)。
 
@@ -88,6 +90,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 | Windows 版本               | EWDK                              |
 |-----------------------------------|-----------------------------------|
+| Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
 | Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
 | Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-6)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709-VS15-4) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1709) |
 | Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk-1703) |
@@ -116,7 +119,7 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 
 获取适用于 Windows XP 的独立调试工具的方法是先下载 Windows 7 SDK：[适用于 Windows 7 和 .NET Framework 4 的 Microsoft Windows SDK](https://www.microsoft.com/download/confirmation.aspx?id=8279)。
 
-若要将 Windows 调试工具作为单独组件进行安装，请启动 SDK 安装程序，在安装向导中选择“Windows 调试工具”，然后清除其他所有组件。
+若要将 Windows 调试工具作为单独组件进行安装，请启动 SDK 安装程序，在安装向导中选择“Windows 调试工具”  ，然后清除其他所有组件。
 
 ### <a name="related-downloads"></a>相关下载
 * [下载 Windows 评估和部署工具包 (Windows ADK)](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)

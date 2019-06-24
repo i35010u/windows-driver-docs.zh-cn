@@ -4,12 +4,12 @@ description: 将调试器附加到打印筛选器管道服务
 ms.assetid: d2e032f8-bdce-415a-8cf4-d9816b7c9de5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67e192843109645c22899f424b6b5273dbb8c425
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93f632312ddd5a85fa8f1c8620d2224b4333172c
+ms.sourcegitcommit: 5decd841b9fcd9f4245c96ee0c028894c1e19f94
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331189"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325928"
 ---
 # <a name="attaching-a-debugger-to-the-print-filter-pipeline-service"></a>将调试器附加到打印筛选器管道服务
 
@@ -30,7 +30,7 @@ XPSDrv 驱动程序筛选器承载的打印筛选器管道服务 (printfilterpip
 
 2.  添加**PipelineHostTimeout** REG\_DWORD 注册表项，如果尚未存在的值。
 
-3.  设置**PipelineHostTimeout**为超时值，以毫秒为单位。 设置一个足够大的值为自己提供充足的时间要附加的进程，并且已设置断点。 例如，如果你想.5 分钟的超时值，则设置**PipelineHostTimeout**到 90000。
+3.  设置**PipelineHostTimeout**为超时值，以毫秒为单位。 设置一个足够大的值为自己提供充足的时间要附加的进程，并且已设置断点。 例如，如果你想 1.5 分钟的超时值，则设置**PipelineHostTimeout**到 90000。
 
 设置后**PipelineHostTimeout**值时，请使用以下过程将 WinDbg 附加到管道筛选器服务：
 

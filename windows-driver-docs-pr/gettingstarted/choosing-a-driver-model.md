@@ -7,12 +7,12 @@ keywords:
 - 驱动程序设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509f523f2e7829d0b806eee122390db396b2988b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 76bab3e2e74f91d091f27b4d80a6668154b4348a
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518403"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63371443"
 ---
 # <a name="choosing-a-driver-model"></a>选择驱动程序模型
 
@@ -36,7 +36,7 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 如果必须编写函数驱动程序，则最好使用哪个驱动程序模型？
 若要回答这些问题，请确定设备的何处可以容纳[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)中介绍的技术列表。 参阅该特定技术的文档，以确定是否需要编写函数驱动程序以及了解哪些驱动程序模型可供设备使用。
 
-某些个别技术具有微型驱动程序模型。 在微型驱动程序模型中，设备驱动程序由两个部分组成：一个部分处理常规任务，另一部分处理设备特定的任务。 通常，Microsoft 编写通用部分，设备制造商编写设备特定的部分。 设备特定的部分具有多种名称，其中大部分名称都共享前缀“微型”。 以下是微型驱动程序模型中使用的一些名称：
+某些个别技术具有微型驱动程序模型。 在微型驱动程序模型中，设备驱动程序由两个部分组成：一个部分处理常规任务，另一部分处理设备特定的任务。 通常，Microsoft 编写通用部分，设备制造商编写设备特定的部分。 设备特定的部分具有多种名称，其中大部分名称都共享前缀“微型”  。 以下是微型驱动程序模型中使用的一些名称：
 
 -   显示器微型端口驱动程序
 -   音频微型端口驱动程序
@@ -62,11 +62,11 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 ## <a name="span-idchoosingadrivermodelforasoftwaredriverspanspan-idchoosingadrivermodelforasoftwaredriverspanspan-idchoosingadrivermodelforasoftwaredriverspanchoosing-a-driver-model-for-a-software-driver"></a><span id="Choosing_a_driver_model_for_a_software_driver"></span><span id="choosing_a_driver_model_for_a_software_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_SOFTWARE_DRIVER"></span>为软件驱动程序选择驱动程序模型
 
 
-未与设备关联的驱动程序称为“软件驱动程序”。 有关软件驱动程序的介绍，请参阅[什么是驱动程序？](what-is-a-driver-.md)主题。 软件驱动程序很有用，原因是这些驱动程序可以在内核模式下运行，这样为其提供了受保护操作系统数据的访问权限。 有关处理器模式的信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。
+未与设备关联的驱动程序称为“软件驱动程序”  。 有关软件驱动程序的介绍，请参阅[什么是驱动程序？](what-is-a-driver-.md)主题。 软件驱动程序很有用，原因是这些驱动程序可以在内核模式下运行，这样为其提供了受保护操作系统数据的访问权限。 有关处理器模式的信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。
 
-有关软件驱动程序，你的两个选项为 KMDF 和内核模式 Windows NT 驱动程序模型。 使用 KMDF 和内核模式 Windows NT 模型，你可以编写驱动程序，而无需考虑即插即用 (PnP) 和电源管理。 你可以改为专心于驱动程序的首要任务上。 使用 KMDF，你不必考虑 PnP 和电源，因为框架会为你处理 PnP 和电源。 使用内核模式 Windows NT 模型，你不必考虑 PnP 和电源，因为内核模式服务在与 PnP 和电源管理完全无关的环境中运行。
+对于软件驱动程序，可以使用两个选项：KMDF，以及传统的 Windows NT 驱动程序模型。 使用 KMDF 和传统 Windows NT 模型可以编写驱动程序，而无需考虑即插即用 (PnP) 和电源管理。 你可以改为专心于驱动程序的首要任务上。 使用 KMDF，你不必考虑 PnP 和电源，因为框架会为你处理 PnP 和电源。 如果使用传统 Windows NT 模型，无需考虑 PnP 和电源，因为内核模式服务在与 PnP 和电源管理完全无关的环境中运行。
 
-我们的建议是使用 KMDF，尤其是当你已熟悉它时。 如果你希望驱动程序与 PnP 和电源管理完全无关，则使用内核模式 Windows NT 模型。 如果你需要编写注意到电源转换或 PnP 事件的软件，则不能使用内核模式 Windows NT 模型；必须使用 KMDF。
+我们的建议是使用 KMDF，尤其是当你已熟悉它时。 如果你希望驱动程序与 PnP 和电源管理完全无关，请使用传统 Windows NT 模型。 如果需要编写考虑电源转换或 PnP 事件的软件，则不能使用传统 Windows NT 模型，而必须使用 KMDF。
 
 **注意**  在极少数情况下，你需要编写注意到 PnP 或电源事件的软件驱动程序，并且驱动程序需要访问无法通过 KMDF 获取的数据，你必须使用 WDM。
 

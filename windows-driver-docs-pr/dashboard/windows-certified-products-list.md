@@ -1,42 +1,42 @@
 ---
-title: Windows 兼容的产品列表
-description: Windows 兼容的产品列表
+title: Windows 兼容产品列表
+description: Windows 兼容产品列表
 ms.assetid: e03b18e3-5c5c-4636-89dc-ab15ae6b25a0
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e85d07b2d817dee54e7c42657d4c761cf3bc026
-ms.sourcegitcommit: aedbbf22c58e7264db0aa80608b30db713b3a247
-ms.translationtype: MT
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66830408"
 ---
-# <a name="windows-compatible-products-list"></a>Windows 兼容的产品列表
+# <a name="windows-compatible-products-list"></a>Windows 兼容产品列表
 
-[Windows 兼容的产品列表](https://aka.ms/AA5bmch)是已认证的设备和系统的完整列表。 Windows 兼容的产品列表具有以下功能和限制：
+[Windows 兼容产品列表](https://aka.ms/AA5bmch)是一个包含经认证的设备和系统的综合列表。 Windows 兼容产品列表具有以下功能和限制：
 
 * 你可以通过筛选该列表或通过运行针对特定产品名称的搜索来查找设备和系统。
-* 您可以搜索所有认证的设备和整个目录的系统。
-* 如果你需要有关 Rfp 的 OEM 系统报告，可以搜索产品/市场营销名称，并收到一份验证报告，你可以下载。 
-* 兼容的产品列表显示通用状态 （&） 声明性的所有设备类。
+* 可以在所有已认证设备和系统中搜索整个目录。
+* 如果需要 RFP 的 OEM 系统报告，可以搜索产品/营销名称，并接收可供下载的认证报告。 
+* 兼容产品列表显示所有设备类的声明和通用状态。
 
 > [!IMPORTANT]
->系统搜索不支持 & U 的状态字段。 因此，必须设置**U 状态 （&) D**搜索字段下拉列表中**所有**若要查看系统结果。
+>系统搜索不支持 D 和 U 状态字段。 因此，必须将“D 和 U 状态”搜索字段下拉列表设置为“所有”才能查看系统结果。  
 
-## <a name="searching-for-marketing-and-product-names-for-systems-or-devices"></a>对系统或设备的市场营销和产品名称搜索
+## <a name="searching-for-marketing-and-product-names-for-systems-or-devices"></a>搜索系统或设备的营销名称和产品名称
 
-如果使用搜索**市场营销/产品名称**产品中的框中，兼容的产品列表返回匹配名称、 提交名称和市场营销名称字段。 请注意以下事项：
+如果使用“营销/产品名称”框进行搜索，兼容产品列表将返回产品名称、提交名称和营销名称字段中的匹配项。  请注意：
 
-* 限制为纯文本，不带引号或通配符搜索。
-* 单词之间的任何空格将被视为**AND**表达式。
-* 不使用任何特殊字符或限制搜索的术语。 例如，不要使用 (OR、 AND、""， \*，？，等等。)。
+* 将搜索限制为不带引号或通配符的纯文本。
+* 单词之间的任何空格被视为 **AND** 表达式。
+* 不要使用任何特殊字符或搜索限制词。 例如，不要使用 OR、AND、""、\*、? 等字符。
 
 ## <a name="searching-for-a-company-name"></a>搜索公司名称 
 
-仅为纯文本，不带引号或通配符搜索。 例如，不要使用 (OR、 AND、""， \*，？，等等。)。
+将搜索限制为不带引号或通配符的纯文本。 例如，不要使用 OR、AND、""、\*、? 等字符。
 
-键入五个字母后，搜索功能将自动完成结果。 
+键入五个字母后，搜索功能会自动完成结果。 
 
 > [!NOTE]
->您可能会发现，某些公司会列出两次。 这是合并硬件开发人员中心与以前的数据库的结果。 每个条目都不同，因此最好是使用搜索**市场营销/产品名称**字段。
+>你可能会发现，某些公司已两次列出。 这是因为以前的数据库已合并到硬件开发人员中心。 每个条目都是不同的，因此，最好是使用“营销/产品名称”字段进行搜索。 

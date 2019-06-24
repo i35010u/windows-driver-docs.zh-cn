@@ -4,12 +4,13 @@ title: 创建新的软件驱动程序
 description: 在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的软件驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f035f648f4b421c1ac20776c33d64d399906d0cb
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.custom: 19H1
+ms.openlocfilehash: 35193495b1b556bf16f6c14a3ca153bf146b88f5
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518142"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63382417"
 ---
 # <a name="creating-a-new-software-driver"></a>创建新的软件驱动程序
 
@@ -17,51 +18,43 @@ ms.locfileid: "56518142"
 
 开始之前，请先确定哪个驱动程序模型适用于你的软件驱动程序。 三个选项分别是内核模式驱动程序框架 (KMDF)、旧 NT 驱动程序模型和 Windows 驱动程序模型 (WDM)。 如果在确定最适合的模型时需要帮助，请参阅[选择驱动程序模型](https://msdn.microsoft.com/Library/Windows/Hardware/Ff554652)。
 
-## <a name="span-idcase1youwanttousekmdfspanspan-idcase1youwanttousekmdfspancase-1-you-want-to-use-kmdf"></a><span id="case_1__you_want_to_use_kmdf."></span><span id="CASE_1__YOU_WANT_TO_USE_KMDF."></span>案例 1：你想要使用 KMDF。
+## <a name="case-1-you-want-to-use-kmdf"></a>案例 1：你想要使用 KMDF
 
+1. 在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2. 在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
+3. 在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
+4. 填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)。
+    > [!NOTE]
+    > 在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
+5. 此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的软件驱动程序的代码。
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”。
-3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”。
-4.  填写“名称”和“位置”框，然后单击“确定”。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://msdn.microsoft.com/Library/Windows/Hardware/Hh439654)。
-    **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
-5.  此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的软件驱动程序的代码。
+## <a name="case-2-you-want-to-use-the-legacy-nt-model"></a>情况 2：你想要使用传统的 NT 模型
 
-## <a name="span-idcase2youwanttousethelegacyntmodelspanspan-idcase2youwanttousethelegacyntmodelspancase-2-you-want-to-use-the-legacy-nt-model"></a><span id="case_2__you_want_to_use_the_legacy_nt_model."></span><span id="CASE_2__YOU_WANT_TO_USE_THE_LEGACY_NT_MODEL."></span>案例 2：你想要使用旧 NT 模型。
+1. 在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2. 在 Visual Studio 的“新建项目”对话框中，在“Windows 驱动程序”  下选择“WDM | 空 WDM 驱动程序”  。
 
+    > [!NOTE]
+    > 不需要编写 WDM 驱动程序，但需要“空 WDM 驱动程序”  模板。
+3. 填写“名称”  和“位置”  框，然后单击“确定”  。
+4. 此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”  。
+5. 在“添加新项目”对话框中，选择“C++ 文件(.cpp)”  ，为文件输入一个名称，然后单击“确定”  。
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在 Visual Studio 的“新建项目”对话框中，在“Windows 驱动程序”下选择“WDM | 空 WDM 驱动程序”。
+    > [!NOTE]
+    > 若要创建 .c 文件而不是 .cpp 文件，请输入包含 **.c** 扩展名的名称。
+6. 包括 ntddk.h。
+7. 实现你的软件驱动程序所需的功能。 在实现和组织功能时，你可能决定添加头文件和其他 .cpp 或 .c 文件。
 
-    **注意**  你不需要编写 WDM 驱动程序，但你需要“空 WDM 驱动程序”模板。
-3.  填写“名称”和“位置”框，然后单击“确定”。
-4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”。
-5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后单击“确定”。
-
-    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
-6.  包括 ntddk.h。
-7.  实现你的软件驱动程序所需的功能。 在实现和组织功能时，你可能决定添加头文件和其他 .cpp 或 .c 文件。
-
-## <a name="span-idcase3youwanttousewdmspanspan-idcase3youwanttousewdmspancase-3-you-want-to-use-wdm"></a><span id="case_3__you_want_to_use_wdm."></span><span id="CASE_3__YOU_WANT_TO_USE_WDM."></span>案例 3：你想要使用 WDM。
-
+## <a name="case-3-you-want-to-use-wdm"></a>情况 3：你想要使用 WDM
 
 你想要对软件驱动程序使用 WDM 的可能性微乎其微。 但如果你有此打算，请执行以下步骤。
 
-1.  在 Visual Studio 中的“文件”菜单上，选择“新建 | 项目”。
-2.  在 Visual Studio 中的“新建项目”对话框中，在“Windows 驱动程序”下选择 **WDM**。
-3.  填写“名称”和“位置”框，然后单击“确定”。
-4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”。
-5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后单击“确定”。
+1. 在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
+2. 在 Visual Studio 中的“新建项目”对话框中，在“Windows 驱动程序”  下选择 **WDM**。
+3. 填写“名称”  和“位置”  框，然后单击“确定”  。
+4. 此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”  。
+5. 在“添加新项目”对话框中，选择“C++ 文件(.cpp)”  ，为文件输入一个名称，然后单击“确定”  。
 
-    **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
-6.  包括 wdm.h。
-7.  实现你的软件驱动程序所需的功能。 在实现和组织功能时，你可能决定添加头文件和其他 .cpp 或 .c 文件。
-
- 
-
- 
-
-
-
-
-
+    > [!NOTE]
+    > 若要创建 .c 文件而不是 .cpp 文件，请输入包含 **.c** 扩展名的名称。
+6. 包括 wdm.h。
+7. 实现你的软件驱动程序所需的功能。 在实现和组织功能时，你可能决定添加头文件和其他 .cpp 或 .c 文件。

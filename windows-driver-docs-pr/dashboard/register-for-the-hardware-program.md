@@ -5,16 +5,21 @@ ms.assetid: 8E947636-7F0E-4C31-9149-D6BF60D84226
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae987ffe0419540acfd1db2df0cc91981ff6a7e
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8236e67db1829e08b493197ccce4c5fed0265463
+ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56518091"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "65106395"
 ---
 # <a name="register-for-the-hardware-program"></a>注册硬件计划
 
 组织管理员必须[注册](https://go.microsoft.com/fwlink/?LinkID=828002) Windows 硬件开发人员中心计划。
+
+> [!Note]
+> 如果在此过程中需要支持，请开具支持票证： https://developer.microsoft.com/windows/support 。  
+>- 依次选择“联系我们”  、“仪表板问题”  ，然后从下拉列表中选择“硬件提交和签名(所有 OS 版本)”  。  
+>- 实时聊天和电子邮件支持时间为星期一至星期五上午 8 点到晚上 8 点（中部标准时间）。  电子邮件支持的初始响应 SLA 为 24-48 小时。
 
 ## <a name="before-you-sign-up"></a>注册之前
 
@@ -43,7 +48,7 @@ ms.locfileid: "56518091"
 2. 下载 signtool.exe
     - signtool.exe 作为 [Windows SDK 下载](https://developer.microsoft.com/windows/downloads/windows-10-sdk)的一部分提供
 
-3. 在注册过程的“签名并上传”部分中为提供给你的文件签名并上传。
+3. 在注册过程的“签名并上传”  部分中为提供给你的文件签名并上传。
     > [!NOTE]
     > 不再需要在同一浏览器会话中完成以下三个步骤。
 
