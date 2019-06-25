@@ -15,14 +15,14 @@ keywords:
 - Unicode 字符串 WDK KMDF
 - WDK KMDF，USB I/O 目标的状态信息
 - 设备对象 WDK KMDF
-ms.date: 04/20/2017
+ms.date: 06/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 094f310af56bfc9f1495a4433bb481ce5e126e5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1b40a726288e78e1d61d10f622f6dcd5eb374c5
+ms.sourcegitcommit: b13b4947916a2237af3a00792c0f4f2ef33877c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383541"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67346444"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 
@@ -82,10 +82,10 @@ ms.locfileid: "63383541"
 <a href="" id="wdfusbtargetdeviceretrieveinformation"></a>[**WdfUsbTargetDeviceRetrieveInformation**](https://msdn.microsoft.com/library/windows/hardware/ff550100)  
 检索与 USB 设备相关联的版本和功能的信息。
 
-<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550095)  
+<a href="" id="wdfusbtargetdeviceisconnectedsynchronous--kmdf-only-"></a>[**WdfUsbTargetDeviceIsConnectedSynchronous (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550095)  
 确定是否已连接设备。
 
-<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550099)  
+<a href="" id="wdfusbtargetdeviceretrievecurrentframenumber--kmdf-only-"></a>[**WdfUsbTargetDeviceRetrieveCurrentFrameNumber (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550099)  
 检索当前的 USB 帧数。
 
 ## <a href="" id="obtaining-a-device-s-unicode-strings"></a>获取 USB 描述符
@@ -129,10 +129,10 @@ ms.locfileid: "63383541"
 <a href="" id="---------wdfusbtargetdeviceresetportsynchronously"></a>[**WdfUsbTargetDeviceResetPortSynchronously**](https://msdn.microsoft.com/library/windows/hardware/ff550097)  
 以同步方式发送请求以重置设备的 USB 端口。
 
-<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550080)  
+<a href="" id="---------wdfusbtargetdevicecycleportsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceCyclePortSynchronously (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550080)  
 以同步方式发送请求以重启设备的 USB 端口。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550084)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforcycleport--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForCyclePort (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550084)  
 设置格式的请求来重新启动设备的 USB 端口。 该驱动程序必须调用[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)以同步或异步发送请求。
 
 有关相关信息，请参阅[如何从 USB 管道错误中恢复](https://msdn.microsoft.com/library/windows/hardware/hh968307)。
@@ -142,22 +142,22 @@ ms.locfileid: "63383541"
 
 如果 KMDF 驱动程序通过发送包含 URBs 的 I/O 请求具有其 USB 设备进行通信，该驱动程序可以调用以下方法：
 
-<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/hh439423)  
+<a href="" id="wdfusbtargetdevicecreateurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateUrb (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)  
 分配 USB 请求块 (URB)。 然后再调用[ **WdfUsbTargetDeviceCreateUrb**](https://msdn.microsoft.com/library/windows/hardware/hh439423)，驱动程序必须调用[ **WdfUsbTargetDeviceCreateWithParameters**](https://msdn.microsoft.com/library/windows/hardware/hh439428)。
 
-<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/hh439420)  
+<a href="" id="wdfusbtargetdevicecreateisochurb--kmdf-only-"></a>[**WdfUsbTargetDeviceCreateIsochUrb (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)  
 分配等时的 USB 请求块 (URB)。 然后再调用[ **WdfUsbTargetDeviceCreateIsochUrb**](https://msdn.microsoft.com/library/windows/hardware/hh439420)，驱动程序必须调用[ **WdfUsbTargetDeviceCreateWithParameters**](https://msdn.microsoft.com/library/windows/hardware/hh439428)。
 
-<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550105)  
+<a href="" id="---------wdfusbtargetdevicesendurbsynchronously--kmdf-only-"></a>[**WdfUsbTargetDeviceSendUrbSynchronously (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550105)  
 以同步方式将发送包含 URB 的 I/O 请求。
 
-<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff550088)  
+<a href="" id="---------wdfusbtargetdeviceformatrequestforurb--kmdf-only-"></a>[**WdfUsbTargetDeviceFormatRequestForUrb (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff550088)  
 设置包含 URB 的 I/O 请求的格式。 该驱动程序必须调用[ **WdfRequestSend** ](https://msdn.microsoft.com/library/windows/hardware/ff550027)以同步或异步发送请求。
 
-<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (仅适用于 KMDF)**](https://msdn.microsoft.com/library/windows/hardware/ff551127)  
+<a href="" id="---------wdfusbtargetdevicewdmgetconfigurationhandle--kmdf-only-"></a>[**WdfUsbTargetDeviceWdmGetConfigurationHandle (仅适用于 KMDF)** ](https://msdn.microsoft.com/library/windows/hardware/ff551127)  
 返回设备的 USBD 配置句柄。 某些 URBs 要求此句柄。
 
-URBs 的一般概念背景，请参阅[Allocating 和构建 URBs](https://msdn.microsoft.com/library/windows/hardware/hh450844)。
+URBs 的一般概念背景，请参阅[Allocating 和构建 URBs](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-add-xrb-support-for-client-drivers)。
 
  
 
