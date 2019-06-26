@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f8bb4847cc97e0e890dd627d408a891d0bf2759
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3abed8d526536101eb54dbfacfc9fda41680943a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382094"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362645"
 ---
 # <a name="ksmethodbdacreatetopology"></a>KSMETHOD\_BDA\_创建\_拓扑
 
@@ -56,11 +56,11 @@ KSMULTIPLE\_项结构，它是一系列拓扑信息的标头。
 ## <a name="see-also"></a>请参阅
 
 
-[**BdaMethodCreateTopology**](https://msdn.microsoft.com/library/windows/hardware/ff556471)
+[**BdaMethodCreateTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)
 
-[**KSMETHOD**](https://msdn.microsoft.com/library/windows/hardware/ff563398)
+[**KSMETHOD**](https://docs.microsoft.com/previous-versions/ff563398(v=vs.85))
 
-[**KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)
+[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
  
 

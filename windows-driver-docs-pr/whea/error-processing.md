@@ -17,12 +17,12 @@ keywords:
 - PSHED WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b30a07f2179c525fc9ddcd124f227b3463fe13fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59302d85710f1e3ad39c409016e894c79457f691
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354439"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362589"
 ---
 # <a name="error-processing"></a>错误处理
 
@@ -37,7 +37,7 @@ Windows 硬件错误体系结构 (WHEA) 的错误条件的分类根据不同的�
 
 2.  LLHEH 验证存在硬件错误。
 
-3.  LLHEH 检索错误源中的硬件错误信息，并使用错误数据来填充硬件错误数据包中。 此数据包的格式设置为[WHEA\_错误\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff560465)结构。
+3.  LLHEH 检索错误源中的硬件错误信息，并使用错误数据来填充硬件错误数据包中。 此数据包的格式设置为[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构。
 
 4.  调入 LLHEH*特定于平台的硬件错误驱动程序*(PSHED) 来检索特定于平台的硬件错误的任何信息。 如果 PSHED 插件已安装并且正在注册参与错误信息检索，PSHED 将反过来调入 PSHED 插件，以便它可以进一步扩充 LLHEH 到返回的错误信息。
 
