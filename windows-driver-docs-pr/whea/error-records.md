@@ -12,12 +12,12 @@ keywords:
 - 错误记录部分 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2813b78757b9740ac5a7c0ae516a5d6568f7d8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 18c8d54f2a454eed32681229b62f2cfd7d10b4e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350624"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362587"
 ---
 # <a name="error-records"></a>错误记录
 
@@ -34,15 +34,15 @@ Windows 硬件错误体系结构 (WHEA) 使用标准错误记录格式来表示�
 
 错误记录可以包括错误记录各节和节描述符的动态添加额外的缓冲空间。 额外的缓冲空间还可用来动态增加现有错误记录各节的大小。
 
-错误记录所描述[ **WHEA\_错误\_记录**](https://msdn.microsoft.com/library/windows/hardware/ff560483)描述的错误记录标头结构[ **WHEA\_错误\_记录\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff560487)结构和错误记录段描述符每个描述了[ **WHEA\_错误\_记录\_一节\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff560496)结构。
+错误记录所描述[ **WHEA\_错误\_记录**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record)描述的错误记录标头结构[ **WHEA\_错误\_记录\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_header)结构和错误记录段描述符每个描述了[ **WHEA\_错误\_记录\_一节\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构。
 
 每个错误记录部分可以是以下部分类型之一：
 
 <a href="" id="hardware-error-packet"></a>硬件错误数据包  
-此错误记录部分包含通过报告了错误的低级别的硬件错误处理程序 (LLHEH) 传递到操作系统的硬件错误数据包。 在本部分中包含的数据描述由[WHEA\_错误\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff560465)结构。
+此错误记录部分包含通过报告了错误的低级别的硬件错误处理程序 (LLHEH) 传递到操作系统的硬件错误数据包。 在本部分中包含的数据描述由[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构。
 
 <a href="" id="generic-processor-error"></a>泛型处理器错误  
-此错误记录部分包含不是特定于特定的处理器体系结构的处理器错误数据。 在本部分中包含的数据描述由[ **WHEA\_处理器\_泛型\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560607)结构。
+此错误记录部分包含不是特定于特定的处理器体系结构的处理器错误数据。 在本部分中包含的数据描述由[ **WHEA\_处理器\_泛型\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_processor_generic_error_section)结构。
 
 <a href="" id="x86-x64-processor-error"></a>x86/x64 处理器错误  
 此错误记录部分包含特定于 x86 或 x64 处理器体系结构的处理器错误数据。 在本部分中包含的数据描述由[ **WHEA\_XPF\_处理器\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560655)结构。 下图显示了如何将包含处理器错误数据的数据结构存储在 VariableInfo 成员。 
@@ -53,24 +53,24 @@ Windows 硬件错误体系结构 (WHEA) 使用标准错误记录格式来表示�
 此错误记录部分包含特定于 Itanium 处理器体系结构的处理器错误数据。 有关此错误记录部分包含的错误数据的格式的详细信息，请参阅[Intel Itanium 处理器系列系统抽象层规范](https://go.microsoft.com/fwlink/p/?linkid=72212)。
 
 <a href="" id="itanium-processor-firmware-error-record-reference"></a>Itanium 处理器固件错误记录参考  
-此错误记录部分包含对特定于 Itanium 处理器体系结构的固件错误记录的引用。 此错误记录部分所描述[ **WHEA\_固件\_错误\_记录\_引用**](https://msdn.microsoft.com/library/windows/hardware/ff560520)结构。
+此错误记录部分包含对特定于 Itanium 处理器体系结构的固件错误记录的引用。 此错误记录部分所描述[ **WHEA\_固件\_错误\_记录\_引用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_firmware_error_record_reference)结构。
 
 <a href="" id="platform-memory-error"></a>平台内存错误  
-此错误记录部分包含平台内存错误数据。 在本部分中包含的数据描述由[ **WHEA\_内存\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560565)结构。
+此错误记录部分包含平台内存错误数据。 在本部分中包含的数据描述由[ **WHEA\_内存\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_memory_error_section)结构。
 
 <a href="" id="nonmaskable-interrupt"></a>不可屏蔽的中断  
-此错误记录部分包含不可屏蔽的中断 (NMI) 数据。 在本部分中包含的数据描述由[ **WHEA\_NMI\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560571)结构。
+此错误记录部分包含不可屏蔽的中断 (NMI) 数据。 在本部分中包含的数据描述由[ **WHEA\_NMI\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_nmi_error_section)结构。
 
 <a href="" id="pci-express-error"></a>PCI Express Error  
-此错误记录部分包含 PCI Express 错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIEXPRESS\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560576)结构。
+此错误记录部分包含 PCI Express 错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIEXPRESS\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pciexpress_error_section)结构。
 
 <a href="" id="pci-pci-x-bus-error"></a>PCI/PCI-X 总线错误  
-此错误记录部分包含 PCI/PCI-X 总线错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIXBUS\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560583)结构。
+此错误记录部分包含 PCI/PCI-X 总线错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIXBUS\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pcixbus_error_section)结构。
 
 <a href="" id="pci-pci-x-device-error"></a>PCI/PCI-X 设备错误  
-此错误记录部分包含 PCI/PCI-X 设备错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIXDEVICE\_错误\_部分**](https://msdn.microsoft.com/library/windows/hardware/ff560589)结构。
+此错误记录部分包含 PCI/PCI-X 设备错误数据。 在本部分中包含的数据描述由[ **WHEA\_PCIXDEVICE\_错误\_部分**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_pcixdevice_error_section)结构。
 
-对于不适合上述列表中的部分类型之一的附加硬件错误数据，可以定义特定于平台的错误记录部分包含的数据。 对于每种类型的特定于平台的错误记录部分定义，用于标识错误类型的相应 GUID 必须定义记录部分。 中指定此 GUID **SectionType**的任何成员[ **WHEA\_错误\_记录\_部分\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff560496)结构，描述该类型的错误记录部分。
+对于不适合上述列表中的部分类型之一的附加硬件错误数据，可以定义特定于平台的错误记录部分包含的数据。 对于每种类型的特定于平台的错误记录部分定义，用于标识错误类型的相应 GUID 必须定义记录部分。 中指定此 GUID **SectionType**的任何成员[ **WHEA\_错误\_记录\_部分\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构，描述该类型的错误记录部分。
 
 如果没有额外的硬件错误数据不符合到上一列表中的部分类型之一或定义的特定于平台的错误记录部分，使用一般性错误记录部分包含的数据。
 

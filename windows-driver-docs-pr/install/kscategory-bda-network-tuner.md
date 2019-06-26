@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 45ce647f797c85d59c883e262cba75015bf38260
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba9dac2aaae838a4cbae58592b136c5612dfbb11
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377334"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366709"
 ---
 # <a name="kscategorybdanetworktuner"></a>KSCATEGORY_BDA_NETWORK_TUNER
 
 
-KSCATEGORY_BDA_NETWORK_TUNER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 功能类别中的网络调谐器[广播驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff556573) (BDA)。
+KSCATEGORY_BDA_NETWORK_TUNER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能类别中的网络调谐器[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index) (BDA)。
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_TUNER 向操作系统指�
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅 INF 文件*BDASwTunerATSC.inf*。 *BDASwTunerATSC.inf*附带 BDA 示例中的泛型调谐器*src\\swtuner\\BDAtuner\\gentuner* WDK 的子目录。
 
-有关网络调谐器筛选器的 KS 功能类别的详细信息，请参阅[常见控制节点和筛选器](https://msdn.microsoft.com/library/windows/hardware/ff557718)并[BDA 筛选器类别 Guid](https://msdn.microsoft.com/library/windows/hardware/ff556521)。
+有关网络调谐器筛选器的 KS 功能类别的详细信息，请参阅[常见控制节点和筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/common-control-nodes-and-filters)并[BDA 筛选器类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
 
 <a name="requirements"></a>要求
 ------------

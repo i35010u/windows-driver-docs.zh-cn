@@ -9,12 +9,12 @@ keywords:
 - 将转换为群集打印服务器的打印监视器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb874569adeaf200cc00a20256ca711a4bd7e03
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 125a535936d85eef548c0bf48725166d72adab36
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365695"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372477"
 ---
 # <a name="converting-print-monitors-for-use-with-clustered-print-servers"></a>转换打印监视器以便与群集打印服务器配合使用
 
@@ -24,15 +24,15 @@ ms.locfileid: "63365695"
 
 打印服务器群集是 Windows 2000 的新功能。 必须修改用于在 Windows 2000 （或更高版本） 群集上运行任何打印机端口监视器，使其可以从多个后台处理程序实例 （该节点的后台处理程序和群集后台处理程序） 调用。 必须执行以下步骤：
 
--   监视器[ **InitializePrintMonitor** ](https://msdn.microsoft.com/library/windows/hardware/ff551600)函数必须将其替换[ **InitializePrintMonitor2** ](https://msdn.microsoft.com/library/windows/hardware/ff551605)函数。 后一个函数返回一个监视器实例句柄。
+-   监视器[ **InitializePrintMonitor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor)函数必须将其替换[ **InitializePrintMonitor2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)函数。 后一个函数返回一个监视器实例句柄。
 
--   全局范围内存储的变量必须移至本地分配的内存，并且此内存必须与返回的监视器句柄相关联[ **InitializePrintMonitor2**](https://msdn.microsoft.com/library/windows/hardware/ff551605)。
+-   全局范围内存储的变量必须移至本地分配的内存，并且此内存必须与返回的监视器句柄相关联[ **InitializePrintMonitor2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-initializeprintmonitor2)。
 
--   对 Win32 注册表 API 必须替换为对后台处理程序的注册表函数的调用的调用，其中的地址传递到的监视器[ **MONITORREG** ](https://msdn.microsoft.com/library/windows/hardware/ff557537)结构。 (请参阅[将端口配置信息存储](storing-port-configuration-information.md)。)
+-   对 Win32 注册表 API 必须替换为对后台处理程序的注册表函数的调用的调用，其中的地址传递到的监视器[ **MONITORREG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitorreg)结构。 (请参阅[将端口配置信息存储](storing-port-configuration-information.md)。)
 
--   端口监视器必须划分端口监视器 UI DLL 和端口监视服务器 DLL。 UI DLL 必须通过调用后台处理程序的通信与服务器 DLL [ **XcvData** ](https://msdn.microsoft.com/library/windows/hardware/ff564255)函数。
+-   端口监视器必须划分端口监视器 UI DLL 和端口监视服务器 DLL。 UI DLL 必须通过调用后台处理程序的通信与服务器 DLL [ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))函数。
 
--   一个[**关闭**](https://msdn.microsoft.com/library/windows/hardware/ff562646)函数必须进行添加。
+-   一个[**关闭**](https://docs.microsoft.com/previous-versions/ff562646(v=vs.85))函数必须进行添加。
 
 可以仅在非群集环境中使用不会转换的打印监视器。 它们不能用于群集服务器。
 

@@ -4,12 +4,12 @@ description: 通常情况下，GPIO 控制器的客户端是连接到 GPIO 引�
 ms.assetid: F75E9B21-9DA4-4DD9-BB44-59E19EDFC099
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f709d77d5888c86b77756f2870bea31a1bed9cf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb94a00384f9b4caf47ecccd3f2c4e023918a337
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363587"
 ---
 # <a name="gpioclx-io-and-interrupt-interfaces"></a>GpioClx I/O 和中断接口
 
@@ -21,11 +21,11 @@ GPIO 插针是系统管理硬件资源。 外围设备驱动程序启动其设�
 -   GPIO I/O 资源。 此资源是一组的一个或多个 GPIO 固定配置为数据输入或数据输出。 GPIO I/O 资源是从 Windows 8 开始新的 Windows 资源类型。
 -   中断。 此中断资源可能实现作为 GPIO pin 配置为中断输入，但它可能在可编程中断控制器还是专用的中断 pin 上处理器包作为改为实现。 硬件抽象层 (HAL) 中断抽象隐藏这些实现的详细信息，可以放心地忽略哪些客户端驱动程序。
 
-外围设备驱动程序可以作为数据输入或输出中使用的 GPIO 插针的一组之前，该驱动程序必须打开这些引脚的逻辑连接。 例如，[内核模式驱动程序接口](https://msdn.microsoft.com/library/windows/hardware/ff544296)(KMDF) 驱动程序将获取 WDFIOTARGET 句柄来标识连接。 驱动程序使用此句柄将 I/O 请求发送到球瓶。 具体而言，客户端驱动程序发送[ **IOCTL\_GPIO\_编写\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/hh406487)并[ **IOCTL\_GPIO\_读取\_插针**](https://msdn.microsoft.com/library/windows/hardware/hh406483) I/O 控制请求以将数据写入到输出插针和输入插针从读取数据。 有关代码示例演示如何连接到一系列 GPIO I/O pin，请参阅以下主题：
+外围设备驱动程序可以作为数据输入或输出中使用的 GPIO 插针的一组之前，该驱动程序必须打开这些引脚的逻辑连接。 例如，[内核模式驱动程序接口](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)(KMDF) 驱动程序将获取 WDFIOTARGET 句柄来标识连接。 驱动程序使用此句柄将 I/O 请求发送到球瓶。 具体而言，客户端驱动程序发送[ **IOCTL\_GPIO\_编写\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_write_pins)并[ **IOCTL\_GPIO\_读取\_插针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_read_pins) I/O 控制请求以将数据写入到输出插针和输入插针从读取数据。 有关代码示例演示如何连接到一系列 GPIO I/O pin，请参阅以下主题：
 
-[连接到 GPIO I/O 插针的 KMDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/hh406474)
+[连接到 GPIO I/O 插针的 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gpio/connecting-a-kmdf-driver-to-gpio-i-o-pins)
 
-若要使用的中断资源接收中断，外围设备驱动程序从逻辑上必须与该中断连接中断服务例程 (ISR)。 例如，内核模式驱动程序可以使此连接，通过调用[ **WdfInterruptCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff547345)方法或[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)例程。 在连接后，驱动程序的 ISR 在运行时外围设备发出信号的中断请求到输入的 GPIO 插针或中断控制器。 有关中断的详细信息，请参阅[创建中断对象](https://msdn.microsoft.com/library/windows/hardware/ff540757)。
+若要使用的中断资源接收中断，外围设备驱动程序从逻辑上必须与该中断连接中断服务例程 (ISR)。 例如，内核模式驱动程序可以使此连接，通过调用[ **WdfInterruptCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)方法或[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)例程。 在连接后，驱动程序的 ISR 在运行时外围设备发出信号的中断请求到输入的 GPIO 插针或中断控制器。 有关中断的详细信息，请参阅[创建中断对象](https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-an-interrupt-object)。
 
 GPIO framework 扩展 (GpioClx) 可用于管理 I/O 连接和外围设备驱动程序作为其客户端的中断连接。 PnP 管理器可能将不同的 GPIO 插针上 GPIO 控制器设备组分配给不同的客户端驱动程序。 这些引脚的一些配置为数据输入或输出，以及一些配置为中断请求输入。
 

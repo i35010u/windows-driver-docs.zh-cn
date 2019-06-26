@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d8b83793d4b8f09e7401084259ed498cb146c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 725e0e92174b84ea40619ac40609358a5d63b22f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335900"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362454"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
 
 
 **！ Ndiskd.wdiadapter**扩展显示有关 WDIWiFi 信息 ！CAdapter 结构。 如果不带任何参数运行此扩展 ！ ndiskd 将显示一组所有 WDIWiFi ！CAdapter 结构。
 
-有关 WDI 微型端口驱动程序的详细信息，请参阅[WDI 微型端口驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)。
+有关 WDI 微型端口驱动程序的详细信息，请参阅[WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)。
 
-WDI 微型端口驱动程序引用的详细信息，请参阅[WDI 微型端口驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/dn926075)。
+WDI 微型端口驱动程序引用的详细信息，请参阅[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 ```console
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 
@@ -137,19 +137,19 @@ RECEIVE FILTER
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[WDI 微型端口驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/wdi-miniport-driver-design-guide)
+[WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
-[WDI 微型端口驱动程序参考](https://msdn.microsoft.com/library/windows/hardware/dn926075)
+[WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
  
 

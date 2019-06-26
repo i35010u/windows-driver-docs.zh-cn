@@ -10,16 +10,16 @@ keywords:
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b478944afdeac60fe7c5d75bc9f7320ab9c6b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f50583b3b101d28c2fa8b71e185efa0c30245b8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373456"
 ---
 # <a name="registering-for-target-device-change-notification"></a>注册目标设备更改通知
 
-驱动程序通过调用注册的即插即用的目标设备更改事件通知[ **IoRegisterPlugPlayNotification**](https://msdn.microsoft.com/library/windows/hardware/ff549526)。
+驱动程序通过调用注册的即插即用的目标设备更改事件通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
 
 以下信息适用于目标设备更改通知才能调用该例程：
 
@@ -39,7 +39,7 @@ ms.locfileid: "63338447"
 
     驱动程序还可以使用*上下文*来存储它用于最初打开设备的路径。 驱动程序可以使用此路径以已取消删除操作后，重新打开该设备。 (请参阅[处理 GUID\_目标\_设备\_删除\_取消事件](handling-a-guid-target-device-remove-cancelled-event.md)有关详细信息。)
 
-驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。 如果驱动程序执行扩展上的文件对象的引用的注册用于通知和引用是仍未完成时，该驱动程序必须释放该引用后删除的注册。
+驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。 如果驱动程序执行扩展上的文件对象的引用的注册用于通知和引用是仍未完成时，该驱动程序必须释放该引用后删除的注册。
 
  
 

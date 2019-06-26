@@ -4,12 +4,12 @@ description: 添加轮询事件支持
 ms.assetid: 7c7617d4-22d6-48a8-b69c-dd0347f078dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d8b29e300f68146ad7daee89cff4eeb37094915
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49cadc544658f1279c73dae86f47ef620d76a25a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367097"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383410"
 ---
 # <a name="adding-polling-event-support"></a>添加轮询事件支持
 
@@ -21,13 +21,13 @@ ms.locfileid: "63367097"
 
 1.  设置**功能 = 0x33**设备的 INF 文件中。 (请参阅[WIA 设备 INF 文件](inf-files-for-wia-devices.md)有关详细信息。)
 
-2.  报告 STI\_GENCAP\_通知和 STI\_美元\_GENCAP\_本机\_PUSHSUPPORT 中的[ **IStiUSD::GetCapabilities**](https://msdn.microsoft.com/library/windows/hardware/ff543817)方法。
+2.  报告 STI\_GENCAP\_通知和 STI\_美元\_GENCAP\_本机\_PUSHSUPPORT 中的[ **IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)方法。
 
-3.  中的所有报表支持事件[ **IWiaMiniDrv::drvGetCapabilities** ](https://msdn.microsoft.com/library/windows/hardware/ff543977)方法。
+3.  中的所有报表支持事件[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。
 
-4.  响应对的调用[ **IStiUSD::GetStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543823)方法。 WIA 服务调用此方法在预设的间隔的 INF 文件中进行配置。 默认设置为 1 秒时间间隔。
+4.  响应对的调用[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。 WIA 服务调用此方法在预设的间隔的 INF 文件中进行配置。 默认设置为 1 秒时间间隔。
 
-5.  报告中的相应的事件信息响应[ **IStiUSD::GetNotificationData** ](https://msdn.microsoft.com/library/windows/hardware/ff543821)方法。
+5.  报告中的相应的事件信息响应[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法。
 
 WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
@@ -35,7 +35,7 @@ WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
 2.  轮询设备事件，例如已下压按钮的事件。
 
-确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff548369)结构。 **StatusMask**成员可以是以下请求：
+确定操作请求可以通过检查**StatusMask**的成员[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。 **StatusMask**成员可以是以下请求：
 
 <a href="" id="sti-devstatus-online-state"></a>STI\_DEVSTATUS\_ONLINE\_状态  
 此操作请求检查设备是否处于联机状态，并且应设置来填充**dwOnlinesState** STI 成员\_设备\_状态结构。
@@ -52,7 +52,7 @@ WIA 服务调用**IStiUSD::GetStatus**针对两个主要操作的方法：
 
  
 
-下面的示例演示的实现[ **IStiUSD::GetStatus** ](https://msdn.microsoft.com/library/windows/hardware/ff543823)方法。
+下面的示例演示的实现[ **IStiUSD::GetStatus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getstatus)方法。
 
 ```cpp
 STDMETHODIMP CWIADevice::GetStatus(PSTI_DEVICE_STATUS pDevStatus)

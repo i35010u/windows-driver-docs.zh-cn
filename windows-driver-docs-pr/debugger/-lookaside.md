@@ -15,12 +15,12 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: 88fcc86a36fcc5b79a4eb7bfffc026d8f9d0ec33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a94732fc070f29d09aa343e8ad31f54fe53af299
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336109"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365791"
 ---
 # <a name="lookaside"></a>!lookaside
 
@@ -39,7 +39,7 @@ ms.locfileid: "63336109"
 <span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
 指定要显示或修改视列表的十六进制的地址。
 
-如果*地址*省略 （或 0） 和 **-所有**未指定选项，将显示一组已知的标准系统视列表。 组列表并不详尽;也就是说，它不包括所有系统视列表。 此外，一组不包括通过调用创建的自定义视列表[ **ExInitializePagedLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545309)或[ **ExInitializeNPagedLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545301).
+如果*地址*省略 （或 0） 和 **-所有**未指定选项，将显示一组已知的标准系统视列表。 组列表并不详尽;也就是说，它不包括所有系统视列表。 此外，一组不包括通过调用创建的自定义视列表[ **ExInitializePagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepagedlookasidelist)或[ **ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist).
 
 如果*地址*省略 （或 0） 和 **-所有**指定选项，将显示所有视列表。
 

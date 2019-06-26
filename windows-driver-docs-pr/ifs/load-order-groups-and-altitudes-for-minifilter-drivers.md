@@ -9,12 +9,12 @@ keywords:
 - 驱动程序开始类型 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bc4e23f35d2a518c5bf1e2b3a251b0d18edb6c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b7f7f1a9481db9bb0281ea0679dcbe85b0926f3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324353"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376008"
 ---
 # <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>微筛选器驱动程序的加载顺序组和等级
 
@@ -29,7 +29,7 @@ Windows 使用的文件系统筛选器驱动程序和微筛选器驱动程序在
 
 每个加载顺序组已定义的范围的海拔的地区。 由 Microsoft 管理的海拔微筛选器驱动程序的地区分配。 若要请求微筛选器驱动程序的海拔高度，发送电子邮件至<fsfcomm@microsoft.com>另一个用于分配请求。
 
-微筛选器驱动程序必须指定将在海拔高度范围表示加载顺序组中的海拔高度值。 用于安装微筛选器驱动程序 INF 文件中的字符串部分的实例定义中指定微筛选器驱动程序的海拔高度值。 此外可以对的调用中指定实例定义[ **InstanceSetupCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff551096)例程中[ **FLT\_注册**](https://msdn.microsoft.com/library/windows/hardware/ff544811)结构。 为微筛选器驱动程序，可以定义多个实例和海拔的地区。 这些实例定义应用跨所有卷。
+微筛选器驱动程序必须指定将在海拔高度范围表示加载顺序组中的海拔高度值。 用于安装微筛选器驱动程序 INF 文件中的字符串部分的实例定义中指定微筛选器驱动程序的海拔高度值。 此外可以对的调用中指定实例定义[ **InstanceSetupCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_instance_setup_callback)例程中[ **FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_registration)结构。 为微筛选器驱动程序，可以定义多个实例和海拔的地区。 这些实例定义应用跨所有卷。
 
 有关的以下规则启动类型并加载顺序组确定何时将加载微筛选器驱动程序：
 

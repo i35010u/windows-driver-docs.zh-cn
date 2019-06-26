@@ -9,12 +9,12 @@ keywords:
 - 目录 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef026ea881e2e5a2f130c8b99832cd9a1df69bdb
-ms.sourcegitcommit: cab03f9f6b1143a29be74a894e917b26762a42ee
+ms.openlocfilehash: 95ef0a89c5542e89020af097d6b09ae973b82251
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384766"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -41,7 +41,7 @@ ms.locfileid: "65852350"
 
 2. 当一个 INF 文件条目的语法指定文件路径时，可以使用系统提供的字符串替换来表示部分或全部此路径。 这种替换具有以下形式：
 
-   **%**<em>dirid</em>**%**
+   **%** <em>dirid</em> **%**
 
    此窗体包含百分号 （%）字符后, 跟*dirid*你想要指定的目录后, 跟另一个百分号 （%）字符。 终止反斜杠 (\)字符将此表达式与以下文件名称或其他目录路径中的分隔开来<strong>。</strong>
 
@@ -52,7 +52,7 @@ ms.locfileid: "65852350"
    ServiceBinary = %12%\aic78xx.sys
    ```
 
-   当完全展开，在前面的示例所示的路径将成为*c:*\\*windows*\\*system32* \\ *驱动程序*\\*aic78xx.sys* (假设 Windows 是否已安装在*c:*\\*windows*目录）。 请注意，字符串替换或 %*dirid*%窗体中，可以使用任何位置应有一个字符串，除[ **INF 字符串部分**](inf-strings-section.md)的 INF 文件。
+   当完全展开，在前面的示例所示的路径将成为*c:* \\*windows*\\*system32* \\ *驱动程序*\\*aic78xx.sys* (假设 Windows 是否已安装在*c:* \\*windows*目录）。 请注意，字符串替换或 %*dirid*%窗体中，可以使用任何位置应有一个字符串，除[ **INF 字符串部分**](inf-strings-section.md)的 INF 文件。
 
    两个以下示例演示如何替换字符串应*不*使用。
 
@@ -75,7 +75,7 @@ ms.locfileid: "65852350"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">目标目录</th>
 </tr>
 </thead>
@@ -101,7 +101,7 @@ ms.locfileid: "65852350"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>13</strong></p></td>
-<td align="left"><p>驱动程序包<a href="https://msdn.microsoft.com/windows/hardware/drivers/install/driver-store">驱动程序存储区</a>目录。</p>
+<td align="left"><p>驱动程序包<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-store">驱动程序存储区</a>目录。</p>
 <p>对于 Windows 8.1 和更高版本的 Windows，指定驱动程序包已导入其中的驱动程序存储区目录的路径。
 
 不要使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>上的文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
@@ -151,7 +151,7 @@ ms.locfileid: "65852350"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>51</strong></p></td>
-<td align="left"><p>假脱机目录 (<em>不</em>用于安装打印机驱动程序，请参阅 −<a href="https://msdn.microsoft.com/library/windows/hardware/ff560821">打印机 Dirids</a>)</p></td>
+<td align="left"><p>假脱机目录 (<em>不</em>用于安装打印机驱动程序，请参阅 −<a href="https://docs.microsoft.com/windows-hardware/drivers/print/printer-dirids">打印机 Dirids</a>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>52</strong></p></td>
@@ -187,7 +187,7 @@ ms.locfileid: "65852350"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">Shell 特殊文件夹</th>
 </tr>
 </thead>

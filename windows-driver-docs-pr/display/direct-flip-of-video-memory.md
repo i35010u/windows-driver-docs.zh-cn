@@ -7,12 +7,12 @@ keywords:
 - DirectFlip
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bad5a4c159c2b963bf8a3a50d16331afd7396e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad4c2c2a319d744a82e40d20896e1ec80edbfbed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342429"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384876"
 ---
 # <a name="direct-flip-of-video-memory"></a>视频内存的直接交替
 
@@ -57,19 +57,19 @@ ms.locfileid: "63342429"
 
 这些函数和结构是新的或更新 Windows 8:
 
--   [*CheckDirectFlipSupport*](https://msdn.microsoft.com/library/windows/hardware/hh698234)
--   [*CheckDirectFlipSupport(D3D11\_1)*](https://msdn.microsoft.com/library/windows/hardware/hh406253)
--   [*DxgkDdiSetVidPnSourceAddress*](https://msdn.microsoft.com/library/windows/hardware/ff560767)
--   [**D3D11\_1\_DDI\_CHECK\_DIRECT\_FLIP\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh451044)
--   [**D3DDDI\_CHECK\_DIRECT\_FLIP\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/hh451172)
--   [**D3DDDIARG\_CHECKDIRECTFLIPSUPPORT**](https://msdn.microsoft.com/library/windows/hardware/hh451072)
--   [**D3DKMT\_DIRECTFLIP\_支持**](https://msdn.microsoft.com/library/windows/hardware/hh406459)
--   [**D3DKMT\_QUERYADAPTERINFO**](https://msdn.microsoft.com/library/windows/hardware/ff548203)
--   [**D3DKMT\_WAITFORVERTICALBLANKEVENT2**](https://msdn.microsoft.com/library/windows/hardware/hh780272)
--   [**D3DKMTWaitForVerticalBlankEvent2**](https://msdn.microsoft.com/library/windows/hardware/hh780252)
--   [**DXGK\_DRIVERCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff561062)
--   [**DXGK\_SEGMENTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562039)
--   [**DXGK\_SETVIDPNSOURCEADDRESS\_FLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff562052)
+-   [*CheckDirectFlipSupport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_checkdirectflipsupport)
+-   [*CheckDirectFlipSupport(D3D11\_1)* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d11_1ddi_checkdirectflipsupport)
+-   [*DxgkDdiSetVidPnSourceAddress*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560767(v=vs.85))
+-   [**D3D11\_1\_DDI\_CHECK\_DIRECT\_FLIP\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_check_direct_flip_flags)
+-   [**D3DDDI\_CHECK\_DIRECT\_FLIP\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-d3dddi_check_direct_flip_flags)
+-   [**D3DDDIARG\_CHECKDIRECTFLIPSUPPORT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_checkdirectflipsupport)
+-   [**D3DKMT\_DIRECTFLIP\_支持**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_directflip_support)
+-   [**D3DKMT\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)
+-   [**D3DKMT\_WAITFORVERTICALBLANKEVENT2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_waitforverticalblankevent2)
+-   [**D3DKMTWaitForVerticalBlankEvent2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtwaitforverticalblankevent2)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
+-   [**DXGK\_SETVIDPNSOURCEADDRESS\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_setvidpnsourceaddress_flags)
 
 ## <a name="span-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanspan-idhardwarecertificationrequirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>硬件认证要求
 

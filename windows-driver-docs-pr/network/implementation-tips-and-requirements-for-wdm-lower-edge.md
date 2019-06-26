@@ -8,12 +8,12 @@ keywords:
 - WDM 低边缘 WDK 网络，驱动程序实现以
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab16f15313e8369134d73c910ddb33a11daf261
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1490b43145b903e86abcd50bfacebad95aa5898a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377080"
 ---
 # <a name="implementation-tips-and-requirements-for-wdm-lower-edge"></a>WDM 下边缘的实施提示和要求
 
@@ -25,7 +25,7 @@ ms.locfileid: "63362563"
 
 在实现 NDIS WDM 微型端口驱动程序时，请记住以下：
 
--   生成 NDIS WDM 微型端口驱动程序需要的 NDIS\_Ndis.h 标头文件是包含之前定义 WDM 标志。 定义 NDIS\_WDM 标志可确保 Ndis.h 会自动包括相应的 WDM 标头文件。 NDIS\_WDM 标志应是嵌入微型端口驱动程序的源代码的开头或微型端口驱动程序的源文件中设置。 NDIS WDM 微型端口驱动程序需要调用内核模式例程，例如 WDM 标头文件[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)并[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257).
+-   生成 NDIS WDM 微型端口驱动程序需要的 NDIS\_Ndis.h 标头文件是包含之前定义 WDM 标志。 定义 NDIS\_WDM 标志可确保 Ndis.h 会自动包括相应的 WDM 标头文件。 NDIS\_WDM 标志应是嵌入微型端口驱动程序的源代码的开头或微型端口驱动程序的源文件中设置。 NDIS WDM 微型端口驱动程序需要调用内核模式例程，例如 WDM 标头文件[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)并[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp).
 
 -   特定的总线驱动程序接口的函数调用需要针对该总线驱动程序的头文件。
 

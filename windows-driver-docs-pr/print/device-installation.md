@@ -10,12 +10,12 @@ keywords:
 - 安装驱动程序测试 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb2aa1e52965d9c2e243c45f76e3925e5645c6a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f68f26fd3eb90a95d637e3eb69612905e2d4724e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365348"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377541"
 ---
 # <a name="device-installation"></a>设备安装
 
@@ -51,7 +51,7 @@ ms.locfileid: "63365348"
 
  
 
-有关详细信息，请参阅[系统的电源状态](https://msdn.microsoft.com/library/windows/hardware/ff564571)WDK 文档中并[系统电源状态](https://go.microsoft.com/fwlink/p/?linkid=51899)Microsoft Windows SDK 文档中。
+有关详细信息，请参阅[系统的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)WDK 文档中并[系统电源状态](https://go.microsoft.com/fwlink/p/?linkid=51899)Microsoft Windows SDK 文档中。
 
 设备的初始安装会在最常见的系统电源状态是系统正常工作状态 S0。 最初应在这里，中心的设备安装测试大部分，但务必要验证安装期间以及其他系统的电源状态。
 

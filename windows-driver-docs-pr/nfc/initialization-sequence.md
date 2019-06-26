@@ -10,17 +10,17 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df285c0593424bd4a1d41f6ea8c52d3595be99a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a18d7283f36b8dc9fae66fc59a3ec1c5c7351a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370563"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375122"
 ---
 # <a name="initialization-sequence"></a>初始化序列
 
 
-下图演示了在初始化期间交换的 NFC CX 和 NFCC NCI 数据包高级组。 在初始化开始时之前, NFC CX 驱动程序调用客户端驱动程序的初始化前序列处理程序，如果已注册了一个。 StateInit 包括以下高级序列：NCI 重置，NCI 初始化、 标准 NCI 配置参数和 RF 接口和 RF 协议映射。 请注意，NFC 客户端驱动程序可以设置一些如通过 NFC CX 界面函数的初始化期间使用的 NCI 配置参数的默认值[ **NfcCxSetRfDiscoveryConfig** ](https://msdn.microsoft.com/library/windows/hardware/dn905616)并[**NfcCxSetLlcpConfig**](https://msdn.microsoft.com/library/windows/hardware/dn905615)。 在初始化完成时，将调用 initialize 完整序列处理程序。 初始化完成后下, 一步的状态是 StateRfIdle。
+下图演示了在初始化期间交换的 NFC CX 和 NFCC NCI 数据包高级组。 在初始化开始时之前, NFC CX 驱动程序调用客户端驱动程序的初始化前序列处理程序，如果已注册了一个。 StateInit 包括以下高级序列：NCI 重置，NCI 初始化、 标准 NCI 配置参数和 RF 接口和 RF 协议映射。 请注意，NFC 客户端驱动程序可以设置一些如通过 NFC CX 界面函数的初始化期间使用的 NCI 配置参数的默认值[ **NfcCxSetRfDiscoveryConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig)并[**NfcCxSetLlcpConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfccx/nf-nfccx-nfccxsetllcpconfig)。 在初始化完成时，将调用 initialize 完整序列处理程序。 初始化完成后下, 一步的状态是 StateRfIdle。
 
 ![初始化序列](images/initializationsequence.png)
 
@@ -38,6 +38,6 @@ NFCC 正常的主要要求之一处理来自 NFC 客户端驱动程序的固件�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
-[NFC 类扩展 (CX) 引用](https://msdn.microsoft.com/library/windows/hardware/dn905536)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 

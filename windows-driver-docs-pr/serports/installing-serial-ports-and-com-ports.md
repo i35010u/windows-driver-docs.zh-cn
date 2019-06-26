@@ -8,16 +8,16 @@ keywords:
 - 串行驱动程序 WDK、 COM 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb6e2f5878cb6c8c07e67018956d5f19e19c5ad
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: d0e5324bcde130ab16d6228bdb3fa0e53e3e0532
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836354"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384186"
 ---
 # <a name="installing-serial-ports-and-com-ports"></a>安装串行端口和 COM 端口
 
-适用于大多数设备，端口[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)和串行函数驱动程序提供操作串行端口和 COM 端口所需的功能。 若要安装串行端口和使用这些系统提供的组件的 COM 端口，请执行以下操作：
+适用于大多数设备，端口[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)和串行函数驱动程序提供操作串行端口和 COM 端口所需的功能。 若要安装串行端口和使用这些系统提供的组件的 COM 端口，请执行以下操作：
 
 - 提供与服务的端口指定端口设备安装程序类和串行函数驱动程序的 INF 文件。
 

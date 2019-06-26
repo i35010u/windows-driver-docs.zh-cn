@@ -6,12 +6,12 @@ keywords:
 - 专有扬声器配置实用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5836daea553c951b31be90b572ce59b19c660d0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f5190c13ad3a5445aad6d93f24168d749e8482
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328719"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362530"
 ---
 # <a name="proprietary-speaker-configuration-utilities"></a>专有的 Speaker-Configuration 实用程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "63328719"
 
 硬件供应商偶尔提供专用的扬声器配置实用程序用于替代在控制面板的演讲者对话框其音频驱动程序。 此类实用程序有潜在问题： 他们有时无法通知更改的 Windows 的专有方式更改扬声器配置。 如果在专有实用程序中的设置不匹配那些在控制面板中，这可能导致不良用户体验。 如果你认为你的设备需要一个专用的实用程序，应采取以下步骤以将与 Windows 集成实用程序：
 
-1.  在您支持的驱动程序中实现 DAC 节点[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)属性。 通过此节点中，Windows 会通知立即通过控制面板中的用户所做的更改的驱动程序。
+1.  在您支持的驱动程序中实现 DAC 节点[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性。 通过此节点中，Windows 会通知立即通过控制面板中的用户所做的更改的驱动程序。
 
 2.  设计配置实用程序，以通过调用 DirectSound 方法来管理扬声器配置**GetSpeakerConfig**并**SetSpeakerConfig**。
 

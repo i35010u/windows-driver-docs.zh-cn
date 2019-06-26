@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aafffa8115c95a04cd51ca9d8aefdb900e6938aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3b309d58b6a386a4092bc50d732fcab4a01d3e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362355"
 ---
 # <a name="bug-check-0x104-agpinvalidaccess"></a>Bug 检查 0x104：AGP\_无效\_访问
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357625"
 AGP\_无效\_访问错误检查的值为 0x00000104。 这表示 GPU 编写到范围的加速图形不以前已提交的端口 (AGP) 内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="agpinvalidaccess-parameters"></a>AGP\_无效\_访问参数

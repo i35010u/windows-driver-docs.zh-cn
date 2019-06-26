@@ -8,12 +8,12 @@ keywords:
 - 子函数资源映射 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1752592c8ecf49df4ed509df51d1e5e3f1a638f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1392401397dbd09a0df1ece29fedf8e778898fd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323647"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362928"
 ---
 # <a name="creating-resource-maps-for-a-multifunction-device"></a>为多功能设备创建资源映射
 
@@ -21,7 +21,7 @@ ms.locfileid: "63323647"
 
 
 
-一个*资源映射*标识使用的子函数的多功能设备的资源。 使用指定资源映射[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。 如果多功能设备需要资源映射，则设备 INF 通常包含设备的每个函数的资源映射。
+一个*资源映射*标识使用的子函数的多功能设备的资源。 使用指定资源映射[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。 如果多功能设备需要资源映射，则设备 INF 通常包含设备的每个函数的资源映射。
 
 有两种类型的资源映射 −*标准*资源映射并*不同*资源映射。 本部分介绍如何构造资源映射，并且包括以下主题：
 

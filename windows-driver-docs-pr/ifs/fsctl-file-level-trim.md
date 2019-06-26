@@ -14,27 +14,27 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aea6f11c8cd2e5e0d350f1be85cb58a435597cd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1d56c4643f47d9629020aba86dc41794d152eab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327886"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365043"
 ---
 # <a name="fsctlfileleveltrim-control-code"></a>FSCTL\_文件\_级别\_剪裁控制代码
 
 
 **FSCTL\_文件\_级别\_剪裁**控件的代码提供了用于剪裁与文件中的数据范围的方法。 文件剪裁范围将转换为基础的存储设备，使其能够优化其资源的组织提高访问性能。 **FSCTL\_文件\_级别\_剪裁**请求可让要保持在固定大小分配状态时，与虚拟磁盘上释放的数据范围相对应的物理存储的虚拟磁盘文件。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="instance--in-"></a>*实例\[中\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 调用方的不透明实例指针。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 调用方的不透明实例指针。 此参数是必需的不能**NULL**。
 
 <a href="" id="fileobject--in-"></a>*FileObject \[in\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 文件指针对象指定要卸除卷。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件指针对象指定要卸除卷。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle--in-"></a>*FileHandle \[in\]*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 要卸除的卷的文件句柄。 此参数是必需的不能**NULL**。
@@ -46,18 +46,18 @@ ms.locfileid: "63327886"
 指向输入缓冲区，必须包含**FSCTL\_文件\_级别\_剪裁**结构。
 
 <a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[in\]*  
-一个指向[**文件\_级别\_剪裁**](https://msdn.microsoft.com/library/windows/hardware/hh406398)结构，其中包含一组文件的剪裁区域。
+一个指向[**文件\_级别\_剪裁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim)结构，其中包含一组文件的剪裁区域。
 
 <a href="" id="outputbuffer--out-"></a>*OutputBuffer\[出\]*  
-指向一个可选[**文件\_级别\_剪裁\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh406398)接收剪裁操作结果的结构。
+指向一个可选[**文件\_级别\_剪裁\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim)接收剪裁操作结果的结构。
 
 <a href="" id="outputbufferlength--out-"></a>*OutputBufferLength\[出\]*  
-大小 （字节），指向的缓冲区*OutputBuffer*参数。 此值必须至少**sizeof**([**文件\_级别\_剪裁\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh406398)) 如果**文件\_级别\_剪裁\_输出**中包含*OutputBuffer*。 否则，这是设置为 0。
+大小 （字节），指向的缓冲区*OutputBuffer*参数。 此值必须至少**sizeof**([**文件\_级别\_剪裁\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim)) 如果**文件\_级别\_剪裁\_输出**中包含*OutputBuffer*。 否则，这是设置为 0。
 
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或可能是下列值之一。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或可能是下列值之一。
 
 <table>
 <colgroup>
@@ -105,7 +105,7 @@ ms.locfileid: "63327886"
 
 在某些存储设备上执行 trim 可以显著提高其未来的写入性能。 剪裁还在精简预配的存储系统返回的资源添加到分配池。 当虚拟磁盘上删除文件时，不会更改虚拟磁盘文件本身的大小。 释放虚拟磁盘上的数据范围也不剪裁上的物理存储空间虚拟磁盘文件所在的位置。 虚拟磁盘设备可以通知文件系统虚拟磁盘文件的某些数据范围，可以在物理存储设备上使用裁边**FSCTL\_文件\_级别\_剪裁**请求。 文件系统然后将向物理存储发出剪裁请求。 **FSCTL\_文件\_级别\_剪裁**还可以通过管理数据库或内存交换文件的服务应用程序发出请求。
 
-**FSCTL\_文件\_级别\_剪裁**控制代码将尝试剪裁文件从存储设备的所选的字节范围。 字节范围都包含在**范围**数组[**文件\_级别\_剪裁**](https://msdn.microsoft.com/library/windows/hardware/hh406398)结构。 包含在**范围**数组是一个或多个[**文件\_级别\_剪裁\_范围**](https://msdn.microsoft.com/library/windows/hardware/hh406405)结构。
+**FSCTL\_文件\_级别\_剪裁**控制代码将尝试剪裁文件从存储设备的所选的字节范围。 字节范围都包含在**范围**数组[**文件\_级别\_剪裁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim)结构。 包含在**范围**数组是一个或多个[**文件\_级别\_剪裁\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim_range)结构。
 
 范围数组中包括重叠的范围不一定是错误条件。 这是依赖于基础存储如何处理范围处理。
 
@@ -119,7 +119,7 @@ ms.locfileid: "63327886"
 
 使用稀疏文件 (文件的工具**特性\_标志\_SPARSE**属性设置)，忽略的剪裁区域中的文件的未分配部分。
 
-当中包括*OutputBuffer*，则**NumRangesProcessed**的成员[**文件\_级别\_剪裁\_输出**](https://msdn.microsoft.com/library/windows/hardware/hh406402)将指示已成功处理的剪裁区域的数量。 如果剪裁的范围，在处理过程中出现错误**NumRangesProcessed**将指定的结束时间的剩余未处理范围的起始索引**NumRanges**的成员[**文件\_级别\_剪裁**](https://msdn.microsoft.com/library/windows/hardware/hh406398) -1。
+当中包括*OutputBuffer*，则**NumRangesProcessed**的成员[**文件\_级别\_剪裁\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim_output)将指示已成功处理的剪裁区域的数量。 如果剪裁的范围，在处理过程中出现错误**NumRangesProcessed**将指定的结束时间的剩余未处理范围的起始索引**NumRanges**的成员[**文件\_级别\_剪裁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim) -1。
 
 <a name="requirements"></a>要求
 ------------
@@ -144,17 +144,17 @@ ms.locfileid: "63327886"
 ## <a name="see-also"></a>请参阅
 
 
-[**FILE\_LEVEL\_TRIM**](https://msdn.microsoft.com/library/windows/hardware/hh406398)
+[**FILE\_LEVEL\_TRIM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim)
 
-[**FILE\_LEVEL\_TRIM\_OUTPUT**](https://msdn.microsoft.com/library/windows/hardware/hh406402)
+[**FILE\_LEVEL\_TRIM\_OUTPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim_output)
 
-[**FILE\_LEVEL\_TRIM\_RANGE**](https://msdn.microsoft.com/library/windows/hardware/hh406405)
+[**FILE\_LEVEL\_TRIM\_RANGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_level_trim_range)
 
-[**FltCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff541935)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ZwCreateFile**](https://msdn.microsoft.com/library/windows/hardware/ff566424)
+[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

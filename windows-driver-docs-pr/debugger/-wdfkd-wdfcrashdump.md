@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de525a7ffeee84d06f2a0073f86030d6d67f1fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b0c90fb2d6ce9039db10cd18b9d202a823fc3e0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362413"
 ---
 # <a name="wdfkdwdfcrashdump"></a>!wdfkd.wdfcrashdump
 
@@ -51,13 +51,13 @@ UMDF
 <span id="drivername.dll"></span><span id="DRIVERNAME.DLL"></span>*DriverName*.dll  
 指定 UMDF 驱动程序的名称。 必须包含.dll 文件后缀。 如果省略此可选参数，则输出将包括元数据、 加载的模块列表中和可用日志。
 
-<span id="-d"></span><span id="-D"></span>**-d**  
+<span id="-d"></span><span id="-D"></span> **-d**  
 显示仅的驱动程序日志。
 
-<span id="-f"></span><span id="-F"></span>**-f**  
+<span id="-f"></span><span id="-F"></span> **-f**  
 显示仅的框架日志。
 
-<span id="-m"></span><span id="-M"></span>**-m**  
+<span id="-m"></span><span id="-M"></span> **-m**  
 合并按照记录顺序的框架和驱动程序日志。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -121,20 +121,20 @@ Listing all drivers loaded in this host process at the time of the failure:
   WUDFOsrUsbFilter
 ```
 
-在上面的示例中，输出包括失败类型，它是 WER 报表中的事件类型。 在这里，它可以是**WUDFVerifierFailure**或**WUDFUnhandledException**。 有关详细信息，请参阅[WER 报表中访问 UMDF 元数据](https://msdn.microsoft.com/library/windows/hardware/ff542975)。 对于 UMDF 输出包括错误代码，如果事件类型为**WUDFVerifierFailure**。
+在上面的示例中，输出包括失败类型，它是 WER 报表中的事件类型。 在这里，它可以是**WUDFVerifierFailure**或**WUDFUnhandledException**。 有关详细信息，请参阅[WER 报表中访问 UMDF 元数据](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-umdf-metadata-in-wer-reports)。 对于 UMDF 输出包括错误代码，如果事件类型为**WUDFVerifierFailure**。
 
-若要显示来自框架的错误日志记录[完全内存转储](complete-memory-dump.md)即[内核内存转储](kernel-memory-dump.md)，或[实时内核模式目标](live-kernel-mode-targets.md)，还可以尝试[**！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)扩展。
+若要显示来自框架的错误日志记录[完全内存转储](complete-memory-dump.md)即[内核内存转储](kernel-memory-dump.md)，或[实时内核模式目标](live-kernel-mode-targets.md)，还可以尝试[ **！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md)扩展。
 
 **其他信息**
 
-有关启用您的驱动程序的即时跟踪记录器的信息，请参阅[使用即时跟踪记录器 (IFR) KMDF 和 UMDF 2 驱动程序中](https://msdn.microsoft.com/library/windows/hardware/dn940485)。 有关调试 WDF 驱动程序的详细信息，请参阅[调试 WDF 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540790)。 有关 KMDF 调试信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关启用您的驱动程序的即时跟踪记录器的信息，请参阅[使用即时跟踪记录器 (IFR) KMDF 和 UMDF 2 驱动程序中](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)。 有关调试 WDF 驱动程序的详细信息，请参阅[调试 WDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。 有关 KMDF 调试信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**!wdfkd.wdflogdump**](-wdfkd-wdflogdump.md)
+[ **!wdfkd.wdflogdump**](-wdfkd-wdflogdump.md)
 
-[**!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
+[ **!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
 
  
 

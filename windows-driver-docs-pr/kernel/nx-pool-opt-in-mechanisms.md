@@ -4,12 +4,12 @@ description: 移植内核模式驱动程序代码到 Windows 8 从早期版本�
 ms.assetid: 9C868569-14EC-4915-8553-FD2D94C5A855
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2e8fa1f4f7ac1fe963d16ad73ee454ea290fab1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c8426d553eed9624d1fd2027dd04b21d6f685dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351093"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365415"
 ---
 # <a name="nx-pool-opt-in-mechanisms"></a>NX 池启用机制
 
@@ -20,7 +20,7 @@ ms.locfileid: "63351093"
 
 -   使用`#define`预处理器语句来创建全局定义的宏名称。
 
--   调用内联函数从[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。
+-   调用内联函数从[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
 
 对于大多数内核模式驱动程序代码，这些迁移的辅助功能使开发人员能够轻松地更新其驱动程序。
 

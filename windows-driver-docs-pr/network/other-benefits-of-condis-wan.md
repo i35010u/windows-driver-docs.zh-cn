@@ -6,12 +6,12 @@ keywords:
 - WAN 的 CoNDIS 驱动程序 WDK 网络权益
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 907fb7e326a1349292e9615e6c45a34b44f33c76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01cf14061446710d91a9e80c5360464f2ed378bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366533"
 ---
 # <a name="other-benefits-of-condis-wan"></a>CoNDIS WAN 的其他优势
 
@@ -27,7 +27,7 @@ ms.locfileid: "63378243"
 
 -   WAN 的 CoNDIS 支持多点调用。 有关进行多点调用的详细信息，请参阅[进行调用](making-a-call.md)。
 
--   WAN 的 CoNDIS 支持服务的质量 (QoS)。 WAN 的 CoNDIS 驱动程序使用[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构。 有关的 CoNDIS QoS 的详细信息，请参阅[Client-Initiated 请求更改调用参数](client-initiated-request-to-change-call-parameters.md)。
+-   WAN 的 CoNDIS 支持服务的质量 (QoS)。 WAN 的 CoNDIS 驱动程序使用[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。 有关的 CoNDIS QoS 的详细信息，请参阅[Client-Initiated 请求更改调用参数](client-initiated-request-to-change-call-parameters.md)。
 
 -   只有 CoNDIS WAN 将支持未来的 NDIS 增强功能适用于 WAN 的驱动程序。
 

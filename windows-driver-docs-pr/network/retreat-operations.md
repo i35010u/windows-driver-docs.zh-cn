@@ -12,12 +12,12 @@ keywords:
 - 分配 MDLs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c627ac99fb778ce7a3346f899804f5ce77c9b306
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be5bf2c224601be17a0bb330f2189dfc1b2f887
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362932"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373874"
 ---
 # <a name="retreat-operations"></a>重新处理操作
 
@@ -25,15 +25,15 @@ ms.locfileid: "63362932"
 
 
 
-参加操作可以增加使用的数据中的空间大小[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构或在所有 NET\_缓冲区中结构[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构。
+参加操作可以增加使用的数据中的空间大小[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构或在所有 NET\_缓冲区中结构[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
 
 NDIS 提供了以下撤回函数：
 
-[**NdisRetreatNetBufferDataStart**](https://msdn.microsoft.com/library/windows/hardware/ff564527)
+[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisretreatnetbufferdatastart)
 
-[**NdisRetreatNetBufferListDataStart**](https://msdn.microsoft.com/library/windows/hardware/ff564529)
+[**NdisRetreatNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisretreatnetbufferlistdatastart)
 
-参加操作有时可以分配与网络相关联的 MDLs\_缓冲区结构。 若要提供用于分配 MDLs 的机制，驱动程序可以提供的可选入口点[ **NetAllocateMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff568326)函数。 如果入口点是**NULL**，NDIS 使用默认方法来分配 MDLs。 在中，必须释放 MDLs [ **NetFreeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff568348)提供的机制，用于分配 MDL 倒数函数。
+参加操作有时可以分配与网络相关联的 MDLs\_缓冲区结构。 若要提供用于分配 MDLs 的机制，驱动程序可以提供的可选入口点[ **NetAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_allocate_mdl_handler)函数。 如果入口点是**NULL**，NDIS 使用默认方法来分配 MDLs。 在中，必须释放 MDLs [ **NetFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_free_mdl_handler)提供的机制，用于分配 MDL 倒数函数。
 
 若要获取的新**DataLength**，NDIS 添加的驱动程序指定*DataOffsetDelta*与当前**DataLength** 。 如果的大小*未使用的数据空间*大于*DataOffsetDelta*，参加操作减小**DataOffset** 。 在这种情况下，新**DataOffset**是当前**DataOffset**减去*DataOffsetDelta* 。
 

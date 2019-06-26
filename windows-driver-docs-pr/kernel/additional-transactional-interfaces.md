@@ -7,19 +7,19 @@ keywords:
 - 事务性接口 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c6b4ffd8c2186362479fa573e7102ad22be02c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 381f4e9ca14aebdce12dc4360bf2201270dfe3c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369990"
 ---
 # <a name="additional-transactional-interfaces"></a>其他事务接口
 
 
 除了可以使用通过访问 KTM 的事务接口，Microsoft 还提供多个其他的事务接口，其中包括：
 
--   文件系统微筛选器驱动程序，请[筛选器管理器](https://msdn.microsoft.com/library/windows/hardware/ff541591)提供例程，使微筛选器驱动程序，以在事务中登记接收通知的事务状态更改，并将上下文附加到事务。 有关这些功能的详细信息，请参阅[ **FltEnlistInTransaction**](https://msdn.microsoft.com/library/windows/hardware/ff542053)。
+-   文件系统微筛选器驱动程序，请[筛选器管理器](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-and-minifilter-driver-architecture)提供例程，使微筛选器驱动程序，以在事务中登记接收通知的事务状态更改，并将上下文附加到事务。 有关这些功能的详细信息，请参阅[ **FltEnlistInTransaction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltenlistintransaction)。
 
 -   从 Windows Vista 开始，NTFS 文件系统和注册表实现为支持事务性操作的资源管理器。 有关事务性 NTFS 和事务性注册表功能的详细信息，请参阅 Microsoft Windows SDK。
 

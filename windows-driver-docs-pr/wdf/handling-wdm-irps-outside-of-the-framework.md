@@ -10,12 +10,12 @@ keywords:
 - I/O 请求数据包 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc11d49c35f418e56a9fb14287339b2150ce51f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf651b388619750becdf41961e1b4cc5e448091d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382846"
 ---
 # <a name="handling-wdm-irps-outside-of-the-framework"></a>在框架外部处理 WDM IRP
 
@@ -24,7 +24,7 @@ ms.locfileid: "63391879"
 
 时 I/O 管理器提供对基于 framework 的驱动程序的 I/O 请求数据包 (IRP)，框架截获 IRP，然后进行以下项之一：
 
--   处理 IRP。 例如，框架处理包含的 Irp [ **IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)并[ **IRP\_MJ\_电源** ](https://msdn.microsoft.com/library/windows/hardware/ff550784)主要 I/O 函数代码。 在处理这些 Irp，框架可以通过调用回调函数的驱动程序的事件通信与驱动程序。
+-   处理 IRP。 例如，框架处理包含的 Irp [ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)并[ **IRP\_MJ\_电源** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)主要 I/O 函数代码。 在处理这些 Irp，框架可以通过调用回调函数的驱动程序的事件通信与驱动程序。
 
 -   为 IRP 创建一个框架请求对象，并将请求对象传递给驱动程序的 I/O 队列之一，以便该驱动程序可以接收它，通常在请求处理程序，并对其进行处理。 该框架将处理这种方式中的读取、 写入和设备 I/O 控制请求。
 

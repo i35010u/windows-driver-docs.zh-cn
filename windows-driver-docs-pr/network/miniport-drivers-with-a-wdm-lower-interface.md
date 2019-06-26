@@ -9,12 +9,12 @@ keywords:
 - WDM 低接口 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bb792ffb6d3328e33a8fcbcd719e06e1dd75fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e75d2d1d3e5e028458dd7508a63518788e8f070a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362325"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380889"
 ---
 # <a name="miniport-drivers-with-a-wdm-lower-interface"></a>包含 WDM 下接口的微型端口驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "63362325"
 
 
 
-与 Microsoft 的微型端口驱动程序[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM) 较低接口是也称为*NDIS WDM 微型端口驱动程序*。 此类型的微型端口驱动程序：
+与 Microsoft 的微型端口驱动程序[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM) 较低接口是也称为*NDIS WDM 微型端口驱动程序*。 此类型的微型端口驱动程序：
 
 -   使用 WDM 下边缘。
 

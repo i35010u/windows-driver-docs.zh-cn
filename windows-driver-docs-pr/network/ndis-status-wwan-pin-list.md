@@ -5,12 +5,12 @@ ms.assetid: fd8e6734-d032-445a-819a-0d5a773e9ea3
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PIN_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cd02f5297bb72fd0d69237a8fd919e2aed511f5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72c8a0a0b71ef80276663a27c73a7ce290861533
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341395"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377605"
 ---
 # <a name="ndisstatuswwanpinlist"></a>NDIS\_STATUS\_WWAN\_PIN\_LIST
 
@@ -19,7 +19,7 @@ ms.locfileid: "63341395"
 
 微型端口驱动程序不能使用此通知将发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_PIN\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff567912)结构。
+使用此通知[ **NDIS\_WWAN\_PIN\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)结构。
 
 <a name="remarks"></a>备注
 -------
@@ -55,7 +55,7 @@ ms.locfileid: "63341395"
 
 [OID\_WWAN\_PIN\_LIST](oid-wwan-pin-list.md)
 
-[**NDIS\_WWAN\_PIN\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff567912)
+[**NDIS\_WWAN\_PIN\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
 
  
 

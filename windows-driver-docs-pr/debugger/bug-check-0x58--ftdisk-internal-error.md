@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bc8c9bd495d6780aac4dc5a65bfe512ffbc486c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5e83b1ff1a4cd851dce70b3c8a2f3ca7a7d131d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361822"
 ---
 # <a name="bug-check-0x58-ftdiskinternalerror"></a>Bug 检查 0x58：FTDISK\_INTERNAL\_ERROR
 
@@ -26,7 +26,7 @@ ms.locfileid: "63329709"
 FTDISK\_内部\_错误 bug 检查的值为 0x00000058。 在系统启动从镜像分区的副本中错误时发出此操作。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="ftdiskinternalerror-parameters"></a>FTDISK\_内部\_错误参数

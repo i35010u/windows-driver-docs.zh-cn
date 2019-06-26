@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2da0d3a24e845256fbe9bf220a7c1dff2c3137
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cedcdc9313dc92ab04ed53bd3d77cd4455fdd982
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566224"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368151"
 ---
 # <a name="kspropertybdapidfilterunmappids"></a>KSPROPERTY\_BDA\_PIDFILTER\_UNMAP\_PIDS
 
@@ -89,9 +89,9 @@ BDA\_PID\_UNMAP 结构描述的带有特定的 Pid 来筛选从输入流的数�
 ## <a name="see-also"></a>请参阅
 
 
-[**BDA\_PID\_UNMAP**](https://msdn.microsoft.com/library/windows/hardware/ff556540)
+[**BDA\_PID\_UNMAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_pid_unmap)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

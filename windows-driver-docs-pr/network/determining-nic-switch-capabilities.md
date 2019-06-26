@@ -4,12 +4,12 @@ description: 确定 NIC 交换机功能
 ms.assetid: 5E627E52-2D47-4EA0-80D9-6979891CCE96
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9073537e938987ceb1650586fa425ff5d97246ef
-ms.sourcegitcommit: 7bd9480d40021827e6d46f9b83638dac85380e88
+ms.openlocfilehash: dbed439d7678b69f98f3436ceb2db240e72b6fd9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381415"
 ---
 # <a name="determining-nic-switch-capabilities"></a>确定 NIC 交换机功能
 
@@ -29,7 +29,7 @@ ms.locfileid: "65875103"
 ## <a name="reporting-nic-switch-capabilities-during-miniportinitializeex"></a>报告期间的 NIC 交换机功能*MiniportInitializeEx*
 
 
-当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，该驱动程序提供了以下 NIC 切换功能：
+当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，该驱动程序提供了以下 NIC 切换功能：
 
 -   一组完整的网络适配器可以支持的 NIC 交换机的硬件功能。
 
@@ -51,9 +51,9 @@ ms.locfileid: "65875103"
 
      
 
-当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)函数，该驱动程序注册的网络适配器的 NIC 交换机功能通过执行以下步骤：
+当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，该驱动程序注册的网络适配器的 NIC 交换机功能通过执行以下步骤：
 
-1.  微型端口驱动程序初始化[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)结构。
+1.  微型端口驱动程序初始化[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
     微型端口驱动程序集**HardwareNicSwitchCapabilities**指向以前初始化的指针到成员[ **NDIS\_NIC\_开关\_功能** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
 
@@ -63,7 +63,7 @@ ms.locfileid: "65875103"
 
     有关详细信息 **\*SRIOV** INF 关键字，请参阅[SR-IOV 的标准化 INF 关键字](standardized-inf-keywords-for-sr-iov.md)。
 
-2.  驱动程序调用[ **NdisMSetMiniportAttributes** ](https://msdn.microsoft.com/library/windows/hardware/ff563672)并设置*MiniportAttributes*参数指向的指针[ **NDIS\_微型端口\_适配器\_硬件\_帮助\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565924)结构。
+2.  驱动程序调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)并设置*MiniportAttributes*参数指向的指针[ **NDIS\_微型端口\_适配器\_硬件\_帮助\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
 有关适配器初始化过程的详细信息，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
 
@@ -85,11 +85,11 @@ NDIS 6.60 及更高版本的微型端口驱动程序必须遵守共存的 NIC �
 
 NDIS 传递网络适配器的当前已启用 NIC 交换机功能到过量按以下方式绑定到的网络适配器的驱动程序：
 
--   当 NDIS 调用过量的筛选器驱动程序的[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)函数，NDIS 传递网络适配器的 NIC 交换机功能通过*AttachParameters*参数。 此参数包含一个指向[ **NDIS\_筛选器\_附加\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff565481)结构。 **NicSwitchCapabilities**此结构的成员包含一个指向[ **NDIS\_NIC\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
+-   当 NDIS 调用过量的筛选器驱动程序的[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数，NDIS 传递网络适配器的 NIC 交换机功能通过*AttachParameters*参数。 此参数包含一个指向[ **NDIS\_筛选器\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 **NicSwitchCapabilities**此结构的成员包含一个指向[ **NDIS\_NIC\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
 
--   当 NDIS 调用基础协议驱动[ *ProtocolBindAdapterEx* ](https://msdn.microsoft.com/library/windows/hardware/ff570220)函数，NDIS 传递网络适配器的 NIC 交换机功能通过*BindParameters*参数。 此参数包含一个指向[ **NDIS\_筛选器\_附加\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff565481)结构。 **NicSwitchCapabilities**此结构的成员包含一个指向[ **NDIS\_NIC\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
+-   当 NDIS 调用基础协议驱动[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数，NDIS 传递网络适配器的 NIC 交换机功能通过*BindParameters*参数。 此参数包含一个指向[ **NDIS\_筛选器\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 **NicSwitchCapabilities**此结构的成员包含一个指向[ **NDIS\_NIC\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
 
-NDIS 也会返回[ **NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，它处理的对象标识符 (OID) 查询请求时[OID\_NIC\_交换机\_硬件\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569761)并[OID\_NIC\_交换机\_当前\_功能](https://msdn.microsoft.com/library/windows/hardware/ff569760)，颁发的过量协议或筛选器驱动程序。
+NDIS 也会返回[ **NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，它处理的对象标识符 (OID) 查询请求时[OID\_NIC\_交换机\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-hardware-capabilities)并[OID\_NIC\_交换机\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-current-capabilities)，颁发的过量协议或筛选器驱动程序。
 
  
 

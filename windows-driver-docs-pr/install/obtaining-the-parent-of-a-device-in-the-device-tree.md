@@ -12,12 +12,12 @@ keywords:
 - 在设备树 WDK 的直接父项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1adc2c37dbbcfc164eeef73fa99853abde93a1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3dc93f63c6fcab85a2b3a645a266746370eb9ad6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365854"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366668"
 ---
 # <a name="obtaining-the-parent-of-a-device-in-the-device-tree"></a>在设备树中获取某个设备的父设备
 
@@ -29,17 +29,17 @@ ms.locfileid: "63365854"
 
 **若要获取设备树中的设备的直接父级 SP_DEVINFO_DATA 结构**
 
-1.  验证设备中有 devnode[设备树](https://msdn.microsoft.com/library/windows/hardware/ff543194)通过调用[ **CM_Get_DevNode_Status** ](https://msdn.microsoft.com/library/windows/hardware/ff538514)设备：
+1.  验证设备中有 devnode[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)通过调用[ **CM_Get_DevNode_Status** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)设备：
     -   如果该设备已 devnode，该函数将返回 CR_SUCCESS。
     -   如果设备不具有 devnode，该函数将返回 CR_NO_SUCH_DEVINST。
 
-2.  如果该设备已 devnode，调用[ **CM_Get_Parent** ](https://msdn.microsoft.com/library/windows/hardware/ff538610)父级的设备获取设备实例句柄。
+2.  如果该设备已 devnode，调用[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)父级的设备获取设备实例句柄。
 
     (如果设备不具有 devnode **CM_Get_Parent**返回根设备的设备实例句柄)。
 
-3.  父设备使用设备实例句柄，调用[ **CM_Get_Device_ID** ](https://msdn.microsoft.com/library/windows/hardware/ff538405)来获取父设备的设备实例 ID。
+3.  父设备使用设备实例句柄，调用[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)来获取父设备的设备实例 ID。
 
-4.  父设备使用设备实例 ID，调用[ **SetupDiOpenDeviceInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff552071)获取父设备 SP_DEVINFO_DATA 结构。
+4.  父设备使用设备实例 ID，调用[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)获取父设备 SP_DEVINFO_DATA 结构。
 
 **若要获取的祖先构成设备树中的设备的连接序列的 SP_DEVINFO_DATA 结构**
 

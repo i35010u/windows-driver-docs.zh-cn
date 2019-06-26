@@ -4,12 +4,12 @@ description: 本主题总结了硬件、 固件和软件要求的常规用途 IO
 ms.assetid: 8097F391-ABF0-44A6-94D2-243AFBA3F984
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07b0b5f9818c99a5c3f28bc8f14a84e957415ac7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b491538fa261b91a10cb827bab2787f27afdbeb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337586"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364536"
 ---
 # <a name="gpio-controller-requirements-checklist"></a>GPIO 控制器要求清单
 
@@ -50,11 +50,11 @@ ms.locfileid: "63337586"
 
 -   支持第 2 版 GpioClx 和 GPIO 控制器驱动程序之间的接口：
 
-    -   实现[*客户端\_QueryEnabledInterrupts* ](https://msdn.microsoft.com/library/windows/hardware/dn265184)回调函数。 这有很大帮助诊断中断风暴。
-    -   如果**BankIdlePowerMgmtSupported**中设置了标志[**控制器\_BASIC\_信息**](https://msdn.microsoft.com/library/windows/hardware/hh439358)结构 GPIO 控制器驱动程序必须实现[*客户端\_SaveBankHardwareContext* ](https://msdn.microsoft.com/library/windows/hardware/hh439419)并[*客户端\_RestoreBankHardwareContext*](https://msdn.microsoft.com/library/windows/hardware/hh439414)回调函数和这些函数必须保存/还原银行上下文，相应地包括其屏蔽/解除屏蔽的中断状态。 请注意，不能保证中断要断开连接时调用此函数，但如果它们仍保持连接，可确保将要屏蔽。
-    -   如果**DeviceIdlePowerMgmtSupported**中设置了标志**控制器\_BASIC\_信息**结构[*客户端\_StartController* ](https://msdn.microsoft.com/library/windows/hardware/hh439424)并[*客户端\_StopController* ](https://msdn.microsoft.com/library/windows/hardware/hh439430)回调函数必须保存/还原所有银行的上下文相应地，包括其屏蔽/解除屏蔽的中断状态。 请注意，不能保证中断要断开连接时调用此函数，但如果它们仍保持连接，可确保将要屏蔽。
+    -   实现[*客户端\_QueryEnabledInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts)回调函数。 这有很大帮助诊断中断风暴。
+    -   如果**BankIdlePowerMgmtSupported**中设置了标志[**控制器\_BASIC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information)结构 GPIO 控制器驱动程序必须实现[*客户端\_SaveBankHardwareContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context)并[*客户端\_RestoreBankHardwareContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context)回调函数和这些函数必须保存/还原银行上下文，相应地包括其屏蔽/解除屏蔽的中断状态。 请注意，不能保证中断要断开连接时调用此函数，但如果它们仍保持连接，可确保将要屏蔽。
+    -   如果**DeviceIdlePowerMgmtSupported**中设置了标志**控制器\_BASIC\_信息**结构[*客户端\_StartController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_start_controller)并[*客户端\_StopController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_stop_controller)回调函数必须保存/还原所有银行的上下文相应地，包括其屏蔽/解除屏蔽的中断状态。 请注意，不能保证中断要断开连接时调用此函数，但如果它们仍保持连接，可确保将要屏蔽。
 -   设置**EmulateDebouncing**中的标志**控制器\_BASIC\_信息**结构。 这会大大提高其中断可能会有所静电放电 （如按钮、 插入，等等） 的设备的干扰 immunity。
--   设置**EmulateActiveBoth**中的标志**控制器\_BASIC\_信息**结构，并实现[*客户端\_ReconfigureInterrupt* ](https://msdn.microsoft.com/library/windows/hardware/hh698243)回调函数。 这可确保 ActiveBoth 中断的可靠边缘检测。
+-   设置**EmulateActiveBoth**中的标志**控制器\_BASIC\_信息**结构，并实现[*客户端\_ReconfigureInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)回调函数。 这可确保 ActiveBoth 中断的可靠边缘检测。
 
  
 

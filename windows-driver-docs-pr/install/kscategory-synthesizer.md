@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3c182cb446cf0ea2d4517ac3a939b91ea7e7f2df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4e0ef43b9d42bcbf5ff6d9b242c104c2f67338b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343796"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366696"
 ---
 # <a name="kscategorysynthesizer"></a>KSCATEGORY_SYNTHESIZER
 
 
-KSCATEGORY_SYNTHESIZER[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)MIDI 数据转换为波形音频示例或模拟输出信号 (KS) 功能类别。
+KSCATEGORY_SYNTHESIZER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)MIDI 数据转换为波形音频示例或模拟输出信号 (KS) 功能类别。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ KS 音频适配器设备驱动程序注册 KSCATEGORY_SYNTHESIZER 向操作系�
 
 有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Ddksynth.inf*软件合成器示例中包含的 INF 文件*src\\音频\\ddksynth* WDK 的目录。
 
-合成器的常规信息，请参阅[MIDI 和 DirectMusic 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff537520)。
+合成器的常规信息，请参阅[MIDI 和 DirectMusic 筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/midi-and-directmusic-filters)。
 
-有关设备的音频的适配器的接口类的常规信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)。
+有关设备的音频的适配器的接口类的常规信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
 
 <a name="requirements"></a>要求
 ------------

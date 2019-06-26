@@ -7,12 +7,12 @@ keywords:
 - 接口处理程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84fba54f75adecaa81bab881d8790e3a63c377
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11c5e3759b86c4098d042f3e5037d5a277e1496a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360657"
 ---
 # <a name="interface-handler-plug-in"></a>接口处理程序插件
 
@@ -37,7 +37,7 @@ private:
 
 具体而言， **CreateInstance**的插件方法接收指向 KS 代理为外部未知的。
 
-然后，您可以查询指向 MS 提供的此外部对象[IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)接口：
+然后，您可以查询指向 MS 提供的此外部对象[IKsPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nn-dsound-ikspropertyset)接口：
 
 ```cpp
 hResult = piOuterUnknown->QueryInterface(
@@ -49,9 +49,9 @@ hResult = piOuterUnknown->QueryInterface(
 
 提供指向指针**IKsPropertySet**作为构造函数的调用中的参数。 构造函数然后会保留为 m iKsPropertySet 指向\_piKsPropertySet 在以上声明中的成员。
 
-现在，您可以实现 Get，在类中设置方法调用[ **IKsPropertySet::Get** ](https://msdn.microsoft.com/library/windows/hardware/ff560719)并[ **IKsPropertySet::Set** ](https://msdn.microsoft.com/library/windows/hardware/ff560721)分别用于处理由驱动程序公开的属性。
+现在，您可以实现 Get，在类中设置方法调用[ **IKsPropertySet::Get** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikspropertyset-get)并[ **IKsPropertySet::Set** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nf-dsound-ikspropertyset-set)分别用于处理由驱动程序公开的属性。
 
-或者，您可以查询一个指向未知的外部及其**IKsObject**接口。 然后调用[ **IKsObject::KsGetObjectHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff559890)来获取文件句柄。 现在，通过调用操作设备属性[ **KsSynchronousIoControlDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff567143)与此文件句柄。
+或者，您可以查询一个指向未知的外部及其**IKsObject**接口。 然后调用[ **IKsObject::KsGetObjectHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-iksobject-ksgetobjecthandle)来获取文件句柄。 现在，通过调用操作设备属性[ **KsSynchronousIoControlDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kssynchronousiocontroldevice)与此文件句柄。
 
  
 

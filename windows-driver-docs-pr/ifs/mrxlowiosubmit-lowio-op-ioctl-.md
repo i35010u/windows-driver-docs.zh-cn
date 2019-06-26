@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f98e441933f8a33e5013cd03aa36e6f93c7ab753
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70da29cda27ab0d4387c6bf5b0b273c0dcc8e032
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357541"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363509"
 ---
 # <a name="mrxlowiosubmitlowioopioctl-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\] routine
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810) I/O 系统控制请求发出到网络最小-重定向程序。
+*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library) I/O 系统控制请求发出到网络最小-重定向程序。
 
 <a name="syntax"></a>语法
 ------
@@ -92,7 +92,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 
 RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 接收响应[ **IRP\_MJ\_设备\_控制**](irp-mj-device-control.md)或[ **IRP\_MJ\_内部\_设备\_控件**](irp-mj-internal-device-control.md)请求数。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]*，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
+然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* ，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
 
 **LowIoContext.Operation**成员设置为 LOWIO\_OP\_IOCTL。
 
@@ -133,21 +133,21 @@ RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 接收响应[ **IRP\_MJ\_设备
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]**](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]**](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]**](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]**](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
  
 

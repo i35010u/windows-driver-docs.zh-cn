@@ -6,12 +6,12 @@ keywords:
 - 自定义 UI WDK 本机 802.11 IHV UI 扩展 DLL，请求显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4a14426a8874e8630f128976d364b59ddf1d933
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e33af721872cd1e56c3a53a57808ee3bff5895b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349391"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373230"
 ---
 # <a name="requesting-the-display-of-a-custom-ui"></a>请求显示自定义 UI
 
@@ -28,9 +28,9 @@ ms.locfileid: "63349391"
 
 -   通知最终用户使用 WLAN 网络进行身份验证的结果。
 
-若要启动自定义 UI 或显示的通知，本机 802.11 IHV 扩展 DLL 调用[ **Dot11ExtSendUIRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff547567) ，并将传递一个指向[ **DOT11EXT\_IHV\_UI\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)结构通过*pIhvUIRequest*此函数的参数。
+若要启动自定义 UI 或显示的通知，本机 802.11 IHV 扩展 DLL 调用[ **Dot11ExtSendUIRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_send_ui_request) ，并将传递一个指向[ **DOT11EXT\_IHV\_UI\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构通过*pIhvUIRequest*此函数的参数。
 
-通过[ **DOT11EXT\_IHV\_UI\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff547637)结构，本机 802.11 IHV 扩展 DLL 指定自定义 UI 的以下数据：
+通过[ **DOT11EXT\_IHV\_UI\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/ns-wlanihv-_dot11ext_ihv_ui_request)结构，本机 802.11 IHV 扩展 DLL 指定自定义 UI 的以下数据：
 
 -   用户会话标识符 (ID)，用于标识特定的用户上下文。
 

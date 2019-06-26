@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b5a343424a291448b09f95f65b926eda4392d05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3609cb97bbe2ec55273d8e1ceb2b6f685f9e1bfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329979"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368112"
 ---
 # <a name="kspropertybdarftunerbandwidth"></a>KSPROPERTY\_BDA\_RF\_TUNER\_BANDWIDTH
 
@@ -93,7 +93,7 @@ ms.locfileid: "63329979"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

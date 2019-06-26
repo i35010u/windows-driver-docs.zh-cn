@@ -4,12 +4,12 @@ description: 外围设备的内核模式驱动程序框架 (KMDF) 驱动程序�
 ms.assetid: 02F6431C-7B55-4DFB-9792-4A72F0268C76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf771912ecf322e67b2e6e697b2f73740312e76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e1de6afc19a91573ccd8c651d999d8aed6b13f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326165"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363632"
 ---
 # <a name="connecting-a-kmdf-driver-to-gpio-io-pins"></a>将 KMDF 驱动程序连接到 GPIO I/O 管脚
 
@@ -59,7 +59,7 @@ NTSTATUS
 }
 ```
 
-在前面的代码示例中，`DeviceExtension`变量是指向外围设备的设备上下文的指针。 `XyzDrvGetDeviceExtension`函数检索此设备上下文，实现外围设备驱动程序。 此驱动程序之前已注册其[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)通过调用回调函数[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://msdn.microsoft.com/library/windows/hardware/ff546135)方法。
+在前面的代码示例中，`DeviceExtension`变量是指向外围设备的设备上下文的指针。 `XyzDrvGetDeviceExtension`函数检索此设备上下文，实现外围设备驱动程序。 此驱动程序之前已注册其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)通过调用回调函数[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)方法。
 
 下面的代码示例演示如何外围设备驱动程序可以使用它在以前获取的 GPIO 资源说明打开驱动程序的 GPIO I/O 资源的 WDFIOTARGET 句柄的代码示例。
 
@@ -111,7 +111,7 @@ NTSTATUS IoRoutine(WDFDEVICE Device, BOOLEAN ReadOperation)
 
 在前面的代码示例中，`Device`变量是外围设备的 framework 设备对象的 WDFDEVICE 句柄。 **资源\_中心\_创建\_路径\_FROM\_ID**函数创建包含 GPIO I/O 资源的名称的字符串。 代码示例使用此字符串来按名称打开 GPIO I/O 资源。
 
-外围设备驱动程序获取 GPIO I/O 资源的句柄后，此驱动程序可以发送 I/O 控制请求要从中读取数据或将数据写入到的 GPIO 插针。 此时将打开的 GPIO I/O 资源的驱动程序读取使用[ **IOCTL\_GPIO\_读取\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/hh406483) I/O 控制请求从球瓶的资源中读取数据。 此时将打开的 GPIO I/O 资源的驱动程序将使用写入[ **IOCTL\_GPIO\_编写\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/hh406487) I/O 控制请求，将数据写入到的资源中的球瓶。 下面的代码示例演示如何执行 GPIO 读取或写入操作。
+外围设备驱动程序获取 GPIO I/O 资源的句柄后，此驱动程序可以发送 I/O 控制请求要从中读取数据或将数据写入到的 GPIO 插针。 此时将打开的 GPIO I/O 资源的驱动程序读取使用[ **IOCTL\_GPIO\_读取\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_read_pins) I/O 控制请求从球瓶的资源中读取数据。 此时将打开的 GPIO I/O 资源的驱动程序将使用写入[ **IOCTL\_GPIO\_编写\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_write_pins) I/O 控制请求，将数据写入到的资源中的球瓶。 下面的代码示例演示如何执行 GPIO 读取或写入操作。
 
 ```cpp
     WDF_OBJECT_ATTRIBUTES RequestAttributes;
@@ -192,7 +192,7 @@ NTSTATUS IoRoutine(WDFDEVICE Device, BOOLEAN ReadOperation)
 ## <a name="for-more-information"></a>更多相关信息
 
 
-有关详细信息**IOCTL\_GPIO\_读取\_PIN**请求，包括在请求输出缓冲区中的数据输入 pin 的位的映射，请参阅[ **IOCTL\_GPIO\_读取\_PIN**](https://msdn.microsoft.com/library/windows/hardware/hh406483)。 有关详细信息**IOCTL\_GPIO\_编写\_PIN**请求，包括数据输出插针，将请求输入缓冲区中的位的映射，请参阅[ **IOCTL\_GPIO\_编写\_PIN**](https://msdn.microsoft.com/library/windows/hardware/hh406487)。
+有关详细信息**IOCTL\_GPIO\_读取\_PIN**请求，包括在请求输出缓冲区中的数据输入 pin 的位的映射，请参阅[ **IOCTL\_GPIO\_读取\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_read_pins)。 有关详细信息**IOCTL\_GPIO\_编写\_PIN**请求，包括数据输出插针，将请求输入缓冲区中的位的映射，请参阅[ **IOCTL\_GPIO\_编写\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpio/ni-gpio-ioctl_gpio_write_pins)。
 
 有关演示如何编写 GPIO 外围设备驱动程序在内核模式下运行的一个示例驱动程序，请参阅中的 SimDevice 示例驱动程序[GPIO 示例驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=616032)GitHub 上的集合。
 

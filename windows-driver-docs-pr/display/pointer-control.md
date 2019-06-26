@@ -9,12 +9,12 @@ keywords:
 - 传递指针信息 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c31e49fb0ffeea2cacc4a860971af4feee692d91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80383ad49240705adc4bff7049c60d18e1ddd733
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352204"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365703"
 ---
 # <a name="pointer-control"></a>指针控件
 
@@ -24,7 +24,7 @@ ms.locfileid: "63352204"
 
 每个应用程序必须能够控制移动以响应指针设备，如鼠标有窗口显示的指针。 显示驱动程序、 GDI 或微型端口驱动程序可以[绘制在指针](pointer-drawing.md)。 请参考[控制指针](controlling-the-pointer--drvsetpointershape.md)并[移动指针](moving-the-pointer--drvmovepointer.md)。
 
-GDI 可直接处理所有绘制显示器的使用以线性方式可寻址缓冲区的指针。 设备不是*线性帧缓冲区*，使用 GDI [ **DrvCopyBits** ](https://msdn.microsoft.com/library/windows/hardware/ff556182)绘制的指针。 但是，支持的硬件和显示驱动程序中实现的指针代码是要快得多。
+GDI 可直接处理所有绘制显示器的使用以线性方式可寻址缓冲区的指针。 设备不是*线性帧缓冲区*，使用 GDI [ **DrvCopyBits** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcopybits)绘制的指针。 但是，支持的硬件和显示驱动程序中实现的指针代码是要快得多。
 
 显示器驱动程序有时可以选择将绘制哪些类型的指针和哪种类型，它们将允许 GDI 来处理。 例如，设备可能会在硬件支持单色指针，但失败颜色的指针调用，允许 GDI 来改为处理它们。
 

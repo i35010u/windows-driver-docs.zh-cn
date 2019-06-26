@@ -4,12 +4,12 @@ description: 强制网络门户
 ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a014465c600787e2c878dd17a3c572607a338128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b91b1957cb2d8646d1f914f3c7a1ad861b8596f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392977"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364990"
 ---
 # <a name="captive-portals"></a>强制网络门户
 
@@ -60,7 +60,7 @@ Windows 8、 Windows 8.1 和 Windows 10 体验专为触摸优先。 这将扩展
 ## <a name="span-idpapspanspan-idpapspanprovision-after-purchase"></a><span id="pap"></span><span id="PAP"></span>购买后预配
 
 
-此外可以通过网站应用同一应用程序，可以应用的预配文件。 在 web 页面的 JavaScript 中，检查的可用性[ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/dn529170)方法。 如果存在，在浏览器可以将中继到操作系统的预配文件。 请参阅[使用元数据来配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)有关如何生成此配置文件的详细信息。
+此外可以通过网站应用同一应用程序，可以应用的预配文件。 在 web 页面的 JavaScript 中，检查的可用性[ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))方法。 如果存在，在浏览器可以将中继到操作系统的预配文件。 请参阅[使用元数据来配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)有关如何生成此配置文件的详细信息。
 
 **请注意**  时由网站或不是移动宽带应用的应用提供此配置文件必须进行签名。
 

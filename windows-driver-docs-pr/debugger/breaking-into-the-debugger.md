@@ -13,12 +13,12 @@ keywords:
 - ASSERTMSG 宏
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f10e442ea7c18f65d4ddd8330555777618dcbe0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41543377ccf3255e50ec96d7025bc86cbbe57698
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362393"
 ---
 # <a name="breaking-into-the-debugger"></a>突入调试器
 
@@ -31,7 +31,7 @@ ms.locfileid: "63327355"
 
 中断例程会导致异常发生在当前的过程中，以便调用线程可以指示调试器调用进程与相关联。
 
-若要在用户模式程序从调试器中中断，请使用[DebugBreak 函数](https://msdn.microsoft.com/library/windows/desktop/ms679297(v=vs.85).aspx)。 
+若要在用户模式程序从调试器中中断，请使用[DebugBreak 函数](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)。 
 
 当用户模式程序调用**DebugBreak**，将发生以下可能的操作：
 

@@ -9,19 +9,19 @@ keywords:
 - 检测调谐器标准 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab522d1ebec00571ce4db6db2c57ae4f30bc65e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c9aa28e19b9b772b757767dad4e02c97bedb3c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363324"
 ---
 # <a name="detecting-tuner-standards"></a>检测调谐器标准
 
 
 **本部分仅适用于与 Microsoft Windows Vista 一起启动的操作系统。**
 
-电视应用程序可能很难从电子版收视指南 (EPG) 信息或通道表中检索的电视信号的实际格式。 视频捕获微型驱动程序应支持[ **KSPROPERTY\_调谐器\_标准\_模式**](https://msdn.microsoft.com/library/windows/hardware/ff565909)属性，以允许电视应用程序更准确地检测电视信号的格式。 KSPROPERTY\_调谐器\_标准\_模式将指示应用程序到微型驱动程序是否可以标识从本身的电视信号的调谐器标准。 如果微型驱动程序支持标准检测，KSPROPERTY\_调谐器\_标准\_模式属性可以设置优化设备能够自动检测信号的调谐器标准。 后自动检测设置模式，优化设备本身可以处理任何请求[ **KSPROPERTY\_调谐器\_标准**](https://msdn.microsoft.com/library/windows/hardware/ff565907)属性。
+电视应用程序可能很难从电子版收视指南 (EPG) 信息或通道表中检索的电视信号的实际格式。 视频捕获微型驱动程序应支持[ **KSPROPERTY\_调谐器\_标准\_模式**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-standard-mode)属性，以允许电视应用程序更准确地检测电视信号的格式。 KSPROPERTY\_调谐器\_标准\_模式将指示应用程序到微型驱动程序是否可以标识从本身的电视信号的调谐器标准。 如果微型驱动程序支持标准检测，KSPROPERTY\_调谐器\_标准\_模式属性可以设置优化设备能够自动检测信号的调谐器标准。 后自动检测设置模式，优化设备本身可以处理任何请求[ **KSPROPERTY\_调谐器\_标准**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-standard)属性。
 
 视频捕获微型驱动程序支持 KSPROPERTY\_调谐器\_标准\_模式属性必须是能够自动检测优化设备支持的所有模拟标准。 但是，数字标准是当前可选的。
 

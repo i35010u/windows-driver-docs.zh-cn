@@ -9,12 +9,12 @@ keywords:
 - VideoPortStartDma
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d7e50ae6a1d8807f396bba492f5622fedcbd05b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fe26c24fa604001e8db28b8b6230e2c7063e7bff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365696"
 ---
 # <a name="points-to-consider-when-using-dma"></a>使用 DMA 时需要注意的要点
 
@@ -26,9 +26,9 @@ ms.locfileid: "63383940"
 
 ### <a name="span-idadditionalnotesonvideoportstartdmaspanspan-idadditionalnotesonvideoportstartdmaspanadditional-notes-on-videoportstartdma"></a><span id="additional_notes_on_videoportstartdma"></span><span id="ADDITIONAL_NOTES_ON_VIDEOPORTSTARTDMA"></span>有关 VideoPortStartDma 的其他说明
 
-显示驱动程序通常将传输请求发送到的微型端口驱动程序，实际上将执行这些 DMA 传输。 显示驱动程序不能假定，只是因为其 DMA 引擎处于空闲状态，传输请求中的所有数据已都转移。 这是因为微型端口驱动程序需要调用[ **VideoPortStartDma** ](https://msdn.microsoft.com/library/windows/hardware/ff570369)并[ **VideoPortCompleteDma** ](https://msdn.microsoft.com/library/windows/hardware/ff570286)多个时间对于大型传输请求。 硬件的 DMA 引擎是闲置的两个此类 DMA 操作，即使可能有其他要传输的数据。 它是微型端口驱动程序的责任转移请求已完全完成时通知显示驱动程序。
+显示驱动程序通常将传输请求发送到的微型端口驱动程序，实际上将执行这些 DMA 传输。 显示驱动程序不能假定，只是因为其 DMA 引擎处于空闲状态，传输请求中的所有数据已都转移。 这是因为微型端口驱动程序需要调用[ **VideoPortStartDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstartdma)并[ **VideoPortCompleteDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportcompletedma)多个时间对于大型传输请求。 硬件的 DMA 引擎是闲置的两个此类 DMA 操作，即使可能有其他要传输的数据。 它是微型端口驱动程序的责任转移请求已完全完成时通知显示驱动程序。
 
-*上下文*的参数**VideoPortStartDma**应指向未分页的内存，如硬件扩展中的内存。 此参数将传递给微型端口驱动程序[ **HwVidExecuteDma** ](https://msdn.microsoft.com/library/windows/hardware/ff567330) IRQL 调度时运行的回调例程\_级别。
+*上下文*的参数**VideoPortStartDma**应指向未分页的内存，如硬件扩展中的内存。 此参数将传递给微型端口驱动程序[ **HwVidExecuteDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pexecute_dma) IRQL 调度时运行的回调例程\_级别。
 
 ### <a name="span-iddmaandinterruptsspanspan-iddmaandinterruptsspandma-and-interrupts"></a><span id="dma_and_interrupts"></span><span id="DMA_AND_INTERRUPTS"></span>DMA 和中断
 
@@ -38,7 +38,7 @@ ms.locfileid: "63383940"
 
 ### <a name="span-idlogicaladdressesversusphysicaladdressesspanspan-idlogicaladdressesversusphysicaladdressesspanlogical-addresses-versus-physical-addresses"></a><span id="logical_addresses_versus_physical_addresses"></span><span id="LOGICAL_ADDRESSES_VERSUS_PHYSICAL_ADDRESSES"></span>与物理地址的逻辑地址
 
-视频端口驱动程序的 DMA 实现使用这一概念的逻辑地址，这是 DMA 硬件使用的地址。 逻辑地址可不同于物理地址。 视频端口驱动程序提供 DMA 函数考虑到任何特定于平台的内存限制。 出于此原因，务必要使用的视频端口驱动程序 DMA 函数而不是作为此类内核模式函数[ **MmGetPhysicalAddress**](https://msdn.microsoft.com/library/windows/hardware/ff554547)。 请参阅[适配器对象和 DMA](https://msdn.microsoft.com/library/windows/hardware/ff540519)逻辑地址有关的详细信息。
+视频端口驱动程序的 DMA 实现使用这一概念的逻辑地址，这是 DMA 硬件使用的地址。 逻辑地址可不同于物理地址。 视频端口驱动程序提供 DMA 函数考虑到任何特定于平台的内存限制。 出于此原因，务必要使用的视频端口驱动程序 DMA 函数而不是作为此类内核模式函数[ **MmGetPhysicalAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmgetphysicaladdress)。 请参阅[适配器对象和 DMA](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)逻辑地址有关的详细信息。
 
 ### <a name="span-idconcurrentdmaspanspan-idconcurrentdmaspanconcurrent-dma"></a><span id="concurrent_dma"></span><span id="CONCURRENT_DMA"></span>并发 DMA
 

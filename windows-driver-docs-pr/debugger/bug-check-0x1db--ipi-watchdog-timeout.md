@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa6ed66a0f3def21454639270783f7b0c8940c82
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d234677ac0dc58d994e714c2439962bf5f8a8c3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361595"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367561"
 ---
 # <a name="bug-check-0x1db-ipiwatchdogtimeout"></a>Bug 检查 0x1DB：IPI\_监视器\_超时
 
 IPI\_监视器\_超时错误检查的值为 0x000001DB。 它指示，一个处理器具有 IPI 循环中停滞超过允许的时间。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 

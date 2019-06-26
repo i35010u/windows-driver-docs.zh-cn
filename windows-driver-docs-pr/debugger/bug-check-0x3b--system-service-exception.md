@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca0c17cfccd665eb7f2d9af5ebcf0c6749303361
-ms.sourcegitcommit: 5523bbb8b8bbeaabee8243ff8efc206aeebae5ea
+ms.openlocfilehash: 4cbd6a2202f9c2d7a3b3c15a4129a6663abbeda2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515934"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361905"
 ---
 # <a name="bug-check-0x3b-systemserviceexception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -26,7 +26,7 @@ ms.locfileid: "66515934"
 系统\_服务\_异常错误检查的值为 0x0000003B。 这表示对特权代码从非特权代码执行的例程的转换时，发生异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="systemserviceexception-parameters"></a>系统\_服务\_异常参数
@@ -145,7 +145,7 @@ Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referen
 
 -   查找范围**设备管理器**若要查看的任何设备都带有感叹号 （！）。 查看任何错误的驱动程序的驱动程序属性中显示的事件日志。 请尝试更新相关的驱动程序。
 
--   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+-   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 -   如果你最近添加到系统中，请尝试删除或替换它的硬件。 或者，请与制造商联系，以了解是否有任何修补程序。
 

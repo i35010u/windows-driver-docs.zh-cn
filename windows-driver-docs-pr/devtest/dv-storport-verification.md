@@ -4,12 +4,12 @@ description: Storport 验证
 ms.assetid: 3731C877-1A69-447C-A5DB-0BDD1B753D3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb593fc74a083374d58f4da6d0d6b327f02df909
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63af5c2ae009a36a03791fb85d7818008c23dc6b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344839"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371389"
 ---
 # <a name="storport-verification"></a>Storport 验证
 
@@ -29,21 +29,21 @@ Storport 验证功能可以检测到多个误用了 Storport 例程。 还有可
 
 Storport 验证功能将发出 bug 检查 0xF1 或 bug 检查 0xC4 Storport 微型端口驱动程序提交一个以下冲突：
 
--   微型端口驱动程序将错误参数 （NULL 指针） 传递给[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)例程。
+-   微型端口驱动程序将错误参数 （NULL 指针） 传递给[ **StorPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)例程。
 
--   微型端口驱动程序调用[ **StorPortStallExecution** ](https://msdn.microsoft.com/library/windows/hardware/ff567508) ，并指定延迟时间超过 0.1 秒，拖延症的处理器的时间过多的时间。
+-   微型端口驱动程序调用[ **StorPortStallExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportstallexecution) ，并指定延迟时间超过 0.1 秒，拖延症的处理器的时间过多的时间。
 
--   [**StorPortFreeDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff567061)仅从微型端口驱动程序可以调用**HwStorFindAdapter**例程。
+-   [**StorPortFreeDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportfreedevicebase)仅从微型端口驱动程序可以调用**HwStorFindAdapter**例程。
 
--   [**StorPortGetUncachedExtension** ](https://msdn.microsoft.com/library/windows/hardware/ff567103)仅从微型端口驱动程序可以调用**HwStorFindAdapter**例程和可以调用仅为主机总线适配器。 微型端口必须设置**SrbExtensionSize**的[ **HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff557459) (Storport) 结构，然后再调用**StorPortGetUncachedExtension**。
+-   [**StorPortGetUncachedExtension** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetuncachedextension)仅从微型端口驱动程序可以调用**HwStorFindAdapter**例程和可以调用仅为主机总线适配器。 微型端口必须设置**SrbExtensionSize**的[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data) (Storport) 结构，然后再调用**StorPortGetUncachedExtension**。
 
--   [ **StorPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff567080)例程支持分配给驱动程序的系统插即用 (PnP) 管理器的地址。
+-   [ **StorPortGetDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)例程支持分配给驱动程序的系统插即用 (PnP) 管理器的地址。
 
--   微型端口驱动程序将无效的虚拟地址传递给其中一个 **StorPortRead * * * xxx*或 **StorPortWrite * * * xxx*例程 (例如， [ **StorPortReadRegisterUchar** ](https://msdn.microsoft.com/library/windows/hardware/ff567483)或[ **StorPortWritePortBufferUlong**](https://msdn.microsoft.com/library/windows/hardware/ff567517))。 这通常意味着提供的地址不会映射到常见的缓冲区区域。 指定*注册*或*端口*必须在映射的内存空间范围内返回[ **StorPortGetDeviceBase** ](https://msdn.microsoft.com/library/windows/hardware/ff567080)例程。 此检查仅支持基于 x86 的系统。
+-   微型端口驱动程序将无效的虚拟地址传递给其中一个 **StorPortRead * * * xxx*或 **StorPortWrite * * * xxx*例程 (例如， [ **StorPortReadRegisterUchar** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportreadregisteruchar)或[ **StorPortWritePortBufferUlong**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportwriteportbufferulong))。 这通常意味着提供的地址不会映射到常见的缓冲区区域。 指定*注册*或*端口*必须在映射的内存空间范围内返回[ **StorPortGetDeviceBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)例程。 此检查仅支持基于 x86 的系统。
 
-Storport 验证使用的 bug 检查参数的列表，请参阅[ **Bug 检查 0xF1** ](https://msdn.microsoft.com/library/windows/hardware/ff560365) (SCSI\_VERIFIER\_检测到\_冲突)。 除了 Bug 检查 0xF1，还使用了 Storport 验证[ **Bug 检查 0xC4** ](https://msdn.microsoft.com/library/windows/hardware/ff560187) (驱动程序\_VERIFIER\_检测到\_冲突)。
+Storport 验证使用的 bug 检查参数的列表，请参阅[ **Bug 检查 0xF1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xf1--scsi-verifier-detected-violation) (SCSI\_VERIFIER\_检测到\_冲突)。 除了 Bug 检查 0xF1，还使用了 Storport 验证[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突)。
 
-**请注意**  [**Bug 检查 0xF1** ](https://msdn.microsoft.com/library/windows/hardware/ff560365)用于 SCSI 验证和 Storport 验证。
+**请注意**  [**Bug 检查 0xF1** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xf1--scsi-verifier-detected-violation)用于 SCSI 验证和 Storport 验证。
 
  
 

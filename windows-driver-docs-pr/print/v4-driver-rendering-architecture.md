@@ -1,17 +1,17 @@
 ---
-title: V4 打印机驱动程序呈现体系结构
+title: V4 打印机驱动程序渲染体系结构
 description: V4 打印机驱动程序模型的呈现体系结构是 XPSDrv 体系结构相同。
 ms.assetid: 132BB5D5-426C-4449-8562-B5E43E331858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e41b41db70243585742df0b22e74622e306584a2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 100d89678075dbca81bcd8e37d195f3fedacef7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56521454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362690"
 ---
-# <a name="v4-printer-driver-rendering-architecture"></a>V4 打印机驱动程序呈现体系结构
+# <a name="v4-printer-driver-rendering-architecture"></a>V4 打印机驱动程序渲染体系结构
 
 
 V4 打印机驱动程序模型的呈现体系结构的 XPSDrv 体系结构、 相同，XPS 筛选器管道也遵循相同的 Windows，其中几个值得注意添加的内容的上一版本中使用的设计。
@@ -60,11 +60,11 @@ IHV 功能筛选器启用的功能，如每张多处理、 水印制作，或页
 ## <a name="color-management"></a>颜色管理
 
 
-V4 打印驱动程序支持颜色管理。 驱动程序应包括[Windows 颜色系统](https://msdn.microsoft.com/library/windows/hardware/ff563783)(WCS) 兼容的颜色配置文件或国际色彩联合会 (ICC) 颜色配置文件。 V4 打印驱动程序还可以为特定于设备的颜色表中使用的驱动程序属性包。
+V4 打印驱动程序支持颜色管理。 驱动程序应包括[Windows 颜色系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)(WCS) 兼容的颜色配置文件或国际色彩联合会 (ICC) 颜色配置文件。 V4 打印驱动程序还可以为特定于设备的颜色表中使用的驱动程序属性包。
 
 ## <a name="related-topics"></a>相关主题
 [V4 打印机驱动程序呈现](v4-driver-rendering.md)  
-[Windows 颜色系统](https://msdn.microsoft.com/library/windows/hardware/ff563783)  
+[Windows 颜色系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)  
 
 
 

@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 JavaScript 创建脚本，了解调试�
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ab8a09abb89ace35b8d44b6f1356432d73d860b4
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: aecec2cbf92677e31617a7b17a48178c91a848b0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902473"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366820"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -92,11 +92,11 @@ Available Script Providers:
 
 以下命令是可用于使用 JavaScript 调试器编写脚本。
 
--   [**.scriptproviders （列表脚本提供程序）**](-scriptproviders--list-script-providers-.md)
--   [**.scriptload （负载脚本）**](-scriptload--load-script-.md)
--   [**.scriptunload （卸载脚本）**](-scriptunload--unload-script-.md)
--   [**.scriptrun （运行脚本）**](-scriptrun--run-script-.md)
--   [**.scriptlist （列出已加载的脚本）**](-scriptlist--list-loaded-scripts-.md)
+-   [ **.scriptproviders （列表脚本提供程序）** ](-scriptproviders--list-script-providers-.md)
+-   [ **.scriptload （负载脚本）** ](-scriptload--load-script-.md)
+-   [ **.scriptunload （卸载脚本）** ](-scriptunload--unload-script-.md)
+-   [ **.scriptrun （运行脚本）** ](-scriptrun--run-script-.md)
+-   [ **.scriptlist （列出已加载的脚本）** ](-scriptlist--list-loaded-scripts-.md)
 
 **要求**
 
@@ -122,7 +122,7 @@ Available Script Providers:
 
 以结尾的任何文件"。NatVis"理解为 NatVis 脚本并以".js"结尾的任何文件理解为 JavaScript 脚本。 可以使用.scriptload 命令加载任一类型的脚本。
 
-有关详细信息，请参阅[ **.scriptproviders （列表脚本提供程序）**](-scriptproviders--list-script-providers-.md)
+有关详细信息，请参阅[ **.scriptproviders （列表脚本提供程序）** ](-scriptproviders--list-script-providers-.md)
 
 ## <a name="span-idscriptloadloadscriptspanspan-idscriptloadloadscriptspanscriptload-load-script"></a><span id=".scriptload__load_script_"></span><span id=".SCRIPTLOAD__LOAD_SCRIPT_"></span>.scriptload （负载脚本）
 
@@ -136,7 +136,7 @@ JavaScript script successfully loaded from 'C:\WinDbg\Scripts\TestScript.js'
 
 脚本所做的任何对象模型操作将就地保留，直到该脚本随后卸载或重新运行具有不同的内容。
 
-有关详细信息，请参阅[ **.scriptload （负载脚本）**](-scriptload--load-script-.md)
+有关详细信息，请参阅[ **.scriptload （负载脚本）** ](-scriptload--load-script-.md)
 
 ## <a name="span-idscriptrunspanscriptrun"></a><span id=".SCRIPTRUN"></span>.scriptrun
 
@@ -151,7 +151,7 @@ Hello World!  We are in JavaScript!
 
 脚本所做的任何调试器对象模型操作将就地保留，直到该脚本随后卸载或重新运行具有不同的内容。
 
-有关详细信息，请参阅[ **.scriptrun （运行脚本）**](-scriptrun--run-script-.md)。
+有关详细信息，请参阅[ **.scriptrun （运行脚本）** ](-scriptrun--run-script-.md)。
 
 ## <a name="span-idscriptunloadunloadscriptspanspan-idscriptunloadunloadscriptspanscriptunload-unload-script"></a><span id=".scriptunload__unload_script_"></span><span id=".SCRIPTUNLOAD__UNLOAD_SCRIPT_"></span>.scriptunload （卸载脚本）
 
@@ -163,7 +163,7 @@ Hello World!  We are in JavaScript!
 JavaScript script unloaded from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-有关详细信息，请参阅[ **.scriptunload （卸载脚本）**](-scriptunload--unload-script-.md)。
+有关详细信息，请参阅[ **.scriptunload （卸载脚本）** ](-scriptunload--unload-script-.md)。
 
 ## <a name="span-idscriptlistlistloadedscriptsspanspan-idscriptlistlistloadedscriptsspanscriptlist-list-loaded-scripts"></a><span id=".scriptlist__list_loaded_scripts_"></span><span id=".SCRIPTLIST__LIST_LOADED_SCRIPTS_"></span>.scriptlist （列出已加载的脚本）
 
@@ -176,7 +176,7 @@ Command Loaded Scripts:
     JavaScript script from 'C:\WinDbg\Scripts\TestScript.js'
 ```
 
-有关详细信息，请参阅[ **.scriptlist （列表加载脚本）**](-scriptlist--list-loaded-scripts-.md)。
+有关详细信息，请参阅[ **.scriptlist （列表加载脚本）** ](-scriptlist--list-loaded-scripts-.md)。
 
 ## <a name="span-idstartedspanspan-idstartedspanspan-idstartedspanget-started-with-javascript-debugger-scripting"></a><span id="Started"></span><span id="started"></span><span id="STARTED"></span>开始使用脚本编写的 JavaScript 调试器
 
@@ -478,7 +478,7 @@ function main()
 ## <a name="span-idvisualizerspanspan-idvisualizerspanspan-idvisualizerspancreating-a-debugger-visualizer-in-javascript"></a><span id="Visualizer"></span><span id="visualizer"></span><span id="VISUALIZER"></span>在 JavaScript 中创建调试器可视化工具
 
 
-自定义可视化效果文件，进行分组和组织更好地反映数据关系和内容的可视化结构中的数据。 JavaScript 调试器扩展可用于编写的方式非常类似于 NatVis 调试器可视化工具执行操作的。 通过创作一个 JavaScript 原型对象 （或 ES6 类） 它可充当给定数据的可视化工具类型完成此操作。 有关 NatVis 和调试器的详细信息请参阅[ **dx （显示 NatVis 表达式）**](dx--display-visualizer-variables-.md)。
+自定义可视化效果文件，进行分组和组织更好地反映数据关系和内容的可视化结构中的数据。 JavaScript 调试器扩展可用于编写的方式非常类似于 NatVis 调试器可视化工具执行操作的。 通过创作一个 JavaScript 原型对象 （或 ES6 类） 它可充当给定数据的可视化工具类型完成此操作。 有关 NatVis 和调试器的详细信息请参阅[ **dx （显示 NatVis 表达式）** ](dx--display-visualizer-variables-.md)。
 
 **示例类-Simple1DArray**
 
@@ -1224,13 +1224,13 @@ Test
 
 以下是可能会很有用，因为开发 JavaScript 调试扩展的 JavaScript 资源。
 
--   [编写 JavaScript 代码](https://msdn.microsoft.com/library/cte3c772.aspx)
+-   [编写 JavaScript 代码](https://docs.microsoft.com/scripting/javascript/writing-javascript-code)
 
--   [JScript 语言教程](https://msdn.microsoft.com/library/t895bwkh.aspx)
+-   [JScript 语言教程](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
 
 -   [Mozilla JavaScript 参考](https://developer.mozilla.org/docs/Web/JavaScript)
 
--   [WinJS：Windows JavaScript 库](https://developer.microsoft.com/windows/develop/winjs)
+-   [WinJS：Windows JavaScript 库](https://github.com/winjs/winjs)
 
 -   [ECMAScript 6-新功能：概述和比较](https://es6-features.org/)
 

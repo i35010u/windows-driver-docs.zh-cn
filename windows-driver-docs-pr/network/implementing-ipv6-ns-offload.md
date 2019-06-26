@@ -4,22 +4,22 @@ description: 本部分介绍如何实现 IPv6 邻居招标 (NS) 卸载
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 685fecb635c435e52ecd5a3f7adde5d6075fbab8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2565613a276a8f876f97cbbe279c73a4940ff68a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374865"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>实现 IPv6 NS 卸载
 
 
-NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_PM\_添加\_协议\_卸载](https://msdn.microsoft.com/library/windows/hardware/ff569763)OID 请求。 若要支持这些 NS 卸载请求，微型端口应执行以下操作。
+NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_PM\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)OID 请求。 若要支持这些 NS 卸载请求，微型端口应执行以下操作。
 
 ## <a name="indicating-how-many-offload-requests-the-miniport-adapter-supports"></a>指示多少卸载请求微型端口适配器支持
 
 
-微型端口驱动程序设置**NumNSOffloadIPv6Addresses**的成员[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构，以指示多少 NS卸载请求微型端口适配器支持。
+微型端口驱动程序设置**NumNSOffloadIPv6Addresses**的成员[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构，以指示多少 NS卸载请求微型端口适配器支持。
 
 **请注意**  尽管其名称**NumNSOffloadIPv6Addresses**成员包含的支持请求，不是数字的地址数。
 
@@ -35,7 +35,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 
 ### <a name="example"></a>示例
 
-如果微型端口驱动程序设置[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)隶属**NumNSOffloadIPv6Addresses**然后 NDIS 可能为 3，结构发送最多 3 个[OID\_PM\_添加\_协议\_卸载](https://msdn.microsoft.com/library/windows/hardware/ff569763)类型的请求**NdisPMProtocolOffloadIdIPv6NS**。 每个 OID\_PM\_添加\_协议\_卸载请求中可以有完全 1 或 2 个地址**TargetIPv6Addresses**隶属[ **NDIS\_PM\_协议\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff566760)结构。 因此，微型端口必须支持 3 x 2 = 6 目标地址。
+如果微型端口驱动程序设置[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)隶属**NumNSOffloadIPv6Addresses**然后 NDIS 可能为 3，结构发送最多 3 个[OID\_PM\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)类型的请求**NdisPMProtocolOffloadIdIPv6NS**。 每个 OID\_PM\_添加\_协议\_卸载请求中可以有完全 1 或 2 个地址**TargetIPv6Addresses**隶属[ **NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构。 因此，微型端口必须支持 3 x 2 = 6 目标地址。
 
 由于微型端口必须匹配这两个单播和多播的 NS 消息为每个目标地址，微型端口应该能够匹配总共 6 x 2 = 12 NS 消息模式。
 
@@ -125,7 +125,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <thead>
 <tr class="header">
 <th align="left">字段</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>

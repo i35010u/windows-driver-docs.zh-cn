@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5fdfd6178affa2c58f280092fa546df993e4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9c83b23fbd4e1acad95d3f6ac8c8d8a0a036cf6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377848"
 ---
 # <a name="srbwritedata"></a>SRB\_WRITE\_DATA
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333984"
 ## <span id="ddk_srb_write_data_ks"></span><span id="DDK_SRB_WRITE_DATA_KS"></span>
 
 
-在类驱动程序收到的写入请求的微型驱动程序。 值*pSrb*-&gt;**CommandData**。**DataBufferArray**指向的数组[ **KSSTREAM\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff567138)结构，一起描述了数据缓冲区。 值*pSrb*-&gt;**CommandData**。**NumberOfBuffers**指定数组的大小。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。
+在类驱动程序收到的写入请求的微型驱动程序。 值*pSrb*-&gt;**CommandData**。**DataBufferArray**指向的数组[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构，一起描述了数据缓冲区。 值*pSrb*-&gt;**CommandData**。**NumberOfBuffers**指定数组的大小。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 

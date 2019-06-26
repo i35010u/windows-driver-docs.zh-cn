@@ -4,12 +4,12 @@ description: Windows 支持通过使用 UpdateCapsule 函数进行处理的驱�
 ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82190d7efe9a28700310df7a188f391618ba6c20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a30ab9bc35cf8bbe9dffce25d3de689e8f32766
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338066"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364486"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 
@@ -32,7 +32,7 @@ UEFI 固件更新平台指南适用于 SoC 供应商和 Oem 负责构建运行 W
 
 Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更新过程中更新 UEFI 固件。 运行 Windows 10 移动版的设备可以使用基于 UpdateCapsule 的过程仅在方案中无法使用二进制更新过程的。 例如，如果设备的分区布局阻止 UEFI 固件更新使用二进制更新包。
 
-对于 Windows 10 移动版.spkg 程序包的详细信息，请参阅[创建包](https://msdn.microsoft.com/library/dn756642)并[更新](https://msdn.microsoft.com/library/dn757518)。
+对于 Windows 10 移动版.spkg 程序包的详细信息，请参阅[创建包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))并[更新](https://docs.microsoft.com/windows-hardware/service/mobile/index)。
 
 ## <a name="overview-of-the-uefi-firmware-update-platform"></a>UEFI 固件更新平台概述
 

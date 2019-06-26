@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b236ed37b5fc5d19f7e0b43cb1485f0ba88496f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d160bc4300164e477624716ca41f5c989f599a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335941"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362459"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
 
 
-**！ Ndiskd.pendingnbls**扩展插件都会显示挂起的功能的 Nbl ([**NET\_缓冲区\_列出**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)) 位于在传输过程中。
+**！ Ndiskd.pendingnbls**扩展插件都会显示挂起的功能的 Nbl ([**NET\_缓冲区\_列出**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) 位于在传输过程中。
 
 ```console
 !ndiskd.pendingnbls [-handle <x>] [-fullstack] [-verbosity <x>] 
@@ -119,23 +119,23 @@ Search complete.
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://msdn.microsoft.com/windows/hardware/drivers/network/net-buffer-list-structure)
+[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[**!ndiskd.minidriver**](-ndiskd-minidriver.md)
+[ **!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
-[**最佳实践，bu，bm （设置断点）**](bp--bu--bm--set-breakpoint-.md)
+[**最佳实践，bu，bm （设置断点）** ](bp--bu--bm--set-breakpoint-.md)
 
  
 

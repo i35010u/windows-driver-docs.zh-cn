@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Synth_Dls
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8048abb14498e3a9bf0c4a8c15fe4bb68e73637d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 469dd11d27cd70288d9dd8e0d6f4a632a0b6dc7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360475"
 ---
 # <a name="kspropsetidsynthdls"></a>KSPROPSETID\_合成器\_Dls
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332479"
 ## <span id="ddk_kspropsetid_synth_dls_ks"></span><span id="DDK_KSPROPSETID_SYNTH_DLS_KS"></span>
 
 
-`KSPROPSETID_Synth_Dls`属性集包含用于下载 DLS 示例和 instruments 到 MIDI 合成器的属性。 这些是合成器节点的属性 ([**KSNODETYPE\_合成器**](ksnodetype-synthesizer.md)) DirectMusic 筛选器对 DirectMusic pin (请参阅[MIDI 和 DirectMusic 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff537520)).
+`KSPROPSETID_Synth_Dls`属性集包含用于下载 DLS 示例和 instruments 到 MIDI 合成器的属性。 这些是合成器节点的属性 ([**KSNODETYPE\_合成器**](ksnodetype-synthesizer.md)) DirectMusic 筛选器对 DirectMusic pin (请参阅[MIDI 和 DirectMusic 筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/midi-and-directmusic-filters)).
 
 本部分介绍有关如何下载并卸载"块"包含 DLS 数据的内存的这些属性的行为。 Microsoft Windows SDK 文档中的低级别 DLS 讨论中指定的已下载的检测和批数据区块的实际格式。
 
@@ -62,7 +62,7 @@ KSPROPERTY\_合成\_DLS\_追加属性指定客户端将追加到其下载到合�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -128,7 +128,7 @@ KSPROPERTY\_合成\_DLS\_COMPACT 属性是合成器提供免费的示例内存�
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>无</p></td>
 </tr>
 </tbody>
@@ -196,8 +196,8 @@ KSPROPERTY\_合成\_DLS\_下载属性用于 DLS 数据下载到合成器。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://msdn.microsoft.com/library/windows/hardware/ff538460" data-raw-source="[&lt;strong&gt;SYNTH_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538460)"><strong>SYNTH_BUFFER</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538429" data-raw-source="[&lt;strong&gt;SYNTHDOWNLOAD&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538429)"><strong>SYNTHDOWNLOAD</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a> + <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_buffer" data-raw-source="[&lt;strong&gt;SYNTH_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synth_buffer)"><strong>SYNTH_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthdownload" data-raw-source="[&lt;strong&gt;SYNTHDOWNLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusprop/ns-dmusprop-_synthdownload)"><strong>SYNTHDOWNLOAD</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -208,7 +208,7 @@ KSPROPERTY\_合成\_DLS\_下载属性用于 DLS 数据下载到合成器。
 
 属性值 （操作数据） 是 SYNTHDOWNLOAD 结构。 微型端口驱动程序将返回传递此结构中的以下信息：
 
--   微型端口驱动程序来唯一标识已下载的 DLS 数据将生成一个句柄。 此客户端应该保存此句柄和更高版本使用它来卸载数据 (请参阅[ **KSPROPERTY\_合成\_DLS\_卸载**](https://msdn.microsoft.com/library/windows/hardware/ff537398))。
+-   微型端口驱动程序来唯一标识已下载的 DLS 数据将生成一个句柄。 此客户端应该保存此句柄和更高版本使用它来卸载数据 (请参阅[ **KSPROPERTY\_合成\_DLS\_卸载**](https://docs.microsoft.com/previous-versions/ff537398(v=vs.85)))。
 
 -   一个布尔值，该值指示是否在客户端可以释放包含 DLS 数据属性请求完成后的缓冲区。 如果微型端口驱动程序做了其自己 DLS 数据副本，则客户端可以释放缓冲区。 否则，如果微型端口驱动程序将继续使用客户端的原始 DLS 数据缓冲区，客户端应不释放缓冲区之前微型端口驱动程序卸载 DLS 数据。
 
@@ -308,7 +308,7 @@ KSPROPERTY\_合成\_DLS\_卸载属性卸载以前下载的 DLS 数据资源。
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>句柄</p></td>
 </tr>
 </tbody>
@@ -316,7 +316,7 @@ KSPROPERTY\_合成\_DLS\_卸载属性卸载以前下载的 DLS 数据资源。
 
  
 
-（操作数据） 的属性值的类型句柄，并包含是要释放的已下载 DLS 数据资源的句柄。 这是微型端口驱动程序生成的标识 DLS 数据在上一次的句柄[ **KSPROPERTY\_合成\_DLS\_下载**](https://msdn.microsoft.com/library/windows/hardware/ff537396)get 属性请求.
+（操作数据） 的属性值的类型句柄，并包含是要释放的已下载 DLS 数据资源的句柄。 这是微型端口驱动程序生成的标识 DLS 数据在上一次的句柄[ **KSPROPERTY\_合成\_DLS\_下载**](https://docs.microsoft.com/previous-versions/ff537396(v=vs.85))get 属性请求.
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -386,8 +386,8 @@ KSPROPERTY\_合成\_DLS\_WAVEFORMAT 属性用于查询有关其输出波形格�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538799" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538799)"><strong>WAVEFORMATEX</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)"><strong>WAVEFORMATEX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -421,7 +421,7 @@ KSPROPERTY\_合成\_DLS\_WAVEFORMAT 属性请求将返回状态\_成功以指示
 
  
 
-属性值的缓冲区**sizeof**(WAVEFORMATEX) 字节不可能足够大，对所有波形格式。 例如，多渠道格式需要的缓冲区**sizeof**([**WAVEFORMATEXTENSIBLE**](https://msdn.microsoft.com/library/windows/hardware/ff538802)) 字节。 如果属性请求将返回状态代码的状态\_缓冲区\_过\_小，客户端可以检查微型端口驱动程序输出的属性值大小、 分配较大的缓冲区，然后提交的第二个请求。
+属性值的缓冲区**sizeof**(WAVEFORMATEX) 字节不可能足够大，对所有波形格式。 例如，多渠道格式需要的缓冲区**sizeof**([**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)) 字节。 如果属性请求将返回状态代码的状态\_缓冲区\_过\_小，客户端可以检查微型端口驱动程序输出的属性值大小、 分配较大的缓冲区，然后提交的第二个请求。
 
 有关详细信息，请参阅的说明**IDirectMusicPort::GetFormat** Microsoft Windows SDK 文档中的方法。
 

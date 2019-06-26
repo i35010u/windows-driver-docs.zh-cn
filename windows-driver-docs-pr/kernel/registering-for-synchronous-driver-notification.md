@@ -10,12 +10,12 @@ keywords:
 - 注册的驱动程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f055374a1a700fcffb813076868d625a3425e1e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69f5b8865e4fbae5c422f79a101b140c7ef7ae9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330575"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373447"
 ---
 # <a name="registering-for-synchronous-driver-notification"></a>注册同步驱动程序通知
 
@@ -33,7 +33,7 @@ VOID
     );
 ```
 
-设备驱动程序通过调用注册同步驱动程序通知[ **KeRegisterProcessorChangeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff553120)函数。 设备驱动程序通常会调用**KeRegisterProcessorChangeCallback**中的函数及其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 如果设备驱动程序指定 KE\_处理器\_更改\_添加\_现有标志，为每个活动的处理器中当前存在在硬件分区中，立即调用回调函数对新处理器添加到硬件分区时要调用的补充。 下面的代码示例演示如何注册用于同步的驱动程序通知：
+设备驱动程序通过调用注册同步驱动程序通知[ **KeRegisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterprocessorchangecallback)函数。 设备驱动程序通常会调用**KeRegisterProcessorChangeCallback**中的函数及其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 如果设备驱动程序指定 KE\_处理器\_更改\_添加\_现有标志，为每个活动的处理器中当前存在在硬件分区中，立即调用回调函数对新处理器添加到硬件分区时要调用的补充。 下面的代码示例演示如何注册用于同步的驱动程序通知：
 
 ```cpp
 PVOID CallbackRegistrationHandle;
@@ -80,7 +80,7 @@ NTSTATUS  DriverEntry(
 }
 ```
 
-当设备驱动程序必须停止接收同步的驱动程序通知，例如当正在卸载它，它必须通过调用来注销回调函数[ **KeDeregisterProcessorChangeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff552015)函数。 设备驱动程序通常会调用**KeDeregisterProcessorChangeCallback**中的函数及其[*卸载*](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数。 下面的代码示例演示如何取消注册回调函数：
+当设备驱动程序必须停止接收同步的驱动程序通知，例如当正在卸载它，它必须通过调用来注销回调函数[ **KeDeregisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kederegisterprocessorchangecallback)函数。 设备驱动程序通常会调用**KeDeregisterProcessorChangeCallback**中的函数及其[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。 下面的代码示例演示如何取消注册回调函数：
 
 ```cpp
 // The driver's Unload routine

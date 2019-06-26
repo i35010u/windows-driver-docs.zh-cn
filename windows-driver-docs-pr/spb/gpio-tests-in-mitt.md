@@ -4,12 +4,12 @@ description: MITT 软件程序包中包含的 GPIO 测试模块可用于测试�
 ms.assetid: D50C371B-4A03-4BDD-8EC2-6E7A4A4DF3C5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 327d545f5a1704d0e90b245d5b263fff76fab6b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b0bc3c5ac0c6a2687c096a9edf5f6423a69bfd9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356800"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373775"
 ---
 # <a name="gpio-tests-in-mitt"></a>MITT 中的 GPIO 测试
 
@@ -27,9 +27,9 @@ MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 板和 GPIO 适配器板。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   获取 MITT 板和 GPIO 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 
@@ -191,7 +191,7 @@ MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷
 ![gpio 示意图](images/gpioschematic.png)
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://msdn.microsoft.com/library/windows/hardware/dn919874)  
+[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
 
 
 

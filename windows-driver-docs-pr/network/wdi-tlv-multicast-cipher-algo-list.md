@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cb8c56995e7c8f6dc1a5a49174a18fbe734fd613
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f195f68b4c1d16a6cf3a2f0c9cbf1beafef7fc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385265"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377006"
 ---
 # <a name="wditlvmulticastcipheralgolist"></a>WDI\_TLV\_多播\_密码\_ALGO\_列表
 
@@ -26,14 +26,14 @@ WDI\_TLV\_多播\_密码\_ALGO\_列表是包含一系列多路广播的密码算
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_密码\_算法**](https://msdn.microsoft.com/library/windows/hardware/dn897802)结构。 该数组必须包含一个或多个元素。
+数组的大小 （以字节为单位） [ **WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)结构。 该数组必须包含一个或多个元素。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                            | 描述                              |
 |-----------------------------------------------------------------|------------------------------------------|
-| [**WDI\_CIPHER\_ALGORITHM**](https://msdn.microsoft.com/library/windows/hardware/dn897802)\[\] | 多播的密码算法的数组。 |
+| [**WDI\_CIPHER\_ALGORITHM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | 多播的密码算法的数组。 |
 
  
 

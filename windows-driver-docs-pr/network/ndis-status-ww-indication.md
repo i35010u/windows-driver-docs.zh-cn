@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WW_INDICATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccda98eb4325acc03c880a57cc1d0ec2070c312
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 114c57bb80bb4f79a2047f63eded1489388056c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323449"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375186"
 ---
 # <a name="ndisstatuswwindication"></a>NDIS\_状态\_WW\_指示
 
@@ -21,7 +21,7 @@ NDIS\_状态\_WW\_指示状态是否相同[ **NDIS\_状态\_媒体\_特定\_指�
 <a name="remarks"></a>备注
 -------
 
-详细了解 NDIS\_状态\_WW\_指示，请参阅[OID\_WW\_常规\_指示\_请求](https://msdn.microsoft.com/library/windows/hardware/ff561411)。
+详细了解 NDIS\_状态\_WW\_指示，请参阅[OID\_WW\_常规\_指示\_请求](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561411(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,7 +48,7 @@ NDIS\_状态\_WW\_指示状态是否相同[ **NDIS\_状态\_媒体\_特定\_指�
 
 [**NDIS\_状态\_媒体\_特定\_指示**](ndis-status-media-specific-indication.md)
 
-[OID\_WW\_GEN\_INDICATION\_REQUEST](https://msdn.microsoft.com/library/windows/hardware/ff561411)
+[OID\_WW\_GEN\_INDICATION\_REQUEST](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561411(v=vs.85))
 
  
 

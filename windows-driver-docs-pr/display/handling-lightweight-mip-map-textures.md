@@ -7,12 +7,12 @@ keywords:
 - 轻型 MIP 贴图纹理 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e4dad90cecaf1e112ce8ef0850cf54b07d4325d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce1f698c80014aaa56c4ea4a212569d8ae8bf2d8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323717"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372937"
 ---
 # <a name="handling-lightweight-mip-map-textures"></a>处理轻量 MIP 贴图纹理
 
@@ -20,7 +20,7 @@ ms.locfileid: "63323717"
 ## <span id="ddk_handling_lightweight_mip_map_textures_gg"></span><span id="DDK_HANDLING_LIGHTWEIGHT_MIP_MAP_TEXTURES_GG"></span>
 
 
-因为轻型 MIP 贴图纹理 MIP 子级别是隐式的但没有相应的 DirectDraw 图面上结构 ([**DD\_面\_本地**](https://msdn.microsoft.com/library/windows/hardware/ff551733)， [**DD\_图面\_GLOBAL** ](https://msdn.microsoft.com/library/windows/hardware/ff551726)并[ **DD\_面\_详细**](https://msdn.microsoft.com/library/windows/hardware/ff551737))、如果 MIP 贴图纹理是轻量级的这样可以避免创建不必要的驱动程序图面上结构，以节省内存，可以确定 DirectX 9.0 版本驱动程序。 若要确定是否 MIP 贴图纹理是轻量，该驱动程序将验证是否 DDSCAPS3\_LIGHTWEIGHTMIPMAP 位**dwCaps3** DDSCAPSEX 的成员 ([**DDSCAPS2** ](https://msdn.microsoft.com/library/windows/hardware/ff550292))设置纹理图面的结构。
+因为轻型 MIP 贴图纹理 MIP 子级别是隐式的但没有相应的 DirectDraw 图面上结构 ([**DD\_面\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)， [**DD\_图面\_GLOBAL** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)并[ **DD\_面\_详细**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more))、如果 MIP 贴图纹理是轻量级的这样可以避免创建不必要的驱动程序图面上结构，以节省内存，可以确定 DirectX 9.0 版本驱动程序。 若要确定是否 MIP 贴图纹理是轻量，该驱动程序将验证是否 DDSCAPS3\_LIGHTWEIGHTMIPMAP 位**dwCaps3** DDSCAPSEX 的成员 ([**DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85)))设置纹理图面的结构。
 
 请注意，DirectX 9.0 中的所有 MIP 贴图纹理轻型默认情况下。
 
@@ -39,7 +39,7 @@ DirectX 9.0 版本驱动程序处理轻量和重量级选手 MIP 贴图纹理时
 
     因此，完整图面上的数据结构是要求每个子级。
 
--   由于视频或 AGP 内存轻型 MIP 贴图纹理永远不会锁定或如引用的其他 DDIs [ *DdBlt*](https://msdn.microsoft.com/library/windows/hardware/ff549205)，该驱动程序确定 MIP 贴图纹理的子项位置。 因此，完整的图面 (显式**fpVidmem**的成员[ **DD\_图面\_全局**](https://msdn.microsoft.com/library/windows/hardware/ff551726)结构) 的此类子级别MIP 贴图纹理不是必需的。
+-   由于视频或 AGP 内存轻型 MIP 贴图纹理永远不会锁定或如引用的其他 DDIs [ *DdBlt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)，该驱动程序确定 MIP 贴图纹理的子项位置。 因此，完整的图面 (显式**fpVidmem**的成员[ **DD\_图面\_全局**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)结构) 的此类子级别MIP 贴图纹理不是必需的。
 
 -   管理驱动程序的轻型 MIP 贴图纹理也限制为单个图面，并且必须使用完全相同的布局的 Direct3D 使用轻量 MIP 贴图纹理的系统内存。 请注意，这有任何负面影响 （而不是实现成本），因为相应的居民 (视频和 AGP) MIP 贴图纹理可以有其自己的特定于实现的布局。
 

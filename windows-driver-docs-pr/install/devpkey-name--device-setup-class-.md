@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3939d28abf4ae90921e48c724f29200e739b1d3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65c3cb72020aef7a4c472162dfce57e0aa368b7f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327498"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67376807"
 ---
 # <a name="devpkeyname-device-setup-class"></a>DEVPKEY_NAME（设备安装程序类）
 
 
-DEVPKEY_NAME 设备属性表示的名称[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_NAME 设备属性表示的名称[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -60,7 +60,7 @@ DEVPKEY_NAME 设备属性表示的名称[设备安装程序类](https://msdn.mic
 
 如果设置 DEVPKEY_DeviceClass_Name，DEVPKEY_NAME 的值是相同的值[ **DEVPKEY_DeviceClass_Name** ](devpkey-deviceclass-name.md)设备属性。 否则，DEVPKEY_NAME 值是相同的值[ **DEVPKEY_DeviceClass_ClassName** ](devpkey-deviceclass-classname.md)设备属性。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索设备 DEVPKEY_NAME 的值安装程序类。
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索设备 DEVPKEY_NAME 的值安装程序类。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name 属性。 但是，这些早期版本的 Windows 支持与 DEVPKEY_DeviceClass_Name 和 DEVPKEY_DeviceClass_ClassName 相对应的属性。
 
@@ -91,13 +91,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 
 [**DEVPKEY_DeviceClass_Name**](devpkey-deviceclass-name.md)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiGetClassDescription**](https://msdn.microsoft.com/library/windows/hardware/ff551053)
+[**SetupDiGetClassDescription**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptiona)
 
-[**SetupDiClassNameFromGuid**](https://msdn.microsoft.com/library/windows/hardware/ff550947)
+[**SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)
 
  
 

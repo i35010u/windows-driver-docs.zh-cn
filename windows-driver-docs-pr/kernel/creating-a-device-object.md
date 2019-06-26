@@ -7,12 +7,12 @@ keywords:
 - 非 WDM 驱动程序设备对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6df5bcdfd6ad60fdfd7c072c6743f7308055c6e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42923eb5e4ee1e112ed3d6957c53a4bba50565c2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377181"
 ---
 # <a name="creating-a-device-object"></a>创建设备对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "63388301"
 
 在某些技术领域，不需要创建其自己的设备对象与类驱动程序或端口驱动程序相关联的微型驱动程序。 相反，类或端口驱动程序创建的设备对象，并接收所有 Irp 的设备。 然后，类或端口驱动程序使用特定于驱动程序的方法将传递给微型驱动程序的 I/O 请求。 请参阅你的特定技术领域，以确定是否 Microsoft 提供了创建代表您的驱动程序的设备对象的类或端口驱动程序的文档。
 
-驱动程序调用[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)或[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)创建它们的设备对象。 若要使用的例程的详细信息，请参阅以下各节。
+驱动程序调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)或[ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)创建它们的设备对象。 若要使用的例程的详细信息，请参阅以下各节。
 
 [创建设备对象用于 WDM 函数和筛选器驱动程序](#creating-device-objects-for-wdm-function-and-filter-drivers)
 
@@ -42,11 +42,11 @@ ms.locfileid: "63388301"
 
 -   一个名为的布尔值*独占*，，指定是否有点中的设备对象**标志**是否应设置\_独占的、 指示驱动程序服务的独占的设备，如视频、 串行、 并行或声音设备。 WDM 驱动程序必须设置*独占*到**FALSE**。 有关详细信息，请参阅[指定对设备对象的独占访问](specifying-exclusive-access-to-device-objects.md)。
 
--   指向该驱动程序的驱动程序对象的指针。 WDM 函数或筛选器驱动程序作为参数接收指向其驱动程序对象的其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。 所有驱动程序接收一个指向其驱动程序对象中其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)例程。 系统使用此指针将驱动程序使用其设备对象相关联。
+-   指向该驱动程序的驱动程序对象的指针。 WDM 函数或筛选器驱动程序作为参数接收指向其驱动程序对象的其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 所有驱动程序接收一个指向其驱动程序对象中其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。 系统使用此指针将驱动程序使用其设备对象相关联。
 
 -   指向以 null 结尾的 Unicode 字符串的可选指针 (*DeviceName*) 命名的设备。 WDM 驱动程序，以外总线驱动程序，请不要提供设备名称;因此，这样做会绕过 PnP 管理器的安全功能。 有关详细信息，请参阅[名为设备对象](named-device-objects.md)。
 
-如果在调用[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)或[ **IoCreateDeviceSecure** ](https://msdn.microsoft.com/library/windows/hardware/ff548407)成功，I/O 管理器提供了存储设备对象本身和所有其他数据结构与设备对象相关联，其中包括设备扩展，它可以用零初始化。
+如果在调用[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)或[ **IoCreateDeviceSecure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)成功，I/O 管理器提供了存储设备对象本身和所有其他数据结构与设备对象相关联，其中包括设备扩展，它可以用零初始化。
 
 ### <a name="creating-device-objects-for-wdm-function-and-filter-drivers"></a>创建设备对象用于 WDM 函数和筛选器驱动程序
 
@@ -56,7 +56,7 @@ Windows Driver Kit (WDK) 文档中的设备特定于类型的章节说明，否�
 
 ### <a name="creating-device-objects-for-wdm-bus-drivers"></a>创建设备对象用于 WDM 总线驱动程序
 
-它在枚举响应中的新设备时，WDM 总线驱动程序创建一个 PDO [ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)请求，如果关系类型是**BusRelations**。
+它在枚举响应中的新设备时，WDM 总线驱动程序创建一个 PDO [ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)请求，如果关系类型是**BusRelations**。
 
 下列规则确定是否总线驱动程序会调用**IoCreateDevice**或**IoCreateDeviceSecure**创建设备对象：
 

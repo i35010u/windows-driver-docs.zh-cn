@@ -13,12 +13,12 @@ keywords:
 - 手动调度模式 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d441a6ad1f7746ec5a3e0efce4a89ef90e88e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 222910fa7091970277e1742372ddeb549428e66f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382882"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>为 I/O 队列配置调度模式
 
@@ -31,24 +31,24 @@ ms.locfileid: "63376881"
 
  
 
-驱动程序配置时，驱动程序将调用调度 I/O 队列[ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)方法来配置默认的队列或创建辅助队列。 该驱动程序可以指定的值之一[ **WDF\_IO\_队列\_调度\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff552362)中的枚举类型*DispatchType*的参数**IWDFDevice::CreateIoQueue**确定调度模式。 [I/O 队列对象](framework-i-o-queue-object.md)可以支持以下调度模式：
+驱动程序配置时，驱动程序将调用调度 I/O 队列[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)方法来配置默认的队列或创建辅助队列。 该驱动程序可以指定的值之一[ **WDF\_IO\_队列\_调度\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)中的枚举类型*DispatchType*的参数**IWDFDevice::CreateIoQueue**确定调度模式。 [I/O 队列对象](framework-i-o-queue-object.md)可以支持以下调度模式：
 
 -   顺序
 
-    使用指定的顺序调度模式**WdfIoQueueDispatchSequential**值。 在调度此模式下，队列中的处理状态引发事件，以便将驱动程序仅一次处理一个请求。 队列延迟任何额外的请求，直到该驱动程序完成处理其当前请求或调用[ **IWDFIoRequest::ForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff559081)方法以将请求重新排队。 当当前请求完成，或转发时，队列将引发事件以提供下一个请求。
+    使用指定的顺序调度模式**WdfIoQueueDispatchSequential**值。 在调度此模式下，队列中的处理状态引发事件，以便将驱动程序仅一次处理一个请求。 队列延迟任何额外的请求，直到该驱动程序完成处理其当前请求或调用[ **IWDFIoRequest::ForwardToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)方法以将请求重新排队。 当当前请求完成，或转发时，队列将引发事件以提供下一个请求。
 
 -   并行
 
     使用指定的并行调度模式**WdfIoQueueDispatchParallel**值。 在调度此模式下，队列中的处理状态引发事件，只要输入/输出请求已经可供该驱动程序。 当驱动程序收到的 I/O 请求时，该驱动程序可以通过以下方式之一处理 I/O 请求：
 
-    -   该驱动程序拨打[ **IWDFIoRequest::Complete** ](https://msdn.microsoft.com/library/windows/hardware/ff559070)或[ **IWDFIoRequest::CompleteWithInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff559074)方法以完成立即 I/O 请求。 如果 I/O 请求无效，曾经无法进行维护，或者可以通过将数据从一个缓冲区或缓存数据复制完成，驱动程序将立即完成的 I/O 请求。
-    -   驱动程序调用[ **IWDFIoRequest::ForwardToIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff559081)方法来重新排队 I/O 请求。
-    -   驱动程序调用[ **IWDFIoRequest::Send** ](https://msdn.microsoft.com/library/windows/hardware/ff559149)方法以将 I/O 请求传递到较低级别驱动程序。
+    -   该驱动程序拨打[ **IWDFIoRequest::Complete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[ **IWDFIoRequest::CompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)方法以完成立即 I/O 请求。 如果 I/O 请求无效，曾经无法进行维护，或者可以通过将数据从一个缓冲区或缓存数据复制完成，驱动程序将立即完成的 I/O 请求。
+    -   驱动程序调用[ **IWDFIoRequest::ForwardToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)方法来重新排队 I/O 请求。
+    -   驱动程序调用[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)方法以将 I/O 请求传递到较低级别驱动程序。
 -   Manual
 
-    使用指定的手动调度模式**WdfIoQueueDispatchManual**值。 在调度此模式下，I/O 队列不会自动通知驱动程序的请求到达队列时。 该驱动程序必须调用[ **IWDFIoQueue::RetrieveNextRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff558967)方法来检索手动请求从队列。 这是轮询模型。
+    使用指定的手动调度模式**WdfIoQueueDispatchManual**值。 在调度此模式下，I/O 队列不会自动通知驱动程序的请求到达队列时。 该驱动程序必须调用[ **IWDFIoQueue::RetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)方法来检索手动请求从队列。 这是轮询模型。
 
-    在 UMDF 版本 1.9 及更高版本中，如果您的驱动程序使用手动调度模式下，它可以调用[ **IWDFIoRequest2::Requeue** ](https://msdn.microsoft.com/library/windows/hardware/ff559028) I/O 请求返回到从中驱动程序获取它的 I/O 队列的开头. 在调用**IWDFIoRequest2::Requeue**，驱动程序的下一步调用[ **IWDFIoQueue::RetrieveNextRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff558967)检索重新排队的请求。
+    在 UMDF 版本 1.9 及更高版本中，如果您的驱动程序使用手动调度模式下，它可以调用[ **IWDFIoRequest2::Requeue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest2-requeue) I/O 请求返回到从中驱动程序获取它的 I/O 队列的开头. 在调用**IWDFIoRequest2::Requeue**，驱动程序的下一步调用[ **IWDFIoQueue::RetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)检索重新排队的请求。
 
 对于所有调度模式， [I/O 队列对象](framework-i-o-queue-object.md)接收并跟踪请求，直到该驱动程序处理请求或会取消该请求。
 

@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02cd8f6a04923fb0da6d64e7f2bb8e77fee732fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 884adbc7beea8021972e080c7a8a5f333123df22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367865"
 ---
 # <a name="bug-check-0x12b-faultyhardwarecorruptedpage"></a>Bug 检查 0x12B：发生故障\_硬件\_损坏\_页
 
 故障\_硬件\_损坏\_页 bug 检查的值为 0x0000012B。 此 bug 检查指示 Windows 内存管理器检测到损坏，并且损坏可能只是由访问内存使用物理寻址的组件。  
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="faultyhardwarecorruptedpage-parameters"></a>发生故障\_硬件\_损坏\_页参数

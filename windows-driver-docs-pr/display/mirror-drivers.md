@@ -13,12 +13,12 @@ keywords:
 - 辅助技术和镜像驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c977d484fa9f698afb2db77400efd5a2b821a740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 432931f02678104afb7d657b26aeff5b5a40ca4f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385592"
 ---
 # <a name="mirror-drivers"></a>镜像驱动程序
 
@@ -108,19 +108,19 @@ ms.locfileid: "63352427"
 
 -   建议用户模式服务用于维护镜像驱动程序的设置。 此应用程序可以确保在启动时正确加载驱动程序，它可以相应地更改到桌面通过响应获取 WM 通过显示更改的通知\_DISPLAYCHANGE 消息。
 
--   GDI 调用任何 2D 图形 DDI 相交驱动程序的边框的绘制操作镜像驱动程序。 请注意 GDI 不在图面是设备格式位图; 是否执行边界矩形检查也就是说，如果[ **SURFOBJ** ](https://msdn.microsoft.com/library/windows/hardware/ff569901)具有**iType**的 STYPE\_DEVBITMAP。
+-   GDI 调用任何 2D 图形 DDI 相交驱动程序的边框的绘制操作镜像驱动程序。 请注意 GDI 不在图面是设备格式位图; 是否执行边界矩形检查也就是说，如果[ **SURFOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_surfobj)具有**iType**的 STYPE\_DEVBITMAP。
 
--   与往常一样，镜像驱动程序必须实现无需使用全局变量。 所有状态必须都存在于*PDEV*该特定驱动程序。 将调用 GDI [ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)为创建的微型端口驱动程序的每个硬件设备扩展。
+-   与往常一样，镜像驱动程序必须实现无需使用全局变量。 所有状态必须都存在于*PDEV*该特定驱动程序。 将调用 GDI [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)为创建的微型端口驱动程序的每个硬件设备扩展。
 
 -   镜像驱动程序应支持 DirectDraw。
 
--   镜像驱动程序必须设置 GCAPS\_分层标志**TRUE**中**flGraphicsCaps**隶属[ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)结构。
+-   镜像驱动程序必须设置 GCAPS\_分层标志**TRUE**中**flGraphicsCaps**隶属[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构。
 
--   可访问性镜像驱动程序必须设置 GCAPS2\_EXCLUDELAYERED 和 GCAPS2\_INCLUDEAPIBITMAPS 到标志**TRUE**中**flGraphicsCaps2** 成员[ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)结构。
+-   可访问性镜像驱动程序必须设置 GCAPS2\_EXCLUDELAYERED 和 GCAPS2\_INCLUDEAPIBITMAPS 到标志**TRUE**中**flGraphicsCaps2** 成员[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构。
 
--   镜像驱动程序 （可选） 可以通过实现来支持画笔揭示[ **DrvRealizeBrush**](https://msdn.microsoft.com/library/windows/hardware/ff556273)。
+-   镜像驱动程序 （可选） 可以通过实现来支持画笔揭示[ **DrvRealizeBrush**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)。
 
-GDI 使相同的驱动程序的单个和多监视器系统上运行。 多监视器系统中的驱动程序只需要跟踪全局桌面中的位置。 GDI 提供此位置向驱动程序只要 Win32 **ChangeDisplaySettings**调用发生，例如当用户动态更改监视器的位置在 desktop 中通过使用控制面板中的显示计划。 GDI 更新**dmPosition**的成员[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构相应地，发生此类更改时。 驱动程序可以通过实现来接收此类更改的通知[ **DrvNotify**](https://msdn.microsoft.com/library/windows/hardware/ff556252)。 请参阅[镜像驱动程序安装](mirror-driver-installation.md)有关详细信息。
+GDI 使相同的驱动程序的单个和多监视器系统上运行。 多监视器系统中的驱动程序只需要跟踪全局桌面中的位置。 GDI 提供此位置向驱动程序只要 Win32 **ChangeDisplaySettings**调用发生，例如当用户动态更改监视器的位置在 desktop 中通过使用控制面板中的显示计划。 GDI 更新**dmPosition**的成员[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构相应地，发生此类更改时。 驱动程序可以通过实现来接收此类更改的通知[ **DrvNotify**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvnotify)。 请参阅[镜像驱动程序安装](mirror-driver-installation.md)有关详细信息。
 
 **请注意**  镜像驱动程序不需要呈现完全适合像素的准确性时，此类准确度在客户端上的呈现可能比较困难。 例如，适配器/监视器接收镜像的映像不需要呈现[网格相交量化](cosmetic-lines.md)(GIQ) 线条和多边形填充适配器/监视器正在镜像相同的精度。
 

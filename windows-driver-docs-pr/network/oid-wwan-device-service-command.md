@@ -5,12 +5,12 @@ ms.assetid: 296E2D23-6EDA-4480-91A3-B6CB39243DAD
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_COMMAND 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 593b6589e023d77367618f960d38a2a3eecd2151
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f81f9873ecbfbc7896e101aac82d94560981281
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386675"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362836"
 ---
 # <a name="oidwwandeviceservicecommand"></a>OID\_WWAN\_设备\_服务\_命令
 
@@ -19,7 +19,7 @@ OID\_WWAN\_设备\_服务\_命令允许微型端口驱动程序来实现供应�
 
 两种查询和支持集请求。
 
-微型端口驱动程序必须处理查询并集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_服务\_响应**](https://msdn.microsoft.com/library/windows/hardware/hh846205)包含供应商定义的结构的状态通知 ([**NDIS\_WWAN\_设备\_服务\_命令**](https://msdn.microsoft.com/library/windows/hardware/hh439836)) 当他们已完成事务时提供响应。
+微型端口驱动程序必须处理查询并集请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_服务\_响应**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-response)包含供应商定义的结构的状态通知 ([**NDIS\_WWAN\_设备\_服务\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)) 当他们已完成事务时提供响应。
 
 微型端口驱动程序应返回 NDIS\_状态\_不\_如果它们不支持指定的设备服务或操作支持。
 
@@ -46,9 +46,9 @@ OID\_WWAN\_设备\_服务\_命令允许微型端口驱动程序来实现供应�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_状态\_WWAN\_设备\_服务\_响应**](https://msdn.microsoft.com/library/windows/hardware/hh846205)
+[**NDIS\_状态\_WWAN\_设备\_服务\_响应**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-response)
 
-[**NDIS\_WWAN\_DEVICE\_SERVICE\_COMMAND**](https://msdn.microsoft.com/library/windows/hardware/hh439836)
+[**NDIS\_WWAN\_DEVICE\_SERVICE\_COMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)
 
  
 

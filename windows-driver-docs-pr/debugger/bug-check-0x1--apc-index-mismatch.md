@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0204a326523e449a853352eedb77275b26882a58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9396d9c9857af0d86a7925104127dcaf3826d609
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347817"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362389"
 ---
 # <a name="bug-check-0x1-apcindexmismatch"></a>Bug 检查 0x1：APC\_INDEX\_MISMATCH
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347817"
 APC\_索引\_不匹配错误检查的值为 0x00000001。 这指示 APC （异步过程调用） 状态索引中已存在不匹配。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="apcindexmismatch-parameters"></a>APC\_索引\_不匹配参数
@@ -96,7 +96,7 @@ APC\_索引\_不匹配错误检查的值为 0x00000001。 这指示 APC （异�
 ## <a name="remarks"></a>备注
 -------
 
-这是内核内部错误。 从系统调用 exit 出现此错误。 检查此错误的可能原因是当文件系统或驱动程序具有不匹配的序列的系统调用进入或离开受保护或关键区域。 例如，每次调用[ **KeEnterCriticalRegion** ](https://msdn.microsoft.com/library/windows/hardware/ff552021)必须匹配调用[ **KeLeaveCriticalRegion**](https://msdn.microsoft.com/library/windows/hardware/ff552964)。 如果你正在开发一个驱动程序，则可以使用[Static Driver Verifier](https://msdn.microsoft.com/library/windows/hardware/ff552808)，静态分析工具，可在 Windows 驱动程序工具包中，若要在代码中检测问题，然后再交付您的驱动程序。 运行与的 Static Driver Verifier [CriticalRegions](https://msdn.microsoft.com/library/windows/hardware/ff543603)规则以验证你的源代码，使用这些系统调用正确的顺序。
+这是内核内部错误。 从系统调用 exit 出现此错误。 检查此错误的可能原因是当文件系统或驱动程序具有不匹配的序列的系统调用进入或离开受保护或关键区域。 例如，每次调用[ **KeEnterCriticalRegion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keentercriticalregion)必须匹配调用[ **KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-keleavecriticalregion)。 如果你正在开发一个驱动程序，则可以使用[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)，静态分析工具，可在 Windows 驱动程序工具包中，若要在代码中检测问题，然后再交付您的驱动程序。 运行与的 Static Driver Verifier [CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)规则以验证你的源代码，使用这些系统调用正确的顺序。
 
  
 

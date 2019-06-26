@@ -4,12 +4,12 @@ description: 供应商扩展的命令
 ms.assetid: 3d360a9f-5a65-452b-a8ad-080dc7d8c8f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea83d3dc71207a59612ca4ab3a307bbabc0f9ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 300cd6c53b26ade72f2bbfca44d0014f6c855193
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375388"
 ---
 # <a name="vendor-extended-commands"></a>供应商扩展的命令
 
@@ -19,7 +19,7 @@ ms.locfileid: "63356129"
 
 应用程序可以将任意命令发送到通过设备**IWiaItemExtras::Escape**方法，Microsoft Windows SDK 文档中所述。 通过调用**QueryInterface**上的根项目，可以检索一个指向**IWiaItemExtras**接口。 然后，应用程序可以构造 PTP 命令使用的任何操作码和参数，并将此命令发送到设备。 应用程序还可以将数据发送到或从设备接收数据。
 
-设备通知操作的结果的应用程序时**IWiaItemExtras::Escape**方法返回时，在响应代码和响应中的参数填写[ **PTP\_供应商\_数据\_出**](https://msdn.microsoft.com/library/windows/hardware/ff546452)结构。 **SessionId**并**TransactionId**的成员[ **PTP\_供应商\_数据\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff546450)结构将被忽略。 驱动程序提供这些正确的值。
+设备通知操作的结果的应用程序时**IWiaItemExtras::Escape**方法返回时，在响应代码和响应中的参数填写[ **PTP\_供应商\_数据\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)结构。 **SessionId**并**TransactionId**的成员[ **PTP\_供应商\_数据\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)结构将被忽略。 驱动程序提供这些正确的值。
 
 为非转义的供应商定义命令\_PTP\_清除\_将停止，特殊的标志，转义\_PTP\_供应商\_命令，必须 （使用 OR 运算符） 组合使用命令在中使用**IWiaItemExtras::Escape**方法。 如果供应商定义的命令创建或删除使用以下所述的标志的设备上的对象，该驱动程序添加或从其内部结构中删除对象并生成 WIA 事件。 应通过适当的 WIA 接口发出其他标准的所有命令。
 
@@ -86,11 +86,11 @@ ms.locfileid: "63356129"
 
  
 
-**请注意**  当应用程序调用**IWiaItemExtras::Escape**通过转义符\_PTP\_清除\_停滞标记此方法的第一个参数为驱动程序发出 PTP**获取设备状态**请求以确定任何终结点是否处于停滞状态。 如果**获取设备状态**命令将成功，驱动程序问题[ **IOCTL\_重置\_管道**](https://msdn.microsoft.com/library/windows/hardware/ff542872) USB 控制代码的每个此类终结点。 如果**获取设备状态**命令将会失败，驱动程序将发出 PTP**设备重置**请求。 **获取设备状态**并**设备重置**PIMA 15740:2000 标准，第一版和 USB 仍图像捕获设备定义的 (USB SICDD) 的修订版本 1.0 中描述了。
+**请注意**  当应用程序调用**IWiaItemExtras::Escape**通过转义符\_PTP\_清除\_停滞标记此方法的第一个参数为驱动程序发出 PTP**获取设备状态**请求以确定任何终结点是否处于停滞状态。 如果**获取设备状态**命令将成功，驱动程序问题[ **IOCTL\_重置\_管道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbscan/ni-usbscan-ioctl_reset_pipe) USB 控制代码的每个此类终结点。 如果**获取设备状态**命令将会失败，驱动程序将发出 PTP**设备重置**请求。 **获取设备状态**并**设备重置**PIMA 15740:2000 标准，第一版和 USB 仍图像捕获设备定义的 (USB SICDD) 的修订版本 1.0 中描述了。
 
  
 
-下面的示例代码说明了如何使用供应商扩展命令接口。 确保你的代码，包括*ptpusd.h*标头，因为它包含转义代码和其他常量的定义并[ **PTP\_供应商\_数据\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff546450)并[ **PTP\_供应商\_数据\_出**](https://msdn.microsoft.com/library/windows/hardware/ff546452)结构。 **IWiaItemExtras**接口通过使用调用**QueryInterface**根项。 指向该项根*pIWiaRootItem*，可以获取，例如，通过调用**IWiaDevMgr::SelectDeviceDlg** （Microsoft Windows SDK 文档中所述）。
+下面的示例代码说明了如何使用供应商扩展命令接口。 确保你的代码，包括*ptpusd.h*标头，因为它包含转义代码和其他常量的定义并[ **PTP\_供应商\_数据\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_in)并[ **PTP\_供应商\_数据\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ptpusd/ns-ptpusd-_ptp_vendor_data_out)结构。 **IWiaItemExtras**接口通过使用调用**QueryInterface**根项。 指向该项根*pIWiaRootItem*，可以获取，例如，通过调用**IWiaDevMgr::SelectDeviceDlg** （Microsoft Windows SDK 文档中所述）。
 
 ```cpp
 //

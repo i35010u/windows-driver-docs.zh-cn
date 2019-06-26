@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e2b32bedfabfca7168f0b24f4c5b1ae9b08d903
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a6be27334e5fefe69b4a5772ea516a9a2632094
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381721"
 ---
 # <a name="devproptypeerror"></a>DEVPROP_TYPE_ERROR
 
@@ -29,7 +29,7 @@ DEVPROP_TYPE_ERROR 标识符表示 WINERROR 中定义的 Microsoft Win32 错误�
 <a name="remarks"></a>备注
 -------
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)还定义了[ **DEVPROP_TYPE_NTSTATUS** ](devprop-type-ntstatus.md) NTSTATUS 的基本数据类型标识符错误代码值。
+在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)还定义了[ **DEVPROP_TYPE_NTSTATUS** ](devprop-type-ntstatus.md) NTSTATUS 的基本数据类型标识符错误代码值。
 
 你可以组合只能使用 DEVPROP_TYPE_ERROR [ **DEVPROP_TYPEMOD_ARRAY** ](devprop-typemod-array.md)属性数据类型修饰符。
 
@@ -47,7 +47,7 @@ DEVPROP_TYPE_ERROR 标识符表示 WINERROR 中定义的 Microsoft Win32 错误�
 
 ### <a name="retrieving-the-descriptive-text-for-a-win32-error-code-value"></a>为 Win32 错误代码值检索的说明性文本
 
-若要检索与 Win32 错误代码关联的描述性文本，请调用[ **FormatMessage** ](https://msdn.microsoft.com/library/windows/desktop/ms679351)函数 （Windows SDK 中所述），如下所示：
+若要检索与 Win32 错误代码关联的描述性文本，请调用[ **FormatMessage** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-formatmessage)函数 （Windows SDK 中所述），如下所示：
 
 -   值中包括 FORMAT_MESSAGE_FROM_SYSTEM 标志*dwflags*参数。
 

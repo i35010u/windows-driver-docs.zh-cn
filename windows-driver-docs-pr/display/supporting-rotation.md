@@ -4,12 +4,12 @@ description: 支持旋转
 ms.assetid: b85f3130-e69d-4a5f-b58e-d2138ea994dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4127836451061e1df400928c02b955d0a04d9c41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc66b22ab017d9d4fc32bca879310a0082526b10
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350167"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361239"
 ---
 # <a name="supporting-rotation"></a>支持旋转
 
@@ -18,7 +18,7 @@ ms.locfileid: "63350167"
 
 [在显示微型端口驱动程序中支持旋转](supporting-rotation-in-a-display-miniport-driver.md)
 
-[独立于 VidPN 路径的旋转接口](https://msdn.microsoft.com/library/windows/hardware/dn653366)
+[独立于 VidPN 路径的旋转接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
 [在用户模式显示驱动程序中支持旋转](supporting-rotation-in-a-user-mode-display-driver.md)
 

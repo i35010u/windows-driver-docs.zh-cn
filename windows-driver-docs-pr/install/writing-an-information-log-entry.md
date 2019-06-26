@@ -4,23 +4,23 @@ description: 写入信息日志条目
 ms.assetid: 624d2a3e-2a11-47fd-941e-1ab59e299821
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b9c2da14b013ff9fb2b1d9d812a54df0c64978
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56719940cefae8e5105ddb03d47e1b3b60e484b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339203"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363486"
 ---
 # <a name="writing-an-information-log-entry"></a>写入信息日志条目
 
 
-下面的示例演示如何应用程序通常可能调用[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)若要写入信息条目[SetupAPI 文本日志](setupapi-text-logs.md)，它不是警告消息或错误消息。
+下面的示例演示如何应用程序通常可能调用[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)若要写入信息条目[SetupAPI 文本日志](setupapi-text-logs.md)，它不是警告消息或错误消息。
 
 有关调用信息**SetupWriteTextLog**若要记录一条错误消息，请参阅[调用 SetupWriteTextLog 来记录错误或警告条目](writing-an-error-or-warning-log-entry.md)。
 
-应用程序调用[ **SetupWriteTextLog**](https://msdn.microsoft.com/library/windows/hardware/ff552218)，提供以下参数值：
+应用程序调用[ **SetupWriteTextLog**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)，提供以下参数值：
 
--   *LogToken*设置为一个日志令牌值，该值可以通过调用获得[ **SetupGetThreadLogToken** ](https://msdn.microsoft.com/library/windows/hardware/ff552211)或者是系统定义的日志之一中所述的令牌值[登录令牌](log-tokens.md)。
+-   *LogToken*设置为一个日志令牌值，该值可以通过调用获得[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)或者是系统定义的日志之一中所述的令牌值[登录令牌](log-tokens.md)。
 
 -   *类别*设置为 TXTLOG_VENDOR，指示该日志条目由供应商提供的应用程序。 事件类别中所述[启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)。
 

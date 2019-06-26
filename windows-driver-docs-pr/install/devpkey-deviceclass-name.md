@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f155a5aa82191509e84c46cbd22bb967fe557bba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d8ac3c6dd0e1ff16531f1d399b3f548901e761c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342000"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362969"
 ---
 # <a name="devpkeydeviceclassname"></a>DEVPKEY_DeviceClass_Name
 
 
-DEVPKEY_DeviceClass_Name 设备属性表示的友好名称[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_Name 设备属性表示的友好名称[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -56,11 +56,11 @@ DEVPKEY_DeviceClass_Name 设备属性表示的友好名称[设备安装程序类
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DeviceClass_Name 的值将由[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)包含在[ **INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)用于安装类。 若要设置的类的友好名称，使用**AddReg**指令设置 **（默认）** 类的注册表项值。
+DEVPKEY_DeviceClass_Name 的值将由[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)包含在[ **INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)用于安装类。 若要设置的类的友好名称，使用**AddReg**指令设置 **（默认）** 类的注册表项值。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索 DEVPKEY_DeviceClass_Name 值.
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_Name 值.
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_Name 属性键。 有关如何访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备安装程序类的友好名称的信息，请参阅[访问的友好名称和设备安装程序类的类名称](https://msdn.microsoft.com/library/windows/hardware/ff537755)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_Name 属性键。 有关如何访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备安装程序类的友好名称的信息，请参阅[访问的友好名称和设备安装程序类的类名称](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-friendly-name-and-class-name-of-a-device-setup-class)。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,15 +85,15 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiGetClassDescriptionEx**](https://msdn.microsoft.com/library/windows/hardware/ff551058)
+[**SetupDiGetClassDescriptionEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa)
 
  
 

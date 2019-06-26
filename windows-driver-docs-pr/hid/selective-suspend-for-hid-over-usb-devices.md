@@ -4,12 +4,12 @@ description: 版本 2.0 的通用串行总线规范指定 USB 选择性挂起功
 ms.assetid: A4560D7C-8A32-4A91-95B6-4377E0F0D0C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db622b90b32fff0e64e92fc8738edd0939d3d0da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ffdbb2132bdcf6e9982d3761faa750059d24b8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385810"
 ---
 # <a name="selective-suspend-for-hid-over-usb-devices"></a>基于 USB 的 HID 设备的选择性挂起
 
@@ -28,7 +28,7 @@ ms.locfileid: "63345447"
 
 Windows 8 支持两种方法启用的选择性挂起的 HID USB 设备。 它们是：
 
-1.  **Microsoft 操作系统描述符\[PREFERRED\]**:Microsoft 操作系统描述符的扩展属性描述符可以用于编写在必要的注册表项以支持 USB HID 的选择性挂起。
+1.  **Microsoft 操作系统描述符\[PREFERRED\]** :Microsoft 操作系统描述符的扩展属性描述符可以用于编写在必要的注册表项以支持 USB HID 的选择性挂起。
 2.  **供应商提供 INF**:硬件制造商可以提供的 INF 文件 （与 HID devnode USB 硬件 id 相匹配） 来安装相应的注册表项。
 
 Microsoft 建议，硬件供应商和 PC 制造商使用第一个选项来启用 USB HID 的选择性挂起。 此选项的优点是：
@@ -98,7 +98,7 @@ VendorXYZ.DeviceDesc = "VendorXYZ Device"
 
 其中：
 
-1.  [ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)应有**CLASSGUID**并**DriverVer**指令设置，如下所示：
+1.  [ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)应有**CLASSGUID**并**DriverVer**指令设置，如下所示：
 
     -   **CLASSGUID**指令必须指定 HID 设备的 Microsoft 类 GUID。 此 GUID 具有 {745a17a0-74d3-11d0-b6fe-00a0c90f57da} 的值。
 
@@ -106,13 +106,13 @@ VendorXYZ.DeviceDesc = "VendorXYZ Device"
 
 2.  2. VendorXYZDevice\*部分指定供应商的 HID 设备的硬件标识符 (ID)。 硬件 ID 包含供应商标识符 (VID) 和产品标识符 (PID)。 设备每个硬件 ID 必须是唯一的供应商和设备的 VID/PID 值。 这可以保证在相同的硬件 ID 与多个名称和设置不对应
 
-3.  3. VendorXYZDevice\_Install.NT 和 VendorXYZDevice\_Install.NT.HW 部分都[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。 在此示例中，以下各节包含 INF **Include**并**需要**指令。
+3.  3. VendorXYZDevice\_Install.NT 和 VendorXYZDevice\_Install.NT.HW 部分都[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。 在此示例中，以下各节包含 INF **Include**并**需要**指令。
 
     **Include**指令引用系统提供 Input.inf 文件，其中包含 INF 部分需要启用 USB 选择性挂起供应商的 HID 设备的功能。
 
     **需要**指令指示应在设备安装过程中处理从 Input.inf 哪些部分。 在此情况下，HID\_SelSus\_Inst 部分选择而不是默认 HID\_Inst 部分中，不支持选择性挂起。
 
-4.  4. VendorXYZDevice\_Install.NT.Services 部分[ **INF DDInstall.HW 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547330)。 在此示例中，本节还包含相同的值为 INF **Include**并**需要**指令。
+4.  4. VendorXYZDevice\_Install.NT.Services 部分[ **INF DDInstall.HW 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。 在此示例中，本节还包含相同的值为 INF **Include**并**需要**指令。
 
  
 

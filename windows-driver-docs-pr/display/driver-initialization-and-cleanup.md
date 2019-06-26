@@ -11,12 +11,12 @@ keywords:
 - 绘制 WDK GDI 清理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 997bef388a292c8e587f54a23eb74c4649f372f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb0f1436dcc7a6ff015eec75e900388e8b7f2097
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391510"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381097"
 ---
 # <a name="driver-initialization-and-cleanup"></a>驱动程序初始化和清理
 
@@ -24,7 +24,7 @@ ms.locfileid: "63391510"
 ## <span id="ddk_driver_initialization_and_cleanup_gg"></span><span id="DDK_DRIVER_INITIALIZATION_AND_CLEANUP_GG"></span>
 
 
-它导出的设备驱动程序可以实现多个或多个函数，而仅[ **DrvEnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff556210)到 GDI。 该驱动程序公开其其他支持的函数，通过函数表。 GDI 对设备驱动程序，第一个调用是对**DrvEnableDriver**函数。 驱动程序中传入的此函数中将填充[ **DRVENABLEDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff556206)结构，使 GDI 能够确定哪些其他*DrvXxx*支持函数和位置它们是位于。 驱动程序提供 DRVENABLEDATA 中的以下信息：
+它导出的设备驱动程序可以实现多个或多个函数，而仅[ **DrvEnableDriver** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenabledriver)到 GDI。 该驱动程序公开其其他支持的函数，通过函数表。 GDI 对设备驱动程序，第一个调用是对**DrvEnableDriver**函数。 驱动程序中传入的此函数中将填充[ **DRVENABLEDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)结构，使 GDI 能够确定哪些其他*DrvXxx*支持函数和位置它们是位于。 驱动程序提供 DRVENABLEDATA 中的以下信息：
 
 -   **IDriverVersion**成员包含图形 DDI 版本特定的 Windows 操作系统版本的版本号。 *Winddi.h*标头定义以下常量：
 
@@ -57,19 +57,19 @@ ms.locfileid: "63391510"
 
      
 
-有关如何使用这些常量的详细信息，请参阅[ **DRVENABLEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff556206)。
+有关如何使用这些常量的详细信息，请参阅[ **DRVENABLEDATA**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)。
 
 -   **C**成员包含的数组中的 DRVFN 结构数。
 
--   **Pdrvfn**成员指向的数组[ **DRVFN** ](https://msdn.microsoft.com/library/windows/hardware/ff556221)列出了受支持的函数和及其索引的结构。
+-   **Pdrvfn**成员指向的数组[ **DRVFN** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)列出了受支持的函数和及其索引的结构。
 
 对于 GDI，若要调用的函数以外的驱动程序启用和禁用功能，该驱动程序必须提供函数的名称和位置向 GDI。
 
-虽然[ **DrvEnableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff556210)还可以执行一次性初始化、 信号量的分配，如驱动程序不应实际启用期间硬件**DrvEnableDriver**. 中的驱动程序应发生硬件初始化[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)函数。 同样，驱动程序应启用中的面[ **DrvEnableSurface** ](https://msdn.microsoft.com/library/windows/hardware/ff556214)函数。
+虽然[ **DrvEnableDriver** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenabledriver)还可以执行一次性初始化、 信号量的分配，如驱动程序不应实际启用期间硬件**DrvEnableDriver**. 中的驱动程序应发生硬件初始化[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)函数。 同样，驱动程序应启用中的面[ **DrvEnableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)函数。
 
-GDI 调用[ **DrvDisableDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff556196)函数，以通知它是即将卸载该驱动程序。 此调用的响应，该驱动程序应释放所有资源和仍在此时由驱动程序分配的内存。
+GDI 调用[ **DrvDisableDriver** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisabledriver)函数，以通知它是即将卸载该驱动程序。 此调用的响应，该驱动程序应释放所有资源和仍在此时由驱动程序分配的内存。
 
-如果硬件需要重置，GDI 将调用的驱动程序[ **DrvAssertMode** ](https://msdn.microsoft.com/library/windows/hardware/ff556178)函数。
+如果硬件需要重置，GDI 将调用的驱动程序[ **DrvAssertMode** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode)函数。
 
  
 

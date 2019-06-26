@@ -9,12 +9,12 @@ keywords:
 - 添加 Nic WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d17cb4f22b8329a45bc722a486ef851e246f46e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7764a90093d709c595392fd85eab467b0cadcdc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367781"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362921"
 ---
 # <a name="adding-a-nic"></a>添加 NIC
 
@@ -22,9 +22,9 @@ ms.locfileid: "63367781"
 
 
 
-以下说明开头的微型端口驱动程序加载，并介绍如何添加 NIC。 PnP 管理器执行时将 NIC 添加到正在运行的系统的初始处理，请参阅步骤 1-11[添加到运行系统的即插即用设备](https://msdn.microsoft.com/library/windows/hardware/ff540535)。
+以下说明开头的微型端口驱动程序加载，并介绍如何添加 NIC。 PnP 管理器执行时将 NIC 添加到正在运行的系统的初始处理，请参阅步骤 1-11[添加到运行系统的即插即用设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/adding-a-pnp-device-to-a-running-system)。
 
-1.  如果尚未加载的 nic 的微型端口驱动程序，即插即用管理器加载驱动程序，然后调用微型端口驱动程序[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff548818)函数。 如果尚未加载该驱动程序，处理继续执行步骤 4。
+1.  如果尚未加载的 nic 的微型端口驱动程序，即插即用管理器加载驱动程序，然后调用微型端口驱动程序[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/network/initializing-a-miniport-driver)函数。 如果尚未加载该驱动程序，处理继续执行步骤 4。
 
 2.  从其**DriverEntry**函数，微型端口驱动程序将注册为微型端口驱动程序并执行其他驱动程序的初始化。 有关注册为微型端口驱动程序的详细信息，请参阅[初始化微型端口驱动程序](initializing-a-miniport-driver.md)。
 

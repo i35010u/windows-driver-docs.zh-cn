@@ -10,12 +10,12 @@ keywords:
 - 计数器 WDK I/O
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eacadeb33d891735c29b35ec5d596a067b119daa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53b6197f07eab9c309dfa13290c686d5818039ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338628"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369957"
 ---
 # <a name="avoid-polling-devices"></a>避免轮询设备
 
@@ -31,7 +31,7 @@ ms.locfileid: "63338628"
 
 尽管它看起来有点逻辑通过编码递增计数器的简单循环来解决慢速设备问题，从而"浪费"最小时间间隔而设备更新寄存器，这样的驱动程序不太能够在 Windows 平台之间移植。 循环计数器的最大值将为每个平台需要自定义。 此外，如果具有很好的优化编译器编译驱动程序时，编译器可能会删除驱动程序的计数器变量，它就会增加的循环。
 
-**请注意**  如果而设备硬件更新状态，必须停止该驱动程序，请遵循此实现准则：驱动程序可以调用[ **KeStallExecutionProcessor** ](https://msdn.microsoft.com/library/windows/hardware/ff553295)读取设备注册之前。 该驱动程序应尽量少停滞不前，并应，一般情况下，指定停滞间隔不超过 50 微秒的间隔。
+**请注意**  如果而设备硬件更新状态，必须停止该驱动程序，请遵循此实现准则：驱动程序可以调用[ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)读取设备注册之前。 该驱动程序应尽量少停滞不前，并应，一般情况下，指定停滞间隔不超过 50 微秒的间隔。
 
 粒度**KeStallExecutionProcessor**间隔是一个低至微秒。
 

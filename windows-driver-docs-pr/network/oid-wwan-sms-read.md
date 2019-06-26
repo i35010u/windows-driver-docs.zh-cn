@@ -5,12 +5,12 @@ ms.assetid: f4dbb7e8-1348-4fa8-abac-f644a443df48
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_READ 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c9df125aa1d4117581d83ba156fb0a7660e8f33d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 36c3efe3fadfc6a15ac79b3506e16bbf7d1e7b85
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387362"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361157"
 ---
 # <a name="oidwwansmsread"></a>OID\_WWAN\_SMS\_READ
 
@@ -19,14 +19,14 @@ OID\_WWAN\_SMS\_读取读取存储在 MB 设备或用户识别模块 （SIM 卡�
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_SMS\_接收**](ndis-status-wwan-sms-receive.md)状态通知包含[ **NDIS\_WWAN\_SMS\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff567941)结构提供的短信请求时完成查询请求最初由调用方中提供。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_SMS\_接收**](ndis-status-wwan-sms-receive.md)状态通知包含[ **NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)结构提供的短信请求时完成查询请求最初由调用方中提供。
 
 调用方请求读取 SMS 文本消息提供 NDIS\_WWAN\_SMS\_读取结构，以指示哪些短信调用方想要返回的微型端口。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)。
+有关使用此 OID 的详细信息，请参阅[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)。
 
 在处理此 OID 时，微型端口驱动程序可以访问用户识别模块 （SIM 卡），但不是应访问提供程序网络。
 
@@ -63,9 +63,9 @@ OID\_WWAN\_SMS\_读取支持读取 PDU 模式和 CDMA 模式 SMS 文本消息，
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_SMS\_READ**](https://msdn.microsoft.com/library/windows/hardware/ff567941)
+[**NDIS\_WWAN\_SMS\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)
 
-[WWAN SMS 操作](https://msdn.microsoft.com/library/windows/hardware/ff559131)
+[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 
  
 

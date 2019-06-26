@@ -6,19 +6,19 @@ keywords:
 - （超时检测和恢复） TDR WDK 显示，所述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1403613d73e985b5aef68d624cb38f203f593f1f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42468138a6fdef65f9ee4ea9ef49a761754a99c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375780"
 ---
 # <a name="timeout-detection-and-recovery-tdr"></a>超时检测和恢复 (TDR)
 
 
 一台计算机"挂起"或显示完全"冻结"，但实际上，它还处理最终用户的命令或操作时出现一个图形中最常见的稳定性问题。 最终用户通常在等待几秒钟，然后决定要重新启动计算机。 因为 GPU 正忙于处理密集的图形操作，通常在玩游戏期间，通常会发生冻结的计算机的外观。 GPU 不会更新显示屏幕上，并且计算机将出现冻结。
 
-在 Windows Vista 及更高版本，操作系统将尝试检测计算机似乎完全"冻结"的情况。 操作系统然后尝试从已冻结的情况下动态恢复，以便桌面是再次响应。 此检测和恢复的过程称为*超时检测和恢复*(TDR)。 在 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)函数以重新初始化该驱动程序和重置 GPU。 因此，最终用户不需要重新启动操作系统，极大地增强了他们的体验。
+在 Windows Vista 及更高版本，操作系统将尝试检测计算机似乎完全"冻结"的情况。 操作系统然后尝试从已冻结的情况下动态恢复，以便桌面是再次响应。 此检测和恢复的过程称为*超时检测和恢复*(TDR)。 在 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)函数以重新初始化该驱动程序和重置 GPU。 因此，最终用户不需要重新启动操作系统，极大地增强了他们的体验。
 
 从挂起检测到恢复的唯一可见项目是屏幕闪烁。 当操作系统重置图形堆栈，这会导致屏幕重绘的某些部分时，此屏幕闪烁的结果。 如果显示微型端口驱动程序遵循与 Windows 显示驱动程序模型 (WDDM) 1.2 及更高版本消除了此闪烁 (请参阅[提供无缝的状态转换 WDDM 1.2 及更高版本](seamless-state-transitions-in-wddm-1-2-and-later.md))。 此恢复结束时显示黑色屏幕可能会使某些旧版 Microsoft DirectX 应用程序 （例如，早于 9.0 符合 DirectX 版本的 DirectX 应用）。 最终用户将必须重新启动这些应用程序。
 
@@ -34,7 +34,7 @@ GPU 计划程序，它是 DirectX 图形内核子系统 (Dxgkrnl.sys) 的一部�
 ## <a name="span-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanspan-idpreparationforrecoveryspanpreparation-for-recovery"></a><span id="Preparation_for_recovery"></span><span id="preparation_for_recovery"></span><span id="PREPARATION_FOR_RECOVERY"></span>恢复的做准备
 
 
-操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)函数来通知该驱动程序，操作系统检测到了超时。 该驱动程序必须重新初始化自身，然后重置 GPU。 此外，驱动程序必须停止访问内存，并且不应访问硬件。 操作系统和驱动程序，收集硬件和可能适用于事后诊断其他状态信息。
+操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)函数来通知该驱动程序，操作系统检测到了超时。 该驱动程序必须重新初始化自身，然后重置 GPU。 此外，驱动程序必须停止访问内存，并且不应访问硬件。 操作系统和驱动程序，收集硬件和可能适用于事后诊断其他状态信息。
 
 ## <a name="span-iddesktoprecoveryspanspan-iddesktoprecoveryspanspan-iddesktoprecoveryspandesktop-recovery"></a><span id="Desktop_recovery"></span><span id="desktop_recovery"></span><span id="DESKTOP_RECOVERY"></span>桌面恢复
 

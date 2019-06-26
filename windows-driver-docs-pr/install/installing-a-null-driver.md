@@ -10,12 +10,12 @@ keywords:
 - 不存在驱动程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f371e29e64de92310352164b9c1e7a8f2f6d461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5e4be192c2a4809e36ec37cdbda048c8bed6237
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362941"
 ---
 # <a name="installing-a-null-driver"></a>安装 Null 驱动程序
 
@@ -44,7 +44,7 @@ AddService = ,2    ; no value for the service name
 
 中的设备的硬件 ID*模型*部分应识别的设备具体而言，使用子系统供应商 ID 和其他任何信息都是相关。
 
-操作系统将创建一个设备节点 (*devnode*) 设备，但如果设备不能够执行在 raw 模式，操作系统将不启动设备因为功能驱动程序尚未分配给它。 请注意，但是，如果该设备已[启动配置](https://msdn.microsoft.com/library/windows/hardware/ff547012#logical-configuration-types-for-resource-lists)，将保留这些资源。
+操作系统将创建一个设备节点 (*devnode*) 设备，但如果设备不能够执行在 raw 模式，操作系统将不启动设备因为功能驱动程序尚未分配给它。 请注意，但是，如果该设备已[启动配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-lists)，将保留这些资源。
 
  
 

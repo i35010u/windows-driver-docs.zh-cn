@@ -4,12 +4,12 @@ description: 移动运营商通知事件技术详细信息
 ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e25284f32fe27ffdd4379ec3c218045d1a7ad708
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c81c7eb80b3bccf5af0ae11c499d8b89ea97134
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364959"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>移动运营商通知事件技术详细信息
 
@@ -135,7 +135,7 @@ MobileOperatorNotification 事件，每个方案中所述[移动运营商通知�
 
 ### <a name="span-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspandataplanthresholdreached"></a><span id="DataPlanThresholdReached"></span><span id="dataplanthresholdreached"></span><span id="DATAPLANTHRESHOLDREACHED"></span>DataPlanThresholdReached
 
-默认情况下，禁用此消息类型。 你可以通过使用预配的元数据指定启用它[ **DataUsageInMobileOperatorNotificationEnabled** ](https://msdn.microsoft.com/library/windows/apps/hh868368)字段，如下所示。
+默认情况下，禁用此消息类型。 你可以通过使用预配的元数据指定启用它[ **DataUsageInMobileOperatorNotificationEnabled** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datausageinmobileoperatornotificationenabled)字段，如下所示。
 
 ``` syntax
 <?xml version="1.0"?>
@@ -196,7 +196,7 @@ MobileOperatorNotification 事件生成具有这些**MessageType**s Windows 连�
 
 在移动宽带接口的 L2 连接时触发 ProfileConnected MessageType。
 
-**请注意**  网络标识完成之前，将发生此触发器。 [ **NetworkStatusChanged** ](https://msdn.microsoft.com/library/windows/apps/br207299)事件 (属于[ **NetworkInformation** ](https://msdn.microsoft.com/library/windows/apps/br207293) API) 生成时的网络标识确定网络的连接级别。 有关网络标识的详细信息，请参阅[快速入门：检索网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452990)并**NetworkInformation**类。
+**请注意**  网络标识完成之前，将发生此触发器。 [ **NetworkStatusChanged** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)事件 (属于[ **NetworkInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API) 生成时的网络标识确定网络的连接级别。 有关网络标识的详细信息，请参阅[快速入门：检索网络连接信息](https://docs.microsoft.com/previous-versions/windows/apps/hh452990(v=win.10))并**NetworkInformation**类。
 
  
 
@@ -210,7 +210,7 @@ MobileOperatorNotification 事件生成具有这些**MessageType**当 Windows �
 
 MobileOperatorNotification 事件生成与此**MessageType**的用户打开时 Internet 共享。 每次用户尝试使用 Internet 共享，只要移动运营商已设置时，都会触发该事件[AllowTethering](allowtethering.md)服务元数据架构中的元素**EntitlementCheckRequired**。 有关服务的元数据架构的详细信息，请参阅[服务的元数据数据包架构参考](service-metadata-package-schema-reference.md)。
 
-应用应运行支持的移动运营商网络的相应权利检查机制并将结果发送到系统中，通过使用[ **AuthorizeTethering** ](https://msdn.microsoft.com/library/windows/apps/dn266090)方法[ **NetworkOperatorNotificationEventDetails** ](https://msdn.microsoft.com/library/windows/apps/br207377)类[ **Windows.Networking.NetworkOperators** ](https://msdn.microsoft.com/library/windows/apps/br241148)命名空间。 如果应用不具有运行权利检查的功能，移动运营商应更改服务元数据[AllowTethering](allowtethering.md)元素**始终**或**从不**，以便永远不会生成事件。
+应用应运行支持的移动运营商网络的相应权利检查机制并将结果发送到系统中，通过使用[ **AuthorizeTethering** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)方法[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类[ **Windows.Networking.NetworkOperators** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)命名空间。 如果应用不具有运行权利检查的功能，移动运营商应更改服务元数据[AllowTethering](allowtethering.md)元素**始终**或**从不**，以便永远不会生成事件。
 
 ## <a name="span-idregmdspanspan-idregmdspanregister-for-the-mobileoperatornotification-event-by-using-metadata"></a><span id="regmd"></span><span id="REGMD"></span>通过使用元数据注册 MobileOperatorNotification 事件
 

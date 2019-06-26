@@ -11,12 +11,12 @@ keywords:
 - 提示 WDK SetupAPI 媒体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f88f144aea08b6b9ad71d3fa67c11e46f5d026bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30a874724506eeb43fc78cd08b1b9cde79f39e5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356059"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375324"
 ---
 # <a name="disk-prompting-and-error-handling-functions"></a>磁盘提示和错误处理函数
 
@@ -41,19 +41,19 @@ ms.locfileid: "63356059"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa376989" data-raw-source="[&lt;strong&gt;SetupCopyError&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa376989)"><strong>SetupCopyError</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora" data-raw-source="[&lt;strong&gt;SetupCopyError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora)"><strong>SetupCopyError</strong></a></p></td>
 <td align="left"><p>生成一个对话框，通知复制错误的用户。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa376994" data-raw-source="[&lt;strong&gt;SetupDeleteError&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa376994)"><strong>SetupDeleteError</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora" data-raw-source="[&lt;strong&gt;SetupDeleteError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora)"><strong>SetupDeleteError</strong></a></p></td>
 <td align="left"><p>生成一个对话框，通知用户删除错误。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377412" data-raw-source="[&lt;strong&gt;SetupPromptForDisk&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377412)"><strong>SetupPromptForDisk</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska" data-raw-source="[&lt;strong&gt;SetupPromptForDisk&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska)"><strong>SetupPromptForDisk</strong></a></p></td>
 <td align="left"><p>生成一个对话框，提示用户输入了安装介质或源的文件位置。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa377434" data-raw-source="[&lt;strong&gt;SetupRenameError&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/desktop/aa377434)"><strong>SetupRenameError</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora" data-raw-source="[&lt;strong&gt;SetupRenameError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora)"><strong>SetupRenameError</strong></a></p></td>
 <td align="left"><p>生成一个对话框，通知用户重命名错误。</p></td>
 </tr>
 </tbody>

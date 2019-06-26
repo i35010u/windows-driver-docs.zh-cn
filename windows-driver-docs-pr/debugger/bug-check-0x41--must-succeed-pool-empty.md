@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa914bd46f773dd69b6e7fe3b672ea0b4982de10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1ab852875436539bcb350564d2362856e911fb2d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361883"
 ---
 # <a name="bug-check-0x41-mustsucceedpoolempty"></a>Bug 检查 0x41：必须\_SUCCEED\_池\_空
 
@@ -26,7 +26,7 @@ ms.locfileid: "63353649"
 必须\_SUCCEED\_池\_空 bug 检查的值为 0x00000041。 这表示内核模式线程已请求过多 must-succeed 池。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="mustsucceedpoolempty-parameters"></a>必须\_SUCCEED\_池\_空参数

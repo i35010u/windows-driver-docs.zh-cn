@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 与 Windows Vista 一起启动的网络驱动程序的 NDIS_MDL_LINKAGE 宏
 ms.localizationpriority: medium
-ms.openlocfilehash: b47a283b39ff3a2cfd17b8acd76e87634cbfeb47
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 58f91c90d0927c9780d4dde8c742b7d936987bd0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542842"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385747"
 ---
 # <a name="ndismdllinkage-macro"></a>NDIS\_MDL\_链接宏
 
@@ -27,7 +27,7 @@ PVOID NDIS_MDL_LINKAGE(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>Parameters
 ----------
 
 *\_Mdl*   
@@ -41,7 +41,7 @@ PVOID NDIS_MDL_LINKAGE(
 <a name="remarks"></a>备注
 -------
 
-**NDIS\_MDL\_链接**宏提供的基于 MDL 版本[ **NDIS\_缓冲区\_链接**](https://msdn.microsoft.com/library/windows/hardware/ff556919)函数。
+**NDIS\_MDL\_链接**宏提供的基于 MDL 版本[ **NDIS\_缓冲区\_链接**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))函数。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,11 +57,11 @@ PVOID NDIS_MDL_LINKAGE(
 <td>桌面设备</td>
 </tr>
 <tr class="even">
-<td><p>版本</p></td>
+<td><p>Version</p></td>
 <td><p>支持 NDIS 6.0 及更高版本。</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ndis.h （包括 Ndis.h）</td>
 </tr>
 <tr class="even">
@@ -71,10 +71,10 @@ PVOID NDIS_MDL_LINKAGE(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_缓冲区\_链接**](https://msdn.microsoft.com/library/windows/hardware/ff556919)
+[**NDIS\_缓冲区\_链接**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))
 
  
 

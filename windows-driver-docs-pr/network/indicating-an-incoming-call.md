@@ -8,12 +8,12 @@ keywords:
 - 指示传入呼叫 WDK 的 CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2576b6cbe67185f5e224526094acf25330c55eeb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d27d75eb50f4d658b8f5f953f147edacbad4b578
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374833"
 ---
 # <a name="indicating-an-incoming-call"></a>指示来电
 
@@ -35,7 +35,7 @@ ms.locfileid: "63327798"
 
 之前，该值指示对客户端的传入呼叫，呼叫管理器或 MCM 驱动程序必须标识调用定向到 SAP。 以前必须已将 SAP[注册](registering-a-sap.md)由客户端。 呼叫管理器或 MCM 驱动程序还必须启动[创建 VC](creating-a-vc.md) ，并启动[激活此 VC](activating-a-vc.md)。
 
-呼叫管理器或 MCM 驱动程序，则表示对注册的 SAP 传入调用定向到的客户端的传入调用。 呼叫管理器指示的传入呼叫[ **NdisCmDispatchIncomingCall**](https://msdn.microsoft.com/library/windows/hardware/ff561664)。 MCM 驱动程序指示使用的传入呼叫[ **NdisMCmDispatchIncomingCall**](https://msdn.microsoft.com/library/windows/hardware/ff562830)。
+呼叫管理器或 MCM 驱动程序，则表示对注册的 SAP 传入调用定向到的客户端的传入调用。 呼叫管理器指示的传入呼叫[ **NdisCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchincomingcall)。 MCM 驱动程序指示使用的传入呼叫[ **NdisMCmDispatchIncomingCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchincomingcall)。
 
 在调用**Ndis (M) CmDispatchIncomingCall**，呼叫管理器或 MCM 驱动程序将传递以下：
 
@@ -43,21 +43,21 @@ ms.locfileid: "63327798"
 
 -   *NdisVcHandle* ，用于标识虚拟电路的传入呼叫。
 
--   指向类型的结构的指针[**共同\_调用\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff545384)，其中包含调用的调用参数。
+-   指向类型的结构的指针[**共同\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))，其中包含调用的调用参数。
 
-在调用**Ndis (M) CmDispatchIncomingCall**会导致调用客户端的 NDIS [ **ProtocolClIncomingCall** ](https://msdn.microsoft.com/library/windows/hardware/ff570228)函数，在其中客户端接受或拒绝请求的连接。 *ProtocolClIncomingCall*应验证 SAP VC，并调用参数。
+在调用**Ndis (M) CmDispatchIncomingCall**会导致调用客户端的 NDIS [ **ProtocolClIncomingCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_incoming_call)函数，在其中客户端接受或拒绝请求的连接。 *ProtocolClIncomingCall*应验证 SAP VC，并调用参数。
 
-*ProtocolClIncomingCall*可以同步完成，或者它可以返回 NDIS\_状态\_挂起的和使用以异步方式完成[ **NdisClIncomingCallComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff561632). 调用**NdisClIncomingCallComplete** NDIS 调用管理器的调用或 MCM 驱动程序将导致[ **ProtocolCmIncomingCallComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff570245)函数。
+*ProtocolClIncomingCall*可以同步完成，或者它可以返回 NDIS\_状态\_挂起的和使用以异步方式完成[ **NdisClIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclincomingcallcomplete). 调用**NdisClIncomingCallComplete** NDIS 调用管理器的调用或 MCM 驱动程序将导致[ **ProtocolCmIncomingCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_incoming_call_complete)函数。
 
 NDIS\_同步完成的返回状态代码*ProtocolClIncomingCall*或者提供给**NdisClIncomingCallComplete**表明客户端的接受或传入呼叫 rejection。 客户端还将调用的调用参数返回中缓冲共同\_调用\_参数结构。 如果客户端查找调用参数不可接受，它可以如果的信号协议，允许请求在调用参数中的更改通过设置**标志**成员中产生的 CO\_调用\_参数调用具有结构\_参数\_已更改，并通过提供修改后调用参数中缓冲共同\_调用\_参数结构。
 
 如果客户端接受传入呼叫，呼叫管理器或 MCM 驱动程序应发送信号消息来指示发给调用实体调用已被接受。 否则，呼叫管理器或 MCM 驱动程序应将发送信号消息来指示调用已被拒绝。 如果客户端正在请求中调用参数、 呼叫管理器或 MCM 驱动程序发送信号消息，以请求更改调用参数中的更改。
 
-如果客户端接受调用，或如果客户端的请求由远程方已接受在调用参数中的更改，则调用的呼叫管理器[ **NdisCmDispatchCallConnected**](https://msdn.microsoft.com/library/windows/hardware/ff561661)，和 MCM 驱动程序调用[**NdisMCmDispatchCallConnected**](https://msdn.microsoft.com/library/windows/hardware/ff562826)。 在调用**Ndis (M) CmDispatchCallConnected**会导致调用客户端的 NDIS *ProtocolClCallConnected*函数。
+如果客户端接受调用，或如果客户端的请求由远程方已接受在调用参数中的更改，则调用的呼叫管理器[ **NdisCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdispatchcallconnected)，和 MCM 驱动程序调用[**NdisMCmDispatchCallConnected**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdispatchcallconnected)。 在调用**Ndis (M) CmDispatchCallConnected**会导致调用客户端的 NDIS *ProtocolClCallConnected*函数。
 
-如果客户端已拒绝调用和呼叫管理器或 MCM 驱动程序已激活的传入呼叫 VC，呼叫管理器或 MCM 驱动程序调用**Ndis (M) CmDeactivateVc**如果激活 VC 停用 VC。 呼叫管理器或 MCM 驱动程序可以故障[删除 VC](deleting-a-vc.md)通过调用[ **NdisCoDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff561698)在呼叫管理器的情况下或[ **NdisMCmDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff562819)在 MCM 驱动程序的情况下。
+如果客户端已拒绝调用和呼叫管理器或 MCM 驱动程序已激活的传入呼叫 VC，呼叫管理器或 MCM 驱动程序调用**Ndis (M) CmDeactivateVc**如果激活 VC 停用 VC。 呼叫管理器或 MCM 驱动程序可以故障[删除 VC](deleting-a-vc.md)通过调用[ **NdisCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)在呼叫管理器的情况下或[ **NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc)在 MCM 驱动程序的情况下。
 
-如果客户端接受调用，但未 （因为，例如，远程方撕裂的调用） 成功建立端到端连接，呼叫管理器或 MCM 驱动程序将不会调用**Ndis (M) CmDispatchCallConnected**. 相反，它将调用**Ndis (M) CmDispatchIncomingCloseCall**，这将导致调用客户端的 NDIS *ProtocolClIncomingCloseCall*函数。 然后，客户端必须调用[ **NdisClCloseCall** ](https://msdn.microsoft.com/library/windows/hardware/ff561627)完成调用的拆解。 呼叫管理器或 MCM 驱动程序然后调用**Ndis (M) CmDeactivateVC**到[停用 VC](deactivating-a-vc.md)它为传入的调用创建的。 呼叫管理器或 MCM 驱动程序可以故障[删除 VC](deleting-a-vc.md)通过调用[ **NdisCoDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff561698)在呼叫管理器的情况下或[ **NdisMCmDeleteVc** ](https://msdn.microsoft.com/library/windows/hardware/ff562819)在 MCM 驱动程序的情况下。
+如果客户端接受调用，但未 （因为，例如，远程方撕裂的调用） 成功建立端到端连接，呼叫管理器或 MCM 驱动程序将不会调用**Ndis (M) CmDispatchCallConnected**. 相反，它将调用**Ndis (M) CmDispatchIncomingCloseCall**，这将导致调用客户端的 NDIS *ProtocolClIncomingCloseCall*函数。 然后，客户端必须调用[ **NdisClCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)完成调用的拆解。 呼叫管理器或 MCM 驱动程序然后调用**Ndis (M) CmDeactivateVC**到[停用 VC](deactivating-a-vc.md)它为传入的调用创建的。 呼叫管理器或 MCM 驱动程序可以故障[删除 VC](deleting-a-vc.md)通过调用[ **NdisCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)在呼叫管理器的情况下或[ **NdisMCmDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc)在 MCM 驱动程序的情况下。
 
  
 

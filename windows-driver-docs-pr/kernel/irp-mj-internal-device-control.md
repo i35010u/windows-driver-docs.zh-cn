@@ -6,12 +6,12 @@ ms.assetid: fb3d4534-9c6f-4956-b702-5752f9798600
 keywords:
 - IRP_MJ_INTERNAL_DEVICE_CONTROL Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 486036d7d8b3a085fba4a45857f727d9914218e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4da0c0d69b381c65da3313b80299eb1152f32e35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370905"
 ---
 # <a name="irpmjinternaldevicecontrol"></a>IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
@@ -30,23 +30,23 @@ ms.locfileid: "63368493"
 
 I/O 控制代码包含在**Parameters.DeviceIoControl.IoControlCode**中 I/O 堆栈 IRP 的位置。
 
-其他输入的参数取决于 I/O 控制代码值。 有关详细信息，请参阅[I/O 控制代码的缓冲区说明](https://msdn.microsoft.com/library/windows/hardware/ff540663)。
+其他输入的参数取决于 I/O 控制代码值。 有关详细信息，请参阅[I/O 控制代码的缓冲区说明](https://docs.microsoft.com/windows-hardware/drivers/kernel/buffer-descriptions-for-i-o-control-codes)。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-输出参数取决于 I/O 控制代码值。 有关详细信息，请参阅[I/O 控制代码的缓冲区说明](https://msdn.microsoft.com/library/windows/hardware/ff540663)。
+输出参数取决于 I/O 控制代码值。 有关详细信息，请参阅[I/O 控制代码的缓冲区说明](https://docs.microsoft.com/windows-hardware/drivers/kernel/buffer-descriptions-for-i-o-control-codes)。
 
 <a name="operation"></a>操作
 ---------
 
-驱动程序收到**IRP\_MJ\_内部\_设备\_控制**请求时另一个驱动程序拨打[ **IoBuildDeviceIoControlRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548318)或[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)创建请求。
+驱动程序收到**IRP\_MJ\_内部\_设备\_控制**请求时另一个驱动程序拨打[ **IoBuildDeviceIoControlRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)或[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)创建请求。
 
 有关配对和分层内核模式驱动程序，例如上层端口驱动程序的一个或多个类驱动程序之间的通信已定义此 I/O 控制代码。 更高级别的驱动程序设置与特定于设备或驱动程序 I/O 控制代码，请求从下一步低驱动程序支持的 Irp。
 
 请求的操作是特定于设备或驱动程序。
 
-对于 I/O 的常规信息来控制代码[ **IRP\_MJ\_设备\_控制**](irp-mj-device-control.md)或**IRP\_MJ\_内部\_设备\_控制**请求，请参阅[使用的 I/O 控制代码](https://msdn.microsoft.com/library/windows/hardware/ff565406)。 另请参阅[设备的特定于类型的 I/O 请求](https://msdn.microsoft.com/library/windows/hardware/ff543205)。
+对于 I/O 的常规信息来控制代码[ **IRP\_MJ\_设备\_控制**](irp-mj-device-control.md)或**IRP\_MJ\_内部\_设备\_控制**请求，请参阅[使用的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)。 另请参阅[设备的特定于类型的 I/O 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-type-specific-i-o-requests)。
 
 <a name="requirements"></a>要求
 ------------
@@ -69,9 +69,9 @@ I/O 控制代码包含在**Parameters.DeviceIoControl.IoControlCode**中 I/O 堆
 
 [*DispatchInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)
 
-[**IoAllocateIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548257)
+[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)
 
-[**IoBuildDeviceIoControlRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548318)
+[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
  
 

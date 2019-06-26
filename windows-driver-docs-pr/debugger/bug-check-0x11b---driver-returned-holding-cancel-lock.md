@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 645ff1f64e4ca9637f93b8493170db1724351021
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 339f0bb03e1dacbff05722764145f57cd83eec88
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358160"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362319"
 ---
 # <a name="bug-check-0x11b-driverreturnedholdingcancellock"></a>Bug 检查 0x11B：驱动程序\_退回\_持有\_取消\_锁
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358160"
 该驱动程序\_退回\_持有\_取消\_锁错误检查的值为 0x0000011B。 此 bug 检查指示驱动程序已经从返回*取消*例程包含全局取消锁定。 这会导致所有更高版本的取消调用失败，并且结果中任意一种死锁或其他 bug 检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="driverreturnedholdingcancellock-parameters"></a>驱动程序\_退回\_持有\_取消\_锁参数

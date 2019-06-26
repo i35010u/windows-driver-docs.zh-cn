@@ -7,12 +7,12 @@ keywords:
 - 音频驱动程序 WDK，平台差异
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c4e76bfb1610d61e3394d5aa3b3df4e79dbc6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e853c5fc2c78ae3504ba4c6b2371efb089cec8cf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328465"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364780"
 ---
 # <a name="wdm-audio-platform-differences"></a>WDM 音频平台差异
 
@@ -32,7 +32,7 @@ Windows Driver Kit (WDK) 文档中其他位置提供了 WDM 平台差异的其�
 
 -   有关 PortCls 适配器驱动程序的版本号有何不同 Windows 版本间的信息，请参阅[音频驱动程序的版本号](version-numbers-for-audio-drivers.md)。
 
--   有关在 Windows 版本，其中讨论了驱动程序，请浮点问题之间的一般情况下区别 WDM 驱动程序的支持信息请参阅[WDM 版本差异](https://msdn.microsoft.com/library/windows/hardware/ff543216)。
+-   有关在 Windows 版本，其中讨论了驱动程序，请浮点问题之间的一般情况下区别 WDM 驱动程序的支持信息请参阅[WDM 版本差异](https://docs.microsoft.com/windows-hardware/drivers/kernel/differences-in-wdm-versions)。
 
  
 

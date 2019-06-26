@@ -14,12 +14,12 @@ keywords:
 - 写通式请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8719997cc86e24bf4560c5d97287264249fa1e2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a5052b603544e1374d7329aede8b78052dcee27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366264"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383149"
 ---
 # <a name="querying-for-the-write-cache-property"></a>查询写缓存属性
 
@@ -32,7 +32,7 @@ ms.locfileid: "63366264"
 
 但是，并非所有具有写入缓存的存储设备支持直写请求或同步缓存中;并且，某些设备不需要绕过或刷新缓存的数据作为预防措施，因为它们具有防止在电源故障期间的数据损坏的电池备份系统。 应用程序和驱动程序必须具有有关设备的写入缓存的属性的信息，然后才能进行有效地使用它。
 
-在 Windows Vista 中，可以使用[ **IOCTL\_存储\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff560590)请求与**StorageDeviceWriteCacheProperty**属性标识符以查询指定的设备的特征写入缓存的写缓存属性的存储类驱动程序。 写缓存属性包括有关缓存功能的设备的以下信息：
+在 Windows Vista 中，可以使用[ **IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)请求与**StorageDeviceWriteCacheProperty**属性标识符以查询指定的设备的特征写入缓存的写缓存属性的存储类驱动程序。 写缓存属性包括有关缓存功能的设备的以下信息：
 
 -   *写入缓存是否存在*。 写缓存属性指定设备是否具有写入缓存。
 
@@ -44,7 +44,7 @@ ms.locfileid: "63366264"
 
 -   *备用电池*。 写缓存属性指示设备是否具有备用电池，可将保护在电源故障期间的缓存数据的完整性。
 
-写缓存属性报告的信息的完整说明，请参阅[**存储\_编写\_缓存\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff567017)。
+写缓存属性报告的信息的完整说明，请参阅[**存储\_编写\_缓存\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_write_cache_property)。
 
 而无需写入缓存的属性机制 (即，使用 IOCTL\_存储\_查询\_属性请求并**StorageDeviceWriteCacheProperty**属性标识符)，应用程序和驱动程序必须查询设备的写入缓存特征，具有不同的序列的每个总线的命令。 例如，如果目标设备连接到 IEEE 1394 总线，而且使用减少块命令 （红细胞） 协议，发起方必须检索设备的模式来确定是否已启用写入缓存的数据的第 6 页。 但如果目标设备 SCSI 符合，发起方必须检索第 8 页的模式数据。 写入缓存的属性机制隐藏从发起方这些操作的详细信息，并提供不同的总线都是相同的存储设备的写入缓存的特征查询技术。
 

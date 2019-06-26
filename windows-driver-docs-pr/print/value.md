@@ -6,12 +6,12 @@ keywords:
 - 值构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92dda2e223f51cf507b07411db7d51d8f227255d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c8724d2049a7417c7b02fb80124012840b48de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376457"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384514"
 ---
 # <a name="value-wsd"></a>Value (WSD)
 
@@ -39,7 +39,7 @@ WSD`Value`构造可以进行扩展使用从 Web 服务接口中的特定架构�
 <td><p>WSD 监视器将应用于查询指定的 XML 文档中的 XPath 查询。 请参阅本主题后面讨论。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>名称</strong></p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
@@ -48,7 +48,7 @@ WSD`Value`构造可以进行扩展使用从 Web 服务接口中的特定架构�
 </tr>
 <tr class="odd">
 <td><p><strong>type</strong></p></td>
-<td><p>中的数据类型 <code>Value</code> 构造中的值<a href="https://msdn.microsoft.com/library/windows/hardware/ff545211" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff545211)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
+<td><p>中的数据类型 <code>Value</code> 构造中的值<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winspool/ne-winspool-bidi_type)"> <strong>BIDI_TYPE</strong> </a>枚举。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>xmllang</strong></p></td>

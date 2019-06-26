@@ -4,12 +4,12 @@ description: 本主题总结了的新功能和改进 WindowsWindows 8.1 中的�
 ms.assetid: F52BC6D1-DF67-4DE7-BEEC-D18C2A90B4CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec1985eaaeca713d1ea898fc2c8ebcef74a47cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1989e4e87f8a7b9a1fd0caf1b101210f3dfe352e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384687"
 ---
 # <a name="new-sensor-features-and-improvements-for-windows-81"></a>新的传感器功能和改进的 Windows 8.1
 
@@ -52,7 +52,7 @@ Windows 8.1 包括对任意传感器 HID 传输上运行的内置支持。 通�
 
 地理位置示例驱动程序演示了模拟全球定位系统 (GPS) 设备的最小 UMDF 驱动程序。 此示例驱动程序详细介绍了在新[编程指南](programming-guide.md)。
 
-地理位置示例驱动程序还包括演示如何添加对单选管理 API 的支持的代码。 这中所述[支持单选管理](https://msdn.microsoft.com/library/windows/hardware/jj200337)主题。
+地理位置示例驱动程序还包括演示如何添加对单选管理 API 的支持的代码。 这中所述[支持单选管理](https://docs.microsoft.com/windows-hardware/drivers/gnss/supporting-radio-management)主题。
 
 ## <a name="related-topics"></a>相关主题
 [编程指南](programming-guide.md)  

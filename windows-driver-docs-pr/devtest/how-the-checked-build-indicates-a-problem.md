@@ -12,12 +12,12 @@ keywords:
 - 错误 WDK 检查生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81478c63008e35f60b35159a6e51537d5200b373
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0d1c435766b512fb6af883cf70bf416ef2e6d7e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67372687"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>已检验版本如何指出问题
 
@@ -27,11 +27,11 @@ ms.locfileid: "63330648"
 
 操作系统已检验的版本使用多种方法来通知你发现的问题。 这些方法包括断言失败、 断点以及调试器消息。 所有这些方法会导致从内核调试程序的输出。 因此，若要很有帮助，必须运行已检验的版本与内核模式调试程序 （如 WinDbg 或 KD） 连接。
 
-有关调试的详细信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+有关调试的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 ### <a name="span-idassertfailuresspanspan-idassertfailuresspanassert-failures"></a><span id="assert_failures"></span><span id="ASSERT_FAILURES"></span>断言失败
 
-已检验的版本执行的检查的大多数作为实现[ **ASSERT** ](https://msdn.microsoft.com/library/windows/hardware/ff542107)语句。 如果断言的表达式的计算结果为**FALSE**，调试器将显示包含的消息：
+已检验的版本执行的检查的大多数作为实现[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))语句。 如果断言的表达式的计算结果为**FALSE**，调试器将显示包含的消息：
 
 -   失败的代码表达式的文本
 
@@ -52,9 +52,9 @@ ntkrnlmp!DbgBreakPoint:
 
 调试程序输出中所示，为"中断、 忽略、 终止进程或终止线程。"要求用户 用户通过输入"b"，回答导致调试器停止系统执行与断点。 因此，用户现在可以继续调试时发现的问题。
 
-在该失败的断言将影响系统的方式取决于多种因素。 在 Windows Vista 之前的 Windows 版本，如果已启用调试的操作系统在系统启动过程中，系统会进入调试器 （如果已连接） 或挂起正在等待调试程序连接。 如果未启用调试，系统将崩溃， [ **Bug 检查 0x1E** ](https://msdn.microsoft.com/library/windows/hardware/ff557408) (KMODE\_异常\_不\_HANDLED) 0x80000003 参数 1 值。 在 Windows Vista 及更高版本，系统将中断到调试器，仅当连接调试器。 如果未启用调试，或如果启用调试，但调试器未连接，（尽管仍会执行断言检查），将不会报告失败的断言。 如果你正在开发一个驱动程序并想要明确地中断调试器，如果启用调试，但未连接到调试器，可以使用[ **DbgBreakPoint** ](https://msdn.microsoft.com/library/windows/hardware/ff543626)在代码中的语句。
+在该失败的断言将影响系统的方式取决于多种因素。 在 Windows Vista 之前的 Windows 版本，如果已启用调试的操作系统在系统启动过程中，系统会进入调试器 （如果已连接） 或挂起正在等待调试程序连接。 如果未启用调试，系统将崩溃， [ **Bug 检查 0x1E** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) (KMODE\_异常\_不\_HANDLED) 0x80000003 参数 1 值。 在 Windows Vista 及更高版本，系统将中断到调试器，仅当连接调试器。 如果未启用调试，或如果启用调试，但调试器未连接，（尽管仍会执行断言检查），将不会报告失败的断言。 如果你正在开发一个驱动程序并想要明确地中断调试器，如果启用调试，但未连接到调试器，可以使用[ **DbgBreakPoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint)在代码中的语句。
 
-某些[ **ASSERT** ](https://msdn.microsoft.com/library/windows/hardware/ff542107)故障的前面有其他[ **DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)输出。 此类型的断言的一个常见示例是以下[ **PAGED\_代码**](https://msdn.microsoft.com/library/windows/hardware/ff558773) ntddk.h 和 wdm.h 中用于驱动程序的内部版本中定义的宏：
+某些[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))故障的前面有其他[ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)输出。 此类型的断言的一个常见示例是以下[ **PAGED\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ntddk.h 和 wdm.h 中用于驱动程序的内部版本中定义的宏：
 
 ```
 #define PAGED_CODE() \
@@ -72,7 +72,7 @@ KdPrint(( "EX: Pageable code called at IRQL %d\n", KeGetCurrentIrql() )); \
 
 ### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>断点
 
-检查内部版本号还可以使用断点表示存在问题。 断点，通常都会骤然[ **DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)语句，这会导致调试器中以显示有关所遇到的问题的信息。 如果调试器未连接到系统断点发生时，系统崩溃，并解释性的所有消息都都将丢失。
+检查内部版本号还可以使用断点表示存在问题。 断点，通常都会骤然[ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)语句，这会导致调试器中以显示有关所遇到的问题的信息。 如果调试器未连接到系统断点发生时，系统崩溃，并解释性的所有消息都都将丢失。
 
 中列出了一些最常见的消息已检验版本，在前面的断点和其遇到的驱动程序编写人员[检查生成断点和消息](checked-build-breakpoints-and-messages.md)。
 
@@ -107,7 +107,7 @@ f9f77ddc 8069bece 805f8c04 00000001 00000000 ntkrnlmp!PspSystemThreadStartup+0x4
 00000000 00000000 00000000 00000000 00000000 ntkrnlmp!KiThreadStartup+0x16
 ```
 
-您可以看到此堆栈跟踪中，为调用的结果执行断点**KfAcquireSpinLock**。 检查 wdm.h 中后，您可以看到这是由驱动程序引用的函数的实际名称[ **KeAcquireSpinLock**](https://msdn.microsoft.com/library/windows/hardware/ff551917)。 即使在断点之前显示了任何消息，可以看到在堆栈的顶部断点的位置 (**ntkrnlmp ！SpinLockSpinningForTooLong**)。 此位置表示该断点的原因：旋转锁具有旋转，等待的时间非常长的购置。
+您可以看到此堆栈跟踪中，为调用的结果执行断点**KfAcquireSpinLock**。 检查 wdm.h 中后，您可以看到这是由驱动程序引用的函数的实际名称[ **KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)。 即使在断点之前显示了任何消息，可以看到在堆栈的顶部断点的位置 (**ntkrnlmp ！SpinLockSpinningForTooLong**)。 此位置表示该断点的原因：旋转锁具有旋转，等待的时间非常长的购置。
 
 ### <a name="span-iddebuggermessagesspanspan-iddebuggermessagesspandebugger-messages"></a><span id="debugger_messages"></span><span id="DEBUGGER_MESSAGES"></span>调试器消息
 

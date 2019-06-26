@@ -13,12 +13,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f8b9a6c2d7c62430a987c420df1ad026c8509b84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 749d4025f2203cc5642567f442fde6c010d98616
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335936"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362479"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
@@ -124,15 +124,15 @@ Ndiskd.dll
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
 [网络适配器 WDF 类扩展 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
@@ -140,11 +140,11 @@ Ndiskd.dll
 
 [NET\_RING\_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
 
-[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[**!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
+[ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
 
-[**!ndiskd.netqueue**](-ndiskd-netqueue.md)
+[ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
  
 

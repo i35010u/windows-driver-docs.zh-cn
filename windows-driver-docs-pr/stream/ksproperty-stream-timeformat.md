@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea517a877738cdeba4a802a44fd1140a00ac4c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c66ce9b849197e58e4a9a1c3457d85a4916ef423
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325998"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368841"
 ---
 # <a name="kspropertystreamtimeformat"></a>KSPROPERTY\_STREAM\_TIMEFORMAT
 
@@ -66,7 +66,7 @@ KSPROPERTY\_流\_TIMEFORMAT 属性用于检索特定 pin 连接上使用的时�
 
 该属性返回指定在连接中使用和指示格式的呈现时间和范围的时间格式的 GUID。 定义的时间格式对应于由 DirectShow 定义。
 
-KSPROPERTY\_流\_TIMEFORMAT 是可选属性，如果 pin 支持率、 演示文稿时间/范围内，应实现或跳过下降属性 (有关这些属性的详细信息，请参阅[质量管理](https://msdn.microsoft.com/library/windows/hardware/ff568124))。 这允许客户端确定用来连接和速率、 演示文稿时间/范围内，使用时间戳信息的格式的时间格式，并跳过降级操作。
+KSPROPERTY\_流\_TIMEFORMAT 是可选属性，如果 pin 支持率、 演示文稿时间/范围内，应实现或跳过下降属性 (有关这些属性的详细信息，请参阅[质量管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management))。 这允许客户端确定用来连接和速率、 演示文稿时间/范围内，使用时间戳信息的格式的时间格式，并跳过降级操作。
 
 <a name="requirements"></a>要求
 ------------

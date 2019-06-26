@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da3053780adbfa1717a3adc30e3dda8fed390168
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84f5a2916529f95aaa945dbce03bc9e10555067f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363172"
 ---
 # <a name="bugdump"></a>!bugdump
 
@@ -64,7 +64,7 @@ ms.locfileid: "63334648"
 
 此扩展可以仅在出现的 bug 检查后，或在调试时的内核模式崩溃转储文件。
 
-*组件*参数对应于最后一个参数中使用[ **KeRegisterBugCheckCallback**](https://msdn.microsoft.com/library/windows/hardware/ff553105)。
+*组件*参数对应于最后一个参数中使用[ **KeRegisterBugCheckCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterbugcheckcallback)。
 
 保存回调数据的缓冲区在小内存转储中不可用。 这类缓冲区很内核内存转储和完全内存转储中存在。 但是，在 Windows XP SP1、 Windows Server 2003 和更高版本的 Windows 中，创建转储文件在驱动程序的前**BugCheckCallback**调用例程，并且因此这些缓冲区将包含这些写入的数据例程。
 

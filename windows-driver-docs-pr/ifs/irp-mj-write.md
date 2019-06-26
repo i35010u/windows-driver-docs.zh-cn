@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c61d96057a16bdf650640dd68342e37a4ea2b79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7a9867fb75d40cc8cba61375f0c07544fa0613d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375667"
 ---
 # <a name="irpmjwrite"></a>IRP\_MJ\_WRITE
 
@@ -25,7 +25,7 @@ ms.locfileid: "63324361"
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_写入 I/O 管理器或文件系统驱动程序发送请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**WriteFile**或当调用内核模式组件[ **ZwWriteFile**](https://msdn.microsoft.com/library/windows/hardware/ff567121).
+IRP\_MJ\_写入 I/O 管理器或文件系统驱动程序发送请求。 可以将发送此请求，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**WriteFile**或当调用内核模式组件[ **ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile).
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -60,7 +60,7 @@ MDL 写入请求的文件系统应检查次要函数代码，以确定请求的�
 ## <a name="parameters"></a>Parameters
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/ff549174)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理创建请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理创建请求的 IRP 堆栈位置中设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 
@@ -72,7 +72,7 @@ MDL 写入请求的文件系统应检查次要函数代码，以确定请求的�
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
 
-一个指向[ **IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)接收最终完成状态以及有关请求的操作信息的结构。 如果 IRP\_MJ\_写入请求失败，则文件系统写入调度例程将返回错误 NTSTATUS 值和的值*Irp-&gt;IoStatus.Information*未定义，不应为使用。
+一个指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。 如果 IRP\_MJ\_写入请求失败，则文件系统写入调度例程将返回错误 NTSTATUS 值和的值*Irp-&gt;IoStatus.Information*未定义，不应为使用。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
 
@@ -86,7 +86,7 @@ MDL 写入请求的文件系统应检查次要函数代码，以确定请求的�
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;Flags*  
 
-如果 SL\_FORCE\_直接\_设置写入标记、 内核模式驱动程序可以写入到卷区域，它们通常不能编写由于直接编写阻塞。 直接写阻塞是出于安全原因，Windows Vista 和更高版本操作系统中实现的。 在文件系统层和存储堆栈层检查此标志。 有关直接写阻止的详细信息，请参阅[阻止直接写入操作的卷和磁盘到](https://msdn.microsoft.com/library/windows/hardware/ff551353)。 SL\_FORCE\_直接\_编写标志是在 Windows Vista 和更高版本的 Windows 中可用。
+如果 SL\_FORCE\_直接\_设置写入标记、 内核模式驱动程序可以写入到卷区域，它们通常不能编写由于直接编写阻塞。 直接写阻塞是出于安全原因，Windows Vista 和更高版本操作系统中实现的。 在文件系统层和存储堆栈层检查此标志。 有关直接写阻止的详细信息，请参阅[阻止直接写入操作的卷和磁盘到](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 SL\_FORCE\_直接\_编写标志是在 Windows Vista 和更高版本的 Windows 中可用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*
 
@@ -142,21 +142,21 @@ MDL 写入请求的文件系统应检查次要函数代码，以确定请求的�
 
 [**CcPrepareMdlWrite**](https://msdn.microsoft.com/library/windows/hardware/ff539181)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff544638)
+[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff550671)
+[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://msdn.microsoft.com/library/windows/hardware/ff549174)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://msdn.microsoft.com/library/windows/hardware/ff550694)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_READ**](irp-mj-read.md)
 
-[**IRP\_MJ\_写入 （WDK 内核参考）**](https://msdn.microsoft.com/library/windows/hardware/ff550819)
+[**IRP\_MJ\_写入 （WDK 内核参考）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
 
-[**ZwWriteFile**](https://msdn.microsoft.com/library/windows/hardware/ff567121)
+[**ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntwritefile)
 
  
 

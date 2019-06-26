@@ -4,12 +4,12 @@ description: 调试器标记语言 (DML) 提供了一种机制增强来自调试
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a734a7c41b28019e0b59fe63ba4a5120e9ed1527
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46be7d6159f7d75d138ab8528f6ff19945a492e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374970"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361461"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 
@@ -489,9 +489,9 @@ Dbgeng 已有一组文本处理输入的法和输出接口，DML 的使用仅需
 输出控制标志调试\_OUTCTL\_DML 指示 dbgeng 方法生成的文本应作为 DML 内容进行处理。 如果未指定此标志的文本视为纯文本格式上下文。 调试\_OUTCTL\_可以使用以下方法使用 DML。
 
 -   [**IDebugControl4::ControlledOutput**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
--   [**IDebugControl4::ControlledOutputVaList**](https://msdn.microsoft.com/library/windows/hardware/ff539252)
+-   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
 -   [**IDebugControl4::ControlledOutputWide**](https://msdn.microsoft.com/library/windows/hardware/ff539266)
--   [**IDebugControl4::ControlledOutputVaListWide**](https://msdn.microsoft.com/library/windows/hardware/ff539259)
+-   [**IDebugControl4::ControlledOutputVaListWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
 
 给定的文本必须遵循有效字符的 DML 的规则。
 

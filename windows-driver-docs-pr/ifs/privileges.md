@@ -16,12 +16,12 @@ keywords:
 - 还原权限 WDK 的文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e39a8149f75a1de93d7f05854961196d9a87baa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc1e5b9ce64f715994662e26db1db4e3748d79a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352838"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385156"
 ---
 # <a name="privileges"></a>权限
 
@@ -51,15 +51,15 @@ ms.locfileid: "63352838"
 
 用于管理文件系统中的特权的关键 Windows 例程是：
 
--   [**SePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff556686)-此例程执行检查的一组特定的必要权限。
+-   [**SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seprivilegecheck)-此例程执行检查的一组特定的必要权限。
 
--   [**SeSinglePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563740)-此例程单一的特定权限时进行检查; 的优化的版本[ **SePrivilegeCheck**](https://msdn.microsoft.com/library/windows/hardware/ff556686)。
+-   [**SeSinglePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-sesingleprivilegecheck)-此例程单一的特定权限时进行检查; 的优化的版本[ **SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seprivilegecheck)。
 
--   [**SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)-此例程执行普通访问检查的对象 （通常情况下的文件系统的文件对象）。
+-   [**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)-此例程执行普通访问检查的对象 （通常情况下的文件系统的文件对象）。
 
--   [**SeFreePrivileges**](https://msdn.microsoft.com/library/windows/hardware/ff556656)-此例程将释放通过以前调用返回的特权块[ **SeAccessCheck**](https://msdn.microsoft.com/library/windows/hardware/ff563674)。
+-   [**SeFreePrivileges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sefreeprivileges)-此例程将释放通过以前调用返回的特权块[ **SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-seaccesscheck)。
 
--   [**SeAppendPrivileges**](https://msdn.microsoft.com/library/windows/hardware/ff554762)-此例程将已启用的权限添加到所需的访问\_状态结构。 通常情况下，文件系统将使用的访问权限\_期间 IRP 传递给它的状态\_MJ\_创建处理。
+-   [**SeAppendPrivileges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seappendprivileges)-此例程将已启用的权限添加到所需的访问\_状态结构。 通常情况下，文件系统将使用的访问权限\_期间 IRP 传递给它的状态\_MJ\_创建处理。
 
  
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_STOP_AP 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c570e82f91d3d35877e25534b3ea7a933882159
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d634be86928ccb383763dbb4195cc98c492c01ee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372862"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375211"
 ---
 # <a name="ndisstatuswdiindicationstopap"></a>NDIS\_状态\_WDI\_指示\_停止\_亚太
 
@@ -20,7 +20,7 @@ ms.locfileid: "63372862"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "63372862"
 
 | 在任务栏的搜索框中键入                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                       |
 |---------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------|
-| [**WDI\_TLV\_INDICATION\_STOP\_AP**](https://msdn.microsoft.com/library/windows/hardware/dn926318) |                                |          | 该适配器的原因无法承受任何 PHYs 802.11 AP 功能。 |
+| [**WDI\_TLV\_INDICATION\_STOP\_AP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-stop-ap) |                                |          | 该适配器的原因无法承受任何 PHYs 802.11 AP 功能。 |
 
  
 

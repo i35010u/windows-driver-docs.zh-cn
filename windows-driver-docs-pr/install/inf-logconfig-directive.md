@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76b4fddfb7ba74d4a9784cdafd54d15f32bfbb67
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d52edef707ffbe8745d32a0d4b8fafeedd57d21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380739"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370051"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig 指令
 
@@ -57,7 +57,7 @@ ConfigPriority=priority-value[,config-type]
 ## <a name="entries"></a>条目
 
 
-<a href="" id="configpriority-priority-value"></a>**ConfigPriority=**<em>priority-value</em>  
+<a href="" id="configpriority-priority-value"></a>**ConfigPriority=** <em>priority-value</em>  
 对于此逻辑的配置，优先级值指定为以下值之一：
 
 <a href="" id="desired"></a>所需的  
@@ -89,7 +89,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="disabled"></a>已禁用  
 硬件/设备已被禁用。
 
-<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =**\[*DMAattrs:*\]*DMANum*\[<strong>，</strong>DMANum\]...\]  
+<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =** \[*DMAattrs:* \]*DMANum*\[<strong>，</strong>DMANum\]...\]  
 *DMAattrs*是可选的如果具有唯一的 8 位 DMA 通道的总线上连接设备和设备使用标准系统 DMA。 否则，它可以是以下字母之一：
 
 | Letter | 含义    |
@@ -104,10 +104,10 @@ ConfigPriority=priority-value[,config-type]
 
 *DMANum*指定为十进制数字，每个由逗号 （，） 与下一个分隔的一个或多个总线相对 DMA 通道。
 
-<a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =**<em>io 范围</em>\[**，**<em>io 范围</em>\]...  
+<a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =** <em>io 范围</em>\[ **，** <em>io 范围</em>\]...  
 指定一个或多个 I/O 端口范围为该设备的以下形式之一：
 
-<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*开始结束*\[**(**\[*解码掩码*\]\[*： 别名偏移量*\]\[ *: attr*\]**)** \] （类型 1 I/O 范围）  
+<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*开始结束*\[ **(** \[*解码掩码*\]\[ *： 别名偏移量*\]\[ *: attr*\] **)** \] （类型 1 I/O 范围）  
 
 <a href="" id="start"></a>*start*  
 作为 64 位十六进制地址指定 I/O 端口范围的起始地址。
@@ -133,7 +133,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="attr"></a>*attr*  
 指定以字母**M**如果给定的范围是在系统内存中。 如果省略，给定的范围处于 I/O 端口空间。
 
-<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>大小</em>**@**<em>小-最大</em>\[**%**<em>对齐掩码</em>\] \[ **(**\[*解码掩码*\]\[**:**<em>别名偏移量</em>\] \[ **:**<em>attr</em>\])\] （类型 2 I/O 范围）  
+<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>大小</em> **@** <em>小-最大</em>\[ **%** <em>对齐掩码</em>\] \[ **(** \[*解码掩码*\]\[ **:** <em>别名偏移量</em>\] \[ **:** <em>attr</em>\])\] （类型 2 I/O 范围）  
 
 <a href="" id="size"></a>*size*  
 指定所需的 I/O 端口范围为 32 位十六进制值的字节数。
@@ -165,7 +165,7 @@ ConfigPriority=priority-value[,config-type]
 <a href="" id="attr"></a>*attr*  
 指定以字母**M**如果给定的范围是在系统内存中。 如果省略，给定的范围处于 I/O 端口空间。
 
-<a href="" id="memconfig-mem-range--mem-range----"></a>**MemConfig=**<em>mem-range</em>\[**,**<em>mem-range</em>\]...  
+<a href="" id="memconfig-mem-range--mem-range----"></a>**MemConfig=** <em>mem-range</em>\[ **,** <em>mem-range</em>\]...  
 指定一个或多个设备的内存范围的以下形式之一：
 
 ```ini
@@ -209,12 +209,12 @@ start-end[(attr)] | size@min-max[%align-mask][(attr)]
 
 如果省略对齐掩码，则默认的内存对齐方式是在 4k 边界 (FFFFF000)。
 
-<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =**\[*IRQattrs:*\]*IRQNum*\[**，**<em>IRQNum</em>\]...  
+<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =** \[*IRQattrs:* \]*IRQNum*\[ **，** <em>IRQNum</em>\]...  
 *IRQattrs*如果设备使用总线相对，边缘触发 IRQ 省略。 否则，指定**L**以指示级别触发 IRQ 和**LS**如果设备可以共享此项中列出的 IRQ 行。
 
 *IRQNum*指定一个或多个设备可以使用以十进制数的总线相对 Irq，每个以逗号 （，） 分隔从下一步。
 
-<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig=**<em>ConfigIndex</em>\[**:**\[*MemoryCardBase1*\]\[**:**<em>MemoryCardBase2</em>\]\]\[**(**<em>attrs</em>**)**\]  
+<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig=** <em>ConfigIndex</em>\[ **:** \[*MemoryCardBase1*\]\[ **:** <em>MemoryCardBase2</em>\]\]\[ **(** <em>attrs</em> **)** \]  
 配置 CardBus 寄存器和/或创建最多两个永久内存窗口可映射到设备的属性空间。 驱动程序可以使用内存窗口从 ISR.访问属性空间 以十六进制格式指定所有数值。
 
 元素**PcCardConfig**条目如下所示：
@@ -309,7 +309,7 @@ PCMCIA 总线上指定设备的 8 位 PCMCIA 配置索引。
 
 零等待 I/O 在 windows 上的状态
 
-<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig=**<em>ConfigRegBase</em>**:**<em>ConfigOptions</em>\[**:**<em>IoResourceIndex</em>\]\[**(**<em>attrs</em>**)**\]...指定的配置集的特性内存位置注册的多功能设备的一个函数，如下所示：
+<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig=** <em>ConfigRegBase</em> **:** <em>ConfigOptions</em>\[ **:** <em>IoResourceIndex</em>\]\[ **(** <em>attrs</em> **)** \]...指定的配置集的特性内存位置注册的多功能设备的一个函数，如下所示：
 
 <a href="" id="configregbase"></a>*ConfigRegBase*  
 指定此函数的多功能设备的配置寄存器的属性偏移量。
@@ -342,7 +342,7 @@ PCMCIA 总线上指定设备的 8 位 PCMCIA 配置索引。
 
 只有一个**ConfigPriority**条目可在每个*日志配置部分*。 可以有多个各项之一的其他条目，具体取决于设备的硬件资源要求。
 
-一个或多个**MfCardConfig =** 条目仅出现在*日志配置节*引用**LogConfig**指令<em>DDInstall</em>**.LogConfigOverride**的多功能设备 INF 部分。 多功能设备的 INF 文件有关的详细信息，请参阅[支持多功能设备](https://msdn.microsoft.com/library/windows/hardware/ff542743)。
+一个或多个**MfCardConfig =** 条目仅出现在*日志配置节*引用**LogConfig**指令<em>DDInstall</em> **.LogConfigOverride**的多功能设备 INF 部分。 多功能设备的 INF 文件有关的详细信息，请参阅[支持多功能设备](https://docs.microsoft.com/windows-hardware/drivers/multifunction/index)。
 
 ### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 引用节条目和值
 
@@ -451,7 +451,7 @@ IRQConfig=14,15,5,7,9,11,12,3
 PcCardConfig=1:0:0(W)
 ```
 
-有关如何的一些示例**MfCardConfig**使用的条目，请参阅[支持 PC 卡，具有不完整配置注册地址](https://msdn.microsoft.com/library/windows/hardware/ff542774)。
+有关如何的一些示例**MfCardConfig**使用的条目，请参阅[支持 PC 卡，具有不完整配置注册地址](https://docs.microsoft.com/windows-hardware/drivers/multifunction/supporting-pc-cards-that-have-incomplete-configuration-register-addres)。
 
 ## <a name="see-also"></a>请参阅
 

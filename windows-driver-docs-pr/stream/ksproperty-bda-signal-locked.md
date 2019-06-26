@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f06127f7d66bc7fd98adc8b726c2e4e0435d92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e64f81c5d3b92712527310673bbb1ac56db4363
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361131"
 ---
 # <a name="kspropertybdasignallocked"></a>KSPROPERTY\_BDA\_信号\_已锁定
 
@@ -91,7 +91,7 @@ ms.locfileid: "63389251"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
 [**KSPROPERTY\_BDA\_信号\_质量**](ksproperty-bda-signal-quality.md)
 

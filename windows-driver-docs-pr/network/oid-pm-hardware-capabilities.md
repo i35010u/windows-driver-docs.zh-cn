@@ -5,29 +5,29 @@ ms.assetid: 52446584-bb73-4cf4-bda9-bf92ef2488e3
 ms.date: 08/08/2017
 keywords: -OID_PM_HARDWARE_CAPABILITIES 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 46da6ba6459bb342712f07af1d5638cc307bfed0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e2847699aa2768de596ba00da52ebaa6ad1b6d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360795"
 ---
 # <a name="oidpmhardwarecapabilities"></a>OID\_PM\_硬件\_功能
 
 
-为查询，过量驱动程序可以使用 OID\_PM\_硬件\_功能 OID，若要查询的网络适配器的电源管理硬件功能。 从 OID 查询请求，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构。
+为查询，过量驱动程序可以使用 OID\_PM\_硬件\_功能 OID，若要查询的网络适配器的电源管理硬件功能。 从 OID 查询请求，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 处理查询的微型端口驱动程序。 从开始 NDIS 6.20，微型端口驱动程序在初始化期间提供的电源管理硬件功能**PowerManagementCapabilitiesEx**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)结构。
+NDIS 处理查询的微型端口驱动程序。 从开始 NDIS 6.20，微型端口驱动程序在初始化期间提供的电源管理硬件功能**PowerManagementCapabilitiesEx**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。
 
-微型端口驱动程序必须发出[ **NDIS\_状态\_PM\_功能\_更改**](https://msdn.microsoft.com/library/windows/hardware/ff567410)电源中的报告更改的状态指示管理硬件功能的 NDIS 和基础驱动程序的网络适配器。
+微型端口驱动程序必须发出[ **NDIS\_状态\_PM\_功能\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-capabilities-change)电源中的报告更改的状态指示管理硬件功能的 NDIS 和基础驱动程序的网络适配器。
 
 NDIS 返回请求的以下状态代码之一：
 
 <a href="" id="ndis-status-success"></a>NDIS\_状态\_成功  
-请求已成功完成。 **InformationBuffer**指向[ **NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)结构。
+请求已成功完成。 **InformationBuffer**指向[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。
 
 <a href="" id="ndis-status-pending"></a>NDIS\_状态\_PENDING  
 请求正在等待完成。 NDIS 将传递的最终状态代码和结果到 OID 请求完成处理程序的调用方完成请求之后。
@@ -61,13 +61,13 @@ NDIS 返回请求的以下状态代码之一：
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566748)
+[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状态\_PM\_功能\_更改**](https://msdn.microsoft.com/library/windows/hardware/ff567410)
+[**NDIS\_状态\_PM\_功能\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-capabilities-change)
 
  
 

@@ -4,12 +4,12 @@ description: 本主题介绍如何将提交到 Windows 开发人员中心硬件�
 ms.assetid: 5A4A371E-42A2-43C8-A496-CC3C38C17182
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e75953f87c5fb48ee01edb45ff87bbd867eca9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 576d0ee6446b767730c6dfb8afcde3a7d8f0ebad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522815"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369346"
 ---
 # <a name="step-6-submit-device-metadata-for-your-uwp-device-app"></a>步骤 6：提交设备元数据为 UWP 设备应用
 
@@ -24,7 +24,7 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>在开始之前
+## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前的准备工作
 
 
 有两种方法来提交您对硬件仪表板的设备元数据包：
@@ -60,7 +60,7 @@ UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或�
 
 6.  上**准备大容量包提交**页上，单击**启动签名向导**以启动**数字签名向导**，用于进行数字签名在大容量提交包。
 
-提交设备元数据包到硬件仪表板的详细信息，请参阅[设备元数据](https://msdn.microsoft.com/library/windows/hardware/br230800.aspx)。
+提交设备元数据包到硬件仪表板的详细信息，请参阅[设备元数据](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
  
 

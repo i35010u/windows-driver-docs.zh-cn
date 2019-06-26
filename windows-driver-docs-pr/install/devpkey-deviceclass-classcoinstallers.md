@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25ae30272396b1a31b699e730dfcb0e3017adc85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa225fade9b9efd4be7a01954a10434a04c72032
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344306"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362992"
 ---
 # <a name="devpkeydeviceclassclasscoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
 
-DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序安装了一系列[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序安装了一系列[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -66,11 +66,11 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序
 
 类共同安装程序列表中的每个类安装程序都由其 DLL 和入口点标识。
 
-有关如何安装类共同安装程序的信息，请参阅[注册类共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff549801)。
+有关如何安装类共同安装程序的信息，请参阅[注册类共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)。
 
-可以通过调用检索的值 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090). 可以通过调用设置 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiSetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552128)或[ **SetupDiSetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff552132).
+可以通过调用检索的值 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw). 可以通过调用设置 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiSetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)或[ **SetupDiSetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw).
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上的相应信息的信息，请参阅[访问的设备安装程序类将共同安装程序注册表项值](https://msdn.microsoft.com/library/windows/hardware/ff537754)。
+Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上的相应信息的信息，请参阅[访问的设备安装程序类将共同安装程序注册表项值](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,13 +95,13 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiSetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552128)
+[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-[**SetupDiSetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff552132)
+[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
 
  
 

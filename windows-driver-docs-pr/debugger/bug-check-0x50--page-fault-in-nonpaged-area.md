@@ -5,7 +5,7 @@ ms.assetid: 63b4ab82-f7a9-4e14-bf7c-707a22d7e251
 keywords:
 - Bug 检查 0x50 PAGE_FAULT_IN_NONPAGED_AREA
 - PAGE_FAULT_IN_NONPAGED_AREA
-ms.date: 03/28/2017
+ms.date: 04/18/2019
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edf37a1b28c4306dfb470000604ad1c51cc5f0f
-ms.sourcegitcommit: fb8b1d2e18dd727e8a479b04c9e6051e7e9fa484
+ms.openlocfilehash: c2e3fef1557e377be9c292a6f915df8a5edc0c9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361839"
 ---
 # <a name="bug-check-0x50-pagefaultinnonpagedarea"></a>Bug 检查 0x50：页\_容错\_IN\_未分页\_区域
 
@@ -26,7 +26,7 @@ ms.locfileid: "59239064"
 页面\_容错\_IN\_未分页\_区域 bug 检查的值为 0x00000050。 这表示已引用无效的系统内存。 通常的内存地址是错误或内存地址指向已释放内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="pagefaultinnonpagedarea-parameters"></a>页\_容错\_IN\_未分页\_区域参数
@@ -50,10 +50,25 @@ ms.locfileid: "59239064"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p><strong>0:</strong>读取操作</p>
+<td align="left">
+<p><i>后的 Windows 1507 (TH1) 版本的 x64 </i> </p>
+<p><strong>0:</strong>读取操作</p>
+<p><strong>2:</strong>写入操作</p>
+<p><strong>10:</strong>执行操作</p>
+
+<p><i> 后的 Windows 1507 (TH1) 版本的 x86 </i></p>
+<p><strong>0:</strong>读取操作</p>
+<p><strong>2:</strong>写入操作</p>
+<p><strong>10:</strong>执行操作</p>
+
+<p><i> Windows 1507 (TH1) 版本的 ARM </i></p>
+<p><strong>0:</strong>读取操作</p>
 <p><strong>1:</strong>写入操作</p>
-<p><strong>2:</strong>执行操作</p>
 <p><strong>8:</strong>执行操作</p>
+
+<p><i> 之前 Windows 1507 (TH1) 版本 x64 / x86 </i></p>
+<p><strong>0:</strong>读取操作</p>
+<p><strong>1:</strong>写入操作</p>
 </td>
 </tr>
 <tr class="odd">
@@ -84,11 +99,11 @@ Bug 检查 0x50 可能引起错误系统服务或有故障的驱动程序代码�
 <a name="remarks"></a>备注
 ----------
 
-**事件日志中：** 检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+**事件日志中：** 检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 **解决错误的驱动程序：** 如果已显示在蓝色屏幕上或在事件日志中存在，请检查驱动程序的名称。 查看更新的驱动程序是否有可用的驱动程序供应商联系。 
 
-**解决错误系统服务问题：** 禁用服务，并确认这会解决该错误。 如果是这样，请与系统服务有关的可能更新的制造商联系。 如果在系统启动期间发生错误，请调查 Windows 修复选项。 有关详细信息，请参阅[Windows 10 中的恢复选项](https://windows.microsoft.com/windows-10/windows-10-recovery-options)。
+**解决错误系统服务问题：** 禁用服务，并确认这会解决该错误。 如果是这样，请与系统服务有关的可能更新的制造商联系。 如果在系统启动期间发生错误，请调查 Windows 修复选项。 有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options)。
 
 **在解决有关防病毒软件问题：** 禁用计划，并确认这会解决该错误。 如果是这样，请与联系有关可能的更新程序的制造商。
 

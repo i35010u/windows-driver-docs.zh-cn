@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eacffa782652e541c1874d1d39f78c47222b3de2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7156ca66f7343ea989809170e6726e5b2cb90be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347858"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362370"
 ---
 # <a name="bug-check-0x1000007f-unexpectedkernelmodetrapm"></a>Bug 检查 0x1000007F：意外\_内核\_模式\_陷阱\_M
 
@@ -28,7 +28,7 @@ ms.locfileid: "63347858"
 Bug 检查 0x1000007F 具有相同的含义和作为参数[ **bug 检查 0x7F** ](bug-check-0x7f--unexpected-kernel-mode-trap.md) (意外\_内核\_模式\_陷阱)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
  

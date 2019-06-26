@@ -8,12 +8,12 @@ keywords:
 - 分层驱动程序 IRP 处理 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb2cfc121bb0f6f32cf9fdc077c0e46317a8a635
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad8eb642292743150b6533b6e49b7bef91435a0e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362919"
 ---
 # <a name="points-to-consider-about-user-io-requests"></a>有关用户 I/O 请求的要点
 
@@ -39,7 +39,7 @@ ms.locfileid: "63369232"
 
 - 每个驱动程序会因为 I/O 管理器零作为链中每个驱动程序的相应 I/O 堆栈位置仅在 Irp 的 I/O 状态块中将信息到更高级别的驱动程序 （和从根本上讲，为用户模式应用程序中通过 I/O 管理器）完成 IRP。 任何新的驱动程序时，尝试实现更高版本 （或更低） 的特定驱动程序的折中方案后门通信，其可移植性，并与从一个 Windows 平台或版本到下一个其他驱动程序及其互操作性。
 
-- 驱动程序的一对可以定义特定于设备的一组 (也称为*私有*) 的 I/O 控制代码[ **IRP\_MJ\_内部\_设备\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff550766)该对的更高版本可以发送到该对的较低的请求。 但是，此类对驱动程序必须遵循所有前面的准则若要保持可移植，并可与其他驱动程序从一个 Windows 平台或版本到另一个互操作。 如果将设计一个对具有专用接口的驱动程序，请考虑 I/O 控制代码，以慎重定义的集。 使它们尽可能为通常很有用并设计配对驱动程序遵循上述指导原则，以便你 （或其他人） 可以重复使用、 替换或轻松取代一个或两个新的驱动程序，因为它们从一个 Windows 平台或版本迁移另一个。
+- 驱动程序的一对可以定义特定于设备的一组 (也称为*私有*) 的 I/O 控制代码[ **IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)该对的更高版本可以发送到该对的较低的请求。 但是，此类对驱动程序必须遵循所有前面的准则若要保持可移植，并可与其他驱动程序从一个 Windows 平台或版本到另一个互操作。 如果将设计一个对具有专用接口的驱动程序，请考虑 I/O 控制代码，以慎重定义的集。 使它们尽可能为通常很有用并设计配对驱动程序遵循上述指导原则，以便你 （或其他人） 可以重复使用、 替换或轻松取代一个或两个新的驱动程序，因为它们从一个 Windows 平台或版本迁移另一个。
 
  
 

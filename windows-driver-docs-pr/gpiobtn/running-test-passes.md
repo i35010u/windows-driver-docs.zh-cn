@@ -4,12 +4,12 @@ description: MITT 平台可以提供测试自动化和选择自定义发送目�
 ms.assetid: E24AD015-1E14-4EF9-8443-D0F38FA3321E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03235cd635ea5c5db9da6b9926867c05fe38ac6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa2698456bdb74af8cf56962a742d05306d66a00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390430"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373559"
 ---
 # <a name="running-test-passes"></a>运行测试通过
 
@@ -18,7 +18,7 @@ MITT 平台可以提供测试自动化和选择自定义发送目标调查的 GP
 
 MITT 测试工具的详细信息，请联系MittSupport@microsoft.com。
 
-若要开始，请参阅[GPIO 测试中 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919780)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
+若要开始，请参阅[GPIO 测试中 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
 
 ## <a name="span-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanend-to-end-indicator-testing-for-convertibles"></a><span id="End-to-end_indicator_testing_for_convertibles"></span><span id="end-to-end_indicator_testing_for_convertibles"></span><span id="END-TO-END_INDICATOR_TESTING_FOR_CONVERTIBLES"></span>测试双用型的端到端指示器
 

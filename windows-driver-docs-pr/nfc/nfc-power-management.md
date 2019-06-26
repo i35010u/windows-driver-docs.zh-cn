@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83989b3d8ce74f3110da0453c69e635c9776173e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 62c6ecb45aae3e8d1c0c8515ede443c60b86c7b3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383552"
 ---
 # <a name="nfc-power-management"></a>NFC 电源管理
 
@@ -32,6 +32,6 @@ NFC 驱动程序应以智能方式管理设备的电源状态。 以下是 Ihv �
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
+[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
 
 

@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 85b4ae38bae3b9b70ec2465d144a48f98cc23efc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ceefb1472fc09c3c6f403c8e308e9c1deacaffa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370849"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67375815"
 ---
 # <a name="dxvaprocampcontroldeviceclassprocampcontrolopenstream-method"></a>DXVA\_ProcAmpControlDeviceClass::ProcAmpControlOpenStream 方法
 
@@ -39,7 +39,7 @@ HRESULT ProcAmpControlOpenStream(
 <a name="parameters"></a>Parameters
 ----------
 
-*lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://msdn.microsoft.com/library/windows/hardware/ff564070)结构，它定义的 ProcAmp 控件参数要处理的视频。
+*lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)结构，它定义的 ProcAmp 控件参数要处理的视频。
 
 <a name="return-value"></a>返回值
 ------------
@@ -51,16 +51,16 @@ HRESULT ProcAmpControlOpenStream(
 
 之后*VMR*已确定的功能和范围的使用在 ProcAmp 控件硬件[ **ProcAmpControlQueryCaps** ](dxva-deinterlacecontainerdeviceclass-procampcontrolquerycaps.md)和[ **ProcAmpControlQueryRange** ](dxva-deinterlacecontainerdeviceclass-procampcontrolqueryrange.md)函数，可以创建 ProcAmp 流对象。 ProcAmp 流对象的创建使显示驱动程序来保留执行 ProcAmp 调整操作所需的硬件资源。
 
-*ProcAmpControlOpenStream*函数将映射到的 CreateMoComp 成员调用的直接[ **DD\_MOTIONCOMPCALLBACKS** ](https://msdn.microsoft.com/library/windows/hardware/ff551660)结构。 CreateMoComp 成员指向引用的驱动程序所提供的函数[ **DD\_CREATEMOCOMPDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff550529)结构。
+*ProcAmpControlOpenStream*函数将映射到的 CreateMoComp 成员调用的直接[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构。 CreateMoComp 成员指向引用的驱动程序所提供的函数[ **DD\_CREATEMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)结构。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DXVA\_VideoDesc**](https://msdn.microsoft.com/library/windows/hardware/ff564070)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
 
-[**DD\_MOTIONCOMPCALLBACKS**](https://msdn.microsoft.com/library/windows/hardware/ff551660)
+[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD\_CREATEMOCOMPDATA**](https://msdn.microsoft.com/library/windows/hardware/ff550529)
+[**DD\_CREATEMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
 
 [**ProcAmpControlQueryCaps**](dxva-deinterlacecontainerdeviceclass-procampcontrolquerycaps.md)
 

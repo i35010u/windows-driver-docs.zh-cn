@@ -10,31 +10,31 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b444e04e45231277c96e6798ea0bd3938e25ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fea73b80b1c487868731a0bb4c80ea000c5ffa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340893"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385830"
 ---
 # <a name="implementing-xps-filters"></a>实现 XPS 筛选器
 
 
-XPS 的所有筛选器必须实现[IPrintPipelineFilter](https://msdn.microsoft.com/library/windows/hardware/ff554286)接口。
+XPS 的所有筛选器必须实现[IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinefilter)接口。
 
-在调用[ **IPrintPipelineFilter::InitializeFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff554291)方法中，筛选器应：
+在调用[ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)方法中，筛选器应：
 
-1.  缓存到指针[IPrintPipelineManagerControl](https://msdn.microsoft.com/library/windows/hardware/ff554303)接口。
+1.  缓存到指针[IPrintPipelineManagerControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinemanagercontrol)接口。
 
-2.  处理中的相关数据[IPrintPipelinePropertyBag](https://msdn.microsoft.com/library/windows/hardware/ff554320)接口。
+2.  处理中的相关数据[IPrintPipelinePropertyBag](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag)接口。
 
-3.  调用[ **IInterFilterCommunicator::RequestReader** ](https://msdn.microsoft.com/library/windows/hardware/ff551054)并[ **IInterFilterCommunicator::RequestWriter** ](https://msdn.microsoft.com/library/windows/hardware/ff551057)方法**IInterfilterCommunicator**接口 (pIInterFilterCom) 来初始化筛选器的提供程序和使用者接口。
+3.  调用[ **IInterFilterCommunicator::RequestReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestreader)并[ **IInterFilterCommunicator::RequestWriter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iinterfiltercommunicator-requestwriter)方法**IInterfilterCommunicator**接口 (pIInterFilterCom) 来初始化筛选器的提供程序和使用者接口。
 
-如果数据包含 PrintTicket 部分，您可以通过 Microsoft Win32 PrintTicket 或 PrintCapabilities API 访问数据。 对于基于 XPSDrv UniDrv 和 PScript5 驱动程序，筛选器可以有权访问[IPrintCoreHelper](https://msdn.microsoft.com/library/windows/hardware/ff552960)接口核心 Unidrv 或 PScript5 驱动程序，因为其配置服务。
+如果数据包含 PrintTicket 部分，您可以通过 Microsoft Win32 PrintTicket 或 PrintCapabilities API 访问数据。 对于基于 XPSDrv UniDrv 和 PScript5 驱动程序，筛选器可以有权访问[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)接口核心 Unidrv 或 PScript5 驱动程序，因为其配置服务。
 
 筛选器可能还可以通过属性包，具体取决于驱动程序设计访问专有的配置数据。
 
-间的筛选器 Communicator 是一部分的筛选器管道管理器处理筛选器管道中的筛选器之间的通信。 当筛选器管道管理器初始化筛选器，间的筛选器 Communicator 接口 ([IInterFilterCommunicator](https://msdn.microsoft.com/library/windows/hardware/ff551050)) 传递给筛选器，以便筛选器可以获取读取和写入该定义的接口筛选器。
+间的筛选器 Communicator 是一部分的筛选器管道管理器处理筛选器管道中的筛选器之间的通信。 当筛选器管道管理器初始化筛选器，间的筛选器 Communicator 接口 ([IInterFilterCommunicator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iinterfiltercommunicator)) 传递给筛选器，以便筛选器可以获取读取和写入该定义的接口筛选器。
 
 Microsoft 提供的 XPS 文档和流接口，但您可以创建为该筛选器定义您自己间的筛选器接口。 Microsoft 提供了以下接口：
 

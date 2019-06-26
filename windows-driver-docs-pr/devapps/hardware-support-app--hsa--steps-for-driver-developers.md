@@ -9,16 +9,16 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fddb468087e7068dace633c9f3d7a5df5a84b861
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 0fe3ab8127550a8b16e36859f0a6d1d9002ee6e8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67047043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369371"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤
 
-硬件支持应用程序 (HSA) 是一种特定于设备的应用，与特定的驱动程序配对或[RPC （远程过程调用）](https://msdn.microsoft.com/library/windows/desktop/aa378651)终结点。
+硬件支持应用程序 (HSA) 是一种特定于设备的应用，与特定的驱动程序配对或[RPC （远程过程调用）](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)终结点。
 
 若要将驱动程序与关联的应用商店应用，首先保留名为自定义功能的特殊值。 然后允许访问的播发功能和应用开发人员提供的功能的应用。  此页为驱动程序开发人员介绍这些步骤。
 
@@ -42,7 +42,7 @@ HSA 是四个 ("DCHU") 设计原则之一[通用 Windows 驱动程序](../develo
       * 数据事件持续用户在设备上，或它发送到合作伙伴？
     * 哪些数据容量，即提供对访问权限？
     * 为此功能的最终用户带来的好处是什么？
-    * 包括 Microsoft Store 应用发布者 id。  若要获取该帐户，请 Microsoft Store 页上创建主干应用程序条目。 保留应用 PFN 的详细信息，请参阅[创建你的应用保留名称](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
+    * 包括 Microsoft Store 应用发布者 id。  若要获取该帐户，请 Microsoft Store 页上创建主干应用程序条目。 保留应用 PFN 的详细信息，请参阅[创建你的应用保留名称](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 
 2.  如果请求得到批准，Microsoft 的电子邮件返回唯一的自定义功能字符串名称，格式**CompanyName.capabilityName\_PublisherID**。
 
@@ -52,7 +52,7 @@ HSA 是四个 ("DCHU") 设计原则之一[通用 Windows 驱动程序](../develo
 
 若要允许访问具有自定义功能的 UWP 应用的 RPC 终结点，请执行以下步骤：
 
-1.  调用[ **DeriveCapabilitySidsFromName** ](https://msdn.microsoft.com/library/windows/desktop/mt803273)将自定义功能名称转换为安全 ID (SID)。
+1.  调用[ **DeriveCapabilitySidsFromName** ](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname)将自定义功能名称转换为安全 ID (SID)。
 2.  将 SID 添加到您允许以及任何其他所需的 RPC 终结点的安全描述符的 Sid 的 ACE 的访问权限。
 3.  创建使用安全描述符中的信息的 RPC 终结点。
 
@@ -182,13 +182,13 @@ Status = WdfDeviceAssignInterfaceProperty(
 * [通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
 * [应用程序功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
-* [开发使用 Visual Studio 的 UWP 应用](https://developer.microsoft.com/windows/apps/develop)
+* [开发使用 Visual Studio 的 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
 * [配对的驱动程序有一个通用 Windows 平台 (UWP) 应用程序](../install/pairing-app-and-driver-versions.md)
-* [开发 UWP 应用](https://developer.microsoft.com/windows/apps/develop)
+* [开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
 * [打包应用程序使用 Desktop App Converter （桌面桥）](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 * [自定义功能的示例应用](https://go.microsoft.com/fwlink/p/?LinkId=846904)
 * [自定义功能驱动程序示例](https://aka.ms/customcapabilitydriversample )
-* [旁加载 Windows 10 中的应用程序](https://technet.microsoft.com/library/mt269549.aspx)
+* [旁加载 Windows 10 中的应用程序](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 * [有关自定义功能的常见问题解答](FAQ-on-custom-capabilities.md)
 
 ## <a name="sccd-xml-schema"></a>SCCD XML 架构

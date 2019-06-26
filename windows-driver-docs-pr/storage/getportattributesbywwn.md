@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1109369b42d33c9430b166631c1ed2095b9bc067
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02318df69f3b651b84cee3bc3ed90f54f322e57c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354067"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378518"
 ---
 # <a name="getportattributesbywwn-function"></a>GetPortAttributesByWWN 函数
 
@@ -41,14 +41,14 @@ void GetPortAttributesByWWN(
 <a name="parameters"></a>Parameters
 ----------
 
-*wwn\[8\]*   
-其属性是要查询的端口的名称。 此信息传递到中的微型端口驱动程序**wwn**的成员[ **GetPortAttributesByWWN\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff554967)结构。
+*wwn\[8\]*    
+其属性是要查询的端口的名称。 此信息传递到中的微型端口驱动程序**wwn**的成员[ **GetPortAttributesByWWN\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in)结构。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetPortAttributesByWWN\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff554969)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetPortAttributesByWWN\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)结构。
 
 *PortAttributes*   
-类型的结构[ **MSFC\_HBAPortAttributesResults** ](https://msdn.microsoft.com/library/windows/hardware/ff562510)中的哪些属性发现 FC\_端口可能会返回。 微型端口驱动程序将返回此信息**PortAttributes**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553930)结构。
+类型的结构[ **MSFC\_HBAPortAttributesResults** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)中的哪些属性发现 FC\_端口可能会返回。 微型端口驱动程序将返回此信息**PortAttributes**的成员[ **GetDiscoveredPortAttributes\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -87,11 +87,11 @@ void GetPortAttributesByWWN(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetPortAttributesByWWN\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff554967)
+[**GetPortAttributesByWWN\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in)
 
-[**GetPortAttributesByWWN\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff554969)
+[**GetPortAttributesByWWN\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)
 
-[**MSFC\_HBAPortAttributesResults**](https://msdn.microsoft.com/library/windows/hardware/ff562510)
+[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
  
 

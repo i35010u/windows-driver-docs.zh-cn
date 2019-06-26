@@ -5,19 +5,19 @@ ms.assetid: BA78E0B9-1B57-412C-83E7-328F8304C82D
 ms.date: 08/08/2017
 keywords: -OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 63b98071b56285e6c112c7eb14dd4a608446cf15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 753dd6da2f49bc748e8d8f21949a162f32918746
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354594"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360761"
 ---
 # <a name="oidwwanpreferredmulticarrierproviders"></a>OID\_WWAN\_PREFERRED\_多\_提供程序
 
 
 OID\_WWAN\_PREFERRED\_多\_提供程序是用于*设置*或者*查询*首选多运营商网络提供程序的列表。 多运营商提供程序是指可以是*设置*作为主提供程序。
 
-这两*设置*并*查询*支持请求。 微型端口驱动程序必须处理*设置*并*查询*请求一开始，以异步方式返回 NDIS\_状态\_指示\_所需的原始请求和更高版本发送[ **NDIS\_状态\_WWAN\_首选\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh846211)状态通知包含[ **NDIS\_WWAN\_首选\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh831864)结构。
+这两*设置*并*查询*支持请求。 微型端口驱动程序必须处理*设置*并*查询*请求一开始，以异步方式返回 NDIS\_状态\_指示\_所需的原始请求和更高版本发送[ **NDIS\_状态\_WWAN\_首选\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)状态通知包含[ **NDIS\_WWAN\_首选\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)结构。
 
 微型端口驱动程序应设置**PreferredListHeader.ElementType**成员添加到**WwanStructProvider2**并**PreferredListHeader.ElementCount**成员添加到响应 OID 时在列表中的提供程序的数字\_WWAN\_PREFERRED\_提供程序*查询*请求。 在中返回的多运营商提供程序*查询*必须能够在首选多运营商列表返回到服务的时间设置为主页的提供程序。
 
@@ -50,11 +50,11 @@ OID\_WWAN\_PREFERRED\_多\_提供程序是用于*设置*或者*查询*首选多�
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_PREFERRED\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh831864)
+[**NDIS\_WWAN\_PREFERRED\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
 
-[**NDIS\_状态\_WWAN\_PREFERRED\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh846211)
+[**NDIS\_状态\_WWAN\_PREFERRED\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)
 
-[MB 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)
+[MB 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - NetAdapterCx 访问 NetCx 访问配置信息的配置信息
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1980dd36326717ce7d1b2cdd7d7790c236f6a387
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f2e09537287771d493419bd55d84051b6beba4a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363673"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67386371"
 ---
 # <a name="accessing-configuration-information"></a>访问配置信息
 
@@ -19,7 +19,7 @@ ms.locfileid: "63363673"
 
 NetAdapterCx 类扩展插件支持一组提供对客户端驱动程序注册表参数访问的函数。
 
-通常情况下，客户端驱动程序读取配置信息从其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://msdn.microsoft.com/library/windows/hardware/ff541693)回调函数。
+通常情况下，客户端驱动程序读取配置信息从其[ *EVT_WDF_DRIVER_DEVICE_ADD* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
 对于 NetAdapter 对象，开始通过调用[ **NetAdapterOpenConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapteropenconfiguration)若要获取配置对象的句柄。  然后，您可以查询它：
 

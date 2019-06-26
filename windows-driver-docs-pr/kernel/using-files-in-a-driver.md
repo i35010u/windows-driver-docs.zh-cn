@@ -17,12 +17,12 @@ keywords:
 - 内核模式驱动程序 WDK，文件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89ab1455fd941dce3461e0dea4f8d0ee2ffd5ee0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a79e3efb52d8aa1365bdc345d94f7b11c0065ed
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387402"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381651"
 ---
 # <a name="using-files-in-a-driver"></a>在驱动程序中使用文件
 
@@ -44,7 +44,7 @@ Microsoft Windows 高级管理人员表示按文件*的文件对象*，这是由
 
     有关详细信息，请参阅[使用文件句柄](using-a-file-handle.md)。
 
-3.  通过调用关闭句柄[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)。
+3.  通过调用关闭句柄[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。
 
 每次打开文件的句柄的 Windows 管理人员所创建的文件对象来表示该文件，并对该对象返回打开的句柄。 因此，单个文件可以存在多个文件对象。 （在用户模式应用程序可以复制句柄，因为多个句柄也可存在相同的文件对象。）关闭所有打开的句柄的文件对象后，Windows 高级管理人员将删除的文件对象。
 

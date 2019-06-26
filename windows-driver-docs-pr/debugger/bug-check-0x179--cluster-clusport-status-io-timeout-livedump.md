@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf1f58a0623e2f18ce079f411893546108e9a25
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee343020f1b5dfdceab4e9f22d8dc41bbf438abb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362101"
 ---
 # <a name="bug-check-0x179-clusterclusportstatusiotimeoutlivedump"></a>Bug 检查 0x179：群集\_CLUSPORT\_状态\_IO\_超时\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352566"
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "63352566"
 ## <a name="see-also"></a>请参阅
 ----------
 
-[故障排除挂起使用实时转储 （博客）](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
+[故障排除挂起使用实时转储 （博客）](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 

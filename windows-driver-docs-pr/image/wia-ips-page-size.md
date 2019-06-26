@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95cf34fd77cf26fab0e9c56158b14ff36a1ab240
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fd171f04e8ea595886236fd3aad2709d64763f4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385306"
 ---
 # <a name="wiaipspagesize"></a>WIA\_IPS\_PAGE\_SIZE
 
@@ -46,7 +46,7 @@ WIA\_IPS\_页\_SIZE 属性包含当前选定要扫描的页的大小。
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>ReplTest1</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -99,7 +99,7 @@ WIA\_IPS\_页\_SIZE 属性包含当前选定要扫描的页的大小。
 ## <a name="see-also"></a>请参阅
 
 
-[**IWiaMiniDrv::drvValidateItemProperties**](https://msdn.microsoft.com/library/windows/hardware/ff545017)
+[**IWiaMiniDrv::drvValidateItemProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)
 
 [**WIA\_DPS\_PAGE\_SIZE**](wia-dps-page-size.md)
 

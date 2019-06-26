@@ -5,12 +5,12 @@ ms.assetid: bcf04d0b-70f3-48b7-a505-c82e50edadb2
 ms.date: 08/08/2017
 keywords: -OID_WWAN_DEVICE_CAPS 网络与 Windows Vista 一起启动的驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efc9997106ba5df31a4ce9cdb2011a73aff2c52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cece38d740ade8029b242ebc9adb434dbdce09a9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386678"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362851"
 ---
 # <a name="oidwwandevicecaps"></a>OID\_WWAN\_DEVICE\_CAPS
 
@@ -19,14 +19,14 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_CAP** ](https://msdn.microsoft.com/library/windows/hardware/ff567845)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)结构，完成查询请求时指示 MB 设备的功能。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构，完成查询请求时指示 MB 设备的功能。
 
 <a name="remarks"></a>备注
 -------
 
-从 Windows 8 开始，MB 驱动程序模型已更新为版本 2.0。 Windows 8 微型端口驱动程序应设置**Header.Revision**的成员[ **NDIS\_WWAN\_设备\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff567907)结构**NDIS\_WWAN\_设备\_CAPS\_修订\_2**对于*查询*请求。 Windows 7 微型端口驱动程序应设置**Header.Revision**的成员**NDIS\_WWAN\_设备\_CAPS**结构**NDIS\_WWAN\_设备\_CAPS\_修订\_1**有关*查询*请求。
+从 Windows 8 开始，MB 驱动程序模型已更新为版本 2.0。 Windows 8 微型端口驱动程序应设置**Header.Revision**的成员[ **NDIS\_WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构**NDIS\_WWAN\_设备\_CAPS\_修订\_2**对于*查询*请求。 Windows 7 微型端口驱动程序应设置**Header.Revision**的成员**NDIS\_WWAN\_设备\_CAPS**结构**NDIS\_WWAN\_设备\_CAPS\_修订\_1**有关*查询*请求。
 
-有关使用此 OID 的详细信息，请参阅[WWAN 驱动程序初始化过程](https://msdn.microsoft.com/library/windows/hardware/ff557186)。
+有关使用此 OID 的详细信息，请参阅[WWAN 驱动程序初始化过程](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)。
 
 当处理查询操作，但不是能访问提供程序网络或用户识别模块 （SIM 卡） 时，微型端口驱动程序可以访问设备的内存。
 
@@ -50,7 +50,7 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 <th>行业名称</th>
 <th>上行链路 （BTS 到毫秒）</th>
 <th>下行链路 (BTS 到毫秒)</th>
-<th>区域</th>
+<th>Regions</th>
 </tr>
 </thead>
 <tbody>
@@ -310,9 +310,9 @@ AWS 外
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_DEVICE\_CAPS**](https://msdn.microsoft.com/library/windows/hardware/ff567907)
+[**NDIS\_WWAN\_DEVICE\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
 
-[WWAN 驱动程序初始化过程](https://msdn.microsoft.com/library/windows/hardware/ff557186)
+[WWAN 驱动程序初始化过程](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 
  
 

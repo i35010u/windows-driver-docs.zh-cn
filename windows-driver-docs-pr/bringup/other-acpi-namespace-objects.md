@@ -4,12 +4,12 @@ description: 对于设备的某些特定的类，有其他的 ACPI 命名空间�
 ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c3c9c26dd4de717c6c386f427f3e5cb51a14bdc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 321512a06471120b820a42e19701c68d28cc959e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337518"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364531"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "63337518"
 
 ## <a name="display-specific-objects"></a>显示特定对象
 
-显示特定对象的详细信息，请参阅附录 B，"视频 Extensions"的[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+显示特定对象的详细信息，请参阅附录 B，"视频 Extensions"的[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ### <a name="display-specific-object-requirements"></a>显示特定对象的要求
 
@@ -85,7 +85,7 @@ Windows 定义的特定于设备的方法 (\_DSM) 以支持 USB 子系统的特�
 
 Windows 需要知道的可见性和连接的功能的 USB 端口的系统上。 这是为了向有关端口和设备用户提供准确信息所必需的。 两个对象，物理设备的位置 (\_以前) 和 USB 端口功能 (\_UPC)，用于此目的。 有关详细信息，请参阅以下文章：
 
-- 节 6.1.6、"设备标识对象"和 9.13.1，"USB 2.0 端口的主控制器和\_UPC 和\_以前"，在[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+- 节 6.1.6、"设备标识对象"和 9.13.1，"USB 2.0 端口的主控制器和\_UPC 和\_以前"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
 - [使用 ACPI 的计算机上配置 USB 端口](https://docs.microsoft.com/windows-hardware/drivers/install/using-acpi-to-configure-usb-ports-on-a-computer)。
 
 ## <a name="sd-host-controllers-and-devices"></a>SD 主控制器和设备
@@ -147,13 +147,13 @@ SD 总线驱动程序通过枚举 SD 连接的设备。 集成到平台的 SD �
 - 该摄像机设备提供\_以前对象。
 - 如果有摄像机驱动程序 （如 GPIO 中断或 I/O 的连接或存储连接），需要任何旁带资源\_CRS 对象提供对这些资源。
 
-在中\_以前对象**面板**字段 （位 67 69），**合上盖子**字段 （位 66） 和**停靠**字段 （位 65） 设置为正确值的图面装载照相机。 所有其他字段是可选的。 对于手持移动设备，包括平板电脑前, 面板是一个持有显示屏幕和其原点位于左下角显示查看纵向方向时。 使用此引用，"前"指示照相机视图用户 （网络摄像机），而"上一步"表示照相机视图即可从用户 （仍或视频摄像机）。 有关详细信息，请参阅，部分 6.1.8，"\_以前 （物理位置的设备）"，在[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+在中\_以前对象**面板**字段 （位 67 69），**合上盖子**字段 （位 66） 和**停靠**字段 （位 65） 设置为正确值的图面装载照相机。 所有其他字段是可选的。 对于手持移动设备，包括平板电脑前, 面板是一个持有显示屏幕和其原点位于左下角显示查看纵向方向时。 使用此引用，"前"指示照相机视图用户 （网络摄像机），而"上一步"表示照相机视图即可从用户 （仍或视频摄像机）。 有关详细信息，请参阅，部分 6.1.8，"\_以前 （物理位置的设备）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ### <a name="acpi-namespace-hierarchy-and-adr-for-embedded-usb-devices"></a>ACPI 命名空间层次结构和\_ADR embedded USB 设备
 
 将嵌入的 USB 设备添加到 ACPI 名称空间，当设备节点的层次结构必须完全匹配的 Windows USB 驱动程序通过枚举的设备。 这可以通过在"视图的连接"模式下查看 Windows 设备管理器来确定。 必须包含整个层次结构，从 USB 主控制器开始并扩展到嵌入式设备。 为每个设备固件必须报告的设备中的地址提供设备管理器中的"地址"属性\_ADR。
 
-[ACPI 5.0 规范](https://www.uefi.org/specifications)定义 USB 设备的地址，如下所示：
+[ACPI 5.0 规范](https://uefi.org/specifications)定义 USB 设备的地址，如下所示：
 
 |              |                                                                                                                  |
 |--------------|------------------------------------------------------------------------------------------------------------------|

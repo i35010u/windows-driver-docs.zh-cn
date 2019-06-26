@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 451058389cdf553c7cd55e3722c36b18f1209ce6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ca8464e0a993d276109ca8d743dbb9de0596dfff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361551"
 ---
 # <a name="bug-check-0xdf-impersonatingworkerthread"></a>Bug 检查 0xDF：模拟\_辅助\_线程
 
@@ -26,7 +26,7 @@ ms.locfileid: "63323231"
 正在模拟\_辅助\_线程 bug 检查的值为 0x000000DF。 这表示一个工作项未完成之前禁用模拟。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="impersonatingworkerthread-parameters"></a>模拟\_辅助\_线程参数

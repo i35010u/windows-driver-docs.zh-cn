@@ -11,12 +11,12 @@ keywords:
 - 打印队列 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bda252290d66e281fa4172cad9ddaa7ffe1d09f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95a8f7934148995366bec7ee7dc3467fb8b9bd7a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330129"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385978"
 ---
 # <a name="installing-a-print-processor"></a>安装打印处理器
 
@@ -32,7 +32,7 @@ ms.locfileid: "63330129"
 
 如果插 (PnP) 管理器检测到并运行 Windows 2000 或 Windows XP 的系统上安装的打印队列和用来安装打印队列的 INF 文件包含 PrintProcessor 条目不是默认 Windows 打印处理器，WinPrint打印处理器不会与打印队列关联。 但是，将安装打印处理器。 （请注意，如果在安装打印队列使用添加打印机向导，打印处理器与打印队列正确关联。 另请注意，在 Microsoft Windows Server 2003 及更高版本的即插即用管理器正确打印处理器将与相关联的打印队列。）
 
-若要将打印处理器与插在 Windows 2000 和 Windows XP 上进行安装的打印队列相关联，包括打印机\_事件\_中的打印机接口 DLL 的初始化情况[ **DrvPrinterEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff548564)函数。 Microsoft Windows Server 2003 和更高版本，不需要添加打印机\_事件\_中的初始化情况**DrvPrinterEvent**函数。
+若要将打印处理器与插在 Windows 2000 和 Windows XP 上进行安装的打印队列相关联，包括打印机\_事件\_中的打印机接口 DLL 的初始化情况[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数。 Microsoft Windows Server 2003 和更高版本，不需要添加打印机\_事件\_中的初始化情况**DrvPrinterEvent**函数。
 
 下面的代码示例设置**pPrintProcessor**打印机的成员\_信息\_2 结构的名称将打印处理器，然后调用**SetPrinter**函数 （Windows SDK 文档中所述） 来更新打印机的设置。 请注意，名称中的打印处理器*gszPrintProc* PrintProcessor 项 INF 文件中必须是相同的。
 
@@ -102,7 +102,7 @@ DrvPrinterEvent(
 
 ### <a href="" id="associating-a-print-processor-with-a-print-queue-during-printer-driver"></a>在打印机驱动程序升级期间将打印处理器与打印队列相关联
 
-当更新的打印机驱动程序时，更新后的打印队列的打印处理器不会更改。 如果新的打印机驱动程序需要特定的打印处理器，打印机接口 DLL [ **DrvUpgradePrinter** ](https://msdn.microsoft.com/library/windows/hardware/ff548648)函数必须设置**pPrintProcessor**的成员打印机\_信息\_2 结构与新的打印处理器的名称。 发生这种情况后，此函数将调用**SetPrinter**更新打印机的设置。 后台处理程序调用**DrvUpgradePrinter**函数一次为每个打印机，这可确保也使用该驱动程序的所有打印机都使用的所需的打印处理器。 下面的代码示例演示了这些点。
+当更新的打印机驱动程序时，更新后的打印队列的打印处理器不会更改。 如果新的打印机驱动程序需要特定的打印处理器，打印机接口 DLL [ **DrvUpgradePrinter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvupgradeprinter)函数必须设置**pPrintProcessor**的成员打印机\_信息\_2 结构与新的打印处理器的名称。 发生这种情况后，此函数将调用**SetPrinter**更新打印机的设置。 后台处理程序调用**DrvUpgradePrinter**函数一次为每个打印机，这可确保也使用该驱动程序的所有打印机都使用的所需的打印处理器。 下面的代码示例演示了这些点。
 
 ```cpp
 BOOL

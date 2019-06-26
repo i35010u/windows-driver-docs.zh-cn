@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a25bfa5be48b27fbba9bb5fae958e8f00c5deec1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7852a65504800f782799565c28c27f8a13f2c73
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362175"
 ---
 # <a name="bug-check-0x159-halillegaliommupagefault"></a>Bug 检查 0x159：HAL\_非法\_IOMMU\_页面\_容错
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335522"
 HAL\_非法\_IOMMU\_页面\_故障错误检查的值为 0x00000159。 这表示 IOMMU 已传递对正在释放 ASID 页面错误。 该驱动程序是负责完成任何即时请求之前的时间和此检测错误中此点指示系统中的驱动程序没有这样做。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="halillegaliommupagefault-parameters"></a>HAL\_非法\_IOMMU\_页面\_错误参数

@@ -5,12 +5,12 @@ Robots: noindex, nofollow
 ms.assetid: ef7fa08b-0eed-4ef9-8b2f-79247e2ad988
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d4944ae3ecc88756e2d99fae7b3dce6c79cd1a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6bdbb2dff8df4f07ab29b95634d300b8f18b8082
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351490"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362388"
 ---
 # <a name="a"></a>A
 
@@ -28,7 +28,7 @@ ms.locfileid: "63351490"
 <span id="arbitrary_exception_filter"></span><span id="ARBITRARY_EXCEPTION_FILTER"></span>**任意异常筛选器**  
 异常筛选器已手动添加到引擎的事件筛选器列表。
 
-另请参阅[特定的异常筛选器](https://msdn.microsoft.com/library/windows/hardware/ff558784)。
+另请参阅[特定的异常筛选器](https://docs.microsoft.com/windows-hardware/drivers/debugger/specific-exceptions)。
 
 有关详细信息，请参阅[事件筛选器](event-filters.md)。
 

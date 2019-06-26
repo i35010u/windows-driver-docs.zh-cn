@@ -14,12 +14,12 @@ keywords:
 - 球面映射 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d97df29e447dc145706f62149dd11edf98342054
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48bd48c18dd1c1933dd58ddb5fe8ae79c32f4526
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370172"
 ---
 # <a name="cube-environment-map-support"></a>立体环境贴图支持
 
@@ -35,7 +35,7 @@ ms.locfileid: "63376766"
 
 一般情况下，多维数据集映射是为复杂的光照量和光照反射提供实时环境映射的最佳选择。
 
-多维数据集映射允许传递给驱动程序使用[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704)呈现状态机制。 [FVF](fvf--flexible-vertex-format-.md)纹理坐标，FVF 代码 01 传递该纹理坐标集。
+多维数据集映射允许传递给驱动程序使用[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)呈现状态机制。 [FVF](fvf--flexible-vertex-format-.md)纹理坐标，FVF 代码 01 传递该纹理坐标集。
 
 在世界坐标; 中定义多维数据集映射也就是说，其世界转换矩阵为单位矩阵。 多维数据集映射可以似乎是在不同的空间中，如果对相应的纹理坐标索引使用纹理转换。 这些纹理坐标索引将查找人脸四个，在直接 + z 人脸。 默认情况下，Y 是向上。 来源 （u、 v） 纹素网格在每张人脸，左上角是以允许按指针摄像机从多维数据集的中心而无需任何其他转换所面临的创建。
 
@@ -45,7 +45,7 @@ ms.locfileid: "63376766"
 
 如果任何应用层协议旨在向呈现，必须使用 D3DPTEXTURECAPS 创建立方体贴图\_立方体贴图 cap 标志设置。
 
-假定未通过调用创建的任何人脸的图面上描述符中指定的颜色填充**dwEmptyFaceColor**成员。 (请参阅[ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)结构。)
+假定未通过调用创建的任何人脸的图面上描述符中指定的颜色填充**dwEmptyFaceColor**成员。 (请参阅[ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))结构。)
 
 **请注意**  当前限制：所有多维数据集表面必须大小相同，并且必须是正方形。 多维数据集的人脸可以 MIP 映射。 去除任何色彩与多维数据集映射纹理支持。 与其他纹理支持 alpha 通道和 alpha 的调色板。
 

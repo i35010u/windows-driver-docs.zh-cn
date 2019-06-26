@@ -4,24 +4,24 @@ description: 您可以调试使用 WinDbg 的通用 Windows 平台 (UWP) 应用�
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e3ffdbbde7fd0177e3ab5707f1be90e887d1a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5756bb217cef8a051426f6bbaa704d65d916ca38
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377194"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366939"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
 
-您可以调试使用 WinDbg 的通用 Windows 平台 (UWP) 应用。 此方法将通常用于高级方案，其中不能完成 Visual Studio 调试器中使用内置的调试任务。 有关在 Visual Studio 中调试的详细信息，请参阅[Visual Studio 中调试](https://msdn.microsoft.com/library/sc65sadd.aspx)。
+您可以调试使用 WinDbg 的通用 Windows 平台 (UWP) 应用。 此方法将通常用于高级方案，其中不能完成 Visual Studio 调试器中使用内置的调试任务。 有关在 Visual Studio 中调试的详细信息，请参阅[Visual Studio 中调试](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)。
 
 ## <a name="span-idattachingtoauwpappspanspan-idattachingtoauwpappspanspan-idattachingtoauwpappspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>将连接到 UWP 应用
 
 
 附加到 UWP 进程是与附加到用户模式进程相同的。 例如，在 WinDbg 中您可以将附加到正在运行的进程通过选择**从文件附加到进程**菜单或通过按 F6。 有关详细信息，请参阅[调试用户模式进程使用 WinDbg](debugging-a-user-mode-process-using-windbg.md)。
 
-UWP 应用不将其挂起的不调试时的表现的方式。 若要显式挂起/继续 UWP 应用，可以使用.suspendpackage 和.resumepackage 命令 （下面的详细信息）。 在进程生命周期管理 (PLM) 使用的 UWP 应用的一般信息，请参阅[应用程序生命周期](https://msdn.microsoft.com/library/windows/apps/mt243287)并[Launching，resuming，和后台任务](https://msdn.microsoft.com/library/windows/apps/mt227652)。
+UWP 应用不将其挂起的不调试时的表现的方式。 若要显式挂起/继续 UWP 应用，可以使用.suspendpackage 和.resumepackage 命令 （下面的详细信息）。 在进程生命周期管理 (PLM) 使用的 UWP 应用的一般信息，请参阅[应用程序生命周期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)并[Launching，resuming，和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
 
 ## <a name="span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>启动并调试 UWP 应用
 
@@ -51,7 +51,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId 位于应用程序清单文件中，可以使用本主题中所述.querypackage 或.querypackages 命令来查看。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">应用程序包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用程序包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;parameters&gt;]</td>
@@ -64,7 +64,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 **HelloWorld 示例**
 
-为了演示 UWP 调试，本主题使用 HelloWorld 示例中所述[创建"Hello，world"应用 (XAML)](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+为了演示 UWP 调试，本主题使用 HelloWorld 示例中所述[创建"Hello，world"应用 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 若要创建一个可正常工作的测试应用，它只是用来完成到实验室的第三步。
 
@@ -150,7 +150,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
 <td align="left"><p>BackgroundTaskId 可位于使用.querypackages 命令如下所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">应用程序包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用程序包清单</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +315,7 @@ AppId: BackgroundTask.App
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId 可位于使用.querypackage 或.querypackages，如本主题中前面所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/br211474" data-raw-source="[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474)">应用程序包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用程序包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;parameters&gt;]</td>

@@ -4,12 +4,12 @@ description: 为虚拟功能分配资源
 ms.assetid: 00191D2C-E093-4DB7-AC82-8E8E5A74656F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d53fae6f93dccd62de66edfe2be9a7e4f857266
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 242c5a294e478c7f66a8c8bfdf3413c34ff16aba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367721"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382912"
 ---
 # <a name="allocating-resources-for-a-virtual-function"></a>为虚拟功能分配资源
 
@@ -26,29 +26,29 @@ ms.locfileid: "63367721"
 
 PF 微型端口驱动程序，可以在管理操作系统的 HYPER-V 父分区中运行，PF 和 SR-IOV 网络适配器上的每个 VF 会分配资源。 像任何网络适配器，此驱动程序为 PF 分配资源。 但是，该驱动程序分配资源的每个 VF 如下所示：
 
--   PF 微型端口驱动程序的每个 VF 驱动程序的网络适配器上创建网络接口卡 (NIC) 时，会分配硬件资源。 该驱动程序将通过调用完成 VFs 的硬件资源分配[ **NdisMEnableVirtualization**](https://msdn.microsoft.com/library/windows/hardware/hh451481)。 此过程的详细信息，请参阅[创建 NIC 交换机](creating-a-nic-switch.md)。
+-   PF 微型端口驱动程序的每个 VF 驱动程序的网络适配器上创建网络接口卡 (NIC) 时，会分配硬件资源。 该驱动程序将通过调用完成 VFs 的硬件资源分配[ **NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismenablevirtualization)。 此过程的详细信息，请参阅[创建 NIC 交换机](creating-a-nic-switch.md)。
 
--   PF 微型端口驱动程序为 VF 驱动程序处理的对象标识符 (OID) 方法请求时都分配软件资源[OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)。 即使 VF 已分配给硬件资源，它被视为不再运行直到 PF 微型端口驱动程序已成功完成 OID\_NIC\_交换机\_分配\_VF。
+-   PF 微型端口驱动程序为 VF 驱动程序处理的对象标识符 (OID) 方法请求时都分配软件资源[OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 即使 VF 已分配给硬件资源，它被视为不再运行直到 PF 微型端口驱动程序已成功完成 OID\_NIC\_交换机\_分配\_VF。
 
-基础驱动程序可以通过发出 OID 方法请求的请求 VF 软件资源的分配[OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构 OID 请求包含一个指向[ **NDIS\_NIC\_交换机\_VF\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451593)结构。
+基础驱动程序可以通过发出 OID 方法请求的请求 VF 软件资源的分配[OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构 OID 请求包含一个指向[ **NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。
 
-从 OID 请求成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含指向[ **NDIS\_NIC\_交换机\_VF\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh451593)结构。 此结构有一个适配器唯一 VF 标识符和 PCI 请求程序标识符 (RID)。 按以下方式使用这些标识符：
+从 OID 请求成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含指向[ **NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。 此结构有一个适配器唯一 VF 标识符和 PCI 请求程序标识符 (RID)。 按以下方式使用这些标识符：
 
 -   基础驱动程序在与 VF，如下所示相关的操作中使用 VF 标识符：
 
-    -   获取通过 OID 方法请求的当前 VF 参数[OID\_NIC\_交换机\_VF\_参数](https://msdn.microsoft.com/library/windows/hardware/hh451824)。
+    -   获取通过 OID 方法请求的当前 VF 参数[OID\_NIC\_交换机\_VF\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vf-parameters)。
 
-    -   通过 OID VF 释放以前分配的资源设置的请求[OID\_NIC\_交换机\_免费\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822)。
+    -   通过 OID VF 释放以前分配的资源设置的请求[OID\_NIC\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)。
 
-    -   发出重置为通过 OID 集请求的 VF PCI [OID\_SRIOV\_重置\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)。
+    -   发出重置为通过 OID 集请求的 VF PCI [OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)。
 
 -   虚拟化堆栈用于 RID DMA 和 PF 和 VF 之间中断重新映射。 RID 还使硬件输入/输出内存管理单元 (IOMMU) 若要将来宾物理地址转换为主机的物理地址。
 
-有关详细信息如何过量的驱动程序将发出[OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)方法请求，请参阅[发出 OID\_NIC\_交换机\_分配\_VF 请求](issuing-oid-nic-switch-allocate-vf-requests.md)。
+有关详细信息如何过量的驱动程序将发出[OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)方法请求，请参阅[发出 OID\_NIC\_交换机\_分配\_VF 请求](issuing-oid-nic-switch-allocate-vf-requests.md)。
 
-有关如何处理 PF 微型端口驱动程序的详细信息[OID\_NIC\_交换机\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)方法请求，请参阅[处理 OID\_NIC\_交换机\_分配\_VF 请求](handling-oid-nic-switch-allocate-vf-requests.md)。
+有关如何处理 PF 微型端口驱动程序的详细信息[OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)方法请求，请参阅[处理 OID\_NIC\_交换机\_分配\_VF 请求](handling-oid-nic-switch-allocate-vf-requests.md)。
 
-**请注意**  通过 OID 方法请求的已分配资源 VF 后[OID\_NIC\_开关\_分配\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451814)，资源不能动态更改 VF 的参数。
+**请注意**  通过 OID 方法请求的已分配资源 VF 后[OID\_NIC\_开关\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)，资源不能动态更改 VF 的参数。
 
  
 

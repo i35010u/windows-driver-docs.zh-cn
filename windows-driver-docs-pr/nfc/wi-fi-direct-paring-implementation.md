@@ -10,12 +10,12 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f1a2ff29bd16f0eba6a57b54be41173c750db8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13d66c54e6ae191326c901daa1bb99d4969929d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373577"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380715"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi direct 配对实现
 
@@ -26,7 +26,7 @@ ms.locfileid: "63373577"
 
  
 
-**请注意**  Windows 10 还通过 Wi-fi 联盟的 Wi-fi P2P 运营商配置记录的 Wi-Fi Direct 静态连接移交到支持 NFC。 有关详细信息，请参阅[Wi-fi 联盟](http://www.wi-fi.org)。
+**请注意**  Windows 10 还通过 Wi-fi 联盟的 Wi-fi P2P 运营商配置记录的 Wi-Fi Direct 静态连接移交到支持 NFC。 有关详细信息，请参阅[Wi-fi 联盟](https://www.wi-fi.org/)。
 
  
 
@@ -63,7 +63,7 @@ Wi-Fi Direct 配对通过 NFC 论坛标准化连接移交选择消息类型。 �
 
 在按照这些示例用例，NFC 类型 2 标记用作演示示例。 如果需要使用不同的 NFC 标记类型，必须根据该标记定义正确封装 NDEF 消息。
 
-| 字段                 | ReplTest1                                            | 描述                                                               |
+| 字段                 | 值                                            | 描述                                                               |
 |-----------------------|--------------------------------------------------|---------------------------------------------------------------------------|
 | TNF                   | 0x02                                             | 遵循类型字段的格式。 媒体类型 RFC 2046 中定义。 |
 | 在任务栏的搜索框中键入                  | 'application/vnd.ms-windows.wfd.oob'             | 我们为此方案中定义新类型字符串。                              |
@@ -857,5 +857,5 @@ Windows 设备配对记录遵循 NDEF 规范。 它提供到 Windows 有关如�
 
  
 ## <a name="related-topics"></a>相关主题
- [NFC 设备驱动程序接口 (DDI) 参考](https://msdn.microsoft.com/library/windows/hardware/mt715815)  
+ [NFC 设备驱动程序接口 (DDI) 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
  

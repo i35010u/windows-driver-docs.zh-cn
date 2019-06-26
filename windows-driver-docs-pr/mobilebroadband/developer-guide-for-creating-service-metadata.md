@@ -4,12 +4,12 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09df5432075549f14093fbeda9005d5faab7f774
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 963dba2a9f72c638d40b216fdb3150cd0deb2614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381542"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "65405169"
 
 ### <a name="span-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>你的公司注册的 Windows 开发人员中心硬件仪表板
 
--   你的公司有一个有效的 Windows 开发人员中心硬件仪表板上的帐户。 如果你的公司不具有 Windows 开发人员中心硬件仪表板上的帐户，可以创建新帐户并将您的用户帐户添加到你的公司。 有关详细信息，请参阅[管理](https://msdn.microsoft.com/library/windows/hardware/mt786447)Windows 开发人员中心硬件仪表板帮助中。
+-   你的公司有一个有效的 Windows 开发人员中心硬件仪表板上的帐户。 如果你的公司不具有 Windows 开发人员中心硬件仪表板上的帐户，可以创建新帐户并将您的用户帐户添加到你的公司。 有关详细信息，请参阅[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)Windows 开发人员中心硬件仪表板帮助中。
 
 -   你的公司有 VeriSign 代码签名证书进行签名的包。
 
@@ -168,7 +168,7 @@ ms.locfileid: "65405169"
 
 **若要创建服务元数据包**
 
-1.  导航到 <http://sysdev.microsoft.com>。
+1.  导航到 <http://sysdev.microsoft.com> 。
 
 2.  下**设备元数据**标题下方，单击**创建移动宽带体验**。
 
@@ -202,7 +202,7 @@ ms.locfileid: "65405169"
 
     -   如果您使用的提供程序名称的 CDMA 提供程序，请选择**提供程序名称**下的复选框**CDMA**标题。 在中**输入提供程序名称**框中，输入 CDMA 服务提供程序名称。
 
-    -   单击“下一步” 。
+    -   单击“下一步”  。
 
     ![这是向导的硬件信息步骤](images/mbae-sxs81-hardwareinfostep.png)
 
@@ -258,7 +258,7 @@ ms.locfileid: "65405169"
 
 ### <a name="span-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>在预览模式下测试服务元数据包
 
-如果服务元数据包在预览模式下，必须在测试计算机上创建 PreviewKey 注册表项。 有关配置 PreviewKey 注册表项的详细信息，请参阅[创建一个预览包](https://msdn.microsoft.com/library/windows/hardware/br230780)。
+如果服务元数据包在预览模式下，必须在测试计算机上创建 PreviewKey 注册表项。 有关配置 PreviewKey 注册表项的详细信息，请参阅[创建一个预览包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
 **注意**  
 无需启用测试签名来测试服务元数据包的处于预览模式。
@@ -499,9 +499,9 @@ Write-Host "END"
 
 2. 从所有接口中删除所有的移动宽带配置文件。
 
-   1. 从提升的命令提示符，键入**netsh mbn 显示 pro i =\\***
+   1. 从提升的命令提示符，键入**netsh mbn 显示 pro i =\\** *
 
-   2. 对于每个配置文件中，键入 **netsh mbn 删除配置文件名称 = "的配置文件名称下面"我 i=\\*** ，然后按 Enter。
+   2. 对于每个配置文件中，键入 **netsh mbn 删除配置文件名称 = "的配置文件名称下面"我 i=\\** * ，然后按 Enter。
 
 3. 禁用所有的移动宽带适配器。
 
@@ -570,7 +570,7 @@ Write-Host "END"
 
 如果刷新元数据未解决此问题，请确保服务元数据包有效，并且它具有正确的硬件 Id。 要实现这一点，请执行下列操作：
 
-1. 导航到 **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\**<em>区域性</em>，其中*区域性*是在测试计算机的当前区域性的区域性代码 (例如， **en-我们**或**es es**)。
+1. 导航到 **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>区域性</em>，其中*区域性*是在测试计算机的当前区域性的区域性代码 (例如， **en-我们**或**es es**)。
 
 2. 查找与您的元数据的包同名的文件夹 (而无需 **.devicemetadata ms**扩展)。 如果此目录不存在，并可以表示四个操作之一：
 

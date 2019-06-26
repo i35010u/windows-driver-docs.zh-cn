@@ -16,12 +16,12 @@ keywords:
 - 流 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 144fe5b98a359c4e6ee01c50674c8b9d7e6e2950
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41b8d8361c9d80e46bcd60c7aea093695c98a8f1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383373"
 ---
 # <a name="clfs-log-sequence-numbers"></a>CLFS 日志序列号
 
@@ -33,13 +33,13 @@ ms.locfileid: "63343742"
 
 为特定流窗体创建严格递增序列 Lsn。 即，分配到给定流中的日志记录的 LSN 大于始终分配给日志记录之前写入该同一个流 Lsn。 以下函数是可用于比较给定流中的日志记录 Lsn。
 
-[**ClfsLsnNull**](https://msdn.microsoft.com/library/windows/hardware/ff541609)
+[**ClfsLsnNull**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnnull)
 
-[**ClfsLsnEqual**](https://msdn.microsoft.com/library/windows/hardware/ff541590)
+[**ClfsLsnEqual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnequal)
 
-[**ClfsLsnGreater**](https://msdn.microsoft.com/library/windows/hardware/ff541595)
+[**ClfsLsnGreater**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsngreater)
 
-[**ClfsLsnLess**](https://msdn.microsoft.com/library/windows/hardware/ff541608)
+[**ClfsLsnLess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfslsnless)
 
 常量 CLFS\_LSN\_为 NULL 且 CLFS\_LSN\_无效是所有有效的 Lsn 的下限和上限边界。 任何有效的 LSN 是大于或等于 CLFS\_LSN\_NULL。 此外，任何有效的 LSN 都是严格小于 CLFS\_LSN\_无效。 请注意该 CLFS\_LSN\_NULL 是有效的 LSN，而 CLFS\_LSN\_无效不是有效的 LSN。 即便如此，您可以比较 CLFS\_LSN\_无效而其他 Lsn，在前面的列表中使用的功能。
 
@@ -47,11 +47,11 @@ ms.locfileid: "63343742"
 
 ### <a name="base-lsn"></a>基准 LSN
 
-当客户端写入流中的第一条记录时，CLFS 设置基准 LSN 与该第一个记录的 LSN。 直到客户端更改它，基准 LSN 保持不变。 当流的客户端不再需要在流中的某个特定点之前记录时，他们可以通过调用更新基准 LSN [ **ClfsAdvanceLogBase** ](https://msdn.microsoft.com/library/windows/hardware/ff540773)或[ **ClfsWriteRestartArea**](https://msdn.microsoft.com/library/windows/hardware/ff541770)。 例如，如果客户端不再需要的前五个日志记录，它们可以设置基准 LSN 为第六个记录的 LSN。
+当客户端写入流中的第一条记录时，CLFS 设置基准 LSN 与该第一个记录的 LSN。 直到客户端更改它，基准 LSN 保持不变。 当流的客户端不再需要在流中的某个特定点之前记录时，他们可以通过调用更新基准 LSN [ **ClfsAdvanceLogBase** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsadvancelogbase)或[ **ClfsWriteRestartArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfswriterestartarea)。 例如，如果客户端不再需要的前五个日志记录，它们可以设置基准 LSN 为第六个记录的 LSN。
 
 ### <a name="last-lsn"></a>最后一个 LSN
 
-由于客户端将记录写入流，CLFS 会调整的最后一个 LSN，以便它始终写入的最后一个记录的 LSN。 如果客户端不再需要记录在流中的某个特定点后他们可以通过调用更新最后一个 LSN [ **ClfsSetEndOfLog**](https://msdn.microsoft.com/library/windows/hardware/ff541753)。 例如，如果客户端不再需要写入的第十个记录的任何记录，它们可以通过设置为第十个记录的 LSN 的最后一个 LSN 截断流。
+由于客户端将记录写入流，CLFS 会调整的最后一个 LSN，以便它始终写入的最后一个记录的 LSN。 如果客户端不再需要记录在流中的某个特定点后他们可以通过调用更新最后一个 LSN [ **ClfsSetEndOfLog**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfssetendoflog)。 例如，如果客户端不再需要写入的第十个记录的任何记录，它们可以通过设置为第十个记录的 LSN 的最后一个 LSN 截断流。
 
 ### <a name="active-portion-of-a-stream"></a>流的活动部分
 

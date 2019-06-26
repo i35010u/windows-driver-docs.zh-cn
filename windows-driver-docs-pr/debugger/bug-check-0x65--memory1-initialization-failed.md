@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d27dbf396c4ca8746c7a0cf3c36fc05952e8272
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9b6aa7a674236c1c786f4de944c8b4fb3294c63
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344150"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361785"
 ---
 # <a name="bug-check-0x65-memory1initializationfailed"></a>Bug 检查 0x65：MEMORY1\_初始化\_失败
 
@@ -28,7 +28,7 @@ MEMORY1\_初始化\_失败错误检查的值为 0x00000065。
 检查此错误极少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
  

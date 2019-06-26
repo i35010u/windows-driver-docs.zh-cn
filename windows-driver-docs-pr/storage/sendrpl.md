@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0dc71f1aef614860f95fa884aa93e21d7929eb30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58dfbf3c944f2e73a48f534fb3980d26c1d5cbbc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362661"
 ---
 # <a name="sendrpl-function"></a>SendRPL 函数
 
@@ -47,28 +47,28 @@ void SendRPL(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRPL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565503)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
 
 *PortWWN*   
-通过该发送端口读取的列表 (RPL) 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)结构。
+通过该发送端口读取的列表 (RPL) 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
 
 *AgentWWN*   
-若要查询的 FC 类型的端口列表的端口的全球名称\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**AgentWWN**的成员[ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)结构。
+若要查询的 FC 类型的端口列表的端口的全球名称\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**AgentWWN**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
 
 *agent\_domain*   
-若要查询的 FC 类型的端口列表的域控制器的域号\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**代理\_域**的成员[ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)结构。
+若要查询的 FC 类型的端口列表的域控制器的域号\_端口。 有关定义 FC\_端口，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息传递到中的微型端口驱动程序**代理\_域**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
 
 *portIndex*   
-在光纤通道类型的端口列表中的第一个端口的端口索引\_要返回的端口。 此信息传递到中的微型端口驱动程序**portIndex**的成员[ **SendRPL\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565496)结构。
+在光纤通道类型的端口列表中的第一个端口的端口索引\_要返回的端口。 此信息传递到中的微型端口驱动程序**portIndex**的成员[ **SendRPL\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)结构。
 
 *TotalRspBufferSize*   
-以字节为单位的读取的端口列表 (RPL) 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRPL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565503)结构。
+以字节为单位的读取的端口列表 (RPL) 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRPL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565503)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
 
 *RspBuffer*   
-读取的结果的端口列表 (RPL) 命令。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRPL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565503)结构。
+读取的结果的端口列表 (RPL) 命令。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRPL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -109,9 +109,9 @@ void SendRPL(
 
 [HBA\_状态](hba-status.md)
 
-[**SendRPL\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565496)
+[**SendRPL\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_in)
 
-[**SendRPL\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565503)
+[**SendRPL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrpl_out)
 
  
 

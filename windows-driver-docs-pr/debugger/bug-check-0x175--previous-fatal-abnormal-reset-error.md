@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 729065cf186ce60d9ce21d5c146a8fae1a05ad71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69a363117ea08bf8b5ec762f68641e0405fdb383
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352565"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367696"
 ---
 # <a name="bug-check-0x175-previousfatalabnormalreseterror"></a>Bug 检查 0x175：以前\_致命错误\_异常\_重置\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352565"
 上一步\_致命错误\_异常\_重置\_错误 bug 检查的值为 0x00000175。 这表示出现不可恢复的系统错误或异常，系统已重置 Windows phone 设备上。 系统生成的实时转储设备故障数据收集从以前的错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="previousfatalabnormalreseterror-parameters"></a>以前\_致命错误\_异常\_重置\_错误参数

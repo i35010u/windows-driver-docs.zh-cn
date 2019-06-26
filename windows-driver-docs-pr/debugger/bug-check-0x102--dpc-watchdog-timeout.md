@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eaebcaf97dc1c90d3351901a9327d1bce5be5abf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5076be370f5280ddf722221994f528a9f0ad5243
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362367"
 ---
 # <a name="bug-check-0x102-dpcwatchdogtimeout"></a>Bug 检查 0x102：DPC\_监视器\_超时
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347813"
 DPC\_监视器\_超时错误检查的值为 0x00000102。 这表示在分配的时间间隔内未执行 DPC 监视程序例程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="dpcwatchdogtimeout-parameters"></a>DPC\_监视器\_超时参数

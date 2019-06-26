@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c6f2750b6c9713d27d4d7bbdbfe1e4502d52884
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 430960b284f37f3d9a63623485adf1d212a8cbd4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349045"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361431"
 ---
 # <a name="debugrequestsetlocalimplicitcommandline"></a>调试\_请求\_设置\_本地\_隐式\_命令\_行
 
 
-调试\_请求\_设置\_本地\_隐式\_命令\_行[**请求**](request.md)操作设置[调试器引擎](https://msdn.microsoft.com/library/windows/hardware/ff551059#debugger-engine)的隐式命令行。
+调试\_请求\_设置\_本地\_隐式\_命令\_行[**请求**](request.md)操作设置[调试器引擎](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine)的隐式命令行。
 
 **Parameters**
 
@@ -35,22 +35,22 @@ ms.locfileid: "63349045"
 <a name="remarks"></a>备注
 -------
 
-创建一个过程时，隐式的命令行可用作命令行。 进程创建选项 ([**调试\_创建\_进程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)) 包含使用而不是提供的隐式的命令行选项命令行创建一个进程时。
+创建一个过程时，隐式的命令行可用作命令行。 进程创建选项 ([**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)) 包含使用而不是提供的隐式的命令行选项命令行创建一个进程时。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**请求**](request.md)
 
-[**调试\_创建\_进程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)
+[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)
 
 [**DEBUG\_REQUEST\_GET\_ADDITIONAL\_CREATE\_OPTIONS**](debug-request-get-additional-create-options.md)
 
 [**DEBUG\_REQUEST\_SET\_ADDITIONAL\_CREATE\_OPTIONS**](debug-request-set-additional-create-options.md)
 
-[**CreateProcess2**](https://msdn.microsoft.com/library/windows/hardware/ff539323)
+[**CreateProcess2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)
 
-[**CreateProcessAndAttach2**](https://msdn.microsoft.com/library/windows/hardware/ff540055)
+[**CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)
 
  
 

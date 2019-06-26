@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a535fb054999868bf4d0c196e901b62d181ecc9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e697bd3380989536f432424292f369e6a807d4a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381456"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67377287"
 ---
 # <a name="devpkeydeviceinterfacerestricted"></a>DEVPKEY_DeviceInterface_Restricted
 
@@ -56,7 +56,7 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetDeviceInterfaceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551122)检索 DEVPKEY_DeviceInterface_Restricted 值。
+您可以调用[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)检索 DEVPKEY_DeviceInterface_Restricted 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceInterfaceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551122)
+[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
 

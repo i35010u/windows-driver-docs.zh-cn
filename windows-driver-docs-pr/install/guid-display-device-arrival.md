@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ca0398bd54f65feef6a17cbc046d0fa72794ded
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f56bbcbbd64c7bb65c3da38da8fee1ed47ba627c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384794"
 ---
 # <a name="guiddisplaydevicearrival"></a>GUID_DISPLAY_DEVICE_ARRIVAL
 
 
-GUID_DISPLAY_DEVICE_ARRIVAL[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[显示适配器](https://msdn.microsoft.com/library/windows/hardware/ff554044)。
+GUID_DISPLAY_DEVICE_ARRIVAL[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[显示适配器](https://docs.microsoft.com/windows-hardware/drivers/display/index)。
 
 <table>
 <colgroup>
@@ -54,7 +54,7 @@ GUID_DISPLAY_DEVICE_ARRIVAL[设备接口类](https://msdn.microsoft.com/library/
 <a name="remarks"></a>备注
 -------
 
-系统提供的组件[Windows Vista 显示器驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff570593)注册通知的操作系统和应用程序的显示适配器是否存在此设备接口类的实例。
+系统提供的组件[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)注册通知的操作系统和应用程序的显示适配器是否存在此设备接口类的实例。
 
 了解设备接口类显示视图支持的显示适配器，请参见[ **GUID_DEVINTERFACE_DISPLAY_ADAPTER**](guid-devinterface-display-adapter.md)。
 

@@ -7,12 +7,12 @@ keywords:
 - WDK PCMCIA 总线内存、 读取和写入属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd15a15d86a294fe2a2cd511f2b615ec96218522
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cc8a12e30b47c83c1d3fc112e0099481745fa595
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56575869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382622"
 ---
 # <a name="read-and-write-attribute-memory"></a>读取和写入属性内存
 
@@ -24,9 +24,9 @@ ms.locfileid: "56575869"
 
 Windows 2000 和更高版本操作系统视为属性内存 PC 卡或 CardBus 卡上配置空间。
 
-一般情况下，若要访问属性的内存，驱动程序上必须要创建使用主要函数代码的 IRP IRP\_MJ\_PNP 和次要函数代码[ **IRP\_MN\_读取\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff551727)或[ **IRP\_MN\_编写\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff551769)。
+一般情况下，若要访问属性的内存，驱动程序上必须要创建使用主要函数代码的 IRP IRP\_MJ\_PNP 和次要函数代码[ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)或[ **IRP\_MN\_编写\_配置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)。
 
-如有必要，驱动程序可以直接通过永久内存窗口访问属性内存。 请参阅[访问 PCMCIA 属性内存通过永久内存窗口](https://msdn.microsoft.com/library/windows/hardware/ff536901)的更多详细信息。
+如有必要，驱动程序可以直接通过永久内存窗口访问属性内存。 请参阅[访问 PCMCIA 属性内存通过永久内存窗口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-through-a-permanent-memory-window)的更多详细信息。
 
 PCMCIA 内存卡驱动程序将执行以下操作：
 

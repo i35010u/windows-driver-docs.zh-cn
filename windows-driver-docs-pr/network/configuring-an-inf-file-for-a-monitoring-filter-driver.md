@@ -7,12 +7,12 @@ keywords:
 - 监视筛选器驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a87b4a37c9e90a667ab65c51262c5900fd606d3a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 968f214569d2065cd61c8b49cc24f6c2de975f21
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363660"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384722"
 ---
 # <a name="configuring-an-inf-file-for-a-monitoring-filter-driver"></a>配置监视筛选器驱动程序的 INF 文件
 
@@ -61,9 +61,9 @@ NDIS 筛选器驱动程序安装的以下问题是与监视筛选器驱动程序
 
     在前面的示例 0x00000002 值指示筛选器模块是可选的。 若要安装必需的筛选器模块，请设置**FilterRunType** 0x00000001 的条目。 有关详细信息，请参阅[必需筛选器驱动程序](mandatory-filter-drivers.md)。
 
-    **请注意**  我们强烈建议，监视的轻型筛选器 (LWF) 驱动程序不应为必需的除非它是用于在受控环境中，将有不可选修改 LWF 驱动程序。 这是因为必需监视 LWF 驱动程序可能会导致可选修改 LWF 驱动程序失败[ *FilterAttach*](https://msdn.microsoft.com/library/windows/hardware/ff549905)。 按照设计，以便监视所有级别的网络流量的情况下，监视的 LWF 驱动程序绑定通过每个修改的筛选器和绑定。 请考虑以下方案：
+    **请注意**  我们强烈建议，监视的轻型筛选器 (LWF) 驱动程序不应为必需的除非它是用于在受控环境中，将有不可选修改 LWF 驱动程序。 这是因为必需监视 LWF 驱动程序可能会导致可选修改 LWF 驱动程序失败[ *FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)。 按照设计，以便监视所有级别的网络流量的情况下，监视的 LWF 驱动程序绑定通过每个修改的筛选器和绑定。 请考虑以下方案：
     -   通过可选的修改 LWF 驱动程序安装必需的监视 LWF 驱动程序的实例。
-    -   较低的修改可选 LWF 驱动程序无法将附加到较低的组件。 这将导致在必需监视 LWF 驱动程序[ *FilterAttach* ](https://msdn.microsoft.com/library/windows/hardware/ff549905)处理程序调用。
+    -   较低的修改可选 LWF 驱动程序无法将附加到较低的组件。 这将导致在必需监视 LWF 驱动程序[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)处理程序调用。
     -   现在不加载必需的 LWF 驱动程序的实例，因为 NDIS 不会将任何协议 （如 TCP/IP) 绑定到接口或 NIC，因此呈现为不可用的接口。
 
      

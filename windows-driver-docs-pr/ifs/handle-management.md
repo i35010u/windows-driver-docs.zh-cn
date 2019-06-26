@@ -7,12 +7,12 @@ keywords:
 - 安全 WDK 文件系统、 最大程度减少威胁
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0845ab39acdb99bf15bce48f5714355f8d924339
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 702edb8a5cec03a318938543efabaa67a574720b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365875"
 ---
 # <a name="handle-management"></a>句柄管理
 
@@ -34,7 +34,7 @@ ms.locfileid: "63370135"
 
 可以使用句柄创建的应用程序的驱动程序，请使用这些句柄必须小心地使用完成操作：
 
--   最佳做法是将该句柄转换为一个对象指针，通过调用[ **ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)，指定正确*AccessMode* （通常从 Irp&gt;RequestorMode)， *DesiredAccess*，并*ObjectType*参数，例如 IoFileObjectType 或 ExEventObjectType。
+-   最佳做法是将该句柄转换为一个对象指针，通过调用[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)，指定正确*AccessMode* （通常从 Irp&gt;RequestorMode)， *DesiredAccess*，并*ObjectType*参数，例如 IoFileObjectType 或 ExEventObjectType。
 
 -   如果必须直接在调用中使用一个句柄，则最好使用函数的 Nt 变量而不是函数的 Zw 变量。 这将由操作系统强制参数检查和句柄验证，因为以前的模式会**UserMode**并因此不受信任。 请注意参数传递给 Nt 函数的指针可能会失败的验证，如果上一个模式，则**UserMode**。 Nt 和 Zw 例程将返回*IoStatusBlock* parameterwith 应检查是否有错误的错误信息。
 
