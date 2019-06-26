@@ -4,12 +4,12 @@ description: 创建收件箱驱动程序对专用生成
 ms.assetid: aed3c175-3e95-4bfb-a514-a663dd9e3f57
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dbd9408fb0969aad9af56e4f5b9a1c88701cdb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 953d8cdb3de7f61ad2ee3dab648ccc0c0258a1bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364317"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356315"
 ---
 # <a name="creating-a-private-build-of-an-inbox-driver"></a>创建收件箱驱动程序对专用生成
 
@@ -24,7 +24,7 @@ ms.locfileid: "63364317"
    $(O)\sample.inf
    ```
 
-2. 添加到的指令*生成文件*，将生成新的 INF 文件并执行[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)工具到时间戳的 INF 文件。 例如，下面的代码示例显示了如何可以创建和时间戳的 INF 文件，名为*Sample.inf*:
+2. 添加到的指令*生成文件*，将生成新的 INF 文件并执行[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)工具到时间戳的 INF 文件。 例如，下面的代码示例显示了如何可以创建和时间戳的 INF 文件，名为*Sample.inf*:
 
    ```cpp
    $(O)\ sample.inf: $(_INX)\ sample.inx $(_LNG)\ sample.txt
@@ -35,7 +35,7 @@ ms.locfileid: "63364317"
        $(TSBINPLACE_CMD)
    ```
 
-   以下[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)在此示例中使用命令行参数：
+   以下[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)在此示例中使用命令行参数：
 
    - -D\*参数使用当前日期作为 INF 文件中的 DriverVer 指令的一部分。
    - **-V \\** * 参数的版本号为使用当前时间。 如果已设置 STAMPINF_VERSION 环境变量，则 Stampinf 将使用此环境变量指定的版本号值。
@@ -45,7 +45,7 @@ ms.locfileid: "63364317"
 
      
 
-该驱动程序构建后，您必须签署[驱动程序包](driver-packages.md)，并且必须使用相同[编录文件](catalog-files.md)中指定 **-c**参数[Stampinf](https://msdn.microsoft.com/library/windows/hardware/ff552786)内你*生成文件*。 若要签署驱动程序包，请按照中所述的步骤[签名的驱动程序在开发和测试](signing-drivers-during-development-and-test.md)。
+该驱动程序构建后，您必须签署[驱动程序包](driver-packages.md)，并且必须使用相同[编录文件](catalog-files.md)中指定 **-c**参数[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)内你*生成文件*。 若要签署驱动程序包，请按照中所述的步骤[签名的驱动程序在开发和测试](signing-drivers-during-development-and-test.md)。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 丢失的 COPP 设备 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 106d12ef7ff8282e24046a6b09f92a41e30483fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eccd54f38b813751c2438c4a25a97ba94ab172de
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363769"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369839"
 ---
 # <a name="handling-the-loss-of-a-copp-device"></a>处理 COPP 设备丢失
 
@@ -25,7 +25,7 @@ ms.locfileid: "63363769"
 
 **本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。**
 
-设置为受保护模式的视频会话必须处理导致 DirectX VA COPP 设备与视频会话相关联的析构的方案。 以下方案启动显示器驱动程序调用[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)回调函数时可能是视频会话认证的输出连接器上的内容保护已启用：
+设置为受保护模式的视频会话必须处理导致 DirectX VA COPP 设备与视频会话相关联的析构的方案。 以下方案启动显示器驱动程序调用[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)回调函数时可能是视频会话认证的输出连接器上的内容保护已启用：
 
 -   更改显示模式
 
@@ -45,7 +45,7 @@ ms.locfileid: "63363769"
 
 -   应用程序意外终止-例如，通过页面错误
 
-如果在前面的方案之一时发生输出内容保护为视频会话启用之后，显示驱动程序*DdMoCompDestroy*函数应启动微型端口驱动程序的调用[ *COPPCloseVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539638)函数以减少 COPP 设备的当前本地保护级别计数将全局保护级别计数。 然后，微型端口驱动程序应检查修改后的全局保护级别，并调整相应地应用于输出连接器的保护级别。
+如果在前面的方案之一时发生输出内容保护为视频会话启用之后，显示驱动程序*DdMoCompDestroy*函数应启动微型端口驱动程序的调用[ *COPPCloseVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppclosevideosession)函数以减少 COPP 设备的当前本地保护级别计数将全局保护级别计数。 然后，微型端口驱动程序应检查修改后的全局保护级别，并调整相应地应用于输出连接器的保护级别。
 
  
 

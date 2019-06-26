@@ -4,12 +4,12 @@ description: 取消 Windows XP 中的数据传输
 ms.assetid: 971979a5-950b-49d4-9adb-cd4589a00426
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6741c9564485a42ca0753be033d9542422c9b38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d19f8bd536be05a1494833545799614c9528ae1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373349"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355514"
 ---
 # <a name="cancellation-of-data-transfers-in-windows-xp"></a>取消 Windows XP 中的数据传输
 
@@ -22,9 +22,9 @@ ms.locfileid: "63373349"
 
 此外提供了两种 WIA 驱动程序应用程序，必须取消传输接收通知的方法：
 
--   收到 S\_FALSE 时调用了[ **IWiaMiniDrvCallBack::MiniDrvCallback**](https://msdn.microsoft.com/library/windows/hardware/ff543946)。
+-   收到 S\_FALSE 时调用了[ **IWiaMiniDrvCallBack::MiniDrvCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)。
 
--   接收到调用其[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff544998)使用 WIA\_事件\_取消\_IO 事件。
+-   接收到调用其[ **IWiaMiniDrv::drvNotifyPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)使用 WIA\_事件\_取消\_IO 事件。
 
 与 Windows XP 实现的一个问题是两个通知方法; 这些方法之间没有连接也就是说，如果用户调用**IWiaItemExtras::CancelPendingIO** ，但该驱动程序不支持通过数据传输的异步取消**IWiaMiniDrv::drvNotifyPnPEvent**，将应用程序此外必须返回 S\_从 FALSE **IWiaMiniDrvCallBack::MiniDrvCallback**<em>。</em>
 

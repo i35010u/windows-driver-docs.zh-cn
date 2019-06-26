@@ -7,17 +7,17 @@ keywords:
 - 解码视频 WDK DirectX VA，创建解码设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b36d730edde511cf927c786959c9d1062def722f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40b7a1c45f920982d4bc9f34eba620d57e30bfb5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370231"
 ---
 # <a name="creating-a-video-decode-device"></a>创建视频解码设备
 
 
-Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **CreateDecodeDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540618)函数来创建视频加速 (VA) 解码设备。 当与解码设备完成 Direct3D 运行时，它会调用用户模式显示驱动程序的[ **DestroyDecodeDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff552757)函数。
+Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **CreateDecodeDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createdecodedevice)函数来创建视频加速 (VA) 解码设备。 当与解码设备完成 Direct3D 运行时，它会调用用户模式显示驱动程序的[ **DestroyDecodeDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_destroydecodedevice)函数。
 
  
 

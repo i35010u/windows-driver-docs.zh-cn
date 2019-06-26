@@ -4,12 +4,12 @@ description: ESC_TWAIN_CAPABILITY 转义码
 ms.assetid: 3fd3f03b-ea72-4151-a19c-3e71cf3193fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e605ff3590a18740d1f86e7417f9126e095f3f27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec47185bc0a9332b9662f900a0197e8661d919f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364428"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370045"
 ---
 # <a name="esctwaincapability-escape-code"></a>ESC\_TWAIN\_功能转义码
 
@@ -17,7 +17,7 @@ ms.locfileid: "63364428"
 
 
 
-若要执行专用 TWAIN 功能的功能操作，TWAIN 应用程序，向通知 TWAIN 兼容性层，后者随后调用 WIA 驱动程序[ **IStiUSD::Escape** ](https://msdn.microsoft.com/library/windows/hardware/ff543815)方法，传递ESC\_TWAIN\_功能转义码。 在下面的示例的伪代码演示了如何**转义**应实现方法，以及如何为转义码响应。
+若要执行专用 TWAIN 功能的功能操作，TWAIN 应用程序，向通知 TWAIN 兼容性层，后者随后调用 WIA 驱动程序[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)方法，传递ESC\_TWAIN\_功能转义码。 在下面的示例的伪代码演示了如何**转义**应实现方法，以及如何为转义码响应。
 
 ```cpp
 STDMETHODIMP CWIADevice::Escape(STI_RAW_CONTROL_CODE EscapeFunction,

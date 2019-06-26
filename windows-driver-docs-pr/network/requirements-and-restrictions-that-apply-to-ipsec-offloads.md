@@ -7,12 +7,12 @@ keywords:
 - AH 保护数据包 WDK IPsec 卸载、 要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d739bf72342434c1b6e8e2cd97273f191d5b97e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92957fa1c1ecffb38caea3ba62f54d153f7239cb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376968"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373235"
 ---
 # <a name="requirements-and-restrictions-that-apply-to-ipsec-offloads"></a>适用于 IPsec 卸载的要求和限制
 
@@ -80,7 +80,7 @@ ms.locfileid: "63376968"
 
 -   需要 IP 碎片发送数据包或将不会卸载 IPsec 任务接收需要从 IP 碎片重组的数据包。
 
--   IPsec 任务将不会卸载为发送和接收经过负载平衡的微型端口驱动程序的数据包。 有关负载平衡的详细信息，请参阅[负载平衡和故障转移](https://msdn.microsoft.com/library/windows/hardware/ff549197)。
+-   IPsec 任务将不会卸载为发送和接收经过负载平衡的微型端口驱动程序的数据包。 有关负载平衡的详细信息，请参阅[负载平衡和故障转移](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549197(v=vs.85))。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 协议 WDK 内存部分
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 818231039bb7ca11c95e473fc9d4baf21d1cc53b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b2c602a858054e49ce58dd43c79097514465d7d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342697"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373361"
 ---
 # <a name="security-issues-for-section-objects-and-views"></a>节对象和视图的安全问题
 
@@ -45,9 +45,9 @@ ms.locfileid: "63342697"
 
 -   驱动程序不是用户模式下的过程，必须创建部分对象。 驱动程序必须永远不会使用从用户模式传递的句柄。
 
--   然后再将该句柄传递到用户模式下，该驱动程序必须调用[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)以获取对部分对象的引用。 这可以防止通过关闭句柄删除节对象的恶意应用程序。 对象引用应存储在驱动程序的设备扩展。
+-   然后再将该句柄传递到用户模式下，该驱动程序必须调用[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)以获取对部分对象的引用。 这可以防止通过关闭句柄删除节对象的恶意应用程序。 对象引用应存储在驱动程序的设备扩展。
 
--   该驱动程序不再使用的部分对象后，它必须调用[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)来释放该对象引用。
+-   该驱动程序不再使用的部分对象后，它必须调用[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)来释放该对象引用。
 
 只将内核模式驱动程序可以在运行 Microsoft Windows Server 2003 Service Pack 1 (SP1) 和更高版本的系统，打开\\**设备**\\**PhysicalMemory**。 但是，驱动程序可以决定向用户应用程序的一个句柄。 若要防止出现安全问题，只有用户应用程序应提供了驱动程序的信任权\\**设备**\\**PhysicalMemory**。
 

@@ -14,12 +14,12 @@ keywords:
 - 内核模式驱动程序 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8a27f9a1ae6b1f9aae042b76807355e01017a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04acc37c917bf9cea64911c945d1599da081c227
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331243"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369800"
 ---
 # <a name="implementing-wmi"></a>实现 WMI
 
@@ -29,9 +29,9 @@ ms.locfileid: "63331243"
 
 本部分介绍 WDM 内核模式 Windows Management Instrumentation (WMI) 的扩展。 当将这些扩展添加到内核模式驱动程序时，您的驱动程序将成为 WMI 提供程序。 WMI 提供程序使度量和检测数据可供 WMI 使用者，如用户模式应用程序。
 
-有关用户模式下 WMI API 的详细信息，请参阅[Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582(VS.85).aspx) Windows SDK 中。
+有关用户模式下 WMI API 的详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-start-page) Windows SDK 中。
 
-如果要实现基于 KMDF 驱动程序，请参阅[中基于框架的驱动程序支持 WMI](https://msdn.microsoft.com/library/windows/hardware/ff544711)。
+如果要实现基于 KMDF 驱动程序，请参阅[中基于框架的驱动程序支持 WMI](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-wmi-in-kmdf-drivers)。
 
 本部分包括有关内核模式 WMI 的以下信息：
 

@@ -10,12 +10,12 @@ keywords:
 - WDK COPP 的状态信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ed0577badd301771c48cea049895a5f9f751c0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92185cabe1807de07d84ebb32d87232bc0704400
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323795"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370267"
 ---
 # <a name="copp-status"></a>COPP 状态
 
@@ -27,7 +27,7 @@ ms.locfileid: "63323795"
 
 微型端口驱动程序可以接收 COPP 上的状态与 DirectX VA COPP 设备相关联的物理连接器的请求。
 
-微型端口驱动程序[ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652)函数传递一个指向[ **DXVA\_COPPStatusInput** ](https://msdn.microsoft.com/library/windows/hardware/ff563899)包含请求的结构。 *COPPQueryStatus*写入到的状态[ **DXVA\_COPPStatusOutput** ](https://msdn.microsoft.com/library/windows/hardware/ff563903)向其结构*pOutput*参数所指向。 **GuidStatusRequestID**并**StatusData** DXVA 成员\_COPPStatusInput 指定状态请求。 微型端口驱动程序应具体取决于该请求，强制转换为指针的状态信息[ **DXVA\_COPPStatusData**](https://msdn.microsoft.com/library/windows/hardware/ff563154)， [ **DXVA\_COPPStatusDisplayData**](https://msdn.microsoft.com/library/windows/hardware/ff563157)， [ **DXVA\_COPPStatusHDCPKeyData**](https://msdn.microsoft.com/library/windows/hardware/ff563896)，或[ **DXVA\_COPPStatusSignalingCmdData** ](https://msdn.microsoft.com/library/windows/hardware/ff563905)结构。 微型端口驱动程序然后应将复制到的状态信息**COPPStatus** DXVA 数组成员\_COPPStatusOutput。
+微型端口驱动程序[ *COPPQueryStatus* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)函数传递一个指向[ **DXVA\_COPPStatusInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusinput)包含请求的结构。 *COPPQueryStatus*写入到的状态[ **DXVA\_COPPStatusOutput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusoutput)向其结构*pOutput*参数所指向。 **GuidStatusRequestID**并**StatusData** DXVA 成员\_COPPStatusInput 指定状态请求。 微型端口驱动程序应具体取决于该请求，强制转换为指针的状态信息[ **DXVA\_COPPStatusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdata)， [ **DXVA\_COPPStatusDisplayData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdisplaydata)， [ **DXVA\_COPPStatusHDCPKeyData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatushdcpkeydata)，或[ **DXVA\_COPPStatusSignalingCmdData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatussignalingcmddata)结构。 微型端口驱动程序然后应将复制到的状态信息**COPPStatus** DXVA 数组成员\_COPPStatusOutput。
 
 **请注意**  驱动程序必须返回中使用一次为 128 位随机数字**rApp** DXVA 成员\_COPPStatusData、 DXVA\_COPPStatusDisplayData、 DXVA\_COPPStatusHDCPKeyData 或 DXVA\_COPPStatusSignalingCmdData。 128 位随机数字生成由发送应用程序和中未提供**rApp** DXVA 成员\_COPPStatusInput。
 
@@ -70,11 +70,11 @@ ms.locfileid: "63323795"
 
     该驱动程序只能合并 COPP\_BusType\_时没有图形适配器和其他子系统之间的命令和状态接口信号与前面的总线类型值中的一个集成 (0x80000000) 值在使用公开提供的规范和标准连接器类型的扩展总线上可用。 内存总线不在此定义。
 
--   为 DXVA\_中设置 COPPQueryDisplayData **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusDisplayData** ](https://msdn.microsoft.com/library/windows/hardware/ff563157)结构，描述在与 DirectX VA COPP 设备相关联的连接器上传输的信号的显示模式。
+-   为 DXVA\_中设置 COPPQueryDisplayData **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusDisplayData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatusdisplaydata)结构，描述在与 DirectX VA COPP 设备相关联的连接器上传输的信号的显示模式。
 
--   为 DXVA\_中设置 COPPQueryHDCPKeyData **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusHDCPKeyData** ](https://msdn.microsoft.com/library/windows/hardware/ff563896)介绍高带宽数字内容保护 (HDCP) 键选择矢量 (KSV) 的结构。
+-   为 DXVA\_中设置 COPPQueryHDCPKeyData **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusHDCPKeyData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatushdcpkeydata)介绍高带宽数字内容保护 (HDCP) 键选择矢量 (KSV) 的结构。
 
--   为 DXVA\_中设置 COPPQuerySignaling **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusSignalingCmdData** ](https://msdn.microsoft.com/library/windows/hardware/ff563905)结构，它介绍了如何保护与 DirectX VA COPP 设备相关联的物理连接器将经历的信号。
+-   为 DXVA\_中设置 COPPQuerySignaling **guidStatusRequestID** ，并执行任何操作中设置**StatusData**中, 返回信息[ **DXVA\_COPPStatusSignalingCmdData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_coppstatussignalingcmddata)结构，它介绍了如何保护与 DirectX VA COPP 设备相关联的物理连接器将经历的信号。
 
     COPP 状态查询还可能会请求微型端口驱动程序检索某些扩展的信息。
 

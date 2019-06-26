@@ -10,12 +10,12 @@ keywords:
 - 纹理 WDK DirectDraw 压缩
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d81b763acf3677e1062855602c7ff9d9584ff60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dc2a9ebb7a7c9902efe56689e4e63244584b39e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370183"
 ---
 # <a name="creating-the-compressed-texture-surface"></a>创建压缩纹理图面
 
@@ -23,15 +23,15 @@ ms.locfileid: "63387232"
 ## <span id="ddk_creating_the_compressed_texture_surface_gg"></span><span id="DDK_CREATING_THE_COMPRESSED_TEXTURE_SURFACE_GG"></span>
 
 
-每当 DirectDraw 请求驱动程序创建图面，该驱动程序必须确定是否正在要求它创建压缩的纹理图面。 若要确定这一点，该驱动程序必须检查以前的 DirectDraw 中设置的信息[ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)面的正在创建的结构。 您的驱动程序必须 （使用任何图面） 包括以下验证步骤：
+每当 DirectDraw 请求驱动程序创建图面，该驱动程序必须确定是否正在要求它创建压缩的纹理图面。 若要确定这一点，该驱动程序必须检查以前的 DirectDraw 中设置的信息[ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))面的正在创建的结构。 您的驱动程序必须 （使用任何图面） 包括以下验证步骤：
 
--   检查 DDSCAPS\_中的纹理标志**dwFlags**的成员[ **DDSCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff550286)结构。
+-   检查 DDSCAPS\_中的纹理标志**dwFlags**的成员[ **DDSCAPS** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550286(v=vs.85))结构。
 
--   检查 DDPF\_FOURCC 标志**dwFlags**的成员[ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)面的正在创建的结构。 在以下前应进行此检查**dwFourCC**检查。
+-   检查 DDPF\_FOURCC 标志**dwFlags**的成员[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)面的正在创建的结构。 在以下前应进行此检查**dwFourCC**检查。
 
--   检查在 DXT 代码之一**dwFourCC**的成员[ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)面的正在创建的结构。
+-   检查在 DXT 代码之一**dwFourCC**的成员[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)面的正在创建的结构。
 
--   检查的宽度和高度的成员 (**dwWidth**并**dwHeight**) 的[ **DDSURFACEDESC2** ](https://msdn.microsoft.com/library/windows/hardware/ff550340)结构。 DirectDraw 将这些成员设置为 4 个像素的倍数。
+-   检查的宽度和高度的成员 (**dwWidth**并**dwHeight**) 的[ **DDSURFACEDESC2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550340(v=vs.85))结构。 DirectDraw 将这些成员设置为 4 个像素的倍数。
 
  
 

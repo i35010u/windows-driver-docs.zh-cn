@@ -4,19 +4,19 @@ ms.assetid: 49D106BD-F938-4BF8-88EE-A4D0F0E2722A
 description: 描述要发送和接收消息使用的 MB 设备的非结构化补充服务数据 (USSD) 功能的操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6409c8be13c890dac5d8c0c156cfc62c2ad7a2dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82b097b5b1d14a9c575e61b751a5e3cd595eb507
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367579"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374007"
 ---
 # <a name="mb-ussd-operations"></a>MB USSD 操作
 
 
 本主题描述的操作来发送和接收消息使用的 MB 设备的非结构化补充服务数据 (USSD) 功能。
 
-是可选的 USSD 支持以及何时支持才 GSM 网络上可用。 支持 USSD 的微型端口驱动程序必须设置 WWAN\_CTRL\_CAPS\_USSD 作为的一部分的功能标志**WwanControlCaps**隶属[ **WWAN\_设备\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff571204)结构处理时[OID\_WWAN\_设备\_CAPS](https://msdn.microsoft.com/library/windows/hardware/ff569824)请求。 如果微型端口驱动程序不支持 USSD，它们必须不设置此标志，应返回 WWAN\_状态\_否\_设备\_支持所有 USSD 相关 Oid。
+是可选的 USSD 支持以及何时支持才 GSM 网络上可用。 支持 USSD 的微型端口驱动程序必须设置 WWAN\_CTRL\_CAPS\_USSD 作为的一部分的功能标志**WwanControlCaps**隶属[ **WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps)结构处理时[OID\_WWAN\_设备\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)请求。 如果微型端口驱动程序不支持 USSD，它们必须不设置此标志，应返回 WWAN\_状态\_否\_设备\_支持所有 USSD 相关 Oid。
 
 MB 驱动程序模型支持以下 USSD 操作：由设备发起的操作：
 
@@ -28,7 +28,7 @@ MB 驱动程序模型支持以下 USSD 操作：由设备发起的操作：
 
 -   正在终止 USSD 会话
 
-设备启动的操作的详细信息，请参阅[OID\_WWAN\_USSD](https://msdn.microsoft.com/library/windows/hardware/hh440100)。
+设备启动的操作的详细信息，请参阅[OID\_WWAN\_USSD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ussd)。
 
 网络启动的操作：
 
@@ -38,9 +38,9 @@ MB 驱动程序模型支持以下 USSD 操作：由设备发起的操作：
 
 -   终止 USSD 会话
 
-有关网络启动的操作的详细信息，请参阅[ **NDIS\_状态\_WWAN\_USSD**](https://msdn.microsoft.com/library/windows/hardware/hh439822)。
+有关网络启动的操作的详细信息，请参阅[ **NDIS\_状态\_WWAN\_USSD**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ussd)。
 
-USSD 协议仅允许单个 USSD 会话在任何时间。 设备启动的操作， **RequestType**的成员[ **WWAN\_USSD\_请求**](https://msdn.microsoft.com/library/windows/hardware/hh464138)结构指示的用途请求 OID:
+USSD 协议仅允许单个 USSD 会话在任何时间。 设备启动的操作， **RequestType**的成员[ **WWAN\_USSD\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ussd_request)结构指示的用途请求 OID:
 
 -   **WwanUssdRequestInitiate**用于创建新的 USSD 会话并将所提供的 USSD 字符串发送到网络。 如果 USSD 会话已存在，该驱动程序必须失败的请求类型的事件**WwanUssdEventOtherLocalClient**。 USSD 字符串必须存在。 例如，长度必须介于 1 到 160 字节之间。
 
@@ -48,7 +48,7 @@ USSD 协议仅允许单个 USSD 会话在任何时间。 设备启动的操作�
 
 -   **WwanUssdRequestCancel**用于终止现有会话。 该驱动程序必须使用类型的事件响应**WwanUssdEventTerminated**，即使没有会话已存在 （这可能会发生在从网络和本地客户端会话的并发版本期间）。 必须对此请求; 忽略 USSD 字符串的内容字符串长度设置为零以指示不不存在任何 USSD 字符串。
 
-为网络启动的操作， **EventType**的成员[ **WWAN\_USSD\_事件**](https://msdn.microsoft.com/library/windows/hardware/hh464136)结构指示高级别目的指示：
+为网络启动的操作， **EventType**的成员[ **WWAN\_USSD\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_ussd_event)结构指示高级别目的指示：
 
 -   事件**WwanUssdEventNoActionRequired**网络启动的 USSD 通知，或者在移动启动操作之后不需要任何进一步的信息，则将使用。 事件**WwanUssdEventActionRequired**网络启动的 USSD 请求，或者在移动启动操作之后需要进一步的信息，则将使用。 这两个事件需要非空 USSD 字符串必须存在。 **SessionState**成员将用来指示 USSD 字符串是 USSD 会话的第一条消息; 它必须设置为**WwanUssdSessionStateNew**网络的第一条消息启动的 USSD 会话进出**WwanUssdSessionStateExisting**在所有其他情况下。
 

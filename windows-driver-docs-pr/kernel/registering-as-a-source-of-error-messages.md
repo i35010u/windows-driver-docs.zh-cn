@@ -9,12 +9,12 @@ keywords:
 - 注册表 WDK 错误日志
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22a2fed4cacaec5eac40c9c61b15084f11c493f
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: ec9724a0588d10dae007381b30eb38aa85aa4458
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373477"
 ---
 # <a name="registering-as-a-source-of-error-messages"></a>注册为错误消息的源
 
@@ -30,7 +30,7 @@ ms.locfileid: "56565881"
 <a href="" id="typessupported--reg-dword-"></a>**TypesSupported** (REG\_DWORD)  
 可以记录可能的严重级别的位掩码。 驱动程序通常将此项设置为 7，以指示它们可能会记录所有严重级别。
 
-有关如何将驱动程序的 INF 文件中设置这些注册表项的说明，请参阅[**注册事件日志记录**](https://msdn.microsoft.com/library/windows/hardware/ff546326)。
+有关如何将驱动程序的 INF 文件中设置这些注册表项的说明，请参阅[**注册事件日志记录**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
 
  
 

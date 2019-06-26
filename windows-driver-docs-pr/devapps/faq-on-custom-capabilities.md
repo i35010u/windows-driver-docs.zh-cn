@@ -3,12 +3,12 @@ title: 有关自定义功能的常见问题解答
 description: 介绍用于硬件支持的应用 (HSA) 以及它们之间的区别于其他功能的自定义功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 432e205c52bb9cd5617ab2cb3f024ae7b8adab7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87bb8913c51f02798d3e17d7d1080dc94f325c4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387927"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369377"
 ---
 # <a name="faq-on-custom-capabilities"></a>有关自定义功能的常见问题解答
 
@@ -27,5 +27,5 @@ ms.locfileid: "63387927"
 |获取自动应用程序  |适用于外围设备                                  |适用于所有硬件          |
 |部署依赖关系    |WU:驱动程序包<br>存储：应用|WU:驱动程序包<br>存储：应用                  |
                                                                                                                                                                                                     
-DCAs 的详细信息，请参阅[开始使用 Microsoft Store 的设备应用程序](https://msdn.microsoft.com/windows/hardware/drivers/devapps/getting-started)。
+DCAs 的详细信息，请参阅[开始使用 Microsoft Store 的设备应用程序](https://docs.microsoft.com/windows-hardware/drivers/devapps/getting-started)。
 

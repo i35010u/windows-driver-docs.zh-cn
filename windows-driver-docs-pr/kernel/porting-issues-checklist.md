@@ -7,12 +7,12 @@ keywords:
 - 移植到 64 位 Windows 的驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2d63a59ae3a3fdfe5f81e3dc3d73a87b6a36d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2012484153f2ce044241be63489bfd749006d060
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369211"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369701"
 ---
 # <a name="porting-issues-checklist"></a>移植问题清单
 
@@ -145,7 +145,7 @@ ms.locfileid: "63369211"
 
 -   避免使用计算出的或硬编码的指针的偏移量。
 
-    使用结构，使用[**字段\_偏移量**](https://msdn.microsoft.com/library/windows/hardware/ff545727)宏只要有可能确定结构成员的偏移量。
+    使用结构，使用[**字段\_偏移量**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏只要有可能确定结构成员的偏移量。
 
 -   避免使用硬编码的指针或句柄值。
 
@@ -221,7 +221,7 @@ ms.locfileid: "63369211"
 
   使用**UINT**\_**PTR**并**INT**\_**PTR**在适当的位置 （并且您不确定它们是否必需的没有任何危害只是在用例中使用它们）。 不强制转换的类型指针**ULONG**，**长**， **INT**， **UINT**，或**DWORD**。
 
-  **请注意****处理**定义为**void \\** <em>因此类型上强制转换、 **处理</em>* 值**ULONG**值以测试、 设置或清除低两位是编程错误。
+  **请注意** **处理**定义为**void \\** <em>因此类型上强制转换、 **处理</em>* 值**ULONG**值以测试、 设置或清除低两位是编程错误。
 
      
 
@@ -243,7 +243,7 @@ ms.locfileid: "63369211"
 
 <!-- -->
 
--   使用[**字段\_偏移量**](https://msdn.microsoft.com/library/windows/hardware/ff545727)宏。
+-   使用[**字段\_偏移量**](https://docs.microsoft.com/windows/desktop/api/ntdef/nf-ntdef-field_offset)宏。
 
     例如：
 
@@ -295,7 +295,7 @@ ms.locfileid: "63369211"
 
 -   使用结构封装指令时务必小心。
 
-    在 64 位 Windows 上的数据结构未对齐，如果例程操纵结构，如[ **RtlCopyMemory** ](https://msdn.microsoft.com/library/windows/hardware/ff561808)并**memcpy**，不会发生错误。 相反，它们将引发异常。 例如：
+    在 64 位 Windows 上的数据结构未对齐，如果例程操纵结构，如[ **RtlCopyMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlcopymemory)并**memcpy**，不会发生错误。 相反，它们将引发异常。 例如：
 
     ```cpp
     #pragma pack (1)  /* also set by /Zp switch */
@@ -330,7 +330,7 @@ ms.locfileid: "63369211"
 
 -   [在 64 位驱动程序支持 32 位 I/O](supporting-32-bit-i-o-in-your-64-bit-driver.md)
 
--   [获取已准备的 64 位 Windows](https://msdn.microsoft.com/library/windows/desktop/aa384198) （移植指南的用户模式应用程序）
+-   [获取已准备的 64 位 Windows](https://docs.microsoft.com/windows/desktop/WinProg64/getting-ready-for-64-bit-windows) （移植指南的用户模式应用程序）
 
  
 

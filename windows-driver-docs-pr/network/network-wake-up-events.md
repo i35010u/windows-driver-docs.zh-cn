@@ -13,12 +13,12 @@ keywords:
 - 唤醒帧 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 835f99f4b4af8465f37ff43bfcdb9238b0585c52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41451f070183f8a4eb39363530c6eeb8079faeb6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67371209"
 ---
 # <a name="network-wake-up-events"></a>网络唤醒事件
 
@@ -34,15 +34,15 @@ NDIS 定义以下两个网络唤醒事件：
 
 -   幻数据包的回执。
 
-网络适配器可以支持网络唤醒事件，包括无根本的任意组合。 NDIS 处理时微型端口驱动程序设置来处理微型端口驱动程序，因为不电源管理感知**布尔**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff565923)到**NULL**。
+网络适配器可以支持网络唤醒事件，包括无根本的任意组合。 NDIS 处理时微型端口驱动程序设置来处理微型端口驱动程序，因为不电源管理感知**布尔**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)到**NULL**。
 
 具体取决于网络适配器的功能，可以从任何设备电源状态，包括 highest-powered 状态 (D0) 发生网络唤醒事件。
 
 ### <a name="network-wake-up-frames"></a>网络唤醒帧
 
-如果在初始化期间，微型端口驱动程序指示网络适配器可以发出信号的数据包，包含指定的模式接收唤醒，绑定的协议可以启用基于模式的唤醒网络适配器上的方法，并指定唤醒模式。 若要启用这种类型的唤醒，协议驱动程序设置 NDIS\_PNP\_唤醒\_向上\_模式\_中的匹配项标志[OID\_PNP\_启用\_唤醒\_向上](https://msdn.microsoft.com/library/windows/hardware/ff569775)。
+如果在初始化期间，微型端口驱动程序指示网络适配器可以发出信号的数据包，包含指定的模式接收唤醒，绑定的协议可以启用基于模式的唤醒网络适配器上的方法，并指定唤醒模式。 若要启用这种类型的唤醒，协议驱动程序设置 NDIS\_PNP\_唤醒\_向上\_模式\_中的匹配项标志[OID\_PNP\_启用\_唤醒\_向上](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)。
 
-协议驱动程序将使用[OID\_PNP\_添加\_唤醒\_向上\_模式](https://msdn.microsoft.com/library/windows/hardware/ff569773)来指定唤醒模式，以及一个屏蔽，它指示传入数据包的字节数应使用模式进行比较。 协议驱动程序可以删除唤醒模式与[OID\_PNP\_删除\_唤醒\_向上\_模式](https://msdn.microsoft.com/library/windows/hardware/ff569779)。
+协议驱动程序将使用[OID\_PNP\_添加\_唤醒\_向上\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-add-wake-up-pattern)来指定唤醒模式，以及一个屏蔽，它指示传入数据包的字节数应使用模式进行比较。 协议驱动程序可以删除唤醒模式与[OID\_PNP\_删除\_唤醒\_向上\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-remove-wake-up-pattern)。
 
 有关网络唤醒帧的详细信息，请参阅[网络设备的电源管理](https://go.microsoft.com/fwlink/p/?linkid=9945)。
 

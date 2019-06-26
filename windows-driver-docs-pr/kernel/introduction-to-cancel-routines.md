@@ -8,12 +8,12 @@ keywords:
 - 关联的 IRP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9dfbe1ab41be51e44498c2c0ac5fa80b790920
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 61d7998252a5806166a61ded20e1ee2e32f0497e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369765"
 ---
 # <a name="introduction-to-cancel-routines"></a>Cancel 例程简介
 
@@ -21,13 +21,13 @@ ms.locfileid: "63341053"
 
 
 
-在其中 Irp 可占用处于挂起状态的无限期的时间间隔必须具有一个或多个任何驱动程序[*取消*](https://msdn.microsoft.com/library/windows/hardware/ff540742)例程。 例如，键盘驱动程序可能会无限期地等待用户按任意键。 相反，如果驱动程序永远不会将队列详细 Irp 比它在 5 分钟内完成，它可能不需要*取消*例程。
+在其中 Irp 可占用处于挂起状态的无限期的时间间隔必须具有一个或多个任何驱动程序[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程。 例如，键盘驱动程序可能会无限期地等待用户按任意键。 相反，如果驱动程序永远不会将队列详细 Irp 比它在 5 分钟内完成，它可能不需要*取消*例程。
 
 假设用户模式线程进行的 I/O 请求，已排队的最高级别的设备驱动程序的调度例程，并请求线程终止而 IRP 排入队列。 Irp 排队代表终止应取消线程。 因此，该驱动程序必须设置驱动程序提供*取消*例程在该队列的每个 IRP。
 
 主 IRP 被取消时，将创建关联的 Irp 的驱动程序必须取消它们。 因为关联的 Irp 不与请求相关联的线程，主 IRP*取消*例程负责取消任何关联 Irp 的主 IRP 被取消时。
 
-数*取消*例程任何驱动程序具有依赖于驱动程序的设计。 一般情况下，驱动程序应具有*取消*例程对在其 I/O 处理的 IRP 可能会持有处于挂起状态的无限期的时间间隔中每个阶段。 此类挂起的 Irp 被称为*保持为可取消状态，*。
+数*取消*例程任何驱动程序具有依赖于驱动程序的设计。 一般情况下，驱动程序应具有*取消*例程对在其 I/O 处理的 IRP 可能会持有处于挂起状态的无限期的时间间隔中每个阶段。 此类挂起的 Irp 被称为*保持为可取消状态，* 。
 
 请考虑以下设计原则：
 

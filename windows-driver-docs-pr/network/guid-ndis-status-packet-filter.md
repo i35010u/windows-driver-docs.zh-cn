@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_STATUS_PACKET_FILTER，WDK GUID_NDIS_STATUS_PACKET_FILTER 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54984c805ac7a4fd6e6825df6406d75d967b3cfc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e478345a94283e0f09c2cb806bf6f5fe2b3dbaba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349837"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369649"
 ---
 # <a name="guidndisstatuspacketfilter"></a>GUID_NDIS_STATUS_PACKET_FILTER
 
@@ -21,5 +21,5 @@ NDIS 生成 NDIS_STATUS_PACKET_FILTER 状态指示通知基础驱动程序，可
 
 NDIS 将转换到 WMI GUID_NDIS_STATUS_PACKET_FILTER 事件的 WMI 客户端的状态指示。
 
-包含的数据缓冲区的 NDIS 提供具有 GUID [NDIS_WMI_EVENT_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567900)后跟 ULONG 值的结构。 有关数据包筛选器状态和可能的值的详细信息，请参阅[OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md)。
+包含的数据缓冲区的 NDIS 提供具有 GUID [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)后跟 ULONG 值的结构。 有关数据包筛选器状态和可能的值的详细信息，请参阅[OID_GEN_CURRENT_PACKET_FILTER](oid-gen-current-packet-filter.md)。
 

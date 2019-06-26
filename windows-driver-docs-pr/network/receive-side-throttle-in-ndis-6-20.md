@@ -8,12 +8,12 @@ keywords:
 - RST WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f753335a06a4592e407b92503803623a664d7a0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 30a8e167454faf586344151b63fadfa5179ef2d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353326"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373325"
 ---
 # <a name="receive-side-throttle-in-ndis-620"></a>NDIS 6.20 中的接收端限制
 
@@ -28,17 +28,17 @@ NDIS 6.20 引入了接收端限制 (RST) 增强功能，若要在多媒体应用
 ## <a name="related-topics"></a>相关主题
 
 
-[*MiniportInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559395)
+[*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_isr)
 
-[*MiniportInterruptDPC*](https://msdn.microsoft.com/library/windows/hardware/ff559398)
+[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_interrupt_dpc)
 
-[*MiniportMessageInterrupt*](https://msdn.microsoft.com/library/windows/hardware/ff559407)
+[*MiniportMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt)
 
-[*MiniportMessageInterruptDPC*](https://msdn.microsoft.com/library/windows/hardware/ff559411)
+[*MiniportMessageInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_message_interrupt_dpc)
 
-[**NDIS\_RECEIVE\_THROTTLE\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff567241)
+[**NDIS\_RECEIVE\_THROTTLE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_receive_throttle_parameters)
 
-[**NdisMQueueDpcEx**](https://msdn.microsoft.com/library/windows/hardware/ff563640)
+[**NdisMQueueDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismqueuedpcex)
 
  
 

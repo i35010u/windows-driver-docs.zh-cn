@@ -7,12 +7,12 @@ keywords:
 - 驱动程序开发工具 WDK，bug 检查代码
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad601c2da8e67a4ae181e9f03e7bc2adad2ebf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5c88c6d6373ac6084e88d05012a1cdaee596c9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373715"
 ---
 # <a name="interpreting-a-bug-check-code"></a>解释 Bug 检查代码
 
@@ -62,24 +62,24 @@ The system has been shut down.
 
 ### <a name="span-idbugchecksymbolicnamesspanspan-idbugchecksymbolicnamesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>Bug 检查符号名称
 
-每个 bug 检查代码也有关联的符号名称。 在蓝色屏幕上通常不显示这些名称。 在这些示例中，显示的第一个屏幕[ **bug 检查 0x79** ](https://msdn.microsoft.com/library/windows/hardware/ff559209) (不匹配\_HAL)，而第二部分演示[ **bug 检查 0xC000021A**](https://msdn.microsoft.com/library/windows/hardware/ff560177) (状态\_系统\_进程\_已终止)。
+每个 bug 检查代码也有关联的符号名称。 在蓝色屏幕上通常不显示这些名称。 在这些示例中，显示的第一个屏幕[ **bug 检查 0x79** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x79--mismatched-hal) (不匹配\_HAL)，而第二部分演示[ **bug 检查 0xC000021A**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc000021a--status-system-process-terminated) (状态\_系统\_进程\_已终止)。
 
-您可以故意导致的 bug 检查从内核模式驱动程序的 bug 检查符号将名称传递给[ **KeBugCheck** ](https://msdn.microsoft.com/library/windows/hardware/ff551948)或[ **KeBugCheckEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551961). 这仅应在没有其他选择是可用的情况下完成。
+您可以故意导致的 bug 检查从内核模式驱动程序的 bug 检查符号将名称传递给[ **KeBugCheck** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kebugcheck)或[ **KeBugCheckEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kebugcheckex). 这仅应在没有其他选择是可用的情况下完成。
 
 ### <a name="span-idreadingbugcheckinformationfromthedebuggerspanspan-idreadingbugcheckinformationfromthedebuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>读取在调试器中的 Bug 检查信息
 
 如果附加一个调试器，bug 检查将导致在目标计算机进入调试器。 在这种情况下，蓝色的屏幕，可能不会显示，或可能会显示具有较少文本;此故障的完整详细信息将发送到调试器，在调试器窗口中显示。 有关详细信息，请参阅[使用调试器](using-a-debugger.md)。
 
-可以作为的一部分找到的 bug 检查代码本参考部分[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。 请参阅[Bug 检查代码参考](https://msdn.microsoft.com/library/windows/hardware/hh994433)有关的错误检查的执行和参数的说明。 每个引用页列出了错误检查代码、 文本字符串和四个其他参数显示的与每个 bug 检查。 它还介绍如何诊断错误导致的错误检查和处理错误的可能方法。
+可以作为的一部分找到的 bug 检查代码本参考部分[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。 请参阅[Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)有关的错误检查的执行和参数的说明。 每个引用页列出了错误检查代码、 文本字符串和四个其他参数显示的与每个 bug 检查。 它还介绍如何诊断错误导致的错误检查和处理错误的可能方法。
 
 Bug 的完整列表检查代码，请参阅 Bugcodes.h 文件。 可以在 inc 目录的 Microsoft Windows Driver Kit (WDK) 中找到此文件。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[Bug 检查代码参考](https://msdn.microsoft.com/library/windows/hardware/hh994433)
+[Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)
 
-[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)
+[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 当前状态 WDK Irp
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 61a78aae240bd690a6507e3a3ad9ec555d99f2f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 916542aad7c197f5b060d24a558ce5a89bb55bc4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369222"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369715"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>取消 IRP 时要考虑的要点
 
@@ -28,9 +28,9 @@ ms.locfileid: "63369222"
 
 I/O 管理器保存调用驱动程序的任何时间取消自旋锁*取消*例程。 因此，每个*取消*例程必须：
 
--   调用[ **IoReleaseCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549550)返回控件之前。
+-   调用[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))返回控件之前。
 
--   不调用[ **IoAcquireCancelSpinLock** ](https://msdn.microsoft.com/library/windows/hardware/ff548196)除非它调用**IoReleaseCancelSpinLock**第一个。
+-   不调用[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))除非它调用**IoReleaseCancelSpinLock**第一个。
 
 -   相互调用**IoReleaseCancelSpinLock**它对每次调用**IoAcquireCancelSpinLock**。
 
@@ -46,7 +46,7 @@ I/O 管理器保存调用驱动程序的任何时间取消自旋锁*取消*例�
 
 -   目标设备对象与关联的设备队列中的条目
 
-除非驱动程序管理其自身内部队列的 Irp，其*取消*例程应调用[ **KeRemoveEntryDeviceQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff553163) IRP 来测试是否为中的条目中的输入目标设备对象与关联的设备队列。 驱动程序的*取消*例程*不能*调用**KeRemoveDeviceQueue**或者**KeRemoveByKeyDeviceQueue**因为它不能假定给定的 IRP 是设备队列中的任何特定位置。
+除非驱动程序管理其自身内部队列的 Irp，其*取消*例程应调用[ **KeRemoveEntryDeviceQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremoveentrydevicequeue) IRP 来测试是否为中的条目中的输入目标设备对象与关联的设备队列。 驱动程序的*取消*例程*不能*调用**KeRemoveDeviceQueue**或者**KeRemoveByKeyDeviceQueue**因为它不能假定给定的 IRP 是设备队列中的任何特定位置。
 
 ### <a name="current-state-of-the-input-irp"></a>输入 IRP 的当前状态
 
@@ -58,11 +58,11 @@ I/O 管理器保存调用驱动程序的任何时间取消自旋锁*取消*例�
 
 2.  释放任何数值调节钮锁，它持有，包括系统取消自旋锁。
 
-3.  调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)与给定 IRP。
+3.  调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与给定 IRP。
 
 ### <a name="holding-irps-in-a-cancelable-state"></a>持有 Irp 处于可取消状态
 
-必须调用处于可取消状态持有 IRP 的任何驱动程序例程[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422) ，必须调用[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)到设置其入口点*取消*例程中。 只有这样可以该驱动程序例程调用其他支持例程如**IoStartPacket**， **IoAllocateController**，或**ExInterlockedInsert...列表**例程。
+必须调用处于可取消状态持有 IRP 的任何驱动程序例程[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending) ，必须调用[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)到设置其入口点*取消*例程中。 只有这样可以该驱动程序例程调用其他支持例程如**IoStartPacket**， **IoAllocateController**，或**ExInterlockedInsert...列表**例程。
 
 随后处理可取消 Irp 的任何驱动程序例程必须检查是否 IRP 已经开始来满足请求的操作之前已取消。 必须调用该例程**IoSetCancelRoutine**重置为其入口点*取消*到日常**NULL** IRP 中。 该例程仅然后可以开始处理输入 IRP 其 I/O。
 
@@ -72,13 +72,13 @@ I/O 管理器保存调用驱动程序的任何时间取消自旋锁*取消*例�
 
 ### <a name="canceling-an-irp"></a>正在取消 IRP
 
-任何更高级别的驱动程序可以调用[ **IoCancelIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548338) IRP 分配并传递上以进行进一步处理较低级别的驱动程序的使用。 但是，此类驱动程序不能假定给定的 IRP 将完成，状态\_低级驱动程序被取消。
+任何更高级别的驱动程序可以调用[ **IoCancelIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp) IRP 分配并传递上以进行进一步处理较低级别的驱动程序的使用。 但是，此类驱动程序不能假定给定的 IRP 将完成，状态\_低级驱动程序被取消。
 
 ### <a name="synchronization"></a>同步
 
 驱动程序可以 （或必须具体取决于它的设计） 维护其设备的扩展名来跟踪 Irp 的可取消状态中的其他状态信息。 如果此状态由驱动程序例程在 IRQL 运行共享&lt;= 调度\_级别，应使用驱动程序分配并初始化旋转锁保护的共享的数据。
 
-该驱动程序应管理其收购和版本的系统仔细取消自旋锁和自旋锁。 它应为可能的最短时间间隔保存系统取消自旋锁。 在访问前可取消 IRP，这样的驱动程序应始终检查返回值[ **IoSetCancelRoutine** ](https://msdn.microsoft.com/library/windows/hardware/ff549674)以确定是否*取消*例程已运行 （或即将运行）;如果因此，它应让*取消*例程完成 IRP。
+该驱动程序应管理其收购和版本的系统仔细取消自旋锁和自旋锁。 它应为可能的最短时间间隔保存系统取消自旋锁。 在访问前可取消 IRP，这样的驱动程序应始终检查返回值[ **IoSetCancelRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)以确定是否*取消*例程已运行 （或即将运行）;如果因此，它应让*取消*例程完成 IRP。
 
 如果设备驱动程序维护有关与其 ISR 共享的各种驱动程序例程的可取消 Irp 的状态信息，这些其他例程必须与 ISR 同步对共享状态的访问 仅驱动程序提供*SynchCritSection*例程可以访问的多处理器安全的方式与 ISR 共享状态信息。
 

@@ -18,12 +18,12 @@ keywords:
 - 函数代码 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88fc1eb1c4616afa4c0765d8e24601f922a7db54
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09de7bb9b754ab73e264c7a1f0bafff75df7f076
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374113"
 ---
 # <a name="writing-dispatch-routines"></a>编写 Dispatch 例程
 
@@ -31,7 +31,7 @@ ms.locfileid: "63355988"
 
 
 
-该驱动程序将注册要处理的调度例程中处理所有 I/O 请求数据包 (IRP) 开始[IRP 主要函数代码](https://msdn.microsoft.com/library/windows/hardware/ff550710)(<strong>IRP\_MJ\_* XXX</strong><em>).在驱动程序[ </em> *DriverEntry* <em> ](<https://msdn.microsoft.com/library/windows/hardware/ff544113>)例程将导出一个调度表中的驱动程序中的调度例程的入口点[ </em> *驱动程序\_对象** ](<https://msdn.microsoft.com/library/windows/hardware/ff544174>)结构。
+该驱动程序将注册要处理的调度例程中处理所有 I/O 请求数据包 (IRP) 开始[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)(<strong>IRP\_MJ\_* XXX</strong><em>).在驱动程序[ </em> *DriverEntry* <em> ](<https://msdn.microsoft.com/library/windows/hardware/ff544113>)例程将导出一个调度表中的驱动程序中的调度例程的入口点[ </em> *驱动程序\_对象** ](<https://msdn.microsoft.com/library/windows/hardware/ff544174>)结构。
 
 驱动程序可以为每个主要的 I/O 函数代码，它处理提供单独的调度例程。 或者，可以编写调度例程来处理多个 I/O 函数代码。
 

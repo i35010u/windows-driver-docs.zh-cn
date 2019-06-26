@@ -7,12 +7,12 @@ keywords:
 - 媒体扩展性 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea8345740d9d5b8359369394f1fb69f5b7ddeab9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7364adcd5a0eccf5175322d0941b74b0a0bdd8a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367571"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373988"
 ---
 # <a name="media-extensibility-in-ndis-620"></a>NDIS 6.20 中的媒体可扩展性
 
@@ -28,7 +28,7 @@ NDIS 6.20 及更高版本提供*原始 IP*对原始 IP (NdisMediumIP) 帧具有�
 
 NDIS 6.20 引入了对媒体特定带外 (OOB) 数据的增强的支持。 媒体特定信息具有 Microsoft 分配的标记。 NDIS 6.20 及更高版本支持多个媒体的特定信息标记。
 
-有关媒体的特定信息，详细了解媒体扩展的详细信息请参阅[OID\_代\_物理\_中等\_EX](https://msdn.microsoft.com/library/windows/hardware/ff569622)和[**NDIS\_NBL\_媒体\_特定\_信息\_EX**](https://msdn.microsoft.com/library/windows/hardware/ff566518)。
+有关媒体的特定信息，详细了解媒体扩展的详细信息请参阅[OID\_代\_物理\_中等\_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium-ex)和[**NDIS\_NBL\_媒体\_特定\_信息\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_nbl_media_specific_information_ex)。
 
  
 

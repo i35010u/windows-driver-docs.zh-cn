@@ -4,12 +4,12 @@ description: 固定 MDL 检查驱动程序选项监视驱动程序如何处理�
 ms.assetid: 2FA69B7C-3EF4-4660-84D4-5108C97E395F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87a4da5d4efe8b8d26ea6fdf77a3b6897d240a4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 216fd8e5dce96044a20df927a8498323015eaec9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373711"
 ---
 # <a name="invariant-mdl-checking-for-driver"></a>面向驱动程序的固定 MDL 检查
 
@@ -20,7 +20,7 @@ ms.locfileid: "63356533"
 
  
 
-固定 MDL 检查驱动程序选项执行更密集的窗体的比检查固定 MDL [MDL 堆栈检查固定](invariant-mdl-checking-for-stack.md)选项。 当驱动程序的固定 MDL 检查处于活动状态时，在每次调用之间验证缓冲区不变性[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336)并[ **IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)例程。
+固定 MDL 检查驱动程序选项执行更密集的窗体的比检查固定 MDL [MDL 堆栈检查固定](invariant-mdl-checking-for-stack.md)选项。 当驱动程序的固定 MDL 检查处于活动状态时，在每次调用之间验证缓冲区不变性[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)并[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)例程。
 
 每次使用 IRP 时出现一个新的固定 MDL 缓冲区，驱动程序验证程序计算的缓冲区内容签名，并将其存储在其内部数据库中。 当驱动程序验证程序遇到它具有前面介绍的固定 MDL 缓冲区时，它将验证该缓冲区的内容未更改，通过比较在数据库中具有对当前固定 MDL 缓冲区内容计算签名的签名。
 

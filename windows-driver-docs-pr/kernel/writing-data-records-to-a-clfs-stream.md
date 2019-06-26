@@ -12,12 +12,12 @@ keywords:
 - 缓冲区 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f817b8406a1d5ad041ba418004b09e1ed9f13e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05dc22bf9d914f6ba08c3efd1f0ecf4fbf9eb302
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356007"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374121"
 ---
 # <a name="writing-data-records-to-a-clfs-stream"></a>将数据记录写入 CLFS 流
 
@@ -27,15 +27,15 @@ ms.locfileid: "63356007"
 
 有两种类型的公用日志文件系统 (CLFS) 流中的记录： 数据记录，并重新开始记录。 本主题说明如何将数据记录写入到流。 有关如何编写重启记录的信息，请参阅[重新启动将记录写入 CLFS Stream](writing-restart-records-to-a-clfs-stream.md)。
 
-可以将数据记录写入 CLFS 流之前，必须通过调用创建封送处理区域[ **ClfsCreateMarshallingArea**](https://msdn.microsoft.com/library/windows/hardware/ff541520)。 然后可以将记录追加到封送处理区域 （这是在易失性内存中），和 CLFS 将定期刷新记录到稳定存储。
+可以将数据记录写入 CLFS 流之前，必须通过调用创建封送处理区域[ **ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfscreatemarshallingarea)。 然后可以将记录追加到封送处理区域 （这是在易失性内存中），和 CLFS 将定期刷新记录到稳定存储。
 
 有多个变体向流写入数据记录。 例如，可以保留空间提前，然后写入几条记录，或者您可以编写记录，而保留空间。 你可以请求的记录写入到封送处理区域会立即排队到稳定存储中，也可以让 CLFS 队列根据其策略的记录。
 
 对于编写数据记录的所有变体，完成以下步骤。
 
-1.  创建一个或多个数组[ **CLFS\_编写\_条目**](https://msdn.microsoft.com/library/windows/hardware/ff541891)结构。 写入条目的每个结构将指向的缓冲区已填充的记录数据。
+1.  创建一个或多个数组[ **CLFS\_编写\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry)结构。 写入条目的每个结构将指向的缓冲区已填充的记录数据。
 
-2.  调用[ **ClfsReserveAndAppendLog** ](https://msdn.microsoft.com/library/windows/hardware/ff541723)或[ **ClfsReserveAndAppendLogAligned**](https://msdn.microsoft.com/library/windows/hardware/ff541726)。
+2.  调用[ **ClfsReserveAndAppendLog** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreserveandappendlog)或[ **ClfsReserveAndAppendLogAligned**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsreserveandappendlogaligned)。
 
 以下各小节中的表显示如何设置的参数**ClfsReserveAndAppendLog**上向流写入一条记录的多个变量。
 
@@ -51,7 +51,7 @@ ms.locfileid: "63356007"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +61,7 @@ ms.locfileid: "63356007"
 </tr>
 <tr class="even">
 <td><p><em>rgWriteEntries</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff541891" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541891)"> <strong>CLFS_WRITE_ENTRY</strong> </a>结构。</p></td>
+<td><p>一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_write_entry)"> <strong>CLFS_WRITE_ENTRY</strong> </a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cWriteEntries</em></p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "63356007"
 </tr>
 <tr class="odd">
 <td><p><em>plsn</em></p></td>
-<td><p>一个指向<a href="https://msdn.microsoft.com/library/windows/hardware/ff541824" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff541824)"> <strong>CLFS_LSN</strong> </a>结构。 （这是记录的一个输出参数，它接收写入的 LSN）。</p></td>
+<td><p>一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_lsn" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cls_lsn)"> <strong>CLFS_LSN</strong> </a>结构。 （这是记录的一个输出参数，它接收写入的 LSN）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -153,7 +153,7 @@ ms.locfileid: "63356007"
 
  
 
-**请注意**  封送处理区域中保留的空间的另一个方法是调用[ **ClfsAlignReservedLog** ](https://msdn.microsoft.com/library/windows/hardware/ff540779)跟[ **ClfsAllocReservedLog**](https://msdn.microsoft.com/library/windows/hardware/ff540782).
+**请注意**  封送处理区域中保留的空间的另一个方法是调用[ **ClfsAlignReservedLog** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsalignreservedlog)跟[ **ClfsAllocReservedLog**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-clfsallocreservedlog).
 
  
 

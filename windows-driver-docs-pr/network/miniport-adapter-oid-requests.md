@@ -9,12 +9,12 @@ keywords:
 - 对象标识符 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8aaa235a875f479dae951da3f5ec63c23e971b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a442f4eb223c43108279df4ba2d8c77aec267972
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56542049"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373948"
 ---
 # <a name="miniport-adapter-oid-requests"></a>微型端口适配器 OID 请求
 
@@ -22,7 +22,7 @@ ms.locfileid: "56542049"
 
 
 
-NDIS 定义用于标识微型端口适配器参数，包括操作参数，如设备特征、 可配置的设置和统计信息的对象标识符 (OID) 值。 有关 Oid 的详细信息，请参阅[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)。
+NDIS 定义用于标识微型端口适配器参数，包括操作参数，如设备特征、 可配置的设置和统计信息的对象标识符 (OID) 值。 有关 Oid 的详细信息，请参阅[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 NDIS 6.1 和更高版本的微型端口驱动程序，提供 NDIS[直接 OID 请求接口](direct-oid-request-interface-in-ndis-6-1.md)。 *直接 OID 请求路径*支持查询或频繁设置的 OID 请求。 直接 OID 请求接口是可选的 NDIS 驱动程序。
 

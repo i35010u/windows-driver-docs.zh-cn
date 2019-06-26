@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a0a8e235b334e9ff7d47710f978ad2f11ed215
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42262ae408d995d3bc25626f7c8795bc899a5474
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380637"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373059"
 ---
 # <a name="kspropertydvdcopydeckey2"></a>KSPROPERTY\_DVDCOPY\_DEC\_KEY2
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDCOPY\_DEC\_KEY2 属性检索的第二个总线密钥更高版本�
 <td><p>否</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff567635" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567635)"><strong>KS_DVDCOPY_BUSKEY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_buskey" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_BUSKEY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_buskey)"><strong>KS_DVDCOPY_BUSKEY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDCOPY\_DEC\_KEY2 属性检索的第二个总线密钥更高版本�
 <a name="remarks"></a>备注
 -------
 
-第二个总线密钥的详细信息，请参阅[DVD 版权保护](https://msdn.microsoft.com/library/windows/hardware/ff558736)。
+第二个总线密钥的详细信息，请参阅[DVD 版权保护](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDCOPY\_DEC\_KEY2 属性检索的第二个总线密钥更高版本�
 ## <a name="see-also"></a>请参阅
 
 
-[**KS\_DVDCOPY\_BUSKEY**](https://msdn.microsoft.com/library/windows/hardware/ff567635)
+[**KS\_DVDCOPY\_BUSKEY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_buskey)
 
  
 

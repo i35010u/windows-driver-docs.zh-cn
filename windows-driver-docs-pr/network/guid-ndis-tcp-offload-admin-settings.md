@@ -6,12 +6,12 @@ keywords:
 - GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS，WDK GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e530dc8b9645ec1ef24e7cd62df37316e830c2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 702cc30eb8ba56c7b82406205f262e758839e59b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349855"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369654"
 ---
 # <a name="guidndistcpoffloadadminsettings"></a>GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS
 
@@ -19,7 +19,7 @@ WMI 客户端可以使用 GUID_NDIS_TCP_OFFLOAD_ADMIN_SETTINGS 集 GUID 以设�
 
 NDIS 转换到此 GUID [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID NDIS 端口的当前配置设置。 提供任务卸载的任何类型的支持的 NDIS 微型端口驱动程序必须支持此 OID。
 
-WMI 输入的缓冲区包含[NDIS_WMI_SET_HEADER](https://msdn.microsoft.com/library/windows/hardware/ff567904)结构，后跟[NDIS_OFFLOAD_PARAMETERS](https://msdn.microsoft.com/library/windows/hardware/ff566706)结构。
+WMI 输入的缓冲区包含[NDIS_WMI_SET_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_set_header)结构，后跟[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构。
 
 端口参数的详细信息，请参阅[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)。
 

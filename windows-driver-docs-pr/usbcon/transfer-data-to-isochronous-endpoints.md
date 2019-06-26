@@ -3,12 +3,12 @@ Description: 本主题介绍客户端驱动程序可以如何生成 USB 请求�
 title: 如何将数据传输到 USB 常时等量终结点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7895644493e58c4d72ce0a7054007d12655b26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24bcfa23b9930ed85d4c2a99b2f813b37cd34ea0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379913"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369543"
 ---
 # <a name="how-to-transfer-data-to-usb-isochronous-endpoints"></a>如何将数据传输到 USB 常时等量终结点
 
@@ -29,19 +29,19 @@ ms.locfileid: "63379913"
 
 客户端驱动程序将开始创建请求 URB 并提交到 USB 驱动程序堆栈 URB 等时传输。 由一个 USB 驱动程序堆栈中较低的驱动程序处理请求。 一旦收到 URB，USB 驱动程序堆栈请求执行一系列验证和计划的事务。 对于全速运行，在网络上的单个事务中包含同步总线每个间隔中传输数据包。 某些高速设备总线间隔中允许多个事务。 在这种情况下，客户端驱动程序可以发送或接收单个请求 (URB) 中同步的数据包中的更多数据。 SuperSpeed 设备支持多个事务，并且迸发传输，每个总线间隔允许更多的字节数。 突发传输有关的详细信息，请参阅 USB 3.0 规范页 9-42。
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 同步传输创建一个请求之前，必须具有有关等时终结点的打开的管道的信息。
 
-使用 Windows 驱动程序模型 (WDM) 例程的客户端驱动程序具有的管道信息之一[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)结构[ **USBD\_接口\_列表\_条目**](https://msdn.microsoft.com/library/windows/hardware/ff539076)数组。 该数组中的驱动程序的上一个请求，若要选择的配置或设备中的接口，获取客户端驱动程序。
+使用 Windows 驱动程序模型 (WDM) 例程的客户端驱动程序具有的管道信息之一[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构[ **USBD\_接口\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_usbd_interface_list_entry)数组。 该数组中的驱动程序的上一个请求，若要选择的配置或设备中的接口，获取客户端驱动程序。
 
-Windows 驱动程序框架 (WDF) 客户端驱动程序必须获得对框架的目标的管道对象，并调用的引用[ **WdfUsbTargetPipeGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff551142)若要获取管道中的信息[**WDF\_USB\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff553037)结构。
+Windows 驱动程序框架 (WDF) 客户端驱动程序必须获得对框架的目标的管道对象，并调用的引用[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)若要获取管道中的信息[**WDF\_USB\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)结构。
 
 根据管道的信息，确定此集的信息：
 
 -   主控制器可以向每个数据包中的管道发送多少数据。
 
-    客户端驱动程序可以在请求中发送的数据量不能超过的最大主机控制器可以发送或从终结点接收的字节数。 指示最大字节数**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)和[**WDF\_USB\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff553037)结构。 USB 驱动程序堆栈集**MaximumPacketSize**值选择配置或选择接口请求过程。
+    客户端驱动程序可以在请求中发送的数据量不能超过的最大主机控制器可以发送或从终结点接收的字节数。 指示最大字节数**MaximumPacketSize**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)和[**WDF\_USB\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)结构。 USB 驱动程序堆栈集**MaximumPacketSize**值选择配置或选择接口请求过程。
 
     对于全速设备**MaximumPacketSize**派生自的第一个 11 位**wMaxPacketSize**终结点描述符，其指示终结点可以字节的最大数目的字段发送或接收在事务中。 对于全速设备控制器会根据总线时间间隔发送一个事务。
 
@@ -116,7 +116,7 @@ Windows 驱动程序框架 (WDF) 客户端驱动程序必须获得对框架的�
 1.  获取每个同步的数据包的大小。
 2.  确定每个框架等时数据包数。
 3.  计算同步所需保存整个传输缓冲区的数据包的数。
-4.  分配[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构来描述传输的详细信息。
+4.  分配[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构来描述传输的详细信息。
 5.  指定每个同步的数据包，如数据包偏移量的详细信息。
 
 有关完整的代码示例来了解发送等时转移请求，USBSAMP。
@@ -161,32 +161,32 @@ Windows 驱动程序框架 (WDF) 客户端驱动程序必须获得对框架的�
 
 ### <a href="" id="allocate-an-urb-structure-to-describe-the-details-of-the-transfer-"></a>步骤 4:分配一个 URB 结构，以描述传输的详细信息。
 
-1.  分配[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)中非分页缓冲池的结构。
+1.  分配[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)中非分页缓冲池的结构。
 
-    如果您的客户端驱动程序使用 WDM 例程，该驱动程序必须调用[ **USBD\_IsochUrbAllocate** ](https://msdn.microsoft.com/library/windows/hardware/hh406231)如果您有用于 Windows 8 的 Windows Driver Kit (WDK)。 客户端驱动程序可以使用该例程以面向 Windows Vista 和更高版本的 Windows 操作系统。 如果您不具有 Windows 8 的 WDK 或如果客户端驱动程序旨在用于早期版本的操作系统，你可以通过调用分配的结构在堆栈上或在非分页缓冲池[ **ExAllocatePoolWithTag**](https://msdn.microsoft.com/library/windows/hardware/ff544520).
+    如果您的客户端驱动程序使用 WDM 例程，该驱动程序必须调用[ **USBD\_IsochUrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)如果您有用于 Windows 8 的 Windows Driver Kit (WDK)。 客户端驱动程序可以使用该例程以面向 Windows Vista 和更高版本的 Windows 操作系统。 如果您不具有 Windows 8 的 WDK 或如果客户端驱动程序旨在用于早期版本的操作系统，你可以通过调用分配的结构在堆栈上或在非分页缓冲池[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag).
 
-    WDF 客户端驱动程序可以调用[ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)方法来分配内存[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构。
+    WDF 客户端驱动程序可以调用[ **WdfUsbTargetDeviceCreateIsochUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)方法来分配内存[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构。
 
-2.  **UrbIsochronousTransfer**的成员[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构指向[  **\_URB\_ISOCH\_传输**](https://msdn.microsoft.com/library/windows/hardware/ff540414)介绍同步传输的详细信息的结构。 初始化以下**UrbIsochronousTransfer**成员，如下所示：
-    -   设置**UrbIsochronousTransfer.Hdr.Length**成员添加到 URB 的大小。 若要获取 URB 大小，请调用[**获取\_ISO\_URB\_大小**](https://msdn.microsoft.com/library/windows/hardware/ff537144)宏，并指定数据包数。
+2.  **UrbIsochronousTransfer**的成员[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构指向[  **\_URB\_ISOCH\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)介绍同步传输的详细信息的结构。 初始化以下**UrbIsochronousTransfer**成员，如下所示：
+    -   设置**UrbIsochronousTransfer.Hdr.Length**成员添加到 URB 的大小。 若要获取 URB 大小，请调用[**获取\_ISO\_URB\_大小**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-get_iso_urb_size)宏，并指定数据包数。
     -   设置**UrbIsochronousTransfer.Hdr.Function**成员添加到`URB_FUNCTION_ISOCH_TRANSFER`。
     -   设置**UrbIsochronousTransfer.NumberOfPackets**成员添加到同步数据包数。
     -   设置**UrbIsochronousTransfer.PipeHandle**到与该终结点相关联的管道的不透明句柄。 请确保管道句柄使用的通用串行总线 (USB) 驱动程序堆栈的 USBD 管道句柄。
 
-        若要获取 USBD 管道句柄，WDF 客户端驱动程序可以调用[ **WdfUsbTargetPipeWdmGetPipeHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff551162)方法并指定框架的管道对象的 WDFUSBPIPE 句柄。 WDM 客户端驱动程序必须使用相同的句柄中获得**PipeHandle**的成员[ **USBD\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff539114)结构。
+        若要获取 USBD 管道句柄，WDF 客户端驱动程序可以调用[ **WdfUsbTargetPipeWdmGetPipeHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle)方法并指定框架的管道对象的 WDFUSBPIPE 句柄。 WDM 客户端驱动程序必须使用相同的句柄中获得**PipeHandle**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构。
 
     -   指定传输的方向。 设置**UrbIsochronousTransfer.TransferFlags**到 USBD\_传输\_方向\_中为同步传输 （从设备读取）;USBD\_传输\_方向\_出以进行同步出传输 （写入到设备）。
     -   指定 USBD\_启动\_ISO\_传输\_中的标志，ASAP **UrbIsochronousTransfer**。TransferFlags。 该标志指示 USB 驱动程序堆栈中的下一步的相应帧发送传输。 第一次客户端驱动程序将发送此管道等时 URB，驱动程序堆栈等时在发送数据包 URB 就立即可以。 USB 驱动程序堆栈跟踪要用于该管道上的后续 URBs 下一帧。 如果在发送使用 USBD 后续同步 URB 延迟\_启动\_ISO\_传输\_ASAP 标志，驱动程序堆栈认为该 URB 将晚的部分或全部数据包并不会传输这些数据包。
 
         USB 驱动程序堆栈重置其 USBD\_启动\_ISO\_传输\_尽快开始帧跟踪，如果堆栈不会收到 1024年框架等时 URB 完成该管道上一 URB 后。 而不是指定 USBD\_启动\_ISO\_传输\_ASAP 标志，可以指定起始帧。 有关详细信息，请参阅“备注”部分。
 
-    -   指定的传输缓冲区和其大小。 可以将指针设置为指向的缓冲区**UrbIsochronousTransfer.TransferBuffer**或[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414)描述中的缓冲区**UrbIsochronousTransfer.TransferBufferMDL**。
+    -   指定的传输缓冲区和其大小。 可以将指针设置为指向的缓冲区**UrbIsochronousTransfer.TransferBuffer**或[ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl)描述中的缓冲区**UrbIsochronousTransfer.TransferBufferMDL**。
 
-        若要检索[ **MDL** ](https://msdn.microsoft.com/library/windows/hardware/ff554414) WDF 客户端驱动程序可以调用为传输缓冲区[ **WdfRequestRetrieveOutputWdmMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff550021)或[ **WdfRequestRetrieveInputWdmMdl**](https://msdn.microsoft.com/library/windows/hardware/ff550016)，取决于传输的方向。
+        若要检索[ **MDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_mdl) WDF 客户端驱动程序可以调用为传输缓冲区[ **WdfRequestRetrieveOutputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)或[ **WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)，取决于传输的方向。
 
-### <a href="" id="specify-the-details-of-each-isochronous-packet-in-the-transfer-"></a>步骤 5:指定在传输中的每个同步的数据包的详细信息。
+### <a href="" id="specify-the-details-of-each-isochronous-packet-in-the-transfer-"> </a>步骤 5:指定在传输中的每个同步的数据包的详细信息。
 
-USB 驱动程序堆栈分配的新[ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构，它是足够大以保存每个同步的数据包，但不是包含在包中的数据有关的信息。 在中**URB**结构**UrbIsochronousTransfer.IsoPacket**成员是一个数组[ **USBD\_ISO\_数据包\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff539084)描述每个同步数据包在传输中的详细信息。 数据包必须是连续的。 数组中的元素数必须为同步 URB 中指定的数据包数**UrbIsochronousTransfer.NumberOfPackets**成员。
+USB 驱动程序堆栈分配的新[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构，它是足够大以保存每个同步的数据包，但不是包含在包中的数据有关的信息。 在中**URB**结构**UrbIsochronousTransfer.IsoPacket**成员是一个数组[ **USBD\_ISO\_数据包\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_iso_packet_descriptor)描述每个同步数据包在传输中的详细信息。 数据包必须是连续的。 数组中的元素数必须为同步 URB 中指定的数据包数**UrbIsochronousTransfer.NumberOfPackets**成员。
 
 为高速传输，数组中的每个元素将在一个 microframe 一个同步数据包相关联。 有关最快速度，每个元素与其中一个同步数据包传输在一个框架中相关联。
 
@@ -241,16 +241,16 @@ Microframe 8 IsoPacket [7].Offset = 315000
 Total length transferred is 360,000 bytes.
 ```
 
-**UrbIsochronousTransfer.IsoPacket\[我\]**。长度成员并不表示等时 URB 每个数据包的长度。 **IsoPacket\[我\]。长度**USB 驱动程序堆栈，以指示实际的同步在从设备接收的字节数由更新传输。 有关将忽略的传输出等时，驱动程序堆栈中设置的值**IsoPacket\[我\]。长度**。
+**UrbIsochronousTransfer.IsoPacket\[我\]** 。长度成员并不表示等时 URB 每个数据包的长度。 **IsoPacket\[我\]。长度**USB 驱动程序堆栈，以指示实际的同步在从设备接收的字节数由更新传输。 有关将忽略的传输出等时，驱动程序堆栈中设置的值**IsoPacket\[我\]。长度**。
 
 <a name="remarks"></a>备注
 -------
 
 **为传输指定起始 USB 帧数**
 
-**UrbIsochronousTransfer.StartFrame** URB 成员指定传输开始 USB 帧数。 始终是客户端驱动程序提交 URB 的时间和 USB 驱动程序堆栈处理 URB 的时间之间的延迟。 因此，客户端驱动程序应始终指定晚于驱动程序提交 URB 时的当前帧的开始帧。 若要检索当前的帧数，客户端驱动程序可以发送 URB\_函数\_获取\_当前\_帧\_编号 USB 驱动程序堆栈的请求 ([  **\_URB\_获取\_当前\_帧\_数**](https://msdn.microsoft.com/library/windows/hardware/ff540401))。
+**UrbIsochronousTransfer.StartFrame** URB 成员指定传输开始 USB 帧数。 始终是客户端驱动程序提交 URB 的时间和 USB 驱动程序堆栈处理 URB 的时间之间的延迟。 因此，客户端驱动程序应始终指定晚于驱动程序提交 URB 时的当前帧的开始帧。 若要检索当前的帧数，客户端驱动程序可以发送 URB\_函数\_获取\_当前\_帧\_编号 USB 驱动程序堆栈的请求 ([  **\_URB\_获取\_当前\_帧\_数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_get_current_frame_number))。
 
-对同步传输的绝对差异的当前帧并**StartFrame**值必须小于 USBD\_ISO\_启动\_帧\_范围。 如果 StartFrame 不适当的范围内，USB 驱动程序堆栈设置**状态**URB 标头的成员 (请参阅[  **\_URB\_标头**](https://msdn.microsoft.com/library/windows/hardware/ff540409)) 到USBD\_状态\_错误\_启动\_帧，而丢弃整个 URB。
+对同步传输的绝对差异的当前帧并**StartFrame**值必须小于 USBD\_ISO\_启动\_帧\_范围。 如果 StartFrame 不适当的范围内，USB 驱动程序堆栈设置**状态**URB 标头的成员 (请参阅[  **\_URB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_header)) 到USBD\_状态\_错误\_启动\_帧，而丢弃整个 URB。
 
 **StartFrame** URB 中指定的值指示在其中传输 URB 第一个同步数据包的帧号码。 后续数据包的帧号码依赖于总线速度和轮询终结点的期的值。 例如，有关完整的速度传输，第一个数据包传输在**StartFrame**; 第二个中传输数据包**StartFrame**+ 1，依此类推。 USB 驱动程序堆栈中传输同步数据包，完整的速度，在帧中的方式显示，如下所示：
 

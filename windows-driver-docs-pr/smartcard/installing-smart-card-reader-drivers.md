@@ -7,12 +7,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7ac7a11bca8f6712e4ffcdd872c30beace569d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1689b0e29d2cf805324d5631e8c417cb43ab5d8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354759"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356701"
 ---
 # <a name="installing-smart-card-reader-drivers"></a>安装智能卡读卡器驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "63354759"
 
 本部分提供特定于 Microsoft Windows 2000 和更高版本的操作系统的智能卡读卡器驱动程序的安装信息。
 
-提供其自己的读卡器驱动程序的供应商应使每个驱动程序的成员**SmartCardReader**安装程序中的类[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)的驱动程序的 INF 文件。 供应商还必须添加一个部分，若要正确配置的智能卡服务。 例如：
+提供其自己的读卡器驱动程序的供应商应使每个驱动程序的成员**SmartCardReader**安装程序中的类[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的驱动程序的 INF 文件。 供应商还必须添加一个部分，若要正确配置的智能卡服务。 例如：
 
 ```cpp
 [Version]
@@ -47,7 +47,7 @@ UmdfKernelModeClientPolicy=AllowKernelModeClients
 
 没有与安装智能卡读卡器驱动程序相关联的其他任何特殊要求。
 
-有关在 Windows 2000 和更高版本的操作系统的设备安装的常规信息，请参阅[设备安装概述](https://msdn.microsoft.com/library/windows/hardware/ff549455)。
+有关在 Windows 2000 和更高版本的操作系统的设备安装的常规信息，请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
 
 
 

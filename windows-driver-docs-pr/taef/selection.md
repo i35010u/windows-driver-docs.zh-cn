@@ -4,12 +4,12 @@ description: 选择
 ms.assetid: 5DFE5B52-4D58-491c-9363-95E4A2FD680C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c427c3fac66724743d68d6096cf0423eed5566
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c1430cc30c56e2e3d4c28b934560b46808a147b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373000"
 ---
 # <a name="selection"></a>选择
 
@@ -22,7 +22,7 @@ ms.locfileid: "63324783"
 TE <test_binaries> [/select:<selection criteria>]
 ```
 
-本部分介绍 TE.exe **/选择：**<em>选择条件</em>选项。 有关 TE.exe 详细信息，请参阅[TE.exe 命令选项](te-exe-command-line-parameters.md)。
+本部分介绍 TE.exe **/选择：** <em>选择条件</em>选项。 有关 TE.exe 详细信息，请参阅[TE.exe 命令选项](te-exe-command-line-parameters.md)。
 
 选择条件获取全局应用于在命令提示符下提及的所有测试二进制文件。 让我们考虑两个测试\_二进制文件：**示例\\CPP。SelectionCriteria1.Example.dll**并**示例\\CPP。SelectionCriteria2.Example.dll** 。 下面的示例演示属性或元数据，在这些测试中的各种级别指定\_二进制文件。 你还可以通过指定获取这 **/listproperties**命令提示符窗口中的选项。
 
@@ -206,7 +206,7 @@ Te.exe Examples\CPP.SelectionCriteria1.Example.dll Examples\CPP.SelectionCriteri
 ## <a name="span-idsmartquotesspanspan-idsmartquotesspanspan-idsmartquotesspansmart-quotes"></a><span id="Smart_Quotes"></span><span id="smart_quotes"></span><span id="SMART_QUOTES"></span>弯引号
 
 
-如果您通过选择条件从 Outlook 或 Word 文档后通过复制到命令提示符下，可能会弯引号遇到中选择条件。 您可以找到有关哪些弯引号的详细信息位于：<http://en.wikipedia.org/wiki/Smart_quotes>和[弯引号：适用于计算机消耗的文本隐藏的 scourge](https://blogs.msdn.microsoft.com/oldnewthing/20090225-00/?p=19033/)
+如果您通过选择条件从 Outlook 或 Word 文档后通过复制到命令提示符下，可能会弯引号遇到中选择条件。 您可以找到有关哪些弯引号的详细信息位于：<http://en.wikipedia.org/wiki/Smart_quotes>和[弯引号：适用于计算机消耗的文本隐藏的 scourge](https://devblogs.microsoft.com/oldnewthing/?p=19033)
 
 无法轻松地避免弯引号-最佳方法是删除所有"双引号和后将它复制通过在命令提示符下，再重新键入查询的引号一部分单一选择条件中的引号。
 

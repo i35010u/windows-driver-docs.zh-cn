@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aa30e3280f1d33d6f9ad939e20172118b125901
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9236a4bfdf94abe41c1576edd0c58273cd3f2058
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380506"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369577"
 ---
 # <a name="error-handling-in-scsi-miniport-drivers"></a>SCSI 微型端口驱动程序中的错误处理
 
@@ -46,7 +46,7 @@ ms.locfileid: "63380506"
 
 对于数据不足，微型端口驱动程序必须更新 SRB **DataTransferLength**以指示实际传输数据量。
 
-此外，微型端口驱动程序应使用以下准则来记录上述错误的一些通过将传递到 SRB [ **ScsiPortLogError**](https://msdn.microsoft.com/library/windows/hardware/ff564652):
+此外，微型端口驱动程序应使用以下准则来记录上述错误的一些通过将传递到 SRB [ **ScsiPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror):
 
 记录裁量权 SRB 的驱动程序编写器的错误\_状态\_错误。
 
@@ -64,7 +64,7 @@ ms.locfileid: "63380506"
 
 始终为 SRB 记录错误\_状态\_忙是否有硬件错误。
 
-若要记录错误，微型端口驱动程序调用[ **ScsiPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff564652)通过使用以下系统定义的错误或警告代码之一：
+若要记录错误，微型端口驱动程序调用[ **ScsiPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror)通过使用以下系统定义的错误或警告代码之一：
 
 SP\_总线\_奇偶校验\_错误映射到 SRB\_状态\_奇偶校验\_错误
 
@@ -86,7 +86,7 @@ SP\_坏\_转发\_错误 (其中是转发*固件*)
 
 SP\_坏\_转发\_警告
 
-[**ScsiPortLogError** ](https://msdn.microsoft.com/library/windows/hardware/ff564652)分配错误日志数据包，将其设置，并代表微型端口驱动程序在事件日志中记录的 I/O 错误。 系统管理员或用户可以通过检查系统事件日志并，如有必要，重新配置、 修复或出现故障之前更换 HBA 监视 HBA 的条件。
+[**ScsiPortLogError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportlogerror)分配错误日志数据包，将其设置，并代表微型端口驱动程序在事件日志中记录的 I/O 错误。 系统管理员或用户可以通过检查系统事件日志并，如有必要，重新配置、 修复或出现故障之前更换 HBA 监视 HBA 的条件。
 
  
 

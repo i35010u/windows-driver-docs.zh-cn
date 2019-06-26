@@ -4,12 +4,12 @@ description: 本部分介绍如何以指示合并的段
 ms.assetid: 79A37DAB-D9B3-4FA2-8258-05E10BD6E3CB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6455c7521f6abf30750d255c3cb4dd87e3f87e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be13f521a54a65da4942868bb7331321993471f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374827"
 ---
 # <a name="indicating-coalesced-segments"></a>指示合并段
 
@@ -18,7 +18,7 @@ ms.locfileid: "63327764"
 
 SCU 必须：
 
--   通过调用指示[ **NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)。
+-   通过调用指示[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)。
 
 -   如通过网络接收的正常 TCP 段所示。
 
@@ -28,9 +28,9 @@ SCU 必须：
 
      
 
-NIC 或微型端口驱动程序应重新计算的 TCP 和 IPv4 校验和，如果适用之前，该值指示合并的段。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不会不重新计算这些合并段，它必须设置**TcpChecksumValueInvalid**并**IpChecksumValueInvalid**标记中[ **NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567877)结构。 此外，在这种情况下该 NIC 或微型端口驱动程序可能根据需要清零的段中的 TCP 和 IPv4 的标头的校验和值。
+NIC 或微型端口驱动程序应重新计算的 TCP 和 IPv4 校验和，如果适用之前，该值指示合并的段。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不会不重新计算这些合并段，它必须设置**TcpChecksumValueInvalid**并**IpChecksumValueInvalid**标记中[ **NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。 此外，在这种情况下该 NIC 或微型端口驱动程序可能根据需要清零的段中的 TCP 和 IPv4 的标头的校验和值。
 
-NIC 和微型端口驱动程序必须始终设置**IpChecksumSucceeded**并**TcpChecksumSucceeded**标记中[ **NDIS\_TCP\_IP\_CHECKSUM\_NET\_缓冲区\_列表\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff567877)结构之前，该值指示合并的段。
+NIC 和微型端口驱动程序必须始终设置**IpChecksumSucceeded**并**TcpChecksumSucceeded**标记中[ **NDIS\_TCP\_IP\_CHECKSUM\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构之前，该值指示合并的段。
 
 有关合并的规则的详细信息，请参阅[规则合并 TCP/IP 段](rules-for-coalescing-tcp-ip-packets.md)。
 

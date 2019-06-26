@@ -4,12 +4,12 @@ description: 本主题介绍 MB 多模式多运营商，为 Windows 8 集成到�
 ms.assetid: ADEC17E0-9150-4094-8287-CA13C186AB5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a026632670ba0db4d0cbeb8eb512cdf620c4bc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da1ecbd7f3cff1e32c7fc19d4968488d607bcb2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343288"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374058"
 ---
 # <a name="mb-multimode-multicarrier"></a>MB 多模多载波
 
@@ -22,11 +22,11 @@ ms.locfileid: "63343288"
 
 -   [MB 提供程序操作](mb-provider-operations.md)
 
--   [OID\_WWAN\_PREFERRED\_多\_提供程序](https://msdn.microsoft.com/library/windows/hardware/hh831868)
+-   [OID\_WWAN\_PREFERRED\_多\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-multicarrier-providers)
 
--   [**NDIS\_状态\_WWAN\_PREFERRED\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh846211)
+-   [**NDIS\_状态\_WWAN\_PREFERRED\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)
 
--   [**NDIS\_WWAN\_PREFERRED\_多\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/hh831864)
+-   [**NDIS\_WWAN\_PREFERRED\_多\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)
 
  
 

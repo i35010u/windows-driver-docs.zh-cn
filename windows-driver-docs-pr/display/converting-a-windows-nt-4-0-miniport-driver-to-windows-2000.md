@@ -7,12 +7,12 @@ keywords:
 - 转换微型端口驱动程序 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76a5f6f5630961afe00a0c31195eb865cfb3abcb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f882013ada48a4bd7337f99a26748fd98a735432
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384510"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370289"
 ---
 # <a name="converting-a-windows-nt-40-miniport-driver-to-windows-2000"></a>将 Windows NT 4.0 微型端口驱动程序转换为 Windows 2000 版本
 
@@ -22,18 +22,18 @@ ms.locfileid: "63384510"
 
 Windows 2000 和更高版本的微型端口驱动程序，可以轻松地成为很好的 Windows NT 4.0 和以前的微型端口驱动程序。 以下是一些提供插支持，需要在 Windows 2000 和更高版本的微型端口驱动程序所需的更新：
 
--   请参阅[插和视频微型端口驱动程序 （Windows 2000 模式） 中的电源管理](plug-and-play-and-power-management-in-video-miniport-drivers--windows-.md)为必须实现的新函数的列表。 请务必初始化的新成员[**视频\_HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff570505)以指向这些新函数。
+-   请参阅[插和视频微型端口驱动程序 （Windows 2000 模式） 中的电源管理](plug-and-play-and-power-management-in-video-miniport-drivers--windows-.md)为必须实现的新函数的列表。 请务必初始化的新成员[**视频\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)以指向这些新函数。
 
--   更新对调用[ **VideoPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff570320)在你[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff556159)函数。 第四个参数 (*HwContext*) 必须**NULL** Windows 2000 及更高版本。
+-   更新对调用[ **VideoPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportinitialize)在你[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)函数。 第四个参数 (*HwContext*) 必须**NULL** Windows 2000 及更高版本。
 
--   更新你[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)函数。 适用于设备上的可枚举的总线*HwVidFindAdapter*必须按如下所示更改：
+-   更新你[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)函数。 适用于设备上的可枚举的总线*HwVidFindAdapter*必须按如下所示更改：
 
-    -   删除你的大部分设备检测代码。 这是因为调用[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332) Windows 2000 上意味着，即插即用 manager 已检测到设备。
-    -   调用[ **VideoPortGetAccessRanges** ](https://msdn.microsoft.com/library/windows/hardware/ff570302)以获取该设备将响应的总线相对物理地址。 PnP 管理器分配这些地址。
+    -   删除你的大部分设备检测代码。 这是因为调用[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter) Windows 2000 上意味着，即插即用 manager 已检测到设备。
+    -   调用[ **VideoPortGetAccessRanges** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetaccessranges)以获取该设备将响应的总线相对物理地址。 PnP 管理器分配这些地址。
     -   如果该驱动程序支持多个设备类型，确定设备的类型。
-    -   忽略[ *Again* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)参数。 这是因为系统将调用*HwVidFindAdapter*仅一次，每个设备。
+    -   忽略[ *Again* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)参数。 这是因为系统将调用*HwVidFindAdapter*仅一次，每个设备。
 
-    对于如 ISA nonenumerable 总线上的设备，即插即用仍会尝试启动设备，尽管它负责[ *HwVidFindAdapter* ](https://msdn.microsoft.com/library/windows/hardware/ff567332)来确定设备是否实际存在。
+    对于如 ISA nonenumerable 总线上的设备，即插即用仍会尝试启动设备，尽管它负责[ *HwVidFindAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_find_adapter)来确定设备是否实际存在。
 
 -   更新 **。制造业**部分中的驱动程序的 INF 文件以包括设备和供应商 id。 这是必需的以便 PnP 管理器可以将设备与其 INF 文件关联。 2000 及更高版本的的 Windows NT 4.0 的和已更新 Windows 示例 **。制造业**部分按照：
 

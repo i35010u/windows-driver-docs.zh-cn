@@ -8,19 +8,19 @@ keywords:
 - 状态更改 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b676e55353c1dbfd290149bba7ba1d79631ec0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e253c29111f582a92db828895e048c881b6dfbd7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369555"
 ---
 # <a name="power-and-state-changes-in-avstream"></a>AVStream 中的电源和状态更改
 
 
-当收到 AVStream [ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求，它将调用微型驱动程序的[ *AVStrMiniDeviceSetPower* ](https://msdn.microsoft.com/library/windows/hardware/ff554309)回调例程，如果微型驱动程序提供了一个。
+当收到 AVStream [ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求，它将调用微型驱动程序的[ *AVStrMiniDeviceSetPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdevicesetpower)回调例程，如果微型驱动程序提供了一个。
 
-当 AVStream 收到的集请求[ **KSPROPERTY\_连接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff565110)属性，它会调用微型驱动程序的[ *AVStrMiniPinSetDeviceState* ](https://msdn.microsoft.com/library/windows/hardware/ff556359)回调例程，如果微型驱动程序提供了一个。
+当 AVStream 收到的集请求[ **KSPROPERTY\_连接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)属性，它会调用微型驱动程序的[ *AVStrMiniPinSetDeviceState* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdevicestate)回调例程，如果微型驱动程序提供了一个。
 
 当系统从睡眠状态中唤醒时，AVStream 可能调用微型驱动程序的*AVStrMiniPinSetDeviceState*并*AVStrMiniDeviceSetPower*中预期的顺序相反的回调例程。 例如， *AVStrMiniPinSetDeviceState*不能调用*beforeAVStrMiniDeviceSetPower*。
 

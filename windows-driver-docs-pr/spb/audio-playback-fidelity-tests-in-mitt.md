@@ -4,12 +4,12 @@ description: MITT 板上的音频模块用于通过检测正弦波频率准确�
 ms.assetid: 1EAAF6F7-17B6-452F-9273-D7CD1DC33154
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1abc1e6bfc59a5affed22e6104470253a31ce497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a1acb86e466cc1f68e7db4f0ad7a0db966870f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369583"
 ---
 # <a name="audio-playback-fidelity-tests-in-mitt"></a>MITT 中的音频播放保真度测试
 
@@ -27,9 +27,9 @@ MITT 板上的音频模块用于通过检测正弦波频率准确性 （在零�
 ## <a name="before-you-begin"></a>开始之前...
 
 
--   获取 MITT 主板和音频的适配器。 请参阅[购买硬件使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919811)。
--   [下载 MITT 软件包](https://msdn.microsoft.com/library/windows/hardware/dn919810)。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://msdn.microsoft.com/library/windows/hardware/dn919779)。
+-   获取 MITT 主板和音频的适配器。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
+-   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
+-   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
 
 ## <a name="hardware-setup"></a>硬件安装
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d245231dba1c26eb58b808f332229154b63db621
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96b307caf85fbd1ec758c65615b547f49b99cf5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332915"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358871"
 ---
 # <a name="kspropertyaudiosurroundencode"></a>KSPROPERTY\_音频\_环绕\_编码
 
@@ -53,7 +53,7 @@ KSPROPERTY\_音频\_环绕\_编码属性指定是启用还是禁用筛选器的�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_音频\_环绕\_编码属性请求将返回状态\_成功以指示�
 <a name="remarks"></a>备注
 -------
 
-在 Microsoft Windows XP 及更高版本， [KMixer 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#kmixer-system-driver)支持 KSPROPERTY\_音频\_环绕\_编码属性。
+在 Microsoft Windows XP 及更高版本， [KMixer 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#kmixer-system-driver)支持 KSPROPERTY\_音频\_环绕\_编码属性。
 
 如果启用，环绕编码器节点进行编码的 4 个通道输入的流中 （与通道左侧、 右侧、 中心和后置扬声器） 到环绕声编码的立体声输出流。 此输出流可以解码[ **KSNODETYPE\_PROLOGIC\_解码器**](ksnodetype-prologic-decoder.md)节点，例如。 它还可以通过音频设备模拟立体声输出，它们可以连接到外部环绕解码器，直接引导左、 右对齐、 居中，并返回扬声器播放。
 
@@ -93,7 +93,7 @@ KSPROPERTY\_音频\_环绕\_编码属性请求将返回状态\_成功以指示�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSNODETYPE\_PROLOGIC\_编码器**](ksnodetype-prologic-encoder.md)
 

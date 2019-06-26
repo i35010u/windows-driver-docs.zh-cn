@@ -7,12 +7,12 @@ keywords:
 - PCL 5e WDK Unidrv，其他注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48978b4c47b9e42d9dc1e07cb5bb06dffac3089e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 394529ca3723c5cf127ec36efb7f1d5fdabef2cc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360508"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373811"
 ---
 # <a name="hp-gl2-caveats"></a>HP-GL/2 注意事项
 
@@ -30,9 +30,9 @@ ms.locfileid: "63360508"
 
         此外，HP/2 的所有命令都都在驱动程序中硬编码。
 
-3.  在调用中收到的掩码[ **DrvBitBlt** ](https://msdn.microsoft.com/library/windows/hardware/ff556180) ，其他位块传输函数可能无法正常工作。
+3.  在调用中收到的掩码[ **DrvBitBlt** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt) ，其他位块传输函数可能无法正常工作。
 
-4.  当在 Windows 2000 上使用 Windows XP Unidrv 并激活 HP/2 时，某些图形呈现函数可能无法正常工作。 例如，从输出[ **DrvGradientFill** ](https://msdn.microsoft.com/library/windows/hardware/ff556236)调用具有红色和蓝色反转。
+4.  当在 Windows 2000 上使用 Windows XP Unidrv 并激活 HP/2 时，某些图形呈现函数可能无法正常工作。 例如，从输出[ **DrvGradientFill** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)调用具有红色和蓝色反转。
 
 5.  Unidrv 假定打印机硬件支持 ROP 命令。 如果打印机不支持 ROP，某些文档可能无法正确打印。
 

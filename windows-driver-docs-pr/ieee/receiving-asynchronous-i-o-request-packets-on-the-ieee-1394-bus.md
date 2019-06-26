@@ -9,12 +9,12 @@ keywords:
 - 后备存储 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 695ba4688e41c73a1d2b21d3652912a3b9e7f8c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56dd931da8d85aa2079269d49d87970bb863e9d6
+ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370981"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394131"
 ---
 # <a name="receiving-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上接收异步 I/O 请求数据包
 
@@ -171,33 +171,33 @@ ms.locfileid: "63370981"
 
 客户端驱动程序必须执行以下任务中的驱动程序的异步接收通知例程：
 
-* 验证的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)传递给客户端驱动程序的结构。
+* 验证的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)传递给客户端驱动程序的结构。
 * 对于成功的读锁请求 （其中返回的响应数据包通过数据），客户端驱动程序必须：
-  * 通过调用分配的内存[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM 基于客户端驱动程序) 的响应数据包数据。
+  * 通过调用分配的内存[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM 基于客户端驱动程序) 的响应数据包数据。
   * 与要返回的数据填充该缓冲区。
-  * 初始化**ResponseMdl**成员和引用缓冲区。 您可以调用[ **MmInitializeMdl** ](https://msdn.microsoft.com/library/windows/hardware/ff554568)并[ **MmBuildMdlForNonPagedPool**](https://msdn.microsoft.com/library/windows/hardware/ff554498)。
+  * 初始化**ResponseMdl**成员和引用缓冲区。 您可以调用[ **MmInitializeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)并[ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)。
   * 设置 **\*NotificationInfo-&gt;ResponsePacket**以指向缓冲区。
   * 设置 **\*NotificationInfo-&gt;ResponseLength**到返回的响应数据的大小，这是 4 quadlet 读取请求)。
-  * 通过调用分配的内存[ **WdfMemoryCreate** ](https://msdn.microsoft.com/library/windows/hardware/ff548706) ([**ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520) WDM 基于客户端驱动程序) 的响应事件。
+  * 通过调用分配的内存[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ([**ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag) WDM 基于客户端驱动程序) 的响应事件。
   * 设置 **\*NotificationInfo-&gt;ResponseEvent**以指向事件缓冲区。
   * 计划要等待该事件的工作项和响应事件收到信号后释放响应数据包和事件数据缓冲区。
   * 设置**NotificationInfo-&gt;ResponseCode**到 RCODE\_响应\_完成。
 
 ## <a name="asynchronous-receive-in-the-pre-notification-case"></a>在预先通知的情况下接收异步
 
-旧的 1394年总线驱动程序无法正常工作，以完成异步接收事务使用的预先通知机制。 有关详细信息，请参阅[知识库：IEEE 1394 异步接收响应不使用预通知 (2635883) 发送](http://support.microsoft.com/kb/2635883)。
+旧的 1394年总线驱动程序无法正常工作，以完成异步接收事务使用的预先通知机制。 有关详细信息，请参阅[知识库：IEEE 1394 异步接收响应不使用预通知 (2635883) 发送](https://support.microsoft.com/help/2635883/ieee-1394-async-receive-response-not-sent-using-pre-notification)。
 
 对于新的 1394年总线驱动程序，在预先通知的情况下，客户端驱动程序的通知回调例程的预期的行为如下所示：
 
-* 如果**Mdl**并**Fifo**的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)结构均为 NULL，然后预通知正在执行。
-* **ResponseMdl**， **ResponsePacket**， **ResponseLength**，以及**ResponseEvent**成员[ **通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)结构不能为 NULL。
-* **FulNotificationOptions**的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)结构必须指示触发的操作 （读取、 写入、 锁定）通知。 只有一个标志 (NOTIFY\_标志\_AFTER\_读取、 通知\_标志\_AFTER\_写入或通知\_标志\_AFTER\_锁) 可以设置每次调用通知例程时。
+* 如果**Mdl**并**Fifo**的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)结构均为 NULL，然后预通知正在执行。
+* **ResponseMdl**， **ResponsePacket**， **ResponseLength**，以及**ResponseEvent**成员[ **通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)结构不能为 NULL。
+* **FulNotificationOptions**的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)结构必须指示触发的操作 （读取、 写入、 锁定）通知。 只有一个标志 (NOTIFY\_标志\_AFTER\_读取、 通知\_标志\_AFTER\_写入或通知\_标志\_AFTER\_锁) 可以设置每次调用通知例程时。
 * 你可以通过检查确定请求的类型**RequestPacket-&gt;AP\_tCode**异步成员\_数据包结构。 该成员指示 TCODE，指定的请求类型，如阻止或 quadlet 读/写，锁请求的类型。 ASYNC\_中 1394.h 声明数据包结构。
-* **ResponsePacket**并**ResponseEvent**的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)包含指向指针的指针。 因此，必须适当地引用指向您的响应数据包和响应事件。
-* **ResponseLength**的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)指向 ULONG 变量的指针。 因此，您必须设置请求的响应数据长度与读取此类时相应地取消引用成员与锁定请求）。
+* **ResponsePacket**并**ResponseEvent**的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)包含指向指针的指针。 因此，必须适当地引用指向您的响应数据包和响应事件。
+* **ResponseLength**的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)指向 ULONG 变量的指针。 因此，您必须设置请求的响应数据长度与读取此类时相应地取消引用成员与锁定请求）。
 * 1394 客户端驱动程序负责分配的内存的响应数据包和响应事件 （从非分页缓冲池），并传递响应之后释放该内存。 建议的工作项排入队列和工作项应等待响应事件。 该事件发出信号后响应已发送的 1394年总线驱动程序。 客户端驱动程序然后可以释放的内存中工作项。
-* **ResponseCode**中的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)结构必须设置为 1394.h 中定义的 RCODE 值之一。 如果**ResponseCode**设置为 RCODE 以外的任何值\_响应\_完成，1394年总线驱动程序将发送错误响应数据包。 如果读取或锁请求，请求未返回任何数据。 在 Windows 7 中，可能会泄漏内存的详细信息，请参阅[知识库：IEEE 1394 总线驱动程序执行异步通知回调 (2023232) 中的内存泄漏](http://support.microsoft.com/kb/2023232)。
-* 对于读取和锁的请求， **ResponsePacket**的成员[**通知\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537437)结构必须指向要在中返回的数据异步响应数据包。
+* **ResponseCode**中的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)结构必须设置为 1394.h 中定义的 RCODE 值之一。 如果**ResponseCode**设置为 RCODE 以外的任何值\_响应\_完成，1394年总线驱动程序将发送错误响应数据包。 如果读取或锁请求，请求未返回任何数据。 在 Windows 7 中，可能会泄漏内存的详细信息，请参阅[知识库：IEEE 1394 总线驱动程序执行异步通知回调 (2023232) 中的内存泄漏](https://support.microsoft.com/help/2023232)。
+* 对于读取和锁的请求， **ResponsePacket**的成员[**通知\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_notification_info_w2k)结构必须指向要在中返回的数据异步响应数据包。
 
 下面的代码示例显示了工作项实施方案和客户端驱动程序的通知例程。
 

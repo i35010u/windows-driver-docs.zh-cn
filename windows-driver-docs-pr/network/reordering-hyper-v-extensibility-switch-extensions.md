@@ -4,12 +4,12 @@ description: 重新排列 Hyper-V 可扩展交换机扩展的顺序
 ms.assetid: DAB7FAE0-1632-4FD1-8697-48553A51BD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 173fc0057b061ac902046084c8ada6fd16bb6b32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e315791f501d11e65a513e808b70a0e3ace6c4ce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362075"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373291"
 ---
 # <a name="reordering-hyper-v-extensible-switch-extensions"></a>重新排列 Hyper-V 可扩展交换机扩展的顺序
 
@@ -53,11 +53,11 @@ Name: Switch Extensibility Test Extension 1
 ## <a name="related-topics"></a>相关主题
 
 
-[Get-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)
+[Get-VMSwitch](https://docs.microsoft.com/powershell/module/hyper-v/get-vmswitch)
 
-[**Msvm\_EthernetSwitchExtension**](https://msdn.microsoft.com/library/hh850139)
+[**Msvm\_EthernetSwitchExtension**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
 
-[**Msvm\_VirtualEthernetSwitchSettingData**](https://msdn.microsoft.com/library/hh850246)
+[**Msvm\_VirtualEthernetSwitchSettingData**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-virtualethernetswitchsettingdata)
 
  
 

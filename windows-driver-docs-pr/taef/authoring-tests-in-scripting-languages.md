@@ -4,12 +4,12 @@ description: 使用脚本语言创作测试
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 989f1f25825050e7115933e57bd2bd82f5ab90ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c40c7d17649f9cc3274d41b2b33ca766ee1c89a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385156"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373021"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
@@ -26,7 +26,7 @@ ms.locfileid: "63385156"
 ## <a name="span-idscripttestfileformatspanspan-idscripttestfileformatspanspan-idscripttestfileformatspanscript-test-file-format"></a><span id="Script_Test_File_Format"></span><span id="script_test_file_format"></span><span id="SCRIPT_TEST_FILE_FORMAT"></span>脚本的测试文件格式
 
 
-对于脚本语言的测试，TAEF 使用略有修改[Windows 脚本组件](https://msdn.microsoft.com/library/07zhfkh8.aspx)文件格式。 下面的示例显示了包含 VBScript 和 JScript 测试类的测试文件。
+对于脚本语言的测试，TAEF 使用略有修改[Windows 脚本组件](https://docs.microsoft.com/previous-versions/07zhfkh8(v=vs.85))文件格式。 下面的示例显示了包含 VBScript 和 JScript 测试类的测试文件。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -165,7 +165,7 @@ ms.locfileid: "63385156"
 
 之后**组件**元素中，可以使用插入类级别的元数据**TestClassProperty**元素。 如同**ModuleProperty**元素，它必须具有**名称**并**值**属性。
 
-此时，您还可以创建对象并定义对对象的引用。 请参阅[其他组件部分](https://msdn.microsoft.com/library/ye6w00x4.aspx)有关详细信息。 15、 18、 49、 和中的 XML 示例的第 52 行显示了如何引用和初始化**WEX。Logger.Log**对象。
+此时，您还可以创建对象并定义对对象的引用。 请参阅[其他组件部分](https://docs.microsoft.com/previous-versions/ye6w00x4(v=vs.85))有关详细信息。 15、 18、 49、 和中的 XML 示例的第 52 行显示了如何引用和初始化**WEX。Logger.Log**对象。
 
 **&lt;公共&gt;** 元素包含测试脚本模块的测试方法声明。 通过指定测试方法名称中的声明一个测试方法**名称**的属性 **&lt;方法&gt;** 元素。 您还可以添加测试方法属性内的 **&lt;方法&gt;** 元素。 与在其他级别的属性，并不总是这样。 但是，如果将其添加，则必须包括**名称**并**值**属性。
 

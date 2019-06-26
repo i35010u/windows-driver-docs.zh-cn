@@ -8,12 +8,12 @@ keywords:
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3abde686105c8f92a86c9068e75647d1ad58e86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4be7251148867cdeea5a3aee0d158a6c0a1bc94
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363157"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67374845"
 ---
 # <a name="improved-send-and-receive-paths"></a>改进的发送和接收路径
 
@@ -23,7 +23,7 @@ ms.locfileid: "63363157"
 
 NDIS 6.0 发送和接收路径已得到改进，如下所示增强性能：
 
--   NDIS 6.0 和更高版本的驱动程序的所有发送和接收函数可将传输的链接的列表[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构和其关联[**NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)具有单个函数调用的结构。 这种支持的 true multipacket 发送和接收操作大大减少了驱动程序必须进行的函数调用数。
+-   NDIS 6.0 和更高版本的驱动程序的所有发送和接收函数可将传输的链接的列表[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构和其关联[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)具有单个函数调用的结构。 这种支持的 true multipacket 发送和接收操作大大减少了驱动程序必须进行的函数调用数。
 
 -   当调用发送或接收函数，在调度运行的驱动程序\_级别可以指示其 IRQL 到 NDIS。 当 NDIS 随后发出对其他驱动程序的调用堆栈中时，不需要这些驱动程序以测试 IRQL 或将其设置为调度\_级别。 这将减少测试和关键代码部分中设置的 IRQL 与相关联的开销。
 

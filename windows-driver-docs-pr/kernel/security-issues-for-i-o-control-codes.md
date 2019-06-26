@@ -9,12 +9,12 @@ keywords:
 - 安全 WDK Ioctl
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8955025721edc1cd7d545c207fa468b638920bc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 254f1da8b2e4ab3c9cf66c0996de6164d87ec902
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373376"
 ---
 # <a name="security-issues-for-io-control-codes"></a>I/O 控制代码的安全问题
 
@@ -36,13 +36,13 @@ ms.locfileid: "63377293"
 
 -   每当驱动程序的调度例程测试接收的 IOCTL 代码，它们必须始终测试整个 32 位值。
 
--   驱动程序可以使用[ **IoValidateDeviceIoControlAccess** ](https://msdn.microsoft.com/library/windows/hardware/ff550418)动态执行更严格的访问比指定的检查*RequiredAccess*中的值I/O 控制代码定义。
+-   驱动程序可以使用[ **IoValidateDeviceIoControlAccess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)动态执行更严格的访问比指定的检查*RequiredAccess*中的值I/O 控制代码定义。
 
--   永远不会读取或写入数据多于所指向的缓冲区**Irp-&gt;AssociatedIrp.SystemBuffer**可以包含。 因此，始终检查**Parameters.DeviceIoControl.InputBufferLength**或**Parameters.DeviceIoControl.OutputBufferLength**中[ **IO\_堆栈\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff550659)结构，以确定缓冲区限制。
+-   永远不会读取或写入数据多于所指向的缓冲区**Irp-&gt;AssociatedIrp.SystemBuffer**可以包含。 因此，始终检查**Parameters.DeviceIoControl.InputBufferLength**或**Parameters.DeviceIoControl.OutputBufferLength**中[ **IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)结构，以确定缓冲区限制。
 
 -   始终为零将包含数据适用于源自 IOCTL 请求的应用程序的驱动程序分配的缓冲区。 这样一来，您将不会意外地敏感将数据复制到应用程序。
 
--   为方法\_IN\_DIRECT 和方法\_出\_直接传输，请按照上述规则。 此外，检查**NULL**返回值从[ **MmGetSystemAddressForMdlSafe**](https://msdn.microsoft.com/library/windows/hardware/ff554559)，指示映射失败或在提供了长度为零的缓冲区。
+-   为方法\_IN\_DIRECT 和方法\_出\_直接传输，请按照上述规则。 此外，检查**NULL**返回值从[ **MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，指示映射失败或在提供了长度为零的缓冲区。
 
 -   为方法\_都不传输，请按照中提供的规则[使用既不缓冲 Nor 直接 I/O](using-neither-buffered-nor-direct-i-o.md)。
 

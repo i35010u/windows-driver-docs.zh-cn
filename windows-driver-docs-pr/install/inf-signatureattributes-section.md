@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2b8169ce7aa70941ce69783f5a4033d55d1006
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02883650cb3b47982d07f5f76b52b90432a621da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67370035"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes 节
 
@@ -35,7 +35,7 @@ Attribute = Value
 ## <a name="entries"></a>条目
 
 
-<a href="" id="sigtype-signature-type"></a>**SigType=**<em>signature-type</em>  
+<a href="" id="sigtype-signature-type"></a>**SigType=** <em>signature-type</em>  
 定义要应用于该文件的签名或目录属性需求。 应为以下值之一：
 
 -   Elam
@@ -44,7 +44,7 @@ Attribute = Value
 -   DRM
 -   WindowsHello
 
-<a href="" id="attribute-attribute-name"></a>**Attribute=**<em>attribute-name</em>  
+<a href="" id="attribute-attribute-name"></a>**Attribute=** <em>attribute-name</em>  
 每个签名类型都有相应的属性和值，如下所示。 使用这些定义 SignatureAttributes 各小节：
 
 -   **SignatureAttributes.Elam**:Elam = true
@@ -121,7 +121,7 @@ WindowsHello=true
 ## <a name="see-also"></a>请参阅
 
 
-[仪表板帮助](https://msdn.microsoft.com/library/windows/hardware/br230803)
+[仪表板帮助](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
  
 

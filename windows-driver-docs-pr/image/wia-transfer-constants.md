@@ -4,12 +4,12 @@ description: WIA 传输常量
 ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd778f1d426f9678b9af52e723f2ca0ea725836
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 973911ef639af6ecbf4ffbb1b7ff1a6135d35c60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352630"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369815"
 ---
 # <a name="wia-transfer-constants"></a>WIA 传输常量
 
@@ -42,7 +42,7 @@ ms.locfileid: "63352630"
 <tbody>
 <tr class="odd">
 <td><p><strong>WiaItemTypeTransfer</strong></p></td>
-<td><p>这<a href="https://msdn.microsoft.com/library/windows/hardware/ff551585" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551585)"> <strong>WIA_IPA_ITEM_FLAGS</strong> </a>应能够将数据传输的所有项上设置位; 也就是说，应用程序可以启动下载或在项上传，具有此位组。</p></td>
+<td><p>这<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)"> <strong>WIA_IPA_ITEM_FLAGS</strong> </a>应能够将数据传输的所有项上设置位; 也就是说，应用程序可以启动下载或在项上传，具有此位组。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ ms.locfileid: "63352630"
 
 ### <a name="transfer-flags"></a>传输标志
 
-下表显示了可能会被传递到的标志[ **IWiaMiniDrv::drvAcquireItemData**](https://msdn.microsoft.com/library/windows/hardware/ff543956)。
+下表显示了可能会被传递到的标志[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)。
 
 <table>
 <colgroup>

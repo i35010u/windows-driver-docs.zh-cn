@@ -4,12 +4,12 @@ description: 本主题讨论了 Windows 10 中的音频延迟更改。 它介绍
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e732a2310e8461d0e120ce7b7dcbfe924abaaec0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7eaba9c3798c396e8198024f9a4b0368130e7d35
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332419"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358708"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -46,7 +46,7 @@ Windows 10 包括更改以减少音频的延迟。 本文档的目标是：
 1. 描述在 Windows 中的音频延迟的源。
 2. 解释减少 Windows 10 音频堆栈中的音频延迟的更改。
 3. 提供有关如何应用程序开发人员和硬件制造商可以利用新的基础结构，以较低的音频延迟开发应用程序和驱动程序的引用。 本主题介绍了这些项：
-4. 新[ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/dn914176) API 的交互和媒体创建方案。
+4. 新[ **AudioGraph** ](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) API 的交互和媒体创建方案。
 5. Wasapi 就可以了，以支持较低的延迟方面的更改。
 6. 驱动程序 DDIs 中的增强功能。
 
@@ -144,15 +144,15 @@ Windows 10 进行了增强以减少延迟的三个方面：
    b. 所有的线程和中断的已注册 （使用中有关驱动程序资源注册的一节介绍了新 DDIs） 驱动程序。
    c. 部分或全部音频线程从请求小缓冲区的应用程序以及与请求的小缓冲区的任何应用程序共享相同的音频设备图形 （例如同一个信号处理模式） 的所有应用程序：
 4. AudioGraph 流式处理路径上的回调。
-5. 如果应用程序使用 wasapi 就可以了，则为已提交的工作项[实时工作队列 API](https://msdn.microsoft.com/library/windows/desktop/dn271897)或[ **MFCreateMFByteStreamOnStreamEx** ](https://msdn.microsoft.com/library/windows/desktop/hh162754)并被标记为"音频"或者"ProAudio"。
+5. 如果应用程序使用 wasapi 就可以了，则为已提交的工作项[实时工作队列 API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)或[ **MFCreateMFByteStreamOnStreamEx** ](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)并被标记为"音频"或者"ProAudio"。
 
 ## <a name="span-idapiimprovementsspanspan-idapiimprovementsspanspan-idapiimprovementsspanapi-improvements"></a><span id="API_Improvements"></span><span id="api_improvements"></span><span id="API_IMPROVEMENTS"></span>API 改进
 
 
 以下两个 Windows 10 Api 提供低延迟功能：
 
--   [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176)
--   [Windows Audio Session API (WASAPI)](https://msdn.microsoft.com/library/windows/desktop/dd371455.aspx)
+-   [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
+-   [Windows Audio Session API (WASAPI)](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
 
 这是应用程序开发人员可以确定这两个 Api 来使用：
 
@@ -169,7 +169,7 @@ Windows 10 进行了增强以减少延迟的三个方面：
 
 AudioGraph 是新的通用 Windows 平台 API 在 Windows 10 中，针对的是意识到交互式和音乐创建方案轻松。 AudioGraph 是提供了多种编程语言 (C++， C#，JavaScript) 和具有简单而功能丰富的编程模型。
 
-要针对低延迟方案，提供 AudioGraph [AudioGraphSettings::QuantumSizeSelectionMode 属性](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiographsettings.quantumsizeselectionmode.aspx)。 此属性可以显示下表中的以下值之一：
+要针对低延迟方案，提供 AudioGraph [AudioGraphSettings::QuantumSizeSelectionMode 属性](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)。 此属性可以显示下表中的以下值之一：
 
 <table>
 <colgroup>
@@ -216,9 +216,9 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 上述功能会在所有 Windows 设备上可用。 但是，某些设备具有足够的资源和更新的驱动程序将提供比其他更好的用户体验。
 
-上述功能提供的名为的新界面[ **IAudioClient3**](https://msdn.microsoft.com/library/windows/desktop/dn911487)，又派生自[ **IAudioClient2**](https://msdn.microsoft.com/library/windows/desktop/hh404179)。
+上述功能提供的名为的新界面[ **IAudioClient3**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)，又派生自[ **IAudioClient2**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient2)。
 
-[**IAudioClient3** ](https://msdn.microsoft.com/library/windows/desktop/dn911487)定义以下三种方法：
+[**IAudioClient3** ](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)定义以下三种方法：
 
 <table>
 <colgroup>
@@ -332,7 +332,7 @@ if (AUDCLNT_E_ENGINE_FORMAT_LOCKED == hr) {
 }
 ```
 
-此外，建议使用 wasapi 就可以了也使用的应用程序[实时工作队列 API](https://msdn.microsoft.com/library/windows/desktop/dn271897)或[ **MFCreateMFByteStreamOnStreamEx** ](https://msdn.microsoft.com/library/windows/desktop/hh162754)来创建工作项和将它们标记为音频或 Pro 音频，而不是其自己的线程。 这样，操作系统会避免干扰非音频子系统的方式来管理它们。 与此相反，所有 AudioGraph 线程自动都管理正确的操作系统。 WASAPIAudio 示例中的以下代码段演示如何使用 MF 工作队列 Api。
+此外，建议使用 wasapi 就可以了也使用的应用程序[实时工作队列 API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)或[ **MFCreateMFByteStreamOnStreamEx** ](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)来创建工作项和将它们标记为音频或 Pro 音频，而不是其自己的线程。 这样，操作系统会避免干扰非音频子系统的方式来管理它们。 与此相反，所有 AudioGraph 线程自动都管理正确的操作系统。 WASAPIAudio 示例中的以下代码段演示如何使用 MF 工作队列 Api。
 
 ```cpp
 // Specify Source Reader Attributes 
@@ -529,8 +529,8 @@ static struct
 
 请参阅以下主题以更深入了解这些结构：
 
--   [**KSAUDIO\_PACKETSIZE\_约束结构**](https://msdn.microsoft.com/library/windows/hardware/dn965561)
--   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_约束结构**](https://msdn.microsoft.com/library/windows/hardware/dn965562)
+-   [**KSAUDIO\_PACKETSIZE\_约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
+-   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
 
 此外，sysvad 示例 (<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>) 演示如何使用这些属性，以使驱动程序来声明每种模式的最小缓冲区。
 
@@ -545,8 +545,8 @@ static struct
 
 此 DDI 是非常有用的情况下，使用 DSP 的位置。 但是，标准的高清晰度音频驱动程序或其他简单的循环 DMA 缓冲区设计可能找不到这些新 DDIs 中带来的巨大优势此处列出。
 
--   [IMiniportWaveRTInputStream](https://msdn.microsoft.com/library/windows/hardware/dn946532)
--   [IMiniportWaveRTOutputStream](https://msdn.microsoft.com/library/windows/hardware/dn946534)
+-   [IMiniportWaveRTInputStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertinputstream)
+-   [IMiniportWaveRTOutputStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertoutputstream)
 
 多个驱动程序例程返回专用于反映将的时间示例是捕获或该设备提供的 Windows 性能计数器时间戳。
 
@@ -583,15 +583,15 @@ Stream 资源是音频驱动程序用来处理音频流，或确保音频数据�
 -   HDAudio 微型端口功能的驱动程序通过收件箱 HDAudio 总线驱动程序 hdaudbus.sys 枚举不需要注册 HDAudio 中断，因为这通过 hdaudbus.sys 已完成。 但是，如果微型端口驱动程序创建自己的线程，则它需要注册它们。
 -   与 Portcls 链接仅用于注册流式处理资源的驱动程序必须更新其 Inf 以包括/需求 wdmaudio.inf 和复制 portcls.sys （和相关文件）。 新的 INF 复制部分 wdmaudio.inf 仅复制那些文件中定义。
 -   仅运行在 Windows 10 中的音频驱动程序可以指向硬链接：
-    -   [**PcAddStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt298188)
-    -   [**PcRemoveStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt298189)
+    -   [**PcAddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcaddstreamresource)
+    -   [**PcRemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcremovestreamresource)
 -   必须在下级 OS 运行的音频驱动程序可以使用下面的接口 (微型端口可以调用 QueryInterface IID\_IPortClsStreamResourceManager 接口，并注册其资源，仅当 PortCls 支持接口时)。
-    -   [IPortClsStreamResourceManager](https://msdn.microsoft.com/library/windows/hardware/mt270106)
-        -   [**AddStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt270107)
-        -   [**RemoveStreamResource**](https://msdn.microsoft.com/library/windows/hardware/mt270108)
+    -   [IPortClsStreamResourceManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsstreamresourcemanager)
+        -   [**AddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsstreamresourcemanager-addstreamresource)
+        -   [**RemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsstreamresourcemanager-removestreamresource)
 -   这些 DDIs，使用此枚举和结构：
-    -   [**PcStreamResourceType**](https://msdn.microsoft.com/library/windows/hardware/mt298190)
-    -   [**PCSTREAMRESOURCE\_描述符**](https://msdn.microsoft.com/library/windows/hardware/mt298191)
+    -   [**PcStreamResourceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ne-portcls-_pcstreamresourcetype)
+    -   [**PCSTREAMRESOURCE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-_pcstreamresource_descriptor)
 
 最后，链接项以 PortCls 注册资源的唯一目的的驱动程序必须在其 inf DDInstall 部分添加以下两行。 音频的微型端口驱动程序不需要这样做因为他们已有包括需求 wdmaudio.inf 中。
 

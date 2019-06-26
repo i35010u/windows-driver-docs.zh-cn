@@ -6,12 +6,12 @@ keywords:
 - DbgEng 扩展编写
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4936a6b6284daff51b251cb9a8123beadab94dd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41bbdea3bb3257b51ad5fc75edaa3a75b94b620a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383738"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369394"
 ---
 # <a name="writing-dbgeng-extension-code"></a>编写 DbgEng 扩展代码
 
@@ -29,11 +29,11 @@ ms.locfileid: "63383738"
 #include dbgeng.h 
 ```
 
-可以扩展命令中使用的 dbgeng.h 中接口的完整列表，请参阅[调试器引擎参考](https://msdn.microsoft.com/library/windows/hardware/ff540540)。
+可以扩展命令中使用的 dbgeng.h 中接口的完整列表，请参阅[调试器引擎参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-engine-reference)。
 
-可以扩展命令中使用的 wdbgexts.h 中的函数的完整列表，请参阅[WdbgExts 函数](https://msdn.microsoft.com/library/windows/hardware/ff561258)。 这些函数的数量显示在 32 位版本和 64 位版本。 通常情况下，64 位版本结束"64"版本和 32 位版本中的有任何数字结束-例如， **ReadIoSpace64**并**ReadIoSpace**。 在调用 wdbgexts.h 函数从 DbgEng 扩展时，应始终使用"64"结尾的函数名称。 这是因为[调试器引擎](introduction.md#debugger-engine)始终使用 64 位指针在内部，而不考虑目标平台。
+可以扩展命令中使用的 wdbgexts.h 中的函数的完整列表，请参阅[WdbgExts 函数](https://docs.microsoft.com/windows-hardware/drivers/debugger/wdbgexts-functions)。 这些函数的数量显示在 32 位版本和 64 位版本。 通常情况下，64 位版本结束"64"版本和 32 位版本中的有任何数字结束-例如， **ReadIoSpace64**并**ReadIoSpace**。 在调用 wdbgexts.h 函数从 DbgEng 扩展时，应始终使用"64"结尾的函数名称。 这是因为[调试器引擎](introduction.md#debugger-engine)始终使用 64 位指针在内部，而不考虑目标平台。
 
-如果包含 wdbgexts.h DbgEng 扩展中，应调用[ **GetWindbgExtensionApis64** ](https://msdn.microsoft.com/library/windows/hardware/ff549510)在你的扩展 DLL 的初始化过程中 (请参阅[ *调用 DebugExtensionInitialize*](https://msdn.microsoft.com/library/windows/hardware/ff540476))。
+如果包含 wdbgexts.h DbgEng 扩展中，应调用[ **GetWindbgExtensionApis64** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getwindbgextensionapis64)在你的扩展 DLL 的初始化过程中 (请参阅[ *调用 DebugExtensionInitialize*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nc-dbgeng-pdebug_extension_initialize))。
 
 **请注意**  必须尝试从任何调试器扩展调用任何 DbgHelp 或了内部错误的例程。 调用这些例程不受支持，可能会导致各种问题。
 

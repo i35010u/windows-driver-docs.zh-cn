@@ -4,12 +4,12 @@ description: 渗透测试 （设备基础） 测试，运行 I/O 攻击中，执
 ms.assetid: ae0eda5c-534e-44c2-a997-66fe1337ca9f
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f298a6d03b2261bbe8a3d977e3f1240ca8321e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c4f47fa009a8dccc7a388ce9dedaeb6b96a8925
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356523"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67373708"
 ---
 # <a name="ioattack"></a>IoAttack
 
@@ -36,9 +36,9 @@ ms.locfileid: "63356523"
 
 在运行之前 IoAttack 测试系统上，必须执行以下操作：
 
--   启用内核模式调试在测试计算机上。 这是配置用于测试的计算机时，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)。
+-   启用内核模式调试在测试计算机上。 这是配置用于测试的计算机时，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。
 
--   运行**启用驱动程序验证工具测试**以启用[Driver Verifier](driver-verifier.md)要测试的设备上所有驱动程序堆栈中的驱动程序选项。 具体而言，应启用[特殊池](special-pool.md)选项。 在中**添加或删除驱动程序测试**对话框中，**启用驱动程序验证程序测试**下的所有测试\\驱动程序验证程序。 请参阅[如何在运行时使用 Visual Studio 测试驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)
+-   运行**启用驱动程序验证工具测试**以启用[Driver Verifier](driver-verifier.md)要测试的设备上所有驱动程序堆栈中的驱动程序选项。 具体而言，应启用[特殊池](special-pool.md)选项。 在中**添加或删除驱动程序测试**对话框中，**启用驱动程序验证程序测试**下的所有测试\\驱动程序验证程序。 请参阅[如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)
 
 -   删除[IoSpy](iospy.md)从测试系统。 若要执行此操作，请运行**禁用 I/O Spy**测试。
 

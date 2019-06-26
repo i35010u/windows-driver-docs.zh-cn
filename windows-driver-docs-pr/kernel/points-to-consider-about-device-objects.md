@@ -6,12 +6,12 @@ keywords:
 - 设备对象 WDK 内核，设计注意事项
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2a91f5c25628340f2fb93350e7fa02ec504aec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4dc0760f01dbc565109c96cf0c2070d377a5a1b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369709"
 ---
 # <a name="points-to-consider-about-device-objects"></a>有关设备对象的要点
 
@@ -27,7 +27,7 @@ ms.locfileid: "63369231"
 
 -   最低级别驱动程序，如即插即用硬件总线驱动程序，为其控制每个设备创建一个物理设备对象 (PDO)。 中间驱动程序，即插即用功能驱动程序，如创建功能的设备对象 (FDO)。
 
-    WDM 驱动程序创建中的设备对象及其[ *AddDevice* ](https://msdn.microsoft.com/library/windows/hardware/ff540521)后设备枚举即插即用管理器将调用的例程。
+    WDM 驱动程序创建中的设备对象及其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)后设备枚举即插即用管理器将调用的例程。
 
 -   对于大多数最低级别和中间驱动程序，每个设备对象的设备扩展是每个驱动程序的主 （并且通常只有一个） 的全局数据存储区中。 许多驱动程序维护设备状态和所有其他特定于设备的数据和驱动程序需要在每个驱动程序创建的设备对象的驱动程序定义的设备扩展中的资源。
 
