@@ -7,12 +7,12 @@ keywords:
 - 取消隔行扫描 WDK DirectX VA，bob、 算法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20cf5e3cbab2f267ddaf61e07947dd42ac0e078c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 739c0516bde72b1358f9b7e1e30a541e47ae4bad
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344634"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384626"
 ---
 # <a name="bob-deinterlacing-algorithm"></a>Bob 反交错算法
 
@@ -20,7 +20,7 @@ ms.locfileid: "63344634"
 ## <span id="ddk_bob_deinterlacing_algorithm_gg"></span><span id="DDK_BOB_DEINTERLACING_ALGORITHM_GG"></span>
 
 
-如果显示驱动程序实现 DXVA[去隔行 DDI](https://msdn.microsoft.com/library/windows/hardware/ff552701)，则它必须支持除了去隔行算法任何专有的 bob 样式取消隔行扫描算法。 下面是 bob 样式取消隔行扫描算法的说明：
+如果显示驱动程序实现 DXVA[去隔行 DDI](https://docs.microsoft.com/windows-hardware/drivers/display/deinterlace-ddi)，则它必须支持除了去隔行算法任何专有的 bob 样式取消隔行扫描算法。 下面是 bob 样式取消隔行扫描算法的说明：
 
 输入是字段 F<sub>中</sub>（i，j） MxN 此类大小的 0 &lt;= i &lt;= M-1 和 0 &lt;= j &lt;= 的 N-1，其中 i 和 j 分别为行和列索引。
 

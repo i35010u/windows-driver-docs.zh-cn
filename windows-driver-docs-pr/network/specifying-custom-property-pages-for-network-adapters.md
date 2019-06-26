@@ -8,12 +8,12 @@ keywords:
 - 属性页 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5926451cfcc2528c669ce986f4d47640ebaa9e1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6043429a91c093cc8e4b019e2196d9e0f8203124
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383638"
 ---
 # <a name="specifying-custom-property-pages-for-network-adapters"></a>指定网络适配器的自定义属性页
 
@@ -33,7 +33,7 @@ ms.locfileid: "63385447"
     HKR, EnumPropPages32, 0, "DLL name, ExtensionPropSheetPageProc function name"
     ```
 
-3.  在适配器的 INF 文件，包括**CopyFiles**部分中，将属性表扩展 DLL 复制到 Windows\\System32 目录。 有关详细信息**CopyFiles**部分中，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+3.  在适配器的 INF 文件，包括**CopyFiles**部分中，将属性表扩展 DLL 复制到 Windows\\System32 目录。 有关详细信息**CopyFiles**部分中，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
 4.  在中**DDInstall**部分对于适配器，指定 NCF\_HAS\_作为一个 UI**特征**值以指示适配器支持用户界面。 有关详细信息，请参阅[DDInstall 部分](ddinstall-section-in-a-network-inf-file.md)。
 

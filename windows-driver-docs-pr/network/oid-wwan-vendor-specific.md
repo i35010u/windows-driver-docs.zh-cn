@@ -5,12 +5,12 @@ ms.assetid: 7c1843bc-3d60-437c-a24d-6da82262a468
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_VENDOR_SPECIFIC 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a647fe74b14f5ca8c7ddaed8156046c0c7d4d31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b3042935a80dbd04e42fdec56145c45a79536c9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384234"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366569"
 ---
 # <a name="oidwwanvendorspecific"></a>OID\_WWAN\_VENDOR\_SPECIFIC
 
@@ -24,7 +24,7 @@ OID\_WWAN\_供应商\_特定于允许微型端口驱动程序来实现供应商�
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 供应商特定操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)。
+有关使用此 OID 的详细信息，请参阅[WWAN 供应商特定操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-vendor-specific-operations)。
 
 微型端口驱动程序应返回 NDIS\_状态\_不\_支持如果它们不支持特定于供应商的操作。
 
@@ -51,7 +51,7 @@ OID\_WWAN\_供应商\_特定于允许微型端口驱动程序来实现供应商�
 ## <a name="see-also"></a>请参阅
 
 
-[WWAN 供应商特定的操作](https://msdn.microsoft.com/library/windows/hardware/ff559138)
+[WWAN 供应商特定的操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-vendor-specific-operations)
 
 [**NDIS\_STATUS\_WWAN\_VENDOR\_SPECIFIC**](ndis-status-wwan-vendor-specific.md)
 

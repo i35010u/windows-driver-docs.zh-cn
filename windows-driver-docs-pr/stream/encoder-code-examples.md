@@ -16,12 +16,12 @@ keywords:
 - 注册表 WDK 编码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 632aa4aafecbb1c2d64cb6819a7536edc3085151
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9702527288d70bf306dca1418df99fe79b4c7b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384126"
 ---
 # <a name="encoder-code-examples"></a>编码器代码示例
 
@@ -36,7 +36,7 @@ ms.locfileid: "63363562"
 
 ### <a name="implementing-supported-bit-rates"></a>**实现支持的比特率**
 
-下面的代码段演示如何实现对支持[ENCAPIPARAM\_比特率](https://msdn.microsoft.com/library/windows/hardware/ff559520)属性。 使用[ **KSPROPERTY\_单步执行\_长**](https://msdn.microsoft.com/library/windows/hardware/ff565631)结构，以指定具有 400 bps 下界和 4,000,000 bps 上限 400 位 / 秒 (bps) 以单步执行粒度。
+下面的代码段演示如何实现对支持[ENCAPIPARAM\_比特率](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)属性。 使用[ **KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)结构，以指定具有 400 bps 下界和 4,000,000 bps 上限 400 位 / 秒 (bps) 以单步执行粒度。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -121,7 +121,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 
 ### <a name="implementing-supported-encoding-bit-rate-modes"></a>**实现支持编码的位速率模式**
 
-下面的代码段演示如何实现对支持[ENCAPIPARAM\_比特率\_模式](https://msdn.microsoft.com/library/windows/hardware/ff559524)属性。
+下面的代码段演示如何实现对支持[ENCAPIPARAM\_比特率\_模式](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)属性。
 
 定义编码器所支持的编码模式：
 
@@ -198,7 +198,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 
  
 
-然后将该属性设置指定为[ **KSFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff562553)结构的自动化表。
+然后将该属性设置指定为[ **KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)结构的自动化表。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {

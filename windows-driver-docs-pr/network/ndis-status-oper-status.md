@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_OPER_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e81f990eed12f8de9ee1abe72ac8dd1df63ce461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f303b176eb45e2792d88a6bbe19bf693c90610b6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368559"
 ---
 # <a name="ndisstatusoperstatus"></a>NDIS\_状态\_工序\_状态
 
@@ -23,9 +23,9 @@ NDIS\_状态\_工序\_状态状态指示过量驱动程序的 NDIS 网络接口�
 
 NDIS 生成此状态指示;NDIS 微型端口驱动程序不应生成此状态指示。
 
-NDIS 提供[ **NDIS\_工序\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566737)结构**StatusBuffer**隶属[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构。
+NDIS 提供[ **NDIS\_工序\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_oper_state)结构**StatusBuffer**隶属[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构。
 
-**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)结构设置为 sizeof (NDIS\_运算符\_状态）。
+**StatusBufferSize**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构设置为 sizeof (NDIS\_运算符\_状态）。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,9 +50,9 @@ NDIS 提供[ **NDIS\_工序\_状态**](https://msdn.microsoft.com/library/window
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_工序\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff566737)
+[**NDIS\_工序\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_oper_state)
 
-[**NDIS\_状态\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567373)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
 
  
 

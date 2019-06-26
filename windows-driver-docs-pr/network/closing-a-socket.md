@@ -9,19 +9,19 @@ keywords:
 - WskCloseSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe8478b6c685c125bab4f7b11e67906cb268c42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63b5e645d3a2b4b29736ff806be4a27fcf05a1a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356914"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384212"
 ---
 # <a name="closing-a-socket"></a>关闭套接字
 
 
 完成后使用套接字的 Winsock Kernel (WSK) 应用程序，它应关闭套接字并释放任何关联的资源。 应用程序可以从 WSK 子系统中分离本身之前，WSK 应用程序必须关闭所有打开的套接字。 分离 WSK 子系统提供 WSK 的应用程序的详细信息，请参阅[Winsock 内核应用程序中注销](unregistering-a-winsock-kernel-application.md)。
 
-WSK 应用程序通过调用关闭套接字[ **WskCloseSocket** ](https://msdn.microsoft.com/library/windows/hardware/ff571124)函数。 然后再调用**WskCloseSocket**函数，WSK 应用程序必须确保没有任何其他函数调用到套接字的函数，在任何应用程序中包括任何扩展函数的任何正在进行中的其它线程数。 但是，WSK 应用程序可以调用**WskCloseSocket**是否存在挂起的 Irp 从以前调用尚未完成的套接字的函数。
+WSK 应用程序通过调用关闭套接字[ **WskCloseSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)函数。 然后再调用**WskCloseSocket**函数，WSK 应用程序必须确保没有任何其他函数调用到套接字的函数，在任何应用程序中包括任何扩展函数的任何正在进行中的其它线程数。 但是，WSK 应用程序可以调用**WskCloseSocket**是否存在挂起的 Irp 从以前调用尚未完成的套接字的函数。
 
 调用之前 WSK 应用程序使用以确保不不存在任何其他函数的方法调用中的任何套接字的函数的进度**WskCloseSocket**函数所依赖的应用程序的设计。 例如，如果 WSK 应用程序可能需要在向该套接字进行可能存在的调用中时关闭一个线程中的套接字中一个或多个其他线程，则该应用程序的其他函数通常将引用计数器用于跟踪的函数当前正在进行中的套接字上的调用。 在此情况下，WSK 应用程序以原子方式测试并递增套接字的引用计数器之前它将调用一个套接字的函数，然后以原子方式递减套接字的引用计数器时该函数将返回。 WSK 应用程序时的引用计数器为零，可以安全地调用**WskCloseSocket**函数来关闭套接字。
 
@@ -129,7 +129,7 @@ NTSTATUS
 }
 ```
 
-应用程序已调用后 WSK [ **WskCloseSocket**](https://msdn.microsoft.com/library/windows/hardware/ff571124)，它不应造成会对任何套接字的函数的任何进一步调用。
+应用程序已调用后 WSK [ **WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)，它不应造成会对任何套接字的函数的任何进一步调用。
 
 如果 WSK 应用程序关闭已不之前断开连接两个方向的面向连接的套接字，WSK 子系统将自动关闭套接字之前执行套接字硬性断开的连接。 正在断开连接的套接字的详细信息，请参阅[断开与目标的连接套接字](disconnecting-a-socket-from-a-destination.md)。
 

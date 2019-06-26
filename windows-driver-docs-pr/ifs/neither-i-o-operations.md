@@ -9,12 +9,12 @@ keywords:
 - 既不 I/O 操作 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a58f9e6cae93e83d48a09c282cd7c003216800f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3f6a0c14551cd2232327dd67e42d2c24a678ca7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379461"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384810"
 ---
 # <a name="neither-io-operations"></a>两种 I/O 操作都不是
 
@@ -24,25 +24,25 @@ ms.locfileid: "63379461"
 
 文件系统必须处理通常涉及到直接操作用户缓冲区的操作。 此类操作存在固有的风险，因为用户地址可能无效。 文件系统必须特别有意识的此类操作，并确保它们适当保护，它们。 依赖于以下操作**标志**文件系统的设备对象的成员才能指定用户和内核地址空间之间传输数据 I/O 管理器的方式：
 
--   [**IRP\_MJ\_DIRECTORY\_控件**](https://msdn.microsoft.com/library/windows/hardware/ff548658)
+-   [**IRP\_MJ\_DIRECTORY\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-directory-control)
 
--   [**IRP\_MJ\_查询\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549279)
+-   [**IRP\_MJ\_查询\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-ea)
 
--   [**IRP\_MJ\_查询\_配额**](https://msdn.microsoft.com/library/windows/hardware/ff549293)
+-   [**IRP\_MJ\_查询\_配额**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-quota)
 
--   [**IRP\_MJ\_READ**](https://msdn.microsoft.com/library/windows/hardware/ff549327)
+-   [**IRP\_MJ\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)
 
--   [**IRP\_MJ\_SET\_EA**](https://msdn.microsoft.com/library/windows/hardware/ff549346)
+-   [**IRP\_MJ\_SET\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-ea)
 
--   [**IRP\_MJ\_SET\_QUOTA**](https://msdn.microsoft.com/library/windows/hardware/ff549401)
+-   [**IRP\_MJ\_SET\_QUOTA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-quota)
 
--   [**IRP\_MJ\_WRITE**](https://msdn.microsoft.com/library/windows/hardware/ff549427)
+-   [**IRP\_MJ\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)
 
 通常情况下，文件系统选择都不 I/O 隐式设置都不执行操作\_直接\_IO 也不执行\_缓冲\_中的 IO**标志**卷设备的成员对象它创建。
 
 以下操作将忽略**标志**文件系统的成员的设备对象，并使用任一 I/O 用户和内核地址空间之间传输数据：
 
--   [**IRP\_MJ\_QUERY\_SECURITY**](https://msdn.microsoft.com/library/windows/hardware/ff549298)
+-   [**IRP\_MJ\_QUERY\_SECURITY**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-security)
 
 使用任一 I/O，文件系统是负责处理其自己的数据传输操作。 这允许文件系统，以满足操作，直接将数据放入应用程序的用户空间缓冲区。 因此，文件系统必须确保用户的缓冲区无效时该操作开始，并适当地处理正在进行操作时变为无效的缓冲区。 快速的 i/o 操作还会传递原始指针。 开发人员应注意，检查操作的开始处的缓冲区的有效性并不足以确保其保持在操作中将有效。 例如，恶意应用程序无法地图 （通过用于示例的节） 的内存块，请发出 I/O 操作，并取消映射的内存块的正在进行 I/O 操作时。
 

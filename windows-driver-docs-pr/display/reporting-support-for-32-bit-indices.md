@@ -7,12 +7,12 @@ keywords:
 - 索引缓冲区 WDK Directx 8.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db61dd470f7d506a94ed0242544809ae0f89bcf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 065ad0f4ab916fb6af9dec769bddccd8140d84d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383253"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369276"
 ---
 # <a name="reporting-support-for-32-bit-indices"></a>报告 32 位索引支持
 
@@ -20,7 +20,7 @@ ms.locfileid: "63383253"
 ## <span id="ddk_reporting_support_for_32_bit_indices_gg"></span><span id="DDK_REPORTING_SUPPORT_FOR_32_BIT_INDICES_GG"></span>
 
 
-之前 DirectX 8.0 顶点索引是限制为 16 位数量。 DirectX 8.0 将添加对 32 位索引的支持。 驱动程序报告的值设置为 32 位索引的支持**MaxVertexIndex** D3DCAPS8 字段 (当前还在[ **D3DHAL\_D3DEXTENDEDCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff544753)) 到大于 0xFFFF 的值。 此字段还允许驱动程序添加到，虽然它支持需要 32 位的存储的索引，但是它不支持 32 位值的完整范围的报表。
+之前 DirectX 8.0 顶点索引是限制为 16 位数量。 DirectX 8.0 将添加对 32 位索引的支持。 驱动程序报告的值设置为 32 位索引的支持**MaxVertexIndex** D3DCAPS8 字段 (当前还在[ **D3DHAL\_D3DEXTENDEDCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)) 到大于 0xFFFF 的值。 此字段还允许驱动程序添加到，虽然它支持需要 32 位的存储的索引，但是它不支持 32 位值的完整范围的报表。
 
 **DirectX 9.0 和更高版本。**
 

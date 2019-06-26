@@ -6,12 +6,12 @@ keywords:
 - 生物识别驱动程序 WDK，有关生物识别驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b661f71a1c9c1e2568395d342975c47844f3797f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15baea7067fd0e062f538b2611d899657e168ac3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328393"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364712"
 ---
 # <a name="getting-started-with-biometric-drivers"></a>生物识别驱动程序入门
 
@@ -26,7 +26,7 @@ WBF 包含已知 Windows 生物识别驱动程序接口 (WBDI) 作为基于 IOCT
 
 开发驱动程序能够与 Windows 生物识别驱动程序接口 (WBDI) 时必须做出的第一个选择是要使用的驱动程序模型。
 
-Microsoft 建议 Ihv 通过使用 Windows 用户模式驱动程序框架开发生物识别设备驱动程序 (WUDF， 嘿 [UMDF](https://msdn.microsoft.com/library/windows/hardware/ff554928)) 和 WinUSB I/O 目标。
+Microsoft 建议 Ihv 通过使用 Windows 用户模式驱动程序框架开发生物识别设备驱动程序 (WUDF， 嘿 [UMDF](https://docs.microsoft.com/previous-versions/ff554928(v=vs.85))) 和 WinUSB I/O 目标。
 
 下图显示了如何基于 UMDF Windows 生物识别驱动程序接口 (WBDI) 驱动程序适用于 Windows 7 中的 Windows 生物识别框架 (WBF) 生物识别支持。 生物识别的所有操作都是都依靠客户端应用程序到 Windows 生物识别服务 (WBS)。 WBS 将请求发送到公开 WBDI 接口的生物识别设备驱动程序。
 

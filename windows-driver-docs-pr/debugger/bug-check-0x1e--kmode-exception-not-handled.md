@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5479e33d9e87f4bf6b155ab5535ec0680088a3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb8090e817e691cb5a46e6d4dcec1abafdbc9f02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361597"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367564"
 ---
 # <a name="bug-check-0x1e-kmodeexceptionnothandled"></a>Bug 检查 0x1E：KMODE\_异常\_不\_已处理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63361597"
 KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核模式程序生成的错误处理程序未捕获了异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="kmodeexceptionnothandled-parameters"></a>KMODE\_异常\_不\_HANDLED 参数
@@ -84,7 +84,7 @@ KMODE\_异常\_不\_已处理错误检查的值为 0x0000001E。 这表示内核
 
     出现内存访问冲突。 （检查错误的参数 4 是驱动程序尝试访问的地址。）
 
-异常代码的完整列表，请参阅[NTSTATUS 值](https://msdn.microsoft.com/library/cc704588.aspx)。 在 ntstatus.h 文件位于的 inc 目录中还列出了异常代码[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)。
+异常代码的完整列表，请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 在 ntstatus.h 文件位于的 inc 目录中还列出了异常代码[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)。
 
 
 <a name="remarks"></a>备注

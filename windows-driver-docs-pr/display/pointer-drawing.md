@@ -10,12 +10,12 @@ keywords:
 - 显示颜色指针 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0194b0d84ba3cc3f097c3ed40f7cabcb7369be41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7eb6a48f2f26749da0d7cb7fa9c3b7aad403f4d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358455"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365701"
 ---
 # <a name="pointer-drawing"></a>指针绘制
 
@@ -25,7 +25,7 @@ ms.locfileid: "63358455"
 
 GDI 支持颜色指针和单色指针。 由单个位图定义单色指针的形状。 位图的宽度是相同的将指针悬停在显示中，但位图的宽度具有范围作为两次垂直上将显示的显示，从而使其可以包含两个掩码。
 
-对指针函数的调用是通过 GDI 进行序列化。 这意味着在驱动程序中的两个不同的线程不能同时执行指针函数。 有两个可能的指针函数：[**DrvSetPointerShape** ](https://msdn.microsoft.com/library/windows/hardware/ff556289)并[ **DrvMovePointer**](https://msdn.microsoft.com/library/windows/hardware/ff556248)。
+对指针函数的调用是通过 GDI 进行序列化。 这意味着在驱动程序中的两个不同的线程不能同时执行指针函数。 有两个可能的指针函数：[**DrvSetPointerShape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)并[ **DrvMovePointer**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvmovepointer)。
 
  
 

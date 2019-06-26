@@ -9,12 +9,12 @@ keywords:
 - 全局字符串 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe62862df9133eb15f054dd1c8eebcbd230d34a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84683f22535a2f04dd2eeb6c3771f7e00a0dbccd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382268"
 ---
 # <a name="accessing-read-only-system-memory"></a>访问只读的系统内存
 
@@ -26,7 +26,7 @@ Windows[内存管理器](windows-kernel-mode-memory-manager.md)强制执行的�
 
 始终在用户模式下保护只读内存。 但是，在 Windows NT 4.0 和更早版本中，只读内存不受保护在内核模式下。
 
-如果 Windows 内核模式驱动程序或应用程序尝试写入只读内存段，系统会发出错误检查。 有关详细信息，请参阅[ **Bug 检查 0xBE:尝试\_编写\_TO\_READONLY\_内存**](https://msdn.microsoft.com/library/windows/hardware/ff560161)。
+如果 Windows 内核模式驱动程序或应用程序尝试写入只读内存段，系统会发出错误检查。 有关详细信息，请参阅[ **Bug 检查 0xBE:尝试\_编写\_TO\_READONLY\_内存**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xbe--attempted-write-to-readonly-memory)。
 
 ### <a name="intercepting-system-calls"></a>截获系统调用
 

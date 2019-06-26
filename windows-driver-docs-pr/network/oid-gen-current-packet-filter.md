@@ -5,12 +5,12 @@ ms.assetid: d5a32626-caff-4708-a134-d80a845dee91
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_CURRENT_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ac4d4f4033f6f4082f9aa5e44eb189bbf99b73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e24e3cf00aef4b129e5d7d8c42957f645230fac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368953"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369147"
 ---
 # <a name="oidgencurrentpacketfilter"></a>OID\_GEN\_当前\_数据包\_筛选器
 
@@ -81,19 +81,19 @@ SMT FDDI NIC 会收到的数据包。
 <a href="" id="ndis-packet-type-source-routing"></a>NDIS\_数据包\_类型\_源\_路由  
 所有源路由数据包。 如果协议驱动程序将设置此位，NDIS 库将尝试充当源路由桥。
 
-适用于其媒体类型的微型端口适配器**NdisMedium802\_3**或**NdisMedium802\_5**，NDIS 禁用数据包接收，其他多播功能的地址在调用期间[ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)函数。
+适用于其媒体类型的微型端口适配器**NdisMedium802\_3**或**NdisMedium802\_5**，NDIS 禁用数据包接收，其他多播功能的地址在调用期间[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)函数。
 
-对于所有其他媒体类型的微型端口适配器，，协议驱动程序可以开始在任何时间期间接收数据包[ **NdisOpenAdapterEx** ](https://msdn.microsoft.com/library/windows/hardware/ff563715)调用。 请注意，该协议甚至可以接收数据包之前**NdisOpenAdapterEx**返回。 一般情况下，数据包筛选是最大努力，和协议驱动程序必须准备好处理接收的指示，即使数据包筛选器为零。
+对于所有其他媒体类型的微型端口适配器，，协议驱动程序可以开始在任何时间期间接收数据包[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)调用。 请注意，该协议甚至可以接收数据包之前**NdisOpenAdapterEx**返回。 一般情况下，数据包筛选是最大努力，和协议驱动程序必须准备好处理接收的指示，即使数据包筛选器为零。
 
 对于查询，NDIS 返回使用 OR 运算符组合的绑定筛选器。
 
 对于一组，指定的数据包筛选器将替换以前的数据包筛选器的绑定。 如果微型端口驱动程序之前启用数据包类型，但协议驱动程序未指定该类型的新筛选器中，协议驱动程序不会收到此类型的数据包。
 
-适用于其媒体类型的微型端口适配器**NdisMedium802\_3**或**NdisMedium802\_5**，如果微型端口驱动程序不会在响应中为特定的数据包类型有点设置此查询中，协议驱动程序将不会收到该类型的数据包。 因此，协议驱动程序可以通过调用禁用数据包接收[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)或[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)使用筛选器为零的函数。
+适用于其媒体类型的微型端口适配器**NdisMedium802\_3**或**NdisMedium802\_5**，如果微型端口驱动程序不会在响应中为特定的数据包类型有点设置此查询中，协议驱动程序将不会收到该类型的数据包。 因此，协议驱动程序可以通过调用禁用数据包接收[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)或[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)使用筛选器为零的函数。
 
 对于所有其他媒体类型的微型端口适配器，NDIS 不会检查数据包类型。 对于这些媒体类型，协议驱动程序不能禁用数据包接收通过指定筛选器为零。
 
-当微型端口驱动程序[ *MiniportInitializeEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559389)调用函数，微型端口驱动程序的数据包筛选器应设置为零。 当数据包筛选器为零时，会收到指示已禁用。 微型端口驱动程序的后*MiniportInitializeEx*函数返回，协议驱动程序可以设置 OID\_常规\_当前\_数据包\_为非零值，从而筛选正在启用微型端口驱动程序，以指示该协议接收的数据包。
+当微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)调用函数，微型端口驱动程序的数据包筛选器应设置为零。 当数据包筛选器为零时，会收到指示已禁用。 微型端口驱动程序的后*MiniportInitializeEx*函数返回，协议驱动程序可以设置 OID\_常规\_当前\_数据包\_为非零值，从而筛选正在启用微型端口驱动程序，以指示该协议接收的数据包。
 
 如果在混合模式下启用了 NDIS\_数据包\_类型\_混杂位协议驱动程序将继续接收数据包，即使发送的网络节点不会不将它们定向到它。 NDIS 然后发送协议驱动程序则 NIC 会收到所有数据包。
 
@@ -122,7 +122,7 @@ SMT FDDI NIC 会收到的数据包。
 
 如果启用，此筛选器类型仅会影响其他标准的数据包筛选器，例如 NDIS\_数据包\_类型\_定向或 NDIS\_数据包\_类型\_广播。
 
-有关用于指示原始 802.11 数据包的方法的详细信息，请参阅[，该值指示原始 802.11 数据包](https://msdn.microsoft.com/library/windows/hardware/ff554833)。
+有关用于指示原始 802.11 数据包的方法的详细信息，请参阅[，该值指示原始 802.11 数据包](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-raw-802-11-packets)。
 
 <a href="" id="ndis-packet-type-802-11-directed-mgmt"></a>NDIS\_数据包\_类型\_802\_11\_定向\_MGMT  
 定向 802.11 管理数据包。 定向的数据包包含目标地址都等于站地址的 nic。
@@ -144,7 +144,7 @@ SMT FDDI NIC 会收到的数据包。
 
 如果启用，此筛选器类型仅会影响其他 802.11 的管理数据包筛选器，例如 NDIS\_数据包\_类型\_802\_11\_定向\_MGMT 或 NDIS\_数据包\_类型\_802\_11\_多播\_管理。
 
-有关用于指示原始 802.11 管理数据包的方法的详细信息，请参阅[，该值指示原始 802.11 数据包](https://msdn.microsoft.com/library/windows/hardware/ff554833)。
+有关用于指示原始 802.11 管理数据包的方法的详细信息，请参阅[，该值指示原始 802.11 数据包](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-raw-802-11-packets)。
 
 <a href="" id="ndis-packet-type-802-11-directed-ctrl"></a>NDIS\_数据包\_类型\_802\_11\_定向\_CTRL  
 定向 802.11 控制数据包。 定向的数据包包含目标地址都等于站地址的 nic。
@@ -175,9 +175,9 @@ SMT FDDI NIC 会收到的数据包。
 
 有关 NetMon 和 ExtAP 操作模式的详细信息，请参阅以下主题：
 
-[网络监视器操作模式](https://msdn.microsoft.com/library/windows/hardware/ff568369)
+[网络监视器操作模式](https://docs.microsoft.com/windows-hardware/drivers/network/network-monitor-operation-mode)
 
-[可扩展的访问点操作模式](https://msdn.microsoft.com/library/windows/hardware/ff549858)
+[可扩展的访问点操作模式](https://docs.microsoft.com/windows-hardware/drivers/network/extensible-access-point-operation-mode)
 
 <a name="requirements"></a>要求
 ------------
@@ -198,13 +198,13 @@ SMT FDDI NIC 会收到的数据包。
 ## <a name="see-also"></a>请参阅
 
 
-[*MiniportInitializeEx*](https://msdn.microsoft.com/library/windows/hardware/ff559389)
+[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)
 
-[**NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)
+[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)
 
-[**NdisOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff563710)
+[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)
 
-[**NdisOpenAdapterEx**](https://msdn.microsoft.com/library/windows/hardware/ff563715)
+[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)
 
  
 

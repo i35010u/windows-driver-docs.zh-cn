@@ -12,19 +12,19 @@ keywords:
 - WskRegister
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d67b641949397063071d8f4e49faeb28f67abc04
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c573bffb046ceb944932042d34217deff52b2f72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391964"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385416"
 ---
 # <a name="registering-a-winsock-kernel-application"></a>注册 Winsock 内核应用程序
 
 
 ### <a name="wsk-client-object-registration"></a>WSK 客户端对象注册
 
-Winsock Kernel (WSK) 应用程序必须通过调用作为 WSK 客户端来注册[ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)函数。 **WskRegister**要求 WSK 应用程序初始化，并将指针传递到其 WSK 客户端[网络编程接口 (NPI)](network-programming-interface.md)( [ **WSK\_客户端\_NPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571163)结构) 和 WSK 注册对象 ( [ **WSK\_注册**](https://msdn.microsoft.com/library/windows/hardware/ff571178)结构)，将由初始化**WskRegister**在成功返回。
+Winsock Kernel (WSK) 应用程序必须通过调用作为 WSK 客户端来注册[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)函数。 **WskRegister**要求 WSK 应用程序初始化，并将指针传递到其 WSK 客户端[网络编程接口 (NPI)](network-programming-interface.md)( [ **WSK\_客户端\_NPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_npi)结构) 和 WSK 注册对象 ( [ **WSK\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_registration)结构)，将由初始化**WskRegister**在成功返回。
 
 下面的代码示例演示如何 WSK 应用程序可以将注册为 WSK 客户端。
 
@@ -76,13 +76,13 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序不需要调用[ **WskRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff571143)中其**DriverEntry**函数。 例如，如果 WSK 程序是一个复杂的驱动程序的子组件，激活 WSK 应用程序子组件时才，可能会出现在应用程序注册。
+WSK 应用程序不需要调用[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)中其**DriverEntry**函数。 例如，如果 WSK 程序是一个复杂的驱动程序的子组件，激活 WSK 应用程序子组件时才，可能会出现在应用程序注册。
 
-WSK 应用程序必须保持[ **WSK\_客户端\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff571159)结构传递给**WskRegister**有效和驻留在内存中直到[ **WskDeregister** ](https://msdn.microsoft.com/library/windows/hardware/ff571128)称为和注册不再有效。 [ **WSK\_注册**](https://msdn.microsoft.com/library/windows/hardware/ff571178)结构也必须保持有效且驻留在内存中直到 WSK 应用程序停止调用的其他[WSK 注册函数](https://msdn.microsoft.com/library/windows/hardware/ff571179). 前面的代码示例中的全局数据一部分的驱动程序，从而使保持结构数据驻留在内存中卸载该驱动程序之前保留这些两个结构。
+WSK 应用程序必须保持[ **WSK\_客户端\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)结构传递给**WskRegister**有效和驻留在内存中直到[ **WskDeregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)称为和注册不再有效。 [ **WSK\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_registration)结构也必须保持有效且驻留在内存中直到 WSK 应用程序停止调用的其他[WSK 注册函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/). 前面的代码示例中的全局数据一部分的驱动程序，从而使保持结构数据驻留在内存中卸载该驱动程序之前保留这些两个结构。
 
 ### <a name="wsk-provider-npi-capture"></a>WSK NPI 捕获提供程序
 
-WSK 后应用程序已注册为 WSK 客户端与[ **WskRegister**](https://msdn.microsoft.com/library/windows/hardware/ff571143)，它必须使用[ **WskCaptureProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571122)函数若要开始使用 WSK 接口捕获 WSK 提供程序 NPI WSK 子系统中。
+WSK 后应用程序已注册为 WSK 客户端与[ **WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)，它必须使用[ **WskCaptureProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi)函数若要开始使用 WSK 接口捕获 WSK 提供程序 NPI WSK 子系统中。
 
 WSK 子系统可能尚未准备就绪时不可 WSK 应用程序尝试捕获 WSK 提供程序 NPI，因为**WskCaptureProviderNPI**函数允许 WSK 应用程序轮询和 / 或等待 WSK 子系统为准备就绪如下所示：
 
@@ -96,9 +96,9 @@ WSK 子系统可能尚未准备就绪时不可 WSK 应用程序尝试捕获 WSK 
 
  
 
-如果在调用**WskCaptureProviderNPI**失败，其状态\_NOINTERFACE，WSK 应用程序可以使用[ **WskQueryProviderCharacteristics** ](https://msdn.microsoft.com/library/windows/hardware/ff571138)若要发现 WSK 子系统所支持的范围的 WSK NPI 版本的函数。 WSK 应用程序可以调用**WskDeregister**注销其当前注册实例，并再次使用其他注册[ **WSK\_客户端\_调度** ](https://msdn.microsoft.com/library/windows/hardware/ff571159)使用受支持的 WSK NPI 版本的实例。
+如果在调用**WskCaptureProviderNPI**失败，其状态\_NOINTERFACE，WSK 应用程序可以使用[ **WskQueryProviderCharacteristics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskqueryprovidercharacteristics)若要发现 WSK 子系统所支持的范围的 WSK NPI 版本的函数。 WSK 应用程序可以调用**WskDeregister**注销其当前注册实例，并再次使用其他注册[ **WSK\_客户端\_调度** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_dispatch)使用受支持的 WSK NPI 版本的实例。
 
-当**WskCaptureProviderNPI**成功，返回其*WskProviderNpi*参数指向 WSK 提供程序 NPI ( [ **WSK\_提供程序\_NPI**](https://msdn.microsoft.com/library/windows/hardware/ff571177)) 准备就绪可供 WSK 应用程序。 WSK\_提供程序\_NPI 结构包含 WSK 客户端对象的指针 ( [ **WSK\_客户端**](https://msdn.microsoft.com/library/windows/hardware/ff571155)) 和[ **WSK\_提供程序\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff571175) WSK 应用程序可用于创建 WSK 套接字并执行其他操作 WSK 客户端对象上的 WSK 函数调度表。 后 WSK 应用程序已完成使用 WSK\_提供程序\_调度的函数，它必须通过调用释放 WSK 提供程序 NPI [ **WskReleaseProviderNPI**](https://msdn.microsoft.com/library/windows/hardware/ff571145)。
+当**WskCaptureProviderNPI**成功，返回其*WskProviderNpi*参数指向 WSK 提供程序 NPI ( [ **WSK\_提供程序\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_npi)) 准备就绪可供 WSK 应用程序。 WSK\_提供程序\_NPI 结构包含 WSK 客户端对象的指针 ( [ **WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)) 和[ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) WSK 应用程序可用于创建 WSK 套接字并执行其他操作 WSK 客户端对象上的 WSK 函数调度表。 后 WSK 应用程序已完成使用 WSK\_提供程序\_调度的函数，它必须通过调用释放 WSK 提供程序 NPI [ **WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)。
 
 下面的代码示例显示了 WSK 应用程序可以捕获 WSK 提供程序 NPI、 使用它来创建套接字时，，然后将其释放。
 
@@ -152,7 +152,7 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序可以调用[ **WskCaptureProviderNPI** ](https://msdn.microsoft.com/library/windows/hardware/ff571122)不止一次。 每次调用**WskCaptureProviderNPI**成功返回，必须相应地调用[ **WskReleaseProviderNPI**](https://msdn.microsoft.com/library/windows/hardware/ff571145)。 WSK 应用程序必须不执行任何进一步调用到中的函数[ **WSK\_提供程序\_调度**](https://msdn.microsoft.com/library/windows/hardware/ff571175)后调用**WskReleaseProviderNPI**.
+WSK 应用程序可以调用[ **WskCaptureProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskcaptureprovidernpi)不止一次。 每次调用**WskCaptureProviderNPI**成功返回，必须相应地调用[ **WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)。 WSK 应用程序必须不执行任何进一步调用到中的函数[ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)后调用**WskReleaseProviderNPI**.
 
  
 

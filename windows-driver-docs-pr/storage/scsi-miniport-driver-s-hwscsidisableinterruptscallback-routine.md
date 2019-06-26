@@ -8,12 +8,12 @@ keywords:
 - 中断 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6713a8cf8932467aec5c612c9f6b826a9520fb0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c1c13987a6f392e94bc0ea22ec212ef4289a05e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384324"
 ---
 # <a name="scsi-miniport-drivers-hwscsidisableinterruptscallback-routine"></a>SCSI 微型端口驱动程序的 HwScsiDisableInterruptsCallback 例程
 
@@ -21,7 +21,7 @@ ms.locfileid: "63339898"
 ## <span id="ddk_scsi_miniport_drivers_hwscsidisableinterruptscallback_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIDISABLEINTERRUPTSCALLBACK_ROUTINE_KG"></span>
 
 
-[ **HwScsiDisableInterruptsCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff557288)例程应执行以下操作：
+[ **HwScsiDisableInterruptsCallback** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557288(v=vs.85))例程应执行以下操作：
 
 -   重新启用来自 HBA 的中断
 

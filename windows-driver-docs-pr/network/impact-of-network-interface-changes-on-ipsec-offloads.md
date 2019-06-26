@@ -9,12 +9,12 @@ keywords:
 - AH 保护数据包 WDK IPsec 卸载、 删除的 NIC 和
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f1cf47899771da66129c4cc04ab47da01b242e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfa670125e2434df158e1b9340741b1688ca1705
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383651"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369201"
 ---
 # <a name="impact-of-network-interface-changes-on-ipsec-offloads"></a>网络接口更改对 IPsec 卸载造成的影响
 
@@ -31,7 +31,7 @@ ms.locfileid: "63383651"
 
 -   更改路由的接口。
 
-    通过新界面路由网络流量，TCP/IP 堆栈将暂时执行 IPsec 任务，直到它的相应 SAs 添加到在新界面中使用的 NIC。 TCP/IP 堆栈将 SA 添加到 NIC，通过发出[OID\_TCP\_任务\_IPSEC\_添加\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569808)。 旧界面使用的 NIC 上 SAs 后过期，TCP/IP 传输问题[OID\_TCP\_任务\_IPSEC\_删除\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569810)多少次所需请求 NIC 的微型端口驱动程序从 NIC 中删除该 SAs
+    通过新界面路由网络流量，TCP/IP 堆栈将暂时执行 IPsec 任务，直到它的相应 SAs 添加到在新界面中使用的 NIC。 TCP/IP 堆栈将 SA 添加到 NIC，通过发出[OID\_TCP\_任务\_IPSEC\_添加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-sa)。 旧界面使用的 NIC 上 SAs 后过期，TCP/IP 传输问题[OID\_TCP\_任务\_IPSEC\_删除\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-delete-sa)多少次所需请求 NIC 的微型端口驱动程序从 NIC 中删除该 SAs
 
  
 

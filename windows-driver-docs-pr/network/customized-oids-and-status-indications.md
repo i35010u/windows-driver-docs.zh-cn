@@ -11,12 +11,12 @@ keywords:
 - WMI WDK 网络、 OID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d1ea0cf282703841c61492398126fd73b1b7c63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d18839c5b0d0f9bd094473c6446e05b5d1abcfef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387392"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364962"
 ---
 # <a name="customized-oids-and-status-indications"></a>自定义的 OID 和状态指示
 
@@ -28,7 +28,7 @@ ms.locfileid: "63387392"
 
 若要提供的自定义状态指示，NDIS 微型端口驱动程序必须使用 NDIS\_状态\_媒体\_特定\_指示\_EX 状态指示。 WMI 客户端必须使用随标识的自定义事件的 WMI 事件的数据。 NDIS 不会注册状态指示自定义 Guid。
 
-若要获取的微型端口适配器自定义 Oid 和关联的 WMI Guid，NDIS OID 对发出请求的微型端口驱动程序微型端口驱动程序已完成初始化后。 NDIS 问题[OID\_代\_支持\_列表](https://msdn.microsoft.com/library/windows/hardware/ff569642)查询，以获取微型端口驱动程序支持的 Oid 的列表。 微型端口驱动程序在其响应中包括自定义 Oid 和标准的 Oid。 若要获取与自定义 Oid，NDIS 问题关联的 Guid [OID\_代\_支持\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff569641)无连接的微型端口驱动程序的查询或[OID\_代\_共同\_支持\_GUID](https://msdn.microsoft.com/library/windows/hardware/ff569566)面向连接的微型端口驱动程序的查询。
+若要获取的微型端口适配器自定义 Oid 和关联的 WMI Guid，NDIS OID 对发出请求的微型端口驱动程序微型端口驱动程序已完成初始化后。 NDIS 问题[OID\_代\_支持\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-list)查询，以获取微型端口驱动程序支持的 Oid 的列表。 微型端口驱动程序在其响应中包括自定义 Oid 和标准的 Oid。 若要获取与自定义 Oid，NDIS 问题关联的 Guid [OID\_代\_支持\_GUID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-guids)无连接的微型端口驱动程序的查询或[OID\_代\_共同\_支持\_GUID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-supported-guids)面向连接的微型端口驱动程序的查询。
 
 将查询与 OID\_GEN\_支持\_GUID 或 OID\_常规\_CO\_支持\_GUID 返回的数组[NDIS\_GUID](filling-in-an-ndis-guid-structure.md) NDIS 的结构。 每个 NDIS\_GUID 结构映射到自定义 OID 的自定义 GUID。
 

@@ -10,12 +10,12 @@ keywords:
 - FPU WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46ea99e3f760b67aeef21a21517d4eb3ca8779b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2756768789a8a606af5a98f605e8f38d0ceeb71c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383285"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381842"
 ---
 # <a name="floating-point-operations-in-graphics-driver-functions"></a>图形驱动程序函数中的浮点运算
 
@@ -23,7 +23,7 @@ ms.locfileid: "63383285"
 ## <span id="ddk_floating_point_operations_in_graphics_driver_functions_gg"></span><span id="DDK_FLOATING_POINT_OPERATIONS_IN_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>
 
 
-如果图形驱动程序函数包含使用浮点单元 (FPU) 的代码，必须通过调用前面的代码[ **EngSaveFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff565010)并调用后跟[ **EngRestoreFloatingPointState**](https://msdn.microsoft.com/library/windows/hardware/ff565006)。 图形驱动程序函数的列表，请参阅[图形驱动程序函数](graphics-driver-functions.md)。
+如果图形驱动程序函数包含使用浮点单元 (FPU) 的代码，必须通过调用前面的代码[ **EngSaveFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)并调用后跟[ **EngRestoreFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。 图形驱动程序函数的列表，请参阅[图形驱动程序函数](graphics-driver-functions.md)。
 
 如果 FPU 不可用，它将使用的任何代码，它将值分配给浮点变量或执行计算时如果涉及浮点数。 例如，以下代码行的每个使用 FPU。
 
@@ -33,7 +33,7 @@ int myInt = 5 * 4.3;
 int myInt = 50 * cos(2);
 ```
 
-假设您要编写[ **DrvAlphaBlend** ](https://msdn.microsoft.com/library/windows/hardware/ff556176)使用 FPU 函数。 下面的示例演示如何应保存和还原的浮点状态。
+假设您要编写[ **DrvAlphaBlend** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend)使用 FPU 函数。 下面的示例演示如何应保存和还原的浮点状态。
 
 ```cpp
 #define DRIVER_TAG // Put your driver tag here, for example 'zyxD'
@@ -77,7 +77,7 @@ BOOL DrvAlphaBlend(...)
 }
 ```
 
-GDI，将自动保存对驱动程序的任何调用的浮点状态[ **DrvEscape** ](https://msdn.microsoft.com/library/windows/hardware/ff556217)函数时转义符，OPENGL\_CMD、 OPENGL\_GETINFO 或 MCDFUNCS。 在这些情况下，你可以使用在 FPU 你*DrvEscape*而无需调用函数**EngSaveFloatingPointState**并**EngRestoreFloatingPointState**。
+GDI，将自动保存对驱动程序的任何调用的浮点状态[ **DrvEscape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)函数时转义符，OPENGL\_CMD、 OPENGL\_GETINFO 或 MCDFUNCS。 在这些情况下，你可以使用在 FPU 你*DrvEscape*而无需调用函数**EngSaveFloatingPointState**并**EngRestoreFloatingPointState**。
 
 大多数 DirectDraw 和 Direct3D 执行浮点操作的回调函数还应保存和还原的浮点状态。 有关详细信息，请参阅[DirectDraw 中执行浮点操作](performing-floating-point-operations-in-directdraw.md)并[Direct3D 中执行浮点操作](performing-floating-point-operations-in-direct3d.md)。
 

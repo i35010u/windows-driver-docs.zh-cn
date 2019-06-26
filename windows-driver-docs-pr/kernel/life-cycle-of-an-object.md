@@ -19,12 +19,12 @@ keywords:
 - 计数 WDK 对象的引用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee77d2900138b800722496dd6c4cc3128f6f295
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08df0df5dd7ce393442a4bc1af60648c605b0fec
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381367"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384226"
 ---
 # <a name="life-cycle-of-an-object"></a>对象的生命周期
 
@@ -40,25 +40,25 @@ ms.locfileid: "63381367"
 
 驱动程序必须确保对象管理器具有它们操作的任何对象的准确的引用计数。 过早地释放的对象可能会导致系统崩溃。 一个对象，其引用计数是错误地高永远不会被释放。
 
-句柄或指针，则可以引用对象。 除了引用计数对象管理器维护打开的句柄的对象数的计数。 每个打开句柄的例程会对象引用计数和对象句柄计数增加 1。 每次调用此类例程必须与相应地调用匹配[ **ZwClose**](https://msdn.microsoft.com/library/windows/hardware/ff566417)。 有关详细信息，请参阅[对象处理](object-handles.md)。
+句柄或指针，则可以引用对象。 除了引用计数对象管理器维护打开的句柄的对象数的计数。 每个打开句柄的例程会对象引用计数和对象句柄计数增加 1。 每次调用此类例程必须与相应地调用匹配[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。 有关详细信息，请参阅[对象处理](object-handles.md)。
 
-在内核模式下，可以通过指向对象的引用对象。 返回指向对象，如的例程[ **IoGetAttachedDeviceReference**](https://msdn.microsoft.com/library/windows/hardware/ff549145)，引用计数增加 1。 该驱动程序完成后使用指针，它必须调用[ **ObDereferenceObject** ](https://msdn.microsoft.com/library/windows/hardware/ff557724)以引用计数减少 1。
+在内核模式下，可以通过指向对象的引用对象。 返回指向对象，如的例程[ **IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)，引用计数增加 1。 该驱动程序完成后使用指针，它必须调用[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)以引用计数减少 1。
 
 下面的例程所有对象的引用计数都增加一：
 
-[**ExCreateCallback**](https://msdn.microsoft.com/library/windows/hardware/ff544560)
+[**ExCreateCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excreatecallback)
 
-[**IoGetAttachedDeviceReference**](https://msdn.microsoft.com/library/windows/hardware/ff549145)
+[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)
 
-[**IoGetDeviceObjectPointer**](https://msdn.microsoft.com/library/windows/hardware/ff549198)
+[**IoGetDeviceObjectPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)
 
-[**IoWMIOpenBlock**](https://msdn.microsoft.com/library/windows/hardware/ff550453)
+[**IoWMIOpenBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiopenblock)
 
-[**ObReferenceObject**](https://msdn.microsoft.com/library/windows/hardware/ff558678)
+[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)
 
-[**ObReferenceObjectByHandle**](https://msdn.microsoft.com/library/windows/hardware/ff558679)
+[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)
 
-[**ObReferenceObjectByPointer**](https://msdn.microsoft.com/library/windows/hardware/ff558686)
+[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)
 
 对任何上述例程进行每次调用必须匹配与相应地调用**ObDereferenceObject**。
 
@@ -72,9 +72,9 @@ ms.locfileid: "63381367"
 
 可以通过名称访问的临时对象，仅当其句柄计数为非零值。 一旦句柄计数递减到零，对象的名称已从对象管理器的命名空间。 只要其引用计数保持大于零，则仍可以通过指针访问此类对象。 可以通过名称访问的永久对象，因为它们存在。
 
-对象可以通过永久在其创建时指定 OBJ\_中的永久属性[**对象\_特性**](https://msdn.microsoft.com/library/windows/hardware/ff557749)对象的结构。 有关详细信息，请参阅[ **InitializeObjectAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff547804)。
+对象可以通过永久在其创建时指定 OBJ\_中的永久属性[**对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_object_attributes)对象的结构。 有关详细信息，请参阅[ **InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/nf-wudfwdm-initializeobjectattributes)。
 
-若要进行临时永久对象，使用[ **ZwMakeTemporaryObject** ](https://msdn.microsoft.com/library/windows/hardware/ff566477)例程。 此例程会导致对象无法再使用后自动删除。 （如果该对象具有打开的句柄，该对象的名称将立即删除从对象管理器的命名空间。 对象本身将保持直到引用计数降为零。）
+若要进行临时永久对象，使用[ **ZwMakeTemporaryObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmaketemporaryobject)例程。 此例程会导致对象无法再使用后自动删除。 （如果该对象具有打开的句柄，该对象的名称将立即删除从对象管理器的命名空间。 对象本身将保持直到引用计数降为零。）
 
  
 

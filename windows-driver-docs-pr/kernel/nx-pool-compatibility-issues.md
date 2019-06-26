@@ -4,12 +4,12 @@ description: 当你使用 NX Windows 8 的驱动程序二进制文件中的非�
 ms.assetid: 652AE9A2-D733-4EC2-9D49-B95DDABE42B1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 65fb075f7cf89fc0197c8c2b60023cd514bb4d9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67a23d8b593d0bcd944e187980ef25e7f021cc07
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341931"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365419"
 ---
 # <a name="nx-pool-compatibility-issues"></a>NX 池兼容性问题
 
@@ -21,7 +21,7 @@ Windows 8 是第一个版本的 Windows 支持 NX 非分页缓冲的池。 但�
 ## <a name="running-existing-driver-binaries-on-windows8"></a>运行现有 Windows 8 上的驱动程序二进制文件
 
 
-驱动程序二进制文件生成适用于 Windows 7 （或可能是针对 Windows 的早期版本），并使用**非分页池**库类型，则不会阻止从 Windows 8 上运行。 若要启用向后兼容性**NonPagedPoolExecute**常数定义为具有相同的值**非分页池**常量中[**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)枚举。 因此，在任何版本的 Windows 中此驱动程序的运行，该驱动程序从非分页缓冲池分配的内存始终是可执行文件。
+驱动程序二进制文件生成适用于 Windows 7 （或可能是针对 Windows 的早期版本），并使用**非分页池**库类型，则不会阻止从 Windows 8 上运行。 若要启用向后兼容性**NonPagedPoolExecute**常数定义为具有相同的值**非分页池**常量中[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)枚举。 因此，在任何版本的 Windows 中此驱动程序的运行，该驱动程序从非分页缓冲池分配的内存始终是可执行文件。
 
 Windows 8 是 Windows，以支持 ARM 体系结构的第一个版本。 因此，没有驱动程序二进制文件的 ARM 内置于早期版本的 Windows，这需要进行向后兼容性。 相反，应为 Windows 编写在 ARM 上的所有驱动程序指定**NonPagedPoolNx**而不是**NonPagedPoolExecute**中其非分页缓冲池分配，除非它们明确要求使用可执行文件内存。
 
@@ -32,7 +32,7 @@ Windows 8 是 Windows，以支持 ARM 体系结构的第一个版本。 因此�
 
 **NonPagedPoolNx**从 Windows 8 开始支持池类型。 不要使用此池类型中的驱动程序的早期版本的 Windows。 在这些早期版本的 Windows 中的池分配器无法正常运行时驱动程序会请求使用的分配**NonPagedPoolNx**池类型。
 
-在 Windows 8 之前的 Windows 版本**NonPagedPoolExecute**池类型可以自由地用来替代**非分页池**池类型。 [**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707)枚举定义**非分页池**并**NonPagedPoolExecute**以具有相同的值。
+在 Windows 8 之前的 Windows 版本**NonPagedPoolExecute**池类型可以自由地用来替代**非分页池**池类型。 [**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)枚举定义**非分页池**并**NonPagedPoolExecute**以具有相同的值。
 
 ## <a name="nx-pool-type-porting-guidelines"></a>NX 池类型移植指南
 

@@ -7,12 +7,12 @@ keywords:
 - 事件
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 614907f4c965e2ea93109f9c7e835691e2bb2ead
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 70567197d721b5ea5dba8fddbab7eebb6983f867
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354786"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366459"
 ---
 # <a name="monitoring-events"></a>监视事件
 
@@ -22,11 +22,11 @@ ms.locfileid: "63354786"
 
 有关中的事件的概述[调试器引擎](introduction.md#debugger-engine)，请参阅[事件](events.md)。
 
-可以使用监视目标或调试器引擎中发生的事件[IDebugEventCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550550)接口。 **IDebugEventCallbacks**可能与使用的客户端注册对象[ *SetEventCallbacks*](https://msdn.microsoft.com/library/windows/hardware/ff556671)。 每个客户端只能有一个最多**IDebugEventCallbacks**对象注册到它。
+可以使用监视目标或调试器引擎中发生的事件[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 **IDebugEventCallbacks**可能与使用的客户端注册对象[ *SetEventCallbacks*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-seteventcallbacks)。 每个客户端只能有一个最多**IDebugEventCallbacks**对象注册到它。
 
-当**IDebugEventCallbacks**通过客户端注册对象，该引擎将调用对象的[ **IDebugEventCallbacks::GetInterestMask** ](https://msdn.microsoft.com/library/windows/hardware/ff550737)确定哪个该对象对感兴趣的事件。 只有在其中所关注的对象的事件将发送给它。
+当**IDebugEventCallbacks**通过客户端注册对象，该引擎将调用对象的[ **IDebugEventCallbacks::GetInterestMask** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugeventcallbacks-getinterestmask)确定哪个该对象对感兴趣的事件。 只有在其中所关注的对象的事件将发送给它。
 
-对于每种类型的事件，该引擎调用相应的回调方法上[IDebugEventCallbacks](https://msdn.microsoft.com/library/windows/hardware/ff550550)。 来自目标的事件[**调试\_状态\_XXX** ](https://msdn.microsoft.com/library/windows/hardware/ff541651)从这些调用返回的值指定的目标执行应如何继续。 引擎从每个收集这些返回值**IDebugEventCallbacks**对象调用，并将对具有最高优先级的一个。
+对于每种类型的事件，该引擎调用相应的回调方法上[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)。 来自目标的事件[**调试\_状态\_XXX** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-status-xxx)从这些调用返回的值指定的目标执行应如何继续。 引擎从每个收集这些返回值**IDebugEventCallbacks**对象调用，并将对具有最高优先级的一个。
 
 ### <a name="span-ideventsfromthetargetthatbreakintothedebuggerbydefaultspanspan-ideventsfromthetargetthatbreakintothedebuggerbydefaultspanevents-from-the-target-that-break-into-the-debugger-by-default"></a><span id="events_from_the_target_that_break_into_the_debugger_by_default"></span><span id="EVENTS_FROM_THE_TARGET_THAT_BREAK_INTO_THE_DEBUGGER_BY_DEFAULT"></span>在默认情况下调试器中中断目标事件
 

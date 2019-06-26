@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5287d0e0f4808813792f9688946a5256a9ed5c60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d9f49b85d314e5cd1886cb100f0d56aeea8882f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381908"
 ---
 # <a name="kspropertyvideoprocampwhitebalancecomponent"></a>KSPROPERTY\_VIDEOPROCAMP\_WHITEBALANCE\_组件
 
@@ -53,7 +53,7 @@ KSPROPERTY\_VIDEOPROCAMP\_WHITEBALANCE\_组件属性的视频格式的蓝色和�
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>节点</p></td>
-<td><a href="https://msdn.microsoft.com/library/windows/hardware/ff566082" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566082)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
 <td><p>对长整数</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY\_VIDEOPROCAMP\_WHITEBALANCE\_组件属性的视频格式的蓝色和�
 
 在 set 请求时，客户端应提供中的红色组件值**Value1**中的成员和蓝色分量值**Value2** KSPROPERTY 成员\_VIDEOPROCAMP\_节点\_S2 结构。
 
-若要确定设备支持的白平衡值的范围，应用程序可以发出 KSPROPERTY\_类型\_BASICSUPPORT 请求。 您可以指定 KSPROPERTY\_类型\_中的 BASICSUPPORT**标志**的成员[ **KSPROPERTY\_项**](https://msdn.microsoft.com/library/windows/hardware/ff565176)结构。
+若要确定设备支持的白平衡值的范围，应用程序可以发出 KSPROPERTY\_类型\_BASICSUPPORT 请求。 您可以指定 KSPROPERTY\_类型\_中的 BASICSUPPORT**标志**的成员[ **KSPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)结构。
 
 客户端时发出 get 请求，接收中的红色值**Value1**中的成员和蓝色分量值**Value2** KSPROPERTY 成员\_VIDEOPROCAMP\_节点\_S2 结构。
 
@@ -95,7 +95,7 @@ KSPROPERTY\_VIDEOPROCAMP\_WHITEBALANCE\_组件属性的视频格式的蓝色和�
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOPROCAMP\_NODE\_S2**](https://msdn.microsoft.com/library/windows/hardware/ff566082)
+[**KSPROPERTY\_VIDEOPROCAMP\_NODE\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)
 
  
 

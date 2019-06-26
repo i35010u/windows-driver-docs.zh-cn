@@ -14,12 +14,12 @@ keywords:
 - 线路 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef84ec774a23a05762718d3bbbe16e58ab7833a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17c9a61903cbbb61e825eaceb18d768fadc8f65d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376123"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384072"
 ---
 # <a name="frame-injection"></a>帧注入
 
@@ -29,15 +29,15 @@ ms.locfileid: "63376123"
 
 默认情况下，在 AVStream 请求者获取中分配器的空帧，并将它们放在队列中。 微型驱动程序然后填充帧通过[pin 以中心处理](pin-centric-processing.md)或[筛选器以中心处理](filter-centric-processing.md)。 跨传输将移动帧到线路，最终完成线路并返回给请求者中的下一个对象。 AVStream 然后重用帧。
 
-微型驱动程序可以通过使用替代此默认行为*注入模式*。 在注入模式下，微型驱动程序负责将框架放入该线路。 帧周围以默认方式线路传播。 微型驱动程序提供当帧回到 AVStream 对象的开始位置时，请调用 AVStream [ *AVStrMiniFrameReturn* ](https://msdn.microsoft.com/library/windows/hardware/ff556320)例程。
+微型驱动程序可以通过使用替代此默认行为*注入模式*。 在注入模式下，微型驱动程序负责将框架放入该线路。 帧周围以默认方式线路传播。 微型驱动程序提供当帧回到 AVStream 对象的开始位置时，请调用 AVStream [ *AVStrMiniFrameReturn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinframereturn)例程。
 
 在此例程中，微型驱动程序无法例如解除分配帧、 完成的框架中，返回挂起的工作或重新填充并 reinject 帧。
 
-若要设置注入模式，微型驱动程序调用[ **KsPinRegisterFrameReturnCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff563522) ，并提供一个指向其*AVStrMiniFrameReturn*例程。
+若要设置注入模式，微型驱动程序调用[ **KsPinRegisterFrameReturnCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinregisterframereturncallback) ，并提供一个指向其*AVStrMiniFrameReturn*例程。
 
 *不要调用* ***KsPinRegisterFrameReturnCallback*** *除非筛选器处于停止状态。*
 
-若要将帧注入到线路，请调用[ **KsPinSubmitFrame** ](https://msdn.microsoft.com/library/windows/hardware/ff563529)或[ **KsPinSubmitFrameMdl**](https://msdn.microsoft.com/library/windows/hardware/ff563530)。
+若要将帧注入到线路，请调用[ **KsPinSubmitFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframe)或[ **KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframemdl)。
 
 下图显示了设置组成源筛选器，一个 AVStream 筛选器*就地*与源注入帧转换筛选器和呈现筛选器。
 

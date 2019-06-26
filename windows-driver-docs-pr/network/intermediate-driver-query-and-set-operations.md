@@ -12,12 +12,12 @@ keywords:
 - Oid WDK 网络、 中间驱动程序查询和设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0113800dd9746a101f3a93687ffd08537978b82b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81343b88aac5279865f3e7dc8101696ba39b470d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391656"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67385253"
 ---
 # <a name="intermediate-driver-query-and-set-operations"></a>中间驱动程序查询和设置操作
 
@@ -25,9 +25,9 @@ ms.locfileid: "63391656"
 
 
 
-它已成功绑定到基础的微型端口适配器并初始化其虚拟微型端口后，中间驱动程序查询操作基础的微型端口适配器的特征，并设置其自己的内部状态。 如果适用，中间驱动程序还协商与基础的微型端口适配器绑定的预测先行缓冲区大小作为此类参数。 大多数与基础的微型端口适配器相关联的属性传递给中间驱动程序在*BindParameters*的参数[ *ProtocolBindAdapterEx*](https://msdn.microsoft.com/library/windows/hardware/ff570220)函数。 中间驱动程序应使用的值传递给*ProtocolBindAdapterEx*，如果可能，而不是发出 OID 查询。 但是，使用无连接的下边缘中间驱动程序可以发出 OID 查询通过调用[ **NdisOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff563710)。 使用面向连接的下边缘中间驱动程序可以通过调用发出 OID 查询[ **NdisCoOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561711)。
+它已成功绑定到基础的微型端口适配器并初始化其虚拟微型端口后，中间驱动程序查询操作基础的微型端口适配器的特征，并设置其自己的内部状态。 如果适用，中间驱动程序还协商与基础的微型端口适配器绑定的预测先行缓冲区大小作为此类参数。 大多数与基础的微型端口适配器相关联的属性传递给中间驱动程序在*BindParameters*的参数[ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数。 中间驱动程序应使用的值传递给*ProtocolBindAdapterEx*，如果可能，而不是发出 OID 查询。 但是，使用无连接的下边缘中间驱动程序可以发出 OID 查询通过调用[ **NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)。 使用面向连接的下边缘中间驱动程序可以通过调用发出 OID 查询[ **NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)。
 
-中间的驱动程序还可以接收查询并将请求设置为从更高级别驱动程序通过其[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数。 该驱动程序可以响应这些请求，或将其传递到基础驱动程序。 中间的驱动程序如何响应查询和集取决于实现。
+中间的驱动程序还可以接收查询并将请求设置为从更高级别驱动程序通过其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数。 该驱动程序可以响应这些请求，或将其传递到基础驱动程序。 中间的驱动程序如何响应查询和集取决于实现。
 
 **请注意**  中间驱动程序的行为也会受到虚拟微型端口和基础微型端口驱动程序的电源状态。 若要了解有关对查询的电源状态影响的详细信息和设置操作，请参阅[处理设置 Power 请求](handling-a-set-power-request.md)。
 

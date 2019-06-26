@@ -5,26 +5,26 @@ ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a90580eea69d85ccf616b3793ba48617810d5678
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d36c0cd0b56e6697748a9bd47dabc257b72406d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350937"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383248"
 ---
 # <a name="oidpacketcoalescingfiltermatchcount"></a>OID\_数据包\_COALESCING\_筛选器\_匹配\_计数
 
 
-NDIS 发出 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_若要获取的已缓存的数据包数的计数或*合并*上中的网络适配器。 网络适配器将合并接收的数据包，如果适配器启用了[NDIS 数据包合并](https://msdn.microsoft.com/library/windows/hardware/hh451601)和数据包与接收筛选器相匹配。
+NDIS 发出 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_若要获取的已缓存的数据包数的计数或*合并*上中的网络适配器。 网络适配器将合并接收的数据包，如果适配器启用了[NDIS 数据包合并](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)和数据包与接收筛选器相匹配。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含指向调用方分配的 ULONG64 变量. 之前从查询请求成功返回时，驱动程序更新 ULONG64 变量具有匹配的数据包数与接收的网络适配器上的筛选器。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含指向调用方分配的 ULONG64 变量. 之前从查询请求成功返回时，驱动程序更新 ULONG64 变量具有匹配的数据包数与接收的网络适配器上的筛选器。
 
 <a name="remarks"></a>备注
 -------
 
-支持的驱动程序从 NDIS 6.30 [NDIS 数据包合并](https://msdn.microsoft.com/library/windows/hardware/hh451601)必须支持 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_计数。
+支持的驱动程序从 NDIS 6.30 [NDIS 数据包合并](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing)必须支持 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_计数。
 
-**请注意**  支持的驱动程序[单根 I/O 虚拟化 (SR-IOV)](https://msdn.microsoft.com/library/windows/hardware/hh440235)或[虚拟机队列 (VMQ)](https://msdn.microsoft.com/library/windows/hardware/ff571035)接口不支持所需的 OID 查询请求此 OID。
+**请注意**  支持的驱动程序[单根 I/O 虚拟化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)或[虚拟机队列 (VMQ)](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-machine-queue--vmq--in-ndis-6-20)接口不支持所需的 OID 查询请求此 OID。
 
  
 
@@ -36,9 +36,9 @@ NDIS 发出 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_�
 
 -   微型端口驱动程序处理的 OID 集请求[OID\_PNP\_设置\_POWER](oid-pnp-set-power.md)继续 NdisDeviceStateD0 全功率状态。
 
--   NDIS 调用微型端口驱动程序[ *MiniportResetEx* ](https://msdn.microsoft.com/library/windows/hardware/ff559432)函数以重置基础的网络适配器。
+-   NDIS 调用微型端口驱动程序[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)函数以重置基础的网络适配器。
 
-有关数据包合并的详细信息，请参阅[NDIS 数据包合并](https://msdn.microsoft.com/library/windows/hardware/hh205393)。
+有关数据包合并的详细信息，请参阅[NDIS 数据包合并](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -48,7 +48,7 @@ NDIS 发出 OID 查询请求的 OID\_数据包\_COALESCING\_筛选器\_匹配\_�
 OID 请求已成功完成。
 
 <a href="" id="ndis-status-invalid-length"></a>NDIS\_状态\_无效\_长度  
-信息缓冲区太短。 驱动程序集**数据。设置\_信息。BytesNeeded**中的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)是必需的最小缓冲区大小的结构。
+信息缓冲区太短。 驱动程序集**数据。设置\_信息。BytesNeeded**中的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)是必需的最小缓冲区大小的结构。
 
 <a href="" id="ndis-status-failure"></a>NDIS\_状态\_失败  
 请求由于其他原因而失败。
@@ -76,9 +76,9 @@ OID 请求已成功完成。
 ## <a name="see-also"></a>请参阅
 
 
-[*MiniportResetEx*](https://msdn.microsoft.com/library/windows/hardware/ff559432)
+[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
 [OID\_PNP\_SET\_POWER](oid-pnp-set-power.md)
 

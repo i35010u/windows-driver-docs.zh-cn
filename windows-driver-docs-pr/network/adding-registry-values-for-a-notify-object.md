@@ -9,12 +9,12 @@ keywords:
 - 注册表 WDK 通知对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc082fffc5a5d0724f6ad19729190bfe726b7909
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d859c24aae57834b214d26889f533d35ec86c05
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384726"
 ---
 # <a name="adding-registry-values-for-a-notify-object"></a>添加通知对象的注册表值
 
@@ -40,7 +40,7 @@ ms.locfileid: "63367903"
 
  
 
-有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://msdn.microsoft.com/library/windows/hardware/ff554011)。
+有关共同安装程序的详细信息，请参阅[编写共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-co-installer)。
 
 某个组件是否具有通知对象，必须添加该组件的 INF 文件 (通过*添加注册表部分*) 到组件的以下值**Ndi**密钥：
 
@@ -58,7 +58,7 @@ HKR, Ndi, ClsID, 0, "GUID"
 HKR, Ndi, ComponentDll, 0, "notifyobject.dll"
 ```
 
-*DDInstall*部分的组件的通知对象还必须包含**CopyFiles**指令引用*文件列表部分*复制通知指定的目标目录对象 DLL **DestinationDirs**部分。 有关详细信息**CopyFiles**指令并**DestinationDirs**部分中，请参阅[INF 文件的部分和指令](https://msdn.microsoft.com/library/windows/hardware/ff547433)。
+*DDInstall*部分的组件的通知对象还必须包含**CopyFiles**指令引用*文件列表部分*复制通知指定的目标目录对象 DLL **DestinationDirs**部分。 有关详细信息**CopyFiles**指令并**DestinationDirs**部分中，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
  
 
