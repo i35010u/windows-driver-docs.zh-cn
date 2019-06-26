@@ -6,12 +6,12 @@ keywords:
 - 驱动程序覆盖范围工具包 WDK，收集数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc6b124c4f2389398b2dfca040ff249b30288cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 740fdf45211eec9df18b69db9aa876817604dcc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329889"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358274"
 ---
 # <a name="how-to-collect-irp-coverage-data"></a>如何收集 IRP 覆盖范围数据
 
@@ -22,7 +22,7 @@ ms.locfileid: "63329889"
 
 以下步骤介绍如何使用驱动程序覆盖范围工具收集覆盖率数据的 I/O 请求数据包 (Irp) 和[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)。 工具是可作为的一部分[设备基础测试](device-fundamentals-tests.md)，覆盖率类别下。
 
-有关设置 WDK 和 Visual Studio 测试环境的信息，请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)并[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)。
+有关设置 WDK 和 Visual Studio 测试环境的信息，请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 有关选择和配置测试和工具参数的信息，请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)并[设备基础测试参数](https://docs.microsoft.com/windows-hardware/drivers)。
 
 1.  安装[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)在测试计算机上。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63329889"
 
     -   若要安装驱动程序覆盖范围筛选器驱动程序作为上限筛选器驱动程序或更低筛选器驱动程序设备使用*UpperFilter*参数。 覆盖率筛选器驱动程序有关的信息和有关如何安装驱动程序的指南，请参阅[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)
 
-    运行工具的信息，请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://msdn.microsoft.com/windows-drivers/develop/testing_a_driver_at_runtime)并[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)。
+    运行工具的信息，请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)并[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)。
 
 2.  清除当前的 IRP 覆盖率数据。
 

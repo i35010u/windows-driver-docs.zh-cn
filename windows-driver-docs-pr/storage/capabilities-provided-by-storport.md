@@ -4,12 +4,12 @@ description: Storport 提供的功能
 ms.assetid: 30b4d2e4-2004-4d71-8c91-f066e52dd256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a556b01864bdc5676e6fc47009510c3d102cee98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2eeeb27ec4ae887cec0463370f1f5a57ea7f49c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390560"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368363"
 ---
 # <a name="capabilities-provided-by-storport"></a>Storport 提供的功能
 
@@ -45,7 +45,7 @@ Retrys 和错误处理
 
 -   提供有关主机适配器限制的信息的类驱动程序。
 
-    它负责的类驱动程序来控制数据传输，以满足主机总线适配器 (Hba) 的限制的大小。 但是，Storport 提供使用它来完成此任务所需的信息的类驱动程序。 Storport 提供此适配器描述符中的信息 ([**存储\_适配器\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff566346)) 以响应 IOCTL 请求 ([ **IOCTL\_存储\_查询\_属性**](https://msdn.microsoft.com/library/windows/hardware/ff560590))。 在类驱动程序负责请求分解为多个块的基于此描述符中报告的信息的适当大小。
+    它负责的类驱动程序来控制数据传输，以满足主机总线适配器 (Hba) 的限制的大小。 但是，Storport 提供使用它来完成此任务所需的信息的类驱动程序。 Storport 提供此适配器描述符中的信息 ([**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)) 以响应 IOCTL 请求 ([ **IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property))。 在类驱动程序负责请求分解为多个块的基于此描述符中报告的信息的适当大小。
 
 -   正在转换到逻辑地址总线相对地址。
 
@@ -67,15 +67,15 @@ Retrys 和错误处理
 
 Storport 通过 Storport 库例程提供给微型端口驱动程序的服务。 微型端口驱动程序编写人员可以调用这些例程，而不是无需编码到单个整体式端口驱动程序提供的功能。 一些最重要的服务使用这些例程提供如下所示：
 
--   Storport 微型端口驱动程序可以将委派到 Storport 的很多依赖于 OS 的初始化操作[ **StorPortInitialize** ](https://msdn.microsoft.com/library/windows/hardware/ff567108)库例程。 例如，Storport 驱动程序将处理与即插即用相关的详细信息和 DMA 映射。 这使 Storport 微型端口驱动程序更易于移植跨不同版本的操作系统。 Storport 微型端口驱动程序初始化任务的说明，请参阅[Storport 使用硬件初始化](hardware-initialization-with-storport.md)。
+-   Storport 微型端口驱动程序可以将委派到 Storport 的很多依赖于 OS 的初始化操作[ **StorPortInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)库例程。 例如，Storport 驱动程序将处理与即插即用相关的详细信息和 DMA 映射。 这使 Storport 微型端口驱动程序更易于移植跨不同版本的操作系统。 Storport 微型端口驱动程序初始化任务的说明，请参阅[Storport 使用硬件初始化](hardware-initialization-with-storport.md)。
 
--   Storport 微型端口驱动程序适用于非 PnP 设备空闲下来，查找适配器并向即插即用管理器报告其资源的任务。 这是在[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)。
+-   Storport 微型端口驱动程序适用于非 PnP 设备空闲下来，查找适配器并向即插即用管理器报告其资源的任务。 这是在[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)。
 
--   Storport 微型端口驱动程序未初始化的驱动程序对象中的调度入口点。 Storport 驱动程序执行这代表微型端口驱动程序微型端口驱动程序调用时[ **StorPortInitialize**](https://msdn.microsoft.com/library/windows/hardware/ff567108)。
+-   Storport 微型端口驱动程序未初始化的驱动程序对象中的调度入口点。 Storport 驱动程序执行这代表微型端口驱动程序微型端口驱动程序调用时[ **StorPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitialize)。
 
--   Storport 微型端口驱动程序不会转换为使用的逻辑地址总线相对地址[ **HalTranslateBusAddress**](https://msdn.microsoft.com/library/windows/hardware/ff546637)。 Storport 微型端口驱动程序执行此操作通过调用[ **StorPortGetDeviceBase**](https://msdn.microsoft.com/library/windows/hardware/ff567080)。
+-   Storport 微型端口驱动程序不会转换为使用的逻辑地址总线相对地址[ **HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))。 Storport 微型端口驱动程序执行此操作通过调用[ **StorPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportgetdevicebase)。
 
-Storport 使其可供 Storport 微型端口驱动程序的库例程的完整列表，请参阅[Storport 驱动程序支持例程](https://msdn.microsoft.com/library/windows/hardware/ff567548)。
+Storport 使其可供 Storport 微型端口驱动程序的库例程的完整列表，请参阅[Storport 驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

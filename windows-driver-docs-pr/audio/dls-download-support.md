@@ -15,12 +15,12 @@ keywords:
 - 合成器 WDK 音频、 可下载声音
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 934edba559ecf21ffe2964314faeb2361b0cb686
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc16fdf73e9c72529a847cdd74d796b58e96fd3e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333758"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360123"
 ---
 # <a name="dls-download-support"></a>DLS 下载支持
 
@@ -28,7 +28,7 @@ ms.locfileid: "63333758"
 ## <span id="custom_dls"></span><span id="CUSTOM_DLS"></span>
 
 
-如果你正在编写你自己合成器，您还必须可下载声音 (DL) 提供支持，以便应用程序可以将 MIDI 注意消息转换为特定乐器的声音。 具体而言，应实现你[ **IDirectMusicSynth::Download** ](https://msdn.microsoft.com/library/windows/hardware/ff536532)方法，以便它可以检测批和清晰表述数据下载到合成器。 此方法应接受原始数据 （通常是从集合文件），并将其存储在可由呈现引擎的窗体。
+如果你正在编写你自己合成器，您还必须可下载声音 (DL) 提供支持，以便应用程序可以将 MIDI 注意消息转换为特定乐器的声音。 具体而言，应实现你[ **IDirectMusicSynth::Download** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-download)方法，以便它可以检测批和清晰表述数据下载到合成器。 此方法应接受原始数据 （通常是从集合文件），并将其存储在可由呈现引擎的窗体。
 
 DirectMusic DLS 数据下载到驱动程序时，按照多个 DirectMusic 结构定义的数据缓冲区格式。 下载的数据开头为两个结构：
 
@@ -50,7 +50,7 @@ DirectMusic DLS 数据下载到驱动程序时，按照多个 DirectMusic 结构
 
 DLS 数据格式是在内核和用户模式中相同的。
 
-[KSPROPSETID\_合成\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)属性集包含用于下载 DLS 示例和 instruments 到 DirectMusic 合成器的属性。 设置此属性可用于下载 DLS 级别 1 和 2 DLS 级数据。 仅 DLS 级别 1 和 2 之间的已下载的数据更改的格式。
+[KSPROPSETID\_合成\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)属性集包含用于下载 DLS 示例和 instruments 到 DirectMusic 合成器的属性。 设置此属性可用于下载 DLS 级别 1 和 2 DLS 级数据。 仅 DLS 级别 1 和 2 之间的已下载的数据更改的格式。
 
  
 

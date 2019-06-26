@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6976f513c795a58600894cf8a3cc483bcbdcc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb2303d96c56d882829e5cef47959b4aa04e16a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361071"
 ---
 # <a name="kspropertypinproposedataformat"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT
 
@@ -53,8 +53,8 @@ ms.locfileid: "63380807"
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ ms.locfileid: "63380807"
 
 KSPROPERTY_PIN_PROPOSEDATAFORMAT 包括类型 KSDATAFORMAT，指定建议的数据格式的结构。 指定此属性使用的 KSP_PIN，其中该成员指定相关 pin 工厂。
 
-KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 包含类型的结构[ **KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)，指定建议的数据格式。
+KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 包含类型的结构[ **KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)，指定建议的数据格式。
 
 [**KSPROPERTY\_类型\_获取**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)支持 Windows 7 和更高版本的 Windows 中。 在 Windows Vista **KSPROPERTY\_类型\_获取**是*不支持*。 
 
@@ -98,9 +98,9 @@ KS 筛选器将返回状态\_成功时使用此属性的 KSPROPERTY_TYPE_SET，�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)
  
 [**KSEVENT_PINCAPS_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-formatchange)
 

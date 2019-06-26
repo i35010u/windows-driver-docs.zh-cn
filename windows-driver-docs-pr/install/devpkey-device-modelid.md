@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f6fbf4b052a9d074e3e908725d155c1f5b265392
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9de4d826e790ddfe3ebbb4e5c596250fc0e8b5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351080"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378177"
 ---
 # <a name="devpkeydevicemodelid"></a>DEVPKEY_Device_ModelId
 
 
-DEVPKEY_Device_ModelId 设备属性与匹配的设备[设备元数据包](https://msdn.microsoft.com/library/windows/hardware/ff541439)。
+DEVPKEY_Device_ModelId 设备属性与匹配的设备[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。
 
 <table>
 <colgroup>
@@ -58,9 +58,9 @@ DEVPKEY_Device_ModelId 设备属性与匹配的设备[设备元数据包](https:
 
 DEVPKEY_Device_ModelId 设备属性提供对来唯一地标识共享相同的制造商和型号的设备的 Ihv 和 Oem 的支持。 通过使用模型标识符 (ModelID)，Oem 和 Ihv 可以匹配它们分发给其自己的经过品牌打造的设备元数据包的设备模型。
 
-DEVPKEY_Device_ModelId 设备属性包含的值[ **ModelID** ](https://msdn.microsoft.com/library/windows/hardware/ff549295)从设备元数据包的 XML 元素。 安装设备时，报告的设备使用 ModelID GUID 值填充此主键。
+DEVPKEY_Device_ModelId 设备属性包含的值[ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))从设备元数据包的 XML 元素。 安装设备时，报告的设备使用 ModelID GUID 值填充此主键。
 
-有关详细信息，请参阅[设备元数据包](https://msdn.microsoft.com/library/windows/hardware/ff541439)。
+有关详细信息，请参阅[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,11 +85,11 @@ DEVPKEY_Device_ModelId 设备属性包含的值[ **ModelID** ](https://msdn.micr
 ## <a name="see-also"></a>请参阅
 
 
-[设备元数据包](https://msdn.microsoft.com/library/windows/hardware/ff541439)
+[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)
 
-[**ModelID**](https://msdn.microsoft.com/library/windows/hardware/ff549295)
+[**ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

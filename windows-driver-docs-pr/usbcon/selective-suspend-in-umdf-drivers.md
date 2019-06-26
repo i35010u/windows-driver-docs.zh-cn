@@ -3,21 +3,21 @@ Description: 本主题介绍如何 UMDF 函数驱动程序支持 USB 选择性�
 title: 在 USB UMDF 驱动程序的选择性挂起
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 228dd12f2e7a2b5fe70a3924ef07d9ed2cddf9e5
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 4a0cd34fcb005fca796c691f0f7eff829c5ec6a4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405079"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358344"
 ---
 # <a name="selective-suspend-in-usb-umdf-drivers"></a>在 USB UMDF 驱动程序的选择性挂起
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**IWDFUsbTargetDevice::SetPowerPolicy**](https://msdn.microsoft.com/library/windows/hardware/ff560385)
--   [**IWDFDevice2::AssignSxWakeSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556923)
--   [**IWDFDevice2::AssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556920)
+-   [**IWDFUsbTargetDevice::SetPowerPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy)
+-   [**IWDFDevice2::AssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)
+-   [**IWDFDevice2::AssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)
 
 本主题介绍如何 UMDF 函数驱动程序支持 USB 选择性挂起。
 
@@ -63,7 +63,7 @@ UMDF 函数驱动程序可以支持 USB 选择性挂起中通过两种方式：
 
 UMDF 驱动程序支持选择性挂起，是否 UMDF 驱动程序拥有其设备的电源策略确定它可以使用的 I/O 队列的类型。 支持选择性的 UMDF 驱动程序挂起和 PPOs 可以使用电源管理或电源管理的队列。 支持选择性的 UMDF USB 驱动程序挂起，但不 PPO 不应使用任何电源管理的 I/O 队列。
 
-如果设备被挂起时，I/O 请求到达的电源管理的队列时，框架不会带来请求驱动程序是 PPO，除非在图中所示[USB 驱动程序中的选择性挂起](https://msdn.microsoft.com/library/windows/hardware/dn449739)。 如果 UMDF 驱动程序不是设备 PPO，框架无法代表自己设备接通电源。 因此，请求将保留在电源管理队列中卡住。 请求永远不会到达 WinUSB，因此 WinUSB 无法在设备接通电源。 因此，可以停止设备堆栈。
+如果设备被挂起时，I/O 请求到达的电源管理的队列时，框架不会带来请求驱动程序是 PPO，除非在图中所示[USB 驱动程序中的选择性挂起](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)。 如果 UMDF 驱动程序不是设备 PPO，框架无法代表自己设备接通电源。 因此，请求将保留在电源管理队列中卡住。 请求永远不会到达 WinUSB，因此 WinUSB 无法在设备接通电源。 因此，可以停止设备堆栈。
 
 如果队列不是电源管理，框架提供了对 UMDF 驱动程序的 I/O 请求，即使设备已关闭。 UMDF 驱动程序格式化请求，并按常规方式将其转发到默认 I/O 目标设备堆栈下。 不需要特殊的代码。 当请求到达 PPO (WinUSB.sys) 时，WinUSB.sys 将启动设备并执行所需的 I/O 操作。
 
@@ -89,7 +89,7 @@ hr = __super::Initialize(WdfIoQueueDispatchParallel,
                          );
 ```
 
-**CMyQueue::Initialize**然后调用[ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)以创建队列，如下所示：
+**CMyQueue::Initialize**然后调用[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)以创建队列，如下所示：
 
 ```cpp
 hr = m_FxDevice->CreateIoQueue(
@@ -109,12 +109,12 @@ hr = m_FxDevice->CreateIoQueue(
 
 为支持选择性挂起，其设备堆栈必须执行以下操作是 PPO UMDF USB 驱动程序：
 
-1.  通常中声明的设备堆栈电源策略所有权[ **IDriverEntry::OnDeviceAdd** ](https://msdn.microsoft.com/library/windows/hardware/ff554896)上其驱动程序回调对象，如前面所述的方法。
-2.  通过调用启用选择性挂起[ **IWDFDevice2::AssignS0IdleSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff556920) framework 设备对象的方法。
+1.  通常中声明的设备堆栈电源策略所有权[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)上其驱动程序回调对象，如前面所述的方法。
+2.  通过调用启用选择性挂起[ **IWDFDevice2::AssignS0IdleSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings) framework 设备对象的方法。
 
 **若要启用 USB 选择性挂起来自 PPO**
 
--   调用[ **IWDFDevice2::AssignS0IdleSettings**](https://msdn.microsoft.com/library/windows/hardware/ff556920)，通常是从**OnPrepareHardware**设备回调对象的方法。 将参数设置为 AssignS0IdleSettings，如下所示：
+-   调用[ **IWDFDevice2::AssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)，通常是从**OnPrepareHardware**设备回调对象的方法。 将参数设置为 AssignS0IdleSettings，如下所示：
     -   *IdleCaps*到**IdleUsbSelectiveSuspend**。
     -   *DxState*到框架转换空闲状态的设备的设备睡眠状态。 有关 USB 选择性挂起，指定**PowerDeviceMaximum**，指示框架应使用总线驱动程序指定的值。
     -   *IdleTimeout*为的毫秒数中设备必须保持空闲之前 framework 转换到*DxState*。
@@ -170,7 +170,7 @@ HKR,,"DeviceIdleEnabled",0x00010001,1
 
 UMDF USB 驱动程序可以启用 USB 选择性挂起在运行时或在 INF 的安装过程。
 
--   若要启用支持在运行时，功能驱动程序调用[ **IWDFUsbTargetDevice::SetPowerPolicy** ](https://msdn.microsoft.com/library/windows/hardware/ff560385)并 PolicyType 参数设置为自动\_挂起和 Value 参数为 TRUE 或 1。 下面的示例演示如何 Fx2\_驱动程序示例启用选择性挂起 DeviceNonPpo.cpp 文件中：
+-   若要启用支持在运行时，功能驱动程序调用[ **IWDFUsbTargetDevice::SetPowerPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetdevice-setpowerpolicy)并 PolicyType 参数设置为自动\_挂起和 Value 参数为 TRUE 或 1。 下面的示例演示如何 Fx2\_驱动程序示例启用选择性挂起 DeviceNonPpo.cpp 文件中：
     ```cpp
     BOOL AutoSuspend = TRUE;
     hr = m_pIUsbTargetDevice->SetPowerPolicy( AUTO_SUSPEND,
@@ -223,7 +223,7 @@ USB 非 PPO 驱动程序可以使用 WinUSB.sys 驱动程序实现的系统唤�
 
 **这是 PPO 到 UMDF USB 驱动程序中支持系统唤醒**
 
-调用[ **IWDFDevice2::AssignSxWakeSettings** ](https://msdn.microsoft.com/library/windows/hardware/ff556923)框架的设备对象，使用以下参数的方法：
+调用[ **IWDFDevice2::AssignSxWakeSettings** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)框架的设备对象，使用以下参数的方法：
 
 -   *DxState*到的设备转换时的电源状态系统进入可唤醒 Sx 状态。 适用于 USB 设备，指定**PowerDeviceMaximum**使用总线驱动程序指定的值。
 -   *UserControlOfWakeSettings*到**WakeAllowUserControl**如果您的驱动程序允许用户管理唤醒设置或其他到**WakeDoNotAllowUserControl。**

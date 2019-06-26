@@ -9,17 +9,17 @@ keywords:
 - 自动中断检测 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e6492af31d6485d56810df9f51b18014de61ec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11ed0fa2d386c3c9d30f8f6e0ceb28d4c4d4ace4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358186"
 ---
 # <a name="using-the-connectlinebased-version-of-ioconnectinterruptex"></a>使用 CONNECT\_行\_IoConnectInterruptEx 基于版本
 
 
-对于 Windows Vista 和更高版本操作系统中，驱动程序可以使用 CONNECT\_行\_基于版本[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)注册[ *InterruptService* ](https://msdn.microsoft.com/library/windows/hardware/ff547958)例程的驱动程序的基于线条的中断。 (早期版本操作系统的驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。)
+对于 Windows Vista 和更高版本操作系统中，驱动程序可以使用 CONNECT\_行\_基于版本[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)例程的驱动程序的基于线条的中断。 (早期版本操作系统的驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。)
 
 **请注意**  可以为其基于行的中断的所有使用此方法只应该用于注册单个中断服务例程 (ISR) 的驱动程序。 如果该驱动程序可以接收多个中断，它必须使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。
 
@@ -31,7 +31,7 @@ ms.locfileid: "63372307"
 
 -   *参数*-&gt;**LineBased.ServiceRoutine**指向*InterruptService*例程，而*参数*- &gt; **LineBased**。**ServiceContext**指定系统将作为传递的值*ServiceContext*参数*InterruptService*。 该驱动程序可以使用此传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
 
--   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 ***-&gt;LineBased.InterruptObject**。 **IoConnectInterruptEx**设置此变量，使其指向的中断，可以删除 ISR 时使用的中断对象 有关详细信息，请参阅[删除 ISR](removing-an-isr.md)。
+-   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 * **-&gt;LineBased.InterruptObject**。 **IoConnectInterruptEx**设置此变量，使其指向的中断，可以删除 ISR 时使用的中断对象 有关详细信息，请参阅[删除 ISR](removing-an-isr.md)。
 
 -   驱动程序可以选择指定在旋转锁*参数 * * *-&gt;LineBased.SpinLock** ISR 与同步时要使用的系统 大多数驱动程序可以只需指定**NULL**启用系统分配旋转锁代表该驱动程序。 有关与 ISR 同步的详细信息，请参阅[对设备数据的同步访问](synchronizing-access-to-device-data.md)。
 

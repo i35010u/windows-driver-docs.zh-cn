@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c52a673094b3821c1e80fe6b3b4f60cf44203916
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df8753e2a370cca6645de02d3a68edca752b665d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362655"
 ---
 # <a name="sendrps-function"></a>SendRPS 函数
 
@@ -48,31 +48,31 @@ void SendRPS(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRPS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565516)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRPS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)结构。
 
 *PortWWN*   
-通过其发送的 RPS 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)结构。
+通过其发送的 RPS 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)结构。
 
 *AgentWWN*   
-若要查询的该端口的状态的端口的全球名称指示*ObjectWWN*。 此信息传递到中的微型端口驱动程序**AgentWWN**的成员[ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)结构。
+若要查询的该端口的状态的端口的全球名称指示*ObjectWWN*。 此信息传递到中的微型端口驱动程序**AgentWWN**的成员[ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)结构。
 
 *ObjectWWN*   
-全球范围内的端口是要返回状态的端口的名称。 此信息传递到中的微型端口驱动程序**ObjectWWN**的成员[ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)结构。
+全球范围内的端口是要返回状态的端口的名称。 此信息传递到中的微型端口驱动程序**ObjectWWN**的成员[ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)结构。
 
 *AgentDomain*   
-所指示该端口的状态要查询的域控制器的域数*ObjectWWN*。 此信息传递到中的微型端口驱动程序**AgentDomain**的成员[ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)结构。
+所指示该端口的状态要查询的域控制器的域数*ObjectWWN*。 此信息传递到中的微型端口驱动程序**AgentDomain**的成员[ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)结构。
 
 *ObjectPortNumber*   
-全球范围内的端口是要返回状态的端口的名称。 此信息传递到中的微型端口驱动程序**ObjectPortNumber**的成员[ **SendRPS\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565512)结构。
+全球范围内的端口是要返回状态的端口的名称。 此信息传递到中的微型端口驱动程序**ObjectPortNumber**的成员[ **SendRPS\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)结构。
 
 *TotalRspBufferSize*   
-以字节为单位的 RPS 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRPS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565516)结构。
+以字节为单位的 RPS 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendRPS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)结构。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRPS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565516)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendRPS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)结构。
 
 *RspBuffer*   
-RPS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRPS\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565516)结构。
+RPS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendRPS\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -113,9 +113,9 @@ RPS 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**�
 
 [HBA\_状态](hba-status.md)
 
-[**SendRPS\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565512)
+[**SendRPS\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_in)
 
-[**SendRPS\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565516)
+[**SendRPS\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrps_out)
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - WDK WDF 的 UMDF 验证程序设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 008c76a8110b975e25f4423b3dd3327e091d8624
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbda0fa0b8e75c332ed3c5f0d92c4349d8405e02
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372798"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358303"
 ---
 # <a name="global-wdf-settings-tab"></a>全局 WDF 设置选项卡
 
@@ -29,7 +29,7 @@ ms.locfileid: "63372798"
 
 **主机进程**，将显示所有主机进程和其进程 Id，以及是否应用程序验证器处于活动状态的每个进程。 您可以展开或折叠每个进程中承载的驱动程序列表。 如果已在指定用户模式调试器[我的首选项](my-preferences-tab.md)页上，您可以还突出显示的驱动程序或进程，然后单击**用户模式下调试程序附加到此进程**按钮。
 
-最后，**全局用户模式下验证器设置**框包含会影响系统上的所有 UMDF 驱动程序的调试选项。 有关这些设置的详细信息，请参阅[使用 UMDF Verifier](https://msdn.microsoft.com/library/windows/hardware/dn265597)。
+最后，**全局用户模式下验证器设置**框包含会影响系统上的所有 UMDF 驱动程序的调试选项。 有关这些设置的详细信息，请参阅[使用 UMDF Verifier](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-umdf-verifier)。
 
 当对 UMDF 验证器设置进行更改时，这些更改会影响随后加载的设备。 如果你的设备已在运行，必须禁用并重新启用它。 WDF 验证程序禁用和重新启用该设备，为，如果更改 UMDF 跟踪级别或 select**将日志输出将发送到内核调试程序**选项。 如果选择此选项不工作**不采取任何操作...** 在**必须重新启动计算机...** 上的下拉列表[我的首选项](my-preferences-tab.md)页。
 

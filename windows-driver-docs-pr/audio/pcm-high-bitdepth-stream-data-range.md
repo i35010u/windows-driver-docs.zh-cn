@@ -7,12 +7,12 @@ keywords:
 - 高 bitdepth 流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42628b45256d8b1ec85d9599fd3a7118815b8e6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4728fbfd303b19da49c9ebac842ad3ff98fd33dc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332238"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364315"
 ---
 # <a name="pcm-high-bitdepth-stream-data-range"></a>PCM 高位深度流数据范围
 
@@ -20,7 +20,7 @@ ms.locfileid: "63332238"
 ## <span id="pcm_high_bitdepth_stream_data_range"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_RANGE"></span>
 
 
-此示例使用[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)结构来描述 PCM 高 bitdepth 流的数据范围。
+此示例使用[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构来描述 PCM 高 bitdepth 流的数据范围。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);

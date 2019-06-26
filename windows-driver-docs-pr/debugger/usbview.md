@@ -6,12 +6,12 @@ keywords:
 - USBView
 ms.date: 02/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfffcf440c5d834cd31df985827985ef026456e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2551383763c1f92f6aa8e6779d6036445acfb70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367987"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368634"
 ---
 # <a name="usbview"></a>USBView
 
@@ -71,7 +71,7 @@ USBView 可以枚举 USB 主控制器、 USB 集线器和附加的 USB 设备。
 
 ## <a name="windows-usb-troubleshooter"></a>Windows USB 疑难解答
 
-如果想要诊断不弹出使用安全删除硬件对话框中的 USB 设备，你可能想要尝试[Windows USB 疑难解答](https://support.microsoft.com/help/17614/automatically-diagnose-and-fix-windows-usb-problems)。
+如果想要诊断不弹出使用安全删除硬件对话框中的 USB 设备，你可能想要尝试[Windows USB 疑难解答](https://support.microsoft.com/help/17614/windows-10-troubleshoot-common-usb-problems)。
 
 
  

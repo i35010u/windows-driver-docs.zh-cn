@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb6c684c785322aa18c7950b4d26f3b8f5e27bd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65fb11aa4fc4a2b051f7664ea7bddbb10831ad41
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358392"
 ---
 # <a name="srbgetdeviceproperty"></a>SRB\_获取\_设备\_属性
 
@@ -42,14 +42,14 @@ ms.locfileid: "63390873"
 
 ### <a name="comments"></a>备注
 
-类驱动程序将在操作的参数传递*pSrb*-&gt;**CommandData.PropertyInfo**缓冲，窗体结构[ **流\_属性\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568442)。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://msdn.microsoft.com/library/windows/hardware/ff559702)结构。 **属性**流成员\_属性\_说明符所描述的属性有问题，同时**PropertyInfo**成员指定用于复制的属性数据的缓冲区到中。 如果缓冲区太小，微型驱动程序应设置**状态**的成员*pSrb*到状态\_缓冲区\_溢出。
+类驱动程序将在操作的参数传递*pSrb*-&gt;**CommandData.PropertyInfo**缓冲，窗体结构[ **流\_属性\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 **属性**流成员\_属性\_说明符所描述的属性有问题，同时**PropertyInfo**成员指定用于复制的属性数据的缓冲区到中。 如果缓冲区太小，微型驱动程序应设置**状态**的成员*pSrb*到状态\_缓冲区\_溢出。
 
-有关属性集的详细信息，请参阅[KS 属性](https://msdn.microsoft.com/library/windows/hardware/ff567671)。
+有关属性集的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**流\_属性\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff568442)
+[**流\_属性\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_stream_property_descriptor)
 
  
 

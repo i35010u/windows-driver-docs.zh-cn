@@ -13,19 +13,19 @@ keywords:
 - 强制执行软件的 DEP WDK 引导参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3596cbb5b4a27a270c4f8cb0efba16e1899b58
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac10907d10d41c66b677f8090e3c1251bde3f8d4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359047"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360412"
 ---
 # <a name="boot-parameters-to-configure-dep-and-pae"></a>用于配置 DEP 和 PAE 的启动参数
 
 
 本主题说明如何使用引导参数来启用、 禁用和配置支持这些功能的操作系统上的数据执行保护 (DEP) 和物理地址扩展 (PAE)。
 
-有关用于 DEP 和 PAE 信息的启动参数，请参阅[ **BCDEdit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令并**nx**并**pae**选项。
+有关用于 DEP 和 PAE 信息的启动参数，请参阅[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令并**nx**并**pae**选项。
 
 **重要**  DEP 是一项高度有效的安全功能，除非您别无选择，否则不应禁用。 DEP 和 PAE 的默认设置是最适合于大多数系统。 不要更改默认设置，除非它们会干扰基本处理任务。 本部分包括在内，以演示如何配置这些功能，但它不应当被解释为建议更改默认设置。
 
@@ -33,7 +33,7 @@ ms.locfileid: "63359047"
 
 ### <a name="span-iddepandpaebootparametersspanspan-iddepandpaebootparametersspandep-and-pae-boot-parameters"></a><span id="dep_and_pae_boot_parameters"></span><span id="DEP_AND_PAE_BOOT_PARAMETERS"></span>DEP 和 PAE 引导参数
 
-在启动时启用并配置的设置的值的 DEP 项和 PAE **nx**并**pae**使用的参数[ **BCDEdit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令。
+在启动时启用并配置的设置的值的 DEP 项和 PAE **nx**并**pae**使用的参数[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
 
 这些启动参数具有冲突的作用。 若要配置 DEP 和 PAE，使用仅为每个参数的文档中所述和本主题中讨论的参数组合。 不着有冲突的参数，尤其是在生产系统上。
 
@@ -55,7 +55,7 @@ ms.locfileid: "63359047"
 
 以下列表介绍可以用于配置 DEP 和 PAE 的启动参数组合。
 
-**请注意**可选 **{**<em>ID</em>**}** 是特定 Windows 引导加载程序启动项，你想要配置的 GUID。 如果未指定 **{**<em>ID</em>**}**，命令将修改当前操作系统启动项目。 有关详细信息，请参阅[ **BCDEdit /set** ](https://msdn.microsoft.com/library/windows/hardware/ff542202)命令。
+**请注意**可选 **{** <em>ID</em> **}** 是特定 Windows 引导加载程序启动项，你想要配置的 GUID。 如果未指定 **{** <em>ID</em> **}** ，命令将修改当前操作系统启动项目。 有关详细信息，请参阅[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
 
  
 

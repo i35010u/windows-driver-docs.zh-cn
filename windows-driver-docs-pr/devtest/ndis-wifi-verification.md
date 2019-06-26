@@ -4,12 +4,12 @@ description: NDIS/WIFI 验证选项用于确定是否 NDIS 或 WIFI 驱动程序
 ms.assetid: EB553449-9460-403D-8ED2-343048C4B38C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a264380ac31820651232bd8ea018243ff99e117f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2591d071020b5859f49c57291d56c1d60fb9f470
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355067"
 ---
 # <a name="ndiswifi-verification"></a>NDIS/WIFI 验证
 
@@ -26,33 +26,33 @@ NDIS/WIFI 验证选项将应用规则，以验证您的驱动程序正确处理�
 
 验证规则的列表包括：
 
-[**NdisOidComplete**](https://msdn.microsoft.com/library/windows/hardware/dn305115)
+[**NdisOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoidcomplete)
 
-[**NdisOidDoubleComplete**](https://msdn.microsoft.com/library/windows/hardware/dn305116)
+[**NdisOidDoubleComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoiddoublecomplete)
 
-[**NdisOidDoubleRequest**](https://msdn.microsoft.com/library/windows/hardware/dn305117)
+[**NdisOidDoubleRequest**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoiddoublerequest)
 
-[**NdisTimedDataHang**](https://msdn.microsoft.com/library/windows/hardware/dn305118)
+[**NdisTimedDataHang**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimeddatahang)
 
-[**NdisTimedDataSend**](https://msdn.microsoft.com/library/windows/hardware/dn305119)
+[**NdisTimedDataSend**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimeddatasend)
 
-[**NdisTimedOidComplete**](https://msdn.microsoft.com/library/windows/hardware/dn305120)
+[**NdisTimedOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete)
 
-[**WlanAssociation**](https://msdn.microsoft.com/library/windows/hardware/dn305122)
+[**WlanAssociation**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassociation)
 
-[**WlanConnectionRoaming**](https://msdn.microsoft.com/library/windows/hardware/dn305123)
+[**WlanConnectionRoaming**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanconnectionroaming)
 
-[**WlanDisassociation**](https://msdn.microsoft.com/library/windows/hardware/dn305124)
+[**WlanDisassociation**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlandisassociation)
 
-[**WlanTimedAssociation**](https://msdn.microsoft.com/library/windows/hardware/dn305125)
+[**WlanTimedAssociation**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedassociation)
 
-[**WlanTimedConnectionRoaming**](https://msdn.microsoft.com/library/windows/hardware/dn305126)
+[**WlanTimedConnectionRoaming**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectionroaming)
 
-[**WlanTimedConnectRequest**](https://msdn.microsoft.com/library/windows/hardware/dn305127)
+[**WlanTimedConnectRequest**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectrequest)
 
-[**WlanTimedScan**](https://msdn.microsoft.com/library/windows/hardware/dn305129)
+[**WlanTimedScan**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedscan)
 
-[**WlanTimedLinkQuality**](https://msdn.microsoft.com/library/windows/hardware/dn305128)
+[**WlanTimedLinkQuality**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedlinkquality)
 
 ## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 

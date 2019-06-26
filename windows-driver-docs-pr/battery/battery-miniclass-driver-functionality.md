@@ -6,12 +6,12 @@ keywords:
 - 电池 miniclass 驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a9309a6835b02d33a79798788098c38bddf07e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f19d8871482119ef066459b91bf353f3ae87ca26
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335248"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354089"
 ---
 # <a name="battery-miniclass-driver-functionality"></a>电池微型类驱动程序功能
 
@@ -35,7 +35,7 @@ ms.locfileid: "63335248"
 
 电池 miniclass 驱动程序的其他操作，如中所述处理 Ioctl，调用电池类驱动程序支持例程[电池类驱动程序的功能](battery-class-driver-functionality.md)。
 
-每个电池 miniclass 驱动程序提供了一套[BatteryMini*Xxx* ](https://msdn.microsoft.com/library/windows/hardware/ff536286)例程。 电池类驱动程序调用这些例程以请求 miniclass 驱动程序执行特定于设备的任务。 此外，miniclass 驱动程序必须具有其他例程，如中所述[提供所需电池 Miniclass 驱动程序的功能](supplying-required-battery-miniclass-driver-functionality.md)。
+每个电池 miniclass 驱动程序提供了一套[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)例程。 电池类驱动程序调用这些例程以请求 miniclass 驱动程序执行特定于设备的任务。 此外，miniclass 驱动程序必须具有其他例程，如中所述[提供所需电池 Miniclass 驱动程序的功能](supplying-required-battery-miniclass-driver-functionality.md)。
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 207ac4797e0a72a603cf2a86654d537e14963141
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d8ddd9fd09999276306e292907bfecccb51799a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380746"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378215"
 ---
 # <a name="devpkeydeviceinstallstate"></a>DEVPKEY_Device_InstallState
 
@@ -60,11 +60,11 @@ DEVPKEY_Device_InstallState 设备属性表示设备实例的安装状态。
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_InstallState 的值设置为一 CM_INSTALL_STATE_*Xxx* Cfgmgr32.h 中定义的值。 CM_INSTALL_STATE_*Xxx*值对应于[ **DEVICE_INSTALL_STATE** ](https://msdn.microsoft.com/library/windows/hardware/ff543130)枚举值。
+Windows 将 DEVPKEY_Device_InstallState 的值设置为一 CM_INSTALL_STATE_*Xxx* Cfgmgr32.h 中定义的值。 CM_INSTALL_STATE_*Xxx*值对应于[ **DEVICE_INSTALL_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_device_install_state)枚举值。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)检索 DEVPKEY_Device_InstallState 值。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_InstallState 值。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_InstallState 属性键。 相反，相应的 SPDRP_INSTALL_STATE 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff537737)。
+Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Device_InstallState 属性键。 相反，相应的 SPDRP_INSTALL_STATE 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

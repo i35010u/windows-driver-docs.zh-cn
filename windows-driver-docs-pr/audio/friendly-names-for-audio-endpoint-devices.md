@@ -4,12 +4,12 @@ description: 音频终结点设备的友好名称
 ms.assetid: e0937d20-dd5b-453f-99f6-4e501f0f0e5b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c52fad97a1ada2d3c07f58f67616dcf2d64dfc61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f9a4e6cc0bae863fd226ae975e1729d6f189c78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333632"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360019"
 ---
 # <a name="friendly-names-for-audio-endpoint-devices"></a>音频终结点设备的友好名称
 
@@ -18,9 +18,9 @@ ms.locfileid: "63333632"
 
 音频子系统上的音频适配器作为 KS 筛选器进行建模插 (PnP) 设备。 数据流输入和退出 KS pin 通过筛选器。 桥 pin 是 KS pin 通过其音频终结点设备连接到 KS 筛选器。 有关桥的 pin 的详细信息，请参阅[音频筛选器关系图](audio-filter-graphs.md)。
 
-音频子系统通过检查终结点设备连接到桥固定的属性获取有关音频端点设备的信息。 此类的一个属性是[固定 category 属性](pin-category-property.md)([**KSPROPERTY\_PIN\_类别**](https://msdn.microsoft.com/library/windows/hardware/ff565192))。 
+音频子系统通过检查终结点设备连接到桥固定的属性获取有关音频端点设备的信息。 此类的一个属性是[固定 category 属性](pin-category-property.md)([**KSPROPERTY\_PIN\_类别**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category))。 
 
-对于每个 KS 筛选器中，适配器驱动程序提供的表[ **PCPIN\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537721)筛选器描述 KS pin 的属性的结构。 GUID 存储在 pin 类别**KsPinDescriptor.Category** PCPIN 成员\_描述符结构。 桥 pin，pin 类别 GUID 表示连接到桥 pin 的终结点的类型。 例如，pin 类别 GUID KSNODETYPE\_麦克风指示桥插针连接到麦克风，GUID KSNODETYPE\_演讲者指示桥插针连接到扬声器，依次类推。 KSNODETYPE\_*XXX* Ksmedia.h 标头文件中定义的 Guid。
+对于每个 KS 筛选器中，适配器驱动程序提供的表[ **PCPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcpin_descriptor)筛选器描述 KS pin 的属性的结构。 GUID 存储在 pin 类别**KsPinDescriptor.Category** PCPIN 成员\_描述符结构。 桥 pin，pin 类别 GUID 表示连接到桥 pin 的终结点的类型。 例如，pin 类别 GUID KSNODETYPE\_麦克风指示桥插针连接到麦克风，GUID KSNODETYPE\_演讲者指示桥插针连接到扬声器，依次类推。 KSNODETYPE\_*XXX* Ksmedia.h 标头文件中定义的 Guid。
 
 此外**PCPIN\_描述符**包括一个 GUID，可用于标识 pin 由唯一的名称。  GUID 存储在此 pin 名称**KsPinDescriptor.Name** PCPIN 成员\_描述符结构。 此名称使用 GUID ([**KSPROPERTY\_PIN\_名称**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name)) 使用的 pin 在注册表中找到的属性可关联一个友好名称。 
 

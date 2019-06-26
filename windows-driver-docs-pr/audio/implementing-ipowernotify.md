@@ -8,12 +8,12 @@ keywords:
 - 电源状态更改通知 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ed70a8f114449dd85434021ef7351a39dd6fd5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 559b830207ff7a65025910eb8207b3e4678e7a1f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333444"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359900"
 ---
 # <a name="implementing-ipowernotify"></a>实现 IPowerNotify
 
@@ -21,9 +21,9 @@ ms.locfileid: "63333444"
 ## <span id="implementing_ipowernotify"></span><span id="IMPLEMENTING_IPOWERNOTIFY"></span>
 
 
-如果您的驱动程序微型端口对象 (请参阅[音频微型端口对象接口](https://msdn.microsoft.com/library/windows/hardware/ff536207)) 或流式传输对象 (请参阅[音频 Stream 对象接口](https://msdn.microsoft.com/library/windows/hardware/ff536217)) 需要了解的有关电源状态更改，它们可以支持[IPowerNotify](https://msdn.microsoft.com/library/windows/hardware/ff536947)接口在其**QueryInterface**方法和从 PortCls 系统驱动程序每次电源更改发生时接收通知。
+如果您的驱动程序微型端口对象 (请参阅[音频微型端口对象接口](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-object-interfaces)) 或流式传输对象 (请参阅[音频 Stream 对象接口](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-stream-object-interfaces)) 需要了解的有关电源状态更改，它们可以支持[IPowerNotify](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipowernotify)接口在其**QueryInterface**方法和从 PortCls 系统驱动程序每次电源更改发生时接收通知。
 
-当电源状态更改时，调用 PortCls [ **IPowerNotify::PowerChangeNotify** ](https://msdn.microsoft.com/library/windows/hardware/ff536949)方法以分别通知的微型端口和流的每个对象支持的**IPowerNotify**接口。 期间**PowerChangeNotify**调用，微型端口对象应缓存的新设备电源状态。 期间**CAdapterCommon::Init**调用 (有关示例，请参阅在 Microsoft Windows 驱动程序工具包中 Msvad 示例适配器实现\[WDK\])，微型端口驱动程序应设置其缓存的电源状态为初始值 PowerDeviceD0。
+当电源状态更改时，调用 PortCls [ **IPowerNotify::PowerChangeNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-ipowernotify-powerchangenotify)方法以分别通知的微型端口和流的每个对象支持的**IPowerNotify**接口。 期间**PowerChangeNotify**调用，微型端口对象应缓存的新设备电源状态。 期间**CAdapterCommon::Init**调用 (有关示例，请参阅在 Microsoft Windows 驱动程序工具包中 Msvad 示例适配器实现\[WDK\])，微型端口驱动程序应设置其缓存的电源状态为初始值 PowerDeviceD0。
 
 然后再调用**PowerChangeState**能耗更低，PortCls 调用到**IPowerNotify::PowerChangeNotify**以便微型端口驱动程序有机会保存任何必要的设备上下文。 此上下文可能包括体现了当前筛选器拓扑和 mixer 行设置，例如硬件寄存器值。 在调用**PowerChangeState**开启 PortCls 调用**PowerChangeNotify**以便微型端口驱动程序可以还原已保存的上下文。
 

@@ -3,12 +3,12 @@ Description: 在 Windows 中，从 Windows 10 开始中现在支持 USB 双角�
 title: USB 双角色驱动程序堆栈体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 505f71a6bf3b1ad66aeb377cae63a9ab4ecd9adc
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 0e061da8d7a328379f38c21397ad030ff0a1384f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360148"
 ---
 # <a name="usb-dual-role-driver-stack-architecture"></a>USB 双角色驱动程序堆栈体系结构
 
@@ -27,7 +27,7 @@ ms.locfileid: "57348940"
 ## <a name="introduction"></a>简介
 
 
-USB 双角色功能可以系统不是 USB*设备*或 USB*主机*。 可以位于 USB 双角色的详细的规范[usb.org](http://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf)网站。
+USB 双角色功能可以系统不是 USB*设备*或 USB*主机*。 可以位于 USB 双角色的详细的规范[usb.org](https://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf)网站。
 
 这里的重要一点是双角色功能，允许移动设备，如手机、 平板手机或平板电脑，可将自身指定为设备或主机。
 

@@ -4,12 +4,12 @@ description: 虚拟功能解除序列
 ms.assetid: 8C59A4F7-FC5D-4680-8CDD-751422588601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b321feb096cc65e2298d03cf3991b94ca2e738c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11d95287c67448fc4416591cdb5d49a0fd51ae6e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346002"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354478"
 ---
 # <a name="virtual-function-teardown-sequence"></a>虚拟功能解除序列
 
@@ -36,13 +36,13 @@ NDIS、 虚拟化堆栈和 PF 微型端口驱动程序在 VF 拆卸过程中执�
 
     筛选器移动到默认 VPort Aftet，综合数据路径是完全可操作的网络流量与来宾操作系统中运行的网络组件。 PF 微型端口驱动程序指示默认 PF VPort 综合数据路径用于指示将数据包用于来宾操作系统上的接收的数据包。 同样，从来宾操作系统的所有传输的数据包是通过综合数据路径路由，并且通过默认 PF VPort 传输。
 
-2.  虚拟化堆栈中删除通过发出的对象标识符 (OID) 组请求附加到 VF VPort [OID\_NIC\_交换机\_删除\_VPORT](https://msdn.microsoft.com/library/windows/hardware/hh451818)到 PF微型端口驱动程序。 微型端口驱动程序释放与 VPort 关联的任何硬件或软件资源并完成 OID 请求。
+2.  虚拟化堆栈中删除通过发出的对象标识符 (OID) 组请求附加到 VF VPort [OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)到 PF微型端口驱动程序。 微型端口驱动程序释放与 VPort 关联的任何硬件或软件资源并完成 OID 请求。
 
     有关详细信息，请参阅[删除虚拟端口](deleting-a-virtual-port.md)。
 
-3.  虚拟化堆栈 PCIe 函数级别前重置 (FLR) 的取景器释放其资源的请求。 通过发出的 OID 集请求的堆栈实现这[OID\_SRIOV\_重置\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451889)到 PF 微型端口驱动程序。 FLR VF SR-IOV 网络适配器上引入静止状态，并为 VF 清除任何挂起的中断事件。
+3.  虚拟化堆栈 PCIe 函数级别前重置 (FLR) 的取景器释放其资源的请求。 通过发出的 OID 集请求的堆栈实现这[OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)到 PF 微型端口驱动程序。 FLR VF SR-IOV 网络适配器上引入静止状态，并为 VF 清除任何挂起的中断事件。
 
-4.  虚拟化堆栈 VF 已被重置后，通过发出 OID 集请求的请求的 VF 资源释放[OID\_NIC\_交换机\_免费\_VF](https://msdn.microsoft.com/library/windows/hardware/hh451822)到 PF微型端口驱动程序。 这将导致微型端口驱动程序，以释放与 VF 相关联的硬件资源。
+4.  虚拟化堆栈 VF 已被重置后，通过发出 OID 集请求的请求的 VF 资源释放[OID\_NIC\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)到 PF微型端口驱动程序。 这将导致微型端口驱动程序，以释放与 VF 相关联的硬件资源。
 
  
 

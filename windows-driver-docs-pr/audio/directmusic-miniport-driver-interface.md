@@ -14,12 +14,12 @@ keywords:
 - 合成器 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54820cce4e34f0419b7e0985b9cda5faa920bdb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7fa0ee272b18374c5e34ca88f26e7e5c4fc80425
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359055"
 ---
 # <a name="directmusic-miniport-driver-interface"></a>DirectMusic 微型端口驱动程序接口
 
@@ -33,17 +33,17 @@ Dmu 微型端口驱动程序接口基于 MIDI 微型端口驱动程序接口，�
 
 -   请注意事件在硬件中的序列化
 
-Dmu 微型端口驱动程序接口方面不同于几种方法中的 MIDI 微型端口驱动程序接口。 Dmu 微型端口驱动程序实现接口[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)而不是[IMiniportMidi](https://msdn.microsoft.com/library/windows/hardware/ff536703)。 此接口是类似于**IMiniportMidi**，但[ **IMiniportDMus::NewStream** ](https://msdn.microsoft.com/library/windows/hardware/ff536701)方法将创建[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782) （MIDI 转换筛选器） 界面，并连接到[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491) Dmu 端口驱动程序，而不是实现中的接口[IMiniportMidiStream](https://msdn.microsoft.com/library/windows/hardware/ff536704)接口。 **IAllocatorMXF**并**IMXF**包装标准**GetMessage**并**PutMessage**调用 (请参阅[ **IAllocatorMXF::GetMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff536494)并[ **IMXF::PutMessage**](https://msdn.microsoft.com/library/windows/hardware/ff536791))。 这些调用处理打包事件而不是与原始 MIDI 字节。
+Dmu 微型端口驱动程序接口方面不同于几种方法中的 MIDI 微型端口驱动程序接口。 Dmu 微型端口驱动程序实现接口[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)而不是[IMiniportMidi](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidi)。 此接口是类似于**IMiniportMidi**，但[ **IMiniportDMus::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iminiportdmus-newstream)方法将创建[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf) （MIDI 转换筛选器） 界面，并连接到[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf) Dmu 端口驱动程序，而不是实现中的接口[IMiniportMidiStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportmidistream)接口。 **IAllocatorMXF**并**IMXF**包装标准**GetMessage**并**PutMessage**调用 (请参阅[ **IAllocatorMXF::GetMessage** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-iallocatormxf-getmessage)并[ **IMXF::PutMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nf-dmusicks-imxf-putmessage))。 这些调用处理打包事件而不是与原始 MIDI 字节。
 
-合成器 Dmu 微型端口驱动程序可以实现部分或全部 DirectMusic 属性。 这些属性允许系统在管理 DLS 下载和通道分配的设备。 Dmusprop.h 标头文件定义特定于 DirectMusic 的属性项。 有关这些属性的列表，请参阅[KSPROPSETID\_合成](https://msdn.microsoft.com/library/windows/hardware/ff537486)并[KSPROPSETID\_合成器\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)。
+合成器 Dmu 微型端口驱动程序可以实现部分或全部 DirectMusic 属性。 这些属性允许系统在管理 DLS 下载和通道分配的设备。 Dmusprop.h 标头文件定义特定于 DirectMusic 的属性项。 有关这些属性的列表，请参阅[KSPROPSETID\_合成](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)并[KSPROPSETID\_合成器\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)。
 
 Dmu 微型端口驱动程序需要允许多个 pin 实例创建。 每个 pin 实例充当一个虚拟合成器，并包含一组通道和 DLS 下载独立于其他 pin 实例。
 
-某些合成器属性中所述[音频驱动程序的属性集](https://msdn.microsoft.com/library/windows/hardware/ff536197)作用于一个 pin 的实例，而有些全局任务。 若要处理的全局属性，合成器必须其网络拓扑中有一个合成器节点。 每个属性项的说明指示该项是否发送到合成器节点或 pin 实例。 对于支持合成硬件的每个片段，存在端口驱动程序对象和微型端口驱动程序对象，如下图中所示。
+某些合成器属性中所述[音频驱动程序的属性集](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)作用于一个 pin 的实例，而有些全局任务。 若要处理的全局属性，合成器必须其网络拓扑中有一个合成器节点。 每个属性项的说明指示该项是否发送到合成器节点或 pin 实例。 对于支持合成硬件的每个片段，存在端口驱动程序对象和微型端口驱动程序对象，如下图中所示。
 
 ![说明用于 directmusic 合成器端口和微型端口驱动程序的关系图](images/dmkmport.png)
 
-端口驱动程序对象公开的一个实例[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)接口，它持有的微型端口驱动程序对象。 微型端口驱动程序将导出的一个实例**IMiniportDMus**接口，这由端口驱动程序。 对于每个实例化的插针，端口驱动程序请求匹配**IMXF**接口。 系统与此实例之间的通信是组合属性请求发送到的 pin 和事件流动面向或源自**IMXF**流接口。
+端口驱动程序对象公开的一个实例[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)接口，它持有的微型端口驱动程序对象。 微型端口驱动程序将导出的一个实例**IMiniportDMus**接口，这由端口驱动程序。 对于每个实例化的插针，端口驱动程序请求匹配**IMXF**接口。 系统与此实例之间的通信是组合属性请求发送到的 pin 和事件流动面向或源自**IMXF**流接口。
 
 在创建时，必须将两个对象传递给微型端口驱动程序：
 

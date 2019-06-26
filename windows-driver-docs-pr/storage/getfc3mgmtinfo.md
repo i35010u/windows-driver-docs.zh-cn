@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee4a9079fb680385b6c1982ef53e92f0aeabafd2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13bd939e42f6056052925c7214328db7e5ffca5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378547"
 ---
 # <a name="getfc3mgmtinfo-function"></a>GetFC3MgmtInfo 函数
 
@@ -40,10 +40,10 @@ void GetFC3MgmtInfo(
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFC3MgmtInfo\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff553946)结构。
+在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFC3MgmtInfo\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)结构。
 
 *MgmtInfo*   
-在返回时包含类型的结构[ **HBAFC3MgmtInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff556032)保存 FC3 与光纤通道适配器相关联的管理信息。
+在返回时包含类型的结构[ **HBAFC3MgmtInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)保存 FC3 与光纤通道适配器相关联的管理信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -78,9 +78,9 @@ void GetFC3MgmtInfo(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFC3MgmtInfo\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff553946)
+[**GetFC3MgmtInfo\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfc3mgmtinfo_out)
 
-[**HBAFC3MgmtInfo**](https://msdn.microsoft.com/library/windows/hardware/ff556032)
+[**HBAFC3MgmtInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)
 
  
 

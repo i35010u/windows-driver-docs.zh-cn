@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97796374be5c5b543521e3bbea7123ab6fa3baf5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3f9e15081bba5e3c60d6ce0e054782fdaf35d69
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343125"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360401"
 ---
 # <a name="computerhardwareids-overview"></a>ComputerHardwareIds 概述
 
@@ -35,9 +35,9 @@ ms.locfileid: "63343125"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 
-ComputerHardwareIds 工具将创建基于域的计算机在系统管理 BIOS (SMBIOS) 中的信息的计算机的硬件 Id。 字段的列表，请参阅[指定的计算机的硬件 Id](https://msdn.microsoft.com/library/windows/hardware/ff552325)。
+ComputerHardwareIds 工具将创建基于域的计算机在系统管理 BIOS (SMBIOS) 中的信息的计算机的硬件 Id。 字段的列表，请参阅[指定的计算机的硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)。
 
-有关选择硬件 ID 的详细信息值的计算机以及更多有关设备元数据包的信息，请参阅[指定的计算机的硬件 Id](https://msdn.microsoft.com/library/windows/hardware/ff552325)。
+有关选择硬件 ID 的详细信息值的计算机以及更多有关设备元数据包的信息，请参阅[指定的计算机的硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)。
 
 有关 Windows 开发工具包的详细信息，请参阅[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=846744)。
 

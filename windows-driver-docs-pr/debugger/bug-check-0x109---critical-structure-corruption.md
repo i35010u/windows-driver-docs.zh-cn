@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 63906a57ba37e6a487bfa250164978ff70173cd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ac9d206ae39a022138322ec58e9ad7bcfd463a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357619"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362345"
 ---
 # <a name="bug-check-0x109-criticalstructurecorruption"></a>Bug 检查 0x109：关键\_结构\_损坏
 
@@ -26,7 +26,7 @@ ms.locfileid: "63357619"
 严重\_结构\_损坏错误检查的值为 0x00000109。 这表示在内核检测到关键内核代码或数据损坏。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="criticalstructurecorruption-parameters"></a>关键\_结构\_损坏参数

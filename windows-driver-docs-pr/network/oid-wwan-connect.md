@@ -5,26 +5,26 @@ ms.assetid: 51be35fe-750b-4c2b-aab3-a9df59711f7d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_CONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f1982fce3fb60b3a19151a2a3ef50e5483ea0752
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7f93008a12b7cee62c899d109e38d45e1e16adb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386741"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362860"
 ---
 # <a name="oidwwanconnect"></a>OID\_WWAN\_连接
 
 
 OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文和读取的激活状态的上下文。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_上下文\_状态**](ndis-status-wwan-context-state.md)状态通知包含[ **NDIS\_WWAN\_上下文\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567906)结构，它指示无论完成集或查询请求的 MB 设备的数据包数据协议 (PDP) 上下文状态。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_上下文\_状态**](ndis-status-wwan-context-state.md)状态通知包含[ **NDIS\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构，它指示无论完成集或查询请求的 MB 设备的数据包数据协议 (PDP) 上下文状态。
 
-调用方请求数据包数据协议 (PDP) 上下文状态的 MB 设备的设置提供[ **NDIS\_WWAN\_设置\_上下文\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567920)结构的相应信息的微型端口驱动程序。
+调用方请求数据包数据协议 (PDP) 上下文状态的 MB 设备的设置提供[ **NDIS\_WWAN\_设置\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state)结构的相应信息的微型端口驱动程序。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 数据包上下文管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)。
+有关使用此 OID 的详细信息，请参阅[WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)。
 
 此对象会激活或停用特定的数据包上下文和读取的激活状态的上下文。 激活状态发生更改时，微型端口驱动程序必须发送相应的事件通知。
 
@@ -91,7 +91,7 @@ OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文和读取的激活�
 ## <a name="see-also"></a>请参阅
 
 
-[WWAN 数据包上下文管理](https://msdn.microsoft.com/library/windows/hardware/ff559086)
+[WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)
 
  
 

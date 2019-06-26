@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f1f3e8f3b0aeed3d5a301b992658f24d27fd7b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf3e84e86871627f0457683367f14885d702da45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335774"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362445"
 ---
 # <a name="pplookaside"></a>!pplookaside
 
 
-**！ Pplookaside**命令将显示[后备链列出](https://msdn.microsoft.com/library/windows/hardware/ff565416)为目标计算机中的处理器。
+**！ Pplookaside**命令将显示[后备链列出](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)为目标计算机中的处理器。
 
 ```dbgcmd
 !pplookaside <address>

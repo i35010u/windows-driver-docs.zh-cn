@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e554c9862f0ed06f6afdbede21249e44ef444e52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13b4f7053cee07beb46ab6188728eb67e86c89be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352441"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367654"
 ---
 # <a name="bug-check-0x198-ufxlivedump"></a>Bug 检查 0x198：UFX\_LIVEDUMP
 
@@ -26,7 +26,7 @@ ms.locfileid: "63352441"
 UFX\_LIVEDUMP bug 检查的值为 0x00000198。 这表明 UFX 实时转储发生。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="ufxlivedump-parameters"></a>UFX\_LIVEDUMP 参数

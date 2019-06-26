@@ -4,12 +4,12 @@ description: 本主题介绍具有与硬件卸载音频流相关的报告干扰�
 ms.assetid: 9FF2A5D6-9382-4EE6-AA21-DCF47210F73B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e66ba18463051808df80b5c499a235f1b8b83645
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec7972a8fad43d01b3e25f2e34549b5cb0739e1d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333620"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360016"
 ---
 # <a name="glitch-reporting-for-offloaded-audio"></a>已卸载音频的故障报告
 
@@ -34,7 +34,7 @@ typedef enum
 } EPcMiniportEngineEvent;
 ```
 
-有关此枚举的详细信息，请参阅[ **EPcMiniportEngineEvent**](https://msdn.microsoft.com/library/windows/hardware/dn302036)。
+有关此枚举的详细信息，请参阅[ **EPcMiniportEngineEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ne-portcls-epcminiportengineevent)。
 
 有关如何开发驱动程序可以处理硬件卸载音频流的详细信息，请参阅[驱动程序实现细节](driver-implementation-details.md)。
 

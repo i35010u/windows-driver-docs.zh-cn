@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3d1a132d29a294a5c72ee92599db5c5dc6842b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d042f7c802d96c5c63d41290871c64bcbdeb8e72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367519"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367339"
 ---
 # <a name="bug-check-0x73-configlistfailed"></a>Bug 检查 0x73：CONFIG\_列表\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367519"
 在配置\_列表\_失败错误检查的值为 0x00000073。 此 bug 检查指示不能在注册表树链接顶级注册表项，也称为核心系统配置单元，其中一个。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="configlistfailed-parameters"></a>CONFIG\_列表\_失败参数

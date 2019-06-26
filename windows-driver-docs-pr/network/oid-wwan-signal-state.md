@@ -6,26 +6,26 @@ ms.date: 04/05/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_SIGNAL_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8f766507dc6b298a831d80e4d9244c647c80290f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e8b2de8da14904a5cd2a1c8a030f9eba1103826a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368249"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361155"
 ---
 # <a name="oidwwansignalstate"></a>OID\_WWAN\_SIGNAL\_STATE
 
 
 OID\_WWAN\_信号\_状态返回或设置当前的信号状态。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_信号\_状态**](ndis-status-wwan-signal-state.md)状态通知包含[ **NDIS\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567931)结构，以便提供显示给最终用户而不考虑完成设置的当前信号状态指示有关的信息或查询请求。
+微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_信号\_状态**](ndis-status-wwan-signal-state.md)状态通知包含[ **NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)结构，以便提供显示给最终用户而不考虑完成设置的当前信号状态指示有关的信息或查询请求。
 
-调用方请求将当前的信号状态指示为最终用户提供[ **NDIS\_WWAN\_设置\_信号\_指示**](https://msdn.microsoft.com/library/windows/hardware/ff567928)结构的相应信息的微型端口驱动程序。
+调用方请求将当前的信号状态指示为最终用户提供[ **NDIS\_WWAN\_设置\_信号\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)结构的相应信息的微型端口驱动程序。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 信号强度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)。
+有关使用此 OID 的详细信息，请参阅[WWAN 信号强度操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)。
 
 微型端口驱动程序不能访问提供程序网络或用户识别模块 （SIM 卡），当处理查询或设置操作。
 
@@ -103,9 +103,9 @@ NDIS\_状态\_不\_支持
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_SET\_SIGNAL\_INDICATION**](https://msdn.microsoft.com/library/windows/hardware/ff567928)
+[**NDIS\_WWAN\_SET\_SIGNAL\_INDICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication)
 
-[WWAN 信号强度操作](https://msdn.microsoft.com/library/windows/hardware/ff559125)
+[WWAN 信号强度操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-signal-strength-operations)
 
  
 

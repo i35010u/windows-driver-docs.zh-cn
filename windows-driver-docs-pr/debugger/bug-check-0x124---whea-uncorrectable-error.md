@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d0a0bffdc0d067be7bf742c727e159be8ab30a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 08f0b203d506a29907dbb33d59216aed6115084b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362287"
 ---
 # <a name="bug-check-0x124-wheauncorrectableerror"></a>Bug 检查 0x124：WHEA\_无法纠正\_错误
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358133"
 WHEA\_无法纠正\_错误 bug 检查的值为 0x00000124。 此 bug 检查指示发生致命硬件错误。 此 bug 检查使用提供的 Windows 硬件错误体系结构 (WHEA) 的错误数据。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="wheauncorrectableerror-parameters"></a>WHEA\_无法纠正\_错误参数
@@ -154,7 +154,7 @@ WHEA\_无法纠正\_错误 bug 检查的值为 0x00000124。 此 bug 检查指�
 
 参数 1 标识报告了错误的错误源的类型。 参数 2 保留的地址 WHEA\_错误\_描述错误条件的记录结构。
 
-出现硬件错误时，WHEA 会创建错误记录来存储与硬件错误条件相关联的错误信息。 每个错误记录描述 WHEA\_错误\_记录结构。 Windows 内核包含与，它会发出错误响应，以便在系统事件日志中保存错误记录的事件跟踪 Windows (ETW) 的硬件错误事件的错误记录。 由 WHEA 错误记录的格式基于常见的平台错误记录版本 2.2 的统一可扩展固件接口 (UEFI) 规范的附录 N 中所述。 有关详细信息，请参阅[WHEA\_错误\_记录](https://msdn.microsoft.com/library/windows/hardware/ff560483)并[Windows 硬件错误体系结构 (WHEA)](https://msdn.microsoft.com/library/windows/hardware/ff559509)。
+出现硬件错误时，WHEA 会创建错误记录来存储与硬件错误条件相关联的错误信息。 每个错误记录描述 WHEA\_错误\_记录结构。 Windows 内核包含与，它会发出错误响应，以便在系统事件日志中保存错误记录的事件跟踪 Windows (ETW) 的硬件错误事件的错误记录。 由 WHEA 错误记录的格式基于常见的平台错误记录版本 2.2 的统一可扩展固件接口 (UEFI) 规范的附录 N 中所述。 有关详细信息，请参阅[WHEA\_错误\_记录](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_record)并[Windows 硬件错误体系结构 (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea)。
 
 可以使用[ **！ errrec** ](-errrec.md) &lt;addr&gt;以显示 WHEA\_错误\_记录结构使用参数 2 中提供的地址。 [ **！ Whea** ](-whea.md)并[ **！ errpkt** ](-errpkt.md)扩展可用于显示 WHEA 的其他信息。
 

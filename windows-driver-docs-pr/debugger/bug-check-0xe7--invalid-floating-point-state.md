@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd6786c9d4b66663d91758ebfa7bd8a46e60399
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 13e1ac28c7f923d99cf6228d41f6e138aafaa806
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372346"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361519"
 ---
 # <a name="bug-check-0xe7-invalidfloatingpointstate"></a>Bug 检查 0xE7：无效\_浮动\_点\_状态
 
@@ -26,7 +26,7 @@ ms.locfileid: "63372346"
 无效\_浮动\_点\_状态 bug 检查的值为 0x000000E7。 这指示线程的已保存浮点状态无效。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invalidfloatingpointstate-parameters"></a>无效\_浮动\_点\_状态参数

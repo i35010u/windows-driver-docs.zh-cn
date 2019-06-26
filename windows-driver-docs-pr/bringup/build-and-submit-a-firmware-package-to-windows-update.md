@@ -3,12 +3,12 @@ title: 生成固件包并将其提交到 Windows 更新 (WU)
 description: 生成固件包并将其提交到 Windows 更新 (WU)
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 24e94d3d264a4d8bb4afecbe7e597f10f62eee9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40d73866d11f451674744b2fcbb8e7676796234c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328100"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364594"
 ---
 # <a name="build-and-submit-a-firmware-package-to-windows-update-wu"></a>生成固件包并将其提交到 Windows 更新 (WU)
 
@@ -16,13 +16,13 @@ ms.locfileid: "63328100"
 
 1. 驱动程序包的内容是安装在系统下测试 (SUT)，设备必须通过所需的 Windows 硬件 Lab Kit (HLK) 测试。 如果不是专门为固件所测试的测试，找到最合理的替代方案，并根据需要提交与 HLK 包的结果。
 
-2. 驱动程序包然后提交到[合作伙伴中心](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)进行签名。
+2. 驱动程序包然后提交到[合作伙伴中心](https://partner.microsoft.com/dashboard)进行签名。
 
 3. 签名之后，驱动程序提供的包是向提交者提交者的已发布在 Windows Update (WU) 通过硬件仪表板的选项 （使用驱动程序分发功能）。
 
-通过完成发布到 Windows 更新[硬件仪表板](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)使用驱动程序分发功能。
+通过完成发布到 Windows 更新[硬件仪表板](https://partner.microsoft.com/dashboard)使用驱动程序分发功能。
 
-尽管两者都需要进行签名，签名的驱动程序包是不同的签名 UEFI 固件。 签名是通过使用文件签名服务功能的硬件仪表板。 Windows 使用上通过安全目录提供的驱动程序包的签名以将其传递给 UEFI 之前验证 firmware.bin 的完整性。 Windows 不提供对固件的 security 目录。 在 UEFI 固件或设备固件更新的签名验证平台固件，并且不会检查 Windows。 IHV 或 OEM 负责确保完整性和安全性通过签名验证、 加密或其他方式的固件。 审阅[Microsoft UEFI CA 签名策略更新](https://blogs.msdn.microsoft.com/windows_hardware_certification/2013/12/03/microsoft-uefi-ca-signing-policy-updates/)下面链接的其他详细信息。
+尽管两者都需要进行签名，签名的驱动程序包是不同的签名 UEFI 固件。 签名是通过使用文件签名服务功能的硬件仪表板。 Windows 使用上通过安全目录提供的驱动程序包的签名以将其传递给 UEFI 之前验证 firmware.bin 的完整性。 Windows 不提供对固件的 security 目录。 在 UEFI 固件或设备固件更新的签名验证平台固件，并且不会检查 Windows。 IHV 或 OEM 负责确保完整性和安全性通过签名验证、 加密或其他方式的固件。 审阅[Microsoft UEFI CA 签名策略更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)下面链接的其他详细信息。
 
 接下来，登录胶囊形的内容。 封装内容本身由 OEM 决定。 Capsule 可能只包含固件映像中选择任何格式 OEM，要更新的目录或它可能会传送中的 EFI 应用程序图像 （PE/COFF 文件格式） 的窗体。 如果 capsule 是 PE/COFF 文件，然后它必须签名由 OEM 提交到 Microsoft 的 Windows 固件更新包签名之前。
 
@@ -73,7 +73,7 @@ C:\Desktop
 
 [驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/dashboard)
 
-[Microsoft UEFI CA 签名策略更新](https://blogs.msdn.microsoft.com/windows_hardware_certification/2013/12/03/microsoft-uefi-ca-signing-policy-updates/)
+[Microsoft UEFI CA 签名策略更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 [查看测试结果和日志文件](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-7-view-test-results-and-log-files)
 
@@ -83,10 +83,10 @@ C:\Desktop
 
 [使用 Windows HLK 排查设备基本组件可靠性测试问题](https://docs.microsoft.com/windows-hardware/test/hlk/testref/troubleshooting-device-fundamentals-reliability-testing-by-using-the-windows-hck)
 
-[Windows 硬件认证博客](https://blogs.msdn.microsoft.com/windows_hardware_certification)
+[Windows 硬件认证博客](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 
 [Windows UEFI 固件更新平台](https://docs.microsoft.com/windows-hardware/drivers/bringup/windows-uefi-firmware-update-platform)
 
-[合作伙伴中心](https://developer.microsoft.com/windows/hardware/dashboard-sign-in)
+[合作伙伴中心](https://partner.microsoft.com/dashboard)
 
 [ESRT 表定义 ](https://docs.microsoft.com/windows-hardware/drivers/bringup/esrt-table-definition)

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28147
-ms.openlocfilehash: c7f1ec8ad87abc76898da94ced4c9bc4ea1fe270
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f836334872c5157def7396b87055149c3db3f198
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361368"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364107"
 ---
 # <a name="c28147"></a>C28147
 
@@ -38,7 +38,7 @@ ms.locfileid: "63361368"
 
 该驱动程序指定默认的池标记。 系统按池标记跟踪池使用，因为使用的唯一池标记这些驱动程序可以标识和区分其池使用。
 
-**ExAllocatePool**并**ExAllocatePoolWithQuota**已过时，并应替换为[ **ExAllocatePoolWithTag** ](https://msdn.microsoft.com/library/windows/hardware/ff544520)和[ **ExAllocatePoolWithQuotaTag**](https://msdn.microsoft.com/library/windows/hardware/ff544513)，其可让您指定的唯一池标记。
+**ExAllocatePool**并**ExAllocatePoolWithQuota**已过时，并应替换为[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)和[ **ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithquotatag)，其可让您指定的唯一池标记。
 
  
 

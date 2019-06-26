@@ -7,12 +7,12 @@ keywords:
 - 管理队列 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd717b6b621fca0da0c9a4c2bb4d4573651f4f44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37351b27d8ca02c4def553b19131f09425ce6b60
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364689"
 ---
 # <a name="managing-queues-in-a-wbdi-driver"></a>在 WBDI 驱动程序中管理队列
 
@@ -21,7 +21,7 @@ WBDI 驱动程序应创建至少一个队列来处理来自服务的多个并发
 
 在中[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)，CBiometricIoQueue 类实现的 I/O 队列接口。
 
-在方法中`CBiometricIoQueue::Initialize`，具体而言，驱动程序将查询指向的所属 CBiometricIoQueue 对象[IQueueCallbackDeviceIoControl](https://msdn.microsoft.com/library/windows/hardware/ff556852)框架使用以确定事件回调函数的接口该驱动程序订阅的队列：
+在方法中`CBiometricIoQueue::Initialize`，具体而言，驱动程序将查询指向的所属 CBiometricIoQueue 对象[IQueueCallbackDeviceIoControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol)框架使用以确定事件回调函数的接口该驱动程序订阅的队列：
 
 ```cpp
 if (SUCCEEDED(hr)) 
@@ -30,7 +30,7 @@ hr = this->QueryInterface(__uuidof(IUnknown), (void **)&unknown);
 }
 ```
 
-然后驱动程序调用[ **IWDFDevice::CreateIoQueue** ](https://msdn.microsoft.com/library/windows/hardware/ff557020)若要配置默认的 I/O 队列：
+然后驱动程序调用[ **IWDFDevice::CreateIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)若要配置默认的 I/O 队列：
 
 ```cpp
 hr = FxDevice->CreateIoQueue(unknown,
@@ -44,7 +44,7 @@ BiometricSafeRelease(unknown);
 
 调用指定 WdfIoQueueDispatchParallel，以便个请求均可用后，框架将显示对驱动程序的 I/O 队列回调函数的请求。
 
-接下来，驱动程序调用[ **IWDFDevice::ConfigureRequestDispatching** ](https://msdn.microsoft.com/library/windows/hardware/ff557014)来配置要筛选的所有设备 I/O 请求的队列：
+接下来，驱动程序调用[ **IWDFDevice::ConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-configurerequestdispatching)来配置要筛选的所有设备 I/O 请求的队列：
 
 ```cpp
 hr = FxDevice->ConfigureRequestDispatching(fxQueue,
@@ -52,9 +52,9 @@ WdfRequestDeviceIoControl,
 TRUE);
 ```
 
-由于该驱动程序在此调用中指定 WdfRequestDeviceIoControl，它提供了[ **OnDeviceIoControl** ](https://msdn.microsoft.com/library/windows/hardware/ff556854)进程 I/O 通知框架中的处理程序。 此**IQueueCallbackDeviceIoControl::OnDeviceIoControl**以前是到 CreateIoQueue 调用中的"未知"参数的一部分的方法。
+由于该驱动程序在此调用中指定 WdfRequestDeviceIoControl，它提供了[ **OnDeviceIoControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)进程 I/O 通知框架中的处理程序。 此**IQueueCallbackDeviceIoControl::OnDeviceIoControl**以前是到 CreateIoQueue 调用中的"未知"参数的一部分的方法。
 
-只能有一个未完成[ **IOCTL\_生物识别\_捕获\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff536429)请求一次。 该驱动程序应在跟踪 IOCTL\_生物识别\_捕获\_数据请求，通过在内部保持挂起的请求一个指针，或通过使用另一个框架队列来处理这些请求。
+只能有一个未完成[ **IOCTL\_生物识别\_捕获\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winbio_ioctl/ni-winbio_ioctl-ioctl_biometric_capture_data)请求一次。 该驱动程序应在跟踪 IOCTL\_生物识别\_捕获\_数据请求，通过在内部保持挂起的请求一个指针，或通过使用另一个框架队列来处理这些请求。
 
 在示例中，如果存在挂起的 I/O 请求，该示例维护一个指向 CBiometricDevice 类的成员中的请求中 Device.h 定义：
 

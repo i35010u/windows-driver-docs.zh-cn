@@ -6,12 +6,12 @@ keywords:
 - 命令，在命令中使用的令牌
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5cea84928c2cc4d9459eb0e3301b292c17463c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbfa243118eeebe93c493c764601991e2e2daa90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375076"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361454"
 ---
 # <a name="command-tokens"></a>命令标记
 
@@ -23,41 +23,41 @@ ms.locfileid: "63375076"
 
 这些标记包括：
 
-[**;（命令分隔符）**](----command-separator-.md)
+[ **;（命令分隔符）** ](----command-separator-.md)
 
-[**{} （块分隔符）**](------block-delimiter-.md)
+[ **{} （块分隔符）** ](------block-delimiter-.md)
 
-[**$ {} （别名解释器）**](-------alias-interpreter-.md)
+[ **$ {} （别名解释器）** ](-------alias-interpreter-.md)
 
-[**$ $ （注释说明符）**](-----comment-specifier-.md)
+[ **$ $ （注释说明符）** ](-----comment-specifier-.md)
 
-[**\* （注释行说明符）**](----comment-line-specifier-.md)
+[ **\* （注释行说明符）** ](----comment-line-specifier-.md)
 
-[**.block**](-block.md)
+[ **.block**](-block.md)
 
-[**.break**](https://msdn.microsoft.com/library/windows/hardware/ff556242)
+[ **.break**](https://docs.microsoft.com/windows-hardware/drivers/devtest/-break)
 
-[**.catch**](-catch.md)
+[ **.catch**](-catch.md)
 
-[**.continue**](-continue.md)
+[ **.continue**](-continue.md)
 
-[**.do**](-do.md)
+[ **.do**](-do.md)
 
-[**.else**](-else.md)
+[ **.else**](-else.md)
 
-[**.elsif**](-elsif.md)
+[ **.elsif**](-elsif.md)
 
-[**.for**](-for.md)
+[ **.for**](-for.md)
 
-[**.foreach**](-foreach.md)
+[ **.foreach**](-foreach.md)
 
-[**.if**](-if.md)
+[ **.if**](-if.md)
 
-[**.leave**](-leave.md)
+[ **.leave**](-leave.md)
 
-[**.printf**](-printf.md)
+[ **.printf**](-printf.md)
 
-[**.while**](-while.md)
+[ **.while**](-while.md)
 
  
 

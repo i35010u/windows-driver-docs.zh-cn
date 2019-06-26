@@ -19,12 +19,12 @@ keywords:
 - 屏幕上显示 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c22a73ee8b98e8dd06513499e10c36f9142f864
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d494e0c3ae2ddea042b68b1bd70743173ad6e732
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354215"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361207"
 ---
 # <a name="surface-negotiation"></a>图面协商
 
@@ -32,7 +32,7 @@ ms.locfileid: "63354215"
 ## <span id="ddk_surface_negotiation_gg"></span><span id="DDK_SURFACE_NEGOTIATION_GG"></span>
 
 
-绘制和文本输出需要在其上绘制图面。 创建此面**DrvEnableSurface**尽管驱动程序可以支持多个 PDEVs。 支持的驱动程序[ **DrvCreateDeviceBitmap** ](https://msdn.microsoft.com/library/windows/hardware/ff556185)函数可以创建和使用其他的面。 这些位图图面嘿 *辅助图面*或*屏外表面*。 对于任一类型的图面，该驱动程序负责确定类型的绘制操作它支持。
+绘制和文本输出需要在其上绘制图面。 创建此面**DrvEnableSurface**尽管驱动程序可以支持多个 PDEVs。 支持的驱动程序[ **DrvCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)函数可以创建和使用其他的面。 这些位图图面嘿 *辅助图面*或*屏外表面*。 对于任一类型的图面，该驱动程序负责确定类型的绘制操作它支持。
 
  
 

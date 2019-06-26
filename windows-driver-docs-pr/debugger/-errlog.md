@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dc0b78c88df258019db1abd0da15c6404dc7774
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bb12ea9c8b93cc2bf6e5d3dbb054a0b04dfb24d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337216"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362499"
 ---
 # <a name="errlog"></a>!errlog
 
@@ -54,14 +54,14 @@ ms.locfileid: "63337216"
 
 ### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
 
-璝惠[ **IoWriteErrorLogEntry**](https://msdn.microsoft.com/library/windows/hardware/ff550527)，请参阅 Windows Driver Kit (WDK) 文档。
+璝惠[ **IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)，请参阅 Windows Driver Kit (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-此命令显示 I/O 系统错误日志中的任何挂起的事件有关的信息。 这些是事件通过调用排队[ **IoWriteErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff550527)函数，以写入到系统的事件日志，以允许进行后续查看**事件查看器**。
+此命令显示 I/O 系统错误日志中的任何挂起的事件有关的信息。 这些是事件通过调用排队[ **IoWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)函数，以写入到系统的事件日志，以允许进行后续查看**事件查看器**。
 
-已排队的条目[ **IoWriteErrorLogEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff550527)但尚未提交的错误，将显示日志。
+已排队的条目[ **IoWriteErrorLogEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iowriteerrorlogentry)但尚未提交的错误，将显示日志。
 
 此命令可作为帮助诊断在系统崩溃后由于它会显示挂起的错误信息，无法将其提交到之前暂停系统的错误日志。
 

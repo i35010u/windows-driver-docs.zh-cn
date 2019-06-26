@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 140d688d7759e865e1c499167a662dab5eae3c76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d03978c160e718f788db79c5b8ad85d74b3004b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361639"
 ---
 # <a name="bug-check-0xba-sessionhasvalidviewsonexit"></a>Bug 检查 0xBA：会话\_HAS\_有效\_视图\_ON\_退出
 
@@ -26,7 +26,7 @@ ms.locfileid: "63347137"
 会话\_HAS\_有效\_视图\_ON\_退出 bug 检查的值为 0x000000BA。 这指示会话驱动程序仍有映射视图时卸载该会话。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="sessionhasvalidviewsonexit-parameters"></a>会话\_HAS\_有效\_视图\_ON\_退出参数

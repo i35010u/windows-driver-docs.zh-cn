@@ -14,29 +14,29 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e74d5378ac92f6698bcbd0e96be9b2305e33e39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71408a589abb9a898e76a2f1eb25c0917405b27c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327879"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365017"
 ---
 # <a name="fsctlgetretrievalpointerbase-control-code"></a>FSCTL\_获取\_检索\_指针\_基控件代码
 
 
 **FSCTL\_获取\_检索\_指针\_基本**相对于卷的开始文件系统的第一个逻辑群集数 (LCN) 返回的扇区偏移量。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)函数或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)以下函数参数。
+若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)函数或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)以下函数参数。
 
 **Parameters**
 
 <a href="" id="fileobject--in-"></a>*FileObject \[in\]*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 为其卷的文件对象指针**FSCTL\_获取\_检索\_指针\_基**是检索 base。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 为其卷的文件对象指针**FSCTL\_获取\_检索\_指针\_基**是检索 base。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 为其卷的文件句柄**FSCTL\_获取\_检索\_指针\_基**是检索 base。 此参数是必需的不能**NULL**。
 
-必须使用 SE 打开此句柄\_管理\_卷\_名称访问权限。 有关详细信息，请参阅[文件安全和访问权限](https://msdn.microsoft.com/library/windows/desktop/aa364399)。
+必须使用 SE 打开此句柄\_管理\_卷\_名称访问权限。 有关详细信息，请参阅[文件安全和访问权限](https://docs.microsoft.com/windows/desktop/FileIO/file-security-and-access-rights)。
 
 <a href="" id="fscontrolcode--in-"></a>*FsControlCode \[in\]*  
 该操作控制代码。 使用**FSCTL\_获取\_检索\_指针\_基本**对于此操作。
@@ -56,7 +56,7 @@ ms.locfileid: "63327879"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或适当的 NTSTATUS 值如以下之一：
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)将返回状态\_成功或适当的 NTSTATUS 值如以下之一：
 
 <table>
 <colgroup>
@@ -121,7 +121,7 @@ FSCTL\_获取\_检索\_指针\_可 FastFAT 和 exFAT 的设备上使用的基控
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

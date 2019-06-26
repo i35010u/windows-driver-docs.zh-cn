@@ -14,12 +14,12 @@ keywords:
 - 保护级别 WDK 显示 DPCP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f101195a3dfa4eb8549d9e704b49fd1c98cea70c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 999116f3b7bf50d79b122a7bab294f309ae2e00d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340113"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359328"
 ---
 # <a name="handling-protection-levels-with-opm"></a>使用 OPM 处理保护级别
 
@@ -28,9 +28,9 @@ ms.locfileid: "63340113"
 
 图形适配器不需要支持输出保护类型。 但是，图形适配器必须准确地报告它支持的每个图形适配器的输出和当前设置的保护类型为每个输出的保护级别。
 
-ACP 和 CGMS 一个保护模拟电视信号。 目前，OPM 可以使用 ACP 和 CGMS-A 来保护信号从复合输出、 S-视频输出或组件输出。 有关不同的 ACP 和 CGMS 一个保护级别，请参阅[ **DXGKMDT\_OPM\_ACP\_保护\_级别**](https://msdn.microsoft.com/library/windows/hardware/ff560834)和[**DXGKMDT\_OPM\_CGMSA** ](https://msdn.microsoft.com/library/windows/hardware/ff560846)枚举。
+ACP 和 CGMS 一个保护模拟电视信号。 目前，OPM 可以使用 ACP 和 CGMS-A 来保护信号从复合输出、 S-视频输出或组件输出。 有关不同的 ACP 和 CGMS 一个保护级别，请参阅[ **DXGKMDT\_OPM\_ACP\_保护\_级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_acp_protection_level)和[**DXGKMDT\_OPM\_CGMSA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)枚举。
 
-HDCP 保护数字视频信号。 目前，OPM 可以使用 HDCP 来保护数据免受数字视频接口 (DVI) 和高清晰度多媒体接口 (HDMI) 连接器的输出。 有关 HDCP 保护级别的信息，请参阅[ **DXGKMDT\_OPM\_HDCP\_保护\_级别**](https://msdn.microsoft.com/library/windows/hardware/ff560878)枚举。
+HDCP 保护数字视频信号。 目前，OPM 可以使用 HDCP 来保护数据免受数字视频接口 (DVI) 和高清晰度多媒体接口 (HDMI) 连接器的输出。 有关 HDCP 保护级别的信息，请参阅[ **DXGKMDT\_OPM\_HDCP\_保护\_级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_hdcp_protection_level)枚举。
 
 DPCP DisplayPort 输出连接器可防止数字视频信号。
 

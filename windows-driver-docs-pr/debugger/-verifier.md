@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 141fc5f4c1d98fe3ed5ddb28f6ae26027d9bb67d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b6d34dc523b2e22ba854f1d4ade395862c60b29
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323483"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362417"
 ---
 # <a name="verifier"></a>!verifier
 
@@ -96,7 +96,7 @@ ms.locfileid: "63323483"
 如果*地址*指定，则会显示仅使用指定的地址 IRP。
 
 <span id="Bit_11__0x800_"></span><span id="bit_11__0x800_"></span><span id="BIT_11__0X800_"></span>位 11 (0x800)  
-(Windows 8.1 及更高版本)显示您选择时，会创建错误注入日志中的条目[系统资源不足模拟](https://msdn.microsoft.com/library/windows/hardware/dn312130)选项。
+(Windows 8.1 及更高版本)显示您选择时，会创建错误注入日志中的条目[系统资源不足模拟](https://docs.microsoft.com/windows-hardware/drivers/devtest/systematic-low-resource-simulation)选项。
 
 <span id="_______Image______"></span><span id="_______image______"></span><span id="_______IMAGE______"></span> *图像*   
 如果*标志*使用和不等于 4、 8 或 0x10*映像*指定驱动程序的名称。 *图像*用来筛选显示的信息*标志*0x1 和 0x2 的值： 认为只有指定的驱动程序。 此驱动程序必须当前验证。
@@ -107,7 +107,7 @@ ms.locfileid: "63323483"
 <span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-disable**   
 清除上调试目标的当前驱动程序验证程序设置。 这些设置的清除不会保留通过重新启动。 如果你需要禁用驱动程序验证程序设置已成功启动，请在 nt 设置断点 ！VerifierInitSystem 并用 **！ verifier-禁用**此时命令。
 
-<span id="______________"></span> **?**   
+<span id="______________"></span> **?**    
 在调试器命令窗口中显示此扩展的一些简要帮助文本。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL

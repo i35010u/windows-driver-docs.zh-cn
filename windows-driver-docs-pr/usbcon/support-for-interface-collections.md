@@ -3,12 +3,12 @@ Description: 可以在集合中分组复合的 USB 设备上的接口。 USB 通
 title: 枚举 USB 复合设备上的接口集合
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: af034c0f2c593207a7dc926eeb99c3519b02e322
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 41055a870798467ce78ad35d780ea70e33832451
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358336"
 ---
 # <a name="enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合
 
@@ -40,18 +40,18 @@ ms.locfileid: "67161371"
 
 若要定义自定义接口集合的泛型父驱动程序，复合设备的供应商必须：
 
-1.  实现枚举回调例程 ([**USBC\_启动\_设备\_回调**](https://msdn.microsoft.com/library/windows/hardware/ff539007))。
-2.  提供指向中的回调例程的指针*USB 设备配置界面*(**StartDeviceCallback**的成员[ **USBC\_设备\_配置\_界面\_V1**](https://msdn.microsoft.com/library/windows/hardware/ff538990))。
+1.  实现枚举回调例程 ([**USBC\_启动\_设备\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/nc-usbbusif-usbc_start_device_callback))。
+2.  提供指向中的回调例程的指针*USB 设备配置界面*(**StartDeviceCallback**的成员[ **USBC\_设备\_配置\_界面\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1))。
 3.  提供了一个 INF 文件相匹配的设备 ID 的复合设备和显式加载 USB 泛型父驱动程序和筛选器驱动程序。
 
 ### <a name="implementation-considerations"></a>实现注意事项
 
 
-包含枚举回调例程的筛选器驱动程序可以是大写或较低的筛选器驱动程序。 当 USB 泛型父驱动程序收到[ **IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749)请求以启动复合设备，它会询问是否 USB 设备通过发送配置界面[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)请求到驱动程序堆栈的顶部。
+包含枚举回调例程的筛选器驱动程序可以是大写或较低的筛选器驱动程序。 当 USB 泛型父驱动程序收到[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求以启动复合设备，它会询问是否 USB 设备通过发送配置界面[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求到驱动程序堆栈的顶部。
 
-在收到[ **IRP\_MN\_查询\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff551687)请求，筛选器驱动程序必须检查 GUID 类型， **InterfaceType**成员的请求，以验证所请求接口属于类型 USB\_总线\_接口\_USBC\_配置\_GUID。 如果是，筛选器驱动程序的界面中返回指向**接口**IRP 的成员。
+在收到[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求，筛选器驱动程序必须检查 GUID 类型， **InterfaceType**成员的请求，以验证所请求接口属于类型 USB\_总线\_接口\_USBC\_配置\_GUID。 如果是，筛选器驱动程序的界面中返回指向**接口**IRP 的成员。
 
-枚举回调例程必须返回一个指向数组*函数描述符*([**USBC\_函数\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff539001))用于描述的接口集合。 每个函数描述符包含接口描述符的数组 ([**USB\_界面\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff540065))，用于描述的接口集合。 回调例程必须从非分页缓冲池分配功能描述符和接口描述符。 泛型父驱动程序释放此内存。 回调例程必须确保**NumberOfInterfaces**的每个成员**USB\_接口\_描述符**准确地报告中的接口的数量接口集合。
+枚举回调例程必须返回一个指向数组*函数描述符*([**USBC\_函数\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbbusif/ns-usbbusif-_usbc_function_descriptor))用于描述的接口集合。 每个函数描述符包含接口描述符的数组 ([**USB\_界面\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor))，用于描述的接口集合。 回调例程必须从非分页缓冲池分配功能描述符和接口描述符。 泛型父驱动程序释放此内存。 回调例程必须确保**NumberOfInterfaces**的每个成员**USB\_接口\_描述符**准确地报告中的接口的数量接口集合。
 
 泛型父驱动程序创建每个函数描述符的物理设备对象 (PDO)。
 
@@ -80,7 +80,7 @@ Windows WMCDC 体系结构使用本机 Windows 驱动程序来管理 WMCDC 设�
 
 ![示例设备配置和驱动程序堆栈](images/wmcdc-architecture.png)
 
-在上图中，WMCDC 设备包含单个逻辑话筒： OBEX 函数和调制解调器函数。 供应商提供的 INF 文件加载本机 Windows 驱动程序来管理调制解调器。 OBEX 函数由运行中的供应商提供的用户模式驱动程序[用户模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff561365)(UMDF)。 用户模式驱动程序使用 Windows 便携式设备 (WPD) 协议与用户应用程序和接口进行通信， [WinUSB](winusb.md)导出与 USB 堆栈进行通信。 一般情况下，供应商提供的 INF 文件将加载的每个接口集合使用 Winusb.sys Winusb.sys 的单独实例。
+在上图中，WMCDC 设备包含单个逻辑话筒： OBEX 函数和调制解调器函数。 供应商提供的 INF 文件加载本机 Windows 驱动程序来管理调制解调器。 OBEX 函数由运行中的供应商提供的用户模式驱动程序[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/user-mode-driver-framework-design-guide)(UMDF)。 用户模式驱动程序使用 Windows 便携式设备 (WPD) 协议与用户应用程序和接口进行通信， [WinUSB](winusb.md)导出与 USB 堆栈进行通信。 一般情况下，供应商提供的 INF 文件将加载的每个接口集合使用 Winusb.sys Winusb.sys 的单独实例。
 
 ### <a name="registry-settings"></a>注册表设置
 
@@ -111,7 +111,7 @@ HKR,,EnumeratorClass, 0x00000001,02,00,00
 
 USB 无线移动通信设备类 (WMCDC) 是 USB 通信设备类 (CDC) 的子类。 WMCDC 规范扩展，但从根本上改变定义接口集合 CDC 准则。 具体而言，WMCDC 设备必须遵从的 CDC 准则定义接口集合。
 
-CDC 接口集合包含主接口 ([**USB\_界面\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff540065)) 属于通信接口类 (`bInterfaceClass = 0x02`) 或数据接口类 (`bInterfaceClass = 0x0A`)。 如果主接口属于通信接口类 （这是典型的情况下），主接口的子类 (**bInterfaceSubClass**) 指定 CDC*控制模型*。 控制模型表示的接口集合中包含的接口的类型。 有关 USB 实现论坛定义的控件模型的说明，请参阅 CDC 规范和 WMCDC 规范。
+CDC 接口集合包含主接口 ([**USB\_界面\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)) 属于通信接口类 (`bInterfaceClass = 0x02`) 或数据接口类 (`bInterfaceClass = 0x0A`)。 如果主接口属于通信接口类 （这是典型的情况下），主接口的子类 (**bInterfaceSubClass**) 指定 CDC*控制模型*。 控制模型表示的接口集合中包含的接口的类型。 有关 USB 实现论坛定义的控件模型的说明，请参阅 CDC 规范和 WMCDC 规范。
 
 主接口的接口集合后跟一系列必需类特定于功能描述符，包括联合功能描述符 (UFD)。 UFD 列出了属于该集合的接口的数字。 **BMasterInterface** UFD 字段包含的主接口数。 零个或多**bSubordinateInterface**字段包含在集合中的其他 （从属） 接口的数字。
 
@@ -232,7 +232,7 @@ USB 泛型父驱动程序以特殊方式处理无线手持控制模型 (WHCM) �
 -   对于 OBEX 控件模型接口集合，或创建一个单一的 PDO 所有 OBEX 控件模型接口集合，你可以配置 USB 泛型父驱动程序创建单独的物理设备对象 (PDOs)。
 -   接口中的数字 UFD 列表可能具有间断。 也就是说，UFD 接口号可以引用并不连续的接口。 这种类型的编号不是有效的例如，对于[USB 接口关联描述符 (IAD)](usb-interface-association-descriptor.md)、 必须是连续的其接口和具有连续数字。
 -   Ufd 可以包含相关的音频接口集合
--   CDC 和 WMCDC 接口集合的硬件标识符 (Id) 必须包含接口子类。 其他 USB 接口，其硬件 Id 包含 MI\_%02x X 后缀指定接口数，不包含信息的接口子类。 子类信息包含在硬件 ID，以允许供应商的硬件 ID 匹配项，对于特定的接口集合，而不是依赖于接口的描述符布局，以确定要加载的驱动程序中的位置提供 INF 文件找不到。 中的硬件 ID 的子类信息还允许从当前供应商提供的驱动程序管理 WMCDC 替代项，例如用户模式驱动程序的接口集合的逐步迁移路径。 有关 CDC 和 WMCDC 硬件 Id 的示例，请参阅[支持无线移动通信设备类](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。 Id 的格式有关的如何 USB 接口硬件的一般讨论，请参阅[USB 设备的标识符](https://msdn.microsoft.com/library/windows/hardware/ff546284)。
+-   CDC 和 WMCDC 接口集合的硬件标识符 (Id) 必须包含接口子类。 其他 USB 接口，其硬件 Id 包含 MI\_%02x X 后缀指定接口数，不包含信息的接口子类。 子类信息包含在硬件 ID，以允许供应商的硬件 ID 匹配项，对于特定的接口集合，而不是依赖于接口的描述符布局，以确定要加载的驱动程序中的位置提供 INF 文件找不到。 中的硬件 ID 的子类信息还允许从当前供应商提供的驱动程序管理 WMCDC 替代项，例如用户模式驱动程序的接口集合的逐步迁移路径。 有关 CDC 和 WMCDC 硬件 Id 的示例，请参阅[支持无线移动通信设备类](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。 Id 的格式有关的如何 USB 接口硬件的一般讨论，请参阅[USB 设备的标识符](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)。
 
 ### <a name="cdc-and-wmcdc-control-models"></a>CDC 和 WMCDC 控件模型
 

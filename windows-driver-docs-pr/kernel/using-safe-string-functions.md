@@ -8,12 +8,12 @@ keywords:
 - 缓冲区 WDK 安全字符串函数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee63e77c0760c1aef2619c25e18d0038da4082b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 291d441111be74bef4d5c5821bc77cb1da07365b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350999"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381521"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -31,13 +31,13 @@ ms.locfileid: "63350999"
 
 组的内核模式安全的字符串函数包括以下两个子集：
 
--   [Unicode 和 ANSI 字符的安全字符串函数](https://msdn.microsoft.com/library/windows/hardware/ff563642)
+-   [Unicode 和 ANSI 字符的安全字符串函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-    每个函数是在支持双字节 Unicode 字符的 W 后缀的版本和支持单字节 ANSI 字符的一个后缀的版本中可用。 例如， [ **RtlStringCbCatN**](https://msdn.microsoft.com/library/windows/hardware/ff562801)，其中串联两个字符串，并限制追加的字符串的长度是可用作**RtlStringCbCatNW**和**RtlStringCbCatNA**。
+    每个函数是在支持双字节 Unicode 字符的 W 后缀的版本和支持单字节 ANSI 字符的一个后缀的版本中可用。 例如， [ **RtlStringCbCatN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)，其中串联两个字符串，并限制追加的字符串的长度是可用作**RtlStringCbCatNW**和**RtlStringCbCatNA**。
 
--   [安全字符串函数对于 UNICODE\_字符串结构](https://msdn.microsoft.com/library/windows/hardware/ff563644)
+-   [安全字符串函数对于 UNICODE\_字符串结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
-    每个这些函数都接受[ **UNICODE\_字符串**](https://msdn.microsoft.com/library/windows/hardware/ff564879)作为输入或输出参数和 / 或结构。 例如， [ **RtlStringCbCopyUnicodeString** ](https://msdn.microsoft.com/library/windows/hardware/ff562815)接受作为输入参数，结构[ **RtlUnicodeStringCopyString** ](https://msdn.microsoft.com/library/windows/hardware/ff562948)接受的结构作为输出参数，并[ **RtlUnicodeStringCopy** ](https://msdn.microsoft.com/library/windows/hardware/ff562942)接受作为输入和输出参数的结构。
+    每个这些函数都接受[ **UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)作为输入或输出参数和 / 或结构。 例如， [ **RtlStringCbCopyUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring)接受作为输入参数，结构[ **RtlUnicodeStringCopyString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring)接受的结构作为输出参数，并[ **RtlUnicodeStringCopy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy)接受作为输入和输出参数的结构。
 
 内核模式安全字符串函数可提供以下功能：
 
@@ -47,9 +47,9 @@ ms.locfileid: "63350999"
 
 -   所有安全的字符串函数都返回的 NTSTATUS 值，只有一个可能的成功代码 (状态\_成功)。
 
--   大多数安全的字符串函数是在字节计数和字符计数的版本中可用。 例如， [ **RtlStringCbCat** ](https://msdn.microsoft.com/library/windows/hardware/ff562795)串联两个字节计数字符串并[ **RtlStringCchCat** ](https://msdn.microsoft.com/library/windows/hardware/ff562834)串联两个计数字符的字符串。
+-   大多数安全的字符串函数是在字节计数和字符计数的版本中可用。 例如， [ **RtlStringCbCat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)串联两个字节计数字符串并[ **RtlStringCchCat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcchcata)串联两个计数字符的字符串。
 
--   提供了附加功能的扩展，例如为后缀版本中提供了大多数安全的字符串函数。 例如， [ **RtlStringCbCatEx** ](https://msdn.microsoft.com/library/windows/hardware/ff562799)扩展的功能[ **RtlStringCbCat**](https://msdn.microsoft.com/library/windows/hardware/ff562795)。
+-   提供了附加功能的扩展，例如为后缀版本中提供了大多数安全的字符串函数。 例如， [ **RtlStringCbCatEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa)扩展的功能[ **RtlStringCbCat**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)。
 
 本部分包括以下主题：
 

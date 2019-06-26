@@ -9,12 +9,12 @@ keywords:
 - 函数原型 WDK Static Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78811c4e2c1546efe7dc5f9feccfaec884c1102d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5cbe4cc93ec5b489d099e638cdee1efe36b19f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347658"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360936"
 ---
 # <a name="supported-drivers"></a>支持的驱动程序
 
@@ -35,7 +35,7 @@ SDV 是能够验证驱动程序具有以下特征：
 
 -   SDV 可以验证通过使用 WDM 函数角色类型来声明其驱动程序回调函数的 WDM 驱动程序。 有关如何声明函数的信息，请参阅[声明函数使用函数角色类型用于 WDM 驱动程序](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
--   SDV 可以验证驱动程序时生成[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff544296)，前提是使用 SDV KMDF 回调函数角色类型声明的每个回调函数。 有关详细信息，请参阅[KMDF 驱动程序中使用函数角色类型声明函数](static-driver-verifier-kmdf-function-declarations.md)。
+-   SDV 可以验证驱动程序时生成[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)，前提是使用 SDV KMDF 回调函数角色类型声明的每个回调函数。 有关详细信息，请参阅[KMDF 驱动程序中使用函数角色类型声明函数](static-driver-verifier-kmdf-function-declarations.md)。
 
 -   SDV 可以验证的 NDIS 驱动程序，提供通过使用 SDV NDIS 回调函数类型批注与函数声明每个回调函数。 有关详细信息，请参阅[NDIS 驱动程序中使用函数角色类型声明函数](static-driver-verifier-ndis-function-declarations.md)。
 
@@ -47,9 +47,9 @@ SDV 是能够验证驱动程序具有以下特征：
 
 - 包括 wdm.h 中或 Ntddk.h （wdm.h 中是 Ntddk.h 的子集）。
 
-- 使用中所述的方法创建设备对象[WDM 设备对象和设备堆栈](https://msdn.microsoft.com/library/windows/hardware/ff565639)。
+- 使用中所述的方法创建设备对象[WDM 设备对象和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/kernel/wdm-device-objects-and-device-stacks)。
 
-- 已根据中的建议编写一个卸载例程[编写卸载例程](https://msdn.microsoft.com/library/windows/hardware/ff566400)。
+- 已根据中的建议编写一个卸载例程[编写卸载例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-an-unload-routine)。
 
 - 声明使用中所述的函数角色类型声明的每个调度函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关 WDM 角色类型信息和 **\_调度\_类型\_(** <em>类型</em> **)** 批注，请参阅[函数用于 WDM 驱动程序函数的角色类型声明](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
@@ -57,7 +57,7 @@ SDV 是能够验证驱动程序具有以下特征：
 
 -   包括 Wdf.h 和 Ntddk.h。
 
--   创建 KMDF 对象中所述[使用框架来开发驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff545545)。
+-   创建 KMDF 对象中所述[使用框架来开发驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)。
 
 -   批注使用 SDV KMDF 回调函数角色类型中, 所述的每个回调函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关受支持的角色类型的列表，请参阅[静态验证工具 KMDF 驱动程序函数声明](static-driver-verifier-kmdf-function-declarations.md)。
 
@@ -65,17 +65,17 @@ SDV 是能够验证驱动程序具有以下特征：
 
 -   包括 Ndis.h 和 Ntddk.h。
 
--   遵循中的准则[网络设计指南](https://msdn.microsoft.com/library/windows/hardware/ff568356)若要创建的 NDIS 驱动程序。
+-   遵循中的准则[网络设计指南](https://docs.microsoft.com/windows-hardware/drivers/network)若要创建的 NDIS 驱动程序。
 
 -   通过使用 SDV NDIS 回调函数角色类型，批注的每个回调函数中所述[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关受支持的角色类型的列表，请参阅[静态验证工具 NDIS 驱动程序函数声明](static-driver-verifier-ndis-function-declarations.md)。
 
 此外，SDV 可以验证支持的驱动程序：
 
--   [Plug and Play](https://msdn.microsoft.com/library/windows/hardware/ff547125)。
+-   [Plug and Play](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
 
--   [电源管理](https://msdn.microsoft.com/library/windows/hardware/ff547131)。
+-   [电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)。
 
--   [Windows Management Instrumentation](https://msdn.microsoft.com/library/windows/hardware/ff547139) (WMI)。
+-   [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
 
 ### <a name="span-idreservedfunctionnamesspanspan-idreservedfunctionnamesspanreserved-function-names"></a><span id="reserved_function_names"></span><span id="RESERVED_FUNCTION_NAMES"></span>保留的函数名称
 

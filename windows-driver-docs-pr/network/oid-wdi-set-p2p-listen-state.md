@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_LISTEN_STATE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 28f73e6b10ae13999c82869f3eddcc9af936c7b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f4d5ad2beb345db52457b05071a71c61ef1304f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330175"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359193"
 ---
 # <a name="oidwdisetp2plistenstate"></a>OID\_WDI\_SET\_P2P\_LISTEN\_STATE
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_P2P\_侦听\_状态的端口上设置的 Wi-Fi Direct 侦听�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -42,9 +42,9 @@ OID\_WDI\_设置\_P2P\_侦听\_状态的端口上设置的 Wi-Fi Direct 侦听�
 
 | TLV                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                      |
 |-----------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_LISTEN\_STATE**](https://msdn.microsoft.com/library/windows/hardware/dn897975)       |                                |          | 所需的侦听状态。                                                                                                                                            |
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://msdn.microsoft.com/library/windows/hardware/dn897869)   |                                | X        | 主机的所需的侦听通道时启用 Wi-Fi Direct 侦听状态。 如果未指定此选项，端口可能会选择在其自己的侦听通道。 |
-| [**WDI\_TLV\_P2P\_侦听\_持续时间**](https://msdn.microsoft.com/library/windows/hardware/dn897973) |                                |          | 周期持续时间和侦听时间。                                                                                                                                  |
+| [**WDI\_TLV\_P2P\_LISTEN\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-listen-state)       |                                |          | 所需的侦听状态。                                                                                                                                            |
+| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)   |                                | X        | 主机的所需的侦听通道时启用 Wi-Fi Direct 侦听状态。 如果未指定此选项，端口可能会选择在其自己的侦听通道。 |
+| [**WDI\_TLV\_P2P\_侦听\_持续时间**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-listen-duration) |                                |          | 周期持续时间和侦听时间。                                                                                                                                  |
 
  
 

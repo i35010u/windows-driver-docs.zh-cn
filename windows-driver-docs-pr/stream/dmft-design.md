@@ -3,12 +3,12 @@ title: 设备 MFT 设计指南
 description: 本主题概述了可用于执行所有流的后续处理共同点的用户模式下运行的设备级扩展的设计。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c9af7c1432569a1cfd9c236741410df088294dc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f1ed6d0adf5043cd87c3be4902510c66ff0401a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384760"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358456"
 ---
 # <a name="device-mft-design-guide"></a>设备 MFT 设计指南
 
@@ -86,9 +86,9 @@ Devproxy 是异步 MFT 封送的命令和 AvStream 照相机驱动程序和媒�
 
 DeviceSource querys DTM 以获取支持的输出 mediatypes。 DTM 获取这些设备 MFT 输出插针。 Stream 描述符根据此信息来捕获管道和 DeviceSource 公开演示文稿描述符。
 
-SourceReader 使用 DeviceSource 公开的 mediatypes，并在每个流上设置默认 mediatypes。 反过来，DeviceSource DTM 的输出流上设置默认 mediatypes。 DTM 设置上的输出流的设备 MFT 使用 mediatype [SetOutputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797684)方法。
+SourceReader 使用 DeviceSource 公开的 mediatypes，并在每个流上设置默认 mediatypes。 反过来，DeviceSource DTM 的输出流上设置默认 mediatypes。 DTM 设置上的输出流的设备 MFT 使用 mediatype [SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)方法。
 
-当**SetOutputStreamState**调用时，若要更改其输入的流的媒体类型到 DTM 消息基于所选的输出媒体类型的设备 MFT 帖子并等待。 响应此消息，DTM querys 的输入流的设备 MFT 使用首选输入 mediatype [GetPreferredInputStreamState](https://msdn.microsoft.com/library/mt797670)。 这对相应的输出流的 Devproxy 设置媒体类型。 如果成功，DTM 对到使用 SetInputStreamState 设备 MFT 输入流设置该相同的媒体类型。 收到此调用后, 完成设备 MFT **SetOutputStreamState**。
+当**SetOutputStreamState**调用时，若要更改其输入的流的媒体类型到 DTM 消息基于所选的输出媒体类型的设备 MFT 帖子并等待。 响应此消息，DTM querys 的输入流的设备 MFT 使用首选输入 mediatype [GetPreferredInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)。 这对相应的输出流的 Devproxy 设置媒体类型。 如果成功，DTM 对到使用 SetInputStreamState 设备 MFT 输入流设置该相同的媒体类型。 收到此调用后, 完成设备 MFT **SetOutputStreamState**。
 
 CaptureEngine DeviceSource 上的特定流，从而选择各个流。 这将传播到设备 MFT 由通过 DTM **SetOutputStreamState**调用。 设备 MFT 置于请求的状态中特定的输出流。 如上所述，设备 MFT 也会 DTM 通知有关需要启用的必需输入流。 这会导致 DTM 传播 Devproxy 将流选择的内容。 在此过程结束时，所有必要的流，Devproxy 和设备 MFT 中已准备好流式传输。
 
@@ -144,7 +144,7 @@ Devproxy 将分配基于驱动程序的首选项的缓冲区。 我们需要设�
 
     - 当应用程序禁用设备 MFT 输出之一时由多个输出，为了进行优化，共享相同的输入时可能必须输入更改媒体类型。 例如，如果 1080p 输出流停止，并且所有其他流，共享一个输入进行流式处理 720p，则输入的流应将其媒体类型更改为 720p 来节约能源并提高性能。
 
-DTM 句柄[METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/Windows/Hardware/mt797687)通知从设备 MFT，若要更改的媒体类型和设备 MFT 输入以及在这些情况下的 Devproxy 输出的状态。
+DTM 句柄[METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)通知从设备 MFT，若要更改的媒体类型和设备 MFT 输入以及在这些情况下的 Devproxy 输出的状态。
 
 ### <a name="flush-device-mft"></a>刷新设备 MFT
 
@@ -162,7 +162,7 @@ DTM 句柄[METransformInputStreamStateChanged](https://msdn.microsoft.com/Librar
 
     - 输出特定于 pin 的刷新。 这通常发生时停止流。
 
-通过设备 MFT 管理器将删除发布之前将刷新的所有事件。 后刷新，设备 MFT 重置其内部[METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)跟踪计数。
+通过设备 MFT 管理器将删除发布之前将刷新的所有事件。 后刷新，设备 MFT 重置其内部[METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)跟踪计数。
 
 ### <a name="drain-of-device-mft"></a>设备 MFT 会被清空
 
@@ -174,7 +174,7 @@ DTM 句柄[METransformInputStreamStateChanged](https://msdn.microsoft.com/Librar
 
 ### <a name="warm-start"></a>热启动
 
-DeviceSource 尝试热启动特定的输出流，通过转换要暂停状态的流。 反过来，调用 DTM [IMFDeviceTransform::SetOutputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797684)上设备 MFT 转换一个特定的输出流以暂停状态的方法。 这将导致相应的输入流将置于暂停。 这通过设备 MFT 实现通过请求**METransformInputStreamStateChanged** DTM 和处理[IMFDeviceTransform::SetInputStreamState](https://msdn.microsoft.com/library/windows/hardware/mt797683)方法。
+DeviceSource 尝试热启动特定的输出流，通过转换要暂停状态的流。 反过来，调用 DTM [IMFDeviceTransform::SetOutputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setoutputstreamstate)上设备 MFT 转换一个特定的输出流以暂停状态的方法。 这将导致相应的输入流将置于暂停。 这通过设备 MFT 实现通过请求**METransformInputStreamStateChanged** DTM 和处理[IMFDeviceTransform::SetInputStreamState](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-setinputstreamstate)方法。
 
 ### <a name="variable-photo-sequence"></a>可变照片序列
 
@@ -182,7 +182,7 @@ DeviceSource 尝试热启动特定的输出流，通过转换要暂停状态的�
 
 ### <a name="photo-confirmation"></a>照片确认
 
-设备 MFT 支持通过照片确认**IMFCapturePhotoConfirmation**接口。 管道检索通过此接口[IMFGetService::GetService](https://msdn.microsoft.com/library/windows/desktop/ms696978)方法。
+设备 MFT 支持通过照片确认**IMFCapturePhotoConfirmation**接口。 管道检索通过此接口[IMFGetService::GetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfgetservice-getservice)方法。
 
 ### <a name="metadata"></a>元数据
 
@@ -196,17 +196,17 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
 ## <a name="device-transform-manager-dtm-event-handling"></a>设备转换管理器 (DTM) 事件处理
 
-[设备转换管理器事件](https://msdn.microsoft.com/Library/Windows/Hardware/mt797660)以下参考主题中定义：
+[设备转换管理器事件](https://docs.microsoft.com/windows-hardware/drivers/stream/device-mft-events)以下参考主题中定义：
 
-- [METransformFlushInputStream](https://msdn.microsoft.com/library/windows/hardware/mt797685)
-- [METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)
-- [METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/windows/hardware/mt797687)
-- [METransformNeedInput](https://msdn.microsoft.com/library/windows/hardware/mt797688)
+- [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
+- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
+- [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
+- [METransformNeedInput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformneedinput)
 
 
 ## <a name="imfdevicetransform-interface"></a>IMFDeviceTransform 接口
 
-[IMFDeviceTransform](https://msdn.microsoft.com/library/windows/hardware/mt797663)接口定义与设备 MFT 进行交互。 此接口简化的管理*m*输入并*n*输出设备 MFT。 其他接口，以及设备 MFT 必须实现此接口。
+[IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)接口定义与设备 MFT 进行交互。 此接口简化的管理*m*输入并*n*输出设备 MFT。 其他接口，以及设备 MFT 必须实现此接口。
 
 ### <a name="general-event-propagation"></a>常规事件传播
 
@@ -218,9 +218,9 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
 设备 Mft 必须支持以下接口：
 
-- [IMFDeviceTransform](https://msdn.microsoft.com/library/windows/hardware/mt797663)
+- [IMFDeviceTransform](https://docs.microsoft.com/windows/desktop/api/mftransform/nn-mftransform-imfdevicetransform)
 
-- [IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559769)
+- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
 
     - 这允许所有 ksproperties、 事件和方法为通过设备 MFT。 这使设备 MFT 能够处理设备 MFT 这些函数调用或只需将其转发到该驱动程序。 情况下，它将处理 KsEvent 方法，然后设备 MFT 必须执行以下操作：
 
@@ -232,25 +232,25 @@ Devproxy 查询元数据的缓冲区大小的驱动程序，并为元数据分�
 
         - 如果设备 MFT 处理非 KSEVENT_TYPE_ONESHOT 事件，则它应复制句柄，当它收到**KSEVENT_TYPE_ENABLE** ，然后应调用**CloseHandle**上重复处理时 ks通过使用设置为零的所有参数调用 KsEvent 函数禁用事件。
 
-- [IMFRealtimeClientEx](https://msdn.microsoft.com/library/windows/desktop/hh448047)
+- [IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)
 
 - [IMFMediaEventGenerator](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)
 
-- [IMFShutdown](https://msdn.microsoft.com/library/windows/desktop/ms703054)
+- [IMFShutdown](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfshutdown)
 
 ### <a name="notification-requirements"></a>通知要求
 
 设备 Mft 必须使用以下消息来通知 DTM 的可用性的示例中，任何输入的流状态更改一样，依次类推。
 
-- [METransformHaveOutput](https://msdn.microsoft.com/library/windows/hardware/mt797686)
+- [METransformHaveOutput](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformhaveoutput)
 
-- [METransformInputStreamStateChanged](https://msdn.microsoft.com/Library/windows/hardware/mt797687)
+- [METransformInputStreamStateChanged](https://docs.microsoft.com/windows-hardware/drivers/stream/metransforminputstreamstatechanged)
 
-- [METransformFlushInputStream](https://msdn.microsoft.com/library/windows/hardware/mt797685)
+- [METransformFlushInputStream](https://docs.microsoft.com/windows-hardware/drivers/stream/metransformflushinputstream)
 
 ### <a name="thread-requirements"></a>线程要求
 
-设备 MFT 必须创建自己的线程。 它必须改用 MF 工作队列，其 ID 传递[IMFRealtimeClientEx](https://msdn.microsoft.com/library/windows/desktop/hh448047)接口。 这是为了确保在设备 MFT 中运行的所有线程都获取正确的捕获管道运行的优先级。 否则它可能会导致线程优先级倒置。
+设备 MFT 必须创建自己的线程。 它必须改用 MF 工作队列，其 ID 传递[IMFRealtimeClientEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfrealtimeclientex)接口。 这是为了确保在设备 MFT 中运行的所有线程都获取正确的捕获管道运行的优先级。 否则它可能会导致线程优先级倒置。
 
 ### <a name="inputstream-requirements"></a>InputStream 要求
 

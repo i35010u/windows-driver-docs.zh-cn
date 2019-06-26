@@ -9,12 +9,12 @@ keywords:
 - 受保护视频 WDK COPP，保护级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 565b13026d18917bc1347f390de230f5a23bc724
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 013d5be001e9f9b684cc66dc2803978b7a8f8a62
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340145"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359320"
 ---
 # <a name="handling-protection-levels"></a>处理保护级别
 
@@ -30,9 +30,9 @@ ms.locfileid: "63340145"
 
 当视频会话将新的保护级别设置为特定的保护类型时，驱动程序应递减引用计数的当前保护级别，应增加新的保护级别的引用计数。 相应的更改也应该对全球引用级别计数器。
 
-每当更改任何全局级别计数器时，驱动程序应检查特定输出连接器的所有计数器，并确保保护级别设置为对应于其值大于 0 的最高级别计数器的级别。 有关详细信息，请参阅中的示例代码[ *COPPCommand* ](https://msdn.microsoft.com/library/windows/hardware/ff539642)并[ *COPPQueryStatus* ](https://msdn.microsoft.com/library/windows/hardware/ff539652)参考页。
+每当更改任何全局级别计数器时，驱动程序应检查特定输出连接器的所有计数器，并确保保护级别设置为对应于其值大于 0 的最高级别计数器的级别。 有关详细信息，请参阅中的示例代码[ *COPPCommand* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppcommand)并[ *COPPQueryStatus* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)参考页。
 
-大于 0 的全局引用计数器时，微型端口驱动程序应将内容保护应用于输出 connector。 只要全局引用计数器达到 0，微型端口驱动程序应从输出连接器删除内容保护。 每当显示驱动程序接收到调用其[ *DdMoCompDestroy* ](https://msdn.microsoft.com/library/windows/hardware/ff549664)回调函数 (和视频的微型端口驱动程序接收到调用，反过来，其[ *COPPCloseVideoSession* ](https://msdn.microsoft.com/library/windows/hardware/ff539638)函数)，该视频的微型端口驱动程序应递减 COPP 设备的本地引用计数器的当前级别的全局引用计数器。 微型端口驱动程序只应从已认证的输出连接器删除内容保护，如果连接器的全局引用计数器达到 0。
+大于 0 的全局引用计数器时，微型端口驱动程序应将内容保护应用于输出 connector。 只要全局引用计数器达到 0，微型端口驱动程序应从输出连接器删除内容保护。 每当显示驱动程序接收到调用其[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)回调函数 (和视频的微型端口驱动程序接收到调用，反过来，其[ *COPPCloseVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppclosevideosession)函数)，该视频的微型端口驱动程序应递减 COPP 设备的本地引用计数器的当前级别的全局引用计数器。 微型端口驱动程序只应从已认证的输出连接器删除内容保护，如果连接器的全局引用计数器达到 0。
 
 **请注意**   *DdMoCompDestroy*可能调用函数，而 COPP 设备的本地引用计数器仍设置为大于 0 （例如，如果用户模式进程异常终止）。
 

@@ -4,17 +4,17 @@ description: Windows Driver Kit (WDK) 提供 Ctrpp 任务，以便在生成您�
 ms.assetid: DB457500-5BFF-4488-95EB-EEB3F63947C1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8989e988f12be06b037ecc580c5352b78d201970
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 022400d6b0effce112f6e41bd18ebbf4135a6e03
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360369"
 ---
 # <a name="ctrpp-task"></a>Ctrpp 任务
 
 
-Windows Driver Kit (WDK) 提供 Ctrpp 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 ctrpp.exe 工具。 有关使用 ctrpp.exe 信息，请参阅[ **CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)。
+Windows Driver Kit (WDK) 提供 Ctrpp 任务，以便在生成您的驱动程序使用 MSBuild 时，可以运行 ctrpp.exe 工具。 有关使用 ctrpp.exe 信息，请参阅[ **CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)。
 
 MSBuild 使用 Ctrpp 项发送到 ctrpp.exe Ctrpp 任务的参数。 项目文件中的 Ctrpp 项访问 ctrpp.exe 的项元数据。
 
@@ -145,4 +145,4 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**CTRPP**](https://msdn.microsoft.com/library/windows/desktop/aa372128)
+[**CTRPP**](https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp)

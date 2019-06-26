@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 180e52d9ecfe564dea90afd41464ccb4d2ded72e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99979f70e58d3b5531f95d3cb65aa88070b9b02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376437"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362647"
 ---
 # <a name="sendsrl-function"></a>SendSRL 函数
 
@@ -46,7 +46,7 @@ void SendSRL(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendSRL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565524)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendSRL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构。
 
 *PortWWN*   
 通过其发送的 SRL 命令的本地端口全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**SendSRL 成员\_结构中。
@@ -58,13 +58,13 @@ void SendSRL(
 其循环是要扫描的域域数。 此信息传递到中的微型端口驱动程序**域**SendSRL 成员\_结构中。
 
 *TotalRspBufferSize*   
-以字节为单位的 SRL 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendSRL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565524)结构。
+以字节为单位的 SRL 命令的结果大小。 微型端口驱动程序将返回此信息**TotalRspBufferSize**的成员[ **SendSRL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构。
 
 *ActualRspBufferSize*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendSRL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565524)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualRspBufferSize**的成员[ **SendSRL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构。
 
 *RspBuffer*   
-SRL 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendSRL\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565524)结构。
+SRL 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**的成员[ **SendSRL\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -105,7 +105,7 @@ SRL 命令的结果。 微型端口驱动程序将返回此信息**RspBuffer**�
 
 [HBA\_状态](hba-status.md)
 
-SendSRL\_IN [**SendSRL\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565524)
+SendSRL\_IN [**SendSRL\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendsrl_out)
 
  
 

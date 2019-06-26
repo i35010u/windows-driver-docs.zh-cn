@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 459983936020aa718fdb72cdede064300d0d0bda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ed4cd8aa746244ba0f00386564c1bbdacac9e79
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348064"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368146"
 ---
 # <a name="kspropertybdapidfilterlistpids"></a>KSPROPERTY\_BDA\_PIDFILTER\_LIST\_PIDS
 
@@ -85,7 +85,7 @@ ms.locfileid: "63348064"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

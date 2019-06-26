@@ -4,12 +4,12 @@ description: 自动文档送纸器命令
 ms.assetid: dd6664d6-4853-4f97-85cc-39a7879d523e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e6e75248d58ffef961e1e2b4c27bb6170a34c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 76f590dd32e9c205031a17cf2c2d990e3dc50f3f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373344"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366749"
 ---
 # <a name="automatic-document-feeder-commands"></a>自动文档送纸器命令
 
@@ -17,7 +17,7 @@ ms.locfileid: "63373344"
 ## <span id="ddk_automatic_document_feeder_commands_si"></span><span id="DDK_AUTOMATIC_DOCUMENT_FEEDER_COMMANDS_SI"></span>
 
 
-在本部分中的命令适用于 microdrivers 支持自动文档送纸器 (ADF)。 若要报告在 microdriver 支持自动文档送纸器，设置**ADF**中的成员[ **SCANINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff547361)期间 CMD 结构 1 （或如果 ADF 具有双面打印器 2）\_初始化命令。 这将导致 WIA 平板驱动程序添加 ADF 控件的所需的属性和使用本部分中的命令。
+在本部分中的命令适用于 microdrivers 支持自动文档送纸器 (ADF)。 若要报告在 microdriver 支持自动文档送纸器，设置**ADF**中的成员[ **SCANINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-_scaninfo)期间 CMD 结构 1 （或如果 ADF 具有双面打印器 2）\_初始化命令。 这将导致 WIA 平板驱动程序添加 ADF 控件的所需的属性和使用本部分中的命令。
 
 <span id="CMD_LOAD_ADF"></span><span id="cmd_load_adf"></span>CMD\_负载\_ADF  
 由 WIA 平板驱动程序将加载到 ADF 页调用。 如果此命令不适用于设备返回 E\_NOTIMPL。 此命令是可选的自动送入页面的设备。
@@ -29,13 +29,13 @@ ms.locfileid: "63373344"
 由 WIA 平板驱动程序，以确定是否可供使用 ADF 调用。 ADF 是否可用，则返回 S\_确定。 如果此命令不适用于设备返回 E\_NOTIMPL。
 
 <span id="CMD_GETADFHASPAPER"></span><span id="cmd_getadfhaspaper"></span>CMD\_GETADFHASPAPER  
-调用 WIA 平板驱动程序来获取设备的 ADF 的纸张状态。 设置**lVal**成员传递[ **VAL** ](https://msdn.microsoft.com/library/windows/hardware/ff548627)为相应的状态的值的结构。 (请参阅 CMD\_ADFGETSTATUS 有关可能的状态值。)
+调用 WIA 平板驱动程序来获取设备的 ADF 的纸张状态。 设置**lVal**成员传递[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)为相应的状态的值的结构。 (请参阅 CMD\_ADFGETSTATUS 有关可能的状态值。)
 
 <span id="CMD_GETADFOPEN"></span><span id="cmd_getadfopen"></span>CMD\_GETADFOPEN  
 相同 CMD\_GETADFREADY。 WIA 平板驱动程序当前未使用此命令。
 
 <span id="CMD_GETADFSTATUS"></span><span id="cmd_getadfstatus"></span>CMD\_GETADFSTATUS  
-调用 WIA 平板驱动程序来获取附加到设备的 ADF 的状态。 设置**lVal**成员传递[ **VAL** ](https://msdn.microsoft.com/library/windows/hardware/ff548627)为相应的状态的值的结构。 可能的状态值如下所示。
+调用 WIA 平板驱动程序来获取附加到设备的 ADF 的状态。 设置**lVal**成员传递[ **VAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamicro/ns-wiamicro-val)为相应的状态的值的结构。 可能的状态值如下所示。
 
 <table>
 <colgroup>

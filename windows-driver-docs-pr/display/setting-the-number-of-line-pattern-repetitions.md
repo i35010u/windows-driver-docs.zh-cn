@@ -6,12 +6,12 @@ keywords:
 - 行模式重复 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce303a8f85fb7e1aba7aaf00cb3da37f62986d97
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e613c3ac27101017036c2842fbd42cff1d2c548
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390431"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365550"
 ---
 # <a name="setting-the-number-of-line-pattern-repetitions"></a>设置线条模式重复次数
 
@@ -21,7 +21,7 @@ ms.locfileid: "63390431"
 
 应用程序可以直接呈现基元使用纯色或图案的线条的 Direct3D 设备。 如果设备支持重复模式，应用程序也可以延迟特定行模式。 设备的驱动程序必须设置 D3DPMISCCAPS\_LINEPATTERNREP 标志以指示设备是否支持重复的特定行模式。 如何设置此标志取决于 DirectX 版本：
 
--   对于 DirectX 7.0 及更早版本，在中设置此标志**dwMiscCaps**的成员[ **D3DPRIMCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff549034)结构。
+-   对于 DirectX 7.0 及更早版本，在中设置此标志**dwMiscCaps**的成员[ **D3DPRIMCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构。
 
 -   DirectX 8.0 及更高版本，在中设置此标志**PrimitiveMiscCaps** D3DCAPS 成员*Xx*结构，其中*Xx*指示 DirectX 版本 (例如，D3DCAPS8版本 8 和 D3DCAPS9 版本 9）。 D3DCAPS8 和 D3DCAPS9 及其各自的版本的 DirectX SDK 文档中所述。
 

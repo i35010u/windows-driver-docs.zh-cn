@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 378c8d57eca8631826af6edb56be9af0797c3105
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb889d82a19ff010247d51411d1cf6d43a241d68
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332793"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358811"
 ---
 # <a name="kspropertyaudiosignalprocessingmodes"></a>KSPROPERTY\_AUDIOSIGNALPROCESSING\_模式
 
@@ -50,8 +50,8 @@ ms.locfileid: "63332793"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>（通过筛选器实例） 的 pin 工厂</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx" data-raw-source="[KSP_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx)">KSP_PIN</a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx" data-raw-source="[KSMULTIPLE_ITEM](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)">KSMULTIPLE_ITEM</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[KSP_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)">KSP_PIN</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[KSMULTIPLE_ITEM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)">KSMULTIPLE_ITEM</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -68,14 +68,14 @@ ms.locfileid: "63332793"
 
 在 Windows 10 中，定义五个其他模式。
 
-音频\_SIGNALPROCESSINGMODE\_通信音频\_SIGNALPROCESSINGMODE\_语音音频\_SIGNALPROCESSINGMODE\_MEDIA 音频\_SIGNALPROCESSINGMODE\_电影音频\_SIGNALPROCESSINGMODE\_通知的详细信息，请参阅[音频信号处理模式](https://msdn.microsoft.com/windows/hardware/drivers/audio/audio-signal-processing-modes)。
+音频\_SIGNALPROCESSINGMODE\_通信音频\_SIGNALPROCESSINGMODE\_语音音频\_SIGNALPROCESSINGMODE\_MEDIA 音频\_SIGNALPROCESSINGMODE\_电影音频\_SIGNALPROCESSINGMODE\_通知的详细信息，请参阅[音频信号处理模式](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-signal-processing-modes)。
 
 <a name="remarks"></a>备注
 -------
 
 基本支持处理程序**KSPROPERTY\_AUDIOSIGNALPROCESSING\_模式**应传递给**KSP\_PIN**结构，以及是否应将播发仅支持在非环回流式处理的 pin。 音频驱动程序应仅在主机上支持信号处理模式和卸载的 pin。 环回或桥 pin 音频驱动程序应仍支持该属性，但返回**KSMULTIPLE\_项**结构，其*计数*参数设置为零 (0)。
 
-开发使用 Microsoft 音频端口类驱动程序 (Portcls) 可以实现任何音频的微型端口驱动程序[ **IMiniportAudioSignalProcessing::GetModes** ](https://msdn.microsoft.com/library/windows/hardware/dn457660)方法。
+开发使用 Microsoft 音频端口类驱动程序 (Portcls) 可以实现任何音频的微型端口驱动程序[ **IMiniportAudioSignalProcessing::GetModes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportaudiosignalprocessing-getmodes)方法。
 
 <a name="requirements"></a>要求
 ------------
@@ -100,11 +100,11 @@ ms.locfileid: "63332793"
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IMiniportAudioSignalProcessing::GetModes**](https://msdn.microsoft.com/library/windows/hardware/dn457660)
+[**IMiniportAudioSignalProcessing::GetModes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportaudiosignalprocessing-getmodes)
 
-[KSMULTIPLE\_项](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)
+[KSMULTIPLE\_项](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[KSP\_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722.aspx)
+[KSP\_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
  
 

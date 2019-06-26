@@ -13,12 +13,12 @@ keywords:
 - MPEG2 视频输入流的 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0740694167f9aea25a7bc31b7f08d8c9ae7024a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56b90a5e86c945b5fc9f907fbd1baa3b24c5044e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386528"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360675"
 ---
 # <a name="input-streams"></a>输入流
 
@@ -28,7 +28,7 @@ ms.locfileid: "63386528"
 
 DVD 输入的流作为数组的已加密的 DVD 包提供给微型驱动程序。 包是 DVD 规范中定义。 请注意因为 Microsoft 的 DVD 体系结构为音频和视频同步使用的"主时钟"模式的包的系统时钟参考 (SCR) 字段设置为零。 通常情况下，DVD 解码器微型驱动程序的音频流提供主时钟。 有关详细信息，请参阅[Master 时钟](master-clock.md)。
 
-DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff568220)请求。 有关 SRB 请求的详细信息，请参阅[处理 Stream 请求块](handling-stream-request-blocks.md)并[Stream 类 SRB 引用](https://msdn.microsoft.com/library/windows/hardware/ff568295)。 硬件应支持散播-聚集 DMA，因为多个 DVD 包可能会出现在单个请求数据包。
+DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)请求。 有关 SRB 请求的详细信息，请参阅[处理 Stream 请求块](handling-stream-request-blocks.md)并[Stream 类 SRB 引用](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)。 硬件应支持散播-聚集 DMA，因为多个 DVD 包可能会出现在单个请求数据包。
 
 下表介绍了使用的 DVD 电影 MPEG2 视频的输入的流媒体类型：
 
@@ -120,7 +120,7 @@ WaveFormatEx 的超集
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@ WaveFormatEx 的超集
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -266,7 +266,7 @@ WaveFormatEx 的超集
 
 Microsoft 在任何给定时间提供 DVD 导航器筛选器分析所有按钮和键盘的信息和仅传递到子画面解码器的一个突出显示矩形。 因此，突出显示的信息通常不是位于 DVD 流发送到解码器。 这与 DVD 规范中的不同。
 
-DVD 拆分器导航器/筛选器处理击键的所有信息并发送新突出显示每次在按钮状态发生更改的信息。 信息描述一次只有一种模式的一个按钮。 如果存在，它会在屏幕的像素坐标或显示的子画面，包括显示矩形。 [ **KSPROPERTY\_SPHLI** ](https://msdn.microsoft.com/library/windows/hardware/ff565627)结构还包含颜色和对比的信息，但仅针对当前所选按钮的当前状态。 DVD 规范中定义的格式。
+DVD 拆分器导航器/筛选器处理击键的所有信息并发送新突出显示每次在按钮状态发生更改的信息。 信息描述一次只有一种模式的一个按钮。 如果存在，它会在屏幕的像素坐标或显示的子画面，包括显示矩形。 [ **KSPROPERTY\_SPHLI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)结构还包含颜色和对比的信息，但仅针对当前所选按钮的当前状态。 DVD 规范中定义的格式。
 
 突出显示信息以异步方式到达了数据流。 DVD 解码器微型驱动程序必须使用突出显示开始和结束时间戳，以关联到相关的子画面信息中，突出显示的信息，如果有的话。 如果 DVD 解码器微型驱动程序未收到的请求的时间戳的任何子画面流信息，解码器假定将突出显示信息是独立的并且不适用于子画面。 在这种情况下，可以假定的颜色和对比的信息完全相同颜色。
 

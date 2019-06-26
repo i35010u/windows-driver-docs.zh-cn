@@ -7,12 +7,12 @@ keywords:
 - 并行端口 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd482e101f68dcfe832754afe2bc0f312fb08aad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d222cf5597c55e3e94219f38e9aa216f5d76a76
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358530"
 ---
 # <a name="installing-parallel-ports-and-devices"></a>安装并行端口和设备
 
@@ -28,7 +28,7 @@ ms.locfileid: "63373566"
 
 [供应商提供并行的驱动程序](requirements-for-vendor-supplied-parallel-drivers.md)
 
-[设备安装概述](https://msdn.microsoft.com/library/windows/hardware/ff549455)
+[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)
 
 有关系统支持的并行端口和并行端口连接的设备的详细信息，请参阅：
 
@@ -36,7 +36,7 @@ ms.locfileid: "63373566"
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
-[系统提供并行的驱动程序的客户端接口](https://msdn.microsoft.com/library/windows/hardware/ff543926)
+[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
 
  
 

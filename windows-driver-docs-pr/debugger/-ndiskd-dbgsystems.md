@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 56354f8347201c637191318919efa66508bec642
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a1cbc8c9c3f090e0c79b9f5970fc8628e59568a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336071"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365773"
 ---
 # <a name="ndiskddbgsystems"></a>!ndiskd.dbgsystems
 
@@ -53,11 +53,11 @@ ms.locfileid: "63336071"
 
  
 
-有关 WPP 详细信息，请参阅[WPP 软件跟踪](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)。
+有关 WPP 详细信息，请参阅[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
 
-有关驱动程序验证程序的详细信息，请参阅[Driver Verifier](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)。
+有关驱动程序验证程序的详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
-有关 WMI 跟踪的详细信息，请参阅[WMI 跟踪扩展 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)。
+有关 WMI 跟踪的详细信息，请参阅[WMI 跟踪扩展 (Wmitrace.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/wmi-tracing-extensions--wmitrace-dll-)。
 
 ```console
 !ndiskd.dbgsystems [-subsystem <any>] 
@@ -78,7 +78,7 @@ ms.locfileid: "63336071"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>值</strong></p></td>
+<td align="left"><p><strong>ReplTest1</strong></p></td>
 <td align="left"><p><strong>含义</strong></p></td>
 </tr>
 <tr class="even">
@@ -178,23 +178,23 @@ Ndiskd.dll
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
-[**!ndiskd.ndis**](-ndiskd-ndis.md)
+[ **!ndiskd.ndis**](-ndiskd-ndis.md)
 
-[WPP 软件跟踪](https://msdn.microsoft.com/windows/hardware/drivers/devtest/wpp-software-tracing)
+[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)
 
-[驱动程序验证程序](https://msdn.microsoft.com/windows/hardware/drivers/devtest/driver-verifier)
+[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 
-[WMI 跟踪扩展 (Wmitrace.dll)](https://msdn.microsoft.com/library/windows/hardware/ff561362)
+[WMI 跟踪扩展 (Wmitrace.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/wmi-tracing-extensions--wmitrace-dll-)
 
  
 

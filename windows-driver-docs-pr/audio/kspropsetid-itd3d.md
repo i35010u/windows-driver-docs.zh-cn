@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Itd3d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3413d7716adb44f851773949acc07be6b6dfa2d7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37fd00ff53ffde7064dd8f447fbcd281b8a0d9a1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332483"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360487"
 ---
 # <a name="kspropsetiditd3d"></a>KSPROPSETID\_Itd3d
 
@@ -33,7 +33,7 @@ ITD 算法通过控制的量达到每个 ear 声音 muffled 依据提供额外�
 
 点击量和其他虚假的噪声，可能会导致对这些参数进行即时更改。 为了筛选出此类噪音的示例在大量这些参数中的 ITD 算法平滑处理，从而转换。
 
-有关使用 ITD 算法的参数的详细信息，请参阅[ **KSDS3D\_ITD\_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff537110)。
+有关使用 ITD 算法的参数的详细信息，请参阅[ **KSDS3D\_ITD\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_itd_params)。
 
 设置此属性包含一个属性：
 

@@ -6,12 +6,12 @@ ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
 - IRP_MN_POWER_SEQUENCE Kernel-Mode Driver Architecture
 ms.localizationpriority: medium
-ms.openlocfilehash: 827976878f8f947d00a9b96c78654108f662ecb8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc80b848a2e4b93ae8d6c33651d8caffa23a1f7b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391970"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383310"
 ---
 # <a name="irpmnpowersequence"></a>IRP\_MN\_POWER\_SEQUENCE
 
@@ -26,7 +26,7 @@ ms.locfileid: "63391970"
 
 驱动程序将此 IRP 发送作为一种优化以确定是否在其设备实际输入特定电源状态。 对此 IRP 的支持是可选的。
 
-若要发送此 IRP，驱动程序必须调用[ **IoAllocateIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff548257)分配指定的主要 IRP 代码 IRP [ **IRP\_MJ\_POWER**](irp-mj-power.md)和次要 IRP 代码**IRP\_MN\_POWER\_序列**。 然后，该驱动程序必须调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336) (Windows Vista) 或[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) （Windows Server 2003、 Windows XP 和 Windows 2000) 以将 IRP 传递给下一个较低的驱动程序。 电源管理器无法发送此 IRP。
+若要发送此 IRP，驱动程序必须调用[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)分配指定的主要 IRP 代码 IRP [ **IRP\_MJ\_POWER**](irp-mj-power.md)和次要 IRP 代码**IRP\_MN\_POWER\_序列**。 然后，该驱动程序必须调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) (Windows Vista) 或[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) （Windows Server 2003、 Windows XP 和 Windows 2000) 以将 IRP 传递给下一个较低的驱动程序。 电源管理器无法发送此 IRP。
 
 必须在 IRQL 运行此 IRP 的发件人&lt;= 调度\_级别。
 

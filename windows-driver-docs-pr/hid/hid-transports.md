@@ -12,12 +12,12 @@ keywords:
 - 传输微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f89c9240993851680fa20d755447edbc3b0a00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dbf85aa78472a96705a91a4b3584838def0463c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388788"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363550"
 ---
 # <a name="hid-transports"></a>HID 传输
 
@@ -43,7 +43,7 @@ Microsoft 建议，只要有可能，为上表中列出的传输使用现成驱�
 
 -   **报表描述符长度**
 
-    传输微型驱动程序提交到 Hidclass 中的报告描述符[ **HID\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff539885)结构。 无论使用其设备将传输 HID 报表描述符的传输协议定义的大小，实际的报表描述符大小可以 Hidclass 和 hid 标准的微型驱动程序之间的通信过程被限制。
+    传输微型驱动程序提交到 Hidclass 中的报告描述符[ **HID\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidport/ns-hidport-_hid_descriptor)结构。 无论使用其设备将传输 HID 报表描述符的传输协议定义的大小，实际的报表描述符大小可以 Hidclass 和 hid 标准的微型驱动程序之间的通信过程被限制。
 
 -   **在报表描述符 TLCs**
 

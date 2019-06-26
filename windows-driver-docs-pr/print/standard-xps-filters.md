@@ -4,12 +4,12 @@ description: Windows 提供了两个 （标准） XPS 筛选器以支持内置�
 ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a20e14a5ae9b49553276a46b64b1b27766fe16f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2f82f26ffdd457ef1580d20cae2cbf1ff788c33
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375209"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363979"
 ---
 # <a name="standard-xps-filters"></a>标准 XPS 筛选器
 
@@ -90,7 +90,7 @@ XPS 标准筛选器生成相应的 PDL 数据设置页上，根据原点\*Printa
 #define XPS_FP_JOB_LEVEL_PRINTTICKET    "JobPrintTicket"
 ```
 
-期间 InitializeFilter，MTI 筛选器将添加的实现[IPrintReadStreamFactory](https://msdn.microsoft.com/library/windows/hardware/ff554338)到属性包。 此接口的一种方法**GetStream**，将一直阻止到 PrintTicket 流可用为止。 这提供了一种同步属性的访问权限。
+期间 InitializeFilter，MTI 筛选器将添加的实现[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)到属性包。 此接口的一种方法**GetStream**，将一直阻止到 PrintTicket 流可用为止。 这提供了一种同步属性的访问权限。
 
 **重要**:如果**GetStream**称为从 InitializeFilter，它将导致死锁。
 

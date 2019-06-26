@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d0adf7bf6bef32e451d84b0c05fb13aa9f2c59f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed3beb3995e19bee9906cda44a31eb0a92d57598
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391820"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360335"
 ---
 # <a name="tracefmt-commands"></a>Tracefmt 命令
 
@@ -77,7 +77,7 @@ ms.locfileid: "63391820"
 
 当 **-p**用于 **-i**，Tracefmt 将放置在指定的目录中创建的 TMF 文件 **-p**。 如果 **-p**是省略，Tracefmt 置于 TMF 文件 %跟踪的值指定的目录\_格式\_搜索\_PATH %环境变量，如果将其设置。 否则，Tracefmt 将文件放在本地目录中。
 
-<span id="_______-h_____"></span><span id="_______-H_____"></span> **-h** | **/?**  
+<span id="_______-h_____"></span><span id="_______-H_____"></span> **-h** |  **/?**  
 显示帮助。
 
 <span id="_______-o_______OutputFile______"></span><span id="_______-o_______outputfile______"></span><span id="_______-O_______OUTPUTFILE______"></span> **-o** *OutputFile*   
@@ -170,7 +170,7 @@ No Format Information found.
 *****FormatMessage Header(Header) of EventTrace, parameter 23 raised an exception*****
 ```
 
-如果看到一个类似的异常，请查看源代码，特别要注意到任何用户指定的变量类型中的消息定义。 有关详细信息，请参阅[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)。
+如果看到一个类似的异常，请查看源代码，特别要注意到任何用户指定的变量类型中的消息定义。 有关详细信息，请参阅[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))。
 
 **与非 GUID 文件名 TMF 文件**
 

@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99b548b1e34fcdd0f28195eb97bbb38bb1bd35c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b26129dcbbdafe2b09690ae682e42975c3954d2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360473"
 ---
 # <a name="ksrtaudiobufferproperty-structure"></a>KSRTAUDIO\_缓冲区\_属性结构
 
 
-KSRTAUDIO\_缓冲区\_属性结构追加缓冲区基址和到请求的缓冲区大小[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 通过音频缓冲区的请求分配到客户端使用此结构[ **KSPROPERTY\_RTAUDIO\_缓冲区**](ksproperty-rtaudio-buffer.md)。
+KSRTAUDIO\_缓冲区\_属性结构追加缓冲区基址和到请求的缓冲区大小[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 通过音频缓冲区的请求分配到客户端使用此结构[ **KSPROPERTY\_RTAUDIO\_缓冲区**](ksproperty-rtaudio-buffer.md)。
 
 <a name="syntax"></a>语法
 ------
@@ -48,7 +48,7 @@ typedef struct {
 指定所需的缓冲区的基址。 除非客户端指定基址，此参数设置为**NULL**。
 
 **RequestedBufferSize**  
-以字节为单位指定所需的缓冲区大小。 驱动程序将返回分配的缓冲区中的实际大小[ **KSRTAUDIO\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff537493)它将返回的结构。
+以字节为单位指定所需的缓冲区大小。 驱动程序将返回分配的缓冲区中的实际大小[ **KSRTAUDIO\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)它将返回的结构。
 
 <a name="remarks"></a>备注
 -------

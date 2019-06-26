@@ -4,12 +4,12 @@ description: SetPresharedKeyForId
 ms.assetid: d966fd05-31ac-4774-b970-e4ce3d02a5ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82dbca93b9b8c4e29ebddf0aab6587825a8c429c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2baab8921ae1b1c04bf53f57d3c45281b0967695
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363966"
 ---
 # <a name="setpresharedkeyforid"></a>SetPresharedKeyForId
 
@@ -22,7 +22,7 @@ ms.locfileid: "63341263"
 
 管理应用程序可以使用**SetPresharedKeyForId**方法以将预共享的密钥与特定的发起程序标识符相关联。 若要将与所有发起程序的标识符关联的默认密钥，该应用程序可以调用[SetGroupPresharedKey](setgrouppresharedkey.md)方法。 如果标识符和密钥之间存在显式关联，显式关联指定的项优先于默认密钥。
 
-**SetPresharedKeyForId**属于未发布[MSiSCSI\_SecurityConfigOperations WMI 类](msiscsi-securityconfigoperations-wmi-class.md)。 有关参数的说明**SetPresharedKeyForId**方法，请参阅成员的说明[ **SetPresharedKeyForId\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565806)和[ **SetPresharedKeyForId\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565810)结构。
+**SetPresharedKeyForId**属于未发布[MSiSCSI\_SecurityConfigOperations WMI 类](msiscsi-securityconfigoperations-wmi-class.md)。 有关参数的说明**SetPresharedKeyForId**方法，请参阅成员的说明[ **SetPresharedKeyForId\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_in)和[ **SetPresharedKeyForId\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiop/ns-iscsiop-_setpresharedkeyforid_out)结构。
 
 微型端口驱动程序实现 MSiSCSI\_SecurityConfigOperations WMI 类必须支持**SetPresharedKeyForId**。
 

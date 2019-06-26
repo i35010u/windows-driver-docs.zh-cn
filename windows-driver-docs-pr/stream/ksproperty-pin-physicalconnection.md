@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 703931775a142b58171de66a402dd6680243395c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 680bbb344db406625982b6c5a6891ea96d9fbbc1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361075"
 ---
 # <a name="kspropertypinphysicalconnection"></a>KSPROPERTY\_PIN\_PHYSICALCONNECTION
 
@@ -53,8 +53,8 @@ ms.locfileid: "63380809"
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563539" data-raw-source="[&lt;strong&gt;KSPIN_PHYSICALCONNECTION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563539)"><strong>KSPIN_PHYSICALCONNECTION</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection" data-raw-source="[&lt;strong&gt;KSPIN_PHYSICALCONNECTION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)"><strong>KSPIN_PHYSICALCONNECTION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,11 +66,11 @@ ms.locfileid: "63380809"
 
 指定此属性使用 KSP\_PIN，其中该成员指定相关 pin 工厂。
 
-KSPROPERTY\_PIN\_PHYSICALCONNECTION 返回类型的结构[ **KSPIN\_PHYSICALCONNECTION**](https://msdn.microsoft.com/library/windows/hardware/ff563539)，指定连接**PinId**和连接筛选器的符号链接名称。
+KSPROPERTY\_PIN\_PHYSICALCONNECTION 返回类型的结构[ **KSPIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)，指定连接**PinId**和连接筛选器的符号链接名称。
 
 在类驱动程序不处理此属性;流微型驱动程序必须提供自己的处理。
 
-音频适配器驱动程序注册与的连接[ **PcRegisterPhysicalConnection**](https://msdn.microsoft.com/library/windows/hardware/ff537726)。
+音频适配器驱动程序注册与的连接[ **PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)。
 
 随后，SysAudio 系统驱动程序 (*sysaudio.sys*) 查询此属性，并相应地生成关系图。 SysAudio 使用此属性来确定哪个批筛选器插针连接到的拓扑的筛选器 pin。
 
@@ -93,11 +93,11 @@ KSPROPERTY\_PIN\_PHYSICALCONNECTION 返回类型的结构[ **KSPIN\_PHYSICALCONN
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSPIN\_PHYSICALCONNECTION**](https://msdn.microsoft.com/library/windows/hardware/ff563539)
+[**KSPIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_physicalconnection)
 
-[**PcRegisterPhysicalConnection**](https://msdn.microsoft.com/library/windows/hardware/ff537726)
+[**PcRegisterPhysicalConnection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisterphysicalconnection)
 
  
 

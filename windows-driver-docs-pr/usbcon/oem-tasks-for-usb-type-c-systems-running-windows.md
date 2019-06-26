@@ -3,12 +3,12 @@ Description: 此表描述了使用情况下支持的 Windows 10 中，并为这�
 title: USB 类型 C 系统的 OEM 任务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c82a8d7a88289e19d547fa006ea07accabd08ee7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4c7216708328b352a6f67a35581f3ade370fd56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366635"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358364"
 ---
 # <a name="oem-tasks-for-usb-type-c-systems"></a>USB 类型 C 系统的 OEM 任务
 
@@ -64,7 +64,7 @@ ms.locfileid: "63366635"
 <p>如果慢速充电器连接到系统，必须通过 UcmCx 或 UCSI 通知系统。</p>
 <p>若要支持旧的专有高电压或高当前收费机制，附加的筛选器驱动程序必须针对编写 Microsoft 的现成 USB 函数驱动程序检测到专有充电器并报告给现成驱动程序。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">编写 USB 类型 C 连接器驱动程序</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt188012" data-raw-source="[USB filter driver for supporting proprietary chargers](https://msdn.microsoft.com/library/windows/hardware/mt188012)">支持专有充电器 USB 筛选器驱动程序</a></p>
+<p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85)" data-raw-source="[USB filter driver for supporting proprietary chargers](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))">支持专有充电器 USB 筛选器驱动程序</a></p>
 <div class="alert">
 <strong>请注意</strong>  Windows 不支持 Power 传递旧的 USB A 和 USB B USB microB 连接器。
 </div>
@@ -79,7 +79,7 @@ ms.locfileid: "63366635"
 <p>运行 Windows 10 移动版的设备可以连接并与 USB 设备/外围设备通过一系列现成的驱动程序进行交互。 操作系统支持的设备类的一个子集。</p>
 <p>查看，请<a href="supported-usb-classes.md" data-raw-source="[USB device class drivers included in Windows](supported-usb-classes.md)">USB 设备类驱动程序包含在 Windows 中</a>。</p></td>
 <td><p>如果您的系统想要连接到自定义的 USB 设备，Windows 不包括驱动程序，可以选择要加载的通用驱动程序 (Winusb.sys) 或编写驱动程序。 有关指南，请参阅<a href="winusb-considerations.md" data-raw-source="[Choosing a driver model for developing a USB client driver](winusb-considerations.md)">选择用于开发 USB 客户端驱动程序的驱动程序模型</a>。</p>
-<p>我们建议您编写单个驱动程序在 Windows 10 上运行的桌面版和 Windows 10 移动版。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://msdn.microsoft.com/windows-drivers/develop/getting_started_with_universal_drivers)">通用 Windows 驱动程序入门</a>。</p>
+<p>我们建议您编写单个驱动程序在 Windows 10 上运行的桌面版和 Windows 10 移动版。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers)">通用 Windows 驱动程序入门</a>。</p>
 <p>若要编写通信设备的应用程序，使用 Windows 运行时 Api。 有关详细信息，请参阅<a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talking to USB devices, start to finish (UWP app)](talking-to-usb-devices-start-to-finish.md)">与 USB 设备通信，启动以完成 （UWP 应用）</a>。</p></td>
 </tr>
 <tr class="odd">
@@ -121,7 +121,7 @@ ms.locfileid: "63366635"
 </div></td>
 <td><p>双角色端口必须与操作系统以确保在正确的时间加载适当的软件堆栈 （主机或函数） 合作。</p>
 <p>可以设计系统，以便双角色 USB 端口需要 Windows 配置为主机或函数的模式。 这些设计将需要使用 USB 角色切换堆栈。 如果系统不使用 Synopsys 或 ChipIdea 双角色控制器，你需要为系统的双角色控制器编写 USB 角色切换客户端驱动程序。</p>
-<p><a href="https://msdn.microsoft.com/library/windows/hardware/mt628026" data-raw-source="[USB dual-role controller driver programming reference](https://msdn.microsoft.com/library/windows/hardware/mt628026)">USB dual-role controller driver programming reference</a>（USB 双角色控制器驱动程序编程参考）</p>
+<p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85)" data-raw-source="[USB dual-role controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))">USB dual-role controller driver programming reference</a>（USB 双角色控制器驱动程序编程参考）</p>
 <p>系统还可以设计，以便在固件或客户提供的驱动程序为主机或函数的端口，具体取决于连接到端口的设备配置的端口。 这些设计将需要为实现此逻辑在固件中或将需要在 USB 连接器管理器客户端驱动程序中实现它。 在这些系统中，Windows 将自动加载正确的软件堆栈。</p>
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">编写 USB 类型 C 连接器驱动程序</a></p></td>
 </tr>

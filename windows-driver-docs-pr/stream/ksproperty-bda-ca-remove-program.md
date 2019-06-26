@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be74c201c8de142eea17037a1163ac7c4a89a0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0441cb12b47f35e92e78ab7d25e2c2e9e85e1fbf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364885"
 ---
 # <a name="kspropertybdacaremoveprogram"></a>KSPROPERTY\_BDA\_CA\_REMOVE\_PROGRAM
 
@@ -87,7 +87,7 @@ ms.locfileid: "63325221"
 
 [**KSEVENT\_BDA\_程序\_流\_状态\_已更改**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

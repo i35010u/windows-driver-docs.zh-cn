@@ -17,12 +17,12 @@ keywords:
 - KS 固定 WDK 音频，转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8cec89573b194e34114757b5bc49cd80ac5602
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2fb11d4223749d342f0bb0b07cdbbb63016bad2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333360"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359829"
 ---
 # <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>从内核流式处理拓扑到音频混音器 API 的转换
 
@@ -58,7 +58,7 @@ WDMAud 管理 KS 部分和旧之间的接口 (请参阅[WinMM 系统组件](user
 
 -   目标 mixer 行是流的退出设备的目标。
 
-此外，KS 术语是某种程度上它将分配给 pin KS 筛选器的流流方向不一致。 使用 pin 描述符[ **KSPIN\_数据流**](https://msdn.microsoft.com/library/windows/hardware/ff563532)枚举值指定的方向：
+此外，KS 术语是某种程度上它将分配给 pin KS 筛选器的流流方向不一致。 使用 pin 描述符[ **KSPIN\_数据流**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)枚举值指定的方向：
 
 -   输入通过接收器 pin 的筛选器的流都有的 KSPIN 方向\_数据流\_in。
 

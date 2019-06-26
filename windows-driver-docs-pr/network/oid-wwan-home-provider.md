@@ -5,12 +5,12 @@ ms.assetid: f7bea146-261d-4d01-9fd5-ae512a1ac083
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_HOME_PROVIDER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb86023c594a1cfad4f7a6153e6fab7f828f5477
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce988d17929cb4082e9cf6bd7d78889e2c69fbee
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360237"
 ---
 # <a name="oidwwanhomeprovider"></a>OID\_WWAN\_主页\_提供程序
 
@@ -19,7 +19,7 @@ OID\_WWAN\_家庭\_提供程序用于设置和检索有关家庭的提供程序�
 
 Windows 8 同时支持两者*设置*并*查询*请求。 仅支持 Windows 7*查询*请求。
 
-微型端口驱动程序必须处理两者*设置*并*查询*请求一开始，以异步方式返回 NDIS\_状态\_指示\_所需的原始请求和更高版本发送[ **NDIS\_状态\_WWAN\_主页\_提供程序**](ndis-status-wwan-home-provider.md)状态通知，为*查询*，或 NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_的完成状态通知*设置*，其中包含[ **NDIS\_WWAN\_家庭\_提供程序**](https://msdn.microsoft.com/library/windows/hardware/ff567909)结构返回有关与家庭网络提供程序的信息**Provider.ProviderState**成员的 NDIS\_WWAN\_主页\_提供程序结构设置为 WWAN\_提供程序\_状态\_主页。
+微型端口驱动程序必须处理两者*设置*并*查询*请求一开始，以异步方式返回 NDIS\_状态\_指示\_所需的原始请求和更高版本发送[ **NDIS\_状态\_WWAN\_主页\_提供程序**](ndis-status-wwan-home-provider.md)状态通知，为*查询*，或 NDIS\_状态\_WWAN\_设置\_主页\_提供程序\_的完成状态通知*设置*，其中包含[ **NDIS\_WWAN\_家庭\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)结构返回有关与家庭网络提供程序的信息**Provider.ProviderState**成员的 NDIS\_WWAN\_主页\_提供程序结构设置为 WWAN\_提供程序\_状态\_主页。
 
 *设置*操作仅需要支持通过多运营商、 支持的设备。 MB 服务将仅*设置*多运营商提供程序的主页提供程序报告通过 OID 微型端口\_WWAN\_首选\_多\_提供程序或 OID\_WWAN\_VISIBLE\_提供程序。 *设置*操作具有输入的缓冲区的 NDIS\_WWAN\_设置\_主页\_提供程序。
 
@@ -36,7 +36,7 @@ Windows 8 同时支持两者*设置*并*查询*请求。 仅支持 Windows 7*查
 
  
 
-有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)。
+有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)。
 
 微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询操作，但不是应访问提供程序网络。
 
@@ -63,11 +63,11 @@ Windows 8 同时支持两者*设置*并*查询*请求。 仅支持 Windows 7*查
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_HOME\_PROVIDER**](https://msdn.microsoft.com/library/windows/hardware/ff567909)
+[**NDIS\_WWAN\_HOME\_PROVIDER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_home_provider)
 
 [**NDIS\_状态\_WWAN\_主页\_提供程序**](ndis-status-wwan-home-provider.md)
 
-[WWAN 提供程序操作](https://msdn.microsoft.com/library/windows/hardware/ff559101)
+[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 
  
 

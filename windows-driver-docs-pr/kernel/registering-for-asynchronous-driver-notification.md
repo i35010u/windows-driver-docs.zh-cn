@@ -10,12 +10,12 @@ keywords:
 - 注册的驱动程序通知 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6c2de67b4a1094cc4779e72e6ec5d16270fb1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3369dbee672557ff7572eda4281a4f56bc2820f5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338537"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360286"
 ---
 # <a name="registering-for-asynchronous-driver-notification"></a>注册异步驱动程序通知
 
@@ -38,7 +38,7 @@ NTSTATUS
     );
 ```
 
-设备驱动程序通过调用注册异步通知[ **IoRegisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff549526)函数，为每个设备驱动程序的回调函数，指定一个指针，一次以下 Guid 之一*EventCategoryData*参数：
+设备驱动程序通过调用注册异步通知[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)函数，为每个设备驱动程序的回调函数，指定一个指针，一次以下 Guid 之一*EventCategoryData*参数：
 
 <a href="" id="guid-device-processor"></a>GUID\_设备\_处理器  
 注册一个处理器动态添加到硬件分区时收到通知。
@@ -82,7 +82,7 @@ Status =
 
  
 
-当设备驱动程序必须停止接收异步驱动程序通知，例如当正在卸载它，它必须通过调用来取消注册每个回调函数[ **IoUnregisterPlugPlayNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff550398)函数。 下面的代码示例演示如何取消注册回调函数：
+当设备驱动程序必须停止接收异步驱动程序通知，例如当正在卸载它，它必须通过调用来取消注册每个回调函数[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)函数。 下面的代码示例演示如何取消注册回调函数：
 
 ```cpp
 // Unregister for asynchronous notifications

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9148b21b1d9c5c3c49dcbd9de9a2e353371e4f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e699d824d34adbd9d2dbbaef335fb12d5e62993
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380805"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361070"
 ---
 # <a name="kspropertypinproposedataformat2"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2
 
@@ -52,7 +52,7 @@ OS 使用**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**属性以确定驱动程序是�
 <td><p>否</p></td>
 <td><p>Filter</p></td>
 <td><p>请参阅备注</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff561656" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561656)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -62,11 +62,11 @@ OS 使用**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**属性以确定驱动程序是�
 <a name="remarks"></a>备注
 -------
 
-属性描述符[ **KSP\_PIN** ](https://msdn.microsoft.com/library/windows/hardware/ff566722)跟[ **KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff563441)指定大小可变的计数属性后面**KSMULTIPLE\_项**。 每个属性开头[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)标头后跟特定数据到该属性。 属性充当属性请求，指定建议的数据格式的参数。
+属性描述符[ **KSP\_PIN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)跟[ **KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)指定大小可变的计数属性后面**KSMULTIPLE\_项**。 每个属性开头[ **KSATTRIBUTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)标头后跟特定数据到该属性。 属性充当属性请求，指定建议的数据格式的参数。
 
-**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**包含类型的结构[ **KSMULTIPLE\_项**](https://msdn.microsoft.com/library/windows/hardware/ff561656)，
+**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**包含类型的结构[ **KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)，
 
-对该属性是受支持的唯一属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_模式*且使用指定[ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_模式下**](https://msdn.microsoft.com/library/windows/hardware/mt727947)结构。 请注意， **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_模式**结构开头[ **KSATTRIBUTE** ](https://msdn.microsoft.com/library/windows/hardware/ff560987)成员。 有关详细信息，请参阅[音频信号处理模式](https://msdn.microsoft.com/library/windows/hardware/mt186386)。
+对该属性是受支持的唯一属性*KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_模式*且使用指定[ **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_模式下**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode)结构。 请注意， **KSATTRIBUTE\_AUDIOSIGNALPROCESSING\_模式**结构开头[ **KSATTRIBUTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)成员。 有关详细信息，请参阅[音频信号处理模式](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-signal-processing-modes)。
 
 [**KSPROPERTY\_类型\_获取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)当 pin 已建议格式时才支持。 此函数允许音频驱动程序给出指定的属性对 pin 提供的默认数据格式有关的信息。
 
@@ -126,7 +126,7 @@ KS 筛选器返回 STATUS_SUCCESS pin 是否为指定的特性的首选的数据
 </tr>
 <tr class="odd">
 <td>SignalProcessingModeAttribute.AttributeHeader.Size</td>
-<td>AttributeHeader.Size 指示的大小<a href="https://msdn.microsoft.com/library/windows/hardware/mt727947" data-raw-source="[&lt;strong&gt;KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt727947)"> <strong>KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE</strong></a>。 它可以计算如下：
+<td>AttributeHeader.Size 指示的大小<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode" data-raw-source="[&lt;strong&gt;KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode)"> <strong>KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE</strong></a>。 它可以计算如下：
 <p>sizeof(KSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE)</p></td>
 </tr>
 <tr class="even">
@@ -192,9 +192,9 @@ typedef struct
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_PIN**](https://msdn.microsoft.com/library/windows/hardware/ff566722)
+[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
-[**KSDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff561656)
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)
 
  
 

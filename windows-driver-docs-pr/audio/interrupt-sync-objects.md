@@ -12,12 +12,12 @@ keywords:
 - 非中断例程 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f98ccb047e69d690fff296dd8500ebff5c4299
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a98c5cfb3c3da30d781916bdfb93628732420620
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359863"
 ---
 # <a name="interrupt-sync-objects"></a>中断同步对象
 
@@ -25,7 +25,7 @@ ms.locfileid: "63333616"
 ## <span id="interrupt_sync_objects"></span><span id="INTERRUPT_SYNC_OBJECTS"></span>
 
 
-PortCls 系统驱动程序实现[IInterruptSync](https://msdn.microsoft.com/library/windows/hardware/ff536590)为了方便微型端口驱动程序的接口。 **IInterruptSync**表示与非中断例程同步的一系列中断服务例程 (Isr) 执行的中断同步对象。
+PortCls 系统驱动程序实现[IInterruptSync](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iinterruptsync)为了方便微型端口驱动程序的接口。 **IInterruptSync**表示与非中断例程同步的一系列中断服务例程 (Isr) 执行的中断同步对象。
 
 中断同步对象提供了两个主要功能：
 
@@ -35,7 +35,7 @@ PortCls 系统驱动程序实现[IInterruptSync](https://msdn.microsoft.com/libr
 
 中断同步对象是在处理多个 Isr 灵活。 Isr 驻留在同步对象遍历在中断时的链接列表中。 微型端口驱动程序注册时 ISR 的一个同步对象，它指定是否应将 ISR 添加到的开头或此列表的末尾。
 
-微型端口驱动程序调用[ **PcNewInterruptSync** ](https://msdn.microsoft.com/library/windows/hardware/ff537713)函数来创建中断同步对象。 在此调用，该驱动程序指定是用来在中断时遍历 Isr 其列表对象的方式。 在调用支持下表中的 INTERRUPTSYNCMODE 枚举常量指定三个选项。
+微型端口驱动程序调用[ **PcNewInterruptSync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewinterruptsync)函数来创建中断同步对象。 在此调用，该驱动程序指定是用来在中断时遍历 Isr 其列表对象的方式。 在调用支持下表中的 INTERRUPTSYNCMODE 枚举常量指定三个选项。
 
 <table>
 <colgroup>
@@ -76,15 +76,15 @@ PortCls 系统驱动程序实现[IInterruptSync](https://msdn.microsoft.com/libr
 
 **IInterruptSync**接口支持以下方法：
 
-[**IInterruptSync::CallSynchronizedRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff536592)
+[**IInterruptSync::CallSynchronizedRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-callsynchronizedroutine)
 
-[**IInterruptSync::Connect**](https://msdn.microsoft.com/library/windows/hardware/ff536594)
+[**IInterruptSync::Connect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-connect)
 
-[**IInterruptSync::Disconnect**](https://msdn.microsoft.com/library/windows/hardware/ff536597)
+[**IInterruptSync::Disconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-disconnect)
 
-[**IInterruptSync::GetKInterrupt**](https://msdn.microsoft.com/library/windows/hardware/ff536599)
+[**IInterruptSync::GetKInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-getkinterrupt)
 
-[**IInterruptSync::RegisterServiceRoutine**](https://msdn.microsoft.com/library/windows/hardware/ff536600)
+[**IInterruptSync::RegisterServiceRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iinterruptsync-registerserviceroutine)
 
  
 

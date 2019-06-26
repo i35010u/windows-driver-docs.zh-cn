@@ -4,12 +4,12 @@ description: 实施 Finish-Install 操作的指南
 ms.assetid: 455d520a-ccd7-470b-ab5f-5786ee90b91d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd317066a43e196ed7c1fd3d5d91fe0778109148
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 3b7ed73d15a5e8bde117141ab8b48edcbf5ca040
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456431"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355152"
 ---
 # <a name="guidelines-for-implementing-finish-install-actions"></a>实施 Finish-Install 操作的指南
 
@@ -22,7 +22,7 @@ ms.locfileid: "65456431"
 
 -   安装程序应等待完成安装操作完成，如果完成安装操作必须运行完毕。
 
-    例如，若要避免完成安装操作仍在运行时，系统重新启动被中断，安装程序应等待完成安装操作完成，然后安装程序将返回从处理[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求。
+    例如，若要避免完成安装操作仍在运行时，系统重新启动被中断，安装程序应等待完成安装操作完成，然后安装程序将返回从处理[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求。
 
 -   完成安装操作应该通知用户进度。
 
@@ -30,7 +30,7 @@ ms.locfileid: "65456431"
 
 -   安装程序必须处理这种情况，需要重新启动系统才能完成完成安装操作。
 
-    从处理在返回之前，安装程序完成安装操作需要重启系统，在设备上的设置生效之前，如果应设置 DI_NEEDREBOOT 标志[ **DIF_FINISHINSTALL_ACTION** ](https://msdn.microsoft.com/library/windows/hardware/ff543684)请求。 但是，设备安装不应该强制重新启动计算机除非绝对必要。
+    从处理在返回之前，安装程序完成安装操作需要重启系统，在设备上的设置生效之前，如果应设置 DI_NEEDREBOOT 标志[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)请求。 但是，设备安装不应该强制重新启动计算机除非绝对必要。
 
     详细了解当设备安装应需要系统重新启动，请参阅[设备安装和系统重启](device-installations-and-system-restarts.md)。
 
@@ -46,11 +46,11 @@ ms.locfileid: "65456431"
 
 -   安装程序应处理的情况，完成安装操作失败，而不应再次尝试。
 
-    如果某个错误而使不可能曾经要成功完成安装操作，安装程序应通知用户的操作无法完成，以及然后执行任何必要的清理。 在此情况下，辅助安装程序应返回 NO_ERROR 和设备或类安装程序应返回 ERROR_DI_DO_DEFAULT。 Windows 随后将清除该设备是具有已标记以完成安装操作执行 devnode 和调用[ **SetupDiFinishInstallAction** ](https://msdn.microsoft.com/library/windows/hardware/ff551022)执行默认完成安装操作。
+    如果某个错误而使不可能曾经要成功完成安装操作，安装程序应通知用户的操作无法完成，以及然后执行任何必要的清理。 在此情况下，辅助安装程序应返回 NO_ERROR 和设备或类安装程序应返回 ERROR_DI_DO_DEFAULT。 Windows 随后将清除该设备是具有已标记以完成安装操作执行 devnode 和调用[ **SetupDiFinishInstallAction** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85))执行默认完成安装操作。
 
--   当安装程序处理[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF 代码，它应该检查是否需要完成安装的任何操作。 如果必须执行的完成安装操作，安装程序应仅设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志。 如果不必要地设置此标志，用户获得额外的设备安装提示期间重新安装该驱动程序，并且 DIF_FINISHINSTALL_ACTION 请求具有要执行的完成安装操作。
+-   当安装程序处理[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF 代码，它应该检查是否需要完成安装的任何操作。 如果必须执行的完成安装操作，安装程序应仅设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志。 如果不必要地设置此标志，用户获得额外的设备安装提示期间重新安装该驱动程序，并且 DIF_FINISHINSTALL_ACTION 请求具有要执行的完成安装操作。
 
-    例如，请考虑在其中完成安装操作将安装应用程序所需的设备才能正常工作的设备共同安装程序。 例如，Microsoft 键盘的完成安装操作可能会安装 IntelliType 应用程序。 当处理此类共同安装程序[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://msdn.microsoft.com/library/windows/hardware/ff543702) DIF 代码，它应检查以查看是否已安装应用程序。 如果已安装应用程序，没有完成安装操作执行，并因此 DI_FLAGSEX_FINISHINSTALL_ACTION 标志不应设置。 在此情况下，如果共同安装程序未正确设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志，用户会收到权限才能继续虽然完成安装操作具有要执行的操作不需要的用户帐户控制 (UAC) 提示。
+    例如，请考虑在其中完成安装操作将安装应用程序所需的设备才能正常工作的设备共同安装程序。 例如，Microsoft 键盘的完成安装操作可能会安装 IntelliType 应用程序。 当处理此类共同安装程序[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall) DIF 代码，它应检查以查看是否已安装应用程序。 如果已安装应用程序，没有完成安装操作执行，并因此 DI_FLAGSEX_FINISHINSTALL_ACTION 标志不应设置。 在此情况下，如果共同安装程序未正确设置 DI_FLAGSEX_FINISHINSTALL_ACTION 标志，用户会收到权限才能继续虽然完成安装操作具有要执行的操作不需要的用户帐户控制 (UAC) 提示。
 
     **请注意**  如果 UAC 设置为默认设置时通知我"仅当程序尝试对我的计算机进行更改时"） 或较低的设置，从 Windows 7 开始，操作系统不显示与管理用户的提示当处理完成安装操作的权限。
 

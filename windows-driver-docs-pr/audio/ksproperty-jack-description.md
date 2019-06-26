@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ea046fc7c576e5542940123862a3534034f43f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c09565b3821b6b6850f9f2643645e5f822d0b153
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332709"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360521"
 ---
 # <a name="kspropertyjackdescription"></a>KSPROPERTY\_JACK\_说明
 
@@ -52,8 +52,8 @@ KSPROPERTY\_JACK\_DESCRIPTION 属性作为筛选器句柄可通过访问的多�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>（通过筛选器句柄） 的 pin 工厂</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff566722" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566722)"><strong>KSP_PIN</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)"><strong>KSMULTIPLE_ITEM</strong> </a>跟的数组<a href="ksjack-description.md" data-raw-source="[&lt;strong&gt;KSJACK_DESCRIPTION&lt;/strong&gt;](ksjack-description.md)"> <strong>KSJACK_DESCRIPTION</strong> </a>结构</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong> </a>跟的数组<a href="ksjack-description.md" data-raw-source="[&lt;strong&gt;KSJACK_DESCRIPTION&lt;/strong&gt;](ksjack-description.md)"> <strong>KSJACK_DESCRIPTION</strong> </a>结构</p></td>
 </tr>
 </tbody>
 </table>
@@ -114,9 +114,9 @@ sizeof (KSMULTIPLE\_项) + 3 \* sizeof (KSJACK\_说明)
 
 [**KSJACK\_说明**](ksjack-description.md)
 
-[KSMULTIPLE\_项](https://msdn.microsoft.com/library/windows/hardware/ff563441.aspx)
+[KSMULTIPLE\_项](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksmultiple_item)
 
-[KSPROPERTY](https://msdn.microsoft.com/library/windows/hardware/ff564262.aspx)
+[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
  
 

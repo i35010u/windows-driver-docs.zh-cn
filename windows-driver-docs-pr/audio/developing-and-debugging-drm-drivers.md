@@ -10,12 +10,12 @@ keywords:
 - 调试驱动程序 WDK DRM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d05032f85e6b2de8e81f145a41a92dd6c37d304
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b1acfbf87bc5d5709fcf14554ee99e099be44ff6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333804"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359054"
 ---
 # <a name="developing-and-debugging-drm-drivers"></a>开发和调试 DRM 驱动程序
 
@@ -33,7 +33,7 @@ ms.locfileid: "63333804"
 
 [DRMK 系统驱动程序](kernel-mode-wdm-audio-components.md#drmk_system_driver)会阻止内核调试程序连接时播放受 DRM 保护的内容。 反调试破解是 DRMK 使用发出受保护的内容不透明的多个度量值之一。 但是，一旦您的驱动程序已准备好进行测试，您可以通过使用以下技术调试其符合 DRM 的功能：
 
--   临时修改批流**SetState**方法 (有关示例，请参阅[ **IMiniportWavePciStream::SetState**](https://msdn.microsoft.com/library/windows/hardware/ff536733)) 来调用[ **IDrmAudioStream::SetContentId** ](https://msdn.microsoft.com/library/windows/hardware/ff536570)并设置[ **DRMRIGHTS** ](https://msdn.microsoft.com/library/windows/hardware/ff536355)参数的**CopyProtect**成员添加到 **，则返回 TRUE**。
+-   临时修改批流**SetState**方法 (有关示例，请参阅[ **IMiniportWavePciStream::SetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setstate)) 来调用[ **IDrmAudioStream::SetContentId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-idrmaudiostream-setcontentid)并设置[ **DRMRIGHTS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights)参数的**CopyProtect**成员添加到 **，则返回 TRUE**。
 
 -   完成调试后，请务必删除**SetContentId**调用。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c6bf7350cd61659df8128986067d5d04029dfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee8d4f69c37602d9b150979645ad9a209c2ba063
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358826"
 ---
 # <a name="kspropertyaudiomodulecommand"></a>KSPROPERTY\_AUDIOMODULE\_命令
 
@@ -50,7 +50,7 @@ ms.locfileid: "63332766"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器或 Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/mt808139" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/mt808139)"><strong>KSAUDIOMODULE_PROPERTY</strong> </a> + [可选自定义模块参数]</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong> </a> + [可选自定义模块参数]</p></td>
 <td align="left"><p>未定义</p></td>
 </tr>
 </tbody>
@@ -67,9 +67,9 @@ ms.locfileid: "63332766"
 <a name="remarks"></a>备注
 -------
 
-为支持**KSPROPERTY\_AUDIOMODULE\_命令**属性允许音频模块客户端发送自定义命令来查询和设置音频模块的参数。 可以通过筛选器或 pin 句柄发送该属性和一个[ **KSAUDIOMODULE\_属性**](https://msdn.microsoft.com/library/windows/hardware/mt808139)作为 DeviceIoControl 调用的输入缓冲区传递。 客户端可以根据需要发送的其他信息立即旁边**KSAUDIOMODULE\_属性**将自定义命令发送到输入缓冲区中。
+为支持**KSPROPERTY\_AUDIOMODULE\_命令**属性允许音频模块客户端发送自定义命令来查询和设置音频模块的参数。 可以通过筛选器或 pin 句柄发送该属性和一个[ **KSAUDIOMODULE\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)作为 DeviceIoControl 调用的输入缓冲区传递。 客户端可以根据需要发送的其他信息立即旁边**KSAUDIOMODULE\_属性**将自定义命令发送到输入缓冲区中。
 
-有关音频模块的详细信息，请参阅[实现音频模块发现](https://msdn.microsoft.com/windows/hardware/drivers/audio/implementing-audio-module-communication)。
+有关音频模块的详细信息，请参阅[实现音频模块发现](https://docs.microsoft.com/windows-hardware/drivers/audio/implementing-audio-module-communication)。
 
 <a name="requirements"></a>要求
 ------------

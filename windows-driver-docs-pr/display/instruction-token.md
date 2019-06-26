@@ -4,12 +4,12 @@ description: 指令标记
 ms.assetid: bfeee1ad-aaf3-41d0-a667-15d22eccd1e9
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 91cbfeb2201b6c715617b2cbe5d6304476fe3f41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b373337d6f5d464fb4d6ced011c750a8d627450
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368585"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379895"
 ---
 # <a name="instruction-token"></a>指令标记
 
@@ -21,29 +21,29 @@ ms.locfileid: "63368585"
 
 ### <a name="span-idbitsspanspan-idbitsspanbits"></a><span id="bits"></span><span id="BITS"></span>Bits
 
-<span id="_15_00_"></span>**\[15:00\]**  0 到 15 位指示[操作代码](https://msdn.microsoft.com/library/windows/hardware/ff569706)。 D3DSIO\_ \*举例说明一个操作代码，其中\*表示指令。 例如，下面的代码片段演示[ADD 指令](https://msdn.microsoft.com/library/windows/hardware/ff538212):
+<span id="_15_00_"></span> **\[15:00\]**  0 到 15 位指示[操作代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type)。 D3DSIO\_ \*举例说明一个操作代码，其中\*表示指令。 例如，下面的代码片段演示[ADD 指令](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_instruction_opcode_type):
 
 ```cpp
 // D3DSIO_ADD d, s1, s2
 ```
 
-<span id="_23_16_"></span>**\[23:16\]** 位 16 到 23 表示与操作代码相关的特定控件。
+<span id="_23_16_"></span> **\[23:16\]** 位 16 到 23 表示与操作代码相关的特定控件。
 
-<span id="_27_24_"></span>**\[27:24\]** 早于 2 像素和顶点着色器版本\_0，24 到 27 位是保留和设为 0x0。
+<span id="_27_24_"></span> **\[27:24\]** 早于 2 像素和顶点着色器版本\_0，24 到 27 位是保留和设为 0x0。
 
 对于像素和顶点着色器版本 2\_0 和更高版本，位 24 到 27 指令不包括指令令牌本身 （即，包含指令不包括指令令牌的令牌的数） 的 dword 值中指定的大小。
 
-<span id="_28_"></span>**\[28\]** 早于 2 像素和顶点着色器版本\_0，位 28 是保留，设为 0x0。
+<span id="_28_"></span> **\[28\]** 早于 2 像素和顶点着色器版本\_0，位 28 是保留，设为 0x0。
 
 对于像素和顶点着色器版本 2\_0 和更高版本，位 28 指示是否的前提是该指令 （即，包含额外谓词源令牌的着色器代码的末尾。 如果此位设置为 0x1 的前提是该指令。
 
-<span id="_29_"></span>**\[29\]** 保留。 此值设置为 0x0。
+<span id="_29_"></span> **\[29\]** 保留。 此值设置为 0x0。
 
-<span id="_30_"></span>**\[30\]** 像素着色器版本早于 2\_0，30 位是位的共同问题。 如果设置为 1，请执行前面的说明; 此指令否则，单独执行。
+<span id="_30_"></span> **\[30\]** 像素着色器版本早于 2\_0，30 位是位的共同问题。 如果设置为 1，请执行前面的说明; 此指令否则，单独执行。
 
 像素着色器版本 2\_0 和更高版本和所有顶点着色器版本中，保留 30 位并将其设为 0x0。
 
-<span id="_31_"></span>**\[31\]** 位 31 是零 (0x0)。
+<span id="_31_"></span> **\[31\]** 位 31 是零 (0x0)。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
 

@@ -4,12 +4,12 @@ description: 在 GpuMmu 模型中，图形处理单元 (GPU) 具有其自己的�
 ms.assetid: FFDFD647-2F00-4AC3-A41A-4224562A51ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4561455bd19051763ae3b94447abc831d6a54b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56b48612b1d3b9f2bd48934ec681a3ca21843b6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371549"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379959"
 ---
 # <a name="gpummu-model"></a>GpuMmu 模型
 
@@ -20,7 +20,7 @@ ms.locfileid: "63371549"
 
 视频内存管理器负责管理 GPU 虚拟地址空间和其基础的页表，尽管视频内存管理器不分配的自动分配 GPU 虚拟地址。 这一责任落到用户模式驱动程序。
 
-视频内存管理器提供服务添加到用户模式驱动程序的两个的集。 首先，用户模式驱动程序可能会分配通过现有的视频内存[*分配*](https://msdn.microsoft.com/library/windows/hardware/ff568893)回调和释放该内存通过现有[ *Deallocate*](https://msdn.microsoft.com/library/windows/hardware/ff568898)回调。 像现在一样，这返回用户模式驱动程序的句柄的视频内存管理器分配，可以在运营的 GPU 引擎。 此类分配表示只有分配的物理部分，并且可能由运行在物理上，通过分配列表引用一个引擎引用。
+视频内存管理器提供服务添加到用户模式驱动程序的两个的集。 首先，用户模式驱动程序可能会分配通过现有的视频内存[*分配*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)回调和释放该内存通过现有[ *Deallocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_deallocatecb)回调。 像现在一样，这返回用户模式驱动程序的句柄的视频内存管理器分配，可以在运营的 GPU 引擎。 此类分配表示只有分配的物理部分，并且可能由运行在物理上，通过分配列表引用一个引擎引用。
 
 在虚拟模式下运行时引擎，GPU 的虚拟地址需要将明确分配给分配之前可能几乎对其进行访问。 为此目的的视频内存管理器提供了用户模式驱动程序服务到预留或可用 GPU 虚拟地址和映射特定分配范围到进程的 GPU 虚拟地址空间。 这些服务是非常灵活，允许对进程 GPU 虚拟地址空间的用户模式驱动程序细粒度控制。 用户模式驱动程序可能决定将非常具体的 GPU 虚拟地址分配给分配，或让视频内存管理器会自动选择可用的一个，可能指定一些最小值和最大的 GPU 虚拟地址限制。 单个分配可能有与之关联的多个 GPU 的虚拟地址映射和服务提供给用户模式驱动程序来实现*磁贴资源协定*。
 

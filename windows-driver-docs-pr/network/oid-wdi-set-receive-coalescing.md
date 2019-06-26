@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 88328276655a68a71fa2ab013a9b271e70f363ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 031fb37ae82bf68d4149c89839d1951c5c1a2d9c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359168"
 ---
 # <a name="oidwdisetreceivecoalescing"></a>OID\_WDI\_SET\_RECEIVE\_COALESCING
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_接收\_主机使用 COALESCING 添加数据包合并的数据
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -32,7 +32,7 @@ OID\_WDI\_设置\_接收\_主机使用 COALESCING 添加数据包合并的数据
 
 | TLV                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                 |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------|
-| [**WDI\_TLV\_SET\_RECEIVE\_COALESCING**](https://msdn.microsoft.com/library/windows/hardware/dn898061) |                                |          | 要设置的数据包合并参数。 |
+| [**WDI\_TLV\_SET\_RECEIVE\_COALESCING**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-receive-coalescing) |                                |          | 要设置的数据包合并参数。 |
 
  
 

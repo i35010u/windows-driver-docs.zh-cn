@@ -9,12 +9,12 @@ keywords:
 - 照明 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 916c16e09399ab24b96666131ac5fc9cb32e9cbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9441150ffd74a8889dd9df5070dbd0f1a18df710
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353859"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380229"
 ---
 # <a name="hardware-transform-and-lighting"></a>硬件转换和照明
 
@@ -22,9 +22,9 @@ ms.locfileid: "63353859"
 ## <span id="ddk_hardware_transform_and_lighting_gg"></span><span id="DDK_HARDWARE_TRANSFORM_AND_LIGHTING_GG"></span>
 
 
-已启用硬件加速的几何操作，例如光源和转换进行修改[ **D3dDrawPrimitives2** ](https://msdn.microsoft.com/library/windows/hardware/ff544704) DDI 的最新的直接 X 版本。 在 API 级别，设备在硬件支持顶点操作的枚举单独从那些确实仅光栅化。
+已启用硬件加速的几何操作，例如光源和转换进行修改[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) DDI 的最新的直接 X 版本。 在 API 级别，设备在硬件支持顶点操作的枚举单独从那些确实仅光栅化。
 
-已扩展现有的 cap 结构以指示可能存在硬件加速转换设备上的功能。 例如，使用设置的受支持的光源数**dwNumLights**的成员[ **D3DLIGHTINGCAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff548471)结构报告与的[ **D3DDEVICEDESC\_V1** ](https://msdn.microsoft.com/library/windows/hardware/ff544689)结构。
+已扩展现有的 cap 结构以指示可能存在硬件加速转换设备上的功能。 例如，使用设置的受支持的光源数**dwNumLights**的成员[ **D3DLIGHTINGCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dcaps/ns-d3dcaps-_d3dlightingcaps)结构报告与的[ **D3DDEVICEDESC\_V1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3ddevicedesc_v1)结构。
 
 下表列出了其他标志：
 

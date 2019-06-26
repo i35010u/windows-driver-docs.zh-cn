@@ -9,12 +9,12 @@ keywords:
 - 网络的组件添加 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9fc5f79e9a754f0b1e0e68f6345c1addb5a4037
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a939021065f60f30feb0294a638e7795264362d1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367857"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379284"
 ---
 # <a name="adding-a-component"></a>添加组件
 
@@ -22,7 +22,7 @@ ms.locfileid: "63367857"
 
 
 
-子系统添加网络组件时，网络配置子系统可以通知的通知对象。 初始化后通知对象，该子系统调用通知对象的[ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://msdn.microsoft.com/library/windows/hardware/ff547734)方法来检索通知所需的类型对象。 如果通知对象指定它需要通知，添加网络组件时，该子系统调用通知对象的[ **INetCfgComponentNotifyGlobal::SysNotifyComponent** ](https://msdn.microsoft.com/library/windows/hardware/ff547736)方法，并传递 NCN\_添加通知通知对象子系统安装网络组件。 如果该通知对象所属的组件应绑定到指定的组件，通知对象应执行操作，以便绑定。 例如，下面的代码演示如何通知对象可以为指定的组件绑定其组件，如果指定的组件是必需的物理网卡。
+子系统添加网络组件时，网络配置子系统可以通知的通知对象。 初始化后通知对象，该子系统调用通知对象的[ **INetCfgComponentNotifyGlobal::GetSupportedNotifications** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547734(v=vs.85))方法来检索通知所需的类型对象。 如果通知对象指定它需要通知，添加网络组件时，该子系统调用通知对象的[ **INetCfgComponentNotifyGlobal::SysNotifyComponent** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547736(v=vs.85))方法，并传递 NCN\_添加通知通知对象子系统安装网络组件。 如果该通知对象所属的组件应绑定到指定的组件，通知对象应执行操作，以便绑定。 例如，下面的代码演示如何通知对象可以为指定的组件绑定其组件，如果指定的组件是必需的物理网卡。
 
 ```cpp
 HRESULT CSample::SysNotifyComponent(DWORD dwChangeFlag,

@@ -6,19 +6,19 @@ keywords:
 - 常规统计信息 Oid 面向连接的微型端口驱动程序
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe516e58249a7654edf13c8777e60a03410e3327
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9396f31f7c0ee7dacdc985f71147d1b1c4cd5da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349983"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382766"
 ---
 # <a name="general-statistics-oids-for-connection-oriented-miniport-drivers"></a>面向连接的微型端口驱动程序的常规统计信息 OID
 
 下表总结了用于获取或设置面向连接的微型端口驱动程序的常规统计信息特征和/或其 Nic 的 Oid。
 
 > [!TIP] 
-> 面向连接的微型端口驱动程序将处理此类请求在其[MiniportCoOidRequest](https://msdn.microsoft.com/library/windows/hardware/ff559362)回调函数。
+> 面向连接的微型端口驱动程序将处理此类请求在其[MiniportCoOidRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)回调函数。
 
 在此表中，M 指示 OID 是必需的而 O 则指示它是可选的。
 

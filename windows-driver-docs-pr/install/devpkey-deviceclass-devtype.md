@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e364a34d9c45d4b9cfd9c7d3a866c83f83829dbb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 384ca82d3d0f995dc07a4a0de49d26cc0127538d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392539"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362989"
 ---
 # <a name="devpkeydeviceclassdevtype"></a>DEVPKEY_DeviceClass_DevType
 
 
-DEVPKEY_DeviceClass_DevType 设备属性表示的默认设备类型[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)。
+DEVPKEY_DeviceClass_DevType 设备属性表示的默认设备类型[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
 
 <table>
 <colgroup>
@@ -60,13 +60,13 @@ DEVPKEY_DeviceClass_DevType 设备属性表示的默认设备类型[设备安装
 <a name="remarks"></a>备注
 -------
 
-安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_DevType 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[ **INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)以及注册表条目值的相关信息**设备类型**中提供的"特殊*值项名称*关键字"部分中的[ **INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)。
+安装应用程序安装设备安装程序类时，可以设置 DEVPKEY_DeviceClass_DevType 的值。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[ **INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)以及注册表条目值的相关信息**设备类型**中提供的"特殊*值项名称*关键字"部分中的[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
-DEVPKEY_DeviceClass_DevType 的值是 wdm.h 中和 Ntddk.h 中定义的 FILE_DEVICE_Xxx 值之一。 有关设备类型的详细信息，请参阅*DeviceType*的参数[ **IoCreateDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff548397)函数。
+DEVPKEY_DeviceClass_DevType 的值是 wdm.h 中和 Ntddk.h 中定义的 FILE_DEVICE_Xxx 值之一。 有关设备类型的详细信息，请参阅*DeviceType*的参数[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)函数。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551086)或[ **SetupDiGetClassPropertyEx** ](https://msdn.microsoft.com/library/windows/hardware/ff551090)检索 DEVPKEY_DeviceClass_ 值DevType。
+您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_ 值DevType。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_DeviceClass_DevType 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_DEVTYPE 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅[检索设备安装程序类 SPCRP_Xxx 属性](https://msdn.microsoft.com/library/windows/hardware/ff550644)。
+Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_DeviceClass_DevType 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_DEVTYPE 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅[检索设备安装程序类 SPCRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,15 +91,15 @@ Windows Server 2003 和 Windows XP 支持此属性，但不是支持 DEVPKEY_Dev
 ## <a name="see-also"></a>请参阅
 
 
-[**IoCreateDevice**](https://msdn.microsoft.com/library/windows/hardware/ff548397)
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
 
-[**INF AddReg 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546320)
+[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546335)
+[**INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
-[**SetupDiGetClassProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551086)
+[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://msdn.microsoft.com/library/windows/hardware/ff551090)
+[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
  
 

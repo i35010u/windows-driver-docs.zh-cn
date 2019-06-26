@@ -8,12 +8,12 @@ keywords:
 - 版本部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f46f9c7a5a95b1d2163f2ea4857b84b1aa40ba4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fb813db3c53693f66f49abe8aa064b967db88025
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346625"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67384359"
 ---
 # <a name="version-section-in-a-network-inf-file"></a>网络 INF 文件中的 Version 节
 
@@ -21,7 +21,7 @@ ms.locfileid: "63346625"
 
 
 
-**版本**网络 INF 文件中的部分基于泛型[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。
+**版本**网络 INF 文件中的部分基于泛型[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)。
 
 **版本**网络 INF 文件中的节具有以下特定于网络的条目：
 
@@ -107,11 +107,11 @@ IrDA 设备 INF 文件应具有**ClassGuid**的值
 
 ### <a name="signature-and-operating-system-entries"></a>签名和操作系统条目
 
-**签名**条目必须 **$Windows NT$**。
+**签名**条目必须 **$Windows NT$** 。
 
 ### <a name="pnplockdown"></a>PnpLockDown
 
-**PnpLockDown**条目应设置为 1，以防止应用程序直接修改驱动程序包的 INF 文件指定的文件。 有关此项的详细信息，请参阅[ **INF 版本部分**](https://msdn.microsoft.com/library/windows/hardware/ff547502)。
+**PnpLockDown**条目应设置为 1，以防止应用程序直接修改驱动程序包的 INF 文件指定的文件。 有关此项的详细信息，请参阅[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)。
 
 ### <a name="catalogfile"></a>CatalogFile
 

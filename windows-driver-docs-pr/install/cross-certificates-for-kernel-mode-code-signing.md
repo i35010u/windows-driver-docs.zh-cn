@@ -4,19 +4,19 @@ description: 此信息描述了如何获取和使用交叉证书进行代码签�
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb5ac51943c3744b322a2c82ca6744d57bbc6f2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71c9b085148c7f2162052a63b3069eb8326eca30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352080"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378841"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
 
 此信息描述了如何获取和使用交叉证书进行代码签名用于 Microsoft Windows 内核模式二进制文件。
 
-**请注意**  了解也请查阅 Microsoft 安全公告 ([2880823](https://technet.microsoft.com/library/security/2880823))"不推荐使用的 sha-1 哈希算法为 Microsoft 根证书计划"用于描述策略更改，其中 Microsoft将不再允许根证书颁发机构颁发 X.509 证书的 sha-1 哈希算法用于 SSL 和代码签名 2016 年 1 月 1 日之后的用途。
+**请注意**  了解也请查阅 Microsoft 安全公告 ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823))"不推荐使用的 sha-1 哈希算法为 Microsoft 根证书计划"用于描述策略更改，其中 Microsoft将不再允许根证书颁发机构颁发 X.509 证书的 sha-1 哈希算法用于 SSL 和代码签名 2016 年 1 月 1 日之后的用途。
 
  
 

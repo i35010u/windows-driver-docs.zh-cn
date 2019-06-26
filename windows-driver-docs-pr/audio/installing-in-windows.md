@@ -8,12 +8,12 @@ keywords:
 - 端口类音频适配器 WDK、 系统组件
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f81e2b9a783d30193dc83b271bfaf74eec515f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8d74d0b559c939a3a23ee3ce097c6841fdfbc59c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333454"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359872"
 ---
 # <a name="installing-in-windows"></a>在 Windows 中安装
 
@@ -26,7 +26,7 @@ INF 设备驱动程序安装部分的以下示例中，在两个指令添加将�
   Needs=KS.Registration, WDMAUDIO.Registration
 ```
 
-璝惠**Include**并**需要**指令，请参阅[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)。
+璝惠**Include**并**需要**指令，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。
 
  
 

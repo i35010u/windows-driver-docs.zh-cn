@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b19f8db5152c9fdb7a8265216ce8148c7e73330d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05a96b83eb73b080c713fc7f0dab981305893a5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370891"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361615"
 ---
 # <a name="bug-check-0xc000021a-statussystemprocessterminated"></a>Bug 检查 0xC000021A：状态\_系统\_进程\_已终止
 
@@ -26,7 +26,7 @@ ms.locfileid: "63370891"
 状态\_系统\_进程\_TERMINATED bug 检查的值为 0xC000021A。 这意味着，出现错误的用户模式的关键子系统中。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="statussystemprocessterminated-parameters"></a>状态\_系统\_进程\_TERMINATED 参数
@@ -85,7 +85,7 @@ ms.locfileid: "63370891"
 
 -   查看最新安装的应用程序。 若要执行此操作导航到"卸载或更改程序"控制面板和排序中安装的应用程序的安装日期。
 
--   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+-   检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 <a name="remarks"></a>备注
 ----------
@@ -98,7 +98,7 @@ ms.locfileid: "63370891"
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/kb/929833)。
+    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   运行病毒检测程序。 病毒可能会感染所有类型的 for Windows，格式化的硬盘，并生成磁盘损坏可生成系统 bug 检查代码。 请确保病毒检测程序会检查存在感染主启动记录。
 

@@ -4,12 +4,12 @@ description: 本主题介绍 WDF 验证程序的我的首选项页。 在此页�
 ms.assetid: 6f37fd6b-c60c-4d59-94fb-0dc7d3ff6f0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9245ab93209855704044f20a277a47ea3acb1fbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f06eb29157034687c7b55f7b700d5ce877dd9ae
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363127"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361293"
 ---
 # <a name="my-preferences-tab"></a>我的首选项选项卡
 
@@ -22,7 +22,7 @@ ms.locfileid: "63363127"
 
 调试程序在此页列出属于**有关 Windows 调试工具**。 若要下载此包，请选择**有关 Windows 调试工具**框在安装时[Windows 8.1 的 Windows SDK](https://go.microsoft.com/fwlink/p/?LinkId=733744)。 或者，选择通过选择自定义的 (非 Microsoft) 调试器**使用自定义**。
 
-首先单击**选择特定的调试程序**按钮并浏览至用户模式下调试程序要使用。 **有关 Windows 调试工具**到 c： 默认情况下将安装\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\ *&lt;x86 |x64&gt;*。 调试器的列表显示为灰色 if**调试器路径**未指定有效路径。
+首先单击**选择特定的调试程序**按钮并浏览至用户模式下调试程序要使用。 **有关 Windows 调试工具**到 c： 默认情况下将安装\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\ *&lt;x86 |x64&gt;* 。 调试器的列表显示为灰色 if**调试器路径**未指定有效路径。
 
 调试器首选项可在两种情况下：
 
@@ -31,7 +31,7 @@ ms.locfileid: "63363127"
 
 如果选择**自定义命令行**框中，将指定的字符串与任何调试器您已选择的 WDF 验证程序传递。
 
-有关 Windows 调试工具调试程序默认命令行绕过初始中断、 将附加到特定的 PID，并指示调试器从进程中分离，并将它关闭调试器时运行。 用于为 Microsoft 提供的调试器命令行选项的完整列表，请参阅[命令行选项](https://msdn.microsoft.com/library/windows/hardware/ff539174)。
+有关 Windows 调试工具调试程序默认命令行绕过初始中断、 将附加到特定的 PID，并指示调试器从进程中分离，并将它关闭调试器时运行。 用于为 Microsoft 提供的调试器命令行选项的完整列表，请参阅[命令行选项](https://docs.microsoft.com/windows-hardware/drivers/debugger/command-line-options)。
 
 此外可以更改默认设置。 例如：
 

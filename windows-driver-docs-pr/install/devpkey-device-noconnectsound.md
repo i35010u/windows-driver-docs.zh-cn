@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f9a4f097aba69bc5fcf0361135e4cb7afa00ba59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a800a2716c24894e986fb14b035b7f7117803060
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344307"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378179"
 ---
 # <a name="devpkeydevicenoconnectsound"></a>DEVPKEY_Device_NoConnectSound
 
@@ -58,9 +58,9 @@ DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示�
 
 DEVPKEY_Device_NoConnectSound 的值设置为 DEVPROP_TRUE 取消播放声音。 否则，该属性的值设置为 DEVPROP_FALSE。
 
-DEVPKEY_Device_NoConnectSound 属性通常由设置[ **INF AddProperty 指令**](https://msdn.microsoft.com/library/windows/hardware/ff546318)设备 INF 文件中。
+DEVPKEY_Device_NoConnectSound 属性通常由设置[ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)设备 INF 文件中。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff551963)或[ **SetupDiSetDeviceProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552163)要检索或设置 DEVPKEY_Device_ 的值NoConnectSound。
+您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)或[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)要检索或设置 DEVPKEY_Device_ 的值NoConnectSound。
 
 Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 
@@ -87,9 +87,9 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddProperty Directive**](https://msdn.microsoft.com/library/windows/hardware/ff546318)
+[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

@@ -4,12 +4,12 @@ description: 创建一个传感器的永久唯一标识符
 ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: daf3b932db347aaf732742a032c88deeb39dab9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 766ff37235b6beb096470558d18656f81e03c18f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382122"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360691"
 ---
 # <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>创建一个传感器的永久唯一标识符
 
@@ -18,7 +18,7 @@ ms.locfileid: "63382122"
 
 您应创建新 PUID 为每个传感器，当传感器首次连接到计算机，，然后存储以供将来使用此值。
 
-您的驱动程序应创建或传感器类扩展在初始化之前，例如，调用时检索 PUID [ **IPnpCallbackHardware::OnPrepareHardware**](https://msdn.microsoft.com/library/windows/hardware/ff556766)。 此方法提供一个指向[IWDFDevice](https://msdn.microsoft.com/library/windows/hardware/ff556917)表示传感器的接口。 此指针可用于访问每个设备的特定属性存储。
+您的驱动程序应创建或传感器类扩展在初始化之前，例如，调用时检索 PUID [ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)。 此方法提供一个指向[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdevice)表示传感器的接口。 此指针可用于访问每个设备的特定属性存储。
 
 下面的代码示例根据需要创建一个函数，创建、 存储和检索 PUID。
 
@@ -84,7 +84,7 @@ HRESULT CMyDevice::GetUniqueID(__in IWDFDevice* pWdfDevice,
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://msdn.microsoft.com/library/windows/hardware/hh768273)
+[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
 
 
 

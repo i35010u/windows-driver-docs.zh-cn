@@ -3,12 +3,12 @@ Description: USB 设备提供了有关其自身的数据结构称为 USB 描述�
 title: USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6623b236ccdd5ac287d79272c85542f4d749e660
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa76f5ebd1a17daea749c8fe0eb781df4b9f2407
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331633"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360158"
 ---
 # <a name="usb-descriptors"></a>USB 描述符
 
@@ -41,7 +41,7 @@ USB 设备提供了有关其自身在名为的数据结构中的信息*USB 描�
 <tbody>
 <tr class="odd">
 <td><p><a href="usb-device-descriptors.md" data-raw-source="[USB device descriptors](usb-device-descriptors.md)">USB 设备描述符</a></p></td>
-<td><p>设备描述符包含有关 USB 设备作为一个整体的信息。 本主题介绍<a href="https://msdn.microsoft.com/library/windows/hardware/ff539280" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539280)"> <strong>USB_DEVICE_DESCRIPTOR</strong> </a>结构，并包含有关客户端驱动程序如何发送 get 描述符请求以获取设备描述符信息。</p></td>
+<td><p>设备描述符包含有关 USB 设备作为一个整体的信息。 本主题介绍<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)"> <strong>USB_DEVICE_DESCRIPTOR</strong> </a>结构，并包含有关客户端驱动程序如何发送 get 描述符请求以获取设备描述符信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-configuration-descriptors.md" data-raw-source="[USB configuration descriptors](usb-configuration-descriptors.md)">USB 配置描述符</a></p></td>

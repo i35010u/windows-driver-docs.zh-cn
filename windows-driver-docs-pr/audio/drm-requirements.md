@@ -12,12 +12,12 @@ keywords:
 - 徽标测试 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae67b487b82c8f829e0f9a4425df691be4ec2b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43fd2c78006662f49e1b40abae894afbbf72dade
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333722"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360087"
 ---
 # <a name="drm-requirements"></a>DRM 要求
 
@@ -35,9 +35,9 @@ Windows Me 中和在 Windows XP 及更高版本，仅的受信任音频驱动程
 
 DRM 法规遵从性测试要求受信任的音频驱动程序来执行以下操作：
 
--   音频的微型端口驱动程序必须实现[IDrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff536568)接口的 IID 查询时必须返回的对象类型 IDrmAudioStream 其流对象中\_IDrmAudioStream。
+-   音频的微型端口驱动程序必须实现[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)接口的 IID 查询时必须返回的对象类型 IDrmAudioStream 其流对象中\_IDrmAudioStream。
 
--   当请求复制保护 ([**DRMRIGHTS**](https://msdn.microsoft.com/library/windows/hardware/ff536355)。**CopyProtect** = **TRUE**)，音频驱动程序必须禁用捕获当前正在播放的流的功能。 这意味着该驱动程序必须将未受保护的数字内容保存到任何形式的非易失性存储，其中包括硬盘，EEPROM、 内存卡以及内存条。 此外，驱动程序必须禁用捕获输出 D/A 转换器上多路复用器，否则阻止的数字内容环回。
+-   当请求复制保护 ([**DRMRIGHTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights)。**CopyProtect** = **TRUE**)，音频驱动程序必须禁用捕获当前正在播放的流的功能。 这意味着该驱动程序必须将未受保护的数字内容保存到任何形式的非易失性存储，其中包括硬盘，EEPROM、 内存卡以及内存条。 此外，驱动程序必须禁用捕获输出 D/A 转换器上多路复用器，否则阻止的数字内容环回。
 
 -   如果音频驱动程序要求以禁用设备上的数字音频输出 (DRMRIGHTS。**DigitalOutputDisable** = **TRUE**)，它必须禁用能够通过标准接口，通过标准的相互连接方案中传输内容的所有数字音频输出。 数字输出包括-但不是严格限制为-S/PDIF，IEEE 1394 并行、 串行，调制解调器和网络端口。 （此要求不适当前用于 USB。）
 

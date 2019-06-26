@@ -9,12 +9,12 @@ keywords:
 - 即插即用 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d622518f5cc3b080db2efdfc2428f08f2adf0a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fbd0f9ef3a46334b536fb95045b908f3e46108a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378503"
 ---
 # <a name="handling-pnp-paging-requests"></a>处理 PnP 分页请求
 
@@ -22,7 +22,7 @@ ms.locfileid: "63390903"
 ## <span id="ddk_handling_pnp_paging_requests_kg"></span><span id="DDK_HANDLING_PNP_PAGING_REQUESTS_KG"></span>
 
 
-存储筛选器驱动程序必须处理分页请求即插即用 ([**IRP\_MJ\_PNP** ](https://msdn.microsoft.com/library/windows/hardware/ff550772)与[ **IRP\_MN\_设备\_使用情况\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff550841)并**Parameters.UsageNotification.Type**设置为**DeviceUsageTypePaging**) 如果所筛选的功能驱动程序处理此 IRP。
+存储筛选器驱动程序必须处理分页请求即插即用 ([**IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)与[ **IRP\_MN\_设备\_使用情况\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)并**Parameters.UsageNotification.Type**设置为**DeviceUsageTypePaging**) 如果所筛选的功能驱动程序处理此 IRP。
 
 必须将以下各项添加到筛选器执行的操作的 DeviceExtension:
 
@@ -69,7 +69,7 @@ G. 结束同步 (KeSetEvent (PagingCountEvent，...))。
 
 ### <a name="span-idpseudocodeexamplespanspan-idpseudocodeexamplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>伪代码示例
 
-部分标记为按字母 (*//A*， *//B*等) 在上面所述的字母到下面的代码示例图中。
+部分标记为按字母 ( *//A*， *//B*等) 在上面所述的字母到下面的代码示例图中。
 
 ```cpp
 case DeviceUsageTypePaging: { 

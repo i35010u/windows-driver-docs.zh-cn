@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f0ea85d99a433e9907ed21c5f055dc8f0c5cf30b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74d39de161128efbbb40607063bc0d3a085e72e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362683"
 ---
 # <a name="addtarget-function"></a>AddTarget 函数
 
@@ -41,17 +41,17 @@ void AddTarget(
 <a name="parameters"></a>Parameters
 ----------
 
-*HbaPortWWN\[8\]*   
+*HbaPortWWN\[8\]*    
 全球范围内的本地端口 WMI 客户端将接收其事件的名称。
 
-*DiscoveredPortWWN\[8\]*   
+*DiscoveredPortWWN\[8\]*    
 指定 WMI 客户端将接收其事件的已发现的目标全球通用名称。
 
 *AllTargets*   
 目标事件到报表的作用域。 如果此成员为零，WMI 客户端将接收与端口所指示的关联的事件*DiscoveredPortWWN*。 如果此成员为非零值，WMI 客户端将接收与所有当前已发现的目标以及将来发现的目标相关联的所有事件。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **AddTarget\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff550138)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **AddTarget\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addtarget_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -86,9 +86,9 @@ void AddTarget(
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**AddTarget\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff550137)
+[**AddTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addtarget_in)
 
-[**AddTarget\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff550138)
+[**AddTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addtarget_out)
 
  
 

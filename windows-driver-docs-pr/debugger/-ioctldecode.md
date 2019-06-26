@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1219778bf3f8b8ec125f52400c30e0003a5e27
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6a26bead65df45b350293a05273b3fbb4e33b28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336432"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363165"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**！ Ioctldecode**扩展显示*设备类型*，*所需访问*，*函数代码*和*传输类型*所指定的给定 IOCTL 代码。 IOCTL 控制代码的详细信息，请参阅[定义的 I/O 控制代码](https://msdn.microsoft.com/library/windows/hardware/ff543023)。
+**！ Ioctldecode**扩展显示*设备类型*，*所需访问*，*函数代码*和*传输类型*所指定的给定 IOCTL 代码。 IOCTL 控制代码的详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
@@ -86,7 +86,7 @@ No Mdl: No System Buffer: Thread 00000000:  Irp stack trace.
                                                 Args: ffffd581a6c61a50 00000000 0x220003 00000000
 ```
 
-在这种情况下显示的第三个参数*0x220003*，是 IOCTL 代码。 使用 IOCTL 代码来显示信息 IOCTL，在这种情况下[ **IOCTL\_内部\_USB\_提交\_URB**](https://msdn.microsoft.com/library/windows/hardware/ff537271)。
+在这种情况下显示的第三个参数*0x220003*，是 IOCTL 代码。 使用 IOCTL 代码来显示信息 IOCTL，在这种情况下[ **IOCTL\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x220003
@@ -116,7 +116,7 @@ Function       : 0x33
 
 请注意，可以被识别的公开定义 Ioctl 一个子集 **！ ioctldecode**命令。
 
-Ioctl 有关的详细信息请参阅[简介 I/O 控制代码](https://msdn.microsoft.com/library/windows/hardware/ff548059)。
+Ioctl 有关的详细信息请参阅[简介 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)。
 
 有关 Irp 和 Ioctl 的更多常规信息，请参阅*Windows 内部结构*Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
 

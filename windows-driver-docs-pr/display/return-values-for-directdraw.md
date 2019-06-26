@@ -9,12 +9,12 @@ keywords:
 - 错误 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d48e53198895471f1dd06b011f885ad5682c3d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9994e181f8cc7369fbc6845dcbd968603012c9f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365642"
 ---
 # <a name="return-values-for-directdraw"></a>DirectDraw 的返回值
 
@@ -22,7 +22,7 @@ ms.locfileid: "63351140"
 ## <span id="ddk_return_values_for_directdraw_gg"></span><span id="DDK_RETURN_VALUES_FOR_DIRECTDRAW_GG"></span>
 
 
-下面的表可以返回的列表值[DirectDraw 驱动程序提供的函数](https://msdn.microsoft.com/library/windows/hardware/ff553833)。 DDHAL\_驱动程序\_*Xxx*值实际上返回的 DWORD 返回值。 DD\_确定的值和 DDERR\_*Xxx*中返回错误代码**ddRVal**特定函数的参数所指向的结构的成员。
+下面的表可以返回的列表值[DirectDraw 驱动程序提供的函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 DDHAL\_驱动程序\_*Xxx*值实际上返回的 DWORD 返回值。 DD\_确定的值和 DDERR\_*Xxx*中返回错误代码**ddRVal**特定函数的参数所指向的结构的成员。
 
 有关每个函数可以返回的特定错误代码，请参阅参考部分中的函数描述。 DirectDraw 标头文件，请参阅*ddraw.h*并*dxmini.h*有关的错误代码和返回值的完整列表。 请注意，错误代码都是负值，并且不能结合使用。
 
@@ -73,7 +73,7 @@ DirectDraw 驱动程序中的函数必须返回两个返回代码之一：DDHAL\
 
  
 
-一个[DxApi 函数](https://msdn.microsoft.com/library/windows/hardware/ff557387)中实现[微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)下表中返回代码之一。 这些代码中定义*dxmini.h*。
+一个[DxApi 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)中实现[微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)下表中返回代码之一。 这些代码中定义*dxmini.h*。
 
 <table>
 <colgroup>

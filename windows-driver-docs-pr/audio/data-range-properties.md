@@ -7,12 +7,12 @@ keywords:
 - 数据范围 WDK 音频属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27c0abfe3f5cb5a2cc5c7bbb6b0653fe110e961e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c213c87dcd525404ea1a00d98eca184b4ae803e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359090"
 ---
 # <a name="data-range-properties"></a>数据范围属性
 
@@ -24,9 +24,9 @@ ms.locfileid: "63333809"
 
 Pin 的数据区域可以访问通过以下属性：
 
-[**KSPROPERTY\_PIN\_DATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565199)
+[**KSPROPERTY\_PIN\_DATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataranges)
 
-[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565195)
+[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-constraineddataranges)
 
 这两个属性分别指定 pin 的静态数据范围和受约束的数据范围。
 

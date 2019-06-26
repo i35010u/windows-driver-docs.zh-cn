@@ -8,12 +8,12 @@ keywords:
 - 部分 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d7da8881e8ab5afe26ecb3bd5fc1a2416f5b41b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 41dab3bc7450df891d7b6e712895e74d3921241b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356038"
 ---
 # <a name="printer-inf-file-install-sections"></a>打印机 INF 文件的 Install 节
 
@@ -29,7 +29,7 @@ Windows NT 4.0 和上一个供应商提供给客户的微型驱动程序还提�
 
  
 
-Microsoft 的打印机 INF 文件，Ntprint.inf，包含以下[ **INF DDInstall 部分**](https://msdn.microsoft.com/library/windows/hardware/ff547344)供应商 INF 文件，可以引用的：
+Microsoft 的打印机 INF 文件，Ntprint.inf，包含以下[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)供应商 INF 文件，可以引用的：
 
 -   \[PSCRIPT.OEM\]
 

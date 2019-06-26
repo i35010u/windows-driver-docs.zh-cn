@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 841e55738ae69d28068b21873d2eee9a4f39cd2b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: a78184121ff52bf00f2ae8936261600b27fc9912
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59903573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362353"
 ---
 # <a name="bug-check-0x106-agpillegallyreprogrammed"></a>Bug 检查 0x106：AGP\_非法\_REPROGRAMMED
 
@@ -26,7 +26,7 @@ ms.locfileid: "59903573"
 AGP\_非法\_REPROGRAMMED bug 检查的值为 0x00000106。 这表示加速图形端口 (AGP) 硬件，已囿通过未经授权的代理。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="agpillegallyreprogrammed-parameters"></a>AGP\_非法\_REPROGRAMMED 参数

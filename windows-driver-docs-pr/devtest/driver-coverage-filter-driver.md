@@ -6,12 +6,12 @@ keywords:
 - 驱动程序覆盖范围工具包 WDK，筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca9df66e8e272b8cafa1af70ec182d0462e6a42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 678682048e05d246d8a19c1370eefeacd65f515e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360356"
 ---
 # <a name="driver-coverage-filter-driver"></a>驱动程序覆盖范围筛选器驱动程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "63341711"
 
  
 
-驱动程序覆盖范围筛选器驱动程序 (Drvcov.sys) 监视 I/O 请求数据包 (Irp)，进入或离开指定设备驱动程序堆栈。 指定的设备的驱动程序覆盖范围筛选器驱动程序将使用监视*DQ*参数运行时**启用 IRP 覆盖率数据集合**工具。 请参阅[如何选择和配置设备基础测试](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)并[设备基础测试参数](https://msdn.microsoft.com/windows-drivers/develop/how_to_select_and_configure_the_device_fundamental_tests)。
+驱动程序覆盖范围筛选器驱动程序 (Drvcov.sys) 监视 I/O 请求数据包 (Irp)，进入或离开指定设备驱动程序堆栈。 指定的设备的驱动程序覆盖范围筛选器驱动程序将使用监视*DQ*参数运行时**启用 IRP 覆盖率数据集合**工具。 请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)并[设备基础测试参数](https://docs.microsoft.com/windows-hardware/drivers)。
 
 <span id="UpperFilter___TRUE"></span><span id="upperfilter___true"></span><span id="UPPERFILTER___TRUE"></span>**UpperFilter = TRUE**  
 此选项将安装为上部设备驱动程序筛选器指定设备驱动程序覆盖范围筛选器驱动程序。 此配置监视所有 IRP 流量传入或传出设备的驱动程序堆栈，无论该驱动程序处理 IRP 还是通过其传递到较低的设备驱动程序中的设备驱动程序。

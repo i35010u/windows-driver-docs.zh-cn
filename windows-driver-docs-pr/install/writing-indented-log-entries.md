@@ -9,12 +9,12 @@ keywords:
 - SetupWriteTextLog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b40ef65859e8919d115c1da2922c9807e860908e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b02b1ba366a32f50ae5e74cadc899b5b68c70ec7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339136"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363480"
 ---
 # <a name="writing-indented-log-entries"></a>写入缩进日志条目
 
@@ -60,7 +60,7 @@ entry_prefix time_stamp event_category indentation formatted_message
 
  
 
-例如，下面的调用序列[ **SetupWriteTextLog** ](https://msdn.microsoft.com/library/windows/hardware/ff552218)将序列的缩进的日志条目写入部分标头之后其*section_title*字段"缩进示例"且*instance_identifier*字段是"实例 0"。
+例如，下面的调用序列[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)将序列的缩进的日志条目写入部分标头之后其*section_title*字段"缩进示例"且*instance_identifier*字段是"实例 0"。
 
 ```cpp
 // The LogToken value was previously returned by a call to 

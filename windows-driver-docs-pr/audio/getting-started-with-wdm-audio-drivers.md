@@ -10,23 +10,23 @@ keywords:
 - 自定义的音频驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b668ad57b5c6bdb7f2f27afb70f677ff32ac3b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4475e8a39f2c999e3c534e05926cf40cbb5dcb72
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333622"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360026"
 ---
 # <a name="wdm-audio-drivers-overview"></a>WDM 音频驱动程序概述
 
 
-[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)(WDM) 音频驱动程序使利用[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff560842)(KS) 组件，它在内核模式下运行且是操作系统的一部分。
+[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)(WDM) 音频驱动程序使利用[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)(KS) 组件，它在内核模式下运行且是操作系统的一部分。
 
 硬件供应商应在开始开发基于 Windows 的音频硬件设备之前进行几项设计决策。
 
 第一个决定是要设计需要一个供应商提供的自定义驱动程序将音频设备。 Windows 包含 PCI、 USB 和 IEEE 1394 符合 Microsoft 的设备的操作系统支持[通用音频体系结构](universal-audio-architecture.md)(UAA) 准则。 供应商不需要为 UAA 兼容音频设备提供自定义驱动程序。
 
-但是，如果供应商提供自定义音频驱动程序是必需的供应商必须选择驱动程序是否应旨在与 PortCls 系统驱动程序 (Portcls.sys) 或 AVStream 类系统驱动程序 (Ks.sys) 配合工作。 PortCls 和 AVStream Windows 操作系统的一部分。 PortCls 是大多数音频适配器的正确选择。 有关 PortCls 详细信息，请参阅[简介端口类](introduction-to-port-class.md)。 有关 AVStream 详细信息，请参阅[AVStream 概述](https://msdn.microsoft.com/library/windows/hardware/ff554240)。
+但是，如果供应商提供自定义音频驱动程序是必需的供应商必须选择驱动程序是否应旨在与 PortCls 系统驱动程序 (Portcls.sys) 或 AVStream 类系统驱动程序 (Ks.sys) 配合工作。 PortCls 和 AVStream Windows 操作系统的一部分。 PortCls 是大多数音频适配器的正确选择。 有关 PortCls 详细信息，请参阅[简介端口类](introduction-to-port-class.md)。 有关 AVStream 详细信息，请参阅[AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)。
 
 在设计时使用 PortCls 的自定义适配器驱动程序，可用于应用程序使用 WaveRT 进行音频适配器上的设备。 有关详细信息，请参阅[简介 WaveRT 端口驱动程序](introducing-the-wavert-port-driver.md)。
 

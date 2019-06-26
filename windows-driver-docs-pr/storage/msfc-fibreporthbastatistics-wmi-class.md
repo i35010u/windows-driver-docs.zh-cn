@@ -4,12 +4,12 @@ description: MSFC\_FibrePortHBAStatistics WMI 类
 ms.assetid: 24c787b6-b9f7-4c9b-8d1d-6b2796f65622
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e6b040685fb53fb582a98f89e817d411d52eb98a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e333ed7bc83204f5ade7990b763937abe817a044
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380602"
 ---
 # <a name="msfcfibreporthbastatistics-wmi-class"></a>MSFC\_FibrePortHBAStatistics WMI 类
 
@@ -52,7 +52,7 @@ class MSFC_FibrePortHBAStatistics
 
 通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
 
-[**MSFC\_FibrePortHBAStatistics**](https://msdn.microsoft.com/library/windows/hardware/ff562503)
+[**MSFC\_FibrePortHBAStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fibreporthbastatistics)
 
 没有与此 WMI 类相关联的方法。
 

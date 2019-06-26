@@ -4,12 +4,12 @@ description: 设备和驱动程序安装路线图
 ms.assetid: d6cb6d8c-226f-4b6f-989a-36184236f826
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab39fa9f7044955ab36c9a84167b3977b8030d7
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 829b5049c9e3d314e6b38ea239c9b7040fe639e5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456426"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382271"
 ---
 # <a name="roadmap-for-device-and-driver-installation"></a>设备和驱动程序安装路线图
 
@@ -32,7 +32,7 @@ ms.locfileid: "65456426"
 
 -   步骤 3:了解有关信息 (INF) 文件。
 
-    INF 文件包含的信息和设备设置的系统提供[设备安装组件](https://msdn.microsoft.com/library/windows/hardware/ff541277)使用来安装你[驱动程序包](driver-packages.md)，如设备以及任何驱动程序特定于设备的应用程序。
+    INF 文件包含的信息和设备设置的系统提供[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))使用来安装你[驱动程序包](driver-packages.md)，如设备以及任何驱动程序特定于设备的应用程序。
 
     有关详细信息，请参阅[INF 文件](overview-of-inf-files.md)。
 
@@ -46,7 +46,7 @@ ms.locfileid: "65456426"
 
 -   步骤 5：在开发和测试期间测试登录您的驱动程序的包。
 
-    测试签名是指使用测试证书进行签名的预发布版本[驱动程序包](driver-packages.md)以用于测试计算机。 具体而言，这允许开发人员通过使用自签名的证书，如签署驱动程序包[ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)工具生成。 此功能允许开发人员若要安装和测试驱动程序包在 Windows 中启用驱动程序签名验证。
+    测试签名是指使用测试证书进行签名的预发布版本[驱动程序包](driver-packages.md)以用于测试计算机。 具体而言，这允许开发人员通过使用自签名的证书，如签署驱动程序包[ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)工具生成。 此功能允许开发人员若要安装和测试驱动程序包在 Windows 中启用驱动程序签名验证。
 
     有关详细信息，请参阅[签名驱动程序开发和测试期间](signing-drivers-during-development-and-test.md)。
 

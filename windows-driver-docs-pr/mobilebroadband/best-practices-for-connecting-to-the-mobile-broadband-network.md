@@ -4,12 +4,12 @@ description: 连接到移动宽带网络的最佳做法
 ms.assetid: 6106d026-1c5f-4990-8ef2-467c1a77a38e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bed901b901260f9b9fb1927fe1ebac785b150a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfe730a408b7dc61089d1aff6c0305330189d882
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364999"
 ---
 # <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>连接到移动宽带网络的最佳做法
 
@@ -24,7 +24,7 @@ ms.locfileid: "63392985"
 
 -   将连接生存期保持最小。
 
--   只要这些信息可通过 Internet 连接的接口使用的连接。 您可以通过使用观察可用性[ **NetworkInformation** ](https://msdn.microsoft.com/library/windows/apps/br207293) API。
+-   只要这些信息可通过 Internet 连接的接口使用的连接。 您可以通过使用观察可用性[ **NetworkInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

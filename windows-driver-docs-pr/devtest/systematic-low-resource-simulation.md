@@ -4,12 +4,12 @@ description: 系统资源不足模拟选项注入资源故障。 内核模式驱
 ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c11500c180357cff2c74e6aba614a6bbcc8d55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fee6981c3245a2db79d256c61b21330cd8274dda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391303"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360931"
 ---
 # <a name="systematic-low-resources-simulation"></a>系统性资源不足模拟
 
@@ -121,7 +121,7 @@ ms.locfileid: "63391303"
 ## <a name="span-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspanspan-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspanspan-iddebuggingbugcheckscausedbysystematiclowresourcessimulationspandebugging-bug-checks-caused-by-systematic-low-resources-simulation"></a><span id="Debugging_bug_checks_caused_by_Systematic_low_resources_simulation"></span><span id="debugging_bug_checks_caused_by_systematic_low_resources_simulation"></span><span id="DEBUGGING_BUG_CHECKS_CAUSED_BY_SYSTEMATIC_LOW_RESOURCES_SIMULATION"></span>调试 bug 检查引起的系统资源不足模拟
 
 
-检查大部分系统资源不足模拟结果与在 bug 中发现的问题。 若要帮助确定这些代码的问题，原因[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)工具为 Windows 8.1 提供调试器扩展 (kdexts.dll) 和必需的符号。
+检查大部分系统资源不足模拟结果与在 bug 中发现的问题。 若要帮助确定这些代码的问题，原因[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)工具为 Windows 8.1 提供调试器扩展 (kdexts.dll) 和必需的符号。
 
 **若要运行的调试程序扩展**
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CONNECT_BSS_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a86fe448f113dc8b59fffaddca2e586f0085da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21859042b922facaebc55c88ba017b3a1099c11b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360230"
 ---
 # <a name="wditlvconnectbssentry"></a>WDI\_TLV\_CONNECT\_BSS\_条目
 
@@ -43,7 +43,7 @@ WDI\_TLV\_CONNECT\_BSS\_项是包含一组候选 TLV 连接 BSS 条目。
 | [**WDI\_TLV\_EXTRA\_ASSOCIATION\_REQUEST\_IES**](wdi-tlv-extra-association-request-ies.md) |                                | X        | IE 要包含在 （重新） 中的此 BSSID 关联请求帧。 如果存在，这应包括除了常见的 IE。                  |
 | [**WDI\_TLV\_FT\_初始\_ASSOC\_参数**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | X        | 初始移动域关联参数。                                                                                                           |
 | [**WDI\_TLV\_FT\_REASSOC\_PARAMETERS**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | X        | 快速转换参数 （MDIE，R0KH ID、 PMKR0Name，SNonce）。 这是仅存在可用于快速转换 （不在初始移动域关联）。 |
-| [**WDI\_TLV\_BSS\_SELECTION\_PARAMETERS**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI\_BSS\_选择\_标志**](https://msdn.microsoft.com/library/windows/hardware/mt297629)提供 BSS 选择主机所使用的信息。                               |
+| [**WDI\_TLV\_BSS\_SELECTION\_PARAMETERS**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI\_BSS\_选择\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_bss_selection_flags)提供 BSS 选择主机所使用的信息。                               |
 
  
 

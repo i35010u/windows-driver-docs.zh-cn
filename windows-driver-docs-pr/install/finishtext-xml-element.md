@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 40d0d7d4b1093e6d4d38f7baf2c5cff1e346b9e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d212acd002799e79b48ad3a0869a59968e46a86
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377087"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360295"
 ---
 # <a name="finishtext-xml-element"></a>finishText XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **FinishText** XML 元素自定义 DPInst DPInst 完成页显示的主文本。
 

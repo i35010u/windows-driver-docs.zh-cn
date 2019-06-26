@@ -4,12 +4,12 @@ description: 开发 WaveRT 微型端口驱动程序
 ms.assetid: d2d37c9e-fbfb-4bf3-bd7d-c8e19070a3f1
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 881105e63faa200ebcc09461a9ff8136f69f0402
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69a306e135dbb22291e22f162f5bdde79085403f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333807"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359071"
 ---
 # <a name="developing-a-wavert-miniport-driver"></a>开发 WaveRT 微型端口驱动程序
 
@@ -30,7 +30,7 @@ Windows Vista 和更高版本的 Windows 操作系统提供的 UAA 兼容的音�
 
 查看示例适配器驱动程序并开始设计 WaveRT 微型端口驱动程序后，您必须验证它支持以下软件和硬件功能。 因此，然后生成该微型端口驱动程序将成为与系统提供 WaveRT 端口驱动程序和 Windows Vista 的操作模式兼容[音频引擎](exploring-the-windows-vista-audio-engine.md)。
 
--   **低的硬件的滞后时间。** WaveRT 微型端口驱动程序必须提供的全部功能的实现[ **IMiniportWaveRTStream::GetHWLatency** ](https://msdn.microsoft.com/library/windows/hardware/ff536747)方法。 此方法是可支持所需[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378)属性。
+-   **低的硬件的滞后时间。** WaveRT 微型端口驱动程序必须提供的全部功能的实现[ **IMiniportWaveRTStream::GetHWLatency** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536747(v=vs.85))方法。 此方法是可支持所需[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency)属性。
 
 -   **FIFO 中断。** WaveRT 微型端口驱动程序必须自动生成中断 FIFO 溢出和不足何时发生。 音频设备和驱动程序软件上运行测试时，此功能允许音频流中的故障检测。 如果没有硬件支持 （换而言之，FIFO 中断） 不方便、 可靠存在方法用于获取故障的信息。
 
@@ -54,7 +54,7 @@ Windows Vista 和更高版本的 Windows 操作系统提供的 UAA 兼容的音�
 
     从这种类型的位置获取读取后注册、 客户端可以估计的示例通过 Dac 或 ADCs 通过增加或减少通过编解码器的延迟要移动的当前位置。 客户端获取从的编解码器延迟**KSPROPERTY\_RTAUDIO\_HWLATENCY**属性请求。 出于此原因，WaveRT 微型端口驱动程序必须准确地报告的编解码器延迟时端口驱动程序调用**IMiniportWaveRTStream::GetHardwareLatency**方法以这种类型的属性请求的响应。
 
-    请注意 WaveRT 端口驱动程序支持现有的硬件设计缺少位置寄存器的。 WaveRT 微型端口驱动程序必须具有此限制的设备，故障对调用[ **IMiniportWaveRTStream::GetPositionRegister** ](https://msdn.microsoft.com/library/windows/hardware/ff536752)方法通过返回**状态\_不\_支持**错误代码，这会强制端口驱动程序故障[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)属性的请求。 在这种情况下，客户端必须获取通过当前位置[ **KSPROPERTY\_音频\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)属性，这会导致用户模式之间的转换的开销和内核模式下，每个位置读取。
+    请注意 WaveRT 端口驱动程序支持现有的硬件设计缺少位置寄存器的。 WaveRT 微型端口驱动程序必须具有此限制的设备，故障对调用[ **IMiniportWaveRTStream::GetPositionRegister** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536752(v=vs.85))方法通过返回**状态\_不\_支持**错误代码，这会强制端口驱动程序故障[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)属性的请求。 在这种情况下，客户端必须获取通过当前位置[ **KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)属性，这会导致用户模式之间的转换的开销和内核模式下，每个位置读取。
 
 -   **时钟寄存器。** 时钟注册是可选的但有用的硬件功能 WaveRT 兼容音频设备。 音频应用程序可以使用时钟注册同步在两个或多个独立音频设备具有单独的和不同步硬件时钟的音频流。 而无需时钟寄存器中，应用程序是无法检测和补偿之间的硬件时钟偏差。
 

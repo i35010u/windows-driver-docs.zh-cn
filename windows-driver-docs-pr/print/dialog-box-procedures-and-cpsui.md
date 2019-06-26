@@ -11,12 +11,12 @@ keywords:
 - 窗口消息 WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0b4c998345020fc29e91437e5df099738ac4989
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 5b50d323ebdec809f5e033437634561f8514dc2e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360209"
 ---
 # <a name="dialog-box-procedures-and-cpsui"></a>对话框过程和 CPSUI
 
@@ -28,9 +28,9 @@ ms.locfileid: "56568566"
 
 有关使用 CPSUI 创建的所有属性表页，窗口消息是第一次被截获 CPSUI 传递到应用程序提供的对话框过程之前。 如果使用 CPSUI 提供模板定义页面，应用程序提供的对话框过程可以提供一个返回值，该值 CPSUI 应处理该消息。
 
-可以使用对话框过程[ **SetCPSUIUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff562624)并[ **GetCPSUIUserData** ](https://msdn.microsoft.com/library/windows/hardware/ff549922)函数来存储和检索应用程序提供的值。
+可以使用对话框过程[ **SetCPSUIUserData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nf-compstui-setcpsuiuserdata)并[ **GetCPSUIUserData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nf-compstui-getcpsuiuserdata)函数来存储和检索应用程序提供的值。
 
-有关使用随 CPSUI 对话框框中过程的详细信息，请参阅备注部分[ **DLGPAGE**](https://msdn.microsoft.com/library/windows/hardware/ff547607)。
+有关使用随 CPSUI 对话框框中过程的详细信息，请参阅备注部分[ **DLGPAGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)。
 
  
 

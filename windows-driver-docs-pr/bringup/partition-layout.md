@@ -4,19 +4,19 @@ description: 分区布局
 ms.assetid: 59ac7ec7-1b96-4fe1-a221-d8422e60072d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7fccb17923cebd1236b368820130abb71900d2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 58197b0a15049649ef2e9d48bc93c1e2df3a8667
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337517"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364537"
 ---
 # <a name="windows-10-mobile-partition-layout"></a>Windows 10 移动版的分区布局
 
 
 在 Windows 10 移动版、 Microsoft 和硅供应商 (SV) 配置的存储分区和分区大小。 必须设计分区，以便它们足够大，针对所有当前组件和接受更新的手机的整个生命周期。 已在手机上设置的分区大小后，更改大小的唯一方法是通过重新刷新清理完整闪存的更新，这将擦除所有数据在手机上的设备。
 
-在手机的存储子系统中指定的要求必须符合[部分 2.2:Windows 10 移动版的最低硬件要求的内存，](https://msdn.microsoft.com/library/windows/hardware/dn915086.aspx#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)。
+在手机的存储子系统中指定的要求必须符合[部分 2.2:Windows 10 移动版的最低硬件要求的内存，](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#section_2.0_-_minimum_hardware_requirements_for_windows_10_mobile)。
 
 <div class="alert">
 <strong>注意：</strong>  Oem 可能不添加、 删除或修改由 Microsoft 和 SV 设计布局中的分区。 这有助于确保在手机上的所有软件和配置数据可以为电话更新提供都服务。 OEM 组件通常内置于主要的 OS 分区 （适用于预加载应用程序和本机服务），数据分区 （适用于数据预加载映射等） 或在设备预配分区 （适用于特定于设备的只读配置数据）。

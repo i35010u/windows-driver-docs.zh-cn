@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 972b0931ca45510b64234f29d39141e95b406ea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1be154fb762023e50902139712d9416ff233f9d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332621"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358718"
 ---
 # <a name="kspropertysysaudiocreatevirtualsource"></a>KSPROPERTY\_SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE
 
@@ -53,7 +53,7 @@ KSPROPERTY\_SYSAUDIO\_创建\_虚拟\_SOURCE 属性创建一个新的虚拟源�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff538485" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff538485)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -80,7 +80,7 @@ SysAudio 已分配给虚拟源的索引后[ **KSPROPERTY\_SYSAUDIO\_附加\_虚�
 
 用户控制通过 SndVol32 应用程序的各种音频源的卷级别。 这些源包括 wave 输出设备、 MIDI 合成器、 CD 播放机和线路输入插孔。 SndVol32 使用 Windows 多媒体 **waveOut * * * Xxx*，**midiOut * * * Xxx*，和 **aux * * * Xxx*函数，以控制这些源的卷级别。 有关 Windows 多媒体函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-SysAudio 截获卷对这些设备所做的更改，并将其应用到其虚拟源。 例如，如果将一个 MIDI 文件转换为批数据的软件 MIDI 合成器连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 midiOut*Xxx*卷更改为固定 (而不是 **waveOut * * * Xxx*批量更改)。 同样，如果[Redbook 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#redbook-system-driver)，它将数字音频 CD 播放机从转换波形数据，为连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 AUXCAPS\_CDAUDIO 卷对 pin 的更改。 详细了解 AUXCAPS\_CDAUDIO 结构，请参阅 Windows SDK 文档。
+SysAudio 截获卷对这些设备所做的更改，并将其应用到其虚拟源。 例如，如果将一个 MIDI 文件转换为批数据的软件 MIDI 合成器连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 midiOut*Xxx*卷更改为固定 (而不是 **waveOut * * * Xxx*批量更改)。 同样，如果[Redbook 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#redbook-system-driver)，它将数字音频 CD 播放机从转换波形数据，为连接到虚拟音频设备的批呈现引脚之一，SysAudio 适用 AUXCAPS\_CDAUDIO 卷对 pin 的更改。 详细了解 AUXCAPS\_CDAUDIO 结构，请参阅 Windows SDK 文档。
 
 <a name="requirements"></a>要求
 ------------
@@ -101,7 +101,7 @@ SysAudio 截获卷对这些设备所做的更改，并将其应用到其虚拟�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE**](https://msdn.microsoft.com/library/windows/hardware/ff538485)
+[**SYSAUDIO\_CREATE\_VIRTUAL\_SOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)
 
 [**KSPROPERTY\_SYSAUDIO\_附加\_虚拟\_源**](ksproperty-sysaudio-attach-virtual-source.md)
 

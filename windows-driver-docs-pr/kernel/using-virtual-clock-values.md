@@ -9,21 +9,21 @@ keywords:
 - 事务 WDK KTM，虚拟时钟值
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 451719c34ad3abd491a4f370cbce920284fa6910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ffa11c5e97266a5224aada8f99b8ca1628d8614
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372189"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358160"
 ---
 # <a name="using-virtual-clock-values"></a>使用虚拟时钟值
 
 
-KTM 提供虚拟时钟为每个事务管理器对象。 当资源管理器调用[ **ZwCreateTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff566430)，KTM 对象的虚拟时钟值设置为 1。 KTM 虚拟时钟值增加每个提交操作开始的时间。 每当 KTM 写入其日志流，它将包括当前虚拟时钟值中的日志记录。
+KTM 提供虚拟时钟为每个事务管理器对象。 当资源管理器调用[ **ZwCreateTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)，KTM 对象的虚拟时钟值设置为 1。 KTM 虚拟时钟值增加每个提交操作开始的时间。 每当 KTM 写入其日志流，它将包括当前虚拟时钟值中的日志记录。
 
-当资源管理器调用[ **ZwRecoverTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff567079)、 KTM 读取日志流记录的流的结束之前，和它的事务管理器对象的虚拟时钟值设置为最后一个值在对象的日志流中查找它。
+当资源管理器调用[ **ZwRecoverTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)、 KTM 读取日志流记录的流的结束之前，和它的事务管理器对象的虚拟时钟值设置为最后一个值在对象的日志流中查找它。
 
-当资源管理器调用[ **ZwRollforwardTransactionManager**](https://msdn.microsoft.com/library/windows/hardware/ff567089)、 KTM 读取日志流记录，直到达到指定的时钟值，和它的事务管理器对象的虚拟时钟值设置为指定的时钟值。
+当资源管理器调用[ **ZwRollforwardTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollforwardtransactionmanager)、 KTM 读取日志流记录，直到达到指定的时钟值，和它的事务管理器对象的虚拟时钟值设置为指定的时钟值。
 
 KTM 使资源管理器和高级事务管理器可修改的事务管理器对象虚拟时钟值，但它们通常不需要修改的时钟值。
 
@@ -43,15 +43,15 @@ KTM 使资源管理器和高级事务管理器可修改的事务管理器对象�
 
 ### <a name="how-to-modify-virtual-clock-values"></a>如何修改虚拟时钟值
 
-资源管理器可以通过传递到新值来修改虚拟时钟值[ **ZwPrePrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567040)， [ **ZwPrepareComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567037)，[ **ZwCommitComplete**](https://msdn.microsoft.com/library/windows/hardware/ff566418)， [ **ZwRollbackComplete**](https://msdn.microsoft.com/library/windows/hardware/ff567081)， [ **ZwReadOnlyEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567074)，或[ **ZwSinglePhaseReject**](https://msdn.microsoft.com/library/windows/hardware/ff567113)。
+资源管理器可以通过传递到新值来修改虚拟时钟值[ **ZwPrePrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepreparecomplete)， [ **ZwPrepareComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete)，[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)， [ **ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)， [ **ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)，或[ **ZwSinglePhaseReject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsinglephasereject)。
 
-[高级事务管理器](creating-a-superior-transaction-manager.md)可以通过传递到一个新值来修改虚拟时钟值[ **ZwPrePrepareEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567044)， [ **ZwPrepareEnlistment** ](https://msdn.microsoft.com/library/windows/hardware/ff567039)， [ **ZwCommitEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff566419)，或者[ **ZwReadOnlyEnlistment**](https://msdn.microsoft.com/library/windows/hardware/ff567074)。
+[高级事务管理器](creating-a-superior-transaction-manager.md)可以通过传递到一个新值来修改虚拟时钟值[ **ZwPrePrepareEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreprepareenlistment)， [ **ZwPrepareEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntprepareenlistment)， [ **ZwCommitEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitenlistment)，或者[ **ZwReadOnlyEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntreadonlyenlistment)。
 
-此外，资源管理器或上级事务管理器，它使用[ **ResourceManagerNotification** ](https://msdn.microsoft.com/library/windows/hardware/ff561077)回调例程可以修改回调例程接收虚拟时钟值。 KTM 然后保存更新后的值。
+此外，资源管理器或上级事务管理器，它使用[ **ResourceManagerNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ptm_rm_notification)回调例程可以修改回调例程接收虚拟时钟值。 KTM 然后保存更新后的值。
 
 如果资源管理器或上级事务管理器将新的时钟值传递到 KTM，KTM 将保存新值，仅当其值大于当前时钟值。 否则，KTM 中保留当前时钟值。
 
-资源管理器和高级事务管理器可以获取事务管理器对象的虚拟时钟值通过调用[ **ZwQueryInformationTransactionManager** ](https://msdn.microsoft.com/library/windows/hardware/ff567058)例程。
+资源管理器和高级事务管理器可以获取事务管理器对象的虚拟时钟值通过调用[ **ZwQueryInformationTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationtransactionmanager)例程。
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - 数据交集处理程序 WDK 音频，示例频率约束
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e6c7916fb3d4332454f252462cf68d2e713e3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5a931f26852294a9405b62e869ded796b67ee816
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333611"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360010"
 ---
 # <a name="hardware-constraints-on-sample-frequency"></a>采样频率的硬件约束
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333611"
 
 出于这些原因，适配器驱动程序可能需要限制上一个载入流以匹配的另一个载入流采样频率。 例如，声音 Blaster 16 兼容适配器可能要求的示例适配器的接收器 pin 频率匹配的闩锁工作在输出的速率 Dac。
 
-正如上文 KMixer 我是在 Windows Server 2003、 Windows XP、 Windows 2000 和 Windows 系统 mixer / 98。 KMixer 当 KMixer 的源 pin 连接到适配器的接收器 pin 时，可能需要调用该适配器**SetFormat**方法 (有关示例，请参阅[ **IMiniportWavePciStream::SetFormat** ](https://msdn.microsoft.com/library/windows/hardware/ff536732))若要调整示例频率，在要在其输入音频流的最高示例频率相匹配的连接。 如果适配器不能更改的频率-可能是因为受限制的其他开发板的流-的时钟速率，它可能会失败**SetFormat**调用。 在这种情况下，通过使多个响应 KMixer **SetFormat**具有连续低示例频率直到调用成功的调用。 一旦 KMixer 已经开始在降低采样频率，它将示例取其较高的频率输入的流相应地。
+正如上文 KMixer 我是在 Windows Server 2003、 Windows XP、 Windows 2000 和 Windows 系统 mixer / 98。 KMixer 当 KMixer 的源 pin 连接到适配器的接收器 pin 时，可能需要调用该适配器**SetFormat**方法 (有关示例，请参阅[ **IMiniportWavePciStream::SetFormat** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-setformat))若要调整示例频率，在要在其输入音频流的最高示例频率相匹配的连接。 如果适配器不能更改的频率-可能是因为受限制的其他开发板的流-的时钟速率，它可能会失败**SetFormat**调用。 在这种情况下，通过使多个响应 KMixer **SetFormat**具有连续低示例频率直到调用成功的调用。 一旦 KMixer 已经开始在降低采样频率，它将示例取其较高的频率输入的流相应地。
 
  
 

@@ -4,12 +4,12 @@ description: ISCSI\_TargetPortalGroup WMI 类
 ms.assetid: dff17d52-b308-49cc-97ec-d54eddb4e747
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a45569f06103c00a554358a4b331b45d50c22026
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e59fe196fb8c606300b9f0e23aeae96d1a3d03b7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360898"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358457"
 ---
 # <a name="iscsitargetportalgroup-wmi-class"></a>ISCSI\_TargetPortalGroup WMI 类
 
@@ -32,7 +32,7 @@ class ISCSI_TargetPortalGroup {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_TargetPortalGroup** ](https://msdn.microsoft.com/library/windows/hardware/ff561575)数据结构。
+当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_TargetPortalGroup** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsidef/ns-iscsidef-_iscsi_targetportalgroup)数据结构。
 
  
 

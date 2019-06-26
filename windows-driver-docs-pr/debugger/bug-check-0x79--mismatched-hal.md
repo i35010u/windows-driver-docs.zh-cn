@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b423ca79fe75656a3839868e6e7fc95bbe9f3c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04affa063862596edbcbf876280a264c5dc6b2bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367345"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361744"
 ---
 # <a name="bug-check-0x79-mismatchedhal"></a>Bug 检查 0x79：不匹配的\_HAL
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367345"
 不匹配\_HAL bug 检查的值为 0x00000079。 此 bug 检查指示，硬件抽象层 (HAL) 的修订级别或配置不匹配的内核或计算机。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="mismatchedhal-parameters"></a>不匹配的\_HAL 参数

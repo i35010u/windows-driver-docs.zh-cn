@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9debfc45c946987dc72a585edaae2f7e445e217b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 025c09e65c83148d9cec6c6b1a9101d1abdbac32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335996"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363159"
 ---
 # <a name="ndiskdfindpacket"></a>!ndiskd.findpacket
 
 
-**警告**  此扩展是旧的 NDIS 5.x 驱动程序。 [NDIS\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff557086)结构和其关联的体系结构已被弃用。
+**警告**  此扩展是旧的 NDIS 5.x 驱动程序。 [NDIS\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构和其关联的体系结构已被弃用。
 
  
 
@@ -47,7 +47,7 @@ Ndiskd.dll
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[NDIS\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff557086)
+[NDIS\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))
 
  
 

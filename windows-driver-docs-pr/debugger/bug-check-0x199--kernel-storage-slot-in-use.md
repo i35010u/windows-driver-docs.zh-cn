@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b62903f4dd287dc66296682f8169e6e2508dc517
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0bc98430a37d5d886f515e679d2d4fb8d8c19aa8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342569"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362051"
 ---
 # <a name="bug-check-0x199-kernelstorageslotinuse"></a>Bug 检查 0x199：内核\_存储\_槽\_IN\_使用
 
@@ -26,7 +26,7 @@ ms.locfileid: "63342569"
 内核\_存储\_槽\_IN\_使用错误检查的值为 0x00000199。 这表示不能释放存储槽，因为没有使用它的对象。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="kernelstorageslotinuse-parameters"></a>内核\_存储\_槽\_IN\_使用参数

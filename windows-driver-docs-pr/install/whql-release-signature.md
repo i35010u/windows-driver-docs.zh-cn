@@ -12,17 +12,17 @@ keywords:
 - 释放 WDK，WHQL 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f854f7e12aa487ee4fc6d6857afdf40f66e3ae3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c3e11cec40da6182eb3e5e9e2c2799adfe30875
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339281"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363513"
 ---
 # <a name="whql-release-signature"></a>WHQL 发布签名
 
 
-通过 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 测试的[驱动程序包](driver-packages.md)可以由 WHQL 进行数字签名。 如果驱动程序包是由 WHQL 进行数字签名，它可以通过分发[Windows Update](https://msdn.microsoft.com/windows-drivers/develop/distributing_a_driver_package_win8)程序或其他 Microsoft 支持分发机制。
+通过 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 测试的[驱动程序包](driver-packages.md)可以由 WHQL 进行数字签名。 如果驱动程序包是由 WHQL 进行数字签名，它可以通过分发[Windows Update](https://docs.microsoft.com/windows-hardware/drivers)程序或其他 Microsoft 支持分发机制。
 
 获取 WHQL 发布签名是 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 的一部分。 WHQL 发布签名包含经过数字签名的[目录文件](catalog-files.md)。 数字签名不更改驱动程序二进制文件或你提交用于测试的 INF 文件。
 

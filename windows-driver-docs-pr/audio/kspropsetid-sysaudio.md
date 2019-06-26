@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Sysaudio
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bcc6fdd80274d2f73349c292fd11a339d5c2a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 59fc9d2485b6c92c0fcb36a7c23ecc7d09ca8484
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360471"
 ---
 # <a name="kspropsetidsysaudio"></a>KSPROPSETID\_Sysaudio
 
@@ -19,7 +19,7 @@ ms.locfileid: "63332453"
 ## <span id="ddk_kspropsetid_sysaudio_ks"></span><span id="DDK_KSPROPSETID_SYSAUDIO_KS"></span>
 
 
-`KSPROPSETID_Sysaudio`属性设置用于访问的属性[SysAudio 系统驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff537039#sysaudio-system-driver)。 Sysaudio 是驱动程序，用于创建和管理[虚拟音频设备](https://msdn.microsoft.com/library/windows/hardware/ff538734)代表 DirectSound 和其他客户端。
+`KSPROPSETID_Sysaudio`属性设置用于访问的属性[SysAudio 系统驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components#sysaudio-system-driver)。 Sysaudio 是驱动程序，用于创建和管理[虚拟音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/virtual-audio-devices)代表 DirectSound 和其他客户端。
 
 SysAudio 的客户端使用此属性设置为执行以下操作：
 
@@ -33,7 +33,7 @@ SysAudio 的客户端使用此属性设置为执行以下操作：
 
 -   配置通过 pin 以包括或绕过 AEC 节点的数据路径。
 
-浏览可用的虚拟音频设备的属性后, 客户端应准备好选择其中一个虚拟的音频设备，然后在该设备上创建一个 pin。 某些客户端可能会选择虚拟的音频设备上创建多个 pin 或多个设备上创建 pin。 有关创建 pin 信息，请参阅[Pin 工厂](https://msdn.microsoft.com/library/windows/hardware/ff537747)。
+浏览可用的虚拟音频设备的属性后, 客户端应准备好选择其中一个虚拟的音频设备，然后在该设备上创建一个 pin。 某些客户端可能会选择虚拟的音频设备上创建多个 pin 或多个设备上创建 pin。 有关创建 pin 信息，请参阅[Pin 工厂](https://docs.microsoft.com/windows-hardware/drivers/audio/pin-factories)。
 
 创建 pin 后，可以使用客户端[KSPROPSETID\_Sysaudio\_Pin](kspropsetid-sysaudio-pin.md)属性设置为管理 pin。
 

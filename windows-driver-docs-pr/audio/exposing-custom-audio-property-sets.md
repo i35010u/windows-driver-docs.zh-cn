@@ -7,12 +7,12 @@ keywords:
 - 自定义音频属性集 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25ae491a210d1a49b3806670e95e971f58a506f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9222b10691459a31fd286f8fe9a5ca7246750dd2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333682"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360077"
 ---
 # <a name="exposing-custom-audio-property-sets"></a>公开自定义音频属性集
 
@@ -22,7 +22,7 @@ ms.locfileid: "63333682"
 
 DirectSound 声卡上支持自定义属性的用法，并提供**IKsPropertySet**接口实现此目的。
 
-**请注意**   Dsound.h 和 Ksproxy.h 标头文件定义的类似，但并不兼容版本**IKsPropertySet**接口。 DirectSound 应用程序应使用 Dsound.h 中定义的版本。 DirectSound 新版**IKsPropertySet** DirectSound 参考页中的 Microsoft Windows SDK 文档中定义。 有关 KSProxy 版本，请参阅[IKsPropertySet](https://msdn.microsoft.com/library/windows/hardware/ff560718)。
+**请注意**   Dsound.h 和 Ksproxy.h 标头文件定义的类似，但并不兼容版本**IKsPropertySet**接口。 DirectSound 应用程序应使用 Dsound.h 中定义的版本。 DirectSound 新版**IKsPropertySet** DirectSound 参考页中的 Microsoft Windows SDK 文档中定义。 有关 KSProxy 版本，请参阅[IKsPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dsound/nn-dsound-ikspropertyset)。
 
  
 
@@ -34,11 +34,11 @@ DirectSound 声卡上支持自定义属性的用法，并提供**IKsPropertySet*
 
 2.  上**音频**选项卡上，选择在相应的首选的设备**声音播放**列表。
 
-3.  单击“高级”按钮。
+3.  单击“高级”  按钮。
 
 4.  上**性能**选项卡上，滑动**硬件加速**滑块移至**完整**。
 
-5.  单击 **“应用”**。
+5.  单击 **“应用”** 。
 
 DirectSound 现在能够将自定义属性集传递给驱动程序。
 

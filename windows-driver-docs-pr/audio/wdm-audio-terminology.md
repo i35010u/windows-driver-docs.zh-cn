@@ -20,12 +20,12 @@ keywords:
 - 子设备 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da081c1b5fcbe3f4e74a17a818e41a13552dcb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d39c39ee12f453b2d3ca1e5f54b09d7cacbc93a8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364777"
 ---
 # <a name="wdm-audio-terminology"></a>WDM 音频术语
 
@@ -33,13 +33,13 @@ ms.locfileid: "63328479"
 ## <span id="wdm_audio_terminology"></span><span id="WDM_AUDIO_TERMINOLOGY"></span>
 
 
-本部分介绍在术语中的 Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序体系结构和通用 Windows 分层驱动程序体系结构之间的差异。 SCSI 端口/微型端口驱动程序以为例通用驱动程序体系结构 (请参阅[存储驱动程序体系结构](https://msdn.microsoft.com/library/windows/hardware/ff566978))。
+本部分介绍在术语中的 Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序体系结构和通用 Windows 分层驱动程序体系结构之间的差异。 SCSI 端口/微型端口驱动程序以为例通用驱动程序体系结构 (请参阅[存储驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-driver-architecture))。
 
 术语定义的泛型和 WDM 音频驱动程序体系结构类似，但它们具有一些重要的区别，如下所述。
 
 ### <a name="span-idminiportdrivergenericspanspan-idminiportdrivergenericspanspan-idminiportdrivergenericspanminiport-driver-generic"></a><span id="Miniport_Driver__Generic_"></span><span id="miniport_driver__generic_"></span><span id="MINIPORT_DRIVER__GENERIC_"></span>微型端口驱动程序 （通用）
 
-微型端口驱动程序 （通用） 是驻留在系统总线 （例如，PCI 或 ISA） 上的适配器的特定于硬件的驱动程序。 此驱动程序具有单一入口点[ *DriverEntry*](https://msdn.microsoft.com/library/windows/hardware/ff544113)，并通过端口驱动程序注册的函数表。 此函数的表用作微型端口驱动程序的上边缘接口。
+微型端口驱动程序 （通用） 是驻留在系统总线 （例如，PCI 或 ISA） 上的适配器的特定于硬件的驱动程序。 此驱动程序具有单一入口点[ *DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)，并通过端口驱动程序注册的函数表。 此函数的表用作微型端口驱动程序的上边缘接口。
 
 微型端口驱动程序位于驱动程序堆栈中的端口驱动程序的下方。 也就是说，到微型端口驱动程序的所有调用都都来自端口驱动程序和带微型端口驱动程序的所有调用都是到端口驱动程序的较低 edge 接口。
 
@@ -75,7 +75,7 @@ ms.locfileid: "63328479"
 
 ### <a name="span-idbusdrivergenericspanspan-idbusdrivergenericspanspan-idbusdrivergenericspanbus-driver-generic"></a><span id="Bus_Driver__Generic_"></span><span id="bus_driver__generic_"></span><span id="BUS_DRIVER__GENERIC_"></span>总线驱动程序 （通用）
 
-总线驱动程序 （泛型） 使物理总线微型驱动程序访问。 Microsoft Windows*硬件抽象层 (HAL)* 有时称为*系统总线驱动程序*因为它提供对系统总线的访问。 有关详细信息，请参阅[总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540704)。
+总线驱动程序 （泛型） 使物理总线微型驱动程序访问。 Microsoft Windows*硬件抽象层 (HAL)* 有时称为*系统总线驱动程序*因为它提供对系统总线的访问。 有关详细信息，请参阅[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)。
 
 ### <a name="span-idclassdrivergenericspanspan-idclassdrivergenericspanspan-idclassdrivergenericspanclass-driver-generic"></a><span id="Class_Driver__Generic_"></span><span id="class_driver__generic_"></span><span id="CLASS_DRIVER__GENERIC_"></span>类驱动程序 （通用）
 
@@ -93,13 +93,13 @@ ms.locfileid: "63328479"
 
 微型端口驱动程序 （WDM 音频） 实现上驻留在系统总线的音频的适配器卡函数特定于函数的接口。 微型端口驱动程序是适配器驱动程序的组件。 它不是由操作系统识别作为驱动程序。 在这方面，音频微型端口驱动程序不同于一般的微型端口驱动程序。
 
-与不同的是泛型的微型端口驱动程序音频微型端口驱动程序不会实现[ *DriverEntry*](https://msdn.microsoft.com/library/windows/hardware/ff544113)、 未注册，并不完全靠支持其相应端口驱动程序。 解决多个函数的多个音频微型端口驱动程序可以是链接到单个适配器驱动程序 （和与单个设备对象相关联）。
+与不同的是泛型的微型端口驱动程序音频微型端口驱动程序不会实现[ *DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)、 未注册，并不完全靠支持其相应端口驱动程序。 解决多个函数的多个音频微型端口驱动程序可以是链接到单个适配器驱动程序 （和与单个设备对象相关联）。
 
 ### <a name="span-idadapterdriverwdmaudiospanspan-idadapterdriverwdmaudiospanspan-idadapterdriverwdmaudiospanadapter-driver-wdm-audio"></a><span id="Adapter_Driver__WDM_Audio_"></span><span id="adapter_driver__wdm_audio_"></span><span id="ADAPTER_DRIVER__WDM_AUDIO_"></span>适配器驱动程序 （WDM 音频）
 
 适配器驱动程序 （WDM 音频） 可用作所有与给定适配器关联的微型端口驱动程序的容器。 此适配器驱动程序由操作系统识别作为驱动程序，以及包含在其自己的.sys 文件。
 
-音频适配器驱动程序包含一组的微型端口驱动程序和解决初始化问题的其他代码。 例如，适配器驱动程序实现[ *DriverEntry* ](https://msdn.microsoft.com/library/windows/hardware/ff544113)入口点。
+音频适配器驱动程序包含一组的微型端口驱动程序和解决初始化问题的其他代码。 例如，适配器驱动程序实现[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)入口点。
 
 ### <a name="span-idportdriverwdmaudiospanspan-idportdriverwdmaudiospanspan-idportdriverwdmaudiospanport-driver-wdm-audio"></a><span id="Port_Driver__WDM_Audio_"></span><span id="port_driver__wdm_audio_"></span><span id="PORT_DRIVER__WDM_AUDIO_"></span>端口驱动程序 （WDM 音频）
 
@@ -125,7 +125,7 @@ ms.locfileid: "63328479"
 
 适配器驱动程序实例化端口驱动程序和一个微型端口驱动程序并将其绑定的指针作为端口驱动程序的初始化函数的参数传递给微型端口驱动程序在一起 (请参阅中的代码示例[子创建](subdevice-creation.md)). 生成的端口/微型端口驱动程序堆栈构成表示端口类驱动程序支持的子类型之一的 KS 筛选器。
 
-端口类驱动程序[ **PcRegisterSubdevice** ](https://msdn.microsoft.com/library/windows/hardware/ff537731)函数注册子，通过系统的其余部分被视为一种设备。 端口驱动程序接收 Irp 目标设备对象，但仅在其下注册的子字符串由指定这些 Irp 的创建。 端口驱动程序还会收到针对子与相关联的文件对象 Irp。 端口驱动程序是负责 KS 筛选器的子行为并相应地与微型端口驱动程序进行通信。
+端口类驱动程序[ **PcRegisterSubdevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregistersubdevice)函数注册子，通过系统的其余部分被视为一种设备。 端口驱动程序接收 Irp 目标设备对象，但仅在其下注册的子字符串由指定这些 Irp 的创建。 端口驱动程序还会收到针对子与相关联的文件对象 Irp。 端口驱动程序是负责 KS 筛选器的子行为并相应地与微型端口驱动程序进行通信。
 
 有关设计的多功能音频卡的驱动程序的详细信息，请参阅[多功能音频设备](multifunction-audio-devices.md)。
 

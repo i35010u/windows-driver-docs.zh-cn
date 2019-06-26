@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 157fe441163e9f04717d801ca16a10c95f93add4
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 3814050045d847fb9aea604baa52e6351470f815
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161481"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364093"
 ---
 # <a name="eulanobutton-xml-element"></a>eulaNoButton XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **EulaNoButton** XML 元素自定义与 DPInst EULA 页上的 do not 接受选项按钮关联的文本。
 

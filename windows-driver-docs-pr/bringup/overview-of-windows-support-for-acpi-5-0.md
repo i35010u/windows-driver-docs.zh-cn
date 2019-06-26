@@ -4,17 +4,17 @@ description: ACPI 5.0 规范支持基于 SoC 的移动平台的运行 Windows 8 
 ms.assetid: BAFBA051-FEDA-469B-9B67-C74D252C84F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3447610232f31d1a61eb6ef5bbc8a8ceae79c6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: daf042596bfd3ec168f9263f8c92b17cd1646f22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337512"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353976"
 ---
 # <a name="overview-of-windows-support-for-acpi-50"></a>针对 ACPI 5.0 的 Windows 支持概述
 
 
-[ACPI 5.0 规范](https://www.uefi.org/specifications)启用支持的基于 SoC 的移动平台的运行 Windows 8 和更高版本，并启用和支持的 Windows Server 2016 及更高版本，但仍支持许多有用的功能中引入的Windows 的早期版本。 此设计指南将定向到专门适用于 SoC 基于平台以及与面向 Windows Server 2016 的系统的组成部分 ACPI 5.0 的实施者，并且介绍了在 ACPI 上运行 Windows 中实现特定于 SoC 的功能的最佳做法这些平台。
+[ACPI 5.0 规范](https://uefi.org/specifications)启用支持的基于 SoC 的移动平台的运行 Windows 8 和更高版本，并启用和支持的 Windows Server 2016 及更高版本，但仍支持许多有用的功能中引入的Windows 的早期版本。 此设计指南将定向到专门适用于 SoC 基于平台以及与面向 Windows Server 2016 的系统的组成部分 ACPI 5.0 的实施者，并且介绍了在 ACPI 上运行 Windows 中实现特定于 SoC 的功能的最佳做法这些平台。
 
 ## <a name="scope"></a>范围
 
@@ -26,7 +26,7 @@ ms.locfileid: "63337512"
 ## <a name="firmware-revision-support"></a>固件修订版本支持
 
 
-Windows 支持基于固件修订[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+Windows 支持基于固件修订[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 **请注意**  Windows 支持 ACPI 5.0 规范中定义的功能的子集。 Windows 不具有显式签入被更高版本的固件修订。 Windows 将支持符合 ACPI 规范的更高版本的修订此固件包含必要的支持，如果此设计指南中所述的固件。
 
@@ -53,7 +53,7 @@ Windows 支持基于固件修订[ACPI 5.0 规范](https://www.uefi.org/specifica
 </tr>
 <tr class="even">
 <td><p><a href="hardware-requirements-for-soc-based-platforms.md" data-raw-source="[Hardware requirements for SoC-based platforms](hardware-requirements-for-soc-based-platforms.md)">SoC 基于平台的硬件要求</a></p></td>
-<td><p><a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 规范</a>引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。</p></td>
+<td><p><a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 规范</a>引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="acpi-namespace-hierarchy.md" data-raw-source="[ACPI namespace hierarchy](acpi-namespace-hierarchy.md)">ACPI 命名空间层次结构</a></p></td>
@@ -61,7 +61,7 @@ Windows 支持基于固件修订[ACPI 5.0 规范](https://www.uefi.org/specifica
 </tr>
 <tr class="even">
 <td><p><a href="microsoft-asl-compiler.md" data-raw-source="[Microsoft ASL compiler](microsoft-asl-compiler.md)">Microsoft ASL 编译器</a></p></td>
-<td><p>5.0 版本的 Microsoft ACPI 源语言 (ASL) 编译器支持高级配置和电源接口规范，修订版本 5.0 中的功能 (<a href="https://www.uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://www.uefi.org/specifications)">ACPI 5.0 规范</a>)。 使用 Windows Driver Kit (WDK) 8.1 分发 ASL 编译器。</p></td>
+<td><p>5\.0 版本的 Microsoft ACPI 源语言 (ASL) 编译器支持高级配置和电源接口规范，修订版本 5.0 中的功能 (<a href="https://uefi.org/specifications" data-raw-source="[ACPI 5.0 specification](https://uefi.org/specifications)">ACPI 5.0 规范</a>)。 使用 Windows Driver Kit (WDK) 8.1 分发 ASL 编译器。</p></td>
 </tr>
 </tbody>
 </table>

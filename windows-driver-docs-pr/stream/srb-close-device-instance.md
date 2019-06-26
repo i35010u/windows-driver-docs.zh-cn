@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7908f944c2963d06457925f344c4f3456f2bb3ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87bde33d8a9fbbe7486d18e225bace5157806659
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382092"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358408"
 ---
 # <a name="srbclosedeviceinstance"></a>SRB\_关闭\_设备\_实例
 
@@ -42,7 +42,7 @@ ms.locfileid: "63382092"
 
 ### <a name="comments"></a>备注
 
-大多数适配器不支持多个实例，因此，在这种情况下**FilterInstanceExtensionSize**字段中[ **HW\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff559682)结构应设置为 0，且应永远不会收到此命令。
+大多数适配器不支持多个实例，因此，在这种情况下**FilterInstanceExtensionSize**字段中[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构应设置为 0，且应永远不会收到此命令。
 
  
 

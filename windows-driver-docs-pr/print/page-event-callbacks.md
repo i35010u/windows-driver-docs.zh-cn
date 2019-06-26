@@ -11,12 +11,12 @@ keywords:
 - 事件的回调 WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c262a174865348acecc70f36c614c065aa2731bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eba6807d721e6a537638c97ef38dd3f911c7e5e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345276"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360717"
 ---
 # <a name="page-event-callbacks"></a>页面事件回调
 
@@ -30,7 +30,7 @@ ms.locfileid: "63345276"
 
 -   如果应用程序创建自定义的页面 CPSUI 不提供，它必须提供对话框过程。 有关详细信息，请参阅[对话框框过程和 CPSUI](dialog-box-procedures-and-cpsui.md)。
 
-CPSUI 应用程序的页面事件回调的地址在它调用时都提供 CPSUI [ **ComPropSheet** ](https://msdn.microsoft.com/library/windows/hardware/ff546207)函数。
+CPSUI 应用程序的页面事件回调的地址在它调用时都提供 CPSUI [ **ComPropSheet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/nc-compstui-pfncompropsheet)函数。
 
  
 

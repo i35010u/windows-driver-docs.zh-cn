@@ -4,12 +4,12 @@ description: 在 Windows Vista 应用程序和旧版驱动程序之间进行的�
 ms.assetid: 0acb2ca3-6ac6-441d-a12d-446ae5b70295
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ea897f1a5be214671057a2fbdb26fe1db4e132
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57e16fa6d760462f47e8e4dbdadeb83b8f6352ac
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360859"
 ---
 # <a name="data-transfer-between-windows-vista-application-and-legacy-driver"></a>在 Windows Vista 应用程序和旧版驱动程序之间进行的数据传输
 
@@ -22,7 +22,7 @@ WIA 服务中的旧回调对象旧传输消息和数据将转换为 Windows Vist
 
 Windows Vista 应用程序仅需要 TYMED\_文件和 TYMED\_多页\_文件，这样的兼容性层负责确保该 TYMED\_回调和 TYMED\_多页\_回调不公开到 Windows Vista 应用程序从旧驱动程序。
 
-实现兼容性层的此部分的最简单方法是始终调用该旧驱动程序带有 TYMED\_文件和 TYMED\_多页\_文件集。 执行此操作的缺点是，该驱动程序将始终不得不扫描整个图像之前的数据无法写回到应用程序的流。 因此，兼容性层使用 TYMED\_回调时 Windows Vista 应用程序请求的格式扫描**WiaImgFmt\_BMP** ( [ **WIA\_IPA\_格式**](https://msdn.microsoft.com/library/windows/hardware/ff551553)属性设置为**WiaImgFmt\_BMP)**。 这使编写数据返回外通过带外的兼容性层。
+实现兼容性层的此部分的最简单方法是始终调用该旧驱动程序带有 TYMED\_文件和 TYMED\_多页\_文件集。 执行此操作的缺点是，该驱动程序将始终不得不扫描整个图像之前的数据无法写回到应用程序的流。 因此，兼容性层使用 TYMED\_回调时 Windows Vista 应用程序请求的格式扫描**WiaImgFmt\_BMP** ( [ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)属性设置为**WiaImgFmt\_BMP)** 。 这使编写数据返回外通过带外的兼容性层。
 
 但是，旧驱动程序不支持**WiaImgFmt\_BMP**，但**WiaImgFmt\_MEMORYBMP**为 TYMED\_回调。 因此，转换回调对象必须创建 BMP 文件标头并重新写入此文件标头也在应用程序。 有时这很容易，如当 BMP 文件标头可以直接从构建 BMP 信息标头。 某些情况下但是 BMP 信息标头的高度设置为 0。 在这种情况下，WIA 兼容性层必须等待，直到所有数据已都传输后，它才能编写 BMP 文件标头并更新 BMP 信息标头。
 

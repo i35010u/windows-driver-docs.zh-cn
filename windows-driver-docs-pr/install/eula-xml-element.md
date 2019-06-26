@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a68d948e02e536b78e5f5df9225134d20c8a497b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef066a5513cfbeb3d781701fd75dced5916d0290
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380283"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364100"
 ---
 # <a name="eula-xml-element"></a>eula XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://msdn.microsoft.com/windows/hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
 
 **Eula** XML 元素是否包含指定包含自定义文本 DPInst EULA 页面的最终用户许可协议文本文件的两个属性的空 XML 元素。
 

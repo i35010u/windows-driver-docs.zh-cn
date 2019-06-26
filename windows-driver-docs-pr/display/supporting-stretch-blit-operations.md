@@ -7,12 +7,12 @@ keywords:
 - 拉伸位块操作 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4269f3d0ed6899c4af7149c1f949c84692df79e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d07bfc1407ec2c6de09b8a352e296f0b308c309d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361232"
 ---
 # <a name="supporting-stretch-blit-operations"></a>支持拉伸位图传送操作
 
@@ -20,7 +20,7 @@ ms.locfileid: "63350133"
 ## <span id="ddk_supporting_stretch_blit_operations_gg"></span><span id="DDK_SUPPORTING_STRETCH_BLIT_OPERATIONS_GG"></span>
 
 
-驱动程序执行延伸位块的方式取决于其运行所在的平台。 为 Windows 98 / 我的平台，当驱动程序的[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205)函数收到位块请求时，该驱动程序可以计算从中的剪辑矩形区域的扩展系数**rOrigDest**并**rOrigSrc**的成员[ **DD\_BLTDATA** ](https://msdn.microsoft.com/library/windows/hardware/ff550474)结构并执行位块时纳入计算操作。
+驱动程序执行延伸位块的方式取决于其运行所在的平台。 为 Windows 98 / 我的平台，当驱动程序的[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数收到位块请求时，该驱动程序可以计算从中的剪辑矩形区域的扩展系数**rOrigDest**并**rOrigSrc**的成员[ **DD\_BLTDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)结构并执行位块时纳入计算操作。
 
 有关 DirectX 9.0 和更高版本在基于 NT 的操作系统，驱动程序可以计算，并接收 DDBLT 的位块请求时记录扩展系数\_扩展\_标志和 DDBLT\_扩展\_演示文稿\_STRETCHFACTOR 标记中的设置**dwFlags** DD 成员\_BLTDATA。 该驱动程序计算中的剪辑源和目标矩形区域的延伸因子**rSrc**并**bltFX**分别的 DD 成员\_与 DDBLTBLTDATA\_扩展\_演示文稿\_STRETCHFACTOR 集。 请注意，驱动程序必须从 DDBLTFX 结构中的以下成员获取未剪辑的目标矩形区域**bltFX**，并不使用中的信息**rDest**成员。
 

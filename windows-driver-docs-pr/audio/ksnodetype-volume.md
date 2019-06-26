@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 502b87d2ffdf8104fe17720f11920f404ebaa143
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: feb4a582311c86625216a380c198a6d0915d7d75
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333221"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359008"
 ---
 # <a name="ksnodetypevolume"></a>KSNODETYPE\_卷
 
@@ -27,7 +27,7 @@ ms.locfileid: "63333221"
 
 KSNODETYPE\_卷节点表示的卷 （收益或衰减） 控件。 卷在控件有一个输入的流和一个输出流;两个流的每个具有相同的数据格式。 它可以应用衰减 （种数量缩减） 或提升 （增加卷） 到流。 此外，可以选择性地支持反转信号。
 
-有关多渠道卷节点的信息，请参阅[公开多通道节点](https://msdn.microsoft.com/library/windows/hardware/ff536380)。
+有关多渠道卷节点的信息，请参阅[公开多通道节点](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)。
 
 KSNODETYPE\_卷节点应支持以下必需的属性：
 

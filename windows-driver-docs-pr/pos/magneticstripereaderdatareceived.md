@@ -4,12 +4,12 @@ description: MagneticStripeReaderDataReceived 事件引发后的成功磁条阅�
 ms.assetid: 5074669c-3914-4d15-983b-d979c7f88b21
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eab2897ea3ef584edc4224118d951e8fa23fd915
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2bc54dbb622efcc825566822ad88687b07a423d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349323"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363381"
 ---
 # <a name="magneticstripereaderdatareceived"></a>MagneticStripeReaderDataReceived
 
@@ -54,11 +54,11 @@ typedef struct _MSR_DATA_RECEIVED {
 |---|---|
 | 0x00000008                                                          | **事件类型 = PosEventType::MagneticStripeReaderDataReceived**                                                                       |
 | UINT32                                                              | **DataLength** = sizeof(**PosEventDataHeader**) + sizeof(**MSR\_DATA\_RECEIVED**)                                                     |
-| 32-bit MsrCardType                                                  | [MsrCardType](https://msdn.microsoft.com/library/windows/hardware/dn772167)                                                                                                        |
-| 无符号字符型                                                       | **Track1EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)是**MsrDataEncryption\_None**。 |
-| 无符号字符型                                                       | **Track2EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)是**MsrDataEncryption\_None**。 |
-| 无符号字符型                                                       | **Track3EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)是**MsrDataEncryption\_None**。 |
-| 无符号字符型                                                       | **Track4EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://msdn.microsoft.com/library/windows/hardware/dn772169)是**MsrDataEncryption\_None**。 |
+| 32-bit MsrCardType                                                  | [MsrCardType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrcardtype)                                                                                                        |
+| 无符号字符型                                                       | **Track1EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)是**MsrDataEncryption\_None**。 |
+| 无符号字符型                                                       | **Track2EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)是**MsrDataEncryption\_None**。 |
+| 无符号字符型                                                       | **Track3EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)是**MsrDataEncryption\_None**。 |
+| 无符号字符型                                                       | **Track4EncryptedDataLength** -将始终为零 (0)，如果[MsrDataEncryption](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicedriverinterface/ne-pointofservicedriverinterface-_msrdataencryption)是**MsrDataEncryption\_None**。 |
 | 无符号 char \[MSR\_跟踪\_大小\]                                  | **Track1EncryptedDataLength**加密的跟踪 1 数据的字节                                                                         |
 | 无符号 char \[MSR\_跟踪\_大小\]                                  | **Track2EncryptedDataLength**加密的跟踪 2 数据的字节                                                                         |
 | 无符号 char \[MSR\_跟踪\_大小\]                                  | **Track3EncryptedDataLength**加密的跟踪 3 数据的字节                                                                         |

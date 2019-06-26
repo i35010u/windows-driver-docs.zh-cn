@@ -9,17 +9,17 @@ keywords:
 - 分析的打印票证对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce0d061497ef14d0589dc76db55bfd98f887995b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5144289f05eba100bc3161a328f028386ddace13
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351890"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363982"
 ---
 # <a name="print-ticket-parsing"></a>打印票证分析
 
 
-打印票证已合并为当前的文档部件后，打印驱动程序筛选器必须分析内容，以查找应用于筛选器的设置。 方法[IPrintCoreHelper 接口](https://msdn.microsoft.com/library/windows/hardware/ff552960)可以打印驱动程序筛选器模块中用于帮助分析的打印票证元素。 从打印票证中提取了打印票证元素后，他们可以集成到筛选器模块函数。 筛选器模块中所述[XPS 筛选器管道](xpsdrv-printer-driver.md)部分。
+打印票证已合并为当前的文档部件后，打印驱动程序筛选器必须分析内容，以查找应用于筛选器的设置。 方法[IPrintCoreHelper 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)可以打印驱动程序筛选器模块中用于帮助分析的打印票证元素。 从打印票证中提取了打印票证元素后，他们可以集成到筛选器模块函数。 筛选器模块中所述[XPS 筛选器管道](xpsdrv-printer-driver.md)部分。
 
  
 

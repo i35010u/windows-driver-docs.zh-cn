@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e56ce477e184f0fb631d8a9ed4910842803fb878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09901e5f697dd8749600685cd57d22c8ae21fcb6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367301"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361484"
 ---
 # <a name="bug-check-0xfc-attemptedexecuteofnoexecutememory"></a>Bug 检查 0xFC：尝试\_EXECUTE\_OF\_NOEXECUTE\_内存
 
@@ -26,7 +26,7 @@ ms.locfileid: "63367301"
 已尝试\_EXECUTE\_OF\_NOEXECUTE\_内存错误检查的值为 0x000000FC。 这表示尝试执行不可执行的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="attemptedexecuteofnoexecutememory-parameters"></a>尝试\_EXECUTE\_OF\_NOEXECUTE\_内存参数

@@ -4,12 +4,12 @@ description: 端口类音频驱动程序参考
 ms.assetid: ce68e3fd-9d7e-4d9e-b30a-09c07a3bb805
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c811b3ba906f962f082011a98f5e7ebdfde7f4c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4a92558cb07b090cd0562528c6d000a82710a5b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362567"
 ---
 # <a name="port-class-audio-driver-reference"></a>端口类音频驱动程序参考
 
@@ -23,7 +23,7 @@ ms.locfileid: "63328803"
 
 -   接口，这些端口和微型端口驱动程序用于相互通信。
 
-有关这些版本的操作系统支持的各种 PortCls 函数和接口的列表，请参阅[PortCls 支持的操作系统](https://msdn.microsoft.com/library/windows/hardware/ff537762)。
+有关这些版本的操作系统支持的各种 PortCls 函数和接口的列表，请参阅[PortCls 支持的操作系统](https://docs.microsoft.com/windows-hardware/drivers/audio/portcls-support-by-operating-system)。
 
 本部分介绍以下主题：
 
@@ -43,7 +43,7 @@ ms.locfileid: "63328803"
 
 [音频的电源管理界面](audio-power-management-interfaces.md)
 
-[音频端口类结构](https://msdn.microsoft.com/library/windows/hardware/ff536209)
+[音频端口类结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/)
 
 [宏的已过时的函数的定义](macro-definitions-for-obsolete-functions.md)
 

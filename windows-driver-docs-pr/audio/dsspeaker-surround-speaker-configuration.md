@@ -6,12 +6,12 @@ keywords:
 - DSSPEAKER_SURROUND 扬声器配置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0859387180b6abd258c5a61b4fad154c84c584ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f34989882814b2cf718cfedb39c57b13079cb884
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333720"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360081"
 ---
 # <a name="dsspeakersurround-speaker-configuration"></a>DSSPEAKER\_环绕扬声器配置
 
@@ -29,9 +29,9 @@ ms.locfileid: "63333720"
 
 DirectSound 使用以下算法来配置用于环绕模式的音频系统：
 
-1.  DirectSound 首先要求驱动程序通过发送进入环绕演讲者模式[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)集属性请求到驱动程序的 DAC 节点 （或 3D 节点是否有任何 DAC 节点）。 (请参阅[ **KSNODETYPE\_DAC** ](https://msdn.microsoft.com/library/windows/hardware/ff537158)并[ **KSNODETYPE\_3D\_效果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)。)[ **KSAUDIO\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537083)结构，此属性请求附带指定 KSAUDIO\_演讲者\_外侧代码扬声器配置。 如果请求成功，音频设备将路由到四个模拟输出直接连接的左、 右、 居中，且返回发言人的四个通道。
+1.  DirectSound 首先要求驱动程序通过发送进入环绕演讲者模式[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)集属性请求到驱动程序的 DAC 节点 （或 3D 节点是否有任何 DAC 节点）。 (请参阅[ **KSNODETYPE\_DAC** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac)并[ **KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)。)[ **KSAUDIO\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)结构，此属性请求附带指定 KSAUDIO\_演讲者\_外侧代码扬声器配置。 如果请求成功，音频设备将路由到四个模拟输出直接连接的左、 右、 居中，且返回发言人的四个通道。
 
-2.  如果该操作失败，DirectSound 要求驱动程序在立体声演讲者模式中配置设备并启用其[ **KSNODETYPE\_PROLOGIC\_编码器**](https://msdn.microsoft.com/library/windows/hardware/ff537187)节点，如果有的话。 如果成功，设备将应用程序中对它以数字或模拟形式输出的环绕声编码的立体声信号转换的 4 个通道流。 （硬件应执行混合的流的流组织到设备的各种 mixer pin 后的编码。）用户可以连接到外部解码器转换到的输出到四个频道编码的信号左、 右、 居中，，并返回发言人的设备的立体声输出。
+2.  如果该操作失败，DirectSound 要求驱动程序在立体声演讲者模式中配置设备并启用其[ **KSNODETYPE\_PROLOGIC\_编码器**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-prologic-encoder)节点，如果有的话。 如果成功，设备将应用程序中对它以数字或模拟形式输出的环绕声编码的立体声信号转换的 4 个通道流。 （硬件应执行混合的流的流组织到设备的各种 mixer pin 后的编码。）用户可以连接到外部解码器转换到的输出到四个频道编码的信号左、 右、 居中，，并返回发言人的设备的立体声输出。
 
 3.  如果失败，DirectSound 使 KSNODETYPE\_PROLOGIC\_中 KMixer 编码器节点。 （设备已在上一步的立体声模式。）同样，由设备输出的立体声信号可以提供给外部解码器。
 
@@ -39,7 +39,7 @@ DirectSound 使用以下算法来配置用于环绕模式的音频系统：
 
 在以上示例中 (3)，应用程序应避免使用其输出流的任何硬件缓冲区。 请注意 KMixer 混合编码组合以生成环绕立体声流前使用所有其输入的流。 但是，输入硬件 mixer pin 的任何流中使用编码的立体声硬件混合从 KMixer，会环绕声音频质量的降低时进行解码。 应用程序可以避免上述情况使用仅软件缓冲区。
 
-已由 KSNODETYPE 环绕声编码的立体声流\_PROLOGIC\_编码器节点可以通过解码到四个渠道 （左侧，右、 居中，和备份） [ **KSNODETYPE\_PROLOGIC\_解码器**](https://msdn.microsoft.com/library/windows/hardware/ff537185)节点。
+已由 KSNODETYPE 环绕声编码的立体声流\_PROLOGIC\_编码器节点可以通过解码到四个渠道 （左侧，右、 居中，和备份） [ **KSNODETYPE\_PROLOGIC\_解码器**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-prologic-decoder)节点。
 
  
 

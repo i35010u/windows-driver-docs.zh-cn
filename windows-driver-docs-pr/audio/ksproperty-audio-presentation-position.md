@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d7b41adfc5bc3356225ac415f9dce61f1c4ab7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52857e0fe55e700bb224ea28f4aa4aff5a6f2de1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332945"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360587"
 ---
 # <a name="kspropertyaudiopresentationposition"></a>KSPROPERTY\_音频\_演示文稿\_位置
 
@@ -51,7 +51,7 @@ KSPROPERTY\_音频\_演示文稿\_属性请求检索结构，它指定要呈现�
 <td align="left"><p>否</p></td>
 <td align="left"><p>通过 Pin 实例的节点</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/hh450865" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450865)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +88,7 @@ KSPROPERTY\_音频\_演示文稿\_位置属性请求将返回状态\_成功以�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSAUDIO\_PRESENTATION\_POSITION**](https://msdn.microsoft.com/library/windows/hardware/hh450865)
+[**KSAUDIO\_PRESENTATION\_POSITION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_presentation_position)
 
  
 

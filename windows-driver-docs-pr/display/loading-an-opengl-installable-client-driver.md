@@ -9,19 +9,19 @@ keywords:
 - 可安装的客户端驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338c0d0896a789b659c17d4a5a4b5c0a5941e829
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab3877fbea6256eba7fde292fc43ec5147c450fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347561"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360907"
 ---
 # <a name="loading-an-opengl-installable-client-driver"></a>加载 OpenGL 可安装客户端驱动程序
 
 
 OpenGL 运行时访问注册表，以确定哪个 OpenGL 可安装的客户端驱动程序 (ICD) 加载。 若要加载 OpenGL ICD，OpenGL 运行时：
 
--   确定名称、 版本和标志与相关联的 OpenGL ICD 通过调用[ **D3DKMTQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff547100)函数和 KMTQAITYPE\_UMOPENGLINFO 值中设置**类型**的成员[ **D3DKMT\_QUERYADAPTERINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff548203)结构*pData*参数指向。
+-   确定名称、 版本和标志与相关联的 OpenGL ICD 通过调用[ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数和 KMTQAITYPE\_UMOPENGLINFO 值中设置**类型**的成员[ **D3DKMT\_QUERYADAPTERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)结构*pData*参数指向。
 
 -   检查 OpenGL ICD 的版本号， **D3DKMTQueryAdapterInfo**返回验证 OpenGL ICD 的版本。
 
@@ -32,7 +32,7 @@ OpenGL 运行时访问注册表，以确定哪个 OpenGL 可安装的客户端�
 
      
 
-若要查找的 OpenGL ICD，名称[ **D3DKMTQueryAdapterInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff547100)注册表中搜索以下项中：
+若要查找的 OpenGL ICD，名称[ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)注册表中搜索以下项中：
 
 ```registry
 HKLM/System/CurrentControlSet/Control/Class/{Adapter GUID}/0000/

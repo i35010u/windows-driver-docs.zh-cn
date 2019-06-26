@@ -13,12 +13,12 @@ keywords:
 - Dmu 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a58619bd7d4e2f7789888a519c48241854aa0275
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2194a22d2540aeac8d0c89890d879bb2a63ff2e2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333792"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359052"
 ---
 # <a name="directmusic-ddi-overview"></a>DirectMusic DDI 概述
 
@@ -32,15 +32,15 @@ ms.locfileid: "63333792"
 
 DirectMusic 使用控件用户模式下合成器的以下用户模式接口，并与内核流式处理驱动程序进行通信：
 
-[IDirectMusicSynth](https://msdn.microsoft.com/library/windows/hardware/ff536519)
+[IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)
 
 这是用户模式接口，用于实现自定义软件 synths。
 
-[IDirectMusicSynthSink](https://msdn.microsoft.com/library/windows/hardware/ff536520)
+[IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)
 
 这是在 Microsoft DirectX 6.1 和 DirectX 7 中实现自定义批接收器的用户模式接口。 DirectX 8 及更高版本，DirectMusic 始终使用其专用批接收器具有用户模式下合成器，并没有公共接口支持为用户模式下批接收器。
 
-[IKsControl](https://msdn.microsoft.com/library/windows/hardware/ff559766)
+[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol)
 
 DirectMusic 使用此接口从 DirectX 6.1 及更高版本的用户模式下访问内核流式处理驱动程序的属性。
 
@@ -48,17 +48,17 @@ DirectMusic 使用此接口从 DirectX 6.1 及更高版本的用户模式下访�
 
 自定义 Dmu 微型端口驱动程序使用以下内核模式接口：
 
-[IAllocatorMXF](https://msdn.microsoft.com/library/windows/hardware/ff536491)
+[IAllocatorMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iallocatormxf)
 
-[IMiniportDMus](https://msdn.microsoft.com/library/windows/hardware/ff536699)
+[IMiniportDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iminiportdmus)
 
-[ISynthSinkDMus](https://msdn.microsoft.com/library/windows/hardware/ff537011)
+[ISynthSinkDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-isynthsinkdmus)
 
-[IMXF](https://msdn.microsoft.com/library/windows/hardware/ff536782)
+[IMXF](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imxf)
 
-[IMasterClock](https://msdn.microsoft.com/library/windows/hardware/ff536696)
+[IMasterClock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-imasterclock)
 
-[IPortDMus](https://msdn.microsoft.com/library/windows/hardware/ff536879)
+[IPortDMus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dmusicks/nn-dmusicks-iportdmus)
 
 Dmu 微型端口驱动程序实现**IMiniportDMus**， **ISynthSinkDMus**，并**IMXF**接口。 Dmu 端口驱动程序实现**IAllocatorMXF**， **IMasterClock**，并**IPortDMus**接口并将其公开到微型端口驱动程序。
 

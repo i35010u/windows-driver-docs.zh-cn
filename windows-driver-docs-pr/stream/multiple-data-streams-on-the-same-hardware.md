@@ -1,26 +1,26 @@
 ---
-title: 在同一硬件上的多个数据流
-description: 在同一硬件上的多个数据流
+title: 同一硬件上的多个数据流
+description: 同一硬件上的多个数据流
 ms.assetid: 23133022-6d00-44ad-8c0d-24715204cacc
 keywords:
 - 多个数据流的 WDK DVD 解码器
 - WDK DVD 解码器支持流号
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b661dfdc1e98801461d8688a4bd20bda5efcac2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a677d867fc828438dbc0c7c9cb58b396156927e7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56541335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363281"
 ---
-# <a name="multiple-data-streams-on-the-same-hardware"></a>在同一硬件上的多个数据流
+# <a name="multiple-data-streams-on-the-same-hardware"></a>同一硬件上的多个数据流
 
 
 
 
 
-许多解码器有几个使用相同的解码器硬件片段的流。 对于这些设备，不需要单独对每个流执行的密钥协商。 若要此信息指示给 DVD 解码器模型，使用[ **KS\_DVDCOPY\_设置\_复制\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567639)属性。 当此属性上发出 get 操作时，解码器可能会响应以下任一内容：
+许多解码器有几个使用相同的解码器硬件片段的流。 对于这些设备，不需要单独对每个流执行的密钥协商。 若要此信息指示给 DVD 解码器模型，使用[ **KS\_DVDCOPY\_设置\_复制\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)属性。 当此属性上发出 get 操作时，解码器可能会响应以下任一内容：
 
 KS\_DVDCOPYSTATE\_身份验证\_不\_必需
 

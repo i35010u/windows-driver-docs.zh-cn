@@ -10,12 +10,12 @@ keywords:
 - Intel 高清晰度音频规范
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a6efb692b2b3697196b953f3e8c0faa4fe32c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3af5fb529b92c124066bf34bb246c64ce639a697
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333531"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359964"
 ---
 # <a name="high-definition-audio-ddi"></a>高清音频 DDI
 
@@ -32,11 +32,11 @@ HD Audio 总线驱动程序实现高清晰度音频设备驱动程序接口 (DDI
 
 在 Windows Server 2003 和 Windows XP 上运行的 HD Audio 总线驱动程序版本支持 HD 音频 DDI 的三个变的体：
 
--   由定义 DDI [ **HDAUDIO\_总线\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff536413)结构。 此 DDI 等同于 HD 音频 DDI Windows Vista 中。
+-   由定义 DDI [ **HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)结构。 此 DDI 等同于 HD 音频 DDI Windows Vista 中。
 
--   由定义 DDI [ **HDAUDIO\_总线\_接口\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)结构。 此 DDI 是在 Windows Vista 和更高版本的 Windows 中可用。
+-   由定义 DDI [ **HDAUDIO\_总线\_接口\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)结构。 此 DDI 是在 Windows Vista 和更高版本的 Windows 中可用。
 
--   由定义 DDI [ **HDAUDIO\_总线\_接口\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)结构。 此 DDI 现已推出 Windows XP 和更高版本的 Windows。
+-   由定义 DDI [ **HDAUDIO\_总线\_接口\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)结构。 此 DDI 现已推出 Windows XP 和更高版本的 Windows。
 
 三个 DDIs 之间的差异很小的和中讨论[差异之间 HD 音频 DDI 版本](differences-between-the-hd-audio-ddi-versions.md)。
 

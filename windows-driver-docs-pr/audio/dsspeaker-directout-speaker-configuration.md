@@ -6,12 +6,12 @@ keywords:
 - DSSPEAKER_DIRECTOUT 扬声器配置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 096dfcfbd3f8f0bf9f525c688802381daaab09eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32d327fafff9fe7794d3d9ac15025b10b2325305
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360084"
 ---
 # <a name="dsspeakerdirectout-speaker-configuration"></a>DSSPEAKER\_DIRECTOUT 扬声器配置
 
@@ -55,11 +55,11 @@ ms.locfileid: "63333718"
 
 对于此类型的原始音频数据，扬声器位置无意义的并分配扬声器的位置输入或输出流可能会导致不需要的副作用。 例如，如 KMixer 组件可能不恰当地介入，通过将应用特定于说话人的效果，如 3D 虚拟化或 Dolby Surround Pro 逻辑编码到流。 请注意原始数据通道数不受通道掩码中比特数。
 
-即使设备设计不是专门用于音频编辑通常应接受[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)设置属性请求以更改其扬声器配置到 KSAUDIO\_演讲者\_DIRECTOUT。 一般情况下，设备应避免失败请求，除非它可以以某种方式来验证其输出连接到扬声器和不能用作外部的任何其他目的 （例如，外部混音器的输入）。
+即使设备设计不是专门用于音频编辑通常应接受[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)设置属性请求以更改其扬声器配置到 KSAUDIO\_演讲者\_DIRECTOUT。 一般情况下，设备应避免失败请求，除非它可以以某种方式来验证其输出连接到扬声器和不能用作外部的任何其他目的 （例如，外部混音器的输入）。
 
-使用直接扩展模式下的应用程序通常专为特定硬件设备。 这允许应用程序事先知道哪些直接扩展数据格式以设备支持，包括通道以及应如何解释这些信道中的数据的数量。 这一知识是必需的因为当应用程序调用**IDirectSound::GetSpeakerConfig**中直接扩展模式配置设备，设备只是确定它是在此模式下; 它提供了无需额外有关它在直接扩展模式下支持的流格式中的通道数信息。 (此信息可能会获取，但是，通过发送[ **KSPROPERTY\_音频\_混合\_级别\_CAPS** ](https://msdn.microsoft.com/library/windows/hardware/ff537291)属性 get 请求到在设备的 mixer pin; supermixer 节点请参阅[DirectSound 节点排序要求](directsound-node-ordering-requirements.md)。)
+使用直接扩展模式下的应用程序通常专为特定硬件设备。 这允许应用程序事先知道哪些直接扩展数据格式以设备支持，包括通道以及应如何解释这些信道中的数据的数量。 这一知识是必需的因为当应用程序调用**IDirectSound::GetSpeakerConfig**中直接扩展模式配置设备，设备只是确定它是在此模式下; 它提供了无需额外有关它在直接扩展模式下支持的流格式中的通道数信息。 (此信息可能会获取，但是，通过发送[ **KSPROPERTY\_音频\_混合\_级别\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)属性 get 请求到在设备的 mixer pin; supermixer 节点请参阅[DirectSound 节点排序要求](directsound-node-ordering-requirements.md)。)
 
-指定直接扩展流波形格式时，应用程序应设置**dwChannelMask**的成员[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构的值KSAUDIO\_演讲者\_DIRECTOUT，为零。 将通道掩码设置为零指示定义的没有扬声器位置。 如往常一样中, 指定的流中的通道数**Format.nChannels**成员。
+指定直接扩展流波形格式时，应用程序应设置**dwChannelMask**的成员[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构的值KSAUDIO\_演讲者\_DIRECTOUT，为零。 将通道掩码设置为零指示定义的没有扬声器位置。 如往常一样中, 指定的流中的通道数**Format.nChannels**成员。
 
 硬件供应商可以支持 DirectSound 硬件加速，其设备配置在直接扩展模式下时的选择。 DirectSound 应用程序可以播放直接扩展流通过其中一个设备的混合的 pin，如果有可用。 一旦已用尽所有可用的硬件 pin 实例，任何新流将通过 KMixer 相反。
 
@@ -79,7 +79,7 @@ ms.locfileid: "63333718"
 
 -   配置目标音频设备 （这不一定是应用程序用于编辑流的设备） 在通过调用立体声模式下**SetSpeakerConfig**与 DSSPEAKER\_立体声。
 
--   更改**dwChannelMask**中播放流[ **WAVEFORMATEXTENSIBLE** ](https://msdn.microsoft.com/library/windows/hardware/ff538802)结构 KSAUDIO\_演讲者\_立体声但离开**Format.nChannels**设置为 24，这是流中的通道的总数。
+-   更改**dwChannelMask**中播放流[ **WAVEFORMATEXTENSIBLE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible)结构 KSAUDIO\_演讲者\_立体声但离开**Format.nChannels**设置为 24，这是流中的通道的总数。
 
 KMixer 混合使用仅的立体声通道播放流的通道掩码中所述，并丢弃其余的 22 通道，其中包含的原始数据。 请记住对 DirectSound 扬声器配置设置进行任何更改不太可能才会生效，直到当前 DirectSound 对象被销毁并创建另一个 (请参阅[应用扬声器配置设置](applying-speaker-configuration-settings.md))。
 

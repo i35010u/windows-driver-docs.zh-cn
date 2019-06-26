@@ -4,12 +4,12 @@ description: 移动运营商通知方案
 ms.assetid: 3749d9ab-3dff-4216-a23b-0e75c04d9a22
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e3f15beb3013c2628437c57a1c38464a75a1d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a85da5a2d53187e5d4adfbb70d81785bcab55c5c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391972"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364969"
 ---
 # <a name="mobile-operator-notification-scenarios"></a>移动运营商通知方案
 
@@ -60,7 +60,7 @@ Mno 帐户预配的元数据中指定管理的 SMS 和 USSD 通知的自定义�
 
 Windows 8、 Windows 8.1 和 Windows 10 提供了一个 USSD 的 API，这是隐藏大部分的详细信息，以简化应用程序开发的基础 USSD 协议的抽象。 在收到匹配预配的网络启动 USSD 后筛选规则， [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)触发事件和相应的后台工作项可以通过 USSD 会话使用通信USSD API。
 
-有关 USSD Api 的详细信息，请参阅[ **Windows.Networking.NetworkOperators** ](https://msdn.microsoft.com/library/windows/apps/br241148)命名空间。
+有关 USSD Api 的详细信息，请参阅[ **Windows.Networking.NetworkOperators** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)命名空间。
 
 ## <a name="span-idtriglocspanspan-idtriglocspantriggering-data-usage-and-roaming-notifications"></a><span id="trigloc"></span><span id="TRIGLOC"></span>触发数据使用情况和漫游通知
 

@@ -5,12 +5,12 @@ ms.assetid: 76a1181c-974e-472d-ad15-d9c6208aa2b4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 607939af39974b19d3021c8644032d65ecb90c47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ff9595dfb399a370d3c976febb8440cc20c9a45
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354599"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360765"
 ---
 # <a name="oidwwanpinlist"></a>OID\_WWAN\_PIN\_LIST
 
@@ -19,12 +19,12 @@ OID\_WWAN\_PIN\_列表返回所有不同类型的个人标识号 (Pin) 支持的
 
 不支持组的请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PIN\_列表**](ndis-status-wwan-pin-list.md)状态通知包含[ **NDIS\_WWAN\_PIN\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff567912)结构，以完成查询请求时返回的 Pin 与相应说明的列表。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PIN\_列表**](ndis-status-wwan-pin-list.md)状态通知包含[ **NDIS\_WWAN\_PIN\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)结构，以完成查询请求时返回的 Pin 与相应说明的列表。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN Pin 操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)。
+有关使用此 OID 的详细信息，请参阅[WWAN Pin 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)。
 
 微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询操作，但不是应访问提供程序网络。
 
@@ -57,11 +57,11 @@ OID\_WWAN\_PIN\_列表返回所有不同类型的个人标识号 (Pin) 支持的
 ## <a name="see-also"></a>请参阅
 
 
-[**NDIS\_WWAN\_PIN\_LIST**](https://msdn.microsoft.com/library/windows/hardware/ff567912)
+[**NDIS\_WWAN\_PIN\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
 
 [**NDIS\_STATUS\_WWAN\_PIN\_LIST**](ndis-status-wwan-pin-list.md)
 
-[WWAN 固定操作](https://msdn.microsoft.com/library/windows/hardware/ff559093)
+[WWAN 固定操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)
 
  
 

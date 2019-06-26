@@ -3,12 +3,12 @@ title: 固件 WEG 常见问题解答
 description: 固件 WEG-常见问题 (FAQ)
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fead67ee21c49364b6effe1c03a141e1cd2f22d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8e25e3ac99ca5d43be7cd641770316859248a44
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337610"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364543"
 ---
 # <a name="firmware-weg-frequently-asked-questions-faq"></a>固件 WEG:常见问题 (FAQ)
 
@@ -20,7 +20,7 @@ ms.locfileid: "63337610"
 
 > **答：** 具体而言，对于 Windows 7 建议使用配置文件\#2。 你将需要启用 CSM 并将默认设置为 UEFI 启动回退到旧版启动仅在需要时。 将需要禁用安全启动。
 >
-> Windows 7 不能支持配置\#1。 Windows 7 程序依赖于基本显示 Int10 支持高分辨率图形驱动程序不可用时 (例如，错误检测时，进入睡眠状态转换等)，通过 CSM 满足的依赖项。 如果部分 CSM （启用） 的位置提供 Int10 支持中，可以在 UEFI 模式下启动 Win7。 如果固件将默认为离开 Int10 CSM 启用 UEFI 启动模式，然后 Win7 将在 UEFI 模式下的成功安装。 在 UEFI 模式下安装时，Microsoft 还具有 TPM 2.0 向后移植到 Windows 7 的支持。 有关详细信息，请参阅此知识库文章：[KB2920188](https://support.microsoft.com/kb/2920188)。
+> Windows 7 不能支持配置\#1。 Windows 7 程序依赖于基本显示 Int10 支持高分辨率图形驱动程序不可用时 (例如，错误检测时，进入睡眠状态转换等)，通过 CSM 满足的依赖项。 如果部分 CSM （启用） 的位置提供 Int10 支持中，可以在 UEFI 模式下启动 Win7。 如果固件将默认为离开 Int10 CSM 启用 UEFI 启动模式，然后 Win7 将在 UEFI 模式下的成功安装。 在 UEFI 模式下安装时，Microsoft 还具有 TPM 2.0 向后移植到 Windows 7 的支持。 有关详细信息，请参阅此知识库文章：[KB2920188](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)。
 >
 > Microsoft 建议您应使用配置\#2;不应使用旧的 MBR 启动模式。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63337610"
 
 **问：** 用户正在运行 Windows 7 升级到 Win 10 之前，BIOS/固件切换到 UEFI。
 
-> **答：**\[假设以前在传统 BIOS 启动模式下安装操作系统。\]
+> **答：** \[假设以前在传统 BIOS 启动模式下安装操作系统。\]
 >
 > 如果正在安装 Windows 10 的人员将进行安装。 Windows 安装程序将检测在旧版 MBR BIOS 启动模式下的磁盘，并尝试来相应地安装。 结果可能因系统，启动方法安装介质 （如果自定义）。 但是，可能会收到磁盘格式已与此启动方法不受支持的消息。 如果你收到此消息将轻松格式化磁盘并安装最新。 警告，如果执行格式化该磁盘将**丢失**磁盘上的任何数据。
 >
@@ -112,8 +112,8 @@ ms.locfileid: "63337610"
 
 ## <a name="related-resources"></a>相关资源
 
-[UEFI 固件](https://technet.microsoft.com/library/hh824898)
+[UEFI 固件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))
 
 [Windows 10 规范-Microsoft](https://www.microsoft.com/windows/windows-10-specifications)
 
-[更新 Windows 7 和 Windows Server 2008 R2 中添加对 TPM 2.0 的支持](https://support.microsoft.com/kb/2920188)
+[更新 Windows 7 和 Windows Server 2008 R2 中添加对 TPM 2.0 的支持](https://support.microsoft.com/help/2920188/update-to-add-support-for-tpm-2-0-in-windows-7-and-windows-server-2008)

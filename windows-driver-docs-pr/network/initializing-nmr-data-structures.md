@@ -8,23 +8,23 @@ keywords:
 - 初始化 NMR 数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 372d3fc86532b667967298b51da9ceee76710940
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8a13d3526117e3ffaca5cb0f334d678a00000e9b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324935"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381260"
 ---
 # <a name="initializing-nmr-data-structures"></a>初始化 NMR 数据结构
 
 
 应用程序可以使用注册之前 Winsock Kernel (WSK)[网络模块注册机构 (NMR)](network-module-registrar2.md)，应用程序必须首先初始化以下结构。
 
--   [**NPI\_MODULEID**](https://msdn.microsoft.com/library/windows/hardware/ff568813)
+-   [**NPI\_MODULEID**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))
 
--   [**NPI\_客户端\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff568812)
+-   [**NPI\_客户端\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_client_characteristics)
 
--   [**NPI\_注册\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff568815)中包含[ **NPI\_客户端\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff568812)结构
+-   [**NPI\_注册\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance)中包含[ **NPI\_客户端\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_client_characteristics)结构
 
 只要 WSK 应用程序已注册 NMR，所有这些数据结构必须保持有效且驻留在内存中。
 
@@ -79,7 +79,7 @@ const NPI_CLIENT_CHARACTERISTICS Characteristics =
 };
 ```
 
-WSK 应用程序调用[ **NmrRegisterClient** ](https://msdn.microsoft.com/library/windows/hardware/ff568782)函数向 NMR 注册应用程序。
+WSK 应用程序调用[ **NmrRegisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterclient)函数向 NMR 注册应用程序。
 
 例如：
 

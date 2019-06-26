@@ -11,12 +11,12 @@ keywords:
 - 输出参数引用计数 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d67224669169850ce0047d5a7317364d59035520
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d75ff9b24b96ea6acd2179fe843ff931f9369be1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362527"
 ---
 # <a name="reference-counting-conventions-for-com-objects"></a>COM 对象的引用计数约定
 
@@ -28,19 +28,19 @@ ms.locfileid: "63328903"
 
 ### <a name="span-idreferencecountingoninputparametersspanspan-idreferencecountingoninputparametersspanspan-idreferencecountingoninputparametersspanreference-counting-on-input-parameters"></a><span id="Reference_Counting_on_Input_Parameters"></span><span id="reference_counting_on_input_parameters"></span><span id="REFERENCE_COUNTING_ON_INPUT_PARAMETERS"></span>输入参数的引用计数
 
-当调用方法将对象引用*X*作为输入参数，调用方必须保留自己的引用的对象上调用的持续时间。 此行为很有必要，以确保该方法的对象指针*X*保持有效，直到其返回。 如果该对象*Y*实现此方法需要保留对对象的引用*X*方法应调用此方法返回时，超出[ **AddRef**](https://msdn.microsoft.com/library/windows/desktop/ms691379)对象上*X*在返回之前。 对象时*Y*更高版本使用对象完*X*，则应调用[**发布**](https://msdn.microsoft.com/library/windows/desktop/ms682317)对象上*X*。
+当调用方法将对象引用*X*作为输入参数，调用方必须保留自己的引用的对象上调用的持续时间。 此行为很有必要，以确保该方法的对象指针*X*保持有效，直到其返回。 如果该对象*Y*实现此方法需要保留对对象的引用*X*方法应调用此方法返回时，超出[ **AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)对象上*X*在返回之前。 对象时*Y*更高版本使用对象完*X*，则应调用[**发布**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)对象上*X*。
 
-例如， [ **IServiceGroup::AddMember** ](https://msdn.microsoft.com/library/windows/hardware/ff536996)方法调用[ **AddRef** ](https://msdn.microsoft.com/library/windows/desktop/ms691379)上[IServiceSink](https://msdn.microsoft.com/library/windows/hardware/ff537006)对象，它将添加到其服务组。 补充了此行为[ **IServiceGroup::RemoveMember** ](https://msdn.microsoft.com/library/windows/hardware/ff537001)方法调用[**发布**](https://msdn.microsoft.com/library/windows/desktop/ms682317)上 IServiceSink 对象它从服务组中删除。
+例如， [ **IServiceGroup::AddMember** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-addmember)方法调用[ **AddRef** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)上[IServiceSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iservicesink)对象，它将添加到其服务组。 补充了此行为[ **IServiceGroup::RemoveMember** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iservicegroup-removemember)方法调用[**发布**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)上 IServiceSink 对象它从服务组中删除。
 
 ### <a name="span-idreferencecountingonoutputparametersspanspan-idreferencecountingonoutputparametersspanspan-idreferencecountingonoutputparametersspanreference-counting-on-output-parameters"></a><span id="Reference_Counting_on_Output_Parameters"></span><span id="reference_counting_on_output_parameters"></span><span id="REFERENCE_COUNTING_ON_OUTPUT_PARAMETERS"></span>输出参数的引用计数
 
-将传递给调用方通过输出参数的对象引用的方法应调用[ **AddRef** ](https://msdn.microsoft.com/library/windows/desktop/ms691379)对象上之前它将返回 （或它之前释放其自己的对象引用）。 此行为很有必要，以确保调用方持有从调用返回时的有效引用。 调用方负责调用[**发行**](https://msdn.microsoft.com/library/windows/desktop/ms682317)上使用它完成的对象。
+将传递给调用方通过输出参数的对象引用的方法应调用[ **AddRef** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)对象上之前它将返回 （或它之前释放其自己的对象引用）。 此行为很有必要，以确保调用方持有从调用返回时的有效引用。 调用方负责调用[**发行**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)上使用它完成的对象。
 
-例如， [ **IMiniportWaveCyclic::NewStream** ](https://msdn.microsoft.com/library/windows/hardware/ff536723)方法调用[ **AddRef** ](https://msdn.microsoft.com/library/windows/desktop/ms691379)流、 服务组和 DMA 通道它将输出到调用方 （WaveCyclic 端口驱动程序） 的对象。 调用方负责释放这些引用，当不再需要它们时。 实现**IMiniportWaveCyclic::NewStream**方法，用于显示这种行为，请参阅 Sb16 示例适配器在 Microsoft Windows 驱动程序工具包 (WDK)。
+例如， [ **IMiniportWaveCyclic::NewStream** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclic-newstream)方法调用[ **AddRef** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)流、 服务组和 DMA 通道它将输出到调用方 （WaveCyclic 端口驱动程序） 的对象。 调用方负责释放这些引用，当不再需要它们时。 实现**IMiniportWaveCyclic::NewStream**方法，用于显示这种行为，请参阅 Sb16 示例适配器在 Microsoft Windows 驱动程序工具包 (WDK)。
 
 ### <a name="span-idexceptionstotherulesspanspan-idexceptionstotherulesspanspan-idexceptionstotherulesspanexceptions-to-the-rules"></a><span id="Exceptions_to_the_Rules"></span><span id="exceptions_to_the_rules"></span><span id="EXCEPTIONS_TO_THE_RULES"></span>规则的例外情况
 
-有关此方法执行上的非常规的引用计数的说明及其*DmaChannel*输出参数，请参阅[ **IMiniportWavePci::NewStream**](https://msdn.microsoft.com/library/windows/hardware/ff536735)。
+有关此方法执行上的非常规的引用计数的说明及其*DmaChannel*输出参数，请参阅[ **IMiniportWavePci::NewStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepci-newstream)。
 
  
 

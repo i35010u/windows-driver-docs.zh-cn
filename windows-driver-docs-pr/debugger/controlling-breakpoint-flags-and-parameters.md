@@ -10,12 +10,12 @@ keywords:
 - DEBUG_BREAK_IO
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6484dbad9d33ee3f66a0f219c9d66276b094737
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d6076b76f8db4b8c0f8050fa7730218fb7d60147
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375034"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361449"
 ---
 # <a name="controlling-breakpoint-flags-and-parameters"></a>控制断点标志和参数
 
@@ -25,25 +25,25 @@ ms.locfileid: "63375034"
 
 有多种方法可用于确定有关断点的基本信息：
 
--   [**GetId** ](https://msdn.microsoft.com/library/windows/hardware/ff546827)返回断点 id。
+-   [**GetId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getid)返回断点 id。
 
--   [**GetType** ](https://msdn.microsoft.com/library/windows/hardware/ff549370)返回断点类型 （软件或处理器） 和有效处理器在其设置断点的类型。
+-   [**GetType** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-gettype)返回断点类型 （软件或处理器） 和有效处理器在其设置断点的类型。
 
--   [**GetAdder** ](https://msdn.microsoft.com/library/windows/hardware/ff545576)返回添加了断点的客户端。
+-   [**GetAdder** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getadder)返回添加了断点的客户端。
 
--   [**GetOffset** ](https://msdn.microsoft.com/library/windows/hardware/ff548008)返回断点的地址。
+-   [**GetOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getoffset)返回断点的地址。
 
--   [**GetOffsetExpression** ](https://msdn.microsoft.com/library/windows/hardware/ff548048)返回指定的断点的位置的表达式字符串。
+-   [**GetOffsetExpression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getoffsetexpression)返回指定的断点的位置的表达式字符串。
 
 除了其位置和断点类型，断点具有控制其行为的多个参数。
 
-可以通过各种特定的方法控制断点参数。 此外，大多数参数可能不会查询一起使用[ **GetParameters**](https://msdn.microsoft.com/library/windows/hardware/ff548095)。
+可以通过各种特定的方法控制断点参数。 此外，大多数参数可能不会查询一起使用[ **GetParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getparameters)。
 
 ### <a name="span-idbreakpointflagsspanspan-idbreakpointflagsspanbreakpoint-flags"></a><span id="breakpoint_flags"></span><span id="BREAKPOINT_FLAGS"></span>断点标志
 
 断点标志是一种类型的断点参数。
 
-可以使用查询断点标志[ **GetFlags**](https://msdn.microsoft.com/library/windows/hardware/ff546791)。 可以使用更改[ **AddFlags**](https://msdn.microsoft.com/library/windows/hardware/ff537903)， [ **RemoveFlags**](https://msdn.microsoft.com/library/windows/hardware/ff554504)，或[ **SetFlags**](https://msdn.microsoft.com/library/windows/hardware/ff556703).
+可以使用查询断点标志[ **GetFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getflags)。 可以使用更改[ **AddFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-addflags)， [ **RemoveFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-removeflags)，或[ **SetFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setflags).
 
 断点标志窗体位域。 可在此位字段，以及它们的含义可能标志如下所示：
 
@@ -51,7 +51,7 @@ ms.locfileid: "63375034"
 设置此标志，该断点时，*启用*，将其正常起作用。 未设置此标志，该断点时，*禁用*并且不会产生任何影响。 如果你想要暂时停用断点，则可以删除此标志;然后，它很容易添加此标志，当你想要重新启用此断点时。
 
 <span id="DEBUG_BREAKPOINT_ADDER_ONLY"></span><span id="debug_breakpoint_adder_only"></span>调试\_断点\_ADDER\_仅  
-设置此标志，该断点时，*专用断点*。 此断点是仅对已添加它的客户端可见。 在这种情况下，其他客户端将不能查询所需断点，引擎和引擎将不会发送给其他客户端断点所生成的事件。 所有的回调 (事件和[输出](using-input-and-output.md#output)) 与此断点将只发送到此客户端。 请参阅[ **GetAdder**](https://msdn.microsoft.com/library/windows/hardware/ff545576)。
+设置此标志，该断点时，*专用断点*。 此断点是仅对已添加它的客户端可见。 在这种情况下，其他客户端将不能查询所需断点，引擎和引擎将不会发送给其他客户端断点所生成的事件。 所有的回调 (事件和[输出](using-input-and-output.md#output)) 与此断点将只发送到此客户端。 请参阅[ **GetAdder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getadder)。
 
 <span id="DEBUG_BREAKPOINT_GO_ONLY"></span><span id="debug_breakpoint_go_only"></span>调试\_断点\_转\_仅  
 设置此标志，如果目标是不受限制的执行过程中，将仅会触发断点。 它不会触发如果引擎逐句通过在目标中的说明。
@@ -67,19 +67,19 @@ ms.locfileid: "63375034"
 断点参数还包括：
 
 <span id="Pass_count"></span><span id="pass_count"></span><span id="PASS_COUNT"></span>*传递计数*  
-如果断点有与之关联的传递计数，它不会被激活之前目标已通过断点指定的次数。 可以使用找到最初将设置传递计数[ **GetPassCount**](https://msdn.microsoft.com/library/windows/hardware/ff548104)。 数的次数的剩余激活它之前，该引擎将通过断点可以找到此[ **GetCurrentPassCount**](https://msdn.microsoft.com/library/windows/hardware/ff545769)。 传递计数可以重置为新值通过[ **SetPassCount**](https://msdn.microsoft.com/library/windows/hardware/ff556759)。
+如果断点有与之关联的传递计数，它不会被激活之前目标已通过断点指定的次数。 可以使用找到最初将设置传递计数[ **GetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getpasscount)。 数的次数的剩余激活它之前，该引擎将通过断点可以找到此[ **GetCurrentPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getcurrentpasscount)。 传递计数可以重置为新值通过[ **SetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setpasscount)。
 
 <span id="Match_thread"></span><span id="match_thread"></span><span id="MATCH_THREAD"></span>*匹配线程*  
-如果断点有与之关联的线程，它将被忽略由引擎遇到的任何其他线程时。 可以通过使用找到线程[ **GetMatchThreadId**](https://msdn.microsoft.com/library/windows/hardware/ff547074)，并可通过使用更改[ **SetMatchThreadId**](https://msdn.microsoft.com/library/windows/hardware/ff556735)。
+如果断点有与之关联的线程，它将被忽略由引擎遇到的任何其他线程时。 可以通过使用找到线程[ **GetMatchThreadId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getmatchthreadid)，并可通过使用更改[ **SetMatchThreadId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setmatchthreadid)。
 
 <span id="Command"></span><span id="command"></span><span id="COMMAND"></span>*命令*  
-断点可能有与之关联的命令。 当断点被激活时，执行该命令。 此命令可通过使用[ **GetCommand**](https://msdn.microsoft.com/library/windows/hardware/ff545677)，并可通过使用更改[ **SetCommand**](https://msdn.microsoft.com/library/windows/hardware/ff556632)。
+断点可能有与之关联的命令。 当断点被激活时，执行该命令。 此命令可通过使用[ **GetCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getcommand)，并可通过使用更改[ **SetCommand**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setcommand)。
 
 <span id="Size"></span><span id="size"></span><span id="SIZE"></span>*大小*  
-如果断点处理器断点，它必须具有指定的大小。 这将确定其访问权限将激活该断点的内存块的大小--块的开头是断点的位置。 可以使用找到的大小[ **GetDataParameters**](https://msdn.microsoft.com/library/windows/hardware/ff546557)，并可通过使用更改[ **SetDataParameters**](https://msdn.microsoft.com/library/windows/hardware/ff556655)。
+如果断点处理器断点，它必须具有指定的大小。 这将确定其访问权限将激活该断点的内存块的大小--块的开头是断点的位置。 可以使用找到的大小[ **GetDataParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getdataparameters)，并可通过使用更改[ **SetDataParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setdataparameters)。
 
 <span id="Access_type"></span><span id="access_type"></span><span id="ACCESS_TYPE"></span>*访问类型*  
-如果断点处理器断点，它必须具有访问权限类型。 这可确定将激活该断点的访问权限的类型。 例如，如果目标从读取、 写入，或执行由断点指定的内存，可能会激活该断点。 可以使用找到的访问类型[ **GetDataParameters**](https://msdn.microsoft.com/library/windows/hardware/ff546557)，并可通过使用更改[ **SetDataParameters**](https://msdn.microsoft.com/library/windows/hardware/ff556655)。
+如果断点处理器断点，它必须具有访问权限类型。 这可确定将激活该断点的访问权限的类型。 例如，如果目标从读取、 写入，或执行由断点指定的内存，可能会激活该断点。 可以使用找到的访问类型[ **GetDataParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-getdataparameters)，并可通过使用更改[ **SetDataParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setdataparameters)。
 
 ### <a name="span-idvalidparametersforprocessorbreakpointsspanspan-idvalidparametersforprocessorbreakpointsspanvalid-parameters-for-processor-breakpoints"></a><span id="valid_parameters_for_processor_breakpoints"></span><span id="VALID_PARAMETERS_FOR_PROCESSOR_BREAKPOINTS"></span>有效的参数以处理器断点
 
@@ -92,7 +92,7 @@ ms.locfileid: "63375034"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">ReplTest1</th>
 <th align="left">描述</th>
 </tr>
 </thead>

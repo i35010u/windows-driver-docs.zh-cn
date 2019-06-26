@@ -13,12 +13,12 @@ keywords:
 - supermixer 节点 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4c692927dd1f5a696b07986a453822f903a519d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e719fd4a0a8e033b43db3f29233b074ea5195056
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360136"
 ---
 # <a name="directsound-node-ordering-requirements"></a>DirectSound 节点排序要求
 
@@ -28,17 +28,17 @@ ms.locfileid: "63333776"
 
 DirectSound 2D 或 3D mixer pin 应包含以下一系列节点的节点链：
 
--   卷节点 (请参阅[ **KSNODETYPE\_卷**](https://msdn.microsoft.com/library/windows/hardware/ff537208)。)
+-   卷节点 (请参阅[ **KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)。)
 
--   3D 节点 （此节点是可选的。 请参阅[ **KSNODETYPE\_3D\_效果**](https://msdn.microsoft.com/library/windows/hardware/ff537148)。)
+-   3D 节点 （此节点是可选的。 请参阅[ **KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)。)
 
--   Supermixer 节点 (请参阅[ **KSNODETYPE\_SUPERMIX**](https://msdn.microsoft.com/library/windows/hardware/ff537198)。)
+-   Supermixer 节点 (请参阅[ **KSNODETYPE\_SUPERMIX**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-supermix)。)
 
 -   卷节点 （适用于平移效果）
 
--   SRC 节点 (请参阅[ **KSNODETYPE\_SRC**](https://msdn.microsoft.com/library/windows/hardware/ff537190)。)
+-   SRC 节点 (请参阅[ **KSNODETYPE\_SRC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-src)。)
 
--   SUM 节点 (请参阅[ **KSNODETYPE\_SUM**](https://msdn.microsoft.com/library/windows/hardware/ff537196)。)
+-   SUM 节点 (请参阅[ **KSNODETYPE\_SUM**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)。)
 
 此列表中的节点显示的数据固定到流式处理出现的顺序。 其他节点可以交错而不会导致问题，前提保留上述顺序这些节点之间。
 

@@ -5,12 +5,12 @@ ms.assetid: 601f38e1-26ae-4d72-9d72-91bd58f81bba
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_802_3_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e13042af3e6889852b9000fdd8ffe32e24358bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc96f2f9a32a4c440ca80502809389dda12f029c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377277"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360243"
 ---
 # <a name="oid8023multicastlist"></a>OID\_802\_3\_多播\_列表
 
@@ -26,7 +26,7 @@ NDIS 处理 OID\_802\_3\_多播\_列表查询的微型端口驱动程序，以�
 
 支持多播的地址列表的微型端口驱动程序必须支持 OID\_802\_3\_多播\_列表设置的请求。
 
-对于组的请求， **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含多播的地址列表地址的数组。
+对于组的请求， **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含多播的地址列表地址的数组。
 
 -   每个地址是 6 个字节的数组。
 -   **InformationBufferLength**成员的包含的长度，以字节为单位， **InformationBuffer**数组。

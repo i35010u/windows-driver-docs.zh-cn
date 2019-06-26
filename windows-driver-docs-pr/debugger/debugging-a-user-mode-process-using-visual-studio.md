@@ -4,12 +4,12 @@ description: 在 Microsoft Visual Studio 中，可以使用 Windows 用户模式
 ms.assetid: C19D1B6F-B97B-4C1B-AD84-AC974C5F5C8C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f04f48700e6a6633d84e8be61ec6bb2faedf155
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51ff969a84d6c6b7a0e8496f53a2c395f3e4ce59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327350"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366935"
 ---
 # <a name="span-iddebuggerdebuggingauser-modeprocessusingvisualstudiospandebugging-a-user-mode-process-using-visual-studio"></a><span id="debugger.debugging_a_user-mode_process_using_visual_studio"></span>调试使用 Visual Studio 的用户模式进程
 
@@ -49,7 +49,7 @@ ms.locfileid: "63327350"
 ## <a name="span-idattachingtoarunningprocessonaseparatecomputerspanspan-idattachingtoarunningprocessonaseparatecomputerspanspan-idattachingtoarunningprocessonaseparatecomputerspanattaching-to-a-running-process-on-a-separate-computer"></a><span id="Attaching_to_a_running_process_on_a_separate_computer"></span><span id="attaching_to_a_running_process_on_a_separate_computer"></span><span id="ATTACHING_TO_A_RUNNING_PROCESS_ON_A_SEPARATE_COMPUTER"></span>将附加到不同的计算机上正在运行的进程
 
 
-有时调试器和正在调试的代码运行单独的计算机上。 运行调试器的计算机称为*主机计算机*，并运行正在调试的代码的计算机称为*目标计算机*。 在主计算机上，可以配置从 Visual Studio 的目标计算机。 配置目标计算机也称为*预配*目标计算机。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)。
+有时调试器和正在调试的代码运行单独的计算机上。 运行调试器的计算机称为*主机计算机*，并运行正在调试的代码的计算机称为*目标计算机*。 在主计算机上，可以配置从 Visual Studio 的目标计算机。 配置目标计算机也称为*预配*目标计算机。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
 设置目标计算机后，可以在主计算机上使用 Visual Studio，若要附加到目标计算机上运行的进程。
 

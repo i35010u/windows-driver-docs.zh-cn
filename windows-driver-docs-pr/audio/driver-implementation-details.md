@@ -4,12 +4,12 @@ description: 本主题介绍了为能够处理硬件卸载音频流的音频适�
 ms.assetid: FB17FADD-D683-4ECC-95F9-86DF7A289C63
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d7c2a0dbde495b6eeb27d30522445a84ba2c63
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f79c1b0d48fe31bf96bd682e0d60de6b878e5870
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333749"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360116"
 ---
 # <a name="driver-implementation-details"></a>驱动程序实现详细信息
 
@@ -23,7 +23,7 @@ ms.locfileid: "63333749"
 
 如果音频适配器可处理卸载音频流，适配器的音频驱动程序公开此功能通过新引入的节点 KS 筛选器中使用的适配器。
 
-音频流的路径中每个节点都是节点的描述符，因此驱动程序必须设置为此新节点*类型*GUID 传递给[ **KSNODETYPE\_音频\_引擎**](https://msdn.microsoft.com/library/windows/hardware/hh450866). 下面是如何驱动程序无法配置此新节点的节点描述符的示例：
+音频流的路径中每个节点都是节点的描述符，因此驱动程序必须设置为此新节点*类型*GUID 传递给[ **KSNODETYPE\_音频\_引擎**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-engine). 下面是如何驱动程序无法配置此新节点的节点描述符的示例：
 
 ```ManagedCPlusPlus
 typedef struct _KSNODE_DESCRIPTOR {
@@ -65,7 +65,7 @@ PCNODE_DESCRIPTOR MiniportNodes[] =
 ## <a name="span-idanewkspropertysetforaudioenginesspanspan-idanewkspropertysetforaudioenginesspanspan-idanewkspropertysetforaudioenginesspana-new-ks-property-set-for-audio-engines"></a><span id="A_new_KS_property_set_for_audio_engines"></span><span id="a_new_ks_property_set_for_audio_engines"></span><span id="A_NEW_KS_PROPERTY_SET_FOR_AUDIO_ENGINES"></span>新 KS 属性设置为音频引擎
 
 
-从 Windows 8 开始[KSPROPSETID\_AudioEngine](https://msdn.microsoft.com/library/windows/hardware/hh450902)引入了属性集以支持硬件音频引擎和硬件卸载音频处理。 因此可以处理的适配器的驱动程序卸载音频流必须支持的属性中设置此新属性。
+从 Windows 8 开始[KSPROPSETID\_AudioEngine](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioengine)引入了属性集以支持硬件音频引擎和硬件卸载音频处理。 因此可以处理的适配器的驱动程序卸载音频流必须支持的属性中设置此新属性。
 
 设置新属性， **KSPROPSETID\_AudioEngine**，定义如下：
 
@@ -76,48 +76,48 @@ DEFINE_GUIDSTRUCT("3A2F82DC-886F-4BAA-9EB4-082B9025C536", KSPROPSETID_AudioEngin
 #define KSPROPSETID_AudioEngine DEFINE_GUIDNAMED(KSPROPSETID_AudioEngine)
 ```
 
-在中定义此新设置的属性中的属性的名称[ **KSPROPERTY\_AUDIOENGINE** ](https://msdn.microsoft.com/library/windows/hardware/hh450867)枚举和驱动程序必须支持这些名称。
+在中定义此新设置的属性中的属性的名称[ **KSPROPERTY\_AUDIOENGINE** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine)枚举和驱动程序必须支持这些名称。
 
 以下是中的新属性**KSPROPSETID\_AudioEngine**属性集：
 
-[**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**](https://msdn.microsoft.com/library/windows/hardware/hh450868)
+[**KSPROPERTY\_AUDIOENGINE\_缓冲区\_大小\_范围**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-buffer-size-limits)
 
-[**KSPROPERTY\_AUDIOENGINE\_描述符**](https://msdn.microsoft.com/library/windows/hardware/hh450870)
+[**KSPROPERTY\_AUDIOENGINE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-descriptor)
 
-[**KSPROPERTY\_AUDIOENGINE\_DEVICEFORMAT**](https://msdn.microsoft.com/library/windows/hardware/hh450872)
+[**KSPROPERTY\_AUDIOENGINE\_DEVICEFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-deviceformat)
 
-[**KSPROPERTY\_AUDIOENGINE\_GFXENABLE**](https://msdn.microsoft.com/library/windows/hardware/hh450874)
+[**KSPROPERTY\_AUDIOENGINE\_GFXENABLE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-gfx-enable)
 
-[**KSPROPERTY\_AUDIOENGINE\_LFXENABLE**](https://msdn.microsoft.com/library/windows/hardware/hh450876)
+[**KSPROPERTY\_AUDIOENGINE\_LFXENABLE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-lfx-enable)
 
-[**KSPROPERTY\_AUDIOENGINE\_LOOPBACK\_PROTECTION**](https://msdn.microsoft.com/library/windows/hardware/hh450878)
+[**KSPROPERTY\_AUDIOENGINE\_LOOPBACK\_PROTECTION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-loopback-protection)
 
-[**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**](https://msdn.microsoft.com/library/windows/hardware/hh450880)
+[**KSPROPERTY\_AUDIOENGINE\_MIXFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-mixformat)
 
-[**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**](https://msdn.microsoft.com/library/windows/hardware/hh450884)
+[**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-supporteddeviceformats)
 
-[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/hh831855)
+[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audioengine-volumelevel)
 
 ## <a name="span-idupdatestothekspropsetidaudiopropertysetspanspan-idupdatestothekspropsetidaudiopropertysetspanspan-idupdatestothekspropsetidaudiopropertysetspanupdates-to-the-kspropsetid-audio-property-set"></a><span id="Updates_to_the_KSPROPSETID__Audio_property_set"></span><span id="updates_to_the_kspropsetid__audio_property_set"></span><span id="UPDATES_TO_THE_KSPROPSETID__AUDIO_PROPERTY_SET"></span>更新到 KSPROPSETID\_音频属性集
 
 
-除了支持中新的属性**KSPROPSETID\_AudioEngine**属性集，该驱动程序还必须支持中的以下现有属性[KSPROPSETID\_音频](https://msdn.microsoft.com/library/windows/hardware/ff537440)属性集：
+除了支持中新的属性**KSPROPSETID\_AudioEngine**属性集，该驱动程序还必须支持中的以下现有属性[KSPROPSETID\_音频](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)属性集：
 
-[**KSPROPERTY\_AUDIO\_MUTE**](https://msdn.microsoft.com/library/windows/hardware/ff537293)
+[**KSPROPERTY\_AUDIO\_MUTE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mute)
 
-[**KSPROPERTY\_AUDIO\_PEAKMETER**](https://msdn.microsoft.com/library/windows/hardware/ff537296)
+[**KSPROPERTY\_AUDIO\_PEAKMETER**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-peakmeter)
 
-[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://msdn.microsoft.com/library/windows/hardware/ff537309)
+[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)
 
 若要完成的硬件卸载音频处理驱动程序支持的实现，新属性已添加到并**KSPROPSETID\_音频**属性集。
 
 以下是新**KSPROPSETID\_音频**属性：
 
-[**KSPROPERTY\_音频\_线性\_缓冲区\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450894)
+[**KSPROPERTY\_音频\_线性\_缓冲区\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-linear-buffer-position)
 
-[**KSPROPERTY\_AUDIO\_PRESENTATION\_POSITION**](https://msdn.microsoft.com/library/windows/hardware/hh450895)
+[**KSPROPERTY\_AUDIO\_PRESENTATION\_POSITION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-presentation-position)
 
-[**KSPROPERTY\_音频\_WAVERT\_当前\_编写\_位置**](https://msdn.microsoft.com/library/windows/hardware/hh450896)
+[**KSPROPERTY\_音频\_WAVERT\_当前\_编写\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-wavert-current-write-position)
 
 ## <a name="span-idport-classdriverupdatesandglitchreportingspanspan-idport-classdriverupdatesandglitchreportingspanspan-idport-classdriverupdatesandglitchreportingspanport-class-driver-updates-and-glitch-reporting"></a><span id="Port-class_driver_updates_and_glitch_reporting"></span><span id="port-class_driver_updates_and_glitch_reporting"></span><span id="PORT-CLASS_DRIVER_UPDATES_AND_GLITCH_REPORTING"></span>端口类驱动程序更新和故障报告
 

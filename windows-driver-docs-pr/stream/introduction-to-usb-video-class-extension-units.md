@@ -10,12 +10,12 @@ keywords:
 - 扩展单位 WDK USB 视频类关于
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1005fec76ae91e9ced9a876c2d8321f0821f553
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9035d8bf3dca7e0b912e52a58b36df65ea12002
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371128"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360666"
 ---
 # <a name="introduction-to-usb-video-class-extension-units"></a>USB 视频类扩展单元简介
 
@@ -30,7 +30,7 @@ IKsTopologyInfo、 ISelector 和 IKsNodeControl Vidcap.h 中定义。
 
 在 Windows Vista 和更高版本，Vidcap.h 是作为 Microsoft Windows SDK 的一部分。
 
-Microsoft DirectShow 文档包含相应的参考页。 全局唯一标识符 (GUID) 类型和一些其他 USB 视频相关常量 Ksmedia.h 中定义。 有关详细信息，请参阅[USB 视频类属性](usb-video-class-properties.md)并[内核流式处理拓扑节点](https://msdn.microsoft.com/library/windows/hardware/ff560886)。
+Microsoft DirectShow 文档包含相应的参考页。 全局唯一标识符 (GUID) 类型和一些其他 USB 视频相关常量 Ksmedia.h 中定义。 有关详细信息，请参阅[USB 视频类属性](usb-video-class-properties.md)并[内核流式处理拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-topology-nodes)。
 
  
 

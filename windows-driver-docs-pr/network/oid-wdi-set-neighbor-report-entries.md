@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 583432f989fe79c2eacafc8bf486f4912ea5134a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 295b479b16b84213ee12192b39eaee1119879da6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359214"
 ---
 # <a name="oidwdisetneighborreportentries"></a>OID\_WDI\_设置\_邻居\_报表\_条目
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_邻居\_报表\_条目发送的邻居报表从 AP 接收到 LE
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 否                       | 1                               |
+| Port  | 否                       | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_设置\_邻居\_报表\_条目发送的邻居报表从 AP 接收到 LE
 
 | TLV                                                                             | 允许多个 TLV 实例 | 可选 | 描述                   |
 |---------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------|
-| [**WDI\_TLV\_邻居\_报表\_条目**](https://msdn.microsoft.com/library/windows/hardware/mt269133) | X                              |          | 相邻的报表的列表。 |
+| [**WDI\_TLV\_邻居\_报表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-neighbor-report-entry) | X                              |          | 相邻的报表的列表。 |
 
  
 

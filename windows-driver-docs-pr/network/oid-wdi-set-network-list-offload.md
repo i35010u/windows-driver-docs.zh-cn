@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_NETWORK_LIST_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 95a3de268503926aea4127d4547e48cb7b71457f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f2822b15577706b69f0fcc59ebedd567b4a716d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324875"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359195"
 ---
 # <a name="oidwdisetnetworklistoffload"></a>OID\_WDI\_SET\_NETWORK\_LIST\_OFFLOAD
 
@@ -43,7 +43,7 @@ WDI 处理即时连接 NLO，并使用有针对性的扫描的组合来满足从
 
 在每个扫描期间，固件将扫描的匹配列表的通道，但并不是必需的条件约束上的通道列表的 Ssid。 应缓存要检索的主机的发现的接入点信息。 固件指示 NLO 发现时至少一个 BSSID 匹配 SSID、 算法和加密算法，但通道匹配不需要。
 
-每个 OID\_WDI\_设置\_网络\_列表\_UE 将发送到 LE 卸载表示的最新的 NLO 扫描请求。 任何以前续订此类请求或状态。 LE NLO 扫描，并仅指示为每个请求找到 AP 的一次。 UE replumbs （12 倍; 这是可能发生变更） 在 Dx NLO 转换，如果找到的 AP 未成功连接 (如原因： 找到 AP，但设备移动，AP 信号淡化，并且连接将失败; 或延长 EAP 身份验证会失败仅通过）。 LE 和固件应延迟 NLO 扫描计划根据中的延迟配置[ **WDI\_TLV\_网络\_列表\_卸载\_配置**](https://msdn.microsoft.com/library/windows/hardware/dn897851). 这是用户设备使用符合操作系统的原始 NLO 命令的计划数。
+每个 OID\_WDI\_设置\_网络\_列表\_UE 将发送到 LE 卸载表示的最新的 NLO 扫描请求。 任何以前续订此类请求或状态。 LE NLO 扫描，并仅指示为每个请求找到 AP 的一次。 UE replumbs （12 倍; 这是可能发生变更） 在 Dx NLO 转换，如果找到的 AP 未成功连接 (如原因： 找到 AP，但设备移动，AP 信号淡化，并且连接将失败; 或延长 EAP 身份验证会失败仅通过）。 LE 和固件应延迟 NLO 扫描计划根据中的延迟配置[ **WDI\_TLV\_网络\_列表\_卸载\_配置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-network-list-offload-config). 这是用户设备使用符合操作系统的原始 NLO 命令的计划数。
 
 NLO 默认扫描类型是 WDI\_扫描\_类型\_自动。 当主动扫描一个通道，固件应使用通配符 SSID。 可见 APs 应与 Ssid 上卸载列表来确定匹配项进行比较。 这是为了降低隐私风险。
 
@@ -63,7 +63,7 @@ NLO 默认扫描类型是 WDI\_扫描\_类型\_自动。 当主动扫描一个�
 
 | TLV                                                                                                  | 允许多个 TLV 实例 | 可选 | 描述         |
 |------------------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------|
-| [**WDI\_TLV\_NETWORK\_LIST\_OFFLOAD\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn897852) |                                |          | NLO 参数中。 |
+| [**WDI\_TLV\_NETWORK\_LIST\_OFFLOAD\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-network-list-offload-parameters) |                                |          | NLO 参数中。 |
 
  
 

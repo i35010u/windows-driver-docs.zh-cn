@@ -4,12 +4,12 @@ description: 使用网站预配 Windows
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43e96b241107438e23351ae83d379711efd49f30
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99777210008f6aaa9c7684f5162fcef16e8ad50c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67369218"
 ---
 # <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
@@ -90,7 +90,7 @@ ms.locfileid: "63383653"
 
 当 Windows 使用移动运营商的 URL (AccountExperienceURL 属性中的[运算符](operator.md)元素) 从 APN 数据库中，Windows 提供了所需以完成激活到移动宽带设备信息web 站点。 此设备信息作为 HTTPS 请求的参数传递到 web 站点。
 
-URL 的格式是 **https://Operator URL\[？ propN = valN\[& propN = valN\]\*\]**，其中：
+URL 的格式是 **https://Operator URL\[ ？ propN = valN\[ & propN = valN\]\*\]** ，其中：
 
 -   **运算符 URL** URL 由你提供并且存储在 APN 数据库
 
@@ -149,7 +149,7 @@ URL 的格式是 **https://Operator URL\[？ propN = valN\[& propN = valN\]\*\]*
 
 -   指示计算机重新连接移动宽带设备
 
-此外可以由移动宽带网站应用相同的帐户预配使用移动宽带应用应用到计算机的元数据。 在 web 页面的 JavaScript 中，检查的可用性[ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/dn529170)方法。 如果存在，则在浏览器可以传输帐户预配到 Windows 元数据。
+此外可以由移动宽带网站应用相同的帐户预配使用移动宽带应用应用到计算机的元数据。 在 web 页面的 JavaScript 中，检查的可用性[ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))方法。 如果存在，则在浏览器可以传输帐户预配到 Windows 元数据。
 
 帐户预配的元数据的详细信息，请参阅[帐户预配](account-provisioning.md)。
 

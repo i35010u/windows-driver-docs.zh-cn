@@ -10,12 +10,12 @@ keywords:
 - 启动选项 WDK，友好名称
 ms.date: 01/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c5b21ba678ae6d82d6f9de835bd4b805412a14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 502564bdb3221b1ab00d45bfc02e419ca514b3ea
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343985"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360405"
 ---
 # <a name="changing-the-friendly-name-of-a-boot-entry"></a>更改启动项的友好名称
 
@@ -40,7 +40,7 @@ ms.locfileid: "63343985"
 "Windows 10 NullModem"
 ```
 
-**请注意**  的启动项配置为调试时 ([/debug /debugport](https://msdn.microsoft.com/library/windows/hardware/ff556253)) 或紧急管理服务 (EMS) ([/重定向](https://msdn.microsoft.com/library/windows/hardware/ff557180)) 上 x86-或基于 x64 的系统，启动加载程序将追加一个用括号括起来的短语 (\[启用调试器\]或\[ems 启用\]) 到在启动菜单中显示的友好名称。
+**请注意**  的启动项配置为调试时 ([/debug /debugport](https://docs.microsoft.com/windows-hardware/drivers/devtest/-debug)) 或紧急管理服务 (EMS) ([/重定向](https://docs.microsoft.com/windows-hardware/drivers/devtest/-redirect)) 上 x86-或基于 x64 的系统，启动加载程序将追加一个用括号括起来的短语 (\[启用调试器\]或\[ems 启用\]) 到在启动菜单中显示的友好名称。
 但是，启动加载程序的友好名称和用括号括起来的短语一起超过 70 个字符时忽略从启动菜单带中括号的短语。 若要还原用括号括起来的短语，缩短的友好名称。
 
 若要更改 Boot.ini 文件中的启动项的友好名称，可以使用 Bootcfg 或编辑在记事本中的 Boot.ini 文件。 在系统上存储在 EFI NVRAM 中的启动选项，使用 Bootcfg。
@@ -56,7 +56,7 @@ ms.locfileid: "63343985"
 若要在启动菜单上出现更改启动项目的说明，可以使用 **/set** *IDdescription*选项。 该命令使用以下语法。 ID 是与启动项 （或一个已知的标识符，例如，{当前}） 相关联的 GUID。
 
 > [!NOTE]
-> 如果使用的[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)，必须使用引号将启动条目标识符，例如： **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** 或 **"{current}"**.
+> 如果使用的[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)，必须使用引号将启动条目标识符，例如： **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** 或 **"{current}"** .
 
 
 ```console

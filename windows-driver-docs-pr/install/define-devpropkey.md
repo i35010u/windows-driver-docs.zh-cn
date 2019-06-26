@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bae16d094d3067ab461aa019a0d8c1a872947220
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3de67065600fc6f9d2f143fc75d4a3aebd126f56
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369487"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360837"
 ---
 # <a name="definedevpropkey"></a>DEFINE_DEVPROPKEY
 
 
-在 Windows Vista 和更高版本的 Windows，DEFINE_DEVPROPKEY 宏创建 DEVPROPKEY 结构，它表示中的设备属性键[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)。
+在 Windows Vista 和更高版本的 Windows，DEFINE_DEVPROPKEY 宏创建 DEVPROPKEY 结构，它表示中的设备属性键[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
 
 ``` syntax
 #ifdef INITGUID
@@ -79,9 +79,9 @@ DEVPROPID 类型，用于提供的值的变量**pid** DEVPROPKEY 结构成员 �
 <a name="remarks"></a>备注
 -------
 
-DEFINE_DEVPROPKEY 结构属于[统一的设备属性模型](https://msdn.microsoft.com/library/windows/hardware/ff553515)。
+DEFINE_DEVPROPKEY 结构属于[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
 
-DEFINE_DEVPROPKEY 宏可以用于创建[ **DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff543544)结构，它表示自定义设备属性。
+DEFINE_DEVPROPKEY 宏可以用于创建[ **DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)结构，它表示自定义设备属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -102,7 +102,7 @@ DEFINE_DEVPROPKEY 宏可以用于创建[ **DEVPROPKEY** ](https://msdn.microsoft
 ## <a name="see-also"></a>请参阅
 
 
-[**DEVPROPKEY**](https://msdn.microsoft.com/library/windows/hardware/ff543544)
+[**DEVPROPKEY**](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)
 
  
 

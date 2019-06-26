@@ -12,12 +12,12 @@ keywords:
 - 连接 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c65b3495e988217221753546a2a76c26b683f99a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c43166abc8e558e93a5d5562d63252a1b5285b6c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364629"
 ---
 # <a name="creating-a-l2cap-client-connection-to-a-remote-device"></a>创建到远程设备的 L2CAP 客户端连接
 
@@ -26,9 +26,9 @@ L2CAP 客户端配置文件驱动程序是请求异步无连接链接 (ACL) 连�
 
 L2CAP 客户端配置文件驱动程序必须具有远程设备，如协议/服务多路复用器 (PSM) 设备时使用，若要请求到设备的连接信息。 客户端配置文件驱动程序可以获取此信息通过服务发现协议 (SDP) DDIs，或通过服务的固定 PSM。 有关如何获取此信息的详细信息，请参阅[访问 SDP 服务信息](accessing-sdp-service-information.md)。
 
-若要启动的 L2CAP 连接到远程设备时，客户端配置文件驱动程序具有关于设备的所需的信息后，它应[生成并发送](building-and-sending-a-brb.md) [ **BRB\_L2CA\_打开\_通道**](https://msdn.microsoft.com/library/windows/hardware/ff536615)请求。
+若要启动的 L2CAP 连接到远程设备时，客户端配置文件驱动程序具有关于设备的所需的信息后，它应[生成并发送](building-and-sending-a-brb.md) [ **BRB\_L2CA\_打开\_通道**](https://docs.microsoft.com/previous-versions/ff536615(v=vs.85))请求。
 
-当客户端配置文件驱动程序生成请求时，它提供一个指向[  **\_BRB\_L2CA\_打开\_通道**](https://msdn.microsoft.com/library/windows/hardware/ff536860)中结构**Parameters.Others.Argument1**与请求关联的 IRP 的成员。 此结构包含远程设备的蓝牙地址，PSM 注册的设备，以及其他配置参数。
+当客户端配置文件驱动程序生成请求时，它提供一个指向[  **\_BRB\_L2CA\_打开\_通道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthddi/ns-bthddi-_brb_l2ca_open_channel)中结构**Parameters.Others.Argument1**与请求关联的 IRP 的成员。 此结构包含远程设备的蓝牙地址，PSM 注册的设备，以及其他配置参数。
 
 如果远程设备接受打开通道请求**OutResults**并**InResults**的成员\_BRB\_L2CA\_打开\_通道结构包含新创建的连接有关的信息。 **OutResults**成员指定通道的出站另一半的参数和**InResults**成员指定通道的入站另一半的参数。
 
@@ -36,7 +36,7 @@ L2CAP 客户端配置文件驱动程序必须具有远程设备，如协议/服�
 
 **IncomingQueueDepth**的成员\_BRB\_L2CA\_打开\_通道结构指定 Mtu 的蓝牙驱动程序堆栈将接收并在队列的最大数目之前驱动程序堆栈开始弃用这些蓝牙连接。 此值设置为非常小的数值增加的数据丢失，而将其设置为非常大的数会增加内存需求。 Microsoft 建议将此成员设置为 10。
 
-当配置文件驱动程序不再需要 L2CAP 连接到远程设备时，它应[生成并发送](building-and-sending-a-brb.md) [ **BRB\_L2CA\_关闭\_通道**](https://msdn.microsoft.com/library/windows/hardware/ff536614)请求。
+当配置文件驱动程序不再需要 L2CAP 连接到远程设备时，它应[生成并发送](building-and-sending-a-brb.md) [ **BRB\_L2CA\_关闭\_通道**](https://docs.microsoft.com/previous-versions/ff536614(v=vs.85))请求。
 
  
 

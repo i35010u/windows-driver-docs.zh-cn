@@ -11,12 +11,12 @@ keywords:
 - 特定于硬件的信息 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed4463d9772a3f738c25d51753057fc19458235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b55ac80255b9d74e5ffbcd24105dbdf9266ba31c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333642"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360046"
 ---
 # <a name="extended-capabilities-from-a-wdm-audio-driver"></a>从 WDM 音频驱动程序扩展的功能
 
@@ -24,9 +24,9 @@ ms.locfileid: "63333642"
 ## <span id="extended_capabilities_from_a_wdm_audio_driver"></span><span id="EXTENDED_CAPABILITIES_FROM_A_WDM_AUDIO_DRIVER"></span>
 
 
-通过处理[ **KSPROPERTY\_常规\_COMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff565171)属性，音频筛选器可以提供应用程序可以使用到唯一的特定于硬件的信息确定基础设备。 Microsoft Windows XP 是第一个版本的 Windows，若要支持此功能;此功能不是早期版本中提供的。
+通过处理[ **KSPROPERTY\_常规\_COMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-general-componentid)属性，音频筛选器可以提供应用程序可以使用到唯一的特定于硬件的信息确定基础设备。 Microsoft Windows XP 是第一个版本的 Windows，若要支持此功能;此功能不是早期版本中提供的。
 
-筛选器提供的窗体中的特定于硬件的信息[ **KSCOMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff561027)包含以下结构：
+筛选器提供的窗体中的特定于硬件的信息[ **KSCOMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kscomponentid)包含以下结构：
 
 -   制造商 GUID
 

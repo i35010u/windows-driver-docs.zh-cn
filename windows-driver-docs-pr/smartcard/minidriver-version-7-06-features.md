@@ -4,12 +4,12 @@ description: 微型驱动程序版本 7.06 功能
 ms.assetid: 6066C6F9-DF03-4886-A5AE-FFE50B2B34D8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a6d6271c0492555495aeb94cee9832991ce5d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa4c0c1a624b414ee29be276326a8a5127b17218
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356688"
 ---
 # <a name="minidriver-version-706-features"></a>微型驱动程序版本 7.06 功能
 
@@ -36,14 +36,14 @@ ms.locfileid: "63356751"
 
 此版本的规范中定义了以下用于传递加密的数据结构：
 
--   [**卡\_进行身份验证**](https://msdn.microsoft.com/library/windows/hardware/dn468744)
--   [**卡片\_进行身份验证\_响应**](https://msdn.microsoft.com/library/windows/hardware/dn468745)
--   [**卡片\_更改\_身份验证器**](https://msdn.microsoft.com/library/windows/hardware/dn468746)
--   [**卡片\_更改\_身份验证器\_响应**](https://msdn.microsoft.com/library/windows/hardware/dn468747)
--   [**卡片\_加密\_数据**](https://msdn.microsoft.com/library/windows/hardware/dn468749)
--   [**CARD\_IMPORT\_KEYPAIR**](https://msdn.microsoft.com/library/windows/hardware/dn468750)
+-   [**卡\_进行身份验证**](https://docs.microsoft.com/previous-versions/dn468744(v=vs.85))
+-   [**卡片\_进行身份验证\_响应**](https://docs.microsoft.com/previous-versions/dn468745(v=vs.85))
+-   [**卡片\_更改\_身份验证器**](https://docs.microsoft.com/previous-versions/dn468746(v=vs.85))
+-   [**卡片\_更改\_身份验证器\_响应**](https://docs.microsoft.com/previous-versions/dn468747(v=vs.85))
+-   [**卡片\_加密\_数据**](https://docs.microsoft.com/previous-versions/dn468749(v=vs.85))
+-   [**CARD\_IMPORT\_KEYPAIR**](https://docs.microsoft.com/previous-versions/dn468750(v=vs.85))
 
-此规范的版本 7 中定义的安全密钥注入以下卡属性。 有关这些属性的详细信息，请参阅[ **CardGetProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468729)。
+此规范的版本 7 中定义的安全密钥注入以下卡属性。 有关这些属性的详细信息，请参阅[ **CardGetProperty**](https://docs.microsoft.com/previous-versions/dn468729(v=vs.85))。
 
 -   CP\_键\_导入\_支持
 -   CP\_枚举\_算法
@@ -54,21 +54,21 @@ ms.locfileid: "63356751"
 
 服务器功能：
 
--   [**MDEncryptData**](https://msdn.microsoft.com/library/windows/hardware/dn468756)
--   [**MDImportSessionKey**](https://msdn.microsoft.com/library/windows/hardware/dn468757)
+-   [**MDEncryptData**](https://docs.microsoft.com/previous-versions/dn468756(v=vs.85))
+-   [**MDImportSessionKey**](https://docs.microsoft.com/previous-versions/dn468757(v=vs.85))
 
 共享的函数：
 
--   [**CardDestroyKey**](https://msdn.microsoft.com/library/windows/hardware/dn468720)
--   [**CardGetAlgorithmProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468722)
--   [**CardGetKeyProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468728)
--   [**CardGetSharedKeyHandle**](https://msdn.microsoft.com/library/windows/hardware/dn468730)
--   [**CardProcessEncryptedData**](https://msdn.microsoft.com/library/windows/hardware/dn468732)
--   [**CardSetKeyProperty**](https://msdn.microsoft.com/library/windows/hardware/dn468739)
+-   [**CardDestroyKey**](https://docs.microsoft.com/previous-versions/dn468720(v=vs.85))
+-   [**CardGetAlgorithmProperty**](https://docs.microsoft.com/previous-versions/dn468722(v=vs.85))
+-   [**CardGetKeyProperty**](https://docs.microsoft.com/previous-versions/dn468728(v=vs.85))
+-   [**CardGetSharedKeyHandle**](https://docs.microsoft.com/previous-versions/dn468730(v=vs.85))
+-   [**CardProcessEncryptedData**](https://docs.microsoft.com/previous-versions/dn468732(v=vs.85))
+-   [**CardSetKeyProperty**](https://docs.microsoft.com/previous-versions/dn468739(v=vs.85))
 
 客户端功能：
 
--   [**CardImportSessionKey**](https://msdn.microsoft.com/library/windows/hardware/dn468731)
+-   [**CardImportSessionKey**](https://docs.microsoft.com/previous-versions/dn468731(v=vs.85))
 
 ## <a name="span-idsupportforrsapaddingremovaloperationsinthesmartcardspanspan-idsupportforrsapaddingremovaloperationsinthesmartcardspanspan-idsupportforrsapaddingremovaloperationsinthesmartcardspansupport-for-rsa-padding-removal-operations-in-the-smart-card"></a><span id="Support_for_RSA_Padding_Removal_Operations_in_the_Smart_Card"></span><span id="support_for_rsa_padding_removal_operations_in_the_smart_card"></span><span id="SUPPORT_FOR_RSA_PADDING_REMOVAL_OPERATIONS_IN_THE_SMART_CARD"></span>对 RSA 填充在智能卡中的删除操作的支持
 
@@ -77,7 +77,7 @@ ms.locfileid: "63356751"
 
 第 7 版还提供对较旧卡不支持内部的 （或 OnCard） 填充删除的支持。 这样，这些数据卡以继续使用基本 CSP/KSP 提供的填充删除功能。
 
-有关详细信息，请参阅[ **PFN\_CSP\_UNPAD\_数据**](https://msdn.microsoft.com/library/windows/hardware/dn468771)并[ **CardRSADecrypt** ](https://msdn.microsoft.com/library/windows/hardware/dn468737)此规范中更高版本。
+有关详细信息，请参阅[ **PFN\_CSP\_UNPAD\_数据**](https://docs.microsoft.com/previous-versions/dn468771(v=vs.85))并[ **CardRSADecrypt** ](https://docs.microsoft.com/previous-versions/dn468737(v=vs.85))此规范中更高版本。
 
 ## <a name="span-idsmartcardplugandplayspanspan-idsmartcardplugandplayspanspan-idsmartcardplugandplayspansmart-card-plug-and-play"></a><span id="Smart_Card_Plug_and_Play"></span><span id="smart_card_plug_and_play"></span><span id="SMART_CARD_PLUG_AND_PLAY"></span>智能卡即插
 
@@ -89,9 +89,9 @@ ms.locfileid: "63356751"
 ## <a name="span-idcardcreatecontainerexspanspan-idcardcreatecontainerexspanspan-idcardcreatecontainerexspan-cardcreatecontainerex"></a><span id="_CardCreateContainerEx"></span><span id="_cardcreatecontainerex"></span><span id="_CARDCREATECONTAINEREX"></span> CardCreateContainerEx
 
 
-此新 API 是扩展的功能[ **CardCreateContainer** ](https://msdn.microsoft.com/library/windows/hardware/dn468708) API。 除了创建的密钥容器，此函数将创建容器时建立的 PIN 关联。
+此新 API 是扩展的功能[ **CardCreateContainer** ](https://docs.microsoft.com/previous-versions/dn468708(v=vs.85)) API。 除了创建的密钥容器，此函数将创建容器时建立的 PIN 关联。
 
-有关详细信息，请参阅[ **CardCreateContainerEx** ](https://msdn.microsoft.com/library/windows/hardware/dn468709)此规范中更高版本。
+有关详细信息，请参阅[ **CardCreateContainerEx** ](https://docs.microsoft.com/previous-versions/dn468709(v=vs.85))此规范中更高版本。
 
 ## <a name="span-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspanspan-idnewcardcontainerpropertyforecdsaecdhkeyassociationspannew-card-container-property-for-ecdsaecdh-key-association"></a><span id="New_Card_Container_Property_for_ECDSA_ECDH_Key_Association"></span><span id="new_card_container_property_for_ecdsa_ecdh_key_association"></span><span id="NEW_CARD_CONTAINER_PROPERTY_FOR_ECDSA_ECDH_KEY_ASSOCIATION"></span>ECDSA/ECDH 密钥关联的新卡容器属性
 

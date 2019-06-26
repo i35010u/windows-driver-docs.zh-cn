@@ -14,17 +14,17 @@ keywords:
 - WskAccept
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c52b327b972090ef5be6981e79bcf1b9bd290584
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bc9ef786c5e7c16a0fd8a4c764059686e5b22bc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356220"
 ---
 # <a name="listening-for-and-accepting-incoming-connections"></a>侦听和接受传入连接
 
 
-Winsock Kernel (WSK) 应用程序将侦听套接字绑定到本地传输地址后，套接字开始侦听来自远程传输地址的传入连接。 WSK 应用程序可以通过调用接受传入连接上侦听套接字[ **WskAccept** ](https://msdn.microsoft.com/library/windows/hardware/ff571109)函数。 应用程序传递到 IRP **WskAccept**函数会排队，直到到达的传入连接。
+Winsock Kernel (WSK) 应用程序将侦听套接字绑定到本地传输地址后，套接字开始侦听来自远程传输地址的传入连接。 WSK 应用程序可以通过调用接受传入连接上侦听套接字[ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)函数。 应用程序传递到 IRP **WskAccept**函数会排队，直到到达的传入连接。
 
 下面的代码示例演示如何 WSK 应用程序可以接受传入连接，通过调用**WskAccept**函数。
 
@@ -135,7 +135,7 @@ NTSTATUS
 }
 ```
 
-作为调用的替代方法[ **WskAccept** ](https://msdn.microsoft.com/library/windows/hardware/ff571109)函数以接受传入的连接上侦听套接字、 WSK 应用程序可以启用[ *WskAcceptEvent*](https://msdn.microsoft.com/library/windows/hardware/ff571120)套接字上的事件的回调函数。 如果启用了 WSK 应用程序*WskAcceptEvent*侦听套接字上的事件回调函数，WSK 子系统调用的套接字*WskAcceptEvent*每当新传入事件的回调函数套接字上接受连接。 有关启用侦听套接字的详细信息*WskAcceptEvent*事件回调函数，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
+作为调用的替代方法[ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)函数以接受传入的连接上侦听套接字、 WSK 应用程序可以启用[ *WskAcceptEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)套接字上的事件的回调函数。 如果启用了 WSK 应用程序*WskAcceptEvent*侦听套接字上的事件回调函数，WSK 子系统调用的套接字*WskAcceptEvent*每当新传入事件的回调函数套接字上接受连接。 有关启用侦听套接字的详细信息*WskAcceptEvent*事件回调函数，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
 
 下面的代码示例演示如何 WSK 应用程序可以接受传入连接，通过调用侦听套接字的 WSK 子系统*WskAcceptEvent*事件回调函数。
 
@@ -213,9 +213,9 @@ NTSTATUS WSKAPI
 }
 ```
 
-WSK 应用程序可以配置侦听套接字来有条件地接受套接字接收的传入连接。 WSK 应用程序启用条件通过设置接受模式上侦听套接字[**因此\_条件\_接受**](https://msdn.microsoft.com/library/windows/hardware/ff570829)套接字的套接字在绑定之前的选项为本地传输地址的套接字。 有关如何设置套接字选项的详细信息，请参阅[套接字上执行管理操作](performing-control-operations-on-a-socket.md)。
+WSK 应用程序可以配置侦听套接字来有条件地接受套接字接收的传入连接。 WSK 应用程序启用条件通过设置接受模式上侦听套接字[**因此\_条件\_接受**](https://docs.microsoft.com/windows-hardware/drivers/network/so-conditional-accept)套接字的套接字在绑定之前的选项为本地传输地址的套接字。 有关如何设置套接字选项的详细信息，请参阅[套接字上执行管理操作](performing-control-operations-on-a-socket.md)。
 
-如果条件接受侦听套接字上已启用模式，WSK 子系统首先调用的套接字[ *WskInspectEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571137)事件回调函数的新的传入连接请求时套接字上接收。 一个套接字*WskInspectEvent*事件回调函数可以检查传入的连接请求，以确定是否应接受或拒绝该请求。 若要接受请求，套接字*WskInspectEvent*事件回调函数返回**InspectAccept**。 若要拒绝请求，套接字*WskInspectEvent*事件回调函数返回**InspectReject**。 如果套接字*WskInspectEvent*事件的回调函数不能立即确定是否应接受或拒绝请求，它将返回**InspectPend**。 在这种情况下，WSK 应用程序必须调用[ **WskInspectComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff571136)函数之后，完成的传入连接请求的检查过程。 如果传入的连接请求将删除之前完全建立套接字连接，WSK 子系统会调用 WSK 应用程序的[ *WskAbortEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571108)事件回调函数。
+如果条件接受侦听套接字上已启用模式，WSK 子系统首先调用的套接字[ *WskInspectEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_event)事件回调函数的新的传入连接请求时套接字上接收。 一个套接字*WskInspectEvent*事件回调函数可以检查传入的连接请求，以确定是否应接受或拒绝该请求。 若要接受请求，套接字*WskInspectEvent*事件回调函数返回**InspectAccept**。 若要拒绝请求，套接字*WskInspectEvent*事件回调函数返回**InspectReject**。 如果套接字*WskInspectEvent*事件的回调函数不能立即确定是否应接受或拒绝请求，它将返回**InspectPend**。 在这种情况下，WSK 应用程序必须调用[ **WskInspectComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_inspect_complete)函数之后，完成的传入连接请求的检查过程。 如果传入的连接请求将删除之前完全建立套接字连接，WSK 子系统会调用 WSK 应用程序的[ *WskAbortEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_abort_event)事件回调函数。
 
 下面的代码示例演示如何 WSK 应用程序可以通过调用侦听套接字的 WSK 子系统检查传入的连接请求*WskInspectEvent*事件回调函数。
 
@@ -297,7 +297,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-如果 WSK 应用程序确定，它会接受具有条件接受模式已启用侦听套接字上传入的连接请求，将建立传入连接，并可以通过调用到任一应用程序通常接受[ **WskAccept** ](https://msdn.microsoft.com/library/windows/hardware/ff571109)函数或调用的套接字的 WSK 子系统[ *WskAcceptEvent* ](https://msdn.microsoft.com/library/windows/hardware/ff571120)所述的事件的回调函数以前。
+如果 WSK 应用程序确定，它会接受具有条件接受模式已启用侦听套接字上传入的连接请求，将建立传入连接，并可以通过调用到任一应用程序通常接受[ **WskAccept** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept)函数或调用的套接字的 WSK 子系统[ *WskAcceptEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_accept_event)所述的事件的回调函数以前。
 
  
 

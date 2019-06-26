@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 586e4baf835cec41de8f0b28d00f90707ed76910
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3826c82d3cc380e3d650e7b9ece1421ce1ab5ce8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377096"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360283"
 ---
 # <a name="floppyclassguid"></a>FloppyClassGuid
 
 
-FloppyClassGuid 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)的软盘[存储设备](https://msdn.microsoft.com/library/windows/hardware/ff566969)。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_FLOPPY** ](guid-devinterface-floppy.md)此类的新实例的类标识符。
+FloppyClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的软盘[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_FLOPPY** ](guid-devinterface-floppy.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

@@ -5,12 +5,12 @@ ms.assetid: ae116b60-fed2-4e1d-98a8-9fe83f460c50
 keywords: 调试。 调试，Windbg，事后调试、 在实时调试、 JIT 调试、 AeDebug 注册表项
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b1863b10c40818e328d156af05378617702d1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb3b9dfa53ae3ef7a615f1586a1ed92ba0a585be
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340584"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361385"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -20,7 +20,7 @@ ms.locfileid: "63340584"
 
 **异常和断点**
 
-最常见的应用程序错误称为异常。 其中包括访问冲突、 被零除错误、 出现了数值溢出、 CLR 异常和许多其他类型的错误。 应用程序也会导致断点中断。 当 Windows 无法运行 （例如，无法加载必需的模块时） 应用程序时或当遇到断点时，会发生这些问题。 可以插入到代码中由调试器，断点或如函数通过调用[ **DebugBreak**](https://msdn.microsoft.com/library/windows/desktop/ms679297)。
+最常见的应用程序错误称为异常。 其中包括访问冲突、 被零除错误、 出现了数值溢出、 CLR 异常和许多其他类型的错误。 应用程序也会导致断点中断。 当 Windows 无法运行 （例如，无法加载必需的模块时） 应用程序时或当遇到断点时，会发生这些问题。 可以插入到代码中由调试器，断点或如函数通过调用[ **DebugBreak**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)。
 
 **异常处理程序优先顺序**
 
@@ -162,7 +162,7 @@ Auto = 1
 
 **-G**将 g （转到） 命令传递给 WinDbg 和继续从当前指令的执行。
 
-**请注意**  传递 g （转到） 命令的一个重要问题。 使用此方法时，问题是，异常不始终会重复，通常情况下，由于临时性条件不再存在时重新启动代码。 有关此问题的详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)**](-jdinfo--use-jit-debug-info-.md)。
+**请注意**  传递 g （转到） 命令的一个重要问题。 使用此方法时，问题是，异常不始终会重复，通常情况下，由于临时性条件不再存在时重新启动代码。 有关此问题的详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)** ](-jdinfo--use-jit-debug-info-.md)。
 
 若要避免此问题，请使用.jdinfo 或.dump /j。 这种方法使调试器处于感兴趣的代码失败的上下文。 有关详细信息，请参阅[实时 (JIT) 调试](#jit)本主题中更高版本。
 
@@ -275,7 +275,7 @@ ProcDump"打包"包含的 32 位和 64 位版本的应用程序-这种情况下�
 
 **将上下文设置为出错的应用程序**
 
-如前文所述，它是非常可取，以将上下文设置为导致使用 JIT 发生故障的异常\_调试\_信息参数。 有关详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)**](-jdinfo--use-jit-debug-info-.md)。
+如前文所述，它是非常可取，以将上下文设置为导致使用 JIT 发生故障的异常\_调试\_信息参数。 有关详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)** ](-jdinfo--use-jit-debug-info-.md)。
 
 **Windows 调试工具**
 
@@ -286,7 +286,7 @@ Debugger = "<Path>\windbg.exe -p %ld -e %ld -c ".jdinfo 0x%p"
 Auto = 1
 ```
 
-%P 参数是 JIT 的地址\_调试\_目标进程的地址空间中的信息结构。 %P 参数预追加 0x，以便将解释为十六进制值。 有关详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)**](-jdinfo--use-jit-debug-info-.md)。
+%P 参数是 JIT 的地址\_调试\_目标进程的地址空间中的信息结构。 %P 参数预追加 0x，以便将解释为十六进制值。 有关详细信息，请参阅[ **.jdinfo (使用 JIT\_调试\_信息)** ](-jdinfo--use-jit-debug-info-.md)。
 
 若要调试的 32 位和 64 位应用程序混合在一起，配置两个 32 位和 64 位注册表项 （如上所述），将正确的路径设置为 64 位和 32 位 WinDbg.exe 的位置。
 
@@ -298,9 +298,9 @@ Auto = 1
 <Path>\windbg.exe -p %ld -e %ld -c ".dump /j %p /u <DumpPath>\AeDebug.dmp; qd"
 ```
 
-/U 选项用于生成唯一文件名以允许多个转储文件会自动创建。 有关选项，请参阅详细信息[ **.dump （创建转储文件）**](-dump--create-dump-file-.md)。
+/U 选项用于生成唯一文件名以允许多个转储文件会自动创建。 有关选项，请参阅详细信息[ **.dump （创建转储文件）** ](-dump--create-dump-file-.md)。
 
-创建的转储会 JITDEBUG\_信息数据存储为默认异常上下文。 而不是使用.jdinfo 查看异常信息和设置上下文，使用.exr-1 来显示异常记录和.ecxr 设置上下文。 有关详细信息请参阅[ **.exr （显示异常记录）** ](-exr--display-exception-record-.md)并[ **.ecxr （显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)。
+创建的转储会 JITDEBUG\_信息数据存储为默认异常上下文。 而不是使用.jdinfo 查看异常信息和设置上下文，使用.exr-1 来显示异常记录和.ecxr 设置上下文。 有关详细信息请参阅[ **.exr （显示异常记录）** ](-exr--display-exception-record-.md)并[ **.ecxr （显示异常上下文记录）** ](-ecxr--display-exception-context-record-.md)。
 
 **Windows 错误报告-q / qd**
 

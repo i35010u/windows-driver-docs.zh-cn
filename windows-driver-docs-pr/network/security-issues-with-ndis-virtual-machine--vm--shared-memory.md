@@ -4,12 +4,12 @@ description: NDIS 虚拟机 (VM) 共享内存的安全问题
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7abc25dca98a2e04cd61dfe692e4ebf1d4854d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c574d7cd2f299ae12234ff62ba5da27dcf406d4e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366159"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67382126"
 ---
 # <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 虚拟机 (VM) 共享内存的安全问题
 
@@ -83,9 +83,9 @@ VMQ 共享内存的摘要要求如下所示：
 
 以下几点适用于 Windows Server 2012 和更高版本的 Windows 运行的 VMQ 微型端口驱动程序：
 
--   对于 NDIS 6.20 VMQ 微型端口驱动程序，任何更改不是必需的。 但是，当 VSP 会分配 VM 队列通过发出的 OID （对象标识符） 方法请求[OID\_接收\_筛选器\_分配\_队列](https://msdn.microsoft.com/library/windows/hardware/ff569784)，它将设置**LookaheadSize**的成员[ **NDIS\_接收\_队列\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567211)为零的结构。 这将强制的微型端口驱动程序不会拆分为 pre 预测先行和 post 预测先行缓冲区数据包。
+-   对于 NDIS 6.20 VMQ 微型端口驱动程序，任何更改不是必需的。 但是，当 VSP 会分配 VM 队列通过发出的 OID （对象标识符） 方法请求[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)，它将设置**LookaheadSize**的成员[ **NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)为零的结构。 这将强制的微型端口驱动程序不会拆分为 pre 预测先行和 post 预测先行缓冲区数据包。
 
--   从开始 NDIS 6.30，VMQ 微型端口驱动程序必须不播发将数据包数据拆分为 pre 预测先行和 post 预测先行缓冲区的支持。 当微型端口驱动程序注册其 VMQ 功能时，它初始化时，它必须遵循这些规则[ **NDIS\_接收\_筛选器\_功能**](https://msdn.microsoft.com/library/windows/hardware/ff566864)结构：
+-   从开始 NDIS 6.30，VMQ 微型端口驱动程序必须不播发将数据包数据拆分为 pre 预测先行和 post 预测先行缓冲区的支持。 当微型端口驱动程序注册其 VMQ 功能时，它初始化时，它必须遵循这些规则[ **NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构：
 
     -   不能设置微型端口驱动程序**NDIS\_接收\_筛选器\_预测先行\_拆分\_支持**标志中**标志**成员。
 

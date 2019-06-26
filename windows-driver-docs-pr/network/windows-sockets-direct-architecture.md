@@ -8,12 +8,12 @@ keywords:
 - NIC 组件 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be57f40aeb1111a0e4ccb8f7254128a38b383cde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1f396dcb7eb444f076930fcad082b2f7bdc3af1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335442"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364926"
 ---
 # <a name="windows-sockets-direct-architecture"></a>Windows Sockets Direct 体系结构
 
@@ -47,7 +47,7 @@ Windows 套接字开关是 Windows 套接字直接的操作系统提供的组件
 
 -   使用本机 SAN 服务提供程序时，来模拟 TCP/IP 语义。
 
-此开关的顶部和底部接口符合对 Windows 套接字服务提供程序接口 (SPI)。 开关的底部接口使用 Windows 套接字 SPI 的扩展来充分利用 SAN 的功能。 这些扩展插件中所述[Windows 套接字的 SPI 扩展 San](windows-sockets-spi-extensions-for-sans.md) ，并完全记录中记录[Windows 套接字直接引用](https://msdn.microsoft.com/library/windows/hardware/ff565857)。
+此开关的顶部和底部接口符合对 Windows 套接字服务提供程序接口 (SPI)。 开关的底部接口使用 Windows 套接字 SPI 的扩展来充分利用 SAN 的功能。 这些扩展插件中所述[Windows 套接字的 SPI 扩展 San](windows-sockets-spi-extensions-for-sans.md) ，并完全记录中记录[Windows 套接字直接引用](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565857(v=vs.85))。
 
 交换机管理应用程序对所有网络访问。 计算机可能包含多个来自多个供应商的 SAN Nic，以及一个或多个 LAN 和 WAN Nic，如 LAN NIC 支持以太网网络。 交换机管理应用程序以透明方式与两个 Nic 相关联的所有网络访问。
 

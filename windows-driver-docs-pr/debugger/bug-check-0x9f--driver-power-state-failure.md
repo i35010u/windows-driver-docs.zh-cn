@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36a974094bd78009e0ca028820b2a567a8c55d0a
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 88ee77ba5a1e4f12e51bbd28da586c35c22d406a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813567"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361677"
 ---
 # <a name="developer-content-bug-check-0x9f-driverpowerstatefailure"></a>（开发人员内容）Bug 检查 0x9F:驱动程序\_电源\_状态\_失败
 
@@ -26,7 +26,7 @@ ms.locfileid: "66813567"
 该驱动程序\_电源\_状态\_故障错误检查的值为 0x0000009F。 此 bug 检查指示驱动程序处于不一致或无效的电源状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 ## <a name="driverpowerstatefailure-parameters"></a>驱动程序\_电源\_状态\_失败参数
 
@@ -307,7 +307,7 @@ Nt ！会审\_9F\_即插即用结构提供了其他错误检查信息，可帮�
 
 - 查找范围**设备管理器**若要查看的任何设备都带有感叹号 （！）。 查看任何错误的驱动程序的驱动程序属性中显示的事件日志。 请尝试更新相关的驱动程序。
 
-- 检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://windows.microsoft.com/windows/what-information-event-logs-event-viewer#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
+- 检查事件查看器中的系统日志可能会帮助找出设备或导致错误的驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 查找为蓝色的屏幕的同一时间范围内发生在系统日志中的关键错误。
 
 - 若要尝试并找出原因，暂时禁用节能使用控制面板中，电源选项。 某些驱动程序问题与系统休眠和挂起和恢复的能力的各种状态相关。
 

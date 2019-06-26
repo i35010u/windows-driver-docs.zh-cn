@@ -4,12 +4,12 @@ description: 为了帮助评估图形硬件性能，Windows 显示驱动程序�
 ms.assetid: 8A2E1392-F0B4-4F5F-AFD9-DE8C6F3C2147
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec999bf2141e3683cd8cb206f236e6d41f140e64
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8a984f3052b84b9c5aa5b2787b280151b7c4af2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379929"
 ---
 # <a name="graphics-kernel-performance-improvements"></a>图形内核性能改进
 
@@ -21,17 +21,17 @@ ms.locfileid: "63323809"
 
 这些参考主题介绍如何在您的显示微型端口驱动程序和用户模式显示驱动程序中实现此功能：
 
--   [*DxgkDdiCalibrateGpuClock*](https://msdn.microsoft.com/library/windows/hardware/dn467321)
--   [*DxgkDdiFormatHistoryBuffer*](https://msdn.microsoft.com/library/windows/hardware/dn439360)
--   [**DXGK\_历史记录\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/dn439361)
--   [**DXGK\_历史记录\_缓冲区\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn439362)
--   [**DXGKARG\_CALIBRATEGPUCLOCK**](https://msdn.microsoft.com/library/windows/hardware/dn467320)
--   [**DXGKARG\_FORMATHISTORYBUFFER**](https://msdn.microsoft.com/library/windows/hardware/dn439358)
--   [**DXGKARG\_HISTORYBUFFERPRECISION**](https://msdn.microsoft.com/library/windows/hardware/dn439359)
--   [**驱动程序\_初始化\_数据**](https://msdn.microsoft.com/library/windows/hardware/ff556169) (新**DxgkDdiCalibrateGpuClock**并**DxgkDdiFormatHistoryBuffer**成员)
--   [**DXGK\_ALLOCATIONINFOFLAGS** ](https://msdn.microsoft.com/library/windows/hardware/ff560966) (新**HistoryBuffer**成员)
--   [**DXGK\_QUERYADAPTERINFOTYPE** ](https://msdn.microsoft.com/library/windows/hardware/ff562010) (新**DXGKQAITYPE\_HISTORYBUFFERPRECISION**常量值)
--   [*DxgkDdiCreateAllocation* ](https://msdn.microsoft.com/library/windows/hardware/ff559606) （请参见备注中的"Allocating 历史记录缓冲区"）
+-   [*DxgkDdiCalibrateGpuClock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_calibrategpuclock)
+-   [*DxgkDdiFormatHistoryBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_formathistorybuffer)
+-   [**DXGK\_历史记录\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_history_buffer)
+-   [**DXGK\_历史记录\_缓冲区\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_history_buffer_header)
+-   [**DXGKARG\_CALIBRATEGPUCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/display/)
+-   [**DXGKARG\_FORMATHISTORYBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_formathistorybuffer)
+-   [**DXGKARG\_HISTORYBUFFERPRECISION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_historybufferprecision)
+-   [**驱动程序\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data) (新**DxgkDdiCalibrateGpuClock**并**DxgkDdiFormatHistoryBuffer**成员)
+-   [**DXGK\_ALLOCATIONINFOFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfoflags) (新**HistoryBuffer**成员)
+-   [**DXGK\_QUERYADAPTERINFOTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype) (新**DXGKQAITYPE\_HISTORYBUFFERPRECISION**常量值)
+-   [*DxgkDdiCreateAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) （请参见备注中的"Allocating 历史记录缓冲区"）
 
  
 

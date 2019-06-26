@@ -4,19 +4,19 @@ description: V4 打印驱动程序模型提供了大量简化从自定义 UI 应
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6c12ec567d99dc8d96b1fc2dbae21352e0f41d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccaafefa4e5716fd08b9813b82128c7cd2b7eaff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358566"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362695"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 
 
 V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到呈现过程的数据流的属性包。
 
-这些属性包允许自定义属性和功能定义要在自定义 UI 中创建，然后使用由呈现进程。 所有属性包通过使用都公开[ **IPrinterScriptablePropertyBag** ](https://msdn.microsoft.com/library/windows/hardware/hh973217)界面在 JavaScript 中或通过使用[ **IPrinterPropertyBag** ](https://msdn.microsoft.com/library/windows/hardware/hh439547)在其他环境中的接口。
+这些属性包允许自定义属性和功能定义要在自定义 UI 中创建，然后使用由呈现进程。 所有属性包通过使用都公开[ **IPrinterScriptablePropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)界面在 JavaScript 中或通过使用[ **IPrinterPropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)在其他环境中的接口。
 
 下表概述了如何使用不同的组件来获取属性包对象从 v4 打印驱动程序的不同部分。
 
@@ -34,7 +34,7 @@ V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到�
 <tbody>
 <tr class="odd">
 <td>JavaScript 约束脚本</td>
-<td>驱动程序和队列属性包传递给 JavaScript 约束脚本使用 scriptContext 参数。 此参数的类型是<a href="https://msdn.microsoft.com/library/windows/hardware/hh768279" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh768279)"> <strong>IPrinterScriptContext</strong> </a>和包含子项：驱动程序属性 – 表示驱动程序属性包。
+<td>驱动程序和队列属性包传递给 JavaScript 约束脚本使用 scriptContext 参数。 此参数的类型是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)"> <strong>IPrinterScriptContext</strong> </a>和包含子项：驱动程序属性 – 表示驱动程序属性包。
 QueueProperties – 表示队列属性包。
 UserProperties – 用户属性包。
 DEVMODE 属性包传递到 DEVMODE &lt; - &gt; PrintTicket 转换方法，例如<em>devModeProperties</em>参数 (它属于类型<strong>IPrinterScriptablePropertyBag</strong>)。 它将对其他方法不可用。</td>
@@ -46,19 +46,19 @@ QueueProperties – 表示队列属性包。</td>
 </tr>
 <tr class="odd">
 <td>打印机扩展应用程序</td>
-<td>所有属性包的一部分都传入<a href="https://msdn.microsoft.com/library/windows/hardware/hh973207" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh973207)"> <strong>IPrinterExtensionEventArgs</strong> </a> OnDriverEvent 处理程序的参数。 它们是类型的所有<strong>IPrinterPropertyBag</strong>。 被指定为以下：驱动程序属性 – 表示驱动程序属性包。
+<td>所有属性包的一部分都传入<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)"> <strong>IPrinterExtensionEventArgs</strong> </a> OnDriverEvent 处理程序的参数。 它们是类型的所有<strong>IPrinterPropertyBag</strong>。 被指定为以下：驱动程序属性 – 表示驱动程序属性包。
 UserProperties – 用户属性包。
 PrinterQueue.GetProperties() – 指队列属性包</td>
 </tr>
 <tr class="even">
 <td>UWP 的设备应用程序</td>
-<td>使用激活过程中的所有属性包都传递<a href="https://msdn.microsoft.com/library/windows/hardware/hh406649" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh406649)"> <strong>IPrinterExtensionContext</strong> </a>对象。 被指定为：驱动程序属性 – 表示驱动程序属性包。
+<td>使用激活过程中的所有属性包都传递<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)"> <strong>IPrinterExtensionContext</strong> </a>对象。 被指定为：驱动程序属性 – 表示驱动程序属性包。
 UserProperties – 用户属性包。
 PrinterQueue.GetProperties() – 指队列属性包</td>
 </tr>
 <tr class="odd">
 <td>XPS 呈现筛选器</td>
-<td><p>XPS 筛选器可以从内部访问驱动程序属性包<a href="https://msdn.microsoft.com/library/windows/hardware/ff561066" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff561066)"><strong>打印筛选器管道属性包</strong></a>使用属性命名为"DriverPropertyBag"或从定义的值XPS_FP_PROPERTY_BAG<em>filterpipeline.h</em>。 下面是有关 DriverPropertyBag 信息：</p>
+<td><p>XPS 筛选器可以从内部访问驱动程序属性包<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>打印筛选器管道属性包</strong></a>使用属性命名为"DriverPropertyBag"或从定义的值XPS_FP_PROPERTY_BAG<em>filterpipeline.h</em>。 下面是有关 DriverPropertyBag 信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取驱动程序属性包的 IPrinterPropertyBag 接口的指针。
 <p>XPS 筛选器可以访问队列属性包中使用属性名称"QueuePropertyBag"，或定义打印筛选器管道属性包和值从 XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>。 下面是有关 QueuePropertyBag 信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取对队列的属性包的 IPrinterPropertyBag 接口的指针。</td>
@@ -197,12 +197,12 @@ Config:&lt;名称&gt;
 ![队列属性包 xml 架构](images/queuepropbagschem.png)
 
 ## <a name="related-topics"></a>相关主题
-[**IPrinterExtensionContext**](https://msdn.microsoft.com/library/windows/hardware/hh406649)  
-[**IPrinterExtensionEventArgs**](https://msdn.microsoft.com/library/windows/hardware/hh973207)  
-[**IPrinterPropertyBag**](https://msdn.microsoft.com/library/windows/hardware/hh439547)  
-[**IPrinterScriptablePropertyBag**](https://msdn.microsoft.com/library/windows/hardware/hh973217)  
-[**IPrinterScriptContext**](https://msdn.microsoft.com/library/windows/hardware/hh768279)  
-[**打印筛选器管道属性包**](https://msdn.microsoft.com/library/windows/hardware/ff561066)  
+[**IPrinterExtensionContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)  
+[**IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)  
+[**IPrinterPropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)  
+[**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
+[**打印筛选器管道属性包**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)  
 
 
 

@@ -4,12 +4,12 @@ description: 解锁设备
 ms.assetid: 4e6ed725-2384-429b-be1e-027b7784e95b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 452fe864df1f7dd7d2fa1f72e89025f1f39ac36a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53025a63733775b0a05406248527680ceb6073d2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357856"
 ---
 # <a name="unlock-a-device"></a>解锁设备
 
@@ -22,23 +22,23 @@ ms.locfileid: "63383764"
     account.currentNetwork.networkAdapter. networkAdapterId
     ```
 
-2.  创建[ **IMbnInterfaceManager** ](https://msdn.microsoft.com/library/windows/desktop/dd430416)实例。
+2.  创建[ **IMbnInterfaceManager** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbninterfacemanager)实例。
 
-3.  通知[ **IMbnPinManagerEvents** ](https://msdn.microsoft.com/library/windows/desktop/dd323118)并[ **IMbnPinEvents** ](https://msdn.microsoft.com/library/windows/desktop/dd323110)连接点 （这些用于获取 PIN 状态和取消阻止/ 解锁结果）。 有关详细信息，请参阅备注部分[ **IMbnInterfaceManager**](https://msdn.microsoft.com/library/windows/desktop/dd430416)。
+3.  通知[ **IMbnPinManagerEvents** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbnpinmanagerevents)并[ **IMbnPinEvents** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbnpinevents)连接点 （这些用于获取 PIN 状态和取消阻止/ 解锁结果）。 有关详细信息，请参阅备注部分[ **IMbnInterfaceManager**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbninterfacemanager)。
 
-4.  传递到的网络适配器 ID [ **IMbnInterfaceManager::GetInterface** ](https://msdn.microsoft.com/library/windows/desktop/dd430420)若要获取[ **IMbnInterface** ](https://msdn.microsoft.com/library/windows/desktop/dd430406)设备接口。
+4.  传递到的网络适配器 ID [ **IMbnInterfaceManager::GetInterface** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbninterfacemanager-getinterface)若要获取[ **IMbnInterface** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbninterface)设备接口。
 
-5.  获取[ **IMbnPinManager** ](https://msdn.microsoft.com/library/windows/desktop/dd323117)接口通过调用设备[ **IMbnInterface::QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/dd430406)。
+5.  获取[ **IMbnPinManager** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbnpinmanager)接口通过调用设备[ **IMbnInterface::QueryInterface**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbninterface)。
 
-6.  调用[ **IMbnPinManager::GetPinState** ](https://msdn.microsoft.com/library/windows/desktop/dd323123)若要获取的设备 （通过使用在步骤 3 中已注册的连接点返回的状态） PIN 状态。
+6.  调用[ **IMbnPinManager::GetPinState** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnpinmanager-getpinstate)若要获取的设备 （通过使用在步骤 3 中已注册的连接点返回的状态） PIN 状态。
 
-7.  确定如何在设备是锁定还是通过使用阻止[ **MBN\_PIN\_INFO::pinState** ](https://msdn.microsoft.com/library/windows/desktop/dd323226)传递到该事件的参数。
+7.  确定如何在设备是锁定还是通过使用阻止[ **MBN\_PIN\_INFO::pinState** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/ns-mbnapi-mbn_pin_info)传递到该事件的参数。
 
-8.  通过调用适当的 PIN 获取 IMbnPin 接口[ **IMbnPinManager::GetPin**](https://msdn.microsoft.com/library/windows/desktop/dd323121)。
+8.  通过调用适当的 PIN 获取 IMbnPin 接口[ **IMbnPinManager::GetPin**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnpinmanager-getpin)。
 
-9.  调用[ **IMbnPin::Enter** ](https://msdn.microsoft.com/library/windows/desktop/dd323127)或[ **IMbnPin::Unblock**](https://msdn.microsoft.com/library/windows/desktop/dd323134)根据如何在设备锁定 （请参阅第 7 步）。
+9.  调用[ **IMbnPin::Enter** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnpin-enter)或[ **IMbnPin::Unblock**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnpin-unblock)根据如何在设备锁定 （请参阅第 7 步）。
 
-10. 侦听**解锁**或**解除阻止**使用结果[ **IMbnPinEvents** ](https://msdn.microsoft.com/library/windows/desktop/dd323110)注册，以了解操作是否成功。
+10. 侦听**解锁**或**解除阻止**使用结果[ **IMbnPinEvents** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nn-mbnapi-imbnpinevents)注册，以了解操作是否成功。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

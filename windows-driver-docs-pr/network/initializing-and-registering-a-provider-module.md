@@ -10,17 +10,17 @@ keywords:
 - NmrRegisterProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 008f31c858d04c81bdc2cc3e7f3508a293528cc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2de912ab0becf1fac9a0a78cd98e7ebcd1145bca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324939"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67381287"
 ---
 # <a name="initializing-and-registering-a-provider-module"></a>初始化和注册提供程序模块
 
 
-提供程序模块必须先它可以注册其自身与网络模块注册机构 (NMR) 初始化数据结构的数。 这些结构包括[ **NPI\_MODULEID** ](https://msdn.microsoft.com/library/windows/hardware/ff568813)结构[ **NPI\_提供程序\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff568814)结构[ **NPI\_注册\_实例**](https://msdn.microsoft.com/library/windows/hardware/ff568815)结构 (包含在 NPI\_提供程序\_特征结构），并由提供程序模块的注册上下文使用的提供程序模块定义的结构。
+提供程序模块必须先它可以注册其自身与网络模块注册机构 (NMR) 初始化数据结构的数。 这些结构包括[ **NPI\_MODULEID** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))结构[ **NPI\_提供程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_provider_characteristics)结构[ **NPI\_注册\_实例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/ns-netioddk-_npi_registration_instance)结构 (包含在 NPI\_提供程序\_特征结构），并由提供程序模块的注册上下文使用的提供程序模块定义的结构。
 
 如果提供程序模块向注册自身 NMR 作为提供商[网络编程接口 (NPI)](network-programming-interface.md) ，用于定义特定于 NPI 的提供程序特征、 提供程序模块还必须初始化提供程序实例特性结构，它由 NPI 定义。
 
@@ -119,11 +119,11 @@ PROVIDER_REGISTRATION_CONTEXT ProviderRegistrationContext =
 };
 ```
 
-提供程序模块通常初始化单独存在于其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 提供程序模块的主要初始化任务包括：
+提供程序模块通常初始化单独存在于其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 提供程序模块的主要初始化任务包括：
 
--   指定[ **Unload** ](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数。 当提供程序模块是从系统中卸载时，操作系统将调用此函数。 如果提供程序模块不提供卸载函数，该提供程序模块不能为从系统中卸载。
+-   指定[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。 当提供程序模块是从系统中卸载时，操作系统将调用此函数。 如果提供程序模块不提供卸载函数，该提供程序模块不能为从系统中卸载。
 
--   调用[ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784) NMR 向注册提供程序模块的函数。
+-   调用[ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider) NMR 向注册提供程序模块的函数。
 
 例如：
 
@@ -165,11 +165,11 @@ NTSTATUS
 }
 ```
 
-如果提供程序模块的多个 NPI 提供程序，它必须初始化一组独立的数据结构，并调用[ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)为它支持每个 NPI。 如果网络模块是提供程序模块和客户端模块 （也就是说，它是一个 NPI 的提供程序和客户端的另一个 NPI），它必须初始化两个独立的数据结构，提供程序接口和客户端接口集并同时调用**NmrRegisterProvider**并[ **NmrRegisterClient**](https://msdn.microsoft.com/library/windows/hardware/ff568782)。
+如果提供程序模块的多个 NPI 提供程序，它必须初始化一组独立的数据结构，并调用[ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider)为它支持每个 NPI。 如果网络模块是提供程序模块和客户端模块 （也就是说，它是一个 NPI 的提供程序和客户端的另一个 NPI），它必须初始化两个独立的数据结构，提供程序接口和客户端接口集并同时调用**NmrRegisterProvider**并[ **NmrRegisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterclient)。
 
-调用不需提供程序模块[ **NmrRegisterProvider** ](https://msdn.microsoft.com/library/windows/hardware/ff568784)中其[ **DriverEntry** ](https://msdn.microsoft.com/library/windows/hardware/ff544113)函数。 例如，在其中提供程序模块是一个复杂的驱动程序的子组件的情况下，提供程序模块的注册时可能发生仅激活提供程序模块子组件。
+调用不需提供程序模块[ **NmrRegisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrregisterprovider)中其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)函数。 例如，在其中提供程序模块是一个复杂的驱动程序的子组件的情况下，提供程序模块的注册时可能发生仅激活提供程序模块子组件。
 
-有关实现提供程序模块的详细信息[ **Unload** ](https://msdn.microsoft.com/library/windows/hardware/ff564886)函数中，请参阅[卸载提供程序模块](unloading-a-provider-module.md)。
+有关实现提供程序模块的详细信息[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数中，请参阅[卸载提供程序模块](unloading-a-provider-module.md)。
 
  
 

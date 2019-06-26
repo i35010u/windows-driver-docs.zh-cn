@@ -4,12 +4,12 @@ description: 自定义端口属性定义和注册
 ms.assetid: 55FCA402-191B-4DC9-A126-77AA15183E90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00801e7d5a61dcf5c0b7e570c7a40704a7796d29
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d032747f9a5ffe047505dfc274334d856bcbef23
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326033"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364958"
 ---
 # <a name="custom-port-property-definition-and-registration"></a>自定义端口属性定义和注册
 
@@ -68,7 +68,7 @@ mofcomp -N:root\virtualization\v2 Fabrikam_PortCustomSettingData.mof
 net start vmms
 ```
 
-有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://msdn.microsoft.com/library/windows/hardware/ff542012)。
+有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
 
 下面的示例演示如何配置示例功能。 在此示例中，Fabrikam\_PortCustomSettingData MOF 类用于配置名为"TestVm"HYPER-V 分区中的端口。
 

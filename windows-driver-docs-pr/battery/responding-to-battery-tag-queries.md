@@ -6,12 +6,12 @@ keywords:
 - 电池标记 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 676e5b55603f5749d5ee3422a9e44f3dceca276a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a6d55947ad46b05c3780241a7a998ade62017b2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335052"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364719"
 ---
 # <a name="responding-to-battery-tag-queries"></a>响应电池标记查询
 
@@ -19,7 +19,7 @@ ms.locfileid: "63335052"
 ## <span id="ddk_responding_to_battery_tag_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_TAG_QUERIES_DG"></span>
 
 
-电池标记是 ULONG 计数初始化和递增 miniclass 驱动程序。 电池类驱动程序调用[ *BatteryMiniQueryTag* ](https://msdn.microsoft.com/library/windows/hardware/ff536275)请求标记的当前值。
+电池标记是 ULONG 计数初始化和递增 miniclass 驱动程序。 电池类驱动程序调用[ *BatteryMiniQueryTag* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)请求标记的当前值。
 
 此 miniclass 驱动程序例程声明，如下所示：
 
@@ -32,7 +32,7 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向 miniclass 驱动程序分配和传递给电池中的类驱动程序的上下文区域\_微型端口\_在设备初始化 (信息结构[**BatteryClassInitializeDevice**](https://msdn.microsoft.com/library/windows/hardware/ff536266))。 *BatteryTag*值是由创建和维护 miniclass 驱动程序。
+*上下文*参数是指向 miniclass 驱动程序分配和传递给电池中的类驱动程序的上下文区域\_微型端口\_在设备初始化 (信息结构[**BatteryClassInitializeDevice**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice))。 *BatteryTag*值是由创建和维护 miniclass 驱动程序。
 
 每次插入电池，miniclass 驱动程序必须递增的值的标记，而不管是否这是新电池或以前存在于同一个电池。
 

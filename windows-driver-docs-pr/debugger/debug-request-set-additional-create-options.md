@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a443041865d023db1669747a1b03a4bd9696bc1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27f98567ed627f5b64647a5d54d2ff499b516f89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349043"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366985"
 ---
 # <a name="debugrequestsetadditionalcreateoptions"></a>DEBUG\_REQUEST\_SET\_ADDITIONAL\_CREATE\_OPTIONS
 
@@ -27,7 +27,7 @@ ms.locfileid: "63349043"
 **Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-新的默认进程创建选项。 进程创建选项的类型是[**调试\_创建\_进程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)。
+新的默认进程创建选项。 进程创建选项的类型是[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 不使用。
@@ -35,9 +35,9 @@ ms.locfileid: "63349043"
 <a name="remarks"></a>备注
 -------
 
-方法使用的默认进程创建选项[ **CreateProcess** ](https://msdn.microsoft.com/library/windows/hardware/ff539321)并[ **CreateProcessAndAttach** ](https://msdn.microsoft.com/library/windows/hardware/ff540048)这与不同[**CreateProcess2** ](https://msdn.microsoft.com/library/windows/hardware/ff539323)并[ **CreateProcessAndAttach2**](https://msdn.microsoft.com/library/windows/hardware/ff540055)，未指定进程创建选项的完整范围。
+方法使用的默认进程创建选项[ **CreateProcess** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess)并[ **CreateProcessAndAttach** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach)这与不同[**CreateProcess2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess2)并[ **CreateProcessAndAttach2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach2)，未指定进程创建选项的完整范围。
 
-**CreateFlags**字段[**调试\_创建\_过程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)结构不使用默认情况下，因为所有进程创建操作提供此信息。
+**CreateFlags**字段[**调试\_创建\_过程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)结构不使用默认情况下，因为所有进程创建操作提供此信息。
 
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -46,11 +46,11 @@ ms.locfileid: "63349043"
 
 [**DEBUG\_REQUEST\_GET\_ADDITIONAL\_CREATE\_OPTIONS**](debug-request-get-additional-create-options.md)
 
-[**调试\_创建\_进程\_选项**](https://msdn.microsoft.com/library/windows/hardware/ff541464)
+[**调试\_创建\_进程\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_create_process_options)
 
-[**CreateProcess**](https://msdn.microsoft.com/library/windows/hardware/ff539321)
+[**CreateProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocess)
 
-[**CreateProcessAndAttach**](https://msdn.microsoft.com/library/windows/hardware/ff540048)
+[**CreateProcessAndAttach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugclient5-createprocessandattach)
 
  
 

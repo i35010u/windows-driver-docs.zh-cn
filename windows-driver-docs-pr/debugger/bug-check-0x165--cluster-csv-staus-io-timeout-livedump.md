@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ea0567ae1faa6321fdec5f3e72e5d7771a61223f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 212a0dc56cef8a1f3ed393ff492aed9f14ce43f2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342543"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362133"
 ---
 # <a name="bug-check-0x165-clustercsvstatusiotimeoutlivedump"></a>Bug 检查 0x165：群集\_CSV\_状态\_IO\_超时\_LIVEDUMP
 
 群集\_CSV\_状态\_IO\_超时\_LIVEDUMP bug 检查的值为 0x00000165。 这表示非协调节点上的 SMB 客户端协调的节点上的 IO 时间太长并且失败的 STATUS_IO_TIMEOUT 所有 Io 错误报告。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="clustercsvstatusiotimeoutlivedump-parameters"></a>群集\_CSV\_状态\_IO\_超时\_LIVEDUMP 参数
@@ -53,7 +53,7 @@ ms.locfileid: "63342543"
 ## <a name="see-also"></a>请参阅
 ----------
 
-[故障排除挂起使用实时转储 （博客）](https://blogs.msdn.microsoft.com/clustering/2016/03/02/troubleshooting-hangs-using-live-dump/)
+[故障排除挂起使用实时转储 （博客）](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 

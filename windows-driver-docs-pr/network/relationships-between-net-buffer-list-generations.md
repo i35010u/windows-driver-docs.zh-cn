@@ -9,12 +9,12 @@ keywords:
 - 关系 WDK NET_BUFFER_LIST
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 048ac090b239589ba34dc838e9042efac04e22fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b869a9b07250f99d5cfff8d83c41527e85222876
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373803"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359136"
 ---
 # <a name="relationships-between-netbufferlist-generations"></a>NET 之间的关系\_缓冲区\_列表代
 
@@ -22,11 +22,11 @@ ms.locfileid: "63373803"
 
 
 
-驱动程序编写人员应理解和维护父 （原始） 之间的关系[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构和 （派生） 的子结构由于克隆、 片段和重装配操作。
+驱动程序编写人员应理解和维护父 （原始） 之间的关系[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构和 （派生） 的子结构由于克隆、 片段和重装配操作。
 
 重装配克隆/片段函数的调用方维护的父/子关系，包括子网中的父指针\_缓冲区\_列表结构和子级计数。 子级计数可确保调用方释放父级，被释放所有子级之后。 以下规则适用：
 
--   驱动程序创建子结构从后[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构，它应保留父结构的所有权以及应传递子为其他驱动程序的结构。 该驱动程序应永远不会通过父 NET\_缓冲区\_列表结构到另一个驱动程序。
+-   驱动程序创建子结构从后[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构，它应保留父结构的所有权以及应传递子为其他驱动程序的结构。 该驱动程序应永远不会通过父 NET\_缓冲区\_列表结构到另一个驱动程序。
 
 -   驱动程序应只更新父 NET 中的子计数\_缓冲区\_列表结构。 父结构永远不会传递给另一个驱动程序，因为不存在风险的子级计数值可能被覆盖。 驱动程序应将父指针设置为指向父结构的子结构中。
 

@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_POWER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 982326f8e938b8549b395365997e22f29d54f4c9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcc41c92d1d38ca43ac1aa6ca9863ca2326e2085
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348573"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359204"
 ---
 # <a name="oidwdisetpowerstate"></a>OID\_WDI\_SET\_POWER\_STATE
 
@@ -155,19 +155,19 @@ PCIe 总线 NIC 支持 D0 和 D3，其中 D3 可以 D3Hot 或 D3Cold。 在主�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn898040" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898040)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-power-state" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-power-state)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
 <td></td>
 <td></td>
 <td><p>电源状态。 这适用于主要的端口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn926303" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn926303)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
 <td></td>
 <td>X</td>
 <td><p>此字段可能只发生在 NIC 正在将进入低能耗和知识来唤醒任何指定的事件 （如 SD io D2)。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/dn898060" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/dn898060)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
 <td></td>
 <td>X</td>
 <td><p>设置 power 原因。</p></td>
@@ -182,7 +182,7 @@ PCIe 总线 NIC 支持 D0 和 D3，其中 D3 可以 D3Hot 或 D3Cold。 在主�
 
 | TLV                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_适配器\_恢复\_必需**](https://msdn.microsoft.com/library/windows/hardware/dn926120) |                                | X        | 如果值为 true，它向 OS 固件需要恢复其上下文的帮助。 这应该只出现时，驱动程序挂起到存储。 由于操作系统发出的一系列的 Wi-fi 命令，将固件上下文和 IHV 组件上下文最新的因此，IHV 组件必须重置软件状态。 |
+| [**WDI\_TLV\_适配器\_恢复\_必需**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-resume-required) |                                | X        | 如果值为 true，它向 OS 固件需要恢复其上下文的帮助。 这应该只出现时，驱动程序挂起到存储。 由于操作系统发出的一系列的 Wi-fi 命令，将固件上下文和 IHV 组件上下文最新的因此，IHV 组件必须重置软件状态。 |
 
  
 
@@ -191,9 +191,9 @@ PCIe 总线 NIC 支持 D0 和 D3，其中 D3 可以 D3Hot 或 D3Cold。 在主�
 
 NIC 指定一组它可以检测唤醒堆栈的事件。 操作系统检测向下部分或完整的低电源命令与该 nic 事件集。 更早于 Dx 命令设置一些唤醒事件参数。 其他人 Dx 命令前设置为固件中。 使用 Dx 命令只会启用所有事件。
 
-在此界面中，设置为启用的事件已经过检测向下可选[ **WDI\_TLV\_启用\_唤醒\_事件**](https://msdn.microsoft.com/library/windows/hardware/dn926303) TLV 作为的一部分OID\_WDI\_设置\_设备电源状态 Dx 的电源命令。 绑定的 TLV 处于不存在如果操作系统不希望 arm 要唤醒的 NIC。
+在此界面中，设置为启用的事件已经过检测向下可选[ **WDI\_TLV\_启用\_唤醒\_事件**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events) TLV 作为的一部分OID\_WDI\_设置\_设备电源状态 Dx 的电源命令。 绑定的 TLV 处于不存在如果操作系统不希望 arm 要唤醒的 NIC。
 
-当固件收到具有的 Dx 命令[ **WDI\_TLV\_启用\_唤醒\_事件**](https://msdn.microsoft.com/library/windows/hardware/dn926303)，它可能会检测到在完成 Dx 之前发生唤醒事件命令。 它应缓冲区事件、 完成处理该命令，然后断言唤醒中断。
+当固件收到具有的 Dx 命令[ **WDI\_TLV\_启用\_唤醒\_事件**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)，它可能会检测到在完成 Dx 之前发生唤醒事件命令。 它应缓冲区事件、 完成处理该命令，然后断言唤醒中断。
 
 通过 Wi-fi NIC 的每个唤醒后应执行为什么 NIC 唤醒堆栈的唤醒原因。 NIC 唤醒堆栈通过断言唤醒中断行，这通常由总线或 ACPI 方法提供服务。 这些方法唤醒的 CPU 和所需的组件来处理发生唤醒事件，并完成 Wi-fi 等待唤醒 IRP 堆栈。 随后，操作系统会向驱动程序和固件发出 D0 请求。 此请求是幂 OID 到将 D0 命令发送到固件的驱动程序。 固件保留唤醒原因的指示，直到它接收并完成 D0 命令。
 
@@ -204,7 +204,7 @@ NIC 指定一组它可以检测唤醒堆栈的事件。 操作系统检测向下
 ## <a name="no-enabled-wake-events"></a>没有已启用的唤醒的事件
 
 
-如果没有任何[ **WDI\_TLV\_启用\_唤醒\_事件**](https://msdn.microsoft.com/library/windows/hardware/dn926303)存在，操作系统不需要运行在低功耗的 Nic。 Nic 可能会完全关闭提供支持。 如果挂起到硬盘驱动器，Nic 驱动程序应继续在恢复固件上下文。
+如果没有任何[ **WDI\_TLV\_启用\_唤醒\_事件**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events)存在，操作系统不需要运行在低功耗的 Nic。 Nic 可能会完全关闭提供支持。 如果挂起到硬盘驱动器，Nic 驱动程序应继续在恢复固件上下文。
 
 ## <a name="power-state-interaction-and-transition-examples"></a>电源状态交互和转换示例
 

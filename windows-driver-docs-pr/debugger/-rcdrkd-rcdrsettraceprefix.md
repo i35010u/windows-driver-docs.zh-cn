@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a59aaf44176e80aa450a0f99efe799b1a9a1f932
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8408d0382459b635096ef1e51dec0589223e962f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334324"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359791"
 ---
 # <a name="rcdrkdrcdrsettraceprefix"></a>!rcdrkd.rcdrsettraceprefix
 
@@ -42,12 +42,12 @@ Rcdrkd.dll
 <a name="remarks"></a>备注
 -------
 
-录制器日志中的每个消息都有一个可以控制由指定的跟踪消息前缀字符串的前缀。 有关详细信息，请参阅[跟踪消息前缀](https://msdn.microsoft.com/library/windows/hardware/ff553941)。
+录制器日志中的每个消息都有一个可以控制由指定的跟踪消息前缀字符串的前缀。 有关详细信息，请参阅[跟踪消息前缀](https://docs.microsoft.com/windows-hardware/drivers/devtest/trace-message-prefix)。
 
 <a name="examples"></a>示例
 --------
 
-在以下示例中，跟踪消息前缀是最初 **%7 ！ u ！: %！FUNC ！-** . 参数 **%7 ！ u ！** 指定前缀，包括消息序列号。 参数 **%！FUNC ！** 指定前缀，包括生成消息的函数的名称。 此示例调用 **！ rcdrsettraceprefix**若要更改的前缀字符串 **%7 ！ u ！**。 在此之后，显示日志包括消息序列号，但不包括函数名称。
+在以下示例中，跟踪消息前缀是最初 **%7 ！ u ！: %！FUNC ！-** . 参数 **%7 ！ u ！** 指定前缀，包括消息序列号。 参数 **%！FUNC ！** 指定前缀，包括生成消息的函数的名称。 此示例调用 **！ rcdrsettraceprefix**若要更改的前缀字符串 **%7 ！ u ！** 。 在此之后，显示日志包括消息序列号，但不包括函数名称。
 
 ```dbgcmd
 0: kd> !rcdrlogdump USBXHCI -a 0xfffffa8010737b60

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd8e01ffc3d97669b132daa691931970e8f7b43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ae7153034b14a0b7061e55c2bbfd5ddd3da45a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335906"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362486"
 ---
 # <a name="ndiskdndisstack"></a>!ndiskd.ndisstack
 
@@ -48,15 +48,15 @@ Ndiskd.dll
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://msdn.microsoft.com/windows/hardware/drivers/network/index)
+[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://msdn.microsoft.com/library/windows/hardware/ff571081)
+[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
 
-[**!ndiskd.help**](-ndiskd-help.md)
+[ **!ndiskd.help**](-ndiskd-help.md)
 
  
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 718ae1c3a1d815ac4ad1d05cba01493b4df7ca3b
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 5f4ee273c8692c5fa71912079d2de8c71b8d5f5f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405113"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366817"
 ---
 # <a name="inf2cat"></a>Inf2Cat
 
@@ -31,13 +31,13 @@ Inf2Cat (Inf2Cat.exe) 是一个命令行工具，确定是否[驱动程序包的
 ```
 
 > [!TIP]
-> 如果您看到`DriverVer set to a date in the future`时构建您的驱动程序，更改驱动程序程序包项目设置以便 Inf2Cat 设置`/uselocaltime`。 为此，请使用“配置属性”->“Inf2Cat”->“常规”->“使用本地时间”。 现在，[Stampinf](stampinf-command-options.md) 和 Inf2Cat 都使用本地时间。
+> 如果您看到`DriverVer set to a date in the future`时构建您的驱动程序，更改驱动程序程序包项目设置以便 Inf2Cat 设置`/uselocaltime`。 为此，请使用  “配置属性”->“Inf2Cat”->“常规”->“使用本地时间”。 现在，[Stampinf](stampinf-command-options.md) 和 Inf2Cat 都使用本地时间。
 
 Inf2Cat 工具位于 Program Files\\Windows 工具包\\8.0\\bin\\x86 或 Program Files (x86)\\Windows 工具包\\8.0\\bin\\x86WDK 的文件夹。
 
 ## <a name="switches-and-arguments"></a>开关和参数
 
-**/driver:**<em>PackagePath</em>  
+**/driver:** <em>PackagePath</em>  
 指定包含驱动程序包的 INF 文件的目录的路径。 如果指定的目录中包含多个驱动程序包的 INF 文件，Inf2Cat 将创建每个驱动程序包的目录文件。
 
 > [!NOTE]
@@ -46,7 +46,7 @@ Inf2Cat 工具位于 Program Files\\Windows 工具包\\8.0\\bin\\x86 或 Program
 **/nocat**  
 配置 Inf2Cat 以便确认[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)符合指定的 Windows 的签名要求的版本中，但不是能生成目录文件。
 
-**/os:**<em>WindowsVersionList</em>  
+**/os:** <em>WindowsVersionList</em>  
 配置 Inf2Cat 以便确认[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)INF 文件是否符合指定的 Windows 版本的签名要求*WindowsVersionList*。 *WindowsVersionList*是以逗号分隔的列表，包括一个或多个以下的版本标识符。
 
 |Windows 版本|版本标识符|
@@ -133,9 +133,9 @@ Inf2Cat 工具替换了已包括在 Windows Vista 之前的 wdk 版本 Signabili
 
 Inf2Cat 工具检查[驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)INF 文件的结构错误，并验证驱动程序包可以是数字签名。 仅当所有 INF 文件中引用的文件都存在且正确的位置是在源代码文件，可以进行签名的驱动程序包。 如果不能进行签名的 INF 文件或者它包含的结构错误，驱动程序包可能未正确安装，或可能会错误地显示驱动程序签名在安装过程中的警告对话框。
 
-生成 Inf2Cat[编录文件](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)才是驱动程序包的 INF 文件中指定的目录文件和目录文件适用于一个或多个指定的 Windows 版本。 如果[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的 INF 文件将仅提供**CatalogFile =**<em>filename.cat</em>指令，该目录文件适用于整个驱动程序包。 若要支持[跨平台安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)的 INF 文件应包含**CatalogFile。**<em>PlatformExtension</em>**=**<em>唯一 filename.cat</em>指令。
+生成 Inf2Cat[编录文件](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)才是驱动程序包的 INF 文件中指定的目录文件和目录文件适用于一个或多个指定的 Windows 版本。 如果[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的 INF 文件将仅提供**CatalogFile =** <em>filename.cat</em>指令，该目录文件适用于整个驱动程序包。 若要支持[跨平台安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-inf-files-for-multiple-platforms-and-operating-systems)的 INF 文件应包含**CatalogFile。** <em>PlatformExtension</em> **=** <em>唯一 filename.cat</em>指令。
 
-有关对驱动程序包进行签名的详细信息，请参阅[驱动程序签名](https://msdn.microsoft.com/library/windows/hardware/ff544865)并[设备和驱动程序安装基本主题](https://msdn.microsoft.com/library/windows/hardware/ff541165)。
+有关对驱动程序包进行签名的详细信息，请参阅[驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)并[设备和驱动程序安装基本主题](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-fundamental-topics)。
 
 ## <a name="examples"></a>示例
 

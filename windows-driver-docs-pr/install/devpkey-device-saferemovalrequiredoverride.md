@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a802b18e53834bd36ae655177f994ee920c05767
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc5079d4dfde0a07f088dec71e88c5378a8bea52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380089"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363019"
 ---
 # <a name="devpkeydevicesaferemovalrequiredoverride"></a>DEVPKEY_Device_SafeRemovalRequiredOverride
 
@@ -60,7 +60,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 
 -   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 DEVPROP_TRUE 并且设备实例是可移除或具有可移动的前身，即插即用集 DEVPROP_TRUE DEVPKEY_Device_SafeRemovalRequired 设备属性，不使用启发式方法。
 
-    **请注意**  设备实例被视为可移动如果其可移动设备功能设置。 有关详细信息，请参阅[可移动设备功能的概述](https://msdn.microsoft.com/library/windows/hardware/ff549564)。
+    **请注意**  设备实例被视为可移动如果其可移动设备功能设置。 有关详细信息，请参阅[可移动设备功能的概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-the-removable-device-capability)。
 
      
 
@@ -68,7 +68,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 
 -   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性未设置，或者设置为 DEVPROP_FALSE，即插即用 DEVPKEY_Device_SafeRemovalRequired 设备属性设置为一个值，通过使用启发式方法确定该值。
 
-可以通过调用检索的值 DEVPKEY_Device_SafeRemovalRequiredOverride [ **SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)。 此外可以设置此值，通过调用[ **SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)。
+可以通过调用检索的值 DEVPKEY_Device_SafeRemovalRequiredOverride [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。 此外可以设置此值，通过调用[ **SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,9 +93,9 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff551963)
+[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://msdn.microsoft.com/library/windows/hardware/ff552163)
+[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

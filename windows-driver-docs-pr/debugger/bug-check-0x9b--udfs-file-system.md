@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f2eb385945e0ab36d552543cf005121a0c8bb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25acc51bdb591e02464a9e5622fabc0cfde6ad9a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324684"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367253"
 ---
 # <a name="bug-check-0x9b-udfsfilesystem"></a>Bug 检查 0x9B：UDF\_文件\_系统
 
@@ -26,7 +26,7 @@ ms.locfileid: "63324684"
 UDF\_文件\_检查系统错误的值为 0x0000009B。 此 bug 检查指示 UDF 文件系统中出现问题。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="udfsfilesystem-parameters"></a>UDF\_文件\_系统参数
@@ -75,7 +75,7 @@ UDF\_文件\_检查系统错误可能会导致磁盘损坏。 文件系统或磁
 <a name="resolution"></a>分辨率
 ----------
 
-**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
 **若要解决磁盘损坏问题：** 检查事件查看器从 SCSI 和 FASTFAT （系统日志） 或 Autochk （应用程序日志） 可帮助标识设备或导致错误的驱动程序的错误消息。 禁用任何病毒扫描程序、 备份应用程序或持续监视系统的磁盘碎片整理程序工具。 您还应运行硬件诊断系统制造商提供。 有关这些过程的详细信息，请参阅您的计算机的用户手册。 运行**Chkdsk /f /r**检测和解决任何文件系统结构损坏。 系统分区上的磁盘扫描开始之前，必须重新启动系统。
 

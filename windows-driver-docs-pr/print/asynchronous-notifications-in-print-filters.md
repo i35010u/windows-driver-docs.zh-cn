@@ -9,17 +9,17 @@ keywords:
 - 异步通知 WDK XPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 795bdb45d55077d12eedca434223f5cce34c8812
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff046003df234ec9a534f91d8ce359007769e3db
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380710"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 
 
-打印筛选器管道有一项异步通知功能，非常类似于在应用程序的打印后台处理程序中支持的异步通知。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://msdn.microsoft.com/library/windows/hardware/ff562009)现已推出打印后台处理程序的函数不是可用于打印筛选器。 打印筛选器必须使用[IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955)接口，以创建 IPrintAsyncNotify 对象。
+打印筛选器管道有一项异步通知功能，非常类似于在应用程序的打印后台处理程序中支持的异步通知。 [ **RouterCreatePrintAsyncNotificationChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel)现已推出打印后台处理程序的函数不是可用于打印筛选器。 打印筛选器必须使用[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)接口，以创建 IPrintAsyncNotify 对象。
 
 本主题介绍如何在打印筛选器中使用异步通知功能。
 
@@ -29,7 +29,7 @@ ms.locfileid: "63368902"
 
 ### <a name="iprintclassobjectfactory"></a>IPrintClassObjectFactory
 
-[IPrintClassObjectFactory](https://msdn.microsoft.com/library/windows/hardware/ff551955)接口提供对通知接口访问。 下面的代码示例说明了如何筛选器可以从属性包中获取此接口。
+[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)接口提供对通知接口访问。 下面的代码示例说明了如何筛选器可以从属性包中获取此接口。
 
 ```cpp
 // This interface is defined as a private member variable in the filter class

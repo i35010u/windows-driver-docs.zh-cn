@@ -4,12 +4,12 @@ description: 驱动程序功能
 ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 95b02d3d8d8f1b51ebea6cc41ffc02e0c1b1d461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48eec98b29f660b525cb4e46a0836219dc18d882
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356084"
 ---
 # <a name="driver-features"></a>驱动程序功能
 
@@ -238,7 +238,7 @@ ms.locfileid: "63387263"
     支持时，此功能的选项设置为"False"可导致更改的 EMF 相关的以下功能：
 
     1. 如果 **%pagepersheet**是"手册"，它将更改为"1"。
-    2. 如果逐份打印设置为"True"(可设置中的公共部分直接[ **DEVMODEW** ](https://msdn.microsoft.com/library/windows/hardware/ff552837)结构，或通过调用**SetOptions**上 **\*逐份打印**PPD 功能)，但逐份打印功能当前不可用，逐份打印将设置为"False"。
+    2. 如果逐份打印设置为"True"(可设置中的公共部分直接[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构，或通过调用**SetOptions**上 **\*逐份打印**PPD 功能)，但逐份打印功能当前不可用，逐份打印将设置为"False"。
     3. 如果 **%pageorder**打印机的当前输出顺序设置相反 **%pageorder**将反转为打印机的值。
 
 4. 仅当已启用后台处理程序 EMF 后台处理时，才支持此功能。

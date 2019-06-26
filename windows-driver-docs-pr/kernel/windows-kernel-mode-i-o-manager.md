@@ -4,12 +4,12 @@ description: Windows 内核模式 I/O 管理器
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2f1c9dcd8798ddf47dee17d0cce0859af59e506
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9e96566d4fd0d59f5fe539321c0b195d1947defe
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353425"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358027"
 ---
 # <a name="windows-kernel-mode-io-manager"></a>Windows 内核模式 I/O 管理器
 
@@ -28,9 +28,9 @@ Windows I/O 系统提供分层驱动程序模型调用堆栈。 通常 Irp 转�
 
 有关编程来与 I/O 管理相关，请参阅[I/O 管理器的编程技术](i-o-programming-techniques.md)。
 
-为 I/O 管理器提供直接的界面的例程都通常带有前缀字母"**Io**"; 例如， **IoCreateDevice**。 I/O 管理器例程的列表，请参阅[I/O 管理器例程](https://msdn.microsoft.com/library/windows/hardware/ff551797)。
+为 I/O 管理器提供直接的界面的例程都通常带有前缀字母"**Io**"; 例如， **IoCreateDevice**。 I/O 管理器例程的列表，请参阅[I/O 管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))。
 
-有关与 IRP 相关的例程的列表，请参阅[Irp](https://msdn.microsoft.com/library/windows/hardware/ff550701)。
+有关与 IRP 相关的例程的列表，请参阅[Irp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 I/O 管理器有两个子组件： 插管理器和电源管理器。 他们管理的插和电源管理的技术的 I/O 功能。 有关插管理的详细信息，请参阅[Windows 内核模式插管理器](windows-kernel-mode-plug-and-play-manager.md)和有关电源管理的详细信息，请参阅[Windows 内核模式电源管理器](windows-kernel-mode-power-manager.md)。
 

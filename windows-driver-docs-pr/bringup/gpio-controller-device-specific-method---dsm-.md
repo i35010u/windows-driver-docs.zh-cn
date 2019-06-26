@@ -4,12 +4,12 @@ description: 若要支持各种特定于设备的类的 Windows 中的通用 I/O
 ms.assetid: 2891A78C-8C4F-4FE4-AB69-402F04DFA885
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9223bb68b3869bafa9e3c04a3c41c6781f42534
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6dc839797f3927ebfb9092f8e50554cf96a7f2bd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337619"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364547"
 ---
 # <a name="gpio-controller-device-specific-method-dsm"></a>GPIO 控制器特定于设备的方法 (\_DSM)
 
@@ -31,7 +31,7 @@ GPIO 控制器 GUID \_DSM 方法被定义为：
 ## <a name="function-0"></a>函数 0
 
 
-函数的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关函数 0 的定义，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://www.uefi.org/specifications)。
+函数的每个\_DSM 是返回集支持的函数的索引，并始终是必需的查询函数。 有关函数 0 的定义，请参阅部分 9.14.1，"\_DSM （设备特定的方法）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
 
 ## <a name="function-1"></a>函数 1
 

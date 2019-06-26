@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fa40a2c8bdd34d6573c04bb4d38698ee7294e9e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd8080045a16de2a2dd171a3c816b9a22d27b06b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361061"
 ---
 # <a name="kspropertypreferredcapturesurface"></a>KSPROPERTY\_PREFERRED\_捕获\_图面
 
@@ -53,7 +53,7 @@ KSPROPERTY\_PREFERRED\_捕获\_图面上的属性返回的捕获驱动程序的�
 <td><p>否</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff557647" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557647)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags" data-raw-source="[&lt;strong&gt;CAPTURE_MEMORY_ALLOCATION_FLAGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)"><strong>CAPTURE_MEMORY_ALLOCATION_FLAGS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ KSPROPERTY\_PREFERRED\_捕获\_面返回状态\_成功以指示已成功完成�
 <a name="remarks"></a>备注
 -------
 
-零是无效的值[**捕获\_内存\_分配\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff557647)。
+零是无效的值[**捕获\_内存\_分配\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,7 +88,7 @@ KSPROPERTY\_PREFERRED\_捕获\_面返回状态\_成功以指示已成功完成�
 ## <a name="see-also"></a>请参阅
 
 
-[**捕获\_内存\_分配\_标志**](https://msdn.microsoft.com/library/windows/hardware/ff557647)
+[**捕获\_内存\_分配\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-capture_memory_allocation_flags)
 
 [**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
 

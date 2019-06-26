@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 883b4a9f2844232a854175c31c3b4cc3b5fa1d6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be87cff4701ac24baefd15e01e2d362c7902fece
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363529"
 ---
 # <a name="mrxextendfornoncache-routine"></a>MRxExtendForNonCache 例程
 
 
-*MRxExtendForNonCache*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向扩展一个文件，当缓存管理器不缓存该文件。
+*MRxExtendForNonCache*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向扩展一个文件，当缓存管理器不缓存该文件。
 
 <a name="syntax"></a>语法
 ------
@@ -51,7 +51,7 @@ ULONG MRxExtendForNonCache(
 指向大\_整数值，该值指示新的文件大小的字节数。
 
 *pNewAllocationSize* \[out\]  
-指向大型\_用于存储新分配的整数大小[ **MRxExtendForCache** ](https://msdn.microsoft.com/library/windows/hardware/ff549878)返回。
+指向大型\_用于存储新分配的整数大小[ **MRxExtendForCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)返回。
 
 <a name="return-value"></a>返回值
 ------------
@@ -94,27 +94,27 @@ ULONG MRxExtendForNonCache(
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxAreFilesAliased**](https://msdn.microsoft.com/library/windows/hardware/ff549838)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
-[**MRxCleanupFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549841)
+[**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://msdn.microsoft.com/library/windows/hardware/ff549845)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://msdn.microsoft.com/library/windows/hardware/ff549871)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://msdn.microsoft.com/library/windows/hardware/ff549872)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://msdn.microsoft.com/library/windows/hardware/ff549878)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://msdn.microsoft.com/library/windows/hardware/ff550677)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://msdn.microsoft.com/library/windows/hardware/ff550691)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

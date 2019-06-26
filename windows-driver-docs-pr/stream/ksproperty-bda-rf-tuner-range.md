@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e409cbd8b3785350a83e8422f59725adb88e30f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7abc9ce5aa97de256624367630b22a3d53281ed2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389298"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361136"
 ---
 # <a name="kspropertybdarftunerrange"></a>KSPROPERTY\_BDA\_RF\_TUNER\_RANGE
 
@@ -95,7 +95,7 @@ ms.locfileid: "63389298"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

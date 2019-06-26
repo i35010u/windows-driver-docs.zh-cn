@@ -18,23 +18,23 @@ keywords:
 - 端口驱动程序 WDK 音频，position 属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 230bad5bd1ba68780c944e1bd57283c41c164221
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e84e529ff08ec81a265cfad712276f314c04ba19
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331438"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355680"
 ---
 # <a name="audio-position-property"></a>音频位置属性
 
 
-音频驱动程序的客户端使用[ **KSPROPERTY\_音频\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)属性来获取和设置中的音频流的当前位置。 属性使用[ **KSAUDIO\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537091)结构来描述当前的位置。 该结构包含两个成员：**PlayOffset**并**WriteOffset**。
+音频驱动程序的客户端使用[ **KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)属性来获取和设置中的音频流的当前位置。 属性使用[ **KSAUDIO\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_position)结构来描述当前的位置。 该结构包含两个成员：**PlayOffset**并**WriteOffset**。
 
 **PlayOffset**并**WriteOffset**成员定义的客户端缓冲区的当前保留以供的音频设备的专用区域的边界。 客户端必须假定，设备可能当前正在访问任何在此区域中包含的数据。 因此，客户端必须访问仅中的部分缓冲区不在此区域。 根据流前进移动区域的边界。
 
-如果客户端缓冲区闭合 (也就是说，流类型是[ **KSINTERFACE\_标准\_LOOPED\_流式处理**](https://msdn.microsoft.com/library/windows/hardware/ff563381))， **PlayOffset**并**WriteOffset**是缓冲区的相对偏移量。 也就是说，它们被指定为从循环的客户端缓冲区开头的字节偏移量。 当任何一个偏移量递增到缓冲区的末尾时，它会绕到缓冲区的起始位置。 （开始的缓冲区开始处的偏移量为零）。因此，既不偏移量曾经超出缓冲区大小。
+如果客户端缓冲区闭合 (也就是说，流类型是[ **KSINTERFACE\_标准\_LOOPED\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-looped-streaming))， **PlayOffset**并**WriteOffset**是缓冲区的相对偏移量。 也就是说，它们被指定为从循环的客户端缓冲区开头的字节偏移量。 当任何一个偏移量递增到缓冲区的末尾时，它会绕到缓冲区的起始位置。 （开始的缓冲区开始处的偏移量为零）。因此，既不偏移量曾经超出缓冲区大小。
 
-如果客户端缓冲区 nonlooped (也就是说，流类型是[ **KSINTERFACE\_标准\_流式处理**](https://msdn.microsoft.com/library/windows/hardware/ff563384))， **PlayOffset**和**WriteOffset**是流的相对偏移量。 也就是说，它们被指定为字节偏移量从流的开始。 这些偏移量可以认为的偏移量到包含整个流并位于连续的从开头到末尾的理想化缓冲区。
+如果客户端缓冲区 nonlooped (也就是说，流类型是[ **KSINTERFACE\_标准\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksinterface-standard-streaming))， **PlayOffset**和**WriteOffset**是流的相对偏移量。 也就是说，它们被指定为字节偏移量从流的开始。 这些偏移量可以认为的偏移量到包含整个流并位于连续的从开头到末尾的理想化缓冲区。
 
 在呈现流的情况下**PlayOffset**成员指定的流播放位置并**WriteOffset**成员指定流的写入位置。 下图显示了客户端缓冲区中的播放和写入位置。
 
@@ -46,11 +46,11 @@ ms.locfileid: "63331438"
 
 -   **WaveCyclic**
 
-    每次 WaveCyclic 端口驱动程序调用[ **IDmaChannel::CopyTo** ](https://msdn.microsoft.com/library/windows/hardware/ff536558)若要将新数据块 （从客户端缓冲区） 复制到循环缓冲区中，写入位置，转到的位置 （在客户端缓冲区） 的数据块中的最后一个字节。
+    每次 WaveCyclic 端口驱动程序调用[ **IDmaChannel::CopyTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyto)若要将新数据块 （从客户端缓冲区） 复制到循环缓冲区中，写入位置，转到的位置 （在客户端缓冲区） 的数据块中的最后一个字节。
 
 -   **WavePci**
 
-    默认情况下，每次 WavePci 微型端口驱动程序调用[ **IPortWavePciStream::GetMapping** ](https://msdn.microsoft.com/library/windows/hardware/ff536909)以获取新的映射 （客户端缓冲区的一部分） 和调用成功，写入位置前移到新映射中的最后一个字节的位置 （在客户端缓冲区）。
+    默认情况下，每次 WavePci 微型端口驱动程序调用[ **IPortWavePciStream::GetMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-getmapping)以获取新的映射 （客户端缓冲区的一部分） 和调用成功，写入位置前移到新映射中的最后一个字节的位置 （在客户端缓冲区）。
 
     如果 WavePci 微型端口驱动程序重写默认行为，通过指定偏移量到端口驱动程序的预提取，当前的写入位置始终是等于当前播放位置和预提取偏移量的总和。 有关详细信息，请参阅[预提取偏移量](prefetch-offsets.md)。
 
@@ -64,13 +64,13 @@ ms.locfileid: "63331438"
 
 -   **WaveCyclic**
 
-    每次 WaveCyclic 端口驱动程序调用[ **IDmaChannel::CopyFrom** ](https://msdn.microsoft.com/library/windows/hardware/ff536557)将新数据块从循环缓冲区复制 （到客户端缓冲区），读取的位置，转到的位置 （在客户端缓冲区） 的数据块中的最后一个字节。
+    每次 WaveCyclic 端口驱动程序调用[ **IDmaChannel::CopyFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idmachannel-copyfrom)将新数据块从循环缓冲区复制 （到客户端缓冲区），读取的位置，转到的位置 （在客户端缓冲区） 的数据块中的最后一个字节。
 
 -   **WavePci**
 
-    每次 WavePci 微型端口驱动程序调用[ **IPortWavePciStream::ReleaseMapping** ](https://msdn.microsoft.com/library/windows/hardware/ff536911)若要释放的以前获取的映射 （客户端缓冲区的一部分），读取的位置，转到（在客户端缓冲区） 的已发布的映射中的最后一个字节的位置。
+    每次 WavePci 微型端口驱动程序调用[ **IPortWavePciStream::ReleaseMapping** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportwavepcistream-releasemapping)若要释放的以前获取的映射 （客户端缓冲区的一部分），读取的位置，转到（在客户端缓冲区） 的已发布的映射中的最后一个字节的位置。
 
-微型端口驱动程序不需要实现处理程序例程 KSPROPERTY\_音频\_位置属性请求。 相反，WaveCyclic 和 WavePci 端口驱动程序处理这些请求代表微型端口驱动程序。 在处理获取属性请求时，WaveCyclic 或 WavePci 端口驱动程序已具有计算所需的所有信息**WriteOffset**值，但它仍需要从微型端口驱动程序，来计算信息**PlayOffset**值。 若要获取此信息，端口驱动程序调用微型端口驱动程序[ **IMiniportWaveCyclicStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536716)或[ **IMiniportWavePciStream::GetPosition** ](https://msdn.microsoft.com/library/windows/hardware/ff536727)方法。
+微型端口驱动程序不需要实现处理程序例程 KSPROPERTY\_音频\_位置属性请求。 相反，WaveCyclic 和 WavePci 端口驱动程序处理这些请求代表微型端口驱动程序。 在处理获取属性请求时，WaveCyclic 或 WavePci 端口驱动程序已具有计算所需的所有信息**WriteOffset**值，但它仍需要从微型端口驱动程序，来计算信息**PlayOffset**值。 若要获取此信息，端口驱动程序调用微型端口驱动程序[ **IMiniportWaveCyclicStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavecyclicstream-getposition)或[ **IMiniportWavePciStream::GetPosition** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)方法。
 
 为呈现的流**GetPosition**方法检索的 play 位置的示例通过 DAC 当前正在播放的字节偏移量。 为捕获的流**GetPosition**方法检索的记录的位置的最新的示例由 ADC 捕获的字节偏移量。
 
@@ -84,7 +84,7 @@ ms.locfileid: "63331438"
 
 **IMiniportWavePciStream::GetPosition**方法将始终报告而不考虑客户端缓冲区是否循环或 nonlooped 记录位置或流相对播放。 闭合的客户端缓冲区，如果属性处理程序之前将转换的流相对 play 位置将其置于缓冲区相对 play （表示为某一偏移量到客户端缓冲区） 写入到**PlayOffset**中的成员KSAUDIO\_属性请求中的位置结构。 如果客户端缓冲区 nonlooped，属性处理程序写入到的流相对位置**PlayOffset**成员。
 
-播放或记录的位置是流的零紧跟其后初始化。 过渡到 KSSTATE\_停止状态 (请参阅[ **KSSTATE**](https://msdn.microsoft.com/library/windows/hardware/ff566856)) 位置重置为零。 从 KSSTATE 的转换时暂停流\_运行到 KSSTATE\_暂停或 KSSTATE\_采集位置会冻结。 它取消冻结时流转换从 KSSTATE\_暂停或 KSSTATE\_回 KSSTATE ACQUIRE\_运行。
+播放或记录的位置是流的零紧跟其后初始化。 过渡到 KSSTATE\_停止状态 (请参阅[ **KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)) 位置重置为零。 从 KSSTATE 的转换时暂停流\_运行到 KSSTATE\_暂停或 KSSTATE\_采集位置会冻结。 它取消冻结时流转换从 KSSTATE\_暂停或 KSSTATE\_回 KSSTATE ACQUIRE\_运行。
 
 有关示例的实现**GetPosition**方法 WaveCyclic 和 WavePci 微型端口驱动程序，请参阅示例音频驱动程序 Windows Driver Kit (WDK) 中。
 

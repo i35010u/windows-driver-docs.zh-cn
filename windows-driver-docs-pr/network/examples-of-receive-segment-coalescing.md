@@ -4,12 +4,12 @@ description: 本部分使用的段按顺序接收和处理单个延缓的过程�
 ms.assetid: BC4C3216-683B-4E86-B2DF-F75FFCA7DACC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf61775d1421eaf92e4d26954cc00786198881d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f151085e0a28939b4a7f4e76d126912ccd59cadb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385495"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353762"
 ---
 # <a name="examples-of-receive-segment-coalescing"></a>接收段合并的示例
 
@@ -34,7 +34,7 @@ ms.locfileid: "63385495"
 没有任何这些段将生成异常。
 ### <a name="result"></a>结果
 
-单个 SCU 超出 10 段构成。 这表示为单个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)在单个[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388).
+单个 SCU 超出 10 段构成。 这表示为单个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)在单个[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list).
 
 ## <a name="example-2-data-segments-followed-by-an-exception-followed-by-data-segments"></a>示例 2：数据段后, 跟一个异常后, 跟数据段
 
@@ -71,7 +71,7 @@ ms.locfileid: "63385495"
 
 第七个和第 8 个段一起构成 SCU。
 
-一个[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)具有三个指示链**NET\_缓冲区\_列表**结构每个拥有一个单独[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)。 接收的段的顺序进行维护。
+一个[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)具有三个指示链**NET\_缓冲区\_列表**结构每个拥有一个单独[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)。 接收的段的顺序进行维护。
 
 ## <a name="example-3-data-segments-followed-by-multiple-window-updates"></a>示例 3：数据段后, 跟多个窗口更新
 
@@ -95,7 +95,7 @@ ms.locfileid: "63385495"
 
 ### <a name="result"></a>结果
 
-单个 SCU 超出 7 段构成。 这表示为单个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)在单个[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388).
+单个 SCU 超出 7 段构成。 这表示为单个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)在单个[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list).
 
 SCU。WND = 131070，并基于此值更新校验和。
 
@@ -124,7 +124,7 @@ SCU。WND = 131070，并基于此值更新校验和。
 没有任何这些段将生成异常。
 ### <a name="result"></a>结果
 
-单个 SCU 超出 5 段构成。 这表示为单个[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)在单个[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388). SCU。确认设置的最后一个 SEG.ACK。
+单个 SCU 超出 5 段构成。 这表示为单个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)在单个[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list). SCU。确认设置的最后一个 SEG.ACK。
 
  
 

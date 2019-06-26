@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 072590cdf56942140b974362c1b3ec13928a5128
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 089d3293af3429121f7dec3dabeecfacbefa11f9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324263"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361179"
 ---
 # <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo routine
 
 
-*MRxQuerySdInfo*由调用例程[RDBSS](https://msdn.microsoft.com/library/windows/hardware/ff556810)请求网络微型重定向查询对文件系统对象的安全描述符信息。
+*MRxQuerySdInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询对文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -151,7 +151,7 @@ RDBSS 发出调用*MRxQuerySdInfo*接收响应[ **IRP\_MJ\_查询\_安全**](irp
 ## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://msdn.microsoft.com/library/windows/hardware/ff550696)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

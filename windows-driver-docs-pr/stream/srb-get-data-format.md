@@ -4,12 +4,12 @@ description: SRB\_获取\_数据\_格式
 ms.assetid: 6346d719-395d-4847-af80-6c65e15af250
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6a952c1560b170f622e57299e4b005816152f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97ca335c49fe880799ce8f94ef4eb2841a5a9358
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343149"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358379"
 ---
 # <a name="srbgetdataformat"></a>SRB\_获取\_数据\_格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "63343149"
 
 在类驱动程序发出此请求，以查询该流的数据格式。 微型驱动程序应设置*pSrb*-&gt;**CommandData**到流的当前数据格式。
 
-有关数据格式的详细信息，请参阅[Stream 类微型驱动程序设计指南](https://msdn.microsoft.com/library/windows/hardware/ff568277)。
+有关数据格式的详细信息，请参阅[Stream 类微型驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)。
 
  
 

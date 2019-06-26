@@ -20,12 +20,12 @@ keywords:
 - 端口驱动程序 WDK 音频数据交集处理程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c35d9e78a4049ab989b137ac5600005b0829528
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fc0b8c35dc0eff3c941ce1665f1240148aa54613
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359094"
 ---
 # <a name="data-intersection-handlers"></a>数据交集处理程序
 
@@ -33,7 +33,7 @@ ms.locfileid: "63333822"
 ## <span id="data_intersection_handlers"></span><span id="DATA_INTERSECTION_HANDLERS"></span>
 
 
-本部分介绍在 Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序中的数据交叉处理程序。 一般情况下筛选数据交集 KS 处理的更广泛介绍，请参阅[AVStream DataRange 结合](https://msdn.microsoft.com/library/windows/hardware/ff558680)。
+本部分介绍在 Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序中的数据交叉处理程序。 一般情况下筛选数据交集 KS 处理的更广泛介绍，请参阅[AVStream DataRange 结合](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)。
 
 在较旧版本的 Windows，如 Windows XP [SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)构造[虚拟音频设备](virtual-audio-devices.md)通过连接到窗体一起对音频筛选器的 pin[音频筛选器图形](audio-filter-graphs.md)。 上一个筛选器的源 pin 可以连接到另一个接收器 pin 之前，SysAudio 必须协商两个 pin 可用于交换数据的通用格式。 此协商的详细信息很大程度上都委托给在单独的筛选器中实现的数据交叉处理程序。
 

@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28110
-ms.openlocfilehash: 8e5ed2c55c69a77510133ffc9b606577adada1ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a2593b288ad5cb1688c3db0b974ee778a858a24
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364153"
 ---
 # <a name="c28110"></a>C28110
 
@@ -36,19 +36,19 @@ ms.locfileid: "63361453"
 
  
 
-此警告才在内核模式下适用。 该驱动程序尝试时要使用的变量或常数浮点类型的代码不受[ **KeSaveFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff553243)并[ **KeRestoreFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff553185)，或[ **EngSaveFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff565010)并[ **EngRestoreFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff565006).
+此警告才在内核模式下适用。 该驱动程序尝试时要使用的变量或常数浮点类型的代码不受[ **KeSaveFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)并[ **KeRestoreFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)，或[ **EngSaveFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)并[ **EngRestoreFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate).
 
-通常情况下，驱动程序运行与最新应用程序和任何使用不受的浮动点的浮点上下文[ **KeSaveFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff553243)和[ **KeRestoreFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff553185)可以更改其他进程的结果并通常会在驱动程序导致不正确或意外的结果。
+通常情况下，驱动程序运行与最新应用程序和任何使用不受的浮动点的浮点上下文[ **KeSaveFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)和[ **KeRestoreFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)可以更改其他进程的结果并通常会在驱动程序导致不正确或意外的结果。
 
-显示驱动程序应使用[ **EngSaveFloatingPointState** ](https://msdn.microsoft.com/library/windows/hardware/ff565010)并[ **EngRestoreFloatingPointState**](https://msdn.microsoft.com/library/windows/hardware/ff565006)。
+显示驱动程序应使用[ **EngSaveFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)并[ **EngRestoreFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。
 
 此错误的实例检测到任何特定流路径后，代码分析工具会隐藏后续类似错误。 代码分析工具不会报告函数定义的采用浮点类型自变量或返回浮点类型，此错误，因为调用方将报告使用。
 
 程序将保存并还原浮点状态周围函数调用和被调用的函数执行浮点运算时，可以在错误会触发此警告。
 
-如果函数有意设计成使用浮点运算，并希望其中浮点数安全的情况下在上下文中调用，应批注与函数**\_内核\_float\_使用\_**. 此批注将禁止显示警告函数体中的并会导致要检查调用安全地保护浮点操作的调用上下文。 如果浮点运算出现在参数或返回值时，效果等同于使用**\_内核\_float\_使用\_**。
+如果函数有意设计成使用浮点运算，并希望其中浮点数安全的情况下在上下文中调用，应批注与函数 **\_内核\_float\_使用\_** . 此批注将禁止显示警告函数体中的并会导致要检查调用安全地保护浮点操作的调用上下文。 如果浮点运算出现在参数或返回值时，效果等同于使用 **\_内核\_float\_使用\_** 。
 
-通过使用**\_内核\_float\_使用\_** 上 （或添加相应的保存和还原对的调用） 的所有函数中使用浮动都点直到没有任何警告，驱动程序可以有保证的不恰当使用浮点硬件的免费。 有关详细信息，请参阅[驱动程序的浮动点批注](floating-point-annotations-for-drivers.md)。
+通过使用 **\_内核\_float\_使用\_** 上 （或添加相应的保存和还原对的调用） 的所有函数中使用浮动都点直到没有任何警告，驱动程序可以有保证的不恰当使用浮点硬件的免费。 有关详细信息，请参阅[驱动程序的浮动点批注](floating-point-annotations-for-drivers.md)。
 
  
 

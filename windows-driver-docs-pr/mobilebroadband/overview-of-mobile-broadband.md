@@ -4,12 +4,12 @@ description: 移动宽带概述
 ms.assetid: 5193927b-7367-468e-8012-c41f6bd743a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e86b91d4f39eac187b8a7a77550f4848d7af16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff34b8902d9f2119f9f5ceabfefa8e19266cb586
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347477"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357977"
 ---
 # <a name="overview-of-mobile-broadband"></a>移动宽带概述
 
@@ -123,7 +123,7 @@ Windows 8、 Windows 8.1 和 Windows 10 提供重新构思和简化现有的移�
 
 4.  计算从 SIM 或移动宽带设备是 Hwid 将发送到 WMIS。 WMIS 标识运算符，并返回相应的服务元数据包。
 
-5.  Windows 使用的服务元数据来识别并从 Microsoft Store 中检索关联的移动宽带应用。 应用会自动安装并注册后台事件。 在 Windows 8.1 和 Windows 10 中，应用会不会自动固定到开始屏幕。 注册后台事件允许应用以执行对本地数据使用情况计数器作出反应，接收运算符短信、 连接到 Wi-fi 热点和处理授权检查等。 有关后台任务的更多详细信息可在[后台任务简介](http://www.microsoft.com/download/details.aspx?id=27411)。
+5.  Windows 使用的服务元数据来识别并从 Microsoft Store 中检索关联的移动宽带应用。 应用会自动安装并注册后台事件。 在 Windows 8.1 和 Windows 10 中，应用会不会自动固定到开始屏幕。 注册后台事件允许应用以执行对本地数据使用情况计数器作出反应，接收运算符短信、 连接到 Wi-fi 热点和处理授权检查等。 有关后台任务的更多详细信息可在[后台任务简介](https://www.microsoft.com/download/details.aspx?id=27411)。
 
 6.  背景事件发生时，该应用必要时，将生成一个更完整的预配文件，并将其传递给预配的代理。 这会配置 Windows 用户已购买的计划有关的信息。
 
@@ -181,7 +181,7 @@ Windows 8.1 和 Windows 10 可以连接到运营商网络在 Windows 安装过�
 
 Windows 提供了数据使用情况和移动宽带应用可用于描述用户的数据计划的订阅管理器 Api。 移动宽带应用程序可以更新此 API 与不按流量计费计划，以及为从运营商的网络的更新后的数据使用情况计量数据计划大小有关的信息。
 
-Windows 将检查通过使用这些 Api 已设置为用户的数据使用情况信息并更改核心功能的行为。 例如，Windows 更新将仅自动下载关键更新时用户正在使用按流量计费的网络。 使用情况信息，还可以访问的数据使用情况和订阅管理器 Api; 通过第三方应用详细的使用准则目前[上管理连接按流量计费的网络](https://msdn.microsoft.com/library/windows/apps/hh750310)。
+Windows 将检查通过使用这些 Api 已设置为用户的数据使用情况信息并更改核心功能的行为。 例如，Windows 更新将仅自动下载关键更新时用户正在使用按流量计费的网络。 使用情况信息，还可以访问的数据使用情况和订阅管理器 Api; 通过第三方应用详细的使用准则目前[上管理连接按流量计费的网络](https://docs.microsoft.com/previous-versions/windows/apps/hh750310(v=win.10))。
 
 下面是移动宽带应用可以利用为了使用户了解他们的数据使用的各种功能的演练。
 
@@ -197,7 +197,7 @@ Windows 将检查通过使用这些 Api 已设置为用户的数据使用情况�
 
 6.  应用程序将发布更新的信息通过数据使用情况和订阅管理器 Api。
 
-7.  Windows 组件和在电脑上的第三方应用程序可以通过访问此使用情况信息[ **Windows.Networking.Connectivity.ConnectionProfile** ](https://msdn.microsoft.com/library/windows/apps/br207249)类。 应用可以相应地调整其行为。 例如，应用可以在按流量计费网络上使用较低质量的视频流。
+7.  Windows 组件和在电脑上的第三方应用程序可以通过访问此使用情况信息[ **Windows.Networking.Connectivity.ConnectionProfile** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile)类。 应用可以相应地调整其行为。 例如，应用可以在按流量计费网络上使用较低质量的视频流。
 
 ### <a name="internet-sharing"></a>Internet 共享
 
@@ -334,9 +334,9 @@ PnP X 可用于将非移动宽带设备公开为 UWP 设备应用。
 
 可以通过以下方式之一提供的 XML 文件：
 
--   为网站提供的已签名的 XML 文件[ **window.external.msProvisionNetworks** ](https://msdn.microsoft.com/library/hh848316)函数至少运行的 Windows 8、 Windows 8.1 或 Windows 10 计算机上 Internet Explorer 10 （或另一个支持浏览器）。
+-   为网站提供的已签名的 XML 文件[ **window.external.msProvisionNetworks** ](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85))函数至少运行的 Windows 8、 Windows 8.1 或 Windows 10 计算机上 Internet Explorer 10 （或另一个支持浏览器）。
 
--   XML 文件 （无论是有符号或无符号） 提供的应用程序[ **Windows.Networking.NetworkOperators.ProvisioningAgent.ProvisionFromXmlDocumentAsync** ](https://msdn.microsoft.com/library/windows/apps/br207400)函数。
+-   XML 文件 （无论是有符号或无符号） 提供的应用程序[ **Windows.Networking.NetworkOperators.ProvisioningAgent.ProvisionFromXmlDocumentAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)函数。
 
 有关格式和预配的文件的内容的更多详细信息，请参阅[使用元数据来配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)。
 
@@ -362,9 +362,9 @@ Windows 连接管理器还管理后连接支持 WISPr 1.0 的 Wi-fi 热点的身
 
 本地数据计数器也有以编程方式通过使用以下 Api:
 
--   [ **Windows.Networking.Connectivity.ConnectionProfile.GetNetworkUsageAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266073)函数指定的时间段内提供的数据使用情况。
+-   [ **Windows.Networking.Connectivity.ConnectionProfile.GetNetworkUsageAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_DataUsageGranularity_Windows_Networking_Connectivity_NetworkUsageStates_)函数指定的时间段内提供的数据使用情况。
 
--   [ **Windows.Networking.Connectivity.ConnectionProfile.GetConnectivityIntervalsAsync** ](https://msdn.microsoft.com/library/windows/apps/dn266071)函数提供的连接时间戳和网络接口使用时的持续时间。
+-   [ **Windows.Networking.Connectivity.ConnectionProfile.GetConnectivityIntervalsAsync** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile#Windows_Networking_Connectivity_ConnectionProfile_GetConnectivityIntervalsAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_)函数提供的连接时间戳和网络接口使用时的持续时间。
 
 本地数据使用情况信息用作估计值和用户的指南。 Windows 不能共享相同的数据限制其他设备上的帐户未出单流量或使用情况。 例如，系列计划在不同设备上使用相同的 sim 卡。 移动宽带应用程序应使用本地数据计数器仅以与你的计费系统在上次同步后估计使用情况。 对于已处理的数据使用情况，计费系统应将视为权威标准。
 
@@ -406,7 +406,7 @@ Windows 元数据和 Internet 服务 (WMIS) 是可以自定义项从参与的 Wi
 
 Microsoft Store 是 UWP 应用传递到 Windows 8、 Windows 8.1 和 Windows 10 电脑的主要方法。 移动宽带应用程序的应用程序包检索从 Microsoft Store，连接设备后，Internet 连接时可用。 应用包自动安装并且可供用户在该点。 在 Windows 8.1 和 Windows 10 中，应用程序现已推出**所有应用**但不是会自动固定到开始屏幕。
 
-有关 UWP 的设备应用程序的详细信息，请参阅[UWP 设备应用](https://msdn.microsoft.com/library/windows/hardware/dn265154)。
+有关 UWP 的设备应用程序的详细信息，请参阅[UWP 设备应用](https://docs.microsoft.com/windows-hardware/drivers/devapps/index)。
 
 **请注意**  虽然企业可以端负载 UWP 应用在某些情况下的，这些将不再重复介绍本文档中。
 

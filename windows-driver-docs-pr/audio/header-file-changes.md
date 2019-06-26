@@ -26,19 +26,19 @@ keywords:
 - 数据格式以 WDK 音频，标头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e27ec98c27599f251f2c49062874110fd43b09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 918a25db793aff9ba6225a3e5c742a5c79a56a08
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333548"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359987"
 ---
 # <a name="header-file-changes"></a>标头文件更改
 
 
 Windows Driver Kit (WDK) 包含定义支持的 Windows 多媒体控制面板的演讲者配置的两个标头文件：
 
--   Ksmedia.h 定义的通道掩码[ **KSAUDIO\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537083)结构，它由[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)属性请求。
+-   Ksmedia.h 定义的通道掩码[ **KSAUDIO\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_channel_config)结构，它由[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性请求。
 
 -   Dsound.h 定义一组可提交到扬声器配置标识符**IDirectSound::SetSpeakerConfig**方法。 有关此方法的详细信息，请参阅 Windows SDK 文档。
 

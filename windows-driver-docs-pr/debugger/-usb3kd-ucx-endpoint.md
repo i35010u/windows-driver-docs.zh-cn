@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a99a849159221114f1b0c918df29ed1950d7adbc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ac241bdc8e19e08be992c6bf79f78d782a02050
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330809"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359780"
 ---
 # <a name="usb3kducxendpoint"></a>！ usb3kd.ucx\_终结点
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器驱动程序和 USB 3.0 主机之间的抽象层，控制器驱动程序。 扩展驱动程序具有其自己的主机控制器、 设备和终结点的表示形式。 输出 **！ ucx\_终结点**命令基于由扩展驱动程序维护的数据结构。 有关 USB 主控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://msdn.microsoft.com/library/windows/hardware/hh406256)。
+USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器驱动程序和 USB 3.0 主机之间的抽象层，控制器驱动程序。 扩展驱动程序具有其自己的主机控制器、 设备和终结点的表示形式。 输出 **！ ucx\_终结点**命令基于由扩展驱动程序维护的数据结构。 有关 USB 主控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 <a name="examples"></a>示例
 --------
@@ -102,7 +102,7 @@ EventCallbacks:
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[**!usb3kd.ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)
+[ **!usb3kd.ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)
 
 [通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
 

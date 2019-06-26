@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a9e2d28160fbafc8d722851f77043ca10834ba
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e117916f8e453372bcdf4a28eefb6929a08a23a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364860"
 ---
 # <a name="kspropertybdainnerfecrate"></a>KSPROPERTY\_BDA\_INNER\_FEC\_RATE
 
@@ -87,9 +87,9 @@ BinaryConvolutionCodeRate 枚举类型中的返回的值标识二进制卷积方
 ## <a name="see-also"></a>请参阅
 
 
-[**BinaryConvolutionCodeRate**](https://msdn.microsoft.com/library/windows/hardware/ff556566)
+[**BinaryConvolutionCodeRate**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/binaryconvolutioncoderate)
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
  
 

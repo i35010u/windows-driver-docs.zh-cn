@@ -10,12 +10,12 @@ keywords:
 - sum 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbe98e8b9ba20f710bc2a1b2dafd66fa8045c0a
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9dce1d04a7dc1035e0959339aa2e7ff86dde467f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56543967"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360937"
 ---
 # <a name="summary-message-file"></a>摘要消息文件
 
@@ -65,7 +65,7 @@ Elapsed Time            122 sec
 +---------------------------------------------------------------------------------+
 ```
 
-上述摘要显示 Tracedrv 生成标头消息和两个跟踪消息。 通过生成一个跟踪消息[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)由行 258 DoTraceMessage 语句生成行 264，另一个语句。 在此跟踪日志中，有 1700年实例的第一个跟踪消息和 17 的第二个跟踪消息的实例。
+上述摘要显示 Tracedrv 生成标头消息和两个跟踪消息。 通过生成一个跟踪消息[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))由行 258 DoTraceMessage 语句生成行 264，另一个语句。 在此跟踪日志中，有 1700年实例的第一个跟踪消息和 17 的第二个跟踪消息的实例。
 
 摘要消息文件主要用于调试软件跟踪和它的格式可能会发生更改。
 

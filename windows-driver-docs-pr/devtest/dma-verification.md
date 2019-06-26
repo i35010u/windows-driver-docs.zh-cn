@@ -13,12 +13,12 @@ keywords:
 - DMA 错误 WDK Driver Verifier
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc19e70147d3a8ece2a99ea6da041a01185b75c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d60437e876b5791a40c54bcff1daa0e8a3eecc30
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358085"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360349"
 ---
 # <a name="dma-verification"></a>DMA 验证
 
@@ -102,9 +102,9 @@ DMA 验证活动后，驱动程序验证程序检测到误用了 DMA 例程中�
 
 -   正在尝试映射传输的长度为零的缓冲区。
 
--   调用已过时的函数[ **HalGetAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff546596) (所有驱动程序必须使用[ **IoGetDmaAdapter** ](https://msdn.microsoft.com/library/windows/hardware/ff549220)相反)。
+-   调用已过时的函数[ **HalGetAdapter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85)) (所有驱动程序必须使用[ **IoGetDmaAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)相反)。
 
-驱动程序验证工具监视驱动程序的行为，并发出错误检查 0xE6，如果出现任何这些冲突。 请参阅[ **Bug 检查 0xE6** ](https://msdn.microsoft.com/library/windows/hardware/ff560341) (驱动程序\_VERIFIER\_DMA\_冲突) 的 bug 列表检查参数。
+驱动程序验证工具监视驱动程序的行为，并发出错误检查 0xE6，如果出现任何这些冲突。 请参阅[ **Bug 检查 0xE6** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xe6--driver-verifier-dma-violation) (驱动程序\_VERIFIER\_DMA\_冲突) 的 bug 列表检查参数。
 
 ### <a name="span-idwhenisdmaverificationusefulspanspan-idwhenisdmaverificationusefulspanwhen-is-dma-verification-useful"></a><span id="when_is_dma_verification_useful_"></span><span id="WHEN_IS_DMA_VERIFICATION_USEFUL_"></span>何时适合 DMA 验证？
 
@@ -116,7 +116,7 @@ DMA 验证还可以检测内存损坏情况，因为它可以找出时任一驱�
 
 ### <a name="span-idmonitoringdmaverificationspanspan-idmonitoringdmaverificationspanmonitoring-dma-verification"></a><span id="monitoring_dma_verification"></span><span id="MONITORING_DMA_VERIFICATION"></span>监视 DMA 验证
 
-内核调试器扩展 **！ dma**可以用于显示大量 DMA 信息。 它可以显示有关每个 DMA 适配器的行为的各种详细信息。 没有的详细的示例 **！ dma**扩展，以及有关调试器扩展，文档中的 Windows 调试工具软件包的常规信息。 请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)有关详细信息。
+内核调试器扩展 **！ dma**可以用于显示大量 DMA 信息。 它可以显示有关每个 DMA 适配器的行为的各种详细信息。 没有的详细的示例 **！ dma**扩展，以及有关调试器扩展，文档中的 Windows 调试工具软件包的常规信息。 请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)有关详细信息。
 
 ### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -124,7 +124,7 @@ DMA 验证还可以检测内存损坏情况，因为它可以找出时任一驱�
 
 -   **在命令行**
 
-    在命令行中，由表示 DMA 验证选项**位 7 (0x80)**。 若要激活 DMA 验证，使用 0x80 标志值，或将 0x80 添加到标志值。 例如：
+    在命令行中，由表示 DMA 验证选项**位 7 (0x80)** 。 若要激活 DMA 验证，使用 0x80 标志值，或将 0x80 添加到标志值。 例如：
 
     ```
     verifier /flags 0x80 /driver MyDriver.sys

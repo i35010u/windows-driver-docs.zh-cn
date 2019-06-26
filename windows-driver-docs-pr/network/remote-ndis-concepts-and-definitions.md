@@ -22,12 +22,12 @@ keywords:
 - 远程 NDIS WDK 网络、 消息封装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10377ce25890a86721f9f3e52e8af631c991c8a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aea83b5b538acdb58d54b67d91160831a8f98c90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373797"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359134"
 ---
 # <a name="remote-ndis-concepts-and-definitions"></a>远程 NDIS 的概念和定义
 
@@ -39,7 +39,7 @@ ms.locfileid: "63373797"
 
 -   **控制通道**
 
-    控制通道必须可靠，并确保按顺序的传递。 它用于除网络数据包的传输的所有通信。 所有必需的控制消息，除非[远程\_NDIS\_暂停\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570613)并[远程\_NDIS\_指示\_状态\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570617)，是由主机启动的请求和响应交换。 设备必须在每个总线指定的超时期限内做出响应。
+    控制通道必须可靠，并确保按顺序的传递。 它用于除网络数据包的传输的所有通信。 所有必需的控制消息，除非[远程\_NDIS\_暂停\_MSG](https://docs.microsoft.com/previous-versions/ff570613(v=vs.85))并[远程\_NDIS\_指示\_状态\_MSG](https://docs.microsoft.com/previous-versions/ff570617(v=vs.85))，是由主机启动的请求和响应交换。 设备必须在每个总线指定的超时期限内做出响应。
 
 -   **数据通道**
 
@@ -47,13 +47,13 @@ ms.locfileid: "63373797"
 
 -   **初始化和拆卸**
 
-    控制和数据通道初始化并设置指定为相应的总线。 主机发送[远程\_NDIS\_初始化\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570624)到远程 NDIS 设备的消息。 远程 NDIS 设备提供支持 （无连接或面向连接的），其类型有关的信息中和响应消息中的版本[远程\_NDIS\_初始化\_CMPLT](https://msdn.microsoft.com/library/windows/hardware/ff570621).
+    控制和数据通道初始化并设置指定为相应的总线。 主机发送[远程\_NDIS\_初始化\_MSG](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))到远程 NDIS 设备的消息。 远程 NDIS 设备提供支持 （无连接或面向连接的），其类型有关的信息中和响应消息中的版本[远程\_NDIS\_初始化\_CMPLT](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85)).
 
-    在主机或远程 NDIS 设备可以消除通过通信通道[远程\_NDIS\_暂停\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570613)消息。 在收到此消息将丢弃所有未完成的请求和数据包。
+    在主机或远程 NDIS 设备可以消除通过通信通道[远程\_NDIS\_暂停\_MSG](https://docs.microsoft.com/previous-versions/ff570613(v=vs.85))消息。 在收到此消息将丢弃所有未完成的请求和数据包。
 
 -   **设备状态定义**
 
-    以下 bus 级别初始化设备被认为处于 RNDIS 未初始化状态。 在接收时[远程\_NDIS\_初始化\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570624) ，并且通过远程\_NDIS\_初始化\_CMPLT RNDIS状态\_状态\_成功，则设备将进入 RNDIS 初始化状态。
+    以下 bus 级别初始化设备被认为处于 RNDIS 未初始化状态。 在接收时[远程\_NDIS\_初始化\_MSG](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85)) ，并且通过远程\_NDIS\_初始化\_CMPLT RNDIS状态\_状态\_成功，则设备将进入 RNDIS 初始化状态。
 
     一旦收到远程\_NDIS\_设置\_MSG OID 的指定非零值的筛选器值\_常规\_当前\_数据包\_筛选器，则设备将进入RNDIS 数据初始化状态。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63373797"
 
 -   **正在重置通信通道**
 
-    出现错误，例如消息超时发生时，会重置通信通道。 主机可能发起在设备处于 RNDIS 初始化状态时发送消息的任何时间重置[远程\_NDIS\_重置\_MSG](https://msdn.microsoft.com/library/windows/hardware/ff570648)设备和设备必须发送响应完成重置时的消息。 例如，主机可能会出现错误，例如消息超时发生时启动重置。
+    出现错误，例如消息超时发生时，会重置通信通道。 主机可能发起在设备处于 RNDIS 初始化状态时发送消息的任何时间重置[远程\_NDIS\_重置\_MSG](https://docs.microsoft.com/previous-versions/ff570648(v=vs.85))设备和设备必须发送响应完成重置时的消息。 例如，主机可能会出现错误，例如消息超时发生时启动重置。
 
     请注意，这是软重置意义上说，任何句柄 (例如，对于面向连接的设备的 VCs) 仍然有效后重置。 远程 NDIS 设备重置过程的一部分将放弃所有未完成的请求和数据包。 远程设备可能会重置某些硬件组件，但保持通信通道的更新保持不变。
 

@@ -9,25 +9,25 @@ keywords:
 - HDAUDIO_BUS_INTERFACE_BDL 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b50727c187b3910c925917bc68107c1d2ad560
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 799483b2133c751b9951a0a48e7e5b2564de0c89
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359059"
 ---
 # <a name="differences-between-the-hd-audio-ddi-versions"></a>HD 音频 DDI 版本之间的差异
 
 
 HD 音频 DDI 现已推出，如下所示定义的三个稍有不同版本：
 
--   HD 音频 DDI 由定义的基线版本[ **HDAUDIO\_总线\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff536413)结构。 音频和调制解调器编解码器的大多数函数驱动程序要求此 DDI 版本提供的功能。 此版本时可通过提供与 Windows XP 和 Windows Vista 的 HD Audio 总线驱动程序。
+-   HD 音频 DDI 由定义的基线版本[ **HDAUDIO\_总线\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface)结构。 音频和调制解调器编解码器的大多数函数驱动程序要求此 DDI 版本提供的功能。 此版本时可通过提供与 Windows XP 和 Windows Vista 的 HD Audio 总线驱动程序。
 
--   由定义 HD 音频 DDI 的增强的版本[ **HDAUDIO\_总线\_接口\_V2** ](https://msdn.microsoft.com/library/windows/hardware/ff536418)结构。 此版本的 DDI 提供能够灵活地支持 DMA 驱动事件通知所需的其他功能。 它是在 Windows Vista 和更高版本的 Windows 中可用。
+-   由定义 HD 音频 DDI 的增强的版本[ **HDAUDIO\_总线\_接口\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)结构。 此版本的 DDI 提供能够灵活地支持 DMA 驱动事件通知所需的其他功能。 它是在 Windows Vista 和更高版本的 Windows 中可用。
 
--   HD 音频 DDI 所定义的修改的版本[ **HDAUDIO\_总线\_接口\_BDL** ](https://msdn.microsoft.com/library/windows/hardware/ff536416)结构。 此版本可容纳的要求相对较少的音频和调制解调器驱动程序必须具有对安装程序的额外控制缓冲 DMA 操作描述符列表 (BDLs)。 此版本的 DDI 是适用于 Windows XP 和更高版本的 Windows。 但是，使用任一 HDAUDIO\_总线\_接口或 HDAUDIO\_总线\_接口\_V2 DDI 版本相反。 .
+-   HD 音频 DDI 所定义的修改的版本[ **HDAUDIO\_总线\_接口\_BDL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)结构。 此版本可容纳的要求相对较少的音频和调制解调器驱动程序必须具有对安装程序的额外控制缓冲 DMA 操作描述符列表 (BDLs)。 此版本的 DDI 是适用于 Windows XP 和更高版本的 Windows。 但是，使用任一 HDAUDIO\_总线\_接口或 HDAUDIO\_总线\_接口\_V2 DDI 版本相反。 .
 
-在所有三个结构的名称和类型的前五个成员与匹配的五个成员[**界面**](https://msdn.microsoft.com/library/windows/hardware/ff547825)结构。 有关这些成员的值的信息，请参阅[获取 HDAUDIO\_总线\_界面 DDI 对象](obtaining-an-hdaudio-bus-interface-ddi-object.md)，[获取 HDAUDIO\_总线\_接口\_V2 DDI 对象](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)或[获取 HDAUDIO\_总线\_接口\_BDL DDI 对象](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)。
+在所有三个结构的名称和类型的前五个成员与匹配的五个成员[**界面**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_interface)结构。 有关这些成员的值的信息，请参阅[获取 HDAUDIO\_总线\_界面 DDI 对象](obtaining-an-hdaudio-bus-interface-ddi-object.md)，[获取 HDAUDIO\_总线\_接口\_V2 DDI 对象](obtaining-an-hdaudio-bus-interface-v2-ddi-object.md)或[获取 HDAUDIO\_总线\_接口\_BDL DDI 对象](obtaining-an-hdaudio-bus-interface-bdl-ddi-object.md)。
 
 HD 音频 DDI 的三个版本中的例程执行以下任务：
 
@@ -47,9 +47,9 @@ HD 音频 DDI 的三个版本中的例程执行以下任务：
 
 HDAUDIO\_总线\_界面和 HDAUDIO\_总线\_接口\_DDI BDL 版本具有以下差异：
 
--   HDAUDIO\_总线\_接口结构定义两个例程[ **AllocateDmaBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536179)并[ **FreeDmaBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536391)，都不存在于 HDAUDIO\_总线\_接口\_BDL。
+-   HDAUDIO\_总线\_接口结构定义两个例程[ **AllocateDmaBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_dma_buffer)并[ **FreeDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pfree_dma_buffer)，都不存在于 HDAUDIO\_总线\_接口\_BDL。
 
--   HDAUDIO\_总线\_界面\_BDL 结构定义三个例程[ **SetupDmaEngineWithBdl**](https://msdn.microsoft.com/library/windows/hardware/ff537894)， [ **AllocateContiguousDmaBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536178)，并[ **FreeContiguousDmaBuffer**](https://msdn.microsoft.com/library/windows/hardware/ff536390)，都不存在于 HDAUDIO\_总线\_接口。
+-   HDAUDIO\_总线\_界面\_BDL 结构定义三个例程[ **SetupDmaEngineWithBdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-psetup_dma_engine_with_bdl)， [ **AllocateContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)，并[ **FreeContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hdaudio/nc-hdaudio-pfree_contiguous_dma_buffer)，都不存在于 HDAUDIO\_总线\_接口。
 
 当客户端调用**AllocateDmaBuffer**例程中的第一个 DDI 版本，HD Audio 总线驱动程序：
 

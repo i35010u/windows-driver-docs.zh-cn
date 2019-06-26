@@ -5,24 +5,24 @@ ms.assetid: D8893395-3D33-4777-B8F0-4DD6BE9B8A37
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_DELETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b27ea56f2da65e215ebc7688e4926064acf3f00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cda916bdb9c95e7acb57644df252bb49e81594fd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386872"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356106"
 ---
 # <a name="oidswitchportdelete"></a>OID\_交换机\_端口\_删除
 
 
 HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求的 OID\_切换\_端口\_删除以通知有关可扩展交换机端口删除可扩展交换机扩展。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_交换机\_端口\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598229)结构。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-**PortId**的成员[ **NDIS\_切换\_端口\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598229)结构指定的可扩展交换机端口为其删除通知进行了。
+**PortId**的成员[ **NDIS\_切换\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构指定的可扩展交换机端口为其删除通知进行了。
 
 如果网络适配器已连接到指定的端口，可扩展交换机的协议边缘将删除连接，然后再删除该端口。 在这种情况下，协议边缘将执行以下步骤，然后再删除该端口：
 
@@ -38,23 +38,23 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 
 2.  协议边缘发出 OID 集请求的 OID\_切换\_端口\_可扩展交换机端口的所有 OID 请求已都完成后删除。
 
-    **请注意**  像扩展之前已调用[ *ReferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598295)增加端口的引用计数器，它必须调用[ *DereferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598142)协议边缘问题之前[OID\_交换机\_NIC\_删除](oid-switch-nic-delete.md)请求。
+    **请注意**  像扩展之前已调用[ *ReferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)增加端口的引用计数器，它必须调用[ *DereferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)协议边缘问题之前[OID\_交换机\_NIC\_删除](oid-switch-nic-delete.md)请求。
 
      
 
 扩展必须遵守以下原则处理 OID 设置请求的 OID\_交换机\_端口\_删除：
 
--   该扩展不能修改[ **NDIS\_交换机\_端口\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598229)与 OID 请求关联的结构。
+-   该扩展不能修改[ **NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)与 OID 请求关联的结构。
 
 -   扩展始终将转发对基础扩展的 OID 集请求。 扩展必须不会使请求失败。
 
--   之后 OID\_交换机\_端口\_DELETE 请求已完成并且 NDIS\_状态\_成功后，该扩展将不会收到任何数据包或已删除的端口的 OID 请求。 该扩展不能将数据包转发到已删除的端口。 扩展还不能发出 OID 请求，也不调用[ *ReferenceSwitchPort* ](https://msdn.microsoft.com/library/windows/hardware/hh598295)函数已删除的端口。
+-   之后 OID\_交换机\_端口\_DELETE 请求已完成并且 NDIS\_状态\_成功后，该扩展将不会收到任何数据包或已删除的端口的 OID 请求。 该扩展不能将数据包转发到已删除的端口。 扩展还不能发出 OID 请求，也不调用[ *ReferenceSwitchPort* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)函数已删除的端口。
 
 **请注意**  可扩展交换机扩展必须发出 OID 集请求的 OID\_切换\_端口\_删除。
 
  
 
-有关可扩展交换机端口和网络适配器连接的状态的详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](https://msdn.microsoft.com/library/windows/hardware/hh598182)。
+有关可扩展交换机端口和网络适配器连接的状态的详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -105,19 +105,19 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 
 
 ****
-[*DereferenceSwitchPort*](https://msdn.microsoft.com/library/windows/hardware/hh598142)
+[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_dereference_switch_port)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_交换机\_端口\_参数**](https://msdn.microsoft.com/library/windows/hardware/hh598229)
+[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)
 
-[**NdisFOidRequest**](https://msdn.microsoft.com/library/windows/hardware/ff561830)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
 
 [OID\_交换机\_NIC\_删除](oid-switch-nic-delete.md)
 
 [OID\_交换机\_端口\_数组](oid-switch-port-array.md)
 
-[*ReferenceSwitchPort*](https://msdn.microsoft.com/library/windows/hardware/hh598295)
+[*ReferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_reference_switch_port)
 
  
 

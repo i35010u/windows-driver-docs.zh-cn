@@ -4,12 +4,12 @@ description: 本部分介绍 NDKPI 对象生存期要求
 ms.assetid: 94993523-D0D7-441E-B95C-417800840BAC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b59e31e8c09007a36a9a8004e3bcd07612efe4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7c382c56af12e56e48c54033d9414b4be82bc18
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380908"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364037"
 ---
 # <a name="ndkpi-object-lifetime-requirements"></a>NDKPI 对象生存期要求
 
@@ -19,11 +19,11 @@ ms.locfileid: "63380908"
 
 NDK 使用者通过该对象调用 NDK 提供程序的创建函数启动的 NDK 对象创建请求。
 
-当使用者调用创建函数时，会传递*NdkCreateCompletion* ([*NDK\_FN\_创建\_完成*](https://msdn.microsoft.com/library/windows/hardware/hh439871)) 作为参数。
+当使用者调用创建函数时，会传递*NdkCreateCompletion* ([*NDK\_FN\_创建\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_create_completion)) 作为参数。
 
-使用者通过调用中传递的对象的调度表的提供程序函数来启动各种请求*NdkRequestCompletion* ([*NDK\_FN\_请求\_完成*](https://msdn.microsoft.com/library/windows/hardware/hh439912)) 作为参数的完成回调。
+使用者通过调用中传递的对象的调度表的提供程序函数来启动各种请求*NdkRequestCompletion* ([*NDK\_FN\_请求\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_request_completion)) 作为参数的完成回调。
 
-当不再需要对象时，使用者调用提供程序的*NdkCloseObject* ([*NDK\_FN\_关闭\_对象*](https://msdn.microsoft.com/library/windows/hardware/hh439863)) 函数以初始化该对象的关闭请求传递*NdkCloseCompletion* ([*NDK\_FN\_关闭\_完成*](https://msdn.microsoft.com/library/windows/hardware/hh439862)) 作为参数的回调。
+当不再需要对象时，使用者调用提供程序的*NdkCloseObject* ([*NDK\_FN\_关闭\_对象*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_close_object)) 函数以初始化该对象的关闭请求传递*NdkCloseCompletion* ([*NDK\_FN\_关闭\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_close_completion)) 作为参数的回调。
 
 对于所有此类函数，该提供程序调用使用者的回调函数来完成该请求。 此调用指示向使用者，该提供程序已完成操作 （例如，关闭对象），并且正在将控制返回给使用者。
 
@@ -57,7 +57,7 @@ NDK 使用者通过该对象调用 NDK 提供程序的创建函数启动的 NDK 
 
 请考虑以下方案：
 
-1.  使用者创建一个连接器 ([**NDK\_连接器**](https://msdn.microsoft.com/library/windows/hardware/hh439852))，然后调用*NdkConnect* ([*NDK\_FN\_CONNECT*](https://msdn.microsoft.com/library/windows/hardware/hh439865))。
+1.  使用者创建一个连接器 ([**NDK\_连接器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_connector))，然后调用*NdkConnect* ([*NDK\_FN\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect))。
 2.  提供程序处理连接请求、 遇到故障时，并调用的上下文中的使用者的完成回调*NdkConnect*调用 （而不是返回内联失败由于一个内部实现的选择）。
 3.  使用者可调用*NdkCloseObject*上下文中的此完成回调，即使*NdkConnect*调用尚未返回给使用者。
 
@@ -72,9 +72,9 @@ NDK 使用者通过该对象调用 NDK 提供程序的创建函数启动的 NDK 
 -   使用者不得将 antecedent 对象之后调用*NdkCloseObject*它，因此该提供程序不需要添加任何处理由于前面的对象的更多提供程序函数 （但它可能当它选择）。
 -   提供程序可能会视作关闭请求一个简单的取消引用具有没有其他负面影响之前的最后一个的后继对象已关闭，除非另有要求 （低于该值的 NDK 侦听器关闭情况具有所需的负面影响，请参阅）。
 
-提供程序必须完成前面对象上的关闭请求 (包括[ **NDK\_适配器**](https://msdn.microsoft.com/library/windows/hardware/hh439848)关闭请求) 在任何后继任何正在进行中关闭完成回调之前对象返回到提供程序。 这是为了允许安全地卸载 NDK 使用者。
+提供程序必须完成前面对象上的关闭请求 (包括[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)关闭请求) 在任何后继任何正在进行中关闭完成回调之前对象返回到提供程序。 这是为了允许安全地卸载 NDK 使用者。
 
-NDK 使用者将不会调用*NdkCloseObject*有关[ **NDK\_适配器**](https://msdn.microsoft.com/library/windows/hardware/hh439848)对象 （这是阻止调用） 从使用者的回调函数内。
+NDK 使用者将不会调用*NdkCloseObject*有关[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)对象 （这是阻止调用） 从使用者的回调函数内。
 
 ## <a name="closing-adapter-objects"></a>关闭适配器对象
 
@@ -84,11 +84,11 @@ NDK 使用者将不会调用*NdkCloseObject*有关[ **NDK\_适配器**](https://
 1.  使用者可调用*NdkCloseObject*上完成队列 (CQ) 对象。
 2.  访问接口将返回状态\_挂起，及更高版本调用使用者的完成回调。
 3.  在完成此回调中，使用者发出信号事件，它现在是确定以关闭 NDK\_适配器。
-4.  另一个线程唤醒时此信号，并关闭[ **NDK\_适配器**](https://msdn.microsoft.com/library/windows/hardware/hh439848)并继续执行卸载。
-5.  但是，在调用使用者的 CQ 关闭完成回调的线程可能仍在使用者的回调函数 (例如，函数[epilog](https://msdn.microsoft.com/library/tawsa7cb.aspx))，因此是不安全的要卸载的使用者驱动程序。
+4.  另一个线程唤醒时此信号，并关闭[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)并继续执行卸载。
+5.  但是，在调用使用者的 CQ 关闭完成回调的线程可能仍在使用者的回调函数 (例如，函数[epilog](https://docs.microsoft.com/cpp/build/prolog-and-epilog))，因此是不安全的要卸载的使用者驱动程序。
 6.  因为完成回调上下文是唯一的上下文使用者可以发出事件信号，使用者驱动程序不能解决安全卸载问题本身。
 
-必须在其使用者可以确保所有其回调返回控件的点。 NDKPI，在此点是何时关闭请求上的[ **NDK\_适配器**](https://msdn.microsoft.com/library/windows/hardware/hh439848)返回控件。 请注意， **NDK\_适配器**关闭请求是阻止调用。 当**NDK\_适配器**关闭请求返回，它可保证，所有对象上的所有回调，都根据该**NDK\_适配器**对象返回到控件提供程序。
+必须在其使用者可以确保所有其回调返回控件的点。 NDKPI，在此点是何时关闭请求上的[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)返回控件。 请注意， **NDK\_适配器**关闭请求是阻止调用。 当**NDK\_适配器**关闭请求返回，它可保证，所有对象上的所有回调，都根据该**NDK\_适配器**对象返回到控件提供程序。
 
 ## <a name="completing-close-requests"></a>完成关闭请求
 
@@ -96,11 +96,11 @@ NDK 使用者将不会调用*NdkCloseObject*有关[ **NDK\_适配器**](https://
 提供程序必须完成的对象，直到上一个关闭请求：
 
 -   所有挂起的异步请求的对象上都完成后 （换句话说，它们的完成回调已返回到提供程序时）。
--   所有使用者的事件的回调 (例如， *NdkCqNotificationCallback* ([*NDK\_FN\_CQ\_通知\_回调*](https://msdn.microsoft.com/library/windows/hardware/hh439870)) 上的 CQ *NdkConnectEventCallback* ([*NDK\_FN\_CONNECT\_事件\_回调* ](https://msdn.microsoft.com/library/windows/hardware/hh439867)) 对侦听器) 返回了错误的提供程序。
+-   所有使用者的事件的回调 (例如， *NdkCqNotificationCallback* ([*NDK\_FN\_CQ\_通知\_回调*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)) 上的 CQ *NdkConnectEventCallback* ([*NDK\_FN\_CONNECT\_事件\_回调* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/nc-ndkpi-ndk_fn_connect_event_callback)) 对侦听器) 返回了错误的提供程序。
 
 提供程序必须确保不再使用回调会调用关闭完成回调后或在关闭请求返回状态\_成功。 请注意，任何所需刷新或取消的挂起的异步请求还必须启动关闭请求。
 
-**请注意**  它以逻辑方式遵循从上述 NDK 使用者必须不调用*NdkCloseObject*有关[ **NDK\_适配器**](https://msdn.microsoft.com/library/windows/hardware/hh439848)对象 （这是阻止调用） 从使用者的回调函数内。
+**请注意**  它以逻辑方式遵循从上述 NDK 使用者必须不调用*NdkCloseObject*有关[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)对象 （这是阻止调用） 从使用者的回调函数内。
 
  
 

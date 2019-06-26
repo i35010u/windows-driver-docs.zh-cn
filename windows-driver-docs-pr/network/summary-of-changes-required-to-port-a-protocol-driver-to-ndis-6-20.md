@@ -9,12 +9,12 @@ keywords:
 - 协议驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: deed1d77b98591e6be28971a09e706d601647c9b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3b0a5bc242f27a2ac0e28ec0935e1e92b396e24c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366355"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357355"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-driver-to-ndis-620"></a>将协议驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
@@ -44,7 +44,7 @@ NDIS 6.20 保留与早期 NDIS 版本的向后兼容性。 有关向后兼容性
     支持超过 64 个处理器的详细信息，请参阅[支持多个 64 位处理器中 NDIS 6.20](support-for-more-than-64-processors-in-ndis-6-20.md)。
 
 <a href="" id="driver-initialization-------"></a>**驱动程序初始化**   
--   将 NDIS 版本设置为在 6.20 **MajorNdisVersion**并**MinorNdisVersion**的成员[ **NDIS\_协议\_驱动程序\_特征**](https://msdn.microsoft.com/library/windows/hardware/ff566825)结构，它传递给[ **NdisRegisterProtocolDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff564520)函数。
+-   将 NDIS 版本设置为在 6.20 **MajorNdisVersion**并**MinorNdisVersion**的成员[ **NDIS\_协议\_驱动程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_driver_characteristics)结构，它传递给[ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)函数。
 
 -   在中设置协议驱动程序版本**MajorDriverVersion**并**MinorDriverVersion** NDIS 成员\_协议\_驱动程序\_特征为适当的驱动程序特定值的结构。
 
@@ -56,13 +56,13 @@ NDIS 6.20 保留与早期 NDIS 版本的向后兼容性。 有关向后兼容性
     -   硬件协助 (VMQ)
 -   使用这些结构的更新的版本：
 
-    -   [**NDIS\_BIND\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/ff564832)
-    -   [**NDIS\_卸载\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff566706)
+    -   [**NDIS\_BIND\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)
+    -   [**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
     NDIS 结构版本信息有关的信息，请参阅[指定 NDIS 版本信息](specifying-ndis-version-information.md)。
 
 <a href="" id="send-and-receive-data-paths-------"></a>**发送和接收数据路径**   
--   使用的更新的版本[ **NET\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff568376)结构。
+-   使用的更新的版本[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。
 
 -   选择性地支持虚拟机队列 (VMQ) 接口。 有关 VMQ 的详细信息，请参阅[虚拟机队列 (VMQ) 在 NDIS 6.20](virtual-machine-queue--vmq--in-ndis-6-20.md)。
 

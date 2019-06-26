@@ -3,12 +3,12 @@ Description: 本主题列出了"如何"主题中的 USB 驱动程序文档集。
 title: USB 客户端驱动程序的常见任务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83eed89b45058d5723f14319f96b5f031ea7dd36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ae8bf2cd77c58138cda95df8ef448e50f0ca2fb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389196"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356550"
 ---
 # <a name="common-tasks-for-usb-client-drivers"></a>USB 客户端驱动程序的常见任务
 
@@ -101,7 +101,7 @@ ms.locfileid: "63389196"
  
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB) 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

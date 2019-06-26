@@ -4,12 +4,12 @@ description: 在设备驱动程序接口 (DDI) 中，分段模型是抽象出来
 ms.assetid: E6CAD808-73C0-48AB-BF95-76911D5C104A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ecf2d534acfc82044c7aec174a042297da8f7df
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: a3404fd22077396dfaa607fc15ba95adf3e8439a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161447"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67379957"
 ---
 # <a name="gpu-segments"></a>GPU 段
 
@@ -43,7 +43,7 @@ DDI 中的物理内存的引用始终采用段 ID 段偏移量对的形式。
 
 不支持 GPU 虚拟寻址的 GPU 引擎需要访问通过其物理地址的分配。 这会产生上如何分配获取已分配资源的段中的含义。 物理引用意味着分配必须连续内存段中分配或 aperture 段中占据连续范围。
 
-若要避免不必要且成本高昂的连续分配，内核模式驱动程序必须显式确定需要用来访问以物理方式呈现引擎，通过设置新的分配[ **DXGK\_ALLOCATIONINFOFLAGS2**](https://msdn.microsoft.com/library/windows/hardware/ff560970)::**AccessedPhysically**期间分配的标志。
+若要避免不必要且成本高昂的连续分配，内核模式驱动程序必须显式确定需要用来访问以物理方式呈现引擎，通过设置新的分配[ **DXGK\_ALLOCATIONINFOFLAGS2**](https://docs.microsoft.com/windows-hardware/drivers/display/dxgk-allocationinfoflags2)::**AccessedPhysically**期间分配的标志。
 
 此类分配将映射到 aperture 段时驻留在系统内存中。 分配将连续时驻留在一个内存段中。 可以通过在引擎，在物理寻址模式下运行的分配列表引用分配，这种方法，创建。
 

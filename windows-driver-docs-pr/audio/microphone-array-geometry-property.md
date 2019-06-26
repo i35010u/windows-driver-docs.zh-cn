@@ -8,17 +8,17 @@ keywords:
 - 麦克风阵列 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a9ca3ddc96b3ece4005691749373dfc0f9d2d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 187d66850be8f88f728efcd2026633174b37ba16
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362585"
 ---
 # <a name="microphone-array-geometry-property"></a>麦克风阵列几何属性
 
 
-在 Windows Vista 及更高版本，提供的麦克风阵列支持。 在大多数情况下，单个麦克风嵌入在便携式计算机或监视器不会捕获声音很好。 麦克风的数组执行更好地找出声音源并拒绝避免环境噪音和混响。 [ **KSPROPERTY\_音频\_MIC\_数组\_GEOMETRY** ](https://msdn.microsoft.com/library/windows/hardware/ff537289)属性指定几何图形的麦克风阵列。 属性值， [ **KSAUDIO\_MIC\_数组\_GEOMETRY**](https://msdn.microsoft.com/library/windows/hardware/ff537087)，描述的数组类型 （线性、 平面，等等），数组中的麦克风的数量和其他功能。
+在 Windows Vista 及更高版本，提供的麦克风阵列支持。 在大多数情况下，单个麦克风嵌入在便携式计算机或监视器不会捕获声音很好。 麦克风的数组执行更好地找出声音源并拒绝避免环境噪音和混响。 [ **KSPROPERTY\_音频\_MIC\_数组\_GEOMETRY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry)属性指定几何图形的麦克风阵列。 属性值， [ **KSAUDIO\_MIC\_数组\_GEOMETRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksaudio_mic_array_geometry)，描述的数组类型 （线性、 平面，等等），数组中的麦克风的数量和其他功能。
 
 本主题介绍如何外部 USB 麦克风阵列可以使用麦克风阵列支持随附于 Windows Vista。 外部 USB 麦克风数组必须提供用于描述几何和其他功能以响应其数组所需的参数**获取\_内存优化**请求。
 
@@ -26,7 +26,7 @@ USB 麦克风阵列使用标准格式提供几何信息。 读取的几何信息
 
 应用程序可以调用[IPart::GetSubType](https://go.microsoft.com/fwlink/p/?linkid=143726)来检索有关一个插孔，若要确定是否已插入插孔设备麦克风阵列的信息。 **IPart::GetSubType**返回 pin 类别 GUID，表示输入的插孔类型。 如果已接通电源的设备为麦克风数组，返回的 GUID 是否等于 KSNODETYPE\_麦克风\_数组。 应用程序还有助于您确定是否插入您的麦克风阵列插入错误插孔。 在后一种方案中，返回的 pin 类别 GUID 是为不同的设备或它指示没有插入麦克风的插孔的设备。 有关 pin 类别 Guid 的详细信息，请参阅[Pin Category 属性](pin-category-property.md)。
 
-应用程序发现已插入正确的输入插孔麦克风阵列后下, 一步是确定数组的几何图形。 有三个基本几何：*线性*，*平面*，并*三个三维 (3-D)*。 几何信息还提供了详细信息，例如频率范围和每个麦克风的 x y z 坐标。
+应用程序发现已插入正确的输入插孔麦克风阵列后下, 一步是确定数组的几何图形。 有三个基本几何：*线性*，*平面*，并*三个三维 (3-D)* 。 几何信息还提供了详细信息，例如频率范围和每个麦克风的 x y z 坐标。
 
 下面的代码示例显示了 KSAUDIO\_MIC\_数组\_音频驱动程序使用来描述一个外部 USB 麦克风阵列的几何结构：
 

@@ -20,12 +20,12 @@ keywords:
 - I/O 请求 WDK KMDF Irp
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b117ebc4b00a809b0f2a12bce704410e4abdc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87dc5539862a17bf299b96a717efe3bd3f79821c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385715"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354450"
 ---
 # <a name="wdm-concepts-for-wdf-drivers"></a>适用于 WDF 驱动程序的 WDM 概念
 
@@ -34,7 +34,7 @@ Windows 驱动程序框架 (WDF) 是 Microsoft Windows 驱动程序模型 (WDM) 
 
 ### <a name="driver-types"></a>驱动程序类型
 
-基于 Windows 的驱动程序被分到三种类型：[总线驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540704)，[函数的驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff546516)，并[筛选器驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff545890)。 总线驱动程序支持 I/O 总线通过检测插入到父总线子设备并报告它们的特征。 (此活动称为*总线枚举*。)功能的驱动程序控制设备和总线 I/O 的操作。 筛选器驱动程序接收，检查，并可能修改流之间用户应用程序和驱动程序，或单独的驱动程序之间的数据。
+基于 Windows 的驱动程序被分到三种类型：[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)，[函数的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)，并[筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)。 总线驱动程序支持 I/O 总线通过检测插入到父总线子设备并报告它们的特征。 (此活动称为*总线枚举*。)功能的驱动程序控制设备和总线 I/O 的操作。 筛选器驱动程序接收，检查，并可能修改流之间用户应用程序和驱动程序，或单独的驱动程序之间的数据。
 
 总线驱动程序实质上是函数的驱动程序还枚举子项。 驱动程序就像"总线驱动程序"时，它枚举子设备的总线上。 否则，相同的驱动程序"功能驱动程序"为总线时充当它处理访问总线适配器的硬件的 I/O 操作。
 
@@ -48,7 +48,7 @@ Windows 驱动程序框架 (WDF) 是 Microsoft Windows 驱动程序模型 (WDM) 
 
 ### <a name="device-stacks"></a>设备堆栈
 
-每个驱动程序堆栈支持一个或多个*设备堆栈*。 设备堆栈是一套*设备对象*从 WDM 定义创建[**设备\_对象**](https://msdn.microsoft.com/library/windows/hardware/ff543147)结构。 每个设备堆栈表示一台设备。 每个驱动程序为每个其设备创建设备对象并将每个设备对象附加到设备堆栈。 创建和删除，因为设备已插入和拔出，设备堆栈和每次重新启动系统。
+每个驱动程序堆栈支持一个或多个*设备堆栈*。 设备堆栈是一套*设备对象*从 WDM 定义创建[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object)结构。 每个设备堆栈表示一台设备。 每个驱动程序为每个其设备创建设备对象并将每个设备对象附加到设备堆栈。 创建和删除，因为设备已插入和拔出，设备堆栈和每次重新启动系统。
 
 当总线驱动程序检测到已接通电源或拔出子设备时，它会通知插即用 (PnP) 管理器。 在响应中，即插即用管理器对于每个连接到父设备 （即，总线） 的子设备要求总线驱动程序创建物理设备对象 (PDO)。 PDO 将成为设备堆栈的底部。
 

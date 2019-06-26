@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c573cc59dd2510df307511d061f0e251170e3fde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b701c44e138fff4ccb716e07184f5eb0b22ff5ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378111"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363344"
 ---
 # <a name="scsiinquiry-function"></a>ScsiInquiry 函数
 
@@ -49,34 +49,34 @@ void ScsiInquiry(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 *Cdb*   
-包含要发送到目标设备的 SCSI 查询命令命令描述符块。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)结构。
+包含要发送到目标设备的 SCSI 查询命令命令描述符块。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)结构。
 
 *HbaPortWWN*   
-通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)结构。
+通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)结构。
 
 *DiscoveredPortWWN*   
-通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)结构。
+通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)结构。
 
 *FcLun*   
-将收到的 SCSI 查询命令的逻辑单元将逻辑单元号。 此信息传递到中的微型端口驱动程序**FcLun**的成员[ **ScsiInquiry\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff564598)结构。
+将收到的 SCSI 查询命令的逻辑单元将逻辑单元号。 此信息传递到中的微型端口驱动程序**FcLun**的成员[ **ScsiInquiry\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)结构。
 
 *ResponseBufferSize*   
-以字节为单位将保存的 SCSI 查询命令结果的缓冲区的大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+以字节为单位将保存的 SCSI 查询命令结果的缓冲区的大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 *SenseBufferSize*   
-以字节为单位的缓冲区将保留 SCSI 检测数据的 SCSI 查询命令而得出的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+以字节为单位的缓冲区将保留 SCSI 检测数据的 SCSI 查询命令而得出的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 *ScsiStatus*   
-SCSI 查询命令的状态。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+SCSI 查询命令的状态。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 *ResponseBuffer*   
-SCSI 查询命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+SCSI 查询命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 *SenseBuffer*   
-SCSI 检测数据得出的 SCSI 查询命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiInquiry\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff564604)结构。
+SCSI 检测数据得出的 SCSI 查询命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiInquiry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -117,9 +117,9 @@ SCSI 检测数据得出的 SCSI 查询命令。 微型端口驱动程序将返�
 
 [HBA\_状态](hba-status.md)
 
-[**ScsiInquiry\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff564598)
+[**ScsiInquiry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_in)
 
-[**ScsiInquiry\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff564604)
+[**ScsiInquiry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsiinquiry_out)
 
  
 

@@ -23,12 +23,12 @@ keywords:
 - WDM 音频组件 WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 239c968d82da525c03967408201b73f5a8e9cb37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7dbdde7861c3d09da3a6d0eb5af5cef5d57f85d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333385"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359850"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>内核模式 WDM 音频组件
 
@@ -136,7 +136,7 @@ DRMK 系统驱动程序 (Drmk.sys) 是 KS 筛选器，用于解密包含受 DRM 
 
 拆分器系统驱动程序 (Splitter.sys) 是 KS 筛选器，创建两个或多个输出流的单个输入的捕获流。 拆分器驱动程序以透明方式将输入的流复制到两个独立于的输入流格式的详细输出流。
 
-拆分器驱动程序是受 Windows Me 和 Microsoft Windows XP 及更高版本。 有关详细信息，请参阅[AVStream 拆分条](https://msdn.microsoft.com/library/windows/hardware/ff554255)。
+拆分器驱动程序是受 Windows Me 和 Microsoft Windows XP 及更高版本。 有关详细信息，请参阅[AVStream 拆分条](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-splitters)。
 
 ### <a name="span-idportclassadapterdriverandportclssystemdriverspanspan-idportclassadapterdriverandportclssystemdriverspanport-class-adapter-driver-and-portcls-system-driver"></a><span id="port_class_adapter_driver_and_portcls_system_driver"></span><span id="PORT_CLASS_ADAPTER_DRIVER_AND_PORTCLS_SYSTEM_DRIVER"></span>端口类适配器驱动程序和 PortCls 系统驱动程序
 
@@ -176,11 +176,11 @@ Microsoft 建议硬件供应商的 IEEE 1394 音频设备而不是编写专有�
 
 在图中的驱动程序组件有关的详细信息，请参阅以下各节：
 
-[AVStream 概述](https://msdn.microsoft.com/library/windows/hardware/ff554240)
+[AVStream 概述](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)
 
-[AV/C 客户端驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff556364)
+[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)
 
-[IEEE 1394 总线](https://msdn.microsoft.com/library/windows/hardware/ff537207)
+[IEEE 1394 总线](https://developer.microsoft.com/windows/hardware)
 
  
 

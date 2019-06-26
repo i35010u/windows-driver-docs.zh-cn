@@ -4,12 +4,12 @@ description: StorPort 定义一组注册表项来配置 StorPort 和微型端口
 ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e6769c2bf7bcb19a3c21553ba1b283bee22c3e
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: a122a246d60b796d9b00295256368522a01e8808
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161335"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368944"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort 微型端口驱动程序的注册表项
 
@@ -43,12 +43,12 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>任何微型端口特定的数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>Storport 检索此注册表数据，并将缓冲区传递到作为微型端口<em>参数</em>时，它调用的微型端口<a href="https://msdn.microsoft.com/library/windows/hardware/ff557390" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff557390)"> <strong>HwStorFindAdapter</strong> </a>例程。</p></td>
+<td align="left"><p>Storport 检索此注册表数据，并将缓冲区传递到作为微型端口<em>参数</em>时，它调用的微型端口<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)"> <strong>HwStorFindAdapter</strong> </a>例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -81,7 +81,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：30</p>
 <p>最长：600</p>
 <p>单位： 秒</p></td>
@@ -121,7 +121,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：255</p>
 <p>最长：如果在注册表中设置的 8</p></td>
 </tr>
@@ -199,7 +199,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：0x00000000</p>
 <p>当 MinimumUCXAddress &gt;= MaximumUCXAddress-PAGE_SIZE、 StorPort 使用默认值。</p></td>
 </tr>
@@ -278,7 +278,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
+<td align="left">值</td>
 <td align="left"><p>Default：1000</p>
 <p>最低：16</p>
 <p>最长：255</p></td>
@@ -427,7 +427,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
+<td align="left">ReplTest1</td>
 <td align="left"><p>Default：255</p>
 <p>最低：18</p>
 <p>最长：255</p>

@@ -3,12 +3,12 @@ title: 设备固件更新的 USB 设备而无需使用共同安装程序
 description: 概述了更新而无需辅助安装程序的 USB 设备固件的建议方法。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad53b257200cd14db227111a6cf7ed0767b2acf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2b58da9895f456a4f8960b6cd5bfc0f89b28fa2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374107"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360190"
 ---
 # <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>设备固件更新的 USB 设备而无需使用共同安装程序
 
@@ -28,7 +28,7 @@ USB 设备供应商使用共同安装程序来更新设备固件对于使用收�
 
 在发布中字段的可更新固件时 UVC 照相机之类的 USB 设备。 没有立即更新固件的标准方法。 普遍适用于所有现有的更新机制的一件事是一些自定义软件套件在客户端上运行，并下载到设备的固件。 通常情况下，设备安装过程的一部分安装固件更新软件套件。 辅助安装程序启动启动固件更新过程。 Windows 10 上的共同安装程序缺少可防止设备供应商更新域中的这些设备上的固件。
 
-绕过共同安装程序缺少 USB 设备固件更新方案是使用较低的筛选器驱动程序，到将启动的 USB 设备的推荐的方式启动固件更新过程。 期间[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)调用时，筛选器驱动程序将检查设备固件版本并根据需要进行更新固件。
+绕过共同安装程序缺少 USB 设备固件更新方案是使用较低的筛选器驱动程序，到将启动的 USB 设备的推荐的方式启动固件更新过程。 期间[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)调用时，筛选器驱动程序将检查设备固件版本并根据需要进行更新固件。
 
 ## <a name="firmware-update-overview"></a>固件更新概述
 
@@ -62,13 +62,13 @@ USB 设备插入到系统，泛型收件箱驱动程序安装的设备。 安装
 
 ![固件更新 UMDF 低筛选器驱动程序方法](images/fw-update-umdf-lower-filter-driver-method.png)
 
-安装驱动程序更新包，时固件更新 WDF 筛选驱动程序的[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)将调用例程。 此例程从 WDF 筛选器驱动程序将设备固件版本从获取设备 HW 注册表项。 设备固件应已经使用 MSO 描述符到的设备硬件注册表项上的固件版本。
+安装驱动程序更新包，时固件更新 WDF 筛选驱动程序的[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)将调用例程。 此例程从 WDF 筛选器驱动程序将设备固件版本从获取设备 HW 注册表项。 设备固件应已经使用 MSO 描述符到的设备硬件注册表项上的固件版本。
 
 1. 如果设备固件版本和筛选器驱动程序预期的固件版本不同，或
 
 1. 固件版本中不可用的设备硬件注册表项
 
-    1. 然后，筛选器驱动程序将自身插入到设备堆栈通过返回到成功的消息[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)回调。
+    1. 然后，筛选器驱动程序将自身插入到设备堆栈通过返回到成功的消息[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)回调。
 
 1. 否则，筛选器驱动程序会将自身插入设备堆栈
 

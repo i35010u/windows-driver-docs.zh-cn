@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API，堆栈跟踪
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f384f3a25510c3fa8a8bd4bde2bea077501bf0fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef7763af3d112110a3ab0e06c1c97b02282fcfe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347783"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361371"
 ---
 # <a name="examining-the-stack-trace"></a>检查堆栈跟踪
 
@@ -20,7 +20,7 @@ ms.locfileid: "63347783"
 
 每个线程都具有其自己的调用堆栈，表示该线程中进行的调用。
 
-若要获取堆栈跟踪，请使用方法[ **GetStackTrace** ](https://msdn.microsoft.com/library/windows/hardware/ff548425)并[ **GetContextStackTrace**](https://msdn.microsoft.com/library/windows/hardware/ff545748)。 可以使用打印堆栈跟踪[ **OutputStackTrace** ](https://msdn.microsoft.com/library/windows/hardware/ff553252)并[ **OutputContextStackTrace**](https://msdn.microsoft.com/library/windows/hardware/ff553203)。
+若要获取堆栈跟踪，请使用方法[ **GetStackTrace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-getstacktrace)并[ **GetContextStackTrace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-getcontextstacktrace)。 可以使用打印堆栈跟踪[ **OutputStackTrace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-outputstacktrace)并[ **OutputContextStackTrace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol4-outputcontextstacktrace)。
 
  
 

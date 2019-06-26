@@ -9,12 +9,12 @@ keywords:
 - 存储磁带驱动程序 WDK，所需的例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f50eae3803f9297bf157153ed563e3f1cbad0cf3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfe0638dd765e3e892c51c620ecd7b6b8dffb2da
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352631"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360195"
 ---
 # <a name="required-and-optional-tape-miniclass-routines"></a>必需的和可选的磁带微型类例程
 
@@ -44,7 +44,7 @@ ms.locfileid: "63352631"
 
 磁带 miniclass 驱动**DriverEntry**例程必须使用该名称完全才能由操作系统自动加载。 TapeMini*Xxx*例程可以命名为选择的驱动程序编写器，只要例程的入口点设置中将磁带\_INIT\_数据\_EX 结构。 若要帮助调试，miniclass 驱动程序应前缀 TapeMini*Xxx*例程使用某些字符来标识自身，并且应确保在名称中的字符的其余部分反映该例程的作用。
 
-另请参阅中的磁带 miniclass 例程的说明[磁带 Miniclass 驱动程序例程](https://msdn.microsoft.com/library/windows/hardware/ff567970)。
+另请参阅中的磁带 miniclass 例程的说明[磁带 Miniclass 驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
  
 

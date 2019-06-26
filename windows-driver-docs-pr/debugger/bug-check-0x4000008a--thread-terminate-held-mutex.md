@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e9359c862b7c3be1d7b599ce8d133aac503719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5645a6182acb58d5211e0ad499998ceeb280f7f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67367451"
 ---
 # <a name="bug-check-0x4000008a-threadterminateheldmutex"></a>Bug 检查 0x4000008A：线程\_TERMINATE\_保持\_互斥体
 
@@ -26,7 +26,7 @@ ms.locfileid: "63325383"
 在线程\_TERMINATE\_保持\_互斥体 bug 检查的值为 0x4000008A。 这指示一个驱动程序获取互斥体已退出之前无法释放互斥体的线程上。 这可能导致由驱动程序返回到用户模式而未释放互斥体或由驱动程序获取互斥体，并且，然后引发异常会导致，正在终止运行的线程。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="threadterminateheldmutex-parameters"></a>线程\_TERMINATE\_保持\_互斥体参数

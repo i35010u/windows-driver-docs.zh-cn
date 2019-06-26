@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 611436ac975351efd462e4915d187d9dd93ec5f5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3953c94e9d9c586c723f50eae444a803c5c8dbb9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335882"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362457"
 ---
 # <a name="ndiskdpktpools"></a>!ndiskd.pktpools
 
 
-**警告**  此扩展是旧的 NDIS 5.x 驱动程序。 [NDIS\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff557086)结构和其关联的体系结构已被弃用。
+**警告**  此扩展是旧的 NDIS 5.x 驱动程序。 [NDIS\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构和其关联的体系结构已被弃用。
 
  
 
@@ -54,11 +54,11 @@ ffffdf80131d5940  fffff80f1fbe3e71   0x1          0x1000     0xa           0x180
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[Windows 2000 和 Windows XP 网络设计指南](https://msdn.microsoft.com/library/windows/hardware/ff565849)
+[Windows 2000 和 Windows XP 网络设计指南](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565849(v=vs.85))
 
-[Windows 2000 和 Windows XP 网络参考](https://msdn.microsoft.com/library/windows/hardware/ff565850)
+[Windows 2000 和 Windows XP 网络参考](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565850(v=vs.85))
 
-[NDIS\_数据包](https://msdn.microsoft.com/library/windows/hardware/ff557086)
+[NDIS\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))
 
  
 

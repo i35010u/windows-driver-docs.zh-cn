@@ -9,19 +9,19 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28126
-ms.openlocfilehash: b40ce9b2305c69628b90c9a8dc1664b84b58df3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e6de5f744051096a9fe99cde7a9e870c03cbd64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361403"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364142"
 ---
 # <a name="c28126"></a>C28126
 
 
 警告 C28126:ObReferenceObject 的 AccessMode 参数\*应为 IRP-&gt;RequestorMode
 
-在调用[ **ObReferenceObjectByHandle** ](https://msdn.microsoft.com/library/windows/hardware/ff558679)或[ **ObReferenceObjectByPointer**](https://msdn.microsoft.com/library/windows/hardware/ff558686)，并传递该驱动程序**UserMode**或**KernelMode**有关*AccessMode*参数，而不是使用**Irp-&gt;RequestorMode**。
+在调用[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle)或[ **ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)，并传递该驱动程序**UserMode**或**KernelMode**有关*AccessMode*参数，而不是使用**Irp-&gt;RequestorMode**。
 
 该驱动程序应使用**Irp-&gt;RequestorMode**，而不是指定**UserMode**或**KernelMode**。 这允许安全地提供内核模式句柄的内核模式 IRP 的发件人。
 

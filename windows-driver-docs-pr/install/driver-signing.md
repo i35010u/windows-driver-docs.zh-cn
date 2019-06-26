@@ -6,12 +6,12 @@ keywords:
 - 驱动程序签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb5ea4ea7f06f3fa31dd46dceaca0b28c9c33dbc
-ms.sourcegitcommit: 91b989fc3256267fab89c36b1fa54ff039dcc687
+ms.openlocfilehash: 244b1e6db25fede3d7bf31b74d3d39ac4526dea8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148522"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358642"
 ---
 # <a name="driver-signing"></a>驱动程序签名
 
@@ -24,7 +24,7 @@ ms.locfileid: "67148522"
 
 适用于 Windows 10 （从版本 1507 但阈值 1 开始） 签名的硬件开发人员中心的所有驱动程序都 SHA2 签名。  有关特定于操作系统版本的详细信息，请参阅[签名的版本要求](kernel-mode-code-signing-policy--windows-vista-and-later-.md#signing-requirements-by-version)。
 
-内核模式驱动程序二进制文件嵌入操作系统早于 Windows 10 可能不会加载，或可能会在系统发生崩溃导致 Windows 10 上的第三方证书供应商的双 （SHA1 和 SHA2） 证书签名。 若要解决此问题，请安装[KB 3081436](https://support.microsoft.com/kb/3081436)。
+内核模式驱动程序二进制文件嵌入操作系统早于 Windows 10 可能不会加载，或可能会在系统发生崩溃导致 Windows 10 上的第三方证书供应商的双 （SHA1 和 SHA2） 证书签名。 若要解决此问题，请安装[KB 3081436](https://support.microsoft.com/help/3081436/cumulative-update-for-windows-10-august-11-2015)。
 
 ## <a name="in-this-section"></a>本节内容
 
@@ -37,7 +37,7 @@ ms.locfileid: "67148522"
 -   [安装和已签名的驱动程序包的负载问题疑难解答](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
 -   [Microsoft Security Advisory 2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)
 
-有关驱动程序的常规信息登录 Windows Vista 和更高版本的 Windows，请参阅白皮书[上的系统运行 Windows Vista 的内核模块数字签名](https://msdn.microsoft.com/library/bb530195)。
+有关驱动程序的常规信息登录 Windows Vista 和更高版本的 Windows，请参阅白皮书[上的系统运行 Windows Vista 的内核模块数字签名](https://docs.microsoft.com/previous-versions/dotnet/articles/bb530195(v=msdn.10))。
 
 
  

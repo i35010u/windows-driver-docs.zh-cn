@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b2173c904da6ec23cf0b27cb32ee0a609f5ef4b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99607a6cfd6c477035f0a11a224d7c03dbf2a9e1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365213"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362663"
 ---
 # <a name="sendrnid-function"></a>SendRNID 函数
 
@@ -44,19 +44,19 @@ void SendRNID(
 ----------
 
 *wwn*   
-RNID 命令发送到的端口全球通用名称。 此信息传递到中的微型端口驱动程序**wwn**的成员[ **SendRNID\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565485)结构。
+RNID 命令发送到的端口全球通用名称。 此信息传递到中的微型端口驱动程序**wwn**的成员[ **SendRNID\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_in)结构。
 
 *wwntype*   
 已弃用。 不使用。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRNID\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565486)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendRNID\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)结构。
 
 *ResponseBufferCount*   
-以字节为单位的 RNID 命令的结果大小。 微型端口驱动程序将返回此信息**ResponseBufferCount**的成员[ **SendRNID\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565486)结构。
+以字节为单位的 RNID 命令的结果大小。 微型端口驱动程序将返回此信息**ResponseBufferCount**的成员[ **SendRNID\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)结构。
 
 *ResponseBuffer*   
-RNID 命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **SendRNID\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565486)结构。
+RNID 命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **SendRNID\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -97,9 +97,9 @@ RNID 命令的结果。 微型端口驱动程序将返回此信息**ResponseBuff
 
 [HBA\_状态](hba-status.md)
 
-[**SendRNID\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565485)
+[**SendRNID\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_in)
 
-[**SendRNID\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565486)
+[**SendRNID\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendrnid_out)
 
  
 

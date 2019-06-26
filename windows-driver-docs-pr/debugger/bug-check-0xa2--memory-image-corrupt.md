@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b46fb82c021aa4fa09fd0c7da77f2942d7f0e0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f79e50d514e808aa00df9abb2f169ab339c88b15
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370363"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361671"
 ---
 # <a name="bug-check-0xa2-memoryimagecorrupt"></a>Bug 检查 0xA2：内存\_图像\_损坏
 
@@ -26,7 +26,7 @@ ms.locfileid: "63370363"
 内存\_图像\_损坏错误检查的值为 0x000000A2。 检查此错误指示在内存中的可执行文件的图像中检测到损坏。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="memoryimagecorrupt-parameters"></a>内存\_图像\_损坏参数

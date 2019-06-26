@@ -7,19 +7,19 @@ keywords:
 ms.date: 04/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d6e8f7efe2c671f559714562899953b9fc5d3d8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c80b2e2426d94638857e3465d09667fe3c3f7ab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386744"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362853"
 ---
 # <a name="oidwwandevicecapsex"></a>OID\_WWAN\_DEVICE\_CAPS\_EX
 
 
 OID\_WWAN\_设备\_CAP\_EX 是类似于[OID\_WWAN\_设备\_CAPS](oid-wwan-device-caps.md)但是每个执行程序 OID，与 OID_WWAN_ 不同这是每个设备 OID DEVICE_CAPS。 此 OID 用于表示硬件的设备/执行程序功能，如 LTE 连接 APN 配置包括扩展的可选功能的功能。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_CAP\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782396)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS\_EX** ](https://msdn.microsoft.com/library/windows/hardware/mt782401)结构，其中又包含[ **WWAN\_设备\_CAPS\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt799889)结构，以提供有关设备的功能的信息。
+微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_需要更高版本在发送之前对原始请求[ **NDIS\_状态\_WWAN\_设备\_CAP\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)结构，其中又包含[ **WWAN\_设备\_CAPS\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)结构，以提供有关设备的功能的信息。
 
 下图说明了查询请求。
 
@@ -77,11 +77,11 @@ OID\_WWAN\_设备\_CAPS\_EX 也用于检索每个执行器的功能。 此 OID �
 
 [OID\_WWAN\_DEVICE\_CAPS](oid-wwan-device-caps.md)
 
-[**NDIS\_STATUS\_WWAN\_DEVICE\_CAPS\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt782396)
+[**NDIS\_STATUS\_WWAN\_DEVICE\_CAPS\_EX**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps-ex)
 
-[**NDIS\_WWAN\_DEVICE\_CAPS\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt782401)
+[**NDIS\_WWAN\_DEVICE\_CAPS\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps_ex)
 
-[**WWAN\_DEVICE\_CAPS\_EX**](https://msdn.microsoft.com/library/windows/hardware/mt799889)
+[**WWAN\_DEVICE\_CAPS\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_device_caps_ex)
 
 
 

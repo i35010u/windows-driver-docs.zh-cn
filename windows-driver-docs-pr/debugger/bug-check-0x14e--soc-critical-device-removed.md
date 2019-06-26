@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27eb523f460f8783bf2935ffeaea3f4aca15736f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 83c96736c00c7ff4786e0ab7c9b6944bfbc29f52
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335568"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362205"
 ---
 # <a name="bug-check-0x14e-soccriticaldeviceremoved"></a>Bug 检查 0x14E：SOC\_严重\_设备\_已删除
 
@@ -26,7 +26,7 @@ ms.locfileid: "63335568"
 SOC\_严重\_设备\_已删除错误检查的值为 0x0000014E。 这表示，关键的 SOC 设备具有已意外删除或出现故障。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="soccriticaldeviceremoved-parameters"></a>SOC\_严重\_设备\_已删除参数

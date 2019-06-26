@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_WPS_ENABLED 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4e679249bb4a78c3719b99186e37c9ad257f686a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e4d7b3e46fb0c3cfdbbcb80bafa022b6413b7f6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330159"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359192"
 ---
 # <a name="oidwdisetp2pwpsenabled"></a>OID\_WDI\_SET\_P2P\_WPS\_ENABLED
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_P2P\_WPS\_已启用请求适配器启用或禁用的 Wi-fi 受
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -30,7 +30,7 @@ OID\_WDI\_设置\_P2P\_WPS\_已启用请求适配器启用或禁用的 Wi-fi 受
 
 | TLV                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                 |
 |---------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------|
-| [**WDI\_TLV\_P2P\_WPS\_ENABLED**](https://msdn.microsoft.com/library/windows/hardware/dn898018) |                                |          | 指定是否启用或禁用 WPS。 |
+| [**WDI\_TLV\_P2P\_WPS\_ENABLED**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-wps-enabled) |                                |          | 指定是否启用或禁用 WPS。 |
 
  
 

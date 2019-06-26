@@ -6,12 +6,12 @@ keywords:
 - GetOptionAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f857b23a017d99b4640668d821dcb5bfd1c4f0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4040f5ec83409a89825450c8f21a43cd5546262
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362727"
 ---
 # <a name="using-getoptionattribute"></a>使用 GetOptionAttribute
 
@@ -21,7 +21,7 @@ ms.locfileid: "63379019"
 
 此函数仅支持 PPD 功能。 如果某个属性不可用， **GetOptionAttribute**返回 E\_INVALIDARG。
 
-下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://msdn.microsoft.com/library/windows/hardware/ff548692)枚举类型。
+下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)枚举类型。
 
 ### <a name="output-parameters-for-general-option-attributes"></a>输出参数的常规选项属性
 
@@ -156,7 +156,7 @@ ms.locfileid: "63379019"
 
 *\*pdwDataType*: kADT\_CUSTOMSIZEPARAMS
 
-*pbData*： 数组 CUSTOMPARAM\_最大元素，其中每个元素都[ **CUSTOMSIZEPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff547337)结构。 此数组的每个元素将存储的 PPD 中指定的值\*ParamCustomPageSize 关键字 paramOption 条目。 对于"方向"以外的 paramOption，lMinVal 和 lMaxVal 值为微米中。 对于"方向"lMinVal 和 lMaxVal 的值为范围内的\[0，3 个\]。
+*pbData*： 数组 CUSTOMPARAM\_最大元素，其中每个元素都[ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)结构。 此数组的每个元素将存储的 PPD 中指定的值\*ParamCustomPageSize 关键字 paramOption 条目。 对于"方向"以外的 paramOption，lMinVal 和 lMaxVal 值为微米中。 对于"方向"lMinVal 和 lMaxVal 的值为范围内的\[0，3 个\]。
 
 *\*pcbNeeded*: **sizeof**(CUSTOMSIZEPARAM) \* CUSTOMPARAM\_最大值
 
@@ -190,7 +190,7 @@ ms.locfileid: "63379019"
 
 ### <a name="note-on-paramcustompagesize"></a>关于 ParamCustomPageSize 说明
 
-下面是演示如何获取 PPD 文件的原始顺序、 最小和最大值的一些示例代码"\*ParamCustomPageSize 宽度"条目。 CUSTOMPARAM\_printoem.h 中定义，宽度常量表示的偏移量[ **CUSTOMSIZEPARAM** ](https://msdn.microsoft.com/library/windows/hardware/ff547337)与宽度条目相关的结构，它包含的信息。 此结构是一个 CUSTOMPARAM\_形成此类结构的数组的最大 CUSTOMSIZEPARAM 结构。 Printoem.h 标头定义一组常量名为 CUSTOMPARAM\_XXX 列出此数组 （宽度、 高度、 WidthOffset、 HeightOffset 和方向） 中的结构的偏移量。
+下面是演示如何获取 PPD 文件的原始顺序、 最小和最大值的一些示例代码"\*ParamCustomPageSize 宽度"条目。 CUSTOMPARAM\_printoem.h 中定义，宽度常量表示的偏移量[ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)与宽度条目相关的结构，它包含的信息。 此结构是一个 CUSTOMPARAM\_形成此类结构的数组的最大 CUSTOMSIZEPARAM 结构。 Printoem.h 标头定义一组常量名为 CUSTOMPARAM\_XXX 列出此数组 （宽度、 高度、 WidthOffset、 HeightOffset 和方向） 中的结构的偏移量。
 
 ```cpp
 PCUSTOMSIZEPARAM  pCSParam;

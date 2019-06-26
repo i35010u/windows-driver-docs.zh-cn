@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d38ac250b0408128ab139e29a6f88418fe6a75a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 828f307e6706305cac2ac2dfd2725e715a0b8ad5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332764"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358808"
 ---
 # <a name="kspropertydirectsound3dbufferconeangles"></a>KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES
 
@@ -53,8 +53,8 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES 属性指定的内部和外部锥角
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/hardware/ff537143" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537143)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537103" data-raw-source="[&lt;strong&gt;KSDS3D_BUFFER_CONE_ANGLES&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537103)"><strong>KSDS3D_BUFFER_CONE_ANGLES</strong></a></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles" data-raw-source="[&lt;strong&gt;KSDS3D_BUFFER_CONE_ANGLES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)"><strong>KSDS3D_BUFFER_CONE_ANGLES</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -95,9 +95,9 @@ KSPROPERTY\_DIRECTSOUND3DBUFFER\_CONEANGLES 属性请求将返回状态\_成功�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSDS3D\_BUFFER\_CONE\_ANGLES**](https://msdn.microsoft.com/library/windows/hardware/ff537103)
+[**KSDS3D\_BUFFER\_CONE\_ANGLES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_buffer_cone_angles)
 
  
 

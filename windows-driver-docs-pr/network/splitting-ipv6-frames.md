@@ -7,12 +7,12 @@ keywords:
 - IPv6 帧 WDK 标头数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b58cea17046061a70be93a123b215b554ddaca7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22a1e953863e39ea35e08cde77f3424ae52e5719
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346057"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67383617"
 ---
 # <a name="splitting-ipv6-frames"></a>拆分 IPv6 帧
 
@@ -30,7 +30,7 @@ NIC 还可以支持标头数据拆分为碎片 IPv6 帧。 有关碎片 IPv4 帧
 
  
 
-如果标头数据拆分为提供程序拆分 IPv6 帧，指示[ **NET\_缓冲区\_列表**](https://msdn.microsoft.com/library/windows/hardware/ff568388)结构必须具有 NDIS\_NBL\_标志\_IS\_中设置的 IPV6 标志**NblFlags**成员。 有关完整信息在 NET 中设置标头数据拆分标志\_缓冲区\_列表结构中，请参阅[设置 NET\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
+如果标头数据拆分为提供程序拆分 IPv6 帧，指示[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_IS\_中设置的 IPV6 标志**NblFlags**成员。 有关完整信息在 NET 中设置标头数据拆分标志\_缓冲区\_列表结构中，请参阅[设置 NET\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
 
 其他以太网帧特性确定如何拆分 IPv6 帧。 如果含有碎片帧，请参阅[拆分碎片 IP 帧](splitting-fragmented-ip-frames.md)。 如果框架包含 TCP 信息，请参阅[拆分帧 TCP 有效负载](splitting-frames-at-the-tcp-payload.md)。 如果该框架包含 UDP 的信息，请参阅[UDP 负载拆分帧](splitting-frames-at-the-udp-payload.md)。 所有其他情况下，请参阅[拆分帧以外的其他 TCP 和 UDP](splitting-frames-other-than-tcp-and-udp.md)。
 

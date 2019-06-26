@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_MAGIC_PACKET 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f62b79a89d92e1158ffa8d21b71e96adafbed13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e309dc23d996cc31379a806c966651c7044ee9e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382135"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357126"
 ---
 # <a name="wditlvwakepacketmagicpacket"></a>WDI\_TLV\_唤醒\_数据包\_MAGIC\_数据包
 
 
-WDI\_TLV\_唤醒\_数据包\_MAGIC\_数据包是包含的幻数据包的模式 ID TLV [OID\_WDI\_设置\_添加\_WOL\_模式](https://msdn.microsoft.com/library/windows/hardware/dn925858)。
+WDI\_TLV\_唤醒\_数据包\_MAGIC\_数据包是包含的幻数据包的模式 ID TLV [OID\_WDI\_设置\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-wol-pattern)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

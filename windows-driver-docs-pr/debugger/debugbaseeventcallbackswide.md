@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fec31a2b8ae23c04ed5a58b8505b016dfc75771e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcddd75b4a243630c7b7c43f949d96580f1ed456
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67366963"
 ---
 # <a name="debugbaseeventcallbackswide-class"></a>DebugBaseEventCallbacksWide 类 
 
-DebugBaseEventCallbacksWide 类提供的基实现[IDebugEventCallbacksWide](https://msdn.microsoft.com/library/windows/hardware/ff550563.aspx)接口。 
+DebugBaseEventCallbacksWide 类提供的基实现[IDebugEventCallbacksWide](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbackswide)接口。 
 
 程序可以从 DebugBaseEventCallbacksWide 派生事件回调类并实现所需方法。 
 

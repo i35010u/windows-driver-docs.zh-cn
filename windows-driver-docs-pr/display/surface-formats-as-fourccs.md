@@ -10,12 +10,12 @@ keywords:
 - Fourcc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25c9a13bcb7b2c48f75320b5b39f047f528b3fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f252a8b3d9dbfab3f225f6899e3cbe63df480ded
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350053"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361199"
 ---
 # <a name="surface-formats-as-fourccs"></a>将图面设为 FOURCC 格式
 
@@ -23,7 +23,7 @@ ms.locfileid: "63350053"
 ## <span id="ddk_surface_formats_as_fourccs_gg"></span><span id="DDK_SURFACE_FORMATS_AS_FOURCCS_GG"></span>
 
 
-三个新的图面上格式定义的 DirectX 8.0，D3DFMT\_Q8W8V8U8、 D3DFMT\_V16U16 和 D3DFMT\_W11V11U10，传递给驱动程序，因为*Fourcc*。 这意味着各个位深度和掩码字段[ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)未初始化数据结构和它们的值是未定义。 因此，处理这些三种格式的驱动程序必须不依赖于位计数或掩码中像素格式，但必须根据需要这些计算。 例如，在计算的面音调其中一种类型**dwRGBBitCount**的像素格式的字段不能使用。 所有其他格式而不 YUV、 DXT 和 IHV 特定的扩展格式映射到的旧 DDPIXELFORMAT 表示形式传递给驱动程序时，因此，有效像素格式和蒙板中的像素格式的数据结构。
+三个新的图面上格式定义的 DirectX 8.0，D3DFMT\_Q8W8V8U8、 D3DFMT\_V16U16 和 D3DFMT\_W11V11U10，传递给驱动程序，因为*Fourcc*。 这意味着各个位深度和掩码字段[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)未初始化数据结构和它们的值是未定义。 因此，处理这些三种格式的驱动程序必须不依赖于位计数或掩码中像素格式，但必须根据需要这些计算。 例如，在计算的面音调其中一种类型**dwRGBBitCount**的像素格式的字段不能使用。 所有其他格式而不 YUV、 DXT 和 IHV 特定的扩展格式映射到的旧 DDPIXELFORMAT 表示形式传递给驱动程序时，因此，有效像素格式和蒙板中的像素格式的数据结构。
 
  
 

@@ -4,21 +4,21 @@ description: 为 PnP 驱动程序包创建目录文件
 ms.assetid: 2af431f1-a35d-4312-86f6-a928ef4148df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 958bd97952c05b5cff884f34c476603dde0b563e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa946915d6035f4f3384909b956008c812c36654
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344282"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365480"
 ---
 # <a name="creating-a-catalog-file-for-a-pnp-driver-package"></a>为 PnP 驱动程序包创建目录文件
 
 
 若要创建驱动程序包的未签名的编录文件，请执行以下步骤：
 
-1. 添加所需的 INF **CatalogFile**=<em>FileName</em>**。Cat**条目或 INF **CatalogFile。**<em>PlatformExtension</em>=<em>唯一文件名</em>**。Cat**条目[ **INF 版本部分**](inf-version-section.md)的[驱动程序包的](driver-packages.md)INF 文件。 有关如何使用平台扩展的信息，请参阅[跨平台 INF 文件](cross-platform-inf-files.md)。
+1. 添加所需的 INF **CatalogFile**=<em>FileName</em> **。Cat**条目或 INF **CatalogFile。** <em>PlatformExtension</em>=<em>唯一文件名</em> **。Cat**条目[ **INF 版本部分**](inf-version-section.md)的[驱动程序包的](driver-packages.md)INF 文件。 有关如何使用平台扩展的信息，请参阅[跨平台 INF 文件](cross-platform-inf-files.md)。
 
-2. 使用[ **Inf2Cat** ](https://msdn.microsoft.com/library/windows/hardware/ff547089)工具来验证是否可以为目标平台签名的驱动程序包并生成无符号[编录文件](catalog-files.md)(*.cat*文件)，适用于目标平台。
+2. 使用[ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)工具来验证是否可以为目标平台签名的驱动程序包并生成无符号[编录文件](catalog-files.md)( *.cat*文件)，适用于目标平台。
 
 使用以下的 Inf2Cat 命令，以创建未签名的编录文件：
 
@@ -28,9 +28,9 @@ Inf2Cat /driver:DriverPath /os:WindowsVersionList
 
 其中：
 
-- **/Driver:**<em>DriverPath</em>参数提供的目录的名称，[驱动程序包](driver-packages.md)所在。
+- **/Driver:** <em>DriverPath</em>参数提供的目录的名称，[驱动程序包](driver-packages.md)所在。
 
-- **/Os:**<em>WindowsVersionList</em>参数配置 Inf2Cat 以验证驱动程序包是否符合指定的 Windows 系列的 Windows 版本的签名要求版本标识符。
+- **/Os:** <em>WindowsVersionList</em>参数配置 Inf2Cat 以验证驱动程序包是否符合指定的 Windows 系列的 Windows 版本的签名要求版本标识符。
 
 ### <a name="examples"></a>示例
 

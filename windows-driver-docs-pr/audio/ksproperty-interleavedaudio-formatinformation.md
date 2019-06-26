@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 02/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d1677ef926b8cdef3fa64933c3b67cabfaf8cb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 37618d62b8ffb1ec8a26dee90b75b8ede4239b9f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332718"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361005"
 ---
 # <a name="kspropertyinterleavedaudioformatinformation"></a>KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMATION 
 
@@ -28,7 +28,7 @@ ms.locfileid: "63332718"
 
  |Get|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|是|否|Pin|[KS_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722(v=vs.85).aspx)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)|
+|是|否|Pin|[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)|[INTERLEAVED_AUDIO_FORMAT_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-interleaved-audio-format-information)|
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -57,7 +57,7 @@ Windows 10 中启动 19 H 1，设置 KSPROPERTY\_INTERLEAVEDAUDIO_FORMATINFORMAT
 
 [KSPROPSETID\_INTERLEAVEDAUDIO](kspropsetid-interleavedaudio.md)
 
-[KS_PIN](https://msdn.microsoft.com/library/windows/hardware/ff566722(v=vs.85).aspx)
+[KS_PIN](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_pin)
 
 
 

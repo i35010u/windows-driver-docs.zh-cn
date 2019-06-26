@@ -10,12 +10,12 @@ keywords:
 - 网页 WDK 打印机，ASP 变量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e30b947bf0649a536a38e024981d6d409ead016
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: baa8aa3dcbf93262ad5be4b3d4ebe39d9bd9e9d6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331212"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67380701"
 ---
 # <a name="asp-variables-for-print-web-pages"></a>打印网页的 ASP 变量
 
@@ -25,7 +25,7 @@ ms.locfileid: "63331212"
 
 Microsoft 提供一组 ASP 会话变量以供自定义打印网页。 下表列出了会话变量。 自定义的 ASP 文件不能修改这些变量。 如所述，某些变量的有效前提是 Microsoft 的 TCP/IP 端口监视器正用于打印机。
 
-某些变量中作为会话变量传递，而其他参数传递中使用 URL 修饰。 可以使用会话访问会话变量 ("*VariableName*")。 可以使用请求访问的 URL 修饰符中传递的参数 ("*VariableName*")。 如果你想要自动刷新状态页，您可能会发现需 redecorate 页面所需的变量包含的 URL。 由于请求变量必须在 URL 中传递，它们可能需要编码和解码从 ANSI 转换为 Unicode 表示形式。 提供了帮助程序对象，其 COM ProgID 为"OlePrn.OleCvt"，用于启用编码和解码 URL 和 Unicode 中使用的 ANSI 之间。 此对象上的两种方法[ **IOleCvt::EncodeUnicodeName**](https://msdn.microsoft.com/library/windows/hardware/ff551829)，并[ **IOleCvt::DecodeUnicodeName**](https://msdn.microsoft.com/library/windows/hardware/ff551824)，可用于将翻译ANSI 到 Unicode，并从 Unicode 到 ANSI，分别。 此转换不需要执行的会话变量。
+某些变量中作为会话变量传递，而其他参数传递中使用 URL 修饰。 可以使用会话访问会话变量 ("*VariableName*")。 可以使用请求访问的 URL 修饰符中传递的参数 ("*VariableName*")。 如果你想要自动刷新状态页，您可能会发现需 redecorate 页面所需的变量包含的 URL。 由于请求变量必须在 URL 中传递，它们可能需要编码和解码从 ANSI 转换为 Unicode 表示形式。 提供了帮助程序对象，其 COM ProgID 为"OlePrn.OleCvt"，用于启用编码和解码 URL 和 Unicode 中使用的 ANSI 之间。 此对象上的两种方法[ **IOleCvt::EncodeUnicodeName**](https://docs.microsoft.com/windows-hardware/drivers/print/iolecvt-encodeunicodename)，并[ **IOleCvt::DecodeUnicodeName**](https://docs.microsoft.com/windows-hardware/drivers/print/iolecvt-decodeunicodename)，可用于将翻译ANSI 到 Unicode，并从 Unicode 到 ANSI，分别。 此转换不需要执行的会话变量。
 
 编码的变量值的 TCP/IP 端口变量？
 仅监视？

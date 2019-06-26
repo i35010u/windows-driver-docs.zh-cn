@@ -3,12 +3,12 @@ Description: 本主题介绍 WDF 提供持续的读取器对象。 本主题中�
 title: 如何使用连续读取器从 USB 管道读取数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1189bc0a691e605083181a55538c1d76a2970d6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 171bce22d0f525b096c2de6d746019e87aff6c20
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67378295"
 ---
 # <a name="how-to-use-the-continuous-reader-for-reading-data-from-a-usb-pipe"></a>如何使用连续读取器从 USB 管道读取数据
 
@@ -33,18 +33,18 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
 
 客户端驱动程序可以使用连续读取器之前，请确保满足这些要求：
 
--   USB 设备必须在终结点。 签入的设备配置[USBView](https://msdn.microsoft.com/library/ff560019(VS.85).aspx)。 Usbview.exe 是允许您浏览所有 USB 控制器和连接到它们的 USB 设备的应用程序。 通常，在安装 USBView**调试器**文件夹 Windows Driver Kit (WDK) 中。
+-   USB 设备必须在终结点。 签入的设备配置[USBView](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview)。 Usbview.exe 是允许您浏览所有 USB 控制器和连接到它们的 USB 设备的应用程序。 通常，在安装 USBView**调试器**文件夹 Windows Driver Kit (WDK) 中。
 -   客户端驱动程序必须已创建的 framework USB 目标设备对象。
 
     如果使用 Microsoft Visual Studio Professional 2012 使用提供的 USB 模板，模板代码执行这些任务。 模板代码获取目标设备对象的句柄，并将存储在设备上下文中。
 
     **KMDF 客户端驱动程序：**
 
-    KMDF 客户端驱动程序必须通过调用获取 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)方法。 详细信息，请参阅"设备源代码"中[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md)。
+    KMDF 客户端驱动程序必须通过调用获取 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。 详细信息，请参阅"设备源代码"中[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md)。
 
     **UMDF 客户端驱动程序：**
 
-    UMDF 客户端驱动程序必须获取[ **IWDFUsbTargetDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff560362)通过查询框架目标设备对象的指针。 有关详细信息，请参阅"[**IPnpCallbackHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556764)实现和特定于 USB 的任务"中[了解 USB 客户端驱动程序代码结构 (UMDF)](understanding-the-umdf-template-code-for-usb.md)。
+    UMDF 客户端驱动程序必须获取[ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)通过查询框架目标设备对象的指针。 有关详细信息，请参阅"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)实现和特定于 USB 的任务"中[了解 USB 客户端驱动程序代码结构 (UMDF)](understanding-the-umdf-template-code-for-usb.md)。
 
 -   设备必须具有活动的配置。
 
@@ -52,7 +52,7 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
 
     **KMDF 客户端驱动程序：**
 
-    KMDF 客户端驱动程序必须调用[ **WdfUsbTargetDeviceSelectConfig** ](https://msdn.microsoft.com/library/windows/hardware/ff550101)方法。
+    KMDF 客户端驱动程序必须调用[ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)方法。
 
     **UMDF 客户端驱动程序：**
 
@@ -67,9 +67,9 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
 
 1.  配置持续读取器。
 
-    1.  初始化[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552561)结构通过调用[ **WDF\_USB\_连续\_读取器\_CONFIG\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552561_init)宏。
-    2.  指定在其配置选项[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552561)结构。
-    3.  调用[ **WdfUsbTargetPipeConfigContinuousReader** ](https://msdn.microsoft.com/library/windows/hardware/ff551130)方法。
+    1.  初始化[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)结构通过调用[ **WDF\_USB\_连续\_读取器\_CONFIG\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552561_init)宏。
+    2.  指定在其配置选项[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)结构。
+    3.  调用[ **WdfUsbTargetPipeConfigContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)方法。
 
     下面的示例代码配置指定的目标的管道对象的持续读取器。
 
@@ -118,19 +118,19 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
     }
     ```
 
-客户端驱动程序配置中的连续读取器通常[ *EvtDevicePrepareHardware* ](https://msdn.microsoft.com/library/windows/hardware/ff540880)回调函数中之后，枚举活动设置中的目标的管道对象。
+客户端驱动程序配置中的连续读取器通常[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中之后，枚举活动设置中的目标的管道对象。
 
-在前面的示例中，客户端驱动程序指定以下两种方式及其配置选项。 通过调用第一个[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552566) ，然后通过设置[ **WDF\_USB\_连续\_读取器\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff552561)成员。 请注意，为参数**WDF\_USB\_连续\_读取器\_CONFIG\_INIT**。 这些值是必需的。 在此示例中，客户端驱动程序指定：
+在前面的示例中，客户端驱动程序指定以下两种方式及其配置选项。 通过调用第一个[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init) ，然后通过设置[ **WDF\_USB\_连续\_读取器\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)成员。 请注意，为参数**WDF\_USB\_连续\_读取器\_CONFIG\_INIT**。 这些值是必需的。 在此示例中，客户端驱动程序指定：
 
 -   指向该驱动程序实现完成例程的指针。 在完成读取的请求时，框架将调用此例程。 在完成例程，该驱动程序可以访问包含已读取的数据的内存位置。 完成例程的实现是在步骤 2 中所述。
 -   指向驱动程序定义的上下文的指针。
--   可以从单个传输中的设备读取的字节数。 客户端驱动程序可以获取该信息[ **WDF\_USB\_管道\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff553037)结构通过调用[ **WdfUsbInterfaceGetConfiguredPipe**](https://msdn.microsoft.com/library/windows/hardware/ff550057)或[ **WdfUsbTargetPipeGetInformation** ](https://msdn.microsoft.com/library/windows/hardware/ff551142)方法。 有关详细信息，请参阅[如何枚举 USB 管道](how-to-get-usb-pipe-handles.md)。
+-   可以从单个传输中的设备读取的字节数。 客户端驱动程序可以获取该信息[ **WDF\_USB\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)结构通过调用[ **WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)或[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)方法。 有关详细信息，请参阅[如何枚举 USB 管道](how-to-get-usb-pipe-handles.md)。
 
-[**WDF\_USB\_连续\_读取器\_CONFIG\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552566)配置持续读取器中，若要使用的默认值为*NumPendingReads*. 此值确定框架将添加到挂起队列的读取请求的数。 已确定的默认值在多处理器配置提供很多设备的合理的良好性能。
+[**WDF\_USB\_连续\_读取器\_CONFIG\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)配置持续读取器中，若要使用的默认值为*NumPendingReads*. 此值确定框架将添加到挂起队列的读取请求的数。 已确定的默认值在多处理器配置提供很多设备的合理的良好性能。
 
-除了中指定的配置参数[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552566)、示例还将设置失败例程[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552561)。 此失败例程是可选的。
+除了中指定的配置参数[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)、示例还将设置失败例程[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)。 此失败例程是可选的。
 
-除了失败例程，还有中的其他成员[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://msdn.microsoft.com/library/windows/hardware/ff552561)的客户端驱动程序可以使用指定的传输缓冲区布局。 例如，考虑使用持续读取器接收网络数据包的网络驱动程序。 每个数据包中包含标头、 有效负载和表尾数据。 若要描述该数据包，该驱动程序必须首先指定数据包大小中对其调用[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552561_init). 然后，该驱动程序必须通过设置指定页眉和页脚的长度**HeaderLength**并**TrailerLength**的成员**WDF\_USB\_连续\_读取器\_CONFIG**。 该框架使用这些值来计算字节偏移量有效负载的任意一侧。 有效负载数据读取时从终结点，框架会将这些数据存储在缓冲区之间的偏移量的一部分。
+除了失败例程，还有中的其他成员[ **WDF\_USB\_CONTINUOUS\_读取器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)的客户端驱动程序可以使用指定的传输缓冲区布局。 例如，考虑使用持续读取器接收网络数据包的网络驱动程序。 每个数据包中包含标头、 有效负载和表尾数据。 若要描述该数据包，该驱动程序必须首先指定数据包大小中对其调用[ **WDF\_USB\_CONTINUOUS\_读取器\_配置\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552561_init). 然后，该驱动程序必须通过设置指定页眉和页脚的长度**HeaderLength**并**TrailerLength**的成员**WDF\_USB\_连续\_读取器\_CONFIG**。 该框架使用这些值来计算字节偏移量有效负载的任意一侧。 有效负载数据读取时从终结点，框架会将这些数据存储在缓冲区之间的偏移量的一部分。
 
 2.  实现完成例程。
 
@@ -211,10 +211,10 @@ Windows 驱动程序框架 (WDF) 提供了一个专用的对象，调用*连续�
 
 4.  指示框架将在设备进入工作状态，则时启动持续读取器当设备离开工作状态时，请停止读取器。 调用这些方法并为 I/O 目标对象指定目标管道对象。
 
-    -   [**WdfIoTargetStart**](https://msdn.microsoft.com/library/windows/hardware/ff548677)
-    -   [**WdfIoTargetStop**](https://msdn.microsoft.com/library/windows/hardware/ff548680)
+    -   [**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)
+    -   [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)
 
-    持续读取器不会自动电源管理框架。 因此，客户端驱动程序必须显式启动或停止目标管道对象，该设备的电源状态更改时。 驱动程序调用[ **WdfIoTargetStart** ](https://msdn.microsoft.com/library/windows/hardware/ff548677)中的驱动程序[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)实现。 此调用可确保队列提供的请求，仅当设备处于工作状态。 相反，该驱动程序调用[ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680)驱动程序中[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)实现，以便停止队列当设备进入低功率状态时，请提供请求。
+    持续读取器不会自动电源管理框架。 因此，客户端驱动程序必须显式启动或停止目标管道对象，该设备的电源状态更改时。 驱动程序调用[ **WdfIoTargetStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)中的驱动程序[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)实现。 此调用可确保队列提供的请求，仅当设备处于工作状态。 相反，该驱动程序调用[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)驱动程序中[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)实现，以便停止队列当设备进入低功率状态时，请提供请求。
 
 下面的示例代码配置指定的目标的管道对象的持续读取器。
 
@@ -267,18 +267,18 @@ NTSTATUS FX3EvtDeviceD0Exit(
 }
 ```
 
-前面的示例显示了为实现[ *EvtDeviceD0Entry* ](https://msdn.microsoft.com/library/windows/hardware/ff540848)并[ *EvtDeviceD0Exit* ](https://msdn.microsoft.com/library/windows/hardware/ff540855)回调例程。 操作参数[ **WdfIoTargetStop** ](https://msdn.microsoft.com/library/windows/hardware/ff548680)将允许客户端驱动程序决定在队列中挂起的请求的操作，当设备离开工作状态。 在示例中，指定驱动程序**WdfIoTargetCancelSentIo**。 该选项指示要取消所有挂起的请求在队列中的框架。 或者，驱动程序可以指示要等待挂起的请求，以获取停止 I/O 目标之前完成或者保持挂起的请求并恢复 I/O 目标重新启动时的框架。
+前面的示例显示了为实现[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)并[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调例程。 操作参数[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)将允许客户端驱动程序决定在队列中挂起的请求的操作，当设备离开工作状态。 在示例中，指定驱动程序**WdfIoTargetCancelSentIo**。 该选项指示要取消所有挂起的请求在队列中的框架。 或者，驱动程序可以指示要等待挂起的请求，以获取停止 I/O 目标之前完成或者保持挂起的请求并恢复 I/O 目标重新启动时的框架。
 
 ### <a name="using-the-continuous-reader---umdf-client-driver"></a>使用连续的读取器-UMDF 客户端驱动程序
 
-在开始使用连续读取器之前，必须配置的实现中的读取器[ **IPnpCallbackHardware::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556766)方法。 获取一个指向后[ **IWDFUsbTargetPipe** ](https://msdn.microsoft.com/library/windows/hardware/ff560391)目标管道对象的接口与 IN 终结点相关联，请执行以下步骤：
+在开始使用连续读取器之前，必须配置的实现中的读取器[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)方法。 获取一个指向后[ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)目标管道对象的接口与 IN 终结点相关联，请执行以下步骤：
 
 **配置持续读取器**
 
-1.  调用**QueryInterface**的目标的管道对象 ([**IWDFUsbTargetPipe**](https://msdn.microsoft.com/library/windows/hardware/ff560391)) 和查询[ **IWDFUsbTargetPipe2**](https://msdn.microsoft.com/library/windows/hardware/ff560394)接口。
-2.  调用**QueryInterface**上的设备的回调对象和查询[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff556908)接口。 若要使用连续读取器，必须实现 IUsbTargetPipeContinuousReaderCallbackReadComplete。 实现是在本主题后面所述。
-3.  调用**QueryInterface**上的设备的回调对象和查询[IUsbTargetPipeContinuousReaderCallbackReadersFailed](https://msdn.microsoft.com/library/windows/hardware/ff556914)如果已实现失败回调的接口。 实现是在本主题后面所述。
-4.  调用[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://msdn.microsoft.com/library/windows/hardware/ff560395)方法并指定配置参数，如标头、 尾端、 挂起的请求，以及对完成的引用数和失败回调方法。
+1.  调用**QueryInterface**的目标的管道对象 ([**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) 和查询[ **IWDFUsbTargetPipe2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe2)接口。
+2.  调用**QueryInterface**上的设备的回调对象和查询[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)接口。 若要使用连续读取器，必须实现 IUsbTargetPipeContinuousReaderCallbackReadComplete。 实现是在本主题后面所述。
+3.  调用**QueryInterface**上的设备的回调对象和查询[IUsbTargetPipeContinuousReaderCallbackReadersFailed](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)如果已实现失败回调的接口。 实现是在本主题后面所述。
+4.  调用[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)方法并指定配置参数，如标头、 尾端、 挂起的请求，以及对完成的引用数和失败回调方法。
 
     该方法将配置目标管道对象的持续读取器。 持续读取器创建的队列的管理组读取请求被发送并接收来自目标的管道对象。
 
@@ -365,17 +365,17 @@ ConfigureContinuousReaderExit:
 
 如果客户端驱动程序使用电源管理队列将请求发送到管道，队列传递请求，仅当设备中时，才**D0**状态。 如果从设备的电源状态更改**D0**到较低的电源状态 (在**D0**退出)、 目标管道对象完成挂起的请求和队列停止提交到目标管道对象的请求. 因此，客户端驱动程序不需要启动和停止目标管道对象。
 
-持续读取器不使用电源管理队列来提交请求。 因此，您必须显式启动或停止目标管道对象，该设备的电源状态更改时。 有关更改目标管道对象的状态，可以使用[ **IWDFIoTargetStateManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff559198)由该框架实现的接口。 获取一个指向后[ **IWDFUsbTargetPipe** ](https://msdn.microsoft.com/library/windows/hardware/ff560391)目标管道对象的接口与 IN 终结点相关联，请执行以下步骤：
+持续读取器不使用电源管理队列来提交请求。 因此，您必须显式启动或停止目标管道对象，该设备的电源状态更改时。 有关更改目标管道对象的状态，可以使用[ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)由该框架实现的接口。 获取一个指向后[ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)目标管道对象的接口与 IN 终结点相关联，请执行以下步骤：
 
 **实现状态管理**
 
-1.  中的实现[ **IPnpCallbackHardware::OnPrepareHardware**](https://msdn.microsoft.com/library/windows/hardware/ff556766)，调用 [**QueryInterface**目标管道对象 ([ **IWDFUsbTargetPipe**](https://msdn.microsoft.com/library/windows/hardware/ff560391)) 和查询[ **IWDFIoTargetStateManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff559198)接口。 在您的设备回调类的成员变量中存储引用。
-2.  实现[ **IPnpCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff556762)设备回调对象的接口。
-3.  在实现中的[ **IPnpCallback::OnD0Entry** ](https://msdn.microsoft.com/library/windows/hardware/ff556799)方法中，调用[ **IWDFIoTargetStateManagement::Start** ](https://msdn.microsoft.com/library/windows/hardware/ff559213)启动持续读取器。
-4.  在实现中的[ **IPnpCallback::OnD0Exit** ](https://msdn.microsoft.com/library/windows/hardware/ff556803)方法中，调用[ **IWDFIoTargetStateManagement::Stop** ](https://msdn.microsoft.com/library/windows/hardware/ff559217)停止持续读取器。
+1.  中的实现[ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)，调用 [**QueryInterface**目标管道对象 ([ **IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) 和查询[ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)接口。 在您的设备回调类的成员变量中存储引用。
+2.  实现[ **IPnpCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)设备回调对象的接口。
+3.  在实现中的[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)方法中，调用[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)启动持续读取器。
+4.  在实现中的[ **IPnpCallback::OnD0Exit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)方法中，调用[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)停止持续读取器。
 
 在设备进入工作状态后 (**D0**)，框架将调用客户端驱动程序提供启动目标的 D0 入口回调方法通过管道传递对象。 当设备离开**D0**状态中时，框架将调用 D0 退出回调方法。 目标管道对象完成挂起的读取请求，由客户端驱动程序配置的次数，并停止接受新请求。
-下面的代码示例实现[IPnpCallback](https://msdn.microsoft.com/library/windows/hardware/ff556762)设备回调对象的接口。
+下面的代码示例实现[IPnpCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)设备回调对象的接口。
 
 ```cpp
 class CDeviceCallback : 
@@ -448,7 +448,7 @@ private:
     }
 ```
 
-下面的代码示例演示如何获取一个指向[ **IWDFIoTargetStateManagement** ](https://msdn.microsoft.com/library/windows/hardware/ff559198)中的目标的管道对象的接口[ **IPnpCallbackHardware::OnPrepareHardware** ](https://msdn.microsoft.com/library/windows/hardware/ff556766)方法。
+下面的代码示例演示如何获取一个指向[ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)中的目标的管道对象的接口[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)方法。
 
 ```cpp
  HRESULT CDeviceCallback::OnD0Entry(
@@ -495,14 +495,14 @@ HRESULT CDeviceCallback::OnD0Exit(
 
 **通过实现 IUsbTargetPipeContinuousReaderCallbackReadComplete 提供完成回调**
 
-1.  实现[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff556908)设备回调对象的接口。
-2.  请确保**QueryInterface**的设备回调对象实现的回调对象的引用计数，然后返回[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff556908)接口指针。
-3.  在实现中的[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion** ](https://msdn.microsoft.com/library/windows/hardware/ff556910)方法，从管道读取读取数据的访问。 *PMemory*参数指向的框架的包含的数据分配的内存。 您可以调用[ **IWDFMemory::GetDataBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff562631)获取包含数据的缓冲区。 缓冲区包含标头的数据的长度由但是*NumBytesTransferred*的参数**OnReaderCompletion**不包括标头长度。 配置对驱动程序的调用中的连续读取器时由客户端驱动程序指定标头长度[ **IWDFUsbTargetPipe2::ConfigureContinuousReader**](https://msdn.microsoft.com/library/windows/hardware/ff560395)。
-4.  提供指向中的完成回调*pOnCompletion*的参数[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://msdn.microsoft.com/library/windows/hardware/ff560395)方法。
+1.  实现[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)设备回调对象的接口。
+2.  请确保**QueryInterface**的设备回调对象实现的回调对象的引用计数，然后返回[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)接口指针。
+3.  在实现中的[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)方法，从管道读取读取数据的访问。 *PMemory*参数指向的框架的包含的数据分配的内存。 您可以调用[ **IWDFMemory::GetDataBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetdatabuffer)获取包含数据的缓冲区。 缓冲区包含标头的数据的长度由但是*NumBytesTransferred*的参数**OnReaderCompletion**不包括标头长度。 配置对驱动程序的调用中的连续读取器时由客户端驱动程序指定标头长度[ **IWDFUsbTargetPipe2::ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)。
+4.  提供指向中的完成回调*pOnCompletion*的参数[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)方法。
 
-数据是可在设备上的终结点上每次目标管道对象完成的读取的请求。 如果读取的请求已成功完成，该框架将通知客户端驱动程序通过调用[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff556910)。 否则，框架在调用客户端驱动程序提供失败回调时目标管道对象读取请求将报告错误。
+数据是可在设备上的终结点上每次目标管道对象完成的读取的请求。 如果读取的请求已成功完成，该框架将通知客户端驱动程序通过调用[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)。 否则，框架在调用客户端驱动程序提供失败回调时目标管道对象读取请求将报告错误。
 
-下面的代码示例实现[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff556908)设备回调对象的接口。
+下面的代码示例实现[ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)设备回调对象的接口。
 
 ```cpp
 class CDeviceCallback : 
@@ -582,7 +582,7 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 }
 ```
 
-下面的示例代码演示如何将数据从返回的缓冲区[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://msdn.microsoft.com/library/windows/hardware/ff556910)。 每次目标管道对象完成读取时请求成功，框架将调用**OnReaderCompletion**。 示例将获取该 containsng 数据的缓冲区并在调试器输出打印内容。
+下面的示例代码演示如何将数据从返回的缓冲区[ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)。 每次目标管道对象完成读取时请求成功，框架将调用**OnReaderCompletion**。 示例将获取该 containsng 数据的缓冲区并在调试器输出打印内容。
 
 ```cpp
  VOID CDeviceCallback::OnReaderCompletion(
@@ -627,19 +627,19 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 
 **通过实现 IUsbTargetPipeContinuousReaderCallbackReadersFailed 提供失败回调，**
 
-1.  实现[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://msdn.microsoft.com/library/windows/hardware/ff556914)设备回调对象的接口。
-2.  请确保**QueryInterface**的设备回调对象实现的回调对象的引用计数，然后返回[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://msdn.microsoft.com/library/windows/hardware/ff556914)接口指针。
-3.  在实现中的[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** ](https://msdn.microsoft.com/library/windows/hardware/ff556915)方法，提供错误处理的失败的读取请求。
+1.  实现[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)设备回调对象的接口。
+2.  请确保**QueryInterface**的设备回调对象实现的回调对象的引用计数，然后返回[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)接口指针。
+3.  在实现中的[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)方法，提供错误处理的失败的读取请求。
 
-    如果连续读取器无法完成读取的请求和客户端驱动程序提供了失败回调，框架将调用[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure**](https://msdn.microsoft.com/library/windows/hardware/ff556915)方法。 该框架提供了中的 HRESULT 值*hrStatus*参数，用于指示目标管道对象中发生的错误代码。 根据错误代码，可能会提供特定错误处理。 例如，如果你想要重置管道，然后重新启动持续读取器的框架，请确保在回调返回 TRUE。
+    如果连续读取器无法完成读取的请求和客户端驱动程序提供了失败回调，框架将调用[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)方法。 该框架提供了中的 HRESULT 值*hrStatus*参数，用于指示目标管道对象中发生的错误代码。 根据错误代码，可能会提供特定错误处理。 例如，如果你想要重置管道，然后重新启动持续读取器的框架，请确保在回调返回 TRUE。
 
-    **请注意**不要调用[ **IWDFIoTargetStateManagement::Start** ](https://msdn.microsoft.com/library/windows/hardware/ff559213)并[ **IWDFIoTargetStateManagement::Stop** ](https://msdn.microsoft.com/library/windows/hardware/ff559217)中的失败回调。
+    **请注意**不要调用[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)并[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)中的失败回调。
 
 
 
-4.  提供指向中的失败回调*pOnFailure*的参数[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://msdn.microsoft.com/library/windows/hardware/ff560395)方法。
+4.  提供指向中的失败回调*pOnFailure*的参数[ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)方法。
 
-下面的代码示例实现[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://msdn.microsoft.com/library/windows/hardware/ff556914)设备回调对象的接口。
+下面的代码示例实现[ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)设备回调对象的接口。
 
 ```cpp
 class CDeviceCallback : 

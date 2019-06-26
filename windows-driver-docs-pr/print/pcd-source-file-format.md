@@ -11,12 +11,12 @@ keywords:
 - 关键字 WDK MSPlot
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c0bd65790530946f0874ef3a197175b81aad2c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a030e9d66d6bdbead4d6ed7e15cf34a12b3ca434
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380689"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360697"
 ---
 # <a name="pcd-source-file-format"></a>PCD 源文件格式
 
@@ -64,7 +64,7 @@ ColorCap {1}
 </tr>
 <tr class="odd">
 <td><p><strong>COLORINFO</strong></p></td>
-<td><p>三十大小 DWORD 的值表示的内容<a href="https://msdn.microsoft.com/library/windows/hardware/ff539441" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff539441)"> <strong>COLORINFO</strong> </a>结构。</p></td>
+<td><p>三十大小 DWORD 的值表示的内容<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_colorinfo" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_colorinfo)"> <strong>COLORINFO</strong> </a>结构。</p></td>
 <td><p></p>
 { {6810,3050,0}，/ / xr，年，年{2260,6550,0}，/ / xg，yg，Yg {1810,500,0}，/ / xb，yb，Yb {2000,2450,0}，/ / xc，yc，Yc {5210,2100,0}，/ / xm，ym，Ym {4750,5100,0}，/ / xy，yy、 Yy {3324,3474,10000}，/ / xw，yw，Yw 10000,10000,10000，/ / RGB gamma 1422,952，/ / M/C，Y/C 787,495，/ / C/M Y/M 324,248 / / C/Y Y M /}</td>
 </tr>
@@ -81,7 +81,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>一个大小 DWORD 的值，表示设备的有效 DPI。 有关详细信息请参阅<strong>upDevicePelsDPI</strong>的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566484" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566484)"> <strong>GDIINFO</strong></a>。</p></td>
+<td><p>一个大小 DWORD 的值，表示设备的有效 DPI。 有关详细信息请参阅<strong>upDevicePelsDPI</strong>的成员<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"> <strong>GDIINFO</strong></a>。</p></td>
 <td><p>默认值为零，从而导致 GDI 来计算的值。</p></td>
 </tr>
 <tr class="odd">
@@ -103,7 +103,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>InitString</strong></p></td>
-<td><p>带引号的 C 语言字符串，表示发送到打印机的驱动程序的命令<a href="https://msdn.microsoft.com/library/windows/hardware/ff556298" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff556298)"> <strong>DrvStartPage</strong> </a>函数。</p></td>
+<td><p>带引号的 C 语言字符串，表示发送到打印机的驱动程序的命令<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage)"> <strong>DrvStartPage</strong> </a>函数。</p></td>
 <td><p>NULL 字符串。</p></td>
 </tr>
 <tr class="odd">
@@ -245,7 +245,7 @@ ColorCap {1}
 
 每个笔说明必须具有以下格式：
 
-**PlotPenData {**<em>笔数</em>**，** <em>颜色</em>**}**
+**PlotPenData {** <em>笔数</em> **，** <em>颜色</em> **}**
 
 其中*笔数*标识钢笔的插槽编号和*颜色*是 PC\_IDX\_-前缀颜色标识符。 以下是示例笔说明：
 
@@ -259,7 +259,7 @@ PlotPenData {3, PC_IDX_RED}
 
 每个窗体的说明必须具有以下格式：
 
-**FormInfo {"**<em>形成说明</em>**"，** <em>宽度</em>**，** <em>长度</em>**，** <em>左边距</em>**，** <em>上边距</em>**，** <em>右键边距</em> **，** <em>底部边距</em>**}**
+**FormInfo {"** <em>形成说明</em> **"，** <em>宽度</em> **，** <em>长度</em> **，** <em>左边距</em> **，** <em>上边距</em> **，** <em>右键边距</em> **，** <em>底部边距</em> **}**
 
 其中*窗体说明*是一个字符串，描述窗体，*宽度*并*长度*1/1000 个毫米为单位，指定窗体大小和 1/1000 个 mm 中还指定了边距单位。 以下是三个示例：
 

@@ -4,12 +4,12 @@ description: 使用 Windows Server 2008 和 Windows Vista SP1，在框中显示�
 ms.assetid: 9E31BD57-41B6-40DF-AF27-8EAC66BDFE09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed938bf022119b792b43c78f51e82fcf18668717
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81557e368bf9e6cca606d82250b7d7809dacc07b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360329"
 ---
 # <a name="sku-differentiation-directive"></a>SKU 差分指令
 
@@ -48,7 +48,7 @@ X64:
 
 因此，即使某个服务器系统的驱动程序存储区中存在的客户端的驱动程序包，该驱动程序不是可安装。
 
-[ **INF 制造商部分**](https://msdn.microsoft.com/library/windows/hardware/ff547454)主题演示如何添加*TargetOSVersion*到筛选器基于各种条件的设备安装。 这些条件之一是*ProductType*，这可用于指定可以在其安装包的 Sku 的类别。 定义以下值*ProductType*:
+[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)主题演示如何添加*TargetOSVersion*到筛选器基于各种条件的设备安装。 这些条件之一是*ProductType*，这可用于指定可以在其安装包的 Sku 的类别。 定义以下值*ProductType*:
 
 ``` syntax
 0x0000001 (VER_NT_WORKSTATION)

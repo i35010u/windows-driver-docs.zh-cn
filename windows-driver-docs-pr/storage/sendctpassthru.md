@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3f1d2e83cfd027776e940032543daddec2bba636
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c04bf886ae6772d9754fb88297e7dce6d537353d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378530"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363317"
 ---
 # <a name="sendctpassthru-function"></a>SendCTPassThru 函数
 
@@ -46,25 +46,25 @@ void SendCTPassThru(
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendCTPassThru\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565413)结构。
+在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SendCTPassThru\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_out)结构。
 
 *PortWWN*   
-通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendCTPassThru\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565412)结构。
+通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**端口全球通用名称**的成员[ **SendCTPassThru\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_in)结构。
 
 *RequestBufferCount*   
-以字节为单位的缓冲区将保留常见传输命令的结果大小。 微型端口驱动程序将返回此信息**RequestBufferCount**的成员[ **SendCTPassThru\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565412)结构。
+以字节为单位的缓冲区将保留常见传输命令的结果大小。 微型端口驱动程序将返回此信息**RequestBufferCount**的成员[ **SendCTPassThru\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_in)结构。
 
 *RequestBuffer*   
-常见的传输命令的结果。 微型端口驱动程序将返回此信息**RequestBuffer**的成员[ **SendCTPassThru\_IN** ](https://msdn.microsoft.com/library/windows/hardware/ff565412)结构。
+常见的传输命令的结果。 微型端口驱动程序将返回此信息**RequestBuffer**的成员[ **SendCTPassThru\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_in)结构。
 
 *TotalResponseBufferCount*   
-大小 （字节） 的结果常见传输命令。 微型端口驱动程序将返回此信息**TotalResponseBufferCount**的成员[ **SendCTPassThru\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565413)结构。
+大小 （字节） 的结果常见传输命令。 微型端口驱动程序将返回此信息**TotalResponseBufferCount**的成员[ **SendCTPassThru\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_out)结构。
 
 *ActualResponseBufferCount*   
-以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualResponseBufferCount**的成员[ **SendCTPassThru\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565413)结构。
+以字节为单位的实际检索的数据大小。 微型端口驱动程序将返回此信息**ActualResponseBufferCount**的成员[ **SendCTPassThru\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_out)结构。
 
 *ResponseBuffer*   
-常见的传输命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **SendCTPassThru\_OUT** ](https://msdn.microsoft.com/library/windows/hardware/ff565413)结构。
+常见的传输命令的结果。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **SendCTPassThru\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_out)结构。
 
 <a name="return-value"></a>返回值
 ------------
@@ -105,9 +105,9 @@ void SendCTPassThru(
 
 [HBA\_状态](hba-status.md)
 
-[**SendCTPassThru\_IN**](https://msdn.microsoft.com/library/windows/hardware/ff565412)
+[**SendCTPassThru\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_in)
 
-[**SendCTPassThru\_OUT**](https://msdn.microsoft.com/library/windows/hardware/ff565413)
+[**SendCTPassThru\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sendctpassthru_out)
 
  
 

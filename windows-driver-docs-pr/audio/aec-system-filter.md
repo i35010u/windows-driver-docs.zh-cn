@@ -18,12 +18,12 @@ keywords:
 - 音频筛选器关系图 WDK
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce62b73ba99f467017bb4007ecb5335e438da2e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 436e12fd3a3eaf8f9880987876a0cd5431a8db00
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355779"
 ---
 # <a name="aec-system-filter"></a>AEC 系统筛选器
 
@@ -154,7 +154,7 @@ AEC 呈现出 pin 可以处理任一以下格式：
 
  
 
-有关详细信息**MajorFormat**，**子格式**，并**说明符**成员，请参阅[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658). 有关的示例[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)数据范围说明符，它使用这三个参数值，请参阅[PCM Stream 数据范围](pcm-stream-data-range.md)。
+有关详细信息**MajorFormat**，**子格式**，并**说明符**成员，请参阅[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85)). 有关的示例[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)数据范围说明符，它使用这三个参数值，请参阅[PCM Stream 数据范围](pcm-stream-data-range.md)。
 
  
 

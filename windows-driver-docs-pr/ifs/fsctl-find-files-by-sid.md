@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97833e2dae3f018a93f95e17e1d6684273034f2b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc53452329a57104721074f9a41697c2e9bb886c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63393019"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67365032"
 ---
 # <a name="fsctlfindfilesbysid-control-code"></a>FSCTL\_查找\_文件\_BY\_SID 控制代码
 
 
 FSCTL\_查找\_文件\_BY\_SID 控件代码目录中搜索的文件的创建者和所有者匹配出现指定的 SID。
 
-若要执行此操作，微筛选器驱动程序调用[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)与以下参数和文件系统中，重定向程序和旧的文件系统筛选驱动程序调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，微筛选器驱动程序调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)与以下参数和文件系统中，重定向程序和旧的文件系统筛选驱动程序调用[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
 
 **Parameters**
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)仅。 要搜索的目录文件对象指针。 此参数是必需的不能**NULL**。
+[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 要搜索的目录文件对象指针。 此参数是必需的不能**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
 [**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 要搜索的目录文件句柄。 此参数是必需的不能**NULL**。
@@ -53,7 +53,7 @@ typedef struct {
 指示是否要重新启动搜索。 此成员应设置为 1，第一次调用，以便从根目录开始搜索。 以便进行后续调用，应将此成员设置为零，以便搜索将停止的位置的点处恢复。
 
 <a href="" id="sid-"></a>**sid**   
-类型的结构[ **SID** ](https://msdn.microsoft.com/library/windows/hardware/ff556740) ，指定的创建者和所有者。
+类型的结构[ **SID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid) ，指定的创建者和所有者。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 在缓冲区的长度，以字节为单位， *InputBuffer*。
@@ -90,14 +90,14 @@ typedef struct _FIND_BY_SID_OUTPUT {
 <a name="remarks"></a>备注
 -------
 
-当[ **FltFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff542988)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)过程**FSCTL\_查找\_文件\_BY\_SID**控制代码，这些例程检查每个文件和目录的卷上。 即使要搜索的目录是非常小，此操作可能很慢，如果有多个文件的卷上。
+当[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)过程**FSCTL\_查找\_文件\_BY\_SID**控制代码，这些例程检查每个文件和目录的卷上。 即使要搜索的目录是非常小，此操作可能很慢，如果有多个文件的卷上。
 
 ## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff542988)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**SID**](https://msdn.microsoft.com/library/windows/hardware/ff556740)
+[**SID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_sid)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

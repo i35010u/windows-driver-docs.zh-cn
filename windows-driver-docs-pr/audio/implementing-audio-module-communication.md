@@ -3,12 +3,12 @@ title: 实现音频模块通信
 description: 音频模块是不同的音频处理逻辑执行相对原子的函数。
 ms.date: 07/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c0705f6644d6413b77bd40e70cd10b9227f843
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f6d887cab55793345dd36fc677004cdd577d863
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333470"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359916"
 ---
 <a name="implementing-audio-module-communication"></a>实现音频模块通信
 ========================================================================================
@@ -66,7 +66,7 @@ DSP | 数字信号处理
 
 有和其他应用程序将仅能够通过筛选器句柄访问可用的模块。 在流上加载单个不是唯一有权访问该流的对象目标音频模块。
 
-A p o s 有关详细信息，请参阅[Windows 音频处理对象](https://msdn.microsoft.com/windows/hardware/drivers/audio/windows-audio-processing-objects)。
+A p o s 有关详细信息，请参阅[Windows 音频处理对象](https://docs.microsoft.com/windows-hardware/drivers/audio/windows-audio-processing-objects)。
 
 ### <a name="sending-commands"></a>发送命令
 
@@ -87,7 +87,7 @@ A p o s 有关详细信息，请参阅[Windows 音频处理对象](https://msdn.
  
 **内核流式处理音频模块属性** 
 
-新 KS 属性集，由标识[KSPROPSETID_AudioModule](https://msdn.microsoft.com/library/windows/hardware/mt808144(v=vs.85).aspx)，已为特定于音频模块的三个属性定义。 
+新 KS 属性集，由标识[KSPROPSETID_AudioModule](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audiomodule)，已为特定于音频模块的三个属性定义。 
 
 PortCls 微型端口驱动程序需要直接处理每个属性的响应可以提供任何帮助程序接口。
 
@@ -108,7 +108,7 @@ typedef enum {
 
 ### <a name="audio-module-descriptors"></a>音频模块描述符
 
-为支持[KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://msdn.microsoft.com/library/windows/hardware/mt808142(v=vs.85).aspx)属性标识为音频模块识别驱动程序。 该属性将通过筛选器或 pin 句柄查询和 KSPROPERTY 传递作为 DeviceIoControl 调用的输入缓冲区。 [KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)已定义来描述每个模块中的音频硬件。 为此请求的响应中返回这些描述符的数组
+为支持[KSPROPERTY_AUDIOMODULE_DESCRIPTORS](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-descriptors)属性标识为音频模块识别驱动程序。 该属性将通过筛选器或 pin 句柄查询和 KSPROPERTY 传递作为 DeviceIoControl 调用的输入缓冲区。 [KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)已定义来描述每个模块中的音频硬件。 为此请求的响应中返回这些描述符的数组
 
 #### <a name="ksmediah"></a>ksmedia.h:
 
@@ -124,11 +124,11 @@ typedef struct _KSAUDIOMODULE_DESCRIPTOR
     WCHAR   Name[AUDIOMODULE_MAX_NAME_SIZE];
 } KSAUDIOMODULE_DESCRIPTOR, *PKSAUDIOMODULE_DESCRIPTOR;
 ```
-有关详细信息，请参阅[KSAUDIOMODULE_DESCRIPTOR](https://msdn.microsoft.com/library/windows/hardware/mt808137(v=vs.85).aspx)。
+有关详细信息，请参阅[KSAUDIOMODULE_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_descriptor)。
 
 ### <a name="audio-module-command"></a>音频的模块命令
 
-为支持[KSPROPERTY_AUDIOMODULE_COMMAND](https://msdn.microsoft.com/library/windows/hardware/mt808141(v=vs.85).aspx)属性允许音频模块客户端发送自定义命令来查询和设置音频模块的参数。 可以通过筛选器或 pin 句柄发送该属性和一个[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)作为 DeviceIoControl 调用的输入缓冲区传递。 客户端可以根据需要发送的其他信息立即旁边[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)将自定义命令发送到输入缓冲区中。
+为支持[KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command)属性允许音频模块客户端发送自定义命令来查询和设置音频模块的参数。 可以通过筛选器或 pin 句柄发送该属性和一个[KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)作为 DeviceIoControl 调用的输入缓冲区传递。 客户端可以根据需要发送的其他信息立即旁边[KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)将自定义命令发送到输入缓冲区中。
 
 #### <a name="ksmediah"></a>ksmedia.h:
 
@@ -143,14 +143,14 @@ typedef struct _KSPAUDIOMODULE_PROPERTY
 } KSAUDIOMODULE_PROPERTY, *PKSPAUDIOMODULE_PROPERTY;
 
 ```
-有关详细信息，请参阅[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)。
+有关详细信息，请参阅[KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)。
 
 
 ### <a name="audio-module-notification-device-id"></a>音频模块通知设备 ID
 
-为支持[KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://msdn.microsoft.com/library/windows/hardware/mt808143(v=vs.85).aspx)需启用到信号通知微型端口，并将信息传递到音频模块的客户端。 此 ID 的生存期取决于正在公开和活动到 Windows 音频堆栈的音频设备的生存期。 可以通过筛选器或 pin 句柄发送该属性，并作为 DeviceIoControl 调用的输入缓冲区传递 KSPROPERTY。
+为支持[KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-notification-device-id)需启用到信号通知微型端口，并将信息传递到音频模块的客户端。 此 ID 的生存期取决于正在公开和活动到 Windows 音频堆栈的音频设备的生存期。 可以通过筛选器或 pin 句柄发送该属性，并作为 DeviceIoControl 调用的输入缓冲区传递 KSPROPERTY。
 
-有关详细信息，请参阅[KSAUDIOMODULE_PROPERTY](https://msdn.microsoft.com/library/windows/hardware/mt808139(v=vs.85).aspx)。
+有关详细信息，请参阅[KSAUDIOMODULE_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudiomodule_property)。
 
 
 <a name="span-idportclshelperspanportcls-helper---audio-module-notifications"></a><span id="PortCls_Helper"></span>PortCls Helper-音频模块通知
@@ -212,13 +212,13 @@ typedef struct _KSAUDIOMODULE_NOTIFICATION {
 ```
 有关详细信息，请参阅：
 
- [IPortClsNotifications](https://msdn.microsoft.com/library/windows/hardware/mt808133(v=vs.85).aspx)
+ [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsnotifications)
     
- [IPortClsNotifications::AllocNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808134(v=vs.85).aspx)
+ [IPortClsNotifications::AllocNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-allocnotificationbuffer)
 
- [IPortClsNotifications::FreeNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808135(v=vs.85).aspx)    
+ [IPortClsNotifications::FreeNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-freenotificationbuffer)   
     
- [IPortClsNotifications::SendNotificationBuffer](https://msdn.microsoft.com/library/windows/hardware/mt808136(v=vs.85).aspx)    
+ [IPortClsNotifications::SendNotificationBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iportclsnotifications-sendnotification) 
 
 ### <a name="calling-sequence"></a>调用序列
 

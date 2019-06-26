@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5acab83bbfcd14351d980c50424c5f4a9fa27df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad98d3a8ad0d35ff82e63001b260fc4dd372b061
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329971"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67368849"
 ---
 # <a name="kspropertybdarftunerfrequency"></a>KSPROPERTY\_BDA\_RF\_调谐器\_频率
 
@@ -74,7 +74,7 @@ ms.locfileid: "63329971"
 
 -   BDA\_频率\_不\_定义 (0) 指示未定义的频率。
 
-如果 KSPROPERTY\_BDA\_RF\_调谐器\_频率\_乘数属性指定倍增 BDA\_频率\_乘数\_不\_组 (− 1) 或 BDA\_频率\_乘数\_不\_定义 (0)，然后 KSPROPERTY\_BDA\_RF\_调谐器\_频率属性千赫 (kHz) 中指定的频率。 此外，如果微型驱动程序的一组处理程序 ([*KStrSetPropertyHandler*](https://msdn.microsoft.com/library/windows/hardware/ff567200)) 的频率的乘数属性未调用，微型驱动程序必须确定，表示提供的频率kHz (1 Hz x 1000) 为单位。 实际上，默认乘数值为 1000年。 有关详细信息，请参阅[BDA 调谐器节点的访问频率属性](https://msdn.microsoft.com/library/windows/hardware/ff554072)。
+如果 KSPROPERTY\_BDA\_RF\_调谐器\_频率\_乘数属性指定倍增 BDA\_频率\_乘数\_不\_组 (− 1) 或 BDA\_频率\_乘数\_不\_定义 (0)，然后 KSPROPERTY\_BDA\_RF\_调谐器\_频率属性千赫 (kHz) 中指定的频率。 此外，如果微型驱动程序的一组处理程序 ([*KStrSetPropertyHandler*](https://docs.microsoft.com/previous-versions/ff567200(v=vs.85))) 的频率的乘数属性未调用，微型驱动程序必须确定，表示提供的频率kHz (1 Hz x 1000) 为单位。 实际上，默认乘数值为 1000年。 有关详细信息，请参阅[BDA 调谐器节点的访问频率属性](https://docs.microsoft.com/windows-hardware/drivers/stream/accessing-frequency-properties-of-a-bda-tuner-node)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,7 +95,7 @@ ms.locfileid: "63329971"
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
 [**KSPROPERTY\_BDA\_RF\_调谐器\_频率\_乘数**](ksproperty-bda-rf-tuner-frequency-multiplier.md)
 

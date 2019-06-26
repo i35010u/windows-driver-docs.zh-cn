@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b50a6aa80bfd796270831d6af9028832468a435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04df97366f329f1ed409f27ec3baf93b38930a22
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358179"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362334"
 ---
 # <a name="bug-check-0x116-videotdrfailure"></a>Bug 检查 0x116：视频\_TDR\_失败
 
@@ -27,7 +27,7 @@ ms.locfileid: "63358179"
 视频\_TDR\_故障错误检查的值为 0x00000116。 这表示尝试重置显示器驱动程序，并从超时恢复失败。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="videotdrfailure-parameters"></a>视频\_TDR\_失败参数
@@ -71,15 +71,15 @@ ms.locfileid: "63358179"
 
 图形中常见的稳定性问题发生时系统处理的最终用户命令或操作时出现完全冻结或挂起。 通常在 GPU 正忙于处理密集型的图形操作，通常在游戏过程。 无屏幕更新发生，并且用户假定他们的系统已被冻结。 用户通常等待几秒钟，并按电源按钮，然后重新启动系统。 Windows 会尝试检测这些有问题的情况下的挂起和动态恢复响应式桌面。
 
-此检测和恢复的过程称为超时检测和恢复 (TDR)。 默认超时为 2 秒。 在视频卡 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://msdn.microsoft.com/library/windows/hardware/ff559815)函数以重新初始化该驱动程序和重置 GPU。
+此检测和恢复的过程称为超时检测和恢复 (TDR)。 默认超时为 2 秒。 在视频卡 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序[ *DxgkDdiResetFromTimeout* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)函数以重新初始化该驱动程序和重置 GPU。
 
-在此过程中，操作系统会告知驱动程序不访问的硬件或内存，并为其提供对当前正在运行的线程以完成短时间。 如果在超时内未完成线程，则系统 bug 检查 0x116 视频\_TDR\_失败。 有关详细信息，请参阅[线程同步和 TDR](https://msdn.microsoft.com/library/windows/hardware/ff570082)。
+在此过程中，操作系统会告知驱动程序不访问的硬件或内存，并为其提供对当前正在运行的线程以完成短时间。 如果在超时内未完成线程，则系统 bug 检查 0x116 视频\_TDR\_失败。 有关详细信息，请参阅[线程同步和 TDR](https://docs.microsoft.com/windows-hardware/drivers/display/thread-synchronization-and-tdr)。
 
 系统还 bug 视频咨询\_TDR\_故障数 TDR 事件发生在短时间内，如果默认情况下超过五个 TDRs 在一分钟内。
 
 如果恢复过程成功，将显示消息，指示的"显示驱动程序导致响应停止和已恢复。"
 
-有关详细信息，请参阅超时检测和恢复 (TDR) [TDR 注册表项](https://msdn.microsoft.com/library/windows/hardware/ff569918)并[TDR 更改在 Windows 8 中的](https://msdn.microsoft.com/library/windows/hardware/jj676805)都位于[Windows 显示器驱动程序模型 （用于进行调试的提示WDDM)](https://msdn.microsoft.com/library/windows/hardware/ff551790)。
+有关详细信息，请参阅超时检测和恢复 (TDR) [TDR 注册表项](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys)并[TDR 更改在 Windows 8 中的](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8)都位于[Windows 显示器驱动程序模型 （用于进行调试的提示WDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)。
 
 <a name="resolution"></a>分辨率
 ----------
@@ -124,7 +124,7 @@ MODULE_NAME: nvlddmkm
 IMAGE_NAME:  nvlddmkm.sys
 ```
 
-可以使用[ **lm （列表加载模块）**](lm--list-loaded-modules-.md)命令以显示有关该错误的驱动程序，包括时间戳信息。
+可以使用[ **lm （列表加载模块）** ](lm--list-loaded-modules-.md)命令以显示有关该错误的驱动程序，包括时间戳信息。
 
 ```dbgcmd
 1: kd> lmvm nvlddmkm

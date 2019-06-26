@@ -10,19 +10,19 @@ keywords:
 - 对象的访问权限 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9369d9dc60b76851346a1e8fe9c115a0fe140510
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e9bb7c6a5ee5f9ee6b1a612d3217affd0b91f43
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339142"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363474"
 ---
 # <a name="access-rights"></a>访问权限
 
 
 *访问权限*是执行特定操作的对象上的权限。 例如，文件\_读取\_数据访问权限指定从文件中读取的权限。
 
-当您打开的句柄对象时，指定对应于可能会在对象执行的操作的访问权限的一组。 系统会检查对对象的安全描述符指定的访问权限，以查看是否为当前用户允许每个操作。 (有关详细信息，请参阅[安全描述符](https://msdn.microsoft.com/library/windows/hardware/ff556612)。)
+当您打开的句柄对象时，指定对应于可能会在对象执行的操作的访问权限的一组。 系统会检查对对象的安全描述符指定的访问权限，以查看是否为当前用户允许每个操作。 (有关详细信息，请参阅[安全描述符](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-descriptors)。)
 
 有两种类型的访问权限：
 

@@ -4,12 +4,12 @@ description: METransformFlushInputStream 事件通知设备 Transform Manager �
 ms.assetid: 400FB4BE-90F2-4FF2-A709-7E213D99DCC8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb03fc58935a0788ec818b85311c6e215f455ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d6df6d3d0a157887dd79a7e9c34df98f498a96d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353691"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363308"
 ---
 # <a name="metransformflushinputstream-event"></a>METransformFlushInputStream event
 
@@ -35,7 +35,7 @@ ms.locfileid: "63353691"
 ## <a name="remarks"></a>备注
 
 
-当设备 MFT 输入的流连接的流需要刷新时，它会生成此事件。 在响应此事件时，会调用 DTM [ **FlushOutputStream** ](https://msdn.microsoft.com/library/windows/hardware/mt797665) Devproxy 和它的连接的流将调用[ **FlushInputStream** ](https://msdn.microsoft.com/library/windows/hardware/mt797664) MFT 在设备上。 设备 MFT 将刷新其输入的流，并刷新操作即视为完成。
+当设备 MFT 输入的流连接的流需要刷新时，它会生成此事件。 在响应此事件时，会调用 DTM [ **FlushOutputStream** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-flushoutputstream) Devproxy 和它的连接的流将调用[ **FlushInputStream** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-flushinputstream) MFT 在设备上。 设备 MFT 将刷新其输入的流，并刷新操作即视为完成。
 
 一般情况下，当将流本身处于运行状态，或者即将停止时，会调用此事件。
 

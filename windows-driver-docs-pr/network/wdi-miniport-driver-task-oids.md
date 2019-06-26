@@ -5,12 +5,12 @@ ms.assetid: CAA92CA5-5CD6-4705-AA4C-54C1AA83ACA3
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b99c3dbfda943f467f7b26b7e20b7b529323b08c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 34d297cc1c68c2ed0b76285a492951aa66c20c4c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385370"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359144"
 ---
 # <a name="wdi-task-oids"></a>WDI 任务 OID
 
@@ -22,10 +22,10 @@ Wi-fi 驱动程序接口 (WDI) 对象标识符 (Oid) 仅适用于实现 WDI 的�
 下表指定 WDI OID 查询 (Q)、 集 (S) 和 NDIS 6.0 (M) 的方法请求是否为必需或可选的实现：
 
 <a href="" id="r"></a>**R**  
-表示支持的对象是必需的。 微型端口驱动程序不得失败的对象集或查询请求通过返回状态代码 NDIS\_状态\_不\_支持从其[ *MiniportOidRequest* ](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数。
+表示支持的对象是必需的。 微型端口驱动程序不得失败的对象集或查询请求通过返回状态代码 NDIS\_状态\_不\_支持从其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数。
 
 <a href="" id="o"></a>**O**  
-指示该功能的支持，该对象是可选的。 或微型端口驱动程序可以支持的查询或设置请求的对象，该驱动程序可以使该请求失败通过返回 NDIS\_状态\_不\_支持从其[ *MiniportOidRequest*](https://msdn.microsoft.com/library/windows/hardware/ff559416)函数。
+指示该功能的支持，该对象是可选的。 或微型端口驱动程序可以支持的查询或设置请求的对象，该驱动程序可以使该请求失败通过返回 NDIS\_状态\_不\_支持从其[ *MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数。
 
 <table>
 <colgroup>

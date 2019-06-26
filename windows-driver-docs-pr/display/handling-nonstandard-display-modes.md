@@ -6,12 +6,12 @@ keywords:
 - 使用了非标准的显示模式 WDK DirectX 9.0 中，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54bb8c5a64a372260bc8ebd24e5f04ef44ab75df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a3234460c124cabf0e47ef7d440cb8f39e56411
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323801"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359330"
 ---
 # <a name="handling-nonstandard-display-modes"></a>处理非标准显示模式
 
@@ -31,11 +31,11 @@ ms.locfileid: "63323801"
 
 -   DirectX 主面处于活动状态时，请键入"Ctl + Alt + Del"。
 
-    内核驱动程序的调用中的目标为指定标准主[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)函数任何 GDI 绘图发生之前。 因此，该驱动程序必须进行编程标准显示模式之前任何 GDI 绘制到显示设备。 在驱动程序[ *DdDestroySurface* ](https://msdn.microsoft.com/library/windows/hardware/ff549281)函数也称为主图面。 请注意，驱动程序可以放弃 DirectX 主图面的内容。
+    内核驱动程序的调用中的目标为指定标准主[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)函数任何 GDI 绘图发生之前。 因此，该驱动程序必须进行编程标准显示模式之前任何 GDI 绘制到显示设备。 在驱动程序[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)函数也称为主图面。 请注意，驱动程序可以放弃 DirectX 主图面的内容。
 
 -   窗口模式和非标准格式
 
-    [2D 操作面格式使用报告支持](reporting-support-for-2d-operations-using-surface-formats.md)主题介绍如何驱动程序指定它可以从不同于当前桌面的格式执行到呈现和存在的映像。 此方案很自然地扩展以支持非标准格式; 数据格式该驱动程序只将添加中的启用标志**dwOperations**的成员[ **DDPIXELFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff550274)格式的结构。
+    [2D 操作面格式使用报告支持](reporting-support-for-2d-operations-using-surface-formats.md)主题介绍如何驱动程序指定它可以从不同于当前桌面的格式执行到呈现和存在的映像。 此方案很自然地扩展以支持非标准格式; 数据格式该驱动程序只将添加中的启用标志**dwOperations**的成员[ **DDPIXELFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ddpixelformat)格式的结构。
 
 专用格式和旧代码不能用于公开使用了非标准的桌面格式。
 

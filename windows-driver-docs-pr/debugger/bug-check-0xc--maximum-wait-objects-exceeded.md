@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 93202d4febfc2dd88c4049d19985f955dab359eb
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: e12ae81019e14659b092d78902887b9dcbc4e488
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59902559"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361624"
 ---
 # <a name="bug-check-0xc-maximumwaitobjectsexceeded"></a>Bug 检查 0xC：最大\_等待\_对象\_超出
 
@@ -26,7 +26,7 @@ ms.locfileid: "59902559"
 最大值\_等待\_对象\_超出错误检查的值为 0x0000000C。 这表示当前线程的已超出允许的等待对象数。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="maximumwaitobjectsexceeded-parameters"></a>最大\_等待\_对象\_超出参数

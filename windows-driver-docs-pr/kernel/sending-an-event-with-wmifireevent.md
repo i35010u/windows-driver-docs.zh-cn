@@ -13,12 +13,12 @@ keywords:
 - 动态实例名称 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6ae6b9dda93810b374e1160a852fde64ffd8d3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3132ed67fb520db6b08f1ca1eb0fd711283f1146
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342666"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364076"
 ---
 # <a name="sending-an-event-with-wmifireevent"></a>使用 WmiFireEvent 发送事件
 
@@ -26,15 +26,15 @@ ms.locfileid: "63342666"
 
 
 
-驱动程序可以调用[ **WmiFireEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff565807)发送事件，不要使用动态实例名称和的基础单个基名称字符串或 PDO 的设备实例 ID 的静态实例名称。
+驱动程序可以调用[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)发送事件，不要使用动态实例名称和的基础单个基名称字符串或 PDO 的设备实例 ID 的静态实例名称。
 
-事件必须是一个块的单个实例 — 也就是说，调用一个驱动程序不能**WmiFireEvent**发送事件的单个项或多个实例组成。 若要发送此类事件，驱动程序必须调用[ **IoWMIWriteEvent**](https://msdn.microsoft.com/library/windows/hardware/ff550520)，如中所述[发送与 IoWMIWriteEvent 事件](sending-an-event-with-iowmiwriteevent.md)。
+事件必须是一个块的单个实例 — 也就是说，调用一个驱动程序不能**WmiFireEvent**发送事件的单个项或多个实例组成。 若要发送此类事件，驱动程序必须调用[ **IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)，如中所述[发送与 IoWMIWriteEvent 事件](sending-an-event-with-iowmiwriteevent.md)。
 
 驱动程序不应发送事件，直到 WMI 启用了该事件。 启用事件后，事件的触发器条件时，该驱动程序：
 
 1.  分配从非分页缓冲池的缓冲区，并将事件数据写入到缓冲区。 如果事件没有任何数据，该驱动程序可以跳过此步骤。
 
-2.  调用[ **WmiFireEvent** ](https://msdn.microsoft.com/library/windows/hardware/ff565807)使用以下参数：
+2.  调用[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)使用以下参数：
 
     -   指向驱动程序的设备对象的指针
 

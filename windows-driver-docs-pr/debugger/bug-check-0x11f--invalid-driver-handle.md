@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b6afd88545c1043e19c725337742b4b10f5dc5c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8a3e9b286a02ad6a9d191d6a17f857e964f240f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358153"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362308"
 ---
 # <a name="bug-check-0x11f-invaliddriverhandle"></a>Bug 检查 0x11F：无效\_驱动程序\_处理
 
@@ -26,7 +26,7 @@ ms.locfileid: "63358153"
 无效\_驱动程序\_句柄 bug 检查的值为 0x0000011F。 这表示有人关闭了之间插入驱动程序对象和引用了句柄的驱动程序的初始句柄。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 
 ## <a name="invaliddriverhandle-parameters"></a>无效\_驱动程序\_句柄参数

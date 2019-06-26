@@ -7,12 +7,12 @@ keywords:
 - 设置 power Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9b96219bd9ced1b5761dda271fb261388a2126
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8e43072a78f8f01794e1f3db5466a035ea23328f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342687"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67364089"
 ---
 # <a name="sending-a-device-set-power-irp-in-response-to-a-system-set-power-irp"></a>在系统 Set-Power IRP 响应中发送设备 Set-Power IRP
 
@@ -22,17 +22,17 @@ ms.locfileid: "63342687"
 
 设备电源策略所有者应执行以下步骤来响应系统集 power IRP:
 
-1.  调用[ **IoAcquireRemoveLock**](https://msdn.microsoft.com/library/windows/hardware/ff548204)，将为当前的 IRP 传递*标记*参数，以确保该驱动程序不接收插[ **IRP\_MN\_删除\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551738)请求，而同时处理 IRP 的能力。
+1.  调用[ **IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)，将为当前的 IRP 传递*标记*参数，以确保该驱动程序不接收插[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，而同时处理 IRP 的能力。
 
-    如果**IoAcquireRemoveLock**返回失败状态，该驱动程序不应继续处理 IRP。 相反，从 Windows Vista 开始，驱动程序应调用[ **IoCompleteRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff548343)来完成请求，并返回故障状态。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，该驱动程序首先应调用[ **PoStartNextPowerIrp**](https://msdn.microsoft.com/library/windows/hardware/ff559776)，调用**IoCompleteRequest**完成 IRP，，然后返回故障状态。
+    如果**IoAcquireRemoveLock**返回失败状态，该驱动程序不应继续处理 IRP。 相反，从 Windows Vista 开始，驱动程序应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)来完成请求，并返回故障状态。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，该驱动程序首先应调用[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)，调用**IoCompleteRequest**完成 IRP，，然后返回故障状态。
 
-2.  通过调用设置下一步低驱动程序的 IRP 堆栈位置[ **IoCopyCurrentIrpStackLocationToNext**](https://msdn.microsoft.com/library/windows/hardware/ff548387)。
+2.  通过调用设置下一步低驱动程序的 IRP 堆栈位置[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)。
 
-3.  设置[ *IoCompletion* ](https://msdn.microsoft.com/library/windows/hardware/ff548354)例行系统中设置 power IRP。
+3.  设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例行系统中设置 power IRP。
 
-4.  调用[ **IoMarkIrpPending** ](https://msdn.microsoft.com/library/windows/hardware/ff549422)标记系统集 power IRP 为挂起。
+4.  调用[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)标记系统集 power IRP 为挂起。
 
-5.  调用[ **IoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff548336) （从 Windows Vista 开始） 或[ **PoCallDriver** ](https://msdn.microsoft.com/library/windows/hardware/ff559654) （在 Windows Server 2003、 Windows XP 和 Windows 2000） 到系统将传递到下一步低驱动程序集 power IRP。
+5.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) （从 Windows Vista 开始） 或[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) （在 Windows Server 2003、 Windows XP 和 Windows 2000） 到系统将传递到下一步低驱动程序集 power IRP。
 
 6.  返回状态\_PENDING 从其[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63342687"
 
 1.  检查系统集 power IRP，若要获取请求的系统电源状态。 选择该系统电源状态的适当的设备电源状态。 有关详细信息，请参阅[确定正确设备电源状态](determining-the-correct-device-power-state.md)。
 
-2.  调用[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)发送[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)为在步骤 1 中确定设备电源状态。 电源策略所有者必须发送的设备集 power 请求，即使设备已处于该状态。
+2.  调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)发送[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)为在步骤 1 中确定设备电源状态。 电源策略所有者必须发送的设备集 power 请求，即使设备已处于该状态。
 
 3.  指定电源完成回调例程 (*CompletionFunction*) 在调用**PoRequestPowerIrp** ，并将传递系统中的设置 power IRP*上下文*缓冲区。
 
@@ -52,11 +52,11 @@ ms.locfileid: "63342687"
 
 Power 完成回调例程必须执行以下操作：
 
-1.  调用[ **PoStartNextPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559776)启动下一个幂 IRP。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅。）
+1.  调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)启动下一个幂 IRP。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅。）
 
-2.  完成系统集 power IRP ([**IoCompleteRequest**](https://msdn.microsoft.com/library/windows/hardware/ff548343)) 与返回设备的状态集 power IRP。
+2.  完成系统集 power IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 与返回设备的状态集 power IRP。
 
-3.  调用[ **IoReleaseRemoveLock** ](https://msdn.microsoft.com/library/windows/hardware/ff549560)来释放以前获取的锁。
+3.  调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)来释放以前获取的锁。
 
 4.  返回与集 power Irp 已完成的状态。
 

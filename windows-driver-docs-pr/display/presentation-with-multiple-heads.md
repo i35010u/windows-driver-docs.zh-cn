@@ -7,12 +7,12 @@ keywords:
 - 演示文稿 WDK DirectX 9.0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e37ca5e1535322dd7fbf81e500c4e1ced7ffc7b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1de73f1b6d7360ff3f48dc7a1dde9af6b2a6fdfc
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352217"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363740"
 ---
 # <a name="presentation-with-multiple-heads"></a>使用多个头进行呈现
 
@@ -22,7 +22,7 @@ ms.locfileid: "63352217"
 
 应用程序可以调用**存在**方法一次性呈现所有头的后台缓冲区的内容，或能够提供单个头后台缓冲区。 有关详细信息**存在**，请参阅最新的 DirectX SDK 文档。
 
-反过来，运行时做出对驱动程序的独立顺序调用[ *DdFlip* ](https://msdn.microsoft.com/library/windows/hardware/ff549306)或[ *DdBlt* ](https://msdn.microsoft.com/library/windows/hardware/ff549205)函数。 由于每个头部的显示模式和刷新率可能不同，这些调用始终是独立 DDI 级别。
+反过来，运行时做出对驱动程序的独立顺序调用[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)或[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数。 由于每个头部的显示模式和刷新率可能不同，这些调用始终是独立 DDI 级别。
 
  
 

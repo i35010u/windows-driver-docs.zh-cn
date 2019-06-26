@@ -6,12 +6,12 @@ keywords:
 - 驱动程序覆盖范围工具包 WDK，有关驱动程序覆盖范围工具包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7262b7b1d0aaa7bc5244fb7c7d795f0dfb5f72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d3f662c400ef8bc44f040c6d562902b7ec51b4b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356338"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67361273"
 ---
 # <a name="overview-of-the-driver-coverage-toolkit"></a>驱动程序覆盖范围工具包概述
 
@@ -25,7 +25,7 @@ ms.locfileid: "63356338"
 驱动程序覆盖范围工具包收集并报告 IRP 覆盖率数据基于三个度量值：
 
 <span id="Major__MJ__IRP_Function_Codes"></span><span id="major__mj__irp_function_codes"></span><span id="MAJOR__MJ__IRP_FUNCTION_CODES"></span>主要 (MJ) IRP 函数代码  
-处于活动状态的设备驱动程序堆栈内的 Irp 的 MJ 函数代码的计数。 驱动程序覆盖范围工具包收集 12 MJ 函数代码的数据。 有关这些函数代码的详细信息，请参阅[IRP 主要函数代码](https://msdn.microsoft.com/library/windows/hardware/ff550710)。
+处于活动状态的设备驱动程序堆栈内的 Irp 的 MJ 函数代码的计数。 驱动程序覆盖范围工具包收集 12 MJ 函数代码的数据。 有关这些函数代码的详细信息，请参阅[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
 
 <span id="Major__MJ__and_Minor__MN__IRP_Function_Codes"></span><span id="major__mj__and_minor__mn__irp_function_codes"></span><span id="MAJOR__MJ__AND_MINOR__MN__IRP_FUNCTION_CODES"></span>(MJ) 主要和次要的 (MN) IRP 函数代码  
 MJ IRP 函数代码，连同的 Irp 处于活动状态的设备驱动程序堆栈内的其从属 MN 函数代码的计数。 驱动程序覆盖范围工具包收集 52 MJ 和 MN 函数代码的数据。
@@ -33,7 +33,7 @@ MJ IRP 函数代码，连同的 Irp 处于活动状态的设备驱动程序堆�
 <span id="IRP_Pairs"></span><span id="irp_pairs"></span><span id="IRP_PAIRS"></span>IRP 对  
 已在设备驱动程序堆栈中并发活动 MJ 和 MJ/MN IRP 函数代码的计数。 此计数反映的次数单独 Irp 进入或离开在同一时间的驱动程序堆栈。 驱动程序覆盖范围工具包收集 1099 MJ 和 MN 函数代码对数据。
 
-有关 IRP 函数代码的详细信息，请参阅[IRP 函数代码](https://msdn.microsoft.com/library/windows/hardware/ff550706)。
+有关 IRP 函数代码的详细信息，请参阅[IRP 函数代码](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550706(v=vs.85))。
 
 ### <a name="span-idirpcoveragedataspanspan-idirpcoveragedataspanirp-coverage-data"></a><span id="irp_coverage_data"></span><span id="IRP_COVERAGE_DATA"></span>IRP 覆盖率数据
 

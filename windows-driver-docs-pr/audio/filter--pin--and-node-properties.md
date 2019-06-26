@@ -18,12 +18,12 @@ keywords:
 - pin WDK 音频，属性概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4776ad0dc678ee1b15d24d16f12fe48459f351b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a6075e54ad8626156e6c0efa43e57410533f702
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333650"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360028"
 ---
 # <a name="filter-pin-and-node-properties"></a>筛选器、引脚和节点属性
 
@@ -55,13 +55,13 @@ Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序表示作为 KS 筛
 
 通常情况下，端口驱动程序处理最多请求的筛选器和 pin 属性，而微型端口驱动程序处理请求的节点属性。
 
-端口驱动程序提供了自己内置的处理程序使用的筛选器和 pin 属性[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)(请参阅[KSPROPSETID\_Sysaudio](https://msdn.microsoft.com/library/windows/hardware/ff537489)和[KSPROPSETID\_Sysaudio\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff537490)) 和[WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)。 微型端口驱动程序不需要实现端口驱动程序处理的属性的处理程序。 典型的微型端口驱动程序筛选器和 pin 属性提供了几个，如果有，处理程序。 微型端口驱动程序提供节点属性表示依赖于硬件的功能的音频设备的处理的程序。 端口驱动程序提供的节点属性没有内置处理除[ **KSPROPERTY\_拓扑\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff565809)。
+端口驱动程序提供了自己内置的处理程序使用的筛选器和 pin 属性[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)(请参阅[KSPROPSETID\_Sysaudio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-sysaudio)和[KSPROPSETID\_Sysaudio\_Pin](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-sysaudio-pin)) 和[WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)。 微型端口驱动程序不需要实现端口驱动程序处理的属性的处理程序。 典型的微型端口驱动程序筛选器和 pin 属性提供了几个，如果有，处理程序。 微型端口驱动程序提供节点属性表示依赖于硬件的功能的音频设备的处理的程序。 端口驱动程序提供的节点属性没有内置处理除[ **KSPROPERTY\_拓扑\_名称**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-name)。
 
 在端口驱动程序和微型端口驱动程序提供相同的属性的处理程序时, 端口驱动程序使用自己的处理程序，并忽略微型端口驱动程序的处理程序。
 
 ### <a name="span-idfilterdescriptorsspanspan-idfilterdescriptorsspanspan-idfilterdescriptorsspanfilter-descriptors"></a><span id="Filter_Descriptors"></span><span id="filter_descriptors"></span><span id="FILTER_DESCRIPTORS"></span>筛选器描述符
 
-端口驱动程序通过调用获取指向微型端口驱动程序的属性处理程序的指针[ **IMiniport::GetDescription** ](https://msdn.microsoft.com/library/windows/hardware/ff536765)方法。 此方法中，通过端口驱动程序会检索指向微型端口驱动程序的筛选器描述符，这是类型的结构的指针[ **PCFILTER\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff537694)。 此结构指定筛选器、 pin 和节点属性的微型端口驱动程序的属性处理的程序：
+端口驱动程序通过调用获取指向微型端口驱动程序的属性处理程序的指针[ **IMiniport::GetDescription** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiport-getdescription)方法。 此方法中，通过端口驱动程序会检索指向微型端口驱动程序的筛选器描述符，这是类型的结构的指针[ **PCFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/ns-portcls-pcfilter_descriptor)。 此结构指定筛选器、 pin 和节点属性的微型端口驱动程序的属性处理的程序：
 
 -   PCFILTER\_描述符结构**AutomationTable**成员指向的筛选器的自动化表。 此表指定筛选器属性的微型端口驱动程序的属性处理程序。
 
@@ -73,45 +73,45 @@ Microsoft Windows 驱动程序模型 (WDM) 音频驱动程序表示作为 KS 筛
 
 端口驱动程序访问微型端口驱动程序的筛选器属性处理程序通过**AutomationTable** PCFILTER 成员\_描述符。 通常情况下，此自动化表包含几个处理程序，因为端口驱动程序提供自己的 SysAudio 和 WDMAud 用于查询和配置音频设备的所有筛选器属性的内置处理程序。
 
-但是，微型端口驱动程序可以提供筛选器属性的处理程序如[ **KSPROPERTY\_常规\_COMPONENTID** ](https://msdn.microsoft.com/library/windows/hardware/ff565171)提供依赖于硬件的信息不供端口驱动程序。 两个示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 处理 KSPROPERTY\_常规\_COMPONENTID 属性。 有关详细信息，请参阅 Msvad 和 Sb16 示例中的微型端口驱动程序实现。
+但是，微型端口驱动程序可以提供筛选器属性的处理程序如[ **KSPROPERTY\_常规\_COMPONENTID** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-general-componentid)提供依赖于硬件的信息不供端口驱动程序。 两个示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 处理 KSPROPERTY\_常规\_COMPONENTID 属性。 有关详细信息，请参阅 Msvad 和 Sb16 示例中的微型端口驱动程序实现。
 
-Portcls.sys 中的所有端口驱动程序都提供用于处理[KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)并[KSPROPSETID\_拓扑](https://msdn.microsoft.com/library/windows/hardware/ff566598)属性集。 这些字符集中的所有属性都筛选器属性都是除[ **KSPROPERTY\_拓扑\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff565809)，这是节点属性 （即使用了筛选器句柄，而不是 pin句柄，若要指定请求的目标）。 端口驱动程序支持的以下子集 KSPROPSETID\_Pin 属性：
+Portcls.sys 中的所有端口驱动程序都提供用于处理[KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)并[KSPROPSETID\_拓扑](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-topology)属性集。 这些字符集中的所有属性都筛选器属性都是除[ **KSPROPERTY\_拓扑\_名称**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-name)，这是节点属性 （即使用了筛选器句柄，而不是 pin句柄，若要指定请求的目标）。 端口驱动程序支持的以下子集 KSPROPSETID\_Pin 属性：
 
-[**KSPROPERTY\_PIN\_CATEGORY**](https://msdn.microsoft.com/library/windows/hardware/ff565192)
+[**KSPROPERTY\_PIN\_CATEGORY**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)
 
-[**KSPROPERTY\_PIN\_CINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565193)
+[**KSPROPERTY\_PIN\_CINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-cinstances)
 
-[**KSPROPERTY\_PIN\_通信**](https://msdn.microsoft.com/library/windows/hardware/ff565194)
+[**KSPROPERTY\_PIN\_通信**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-communication)
 
-[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565195)
+[**KSPROPERTY\_PIN\_CONSTRAINEDDATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-constraineddataranges)
 
-[**KSPROPERTY\_PIN\_CTYPES**](https://msdn.microsoft.com/library/windows/hardware/ff565196)
+[**KSPROPERTY\_PIN\_CTYPES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-ctypes)
 
-[**KSPROPERTY\_PIN\_DATAFLOW**](https://msdn.microsoft.com/library/windows/hardware/ff565197)
+[**KSPROPERTY\_PIN\_DATAFLOW**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataflow)
 
-[**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://msdn.microsoft.com/library/windows/hardware/ff565198)
+[**KSPROPERTY\_PIN\_DATAINTERSECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataintersection)
 
-[**KSPROPERTY\_PIN\_DATARANGES**](https://msdn.microsoft.com/library/windows/hardware/ff565199)
+[**KSPROPERTY\_PIN\_DATARANGES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-dataranges)
 
-[**KSPROPERTY\_PIN\_GLOBALCINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565200)
+[**KSPROPERTY\_PIN\_GLOBALCINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-globalcinstances)
 
-[**KSPROPERTY\_PIN\_INTERFACES**](https://msdn.microsoft.com/library/windows/hardware/ff565201)
+[**KSPROPERTY\_PIN\_INTERFACES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-interfaces)
 
-[**KSPROPERTY\_PIN\_媒体**](https://msdn.microsoft.com/library/windows/hardware/ff565202)
+[**KSPROPERTY\_PIN\_媒体**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-mediums)
 
-[**KSPROPERTY\_PIN\_NAME**](https://msdn.microsoft.com/library/windows/hardware/ff565203)
+[**KSPROPERTY\_PIN\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name)
 
-[**KSPROPERTY\_PIN\_NECESSARYINSTANCES**](https://msdn.microsoft.com/library/windows/hardware/ff565204)
+[**KSPROPERTY\_PIN\_NECESSARYINSTANCES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-necessaryinstances)
 
-[**KSPROPERTY\_PIN\_PHYSICALCONNECTION**](https://msdn.microsoft.com/library/windows/hardware/ff565205)
+[**KSPROPERTY\_PIN\_PHYSICALCONNECTION**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-physicalconnection)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff565206)
+[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://msdn.microsoft.com/library/windows/hardware/dn567589)
+[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT2**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-proposedataformat2)
 
 这些属性提供有关属于筛选器的 pin 工厂的信息。 通常情况下，客户端创建 pin 实例之前查询这些属性的筛选器。 端口驱动程序支持全部四个 KSPROPSETID\_拓扑属性，它们提供有关筛选器的内部拓扑的信息。
 
-此外，Dmu 端口驱动程序提供的处理程序[ **KSPROPERTY\_合成\_MASTERCLOCK** ](https://msdn.microsoft.com/library/windows/hardware/ff537403)属性，它是 DirectMusic 筛选器的只读属性。 KSPROPERTY\_合成\_MASTERCLOCK 所在[KSPROPSETID\_SynthClock](https://msdn.microsoft.com/library/windows/hardware/ff537487)属性集。
+此外，Dmu 端口驱动程序提供的处理程序[ **KSPROPERTY\_合成\_MASTERCLOCK** ](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85))属性，它是 DirectMusic 筛选器的只读属性。 KSPROPERTY\_合成\_MASTERCLOCK 所在[KSPROPSETID\_SynthClock](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synthclock)属性集。
 
 ### <a name="span-idpinpropertiesspanspan-idpinpropertiesspanspan-idpinpropertiesspanpin-properties"></a><span id="Pin_Properties"></span><span id="pin_properties"></span><span id="PIN_PROPERTIES"></span>Pin 属性
 
@@ -121,21 +121,21 @@ Portcls.sys 中的所有端口驱动程序都提供用于处理[KSPROPSETID\_Pin
 
 除了拓扑端口驱动程序，Portcls.sys 中的所有端口驱动程序都提供以下固定属性的内置处理程序：
 
-[**KSPROPERTY\_连接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff565110)
+[**KSPROPERTY\_连接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-state)
 
-[**KSPROPERTY\_连接\_DATAFORMAT**](https://msdn.microsoft.com/library/windows/hardware/ff565103)
+[**KSPROPERTY\_连接\_DATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-dataformat)
 
-[**KSPROPERTY\_连接\_ALLOCATORFRAMING**](https://msdn.microsoft.com/library/windows/hardware/ff565099)
+[**KSPROPERTY\_连接\_ALLOCATORFRAMING**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing)
 
-[**KSPROPERTY\_STREAM\_ALLOCATOR**](https://msdn.microsoft.com/library/windows/hardware/ff565684)
+[**KSPROPERTY\_STREAM\_ALLOCATOR**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-allocator)
 
-[**KSPROPERTY\_STREAM\_MASTERCLOCK**](https://msdn.microsoft.com/library/windows/hardware/ff565713)
+[**KSPROPERTY\_STREAM\_MASTERCLOCK**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-stream-masterclock)
 
-[**KSPROPERTY\_音频\_位置**](https://msdn.microsoft.com/library/windows/hardware/ff537297)
+[**KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)
 
-[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://msdn.microsoft.com/library/windows/hardware/ff537351)
+[**KSPROPERTY\_DRMAUDIOSTREAM\_CONTENTID**](https://docs.microsoft.com/previous-versions/ff537351(v=vs.85))
 
-此列表中的属性的某些需要从微型端口驱动程序依赖于硬件的信息。 当端口驱动程序接收 IRP 包含这些属性之一的请求时，它不会不将 IRP 传递给微型端口驱动程序。 相反，端口驱动程序处理请求本身，但其处理程序获取所需的微型端口驱动程序中调用的入口点的信息。 例如，端口驱动程序提供其自己的属性处理程序为 KSPROPERTY\_音频\_位置请求。 此处理程序只需调用的微型端口驱动程序流**GetPosition**方法 (例如， [ **IMiniportWavePciStream::GetPosition**](https://msdn.microsoft.com/library/windows/hardware/ff536727)) 来获取当前的位置。
+此列表中的属性的某些需要从微型端口驱动程序依赖于硬件的信息。 当端口驱动程序接收 IRP 包含这些属性之一的请求时，它不会不将 IRP 传递给微型端口驱动程序。 相反，端口驱动程序处理请求本身，但其处理程序获取所需的微型端口驱动程序中调用的入口点的信息。 例如，端口驱动程序提供其自己的属性处理程序为 KSPROPERTY\_音频\_位置请求。 此处理程序只需调用的微型端口驱动程序流**GetPosition**方法 (例如， [ **IMiniportWavePciStream::GetPosition**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-iminiportwavepcistream-getposition)) 来获取当前的位置。
 
 ### <a name="span-idnodepropertiesspanspan-idnodepropertiesspanspan-idnodepropertiesspannode-properties"></a><span id="Node_Properties"></span><span id="node_properties"></span><span id="NODE_PROPERTIES"></span>节点属性
 
@@ -149,7 +149,7 @@ Portcls.sys 中的所有端口驱动程序都提供用于处理[KSPROPSETID\_Pin
 
 -   如果筛选器包含一个特定的节点的一个实例，节点属性请求指定的筛选器句柄。 筛选器的句柄和节点 ID 的组合是不足以明确标识该请求的目标的节点。
 
-在实施之前的特定节点属性的处理程序，但是，驱动程序编写器应参考[音频驱动程序的属性集](https://msdn.microsoft.com/library/windows/hardware/ff536197)若要检查是否应将该属性的目标指定为筛选器句柄或 pin 处理。
+在实施之前的特定节点属性的处理程序，但是，驱动程序编写器应参考[音频驱动程序的属性集](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-drivers-property-sets)若要检查是否应将该属性的目标指定为筛选器句柄或 pin 处理。
 
 端口中的驱动程序 Portcls.sys 当前不提供内置处理的节点属性，除了 KSPROPERTY\_拓扑\_名称。
 
@@ -169,9 +169,9 @@ Portcls.sys 中的所有端口驱动程序都提供用于处理[KSPROPSETID\_Pin
 
 出于历史原因，一些音频属性具有的违反这些常规规则行为异常。 下面是一些示例：
 
--   如中所述[应用扬声器配置设置](applying-speaker-configuration-settings.md)，客户端可以通过设置更改音频设备的扬声器配置[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://msdn.microsoft.com/library/windows/hardware/ff537250)三维节点的属性 ([**KSNODETYPE\_3D\_效果**](https://msdn.microsoft.com/library/windows/hardware/ff537148))。 扬声器配置设置是全局的因为更改是通过扬声器播放设备组合的一部分的所有流的扬声器配置。 根据一般的规则，会影响整个筛选器的节点属性请求应指定筛选器句柄 （加上一个节点 ID）。 但是，这一特定属性需要 pin 句柄而不是筛选器句柄。 固定句柄指定包含该请求的目标的三维节点的 pin 实例。
+-   如中所述[应用扬声器配置设置](applying-speaker-configuration-settings.md)，客户端可以通过设置更改音频设备的扬声器配置[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)三维节点的属性 ([**KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects))。 扬声器配置设置是全局的因为更改是通过扬声器播放设备组合的一部分的所有流的扬声器配置。 根据一般的规则，会影响整个筛选器的节点属性请求应指定筛选器句柄 （加上一个节点 ID）。 但是，这一特定属性需要 pin 句柄而不是筛选器句柄。 固定句柄指定包含该请求的目标的三维节点的 pin 实例。
 
--   [**KSPROPERTY\_合成\_卷**](https://msdn.microsoft.com/library/windows/hardware/ff537409)并[ **KSPROPERTY\_合成器\_MASTERCLOCK** ](https://msdn.microsoft.com/library/windows/hardware/ff537403)是属性合成器节点 ([**KSNODETYPE\_合成器**](https://msdn.microsoft.com/library/windows/hardware/ff537203))。 尽管两者都是节点属性，这些属性的请求不包含节点 Id。 (请注意，该请求的属性描述符是类型的结构[ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)，而不[ **KSNODEPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff537143)。)此行为违反了一般的规则节点属性需要一个节点 id。 尽管这种差异，支持这两个属性的微型端口驱动程序应提供的属性处理程序通过**节点**PCFILTER 成员\_描述符 (而不是**Pin**成员）。
+-   [**KSPROPERTY\_合成\_卷**](https://docs.microsoft.com/previous-versions/ff537409(v=vs.85))并[ **KSPROPERTY\_合成器\_MASTERCLOCK** ](https://docs.microsoft.com/previous-versions/ff537403(v=vs.85))是属性合成器节点 ([**KSNODETYPE\_合成器**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer))。 尽管两者都是节点属性，这些属性的请求不包含节点 Id。 (请注意，该请求的属性描述符是类型的结构[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))，而不[ **KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)。)此行为违反了一般的规则节点属性需要一个节点 id。 尽管这种差异，支持这两个属性的微型端口驱动程序应提供的属性处理程序通过**节点**PCFILTER 成员\_描述符 (而不是**Pin**成员）。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - IPrintOemDriverUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea05008ba7661731aae11aceb9b83f1d9869045d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e418eeb2cfa3ac1f44241927ac44e1467b46115
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371141"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360721"
 ---
 # <a name="iprintoemdriverui-com-interface"></a>IPrintOemDriverUI COM 接口
 
@@ -36,15 +36,15 @@ ms.locfileid: "63371141"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553114" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvGetDriverSetting&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553114)"><strong>IPrintOemDriverUI::DrvGetDriverSetting</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvgetdriversetting" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvGetDriverSetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvgetdriversetting)"><strong>IPrintOemDriverUI::DrvGetDriverSetting</strong></a></p></td>
 <td><p>允许插件的 UI 获取打印机功能和其他内部信息的当前状态。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553115" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvUpdateUISetting&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553115)"><strong>IPrintOemDriverUI::DrvUpdateUISetting</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvupdateuisetting" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvUpdateUISetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvupdateuisetting)"><strong>IPrintOemDriverUI::DrvUpdateUISetting</strong></a></p></td>
 <td><p>允许插件的 UI 来通知已修改的用户界面选项的驱动程序。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff553118" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvUpgradeRegistrySetting&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff553118)"><strong>IPrintOemDriverUI::DrvUpgradeRegistrySetting</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvupgraderegistrysetting" data-raw-source="[&lt;strong&gt;IPrintOemDriverUI::DrvUpgradeRegistrySetting&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemdriverui-drvupgraderegistrysetting)"><strong>IPrintOemDriverUI::DrvUpgradeRegistrySetting</strong></a></p></td>
 <td><p>允许插件的 UI 更新存储在注册表中的设备设置。</p></td>
 </tr>
 </tbody>

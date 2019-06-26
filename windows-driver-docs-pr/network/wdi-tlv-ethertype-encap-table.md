@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ETHERTYPE_ENCAP_TABLE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 09984b650f05b0c6b455ac3a308f1bc7a8cc1e5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10a5c91693127604ab26407550b6ffdc03110564
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380869"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358552"
 ---
 # <a name="wditlvethertypeencaptable"></a>WDI\_TLV\_ETHERTYPE\_ENCAP\_TABLE
 
@@ -33,7 +33,7 @@ WDI\_TLV\_ETHERTYPE\_封闭\_表是包含关联 Ethertype 封装 TLV。
 
 | 在任务栏的搜索框中键入                                                                                       | 描述                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_ETHERTYPE\_封装\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn897818)\[\] | 一个数组[ **WDI\_ETHERTYPE\_封装\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn897818)指定关联 Ethertype 封装的元素。 |
+| [**WDI\_ETHERTYPE\_封装\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)\[\] | 一个数组[ **WDI\_ETHERTYPE\_封装\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_ethertype_encapsulation_entry)指定关联 Ethertype 封装的元素。 |
 
  
 

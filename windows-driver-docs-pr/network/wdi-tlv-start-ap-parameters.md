@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_START_AP_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b71a39ca9811b03a234e3afe89598b18bf9e1eae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3864d206eae6af8a7a5b1ea1917f8c4881e0e079
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330431"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362792"
 ---
 # <a name="wditlvstartapparameters"></a>WDI\_TLV\_START\_AP\_PARAMETERS
 
 
-WDI\_TLV\_启动\_AP\_参数是包含参数的 TLV [OID\_WDI\_任务\_启动\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964).
+WDI\_TLV\_启动\_AP\_参数是包含参数的 TLV [OID\_WDI\_任务\_启动\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap).
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -67,7 +67,7 @@ WDI\_TLV\_启动\_AP\_参数是包含参数的 TLV [OID\_WDI\_任务\_启动\_AP
 <tr class="even">
 <td>UINT8</td>
 <td>在 Windows 10 版本 1511，WDI 版本 1.0.10 中添加。
-<p>MustUseSpecifiedChannels。 此参数指定是否在 AP，仅可以在中指定的通道上启动<a href="https://msdn.microsoft.com/library/windows/hardware/dn925964" data-raw-source="[OID_WDI_TASK_START_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964)">OID_WDI_TASK_START_AP</a>任务的参数<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"> <strong>WDI_TLV_AP_BAND_CHANNEL</strong></a>。 有效值为 0 和 1。 如果设置为 1，AP 只能启动从指定的列表。 如果未设置，该列表旨在提供建议的固件，可以选择的通道和它可能会选取另一个通道，如果不能在任何指定的通道上启动 AP。</p></td>
+<p>MustUseSpecifiedChannels。 此参数指定是否在 AP，仅可以在中指定的通道上启动<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap" data-raw-source="[OID_WDI_TASK_START_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap)">OID_WDI_TASK_START_AP</a>任务的参数<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"> <strong>WDI_TLV_AP_BAND_CHANNEL</strong></a>。 有效值为 0 和 1。 如果设置为 1，AP 只能启动从指定的列表。 如果未设置，该列表旨在提供建议的固件，可以选择的通道和它可能会选取另一个通道，如果不能在任何指定的通道上启动 AP。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ WDI\_TLV\_启动\_AP\_参数是包含参数的 TLV [OID\_WDI\_任务\_启动\_AP
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_TASK\_START\_AP](https://msdn.microsoft.com/library/windows/hardware/dn925964)
+[OID\_WDI\_TASK\_START\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap)
 
  
 

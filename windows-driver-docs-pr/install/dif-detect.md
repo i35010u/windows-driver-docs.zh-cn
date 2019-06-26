@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 58c275e42705cc696ac0fded6a5e5be0e0e5241a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a26c57dd7f444ad87f49240f4b73a1a4f2d33594
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391701"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354658"
 ---
 # <a name="difdetect"></a>DIF_DETECT
 
@@ -58,7 +58,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备并将设备�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://msdn.microsoft.com/library/windows/hardware/ff541247)。 没有[设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff541509)与关联*DeviceInfoSet*。
+提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)。 没有[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)与关联*DeviceInfoSet*。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 无
@@ -67,7 +67,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备并将设备�
 没有设备与关联的安装参数*DeviceInfoSet*。
 
 <a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_DETECTDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552341)与关联结构*DeviceInfoSet*。 参数包含类安装程序调用以指示检测操作的进度的回调例程。
+[ **SP_DETECTDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)与关联结构*DeviceInfoSet*。 参数包含类安装程序调用以指示检测操作的进度的回调例程。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -93,13 +93,13 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备并将设备�
 
 如果安装程序检测到设备，它应执行至少以下操作：
 
--   调用**DetectProgressNotify**中的回调例程[ **SP_DETECTDEVICE_PARAMS** ](https://msdn.microsoft.com/library/windows/hardware/ff552341)类的安装参数，如果检测可能会出现明显时间量。
+-   调用**DetectProgressNotify**中的回调例程[ **SP_DETECTDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)类的安装参数，如果检测可能会出现明显时间量。
 
 -   对于每个安装程序检测到的设备，它应当：
-    -   创建设备信息元素 ([**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952))。
+    -   创建设备信息元素 ([**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa))。
     -   提供有关驱动程序选项的信息。
 
-        安装程序手动选择该设备驱动程序或安装程序可以设置设备的硬件 ID，Windows 将用来查找设备 INF。 安装程序通过调用来设置的硬件 ID [ **SetupDiSetDeviceRegistryProperty** ](https://msdn.microsoft.com/library/windows/hardware/ff552169)与*属性*SPDRP_HARDWAREID 的值。
+        安装程序手动选择该设备驱动程序或安装程序可以设置设备的硬件 ID，Windows 将用来查找设备 INF。 安装程序通过调用来设置的硬件 ID [ **SetupDiSetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)与*属性*SPDRP_HARDWAREID 的值。
 
     -   可能将某些设备设置安装参数。
 
@@ -109,7 +109,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备并将设备�
 
 若要在 GUI 模式下安装过程中检测到非 PnP 设备，安装程序必须处理[ **DIF_FIRSTTIMESETUP** ](dif-firsttimesetup.md)请求。 GUI 模式下安装程序不向安装程序发送 DIF_DETECT 请求。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://msdn.microsoft.com/library/windows/hardware/ff546094)。
+有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
 <a name="requirements"></a>要求
 ------------
@@ -138,11 +138,11 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备并将设备�
 
 [**DIF_FIRSTTIMESETUP**](dif-firsttimesetup.md)
 
-[**SetupDiCreateDeviceInfo**](https://msdn.microsoft.com/library/windows/hardware/ff550952)
+[**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SP_DETECTDEVICE_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552341)
+[**SP_DETECTDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)
 
-[**SP_DEVINSTALL_PARAMS**](https://msdn.microsoft.com/library/windows/hardware/ff552346)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
 

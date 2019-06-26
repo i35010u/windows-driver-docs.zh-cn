@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Hrtf3d
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffd94c3b3916952d762fc25583159057164b4008
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b800a8583d041620ff1ac2382d46cca00189ad7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332513"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67360481"
 ---
 # <a name="kspropsetidhrtf3d"></a>KSPROPSETID\_Hrtf3d
 
@@ -25,9 +25,9 @@ ms.locfileid: "63332513"
 
 此属性集的定义假定 HRTF 算法实现与无限脉冲响应 (IIR) 过滤器，表示音频源中的单个位置的效果。
 
-数字筛选器通常具有暂时性的初始响应。 当将源从一个位置移动到下一步，过滤器系数将更改和 HRTF 算法跨淡化到新位置处的筛选器中的旧位置筛选器的输出。 **FilterTransientMuteLength**的成员[ **KSDS3D\_HRTF\_INIT\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff537106)结构指定的数目为了避免呈现新筛选器的初始暂时性淡延迟跨所依据的示例。 在此期间，输出来自旧筛选器。 **FilterOverlapBufferLength**成员 （相同的结构） 指定要对其设为静音的样本总数并交叉淡入淡出该筛选器输出。
+数字筛选器通常具有暂时性的初始响应。 当将源从一个位置移动到下一步，过滤器系数将更改和 HRTF 算法跨淡化到新位置处的筛选器中的旧位置筛选器的输出。 **FilterTransientMuteLength**的成员[ **KSDS3D\_HRTF\_INIT\_MSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_hrtf_init_msg)结构指定的数目为了避免呈现新筛选器的初始暂时性淡延迟跨所依据的示例。 在此期间，输出来自旧筛选器。 **FilterOverlapBufferLength**成员 （相同的结构） 指定要对其设为静音的样本总数并交叉淡入淡出该筛选器输出。
 
-当源向左移动右半面中时，切换筛选器。 此开关可能会导致声音 pop。 **SwapChannels**的成员[ **KSDS3D\_HRTF\_PARAMS\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff537108)结构指示要交换的 HRTF 算法输出到其他半面反转的源位置。 **CrossFadeOutput**成员 （相同的结构） 会告知要跨的淡入淡出的输出通道后跨方位转换角度零的算法。 **OutputOverlapBufferLength** KSDS3D 成员\_HRTF\_INIT\_消息指定要对其进行交叉淡入此转换发生时的样本数。
+当源向左移动右半面中时，切换筛选器。 此开关可能会导致声音 pop。 **SwapChannels**的成员[ **KSDS3D\_HRTF\_PARAMS\_MSG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)结构指示要交换的 HRTF 算法输出到其他半面反转的源位置。 **CrossFadeOutput**成员 （相同的结构） 会告知要跨的淡入淡出的输出通道后跨方位转换角度零的算法。 **OutputOverlapBufferLength** KSDS3D 成员\_HRTF\_INIT\_消息指定要对其进行交叉淡入此转换发生时的样本数。
 
 由于对称性，一半的过滤器系数需要下载到 HRTF 算法时的方位角度为零。 **ZeroAzimuth** KSDS3D 成员\_HRTF\_PARAMS\_消息指示当发生这种情况。
 

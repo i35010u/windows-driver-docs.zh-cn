@@ -16,12 +16,12 @@ keywords:
 - 整卷滑块 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ca4779183d005f3a06082783b17b593c7b3225
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b908666d2a161af257db02fb87e7023734c02f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333814"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67359074"
 ---
 # <a name="default-audio-volume-settings"></a>默认的音频音量设置
 
@@ -35,14 +35,14 @@ SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示
 
 如果音频适配器没有硬件放大器，请参阅[软件卷控件支持](software-volume-control-support.md)提供软件支持的信息。
 
-**请注意**  如果硬件放大器，则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)内核流式处理属性。 如果不是硬件放大器，则 Windows 将创建一个软件卷控件 APO。
+**请注意**  如果硬件放大器，则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)内核流式处理属性。 如果不是硬件放大器，则 Windows 将创建一个软件卷控件 APO。
 如果没有物理卷旋钮的发言人可用集合，它应在显示 Windows 为 HID 控件。 这将为卷同样正常向上和向下按钮的键盘; 上的卷Windows 会看到卷旋钮打开，并将卷计划控制相应地 （无论它是一个硬件或软件卷）。
 
  
 
-理想情况下，如果一套 active 扬声器附带在同一个框中的音频的适配器卡，在工厂应调整卷旋钮演讲者最适用于适配器的默认卷设置的位置上。 如果音频适配器不具有物理卷控件旋钮，请参阅[软件卷控件支持](https://msdn.microsoft.com/library/windows/hardware/ff539263)主题，了解有关通过 Windows 提供的软件支持的信息。
+理想情况下，如果一套 active 扬声器附带在同一个框中的音频的适配器卡，在工厂应调整卷旋钮演讲者最适用于适配器的默认卷设置的位置上。 如果音频适配器不具有物理卷控件旋钮，请参阅[软件卷控件支持](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)主题，了解有关通过 Windows 提供的软件支持的信息。
 
-**请注意**  如果音频硬件公开硬件卷控件 （如卷旋钮），则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://msdn.microsoft.com/library/windows/hardware/ff537309)内核流式处理的属性。
+**请注意**  如果音频硬件公开硬件卷控件 （如卷旋钮），则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)内核流式处理的属性。
 
  
 
@@ -89,7 +89,7 @@ SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示
  
 
 \*术语非-麦克风描述所有播放设备和非麦克风录音设备。
-有关由 Windows 应用程序中的软件卷滑块物理卷滑块的操作特征的信息，请参阅[Audio-Tapered 音量控件](https://msdn.microsoft.com/library/windows/desktop/dd370798.aspx)。
+有关由 Windows 应用程序中的软件卷滑块物理卷滑块的操作特征的信息，请参阅[Audio-Tapered 音量控件](https://docs.microsoft.com/windows/desktop/CoreAudio/audio-tapered-volume-controls)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [自定义默认音频音量设置](customizing-default-audio-volume-settings.md)  

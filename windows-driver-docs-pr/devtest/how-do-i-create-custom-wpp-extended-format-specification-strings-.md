@@ -4,12 +4,12 @@ description: 如何创建自定义 WPP 扩展的格式规范字符串
 ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4778aab27945662eca2422ae55cb594c516632
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57fac7ac4e0fdd36248b1df4787ce3ad8a8917b5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359489"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358298"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义的 WPP 扩展格式规范字符串？
 
@@ -115,7 +115,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义的结构，用于保存的长度和可变长度的缓冲区的地址。 在日志中初始化此结构\_LENSTR 宏是每次调用本地[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)在 HEXDUMP 复杂类型在使用*FormatString*参数。
+    此语句定义的结构，用于保存的长度和可变长度的缓冲区的地址。 在日志中初始化此结构\_LENSTR 宏是每次调用本地[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))在 HEXDUMP 复杂类型在使用*FormatString*参数。
 
 3.  <span codelanguage=""></span>
     <table>
@@ -129,7 +129,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义的宏，用来初始化 xstr\_t 结构的长度可变的缓冲区。 必须使用此宏将传递在长度可变的缓冲区*VariableList*的参数[ **DoTraceMessage**](https://msdn.microsoft.com/library/windows/hardware/ff544918)。
+    此语句定义的宏，用来初始化 xstr\_t 结构的长度可变的缓冲区。 必须使用此宏将传递在长度可变的缓冲区*VariableList*的参数[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))。
 
 4.  <span codelanguage=""></span>
     <table>
@@ -150,7 +150,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     -   首次调用 WPP\_LOGPAIR 传递长度可变的缓冲区的大小。
     -   第二个调用 WPP\_LOGPAIR 传递的缓冲区本身的地址。
 
-    **请注意**  此宏需要 xstr\_t 结构已初始化，长度可变的缓冲区通过日志调用\_LENSTR。 因此，必须将传递到长度可变的缓冲区[ **DoTraceMessage** ](https://msdn.microsoft.com/library/windows/hardware/ff544918)通过日志\_LENSTR 宏。
+    **请注意**  此宏需要 xstr\_t 结构已初始化，长度可变的缓冲区通过日志调用\_LENSTR。 因此，必须将传递到长度可变的缓冲区[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))通过日志\_LENSTR 宏。
 
      
 

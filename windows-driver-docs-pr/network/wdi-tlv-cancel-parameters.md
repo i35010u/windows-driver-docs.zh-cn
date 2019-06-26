@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CANCEL_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 904134a226fe0eccfa9d7d7cb29d586b35d91428
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd887ef59cb1105adf53e7ac3247110600b61593
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359730"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358590"
 ---
 # <a name="wditlvcancelparameters"></a>WDI\_TLV\_取消\_参数
 
 
-WDI\_TLV\_取消\_参数是包含参数的 TLV [OID\_WDI\_中止\_任务](https://msdn.microsoft.com/library/windows/hardware/dn925835)。
+WDI\_TLV\_取消\_参数是包含参数的 TLV [OID\_WDI\_中止\_任务](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-abort-task)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

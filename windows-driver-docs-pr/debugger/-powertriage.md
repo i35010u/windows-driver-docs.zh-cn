@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a760ab85eb0a5ea9b484754eb987dbd2c2a7da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5a96131147a9272bd50287b6b7bca70969df8c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67363095"
 ---
 # <a name="powertriage"></a>!powertriage
 
@@ -58,9 +58,9 @@ ms.locfileid: "63334371"
 ！ Powertriage 扩展将显示以下信息。
 
 1. 电源和设备节点的状态 ！ podev 的所有设备对象。
-2. 链接到[ **！ rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)如果驱动程序已启用 IFR。 有关 IFR 详细信息，请参阅[使用即时跟踪记录器 (IFR) KMDF 和 UMDF 2 驱动程序中](https://msdn.microsoft.com/library/windows/hardware/dn940485)。
+2. 链接到[ **！ rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)如果驱动程序已启用 IFR。 有关 IFR 详细信息，请参阅[使用即时跟踪记录器 (IFR) KMDF 和 UMDF 2 驱动程序中](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)。
 3. 链接到[ **！ wdfkd.wdfdriverinfo** ](-wdfkd-wdfdriverinfo.md)并[ **！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md) WDF 驱动程序。
-4. 链接到 ！ fxdevice PoFx 设备。 有关 PoFX 详细信息，请参阅[电源管理框架概述](https://msdn.microsoft.com/library/windows/hardware/hh406637)。
+4. 链接到 ！ fxdevice PoFx 设备。 有关 PoFX 详细信息，请参阅[电源管理框架概述](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。
 下面是示例输出 ！ powertriage 命令。
 
 ```dbgcmd

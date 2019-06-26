@@ -4,12 +4,12 @@ description: 为何符号加载有时需要花费很长时间？ 这取决于符
 ms.assetid: 710BAEAF-BC45-416E-8359-69E9DFCA2570
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ac691b1bb58f52f506e9fb7d3fbf6caa5031fe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 063d442c36b6b5a240f024927f56a02443d37fce
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354398"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67362399"
 ---
 # <a name="avoiding-debugger-searches-for-un-needed-symbols"></a>避免调试器搜索不需要的符号
 
@@ -58,7 +58,7 @@ ms.locfileid: "63354398"
 
 [WDK 和 WinDbg 下载](https://go.microsoft.com/fwlink/p/?LinkId=733614)
 
-[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063.aspx)
+[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
 
  
 

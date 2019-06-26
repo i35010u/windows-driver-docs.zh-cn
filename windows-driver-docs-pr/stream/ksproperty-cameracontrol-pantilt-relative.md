@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc01cdc7ec9bb6acc00ca933db27e59d1819ba50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c857001f3be6d5c2c6279990403784765e3f944
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374051"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353212"
 ---
 # <a name="kspropertycameracontrolpantiltrelative"></a>KSPROPERTY\_CAMERACONTROL\_PANTILT\_相对
 
@@ -53,7 +53,7 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT\_相对属性指定的照相机水平或垂�
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff564421" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564421)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong> </a>或<a href="https://msdn.microsoft.com/library/windows/hardware/ff564451" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff564451)"> <strong>KSPROPERTY_CAMERACONTROL_S2</strong> </a>具体取决于该请求是一个筛选器或节点</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)"> <strong>KSPROPERTY_CAMERACONTROL_S2</strong> </a>具体取决于该请求是一个筛选器或节点</p></td>
 <td><p>对长整数</p></td>
 </tr>
 </tbody>
@@ -132,7 +132,7 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT\_相对属性指定的照相机水平或垂�
 
 客户端时发出 get 请求，接收中的平移值**Value1**中的成员以及倾斜值**Value2** KSPROPERTY 成员\_CAMERACONTROL\_S2 或KSPROPERTY\_CAMERACONTROL\_节点\_S2 结构。 值指示当前平移或倾斜的相机的状态。
 
-请注意，特定设备可能仅支持某些速度范围。 若要确定设备支持的速度的范围，应用程序可以发出 KSPROPERTY\_类型\_BASICSUPPORT 请求。 您可以指定 KSPROPERTY\_类型\_中的 BASICSUPPORT**标志**的成员[ **KSPROPERTY\_项**](https://msdn.microsoft.com/library/windows/hardware/ff565176)结构。
+请注意，特定设备可能仅支持某些速度范围。 若要确定设备支持的速度的范围，应用程序可以发出 KSPROPERTY\_类型\_BASICSUPPORT 请求。 您可以指定 KSPROPERTY\_类型\_中的 BASICSUPPORT**标志**的成员[ **KSPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)结构。
 
 某些设备支持单个平移或倾斜速度。 在本示例中的符号**Value1**或**Value2**成员指示方向平移。
 
@@ -159,9 +159,9 @@ KSPROPERTY\_CAMERACONTROL\_PANTILT\_相对属性指定的照相机水平或垂�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY\_CAMERACONTROL\_S2**](https://msdn.microsoft.com/library/windows/hardware/ff564451)
+[**KSPROPERTY\_CAMERACONTROL\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)
 
-[**KSPROPERTY\_CAMERACONTROL\_节点\_S2**](https://msdn.microsoft.com/library/windows/hardware/ff564421)
+[**KSPROPERTY\_CAMERACONTROL\_节点\_S2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)
 
  
 
