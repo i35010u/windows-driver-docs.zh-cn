@@ -4,12 +4,12 @@ description: 集合列表旧帮助程序函数由 v2 传感器驱动程序用来
 ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d1acced6e3386fea3b3d8691becbe88f5f6b8c31
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 600977b9c952d06d3590e253f1388903a1a0d712
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325273"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354906"
 ---
 # <a name="collection-list-legacy-helpers"></a>集合列表旧版帮助程序
 
@@ -26,11 +26,11 @@ ms.locfileid: "63325273"
 
 -   设置主键的值\_传感器\_MaximumDataFieldSize\_字节属性。
 
--   返回*pSize*值从[EvtSensorGetProperties](https://msdn.microsoft.com/library/windows/hardware/dn957032)。
+-   返回*pSize*值从[EvtSensorGetProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
--   返回*pSize*值从[ *EvtSensorGetDataFieldProperties*](https://msdn.microsoft.com/library/windows/hardware/dn957029)。
+-   返回*pSize*值从[ *EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
--   返回*pSize*值从[ *EvtSensorGetDataThresholds*](https://msdn.microsoft.com/library/windows/hardware/dn957031)。
+-   返回*pSize*值从[ *EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
 备注
 
@@ -42,11 +42,11 @@ ms.locfileid: "63325273"
 
 通过传感器 DDSI 的使用情况
 
--   使用中的集合列表来填充[ *EvtSensorGetProperties*](https://msdn.microsoft.com/library/windows/hardware/dn957032)
+-   使用中的集合列表来填充[ *EvtSensorGetProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   使用中的集合列表来填充[ *EvtSensorGetDataFieldProperties*](https://msdn.microsoft.com/library/windows/hardware/dn957029)
+-   使用中的集合列表来填充[ *EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   使用中的集合列表来填充[ *EvtSensorGetDataThresholds*](https://msdn.microsoft.com/library/windows/hardware/dn957031)
+-   使用中的集合列表来填充[ *EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 备注
 
@@ -78,9 +78,9 @@ ms.locfileid: "63325273"
 
 通过传感器 DDSI 的使用情况
 
--   将缓冲区传递给传感器驱动程序使用[ *EvtSensorSetDataThresholds*](https://msdn.microsoft.com/library/windows/hardware/dn957039)。
+-   将缓冲区传递给传感器驱动程序使用[ *EvtSensorSetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
--   将缓冲区传递给驱动程序使用[ *EvtSensorDeviceIoControl*](https://msdn.microsoft.com/library/windows/hardware/dn957028)。
+-   将缓冲区传递给驱动程序使用[ *EvtSensorDeviceIoControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
 备注
 

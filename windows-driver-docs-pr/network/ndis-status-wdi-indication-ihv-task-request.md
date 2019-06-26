@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b321c1a34360d07cb14e660c2dc31c32e4cbc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de16d861a746c6f70b6102af966e7860baf1e822
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390681"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354940"
 ---
 # <a name="ndisstatuswdiindicationihvtaskrequest"></a>NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求
 
@@ -20,7 +20,7 @@ ms.locfileid: "63390681"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -29,8 +29,8 @@ ms.locfileid: "63390681"
 
 | 在任务栏的搜索框中键入                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                  |
 |----------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_TASK\_REQUEST\_PARAMETERS**](https://msdn.microsoft.com/library/windows/hardware/dn926314) |                                |          | 此任务 IHV 请求的优先级。 请参阅[ **WDI\_IHV\_任务\_优先级**](https://msdn.microsoft.com/library/windows/hardware/dn926064)有效的值的枚举。 |
-| [**WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/dn926313)         |                                | X        | IHV 提供上下文信息转发给[OID\_WDI\_任务\_IHV](oid-wdi-task-ihv.md)。                                       |
+| [**WDI\_TLV\_IHV\_TASK\_REQUEST\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-request-parameters) |                                |          | 此任务 IHV 请求的优先级。 请参阅[ **WDI\_IHV\_任务\_优先级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_ihv_task_priority)有效的值的枚举。 |
+| [**WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-device-context)         |                                | X        | IHV 提供上下文信息转发给[OID\_WDI\_任务\_IHV](oid-wdi-task-ihv.md)。                                       |
 
  
 

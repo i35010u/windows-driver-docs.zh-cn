@@ -9,12 +9,12 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b5b0f1f4182122b2196cf086662023816799d8
-ms.sourcegitcommit: 6a0636c33e28ce2a9a742bae20610f0f3435262c
+ms.openlocfilehash: 44676e967ae4c07deed76d76bbceb06b92ca2ccd
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65836341"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356853"
 ---
 # <a name="registry-settings-for-serenum"></a>用于 Serenum 的注册表设置
 
@@ -23,15 +23,15 @@ ms.locfileid: "65836341"
 下面的注册表条目值是 RS-232 端口插硬件设备注册表项下：
 
 <a href="" id="portname--reg-sz-"></a>**PortName** (REG\_SZ)  
-指定的端口的名称。 Serenum 读取此值，并在响应中返回的端口名称[ **IOCTL\_SERENUM\_获取\_端口\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff546533)请求。
+指定的端口的名称。 Serenum 读取此值，并在响应中返回的端口名称[ **IOCTL\_SERENUM\_获取\_端口\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ni-ntddser-ioctl_serenum_get_port_name)请求。
 
 <a href="" id="identifier--reg-sz-"></a>**标识符**(REG\_SZ)  
 指定的端口的名称。 Serenum 读取此值。 为支持**标识符**条目值仅为与某些旧的 PCMCIA 设备兼容性而提供。 利用**标识符**条目值已过时，不应与在 Windows 2000 和更高版本的驱动程序实现。 Serenum 返回端口名称，以响应 IOCTL\_SERENUM\_获取\_端口\_名称请求。
 
 <a href="" id="skipenumerations--reg-dword-"></a>**SkipEnumerations** (REG\_DWORD)  
-在 Windows XP 及更高版本，此项值控制当 Serenum 枚举响应中的端口[ **IRP\_MN\_查询\_设备\_关系**](https://msdn.microsoft.com/library/windows/hardware/ff551670)征求**BusRelations**。 
+在 Windows XP 及更高版本，此项值控制当 Serenum 枚举响应中的端口[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)征求**BusRelations**。 
 
-每次系统将生成一个串行端口设备堆栈时，设置 Serenum*枚举模式*它使用枚举一个端口。 端口的设备堆栈，Serenum 的初始化过程[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程中读取的端口**SkipEnumerations**条目值，并将作为枚举模式设置下表中所述。
+每次系统将生成一个串行端口设备堆栈时，设置 Serenum*枚举模式*它使用枚举一个端口。 端口的设备堆栈，Serenum 的初始化过程[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程中读取的端口**SkipEnumerations**条目值，并将作为枚举模式设置下表中所述。
 
 <table>
 <colgroup>

@@ -5,19 +5,19 @@ ms.assetid: d09fcab5-4c3b-432a-ba9e-fd4269537de6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_QUEUE_ALLOCATION_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 26cbf5558694d14e1e788235a43b80081453be5a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56e85dd697cae5aac2d529408289cc958341cfc8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362558"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356128"
 ---
 # <a name="oidreceivefilterqueueallocationcomplete"></a>OID\_接收\_筛选器\_队列\_分配\_完成
 
 
 协议的 NDIS 驱动程序发出对象标识符 (OID) 方法请求的 OID\_接收\_筛选器\_队列\_分配\_完成通知分配已完成的微型端口驱动程序接收队列的当前批处理。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://msdn.microsoft.com/library/windows/hardware/ff566710)结构包含一个指向[ **NDIS\_接收\_队列\_分配\_完成\_数组**](https://msdn.microsoft.com/library/windows/hardware/ff567195)结构，后跟[ **NDIS\_接收\_队列\_分配\_完成\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567197)结构为每个队列。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含指向同一数组的指针结构，并**CompletionStatus**的每个成员**NDIS\_接收\_队列\_分配\_完成\_参数**结构包含每个队列的完成状态。
+**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_接收\_队列\_分配\_完成\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)结构，后跟[ **NDIS\_接收\_队列\_分配\_完成\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)结构为每个队列。 通过 OID 方法请求成功返回后**InformationBuffer**的成员**NDIS\_OID\_请求**结构包含指向同一数组的指针结构，并**CompletionStatus**的每个成员**NDIS\_接收\_队列\_分配\_完成\_参数**结构包含每个队列的完成状态。
 
 <a name="remarks"></a>备注
 -------
@@ -26,7 +26,7 @@ OID 方法请求的 OID\_接收\_筛选器\_队列\_分配\_完成是可选的 N
 
 分配后一个或多个接收队列并根据需要设置初始筛选器，协议驱动程序必须发出 OID 方法请求的 OID\_接收\_筛选器\_队列\_分配\_为了通知的接收队列的当前批处理已完成分配的微型端口驱动程序完成。 这允许微型端口驱动程序，以平衡硬件资源分到多个接收队列;如有必要，它可以为接收队列分配资源，例如共享内存。
 
-后微型端口驱动程序将收到一个 OID\_接收\_筛选器\_队列\_分配\_完整的请求，并且它有队列设置的筛选器，该队列处于运行状态。 在此状态下，微型端口驱动程序可以通过调用开始的队列中的数据包迹象[ **NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)。
+后微型端口驱动程序将收到一个 OID\_接收\_筛选器\_队列\_分配\_完整的请求，并且它有队列设置的筛选器，该队列处于运行状态。 在此状态下，微型端口驱动程序可以通过调用开始的队列中的数据包迹象[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -46,7 +46,7 @@ OID 方法请求的 OID\_接收\_筛选器\_队列\_分配\_完成是可选的 N
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>队列分配已完成。 包含已更新信息缓冲区<a href="https://msdn.microsoft.com/library/windows/hardware/ff567195" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff567195)"> <strong>NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY</strong> </a>结构和参数结构与队列分配的完成状态。</p></td>
+<td><p>队列分配已完成。 包含已更新信息缓冲区<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)"> <strong>NDIS_RECEIVE_QUEUE_ALLOCATION_COMPLETE_ARRAY</strong> </a>结构和参数结构与队列分配的完成状态。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
@@ -58,7 +58,7 @@ OID 方法请求的 OID\_接收\_筛选器\_队列\_分配\_完成是可选的 N
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区太短。 NDIS 集<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。<strong>BytesNeeded</strong>中的成员<a href="https://msdn.microsoft.com/library/windows/hardware/ff566710" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566710)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 NDIS 集<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。<strong>BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>
@@ -96,13 +96,13 @@ OID 方法请求的 OID\_接收\_筛选器\_队列\_分配\_完成是可选的 N
 ## <a name="see-also"></a>请参阅
 
 
-[**NdisMIndicateReceiveNetBufferLists**](https://msdn.microsoft.com/library/windows/hardware/ff563598)
+[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)
 
-[**NDIS\_OID\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff566710)
+[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_接收\_队列\_分配\_完成\_数组**](https://msdn.microsoft.com/library/windows/hardware/ff567195)
+[**NDIS\_接收\_队列\_分配\_完成\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_array)
 
-[**NDIS\_接收\_队列\_分配\_完成\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff567197)
+[**NDIS\_接收\_队列\_分配\_完成\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_allocation_complete_parameters)
 
  
 

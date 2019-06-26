@@ -3,12 +3,12 @@ Description: 在本部分中的主题介绍客户端驱动程序必须配置其�
 title: 选择 USB 驱动程序中的 USB 配置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 863cfa49f6b779888e79e795623bbf3988889e2d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e5036268bf3b8472b75c98ac59a5330c34246bab
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352603"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356627"
 ---
 # <a name="selecting-a-usb-configuration-in-usb-drivers"></a>选择 USB 驱动程序中的 USB 配置
 
@@ -63,15 +63,15 @@ WDM 基于客户端驱动程序可以选择任何配置 USB 设备中。
 如果客户端驱动程序使用 WDF 对象或设备有一个单一的界面或多个接口存在一些限制。 更改默认配置之前，请考虑以下限制：
 
 -   用于管理接口或通过接口集合的复合设备的客户端驱动程序[USB 通用父驱动程序](usb-common-class-generic-parent-driver.md)(Usbccgp.sys) 不能更改设备的配置值。 但是，客户端驱动程序可以配置 Usbccgp.sys 选择以外的第一个 （默认值） 配置的配置。 有关详细信息，请参阅[配置 Usbccgp.sys 选择非默认 USB 配置](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)。
--   使用框架的 KMDF 基于客户端驱动程序[USB I/O 目标](https://msdn.microsoft.com/library/windows/hardware/ff544752)可以选择仅第一个配置。
+-   使用框架的 KMDF 基于客户端驱动程序[USB I/O 目标](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets)可以选择仅第一个配置。
 -   [WinUSB](winusb.md)仅支持第一个配置。
 -   类驱动程序经常缺少对多个配置的支持。 如果你的设备实现由 USB 类规范定义的类，请参阅[USB 技术](https://go.microsoft.com/fwlink/p/?linkid=8769)网站以获取有关设备类和类规范的信息。 Microsoft 提供了受支持的 USB 设备类的类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](supported-usb-classes.md)。
 
 ## <a name="related-topics"></a>相关主题
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 [USB 配置描述符](usb-configuration-descriptors.md)  
-[使用 USB 设备](https://msdn.microsoft.com/library/windows/hardware/ff553101)  
-[使用 USB 接口在 UMDF](https://msdn.microsoft.com/library/windows/hardware/ff561478)  
+[使用 USB 设备](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices)  
+[使用 USB 接口在 UMDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers)  
 
 
 

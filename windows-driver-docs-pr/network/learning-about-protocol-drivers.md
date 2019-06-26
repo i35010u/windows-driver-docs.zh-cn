@@ -13,12 +13,12 @@ keywords:
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 855c11ba5759ced11eb1f37bde856286f35a19db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ddb35995bb4b84f133aae42b8c8e0b9a58be812f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388758"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356221"
 ---
 # <a name="learning-about-protocol-drivers"></a>了解协议驱动程序
 
@@ -45,7 +45,7 @@ ms.locfileid: "63388758"
 
 -   [协议的 NDIS 驱动程序](ndis-protocol-drivers.md)
 
--   [Windows 套接字传输帮助程序 Dll](https://msdn.microsoft.com/library/windows/hardware/ff565691)
+-   [Windows 套接字传输帮助程序 Dll](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565691(v=vs.85))
 
  
 

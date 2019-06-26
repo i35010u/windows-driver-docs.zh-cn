@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5ae25402890ada764c5a4c1237da8b116ca4bf0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c8722be0f3f98d193a062a523184fb565421426
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340009"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355501"
 ---
 # <a name="guidclassusbhostcontroller"></a>GUID_CLASS_USB_HOST_CONTROLLER
 
 
-GUID_CLASS_USB_HOST_CONTROLLER 是已过时标识符[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)有关[USB](https://msdn.microsoft.com/library/windows/hardware/ff538930)托管控制器设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_HOST_CONTROLLER** ](guid-devinterface-usb-host-controller.md)此类的新实例的类标识符。
+GUID_CLASS_USB_HOST_CONTROLLER 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)有关[USB](https://docs.microsoft.com/windows-hardware/drivers/)托管控制器设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_HOST_CONTROLLER** ](guid-devinterface-usb-host-controller.md)此类的新实例的类标识符。
 
 <a name="remarks"></a>备注
 -------

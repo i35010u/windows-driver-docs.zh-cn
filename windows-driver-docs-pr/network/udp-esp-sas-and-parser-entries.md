@@ -10,12 +10,12 @@ keywords:
 - SAs WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5d655628e902bccdd434081706651c56f5cc88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f9eb2cd03a893a4287c796dcc93eb6248501863
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358255"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355441"
 ---
 # <a name="udp-esp-sas-and-parser-entries"></a>UDP-ESP SA 和分析器项
 
@@ -42,11 +42,11 @@ TCP/IP 传输维护自己的分析程序条目，它已卸载到微型端口驱�
 
 ### <a name="adding-a-udp-esp-sa-and-parser-entry"></a>添加 UDP ESP SA 和分析器条目
 
-TCP/IP 传输请求微型端口驱动程序通过发出针对这些 SAs，添加一个或多个 UDP ESP SAs 和分析器条目[OID\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569809)请求。 **EncapTypeEntry**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构包含分析器条目信息。
+TCP/IP 传输请求微型端口驱动程序通过发出针对这些 SAs，添加一个或多个 UDP ESP SAs 和分析器条目[OID\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)请求。 **EncapTypeEntry**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构包含分析器条目信息。
 
 之前发出 OID\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA 请求，TCP/IP 传输确定正在卸载针对该 SAs 的分析器条目是否在其指定的 IP 接口的分析器条目列表。
 
--   如果分析器条目不在列表中的传输，传输将创建其自己的条目和集的副本**EncapTypeEntryOffloadHandle**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构**NULL**。 传输然后颁发[OID\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569809)请求。 收到请求后，该微型端口驱动程序确定是否分析器条目的**EncapTypeEntry**指定位于 NIC 的分析器条目列表。
+-   如果分析器条目不在列表中的传输，传输将创建其自己的条目和集的副本**EncapTypeEntryOffloadHandle**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构**NULL**。 传输然后颁发[OID\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)请求。 收到请求后，该微型端口驱动程序确定是否分析器条目的**EncapTypeEntry**指定位于 NIC 的分析器条目列表。
 
     -   如果指定的分析器条目不在 NIC 的分析器条目列表中，微型端口驱动程序通过封装类型来创建分析器条目和目标端口中指定**EncapTypeEntry**并将分析器条目添加到 NIC 的分析器条目列表。 微型端口驱动程序随后将负载分流 OID 中指定 SAs\_TCP\_任务\_IPSEC\_添加\_UDPESP\_SA 请求。 已成功完成后 OID 请求，微型端口驱动程序返回的句柄**EncapTypeEntryOffloadHandle**用于标识新创建的解析器条目。 微型端口驱动程序也会返回一个句柄，标识在卸载的 SAs **OffloadHandle**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构。
     -   如果指定的分析器条目已在分析器条目列表中的 NIC，微型端口驱动程序只需返回中的句柄**EncapTypeEntryOffloadHandle**为现有的分析程序条目。 微型端口驱动程序也会返回一个句柄，标识在卸载的 SAs **OffloadHandle**卸载成员\_IPSEC\_添加\_UDPESP\_SA 结构。
@@ -59,7 +59,7 @@ TCP/IP 传输请求微型端口驱动程序通过发出针对这些 SAs，添加
 
 ### <a name="deleting-a-udp-esp-sa-and-parser-entry"></a>UDP ESP SA 和分析器条目删除
 
-TCP/IP 传输请求微型端口驱动程序来删除这些 SAs 通过发出一个或多个 SAs 和可能的分析器条目[OID\_TCP\_任务\_IPSEC\_删除\_UDPESP\_SA](https://msdn.microsoft.com/library/windows/hardware/ff569811)请求。
+TCP/IP 传输请求微型端口驱动程序来删除这些 SAs 通过发出一个或多个 SAs 和可能的分析器条目[OID\_TCP\_任务\_IPSEC\_删除\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-delete-udpesp-sa)请求。
 
 发出此请求前, TCP/IP 与要删除的 SAs 关联的分析器项的引用计数传输递减。 传输然后测试是否引用计数为零。
 

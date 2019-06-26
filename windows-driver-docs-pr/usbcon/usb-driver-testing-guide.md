@@ -3,12 +3,12 @@ Description: 本部分介绍可用于测试您的 USB 硬件或软件、 捕获�
 title: 在 Windows 中测试 USB 硬件、驱动程序和应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb54a520aed50db51b5c7dc72ba51e5f0d2f641
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 221a69c4b62df5f07a72be8c4577d8b5e734b9f0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325737"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356614"
 ---
 # <a name="testing-usb-hardware-drivers-and-apps-in-windows"></a>在 Windows 中测试 USB 硬件、驱动程序和应用程序
 
@@ -87,7 +87,7 @@ ms.locfileid: "63325737"
  
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

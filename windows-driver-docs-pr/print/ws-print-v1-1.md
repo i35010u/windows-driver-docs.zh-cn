@@ -4,12 +4,12 @@ description: 有关在 Windows Vista 中，以提供用于打印和扫描外围�
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44c4afbe76e0f522c62d3785d7b416680503e10b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee41e6eab8af7458791bf96cf770abdae6b81131
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380513"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356989"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印的基于设备的 Web 服务 (WS-Print)
 
@@ -67,12 +67,12 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 
 **WS-Print v1.1**
 
-**命名空间：**<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
+**命名空间：** <http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
 **XML Namespace 定义：** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
 
 **WS-Print v1.2**
 
-**命名空间：**<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
+**命名空间：** <http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
 **XML Namespace 定义：** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
 ## <a name="specifying-ws-print-11-support"></a>指定 WS 打印 1.1 支持
 
@@ -240,7 +240,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 ## <a name="device-model-id"></a>设备模型 ID
 
 
-下面的架构描述的设备，ModelID 和用于进行设备元数据检索。 ModelIDs 的详细信息，请参阅[ModelID 元素](https://msdn.microsoft.com/library/windows/hardware/ff549295.aspx)。
+下面的架构描述的设备，ModelID 和用于进行设备元数据检索。 ModelIDs 的详细信息，请参阅[ModelID 元素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
 ```xml
     <xs:annotation>
@@ -298,19 +298,19 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 
 **规范和支持文件 WS 打印 v1.0 – v1.2**
 
-**文件：**[在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
+**文件：** [在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
 **说明：** 2.64 MB zip 文件包含 Microsoft Word 文档和支持文件;2013 年 9 月 16日日
 
 **规范和支持文件**
 
-**文件：**[在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
+**文件：** [在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
 **说明：** 自解压文件包含 Microsoft Word 文档和支持文件; 76 KB2007 年 1 月 29日日
 
-**文件：**[扫描设备上的 Web 服务的服务定义 V1.0](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
-**说明：**（1.5 MB zip 文件包含 Microsoft Word 文档和支持文件;2012 年 2 月 9 日)
+**文件：** [扫描设备上的 Web 服务的服务定义 V1.0](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
+**说明：** （1.5 MB zip 文件包含 Microsoft Word 文档和支持文件;2012 年 2 月 9 日)
 
-**文件：**[扫描的设备上的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
-**说明：**(76 KB 自解压文件包含 Microsoft Word 文档和支持文件的文件。2007 年 1 月 29 日)
+**文件：** [扫描的设备上的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
+**说明：** (76 KB 自解压文件包含 Microsoft Word 文档和支持文件的文件。2007 年 1 月 29 日)
 ## <a name="related-topics"></a>相关主题
 [V4 打印机驱动程序连接](v4-printer-driver-connectivity.md)  
 

@@ -20,12 +20,12 @@ keywords:
 - pin WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27992b8952761b42a049e746ea329a2446297586
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c43919ff22e8025b3aeb3feba6a21a4315be8298
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331479"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355698"
 ---
 # <a name="audio-endpoints-properties-and-events"></a>音频终结点、属性和事件
 
@@ -33,7 +33,7 @@ ms.locfileid: "63331479"
 ## <span id="audio_properties_and_events"></span><span id="AUDIO_PROPERTIES_AND_EVENTS"></span>
 
 
-PortCls 系统驱动程序支持的内部函数中所述的操作子集[KS 属性、 事件和方法](https://msdn.microsoft.com/library/windows/hardware/ff567673)。
+PortCls 系统驱动程序支持的内部函数中所述的操作子集[KS 属性、 事件和方法](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)。
 
 Portcls.sys 中的端口驱动程序支持的属性和事件通过提供的某些属性和事件的请求处理程序，并且其他请求转发到微型端口驱动程序的处理程序。
 
@@ -57,37 +57,37 @@ WaveCyclic、 WavePci、 MIDI 和 Dmu 端口驱动程序的当前实现提供以
 
 音频适配器驱动程序支持某些或所有以下标准属性集：
 
-[KSPROPSETID\_AC3](https://msdn.microsoft.com/library/windows/hardware/ff537436)
+[KSPROPSETID\_AC3](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-ac3)
 
-[KSPROPSETID\_声学\_Echo\_取消](https://msdn.microsoft.com/library/windows/hardware/ff537438)
+[KSPROPSETID\_声学\_Echo\_取消](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-acoustic-echo-cancel)
 
-[KSPROPSETID\_Audio](https://msdn.microsoft.com/library/windows/hardware/ff537440)
+[KSPROPSETID\_Audio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)
 
-[KSPROPSETID\_DirectSound3DBuffer](https://msdn.microsoft.com/library/windows/hardware/ff537447)
+[KSPROPSETID\_DirectSound3DBuffer](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dbuffer)
 
-[KSPROPSETID\_DirectSound3DListener](https://msdn.microsoft.com/library/windows/hardware/ff537449)
+[KSPROPSETID\_DirectSound3DListener](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dlistener)
 
-[KSPROPSETID\_DrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff537481)
+[KSPROPSETID\_DrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-drmaudiostream)
 
-[KSPROPSETID\_General](https://msdn.microsoft.com/library/windows/hardware/ff566576)
+[KSPROPSETID\_General](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-general)
 
-[KSPROPSETID\_Hrtf3d](https://msdn.microsoft.com/library/windows/hardware/ff537482)
+[KSPROPSETID\_Hrtf3d](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-hrtf3d)
 
-[KSPROPSETID\_插孔](https://msdn.microsoft.com/library/windows/hardware/ff537484)
+[KSPROPSETID\_插孔](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-jack)
 
-[KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)
+[KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)
 
-[KSPROPSETID\_合成器](https://msdn.microsoft.com/library/windows/hardware/ff537486)
+[KSPROPSETID\_合成器](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)
 
-[KSPROPSETID\_合成器\_Dls](https://msdn.microsoft.com/library/windows/hardware/ff537488)
+[KSPROPSETID\_合成器\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)
 
-[KSPROPSETID\_TopologyNode](https://msdn.microsoft.com/library/windows/hardware/ff537491)
+[KSPROPSETID\_TopologyNode](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-topologynode)
 
 所有的音频驱动程序支持**KSPROPSETID\_音频**属性集。
 
 一些音频适配器驱动程序支持以下事件组：
 
-[KSEVENTSETID\_AudioControlChange](https://msdn.microsoft.com/library/windows/hardware/ff537122)
+[KSEVENTSETID\_AudioControlChange](https://docs.microsoft.com/windows-hardware/drivers/audio/kseventsetid-audiocontrolchange)
 
 此外，音频适配器驱动程序是免费提供的其他属性集的标头文件 Ksmedia.h 中定义的属性处理程序。 驱动程序还可以定义并支持其自己的自定义属性和事件集，但知道有关自定义属性或事件的应用程序将能够使用它。
 

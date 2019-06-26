@@ -11,12 +11,12 @@ keywords:
 - wave 格式标记 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ffa51e400286e4e04bf8f56ae4778ec41fe5f47d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 490bcf5702cf0dfadd51af6e15b47770e5883458
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333940"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355584"
 ---
 # <a name="converting-between-format-tags-and-subformat-guids"></a>在格式标记与子格式 GUID 之间进行转换
 
@@ -26,7 +26,7 @@ ms.locfileid: "63333940"
 
 用于处理非 PCM WAVE 的准则\_格式\_可扩展的格式为类似于由波形格式标记指定的非 PCM 格式。 具体而言，会出现一批\_格式\_可扩展格式应具有独立于 PCM 格式的工厂的 pin 工厂，它需要自己的数据范围的交集处理程序。
 
-波形音频格式\_格式\_可扩展格式由中的 GUID 指定**子格式**的成员[ **KSDATAFORMAT** ](https://msdn.microsoft.com/library/windows/hardware/ff561656)结构。 每个已注册的波形格式标记具有相应的子格式定义由生成的 GUID\_WAVEFORMATEX\_中 Ksmedia.h GUID 宏。 例如，与批相对应的 GUID\_格式\_DOLBY\_AC3\_SPDIF 标记指定义\_WAVEFORMATEX\_GUID (WAVE\_格式\_DOLBY\_AC3\_SPDIF)。
+波形音频格式\_格式\_可扩展格式由中的 GUID 指定**子格式**的成员[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构。 每个已注册的波形格式标记具有相应的子格式定义由生成的 GUID\_WAVEFORMATEX\_中 Ksmedia.h GUID 宏。 例如，与批相对应的 GUID\_格式\_DOLBY\_AC3\_SPDIF 标记指定义\_WAVEFORMATEX\_GUID (WAVE\_格式\_DOLBY\_AC3\_SPDIF)。
 
 从 Ksmedia.h 此代码片段演示如何定义新的 GUID 为 autoinitialized 静态变量：
 

@@ -4,12 +4,12 @@ description: 音频 (PortCls) 微型端口驱动程序的 DDI 符合性规则验
 ms.assetid: 65078F78-B7F2-41A7-BD3B-A90A4A77750F
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d5fb5de9d6182bba07eb1bec0287714049c6728f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa0774238702c8f0a42047e07392dc865104179f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353881"
 ---
 # <a name="rules-for-audio-drivers"></a>音频驱动程序的规则
 
@@ -58,30 +58,30 @@ ms.locfileid: "63340231"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="pcporequestpowerirp.md" data-raw-source="[&lt;strong&gt;PcPoRequestPowerIrp&lt;/strong&gt;](pcporequestpowerirp.md)"><strong>PcPoRequestPowerIrp</strong></a></p></td>
-<td align="left"><p>此规则验证 PortCls 微型端口驱动程序不应调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff559734" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff559734)"> <strong>PoRequestPowerIrp</strong> </a>与<a href="https://msdn.microsoft.com/library/windows/hardware/ff551744" data-raw-source="[&lt;strong&gt;IRP_MN_SET_POWER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551744)"> <strong>IRP_MN_SET_POWER</strong></a>。</p></td>
+<td align="left"><p>此规则验证 PortCls 微型端口驱动程序不应调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)"> <strong>PoRequestPowerIrp</strong> </a>与<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power" data-raw-source="[&lt;strong&gt;IRP_MN_SET_POWER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)"> <strong>IRP_MN_SET_POWER</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="audio-pcpropertyrequest.md" data-raw-source="[&lt;strong&gt;PcPropertyRequest&lt;/strong&gt;](audio-pcpropertyrequest.md)"><strong>PcPropertyRequest</strong></a></p></td>
-<td align="left"><p>PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff537687" data-raw-source="[&lt;strong&gt;PcCompletePendingPropertyRequest&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537687)"> <strong>PcCompletePendingPropertyRequest</strong> </a>与<em>NtStatus</em> STATUS_ 值挂起。</p></td>
+<td align="left"><p>PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pccompletependingpropertyrequest" data-raw-source="[&lt;strong&gt;PcCompletePendingPropertyRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pccompletependingpropertyrequest)"> <strong>PcCompletePendingPropertyRequest</strong> </a>与<em>NtStatus</em> STATUS_ 值挂起。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="audio-pcregisteradapterpower.md" data-raw-source="[&lt;strong&gt;PcRegisterAdapterPower&lt;/strong&gt;](audio-pcregisteradapterpower.md)"><strong>PcRegisterAdapterPower</strong></a></p></td>
 <td align="left"><p>PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应：</p>
 <ul>
-<li>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff537724" data-raw-source="[&lt;strong&gt;PcRegisterAdapterPowerManagement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537724)"> <strong>PcRegisterAdapterPowerManagement</strong> </a>两次而无需对的干预调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff537735" data-raw-source="[&lt;strong&gt;PcUnregisterAdapterPowerManagement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537735)"> <strong>PcUnregisterAdapterPowerManagement</strong></a>。</li>
-<li>调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff537735" data-raw-source="[&lt;strong&gt;PcUnregisterAdapterPowerManagement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537735)"> <strong>PcUnregisterAdapterPowerManagement</strong> </a>而无需调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff537724" data-raw-source="[&lt;strong&gt;PcRegisterAdapterPowerManagement&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537724)"> <strong>PcRegisterAdapterPowerManagement</strong> </a>第一个。</li>
+<li>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement" data-raw-source="[&lt;strong&gt;PcRegisterAdapterPowerManagement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement)"> <strong>PcRegisterAdapterPowerManagement</strong> </a>两次而无需对的干预调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement" data-raw-source="[&lt;strong&gt;PcUnregisterAdapterPowerManagement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement)"> <strong>PcUnregisterAdapterPowerManagement</strong></a>。</li>
+<li>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement" data-raw-source="[&lt;strong&gt;PcUnregisterAdapterPowerManagement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcunregisteradapterpowermanagement)"> <strong>PcUnregisterAdapterPowerManagement</strong> </a>而无需调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement" data-raw-source="[&lt;strong&gt;PcRegisterAdapterPowerManagement&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcregisteradapterpowermanagement)"> <strong>PcRegisterAdapterPowerManagement</strong> </a>第一个。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="audio-pctimedwavertstreamsetstate.md" data-raw-source="[&lt;strong&gt;PcTimedWaveRtStreamSetState&lt;/strong&gt;](audio-pctimedwavertstreamsetstate.md)"><strong>PcTimedWaveRtStreamSetState</strong></a></p></td>
-<td align="left"><p>PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序，可通过状态转换<a href="https://msdn.microsoft.com/library/windows/hardware/ff536756" data-raw-source="[&lt;strong&gt;IMiniportWaveRTStream::SetState&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff536756)"> <strong>IMiniportWaveRTStream::SetState</strong> </a>内所需的时间。</p></td>
+<td align="left"><p>PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序，可通过状态转换<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85)" data-raw-source="[&lt;strong&gt;IMiniportWaveRTStream::SetState&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))"> <strong>IMiniportWaveRTStream::SetState</strong> </a>内所需的时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="audio-pcunmapallocatedpages.md" data-raw-source="[&lt;strong&gt;PcUnmapAllocatedPages&lt;/strong&gt;](audio-pcunmapallocatedpages.md)"><strong>PcUnmapAllocatedPages</strong></a></p></td>
 <td align="left"><p>PcUnmapAllocatedPages 规则指定：</p>
 <ul>
 <li>PortCls 微型端口驱动程序不会映射当前映射而无需第一个取消映射 MDL。</li>
-<li>PortCls 微型端口驱动程序取消映射之前释放其使用的内存<a href="https://msdn.microsoft.com/library/windows/hardware/ff536738" data-raw-source="[IMiniportWaveRTStream](https://msdn.microsoft.com/library/windows/hardware/ff536738)">IMiniportWaveRTStream</a>接口。</li>
+<li>PortCls 微型端口驱动程序取消映射之前释放其使用的内存<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstream" data-raw-source="[IMiniportWaveRTStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavertstream)">IMiniportWaveRTStream</a>接口。</li>
 </ul></td>
 </tr>
 </tbody>

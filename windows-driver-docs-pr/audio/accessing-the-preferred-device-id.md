@@ -9,12 +9,12 @@ keywords:
 - 识别的音频设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12d98ddd9a95352e165b33d529ba389ef139cdf4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29f7414ea424b6e5245fb07c275111741719657b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330824"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355784"
 ---
 # <a name="accessing-the-preferred-device-id"></a>访问首选的设备 ID
 
@@ -26,7 +26,7 @@ ms.locfileid: "63330824"
 
 首选的设备是用户通过多媒体控件面板中，选择设备 mmsys.cpl。 如果 Windows 多媒体或 DirectSound 应用程序未显式指定设备，默认情况下选择首选的设备。
 
-若要检索当前的首选音频设备的设备 ID，应用程序调用*xxx * * * 消息** 函数使用消息参数设置为常量[ **DRVM\_映射器\_首选\_获取**](https://msdn.microsoft.com/library/windows/hardware/ff536362)。
+若要检索当前的首选音频设备的设备 ID，应用程序调用*xxx * * * 消息** 函数使用消息参数设置为常量[ **DRVM\_映射器\_首选\_获取**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536362(v=vs.85))。
 
 调用时**waveInMessage**， **waveOutMessage**，或**midiOutMessage**配合 DRVM\_映射器\_首选\_收到消息，设备句柄的值指定为批\_映射器 (对于**waveInMessage**或**waveOutMessage**) 或 MIDI\_映射器 (对于**midiOutMessage**) 并将此值设置为相应的句柄类型强制转换：HWAVEIN、 HWAVEOUT 或 HMIDIOUT。 *Xxx * * * 消息** 函数接受此值来替换有效的设备句柄，以便应用程序可查询的默认设备 ID，而不必首先打开设备。 有关详细信息*xxx * * * 消息** 函数，请参阅[System-Intercepted 设备的消息](system-intercepted-device-messages.md)。
 

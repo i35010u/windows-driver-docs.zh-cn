@@ -4,12 +4,12 @@ description: 使用用户模式调试程序调试设备安装
 ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a86b65d148ce509e7e85619775ce7fadd8427728
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f7f0d2fb6c2bd951543f7d462ee0b27d8561c70
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358853"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356290"
 ---
 # <a name="debugging-device-installations-with-a-user-mode-debugger"></a>使用用户模式调试程序调试设备安装
 
@@ -18,7 +18,7 @@ Windows vista 中，从开始，当插即用 (PnP) 管理器检测到系统中�
 
 调试用户模式设备安装主机进程的最有效方法是使用用户模式下调试程序，如 WinDbg 或 Visual Studio。 因为*DrvInst.exe*进程会正常情况下完成而无需任何用户交互、 Microsoft Windows Vista 和更高版本的 Windows，以允许开发人员添加了支持[驱动程序包](driver-packages.md)处理设备安装的核心阶段之前附加调试器。
 
-有关用户模式调试程序和其他调试工具的详细信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+有关用户模式调试程序和其他调试工具的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 **DebugInstall**注册表值指定的调试支持系统启用的设备安装的类型。 有关此注册表值的详细信息，请参阅[启用支持调试设备安装](enabling-support-for-debugging-device-installations.md)。
 

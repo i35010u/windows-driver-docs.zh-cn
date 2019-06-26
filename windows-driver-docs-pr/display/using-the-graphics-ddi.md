@@ -13,12 +13,12 @@ keywords:
 - 绘制 WDK GDI，函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c1c3ea3fc87aa17227417af5ae5349a3485d1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9b5e4faf5b22f8d3dfe2109671cdf71f967c00c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388984"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353832"
 ---
 # <a name="using-the-graphics-ddi"></a>使用图形 DDI
 
@@ -30,7 +30,7 @@ ms.locfileid: "63388984"
 
 图形 DDI 函数名称采用*DrvXxx*窗体。 GDI 调用这些*DrvXxx*函数将数据传递给驱动程序。 当应用程序发出请求的 GDI 和 GDI 确定驱动程序支持相关的函数、 GDI 调用该函数。 它是要提供函数的函数完成后返回到 GDI 的驱动程序的责任。
 
-本部分介绍图形的显示和打印机驱动程序的编写器必须注意的 DDI 函数。 图形 DDI 函数声明，结构定义，并且可以在中找到常量*winddi.h*。 有关图形 DDI 函数的详细信息，请参阅[由打印机和显示器驱动程序的 GDI 函数实现](https://msdn.microsoft.com/library/windows/hardware/ff566549)。
+本部分介绍图形的显示和打印机驱动程序的编写器必须注意的 DDI 函数。 图形 DDI 函数声明，结构定义，并且可以在中找到常量*winddi.h*。 有关图形 DDI 函数的详细信息，请参阅[由打印机和显示器驱动程序的 GDI 函数实现](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 在本部分中包含的主题如下所示：
 

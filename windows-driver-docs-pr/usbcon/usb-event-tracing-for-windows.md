@@ -3,19 +3,19 @@ Description: 本主题提供信息的客户端驱动程序开发人员的跟踪�
 title: Windows 的 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcdf5d475339f928e83557fc36d42793e4ceb878
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 680a65744992420a7e333e4c6341ffff15f8d02d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376103"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356589"
 ---
 # <a name="usb-event-tracing-for-windows"></a>Windows 的 USB 事件跟踪
 
 
 本主题提供信息的客户端驱动程序开发人员的跟踪和日志记录功能的通用串行总线 (USB)。 为了方便开发和调试 USB 设备的人员提供此信息。 它包括有关如何安装工具、 创建跟踪文件和分析 USB 跟踪文件中的事件的信息。 本主题假定你已成功使用 USB 跟踪和日志记录功能所需的硬件的 USB 生态系统的全面了解。
 
-若要解释的事件跟踪，您还必须了解 Windows [USB 宿主端驱动程序在 Windows 中的](usb-3-0-driver-stack-architecture.md)，则[官方 USB 规范和 USB 设备类规范](http://www.usb.org/developers/docs/)。
+若要解释的事件跟踪，您还必须了解 Windows [USB 宿主端驱动程序在 Windows 中的](usb-3-0-driver-stack-architecture.md)，则[官方 USB 规范和 USB 设备类规范](https://www.usb.org/documents)。
 
 -   [有关 Windows 事件跟踪](#about-event-tracing-for-windows)
 -   [ETW 日志记录的 USB 支持](#usb-support-for-etw-logging)
@@ -31,7 +31,7 @@ Windows 事件跟踪 (ETW) 是一种高速通用的跟踪工具，由操作系�
 
 ETW 得到重要升级适用于 Windows Vista 和 Windows 7。 最重要的新功能之一是统一的事件提供程序模型和 Api。 简单地说，新的统一的 Api 结合使用日志记录跟踪和事件查看器写入到一个一致的、 易于使用的事件提供程序的机制。 同时，在多项新功能已添加到 ETW 来提高开发人员和最终用户体验。
 
-有关 ETW 和 WPP 的详细信息，请参阅事件跟踪和[事件跟踪 Windows (ETW)](https://msdn.microsoft.com/library/windows/hardware/ff545699)。
+有关 ETW 和 WPP 的详细信息，请参阅事件跟踪和[事件跟踪 Windows (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)。
 
 ## <a name="usb-support-for-etw-logging"></a>ETW 日志记录的 USB 支持
 
@@ -90,7 +90,7 @@ Windows 8 提供的 USB 驱动程序堆栈，以支持 USB 3.0 设备。 Microso
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md" data-raw-source="[Capture and view USB traces with Microsoft Message Analyzer](capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md)">捕获和查看使用 Microsoft Message Analyzer 的 USB 跟踪</a></p></td>
+<td><p><a href="capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md" data-raw-source="[Capture and view USB traces with Microsoft Message Analyzer](capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md)">使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪</a></p></td>
 <td><p>可以使用 Microsoft 消息分析器 (MMA) 来捕获和查看实时 USB 跟踪，或查看现有跟踪。</p></td>
 </tr>
 <tr class="even">

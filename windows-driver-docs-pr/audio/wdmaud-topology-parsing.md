@@ -12,12 +12,12 @@ keywords:
 - 转换节点 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae2a5d872f693c90d805c2adfacecd9fbc3de52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90442e6e4e21a17a920228ff47a32c97cb49ebf5
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335232"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354096"
 ---
 # <a name="wdmaud-topology-parsing"></a>WDMAud 拓扑分析
 
@@ -37,7 +37,7 @@ SUM 和 MUX 节点均*经典终止符*的目标行。 SUM 节点不会生成任�
 
 如果发现多个父级，则立即终止分析。 Mixer 行驱动程序将解释为"虚拟总和"通过将多个输入在一起形成的这种情况。
 
-目标行的名称来自从返回的名称[ **KSPROPERTY\_PIN\_名称**](https://msdn.microsoft.com/library/windows/hardware/ff565203)上该 pin 的属性。
+目标行的名称来自从返回的名称[ **KSPROPERTY\_PIN\_名称**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-name)上该 pin 的属性。
 
 目标行的所有控件均已都转换后，WDMAud 开始转换的源行。 同样，在其中 WDMAud 分析这些行的顺序是顺序的 SysAudio 查询它们相反。 此外，在其中进行分析的源行的方向是相比于在其中分析目标行的容量。 WDMAud 解析每一行从 pin 开始，直到它检测到下列终止情况之一，在下游方向继续操作：
 

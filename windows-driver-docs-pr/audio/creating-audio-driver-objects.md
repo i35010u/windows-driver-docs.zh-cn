@@ -8,12 +8,12 @@ keywords:
 - 对象 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f086bce6c2bdc411a8d968bb819892f45fcb0c34
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b61976cfd300d4c1e84105bcd848555452055d9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333962"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355581"
 ---
 # <a name="creating-audio-driver-objects"></a>创建音频驱动程序对象
 
@@ -48,7 +48,7 @@ NTSTATUS CreateMyObject(
 指定**IUnknown**用于聚合的新对象的接口。 此参数可以设置为**NULL**以不指示任何聚合都不需要。
 
 <span id="PoolType"></span><span id="pooltype"></span><span id="POOLTYPE"></span>*PoolType*  
-指定是要分配对象的内存池的类型 (请参阅[**池\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff559707))。
+指定是要分配对象的内存池的类型 (请参阅[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type))。
 
 前三个参数是等同于 COM 参数**CoCreateInstance**函数。 有关此类型的创建函数的示例，请参阅**CreateMiniportMidiFM** Fmsynth 示例音频驱动程序中 Microsoft Windows Driver Kit (WDK) 中的函数。
 
@@ -65,7 +65,7 @@ NTSTATUS NewMyObject(
 
 NewMyObject 函数创建和初始化对象，然后将指针传递到的接口。 由于初始化参数都特定于类，因此是新的原型*Xxx*函数。 新建*Xxx*函数提供了对对象构造函数的便捷访问。
 
-有关新的示例*Xxx*函数的这种类型，请参阅[ **PcNewDmaChannel**](https://msdn.microsoft.com/library/windows/hardware/ff537712)。
+有关新的示例*Xxx*函数的这种类型，请参阅[ **PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pcnewdmachannel)。
 
  
 

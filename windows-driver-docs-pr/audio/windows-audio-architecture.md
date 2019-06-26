@@ -4,12 +4,12 @@ description: 本主题提供 Windows 10 音频体系结构的高级别摘要。
 ms.assetid: 1FC95504-18AA-4F3B-8E96-005276699694
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78b2b241feb5c90811a787e2d38b355764795172
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3b5cb95051e1f524cdf164d2336f7e6a46a318f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335361"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354091"
 ---
 # <a name="windows-audio-architecture"></a>Windows 音频体系结构
 
@@ -30,35 +30,35 @@ ms.locfileid: "63335361"
 
 最高级别 Api 用于应用程序开发。 这些 Api 中当前正在使用和支持。
 
--   XAML [MediaElement 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement)(C#，VB， C++)
--   HTML[音频对象](https://msdn.microsoft.com/library/windows/apps/hh767373.aspx)并[视频对象](https://msdn.microsoft.com/library/windows/apps/hh767390.aspx)&lt;标记&gt;（由网站和 Windows Web 应用）
--   [Windows.Media.Capture 命名空间](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture)(C#，VB， C++)
--   [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)(C++)
+-   XAML [MediaElement 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)(C#，VB， C++)
+-   HTML[音频对象](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)并[视频对象](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement)&lt;标记&gt;（由网站和 Windows Web 应用）
+-   [Windows.Media.Capture 命名空间](https://docs.microsoft.com/uwp/api/Windows.Media.Capture)(C#，VB， C++)
+-   [Microsoft 媒体基础](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)(C++)
 
 这些较旧的 Api 已弃用。
 
--   [DirectShow](https://msdn.microsoft.com/library/windows/desktop/dd375454)
--   [DirectSound](https://msdn.microsoft.com/library/ee416960.aspx)
--   [PlaySound](https://msdn.microsoft.com/library/dd743680)
--   [Windows.Media.MediaControlContract](https://msdn.microsoft.com/library/windows/apps/dn706169)
+-   [DirectShow](https://docs.microsoft.com/windows/desktop/DirectShow/directshow)
+-   [DirectSound](https://docs.microsoft.com/previous-versions/windows/desktop/ee416960(v=vs.85))
+-   [PlaySound](https://docs.microsoft.com/previous-versions/dd743680(v=vs.85))
+-   [Windows.Media.MediaControlContract](https://docs.microsoft.com/uwp/extension-sdks/windows-desktop-extension-sdk)
 
 **低级别 Api**
 
 对于音频流，建议这些低级别 Api。
 
--   [Wasapi 就可以了](https://msdn.microsoft.com/library/windows/desktop/dd371455)（高性能，但更复杂）
--   [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) （通常用于游戏）
--   [MIDI](https://msdn.microsoft.com/library/windows/desktop/dd742875)
+-   [Wasapi 就可以了](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)（高性能，但更复杂）
+-   [IXAudio2](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2) （通常用于游戏）
+-   [MIDI](https://docs.microsoft.com/windows/desktop/Multimedia/about-midi)
 
 对于枚举建议使用此较低级别 API。
 
--   [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459)
+-   [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 这些 Api 不建议用于 Windows 应用程序中。
 
--   [有关 MMDevice API](https://msdn.microsoft.com/library/windows/desktop/dd316556) （替换 Windows.Devices.Enumeration）
--   [DeviceTopology API](https://msdn.microsoft.com/library/windows/desktop/dd370809)
--   [EndpointVolume API](https://msdn.microsoft.com/library/windows/desktop/dd370832)
+-   [有关 MMDevice API](https://docs.microsoft.com/windows/desktop/CoreAudio/mmdevice-api) （替换 Windows.Devices.Enumeration）
+-   [DeviceTopology API](https://docs.microsoft.com/windows/desktop/CoreAudio/devicetopology-api)
+-   [EndpointVolume API](https://docs.microsoft.com/windows/desktop/CoreAudio/endpointvolume-api)
 
 ## <a name="span-idaudioenginespanspan-idaudioenginespanspan-idaudioenginespanaudio-engine"></a><span id="Audio_Engine"></span><span id="audio_engine"></span><span id="AUDIO_ENGINE"></span>音频引擎
 

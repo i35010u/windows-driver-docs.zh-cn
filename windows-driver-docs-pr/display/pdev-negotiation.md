@@ -11,12 +11,12 @@ keywords:
 - DrvEnablePDEV
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16663bffc5f33a671dd0bb15a0d8e0c82a666261
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: db8bc6196338c85b439b1605ec429510ac8b5f64
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352365"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353837"
 ---
 # <a name="pdev-negotiation"></a>PDEV 协商
 
@@ -24,15 +24,15 @@ ms.locfileid: "63352365"
 ## <span id="ddk_pdev_negotiation_gg"></span><span id="DDK_PDEV_NEGOTIATION_GG"></span>
 
 
-任何图形驱动程序的主要职责之一是能够*PDEV*在驱动程序初始化过程中。 PDEV 是物理设备的逻辑表示形式。 这种表示形式由驱动程序定义，通常是一种专用的数据结构。 请参阅[ **DrvEnablePDEV** ](https://msdn.microsoft.com/library/windows/hardware/ff556211)启用 PDEVs 有关详细信息。
+任何图形驱动程序的主要职责之一是能够*PDEV*在驱动程序初始化过程中。 PDEV 是物理设备的逻辑表示形式。 这种表示形式由驱动程序定义，通常是一种专用的数据结构。 请参阅[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)启用 PDEVs 有关详细信息。
 
-通过*DrvEnablePDEV*函数，该驱动程序必须提供信息，向 GDI 描述所需的设备和其功能。 一种驱动程序提供了 GDI 的重要信息是组的图形功能标志 (GCAPS\_Xxx 和 GCAPS2\_Xxx 标志) 在**flGraphicsCaps**和**flGraphicsCaps2**的成员[ **DEVINFO** ](https://msdn.microsoft.com/library/windows/hardware/ff552835)结构。
+通过*DrvEnablePDEV*函数，该驱动程序必须提供信息，向 GDI 描述所需的设备和其功能。 一种驱动程序提供了 GDI 的重要信息是组的图形功能标志 (GCAPS\_Xxx 和 GCAPS2\_Xxx 标志) 在**flGraphicsCaps**和**flGraphicsCaps2**的成员[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构。
 
-功能标志允许 GDI 来确定 PDEV 支持哪些操作。 例如，GDI 测试的功能标志，指示是否 PDEV 之前可以处理贝塞尔曲线和几何宽线条尝试调用 GDI [ **DrvStrokePath** ](https://msdn.microsoft.com/library/windows/hardware/ff556316)函数来绘制路径这些基元类型。 如果功能标志指示 PDEV 无法处理这些基元类型，GDI 将分解的直线或曲线以便它可以进行更简单调用向驱动程序。
+功能标志允许 GDI 来确定 PDEV 支持哪些操作。 例如，GDI 测试的功能标志，指示是否 PDEV 之前可以处理贝塞尔曲线和几何宽线条尝试调用 GDI [ **DrvStrokePath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstrokepath)函数来绘制路径这些基元类型。 如果功能标志指示 PDEV 无法处理这些基元类型，GDI 将分解的直线或曲线以便它可以进行更简单调用向驱动程序。
 
 从驱动程序的端，只要该驱动程序从 GDI，获取与路径相关的高级的调用它可返回**FALSE**如果路径或剪辑太过复杂，要处理的设备。
 
-该驱动程序不能返回**FALSE**从*DrvStrokePath*处理时[修饰的行](cosmetic-lines.md)因为驱动程序必须处理任何复杂的剪辑或修饰线样式。 但是， *DrvStrokePath*可以返回**FALSE**如果该路径包含贝塞尔曲线或几何行。 当发生这种情况时，GDI 将中断该层更简单调用会将调用，如果未设置容量位一样。 例如，如果*DrvStrokePath*返回**FALSE**收到几何行，简化了的行和调用 GDI [ **DrvFillPath** ](https://msdn.microsoft.com/library/windows/hardware/ff556220)函数。
+该驱动程序不能返回**FALSE**从*DrvStrokePath*处理时[修饰的行](cosmetic-lines.md)因为驱动程序必须处理任何复杂的剪辑或修饰线样式。 但是， *DrvStrokePath*可以返回**FALSE**如果该路径包含贝塞尔曲线或几何行。 当发生这种情况时，GDI 将中断该层更简单调用会将调用，如果未设置容量位一样。 例如，如果*DrvStrokePath*返回**FALSE**收到几何行，简化了的行和调用 GDI [ **DrvFillPath** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfillpath)函数。
 
 如果*DrvStrokePath*将报告错误，它必须返回 DDI\_错误。
 

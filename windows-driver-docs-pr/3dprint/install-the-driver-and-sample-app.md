@@ -4,12 +4,12 @@ description: 本部分提供安装该驱动程序和 WSD 示例应用程序的�
 ms.assetid: BF89F0D0-2ED3-4900-996F-BB7B9C8C9B80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f36f5f9d432dc584864a1a6efb29c924fcf24382
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3be72b3a5e837cd680a83077976041997d5f36b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330032"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355940"
 ---
 # <a name="install-the-driver-and-sample-app"></a>安装驱动程序和示例应用
 
@@ -58,11 +58,11 @@ ms.locfileid: "63330032"
 
     ![应用程序开发功能](images/wsd-app-5.png)
 
-6.  单击 **“确定”**。 **将更改应用**对话框将显示安装进度。
+6.  单击 **“确定”** 。 **将更改应用**对话框将显示安装进度。
 
     ![应用更改](images/wsd-app-6.png)
 
-7.  当**将更改应用**对话框关闭，打开浏览器并导航到 http://localhost。
+7.  当**将更改应用**对话框关闭，打开浏览器并导航到 http://localhost 。
 
     ![localhost](images/wsd-app-7.png)
 
@@ -72,7 +72,7 @@ ms.locfileid: "63330032"
 
 ![发布 web](images/wsd-app-8.png)
 
-发布成功后，浏览到 http://localhost将导致发送回的空文件。 如果处理程序未正确设置，将收到一条错误消息，或可能会看到默认 IIS 网页。
+发布成功后，浏览到 http://localhost 将导致发送回的空文件。 如果处理程序未正确设置，将收到一条错误消息，或可能会看到默认 IIS 网页。
 
 您可以切换**DefaultAppPool**若要使用运行**NetworkService**标识和它将继续按预期方式工作。 **DefaultAppPool**应在整个还可以在网络。
 
@@ -126,7 +126,7 @@ ms.locfileid: "63330032"
 
 可以通过实现端口 3702 上的发现事件进行侦听的 UDP 服务器执行临时发现。
 
-有关 exchange 序列的详细信息，请参阅[发现和元数据交换消息模式](https://msdn.microsoft.com/library/windows/desktop/bb513677.aspx)。
+有关 exchange 序列的详细信息，请参阅[发现和元数据交换消息模式](https://docs.microsoft.com/windows/desktop/WsdApi/discovery-and-metadata-exchange-message-patterns)。
 
  
 

@@ -18,12 +18,12 @@ keywords:
 - DbgPrint 缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e170eb85e507cd893ed3b86dbdc23b3722f216
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3230c3ac3ca27b5882a376fd544bd53057cddaaf
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323140"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356392"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>读取和筛选调试消息
 
@@ -31,9 +31,9 @@ ms.locfileid: "63323140"
 ## <span id="ddk_reading_and_filtering_debugging_messages_tools"></span><span id="DDK_READING_AND_FILTERING_DEBUGGING_MESSAGES_TOOLS"></span>
 
 
-[ **DbgPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff543634)， [ **vDbgPrintEx**](https://msdn.microsoft.com/library/windows/hardware/ff556075)， [ **vDbgPrintExWithPrefix** ](https://msdn.microsoft.com/library/windows/hardware/ff556076)，并[ **KdPrintEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548100)例程将消息发送到你指定的条件下内核调试程序。 此过程使你可以筛选出低优先级的消息。
+[ **DbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprintex)， [ **vDbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-vdbgprintex)， [ **vDbgPrintExWithPrefix** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-vdbgprintexwithprefix)，并[ **KdPrintEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprintex)例程将消息发送到你指定的条件下内核调试程序。 此过程使你可以筛选出低优先级的消息。
 
-**请注意**  在 Microsoft Windows Server 2003 和早期版本的 Windows， [ **DbgPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff543632)并[ **KdPrint** ](https://msdn.microsoft.com/library/windows/hardware/ff548092)例程将消息无条件地发送到内核调试程序。 在 Windows Vista 和更高版本的 Windows，这些例程发送消息，有条件地，如**DbgPrintEx**并**KdPrintEx**。 使用任何版本的 Windows，您应使用**DbgPrintEx**， **vDbgPrintEx**， **vDbgPrintExWithPrefix**，和**KdPrintEx**，因为这些例程，您可以控制在其下发送消息的条件。
+**请注意**  在 Microsoft Windows Server 2003 和早期版本的 Windows， [ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)并[ **KdPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kdprint)例程将消息无条件地发送到内核调试程序。 在 Windows Vista 和更高版本的 Windows，这些例程发送消息，有条件地，如**DbgPrintEx**并**KdPrintEx**。 使用任何版本的 Windows，您应使用**DbgPrintEx**， **vDbgPrintEx**， **vDbgPrintExWithPrefix**，和**KdPrintEx**，因为这些例程，您可以控制在其下发送消息的条件。
 
  
 
@@ -149,7 +149,7 @@ ms.locfileid: "63323140"
 
 - 在目标计算机，您可以访问注册表项中的组件筛选器掩码**HKEY\_本地\_机\\系统\\CurrentControlSet\\控制\\会话管理器\\调试打印筛选器**。 使用注册表编辑器，创建或打开此密钥。 在此项下创建一个值中含有大写字母的所需组件的名称 (例如，**默认**或**IHVDRIVER**)。 将此值设置为你想要使用作为组件筛选器掩码的 DWORD 值 (例如，0x8 显示 DPFLTR\_信息\_级别的消息，除了 DPFLTR\_错误\_级别，或将掩码设置为到 0xF显示所有消息）。
 
-- 如果内核调试程序处于活动状态，它可以通过取消引用存储在符号中的地址来访问组件筛选器掩码值**Kd\_**<em>XXXX</em>  **\_掩码**，其中*XXXX*是所需的组件名称。 可以在 WinDbg 或与 KD 显示此掩码的值**dd (显示 DWORD)** 命令，或输入一个新的组件筛选器掩码与**ed (输入 DWORD)** 命令。 如果符号不明确的危险，你可能想要指定此符号作为**nt ！Kd\_**<em>XXXX</em>**\_掩码**。
+- 如果内核调试程序处于活动状态，它可以通过取消引用存储在符号中的地址来访问组件筛选器掩码值**Kd\_** <em>XXXX</em>  **\_掩码**，其中*XXXX*是所需的组件名称。 可以在 WinDbg 或与 KD 显示此掩码的值**dd (显示 DWORD)** 命令，或输入一个新的组件筛选器掩码与**ed (输入 DWORD)** 命令。 如果符号不明确的危险，你可能想要指定此符号作为**nt ！Kd\_** <em>XXXX</em> **\_掩码**。
 
 存储在注册表中的筛选器掩码在启动过程才会生效。 由调试器创建的筛选器掩码会立即生效，并一直持续，直到重新启动目标计算机。 调试器可以重写在注册表中，设置一个值，但如果重新启动目标计算机注册表中指定的值返回组件筛选器掩码。
 
@@ -205,7 +205,7 @@ DbgPrint( "Fourth message.\n");
 
 当**DbgPrint**， **DbgPrintEx**， **vDbgPrintEx**， **vDbgPrintExWithPrefix**， **KdPrint**，或**KdPrintEx**例程到调试器的消息传送，带格式的字符串发送到**DbgPrint**缓冲区。 此缓冲区的内容会立即显示在调试器命令窗口中，除非通过禁用此显示，否则**缓冲区 DbgPrint 输出**GFlags 选项。
 
-如果禁用此显示，您可以查看 DbgPrint 缓冲区的内容，只能通过使用 **！ dbgprint**扩展命令。 有关调试器扩展的信息，请参阅[Windows 调试](https://msdn.microsoft.com/library/windows/hardware/ff551063)。
+如果禁用此显示，您可以查看 DbgPrint 缓冲区的内容，只能通过使用 **！ dbgprint**扩展命令。 有关调试器扩展的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
 调用的任何单个**DbgPrint**， **DbgPrintEx**， **vDbgPrintEx**， **vDbgPrintExWithPrefix**， **KdPrint**，或**KdPrintEx**传输仅 512 个字节的信息。 任何输出长度超过 512 个字节都将丢失。 DbgPrint 缓冲区本身可以免费版本的 Windows，保存最多 4 KB 的数据，并为 32 KB 的数据在签入生成的 Windows。 在 Windows Server 2003 和更高版本的 Windows 上，您可以使用 KDbgCtrl 工具更改 DbgPrint 缓冲区的大小。 此工具是为 Windows 调试工具的一部分。
 

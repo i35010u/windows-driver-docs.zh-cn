@@ -9,12 +9,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5b3a525ae6d76504249758a0bf8ec1a0ac127f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f837b1126b5cf520b8c38d3df88a6a0feaa581ef
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328829"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355834"
 ---
 # <a name="operation-of-an-acpi-device-function-driver"></a>ACPI 设备函数驱动程序的操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "63328829"
 
 ACPI 设备功能驱动程序是 WDM 驱动程序，执行以下任务：
 
--   符合 WDM 功能驱动程序的最低要求，如中所述[Windows 驱动程序模型](https://msdn.microsoft.com/library/windows/hardware/ff565698)。 这包括驱动程序入口点、 调度例程、 插、 电源管理和 Windows Management Instrumentation (WMI)。 此基本功能可提供泛型操作该 Windows 需要的驱动程序和框架中实现 ACPI 特定于设备的操作。
+-   符合 WDM 功能驱动程序的最低要求，如中所述[Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)。 这包括驱动程序入口点、 调度例程、 插、 电源管理和 Windows Management Instrumentation (WMI)。 此基本功能可提供泛型操作该 Windows 需要的驱动程序和框架中实现 ACPI 特定于设备的操作。
 
 -   支持设备的操作区域，这是功能驱动程序和 ACPI BIOS 之间的通信接口。
 

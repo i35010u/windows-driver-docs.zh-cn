@@ -3,12 +3,12 @@ Description: 本主题总结了新功能和 Windows 8 中的通用串行总线 (
 title: Windows 8-什么是 USB 的新增功能
 ms.date: 05/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 252462c9f33b45dc6155595776366a2454da52d0
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 024c009f11414b810de36df4807ea8eda6ed3f92
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405055"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356547"
 ---
 # <a name="windows8-whats-new-for-usb"></a>Windows 8：USB 的新增功能
 
@@ -21,18 +21,18 @@ ms.locfileid: "65405055"
 -   [用于分配和构建 URBs 新例程](#new-routines-for-allocating-and-building-urbs)
 -   [新的用户模式 I/O 控件请求的 USB 3.0 集线器](#new-user-mode-io-control-requests-for-usb-30-hubs)
 -   [新的兼容 WinUSB ID](#new-compatible-id-for-winusb)
--   [USB 客户端驱动程序的新 Visual Studio 模板 *(\*Beta 针对新功能)*](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
+-   [USB 客户端驱动程序的新 Visual Studio 模板 *(\*Beta 针对新功能)* ](#new-visual-studio-templates-for-usb-client-drivers-new-for-beta)
 -   [UASP 驱动程序](#uasp-driver)
 -   [启动支持](#boot-support)
 -   [增强的调试和诊断功能](#enhanced-debugging-and-diagnostic-capabilities)
 -   [新的特定于 USB 的失败消息在设备管理器](#new-usb-specific-failure-messages-in-device-manager)
 
-有关常规 USB 中新功能的信息，请参阅[USB 驱动程序的新建](https://msdn.microsoft.com/library/windows/hardware/hh451212)。
+有关常规 USB 中新功能的信息，请参阅[USB 驱动程序的新建](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)。
 
 ## <a name="new-driver-stack-for-usb-30-devices"></a>新的驱动程序堆栈的 USB 3.0 设备
 
 
-Windows 8 提供新的 USB 驱动程序堆栈，以支持 USB 3.0 设备。 新的堆栈包括 USB 3.0 设备附加到 xHCI 主控制器时，Windows 会加载的驱动程序。 新的驱动程序基于[内核模式驱动程序框架](https://msdn.microsoft.com/library/windows/hardware/ff557405)(KMDF)，并实现 USB 3.0 规范中定义的功能。 新的驱动程序是按如下所示：
+Windows 8 提供新的 USB 驱动程序堆栈，以支持 USB 3.0 设备。 新的堆栈包括 USB 3.0 设备附加到 xHCI 主控制器时，Windows 会加载的驱动程序。 新的驱动程序基于[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)(KMDF)，并实现 USB 3.0 规范中定义的功能。 新的驱动程序是按如下所示：
 
 -   Usbxhci.sys
 -   Ucx01000.sys
@@ -68,38 +68,38 @@ USB 3.0 设备的 USB 驱动程序堆栈支持许多新功能。 某些功能是
 
 | 用例                                                           | 应基于 KMDF 驱动程序...                                                                                                              | WDM 驱动程序必须...                                                                                          |
 |--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| 若要指定客户端协定版本和与 USB 驱动程序堆栈 | 调用[ **WdfUsbTargetDeviceCreateWithParameters** ](https://msdn.microsoft.com/library/windows/hardware/hh439428)方法。                                      | 调用[ **USBD\_CreateHandle** ](https://msdn.microsoft.com/library/windows/hardware/hh406241)例程。                                                |
-| 若要查询特定的功能                               | 调用[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh439434)并指定查询的功能的 GUID。 | 调用[ **USBD\_QueryUsbCapability** ](https://msdn.microsoft.com/library/windows/hardware/hh406230)并指定查询的功能的 GUID。 |
+| 若要指定客户端协定版本和与 USB 驱动程序堆栈 | 调用[ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。                                      | 调用[ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)例程。                                                |
+| 若要查询特定的功能                               | 调用[ **WdfUsbTargetDeviceQueryUsbCapability** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)并指定查询的功能的 GUID。 | 调用[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))并指定查询的功能的 GUID。 |
 
  
 
 ## <a name="new-routines-for-allocating-and-building-urbs"></a>用于分配和构建 URBs 新例程
 
 
-Windows 8 提供了用于分配、 格式设置，将释放 URBs 新例程。 [ **URB** ](https://msdn.microsoft.com/library/windows/hardware/ff538923)结构分配的 USB 驱动程序堆栈。 如果基础堆栈是新的 USB 驱动程序堆栈，URB 配对使用不透明的 URB 上下文。 USB 驱动程序堆栈使用 URB 上下文来改进 URB 跟踪和处理。 有关例程的详细信息，请参阅[Allocating 和构建 URBs](how-to-add-xrb-support-for-client-drivers.md)。
+Windows 8 提供了用于分配、 格式设置，将释放 URBs 新例程。 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构分配的 USB 驱动程序堆栈。 如果基础堆栈是新的 USB 驱动程序堆栈，URB 配对使用不透明的 URB 上下文。 USB 驱动程序堆栈使用 URB 上下文来改进 URB 跟踪和处理。 有关例程的详细信息，请参阅[Allocating 和构建 URBs](how-to-add-xrb-support-for-client-drivers.md)。
 
 新的例程如下所示：
 
--   [**USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)
--   [**USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406243)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://msdn.microsoft.com/library/windows/hardware/hh406245)
--   [**USBD\_UrbFree**](https://msdn.microsoft.com/library/windows/hardware/hh406252)
--   [**USBD\_AssignUrbToIoStackLocation** ](https://msdn.microsoft.com/library/windows/hardware/hh406228)例程，以将 URB 与 IRP 相关联。 此例程仅适用于 WDM 客户端驱动程序。
+-   [**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
+-   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)
+-   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)
+-   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)
+-   [**USBD\_UrbFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urbfree)
+-   [**USBD\_AssignUrbToIoStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)例程，以将 URB 与 IRP 相关联。 此例程仅适用于 WDM 客户端驱动程序。
 
 除了上述列表中的例程，还有 URB 分配新的特定于 KMDF 的方法。 对于 KMDF 基于客户端驱动程序，我们建议您调用的
 
--   [ **WdfUsbTargetDeviceCreateUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439423)方法 (而不是[ **USBD\_UrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406250)) 来分配 URB。
--   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://msdn.microsoft.com/library/windows/hardware/hh439420)方法 (而不是[ **USBD\_IsochUrbAllocate**](https://msdn.microsoft.com/library/windows/hardware/hh406231)) 来分配 URB有关同步的传输。 这些调用分配可变的 URB 基于同步所需的传输的数据包数。 有关同步传输的详细信息，请参阅[如何将数据传输到 USB 等时终结点](transfer-data-to-isochronous-endpoints.md)。
+-   [ **WdfUsbTargetDeviceCreateUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)方法 (而不是[ **USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)) 来分配 URB。
+-   [ **WdfUsbTargetDeviceCreateIsochUrb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateisochurb)方法 (而不是[ **USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)) 来分配 URB有关同步的传输。 这些调用分配可变的 URB 基于同步所需的传输的数据包数。 有关同步传输的详细信息，请参阅[如何将数据传输到 USB 等时终结点](transfer-data-to-isochronous-endpoints.md)。
 
 ## <a name="new-user-mode-io-control-requests-for-usb-30-hubs"></a>新的用户模式 I/O 控件请求的 USB 3.0 集线器
 
 
 Windows 8 提供新 Ioctl 应用程序可以用来检索有关 USB 3.0 集线器和它们的端口的信息。 新 Ioctl 是按如下所示：
 
--   [**IOCTL\_USB\_获取\_中心\_信息\_EX**](https://msdn.microsoft.com/library/windows/hardware/hh450860)
--   [**IOCTL\_USB\_获取\_端口\_连接器\_属性**](https://msdn.microsoft.com/library/windows/hardware/hh450863)
--   [**IOCTL\_USB\_获取\_节点\_连接\_信息\_EX\_V2**](https://msdn.microsoft.com/library/windows/hardware/hh450861)
+-   [**IOCTL\_USB\_获取\_中心\_信息\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_hub_information_ex)
+-   [**IOCTL\_USB\_获取\_端口\_连接器\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_port_connector_properties)
+-   [**IOCTL\_USB\_获取\_节点\_连接\_信息\_EX\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_node_connection_information_ex_v2)
 
 通过将发送到 USB 驱动程序上的 I/O 请求信息的下面一堆栈应用程序检索：
 
@@ -137,7 +137,7 @@ Windows 8 中包含新的 USB 存储驱动程序实现 USB 附加 SCSI 协议 (U
 ## <a name="enhanced-debugging-and-diagnostic-capabilities"></a>增强的调试和诊断功能
 
 
-Windows 8 提供新的 USB 3.0 调试工具，以更快地提高诊断 USB 问题。 有新 USB 3.0 内核调试器扩展，检查 USB 3.0 主控制器和设备状态。 可以使用 USB WPP 和事件跟踪分析 USB 交互并更轻松地解决 USB 设备问题。 Windows 8 支持通过 USB 3.0 进行调试。 有关详细信息，请参阅[设置了 USB 3.0 连接手动](https://msdn.microsoft.com/library/windows/hardware/hh439372)。
+Windows 8 提供新的 USB 3.0 调试工具，以更快地提高诊断 USB 问题。 有新 USB 3.0 内核调试器扩展，检查 USB 3.0 主控制器和设备状态。 可以使用 USB WPP 和事件跟踪分析 USB 交互并更轻松地解决 USB 设备问题。 Windows 8 支持通过 USB 3.0 进行调试。 有关详细信息，请参阅[设置了 USB 3.0 连接手动](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-3-0-debug-cable-connection)。
 
 ## <a name="new-usb-specific-failure-messages-in-device-manager"></a>新的特定于 USB 的失败消息在设备管理器
 
@@ -175,8 +175,8 @@ Windows 8 提供新的 USB 3.0 调试工具，以更快地提高诊断 USB 问�
 -   USB 设备返回的序列号无效字符串描述符。
 
 ## <a name="related-topics"></a>相关主题
-[USB 驱动程序的新增功能](https://msdn.microsoft.com/library/windows/hardware/hh451212)  
-[通用串行总线 (USB) 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[USB 驱动程序的新增功能](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development)  
+[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

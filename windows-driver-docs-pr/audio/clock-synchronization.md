@@ -16,12 +16,12 @@ keywords:
 - 同步 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fdbc238053392478af94f198a3faa36d6162ea1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3b735e62aa6a56df79fa71d65d7b02a03e111a2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333870"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355605"
 ---
 # <a name="clock-synchronization"></a>时钟同步
 
@@ -43,13 +43,13 @@ ms.locfileid: "63333870"
 
 假设事件进行标记，以便在时间 520 引用时播放。 合成器通过向下的说明呈现为示例和示例及时执行所有计算来实现其工作。 因此，它需要知道 520 引用时间的示例时间的转换。 在用户模式下，批接收器提供合成器使用的两个函数：
 
-[**IDirectMusicSynthSink::SampleToRefTime**](https://msdn.microsoft.com/library/windows/hardware/ff536526)
+[**IDirectMusicSynthSink::SampleToRefTime**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
 
-[**IDirectMusicSynthSink::RefTimeToSample**](https://msdn.microsoft.com/library/windows/hardware/ff536525)
+[**IDirectMusicSynthSink::RefTimeToSample**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
 
 若要执行转换在这种情况下，合成器调用**IDirectMusicSynthSink::RefTimeToSample**批接收器上。
 
-然后批接收器并发回采样时间 (例如，600)。 在示例时 600 获取呈现问题的说明。 然后，当合成[ **IDirectMusicSynth::Render** ](https://msdn.microsoft.com/library/windows/hardware/ff536541)批接收器来呈现的下一部分 （例如，从示例时间 600 到 800） 的流调用方法，请注意呈现到在示例时 600 的缓冲区。
+然后批接收器并发回采样时间 (例如，600)。 在示例时 600 获取呈现问题的说明。 然后，当合成[ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)批接收器来呈现的下一部分 （例如，从示例时间 600 到 800） 的流调用方法，请注意呈现到在示例时 600 的缓冲区。
 
 **请注意**  采样时间保留为 64 位数字，以避免滚动更新。 （DWORD 值滚动 27 小时内。）
 

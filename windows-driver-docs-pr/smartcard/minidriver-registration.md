@@ -4,12 +4,12 @@ description: 微型驱动程序注册
 ms.assetid: 332FEBD6-9803-4502-8F84-9DB2F17BB19B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df83902740e4143861243de30ef4a11a91764c1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0600be634c660618a5f2a6338e118d4bf2f7ae6d
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377210"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356700"
 ---
 # <a name="minidriver-registration"></a>微型驱动程序注册
 
@@ -17,7 +17,7 @@ ms.locfileid: "63377210"
 ## <a name="span-iddllmainspanspan-iddllmainspanspan-iddllmainspandllmain"></a><span id="DllMain"></span><span id="dllmain"></span><span id="DLLMAIN"></span>DllMain
 
 
-智能卡微型驱动程序实现，并将导出[ *DllMain* ](https://msdn.microsoft.com/library/windows/desktop/ms682583)函数来处理加载/卸载并附加/分离通知。 这允许微型驱动程序 DLL 来管理其状态，并分配到的资源。 有关实现的详细信息，请参阅*DllMain*参考主题。
+智能卡微型驱动程序实现，并将导出[ *DllMain* ](https://docs.microsoft.com/windows/desktop/Dlls/dllmain)函数来处理加载/卸载并附加/分离通知。 这允许微型驱动程序 DLL 来管理其状态，并分配到的资源。 有关实现的详细信息，请参阅*DllMain*参考主题。
 
 ## <a name="span-iddllregisterserveranddllunregisterserverspanspan-iddllregisterserveranddllunregisterserverspanspan-iddllregisterserveranddllunregisterserverspandllregisterserver-and-dllunregisterserver"></a><span id="DllRegisterServer_and_DllUnregisterServer"></span><span id="dllregisterserver_and_dllunregisterserver"></span><span id="DLLREGISTERSERVER_AND_DLLUNREGISTERSERVER"></span>DllRegisterServer 和 DllUnregisterServer
 

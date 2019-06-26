@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_SET_ARGUMENT_BUFFER 宏 ACPI 设备
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 939fdf4b3ef597de842e0df6cc642e89f247579c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7d3f5ca7ad3b58d471af4beb33cbf1eb33e6eb2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328850"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355878"
 ---
 # <a name="acpimethodsetargumentbuffer-macro"></a>ACPI\_方法\_设置\_自变量\_缓冲区宏
 
 
-ACPI\_方法\_设置\_自变量\_缓冲区宏设置的成员[ **ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)的数据缓冲区中提供的自定义数据结构。
+ACPI\_方法\_设置\_自变量\_缓冲区宏设置的成员[ **ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)的数据缓冲区中提供的自定义数据结构。
 
 <a name="syntax"></a>语法
 ------
@@ -74,4 +74,4 @@ void ACPI_METHOD_SET_ARGUMENT_BUFFER(
 ## <a name="see-also"></a>请参阅
 
 
-[**ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125) 
+[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

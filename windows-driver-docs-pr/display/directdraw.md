@@ -13,12 +13,12 @@ keywords:
 - 显示图形 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d450f33a45a569e407a702eff00301cffe34cce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 331794d836eec723ffa170bf8a39e73795386540
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392060"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353456"
 ---
 # <a name="directdraw"></a>DirectDraw
 
@@ -36,9 +36,9 @@ ms.locfileid: "63392060"
 
 -   *dvp.h*时驱动程序支持 DirectDraw 视频端口扩展 (VPE) 使用。
 
--   *dxmini.h*微型端口驱动程序包括对内核模式视频传输，DxApi 接口的支持时，将使用 (指定的函数[ **DXAPI\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff557395)结构)。
+-   *dxmini.h*微型端口驱动程序包括对内核模式视频传输，DxApi 接口的支持时，将使用 (指定的函数[ **DXAPI\_接口**](https://docs.microsoft.com/windows/desktop/api/dxmini/ns-dxmini-_dxapi_interface)结构)。
 
--   *ddkmapi.h*视频捕获驱动程序用于访问[ **DxApi** ](https://msdn.microsoft.com/library/windows/hardware/ff557364)函数。 DirectDraw，反过来，调用 DxApi 接口。
+-   *ddkmapi.h*视频捕获驱动程序用于访问[ **DxApi** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxapi/nf-dxapi-dxapi)函数。 DirectDraw，反过来，调用 DxApi 接口。
 
 -   *dmemmgr.h*时驱动程序想要执行其自身内存管理，而不是依靠 DirectDraw 运行时使用。
 
@@ -48,7 +48,7 @@ ms.locfileid: "63392060"
 
 *Ddraw.h*标头文件随 Windows SDK; 将使用 Windows Driver Kit (WDK) 包含所有其他头文件。 Windows 驱动程序开发工具包 (DDK) 还包含 DirectDraw 驱动程序中的示例代码*p3samp*视频显示目录。
 
-对于 DirectDraw 驱动程序函数，回叫，页参考和结构可在[DirectDraw 驱动程序函数](https://msdn.microsoft.com/library/windows/hardware/ff553825)并[DirectDraw 驱动程序结构](https://msdn.microsoft.com/library/windows/hardware/ff553831)。
+对于 DirectDraw 驱动程序函数，回叫，页参考和结构可在[DirectDraw 驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)并[DirectDraw 驱动程序结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
 
 DirectDraw 有关详细信息，请参阅 Windows SDK。 DirectDraw 驱动程序编写人员可以通过电子邮件发送到发送问题和提出的意见<em>directx@microsoft.com</em>。
 

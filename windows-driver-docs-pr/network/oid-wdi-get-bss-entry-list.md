@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_BSS_ENTRY_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 23f1bd2a72969df318fec2fb3df1f2550fd82cf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d5b630e02fa85c5bc0769b64c15df2696844da9
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384623"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353662"
 ---
 # <a name="oidwdigetbssentrylist"></a>OID\_WDI\_GET\_BSS\_ENTRY\_LIST
 
@@ -21,7 +21,7 @@ OID\_WDI\_获取\_BSS\_条目\_列表询问以指示列表已缓存的 BSS 网�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 不支持 set 语句        | 1                               |
+| Port  | 不支持 set 语句        | 1                               |
 
  
 
@@ -36,7 +36,7 @@ Microsoft 组件使用的指定项的列表的操作系统报告的 BSS 列表�
 
 | TLV                                         | 允许多个 TLV 实例 | 可选 | 描述                                           |
 |---------------------------------------------|--------------------------------|----------|-------------------------------------------------------|
-| [**WDI\_TLV\_SSID**](https://msdn.microsoft.com/library/windows/hardware/dn898064) |                                |          | 宿主需要 BSS SSID 列表的更新。 |
+| [**WDI\_TLV\_SSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid) |                                |          | 宿主需要 BSS SSID 列表的更新。 |
 
  
 

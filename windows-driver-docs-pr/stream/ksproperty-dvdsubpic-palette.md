@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7382a2f46a6e1eee9fad4430862e4513737548a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b654f80729a706be9b81c5820053a666fa336480
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377453"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354888"
 ---
 # <a name="kspropertydvdsubpicpalette"></a>KSPROPERTY\_DVDSUBPIC\_PALETTE
 
@@ -54,7 +54,7 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE 属性指定的子画面流使用的调色板。
 <td><p>是</p></td>
 <td><p>Pin</p></td>
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565628" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPPAL&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565628)"><strong>KSPROPERTY_SPPAL</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal" data-raw-source="[&lt;strong&gt;KSPROPERTY_SPPAL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal)"><strong>KSPROPERTY_SPPAL</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,7 +66,7 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE 属性指定的子画面流使用的调色板。
 <a name="remarks"></a>备注
 -------
 
-[ **KSPROPERTY\_SPPAL** ](https://msdn.microsoft.com/library/windows/hardware/ff565628)结构包含一个 16 YUV 元素的数组。 这些元素对应于请求的子画面命令流中的 4 位颜色数字。
+[ **KSPROPERTY\_SPPAL** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal)结构包含一个 16 YUV 元素的数组。 这些元素对应于请求的子画面命令流中的 4 位颜色数字。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,7 +87,7 @@ KSPROPERTY\_DVDSUBPIC\_PALETTE 属性指定的子画面流使用的调色板。
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY\_SPPAL**](https://msdn.microsoft.com/library/windows/hardware/ff565628)
+[**KSPROPERTY\_SPPAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sppal)
 
  
 

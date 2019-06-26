@@ -7,12 +7,12 @@ keywords:
 - 依赖文件 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29398cffcde34e28002c3d7e3a4a034afb5dcd8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 812dff15cb58d8d0901c33a73cd6c9044c8bfbe1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367604"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356048"
 ---
 # <a name="printer-inf-file-entries"></a>打印机 INF 文件项
 
@@ -41,7 +41,7 @@ ms.locfileid: "63367604"
 
 -   结构成员 Ntprint.dll 将在其中放置指向条目值的指针。
 
-| INF 文件条目       |ReplTest1|默认值 （如果不指定项）|结构成员 |
+| INF 文件条目       |值|默认值 （如果不指定项）|结构成员 |
 |----------------------|-----|-------------|-----------------------------------------|
 | ConfigFile           | 驱动程序的名称[打印机接口 DLL](printer-interface-dll.md)。 | 指定 DriverFile 的值。 | **pConfigFile**驱动程序的成员\_信息\_3 结构 （Windows SDK 文档中所述） |
 | DataFile             | 驱动程序的关联的数据文件，如 PPD 文件的名称。 | 驱动程序的 INF 文件中的节名称。 | **pDataFile**驱动程序的成员\_信息\_3 结构 |
@@ -57,7 +57,7 @@ ms.locfileid: "63367604"
 
  
 
- **请注意**  **1 (DriverCategory)**:如果 INF 文件指定一个类别，这些是允许的值 (0 到 5 分别) 为指定类别：
+ **请注意**  **1 (DriverCategory)** :如果 INF 文件指定一个类别，这些是允许的值 (0 到 5 分别) 为指定类别：
  
  
 | 驱动程序类别          | 值 | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -75,11 +75,11 @@ ms.locfileid: "63367604"
 
  
 
-**请注意**  **2 (ExcludeFromSelect)**:*设备 ID*的设备不会显示在**选择设备**对话框或添加打印机向导中。 对于打印机，这包括 INF 文件中; 中具有重复的设备描述的设备的所有即插即用条目例如，有多个条目红外和并行枚举或另一个总线的设备。 控制标志一部分 INF 文件中必须出现 ExcludeFromSelect 条目，与此表中的所有其他不同。 请参阅[ **INF ControlFlags 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546342)有关详细信息。
+**请注意**  **2 (ExcludeFromSelect)** :*设备 ID*的设备不会显示在**选择设备**对话框或添加打印机向导中。 对于打印机，这包括 INF 文件中; 中具有重复的设备描述的设备的所有即插即用条目例如，有多个条目红外和并行枚举或另一个总线的设备。 控制标志一部分 INF 文件中必须出现 ExcludeFromSelect 条目，与此表中的所有其他不同。 请参阅[ **INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)有关详细信息。
 
  
 
-**请注意**  **3 (VendorSetup)**:如果指定没有 VendorSetup 条目，则不执行自定义安装程序操作。 具体而言，没有用户界面允许打印处理器、 打印监视器或打印机驱动程序安装在除通过 VendorSetup INF 条目使用。 有关此项的详细信息，请参阅[自定义的打印机安装程序操作](customized-printer-setup-operations.md)。
+**请注意**  **3 (VendorSetup)** :如果指定没有 VendorSetup 条目，则不执行自定义安装程序操作。 具体而言，没有用户界面允许打印处理器、 打印监视器或打印机驱动程序安装在除通过 VendorSetup INF 条目使用。 有关此项的详细信息，请参阅[自定义的打印机安装程序操作](customized-printer-setup-operations.md)。
 
  
 
@@ -133,7 +133,7 @@ PRINTER_MODEL_123 = "Contoso Printer Model 123"
 
 ## <a name="related-topics"></a>相关主题
 [双向通信架构](bidirectional-communication-schema.md)  
-[**INF ControlFlags 部分**](https://msdn.microsoft.com/library/windows/hardware/ff546342)  
+[**INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)  
 [安装自定义驱动程序组件](installing-customized-driver-components.md)  
 [Point-and-print](introduction-to-point-and-print.md)  
 [打印机 INF 文件安装部分](printer-inf-file-install-sections.md)  

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4199c52bd68cd100afd636098d5715ce73931a7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b6066efff020fb8c8d61ac298e1fbe1edcd5bb7
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332685"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354394"
 ---
 # <a name="kspropertyrtaudiobufferwithnotification"></a>KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知
 
@@ -52,19 +52,19 @@ KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_属性指定驱动程序分配的音频数
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537495" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537495)"><strong>KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION</strong></a></p></td>
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff537493" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff537493)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification)"><strong>KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性描述符 （实例数据） 包含 KSRTAUDIO\_缓冲区\_属性\_WITH\_通知结构，其中包含[ **KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构以及其他成员。 客户端将写入到结构其请求的缓冲区大小。 客户端必须指定为基址**NULL**除非需要特定的基址。
+属性描述符 （实例数据） 包含 KSRTAUDIO\_缓冲区\_属性\_WITH\_通知结构，其中包含[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构以及其他成员。 客户端将写入到结构其请求的缓冲区大小。 客户端必须指定为基址**NULL**除非需要特定的基址。
 
 当你想 DMA 驱动事件通知时，使用此属性。 基于**NotificationCount**成员，注册事件信号 （结束时） 或两次 （在中的点和结束） 每个周期内通过循环缓冲区。 使用注册事件[ **KSPROPERTY\_RTAUDIO\_注册\_通知\_事件**](ksproperty-rtaudio-register-notification-event.md)成功调用 KSPROPERTY 后\_RTAUDIO\_缓冲区\_WITH\_通知。
 
-属性值 （操作数据） 是一种结构的类型[ **KSRTAUDIO\_缓冲区**](https://msdn.microsoft.com/library/windows/hardware/ff537493)。 该驱动程序填充此结构与实际的缓冲区大小、 基址和它已经分配了循环缓冲区的内存屏障标志。
+属性值 （操作数据） 是一种结构的类型[ **KSRTAUDIO\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)。 该驱动程序填充此结构与实际的缓冲区大小、 基址和它已经分配了循环缓冲区的内存屏障标志。
 
 ### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -135,11 +135,11 @@ KSPROPERTY\_RTAUDIO\_缓冲区\_WITH\_通知属性请求返回状态\_成功以�
 ## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)
+[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_BUFFER**](https://msdn.microsoft.com/library/windows/hardware/ff537493)
+[**KSRTAUDIO\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer)
 
-[**KSRTAUDIO\_缓冲区\_属性\_WITH\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537495)
+[**KSRTAUDIO\_缓冲区\_属性\_WITH\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_buffer_property_with_notification)
 
 [**KSPROPERTY\_RTAUDIO\_REGISTER\_NOTIFICATION\_EVENT**](ksproperty-rtaudio-register-notification-event.md)
 

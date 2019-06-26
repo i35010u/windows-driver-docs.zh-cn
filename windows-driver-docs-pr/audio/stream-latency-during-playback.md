@@ -4,12 +4,12 @@ description: 播放期间的流延迟
 ms.assetid: 70b41245-f463-4225-b79c-0ee65d8a0132
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cde863bb7a035f4f5c4ec043dd09240f9e2bdf96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d121edf1edf9f6820b00361c129ddf67945dc755
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354258"
 ---
 # <a name="stream-latency-during-playback"></a>播放期间的流延迟
 
@@ -36,9 +36,9 @@ ms.locfileid: "63328629"
 
 通过让通知客户端每次完成从缓冲区读取的数据块的音频设备，客户端可以缩小延迟比其他实用。
 
-客户端可以获取通过发送参与流延迟的延迟问题的摘要[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://msdn.microsoft.com/library/windows/hardware/ff537378) WaveRT 端口驱动程序的请求。
+客户端可以获取通过发送参与流延迟的延迟问题的摘要[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency) WaveRT 端口驱动程序的请求。
 
-客户端确定的分离以保持在之间写入和播放位置后，客户端监视中播放位置来确定如何最前移的写入位置的更改。 在 Windows Server 2008 和更高版本操作系统中，客户端发出[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://msdn.microsoft.com/library/windows/hardware/ff537381)属性请求以确定播放位置。 支持此功能提供的 PortCls 系统驱动程序中的改进。
+客户端确定的分离以保持在之间写入和播放位置后，客户端监视中播放位置来确定如何最前移的写入位置的更改。 在 Windows Server 2008 和更高版本操作系统中，客户端发出[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)属性请求以确定播放位置。 支持此功能提供的 PortCls 系统驱动程序中的改进。
 
 如果音频设备已注册，在上图中所示的位置，属性请求将映射到用户模式下客户端可以访问的虚拟内存地址注册。 映射位置注册后，客户端可以读取内容的内存地址来确定当前播放位置。
 

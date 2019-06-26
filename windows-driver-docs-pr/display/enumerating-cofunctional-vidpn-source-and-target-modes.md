@@ -19,12 +19,12 @@ keywords:
 - 枚举透视 WDK 视频存在网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9599e9fcf89c09a0f8b7993989e395596b0a9f1d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: faac0a2042c7091eacbc5ef61bc1d663ad4c26a3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338654"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355547"
 ---
 # <a name="enumerating-cofunctional-vidpn-source-and-target-modes"></a>枚举协同工作的 VidPN 源和目标模式
 
@@ -39,9 +39,9 @@ ms.locfileid: "63338654"
 
 1.  VidPN 管理器创建或获取 VidPN 一些，但其源和目标的不是全部，具有固定的模式。
 
-2.  VidPN 管理器调用[ **DxgkDdiIsSupportedVidPn** ](https://msdn.microsoft.com/library/windows/hardware/ff559684)以确定是否可以扩展 VidPN 以窗体显示适配器支持的功能 VidPN。 也就是说，它会要求剩余的源和目标上而无需更改现有的固定的模式是否可以固定模式。
+2.  VidPN 管理器调用[ **DxgkDdiIsSupportedVidPn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_issupportedvidpn)以确定是否可以扩展 VidPN 以窗体显示适配器支持的功能 VidPN。 也就是说，它会要求剩余的源和目标上而无需更改现有的固定的模式是否可以固定模式。
 
-3.  VidPN 管理器调用[ **DxgkDdiEnumVidPnCofuncModality** ](https://msdn.microsoft.com/library/windows/hardware/ff559649)若要获取的源和目标，尚不具有固定模式上可用的模式。
+3.  VidPN 管理器调用[ **DxgkDdiEnumVidPnCofuncModality** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_enumvidpncofuncmodality)若要获取的源和目标，尚不具有固定模式上可用的模式。
 
 一个参数传递给*DxgkDdiEnumVidPnCofuncModality*是名为约束 VidPN VidPN 对象的句柄。
 
@@ -79,13 +79,13 @@ ms.locfileid: "63338654"
 
 若要从约束 VidPN 提取约束，请执行以下步骤：
 
--   首先调用[ **pfnGetTopology** ](https://msdn.microsoft.com/library/windows/hardware/ff562854)函数以获取指向的指针[VidPN 拓扑接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)表示约束 VidPN 的拓扑。
+-   首先调用[ **pfnGetTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_gettopology)函数以获取指向的指针[VidPN 拓扑接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)表示约束 VidPN 的拓扑。
 
--   调用[ **pfnAcquireFirstPathInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562092)并[ **pfnAcquireNextPathInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562093)函数来获取有关每个路径中的信息约束 VidPN 的拓扑。 有关特定路径 （源 ID、 目标 ID，缩放转换、 旋转转换、 目标颜色基础等） 的信息包含在[ **D3DKMDT\_VIDPN\_存在\_路径** ](https://msdn.microsoft.com/library/windows/hardware/ff546647)结构。
+-   调用[ **pfnAcquireFirstPathInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_acquirefirstpathinfo)并[ **pfnAcquireNextPathInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpntopology_acquirenextpathinfo)函数来获取有关每个路径中的信息约束 VidPN 的拓扑。 有关特定路径 （源 ID、 目标 ID，缩放转换、 旋转转换、 目标颜色基础等） 的信息包含在[ **D3DKMDT\_VIDPN\_存在\_路径** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)结构。
 
--   为每个路径的路径的源将 ID 传递到[ **pfnAcquireSourceModeSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562110)函数以获取路径的源。
+-   为每个路径的路径的源将 ID 传递到[ **pfnAcquireSourceModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_acquiresourcemodeset)函数以获取路径的源。
 
--   调用[ **pfnAcquirePinnedModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562076)函数来确定哪种模式 （如果有） 固定在源的模式设置。 如果源的模式设置具有固定的模式，则可能无需检查组中的剩余模式。 如果模式设置不具有固定的模式下，通过调用检查组中的剩余模式[ **pfnAcquireFirstModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562074)并[ **pfnAcquireNextModeInfo**](https://msdn.microsoft.com/library/windows/hardware/ff562075).
+-   调用[ **pfnAcquirePinnedModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirepinnedmodeinfo)函数来确定哪种模式 （如果有） 固定在源的模式设置。 如果源的模式设置具有固定的模式，则可能无需检查组中的剩余模式。 如果模式设置不具有固定的模式下，通过调用检查组中的剩余模式[ **pfnAcquireFirstModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirefirstmodeinfo)并[ **pfnAcquireNextModeInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_acquirenextmodeinfo).
 
     检查目标模式集并确定哪些目标模式集具有固定模式，请使用类似的步骤。
 
@@ -95,9 +95,9 @@ ms.locfileid: "63338654"
 
 对于已连接监视器的视频存在目标，还必须考虑的一套由监视器支持的模式。 即使显示适配器上的视频显示目标支持 （给定的约束条件） 的特定模式，应仅列出在目标的模式下，如果已连接的监视器还支持模式，则设置该模式。 若要确定已连接监视器支持的模式，请执行以下步骤：
 
--   [DXGK\_监视器界面](https://msdn.microsoft.com/library/windows/hardware/ff561949)
+-   [DXGK\_监视器界面](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_monitor_interface)
 
-    调用[ **pfnAcquireMonitorSourceModeSet**](https://msdn.microsoft.com/library/windows/hardware/ff561953)。 如果一种模式需要不设置不做任何调整，可以让它保持原状。 如果模式设置需要进行调整，然后必须创建一组新的模式，并替换为使用新设置的现有模式。
+    调用[ **pfnAcquireMonitorSourceModeSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_monitor_acquiremonitorsourcemodeset)。 如果一种模式需要不设置不做任何调整，可以让它保持原状。 如果模式设置需要进行调整，然后必须创建一组新的模式，并替换为使用新设置的现有模式。
 
 -   [DXGK_VIDPN_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)
 
@@ -105,17 +105,17 @@ ms.locfileid: "63338654"
 
 -   [_DXGK_VIDPNSOURCEMODESET_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)
 
-    然后调用[ **pfnCreateNewModeInfo** ](https://msdn.microsoft.com/library/windows/hardware/ff562078)并[ **pfnAddMode**](https://msdn.microsoft.com/library/windows/hardware/ff562077)。
+    然后调用[ **pfnCreateNewModeInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_createnewmodeinfo)并[ **pfnAddMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpnsourcemodeset_addmode)。
 
 -   [DXGK_VIDPN_INTERFACE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)
 
-    最后调用[ **pfnAssignSourceModeSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562840)替换现有的源模式，使用新设置。
+    最后调用[ **pfnAssignSourceModeSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignsourcemodeset)替换现有的源模式，使用新设置。
 
 ### <a name="adjusting-scaling-support-flags"></a>调整缩放支持标志
 
-对于约束 VidPN 拓扑中每个路径，确定路径是否具有固定缩放转换。 若要做出决定，检查*vpnPath*。**ContentTransformation.Scaling**，其中*vpnPath*是[ **D3DKMDT\_VIDPN\_存在\_路径**](https://msdn.microsoft.com/library/windows/hardware/ff546647)结构，它表示的路径。 如果*vpnPath*。**ContentTransformation.Scaling**设置为**D3DKMDT\_VPPS\_标识**， **D3DKMDT\_VPPS\_居中**，或**D3DKMDT\_VPPS\_STRETCHED**，然后固定的缩放转换的路径。 否则，不被固定的缩放转换。
+对于约束 VidPN 拓扑中每个路径，确定路径是否具有固定缩放转换。 若要做出决定，检查*vpnPath*。**ContentTransformation.Scaling**，其中*vpnPath*是[ **D3DKMDT\_VIDPN\_存在\_路径**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)结构，它表示的路径。 如果*vpnPath*。**ContentTransformation.Scaling**设置为**D3DKMDT\_VPPS\_标识**， **D3DKMDT\_VPPS\_居中**，或**D3DKMDT\_VPPS\_STRETCHED**，然后固定的缩放转换的路径。 否则，不被固定的缩放转换。
 
-如果路径不具有固定缩放转换，确定是否需要进行调整的路径的缩放支持标志。 如果它们演示了对扩展的类型的支持不具有约束同时正常工作，或者如果它们无法显示对扩展的类型的支持是同时具有约束正常工作，必须进行调整的支持标志。 若要更改的缩放支持标志设置的成员[ **D3DKMDT\_VIDPN\_存在\_路径\_缩放\_支持**](https://msdn.microsoft.com/library/windows/hardware/ff546712)保存标志的结构。
+如果路径不具有固定缩放转换，确定是否需要进行调整的路径的缩放支持标志。 如果它们演示了对扩展的类型的支持不具有约束同时正常工作，或者如果它们无法显示对扩展的类型的支持是同时具有约束正常工作，必须进行调整的支持标志。 若要更改的缩放支持标志设置的成员[ **D3DKMDT\_VIDPN\_存在\_路径\_缩放\_支持**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path_scaling_support)保存标志的结构。
 
 ### <a name="adjusting-rotation-support-flags"></a>调整旋转支持标志
 
@@ -125,10 +125,10 @@ ms.locfileid: "63338654"
 
 如果显示适配器具有一个或多个输出视频编解码器的多重采样抗锯齿功能的支持的则必须为每个源都具有固定的模式报告 （对于约束），提供了的多级取样方法。 若要报告可用的多级取样方法，请执行以下步骤：
 
--   创建的数组[D3DDDI\_MULTISAMPLINGMETHOD](https://msdn.microsoft.com/library/windows/hardware/ff544594)结构
--   将数组传递给[ **pfnAssignMultisamplingMethodSet** ](https://msdn.microsoft.com/library/windows/hardware/ff562115)函数的[VidPN 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)。
+-   创建的数组[D3DDDI\_MULTISAMPLINGMETHOD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)结构
+-   将数组传递给[ **pfnAssignMultisamplingMethodSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_vidpn_assignmultisamplingmethodset)函数的[VidPN 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)。
 
-[D3DDDI\_MULTISAMPLINGMETHOD](https://msdn.microsoft.com/library/windows/hardware/ff544594)结构具有两个成员，您必须将其设置，用于确定的特征的多级取样的方法。 **采样**成员指示 subpixels 进行采样的数目。 **NumQualityLevels**成员指示该方法可以执行操作的质量级别数。 只要级别中的每一项增加有明显改善显示的图像的质量，可以指定任意数量的质量级别。
+[D3DDDI\_MULTISAMPLINGMETHOD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_multisamplingmethod)结构具有两个成员，您必须将其设置，用于确定的特征的多级取样的方法。 **采样**成员指示 subpixels 进行采样的数目。 **NumQualityLevels**成员指示该方法可以执行操作的质量级别数。 只要级别中的每一项增加有明显改善显示的图像的质量，可以指定任意数量的质量级别。
 
 ### <a name="span-idenumerationpivotsspanspan-idenumerationpivotsspanenumeration-pivots"></a><span id="enumeration_pivots"></span><span id="ENUMERATION_PIVOTS"></span>枚举数据透视表
 

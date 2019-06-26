@@ -3,12 +3,12 @@ Description: 本主题介绍了一些常见问题的驱动程序开发人员还�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f4fcba721a94c7ba0911a74546572b728a4326
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 75e2367af2ee80170b468c61cfe1e14170063fda
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379533"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356646"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -52,7 +52,7 @@ ms.locfileid: "63379533"
 
 假设你看到类似， *"得益于 USB 3.0，我可以连接 SuperSpeed USB 拇指驱动器到我的 PC 的 xHCI 主控制器并将文件复制速度更快。"*
 
-让我们来了解该句中的 USB 条款。 USB 3.0、 USB 2.0 和 USB 1.0 指从 USB 规范修订号[USB 实现论坛](http://www.usb.org/home)。 USB 规范定义如何的主机 PC 和 USB 设备彼此。
+让我们来了解该句中的 USB 条款。 USB 3.0、 USB 2.0 和 USB 1.0 指从 USB 规范修订号[USB 实现论坛](https://www.usb.org/)。 USB 规范定义如何的主机 PC 和 USB 设备彼此。
 
 版本号还指示最大传输速度。 最新规范修订版本是 USB 3.0，它指定最多为 5 Gbps; 最大传输速度。 USB 1.0 定义两个不同的数据速率，低速度 （最多 1.5 Mbps) USB 和全速 USB （最多 12 Mbps)。 USB 2.0 定义了新的数据速率，高速 USB (480 Mbps)，同时保持对低和完整速度设备的支持。 USB 3.0 将继续处理所有以前定义的数据速率。 如果您看一下产品打包，SuperSpeed USB 引用最新的 USB 3.0 设备。 高速 USB 用于描述高速 USB 2.0 设备。 USB、 与没有描述符是指低速和全速设备。
 
@@ -210,7 +210,7 @@ U-如果已使用过 Microsoft 和其他 USB-如果成员公司开发的独立�
 
 USB 网站上提供了详细信息。
 
-有关 USB 和高速 USB，请参阅： [ http://www.usb.org/developers/packaging ](http://www.usb.org/developers/packaging/)/。
+有关 USB 和高速 USB，请参阅： [ http://www.usb.org/developers/packaging ](https://www.usb.org/developers/packaging/)/。
 
 有关 SuperSpeed USB 参考： <http://www.usb.org/channel/>。
 
@@ -484,9 +484,9 @@ USB 设备不能被 Windows 唤醒从 S3，原因有多种，其中包括：
 
     ![重新安装驱动程序](images/usb-reinstall-driver.jpg)
 
-4. 在添加新硬件向导中，选择**自动安装软件 （推荐）**，然后单击**下一步**。 继续执行向导，接受所有默认选项，直到到达最后一页的向导中，然后单击**完成**。 您可能需要重新启动计算机以完成安装。
+4. 在添加新硬件向导中，选择**自动安装软件 （推荐）** ，然后单击**下一步**。 继续执行向导，接受所有默认选项，直到到达最后一页的向导中，然后单击**完成**。 您可能需要重新启动计算机以完成安装。
 
-Windows XP Service Pack 1 中的 USB 2.0 的可用性的其他信息，请参阅 Microsoft 知识库文章 329632，"如何获取和安装 USB 2.0 Windows XP Service Pack 1 中的驱动程序"处[ http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q329632 &](https://support.microsoft.com/kb/329632)。
+Windows XP Service Pack 1 中的 USB 2.0 的可用性的其他信息，请参阅 Microsoft 知识库文章 329632，"如何获取和安装 USB 2.0 Windows XP Service Pack 1 中的驱动程序"处[ http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q329632 &](https://support.microsoft.com/help/329632)。
 
 **请注意**  以确保拥有最新的更新在计算机上安装，请定期访问 Windows Update。
 
@@ -502,7 +502,7 @@ Windows XP 和更高版本的 Windows 时高速 USB 设备插入到不支持高�
 
 **请注意**  前面的过程禁用所有 USB 通知，而不仅仅是"高速 USB 设备插入非高速端口"。
 
-有关 Windows XP Service Pack 1 中的 USB 2.0 支持的其他信息，请参阅 Microsoft 知识库文章 329632，"如何获取和安装 USB 2.0 中 Windows XP Service Pack 1，驱动程序在[ http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q329632](https://support.microsoft.com/kb/329632)。
+有关 Windows XP Service Pack 1 中的 USB 2.0 支持的其他信息，请参阅 Microsoft 知识库文章 329632，"如何获取和安装 USB 2.0 中 Windows XP Service Pack 1，驱动程序在[ http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q329632](https://support.microsoft.com/help/329632)。
 
 ## <a name="is-my-usb-20-hub-single-tt-or-multi-tt"></a>是我的 USB 2.0 中心单 TT 或多 TT？
 
@@ -513,7 +513,7 @@ USB 2.0 集线器能够拥有中心 (单个 TT) 上的所有下游面向的端�
 - 单 TT。 **bDeviceProtocol** == 0x01
 - 多 TT。 **bDeviceProtocol** == 0x02
 
-**Usbhub.sys**使用此设置来启用多 TT 模式或单 TT 模式。 Windows XP 及更高版本，Usbhub.sys 始终启用多 TT 集线器上的多 TT 模式。 TT 布局有关的其他详细信息，请参阅 11.14.1.3 和的 11.23.1 [USB 2.0 规范](http://www.usb.org/developers/docs)。
+**Usbhub.sys**使用此设置来启用多 TT 模式或单 TT 模式。 Windows XP 及更高版本，Usbhub.sys 始终启用多 TT 集线器上的多 TT 模式。 TT 布局有关的其他详细信息，请参阅 11.14.1.3 和的 11.23.1 [USB 2.0 规范](https://www.usb.org/documents)。
 
 ## <a name="what-characters-or-bytes-are-valid-in-a-usb-serial-number"></a>哪些字符或字节是否有效 USB 序列号中？
 
@@ -532,7 +532,7 @@ Plug and Play 要求 USB 序列号中的每个字节有效。 如果单字节无
 - 值小于 0x20。
 - 大于 0x7F 的值。
 
-有关其他详细信息**iSerialNumber**值，请参阅部分 9.6.1 [USB 2.0 规范](http://www.usb.org/developers/docs)。
+有关其他详细信息**iSerialNumber**值，请参阅部分 9.6.1 [USB 2.0 规范](https://www.usb.org/documents)。
 
 ## <a name="what-langid-is-used-in-a-string-request-on-localized-builds-of-windows"></a>内容本地化版本的 Windows 上的字符串请求中使用 LANGID？
 
@@ -544,7 +544,7 @@ USB 设备通过 USB 设备描述符将 iSerialNumber 字段设置为序列号�
 
 ## <a name="what-is-the-maximum-usb-transfer-size-for-different-windows-versions"></a>什么是不同的 Windows 版本的最大 USB 传输大小？
 
-请参阅[传输各种操作系统上的最大大小的 USB](https://support.microsoft.com/kb/832430)。
+请参阅[传输各种操作系统上的最大大小的 USB](https://support.microsoft.com/help/832430/maximum-size-of-usb-transfers-on-various-operating-systems)。
 
 ## <a name="how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device"></a>如何应号分配给多个接口上的复合设备？
 
@@ -557,14 +557,14 @@ Windows 将为复合设备具有多个接口上的第一个配置的 USB 设备�
 
 对于 Windows XP Service Pack 2 和更高版本的 Windows，接口号只需将不断增加，不连续。
 
-有关接口号的其他信息，请参阅[复合 USB 设备的接口不按顺序编号不能在 Windows XP](https://support.microsoft.com/kb/814560)。
+有关接口号的其他信息，请参阅[复合 USB 设备的接口不按顺序编号不能在 Windows XP](https://support.microsoft.com/help/814560)。
 
 接口的备用设置应分配的所有版本的 Windows 中的如下所示：
 
 - 接口的默认值始终是备用设置为零。
 - 其他备用设置数字必须是连续和不断增加。
 
-有关替代设置的其他信息，请参阅部分第 9.6.5 [USB 2.0 规范](http://www.usb.org/developers/docs)。
+有关替代设置的其他信息，请参阅部分第 9.6.5 [USB 2.0 规范](https://www.usb.org/documents)。
 
 ## <a name="what-are-the-major-restrictions-imposed-by-usbccgpsys"></a>Usbccgp.sys 规定的主要限制是什么？
 
@@ -598,7 +598,7 @@ Needs = Composite.Dev
 
 请参阅博客文章有关[如何包括和驱动程序的公共 PDB 文件中查看 WPP 跟踪消息](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)。
 
-有关 USB core 堆栈调试的其他信息，请参阅[如何启用详细调试跟踪在各种驱动程序和子系统中的](https://support.microsoft.com/kb/314743)。
+有关 USB core 堆栈调试的其他信息，请参阅[如何启用详细调试跟踪在各种驱动程序和子系统中的](https://support.microsoft.com/help/314743)。
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
@@ -631,4 +631,4 @@ Microsoft 目前正与 Ihv 开发支持 IAD 的设备。 以下操作系统都�
 ## <a name="related-topics"></a>相关主题
 
 [对所有开发人员的 USB 概念](usb-concepts-for-all-developers.md)  
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

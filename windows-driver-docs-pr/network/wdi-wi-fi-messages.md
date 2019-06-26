@@ -4,19 +4,19 @@ description: 本部分介绍 WDI 命令消息的结构
 ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16859876b0bf381c6b46f36d6d0aa7e54643b90a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4a1bf9f59ef512859326f6cea0419b4fe44c06a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346629"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357048"
 ---
 # <a name="wdi-message-structure"></a>WDI 消息结构
 
 
-WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn926074)结构。 命令标头后跟零个或多个类型-长度-值 (TLV) 结构。
+WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)结构。 命令标头后跟零个或多个类型-长度-值 (TLV) 结构。
 
-为从主机到 Wi-fi 设备发送的消息记录在定义的命令消息 Id [WDI 任务 Oid](https://msdn.microsoft.com/library/windows/hardware/dn926082)， [WDI 属性 Oid](https://msdn.microsoft.com/library/windows/hardware/dn926079)，并[WDI 状态指示](https://msdn.microsoft.com/library/windows/hardware/dn926080)。
+为从主机到 Wi-fi 设备发送的消息记录在定义的命令消息 Id [WDI 任务 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-task-oids)， [WDI 属性 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-property-oids)，并[WDI 状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-status-indications)。
 
 ## <a name="tlvs"></a>TLVs
 
@@ -27,7 +27,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 |----------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | 在任务栏的搜索框中键入                       | UINT16   | TLV 结构的类型。 无法识别的 TLV 类型必须跳过不触发错误。                                              |
 | 值缓冲区的长度 | UINT16   | 以字节为单位的值缓冲区的大小。                                                                                                        |
-| ReplTest1                      | 字节\[\] | 有效负载缓冲区，其中可能包含一个结构、 结构、 列表或其他 TLVs。 数据大小必须完全符合预期的长度。 |
+| 值                      | 字节\[\] | 有效负载缓冲区，其中可能包含一个结构、 结构、 列表或其他 TLVs。 数据大小必须完全符合预期的长度。 |
 
  
 
@@ -38,7 +38,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 
 以静态方式调整大小 TLV 列表包含以静态方式调整大小的几个成员。 它们类似于标准的 C 样式数组。
 
-在此示例中， [ **WDI\_TLV\_单播\_算法\_列表**](https://msdn.microsoft.com/library/windows/hardware/dn898073)定义为一系列 WDI\_ALGO\_对.
+在此示例中， [ **WDI\_TLV\_单播\_算法\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-algorithm-list)定义为一系列 WDI\_ALGO\_对.
 
 |        |                                    |
 |--------|------------------------------------|
@@ -55,7 +55,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 
 如果事先不知道给定对象的大小，使用多 TLV 组。 此使用模式指定 N 不同大小不定的 TLVs 会给定缓冲区中。 项数 (N) 不知道提前，并推断匹配 TLVs 中给定的缓冲区数。
 
-在此示例中，是父缓冲区[ **WDI\_消息\_标头**](https://msdn.microsoft.com/library/windows/hardware/dn926074)，用于定义 TLV 缓冲区的末尾。 请注意， [ **WDI\_TLV\_BSS\_条目**](https://msdn.microsoft.com/library/windows/hardware/dn926162)可能会混杂在父缓冲区中的其他不同 TLV 类型之间。
+在此示例中，是父缓冲区[ **WDI\_消息\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_message_header)，用于定义 TLV 缓冲区的末尾。 请注意， [ **WDI\_TLV\_BSS\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry)可能会混杂在父缓冲区中的其他不同 TLV 类型之间。
 
 | 偏移量                         | 字段                       | 在任务栏的搜索框中键入                |
 |--------------------------------|-----------------------------|---------------------|
@@ -68,7 +68,7 @@ WDI 命令的所有消息必须都开头[ **WDI\_消息\_标头**](https://msdn.
 
  
 
-对于包含其他 TLVs TLVs，具有 TLV 参考主题*允许多个 TLV 实例*列。 如果选中此列，则允许指定的 TLV 出现多次。 此示例，请参阅[ **WDI\_TLV\_CONNECT\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926266)。
+对于包含其他 TLVs TLVs，具有 TLV 参考主题*允许多个 TLV 实例*列。 如果选中此列，则允许指定的 TLV 出现多次。 此示例，请参阅[ **WDI\_TLV\_CONNECT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connect-parameters)。
 
  
 

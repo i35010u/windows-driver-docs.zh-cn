@@ -4,23 +4,23 @@ description: 创建测试证书
 ms.assetid: 4e6daa96-029c-4e1c-b483-b900cb836858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5da0a1585b825404a27ffe197fc08867b197ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b26d405fa71ee7f45a5761051865c0225c9f841
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372976"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356287"
 ---
 # <a name="creating-test-certificates"></a>创建测试证书
 
 
 测试签名需要测试证书。 生成测试证书后，它可以是用于测试登录多个驱动程序或[驱动程序包](driver-packages.md)。 有关详细信息，请参阅[测试证书](test-certificates.md)。
 
-本主题介绍如何使用[ **MakeCert** ](https://msdn.microsoft.com/library/windows/hardware/ff548309)工具来创建测试证书。 在大多数开发环境中，通过 MakeCert 生成的测试证书应足以测试的安装和加载测试签名的驱动程序或驱动程序包。 有关此类型的测试证书的详细信息，请参阅[MakeCert 的测试证书](makecert-test-certificate.md)。
+本主题介绍如何使用[ **MakeCert** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)工具来创建测试证书。 在大多数开发环境中，通过 MakeCert 生成的测试证书应足以测试的安装和加载测试签名的驱动程序或驱动程序包。 有关此类型的测试证书的详细信息，请参阅[MakeCert 的测试证书](makecert-test-certificate.md)。
 
 下面的命令行示例使用 MakeCert 来完成以下任务：
 
--   创建一个名为的自签名的测试证书*Contoso.com(Test)*。 此证书使用相同的名称的使用者名称和证书颁发机构 (CA)。
+-   创建一个名为的自签名的测试证书*Contoso.com(Test)* 。 此证书使用相同的名称的使用者名称和证书颁发机构 (CA)。
 
 -   将证书的副本放在名为输出文件*ContosoTest.cer*。
 
@@ -50,7 +50,7 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 开发人员必须创建只有一个 MakeCert 测试证书来签署所有[驱动程序包](driver-packages.md)开发计算机上。
 
-有关 MakeCert 工具和其命令行自变量的详细信息，请参阅[ **MakeCert**](https://msdn.microsoft.com/library/windows/hardware/ff548309)。
+有关 MakeCert 工具和其命令行自变量的详细信息，请参阅[ **MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)。
 
 此外请参阅自述文件*Selfsign_readme.htm*中*bin\\selfsign* Windows 驱动程序工具包 (WDK) 的目录。
 

@@ -4,12 +4,12 @@ description: 转发扩展
 ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9edee9cb08971a5cd6eeabb6511359f0fca5989
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4dd9f25b9f008be49d7fb64b75b89f10a5e02187
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347376"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353338"
 ---
 # <a name="forwarding-extensions"></a>转发扩展
 
@@ -38,7 +38,7 @@ ms.locfileid: "63347376"
 
 -   它可以筛选数据包流量和强制实施自定义和标准端口或切换通过可扩展交换机的数据包传递的策略。 当转发扩展筛选器中的入口数据路径的数据包时，则会应用基于源端口，以及该扩展将分配给该数据包的目标端口的筛选规则。
 
-    由独立软件供应商 (ISV) 定义自定义策略。 标准策略由可扩展交换机接口定义。 通过 HYPER-V WMI 管理层管理属性设置为这些类型的策略。 使用这些属性设置的对象标识符 (OID) 请求通过配置转发扩展[OID\_交换机\_端口\_属性\_更新](https://msdn.microsoft.com/library/windows/hardware/hh598278)并[OID\_交换机\_属性\_更新](https://msdn.microsoft.com/library/windows/hardware/hh598283)。
+    由独立软件供应商 (ISV) 定义自定义策略。 标准策略由可扩展交换机接口定义。 通过 HYPER-V WMI 管理层管理属性设置为这些类型的策略。 使用这些属性设置的对象标识符 (OID) 请求通过配置转发扩展[OID\_交换机\_端口\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)并[OID\_交换机\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)。
 
     可扩展交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 
@@ -78,13 +78,13 @@ ms.locfileid: "63347376"
 
     有关组合提供程序的详细信息，请参阅[组合提供程序扩展](teaming-provider-extensions.md)。
 
--   它可以通过返回状态来禁止创建可扩展交换机端口或网络适配器连接\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展可通过返回状态否决的端口创建请求\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_创建](https://msdn.microsoft.com/library/windows/hardware/hh598272)。
+-   它可以通过返回状态来禁止创建可扩展交换机端口或网络适配器连接\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展可通过返回状态否决的端口创建请求\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)。
 
     **请注意**  转发扩展，请勿创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出通知有关创建或删除的端口或网络适配器连接的基础扩展的 Oid。 有关详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
 
      
 
--   有权添加或更新可扩展交换机或端口策略决策通过返回状态\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展有权添加端口策略决策通过返回状态\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_属性\_添加](https://msdn.microsoft.com/library/windows/hardware/hh598275)。
+-   有权添加或更新可扩展交换机或端口策略决策通过返回状态\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展有权添加端口策略决策通过返回状态\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)。
 
     有关可扩展交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 

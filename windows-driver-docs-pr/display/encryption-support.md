@@ -10,12 +10,12 @@ keywords:
 - 加密 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7e1139a12c829ab8f6f5f324d1b93a8b299c13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfda7421910252e004d9ad46718e05bc77017d78
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380414"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355562"
 ---
 # <a name="encryption-support"></a>加密支持
 
@@ -47,7 +47,7 @@ ms.locfileid: "63380414"
 
 每个主机和加速器将初始化参数传递必要的加密之间交换的数据集必须以加密协议类型 GUID 为前缀。 此 GUID 可区分的一种类型的另一种从数据加密的数据。 这是加密的必需的因为无法对一个 DirectX VA 缓冲区，使用一种类型和加密的另一种可以用于对另一个 DirectX VA 缓冲区。
 
-[ **DXVA\_EncryptProtocolHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff563965)结构用于指示正在使用加密协议以及正在使用的加密类型。
+[ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)结构用于指示正在使用加密协议以及正在使用的加密类型。
 
  
 

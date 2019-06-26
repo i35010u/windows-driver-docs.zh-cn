@@ -3,12 +3,12 @@ Description: 本部分提供有关选择正确的机制的选择性挂起功能�
 title: USB 选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c29b337842ee640f962eb6e262a896bbb75c9a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33f661b9d2b4d406103a330c4dadf85478b7ce59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377236"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356586"
 ---
 # <a name="usb-selective-suspend"></a>USB 选择性挂起
 
@@ -19,12 +19,12 @@ ms.locfileid: "63377236"
 
 USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的其他端口操作挂起单个端口。 USB 设备的选择性挂起是便携式计算机中尤其有用，因为它可帮助节省电池电量。 很多设备，如指纹读取器和其他类型的生物识别扫描仪仅间歇性地要求能力。 当设备不在使用中，挂起此类设备，降低整体功率消耗。 更重要的是，不会有选择地挂起任何设备可能会阻止 USB 主控制器禁用其传输计划，将驻留在系统内存中。 DMA 传输由主机控制器到计划程序可以防止进入更深层次的睡眠状态，例如 C3 系统的处理器。 Windows 选择性挂起行为是不同的 Windows XP 和 Windows Vista 和更高版本的 Windows 中的设备。
 
-有两种不同机制，用于有选择地挂起 USB 设备： 空闲请求 Irp ([**IOCTL\_内部\_USB\_提交\_空闲\_通知** ](https://msdn.microsoft.com/library/windows/hardware/ff537270)) 并设置 power Irp ([**IRP\_MN\_设置\_POWER**](https://msdn.microsoft.com/library/windows/hardware/ff551744))。 要使用的机制取决于操作系统和设备类型： 复合或非复合。
+有两种不同机制，用于有选择地挂起 USB 设备： 空闲请求 Irp ([**IOCTL\_内部\_USB\_提交\_空闲\_通知** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 并设置 power Irp ([**IRP\_MN\_设置\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power))。 要使用的机制取决于操作系统和设备类型： 复合或非复合。
 
 ##  <a name="selecting-a-selective-suspend-mechanism"></a>选择选择性挂起机制
 
 
-客户端驱动程序，为复合设备上, 某个接口，使远程唤醒等的界面唤醒 IRP (IRP\_MN\_等待\_唤醒)，必须使用空闲请求 IRP ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270)) 机制来有选择地挂起设备。
+客户端驱动程序，为复合设备上, 某个接口，使远程唤醒等的界面唤醒 IRP (IRP\_MN\_等待\_唤醒)，必须使用空闲请求 IRP ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 机制来有选择地挂起设备。
 
 有关远程唤醒的信息，请参阅：
 
@@ -34,7 +34,7 @@ USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的�
 
 版本的 Windows 操作系统确定适用于非复合设备驱动程序的方式启用选择性挂起。
 
--   Windows XP:在 Windows XP 上所有客户端驱动程序必须使用空闲请求 Irp ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270)) 关闭其设备的电源。 客户端驱动程序必须使用 WDM power Irp 来有选择地挂起其设备。 执行此操作将阻止其他设备有选择地挂起。 有关详细信息，请参阅"USB 全局挂起"。
+-   Windows XP:在 Windows XP 上所有客户端驱动程序必须使用空闲请求 Irp ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 关闭其设备的电源。 客户端驱动程序必须使用 WDM power Irp 来有选择地挂起其设备。 执行此操作将阻止其他设备有选择地挂起。 有关详细信息，请参阅"USB 全局挂起"。
 -   Windows Vista 和更高版本的 Windows:驱动程序编写器已关闭设备在 Windows Vista 和更高版本的 Windows 中的多个选项。 尽管 Windows Vista 支持 Windows 空闲请求 IRP 机制，但驱动程序不需要使用它。
 
 下表显示了需要使用空闲请求 IRP 的方案以及可以使用 WDM power IRP 挂起 USB 设备的：
@@ -54,9 +54,9 @@ USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的�
 # <a name="sending-a-usb-idle-request-irp"></a>将 USB 空闲请求 IRP 发送
 
 
-当设备进入空闲状态时，客户端驱动程序将通知总线驱动程序来发送 IRP 的空闲状态请求 ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270)). 总线驱动程序确定，则可以安全地将设备置于低功耗状态后，它会调用与空闲请求 IRP 堆栈的下层客户端设备驱动程序传递的回调例程。
+当设备进入空闲状态时，客户端驱动程序将通知总线驱动程序来发送 IRP 的空闲状态请求 ([**IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)). 总线驱动程序确定，则可以安全地将设备置于低功耗状态后，它会调用与空闲请求 IRP 堆栈的下层客户端设备驱动程序传递的回调例程。
 
-在回调例程中，客户端驱动程序必须取消所有挂起 I/O 操作并等待所有 USB I/O Irp，才能完成。 它然后可以颁发[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求以更改到的 WDM 设备电源状态**D2**。 回调例程必须等待**D2**请求在返回之前完成。 有关空闲通知回调例程的详细信息，请参阅"USB 空闲通知回调例程"。
+在回调例程中，客户端驱动程序必须取消所有挂起 I/O 操作并等待所有 USB I/O Irp，才能完成。 它然后可以颁发[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求以更改到的 WDM 设备电源状态**D2**。 回调例程必须等待**D2**请求在返回之前完成。 有关空闲通知回调例程的详细信息，请参阅"USB 空闲通知回调例程"。
 
 总线驱动程序不会调用发出的空闲通知回调例程后完成 IRP 空闲状态的请求。 相反，总线驱动程序保存空闲请求挂起的 IRP，直到满足以下条件之一成立：
 
@@ -70,7 +70,7 @@ USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的�
 
 下面的 WDM 示例代码说明了设备驱动程序将 USB 空闲请求 IRP 发送所需的步骤。 在下面的代码示例中的错误检查已被省略。
 
-1.  分配并初始化[ **IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://msdn.microsoft.com/library/windows/hardware/ff537270) IRP
+1.  分配并初始化[ **IOCTL\_内部\_USB\_提交\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification) IRP
     ```cpp
     irp = IoAllocateIrp (DeviceContext->TopOfStackDeviceObject->StackSize, FALSE);
     nextStack = IoGetNextIrpStackLocation (irp);
@@ -121,7 +121,7 @@ USB 选择性挂起功能允许中心驱动程序，而不会影响中心上的�
 
 在某些情况下，设备驱动程序可能需要取消的空闲状态的请求已提交到总线驱动程序的 IRP。 这可能是如果删除该设备，在空闲和空闲，发送请求后变为活动状态或如果整个系统正在过渡到较低的系统电源状态。
 
-客户端驱动程序通过调用取消空闲 IRP [ **IoCancelIrp**](https://msdn.microsoft.com/library/windows/hardware/ff548338)。 下表介绍用于取消空闲 IRP 的三种方案，并指定驱动程序的操作必须执行：
+客户端驱动程序通过调用取消空闲 IRP [ **IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocancelirp)。 下表介绍用于取消空闲 IRP 的三种方案，并指定驱动程序的操作必须执行：
 
 <table>
 <colgroup>
@@ -334,9 +334,9 @@ typedef VOID (*USB_IDLE_CALLBACK)(__in PVOID Context);
 
 设备驱动程序必须在其空闲通知回调例程中执行以下操作：
 
--   请求[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766) IRP 如果设备需要了解有关远程唤醒设备。
+-   请求[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) IRP 如果设备需要了解有关远程唤醒设备。
 -   取消所有 I/O 并准备好设备进入低功率状态。
--   通过调用将设备置于 WDM 睡眠状态中唤醒[ **PoRequestPowerIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff559734)与*PowerState*参数设置为 PowerDeviceD2 （wdm.h 中; 中定义的枚举器值ntddk.h)。 在 Windows XP 中，驱动程序必须将放其设备 PowerDeviceD3，即使设备未配置为能够远程唤醒。
+-   通过调用将设备置于 WDM 睡眠状态中唤醒[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)与*PowerState*参数设置为 PowerDeviceD2 （wdm.h 中; 中定义的枚举器值ntddk.h)。 在 Windows XP 中，驱动程序必须将放其设备 PowerDeviceD3，即使设备未配置为能够远程唤醒。
 
 在 Windows XP 中，驱动程序必须依赖于要有选择地挂起设备发出的空闲通知回调例程。 如果在 Windows XP 中运行的驱动程序不使用空闲通知回调例程而直接将设备放入低功率状态，这可能会阻止 USB 设备树中的其他设备正在挂起。 有关更多详细信息，请参阅"USB 全局挂起"。
 
@@ -352,7 +352,7 @@ typedef VOID (*USB_IDLE_CALLBACK)(__in PVOID Context);
 ### <a name="arming-devices-for-wakeup-in-the-idle-notification-callback-routine"></a>武装的空闲通知回调例程中唤醒设备
 
 
-空闲通知回调例程应确定其设备是否具有[ **IRP\_MN\_等待\_唤醒**](https://msdn.microsoft.com/library/windows/hardware/ff551766)请求挂起。 如果没有 IRP\_MN\_等待\_唤醒申请处于挂起状态，回调例程应提交 IRP\_MN\_等待\_之前挂起设备唤醒请求。 等待唤醒机制的详细信息，请参阅[支持的设备是否已唤醒功能](https://msdn.microsoft.com/library/windows/hardware/ff563907)。
+空闲通知回调例程应确定其设备是否具有[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)请求挂起。 如果没有 IRP\_MN\_等待\_唤醒申请处于挂起状态，回调例程应提交 IRP\_MN\_等待\_之前挂起设备唤醒请求。 等待唤醒机制的详细信息，请参阅[支持的设备是否已唤醒功能](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-devices-that-have-wake-up-capabilities)。
 
 
 ## <a name="usb-global-suspend"></a>USB 全局挂起
@@ -363,7 +363,7 @@ USB 2.0 规范定义全局挂起为整个总线背后 USB 主控制器的挂起�
 -   [条件全局在 Windows 7 中挂起](#conditions-for-global-suspend-in-windows-7)
 -   [条件全局 Windows Vista 中挂起](#conditions-for-global-suspend-in-windows-vista)
 -   [条件全局在 Windows XP 中挂起](#conditions-for-global-suspend-in-windows-xp)
--   [相关的主题](#related-topics)
+-   [相关主题](#related-topics)
 
 ### <a name="conditions-for-global-suspend-in-windows-7"></a>条件全局在 Windows 7 中挂起
 
@@ -388,7 +388,7 @@ Windows 7 是更主动地有选择地挂起比 Windows Vista 的 USB 集线器�
 ### <a name="conditions-for-global-suspend-in-windows-xp"></a>条件全局在 Windows XP 中挂起
 
 
-为了最大限度地在 Windows XP 上的能源节约，十分重要，每个设备驱动程序使用空闲请求 Irp 挂起其设备。 如果一个驱动程序将使用其设备挂起[ **IRP\_MN\_设置\_POWER** ](https://msdn.microsoft.com/library/windows/hardware/ff551744)请求相反的空闲请求 IRP，它无法阻止其他设备正在挂起。
+为了最大限度地在 Windows XP 上的能源节约，十分重要，每个设备驱动程序使用空闲请求 Irp 挂起其设备。 如果一个驱动程序将使用其设备挂起[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求相反的空闲请求 IRP，它无法阻止其他设备正在挂起。
 
 下图说明了在 Windows XP 中可能出现的方案。
 

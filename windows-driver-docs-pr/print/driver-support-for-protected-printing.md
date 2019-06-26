@@ -4,12 +4,12 @@ description: Windows 8.1 包括用于受保护的打印，允许用户指定的�
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e682ace2a8abad91db7ba290ea6ba959f2b125
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 020d4c1c358dd11d929f85390d18f2d5e2a556c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576327"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356064"
 ---
 # <a name="driver-support-for-protected-printing"></a>受保护打印的驱动程序支持
 
@@ -272,11 +272,11 @@ Microsoft 建议是，为了尽量减少在客户端或服务器 PC 上的呈现
 
 **打印机扩展**
 
-打印机扩展应该能够在其打印首选项用户界面中显示为受保护的打印控件。 这可确保使用打印机扩展时，桌面应用程序的用户可以配置受保护的打印功能。 Microsoft 正在进行更改，这样[ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)系列的 Api 以支持受保护的打印从打印机扩展。
+打印机扩展应该能够在其打印首选项用户界面中显示为受保护的打印控件。 这可确保使用打印机扩展时，桌面应用程序的用户可以配置受保护的打印功能。 Microsoft 正在进行更改，这样[ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)系列的 Api 以支持受保护的打印从打印机扩展。
 
 **UWP 的设备应用程序**
 
-Microsoft 还将更改，以允许[ **IPrintSchemaTicket** ](https://msdn.microsoft.com/library/windows/hardware/hh451398)受保护的系列的 Api 来使用 UWP 设备应用，显示的控件在其打印首选项用户界面中的进行打印。
+Microsoft 还将更改，以允许[ **IPrintSchemaTicket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschematicket)受保护的系列的 Api 来使用 UWP 设备应用，显示的控件在其打印首选项用户界面中的进行打印。
 
  
 

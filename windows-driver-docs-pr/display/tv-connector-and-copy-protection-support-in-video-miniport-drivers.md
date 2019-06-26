@@ -13,16 +13,16 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 07a3751eaa0e47f25cb997ed32dacb577a25385d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bccf34cb12d65df26af09b845e80d39693c6abb
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389776"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353398"
 ---
 # <a name="tv-connector-and-copy-protection-support-in-video-miniport-drivers"></a>视频微型端口驱动程序中的电视连接器和复制保护支持
 
-有一个电视连接器的适配器的微型端口驱动程序必须处理[ **VRPs** ](https://msdn.microsoft.com/library/windows/hardware/ff570547)与[ **IOCTL\_视频\_句柄\_VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff567805) I/O 控制代码。 此 IOCTL 发送到要查询的功能和电视连接器和复制保护硬件的当前设置，或者设置的电视连接器和复制保护的硬件功能的微型端口驱动程序。 微型端口驱动程序确定要通过检查来执行的操作**dwCommand**字段[ **VIDEOPARAMETERS** ](https://msdn.microsoft.com/library/windows/hardware/ff570173) VRP 的中传递的结构**InputBuffer**。 系统将不允许微型端口驱动程序不处理此 VRP 如果 Rovi (以前称为 Macrovision) 播放受保护的 Dvd。
+有一个电视连接器的适配器的微型端口驱动程序必须处理[ **VRPs** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet)与[ **IOCTL\_视频\_句柄\_VIDEOPARAMETERS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) I/O 控制代码。 此 IOCTL 发送到要查询的功能和电视连接器和复制保护硬件的当前设置，或者设置的电视连接器和复制保护的硬件功能的微型端口驱动程序。 微型端口驱动程序确定要通过检查来执行的操作**dwCommand**字段[ **VIDEOPARAMETERS** ](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters) VRP 的中传递的结构**InputBuffer**。 系统将不允许微型端口驱动程序不处理此 VRP 如果 Rovi (以前称为 Macrovision) 播放受保护的 Dvd。
 
 如果**dwCommand**设置为副总裁\_命令\_GET，以及设备*不*支持电视输出，然后微型端口驱动程序不应返回任何\_中的错误**状态**隶属 VRP **StatusBlock**。 它还应设置**信息**VRP 成员**StatusBlock**大小，以字节为单位，VIDEOPARAMETERS 的结构。 应设置**dwFlags**为零，设置**dwTVStandard**到副总裁\_电视\_标准\_赢取\_VGA，并设置**dwAvailableTVStandard**到副总裁\_电视\_标准\_赢取\_VGA。
 

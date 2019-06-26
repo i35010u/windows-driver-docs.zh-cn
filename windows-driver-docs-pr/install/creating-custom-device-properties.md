@@ -6,17 +6,17 @@ keywords:
 - 设备属性 WDK 设备安装，创建自定义
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec294e7d9e6dacaa47fdb9e7d8de8664aa4d0fd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48d3e6991cfc20c1c1573916dde521d52f4a8552
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392535"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356312"
 ---
 # <a name="creating-custom-device-properties"></a>创建自定义设备属性
 
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持为设备实例创建自定义设备属性类别[设备安装程序类](device-setup-classes.md)，设备类和设备接口的接口。 自定义属性可以访问通过调用适当[SetupAPI 属性函数](https://msdn.microsoft.com/library/windows/hardware/ff541483)。 此外可以通过使用修改的自定义设备属性[ **INF AddProperty 指令**](inf-addproperty-directive.md)或[ **INF DelProperty 指令**](inf-delproperty-directive.md)。
+在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持为设备实例创建自定义设备属性类别[设备安装程序类](device-setup-classes.md)，设备类和设备接口的接口。 自定义属性可以访问通过调用适当[SetupAPI 属性函数](https://docs.microsoft.com/previous-versions/ff541483(v=vs.85))。 此外可以通过使用修改的自定义设备属性[ **INF AddProperty 指令**](inf-addproperty-directive.md)或[ **INF DelProperty 指令**](inf-delproperty-directive.md)。
 
 有关自定义设备属性的详细信息，请参阅以下主题：
 
@@ -28,9 +28,9 @@ ms.locfileid: "63392535"
 
 ### <a href="" id="creating-custom-device-property-categories"></a> 创建自定义设备属性类别
 
-自定义设备的属性类别是逻辑上相关的自定义设备属性的集合。 若要以编程方式创建自定义设备的属性类别，请使用[ **DEFINE_DEVPROPKEY** ](https://msdn.microsoft.com/library/windows/hardware/ff541072)宏来创建表示属性类别中的属性，如下所示的属性关键字：
+自定义设备的属性类别是逻辑上相关的自定义设备属性的集合。 若要以编程方式创建自定义设备的属性类别，请使用[ **DEFINE_DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)宏来创建表示属性类别中的属性，如下所示的属性关键字：
 
--   创建唯一的 GUID 值，该值表示的属性类别并将每个属性密钥的 GUID 值设置为此唯一的 GUID 值。 有关如何创建新的 GUID 值的信息，请参阅[定义和导出新的 Guid](https://msdn.microsoft.com/library/windows/hardware/ff542998)。
+-   创建唯一的 GUID 值，该值表示的属性类别并将每个属性密钥的 GUID 值设置为此唯一的 GUID 值。 有关如何创建新的 GUID 值的信息，请参阅[定义和导出新的 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-and-exporting-new-guids)。
 
     **请注意**  仅用于操作系统保留的系统定义的属性类别。
 

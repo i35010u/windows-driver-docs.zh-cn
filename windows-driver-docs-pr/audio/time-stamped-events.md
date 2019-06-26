@@ -11,12 +11,12 @@ keywords:
 - 延迟 WDK 音频、 时钟
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f68ed0b65b1cae533c3ee4b4e5bca676a3bbd123
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0230c56142540ec0e9f9017632afb10e61f8345e
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328551"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354202"
 ---
 # <a name="time-stamped-events"></a>带时间戳的事件
 
@@ -28,7 +28,7 @@ ms.locfileid: "63328551"
 
 由于延迟到系统通过延迟时钟，加盖时间戳事件可用于其适当的时间，在播放的缓冲区中等待而不是只是事件放入队列，且希望的延迟较低。
 
-主时钟实现 COM [ **IReferenceClock** ](https://msdn.microsoft.com/library/windows/desktop/dd743269)接口 （Microsoft Windows SDK 文档中所述）。 此引用时使用的所有设备在系统上。
+主时钟实现 COM [ **IReferenceClock** ](https://docs.microsoft.com/windows/desktop/wmformat/ireferenceclock)接口 （Microsoft Windows SDK 文档中所述）。 此引用时使用的所有设备在系统上。
 
 Microsoft 的批接收器实现生成唤醒每隔 20 毫秒一个线程。 线程的任务是创建另一个缓冲区，并将其传送到 DirectSound。 若要创建该缓冲区，它调用合成器，并要求它来呈现指定的数量的音乐数据。 它要求输入量决定实际线程唤醒时，这不太可能完全 20 毫秒。
 
@@ -36,7 +36,7 @@ Microsoft 的批接收器实现生成唤醒每隔 20 毫秒一个线程。 线�
 
 PCM 缓冲区是从概念上讲循环 （即，不断循环它）。 合成器呈现的缓冲区的后续片段描述声音的 16 位数字。 切片大小略有不同每次都会将唤醒线程，因为接收器无法唤醒完全每隔 20 毫秒。 因此每次唤醒线程 does，它充当 catch 来确定多久它应正在通过缓冲区之前重新进入睡眠状态。
 
-从应用程序的角度来看，合成器端口驱动程序本身具有[ **IDirectMusicSynth::GetLatencyClock** ](https://msdn.microsoft.com/library/windows/hardware/ff536536)从批接收器获取时钟的函数。 因此，有两个时钟：
+从应用程序的角度来看，合成器端口驱动程序本身具有[ **IDirectMusicSynth::GetLatencyClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)从批接收器获取时钟的函数。 因此，有两个时钟：
 
 -   任何人，包括批接收器侦听主时钟。
 
@@ -46,7 +46,7 @@ PCM 缓冲区是从概念上讲循环 （即，不断循环它）。 合成器�
 
 返回此延迟时钟的时间是缓冲区可呈现给，最早时间，因为合成器具有已呈现到缓冲区中该点为止。 如果合成器必须呈现在其最后一个写入的较小的缓冲区，延迟也是较小。
 
-因此，批接收器调用[ **IDirectMusicSynth::Render** ](https://msdn.microsoft.com/library/windows/hardware/ff536541)上合成器，显示缓冲区和请求，它使用填充呈现数据。 下图中所示，合成器采用加盖时间戳的所有事件为进入[ **IDirectMusicSynth::PlayBuffer** ](https://msdn.microsoft.com/library/windows/hardware/ff536540)函数调用。
+因此，批接收器调用[ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)上合成器，显示缓冲区和请求，它使用填充呈现数据。 下图中所示，合成器采用加盖时间戳的所有事件为进入[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)函数调用。
 
 ![说明的时间戳的消息队列的关系图](images/dmevents.png)
 

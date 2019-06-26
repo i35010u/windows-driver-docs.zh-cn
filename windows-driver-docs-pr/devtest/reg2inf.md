@@ -4,16 +4,16 @@ description: Reg2inf 是一种工具，将注册表项以使驱动程序包的�
 ms.assetid: e43a137e-c08a-4715-84f7-32cda67399e3
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59e265267f59784c55117b7cc4b24a29fd63d64b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 788a4a0288461f79e1f26a1ea3a128f643bd5e32
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360743"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356387"
 ---
 # <a name="reg2inf"></a>Reg2inf
  
-驱动程序程序包 INF 注册表转换工具 (`reg2inf.exe`) 工具将为注册表项和它的值或 COM.dll 实现[ **DllRegisterServer** ](https://msdn.microsoft.com/library/windows/desktop/ms682162)成一组例程[INF AddReg 指令](../install/inf-addreg-directive.md)以便包括到驱动程序包 INF 文件。  此工具是用于转换现有特别有用[INF RegisterDlls 指令](../install/inf-registerdlls-directive.md)到 INF AddReg 指令以使文件通用 INF。  有关通用 INF 文件的详细信息，请参阅[使用通用 INF 文件](../install/using-a-universal-inf-file.md)。
+驱动程序程序包 INF 注册表转换工具 (`reg2inf.exe`) 工具将为注册表项和它的值或 COM.dll 实现[ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)成一组例程[INF AddReg 指令](../install/inf-addreg-directive.md)以便包括到驱动程序包 INF 文件。  此工具是用于转换现有特别有用[INF RegisterDlls 指令](../install/inf-registerdlls-directive.md)到 INF AddReg 指令以使文件通用 INF。  有关通用 INF 文件的详细信息，请参阅[使用通用 INF 文件](../install/using-a-universal-inf-file.md)。
  
 从 Windows 10 1709年版开始，此工具附带作为 WDK 10 安装的一部分。 您可以找到它在 WDK 10 安装，\tools 子目录例如`c:\Program Files(x86)\Windows Kits\10\tools\`。 
 

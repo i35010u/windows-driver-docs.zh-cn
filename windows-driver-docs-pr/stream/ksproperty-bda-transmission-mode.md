@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe6ee53150f2480dacc45a2bd71930899a936dab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b65a0bce233dbf0a618d74fcc3efa60ca5303a8b
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383562"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355415"
 ---
 # <a name="kspropertybdatransmissionmode"></a>KSPROPERTY\_BDA\_传输\_模式
 
@@ -87,9 +87,9 @@ TransmissionMode 枚举类型中的返回的值标识为如何广播信号进行
 ## <a name="see-also"></a>请参阅
 
 
-[**KSP\_NODE**](https://msdn.microsoft.com/library/windows/hardware/ff566720)
+[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
 
-[**TransmissionMode**](https://msdn.microsoft.com/library/windows/hardware/ff568533)
+[**TransmissionMode**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/transmissionmode)
 
  
 

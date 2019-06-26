@@ -4,12 +4,12 @@ description: 驱动程序声明支持的音频信号处理模式下为每个设�
 ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da363a5b00d061bd18f97d11cf7b37c66c25f985
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 430cdfae2c6ea60336ad325814f58595c23a6320
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331427"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355656"
 ---
 # <a name="audio-signal-processing-modes"></a>音频信号处理模式
 
@@ -170,7 +170,7 @@ Oem 定义影响将是用于每种模式。 Windows 定义的音频效果的 17 
 
 应用程序应请求处理，而不考虑音频硬件配置的最佳音频效果。 例如，标记流，如通信会让 Windows 知道暂停背景音乐。
 
-有关静态音频流类别的详细信息，请参阅[AudioCategory 枚举](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.audiocategory.aspx)并[MediaElement.AudioCategory 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory.aspx)。
+有关静态音频流类别的详细信息，请参阅[AudioCategory 枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.AudioCategory)并[MediaElement.AudioCategory 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement#Windows_UI_Xaml_Controls_MediaElement_AudioCategory)。
 
 ## <a name="span-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanspan-idclsidsforsystemeffectsspanclsids-for-system-effects"></a><span id="CLSIDs_for_System_Effects"></span><span id="clsids_for_system_effects"></span><span id="CLSIDS_FOR_SYSTEM_EFFECTS"></span>系统效果的 Clsid
 
@@ -195,7 +195,7 @@ DEFINE_GUIDSTRUCT("E1F89EB5-5F46-419B-967B-FF6770B98401", KSATTRIBUTEID_AUDIOSIG
 #define KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE DEFINE_GUIDNAMED(KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE)
 ```
 
-KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_的模式识别驱动程序与使用模式[ **KSDATARANGE** ](https://msdn.microsoft.com/library/windows/hardware/ff561658)结构包含[ **KSATTRIBUTE\_列表**](https://msdn.microsoft.com/library/windows/hardware/mt727894)。 此列表中这是具有单个元素[ **KSATTRIBUTE**](https://msdn.microsoft.com/library/windows/hardware/ff560987)。 属性成员**KSATTRIBUTE**结构设置为 KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_模式。
+KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_的模式识别驱动程序与使用模式[ **KSDATARANGE** ](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构包含[ **KSATTRIBUTE\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute_list)。 此列表中这是具有单个元素[ **KSATTRIBUTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksattribute)。 属性成员**KSATTRIBUTE**结构设置为 KSATTRIBUTEID\_AUDIOSIGNALPROCESSING\_模式。
 
 ## <a name="span-idaudioeffectsspanspan-idaudioeffectsspanspan-idaudioeffectsspanaudio-effects"></a><span id="Audio_Effects"></span><span id="audio_effects"></span><span id="AUDIO_EFFECTS"></span>音频效果
 

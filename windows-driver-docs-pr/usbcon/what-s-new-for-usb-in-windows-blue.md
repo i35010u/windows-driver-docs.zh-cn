@@ -3,12 +3,12 @@ Description: 以下是新功能和改进的通用串行总线 (USB) 在 Windows 
 title: Windows 8.1-什么是 USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca226ef7f1e1d9e50eb70faedd3b9046cef86a1c
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 9e3a764d1fb4f3af046def0e4a6902dd20436259
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405293"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356552"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
@@ -21,12 +21,12 @@ ms.locfileid: "65405293"
 -   [USB 驱动程序堆栈改进](#usb-driver-stack-improvements)
 -   [USB 测试硬件认证包 (HCK) 中](#usb-tests-in-the-hardware-certification-kit-hck)
 -   [改进了的 USB 的诊断工具和调试器扩展](#improved-usb-diagnostic-tools-and-debugger-extensions)
--   [相关的主题](#related-topics)
+-   [相关主题](#related-topics)
 
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>有关开发 UWP 应用的 Windows 运行时 USB API
 
 
-Windows 运行时提供新的命名空间：[**Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466) (请参阅[编写的 USB 设备的应用 (UWP 应用使用C#/VB/C++)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263144)的简要概述)。 通过使用命名空间，可以编写与自定义的 USB 设备进行通信的 UWP 应用。
+Windows 运行时提供新的命名空间：[**Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) (请参阅[编写的 USB 设备的应用 (UWP 应用使用C#/VB/C++)](https://docs.microsoft.com/previous-versions/windows/apps/dn263144(v=win.10))的简要概述)。 通过使用命名空间，可以编写与自定义的 USB 设备进行通信的 UWP 应用。
 
 有关详细信息，请参阅以下主题：
 
@@ -39,7 +39,7 @@ Windows 运行时提供新的命名空间：[**Windows.Devices.Usb** ](https://m
 -   [如何获取 USB 描述符 （UWP 应用）](how-to-get-usb-descriptors--uwp-app-.md)
 -   [如何选择 USB 接口设置 （UWP 应用）](how-to-select-a-usb-interface-setting--uwp-app-.md)
 
-这些示例演示了如何使用[ **Windows.Devices.Usb** ](https://msdn.microsoft.com/library/windows/apps/dn278466)命名空间。
+这些示例演示了如何使用[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间。
 
 <table>
 <colgroup>
@@ -86,16 +86,16 @@ MS OS 2.0 描述符规范提供了以下改进：
 
 Microsoft 提供 WinUSB （内核模式驱动程序） 现在支持在 USB 设备的同步终结点的传输
 
-用户模式 DLL，Winusb.dll，公开这些[WinUSB 函数](https://msdn.microsoft.com/library/windows/hardware/ff540046#winusb)Windows 桌面应用程序可用于启动此类传输。
+用户模式 DLL，Winusb.dll，公开这些[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)Windows 桌面应用程序可用于启动此类传输。
 
--   [**WinUsb\_RegisterIsochBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn265566)
--   [**WinUsb\_UnregisterIsochBuffer**](https://msdn.microsoft.com/library/windows/hardware/dn265567)
--   [**WinUsb\_WriteIsochPipeAsap**](https://msdn.microsoft.com/library/windows/hardware/dn265569)
--   [**WinUsb\_ReadIsochPipeAsap**](https://msdn.microsoft.com/library/windows/hardware/dn265565)
--   [**WinUsb\_WriteIsochPipe**](https://msdn.microsoft.com/library/windows/hardware/dn265568)
--   [**WinUsb\_ReadIsochPipe**](https://msdn.microsoft.com/library/windows/hardware/dn265564)
--   [**WinUsb\_GetCurrentFrameNumber**](https://msdn.microsoft.com/library/windows/hardware/dn265549)
--   [**WinUsb\_GetAdjustedFrameNumber**](https://msdn.microsoft.com/library/windows/hardware/dn265548)
+-   [**WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
+-   [**WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
+-   [**WinUsb\_WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
+-   [**WinUsb\_ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
+-   [**WinUsb\_WriteIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)
+-   [**WinUsb\_ReadIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)
+-   [**WinUsb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
+-   [**WinUsb\_GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
 ## <a name="usb-driver-stack-improvements"></a>USB 驱动程序堆栈改进
 
@@ -112,12 +112,12 @@ Microsoft 提供 WinUSB （内核模式驱动程序） 现在支持在 USB 设�
 
 -   改进了这些 USB 测试硬件认证包 (HCK) 中。 设备枚举测试现可使用简化的拓扑进行测试期间的降低手动干预的新参数。 挂起测试已改进的日志记录功能。
 
-    -   [USB 公开的端口控制器测试](https://msdn.microsoft.com/library/windows/hardware/hh998021.aspx)
-    -   [USB 集线器公开端口测试 USB](https://msdn.microsoft.com/library/windows/hardware/jj123960.aspx)
-    -   [中心选择性挂起测试](https://msdn.microsoft.com/library/windows/hardware/jj124844.aspx)
-    -   [USB 公开的端口系统测试](https://msdn.microsoft.com/library/windows/hardware/jj123655.aspx)
-    -   [USB 选择性挂起测试 (xHCI)](https://msdn.microsoft.com/library/windows/hardware/jj124491.aspx)
-    -   [USB 3.0 挂起测试](https://msdn.microsoft.com/library/windows/hardware/jj125210.aspx)
+    -   [USB 公开的端口控制器测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+    -   [USB 集线器公开端口测试 USB](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
+    -   [中心选择性挂起测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
+    -   [USB 公开的端口系统测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123655(v=vs.85))
+    -   [USB 选择性挂起测试 (xHCI)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
+    -   [USB 3.0 挂起测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
 -   MUTT 和 SuperMUTT 设备现 USB-如果符合要求的设备。 设备和随附的软件程序包中集成到 HCK 的 USB 测试套件。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。
 
     可以从购买 MUTT 硬件[JJG 技术](http://jjgtechnologies.com/mutt.md)。 设备没有安装的已安装的固件。 若要安装固件，下载从 MUTT 软件包[此网站](https://msdn.microsoft.com/windows/hardware/jj590752)并运行 MUTTUtil.exe。 有关详细信息，请参阅随程序包提供的文档。
@@ -129,7 +129,7 @@ Microsoft 提供 WinUSB （内核模式驱动程序） 现在支持在 USB 设�
 -   在 Message Analyzer (Netmon) 中所示的 USB 事件现已更具描述性。 这些事件还可进行分组和按控制器、 中心和等等。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://msdn.microsoft.com/library/windows/hardware/ff538930)  
+[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
 
 
 

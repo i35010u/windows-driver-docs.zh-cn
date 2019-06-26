@@ -11,17 +11,17 @@ keywords:
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e87ce7119c47166a0a70f02ec1f0f36f00e40b6b
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: fa30ba45729a83ae9006a0ff569eae891295ce59
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355454"
 ---
 # <a name="using-the-connectfullyspecified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
 
 
-驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版[ **IoConnectInterruptEx** ](https://msdn.microsoft.com/library/windows/hardware/ff548378)注册[ *InterruptService*](https://msdn.microsoft.com/library/windows/hardware/ff547958)特定中断例程。 驱动程序可以使用 CONNECT\_完全\_从 Windows Vista 开始的指定版本。 通过将链接到 Iointex.lib 库，该驱动程序可以使用 CONNECT\_完全\_Windows 2000，Windows XP 和 Windows Server 2003 中的指定版本。 有关详细信息，请参阅[使用之前为 Windows Vista 的 IoConnectInterruptEx](using-ioconnectinterruptex-prior-to-windows-vista.md)。
+驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)特定中断例程。 驱动程序可以使用 CONNECT\_完全\_从 Windows Vista 开始的指定版本。 通过将链接到 Iointex.lib 库，该驱动程序可以使用 CONNECT\_完全\_Windows 2000，Windows XP 和 Windows Server 2003 中的指定版本。 有关详细信息，请参阅[使用之前为 Windows Vista 的 IoConnectInterruptEx](using-ioconnectinterruptex-prior-to-windows-vista.md)。
 
 该驱动程序指定的连接值\_完全\_为指定*参数 * * *-&gt;版本**，并使用的成员*参数 * * *-&gt;FullySpecified** 来指定该操作的其他参数：
 
@@ -33,7 +33,7 @@ ms.locfileid: "67161463"
 
 -   驱动程序可以选择指定在旋转锁*参数 * * *-&gt;FullySpecified.SpinLock** ISR 与同步时要使用的系统 大多数驱动程序可以只需指定**NULL**启用系统分配旋转锁代表该驱动程序。 有关与 ISR 同步的详细信息，请参阅[对设备数据的同步访问](synchronizing-access-to-device-data.md)。
 
-该驱动程序必须指定中断的键属性中的其他成员 * 参数 * **-&gt;FullySpecified**。 系统提供的数组中所需的信息[ **CM\_分部\_资源\_描述符**](https://msdn.microsoft.com/library/windows/hardware/ff541977)结构会在发送时[**IRP\_MN\_启动\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff551749) IRP 到驱动程序。
+该驱动程序必须指定中断的键属性中的其他成员 * 参数 * **-&gt;FullySpecified**。 系统提供的数组中所需的信息[ **CM\_分部\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)结构会在发送时[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) IRP 到驱动程序。
 
 系统提供的每个中断**CM\_分部\_资源\_描述符**结构**类型**成员等于**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，清除它。
 

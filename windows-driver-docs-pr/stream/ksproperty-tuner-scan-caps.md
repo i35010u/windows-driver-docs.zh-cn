@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f6244fa9f9a6915515502e58ad6881a647a6b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1e0926dbd36b77b631b830c7e2ad5c6c120c4f8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342147"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355965"
 ---
 # <a name="kspropertytunerscancaps"></a>KSPROPERTY\_调谐器\_扫描\_CAP
 
@@ -50,7 +50,7 @@ KSPROPERTY\_调谐器\_扫描\_CAPS 属性描述了优化的设备，包括设�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://msdn.microsoft.com/library/windows/hardware/ff565892" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_CAPS_S&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff565892)"><strong>KSPROPERTY_TUNER_SCAN_CAPS_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)"><strong>KSPROPERTY_TUNER_SCAN_CAPS_S</strong></a></p></td>
 <td><p>KSPROPERTY_TUNER_SCAN_CAPS_S</p></td>
 </tr>
 </tbody>
@@ -96,7 +96,7 @@ KSPROPERTY\_调谐器\_扫描\_CAPS 属性描述了优化的设备，包括设�
 ## <a name="see-also"></a>请参阅
 
 
-[**KSPROPERTY\_调谐器\_扫描\_CAPS\_S**](https://msdn.microsoft.com/library/windows/hardware/ff565892)
+[**KSPROPERTY\_调谐器\_扫描\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)
 
  
 

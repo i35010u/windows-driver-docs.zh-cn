@@ -4,12 +4,12 @@ description: 丢失和重新获取数据包数据服务
 ms.assetid: 1e9d6c34-f7fc-47e9-aa52-409b9e9ff4f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 193810084e1648ec7274f8b4b88a1e45f2af2df4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01e3b35a3c1f2e36830098e53ab0773dc062a333
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365950"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356214"
 ---
 # <a name="losing-and-regaining-packet-data-service"></a>丢失和重新获取数据包数据服务
 
@@ -22,19 +22,19 @@ ms.locfileid: "63365950"
 
 1.  微型端口驱动程序将发送 NDIS\_WWAN\_链接\_MB 服务的状态。
 
-2.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567931)到 MB 服务。
+2.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)到 MB 服务。
 
-3.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567931)到 MB 服务。
+3.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)到 MB 服务。
 
-4.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567931)到 MB 服务。
+4.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)到 MB 服务。
 
 5.  微型端口驱动程序将发送 NDIS\_WWAN\_注册\_MB 服务的状态。
 
-6.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_数据包\_服务**](https://msdn.microsoft.com/library/windows/hardware/ff567850)到 MB 服务。
+6.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_数据包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)到 MB 服务。
 
-7.  微型端口驱动程序发送[ **NDIS\_状态\_链接\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567391)到 MB 服务。
+7.  微型端口驱动程序发送[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)到 MB 服务。
 
-8.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://msdn.microsoft.com/library/windows/hardware/ff567931)到 MB 服务。
+8.  微型端口驱动程序发送[ **NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)到 MB 服务。
 
  
 

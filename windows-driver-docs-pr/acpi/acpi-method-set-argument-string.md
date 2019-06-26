@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_SET_ARGUMENT_STRING 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7278e3c3bebed21c4330839a01a728be90f3773b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38e1af1b8530d391432ad2a8c94a6807a6685918
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328845"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355862"
 ---
 # <a name="acpimethodsetargumentstring-macro"></a>ACPI\_方法\_设置\_自变量\_字符串宏
 
 
-ACPI\_方法\_设置\_自变量\_字符串宏设置的成员[ **ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125)一个字符串值的结构。
+ACPI\_方法\_设置\_自变量\_字符串宏设置的成员[ **ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)一个字符串值的结构。
 
 <a name="syntax"></a>语法
 ------
@@ -70,4 +70,4 @@ void ACPI_METHOD_SET_ARGUMENT_STRING(
 ## <a name="see-also"></a>请参阅
 
 
-[**ACPI\_方法\_参数**](https://msdn.microsoft.com/library/windows/hardware/ff536125) 
+[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 

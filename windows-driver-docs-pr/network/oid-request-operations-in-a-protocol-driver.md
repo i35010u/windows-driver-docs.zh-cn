@@ -9,12 +9,12 @@ keywords:
 - Oid WDK 网络协议驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cb1f1d0894b1a602ec3062413134ffb8f231005
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abd82494f48e218f1013a239faf4147b60466a13
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392382"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356129"
 ---
 # <a name="oid-request-operations-in-a-protocol-driver"></a>协议驱动程序中的 OID 请求操作
 
@@ -22,11 +22,11 @@ ms.locfileid: "63392382"
 
 
 
-有两个不同接口的 OID 协议驱动程序中的请求操作。 NDIS 协议具有较低的无连接边缘调用的驱动程序[ **NdisOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff563710)函数以初始化 OID 请求。 无连接的下边缘与的 NDIS 协议驱动程序必须提供[ **ProtocolOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff570264)函数。 NDIS 调用*ProtocolOidRequestComplete*基础驱动程序时完成挂起的 OID 请求。 有关 OID 请求无连接协议驱动程序中的详细信息，请参阅[协议驱动程序 OID 请求](protocol-driver-oid-requests.md)。
+有两个不同接口的 OID 协议驱动程序中的请求操作。 NDIS 协议具有较低的无连接边缘调用的驱动程序[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)函数以初始化 OID 请求。 无连接的下边缘与的 NDIS 协议驱动程序必须提供[ **ProtocolOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_oid_request_complete)函数。 NDIS 调用*ProtocolOidRequestComplete*基础驱动程序时完成挂起的 OID 请求。 有关 OID 请求无连接协议驱动程序中的详细信息，请参阅[协议驱动程序 OID 请求](protocol-driver-oid-requests.md)。
 
-面向连接的 NDIS (CoNDIS) 协议驱动程序调用[ **NdisCoOidRequest** ](https://msdn.microsoft.com/library/windows/hardware/ff561711)函数以初始化 OID 请求。 CoNDIS 协议驱动程序必须提供[ **ProtocolCoOidRequestComplete** ](https://msdn.microsoft.com/library/windows/hardware/ff570255)函数。 NDIS 调用*ProtocolOidRequestComplete*基础驱动程序时完成挂起的 OID 请求。 有关详细信息的 OID 请求在面向连接的协议驱动程序中，请参阅[Connection-Oriented 操作](connection-oriented-operations.md)。
+面向连接的 NDIS (CoNDIS) 协议驱动程序调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)函数以初始化 OID 请求。 CoNDIS 协议驱动程序必须提供[ **ProtocolCoOidRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request_complete)函数。 NDIS 调用*ProtocolOidRequestComplete*基础驱动程序时完成挂起的 OID 请求。 有关详细信息的 OID 请求在面向连接的协议驱动程序中，请参阅[Connection-Oriented 操作](connection-oriented-operations.md)。
 
-有关 Oid 的详细信息，请参阅[NDIS Oid](https://msdn.microsoft.com/library/windows/hardware/ff566707)。
+有关 Oid 的详细信息，请参阅[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
 
  
 

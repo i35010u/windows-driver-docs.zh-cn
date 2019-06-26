@@ -15,12 +15,12 @@ keywords:
 - CopyProtect 标志
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c87c077220de72741cb932713ddcffa4abf4ee6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fbdb4dcdadba76ea070241d41f205d04b5f09c4
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333881"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355590"
 ---
 # <a name="content-ids-and-content-rights"></a>内容 ID 和内容权限
 
@@ -30,15 +30,15 @@ ms.locfileid: "63333881"
 
 内容 ID （标识符） 是 ULONG 值[DRMK 系统驱动程序](kernel-mode-wdm-audio-components.md#drmk_system_driver)生成在运行时来识别在馈送到特定 pin 的音频数据流中的受 DRM 保护内容。
 
-内容的权限是通过内容提供商授予给用户的播放和复制受 DRM 保护的内容的权限的数字表示形式。 内容形式的指定权限[ **DRMRIGHTS** ](https://msdn.microsoft.com/library/windows/hardware/ff536355) DRMK 将传递给音频驱动程序的结构。
+内容的权限是通过内容提供商授予给用户的播放和复制受 DRM 保护的内容的权限的数字表示形式。 内容形式的指定权限[ **DRMRIGHTS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights) DRMK 将传递给音频驱动程序的结构。
 
 DRMRIGHTS 包含两个标志：**DigitalOutputDisable**并**CopyProtect**。 如果**DigitalOutputDisable**设置标志，该驱动程序必须禁用任何数字输出连接到外部设备 （通过 S/PDIF 连接器，例如）。 如果**CopyProtect**设置标志，该驱动程序必须禁用可能允许安全的内容保存到磁盘或任何其他形式的非易失性存储的持久性副本的功能。 例如，典型的音频硬件允许播放信号以通过捕获通道进行路由。 如果此信号是以数字形式，捕获的信号可能适合数字输入信号的副本。 如果播放混合包含具有任何流中的数据**CopyProtect**标志设置，该驱动程序必须设为静音播放捕获路径。
 
-DRM 兼容的音频驱动程序必须支持[IDrmAudioStream](https://msdn.microsoft.com/library/windows/hardware/ff536568)它 WaveCyclic 和 WavePci 微型端口驱动程序的对象公开用于呈现音频数据接收器插针上的接口。 若要获取对的引用**IDrmAudioStream**中的驱动程序，DRMK 调用对象**QueryInterface**的插针的方法。 Pin 包含类型的接口[IMiniportWaveCyclicStream](https://msdn.microsoft.com/library/windows/hardware/ff536715)或[IMiniportWavePciStream](https://msdn.microsoft.com/library/windows/hardware/ff536725)。 **IDrmAudioStream**接口支持只有一个方法[ **IDrmAudioStream::SetContentId** ](https://msdn.microsoft.com/library/windows/hardware/ff536570) (除了这三个**IUnknown**方法)。 当调用 DRMK **SetContentId**，它将传入的内容 ID 和内容的权利，该驱动程序将与 pin 的数据流相关联。
+DRM 兼容的音频驱动程序必须支持[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)它 WaveCyclic 和 WavePci 微型端口驱动程序的对象公开用于呈现音频数据接收器插针上的接口。 若要获取对的引用**IDrmAudioStream**中的驱动程序，DRMK 调用对象**QueryInterface**的插针的方法。 Pin 包含类型的接口[IMiniportWaveCyclicStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavecyclicstream)或[IMiniportWavePciStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iminiportwavepcistream)。 **IDrmAudioStream**接口支持只有一个方法[ **IDrmAudioStream::SetContentId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nf-drmk-idrmaudiostream-setcontentid) (除了这三个**IUnknown**方法)。 当调用 DRMK **SetContentId**，它将传入的内容 ID 和内容的权利，该驱动程序将与 pin 的数据流相关联。
 
-而不是直接调用 Drmk.sys 中的 DRM 函数，WaveCyclic 或 WavePci 微型端口驱动程序可以访问通过 DRM 函数[IDrmPort2](https://msdn.microsoft.com/library/windows/hardware/ff536573)接口 (**IDrmPort2**派生自基类[IDrmPort](https://msdn.microsoft.com/library/windows/hardware/ff536571))。 在 Microsoft Windows XP 及更高版本，WaveCyclic 和 WavePci 端口驱动程序支持**IDrmPort2**。 微型端口驱动程序将获取对端口驱动程序的引用**IDrmPort2**通过调用 port 对象的接口**QueryInterface**方法替换 REFIID IID\_IDrmPort2。
+而不是直接调用 Drmk.sys 中的 DRM 函数，WaveCyclic 或 WavePci 微型端口驱动程序可以访问通过 DRM 函数[IDrmPort2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idrmport2)接口 (**IDrmPort2**派生自基类[IDrmPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-idrmport))。 在 Microsoft Windows XP 及更高版本，WaveCyclic 和 WavePci 端口驱动程序支持**IDrmPort2**。 微型端口驱动程序将获取对端口驱动程序的引用**IDrmPort2**通过调用 port 对象的接口**QueryInterface**方法替换 REFIID IID\_IDrmPort2。
 
-一些音频驱动程序支持硬件混合使用，并且可以同时处理多个输入的数据流。 这种类型的驱动程序必须跟踪的单个流和复合的内容权利的所有流的两个的内容 Id。 驱动程序调用[ **IDrmPort::CreateContentMixed** ](https://msdn.microsoft.com/library/windows/hardware/ff536581)以确定混合流的复合权限并创建一个内容 ID 来标识该流。 完成该驱动程序使用的内容 ID 后，它必须调用[ **IDrmPort::DestroyContent** ](https://msdn.microsoft.com/library/windows/hardware/ff536583)若要删除该内容 id。
+一些音频驱动程序支持硬件混合使用，并且可以同时处理多个输入的数据流。 这种类型的驱动程序必须跟踪的单个流和复合的内容权利的所有流的两个的内容 Id。 驱动程序调用[ **IDrmPort::CreateContentMixed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idrmport-createcontentmixed)以确定混合流的复合权限并创建一个内容 ID 来标识该流。 完成该驱动程序使用的内容 ID 后，它必须调用[ **IDrmPort::DestroyContent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-idrmport-destroycontent)若要删除该内容 id。
 
 每次添加或删除混音器，从输入的流驱动程序必须删除旧的组合的内容 ID 并创建新的组合的新内容 ID。 然后再删除旧的内容 ID，该驱动程序必须首先成功转发到它以前转发到旧的内容 id。 所有流的新内容 ID 有关详细信息，请参阅[转发 DRM 内容 Id](forwarding-drm-content-ids.md)。
 

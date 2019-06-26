@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_CONNECTION_QUALITY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7a14f8551a6a03841072c36587c15ad5ff9925eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e96aabf2a7b13522639d042f016a5aab50852aff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330202"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353648"
 ---
 # <a name="oidwdisetconnectionquality"></a>OID\_WDI\_设置\_连接\_质量
 
@@ -21,7 +21,7 @@ OID\_WDI\_设置\_连接\_质量提供到 IHV 组件强制实施虚拟化的给�
 
 | 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | 是                      | 1                               |
+| Port  | 是                      | 1                               |
 
  
 
@@ -34,8 +34,8 @@ OID\_WDI\_设置\_连接\_质量提供到 IHV 组件强制实施虚拟化的给�
 
 | TLV                                                                                                                       | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_连接\_质量\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn926259)                           |                                |          | 所需的 Wi-fi 连接质量提示。                                                                                                                                                     |
-| [**WDI\_TLV\_低\_延迟\_连接\_质量\_参数**](https://msdn.microsoft.com/library/windows/hardware/dn897843) |                                | X        | 低延迟连接质量的行为。 这只是所需的连接质量如果设置为[ **WDI\_连接\_质量\_低\_延迟**](https://msdn.microsoft.com/library/windows/hardware/dn897807)。 |
+| [**WDI\_TLV\_连接\_质量\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-connection-quality-parameters)                           |                                |          | 所需的 Wi-fi 连接质量提示。                                                                                                                                                     |
+| [**WDI\_TLV\_低\_延迟\_连接\_质量\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters) |                                | X        | 低延迟连接质量的行为。 这只是所需的连接质量如果设置为[ **WDI\_连接\_质量\_低\_延迟**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_connection_quality_hint)。 |
 
  
 

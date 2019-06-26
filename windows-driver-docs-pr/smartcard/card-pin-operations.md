@@ -4,12 +4,12 @@ description: 卡 PIN 操作
 ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b74f5946c8f27e830f9230f0239ea27bad29fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2dd60ebed356581de3c059cd7f45edc645bdb6c6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324251"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356729"
 ---
 # <a name="card-pin-operations"></a>卡 PIN 操作
 
@@ -159,8 +159,8 @@ typedef enum
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PinCacheNormal**       | 对于此模式下，PIN 缓存的基本 CSP 每个进程，每个登录 id。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PinCacheTimed**        | 对于此模式，PIN 失效后指定期间内的时间 （指定值以秒为单位）。 这是通过 PIN 添加到缓存时进行记录时间戳，然后验证访问 PIN 时的时间与此时间戳进行实施。 这意味着 PIN 可能会在缓存中的时间比指定时间戳，但它已过期后将不会使用。 PIN 以使其受保护的内存中进行加密。                                                                                                                |
-| **PinCacheNone**         | 不能缓存 PIN，基本 CSP 永远不会将 PIN 添加到缓存。 当使用称为基本 CSP/KSP [ **CryptSetProvParam** ](https://msdn.microsoft.com/library/windows/desktop/aa380276)设置 PIN，PIN 是提交到验证卡但不是会缓存。 这意味着任何后续操作必须出现之前基本 CSP 事务超时时间已到。                                                                                                                                                                                                                  |
-| **PinCacheAlwaysPrompt** | 与不同**PinCacheNone**，当设置了此缓存模式，则不适合使用基本 CSP 事务超时时间。 从用户收集并提交到要求身份验证每次调用之前验证卡 PIN。 调用[ **CryptSetProvParam** ](https://msdn.microsoft.com/library/windows/desktop/aa380276)并[ **NcryptSetProperty** ](https://msdn.microsoft.com/library/windows/desktop/aa376292)设置 PIN 返回错误\_不成功正在验证和缓存 PIN。 这意味着，如果调用需要身份验证，从使用无提示的上下文的应用程序的调用将失败。 |
+| **PinCacheNone**         | 不能缓存 PIN，基本 CSP 永远不会将 PIN 添加到缓存。 当使用称为基本 CSP/KSP [ **CryptSetProvParam** ](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)设置 PIN，PIN 是提交到验证卡但不是会缓存。 这意味着任何后续操作必须出现之前基本 CSP 事务超时时间已到。                                                                                                                                                                                                                  |
+| **PinCacheAlwaysPrompt** | 与不同**PinCacheNone**，当设置了此缓存模式，则不适合使用基本 CSP 事务超时时间。 从用户收集并提交到要求身份验证每次调用之前验证卡 PIN。 调用[ **CryptSetProvParam** ](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)并[ **NcryptSetProperty** ](https://docs.microsoft.com/windows/desktop/api/ncrypt/nf-ncrypt-ncryptsetproperty)设置 PIN 返回错误\_不成功正在验证和缓存 PIN。 这意味着，如果调用需要身份验证，从使用无提示的上下文的应用程序的调用将失败。 |
 
 
 

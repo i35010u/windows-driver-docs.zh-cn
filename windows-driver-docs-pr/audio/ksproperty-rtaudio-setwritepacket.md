@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da46e8ff07c9d733834cf6ee23b3454e7e7b958
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7e1692f2ceb2d01781eeb12f85511c5c89eb75a6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332652"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354380"
 ---
 # <a name="kspropertyrtaudiosetwritepacket"></a>KSPROPERTY\_RTAUDIO\_SETWRITEPACKET
 
@@ -30,10 +30,10 @@ KSPROPERTY\_RTAUDIO\_SETWRITEPACKET 告知驱动程序 OS 已向 WaveRT 缓冲�
 
 |Get|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|否|是|Pin|[**KSPROPERTY**](https://msdn.microsoft.com/library/windows/hardware/ff564262)|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
+|否|是|Pin|[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_SETWRITEPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)|
 
 
-属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://msdn.microsoft.com/library/windows/hardware/ff564262)结构。 发送请求之前, 在客户端加载值包含数据包编号、 数据包长度和其他信息的结构。
+属性描述符 （实例数据） 是[ **KSPROPERTY** ](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 发送请求之前, 在客户端加载值包含数据包编号、 数据包长度和其他信息的结构。
 
 属性值是类型的结构[ **KSRTAUDIO\_SETWRITEPACKET\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksrtaudio_setwritepacket_info)。
 

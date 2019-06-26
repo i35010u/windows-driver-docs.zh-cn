@@ -16,12 +16,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 33622352c609efc6584a22c4112f30f9d7267d52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9aeba21b57ca4c895253684ebf95a97ece48964
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363173"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355381"
 ---
 # <a name="kspropertycameracontrolextendedirtorchmode"></a>KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE
 
@@ -31,7 +31,7 @@ ms.locfileid: "63363173"
 
 | Get | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
 | --- | --- | --- | --- | --- |
-| 是 | 是 | Filter | [KSPROPERTY](https://docs.microsoft.com/previous-versions//ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
+| 是 | 是 | Filter | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
 
 ## <a name="remarks"></a>备注
 

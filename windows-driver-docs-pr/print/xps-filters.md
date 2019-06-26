@@ -11,12 +11,12 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bba5075a0d09a710cb670e362c21008f513997b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55fd4706bd9fa0b9cad0605ab2c520d21835ed3c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354867"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356874"
 ---
 # <a name="xps-filters"></a>XPS 筛选器
 
@@ -27,9 +27,9 @@ XPS 筛选器是导出的 DLL [DllGetClassObject](https://go.microsoft.com/fwlin
 
 -   调用**DllGetClassObject**若要获取对筛选器对象的引用[IClassFactory](https://go.microsoft.com/fwlink/p/?linkid=123420)接口。
 
--   调用[IClassFactory::CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)方法来获取对筛选器对象的引用[IPrintPipelineFilter](https://msdn.microsoft.com/library/windows/hardware/ff554286)接口。
+-   调用[IClassFactory::CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)方法来获取对筛选器对象的引用[IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinefilter)接口。
 
--   调用[ **IPrintPipelineFilter::InitializeFilter** ](https://msdn.microsoft.com/library/windows/hardware/ff554291)方法来初始化筛选器对象。
+-   调用[ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)方法来初始化筛选器对象。
 
 卸载前倒带筛选器 DLL，该筛选器管道管理器调用**DllCanUnloadNow**。
 

@@ -5,12 +5,12 @@ ms:assetid: 0E3A4408-CBF7-494F-9F25-7C78E04526B4
 keywords: ACPI、 ACPI \_OSC 方法
 ms.date: 06/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6d3572482779b7b0db40bd1e6936fb59034a88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84d01946e2552c4a221bd4ee80eb22818fead3c3
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379761"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353562"
 ---
 # <a name="enabling-pci-express-native-control-in-windows"></a>在 Windows 中启用 PCI Express 原生控制
 
@@ -33,8 +33,8 @@ ms.locfileid: "63379761"
 
 在 ACPI 和 PCI SIG Web 站点上提供了这些规范：
 
-  - [ACPI 网站](https://www.uefi.org/specifications)
-  - [PCI SIG 网站](http://www.pcisig.org/)
+  - [ACPI 网站](https://uefi.org/specifications)
+  - [PCI SIG 网站](http://pcisig.com/)
 
 ## <a name="see-also"></a>请参阅
 [PCIe 根端口的设备特定数据 (_DSD)](dsd-for-pcie-root-ports.md)

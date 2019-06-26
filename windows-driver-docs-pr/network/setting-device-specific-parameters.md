@@ -4,12 +4,12 @@ description: 设置特定于设备的参数
 ms.assetid: 5df72c11-e8d4-4e06-8f34-c9b85ad779f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cd4cf05812dfa5ed694cc6a58c5b2c404f24a73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 482fff4b4dc58ab1c1ee93a202cca511bd5f891a
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346660"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356075"
 ---
 # <a name="setting-device-specific-parameters"></a>设置特定于设备的参数
 
@@ -17,15 +17,15 @@ ms.locfileid: "63346660"
 
 
 
-应大多数远程 NDIS 设备将起作用也无需在主机上配置参数。 但是，可能有适当的网络操作，需要在主机上的某些配置的情况。 如果设备支持可配置参数，则它应在列表中的受支持的 Oid 它报告的查询响应中包括以下可选 OID [OID\_代\_支持\_列表](https://msdn.microsoft.com/library/windows/hardware/ff569642):
+应大多数远程 NDIS 设备将起作用也无需在主机上配置参数。 但是，可能有适当的网络操作，需要在主机上的某些配置的情况。 如果设备支持可配置参数，则它应在列表中的受支持的 Oid 它报告的查询响应中包括以下可选 OID [OID\_代\_支持\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-list):
 
 ```C++
 #define OID_GEN_RNDIS_CONFIG_PARAMETER 0x0001021B
 ```
 
-如果设备支持[OID\_代\_RNDIS\_CONFIG\_参数](https://msdn.microsoft.com/library/windows/hardware/ff569639)OID，主机使用它来设置特定于设备的参数，则设备将进入的状态初始化之后立即通过从初始化状态的远程 NDIS。 主机将发送零个或多个远程\_NDIS\_设置\_到设备的消息数与 OID\_常规\_RNDIS\_配置\_要设置的 OID 值作为参数。 每个此类[**远程\_NDIS\_设置\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570654)对应于在主机配置的一个特定于设备的参数。
+如果设备支持[OID\_代\_RNDIS\_CONFIG\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rndis-config-parameter)OID，主机使用它来设置特定于设备的参数，则设备将进入的状态初始化之后立即通过从初始化状态的远程 NDIS。 主机将发送零个或多个远程\_NDIS\_设置\_到设备的消息数与 OID\_常规\_RNDIS\_配置\_要设置的 OID 值作为参数。 每个此类[**远程\_NDIS\_设置\_MSG** ](https://docs.microsoft.com/previous-versions/ff570654(v=vs.85))对应于在主机配置的一个特定于设备的参数。
 
-*InformationBuffer*与每个此类相关联[**远程\_NDIS\_设置\_MSG** ](https://msdn.microsoft.com/library/windows/hardware/ff570654)采用以下格式。 请注意，偏移量值相对于信息缓冲区的开头。
+*InformationBuffer*与每个此类相关联[**远程\_NDIS\_设置\_MSG** ](https://docs.microsoft.com/previous-versions/ff570654(v=vs.85))采用以下格式。 请注意，偏移量值相对于信息缓冲区的开头。
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ ms.locfileid: "63346660"
 
  
 
-设备发送[**远程\_NDIS\_设置\_CMPLT** ](https://msdn.microsoft.com/library/windows/hardware/ff570651)中对每个响应[**远程\_NDIS\_设置\_MSG**](https://msdn.microsoft.com/library/windows/hardware/ff570654)之后应用参数的值。 如果此参数设置为可接受的它返回的状态为 RNDIS\_状态\_成功的响应中。 如果参数的设置不是可接受的并且设备无法应用此参数，一个有用的默认值，则设备返回相应的错误状态值 （请参阅状态的值部分）。 如果返回了错误状态，则主机将启动设备的停止进程。
+设备发送[**远程\_NDIS\_设置\_CMPLT** ](https://docs.microsoft.com/previous-versions/ff570651(v=vs.85))中对每个响应[**远程\_NDIS\_设置\_MSG**](https://docs.microsoft.com/previous-versions/ff570654(v=vs.85))之后应用参数的值。 如果此参数设置为可接受的它返回的状态为 RNDIS\_状态\_成功的响应中。 如果参数的设置不是可接受的并且设备无法应用此参数，一个有用的默认值，则设备返回相应的错误状态值 （请参阅状态的值部分）。 如果返回了错误状态，则主机将启动设备的停止进程。
 
 特定于设备的参数应在 Windows 注册表中进行配置。 定义参数值的键通常创建在注册表中的设备安装过程。 设备 INF 文件中指定的密钥、 类型信息、 默认值和可选的有效值的范围列表。 有关使用 INF 网络设备的注册表中设置配置参数的详细信息，请查阅 Windows 2000 驱动程序开发工具包 (DDK)。
 

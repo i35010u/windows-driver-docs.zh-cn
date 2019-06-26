@@ -13,12 +13,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b194c354abde00a56417143950921a2511715a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a2befb4974b0ccee264317ea4189a3b7f4c4f47
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328854"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355860"
 ---
 # <a name="device-stacks-for-an-acpi-device"></a>ACPI 设备的设备堆栈
 
@@ -38,7 +38,7 @@ ms.locfileid: "63328854"
 
 ### <a name="system-supplied-root-bus-driver-and-acpi-driver"></a>系统提供根总线驱动程序和 ACPI 驱动程序
 
-Microsoft 提供根总线驱动程序和[ACPI 驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff540493)。 在系统上具有 ACPI BIOS，HAL 会导致要在设备树中，它充当接口之间的操作系统和 BIOS 的系统启动期间加载的 ACPI 驱动程序。 ACPI 驱动程序是透明的其他驱动程序。
+Microsoft 提供根总线驱动程序和[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)。 在系统上具有 ACPI BIOS，HAL 会导致要在设备树中，它充当接口之间的操作系统和 BIOS 的系统启动期间加载的 ACPI 驱动程序。 ACPI 驱动程序是透明的其他驱动程序。
 
 ### <a name="vendor-supplied-function-driver"></a>驱动程序供应商提供的函数
 

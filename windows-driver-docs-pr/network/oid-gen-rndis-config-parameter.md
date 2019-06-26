@@ -5,12 +5,12 @@ ms.assetid: 79e74e8b-7811-46a5-8ede-f6cca92967b0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_RNDIS_CONFIG_PARAMETER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b45e4bea6361574ac528beef381c03ad0b1708c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 71c28e88e08d7f937cf675a8f1dbc176372eb549
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364169"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355120"
 ---
 # <a name="oidgenrndisconfigparameter"></a>OID\_GEN\_RNDIS\_CONFIG\_参数
 
@@ -37,7 +37,7 @@ ms.locfileid: "63364169"
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_RNDIS\_CONFIG\_的 RNDIS 设备上使用参数。 主机使用它来设置特定于设备的参数。 微型端口驱动程序不使用它。 有关此 OID 的详细信息，请参阅[设置特定于设备的参数](https://msdn.microsoft.com/library/windows/hardware/ff570784)。
+OID\_GEN\_RNDIS\_CONFIG\_的 RNDIS 设备上使用参数。 主机使用它来设置特定于设备的参数。 微型端口驱动程序不使用它。 有关此 OID 的详细信息，请参阅[设置特定于设备的参数](https://docs.microsoft.com/windows-hardware/drivers/network/setting-device-specific-parameters)。
 
 <a name="requirements"></a>要求
 ------------

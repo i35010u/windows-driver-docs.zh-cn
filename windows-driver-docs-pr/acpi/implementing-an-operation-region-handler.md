@@ -9,12 +9,12 @@ keywords:
 - WDM 函数驱动程序 WDK ACPI，操作区域
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f814c1b018c8b93f9fec94ef066bd08346ddb185
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b33bf2f8820507cd9b8409532f6444b7a30c65c8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328822"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355838"
 ---
 # <a name="implementing-an-operation-region-handler"></a>实现操作区域处理程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "63328822"
 
 
 
-该驱动程序必须提供的操作区域处理程序，即[ **PACPI\_OP\_区域\_处理程序**](https://msdn.microsoft.com/library/windows/hardware/ff536153)-类型化回调。 ACPI 驱动程序调用的操作处理程序来访问驱动程序的操作区域中的数据字段。 功能驱动程序和 ACPI BIOS 的组合的操作是供应商定义和特定于设备。 一般情况下，功能驱动程序和 ACPI BIOS 访问索引操作的区域中导致特定于设备的操作并返回任何信息正确。
+该驱动程序必须提供的操作区域处理程序，即[ **PACPI\_OP\_区域\_处理程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/oprghdlr/nc-oprghdlr-acpi_op_region_handler)-类型化回调。 ACPI 驱动程序调用的操作处理程序来访问驱动程序的操作区域中的数据字段。 功能驱动程序和 ACPI BIOS 的组合的操作是供应商定义和特定于设备。 一般情况下，功能驱动程序和 ACPI BIOS 访问索引操作的区域中导致特定于设备的操作并返回任何信息正确。
 
 操作区域处理程序通常使用 ACPI 驱动程序将传递给处理程序的以下参数：
 

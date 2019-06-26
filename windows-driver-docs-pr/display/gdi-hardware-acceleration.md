@@ -9,12 +9,12 @@ keywords:
 - 带有 GDI WDK 显示硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a6ec582440317c85574b81987c5405065f3366f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7755e6dd1cd415b0388e22875e893b896f614de8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363848"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354743"
 ---
 # <a name="gdi-hardware-acceleration"></a>GDI 硬件加速
 
@@ -23,62 +23,62 @@ ms.locfileid: "63363848"
 
 若要指示 GPU 和驱动程序支持此功能，显示微型端口驱动程序必须设置 DXGKDDI\_接口\_版本&gt;= DXGKDDI\_接口\_版本\_WIN7。
 
-显示微型端口驱动程序还应设置[ **DXGK\_PRESENTATIONCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562004)-&gt;**SupportKernelModeCommandBuffer**向 **，则返回 TRUE**以指示它支持 GDI 硬件加速命令缓冲区处理。 仅当缓存连贯的 GPU aperture 段存在并且没有任何显著的性能损失 CPU 访问 GPU 内存时，该驱动程序应报告这种类型的支持。
+显示微型端口驱动程序还应设置[ **DXGK\_PRESENTATIONCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_presentationcaps)-&gt;**SupportKernelModeCommandBuffer**向 **，则返回 TRUE**以指示它支持 GDI 硬件加速命令缓冲区处理。 仅当缓存连贯的 GPU aperture 段存在并且没有任何显著的性能损失 CPU 访问 GPU 内存时，该驱动程序应报告这种类型的支持。
 
 以下参考主题介绍如何使用此功能：
 
 <span id="Driver-Implemented_Functions"></span><span id="driver-implemented_functions"></span><span id="DRIVER-IMPLEMENTED_FUNCTIONS"></span>**驱动程序实现函数**  
 支持 GDI 硬件加速的显示微型端口驱动程序必须实现以下函数：
 
-[**DxgkDdiCreateAllocation**](https://msdn.microsoft.com/library/windows/hardware/ff559606)
+[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)
 
-[**DxgkDdiGetStandardAllocationDriverData**](https://msdn.microsoft.com/library/windows/hardware/ff559673)
+[**DxgkDdiGetStandardAllocationDriverData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getstandardallocationdriverdata)
 
-[**DxgkDdiRenderKm**](https://msdn.microsoft.com/library/windows/hardware/ff559800)
+[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)
 
 <span id="Structures"></span><span id="structures"></span><span id="STRUCTURES"></span>**结构**
-[**D3DKM\_TRANSPARENTBLTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff548468)
+[**D3DKM\_TRANSPARENTBLTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_d3dkm_transparentbltflags)
 
-[**D3DKMDT\_GDISURFACEDATA**](https://msdn.microsoft.com/library/windows/hardware/ff546021)
+[**D3DKMDT\_GDISURFACEDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_gdisurfacedata)
 
-[**D3DKMDT\_GDISURFACEFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff546031)
+[**D3DKMDT\_GDISURFACEFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_gdisurfaceflags)
 
-[**DRIVER\_INITIALIZATION\_DATA**](https://msdn.microsoft.com/library/windows/hardware/ff556169)
+[**DRIVER\_INITIALIZATION\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_driver_initialization_data)
 
-[**DXGK\_CREATECONTEXTFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff561037)
+[**DXGK\_CREATECONTEXTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_createcontextflags)
 
-[**DXGK\_CREATEDEVICEFLAGS**](https://msdn.microsoft.com/library/windows/hardware/ff561039)
+[**DXGK\_CREATEDEVICEFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_createdeviceflags)
 
-[**DXGK\_GDIARG\_ALPHABLEND**](https://msdn.microsoft.com/library/windows/hardware/ff561074)
+[**DXGK\_GDIARG\_ALPHABLEND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_alphablend)
 
-[**DXGK\_GDIARG\_BITBLT**](https://msdn.microsoft.com/library/windows/hardware/ff561079)
+[**DXGK\_GDIARG\_BITBLT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_bitblt)
 
-[**DXGK\_GDIARG\_CLEARTYPEBLEND**](https://msdn.microsoft.com/library/windows/hardware/ff561082)
+[**DXGK\_GDIARG\_CLEARTYPEBLEND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_cleartypeblend)
 
-[**DXGK\_GDIARG\_COLORFILL**](https://msdn.microsoft.com/library/windows/hardware/ff561083)
+[**DXGK\_GDIARG\_COLORFILL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_colorfill)
 
-[**DXGK\_GDIARG\_STRETCHBLT**](https://msdn.microsoft.com/library/windows/hardware/ff561089)
+[**DXGK\_GDIARG\_STRETCHBLT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_stretchblt)
 
-[**DXGK\_GDIARG\_TRANSPARENTBLT**](https://msdn.microsoft.com/library/windows/hardware/ff561091)
+[**DXGK\_GDIARG\_TRANSPARENTBLT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_gdiarg_transparentblt)
 
-[**DXGK\_RENDERKM\_命令**](https://msdn.microsoft.com/library/windows/hardware/ff562026)
+[**DXGK\_RENDERKM\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_renderkm_command)
 
-[**DXGK\_PRESENTATIONCAPS**](https://msdn.microsoft.com/library/windows/hardware/ff562004)
+[**DXGK\_PRESENTATIONCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_presentationcaps)
 
-[**DXGKARG\_GETSTANDARDALLOCATIONDRIVERDATA**](https://msdn.microsoft.com/library/windows/hardware/ff557598)
+[**DXGKARG\_GETSTANDARDALLOCATIONDRIVERDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_getstandardallocationdriverdata)
 
-[**DXGKARG\_呈现**](https://msdn.microsoft.com/library/windows/hardware/ff557648)
+[**DXGKARG\_呈现**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgkarg_render)
 
 <span id="Enumerations"></span><span id="enumerations"></span><span id="ENUMERATIONS"></span>**枚举**
-[**D3DKMDT\_STANDARDALLOCATION\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff546589)
+[**D3DKMDT\_STANDARDALLOCATION\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_standardallocation_type)
 
-[**D3DKMDT\_GDISURFACETYPE**](https://msdn.microsoft.com/library/windows/hardware/ff546039)
+[**D3DKMDT\_GDISURFACETYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_gdisurfacetype)
 
-[**DXGK\_GDIROP\_BITBLT**](https://msdn.microsoft.com/library/windows/hardware/ff561095)
+[**DXGK\_GDIROP\_BITBLT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_gdirop_bitblt)
 
-[**DXGK\_GDIROP\_COLORFILL**](https://msdn.microsoft.com/library/windows/hardware/ff561102)
+[**DXGK\_GDIROP\_COLORFILL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_gdirop_colorfill)
 
-[**DXGK\_RENDERKM\_操作**](https://msdn.microsoft.com/library/windows/hardware/ff562029)
+[**DXGK\_RENDERKM\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ne-d3dkmddi-_dxgk_renderkm_operation)
 
 有关如何在显示的微型端口驱动程序中实现 GDI 硬件加速的更多详细信息，请参阅以下主题：
 

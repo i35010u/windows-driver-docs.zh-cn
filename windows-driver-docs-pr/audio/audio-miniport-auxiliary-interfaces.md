@@ -4,12 +4,12 @@ description: 音频微型端口辅助接口
 ms.assetid: cda22e86-f3f7-430c-856d-a2c868caa975
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a13664b1c4fb2c557773b8ddd9ee21781ad5fb53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15180ea52e96ee0759501206825a5727817296ca
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331460"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355686"
 ---
 # <a name="audio-miniport-auxiliary-interfaces"></a>音频微型端口辅助接口
 
@@ -21,13 +21,13 @@ ms.locfileid: "63331460"
 
 在本部分中讨论了以下接口：
 
-[IMusicTechnology](https://msdn.microsoft.com/library/windows/hardware/ff536778)-用于更改 Dmu 微型端口驱动程序的 pin 的数据范围中指定的 DirectMusic 合成器技术。
+[IMusicTechnology](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-imusictechnology)-用于更改 Dmu 微型端口驱动程序的 pin 的数据范围中指定的 DirectMusic 合成器技术。
 
-[IPinCount](https://msdn.microsoft.com/library/windows/hardware/ff536832) -提供一种微型端口驱动程序，以动态地监视和管理其 pin 计数。
+[IPinCount](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-ipincount) -提供一种微型端口驱动程序，以动态地监视和管理其 pin 计数。
 
-[IPinName](https://msdn.microsoft.com/library/windows/hardware/ff536840) -允许端口驱动程序，以动态更新的终结点的名称。
+[IPinName](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-ipinname-getpinname) -允许端口驱动程序，以动态更新的终结点的名称。
 
-[IAdapterPnpManagement](https://msdn.microsoft.com/library/windows/hardware/mt604850) -允许管理消息的适配器注册以接收即插即用。
+[IAdapterPnpManagement](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iadapterpnpmanagement) -允许管理消息的适配器注册以接收即插即用。
 
  
 

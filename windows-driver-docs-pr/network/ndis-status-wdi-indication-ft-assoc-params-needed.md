@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cddfb590b7e6c9523c7be20ce3a13ef64b43768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b636ac0f613a4f5b10e2e51338709e4708db3e90
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390726"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354944"
 ---
 # <a name="ndisstatuswdiindicationftassocparamsneeded"></a>NDIS\_状态\_WDI\_指示\_FT\_ASSOC\_PARAMS\_需执行
 
@@ -20,7 +20,7 @@ ms.locfileid: "63390726"
 
 | Object |
 |--------|
-| 端口   |
+| Port   |
 
  
 
@@ -33,9 +33,9 @@ ms.locfileid: "63390726"
 
 | 在任务栏的搜索框中键入                                                                  | 允许多个 TLV 实例 | 可选 | 描述                            |
 |-----------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_BSSID**](https://msdn.microsoft.com/library/windows/hardware/dn926153)                         |                                |          | AP BSSID。                   |
-| [**WDI\_TLV\_FT\_AUTH\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/mt269116)   |                                |          | 身份验证请求的字节 blob。  |
-| [**WDI\_TLV\_FT\_AUTH\_RESPONSE**](https://msdn.microsoft.com/library/windows/hardware/mt269117) |                                |          | 身份验证响应字节 blob。 |
+| [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)                         |                                |          | AP BSSID。                   |
+| [**WDI\_TLV\_FT\_AUTH\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-auth-request)   |                                |          | 身份验证请求的字节 blob。  |
+| [**WDI\_TLV\_FT\_AUTH\_RESPONSE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ft-auth-response) |                                |          | 身份验证响应字节 blob。 |
 
  
 

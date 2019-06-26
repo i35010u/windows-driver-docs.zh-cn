@@ -5,12 +5,12 @@ ms.assetid: bcae1bb6-ce5b-4ece-a5ba-bae6fefd6408
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d82450c3d99e99cf73cc33c452ad46bf0c5db20f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7482b861dd8130b203acdb5f739a11e25f1efc6
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380961"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356402"
 ---
 # <a name="pwrtest-syntax"></a>PwrTest 语法
 
@@ -23,7 +23,7 @@ PwrTest 工具的语法是：
 pwrtest /scenario [/scenario_options] [/common_options]
 ```
 
-<span id="_scenario"></span><span id="_SCENARIO"></span>**/**<em>scenario</em>  
+<span id="_scenario"></span><span id="_SCENARIO"></span> **/** <em>scenario</em>  
 
 | 方案   | 描述                                                                                                                                                        |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,8 +48,8 @@ pwrtest /scenario [/scenario_options] [/common_options]
  
 
 
-<span id="_scenario_options"></span><span id="_SCENARIO_OPTIONS"></span>**/**<em>scenario\_options</em>  
-若要查看可用于每个 Pwrtest 方案的选项，请键入： **pwrtest.exe /**<em>方案</em> **/？**
+<span id="_scenario_options"></span><span id="_SCENARIO_OPTIONS"></span> **/** <em>scenario\_options</em>  
+若要查看可用于每个 Pwrtest 方案的选项，请键入： **pwrtest.exe /** <em>方案</em> **/？**
 
 例如： **pwrtest.exe /sleep /？**
 
@@ -57,11 +57,11 @@ pwrtest /scenario [/scenario_options] [/common_options]
 
 |       *common\_options*       |                                                                                                                描述                                                                                                                 |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    **/lf:**<em>文件夹</em>    |                                            指定日志文件的文件夹。 例如，c:\\myfolder 或\\ \\server\\共享。 默认日志位置是 pwrtest.exe 所在的文件夹。                                             |
-|     **/ln:**<em>name</em>     |                指定日志文件的名称和事件跟踪 Windows (ETW) 跟踪会话的名称。 （.wtl、.xml 等），将自动添加日志文件扩展名。 默认名称为 pwrtestlog。                |
-| **/etwbuffersize:**<em>n</em> |                                                  如果此值大于默认大小以 kb 为单位指定 ETW 缓冲区大小。 默认值为当前页大小或 256 KB （两者中较大）。                                                  |
-| **/etwminbuffers:**<em>n</em> |                                指定最小为 ETW 会话 2 每个逻辑处理器的最小值大于分配的缓冲区数。 默认值为每个逻辑处理器的 2 个缓冲区。                                |
-| **/etwmaxbuffers:**<em>n</em> | 指定的最大数量的缓冲区分配的 ETW 会话，如果该数字大于 2 每个逻辑处理器的最小值和大于**etwminbuffers**设置。 默认值是**etwminbuffers**值 + 20。 |
+|    **/lf:** <em>文件夹</em>    |                                            指定日志文件的文件夹。 例如，c:\\myfolder 或\\ \\server\\共享。 默认日志位置是 pwrtest.exe 所在的文件夹。                                             |
+|     **/ln:** <em>name</em>     |                指定日志文件的名称和事件跟踪 Windows (ETW) 跟踪会话的名称。 （.wtl、.xml 等），将自动添加日志文件扩展名。 默认名称为 pwrtestlog。                |
+| **/etwbuffersize:** <em>n</em> |                                                  如果此值大于默认大小以 kb 为单位指定 ETW 缓冲区大小。 默认值为当前页大小或 256 KB （两者中较大）。                                                  |
+| **/etwminbuffers:** <em>n</em> |                                指定最小为 ETW 会话 2 每个逻辑处理器的最小值大于分配的缓冲区数。 默认值为每个逻辑处理器的 2 个缓冲区。                                |
+| **/etwmaxbuffers:** <em>n</em> | 指定的最大数量的缓冲区分配的 ETW 会话，如果该数字大于 2 每个逻辑处理器的最小值和大于**etwminbuffers**设置。 默认值是**etwminbuffers**值 + 20。 |
 |        **/delaywrite**        |                                                           指定日志数据进行缓冲处理的内存来减少写入磁盘中。 此选项会影响所有日志类型包括 ETL。                                                            |
 
 **示例**
@@ -90,7 +90,7 @@ pwrtest /requests  /t:60
 
 PwrTest 在.log （明文） 中自动生成每次执行多个日志.xml （格式因方案），.wtl (WTTLog) 和.etl （ETW 跟踪） 日志格式。
 
-若要能够使用所有 PwrTest 方案，必须先设置测试计算机以用于使用 Visual Studio 和 WDK 测试。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)。 某些情况下需要是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。 WDTF 有关的信息，请参阅[ **Windows 设备测试框架 (WDTF) （Windows 驱动程序）**](https://msdn.microsoft.com/library/windows/hardware/ff539547)。
+若要能够使用所有 PwrTest 方案，必须先设置测试计算机以用于使用 Visual Studio 和 WDK 测试。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。 某些情况下需要是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。 WDTF 有关的信息，请参阅[ **Windows 设备测试框架 (WDTF) （Windows 驱动程序）** ](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)。
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

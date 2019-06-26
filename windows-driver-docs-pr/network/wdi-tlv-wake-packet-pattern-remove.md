@@ -6,17 +6,17 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_PATTERN_REMOVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 650254b6a9f35d2d9ff75e7392a4c8fefc200813
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6bb3c9578e9396d9ea8b07925bf3eb77dc7fd28
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382133"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357104"
 ---
 # <a name="wditlvwakepacketpatternremove"></a>WDI\_TLV\_WAKE\_PACKET\_PATTERN\_REMOVE
 
 
-WDI\_TLV\_唤醒\_数据包\_模式\_删除是包含要删除的唤醒数据包模式 ID TLV [OID\_WDI\_集\_删除\_WOL\_模式](https://msdn.microsoft.com/library/windows/hardware/dn925944)。
+WDI\_TLV\_唤醒\_数据包\_模式\_删除是包含要删除的唤醒数据包模式 ID TLV [OID\_WDI\_集\_删除\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-remove-wol-pattern)。
 
 ## <a name="tlv-type"></a>TLV 类型
 

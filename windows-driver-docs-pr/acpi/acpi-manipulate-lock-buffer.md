@@ -6,17 +6,17 @@ keywords:
 - ACPI_MANIPULATE_LOCK_BUFFER 结构 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a88ceb99515500328c971b738864ebbb18cf6ec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aae8a0a4b844f28d552771f9dbfffee81dffee42
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355887"
 ---
 # <a name="acpimanipulatelockbuffer-structure"></a>ACPI\_操作\_锁\_缓冲区结构
 
 
-ACPI\_操作\_锁\_缓冲区宏保留供内部使用，仅[ **IOCTL\_ACPI\_ACQUIRE\_全局\_锁**](https://msdn.microsoft.com/library/windows/hardware/ff536144)并[ **IOCTL\_ACPI\_版本\_全局\_锁**](https://msdn.microsoft.com/library/windows/hardware/ff536150)。
+ACPI\_操作\_锁\_缓冲区宏保留供内部使用，仅[ **IOCTL\_ACPI\_ACQUIRE\_全局\_锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)并[ **IOCTL\_ACPI\_版本\_全局\_锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)。
 
 <a name="requirements"></a>要求
 ------------
@@ -37,9 +37,9 @@ ACPI\_操作\_锁\_缓冲区宏保留供内部使用，仅[ **IOCTL\_ACPI\_ACQUI
 ## <a name="see-also"></a>请参阅
 
 
-[**IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_锁**](https://msdn.microsoft.com/library/windows/hardware/ff536144)
+[**IOCTL\_ACPI\_ACQUIRE\_GLOBAL\_锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_acquire_global_lock)
 
-[**IOCTL\_ACPI\_RELEASE\_GLOBAL\_LOCK**](https://msdn.microsoft.com/library/windows/hardware/ff536150)
+[**IOCTL\_ACPI\_RELEASE\_GLOBAL\_LOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_release_global_lock)
 
  
 

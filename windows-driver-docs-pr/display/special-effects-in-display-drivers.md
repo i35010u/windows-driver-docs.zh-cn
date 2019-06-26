@@ -16,12 +16,12 @@ keywords:
 - 显示动画 WDK Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3390248bdfc81aba6604f2abe79d7cd395d99bfb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5438d0571b4ba9f721d137de05b7262e626c139
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382332"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353844"
 ---
 # <a name="special-effects-in-display-drivers"></a>显示驱动程序中的特效
 
@@ -31,9 +31,9 @@ ms.locfileid: "63382332"
 
 Windows 2000 和更高版本的操作系统版本支持以下特殊效果：
 
--   如果显示硬件支持 alpha 值混合处理，显示器驱动程序，可以实现[ **DrvAlphaBlend**](https://msdn.microsoft.com/library/windows/hardware/ff556176)。
+-   如果显示硬件支持 alpha 值混合处理，显示器驱动程序，可以实现[ **DrvAlphaBlend**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvalphablend)。
 
--   如果显示硬件支持渐变填充，显示器驱动程序应实现[ **DrvGradientFill**](https://msdn.microsoft.com/library/windows/hardware/ff556236)。
+-   如果显示硬件支持渐变填充，显示器驱动程序应实现[ **DrvGradientFill**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)。
 
 ### <a name="span-idalphablendingspanspan-idalphablendingspanspan-idalphablendingspanalpha-blending"></a><span id="Alpha_Blending"></span><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>Alpha 值混合处理
 
@@ -59,7 +59,7 @@ Alpha 值混合处理具有拉伸组合的情况下，在有 WDK，其计算结�
 
 使用 Windows 2000 （和更高版本） 外壳*渐变填充*所有标题栏。
 
-生成的结果[ **DrvGradientFill** ](https://msdn.microsoft.com/library/windows/hardware/ff556236)取决于每像素的比特数，且必须满足以下准则：
+生成的结果[ **DrvGradientFill** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgradientfill)取决于每像素的比特数，且必须满足以下准则：
 
 ### <a name="span-id24bppor32bppsurfacesspanspan-id24bppor32bppsurfacesspan24-bpp-or-32-bpp-surfaces"></a><span id="_24_bpp_or_32_bpp_surfaces"></span><span id="_24_BPP_OR_32_BPP_SURFACES"></span>24 bpp 或 32 bpp 应用层
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 71f42b3f9c1b423753d6e21fcd0d33057c696f33
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74222226faa2efea8e801ed9ecdbd7032c61aaa1
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372383"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353392"
 ---
 # <a name="kscategoryaudiogfx"></a>KSCATEGORY_AUDIO_GFX
 
 
-KSCATEGORY_AUDIO_GFX[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 支持的功能类别[全局效果 (GFX) 筛选器](https://msdn.microsoft.com/library/windows/hardware/ff536403)。
+KSCATEGORY_AUDIO_GFX[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 支持的功能类别[全局效果 (GFX) 筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/gfx-filters)。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_AUDIO_GFX[设备接口类](https://msdn.microsoft.com/library/windows
 
 KS 音频适配器设备驱动程序注册 KSCATEGORY_AUDIO_GFX 向操作系统指示设备支持 KSCATEGORY_AUDIO_GFX 功能分类的实例。
 
-有关音频适配器的其他设备接口类的信息，请参阅[音频适配器安装设备接口](https://msdn.microsoft.com/library/windows/hardware/ff536813)。
+有关音频适配器的其他设备接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
 
 <a name="requirements"></a>要求
 ------------

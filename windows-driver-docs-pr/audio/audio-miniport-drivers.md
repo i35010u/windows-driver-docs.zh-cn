@@ -9,12 +9,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc4006cd8350c30671975755beb639b32ac7e1b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b87f0b84badf9bbc61b1af16c6c1c29a7b7dab8
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331463"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355673"
 ---
 # <a name="audio-miniport-drivers"></a>音频微型端口驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "63331463"
 
 本文档不讨论如何支持的外部总线上驻留的音频设备。 在外部总线上支持音频设备的信息，请参阅[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)并[AVCAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)。
 
-以下讨论假定读者熟悉流 (KS) 概念的内核。 有关背景信息，请参阅[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff560842)。
+以下讨论假定读者熟悉流 (KS) 概念的内核。 有关背景信息，请参阅[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming)。
 
 WDM 音频驱动程序模型将 KS 筛选器的实现划分为互补而单独的端口和微型端口驱动程序。 这种划分使音频硬件驱动程序更轻松地编写通过隔离特定于设备的硬件接口问题的一般的筛选器实现问题。 硬件供应商编写微型端口驱动程序来直接控制其硬件设备，但使用操作系统提供了实现 KS 筛选器端口驱动程序。 通过定义完善的软件的接口彼此通信的端口和微型端口驱动程序。
 

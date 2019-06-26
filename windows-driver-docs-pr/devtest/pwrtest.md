@@ -4,12 +4,12 @@ description: 电源管理测试工具 (PwrTest) 是一个测试工具，开发�
 ms.assetid: 8c242d61-6c5b-44d9-84d1-f78ef9a56a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 097114a7782c79d216a3a2adfb0506ad28f267ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3f3f2cfa74b550410b961f541fc191667c01a5c0
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339733"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356394"
 ---
 # <a name="pwrtest"></a>PwrTest
 
@@ -43,13 +43,13 @@ PwrTest 功能分为方案。 有关这些方案的信息，请参阅[PwrTest �
 
 **若要运行 Pwrtest**
 
-1.  若要能够使用所有 PwrTest 方案，必须先设置测试计算机以用于使用 Visual Studio 和 WDK 测试。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)。
+1.  若要能够使用所有 PwrTest 方案，必须先设置测试计算机以用于使用 Visual Studio 和 WDK 测试。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)，或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。
 
     某些情况下需要是一部分的 Windows 驱动程序测试框架 (WDTF) 的电源按钮驱动程序。 预配的系统，使用 Visual Studio 和 WDK 测试时，会自动安装 WDTF （和包含的电源按钮驱动程序）。
 
 2.  PwrTest.exe 随 WDK。 若要在测试计算机上运行 Pwrtest，必须从安装 WDK 的计算机复制 PwrTest.exe。
 
-    您可以在 Windows 驱动程序工具包工具目录中查找 PwrTest.exe (例如，c:\\Program Files (x86)\\Windows 工具包\\*&lt;版本&gt;* \\工具\\*&lt;平台&gt;*\\PwrTest.exe)。
+    您可以在 Windows 驱动程序工具包工具目录中查找 PwrTest.exe (例如，c:\\Program Files (x86)\\Windows 工具包\\ *&lt;版本&gt;* \\工具\\ *&lt;平台&gt;* \\PwrTest.exe)。
 
 3.  你已设置的测试计算机上使用提升的权限打开命令提示符窗口 (**以管理员身份运行**) 并导航到复制 PwrTest.exe 的目录。
 
@@ -74,9 +74,9 @@ PwrTest 功能分为方案。 有关这些方案的信息，请参阅[PwrTest �
 
 [PwrTest 方案](pwrtest-scenarios.md)
 
-[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://msdn.microsoft.com/library/windows/hardware/dn745909)
+[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)
 
-[预配的计算机的驱动程序部署和测试 (WDK 8)](https://msdn.microsoft.com/library/windows/hardware/hh698272)
+[预配的计算机的驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))
 
  
 

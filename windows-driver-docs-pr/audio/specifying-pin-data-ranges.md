@@ -12,12 +12,12 @@ keywords:
 - 交集 WDK 音频驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 079a7f348257d6aa9f6c77d1e940d8f94efdd389
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3ea12a4605b07a398695d1048bc2f6006164ef2f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328619"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67354282"
 ---
 # <a name="specifying-pin-data-ranges"></a>指定引脚数据范围
 
@@ -56,9 +56,9 @@ static KSDATARANGE_AUDIO PinDataRangesPcm[] =
 };
 ```
 
-请注意，`PinDataRangesPcm`前面的示例中的数组包含类型的单个数据范围描述符[ **KSDATARANGE\_音频**](https://msdn.microsoft.com/library/windows/hardware/ff537096)。 一般来说，数据范围数组可以包含任意数量的描述符。 例如，AC-3-over-S/PDIF 和 WMA Pro-反复-S/PDIF 格式可能支持非 PCM wave 输出插针。 这两种格式的每个单独的数据范围说明符指定。 因此，固定的数据范围数组将包含至少两个 KSDATARANGE\_音频结构。
+请注意，`PinDataRangesPcm`前面的示例中的数组包含类型的单个数据范围描述符[ **KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)。 一般来说，数据范围数组可以包含任意数量的描述符。 例如，AC-3-over-S/PDIF 和 WMA Pro-反复-S/PDIF 格式可能支持非 PCM wave 输出插针。 这两种格式的每个单独的数据范围说明符指定。 因此，固定的数据范围数组将包含至少两个 KSDATARANGE\_音频结构。
 
-支持使用 DirectMusic 或 Windows 多媒体 midiIn 的应用程序中的音乐流格式的可配置 pin*Xxx*和 midiOut*Xxx*函数使用类型的数据范围描述符[ **KSDATARANGE\_音乐**](https://msdn.microsoft.com/library/windows/hardware/ff537097)。
+支持使用 DirectMusic 或 Windows 多媒体 midiIn 的应用程序中的音乐流格式的可配置 pin*Xxx*和 midiOut*Xxx*函数使用类型的数据范围描述符[ **KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_music)。
 
 端口驱动程序从微型端口驱动程序中获得的数据范围信息，并使用此信息，如有可能，用于处理请求的每个 pin 可以支持的数据格式的信息。 对于简单的 PCM 数据范围的 pin，端口驱动程序是能够处理该 pin 的交集请求。 在交集请求中，客户端提供一的组表示流的可能的数据格式的数据范围。 如果可能，端口驱动程序的交集处理程序还会在其 pin 的数据范围内的请求中提取来自数据区域的特定数据格式。 这种格式表示数据区域的两个集的交集。 因此，客户端和 pin 可以处理此格式的流。 对于更复杂的数据范围，微型端口驱动程序可以提供自己的交集处理程序，它将端口驱动程序然后使用其自身的、 默认处理程序。 微型端口驱动程序的交集处理程序可允许可能很难到端口驱动程序将表示为一组数据区域的任何格式要求。 有关详细信息，请参阅[交集数据处理程序](data-intersection-handlers.md)。 在标题为的白皮书提供了其他信息*多声道音频数据和 WAVE 文件*处[音频技术](https://go.microsoft.com/fwlink/p/?linkid=8751)网站。
 

@@ -4,12 +4,12 @@ description: Windows 64 位版本要求运行在内核模式下，其中包括�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b55ed3084b756e802d834f071e57629e63b8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf33c02e06583e657c4ab38da1d5cce2a848afc2
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339921"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356300"
 ---
 # <a name="test-signing"></a>测试签名
 
@@ -51,7 +51,7 @@ bcdedit -debug on
 *从节选*[如何测试签名驱动程序包](how-to-test-sign-a-driver-package.md):
 
 <a href="" id="signing-computer"></a>**签名的计算机**  
-这是用于测试签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://msdn.microsoft.com/library/windows/hardware/ff552958)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。 这也可以是开发计算机。
+这是用于测试签名驱动程序包适用于 Windows Vista 和更高版本的 Windows 的计算机。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 若要使用[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)、 此计算机必须安装 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 安装。 这也可以是开发计算机。
 
 <a href="" id="test-computer"></a>**测试计算机**  
 这是用于安装和测试的测试签名驱动程序包的计算机。 此计算机必须运行 Windows Vista 或更高版本的 Windows。
@@ -87,7 +87,7 @@ bcdedit -debug on
 
     下面的命令行示例使用 MakeCert 来完成以下任务：
 
-    -   创建一个名为的自签名的测试证书*Contoso.com(Test)*。 此证书使用相同的名称的使用者名称和证书颁发机构 (CA)。
+    -   创建一个名为的自签名的测试证书*Contoso.com(Test)* 。 此证书使用相同的名称的使用者名称和证书颁发机构 (CA)。
 
     -   将证书的副本放在名为输出文件*ContosoTest.cer*。
 
@@ -107,7 +107,7 @@ bcdedit -debug on
 
     -   **-Ss**选项指定包含测试证书的证书存储区的名称 (*PrivateCertStore*)。
 
-    -   **-N CN =** 选项指定的证书，Contoso.com(Test) 的名称。 此名称用于[ **SignTool** ](https://msdn.microsoft.com/library/windows/hardware/ff551778)工具找到的证书。
+    -   **-N CN =** 选项指定的证书，Contoso.com(Test) 的名称。 此名称用于[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)工具找到的证书。
 
     -   *ContosoTest.cer*是包含测试证书，Contoso.com(Test) 的副本的文件名。 证书文件用于将证书添加到受信任的根证书颁发机构证书存储和受信任的发行者证书存储区。
 
@@ -189,7 +189,7 @@ bcdedit -debug on
     OSAttr  2:5.1,6.1
     ```
 
-    5.1 的数字是 XP 操作系统的版本号和 Windows 7.0 OS 的 6.1。
+    5\.1 的数字是 XP 操作系统的版本号和 Windows 7.0 OS 的 6.1。
 
     最好 cat 文件会检查以验证包含的驱动程序文件和所选的操作系统。 在任何时候如果添加或删除任何驱动程序文件，INF 文件已被修改，必须重新创建 cat 文件，并将其重新签名。 此处任何省略将导致安装错误报告上的安装日志文件 （适用于 Vista 及更高版本的 setupapi.dev.log 或 XP 的 setupapi.log 文件）。
 
@@ -219,7 +219,7 @@ bcdedit -debug on
 
     -   **/N**选项指定的证书名称 (*Contoso.com(Test))* 安装指定的证书存储区中。
 
-    -   **/T**选项指定 TSA 的 URL (*http://timestamp.verisign.com/scripts/timstamp.dll*) 这将时间戳的数字签名。
+    -   **/T**选项指定 TSA 的 URL ( *http://timestamp.verisign.com/scripts/timstamp.dll* ) 这将时间戳的数字签名。
         **重要**泄露密钥吊销签名者的代码签名的私钥的情况下包括时间戳提供所需的信息。
 
 
@@ -268,7 +268,7 @@ tstamd64.cat 指定将对其进行数字签名的编录文件的名称。 根据
 
 2.  *所选部分内容摘自*[到测试计算机上安装测试证书的使用 CertMgr](using-certmgr-to-install-test-certificates-on-a-test-computer.md):
 
-    将证书复制 (*.cer*) 文件，这是用于[测试签名](test-signing-driver-packages.md)驱动程序，到测试计算机。 可以将证书文件复制到测试计算机上的任何目录。
+    将证书复制 ( *.cer*) 文件，这是用于[测试签名](test-signing-driver-packages.md)驱动程序，到测试计算机。 可以将证书文件复制到测试计算机上的任何目录。
 
     以下 CertMgr 命令将证书文件中添加证书*CertificateFileName.cer*到受信任的根证书颁发机构的证书存储在测试计算机上：
 
@@ -282,7 +282,7 @@ tstamd64.cat 指定将对其进行数字签名的编录文件的名称。 根据
     CertMgr.exe /add CertificateFileName.cer /s /r localMachine trustedpublisher
     ```
 
-    位置 (*来自* [ **CertMgr**](https://msdn.microsoft.com/library/windows/hardware/ff543411)):
+    位置 (*来自* [ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)):
 
     / 添加 CertificateName
 

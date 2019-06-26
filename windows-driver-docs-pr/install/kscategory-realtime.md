@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7e271ad074da413c9702a45bda559d342ae8c03e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fb1944316e280f67c50f264591370b0148e335f
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360299"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355144"
 ---
 # <a name="kscategoryrealtime"></a>KSCATEGORY_REALTIME
 
 
-KSCATEGORY_REALTIME[设备接口类](https://msdn.microsoft.com/library/windows/hardware/ff541339)为定义[内核流式处理](https://msdn.microsoft.com/library/windows/hardware/ff568277)(KS) 连接到系统总线 （例如，PCI 总线），将音频设备的功能类别播放或捕获实时波形数据。
+KSCATEGORY_REALTIME[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 连接到系统总线 （例如，PCI 总线），将音频设备的功能类别播放或捕获实时波形数据。
 
 <table>
 <colgroup>
@@ -56,7 +56,7 @@ KSCATEGORY_REALTIME[设备接口类](https://msdn.microsoft.com/library/windows/
 
 KS 设备的驱动程序注册 KSCATEGORY_REALTIME 向操作系统指示设备支持 KSCATEGORY_REALTIME 功能分类的实例。
 
-注册此功能的类别的设备由系统提供运营[WaveRT 端口驱动程序](https://msdn.microsoft.com/library/windows/hardware/ff538837)。
+注册此功能的类别的设备由系统提供运营[WaveRT 端口驱动程序](https://docs.microsoft.com/previous-versions/ff538837(v=vs.85))。
 
 有关如何在一个 INF 文件中注册此功能的类别的信息，请参阅 INF 文件*Ac97smpl.inf*随[AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)WDK 中。
 

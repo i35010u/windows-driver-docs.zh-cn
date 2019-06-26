@@ -9,12 +9,12 @@ keywords:
 - 受信任的安全读取 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ea56c054f43955a4299ef6ee06b4f80228964b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2646121ca18db641677bae1bd372ab3d5227bbba
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388966"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353812"
 ---
 # <a name="enforcing-a-secure-read-for-a-hid-collection"></a>强制实施适用于 HID 集合的安全读取
 
@@ -28,7 +28,7 @@ ms.locfileid: "63388966"
 
 此机制被提供主要，以便"受信任的"用户模式系统组件可以防止用户模式下的应用程序无需 SeTcbPrivilege 权限在关键系统操作期间集合中获取输入。 例如，"受信任的"用户模式系统组件可以防止没有 SeTcbPrivilege 特权的用户模式应用程序获取一个用户在登录操作期间提供的机密信息。
 
-"受信任的"客户端使用[ **IOCTL\_HID\_启用\_SECURE\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff541081)并[ **IOCTL\_HID\_禁用\_SECURE\_读取**](https://msdn.microsoft.com/library/windows/hardware/ff541077)集合读取请求，以启用和禁用的安全。 如果无需 SeTcbPrivilege 权限的客户端使用这些请求，请求不会更改集合的安全读取的状态并且 HID 类驱动程序返回的状态的状态值\_特权\_不\_保持。
+"受信任的"客户端使用[ **IOCTL\_HID\_启用\_SECURE\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_enable_secure_read)并[ **IOCTL\_HID\_禁用\_SECURE\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hidclass/ni-hidclass-ioctl_hid_disable_secure_read)集合读取请求，以启用和禁用的安全。 如果无需 SeTcbPrivilege 权限的客户端使用这些请求，请求不会更改集合的安全读取的状态并且 HID 类驱动程序返回的状态的状态值\_特权\_不\_保持。
 
 启用和禁用安全可以按以下方式读取集合中的工作原理：
 
@@ -41,7 +41,7 @@ ms.locfileid: "63388966"
     -   如果该文件的安全读取的计数为零，则驱动程序不会更改安全读取的计数。
 -   如果集合的安全读取的计数大于零，HID 类驱动程序强制实施安全读取的集合。 否则，该驱动程序不强制安全读取的集合。
 
--   客户端应使用禁用请求来取消相应的启用请求。 但是，如果客户端不会执行此操作，HID 类驱动程序相应地减少安全阅读集合计数处理时[ **IRP\_MJ\_关闭**](https://msdn.microsoft.com/library/windows/hardware/ff550720)文件的请求。 当驱动程序处理关闭请求，它是安全的递减读取找不到正在关闭该文件的安全读取计数的计数。
+-   客户端应使用禁用请求来取消相应的启用请求。 但是，如果客户端不会执行此操作，HID 类驱动程序相应地减少安全阅读集合计数处理时[ **IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)文件的请求。 当驱动程序处理关闭请求，它是安全的递减读取找不到正在关闭该文件的安全读取计数的计数。
 
  
 

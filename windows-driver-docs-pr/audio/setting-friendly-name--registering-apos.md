@@ -4,12 +4,12 @@ description: 本主题介绍如何设置设备接口的友好名称和注册的�
 ms.assetid: A3C4E04C-8F3B-49B4-8E46-CF37E1A4F5AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f62f0caa5ce3b03d482d573bed9381898712a5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f1aa3cb6200531ecb98936cf13510e23bebe341c
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328643"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355253"
 ---
 # <a name="setting-friendly-names-registering-apos"></a>设置友好名称，注册 APO
 
@@ -23,7 +23,7 @@ ms.locfileid: "63328643"
 ## <a name="span-iddevpkeydeviceinterfacefriendlynamespanspan-iddevpkeydeviceinterfacefriendlynamespanspan-iddevpkeydeviceinterfacefriendlynamespandevpkeydeviceinterfacefriendlyname"></a><span id="DEVPKEY_DeviceInterface_FriendlyName"></span><span id="devpkey_deviceinterface_friendlyname"></span><span id="DEVPKEY_DEVICEINTERFACE_FRIENDLYNAME"></span>DEVPKEY\_DeviceInterface\_FriendlyName
 
 
-音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://msdn.microsoft.com/library/windows/hardware/dn265108)无配置文件 (HFP) 音频驱动程序的请求。 中的形式返回请求的信息[ **BTHHFP\_描述符**](https://msdn.microsoft.com/library/windows/hardware/dn302030)结构，以及其他数据，引用的结构。 音频驱动程序，然后调用 IoSetDeviceInterfacePropertyData 设置 DEVPKEY\_DeviceInterface\_中的值的 FriendlyName *FriendlyName*字段**BTHHFP\_描述符**结构。
+音频驱动程序发送[ **IOCTL\_BTHHFP\_设备\_获取\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ni-bthhfpddi-ioctl_bthhfp_device_get_descriptor)无配置文件 (HFP) 音频驱动程序的请求。 中的形式返回请求的信息[ **BTHHFP\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bthhfpddi/ns-bthhfpddi-_bthhfp_descriptor)结构，以及其他数据，引用的结构。 音频驱动程序，然后调用 IoSetDeviceInterfacePropertyData 设置 DEVPKEY\_DeviceInterface\_中的值的 FriendlyName *FriendlyName*字段**BTHHFP\_描述符**结构。
 
 音频驱动程序设置的参数 IoSetDeviceInterfacePropertyData，如下所示：
 

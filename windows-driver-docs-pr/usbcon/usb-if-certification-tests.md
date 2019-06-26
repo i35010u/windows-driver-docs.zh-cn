@@ -3,12 +3,12 @@ Description: 若要准备的 Windows 硬件认证计划提交的 USB 设备和�
 title: USB-IF 认证测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b5169c89d717d031dc5e43f0b7e548ba717cf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da91a8ac1aaa06a104d6b283e7c1e12137990d50
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330371"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356594"
 ---
 # <a name="usb-if-certification-tests"></a>USB-IF 认证测试
 
@@ -62,7 +62,7 @@ HLK，USB 的新版本-如果测试要求允许供应商下载并从 USB 运行�
 
 - **USB-如果认证**
 
-  获取 USB-从如果认证[USB-如果授权独立的测试实验室](http://www.usb.org/developers/compliance/labs/)，并提交针对 Windows 证书认证设备。 您可以选择以下选项之一来获取 USB-如果认证的设备或主机控制器：
+  获取 USB-从如果认证[USB-如果授权独立的测试实验室](https://www.usb.org/developers/compliance/labs/)，并提交针对 Windows 证书认证设备。 您可以选择以下选项之一来获取 USB-如果认证的设备或主机控制器：
 
   -   提交到 USB 设备-如果授权用于测试的独立的测试实验室。 有关如何查找实验室的信息，请参阅 USB-如果授权独立的测试实验室。
       **请注意**通常所花费的已授权的独立测试实验室一到两周测试 USB 规范的单个 USB 设备。
@@ -75,7 +75,7 @@ HLK，USB 的新版本-如果测试要求允许供应商下载并从 USB 运行�
 
   -   可以在你的设备的手册、 打包和产品信息的使用 USB 徽标。
   -   你可以列出 USB 上-如果集成商列表。
-  -   将设备引入[USB 如果赞助法规遵从性研讨会](http://www.usb.org/developers/events/compshop/)。 每年在美国，保留四个学习班，并且一个研讨会保存在亚洲。
+  -   将设备引入[USB 如果赞助法规遵从性研讨会](https://www.usb.org/developers/events/compshop/)。 每年在美国，保留四个学习班，并且一个研讨会保存在亚洲。
 
   设备通过 USB 后的认证测试，如果您收到来自测试实验室或研讨会的测试 ID 数量 (TID)。 在运行 Windows HLK 测试设备的其余部分时，可以向 Windows HLK 提供此 TID 数字。
 
@@ -83,7 +83,7 @@ HLK，USB 的新版本-如果测试要求允许供应商下载并从 USB 运行�
 
 - **USB-如果自我测试**
 
-  下载 USB 命令验证工具测试工具和 USB 互操作性测试文档，并运行从所需的测试[USB-如果](http://www.usb.org/home)。 然后提交针对 Windows 证书认证设备。
+  下载 USB 命令验证工具测试工具和 USB 互操作性测试文档，并运行从所需的测试[USB-如果](https://www.usb.org/)。 然后提交针对 Windows 证书认证设备。
 
   **请注意**USB 主控制器和中心均不适合 USB-如果自测试选项，必须获取完整的 USB-如果认证。
 

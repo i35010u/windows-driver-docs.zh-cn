@@ -14,12 +14,12 @@ keywords:
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec18f97b7e3e4f4a2a6f0985069702dc5e6375d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f463a8a57e5a83b32fa5aa9908ec82c9ab7488ff
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392001"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67356292"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 
@@ -45,7 +45,7 @@ ms.locfileid: "63392001"
 
 ### <a name="security-settings-for-devices-and-interfaces"></a>设备和接口的安全设置
 
-系统提供的所有默认安全描述符[系统提供的设备安装程序类](https://msdn.microsoft.com/library/windows/hardware/ff553419)。 通常情况下，这些描述符允许系统管理员的完全访问权限和读取/写入/执行访问权限的用户。 (控制对设备的访问也控制对设备的访问的安全描述符[设备接口类](device-interface-classes.md)(如果有）。)
+系统提供的所有默认安全描述符[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。 通常情况下，这些描述符允许系统管理员的完全访问权限和读取/写入/执行访问权限的用户。 (控制对设备的访问也控制对设备的访问的安全描述符[设备接口类](device-interface-classes.md)(如果有）。)
 
 用于 WDM 驱动程序的 INF 文件可以指定安全设置，每个类或每个设备，系统的默认设置会重写的。 供应商创建一个新的设备安装程序类应指定类的安全描述符。 通常情况下，指定特定于设备的安全描述符不是必需的。 它可能很有用，如果不同类型的属于同一类的设备具有明显不同类型的用户提供特定于设备的安全描述符。
 
@@ -55,9 +55,9 @@ ms.locfileid: "63392001"
 
 默认情况下，系统将应用的设备设置为打开表示设备的设备对象的请求的安全描述符 (例如，若要打开其 NT 设备名称是该设备的请求 *\\设备\\DeviceName*)。
 
-但是，系统不会不默认情况下应用设置的设备对打开的设备，命名空间中的某个对象的请求的设备命名空间，包括其名称采用以下形式的所有对象的安全描述符 *\\设备\\DeviceName\\ObjectName*。 若要确保相同的安全设置应用以打开设备的命名空间中的对象的请求，设置设备的 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全的设备访问的详细信息，请参阅[控制设备 Namespace 访问 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff542068)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征 （Windows 驱动程序）](https://msdn.microsoft.com/library/windows/hardware/ff563818)。
+但是，系统不会不默认情况下应用设置的设备对打开的设备，命名空间中的某个对象的请求的设备命名空间，包括其名称采用以下形式的所有对象的安全描述符 *\\设备\\DeviceName\\ObjectName*。 若要确保相同的安全设置应用以打开设备的命名空间中的对象的请求，设置设备的 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全的设备访问的详细信息，请参阅[控制设备 Namespace 访问 （Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅[指定设备特征 （Windows 驱动程序）](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)。
 
-PnP 管理器在后它会调用驱动程序的设备对象上设置安全值[ **AddDevice** ](https://msdn.microsoft.com/library/windows/hardware/ff540521)例程。 通过调用创建一个物理设备对象 (PDO) 时，某些 WDM 驱动程序可以指定特定于设备的安全描述符[ **IoCreateDeviceSecure**](https://msdn.microsoft.com/library/windows/hardware/ff548407)。 有关详细信息，请参阅[保护设备对象](https://msdn.microsoft.com/library/windows/hardware/ff563688)。
+PnP 管理器在后它会调用驱动程序的设备对象上设置安全值[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 通过调用创建一个物理设备对象 (PDO) 时，某些 WDM 驱动程序可以指定特定于设备的安全描述符[ **IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。 有关详细信息，请参阅[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
 
 ### <a name="security-settings-for-driver-files"></a>驱动程序文件的安全设置
 

@@ -4,12 +4,12 @@ description: Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱�
 ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1311f596f4d96b1db3c3cdb8d27b428043c10070
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 871680ed9eae5a0a759ac295520aa64712f1dc27
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340237"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67353862"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows 驱动程序的 SAL 2.0 注释
 
@@ -85,7 +85,7 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序的分
 <tr class="even">
 <td align="left"><p><strong><em>Flt_CompletionContext_Outptr</em></strong></p></td>
 <td align="left"><a href="-flt-completioncontext-outptr--annotation.md" data-raw-source="[_Flt_CompletionContext_Outptr_ Annotation](-flt-completioncontext-outptr--annotation.md)"><em>Flt_CompletionContext_Outptr</em> Annotation</a></td>
-<td align="left"><p>使用<strong><em>Flt_CompletionContext_Outptr</em></strong>批注时声明文件系统微筛选器预操作回调函数 (<a href="https://msdn.microsoft.com/library/windows/hardware/ff551109" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff551109)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>). 此批注置于<em>CompletionContext</em>参数。 此批注指示代码分析工具来检查是否<em>CompletionContext</em> FLT_PREOP_CALLBACK_STATUS 返回值是否正确。</p></td>
+<td align="left"><p>使用<strong><em>Flt_CompletionContext_Outptr</em></strong>批注时声明文件系统微筛选器预操作回调函数 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>). 此批注置于<em>CompletionContext</em>参数。 此批注指示代码分析工具来检查是否<em>CompletionContext</em> FLT_PREOP_CALLBACK_STATUS 返回值是否正确。</p></td>
 </tr>
 </tbody>
 </table>

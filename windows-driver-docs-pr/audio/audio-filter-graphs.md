@@ -13,12 +13,12 @@ keywords:
 - KS 筛选器关系图 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ba6e0b89b4e7cea8e50f77ddfbc5a17b33d0f3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b2d140a083245bfa2f9c5e8911ef13c7768f9134
+ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331485"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67355696"
 ---
 # <a name="audio-filter-graphs"></a>音频筛选器图
 
@@ -42,7 +42,7 @@ KS 筛选器关系图是已连接在一起处理一个或多个数据流的 KS �
 
 在上图中，通常显示每个批筛选器和其相应的拓扑筛选器之间的数据路径表示的物理连接： 无法通过软件配置的音频适配器上的固定，硬件连接。
 
-由于已永久连接桥 pin 或物理连接的 pin，pin 隐式地存在，无法实例化或删除。 因此，有没有桥 pin 对象 （实例的桥 pin） 来发送 Irp 到，但您可以查询的筛选器对象[KSPROPSETID\_Pin](https://msdn.microsoft.com/library/windows/hardware/ff566584)其插针，桥的属性。 同一规则适用于使用物理连接的插针。
+由于已永久连接桥 pin 或物理连接的 pin，pin 隐式地存在，无法实例化或删除。 因此，有没有桥 pin 对象 （实例的桥 pin） 来发送 Irp 到，但您可以查询的筛选器对象[KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)其插针，桥的属性。 同一规则适用于使用物理连接的插针。
 
 传递桥 pin 或物理连接的信号可以模拟或数字。
 
